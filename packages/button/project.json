@@ -1,0 +1,8 @@
+{
+  "name": "button",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/button/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}
