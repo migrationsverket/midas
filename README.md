@@ -13,6 +13,8 @@ Repoägare: Team Dream
 - [ ] CI/CD
 - [ ] Version control and changelogs
 - [x] Nx Monorepo
+- [ ] NPM publish
+- [ ] Conventional commits
 
 ## Start Documentation
 
