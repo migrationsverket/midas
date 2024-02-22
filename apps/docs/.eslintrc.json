@@ -1,6 +1,6 @@
 {
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "node_modules"],
+  "ignorePatterns": ["!**/*", ".docusaurus", "docusaurus.config.ts", "src"], // TODO fix module imports
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
