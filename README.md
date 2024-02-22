@@ -1,3 +1,5 @@
+![Component build](https://github.com/migrationsverket/midas/actions/workflows/ci.yml/badge.svg)
+
 # Midas
 
 Repoägare: Team Dream
