@@ -4,6 +4,14 @@ Repoägare: Team Dream
 
 ---
 
+- [ ] Chromatic
+- [x] Docusaurus
+- [x] Storybook
+- [x] Component Lib
+- [ ] CI/CD
+- [ ] Version control and changelogs
+- [x] Nx Monorepo
+
 ## Start Documentation
 
 To start the Documentation run `nx serve docs`
