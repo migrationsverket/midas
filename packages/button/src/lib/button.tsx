@@ -1,4 +1,4 @@
-import { Button as AriaButton, ButtonProps } from 'react-aria-components'
+import { Button as AriaButton, ButtonProps } from 'react-aria-components';
 import styled from 'styled-components';
 
 const StyledButton = styled(AriaButton)`
@@ -26,14 +26,12 @@ const StyledButton = styled(AriaButton)`
     outline-offset: -1px;
   }
 
-  &[data-disabled]{
+  &[data-disabled] {
     border-color: gray;
     color: dimgray;
   }
 `;
 
 export const Button = (props: ButtonProps) => {
-  return (
-    <StyledButton {...props}/>
-  );
-}
+  return <StyledButton {...props} />;
+};
