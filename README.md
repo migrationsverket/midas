@@ -4,6 +4,10 @@ Repoägare: Team Dream
 
 ---
 
+## Start Documentation
+
+To start the Documentation run `nx serve docs`
+
 ## Start Storybook instance
 
 To start the Storybook instance run `nx storybook storybook-host`

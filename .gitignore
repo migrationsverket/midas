@@ -137,3 +137,7 @@ dist
 
 
 storybook-static
+
+# Generated Docusaurus files
+.docusaurus/
+.cache-loader/

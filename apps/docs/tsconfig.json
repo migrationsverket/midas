@@ -1,0 +1,18 @@
+{
+  "extends": ["../../tsconfig.base.json", "@docusaurus/tsconfig"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["DOM"],
+    "noEmit": true,
+    "noImplicitAny": false,
+    "types": [
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@docusaurus/theme-classic"
+    ],
+    "baseUrl": "."
+  }
+}
