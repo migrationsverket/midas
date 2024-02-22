@@ -1,4 +1,4 @@
-![Component build](https://github.com/migrationsverket/midas/actions/workflows/components-ci.yml/badge.svg)![Docs](https://github.com/migrationsverket/midas/actions/workflows/documentation-ci.yml/badge.svg)
+![Component build](https://github.com/migrationsverket/midas/actions/workflows/components-ci.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/documentation-ci.yml/badge.svg)
 
 # Midas
 
@@ -14,7 +14,7 @@ Repoägare: Team Dream
 - [ ] Version control and changelogs
 - [x] Nx Monorepo
 - [ ] NPM publish
-- [ ] Conventional commits
+- [x] Conventional commits
 
 ## Start Documentation
 
