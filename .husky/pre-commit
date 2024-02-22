@@ -1,1 +1,1 @@
-npx nx affected:test
+npx nx affected -t format
