@@ -2,9 +2,12 @@
 
 # Midas
 
-Repoägare: Team Dream
+<img src="./apps/docs/static/img/MIDAS_crown.png" align="right">
 
----
+> [!NOTE]
+> Migrationsverkets Designsystem Github source edition
+> 
+> @dreamteam [mattermost](https://itverktyg.migrationsverket.se/mattermost/migrationsverket/channels/designsystem-support)
 
 - [ ] Chromatic
 - [x] Docusaurus
@@ -15,6 +18,7 @@ Repoägare: Team Dream
 - [x] Nx Monorepo
 - [ ] NPM publish
 - [x] Conventional commits
+- [ ] Figma tokens
 
 ## Start Documentation
 
