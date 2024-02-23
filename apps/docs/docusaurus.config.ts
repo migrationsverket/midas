@@ -26,13 +26,13 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/migrationsverket/midas/tree/main/apps/docs/docs',
+          editUrl: 'https://github.com/migrationsverket/midas/edit/main/apps/docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/migrationsverket/midas/tree/main/apps/docs/blog',
+            'https://github.com/migrationsverket/midas/edit/main/apps/docs/blog',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
