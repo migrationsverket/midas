@@ -1,0 +1,16 @@
+{
+  "name": "remix",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/remix",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "remix:build",
+        "port": 4200
+      }
+    }
+  }
+}
