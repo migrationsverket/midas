@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '@midas/button';
+import { Button } from '@mvds/button';
 const StyledApp = styled.div`
   // Your style here
 `;

@@ -1,0 +1,49 @@
+---
+title: {{ properName }}
+sidebar_label: {{ properName }}
+tags: []
+description: Kort beskrivning av {{ properName }}
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/{{ componentName }}.json'
+
+<ComponentHeader name={'{{ componentName }}'} info={Info}/>
+
+# {{ properName }}
+
+_Kort beskrivning av {{ properName }}_
+
+<div>[lägg in ett litet showcase på {{ componentName }}]</div>
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @mvds/{{ componentName }}
+```
+
+```tsx
+import { {{ properName }} } from '@mvds/{{ componentName }}'
+```
+
+## Exempel
+
+---
+
+```tsx
+```
+
+## Props
+---
+<PropTable name={'{{ properName }}'}/>
+
+### {{ properName }}
+
+## Riktlinjer
+
+---
+
+### När ska du använda {{ properName }} ?
+
+### Så här använder du {{ properName }}

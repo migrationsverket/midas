@@ -1,0 +1,124 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@font-face {
+  font-family: 'Inter Regular';
+  src: url('../../static/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../../static/FiraCode-Regular.ttf') format('truetype');
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #c54c56;
+  --ifm-color-primary-dark: #be3345;
+  --ifm-color-primary-darker: #b90835;
+  --ifm-color-primary-darkest: #8b1327;
+  --ifm-color-primary-light: #cc6467;
+  --ifm-color-primary-lighter: #d37a7a;
+  --ifm-color-primary-lightest: #d9918e;
+  --ifm-code-font-size: 1em;
+  --ifm-font-family-monospace: 'Fira Code';
+  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
+  --ifm-font-family-base: 'Inter Regular';
+  --ifm-font-size-base: 1em;
+  --ifm-hr-height: 0.1em;
+}
+
+table {
+  table-layout: fixed;
+}
+
+th {
+  border: 1px solid black;
+  font-size: small;
+}
+
+td {
+  font-size: small;
+  border: 1px solid black;
+  word-wrap: anywhere;
+}
+
+/**
+this is a bit ad hoc, will fix this later
+*/
+
+.code-card {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
+}
+
+.code-card > form {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.code-card > form > span > button {
+  margin-right: 5px;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4289ad;
+  --ifm-color-primary-dark: #2e7ca5;
+  --ifm-color-primary-darker: #25607f;
+  --ifm-color-primary-darkest: #143c50;
+  --ifm-color-primary-light: #5897b8;
+  --ifm-color-primary-lighter: #6ca3c0;
+  --ifm-color-primary-lightest: #82b0c9;
+  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 30%);
+
+  .code-card {
+    background-color: rgb(203 203 203 / 30%);
+    border-left: 4px solid #82b0c9;
+  }
+}
+
+.token-table {
+  table-layout: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  th {
+    font-size: small;
+    text-align: start;
+  }
+
+  tr {
+    display: flex;
+    flex: 2 1 auto;
+  }
+
+  td {
+    font-size: small;
+    word-wrap: anywhere;
+  }
+
+  tbody {
+    width: 100%;
+  }
+}
+
+@media (width >= 40rem) {
+  .cards-item {
+    width: 50%;
+  }
+}
+
+@media (width >= 56rem) {
+  .cards-item {
+    width: 33.3333%;
+  }
+}

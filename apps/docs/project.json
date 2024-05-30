@@ -8,12 +8,19 @@
       "executor": "@nx-plus/docusaurus:browser",
       "options": {
         "outputPath": "dist/apps/docs"
-      }
+      },
+      "dependsOn": []
     },
     "serve": {
       "executor": "@nx-plus/docusaurus:dev-server",
       "options": {
         "port": 3000
+      }
+    },
+    "generate-info": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx nx affected --target info"
       }
     }
   },

@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@midas/button": ["packages/button/src/index.ts"]
+      "@mvds/button": ["packages/button/src/index.ts"],
+      "@mvds/theme": ["packages/theme/src/index.ts"]
+
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,63 @@
+{
+  "_id": "@mvds/button@1.1.1",
+  "dist-tags": {
+    "latest": "1.1.1"
+  },
+  "versions": [
+    "0.2.0",
+    "0.2.2",
+    "0.2.11",
+    "0.3.0",
+    "0.3.2",
+    "0.5.8",
+    "0.5.15",
+    "0.5.25",
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "name": "@mvds/button",
+  "_rev": "17",
+  "description": "```bash npm i @mvds/button ```",
+  "time": {
+    "created": "2023-12-08T19:59:47.705Z",
+    "modified": "2024-04-23T17:52:41.744Z",
+    "0.2.0": "2023-12-08T19:59:47.705Z",
+    "0.2.2": "2024-01-23T16:33:45.267Z",
+    "0.2.11": "2024-01-31T21:17:58.406Z",
+    "0.3.0": "2024-02-04T08:00:15.956Z",
+    "0.3.2": "2024-02-13T19:49:00.227Z",
+    "0.5.8": "2024-02-28T11:24:22.906Z",
+    "0.5.15": "2024-02-29T09:29:41.705Z",
+    "0.5.25": "2024-04-10T08:53:09.704Z",
+    "1.0.0": "2024-04-10T13:10:25.632Z",
+    "1.0.1": "2024-04-12T12:04:35.463Z",
+    "1.0.2": "2024-04-17T19:20:51.217Z",
+    "1.1.0": "2024-04-23T15:35:48.330Z",
+    "1.1.1": "2024-04-23T17:52:41.744Z"
+  },
+  "_contentLength": 0,
+  "version": "1.1.1",
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@mvds/theme": "^0.6.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/migrationsvecket/midas/packages/"
+  },
+  "readme": "# button\n\n```bash\nnpm i @mvds/button\n```\n\n```tsx\nimport { UiButton } from '@mvds/button';\n\n<UiButton>Click</UiButton>\n\n```\n\n",
+  "readmeFilename": "README.md",
+  "types": "./index.d.ts",
+  "_nodeVersion": "20.11.0",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-Bc1pmkNtCXvW54SJUB+0IB1RQNixqk1WZ5gUe2BwXMsR/22QAGGVajSFlo/2mI34e1Yzz0UFnnnJWAvbNz/3SQ==",
+    "shasum": "ce2c651319c08f74f16902062f4dd3bc6b2aaf51",
+    "tarball": "https://github.com/migrationsvecket/midas/packages/@mvds/button/-/button-1.1.1.tgz"
+  }
+}

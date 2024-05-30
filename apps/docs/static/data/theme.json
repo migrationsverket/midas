@@ -1,0 +1,73 @@
+{
+  "_id": "@mvds/theme@0.7.0",
+  "dist-tags": {
+    "latest": "0.7.0"
+  },
+  "versions": [
+    "0.2.0",
+    "0.2.2",
+    "0.2.11",
+    "0.3.7",
+    "0.3.8",
+    "0.4.0",
+    "0.5.6",
+    "0.5.11",
+    "0.5.13",
+    "0.5.23",
+    "0.5.24",
+    "0.6.0",
+    "0.6.1",
+    "0.6.2",
+    "0.7.0"
+  ],
+  "name": "@mvds/theme",
+  "_rev": "21",
+  "description": "Theme file (stitches config)",
+  "time": {
+    "created": "2024-02-28T20:03:14.484Z",
+    "modified": "2024-05-23T08:10:47.602Z",
+    "0.2.0": "2023-12-08T20:00:53.968Z",
+    "0.2.2": "2024-01-23T16:33:45.208Z",
+    "0.2.11": "2024-01-31T21:17:58.330Z",
+    "0.3.7": "2024-02-02T22:54:07.314Z",
+    "0.3.8": "2024-02-04T08:00:15.869Z",
+    "0.4.0": "2024-02-13T19:49:00.136Z",
+    "0.5.6": "2024-02-28T11:24:22.852Z",
+    "0.5.11": "2024-02-28T20:03:14.484Z",
+    "0.5.13": "2024-02-29T09:29:41.648Z",
+    "0.5.23": "2024-04-10T08:53:09.600Z",
+    "0.5.24": "2024-04-17T19:20:44.619Z",
+    "0.6.0": "2024-04-23T15:35:37.027Z",
+    "0.6.1": "2024-04-23T17:52:30.448Z",
+    "0.6.2": "2024-05-02T08:24:06.406Z",
+    "0.7.0": "2024-05-23T08:10:47.602Z"
+  },
+  "users": {},
+  "_contentLength": 0,
+  "version": "0.7.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/migrationsvecket/midas/packages/"
+  },
+  "readme": "# theme\n\nTheme file (stitches config)\n",
+  "readmeFilename": "README.md",
+  "_nodeVersion": "20.12.2",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-AFdrNTo+azGEPX49kBN+4eEaT4Gvybib6et1V6uFwxoaHzhjPJtRCTHCZn7d4ClG4NJBeT+I7ZpT9G82EQegXA==",
+    "shasum": "5dfc042d1ea6fab30768dcf3186f402258308dde",
+    "tarball": "https://github.com/migrationsvecket/midas/packages/@mvds/theme/-/theme-0.7.0.tgz"
+  }
+}

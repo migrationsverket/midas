@@ -1,0 +1,32 @@
+---
+sidebar_position: 1
+---
+
+# Utvecklare
+
+## Hämta hem komponent
+
+Installera komponenter via `npm install @mvds/[component]`. Komponentbiblioteket ligger på Nexus för närvarande, se till
+att du hämtar via rätt registry om det inte redan är inställt.
+
+```
+// .npmrc
+@mvds:registry=http://nexus.migrationsverket.se/repository/npm/
+
+```
+
+## Importera och använd komponent
+
+Generellt, importera och använd direkt:
+
+```tsx
+import {Component} from '@mvds/component';
+
+<Component/>
+```
+
+För specfika instruktioner, se respektive [komponent](/components)
+
+## Installera temafil
+
+För att få tillgång till designsystemets tokens `npm install @mvds/theme`
