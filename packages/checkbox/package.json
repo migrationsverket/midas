@@ -1,0 +1,23 @@
+{
+  "name": "@mvds/checkbox",
+  "version": "0.3.28",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@mvds/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+  }
+}
