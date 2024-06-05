@@ -8,9 +8,10 @@ import {
   Stories,
   Subtitle,
   Title,
-} from '@storybook/blocks';
-import React from 'react';
-import { customViewports } from './custom-viewports';
+} from '@storybook/blocks'
+import React from 'react'
+import { customViewports } from './custom-viewports'
+import '../theme/src/lib/global.css'
 
 export const autoDocsTemplate = () => (
   <>
@@ -21,7 +22,7 @@ export const autoDocsTemplate = () => (
     <Controls />
     <Stories />
   </>
-);
+)
 /** @type { import('@storybook/react').Preview } */
 const backup_preview = {
   parameters: {
@@ -46,6 +47,6 @@ const backup_preview = {
       viewports: customViewports,
     },
   },
-};
+}
 
-export default backup_preview;
+export default backup_preview

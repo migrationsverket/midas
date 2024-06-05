@@ -1,0 +1,75 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint from tokens;
+
+.button {
+  font-family: display;
+  font-size: desktopSize;
+  font-weight: mediumWeight;
+  min-height: 48px;
+  padding: 0.8125rem 1.9375rem;
+  background-color: blue150;
+  border: solid 0.0625rem transparent;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  outline: none;
+}
+
+.button:hover {
+  background-color: blue130;
+}
+
+.button[data-pressed] {
+  background-color: blue90;
+  outline: none;
+}
+
+.button[data-focus-visible] {
+  outline: 0.125rem solid black;
+  outline-offset: 0.125rem;
+}
+
+.primary[data-disabled] {
+  color: gray50;
+  pointer-events: none;
+  background-color: gray10;
+}
+
+.secondary {
+  color: blue150;
+  background-color: white;
+  border-color: blue150;
+  opacity: 1;
+}
+
+.secondary:hover {
+  background-color: gray10;
+}
+
+.secondary[data-disabled] {
+  color: gray50;
+  pointer-events: none;
+  background-color: white;
+  border-color: gray50;
+}
+
+.secondary[data-pressed] {
+  background-color: gray20;
+  border-color: blue150;
+}
+
+.secondary[data-focus-visible] {
+  outline: 2px solid blue150;
+  outline-offset: 2px;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+@media smBreakpoint {
+  /* Adjust the media query according to your breakpoints */
+  .button {
+    width: 100%;
+  }
+}

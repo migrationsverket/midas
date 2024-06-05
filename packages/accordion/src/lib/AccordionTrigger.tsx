@@ -1,46 +1,31 @@
-import React, { forwardRef } from 'react';
-import * as RadixAccordion from '@radix-ui/react-accordion';
-import { styled } from '@mvds/theme';
-import { ChevronDownIcon } from './ChevronDown.icon';
+import React, { forwardRef } from 'react'
+import * as RadixAccordion from '@radix-ui/react-accordion'
+import styles from './Accordion.module.css'
+import { ChevronDown } from 'lucide-react'
+import clsx from 'clsx'
+import { useAccordionTag } from './AccordionTagContext' // Adjust the path as necessary
 
-const StyledHeader = styled(RadixAccordion.Header, {
-  margin: '0',
-});
+type AccordionTriggerProps = RadixAccordion.AccordionTriggerProps
+
 export const AccordionTrigger = forwardRef<
   HTMLButtonElement,
-  RadixAccordion.AccordionTriggerProps
->(({ children, ...props }, forwardedRef) => (
-  <StyledHeader asChild>
-    <StyledTrigger {...props} ref={forwardedRef}>
-      {children}
-      <StyledIcon aria-hidden />
-    </StyledTrigger>
-  </StyledHeader>
-));
-AccordionTrigger.displayName = 'AccordionTrigger';
+  AccordionTriggerProps
+>(({ children, ...props }, forwardedRef) => {
+  const Tag = useAccordionTag()
 
-const StyledTrigger = styled(RadixAccordion.Trigger, {
-  backgroundColor: 'transparent',
-  border: 0,
-  padding: '1.5rem',
-  cursor: 'pointer',
-  fontSize: '1.25rem',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  width: '100%',
-  gap: '10px',
-
-  svg: {
-    transition: `transform $transitionNormal cubic-bezier(0.87, 0, 0.13, 1)`,
-  },
-
-  '&[data-state="open"] svg': {
-    transform: 'rotate(180deg)',
-  },
-});
-const StyledIcon = styled(ChevronDownIcon, {
-  width: '1.25rem',
-  height: '1.25rem',
-  color: '$input-text',
-});
+  return (
+    <RadixAccordion.Header
+      className={styles.accordionHeader}
+      asChild
+    >
+      <RadixAccordion.Trigger
+        ref={forwardedRef}
+        className={clsx(styles.accordionTrigger, props.className)}
+        {...props}
+      >
+        <Tag className={styles.accordionTriggerText}>{children}</Tag>
+        <ChevronDown />
+      </RadixAccordion.Trigger>
+    </RadixAccordion.Header>
+  )
+})

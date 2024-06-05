@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Checkbox } from './Checkbox';
-import { CheckboxProps } from 'react-aria-components';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Checkbox } from './Checkbox'
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -25,11 +24,21 @@ const meta: Meta<typeof Checkbox> = {
     isRequired: { type: 'boolean' },
     isReadOnly: { type: 'boolean' },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Checkbox>;
+export default meta
+type Story = StoryObj<typeof Checkbox>
 
-export const Example = (args: CheckboxProps) => (
-  <Checkbox {...args}>Unsubscribe</Checkbox>
-);
+export const Example: Story = {
+  args: {},
+  render: ({ ...args }) => {
+    return (
+      <Checkbox
+        value="unsubscribe"
+        {...args}
+      >
+        Unsubscribe
+      </Checkbox>
+    )
+  },
+}

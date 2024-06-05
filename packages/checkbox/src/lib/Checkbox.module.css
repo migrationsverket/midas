@@ -1,0 +1,177 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, signalRed130, white, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint from tokens;
+
+.checkbox {
+  font-family: display;
+  font-weight: regularWeight;
+
+  --borderColorPressed: #b1b0b0;
+  --focusRingColor: black;
+  --selectedColor: primaryBackground;
+  --selectedPressed: blue80;
+  --selectedHover: blue130;
+  --invalidColor: signalRed100;
+  --invalidPressed: signalRed130;
+  --checkmarkColor: white;
+
+  gap: 0.571rem;
+  align-items: center;
+
+  forced-color-adjust: none;
+  display: flex;
+}
+
+.checkbox:hover div {
+  border-color: gray100;
+}
+
+.checkbox[data-pressed] div {
+  border-color: var(--borderColorPressed);
+}
+
+.checkbox[data-focus-visible] div {
+  outline: 2px solid var(--focusRingColor);
+  outline-offset: 2px;
+}
+
+.checkbox[data-selected] div,
+.checkbox[data-indeterminate] div {
+  background: var(--selectedColor);
+  border-color: var(--selectedColor);
+}
+
+.checkbox[data-selected]:hover div,
+.checkbox[data-indeterminate]:hover div {
+  background: var(--selectedHover);
+  border-color: var(--selectedHover);
+}
+
+.checkbox[data-selected][data-pressed] div,
+.checkbox[data-indeterminate][data-pressed] div {
+  border-color: blue100;
+  background: blue100;
+}
+
+.checkbox[data-selected] svg,
+.checkbox[data-indeterminate] svg {
+  stroke-dashoffset: 44;
+}
+
+.checkbox[data-indeterminate] svg {
+  stroke: none;
+  fill: var(--checkmarkColor);
+}
+
+.checkbox[data-invalid] div {
+  border: 2px solid var(--invalidColor);
+}
+
+.checkbox[data-invalid]:hover div {
+  opacity: 0.5;
+  border-color: var(--invalidColor);
+}
+
+.checkbox[data-invalid][data-pressed] div {
+  border-color: var(--invalidPressed);
+}
+
+.checkbox[data-disabled] {
+  color: gray50;
+}
+
+.checkbox[data-disabled] div {
+  pointer-events: none;
+  border: 1px solid gray20;
+  background: gray20;
+}
+
+.checkboxInner {
+  width: 1.125rem;
+  height: 1.125rem;
+  box-sizing: border-box;
+  border: 1px solid black;
+  transition: all 200ms;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  forced-color-adjust: none;
+  display: flex;
+}
+
+.checkboxInner svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: var(--checkmarkColor, white);
+  stroke-width: 2px;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+  transition: all 200ms;
+}
+
+.checkboxGroup {
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  border-left: 3px solid transparent;
+  padding-left: 1rem;
+  min-width: 150px;
+}
+
+.checkboxGroupLabel {
+  font-weight: mediumWeight;
+  font-size: 1.125rem;
+}
+
+.checkboxGroup span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.checkboxGroup[data-invalid] {
+  border-left-color: signalRed100;
+}
+
+.checkboxGroup[data-disabled] {
+  color: gray50;
+}
+
+.checkboxGroup[data-invalid] .fieldError {
+  color: signalRed100;
+}
+
+.field .fieldError {
+  color: signalRed100;
+}
+
+@media smBreakpoint {
+  .checkbox {
+    border: 1px solid gray40;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .checkbox[data-focus-visible] div {
+    outline: none;
+  }
+  .checkbox[data-invalid] div {
+    border: 1px solid black;
+  }
+
+  .checkboxGroup {
+    padding-left: 1rem;
+    padding-right: 10%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .checkboxGroup[data-invalid] {
+    background-color: signalRed10;
+    border-left: none;
+  }
+}

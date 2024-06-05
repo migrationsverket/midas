@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Accordion } from './Accordion';
-import { AccordionContent } from './AccordionContent';
-import { AccordionTrigger } from './AccordionTrigger';
-import { AccordionItem } from './AccordionItem';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Accordion } from './Accordion'
+import { AccordionContent } from './AccordionContent'
+import { AccordionTrigger } from './AccordionTrigger'
+import { AccordionItem } from './AccordionItem'
 
-const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra'];
+const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
@@ -23,11 +23,14 @@ const meta: Meta<typeof Accordion> = {
       options: [true, false],
       control: { type: 'radio' },
     },
+    headingTag: {
+      description: 'Choose HTML element to wrap the title on each item',
+    },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Accordion>;
+export default meta
+type Story = StoryObj<typeof Accordion>
 
 const AccordionTemplate: Story = {
   args: {
@@ -35,28 +38,35 @@ const AccordionTemplate: Story = {
   },
   render: ({ ...args }) => {
     return (
-      <Accordion {...args}>
+      <Accordion
+        {...args}
+        headingTag="h3"
+      >
         {ITEMS.map((item) => (
-          <AccordionItem value={item}>
+          <AccordionItem
+            key={item}
+            value={item}
+          >
             <AccordionTrigger>Trigger {item}</AccordionTrigger>
             <AccordionContent>Content {item}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
-    );
+    )
   },
-};
+}
 
-export const MultipleItems: Story = {
+export const OneItemOpenedAtTheTime: Story = {
+  ...AccordionTemplate,
+  args: {
+    type: 'single',
+    collapsible: true,
+  },
+}
+
+export const MultipleItemOpenedAtTheSameTime: Story = {
   ...AccordionTemplate,
   args: {
     type: 'multiple',
   },
-};
-
-export const TypeSingle: Story = {
-  ...AccordionTemplate,
-  args: {
-    type: 'single',
-  },
-};
+}

@@ -1,6 +1,6 @@
-import { Checkbox } from './Checkbox';
-import { Meta, StoryObj } from '@storybook/react';
-import { CheckboxGroup } from './CheckboxGroup';
+import { Checkbox } from './Checkbox'
+import { Meta, StoryObj } from '@storybook/react'
+import { CheckboxGroup } from './CheckboxGroup'
 
 const meta: Meta<typeof CheckboxGroup> = {
   title: 'CheckboxGroup',
@@ -22,13 +22,13 @@ const meta: Meta<typeof CheckboxGroup> = {
     errorMessage: { type: 'string' },
   },
   tags: ['autodocs'],
-};
+}
 
-const ITEMS = ['Banan', 'Apple', 'Mango'];
+const ITEMS = ['Banan', 'Apple', 'Mango']
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof CheckboxGroup>;
+type Story = StoryObj<typeof CheckboxGroup>
 
 const CheckboxGroupTemplate: Story = {
   args: {},
@@ -36,12 +36,17 @@ const CheckboxGroupTemplate: Story = {
     return (
       <CheckboxGroup {...args}>
         {ITEMS.map((item: string) => (
-          <Checkbox value={item}>{item}</Checkbox>
+          <Checkbox
+            value={item}
+            key={item}
+          >
+            {item}
+          </Checkbox>
         ))}
       </CheckboxGroup>
-    );
+    )
   },
-};
+}
 
 export const Example: Story = {
   ...CheckboxGroupTemplate,
@@ -50,4 +55,4 @@ export const Example: Story = {
     description: 'Beskrivning',
     errorMessage: 'här gick det snett',
   },
-};
+}
