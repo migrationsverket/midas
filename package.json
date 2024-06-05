@@ -10,6 +10,7 @@
   "dependencies": {
     "@docusaurus/core": "3.1.1",
     "@docusaurus/preset-classic": "3.1.1",
+    "@docusaurus/remark-plugin-npm2yarn": "^3.4.0",
     "@mdx-js/react": "^3.0.1",
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
