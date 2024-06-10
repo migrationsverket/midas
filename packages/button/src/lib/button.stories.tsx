@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './button'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -20,17 +20,17 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Button>;
+export default meta
+type Story = StoryObj<typeof Button>
 
 export const Primary = {
   args: {
     children: 'Button',
   },
   parameters: {},
-};
+}
 
 export const Secondary: Story = {
   ...Primary,
@@ -38,7 +38,20 @@ export const Secondary: Story = {
     ...Primary.args,
     variant: 'secondary',
   },
-};
+}
+
+export const DisabledButton: Story = {
+  args: { variant: 'primary' },
+  render: (args, context) => (
+    <Button
+      {...args}
+      isDisabled
+    >
+      Button
+    </Button>
+  ),
+}
+
 export const SecondaryDisabled: Story = {
   ...Primary,
   args: {
@@ -46,13 +59,12 @@ export const SecondaryDisabled: Story = {
     variant: 'secondary',
     isDisabled: true,
   },
-};
+}
 
-export const DisabledButton: Story = {
-  args: { variant: 'primary' },
-  render: (args, context) => (
-    <Button {...args} isDisabled>
-      Button
-    </Button>
-  ),
-};
+export const Fullwidth = {
+  args: {
+    children: 'Button',
+    isFullwidth: true,
+  },
+  parameters: {},
+}

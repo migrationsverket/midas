@@ -1,0 +1,95 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, gray50, gray20, black, normalTransition, input-text, regularWeight from tokens;
+
+.accordionItem {
+  font-family: display;
+  border-style: solid;
+  border-color: gray50;
+  border-width: 1px 0 0 0;
+  overflow: hidden;
+}
+
+.accordionItem:last-child {
+  border-width: 1px 0 1px 0;
+}
+
+.accordionItem:hover {
+  background-color: gray20;
+}
+
+.accordionContent {
+  padding: 0 1.5rem;
+  overflow: hidden;
+}
+
+.accordionContent[data-state='open'] {
+  animation: slideDown normalTransition cubic-bezier(0.87, 0, 0.13, 1);
+  margin-bottom: 1.5rem;
+}
+
+.accordionContent[data-state='closed'] {
+  animation: slideUp normalTransition cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+    margin-bottom: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+    margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+    margin-bottom: 1.5rem;
+  }
+  to {
+    height: 0;
+    margin: 0;
+  }
+}
+
+.accordionHeader {
+  margin: 0;
+}
+
+.accordionTrigger {
+  background-color: transparent;
+  border: 0;
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.accordionTriggerText {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: regularWeight;
+}
+
+.accordionTrigger:focus-visible {
+  outline: black auto 2px;
+}
+
+.accordionTrigger svg {
+  transition: transform normalTransition cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.accordionTrigger[data-state='open'] svg {
+  transform: rotate(180deg);
+}
+
+.accordionIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: input-text;
+}

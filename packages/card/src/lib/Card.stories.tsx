@@ -1,18 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from './Card';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Card } from './Card'
 const testImage = {
   source:
     'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSRA1VvVWshDqdk-IbClyNwWoUAjMnFQ5KQLb8eH0hu4gCCvfvqMEcQqOF-CTro2maW',
   description: 'Lizard',
-};
+}
 
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Card',
   tags: ['autodocs'],
-};
-export default meta;
-type Story = StoryObj<typeof Card>;
+}
+export default meta
+type Story = StoryObj<typeof Card>
 
 export const Example: Story = {
   args: {
@@ -22,7 +22,8 @@ export const Example: Story = {
     image: testImage,
     background: true,
     onPress: () => {
-      alert('Klick');
+      alert('Klick')
     },
+    headingTag: 'h2',
   },
-};
+}

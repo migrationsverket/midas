@@ -1,7 +1,7 @@
-export * from '@mvds/button';
-//export * from '@mvds/checkbox';
+export * from '@mvds/button'
+export * from '@mvds/checkbox'
 //export * from '@mvds/select'
-export * from '@mvds/theme';
+// export * from '@mvds/theme';
 //export * from '@mvds/radio';
 //export * from '@mvds/logo';
 //export * from '@mvds/card';
