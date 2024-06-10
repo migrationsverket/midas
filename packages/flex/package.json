@@ -1,0 +1,19 @@
+{
+  "name": "@mvds/flex",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@mvds/theme": "0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  }
+}
