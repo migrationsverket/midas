@@ -1,0 +1,16 @@
+{
+  "name": "@mvds/info-banner",
+  "version": "0.1.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@mvds/theme": "^0.5.23"
+  }
+}
