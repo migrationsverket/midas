@@ -1,0 +1,35 @@
+{
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "version": "independent",
+  "command": {
+    "bootstrap": {},
+    "publish": {
+      "directory": "{workspaceRoot}/dist/{projectRoot}/",
+      "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+    },
+    "version": {
+      "since": "develop",
+      "npmClientArgs": [
+        "--legacy-peer-deps",
+        "--@mvds:registry=http://nexus.migrationsverket.se/repository/npm-internal/"
+      ],
+      "changelog": true,
+      "commitHooks": false,
+      "message": "chore(release): publish",
+      "conventionalCommits": true,
+      "ignoreChanges": [
+        "**/stories/**",
+        "**/tests/**",
+        "*.stories.ts",
+        "*.test.ts",
+        "*.spec.ts",
+        "**/__snapshots__/**",
+        "docs/**/*",
+        ".storybook/**/*",
+        "scripts/**/*",
+        ".github/**/*"
+      ]
+    }
+  },
+  "packages": ["packages/*"]
+}
