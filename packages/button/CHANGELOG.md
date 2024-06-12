@@ -1,3 +1,17 @@
+## 0.6.0 (2024-06-12)
+
+
+### 🚀 Features
+
+- **button:** add react aria button component
+
+- **storybook:** add boilerplate storybook instance
+
+
+### ❤️  Thank You
+
+- pixelrickdreamer
+
 ## 1.1.1 (2024-04-23)
 
 This was a version bump only for button to align it with other projects, there were no code changes.
