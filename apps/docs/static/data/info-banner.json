@@ -1,0 +1,57 @@
+{
+  "_id": "@mvds/info-banner@1.1.0",
+  "dist-tags": {
+    "next": "0.3.8",
+    "latest": "1.1.0"
+  },
+  "versions": [
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "0.2.0",
+    "0.2.1",
+    "0.3.8",
+    "1.0.0",
+    "1.0.1",
+    "1.1.0"
+  ],
+  "name": "@mvds/info-banner",
+  "_rev": "9",
+  "description": "``` npm install @mvds/info-banner ```",
+  "time": {
+    "0.3.8": "2024-04-09T07:56:58.398Z",
+    "created": "2024-04-09T07:56:58.398Z",
+    "modified": "2024-05-27T09:07:18.077Z",
+    "0.1.0": "2024-04-09T13:00:23.476Z",
+    "0.1.1": "2024-04-10T08:53:09.699Z",
+    "0.1.2": "2024-04-17T19:21:15.541Z",
+    "0.2.0": "2024-04-23T15:36:06.938Z",
+    "0.2.1": "2024-04-23T17:53:00.153Z",
+    "1.0.0": "2024-05-02T08:22:54.207Z",
+    "1.0.1": "2024-05-17T12:30:02.325Z",
+    "1.1.0": "2024-05-27T09:07:18.077Z"
+  },
+  "_contentLength": 0,
+  "version": "1.1.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@mvds/theme": "^0.5.23"
+  },
+  "readme": "ERROR: No README data found!",
+  "gitHead": "6f5654809ab0499df9bbf55a40f60c7ca628c1d6",
+  "_nodeVersion": "20.11.0",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-wkD36qQi7wT8q0MzmjsnYLgAByhx6HFGazk2w+VnDJWXwisxRO67SnEBZ7TQlzOOG4z0gXAlXqLkilgO+2Kenw==",
+    "shasum": "7c8c251bdb3aacf7832c7dcfcaaeed1027363046",
+    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/info-banner/-/info-banner-1.1.0.tgz"
+  }
+}

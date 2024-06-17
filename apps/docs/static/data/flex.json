@@ -1,0 +1,43 @@
+{
+  "_id": "@mvds/flex@0.1.0",
+  "name": "@mvds/flex",
+  "dist-tags": {
+    "latest": "0.1.0"
+  },
+  "versions": ["0.1.0"],
+  "_rev": "1",
+  "time": {
+    "created": "2024-05-23T08:11:11.553Z",
+    "modified": "2024-05-23T08:11:11.553Z",
+    "0.1.0": "2024-05-23T08:11:11.553Z"
+  },
+  "_contentLength": 0,
+  "version": "0.1.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "dependencies": {
+    "@mvds/theme": "0.7.0",
+    "@mvds/ui": "0.5.24",
+    "@nx/vite": "18.2.4",
+    "@stitches/react": "^1.2.8",
+    "@vitejs/plugin-react": "4.2.1",
+    "react": "18.2.0",
+    "vite": "5.0.12",
+    "vite-plugin-dts": "~3.8.1"
+  },
+  "readme": "ERROR: No README data found!",
+  "gitHead": "11fbc9096ab419b68c77d83d978fd7e69f34dd4e",
+  "_nodeVersion": "20.12.2",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-n7vacvo1k69l7ZuQxxuBEvbbl/ov6KBFPGPkgV6LfhqpHGhlGnPzvdvag1lJl9HKFJomYTvc7Is9pXioYyl+iQ==",
+    "shasum": "a6e2ec0382627dff7d59afef0a8924fe34d39206",
+    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/flex/-/flex-0.1.0.tgz"
+  }
+}
