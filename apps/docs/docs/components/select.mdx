@@ -1,0 +1,43 @@
+---
+title: Select
+sidebar_label: Select (Väljare)
+tags: [form]
+---
+import {Select, Item} from '../../../../packages/select/src'
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/select.json'
+
+<ComponentHeader name={'select'} info={Info} friendlyName={'Väljare'}/>
+
+# Introduktion
+
+En väljare visar en hopfällbar lista med alternativ och låter en användare välja ett av dem.
+
+<Select label={'Frukt'} description={'Välj en frukt'}><Item>Apelsin</Item><Item>Banan</Item><Item>Mango</Item></Select>
+
+## Headless referens
+
+Select bygger på [React Aria Select](https://react-spectrum.adobe.com/react-aria/Select.html)
+
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @mvds/select
+```
+
+```tsx
+import { Select } from '@mvds/select'
+```
+
+## Props
+---
+<PropTable name={'Select'}/>
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+## Riktlinjer
+TBD

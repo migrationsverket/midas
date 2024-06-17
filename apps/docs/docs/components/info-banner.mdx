@@ -1,0 +1,57 @@
+---
+title: InfoBanner
+sidebar_label: InfoBanner (informationsmeddelande)
+description: Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { InfoBanner } from "../../../../packages/info-banner/src";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/info-banner.json'
+
+<ComponentHeader name={'info-banner'} info={Info} friendlyName={'informationsmeddelande'}/>
+
+# Introduktion
+
+informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
+<InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @mvds/info-banner
+```
+
+```tsx
+import { InfoBanner } from '@mvds/info-banner'
+```
+
+## Exempel
+
+---
+<div style={{display: 'flex', flexDirection: 'column', gap: '3px'}}>
+  <InfoBanner type={'info'} title={'Information'} message={'Message'}/>
+  <InfoBanner type={'important'} title={'Important'} message={'Message'}/>
+  <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
+  <InfoBanner type={'success'} title={'Success'} message={'Message'}/>
+</div>
+
+
+```tsx
+import {InfoBanner} from "@mvds/info-banner";
+<InfoBanner type={'info'} title={'Information'} message={'Message'}/>
+<InfoBanner type={'important'} title={'Important'} message={'Message'}/>
+<InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
+<InfoBanner type={'success'} title={'Success'} message={'Message'}/>
+```
+
+## Props
+---
+<PropTable name={'InfoBanner'}/>
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+## Riktlinjer
+TBD

@@ -1,0 +1,58 @@
+---
+title: Logo
+sidebar_label: Logo (Logotyp)
+description: Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet
+---
+
+import { Logo } from '../../../../packages/logo/src';
+import { PropTable } from '@site/src/components/propsTable';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/logo.json'
+
+<ComponentHeader name={'logo'} info={Info} friendlyName={'Logotyp'}/>
+
+
+# Introduktion
+
+På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @mvds/logo
+```
+
+```tsx
+import { Logo } from '@mvds/logo';
+```
+
+I de situationer där det inte funkar med React så kan du [ladda ner logotypen som SVG här (komprimerad fil)](/img/logo/Mig_logo_SVG.zip)
+
+## Exempel
+
+---
+
+<Logo />
+<Logo background />
+<Logo dark />
+<Logo dark background />
+<Logo size={'small'} />
+
+```tsx
+<Logo/>
+<Logo background/>
+<Logo dark/>
+<Logo dark background/>
+<Logo size={'small'}/>
+```
+
+## Props
+
+<PropTable name={'Logo'} />
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+## Riktlinjer
+TBD
