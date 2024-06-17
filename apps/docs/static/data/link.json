@@ -1,0 +1,56 @@
+{
+  "_id": "@mvds/link@1.1.1",
+  "dist-tags": {
+    "latest": "1.1.1"
+  },
+  "versions": [
+    "0.2.0",
+    "0.2.3",
+    "0.2.5",
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.1.0",
+    "1.1.1"
+  ],
+  "name": "@mvds/link",
+  "_rev": "8",
+  "time": {
+    "created": "2024-04-03T10:13:38.146Z",
+    "modified": "2024-04-23T17:52:54.022Z",
+    "0.2.0": "2024-04-03T10:13:38.146Z",
+    "0.2.3": "2024-04-03T10:28:27.095Z",
+    "0.2.5": "2024-04-10T08:53:09.706Z",
+    "1.0.0": "2024-04-12T10:31:52.120Z",
+    "1.0.1": "2024-04-13T18:29:47.456Z",
+    "1.0.2": "2024-04-17T19:21:09.090Z",
+    "1.1.0": "2024-04-23T15:36:00.738Z",
+    "1.1.1": "2024-04-23T17:52:54.022Z"
+  },
+  "_contentLength": 0,
+  "version": "1.1.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "dependencies": {
+    "@mvds/theme": "^0.6.1",
+    "react-aria-components": "^1.1.0"
+  },
+  "publishConfig": {
+    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "readme": "ERROR: No README data found!",
+  "_nodeVersion": "20.11.0",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-06ouRnxAdl8KvVqwNw+rksP6ras2116xvL6L61RhmsI1K26OZrPYOsFEfEEb9PD2R+meftKocabdFoJmpb8zjg==",
+    "shasum": "327a73eb5911c131fc4659ce9a41226589a14782",
+    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/link/-/link-1.1.1.tgz"
+  }
+}
