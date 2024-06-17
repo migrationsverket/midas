@@ -40,7 +40,7 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
         </div>
         <div style={{ display: 'flex', gap: '3px' }}>
           <a
-            href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+            href={`https://bitbucket.migrationsverket.se:7990/projects/TEAM-DREAM/repos/dream/browse/packages/${name}`}
           >
             <img
               alt="Static Badge"
@@ -61,7 +61,7 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
         </div>
         <div style={{ display: 'flex', gap: '3px' }}>
           <a
-            href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+            href={`https://bitbucket.migrationsverket.se:7990/projects/TEAM-DREAM/repos/dream/browse/packages/${name}`}
             target="_blank"
           >
             <img

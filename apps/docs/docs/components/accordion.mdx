@@ -1,0 +1,98 @@
+---
+title: Accordion (Dragspel)
+tags: [components, menu, accordion]
+description: Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from '../../../../packages/accordion/src';
+
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/accordion.json'
+
+<ComponentHeader name={'accordion'} info={Info} friendlyName={'Dragspel'} />
+
+
+# Introduktion
+
+Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren.
+
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @mvds/accordion
+```
+
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@mvds/accordion';
+```
+
+## Exempel
+
+<div
+  style={{
+    marginBottom: '10px',
+    display: 'flex',
+    columnGap: '10px',
+    alignItems: 'center',
+  }}
+>
+  <Accordion type={'multiple'}>
+    <AccordionItem value={'first'}>
+      <AccordionTrigger>Rubrik</AccordionTrigger>
+      <AccordionContent>
+        Längre text inuti en accordion, det som kallas för content
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value={'second'}>
+      <AccordionTrigger>En annan rubrik</AccordionTrigger>
+      <AccordionContent>Här kan man lägga en text</AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</div>
+
+```tsx
+<Accordion type={'multiple'}>
+  <AccordionItem value={'first'}>
+    <AccordionTrigger>Rubrik</AccordionTrigger>
+    <AccordionContent>
+      Längre text inuti en accordion, det som kallas för content
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value={'second'}>
+    <AccordionTrigger>En annan rubrik</AccordionTrigger>
+    <AccordionContent>Här kan man lägga en text</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Props
+
+### Accordion
+
+<PropTable name={'Accordion'} />
+### AccordionItem
+<PropTable name={'AccordionItem'} />
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+
+## Riktlinjer
+
+---
+
+- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
+

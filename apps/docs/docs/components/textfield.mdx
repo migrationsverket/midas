@@ -1,0 +1,120 @@
+---
+sidebar_label: TextField (Inmatningsfält)
+title: Text Field (Inmatningsfält)
+description: Använd ett textfält när användaren ska fylla i en rad med text.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import { TextField } from '../../../../packages/textfield/src';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/textfield.json'
+import { Grid } from '../../../../packages/grid/src'
+
+<ComponentHeader name={'textfield'} info={Info} friendlyName={'Inmatningsfält'}/>
+
+
+# Introduktion
+
+Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre input används TextArea (Coming soon).
+
+Komponenten bygger på [TextField](https://react-spectrum.adobe.com/react-aria/TextField.html) från [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
+
+
+<TextField name={'nameExample'} label={'Fyll i ditt namn'} description={'För och efternamn'} isRequired/>
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @mvds/textfield
+```
+
+```tsx
+import { TextField } from '@mvds/textfield';
+```
+
+---
+
+### Etikett och beskrivning
+
+Använd `label` för etikett och `description` för valfri extra beskrivning.
+
+<TextField label={'Etikett'} description={'Beskrivning'} name={'example'}/>
+
+```tsx
+<TextField label={'Etikett'} description={'Beskrivning'} />
+```
+
+### Validering
+
+TextField validerar automatiskt på `type` och `isRequired`
+
+<TextField
+  name={'email'}
+  label={'Skriv in din e-post'}
+  description={'Obligatorisk!'}
+  type={'email'}
+/>
+
+```tsx wrap=true
+<TextField
+  label={'Skriv in din e-post'}
+  description={'Obligatorisk!'}
+  isRequired
+  type={'email'}
+/>
+```
+
+Det går också att definiera en egen funktion för validering:
+
+<TextField
+  name={'icecream'}
+  label={'Skriv in "glass"'}
+  validate={(value) => (value === 'glass' ? true : 'Du måste skriva glass!')}
+/>
+
+```tsx
+<TextField
+  label={'Skriv in glass'}
+  validate={(value) => (value === 'glass' ? true : 'Du måste skriva glass!')}
+/>
+```
+
+### Lösenord
+
+Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
+
+<TextField type={'password'} name={'pw'} label={'Skriv in ditt lösenord'} autoComplete={'off'}/>
+
+## Props
+
+---
+
+### TextField
+<PropTable name={'TextField'} />
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+## Riktlinjer
+
+---
+
+
+
+### Mobil
+TBD
+
+### Desktop
+Anpassa längden på inputfältet, tex med [Grid](/components/grid) eller [Flex](/components/flex), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
+
+<Grid>
+    <div style={{ gridColumn: 'span 2' }}>
+          <TextField name={'nameExample'} label={'Postnummer'} /> 
+    </div>
+    <div style={{ gridColumn: 'span 6' }}>
+          <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+    </div>
+</Grid>
+
+     

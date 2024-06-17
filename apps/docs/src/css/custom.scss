@@ -16,13 +16,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #c54c56;
-  --ifm-color-primary-dark: #be3345;
-  --ifm-color-primary-darker: #b90835;
-  --ifm-color-primary-darkest: #8b1327;
-  --ifm-color-primary-light: #cc6467;
-  --ifm-color-primary-lighter: #d37a7a;
-  --ifm-color-primary-lightest: #d9918e;
+  --ifm-color-primary: #06c;
+  --ifm-color-primary-dark: #005cb8;
+  --ifm-color-primary-darker: #0057ad;
+  --ifm-color-primary-darkest: #00478f;
+  --ifm-color-primary-light: #0070e0;
+  --ifm-color-primary-lighter: #0075eb;
+  --ifm-color-primary-lightest: #0a85ff;
   --ifm-code-font-size: 1em;
   --ifm-font-family-monospace: 'Fira Code';
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
@@ -49,6 +49,14 @@ td {
 /**
 this is a bit ad hoc, will fix this later
 */
+.card {
+  padding: 24px;
+}
+
+.card-image {
+  text-align: center;
+  padding: 24px;
+}
 
 .code-card {
   padding: 10px;
@@ -70,13 +78,13 @@ this is a bit ad hoc, will fix this later
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #4289ad;
-  --ifm-color-primary-dark: #2e7ca5;
-  --ifm-color-primary-darker: #25607f;
-  --ifm-color-primary-darkest: #143c50;
-  --ifm-color-primary-light: #5897b8;
-  --ifm-color-primary-lighter: #6ca3c0;
-  --ifm-color-primary-lightest: #82b0c9;
+  --ifm-color-primary: #fde239;
+  --ifm-color-primary-dark: #fdde1a;
+  --ifm-color-primary-darker: #fddb0b;
+  --ifm-color-primary-darkest: #d7ba02;
+  --ifm-color-primary-light: #fde658;
+  --ifm-color-primary-lighter: #fde967;
+  --ifm-color-primary-lightest: #feef95;
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 30%);
 
   .code-card {
@@ -109,6 +117,14 @@ this is a bit ad hoc, will fix this later
   tbody {
     width: 100%;
   }
+}
+
+.custom-link {
+  div {
+    min-width: 100%;
+  }
+
+  display: flex;
 }
 
 @media (width >= 40rem) {

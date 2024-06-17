@@ -1,0 +1,80 @@
+---
+title: Card
+sidebar_label: Card (Kort)
+description: En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import { Card } from '../../../../packages/card/src';
+import ImageUrl from '@site/static/img/android-chrome-384x384.png';
+
+
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/card.json'
+
+<ComponentHeader name={'card'} info={Info} friendlyName={'Kort'}/>
+
+# Introduktion
+
+Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt. 
+
+Ange `background` för en blå bakgrund. Använd `image={source='url', description={'beskrivning}}` för att visa en bild överst på komponenten.
+Hela ytan är klickbar och interaktioner hanteras med `onPress()`.
+
+
+<div
+  style={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    boxSizing: 'border-box',
+  }}
+>
+  <Card
+    className={'cards-item'}
+    title={'Midas guldkrona'}
+    content={
+      'Midas blev av vinguden Dionysos (i en annan version Silenus) erbjuden att få en fri önskan uppfylld efter att ha hjälpt honom. Midas önskade sig då att allt han vidrörde skulle förvandlas till guld.'
+    }
+    image={{ source: ImageUrl, description: 'Vulpes vulpes' }}
+  />
+  <Card
+    className={'cards-item'}
+    title={'Ett klickbart kort med bakgrund'}
+    content={
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin mi et turpis posuere, nec tempor nunc tincidunt. Sed quis ante quis nunc lacinia volutpat a in purus. Curabitur quis egestas mauris. Vestibulum non elit leo. '
+    }
+    background
+    onPress={() => {alert('clicked')}}
+  />
+  <Card
+    className={'cards-item'}
+    title={'Lär dig om Flex'}
+    content={
+      'To vertically align individual flex items when working in the row direction, use the "align-self" property. When working with a "flex-direction" of "column", you can vertically align all items using the "justify-content" property (which works along the main axis)'
+    }
+  />
+</div>
+
+## Installation
+
+```bash npm2yarn
+npm install @mvds/card
+```
+
+```tsx
+import { Card } from '@mvds/card';
+```
+
+## Props
+
+---
+
+<PropTable name={'Card'} />
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+
+## Riktlinjer
+TBD
