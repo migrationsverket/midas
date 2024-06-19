@@ -1,0 +1,19 @@
+/* Your styles goes here. */
+.container {
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.component {
+  display: flex;
+  flex-direction: row;
+  column-gap: 4px;
+  padding: 10px;
+  margin: 5px;
+}
+
+h1 {
+  text-align: center;
+}
