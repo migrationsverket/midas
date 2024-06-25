@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Logo } from './Logo';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Logo } from './Logo'
 
 const meta: Meta<typeof Logo> = {
   component: Logo,
@@ -11,28 +11,28 @@ const meta: Meta<typeof Logo> = {
       options: ['small', 'large'],
     },
   },
-};
-export default meta;
+}
+export default meta
 
-type Story = StoryObj<typeof Logo>;
+type Story = StoryObj<typeof Logo>
 
-export const Primary: Story = {};
+export const Primary: Story = {}
 
 export const Dark: Story = {
   args: {
-    dark: true,
+    primary: false,
   },
-};
+}
 
 export const BackgroundPrimary: Story = {
   args: {
     background: true,
   },
-};
+}
 
 export const BackgroundDark: Story = {
   args: {
-    dark: true,
+    primary: false,
     background: true,
   },
-};
+}

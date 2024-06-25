@@ -1,5 +1,5 @@
 {
-  "name": "@mvds/select",
+  "name": "@migrationsverket/select",
   "private": false,
   "version": "0.4.23",
   "main": "./index.js",
@@ -13,13 +13,14 @@
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "dependencies": {
-    "@mvds/theme": "^0.5.23",
+    "@migrationsverket/theme": "^0.5.23",
     "react-aria-components": "^1.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
+  "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+    "registry": "https://npm.pkg.github.com/"
   }
 }

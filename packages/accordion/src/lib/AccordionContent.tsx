@@ -9,7 +9,7 @@ export const AccordionContent = forwardRef<
 >((props: RadixAccordion.AccordionContentProps, forwardedRef) => (
   <RadixAccordion.Content
     ref={forwardedRef}
-    className={clsx(styles.accordionContent, props.className)}
+    className={clsx(styles.content, props.className)}
     {...props}
   >
     {props.children}

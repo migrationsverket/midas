@@ -3,14 +3,13 @@
 exports all components
 
 ```bash
-npm install @mvds/ui
+npm install @migrationsverket/ui
 ```
 
 ```tsx
-import {UiButton} from '@mvds/ui';
+import { UiButton } from '@migrationsverket/ui'
 
-<UiButton>Click</UiButton>
-
+;<UiButton>Click</UiButton>
 ```
 
 @dream

@@ -1,0 +1,30 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value red100, black, gray130, white from tokens;
+
+.logo {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  max-width: 161px;
+}
+
+.primary {
+  fill: red100;
+}
+
+.dark {
+  fill: black;
+}
+
+.small {
+  max-width: 80px;
+}
+
+.background-primary {
+  background-color: red100;
+  fill: white;
+}
+
+.background-dark {
+  background-color: gray130;
+  fill: white;
+}

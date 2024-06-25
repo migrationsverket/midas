@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { FileUpload } from './FileUpload';
+import type { Meta, StoryObj } from '@storybook/react'
+import { FileUpload } from './FileUpload'
 
 const meta: Meta<typeof FileUpload> = {
   component: FileUpload,
   title: 'FileUpload',
   tags: ['autodocs'],
   argTypes: {},
-};
-export default meta;
-type Story = StoryObj<typeof FileUpload>;
+}
+export default meta
+type Story = StoryObj<typeof FileUpload>
 
 export const Primary: Story = {
   args: {
@@ -16,4 +16,4 @@ export const Primary: Story = {
     description: 'Description',
     allowsMultiple: true,
   },
-};
+}

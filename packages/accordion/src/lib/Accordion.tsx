@@ -1,8 +1,10 @@
 'use client'
 
+import styles from './Accordion.module.css'
 import * as RadixAccordion from '@radix-ui/react-accordion'
 import React, { forwardRef } from 'react'
 import { AccordionTagContext, TextElementTag } from './AccordionTagContext' // Adjust the path as necessary
+import clsx from 'clsx'
 
 // Define a type for the combined props
 type AccordionRootCombined =
@@ -24,6 +26,7 @@ export const Accordion = forwardRef<
 >(({ headingTag = 'p', ...props }, ref) => (
   <AccordionTagContext.Provider value={headingTag}>
     <RadixAccordion.Root
+      className={clsx(styles.root, ...(props.className || ''))}
       ref={ref}
       {...props}
     />

@@ -1,3 +1,5 @@
+'use client'
+
 import { Checkbox as AriaCheckbox, CheckboxProps } from 'react-aria-components'
 import styles from './Checkbox.module.css'
 import clsx from 'clsx'

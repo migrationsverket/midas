@@ -1,32 +1,34 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import {
   Checkbox,
   CheckboxGroup,
-} from '../../../../../../packages/checkbox/src';
-import React from 'react';
-import { styled } from '../../../../../../packages/theme/src';
-import { Button } from '../../../../../../packages/button/src';
-import CodeBlock from '@theme/CodeBlock';
+} from '../../../../../../packages/checkbox/src'
+import React from 'react'
+import { Button } from '../../../../../../packages/button/src'
+import CodeBlock from '@theme/CodeBlock'
 
 const ITEMS = [
   { value: 'Morot', checked: false },
   { value: 'Gurka', checked: false },
   { value: 'Glass', checked: false },
-];
+]
 
 export const CheckboxExample = () => {
-  const [CHECKED_ITEMS, setItems] = useState(ITEMS);
+  const [CHECKED_ITEMS, setItems] = useState(ITEMS)
   const handleUpdate = (value: string, checked: any) => {
     let updated = CHECKED_ITEMS.map((item) => {
-      return item.value === value ? { ...item, checked } : item;
-    });
+      return item.value === value ? { ...item, checked } : item
+    })
     // @ts-ignore (this is just an example)
-    setItems(updated);
-  };
+    setItems(updated)
+  }
 
   return (
     <>
-      <CheckboxGroup label={'Välj en frukt'} description={'beskrivande text'}>
+      <CheckboxGroup
+        label={'Välj en frukt'}
+        description={'beskrivande text'}
+      >
         {ITEMS.map((item) => {
           return (
             <Checkbox
@@ -36,7 +38,7 @@ export const CheckboxExample = () => {
             >
               {item.value}
             </Checkbox>
-          );
+          )
         })}
       </CheckboxGroup>
       <div style={{ paddingTop: '5px' }}>
@@ -46,17 +48,17 @@ export const CheckboxExample = () => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
 export const SimpleConfirm = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false)
   const handleCheck = (checked) => {
-    setChecked(checked);
-  };
+    setChecked(checked)
+  }
 
   return (
-    <Card className={'code-card'}>
+    <div className={'code-card'}>
       <h3>Exempel</h3>
       <form action="">
         <Checkbox
@@ -68,21 +70,22 @@ export const SimpleConfirm = () => {
           Jag godkänner villkoren
         </Checkbox>
         <span>
-          <Button variant={'secondary'} onPress={() => handleCheck(false)}>
+          <Button
+            variant={'secondary'}
+            onPress={() => handleCheck(false)}
+          >
             Bakåt
           </Button>
           <Button>Fortsätt</Button>
         </span>
       </form>
-    </Card>
-  );
-};
-
-const Card = styled('div', {});
+    </div>
+  )
+}
 
 export const GroupExample = () => {
   return (
-    <Card className={'code-card'}>
+    <div className={'code-card'}>
       <div>
         <CodeBlock language={'tsx'}>
           {`<CheckboxGroup label={'Etikett'} description={'Beskrivande text'}>
@@ -92,58 +95,67 @@ export const GroupExample = () => {
 </CheckboxGroup>`}
         </CodeBlock>
       </div>
-      <CheckboxGroup label={'Etikett'} description={'Beskrivande text'}>
+      <CheckboxGroup
+        label={'Etikett'}
+        description={'Beskrivande text'}
+      >
         <Checkbox value={'1'}>Jag har läst texten</Checkbox>
         <Checkbox value={'2'}>Jag godkänner villkoren</Checkbox>
         <Checkbox value={'3'}>Jag är över 20 år gammal</Checkbox>
       </CheckboxGroup>
-    </Card>
-  );
-};
+    </div>
+  )
+}
 
 export const DisabledExample = () => {
   return (
-    <Card className={'code-card'}>
+    <div className={'code-card'}>
       <div>
         <CodeBlock language={'tsx'}>
           {`<Checkbox isDisabled isSelected>Jag har läst texten</Checkbox>`}
         </CodeBlock>
       </div>
-      <Checkbox isDisabled isSelected>
+      <Checkbox
+        isDisabled
+        isSelected
+      >
         Jag har läst texten
       </Checkbox>
-    </Card>
-  );
-};
+    </div>
+  )
+}
 
 export const ReadOnlyExample = () => {
   return (
-    <Card className={'code-card'}>
+    <div className={'code-card'}>
       <div>
         <CodeBlock language={'tsx'}>
           {`<Checkbox isReadOnly defaultSelected>Jag har läst texten</Checkbox>`}
         </CodeBlock>
       </div>
-      <Checkbox isReadOnly defaultSelected>
+      <Checkbox
+        isReadOnly
+        defaultSelected
+      >
         Jag har läst texten
       </Checkbox>
-    </Card>
-  );
-};
+    </div>
+  )
+}
 
 export const IndeterminateExample = () => {
-  let all;
-  const [CHECKED_ITEMS, setItems] = useState(ITEMS);
+  let all
+  const [CHECKED_ITEMS, setItems] = useState(ITEMS)
   const handleUpdate = (value: string, checked: any) => {
     let updated = CHECKED_ITEMS.map((item) => {
-      return item.value === value ? { ...item, checked } : item;
-    });
+      return item.value === value ? { ...item, checked } : item
+    })
     // @ts-ignore (this is just an example)
-    setItems(updated);
-  };
+    setItems(updated)
+  }
 
   return (
-    <Card className={'code-card'}>
+    <div className={'code-card'}>
       <h3>Indeterminate exempel</h3>
       <Checkbox
         isReadOnly
@@ -165,32 +177,38 @@ export const IndeterminateExample = () => {
           {item.value}
         </Checkbox>
       ))}
-    </Card>
-  );
-};
+    </div>
+  )
+}
 
 export const InvalidExample = () => {
   return (
-    <Card className={'code-card'}>
+    <div className={'code-card'}>
       <div>
         <CodeBlock language={'tsx'}>
           {`<CheckboxGroup isInvalid={fn}>
-  <Checkbox>Jag har läst texten</Checkbox>
-  <Checkbox>Jag godkänner villkoren</Checkbox>
-</CheckboxGroup>`}
+              <Checkbox>Jag har läst texten</Checkbox>
+              <Checkbox>Jag godkänner villkoren</Checkbox>
+            </CheckboxGroup>`}
         </CodeBlock>
       </div>
       <CheckboxGroup
         label={'Bekräfta att du är med på tåget'}
         errorMessage={'Det här ser inte bra ut!'}
       >
-        <Checkbox value={'1'} isRequired>
+        <Checkbox
+          value={'1'}
+          isRequired
+        >
           Jag har läst texten
         </Checkbox>
-        <Checkbox value={'2'} isRequired>
+        <Checkbox
+          value={'2'}
+          isRequired
+        >
           Jag godkänner villkoren
         </Checkbox>
       </CheckboxGroup>
-    </Card>
-  );
-};
+    </div>
+  )
+}

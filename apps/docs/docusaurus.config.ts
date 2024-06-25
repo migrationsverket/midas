@@ -1,26 +1,31 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
-import * as path from 'path'
+import { themes as prismThemes } from 'prism-react-renderer'
+const path = require('path')
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
-
-/** @type {import('@docusaurus/types').Config} */
 const config: Config = {
-  title: 'Midas',
+  title: 'MIDAS',
   tagline: 'Migrationsverket Designsystem',
-  url: 'https://example.com',
+  url: 'https://designsystem.migrationsverket.se',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'midas', // Usually your GitHub org/user name.
+  organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
+  trailingSlash: false,
+  i18n: {
+    defaultLocale: 'sv',
+    locales: ['sv'],
+  },
   plugins: [],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      '@docusaurus/preset-classic',
       {
         docs: {
           routeBasePath: '/',
@@ -28,82 +33,105 @@ const config: Config = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/migrationsverket/midas/edit/main/apps/docs',
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+          ],
         },
         blog: {
           showReadingTime: true,
+          blogSidebarTitle: 'Alla inlägg',
+          blogSidebarCount: 'ALL',
           // Please change this to your repo.
           editUrl:
             'https://github.com/migrationsverket/midas/edit/main/apps/docs/blog',
+          remarkPlugins: [
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              { converters: ['pnpm'] },
+            ],
+          ],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.scss'),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    {
-      navbar: {
-        title: 'Midas',
-        logo: {
-          alt: 'Midas Logo',
-          src: 'img/MIDAS_crown.png',
+  themeConfig: {
+    announcementBar: {
+      id: 'open_source',
+      content:
+        'MIDAS är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+      isCloseable: false,
+    },
+
+    navbar: {
+      title: 'MIDAS',
+      logo: {
+        alt: 'Midas Logo',
+        src: 'img/MIDAS_crown.png',
+      },
+      items: [
+        {
+          type: 'doc',
+          docId: 'components/index',
+          position: 'left',
+          label: 'Komponenter',
         },
-        items: [
-          {
-            type: 'doc',
-            docId: 'components/index',
-            position: 'left',
-            label: 'Components',
-          },
-          // { to: '/blog', label: 'Blog', position: 'left' },
-          {
-            href: 'https://github.com/migrationsverket/midas',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Components',
-                to: 'components',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Mattermost',
-                href: '#',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/migrationsverket/midas',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Midas by Dreamteam`,
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    } satisfies Preset.ThemeConfig,
+        {
+          to: '/blog',
+          position: 'left',
+          label: 'Nyheter',
+        },
+        {
+          href: 'https://github.com/migrationsverket/midas',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Docs',
+          items: [
+            {
+              label: 'Components',
+              to: 'components',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Mattermost',
+              href: '#',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/migrationsverket/midas',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Midas by Dreamteam`,
+    },
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  } satisfies Preset.ThemeConfig,
 }
 
 export default config

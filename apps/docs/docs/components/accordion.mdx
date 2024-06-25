@@ -1,5 +1,6 @@
 ---
 title: Accordion (Dragspel)
+sidebar_position: 1
 tags: [components, menu, accordion]
 description: Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.
 ---
@@ -11,12 +12,10 @@ import {
   AccordionContent,
   AccordionTrigger,
 } from '../../../../packages/accordion/src';
-
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/accordion.json'
 
 <ComponentHeader name={'accordion'} info={Info} friendlyName={'Dragspel'} />
-
 
 # Introduktion
 
@@ -26,7 +25,7 @@ Dragspelskomponenten låter användare visa och dölja delar av relaterat inneh�
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @mvds/accordion
+npm install @migrationsverket/accordion
 ```
 
 ```tsx
@@ -35,7 +34,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from '@mvds/accordion';
+} from '@migrationsverket/accordion';
 ```
 
 ## Exempel
@@ -80,13 +79,12 @@ import {
 ## Props
 
 ### Accordion
-
 <PropTable name={'Accordion'} />
+
 ### AccordionItem
 <PropTable name={'AccordionItem'} />
 
 ## Dependencies
-
 <ComponentFooter info={Info}/>
 
 

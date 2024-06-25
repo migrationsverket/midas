@@ -20,10 +20,10 @@ export const AccordionTrigger = forwardRef<
     >
       <RadixAccordion.Trigger
         ref={forwardedRef}
-        className={clsx(styles.accordionTrigger, props.className)}
+        className={clsx(styles.trigger, props.className)}
         {...props}
       >
-        <Tag className={styles.accordionTriggerText}>{children}</Tag>
+        <Tag className={styles.triggerText}>{children}</Tag>
         <ChevronDown />
       </RadixAccordion.Trigger>
     </RadixAccordion.Header>

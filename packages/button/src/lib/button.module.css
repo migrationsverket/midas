@@ -13,18 +13,18 @@
   cursor: pointer;
   opacity: 1;
   outline: none;
+
+  &:hover {
+    background-color: blue130;
+  }
+
+  &[data-pressed] {
+    background-color: blue90;
+    outline: none;
+  }
 }
 
-.button:hover {
-  background-color: blue130;
-}
-
-.button[data-pressed] {
-  background-color: blue90;
-  outline: none;
-}
-
-.button[data-focus-visible] {
+.button .button[data-focus-visible] {
   outline: 0.125rem solid black;
   outline-offset: 0.125rem;
 }

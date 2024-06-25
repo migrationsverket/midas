@@ -1,7 +1,6 @@
-import React from 'react';
-// @ts-ignore
-import { compareLoose, gt, gte, SemVer } from 'semver';
-import moment from 'moment';
+import React from 'react'
+import { compareLoose, gt, gte, SemVer } from 'semver'
+import moment from 'moment'
 
 export const ComponentFooter = ({ info }) => {
   if (info) {
@@ -19,7 +18,7 @@ export const ComponentFooter = ({ info }) => {
             <span
               key={k}
               className={
-                k.startsWith('@mvds')
+                k.startsWith('@migrationsverket')
                   ? 'badge badge--primary'
                   : 'badge badge--secondary'
               }
@@ -27,11 +26,11 @@ export const ComponentFooter = ({ info }) => {
           ))}
         </span>
       </div>
-    );
+    )
   }
-};
+}
 export const ComponentHeader = ({ name, info, friendlyName }) => {
-  moment.locale('sv');
+  moment.locale('sv')
   if (!info) {
     return (
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -40,7 +39,7 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
         </div>
         <div style={{ display: 'flex', gap: '3px' }}>
           <a
-            href={`https://bitbucket.migrationsverket.se:7990/projects/TEAM-DREAM/repos/dream/browse/packages/${name}`}
+            href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
           >
             <img
               alt="Static Badge"
@@ -49,42 +48,68 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
           </a>
         </div>
       </div>
-    );
+    )
   }
   return (
-    <section>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div>
+    <section style={{ marginBottom: 24 }}>
+      <h1>{friendlyName ? friendlyName : name}</h1>
+
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+        }}
+      >
+        <div style={{ display: 'flex', gap: '8px' }}>
           <span className={'badge badge--secondary'}>
             Version: {info.version}
           </span>
-        </div>
-        <div style={{ display: 'flex', gap: '3px' }}>
-          <a
-            href={`https://bitbucket.migrationsverket.se:7990/projects/TEAM-DREAM/repos/dream/browse/packages/${name}`}
-            target="_blank"
-          >
-            <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/bitbucket-%230047B3.svg?style=for-the-badge&logo=bitbucket&logoColor=white"
-            />
-          </a>
-          <a href={info.dist.tarball}>
-            <img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" />
-          </a>
-        </div>
-      </div>
-      <span style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <span style={{ display: 'flex', alignItems: 'flex-start' }}>
-          <h1>{friendlyName ? friendlyName : name}</h1>
           <span
             className={gte(info.version, '1.0.0') ? '' : 'badge badge--primary'}
           >
             {gte(info.version, '1.0.0') ? '' : 'beta'}
           </span>
-        </span>
-        <h6>Senast uppdaterad {moment(info.time[info.version]).fromNow()}</h6>
-      </span>
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-end',
+            flexDirection: 'column',
+          }}
+        >
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <a
+              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+              target="_blank"
+            >
+              <img
+                alt="Storybook"
+                src="https://img.shields.io/badge/Storybook-FF4785.svg?style=for-the-badge&logo=storybook&logoColor=white"
+              />
+            </a>
+            <a
+              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+              target="_blank"
+            >
+              <img
+                alt="GitHub"
+                src="https://img.shields.io/badge/github-100000.svg?style=for-the-badge&logo=github&logoColor=white"
+              />
+            </a>
+            <a
+              href={info.dist.tarball}
+              target="_blank"
+            >
+              <img
+                alt="NPM"
+                src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr />
     </section>
-  );
-};
+  )
+}

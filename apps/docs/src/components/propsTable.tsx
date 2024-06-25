@@ -1,11 +1,13 @@
-import { useDynamicImport } from 'docusaurus-plugin-react-docgen-typescript/dist/esm/hooks';
-import React from 'react';
+// import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
+import React from 'react'
 
 export const PropTable = ({ name }) => {
-  const props = useDynamicImport(name);
+  return null
+
+  const props = useDynamicImport(name)
 
   if (!props) {
-    return null;
+    return null
   }
 
   return (
@@ -38,10 +40,10 @@ export const PropTable = ({ name }) => {
                 <td>{props[key].required ? 'Yes' : 'No'}</td>
                 <td style={{ width: '30%' }}>{props[key].description}</td>
               </tr>
-            );
+            )
           })}
         </tbody>
       </table>
     </>
-  );
-};
+  )
+}

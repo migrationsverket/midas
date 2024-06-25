@@ -1,7 +1,7 @@
-import { render } from '@testing-library/react';
+import { render } from '@testing-library/react'
 
-import Flex from './Flex';
-import FlexItem from './FlexItem';
+import { Flex } from './Flex'
+import { FlexItem } from './FlexItem'
 
 describe('Flex', () => {
   it('should render successfully', () => {
@@ -9,7 +9,7 @@ describe('Flex', () => {
       <Flex>
         <FlexItem>Item</FlexItem>
       </Flex>
-    );
-    expect(baseElement).toBeTruthy();
-  });
-});
+    )
+    expect(baseElement).toBeTruthy()
+  })
+})

@@ -1,8 +1,8 @@
----
+{/* ---
 title: Designtokens
 sidebar_position: 2
 ---
-import {theme} from '@mvds/theme'
+
 import { GetColors, GetGenericProp } from '@site/src/components/getThemeProps';
 
 # Designtokens
@@ -12,12 +12,12 @@ Designtokens representerar de grundläggande byggstenarna som utgör ett designs
 hårdkodade värden.
 
 ```bash
-npm install @mvds/theme
+npm install @migrationsverket/theme
 ```
 Använd som variabler genom att importera temafilen
 ```ts
-import {theme} from '@mvds/theme'
-const blue = theme.colors.blue150; // #143c50
+import {theme} from '@migrationsverket/theme'
+// const blue = theme.colors.blue150; // #143c50
 ```
 eller bygg komponenter med Stiches och referera till tokens via `$color$blue150` i css.
 
@@ -48,4 +48,4 @@ eller bygg komponenter med Stiches och referera till tokens via `$color$blue150`
 
 ## Transitions
 
-<GetGenericProp tokenSet={'transitions'}/>
+<GetGenericProp tokenSet={'transitions'}/> */}

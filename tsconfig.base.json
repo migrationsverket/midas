@@ -15,10 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mvds/accordion": ["packages/accordion/src/index.ts"],
-      "@mvds/button": ["packages/button/src/index.ts"],
-      "@mvds/checkbox": ["packages/checkbox/src/index.ts"],
-      "@mvds/theme": ["packages/theme/src/index.ts"]
+      "@migrationsverket/*": ["packages/*/src/index.ts"],
+      "@migrationsverket/date-picker": ["packages/date-picker/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

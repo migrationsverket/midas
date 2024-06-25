@@ -1,0 +1,105 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, black, signalRed130, smBreakpoint from tokens;
+
+.select {
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+
+  &[data-disabled] .label,
+  &[data-disabled] .text {
+    color: #bfbfbf;
+  }
+  &[data-invalid] .button {
+    border: 2px solid #e62323;
+  }
+}
+
+@media smBreakpoint {
+  .select {
+    padding: 1rem;
+    &[data-invalid] {
+      background: #ffdfdf;
+    }
+  }
+}
+
+.text {
+  font-size: 14px;
+}
+
+.fieldError {
+  color: red;
+  font-size: 14px;
+  padding-top: 8px;
+}
+
+.button {
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 8px;
+  background-color: #f2f2f2;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #e6e6e6;
+  }
+  &[data-focus-visible] {
+    outline: none;
+    border-radius: 0px;
+    border: 1px solid black;
+  }
+  &[data-disabled] {
+    background: #f2f2f2;
+    color: #bfbfbf;
+  }
+}
+
+.popover {
+  font-family: display;
+  outline: 1px solid black;
+  width: var(--trigger-width);
+  background: white;
+  overflow-y: auto;
+}
+
+.fieldError {
+  margin-top: 10px;
+  display: flex;
+  color: signalRed130;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.listBoxItem {
+  unset: all;
+  margin: auto;
+  padding-left: 1rem;
+  padding-top: 14px;
+  height: 38px;
+  line-height: 18px;
+  background-color: white;
+  outline: none;
+  cursor: default;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+
+  &[data-selected='true'] {
+    background: #f2f2f2;
+  }
+
+  &[data-focused='true'] {
+    background: rgba(201, 201, 201, 0.72);
+  }
+}

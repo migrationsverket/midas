@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Select, Item } from './select';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Select, Item } from './Select'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -13,16 +13,16 @@ const meta: Meta<typeof Select> = {
     placeholder: { type: 'string' },
   },
   parameters: {},
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Select>;
-export const Empty: Story = {};
+type Story = StoryObj<typeof Select>
+export const Empty: Story = {}
 
-const ITEMS: string[] = [];
+const ITEMS: string[] = []
 for (let i = 0; i < 40; i += 1) {
-  ITEMS.push(`value ${i}`);
+  ITEMS.push(`value ${i}`)
 }
 
 export const OneItem: Story = {
@@ -34,21 +34,27 @@ export const OneItem: Story = {
       <Item>Item A</Item>
     </Select>
   ),
-};
+}
 export const ManyItems: Story = {
   args: {
     placeholder: 'Many items...',
   },
   render: (args: any) => (
-    <Select placeholder={'Select a fruit...'} {...args}>
+    <Select
+      placeholder={'Select a fruit...'}
+      {...args}
+    >
       {ITEMS.map((item, index) => (
-        <Item key={index} value={{ value: item }}>
+        <Item
+          key={index}
+          value={{ value: item }}
+        >
           {item}
         </Item>
       ))}
     </Select>
   ),
-};
+}
 
 export const Invalid: Story = {
   args: {
@@ -61,7 +67,7 @@ export const Invalid: Story = {
       <Item>Lemon</Item>
     </Select>
   ),
-};
+}
 
 export const disabled: Story = {
   args: {
@@ -79,4 +85,4 @@ export const disabled: Story = {
       <Item>Hej</Item>
     </Select>
   ),
-};
+}

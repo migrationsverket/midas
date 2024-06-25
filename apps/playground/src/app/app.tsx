@@ -1,26 +1,28 @@
-import styles from './app.module.scss';
-import { Button } from '@mvds/button';
-import { Checkbox, CheckboxGroup } from '@mvds/checkbox';
-import { Item, Select } from '@mvds/select';
-import { RadioGroup, Radio } from '@mvds/radio';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import '../../../../packages/theme/src/lib/global.css'
+import styles from './app.module.css'
+import { Button } from '@migrationsverket/button'
+import { Checkbox, CheckboxGroup } from '@migrationsverket/checkbox'
+import { Item, Select } from '@migrationsverket/select'
+import { RadioGroup, Radio } from '@migrationsverket/radio'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@mvds/accordion';
-import { Logo } from '@mvds/logo';
-import { TextField } from '@mvds/textfield';
+} from '@migrationsverket/accordion'
+import { Logo } from '@migrationsverket/logo'
+import { TextField } from '@migrationsverket/textfield'
 import {
   GlobalToastRegion,
   toastQueue,
   ToastProvider,
   MidasToastState,
-} from '@mvds/toast';
+} from '@migrationsverket/toast'
 
 export function App() {
   return (
-    <div className={styles['container']}>
+    <div className={styles.container}>
       <div>
         <ToastProvider>
           {(state: MidasToastState) => (
@@ -39,7 +41,11 @@ export function App() {
       </div>
       <GlobalToastRegion />
       <form action="">
-        <TextField type={'email'} label={'Email'} isRequired />
+        <TextField
+          type={'email'}
+          label={'Email'}
+          isRequired
+        />
       </form>
       <Button
         onPress={() =>
@@ -53,7 +59,11 @@ export function App() {
       </Button>
       <h1>Playground app</h1>
 
-      <Select label={'select label'} description={'beskrivning'} isRequired>
+      <Select
+        label={'select label'}
+        description={'beskrivning'}
+        isRequired
+      >
         <Item>Hej</Item>
         <Item>Hejdå</Item>
         <Item>Hallå</Item>
@@ -107,8 +117,14 @@ export function App() {
         </div>
         <div className={styles['component']}>
           <Logo primary />
-          <Logo primary background />
-          <Logo background dark />
+          <Logo
+            primary
+            background
+          />
+          <Logo
+            background
+            primary={false}
+          />
         </div>
         <div className={styles['component']}>
           <Accordion type={'multiple'}>
@@ -157,7 +173,10 @@ export function App() {
           >
             <Checkbox>Check or not to check</Checkbox>
             <Checkbox isIndeterminate>Indeterminate</Checkbox>
-            <Checkbox isRequired isSelected>
+            <Checkbox
+              isRequired
+              isSelected
+            >
               Required
             </Checkbox>
           </CheckboxGroup>
@@ -177,10 +196,16 @@ export function App() {
               label={'Individual required'}
               description={'first two must be selected'}
             >
-              <Checkbox value={'1'} isRequired>
+              <Checkbox
+                value={'1'}
+                isRequired
+              >
                 Must be checked
               </Checkbox>
-              <Checkbox value={'2'} isRequired>
+              <Checkbox
+                value={'2'}
+                isRequired
+              >
                 Must be checked
               </Checkbox>
               <Checkbox value={'3'}>Do whatever</Checkbox>
@@ -195,7 +220,7 @@ export function App() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

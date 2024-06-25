@@ -8,6 +8,7 @@ import { PropTable } from "@site/src/components/propsTable";
 import { Link } from '../../../../packages/link/src';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/link.json'
+import Mermaid from '@theme/Mermaid';
 
 <ComponentHeader name={'link'} info={Info} friendlyName={'Länkknapp'}/>
 
@@ -23,7 +24,7 @@ används finns på [React Aria Client Side Routing](https://react-spectrum.adobe
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @mvds/link
+npm install @migrationsverket/link
 ```
 
 ### Client side routing
@@ -31,7 +32,7 @@ npm install @mvds/link
 Exempel på uppsättning för [Remix](https://remix.run/docs/en/main) men principen är densamma för andra frameworks.
 
 ```tsx
-import { Link, RouterProvider } from '@mvds/link';
+import { Link, RouterProvider } from '@migrationsverket/link';
 import { useNavigate } from '@remix-run/react'; // or any other framwork router
 ...
 export default function App() {
@@ -65,4 +66,11 @@ Använd `<Link href={'url'}>Länktext</Link>` och länken fungerar som en vanlig
 <ComponentFooter info={Info}/>
 
 ## Riktlinjer
-TBD
+
+```mermaid
+flowchart TD;
+    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
+    A -->|Ja| C[Använd textstil för a-tag]
+    B -->|Action| D[Använd komponenten Button]
+    B -->|Navigering| E[Använd komponenten Link]
+```

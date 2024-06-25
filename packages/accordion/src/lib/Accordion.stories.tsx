@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion } from './Accordion'
-import { AccordionContent } from './AccordionContent'
-import { AccordionTrigger } from './AccordionTrigger'
 import { AccordionItem } from './AccordionItem'
+import { AccordionTrigger } from './AccordionTrigger'
+import { AccordionContent } from './AccordionContent'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 

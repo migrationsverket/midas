@@ -1,20 +1,23 @@
 {
-  "name": "@mvds/theme",
+  "name": "@migrationsverket/theme",
   "version": "0.5.23",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "style": "index.css",
   "exports": {
     ".": {
       "import": "./index.mjs",
       "require": "./index.js",
       "types": "./index.d.ts"
-    }
+    },
+    "./index.css": "./index.css"
   },
+  "files": [
+    "index.css"
+  ],
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "dependencies": {
-    "@stitches/react": "^1.2.8"
-  },
+  "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "https://github.com/migrationsvecket/midas/packages/"
+    "registry": "https://npm.pkg.github.com/"
   }
 }

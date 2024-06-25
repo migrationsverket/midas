@@ -1,16 +1,15 @@
-import { Button } from '../../../../packages/button/src';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../../../../packages/accordion/src';
-import { Checkbox, CheckboxGroup } from '../../../../packages/checkbox/src';
-import { theme } from '../../../../packages/theme/src';
-import { Logo } from '../../../../packages/logo/src';
-import { TextField } from '../../../../packages/textfield/src';
-import { FileUpload } from '../../../../packages/file-upload/src';
-import { Radio, RadioGroup } from '../../../../packages/radio/src';
+} from '../../../../packages/accordion/src'
+import { Button } from '../../../../packages/button/src'
+import { Checkbox, CheckboxGroup } from '../../../../packages/checkbox/src'
+import { FileUpload } from '../../../../packages/file-upload/src/lib/FileUpload'
+import { Logo } from '../../../../packages/logo/src'
+import { Radio, RadioGroup } from '../../../../packages/radio/src'
+import { TextField } from '../../../../packages/textfield/src'
 
 export {
   Button,
@@ -21,9 +20,8 @@ export {
   Checkbox,
   CheckboxGroup,
   Logo,
-  theme,
   TextField,
-  FileUpload,
+  // FileUpload,
   Radio,
   RadioGroup,
-};
+}

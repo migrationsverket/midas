@@ -1,5 +1,5 @@
 {
-  "name": "@mvds/ui",
+  "name": "@migrationsverket/ui",
   "version": "0.5.24",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -12,19 +12,19 @@
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "dependencies": {
-    "@mvds/button": "*",
-    "@mvds/checkbox": "*",
-    "@mvds/logo": "*",
-    "@mvds/radio": "*",
-    "@mvds/select": "*",
-    "@mvds/theme": "*",
-    "@mvds/accordion": "*",
-    "@mvds/card": "*",
-    "@mvds/info-banner": "*",
-    "@mvds/textfield": "*",
-    "@mvds/toast": "*",
-    "@mvds/link": "*",
-    "@mvds/file-upload": "0.3.19"
+    "@migrationsverket/button": "*",
+    "@migrationsverket/checkbox": "*",
+    "@migrationsverket/logo": "*",
+    "@migrationsverket/radio": "*",
+    "@migrationsverket/select": "*",
+    "@migrationsverket/theme": "*",
+    "@migrationsverket/accordion": "*",
+    "@migrationsverket/card": "*",
+    "@migrationsverket/info-banner": "*",
+    "@migrationsverket/textfield": "*",
+    "@migrationsverket/toast": "*",
+    "@migrationsverket/link": "*",
+    "@migrationsverket/file-upload": "0.3.19"
   },
   "publishConfig": {
     "registry": "https://github.com/migrationsverket/midas/packages/"

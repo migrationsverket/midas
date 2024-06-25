@@ -1,3 +1,2 @@
-// export { theme, styled } from './stitches.config';
-// export * from './tokens';
-// export * from './Icon';
+import './global.css'
+export * from './tokens'

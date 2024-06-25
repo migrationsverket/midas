@@ -1,14 +1,14 @@
 'use client'
 
 import * as React from 'react'
-import styles from './button.module.css'
+import styles from './Button.module.css'
 import { Button as AriaButton, ButtonProps } from 'react-aria-components'
 import clsx from 'clsx'
 
 export interface MvdsButton extends ButtonProps {
   /** Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. */
   variant?: 'primary' | 'secondary'
-  isFullwidth?: boolean
+  fullwidth?: boolean
 }
 
 /**
@@ -17,7 +17,7 @@ export interface MvdsButton extends ButtonProps {
 
 export const Button: React.FC<MvdsButton> = ({
   variant = 'primary',
-  isFullwidth,
+  fullwidth,
   children,
   className,
   ...rest
@@ -28,7 +28,7 @@ export const Button: React.FC<MvdsButton> = ({
         styles.button,
         variant === 'primary' && styles.primary,
         variant === 'secondary' && styles.secondary,
-        isFullwidth && styles.fullwidth,
+        fullwidth && styles.fullwidth,
         className
       )}
       {...rest}

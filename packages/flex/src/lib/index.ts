@@ -1,2 +1,2 @@
-export { Flex } from './Flex';
-export { FlexItem } from './FlexItem';
+export * from './Flex'
+export * from './FlexItem'

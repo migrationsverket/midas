@@ -5,8 +5,8 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 ---
 
 import { PropTable } from '@site/src/components/propsTable';
-import { GlobalToastRegion, toastQueue } from '@mvds/toast';
-import { Button } from '@mvds/button';
+// import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src';
+import { Button } from '../../../../packages/button/src';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/toast.json'
 
@@ -37,18 +37,15 @@ Komponenten bygger på [useToast](https://react-spectrum.adobe.com/react-aria/us
 ## Installation
 
 ```bash npm2yarn
-npm install @mvds/toast
+npm install @migrationsverket/toast
 ```
-
-
-
 
 
 ### Varianter
 
 En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas.
 
-<div style={{ display: 'flex', gap: '5px' }}>
+{/* <div style={{ display: 'flex', gap: '5px' }}>
   <Button
     onPress={() =>
       toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, {timeout: 5000 })
@@ -73,7 +70,7 @@ En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. An
       toastQueue.add({ message: "Farlig varning!", type: 'warning' }, { timeout: 2000 })
     }
   >Warning</Button>
-</div>
+</div> */}
 
 ### Lokal implementation
 
@@ -81,7 +78,7 @@ Använd `toastProvider` för att sätta en kö av Toasts på valfritt ställe i 
 använd den [globala varianten](#global-implementation).
 
 ```tsx
-import { ToastProvider, MidasToastState } from '@mvds/toast';
+import { ToastProvider, MidasToastState } from '@migrationsverket/toast';
 <ToastProvider>
   {(state: MidasToastState) => (
     <Button
@@ -99,13 +96,12 @@ Välj en global kö för toasts om det passar ditt use case bättre. Lägg en `<
 och lägg nya toasts i kön enligt:
 
 ```tsx
-import { GlobalToastRegion, toastQueue } from '@mvds/toast';
+import { GlobalToastRegion, toastQueue } from '@mmigrationsverketvds/toast';
 <GlobalToastRegion />
 //...
 <Button onPress={
   () => toastQueue.add({type: 'success', message: 'Toast is done'})
 }>Show toast</Button>
-
 ```
 
 ## Props

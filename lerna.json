@@ -5,13 +5,12 @@
     "bootstrap": {},
     "publish": {
       "directory": "{workspaceRoot}/dist/{projectRoot}/",
-      "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+      "registry": "https://npm.pkg.github.com/"
     },
     "version": {
       "since": "develop",
       "npmClientArgs": [
-        "--legacy-peer-deps",
-        "--@mvds:registry=http://nexus.migrationsverket.se/repository/npm-internal/"
+        "--@migrationsverket:registry=https://npm.pkg.github.com"
       ],
       "changelog": true,
       "commitHooks": false,

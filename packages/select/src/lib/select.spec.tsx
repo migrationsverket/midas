@@ -1,9 +1,9 @@
-import { render } from '@testing-library/react';
-import { Select } from './select';
+import { render } from '@testing-library/react'
+import { Select } from './Select'
 
 describe('Select', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Select placeholder={''} />);
-    expect(baseElement).toBeTruthy();
-  });
-});
+    const { baseElement } = render(<Select placeholder={''} />)
+    expect(baseElement).toBeTruthy()
+  })
+})

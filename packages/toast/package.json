@@ -1,5 +1,5 @@
 {
-  "name": "@mvds/toast",
+  "name": "@migrationsverket/toast",
   "version": "0.4.0",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,11 +11,10 @@
     }
   },
   "dependencies": {
-    "@mvds/button": "^0.5.25",
-    "@mvds/theme": "^0.5.23",
+    "@migrationsverket/button": "^0.5.25",
+    "@migrationsverket/theme": "^0.5.23",
     "@react-aria/toast": "^3.0.0-beta.10",
     "@react-stately/toast": "3.0.0-beta.2",
-    "@stitches/react": "^1.2.8",
     "lucide-react": "^0.372.0"
   },
   "peerDependencies": {
@@ -23,7 +22,8 @@
     "react-dom": "18.2.0"
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+    "registry": "https://npm.pkg.github.com/"
   }
 }

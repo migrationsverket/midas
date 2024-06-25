@@ -1,6 +1,6 @@
 ---
 title: InfoBanner
-sidebar_label: InfoBanner (informationsmeddelande)
+sidebar_label: InfoBanner (Informationsmeddelande)
 description: Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.
 ---
 
@@ -8,37 +8,52 @@ import { PropTable } from "@site/src/components/propsTable";
 import { InfoBanner } from "../../../../packages/info-banner/src";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/info-banner.json'
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-<ComponentHeader name={'info-banner'} info={Info} friendlyName={'informationsmeddelande'}/>
+<ComponentHeader name={'info-banner'} info={Info} friendlyName={'Informationsmeddelande'}/>
 
 # Introduktion
 
 informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
+
 <InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
 
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @mvds/info-banner
+npm install @migrationsverket/info-banner
 ```
 
 ```tsx
-import { InfoBanner } from '@mvds/info-banner'
+import { InfoBanner } from '@migrationsverket/info-banner'
 ```
 
 ## Exempel
 
----
-<div style={{display: 'flex', flexDirection: 'column', gap: '3px'}}>
-  <InfoBanner type={'info'} title={'Information'} message={'Message'}/>
-  <InfoBanner type={'important'} title={'Important'} message={'Message'}/>
-  <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
-  <InfoBanner type={'success'} title={'Success'} message={'Message'}/>
-</div>
+<Tabs>
+  <TabItem value="info" label="Info" default>
+    <InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
+  </TabItem>
+  <TabItem value="important" label="Important">
+    <InfoBanner type={'important'} title={'Du behöver komplettera'} message={'Visas för användaren för att uppmana till att något måste göras.'}/>
+  </TabItem>
+  <TabItem value="warning" label="Warning">
+    <InfoBanner type={'warning'} title={'Formuläret har inte skickats'} message={'Visas för användaren för att bekräfta att en action gått snett.'}/>
+  </TabItem>
+  <TabItem value="success" label="Success">
+    <InfoBanner type={'success'} title={'Formuläret har skickats'} message={'Visas för användaren för att bekräfta att en action gått rätt till.'}/>
+  </TabItem>
+</Tabs>
+
+
+
+
 
 
 ```tsx
-import {InfoBanner} from "@mvds/info-banner";
+import {InfoBanner} from "@migrationsverket/info-banner";
+
 <InfoBanner type={'info'} title={'Information'} message={'Message'}/>
 <InfoBanner type={'important'} title={'Important'} message={'Message'}/>
 <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>

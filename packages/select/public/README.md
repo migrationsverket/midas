@@ -1,16 +1,16 @@
 # select
 
 ```bash
-npm i @mvds/select
+npm i @migrationsverket/select
 ```
 
 ```tsx
-import { UiSelect, UiSelectItem } from '@mvds/select';
-
-<UiSelect placeholder={'Select a fruit...'} {...args}>
-  <UiSelectItem value={'apple'}>Apple</UiSelectItem>
-  <UiSelectItem value={'lemon'}>Lemon</UiSelectItem>
-  <UiSelectItem value={'orange'}>Orange</UiSelectItem>
-</UiSelect>
-
+import { Select, Item } from '@migrationsverket/select'
+;<Select
+  description="Beskrivning"
+  label="Etikett"
+  placeholder="One item..."
+>
+  <Item>Item A</Item>
+</Select>
 ```

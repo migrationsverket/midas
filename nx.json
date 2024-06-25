@@ -7,7 +7,7 @@
     },
     "projectsRelationship": "independent",
     "projects": ["packages/*", "!packages/.storybook"],
-    "releaseTagPattern": "@mvds/{projectName}@{version}",
+    "releaseTagPattern": "@migrationsverket/{projectName}@{version}",
     "git": {
       "commitMessage": "chore({projectName}): release version {version} [skip-ci]"
     },
@@ -111,16 +111,16 @@
   "generators": {
     "@nx/react": {
       "application": {
-        "style": "scss",
+        "style": "css",
         "linter": "eslint",
         "bundler": "vite",
         "babel": true
       },
       "component": {
-        "style": "scss"
+        "style": "css"
       },
       "library": {
-        "style": "styled-components",
+        "style": "css",
         "linter": "eslint",
         "unitTestRunner": "jest"
       }

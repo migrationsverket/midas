@@ -1,5 +1,5 @@
 {
-  "extends": ["@docusaurus/tsconfig", "../../tsconfig.base.json"], // "../../tsconfig.base.json",
+  "extends": ["../../tsconfig.base.json", "@docusaurus/tsconfig"], // "../../tsconfig.base.json",
   "compilerOptions": {
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -14,10 +14,10 @@
       "@docusaurus/module-type-aliases",
       "@docusaurus/theme-classic"
     ],
-    "baseUrl": "./apps/docs",
+    "baseUrl": ".",
     "paths": {
-      "@site/*": ["./*"],
-      "@mvds/*": ["../../packages/**/src/*"]
+      // "@site/*": ["./*"],
+      "@migrationsverket/*": ["../../packages/*/src/index.ts"]
     }
   }
 }

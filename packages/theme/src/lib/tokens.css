@@ -50,15 +50,15 @@
 
 @value inputText: #1f1f1f;
 
-@value signalGreen10: #d5f2d9;
-@value signalGreen100: #008d3c;
-@value signalBlue10: #eaf2f6;
-@value signalBlue100: #0066cc;
-@value signalYellow10: #fff8e1;
-@value signalYellow100: #f1c21b;
-@value signalRed10: #ffdfdf;
-@value signalRed100: #e62323;
-@value signalRed130: #b31b1b;
+@value signalGreen10: #D5F2D9;
+@value signalGreen100: #008D3C;
+@value signalBlue10: #EAF2F6;
+@value signalBlue100: #0066CC;
+@value signalYellow10: #FFF8E1;
+@value signalYellow100: #FDB813;
+@value signalRed10: #FFDFDF;
+@value signalRed100: #E62323;
+@value signalRed130: #B31B1B;
 
 @value sRadius: 0.125rem;
 @value mRadius: 0.25rem;

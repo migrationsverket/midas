@@ -1,1 +1,1 @@
-export * from './lib/FileUpload';
+export * from './lib'
