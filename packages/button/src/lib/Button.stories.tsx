@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 
+
 const meta: Meta<typeof Button> = {
   component: Button,
   title: 'Button',
@@ -59,6 +60,14 @@ export const SecondaryDisabled: Story = {
     variant: 'secondary',
     isDisabled: true,
   },
+}
+
+export const Size = {
+  args: {
+    children: 'Button',
+    size: 'small',
+  },
+  parameters: {},
 }
 
 export const Fullwidth = {

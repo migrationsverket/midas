@@ -6,8 +6,6 @@
 
 > [!NOTE]
 > Migrationsverkets Designsystem Github source edition
-> 
-> @dreamteam [mattermost](https://itverktyg.migrationsverket.se/mattermost/migrationsverket/channels/designsystem-support)
 
 - [ ] Chromatic
 - [x] Docusaurus
