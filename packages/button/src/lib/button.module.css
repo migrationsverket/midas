@@ -14,6 +14,11 @@
   opacity: 1;
   outline: none;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
   &:hover {
     background-color: blue130;
   }
