@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { render, RenderResult } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { ButtonProps } from 'react-aria-components'
-import { Link } from './LinkButton'
+import { LinkButton } from './LinkButton'
 expect.extend(toHaveNoViolations)
 
 describe('given a default link', () => {
@@ -20,4 +20,6 @@ describe('given a default link', () => {
   })
 })
 
-const LinkTest = (props: ButtonProps) => <Link {...props}>Click</Link>
+const LinkTest = (props: ButtonProps) => (
+  <LinkButton {...props}>Click</LinkButton>
+)
