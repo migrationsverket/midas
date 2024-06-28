@@ -6,7 +6,7 @@ tags: [form]
 ---
 
 import { PropTable } from '@site/src/components/propsTable';
-// import { FileUpload } from '../../../../packages/file-upload/src';
+import { FileUpload } from '@migrationsverket/file-upload';
 import CodeBlock from '@theme/CodeBlock';
 
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
@@ -39,27 +39,19 @@ npm install @migrationsverket/fileupload
 ```
 
 ```tsx
-
 import { FileUpload } from '@migrationsverket/fileupload';
-
 ```
 
 ## Exempel
 
 Sätt `allowsMultiple` för att kunna välja och ladda upp mer än en fil.
 
----
-
 <div className={'code-card'}>
   <CodeBlock
     language={'tsx'}
   >{`<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`}</CodeBlock>
-  {/* <FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'} /> */}
+  <FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'} />
 </div>
-
-```tsx
-
-```
 
 ## Props
 

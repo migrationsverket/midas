@@ -1,34 +1,27 @@
-import React from 'react'
+import styles from './Link.module.css'
 import {
   Link as AriaLink,
   LinkProps,
   RouterProvider,
 } from 'react-aria-components'
-import styles from './Link.module.css'
+import clsx from 'clsx'
 
-interface MvdsLinkProps extends LinkProps {
-  /** Link button color
-   *  @default "primary"
-   *  */
-  variant?: 'primary' | 'secondary'
-}
-
-/**
- * Link will take you anywhere
- * */
-export const Link: React.FC<MvdsLinkProps> = ({
-  variant = 'primary',
+export const Link: React.FC<LinkProps> = ({
+  children,
+  href,
+  className,
+  isDisabled,
   ...rest
 }) => {
-  const variantClass =
-    variant === 'primary'
-      ? styles['variant-primary']
-      : styles['variant-secondary']
   return (
     <AriaLink
+      className={clsx(styles.link, className)}
+      href={href}
+      isDisabled={isDisabled}
       {...rest}
-      className={`${styles.link} ${variantClass}`}
-    />
+    >
+      {children}
+    </AriaLink>
   )
 }
 

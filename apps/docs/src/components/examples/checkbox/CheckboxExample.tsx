@@ -1,10 +1,7 @@
 import { useState } from 'react'
-import {
-  Checkbox,
-  CheckboxGroup,
-} from '../../../../../../packages/checkbox/src'
+import { Checkbox, CheckboxGroup } from '@migrationsverket/checkbox'
 import React from 'react'
-import { Button } from '../../../../../../packages/button/src'
+import { Button } from '@migrationsverket/button'
 import CodeBlock from '@theme/CodeBlock'
 
 const ITEMS = [
@@ -59,7 +56,6 @@ export const SimpleConfirm = () => {
 
   return (
     <div className={'code-card'}>
-      <h3>Exempel</h3>
       <form action="">
         <Checkbox
           isRequired
@@ -69,7 +65,7 @@ export const SimpleConfirm = () => {
         >
           Jag godkänner villkoren
         </Checkbox>
-        <span>
+        <span style={{ display: 'flex' }}>
           <Button
             variant={'secondary'}
             onPress={() => handleCheck(false)}
@@ -88,11 +84,13 @@ export const GroupExample = () => {
     <div className={'code-card'}>
       <div>
         <CodeBlock language={'tsx'}>
-          {`<CheckboxGroup label={'Etikett'} description={'Beskrivande text'}>
-  <Checkbox value={'1'}>Jag har läst texten</Checkbox>
-  <Checkbox value={'2'}>Jag godkänner villkoren</Checkbox>
-  <Checkbox value={'3'}>Jag är över 20 år gammal</Checkbox>
-</CheckboxGroup>`}
+          {`
+          <CheckboxGroup label={'Etikett'} description={'Beskrivande text'}>
+            <Checkbox value={'1'}>Jag har läst texten</Checkbox>
+            <Checkbox value={'2'}>Jag godkänner villkoren</Checkbox>
+            <Checkbox value={'3'}>Jag är över 20 år gammal</Checkbox>
+          </CheckboxGroup>
+          `}
         </CodeBlock>
       </div>
       <CheckboxGroup

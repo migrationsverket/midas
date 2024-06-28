@@ -99,9 +99,6 @@
     font-weight: 600;
   }
   &[data-outside-month='true'] {
-    pointer-events: none;
-    background-color: gray10;
-    border-color: gray10;
-    opacity: 0.5;
+    display: none;
   }
 }

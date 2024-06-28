@@ -1,0 +1,76 @@
+---
+title: Breadcrumbs (Brödsmulor)
+sidebar_position: 1
+tags: [menu]
+description: Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import {
+Breadcrumbs
+} from '@migrationsverket/breadcrumbs';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+// import Info from '@site/static/data/breadcrumbs.json'
+
+<ComponentHeader name={'breadcrumbs'} info={Info && Info} friendlyName={'Brödsmulor'} />
+
+# Introduktion
+
+Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
+
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/breadcrumbs
+```
+
+```tsx
+import { Breadcrumbs } from '@migrationsverket/breadcrumbs';
+```
+
+## Exempel
+
+<Breadcrumbs
+  items={[
+    {
+      "title": "Jag vill förlänga",
+      "href": "#"
+    },
+    {
+      "title": "Arbete",
+      "href": "#"
+    },
+    {
+      "title": "Anställd",
+      "href": "#"
+    }
+  ]}
+/>
+
+```tsx
+<Breadcrumbs
+  items={[
+    {
+      "title": "Jag vill förlänga",
+      "href": "#"
+    },
+    {
+      "title": "Arbete",
+      "href": "#"
+    },
+    {
+      "title": "Anställd",
+      "href": "#"
+    }
+  ]}
+/>
+```
+
+## Dependencies
+<ComponentFooter info={Info && Info}/>
+
+
+## Riktlinjer
+- TBD.
+

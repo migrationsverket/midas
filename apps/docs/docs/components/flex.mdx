@@ -11,29 +11,13 @@ import Info from '@site/static/data/flex.json'
 import { Flex, FlexItem } from '../../../../packages/flex/src'
 import { Card } from '../../../../packages/card/src'
 
-<ComponentHeader name={'flex'} info={Info}/>
+<ComponentHeader name={'flex'} info={Info} friendlyName={'Rutnät'} />
 
 # Introduktion
 
 Grid baserat på tekniken ```display: flex;``` i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element.
 
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
-
----
-
-<Flex>
-    <FlexItem col={12}>
-        <h2 >En sida med grid</h2>
-    </FlexItem>
-    <FlexItem>
-        <Card title={'Ett kort'} content={'Som är i ett grid'} />
-    </FlexItem>
-    <FlexItem>
-        <Card title={'Ett kort'} content={'Som är i ett grid'} />
-    </FlexItem>
-</Flex>
-
----
 
 
 ## Installation och användning
@@ -48,28 +32,37 @@ import { Flex } from '@migrationsverket/flex'
 
 ## Exempel
 
----
+<Flex>
+    <FlexItem col={12}>
+        <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} />
+    </FlexItem>
+    <FlexItem>
+        <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} />
+    </FlexItem>
+    <FlexItem col={"auto"}>
+        <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} />
+    </FlexItem>
+    <FlexItem col={6}>
+        <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} />
+    </FlexItem>
+</Flex>
 
 ```tsx
 <Flex>
     <FlexItem col={12}>
-        En kolumn som tar upp all bredd på en rad.
+        <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} />
     </FlexItem>
     <FlexItem>
-        En kolumn som tar upp så mycket plats den behöver.
+        <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} />
     </FlexItem>
     <FlexItem col={"auto"}>
-        En kolumn som fyller ut resterande plats på raden.
+        <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} />
     </FlexItem>
     <FlexItem col={6}>
-        En kolumn som tar 50% av bredden, men 100% i mobilen.
+        <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} />
     </FlexItem>
 </Flex>
 ```
-
-## Props
----
-<PropTable name={'FlexItem'}/>
 
 ### Grid
 
@@ -88,7 +81,6 @@ Komponenten ```<FlexItem>``` agrerar som direkt child till ```<Flex>```. FlexIte
 
 ## Riktlinjer
 
----
 
 ### När ska du använda Flex ?
 

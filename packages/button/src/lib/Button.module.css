@@ -75,11 +75,10 @@
 .small {
   min-height: 1.5rem;
   font-size: 0.75rem;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 @media smBreakpoint {
-  /* Adjust the media query according to your breakpoints */
   .button {
     width: 100%;
   }

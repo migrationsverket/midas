@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@migrationsverket/*": ["packages/*/src/index.ts"],
-      "@migrationsverket/date-picker": ["packages/date-picker/src/index.ts"]
+      "@migrationsverket/breadcrumbs": ["packages/breadcrumbs/src/index.ts"],
+      "@migrationsverket/link": ["packages/link/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

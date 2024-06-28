@@ -1,1 +1,1 @@
-export * from './lib/Grid';
+export * from './lib'

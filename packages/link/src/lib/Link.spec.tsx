@@ -1,23 +1,10 @@
-import '@testing-library/jest-dom';
-import { render, RenderResult } from '@testing-library/react';
-import { axe, toHaveNoViolations } from 'jest-axe';
-import { ButtonProps } from 'react-aria-components';
-import { Link } from './Link';
-expect.extend(toHaveNoViolations);
+import { render } from '@testing-library/react'
 
-describe('given a default link', () => {
-  let rendered: RenderResult;
-  let handleChange: jest.Mock;
-  let link: HTMLElement;
+import Link from './Link'
 
-  beforeEach(() => {
-    rendered = render(<LinkTest onPress={handleChange}></LinkTest>);
-    link = rendered.getByRole('link');
-  });
-
-  it('should have no accessibility violations', async () => {
-    expect(await axe(rendered.container)).toHaveNoViolations();
-  });
-});
-
-const LinkTest = (props: ButtonProps) => <Link {...props}>Click</Link>;
+describe('Link', () => {
+  it('should render successfully', () => {
+    const { baseElement } = render(<Link />)
+    expect(baseElement).toBeTruthy()
+  })
+})

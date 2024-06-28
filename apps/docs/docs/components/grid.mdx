@@ -8,42 +8,16 @@ description: Grid baserat på tekniken display grid i css
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/grid.json'
-import { Grid } from '../../../../packages/grid/src'
+import { Grid, GridItem } from '../../../../packages/grid/src'
 import { Card } from '../../../../packages/card/src'
 
-<ComponentHeader name={'grid'} info={Info}/>
+<ComponentHeader name={'grid'} info={Info} friendlyName={'Rutnät'} />
 
 # Introduktion
 
 Grid baserat på tekniken ```display: grid;``` i css. Grid är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element.
 
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
-
----
-
-<Grid>
-    <h2 style={{ gridColumn: 'span 12' }}>En sida med grid</h2>
-    <div style={{ gridColumn: 'span 3' }}>
-        <Card title={'Ett kort'} content={'Som är i tre kolumner'} />
-    </div>
-    <div style={{ gridColumn: 'span 4' }}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </div>
-    <div style={{ gridColumn: 'span 5' }}>
-        <Card title={'Ett kort'} content={'Som är i fem kolumner'} />
-    </div>
-    <div style={{ gridColumn: 'span 4' }}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </div>
-    <div style={{ gridColumn: 'span 4' }}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </div>
-    <div style={{ gridColumn: 'span 4' }}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </div>
-</Grid>
-
----
 
 ## Installation och användning
 
@@ -56,28 +30,57 @@ import { Grid } from '@migrationsverket/grid'
 ```
 
 ## Exempel
----
+
+<Grid>
+    <GridItem col={12}>
+        <h2>En sida med grid</h2>
+    </GridItem>
+    <GridItem col={3}>
+        <Card title={'Ett kort'} content={'Som är i tre kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={5}>
+        <Card title={'Ett kort'} content={'Som är i fem kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+</Grid>
 
 ```tsx
 <Grid>
-    <div style={{ gridColumn: 'span 3' }}>
-        <Card 
-            title={'Ett kort'} 
-            content={'Som är i tre kolumner'} 
-        />
-    </div>
-    <div style={{ gridColumn: 'span 6' }}>
-        <Card 
-            title={'Ett kort'} 
-            content={'Som är i sex kolumner'} 
-        />
-    </div>
+    <GridItem col={12}>
+        <h2>En sida med grid</h2>
+    </GridItem>
+    <GridItem col={3}>
+        <Card title={'Ett kort'} content={'Som är i tre kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={5}>
+        <Card title={'Ett kort'} content={'Som är i fem kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
 </Grid>
 ```
 
-## Props
----
-<PropTable name={'Grid'}/>
 
 ### Grid
 
@@ -93,8 +96,6 @@ Grids skalas enligt följande specifikation.
 
 
 ## Riktlinjer
-
----
 
 ### När ska du använda Grid ?
 

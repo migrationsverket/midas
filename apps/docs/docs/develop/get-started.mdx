@@ -10,7 +10,7 @@ sidebar_label: Kom igång
 Installera komponenter via `npm install @migrationsverket/[component]`. Komponentbiblioteket ligger på Nexus för närvarande, se till
 att du hämtar via rätt registry om det inte redan är inställt.
 
-```
+``` bash
 // .npmrc
 @migrationsverket:registry=http://nexus.migrationsverket.se/repository/npm/
 ```
@@ -20,16 +20,18 @@ att du hämtar via rätt registry om det inte redan är inställt.
 Generellt, importera och använd direkt:
 
 ```tsx
-import {Component} from '@migrationsverket/component';
+import { Component } from '@migrationsverket/component';
 
 <Component/>
 ```
 
-För specfika instruktioner, se respektive [komponent](/components)
+För specfika instruktioner, se respektive [komponent](../components/)
 
-## Installera temafil
+## Installera globala styles
 
-För att få tillgång till designsystemets tokens `npm install @migrationsverket/theme`
+För att få tillgång till globala styles som t.ex typsnittet Inter 
+    1. `npm install @migrationsverket/theme`
+    2. `import '@migrationsverket/theme/index.css` globalt i din app
 
 ## Är det något knas?
 

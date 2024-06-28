@@ -5,19 +5,16 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
-import { InfoBanner } from "../../../../packages/info-banner/src";
+import { InfoBanner } from "@migrationsverket/info-banner";
+import { Tabs as MidasTabs } from "@migrationsverket/tabs"; 
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/info-banner.json'
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 <ComponentHeader name={'info-banner'} info={Info} friendlyName={'Informationsmeddelande'}/>
 
 # Introduktion
 
-informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
-
-<InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
+Informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
 
 ## Installation och användning
 
@@ -31,25 +28,17 @@ import { InfoBanner } from '@migrationsverket/info-banner'
 
 ## Exempel
 
-<Tabs>
-  <TabItem value="info" label="Info" default>
-    <InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
-  </TabItem>
-  <TabItem value="important" label="Important">
-    <InfoBanner type={'important'} title={'Du behöver komplettera'} message={'Visas för användaren för att uppmana till att något måste göras.'}/>
-  </TabItem>
-  <TabItem value="warning" label="Warning">
-    <InfoBanner type={'warning'} title={'Formuläret har inte skickats'} message={'Visas för användaren för att bekräfta att en action gått snett.'}/>
-  </TabItem>
-  <TabItem value="success" label="Success">
-    <InfoBanner type={'success'} title={'Formuläret har skickats'} message={'Visas för användaren för att bekräfta att en action gått rätt till.'}/>
-  </TabItem>
-</Tabs>
+<MidasTabs
+  label={"Välj typ"}
+  tabs={['Info', 'Important', 'Warning', 'Success']}
+>
+  <InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
+  <InfoBanner type={'important'} title={'Du behöver komplettera'} message={'Visas för användaren för att uppmana till att något måste göras.'}/>
+  <InfoBanner type={'warning'} title={'Formuläret har inte skickats'} message={'Visas för användaren för att bekräfta att en action gått snett.'}/>
+  <InfoBanner type={'success'} title={'Formuläret har skickats'} message={'Visas för användaren för att bekräfta att en action gått rätt till.'}/>
+</MidasTabs>
 
-
-
-
-
+<br />
 
 ```tsx
 import {InfoBanner} from "@migrationsverket/info-banner";
@@ -59,10 +48,6 @@ import {InfoBanner} from "@migrationsverket/info-banner";
 <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
 <InfoBanner type={'success'} title={'Success'} message={'Message'}/>
 ```
-
-## Props
----
-<PropTable name={'InfoBanner'}/>
 
 ## Dependencies
 

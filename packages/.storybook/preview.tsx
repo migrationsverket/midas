@@ -32,8 +32,7 @@ const backup_preview = {
       default: 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: 'darkgrey' },
-        { name: 'Pink', value: 'pink' },
+        { name: 'Dark', value: '#143c50' },
       ],
     },
     controls: {

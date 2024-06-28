@@ -51,7 +51,7 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
     )
   }
   return (
-    <section style={{ marginBottom: 24 }}>
+    <section style={{ marginBottom: 48 }}>
       <h1>{friendlyName ? friendlyName : name}</h1>
 
       <div
@@ -109,7 +109,6 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
           </div>
         </div>
       </div>
-      <hr />
     </section>
   )
 }

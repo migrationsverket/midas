@@ -1,31 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Link } from './Link';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Link } from './Link'
 
 const meta: Meta<typeof Link> = {
   component: Link,
   title: 'Link',
   tags: ['autodocs'],
-};
-export default meta;
-type Story = StoryObj<typeof Link>;
+  parameters: {
+    layout: 'centered',
+  },
+}
+export default meta
+type Story = StoryObj<typeof Link>
 
-export const Example: Story = {
+export const Primary: Story = {
   args: {
-    children: 'Hej',
+    children: 'Länk',
     href: '#',
   },
-};
-
-export const Secondary: Story = {
-  args: {
-    children: 'Hej',
-    href: '#',
-  },
-};
-
-export const AppLink: Story = {
-  args: {
-    children: 'Button',
-    onPress: () => alert('navigation fn'),
-  },
-};
+}

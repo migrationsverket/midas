@@ -3,13 +3,13 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../../../../packages/accordion/src'
-import { Button } from '../../../../packages/button/src'
-import { Checkbox, CheckboxGroup } from '../../../../packages/checkbox/src'
-import { FileUpload } from '../../../../packages/file-upload/src/lib/FileUpload'
-import { Logo } from '../../../../packages/logo/src'
-import { Radio, RadioGroup } from '../../../../packages/radio/src'
-import { TextField } from '../../../../packages/textfield/src'
+} from '@migrationsverket/accordion'
+import { Button } from '@migrationsverket/button'
+import { Checkbox, CheckboxGroup } from '@migrationsverket/checkbox'
+import { FileUpload } from '@migrationsverket/file-upload'
+import { Logo } from '@migrationsverket/logo'
+import { Radio, RadioGroup } from '@migrationsverket/radio'
+import { TextField } from '@migrationsverket/textfield'
 
 export {
   Button,
@@ -21,7 +21,7 @@ export {
   CheckboxGroup,
   Logo,
   TextField,
-  // FileUpload,
+  FileUpload,
   Radio,
   RadioGroup,
 }

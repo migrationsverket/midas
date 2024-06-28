@@ -1,1 +1,1 @@
-export { Link, RouterProvider } from './lib/Link';
+export * from './lib/Link'

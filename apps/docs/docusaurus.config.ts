@@ -2,6 +2,26 @@ import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
 const path = require('path')
+const fs = require('fs')
+
+const packagesDir = path.resolve(__dirname, '../../packages')
+const packageAliases = {}
+
+fs.readdirSync(packagesDir).forEach((dir) => {
+  if (dir.startsWith('.')) {
+    return
+  }
+
+  const packagePath = path.resolve(packagesDir, dir)
+  if (fs.statSync(packagePath).isDirectory()) {
+    packageAliases[`@migrationsverket/${dir}`] = path.resolve(
+      packagePath,
+      'src/index.ts'
+    )
+  }
+})
+
+console.log(packageAliases)
 
 const config: Config = {
   title: 'MIDAS',
@@ -18,7 +38,14 @@ const config: Config = {
     defaultLocale: 'sv',
     locales: ['sv'],
   },
-  plugins: [],
+  plugins: [
+    [
+      'docusaurus-plugin-module-alias',
+      {
+        alias: packageAliases,
+      },
+    ],
+  ],
   markdown: {
     mermaid: true,
   },
