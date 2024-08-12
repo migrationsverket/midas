@@ -1,3 +1,7 @@
+## 0.6.2 (2024-08-12)
+
+This was a version bump only for radio to align it with other projects, there were no code changes.
+
 ## 1.1.2 (2024-04-26)
 
 ### 🩹 Fixes
