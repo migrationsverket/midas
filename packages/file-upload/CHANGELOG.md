@@ -1,3 +1,7 @@
+## 0.3.22 (2024-08-13)
+
+This was a version bump only for file-upload to align it with other projects, there were no code changes.
+
 ## 0.3.21 (2024-08-13)
 
 
