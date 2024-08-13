@@ -1,3 +1,7 @@
+## 0.2.53 (2024-08-13)
+
+This was a version bump only for logo to align it with other projects, there were no code changes.
+
 ## 0.2.52 (2024-08-12)
 
 This was a version bump only for logo to align it with other projects, there were no code changes.
