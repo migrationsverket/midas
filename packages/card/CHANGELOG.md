@@ -1,3 +1,16 @@
+## 0.2.7 (2024-08-13)
+
+
+### 🩹 Fixes
+
+- package.json and package-lock.json
+
+
+### ❤️  Thank You
+
+- jabir khalil
+- jabir Khalil
+
 ## 0.3.1 (2024-04-23)
 
 This was a version bump only for card to align it with other projects, there were no code changes.
