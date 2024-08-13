@@ -1,3 +1,16 @@
+## 0.0.3 (2024-08-13)
+
+
+### 🩹 Fixes
+
+- package.json and package-lock.json
+
+
+### ❤️  Thank You
+
+- jabir khalil
+- jabir Khalil
+
 ## 0.0.2 (2024-06-14)
 
 This was a version bump only for grid to align it with other projects, there were no code changes.
