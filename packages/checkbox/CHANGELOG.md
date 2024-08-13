@@ -1,3 +1,16 @@
+## 0.3.30 (2024-08-13)
+
+
+### 🩹 Fixes
+
+- package.json and package-lock.json
+
+
+### ❤️  Thank You
+
+- jabir khalil
+- jabir Khalil
+
 ## 0.5.1 (2024-04-23)
 
 This was a version bump only for checkbox to align it with other projects, there were no code changes.
