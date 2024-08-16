@@ -1,3 +1,7 @@
+## 0.9.25 (2024-08-16)
+
+This was a version bump only for textfield to align it with other projects, there were no code changes.
+
 ## 0.10.1 (2024-04-23)
 
 This was a version bump only for textfield to align it with other projects, there were no code changes.
