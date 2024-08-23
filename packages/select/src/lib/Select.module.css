@@ -82,7 +82,7 @@
 }
 
 .listBoxItem {
-  unset: all;
+  all: all;
   margin: auto;
   padding-left: 1rem;
   padding-top: 14px;

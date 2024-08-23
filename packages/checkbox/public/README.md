@@ -1,4 +1,4 @@
-# button
+# Checkbox
 
 ```bash
 npm i @migrationsverket/checkbox

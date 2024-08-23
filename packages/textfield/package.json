@@ -1,5 +1,6 @@
 {
   "name": "@migrationsverket/textfield",
+  "version": "0.9.24",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -9,7 +10,6 @@
       "types": "./index.d.ts"
     }
   },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "dependencies": {
     "@migrationsverket/theme": "^0.5.23",
     "react-aria-components": "^1.1.0",

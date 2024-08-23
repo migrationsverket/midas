@@ -8,5 +8,9 @@
       "import": "./index.mjs",
       "require": "./index.js"
     }
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

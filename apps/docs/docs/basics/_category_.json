@@ -1,5 +1,6 @@
 {
   "label": "Grunderna",
   "position": 4,
-  "collapsed": true
+  "collapsed": true,
+  "className": "chapter-end"
 }

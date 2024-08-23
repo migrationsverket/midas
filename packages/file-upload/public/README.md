@@ -1,4 +1,4 @@
-# button
+# FileUpload
 
 ```bash
 npm i @migrationsverket/file-upload

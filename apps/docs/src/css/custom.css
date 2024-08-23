@@ -154,3 +154,7 @@ this is a bit ad hoc, will fix this later
     width: 33.3333%;
   }
 }
+
+.chapter-end {
+  margin-bottom: 1.1rem;
+}

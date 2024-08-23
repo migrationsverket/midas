@@ -1,4 +1,5 @@
 {
   "label": "Designmönster",
-  "position": 5
+  "position": 5,
+  "className": "chapter-end"
 }

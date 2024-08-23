@@ -1,4 +1,4 @@
-# button
+# Grid
 
 ```bash
 npm i @migrationsverket/grid

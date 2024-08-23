@@ -1,4 +1,4 @@
-# button
+# flex
 
 ```bash
 npm i @migrationsverket/flex

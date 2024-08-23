@@ -1,4 +1,4 @@
-# button
+# Card
 
 ```bash
 npm i @migrationsverket/card

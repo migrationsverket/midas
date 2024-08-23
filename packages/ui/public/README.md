@@ -7,9 +7,6 @@ npm install @migrationsverket/ui
 ```
 
 ```tsx
-import { UiButton } from '@migrationsverket/ui'
-
-;<UiButton>Click</UiButton>
+import { Button } from '@migrationsverket/ui'
+;<Button>Click</Button>
 ```
-
-@dream

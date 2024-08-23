@@ -1,4 +1,5 @@
 {
   "label": "Komponenter",
-  "position": 4
+  "position": 4,
+  "className": "chapter-end"
 }

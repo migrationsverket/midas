@@ -1,4 +1,4 @@
-# InfoBanner
+# Logo
 
 ```bash
 npm install @migrationsverket/logo

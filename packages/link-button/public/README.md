@@ -1,10 +1,10 @@
-# InfoBanner
+# LinkButton
 
 ```bash
-npm install @migrationsverket/link
+npm install @migrationsverket/link-button
 ```
 
 ```tsx
-import { Link } from '@migrationsverket/link'
-;<Link href="#">Hej</Link>
+import { LinkButton } from '@migrationsverket/link-button
+;<LinkButton href="#">Hej</LinkButton>
 ```

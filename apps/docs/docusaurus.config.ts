@@ -78,6 +78,7 @@ const config: Config = {
             ],
           ],
         },
+        pages: {},
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -104,12 +105,17 @@ const config: Config = {
           type: 'doc',
           docId: 'components/index',
           position: 'left',
-          label: 'Komponenter',
+          label: 'Designsystem',
         },
         {
           to: '/blog',
           position: 'left',
           label: 'Nyheter',
+        },
+        {
+          to: '/about',
+          position: 'left',
+          label: 'Om',
         },
         {
           href: 'https://github.com/migrationsverket/midas',
