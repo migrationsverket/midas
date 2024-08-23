@@ -1,0 +1,36 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/breadcrumbs",
+  "dist-tags": {
+    "latest": "0.0.3"
+  },
+  "versions": [
+    "0.0.1",
+    "0.0.2",
+    "0.0.3"
+  ],
+  "time": {
+    "0.0.1": "2024-08-12T08:44:03Z",
+    "0.0.2": "2024-08-12T12:52:42Z",
+    "0.0.3": "2024-08-13T08:43:37Z"
+  },
+  "description": "```bash npm i @migrationsverket/breadcrumbs ```",
+  "author": {},
+  "repository": {},
+  "bugs": {},
+  "_contentLength": 0,
+  "version": "0.0.3",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-5TVLC2GLSjOtXxAmIcZ+i6JbM9gx/wfLkwaMJOZ4BvMT4q5ye+hAUISogZc+XW5CxFKwmcpwoka3nbHWe9QbQQ==",
+    "shasum": "5d0b19fdc5161f46ddb8de2c13d0aab8c15c07da",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/breadcrumbs/0.0.3/5d0b19fdc5161f46ddb8de2c13d0aab8c15c07da"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "gitHead": "3c77cb2a4612691f36770cf09d0378edcce1a9c3",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Breadcrumbs\n\n```bash\nnpm i @migrationsverket/breadcrumbs\n```\n\n```tsx\nimport { Breadcrumbs } from '@migrationsverket/breadcrumbs'\n;<Breadcrumbs items={[{ title: 'Länk', href: '#' }]} />\n```\n"
+}

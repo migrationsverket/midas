@@ -5,7 +5,7 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 ---
 
 import { PropTable } from '@site/src/components/propsTable';
-// import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src';
+import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src';
 import { Button } from '../../../../packages/button/src';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/toast.json'
@@ -96,7 +96,7 @@ Välj en global kö för toasts om det passar ditt use case bättre. Lägg en `<
 och lägg nya toasts i kön enligt:
 
 ```tsx
-import { GlobalToastRegion, toastQueue } from '@mmigrationsverketvds/toast';
+import { GlobalToastRegion, toastQueue } from '@migrationsverket/toast';
 <GlobalToastRegion />
 //...
 <Button onPress={

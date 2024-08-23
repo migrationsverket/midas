@@ -37,10 +37,10 @@ ditt bidrag passar in i helheten.
 Om du vill bidra med kod, titta också på våra guider för att komma igång med utvecklingen på ett
 smidigt sätt.
 
-[Lokal setup](/doc/local-setup.md)
-[Bygg en komponent](/doc/build-component.md)
-[Hantera Git](/doc/git)
-[Publicera komponenter](/doc/publish)
+- [Lokal setup](/doc/local-setup.md)
+- [Bygg en komponent](/doc/build-component.md)
+- [Hantera Git](/doc/git)
+- [Publicera komponenter](/doc/publish)
 
 ### Process
 

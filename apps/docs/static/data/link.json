@@ -1,56 +1,47 @@
 {
-  "_id": "@mvds/link@1.1.1",
+  "_id": "",
+  "name": "@migrationsverket/link",
   "dist-tags": {
-    "latest": "1.1.1"
+    "latest": "0.2.9"
   },
   "versions": [
-    "0.2.0",
-    "0.2.3",
-    "0.2.5",
-    "1.0.0",
-    "1.0.1",
-    "1.0.2",
-    "1.1.0",
-    "1.1.1"
+    "0.2.6",
+    "0.2.7",
+    "0.2.8",
+    "0.2.9"
   ],
-  "name": "@mvds/link",
-  "_rev": "8",
   "time": {
-    "created": "2024-04-03T10:13:38.146Z",
-    "modified": "2024-04-23T17:52:54.022Z",
-    "0.2.0": "2024-04-03T10:13:38.146Z",
-    "0.2.3": "2024-04-03T10:28:27.095Z",
-    "0.2.5": "2024-04-10T08:53:09.706Z",
-    "1.0.0": "2024-04-12T10:31:52.120Z",
-    "1.0.1": "2024-04-13T18:29:47.456Z",
-    "1.0.2": "2024-04-17T19:21:09.090Z",
-    "1.1.0": "2024-04-23T15:36:00.738Z",
-    "1.1.1": "2024-04-23T17:52:54.022Z"
+    "0.2.6": "2024-06-14T14:35:02Z",
+    "0.2.7": "2024-08-12T13:39:24Z",
+    "0.2.8": "2024-08-13T08:34:58Z",
+    "0.2.9": "2024-08-13T08:46:01Z"
+  },
+  "description": "```bash npm install @migrationsverket/link ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "1.1.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
-  },
-  "dependencies": {
-    "@mvds/theme": "^0.6.1",
-    "react-aria-components": "^1.1.0"
-  },
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
-  },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "readme": "ERROR: No README data found!",
-  "_nodeVersion": "20.11.0",
+  "version": "0.2.9",
+  "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-06ouRnxAdl8KvVqwNw+rksP6ras2116xvL6L61RhmsI1K26OZrPYOsFEfEEb9PD2R+meftKocabdFoJmpb8zjg==",
-    "shasum": "327a73eb5911c131fc4659ce9a41226589a14782",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/link/-/link-1.1.1.tgz"
-  }
+    "integrity": "sha512-Ec80GtkONASN64yzK3PIOB5CDOabLjBNe3HEs6za4NrnIzPOZa7fCcJDuMWOFlEskFbgPWLT4a2BMQyb8tFa2Q==",
+    "shasum": "0bd7946d5ea9e471b260e22e12f81c914d875695",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/link/0.2.9/0bd7946d5ea9e471b260e22e12f81c914d875695"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Link\n\n```bash\nnpm install @migrationsverket/link\n```\n\n```tsx\nimport { Link } from '@migrationsverket/link'\n;<Link href=\"#\">Hej</Link>\n```\n"
 }
