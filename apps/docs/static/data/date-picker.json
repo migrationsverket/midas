@@ -1,0 +1,32 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/date-picker",
+  "dist-tags": {
+    "latest": "0.0.1"
+  },
+  "versions": [
+    "0.0.1"
+  ],
+  "time": {
+    "0.0.1": "2024-08-13T08:38:30Z"
+  },
+  "description": "```bash npm i @migrationsverket/date-picker ```",
+  "author": {},
+  "repository": {},
+  "bugs": {},
+  "_contentLength": 1141,
+  "version": "0.0.1",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-vFHl7fIQHgRuiq7kkE3D6V43+51xDUdzpqJwNxbyPQgDZW3XLCsrSeLObwtXYTHu5WdDh9co1AALTk/3Dap9gg==",
+    "shasum": "4ef426f7f6908d47a3c60b61108e859ff5c2b876",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/date-picker/0.0.1/4ef426f7f6908d47a3c60b61108e859ff5c2b876"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "gitHead": "07f298386c29aad03d2c0d834641a7c770b4d0dd",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# DatePicker\n\n```bash\nnpm i @migrationsverket/date-picker\n```\n\n```tsx\nimport { DatePicker } from '@migrationsverket/date-picker'\n;<DatePicker\n  label=\"Välj datum\"\n  description=\"YYYY-MM-DD\"\n/>\n```\n"
+}

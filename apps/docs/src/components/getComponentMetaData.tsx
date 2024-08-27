@@ -39,11 +39,12 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
         </div>
         <div style={{ display: 'flex', gap: '3px' }}>
           <a
-            href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+            href={`https://react-spectrum.adobe.com/react-aria/${name}.html`}
+            target="_blank"
           >
             <img
               alt="Static Badge"
-              src="https://img.shields.io/badge/bitbucket-%230047B3.svg?style=for-the-badge&logo=bitbucket&logoColor=white"
+              src="https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"
             />
           </a>
         </div>
@@ -52,8 +53,6 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
   }
   return (
     <section style={{ marginBottom: 48 }}>
-      <h1>{friendlyName ? friendlyName : name}</h1>
-
       <div
         style={{
           display: 'flex',
@@ -95,15 +94,6 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
               <img
                 alt="GitHub"
                 src="https://img.shields.io/badge/github-100000.svg?style=for-the-badge&logo=github&logoColor=white"
-              />
-            </a>
-            <a
-              href={info.dist.tarball}
-              target="_blank"
-            >
-              <img
-                alt="NPM"
-                src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white"
               />
             </a>
           </div>

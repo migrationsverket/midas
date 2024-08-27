@@ -9,10 +9,11 @@ import { PropTable } from '@site/src/components/propsTable';
 import { Button } from '@migrationsverket/button'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/button.json'
+import { Flex, FlexItem } from '@migrationsverket/flex'
 
 <ComponentHeader name={'button'} info={Info} friendlyName={'Knapp'}/>
 
-# Introduktion
+## Introduktion
 
 Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
 
@@ -27,24 +28,18 @@ import { Button } from '@migrationsverket/button';
 ```
 
 ## Exempel
-
-<div
-  style={{
-    marginBottom: '10px',
-    display: 'flex',
-    columnGap: '10px',
-    alignItems: 'center',
-  }}
->
-  <Button>Primary</Button>
-  <Button variant={'secondary'}>Secondary</Button>
-  <Button isDisabled>Disabled</Button>
-</div>
-
-```tsx
-<Button>Primary</Button>
-<Button variant={'secondary'}>Secondary</Button>
-<Button isDisabled>Disabled</Button>
+```tsx live
+<Flex>
+  <FlexItem col="auto">
+    <Button>Primary</Button>
+  </FlexItem>
+  <FlexItem col="auto">
+    <Button variant="secondary">Secondary</Button>
+  </FlexItem>
+  <FlexItem col="auto">
+    <Button isDisabled>Disabled</Button>
+  </FlexItem>
+</FlexItem>
 ```
 
 

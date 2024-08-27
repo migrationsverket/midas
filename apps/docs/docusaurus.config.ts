@@ -21,8 +21,6 @@ fs.readdirSync(packagesDir).forEach((dir) => {
   }
 })
 
-console.log(packageAliases)
-
 const config: Config = {
   title: 'MIDAS',
   tagline: 'Migrationsverket Designsystem',
@@ -49,7 +47,7 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
   presets: [
     [
       '@docusaurus/preset-classic',

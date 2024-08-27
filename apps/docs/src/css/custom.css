@@ -136,6 +136,7 @@ this is a bit ad hoc, will fix this later
 }
 
 .custom-link {
+  flex: 1 1 0;
   div {
     min-width: 100%;
   }
@@ -157,4 +158,8 @@ this is a bit ad hoc, will fix this later
 
 .chapter-end {
   margin-bottom: 1.1rem;
+}
+
+.markdown li + li {
+  margin-top: unset;
 }

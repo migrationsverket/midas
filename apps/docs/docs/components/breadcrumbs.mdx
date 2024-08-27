@@ -1,5 +1,6 @@
 ---
-title: Breadcrumbs (Brödsmulor)
+title: Brödsmulor
+sidebar_label: Breadcrumbs (Brödsmulor)
 sidebar_position: 1
 tags: [menu]
 description: Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
@@ -14,7 +15,7 @@ import Info from '@site/static/data/breadcrumbs.json'
 
 <ComponentHeader name={'breadcrumbs'} info={Info && Info} friendlyName={'Brödsmulor'} />
 
-# Introduktion
+## Introduktion
 
 Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
 
@@ -30,46 +31,31 @@ import { Breadcrumbs } from '@migrationsverket/breadcrumbs';
 ```
 
 ## Exempel
+```tsx live
+function App() {
+  const items = [
+      {
+        "title": "Jag vill förlänga",
+        "href": "#"
+      },
+      {
+        "title": "Arbete",
+        "href": "#"
+      },
+      {
+        "title": "Anställd",
+        "href": "#"
+      }
+  ];
 
-<Breadcrumbs
-  items={[
-    {
-      "title": "Jag vill förlänga",
-      "href": "#"
-    },
-    {
-      "title": "Arbete",
-      "href": "#"
-    },
-    {
-      "title": "Anställd",
-      "href": "#"
-    }
-  ]}
-/>
-
-```tsx
-<Breadcrumbs
-  items={[
-    {
-      "title": "Jag vill förlänga",
-      "href": "#"
-    },
-    {
-      "title": "Arbete",
-      "href": "#"
-    },
-    {
-      "title": "Anställd",
-      "href": "#"
-    }
-  ]}
-/>
+  return (
+    <Breadcrumbs items={items} />
+  )
+}
 ```
 
 ## Dependencies
 {/* <ComponentFooter info={Info && Info}/> */}
-
 
 ## Riktlinjer
 - TBD.

@@ -16,7 +16,7 @@
 
 .icon {
   position: absolute;
-  padding: 0.75rem;
+  margin-left: 0.75rem;
   left: 0;
   top: 50%;
   transform: translatey(-50%);

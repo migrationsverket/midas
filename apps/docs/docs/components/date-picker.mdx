@@ -1,0 +1,44 @@
+---
+title: Datumväljare
+sidebar_label: DatePicker (Datumväljare)
+tags: []
+description: Kort beskrivning av DatePicker
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/date-picker.json'
+import { DatePicker } from '@migrationsverket/date-picker'
+
+<ComponentHeader name={'date-picker'} info={Info} friendlyName={'Datumväljare'} />
+
+## Introduktion
+
+Fält för att välja ett datum eller ett spann av datum med kalender.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/date-picker
+```
+
+## Exempel
+
+<div
+  style={{
+    marginBottom: '10px',
+    display: 'flex',
+    columnGap: '10px',
+    alignItems: 'center',
+  }}
+>
+    <DatePicker />
+</div>
+
+```tsx
+import { DatePicker } from '@migrationsverket/date-picker'
+```
+
+## Riktlinjer
+
+TBD

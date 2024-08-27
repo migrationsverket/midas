@@ -1,0 +1,46 @@
+---
+title: Sökfält
+sidebar_label: SearchField (Sökfält)
+tags: []
+description: Sökfält är en kombinationskomponent av TextField och Button
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/search-field.json'
+import { SearchField } from '@migrationsverket/search-field'
+
+<ComponentHeader name={'search-field'} info={Info} friendlyName={'Sökfält'} />
+
+## Introduktion
+
+Sökfält är en kombinationskomponent av TextField och Button.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/search-field
+```
+
+## Exempel
+
+<div
+  style={{
+    marginBottom: '10px',
+    display: 'flex',
+    columnGap: '10px',
+    alignItems: 'center',
+  }}
+>
+    <SearchField placeholder="Sök..." />
+</div>
+
+```tsx
+import { SearchField } from '@migrationsverket/search-field'
+
+<SearchField placeholder="Sök..." />
+```
+
+## Riktlinjer
+
+TBD

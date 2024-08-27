@@ -36,12 +36,10 @@ export function Select<T extends object>({
   isDisabled,
   ...props
 }: SelectProps<T>) {
-  console.log(items)
   return (
     <AriaSelect
       {...props}
       className={styles.select}
-      onSelectionChange={(value) => console.log(value)}
     >
       <Label className={styles.label}>{label}</Label>
       {description && (

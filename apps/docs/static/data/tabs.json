@@ -1,0 +1,34 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/tabs",
+  "dist-tags": {
+    "latest": "0.0.2"
+  },
+  "versions": [
+    "0.0.1",
+    "0.0.2"
+  ],
+  "time": {
+    "0.0.1": "2024-08-13T09:05:49Z",
+    "0.0.2": "2024-08-13T09:07:19Z"
+  },
+  "description": "```bash npm i @migrationsverket/tabs ```",
+  "author": {},
+  "repository": {},
+  "bugs": {},
+  "_contentLength": 0,
+  "version": "0.0.2",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-HHeS1w4+haRYKuGaURhDRWCFq/5tiZGGR9Lxii2fsRKlpco9qAo+EtoNhEiHVFyWbhh3Ggsnd/RgQfP6aRALGg==",
+    "shasum": "1340a48880d24edfe99efb1246138d04e42e61c2",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/tabs/0.0.2/1340a48880d24edfe99efb1246138d04e42e61c2"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "gitHead": "483c06ea4d7ecd38edd409188e7a73c99aad99e9",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Tabs\n\n```bash\nnpm i @migrationsverket/tabs\n```\n\n```tsx\nimport { Tabs } from '@migrationsverket/tabs';\n\nconst tabs = {\n    defaultSelected: 'Viktigt att veta',\n    label: 'Följ processen',\n    tabs: ['Processen', 'Viktigt att veta', 'Ansök'] as const,\n}\n\n<Tabs\n    defaultSelected={tabs.defaultSelected}\n    label={tabs.label}\n    tabs={tabs.tabs}\n>\n    <div>\n        Processen går till såhär Lorem ipsum dolor sit amet consectetur\n        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur\n        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.\n        Eveniet reprehenderit sapiente quidem culpa nam? Vel?\n    </div>\n    <div>\n        Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur\n        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error\n        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti\n        consequatur nam culpa nesciunt cupiditate autem suscipit.\n    </div>\n    <div>\n        Ansök här\n    </div>\n</Tabs>\n```\n"
+}

@@ -1,5 +1,6 @@
 ---
-title: Accordion (Dragspel)
+title: Dragspel
+sidebar_label: Accordion (Dragspel)
 sidebar_position: 1
 tags: [components, menu, accordion]
 description: Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.
@@ -17,7 +18,7 @@ import Info from '@site/static/data/accordion.json'
 
 <ComponentHeader name={'accordion'} info={Info} friendlyName={'Dragspel'} />
 
-# Introduktion
+## Introduktion
 
 Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren.
 
@@ -39,29 +40,7 @@ import {
 
 ## Exempel
 
-<div
-  style={{
-    marginBottom: '10px',
-    display: 'flex',
-    columnGap: '10px',
-    alignItems: 'center',
-  }}
->
-  <Accordion type={'multiple'}>
-    <AccordionItem value={'first'}>
-      <AccordionTrigger>Rubrik</AccordionTrigger>
-      <AccordionContent>
-        Längre text inuti en accordion, det som kallas för content
-      </AccordionContent>
-    </AccordionItem>
-    <AccordionItem value={'second'}>
-      <AccordionTrigger>En annan rubrik</AccordionTrigger>
-      <AccordionContent>Här kan man lägga en text</AccordionContent>
-    </AccordionItem>
-  </Accordion>
-</div>
-
-```tsx
+```tsx live
 <Accordion type={'multiple'}>
   <AccordionItem value={'first'}>
     <AccordionTrigger>Rubrik</AccordionTrigger>

@@ -10,6 +10,10 @@ import { FileUpload } from '@migrationsverket/file-upload'
 import { Logo } from '@migrationsverket/logo'
 import { Radio, RadioGroup } from '@migrationsverket/radio'
 import { TextField } from '@migrationsverket/textfield'
+import { Breadcrumbs } from '@migrationsverket/breadcrumbs'
+import { Link } from '@migrationsverket/link'
+import { Grid, GridItem } from '@migrationsverket/grid'
+import { Flex, FlexItem } from '@migrationsverket/flex'
 
 export {
   Button,
@@ -24,4 +28,10 @@ export {
   FileUpload,
   Radio,
   RadioGroup,
+  Breadcrumbs,
+  Link,
+  Grid,
+  GridItem,
+  Flex,
+  FlexItem,
 }

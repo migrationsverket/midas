@@ -1,21 +1,20 @@
 ---
 title: {{ properName }}
-sidebar_label: {{ properName }}
+sidebar_label: {{ componentName }} ({{ properName }})
 tags: []
 description: Kort beskrivning av {{ properName }}
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/{{ componentName }}.json'
+import { {{ properName }} } from '@migrationsverket/{{ componentName }}'
 
-<ComponentHeader name={'{{ componentName }}'} info={Info}/>
+<ComponentHeader name={'{{ componentName }}'} info={Info} friendlyName={'{{properName}}'} />
 
-# {{ properName }}
+## Introduktion
 
 _Kort beskrivning av {{ properName }}_
-
-<div>[lägg in ett litet showcase på {{ componentName }}]</div>
 
 ## Installation och användning
 
@@ -28,22 +27,12 @@ import { {{ properName }} } from '@migrationsverket/{{ componentName }}'
 ```
 
 ## Exempel
-
----
-
-```tsx
+```tsx live
+[lägg in ett litet showcase på {{ componentName }}]
 ```
 
-## Props
----
-<PropTable name={'{{ properName }}'}/>
-
-### {{ properName }}
+## Dependencies
+<ComponentFooter info={Info}/>
 
 ## Riktlinjer
-
----
-
-### När ska du använda {{ properName }} ?
-
-### Så här använder du {{ properName }}
+TBD
