@@ -1,3 +1,26 @@
+## 0.7.0 (2024-09-02)
+
+
+### 🚀 Features
+
+- **button:** added tertiary and danger themes
+
+
+### 🩹 Fixes
+
+- package.json and package-lock.json
+
+- delete not used imoprt from button component and delete not use test.txt
+
+- **docs:** change doc structure
+
+
+### ❤️  Thank You
+
+- jabir khalil
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 0.6.4 (2024-06-14)
 
 This was a version bump only for button to align it with other projects, there were no code changes.
