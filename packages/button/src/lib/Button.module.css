@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, red130, red150 from tokens;
 
 .button {
   font-family: display;
@@ -45,27 +45,84 @@
   background-color: white;
   border-color: blue150;
   opacity: 1;
+
+  &:hover {
+    background-color: gray10;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+    border-color: blue150;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid blue150;
+    outline-offset: 2px;
+  }
 }
 
-.secondary:hover {
-  background-color: gray10;
-}
-
-.secondary[data-disabled] {
-  color: gray50;
-  pointer-events: none;
+.tertiary {
+  color: blue150;
   background-color: white;
-  border-color: gray50;
+  border-color: white;
+  opacity: 1;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: gray10;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: red150;
+    border-color: red150;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid blue150;
+    outline-offset: 2px;
+  }
 }
 
-.secondary[data-pressed] {
-  background-color: gray20;
-  border-color: blue150;
-}
+.danger {
+  color: white;
+  background-color: signalRed100;
+  border-color: signalRed100;
+  opacity: 1;
 
-.secondary[data-focus-visible] {
-  outline: 2px solid blue150;
-  outline-offset: 2px;
+  &:hover {
+    background-color: red130;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+    border-color: blue150;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid blue150;
+    outline-offset: 2px;
+  }
 }
 
 .fullwidth {

@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 export interface MvdsButton extends ButtonProps {
   /** Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. */
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger'
   fullwidth?: boolean
   size?: 'small'
 }
@@ -30,6 +30,8 @@ export const Button: React.FC<MvdsButton> = ({
         styles.button,
         variant === 'primary' && styles.primary,
         variant === 'secondary' && styles.secondary,
+        variant === 'tertiary' && styles.tertiary,
+        variant === 'danger' && styles.danger,
         fullwidth && styles.fullwidth,
         size === 'small' && styles.small,
         className

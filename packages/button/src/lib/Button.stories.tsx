@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 
-
 const meta: Meta<typeof Button> = {
   component: Button,
   title: 'Button',
@@ -12,9 +11,14 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     children: { name: 'label' },
     variant: {
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'tertiary', 'danger'],
       control: { type: 'radio' },
       defaultValue: 'primary',
+    },
+    size: {
+      options: ['small'],
+      control: { type: 'radio' },
+      defaultValue: null,
     },
     isDisabled: {
       options: [true, false],
