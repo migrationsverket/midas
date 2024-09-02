@@ -1,12 +1,8 @@
-'use client'
-
-import React, { useState } from 'react'
+import React from 'react'
 import {
   CheckboxGroup as AriaCheckboxGroup,
   CheckboxGroupProps as AriaCheckboxGroupProps,
-  CheckboxGroupContext,
   CheckboxGroupStateContext,
-  CheckboxProps,
   FieldError,
   Label,
   Text,
@@ -21,6 +17,7 @@ export interface CheckboxGroupProps
   children?: React.ReactNode
   label?: string
   description?: string
+  showSelectAll?: boolean
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
@@ -28,94 +25,76 @@ export const CheckboxGroup = ({
   label,
   description,
   errorMessage,
+  showSelectAll,
   children,
   ...props
 }: CheckboxGroupProps) => {
-  const state = React.useContext(CheckboxGroupStateContext)
-  const [selectedValues, setSelectedValues] = useState<string[]>([])
 
-  // Handle the "Select All" checkbox
-  const handleSelectAll = (isChecked: boolean) => {
-    if (isChecked) {
-      // Select all values
-      const allValues = React.Children.toArray(children)
-        .map((child) => {
-          if (React.isValidElement<CheckboxProps>(child) && child.props.value) {
-            return child.props.value
-          }
-          return null
-        })
-        .filter((value): value is string => value !== null) // Filter out null
+  const [isAllSelected, setIsAllSelected] = React.useState<boolean>(false)
 
-      setSelectedValues(allValues)
-      state?.setValue(allValues)
-    } else {
-      // Deselect all values
-      setSelectedValues([])
-      state?.setValue([])
+  const ToogleAll = () => {
+    // Get the current state of the checkbox group
+    const state = React.useContext(CheckboxGroupStateContext);
+
+    // Retrieve all childern
+    const childValues = React.Children.toArray(children)
+      .filter(React.isValidElement)
+      .map((child: React.ReactElement) => child.props.value)
+
+    
+    // Toogle all values
+    function toggleAll() {
+      setIsAllSelected(!isAllSelected)
+      if (!isAllSelected) return state.setValue(['toggleAll', ...childValues])
+      
+      return state.setValue([])
     }
-  }
+    
+    //listen and change the select all accordingly
+    React.useEffect(() => {
+      if (state.value.length !== childValues.length + 1) state.removeValue('toggleAll')
+      if (state.value.length === childValues.length && !state.value.includes('toggleAll')) {
+        state.addValue('toggleAll')
+        setIsAllSelected(true)
+      }
 
-  // Handle individual checkbox change
-  const handleCheckboxChange = (value: string) => {
-    setSelectedValues((prevSelectedValues) => {
-      const newSelectedValues = prevSelectedValues.includes(value)
-        ? prevSelectedValues.filter((v) => v !== value)
-        : [...prevSelectedValues, value]
-      state?.setValue(newSelectedValues)
-      return newSelectedValues
-    })
-  }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [childValues.length, state.value])
 
-  // Check if all checkboxes are selected
-  const isAllSelected =
-    React.Children.count(children) > 0 &&
-    selectedValues.length === React.Children.count(children)
+    return (
+      <Checkbox
+        value="toggleAll"
+        isSelected={isAllSelected}
+        onChange={() => toggleAll()}
+      >
+        Välj alla
+      </Checkbox>
+    );
+  }
 
   return (
-    <CheckboxGroupContext.Provider value={{}}>
-      <AriaCheckboxGroup
-        {...props}
-        className={styles.checkboxGroup}
-      >
-        {({ isInvalid }) => (
-          <>
-            <Label className={styles.checkboxGroupLabel}>{label}</Label>
-            {description && <Text slot="description">{description}</Text>}
-            <Checkbox
-              value="select-all"
-              isSelected={isAllSelected}
-              onChange={(e) => handleSelectAll(e)}
-            >
-              Välj alla
-            </Checkbox>
-            {React.Children.map(children, (child) => {
-              if (
-                React.isValidElement<CheckboxProps>(child) &&
-                child.props.value
-              ) {
-                return React.cloneElement(child, {
-                  isSelected: selectedValues.includes(child.props.value),
-                  onChange: () =>
-                    handleCheckboxChange(
-                      child.props.value ? child.props.value : ''
-                    ),
-                })
-              }
-              return null
-            })}
-            <span className={styles.fieldError}>
-              {isInvalid && (
-                <TriangleAlert
-                  width={16}
-                  height={16}
-                />
-              )}
-              <FieldError>{errorMessage}</FieldError>
-            </span>
-          </>
-        )}
-      </AriaCheckboxGroup>
-    </CheckboxGroupContext.Provider>
+    <AriaCheckboxGroup
+      {...props}
+      className={styles.checkboxGroup}
+    >
+      {({ isInvalid }) => (
+        <>
+          <Label className={styles.checkboxGroupLabel}>{label}</Label>
+          {description && <Text slot="description">{description}</Text>}
+          {showSelectAll && <ToogleAll />}
+          {children}
+          <span className={styles.fieldError}>
+            {isInvalid && (
+              <TriangleAlert
+                width={16}
+                height={16}
+              />
+            )}
+            <FieldError>{errorMessage}</FieldError>
+          </span>
+        </>
+      )}
+
+    </AriaCheckboxGroup>
   )
 }

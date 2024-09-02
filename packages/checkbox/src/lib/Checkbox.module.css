@@ -116,7 +116,6 @@
   gap: 0.5rem;
   font-size: 1rem;
   border-left: 3px solid transparent;
-  padding-left: 1rem;
   min-width: 150px;
 }
 
@@ -145,33 +144,4 @@
 
 .field .fieldError {
   color: signalRed100;
-}
-
-@media smBreakpoint {
-  .checkbox {
-    border: 1px solid gray40;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-
-  .checkbox[data-focus-visible] div {
-    outline: none;
-  }
-  .checkbox[data-invalid] div {
-    border: 1px solid black;
-  }
-
-  .checkboxGroup {
-    padding-left: 1rem;
-    padding-right: 10%;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-  }
-
-  .checkboxGroup[data-invalid] {
-    background-color: signalRed10;
-    border-left: none;
-  }
 }

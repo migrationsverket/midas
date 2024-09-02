@@ -56,3 +56,13 @@ export const Example: Story = {
     errorMessage: 'här gick det snett',
   },
 }
+
+export const SelectAll: Story = {
+  ...CheckboxGroupTemplate,
+  args: {
+    label: 'Etikett',
+    description: 'Beskrivning',
+    errorMessage: 'här gick det snett',
+    showSelectAll: true
+  },
+}

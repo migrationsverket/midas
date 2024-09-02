@@ -10,7 +10,8 @@ import {
   DisabledExample,
   GroupExample,
   IndeterminateExample, InvalidExample, ReadOnlyExample,
-  SimpleConfirm
+  SimpleConfirm,
+  CheckboxSelectAll
 } from "@site/src/components/examples/checkbox/CheckboxExample";
 import { InfoBanner } from '@migrationsverket/info-banner'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
@@ -37,8 +38,6 @@ import {Checkbox} from '@migrationsverket/checkbox';
 
 ## Exempel
 <SimpleConfirm />
-
-## Funktioner
 
 ### Gruppera flera checkboxar
 
@@ -80,6 +79,10 @@ Sätt prop `isReadonly` när användaren inte ska kunna påverka checkboxens til
 valt läge.
 
 <ReadOnlyExample/>
+
+### Välj alla
+Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". Denna funktion finns inbyggt i `<CheckboxGroup />` via prop: showSelectAll
+<CheckboxSelectAll />
 
 
 ## Props

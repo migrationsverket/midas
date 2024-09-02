@@ -210,3 +210,37 @@ export const InvalidExample = () => {
     </div>
   )
 }
+
+
+export const CheckboxSelectAll = () => {
+  const [CHECKED_ITEMS, setItems] = useState(ITEMS)
+  const handleUpdate = (value: string, checked: any) => {
+    let updated = CHECKED_ITEMS.map((item) => {
+      return item.value === value ? { ...item, checked } : item
+    })
+    // @ts-ignore (this is just an example)
+    setItems(updated)
+  }
+
+  return (
+    <>
+      <CheckboxGroup
+        label={'Välj en frukt'}
+        description={'beskrivande text'}
+        showSelectAll
+      >
+        {ITEMS.map((item) => {
+          return (
+            <Checkbox
+              value={item.value}
+              key={item.value}
+              onChange={(checked) => handleUpdate(item.value, checked)}
+            >
+              {item.value}
+            </Checkbox>
+          )
+        })}
+      </CheckboxGroup>
+    </>
+  )
+}
