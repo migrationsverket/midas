@@ -1,3 +1,7 @@
+## 0.5.31 (2024-09-03)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 0.5.30 (2024-09-03)
 
 This was a version bump only for theme to align it with other projects, there were no code changes.
