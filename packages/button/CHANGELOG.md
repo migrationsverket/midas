@@ -1,3 +1,27 @@
+## 0.5.29 (2024-09-03)
+
+
+### 🚀 Features
+
+- **button:** add react aria button component
+
+- **button:** added tertiary and danger themes
+
+
+### 🩹 Fixes
+
+- delete not used imoprt from button component and delete not use test.txt
+
+- **docs:** change doc structure
+
+
+### ❤️  Thank You
+
+- jabir khalil
+- jabir Khalil
+- pixelrickdreamer
+- Wilhelm Hjelm
+
 ## 0.7.0 (2024-09-02)
 
 
