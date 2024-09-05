@@ -1,9 +1,10 @@
-{/* ---
+---
 title: Designtokens
 sidebar_position: 2
 ---
 
-import { GetColors, GetGenericProp } from '@site/src/components/getThemeProps';
+import { TokensTable } from '@site/src/components/getThemeProps';
+import { theme } from '@migrationsverket/theme'
 
 # Designtokens
 
@@ -14,38 +15,20 @@ hårdkodade värden.
 ```bash
 npm install @migrationsverket/theme
 ```
+
 Använd som variabler genom att importera temafilen
+
 ```ts
-import {theme} from '@migrationsverket/theme'
-// const blue = theme.colors.blue150; // #143c50
+import { theme } from '@migrationsverket/theme'
+const blue = theme.baseColors.blue150; // #143c50
 ```
-eller bygg komponenter med Stiches och referera till tokens via `$color$blue150` i css.
 
+Nedan finner du tabeller över alla värden som finns som tokens i `theme`
+Om du inte vill importera hela theme kan du importera delarna för sig
 
-## Colors
+```ts
+import { baseColors } from '@migrationsverket/theme'
+const blue = baseColors.blue150; // #143c50
+```
 
-<GetColors />
-
-## Space
-
-<GetGenericProp tokenSet={'space'}/>
-
-## fontSize
-
-<GetGenericProp tokenSet={'fontSize'}/>
-
-## FontWeights
-
-<GetGenericProp tokenSet={'fontWeights'}/>
-
-## BorderWidths
-
-<GetGenericProp tokenSet={'borderWidths'}/>
-
-## Radii
-
-<GetGenericProp tokenSet={'radii'}/>
-
-## Transitions
-
-<GetGenericProp tokenSet={'transitions'}/> */}
+<TokensTable />
