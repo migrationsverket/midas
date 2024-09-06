@@ -1,9 +1,12 @@
 import { ReactNode } from 'react'
 import styles from './Grid.module.css'
+import clsx from 'clsx'
 
-export interface GridProps {
-  /** Använd "grid-column: span $antalKollumner';" för att låta en child växa över fler kolumner. */
+interface GridProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
   children: ReactNode
+  /** Tar bort alla marginaler för nestad användning */
+  fluid?: boolean
 }
 
 /**
@@ -14,9 +17,12 @@ export interface GridProps {
  * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
  */
 
-export const Grid: React.FC<GridProps> = ({ children }) => {
+export const Grid: React.FC<GridProps> = ({ children, fluid, ...rest }) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
+      {...rest}
+    >
       <div className={styles.grid}>{children}</div>
     </div>
   )

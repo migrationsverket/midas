@@ -3,17 +3,19 @@
 
 .container {
   --columns: 1;
-  --margin: 1rem;
+  --padding: 1rem;
   --gutter: 1rem;
+  --margin: auto;
+  --maxWidth: 1368px;
 
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
 }
 
 .grid {
-  padding-right: var(--margin);
-  padding-left: var(--margin);
+  padding-right: var(--padding);
+  padding-left: var(--padding);
   display: grid;
   gap: var(--gutter);
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
@@ -22,7 +24,7 @@
 @media mdBreakpoint {
   .container {
     --columns: 12;
-    --margin: 2rem;
+    --padding: 2rem;
   }
 }
 
@@ -34,9 +36,15 @@
 
 @media xlBreakpoint {
   .container {
-    --margin: 0;
+    --padding: 0;
     max-width: 1368px;
   }
+}
+
+.fluid {
+  --maxWidth: unset;
+  --margin: 0;
+  --padding: 0;
 }
 
 /* Grid item classes */
