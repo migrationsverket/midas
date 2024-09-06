@@ -37,24 +37,24 @@ export const baseColors = {
   blue100: '#2e7ca5',
   blue130: '#25607f',
   blue150: '#143c50',
-};
+}
 
 export const buttonColors = {
   outline: '#303030',
-  primaryBackground: '#143c50',
+  primaryBackground: baseColors['blue150'],
   primaryText: '#303030',
-  primaryHover: '#25607f',
-  primaryFocus: '#000000',
+  primaryHover: baseColors['blue130'],
+  primaryFocus: baseColors['black'],
   primaryActive: '#4289ae',
-  secondaryBackground: '#5d5d5d',
+  secondaryBackground: baseColors['gray130'],
   secondaryText: baseColors['white'],
   secondaryHover: '#303030',
   secondaryActive: '#303030',
-};
+}
 
 export const inputColor = {
   inputText: baseColors['gray150'],
-};
+}
 
 export const signalColors = {
   signalGreen10: '#d5f2d9',
@@ -66,37 +66,37 @@ export const signalColors = {
   signalRed10: '#ffdfdf',
   signalRed100: '#e62323',
   signalRed130: '#b31b1b',
-};
+}
 
-export const borderRadii = {
-  s: ' 0.125rem', // 2px
-  m: ' 0.25rem', // 4px
-};
+export const borderRadius = {
+  sRadius: ' 0.125rem', // 2px
+  mRadius: ' 0.25rem', // 4px
+}
 
 export const borderWidths = {
-  xs: ' 0.0625rem', // 1px
-  s: ' 0.125rem', // 2px
-  m: ' 0.25rem', // 4px
-};
+  xsWidth: ' 0.0625rem', // 1px
+  sWidth: ' 0.125rem', // 2px
+  mWidth: ' 0.25rem', // 4px
+}
 
 export const fontWeights = {
-  light: '300',
-  regular: '400',
-  medium: '500',
-  semiBold: '600',
-  bold: '700',
-  black: '900',
-};
+  lightWeight: '300',
+  regularWeight: '400',
+  mediumWeight: '500',
+  semiBoldWeight: '600',
+  boldWeight: '700',
+  blackWeight: '900',
+}
 
 export const fontSizes = {
-  desktop: '1rem',
-  mobile: '1rem',
-  large: '1.5rem',
-  inputNormal: '0.875rem',
-  inputMessage: '0.75rem',
-  inputLabel: '1rem',
-  inputDescription: '0.875rem',
-};
+  desktopSize: '1rem',
+  mobileSize: '1rem',
+  largeSize: '1.5rem',
+  inputNormalSize: '0.875rem',
+  inputMessageSize: '0.75rem',
+  inputLabelSize: '1rem',
+  inputDescriptionSize: '0.875rem',
+}
 
 export const midasColors = {
   logoPrimary: baseColors['red100'],
@@ -118,22 +118,26 @@ export const midasColors = {
   borderFocusInner: baseColors['white'],
   iconPrimary: baseColors['black'],
   iconInverted: baseColors['white'],
-};
+}
 
 export const midasTransitions = {
-  slow: '500ms',
-  normal: '300ms',
-  fast: '250ms',
-};
+  slowTransition: '500ms',
+  normalTransition: '300ms',
+  fastTransition: '250ms',
+}
 
 export const breakpoints = {
-  // change later maybe
-  sm: '(max-width: 767px)',
-  md: '(min-width: 768px)',
-  lg: '(min-width: 1200px)',
-  xl: '(min-width: 1440px)',
-};
+  smBreakpoint: '(max-width: 767px)',
+  mdBreakpoint: '(min-width: 768px)',
+  lgBreakpoint: '(min-width: 1200px)',
+  xlBreakpoint: '(min-width: 1440px)',
+}
 
 export const accessibility = {
-  forcedColors: '(forced-colors: active)',
-};
+  forcedColorsMode: '(forced-colors: active)',
+  prefersReducedMotion: '(prefers-reduced-motion: reduced)',
+}
+
+export const font = {
+  display: '"Inter", sans-serif',
+}

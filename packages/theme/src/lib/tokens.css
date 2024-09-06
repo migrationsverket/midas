@@ -1,3 +1,4 @@
+/* 0 */
 @value white: #ffffff;
 @value black: #000000;
 @value gray10: #f2f2f2;
@@ -37,6 +38,7 @@
 @value blue130: #25607f;
 @value blue150: #143c50;
 
+/* 1 */
 @value outline: #303030;
 @value primaryBackground: #143c50;
 @value primaryText: #303030;
@@ -48,25 +50,30 @@
 @value secondaryHover: #303030;
 @value secondaryActive: #303030;
 
+/* 2 */
 @value inputText: #1f1f1f;
 
-@value signalGreen10: #D5F2D9;
-@value signalGreen100: #008D3C;
-@value signalBlue10: #EAF2F6;
-@value signalBlue100: #0066CC;
-@value signalYellow10: #FFF8E1;
-@value signalYellow100: #FDB813;
-@value signalRed10: #FFDFDF;
-@value signalRed100: #E62323;
-@value signalRed130: #B31B1B;
+/* 3 */
+@value signalGreen10: #d5f2d9;
+@value signalGreen100: #008d3c;
+@value signalBlue10: #eaf2f6;
+@value signalBlue100: #0066cc;
+@value signalYellow10: #fff8e1;
+@value signalYellow100: #f1c21b;
+@value signalRed10: #ffdfdf;
+@value signalRed100: #e62323;
+@value signalRed130: #b31b1b;
 
-@value sRadius: 0.125rem;
-@value mRadius: 0.25rem;
+/* 4 */
+@value sRadius:  0.125rem;
+@value mRadius:  0.25rem;
 
-@value xsWidth: 0.0625rem;
-@value sWidth: 0.125rem;
-@value mWidth: 0.25rem;
+/* 5 */
+@value xsWidth:  0.0625rem;
+@value sWidth:  0.125rem;
+@value mWidth:  0.25rem;
 
+/* 6 */
 @value lightWeight: 300;
 @value regularWeight: 400;
 @value mediumWeight: 500;
@@ -74,6 +81,7 @@
 @value boldWeight: 700;
 @value blackWeight: 900;
 
+/* 7 */
 @value desktopSize: 1rem;
 @value mobileSize: 1rem;
 @value largeSize: 1.5rem;
@@ -82,6 +90,7 @@
 @value inputLabelSize: 1rem;
 @value inputDescriptionSize: 0.875rem;
 
+/* 8 */
 @value logoPrimary: #b90835;
 @value logoSecondary: #ffffff;
 @value textPrimary: #1f1f1f;
@@ -102,15 +111,21 @@
 @value iconPrimary: #000000;
 @value iconInverted: #ffffff;
 
+/* 9 */
 @value slowTransition: 500ms;
 @value normalTransition: 300ms;
 @value fastTransition: 250ms;
 
+/* 10 */
 @value smBreakpoint: (max-width: 767px);
 @value mdBreakpoint: (min-width: 768px);
 @value lgBreakpoint: (min-width: 1200px);
 @value xlBreakpoint: (min-width: 1440px);
 
+/* 11 */
 @value forcedColorsMode: (forced-colors: active);
+@value prefersReducedMotion: (prefers-reduced-motion: reduced);
 
+/* 12 */
 @value display: "Inter", sans-serif;
+
