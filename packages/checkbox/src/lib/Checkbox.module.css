@@ -1,11 +1,11 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, signalRed130, white, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint from tokens;
+@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, signalRed130, white, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint, borderSecondary from tokens;
 
 .checkbox {
   font-family: display;
   font-weight: regularWeight;
 
-  --borderColorPressed: #b1b0b0;
+  --borderColorPressed: borderSecondary;
   --focusRingColor: black;
   --selectedColor: primaryBackground;
   --selectedPressed: blue80;
