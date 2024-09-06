@@ -59,6 +59,16 @@
 }
 
 .calendar {
+  * {
+    background: unset;
+    background-color: unset;
+    color: unset;
+    padding: unset;
+  }
+  thead tr,
+  tbody tr {
+    background-color: unset;
+  }
   th {
     font-weight: 500;
   }
