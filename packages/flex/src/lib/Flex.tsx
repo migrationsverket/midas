@@ -1,8 +1,12 @@
 import { ReactNode } from 'react'
 import styles from './Flex.module.css'
+import clsx from 'clsx'
 
-export interface FlexProps {
+interface FlexProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
   children: ReactNode
+  /** Tar bort alla marginaler för nestad användning */
+  fluid?: boolean
 }
 
 /**
@@ -16,9 +20,12 @@ export interface FlexProps {
  * Dessa räknas sedan ut beroende på bestämmelser kring kolumner i olika breakpoints.
  */
 
-export const Flex: React.FC<FlexProps> = ({ children }) => {
+export const Flex: React.FC<FlexProps> = ({ children, fluid, ...rest }) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
+      {...rest}
+    >
       <div className={styles.flex}>{children}</div>
     </div>
   )

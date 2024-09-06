@@ -8,13 +8,22 @@ const meta: Meta<typeof Flex> = {
   title: 'Flex',
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
+  argTypes: {
+    fluid: {
+      description:
+        'Tar bort alla marginaler för nestad användning. Ha gärna marginal om den används över hela sidan',
+      control: {
+        type: 'boolean',
+      },
+    },
+  },
 }
 export default meta
 
 export const Primary = {
   args: {},
-  render: () => (
-    <Flex>
+  render: ({ ...args }) => (
+    <Flex fluid={args.fluid}>
       <FlexItem col={3}>
         <Card
           title={'Ett kort'}

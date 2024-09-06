@@ -3,17 +3,19 @@
 
 .container {
   --columns: 1;
-  --margin: 1rem;
+  --padding: 1rem;
   --gutter: 1rem;
+  --maxWidth: 1368px;
+  --margin: auto;
 
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: var(--margin);
+  margin-left: var(--margin);
 }
 
 .flex {
-  padding-right: var(--margin);
-  padding-left: var(--margin);
+  padding-right: var(--padding);
+  padding-left: var(--padding);
   display: flex;
   flex-flow: row wrap;
   gap: var(--gutter);
@@ -29,7 +31,7 @@
 @media mdBreakpoint {
   .container {
     --columns: 12;
-    --margin: 2rem;
+    --padding: 2rem;
   }
 }
 
@@ -41,9 +43,15 @@
 
 @media xlBreakpoint {
   .container {
-    max-width: 1368px;
-    --margin: 0;
+    max-width: var(--maxWidth);
+    --padding: 0;
   }
+}
+
+.fluid {
+  --maxWidth: unset;
+  --margin: 0;
+  --padding: 0;
 }
 
 .col {
