@@ -1,7 +1,5 @@
 ---
-title: Brödsmulor
-sidebar_label: Breadcrumbs (Brödsmulor)
-sidebar_position: 1
+title: Breadcrumbs
 tags: [menu]
 description: Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
 ---
@@ -13,7 +11,7 @@ import {
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/breadcrumbs.json'
 
-<ComponentHeader name={'breadcrumbs'} info={Info && Info} friendlyName={'Brödsmulor'} />
+<ComponentHeader name={'Breadcrumbs'} info={Info} friendlyName={'Brödsmulor'} />
 
 ## Introduktion
 
@@ -30,7 +28,6 @@ npm install @migrationsverket/breadcrumbs
 import { Breadcrumbs } from '@migrationsverket/breadcrumbs';
 ```
 
-## Exempel
 ```tsx live
 function App() {
   const items = [
@@ -54,9 +51,8 @@ function App() {
 }
 ```
 
-## Dependencies
-{/* <ComponentFooter info={Info && Info}/> */}
-
 ## Riktlinjer
 - TBD.
 
+## Dependencies
+<ComponentFooter info={Info}/>

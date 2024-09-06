@@ -1,59 +1,43 @@
 {
-  "_id": "@mvds/textfield@0.10.1",
+  "_id": "",
+  "name": "@migrationsverket/textfield",
   "dist-tags": {
-    "latest": "0.10.1"
+    "latest": "0.9.25"
   },
   "versions": [
-    "0.5.3",
-    "0.7.9",
-    "0.7.11",
-    "0.9.6",
-    "0.9.13",
-    "0.9.23",
-    "0.9.24",
-    "0.10.0",
-    "0.10.1"
+    "0.9.25"
   ],
-  "name": "@mvds/textfield",
-  "_rev": "14",
   "time": {
-    "created": "2024-01-31T21:18:03.317Z",
-    "0.5.3": "2024-01-31T21:18:03.317Z",
-    "modified": "2024-04-23T17:52:47.860Z",
-    "0.7.9": "2024-02-04T08:00:15.956Z",
-    "0.7.11": "2024-02-13T19:49:00.229Z",
-    "0.9.6": "2024-02-28T11:24:22.906Z",
-    "0.9.13": "2024-02-29T09:29:41.708Z",
-    "0.9.23": "2024-04-10T08:53:09.703Z",
-    "0.9.24": "2024-04-17T19:21:02.651Z",
-    "0.10.0": "2024-04-23T15:35:54.531Z",
-    "0.10.1": "2024-04-23T17:52:47.860Z"
+    "0.9.25": "2024-08-16T07:17:05Z"
   },
-  "_contentLength": 0,
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
+  "description": "```bash npm i @migrationsverket/textfield ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "version": "0.10.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "dependencies": {
-    "@mvds/theme": "^0.6.1",
-    "react-aria-components": "^1.1.0",
-    "react": "18.2.0"
-  },
-  "readme": "ERROR: No README data found!",
-  "_nodeVersion": "20.11.0",
+  "_contentLength": 1553,
+  "version": "0.9.25",
+  "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-ZTSeGHU9NeDBbvhTB0GSIDwvLaWnR9Gz0vK4Wwm6W02kn+ynRn/UKyYqr65Dqq49QeVr3YT9tNuYvtq0Daoxrw==",
-    "shasum": "ca7d5ddf0a7ccdefe91c0e827a27460a153f200b",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/textfield/-/textfield-0.10.1.tgz"
-  }
+    "integrity": "sha512-ehStNgzaUQdh9J1shPmzD77xIStDbeV0j3Ef6um3rGoBDmOtYu/425uZq3hBuqXJcAtuR1PzzUlAAtMS5TpIkg==",
+    "shasum": "b238e652ddb44f8f7640f39217bf92adc8a49a9d",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/textfield/0.9.25/b238e652ddb44f8f7640f39217bf92adc8a49a9d"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23",
+    "react": "^18.2.0",
+    "react-aria-components": "^1.1.0"
+  },
+  "gitHead": "592fac7f4cc3eec66115844b46087ee73b0b5505",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# TextField\n\n```bash\nnpm i @migrationsverket/textfield\n```\n\n```tsx\nimport { TextField } from '@migrationsverket/textfield'\n;<TextField />\n```\n"
 }

@@ -1,16 +1,15 @@
 ---
-title: Datumväljare
-sidebar_label: DatePicker (Datumväljare)
+title: DatePicker
 tags: []
 description: Kort beskrivning av DatePicker
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/date-picker.json'
 import { DatePicker } from '@migrationsverket/date-picker'
 
-<ComponentHeader name={'date-picker'} info={Info} friendlyName={'Datumväljare'} />
+<ComponentHeader name={'DatePicker'} info={Info} friendlyName={'Datumväljare'} />
 
 ## Introduktion
 
@@ -22,8 +21,11 @@ Fält för att välja ett datum eller ett spann av datum med kalender.
 npm install @migrationsverket/date-picker
 ```
 
-## Exempel
+```tsx
+import { DatePicker } from '@migrationsverket/date-picker'
+```
 
+```tsx live
 <div
   style={{
     marginBottom: '10px',
@@ -34,11 +36,13 @@ npm install @migrationsverket/date-picker
 >
     <DatePicker />
 </div>
-
-```tsx
-import { DatePicker } from '@migrationsverket/date-picker'
 ```
+
 
 ## Riktlinjer
 
 TBD
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

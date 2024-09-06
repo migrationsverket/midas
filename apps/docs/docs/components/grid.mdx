@@ -1,6 +1,5 @@
 ---
-title: Rutnät
-sidebar_label: Grid (Rutnät)
+title: Grid
 tags: [grid]
 description: Grid baserat på tekniken display grid i css
 ---
@@ -11,7 +10,7 @@ import Info from '@site/static/data/grid.json'
 import { Grid, GridItem } from '../../../../packages/grid/src'
 import { Card } from '../../../../packages/card/src'
 
-<ComponentHeader name={'grid'} info={Info} friendlyName={'Rutnät'} />
+<ComponentHeader name={'Grid'} info={Info} friendlyName={'Rutnät'} overrideHeadlessLink="" />
 
 ## Introduktion
 
@@ -29,33 +28,8 @@ npm install @migrationsverket/grid
 import { Grid } from '@migrationsverket/grid'
 ```
 
-## Exempel
 
-<Grid>
-    <GridItem col={12}>
-        <h2>En sida med grid</h2>
-    </GridItem>
-    <GridItem col={3}>
-        <Card title={'Ett kort'} content={'Som är i tre kolumner'} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </GridItem>
-    <GridItem col={5}>
-        <Card title={'Ett kort'} content={'Som är i fem kolumner'} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
-    </GridItem>
-</Grid>
-
-```tsx
+```tsx live
 <Grid>
     <GridItem col={12}>
         <h2>En sida med grid</h2>
@@ -80,7 +54,6 @@ import { Grid } from '@migrationsverket/grid'
     </GridItem>
 </Grid>
 ```
-
 
 ### Grid
 
@@ -103,4 +76,4 @@ Grid används för att strukturera upp en sida och placera olika saker i kolumne
 
 ### Så här använder du Grid
 
-Använd ```<Grid></Grid>``` som komponent och justera de direkta childs till Grid justeras enligt griddets bestämmelser. Justera med ```grid-column: span $antal;```. I framtiden kommer vi säkerligen ha en komponent som agerar som child. 
+Använd `<Grid></Grid>` som komponent och justera de direkta childs till Grid justeras enligt griddets bestämmelser. Justera med ```grid-column: span $antal;```. I framtiden kommer vi säkerligen ha en komponent som agerar som child. 

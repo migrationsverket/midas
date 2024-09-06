@@ -14,6 +14,12 @@ import { Breadcrumbs } from '@migrationsverket/breadcrumbs'
 import { Link } from '@migrationsverket/link'
 import { Grid, GridItem } from '@migrationsverket/grid'
 import { Flex, FlexItem } from '@migrationsverket/flex'
+import { Spinner } from '@migrationsverket/spinner'
+import { Card } from '@migrationsverket/card'
+import { LinkButton } from '@migrationsverket/link-button'
+import { SearchField } from '@migrationsverket/search-field'
+import { Select, Item } from '@migrationsverket/select'
+import { Tabs } from '@migrationsverket/tabs'
 
 export {
   Button,
@@ -34,4 +40,11 @@ export {
   GridItem,
   Flex,
   FlexItem,
+  Spinner,
+  Card,
+  LinkButton,
+  SearchField,
+  Select,
+  Item,
+  Tabs,
 }

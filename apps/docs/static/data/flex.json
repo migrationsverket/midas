@@ -1,43 +1,48 @@
 {
-  "_id": "@mvds/flex@0.1.0",
-  "name": "@mvds/flex",
+  "_id": "",
+  "name": "@migrationsverket/flex",
   "dist-tags": {
-    "latest": "0.1.0"
+    "latest": "0.0.4"
   },
-  "versions": ["0.1.0"],
-  "_rev": "1",
+  "versions": [
+    "0.0.2",
+    "0.0.3",
+    "0.0.4"
+  ],
   "time": {
-    "created": "2024-05-23T08:11:11.553Z",
-    "modified": "2024-05-23T08:11:11.553Z",
-    "0.1.0": "2024-05-23T08:11:11.553Z"
+    "0.0.2": "2024-06-14T12:14:42Z",
+    "0.0.3": "2024-08-13T08:35:49Z",
+    "0.0.4": "2024-08-13T08:44:58Z"
+  },
+  "description": "```bash npm i @migrationsverket/flex ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.1.0",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
-  },
-  "dependencies": {
-    "@mvds/theme": "0.7.0",
-    "@mvds/ui": "0.5.24",
-    "@nx/vite": "18.2.4",
-    "@stitches/react": "^1.2.8",
-    "@vitejs/plugin-react": "4.2.1",
-    "react": "18.2.0",
-    "vite": "5.0.12",
-    "vite-plugin-dts": "~3.8.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "gitHead": "11fbc9096ab419b68c77d83d978fd7e69f34dd4e",
-  "_nodeVersion": "20.12.2",
-  "_npmVersion": "10.5.0",
+  "version": "0.0.4",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-n7vacvo1k69l7ZuQxxuBEvbbl/ov6KBFPGPkgV6LfhqpHGhlGnPzvdvag1lJl9HKFJomYTvc7Is9pXioYyl+iQ==",
-    "shasum": "a6e2ec0382627dff7d59afef0a8924fe34d39206",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/flex/-/flex-0.1.0.tgz"
-  }
+    "integrity": "sha512-kWh0T8ZJ+kUr/UMtOckCJgbbiC/CqYlxQy3qRfg5MYygAPrN6rSUQ3u+HSQX+0af4dab+lrKNR+pe8Ln7Px6HQ==",
+    "shasum": "7c0bd40c31b1f38381b60f3749df44671c3ebbb1",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/flex/0.0.4/7c0bd40c31b1f38381b60f3749df44671c3ebbb1"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "fb1a7bec57dcdaf901169a57d57536a5b7438a1c",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# flex\n\n```bash\nnpm i @migrationsverket/flex\n```\n\n```tsx\nimport { Flex, FlexItem } from '@migrationsverket/flex'\n;<Flex>\n  <FlexItem col={3}>\n    <div></div>\n  </FlexItem>\n  <FlexItem col={6}>\n    <div></div>\n  </FlexItem>\n  <FlexItem col={3}>\n    <div></div>\n  </FlexItem>\n</Flex>\n```\n"
 }

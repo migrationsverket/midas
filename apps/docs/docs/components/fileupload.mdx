@@ -1,6 +1,5 @@
 ---
-title: Filuppladdning
-sidebar_label: FileUpload (Filuppladdning)
+title: FileUpload
 description: Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.
 tags: [form]
 ---
@@ -12,7 +11,7 @@ import CodeBlock from '@theme/CodeBlock';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/file-upload.json'
 
-<ComponentHeader name={'file-upload'}  info={Info} friendlyName={'Filuppladdning'}/>
+<ComponentHeader name={'FileUpload'}  info={Info} friendlyName={'Filuppladdning'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/FileTrigger.html" />
 
 ## Introduktion
 Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.
@@ -41,26 +40,18 @@ npm install @migrationsverket/fileupload
 ```tsx
 import { FileUpload } from '@migrationsverket/fileupload';
 ```
+```tsx live
+<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>
+```
 
-## Exempel
 
 Sätt `allowsMultiple` för att kunna välja och ladda upp mer än en fil.
 
-<div className={'code-card'}>
-  <CodeBlock
-    language={'tsx'}
-  >{`<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`}</CodeBlock>
-  <FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'} />
-</div>
 
-## Props
 
----
-
-<PropTable name={'FileUpload'} />
+## Riktlinjer
+-TBD
 
 ## Dependencies
 
 <ComponentFooter info={Info}/>
-
-## Riktlinjer

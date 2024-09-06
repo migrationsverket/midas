@@ -1,16 +1,15 @@
 ---
-title: Informationsmeddelande
-sidebar_label: InfoBanner (Informationsmeddelande)
+title: InfoBanner
 description: Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
 import { InfoBanner } from "@migrationsverket/info-banner";
-import { Tabs as MidasTabs } from "@migrationsverket/tabs";  
+import { Tabs as MidasTabs } from "@migrationsverket/tabs";     
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/info-banner.json'
 
-<ComponentHeader name={'info-banner'} info={Info} friendlyName={'Informationsmeddelande'}/>
+<ComponentHeader name={'info-banner'} info={Info} friendlyName={'Informationsmeddelande'} overrideHeadlessLink="" />
 
 ## Introduktion
 
@@ -49,9 +48,9 @@ import {InfoBanner} from "@migrationsverket/info-banner";
 <InfoBanner type={'success'} title={'Success'} message={'Message'}/>
 ```
 
+## Riktlinjer
+TBD
+
 ## Dependencies
 
 <ComponentFooter info={Info}/>
-
-## Riktlinjer
-TBD

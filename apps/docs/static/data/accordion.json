@@ -1,63 +1,45 @@
 {
-  "_id": "@mvds/accordion@0.5.1",
+  "_id": "",
+  "name": "@migrationsverket/accordion",
   "dist-tags": {
-    "latest": "0.5.1"
+    "latest": "0.4.25"
   },
   "versions": [
-    "0.0.1",
-    "0.2.2",
-    "0.2.11",
-    "0.2.21",
-    "0.2.23",
-    "0.4.6",
-    "0.4.13",
     "0.4.23",
     "0.4.24",
-    "0.5.0",
-    "0.5.1"
+    "0.4.25"
   ],
-  "name": "@mvds/accordion",
-  "_rev": "15",
-  "description": "```bash npm i @mvds/accordion ```",
   "time": {
-    "created": "2023-12-29T15:25:10.983Z",
-    "modified": "2024-04-23T17:52:47.882Z",
-    "0.0.1": "2023-12-29T15:25:10.983Z",
-    "0.2.2": "2024-01-23T16:33:50.211Z",
-    "0.2.11": "2024-01-31T21:17:58.338Z",
-    "0.2.21": "2024-02-04T08:00:15.870Z",
-    "0.2.23": "2024-02-13T19:48:55.128Z",
-    "0.4.6": "2024-02-28T11:24:22.851Z",
-    "0.4.13": "2024-02-29T09:29:36.643Z",
-    "0.4.23": "2024-04-10T08:53:09.701Z",
-    "0.4.24": "2024-04-17T19:21:02.640Z",
-    "0.5.0": "2024-04-23T15:35:54.500Z",
-    "0.5.1": "2024-04-23T17:52:47.882Z"
+    "0.4.23": "2024-06-12T12:07:25Z",
+    "0.4.24": "2024-06-14T07:42:25Z",
+    "0.4.25": "2024-06-14T07:46:27Z"
+  },
+  "description": "```bash npm i @mvds/accordion ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.5.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
-  },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "dependencies": {
-    "@mvds/theme": "^0.6.1"
-  },
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
-  },
-  "readme": "# accordion\n\n```bash\nnpm i @mvds/accordion\n```\n\n```tsx\nimport { AccordionRoot } from '@mvds/accordion';\n\n<AccordionRoot>\n  <AccordionItem heading={'Dragspel'} content={'Lorem ipsum dolor sit amet.'} />\n</AccordionRoot>;\n```\n",
-  "readmeFilename": "README.md",
-  "_nodeVersion": "20.11.0",
+  "version": "0.4.25",
+  "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-EitOCMhplxAEPL9FPoqTVfD/k9LO/danknJ8807M0grq6ygbLete9iwxw/bS2KDjpWMhO7e641IZya7npgCdQw==",
-    "shasum": "2dc8bf322b5ccd407c77407dffc0341ddb8ff605",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/accordion/-/accordion-0.5.1.tgz"
-  }
+    "integrity": "sha512-V2DQU0rPyE/RklVqXhK2Dc/ke/JQjgefJYYSR0BhbLuN3wYdX09Zh790ewKJChKg658qoIsOQvC9nlrvO85qrQ==",
+    "shasum": "e6f444c04d4e4541bb11e5eb6a7f51655b41ab14",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/accordion/0.4.25/e6f444c04d4e4541bb11e5eb6a7f51655b41ab14"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# accordion\n\n```bash\nnpm i @mvds/accordion\n```\n\n```tsx\nimport { AccordionRoot } from '@mvds/accordion';\n\n<AccordionRoot>\n  <AccordionItem heading={'Dragspel'} content={'Lorem ipsum dolor sit amet.'} />\n</AccordionRoot>;\n```\n"
 }

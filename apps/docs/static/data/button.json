@@ -2,7 +2,7 @@
   "_id": "",
   "name": "@migrationsverket/button",
   "dist-tags": {
-    "latest": "0.6.4"
+    "latest": "0.7.0"
   },
   "versions": [
     "0.5.25",
@@ -11,7 +11,8 @@
     "0.6.0",
     "0.6.1",
     "0.6.3",
-    "0.6.4"
+    "0.6.4",
+    "0.7.0"
   ],
   "time": {
     "0.5.25": "2024-06-12T11:49:02Z",
@@ -20,9 +21,10 @@
     "0.6.0": "2024-06-12T14:10:18Z",
     "0.6.1": "2024-06-12T14:36:39Z",
     "0.6.3": "2024-06-13T12:12:42Z",
-    "0.6.4": "2024-06-14T07:26:19Z"
+    "0.6.4": "2024-06-14T07:26:19Z",
+    "0.7.0": "2024-09-02T09:42:43Z"
   },
-  "description": "```bash npm i @mvds/button ```",
+  "description": "```bash npm i @migrationsverket/button ```",
   "author": {},
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
@@ -33,18 +35,18 @@
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.6.4",
+  "version": "0.7.0",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-5IyzpwCxseDvIk0QTUfcLgs6U4nunr537vpzttu0ZpnqD6kEZiv4cbmmDCV5/j5WQeBLVMI0DSrLqW6L6vSzqw==",
-    "shasum": "db71f247afcb6bfc40a0904b958809359b8d36cf",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/button/0.6.4/db71f247afcb6bfc40a0904b958809359b8d36cf"
+    "integrity": "sha512-+JDtwcnJ3L+s9IrpqJZSBEw2EIDvVgqntU1rUNB87CxjPembZCDF2WhVCYD+3ClHB1DjQLxtzFBruvadibQQPQ==",
+    "shasum": "df5b4c9a8f912368dc5f83b95df9c0f467b94317",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/button/0.7.0/df5b4c9a8f912368dc5f83b95df9c0f467b94317"
   },
   "_npmUser": "wilhjelmig",
   "main": "./index.js",
   "dependencies": {
-    "@migrationsverket/theme": "^0.5.23"
+    "@migrationsverket/theme": "^0.5.29"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -52,5 +54,5 @@
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "directories": {},
   "_hasShrinkwrap": false,
-  "readme": "# button\n\n```bash\nnpm i @mvds/button\n```\n\n```tsx\nimport { Button } from '@mvds/button'\n\n;<Button>Click</Button>\n```\n"
+  "readme": "# button\n\n```bash\nnpm i @migrationsverket/button\n```\n\n```tsx\nimport { Button } from '@migrationsverket/button'\n;<Button>Klicka på mig</Button>\n```\n"
 }

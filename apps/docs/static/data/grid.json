@@ -1,41 +1,46 @@
 {
-  "_id": "@mvds/grid@0.1.0",
-  "name": "@mvds/grid",
+  "_id": "",
+  "name": "@migrationsverket/grid",
   "dist-tags": {
-    "latest": "0.1.0"
+    "latest": "0.0.3"
   },
-  "versions": ["0.1.0"],
-  "_rev": "1",
+  "versions": [
+    "0.0.2",
+    "0.0.3"
+  ],
   "time": {
-    "created": "2024-05-23T08:11:38.137Z",
-    "modified": "2024-05-23T08:11:38.137Z",
-    "0.1.0": "2024-05-23T08:11:38.137Z"
+    "0.0.2": "2024-06-14T14:03:43Z",
+    "0.0.3": "2024-08-13T08:41:23Z"
+  },
+  "description": "```bash npm i @migrationsverket/grid ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.1.0",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
-  },
-  "dependencies": {
-    "@mvds/theme": "0.7.0",
-    "@nx/vite": "18.2.4",
-    "@vitejs/plugin-react": "4.2.1",
-    "react": "18.2.0",
-    "vite": "5.0.12",
-    "vite-plugin-dts": "~3.8.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "gitHead": "b05ed6b1a48bf69e2f988232d60b2ca42d1f126c",
-  "_nodeVersion": "20.12.2",
-  "_npmVersion": "10.5.0",
+  "version": "0.0.3",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-Q5eYgYBbJjpaChgGhhls0w1qhGR3W190KcRMNOs2JKDpKeXAHUWJbzFyWoKRcqEN4emt421sMT9iL4JTci7F0w==",
-    "shasum": "777fbe8577500dc00b26729fc0e9b6d0e5942b2f",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/grid/-/grid-0.1.0.tgz"
-  }
+    "integrity": "sha512-3HtXsltt1t7owNRUSlkaLF1BICLuOUp1//tXNYfgkcTw6YLokavhJQuVKxc39IWOL0PCpbbtpBSiKLE/Ap1FVg==",
+    "shasum": "2963336890b84bb4beae14840bf9b41dd4ef3fd2",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/grid/0.0.3/2963336890b84bb4beae14840bf9b41dd4ef3fd2"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "4be764af47d956e2039ae96ba716712e1f1d5c23",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Grid\n\n```bash\nnpm i @migrationsverket/grid\n```\n\n```tsx\nimport { Grid, GridItem } from '@migrationsverket/grid'\n;<Grid>\n  <GridItem col={3}>\n    <div></div>\n  </GridItem>\n  <GridItem col={6}>\n    <div></div>\n  </GridItem>\n  <GridItem col={3}>\n    <div></div>\n  </GridItem>\n</Grid>\n```\n"
 }

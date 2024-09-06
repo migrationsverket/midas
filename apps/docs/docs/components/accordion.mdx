@@ -1,6 +1,5 @@
 ---
-title: Dragspel
-sidebar_label: Accordion (Dragspel)
+title: Accordion
 sidebar_position: 1
 tags: [components, menu, accordion]
 description: Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.
@@ -16,7 +15,7 @@ import {
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/accordion.json'
 
-<ComponentHeader name={'accordion'} info={Info} friendlyName={'Dragspel'} />
+<ComponentHeader name={'Accordion'} info={Info} friendlyName={'Dragspel'} overrideHeadlessLink="https://www.radix-ui.com/primitives/docs/components/accordion"  />
 
 ## Introduktion
 
@@ -38,8 +37,6 @@ import {
 } from '@migrationsverket/accordion';
 ```
 
-## Exempel
-
 ```tsx live
 <Accordion type={'multiple'}>
   <AccordionItem value={'first'}>
@@ -55,10 +52,8 @@ import {
 </Accordion>
 ```
 
-## Dependencies
-<ComponentFooter info={Info}/>
-
-
 ## Riktlinjer
 - Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
 
+## Dependencies
+<ComponentFooter info={Info}/>

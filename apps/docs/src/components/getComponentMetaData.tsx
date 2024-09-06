@@ -1,36 +1,31 @@
 import React from 'react'
-import { compareLoose, gt, gte, SemVer } from 'semver'
+import { gte } from 'semver'
 import moment from 'moment'
 
 export const ComponentFooter = ({ info }) => {
-  if (info) {
-    return (
-      <div>
-        <span
-          style={{
-            display: 'flex',
-            justifyContent: 'start',
-            gap: 2,
-            flexWrap: 'wrap',
-          }}
-        >
-          {Object.keys(info.dependencies).map((k) => (
-            <span
-              key={k}
-              className={
-                k.startsWith('@migrationsverket')
-                  ? 'badge badge--primary'
-                  : 'badge badge--secondary'
-              }
-            >{`${k}@${info.dependencies[k]}`}</span>
-          ))}
-        </span>
-      </div>
-    )
-  }
+  if (!info || !info.dependencies) return <></>
+
+  return (
+    <ul>
+      {Object.keys(info.dependencies).map((k, i) => (
+        <li key={'dep' + i}>{`${k}@${info.dependencies[k]}`}</li>
+      ))}
+    </ul>
+  )
 }
-export const ComponentHeader = ({ name, info, friendlyName }) => {
+export const ComponentHeader = ({
+  name,
+  info,
+  friendlyName,
+  overrideHeadlessLink,
+}: {
+  name: string
+  info: any
+  friendlyName: string
+  overrideHeadlessLink?: string
+}) => {
   moment.locale('sv')
+
   if (!info) {
     return (
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -51,8 +46,12 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
       </div>
     )
   }
+
   return (
     <section style={{ marginBottom: 48 }}>
+      <div style={{ marginBottom: 24 }}>
+        <b>{friendlyName}</b>
+      </div>
       <div
         style={{
           display: 'flex',
@@ -79,7 +78,7 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
         >
           <div style={{ display: 'flex', gap: '8px' }}>
             <a
-              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+              href={`/?path=/docs/${name.toLowerCase()}--docs`}
               target="_blank"
             >
               <img
@@ -88,7 +87,7 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
               />
             </a>
             <a
-              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name}`}
+              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}`}
               target="_blank"
             >
               <img
@@ -96,6 +95,21 @@ export const ComponentHeader = ({ name, info, friendlyName }) => {
                 src="https://img.shields.io/badge/github-100000.svg?style=for-the-badge&logo=github&logoColor=white"
               />
             </a>
+            {overrideHeadlessLink !== '' && (
+              <a
+                href={
+                  overrideHeadlessLink
+                    ? overrideHeadlessLink
+                    : `https://react-spectrum.adobe.com/react-aria/${name}.html`
+                }
+                target="_blank"
+              >
+                <img
+                  alt="Static Badge"
+                  src="https://img.shields.io/badge/Headless-2e7ca5?style=for-the-badge&logo=headlessui&logoColor=white"
+                />
+              </a>
+            )}
           </div>
         </div>
       </div>

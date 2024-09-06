@@ -1,16 +1,16 @@
 ---
-title: Länkknapp
-sidebar_label: Link Button (Länkknapp)
+title: LinkButton
 description: Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
 import { LinkButton } from '@migrationsverket/link-button';
+import { Flex } from '@migrationsverket/flex'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/link.json'
 import Mermaid from '@theme/Mermaid';
 
-<ComponentHeader name={'link'} info={Info} friendlyName={'Länkknapp'}/>
+<ComponentHeader name={'LinkButton'} info={Info} friendlyName={'Länkknapp'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Link.html" />
 
 ## Introduktion
 
@@ -26,14 +26,11 @@ npm install @migrationsverket/link-button
 import { LinkButton } from '@migrationsverket/link-button'
 ```
 
-## Exempel
-
-<LinkButton href={'/dream/components'}>Link to page</LinkButton>
-<LinkButton variant={'secondary'} href={'#props'}>Props</LinkButton>
-
-```tsx
-<LinkButton href={'/dream/components'}>Link to page</LinkButton>
-<LinkButton variant={'secondary'} href={'#props'}>Props</LinkButton>
+```tsx live
+<Flex>
+  <LinkButton href={'/dream/components'}>Link to page</LinkButton>
+  <LinkButton variant={'secondary'} href={'#props'}>Props</LinkButton>
+</Flex>
 ```
 
 ### Headlessreferens

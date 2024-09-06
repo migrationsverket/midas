@@ -1,57 +1,46 @@
 {
-  "_id": "@mvds/checkbox@0.5.1",
+  "_id": "",
+  "name": "@migrationsverket/checkbox",
   "dist-tags": {
-    "latest": "0.5.1"
+    "latest": "0.3.30"
   },
   "versions": [
-    "0.2.0",
-    "0.2.2",
-    "0.2.11",
-    "0.2.21",
-    "0.3.11",
-    "0.3.18",
-    "0.3.28",
     "0.3.29",
-    "0.4.0",
-    "0.5.0",
-    "0.5.1"
+    "0.3.30"
   ],
-  "name": "@mvds/checkbox",
-  "_rev": "15",
   "time": {
-    "created": "2023-12-08T19:59:57.852Z",
-    "modified": "2024-04-23T17:52:36.745Z",
-    "0.2.0": "2023-12-08T19:59:57.852Z",
-    "0.2.2": "2024-01-23T16:33:45.266Z",
-    "0.2.11": "2024-01-31T21:17:58.405Z",
-    "0.2.21": "2024-02-04T08:00:15.950Z",
-    "0.4.0": "2024-02-13T19:49:00.227Z",
-    "0.3.11": "2024-02-28T11:24:22.899Z",
-    "0.3.18": "2024-02-29T09:29:41.705Z",
-    "0.3.28": "2024-04-10T08:53:09.666Z",
-    "0.3.29": "2024-04-17T19:20:56.198Z",
-    "0.5.0": "2024-04-23T17:49:10.389Z",
-    "0.5.1": "2024-04-23T17:52:36.745Z"
+    "0.3.29": "2024-06-14T12:03:16Z",
+    "0.3.30": "2024-08-13T08:42:03Z"
+  },
+  "description": "```bash npm i @migrationsverket/checkbox ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.5.1",
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "version": "0.3.30",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-yhPrBzkWB1sJ0sIclsPbfBreFZtUEbzzBwVx5ZRS4Jv6f+b3afa8a050hYbqYGE9zzNTIlntdjQW06UbzJmKGg==",
+    "shasum": "57a3f01fc202a40d0029863806447e39000926be",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/checkbox/0.3.30/57a3f01fc202a40d0029863806447e39000926be"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
   "dependencies": {
-    "@mvds/theme": "^0.6.1"
+    "@migrationsverket/theme": "^0.5.23"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
-  },
-  "readme": "ERROR: No README data found!",
-  "types": "./index.d.ts",
-  "_nodeVersion": "20.11.0",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-aqz43czVf51XvcCPBNmrLDiobamcIe2wObTe02Ny7vUPIsi/4DJkkvE9+Ha/WOWjyplEBQOvRhBM86dAzAuMCA==",
-    "shasum": "45af153dd6805185f3a3be60fed6cbb63135eb14",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/checkbox/-/checkbox-0.5.1.tgz"
-  }
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Checkbox\n\n```bash\nnpm i @migrationsverket/checkbox\n```\n\n```tsx\nimport { CheckboxGroup, Checkbox } from '@migrationsverket/checkbox'\n;<CheckboxGroup\n  description=\"Beskrivning\"\n  errorMessage=\"här gick det snett\"\n  label=\"Etikett\"\n>\n  <Checkbox value=\"Banan\">Banan</Checkbox>\n  <Checkbox value=\"Apple\">Apple</Checkbox>\n  <Checkbox value=\"Mango\">Mango</Checkbox>\n</CheckboxGroup>\n```\n"
 }

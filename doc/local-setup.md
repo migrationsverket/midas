@@ -11,7 +11,7 @@ description: Sätt upp lokal utvecklingsmiljö för Designsystemet
 
 - Node ≥20 är ett krav, använd [NVM](https://github.com/nvm-sh/nvm) om du behöver växla mellan olika versioner.
 
-- [Python](https://www.python.org/downloads/) behöver vara installerat för att installera nx-dependencies. Python ingår i Ubuntu så om du kör [WSL](https://confluence.migrationsverket.se/pages/viewpage.action?pageId=98213538) funkar det lika bra.
+- [Python](https://www.python.org/downloads/) behöver vara installerat för att installera nx-dependencies. Python ingår i Ubuntu så om du kör WSL funkar det lika bra.
 
 * Installera [Nx](https://nx.dev) globalt:
 
@@ -23,16 +23,16 @@ npm install --global nx@latest
 
 ---
 
-- Klona repot:
+- Klona repot (du behöver SSH-nyckel mot GitHub):
 
 ```
-git clone ssh://git@bitbucket.migrationsverket.se:7999/team-dream/dream.git
+git clone git@github.com:migrationsverket/midas.git
 ```
 
 - Installera dependencies:
 
 ```
-npm install --legacy-peer-deps
+npm install
 ```
 
 ## Komponentbibliotek
@@ -58,13 +58,14 @@ nx run-many -t test
 
 ---
 
-Dokumentationswebben ligger i `apps/docs` och är byggd i [Docusaurus](https://docusaurus.io/).
+Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https://docusaurus.io/).
 
 - Kör dokumentationen lokalt:
 
 ```
 nx serve docs
 ```
+
 - Hämta hem senaste publicerade info från nexus:
 
 ```
@@ -130,7 +131,7 @@ registry=https://registry.npmjs.org
 ```
 
 Har du en miljövariabel som heter `NPM_CONFIG_REGISTRY` kan det hjälpa att ändra den också
-```export NPM_CONFIG_REGISTRY="https://registry.npmjs.org"```.
+`export NPM_CONFIG_REGISTRY="https://registry.npmjs.org"`.
 
 ### Windows
 

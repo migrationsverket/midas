@@ -64,21 +64,6 @@
   }
 }
 
-table {
-  table-layout: fixed;
-}
-
-th {
-  border: 1px solid black;
-  font-size: small;
-}
-
-td {
-  font-size: small;
-  border: 1px solid black;
-  word-wrap: anywhere;
-}
-
 /**
 this is a bit ad hoc, will fix this later
 */
@@ -162,4 +147,9 @@ this is a bit ad hoc, will fix this later
 
 .markdown li + li {
   margin-top: unset;
+}
+
+.playgroundHeader_node_modules-\@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module:first-of-type {
+  background: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-content) !important;
 }

@@ -1,6 +1,5 @@
 ---
-title: Notiser
-sidebar_label: Toast (Notiser)
+title: Toast
 description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.
 ---
 
@@ -10,29 +9,24 @@ import { Button } from '../../../../packages/button/src';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/toast.json'
 
-<ComponentHeader name={'toast'} info={Info} friendlyName={'Notifiering'}/>
+<ComponentHeader name={'Toast'} info={Info} friendlyName={'Notifiering, notiser'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/useToast.html" />
 
 ## Introduktion
 
 En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart.
 
 Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan
-eller via en timeout som sätts via `{timeout: ms}`. Det går även att sätta en prioritet på meddelanden relativt andra i kön. NOtifieringar renderas i en`<ToastRegion>` som i
+eller via en timeout som sätts via `{timeout: ms}`. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en`<ToastRegion>` som i
 nuvarande implementation återfinns i skärmens nedre högra hörn.
 
 
 <section style={{ marginBottom: '1rem' }}>
   <GlobalToastRegion />
   <Button
-    onPress={() =>
-      toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, {
-        timeout: 2000,
-      })
-    }
-  >Tryck här för en notifiering</Button>
+    onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!'}, {
+        timeout: 5000,
+    })}>Tryck här för en notifiering</Button>
 </section>
-
-Komponenten bygger på [useToast](https://react-spectrum.adobe.com/react-aria/useToast.html) från [React Aria](https://react-spectrum.adobe.com/react-aria/index.html)
 
 ## Installation
 
@@ -40,37 +34,34 @@ Komponenten bygger på [useToast](https://react-spectrum.adobe.com/react-aria/us
 npm install @migrationsverket/toast
 ```
 
-
 ### Varianter
 
 En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas.
 
-{/* <div style={{ display: 'flex', gap: '5px' }}>
+<div style={{ display: 'flex', gap: '5px' }}>
   <Button
     onPress={() =>
       toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, {timeout: 5000 })
     }
   >Success</Button>
   <Button
-    variant={'secondary'}
     onPress={() =>
       toastQueue.add({ type: 'info', message: 'Här kommer ett meddelande' }, {
-        timeout: 2000,
+        timeout: 5000,
       })
     }
   >Info</Button>
   <Button
     onPress={() =>
-      toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 2000 })
+      toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })
     }
   >Important</Button>
   <Button
-    variant={'secondary'}
     onPress={() =>
-      toastQueue.add({ message: "Farlig varning!", type: 'warning' }, { timeout: 2000 })
+      toastQueue.add({ message: "Farlig varning!", type: 'warning' }, { timeout: 5000 })
     }
   >Warning</Button>
-</div> */}
+</div>
 
 ### Lokal implementation
 
@@ -79,10 +70,11 @@ använd den [globala varianten](#global-implementation).
 
 ```tsx
 import { ToastProvider, MidasToastState } from '@migrationsverket/toast';
+
 <ToastProvider>
   {(state: MidasToastState) => (
     <Button
-      onPress={() => state.add({message: "Success", type: 'success'}, {timeout: 2000 })}
+      onPress={() => state.add({message: "Success", type: 'success'}, {timeout: 5000 })}
     >
       Show toast
     </Button>
@@ -97,6 +89,7 @@ och lägg nya toasts i kön enligt:
 
 ```tsx
 import { GlobalToastRegion, toastQueue } from '@migrationsverket/toast';
+
 <GlobalToastRegion />
 //...
 <Button onPress={
@@ -104,21 +97,12 @@ import { GlobalToastRegion, toastQueue } from '@migrationsverket/toast';
 }>Show toast</Button>
 ```
 
-## Props
-
----
-
-<PropTable name={'Toast'} />
-
-## Dependencies
-
-<ComponentFooter info={Info}/>
-
 ## Riktlinjer
-
----
-
 Timeout ska av tillgänglighetsskäl vara minst 5000ms:
  ```tsx
  {timeout: 5000ms}
 ```
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

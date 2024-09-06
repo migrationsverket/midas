@@ -1,37 +1,45 @@
 {
-  "_id": "@mvds/file-upload@0.4.1",
+  "_id": "",
+  "name": "@migrationsverket/file-upload",
   "dist-tags": {
-    "latest": "0.4.1"
+    "latest": "0.3.22"
   },
-  "versions": ["0.2.4", "0.3.2", "0.3.9", "0.3.19", "0.3.20", "0.4.0", "0.4.1"],
-  "name": "@mvds/file-upload",
-  "_rev": "8",
+  "versions": [
+    "0.3.20",
+    "0.3.21",
+    "0.3.22"
+  ],
   "time": {
-    "0.2.4": "2024-02-28T11:13:35.628Z",
-    "created": "2024-02-28T11:13:35.628Z",
-    "modified": "2024-04-23T17:53:00.104Z",
-    "0.3.2": "2024-02-28T11:24:22.943Z",
-    "0.3.9": "2024-02-29T09:29:41.761Z",
-    "0.3.19": "2024-04-10T08:53:09.752Z",
-    "0.3.20": "2024-04-17T19:21:15.604Z",
-    "0.4.0": "2024-04-23T15:36:06.877Z",
-    "0.4.1": "2024-04-23T17:53:00.104Z"
+    "0.3.20": "2024-06-14T12:10:05Z",
+    "0.3.21": "2024-08-13T08:36:38Z",
+    "0.3.22": "2024-08-13T08:40:06Z"
+  },
+  "description": "```bash npm i @migrationsverket/file-upload ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.4.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
+  "version": "0.3.22",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-pFhZuFLJk7ojlM1kCx/qlQzYpZttf8tmahvefr+sFiL5T9UvP5BcJOtKfSqDxqToH701JlNHD95kr/Vn4RfV3w==",
+    "shasum": "bb4a5d021c94b9358bd2f4189e3f4915e4dc3bfa",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/file-upload/0.3.22/bb4a5d021c94b9358bd2f4189e3f4915e4dc3bfa"
   },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
   "dependencies": {
-    "@mvds/button": "^1.1.1",
-    "@mvds/theme": "^0.6.1",
-    "react-aria-components": "^1.0.0-rc.0",
-    "lucide-react": "^0.372.0"
+    "@migrationsverket/button": "^0.5.25",
+    "@migrationsverket/theme": "^0.5.23",
+    "lucide-react": "^0.372.0",
+    "react-aria-components": "^1.0.0-rc.0"
   },
   "devDependencies": {
     "@nx/vite": "17.3.1",
@@ -44,15 +52,7 @@
     "react": "^18.2.0"
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
-  },
-  "readme": "ERROR: No README data found!",
-  "_nodeVersion": "20.11.0",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-ZEJkHZ/APW5VVGrq+oDHxy/wfPmYGfbMxg0KYOHns4FAXc5iVfhz98WBAk7gVJcce5FLR/nFUfbNntZ99xvHnQ==",
-    "shasum": "00397032ebfaf61afd3f4dfc90236691fc0ff4d7",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/file-upload/-/file-upload-0.4.1.tgz"
-  }
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# FileUpload\n\n```bash\nnpm i @migrationsverket/file-upload\n```\n\n```tsx\nimport { FileUpload } from '@migrationsverket/file-upload'\n;<FileUpload\n  allowsMultiple\n  description=\"Description\"\n  label=\"Label\"\n/>\n```\n"
 }

@@ -1,71 +1,47 @@
 {
-  "_id": "@mvds/select@0.5.2",
+  "_id": "",
+  "name": "@migrationsverket/select",
   "dist-tags": {
-    "latest": "0.5.2"
+    "latest": "0.4.24"
   },
   "versions": [
-    "0.2.0",
-    "0.2.2",
-    "0.2.11",
-    "0.2.21",
-    "0.2.23",
-    "0.4.6",
-    "0.4.13",
     "0.4.23",
-    "0.4.24",
-    "0.5.0",
-    "0.5.1",
-    "0.5.2"
+    "0.4.24"
   ],
-  "name": "@mvds/select",
-  "_rev": "16",
-  "description": "```bash npm i @mvds/select ```",
   "time": {
-    "created": "2023-12-08T20:00:41.811Z",
-    "modified": "2024-05-21T12:55:47.035Z",
-    "0.2.0": "2023-12-08T20:00:41.811Z",
-    "0.2.2": "2024-01-23T16:33:45.277Z",
-    "0.2.11": "2024-01-31T21:17:58.410Z",
-    "0.2.21": "2024-02-04T08:00:15.963Z",
-    "0.2.23": "2024-02-13T19:49:00.227Z",
-    "0.4.6": "2024-02-28T11:24:22.915Z",
-    "0.4.13": "2024-02-29T09:29:41.715Z",
-    "0.4.23": "2024-04-10T08:53:09.713Z",
-    "0.4.24": "2024-04-17T19:21:04.222Z",
-    "0.5.0": "2024-04-23T15:35:55.506Z",
-    "0.5.1": "2024-04-23T17:52:48.995Z",
-    "0.5.2": "2024-05-21T12:55:47.035Z"
+    "0.4.23": "2024-08-13T08:25:44Z",
+    "0.4.24": "2024-08-13T08:30:42Z"
+  },
+  "description": "```bash npm i @migrationsverket/select ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "private": false,
-  "version": "0.5.2",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js",
-      "types": "./index.d.ts"
-    }
+  "version": "0.4.24",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-muvJrDnNBOvRjMxnOB7j8nXrLPoruOVJlSbUTVL9POImVEtsUt7yZQ/0pTavw833FMNfJqop7SwfN+mZloaNeQ==",
+    "shasum": "c46d8c8bd3d00b6e04ab828587da779f09189ba0",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/select/0.4.24/c46d8c8bd3d00b6e04ab828587da779f09189ba0"
   },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
   "dependencies": {
-    "@mvds/theme": "^0.5.23",
+    "@migrationsverket/theme": "^0.5.23",
     "react-aria-components": "^1.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
-  },
-  "readme": "# select\n\n```bash\nnpm i @mvds/select\n```\n\n```tsx\nimport { UiSelect, UiSelectItem } from '@mvds/select';\n\n<UiSelect placeholder={'Select a fruit...'} {...args}>\n  <UiSelectItem value={'apple'}>Apple</UiSelectItem>\n  <UiSelectItem value={'lemon'}>Lemon</UiSelectItem>\n  <UiSelectItem value={'orange'}>Orange</UiSelectItem>\n</UiSelect>\n\n```\n",
-  "readmeFilename": "README.md",
-  "_nodeVersion": "20.11.0",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-/Utrvgc+KTGCX54+m96t9Pv2ZsaFOmEoNlTjYWojx6CjNwC8dmxmSGvj8FpvnWpA8o7X8p1xUTMxuTQ+whXtfA==",
-    "shasum": "722e7afbd1537fcd9166c7325f4a74584cbfa4c4",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/select/-/select-0.5.2.tgz"
-  }
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# select\n\n```bash\nnpm i @migrationsverket/select\n```\n\n```tsx\nimport { Select, Item } from '@migrationsverket/select'\n;<Select\n  description=\"Beskrivning\"\n  label=\"Etikett\"\n  placeholder=\"One item...\"\n>\n  <Item>Item A</Item>\n</Select>\n```\n"
 }

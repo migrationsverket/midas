@@ -1,24 +1,17 @@
 ---
-title: Flerval
-sidebar_label: Select (Flerval)
+title: Select
 tags: [form]
 ---
-import { Select, Item } from '../../../../packages/select/src'
+import { Select, Item } from '@migrationsverket/select'
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/select.json'
 
-<ComponentHeader name={'select'} info={Info} friendlyName={'Väljare'}/>
+<ComponentHeader name={'Select'} info={Info} friendlyName={'Flerval, väljare, dropdown'}/>
 
 ## Introduktion
 
 En väljare visar en hopfällbar lista med alternativ och låter en användare välja ett av dem.
-
-<Select label={'Frukt'} description={'Välj en frukt'}><Item>Apelsin</Item><Item>Banan</Item><Item>Mango</Item></Select>
-
-## Headless referens
-
-Select bygger på [React Aria Select](https://react-spectrum.adobe.com/react-aria/Select.html)
 
 
 ## Installation och användning
@@ -31,13 +24,35 @@ npm install @migrationsverket/select
 import { Select } from '@migrationsverket/select'
 ```
 
-## Props
----
-<PropTable name={'Select'}/>
+```tsx live
+function App() {
+    const options = [
+        { id: 'apple', name: 'Apple' },
+        { id: 2, name: 'Banana' },
+        { id: 3, name: 'Kiwi' },
+        { id: 4, name: 'Elderflower' },
+        { id: 5, name: 'Nectarine' },
+        { id: 6, name: 'Watermelon' },
+        { id: 7, name: 'Pineapple' },
+        { id: 8, name: 'Apricot' },
+        { id: 9, name: 'Cloudberry' },
+    ];
+
+    return (
+        <Select
+            label="Välj din favorit"
+            defaultSelected="Välj frukt"
+            items={options}
+        >
+            {(item) => <Item>{item.name}</Item>}
+        </Select>
+    )
+}
+```
+
+## Riktlinjer
+TBD
 
 ## Dependencies
 
 <ComponentFooter info={Info}/>
-
-## Riktlinjer
-TBD

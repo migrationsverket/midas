@@ -1,6 +1,5 @@
 ---
-title: Knapp
-sidebar_label: Button (Knapp)
+title: Button
 description: Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
 tags: [button, form]
 ---
@@ -11,7 +10,7 @@ import { ComponentHeader, ComponentFooter } from '@site/src/components/getCompon
 import Info from '@site/static/data/button.json'
 import { Flex, FlexItem } from '@migrationsverket/flex'
 
-<ComponentHeader name={'button'} info={Info} friendlyName={'Knapp'}/>
+<ComponentHeader name={'Button'} info={Info} friendlyName={'Knapp'}/>
 
 ## Introduktion
 
@@ -27,7 +26,6 @@ npm install @migrationsverket/button
 import { Button } from '@migrationsverket/button';
 ```
 
-## Exempel
 ```tsx live
 <Flex>
   <FlexItem col="auto">
@@ -41,16 +39,6 @@ import { Button } from '@migrationsverket/button';
   </FlexItem>
 </FlexItem>
 ```
-
-
-## Headlessreferens
-
-Knappen bygger på [React Aria Button](https://react-spectrum.adobe.com/react-aria/Button.html)
-
-
-## Dependencies
-
-<ComponentFooter info={Info}/>
 
 ## Riktlinjer
 
@@ -75,10 +63,8 @@ flowchart TD;
 - Det bör finnas max en primärknapp per sida/sektion/tydligt avgränsad yta
 - Undvik att ha för många knappar på samma sida.
 - Alla knappar i externa system ska gå att interagera med.
-  - Om användaren inte uppfyllt kraven (tex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
+  - Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
 
+## Dependencies
 
-
-
-
-
+<ComponentFooter info={Info}/>

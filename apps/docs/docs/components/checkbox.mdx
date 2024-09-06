@@ -1,6 +1,5 @@
 ---
-title: Kryssruta
-sidebar_label: Checkbox (Kryssruta)
+title: Checkbox
 description: Används för att låta användaren välja inget, ett eller flera alternativ.
 tags: [form]
 ---
@@ -17,7 +16,7 @@ import { InfoBanner } from '@migrationsverket/info-banner'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/checkbox.json'
 
-<ComponentHeader name={'checkbox'} info={Info} friendlyName={'Kryssruta'}/>
+<ComponentHeader name={'Checkbox'} info={Info} friendlyName={'Kryssruta'}/>
 
 ## Introduktion
 
@@ -95,9 +94,6 @@ Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". D
 
 <PropTable name={'CheckboxGroup'} />
 
-## Dependencies
-
-<ComponentFooter info={Info}/>
 
 ## Riktlinjer
 
@@ -109,3 +105,7 @@ Rutan ska vara avmarkerad tills användaren klickar i den och då ska alla följ
 Om användaren väljer att avmarkera en post så ska kryssrutan avmarkeras.
 
 - Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

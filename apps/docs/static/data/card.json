@@ -1,40 +1,44 @@
 {
-  "_id": "@mvds/card@0.3.1",
+  "_id": "",
+  "name": "@migrationsverket/card",
   "dist-tags": {
-    "latest": "0.3.1"
+    "latest": "0.2.7"
   },
-  "versions": ["0.2.5", "0.2.6", "0.3.0", "0.3.1"],
-  "name": "@mvds/card",
-  "_rev": "4",
+  "versions": [
+    "0.2.6",
+    "0.2.7"
+  ],
   "time": {
-    "0.2.5": "2024-04-10T08:53:09.685Z",
-    "created": "2024-04-10T08:53:09.685Z",
-    "modified": "2024-04-23T17:52:53.982Z",
-    "0.2.6": "2024-04-17T19:21:09.052Z",
-    "0.3.0": "2024-04-23T15:36:00.679Z",
-    "0.3.1": "2024-04-23T17:52:53.982Z"
+    "0.2.6": "2024-06-14T11:44:10Z",
+    "0.2.7": "2024-08-13T08:42:49Z"
+  },
+  "description": "```bash npm i @migrationsverket/card ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
   },
   "_contentLength": 0,
-  "version": "0.3.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    }
+  "version": "0.2.7",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-+o0zelILVtC3WeqaoweB+tjawDHDw2FcWzj5lbgjpHobDKuKVGRQipMV2XG+hjhl+vt4o77r8J+34hyX41Msrw==",
+    "shasum": "1669ecfc857ed60097f7c10b6e3d27f6e16d4609",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/card/0.2.7/1669ecfc857ed60097f7c10b6e3d27f6e16d4609"
   },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
   "dependencies": {
-    "@mvds/theme": "^0.6.1",
+    "@migrationsverket/theme": "^0.5.23",
     "lucide-react": "^0.372.0"
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "readme": "ERROR: No README data found!",
-  "_nodeVersion": "20.11.0",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-mpz7TQtQz2cXjXkAClHA9feo09K6iZsC7LQMOg2gEar5qDvjxBWYjMsFN9dcfyVRcGwduzGGhGROYMo5cE16qQ==",
-    "shasum": "a597bab480c48aef9b4abf3c30a6022e1aa07d2b",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/card/-/card-0.3.1.tgz"
-  }
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Card\n\n```bash\nnpm i @migrationsverket/card\n```\n\n```tsx\nimport { Card } from '@migrationsverket/card'\n;<Card\n  title=\"Ett kort\"\n  content=\"Med text som beskriver vad det innebär\"\n  headingTag=\"h2\"\n  image={{\n    description: 'Glass!',\n    source:\n      'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSRA1VvVWshDqdk-IbClyNwWoUAjMnFQ5KQLb8eH0hu4gCCvfvqMEcQqOF-CTro2maW',\n  }}\n/>\n```\n"
 }

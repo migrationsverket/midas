@@ -1,16 +1,14 @@
 ---
-title: Logotyp
-sidebar_label: Logo (Logotyp)
+title: Logo
 description: Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet
 ---
 
-import { Logo } from '../../../../packages/logo/src';
+import { Logo } from '@migrationsverket/logo';
 import { PropTable } from '@site/src/components/propsTable';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/logo.json'
 
-<ComponentHeader name={'logo'} info={Info} friendlyName={'Logotyp'}/>
-
+<ComponentHeader name={'Logo'} info={Info} friendlyName={'Logotyp'} overrideHeadlessLink="" />
 
 ## Introduktion
 
@@ -26,33 +24,20 @@ npm install @migrationsverket/logo
 import { Logo } from '@migrationsverket/logo';
 ```
 
-I de situationer där det inte funkar med React så kan du [ladda ner logotypen som SVG här (komprimerad fil)](/img/logo/Mig_logo_SVG.zip)
-
-## Exempel
-
----
-
-<Logo />
-<Logo background />
-<Logo dark />
-<Logo dark background />
-<Logo size={'small'} />
-
-```tsx
-<Logo/>
-<Logo background/>
-<Logo dark/>
-<Logo dark background/>
-<Logo size={'small'}/>
+```tsx live
+<>
+    <Logo/>
+    <Logo background/>
+    <Logo dark/>
+    <Logo dark background/>
+    <Logo size={'small'}/>
+</>
 ```
-
-## Props
-
-<PropTable name={'Logo'} />
-
-## Dependencies
-
-<ComponentFooter info={Info}/>
+## SVG
+I vissa fall kan det vara mer fördelaktigt med en vanlig fil. [Ladda ner logotypen som SVG här (komprimerad fil)](/img/logo/Mig_logo_SVG.zip).
 
 ## Riktlinjer
 TBD
+
+## Dependencies
+<ComponentFooter info={Info}/>

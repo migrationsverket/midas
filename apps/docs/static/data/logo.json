@@ -1,69 +1,45 @@
 {
-  "_id": "@mvds/logo@1.1.1",
+  "_id": "",
+  "name": "@migrationsverket/logo",
   "dist-tags": {
-    "latest": "1.1.1"
+    "latest": "0.2.54"
   },
   "versions": [
-    "0.2.0",
-    "0.2.2",
-    "0.2.11",
-    "0.2.15",
-    "0.2.20",
-    "0.2.23",
-    "0.2.26",
-    "0.2.32",
-    "0.2.34",
-    "0.2.39",
-    "0.2.41",
-    "0.2.43",
-    "0.2.51",
-    "1.0.0",
-    "1.0.1",
-    "1.1.0",
-    "1.1.1"
+    "0.2.52",
+    "0.2.53",
+    "0.2.54"
   ],
-  "name": "@mvds/logo",
-  "_rev": "18",
-  "description": "This library was generated with [Nx](https://nx.dev).",
   "time": {
-    "created": "2024-02-28T20:11:35.827Z",
-    "modified": "2024-04-23T17:52:42.851Z",
-    "0.2.0": "2023-12-08T20:00:15.037Z",
-    "0.2.2": "2024-01-23T16:33:50.214Z",
-    "0.2.11": "2024-01-31T21:17:58.330Z",
-    "0.2.15": "2024-02-02T17:51:30.548Z",
-    "0.2.20": "2024-02-02T22:42:35.487Z",
-    "0.2.23": "2024-02-04T08:00:15.876Z",
-    "0.2.26": "2024-02-13T19:48:55.125Z",
-    "0.2.32": "2024-02-28T11:13:35.529Z",
-    "0.2.34": "2024-02-28T11:24:17.848Z",
-    "0.2.39": "2024-02-28T14:41:50.797Z",
-    "0.2.43": "2024-02-28T20:11:35.827Z",
-    "0.2.41": "2024-02-29T09:29:41.689Z",
-    "0.2.51": "2024-04-10T08:53:09.682Z",
-    "1.0.0": "2024-04-12T10:33:53.310Z",
-    "1.0.1": "2024-04-17T19:20:57.645Z",
-    "1.1.0": "2024-04-23T15:35:49.316Z",
-    "1.1.1": "2024-04-23T17:52:42.851Z"
+    "0.2.52": "2024-08-12T13:41:56Z",
+    "0.2.53": "2024-08-13T08:34:06Z",
+    "0.2.54": "2024-08-13T08:46:47Z"
   },
-  "users": {},
+  "description": "```bash npm install @migrationsverket/logo ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
   "_contentLength": 0,
-  "version": "1.1.1",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "dependencies": {
-    "@mvds/theme": "^0.6.1"
-  },
-  "publishConfig": {
-    "registry": "http://nexus.migrationsverket.se/repository/npm-internal/"
-  },
-  "readme": "ERROR: No README data found!",
-  "_nodeVersion": "20.11.0",
+  "version": "0.2.54",
+  "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-vhPd7eJ/nPGoDTOX5G/DU416dWaGTnGES3wsjUoTV7YOQtm8V4xds52qtJi5AFhKAi+3fa1sTC/MxUUGmZBSqg==",
-    "shasum": "6870307723d5bbba4ec99857921e6d94e5d0501f",
-    "tarball": "http://nexus.migrationsverket.se/repository/npm-internal/@mvds/logo/-/logo-1.1.1.tgz"
-  }
+    "integrity": "sha512-CdC4o2HyoGiMJxKEqkhnzOMMrc+2lXsXHj6DKntDD8Cp0hsCt/MQTyv69ZkLhNSVFyoMhNo1VrEXnTyrl/KECA==",
+    "shasum": "fd28fb4aa5f720c398c0e035932ef18ce02036d7",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/logo/0.2.54/fd28fb4aa5f720c398c0e035932ef18ce02036d7"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Logo\n\n```bash\nnpm install @migrationsverket/logo\n```\n\n```tsx\nimport { Link } from '@migrationsverket/logo'\n;<Logo />\n```\n"
 }
