@@ -1,0 +1,114 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, gray10, gray20, gray150, blue20, blue150 from tokens;
+
+.datePicker {
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+}
+
+.datePickerTextfield {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+
+  & button {
+    border: none;
+    margin-left: auto;
+    height: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: gray10;
+    &:hover {
+      background-color: gray20;
+    }
+    &:focus-visible {
+      outline: 2px solid gray150;
+    }
+  }
+}
+
+.date {
+  display: flex;
+}
+
+.dialog {
+  background-color: gray10;
+  font-family: display;
+}
+
+.dialogHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  & button {
+    border: none;
+    background-color: gray10;
+    &:focus-visible {
+      outline: 2px solid gray150;
+    }
+  }
+}
+
+.dialogHeading {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.calendar {
+  * {
+    background: unset;
+    background-color: unset;
+    color: unset;
+    padding: unset;
+  }
+  thead tr,
+  tbody tr {
+    background-color: unset;
+  }
+  th {
+    font-weight: 500;
+  }
+  & th,
+  & .day {
+    text-align: center;
+    padding: 0.75rem;
+  }
+}
+
+.day {
+  border: solid 2px gray10;
+
+  &:hover {
+    background-color: gray20;
+    border-color: gray20;
+  }
+  &:focus-visible {
+    outline: 2px solid gray150;
+  }
+  &[data-selected='true'] {
+    background-color: blue20;
+    border-color: blue20;
+  }
+  &[data-selection-start='true'] {
+    color: white;
+    background-color: blue150;
+    border-color: blue150;
+  }
+  &[data-selection-end='true'] {
+    color: inherit;
+    background-color: gray10;
+    border-color: blue150;
+  }
+  &[aria-label^='Idag'] {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
+  &[data-outside-month='true'] {
+    display: none;
+  }
+}

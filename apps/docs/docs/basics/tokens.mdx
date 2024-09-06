@@ -1,0 +1,34 @@
+---
+title: Designtokens
+sidebar_position: 2
+---
+
+import { TokensTable } from '@site/src/components/getThemeProps';
+import { theme } from '@migrationsverket/theme'
+
+# Designtokens
+
+Designtokens representerar de grundläggande byggstenarna som utgör ett designsystems visuella stil. Tokens
+är oberoende av plattform och kan användas utanför komponentbiblioteket. Använd alltid tokens istället för
+hårdkodade värden.
+
+```bash
+npm install @migrationsverket/theme
+```
+
+Använd som variabler genom att importera temafilen
+
+```ts
+import { theme } from '@migrationsverket/theme'
+const blue = theme.baseColors.blue150; // #143c50
+```
+
+Nedan finner du tabeller över alla värden som finns som tokens i `theme`
+Om du inte vill importera hela theme kan du importera delarna för sig
+
+```ts
+import { baseColors } from '@migrationsverket/theme'
+const blue = baseColors.blue150; // #143c50
+```
+
+<TokensTable />

@@ -1,13 +1,70 @@
 ---
 title: Button
-sidebar_label: Button
+description: Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
+tags: [button, form]
 ---
 
-import {Button} from '../../../../packages/button/src';
+import { PropTable } from '@site/src/components/propsTable';
+import { Button } from '@migrationsverket/button'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/button.json'
+import { Flex, FlexItem } from '@migrationsverket/flex'
 
-# Button
+<ComponentHeader name={'Button'} info={Info} friendlyName={'Knapp'}/>
 
-Nice button
+## Introduktion
 
+Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
 
-<Button>klick</Button>
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/button
+```
+
+```tsx
+import { Button } from '@migrationsverket/button';
+```
+
+```tsx live
+<Flex>
+  <FlexItem col="auto">
+    <Button>Primary</Button>
+  </FlexItem>
+  <FlexItem col="auto">
+    <Button variant="secondary">Secondary</Button>
+  </FlexItem>
+  <FlexItem col="auto">
+    <Button isDisabled>Disabled</Button>
+  </FlexItem>
+</FlexItem>
+```
+
+## Riktlinjer
+
+- Vägledning för val av komponent
+
+```mermaid
+flowchart TD;
+    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
+    A -->|Ja| C[Använd komponenten Link]
+    B -->|Action| D[Använd komponenten Button]
+    B -->|Navigering| E[Använd komponenten LinkButton]
+```
+
+- Primär knapp används för den primära/positiva handlingar i ett flöde (Acceptera, Gå vidare, Ok osv). Sekundär knapp används för underordnade/negativa handlingar (Avbryt, Tillbaka).
+- I e-tjänster sätts alltid den primära knappen (nästa) till höger och den sekundära (tillbaka) till vänster. Det baseras på att formuläret är som en bok som läses från vänster till höger.
+
+<div style={{ gap: '5px', display: 'flex', margin: '5px' }}>
+  <Button variant={'secondary'}>Föregående</Button>
+  <Button>Nästa</Button>
+</div>
+
+- Det bör finnas max en primärknapp per sida/sektion/tydligt avgränsad yta
+- Undvik att ha för många knappar på samma sida.
+- Alla knappar i externa system ska gå att interagera med.
+  - Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

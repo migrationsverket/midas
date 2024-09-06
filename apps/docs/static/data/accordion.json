@@ -1,0 +1,45 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/accordion",
+  "dist-tags": {
+    "latest": "0.4.25"
+  },
+  "versions": [
+    "0.4.23",
+    "0.4.24",
+    "0.4.25"
+  ],
+  "time": {
+    "0.4.23": "2024-06-12T12:07:25Z",
+    "0.4.24": "2024-06-14T07:42:25Z",
+    "0.4.25": "2024-06-14T07:46:27Z"
+  },
+  "description": "```bash npm i @mvds/accordion ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.4.25",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-V2DQU0rPyE/RklVqXhK2Dc/ke/JQjgefJYYSR0BhbLuN3wYdX09Zh790ewKJChKg658qoIsOQvC9nlrvO85qrQ==",
+    "shasum": "e6f444c04d4e4541bb11e5eb6a7f51655b41ab14",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/accordion/0.4.25/e6f444c04d4e4541bb11e5eb6a7f51655b41ab14"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# accordion\n\n```bash\nnpm i @mvds/accordion\n```\n\n```tsx\nimport { AccordionRoot } from '@mvds/accordion';\n\n<AccordionRoot>\n  <AccordionItem heading={'Dragspel'} content={'Lorem ipsum dolor sit amet.'} />\n</AccordionRoot>;\n```\n"
+}

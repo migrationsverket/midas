@@ -1,12 +1,25 @@
 {
-  "name": "@midas/button",
-  "version": "0.0.1",
+  "name": "@migrationsverket/button",
+  "private": false,
+  "version": "0.5.28",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

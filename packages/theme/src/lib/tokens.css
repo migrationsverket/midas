@@ -1,0 +1,131 @@
+/* 0 */
+@value white: #ffffff;
+@value black: #000000;
+@value gray10: #f2f2f2;
+@value gray20: #e6e6e6;
+@value gray30: #d9d9d9;
+@value gray40: #cccccc;
+@value gray50: #bfbfbf;
+@value gray60: #b3b3b3;
+@value gray70: #a6a6a6;
+@value gray80: #999999;
+@value gray90: #8c8c8c;
+@value gray100: #808080;
+@value gray130: #5d5d5d;
+@value gray150: #1f1f1f;
+@value red10: #f7e9e7;
+@value red20: #f1d4d1;
+@value red30: #e9beba;
+@value red40: #e2a8a4;
+@value red50: #d9918e;
+@value red60: #d37a7a;
+@value red70: #cc6467;
+@value red80: #c54c56;
+@value red90: #be3345;
+@value red100: #b90835;
+@value red130: #8b1327;
+@value red150: #641018;
+@value blue10: #eaf2f6;
+@value blue20: #d5e5ed;
+@value blue30: #c0d7e4;
+@value blue40: #abcbdb;
+@value blue50: #94bcd1;
+@value blue60: #82b0c9;
+@value blue70: #6ca3c0;
+@value blue80: #5897b8;
+@value blue90: #4289ad;
+@value blue100: #2e7ca5;
+@value blue130: #25607f;
+@value blue150: #143c50;
+
+/* 1 */
+@value outline: #303030;
+@value primaryBackground: #143c50;
+@value primaryText: #303030;
+@value primaryHover: #25607f;
+@value primaryFocus: #000000;
+@value primaryActive: #4289ae;
+@value secondaryBackground: #5d5d5d;
+@value secondaryText: #ffffff;
+@value secondaryHover: #303030;
+@value secondaryActive: #303030;
+
+/* 2 */
+@value inputText: #1f1f1f;
+
+/* 3 */
+@value signalGreen10: #d5f2d9;
+@value signalGreen100: #008d3c;
+@value signalBlue10: #eaf2f6;
+@value signalBlue100: #0066cc;
+@value signalYellow10: #fff8e1;
+@value signalYellow100: #f1c21b;
+@value signalRed10: #ffdfdf;
+@value signalRed100: #e62323;
+@value signalRed130: #b31b1b;
+
+/* 4 */
+@value sRadius:  0.125rem;
+@value mRadius:  0.25rem;
+
+/* 5 */
+@value xsWidth:  0.0625rem;
+@value sWidth:  0.125rem;
+@value mWidth:  0.25rem;
+
+/* 6 */
+@value lightWeight: 300;
+@value regularWeight: 400;
+@value mediumWeight: 500;
+@value semiBoldWeight: 600;
+@value boldWeight: 700;
+@value blackWeight: 900;
+
+/* 7 */
+@value desktopSize: 1rem;
+@value mobileSize: 1rem;
+@value largeSize: 1.5rem;
+@value inputNormalSize: 0.875rem;
+@value inputMessageSize: 0.75rem;
+@value inputLabelSize: 1rem;
+@value inputDescriptionSize: 0.875rem;
+
+/* 8 */
+@value logoPrimary: #b90835;
+@value logoSecondary: #ffffff;
+@value textPrimary: #1f1f1f;
+@value textSecondary: #ffffff;
+@value textTertiary: #b90835;
+@value link: #25607f;
+@value linkVisited: #663366;
+@value backgroundPrimary: #ffffff;
+@value backgroundSecondary: #f2f2f2;
+@value backgroundFooter1: #b90835;
+@value backgroundFooter2: #8b1327;
+@value backgroundInfo: #eaf2f6;
+@value backgroundImportant: #fff8e1;
+@value borderPrimary: #000000;
+@value borderSecondary: #b3b3b3;
+@value borderFocusOuter: #000000;
+@value borderFocusInner: #ffffff;
+@value iconPrimary: #000000;
+@value iconInverted: #ffffff;
+
+/* 9 */
+@value slowTransition: 500ms;
+@value normalTransition: 300ms;
+@value fastTransition: 250ms;
+
+/* 10 */
+@value smBreakpoint: (max-width: 767px);
+@value mdBreakpoint: (min-width: 768px);
+@value lgBreakpoint: (min-width: 1200px);
+@value xlBreakpoint: (min-width: 1440px);
+
+/* 11 */
+@value forcedColorsMode: (forced-colors: active);
+@value prefersReducedMotion: (prefers-reduced-motion: reduced);
+
+/* 12 */
+@value display: "Inter", sans-serif;
+

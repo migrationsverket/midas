@@ -1,0 +1,56 @@
+---
+title: InfoBanner
+description: Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { InfoBanner } from "@migrationsverket/info-banner";
+import { Tabs as MidasTabs } from "@migrationsverket/tabs";     
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/info-banner.json'
+
+<ComponentHeader name={'info-banner'} info={Info} friendlyName={'Informationsmeddelande'} overrideHeadlessLink="" />
+
+## Introduktion
+
+Informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/info-banner
+```
+
+```tsx
+import { InfoBanner } from '@migrationsverket/info-banner'
+```
+
+## Exempel
+
+<MidasTabs
+  label={"Välj typ"}
+  tabs={['Info', 'Important', 'Warning', 'Success']}
+>
+  <InfoBanner type={'info'} title={'Information'} message={'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'}/>
+  <InfoBanner type={'important'} title={'Du behöver komplettera'} message={'Visas för användaren för att uppmana till att något måste göras.'}/>
+  <InfoBanner type={'warning'} title={'Formuläret har inte skickats'} message={'Visas för användaren för att bekräfta att en action gått snett.'}/>
+  <InfoBanner type={'success'} title={'Formuläret har skickats'} message={'Visas för användaren för att bekräfta att en action gått rätt till.'}/>
+</MidasTabs>
+
+<br />
+
+```tsx
+import {InfoBanner} from "@migrationsverket/info-banner";
+
+<InfoBanner type={'info'} title={'Information'} message={'Message'}/>
+<InfoBanner type={'important'} title={'Important'} message={'Message'}/>
+<InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
+<InfoBanner type={'success'} title={'Success'} message={'Message'}/>
+```
+
+## Riktlinjer
+TBD
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

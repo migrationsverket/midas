@@ -4,27 +4,152 @@
  * work well for content-centric websites.
  */
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2)
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('../../static/FiraCode-Regular.ttf') format('truetype');
+}
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #06c;
+  --ifm-color-primary-dark: #005cb8;
+  --ifm-color-primary-darker: #0057ad;
+  --ifm-color-primary-darkest: #00478f;
+  --ifm-color-primary-light: #0070e0;
+  --ifm-color-primary-lighter: #0075eb;
+  --ifm-color-primary-lightest: #0a85ff;
+  --ifm-menu-color-active: #2e7ca5;
+
+  --ifm-code-font-size: 1rem;
+  --ifm-font-family-monospace: 'Fira Code', monospace;
+  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-font-size-base: 1rem;
+  --ifm-hr-height: 0.1em;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #d5e5ed;
+  --ifm-color-primary-dark: #c0d7e4;
+  --ifm-color-primary-darker: #fddb0b;
+  --ifm-color-primary-darkest: #d7ba02;
+  --ifm-color-primary-light: #fde658;
+  --ifm-color-primary-lighter: #fde967;
+  --ifm-color-primary-lightest: #feef95;
+  --ifm-menu-color-active: #fddb0b;
+
+  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 30%);
+
+  .code-card {
+    background-color: rgb(203 203 203 / 30%);
+    border-left: 4px solid #82b0c9;
+  }
+}
+
+/**
+this is a bit ad hoc, will fix this later
+*/
+.card {
+  padding: 24px;
+}
+
+.card-image {
+  text-align: center;
+  padding: 24px;
+}
+
+.code-card {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
+}
+
+.code-card > form {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.code-card > form > span > button {
+  margin-right: 5px;
+}
+
+.token-table {
+  table-layout: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  th {
+    font-size: small;
+    text-align: start;
+  }
+
+  tr {
+    display: flex;
+    flex: 2 1 auto;
+  }
+
+  td {
+    font-size: small;
+    word-wrap: anywhere;
+  }
+
+  tbody {
+    width: 100%;
+  }
+}
+
+.custom-link {
+  flex: 1 1 0;
+  div {
+    min-width: 100%;
+  }
+
+  display: flex;
+}
+
+@media (width >= 40rem) {
+  .cards-item {
+    width: 50%;
+  }
+}
+
+@media (width >= 56rem) {
+  .cards-item {
+    width: 33.3333%;
+  }
+}
+
+.chapter-end {
+  margin-bottom: 1.1rem;
+}
+
+.markdown li + li {
+  margin-top: unset;
+}
+
+.playgroundHeader_node_modules-\@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module:first-of-type {
+  background: var(--ifm-color-emphasis-200) !important;
+  color: var(--ifm-color-content) !important;
 }

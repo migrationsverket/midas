@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@midas/button": ["packages/button/src/index.ts"]
+      "@migrationsverket/*": ["packages/*/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,47 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/link",
+  "dist-tags": {
+    "latest": "0.2.9"
+  },
+  "versions": [
+    "0.2.6",
+    "0.2.7",
+    "0.2.8",
+    "0.2.9"
+  ],
+  "time": {
+    "0.2.6": "2024-06-14T14:35:02Z",
+    "0.2.7": "2024-08-12T13:39:24Z",
+    "0.2.8": "2024-08-13T08:34:58Z",
+    "0.2.9": "2024-08-13T08:46:01Z"
+  },
+  "description": "```bash npm install @migrationsverket/link ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.2.9",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-Ec80GtkONASN64yzK3PIOB5CDOabLjBNe3HEs6za4NrnIzPOZa7fCcJDuMWOFlEskFbgPWLT4a2BMQyb8tFa2Q==",
+    "shasum": "0bd7946d5ea9e471b260e22e12f81c914d875695",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/link/0.2.9/0bd7946d5ea9e471b260e22e12f81c914d875695"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Link\n\n```bash\nnpm install @migrationsverket/link\n```\n\n```tsx\nimport { Link } from '@migrationsverket/link'\n;<Link href=\"#\">Hej</Link>\n```\n"
+}

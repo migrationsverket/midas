@@ -1,0 +1,16 @@
+{
+  "name": "@migrationsverket/search-field",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

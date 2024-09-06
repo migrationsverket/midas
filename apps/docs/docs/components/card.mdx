@@ -1,0 +1,63 @@
+---
+title: Card
+description: En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import { Grid, GridItem } from '@migrationsverket/grid'
+import ImageUrl from '@site/static/img/android-chrome-384x384.png';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/card.json'
+import { Card } from '@migrationsverket/card';
+
+<ComponentHeader name={'Card'} info={Info} friendlyName={'Kort'} overrideHeadlessLink="" />
+
+## Introduktion
+
+Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt. 
+
+## Installation
+
+```bash npm2yarn
+npm install @migrationsverket/card
+```
+
+```tsx
+import { Card } from '@migrationsverket/card';
+```
+
+```tsx live
+<Grid>
+  <GridItem col={4}>
+    <Card
+      title="Midas guldkrona"
+      content="Midas blev av vinguden Dionysos (i en annan version Silenus) erbjuden att få en fri önskan uppfylld efter att ha hjälpt honom. Midas önskade sig då att allt han vidrörde skulle förvandlas till guld."
+      image={{ source: '/img/android-chrome-384x384.png', description: 'Vulpes vulpes' }}
+    />
+  </GridItem>
+  <GridItem col={4}>
+    <Card
+      title="Ett klickbart kort med bakgrund"
+      content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin mi et turpis posuere, nec tempor nunc tincidunt. Sed quis ante quis nunc lacinia volutpat a in purus. Curabitur quis egestas mauris. Vestibulum non elit leo."
+      background={true}
+      onPress={() => {alert('clicked')}}
+    />
+  </GridItem>
+  <GridItem col={4}>
+    <Card
+      title="Lär dig om Flex"
+      content="To vertically align individual flex items when working in the row direction, use the "align-self" property. When working with a "flex-direction" of "column", you can vertically align all items using the "justify-content" property (which works along the main axis)"
+      customImageComponent={<>Egen bild!</>}
+    />
+  </GridItem>
+</Grid>
+```
+
+Ange `background` för en blå bakgrund. Använd `image={source='url', description={'beskrivning}}` för att visa en bild överst på komponenten.
+Hela ytan är klickbar och interaktioner hanteras med `onPress()`.
+
+## Riktlinjer
+TBD
+
+## Dependencies
+<ComponentFooter info={Info}/>

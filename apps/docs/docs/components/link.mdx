@@ -1,0 +1,36 @@
+---
+title: Link
+tags: []
+description: Kort beskrivning av Link
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/link.json'
+import { Link } from '@migrationsverket/link'
+
+<ComponentHeader name={'Link'} info={Info} friendlyName={'Länk'} />
+
+## Introduktion
+
+_Kort beskrivning av Link_
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/link
+```
+
+```tsx
+import { Link } from '@migrationsverket/link'
+```
+
+```tsx live
+<Link>En länk</Link>
+```
+
+## Riktlinjer
+TBD
+
+## Dependencies
+<ComponentFooter info={Info}/>

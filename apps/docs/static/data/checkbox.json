@@ -1,0 +1,46 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/checkbox",
+  "dist-tags": {
+    "latest": "0.3.30"
+  },
+  "versions": [
+    "0.3.29",
+    "0.3.30"
+  ],
+  "time": {
+    "0.3.29": "2024-06-14T12:03:16Z",
+    "0.3.30": "2024-08-13T08:42:03Z"
+  },
+  "description": "```bash npm i @migrationsverket/checkbox ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.3.30",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-yhPrBzkWB1sJ0sIclsPbfBreFZtUEbzzBwVx5ZRS4Jv6f+b3afa8a050hYbqYGE9zzNTIlntdjQW06UbzJmKGg==",
+    "shasum": "57a3f01fc202a40d0029863806447e39000926be",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/checkbox/0.3.30/57a3f01fc202a40d0029863806447e39000926be"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Checkbox\n\n```bash\nnpm i @migrationsverket/checkbox\n```\n\n```tsx\nimport { CheckboxGroup, Checkbox } from '@migrationsverket/checkbox'\n;<CheckboxGroup\n  description=\"Beskrivning\"\n  errorMessage=\"här gick det snett\"\n  label=\"Etikett\"\n>\n  <Checkbox value=\"Banan\">Banan</Checkbox>\n  <Checkbox value=\"Apple\">Apple</Checkbox>\n  <Checkbox value=\"Mango\">Mango</Checkbox>\n</CheckboxGroup>\n```\n"
+}

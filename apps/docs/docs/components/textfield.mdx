@@ -1,0 +1,84 @@
+---
+title: TextField
+description: Använd ett textfält när användaren ska fylla i en rad med text.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import { TextField } from '../../../../packages/textfield/src';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/textfield.json'
+import { Grid } from '../../../../packages/grid/src'
+
+<ComponentHeader name={'TextField'} info={Info} friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}/>
+
+
+## Introduktion
+
+Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre input används TextArea.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/textfield
+```
+
+```tsx
+import { TextField } from '@migrationsverket/textfield';
+```
+
+```tsx live
+<TextField label={'Etikett'} description={'Beskrivning'} />
+```
+
+### Validering
+
+TextField validerar automatiskt på `type` och `isRequired`
+
+```tsx live wrap=true
+<TextField
+  label={'Skriv in din e-post'}
+  description={'Obligatorisk!'}
+  isRequired
+  type={'email'}
+/>
+```
+
+Det går också att definiera en egen funktion för validering:
+
+```tsx live
+<TextField
+  label={'Skriv in glass'}
+  validate={(value) => (value === 'glass' ? true : 'Du måste skriva glass!')}
+/>
+```
+
+### Lösenord
+
+Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
+
+```tsx live
+<TextField type={'password'} name={'pw'} label={'Skriv in ditt lösenord'} autoComplete={'off'}/>
+```
+
+## Riktlinjer
+
+### Mobil
+TBD
+
+### Desktop
+Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./flex), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
+
+```tsx live
+<Grid>
+    <div style={{ gridColumn: 'span 2' }}>
+          <TextField name={'nameExample'} label={'Postnummer'} /> 
+    </div>
+    <div style={{ gridColumn: 'span 6' }}>
+          <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+    </div>
+</Grid>
+```
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

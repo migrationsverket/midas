@@ -1,0 +1,23 @@
+{
+  "name": "@migrationsverket/flex",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@migrationsverket/theme": "0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}

@@ -24,7 +24,9 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
@@ -32,11 +34,27 @@
       "rules": {}
     },
     {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "jest": true
-      },
-      "rules": {}
+      "files": ["{package,project}.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "buildTargets": ["build"], // add non standard build target names
+            "ignoredDependencies": [
+              "vite",
+              "@vitejs/plugin-react",
+              "@nx/vite",
+              "vite-plugin-dts"
+            ], // these libs will be omitted from checks
+            "includeTransitiveDependencies": false, // collect dependencies transitively from children
+            "ignoredFiles": [], // list of files that should be skipped for check
+            "checkMissingDependencies": true, // toggle to disable
+            "checkObsoleteDependencies": true, // toggle to disable
+            "checkVersionMismatches": true // toggle to disable
+          }
+        ]
+      }
     }
   ]
 }

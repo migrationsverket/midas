@@ -1,0 +1,16 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, blue130, blue150, gray150 from tokens;
+
+.link {
+  font-family: display;
+  color: blue130;
+  text-decoration: underline;
+  &:hover {
+    color: blue150;
+  }
+  &[data-disabled='true'] {
+    cursor: disabled;
+    text-decoration: none;
+    color: gray150;
+  }
+}

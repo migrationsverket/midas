@@ -1,0 +1,69 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, inputLabel, inputText, black, blue150, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, mdBreakpoint, borderSecondary from tokens;
+
+.radioGroup {
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+  &[data-disabled] {
+    opacity: 50%;
+  }
+  &[data-invalid] {
+    padding-left: 1rem;
+    border-left: 3px solid signalRed100;
+  }
+}
+
+.radio {
+  font-size: inputLabel;
+  padding-bottom: 9px;
+  display: flex;
+  align-items: center;
+  gap: 0.5625rem;
+  color: inputText;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 1.286rem;
+    transition: all 200ms;
+  }
+
+  &[data-pressed]::before {
+    border-color: borderSecondary;
+  }
+  &[data-selected]::before {
+    padding: 3px;
+    border-width: 0.1rem;
+    background: blue150 50% 50% no-repeat content-box;
+  }
+  &[data-selected][data-pressed]::before {
+    border-color: gray60;
+    background: gray60 50% 50% no-repeat content-box;
+  }
+}
+
+.fieldError {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  color: signalRed100;
+}
+
+.label {
+  font-size: inputLabel;
+  font-weight: medium;
+  color: gray150;
+  padding-bottom: 8px;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: regular;
+  padding-bottom: 8px;
+}

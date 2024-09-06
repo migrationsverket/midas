@@ -1,0 +1,93 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
+
+.select {
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+
+  &[data-disabled] .label,
+  &[data-disabled] .text {
+    color: gray50;
+  }
+  &[data-invalid] .button {
+    border: 2px solid signalRed130;
+  }
+}
+
+.text {
+  font-size: 14px;
+}
+
+.button {
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 8px;
+  background-color: backgroundSecondary;
+  box-shadow: 0 1px 0 0 black;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: gray20;
+  }
+  &[data-focus-visible] {
+    outline: none;
+    border-radius: 0px;
+    border: 1px solid black;
+  }
+  &[data-disabled] {
+    background: backgroundSecondary;
+    color: borderSecondary;
+  }
+}
+
+.popover {
+  font-family: display;
+  border: 1px solid black;
+  width: calc(var(--trigger-width) - 2px);
+  background: white;
+  overflow-y: auto;
+}
+
+.fieldError {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  & svg {
+    color: signalRed130;
+  }
+}
+
+.listBoxItem {
+  all: all;
+  margin: auto;
+  padding-left: 1rem;
+  padding-top: 14px;
+  height: 38px;
+  line-height: 18px;
+  background-color: white;
+  outline: none;
+  cursor: default;
+  color: black;
+  font-size: 1rem;
+  position: relative;
+
+  &[data-selected='true'] {
+    background: gray50;
+  }
+
+  &[data-focused='true'] {
+    background: gray20;
+  }
+}

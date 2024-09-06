@@ -1,0 +1,46 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/grid",
+  "dist-tags": {
+    "latest": "0.0.3"
+  },
+  "versions": [
+    "0.0.2",
+    "0.0.3"
+  ],
+  "time": {
+    "0.0.2": "2024-06-14T14:03:43Z",
+    "0.0.3": "2024-08-13T08:41:23Z"
+  },
+  "description": "```bash npm i @migrationsverket/grid ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.0.3",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-3HtXsltt1t7owNRUSlkaLF1BICLuOUp1//tXNYfgkcTw6YLokavhJQuVKxc39IWOL0PCpbbtpBSiKLE/Ap1FVg==",
+    "shasum": "2963336890b84bb4beae14840bf9b41dd4ef3fd2",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/grid/0.0.3/2963336890b84bb4beae14840bf9b41dd4ef3fd2"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "4be764af47d956e2039ae96ba716712e1f1d5c23",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# Grid\n\n```bash\nnpm i @migrationsverket/grid\n```\n\n```tsx\nimport { Grid, GridItem } from '@migrationsverket/grid'\n;<Grid>\n  <GridItem col={3}>\n    <div></div>\n  </GridItem>\n  <GridItem col={6}>\n    <div></div>\n  </GridItem>\n  <GridItem col={3}>\n    <div></div>\n  </GridItem>\n</Grid>\n```\n"
+}

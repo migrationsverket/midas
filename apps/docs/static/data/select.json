@@ -1,0 +1,47 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/select",
+  "dist-tags": {
+    "latest": "0.4.24"
+  },
+  "versions": [
+    "0.4.23",
+    "0.4.24"
+  ],
+  "time": {
+    "0.4.23": "2024-08-13T08:25:44Z",
+    "0.4.24": "2024-08-13T08:30:42Z"
+  },
+  "description": "```bash npm i @migrationsverket/select ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.4.24",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-muvJrDnNBOvRjMxnOB7j8nXrLPoruOVJlSbUTVL9POImVEtsUt7yZQ/0pTavw833FMNfJqop7SwfN+mZloaNeQ==",
+    "shasum": "c46d8c8bd3d00b6e04ab828587da779f09189ba0",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/select/0.4.24/c46d8c8bd3d00b6e04ab828587da779f09189ba0"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23",
+    "react-aria-components": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# select\n\n```bash\nnpm i @migrationsverket/select\n```\n\n```tsx\nimport { Select, Item } from '@migrationsverket/select'\n;<Select\n  description=\"Beskrivning\"\n  label=\"Etikett\"\n  placeholder=\"One item...\"\n>\n  <Item>Item A</Item>\n</Select>\n```\n"
+}

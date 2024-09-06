@@ -1,0 +1,56 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/theme",
+  "dist-tags": {
+    "latest": "0.5.29"
+  },
+  "versions": [
+    "0.5.23",
+    "0.5.24",
+    "0.5.25",
+    "0.5.26",
+    "0.5.27",
+    "0.5.28",
+    "0.5.29"
+  ],
+  "time": {
+    "0.5.23": "2024-06-12T11:45:34Z",
+    "0.5.24": "2024-06-12T14:11:23Z",
+    "0.5.25": "2024-06-14T08:45:18Z",
+    "0.5.26": "2024-06-14T08:48:58Z",
+    "0.5.27": "2024-06-14T08:52:32Z",
+    "0.5.28": "2024-06-14T09:02:07Z",
+    "0.5.29": "2024-06-14T09:02:47Z"
+  },
+  "description": "To get some basic global styles (like the Inter font) you can import the global css from this package:",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.5.29",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-kBuXasWH8HU9UwpJwm3hAP8frdcUzu0RejDEflbBCnz/8+jxEQesFvsQ29JGPea/xGISHFbpr/yxCKuflYx9cw==",
+    "shasum": "8dd3bb61ea3795c23921c39fec7603c22066b3f3",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/theme/0.5.29/8dd3bb61ea3795c23921c39fec7603c22066b3f3"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "files": [
+    "index.css"
+  ],
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# theme\n\nTo get some basic global styles (like the Inter font) you can import the global css from this package:\n\n```bash\nnpm i @migrationsverket/theme\n```\n\n```tsx\nimport '@migrationsverket/theme/index.css'\n```\n"
+}

@@ -13,6 +13,24 @@
     {
       "files": ["*.js", "*.jsx"],
       "rules": {}
+    },
+    {
+      "files": ["{package,project}.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "buildTargets": ["build"], // add non standard build target names
+            "ignoredDependencies": [], // these libs will be omitted from checks
+            "includeTransitiveDependencies": true, // collect dependencies transitively from children
+            "ignoredFiles": [], // list of files that should be skipped for check
+            "checkMissingDependencies": true, // toggle to disable
+            "checkObsoleteDependencies": true, // toggle to disable
+            "checkVersionMismatches": true // toggle to disable
+          }
+        ]
+      }
     }
   ]
 }

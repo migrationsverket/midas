@@ -1,0 +1,74 @@
+---
+title: LinkButton
+description: Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { LinkButton } from '@migrationsverket/link-button';
+import { Flex } from '@migrationsverket/flex'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/link.json'
+import Mermaid from '@theme/Mermaid';
+
+<ComponentHeader name={'LinkButton'} info={Info} friendlyName={'Länkknapp'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Link.html" />
+
+## Introduktion
+
+Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/link-button
+```
+
+```tsx
+import { LinkButton } from '@migrationsverket/link-button'
+```
+
+```tsx live
+<Flex>
+  <LinkButton href={'/dream/components'}>Link to page</LinkButton>
+  <LinkButton variant={'secondary'} href={'#props'}>Props</LinkButton>
+</Flex>
+```
+
+### Headlessreferens
+
+Komponenten är [React Aria Link](https://react-spectrum.adobe.com/react-aria/Link.html). Beskrivning av hur `RouterProvider`
+används finns på [React Aria Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).
+
+## Client Side Routing
+
+Exempel på uppsättning för [Remix](https://remix.run/docs/en/main) men principen är densamma för andra frameworks.
+
+```tsx
+import { Link, RouterProvider } from '@migrationsverket/link-button';
+import { useNavigate } from '@remix-run/react'; // or any other framwork router
+...
+export default function App() {
+  const navigate = useNavigate();
+  return (
+      <RouterProvider navigate={navigate}>
+          <LinkButton href={'/'}>Home</LinkButton>
+          <LinkButton href={'about'}>About</LinkButton>
+          <LinkButton href={'more'}>More</LinkButton>
+        <Outlet />
+      </RouterProvider>
+  );
+}
+```
+
+## Dependencies
+
+<ComponentFooter info={Info}/>
+
+## Riktlinjer
+
+```mermaid
+flowchart TD;
+    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
+    A -->|Ja| C[Använd komponenten Link]
+    B -->|Action| D[Använd komponenten Button]
+    B -->|Navigering| E[Använd komponenten LinkButton]
+```

@@ -1,0 +1,36 @@
+---
+title: {{ componentName }}
+tags: []
+description: Kort beskrivning av {{ properName }}
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/{{ componentName }}.json'
+import { {{ properName }} } from '@migrationsverket/{{ componentName }}'
+
+<ComponentHeader name={'{{ componentName }}'} info={Info} friendlyName={'{{properName}}'} />
+
+## Introduktion
+
+_Kort beskrivning av {{ properName }}_
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/{{ componentName }}
+```
+
+```tsx
+import { {{ properName }} } from '@migrationsverket/{{ componentName }}'
+```
+
+```tsx live
+[lägg in ett litet showcase på {{ componentName }}]
+```
+
+## Riktlinjer
+TBD
+
+## Dependencies
+<ComponentFooter info={Info}/>

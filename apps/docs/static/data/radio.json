@@ -1,0 +1,41 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/radio",
+  "dist-tags": {
+    "latest": "0.6.2"
+  },
+  "versions": [
+    "0.6.2"
+  ],
+  "time": {
+    "0.6.2": "2024-08-12T13:45:03Z"
+  },
+  "description": "```bash npm i @migrationsverket/radio ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 1771,
+  "version": "0.6.2",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-NRyKd6/yw1S8xCnmLqj7NwBa4IEGeCjKFZKzFbOGo1/MCQZJUGnLfDWq8jtx3xhTQG5yX5Gl6A7t4nc+4D2UYg==",
+    "shasum": "9eca4e2bc1ef7564ae39e1944364ffaea7515ad8",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/radio/0.6.2/9eca4e2bc1ef7564ae39e1944364ffaea7515ad8"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "dependencies": {
+    "@migrationsverket/theme": "^0.5.23"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# RadioGroup\n\n```bash\nnpm i @migrationsverket/radio\n```\n\n```tsx\nimport { RadioGroup, Radio } from '@migrationsverket/radio'\n\n;<RadioGroup\n  description=\"Välj en frukt\"\n  errorMessage=\"errrrrror\"\n  label=\"Frukt\"\n>\n  <Radio value=\"banan\">Banan</Radio>\n  <Radio value=\"apelsin\">Apelsin</Radio>\n  <Radio value=\"kiwi\">Kiwi</Radio>\n</RadioGroup>\n```\n"
+}

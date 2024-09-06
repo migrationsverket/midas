@@ -1,0 +1,59 @@
+---
+title: Accordion
+sidebar_position: 1
+tags: [components, menu, accordion]
+description: Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.
+---
+
+import { PropTable } from '@site/src/components/propsTable';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionContent,
+  AccordionTrigger,
+} from '@migrationsverket/accordion';
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/accordion.json'
+
+<ComponentHeader name={'Accordion'} info={Info} friendlyName={'Dragspel'} overrideHeadlessLink="https://www.radix-ui.com/primitives/docs/components/accordion"  />
+
+## Introduktion
+
+Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren.
+
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/accordion
+```
+
+```tsx
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@migrationsverket/accordion';
+```
+
+```tsx live
+<Accordion type={'multiple'}>
+  <AccordionItem value={'first'}>
+    <AccordionTrigger>Rubrik</AccordionTrigger>
+    <AccordionContent>
+      Längre text inuti en accordion, det som kallas för content
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value={'second'}>
+    <AccordionTrigger>En annan rubrik</AccordionTrigger>
+    <AccordionContent>Här kan man lägga en text</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Riktlinjer
+- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
+
+## Dependencies
+<ComponentFooter info={Info}/>

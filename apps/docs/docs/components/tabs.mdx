@@ -1,0 +1,58 @@
+---
+title: Tabs
+tags: []
+description: Kort beskrivning av Tabs
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/tabs.json'
+
+<ComponentHeader name={'Tabs'} info={Info} friendlyName={'Flikar'} />
+
+## Introduktion
+
+Fördela information över flertalet tabbar.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/tabs
+```
+
+```tsx
+import { Tabs } from '@migrationsverket/tabs'
+```
+
+```tsx live
+<Tabs
+    defaultSelected="Viktigt att veta"
+    label="Följ processen"
+    tabs={['Processen', 'Viktigt att veta', 'Ansök'] as const}
+>
+    <div>
+        Processen går till såhär Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+    </div>
+    <div>
+        Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
+        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
+        consequatur nam culpa nesciunt cupiditate autem suscipit.
+    </div>
+    <div>
+        Ansök här: <Button>Ansök</Button>
+    </div>
+</Tabs>
+```
+
+
+## Riktlinjer
+
+TBD
+
+## Dependencies
+
+<ComponentFooter info={Info}/>

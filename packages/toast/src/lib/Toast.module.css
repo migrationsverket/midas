@@ -1,0 +1,126 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, gray150 from tokens;
+
+@keyframes slideIn {
+  from {
+    transform: translateX(calc(100% + 16px));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(calc(100% + 16px));
+    opacity: 0;
+  }
+}
+
+.toastRegion {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.toast {
+  font-family: display;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: white;
+  color: black;
+  padding-left: 19px;
+  border-left: 3px solid transparent;
+
+  &.success {
+    --bg: signalGreen10;
+    --border: signalGreen100;
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  &.info {
+    --bg: signalBlue10;
+    --border: signalBlue100;
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  &.important {
+    --bg: signalYellow10;
+    --border: signalYellow100;
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  &.warning {
+    --bg: signalRed10;
+    --border: signalRed100;
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  & div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  & button {
+    background: none;
+    appearance: none;
+    height: 10px;
+    width: 10px;
+    color: gray150;
+    margin-right: 17px;
+    padding: 0;
+    &:focus-visible {
+      outline: none;
+    }
+    &:hover {
+      background: none;
+    }
+    &:active {
+      background: none;
+      color: black;
+    }
+  }
+
+  & .icon {
+    color: var(--border);
+  }
+}
+
+.toast button .toast[data-animation='entering'] {
+  animation: slideIn 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast[data-animation='exiting'] {
+  animation: slideOut 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast[data-animation='queued'] {
+  animation: fadeIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}

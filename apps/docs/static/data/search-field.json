@@ -1,0 +1,42 @@
+{
+  "_id": "",
+  "name": "@migrationsverket/search-field",
+  "dist-tags": {
+    "latest": "0.0.4"
+  },
+  "versions": [
+    "0.0.2",
+    "0.0.3",
+    "0.0.4"
+  ],
+  "time": {
+    "0.0.2": "2024-08-13T08:21:06Z",
+    "0.0.3": "2024-08-13T08:33:28Z",
+    "0.0.4": "2024-08-13T08:47:45Z"
+  },
+  "description": "```bash npm i @migrationsverket/search-field ```",
+  "author": {},
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "_contentLength": 0,
+  "version": "0.0.4",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-ghGn5BlCQ1+GETszdp5nekCnW9mZ6mFVIhP+cjIqWZ3iLg8X1g5AhhYHV7rZN5dObgKzNm7OkrGhDb7SoZJSbw==",
+    "shasum": "37fc387a4ce36bbc18f714abf31bb35cf8276c4e",
+    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/search-field/0.0.4/37fc387a4ce36bbc18f714abf31bb35cf8276c4e"
+  },
+  "_npmUser": "wilhjelmig",
+  "main": "./index.js",
+  "gitHead": "501eaa014948a3ee8d006f05362885275ece371a",
+  "directories": {},
+  "_hasShrinkwrap": false,
+  "readme": "# SearchField\n\n```bash\nnpm i @migrationsverket/search-field\n```\n\n```tsx\nimport { SearchField } from '@migrationsverket/search-field'\n;<SearchField placeholder=\"Sök\" />\n```\n"
+}

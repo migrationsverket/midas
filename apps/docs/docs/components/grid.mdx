@@ -1,0 +1,79 @@
+---
+title: Grid
+tags: [grid]
+description: Grid baserat på tekniken display grid i css
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/grid.json'
+import { Grid, GridItem } from '../../../../packages/grid/src'
+import { Card } from '../../../../packages/card/src'
+
+<ComponentHeader name={'Grid'} info={Info} friendlyName={'Rutnät'} overrideHeadlessLink="" />
+
+## Introduktion
+
+Grid baserat på tekniken ```display: grid;``` i css. Grid är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element.
+
+Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/grid
+```
+
+```tsx
+import { Grid } from '@migrationsverket/grid'
+```
+
+
+```tsx live
+<Grid>
+    <GridItem col={12}>
+        <h2>En sida med grid</h2>
+    </GridItem>
+    <GridItem col={3}>
+        <Card title={'Ett kort'} content={'Som är i tre kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={5}>
+        <Card title={'Ett kort'} content={'Som är i fem kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+    <GridItem col={4}>
+        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
+    </GridItem>
+</Grid>
+```
+
+### Grid
+
+Grids skalas enligt följande specifikation.
+
+| Skärmstorlek        | Margin  | Children  | Kollumner | Gutter |
+| ---                 | ---     | ---       | ---       | ---    |
+| 0 - 767 px          | 16 px   | Skalas    | 1         | 16 px  |
+| 768 px - 1199 px    | 32 px   | Skalas    | 12        | 16 px  |
+| 1200 px - 1440 px   | 32 px   | Skalas    | 12        | 24 px  |
+| > 1440 px           | Skalas  | 1368 px   | 12        | 24 px  |
+
+
+
+## Riktlinjer
+
+### När ska du använda Grid ?
+
+Grid används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner. 
+
+### Så här använder du Grid
+
+Använd `<Grid></Grid>` som komponent och justera de direkta childs till Grid justeras enligt griddets bestämmelser. Justera med ```grid-column: span $antal;```. I framtiden kommer vi säkerligen ha en komponent som agerar som child. 

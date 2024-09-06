@@ -1,0 +1,16 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, gray150 from tokens;
+
+.container {
+  font-family: display;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+
+  li:not(:last-child)::after {
+    color: gray150;
+    content: '/';
+    alt: ' ';
+    padding: 0 5px;
+  }
+}

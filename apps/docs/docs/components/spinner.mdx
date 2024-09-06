@@ -1,0 +1,51 @@
+---
+title: Spinner
+tags: []
+description: Kort beskrivning av Spinner
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/spinner.json'
+import { Spinner } from '@migrationsverket/spinner'
+import { Button } from '@migrationsverket/button'
+ 
+<ComponentHeader name={'Spinner'} info={Info} friendlyName={'Laddningsindikator'} overrideHeadlessLink="" />
+
+## Introduktion
+
+_Kort beskrivning av Spinner_
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @migrationsverket/spinner
+```
+
+```tsx
+import { Spinner } from '@migrationsverket/spinner'
+```
+
+## Exempel
+```tsx live
+<Spinner />
+```
+
+### Kombinerat med andra komponenter
+Använd varianten small för att kombinera med t.ex Button
+
+```tsx live
+<Button>
+  <Spinner
+    dark
+    small
+  />
+  Laddar
+</Button>
+```
+
+## Riktlinjer
+TBD
+
+## Dependencies
+<ComponentFooter info={Info}/>

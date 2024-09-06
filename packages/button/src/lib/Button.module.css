@@ -1,0 +1,142 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, red130, red150 from tokens;
+
+.button {
+  font-family: display;
+  font-size: desktopSize;
+  font-weight: mediumWeight;
+  min-height: 48px;
+  padding: 0.8125rem 1.9375rem;
+  background-color: blue150;
+  border: solid 0.0625rem transparent;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: blue130;
+  }
+
+  &[data-pressed] {
+    background-color: blue90;
+    outline: none;
+  }
+}
+
+.button .button[data-focus-visible] {
+  outline: 0.125rem solid black;
+  outline-offset: 0.125rem;
+}
+
+.primary[data-disabled] {
+  color: gray50;
+  pointer-events: none;
+  background-color: gray10;
+}
+
+.secondary {
+  color: blue150;
+  background-color: white;
+  border-color: blue150;
+  opacity: 1;
+
+  &:hover {
+    background-color: gray10;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+    border-color: blue150;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid blue150;
+    outline-offset: 2px;
+  }
+}
+
+.tertiary {
+  color: blue150;
+  background-color: white;
+  border-color: white;
+  opacity: 1;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: gray10;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: red150;
+    border-color: red150;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid blue150;
+    outline-offset: 2px;
+  }
+}
+
+.danger {
+  color: white;
+  background-color: signalRed100;
+  border-color: signalRed100;
+  opacity: 1;
+
+  &:hover {
+    background-color: red130;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+    border-color: blue150;
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid blue150;
+    outline-offset: 2px;
+  }
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.small {
+  min-height: 1.5rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
+@media smBreakpoint {
+  .button {
+    width: 100%;
+  }
+}
