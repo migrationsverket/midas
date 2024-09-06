@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { CircleCheck, Info, AlertTriangle, AlertCircle } from 'lucide-react'
 import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
 
 export type InfoBannerProps = {
   title: string
-  message: string
+  message: ReactNode | string
   type: 'success' | 'info' | 'important' | 'warning'
 }
 
@@ -31,7 +31,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
       />
       <div className={styles.content}>
         <strong className={styles.heading}>{title}</strong>
-        <p className={styles.text}>{message}</p>
+        <div className={styles.text}>{message}</div>
       </div>
     </div>
   )
