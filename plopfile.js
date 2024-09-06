@@ -38,7 +38,7 @@ module.exports = function (plop) {
         {
           type: 'add',
           path: `apps/docs/docs/components/${componentName}.mdx`,
-          templateFile: 'scripts/templates/component-docs.mdx.hbs',
+          templateFile: 'apps/docs/static/templates/component-docs.mdx.hbs',
           data: {
             componentName: '{{componentName}}',
             properName: plop.getHelper('pascalCase')(componentName),
