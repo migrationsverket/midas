@@ -32,7 +32,6 @@
   font-family: display;
   display: flex;
   flex-direction: column;
-  padding: 16px;
 }
 
 .label {
