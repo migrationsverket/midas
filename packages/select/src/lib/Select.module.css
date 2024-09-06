@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, signalRed130, smBreakpoint from tokens;
+@value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
 
 .select {
   font-family: display;
@@ -8,30 +8,15 @@
 
   &[data-disabled] .label,
   &[data-disabled] .text {
-    color: #bfbfbf;
+    color: gray50;
   }
   &[data-invalid] .button {
-    border: 2px solid #e62323;
-  }
-}
-
-@media smBreakpoint {
-  .select {
-    padding: 1rem;
-    &[data-invalid] {
-      background: #ffdfdf;
-    }
+    border: 2px solid signalRed130;
   }
 }
 
 .text {
   font-size: 14px;
-}
-
-.fieldError {
-  color: red;
-  font-size: 14px;
-  padding-top: 8px;
 }
 
 .button {
@@ -46,13 +31,14 @@
   padding-left: 16px;
   padding-right: 16px;
   margin-top: 8px;
-  background-color: #f2f2f2;
+  background-color: backgroundSecondary;
+  box-shadow: 0 1px 0 0 black;
 
   &:focus {
     outline: none;
   }
   &:hover {
-    background-color: #e6e6e6;
+    background-color: gray20;
   }
   &[data-focus-visible] {
     outline: none;
@@ -60,15 +46,15 @@
     border: 1px solid black;
   }
   &[data-disabled] {
-    background: #f2f2f2;
-    color: #bfbfbf;
+    background: backgroundSecondary;
+    color: borderSecondary;
   }
 }
 
 .popover {
   font-family: display;
-  outline: 1px solid black;
-  width: var(--trigger-width);
+  border: 1px solid black;
+  width: calc(var(--trigger-width) - 2px);
   background: white;
   overflow-y: auto;
 }
@@ -76,9 +62,11 @@
 .fieldError {
   margin-top: 10px;
   display: flex;
-  color: signalRed130;
   gap: 10px;
   font-size: 14px;
+  & svg {
+    color: signalRed130;
+  }
 }
 
 .listBoxItem {
@@ -96,10 +84,10 @@
   position: relative;
 
   &[data-selected='true'] {
-    background: #f2f2f2;
+    background: gray50;
   }
 
   &[data-focused='true'] {
-    background: rgba(201, 201, 201, 0.72);
+    background: gray20;
   }
 }
