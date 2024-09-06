@@ -31,6 +31,7 @@ export const TextField: React.FC<TextFieldProps> = ({
     <AriaTextField
       {...props}
       className={styles.textField}
+      style={{ color: 'red' }}
     >
       <FieldError className={styles.fieldError}>
         <>

@@ -1,14 +1,10 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, signalRed10, gray10, black, signalRed100, medium, regular from tokens;
+@value display, signalRed10, gray10, gray20, black, signalRed100, medium, regular, inputText from tokens;
 
 .textField {
   font-family: display;
   display: flex;
   flex-direction: column-reverse;
-  padding: 16px;
-  &[data-invalid] {
-    background-color: signalRed10;
-  }
   &[data-disabled] {
     pointer-events: none;
 
@@ -45,7 +41,7 @@
   transition-duration: 0.15s, 0.15s;
 
   &:hover {
-    background-color: #e6e6e6;
+    background-color: gray20;
   }
 
   &[data-focused] {
@@ -55,7 +51,7 @@
   }
 
   &[data-invalid] {
-    box-shadow: 0 0 0 2px signalRed100;
+    box-shadow: inset 0 0 0 3px signalRed100;
   }
 }
 
@@ -64,17 +60,17 @@
   display: flex;
   align-items: end;
   column-gap: 5px;
-  color: signalRed100;
   margin-top: 5px;
   & svg {
     align-self: center;
+    color: signalRed100;
     height: 0.875rem;
     width: 0.875rem;
   }
 }
 
 .label {
-  color: #1f1f1f;
+  color: inputText;
   font-weight: medium;
 }
 
