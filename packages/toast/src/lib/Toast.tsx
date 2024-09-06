@@ -96,8 +96,8 @@ export function Toast({ state, ...props }: ToastProps<MidasToast>) {
       </div>
       <Button {...closeButtonProps}>
         <X
-          height={16}
-          width={16}
+          height={24}
+          width={24}
         />
       </Button>
     </div>
