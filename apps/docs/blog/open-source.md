@@ -15,7 +15,7 @@ Designsystemet är nu open sourced och versionshanterat på GitHub. Detta för a
 
 ## Vad innebär det för mig?
 
-De "gamla" komponenterna som hostades internt på verket hade namespacet @midas, de nya har @migrationsverket. Gör en search-and-replace i ditt projekt och kör `npm install`.
+De "gamla" komponenterna som hostades internt på verket hade namespacet @mvds, de nya har @migrationsverket. Gör en search-and-replace i ditt projekt och kör `npm install`.
 
 ```bash npm2yarn
 npm install @migrationsverket/komponentnamn
@@ -29,9 +29,13 @@ npm install @migrationsverket/komponentnamn
 
 Ja det finns nya komponenter. Dessa publiceras endast i nya repot för att underlätta underhåll. Dessa är:
 
-1. Breadcrumbs
-2. Date Picker
-3. Link
-4. Search Field
-5. Spinner
-6. Tabs
+1. [Breadcrumbs](/components/breadcrumbs)
+2. [DatePicker](/components/date-picker)
+3. [Link](/components/link)
+4. [SearchField](/components/search-field)
+5. [Spinner](/components/spinner)
+6. [Tabs](/components/tabs)
+
+## Från Stitches till CSS Modules
+
+Hela komponentbiblioteket är också omskrivet. Tidigare byggdes komponenter upp med hjälp av Stitches. Detta är sedan tidigare deprecated och underhålls ej. Numera byggs komponenterna upp med hjälp av CSS Modules vilket är helt inbyggt i React.
