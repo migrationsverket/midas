@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, inputLabel, inputText, black, blue150, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, mdBreakpoint from tokens;
+@value display, inputLabel, inputText, black, blue150, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, mdBreakpoint, borderSecondary from tokens;
 
 .radioGroup {
   font-family: display;
@@ -34,7 +34,7 @@
   }
 
   &[data-pressed]::before {
-    border-color: #b3b3b3;
+    border-color: borderSecondary;
   }
   &[data-selected]::before {
     padding: 3px;
@@ -66,35 +66,4 @@
   font-size: 14px;
   font-weight: regular;
   padding-bottom: 8px;
-}
-
-@media smBreakpoint {
-  .radioGroup {
-    padding-left: 16px;
-    padding-right: 10%;
-    padding-bottom: 16px;
-    padding-top: 16px;
-    &[data-invalid] {
-      background-color: signalRed10;
-      border-left: none;
-    }
-  }
-  .radio {
-    margin-top: 8px;
-  }
-  .fieldError {
-    margin-top: 0.5rem;
-  }
-}
-
-@media mdBreakpoint {
-  .radio {
-    &[data-focus-visible]::before {
-      outline-offset: 1px;
-      outline: 2px solid black;
-    }
-    &[data-disabled] {
-      opacity: 50%;
-    }
-  }
 }
