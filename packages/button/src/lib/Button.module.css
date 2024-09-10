@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, red130, red150 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
 
 .button {
   font-family: display;
@@ -62,7 +62,7 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid blue150;
+    outline: 0.125rem solid black;
     outline-offset: 0.125rem;
   }
 }
@@ -97,27 +97,25 @@
 .danger {
   color: white;
   background-color: signalRed100;
-  border-color: signalRed100;
   opacity: 1;
 
   &:hover {
-    background-color: red130;
+    background-color: signalRed130;
   }
 
   &[data-disabled] {
     color: gray50;
     pointer-events: none;
-    background-color: white;
-    border-color: gray50;
+    background-color: gray10;
   }
 
   &[data-pressed] {
-    background-color: gray20;
-    border-color: blue150;
+    background-color: signalRed150;
+    outline: none;
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid blue150;
+    outline: 0.125rem solid black;
     outline-offset: 0.125rem;
   }
 }
