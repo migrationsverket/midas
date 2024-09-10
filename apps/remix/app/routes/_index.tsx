@@ -1,7 +1,9 @@
+import { Button } from '@migrationsverket/button'
+
 export default function Index() {
   return (
     <div>
-      Remix boilerplate app
+      <Button>Hej</Button>
     </div>
-  );
+  )
 }

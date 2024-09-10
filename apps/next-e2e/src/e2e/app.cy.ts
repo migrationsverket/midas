@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po'
 
-describe('remix-e2e', () => {
+describe('nextjs-e2e', () => {
   beforeEach(() => cy.visit('/'))
 
   it('should display welcome message', () => {
