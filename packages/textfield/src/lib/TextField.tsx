@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import {
   TextField as AriaTextField,
   Label,
@@ -7,26 +7,25 @@ import {
   Text,
   TextFieldProps as AriaTextFieldProps,
   ValidationResult,
+  TextArea,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { TriangleAlert } from 'lucide-react'
 
 export interface TextFieldProps extends AriaTextFieldProps {
+  children?: ReactNode
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-export const TextField: React.FC<TextFieldProps> = ({
+export const TextFieldWrapper: React.FC<TextFieldProps> = ({
+  children,
   label,
   description,
   errorMessage,
   ...props
 }) => {
-  const [type, setType] = useState(props.type)
-  const [password, setPassword] = useState('')
-  const [showPassword, setShowPassword] = useState(props.type !== 'password')
-
   return (
     <AriaTextField
       {...props}
@@ -39,27 +38,7 @@ export const TextField: React.FC<TextFieldProps> = ({
           {errorMessage}
         </>
       </FieldError>
-      {props.type === 'password' && (
-        <label className={styles.passwordLabel}>
-          {password !== '' ? (showPassword ? 'Dölj' : 'Visa') : ' '}
-          <input
-            type="checkbox"
-            checked={showPassword}
-            value={password}
-            onChange={() => {
-              setShowPassword((prev) => !prev)
-              setType('text')
-            }}
-          />
-        </label>
-      )}
-      <Input
-        type={showPassword ? type : 'password'}
-        className={styles.input}
-        onChange={(e) => {
-          setPassword(e.target.value)
-        }}
-      />
+      {children}
       {description && (
         <Text
           slot="description"
@@ -70,5 +49,16 @@ export const TextField: React.FC<TextFieldProps> = ({
       )}
       <Label className={styles.label}>{label}</Label>
     </AriaTextField>
+  )
+}
+
+export const TextField: React.FC<TextFieldProps> = ({ ...props }) => {
+  return (
+    <TextFieldWrapper {...props}>
+      <Input
+        type={props.type}
+        className={styles.input}
+      />
+    </TextFieldWrapper>
   )
 }
