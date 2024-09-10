@@ -7,7 +7,7 @@
     },
     "projectsRelationship": "independent",
     "projects": ["packages/*", "!packages/.storybook"],
-    "releaseTagPattern": "@migrationsverket/{projectName}@{version}",
+    "releaseTagPattern": "@midas-ds/{projectName}@{version}",
     "git": {
       "commitMessage": "chore({projectName}): release version {version} [skip-ci]"
     },
@@ -87,6 +87,11 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "@nx/next:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {
@@ -123,6 +128,12 @@
         "style": "css",
         "linter": "eslint",
         "unitTestRunner": "jest"
+      }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
       }
     }
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@migrationsverket/date-picker",
+  "name": "@midas-ds/date-picker",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -9,8 +9,11 @@
       "require": "./index.js"
     }
   },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   }
 }

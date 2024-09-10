@@ -1,5 +1,5 @@
 {
-  "name": "@migrationsverket/tabs",
+  "name": "@midas-ds/tabs",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,6 +11,9 @@
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }

@@ -1,17 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/textfield",
+  "_id": "@midas-ds/textfield@0.9.24",
+  "name": "@midas-ds/textfield",
   "dist-tags": {
-    "latest": "0.9.25"
+    "latest": "0.9.24"
   },
   "versions": [
-    "0.9.25"
+    "0.9.24"
   ],
   "time": {
-    "0.9.25": "2024-08-16T07:17:05Z"
+    "created": "2024-09-10T14:36:27.336Z",
+    "0.9.24": "2024-09-10T14:36:27.567Z",
+    "modified": "2024-09-10T14:36:27.920Z"
   },
-  "description": "```bash npm i @migrationsverket/textfield ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/textfield ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -20,24 +24,49 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 1553,
-  "version": "0.9.25",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-ehStNgzaUQdh9J1shPmzD77xIStDbeV0j3Ef6um3rGoBDmOtYu/425uZq3hBuqXJcAtuR1PzzUlAAtMS5TpIkg==",
-    "shasum": "b238e652ddb44f8f7640f39217bf92adc8a49a9d",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/textfield/0.9.25/b238e652ddb44f8f7640f39217bf92adc8a49a9d"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2270,
+  "version": "0.9.24",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
-    "@migrationsverket/theme": "^0.5.23",
-    "react": "^18.2.0",
+    "@midas-ds/theme": "^0.5.23",
     "react-aria-components": "^1.1.0"
   },
-  "gitHead": "592fac7f4cc3eec66115844b46087ee73b0b5505",
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-RUvA8fAYUJGGjmMfwYAcUpcx/sXyHvE3HERQQxq2FSMQdK4FtT2eg4yqrjDsDPjksAN55MF8nqD+ohUJINPaqg==",
+    "shasum": "d06c99fa9e61b9e0f1f6e92fefd133709ea5247c",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-0.9.24.tgz",
+    "fileCount": 8,
+    "unpackedSize": 72830,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCIDhoMvKP1H4O+4wmY6Aw0YDPdwCz17c12V810u9F+FyeAiA6Uyw6XQiZm+hhOKggmWwi8IRh9QDfMQ9Z4hN2jY5bMg=="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# TextField\n\n```bash\nnpm i @migrationsverket/textfield\n```\n\n```tsx\nimport { TextField } from '@migrationsverket/textfield'\n;<TextField />\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/textfield_0.9.24_1725978987416_0.6551720201211413"
+  },
+  "_hasShrinkwrap": false
 }

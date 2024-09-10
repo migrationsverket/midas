@@ -1,11 +1,11 @@
 # Checkbox
 
 ```bash
-npm i @migrationsverket/checkbox
+npm i @midas-ds/checkbox
 ```
 
 ```tsx
-import { CheckboxGroup, Checkbox } from '@migrationsverket/checkbox'
+import { CheckboxGroup, Checkbox } from '@midas-ds/checkbox'
 ;<CheckboxGroup
   description="Beskrivning"
   errorMessage="här gick det snett"

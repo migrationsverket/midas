@@ -4,8 +4,8 @@ description: Komponent med samma utseende och beteende som knapp men avsedd att 
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
-import { LinkButton } from '@migrationsverket/link-button';
-import { Flex } from '@migrationsverket/flex'
+import { LinkButton } from '@midas-ds/link-button';
+import { Flex } from '@midas-ds/flex'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/link.json'
 import Mermaid from '@theme/Mermaid';
@@ -19,11 +19,11 @@ Komponent med samma utseende och beteende som knapp men avsedd att använda som 
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @migrationsverket/link-button
+npm install @midas-ds/link-button
 ```
 
 ```tsx
-import { LinkButton } from '@migrationsverket/link-button'
+import { LinkButton } from '@midas-ds/link-button'
 ```
 
 ```tsx live
@@ -43,7 +43,7 @@ används finns på [React Aria Client Side Routing](https://react-spectrum.adobe
 Exempel på uppsättning för [Remix](https://remix.run/docs/en/main) men principen är densamma för andra frameworks.
 
 ```tsx
-import { Link, RouterProvider } from '@migrationsverket/link-button';
+import { Link, RouterProvider } from '@midas-ds/link-button';
 import { useNavigate } from '@remix-run/react'; // or any other framwork router
 ...
 export default function App() {

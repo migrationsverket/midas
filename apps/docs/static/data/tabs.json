@@ -1,34 +1,67 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/tabs",
+  "_id": "@midas-ds/tabs@0.0.1",
+  "name": "@midas-ds/tabs",
   "dist-tags": {
-    "latest": "0.0.2"
+    "latest": "0.0.1"
   },
   "versions": [
-    "0.0.1",
-    "0.0.2"
+    "0.0.1"
   ],
   "time": {
-    "0.0.1": "2024-08-13T09:05:49Z",
-    "0.0.2": "2024-08-13T09:07:19Z"
+    "created": "2024-09-10T14:38:54.666Z",
+    "0.0.1": "2024-09-10T14:38:54.958Z",
+    "modified": "2024-09-10T14:38:55.299Z"
   },
-  "description": "```bash npm i @migrationsverket/tabs ```",
-  "author": {},
-  "repository": {},
-  "bugs": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/tabs ```",
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "readmeFilename": "README.md",
   "_contentLength": 0,
-  "version": "0.0.2",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-HHeS1w4+haRYKuGaURhDRWCFq/5tiZGGR9Lxii2fsRKlpco9qAo+EtoNhEiHVFyWbhh3Ggsnd/RgQfP6aRALGg==",
-    "shasum": "1340a48880d24edfe99efb1246138d04e42e61c2",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/tabs/0.0.2/1340a48880d24edfe99efb1246138d04e42e61c2"
-  },
-  "_npmUser": "wilhjelmig",
+  "version": "0.0.1",
   "main": "./index.js",
-  "gitHead": "483c06ea4d7ecd38edd409188e7a73c99aad99e9",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-T/wg3Tcf9kHpXUyunaVe84U6M7DxyN34IFAf+/0O5EAofsf1ygjI9AfGEA97qJbgnrZadQfATnVA1b5s6lXLuQ==",
+    "shasum": "f1467ba0fc11503d7a1b0808870cf18adef1f90c",
+    "tarball": "https://registry.npmjs.org/@midas-ds/tabs/-/tabs-0.0.1.tgz",
+    "fileCount": 7,
+    "unpackedSize": 196104,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCIGt5qgOU+gfVxC/5WJRfciYJKM1dF0V1LScDtUUd694MAiBgwgKsDkrDd5ghbKao22iJoBMjD4VkVvWTg6rzaSEUEQ=="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# Tabs\n\n```bash\nnpm i @migrationsverket/tabs\n```\n\n```tsx\nimport { Tabs } from '@migrationsverket/tabs';\n\nconst tabs = {\n    defaultSelected: 'Viktigt att veta',\n    label: 'Följ processen',\n    tabs: ['Processen', 'Viktigt att veta', 'Ansök'] as const,\n}\n\n<Tabs\n    defaultSelected={tabs.defaultSelected}\n    label={tabs.label}\n    tabs={tabs.tabs}\n>\n    <div>\n        Processen går till såhär Lorem ipsum dolor sit amet consectetur\n        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur\n        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.\n        Eveniet reprehenderit sapiente quidem culpa nam? Vel?\n    </div>\n    <div>\n        Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur\n        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error\n        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti\n        consequatur nam culpa nesciunt cupiditate autem suscipit.\n    </div>\n    <div>\n        Ansök här\n    </div>\n</Tabs>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/tabs_0.0.1_1725979134759_0.9805271206312021"
+  },
+  "_hasShrinkwrap": false
 }

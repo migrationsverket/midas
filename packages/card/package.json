@@ -1,5 +1,5 @@
 {
-  "name": "@migrationsverket/card",
+  "name": "@midas-ds/card",
   "version": "0.2.5",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,12 +11,15 @@
     }
   },
   "dependencies": {
-    "@migrationsverket/theme": "^0.5.23",
+    "@midas-ds/theme": "^0.5.23",
     "lucide-react": "^0.372.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   }
 }

@@ -1,19 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/grid",
+  "_id": "@midas-ds/grid@0.0.1",
+  "name": "@midas-ds/grid",
   "dist-tags": {
-    "latest": "0.0.3"
+    "latest": "0.0.1"
   },
   "versions": [
-    "0.0.2",
-    "0.0.3"
+    "0.0.1"
   ],
   "time": {
-    "0.0.2": "2024-06-14T14:03:43Z",
-    "0.0.3": "2024-08-13T08:41:23Z"
+    "created": "2024-09-10T14:37:08.211Z",
+    "0.0.1": "2024-09-10T14:37:08.486Z",
+    "modified": "2024-09-10T14:37:08.798Z"
   },
-  "description": "```bash npm i @migrationsverket/grid ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/grid ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -22,25 +24,48 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.0.3",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-3HtXsltt1t7owNRUSlkaLF1BICLuOUp1//tXNYfgkcTw6YLokavhJQuVKxc39IWOL0PCpbbtpBSiKLE/Ap1FVg==",
-    "shasum": "2963336890b84bb4beae14840bf9b41dd4ef3fd2",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/grid/0.0.3/2963336890b84bb4beae14840bf9b41dd4ef3fd2"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2338,
+  "version": "0.0.1",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
-    "@migrationsverket/theme": "0.5.23"
+    "@midas-ds/theme": "0.5.23"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "gitHead": "4be764af47d956e2039ae96ba716712e1f1d5c23",
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-f+0K6/z6txe5VxjCvwC8U9YjSICekHMLuJrr/JNnrHSNQA0JPiVciAhV9L1mkIFSoHen/EClL5+2rpQxqoK9tw==",
+    "shasum": "599b1affa970f3e2a90a7eefb8af5581eb7b8493",
+    "tarball": "https://registry.npmjs.org/@midas-ds/grid/-/grid-0.0.1.tgz",
+    "fileCount": 9,
+    "unpackedSize": 7073,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIBHr+DmWovqWYKYhmBVRYi4fL1Tlj8U22249bdNtMp8ZAiEAxkqXEAxRDaC+/Opze0gyxokx2SHW0j0nG8XNh1BUerA="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# Grid\n\n```bash\nnpm i @migrationsverket/grid\n```\n\n```tsx\nimport { Grid, GridItem } from '@migrationsverket/grid'\n;<Grid>\n  <GridItem col={3}>\n    <div></div>\n  </GridItem>\n  <GridItem col={6}>\n    <div></div>\n  </GridItem>\n  <GridItem col={3}>\n    <div></div>\n  </GridItem>\n</Grid>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/grid_0.0.1_1725979028333_0.17108265652925048"
+  },
+  "_hasShrinkwrap": false
 }

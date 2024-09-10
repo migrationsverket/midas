@@ -1,11 +1,11 @@
 # FileUpload
 
 ```bash
-npm i @migrationsverket/file-upload
+npm i @midas-ds/file-upload
 ```
 
 ```tsx
-import { FileUpload } from '@migrationsverket/file-upload'
+import { FileUpload } from '@midas-ds/file-upload'
 ;<FileUpload
   allowsMultiple
   description="Description"

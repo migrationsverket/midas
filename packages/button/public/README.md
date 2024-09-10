@@ -1,10 +1,10 @@
 # button
 
 ```bash
-npm i @migrationsverket/button
+npm i @midas-ds/button
 ```
 
 ```tsx
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 ;<Button>Klicka på mig</Button>
 ```

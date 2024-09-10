@@ -21,7 +21,7 @@ import {
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
-import { TextFieldStyles } from '@migrationsverket/textfield'
+import { TextFieldStyles } from '@midas-ds/textfield'
 import styles from './DatePicker.module.css'
 
 interface MidasDateRangePickerProps<T extends DateValue>

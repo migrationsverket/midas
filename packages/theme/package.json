@@ -1,5 +1,5 @@
 {
-  "name": "@migrationsverket/theme",
+  "name": "@midas-ds/theme",
   "version": "0.5.23",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -18,6 +18,6 @@
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   }
 }

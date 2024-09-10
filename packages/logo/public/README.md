@@ -1,10 +1,10 @@
 # Logo
 
 ```bash
-npm install @migrationsverket/logo
+npm install @midas-ds/logo
 ```
 
 ```tsx
-import { Link } from '@migrationsverket/logo'
+import { Link } from '@midas-ds/logo'
 ;<Logo />
 ```

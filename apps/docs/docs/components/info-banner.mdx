@@ -4,8 +4,8 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
-import { InfoBanner } from "@migrationsverket/info-banner";
-import { Tabs as MidasTabs } from "@migrationsverket/tabs";     
+import { InfoBanner } from "@midas-ds/info-banner";
+import { Tabs as MidasTabs } from "@midas-ds/tabs";      
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/info-banner.json'
 
@@ -18,11 +18,11 @@ Informationsmeddelande används för att visa statisk information, som till exem
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @migrationsverket/info-banner
+npm install @midas-ds/info-banner
 ```
 
 ```tsx
-import { InfoBanner } from '@migrationsverket/info-banner'
+import { InfoBanner } from '@midas-ds/info-banner'
 ```
 
 ## Exempel
@@ -40,7 +40,7 @@ import { InfoBanner } from '@migrationsverket/info-banner'
 <br />
 
 ```tsx
-import {InfoBanner} from "@migrationsverket/info-banner";
+import {InfoBanner} from "@midas-ds/info-banner";
 
 <InfoBanner type={'info'} title={'Information'} message={'Message'}/>
 <InfoBanner type={'important'} title={'Important'} message={'Message'}/>

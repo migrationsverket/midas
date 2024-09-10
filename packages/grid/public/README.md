@@ -1,11 +1,11 @@
 # Grid
 
 ```bash
-npm i @migrationsverket/grid
+npm i @midas-ds/grid
 ```
 
 ```tsx
-import { Grid, GridItem } from '@migrationsverket/grid'
+import { Grid, GridItem } from '@midas-ds/grid'
 ;<Grid>
   <GridItem col={3}>
     <div></div>

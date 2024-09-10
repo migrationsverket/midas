@@ -31,7 +31,7 @@ nuvarande implementation återfinns i skärmens nedre högra hörn.
 ## Installation
 
 ```bash npm2yarn
-npm install @migrationsverket/toast
+npm install @midas-ds/toast
 ```
 
 ### Varianter
@@ -69,7 +69,7 @@ Använd `toastProvider` för att sätta en kö av Toasts på valfritt ställe i 
 använd den [globala varianten](#global-implementation).
 
 ```tsx
-import { ToastProvider, MidasToastState } from '@migrationsverket/toast';
+import { ToastProvider, MidasToastState } from '@midas-ds/toast';
 
 <ToastProvider>
   {(state: MidasToastState) => (
@@ -88,7 +88,7 @@ Välj en global kö för toasts om det passar ditt use case bättre. Lägg en `<
 och lägg nya toasts i kön enligt:
 
 ```tsx
-import { GlobalToastRegion, toastQueue } from '@migrationsverket/toast';
+import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
 
 <GlobalToastRegion />
 //...

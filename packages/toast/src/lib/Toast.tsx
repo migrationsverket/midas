@@ -13,7 +13,7 @@ import {
 } from '@react-stately/toast'
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 import {
   CircleAlert,
   CircleCheckIcon,

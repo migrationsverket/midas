@@ -1,10 +1,10 @@
 # LinkButton
 
 ```bash
-npm install @migrationsverket/link-button
+npm install @midas-ds/link-button
 ```
 
 ```tsx
-import { LinkButton } from '@migrationsverket/link-button
+import { LinkButton } from '@midas-ds/link-button
 ;<LinkButton href="#">Hej</LinkButton>
 ```
