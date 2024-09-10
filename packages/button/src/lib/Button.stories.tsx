@@ -16,7 +16,7 @@ const meta: Meta<typeof Button> = {
       defaultValue: 'primary',
     },
     size: {
-      options: ['small','null'],
+      options: ['small','default (null)'],
       control: { type: 'radio' },
       defaultValue: null,
     },
