@@ -1,4 +1,4 @@
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 
 export default function Index() {
   return (
