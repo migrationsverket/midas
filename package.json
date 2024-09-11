@@ -20,7 +20,9 @@
     "react-aria-components": "^1.1.1",
     "react-dom": "^18.3.1",
     "react-is": "18.2.0",
-    "tslib": "^2.3.0"
+    "rollup-preserve-directives": "^1.1.1",
+    "tslib": "^2.3.0",
+    "vite-plugin-css-injected-by-js": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",

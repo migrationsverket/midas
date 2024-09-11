@@ -14,4 +14,5 @@ export default {
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
   watchPaths: () => createWatchPaths(__dirname),
+  serverDependenciesToBundle: [/^@midas-ds/],
 }
