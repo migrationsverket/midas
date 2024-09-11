@@ -10,6 +10,7 @@ export interface MvdsButton extends ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger'
   fullwidth?: boolean
   size?: 'small'
+  children: React.ReactNode | string
 }
 
 /**

@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/button",
-  "version": "0.5.28",
+  "version": "0.6.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

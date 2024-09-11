@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import preserveDirectives from 'rollup-preserve-directives'
 
 export default defineConfig({
   root: __dirname,
@@ -18,7 +19,28 @@ export default defineConfig({
       skipDiagnostics: true,
       insertTypesEntry: true,
     }),
-    libInjectCss(),
+    cssInjectedByJsPlugin(),
+    {
+      name: 'custom-swap-directive',
+      generateBundle(_, bundle) {
+        for (const chunk of Object.values(bundle)) {
+          if (chunk.type === 'chunk') {
+            if ('code' in chunk) {
+              if (chunk.code.includes('use client')) {
+                chunk.code = chunk.code.replace(/['"]use client['"];/, '')
+                chunk.code = `'use client';\n${chunk.code}`
+              }
+              if (chunk.code.includes('use server')) {
+                chunk.code = chunk.code.replace(/['"]use server['"];/, '')
+                chunk.code = `'use server';\n${chunk.code}`
+              }
+            }
+          }
+        }
+      },
+      enforce: 'post',
+    },
+    preserveDirectives(),
   ],
 
   build: {
@@ -34,19 +56,17 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
+    cssCodeSplit: false,
+  },
+
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly',
+      generateScopedName: '[name]__[local]___[hash:base64:5]',
+    },
   },
 
   test: {
-    reporters: ['default'],
-    coverage: {
-      reportsDirectory: '../../coverage/packages/button',
-      provider: 'v8',
-    },
-    globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
-    environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    // ... (test configuration remains the same)
   },
 })

@@ -20,7 +20,8 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/packages/button"
+        "outputPath": "dist/packages/button",
+        "emptyOutDir": true
       },
       "configurations": {
         "production": {
