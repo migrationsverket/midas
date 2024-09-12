@@ -15,6 +15,12 @@ export const Primary: Story = {
       { title: 'Jag vill förlänga', href: '#' },
       { title: 'Arbete', href: '#' },
       { title: 'Anställd', href: '#' },
+      { title: 'Jag vill förlänga', href: '#' },
+      { title: 'Arbete', href: '#' },
+      { title: 'Anställd', href: '#' },
+      { title: 'Jag vill förlänga', href: '#' },
+      { title: 'Arbete', href: '#' },
+      { title: 'Anställd', href: '#' },
     ],
   },
 }
