@@ -3,10 +3,10 @@
 exports all components
 
 ```bash
-npm install @migrationsverket/ui
+npm install @midas-ds/ui
 ```
 
 ```tsx
-import { Button } from '@migrationsverket/ui'
+import { Button } from '@midas-ds/ui'
 ;<Button>Click</Button>
 ```

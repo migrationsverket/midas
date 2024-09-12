@@ -1,5 +1,5 @@
 import React from 'react'
-import { theme } from '@migrationsverket/theme'
+import { theme } from '@midas-ds/theme'
 
 export const TokensTable = () => {
   return (

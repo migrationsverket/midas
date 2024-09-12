@@ -1,7 +1,9 @@
+import { Button } from '@midas-ds/button'
+
 export default function Index() {
   return (
     <div>
-      Remix boilerplate app
+      <Button>Hej</Button>
     </div>
-  );
+  )
 }

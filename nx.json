@@ -7,7 +7,7 @@
     },
     "projectsRelationship": "independent",
     "projects": ["packages/*", "!packages/.storybook"],
-    "releaseTagPattern": "@migrationsverket/{projectName}@{version}",
+    "releaseTagPattern": "@midas-ds/{projectName}@{version}",
     "git": {
       "commitMessage": "chore({projectName}): release version {version} [skip-ci]"
     },
@@ -16,7 +16,8 @@
         "specifierSource": "conventional-commits",
         "currentVersionResolver": "git-tag",
         "fallbackCurrentVersionResolver": "disk",
-        "packageRoot": "dist/packages/{projectName}"
+        "packageRoot": "dist/packages/{projectName}",
+        "updateDependents": "auto"
       }
     }
   },
@@ -87,6 +88,11 @@
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
+    },
+    "@nx/next:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {
@@ -124,7 +130,13 @@
         "linter": "eslint",
         "unitTestRunner": "jest"
       }
+    },
+    "@nx/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
     }
   },
-  "useInferencePlugins": false
+  "nxCloudId": "66e2f48166950c5d4d820d72"
 }

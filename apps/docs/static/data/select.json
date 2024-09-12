@@ -1,19 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/select",
+  "_id": "@midas-ds/select@0.4.23",
+  "name": "@midas-ds/select",
   "dist-tags": {
-    "latest": "0.4.24"
+    "latest": "0.4.23"
   },
   "versions": [
-    "0.4.23",
-    "0.4.24"
+    "0.4.23"
   ],
   "time": {
-    "0.4.23": "2024-08-13T08:25:44Z",
-    "0.4.24": "2024-08-13T08:30:42Z"
+    "created": "2024-09-10T14:38:16.404Z",
+    "0.4.23": "2024-09-10T14:38:16.733Z",
+    "modified": "2024-09-10T14:38:17.008Z"
   },
-  "description": "```bash npm i @migrationsverket/select ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/select ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -22,26 +24,50 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.4.24",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-muvJrDnNBOvRjMxnOB7j8nXrLPoruOVJlSbUTVL9POImVEtsUt7yZQ/0pTavw833FMNfJqop7SwfN+mZloaNeQ==",
-    "shasum": "c46d8c8bd3d00b6e04ab828587da779f09189ba0",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/select/0.4.24/c46d8c8bd3d00b6e04ab828587da779f09189ba0"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2668,
+  "private": false,
+  "version": "0.4.23",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "dependencies": {
-    "@migrationsverket/theme": "^0.5.23",
+    "@midas-ds/theme": "^0.5.23",
     "react-aria-components": "^1.1.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-WmDPYPZmiMumsOOn214dODRJHYSV0/2O9qVxQLs2soGxsOJKzB5ewz2Ud9AwYEFQxeL45S1rg51WURHS6FNwcg==",
+    "shasum": "d94bbad5dd088972687b7ea5ec7ffda26a08c9ab",
+    "tarball": "https://registry.npmjs.org/@midas-ds/select/-/select-0.4.23.tgz",
+    "fileCount": 7,
+    "unpackedSize": 359468,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIED4UyBe75jFb8PDZQtVW+RjJU/+7gaSgbLiPHEf8E7+AiEA7RHAbCpsiFYM2N3TrkyKgWX4UlJXVQyOcypRCJgnSas="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# select\n\n```bash\nnpm i @migrationsverket/select\n```\n\n```tsx\nimport { Select, Item } from '@migrationsverket/select'\n;<Select\n  description=\"Beskrivning\"\n  label=\"Etikett\"\n  placeholder=\"One item...\"\n>\n  <Item>Item A</Item>\n</Select>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/select_0.4.23_1725979096482_0.3547065088051726"
+  },
+  "_hasShrinkwrap": false
 }

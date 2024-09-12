@@ -11,7 +11,6 @@
     "strict": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    // Remix takes care of building everything in `remix build`.
     "noEmit": true
   },
   "include": [],
@@ -19,6 +18,9 @@
   "references": [
     {
       "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
     }
   ]
 }

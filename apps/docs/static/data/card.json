@@ -1,19 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/card",
+  "_id": "@midas-ds/card@0.2.5",
+  "name": "@midas-ds/card",
   "dist-tags": {
-    "latest": "0.2.7"
+    "latest": "0.2.5"
   },
   "versions": [
-    "0.2.6",
-    "0.2.7"
+    "0.2.5"
   ],
   "time": {
-    "0.2.6": "2024-06-14T11:44:10Z",
-    "0.2.7": "2024-08-13T08:42:49Z"
+    "created": "2024-09-10T14:35:59.668Z",
+    "0.2.5": "2024-09-10T14:35:59.923Z",
+    "modified": "2024-09-10T14:36:00.202Z"
   },
-  "description": "```bash npm i @migrationsverket/card ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/card ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -22,23 +24,49 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.2.7",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-+o0zelILVtC3WeqaoweB+tjawDHDw2FcWzj5lbgjpHobDKuKVGRQipMV2XG+hjhl+vt4o77r8J+34hyX41Msrw==",
-    "shasum": "1669ecfc857ed60097f7c10b6e3d27f6e16d4609",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/card/0.2.7/1669ecfc857ed60097f7c10b6e3d27f6e16d4609"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2471,
+  "version": "0.2.5",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
-    "@migrationsverket/theme": "^0.5.23",
+    "@midas-ds/theme": "^0.5.23",
     "lucide-react": "^0.372.0"
   },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-lczIDrkNq3+yQ8pL57qWroG+LdOm1yJn8LT+vFOkIE4LBT0G2yBl4hjZR8GoN7TyESX1CPDh5b7vxRU0e/5xuQ==",
+    "shasum": "53934211c4c2315209aba73c4d5d27c12096cd95",
+    "tarball": "https://registry.npmjs.org/@midas-ds/card/-/card-0.2.5.tgz",
+    "fileCount": 8,
+    "unpackedSize": 10638,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIHdPuW874iVp7Gimp/eiukuB4G6liRbO2QwUEu8qsZAQAiEAh33KGbfYlD2Id5XTsBhKPS491Oe4Qx3nh78oTuTwzmg="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# Card\n\n```bash\nnpm i @migrationsverket/card\n```\n\n```tsx\nimport { Card } from '@migrationsverket/card'\n;<Card\n  title=\"Ett kort\"\n  content=\"Med text som beskriver vad det innebär\"\n  headingTag=\"h2\"\n  image={{\n    description: 'Glass!',\n    source:\n      'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSRA1VvVWshDqdk-IbClyNwWoUAjMnFQ5KQLb8eH0hu4gCCvfvqMEcQqOF-CTro2maW',\n  }}\n/>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/card_0.2.5_1725978959771_0.4241059791579509"
+  },
+  "_hasShrinkwrap": false
 }

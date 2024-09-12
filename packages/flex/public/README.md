@@ -1,11 +1,11 @@
 # flex
 
 ```bash
-npm i @migrationsverket/flex
+npm i @midas-ds/flex
 ```
 
 ```tsx
-import { Flex, FlexItem } from '@migrationsverket/flex'
+import { Flex, FlexItem } from '@midas-ds/flex'
 ;<Flex>
   <FlexItem col={3}>
     <div></div>

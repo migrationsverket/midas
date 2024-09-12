@@ -17,7 +17,7 @@
     "baseUrl": "./apps/docs",
     "paths": {
       "@site/*": ["./*"],
-      "@migrationsverket/*": ["../../../../packages/*/src/index.ts"]
+      "@midas-ds/*": ["../../../../packages/*/src/index.ts"]
     }
   }
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Button as AriaButton,
   FieldError,
@@ -8,8 +10,8 @@ import {
   Form,
 } from 'react-aria-components'
 import { Search, X } from 'lucide-react'
-import { TextFieldStyles } from '@migrationsverket/textfield'
-import { Button } from '@migrationsverket/button'
+import { TextFieldStyles } from '@midas-ds/textfield'
+import { Button } from '@midas-ds/button'
 import styles from './SearchField.module.css'
 import clsx from 'clsx'
 import React from 'react'

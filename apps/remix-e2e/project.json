@@ -5,6 +5,22 @@
   "sourceRoot": "apps/remix-e2e/src",
   "tags": [],
   "implicitDependencies": ["remix"],
-  "// targets": "to see all targets run: nx show project remix-e2e --web",
-  "targets": {}
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/remix-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "remix:serve:development"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "remix:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
 }

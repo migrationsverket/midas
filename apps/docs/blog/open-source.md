@@ -15,10 +15,10 @@ Designsystemet är nu open sourced och versionshanterat på GitHub. Detta för a
 
 ## Vad innebär det för mig?
 
-De "gamla" komponenterna som hostades internt på verket hade namespacet @mvds, de nya har @migrationsverket. Gör en search-and-replace i ditt projekt och kör `npm install`.
+De "gamla" komponenterna som hostades internt på verket hade namespacet @mvds, de nya har @midas-ds. Gör en search-and-replace i ditt projekt och kör `npm install`.
 
 ```bash npm2yarn
-npm install @migrationsverket/komponentnamn
+npm install @midas-ds/komponentnamn
 ```
 
 ## Finns det några breaking changes?

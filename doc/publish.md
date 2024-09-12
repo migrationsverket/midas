@@ -11,7 +11,7 @@ inte vara beroende av legacy-byggkedjor. I en framtida utvecklarmiljö kommer de
 
 ## Förutsättningar
 
-Inloggad på `registry=http://nexus.migrationsverket.se/repository/npm-internal/`. Kör `npm adduser` och använd
+Inloggad på npm. Kör `npm adduser` och använd
 användarnamn och lösenord som du får fråga snällt om.
 
 ## Conventional commits
@@ -43,6 +43,7 @@ Välj `yes|no` på frågan om publicering till npm-repot.
 nx release --projects=button,link --dry-run
 
 ```
+
 ### Samt för att bumpa till en viss version
 
 Använd sparsamt!

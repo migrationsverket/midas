@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "info": {
-      "command": "npm view @migrationsverket/{projectName} --json > apps/docs/static/data/{projectName}.json"
+      "command": "npm view @midas-ds/{projectName} --json > apps/docs/static/data/{projectName}.json"
     },
     "lint": {
       "executor": "@nx/eslint:lint",

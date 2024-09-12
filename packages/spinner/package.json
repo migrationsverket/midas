@@ -1,12 +1,20 @@
 {
-  "name": "@migrationsverket/spinner",
+  "name": "@midas-ds/spinner",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "access": "public"
   }
 }

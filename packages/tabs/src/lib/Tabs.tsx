@@ -1,3 +1,5 @@
+'use client'
+
 import React, { ReactNode, cloneElement, ReactElement } from 'react'
 import { Tabs as AriaTabs, Tab, TabList, TabPanel } from 'react-aria-components'
 import styles from './Tabs.module.css'
@@ -31,15 +33,18 @@ export const Tabs = <T extends string>({
   }
 
   // Create a map of tab titles to their corresponding content
-  const tabContentMap = childrenArray.reduce((acc, child, index) => {
-    if (React.isValidElement<TabPanelChildProps>(child)) {
-      const title = tabs[index]?.toLowerCase()
-      if (title) {
-        acc[title] = cloneElement(child, { id: title })
+  const tabContentMap = childrenArray.reduce(
+    (acc, child, index) => {
+      if (React.isValidElement<TabPanelChildProps>(child)) {
+        const title = tabs[index]?.toLowerCase()
+        if (title) {
+          acc[title] = cloneElement(child, { id: title })
+        }
       }
-    }
-    return acc
-  }, {} as Record<string, ReactElement<TabPanelChildProps>>)
+      return acc
+    },
+    {} as Record<string, ReactElement<TabPanelChildProps>>
+  )
 
   return (
     <AriaTabs

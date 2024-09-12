@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { GlobalToastRegion, ToastProvider, toastQueue } from './Toast'
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 
 const meta: Meta<typeof ToastProvider> = {
   component: ToastProvider,

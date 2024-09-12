@@ -1,6 +1,6 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/spinner",
+  "_id": "@midas-ds/spinner@0.0.1",
+  "name": "@midas-ds/spinner",
   "dist-tags": {
     "latest": "0.0.1"
   },
@@ -8,25 +8,60 @@
     "0.0.1"
   ],
   "time": {
-    "0.0.1": "2024-08-23T12:43:09Z"
+    "created": "2024-09-10T14:38:24.661Z",
+    "0.0.1": "2024-09-10T14:38:24.936Z",
+    "modified": "2024-09-10T14:38:25.261Z"
   },
-  "description": "```bash npm i @migrationsverket/spinner ```",
-  "author": {},
-  "repository": {},
-  "bugs": {},
-  "_contentLength": 1047,
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/spinner ```",
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "readmeFilename": "README.md",
+  "_contentLength": 2133,
   "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
   "_nodeVersion": "21.7.3",
   "_npmVersion": "10.5.0",
   "dist": {
-    "integrity": "sha512-H4vkD0iMgAyL1gf/PtMA7H+HNbFO3qVbiKWFAj5y4XGF8EbH614KWVz61T57R7lpk9gepHJFMVbfClMWLDb9UQ==",
-    "shasum": "9430dcd8a55173880f147a6cdd6b2253aa845e64",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/spinner/0.0.1/9430dcd8a55173880f147a6cdd6b2253aa845e64"
+    "integrity": "sha512-gGOcsv/bw8cXUglbakgwJYV0V3McUL9tJ1yswmIP2yXjOjQ9D6gaQ6jdYdwZwkZM5j3OkUkO0fwceHqsnLBeVw==",
+    "shasum": "188989c7b328b618a3004bf1b140a21948d38505",
+    "tarball": "https://registry.npmjs.org/@midas-ds/spinner/-/spinner-0.0.1.tgz",
+    "fileCount": 7,
+    "unpackedSize": 7498,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIQCAjIHIJorfJYDJdS2YOYleq0LOLuT1Mnt/UBEa9EjvZAIgBoWXYk3Hkp4V0AvcPpmfNsAR6f03kZLat9M8K4vzwrg="
+      }
+    ]
   },
-  "_npmUser": "wilhjelmig",
-  "main": "./index.js",
-  "gitHead": "eeebd9dceb7e6dc28bddb1de8c0ae619d8f4670e",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# spinner\n\n```bash\nnpm i @migrationsverket/spinner\n```\n\n```tsx\nimport { Spinner } from '@migrationsverket/spinner'\n;<Spinner />\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/spinner_0.0.1_1725979104776_0.7678300808162983"
+  },
+  "_hasShrinkwrap": false
 }
