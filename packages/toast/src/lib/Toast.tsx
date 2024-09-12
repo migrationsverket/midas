@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {
   AriaToastProps,
@@ -96,8 +98,8 @@ export function Toast({ state, ...props }: ToastProps<MidasToast>) {
       </div>
       <Button {...closeButtonProps}>
         <X
-          height={24}
-          width={24}
+          height={16}
+          width={16}
         />
       </Button>
     </div>
