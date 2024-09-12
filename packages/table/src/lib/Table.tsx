@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './Table.module.css'
 
 import type {
