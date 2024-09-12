@@ -1,4 +1,4 @@
-name: Deploy Docs to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -17,13 +17,13 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18
           cache: npm
 
       - name: Install dependencies
         run: npm ci
       - name: Build website
-        run: nx run docs:build
+        run: npx nx run docs:build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3

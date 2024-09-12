@@ -14,7 +14,7 @@ export interface MvdsButton extends ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger'
   fullwidth?: boolean
   size?: 'small'
-  children:
+  children?:
     | React.ReactNode
     | ((
         values: ButtonRenderProps & {
