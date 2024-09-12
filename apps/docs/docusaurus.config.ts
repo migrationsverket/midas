@@ -24,8 +24,8 @@ fs.readdirSync(packagesDir).forEach((dir) => {
 const config: Config = {
   title: 'MIDAS',
   tagline: 'Migrationsverket Designsystem',
-  url: 'https://designsystem.migrationsverket.se',
-  baseUrl: '/',
+  url: 'https://migrationsverket.github.io',
+  baseUrl: '/midas/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

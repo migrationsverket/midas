@@ -1,32 +1,39 @@
 {
-  "_id": "@midas-ds/checkbox@0.3.28",
+  "_id": "@midas-ds/checkbox@0.5.1",
+  "_rev": "3-32895b0baa93b24ad1cccc687ce96009",
   "name": "@midas-ds/checkbox",
   "dist-tags": {
-    "latest": "0.3.28"
+    "latest": "0.5.1"
   },
   "versions": [
-    "0.3.28"
+    "0.3.28",
+    "0.4.0",
+    "0.5.0",
+    "0.5.1"
   ],
   "time": {
     "created": "2024-09-10T14:36:11.026Z",
+    "modified": "2024-09-12T13:02:08.285Z",
     "0.3.28": "2024-09-10T14:36:11.408Z",
-    "modified": "2024-09-10T14:36:11.822Z"
+    "0.4.0": "2024-09-12T09:14:34.093Z",
+    "0.5.0": "2024-09-12T12:23:17.089Z",
+    "0.5.1": "2024-09-12T13:02:08.142Z"
   },
-  "maintainers": [
-    "wilhelmconsid <wilhelm.hjelm@consid.se>"
-  ],
-  "description": "```bash npm i @midas-ds/checkbox ```",
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "bugs": {
-    "url": "https://github.com/migrationsverket/midas/issues"
-  },
+  "description": "```bash npm i @midas-ds/checkbox ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
   "readmeFilename": "README.md",
-  "_contentLength": 2493,
-  "version": "0.3.28",
+  "_contentLength": 0,
+  "version": "0.5.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -46,18 +53,18 @@
   "publishConfig": {
     "access": "public"
   },
-  "_nodeVersion": "21.7.3",
-  "_npmVersion": "10.5.0",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-mGqiG6PzDW3Q+JneV7xUBqGHHD6Wbjwjs0qAhFueWKqOvy0+H2krQWHhlkQ7avry/JeKhIoX9LVOQLQ2DNeswQ==",
-    "shasum": "fd317803260ee74dd1d58cc9d6f7c61a008c5500",
-    "tarball": "https://registry.npmjs.org/@midas-ds/checkbox/-/checkbox-0.3.28.tgz",
-    "fileCount": 9,
-    "unpackedSize": 116590,
+    "integrity": "sha512-RLsn5gXz804+xlVcyed2+KOWTtdcP1si6wcYUjp+qJlPvfblmiPouNrHKf8j8jMUVeOcQfBZ8s76XWxMi2kzQA==",
+    "shasum": "8cd8f1da4b292909c4c283c68f83e110928b9b8f",
+    "tarball": "https://registry.npmjs.org/@midas-ds/checkbox/-/checkbox-0.5.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 119730,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIEc8xjpJ3WGMJO/lWhfQBsAGG/Em8skVMmhEHg/4tlpkAiB3L+kGXHzeUGGo/FMiZD65A2yVYaGQq4LZGe84dBnH2g=="
+        "sig": "MEUCIDa5hEhbdn0aIQ/ogdlxo3QS+sMj2pT2U5virezFUwVDAiEAsC8/nXOFUHDAZZ7Bkgt5DHTrqu+7kvFN0PnWkY1m/L4="
       }
     ]
   },
@@ -65,7 +72,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/checkbox_0.3.28_1725978971194_0.23099226619872715"
+    "tmp": "tmp/checkbox_0.5.1_1726146128021_0.24620554834189923"
   },
   "_hasShrinkwrap": false
 }

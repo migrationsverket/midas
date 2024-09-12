@@ -1,71 +1,74 @@
 {
   "_id": "@midas-ds/radio@0.6.1",
+  "_rev": "2-fd4f297ebb0578bd332f1bc5ff818360",
   "name": "@midas-ds/radio",
   "dist-tags": {
     "latest": "0.6.1"
   },
   "versions": [
-    "0.6.1"
+    "0.6.1",
+    "0.6.2"
   ],
   "time": {
     "created": "2024-09-10T14:37:59.126Z",
+    "modified": "2024-09-12T13:02:11.542Z",
     "0.6.1": "2024-09-10T14:37:59.408Z",
-    "modified": "2024-09-10T14:37:59.681Z"
-  },
-  "maintainers": [
-    "wilhelmconsid <wilhelm.hjelm@consid.se>"
-  ],
-  "description": "```bash npm i @midas-ds/radio ```",
-  "homepage": "https://github.com/migrationsverket/midas#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/migrationsverket/midas.git"
+    "0.6.2": "2024-09-12T12:42:10.930Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "type": "git"
+  },
+  "description": "```bash npm i @midas-ds/radio ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
   "readmeFilename": "README.md",
-  "_contentLength": 2416,
+  "_contentLength": 0,
   "version": "0.6.1",
+  "dist": {
+    "shasum": "18272e80e4b22048b24f01666ce9c09b1d1a3efd",
+    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-0.6.1.tgz",
+    "fileCount": 7,
+    "integrity": "sha512-vtziw9xbgO9Wp1UfTpzk6cKay+bLJ61hP8Ydcva/yCM+FyoX/G6NZzjT1e9NkmnILxyPgQ4aoE6VUgxem4fQVg==",
+    "signatures": [
+      {
+        "sig": "MEUCIQCIXbDASp5IDRNp/J60ecUeOKhnhKX23+cG5KRye4qpqgIgVdwshlM4Gps0xsZnH7RT2/z2jDFwixP1s+1hskDPnqk=",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 117491
+  },
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "import": "./index.mjs",
-      "require": "./index.js",
-      "types": "./index.d.ts"
+      "require": "./index.js"
     }
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "_npmVersion": "10.5.0",
+  "directories": {},
+  "_nodeVersion": "21.7.3",
   "dependencies": {
     "@midas-ds/theme": "^0.5.23"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "_nodeVersion": "21.7.3",
-  "_npmVersion": "10.5.0",
-  "dist": {
-    "integrity": "sha512-vtziw9xbgO9Wp1UfTpzk6cKay+bLJ61hP8Ydcva/yCM+FyoX/G6NZzjT1e9NkmnILxyPgQ4aoE6VUgxem4fQVg==",
-    "shasum": "18272e80e4b22048b24f01666ce9c09b1d1a3efd",
-    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-0.6.1.tgz",
-    "fileCount": 7,
-    "unpackedSize": 117491,
-    "signatures": [
-      {
-        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQCIXbDASp5IDRNp/J60ecUeOKhnhKX23+cG5KRye4qpqgIgVdwshlM4Gps0xsZnH7RT2/z2jDFwixP1s+1hskDPnqk="
-      }
-    ]
+  "_hasShrinkwrap": false,
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
-  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
-  "directories": {},
   "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/radio_0.6.1_1725979079210_0.882564944751377"
-  },
-  "_hasShrinkwrap": false
+    "tmp": "tmp/radio_0.6.1_1725979079210_0.882564944751377",
+    "host": "s3://npm-registry-packages"
+  }
 }
