@@ -15,7 +15,7 @@ Generellt, importera och använd direkt:
 
 ```tsx
 import { Component } from '@midas-ds/component';
-
+...
 <Component/>
 ```
 
@@ -23,9 +23,22 @@ För specfika instruktioner, se respektive [komponent](../../components/)
 
 ## Installera globala styles
 
-För att få tillgång till globala styles som t.ex typsnittet Inter 
-    1. `npm install @midas-ds/theme`
-    2. `import '@midas-ds/theme/index.css` globalt i din app
+För att komponenterna ska renderas exakt korrekt behövs lite global css. Detta finns i paketet `@midas-ds/theme`.
+
+```bash npm2yarn
+npm install @midas-ds/theme
+```
+```tsx {1} title="App.tsx (rootfilen i din app)"
+import "@midas-ds/theme/index.css";
+
+export default function App({children}) {
+  return <main>
+    {children}
+  </main>
+}
+
+export default App;
+```
 
 ## Är det något knas?
 

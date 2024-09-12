@@ -16,7 +16,8 @@
         "specifierSource": "conventional-commits",
         "currentVersionResolver": "git-tag",
         "fallbackCurrentVersionResolver": "disk",
-        "packageRoot": "dist/packages/{projectName}"
+        "packageRoot": "dist/packages/{projectName}",
+        "updateDependents": "auto"
       }
     }
   },
@@ -136,6 +137,5 @@
         "linter": "eslint"
       }
     }
-  },
-  "useInferencePlugins": false
+  }
 }
