@@ -1,0 +1,67 @@
+{
+  "_id": "@midas-ds/table@0.0.1",
+  "_rev": "1-09d7e6bdb48275b837d5b97a84366efc",
+  "name": "@midas-ds/table",
+  "dist-tags": {
+    "latest": "0.0.1"
+  },
+  "versions": [
+    "0.0.1",
+    "0.1.0"
+  ],
+  "time": {
+    "created": "2024-09-12T12:49:17.620Z",
+    "modified": "2024-09-12T13:02:24.631Z",
+    "0.1.0": "2024-09-12T12:49:18.018Z",
+    "0.0.1": "2024-09-12T13:02:24.470Z"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "",
+  "_contentLength": 0,
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "aefa4606d1e1acb06d2ad90ab3dee32811cea6a4",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-Kxon9ZFclHnSbc1LZteEMwcZxD5l5dk6cgl/1nUFgGHtGW4qOlYVXx9/AEXkZWlrfJ+noJ0l9AcW6jjsHxJBBQ==",
+    "shasum": "6cc1d3f547b449791e8c851cd19c319e998886fa",
+    "tarball": "https://registry.npmjs.org/@midas-ds/table/-/table-0.0.1.tgz",
+    "fileCount": 5,
+    "unpackedSize": 431040,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEYCIQD6WMvtPBjVuk/WVrKoZ8P9gWn/WFX1wstD6eazwn4rqQIhAOdUbTXZ5kxf47udeeurgkGD5WU8RmQYA+lEv9FWwDq9"
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/table_0.0.1_1726146144157_0.841707387648754"
+  },
+  "_hasShrinkwrap": false
+}
