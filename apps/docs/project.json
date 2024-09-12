@@ -7,7 +7,8 @@
     "build": {
       "executor": "@nx-plus/docusaurus:browser",
       "options": {
-        "outputPath": "dist/apps/docs"
+        "outputPath": "dist/apps/docs",
+        "minify": false
       },
       "dependsOn": []
     },
