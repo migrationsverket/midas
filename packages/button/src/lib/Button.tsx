@@ -2,7 +2,11 @@
 
 import * as React from 'react'
 import styles from './Button.module.css'
-import { Button as AriaButton, ButtonProps } from 'react-aria-components'
+import {
+  Button as AriaButton,
+  ButtonProps,
+  ButtonRenderProps,
+} from 'react-aria-components'
 import clsx from 'clsx'
 
 export interface MvdsButton extends ButtonProps {
@@ -10,7 +14,14 @@ export interface MvdsButton extends ButtonProps {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger'
   fullwidth?: boolean
   size?: 'small'
-  children: React.ReactNode | string
+  children:
+    | React.ReactNode
+    | ((
+        values: ButtonRenderProps & {
+          defaultChildren: React.ReactNode | undefined
+        }
+      ) => React.ReactNode)
+    | string
 }
 
 /**
