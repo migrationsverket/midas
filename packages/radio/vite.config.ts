@@ -3,27 +3,44 @@ import react from '@vitejs/plugin-react'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import preserveDirectives from 'rollup-preserve-directives'
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/radio',
 
   plugins: [
+    react(),
+    nxViteTsPaths(),
     dts({
       entryRoot: 'src',
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
       skipDiagnostics: true,
       insertTypesEntry: true,
     }),
-    react(),
-    nxViteTsPaths(),
-    libInjectCss(),
+    cssInjectedByJsPlugin(),
+    {
+      name: 'custom-swap-directive',
+      generateBundle(_, bundle) {
+        for (const chunk of Object.values(bundle)) {
+          if (chunk.type === 'chunk') {
+            if ('code' in chunk) {
+              if (chunk.code.includes('use client')) {
+                chunk.code = chunk.code.replace(/['"]use client['"];/, '')
+                chunk.code = `'use client';\n${chunk.code}`
+              }
+              if (chunk.code.includes('use server')) {
+                chunk.code = chunk.code.replace(/['"]use server['"];/, '')
+                chunk.code = `'use server';\n${chunk.code}`
+              }
+            }
+          }
+        }
+      },
+      enforce: 'post',
+    },
+    preserveDirectives(),
   ],
-
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
 
   build: {
     outDir: '../../dist/packages/radio',
