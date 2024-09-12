@@ -66,6 +66,7 @@ export const signalColors = {
   signalRed10: '#ffdfdf',
   signalRed100: '#e62323',
   signalRed130: '#b31b1b',
+  signalRed150: '#801313',
 }
 
 export const borderRadius = {
