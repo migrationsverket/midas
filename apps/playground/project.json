@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/playground/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "build": {
       "executor": "@nx/vite:build",
@@ -50,7 +51,8 @@
         "production": {
           "buildTarget": "playground:build:production"
         }
-      }
+      },
+      "dependsOn": ["build"]
     },
     "test": {
       "executor": "@nx/vite:test",
@@ -73,6 +75,5 @@
         "buildTarget": "playground:build"
       }
     }
-  },
-  "tags": []
+  }
 }

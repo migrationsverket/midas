@@ -4,3 +4,5 @@
 dist
 scripts
 **/*.mdx
+
+/.nx/workspace-data
