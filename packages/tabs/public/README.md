@@ -1,11 +1,11 @@
 # Tabs
 
 ```bash
-npm i @migrationsverket/tabs
+npm i @midas-ds/tabs
 ```
 
 ```tsx
-import { Tabs } from '@migrationsverket/tabs';
+import { Tabs } from '@midas-ds/tabs';
 
 const tabs = {
     defaultSelected: 'Viktigt att veta',

@@ -1,17 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/toast",
+  "_id": "@midas-ds/toast@0.4.0",
+  "name": "@midas-ds/toast",
   "dist-tags": {
-    "latest": "0.4.1"
+    "latest": "0.4.0"
   },
   "versions": [
-    "0.4.1"
+    "0.4.0"
   ],
   "time": {
-    "0.4.1": "2024-08-16T07:21:43Z"
+    "created": "2024-09-10T14:39:22.818Z",
+    "0.4.0": "2024-09-10T14:39:23.053Z",
+    "modified": "2024-09-10T14:39:23.333Z"
   },
-  "description": "```bash npm i @migrationsverket/toast ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/toast ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -20,30 +24,53 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 1932,
-  "version": "0.4.1",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-+jt9u6pzM7sCKAeCXl2Fq0hW3Pud8Z5RE8wF8ac2EuTFLJi/47VMOg8/xxJGV+4iEdj53Ewgs+CHOerLM8UnaQ==",
-    "shasum": "368c53a4d77778321f867800ab15b392ef0493d5",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/toast/0.4.1/368c53a4d77778321f867800ab15b392ef0493d5"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2571,
+  "version": "0.4.0",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
-    "@migrationsverket/button": "^0.5.25",
-    "@migrationsverket/theme": "^0.5.23",
+    "@midas-ds/button": "^0.5.25",
+    "@midas-ds/theme": "^0.5.23",
     "@react-aria/toast": "^3.0.0-beta.10",
     "@react-stately/toast": "3.0.0-beta.2",
     "lucide-react": "^0.372.0"
   },
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-p3iY9c+7ORkduE89B8tdfyTEOxVFoBXi44UP/LMrARHzA/+MxKtX47DyWWour0gDkFTvvLFhTO2db8W7CwMh8A==",
+    "shasum": "de6937d9e6021832f780efa9e186e961639bda24",
+    "tarball": "https://registry.npmjs.org/@midas-ds/toast/-/toast-0.4.0.tgz",
+    "fileCount": 7,
+    "unpackedSize": 149868,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIQDx1cLfFvLes3mLM4MfnYRxtkxGST5k5C3dHOrpFVG0KQIgHigc6JOiKQpUHtFnaeGzsGXzlvy0vCarKaCy022MVw8="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# Toast\n\n```bash\nnpm i @migrationsverket/toast\n```\n\n```tsx\nimport { Toast } from '@migrationsverket/toast'\nimport { Button } from '@migrationsverket/button'\n;\n\n<GlobalToastRegion />\n<Button\nonPress={() =>\n    toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, {\n    timeout: 2000,\n    })\n}\n>\n    Tryck här för en notifiering\n</Button>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/toast_0.4.0_1725979162900_0.933676834735941"
+  },
+  "_hasShrinkwrap": false
 }

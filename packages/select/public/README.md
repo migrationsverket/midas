@@ -1,11 +1,11 @@
 # select
 
 ```bash
-npm i @migrationsverket/select
+npm i @midas-ds/select
 ```
 
 ```tsx
-import { Select, Item } from '@migrationsverket/select';
+import { Select, Item } from '@midas-ds/select';
 
 const options = [
   { id: 'apple', name: 'Apple' },

@@ -5,13 +5,11 @@
     "bootstrap": {},
     "publish": {
       "directory": "{workspaceRoot}/dist/{projectRoot}/",
-      "registry": "https://npm.pkg.github.com/"
+      "access": "public"
     },
     "version": {
-      "since": "develop",
-      "npmClientArgs": [
-        "--@migrationsverket:registry=https://npm.pkg.github.com"
-      ],
+      "since": "main",
+      "npmClientArgs": ["--@midas-ds:registry=https://registry.npmjs.org/"],
       "changelog": true,
       "commitHooks": false,
       "message": "chore(release): publish",

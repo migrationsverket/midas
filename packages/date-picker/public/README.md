@@ -1,11 +1,11 @@
 # DatePicker
 
 ```bash
-npm i @migrationsverket/date-picker
+npm i @midas-ds/date-picker
 ```
 
 ```tsx
-import { DatePicker } from '@migrationsverket/date-picker'
+import { DatePicker } from '@midas-ds/date-picker'
 ;<DatePicker
   label="Välj datum"
   description="YYYY-MM-DD"

@@ -1,12 +1,12 @@
 # Toast
 
 ```bash
-npm i @migrationsverket/toast
+npm i @midas-ds/toast
 ```
 
 ```tsx
-import { Toast } from '@migrationsverket/toast'
-import { Button } from '@migrationsverket/button'
+import { Toast } from '@midas-ds/toast'
+import { Button } from '@midas-ds/button'
 ;
 
 <GlobalToastRegion />

@@ -14,7 +14,7 @@ fs.readdirSync(packagesDir).forEach((dir) => {
 
   const packagePath = path.resolve(packagesDir, dir)
   if (fs.statSync(packagePath).isDirectory()) {
-    packageAliases[`@migrationsverket/${dir}`] = path.resolve(
+    packageAliases[`@midas-ds/${dir}`] = path.resolve(
       packagePath,
       'src/index.ts'
     )

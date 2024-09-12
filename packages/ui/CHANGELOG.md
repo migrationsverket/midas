@@ -1,3 +1,15 @@
+## 0.5.29 (2024-09-12)
+
+
+### 🩹 Fixes
+
+- **docs:** change doc structure
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.6.1 (2024-04-23)
 
 This was a version bump only for ui to align it with other projects, there were no code changes.

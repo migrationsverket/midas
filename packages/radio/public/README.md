@@ -1,12 +1,11 @@
 # RadioGroup
 
 ```bash
-npm i @migrationsverket/radio
+npm i @midas-ds/radio
 ```
 
 ```tsx
-import { RadioGroup, Radio } from '@migrationsverket/radio'
-
+import { RadioGroup, Radio } from '@midas-ds/radio'
 ;<RadioGroup
   description="Välj en frukt"
   errorMessage="errrrrror"

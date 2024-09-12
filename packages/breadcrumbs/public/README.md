@@ -1,10 +1,10 @@
 # Breadcrumbs
 
 ```bash
-npm i @migrationsverket/breadcrumbs
+npm i @midas-ds/breadcrumbs
 ```
 
 ```tsx
-import { Breadcrumbs } from '@migrationsverket/breadcrumbs'
+import { Breadcrumbs } from '@midas-ds/breadcrumbs'
 ;<Breadcrumbs items={[{ title: 'Länk', href: '#' }]} />
 ```

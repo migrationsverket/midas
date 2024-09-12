@@ -1,21 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/accordion",
+  "_id": "@midas-ds/accordion@0.4.23",
+  "name": "@midas-ds/accordion",
   "dist-tags": {
-    "latest": "0.4.25"
+    "latest": "0.4.23"
   },
   "versions": [
-    "0.4.23",
-    "0.4.24",
-    "0.4.25"
+    "0.4.23"
   ],
   "time": {
-    "0.4.23": "2024-06-12T12:07:25Z",
-    "0.4.24": "2024-06-14T07:42:25Z",
-    "0.4.25": "2024-06-14T07:46:27Z"
+    "created": "2024-09-10T14:34:18.911Z",
+    "0.4.23": "2024-09-10T14:34:19.191Z",
+    "modified": "2024-09-10T14:34:19.482Z"
   },
-  "description": "```bash npm i @mvds/accordion ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/accordion ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -24,22 +24,48 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.4.25",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-V2DQU0rPyE/RklVqXhK2Dc/ke/JQjgefJYYSR0BhbLuN3wYdX09Zh790ewKJChKg658qoIsOQvC9nlrvO85qrQ==",
-    "shasum": "e6f444c04d4e4541bb11e5eb6a7f51655b41ab14",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/accordion/0.4.25/e6f444c04d4e4541bb11e5eb6a7f51655b41ab14"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 3022,
+  "version": "0.4.23",
   "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.23"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-bF0dKCMRBDlfTxaYYw9pcpDp2/i+Y7GJHXjx7BYHFBhn5PEPMjRQ9t78dMvy7d9LWTkozoZw/B7ta5zehTIg0A==",
+    "shasum": "ee466cdc931bb9e181662cbf874b403efd5e87dd",
+    "tarball": "https://registry.npmjs.org/@midas-ds/accordion/-/accordion-0.4.23.tgz",
+    "fileCount": 12,
+    "unpackedSize": 42804,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIAYJbIDeH3gznz7KuAFcWqjdtxCkYnpXUCQRBjEfQQsLAiEAmmQWKcljl/A4PEFtQMOzb2tT3qrZqJc3hzI7ch8sc5Y="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# accordion\n\n```bash\nnpm i @mvds/accordion\n```\n\n```tsx\nimport { AccordionRoot } from '@mvds/accordion';\n\n<AccordionRoot>\n  <AccordionItem heading={'Dragspel'} content={'Lorem ipsum dolor sit amet.'} />\n</AccordionRoot>;\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/accordion_0.4.23_1725978859003_0.9185133173129081"
+  },
+  "_hasShrinkwrap": false
 }

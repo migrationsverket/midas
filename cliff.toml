@@ -83,7 +83,7 @@ tag_pattern = "[0-9].*"
 # regex for skipping tags
 skip_tags = ""
 # regex for ignoring tags
-ignore_tags = "^@migrationsverket"
+ignore_tags = "^@midas-ds"
 # sort the tags topologically
 topo_order = false
 # sort the commits inside sections by oldest/newest order

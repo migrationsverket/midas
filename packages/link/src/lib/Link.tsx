@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './Link.module.css'
 import {
   Link as AriaLink,

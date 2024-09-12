@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "info": {
-      "command": "npm view @migrationsverket/{projectName} --json > apps/docs/static/data/{projectName}.json"
+      "command": "npm view @midas-ds/{projectName} --json > apps/docs/static/data/{projectName}.json"
     },
     "lint": {
       "executor": "@nx/linter:eslint",
@@ -33,9 +33,10 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
+        "jestConfig": "packages/button/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

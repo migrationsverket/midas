@@ -1,5 +1,5 @@
 {
-  "name": "@migrationsverket/ui",
+  "name": "@midas-ds/ui",
   "version": "0.5.24",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -12,21 +12,22 @@
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "dependencies": {
-    "@migrationsverket/button": "*",
-    "@migrationsverket/checkbox": "*",
-    "@migrationsverket/logo": "*",
-    "@migrationsverket/radio": "*",
-    "@migrationsverket/select": "*",
-    "@migrationsverket/theme": "*",
-    "@migrationsverket/accordion": "*",
-    "@migrationsverket/card": "*",
-    "@migrationsverket/info-banner": "*",
-    "@migrationsverket/textfield": "*",
-    "@migrationsverket/toast": "*",
-    "@migrationsverket/link": "*",
-    "@migrationsverket/file-upload": "0.3.19"
+    "@midas-ds/button": "*",
+    "@midas-ds/checkbox": "*",
+    "@midas-ds/logo": "*",
+    "@midas-ds/radio": "*",
+    "@midas-ds/select": "*",
+    "@midas-ds/theme": "*",
+    "@midas-ds/accordion": "*",
+    "@midas-ds/card": "*",
+    "@midas-ds/info-banner": "*",
+    "@midas-ds/textfield": "*",
+    "@midas-ds/toast": "*",
+    "@midas-ds/link": "*",
+    "@midas-ds/file-upload": "0.3.19"
   },
+  "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
-    "registry": "https://github.com/migrationsverket/midas/packages/"
+    "access": "public"
   }
 }

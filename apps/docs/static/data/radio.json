@@ -1,17 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/radio",
+  "_id": "@midas-ds/radio@0.6.1",
+  "name": "@midas-ds/radio",
   "dist-tags": {
-    "latest": "0.6.2"
+    "latest": "0.6.1"
   },
   "versions": [
-    "0.6.2"
+    "0.6.1"
   ],
   "time": {
-    "0.6.2": "2024-08-12T13:45:03Z"
+    "created": "2024-09-10T14:37:59.126Z",
+    "0.6.1": "2024-09-10T14:37:59.408Z",
+    "modified": "2024-09-10T14:37:59.681Z"
   },
-  "description": "```bash npm i @migrationsverket/radio ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/radio ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -20,22 +24,48 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 1771,
-  "version": "0.6.2",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-NRyKd6/yw1S8xCnmLqj7NwBa4IEGeCjKFZKzFbOGo1/MCQZJUGnLfDWq8jtx3xhTQG5yX5Gl6A7t4nc+4D2UYg==",
-    "shasum": "9eca4e2bc1ef7564ae39e1944364ffaea7515ad8",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/radio/0.6.2/9eca4e2bc1ef7564ae39e1944364ffaea7515ad8"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2416,
+  "version": "0.6.1",
   "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.23"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-vtziw9xbgO9Wp1UfTpzk6cKay+bLJ61hP8Ydcva/yCM+FyoX/G6NZzjT1e9NkmnILxyPgQ4aoE6VUgxem4fQVg==",
+    "shasum": "18272e80e4b22048b24f01666ce9c09b1d1a3efd",
+    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-0.6.1.tgz",
+    "fileCount": 7,
+    "unpackedSize": 117491,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIQCIXbDASp5IDRNp/J60ecUeOKhnhKX23+cG5KRye4qpqgIgVdwshlM4Gps0xsZnH7RT2/z2jDFwixP1s+1hskDPnqk="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# RadioGroup\n\n```bash\nnpm i @migrationsverket/radio\n```\n\n```tsx\nimport { RadioGroup, Radio } from '@migrationsverket/radio'\n\n;<RadioGroup\n  description=\"Välj en frukt\"\n  errorMessage=\"errrrrror\"\n  label=\"Frukt\"\n>\n  <Radio value=\"banan\">Banan</Radio>\n  <Radio value=\"apelsin\">Apelsin</Radio>\n  <Radio value=\"kiwi\">Kiwi</Radio>\n</RadioGroup>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/radio_0.6.1_1725979079210_0.882564944751377"
+  },
+  "_hasShrinkwrap": false
 }

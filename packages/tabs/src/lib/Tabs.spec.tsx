@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 
 import { Tabs } from './Tabs'
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 
 describe('Tabs', () => {
   it('should render successfully', () => {

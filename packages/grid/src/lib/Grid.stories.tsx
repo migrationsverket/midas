@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react'
 import { Grid } from './Grid'
-import { Card } from '@migrationsverket/card'
+import { Card } from '@midas-ds/card'
 import { GridItem } from './GridItem'
 
 const meta: Meta<typeof Grid> = {

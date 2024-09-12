@@ -1,17 +1,21 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/info-banner",
+  "_id": "@midas-ds/info-banner@0.1.1",
+  "name": "@midas-ds/info-banner",
   "dist-tags": {
-    "latest": "0.1.2"
+    "latest": "0.1.1"
   },
   "versions": [
-    "0.1.2"
+    "0.1.1"
   ],
   "time": {
-    "0.1.2": "2024-06-14T14:17:09Z"
+    "created": "2024-09-10T14:37:16.355Z",
+    "0.1.1": "2024-09-10T14:37:16.613Z",
+    "modified": "2024-09-10T14:37:16.948Z"
   },
-  "description": "```bash npm install @migrationsverket/info-banner ```",
-  "author": {},
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm install @midas-ds/info-banner ```",
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
@@ -20,22 +24,48 @@
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 1593,
-  "version": "0.1.2",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-hqRkDiQALyZrauyQ1Gan5yCIdcOybtbgeJFKDXS0vIfMi9LEk19Zkf4pvuGgmCHFkO6ZfgJFh5cAkRrhOIqy6w==",
-    "shasum": "9524a45d264882811ba48b69bdcc5eebd08df763",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/info-banner/0.1.2/9524a45d264882811ba48b69bdcc5eebd08df763"
-  },
-  "_npmUser": "wilhjelmig",
+  "readmeFilename": "README.md",
+  "_contentLength": 2332,
+  "version": "0.1.1",
   "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.23"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
   },
-  "gitHead": "c03e212bb1319b1ebae23cc12508289297d00c7c",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-M21Hc3mguKazrFy4cccUoFdUGzuuWny+C0fFtU89JkkZlyjsi7efZqZRHFvtuF5oh2CzHmXU3Kj1k8NUK4xQPw==",
+    "shasum": "f616fe381af0877b63242b3c98e2f567e98aef81",
+    "tarball": "https://registry.npmjs.org/@midas-ds/info-banner/-/info-banner-0.1.1.tgz",
+    "fileCount": 7,
+    "unpackedSize": 11229,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCIAtxrbXUODfsGEZYihFzyiNzbcLJ9CwQXsy8tsU0WG8uAiAZE9eMAyvLkozsubbxGPNpO6U83lzUUhKVXZQfxe5+Lw=="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# InfoBanner\n\n```bash\nnpm install @migrationsverket/info-banner\n```\n\n```tsx\nimport { InfoBanner } from '@migrationsverket/info-banner'\n\n;<InfoBanner\n  type={'info'}\n  title={'Info'}\n  message={'Message'}\n/>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/info-banner_0.1.1_1725979036460_0.7854812071144546"
+  },
+  "_hasShrinkwrap": false
 }

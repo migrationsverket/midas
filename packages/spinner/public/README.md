@@ -1,10 +1,10 @@
 # spinner
 
 ```bash
-npm i @migrationsverket/spinner
+npm i @midas-ds/spinner
 ```
 
 ```tsx
-import { Spinner } from '@migrationsverket/spinner'
+import { Spinner } from '@midas-ds/spinner'
 ;<Spinner />
 ```
