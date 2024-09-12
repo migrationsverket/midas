@@ -88,7 +88,7 @@ const config: Config = {
     announcementBar: {
       id: 'open_source',
       content:
-        'MIDAS är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+        'MIDAS är nu open sourced! <a href="/midas/blog/midas-open-source">Läs mer om vad det innebär.</a>',
       isCloseable: false,
     },
 
