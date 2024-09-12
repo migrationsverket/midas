@@ -70,17 +70,12 @@
 }
 
 .listBoxItem {
-  all: all;
   margin: auto;
-  padding-left: 1rem;
-  padding-top: 14px;
-  height: 38px;
-  line-height: 18px;
+  padding: 1rem;
   background-color: white;
   outline: none;
   cursor: default;
   color: black;
-  font-size: 1rem;
   position: relative;
 
   &[data-selected='true'] {
