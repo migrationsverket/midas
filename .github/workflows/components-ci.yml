@@ -1,13 +1,15 @@
-name: Component Lib
+name: Code - Test and Build Components
 
 env:
   HUSKY: 0
 
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    branches: ['main']
 
 jobs:
   build:
-    name: Build Component Library
+    name: Test and Build Component Library
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
