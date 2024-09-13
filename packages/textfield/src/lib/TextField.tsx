@@ -11,6 +11,7 @@ import {
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { TriangleAlert } from 'lucide-react'
+import clsx from 'clsx'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   children?: ReactNode
@@ -29,12 +30,12 @@ export const TextFieldWrapper: React.FC<TextFieldProps> = ({
   return (
     <AriaTextField
       {...props}
-      className={styles.textField}
-      style={{ color: 'red' }}
+      className={clsx(styles.textField)}
+      
     >
-      <FieldError className={styles.fieldError}>
+      <FieldError className={clsx(styles.fieldError)}>
         <>
-          <TriangleAlert />
+          <TriangleAlert/>
           {errorMessage}
         </>
       </FieldError>
@@ -42,7 +43,7 @@ export const TextFieldWrapper: React.FC<TextFieldProps> = ({
       {description && (
         <Text
           slot="description"
-          className={styles.text}
+          className={clsx(styles.text)}
         >
           {description}
         </Text>
