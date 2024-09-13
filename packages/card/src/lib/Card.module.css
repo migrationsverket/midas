@@ -13,7 +13,8 @@
   width: 100%;
   padding: 2rem 1.5rem;
   box-sizing: border-box;
-  transition: transform fastTransition ease-in-out,
+  transition:
+    transform fastTransition ease-in-out,
     background-color fastTransition ease-in-out;
   background-color: white;
   border-bottom: 1px solid blue40;
@@ -30,7 +31,7 @@
   background-color: gray20;
 }
 
-.button:hover svg {
+.button:hover .arrowIcon {
   transform: translateX(6px);
 }
 
@@ -50,7 +51,7 @@
   gap: 0.5rem;
 }
 
-.heading svg {
+.arrowIcon {
   flex: 0 0 auto;
   transform: translateX(0);
   transition: transform fastTransition ease-in-out;
