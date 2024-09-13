@@ -1,7 +1,3 @@
----
-description: Namnkonventioner, commitregler, brancher
----
-
 # Instruktioner för Git
 
 ### Branch
@@ -18,27 +14,17 @@ till andra issues vid behov. För att göra det enkelt att göra det rätt finns
 npm run commit
 ```
 
-<details>
-  <summary>Varför _conventional commits_?</summary>
-  <ul>
-    <li>Generera automatisk CHANGELOG.</li>
-    <li>Automatiskt bestämma `semantic version`.</li>
-    <li>
-      Kommunicera inom team och till andra intressenter vad förändringen gäller.
-    </li>
-    <li>Trigga byggen och andra åtgärder.</li>
-    <li>
-      Förenkla för externa parter att bidra genom att hålla en konsekvent och
-      strukturerad historik.
-    </li>
-  </ul>
-</details>
+#### Varför conventional commits?
+
+    - Generera automatisk CHANGELOG
+    - Automatiskt bestämma `semantic version`
+    - Kommunicera inom team och till andra intressenter vad förändringen gäller.
+    - Trigga byggen och andra åtgärder.
+    - Förenkla för externa parter att bidra genom att hålla en konsekvent och strukturerad historik.
 
 #### Commit message på en rad
 
-```
-docs(lang): add Swedish language
-```
+`docs(lang): add Swedish language`
 
 #### Commit message med header och body
 

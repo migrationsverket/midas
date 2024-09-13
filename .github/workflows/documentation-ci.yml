@@ -24,6 +24,8 @@ jobs:
         run: npm ci
       - name: Build website
         run: npx nx run docs:build --minify=false --outputPath=build
+      - name: Build storybook
+        run: npx nx run ui:build-storybook:ci
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
