@@ -1,8 +1,3 @@
----
-slug: /developers/guides/publish
-description: Publicera komponenter
----
-
 # Publicera komponenter
 
 Komponentbiblioteket är separat versionshanterat per paket eftersom komponenterna är färdigställda i varierande grad.

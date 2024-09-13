@@ -1,7 +1,3 @@
----
-description: Praktiska tips för att komma igång med att bygga komponenter
----
-
 # Bygg en komponent
 
 ## Förutsättningar
