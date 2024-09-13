@@ -67,6 +67,7 @@ export const Card: React.FC<CardProps> = ({
         <HeadingTag className={styles.heading}>
           {title}
           <ArrowRight
+            className={styles.arrowIcon}
             aria-hidden={true}
             size={32}
             strokeWidth={1.5}
