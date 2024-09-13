@@ -150,10 +150,6 @@ const config: Config = {
           title: 'Övrigt',
           items: [
             {
-              label: 'Storybook',
-              href: '/storybook',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/migrationsverket/midas',
             },
