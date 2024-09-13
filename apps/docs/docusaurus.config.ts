@@ -56,8 +56,9 @@ const config: Config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/migrationsverket/midas/edit/main/apps/docs',
+          //We don't want people to edit our sites! 
+          // editUrl:
+          //   'https://github.com/migrationsverket/midas/edit/main/apps/docs',
           remarkPlugins: [
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
@@ -66,9 +67,10 @@ const config: Config = {
           showReadingTime: true,
           blogSidebarTitle: 'Alla inlägg',
           blogSidebarCount: 'ALL',
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/migrationsverket/midas/edit/main/apps/docs/blog',
+          // // Please change this to your repo.
+          //We don't want people to edit our sites! 
+          // editUrl:
+          //   'https://github.com/migrationsverket/midas/edit/main/apps/docs/blog',
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
