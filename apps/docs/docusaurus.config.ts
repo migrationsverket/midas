@@ -129,31 +129,38 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Components',
+              label: 'Kom igång',
+              to: 'get-started',
+            },
+            {
+              label: 'Grunderna',
+              to: 'basics',
+            },
+            {
+              label: 'Komponenter',
               to: 'components',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Mattermost',
-              href: '#',
+              label: 'Designmönster',
+              to: 'design-patterns',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Övrigt',
           items: [
             {
               label: 'GitHub',
               href: 'https://github.com/migrationsverket/midas',
             },
+            {
+              label: 'NPM',
+              href: 'https://www.npmjs.com/org/midas-ds',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Midas by Dreamteam`,
+      copyright: `Migrationsverkets designsystem - MIDAS`,
     },
     colorMode: {
       defaultMode: 'light',

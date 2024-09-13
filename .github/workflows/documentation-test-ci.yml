@@ -24,3 +24,5 @@ jobs:
         run: npm ci
       - name: Test build website
         run: npx nx run docs:build --minify=false --outputPath=build
+      - name: Test build storybook
+        run: npx nx run ui:build-storybook:ci

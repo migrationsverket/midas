@@ -27,7 +27,7 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "",
-  "_contentLength": 0,
+  "_contentLength": 3306,
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
