@@ -55,6 +55,8 @@ export const ComponentHeader = ({
       <div
         style={{
           display: 'flex',
+          flexFlow: 'row wrap',
+          gap: '1rem',
           justifyContent: 'space-between',
           alignItems: 'flex-start',
         }}
@@ -82,15 +84,17 @@ export const ComponentHeader = ({
               target="_blank"
             >
               <img
+                style={{ borderRadius: '0.4rem' }}
                 alt="Storybook"
                 src="https://img.shields.io/badge/Storybook-FF4785.svg?style=for-the-badge&logo=storybook&logoColor=white"
               />
             </a>
             <a
-              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}`}
+              href={`https://migrationsverket.github.io/midas/storybook/?path=/docs/${name.toLowerCase()}--docs`}
               target="_blank"
             >
               <img
+                style={{ borderRadius: '0.4rem' }}
                 alt="GitHub"
                 src="https://img.shields.io/badge/github-100000.svg?style=for-the-badge&logo=github&logoColor=white"
               />
@@ -105,6 +109,7 @@ export const ComponentHeader = ({
                 target="_blank"
               >
                 <img
+                  style={{ borderRadius: '0.4rem' }}
                   alt="Static Badge"
                   src="https://img.shields.io/badge/Headless-2e7ca5?style=for-the-badge&logo=headlessui&logoColor=white"
                 />

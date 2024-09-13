@@ -153,3 +153,7 @@ this is a bit ad hoc, will fix this later
   background: var(--ifm-color-emphasis-200) !important;
   color: var(--ifm-color-content) !important;
 }
+
+.badge {
+  padding: 0.4rem 0.5rem;
+}
