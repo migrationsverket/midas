@@ -80,8 +80,7 @@ export const ComponentHeader = ({
         >
           <div style={{ display: 'flex', gap: '8px' }}>
             <a
-              href={`/?path=/docs/${name.toLowerCase()}--docs`}
-              target="_blank"
+              href={`https://migrationsverket.github.io/midas/storybook/?path=/docs/${name.toLowerCase()}--docs`}
             >
               <img
                 style={{ borderRadius: '0.4rem' }}
@@ -90,7 +89,7 @@ export const ComponentHeader = ({
               />
             </a>
             <a
-              href={`https://migrationsverket.github.io/midas/storybook/?path=/docs/${name.toLowerCase()}--docs`}
+              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}`}
               target="_blank"
             >
               <img
