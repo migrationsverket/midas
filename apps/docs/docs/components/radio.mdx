@@ -16,11 +16,13 @@ import Info from '@site/static/data/radio.json';
 ## Introduktion
 
 Radioknappar är en typ av input-fält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
-Om det är fler alternativ sju (7) används med fördel [Select](./select.mdx) istället.
+Om det är fler alternativ än fyra (4) används med fördel [Select](./select.mdx) istället.
 
-<RadioGroup label={'Är det ok med ananas på pizza?'} description={'Frukt på pizza är en vattendelare'} defaultValue={1}>
-  <Radio value={1}>Ja, Hawaii är ju jättegott</Radio>
-  <Radio value={2}>Nej! Det dör en italienare varje gång någon har ananas på pizza!</Radio>
+<RadioGroup label={'Välj en frukt!'} description={'Frukt är godis!'} defaultValue={1}>
+  <Radio value={1}>Banan</Radio>
+  <Radio value={2}>Melon</Radio>
+  <Radio value={3}>Kiwi</Radio>
+  <Radio value={4}>Citron</Radio>
 </RadioGroup>
 
 ## Installation och användning
