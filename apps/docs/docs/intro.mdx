@@ -1,5 +1,5 @@
 ---
-sidebar_label: Introduktion
+sidebar_label: Start
 sidebar_position: 1
 slug: /
 pagination_next: null
@@ -8,68 +8,43 @@ hide_table_of_contents: true
 sidebar_class_name: chapter-end
 ---
 
-import { Card } from '../../../packages/card/src';
+import { Card } from '@midas-ds/card';
+import { Grid, GridItem } from '@midas-ds/grid';
 import Link from '@docusaurus/Link'
+import { Figma, Component, Code } from 'lucide-react'
 
 
-# Introduktion
+# Midas
+**Migrationsverkets designsystem**
 
 Här hittar du designriktlinjer, dokumentation om komponenter samt andra resurser som används för att bygga Migrationsverkets tjänster och system.
 
-☎️ Om du har några frågor eller förslag, skriv i vår supportkanal på Mattermost.
-
-📋 Kolla vad som är på gång i vår Jira.
-
-
-<div
-  style={{
-    display: 'flex',
-    flexFlow: 'row wrap',
-    alignItems: 'stretch',
-    gap:'1rem',
-  }}
->
-
-  <Link to="/get-started/design" className={'custom-link'}>
-    <div className={'card'}>
-      <div className={'card-header'}>
-      <div className={'card-image'}>
-        <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"> <path d="M18 2h-2v2h2V2zM4 4h6v2H4v14h14v-6h2v8H2V4h2zm4 8H6v6h6v-2h2v-2h-2v2H8v-4zm4-2h-2v2H8v-2h2V8h2V6h2v2h-2v2zm2-6h2v2h-2V4zm4 0h2v2h2v2h-2v2h-2v2h-2v-2h2V8h2V6h-2V4zm-4 8h2v2h-2v-2z" fill="currentColor"/> </svg>
-      </div>
-      </div>
-      <div className={"card-body"}>
-        <h3>För designers</h3>
-        Här hittar du resurser för att använda våra designkomponenter.
-      </div>
-    </div>
-  </Link>
-
-  <Link to="/get-started/develop" className={'custom-link'}>
-    <div className={'card'}>
-      <div className={'card-header'}>
-        <div className={'card-image'} >
-          <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"> <path d="M8 5h2v2H8V5zM6 7h2v2H6V7zM4 9h2v2H4V9zm-2 2h2v2H2v-2zm2 2h2v2H4v-2zm2 2h2v2H6v-2zm2 2h2v2H8v-2zm8-12h-2v2h2V5zm2 2h-2v2h2V7zm2 2h-2v2h2V9zm2 2h-2v2h2v-2zm-2 2h-2v2h2v-2zm-2 2h-2v2h2v-2zm-2 2h-2v2h2v-2z" fill="currentColor"/> </svg>
-        </div>
-      </div>
-        <div className={'card-body'}>
-            <h3>För utvecklare</h3>
-            Här hittar du guider för hur du kommer igång med våra komponenter.
-        </div>
-    </div>
-  </Link>
-
-
-  <Link to="/components" className={'custom-link'} >
-    <div className={'card'}>
-      <div className={'card-header'}>
-      <div className={'card-image'}>
-        <svg fill="none" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24"> <path d="M2 2h8v8H7v12H5V10H2V2zm2 2v4h4V4H4zm8 1h7.09v9H22v8h-8v-8h3.09V7H12V5zm4 11v4h4v-4h-4z" fill="currentColor"/> </svg>
-      </div>
-        <h3>Komponenter</h3>
-      </div>
-      <div className={'card-body'}>
-        Utforska våra komponenter.
-      </div>
-    </div>
-  </Link>
-</div>
+<Grid fluid="true">
+  <GridItem col={4}>
+    <Card
+      title="För designers"
+      content="Här hittar du resurser för att använda våra designkomponenter."
+      headingTag={'h2'}
+      onPress={() => window.location.href = "/midas/get-started/design"}
+      customImageComponent={<div className="card-icon"><Figma size={48} strokeWidth={1.5} /></div>}
+    />
+  </GridItem>
+  <GridItem col={4}>
+    <Card
+      title="För utvecklare"
+      content="Här hittar du guider för hur du kommer igång med våra komponenter."
+      headingTag={'h2'}
+      onPress={() => window.location.href = "/midas/get-started/develop"}
+      customImageComponent={<div className="card-icon"><Code size={48} strokeWidth={1.5} /></div>}
+    />
+  </GridItem>
+  <GridItem col={4}>
+    <Card
+      title="Komponenter"
+      content="Utforska våra komponenter."
+      headingTag={'h2'}
+      onPress={() => window.location.href = "/midas/components"}
+      customImageComponent={<div className="card-icon"><Component size={48} strokeWidth={1.5} /></div>}
+    />
+  </GridItem>
+</Grid>

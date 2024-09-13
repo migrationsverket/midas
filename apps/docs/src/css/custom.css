@@ -121,24 +121,14 @@ this is a bit ad hoc, will fix this later
 }
 
 .custom-link {
-  flex: 1 1 0;
-  div {
-    min-width: 100%;
-  }
+  all: unset;
+}
 
+.card-icon {
   display: flex;
-}
-
-@media (width >= 40rem) {
-  .cards-item {
-    width: 50%;
-  }
-}
-
-@media (width >= 56rem) {
-  .cards-item {
-    width: 33.3333%;
-  }
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9;
 }
 
 .chapter-end {

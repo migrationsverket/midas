@@ -1,3 +1,21 @@
+## 0.3.3 (2024-09-13)
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **card:** only animate out arrow
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.3.2 (2024-09-12)
 
 ### 🩹 Fixes
