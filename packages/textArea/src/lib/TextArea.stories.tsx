@@ -26,7 +26,6 @@ export const Primary: Story = {
   },
 }
 
-
 export const NotValid = {
   args: {
     ...Primary.args,
