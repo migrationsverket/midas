@@ -14,8 +14,9 @@ import {
 } from '@midas-ds/accordion';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/accordion.json'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Accordion'} info={Info} friendlyName={'Dragspel'} overrideHeadlessLink="https://www.radix-ui.com/primitives/docs/components/accordion"  />
+<ComponentHeader name={'Accordion'} info={Info} friendlyName={'Dragspel'} overrideHeadlessLink="https://www.radix-ui.com/primitives/docs/components/accordion" />
 
 ## Introduktion
 
@@ -37,20 +38,18 @@ import {
 } from '@midas-ds/accordion';
 ```
 
-```tsx live
-<Accordion type={'multiple'}>
-  <AccordionItem value={'first'}>
-    <AccordionTrigger>Rubrik</AccordionTrigger>
-    <AccordionContent>
-      Längre text inuti en accordion, det som kallas för content
-    </AccordionContent>
-  </AccordionItem>
-  <AccordionItem value={'second'}>
-    <AccordionTrigger>En annan rubrik</AccordionTrigger>
-    <AccordionContent>Här kan man lägga en text</AccordionContent>
-  </AccordionItem>
-</Accordion>
-```
+<LiveCodeBlock scope={{Accordion, AccordionItem, AccordionTrigger, AccordionContent}}>
+{`<Accordion type={'multiple'}>
+    {fruits.shuffled().map(fruit => (
+      <AccordionItem key={fruit.value} value={fruit.value}>
+        <AccordionTrigger>{fruit.name}</AccordionTrigger>
+        <AccordionContent>
+          {fruit.description}
+        </AccordionContent>
+      </AccordionItem>
+    ))}
+</Accordion>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 - Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan. 

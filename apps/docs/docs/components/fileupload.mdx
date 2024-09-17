@@ -7,9 +7,10 @@ tags: [form]
 import { PropTable } from '@site/src/components/propsTable';
 import { FileUpload } from '@midas-ds/file-upload';
 import CodeBlock from '@theme/CodeBlock';
-
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/file-upload.json'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
 
 <ComponentHeader name={'FileUpload'}  info={Info} friendlyName={'Filuppladdning'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/FileTrigger.html" />
 
@@ -40,14 +41,9 @@ npm install @midas-ds/fileupload
 ```tsx
 import { FileUpload } from '@midas-ds/fileupload';
 ```
-```tsx live
-<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>
-```
-
-
-Sätt `allowsMultiple` för att kunna välja och ladda upp mer än en fil.
-
-
+<LiveCodeBlock scope={{FileUpload}}>
+{`<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 -TBD

@@ -8,6 +8,7 @@ import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/date-picker.json'
 import { DatePicker } from '@midas-ds/date-picker'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'DatePicker'} info={Info} friendlyName={'Datumväljare'} />
 
@@ -25,19 +26,9 @@ npm install @midas-ds/date-picker
 import { DatePicker } from '@midas-ds/date-picker'
 ```
 
-```tsx live
-<div
-  style={{
-    marginBottom: '10px',
-    display: 'flex',
-    columnGap: '10px',
-    alignItems: 'center',
-  }}
->
-    <DatePicker />
-</div>
-```
-
+<LiveCodeBlock scope={{DatePicker}}>
+{`<DatePicker />`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 

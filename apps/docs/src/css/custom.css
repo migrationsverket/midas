@@ -23,7 +23,7 @@
 
 @font-face {
   font-family: 'Fira Code';
-  src: url('../../static/FiraCode-Regular.ttf') format('truetype');
+  src: url('../../static/fonts/FiraCode-Regular.ttf') format('truetype');
 }
 
 /* You can override the default Infima variables here. */
@@ -139,6 +139,10 @@ this is a bit ad hoc, will fix this later
   margin-top: unset;
 }
 
+.playgroundHeader_node_modules-@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module {
+  display: none !important;
+}
+
 .playgroundHeader_node_modules-\@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module:first-of-type {
   background: var(--ifm-color-emphasis-200) !important;
   color: var(--ifm-color-content) !important;
@@ -146,4 +150,10 @@ this is a bit ad hoc, will fix this later
 
 .badge {
   padding: 0.4rem 0.5rem;
+}
+
+.migNavbarLogo {
+  padding-right: 1rem;
+  border-right: solid 1px black;
+  margin-right: 1rem;
 }

@@ -9,21 +9,22 @@ import { Radio, RadioGroup } from '../../../../packages/radio/src';
 import { Button } from '../../../../packages/button/src';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/radio.json';
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Radio'} info={Info} friendlyName={'Radioknappar'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/RadioGroup.html" />
-
 
 ## Introduktion
 
 Radioknappar är en typ av input-fält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
 Om det är fler alternativ än fyra (4) används med fördel [Select](./select.mdx) istället.
 
-<RadioGroup label={'Välj en frukt!'} description={'Frukt är godis!'} defaultValue={1}>
-  <Radio value={1}>Banan</Radio>
-  <Radio value={2}>Melon</Radio>
-  <Radio value={3}>Kiwi</Radio>
-  <Radio value={4}>Citron</Radio>
-</RadioGroup>
+<LiveCodeBlock scope={{RadioGroup, Radio}}>
+{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+    {fruits.shuffled().map(fruit => (
+      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+    ))}
+</RadioGroup>`}
+</LiveCodeBlock>
 
 ## Installation och användning
 
@@ -39,25 +40,26 @@ import { Radio, RadioGroup } from '@midas-ds/radio';
 
 Gruppera flera `<Radio>` i en `<RadioGroup>` och sätt rubrik och beskrivande text.
 
-```tsx live
-<RadioGroup label={'Skoval'} description={'Välj lämplig fotbeklädnad'} defaultValue={2}>
-  <Radio value={1}>Sneakers</Radio>
-  <Radio value={2}>Sandaler</Radio>
-  <Radio value={3}>Kängor</Radio>
-</RadioGroup>
-```
+<LiveCodeBlock scope={{RadioGroup, Radio}}>
+{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+    {fruits.shuffled().map(fruit => (
+      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+    ))}
+</RadioGroup>`}
+</LiveCodeBlock>
+
 
 ### Disabled
 
 Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
 
-```tsx live
-<RadioGroup label={'Skoval'} description={'Välj lämplig fotbeklädnad'} defaultValue={1} >
-  <Radio value={1}>Sneakers</Radio>
-  <Radio value={2} isDisabled>Sandaler</Radio>
-  <Radio value={3}>Kängor</Radio>
-</RadioGroup>
-```
+<LiveCodeBlock scope={{RadioGroup, Radio}}>
+{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+    {fruits.shuffled().map(fruit => (
+      <Radio key={fruit.value} value={fruit.value} isDisabled>{fruit.name}</Radio>
+    ))}
+</RadioGroup>`}
+</LiveCodeBlock>
 
 ### Validering
 

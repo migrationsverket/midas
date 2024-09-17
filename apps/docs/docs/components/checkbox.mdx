@@ -12,7 +12,6 @@ import {
   SimpleConfirm,
   CheckboxSelectAll
 } from "@site/src/components/examples/checkbox/CheckboxExample";
-import { InfoBanner } from '@midas-ds/info-banner'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/checkbox.json'
 
@@ -20,10 +19,7 @@ import Info from '@site/static/data/checkbox.json'
 
 ## Introduktion
 
-Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det endast ska gå att välja ett objekt i listan är det en [Radioknapp](./radio.mdx) som ska användas
-
-Komponenterna är byggda på [Checkbox](https://react-spectrum.adobe.com/react-aria/Checkbox.html) och
-[CheckboxGroup](https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html) från [React Aria](https://react-spectrum.adobe.com/react-aria/components.html).
+Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det endast ska gå att välja ett objekt i listan är det en [Radioknapp](./radio.mdx) som ska användas. Om det är fler alternativ än fyra (4) används med fördel [Select](./select.mdx) istället.
 
 ## Installation
 
@@ -48,8 +44,6 @@ Använd `<CheckboxGroup>` för att gruppera flera checkboxar som hör samman.
 ### Etikett och beskrivning
 
 Etikett för enskild checkbox sätts i template via `<Checkbox>Etikett</Checkbox>`. `<CheckboxGroup>` har en `label` och en `desciption` för ytterligare förklarande text.
-
-<InfoBanner type="info" title="Info" message="Fältetikett ska inledas med en stor bokstav och inte följas av punkt." />
 
 ### Disabled
 
@@ -84,17 +78,6 @@ Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". D
 <CheckboxSelectAll />
 
 
-## Props
-
-### Checkbox
-
-<PropTable name={'Checkbox'} />
-
-### CheckboxGroup
-
-<PropTable name={'CheckboxGroup'} />
-
-
 ## Riktlinjer
 
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
@@ -105,6 +88,8 @@ Rutan ska vara avmarkerad tills användaren klickar i den och då ska alla följ
 Om användaren väljer att avmarkera en post så ska kryssrutan avmarkeras.
 
 - Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
+
+- Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 
 ## Dependencies
 
