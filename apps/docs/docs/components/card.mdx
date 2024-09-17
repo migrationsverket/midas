@@ -9,6 +9,7 @@ import ImageUrl from '@site/static/img/android-chrome-384x384.png';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/card.json'
 import { Card } from '@midas-ds/card';
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Card'} info={Info} friendlyName={'Kort'} overrideHeadlessLink="" />
 
@@ -26,32 +27,20 @@ npm install @midas-ds/card
 import { Card } from '@midas-ds/card';
 ```
 
-```tsx live
-<Grid>
-  <GridItem col={4}>
-    <Card
-      title="Midas guldkrona"
-      content="Midas blev av vinguden Dionysos (i en annan version Silenus) erbjuden att få en fri önskan uppfylld efter att ha hjälpt honom. Midas önskade sig då att allt han vidrörde skulle förvandlas till guld."
-      image={{ source: '/img/android-chrome-384x384.png', description: 'Vulpes vulpes' }}
-    />
-  </GridItem>
-  <GridItem col={4}>
-    <Card
-      title="Ett klickbart kort med bakgrund"
-      content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sollicitudin mi et turpis posuere, nec tempor nunc tincidunt. Sed quis ante quis nunc lacinia volutpat a in purus. Curabitur quis egestas mauris. Vestibulum non elit leo."
-      background={true}
-      onPress={() => {alert('clicked')}}
-    />
-  </GridItem>
-  <GridItem col={4}>
-    <Card
-      title="Lär dig om Flex"
-      content="To vertically align individual flex items when working in the row direction, use the "align-self" property. When working with a "flex-direction" of "column", you can vertically align all items using the "justify-content" property (which works along the main axis)"
-      customImageComponent={<>Egen bild!</>}
-    />
-  </GridItem>
-</Grid>
-```
+<LiveCodeBlock scope={{Grid, GridItem, Card}}>
+{`<Grid>
+  {fruits.shuffled(3).map(fruit => (
+    <GridItem col={4} key={fruit.value}>
+      <Card
+        title={fruit.name}
+        content={fruit.description}
+        image={{ source: fruit.image, description: fruit.description }}
+      />
+    </GridItem>
+  ))}
+</Grid>`}
+</LiveCodeBlock>
+<br />
 
 Ange `background` för en blå bakgrund. Använd `image={source='url', description={'beskrivning}}` för att visa en bild överst på komponenten.
 Hela ytan är klickbar och interaktioner hanteras med `onPress()`.

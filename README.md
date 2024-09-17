@@ -9,7 +9,7 @@ Designsystem består av två delar. En del är verktygslådan som samlar verktyg
 
 Dokumentationswebben är en del av verktygslådan, vilket omfattar kvalitetssäkrade gemensamma komponenter samt visualisering och dokumentation om hur de ska användas i våra it-lösningar. Komponenterna är utformade enligt Migrationsverket grafiska profil, utifrån god kodstandard, utifrån användbarhetsprinciper och enligt regler för digital tillgänglighet. Precis som att vår design och våra guidande principer förändras över tid för att möta förändrade användarbehov kommer designsystemet att vara ett levande material. Målgruppen för designsystemet är alla som arbetar med utveckling av Migrationsverkets tjänster och system.
 
-Läs mer på dokumentationswebben: [https://migrationsverket.github.io/midas](https://migrationsverket.github.io/midas)
+Läs mer på dokumentationswebben: [https://designsystem.migrationsverket.se](https://designsystem.migrationsverket.se)
 
 ## Bidra
 
