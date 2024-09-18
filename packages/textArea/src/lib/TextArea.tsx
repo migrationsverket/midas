@@ -59,7 +59,7 @@ export const TextArea: React.FC<TextFieldProps> = ({
       label={label}
       description={description}
       errorMessage={getErrorMessage()}
-      isInvalid={hasExceededMaxCharacters || props.isInvalid} className={styles.errorforMaxcharacters}
+      isInvalid={hasExceededMaxCharacters || props.isInvalid} 
       {...props}
     >
       <Count/>
