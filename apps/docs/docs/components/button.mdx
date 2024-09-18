@@ -9,6 +9,7 @@ import { Button } from '@midas-ds/button'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/button.json'
 import { Flex, FlexItem } from '@midas-ds/flex'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Button'} info={Info} friendlyName={'Knapp'}/>
 
@@ -26,19 +27,19 @@ npm install @midas-ds/button
 import { Button } from '@midas-ds/button';
 ```
 
-```tsx live
-<Flex>
+<LiveCodeBlock scope={{Flex, FlexItem, Button}}>
+{`<Flex>
   <FlexItem col="auto">
-    <Button>Primary</Button>
+    <Button>{fruits.shuffled(1).name}</Button>
   </FlexItem>
   <FlexItem col="auto">
-    <Button variant="secondary">Secondary</Button>
+    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
   </FlexItem>
   <FlexItem col="auto">
-    <Button isDisabled>Disabled</Button>
+    <Button isDisabled>{fruits.shuffled(1).name}</Button>
   </FlexItem>
-</FlexItem>
-```
+</Flex>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 
