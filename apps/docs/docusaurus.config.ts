@@ -1,4 +1,3 @@
-import { meta } from './../remix/app/root'
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
@@ -23,8 +22,8 @@ fs.readdirSync(packagesDir).forEach((dir) => {
 })
 
 const config: Config = {
-  title: 'MIDAS',
-  tagline: 'Migrationsverket Designsystem',
+  title: 'Migrationsverkets designsystem',
+  tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -32,7 +31,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
-  trailingSlash: false,
+  trailingSlash: false, // GH Pages does this for us
   i18n: {
     defaultLocale: 'sv',
     locales: ['sv'],
@@ -83,7 +82,7 @@ const config: Config = {
     announcementBar: {
       id: 'open_source',
       content:
-        'MIDAS är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+        'Midas är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
       isCloseable: false,
     },
     navbar: {

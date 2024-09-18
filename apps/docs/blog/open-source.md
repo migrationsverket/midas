@@ -1,10 +1,7 @@
 ---
-title: MIDAS går Open Source
-description: This is the way.
+title: Midas går Open Source
+description: Designsystemet är nu open sourced och versionshanterat på GitHub. Detta för att vi enklare ska kunna dela med oss av vårt designsystem med andra myndigheter som också gått samma väg.
 slug: midas-open-source
-# authors:
-#   - name: Wilhelm Hjelm
-#     title: Frontendutvecklare
 tags: [midas]
 hide_table_of_contents: true
 ---

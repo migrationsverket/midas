@@ -1,6 +1,6 @@
 ![Component build](https://github.com/migrationsverket/midas/actions/workflows/components-ci.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/documentation-ci.yml/badge.svg)
 
-# MIDAS
+# Midas
 
 <img src="./apps/docs/static/img/MIDAS_crown.png" align="right">
 
