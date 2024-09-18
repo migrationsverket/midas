@@ -2,12 +2,11 @@ import styles from './TextArea.module.css'
 import {
   TextArea as AriaTextArea,
   ValidationResult,
-  TextAreaProps as AriaTextAreaProps,
   TextFieldProps as AriaTextFieldProps,
 } from 'react-aria-components'
 import { TextFieldWrapper } from '@migrationsverket/textfield'
 import clsx from 'clsx'
-import React, { useState } from 'react'
+import React from 'react'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   label?: string
@@ -25,47 +24,45 @@ export const TextArea: React.FC<TextFieldProps> = ({
   errorMessage,
   ...props
 }) => {
-  const [count, setCount] = useState('')
-  const [error, setError] = useState<string | null>(null)
+  const [value, setValue] = React.useState('')
+  const [hasExceededMaxCharacters, setHasExceededMaxCharacters] =
+    React.useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const currentText = e.target.value
-    const currentLength = currentText.length
-
-    if (maxCharacters != null && currentLength > maxCharacters) {
-      setError(
-        `${errorMessage || 'skriv här ett fel meddelande'} ${currentLength - maxCharacters}.`
-      )
-    } else {
-      setError(null)
-    }
-
-    if (maxCharacters == null || currentLength <= maxCharacters) {
-      setCount(currentText)
-    } else {
-      setCount(currentText.substring(0, currentLength))
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newValue = event.target.value
+    setValue(newValue)
+    if (maxCharacters) {
+      setHasExceededMaxCharacters(newValue.length > maxCharacters)
     }
   }
-  const currentLength = count.length
+
+  const Count = () => {
+    if (maxCharacters) {
+      return (
+        <span className={styles.styledCounting}>
+          {value.length} / {maxCharacters}
+        </span>
+      )
+    }
+    return null
+  }
+
+  const getErrorMessage = () => {
+    if (hasExceededMaxCharacters && maxCharacters!= null) {
+      return `'För många tecken, ${value.length - maxCharacters} tecken för mycket'.`
+    }
+    return errorMessage
+  }
 
   return (
     <TextFieldWrapper
       label={label}
       description={description}
-      errorMessage={error || errorMessage}
-      isInvalid={maxCharacters != null && currentLength > maxCharacters}
+      errorMessage={getErrorMessage()}
+      isInvalid={hasExceededMaxCharacters || props.isInvalid} className={styles.errorforMaxcharacters}
       {...props}
     >
-      <div>
-        {maxCharacters == undefined ? (
-          <span className={styles.styledCounting}>{count.length}</span>
-        ) : (
-          <span className={styles.styledCounting}>
-            {count.length}/{maxCharacters}
-          </span>
-        )}
-      </div>
-
+      <Count/>
       <AriaTextArea
         className={clsx(styles.textArea)}
         rows={rows}
