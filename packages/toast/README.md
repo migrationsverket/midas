@@ -1,6 +1,6 @@
 # Toast
 
-Toast is a component in MIDAS design system.
+Toast is a component in Midas design system.
 
 ```bash
 npm install @mvds/toast

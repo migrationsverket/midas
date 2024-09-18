@@ -3,12 +3,11 @@ import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
 import React from 'react'
 import { Button } from '@midas-ds/button'
 import CodeBlock from '@theme/CodeBlock'
+import { fruits } from '../fruits'
 
-const ITEMS = [
-  { value: 'Morot', checked: false },
-  { value: 'Gurka', checked: false },
-  { value: 'Glass', checked: false },
-]
+const ITEMS = fruits.shuffled(5).map((fruit) => {
+  return { value: fruit.name, checked: false }
+})
 
 export const CheckboxExample = () => {
   const [CHECKED_ITEMS, setItems] = useState(ITEMS)
@@ -184,10 +183,12 @@ export const InvalidExample = () => {
     <div className={'code-card'}>
       <div>
         <CodeBlock language={'tsx'}>
-          {`<CheckboxGroup isInvalid={fn}>
-              <Checkbox>Jag har läst texten</Checkbox>
-              <Checkbox>Jag godkänner villkoren</Checkbox>
-            </CheckboxGroup>`}
+          {`
+          <CheckboxGroup isInvalid={fn}>
+            <Checkbox>Jag har läst texten</Checkbox>
+            <Checkbox>Jag godkänner villkoren</Checkbox>
+          </CheckboxGroup>
+          `}
         </CodeBlock>
       </div>
       <CheckboxGroup

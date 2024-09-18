@@ -23,19 +23,19 @@
 
 @font-face {
   font-family: 'Fira Code';
-  src: url('../../static/FiraCode-Regular.ttf') format('truetype');
+  src: url('../../static/fonts/FiraCode-Regular.ttf') format('truetype');
 }
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #06c;
+  --ifm-color-primary: #25607f;
   --ifm-color-primary-dark: #005cb8;
   --ifm-color-primary-darker: #0057ad;
   --ifm-color-primary-darkest: #00478f;
   --ifm-color-primary-light: #0070e0;
   --ifm-color-primary-lighter: #0075eb;
   --ifm-color-primary-lightest: #0a85ff;
-  --ifm-menu-color-active: #2e7ca5;
+  --ifm-menu-color-active: #663366;
 
   --ifm-code-font-size: 1rem;
   --ifm-font-family-monospace: 'Fira Code', monospace;
@@ -139,6 +139,10 @@ this is a bit ad hoc, will fix this later
   margin-top: unset;
 }
 
+.playgroundHeader_node_modules-@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module {
+  display: none !important;
+}
+
 .playgroundHeader_node_modules-\@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module:first-of-type {
   background: var(--ifm-color-emphasis-200) !important;
   color: var(--ifm-color-content) !important;
@@ -146,4 +150,15 @@ this is a bit ad hoc, will fix this later
 
 .badge {
   padding: 0.4rem 0.5rem;
+}
+
+.migNavbarLogo {
+  padding-right: 1rem;
+  border-right: solid 1px black;
+  margin-right: 1rem;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #b90835;
+  --ifm-footer-link-hover-color: #f2f2f2;
 }

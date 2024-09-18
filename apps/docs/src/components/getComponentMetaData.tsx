@@ -80,7 +80,7 @@ export const ComponentHeader = ({
         >
           <div style={{ display: 'flex', gap: '8px' }}>
             <a
-              href={`https://migrationsverket.github.io/midas/storybook/?path=/docs/${name.toLowerCase()}--docs`}
+              href={`https://designsystem.migrationsverket.se/storybook/?path=/docs/${name.toLowerCase()}--docs`}
             >
               <img
                 style={{ borderRadius: '0.4rem' }}
