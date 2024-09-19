@@ -8,7 +8,8 @@
   grid-template-columns: 1fr auto;
   grid-column-gap: 0;
   grid-row-gap: 0.25rem;
-  align-content: space-between;
+  align-items: end;
+  align-content: end;
 
   &[data-disabled] {
     pointer-events: none;
