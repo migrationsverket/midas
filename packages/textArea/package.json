@@ -1,5 +1,5 @@
 {
-  "name": "@migrationsverket/textArea",
+  "name": "@migrationsverket/textarea",
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",

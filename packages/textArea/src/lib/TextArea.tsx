@@ -4,7 +4,7 @@ import {
   ValidationResult,
   TextFieldProps as AriaTextFieldProps,
 } from 'react-aria-components'
-import { TextFieldWrapper } from '@migrationsverket/textfield'
+import { TextFieldWrapper } from '@midas-ds/textfield'
 import React from 'react'
 
 export interface TextFieldProps extends AriaTextFieldProps {
