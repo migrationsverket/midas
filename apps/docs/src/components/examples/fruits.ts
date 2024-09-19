@@ -29,7 +29,8 @@ export const fruits: Array<{
     name: 'Avokado',
     description: 'Grönsaksfrukt med krämig konsistens',
     value: 'avokado',
-    image: 'https://commons.wikimedia.org/wiki/File:Avocado_IMGP1082.jpg',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Avocado_IMGP1082.jpg/674px-Avocado_IMGP1082.jpg',
   },
   {
     name: 'Banan',
@@ -50,14 +51,14 @@ export const fruits: Array<{
     description: 'Små blå bär',
     value: 'blabar',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Blueberries.jpg/640px-Blueberries.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/1/15/Blueberries.jpg',
   },
   {
     name: 'Carambola',
     description: 'Stjärnformad exotisk frukt',
     value: 'carambola',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Carambola_Starfruit.jpg/640px-Carambola_Starfruit.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/6/62/Averrhoa_carambola_ARS_k5735-7.jpg',
   },
   {
     name: 'Citron',
@@ -71,28 +72,14 @@ export const fruits: Array<{
     description: 'Liten citrusfrukt med löst skal',
     value: 'clementin',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Clementine_%28Citrus_×_clementina%29_white_bg.jpg/640px-Clementine_%28Citrus_×_clementina%29_white_bg.jpg',
-  },
-  {
-    name: 'Dadlar',
-    description: 'Söt frukt från dadelpalmen',
-    value: 'dadlar',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Dried_dates.jpg/640px-Dried_dates.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/a/a9/Oh_my_darling.jpg',
   },
   {
     name: 'Drakfrukt',
     description: 'Exotisk frukt med rött skal',
     value: 'drakfrukt',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Hylocereus_undatus_red_pitahaya.jpg/640px-Hylocereus_undatus_red_pitahaya.jpg',
-  },
-  {
-    name: 'Fikon',
-    description: 'Mjuk frukt med söt smak',
-    value: 'fikon',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/6_figs.jpg/640px-6_figs.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/43/Pitaya_cross_section_ed2.jpg',
   },
   {
     name: 'Granatäpple',
@@ -109,13 +96,6 @@ export const fruits: Array<{
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Citrus_paradisi_%28Grapefruit%2C_pink%29_white_bg.jpg/640px-Citrus_paradisi_%28Grapefruit%2C_pink%29_white_bg.jpg',
   },
   {
-    name: 'Guava',
-    description: 'Exotisk frukt med många frön',
-    value: 'guava',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Psidium_guajava_-_Pink_Guava_-_Kozhikode_2020-01-25_1583.jpg/640px-Psidium_guajava_-_Pink_Guava_-_Kozhikode_2020-01-25_1583.jpg',
-  },
-  {
     name: 'Hallon',
     description: 'Röda bär som växer på buskar',
     value: 'hallon',
@@ -127,14 +107,7 @@ export const fruits: Array<{
     description: 'Röda bär med frön på utsidan',
     value: 'jordgubbe',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Strawberry_BNC.jpg/640px-Strawberry_BNC.jpg',
-  },
-  {
-    name: 'Kaki',
-    description: 'Orange frukt med mjukt kött',
-    value: 'kaki',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Persimmons_-_Sheng.jpg/640px-Persimmons_-_Sheng.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/e/ed/Strawberries.JPG',
   },
   {
     name: 'Kiwi',
@@ -148,21 +121,7 @@ export const fruits: Array<{
     description: 'Stor nöt med hårt skal',
     value: 'kokosnot',
     image:
-      'https://commons.wikimedia.org/wiki/File:Coconuts_-_single_and_cracked_open.jpg',
-  },
-  {
-    name: 'Krusbär',
-    description: 'Små gröna bär',
-    value: 'krusbar',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Ribes_uva-crispa_1.jpg/640px-Ribes_uva-crispa_1.jpg',
-  },
-  {
-    name: 'Kumquat',
-    description: 'Liten citrusfrukt som äts med skalet',
-    value: 'kumquat',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cumquats.jpg/640px-Cumquats.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/f/f1/Coconuts_-_single_and_cracked_open.jpg',
   },
   {
     name: 'Körsbär',
@@ -176,53 +135,55 @@ export const fruits: Array<{
     description: 'Liten grön citrusfrukt',
     value: 'lime',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Limes.jpg/640px-Limes.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/d/d3/Citrus_×aurantiifolia927505341.jpg',
   },
   {
     name: 'Litchi',
     description: 'Liten frukt med tunt rosa skal',
     value: 'litchi',
-    image: 'https://commons.wikimedia.org/wiki/File:Lychee_fruits_and_seed.jpg',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/5/5c/Lychee_fruits_and_seed.jpg',
   },
   {
     name: 'Mandarin',
     description: 'Liten orange citrusfrukt',
     value: 'mandarin',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Ambersweet_oranges.jpg/640px-Ambersweet_oranges.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/4/49/Mandarin_Oranges_%28Citrus_Reticulata%29.jpg',
   },
   {
     name: 'Mango',
     description: 'Söt exotisk frukt med stor kärna',
     value: 'mango',
-    image: 'https://commons.wikimedia.org/wiki/File:Mango_-_single.jpg',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/4/49/Mango_-_single.jpg',
   },
   {
     name: 'Melon',
     description: 'Stor frukt med saftigt kött',
     value: 'melon',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Melon_on_white_background.jpg/640px-Melon_on_white_background.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Muskmelon.jpg',
   },
   {
     name: 'Nektarin',
     description: 'Slät variant av persika',
     value: 'nektarin',
-    image: 'https://commons.wikimedia.org/wiki/File:Autumn_Red_peaches.jpg',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/9/9e/Autumn_Red_peaches.jpg',
   },
   {
     name: 'Papaya',
     description: 'Exotisk frukt med orange kött',
     value: 'papaya',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Papaya_cross_section_edit.jpg/640px-Papaya_cross_section_edit.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/6/6b/Papaya_cross_section_BNC.jpg',
   },
   {
     name: 'Passionsfrukt',
     description: 'Frukt med många kärnor och syrligt kött',
     value: 'passionsfrukt',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Passionsfrukt_Purple_Granadilla.jpg/640px-Passionsfrukt_Purple_Granadilla.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/2/21/Passion_fruits_-_whole_and_halved.jpg',
   },
   {
     name: 'Persika',
@@ -236,76 +197,69 @@ export const fruits: Array<{
     description: 'Liten frukt som växer i pappershölje',
     value: 'physalis',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Physalis_peruviana_fruit.jpg/640px-Physalis_peruviana_fruit.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/7/7b/Physalis_peruviana_calix_open_close-up.jpg',
   },
   {
     name: 'Plommon',
     description: 'Söt eller syrlig stenfrukt',
     value: 'plommon',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Zwetschgenbaume.jpg/640px-Zwetschgenbaume.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/7/7d/Bluebyrd_plum.jpg',
   },
   {
     name: 'Päron',
     description: 'Avlång frukt med smal midja',
     value: 'paron',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Various_pears.jpg/640px-Various_pears.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Pears.jpg',
   },
   {
     name: 'Rambutan',
     description: 'Exotisk frukt med hårig skal',
     value: 'rambutan',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Rambutan_DSW.JPG/640px-Rambutan_DSW.JPG',
+      'https://upload.wikimedia.org/wikipedia/commons/a/ae/Rambutan_Fruit.jpg',
   },
   {
     name: 'Röda vinbär',
     description: 'Små röda bär i klasar',
     value: 'roda vinbar',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Redcurrant_%28Ribes_rubrum%29.jpg/640px-Redcurrant_%28Ribes_rubrum%29.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/2/2e/Hjulsta_koloni_2010h.jpg',
   },
   {
     name: 'Sharon',
     description: 'Persikoliknande frukt med fast kött',
     value: 'sharon',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Kaki_Sharon_Fruit.jpg/640px-Kaki_Sharon_Fruit.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/9/95/Diospyros_kaki_-_persimmon_at_Paro_during_LGFC_-_Bhutan_2019_%283%29.jpg',
   },
   {
     name: 'Stjärnfrukt',
     description: 'Stjärnformad frukt med syrligt kött',
     value: 'stjarnfrukt',
-    image: 'https://commons.wikimedia.org/wiki/File:Carambola_Starfruit.jpg',
-  },
-  {
-    name: 'Skogsbär',
-    description: 'Blandning av vilda bär',
-    value: 'skogsbar',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Vaccinium_myrtillus_RPR1.jpg/640px-Vaccinium_myrtillus_RPR1.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/3/3a/Carambola_Starfruit.jpg',
   },
   {
     name: 'Svarta vinbär',
     description: 'Små svarta bär i klasar',
     value: 'svarta vinbar',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/BlackberryCurrant.JPG/640px-BlackberryCurrant.JPG',
+      'https://upload.wikimedia.org/wikipedia/commons/1/17/Blackcurrants2.jpg',
   },
   {
     name: 'Vattenmelon',
     description: 'Stor frukt med rött, saftigt kött',
     value: 'vattenmelon',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Watermelon_cross_BNC.jpg/640px-Watermelon_cross_BNC.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/e/e4/Water_melon_2015.jpg',
   },
   {
     name: 'Vindruvor',
     description: 'Små gröna eller blå frukter i klasar',
     value: 'vindruvor',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Table_grapes_on_white.jpg/640px-Table_grapes_on_white.jpg',
+      'https://upload.wikimedia.org/wikipedia/commons/8/85/Thompson_seedless_grapes.JPG',
   },
   {
     name: 'Äpple',

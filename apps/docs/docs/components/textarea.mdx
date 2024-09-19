@@ -1,5 +1,5 @@
 ---
-title: textarea
+title: TextArea
 tags: []
 description: Kort beskrivning av Textarea
 ---
@@ -7,27 +7,32 @@ description: Kort beskrivning av Textarea
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/textarea.json'
-import { Textarea } from '@midas-ds/textarea'
+import { TextArea } from '@midas-ds/textarea'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'textarea'} info={Info} friendlyName={'Textarea'} />
+<ComponentHeader name={'TextArea'} info={Info} friendlyName="Textfält" />
 
 ## Introduktion
 
-_Kort beskrivning av Textarea_
+Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare input används [TextField](./textfield.mdx).
 
-## Installation och användning
+## Installation och användnin
 
 ```bash npm2yarn
 npm install @midas-ds/textarea
 ```
 
 ```tsx
-import { Textarea } from '@midas-ds/textarea'
+import { TextArea } from '@midas-ds/textarea'
 ```
 
-```tsx live
-[lägg in ett litet showcase på textarea]
-```
+<LiveCodeBlock scope={{ TextArea }}>
+{`<TextArea 
+    label="Kommentar"
+    description="Skriv en kommentar"
+    maxCharacters={50} 
+/>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 TBD

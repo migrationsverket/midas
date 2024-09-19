@@ -1,19 +1,20 @@
 ---
-title: {{ componentName }}
+title: {{ properName }}
 tags: []
 description: Kort beskrivning av {{ properName }}
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
-import Info from '@site/static/data/{{ componentName }}.json'
+// import Info from '@site/static/data/{{ componentName }}.json'
 import { {{ properName }} } from '@midas-ds/{{ componentName }}'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'{{ componentName }}'} info={Info} friendlyName={'{{properName}}'} />
+<ComponentHeader name={'{{ properName }}'} info={Info} friendlyName="Skriv svenska namn för komponenten" />
 
 ## Introduktion
 
-_Kort beskrivning av {{ properName }}_
+Kort beskrivning av {{ properName }}
 
 ## Installation och användning
 
@@ -25,9 +26,9 @@ npm install @midas-ds/{{ componentName }}
 import { {{ properName }} } from '@midas-ds/{{ componentName }}'
 ```
 
-```tsx live
-[lägg in ett litet showcase på {{ componentName }}]
-```
+<LiveCodeBlock scope={{ {{properName}} }}>
+{`[lägg in ett litet showcase på {{ componentName }}]`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 TBD
