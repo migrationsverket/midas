@@ -31,7 +31,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
-  trailingSlash: false,
+  trailingSlash: true,
   i18n: {
     defaultLocale: 'sv',
     locales: ['sv'],

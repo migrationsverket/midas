@@ -7,7 +7,7 @@ import { PropTable } from '@site/src/components/propsTable';
 import { TextField } from '../../../../packages/textfield/src';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/textfield.json'
-import { Grid } from '../../../../packages/grid/src'
+import { Grid, GridItem } from '../../../../packages/grid/src'
 
 <ComponentHeader name={'TextField'} info={Info} friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}/>
 
@@ -70,12 +70,12 @@ Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./fle
 
 ```tsx live
 <Grid>
-    <div style={{ gridColumn: 'span 2' }}>
-          <TextField name={'nameExample'} label={'Postnummer'} /> 
-    </div>
-    <div style={{ gridColumn: 'span 6' }}>
+    <GridItem col={4}>
+          <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+    </GridItem>
+    <GridItem col={8}>
           <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
-    </div>
+    </GridItem>
 </Grid>
 ```
 

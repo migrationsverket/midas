@@ -13,7 +13,6 @@ const meta: Meta<typeof TextArea> = {
     description: {
       type: 'string',
     },
-    
   },
 }
 export default meta
@@ -30,9 +29,17 @@ export const NotValid = {
   args: {
     ...Primary.args,
     isInvalid: true,
-    errorMessage: 'Errror!',
+    errorMessage: 'Error',
   },
 }
+
+export const MaxCharacters = {
+  args: {
+    ...Primary.args,
+    maxCharacters: 50,
+  },
+}
+
 export const Disabled = {
   args: {
     ...Primary.args,

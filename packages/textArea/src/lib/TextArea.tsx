@@ -5,7 +5,6 @@ import {
   TextFieldProps as AriaTextFieldProps,
 } from 'react-aria-components'
 import { TextFieldWrapper } from '@migrationsverket/textfield'
-import clsx from 'clsx'
 import React from 'react'
 
 export interface TextFieldProps extends AriaTextFieldProps {
@@ -47,9 +46,9 @@ export const TextArea: React.FC<TextFieldProps> = ({
     return null
   }
 
-  const getErrorMessage = () => {
-    if (hasExceededMaxCharacters && maxCharacters!= null) {
-      return `'För många tecken, ${value.length - maxCharacters} tecken för mycket'.`
+  const getErrorMessage = (maxCharacters: number) => {
+    if (hasExceededMaxCharacters) {
+      return `${value.length - maxCharacters} tecken för mycket`
     }
     return errorMessage
   }
@@ -58,13 +57,13 @@ export const TextArea: React.FC<TextFieldProps> = ({
     <TextFieldWrapper
       label={label}
       description={description}
-      errorMessage={getErrorMessage()}
-      isInvalid={hasExceededMaxCharacters || props.isInvalid} 
+      errorMessage={getErrorMessage(maxCharacters || 0)}
+      isInvalid={hasExceededMaxCharacters || props.isInvalid}
       {...props}
     >
-      <Count/>
+      <Count />
       <AriaTextArea
-        className={clsx(styles.textArea)}
+        className={styles.textArea}
         rows={rows}
         onChange={handleChange}
       />

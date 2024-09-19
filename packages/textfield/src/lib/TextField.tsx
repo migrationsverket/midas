@@ -1,4 +1,6 @@
-import React, { ReactNode, useState } from 'react'
+'use client'
+
+import React, { ReactNode } from 'react'
 import {
   TextField as AriaTextField,
   Label,
@@ -7,11 +9,11 @@ import {
   Text,
   TextFieldProps as AriaTextFieldProps,
   ValidationResult,
-  TextArea,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { TriangleAlert } from 'lucide-react'
 import clsx from 'clsx'
+import { Button } from '@migrationsverket/button'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   children?: ReactNode
@@ -31,11 +33,10 @@ export const TextFieldWrapper: React.FC<TextFieldProps> = ({
     <AriaTextField
       {...props}
       className={clsx(styles.textField)}
-      
     >
       <FieldError className={clsx(styles.fieldError)}>
         <>
-          <TriangleAlert/>
+          <TriangleAlert />
           {errorMessage}
         </>
       </FieldError>
@@ -54,12 +55,54 @@ export const TextFieldWrapper: React.FC<TextFieldProps> = ({
 }
 
 export const TextField: React.FC<TextFieldProps> = ({ ...props }) => {
+  const [input, setInput] = React.useState<string>('')
+
   return (
     <TextFieldWrapper {...props}>
-      <Input
-        type={props.type}
-        className={styles.input}
-      />
+      <div className={styles.wrap}>
+        <Input
+          type={props.type}
+          className={styles.input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <PasswordField
+          type={props.type}
+          input={input}
+        />
+      </div>
     </TextFieldWrapper>
   )
+}
+
+const PasswordField = ({
+  type,
+  input,
+}: {
+  type: TextFieldProps['type']
+  input: string
+}) => {
+  const [showPassword, setShowPassword] = React.useState<boolean>(false)
+
+  if (type === 'password')
+    return (
+      <>
+        {showPassword && (
+          <Text
+            slot="description"
+            className={styles.passwordText}
+          >
+            {input}
+          </Text>
+        )}
+        <Button
+          variant="tertiary"
+          onPress={() => setShowPassword(!showPassword)}
+          className={styles.passwordButton}
+        >
+          {showPassword ? 'Dölj' : 'Visa'}
+        </Button>
+      </>
+    )
+
+  return null
 }
