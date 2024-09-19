@@ -1,45 +1,74 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/link-button",
+  "_id": "@midas-ds/link-button@0.2.5",
+  "_rev": "2-6e5292ac7b975b7af1a681f3b7fdb732",
+  "name": "@midas-ds/link-button",
   "dist-tags": {
-    "latest": "0.2.8"
+    "latest": "0.2.5"
   },
   "versions": [
-    "0.2.6",
-    "0.2.7",
-    "0.2.8"
+    "0.2.5",
+    "0.2.6"
   ],
   "time": {
-    "0.2.6": "2024-08-12T13:40:20Z",
-    "0.2.7": "2024-08-13T08:34:36Z",
-    "0.2.8": "2024-08-13T08:44:23Z"
-  },
-  "description": "```bash npm install @migrationsverket/link-button ```",
-  "author": {},
-  "homepage": "https://github.com/migrationsverket/midas#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/migrationsverket/midas.git"
+    "created": "2024-09-10T14:37:43.477Z",
+    "modified": "2024-09-12T13:02:14.782Z",
+    "0.2.5": "2024-09-10T14:37:43.824Z",
+    "0.2.6": "2024-09-12T12:35:38.053Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.2.8",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-DSkpAco7JXIj9VuVPOnGYqL5OCRe7oBYUN6zzxavfpHRLjpv9q0mh+PFL7+2IyoFhoXIBBx6vHaV4pyuBj+yjQ==",
-    "shasum": "30460e9b42da9dbc6dfc7ddc0c219fb1c12e690f",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/link-button/0.2.8/30460e9b42da9dbc6dfc7ddc0c219fb1c12e690f"
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "type": "git"
   },
-  "_npmUser": "wilhjelmig",
+  "description": "```bash npm install @midas-ds/link-button ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 3884,
+  "version": "0.2.5",
+  "dist": {
+    "shasum": "23005f54fc201c58f2c0fdcbb907c86fa6bf4fa8",
+    "tarball": "https://registry.npmjs.org/@midas-ds/link-button/-/link-button-0.2.5.tgz",
+    "fileCount": 8,
+    "integrity": "sha512-ffm2J0DMcCueiD0l23YOImXhyQX7BGn5VNUseyHv2+N70RSg8rqMuFrowDFUEMeL16Chd+ofKSRppgNiTJJjvw==",
+    "signatures": [
+      {
+        "sig": "MEUCIGJIdZkhodXdYBVEHry3A4ZMqwZMIBnKFnFZenjIEv0JAiEAzOoebSIBNZ8k8SKud2mRdd94XuqrZKdShFAvfcDyDhs=",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 74062
+  },
   "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.23"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "_npmVersion": "10.5.0",
   "directories": {},
+  "_nodeVersion": "21.7.3",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "_hasShrinkwrap": false,
-  "readme": "# LinkButton\n\n```bash\nnpm install @migrationsverket/link-button\n```\n\n```tsx\nimport { LinkButton } from '@migrationsverket/link-button\n;<LinkButton href=\"#\">Hej</LinkButton>\n```\n"
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/link-button_0.2.5_1725979063628_0.6264643924924023",
+    "host": "s3://npm-registry-packages"
+  }
 }

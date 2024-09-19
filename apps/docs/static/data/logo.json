@@ -1,45 +1,74 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/logo",
+  "_id": "@midas-ds/logo@0.2.51",
+  "_rev": "2-098c607419f4c81dc75cf3d6e160a02e",
+  "name": "@midas-ds/logo",
   "dist-tags": {
-    "latest": "0.2.54"
+    "latest": "0.2.51"
   },
   "versions": [
-    "0.2.52",
-    "0.2.53",
-    "0.2.54"
+    "0.2.51",
+    "0.2.52"
   ],
   "time": {
-    "0.2.52": "2024-08-12T13:41:56Z",
-    "0.2.53": "2024-08-13T08:34:06Z",
-    "0.2.54": "2024-08-13T08:46:47Z"
-  },
-  "description": "```bash npm install @migrationsverket/logo ```",
-  "author": {},
-  "homepage": "https://github.com/migrationsverket/midas#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/migrationsverket/midas.git"
+    "created": "2024-09-10T14:37:51.669Z",
+    "modified": "2024-09-12T13:02:12.193Z",
+    "0.2.51": "2024-09-10T14:37:51.962Z",
+    "0.2.52": "2024-09-12T12:40:53.983Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.2.54",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-CdC4o2HyoGiMJxKEqkhnzOMMrc+2lXsXHj6DKntDD8Cp0hsCt/MQTyv69ZkLhNSVFyoMhNo1VrEXnTyrl/KECA==",
-    "shasum": "fd28fb4aa5f720c398c0e035932ef18ce02036d7",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/logo/0.2.54/fd28fb4aa5f720c398c0e035932ef18ce02036d7"
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "type": "git"
   },
-  "_npmUser": "wilhjelmig",
+  "description": "```bash npm install @midas-ds/logo ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 3738,
+  "version": "0.2.51",
+  "dist": {
+    "shasum": "a2e5dba80638404e2a590cd80fece02b3561d23c",
+    "tarball": "https://registry.npmjs.org/@midas-ds/logo/-/logo-0.2.51.tgz",
+    "fileCount": 11,
+    "integrity": "sha512-s7otVvqjWY52qeEIIuSxGKdmPrxuLN6fsPa1i3wdrlwKSSbWAKO0Y3iRkTJf0+dpMU6IR4l4aBENwe345JPYkA==",
+    "signatures": [
+      {
+        "sig": "MEUCIQC2JU6sVrUda8zhv0HEfZ6ghzGAyth5gLq1YTj0Fusa9AIgHjSf60wgPkrFlawweDdUrtoZxr+aYucMXKccvYlPHhg=",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 14370
+  },
   "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.23"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "_npmVersion": "10.5.0",
   "directories": {},
+  "_nodeVersion": "21.7.3",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "_hasShrinkwrap": false,
-  "readme": "# Logo\n\n```bash\nnpm install @migrationsverket/logo\n```\n\n```tsx\nimport { Link } from '@migrationsverket/logo'\n;<Logo />\n```\n"
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/logo_0.2.51_1725979071754_0.3442611099709598",
+    "host": "s3://npm-registry-packages"
+  }
 }

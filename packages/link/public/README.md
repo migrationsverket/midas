@@ -1,10 +1,10 @@
 # Link
 
 ```bash
-npm install @migrationsverket/link
+npm install @midas-ds/link
 ```
 
 ```tsx
-import { Link } from '@migrationsverket/link'
+import { Link } from '@midas-ds/link'
 ;<Link href="#">Hej</Link>
 ```

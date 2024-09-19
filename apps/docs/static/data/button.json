@@ -1,58 +1,86 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/button",
+  "_id": "@midas-ds/button@0.6.2",
+  "_rev": "12-96a5d4ed810f5de6febb9ef4ca6a160e",
+  "name": "@midas-ds/button",
   "dist-tags": {
-    "latest": "0.7.0"
+    "latest": "0.6.2"
   },
   "versions": [
-    "0.5.25",
-    "0.5.26",
-    "0.5.27",
+    "0.5.28",
+    "0.5.29",
+    "0.5.30",
+    "0.5.31",
     "0.6.0",
     "0.6.1",
-    "0.6.3",
-    "0.6.4",
-    "0.7.0"
+    "0.6.2",
+    "0.6.3"
   ],
   "time": {
-    "0.5.25": "2024-06-12T11:49:02Z",
-    "0.5.26": "2024-06-12T13:05:23Z",
-    "0.5.27": "2024-06-12T13:12:57Z",
-    "0.6.0": "2024-06-12T14:10:18Z",
-    "0.6.1": "2024-06-12T14:36:39Z",
-    "0.6.3": "2024-06-13T12:12:42Z",
-    "0.6.4": "2024-06-14T07:26:19Z",
-    "0.7.0": "2024-09-02T09:42:43Z"
-  },
-  "description": "```bash npm i @migrationsverket/button ```",
-  "author": {},
-  "homepage": "https://github.com/migrationsverket/midas#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/migrationsverket/midas.git"
+    "created": "2024-09-05T12:44:43.399Z",
+    "modified": "2024-09-12T13:02:05.116Z",
+    "0.6.0": "2024-09-05T12:44:43.759Z",
+    "0.5.28": "2024-09-10T14:35:50.047Z",
+    "0.5.29": "2024-09-11T07:14:39.435Z",
+    "0.5.30": "2024-09-11T08:38:04.254Z",
+    "0.5.31": "2024-09-11T09:05:37.161Z",
+    "0.6.1": "2024-09-11T09:11:00.245Z",
+    "0.6.2": "2024-09-11T09:28:25.996Z",
+    "0.6.3": "2024-09-11T11:25:46.446Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
-  "_contentLength": 0,
-  "version": "0.7.0",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "type": "git"
+  },
+  "description": "```bash npm i @midas-ds/button ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 12830,
+  "version": "0.6.2",
   "dist": {
-    "integrity": "sha512-+JDtwcnJ3L+s9IrpqJZSBEw2EIDvVgqntU1rUNB87CxjPembZCDF2WhVCYD+3ClHB1DjQLxtzFBruvadibQQPQ==",
-    "shasum": "df5b4c9a8f912368dc5f83b95df9c0f467b94317",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/button/0.7.0/df5b4c9a8f912368dc5f83b95df9c0f467b94317"
+    "shasum": "3711683a3d90209e8cdb74e392c1a0f48d49214d",
+    "tarball": "https://registry.npmjs.org/@midas-ds/button/-/button-0.6.2.tgz",
+    "fileCount": 8,
+    "integrity": "sha512-FleDpNOGjkcmy69BzC4WQS4aFbRVIVZ43W9i66ZUhAWRS8bQxDCjqq6XjxWp2dHtcp4dvlGoDPBurVV+K02piw==",
+    "signatures": [
+      {
+        "sig": "MEQCIAg4eLdR3uhL0GBqcA1HIwjqy8dnOKIQTYtaG1tWY6S/AiAV905Kif1J1sqQ0DI1vIFnxUv5KzwWfyzbkitJ1Tp1QQ==",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 74755
   },
-  "_npmUser": "wilhjelmig",
   "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.29"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
   },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "_npmVersion": "10.5.0",
+  "directories": {},
+  "_nodeVersion": "21.7.3",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_hasShrinkwrap": false,
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# button\n\n```bash\nnpm i @migrationsverket/button\n```\n\n```tsx\nimport { Button } from '@migrationsverket/button'\n;<Button>Klicka på mig</Button>\n```\n"
+  "_npmOperationalInternal": {
+    "tmp": "tmp/button_0.6.2_1726046905780_0.27115804312042724",
+    "host": "s3://npm-registry-packages"
+  }
 }

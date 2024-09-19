@@ -1,32 +1,72 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/date-picker",
+  "_id": "@midas-ds/date-picker@0.0.1",
+  "_rev": "3-290ac6a7fe007745197b22dea91ab822",
+  "name": "@midas-ds/date-picker",
   "dist-tags": {
     "latest": "0.0.1"
   },
   "versions": [
-    "0.0.1"
+    "0.0.1",
+    "0.1.0",
+    "0.1.1"
   ],
   "time": {
-    "0.0.1": "2024-08-13T08:38:30Z"
+    "created": "2024-09-10T14:36:31.432Z",
+    "modified": "2024-09-12T13:02:21.560Z",
+    "0.0.1": "2024-09-10T14:36:31.793Z",
+    "0.1.0": "2024-09-12T09:22:57.399Z",
+    "0.1.1": "2024-09-12T12:23:40.759Z"
   },
-  "description": "```bash npm i @migrationsverket/date-picker ```",
-  "author": {},
-  "repository": {},
-  "bugs": {},
-  "_contentLength": 1141,
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "type": "git"
+  },
+  "description": "```bash npm i @midas-ds/date-picker ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 5229,
   "version": "0.0.1",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-vFHl7fIQHgRuiq7kkE3D6V43+51xDUdzpqJwNxbyPQgDZW3XLCsrSeLObwtXYTHu5WdDh9co1AALTk/3Dap9gg==",
-    "shasum": "4ef426f7f6908d47a3c60b61108e859ff5c2b876",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/date-picker/0.0.1/4ef426f7f6908d47a3c60b61108e859ff5c2b876"
+    "shasum": "eb3c014b20e9f17177ec5a0f8a4601633e48ba92",
+    "tarball": "https://registry.npmjs.org/@midas-ds/date-picker/-/date-picker-0.0.1.tgz",
+    "fileCount": 7,
+    "integrity": "sha512-lbcajTQHLB0DP9JtlOVgFpoCsIzEsi1vAF4RO2NZwZfh25x6iMh1v2emZSvuA4+5VyGDgJ9UQLYTVhk/oiQ7sQ==",
+    "signatures": [
+      {
+        "sig": "MEUCIEnuGA1bJPUPNYDGoVXrhldRpBLNkIflzcaCYAJbqUn7AiEAni9gNY2QzvFjqMqGuZB5IOiSyWTx6AEwEMQzGFAxoXw=",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 524226
   },
-  "_npmUser": "wilhjelmig",
   "main": "./index.js",
-  "gitHead": "07f298386c29aad03d2c0d834641a7c770b4d0dd",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "_npmVersion": "10.5.0",
   "directories": {},
+  "_nodeVersion": "21.7.3",
+  "publishConfig": {
+    "access": "public"
+  },
   "_hasShrinkwrap": false,
-  "readme": "# DatePicker\n\n```bash\nnpm i @migrationsverket/date-picker\n```\n\n```tsx\nimport { DatePicker } from '@migrationsverket/date-picker'\n;<DatePicker\n  label=\"Välj datum\"\n  description=\"YYYY-MM-DD\"\n/>\n```\n"
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/date-picker_0.0.1_1725978991565_0.003856733808665469",
+    "host": "s3://npm-registry-packages"
+  }
 }

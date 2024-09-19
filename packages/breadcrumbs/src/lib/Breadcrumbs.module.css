@@ -2,9 +2,11 @@
 @value display, gray150 from tokens;
 
 .container {
+  padding-inline-start: 0;
   font-family: display;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
+  gap: 0.25rem;
   list-style: none;
 
   li:not(:last-child)::after {
@@ -12,5 +14,8 @@
     content: '/';
     alt: ' ';
     padding: 0 5px;
+  }
+  li[data-current='true'] a {
+    cursor: default;
   }
 }

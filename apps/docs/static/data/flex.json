@@ -1,48 +1,76 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/flex",
+  "_id": "@midas-ds/flex@0.1.1",
+  "_rev": "2-35168403921ee1b364eed39681116ce7",
+  "name": "@midas-ds/flex",
   "dist-tags": {
-    "latest": "0.0.4"
+    "latest": "0.1.1"
   },
   "versions": [
-    "0.0.2",
-    "0.0.3",
-    "0.0.4"
+    "0.0.1",
+    "0.1.0",
+    "0.1.1"
   ],
   "time": {
-    "0.0.2": "2024-06-14T12:14:42Z",
-    "0.0.3": "2024-08-13T08:35:49Z",
-    "0.0.4": "2024-08-13T08:44:58Z"
+    "created": "2024-09-10T14:37:00.258Z",
+    "modified": "2024-09-12T13:02:19.370Z",
+    "0.0.1": "2024-09-10T14:37:00.555Z",
+    "0.1.0": "2024-09-12T12:26:58.577Z",
+    "0.1.1": "2024-09-12T13:02:19.212Z"
   },
-  "description": "```bash npm i @migrationsverket/flex ```",
-  "author": {},
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "bugs": {
-    "url": "https://github.com/migrationsverket/midas/issues"
-  },
-  "_contentLength": 0,
-  "version": "0.0.4",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-kWh0T8ZJ+kUr/UMtOckCJgbbiC/CqYlxQy3qRfg5MYygAPrN6rSUQ3u+HSQX+0af4dab+lrKNR+pe8Ln7Px6HQ==",
-    "shasum": "7c0bd40c31b1f38381b60f3749df44671c3ebbb1",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/flex/0.0.4/7c0bd40c31b1f38381b60f3749df44671c3ebbb1"
-  },
-  "_npmUser": "wilhjelmig",
+  "description": "```bash npm i @midas-ds/flex ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 5369,
+  "version": "0.1.1",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
-    "@migrationsverket/theme": "0.5.23"
+    "@midas-ds/theme": "0.5.23"
   },
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "gitHead": "fb1a7bec57dcdaf901169a57d57536a5b7438a1c",
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "aefa4606d1e1acb06d2ad90ab3dee32811cea6a4",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-/LHeUVhPZqR0Px7W3qRSTD4fJ8zXh0fbpUnIUN/wWe6qBtD+fspe1GaglEoYfakgGNXMTN8J18v0EB+XKSmK5Q==",
+    "shasum": "5d1298b00dff21be1119b853cb81a1d4c8e837d7",
+    "tarball": "https://registry.npmjs.org/@midas-ds/flex/-/flex-0.1.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 11803,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIHBYneD87OciUedE4Ih4Gq+ZM2c/+uMDG4I0HVYGhxEjAiEA/P+xiLZNT7jxc9TCYGCJssucEuzGhw8FA8K7vXI1WxQ="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# flex\n\n```bash\nnpm i @migrationsverket/flex\n```\n\n```tsx\nimport { Flex, FlexItem } from '@migrationsverket/flex'\n;<Flex>\n  <FlexItem col={3}>\n    <div></div>\n  </FlexItem>\n  <FlexItem col={6}>\n    <div></div>\n  </FlexItem>\n  <FlexItem col={3}>\n    <div></div>\n  </FlexItem>\n</Flex>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/flex_0.1.1_1726146138972_0.5536703780016587"
+  },
+  "_hasShrinkwrap": false
 }

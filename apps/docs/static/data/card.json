@@ -1,44 +1,81 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/card",
+  "_id": "@midas-ds/card@0.3.3",
+  "_rev": "4-4c46102d7d8ff6c2fc3d43c1a37645bc",
+  "name": "@midas-ds/card",
   "dist-tags": {
-    "latest": "0.2.7"
+    "latest": "0.3.3"
   },
   "versions": [
-    "0.2.6",
-    "0.2.7"
+    "0.2.5",
+    "0.3.0",
+    "0.3.1",
+    "0.3.2",
+    "0.3.3"
   ],
   "time": {
-    "0.2.6": "2024-06-14T11:44:10Z",
-    "0.2.7": "2024-08-13T08:42:49Z"
+    "created": "2024-09-10T14:35:59.668Z",
+    "modified": "2024-09-13T09:56:55.098Z",
+    "0.2.5": "2024-09-10T14:35:59.923Z",
+    "0.3.0": "2024-09-12T08:57:22.184Z",
+    "0.3.1": "2024-09-12T12:23:03.880Z",
+    "0.3.2": "2024-09-12T13:02:06.916Z",
+    "0.3.3": "2024-09-13T09:56:54.871Z"
   },
-  "description": "```bash npm i @migrationsverket/card ```",
-  "author": {},
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "bugs": {
-    "url": "https://github.com/migrationsverket/midas/issues"
-  },
+  "description": "```bash npm i @midas-ds/card ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
   "_contentLength": 0,
-  "version": "0.2.7",
+  "version": "0.3.3",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23",
+    "lucide-react": "^0.372.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-+o0zelILVtC3WeqaoweB+tjawDHDw2FcWzj5lbgjpHobDKuKVGRQipMV2XG+hjhl+vt4o77r8J+34hyX41Msrw==",
-    "shasum": "1669ecfc857ed60097f7c10b6e3d27f6e16d4609",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/card/0.2.7/1669ecfc857ed60097f7c10b6e3d27f6e16d4609"
+    "integrity": "sha512-wbM0klonGy1TIL93RWauzLZyA4lSb3UftJgs4hnXMfk9GLaoKsaIOaoqvj3qXMhyZeQ3/fdFiDp/GrEnJpawQA==",
+    "shasum": "024a2882410716407d32bca8e292571274bd7700",
+    "tarball": "https://registry.npmjs.org/@midas-ds/card/-/card-0.3.3.tgz",
+    "fileCount": 7,
+    "unpackedSize": 12303,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEYCIQDNog/JPc0TzYH/OKmnKKRad8sij1cfjlBsNOUJgjoeZwIhAOCLHfzMaUm8c8qz24R767MT7iXm6pcrzp50NUJtCj18"
+      }
+    ]
   },
-  "_npmUser": "wilhjelmig",
-  "main": "./index.js",
-  "dependencies": {
-    "@migrationsverket/theme": "^0.5.23",
-    "lucide-react": "^0.372.0"
-  },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# Card\n\n```bash\nnpm i @migrationsverket/card\n```\n\n```tsx\nimport { Card } from '@migrationsverket/card'\n;<Card\n  title=\"Ett kort\"\n  content=\"Med text som beskriver vad det innebär\"\n  headingTag=\"h2\"\n  image={{\n    description: 'Glass!',\n    source:\n      'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSRA1VvVWshDqdk-IbClyNwWoUAjMnFQ5KQLb8eH0hu4gCCvfvqMEcQqOF-CTro2maW',\n  }}\n/>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/card_0.3.3_1726221414746_0.7797827941727491"
+  },
+  "_hasShrinkwrap": false
 }

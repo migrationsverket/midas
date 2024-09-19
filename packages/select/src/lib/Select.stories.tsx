@@ -25,17 +25,49 @@ for (let i = 0; i < 40; i += 1) {
   ITEMS.push(`value ${i}`)
 }
 
-const options = [
-  { id: 'apple', name: 'Apple' },
-  { id: 2, name: 'Banana' },
-  { id: 3, name: 'Kiwi' },
-  { id: 4, name: 'Elderflower' },
-  { id: 5, name: 'Nectarine' },
-  { id: 6, name: 'Watermelon' },
-  { id: 7, name: 'Pineapple' },
-  { id: 8, name: 'Apricot' },
-  { id: 9, name: 'Cloudberry' },
-]
+function generateMockOptions(count: number) {
+  const fruits = [
+    'Apple',
+    'Banana',
+    'Kiwi',
+    'Elderflower',
+    'Nectarine',
+    'Watermelon',
+    'Pineapple',
+    'Apricot',
+    'Cloudberry',
+    'Mango',
+    'Strawberry',
+    'Blueberry',
+    'Raspberry',
+    'Blackberry',
+    'Cherry',
+    'Peach',
+    'Plum',
+    'Grape',
+    'Orange',
+    'Lemon',
+    'Lime',
+    'Coconut',
+    'Fig',
+    'Papaya',
+    'Guava',
+    'Pomegranate',
+    'Dragonfruit',
+    'Starfruit',
+    'Passionfruit',
+  ]
+
+  return Array.from({ length: count }, (_, index) => {
+    const randomFruit = fruits[Math.floor(Math.random() * fruits.length)]
+    return {
+      id: index + 1,
+      name: randomFruit,
+    }
+  })
+}
+
+const options = generateMockOptions(300)
 
 export const OneItem: Story = {
   args: {

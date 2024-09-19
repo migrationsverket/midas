@@ -1,4 +1,4 @@
-name: Deploy Docs to GitHub Pages
+name: DocWeb - Deploy to GitHub Pages
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Docusaurus
+    name: Build Docusaurus and Storybook
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build website
-        run: nx run docs:build
+        run: npx nx run docs:build --minify=false --outputPath=build
+      - name: Build storybook
+        run: npx nx run ui:build-storybook:ci
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3

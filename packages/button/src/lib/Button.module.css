@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, red130, red150 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
 
 .button {
   font-family: display;
@@ -13,7 +13,6 @@
   cursor: pointer;
   opacity: 1;
   outline: none;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +28,7 @@
   }
 }
 
-.button .button[data-focus-visible] {
+.button[data-focus-visible] {
   outline: 0.125rem solid black;
   outline-offset: 0.125rem;
 }
@@ -63,15 +62,14 @@
   }
 
   &[data-focus-visible] {
-    outline: 2px solid blue150;
-    outline-offset: 2px;
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
   }
 }
 
 .tertiary {
   color: blue150;
-  background-color: white;
-  border-color: white;
+  background-color: transparent;
   opacity: 1;
   text-decoration: underline;
 
@@ -83,45 +81,42 @@
     color: gray50;
     pointer-events: none;
     background-color: white;
-    border-color: gray50;
   }
 
   &[data-pressed] {
-    background-color: red150;
-    border-color: red150;
+    background-color: gray20;
+  
   }
 
   &[data-focus-visible] {
-    outline: 2px solid blue150;
-    outline-offset: 2px;
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
   }
 }
 
 .danger {
   color: white;
   background-color: signalRed100;
-  border-color: signalRed100;
   opacity: 1;
 
   &:hover {
-    background-color: red130;
+    background-color: signalRed130;
   }
 
   &[data-disabled] {
     color: gray50;
     pointer-events: none;
-    background-color: white;
-    border-color: gray50;
+    background-color: gray10;
   }
 
   &[data-pressed] {
-    background-color: gray20;
-    border-color: blue150;
+    background-color: signalRed150;
+    outline: none;
   }
 
   &[data-focus-visible] {
-    outline: 2px solid blue150;
-    outline-offset: 2px;
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
   }
 }
 

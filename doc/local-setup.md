@@ -1,8 +1,3 @@
----
-slug: /developers/guides/local-setup
-description: Sätt upp lokal utvecklingsmiljö för Designsystemet
----
-
 # Lokal setup
 
 ## Förutsättningar
@@ -66,7 +61,7 @@ Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https:/
 nx serve docs
 ```
 
-- Hämta hem senaste publicerade info från nexus:
+- Hämta hem senaste publicerade info från NPM:
 
 ```
 nx run-many -t info
@@ -113,45 +108,7 @@ Designsystemet använder Nx för versionshantering och
 publicering. Versionshantering bygger på Conventional Commits, se [instruktioner för git](git) och det är ett
 medvetet val att inte tvinga fram nya versioner eller publicering i byggkedjan.
 
-## Problem med installationen?
-
----
-
-### NPM
-
-Det tar en evighet att köra `npm install` ? Skapa en fil som heter .npmrc och se till att du har lämpliga inställningar för npm lokalt.
-Nexus kan vara lite slött så det här kan vara en idé (anpassa efter behov):
-
-```
-noproxy=.migrationsverket.se,localhost
-proxy=http://proxy.migrationsverket.se:8080/
-https_proxy=http://proxy.migrationsverket.se:8080/
-fetch-timeout=300000
-registry=https://registry.npmjs.org
-```
-
-Har du en miljövariabel som heter `NPM_CONFIG_REGISTRY` kan det hjälpa att ändra den också
-`export NPM_CONFIG_REGISTRY="https://registry.npmjs.org"`.
-
-### Windows
-
-Om du får problem (i Windows) med `module not found @nrwl\nx-win32-x64-msvc\nx.win32-x64-msvc.node` så behöver du installera [Python](https://www.python.org/downloads/).
-
-### Nx / Docusaurus
-
-Nx och Docusaurus har mappar för cache som alltid går att ta bort om man vill rensa upp och starta om.
-
-- `.nx`
-- `apps/docs/.docusaurus`
-- Går även att start om Nx med `nx reset`
-
-### Övrigt
-
-Generiska problem med paket som inte vill lira brukar lösas med `rm -rf node_modules` och `npm install`.
-
-## Nx Monorepo
-
----
+### Nx Monorepo
 
 Nx har bra funktioner för att hålla koll på byggen och tester samt beroenden mellan olika bibliotek och appar. Det går att köra multipla processer via
 `nx run-many -t build,lint,test`. I övrigt hänvisas till Nx [officiella dokumentation](https://nx.dev/getting-started/intro).

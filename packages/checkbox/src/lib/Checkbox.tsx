@@ -1,5 +1,7 @@
-import clsx from "clsx"
-import { Checkbox as AriaCheckbox, CheckboxProps } from "react-aria-components"
+'use client'
+
+import clsx from 'clsx'
+import { Checkbox as AriaCheckbox, CheckboxProps } from 'react-aria-components'
 import styles from './Checkbox.module.css'
 
 export const Checkbox = ({ children, ...props }: CheckboxProps) => {
@@ -8,12 +10,20 @@ export const Checkbox = ({ children, ...props }: CheckboxProps) => {
       className={clsx(styles.checkbox, props.className)}
       {...props}
     >
-      {({ isIndeterminate }: {isIndeterminate: boolean}) => (
+      {({ isIndeterminate }: { isIndeterminate: boolean }) => (
         <>
           <div className={styles.checkboxInner}>
-            <svg viewBox="0 0 18 18" aria-hidden="true">
+            <svg
+              viewBox="0 0 18 18"
+              aria-hidden="true"
+            >
               {isIndeterminate ? (
-                <rect x={1} y={7.5} width={15} height={3} />
+                <rect
+                  x={1}
+                  y={7.5}
+                  width={15}
+                  height={3}
+                />
               ) : (
                 <polyline points="1 9 7 14 15 4" />
               )}
@@ -23,5 +33,5 @@ export const Checkbox = ({ children, ...props }: CheckboxProps) => {
         </>
       )}
     </AriaCheckbox>
-  );
-};
+  )
+}

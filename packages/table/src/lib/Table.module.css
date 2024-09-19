@@ -1,0 +1,50 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, gray10, gray30, gray40, gray60, mediumWeight from tokens;
+
+.container {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.table {
+  font-family: display;
+  border-spacing: 0;
+  &.narrow {
+    th,
+    td {
+      padding: 0.2rem 1rem;
+    }
+  }
+  th[data-focused='true'] {
+    outline: 2px solid black;
+  }
+  th[data-hovered='true'] {
+    outline: 2px solid black;
+  }
+}
+
+.row {
+  &[data-focused='true'] {
+    outline: 2px solid black;
+  }
+  &[data-hovered='true'] td {
+    background-color: gray40;
+  }
+}
+
+.tableHeader {
+  background-color: gray30;
+}
+
+.column {
+  background-color: gray30;
+  padding: 1rem;
+  text-align: left;
+  font-weight: mediumWeight;
+}
+
+.cell {
+  background-color: gray10;
+  border-top: 1px gray60 solid;
+  padding: 1rem;
+}

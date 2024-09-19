@@ -7,12 +7,9 @@ expect.extend(toHaveNoViolations)
 
 describe('given a default button', () => {
   let rendered: RenderResult
-  let handleChange: jest.Mock
-  let button: HTMLElement
 
   beforeEach(() => {
-    rendered = render(<ButtonTest onPress={handleChange}></ButtonTest>)
-    button = rendered.getByRole('button')
+    rendered = render(<ButtonTest>Click me!</ButtonTest>)
   })
 
   it('should have no accessibility violations', async () => {
@@ -20,4 +17,4 @@ describe('given a default button', () => {
   })
 })
 
-const ButtonTest = (props: ButtonProps) => <Button {...props}>Click</Button>
+const ButtonTest = (props: ButtonProps) => <Button {...props} />

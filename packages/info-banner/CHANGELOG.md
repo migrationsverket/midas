@@ -77,7 +77,7 @@ This was a version bump only for info-banner to align it with other projects, th
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.1](old-repo/team-dream/dream/compare/@mvds/info-banner@0.1.0...@mvds/info-banner@0.1.1) (2024-04-10)
+## [0.1.1] (2024-04-10)
 
 **Note:** Version bump only for package @mvds/info-banner
 
@@ -87,8 +87,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-- **info-banner:** fix text color and margins ([dbaf6b2](old-repo/team-dream/dream/commits/dbaf6b2dac1ab6e2dd2537e01b33965f8c747fd8))
+- **info-banner:** fix text color and margins
 
 ### Features
 
-- **info-banner:** add component with basic styles and funcionality ([f7bf114](old-repo/team-dream/dream/commits/f7bf114dc72c817c6c6c551e073bab6f4e58dc11))
+- **info-banner:** add component with basic styles and funcionality

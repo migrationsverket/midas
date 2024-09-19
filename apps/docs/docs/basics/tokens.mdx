@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 import { TokensTable } from '@site/src/components/getThemeProps';
-import { theme } from '@migrationsverket/theme'
+import { theme } from '@midas-ds/theme'
 
 # Designtokens
 
@@ -13,13 +13,13 @@ Designtokens representerar de grundläggande byggstenarna som utgör ett designs
 hårdkodade värden.
 
 ```bash
-npm install @migrationsverket/theme
+npm install @midas-ds/theme
 ```
 
 Använd som variabler genom att importera temafilen
 
 ```ts
-import { theme } from '@migrationsverket/theme'
+import { theme } from '@midas-ds/theme'
 const blue = theme.baseColors.blue150; // #143c50
 ```
 
@@ -27,7 +27,7 @@ Nedan finner du tabeller över alla värden som finns som tokens i `theme`
 Om du inte vill importera hela theme kan du importera delarna för sig
 
 ```ts
-import { baseColors } from '@migrationsverket/theme'
+import { baseColors } from '@midas-ds/theme'
 const blue = baseColors.blue150; // #143c50
 ```
 

@@ -1,50 +1,53 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/file-upload",
+  "_id": "@midas-ds/file-upload@0.3.20",
+  "_rev": "1-caa15344c73ad156812dee3098ed9cca",
+  "name": "@midas-ds/file-upload",
   "dist-tags": {
-    "latest": "0.3.22"
+    "latest": "0.3.20"
   },
   "versions": [
-    "0.3.20",
-    "0.3.21",
-    "0.3.22"
+    "0.3.19",
+    "0.3.20"
   ],
   "time": {
-    "0.3.20": "2024-06-14T12:10:05Z",
-    "0.3.21": "2024-08-13T08:36:38Z",
-    "0.3.22": "2024-08-13T08:40:06Z"
+    "created": "2024-09-10T14:36:46.893Z",
+    "modified": "2024-09-12T12:21:00.821Z",
+    "0.3.19": "2024-09-10T14:36:47.146Z",
+    "0.3.20": "2024-09-12T12:21:00.654Z"
   },
-  "description": "```bash npm i @migrationsverket/file-upload ```",
-  "author": {},
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "bugs": {
-    "url": "https://github.com/migrationsverket/midas/issues"
-  },
-  "_contentLength": 0,
-  "version": "0.3.22",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
-  "dist": {
-    "integrity": "sha512-pFhZuFLJk7ojlM1kCx/qlQzYpZttf8tmahvefr+sFiL5T9UvP5BcJOtKfSqDxqToH701JlNHD95kr/Vn4RfV3w==",
-    "shasum": "bb4a5d021c94b9358bd2f4189e3f4915e4dc3bfa",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/file-upload/0.3.22/bb4a5d021c94b9358bd2f4189e3f4915e4dc3bfa"
-  },
-  "_npmUser": "wilhjelmig",
+  "description": "```bash npm i @midas-ds/file-upload ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 4332,
+  "version": "0.3.20",
   "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "dependencies": {
-    "@migrationsverket/button": "^0.5.25",
-    "@migrationsverket/theme": "^0.5.23",
-    "lucide-react": "^0.372.0",
-    "react-aria-components": "^1.0.0-rc.0"
+    "@midas-ds/button": "^0.5.25",
+    "@midas-ds/theme": "^0.5.23",
+    "react-aria-components": "^1.0.0-rc.0",
+    "lucide-react": "^0.372.0"
   },
   "devDependencies": {
     "@nx/vite": "17.3.1",
     "@vitejs/plugin-react": "4.2.1",
-    "react": "18.2.0",
     "vite": "5.0.12",
     "vite-plugin-dts": "2.3.0"
   },
@@ -52,7 +55,29 @@
     "react": "^18.2.0"
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-JUS6o5DNPwZEA3mFtDTlJw35Ap6PGnJtSeuTrUyhoBY/HB2uvbZZqKNN6ie6KUpLeGYBb6i39YILdwgulV5wjw==",
+    "shasum": "6bd9699355c3dc990b04fbcf2a14ae54e3f9e0bb",
+    "tarball": "https://registry.npmjs.org/@midas-ds/file-upload/-/file-upload-0.3.20.tgz",
+    "fileCount": 8,
+    "unpackedSize": 326071,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCIGsOftFc9+nvG/UHKlD6lmBQUI1gsLFIKqrU6MKuCr+sAiAH3/TG/F9FD3tyRn+Z+hp14QEEeqHi6NJR5olQvcDqhA=="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
-  "_hasShrinkwrap": false,
-  "readme": "# FileUpload\n\n```bash\nnpm i @migrationsverket/file-upload\n```\n\n```tsx\nimport { FileUpload } from '@migrationsverket/file-upload'\n;<FileUpload\n  allowsMultiple\n  description=\"Description\"\n  label=\"Label\"\n/>\n```\n"
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/file-upload_0.3.20_1726143660456_0.7172601806003225"
+  },
+  "_hasShrinkwrap": false
 }

@@ -1,7 +1,7 @@
 # accordion
 
 ```bash
-npm i @migrationsverket/accordion
+npm i @midas-ds/accordion
 ```
 
 ```tsx
@@ -10,8 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from '@migrationsverket/accordion'
-
+} from '@midas-ds/accordion'
 ;<Accordion
   collapsible
   headingTag="h3"

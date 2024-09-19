@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import {
   CheckboxGroup as AriaCheckboxGroup,
@@ -29,31 +31,33 @@ export const CheckboxGroup = ({
   children,
   ...props
 }: CheckboxGroupProps) => {
-
   const [isAllSelected, setIsAllSelected] = React.useState<boolean>(false)
 
   const ToogleAll = () => {
     // Get the current state of the checkbox group
-    const state = React.useContext(CheckboxGroupStateContext);
+    const state = React.useContext(CheckboxGroupStateContext)
 
     // Retrieve all childern
     const childValues = React.Children.toArray(children)
       .filter(React.isValidElement)
       .map((child: React.ReactElement) => child.props.value)
 
-    
     // Toogle all values
     function toggleAll() {
       setIsAllSelected(!isAllSelected)
       if (!isAllSelected) return state.setValue(['toggleAll', ...childValues])
-      
+
       return state.setValue([])
     }
-    
+
     //listen and change the select all accordingly
     React.useEffect(() => {
-      if (state.value.length !== childValues.length + 1) state.removeValue('toggleAll')
-      if (state.value.length === childValues.length && !state.value.includes('toggleAll')) {
+      if (state.value.length !== childValues.length + 1)
+        state.removeValue('toggleAll')
+      if (
+        state.value.length === childValues.length &&
+        !state.value.includes('toggleAll')
+      ) {
         state.addValue('toggleAll')
         setIsAllSelected(true)
       }
@@ -69,7 +73,7 @@ export const CheckboxGroup = ({
       >
         Välj alla
       </Checkbox>
-    );
+    )
   }
 
   return (
@@ -94,7 +98,6 @@ export const CheckboxGroup = ({
           </span>
         </>
       )}
-
     </AriaCheckboxGroup>
   )
 }

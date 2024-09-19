@@ -1,11 +1,11 @@
 # Card
 
 ```bash
-npm i @migrationsverket/card
+npm i @midas-ds/card
 ```
 
 ```tsx
-import { Card } from '@migrationsverket/card'
+import { Card } from '@midas-ds/card'
 ;<Card
   title="Ett kort"
   content="Med text som beskriver vad det innebär"

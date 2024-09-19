@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionContent,
   AccordionTrigger,
-} from '@migrationsverket/accordion';
+} from '@midas-ds/accordion';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/accordion.json'
 
@@ -25,7 +25,7 @@ Dragspelskomponenten låter användare visa och dölja delar av relaterat inneh�
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @migrationsverket/accordion
+npm install @midas-ds/accordion
 ```
 
 ```tsx
@@ -34,7 +34,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from '@migrationsverket/accordion';
+} from '@midas-ds/accordion';
 ```
 
 ```tsx live
@@ -53,7 +53,9 @@ import {
 ```
 
 ## Riktlinjer
-- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
+- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan. 
+- Används främst för att minska informationsmängden vid första överblick. 
+- Användaren ska enkelt kunna hitta rätt dragspel med hjälp av tydliga rubriker.
 
 ## Dependencies
 <ComponentFooter info={Info}/>

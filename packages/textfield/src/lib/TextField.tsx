@@ -13,7 +13,7 @@ import {
 import styles from './TextField.module.css'
 import { TriangleAlert } from 'lucide-react'
 import clsx from 'clsx'
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   children?: ReactNode
@@ -32,7 +32,7 @@ export const TextFieldWrapper: React.FC<TextFieldProps> = ({
   return (
     <AriaTextField
       {...props}
-      className={clsx(styles.textField)}
+      className={styles.textField}
     >
       <FieldError className={clsx(styles.fieldError)}>
         <>

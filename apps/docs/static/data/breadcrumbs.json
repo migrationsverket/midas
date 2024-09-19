@@ -1,36 +1,72 @@
 {
-  "_id": "",
-  "name": "@migrationsverket/breadcrumbs",
+  "_id": "@midas-ds/breadcrumbs@0.0.2",
+  "_rev": "3-5ded0f7a6e654783bfbaf578ca1fad85",
+  "name": "@midas-ds/breadcrumbs",
   "dist-tags": {
-    "latest": "0.0.3"
+    "latest": "0.0.2"
   },
   "versions": [
-    "0.0.1",
     "0.0.2",
-    "0.0.3"
+    "0.0.3",
+    "0.0.4"
   ],
   "time": {
-    "0.0.1": "2024-08-12T08:44:03Z",
-    "0.0.2": "2024-08-12T12:52:42Z",
-    "0.0.3": "2024-08-13T08:43:37Z"
+    "created": "2024-09-10T14:35:35.621Z",
+    "modified": "2024-09-12T13:02:15.511Z",
+    "0.0.2": "2024-09-10T14:35:35.894Z",
+    "0.0.3": "2024-09-12T08:53:25.530Z",
+    "0.0.4": "2024-09-12T12:22:32.293Z"
   },
-  "description": "```bash npm i @migrationsverket/breadcrumbs ```",
-  "author": {},
-  "repository": {},
-  "bugs": {},
-  "_contentLength": 0,
-  "version": "0.0.3",
-  "_nodeVersion": "20.11.1",
-  "_npmVersion": "10.2.4",
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "type": "git"
+  },
+  "description": "```bash npm i @midas-ds/breadcrumbs ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 5263,
+  "version": "0.0.2",
   "dist": {
-    "integrity": "sha512-5TVLC2GLSjOtXxAmIcZ+i6JbM9gx/wfLkwaMJOZ4BvMT4q5ye+hAUISogZc+XW5CxFKwmcpwoka3nbHWe9QbQQ==",
-    "shasum": "5d0b19fdc5161f46ddb8de2c13d0aab8c15c07da",
-    "tarball": "https://npm.pkg.github.com/download/@migrationsverket/breadcrumbs/0.0.3/5d0b19fdc5161f46ddb8de2c13d0aab8c15c07da"
+    "shasum": "bb727a021e41d74a42ba600b40e450358f88481a",
+    "tarball": "https://registry.npmjs.org/@midas-ds/breadcrumbs/-/breadcrumbs-0.0.2.tgz",
+    "fileCount": 7,
+    "integrity": "sha512-oWAA0+DQP19oacvgZ0GgaFxtbZHqmfq55QVPRl6/Cqumn+djSsWPEm8fzh2llxVuU/W6873L7Hf792cqGn107g==",
+    "signatures": [
+      {
+        "sig": "MEYCIQDPdBdqFA5PUvj7s/n2AWU51UId16TsFzv8sMGgX74iyAIhAIRwsRRduKrqFWsK1ZP1cVrSuChme1X3//zrQbwpJQJV",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 115101
   },
-  "_npmUser": "wilhjelmig",
   "main": "./index.js",
-  "gitHead": "3c77cb2a4612691f36770cf09d0378edcce1a9c3",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "_npmVersion": "10.5.0",
   "directories": {},
+  "_nodeVersion": "21.7.3",
+  "publishConfig": {
+    "access": "public"
+  },
   "_hasShrinkwrap": false,
-  "readme": "# Breadcrumbs\n\n```bash\nnpm i @migrationsverket/breadcrumbs\n```\n\n```tsx\nimport { Breadcrumbs } from '@migrationsverket/breadcrumbs'\n;<Breadcrumbs items={[{ title: 'Länk', href: '#' }]} />\n```\n"
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/breadcrumbs_0.0.2_1725978935729_0.40091491784972955",
+    "host": "s3://npm-registry-packages"
+  }
 }

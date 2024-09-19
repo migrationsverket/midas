@@ -1,12 +1,11 @@
 # InfoBanner
 
 ```bash
-npm install @migrationsverket/info-banner
+npm install @midas-ds/info-banner
 ```
 
 ```tsx
-import { InfoBanner } from '@migrationsverket/info-banner'
-
+import { InfoBanner } from '@midas-ds/info-banner'
 ;<InfoBanner
   type={'info'}
   title={'Info'}

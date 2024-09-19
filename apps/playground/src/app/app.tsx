@@ -1,24 +1,24 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
 import '../../../../packages/theme/src/lib/global.css'
 import styles from './app.module.css'
-import { Button } from '@migrationsverket/button'
-import { Checkbox, CheckboxGroup } from '@migrationsverket/checkbox'
-import { Item, Select } from '@migrationsverket/select'
-import { RadioGroup, Radio } from '@migrationsverket/radio'
+import { Button } from '@midas-ds/button'
+import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
+import { Item, Select } from '@midas-ds/select'
+import { RadioGroup, Radio } from '@midas-ds/radio'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@migrationsverket/accordion'
-import { Logo } from '@migrationsverket/logo'
-import { TextField } from '@migrationsverket/textfield'
+} from '@midas-ds/accordion'
+import { Logo } from '@midas-ds/logo'
+import { TextField } from '@midas-ds/textfield'
 import {
   GlobalToastRegion,
   toastQueue,
   ToastProvider,
   MidasToastState,
-} from '@migrationsverket/toast'
+} from '@midas-ds/toast'
 
 export function App() {
   return (

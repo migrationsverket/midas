@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Checkbox, CheckboxGroup } from '@migrationsverket/checkbox'
+import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
 import React from 'react'
-import { Button } from '@migrationsverket/button'
+import { Button } from '@midas-ds/button'
 import CodeBlock from '@theme/CodeBlock'
 
 const ITEMS = [
@@ -210,7 +210,6 @@ export const InvalidExample = () => {
     </div>
   )
 }
-
 
 export const CheckboxSelectAll = () => {
   const [CHECKED_ITEMS, setItems] = useState(ITEMS)

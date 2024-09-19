@@ -1,10 +1,10 @@
 # TextField
 
 ```bash
-npm i @migrationsverket/textfield
+npm i @midas-ds/textfield
 ```
 
 ```tsx
-import { TextField } from '@migrationsverket/textfield'
+import { TextField } from '@midas-ds/textfield'
 ;<TextField />
 ```

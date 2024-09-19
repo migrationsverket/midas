@@ -14,7 +14,7 @@ fs.readdirSync(packagesDir).forEach((dir) => {
 
   const packagePath = path.resolve(packagesDir, dir)
   if (fs.statSync(packagePath).isDirectory()) {
-    packageAliases[`@migrationsverket/${dir}`] = path.resolve(
+    packageAliases[`@midas-ds/${dir}`] = path.resolve(
       packagePath,
       'src/index.ts'
     )
@@ -24,8 +24,8 @@ fs.readdirSync(packagesDir).forEach((dir) => {
 const config: Config = {
   title: 'MIDAS',
   tagline: 'Migrationsverket Designsystem',
-  url: 'https://designsystem.migrationsverket.se',
-  baseUrl: '/',
+  url: 'https://migrationsverket.github.io',
+  baseUrl: '/midas/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -78,7 +78,7 @@ const config: Config = {
         },
         pages: {},
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: ['./src/css/custom.css'],
         },
       } satisfies Preset.Options,
     ],
@@ -88,7 +88,7 @@ const config: Config = {
     announcementBar: {
       id: 'open_source',
       content:
-        'MIDAS är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+        'MIDAS är nu open sourced! <a href="/midas/blog/midas-open-source">Läs mer om vad det innebär.</a>',
       isCloseable: false,
     },
 
@@ -129,38 +129,47 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Components',
+              label: 'Kom igång',
+              to: 'get-started',
+            },
+            {
+              label: 'Grunderna',
+              to: 'basics',
+            },
+            {
+              label: 'Komponenter',
               to: 'components',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Mattermost',
-              href: '#',
+              label: 'Designmönster',
+              to: 'design-patterns',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Övrigt',
           items: [
             {
               label: 'GitHub',
               href: 'https://github.com/migrationsverket/midas',
             },
+            {
+              label: 'NPM',
+              href: 'https://www.npmjs.com/org/midas-ds',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Midas by Dreamteam`,
+      copyright: `Migrationsverkets designsystem - MIDAS`,
     },
     colorMode: {
-      respectPrefersColorScheme: true,
+      defaultMode: 'light',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      //darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 }

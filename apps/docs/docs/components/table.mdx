@@ -1,0 +1,52 @@
+---
+title: Table
+tags: []
+description: Kort beskrivning av Table
+---
+
+import { PropTable } from "@site/src/components/propsTable";
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import Info from '@site/static/data/table.json'
+import { Table, TableHeader, TableBody, Column, Row } from '@midas-ds/table'
+
+<ComponentHeader name={'Table'} info={Info} friendlyName={'Tabell'} />
+
+## Introduktion
+
+Dokumentation kommer!
+
+## Installation och användning
+
+```bash npm2yarn
+npm install @midas-ds/table
+```
+
+```tsx
+import { Table } from '@midas-ds/table'
+```
+
+{/* ```tsx live
+<Table
+aria-label="Files"
+selectionMode="multiple"
+>
+<TableHeader columns={columns}>
+    {(column) => (
+    <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+    )}
+</TableHeader>
+<TableBody items={rows}>
+    {(item) => (
+    <Row columns={columns}>
+        {(column) => <Cell>{item[column.id]}</Cell>}
+    </Row>
+    )}
+</TableBody>
+</Table>
+``` */}
+
+## Riktlinjer
+TBD
+
+## Dependencies
+<ComponentFooter info={Info}/>

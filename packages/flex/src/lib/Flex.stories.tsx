@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { Card } from '@migrationsverket/card'
+import { Card } from '@midas-ds/card'
 import { Flex } from './Flex'
 import { FlexItem } from './FlexItem'
 

@@ -1,7 +1,3 @@
----
-description: Praktiska tips för att komma igång med att bygga komponenter
----
-
 # Bygg en komponent
 
 ## Förutsättningar
@@ -14,7 +10,7 @@ description: Praktiska tips för att komma igång med att bygga komponenter
 - Skapa en ny komponent via Nx:
 
 ```shell
-nx g @nx/react:library ComponentName --publishable --importPath=@migrationsverket/component-name --bundler=vite --style=css --directory packages/component-name --projectNameAndRootFormat=as-provided
+nx g @nx/react:library ComponentName --publishable --importPath=@midas-ds/component-name --bundler=vite --style=css --directory packages/component-name --projectNameAndRootFormat=as-provided
 ```
 
 - Generera storybook stories med:
