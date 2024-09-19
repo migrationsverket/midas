@@ -1,3 +1,33 @@
+## 0.5.26 (2024-09-19)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+
+### 🧱 Updated Dependencies
+
+- Updated radio to 0.6.3
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.5.29 (2024-09-12)
 
 

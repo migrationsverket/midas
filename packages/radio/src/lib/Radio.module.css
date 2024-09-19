@@ -1,16 +1,17 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, inputLabel, inputText, black, blue150, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, mdBreakpoint, borderSecondary from tokens;
+@value display, inputLabel, inputText, black, blue150, gray50, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, mdBreakpoint, borderSecondary from tokens;
 
 .radioGroup {
   font-family: display;
   display: flex;
   flex-direction: column;
   &[data-disabled] {
-    opacity: 50%;
+    opacity: 1;
+    color: gray50;
   }
   &[data-invalid] {
     padding-left: 1rem;
-    border-left: 3px solid signalRed100;
+    border-left: 0.188rem solid signalRed100;
   }
 }
 
@@ -28,16 +29,21 @@
     width: 1rem;
     height: 1rem;
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 0.063rem solid black;
     border-radius: 1.286rem;
     transition: all 200ms;
   }
-
+  &[data-disabled] {
+    color: gray50;
+  }
+  &[data-disabled]::before {
+    border-color: gray50;
+  }
   &[data-pressed]::before {
     border-color: borderSecondary;
   }
   &[data-selected]::before {
-    padding: 3px;
+    padding: 0.188rem;
     border-width: 0.1rem;
     background: blue150 50% 50% no-repeat content-box;
   }
@@ -50,8 +56,8 @@
 .fieldError {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 14px;
+  gap: 0.313rem;
+  font-size: 0.875rem;
   color: signalRed100;
 }
 
@@ -59,11 +65,14 @@
   font-size: inputLabel;
   font-weight: regular;
   color: gray150;
-  padding-bottom: 4px;
+  padding-bottom: 0.25rem;
+  [data-disabled] & {
+    color: gray50;
+  }
 }
 
 .text {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: regular;
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
 }
