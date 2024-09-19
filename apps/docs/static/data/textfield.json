@@ -1,77 +1,79 @@
 {
-  "_id": "@midas-ds/textfield@0.9.24",
-  "_rev": "4-260f70203d2aa97dc023d365f2b733df",
+  "_id": "@midas-ds/textfield@0.10.1",
+  "_rev": "5-90ecf0d64d43fd387eade53ca5ad6e2a",
   "name": "@midas-ds/textfield",
   "dist-tags": {
-    "latest": "0.9.24"
+    "latest": "0.10.1"
   },
   "versions": [
     "0.9.24",
     "0.9.25",
-    "0.10.0"
+    "0.10.0",
+    "0.10.1"
   ],
   "time": {
     "created": "2024-09-10T14:36:27.336Z",
-    "modified": "2024-09-19T09:08:19.357Z",
+    "modified": "2024-09-19T12:19:19.010Z",
     "0.9.24": "2024-09-10T14:36:27.567Z",
     "0.9.25": "2024-09-12T12:55:35.421Z",
-    "0.10.0": "2024-09-19T09:06:27.230Z"
+    "0.10.0": "2024-09-19T09:06:27.230Z",
+    "0.10.1": "2024-09-19T12:19:18.800Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
-    "url": "git+https://github.com/migrationsverket/midas.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
   },
   "description": "```bash npm i @midas-ds/textfield ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 5444,
-  "version": "0.9.24",
-  "dist": {
-    "shasum": "d06c99fa9e61b9e0f1f6e92fefd133709ea5247c",
-    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-0.9.24.tgz",
-    "fileCount": 8,
-    "integrity": "sha512-RUvA8fAYUJGGjmMfwYAcUpcx/sXyHvE3HERQQxq2FSMQdK4FtT2eg4yqrjDsDPjksAN55MF8nqD+ohUJINPaqg==",
-    "signatures": [
-      {
-        "sig": "MEQCIDhoMvKP1H4O+4wmY6Aw0YDPdwCz17c12V810u9F+FyeAiA6Uyw6XQiZm+hhOKggmWwi8IRh9QDfMQ9Z4hN2jY5bMg==",
-        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
-      }
-    ],
-    "unpackedSize": 72830
-  },
+  "_contentLength": 0,
+  "version": "0.10.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
   },
-  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
-  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
-  "_npmVersion": "10.5.0",
-  "directories": {},
-  "_nodeVersion": "21.7.3",
   "dependencies": {
     "@midas-ds/theme": "^0.5.23",
     "react-aria-components": "^1.1.0"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "_hasShrinkwrap": false,
   "peerDependencies": {
     "react": "^18.2.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3938ac53e51290e2c3c42055958a514d5d73ee17",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-AdrxqGhsxNDFRNoHyHnPG3awMJlzhx/og/G3S8RfcozpCelYPDo61mxMqUeu1/+W08NpxkIsDI0wo6Vau0NaXQ==",
+    "shasum": "80083eef8d0d6bf460321f1247cc88034902dd2b",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-0.10.1.tgz",
+    "fileCount": 7,
+    "unpackedSize": 116561,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIQDudEEbMob6nueahiL7ckMgvJKwAf/81Dnk7bkpY3avOQIgcMIdNBwFUMzFbWoy7pAnAyDLQH3X6ukbPMqg0b/d/yU="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
   "_npmOperationalInternal": {
-    "tmp": "tmp/textfield_0.9.24_1725978987416_0.6551720201211413",
-    "host": "s3://npm-registry-packages"
-  }
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/textfield_0.10.1_1726748358605_0.6196533994742879"
+  },
+  "_hasShrinkwrap": false
 }
