@@ -25,7 +25,7 @@
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "readmeFilename": "README.md",
-  "_contentLength": 0,
+  "_contentLength": 2250,
   "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
