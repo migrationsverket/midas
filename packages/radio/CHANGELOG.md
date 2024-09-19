@@ -1,3 +1,34 @@
+## 0.6.3 (2024-09-19)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- fix disable state text color and change px to rem
+
+- **docs:** fix storybook link
+
+- **radio:** change padding on label and helper text
+
+- **docs:** update url
+
+- **docs:** update url
+
+
+### ❤️  Thank You
+
+- jabir Khalil
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 0.6.2 (2024-08-12)
 
 This was a version bump only for radio to align it with other projects, there were no code changes.
