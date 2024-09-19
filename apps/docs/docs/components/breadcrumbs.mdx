@@ -10,6 +10,7 @@ import {
 } from '@midas-ds/breadcrumbs';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/breadcrumbs.json'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Breadcrumbs'} info={Info} friendlyName={'Brödsmulor'} />
 
@@ -28,28 +29,9 @@ npm install @midas-ds/breadcrumbs
 import { Breadcrumbs } from '@midas-ds/breadcrumbs';
 ```
 
-```tsx live
-function App() {
-  const items = [
-      {
-        "title": "Jag vill förlänga",
-        "href": "#"
-      },
-      {
-        "title": "Arbete",
-        "href": "#"
-      },
-      {
-        "title": "Anställd",
-        "href": "#"
-      }
-  ];
-
-  return (
-    <Breadcrumbs items={items} />
-  )
-}
-```
+<LiveCodeBlock scope={{Breadcrumbs}}>
+{`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 - TBD.

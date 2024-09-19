@@ -22,10 +22,10 @@ fs.readdirSync(packagesDir).forEach((dir) => {
 })
 
 const config: Config = {
-  title: 'MIDAS',
-  tagline: 'Migrationsverket Designsystem',
-  url: 'https://migrationsverket.github.io',
-  baseUrl: '/midas/',
+  title: 'Migrationsverkets designsystem',
+  tagline: 'Midas',
+  url: 'https://designsystem.migrationsverket.se',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -55,9 +55,6 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/migrationsverket/midas/edit/main/apps/docs',
           remarkPlugins: [
             [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
@@ -66,9 +63,6 @@ const config: Config = {
           showReadingTime: true,
           blogSidebarTitle: 'Alla inlägg',
           blogSidebarCount: 'ALL',
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/migrationsverket/midas/edit/main/apps/docs/blog',
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
@@ -88,22 +82,24 @@ const config: Config = {
     announcementBar: {
       id: 'open_source',
       content:
-        'MIDAS är nu open sourced! <a href="/midas/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+        'Midas är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
       isCloseable: false,
     },
-
     navbar: {
-      title: 'MIDAS',
+      title: 'Designsystem',
       logo: {
-        alt: 'Midas Logo',
-        src: 'img/MIDAS_crown.png',
+        alt: 'Migrationsverket Logotyp',
+        src: 'img/mig-logo.svg',
+        height: '100%',
+        width: '100px',
+        className: 'migNavbarLogo',
       },
       items: [
         {
           type: 'doc',
           docId: 'components/index',
           position: 'left',
-          label: 'Designsystem',
+          label: 'Dokumentation',
         },
         {
           to: '/blog',
@@ -124,9 +120,15 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      logo: {
+        alt: 'Migrationsverket Logotyp',
+        src: 'img/mig-logo-white.svg',
+        height: '100%',
+        width: '100px',
+      },
       links: [
         {
-          title: 'Docs',
+          title: 'Dokumentation',
           items: [
             {
               label: 'Kom igång',
@@ -147,6 +149,19 @@ const config: Config = {
           ],
         },
         {
+          title: 'Om',
+          items: [
+            {
+              label: 'Nyheter',
+              to: '/blog',
+            },
+            {
+              label: 'Om',
+              to: '/about',
+            },
+          ],
+        },
+        {
           title: 'Övrigt',
           items: [
             {
@@ -160,7 +175,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Migrationsverkets designsystem - MIDAS`,
+      copyright: `Migrationsverkets designsystem - Midas`,
     },
     colorMode: {
       defaultMode: 'light',

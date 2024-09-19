@@ -4,10 +4,11 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 ---
 
 import { PropTable } from '@site/src/components/propsTable';
-import { TextField } from '../../../../packages/textfield/src';
+import { TextField } from '@midas-ds/textfield';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/textfield.json'
-import { Grid, GridItem } from '../../../../packages/grid/src'
+import { Grid, GridItem } from '@midas-ds/grid'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'TextField'} info={Info} friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}/>
 
@@ -26,39 +27,50 @@ npm install @midas-ds/textfield
 import { TextField } from '@midas-ds/textfield';
 ```
 
-```tsx live
-<TextField label={'Etikett'} description={'Beskrivning'} />
-```
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField 
+  label={'Etikett'}
+  description={'Beskrivning'}
+/>`}
+</LiveCodeBlock>
 
 ### Validering
 
 TextField validerar automatiskt på `type` och `isRequired`
 
-```tsx live wrap=true
-<TextField
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField
   label={'Skriv in din e-post'}
   description={'Obligatorisk!'}
   isRequired
   type={'email'}
-/>
-```
+/>`}
+</LiveCodeBlock>
 
 Det går också att definiera en egen funktion för validering:
 
-```tsx live
-<TextField
-  label={'Skriv in glass'}
-  validate={(value) => (value === 'glass' ? true : 'Du måste skriva glass!')}
-/>
-```
+
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField
+  label={'Skriv in frukt'}
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`}
+</LiveCodeBlock>
+
 
 ### Lösenord
 
 Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 
-```tsx live
-<TextField type={'password'} name={'pw'} label={'Skriv in ditt lösenord'} autoComplete={'off'}/>
-```
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField 
+  type={'password'} 
+  name={'pw'} 
+  label={'Skriv in ditt lösenord'} 
+  autoComplete={'off'}
+/>
+`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 
@@ -68,16 +80,16 @@ TBD
 ### Desktop
 Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./flex), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
 
-```tsx live
-<Grid>
+<LiveCodeBlock scope={{Grid, TextField, GridItem}}>
+{`<Grid fluid={true}>
     <GridItem col={4}>
-          <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+      <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
     </GridItem>
     <GridItem col={8}>
-          <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+      <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
     </GridItem>
-</Grid>
-```
+</Grid>`}
+</LiveCodeBlock>
 
 ## Dependencies
 

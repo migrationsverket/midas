@@ -6,13 +6,16 @@ import { Select, Item } from '@midas-ds/select'
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/select.json'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Select'} info={Info} friendlyName={'Flerval, väljare, dropdown'}/>
 
 ## Introduktion
 
-En väljare visar en hopfällbar lista med alternativ och låter en användare välja ett av dem.
+En Select visar en hopfällbar lista med alternativ och låter en användare välja ett av dem.
 
+Select är en typ av input-fält som används för att välja **ett** alternativ av fler än fyra (4) av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
+Om det är fler alternativ än färre än fyra (4) används med fördel [Radio](./radio.mdx) istället.
 
 ## Installation och användning
 
@@ -24,31 +27,15 @@ npm install @midas-ds/select
 import { Select } from '@midas-ds/select'
 ```
 
-```tsx live
-function App() {
-    const options = [
-        { id: 'apple', name: 'Apple' },
-        { id: 2, name: 'Banana' },
-        { id: 3, name: 'Kiwi' },
-        { id: 4, name: 'Elderflower' },
-        { id: 5, name: 'Nectarine' },
-        { id: 6, name: 'Watermelon' },
-        { id: 7, name: 'Pineapple' },
-        { id: 8, name: 'Apricot' },
-        { id: 9, name: 'Cloudberry' },
-    ];
-
-    return (
-        <Select
-            label="Välj din favorit"
-            defaultSelected="Välj frukt"
-            items={options}
-        >
-            {(item) => <Item>{item.name}</Item>}
-        </Select>
-    )
-}
-```
+<LiveCodeBlock scope={{Select, Item}}>
+{`<Select
+    label="Vad är din favoritfrukt?"
+    placeholder="Välj en frukt"
+    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+>
+    {(item) => <Item>{item.name}</Item>}
+</Select>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 TBD
