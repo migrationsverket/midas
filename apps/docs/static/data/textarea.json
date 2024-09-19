@@ -1,0 +1,72 @@
+{
+  "_id": "@midas-ds/textarea@0.0.1",
+  "name": "@midas-ds/textarea",
+  "dist-tags": {
+    "latest": "0.0.1"
+  },
+  "versions": [
+    "0.0.1"
+  ],
+  "time": {
+    "created": "2024-09-19T09:08:52.207Z",
+    "0.0.1": "2024-09-19T09:08:52.548Z",
+    "modified": "2024-09-19T09:08:52.847Z"
+  },
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "description": "```bash npm i @midas-ds/textarea ```",
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "readmeFilename": "README.md",
+  "_contentLength": 0,
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23",
+    "react-aria-components": "^1.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "aee39731f672b8d4af77b53fcf8f20840209b4c2",
+  "_nodeVersion": "21.7.3",
+  "_npmVersion": "10.5.0",
+  "dist": {
+    "integrity": "sha512-5KXOi/FVF+tmXTpNvbAvDf5v83isOIlJTDfh64R2zGQ3P8Wp9vy4dgRmsRVlQ3vRtiuEkq9UTDw0x/GoxNjFww==",
+    "shasum": "1279474ae71aefc9e4dc58841e2837dc8f72e40c",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textarea/-/textarea-0.0.1.tgz",
+    "fileCount": 6,
+    "unpackedSize": 78430,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCIEBuB+HzT9fbvvcUsOMEApKWjLNnf8D6ylJ+x/NQEC7TAiAnuccP/G2Sv4nZ76SoCEdPuMja3GXTnVOuQhkuKx19Ag=="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/textarea_0.0.1_1726736932334_0.40974805183294394"
+  },
+  "_hasShrinkwrap": false
+}

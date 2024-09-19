@@ -1,19 +1,21 @@
 {
   "_id": "@midas-ds/textfield@0.9.24",
-  "_rev": "2-81b8bde1b7ec0c1765cc6371aa3a874d",
+  "_rev": "4-260f70203d2aa97dc023d365f2b733df",
   "name": "@midas-ds/textfield",
   "dist-tags": {
     "latest": "0.9.24"
   },
   "versions": [
     "0.9.24",
-    "0.9.25"
+    "0.9.25",
+    "0.10.0"
   ],
   "time": {
     "created": "2024-09-10T14:36:27.336Z",
-    "modified": "2024-09-12T13:02:04.539Z",
+    "modified": "2024-09-19T09:08:19.357Z",
     "0.9.24": "2024-09-10T14:36:27.567Z",
-    "0.9.25": "2024-09-12T12:55:35.421Z"
+    "0.9.25": "2024-09-12T12:55:35.421Z",
+    "0.10.0": "2024-09-19T09:06:27.230Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -28,7 +30,7 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 3878,
+  "_contentLength": 5444,
   "version": "0.9.24",
   "dist": {
     "shasum": "d06c99fa9e61b9e0f1f6e92fefd133709ea5247c",

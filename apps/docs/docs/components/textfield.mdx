@@ -15,7 +15,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Introduktion
 
-Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre input används TextArea.
+Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre input används [TextArea](./textarea.mdx).
 
 ## Installation och användning
 
@@ -78,12 +78,12 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 TBD
 
 ### Desktop
-Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./flex), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
+Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./flex.mdx), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
 
 <LiveCodeBlock scope={{Grid, TextField, GridItem}}>
 {`<Grid fluid={true}>
     <GridItem col={4}>
-      <TextField name={'nameExample'} label={'Postnummer'} /> 
+      <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
     </GridItem>
     <GridItem col={8}>
       <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 

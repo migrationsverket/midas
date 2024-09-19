@@ -20,3 +20,8 @@ describe('given a default TextField', () => {
 const TextFieldTest = (props: TextFieldProps) => (
   <TextField {...props}></TextField>
 );
+
+const TextAreaTest = (props: TextFieldProps) => (
+  <TextField {...props}></TextField>
+);
+
