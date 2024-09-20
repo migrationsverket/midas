@@ -14,6 +14,3 @@ Undantag 2: Valfria fält och obligatoriska fält är (ungefär) lika många –
 ”(valfritt)” och obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält
 markeras med en asterisk.
 
-Obs: fel färg på knappen!
-
-[kod / bild]
