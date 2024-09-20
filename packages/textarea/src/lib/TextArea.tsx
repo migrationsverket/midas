@@ -14,6 +14,7 @@ export interface TextFieldProps extends AriaTextFieldProps {
   description?: string
   rows?: number
   maxCharacters?: number
+  showCounter?: boolean
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
@@ -23,6 +24,7 @@ export const TextArea: React.FC<TextFieldProps> = ({
   rows,
   maxCharacters,
   errorMessage,
+  showCounter,
   ...props
 }) => {
   const [value, setValue] = React.useState('')
@@ -45,7 +47,14 @@ export const TextArea: React.FC<TextFieldProps> = ({
         </span>
       )
     }
-    return null
+    if (showCounter){
+       return (
+      <span className={styles.styledCounting}>
+      {value.length} 
+    </span>
+    )
+    }
+   return null
   }
 
   const getErrorMessage = (maxCharacters: number) => {
@@ -61,6 +70,7 @@ export const TextArea: React.FC<TextFieldProps> = ({
       description={description}
       errorMessage={getErrorMessage(maxCharacters || 0)}
       isInvalid={hasExceededMaxCharacters || props.isInvalid}
+     
       {...props}
     >
       <Count />

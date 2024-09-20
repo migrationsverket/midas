@@ -22,6 +22,7 @@ export const Primary: Story = {
   args: {
     label: 'Label',
     description: 'Description',
+    showCounter:true,
   },
 }
 
