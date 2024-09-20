@@ -15,8 +15,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Introduktion
 
-Radioknappar är en typ av input-fält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
-Om det är fler alternativ än fyra (4) används med fördel [Select](./select.mdx) istället.
+Radioknappar är en typ av input-fält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. 
 
 <LiveCodeBlock scope={{RadioGroup, Radio}}>
 {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
@@ -68,9 +67,10 @@ Sätt validering med `isInvalid` eller använd inbyggda tester som `isRequired`.
 
 ## Riktlinjer
 
-- En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar "Inget av ovanstående" eller liknande.
-- Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera.
-- Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
+- En av radioknapparna ska alltid vara ifylld. Givet detta kan en radioknapp inte användas ensam, utan måste alltid vara två eller flera. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
+- Om det är fler alternativ än fyra (4) används med fördel [Select](./select.mdx) istället.
+- Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar "Inget av ovanstående". 
+- Radioknapparna grupperas vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
 - Fältetiketten ska inledas med stor bokstav och inte följas av punkt.
 
 ## Dependencies
