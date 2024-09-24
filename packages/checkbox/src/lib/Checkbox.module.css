@@ -14,7 +14,7 @@
   --invalidPressed: signalRed130;
   --checkmarkColor: white;
 
-  gap: 0.571rem;
+  gap: 0.5rem;
   align-items: center;
 
   forced-color-adjust: none;
@@ -121,13 +121,19 @@
 
 .checkboxGroupLabel {
   font-weight: mediumWeight;
-  font-size: 1.125rem;
+  font-size: 1rem;
+}
+
+
+.checkboxGroupDescription {
+  font-size: 0.875rem;
+  font-weight: regularWeight;
 }
 
 .checkboxGroup span {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 0.5rem;
 }
 
 .checkboxGroup[data-invalid] {
