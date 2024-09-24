@@ -47,14 +47,10 @@ export const TextArea: React.FC<TextFieldProps> = ({
         </span>
       )
     }
-    if (showCounter){
-       return (
-      <span className={styles.styledCounting}>
-      {value.length} 
-    </span>
-    )
+    if (showCounter) {
+      return <span className={styles.styledCounting}>{value.length}</span>
     }
-   return null
+    return null
   }
 
   const getErrorMessage = (maxCharacters: number) => {
@@ -70,13 +66,13 @@ export const TextArea: React.FC<TextFieldProps> = ({
       description={description}
       errorMessage={getErrorMessage(maxCharacters || 0)}
       isInvalid={hasExceededMaxCharacters || props.isInvalid}
-     
       {...props}
     >
       <Count />
       <AriaTextArea
         className={styles.textArea}
         rows={rows}
+        onFocus={handleChange}
         onChange={handleChange}
       />
     </TextFieldWrapper>

@@ -22,7 +22,6 @@ export const Primary: Story = {
   args: {
     label: 'Label',
     description: 'Description',
-    showCounter:true,
   },
 }
 
@@ -38,6 +37,13 @@ export const MaxCharacters = {
   args: {
     ...Primary.args,
     maxCharacters: 50,
+  },
+}
+
+export const ShowCounter = {
+  args: {
+    ...Primary.args,
+    showCounter: true,
   },
 }
 
