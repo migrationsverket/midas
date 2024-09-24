@@ -85,8 +85,15 @@ export const CheckboxGroup = ({
         <>
           <div className={styles.labelGroup}>
             <Label className={styles.checkboxGroupLabel}>{label}</Label>
-            {description && <Text slot="description" className={styles.checkboxGroupDescription}>{description}</Text>}
-            </div> 
+            {description && (
+              <Text
+                slot="description"
+                className={styles.checkboxGroupDescription}
+              >
+                {description}
+              </Text>
+            )}
+          </div>
           {showSelectAll && <ToogleAll />}
           {children}
           <span className={styles.fieldError}>

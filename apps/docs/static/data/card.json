@@ -36,7 +36,7 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 0,
+  "_contentLength": 10120,
   "version": "0.3.4",
   "main": "./index.js",
   "types": "./index.d.ts",
