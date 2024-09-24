@@ -66,8 +66,14 @@ export default function App() {
 ## Riktlinjer
 
 ```mermaid
+%%{init: {'flowchart': {'curve': 'stepbefore'}} }%%
 flowchart TD;
-    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
+    A[Är länken i ett textstycke?] -->|Nej| B[Vad är syftet?]
+    style A fill:#143C50,color:#ffffff, stroke-width:0px
+    style B fill:#143C50,color:#ffffff, stroke-width:0px
+    style C fill:#fff,color:#143C50, stroke:#143C50, stroke-width:2px
+    style D  fill:#fff,color:#143C50, stroke:#143C50, stroke-width:2px
+    style E fill:#143C50,color:#ffffff, stroke-width:0px
     A -->|Ja| C[Använd komponenten Link]
     B -->|Action| D[Använd komponenten Button]
     B -->|Navigering| E[Använd komponenten LinkButton]

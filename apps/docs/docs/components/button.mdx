@@ -49,11 +49,11 @@ import { Button } from '@midas-ds/button';
 %%{init: {'flowchart': {'curve': 'stepbefore'}} }%%
 flowchart TD;
     A[Är länken i ett textstycke?] -->|Nej| B[Vad är syftet?]
-    style A fill:#fff,color:#143C50, stroke:#143C50, stroke-width:2px
-    style B fill:#fff,color:#143C50, stroke:#143C50, stroke-width:2px
-    style C  fill:#143C50,color:#ffffff, stroke-width:0px
+    style A fill:#143C50,color:#ffffff, stroke-width:0px
+    style B fill:#143C50,color:#ffffff, stroke-width:0px
+    style C fill:#fff,color:#143C50, stroke:#143C50, stroke-width:2px
     style D  fill:#143C50,color:#ffffff, stroke-width:0px
-    style E fill:#143C50,color:#ffffff, stroke-width:0px
+    style E fill:#fff,color:#143C50, stroke:#143C50, stroke-width:2px
     A -->|Ja| C[Använd komponenten Link]
     B -->|Action| D[Använd komponenten Button]
     B -->|Navigering| E[Använd komponenten LinkButton]
