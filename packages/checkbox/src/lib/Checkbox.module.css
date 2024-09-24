@@ -129,10 +129,16 @@
   font-size: 0.875rem; 
 }
 
+.labelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .checkboxGroup span {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .checkboxGroup[data-invalid] {
