@@ -1,3 +1,24 @@
+## 0.3.4 (2024-09-24)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- **docs:** update url
+
+- **docs:** update url
+
+- **card:** correct border-color
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.3.3 (2024-09-13)
 
 
