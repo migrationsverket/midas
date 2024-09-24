@@ -19,7 +19,7 @@ Radioknappar är en typ av input-fält som används för att välja ett (1) alte
 
 <LiveCodeBlock scope={{RadioGroup, Radio}}>
 {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-    {fruits.shuffled().map(fruit => (
+    {fruits.shuffled(3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
     ))}
 </RadioGroup>`}
@@ -41,7 +41,7 @@ Gruppera flera `<Radio>` i en `<RadioGroup>` och sätt rubrik och beskrivande te
 
 <LiveCodeBlock scope={{RadioGroup, Radio}}>
 {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-    {fruits.shuffled().map(fruit => (
+    {fruits.shuffled(3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
     ))}
 </RadioGroup>`}
@@ -53,9 +53,9 @@ Gruppera flera `<Radio>` i en `<RadioGroup>` och sätt rubrik och beskrivande te
 Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
 
 <LiveCodeBlock scope={{RadioGroup, Radio}}>
-{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-    {fruits.shuffled().map(fruit => (
-      <Radio key={fruit.value} value={fruit.value} isDisabled>{fruit.name}</Radio>
+{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
+    {fruits.shuffled(3).map(fruit => (
+      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
     ))}
 </RadioGroup>`}
 </LiveCodeBlock>
