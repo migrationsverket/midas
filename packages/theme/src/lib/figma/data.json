@@ -1,0 +1,345 @@
+[
+  {
+    "name": "Primitives",
+    "values": [
+      {
+        "mode": {
+          "name": "Mode 1",
+          "id": "2:0"
+        },
+        "color": [
+          {
+            "name": "baseColor/black",
+            "value": "#000000",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/blue130",
+            "value": "#25607f",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/blue150",
+            "value": "#143c50",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/blue90",
+            "value": "#4289ad",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/grey10",
+            "value": "#f2f2f2",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/grey150",
+            "value": "#1f1f1f",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/grey20",
+            "value": "#e6e6e6",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/grey50",
+            "value": "#bfbfbf",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/grey80",
+            "value": "#999999",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "baseColor/white",
+            "value": "#ffffff",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "signalColor/signalRed100",
+            "value": "#e62323",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "signalColor/signalRed130",
+            "value": "#b31b1b",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "signalColor/signalRed150",
+            "value": "#801313",
+            "var": "",
+            "rootAlias": ""
+          }
+        ],
+        "number": [
+          {
+            "name": "font/size01",
+            "value": "0.75rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size02",
+            "value": "0.875rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight01",
+            "value": "1rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size03",
+            "value": "1rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight02",
+            "value": "1.125rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size04",
+            "value": "1.125rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight03",
+            "value": "1.25rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size05",
+            "value": "1.25rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight04",
+            "value": "1.375rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight05",
+            "value": "1.5rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size06",
+            "value": "1.5rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight06",
+            "value": "1.75rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size07",
+            "value": "1.75rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight07",
+            "value": "2rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight08",
+            "value": "2.25rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/size09",
+            "value": "2.25rem",
+            "var": "",
+            "rootAlias": ""
+          },
+          {
+            "name": "font/lineHeight09",
+            "value": "2.75rem",
+            "var": "",
+            "rootAlias": ""
+          }
+        ],
+        "string": []
+      }
+    ]
+  },
+  {
+    "name": "Tokens",
+    "values": [
+      {
+        "mode": {
+          "name": "Mode 1",
+          "id": "41:0"
+        },
+        "color": [
+          {
+            "name": "border/blue01",
+            "value": "#143c50",
+            "var": "baseColor/blue150",
+            "rootAlias": "baseColor/blue150"
+          },
+          {
+            "name": "border/blue02",
+            "value": "#25607f",
+            "var": "baseColor/blue130",
+            "rootAlias": "baseColor/blue130"
+          },
+          {
+            "name": "border/disabled",
+            "value": "#bfbfbf",
+            "var": "baseColor/grey50",
+            "rootAlias": "baseColor/grey50"
+          },
+          {
+            "name": "brand/primary",
+            "value": "#143c50",
+            "var": "baseColor/blue150",
+            "rootAlias": "baseColor/blue150"
+          },
+          {
+            "name": "brand/white",
+            "value": "#ffffff",
+            "var": "baseColor/white",
+            "rootAlias": "baseColor/white"
+          },
+          {
+            "name": "button/danger",
+            "value": "#e62323",
+            "var": "signalColor/signalRed100",
+            "rootAlias": "signalColor/signalRed100"
+          },
+          {
+            "name": "button/dangerActive",
+            "value": "#801313",
+            "var": "signalColor/signalRed150",
+            "rootAlias": "signalColor/signalRed150"
+          },
+          {
+            "name": "button/dangerHover",
+            "value": "#b31b1b",
+            "var": "signalColor/signalRed130",
+            "rootAlias": "signalColor/signalRed130"
+          },
+          {
+            "name": "button/disabled",
+            "value": "#f2f2f2",
+            "var": "baseColor/grey10",
+            "rootAlias": "baseColor/grey10"
+          },
+          {
+            "name": "button/primary",
+            "value": "#143c50",
+            "var": "baseColor/blue150",
+            "rootAlias": "baseColor/blue150"
+          },
+          {
+            "name": "button/primaryActive",
+            "value": "#4289ad",
+            "var": "baseColor/blue90",
+            "rootAlias": "baseColor/blue90"
+          },
+          {
+            "name": "button/primaryHover",
+            "value": "#25607f",
+            "var": "baseColor/blue130",
+            "rootAlias": "baseColor/blue130"
+          },
+          {
+            "name": "button/secondaryActive",
+            "value": "#e6e6e6",
+            "var": "baseColor/grey20",
+            "rootAlias": "baseColor/grey20"
+          },
+          {
+            "name": "button/secondaryHover",
+            "value": "#f2f2f2",
+            "var": "baseColor/grey10",
+            "rootAlias": "baseColor/grey10"
+          },
+          {
+            "name": "button/skeleton",
+            "value": "#f2f2f2",
+            "var": "baseColor/grey10",
+            "rootAlias": "baseColor/grey10"
+          },
+          {
+            "name": "button/tertiaryActive",
+            "value": "#e6e6e6",
+            "var": "baseColor/grey20",
+            "rootAlias": "baseColor/grey20"
+          },
+          {
+            "name": "button/tertiaryHover",
+            "value": "#f2f2f2",
+            "var": "baseColor/grey10",
+            "rootAlias": "baseColor/grey10"
+          },
+          {
+            "name": "text/brandPrimary",
+            "value": "#143c50",
+            "var": "baseColor/blue150",
+            "rootAlias": "baseColor/blue150"
+          },
+          {
+            "name": "text/disabled",
+            "value": "#bfbfbf",
+            "var": "baseColor/grey50",
+            "rootAlias": "baseColor/grey50"
+          },
+          {
+            "name": "text/subtle01",
+            "value": "#999999",
+            "var": "baseColor/grey80",
+            "rootAlias": "baseColor/grey80"
+          },
+          {
+            "name": "text/textBlack",
+            "value": "#1f1f1f",
+            "var": "baseColor/grey150",
+            "rootAlias": "baseColor/grey150"
+          },
+          {
+            "name": "text/white",
+            "value": "#ffffff",
+            "var": "baseColor/white",
+            "rootAlias": "baseColor/white"
+          }
+        ],
+        "number": [],
+        "string": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,66 @@
+/* baseColor */
+@value black: #000000;
+@value blue130: #25607f;
+@value blue150: #143c50;
+@value blue90: #4289ad;
+@value grey10: #f2f2f2;
+@value grey150: #1f1f1f;
+@value grey20: #e6e6e6;
+@value grey50: #bfbfbf;
+@value grey80: #999999;
+@value white: #ffffff;
+
+/* signalColor */
+@value signalRed100: #e62323;
+@value signalRed130: #b31b1b;
+@value signalRed150: #801313;
+
+/* font */
+@value size01: 0.75rem;
+@value size02: 0.875rem;
+@value lineHeight01: 1rem;
+@value size03: 1rem;
+@value lineHeight02: 1.125rem;
+@value size04: 1.125rem;
+@value lineHeight03: 1.25rem;
+@value size05: 1.25rem;
+@value lineHeight04: 1.375rem;
+@value lineHeight05: 1.5rem;
+@value size06: 1.5rem;
+@value lineHeight06: 1.75rem;
+@value size07: 1.75rem;
+@value lineHeight07: 2rem;
+@value lineHeight08: 2.25rem;
+@value size09: 2.25rem;
+@value lineHeight09: 2.75rem;
+
+/* border */
+@value blue01: #143c50;
+@value blue02: #25607f;
+@value disabled: #bfbfbf;
+
+/* brand */
+@value primary: #143c50;
+@value white: #ffffff;
+
+/* button */
+@value danger: #e62323;
+@value dangerActive: #801313;
+@value dangerHover: #b31b1b;
+@value disabled: #f2f2f2;
+@value primary: #143c50;
+@value primaryActive: #4289ad;
+@value primaryHover: #25607f;
+@value secondaryActive: #e6e6e6;
+@value secondaryHover: #f2f2f2;
+@value skeleton: #f2f2f2;
+@value tertiaryActive: #e6e6e6;
+@value tertiaryHover: #f2f2f2;
+
+/* text */
+@value brandPrimary: #143c50;
+@value disabled: #bfbfbf;
+@value subtle01: #999999;
+@value textBlack: #1f1f1f;
+@value white: #ffffff;
+
