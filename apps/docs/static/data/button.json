@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/button@0.6.2",
-  "_rev": "12-96a5d4ed810f5de6febb9ef4ca6a160e",
+  "_id": "@midas-ds/button@0.6.3",
+  "_rev": "13-b6ac6d2988ba8a771683de1739177574",
   "name": "@midas-ds/button",
   "dist-tags": {
-    "latest": "0.6.2"
+    "latest": "0.6.3"
   },
   "versions": [
     "0.5.28",
@@ -17,7 +17,7 @@
   ],
   "time": {
     "created": "2024-09-05T12:44:43.399Z",
-    "modified": "2024-09-12T13:02:05.116Z",
+    "modified": "2024-09-24T07:40:34.237Z",
     "0.6.0": "2024-09-05T12:44:43.759Z",
     "0.5.28": "2024-09-10T14:35:50.047Z",
     "0.5.29": "2024-09-11T07:14:39.435Z",
@@ -41,19 +41,19 @@
   ],
   "readmeFilename": "README.md",
   "_contentLength": 12830,
-  "version": "0.6.2",
+  "version": "0.6.3",
   "dist": {
-    "shasum": "3711683a3d90209e8cdb74e392c1a0f48d49214d",
-    "tarball": "https://registry.npmjs.org/@midas-ds/button/-/button-0.6.2.tgz",
-    "fileCount": 8,
-    "integrity": "sha512-FleDpNOGjkcmy69BzC4WQS4aFbRVIVZ43W9i66ZUhAWRS8bQxDCjqq6XjxWp2dHtcp4dvlGoDPBurVV+K02piw==",
+    "shasum": "3f37af3f72a9dcadc9105b2ac951ecc38b4add12",
+    "tarball": "https://registry.npmjs.org/@midas-ds/button/-/button-0.6.3.tgz",
+    "fileCount": 7,
+    "integrity": "sha512-fx9Vr3DO3xbQJdY0VHq6spezyyiM9Ib0jug6WNuqgFwGTY+LpZa6cK2ikIV8WOYo3N2UioW9oabhRDX1KlkoGQ==",
     "signatures": [
       {
-        "sig": "MEQCIAg4eLdR3uhL0GBqcA1HIwjqy8dnOKIQTYtaG1tWY6S/AiAV905Kif1J1sqQ0DI1vIFnxUv5KzwWfyzbkitJ1Tp1QQ==",
+        "sig": "MEQCIDGn/2ZRmaNWaqpNpFAU3ooBZ1Smd8S8zs3VWE/yOi9NAiBZorF+2VL4yK0B1p4caDYT1dlzSRCR8A/HsHG1RGN22Q==",
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
       }
     ],
-    "unpackedSize": 74755
+    "unpackedSize": 77561
   },
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -80,7 +80,7 @@
     "react": "^18.2.0"
   },
   "_npmOperationalInternal": {
-    "tmp": "tmp/button_0.6.2_1726046905780_0.27115804312042724",
+    "tmp": "tmp/button_0.6.3_1726053946255_0.8695700164230578",
     "host": "s3://npm-registry-packages"
   }
 }

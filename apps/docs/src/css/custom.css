@@ -162,3 +162,17 @@ this is a bit ad hoc, will fix this later
   --ifm-footer-background-color: #b90835;
   --ifm-footer-link-hover-color: #f2f2f2;
 }
+
+[class*='cardContainer'],
+.pagination-nav__link {
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid black !important;
+  transition:
+    transform 250ms ease-in-out,
+    background-color 250ms ease-in-out;
+  &:hover {
+    background-color: #e6e6e6;
+  }
+}
