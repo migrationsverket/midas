@@ -38,7 +38,18 @@ import { Item, Select } from '@midas-ds/select'
 </LiveCodeBlock>
 
 ## Riktlinjer
-TBD
+
+### Val av komponent
+
+```mermaid
+flowchart TD;
+    A[Ska användaren kunna välja mer än ett alternativ?] 
+    A -->|Ja| B[Använd Checkbox]
+    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]
+    C -->|Ja| E[Använd Select]
+    C -->|Nej| D[Använd Radio]
+    
+```
 
 ## Dependencies
 
