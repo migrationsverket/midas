@@ -1,3 +1,33 @@
+## 0.5.2 (2024-09-24)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+- **checkbox:** change styling of description
+
+- **checkbox:** fix gap between label and description
+
+
+### ❤️  Thank You
+
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 0.3.30 (2024-08-13)
 
 ### 🩹 Fixes
