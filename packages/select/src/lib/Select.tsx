@@ -42,6 +42,7 @@ export function Select<T extends object>({
     <AriaSelect
       {...props}
       className={styles.select}
+      isDisabled={isDisabled}
     >
       <Label className={styles.label}>{label}</Label>
       {description && (
