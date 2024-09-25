@@ -43,7 +43,7 @@ import { Button } from '@midas-ds/button';
 
 ## Riktlinjer
 
-- Vägledning för val av komponent
+### Vägledning för val av komponent
 
 ```mermaid
 flowchart TD;
@@ -52,19 +52,31 @@ flowchart TD;
     B -->|Action| D[Använd komponenten Button]
     B -->|Navigering| E[Använd komponenten LinkButton]
 ```
+### Generella regler
 
 - Primär knapp används för den primära/positiva handlingar i ett flöde (Acceptera, Gå vidare, Ok osv). Sekundär knapp används för underordnade/negativa handlingar (Avbryt, Tillbaka).
-- I e-tjänster sätts alltid den primära knappen (nästa) till höger och den sekundära (tillbaka) till vänster. Det baseras på att formuläret är som en bok som läses från vänster till höger.
+- Det bör finnas max en primärknapp per sida/sektion/tydligt avgränsad yta. Undvik att ha för många knappar på samma sida.
+- Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
 
-<div style={{ gap: '5px', display: 'flex', margin: '5px' }}>
+### Knappordning
+
+Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
+
+<div style={{ gap: '4px', display: 'flex', margin: '8px' }}>
+  <Button>Skicka</Button>
+  <Button variant={'secondary'}>Avbryt</Button>
+ </div>
+
+
+I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära (tillbaka) till vänster. 
+
+
+<div style={{ gap: '4px', display: 'flex', margin: '8px' }}>
   <Button variant={'secondary'}>Föregående</Button>
   <Button>Nästa</Button>
 </div>
 
-- Det bör finnas max en primärknapp per sida/sektion/tydligt avgränsad yta
-- Undvik att ha för många knappar på samma sida.
-- Alla knappar i externa system ska gå att interagera med.
-  - Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
+
 
 ## Dependencies
 
