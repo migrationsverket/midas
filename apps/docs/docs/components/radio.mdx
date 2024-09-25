@@ -56,7 +56,7 @@ Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
 {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
     {fruits.shuffled(3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-    ))}
+       ))}
 </RadioGroup>`}
 </LiveCodeBlock>
 
