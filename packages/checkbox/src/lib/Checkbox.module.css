@@ -58,8 +58,8 @@
 }
 
 .checkbox[data-indeterminate] svg {
-  stroke: none;
-  fill: var(--checkmarkColor);
+  stroke: var(--checkmarkColor);
+  fill: none;
 }
 
 .checkbox[data-invalid] div {
@@ -103,9 +103,6 @@
   height: 1rem;
   fill: none;
   stroke: var(--checkmarkColor, white);
-  stroke-width: 2px;
-  stroke-dasharray: 22;
-  stroke-dashoffset: 66;
   transition: all 200ms;
 }
 
