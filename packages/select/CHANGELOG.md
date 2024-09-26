@@ -1,3 +1,36 @@
+## 0.4.25 (2024-09-26)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- add isDisabled in AriaSelect tag and fix the style in css
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+- **select:** change to lucide icon
+
+- **select:** fix icon alignment
+
+
+### ❤️  Thank You
+
+- jabir Khalil
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 0.5.2 (2024-05-21)
 
 ### 🩹 Fixes

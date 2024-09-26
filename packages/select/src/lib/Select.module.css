@@ -47,7 +47,8 @@
   }
   &[data-disabled] {
     background: backgroundSecondary;
-    color: borderSecondary;
+    color: gray50;
+    box-shadow: 0 1px 0 0 gray50;
   }
 }
 
@@ -85,4 +86,9 @@
   &[data-focused='true'] {
     background: gray20;
   }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
 }
