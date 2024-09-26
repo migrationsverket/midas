@@ -87,3 +87,8 @@
     background: gray20;
   }
 }
+
+.icon {
+  display: flex;
+  align-items: center;
+}
