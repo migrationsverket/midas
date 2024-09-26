@@ -36,14 +36,12 @@ export function Select<T extends object>({
   errorMessage,
   children,
   items,
-  isDisabled,
   ...props
 }: SelectProps<T>) {
   return (
     <AriaSelect
-      {...props}
       className={styles.select}
-      isDisabled={isDisabled}
+      {...props}
     >
       <Label className={styles.label}>{label}</Label>
       {description && (
@@ -91,8 +89,8 @@ export function Item(props: ListBoxItemProps) {
   return (
     <ListBoxItem
       value={props.value}
-      {...props}
       className={styles.listBoxItem}
+      {...props}
     />
   )
 }
