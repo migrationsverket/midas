@@ -126,7 +126,6 @@
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1rem;
-  border-left: 3px solid transparent;
   min-width: 150px;
 }
 
@@ -150,10 +149,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.checkboxGroup[data-invalid] {
-  border-left-color: signalRed100;
 }
 
 .checkboxGroup[data-disabled] {
