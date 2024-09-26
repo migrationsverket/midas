@@ -58,8 +58,8 @@
 }
 
 .checkbox[data-indeterminate] svg {
-  stroke: var(--checkmarkColor);
-  fill: none;
+  stroke: none;
+  fill: var(--checkmarkColor);
 }
 
 .checkbox[data-invalid] div {
@@ -114,6 +114,7 @@
   fill: none;
   stroke: var(--checkmarkColor, white);
   transition: all 200ms;
+  stroke-width: 2;
 }
 
 .checkboxGroup {
@@ -133,7 +134,7 @@
 
 .checkboxGroupDescription {
   font-weight: regularWeight;
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
 }
 
 .labelGroup {
