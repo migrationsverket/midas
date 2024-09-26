@@ -1,13 +1,27 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, signalRed10, gray10, gray20, black, signalRed100, mediumWeight, regularWeight, inputText from tokens;
 
+.inputWrapper {
+  font-family: display;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr 1fr;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: min-content min-content min-content;
+  gap: 0.5rem;
+  grid-template-areas:
+    'Label Label'
+    'Input Input'
+    'Error Count';
+}
+
 .textField {
   font-family: display;
   display: grid;
   height: 100%;
   grid-template-columns: 1fr auto;
   grid-column-gap: 0;
-  grid-row-gap: 0.25rem;
+  grid-row-gap: 0.5rem;
   align-items: end;
   align-content: end;
 
@@ -62,7 +76,7 @@
 }
 
 .fieldError {
-  grid-area: 4 / 1 / 5 / 2;
+  grid-area: Error;
   font-size: 1rem;
   display: flex;
   align-items: end;
@@ -77,15 +91,14 @@
 }
 
 .label {
+  font-size: 1rem;
   color: inputText;
   font-weight: mediumWeight;
-  grid-area: 1 / 1 / 2 / 3;
 }
 
 .text {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: regularWeight;
-  grid-area: 2 / 1 / 3 / 3;
 }
 
 .wrap {
@@ -120,4 +133,11 @@
   font-size: 1rem;
   font-weight: mediumWeight;
   z-index: 3;
+}
+
+.labelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  grid-area: Label;
 }

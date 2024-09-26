@@ -5,11 +5,13 @@
   font-family: display;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .datePickerTextfield {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
 

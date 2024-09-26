@@ -48,7 +48,15 @@ export const DatePicker = <T extends DateValue>({
       )}
       {...props}
     >
-      <Label className={TextFieldStyles.text}>{label}</Label>
+      <Label className={TextFieldStyles.label}>{label}</Label>
+      {description && (
+        <Text
+          slot="description"
+          className={TextFieldStyles.text}
+        >
+          {description}
+        </Text>
+      )}
       <Group
         className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
       >
@@ -70,14 +78,7 @@ export const DatePicker = <T extends DateValue>({
           <CalendarDays size={22} />
         </Button>
       </Group>
-      {description && (
-        <Text
-          slot="description"
-          className={TextFieldStyles.text}
-        >
-          {description}
-        </Text>
-      )}
+
       <FieldError>{errorMessage}</FieldError>
       <Popover>
         <Dialog className={styles.dialog}>
