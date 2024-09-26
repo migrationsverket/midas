@@ -3,8 +3,6 @@
 import clsx from 'clsx'
 import { Checkbox as AriaCheckbox, CheckboxProps } from 'react-aria-components'
 import styles from './Checkbox.module.css'
-import { Check } from 'lucide-react'
-import { Minus } from 'lucide-react'
 
 export const Checkbox = ({ children, ...props }: CheckboxProps) => {
   return (
