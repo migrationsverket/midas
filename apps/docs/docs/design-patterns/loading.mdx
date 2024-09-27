@@ -1,0 +1,15 @@
+import { Spinner } from '@midas-ds/spinner'
+
+# Laddningsindikator
+Laddningsindikatorer är visuella platshållare för komponenter eller information som visas medan data laddas. Vi använder oss av två olika laddningsindikator: skeleton loader och spinner. Skeleton loader används som primär laddningsindikator.
+
+## Skeleton loader
+Skeleton loader är en minimal representation av de komponenter som kommer finnas i gränssnittet och ger därmed användaren en bild av hur det färdiga gränssnittet kommer vara strukturerat. Varje komponent har ett skeleton state som kan användas när sidan laddas in.
+
+![Skeleton loader](/img/Skeleton.png)
+
+
+## Spinner 
+Spinnern används när data har skickas eller sparats av användaren, till exempel när en fil har laddats upp eller vid inloggning. Om det väntas ta mer än 10 sekunder att ladda bör det finnas ett meddelande till användaren om det.
+
+<Spinner />
