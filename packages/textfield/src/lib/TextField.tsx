@@ -9,79 +9,49 @@ import {
   Text,
   TextFieldProps as AriaTextFieldProps,
   ValidationResult,
-  InputProps,
-  TextProps,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { TriangleAlert } from 'lucide-react'
-import clsx from 'clsx'
 import { Button } from '@midas-ds/button'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   children?: ReactNode
   label?: string
   description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorMessage?: string | ((validation: ValidationResult) => string) | undefined
 }
 
-// export const TextFieldWrapper: React.FC<TextFieldProps> = ({
-//   children,
-//   label,
-//   description,
-//   errorMessage,
-//   ...props
-// }) => {
-//   return (
-//     <AriaTextField
-//       {...props}
-//       className={styles.textField}
-//     >
-//       <FieldError className={clsx(styles.fieldError)}>
-//         <>
-//           <TriangleAlert />
-//           {errorMessage}
-//         </>
-//       </FieldError>
-//       {children}
-//       {description && (
-//         <Text
-//           slot="description"
-//           className={clsx(styles.text)}
-//         >
-//           {description}
-//         </Text>
-//       )}
-//       <Label className={styles.label}>{label}</Label>
-//     </AriaTextField>
-//   )
-// }
-
-export const TextField: React.FC = <T extends AriaTextFieldProps>({
+export const TextField: React.FC<TextFieldProps> = ({
   label,
   description,
   errorMessage,
   ...props
-}: TextFieldProps<T>) => {
+}) => {
   const [input, setInput] = React.useState<string>('')
 
   return (
-    <InputWrapper
-      label={label}
-      description={description}
-      errorMessage={errorMessage}
+    <AriaTextField
+      className={styles.inputField}
+      {...props}
     >
-      <div className={styles.wrap}>
-        <Input
-          type={props.type}
-          className={styles.input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <PasswordField
-          type={props.type}
-          input={input}
-        />
-      </div>
-    </InputWrapper>
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
+      >
+        <div className={styles.wrap}>
+          <Input
+            type={props.type}
+            className={styles.input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <PasswordField
+            type={props.type}
+            input={input}
+          />
+        </div>
+      </InputWrapper>
+    </AriaTextField>
   )
 }
 
@@ -118,12 +88,10 @@ const PasswordField = ({
   return null
 }
 
-export interface InputWrapperProps {
-  label?: string
-  description?: string
-  errorMessage?: string
-  children: React.ReactNode
-}
+type InputWrapperProps = Pick<
+  TextFieldProps,
+  'label' | 'description' | 'errorMessage' | 'children'
+>
 
 export const InputWrapper = ({
   label,
@@ -133,24 +101,25 @@ export const InputWrapper = ({
 }: InputWrapperProps) => {
   return (
     <div className={styles.inputWrapper}>
-      <div className={styles.labelGroup}>
-        {label && <Label className={styles.label}>{label}</Label>}
-        {description && (
-          <Text
-            slot="description"
-            className={styles.text}
-          >
-            {description}
-          </Text>
-        )}
-      </div>
-      {children}
+      {label && <Label className={styles.label}>{label}</Label>}
+      {description && (
+        <Text
+          slot="description"
+          className={styles.text}
+        >
+          {description}
+        </Text>
+      )}
       <FieldError className={styles.fieldError}>
         <>
-          <TriangleAlert />
+          <TriangleAlert
+            width={16}
+            height={16}
+          />
           {errorMessage}
         </>
       </FieldError>
+      {children}
     </div>
   )
 }

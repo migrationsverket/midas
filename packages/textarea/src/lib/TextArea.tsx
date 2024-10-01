@@ -2,11 +2,12 @@
 
 import styles from './TextArea.module.css'
 import {
+  TextField as AriaTextField,
   TextArea as AriaTextArea,
   ValidationResult,
   TextFieldProps as AriaTextFieldProps,
 } from 'react-aria-components'
-import { TextFieldWrapper } from '@midas-ds/textfield'
+import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
 import React from 'react'
 
 export interface TextFieldProps extends AriaTextFieldProps {
@@ -42,13 +43,13 @@ export const TextArea: React.FC<TextFieldProps> = ({
   const Count = () => {
     if (maxCharacters) {
       return (
-        <span className={styles.styledCounting}>
+        <span className={styles.count}>
           {value.length} / {maxCharacters}
         </span>
       )
     }
     if (showCounter) {
-      return <span className={styles.styledCounting}>{value.length}</span>
+      return <span className={styles.count}>{value.length}</span>
     }
     return null
   }
@@ -61,20 +62,25 @@ export const TextArea: React.FC<TextFieldProps> = ({
   }
 
   return (
-    <TextFieldWrapper
-      label={label}
-      description={description}
-      errorMessage={getErrorMessage(maxCharacters || 0)}
-      isInvalid={hasExceededMaxCharacters || props.isInvalid}
+    <AriaTextField
+      className={TextFieldStyles.inputField}
       {...props}
     >
-      <Count />
-      <AriaTextArea
-        className={styles.textArea}
-        rows={rows}
-        onFocus={handleChange}
-        onChange={handleChange}
-      />
-    </TextFieldWrapper>
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={getErrorMessage(maxCharacters || 0)}
+        isInvalid={hasExceededMaxCharacters || props.isInvalid}
+        {...props}
+      >
+        <Count />
+        <AriaTextArea
+          className={styles.textArea}
+          rows={rows}
+          onFocus={handleChange}
+          onChange={handleChange}
+        />
+      </InputWrapper>
+    </AriaTextField>
   )
 }
