@@ -13,17 +13,14 @@ import {
   DateRangePicker,
   DateSegment,
   Dialog,
-  FieldError,
   Group,
   Heading,
-  Label,
   Popover,
   RangeCalendar,
-  Text,
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
-import { TextFieldStyles } from '@midas-ds/textfield'
+import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
 import styles from './DatePicker.module.css'
 
 interface MidasDateRangePickerProps<T extends DateValue>
@@ -42,67 +39,63 @@ export const DatePicker = <T extends DateValue>({
   return (
     <DateRangePicker
       className={clsx(
-        TextFieldStyles.textField,
+        TextFieldStyles.inputField,
         styles.datePicker,
         props.className
       )}
       {...props}
     >
-      <Label className={TextFieldStyles.label}>{label}</Label>
-      {description && (
-        <Text
-          slot="description"
-          className={TextFieldStyles.text}
-        >
-          {description}
-        </Text>
-      )}
-      <Group
-        className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
       >
-        <DateInput
-          slot="start"
-          className={styles.date}
+        <Group
+          className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
-        <span aria-hidden="true">–</span>
-        <DateInput
-          slot="end"
-          className={styles.date}
-        >
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
+          <DateInput
+            slot="start"
+            className={styles.date}
+          >
+            {(segment) => <DateSegment segment={segment} />}
+          </DateInput>
+          <span aria-hidden="true">–</span>
+          <DateInput
+            slot="end"
+            className={styles.date}
+          >
+            {(segment) => <DateSegment segment={segment} />}
+          </DateInput>
 
-        <Button>
-          <CalendarDays size={22} />
-        </Button>
-      </Group>
+          <Button>
+            <CalendarDays size={22} />
+          </Button>
+        </Group>
 
-      <FieldError>{errorMessage}</FieldError>
-      <Popover>
-        <Dialog className={styles.dialog}>
-          <RangeCalendar>
-            <header className={styles.dialogHeader}>
-              <Button slot="previous">
-                <ChevronLeft />
-              </Button>
-              <Heading className={styles.dialogHeading} />
-              <Button slot="next">
-                <ChevronRight />
-              </Button>
-            </header>
-            <CalendarGrid className={styles.calendar}>
-              {(date) => (
-                <CalendarCell
-                  date={date}
-                  className={styles.day}
-                />
-              )}
-            </CalendarGrid>
-          </RangeCalendar>
-        </Dialog>
-      </Popover>
+        <Popover>
+          <Dialog className={styles.dialog}>
+            <RangeCalendar>
+              <header className={styles.dialogHeader}>
+                <Button slot="previous">
+                  <ChevronLeft />
+                </Button>
+                <Heading className={styles.dialogHeading} />
+                <Button slot="next">
+                  <ChevronRight />
+                </Button>
+              </header>
+              <CalendarGrid className={styles.calendar}>
+                {(date) => (
+                  <CalendarCell
+                    date={date}
+                    className={styles.day}
+                  />
+                )}
+              </CalendarGrid>
+            </RangeCalendar>
+          </Dialog>
+        </Popover>
+      </InputWrapper>
     </DateRangePicker>
   )
 }
