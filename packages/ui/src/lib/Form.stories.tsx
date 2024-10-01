@@ -13,6 +13,7 @@ import { Button } from '@midas-ds/button'
 const meta: Meta<typeof AriaForm> = {
   component: AriaForm,
   title: 'Examples/Form',
+  tags: ['autodocs'],
   argTypes: {},
 }
 export default meta
