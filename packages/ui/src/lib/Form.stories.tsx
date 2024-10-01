@@ -12,6 +12,7 @@ import { Select, Item } from '@midas-ds/select'
 const meta: Meta<typeof AriaForm> = {
   component: AriaForm,
   title: 'Examples/Form',
+  tags: ['autodocs'],
   argTypes: {},
 }
 export default meta
@@ -41,6 +42,8 @@ export const Form: Story = {
           <TextField
             label="Postnummer"
             description="XXX XX"
+            isInvalid
+            errorMessage="Fel på formatteringen"
           />
         </FlexItem>
         <FlexItem col={8}>
