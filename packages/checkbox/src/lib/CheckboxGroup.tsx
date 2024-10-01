@@ -6,6 +6,7 @@ import {
   CheckboxGroupProps as AriaCheckboxGroupProps,
   CheckboxGroupStateContext,
   FieldError,
+  Group,
   Label,
   Text,
   ValidationResult,
@@ -77,22 +78,20 @@ export const CheckboxGroup = ({
   }
 
   return (
-    <InputWrapper
-      label={label}
-      description={description}
-      errorMessage={errorMessage}
+    <AriaCheckboxGroup
+      className={styles.checkboxGroup}
+      {...props}
     >
-      <AriaCheckboxGroup
-        {...props}
-        className={styles.checkboxGroup}
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
       >
-        {() => (
-          <>
-            {showSelectAll && <ToogleAll />}
-            {children}
-          </>
-        )}
-      </AriaCheckboxGroup>
-    </InputWrapper>
+        <Group className={styles.wrap}>
+          {showSelectAll && <ToogleAll />}
+          {children}
+        </Group>
+      </InputWrapper>
+    </AriaCheckboxGroup>
   )
 }
