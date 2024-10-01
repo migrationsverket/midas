@@ -19,6 +19,7 @@ import {
   Heading,
   Popover,
   RangeCalendar,
+  Calendar,
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
@@ -141,7 +142,7 @@ export const DatePicker = <T extends DateValue>({
 
         <Popover>
           <Dialog className={styles.dialog}>
-            <RangeCalendar>
+            <Calendar>
               <header className={styles.dialogHeader}>
                 <Button slot="previous">
                   <ChevronLeft />
@@ -159,7 +160,7 @@ export const DatePicker = <T extends DateValue>({
                   />
                 )}
               </CalendarGrid>
-            </RangeCalendar>
+            </Calendar>
           </Dialog>
         </Popover>
       </InputWrapper>
