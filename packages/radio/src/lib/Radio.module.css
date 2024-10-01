@@ -5,15 +5,23 @@
   font-family: display;
   display: flex;
   flex-direction: column;
+  height: 100%;
   &[data-disabled] {
+    pointer-events: none;
     opacity: 1;
     color: gray50;
   }
 }
 
+.wrap {
+  grid-area: Input;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .radio {
   font-size: inputLabel;
-  padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -29,6 +37,12 @@
     border-radius: 1.286rem;
     transition: all 200ms;
   }
+
+  &[data-focus-visible] {
+    outline: 2px solid black;
+    outline-offset: 2px;
+  }
+
   &[data-disabled] {
     color: gray50;
   }
@@ -51,28 +65,23 @@
   &[data-invalid]::before {
     border: 0.125rem solid signalRed100;
   }
-}
 
-.fieldError {
-  display: flex;
-  align-items: center;
-  gap: 0.313rem;
-  font-size: 0.875rem;
-  color: signalRed100;
-}
+  @media smBreakpoint {
+    padding: 0.875rem 1rem;
+    border: 1px solid black;
+    width: auto;
 
-.label {
-  font-size: inputLabel;
-  font-weight: regular;
-  color: gray150;
-  padding-bottom: 0.25rem;
-  [data-disabled] & {
-    color: gray50;
+    &:hover {
+      background-color: gray10;
+    }
+
+    &[data-invalid] {
+      border: 2px solid signalRed100;
+    }
+
+    &[data-disabled] {
+      pointer-events: none;
+      border-color: gray50;
+    }
   }
-}
-
-.text {
-  font-size: 0.875rem;
-  font-weight: regular;
-  padding-bottom: 0.5rem;
 }
