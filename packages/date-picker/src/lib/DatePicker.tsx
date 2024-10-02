@@ -60,7 +60,12 @@ export const DateRangePicker = <T extends DateValue>({
             slot="start"
             className={styles.date}
           >
-            {(segment) => <DateSegment segment={segment} />}
+            {(segment) => (
+              <DateSegment
+                className={styles.dateSegment}
+                segment={segment}
+              />
+            )}
           </DateInput>
           <span aria-hidden="true">-</span>
           <DateInput

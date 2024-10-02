@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, gray10, gray20, gray150, blue20, blue150 from tokens;
+@value display, gray10, gray20, gray60, gray150, blue20, blue150 from tokens;
 
 .datePicker {
   font-family: display;
@@ -32,6 +32,13 @@
 
 .date {
   display: flex;
+
+  & div[aria-valuetext='Tomt'] {
+    color: gray60;
+  }
+  & div[data-readonly='true'] {
+    color: gray60;
+  }
 }
 
 .dialog {
