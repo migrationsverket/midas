@@ -1,15 +1,49 @@
 {
-  "name": "ComboBox",
+  "name": "combobox",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/combobox/src",
   "projectType": "library",
   "tags": [],
   "targets": {
+    "info": {
+      "command": "npm view @midas-ds/{projectName} --json > apps/docs/static/data/{projectName}.json"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/checkbox/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "procuction",
+      "options": {
+        "outputPath": "dist/packages/{projectName}"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/combobox/jest.config.ts"
+        "jestConfig": "packages/{projectName}/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     }
   }

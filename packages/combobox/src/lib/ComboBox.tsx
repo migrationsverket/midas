@@ -19,7 +19,7 @@ import {
 } from 'react-aria-components'
 import { ChevronDown, TriangleAlert } from 'lucide-react'
 
-export interface ComboboxProps<T extends object>
+export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
   label?: string
   description?: string
@@ -36,7 +36,7 @@ export function ComboBox<T extends object>({
   children,
   items,
   ...props
-}: ComboboxProps<T>) {
+}: ComboBoxProps<T>) {
   return (
     <AriaComboBox
       {...props}

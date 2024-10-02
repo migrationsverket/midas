@@ -1,0 +1,48 @@
+---
+title: "Release: Sprint 12"
+description: .
+slug: release-sprint-12
+tags: [releaser]
+---
+
+import { ComboBox, Item } from '@midas-ds/combobox'
+import { DatePicker } from '@midas-ds/date-picker'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+Sammanfattning av release av Sprint 12 för Designsystemet. Och den första av dessa sammanfattningarna när Designsystemet går över till mer konsekventa och större uppdateringar. 
+
+{/* truncate */}
+
+## Ny komponent: ComboBox
+
+ComboBox komplemetterar Select i och med att det är en Select fastän man kan söka i den. Lämpar sig bra för en Select med väldigt många val.
+
+<LiveCodeBlock scope={{ComboBox, Item}}>
+{`<ComboBox
+    label="Vad är din favoritfrukt?"
+    placeholder="Välj en frukt"
+    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+>
+    {(item) => <Item textValue={item.name}>{item.name}</Item>}
+</ComboBox>`}
+</LiveCodeBlock>
+
+## Ny komponent: DatePicker
+
+DatePicker har delats upp i två `DatePicker` och `DateRangePicker`. Om du använde DatePicker innan behöver du troligtvis byta namn till `DateRangePicker`. 
+DatePicker används för att välja ett datum, DateRangePicker för att välja ett spann av datum.
+
+<LiveCodeBlock scope={{DatePicker}}>
+{`<DatePicker label="Välj datum" />`}
+</LiveCodeBlock>
+
+## Omskrivning av inputs
+Samtliga inputs har gåts igenom och uppdaterats.
+
+## InfoBanner kan nu stängas
+
+Ny property låter nu användaren klicka bort InfoBanners. Default är dock att de inte kan stängas.
+
+<LiveCodeBlock scope={{DatePicker}}>
+{`<DatePicker label="Välj datum" />`}
+</LiveCodeBlock>

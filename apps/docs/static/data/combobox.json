@@ -1,0 +1,64 @@
+{
+  "_id": "@midas-ds/combobox@0.1.0",
+  "name": "@midas-ds/combobox",
+  "dist-tags": {
+    "latest": "0.1.0"
+  },
+  "versions": [
+    "0.1.0"
+  ],
+  "time": {
+    "created": "2024-10-02T14:28:10.145Z",
+    "0.1.0": "2024-10-02T14:28:10.431Z",
+    "modified": "2024-10-02T14:28:10.734Z"
+  },
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "readmeFilename": "",
+  "_contentLength": 0,
+  "version": "0.1.0",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "32c17522ec346a28604906846fedad9d373216bb",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-6UqBpVgU+m67ec2FUOyg7FYZ8DW6Y2QH3O+kHtX4bJiNNP25PAXVzPPfz8MrXL/N+atMF0gcwteOjNK+jITfpA==",
+    "shasum": "c1c5b74e08aace2af8c1038fccabb9c19436e55b",
+    "tarball": "https://registry.npmjs.org/@midas-ds/combobox/-/combobox-0.1.0.tgz",
+    "fileCount": 5,
+    "unpackedSize": 414506,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIERCyF675yvwzpXE8Idv/7kiWiZLx0JDLCbvzQ5uETA4AiEAi2X4Gqijv2vPCODFAqRoDd1p9MT5+gFFDIV7sVMgbGc="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/combobox_0.1.0_1727879290279_0.9307140656394575"
+  },
+  "_hasShrinkwrap": false
+}
