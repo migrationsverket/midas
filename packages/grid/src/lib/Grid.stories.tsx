@@ -5,7 +5,7 @@ import { GridItem } from './GridItem'
 
 const meta: Meta<typeof Grid> = {
   component: Grid,
-  title: 'Grid',
+  title: 'Components/Grid',
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   argTypes: {

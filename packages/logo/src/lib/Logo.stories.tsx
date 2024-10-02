@@ -3,7 +3,7 @@ import { Logo } from './Logo'
 
 const meta: Meta<typeof Logo> = {
   component: Logo,
-  title: 'Logo',
+  title: 'Components/Logo',
   tags: ['autodocs'],
   argTypes: {
     size: {

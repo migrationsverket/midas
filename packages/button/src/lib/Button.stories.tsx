@@ -3,7 +3,7 @@ import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: 'Button',
+  title: 'Components/Button',
   tags: ['autodocs'],
   args: {
     variant: 'primary',
@@ -16,7 +16,7 @@ const meta: Meta<typeof Button> = {
       defaultValue: 'primary',
     },
     size: {
-      options: ['small','default (null)'],
+      options: ['small', 'default (null)'],
       control: { type: 'radio' },
       defaultValue: null,
     },

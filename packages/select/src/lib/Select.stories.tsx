@@ -4,7 +4,7 @@ import React from 'react'
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: 'Select',
+  title: 'Components/Select',
   tags: ['autodocs'],
   args: {
     label: 'Etikett',

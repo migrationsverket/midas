@@ -47,7 +47,7 @@ const preview = {
     },
     storySort: {
       method: 'alphabetical',
-      order: ['*', 'Examples', ['Intro', '*']],
+      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
     },
   },
 }

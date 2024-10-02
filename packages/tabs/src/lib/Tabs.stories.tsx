@@ -4,7 +4,7 @@ import { Button } from '@midas-ds/button'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
-  title: 'Tabs',
+  title: 'Components/Tabs',
   tags: ['autodocs'],
 }
 export default meta

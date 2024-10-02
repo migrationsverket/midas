@@ -1,9 +1,10 @@
 import { Checkbox } from './Checkbox'
 import { Meta, StoryObj } from '@storybook/react'
 import { CheckboxGroup } from './CheckboxGroup'
+import React from 'react'
 
 const meta: Meta<typeof CheckboxGroup> = {
-  title: 'CheckboxGroup',
+  title: 'Components/Checkbox/CheckboxGroup',
   component: CheckboxGroup,
   parameters: {
     layout: 'centered',
@@ -63,6 +64,6 @@ export const SelectAll: Story = {
     label: 'Etikett',
     description: 'Beskrivning',
     errorMessage: 'här gick det snett',
-    showSelectAll: true
+    showSelectAll: true,
   },
 }

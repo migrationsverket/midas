@@ -3,7 +3,7 @@ import { InfoBanner } from './InfoBanner'
 
 const meta: Meta<typeof InfoBanner> = {
   component: InfoBanner,
-  title: 'InfoBanner',
+  title: 'Components/InfoBanner',
   tags: ['autodocs'],
 }
 export default meta

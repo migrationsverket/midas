@@ -1,78 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { RadioGroup, Radio } from './Radio';
+import type { Meta, StoryObj } from '@storybook/react'
+import { Radio } from './Radio'
 
-const meta: Meta<typeof RadioGroup> = {
-  title: 'Radio',
-  component: RadioGroup,
+const meta: Meta<typeof Radio> = {
+  title: 'Components/Radio',
+  component: Radio,
   tags: ['autodocs'],
+}
+export default meta
+
+type Story = StoryObj<typeof Radio>
+
+export const Example: Story = {
   args: {
-    label: 'Group label',
-    errorMessage: 'errrrrror',
+    value: 'unsubscribe',
+    isDisabled: false,
   },
-  argTypes: {
-    children: { table: { disable: true } },
-    label: {
-      type: 'string',
-      control: { type: 'text' },
-    },
-    isDisabled: {
-      type: 'boolean',
-      options: [false, true],
-      control: { type: 'radio' },
-    },
-    isInvalid: {
-      type: 'boolean',
-      options: [false, true],
-      control: { type: 'radio' },
-    },
+  render: ({ ...args }) => {
+    return <Radio {...args}>Unsubscribe</Radio>
   },
-};
-export default meta;
-
-type Story = StoryObj<typeof RadioGroup>;
-
-const radioItems = [
-  <Radio value={'banan'}>Banan</Radio>,
-  <Radio value={'apelsin'}>Apelsin</Radio>,
-  <Radio value={'kiwi'}>Kiwi</Radio>,
-];
-const radioItemsOneDisabled = [
-  <Radio value={'banan'}>Banan</Radio>,
-  <Radio value={'apelsin'} isDisabled={true}>
-    Apelsin
-  </Radio>,
-  <Radio value={'kiwi'}>Kiwi</Radio>,
-];
-
-export const Normal: Story = {
-  args: {
-    label: 'Frukt',
-    description: 'Välj en frukt',
-    children: [
-      <Radio value={'banan'}>Banan</Radio>,
-      <Radio value={'apelsin'}>Apelsin</Radio>,
-      <Radio value={'kiwi'}>Kiwi</Radio>,
-    ],
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: radioItems,
-    isDisabled: true,
-  },
-};
-
-export const OneItemDisabled: Story = {
-  args: {
-    children: radioItemsOneDisabled,
-  },
-};
-
-export const Error: Story = {
-  args: {
-    children: radioItems,
-    isInvalid: true,
-    errorMessage: 'Det här stämmer inte!',
-  },
-};
+}
