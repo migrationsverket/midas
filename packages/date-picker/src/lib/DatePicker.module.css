@@ -35,6 +35,7 @@
 
   & div[aria-valuetext='Tomt'] {
     color: gray60;
+    text-transform: uppercase;
   }
   & div[data-readonly='true'] {
     color: gray60;

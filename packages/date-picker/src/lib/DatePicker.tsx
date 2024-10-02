@@ -72,11 +72,16 @@ export const DateRangePicker = <T extends DateValue>({
             slot="end"
             className={styles.date}
           >
-            {(segment) => <DateSegment segment={segment} />}
+            {(segment) => (
+              <DateSegment
+                segment={segment}
+                className={styles.dateSegment}
+              />
+            )}
           </DateInput>
 
           <Button>
-            <CalendarDays size={22} />
+            <CalendarDays size={16} />
           </Button>
         </Group>
 
@@ -138,10 +143,15 @@ export const DatePicker = <T extends DateValue>({
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput className={styles.date}>
-            {(segment) => <DateSegment segment={segment} />}
+            {(segment) => (
+              <DateSegment
+                segment={segment}
+                className={styles.dateSegment}
+              />
+            )}
           </DateInput>
           <Button>
-            <CalendarDays size={22} />
+            <CalendarDays size={16} />
           </Button>
         </Group>
 
