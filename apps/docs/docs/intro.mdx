@@ -12,12 +12,23 @@ import { Card } from '@midas-ds/card';
 import { Grid, GridItem } from '@midas-ds/grid';
 import Link from '@docusaurus/Link'
 import { Figma, Component, Code } from 'lucide-react'
-
+import { InfoBanner } from "@midas-ds/info-banner";
 
 # Midas
 **Migrationsverkets designsystem**
 
-Här hittar du designriktlinjer, dokumentation om komponenter samt andra resurser som används för att bygga Migrationsverkets tjänster och system.
+
+
+<div className="row">
+  <div className="col col--8">
+    Här hittar du designriktlinjer, dokumentation om komponenter samt andra resurser som används för att bygga Migrationsverkets tjänster och system.
+    <InfoBanner
+      type="info"
+      title="Status: Beta"
+      message="Migrationsverkets designsystem är för närvarande i beta-stadiet. Information på denna dokumentationsweb är i vissa fall ofullständig och kan ändras med kort varsel."
+    />
+  </div>
+</div>
 
 <Grid fluid="true">
   <GridItem col={4}>

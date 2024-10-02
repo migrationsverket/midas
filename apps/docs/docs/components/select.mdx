@@ -14,8 +14,8 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 En Select visar en hopfällbar lista med alternativ och låter en användare välja ett av dem.
 
-Select är en typ av input-fält som används för att välja **ett** alternativ av fler än fyra (4) av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
-Om det är fler alternativ än färre än fyra (4) används med fördel [Radio](./radio.mdx) istället.
+Select är en typ av input-fält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
+Om det är färre alternativ än fem används med fördel [Radio](./radio.mdx) istället.
 
 ## Installation och användning
 
@@ -24,7 +24,7 @@ npm install @midas-ds/select
 ```
 
 ```tsx
-import { Select } from '@midas-ds/select'
+import { Item, Select } from '@midas-ds/select'
 ```
 
 <LiveCodeBlock scope={{Select, Item}}>
@@ -38,7 +38,18 @@ import { Select } from '@midas-ds/select'
 </LiveCodeBlock>
 
 ## Riktlinjer
-TBD
+
+### Val av komponent
+
+```mermaid
+flowchart TD;
+    A[Ska användaren kunna välja mer än ett alternativ?] 
+    A -->|Ja| B[Använd Checkbox]
+    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]
+    C -->|Ja| E[Använd Select]
+    C -->|Nej| D[Använd Radio]
+    
+```
 
 ## Dependencies
 

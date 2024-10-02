@@ -84,6 +84,7 @@ const config: Config = {
       content:
         'Midas är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
       isCloseable: false,
+      backgroundColor: '#eaf2f6',
     },
     navbar: {
       title: 'Designsystem',

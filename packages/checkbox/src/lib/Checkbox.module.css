@@ -121,13 +121,24 @@
 
 .checkboxGroupLabel {
   font-weight: mediumWeight;
-  font-size: 1.125rem;
+  font-size: 1rem;
+}
+
+.checkboxGroupDescription {
+  font-weight: regularWeight;
+  font-size: 0.875rem; 
+}
+
+.labelGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .checkboxGroup span {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 0.5rem;
 }
 
 .checkboxGroup[data-invalid] {

@@ -20,6 +20,8 @@ import { LinkButton } from '@midas-ds/link-button'
 import { SearchField } from '@midas-ds/search-field'
 import { Select, Item } from '@midas-ds/select'
 import { Tabs } from '@midas-ds/tabs'
+import { TextArea } from '@midas-ds/textarea'
+import { theme } from '@midas-ds/theme'
 
 export {
   Button,
@@ -47,4 +49,6 @@ export {
   Select,
   Item,
   Tabs,
+  TextArea,
+  theme,
 }

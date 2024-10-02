@@ -40,6 +40,13 @@ export const MaxCharacters = {
   },
 }
 
+export const ShowCounter = {
+  args: {
+    ...Primary.args,
+    showCounter: true,
+  },
+}
+
 export const Disabled = {
   args: {
     ...Primary.args,

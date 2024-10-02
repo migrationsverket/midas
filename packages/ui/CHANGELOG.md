@@ -1,3 +1,63 @@
+## 0.5.28 (2024-09-26)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+
+### 🧱 Updated Dependencies
+
+- Updated select to 0.4.25
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 0.5.27 (2024-09-24)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+
+### 🧱 Updated Dependencies
+
+- Updated button to 0.6.3
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.5.26 (2024-09-19)
 
 
