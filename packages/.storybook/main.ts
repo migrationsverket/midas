@@ -23,23 +23,13 @@ const config: StorybookConfig = {
   },
   staticDirs: ['./static'],
   typescript: {
-    check: false,
-    /**
-     * For improved speed use react-docgen instead of react-docgen-typescript
-     * Use react-docgen-typescript for verbose documentation of mantine components
-     */
-    reactDocgen: 'react-docgen-typescript', // use react-docgen instead of react-docgen-typescript to improve speed
+    reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      // Speeds up Storybook build time
       compilerOptions: {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-      // Makes union prop types like variant and size appear as select controls
-      shouldExtractLiteralValuesFromEnum: true,
-      // Makes string and boolean types that can be undefined appear as inputs and switches
-      shouldRemoveUndefinedFromOptional: true,
-      // Filter out third-party props from node_modules except @mantine packages
+      // Filter out third-party props from node_modules except @mui packages.
       propFilter: (prop) =>
         prop.parent
           ? !/node_modules\/(?!react-aria-components)/.test(
