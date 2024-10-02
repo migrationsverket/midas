@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react'
-import { Combobox, Item } from './ComboBox'
+import { ComboBox, Item } from './ComboBox'
 
 describe('Combobox', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <Combobox
+      <ComboBox
         description="Beskrivning"
         label="Etikett"
         placeholder="One item..."
       >
         <Item>Item A</Item>
-      </Combobox>
+      </ComboBox>
     )
     expect(baseElement).toBeTruthy()
   })
