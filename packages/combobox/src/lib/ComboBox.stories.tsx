@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Combobox, Item } from './ComboBox'
+import { ComboBox, Item } from './ComboBox'
 
-const meta: Meta<typeof Combobox> = {
-  component: Combobox,
+const meta: Meta<typeof ComboBox> = {
+  component: ComboBox,
   title: 'ComboBox',
   tags: ['autodocs'],
   args: {
@@ -10,14 +10,14 @@ const meta: Meta<typeof Combobox> = {
     description: 'Beskrivning',
   },
   argTypes: {
-    placeholder: { control: 'text' },  // Correctly define placeholder as a control
+    placeholder: { control: 'text' },
   },
   parameters: {},
 }
 
 export default meta
 
-type Story = StoryObj<typeof Combobox>
+type Story = StoryObj<typeof ComboBox>
 export const Empty: Story = {}
 
 const ITEMS: string[] = []
@@ -67,34 +67,48 @@ function generateMockOptions(count: number) {
   })
 }
 
-const options = generateMockOptions(300)
+const options = generateMockOptions(30)
 
 export const OneItem: Story = {
   args: {
     placeholder: 'One item...',
   },
   render: (args: any) => (
-    <Combobox
+    <ComboBox
       items={{ value: 'value' }}
       {...args}
     >
       <Item value={{ value: 'item' }}>Item A</Item>
-    </Combobox>
+    </ComboBox>
   ),
 }
-
 export const ManyItems: Story = {
   args: {
     placeholder: 'Many items...',
   },
   render: (args: any) => (
-    <Combobox
+    <ComboBox
       label="Välj en frukt"
-      description='description'
+      description="description"
       items={options}
     >
       {(item) => <Item textValue={item.name}>{item.name}</Item>}
-    </Combobox>
+    </ComboBox>
+  ),
+}
+
+export const Autocomplete: Story = {
+  args: {
+    placeholder: 'Autocomplete...',
+  },
+  render: (args: any) => (
+    <ComboBox
+      label="Välj en frukt"
+      description="description"
+      items={options}
+    >
+      {(item) => <Item textValue={item.name}>{item.name}</Item>}
+    </ComboBox>
   ),
 }
 
@@ -104,10 +118,10 @@ export const Invalid: Story = {
     errorMessage: 'Fel!',
   },
   render: (args: any) => (
-    <Combobox {...args}>
+    <ComboBox {...args}>
       <Item>Apple</Item>
       <Item>Lemon</Item>
-    </Combobox>
+    </ComboBox>
   ),
 }
 
@@ -123,8 +137,8 @@ export const disabled: Story = {
     },
   },
   render: (args: any) => (
-    <Combobox {...args}>
+    <ComboBox {...args}>
       <Item>Hej</Item>
-    </Combobox>
+    </ComboBox>
   ),
 }

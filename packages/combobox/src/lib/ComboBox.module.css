@@ -35,7 +35,9 @@
   background-color: backgroundSecondary;
   box-shadow: 0 0.063rem 0 0 black;
   &:focus {
-    outline: none;
+    outline-offset: 0.125rem;
+    border: none;
+    outline: 0.125rem solid black;
   }
   &:hover {
     background-color: gray20;

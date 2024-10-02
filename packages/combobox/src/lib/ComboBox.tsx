@@ -4,20 +4,17 @@ import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
-  SelectProps as AriaSelectProps,
   ValidationResult,
 } from 'react-aria-components'
 import {
   FieldError,
   Text,
-  Select as AriaSelect,
   Label,
   Button,
   Input,
-  SelectValue,
   Popover,
+  ComboBox as AriaComboBox,
   ListBox,
-  ComboBox,
   ListBoxItem,
 } from 'react-aria-components'
 import { ChevronDown, TriangleAlert } from 'lucide-react'
@@ -32,7 +29,7 @@ export interface ComboboxProps<T extends object>
   placeholder?: string
 }
 
-export function Combobox<T extends object>({
+export function ComboBox<T extends object>({
   label,
   description,
   errorMessage,
@@ -41,7 +38,7 @@ export function Combobox<T extends object>({
   ...props
 }: ComboboxProps<T>) {
   return (
-    <ComboBox
+    <AriaComboBox
       {...props}
       className={styles.combobox}
     >
@@ -85,7 +82,7 @@ export function Combobox<T extends object>({
       >
         <ListBox items={items}>{children}</ListBox>
       </Popover>
-    </ComboBox>
+    </AriaComboBox>
   )
 }
 
