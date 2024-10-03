@@ -11,13 +11,13 @@ import { InfoBanner } from '@midas-ds/info-banner'
 import { SearchField } from '@midas-ds/search-field'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-Sammanfattning av release av Sprint 12 för Designsystemet. Och den första av dessa sammanfattningarna när Designsystemet går över till mer konsekventa och större uppdateringar. 
+Sammanfattning av release Sprint 12. Med denna release går Designsystemet över till mer konsekventa och större releaser. 
 
 {/* truncate */}
 
 ## Ny komponent: ComboBox
 
-ComboBox komplemetterar Select i och med att det är en Select fastän man kan söka i den. Lämpar sig bra för en Select med väldigt många val.
+ComboBox är ett alternativ till Select som lämpar sig bra när listan har fler än runt 10 val. Användaren kan då filtrera listan genom att skriva i fältet.
 
 <LiveCodeBlock scope={{ComboBox, Item}}>
 {`<ComboBox
@@ -31,19 +31,19 @@ ComboBox komplemetterar Select i och med att det är en Select fastän man kan s
 
 ## Ny komponent: DatePicker
 
-DatePicker har delats upp i två `DatePicker` och `DateRangePicker`. Om du använde DatePicker innan behöver du troligtvis byta namn till `DateRangePicker`. 
-DatePicker används för att välja ett datum, DateRangePicker för att välja ett spann av datum.
+DatePicker har delats upp i två komponenter: `DatePicker` och `DateRangePicker`. Om du använde DatePicker innan behöver du troligtvis byta namn till `DateRangePicker`. 
+DatePicker används för att välja ett (1) datum, DateRangePicker för att välja flera datum i ett intervall.
 
 <LiveCodeBlock scope={{DatePicker}}>
 {`<DatePicker label="Välj datum" />`}
 </LiveCodeBlock>
 
-## Omskrivning av inputs
-Samtliga inputs har gåts igenom och uppdaterats.
+## Refactor av inmatningskomponenter
+Samtliga inmatningskomponenter har uppdaterats med en wrapper för etikett, hjälptext och validering.
 
 ## InfoBanner kan nu stängas
 
-Ny property låter nu användaren klicka bort InfoBanners. Default är dock att de inte kan stängas.
+Vi har lagt till en property som ger användaren möjlighet att stänga en InfoBanner. Standardbeteende är att InfoBanner inte kan stängas.
 
 <LiveCodeBlock scope={{InfoBanner}}>
 {`<InfoBanner
@@ -55,11 +55,11 @@ Ny property låter nu användaren klicka bort InfoBanners. Default är dock att 
 </LiveCodeBlock>
 
 ## SearchField har nu rätt props
-Ett tidigare fel gjorde att inga props kunde passas till SearchField. Så här omlanserar vi SearchField!
+Ett tidigare fel gjorde att inga props kunde passas till SearchField. Nu är det rättat! 
 
 <LiveCodeBlock scope={{SearchField}}>
 {`<SearchField placeholder="Sök..." />`}
 </LiveCodeBlock>
 
 ## Kodexempel i Storybook
-Vi har börjat med en sektion i Storybook där vi samlar kodexempel på layouter med flera komponenter.
+Vi har börjat med en sektion i Storybook där vi samlar exempel på layouter med flera komponenter.
