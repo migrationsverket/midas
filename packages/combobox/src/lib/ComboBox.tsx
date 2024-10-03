@@ -77,9 +77,8 @@ export function ComboBox<T extends object>({
 export function Item(props: ListBoxItemProps) {
   return (
     <ListBoxItem
-      value={props.value}
-      {...props}
       className={styles.listBoxItem}
+      {...props}
     />
   )
 }

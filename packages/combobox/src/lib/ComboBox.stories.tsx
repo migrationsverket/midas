@@ -70,10 +70,10 @@ export const OneItem: Story = {
   },
   render: (args: any) => (
     <ComboBox
-      items={{ value: 'value' }}
+      items={[{ id: 'value', name: 'One item' }]}
       {...args}
     >
-      <Item value={{ value: 'item' }}>Item A</Item>
+      {(item: Item) => <Item>{item.name}</Item>}
     </ComboBox>
   ),
 }
@@ -89,23 +89,7 @@ export const ManyItems: Story = {
       items={options}
       {...args}
     >
-      {(item: Item) => <Item textValue={item.name}>{item.name}</Item>}
-    </ComboBox>
-  ),
-}
-
-export const Autocomplete: Story = {
-  args: {
-    placeholder: 'Autocomplete...',
-    label: 'Välj en frukt',
-    description: 'description',
-  },
-  render: (args: any) => (
-    <ComboBox
-      {...args}
-      items={options}
-    >
-      {(item: Item) => <Item textValue={item.name}>{item.name}</Item>}
+      {(item: Item) => <Item>{item.name}</Item>}
     </ComboBox>
   ),
 }

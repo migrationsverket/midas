@@ -35,7 +35,7 @@ import { ComboBox } from '@midas-ds/combobox'
     placeholder="Välj en frukt"
     items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 >
-    {(item) => <Item textValue={item.name}>{item.name}</Item>}
+    {(item) => <Item>{item.name}</Item>}
 </ComboBox>`}
 </LiveCodeBlock>
 
