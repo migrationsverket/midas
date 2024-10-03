@@ -13,14 +13,14 @@ export default defineConfig({
     ...[
       dts({
         entryRoot: 'src',
-        tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+        tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
       }),
       react(),
       nxViteTsPaths(),
     ],
     dts({
       entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
   ],
 
