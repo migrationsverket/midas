@@ -10,7 +10,7 @@ import {
 import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
 import React from 'react'
 
-export interface TextFieldProps extends AriaTextFieldProps {
+export interface TextAreaProps extends AriaTextFieldProps {
   label?: string
   description?: string
   rows?: number
@@ -19,7 +19,7 @@ export interface TextFieldProps extends AriaTextFieldProps {
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
-export const TextArea: React.FC<TextFieldProps> = ({
+export const TextArea: React.FC<TextAreaProps> = ({
   label,
   description,
   rows,
