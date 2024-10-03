@@ -7,7 +7,7 @@ description: Sökbar version av Select
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/combobox.json'
-import { ComboBox, Item } from '@midas-ds/combobox'
+import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Combobox'} info={Info} friendlyName="Flerval med sök, väljare med sök, dropdown med sök" />
@@ -29,13 +29,13 @@ npm install @midas-ds/combobox
 import { ComboBox } from '@midas-ds/combobox'
 ```
 
-<LiveCodeBlock scope={{ComboBox, Item}}>
+<LiveCodeBlock scope={{ComboBox, ComboBoxItem}}>
 {`<ComboBox
     label="Vad är din favoritfrukt?"
     placeholder="Välj en frukt"
     items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 >
-    {(item) => <Item>{item.name}</Item>}
+    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
 </ComboBox>`}
 </LiveCodeBlock>
 
