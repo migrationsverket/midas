@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
 
 .button {
   font-family: display;
@@ -85,9 +85,29 @@
 
   &[data-pressed] {
     background-color: gray20;
-  
   }
 
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+}
+
+.iconBtn {
+  background-color: transparent;
+  padding: 1.625rem;
+  color: black;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+  }
   &[data-focus-visible] {
     outline: 0.125rem solid black;
     outline-offset: 0.125rem;
