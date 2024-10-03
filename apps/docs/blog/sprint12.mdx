@@ -5,7 +5,7 @@ slug: release-sprint-12
 tags: [releaser]
 ---
 
-import { ComboBox, Item } from '@midas-ds/combobox'
+import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
 import { DatePicker } from '@midas-ds/date-picker'
 import { InfoBanner } from '@midas-ds/info-banner'
 import { SearchField } from '@midas-ds/search-field'
@@ -19,13 +19,13 @@ Sammanfattning av release av Sprint 12 för Designsystemet. Och den första av d
 
 ComboBox komplemetterar Select i och med att det är en Select fastän man kan söka i den. Lämpar sig bra för en Select med väldigt många val.
 
-<LiveCodeBlock scope={{ComboBox, Item}}>
+<LiveCodeBlock scope={{ComboBox, ComboBoxItem}}>
 {`<ComboBox
     label="Vad är din favoritfrukt?"
     placeholder="Välj en frukt"
     items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 >
-    {(item) => <Item textValue={item.name}>{item.name}</Item>}
+    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
 </ComboBox>`}
 </LiveCodeBlock>
 
