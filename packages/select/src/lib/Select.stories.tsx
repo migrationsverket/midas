@@ -19,14 +19,15 @@ const meta: Meta<typeof Select> = {
 export default meta
 
 type Story = StoryObj<typeof Select>
-export const Empty: Story = {}
 
 const ITEMS: string[] = []
 for (let i = 0; i < 40; i += 1) {
   ITEMS.push(`value ${i}`)
 }
 
-function generateMockOptions(count: number) {
+function generateMockOptions(
+  count: number
+): Iterable<{ id: number; name: string }> {
   const fruits = [
     'Apple',
     'Banana',

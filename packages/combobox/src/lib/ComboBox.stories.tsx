@@ -3,7 +3,7 @@ import { ComboBox, Item } from './ComboBox'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
-  title: 'ComboBox',
+  title: 'Components/ComboBox',
   tags: ['autodocs'],
   args: {
     label: 'Etikett',
@@ -18,14 +18,9 @@ const meta: Meta<typeof ComboBox> = {
 export default meta
 
 type Story = StoryObj<typeof ComboBox>
-export const Empty: Story = {}
+type Item = { id: number; name: string }
 
-const ITEMS: string[] = []
-for (let i = 0; i < 40; i += 1) {
-  ITEMS.push(`value ${i}`)
-}
-
-function generateMockOptions(count: number) {
+function generateMockOptions(count: number): Iterable<Item> {
   const fruits = [
     'Apple',
     'Banana',
@@ -82,17 +77,19 @@ export const OneItem: Story = {
     </ComboBox>
   ),
 }
+
 export const ManyItems: Story = {
   args: {
-    placeholder: 'Many items...',
+    placeholder: 'Välj eller sök frukt',
+    label: 'Välj en frukt',
+    description: 'Description',
   },
   render: (args: any) => (
     <ComboBox
-      label="Välj en frukt"
-      description="description"
       items={options}
+      {...args}
     >
-      {(item) => <Item textValue={item.name}>{item.name}</Item>}
+      {(item: Item) => <Item textValue={item.name}>{item.name}</Item>}
     </ComboBox>
   ),
 }
@@ -100,14 +97,15 @@ export const ManyItems: Story = {
 export const Autocomplete: Story = {
   args: {
     placeholder: 'Autocomplete...',
+    label: 'Välj en frukt',
+    description: 'description',
   },
   render: (args: any) => (
     <ComboBox
-      label="Välj en frukt"
-      description="description"
+      {...args}
       items={options}
     >
-      {(item) => <Item textValue={item.name}>{item.name}</Item>}
+      {(item: Item) => <Item textValue={item.name}>{item.name}</Item>}
     </ComboBox>
   ),
 }
@@ -128,13 +126,6 @@ export const Invalid: Story = {
 export const disabled: Story = {
   args: {
     isDisabled: true,
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Avoid using disabled',
-      },
-    },
   },
   render: (args: any) => (
     <ComboBox {...args}>

@@ -18,6 +18,7 @@ import {
   ListBoxItem,
 } from 'react-aria-components'
 import { ChevronDown, TriangleAlert } from 'lucide-react'
+import { InputWrapper } from '@midas-ds/textfield'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -39,43 +40,30 @@ export function ComboBox<T extends object>({
 }: ComboBoxProps<T>) {
   return (
     <AriaComboBox
-      {...props}
       className={styles.combobox}
+      {...props}
     >
-      <Label className={styles.label}>{label}</Label>
-      {description && (
-        <Text
-          slot="description"
-          className={styles.text}
-        >
-          {description}
-        </Text>
-      )}
-
-      <Input className={styles.input} />
-      <Button className={styles.button}>
-        <div
-          className={styles.icon}
-          aria-hidden="true"
-        >
-          <ChevronDown
-            height={16}
-            width={16}
-          />
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
+      >
+        <div className={styles.wrap}>
+          <Input className={styles.input} />
+          <Button className={styles.button}>
+            <div
+              className={styles.icon}
+              aria-hidden="true"
+            >
+              <ChevronDown
+                height={16}
+                width={16}
+              />
+            </div>
+          </Button>
         </div>
-      </Button>
+      </InputWrapper>
 
-      {errorMessage && (
-        <FieldError className={styles.fieldError}>
-          <>
-            <TriangleAlert
-              height={16}
-              width={16}
-            />
-            {errorMessage}
-          </>
-        </FieldError>
-      )}
       <Popover
         className={styles.popover}
         offset={0}
