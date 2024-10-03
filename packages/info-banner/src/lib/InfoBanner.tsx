@@ -46,8 +46,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
         {dismissable && (
           <div className={styles.dismissable}>
             <Button
-              variant="tertiary"
-              size="small"
+              variant="icon"
               aria-label="Stäng"
               onPress={() => setShow(false)}
             >
