@@ -7,9 +7,6 @@ import type {
   ValidationResult,
 } from 'react-aria-components'
 import {
-  FieldError,
-  Text,
-  Label,
   Button,
   Input,
   Popover,
@@ -17,7 +14,7 @@ import {
   ListBox,
   ListBoxItem,
 } from 'react-aria-components'
-import { ChevronDown, TriangleAlert } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { InputWrapper } from '@midas-ds/textfield'
 
 export interface ComboBoxProps<T extends object>
@@ -74,7 +71,7 @@ export function ComboBox<T extends object>({
   )
 }
 
-export function Item(props: ListBoxItemProps) {
+export function ComboBoxItem(props: ListBoxItemProps) {
   return (
     <ListBoxItem
       className={styles.listBoxItem}

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ComboBox, Item } from './ComboBox'
+import { ComboBox, ComboBoxItem } from './ComboBox'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -73,7 +73,7 @@ export const OneItem: Story = {
       items={[{ id: 'value', name: 'One item' }]}
       {...args}
     >
-      {(item: Item) => <Item>{item.name}</Item>}
+      {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
 }
@@ -89,7 +89,7 @@ export const ManyItems: Story = {
       items={options}
       {...args}
     >
-      {(item: Item) => <Item>{item.name}</Item>}
+      {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
 }
@@ -101,8 +101,8 @@ export const Invalid: Story = {
   },
   render: (args: any) => (
     <ComboBox {...args}>
-      <Item>Apple</Item>
-      <Item>Lemon</Item>
+      <ComboBoxItem>Apple</ComboBoxItem>
+      <ComboBoxItem>Lemon</ComboBoxItem>
     </ComboBox>
   ),
 }
@@ -113,7 +113,7 @@ export const disabled: Story = {
   },
   render: (args: any) => (
     <ComboBox {...args}>
-      <Item>Hej</Item>
+      <ComboBoxItem>Hej</ComboBoxItem>
     </ComboBox>
   ),
 }
