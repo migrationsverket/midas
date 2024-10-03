@@ -71,7 +71,6 @@ export function Select<T extends object>({
 export function Item(props: ListBoxItemProps) {
   return (
     <ListBoxItem
-      value={props.value}
       className={styles.listBoxItem}
       {...props}
     />
