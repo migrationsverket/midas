@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/breadcrumbs",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

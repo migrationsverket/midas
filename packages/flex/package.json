@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/flex",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

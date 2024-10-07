@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/logo",
-  "version": "0.2.51",
+  "version": "0.2.54",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

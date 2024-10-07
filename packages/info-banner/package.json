@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/info-banner",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {

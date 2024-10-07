@@ -1,10 +1,8 @@
 ## 0.5.2 (2024-10-07)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -18,8 +16,7 @@
 
 - **docs:** update url
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 

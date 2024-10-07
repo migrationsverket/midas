@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/theme",
-  "version": "0.5.23",
+  "version": "0.5.33",
   "main": "./index.js",
   "types": "./index.d.ts",
   "style": "index.css",
