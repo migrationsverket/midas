@@ -1,3 +1,10 @@
+## 0.5.52 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated toast to 0.5.2
+
 ## 0.5.51 (2024-10-07)
 
 
