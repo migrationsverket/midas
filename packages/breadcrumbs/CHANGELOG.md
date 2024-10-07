@@ -1,3 +1,28 @@
+## 0.0.5 (2024-10-07)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.0.4 (2024-09-12)
 
 

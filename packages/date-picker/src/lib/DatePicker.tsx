@@ -1,6 +1,7 @@
 'use client'
 
 import type {
+  DatePickerProps,
   DateRangePickerProps,
   DateValue,
   ValidationResult,
@@ -10,24 +11,109 @@ import {
   CalendarCell,
   CalendarGrid,
   DateInput,
-  DateRangePicker,
+  DatePicker as AriaDatePicker,
+  DateRangePicker as AriaDateRangePicker,
   DateSegment,
   Dialog,
-  FieldError,
   Group,
   Heading,
-  Label,
   Popover,
   RangeCalendar,
-  Text,
+  Calendar,
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
-import { TextFieldStyles } from '@midas-ds/textfield'
+import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
 import styles from './DatePicker.module.css'
 
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
+  label?: string
+  description?: string
+  errorMessage?: string | ((validation: ValidationResult) => string)
+}
+
+export const DateRangePicker = <T extends DateValue>({
+  label,
+  description,
+  errorMessage,
+  ...props
+}: MidasDateRangePickerProps<T>) => {
+  return (
+    <AriaDateRangePicker
+      {...props}
+      className={clsx(
+        TextFieldStyles.inputField,
+        styles.datePicker,
+        props.className
+      )}
+    >
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
+      >
+        <Group
+          className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
+        >
+          <DateInput
+            slot="start"
+            className={styles.date}
+          >
+            {(segment) => (
+              <DateSegment
+                className={styles.dateSegment}
+                segment={segment}
+              />
+            )}
+          </DateInput>
+          <span aria-hidden="true">-</span>
+          <DateInput
+            slot="end"
+            className={styles.date}
+          >
+            {(segment) => (
+              <DateSegment
+                segment={segment}
+                className={styles.dateSegment}
+              />
+            )}
+          </DateInput>
+
+          <Button>
+            <CalendarDays size={16} />
+          </Button>
+        </Group>
+
+        <Popover>
+          <Dialog className={styles.dialog}>
+            <RangeCalendar>
+              <header className={styles.dialogHeader}>
+                <Button slot="previous">
+                  <ChevronLeft />
+                </Button>
+                <Heading className={styles.dialogHeading} />
+                <Button slot="next">
+                  <ChevronRight />
+                </Button>
+              </header>
+              <CalendarGrid className={styles.calendar}>
+                {(date) => (
+                  <CalendarCell
+                    date={date}
+                    className={styles.day}
+                  />
+                )}
+              </CalendarGrid>
+            </RangeCalendar>
+          </Dialog>
+        </Popover>
+      </InputWrapper>
+    </AriaDateRangePicker>
+  )
+}
+
+interface MidasDatePickerProps<T extends DateValue> extends DatePickerProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
@@ -38,70 +124,61 @@ export const DatePicker = <T extends DateValue>({
   description,
   errorMessage,
   ...props
-}: MidasDateRangePickerProps<T>) => {
+}: MidasDatePickerProps<T>) => {
   return (
-    <DateRangePicker
+    <AriaDatePicker
+      {...props}
       className={clsx(
-        TextFieldStyles.textField,
+        TextFieldStyles.inputField,
         styles.datePicker,
         props.className
       )}
-      {...props}
     >
-      <Label className={TextFieldStyles.text}>{label}</Label>
-      <Group
-        className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
       >
-        <DateInput
-          slot="start"
-          className={styles.date}
+        <Group
+          className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
-        <span aria-hidden="true">–</span>
-        <DateInput
-          slot="end"
-          className={styles.date}
-        >
-          {(segment) => <DateSegment segment={segment} />}
-        </DateInput>
+          <DateInput className={styles.date}>
+            {(segment) => (
+              <DateSegment
+                segment={segment}
+                className={styles.dateSegment}
+              />
+            )}
+          </DateInput>
+          <Button>
+            <CalendarDays size={16} />
+          </Button>
+        </Group>
 
-        <Button>
-          <CalendarDays size={22} />
-        </Button>
-      </Group>
-      {description && (
-        <Text
-          slot="description"
-          className={TextFieldStyles.text}
-        >
-          {description}
-        </Text>
-      )}
-      <FieldError>{errorMessage}</FieldError>
-      <Popover>
-        <Dialog className={styles.dialog}>
-          <RangeCalendar>
-            <header className={styles.dialogHeader}>
-              <Button slot="previous">
-                <ChevronLeft />
-              </Button>
-              <Heading className={styles.dialogHeading} />
-              <Button slot="next">
-                <ChevronRight />
-              </Button>
-            </header>
-            <CalendarGrid className={styles.calendar}>
-              {(date) => (
-                <CalendarCell
-                  date={date}
-                  className={styles.day}
-                />
-              )}
-            </CalendarGrid>
-          </RangeCalendar>
-        </Dialog>
-      </Popover>
-    </DateRangePicker>
+        <Popover>
+          <Dialog className={styles.dialog}>
+            <Calendar>
+              <header className={styles.dialogHeader}>
+                <Button slot="previous">
+                  <ChevronLeft />
+                </Button>
+                <Heading className={styles.dialogHeading} />
+                <Button slot="next">
+                  <ChevronRight />
+                </Button>
+              </header>
+              <CalendarGrid className={styles.calendar}>
+                {(date) => (
+                  <CalendarCell
+                    date={date}
+                    className={styles.day}
+                  />
+                )}
+              </CalendarGrid>
+            </Calendar>
+          </Dialog>
+        </Popover>
+      </InputWrapper>
+    </AriaDatePicker>
   )
 }

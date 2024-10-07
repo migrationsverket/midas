@@ -5,7 +5,7 @@ import { FlexItem } from './FlexItem'
 
 const meta: Meta<typeof Flex> = {
   component: Flex,
-  title: 'Flex',
+  title: 'Components/Flex',
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   argTypes: {

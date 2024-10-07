@@ -1,17 +1,18 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, gray10, gray20, gray150, blue20, blue150 from tokens;
+@value display, gray10, gray20, gray60, gray150, blue20, blue150 from tokens;
 
 .datePicker {
   font-family: display;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .datePickerTextfield {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 0.5rem;
 
   & button {
     border: none;
@@ -31,6 +32,14 @@
 
 .date {
   display: flex;
+
+  & div[aria-valuetext='Tomt'] {
+    color: gray60;
+    text-transform: uppercase;
+  }
+  & div[data-readonly='true'] {
+    color: gray60;
+  }
 }
 
 .dialog {

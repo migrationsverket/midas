@@ -1,15 +1,23 @@
 'use client'
 
 import React from 'react'
-import * as Aria from 'react-aria-components'
-import { TriangleAlert } from 'lucide-react'
-import styles from './Radio.module.css'
 
-interface MVDSRadioGroupProps extends Omit<Aria.RadioGroupProps, 'children'> {
+import styles from './Radio.module.css'
+import {
+  RadioGroup as AriaRadioGroup,
+  RadioGroupProps,
+  ValidationResult,
+  RadioProps,
+  Radio as AriaRadio,
+  Group,
+} from 'react-aria-components'
+import { InputWrapper } from '@midas-ds/textfield'
+
+interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
   label?: string
   description?: string
-  errorMessage?: string | ((validation: Aria.ValidationResult) => string)
+  errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
 export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
@@ -20,41 +28,27 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   ...props
 }) => {
   return (
-    <Aria.RadioGroup
+    <AriaRadioGroup
       {...props}
       className={styles.radioGroup}
     >
-      {label && <Aria.Label className={styles.label}>{label}</Aria.Label>}
-      {description && (
-        <Aria.Text
-          className={styles.text}
-          slot="description"
-        >
-          {description}
-        </Aria.Text>
-      )}
-      {children}
-      {errorMessage && (
-        <Aria.FieldError className={styles.fieldError}>
-          <>
-            <TriangleAlert
-              height={16}
-              width={16}
-            />
-            {errorMessage}
-          </>
-        </Aria.FieldError>
-      )}
-    </Aria.RadioGroup>
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
+      >
+        <Group className={styles.wrap}>{children}</Group>
+      </InputWrapper>
+    </AriaRadioGroup>
   )
 }
 
 /**
  * Radio item
  * */
-export const Radio = (props: Aria.RadioProps) => (
-  <Aria.Radio
-    {...props}
+export const Radio = (props: RadioProps) => (
+  <AriaRadio
     className={styles.radio}
+    {...props}
   />
 )

@@ -1,12 +1,10 @@
 ## 0.5.29 (2024-09-03)
 
-
 ### 🚀 Features
 
 - **button:** add react aria button component
 
 - **button:** added tertiary and danger themes
-
 
 ### 🩹 Fixes
 
@@ -14,21 +12,16 @@
 
 - **docs:** change doc structure
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - jabir khalil
 - jabir Khalil
 - pixelrickdreamer
 - Wilhelm Hjelm
 
-## 0.7.0 (2024-09-02)
-
-
 ### 🚀 Features
 
 - **button:** added tertiary and danger themes
-
 
 ### 🩹 Fixes
 
@@ -38,8 +31,7 @@
 
 - **docs:** change doc structure
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - jabir khalil
 - jabir Khalil
@@ -59,15 +51,13 @@ This was a version bump only for button to align it with other projects, there w
 
 ## 0.6.0 (2024-06-12)
 
-
 ### 🚀 Features
 
 - **button:** add react aria button component
 
 - **storybook:** add boilerplate storybook instance
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - pixelrickdreamer
 

@@ -34,12 +34,12 @@
 .content {
   display: flex;
   flex-direction: column;
-
-  gap: 0.25rem;
+  flex: 1 0 0%;
 }
 
 .heading {
   font-weight: semiBoldWeight;
+  margin-bottom: 0.25rem;
 }
 
 .text {
@@ -50,5 +50,11 @@
 .icon {
   color: var(--border);
   min-width: 20px;
-  margin-top: 3px;
+}
+
+.dismissable {
+  margin-top: -1rem;
+  margin-right: -1rem;
+
+  justify-self: flex-end;
 }

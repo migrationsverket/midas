@@ -1,3 +1,20 @@
+## 0.1.0 (2024-10-07)
+
+
+### 🚀 Features
+
+- **textarea:** new wrapper
+
+
+### 🩹 Fixes
+
+- **textarea:** naming
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.0.3 (2024-09-24)
 
 

@@ -1,0 +1,65 @@
+---
+title: "Release: Sprint 12"
+description: .
+slug: release-sprint-12
+tags: [releaser]
+---
+
+import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
+import { DatePicker } from '@midas-ds/date-picker'
+import { InfoBanner } from '@midas-ds/info-banner'
+import { SearchField } from '@midas-ds/search-field'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+Nedan är en sammanfattning av nyheterna i release 12. Med denna release går Designsystemet över från kontinuerliga uppdateringar till att släppa en release varannan vecka.  
+
+{/* truncate */}
+
+## Ny komponent: ComboBox
+
+ComboBox är ett alternativ till Select som lämpar sig bra när listan har fler än runt 10 val. Användaren kan då filtrera listan genom att skriva i fältet.
+
+<LiveCodeBlock scope={{ComboBox, ComboBoxItem}}>
+{`<ComboBox
+    label="Vad är din favoritfrukt?"
+    placeholder="Välj en frukt"
+    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+>
+    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+</ComboBox>`}
+</LiveCodeBlock>
+
+## Ny komponent: DatePicker
+
+DatePicker har delats upp i två komponenter: `DatePicker` och `DateRangePicker`. Om du använde DatePicker innan behöver du troligtvis byta namn till `DateRangePicker`. 
+DatePicker används för att välja ett (1) datum, DateRangePicker för att välja flera datum i ett intervall.
+
+<LiveCodeBlock scope={{DatePicker}}>
+{`<DatePicker label="Välj datum" />`}
+</LiveCodeBlock>
+
+## Refactor av inmatningskomponenter
+Samtliga inmatningskomponenter har uppdaterats med en wrapper för etikett, hjälptext och validering.
+
+## InfoBanner kan nu stängas
+
+Vi har lagt till en property som ger användaren möjlighet att stänga en InfoBanner. Standardbeteende är att InfoBanner inte kan stängas.
+
+<LiveCodeBlock scope={{InfoBanner}}>
+{`<InfoBanner
+  dismissable
+  message="Ditt formulär skickades korrekt."
+  title="Tack!"
+  type="success"
+/>`}
+</LiveCodeBlock>
+
+## SearchField har nu rätt props
+Ett tidigare fel gjorde att inga props kunde passas till SearchField. Nu är det rättat! 
+
+<LiveCodeBlock scope={{SearchField}}>
+{`<SearchField placeholder="Sök..." />`}
+</LiveCodeBlock>
+
+## Kodexempel i Storybook
+Vi har börjat med en sektion i Storybook där vi samlar exempel på layouter med flera komponenter.

@@ -3,7 +3,7 @@ import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 
 const meta: Meta<typeof Table> = {
   component: Table,
-  title: 'Table',
+  title: 'Components/Table',
   tags: ['autodocs'],
 }
 export default meta

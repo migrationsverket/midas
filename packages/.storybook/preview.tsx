@@ -24,7 +24,7 @@ export const autoDocsTemplate = () => (
   </>
 )
 /** @type { import('@storybook/react').Preview } */
-const backup_preview = {
+const preview = {
   parameters: {
     // a11y: {},
     // actions: { argTypesRegex: '^on[A-Z].*' },
@@ -45,7 +45,11 @@ const backup_preview = {
     viewport: {
       viewports: customViewports,
     },
+    storySort: {
+      method: 'alphabetical',
+      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+    },
   },
 }
 
-export default backup_preview
+export default preview

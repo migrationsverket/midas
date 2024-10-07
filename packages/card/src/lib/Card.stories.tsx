@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from './Card'
 const testImage = {
   source:
-    'https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcSRA1VvVWshDqdk-IbClyNwWoUAjMnFQ5KQLb8eH0hu4gCCvfvqMEcQqOF-CTro2maW',
-  description: 'Lizard',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
+  description: 'Pineapple',
 }
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  title: 'Card',
+  title: 'Components/Card',
   tags: ['autodocs'],
 }
 export default meta
@@ -20,7 +20,7 @@ export const Example: Story = {
     content:
       "Sometimes the default accessible name of an element is missing, or does not accurately describe its contents, and there is no content visible in the DOM that can be associated with the object to give it meaning. A common example is a button containing an SVG or icon font (which you shouldn't be using) without any text.",
     image: testImage,
-    background: true,
+    background: false,
     onPress: () => {
       alert('Klick')
     },

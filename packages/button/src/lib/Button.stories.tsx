@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
+import { X } from 'lucide-react'
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: 'Button',
+  title: 'Components/Button',
   tags: ['autodocs'],
   args: {
     variant: 'primary',
@@ -11,12 +12,12 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     children: { name: 'label' },
     variant: {
-      options: ['primary', 'secondary', 'tertiary', 'danger'],
+      options: ['primary', 'secondary', 'tertiary', 'danger', 'icon'],
       control: { type: 'radio' },
       defaultValue: 'primary',
     },
     size: {
-      options: ['small','default (null)'],
+      options: ['small', 'default (null)'],
       control: { type: 'radio' },
       defaultValue: null,
     },
@@ -87,4 +88,12 @@ export const Fullwidth = {
     fullwidth: true,
   },
   parameters: {},
+}
+
+export const Icon = {
+  args: {
+    children: <X size={16} />,
+    variant: 'icon',
+    'aria-label': 'Stäng',
+  },
 }

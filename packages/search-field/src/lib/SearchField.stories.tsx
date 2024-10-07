@@ -3,7 +3,7 @@ import { SearchField } from './SearchField'
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,
-  title: 'SearchField',
+  title: 'Components/SearchField',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',

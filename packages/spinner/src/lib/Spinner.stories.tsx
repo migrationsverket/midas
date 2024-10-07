@@ -4,7 +4,7 @@ import { Button } from '@midas-ds/button'
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
-  title: 'Spinner',
+  title: 'Components/Spinner',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',

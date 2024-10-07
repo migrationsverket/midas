@@ -1,3 +1,17 @@
+## 0.11.0 (2024-10-07)
+
+
+### 🚀 Features
+
+- **textarea:** new wrapper
+
+- **date-picker:** new datepicker
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.9.25 (2024-08-16)
 
 This was a version bump only for textfield to align it with other projects, there were no code changes.

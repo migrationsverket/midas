@@ -1,3 +1,28 @@
+## 0.7.0 (2024-10-07)
+
+
+### 🚀 Features
+
+- **radio:** new wrapper
+
+
+### 🩹 Fixes
+
+- **radio:** remove invalid line and fix css
+
+- **radio:** change gap between elements to 0.5rem
+
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.25
+
+
+### ❤️  Thank You
+
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 0.6.3 (2024-09-19)
 
 

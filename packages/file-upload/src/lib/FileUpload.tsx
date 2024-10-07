@@ -4,13 +4,13 @@ import {
   FileTrigger as AriaFileTrigger,
   FileTriggerProps as AriaFileTriggerProps,
   DropZone,
-  Label,
   Text,
 } from 'react-aria-components'
 import React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '@midas-ds/button'
+import { InputWrapper } from '@midas-ds/textfield'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -53,7 +53,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
           className={styles.dropzone}
         >
           <Text
-            slot="label"
+            slot="description"
             style={{ display: 'block' }}
           >
             Dra och släpp en fil inuti det streckade området
@@ -70,30 +70,23 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
 
   return (
     <div className={styles.container}>
-      <AriaFileTrigger
-        allowsMultiple={allowsMultiple}
-        onSelect={(files) => handleUpload(files)}
+      <InputWrapper
+        label={label}
+        description={description}
       >
-        <Label
-          className={styles.label}
-          aria-label="fileUpload"
+        <AriaFileTrigger
+          allowsMultiple={allowsMultiple}
+          onSelect={(files) => handleUpload(files)}
         >
-          {label}
-        </Label>
-        <Text
-          className={styles.text}
-          slot="description"
-        >
-          {description}
-        </Text>
-        {/* TODO: check labels */}
-        <Button
-          variant="secondary"
-          aria-labelledby="fileUpload"
-        >
-          {allowsMultiple ? 'Välj filer' : 'Välj fil'}
-        </Button>
-      </AriaFileTrigger>
+          <Button
+            variant="secondary"
+            aria-labelledby="fileUpload"
+            className={styles.input}
+          >
+            {allowsMultiple ? 'Välj filer' : 'Välj fil'}
+          </Button>
+        </AriaFileTrigger>
+      </InputWrapper>
       {files && (
         <FileList
           files={files}

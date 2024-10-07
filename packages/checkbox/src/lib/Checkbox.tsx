@@ -14,21 +14,24 @@ export const Checkbox = ({ children, ...props }: CheckboxProps) => {
         <>
           <div className={styles.checkboxInner}>
             <svg
+              width={16}
+              height={16}
               viewBox="0 0 18 18"
               aria-hidden="true"
             >
               {isIndeterminate ? (
                 <rect
-                  x={1}
-                  y={7.5}
-                  width={15}
-                  height={3}
+                  x={4}
+                  y={8}
+                  width={10}
+                  height={2}
                 />
               ) : (
-                <polyline points="1 9 7 14 15 4" />
+                <polyline points="3,9 7,13 15,4" />
               )}
             </svg>
           </div>
+
           {children}
         </>
       )}

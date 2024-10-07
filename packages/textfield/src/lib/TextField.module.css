@@ -1,39 +1,75 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, signalRed10, gray10, gray20, black, signalRed100, mediumWeight, regularWeight, inputText from tokens;
+@value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText from tokens;
 
-.textField {
+.inputField {
+  height: 100%;
+
+  &[data-disabled],
+  &[data-disabled] {
+    color: gray50;
+  }
+}
+
+.inputWrapper {
   font-family: display;
   display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr 1fr;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: min-content min-content min-content min-content;
+  gap: 0.25rem 0.5rem;
+  grid-template-areas:
+    'Label Count'
+    'Desc Count'
+    'Error Error'
+    'Input Input';
+
   height: 100%;
-  grid-template-columns: 1fr auto;
-  grid-column-gap: 0;
-  grid-row-gap: 0.25rem;
+  width: 100%;
+  align-content: flex-end;
+}
+
+.label {
+  grid-area: Label;
+
+  font-size: 1rem;
+  font-weight: mediumWeight;
+}
+
+.text {
+  grid-area: Desc;
+
+  font-size: 0.875rem;
+  font-weight: regularWeight;
+}
+
+.fieldError {
+  color: inputText;
+  grid-area: Error;
+  font-size: 1rem;
+  display: flex;
   align-items: end;
-  align-content: end;
+  column-gap: 0.5rem;
+  margin: 0.25rem 0;
 
-  &[data-disabled] {
-    pointer-events: none;
-
-    & input {
-      background-color: gray10;
-      border: none;
-    }
-    & * {
-      opacity: 0.7;
-    }
+  & svg {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    color: signalRed100;
+    padding-top: 0.1rem;
   }
 }
 
 .input {
-  grid-area: 3 / 1 / 4 / 3;
   all: unset;
+  grid-area: Input;
   border-bottom: 1px solid black;
-  height: 48px;
+  min-height: 48px;
   font-size: 1rem;
   padding-left: 1rem;
   line-height: 1;
   background-color: gray10;
-  box-shadow: 0 1px 0 0 black;
+  /* box-shadow: 0 1px 0 0 black; */
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
@@ -52,43 +88,24 @@
 
   &[data-focused] {
     outline-offset: 2px;
-    border: none;
-    outline: 1px solid black;
+    outline: 2px solid black;
   }
 
   &[data-invalid] {
+    border: none;
     box-shadow: inset 0 0 0 3px signalRed100;
   }
-}
 
-.fieldError {
-  grid-area: 4 / 1 / 5 / 2;
-  font-size: 1rem;
-  display: flex;
-  align-items: end;
-  column-gap: 0.5rem;
-
-  & svg {
-    align-self: center;
-    color: signalRed100;
-    height: 0.875rem;
-    width: 0.875rem;
+  &[data-disabled] {
+    pointer-events: none;
+    background-color: gray10;
+    border: none;
+    opacity: 0.7;
   }
-}
-
-.label {
-  color: inputText;
-  font-weight: mediumWeight;
-  grid-area: 1 / 1 / 2 / 3;
-}
-
-.text {
-  font-size: 14px;
-  font-weight: regularWeight;
-  grid-area: 2 / 1 / 3 / 3;
 }
 
 .wrap {
+  grid-area: Input;
   position: relative;
 }
 
@@ -100,24 +117,19 @@
   z-index: 2;
   top: 0;
   left: 1rem;
-  margin-top: 5px;
   width: calc(100% - 1rem);
   height: 46px;
   pointer-events: none;
 }
 
 .passwordButton {
-  background: transparent;
-  border-color: transparent;
+  background: transparent !important;
+  border-color: transparent !important;
   position: absolute;
   width: max-content;
-  margin-top: 4px;
-  height: 42px;
   right: 0;
   top: 0;
   box-sizing: border-box;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: mediumWeight;
   z-index: 3;
 }

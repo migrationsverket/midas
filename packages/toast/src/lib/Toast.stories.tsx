@@ -4,7 +4,7 @@ import { Button } from '@midas-ds/button'
 
 const meta: Meta<typeof ToastProvider> = {
   component: ToastProvider,
-  title: 'Toast',
+  title: 'Components/Toast',
   tags: ['autodocs'],
   argTypes: {
     type: {

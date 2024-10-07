@@ -5,14 +5,12 @@ import {
   CheckboxGroup as AriaCheckboxGroup,
   CheckboxGroupProps as AriaCheckboxGroupProps,
   CheckboxGroupStateContext,
-  FieldError,
-  Label,
-  Text,
+  Group,
   ValidationResult,
 } from 'react-aria-components'
-import { TriangleAlert } from 'lucide-react'
 import styles from './Checkbox.module.css'
 import { Checkbox } from './Checkbox'
+import { InputWrapper } from '@midas-ds/textfield'
 
 export interface CheckboxGroupProps
   extends Omit<AriaCheckboxGroupProps, 'children'> {
@@ -78,35 +76,19 @@ export const CheckboxGroup = ({
 
   return (
     <AriaCheckboxGroup
-      {...props}
       className={styles.checkboxGroup}
+      {...props}
     >
-      {({ isInvalid }) => (
-        <>
-          <div className={styles.labelGroup}>
-            <Label className={styles.checkboxGroupLabel}>{label}</Label>
-            {description && (
-              <Text
-                slot="description"
-                className={styles.checkboxGroupDescription}
-              >
-                {description}
-              </Text>
-            )}
-          </div>
+      <InputWrapper
+        label={label}
+        description={description}
+        errorMessage={errorMessage}
+      >
+        <Group className={styles.wrap}>
           {showSelectAll && <ToogleAll />}
           {children}
-          <span className={styles.fieldError}>
-            {isInvalid && (
-              <TriangleAlert
-                width={16}
-                height={16}
-              />
-            )}
-            <FieldError>{errorMessage}</FieldError>
-          </span>
-        </>
-      )}
+        </Group>
+      </InputWrapper>
     </AriaCheckboxGroup>
   )
 }

@@ -5,21 +5,20 @@
   font-family: display;
   display: flex;
   flex-direction: column;
+  height: 100%;
 
-  &[data-disabled] .label,
-  &[data-disabled] .text {
+  &[data-disabled],
+  &[data-disabled] {
     color: gray50;
   }
   &[data-invalid] .button {
+    box-shadow: none;
     border: 2px solid signalRed130;
   }
 }
 
-.text {
-  font-size: 14px;
-}
-
 .button {
+  grid-area: Input;
   border: none;
   border-radius: 0;
   font-size: 1rem;
@@ -30,7 +29,6 @@
   align-items: center;
   padding-left: 16px;
   padding-right: 16px;
-  margin-top: 8px;
   background-color: backgroundSecondary;
   box-shadow: 0 1px 0 0 black;
 
@@ -41,9 +39,8 @@
     background-color: gray20;
   }
   &[data-focus-visible] {
-    outline: none;
-    border-radius: 0px;
-    border: 1px solid black;
+    outline-offset: 2px;
+    outline: 2px solid black;
   }
   &[data-disabled] {
     background: backgroundSecondary;
@@ -58,16 +55,6 @@
   width: calc(var(--trigger-width) - 2px);
   background: white;
   overflow-y: auto;
-}
-
-.fieldError {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-  font-size: 14px;
-  & svg {
-    color: signalRed130;
-  }
 }
 
 .listBoxItem {
@@ -85,6 +72,9 @@
 
   &[data-focused='true'] {
     background: gray20;
+  }
+  &[data-disabled='true'] {
+    color: gray50;
   }
 }
 

@@ -28,6 +28,6 @@
       }
     }
   },
-  "tags": [],
+  "tags": ["apps"],
   "implicitDependencies": ["playground"]
 }

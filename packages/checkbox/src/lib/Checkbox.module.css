@@ -1,5 +1,12 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, signalRed130, white, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint, borderSecondary from tokens;
+@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, signalRed130, white, gray10, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint, borderSecondary from tokens;
+
+.wrap {
+  grid-area: Input;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .checkbox {
   font-family: display;
@@ -14,99 +21,130 @@
   --invalidPressed: signalRed130;
   --checkmarkColor: white;
 
-  gap: 0.571rem;
+  gap: 0.5rem;
   align-items: center;
 
   forced-color-adjust: none;
   display: flex;
-}
+  width: max-content;
 
-.checkbox:hover div {
-  border-color: gray100;
-}
+  &:hover div {
+    border-color: gray100;
+  }
 
-.checkbox[data-pressed] div {
-  border-color: var(--borderColorPressed);
-}
+  &[data-pressed] div {
+    border-color: var(--borderColorPressed);
+  }
 
-.checkbox[data-focus-visible] div {
-  outline: 2px solid var(--focusRingColor);
-  outline-offset: 2px;
-}
+  &[data-focus-visible] {
+    outline: 2px solid var(--focusRingColor);
+    outline-offset: 2px;
+  }
 
-.checkbox[data-selected] div,
-.checkbox[data-indeterminate] div {
-  background: var(--selectedColor);
-  border-color: var(--selectedColor);
-}
+  &[data-selected] div,
+  &[data-indeterminate] div {
+    background: var(--selectedColor);
+    border-color: var(--selectedColor);
+  }
 
-.checkbox[data-selected]:hover div,
-.checkbox[data-indeterminate]:hover div {
-  background: var(--selectedHover);
-  border-color: var(--selectedHover);
-}
+  &[data-selected]:hover div,
+  &[data-indeterminate]:hover div {
+    background: var(--selectedHover);
+    border-color: var(--selectedHover);
+  }
 
-.checkbox[data-selected][data-pressed] div,
-.checkbox[data-indeterminate][data-pressed] div {
-  border-color: blue100;
-  background: blue100;
-}
+  &[data-selected][data-pressed] div,
+  &[data-indeterminate][data-pressed] div {
+    border-color: blue100;
+    background: blue100;
+  }
 
-.checkbox[data-selected] svg,
-.checkbox[data-indeterminate] svg {
-  stroke-dashoffset: 44;
-}
+  &[data-selected] svg,
+  &[data-indeterminate] svg {
+    stroke-dashoffset: 44;
+  }
 
-.checkbox[data-indeterminate] svg {
-  stroke: none;
-  fill: var(--checkmarkColor);
-}
+  &[data-indeterminate] svg {
+    stroke: none;
+    fill: var(--checkmarkColor);
+  }
 
-.checkbox[data-invalid] div {
-  border: 2px solid var(--invalidColor);
-}
+  &[data-invalid] div {
+    border: 2px solid var(--invalidColor);
+  }
 
-.checkbox[data-invalid]:hover div {
-  opacity: 0.5;
-  border-color: var(--invalidColor);
-}
+  &[data-invalid]:hover div {
+    opacity: 0.5;
+    border-color: var(--invalidColor);
+  }
 
-.checkbox[data-invalid][data-pressed] div {
-  border-color: var(--invalidPressed);
-}
+  &[data-invalid][data-pressed] div {
+    border-color: var(--invalidPressed);
+  }
 
-.checkbox[data-disabled] {
-  color: gray50;
-}
+  &[data-disabled] {
+    color: gray50;
+  }
 
-.checkbox[data-disabled] div {
-  pointer-events: none;
-  border: 1px solid gray20;
-  background: gray20;
+  &[data-disabled][data-selected] div {
+    pointer-events: none;
+    border: none;
+    background: gray20;
+  }
+
+  &[data-disabled] div {
+    pointer-events: none;
+    border: 1px solid gray50;
+  }
+
+  &[data-disabled][data-indeterminate] div {
+    pointer-events: none;
+    border: none;
+    background: gray20;
+  }
+
+  @media smBreakpoint {
+    padding: 0.875rem 1rem;
+    border: 1px solid black;
+    width: auto;
+
+    &:hover {
+      background-color: gray10;
+    }
+
+    &[data-invalid] {
+      border: 2px solid var(--invalidColor);
+    }
+
+    &[data-disabled] {
+      pointer-events: none;
+      border-color: gray50;
+    }
+  }
 }
 
 .checkboxInner {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1rem;
+  height: 1rem;
   box-sizing: border-box;
   border: 1px solid black;
   transition: all 200ms;
   align-items: center;
   justify-content: center;
-  color: red;
   forced-color-adjust: none;
   display: flex;
-}
 
-.checkboxInner svg {
-  width: 1rem;
-  height: 1rem;
-  fill: none;
-  stroke: var(--checkmarkColor, white);
-  stroke-width: 2px;
-  stroke-dasharray: 22;
-  stroke-dashoffset: 66;
-  transition: all 200ms;
+  & svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: var(--checkmarkColor, white);
+    stroke-width: 2px;
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+    transition: all 200ms;
+    stroke-width: 2;
+  }
 }
 
 .checkboxGroup {
@@ -115,44 +153,15 @@
   flex-direction: column;
   gap: 0.5rem;
   font-size: 1rem;
-  border-left: 3px solid transparent;
   min-width: 150px;
-}
 
-.checkboxGroupLabel {
-  font-weight: mediumWeight;
-  font-size: 1rem;
-}
+  & span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-.checkboxGroupDescription {
-  font-weight: regularWeight;
-  font-size: 0.875rem; 
-}
-
-.labelGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.checkboxGroup span {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.checkboxGroup[data-invalid] {
-  border-left-color: signalRed100;
-}
-
-.checkboxGroup[data-disabled] {
-  color: gray50;
-}
-
-.checkboxGroup[data-invalid] .fieldError {
-  color: signalRed100;
-}
-
-.field .fieldError {
-  color: signalRed100;
+  &[data-disabled] {
+    color: gray50;
+  }
 }

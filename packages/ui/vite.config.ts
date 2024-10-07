@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import dts from 'vite-plugin-dts';
-import * as path from 'path';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
+import dts from 'vite-plugin-dts'
+import * as path from 'path'
 
 export default defineConfig({
   assetsInclude: ['/sb-preview/runtime.js'],
@@ -14,7 +14,6 @@ export default defineConfig({
       dts({
         entryRoot: 'src',
         tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-        skipDiagnostics: true,
       }),
       react(),
       nxViteTsPaths(),
@@ -22,7 +21,6 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true,
     }),
   ],
 
@@ -62,4 +60,4 @@ export default defineConfig({
       rollupOptions: { external: ['react', 'react-dom', 'react/jsx-runtime'] },
     },
   },
-});
+})

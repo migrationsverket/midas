@@ -8,7 +8,7 @@ const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
-  title: 'Accordion',
+  title: 'Components/Accordion',
   tags: ['autodocs'],
   args: {
     type: 'single',

@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/remix",
   "projectType": "application",
-  "tags": [],
+  "tags": ["apps"],
   "targets": {
     "build": {
       "executor": "@nx/remix:build",
