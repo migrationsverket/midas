@@ -1,21 +1,23 @@
 {
-  "_id": "@midas-ds/radio@0.6.3",
-  "_rev": "3-ac0beb04cd3cfe4f0e23666871aec36b",
+  "_id": "@midas-ds/radio@0.7.0",
+  "_rev": "5-a85e81eca100904eb3d17ea4fbcca775",
   "name": "@midas-ds/radio",
   "dist-tags": {
-    "latest": "0.6.3"
+    "latest": "0.7.0"
   },
   "versions": [
     "0.6.1",
     "0.6.2",
-    "0.6.3"
+    "0.6.3",
+    "0.7.0"
   ],
   "time": {
     "created": "2024-09-10T14:37:59.126Z",
-    "modified": "2024-09-19T12:26:25.160Z",
+    "modified": "2024-10-07T12:18:39.898Z",
     "0.6.1": "2024-09-10T14:37:59.408Z",
     "0.6.2": "2024-09-12T12:42:10.930Z",
-    "0.6.3": "2024-09-19T12:26:24.985Z"
+    "0.6.3": "2024-09-19T12:26:24.985Z",
+    "0.7.0": "2024-10-07T12:18:39.699Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -30,8 +32,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 5465,
-  "version": "0.6.3",
+  "_contentLength": 0,
+  "version": "0.7.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -54,15 +56,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-pP18aRVDpv7PdyzedTrLmN80j41SThaSm/UAKgqZNYMVMcLVDivNaf5rNq2G+k+fJl8eHtr1mfl1i6rC1T3OAQ==",
-    "shasum": "df5916cd0ac13359c65691db2bdf9a3a2f2a246d",
-    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-0.6.3.tgz",
+    "integrity": "sha512-3aLXLJ4U9lg8yqDx5rw1tE44EMpNIZv7JipV8gGWxUYCU8Z9pWbKR3hInvbYDqwNoii9hLCa3aMOVXfC25/ALQ==",
+    "shasum": "a33feb09ea80bdc5758f4e04605627af55f9d7e0",
+    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-0.7.0.tgz",
     "fileCount": 6,
-    "unpackedSize": 119475,
+    "unpackedSize": 127315,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIB5rnLH+ZW6nBoBO9DY1eP0UBe7uGL3XbMPQXrseh65dAiEAz1b6kRrOFdRwbqNZ35NF65gRgBQ/l28P434KCIN3v5Y="
+        "sig": "MEUCIBGU+NqFPlS3Zu8oHh2wLtz1bQxehdWomAwGL2h6VDKgAiEAwJq/T7LO1OQSnyTuwvC47FN5gCQsz1Kpp9tZ0u/ybMg="
       }
     ]
   },
@@ -70,7 +72,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/radio_0.6.3_1726748784708_0.01574241381963226"
+    "tmp": "tmp/radio_0.7.0_1728303519518_0.5346060951895275"
   },
   "_hasShrinkwrap": false
 }

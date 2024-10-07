@@ -1,23 +1,25 @@
 {
-  "_id": "@midas-ds/textfield@0.10.1",
-  "_rev": "5-90ecf0d64d43fd387eade53ca5ad6e2a",
+  "_id": "@midas-ds/textfield@0.11.0",
+  "_rev": "7-3b8d03ac8c2abdb69cc3b02ccfd0d746",
   "name": "@midas-ds/textfield",
   "dist-tags": {
-    "latest": "0.10.1"
+    "latest": "0.11.0"
   },
   "versions": [
     "0.9.24",
     "0.9.25",
     "0.10.0",
-    "0.10.1"
+    "0.10.1",
+    "0.11.0"
   ],
   "time": {
     "created": "2024-09-10T14:36:27.336Z",
-    "modified": "2024-09-19T12:19:19.010Z",
+    "modified": "2024-10-07T12:26:42.434Z",
     "0.9.24": "2024-09-10T14:36:27.567Z",
     "0.9.25": "2024-09-12T12:55:35.421Z",
     "0.10.0": "2024-09-19T09:06:27.230Z",
-    "0.10.1": "2024-09-19T12:19:18.800Z"
+    "0.10.1": "2024-09-19T12:19:18.800Z",
+    "0.11.0": "2024-10-07T12:26:42.240Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -32,8 +34,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 7009,
-  "version": "0.10.1",
+  "_contentLength": 0,
+  "version": "0.11.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -44,28 +46,31 @@
     }
   },
   "dependencies": {
-    "@midas-ds/theme": "^0.5.23",
-    "react-aria-components": "^1.1.0"
+    "react-aria-components": "^1.1.0",
+    "lucide-react": "^0.383.0",
+    "@midas-ds/button": "0.6.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "rollup-preserve-directives": "^1.1.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "3938ac53e51290e2c3c42055958a514d5d73ee17",
+  "gitHead": "3b27a1a68a4e953adb7c39f7a738d7b3c4902cf2",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-AdrxqGhsxNDFRNoHyHnPG3awMJlzhx/og/G3S8RfcozpCelYPDo61mxMqUeu1/+W08NpxkIsDI0wo6Vau0NaXQ==",
-    "shasum": "80083eef8d0d6bf460321f1247cc88034902dd2b",
-    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-0.10.1.tgz",
+    "integrity": "sha512-n9cjJbBMSHKfI/dvGdQ7u2lfzGxrCzg8VXZxAc3UIwgUyKmggB983BGOvc4QphESEb3wXy/XwSlFoDWzVIFnQA==",
+    "shasum": "8a49a013e05d82b3608da9ea8a16e0f504c1a343",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-0.11.0.tgz",
     "fileCount": 7,
-    "unpackedSize": 116561,
+    "unpackedSize": 118552,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQDudEEbMob6nueahiL7ckMgvJKwAf/81Dnk7bkpY3avOQIgcMIdNBwFUMzFbWoy7pAnAyDLQH3X6ukbPMqg0b/d/yU="
+        "sig": "MEQCIDn8ez7n7tB3FPHnBEP1AZVZddEwAW0VoQzgbVf89YMtAiA+MymJQI2pBm2kTmkDelBE8zC73/JLVIymqgUa5487SA=="
       }
     ]
   },
@@ -73,7 +78,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/textfield_0.10.1_1726748358605_0.6196533994742879"
+    "tmp": "tmp/textfield_0.11.0_1728304002069_0.8862872757593347"
   },
   "_hasShrinkwrap": false
 }
