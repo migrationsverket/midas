@@ -1,3 +1,10 @@
+## 0.5.37 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated info-banner to 0.3.0
+
 ## 0.5.36 (2024-10-07)
 
 
