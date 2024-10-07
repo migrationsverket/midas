@@ -1,31 +1,36 @@
 {
-  "_id": "@midas-ds/combobox@0.1.0",
+  "_id": "@midas-ds/combobox@0.1.1",
+  "_rev": "2-a8002e731ee147c152d8e78131460ed0",
   "name": "@midas-ds/combobox",
   "dist-tags": {
-    "latest": "0.1.0"
+    "latest": "0.1.1"
   },
   "versions": [
-    "0.1.0"
+    "0.0.1",
+    "0.1.0",
+    "0.1.1"
   ],
   "time": {
     "created": "2024-10-02T14:28:10.145Z",
+    "modified": "2024-10-07T12:10:23.446Z",
     "0.1.0": "2024-10-02T14:28:10.431Z",
-    "modified": "2024-10-02T14:28:10.734Z"
+    "0.0.1": "2024-10-07T11:31:16.286Z",
+    "0.1.1": "2024-10-07T12:10:23.238Z"
   },
-  "maintainers": [
-    "wilhelmconsid <wilhelm.hjelm@consid.se>"
-  ],
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "bugs": {
-    "url": "https://github.com/migrationsverket/midas/issues"
-  },
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
   "readmeFilename": "",
   "_contentLength": 0,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -38,19 +43,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "32c17522ec346a28604906846fedad9d373216bb",
+  "gitHead": "f7cc03ce6a36bad14d8285f5dc82b31cd1a2225f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-6UqBpVgU+m67ec2FUOyg7FYZ8DW6Y2QH3O+kHtX4bJiNNP25PAXVzPPfz8MrXL/N+atMF0gcwteOjNK+jITfpA==",
-    "shasum": "c1c5b74e08aace2af8c1038fccabb9c19436e55b",
-    "tarball": "https://registry.npmjs.org/@midas-ds/combobox/-/combobox-0.1.0.tgz",
+    "integrity": "sha512-YAotaBzO8vbUdksNSXIeX6CzYk6CRPVVOFAwSbUQLKPZb2/3bEL9z9Jq1SnhqgwPPEelgy5ukvb8CtQUBr/f6A==",
+    "shasum": "1ae2ec722b8de7869e825b3d1257299fa7ace53d",
+    "tarball": "https://registry.npmjs.org/@midas-ds/combobox/-/combobox-0.1.1.tgz",
     "fileCount": 5,
-    "unpackedSize": 414506,
+    "unpackedSize": 420513,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIERCyF675yvwzpXE8Idv/7kiWiZLx0JDLCbvzQ5uETA4AiEAi2X4Gqijv2vPCODFAqRoDd1p9MT5+gFFDIV7sVMgbGc="
+        "sig": "MEYCIQDWZEbHeDEFc40d5oj0RdQI0/GjCUx/DQshrR78yfQW5gIhALbDzhd0N5lGrmSf2X4J/hPrWCvXrXH1fnAFXVxkfXO8"
       }
     ]
   },
@@ -58,7 +63,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/combobox_0.1.0_1727879290279_0.9307140656394575"
+    "tmp": "tmp/combobox_0.1.1_1728303022992_0.0621713627106677"
   },
   "_hasShrinkwrap": false
 }

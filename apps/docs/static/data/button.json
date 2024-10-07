@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/button@0.6.3",
-  "_rev": "13-b6ac6d2988ba8a771683de1739177574",
+  "_id": "@midas-ds/button@0.6.4",
+  "_rev": "15-e8f4ccc56ad51d8ca7ef4c30b55cf23d",
   "name": "@midas-ds/button",
   "dist-tags": {
-    "latest": "0.6.3"
+    "latest": "0.6.4"
   },
   "versions": [
     "0.5.28",
@@ -13,11 +13,12 @@
     "0.6.0",
     "0.6.1",
     "0.6.2",
-    "0.6.3"
+    "0.6.3",
+    "0.6.4"
   ],
   "time": {
     "created": "2024-09-05T12:44:43.399Z",
-    "modified": "2024-09-24T07:40:34.237Z",
+    "modified": "2024-10-07T12:06:12.827Z",
     "0.6.0": "2024-09-05T12:44:43.759Z",
     "0.5.28": "2024-09-10T14:35:50.047Z",
     "0.5.29": "2024-09-11T07:14:39.435Z",
@@ -25,62 +26,63 @@
     "0.5.31": "2024-09-11T09:05:37.161Z",
     "0.6.1": "2024-09-11T09:11:00.245Z",
     "0.6.2": "2024-09-11T09:28:25.996Z",
-    "0.6.3": "2024-09-11T11:25:46.446Z"
+    "0.6.3": "2024-09-11T11:25:46.446Z",
+    "0.6.4": "2024-10-07T12:06:12.651Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
-    "url": "git+https://github.com/migrationsverket/midas.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
   },
   "description": "```bash npm i @midas-ds/button ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 12830,
-  "version": "0.6.3",
-  "dist": {
-    "shasum": "3f37af3f72a9dcadc9105b2ac951ecc38b4add12",
-    "tarball": "https://registry.npmjs.org/@midas-ds/button/-/button-0.6.3.tgz",
-    "fileCount": 7,
-    "integrity": "sha512-fx9Vr3DO3xbQJdY0VHq6spezyyiM9Ib0jug6WNuqgFwGTY+LpZa6cK2ikIV8WOYo3N2UioW9oabhRDX1KlkoGQ==",
-    "signatures": [
-      {
-        "sig": "MEQCIDGn/2ZRmaNWaqpNpFAU3ooBZ1Smd8S8zs3VWE/yOi9NAiBZorF+2VL4yK0B1p4caDYT1dlzSRCR8A/HsHG1RGN22Q==",
-        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
-      }
-    ],
-    "unpackedSize": 77561
-  },
+  "_contentLength": 0,
+  "version": "0.6.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
   },
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
-  "_npmVersion": "10.5.0",
-  "directories": {},
-  "_nodeVersion": "21.7.3",
   "dependencies": {
     "@midas-ds/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "_hasShrinkwrap": false,
-  "peerDependencies": {
-    "react": "^18.2.0"
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-r22KuzcaZXrM7iyB0Te7G4FbA9KidqKwrKZIjL/HhKxNejA2SZ8OK9BjpM6k5rI+UMjpIS1odin4TBUW0mQIFA==",
+    "shasum": "7e9456028a905795cd4e26590162fec7f5150110",
+    "tarball": "https://registry.npmjs.org/@midas-ds/button/-/button-0.6.4.tgz",
+    "fileCount": 7,
+    "unpackedSize": 78522,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIHwx9owiIAls2IMw2Z/kIbDaBzf/2zV7rym36vLxi+V7AiEAnoW+SGGrhThUm+mZMchIuRqL3d2cnEIasLx56ab7zAg="
+      }
+    ]
   },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
   "_npmOperationalInternal": {
-    "tmp": "tmp/button_0.6.3_1726053946255_0.8695700164230578",
-    "host": "s3://npm-registry-packages"
-  }
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/button_0.6.4_1728302772448_0.44647350821190135"
+  },
+  "_hasShrinkwrap": false
 }

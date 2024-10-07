@@ -1,3 +1,10 @@
+## 0.5.2 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.33
+
 ## 0.4.26 (2024-10-07)
 
 

@@ -1,74 +1,80 @@
 {
-  "_id": "@midas-ds/info-banner@0.1.1",
-  "_rev": "2-9ec1365efad6382c159eb26244249ac2",
+  "_id": "@midas-ds/info-banner@0.3.0",
+  "_rev": "3-3ac5a5227b4e6b2f0bb02c03c23ba7ad",
   "name": "@midas-ds/info-banner",
   "dist-tags": {
-    "latest": "0.1.1"
+    "latest": "0.3.0"
   },
   "versions": [
     "0.1.1",
-    "0.2.0"
+    "0.2.0",
+    "0.3.0"
   ],
   "time": {
     "created": "2024-09-10T14:37:16.355Z",
-    "modified": "2024-09-12T13:02:20.710Z",
+    "modified": "2024-10-07T12:15:59.505Z",
     "0.1.1": "2024-09-10T14:37:16.613Z",
-    "0.2.0": "2024-09-12T12:31:22.401Z"
+    "0.2.0": "2024-09-12T12:31:22.401Z",
+    "0.3.0": "2024-10-07T12:15:59.341Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
-    "url": "git+https://github.com/migrationsverket/midas.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
   },
   "description": "```bash npm install @midas-ds/info-banner ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 3918,
-  "version": "0.1.1",
-  "dist": {
-    "shasum": "f616fe381af0877b63242b3c98e2f567e98aef81",
-    "tarball": "https://registry.npmjs.org/@midas-ds/info-banner/-/info-banner-0.1.1.tgz",
-    "fileCount": 7,
-    "integrity": "sha512-M21Hc3mguKazrFy4cccUoFdUGzuuWny+C0fFtU89JkkZlyjsi7efZqZRHFvtuF5oh2CzHmXU3Kj1k8NUK4xQPw==",
-    "signatures": [
-      {
-        "sig": "MEQCIAtxrbXUODfsGEZYihFzyiNzbcLJ9CwQXsy8tsU0WG8uAiAZE9eMAyvLkozsubbxGPNpO6U83lzUUhKVXZQfxe5+Lw==",
-        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
-      }
-    ],
-    "unpackedSize": 11229
-  },
+  "_contentLength": 0,
+  "version": "0.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
   },
-  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
-  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
-  "_npmVersion": "10.5.0",
-  "directories": {},
-  "_nodeVersion": "21.7.3",
   "dependencies": {
-    "@midas-ds/theme": "^0.5.23"
+    "lucide-react": "^0.383.0",
+    "@midas-ds/button": "0.6.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "clsx": "^2.1.1",
+    "rollup-preserve-directives": "^1.1.1",
+    "vite-plugin-css-injected-by-js": "^3.5.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "_hasShrinkwrap": false,
-  "peerDependencies": {
-    "react": "^18.2.0"
+  "gitHead": "68c3a51c6262cf0f9686771d9a05dcab4345aad2",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-0gduypQ3aEEiY2UG0Pwc+m/Q3sD3yGS+qlkp6+HvesYX+TdPaeQWSfdm5/vK/xbxZTV9kDQkkrN0Uj6927IvvA==",
+    "shasum": "01d6e0aa9a2d82a9af2686d83183c861c9bbe223",
+    "tarball": "https://registry.npmjs.org/@midas-ds/info-banner/-/info-banner-0.3.0.tgz",
+    "fileCount": 6,
+    "unpackedSize": 88668,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCICYDy6WiRNi7/eRNcM2XrKXVsMKZMSkkTcyJ2RXB6v9FAiBjG/jOYTVNCgkTGk9LBbIWPQbIKmRgr9JnzeeRy2arqw=="
+      }
+    ]
   },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
   "_npmOperationalInternal": {
-    "tmp": "tmp/info-banner_0.1.1_1725979036460_0.7854812071144546",
-    "host": "s3://npm-registry-packages"
-  }
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/info-banner_0.3.0_1728303359081_0.2537528386522303"
+  },
+  "_hasShrinkwrap": false
 }

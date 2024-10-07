@@ -1,21 +1,23 @@
 {
-  "_id": "@midas-ds/grid@0.1.1",
-  "_rev": "2-d4e6e5fce0db07340fe23006101f6b4e",
+  "_id": "@midas-ds/grid@0.1.2",
+  "_rev": "4-fdab4ac74f6243834528ac686dc197b7",
   "name": "@midas-ds/grid",
   "dist-tags": {
-    "latest": "0.1.1"
+    "latest": "0.1.2"
   },
   "versions": [
     "0.0.1",
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "0.1.2"
   ],
   "time": {
     "created": "2024-09-10T14:37:08.211Z",
-    "modified": "2024-09-12T13:02:20.351Z",
+    "modified": "2024-10-07T12:14:17.890Z",
     "0.0.1": "2024-09-10T14:37:08.486Z",
     "0.1.0": "2024-09-12T12:30:11.793Z",
-    "0.1.1": "2024-09-12T13:02:20.193Z"
+    "0.1.1": "2024-09-12T13:02:20.193Z",
+    "0.1.2": "2024-10-07T12:14:17.627Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -30,8 +32,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 5368,
-  "version": "0.1.1",
+  "_contentLength": 0,
+  "version": "0.1.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -41,28 +43,28 @@
       "types": "./index.d.ts"
     }
   },
-  "dependencies": {
-    "@midas-ds/theme": "0.5.23"
-  },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "clsx": "^2.1.1",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "rollup-preserve-directives": "^1.1.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "aefa4606d1e1acb06d2ad90ab3dee32811cea6a4",
+  "gitHead": "f7cc03ce6a36bad14d8285f5dc82b31cd1a2225f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-IFJIzdX7LEkMkjRJHOyA9Mn0LObXUPATbZLI/krsuFcHo90M4PZyKnCSrSGaB9o9edS4Lx63ApFx2tff+M9IjA==",
-    "shasum": "12a08f72279a8b604a1218cce87c40a48c3c4246",
-    "tarball": "https://registry.npmjs.org/@midas-ds/grid/-/grid-0.1.1.tgz",
+    "integrity": "sha512-pQvBz24RGFbxL5/E5lNxzH9K8Y6nU5WJoTNxtP4k7kNpDLRLsnESAgVfr4TPoOIrd7bXdbwqg8sLy9RQkgsKXQ==",
+    "shasum": "74eb4df98d1c974300382a9a863f0cc6e1a0d06c",
+    "tarball": "https://registry.npmjs.org/@midas-ds/grid/-/grid-0.1.2.tgz",
     "fileCount": 8,
-    "unpackedSize": 9080,
+    "unpackedSize": 9137,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIDioFFH1TbxnAYiqjmRsTi+GuUMoRt/UJSpqJdBvq9ZLAiABpRLXGxjO0XbGufkM+bos/g92heAxF45m1nR09tRBWA=="
+        "sig": "MEQCIElVFUDOqK8lpUB8Z6B/cXb+jZx+TwHITD2I9dI8qUcDAiAFByYN/djtAfjRF5lS1i0ljpCM9aXH3AjZKlmVEXKJBA=="
       }
     ]
   },
@@ -70,7 +72,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/grid_0.1.1_1726146139970_0.6525176240345865"
+    "tmp": "tmp/grid_0.1.2_1728303257441_0.6623555320639798"
   },
   "_hasShrinkwrap": false
 }
