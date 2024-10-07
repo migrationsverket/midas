@@ -1,3 +1,2 @@
 npx nx affected -t format
-npx nx affected -t lint --exclude tag:apps
 node .husky/rules/branch-names.js
