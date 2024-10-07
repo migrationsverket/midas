@@ -1,3 +1,10 @@
+## 0.5.30 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated button to 0.6.4
+
 ## 0.5.28 (2024-09-26)
 
 
