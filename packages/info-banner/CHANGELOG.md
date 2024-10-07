@@ -1,3 +1,32 @@
+## 0.3.0 (2024-10-07)
+
+
+### 🚀 Features
+
+- **textarea:** new component
+
+- **info-banner:** dismissable banner
+
+
+### 🩹 Fixes
+
+- change node version on deploy
+
+- new readme + doc build
+
+- **docs:** fix storybook link
+
+- **docs:** update url
+
+- **docs:** update url
+
+- **info-banner:** fix dismissable button
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.1.0 (2024-05-27)
 
 ### 🚀 Features
