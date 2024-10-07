@@ -2,7 +2,7 @@
   "name": "nextjs-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/next-e2e/src",
-  "tags": [],
+  "tags": ["apps"],
   "implicitDependencies": ["nextjs"],
   "targets": {
     "e2e": {

@@ -8,11 +8,9 @@ expect.extend(toHaveNoViolations)
 describe('given a default Checkbox', () => {
   // setup
   let rendered: RenderResult
-  let checkbox: HTMLElement
 
   beforeEach(() => {
     rendered = render(<CheckboxTest></CheckboxTest>)
-    checkbox = rendered.getByRole('checkbox')
   })
 
   it('should have no accessibility violations', async () => {

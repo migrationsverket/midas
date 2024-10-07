@@ -5,7 +5,7 @@
 import '@testing-library/jest-dom'
 import * as React from 'react'
 import { axe, toHaveNoViolations } from 'jest-axe'
-import { render, fireEvent, RenderResult } from '@testing-library/react'
+import { render, RenderResult } from '@testing-library/react'
 import {
   Accordion,
   AccordionContent,

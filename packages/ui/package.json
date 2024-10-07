@@ -24,7 +24,18 @@
     "@midas-ds/textfield": "*",
     "@midas-ds/toast": "*",
     "@midas-ds/link": "*",
-    "@midas-ds/file-upload": "0.3.19"
+    "@midas-ds/file-upload": "0.3.20",
+    "@midas-ds/breadcrumbs": "0.0.2",
+    "@midas-ds/combobox": "0.0.1",
+    "@midas-ds/date-picker": "0.0.1",
+    "@midas-ds/flex": "0.0.1",
+    "@midas-ds/grid": "0.0.1",
+    "@midas-ds/link-button": "0.2.5",
+    "@midas-ds/search-field": "0.0.1",
+    "@midas-ds/spinner": "0.0.1",
+    "@midas-ds/table": "0.0.1",
+    "@midas-ds/tabs": "0.0.1",
+    "@midas-ds/textarea": "0.0.1"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
