@@ -1,3 +1,10 @@
+## 0.5.42 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated select to 0.4.25
+
 ## 0.5.41 (2024-10-07)
 
 
