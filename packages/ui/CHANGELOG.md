@@ -1,3 +1,10 @@
+## 0.5.34 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 0.6.0
+
 ## 0.5.33 (2024-10-07)
 
 
