@@ -1,3 +1,10 @@
+## 0.5.33 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated card to 0.3.4
+
 ## 0.5.32 (2024-10-07)
 
 
