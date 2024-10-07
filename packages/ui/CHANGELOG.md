@@ -1,3 +1,10 @@
+## 0.5.44 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 0.11.0
+
 ## 0.5.43 (2024-10-07)
 
 
