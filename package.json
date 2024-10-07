@@ -11,7 +11,6 @@
   "private": false,
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
-    "clsx": "^2.1.1",
     "css-minimizer-webpack-plugin": "^4.1.0",
     "isbot": "^4.4.0",
     "moment": "^2.30.1",
@@ -21,9 +20,7 @@
     "react-aria-components": "^1.1.1",
     "react-dom": "18.3.1",
     "react-is": "18.3.1",
-    "rollup-preserve-directives": "^1.1.1",
-    "tslib": "^2.3.0",
-    "vite-plugin-css-injected-by-js": "^3.5.1"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -90,6 +87,7 @@
     "@vitest/ui": "1.4.0",
     "babel-jest": "29.7.0",
     "babel-plugin-styled-components": "1.10.7",
+    "clsx": "^2.1.1",
     "commitizen": "^4.3.0",
     "cypress": "13.14.2",
     "cz-conventional-changelog": "^3.3.0",
@@ -118,11 +116,13 @@
     "prettier": "^3.0.0",
     "react-docgen-typescript": "^2.2.2",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-preserve-directives": "^1.1.2",
     "storybook": "^8.3.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.12",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
     "vite-plugin-dts": "~2.3.0",
     "vite-plugin-lib-inject-css": "^2.1.1",
     "vitest": "1.4.0"

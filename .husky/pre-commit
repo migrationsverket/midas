@@ -1,1 +1,2 @@
 npx nx affected -t format
+node .husky/rules/branch-names.js

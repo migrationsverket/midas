@@ -5,10 +5,7 @@ import {
   CheckboxGroup as AriaCheckboxGroup,
   CheckboxGroupProps as AriaCheckboxGroupProps,
   CheckboxGroupStateContext,
-  FieldError,
   Group,
-  Label,
-  Text,
   ValidationResult,
 } from 'react-aria-components'
 import styles from './Checkbox.module.css'

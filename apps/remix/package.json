@@ -8,10 +8,9 @@
   "dependencies": {
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
-    "@remix-run/serve": "^2.8.1",
-    "isbot": "^4.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@midas-ds/button": "0.6.2",
+    "@nx/remix": "19.7.2",
+    "@testing-library/jest-dom": "^6.2.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.8.1",

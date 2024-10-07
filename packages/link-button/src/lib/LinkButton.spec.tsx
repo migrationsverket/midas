@@ -8,11 +8,9 @@ expect.extend(toHaveNoViolations)
 describe('given a default link', () => {
   let rendered: RenderResult
   let handleChange: jest.Mock
-  let link: HTMLElement
 
   beforeEach(() => {
     rendered = render(<LinkTest onPress={handleChange}></LinkTest>)
-    link = rendered.getByRole('link')
   })
 
   it('should have no accessibility violations', async () => {
