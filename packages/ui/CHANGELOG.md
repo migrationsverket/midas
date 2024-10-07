@@ -1,3 +1,10 @@
+## 0.5.38 (2024-10-07)
+
+
+### 🧱 Updated Dependencies
+
+- Updated link to 0.0.3
+
 ## 0.5.37 (2024-10-07)
 
 
