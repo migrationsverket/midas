@@ -1,5 +1,17 @@
-## 0.5.60 (2024-10-08)
+## 0.5.67 (2024-10-08)
 
+
+### 🧱 Updated Dependencies
+
+- Updated accordion to 0.5.4
+- Updated checkbox to 0.6.3
+- Updated button to 0.6.7
+- Updated select to 0.5.5
+- Updated radio to 0.7.3
+- Updated theme to 0.5.3
+- Updated logo to 0.2.57
+
+## 0.5.3 (2024-10-08)
 
 ### 🧱 Updated Dependencies
 
@@ -13,11 +25,9 @@
 
 ## 0.5.28 (2024-09-26)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -30,24 +40,20 @@
 - **docs:** update url
 
 - **docs:** update url
-
 
 ### 🧱 Updated Dependencies
 
 - Updated select to 0.4.25
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.5.27 (2024-09-24)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -60,24 +66,20 @@
 - **docs:** update url
 
 - **docs:** update url
-
 
 ### 🧱 Updated Dependencies
 
 - Updated button to 0.6.3
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.5.26 (2024-09-19)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -91,25 +93,21 @@
 
 - **docs:** update url
 
-
 ### 🧱 Updated Dependencies
 
 - Updated radio to 0.6.3
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.5.29 (2024-09-12)
 
-
 ### 🩹 Fixes
 
 - **docs:** change doc structure
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 

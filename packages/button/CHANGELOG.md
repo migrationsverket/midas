@@ -1,3 +1,20 @@
+## 0.6.7 (2024-10-08)
+
+
+### 🩹 Fixes
+
+- **button:** add icon variant
+
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.3
+
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.6.6 (2024-10-08)
 
 
