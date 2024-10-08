@@ -2,8 +2,7 @@ name: DocWeb - Test Build and Deployment
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: ['main', 'release/**']
     # Review gh actions docs if you want to further define triggers, paths, etc
     # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
