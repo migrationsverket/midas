@@ -1,12 +1,10 @@
 ## 0.5.6 (2024-10-08)
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.4
 
 ## 0.5.5 (2024-10-08)
-
 
 ### 🧱 Updated Dependencies
 
@@ -14,18 +12,15 @@
 
 ## 0.5.4 (2024-10-08)
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.26
 
 ## 0.4.25 (2024-09-26)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -45,8 +40,7 @@
 
 - **select:** fix icon alignment
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - jabir Khalil
 - PHIEKS

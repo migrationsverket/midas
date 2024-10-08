@@ -1,6 +1,5 @@
 ## 0.5.67 (2024-10-08)
 
-
 ### 🧱 Updated Dependencies
 
 - Updated accordion to 0.5.4

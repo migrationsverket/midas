@@ -1,70 +1,76 @@
 {
-  "_id": "@midas-ds/link@0.0.1",
-  "_rev": "2-1ab412c56ba5d724cb1ac30549b0fc41",
+  "_id": "@midas-ds/link@0.0.3",
+  "_rev": "3-40fd69b864211a82e266b59ff4844a7e",
   "name": "@midas-ds/link",
   "dist-tags": {
-    "latest": "0.0.1"
+    "latest": "0.0.3"
   },
   "versions": [
     "0.0.1",
-    "0.0.2"
+    "0.0.2",
+    "0.0.3"
   ],
   "time": {
     "created": "2024-09-10T14:35:32.127Z",
-    "modified": "2024-09-12T13:02:03.322Z",
+    "modified": "2024-10-07T12:16:40.127Z",
     "0.0.1": "2024-09-10T14:35:32.368Z",
-    "0.0.2": "2024-09-12T12:34:14.036Z"
+    "0.0.2": "2024-09-12T12:34:14.036Z",
+    "0.0.3": "2024-10-07T12:16:39.947Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
-    "url": "git+https://github.com/migrationsverket/midas.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
   },
   "description": "```bash npm install @midas-ds/link ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 3608,
-  "version": "0.0.1",
-  "dist": {
-    "shasum": "f65c93b7a51086ba06aeeefc9e54015932d75270",
-    "tarball": "https://registry.npmjs.org/@midas-ds/link/-/link-0.0.1.tgz",
-    "fileCount": 7,
-    "integrity": "sha512-tbprNF0dKF77zHoOBtwHXbdfWaZw5gMhXHHm7G7PToTjCztZi6VpCBG2QOZjR5QKduxV6v3lEgvJBNb2uv9qDw==",
-    "signatures": [
-      {
-        "sig": "MEUCICWu1Sx5QDpXWIXwi3/h1YkyNIJIiYpncWQLHT6oKgM+AiEAoANLLzkiNVvBJmbP4DksqvWRSVsRfdKc0OvTz3jeL30=",
-        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
-      }
-    ],
-    "unpackedSize": 72024
-  },
+  "_contentLength": 5175,
+  "version": "0.0.3",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
   },
-  "gitHead": "3249c378ff347568aef225baf4b4625d95a93f69",
-  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
-  "_npmVersion": "10.5.0",
-  "directories": {},
-  "_nodeVersion": "21.7.3",
+  "peerDependencies": {
+    "react-aria-components": "^1.1.1",
+    "clsx": "^2.1.1",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "rollup-preserve-directives": "^1.1.1"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "_hasShrinkwrap": false,
-  "peerDependencies": {
-    "react": "^18.2.0"
+  "gitHead": "026994029f3377fcd8c4e6bc2ea4edba6b43d792",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-N9yHRSKqfQWDO3eTgUAvjtqM6Fv8p2Bl+gMhmd8C9d/59husGvv/7AGl78lmNcsZTN0QRxZS+sodSksmVx2rSA==",
+    "shasum": "5559b68070bbc64cf14757e567e887cf3fe28378",
+    "tarball": "https://registry.npmjs.org/@midas-ds/link/-/link-0.0.3.tgz",
+    "fileCount": 6,
+    "unpackedSize": 72831,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIQC43HD0yPmpfjJxriAcTHX3flUkZU97g7QoMtm5OxW8CgIgAj17hAD5U1cfVeoEeOZ5iodZlaojdF6W3UpseoMZmOo="
+      }
+    ]
   },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
   "_npmOperationalInternal": {
-    "tmp": "tmp/link_0.0.1_1725978932228_0.33252376180370824",
-    "host": "s3://npm-registry-packages"
-  }
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/link_0.0.3_1728303399716_0.3235951102220054"
+  },
+  "_hasShrinkwrap": false
 }

@@ -1,10 +1,8 @@
 ## 0.7.4 (2024-10-08)
 
-
 ### 🚀 Features
 
 - **radio:** new wrapper
-
 
 ### 🩹 Fixes
 
@@ -12,24 +10,20 @@
 
 - **radio:** change gap between elements to 0.5rem
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.4
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - PHIEKS
 - Wilhelm Hjelm
 
 ## 0.7.3 (2024-10-08)
 
-
 ### 🚀 Features
 
 - **radio:** new wrapper
-
 
 ### 🩹 Fixes
 
@@ -37,24 +31,20 @@
 
 - **radio:** change gap between elements to 0.5rem
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.3
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - PHIEKS
 - Wilhelm Hjelm
 
 ## 0.7.2 (2024-10-08)
 
-
 ### 🚀 Features
 
 - **radio:** new wrapper
-
 
 ### 🩹 Fixes
 
@@ -62,24 +52,20 @@
 
 - **radio:** change gap between elements to 0.5rem
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.26
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - PHIEKS
 - Wilhelm Hjelm
 
 ## 0.7.0 (2024-10-07)
 
-
 ### 🚀 Features
 
 - **radio:** new wrapper
-
 
 ### 🩹 Fixes
 
@@ -87,24 +73,20 @@
 
 - **radio:** change gap between elements to 0.5rem
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.25
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - PHIEKS
 - Wilhelm Hjelm
 
 ## 0.6.3 (2024-09-19)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -122,8 +104,7 @@
 
 - **docs:** update url
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - jabir Khalil
 - PHIEKS
