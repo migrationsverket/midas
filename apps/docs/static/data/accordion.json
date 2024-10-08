@@ -1,21 +1,23 @@
 {
-  "_id": "@midas-ds/accordion@0.4.25",
-  "_rev": "2-910a27d96eeb299f753795c99119037c",
+  "_id": "@midas-ds/accordion@0.5.1",
+  "_rev": "4-611593a7047155d6b9ff2491856f1f81",
   "name": "@midas-ds/accordion",
   "dist-tags": {
-    "latest": "0.4.25"
+    "latest": "0.5.1"
   },
   "versions": [
     "0.4.23",
     "0.4.24",
-    "0.4.25"
+    "0.4.25",
+    "0.5.1"
   ],
   "time": {
     "created": "2024-09-10T14:34:18.911Z",
-    "modified": "2024-09-12T13:02:08.856Z",
+    "modified": "2024-10-07T12:03:45.771Z",
     "0.4.23": "2024-09-10T14:34:19.191Z",
     "0.4.24": "2024-09-11T08:41:50.970Z",
-    "0.4.25": "2024-09-12T13:02:08.663Z"
+    "0.4.25": "2024-09-12T13:02:08.663Z",
+    "0.5.1": "2024-10-07T12:03:45.519Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -30,8 +32,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 6129,
-  "version": "0.4.25",
+  "_contentLength": 7655,
+  "version": "0.5.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -54,15 +56,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-EynMVuEYSL5ICC9oKNjVbA4LmlSf15r/zSCQ9oXfAhP+OB1IuokVA9QyDU89BvQtqrn7xlIbJ/pWe4pyxu1VpQ==",
-    "shasum": "f2456c32d4e4d4720f30db4bfeafff59257b84ea",
-    "tarball": "https://registry.npmjs.org/@midas-ds/accordion/-/accordion-0.4.25.tgz",
+    "integrity": "sha512-Z5qc84mw1BocdWASX5YpJ6mkJUcf4D1Nl/0gM1MayQK+U2c+w2u76yMNxbMWsNrFnDgwoLDLpA24B32yMQ2hZA==",
+    "shasum": "8eba74bbfa79616d28e7efdec887fa2713aa2348",
+    "tarball": "https://registry.npmjs.org/@midas-ds/accordion/-/accordion-0.5.1.tgz",
     "fileCount": 11,
-    "unpackedSize": 44482,
+    "unpackedSize": 44481,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQC+4i6kJWV1TYfwjEK7BVy+oA4hnRcOY+CER9Xk90hXggIgMhRxaz8ijBWMtq5l+hrX4nCfrOM30PTS1tslnWQGT10="
+        "sig": "MEQCICxeOLWMsgFsvgKWSu4UG2Sbmft44fzCA94f37+6iX7AAiAi0rsDhbVx8ZNVR9zmsUowsEB2jirZk3XH4McHE9t77Q=="
       }
     ]
   },
@@ -70,7 +72,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/accordion_0.4.25_1726146128453_0.8346680832019759"
+    "tmp": "tmp/accordion_0.5.1_1728302625288_0.12391557222469962"
   },
   "_hasShrinkwrap": false
 }
