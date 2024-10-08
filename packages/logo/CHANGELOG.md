@@ -1,9 +1,20 @@
-## 0.2.55 (2024-10-07)
-
+## 0.2.58 (2024-10-08)
 
 ### 🧱 Updated Dependencies
 
-- Updated theme to 0.5.33
+- Updated theme to 0.5.4
+
+## 0.2.57 (2024-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.3
+
+## 0.2.56 (2024-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.26
 
 ## 0.2.54 (2024-08-13)
 

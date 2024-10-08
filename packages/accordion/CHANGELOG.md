@@ -1,17 +1,26 @@
-## 0.5.2 (2024-10-07)
-
+## 0.5.5 (2024-10-08)
 
 ### 🧱 Updated Dependencies
 
-- Updated theme to 0.5.33
+- Updated theme to 0.5.4
+
+## 0.5.4 (2024-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.3
+
+## 0.5.3 (2024-10-08)
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.26
 
 ## 0.4.26 (2024-10-07)
-
 
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -25,13 +34,11 @@
 
 - **docs:** update url
 
-
 ### 🧱 Updated Dependencies
 
 - Updated theme to 0.5.25
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
