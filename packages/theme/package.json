@@ -13,6 +13,7 @@
     "./index.css": "./index.css"
   },
   "files": [
+    "**",
     "index.css"
   ],
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
