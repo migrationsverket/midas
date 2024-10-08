@@ -1,3 +1,40 @@
+## 0.6.4 (2024-10-08)
+
+
+### 🚀 Features
+
+- **checkbox:** new wrapper
+
+
+### 🩹 Fixes
+
+- **checkbox:** change to luide icon and fix css
+
+- **checkbox:** fix checkbox size and disabled state css
+
+- **checkbox:** change back to polyline for checkmark
+
+- **checkbox:** add the animation back again
+
+- **checkbox:** remove unused icons
+
+- **checkbox:** change gap to 0.5rem
+
+- **checkbox:** remove left line when invalid
+
+- **checkbox:** change gap to 0,5rem
+
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.4
+
+
+### ❤️  Thank You
+
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 0.6.3 (2024-10-08)
 
 
