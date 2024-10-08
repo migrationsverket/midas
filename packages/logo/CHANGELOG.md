@@ -1,3 +1,10 @@
+## 0.2.56 (2024-10-08)
+
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 0.5.26
+
 ## 0.2.54 (2024-08-13)
 
 This was a version bump only for logo to align it with other projects, there were no code changes.

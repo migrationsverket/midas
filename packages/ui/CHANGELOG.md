@@ -1,3 +1,16 @@
+## 0.5.60 (2024-10-08)
+
+
+### 🧱 Updated Dependencies
+
+- Updated accordion to 0.5.3
+- Updated checkbox to 0.6.2
+- Updated button to 0.6.6
+- Updated select to 0.5.4
+- Updated radio to 0.7.2
+- Updated theme to 0.5.26
+- Updated logo to 0.2.56
+
 ## 0.5.28 (2024-09-26)
 
 
