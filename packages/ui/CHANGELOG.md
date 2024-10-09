@@ -1,142 +1,32 @@
-## 0.5.53 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated toast to 0.5.2
-
-## 0.5.52 (2024-10-07)
-
+## 0.5.67 (2024-10-08)
 
 ### 🧱 Updated Dependencies
 
-- Updated toast to 0.5.2
+- Updated accordion to 0.5.4
+- Updated checkbox to 0.6.3
+- Updated button to 0.6.7
+- Updated select to 0.5.5
+- Updated radio to 0.7.3
+- Updated theme to 0.5.3
+- Updated logo to 0.2.57
 
-## 0.5.51 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated accordion to 0.5.2
-- Updated checkbox to 0.6.1
-- Updated button to 0.6.5
-- Updated select to 0.5.3
-- Updated radio to 0.7.1
-- Updated theme to 0.5.33
-- Updated logo to 0.2.55
-
-## 0.5.44 (2024-10-07)
-
+## 0.5.3 (2024-10-08)
 
 ### 🧱 Updated Dependencies
 
-- Updated textfield to 0.11.0
-
-## 0.5.43 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated select to 0.5.2
-
-## 0.5.42 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated select to 0.4.25
-
-## 0.5.41 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated radio to 0.7.0
-
-## 0.5.40 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated radio to 0.7.0
-
-## 0.5.39 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated logo to 0.2.54
-
-## 0.5.38 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated link to 0.0.3
-
-## 0.5.37 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated info-banner to 0.3.0
-
-## 0.5.36 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated info-banner to 0.3.0
-
-## 0.5.35 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated checkbox to 0.6.0
-
-## 0.5.34 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated checkbox to 0.6.0
-
-## 0.5.33 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated card to 0.3.4
-
-## 0.5.32 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated card to 0.3.4
-
-## 0.5.31 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated button to 0.6.4
-
-## 0.5.30 (2024-10-07)
-
-
-### 🧱 Updated Dependencies
-
-- Updated button to 0.6.4
+- Updated accordion to 0.5.3
+- Updated checkbox to 0.6.2
+- Updated button to 0.6.6
+- Updated select to 0.5.4
+- Updated radio to 0.7.2
+- Updated theme to 0.5.26
+- Updated logo to 0.2.56
 
 ## 0.5.28 (2024-09-26)
-
 
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -150,23 +40,19 @@
 
 - **docs:** update url
 
-
 ### 🧱 Updated Dependencies
 
 - Updated select to 0.4.25
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.5.27 (2024-09-24)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -179,24 +65,20 @@
 - **docs:** update url
 
 - **docs:** update url
-
 
 ### 🧱 Updated Dependencies
 
 - Updated button to 0.6.3
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.5.26 (2024-09-19)
 
-
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -210,25 +92,21 @@
 
 - **docs:** update url
 
-
 ### 🧱 Updated Dependencies
 
 - Updated radio to 0.6.3
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.5.29 (2024-09-12)
 
-
 ### 🩹 Fixes
 
 - **docs:** change doc structure
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
