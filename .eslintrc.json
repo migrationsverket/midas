@@ -50,7 +50,10 @@
               "vite",
               "@vitejs/plugin-react",
               "@nx/vite",
-              "vite-plugin-dts"
+              "vite-plugin-dts",
+              "clsx",
+              "rollup-preserve-directives",
+              "vite-plugin-css-injected-by-js"
             ],
             "includeTransitiveDependencies": false,
             "ignoredFiles": [],
