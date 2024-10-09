@@ -11,10 +11,7 @@
     }
   },
   "peerDependencies": {
-    "lucide-react": "^0.383.0",
-    "clsx": "^2.1.1",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1"
+    "lucide-react": "^0.383.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
