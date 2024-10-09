@@ -1,7 +1,7 @@
 ---
 title: Link
 tags: []
-description: Kort beskrivning av Link
+description: Komponent som skapar en länk
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
@@ -13,7 +13,7 @@ import { Link } from '@midas-ds/link'
 
 ## Introduktion
 
-_Kort beskrivning av Link_
+Komponenten Link skapar en länk.
 
 ## Installation och användning
 
@@ -26,7 +26,17 @@ import { Link } from '@midas-ds/link'
 ```
 
 ```tsx live
-<Link>En länk</Link>
+<Link href="/blog">En länk till designsystemets nyheter</Link>
+```
+
+## Riktlinjer
+
+```mermaid
+flowchart TD;
+    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
+    A -->|Ja| C[Använd komponenten Link]
+    B -->|Action| D[Använd komponenten Button]
+    B -->|Navigering| E[Använd komponenten LinkButton]
 ```
 
 ## Dependencies
