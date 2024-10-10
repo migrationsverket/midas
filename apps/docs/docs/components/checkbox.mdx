@@ -84,8 +84,8 @@ Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". D
 
 ```mermaid
 flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?] 
-    A -->|Ja| B[Använd Checkbox]
+    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
+    A -->|Ja| B[Använd Checkbox]:::primary
     A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]
     C -->|Ja| E[Använd Select]
     C -->|Nej| D[Använd Radio]
