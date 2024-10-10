@@ -43,16 +43,16 @@ import { Button } from '@midas-ds/button';
 
 ## Riktlinjer
 
-### Vägledning för val av kompon
+### Val av komponent
 
 ```mermaid
 
 flowchart TD;
    
-    A[Är länken i ett textstycke?]:::primary-->|Nej| B[Vad är syftet?]:::primary
-    A-->|Ja| C[Använd komponenten Link]
-    B-->|Action| D[Använd komponenten Button]:::primary
-    B -->|Navigering| E[Använd komponenten LinkButton]
+    A[Är länken i ett textstycke?]:::primary-->|Ja| C[Använd Link]
+    A-->|Nej| B[Vad är syftet?]:::primary
+    B-->|Action| D[Använd Button]:::primary
+    B -->|Navigering| E[Använd LinkButton]
      
 ```
 ### Generella regler
