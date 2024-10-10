@@ -15,7 +15,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Introduktion
 
-_Kort beskrivning av Spinner_
+Spinnern används för att upplysa användaren om att systemet/tjänsten laddar.  
 
 ## Installation och användning
 
@@ -32,7 +32,7 @@ import { Spinner } from '@midas-ds/spinner'
 </LiveCodeBlock>
 
 ### Kombinerat med andra komponenter
-Använd varianten small för att kombinera med t.ex Button
+Använd varianten small för att kombinera med andra komponenter t.ex Button
 
 <LiveCodeBlock scope={{Spinner, Button}}>
 {`<Button>
@@ -44,6 +44,9 @@ Använd varianten small för att kombinera med t.ex Button
 </Button>`}
 </LiveCodeBlock>
 
+## Riktlinjer
+
+Om det väntas ta mer än 10 sekunder att ladda sidan bör det förutom en spinner finnas ett meddelande till användaren om det.
 
 ## Dependencies
 <ComponentFooter info={Info}/>
