@@ -1,6 +1,6 @@
 'use client'
 import styles from './ComboBox.module.css'
-import React, { useState } from 'react'
+import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
@@ -35,7 +35,6 @@ export function ComboBox<T extends object>({
   items,
   ...props
 }: ComboBoxProps<T>) {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <AriaComboBox
       className={styles.combobox}
@@ -48,9 +47,9 @@ export function ComboBox<T extends object>({
       >
         <div className={styles.wrap}>
           <Input className={styles.input} />
-          <Button className={styles.button} onPress={() => setIsOpen((prev) => !prev)}>
+          <Button className={styles.button}>
             <div
-              className={`${styles.icon} ${isOpen ? styles.iconOpen : ''}`}
+              className={styles.icon}
               aria-hidden="true"
             >
               <Chevron
@@ -63,9 +62,8 @@ export function ComboBox<T extends object>({
       </InputWrapper>
 
       <Popover
-        className={`${styles.popover} ${isOpen ? styles.popoverOpen : ''}`}
+        className={styles.popover}
         offset={0}
-        onOpenChange={setIsOpen}
       >
         <ListBox items={items}>{children}</ListBox>
       </Popover>

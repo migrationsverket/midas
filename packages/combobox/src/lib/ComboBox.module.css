@@ -64,15 +64,16 @@
   top: 0;
   right: 0;
   height: 100%;
+  transition: transform 0.3s ease;
+  &[aria-expanded='true'] {
+    transform: rotate(180deg);
+  }
 }
 
 .icon {
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
-}
-.iconOpen {
-  transform: rotate(180deg);
 }
 
 .popover {
@@ -81,15 +82,8 @@
   width: calc(var(--trigger-width) - 0.125rem);
   background: white;
   overflow-y: auto;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0;
-  transform: scaleY(0); 
-  transform-origin: top;
 }
-.popoverOpen {
-  opacity: 1;
-  transform: scaleY(1); 
-}
+
 .fieldError {
   margin-top: 0.625rem;
   display: flex;
