@@ -1,6 +1,6 @@
 'use client'
 import styles from './ComboBox.module.css'
-import React from 'react'
+import React, { useState } from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
@@ -14,7 +14,7 @@ import {
   ListBox,
   ListBoxItem,
 } from 'react-aria-components'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown as Chevron } from 'lucide-react'
 import { InputWrapper } from '@midas-ds/textfield'
 
 export interface ComboBoxProps<T extends object>
@@ -35,6 +35,7 @@ export function ComboBox<T extends object>({
   items,
   ...props
 }: ComboBoxProps<T>) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <AriaComboBox
       className={styles.combobox}
@@ -47,12 +48,12 @@ export function ComboBox<T extends object>({
       >
         <div className={styles.wrap}>
           <Input className={styles.input} />
-          <Button className={styles.button}>
+          <Button className={styles.button} onPress={() => setIsOpen((prev) => !prev)}>
             <div
-              className={styles.icon}
+              className={`${styles.icon} ${isOpen ? styles.iconOpen : ''}`}
               aria-hidden="true"
             >
-              <ChevronDown
+              <Chevron
                 height={16}
                 width={16}
               />
@@ -62,8 +63,9 @@ export function ComboBox<T extends object>({
       </InputWrapper>
 
       <Popover
-        className={styles.popover}
+        className={`${styles.popover} ${isOpen ? styles.popoverOpen : ''}`}
         offset={0}
+        onOpenChange={setIsOpen}
       >
         <ListBox items={items}>{children}</ListBox>
       </Popover>
