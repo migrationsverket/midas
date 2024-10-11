@@ -71,21 +71,7 @@ function generateMockOptions(
 
 const options = generateMockOptions(300)
 
-export const OneItem: Story = {
-  args: {
-    placeholder: 'One item...',
-  },
-  render: (args: any) => (
-    <Select
-      items={{ value: 'value' }}
-      {...args}
-    >
-      <Item value={{ value: 'item' }}>Item A</Item>
-    </Select>
-  ),
-}
-
-export const ManyItems: Story = {
+export const Default: Story = {
   args: {
     placeholder: 'Many items...',
   },
