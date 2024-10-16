@@ -176,3 +176,25 @@ this is a bit ad hoc, will fix this later
     background-color: #e6e6e6;
   }
 }
+.primary rect {
+  fill: #143c50 !important;
+  stroke-width: 0 !important;
+  background-color:black !important;
+}
+
+.primary .nodeLabel {
+  color: #ffffff !important;
+}
+
+.edgeLabel {
+  background-color: #ffffff !important;
+}
+.node rect{
+  fill: #ffffff !important;
+  stroke: #143c50 !important;
+  stroke-width: 2 !important;
+
+}
+ .primary.node rect {
+ fill:#143c50 !important;
+}
