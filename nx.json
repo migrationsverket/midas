@@ -67,10 +67,6 @@
         "{projectRoot}/tsconfig.storybook.json"
       ]
     },
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
     "@nx/eslint:lint": {
       "inputs": [
         "default",
@@ -137,6 +133,5 @@
         "linter": "eslint"
       }
     }
-  },
-  "nxCloudId": "66e2f48166950c5d4d820d72"
+  }
 }

@@ -25,9 +25,18 @@
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
       "rules": {
-        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/no-extra-semi": "error",
-        "no-extra-semi": "off"
+        "no-extra-semi": "off",
+        "prefer-const": 2,
+        "@typescript-eslint/no-unused-vars": [
+          2,
+          {
+            // allows you to build project with unused variables starting with underscore
+            "args": "after-used",
+            "argsIgnorePattern": "^_"
+          }
+        ]
       }
     },
     {
@@ -53,7 +62,7 @@
               "vite-plugin-dts",
               "clsx",
               "rollup-preserve-directives",
-              "vite-plugin-css-injected-by-js"
+              "vite-plugin-lib-inject-css"
             ],
             "includeTransitiveDependencies": false,
             "ignoredFiles": [],
