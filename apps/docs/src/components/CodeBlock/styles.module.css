@@ -6,18 +6,21 @@
  */
 
 .playgroundEditor {
-  background: var(--ifm-color-emphasis-200);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-top-left-radius: var(--ifm-global-radius);
-  border-top-right-radius: var(--ifm-global-radius);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   border-bottom: 0;
   color: var(--ifm-color-content);
+  pre {
+    padding: var(--ifm-pre-padding) !important;
+    background-color: transparent !important;
+  }
 }
 
 .playgroundPreview {
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-bottom-left-radius: var(--ifm-global-radius);
-  border-bottom-right-radius: var(--ifm-global-radius);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   position: relative;
   padding: 1rem;
   margin-bottom: 1rem;

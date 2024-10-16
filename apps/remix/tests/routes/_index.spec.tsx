@@ -12,7 +12,7 @@
 
 //   render(<RemixStub />)
 
-//   await waitFor(() => screen.findByText('Hej'))
+//   await waitFor(() => screen.findByText('Hello there,'))
 // })
 
 describe('meaningless but obligatory test', () => {
