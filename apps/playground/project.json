@@ -56,7 +56,10 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/playground/jest.config.ts"
+      }
     },
     "lint": {
       "executor": "@nx/linter:eslint",

@@ -35,7 +35,10 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/remix/jest.config.ts"
+      }
     },
     "lint": {
       "executor": "@nx/eslint:lint"
