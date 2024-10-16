@@ -38,3 +38,16 @@ export default App;
 ```
 
 Mer info finns på [GitHub](https://github.com/migrationsverket/midas)
+
+## Vanliga problem
+
+### Remix
+Använder ni Remix? Då behöver ni lägga till följande i er config för att låta CSS ladda korrekt.
+
+```tsx {2-4} title="vite.config.ts"
+export default defineConfig({
+  ssr: {
+    noExternal: [/^@midas-ds\/.+/],
+  }
+})
+```

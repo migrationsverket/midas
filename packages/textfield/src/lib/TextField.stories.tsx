@@ -40,7 +40,7 @@ export const NotValid = {
   args: {
     ...Primary.args,
     isInvalid: true,
-    errorMessage: 'Errror!',
+    errorMessage: 'Fel i valideringen',
   },
 }
 
@@ -55,5 +55,15 @@ export const Disabled = {
   args: {
     ...Primary.args,
     isDisabled: true,
+  },
+}
+
+export const Personnummer = {
+  args: {
+    ...Primary.args,
+    isSSN: true,
+    label: 'Personnummer',
+    description: undefined,
+    errorMessage: `Fel format för ett personnummer`,
   },
 }

@@ -8,25 +8,4 @@ export default defineConfig({
   cacheDir: '../../node_modules/.vite/apps/remix',
 
   plugins: [react(), nxViteTsPaths()],
-
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
-
-  test: {
-    setupFiles: ['test-setup.ts'],
-    globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
-    environment: 'jsdom',
-    include: ['./tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-
-    reporters: ['default'],
-    coverage: {
-      reportsDirectory: '../../coverage/apps/remix',
-      provider: 'v8',
-    },
-  },
 })

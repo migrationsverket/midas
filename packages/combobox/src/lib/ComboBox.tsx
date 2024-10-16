@@ -47,7 +47,10 @@ export function ComboBox<T extends object>({
       >
         <div className={styles.wrap}>
           <Input className={styles.input} />
-          <Button className={styles.button}>
+          <Button
+            className={styles.button}
+            aria-label="Visa lista"
+          >
             <div
               className={styles.icon}
               aria-hidden="true"
