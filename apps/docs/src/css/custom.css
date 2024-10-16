@@ -201,3 +201,11 @@ p a {
 .primary.node rect {
   fill: #143c50 !important;
 }
+.theme-code-block {
+  background-color: transparent !important;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0px !important;
+  .prism-code {
+    background-color: transparent !important;
+  }
+}
