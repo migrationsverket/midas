@@ -139,6 +139,10 @@ this is a bit ad hoc, will fix this later
   margin-top: unset;
 }
 
+p a {
+  text-decoration: underline;
+}
+
 .playgroundHeader_node_modules-@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module {
   display: none !important;
 }
@@ -179,7 +183,7 @@ this is a bit ad hoc, will fix this later
 .primary rect {
   fill: #143c50 !important;
   stroke-width: 0 !important;
-  background-color:black !important;
+  background-color: black !important;
 }
 
 .primary .nodeLabel {
@@ -189,12 +193,11 @@ this is a bit ad hoc, will fix this later
 .edgeLabel {
   background-color: #ffffff !important;
 }
-.node rect{
+.node rect {
   fill: #ffffff !important;
   stroke: #143c50 !important;
   stroke-width: 2 !important;
-
 }
- .primary.node rect {
- fill:#143c50 !important;
+.primary.node rect {
+  fill: #143c50 !important;
 }
