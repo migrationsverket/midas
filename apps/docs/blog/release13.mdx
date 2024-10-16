@@ -17,9 +17,48 @@ Nedan är en sammanfattning av nyheterna i release 13.
 Tag används till Select och i framtiden Combobox när det är möjligt att göra mer än ett val.
 
 
+## Nya instruktioner för er som använder Remix
+För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under [Kom igång för utvecklare](/get-started/develop/) 
+
+
+#### Remix med Vite
+
+```tsx {2-4} title="vite.config.ts"
+export default defineConfig({
+  ssr: {
+    noExternal: [/^@midas-ds\/.+/],
+  }
+})
+```
+
+#### Äldre Remix - Classic Remix Compiler
+
+Följ detta: [CSS Bundling](https://remix.run/docs/en/main/styling/bundling) och [CSS Imports](https://remix.run/docs/en/main/styling/css-imports)
+
+```tsx title="root.tsx"
+import { cssBundleHref } from '@remix-run/css-bundle'
+import type { LinksFunction } from '@remix-run/node'
+
+// ...
+
+export const links: LinksFunction = () => [
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  // ...
+]
+```
+
+```js {4} title="remix.config.js"
+// ...
+export default {
+  // ...
+  serverDependenciesToBundle: [/^@midas-ds\/.+/],
+}
+```
+
+
 ## Ny variant: Multiselect 
 
 Med -prop- kan du ge användaren möjlighet att göra fler val i en Select. 
 
 ## UI-kit finns nu på Docwebben
-Vårt UI-kit till XD finns nu att [ladda ner](/get-started/design/) här på docwebben. Det uppdateras löpande! 
+Vårt UI-kit till XD finns nu att [ladda ner](/get-started/design/) här på docwebben. UI-kitet uppdateras löpande! 
