@@ -65,8 +65,7 @@ export default defineConfig({
     },
     dts({
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true,
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
     react(),
     nxViteTsPaths(),
@@ -86,7 +85,7 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
-        assetFileNames: ({ name, ext }) => {
+        assetFileNames: ({ ext }) => {
           if (ext === '.css') {
             return '[name][ext]'
           }

@@ -10,7 +10,8 @@
     "@nx/remix": "19.7.2",
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
-    "@testing-library/jest-dom": "^6.2.0"
+    "@testing-library/jest-dom": "^6.2.0",
+    "isbot": "^4"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.8.1",
