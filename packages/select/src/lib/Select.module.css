@@ -31,7 +31,10 @@
   padding-right: 16px;
   background-color: backgroundSecondary;
   box-shadow: 0 1px 0 0 black;
-
+  &[aria-expanded='true'] div {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
   &:focus {
     outline: none;
   }
@@ -81,4 +84,5 @@
 .icon {
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease;
 }
