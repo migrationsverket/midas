@@ -55,7 +55,7 @@ export const Tertiary: Story = {
 }
 export const DisabledButton: Story = {
   args: { variant: 'primary' },
-  render: (args, context) => (
+  render: (args) => (
     <Button
       {...args}
       isDisabled
