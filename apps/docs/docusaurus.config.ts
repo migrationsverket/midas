@@ -186,7 +186,15 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       //darkTheme: prismThemes.dracula,
+
     },
+    mermaid: {
+      options: {
+        flowchart: {
+          curve: 'linear'
+        }
+      }
+    }
   } satisfies Preset.ThemeConfig,
 }
 

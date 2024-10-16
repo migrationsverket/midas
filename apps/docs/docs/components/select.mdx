@@ -43,10 +43,10 @@ import { Item, Select } from '@midas-ds/select'
 
 ```mermaid
 flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?] 
+    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
     A -->|Ja| B[Använd Checkbox]
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]
-    C -->|Ja| E[Använd Select]
+    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary
+    C -->|Ja| E[Använd Select]:::primary
     C -->|Nej| D[Använd Radio]
     
 ```
