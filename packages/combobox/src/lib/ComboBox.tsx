@@ -14,7 +14,7 @@ import {
   ListBox,
   ListBoxItem,
 } from 'react-aria-components'
-import { ChevronDown as Chevron } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { InputWrapper } from '@midas-ds/textfield'
 
 export interface ComboBoxProps<T extends object>
@@ -47,12 +47,15 @@ export function ComboBox<T extends object>({
       >
         <div className={styles.wrap}>
           <Input className={styles.input} />
-          <Button className={styles.button}>
+          <Button
+            className={styles.button}
+            aria-label="Visa lista"
+          >
             <div
               className={styles.icon}
               aria-hidden="true"
             >
-              <Chevron
+              <ChevronDown
                 height={16}
                 width={16}
               />
