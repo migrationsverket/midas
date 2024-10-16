@@ -67,10 +67,6 @@
         "{projectRoot}/tsconfig.storybook.json"
       ]
     },
-    "@nx/vite:test": {
-      "cache": true,
-      "inputs": ["default", "^production"]
-    },
     "@nx/eslint:lint": {
       "inputs": [
         "default",
@@ -138,5 +134,22 @@
       }
     }
   },
-  "nxCloudId": "66e2f48166950c5d4d820d72"
+  "plugins": [
+    {
+      "plugin": "@nx/remix/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "typecheckTargetName": "typecheck",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint"
+      }
+    }
+  ]
 }

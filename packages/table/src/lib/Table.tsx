@@ -39,7 +39,6 @@ export interface TableProps<T> extends AriaTableProps {
 export const Table = <T extends object>({
   responsive,
   narrow,
-  rows,
   ...rest
 }: TableProps<T>) => {
   const classNames = clsx(styles.table, narrow && styles.narrow)

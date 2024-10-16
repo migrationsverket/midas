@@ -1,10 +1,9 @@
-/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import preserveDirectives from 'rollup-preserve-directives'
 
 export default defineConfig({
@@ -16,38 +15,18 @@ export default defineConfig({
     nxViteTsPaths(),
     dts({
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true,
-      insertTypesEntry: true,
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
-    cssInjectedByJsPlugin(),
-    {
-      name: 'custom-swap-directive',
-      generateBundle(_, bundle) {
-        for (const chunk of Object.values(bundle)) {
-          if (chunk.type === 'chunk') {
-            if ('code' in chunk) {
-              if (chunk.code.includes('use client')) {
-                chunk.code = chunk.code.replace(/['"]use client['"];/, '')
-                chunk.code = `'use client';\n${chunk.code}`
-              }
-              if (chunk.code.includes('use server')) {
-                chunk.code = chunk.code.replace(/['"]use server['"];/, '')
-                chunk.code = `'use server';\n${chunk.code}`
-              }
-            }
-          }
-        }
-      },
-      enforce: 'post',
-    },
+    libInjectCss(),
     preserveDirectives(),
   ],
 
   build: {
     outDir: '../../dist/packages/accordion',
+    emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: { transformMixedEsModules: true },
+    cssCodeSplit: true,
     lib: {
       entry: 'src/index.ts',
       name: 'accordion',
@@ -57,24 +36,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
-        banner: () => {
-          return "'use client';"
-        },
+        preserveModules: false,
       },
     },
-  },
-
-  test: {
-    reporters: ['default'],
-    coverage: {
-      reportsDirectory: '../../coverage/packages/accordion',
-      provider: 'v8',
-    },
-    globals: true,
-    cache: {
-      dir: '../../node_modules/.vitest',
-    },
-    environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
   },
 })

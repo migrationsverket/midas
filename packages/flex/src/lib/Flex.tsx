@@ -2,8 +2,11 @@ import { ReactNode } from 'react'
 import styles from './Flex.module.css'
 import clsx from 'clsx'
 
-interface FlexProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'children'> {
+export interface FlexProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   children: ReactNode
   /** Tar bort alla marginaler för nestad användning */
   fluid?: boolean
