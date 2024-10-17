@@ -35,7 +35,7 @@
     "@docusaurus/types": "^3.4.0",
     "@nx-extend/docusaurus": "^3.0.0",
     "@nx/cypress": "20.0.1",
-    "@nx/eslint": "20.0.1",
+    "@nx/eslint:lint": "^20.0.1",
     "@nx/eslint-plugin": "20.0.1",
     "@nx/jest": "^20.0.1",
     "@nx/js": "20.0.1",
