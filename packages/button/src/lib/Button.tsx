@@ -8,7 +8,7 @@ import {
   ButtonRenderProps,
 } from 'react-aria-components'
 import clsx from 'clsx'
-import { ArrowLeft, LucideIcon } from 'lucide-react'
+import { LucideIcon } from 'lucide-react'
 export interface MvdsButton extends ButtonProps {
   /** Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
