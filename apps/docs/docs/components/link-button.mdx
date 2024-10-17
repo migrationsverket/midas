@@ -69,8 +69,13 @@ export default function App() {
 
 ```mermaid
 flowchart TD;
-    A[Är länken i ett textstycke?]:::primary-->|Ja| C[Använd Link]
-    A-->|Nej| B[Vad är syftet?]:::primary
-    B-->|Action| D[Använd Button]
-    B -->|Navigering| E[Använd LinkButton]:::primary
+
+    A[Vad är syftet?]:::primary
+    A-->|Handling| B[Använd Button]
+    A -->|Navigering| C[Är länken i ett textstycke?]:::primary
+    C--> |Ja| D[Använd Link]
+    C-->|Nej| E[Använd LinkButton]:::primary
+    
+
+
 ```
