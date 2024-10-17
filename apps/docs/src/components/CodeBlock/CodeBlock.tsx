@@ -16,9 +16,22 @@ Array.prototype.shuffled = function (count = 5) {
   return count === 1 ? result[0] : result
 }
 
+const columns = [
+  { name: 'Namn', id: 'name', isRowHeader: true },
+  { name: 'Beskrivning', id: 'desc' },
+]
+
+const rows = fruits.shuffled(7).map((fruit) => {
+  return {
+    id: fruit.value,
+    name: fruit.name,
+    desc: fruit.description,
+  }
+})
+
 function Playground({ children, transformCode, ...props }) {
   const theme = usePrismTheme()
-  const scope = { fruits, ...props.scope }
+  const scope = { columns, rows, fruits, ...props.scope }
 
   return (
     <LiveProvider

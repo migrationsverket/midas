@@ -1,11 +1,6 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, gray10, gray30, gray40, gray60, mediumWeight from tokens;
 
-.container {
-  max-width: 100%;
-  overflow: auto;
-}
-
 .table {
   font-family: display;
   border-spacing: 0;
@@ -20,6 +15,9 @@
   }
   th[data-hovered='true'] {
     outline: 2px solid black;
+  }
+  &.striped .row:nth-child(2n - 1) .cell {
+    background-color: white;
   }
 }
 

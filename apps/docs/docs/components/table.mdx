@@ -7,7 +7,8 @@ description: Kort beskrivning av Table
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/table.json'
-import { Table, TableHeader, TableBody, Column, Row } from '@midas-ds/table'
+import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/table'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Table'} info={Info} friendlyName={'Tabell'} />
 
@@ -25,26 +26,112 @@ npm install @midas-ds/table
 import { Table } from '@midas-ds/table'
 ```
 
-{/* ```tsx live
-<Table
-aria-label="Files"
-selectionMode="multiple"
->
-<TableHeader columns={columns}>
-    {(column) => (
-    <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-    )}
-</TableHeader>
-<TableBody items={rows}>
-    {(item) => (
-    <Row columns={columns}>
-        {(column) => <Cell>{item[column.id]}</Cell>}
-    </Row>
-    )}
-</TableBody>
-</Table>
-``` */}
+För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas `id`.
 
+``` tsx
+const columns = [
+  { name: 'Namn', id: 'name', isRowHeader: true },
+  { name: 'Beskrivning', id: 'desc', width: 'max-content' },
+]
+
+const rows = fruits.map((fruit) => {
+  return {
+    id: fruit.value,
+    name: fruit.name,
+    desc: fruit.description,
+  }
+})
+```
+
+<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
+{`<Table
+    aria-label="Frukter"
+>
+    <TableHeader columns={columns}>
+        {(column) => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+        )}
+    </TableHeader>
+    <TableBody items={rows}>
+        {(item) => (
+            <Row columns={columns}>
+                {(column) => <Cell>{item[column.id]}</Cell>}
+            </Row>
+        )}
+    </TableBody>
+</Table>`}
+</LiveCodeBlock>
+
+### Väljbara rader
+Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`
+
+<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
+{`<Table
+    aria-label="Frukter"
+    selectionMode="multiple"
+>
+    <TableHeader columns={columns}>
+        {(column) => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+        )}
+    </TableHeader>
+    <TableBody items={rows}>
+        {(item) => (
+            <Row columns={columns}>
+                {(column) => <Cell>{item[column.id]}</Cell>}
+            </Row>
+        )}
+    </TableBody>
+</Table>`}
+</LiveCodeBlock>
+
+### Smalare rader
+Använd `narrow` om du vill ha en mindre tabell.
+
+<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
+{`<Table
+    narrow
+    aria-label="Frukter"
+    selectionMode="multiple"
+>
+    <TableHeader columns={columns}>
+        {(column) => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+        )}
+    </TableHeader>
+    <TableBody items={rows}>
+        {(item) => (
+            <Row columns={columns}>
+                {(column) => <Cell>{item[column.id]}</Cell>}
+            </Row>
+        )}
+    </TableBody>
+</Table>`}
+</LiveCodeBlock>
+
+### Randiga rader
+Använd `striped` om du vill ha en randig tabell.
+
+<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
+{`<Table
+    striped
+    aria-label="Frukter"
+    selectionMode="multiple"
+>
+    <TableHeader columns={columns}>
+        {(column) => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+        )}
+    </TableHeader>
+    <TableBody items={rows}>
+        {(item) => (
+            <Row columns={columns}>
+                {(column) => <Cell>{item[column.id]}</Cell>}
+            </Row>
+        )}
+    </TableBody>
+</Table>`}
+</LiveCodeBlock>
 
 ## Dependencies
 <ComponentFooter info={Info}/>

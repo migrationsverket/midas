@@ -40,8 +40,6 @@ export const Primary: Story = {
 
     return (
       <Table
-        responsive={args.responsive}
-        narrow={args.narrow}
         aria-label="Files"
         selectionMode="multiple"
         {...args}
@@ -61,8 +59,4 @@ export const Primary: Story = {
       </Table>
     )
   },
-  // play: async ({ canvasElement }) => {
-  //   const canvas = within(canvasElement)
-  //   expect(canvas.getByText(/Welcome to Table!/gi)).toBeTruthy()
-  // },
 }
