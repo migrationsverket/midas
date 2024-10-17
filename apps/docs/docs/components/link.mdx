@@ -31,12 +31,15 @@ import { Link } from '@midas-ds/link'
 
 ## Riktlinjer
 
+### Val av komponent
+
 ```mermaid
 flowchart TD;
-    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
-    A -->|Ja| C[Använd komponenten Link]
-    B -->|Action| D[Använd komponenten Button]
-    B -->|Navigering| E[Använd komponenten LinkButton]
+    A[Vad är syftet?]:::primary
+    A-->|Handling| B[Använd Button]
+    A -->|Navigering| C[Är länken i ett textstycke?]:::primary
+    C--> |Ja| D[Använd Link]:::primary
+    C-->|Nej| E[Använd LinkButton]
 ```
 
 ## Dependencies

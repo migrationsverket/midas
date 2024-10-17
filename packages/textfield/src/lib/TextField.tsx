@@ -19,19 +19,40 @@ export interface TextFieldProps extends AriaTextFieldProps {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string) | undefined
+  validationType?: 'ssn' | RegExp
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
   label,
   description,
   errorMessage,
+  validationType,
   ...props
 }) => {
   const [input, setInput] = React.useState<string>('')
+  const [isValid, setIsValid] = React.useState<boolean>(true)
+
+  const validateInput = (value: string) => {
+    if (validationType === undefined) return true
+    if (validationType === 'ssn') setIsValid(ssnRegEx.test(value))
+
+    if (validationType instanceof RegExp)
+      setIsValid(new RegExp(validationType).test(value))
+  }
+
+  const handleInputBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    validateInput(value)
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value)
+  }
 
   return (
     <AriaTextField
       className={styles.inputField}
+      isInvalid={validationType !== undefined ? !isValid : props.isInvalid}
       {...props}
     >
       <InputWrapper
@@ -43,7 +64,8 @@ export const TextField: React.FC<TextFieldProps> = ({
           <Input
             type={props.type}
             className={styles.input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={handleInputChange}
+            onBlur={handleInputBlur}
           />
           <PasswordField
             type={props.type}
@@ -123,3 +145,7 @@ export const InputWrapper = ({
     </div>
   )
 }
+
+export const ssnRegEx = new RegExp(
+  '^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$'
+)

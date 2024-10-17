@@ -28,8 +28,8 @@ import { LinkButton } from '@midas-ds/link-button'
 
 ```tsx live
 <Flex>
-  <LinkButton href={'/dream/components'}>Link to page</LinkButton>
-  <LinkButton variant={'secondary'} href={'#props'}>Props</LinkButton>
+  <LinkButton href={'/components/link'}>Link till Länk</LinkButton>
+  <LinkButton variant={'secondary'} href={'#riktlinjer'}>Riktliner</LinkButton>
 </Flex>
 ```
 
@@ -65,10 +65,17 @@ export default function App() {
 
 ## Riktlinjer
 
+### Val av komponent
+
 ```mermaid
 flowchart TD;
-    A[Är länken i ett textstycke?] -->|Nej| B(Vad är syftet?)
-    A -->|Ja| C[Använd komponenten Link]
-    B -->|Action| D[Använd komponenten Button]
-    B -->|Navigering| E[Använd komponenten LinkButton]
+
+    A[Vad är syftet?]:::primary
+    A-->|Handling| B[Använd Button]
+    A -->|Navigering| C[Är länken i ett textstycke?]:::primary
+    C--> |Ja| D[Använd Link]
+    C-->|Nej| E[Använd LinkButton]:::primary
+    
+
+
 ```

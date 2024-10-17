@@ -2,7 +2,11 @@ import { ReactNode } from 'react'
 import styles from './Flex.module.css'
 import clsx from 'clsx'
 
-export interface FlexItemProps {
+export interface FlexItemProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   children: ReactNode
   col?:
     | '1'
@@ -61,12 +65,21 @@ export const FlexItem: React.FC<FlexItemProps> = ({
   children,
   col,
   offset,
+  ...props
 }) => {
   const colClass = col ? `col-${col}` : ''
   const offsetClass = offset ? `offset-${offset}` : ''
 
   return (
-    <div className={clsx(styles.col, styles[colClass], styles[offsetClass])}>
+    <div
+      className={clsx(
+        styles.col,
+        styles[colClass],
+        styles[offsetClass],
+        props.className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )

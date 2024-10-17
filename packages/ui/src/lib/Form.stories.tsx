@@ -18,7 +18,7 @@ type Story = StoryObj<typeof AriaForm>
 
 export const SimpleForm: Story = {
   args: {},
-  render: ({ ...args }) => {
+  render: () => {
     const ITEMS = ['Banan', 'Apple', 'Mango']
 
     return (
@@ -56,7 +56,7 @@ export const SimpleForm: Story = {
 
 export const TwoColumnForm: Story = {
   args: {},
-  render: ({ ...args }) => {
+  render: () => {
     const ITEMS = ['A', 'B', 'C']
     const RADIOITEMS = ['Anledning A', 'Anledning B', 'Anledning C']
     const SEX = ['Man', 'Kvinna', 'Annat']

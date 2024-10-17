@@ -64,21 +64,7 @@ function generateMockOptions(count: number): Iterable<Item> {
 
 const options = generateMockOptions(30)
 
-export const OneItem: Story = {
-  args: {
-    placeholder: 'One item...',
-  },
-  render: (args: any) => (
-    <ComboBox
-      items={[{ id: 'value', name: 'One item' }]}
-      {...args}
-    >
-      {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-    </ComboBox>
-  ),
-}
-
-export const ManyItems: Story = {
+export const Default: Story = {
   args: {
     placeholder: 'Välj eller sök frukt',
     label: 'Välj en frukt',

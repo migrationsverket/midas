@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import * as path from 'path'
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
+import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import preserveDirectives from 'rollup-preserve-directives'
 
 export default defineConfig({
@@ -13,60 +14,40 @@ export default defineConfig({
   plugins: [
     react(),
     nxViteTsPaths(),
+    nxCopyAssetsPlugin(['*.md']),
     dts({
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
-      skipDiagnostics: true,
-      insertTypesEntry: true,
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
-    cssInjectedByJsPlugin(),
-    {
-      name: 'custom-swap-directive',
-      generateBundle(_, bundle) {
-        for (const chunk of Object.values(bundle)) {
-          if (chunk.type === 'chunk') {
-            if ('code' in chunk) {
-              if (chunk.code.includes('use client')) {
-                chunk.code = chunk.code.replace(/['"]use client['"];/, '')
-                chunk.code = `'use client';\n${chunk.code}`
-              }
-              if (chunk.code.includes('use server')) {
-                chunk.code = chunk.code.replace(/['"]use server['"];/, '')
-                chunk.code = `'use server';\n${chunk.code}`
-              }
-            }
-          }
-        }
-      },
-      enforce: 'post',
-    },
+    libInjectCss(),
     preserveDirectives(),
   ],
 
+  // Configuration for building your library.
+  // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
     outDir: '../../dist/packages/button',
+    emptyOutDir: true,
     reportCompressedSize: true,
-    commonjsOptions: { transformMixedEsModules: true },
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+    cssCodeSplit: true,
     lib: {
+      // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
-      name: 'button',
+      name: 'test',
       fileName: 'index',
+      // Change this to the formats you want to support.
+      // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
     },
     rollupOptions: {
+      // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
+      output: {
+        preserveModules: false,
+      },
     },
-    cssCodeSplit: false,
-  },
-
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
-      generateScopedName: '[name]__[local]___[hash:base64:5]',
-    },
-  },
-
-  test: {
-    // ... (test configuration remains the same)
   },
 })
