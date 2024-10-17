@@ -71,7 +71,6 @@
   color: blue150;
   background-color: transparent;
   opacity: 1;
-  text-decoration: underline;
 
   &:hover {
     background-color: gray10;
