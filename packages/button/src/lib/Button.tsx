@@ -55,10 +55,10 @@ export const Button: React.FC<MvdsButton> = ({
       )}
       {...rest}
     >
-      <span className={styles.iconBefore}>
+      <>
         {TertiaryIcon && <TertiaryIcon />}
         {rest.children}
-      </span>
+      </>
     </AriaButton>
   )
 }
