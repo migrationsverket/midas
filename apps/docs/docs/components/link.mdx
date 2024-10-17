@@ -35,10 +35,11 @@ import { Link } from '@midas-ds/link'
 
 ```mermaid
 flowchart TD;
-    A[Är länken i ett textstycke?]:::primary-->|Ja| C[Använd Link]:::primary
-    A-->|Nej| B[Vad är syftet?]
-    B-->|Action| D[Använd Button]
-    B -->|Navigering| E[Använd LinkButton]
+    A[Vad är syftet?]:::primary
+    A-->|Handling| B[Använd Button]
+    A -->|Navigering| C[Är länken i ett textstycke?]:::primary
+    C--> |Ja| D[Använd Link]:::primary
+    C-->|Nej| E[Använd LinkButton]
 ```
 
 ## Dependencies
