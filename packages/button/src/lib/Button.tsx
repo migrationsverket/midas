@@ -2,11 +2,7 @@
 
 import * as React from 'react'
 import styles from './Button.module.css'
-import {
-  Button as AriaButton,
-  ButtonProps,
-  ButtonRenderProps,
-} from 'react-aria-components'
+import { Button as AriaButton, ButtonProps } from 'react-aria-components'
 import clsx from 'clsx'
 import { LucideIcon } from 'lucide-react'
 export interface MvdsButton extends ButtonProps {
@@ -16,14 +12,7 @@ export interface MvdsButton extends ButtonProps {
   size?: 'small'
   icon?: LucideIcon /**Optional icon prop */
   iconSize?: number /**Optional prop to customize icon size */
-  children?:
-    | React.ReactNode
-    | ((
-        values: ButtonRenderProps & {
-          defaultChildren: React.ReactNode | undefined
-        }
-      ) => React.ReactNode)
-    | string
+  children?: React.ReactNode
 }
 
 /**
@@ -37,6 +26,7 @@ export const Button: React.FC<MvdsButton> = ({
   size,
   icon: IconComponent,
   iconSize,
+  children,
   ...rest
 }) => {
   const effectiveIconSize =
@@ -59,7 +49,7 @@ export const Button: React.FC<MvdsButton> = ({
     >
       <>
         {IconComponent && <IconComponent size={effectiveIconSize} />}
-        {rest.children}
+        {children}
       </>
     </AriaButton>
   )

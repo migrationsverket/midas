@@ -47,13 +47,13 @@ import { Button } from '@midas-ds/button';
 
 Den primära knapp används för den primära/positiva handlingar i ett flöde (OK,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta. 
   
-  <Button>Slutför</Button>
+<Button>Slutför</Button>
 
 
 ## Sekundär knapp
 Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka).
 
-  <Button variant={'secondary'}>Tillbaka</Button>
+<Button variant={'secondary'}>Tillbaka</Button>
 
 ## Tertiär knapp
 
@@ -63,7 +63,7 @@ Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp 
   <Button>Slutför</Button>
   <Button variant={'secondary'}>Tillbaka</Button>
   <Button variant={'tertiary'}>Ta bort anmälan</Button>
-  </div>
+</div>
 
   <br/>
 
@@ -71,10 +71,11 @@ Om den tertiära knappen används fristående från andra knappar ska den ha en 
 
 ```tsx
 import { Plus } from 'lucide-react'
-  <Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
+
+<Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
 ```
 
-  <Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
+<Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
 
 
 ## Små knappar
@@ -84,7 +85,7 @@ För interna system finns det en liten version av knapparna som kan användas d�
   <Button size={'small'}>Primär</Button>
   <Button size={'small'} variant={'secondary'}>Sekundär</Button>
   <Button size={'small'} variant={'tertiary'}>Tertiär</Button>
-  </div>
+</div>
 
 ## Riktlinjer
 
@@ -94,10 +95,10 @@ För interna system finns det en liten version av knapparna som kan användas d�
 
 flowchart TD;
    
-    A[Är länken i ett textstycke?]:::primary-->|Ja| C[Använd Link]
-    A-->|Nej| B[Vad är syftet?]:::primary
-    B-->|Action| D[Använd Button]:::primary
-    B -->|Navigering| E[Använd LinkButton]
+A[Är länken i ett textstycke?]:::primary-->|Ja| C[Använd Link]
+A-->|Nej| B[Vad är syftet?]:::primary
+B-->|Action| D[Använd Button]:::primary
+B -->|Navigering| E[Använd LinkButton]
      
 ```
 ### Generella riktlinjer
@@ -112,10 +113,10 @@ Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primär
 <div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
   <Button>Skicka</Button>
   <Button variant={'secondary'}>Avbryt</Button>
- </div>
-
+</div>
 
 <br/>
+
 I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
 
 
@@ -125,7 +126,5 @@ I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (n
 </div>
 
 
-
 ## Dependencies
-
 <ComponentFooter info={Info}/>
