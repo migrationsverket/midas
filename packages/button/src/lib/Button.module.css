@@ -139,12 +139,6 @@
   }
 }
 
-.iconBefore {
-  display: inline-flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
 .fullwidth {
   width: 100%;
 }
