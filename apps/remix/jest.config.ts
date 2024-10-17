@@ -1,4 +1,3 @@
-/* eslint-disable */
 export default {
   displayName: 'remix',
   preset: '../../jest.preset.js',
