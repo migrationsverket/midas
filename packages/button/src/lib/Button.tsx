@@ -8,12 +8,13 @@ import {
   ButtonRenderProps,
 } from 'react-aria-components'
 import clsx from 'clsx'
-
+import { ArrowLeft, LucideIcon } from 'lucide-react'
 export interface MvdsButton extends ButtonProps {
   /** Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
   fullwidth?: boolean
   size?: 'small'
+  icon?: LucideIcon
   children?:
     | React.ReactNode
     | ((
@@ -31,11 +32,14 @@ export interface MvdsButton extends ButtonProps {
 export const Button: React.FC<MvdsButton> = ({
   variant = 'primary',
   fullwidth,
-  children,
   className,
   size,
+  icon: IconComponent,
   ...rest
 }) => {
+  const TertiaryIcon =
+    variant === 'tertiary' && !IconComponent ? ArrowLeft : IconComponent
+
   return (
     <AriaButton
       className={clsx(
@@ -51,7 +55,14 @@ export const Button: React.FC<MvdsButton> = ({
       )}
       {...rest}
     >
-      {children}
+      <span className={styles.content}>
+        {TertiaryIcon && (
+          <span className={styles.icon}>
+            <TertiaryIcon />
+          </span>
+        )}
+        {rest.children}
+      </span>
     </AriaButton>
   )
 }
