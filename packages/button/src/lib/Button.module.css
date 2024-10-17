@@ -139,13 +139,9 @@
   }
 }
 
-.content {
+.iconBefore {
   display: inline-flex;
   gap: 0.5rem;
-  align-items: center;
-}
-.icon {
-  display: inline-flex;
   align-items: center;
 }
 
