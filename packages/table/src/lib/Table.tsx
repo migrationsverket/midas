@@ -20,7 +20,6 @@ import {
   Button,
   Table as AriaTable,
   TableBody,
-  ResizableTableContainer,
 } from 'react-aria-components'
 import { Checkbox } from '@midas-ds/checkbox'
 import {
@@ -31,27 +30,22 @@ import {
 import clsx from 'clsx'
 
 export interface TableProps<T> extends AriaTableProps {
-  responsive?: boolean
   narrow?: boolean
+  striped?: boolean
   rows: T[]
 }
 
 export const Table = <T extends object>({
-  responsive,
   narrow,
+  striped,
   ...rest
 }: TableProps<T>) => {
-  const classNames = clsx(styles.table, narrow && styles.narrow)
+  const classNames = clsx(
+    styles.table,
+    narrow && styles.narrow,
+    striped && styles.striped
+  )
 
-  if (responsive)
-    return (
-      <ResizableTableContainer className={styles.container}>
-        <AriaTable
-          className={classNames}
-          {...rest}
-        />
-      </ResizableTableContainer>
-    )
   return (
     <AriaTable
       className={classNames}
@@ -71,7 +65,7 @@ export const TableHeader = <T extends object>({
       {/* Add extra columns for drag and drop and selection. */}
       {allowsDragging && <Column />}
       {selectionBehavior === 'toggle' && (
-        <Column maxWidth={50}>
+        <Column width={50}>
           {selectionMode === 'multiple' && <Checkbox slot="selection" />}
         </Column>
       )}
