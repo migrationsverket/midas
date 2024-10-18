@@ -29,45 +29,70 @@ import { TextField } from '@midas-ds/textfield';
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
-  label={'Etikett'}
-  description={'Beskrivning'}
+    label={'Etikett'}
+    description={'Beskrivning'}
 />`}
 </LiveCodeBlock>
 
-### Validering
-
-TextField validerar automatiskt på `type` och `isRequired`
+## Validering
+TextField validerar automatiskt på `type` och `isRequired` eller ett eget `pattern`. Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner.
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField
-  label={'Skriv in din e-post'}
-  description={'Obligatorisk!'}
-  isRequired
-  type={'email'}
+    label="Skriv in din e-post *"
+    description="Obligatorisk"
+    isRequired
+    errorMessage="Felaktig e-postadress"
+    type="email"
 />`}
 </LiveCodeBlock>
 
+
+### Egen validering
 Det går också att definiera en egen funktion för validering:
 
-
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField
-  label={'Skriv in frukt'}
-  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+    label="Skriv in frukt"
+    errorMessage="Du måste skriva 'frukt'!"
+    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
 />`}
 </LiveCodeBlock>
 
 
-### Lösenord
+### Personnummer
+
+Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användare. 
+Följande RegEx används <br /> ```^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$```
+- Frivilliga sekelsiffor 19 eller 20 `(?:19:20)?`
+- Matchar nästkommande siffor som 01 - 12 `(?:0[1-9]|1[0-2])`
+- Matchar nästkommande siffor som 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`
+- Matchar avgränsaren som `+`, `-`, `blanksteg` eller ingen samt fyra efterföljande siffor `(?:[-+ ]?\\d{4})?`
+
+För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rätt sålänge det är 10 eller 12 siffror. Däremot returnerar vi alltid formatet `ÅÅÅÅMMDDXXXX` från komponenten oavsett vad användaren skrev.
+
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField 
+    type="text"
+    name="ssn"
+    label="Personnummer"
+    validationType="ssn"
+    errorMessage="Fel format för ett personnummer"
+    autoComplete="off"
+/>
+`}
+</LiveCodeBlock>
+
+## Lösenord
 
 Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
-  type={'password'} 
-  name={'pw'} 
-  label={'Skriv in ditt lösenord'} 
-  autoComplete={'off'}
+    type="password" 
+    name="pw" 
+    label="Skriv in ditt lösenord" 
+    autoComplete="off"
 />
 `}
 </LiveCodeBlock>

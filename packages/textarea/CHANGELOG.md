@@ -1,3 +1,25 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **textarea:** new build ([3d07b87](https://github.com/migrationsverket/midas/commit/3d07b87))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **textarea:** new build ([3d07b87](https://github.com/migrationsverket/midas/commit/3d07b87))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.0 (2024-10-07)
 
 

@@ -1,3 +1,28 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **textfield:** new build ([2ee22be](https://github.com/migrationsverket/midas/commit/2ee22be))
+- **textfield:** add ssn validation ([9506a18](https://github.com/migrationsverket/midas/commit/9506a18))
+
+### 🩹 Fixes
+
+- **textfield:** fix error message alignment ([6478166](https://github.com/migrationsverket/midas/commit/6478166))
+- **textfield, textarea:** fix spacing ([c1c78d1](https://github.com/migrationsverket/midas/commit/c1c78d1))
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **textfield:** new build ([2ee22be](https://github.com/migrationsverket/midas/commit/2ee22be))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.0.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.11.0 (2024-10-07)
 
 

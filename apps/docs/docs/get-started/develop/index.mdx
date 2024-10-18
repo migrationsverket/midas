@@ -38,3 +38,42 @@ export default App;
 ```
 
 Mer info finns på [GitHub](https://github.com/migrationsverket/midas)
+
+## Vanliga problem
+
+### Remix
+Använder ni Remix? Då behöver ni lägga till följande i er config för att låta CSS ladda korrekt.
+
+#### Remix med Vite
+
+```tsx {2-4} title="vite.config.ts"
+export default defineConfig({
+  ssr: {
+    noExternal: [/^@midas-ds\/.+/],
+  }
+})
+```
+
+#### Äldre Remix - Classic Remix Compiler
+
+Följ detta: [CSS Bundling](https://remix.run/docs/en/main/styling/bundling) och [CSS Imports](https://remix.run/docs/en/main/styling/css-imports)
+
+```tsx title="root.tsx"
+import { cssBundleHref } from '@remix-run/css-bundle'
+import type { LinksFunction } from '@remix-run/node'
+
+// ...
+
+export const links: LinksFunction = () => [
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  // ...
+]
+```
+
+```js {4} title="remix.config.js"
+// ...
+export default {
+  // ...
+  serverDependenciesToBundle: [/^@midas-ds\/.+/],
+}
+```

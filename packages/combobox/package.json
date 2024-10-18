@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/combobox",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -9,6 +9,10 @@
       "require": "./index.js",
       "types": "./index.d.ts"
     }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-aria-components": "^1.1.1"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

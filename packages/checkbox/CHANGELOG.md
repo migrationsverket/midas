@@ -1,3 +1,21 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **checkbox:** new build ([9d4bbde](https://github.com/migrationsverket/midas/commit/9d4bbde))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **checkbox:** new build ([9d4bbde](https://github.com/migrationsverket/midas/commit/9d4bbde))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.6.4 (2024-10-08)
 
 ### 🚀 Features

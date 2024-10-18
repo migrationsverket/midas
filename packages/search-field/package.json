@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/search-field",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -14,11 +14,8 @@
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.383.0",
-    "@midas-ds/textfield": "0.11.0",
-    "@midas-ds/button": "0.6.4",
-    "clsx": "^2.1.1",
-    "rollup-preserve-directives": "^1.1.1",
-    "vite-plugin-css-injected-by-js": "^3.5.1"
+    "@midas-ds/textfield": "1.0.0",
+    "@midas-ds/button": "1.0.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

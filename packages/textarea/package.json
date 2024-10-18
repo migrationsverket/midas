@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/textarea",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -12,12 +12,10 @@
   },
   "dependencies": {
     "react-aria-components": "^1.1.0",
-    "@midas-ds/textfield": "0.11.0"
+    "@midas-ds/textfield": "1.0.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1"
+    "react": "^18.2.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

@@ -71,25 +71,11 @@ function generateMockOptions(
 
 const options = generateMockOptions(300)
 
-export const OneItem: Story = {
-  args: {
-    placeholder: 'One item...',
-  },
-  render: (args: any) => (
-    <Select
-      items={{ value: 'value' }}
-      {...args}
-    >
-      <Item value={{ value: 'item' }}>Item A</Item>
-    </Select>
-  ),
-}
-
-export const ManyItems: Story = {
+export const Default: Story = {
   args: {
     placeholder: 'Many items...',
   },
-  render: (args: any) => (
+  render: () => (
     <Select
       label="Välj en frukt"
       items={options}
@@ -104,7 +90,7 @@ export const Invalid: Story = {
     isInvalid: true,
     errorMessage: 'Fel!',
   },
-  render: (args: any) => (
+  render: (args) => (
     <Select {...args}>
       <Item>Apple</Item>
       <Item>Lemon</Item>
@@ -123,7 +109,7 @@ export const disabled: Story = {
       },
     },
   },
-  render: (args: any) => (
+  render: (args) => (
     <Select {...args}>
       <Item>Hej</Item>
     </Select>

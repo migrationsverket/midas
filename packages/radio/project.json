@@ -9,7 +9,7 @@
       "command": "npm view @midas-ds/{projectName} --json > apps/docs/static/data/{projectName}.json"
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/radio/**/*.{ts,tsx,js,jsx}"]
@@ -33,16 +33,10 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "jestConfig": "packages/radio/jest.config.ts"
       }
     }
   }

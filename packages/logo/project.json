@@ -9,7 +9,7 @@
       "command": "npm view @midas-ds/{projectName} --json > apps/docs/static/data/{projectName}.json"
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/logo/**/*.{ts,tsx,js,jsx}"]
