@@ -15,8 +15,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@midas-ds/checkbox": "1.0.0",
-    "lucide-react": "^0.383.0",
-    "react-aria-components": "^1.1.1"
+    "@midas-ds/checkbox": "1.0.0"
   }
 }
