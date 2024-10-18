@@ -1,3 +1,43 @@
+## 0.7.0 (2024-10-18)
+
+### 🚀 Features
+
+- **ui:** new build ([53c8550](https://github.com/migrationsverket/midas/commit/53c8550))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### 🧱 Updated Dependencies
+
+- Updated search-field to 1.0.0
+- Updated breadcrumbs to 1.0.0
+- Updated date-picker to 1.0.0
+- Updated info-banner to 1.0.0
+- Updated link-button to 1.0.0
+- Updated accordion to 1.0.0
+- Updated textfield to 1.0.0
+- Updated checkbox to 1.0.0
+- Updated combobox to 1.0.0
+- Updated textarea to 1.0.0
+- Updated spinner to 1.0.0
+- Updated button to 1.0.0
+- Updated select to 1.0.0
+- Updated radio to 1.0.0
+- Updated table to 1.0.0
+- Updated theme to 0.6.0
+- Updated toast to 1.0.0
+- Updated card to 1.0.0
+- Updated flex to 1.0.0
+- Updated grid to 1.0.0
+- Updated link to 1.0.0
+- Updated logo to 1.0.0
+- Updated tabs to 1.0.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.5.67 (2024-10-08)
 
 ### 🧱 Updated Dependencies

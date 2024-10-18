@@ -1,3 +1,21 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **breadcrumbs:** new build ([33ae364](https://github.com/migrationsverket/midas/commit/33ae364))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **breadcrumbs:** new build ([33ae364](https://github.com/migrationsverket/midas/commit/33ae364))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.0.5 (2024-10-07)
 
 

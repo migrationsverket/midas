@@ -1,3 +1,22 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **flex:** new build ([6bd011f](https://github.com/migrationsverket/midas/commit/6bd011f))
+- **flex:** can now take all props of usual div ([535ffef](https://github.com/migrationsverket/midas/commit/535ffef))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **flex:** new build ([6bd011f](https://github.com/migrationsverket/midas/commit/6bd011f))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.2 (2024-10-07)
 
 

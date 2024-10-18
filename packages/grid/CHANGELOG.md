@@ -1,3 +1,22 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **grid:** new build ([622d7ef](https://github.com/migrationsverket/midas/commit/622d7ef))
+- **grid:** can now take all props of usual div ([93976ad](https://github.com/migrationsverket/midas/commit/93976ad))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **grid:** new build ([622d7ef](https://github.com/migrationsverket/midas/commit/622d7ef))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.2 (2024-10-07)
 
 

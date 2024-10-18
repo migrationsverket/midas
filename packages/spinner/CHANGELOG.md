@@ -1,3 +1,21 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **spinner:** new build ([2a19638](https://github.com/migrationsverket/midas/commit/2a19638))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **spinner:** new build ([2a19638](https://github.com/migrationsverket/midas/commit/2a19638))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.0.3 (2024-10-07)
 
 

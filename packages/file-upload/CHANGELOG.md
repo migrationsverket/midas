@@ -1,3 +1,26 @@
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **file-upload:** new build ([ed8219b](https://github.com/migrationsverket/midas/commit/ed8219b))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **file-upload:** new build ([ed8219b](https://github.com/migrationsverket/midas/commit/ed8219b))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.0
+- Updated button to 1.0.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.3.22 (2024-08-13)
 
 This was a version bump only for file-upload to align it with other projects, there were no code changes.
