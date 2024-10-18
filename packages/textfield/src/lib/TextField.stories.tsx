@@ -61,7 +61,7 @@ export const Disabled = {
 export const Personnummer = {
   args: {
     ...Primary.args,
-    isSSN: true,
+    validationType: 'ssn',
     label: 'Personnummer',
     description: undefined,
     errorMessage: `Fel format för ett personnummer`,
