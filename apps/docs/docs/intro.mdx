@@ -1,5 +1,6 @@
 ---
 sidebar_label: Start
+title: Midas
 sidebar_position: 1
 slug: /
 pagination_next: null
@@ -8,54 +9,39 @@ hide_table_of_contents: true
 sidebar_class_name: chapter-end
 ---
 
-import { Card } from '@midas-ds/card';
-import { Grid, GridItem } from '@midas-ds/grid';
-import Link from '@docusaurus/Link'
-import { Figma, Component, Code } from 'lucide-react'
 import { InfoBanner } from "@midas-ds/info-banner";
-
-# Midas
-**Migrationsverkets designsystem**
-
-
 
 <div className="row">
   <div className="col col--8">
+    # Migrationsverkets designsystem
+    >Midas
+    <br />
     Här hittar du designriktlinjer, dokumentation om komponenter samt andra resurser som används för att bygga Migrationsverkets tjänster och system.
-    <InfoBanner
-      type="info"
-      title="Status: Beta"
-      message="Migrationsverkets designsystem är för närvarande i beta-stadiet. Information på denna dokumentationsweb är i vissa fall ofullständig och kan ändras med kort varsel."
-    />
+    <div style={{marginBottom: '2rem'}}>
+      <InfoBanner
+        type="info"
+        title="Status: Beta"
+        message="Migrationsverkets designsystem är för närvarande i beta-stadiet. Information på denna dokumentationsweb är i vissa fall ofullständig och kan ändras med kort varsel."
+      />
+    </div>
+
+    ## Kom igång
+
+    ---
+
+    ### För utvecklare
+    
+    Installera komponenter i ditt projekt med `npm install @midas-ds/{komponentnamn}`. Läs mer om vardera komponent under [komponenter](./components/index.mdx).
+
+    - [Läs mer här](./get-started/develop/index.mdx)
+    - [Senaste versionsinformationen](./blog/release-13)
+
+    ---
+
+    ### För designer
+    UI-kitet för Adobe XD uppdateras löpande av designsystemets UX-team.
+
+    - [Ladda ner UI-kit](/)
+    - [Läs mer här](./get-started/design/index.mdx)
   </div>
 </div>
-
-<Grid fluid="true">
-  <GridItem col={4}>
-    <Card
-      title="För designers"
-      content="Här hittar du resurser för att använda våra designkomponenter."
-      headingTag={'h2'}
-      onPress={() => window.location.href = "/get-started/design"}
-      customImageComponent={<div className="card-icon"><Figma size={48} strokeWidth={1.5} /></div>}
-    />
-  </GridItem>
-  <GridItem col={4}>
-    <Card
-      title="För utvecklare"
-      content="Här hittar du guider för hur du kommer igång med våra komponenter."
-      headingTag={'h2'}
-      onPress={() => window.location.href = "/get-started/develop"}
-      customImageComponent={<div className="card-icon"><Code size={48} strokeWidth={1.5} /></div>}
-    />
-  </GridItem>
-  <GridItem col={4}>
-    <Card
-      title="Komponenter"
-      content="Utforska våra komponenter."
-      headingTag={'h2'}
-      onPress={() => window.location.href = "/components"}
-      customImageComponent={<div className="card-icon"><Component size={48} strokeWidth={1.5} /></div>}
-    />
-  </GridItem>
-</Grid>
