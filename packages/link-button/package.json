@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/link-button",
-  "version": "0.2.8",
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
