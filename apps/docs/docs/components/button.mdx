@@ -10,6 +10,7 @@ import { ComponentHeader, ComponentFooter } from '@site/src/components/getCompon
 import Info from '@site/static/data/button.json'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Plus } from 'lucide-react'
 
 <ComponentHeader name={'Button'} info={Info} friendlyName={'Knapp'}/>
 
@@ -41,6 +42,50 @@ import { Button } from '@midas-ds/button';
 </Flex>`}
 </LiveCodeBlock>
 
+
+## Primärknapp
+
+Den primära knapp används för den primära/positiva handlingar i ett flöde (OK,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta. 
+  
+  <Button>Slutför</Button>
+
+
+## Sekundär knapp
+Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka).
+
+  <Button variant={'secondary'}>Tillbaka</Button>
+
+## Tertiär knapp
+
+Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val
+
+<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
+  <Button>Slutför</Button>
+  <Button variant={'secondary'}>Tillbaka</Button>
+  <Button variant={'tertiary'}>Ta bort anmälan</Button>
+  </div>
+
+  <br/>
+
+Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
+
+```tsx
+import { Plus } from 'lucide-react'
+  <Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
+```
+
+  <Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
+
+
+## Små knappar
+För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size={'small'}`
+
+<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
+  <Button size={'small'}>Primär</Button>
+  <Button size={'small'} variant={'secondary'}>Sekundär</Button>
+  <Button size={'small'} variant={'tertiary'}>Tertiär</Button>
+  </div>
+
 ## Riktlinjer
 
 ### Val av komponent
@@ -49,32 +94,35 @@ import { Button } from '@midas-ds/button';
 
 flowchart TD;
    
-    A[Är länken i ett textstycke?]:::primary-->|Ja| C[Använd Link]
-    A-->|Nej| B[Vad är syftet?]:::primary
-    B-->|Action| D[Använd Button]:::primary
-    B -->|Navigering| E[Använd LinkButton]
+    A[Vad är syftet?]:::primary
+    A-->|Handling| B[Använd Button]:::primary
+    A -->|Navigering| C[Är länken i ett textstycke?]
+    C--> |Ja| D[Använd Link]
+    C-->|Nej| E[Använd LinkButton]
+    
+    
      
 ```
-### Generella regler
+### Generella riktlinjer
 
-- Primär knapp används för den primära/positiva handlingar i ett flöde (Acceptera, Gå vidare, Ok osv). Sekundär knapp används för underordnade/negativa handlingar (Avbryt, Tillbaka).
-- Det bör finnas max en primärknapp per sida/sektion/tydligt avgränsad yta. Undvik att ha för många knappar på samma sida.
 - Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare.
+- Undvik att ha för många knappar på samma sida.
 
-### Knappordning
+### Placering och ordning
 
-Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
+Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
 
-<div style={{ gap: '4px', display: 'flex', margin: '8px' }}>
+<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
   <Button>Skicka</Button>
   <Button variant={'secondary'}>Avbryt</Button>
  </div>
 
 
-I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära (tillbaka) till vänster. 
+<br/>
+I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
 
 
-<div style={{ gap: '4px', display: 'flex', margin: '8px' }}>
+<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
   <Button variant={'secondary'}>Föregående</Button>
   <Button>Nästa</Button>
 </div>

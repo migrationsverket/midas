@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
-import { X } from 'lucide-react'
+import { Plus, X } from 'lucide-react'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -46,14 +46,14 @@ export const Secondary: Story = {
   },
 }
 
-export const Tertiary: Story = {
-  ...Primary,
+export const TertiaryWithIcon: Story = {
   args: {
-    ...Primary.args,
+    children: 'Lägg till',
     variant: 'tertiary',
+    icon: Plus,
   },
 }
-export const DisabledButton: Story = {
+export const PrimaryDisabled: Story = {
   args: { variant: 'primary' },
   render: (args) => (
     <Button
@@ -74,7 +74,7 @@ export const SecondaryDisabled: Story = {
   },
 }
 
-export const Size = {
+export const SmallPrimary = {
   args: {
     children: 'Button',
     size: 'small',
@@ -82,7 +82,7 @@ export const Size = {
   parameters: {},
 }
 
-export const Fullwidth = {
+export const PrimaryFullwidth = {
   args: {
     children: 'Button',
     fullwidth: true,
