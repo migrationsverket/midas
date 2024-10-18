@@ -209,3 +209,8 @@ p a {
     background-color: transparent !important;
   }
 }
+
+table th,
+table td {
+  border: none;
+}

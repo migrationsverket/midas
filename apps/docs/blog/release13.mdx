@@ -9,12 +9,11 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { TextField } from '@midas-ds/textfield'
 import { Button } from '@midas-ds/button'
 import { Plus } from 'lucide-react'
+import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/table'
 
 Nedan är en sammanfattning av nyheterna i release 13.
 
-
 {/* truncate */}
-
 
 ## Nya instruktioner för er som använder Remix
 För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under [Kom igång för utvecklare](/get-started/develop/) 
@@ -54,15 +53,11 @@ export default {
 }
 ```
 
-
 ## Ikoner på knappar
 
 Våra knappar kan nu ha en ikon till vänster om texten. Använd `icon` för att slå på det. 
  
- <Button variant="tertiary" icon="Plus" >Lägg till</Button>
-
-
-
+<Button variant="tertiary" icon={Plus}>Lägg till</Button>
 
 ## Validera personnummer
 
@@ -70,15 +65,42 @@ Vi har skapat en förlåtande validering för personnummer baserat på Försäkr
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
-  name="ssn"
-  label="Personnummer"
-  validationType="ssn"
-  errorMessage="Fel format för ett personnummer"
-/>
-`}
+    name="ssn"
+    label="Personnummer"
+    validationType="ssn"
+    errorMessage="Fel format för ett personnummer"
+/>`}
 </LiveCodeBlock>
 
+## Table
 
+Dokumentationen för `<Table />` har tillkommit samt en ny design `striped` går att aktivera på tabellen. 
+
+<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
+{`<Table
+    striped
+    aria-label="Frukter"
+    selectionMode="multiple"
+>
+    <TableHeader columns={columns}>
+        {(column) => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+        )}
+    </TableHeader>
+    <TableBody items={rows}>
+        {(item) => (
+            <Row columns={columns}>
+                {(column) => <Cell>{item[column.id]}</Cell>}
+            </Row>
+        )}
+    </TableBody>
+</Table>`}
+</LiveCodeBlock>
 
 ## UI-kit finns nu på Docwebben
 Vårt UI-kit till XD finns nu att [ladda ner](/get-started/design/) här på docwebben. UI-kitet uppdateras löpande! 
+
+## Mindre justeringar
+- I förra releasen fick flertalet komponenter lite väl många dependencies. Det är nu åtgärdat.
+- `FlexItem` och `GridItem` accepterar nu samtliga egenskaper som en vanlig `div`, främst efterfrågat är såklart `className`.
+- Chevronikonen på `Select` och `ComboBox` animeras nu när man öppnar dem
