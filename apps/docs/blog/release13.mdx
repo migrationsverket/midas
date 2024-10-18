@@ -6,15 +6,14 @@ tags: [releaser]
 ---
 
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { TextField } from '@midas-ds/textfield'
+import { Button } from '@midas-ds/button'
+import { Plus } from 'lucide-react'
 
 Nedan är en sammanfattning av nyheterna i release 13.
 
 
 {/* truncate */}
-
-## Ny komponent: Tag
-
-Tag används till Select och i framtiden Combobox när det är möjligt att göra mer än ett val.
 
 
 ## Nya instruktioner för er som använder Remix
@@ -56,9 +55,30 @@ export default {
 ```
 
 
-## Ny variant: Multiselect 
+## Ikoner på knappar
 
-Med -prop- kan du ge användaren möjlighet att göra fler val i en Select. 
+Våra knappar kan nu ha en ikon till vänster om texten. Använd `icon` för att slå på det. 
+ 
+ <Button variant="tertiary" icon="Plus" >Lägg till</Button>
+
+
+
+
+## Validera personnummer
+
+Vi har skapat en förlåtande validering för personnummer baserat på Försäkringskassans referensimplementation. Den tillåter de flesta varianterna av ett personnummer så länge det är 10 eller 12 siffror. Använd `validationType="ssn"` på Textfield för att slå på den. [Läs mer om det här](/components/textfield/#personnummer) 
+
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField 
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+/>
+`}
+</LiveCodeBlock>
+
+
 
 ## UI-kit finns nu på Docwebben
 Vårt UI-kit till XD finns nu att [ladda ner](/get-started/design/) här på docwebben. UI-kitet uppdateras löpande! 
