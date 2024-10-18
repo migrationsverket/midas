@@ -70,8 +70,8 @@
 .tertiary {
   color: blue150;
   background-color: transparent;
+  padding: 0.8125rem 0.9375rem;
   opacity: 1;
-  text-decoration: underline;
 
   &:hover {
     background-color: gray10;
