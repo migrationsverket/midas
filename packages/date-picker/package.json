@@ -13,7 +13,7 @@
   "peerDependencies": {
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.383.0",
-    "@midas-ds/textfield": "0.11.0"
+    "@midas-ds/textfield": "1.0.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

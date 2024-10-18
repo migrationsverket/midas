@@ -10,9 +10,7 @@
       "types": "./index.d.ts"
     }
   },
-  "peerDependencies": {
-    "react-aria-components": "^1.1.1"
-  },
+  "peerDependencies": {},
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
     "access": "public"

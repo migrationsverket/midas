@@ -13,7 +13,7 @@
   "dependencies": {
     "react-aria-components": "^1.1.0",
     "lucide-react": "^0.383.0",
-    "@midas-ds/button": "0.6.4"
+    "@midas-ds/button": "1.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
