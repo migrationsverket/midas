@@ -1,21 +1,23 @@
 {
-  "_id": "@midas-ds/textarea@0.1.0",
-  "_rev": "3-c2fb2279f89dbda149effc1628ad40c3",
+  "_id": "@midas-ds/textarea@1.0.0",
+  "_rev": "4-e5b0d2715a488e2a690d873f8a15e13f",
   "name": "@midas-ds/textarea",
   "dist-tags": {
-    "latest": "0.1.0"
+    "latest": "1.0.0"
   },
   "versions": [
     "0.0.1",
     "0.0.3",
-    "0.1.0"
+    "0.1.0",
+    "1.0.0"
   ],
   "time": {
     "created": "2024-09-19T09:08:52.207Z",
-    "modified": "2024-10-07T12:26:01.965Z",
+    "modified": "2024-10-18T13:40:52.969Z",
     "0.0.1": "2024-09-19T09:08:52.548Z",
     "0.0.3": "2024-09-24T06:38:03.732Z",
-    "0.1.0": "2024-10-07T12:26:01.764Z"
+    "0.1.0": "2024-10-07T12:26:01.764Z",
+    "1.0.0": "2024-10-18T13:40:52.798Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -25,13 +27,13 @@
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "description": "```bash npm i @midas-ds/textarea ```",
+  "description": "This library was generated with [Nx](https://nx.dev).",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 5482,
-  "version": "0.1.0",
+  "_contentLength": 0,
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -43,29 +45,27 @@
   },
   "dependencies": {
     "react-aria-components": "^1.1.0",
-    "@midas-ds/textfield": "0.9.24"
+    "@midas-ds/textfield": "0.11.0"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1"
+    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "56c65f084f7737fe854618037d6f8681be3215a7",
+  "gitHead": "5780bae7dc2f3eb3e6a6fd77a391941bc628fd0d",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-g8dSr2Y4MHnlCsAYnF6f0E6/gxvSx37Jjfa62P+T+ETXs8RWyPLNJyny9TplxKhYsm893kAkIlKTQ/sG+0Lxdw==",
-    "shasum": "0b96713787a2817c65dfd33e8c7315656e96b45e",
-    "tarball": "https://registry.npmjs.org/@midas-ds/textarea/-/textarea-0.1.0.tgz",
-    "fileCount": 6,
-    "unpackedSize": 78871,
+    "integrity": "sha512-73mU2aquW0YWeV0cpT1Ex9AzML7Wh8n3SjrHQwC5ESbGO0wfj5lyHgDQc19R6PN9HmmBlXIB3E9zanLgt+E5hg==",
+    "shasum": "cecf3d9c8055ff11221efa3e333be3e766564f27",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.0.tgz",
+    "fileCount": 9,
+    "unpackedSize": 90487,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQCsKsOVxoEAskmAWaSXR7Vrtz+zzGuA54g6jMR5lTdxogIgNuwGC24rUdvGa0GhMToB4KLE6girdwvpAx9M7h+Xo1o="
+        "sig": "MEYCIQC765qrrwl2gOZjaN5+uU+I0hftfqxf0YvOLYcCZCxH1gIhAInfjuuw2SMSmzQP9jaCYWv2eqoWog5vmc3qM/ZvqCoK"
       }
     ]
   },
@@ -73,7 +73,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/textarea_0.1.0_1728303961561_0.47098332392950115"
+    "tmp": "tmp/textarea_1.0.0_1729258852611_0.502018077080612"
   },
   "_hasShrinkwrap": false
 }

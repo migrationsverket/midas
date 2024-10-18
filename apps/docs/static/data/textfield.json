@@ -1,25 +1,27 @@
 {
-  "_id": "@midas-ds/textfield@0.11.0",
-  "_rev": "7-3b8d03ac8c2abdb69cc3b02ccfd0d746",
+  "_id": "@midas-ds/textfield@1.0.0",
+  "_rev": "8-db89221f459cf15e36379b3f085a41e4",
   "name": "@midas-ds/textfield",
   "dist-tags": {
-    "latest": "0.11.0"
+    "latest": "1.0.0"
   },
   "versions": [
     "0.9.24",
     "0.9.25",
     "0.10.0",
     "0.10.1",
-    "0.11.0"
+    "0.11.0",
+    "1.0.0"
   ],
   "time": {
     "created": "2024-09-10T14:36:27.336Z",
-    "modified": "2024-10-07T12:26:42.434Z",
+    "modified": "2024-10-18T13:40:35.075Z",
     "0.9.24": "2024-09-10T14:36:27.567Z",
     "0.9.25": "2024-09-12T12:55:35.421Z",
     "0.10.0": "2024-09-19T09:06:27.230Z",
     "0.10.1": "2024-09-19T12:19:18.800Z",
-    "0.11.0": "2024-10-07T12:26:42.240Z"
+    "0.11.0": "2024-10-07T12:26:42.240Z",
+    "1.0.0": "2024-10-18T13:40:34.894Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -29,13 +31,13 @@
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "description": "```bash npm i @midas-ds/textfield ```",
+  "description": "This library was generated with [Nx](https://nx.dev).",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 8679,
-  "version": "0.11.0",
+  "_contentLength": 0,
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -48,29 +50,27 @@
   "dependencies": {
     "react-aria-components": "^1.1.0",
     "lucide-react": "^0.383.0",
-    "@midas-ds/button": "0.6.2"
+    "@midas-ds/button": "0.6.4"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1"
+    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "3b27a1a68a4e953adb7c39f7a738d7b3c4902cf2",
+  "gitHead": "5780bae7dc2f3eb3e6a6fd77a391941bc628fd0d",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-n9cjJbBMSHKfI/dvGdQ7u2lfzGxrCzg8VXZxAc3UIwgUyKmggB983BGOvc4QphESEb3wXy/XwSlFoDWzVIFnQA==",
-    "shasum": "8a49a013e05d82b3608da9ea8a16e0f504c1a343",
-    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-0.11.0.tgz",
-    "fileCount": 7,
-    "unpackedSize": 118552,
+    "integrity": "sha512-wHSboYpP+QMj5tTgo+XcnVsDftPsmIr3OpIS6DblTELmtyILYBNu0108heNr+I0btzh+XffUM04m0gHHKUorNQ==",
+    "shasum": "267ec80d1eb5628782489ba929ad7fb6847528c0",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.0.tgz",
+    "fileCount": 10,
+    "unpackedSize": 140177,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIDn8ez7n7tB3FPHnBEP1AZVZddEwAW0VoQzgbVf89YMtAiA+MymJQI2pBm2kTmkDelBE8zC73/JLVIymqgUa5487SA=="
+        "sig": "MEUCIQDshJbhtcAzhrztW71/1gRS540tZCUAfyrhEuyKAzwXhwIgHVvacxdQxXgePTjNgoxA3WEgSliRXbtkV3y1Vbo5xgE="
       }
     ]
   },
@@ -78,7 +78,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/textfield_0.11.0_1728304002069_0.8862872757593347"
+    "tmp": "tmp/textfield_1.0.0_1729258834636_0.5493412458402596"
   },
   "_hasShrinkwrap": false
 }
