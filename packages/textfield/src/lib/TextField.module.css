@@ -46,7 +46,7 @@
 .fieldError {
   color: inputText;
   grid-area: Error;
-  font-size: 0.875;
+  font-size: 0.875rem;
   display: flex;
   align-items: end;
   column-gap: 0.5rem;
