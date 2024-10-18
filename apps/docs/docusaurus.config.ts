@@ -7,7 +7,7 @@ const fs = require('fs')
 const packagesDir = path.resolve(__dirname, '../../packages')
 const packageAliases = {}
 
-fs.readdirSync(packagesDir).forEach((dir) => {
+fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
     return
   }
@@ -114,6 +114,11 @@ const config: Config = {
           to: '/about',
           position: 'left',
           label: 'Om'
+        },
+        {
+          to: '/blog/release-13',
+          label: 'Release notes',
+          position: 'right'
         },
         {
           href: 'https://github.com/migrationsverket/midas',

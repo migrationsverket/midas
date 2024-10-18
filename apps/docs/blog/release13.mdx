@@ -16,7 +16,7 @@ Nedan är en sammanfattning av nyheterna i release 13.
 {/* truncate */}
 
 ## Nya instruktioner för er som använder Remix
-För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under [Kom igång för utvecklare](/get-started/develop/) 
+Vi har skrivit om grunden för hur komponenterna bundlas. Detta kommer lösa ett problem som upplevts av att komponenterna får sin styling "försent" eller att de "glitchar" lite när sidan laddas. För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under [Kom igång för utvecklare](/get-started/develop/).
 
 
 #### Remix med Vite
@@ -61,7 +61,7 @@ Våra knappar kan nu ha en ikon till vänster om texten. Använd `icon` för att
 
 ## Validera personnummer
 
-Vi har skapat en förlåtande validering för personnummer baserat på Försäkringskassans referensimplementation. Den tillåter de flesta varianterna av ett personnummer så länge det är 10 eller 12 siffror. Använd `validationType="ssn"` på Textfield för att slå på den. [Läs mer om det här](/components/textfield/#personnummer) 
+Vi har skapat en förlåtande validering för personnummer baserat på Försäkringskassans referensimplementation. Den tillåter de flesta varianterna av ett personnummer så länge det är 10 eller 12 siffror. Använd `validationType="ssn"` på Textfield för att slå på den. [Läs mer om det här](/components/textfield/#personnummer). Fler valideringsmönster kommer tillkomma framöver. Det går även att lägga in en egen RegExp i `validationType`.
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
