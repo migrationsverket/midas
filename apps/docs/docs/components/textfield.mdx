@@ -42,6 +42,7 @@ TextField validerar automatiskt på `type` och `isRequired` eller ett eget `patt
   label={'Skriv in din e-post'}
   description={'Obligatorisk!'}
   isRequired
+  errorMessage={'Ett felmeddelande'}
   type={'email'}
 />`}
 </LiveCodeBlock>
@@ -53,6 +54,7 @@ Det går också att definiera en egen funktion för validering:
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField
   label={'Skriv in frukt'}
+  errorMessage={'Ett felmeddelande'}
   validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
 />`}
 </LiveCodeBlock>
