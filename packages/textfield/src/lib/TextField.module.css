@@ -46,17 +46,17 @@
 .fieldError {
   color: inputText;
   grid-area: Error;
-  font-size: 1rem;
+  font-size: 0.875rem;
   display: flex;
   align-items: end;
   column-gap: 0.5rem;
   margin: 0.25rem 0;
+  line-height: 1.28;
 
   & svg {
     flex: 0 0 auto;
     align-self: flex-start;
     color: signalRed100;
-    margin-top: 2px;
   }
 }
 

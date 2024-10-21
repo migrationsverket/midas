@@ -1,23 +1,25 @@
 {
-  "_id": "@midas-ds/date-picker@0.2.0",
-  "_rev": "4-d0dc4b7cd7642e412050870ce87d1ba3",
+  "_id": "@midas-ds/date-picker@1.0.0",
+  "_rev": "5-15b9776703b4f7bd9c0bc1b877b9a0e8",
   "name": "@midas-ds/date-picker",
   "dist-tags": {
-    "latest": "0.2.0"
+    "latest": "1.0.0"
   },
   "versions": [
     "0.0.1",
     "0.1.0",
     "0.1.1",
-    "0.2.0"
+    "0.2.0",
+    "1.0.0"
   ],
   "time": {
     "created": "2024-09-10T14:36:31.432Z",
-    "modified": "2024-10-07T12:11:27.023Z",
+    "modified": "2024-10-18T13:40:58.550Z",
     "0.0.1": "2024-09-10T14:36:31.793Z",
     "0.1.0": "2024-09-12T09:22:57.399Z",
     "0.1.1": "2024-09-12T12:23:40.759Z",
-    "0.2.0": "2024-10-07T12:11:26.810Z"
+    "0.2.0": "2024-10-07T12:11:26.810Z",
+    "1.0.0": "2024-10-18T13:40:58.357Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -32,8 +34,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 6889,
-  "version": "0.2.0",
+  "_contentLength": 0,
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -46,27 +48,24 @@
   "peerDependencies": {
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.383.0",
-    "@midas-ds/textfield": "0.9.24",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1",
-    "clsx": "^2.1.1"
+    "@midas-ds/textfield": "0.11.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "f7cc03ce6a36bad14d8285f5dc82b31cd1a2225f",
+  "gitHead": "5780bae7dc2f3eb3e6a6fd77a391941bc628fd0d",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-uJ1U+SU2CnzdbPimzvqSiXKLQOuUhHQ09tpnRSba4BxWgrI2EtMoFnDvzI/kVeQHHmaUwWsYfNgDv80lSpI6dA==",
-    "shasum": "5b2f835ba432d020d9772ddc6579a32fa1c961bc",
-    "tarball": "https://registry.npmjs.org/@midas-ds/date-picker/-/date-picker-0.2.0.tgz",
-    "fileCount": 6,
-    "unpackedSize": 549694,
+    "integrity": "sha512-l093fSule+bT9a0VVcziz2m8frb6wBRGhOoEgPlwlFgR3JvAyDow2ycZv42Oqisx3uoE4wC/uL+v1jtAkmMMLQ==",
+    "shasum": "6a87542516aab544c427f2301de633925155e9f2",
+    "tarball": "https://registry.npmjs.org/@midas-ds/date-picker/-/date-picker-1.0.0.tgz",
+    "fileCount": 10,
+    "unpackedSize": 551006,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCID2wBGOnfpNCkwyPdSo+/EtJ7nYcd5pa7rrmexdal/5LAiBv+F9mThcb2IDPCEPaWG2s4E2ijUd/Y2a5hAeyqyLwNg=="
+        "sig": "MEUCIQDRNQTTx0wCBb/Z/o645jjFNGINwuzII16nr/koJO8AnwIgOUqrU4qWEWYfKW3WEmKQaLWd6qNkaWrLs1mThlFyzGQ="
       }
     ]
   },
@@ -74,7 +73,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/date-picker_0.2.0_1728303086561_0.938991950384074"
+    "tmp": "tmp/date-picker_1.0.0_1729258858065_0.48550435650662016"
   },
   "_hasShrinkwrap": false
 }

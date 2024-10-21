@@ -139,7 +139,8 @@ this is a bit ad hoc, will fix this later
   margin-top: unset;
 }
 
-p a {
+p a,
+li:not(.menu__list-item) a {
   text-decoration: underline;
 }
 
@@ -208,4 +209,9 @@ p a {
   .prism-code {
     background-color: transparent !important;
   }
+}
+
+table th,
+table td {
+  border: none;
 }

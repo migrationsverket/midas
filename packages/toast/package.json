@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/toast",
-  "version": "0.5.2",
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,15 +11,14 @@
     }
   },
   "dependencies": {
-    "@midas-ds/button": "0.6.4",
-    "@react-aria/toast": "^3.0.0-beta.10",
+    "@midas-ds/button": "1.0.0",
+    "react": "18.3.1",
+    "@react-aria/toast": "^3.0.0-beta.12",
     "@react-stately/toast": "3.0.0-beta.6",
+    "react-dom": "18.3.1",
     "lucide-react": "^0.383.0"
   },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
+  "peerDependencies": {},
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
