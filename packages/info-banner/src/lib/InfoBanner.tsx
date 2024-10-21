@@ -4,7 +4,11 @@ import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
 import { Button } from '@midas-ds/button'
 
-export type InfoBannerProps = {
+export interface InfoBannerProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   type: 'success' | 'info' | 'important' | 'warning'
   title?: string
   message?: ReactNode | string
@@ -16,7 +20,7 @@ const iconMap = {
   success: CircleCheck,
   info: Info,
   important: AlertCircle,
-  warning: AlertTriangle,
+  warning: AlertTriangle
 }
 
 export const InfoBanner: React.FC<InfoBannerProps> = ({
@@ -25,13 +29,17 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   type,
   children,
   dismissable = false,
+  ...rest
 }) => {
   const Icon = iconMap[type]
   const [show, setShow] = useState<boolean>(true)
 
   if (show)
     return (
-      <div className={clsx(styles.infoBanner, styles[type])}>
+      <div
+        className={clsx(styles.infoBanner, styles[type])}
+        {...rest}
+      >
         <Icon
           size={20}
           className={styles.icon}
@@ -46,8 +54,8 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
         {dismissable && (
           <div className={styles.dismissable}>
             <Button
-              variant="icon"
-              aria-label="Stäng"
+              variant='icon'
+              aria-label='Stäng'
               onPress={() => setShow(false)}
             >
               <X size={16} />
