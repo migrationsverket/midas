@@ -1,3 +1,9 @@
+## 0.7.1 (2024-10-21)
+
+### 🧱 Updated Dependencies
+
+- Updated info-banner to 1.0.1
+
 ## 0.7.0 (2024-10-18)
 
 ### 🚀 Features
