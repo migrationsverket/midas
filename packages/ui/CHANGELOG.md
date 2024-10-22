@@ -1,3 +1,13 @@
+## 0.7.7 (2024-10-22)
+
+### 🧱 Updated Dependencies
+
+- Updated file-upload to 1.0.2
+- Updated info-banner to 1.0.2
+- Updated textfield to 1.0.1
+- Updated button to 1.0.1
+- Updated toast to 1.0.1
+
 ## 0.7.2 (2024-10-22)
 
 ### 🧱 Updated Dependencies
