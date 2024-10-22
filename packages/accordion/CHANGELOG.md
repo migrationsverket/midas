@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-22)
+
+### 🩹 Fixes
+
+- **accordion:** fix changelog ([56c7a02](https://github.com/migrationsverket/midas/commit/56c7a02))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features
