@@ -20,9 +20,9 @@ export const Modal: React.FC<KeyboardModalTriggerProps> = ({
   return (
     <DialogTrigger>
       <Button>Open dialog</Button>
-      <ModalOverlay className={styles.myoverlay}>
+      <ModalOverlay className={styles.overlay}>
         <ModalAria>
-          <Dialog className={styles.mymodal}>
+          <Dialog className={styles.modal}>
             {({ close }: { close: () => void }) => (
               <>
                 <Heading
