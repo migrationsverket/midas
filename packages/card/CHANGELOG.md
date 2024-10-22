@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-22)
+
+### 🩹 Fixes
+
+- **card:** clear changelog ([afc2f36](https://github.com/migrationsverket/midas/commit/afc2f36))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

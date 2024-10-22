@@ -1,3 +1,9 @@
+## 0.7.8 (2024-10-22)
+
+### 🧱 Updated Dependencies
+
+- Updated card to 1.0.1
+
 ## 0.7.7 (2024-10-22)
 
 ### 🧱 Updated Dependencies
