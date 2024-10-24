@@ -1,3 +1,24 @@
+## 1.0.2 (2024-10-24)
+
+### 🩹 Fixes
+
+- **search-field:** update deps ([b6a2670](https://github.com/migrationsverket/midas/commit/b6a2670))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **search-field:** update deps ([965bf29](https://github.com/migrationsverket/midas/commit/965bf29))
+- **search-field:** remove stories from build ([7a6adf0](https://github.com/migrationsverket/midas/commit/7a6adf0))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

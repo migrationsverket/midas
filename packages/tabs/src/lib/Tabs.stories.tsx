@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Tabs } from './Tabs'
 import { Button } from '@midas-ds/button'
+import React from 'react'
 
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
   title: 'Components/Tabs',
-  tags: ['autodocs'],
+  tags: ['autodocs']
 }
 export default meta
 type Story = StoryObj<typeof Tabs>
@@ -14,9 +15,9 @@ export const Primary: Story = {
   args: {
     defaultSelected: 'Viktigt att veta',
     label: 'Följ processen',
-    tabs: ['Processen', 'Viktigt att veta', 'Ansök'] as const,
+    tabs: ['Processen', 'Viktigt att veta', 'Ansök'] as const
   },
-  render: (args) => (
+  render: args => (
     <Tabs
       defaultSelected={args.defaultSelected}
       label={args.label}
@@ -38,5 +39,5 @@ export const Primary: Story = {
         Ansök här: <Button>Ansök</Button>
       </div>
     </Tabs>
-  ),
+  )
 }

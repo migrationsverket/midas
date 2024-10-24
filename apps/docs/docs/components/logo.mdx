@@ -7,6 +7,7 @@ import { Logo } from '@midas-ds/logo';
 import { PropTable } from '@site/src/components/propsTable';
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/logo.json'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Logo'} info={Info} friendlyName={'Logotyp'} overrideHeadlessLink="" />
 
@@ -24,15 +25,15 @@ npm install @midas-ds/logo
 import { Logo } from '@midas-ds/logo';
 ```
 
-```tsx live
-<>
+<LiveCodeBlock scope={{Logo}}>
+{`<>
     <Logo/>
     <Logo background/>
     <Logo dark/>
     <Logo dark background/>
     <Logo size={'small'}/>
-</>
-```
+</>`}
+</LiveCodeBlock>
 ## SVG
 I vissa fall kan det vara mer fördelaktigt med en vanlig fil. [Ladda ner logotypen som SVG här (komprimerad fil)](/img/logo/Mig_logo_SVG.zip).
 

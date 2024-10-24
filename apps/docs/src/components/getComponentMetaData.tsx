@@ -1,8 +1,10 @@
 import React from 'react'
-import { gte } from 'semver'
 import moment from 'moment'
+import { LinkButton } from '@midas-ds/link-button'
+import { Bookmark, FileCode2, Logs } from 'lucide-react'
+import { Flex, FlexItem } from '@midas-ds/flex'
 
-export const ComponentFooter = ({ info }) => {
+export const ComponentFooter = ({ info, children }) => {
   if (!info || !info.dependencies) return <></>
 
   return (
@@ -17,7 +19,7 @@ export const ComponentHeader = ({
   name,
   info,
   friendlyName,
-  overrideHeadlessLink,
+  overrideHeadlessLink
 }: {
   name: string
   info: any
@@ -35,11 +37,11 @@ export const ComponentHeader = ({
         <div style={{ display: 'flex', gap: '3px' }}>
           <a
             href={`https://react-spectrum.adobe.com/react-aria/${name}.html`}
-            target="_blank"
+            target='_blank'
           >
             <img
-              alt="Static Badge"
-              src="https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"
+              alt='Static Badge'
+              src='https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white'
             />
           </a>
         </div>
@@ -48,75 +50,49 @@ export const ComponentHeader = ({
   }
 
   return (
-    <section style={{ marginBottom: 48 }}>
-      <div style={{ marginBottom: 24 }}>
+    <section style={{ marginBottom: 32, marginTop: -20 }}>
+      <div style={{ marginBottom: 16 }}>
         <b>{friendlyName}</b>
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexFlow: 'row wrap',
-          gap: '1rem',
-          justifyContent: 'space-between',
-          alignItems: 'flex-start',
-        }}
+      <Flex
+        fluid={true}
+        className='button-row'
       >
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <span className={'badge badge--secondary'}>
-            Version: {info.version}
-          </span>
-          <span
-            className={gte(info.version, '1.0.0') ? '' : 'badge badge--primary'}
+        <FlexItem>Version: {info.version}</FlexItem>
+        <FlexItem col='auto'>
+          <LinkButton
+            href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}/CHANGELOG.md`}
+            variant='tertiary'
+            icon={Logs}
           >
-            {gte(info.version, '1.0.0') ? '' : 'beta'}
-          </span>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'flex-end',
-            flexDirection: 'column',
-          }}
-        >
-          <div style={{ display: 'flex', gap: '8px' }}>
-            <a
-              href={`https://designsystem.migrationsverket.se/storybook/?path=/docs/components-${name.toLowerCase()}--docs`}
+            Changelog
+          </LinkButton>
+        </FlexItem>
+        <FlexItem col='auto'>
+          <LinkButton
+            href={`https://designsystem.migrationsverket.se/storybook/?path=/docs/components-${name.toLowerCase()}--docs`}
+            variant='tertiary'
+            icon={Bookmark}
+          >
+            Storybook
+          </LinkButton>
+        </FlexItem>
+        <FlexItem col='auto'>
+          {overrideHeadlessLink !== '' && (
+            <LinkButton
+              href={
+                overrideHeadlessLink
+                  ? overrideHeadlessLink
+                  : `https://react-spectrum.adobe.com/react-aria/${name}.html`
+              }
+              variant='tertiary'
+              icon={FileCode2}
             >
-              <img
-                style={{ borderRadius: '0.4rem' }}
-                alt="Storybook"
-                src="https://img.shields.io/badge/Storybook-FF4785.svg?style=for-the-badge&logo=storybook&logoColor=white"
-              />
-            </a>
-            <a
-              href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}`}
-              target="_blank"
-            >
-              <img
-                style={{ borderRadius: '0.4rem' }}
-                alt="GitHub"
-                src="https://img.shields.io/badge/github-100000.svg?style=for-the-badge&logo=github&logoColor=white"
-              />
-            </a>
-            {overrideHeadlessLink !== '' && (
-              <a
-                href={
-                  overrideHeadlessLink
-                    ? overrideHeadlessLink
-                    : `https://react-spectrum.adobe.com/react-aria/${name}.html`
-                }
-                target="_blank"
-              >
-                <img
-                  style={{ borderRadius: '0.4rem' }}
-                  alt="Static Badge"
-                  src="https://img.shields.io/badge/Headless-2e7ca5?style=for-the-badge&logo=headlessui&logoColor=white"
-                />
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
+              Referens
+            </LinkButton>
+          )}
+        </FlexItem>
+      </Flex>
     </section>
   )
 }

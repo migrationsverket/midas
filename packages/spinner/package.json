@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/spinner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,7 @@
     }
   },
   "peerDependencies": {
-    "lucide-react": "^0.383.0"
+    "lucide-react": "^0.453.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

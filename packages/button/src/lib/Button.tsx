@@ -5,11 +5,12 @@ import styles from './Button.module.css'
 import {
   Button as AriaButton,
   ButtonProps,
-  ButtonRenderProps,
+  ButtonRenderProps
 } from 'react-aria-components'
 import clsx from 'clsx'
 import { LucideIcon } from 'lucide-react'
-export interface MvdsButton extends ButtonProps {
+
+export interface MidasButtonProps {
   /** Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
   fullwidth?: boolean
@@ -26,11 +27,13 @@ export interface MvdsButton extends ButtonProps {
     | string
 }
 
+type MidasButton = MidasButtonProps & ButtonProps
+
 /**
  * Buttons are used when the user should performed an action, for example send a form.
  */
 
-export const Button: React.FC<MvdsButton> = ({
+export const Button: React.FC<MidasButton> = ({
   variant = 'primary',
   fullwidth,
   className,

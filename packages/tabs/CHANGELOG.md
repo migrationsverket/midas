@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **textarea:** remove stories from build ([b4176ff](https://github.com/migrationsverket/midas/commit/b4176ff))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

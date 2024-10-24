@@ -1,23 +1,25 @@
 {
-  "_id": "@midas-ds/tabs@1.0.0",
-  "_rev": "4-02ede2cbc7c9ef21e06af688dddaab68",
+  "_id": "@midas-ds/tabs@1.0.1",
+  "_rev": "5-93d5723ad0ee1c2e6fd751fcf5bcace5",
   "name": "@midas-ds/tabs",
   "dist-tags": {
-    "latest": "1.0.0"
+    "latest": "1.0.1"
   },
   "versions": [
     "0.0.1",
     "0.0.2",
     "0.0.3",
-    "1.0.0"
+    "1.0.0",
+    "1.0.1"
   ],
   "time": {
     "created": "2024-09-10T14:38:54.666Z",
-    "modified": "2024-10-18T13:40:39.408Z",
+    "modified": "2024-10-24T13:26:47.878Z",
     "0.0.1": "2024-09-10T14:38:54.958Z",
     "0.0.2": "2024-09-12T12:53:08.543Z",
     "0.0.3": "2024-10-07T12:25:17.157Z",
-    "1.0.0": "2024-10-18T13:40:39.218Z"
+    "1.0.0": "2024-10-18T13:40:39.218Z",
+    "1.0.1": "2024-10-24T13:26:47.672Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -32,8 +34,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 0,
-  "version": "1.0.0",
+  "_contentLength": 8222,
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -50,19 +52,19 @@
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1"
   },
-  "gitHead": "5780bae7dc2f3eb3e6a6fd77a391941bc628fd0d",
+  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-WVZJEEwG5ix11o4bVZlJ8vBlPZbvUjKhiVS67x4UFEioeEJIiz4dnNuW4MRCDxVwdrqn3DnPJOYGpsrdgsRmiA==",
-    "shasum": "66ba54d86322f2ddcfe369c4370f8adcb5baa571",
-    "tarball": "https://registry.npmjs.org/@midas-ds/tabs/-/tabs-1.0.0.tgz",
-    "fileCount": 9,
-    "unpackedSize": 200838,
+    "integrity": "sha512-BVWwRe1EWVapNcT6BOibbqWIINOdSDnJYXANS7zzp+S6ASj7cvkQNU4e6+1K+B5i/u/XGYVoj9XbykFVa64cbg==",
+    "shasum": "76630400d97820bcf1f60818850a3d6fd87b8a33",
+    "tarball": "https://registry.npmjs.org/@midas-ds/tabs/-/tabs-1.0.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 200815,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIHxxhi8wc8325hSl6N+cPoOtlBbP/ZEcQlH/Ebppb1BlAiEA1/4aP9p8hrBe2w/jE/+RVav9LnFVbN/6MatV8Jf7I+E="
+        "sig": "MEUCIQDtxzgEY7Kk0g2WkNy1r+3F67k+iEEvUPHZZzGXX5lz3AIgaBlCh+o69EV70o2klA6LPFypyGcPvA/E6g/vv1JnUhg="
       }
     ]
   },
@@ -70,7 +72,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/tabs_1.0.0_1729258839036_0.6162940038570579"
+    "tmp": "tmp/tabs_1.0.1_1729776407421_0.4074548914517422"
   },
   "_hasShrinkwrap": false
 }

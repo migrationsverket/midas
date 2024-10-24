@@ -1,3 +1,14 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **spinner:** update deps ([4615050](https://github.com/migrationsverket/midas/commit/4615050))
+- **spinner:** remove stories from build ([d2e8c1d](https://github.com/migrationsverket/midas/commit/d2e8c1d))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

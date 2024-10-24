@@ -1,3 +1,14 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **date-picker:** update deps ([768544a](https://github.com/migrationsverket/midas/commit/768544a))
+- **date-picker:** remove stories from build ([101b473](https://github.com/migrationsverket/midas/commit/101b473))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

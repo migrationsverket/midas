@@ -80,6 +80,17 @@
           "buildTarget": "ui:build-storybook:ci"
         }
       }
+    },
+    "components-release": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx release --skip-publish",
+          "nx run-many -t build --exclude=tag:apps --skipNxCache --emptyOutDir",
+          "nx release publish",
+          "nx run-many -t info"
+        ]
+      }
     }
   }
 }

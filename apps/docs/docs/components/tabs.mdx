@@ -7,6 +7,9 @@ description: Fördela information över flertalet tabbar.
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/tabs.json'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Button } from '@midas-ds/button'
+import { Tabs as MidasTabs } from '@midas-ds/tabs'
 
 <ComponentHeader name={'Tabs'} info={Info} friendlyName={'Flikar'} />
 
@@ -24,8 +27,8 @@ npm install @midas-ds/tabs
 import { Tabs } from '@midas-ds/tabs'
 ```
 
-```tsx live
-<Tabs
+<LiveCodeBlock scope={{MidasTabs, Button}}>
+{`<MidasTabs
     defaultSelected="Viktigt att veta"
     label="Följ processen"
     tabs={['Processen', 'Viktigt att veta', 'Ansök'] as const}
@@ -45,8 +48,8 @@ import { Tabs } from '@midas-ds/tabs'
     <div>
         Ansök här: <Button>Ansök</Button>
     </div>
-</Tabs>
-```
+</MidasTabs>`}
+</LiveCodeBlock>
 
 ## Dependencies
 

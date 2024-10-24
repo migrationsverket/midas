@@ -1,3 +1,18 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **table:** update deps ([647fda3](https://github.com/migrationsverket/midas/commit/647fda3))
+- **table:** remove stories from build ([8287a67](https://github.com/migrationsverket/midas/commit/8287a67))
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 1.0.1
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

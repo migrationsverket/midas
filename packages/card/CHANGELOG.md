@@ -1,28 +1,47 @@
-# 1.0.0 (2024-10-18)
-
-### 🚀 Features
-
-- ⚠️  **card:** new build ([8d3d9f1](https://github.com/migrationsverket/midas/commit/8d3d9f1))
+## 1.0.2 (2024-10-24)
 
 ### 🩹 Fixes
 
-- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
-
-### ⚠️  Breaking Changes
-
-- ⚠️  **card:** new build ([8d3d9f1](https://github.com/migrationsverket/midas/commit/8d3d9f1))
+- **card:** update deps ([00fdad5](https://github.com/migrationsverket/midas/commit/00fdad5))
+- **card:** remove stories from build ([0a48f1d](https://github.com/migrationsverket/midas/commit/0a48f1d))
 
 ### ❤️  Thank You
 
 - Wilhelm Hjelm
 
-## 0.3.4 (2024-09-24)
+## 1.0.1 (2024-10-22)
 
+### 🩹 Fixes
+
+- **card:** clear changelog ([afc2f36](https://github.com/migrationsverket/midas/commit/afc2f36))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️ **card:** new build ([8d3d9f1](https://github.com/migrationsverket/midas/commit/8d3d9f1))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️ Breaking Changes
+
+- ⚠️ **card:** new build ([8d3d9f1](https://github.com/migrationsverket/midas/commit/8d3d9f1))
+
+### ❤️ Thank You
+
+- Wilhelm Hjelm
+
+## 0.3.4 (2024-09-24)
 
 ### 🚀 Features
 
 - **textarea:** new component
-
 
 ### 🩹 Fixes
 
@@ -32,13 +51,11 @@
 
 - **card:** correct border-color
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
 ## 0.3.3 (2024-09-13)
-
 
 ### 🩹 Fixes
 
@@ -50,8 +67,7 @@
 
 - **card:** only animate out arrow
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
@@ -106,59 +122,3 @@ This was a version bump only for card to align it with other projects, there wer
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## [0.2.5] (2024-04-10)
-
-# 1.0.0-20240409-1455.1 (2024-04-09)
-
-**Note:** Version bump only for package @mvds/card
-
-## [0.2.4] (2024-04-09)
-
-**Note:** Version bump only for package @mvds/card
-
-## [0.2.3] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/card
-
-## [0.2.2] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/card
-
-## [0.2.1] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/card
-
-# 0.2.0 (2024-04-03)
-
-### Bug Fixes
-
-- **card:** css border and transition fixes
-
-### Features
-
-- **card:** add bottom border and hover/active effects
-- **card:** fix svg arrow and clean up the css
-
-# 1.0.0-20240313-1042.1 (2024-03-13)
-
-### Features
-
-- **card:** add boilerplate and working functionality for card
-
-# 0.1.0 (2024-04-03)
-
-### Bug Fixes
-
-- **card:** css border and transition fixes
-
-### Features
-
-- **card:** add bottom border and hover/active effects
-- **card:** fix svg arrow and clean up the css
-
-# 1.0.0-20240313-1042.1 (2024-03-13)
-
-### Features
-
-- **card:** add boilerplate and working functionality for card

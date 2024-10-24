@@ -1,12 +1,16 @@
-## 0.3.0 (2024-10-07)
+## 1.0.2 (2024-10-22)
 
+### 🧱 Updated Dependencies
+
+- Updated button to 1.0.1
+
+## 0.3.0 (2024-10-07)
 
 ### 🚀 Features
 
 - **textarea:** new component
 
 - **info-banner:** dismissable banner
-
 
 ### 🩹 Fixes
 
@@ -22,8 +26,7 @@
 
 - **info-banner:** fix dismissable button
 
-
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
@@ -105,19 +108,3 @@ This was a version bump only for info-banner to align it with other projects, th
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## [0.1.1] (2024-04-10)
-
-**Note:** Version bump only for package @mvds/info-banner
-
-# 0.1.0 (2024-04-09)
-
-# 1.0.0-20240409-1257.1 (2024-04-09)
-
-### Bug Fixes
-
-- **info-banner:** fix text color and margins
-
-### Features
-
-- **info-banner:** add component with basic styles and funcionality

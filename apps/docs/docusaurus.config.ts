@@ -58,7 +58,7 @@ const config: Config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['pnpm'], sync: true }
+              { converters: ['yarn', 'pnpm'], sync: true }
             ]
           ]
         },
@@ -69,7 +69,7 @@ const config: Config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['pnpm'], sync: true }
+              { converters: ['yarn', 'pnpm'], sync: true }
             ]
           ]
         },
