@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
-
+import { Button } from '../../../../packages/button/src/lib/Button'
+import styles from './Modal.module.css'
 const meta: Meta<typeof Modal> = {
   component: Modal,
   title: 'Components/Modal',
@@ -14,4 +15,23 @@ type Story = StoryObj<typeof Modal>
 
 export const Default: Story = {
   args: {},
+  render: () => {
+    return (
+      <Modal>
+        <h3>Vill du spara korrespondens?</h3>
+        <p>AB Förekommer</p>
+        <p>AC Förekommer ej</p>
+        <p>i ärendenummer 12345678</p>
+        <div className={styles.buttonContainer}>
+          <Button size="small">Unsubscribe</Button>
+          <Button
+            variant="secondary"
+            size="small"
+          >
+            Unsubscribe
+          </Button>
+        </div>
+      </Modal>
+    )
+  },
 }

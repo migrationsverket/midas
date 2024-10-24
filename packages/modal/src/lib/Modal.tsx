@@ -1,6 +1,5 @@
 import styles from './Modal.module.css'
 import {
-  Button,
   Dialog,
   DialogTrigger,
   Heading,
@@ -8,30 +7,29 @@ import {
   ModalOverlay,
 } from 'react-aria-components'
 import { X } from 'lucide-react'
-
+import { Button } from '../../../../packages/button/src/lib/Button'
 interface KeyboardModalTriggerProps {
   children?: React.ReactNode
 }
 
 export const Modal: React.FC<KeyboardModalTriggerProps> = ({
   children,
+
   ...props
 }) => {
   return (
     <DialogTrigger>
       <Button>Open dialog</Button>
       <ModalOverlay className={styles.overlay}>
-        <ModalAria>
-          <Dialog className={styles.modal}>
+        <ModalAria className={styles.modal}>
+          <Dialog className={styles.dialog}>
             {({ close }: { close: () => void }) => (
               <>
-                <Heading
-                  slot="title"
-                  className={styles.header}
-                >
+                <Heading className={styles.header}>
                   <Button
                     onPress={close}
-                    className={styles.btnClose}
+                    variant="tertiary"
+                    size="small"
                   >
                     Stäng
                     <X
@@ -39,9 +37,9 @@ export const Modal: React.FC<KeyboardModalTriggerProps> = ({
                       height={16}
                       width={16}
                     />
-                    {children}
                   </Button>
                 </Heading>
+                <div className={styles.divChildren}>{children}</div>
               </>
             )}
           </Dialog>
