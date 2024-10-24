@@ -1,3 +1,13 @@
+## 1.0.2 (2024-10-24)
+
+### 🩹 Fixes
+
+- **breadcrumbs:** update deps ([867d8cc](https://github.com/migrationsverket/midas/commit/867d8cc))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-24)
 
 ### 🩹 Fixes

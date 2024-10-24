@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/ui",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -25,13 +25,13 @@
     "@midas-ds/toast": "1.0.1",
     "@midas-ds/link": "1.0.1",
     "@midas-ds/file-upload": "1.0.1",
-    "@midas-ds/breadcrumbs": "1.0.1",
+    "@midas-ds/breadcrumbs": "1.0.2",
     "@midas-ds/combobox": "1.0.1",
     "@midas-ds/date-picker": "1.0.1",
     "@midas-ds/flex": "1.0.1",
     "@midas-ds/grid": "1.0.1",
     "@midas-ds/link-button": "1.1.0",
-    "@midas-ds/search-field": "1.0.1",
+    "@midas-ds/search-field": "1.0.2",
     "@midas-ds/spinner": "1.0.1",
     "@midas-ds/table": "1.0.1",
     "@midas-ds/tabs": "1.0.1",

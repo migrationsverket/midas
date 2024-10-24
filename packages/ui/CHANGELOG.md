@@ -1,3 +1,18 @@
+## 0.7.3 (2024-10-24)
+
+### 🩹 Fixes
+
+- **ui:** update deps ([ed768b1](https://github.com/migrationsverket/midas/commit/ed768b1))
+
+### 🧱 Updated Dependencies
+
+- Updated search-field to 1.0.2
+- Updated breadcrumbs to 1.0.2
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.8 (2024-10-22)
 
 ### 🧱 Updated Dependencies
