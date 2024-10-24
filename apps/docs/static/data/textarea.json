@@ -1,23 +1,25 @@
 {
-  "_id": "@midas-ds/textarea@1.0.0",
-  "_rev": "4-e5b0d2715a488e2a690d873f8a15e13f",
+  "_id": "@midas-ds/textarea@1.0.1",
+  "_rev": "5-581613e6ac2f01eccc0bc83cddd59d81",
   "name": "@midas-ds/textarea",
   "dist-tags": {
-    "latest": "1.0.0"
+    "latest": "1.0.1"
   },
   "versions": [
     "0.0.1",
     "0.0.3",
     "0.1.0",
-    "1.0.0"
+    "1.0.0",
+    "1.0.1"
   ],
   "time": {
     "created": "2024-09-19T09:08:52.207Z",
-    "modified": "2024-10-18T13:40:52.969Z",
+    "modified": "2024-10-22T14:09:13.557Z",
     "0.0.1": "2024-09-19T09:08:52.548Z",
     "0.0.3": "2024-09-24T06:38:03.732Z",
     "0.1.0": "2024-10-07T12:26:01.764Z",
-    "1.0.0": "2024-10-18T13:40:52.798Z"
+    "1.0.0": "2024-10-18T13:40:52.798Z",
+    "1.0.1": "2024-10-22T14:09:13.325Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -33,7 +35,7 @@
   ],
   "readmeFilename": "README.md",
   "_contentLength": 0,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -45,7 +47,7 @@
   },
   "dependencies": {
     "react-aria-components": "^1.1.0",
-    "@midas-ds/textfield": "0.11.0"
+    "@midas-ds/textfield": "1.0.1"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -53,19 +55,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "5780bae7dc2f3eb3e6a6fd77a391941bc628fd0d",
+  "gitHead": "9e9236ebffd80869f72b12691fa5d01d0f0e9315",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-73mU2aquW0YWeV0cpT1Ex9AzML7Wh8n3SjrHQwC5ESbGO0wfj5lyHgDQc19R6PN9HmmBlXIB3E9zanLgt+E5hg==",
-    "shasum": "cecf3d9c8055ff11221efa3e333be3e766564f27",
-    "tarball": "https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.0.tgz",
-    "fileCount": 9,
-    "unpackedSize": 90487,
+    "integrity": "sha512-lO+P9TN6Xnl3Y6m94Orn+ayO0toz/+QRpfeEFNIfxEFMu67FVGFN9fLxkGArinXkY7RCPBNExonaASxGPpq3NA==",
+    "shasum": "94175df1660eebc94078c407e91f28111621bdbc",
+    "tarball": "https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 77125,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEYCIQC765qrrwl2gOZjaN5+uU+I0hftfqxf0YvOLYcCZCxH1gIhAInfjuuw2SMSmzQP9jaCYWv2eqoWog5vmc3qM/ZvqCoK"
+        "sig": "MEQCIFYIoYxIn3/8kWP9+hywp+SYTTZbPqBhBzdb57pUQTSEAiAGpZI+yUU6rEVyI04xN+hjduRl+LxPr76Of4CyBXG0Jg=="
       }
     ]
   },
@@ -73,7 +75,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/textarea_1.0.0_1729258852611_0.502018077080612"
+    "tmp": "tmp/textarea_1.0.1_1729606153137_0.49667592890829626"
   },
   "_hasShrinkwrap": false
 }
