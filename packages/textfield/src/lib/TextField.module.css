@@ -69,15 +69,14 @@
   padding-left: 1rem;
   line-height: 1;
   background-color: gray10;
-  /* box-shadow: 0 1px 0 0 black; */
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
   transition-delay: 0s;
-  transition-property: box-shadow, border-color, background-color,
-    outline-offset, border, outline;
+  transition-property: border, background-color, outline-offset, outline;
   transition-timing-function: ease-in-out, ease-in-out;
   transition-duration: 0.15s, 0.15s;
+  will-change: border, background-color, outline-offset, outline;
 
   &:hover {
     background-color: gray20;
