@@ -1,23 +1,25 @@
 {
-  "_id": "@midas-ds/link@1.0.0",
-  "_rev": "4-ea3be68cd6309406c19a4a0a2ef77b45",
+  "_id": "@midas-ds/link@1.0.1",
+  "_rev": "5-661948ec38b5e8f7cd5ecabb3d70debb",
   "name": "@midas-ds/link",
   "dist-tags": {
-    "latest": "1.0.0"
+    "latest": "1.0.1"
   },
   "versions": [
     "0.0.1",
     "0.0.2",
     "0.0.3",
-    "1.0.0"
+    "1.0.0",
+    "1.0.1"
   ],
   "time": {
     "created": "2024-09-10T14:35:32.127Z",
-    "modified": "2024-10-18T13:40:25.122Z",
+    "modified": "2024-10-24T13:26:06.988Z",
     "0.0.1": "2024-09-10T14:35:32.368Z",
     "0.0.2": "2024-09-12T12:34:14.036Z",
     "0.0.3": "2024-10-07T12:16:39.947Z",
-    "1.0.0": "2024-10-18T13:40:24.933Z"
+    "1.0.0": "2024-10-18T13:40:24.933Z",
+    "1.0.1": "2024-10-24T13:26:06.785Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -32,8 +34,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 6713,
-  "version": "1.0.0",
+  "_contentLength": 8200,
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -49,19 +51,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "5780bae7dc2f3eb3e6a6fd77a391941bc628fd0d",
+  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-F1Z9VozE4E5QCpsLaitzPTnAagtTbzOhLOGoHl1GIrFG0hsnCBcPN0xlv6PlZUEmDx2Vo68MHSykHFvOWRc3HA==",
-    "shasum": "0a5478c67a4393ebc84cf2e41964182a2c1d4528",
-    "tarball": "https://registry.npmjs.org/@midas-ds/link/-/link-1.0.0.tgz",
-    "fileCount": 9,
-    "unpackedSize": 74213,
+    "integrity": "sha512-t2/aa4fgURXKaz9lPDEsjh4xjBNfkmPx0Zyt8d1OSKjbIUuKrcJPT53g0ZPbBezHqRL2EmZOsy6+cRSME9gFGA==",
+    "shasum": "b7134ce15a0c6ed603715f158a7a9773b48c1290",
+    "tarball": "https://registry.npmjs.org/@midas-ds/link/-/link-1.0.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 73998,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQDmfGZMPX11TSeXq5IA/oxOavvvPKCHdyemjNuOf1TpXQIgQczLzNGLWOqD0zmzaB1RPbWfGckkmaMwGXoK83vc4eg="
+        "sig": "MEUCIBa4+IoWCBpQ4GALTDCehu0zd7CYZC9wC0xhpapZbH3WAiEAqZbSgmFyCCLfWwJgnW7apz0N14HWKY6glQopGab14GE="
       }
     ]
   },
@@ -69,7 +71,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/link_1.0.0_1729258824763_0.7259649551113381"
+    "tmp": "tmp/link_1.0.1_1729776366512_0.31716055566122625"
   },
   "_hasShrinkwrap": false
 }
