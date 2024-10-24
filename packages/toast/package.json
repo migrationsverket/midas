@@ -16,7 +16,7 @@
     "@react-aria/toast": "^3.0.0-beta.12",
     "@react-stately/toast": "3.0.0-beta.6",
     "react-dom": "18.3.1",
-    "lucide-react": "^0.383.0"
+    "lucide-react": "^0.453.0"
   },
   "peerDependencies": {},
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
