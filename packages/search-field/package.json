@@ -13,9 +13,9 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1",
-    "lucide-react": "^0.383.0",
-    "@midas-ds/textfield": "1.0.0",
-    "@midas-ds/button": "1.0.0"
+    "lucide-react": "^0.453.0",
+    "@midas-ds/textfield": "1.0.1",
+    "@midas-ds/button": "1.0.1"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
