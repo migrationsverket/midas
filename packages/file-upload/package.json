@@ -13,7 +13,7 @@
   "dependencies": {
     "@midas-ds/button": "1.0.1",
     "react-aria-components": "^1.0.0-rc.0",
-    "lucide-react": "^0.383.0",
+    "lucide-react": "^0.453.0",
     "@midas-ds/textfield": "1.0.1"
   },
   "peerDependencies": {
