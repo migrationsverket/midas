@@ -1,0 +1,72 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45 0 0 / 0.3);
+
+  &[data-entering] {
+    animation: mymodal-blur 300ms;
+  }
+
+  &[data-exiting] {
+    animation: mymodal-blur 300ms reverse ease-in;
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 356px;
+  height: 256px;
+  background-color: white;
+  outline: none;
+}
+.dialog {
+  outline: none;
+  background-color: white;
+}
+
+.header {
+  background-color: #f2f2f2;
+  height: 48px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 6px;
+  margin-top: 0;
+}
+
+.icon {
+  background-color: transform;
+}
+.divChildren {
+  padding: 0 32px 32px 32px;
+  font-family: Inter;
+}
+
+@keyframes mymodal-blur {
+  from {
+    background: rgba(45 0 0 / 0);
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    background: rgba(45 0 0 / 0.3);
+    backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes mymodal-slide {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+.buttonContainer {
+  display: flex;
+  gap: 8px;
+}
