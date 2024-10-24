@@ -9,6 +9,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/grid.json'
 import { Grid, GridItem } from '../../../../packages/grid/src'
 import { Card } from '../../../../packages/card/src'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Grid'} info={Info} friendlyName={'Rutnät'} overrideHeadlessLink="" />
 
@@ -29,10 +30,10 @@ import { Grid } from '@midas-ds/grid'
 ```
 
 
-```tsx live
-<Grid>
+<LiveCodeBlock scope={{Grid, GridItem, Card}}>
+{`<Grid>
     <GridItem col={12}>
-        <h2>En sida med grid</h2>
+        <h2>Rubrik</h2>
     </GridItem>
     <GridItem col={3}>
         <Card title={'Ett kort'} content={'Som är i tre kolumner'} />
@@ -53,7 +54,8 @@ import { Grid } from '@midas-ds/grid'
         <Card title={'Ett kort'} content={'Som är i fyra kolumner'} />
     </GridItem>
 </Grid>
-```
+`}
+</LiveCodeBlock>
 
 ### Grid
 

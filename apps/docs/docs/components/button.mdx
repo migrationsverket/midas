@@ -11,6 +11,7 @@ import Info from '@site/static/data/button.json'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
+import CHANGELOG from '../../../../packages/button/CHANGELOG.md';
 
 <ComponentHeader name={'Button'} info={Info} friendlyName={'Knapp'}/>
 
@@ -47,13 +48,13 @@ import { Button } from '@midas-ds/button';
 
 Den primära knapp används för den primära/positiva handlingar i ett flöde (OK,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta. 
   
-  <Button>Slutför</Button>
+<Button>Slutför</Button>
 
 
 ## Sekundär knapp
 Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka).
 
-  <Button variant={'secondary'}>Tillbaka</Button>
+<Button variant={'secondary'}>Tillbaka</Button>
 
 ## Tertiär knapp
 
@@ -131,4 +132,4 @@ I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (n
 
 ## Dependencies
 
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

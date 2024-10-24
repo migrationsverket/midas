@@ -8,6 +8,7 @@ import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/link.json'
 import { Link } from '@midas-ds/link'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Link'} info={Info} friendlyName={'Länk'} />
 
@@ -25,9 +26,9 @@ npm install @midas-ds/link
 import { Link } from '@midas-ds/link'
 ```
 
-```tsx live
-<Link href="/blog">En länk till designsystemets nyheter</Link>
-```
+<LiveCodeBlock scope={{Link}}>
+{`<Link href="/blog">En länk till designsystemets nyheter</Link>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 
