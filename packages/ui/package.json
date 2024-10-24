@@ -24,7 +24,7 @@
     "@midas-ds/textfield": "1.0.1",
     "@midas-ds/toast": "1.0.1",
     "@midas-ds/link": "*",
-    "@midas-ds/file-upload": "1.0.1",
+    "@midas-ds/file-upload": "1.0.2",
     "@midas-ds/breadcrumbs": "*",
     "@midas-ds/combobox": "*",
     "@midas-ds/date-picker": "*",
