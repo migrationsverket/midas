@@ -1,3 +1,14 @@
+## 1.0.2 (2024-10-24)
+
+### 🩹 Fixes
+
+- **card:** update deps ([00fdad5](https://github.com/migrationsverket/midas/commit/00fdad5))
+- **card:** remove stories from build ([0a48f1d](https://github.com/migrationsverket/midas/commit/0a48f1d))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-22)
 
 ### 🩹 Fixes

@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **radio:** remove stories from build + clear changelog ([a065754](https://github.com/migrationsverket/midas/commit/a065754))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.4 (2024-10-08)
 
 ### 🚀 Features

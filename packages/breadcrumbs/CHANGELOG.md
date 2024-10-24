@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **breadcrumbs:** remove stories from build ([1121b09](https://github.com/migrationsverket/midas/commit/1121b09))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

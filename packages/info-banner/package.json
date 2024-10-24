@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "lucide-react": "^0.453.0",
-    "@midas-ds/button": "1.0.1"
+    "@midas-ds/button": "1.0.2"
   },
   "peerDependencies": {
     "react": "^18.2.0"

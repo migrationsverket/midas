@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **flex:** remove stories from build ([c62361f](https://github.com/migrationsverket/midas/commit/c62361f))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

@@ -1,3 +1,13 @@
+## 1.0.2 (2024-10-24)
+
+### 🩹 Fixes
+
+- **accordion:** hover on trigger ([b1e167b](https://github.com/migrationsverket/midas/commit/b1e167b))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-22)
 
 ### 🩹 Fixes

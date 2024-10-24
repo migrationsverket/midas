@@ -1,3 +1,19 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **file-upload:** update deps ([d31d5a6](https://github.com/migrationsverket/midas/commit/d31d5a6))
+- **file-upload:** remove stories from build ([1c0c356](https://github.com/migrationsverket/midas/commit/1c0c356))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.1
+- Updated button to 1.0.2
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-10-22)
 
 ### 🧱 Updated Dependencies
