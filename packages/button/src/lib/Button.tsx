@@ -54,6 +54,7 @@ export const Button: React.FC<MvdsButton> = ({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'small' && styles.small,
+        direction === 'right' ? styles.iconRight : styles.iconLeft,
         className
       )}
       style={{ flexDirection: direction === 'right' ? 'row-reverse' : 'row' }}
