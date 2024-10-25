@@ -65,7 +65,7 @@ export const ComponentHeader = ({
             variant='tertiary'
             icon={Logs}
           >
-            Changelog
+            Versionslogg
           </LinkButton>
         </FlexItem>
         <FlexItem col='auto'>
