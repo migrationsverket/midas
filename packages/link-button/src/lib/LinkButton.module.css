@@ -1,86 +1,27 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, regularWeight, blue150, blue130, blue90, white, gray50, gray10, medium from tokens;
+@value display, desktopSize, mediumWeight, blue150, blue130, blue90 from tokens;
 
 .link {
-  all: unset;
-  display: inline-block;
-  box-sizing: border-box;
-  text-align: center;
-  text-decoration: none;
-  line-height: 48px;
-  font-family: display;
-  font-size: 1rem;
-  margin: 0;
-  min-height: 48px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  font-weight: regularWeight;
-  background-color: blue150;
-  border: solid 0.0625rem transparent;
-  color: white;
+  padding: 0.8125rem 1.9375rem;
   cursor: pointer;
-  opacity: 1;
-  outline: none;
-}
-
-.link:hover {
-  background-color: blue130;
   text-decoration: none;
-  color: white;
-}
 
-.link[data-pressed] {
-  background-color: blue90;
-  outline: none;
+  &:hover {
+    color: inhereit;
+    text-decoration: none;
+  }
+
+  &[data-pressed] {
+    background-color: blue90;
+    outline: none;
+  }
 }
 
 .link[data-focus-visible] {
-  outline: 2px solid black;
-  outline-offset: 2px;
+  outline: 0.125rem solid black;
+  outline-offset: 0.125rem;
 }
 
-/* Primary variant */
-.variant-primary[data-disabled] {
-  color: gray50;
-  pointer-events: none;
-  background-color: gray10;
-}
-
-/* Secondary variant */
-.variant-secondary {
-  color: blue150;
-  background-color: white;
-  border: 0.063rem solid blue150;
-  font-weight: medium;
-  opacity: 1;
-}
-
-.variant-secondary:hover {
-  background-color: gray10;
-  color: blue150;
-}
-
-.variant-secondary[data-disabled] {
-  color: gray50;
-  pointer-events: none;
-  background-color: white;
-  border: 0.063rem solid;
-}
-
-.variant-secondary[data-pressed] {
-  background-color: gray20;
-  border: 1px solid blue150;
-}
-
-.variant-secondary[data-focus-visible] {
-  outline: 2px solid blue150;
-  outline-offset: 2px;
-}
-
-@media (max-width: 600px) {
-  .link {
-    width: 100%;
-    min-width: 100%;
-    max-width: 90%;
-  }
+.fullwidth {
+  width: calc(100% - calc(1.9375rem * 2));
 }

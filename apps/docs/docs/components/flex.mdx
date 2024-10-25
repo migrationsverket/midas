@@ -9,6 +9,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/flex.json'
 import { Flex, FlexItem } from '../../../../packages/flex/src'
 import { Card } from '../../../../packages/card/src'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader name={'Flex'} info={Info} friendlyName={'Rutnät'} overrideHeadlessLink="" />
 
@@ -29,8 +30,8 @@ npm install @midas-ds/flex
 import { Flex } from '@midas-ds/flex'
 ```
 
-```tsx live
-<Flex>
+<LiveCodeBlock scope={{Flex, FlexItem, Card}}>
+{`<Flex>
     <FlexItem col={12}>
         <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} />
     </FlexItem>
@@ -43,8 +44,8 @@ import { Flex } from '@midas-ds/flex'
     <FlexItem col={6}>
         <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} />
     </FlexItem>
-</Flex>
-```
+</Flex>`}
+</LiveCodeBlock>
 
 ### Grid
 
@@ -70,4 +71,4 @@ Flex används för att strukturera upp en sida och placera olika saker i kolumne
 
 ### Så här använder du Flex
 
-Använd ```<Flex></Flex>``` som komponent och justera de direkta childs till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ```<FlexItem col="antal-kolumner"></FlexItem>```. 
+Använd ```<Flex></Flex>``` som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ```<FlexItem col="antal-kolumner"></FlexItem>```. 

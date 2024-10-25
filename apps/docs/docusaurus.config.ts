@@ -58,7 +58,7 @@ const config: Config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['pnpm'], sync: true }
+              { converters: ['yarn', 'pnpm'], sync: true }
             ]
           ]
         },
@@ -69,7 +69,7 @@ const config: Config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['pnpm'], sync: true }
+              { converters: ['yarn', 'pnpm'], sync: true }
             ]
           ]
         },
@@ -85,25 +85,26 @@ const config: Config = {
     announcementBar: {
       id: 'open_source',
       content:
-        'Midas är nu open sourced! <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+        'Midas har nu öppen källkod. <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
       isCloseable: false,
       backgroundColor: '#eaf2f6'
     },
     navbar: {
-      title: 'Designsystem',
+      // title: 'Designsystem',
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
         height: '100%',
-        width: '100px',
-        className: 'migNavbarLogo'
+        width: '100px'
+        // width: '100%',
+        //className: 'migNavbarLogo'
       },
       items: [
         {
           type: 'doc',
           docId: 'components/index',
           position: 'left',
-          label: 'Dokumentation'
+          label: 'Designsystem'
         },
         {
           to: '/blog',
@@ -117,7 +118,7 @@ const config: Config = {
         },
         {
           to: '/blog/release-13',
-          label: 'Release notes',
+          label: 'Senaste versionen',
           position: 'right'
         },
         {
@@ -135,56 +136,56 @@ const config: Config = {
         height: '100%',
         width: '100px'
       },
-      links: [
-        {
-          title: 'Dokumentation',
-          items: [
-            {
-              label: 'Kom igång',
-              to: 'get-started'
-            },
-            {
-              label: 'Grunderna',
-              to: 'basics'
-            },
-            {
-              label: 'Komponenter',
-              to: 'components'
-            },
-            {
-              label: 'Designmönster',
-              to: 'design-patterns'
-            }
-          ]
-        },
-        {
-          title: 'Om',
-          items: [
-            {
-              label: 'Nyheter',
-              to: '/blog'
-            },
-            {
-              label: 'Om',
-              to: '/about'
-            }
-          ]
-        },
-        {
-          title: 'Övrigt',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/migrationsverket/midas'
-            },
-            {
-              label: 'NPM',
-              href: 'https://www.npmjs.com/org/midas-ds'
-            }
-          ]
-        }
-      ],
-      copyright: `Migrationsverkets designsystem - Midas`
+      // links: [
+      //   {
+      //     title: 'Dokumentation',
+      //     items: [
+      //       {
+      //         label: 'Kom igång',
+      //         to: 'get-started'
+      //       },
+      //       {
+      //         label: 'Grunderna',
+      //         to: 'basics'
+      //       },
+      //       {
+      //         label: 'Komponenter',
+      //         to: 'components'
+      //       },
+      //       {
+      //         label: 'Designmönster',
+      //         to: 'design-patterns'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     title: 'Om',
+      //     items: [
+      //       {
+      //         label: 'Nyheter',
+      //         to: '/blog'
+      //       },
+      //       {
+      //         label: 'Om',
+      //         to: '/about'
+      //       }
+      //     ]
+      //   },
+      //   {
+      //     title: 'Övrigt',
+      //     items: [
+      //       {
+      //         label: 'GitHub',
+      //         href: 'https://github.com/migrationsverket/midas'
+      //       },
+      //       {
+      //         label: 'NPM',
+      //         href: 'https://www.npmjs.com/org/midas-ds'
+      //       }
+      //     ]
+      //   }
+      // ],
+      copyright: 'Migrationsverkets designsystem - Midas'
     },
     colorMode: {
       defaultMode: 'light',

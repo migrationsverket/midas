@@ -1,3 +1,13 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **select:** change to border ([f724cc2](https://github.com/migrationsverket/midas/commit/f724cc2))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features

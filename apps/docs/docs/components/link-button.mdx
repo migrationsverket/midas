@@ -5,10 +5,11 @@ description: Komponent med samma utseende och beteende som knapp men avsedd att 
 
 import { PropTable } from "@site/src/components/propsTable";
 import { LinkButton } from '@midas-ds/link-button';
-import { Flex } from '@midas-ds/flex'
+import { Flex, FlexItem } from '@midas-ds/flex'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/link.json'
-import Mermaid from '@theme/Mermaid';
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
 
 <ComponentHeader name={'LinkButton'} info={Info} friendlyName={'Länkknapp'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Link.html" />
 
@@ -26,21 +27,23 @@ npm install @midas-ds/link-button
 import { LinkButton } from '@midas-ds/link-button'
 ```
 
-```tsx live
-<Flex>
-  <LinkButton href={'/components/link'}>Link till Länk</LinkButton>
-  <LinkButton variant={'secondary'} href={'#riktlinjer'}>Riktliner</LinkButton>
-</Flex>
-```
+<LiveCodeBlock scope={{Flex, FlexItem, LinkButton}}>
+{`<Flex>
+    <FlexItem col="auto">
+      <LinkButton href="#">{fruits.shuffled(1).name}</LinkButton>
+    </FlexItem>
+    <FlexItem col="auto">
+      <LinkButton variant="secondary" href="#">{fruits.shuffled(1).name}</LinkButton>
+    </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 ### Headlessreferens
-
-Komponenten är [React Aria Link](https://react-spectrum.adobe.com/react-aria/Link.html). Beskrivning av hur `RouterProvider`
-används finns på [React Aria Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).
+Beskrivning av hur `RouterProvider` används finns på [React Aria Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).
 
 ## Client Side Routing
 
-Exempel på uppsättning för [Remix](https://remix.run/docs/en/main) men principen är densamma för andra frameworks.
+Navigering i klienten, det vill säga i webbläsaren. Exempel på uppsättning för [Remix](https://remix.run/docs/en/main) men principen är densamma för andra ramverk.
 
 ```tsx
 import { Link, RouterProvider } from '@midas-ds/link-button';
@@ -59,7 +62,7 @@ export default function App() {
 }
 ```
 
-## Dependencies
+## Beroenden
 
 <ComponentFooter info={Info}/>
 
