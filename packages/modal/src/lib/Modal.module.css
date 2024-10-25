@@ -1,3 +1,6 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, white, gray10 from tokens;
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -17,8 +20,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 356px;
-  height: 256px;
+  max-width: 22.25rem;
   background-color: white;
   outline: none;
 }
@@ -28,12 +30,11 @@
 }
 
 .header {
-  background-color: #f2f2f2;
-  height: 48px;
+  background-color: gray10;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 6px;
+  padding: 0.688rem 0.375rem 0.688rem 0;
   margin-top: 0;
 }
 
@@ -41,8 +42,8 @@
   background-color: transform;
 }
 .divChildren {
-  padding: 0 32px 32px 32px;
-  font-family: Inter;
+  padding: 0 2rem 2rem 2rem;
+  font-family: display;
 }
 
 @keyframes mymodal-blur {
@@ -53,7 +54,7 @@
 
   to {
     background: rgba(45 0 0 / 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
   }
 }
 
@@ -61,12 +62,8 @@
   from {
     transform: translateX(100%);
   }
-
-  to {
-    transform: translateX(0);
-  }
 }
 .buttonContainer {
   display: flex;
-  gap: 8px;
+  gap: 0.8rem;
 }
