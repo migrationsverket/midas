@@ -1,18 +1,28 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **checkbox:** remove stories from build + clear changelog ([5b171e1](https://github.com/migrationsverket/midas/commit/5b171e1))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-10-18)
 
 ### 🚀 Features
 
-- ⚠️  **checkbox:** new build ([9d4bbde](https://github.com/migrationsverket/midas/commit/9d4bbde))
+- ⚠️ **checkbox:** new build ([9d4bbde](https://github.com/migrationsverket/midas/commit/9d4bbde))
 
 ### 🩹 Fixes
 
 - dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
-- ⚠️  **checkbox:** new build ([9d4bbde](https://github.com/migrationsverket/midas/commit/9d4bbde))
+- ⚠️ **checkbox:** new build ([9d4bbde](https://github.com/migrationsverket/midas/commit/9d4bbde))
 
-### ❤️  Thank You
+### ❤️ Thank You
 
 - Wilhelm Hjelm
 
@@ -228,259 +238,3 @@ This was a version bump only for checkbox to align it with other projects, there
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## [0.3.28] (2024-04-10)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.27] (2024-04-09)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.26] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.25] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.24] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.23] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.22] (2024-04-03)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.21] (2024-02-29)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.20] (2024-02-29)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.19] (2024-02-29)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.18] (2024-02-29)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.17] (2024-02-29)
-
-# 1.0.0-20240228-1507.1 (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.16] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.15] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.14] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.13] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.12] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.11] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.10] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.9] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.8] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.7] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.6] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.4] (2024-02-28)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.3.3] (2024-02-28)
-
-### Bug Fixes
-
-- set all tokens to camelCase
-
-# 1.0.0-20240226-1427.1 (2024-02-26)
-
-# 1.0.0-20240226-1414.1 (2024-02-26)
-
-## [0.3.2] (2024-02-13)
-
-# 1.0.0-20240213-1455.1 (2024-02-13)
-
-### Features
-
-- **checkbox:** fix colors and invalid state
-
-# 1.0.0-20240207-1548.1 (2024-02-07)
-
-### Features
-
-- **checkbox:** change checkbox to react aria
-
-### BREAKING CHANGES
-
-- **checkbox:** new props and interfaces due to new headless lib
-
-## [0.3.1] (2024-02-13)
-
-# 1.0.0-20240213-1455.1 (2024-02-13)
-
-### Features
-
-- **checkbox:** fix colors and invalid state
-
-# 1.0.0-20240207-1548.1 (2024-02-07)
-
-### Features
-
-- **checkbox:** change checkbox to react aria
-
-### BREAKING CHANGES
-
-- **checkbox:** new props and interfaces due to new headless lib
-
-# [0.3.0] (2024-02-13)
-
-# 1.0.0-20240213-1455.1 (2024-02-13)
-
-### Features
-
-- **checkbox:** fix colors and invalid state
-
-# 1.0.0-20240207-1548.1 (2024-02-07)
-
-### Features
-
-- **checkbox:** change checkbox to react aria
-
-### BREAKING CHANGES
-
-- **checkbox:** new props and interfaces due to new headless lib
-
-## [0.2.23] (2024-02-04)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.22] (2024-02-04)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.21] (2024-02-04)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.20] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.19] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.18] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.17] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.16] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.15] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.14] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.13] (2024-02-02)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.12] (2024-02-01)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.11] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.10] (2024-01-31)
-
-# 1.0.0-20240131-2202 (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.9] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.8] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.7] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.6] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.5] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.4] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.3] (2024-01-31)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## [0.2.2] (2024-01-23)
-
-**Note:** Version bump only for package @mvds/checkbox
-
-## 0.2.1 (2024-01-23)
-
-**Note:** Version bump only for package @mvds/checkbox
