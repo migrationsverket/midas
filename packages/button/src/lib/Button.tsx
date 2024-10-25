@@ -16,6 +16,7 @@ export interface MvdsButton extends ButtonProps {
   size?: 'small'
   icon?: LucideIcon /**Optional icon prop */
   iconSize?: number /**Optional prop to customize icon size */
+  direction?: 'left' |'right'
   children?:
     | React.ReactNode
     | ((
@@ -34,6 +35,7 @@ export const Button: React.FC<MvdsButton> = ({
   variant = 'primary',
   fullwidth,
   className,
+  direction,
   size,
   icon: IconComponent,
   iconSize,
@@ -41,7 +43,6 @@ export const Button: React.FC<MvdsButton> = ({
 }) => {
   const effectiveIconSize =
     size === 'small' ? 14 : iconSize || 16 /**Default size if not specified */
-
   return (
     <AriaButton
       className={clsx(
@@ -55,6 +56,7 @@ export const Button: React.FC<MvdsButton> = ({
         size === 'small' && styles.small,
         className
       )}
+      style={{ flexDirection: direction === 'right' ? 'row-reverse' : 'row' }}
       {...rest}
     >
       <>
