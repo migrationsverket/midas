@@ -38,7 +38,9 @@ export const LinkButton: React.FC<MidasLinkProps> = ({
         variant === 'icon' && ButtonStyles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'small' && ButtonStyles.small,
-        iconPlacement === 'right' ? styles.iconRight : styles.iconLeft,
+        iconPlacement === 'right'
+          ? ButtonStyles.iconRight
+          : ButtonStyles.iconLeft,
         styles.link,
         rest.className
       )}

@@ -25,10 +25,3 @@
 .fullwidth {
   width: calc(100% - calc(1.9375rem * 2));
 }
-.iconLeft {
-  flex-direction: row;
-}
-
-.iconRight {
-  flex-direction: row-reverse;
-}

@@ -5,7 +5,7 @@ const meta: Meta<typeof LinkButton> = {
   component: LinkButton,
   title: 'Components/LinkButton',
   tags: ['autodocs'],
-  argTypes:{
+  argTypes: {
     iconPlacement: {
       options: ['right', 'left'],
       control: { type: 'radio' },
@@ -30,9 +30,10 @@ export const Secondary: Story = {
     variant: 'secondary'
   }
 }
-export const WithIcon: Story = {
+export const TertiaryWithIcon: Story = {
   args: {
     children: 'Hej',
+    variant: 'tertiary',
     href: '#',
     icon: Plus
   }
@@ -49,6 +50,5 @@ export const AppLink: Story = {
   args: {
     children: 'Button',
     onPress: () => alert('navigation fn')
-    
   }
 }
