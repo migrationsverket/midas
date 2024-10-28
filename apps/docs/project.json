@@ -23,6 +23,12 @@
       "options": {
         "command": "npx nx affected --target info"
       }
+    },
+    "generate-component-page": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run plop"
+      }
     }
   },
   "tags": ["docs", "apps"]
