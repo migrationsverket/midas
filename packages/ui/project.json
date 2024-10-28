@@ -81,15 +81,17 @@
         }
       }
     },
-    "components-release": {
+    "release-components": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
           "nx release --skip-publish",
           "nx run-many -t build --exclude=tag:apps --skipNxCache --emptyOutDir",
           "nx release publish",
-          "nx run-many -t info"
-        ]
+          "nx run-many -t info",
+          "npx git-cliff -o CHANGELOG.md"
+        ],
+        "parallel": false
       }
     }
   }
