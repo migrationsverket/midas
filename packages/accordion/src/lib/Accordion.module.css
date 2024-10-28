@@ -12,7 +12,9 @@
   border-width: 1px 0 0 0;
   overflow: hidden;
   &:hover {
-    background-color: gray20;
+    .trigger {
+      background-color: gray20;
+    }
   }
   &:last-child {
     border-width: 1px 0 1px 0;

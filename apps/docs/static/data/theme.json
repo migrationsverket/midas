@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/theme@1.0.0",
-  "_rev": "6-2166b0d935a0c4934126bf8363454a4e",
+  "_id": "@midas-ds/theme@0.6.1",
+  "_rev": "7-7ff5ef34b52f05a5c199c57657f9b2e1",
   "name": "@midas-ds/theme",
   "dist-tags": {
-    "latest": "1.0.0"
+    "latest": "0.6.1"
   },
   "versions": [
     "0.5.3",
@@ -12,18 +12,20 @@
     "0.5.24",
     "0.5.26",
     "0.5.33",
+    "0.6.1",
     "1.0.0"
   ],
   "time": {
     "created": "2024-09-05T12:44:40.019Z",
-    "modified": "2024-10-18T13:40:25.026Z",
+    "modified": "2024-10-24T13:25:58.290Z",
     "0.5.24": "2024-09-05T12:44:40.241Z",
     "0.5.23": "2024-09-10T14:34:15.636Z",
     "0.5.33": "2024-10-07T12:27:18.469Z",
     "0.5.26": "2024-10-08T09:12:09.067Z",
     "0.5.3": "2024-10-08T09:14:34.239Z",
     "0.5.4": "2024-10-08T09:18:46.517Z",
-    "1.0.0": "2024-10-18T13:40:24.829Z"
+    "1.0.0": "2024-10-18T13:40:24.829Z",
+    "0.6.1": "2024-10-24T13:25:58.103Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -38,8 +40,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 0,
-  "version": "1.0.0",
+  "_contentLength": 13172,
+  "version": "0.6.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "style": "index.css",
@@ -58,15 +60,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-IhTNZSUF4655L359jrxR1fzHWgRHPc283qX4G6luAVOLkhh22e724JFi+WWAUrc6n1auhg54ou215JX+pck5rw==",
-    "shasum": "1e6e4d4eaebd49dcb5f423a8b26235d868dfbad4",
-    "tarball": "https://registry.npmjs.org/@midas-ds/theme/-/theme-1.0.0.tgz",
+    "integrity": "sha512-TbA+RrMqkTraRvQNB8E9TwK4RgW0Q9UrmsYSFJ5iDp7GZRX4f7eH21/QTNywNWAlMVd0+2SYA6xmZF4q7XKaDQ==",
+    "shasum": "7e2dc34398c5d4107b5bccb55b0ebbf1520524da",
+    "tarball": "https://registry.npmjs.org/@midas-ds/theme/-/theme-0.6.1.tgz",
     "fileCount": 8,
     "unpackedSize": 14234,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEYCIQChUibx+iKNZdCFeX7AYM3/RFYsfVgPMF4HQT4tos6DbgIhAMVkV4Qilz1trt6Vob91GCi/AuY7IFxhQv8kavMQ/X2e"
+        "sig": "MEYCIQDeHi4/mWcbLj8X9R81/dJ7x2W0WzxB5MNBXzhcJhkN1wIhAJ1Wf4lvA+IDx2oXqeryz3JGLP3Gpw+UwKCqkRZtw29E"
       }
     ]
   },
@@ -74,7 +76,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/theme_1.0.0_1729258824677_0.6169990765329554"
+    "tmp": "tmp/theme_0.6.1_1729776357916_0.8022401740717102"
   },
   "_hasShrinkwrap": false
 }
