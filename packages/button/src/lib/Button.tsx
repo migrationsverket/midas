@@ -16,7 +16,7 @@ export interface MvdsButton extends ButtonProps {
   size?: 'small'
   icon?: LucideIcon /**Optional icon prop */
   iconSize?: number /**Optional prop to customize icon size */
-  direction?: 'left' |'right'
+  iconPlacement?: 'left' |'right'
   children?:
     | React.ReactNode
     | ((
@@ -35,7 +35,7 @@ export const Button: React.FC<MvdsButton> = ({
   variant = 'primary',
   fullwidth,
   className,
-  direction,
+  iconPlacement,
   size,
   icon: IconComponent,
   iconSize,
@@ -54,10 +54,10 @@ export const Button: React.FC<MvdsButton> = ({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'small' && styles.small,
-        direction === 'right' ? styles.iconRight : styles.iconLeft,
+        iconPlacement === 'right' ? styles.iconRight : styles.iconLeft,
         className
       )}
-      style={{ flexDirection: direction === 'right' ? 'row-reverse' : 'row' }}
+      style={{ flexDirection: iconPlacement === 'right' ? 'row-reverse' : 'row' }}
       {...rest}
     >
       <>

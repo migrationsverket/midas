@@ -25,7 +25,7 @@ const meta: Meta<typeof Button> = {
       options: [true, false],
       control: { type: 'radio' },
     },
-    direction:{
+    iconPlacement:{
       options: ['right','left'],
       control: { type: 'radio' },
       defaultValue: 'left',
