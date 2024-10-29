@@ -1,3 +1,41 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **table:** update deps ([647fda3](https://github.com/migrationsverket/midas/commit/647fda3))
+- **table:** remove stories from build ([8287a67](https://github.com/migrationsverket/midas/commit/8287a67))
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 1.0.1
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- **table:** add docs + striped option ([5d9c70f](https://github.com/migrationsverket/midas/commit/5d9c70f))
+- ⚠️  **table:** new build ([45e403e](https://github.com/migrationsverket/midas/commit/45e403e))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **table:** new build ([45e403e](https://github.com/migrationsverket/midas/commit/45e403e))
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 1.0.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.1 (2024-10-07)
 
 

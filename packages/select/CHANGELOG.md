@@ -1,3 +1,34 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **select:** change to border ([f724cc2](https://github.com/migrationsverket/midas/commit/f724cc2))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **select:** new build ([d3f9148](https://github.com/migrationsverket/midas/commit/d3f9148))
+
+### 🩹 Fixes
+
+- **select:** add aria-expanded to css to rotate chevron icon ([7ca8556](https://github.com/migrationsverket/midas/commit/7ca8556))
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+- **combobox:** focus style fix ([a341465](https://github.com/migrationsverket/midas/commit/a341465))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **select:** new build ([d3f9148](https://github.com/migrationsverket/midas/commit/d3f9148))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 0.5.6 (2024-10-08)
 
 ### 🧱 Updated Dependencies

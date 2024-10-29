@@ -4,6 +4,12 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import styles from './styles.module.css'
 import { fruits } from '../examples/fruits'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from '@midas-ds/accordion'
 
 declare global {
   interface Array<T> {
@@ -18,14 +24,14 @@ Array.prototype.shuffled = function (count = 5) {
 
 const columns = [
   { name: 'Namn', id: 'name', isRowHeader: true },
-  { name: 'Beskrivning', id: 'desc' },
+  { name: 'Beskrivning', id: 'desc' }
 ]
 
-const rows = fruits.shuffled(7).map((fruit) => {
+const rows = fruits.shuffled(7).map(fruit => {
   return {
     id: fruit.value,
     name: fruit.name,
-    desc: fruit.description,
+    desc: fruit.description
   }
 })
 
@@ -36,17 +42,27 @@ function Playground({ children, transformCode, ...props }) {
   return (
     <LiveProvider
       code={children.replace(/\n$/, '')}
-      transformCode={transformCode || ((code) => `${code};`)}
+      transformCode={transformCode || (code => `${code};`)}
       theme={theme}
       {...props}
       scope={scope}
     >
-      <div className={styles.playgroundEditor}>
-        <LiveEditor />
-      </div>
       <div className={styles.playgroundPreview}>
         <LivePreview />
         <LiveError />
+      </div>
+      <div className={styles.playgroundEditor}>
+        <Accordion
+          headingTag='h3'
+          type='multiple'
+        >
+          <AccordionItem value='example'>
+            <AccordionTrigger>Exempelkod</AccordionTrigger>
+            <AccordionContent>
+              <LiveEditor />
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </LiveProvider>
   )
@@ -64,8 +80,8 @@ export default Playground
 const usePrismTheme = () => {
   const {
     siteConfig: {
-      themeConfig: { prism = {} },
-    },
+      themeConfig: { prism = {} }
+    }
   } = useDocusaurusContext()
   const prismTheme = prismThemes.github
 

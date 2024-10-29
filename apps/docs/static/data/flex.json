@@ -1,23 +1,27 @@
 {
-  "_id": "@midas-ds/flex@0.1.2",
-  "_rev": "4-c59a46db656cf4c23087ab3a8a01f2c9",
+  "_id": "@midas-ds/flex@1.0.1",
+  "_rev": "6-a358097f2c62e04fbf713ef284bfcd2c",
   "name": "@midas-ds/flex",
   "dist-tags": {
-    "latest": "0.1.2"
+    "latest": "1.0.1"
   },
   "versions": [
     "0.0.1",
     "0.1.0",
     "0.1.1",
-    "0.1.2"
+    "0.1.2",
+    "1.0.0",
+    "1.0.1"
   ],
   "time": {
     "created": "2024-09-10T14:37:00.258Z",
-    "modified": "2024-10-07T12:13:47.019Z",
+    "modified": "2024-10-24T13:26:44.017Z",
     "0.0.1": "2024-09-10T14:37:00.555Z",
     "0.1.0": "2024-09-12T12:26:58.577Z",
     "0.1.1": "2024-09-12T13:02:19.212Z",
-    "0.1.2": "2024-10-07T12:13:46.840Z"
+    "0.1.2": "2024-10-07T12:13:46.840Z",
+    "1.0.0": "2024-10-18T13:40:48.416Z",
+    "1.0.1": "2024-10-24T13:26:43.836Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -32,8 +36,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 6915,
-  "version": "0.1.2",
+  "_contentLength": 9818,
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -44,27 +48,24 @@
     }
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "clsx": "^2.1.1",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1"
+    "react": "^18.2.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "f7cc03ce6a36bad14d8285f5dc82b31cd1a2225f",
+  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-5/9KvTQmA3w7vdW0IetbiYUiLoIalc30RY4d/NXu63w1Dgt9G5SdB7OHk4TH/fFcR86/G4kAzqBrDxD0UM46Mg==",
-    "shasum": "30c8fd701e03fd205dad7a0ccd98c78b5d227950",
-    "tarball": "https://registry.npmjs.org/@midas-ds/flex/-/flex-0.1.2.tgz",
-    "fileCount": 8,
-    "unpackedSize": 11860,
+    "integrity": "sha512-T6h+Ke3QzvKPEtxcSZfZTWGabQMmkgjBIrh1k+alrQqXHwhgH4sVH22A2bADEi8RE3XB6FISUfr41EnIYCtOIw==",
+    "shasum": "cb5dca8f1262944a9d17611aff0380053a1df137",
+    "tarball": "https://registry.npmjs.org/@midas-ds/flex/-/flex-1.0.1.tgz",
+    "fileCount": 10,
+    "unpackedSize": 10519,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEYCIQCfrwcN1DX9oUstUUydavq9qcrqfo7VoEvo0gI8cHCRQQIhAPxgSUMOcHrwgIXU+TUpDTjDGD6OT/otVMBzRh2yHjma"
+        "sig": "MEQCIHs8WQsyXX5eMIfqYcv+KJFli2RLyDrWO/t7jVbXRfnKAiByuYOhwwEj/QMGleZodoiAaDpKnuaaNaQX8m9hJ+5EEg=="
       }
     ]
   },
@@ -72,7 +73,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/flex_0.1.2_1728303226658_0.7895279553703674"
+    "tmp": "tmp/flex_1.0.1_1729776403619_0.11168719737503108"
   },
   "_hasShrinkwrap": false
 }

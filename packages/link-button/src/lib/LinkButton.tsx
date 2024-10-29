@@ -4,35 +4,53 @@ import React from 'react'
 import {
   Link as AriaLink,
   LinkProps,
-  RouterProvider,
+  RouterProvider
 } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
+import { type MidasButtonProps, ButtonStyles } from '@midas-ds/button'
 
-interface MvdsLinkProps extends LinkProps {
-  /** Link button color
-   *  @default "primary"
-   *  */
-  variant?: 'primary' | 'secondary'
-}
+type MidasLinkProps = MidasButtonProps & LinkProps
 
 /**
- * Link will take you anywhere
+ * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */
-export const LinkButton: React.FC<MvdsLinkProps> = ({
+export const LinkButton: React.FC<MidasLinkProps> = ({
   variant = 'primary',
+  fullwidth,
+  size,
+  icon: IconComponent,
+  iconSize,
+  iconPlacement,
   ...rest
 }) => {
-  const variantClass =
-    variant === 'primary'
-      ? styles['variant-primary']
-      : styles['variant-secondary']
+  const effectiveIconSize =
+    size === 'small' ? 14 : iconSize || 16 /**Default size if not specified */
 
   return (
     <AriaLink
-      className={clsx(styles.link, variantClass)}
+      className={clsx(
+        ButtonStyles.button,
+        variant === 'primary' && ButtonStyles.primary,
+        variant === 'secondary' && ButtonStyles.secondary,
+        variant === 'tertiary' && ButtonStyles.tertiary,
+        variant === 'danger' && ButtonStyles.danger,
+        variant === 'icon' && ButtonStyles.iconBtn,
+        fullwidth && styles.fullwidth,
+        size === 'small' && ButtonStyles.small,
+        iconPlacement === 'right'
+          ? ButtonStyles.iconRight
+          : ButtonStyles.iconLeft,
+        styles.link,
+        rest.className
+      )}
       {...rest}
-    />
+    >
+      <>
+        {IconComponent && <IconComponent size={effectiveIconSize} />}
+        {rest.children}
+      </>
+    </AriaLink>
   )
 }
 

@@ -5,7 +5,6 @@
   font-family: display;
   font-size: desktopSize;
   font-weight: mediumWeight;
-  min-height: 48px;
   padding: 0.8125rem 1.9375rem;
   background-color: blue150;
   border: solid 0.0625rem transparent;
@@ -13,7 +12,7 @@
   cursor: pointer;
   opacity: 1;
   outline: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -46,6 +45,7 @@
   opacity: 1;
 
   &:hover {
+    color: blue150;
     background-color: gray10;
   }
 
@@ -74,6 +74,7 @@
   opacity: 1;
 
   &:hover {
+    color: blue150;
     background-color: gray10;
   }
 
@@ -120,6 +121,8 @@
   opacity: 1;
 
   &:hover {
+    color: white;
+
     background-color: signalRed130;
   }
 
@@ -138,6 +141,13 @@
     outline: 0.125rem solid black;
     outline-offset: 0.125rem;
   }
+}
+.iconLeft {
+  flex-direction: row;
+}
+
+.iconRight {
+  flex-direction: row-reverse;
 }
 
 .fullwidth {

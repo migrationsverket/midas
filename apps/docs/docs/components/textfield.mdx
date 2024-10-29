@@ -15,7 +15,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Introduktion
 
-Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre input används [TextArea](./textarea.mdx).
+Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används [TextArea](./textarea.mdx).
 
 ## Installation och användning
 
@@ -29,8 +29,8 @@ import { TextField } from '@midas-ds/textfield';
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
-  label={'Etikett'}
-  description={'Beskrivning'}
+    label={'Etikett'}
+    description={'Beskrivning'}
 />`}
 </LiveCodeBlock>
 
@@ -39,10 +39,11 @@ TextField validerar automatiskt på `type` och `isRequired` eller ett eget `patt
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField
-  label={'Skriv in din e-post'}
-  description={'Obligatorisk!'}
-  isRequired
-  type={'email'}
+    label="Skriv in din e-post *"
+    description="Obligatorisk"
+    isRequired
+    errorMessage="Felaktig e-postadress"
+    type="email"
 />`}
 </LiveCodeBlock>
 
@@ -52,8 +53,9 @@ Det går också att definiera en egen funktion för validering:
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField
-  label={'Skriv in frukt'}
-  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+    label="Skriv in frukt"
+    errorMessage="Du måste skriva 'frukt'!"
+    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
 />`}
 </LiveCodeBlock>
 
@@ -71,10 +73,12 @@ För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rät
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
-  name="ssn"
-  label="Personnummer"
-  isSSN={true}
-  errorMessage="Fel format för ett personnummer"
+    type="text"
+    name="ssn"
+    label="Personnummer"
+    validationType="ssn"
+    errorMessage="Fel format för ett personnummer"
+    autoComplete="off"
 />
 `}
 </LiveCodeBlock>
@@ -85,10 +89,10 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 
-  type={'password'} 
-  name={'pw'} 
-  label={'Skriv in ditt lösenord'} 
-  autoComplete={'off'}
+    type="password" 
+    name="pw" 
+    label="Skriv in ditt lösenord" 
+    autoComplete="off"
 />
 `}
 </LiveCodeBlock>
@@ -96,7 +100,7 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 ## Riktlinjer
 
 ### Desktop
-Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./flex.mdx), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
+Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./flex.mdx), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
 
 <LiveCodeBlock scope={{Grid, TextField, GridItem}}>
 {`<Grid fluid={true}>
@@ -109,6 +113,6 @@ Anpassa längden på inputfältet, tex med [Grid](./grid.mdx) eller [Flex](./fle
 </Grid>`}
 </LiveCodeBlock>
 
-## Dependencies
+## Beroenden
 
 <ComponentFooter info={Info}/>

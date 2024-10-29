@@ -1,21 +1,25 @@
 {
-  "_id": "@midas-ds/table@0.1.1",
-  "_rev": "2-e41b249a1280bc292ce79e3b15c22f52",
+  "_id": "@midas-ds/table@1.0.1",
+  "_rev": "4-e76530a4337668437476a59127c7037a",
   "name": "@midas-ds/table",
   "dist-tags": {
-    "latest": "0.1.1"
+    "latest": "1.0.1"
   },
   "versions": [
     "0.0.1",
     "0.1.0",
-    "0.1.1"
+    "0.1.1",
+    "1.0.0",
+    "1.0.1"
   ],
   "time": {
     "created": "2024-09-12T12:49:17.620Z",
-    "modified": "2024-10-07T12:24:13.861Z",
+    "modified": "2024-10-24T13:26:53.344Z",
     "0.1.0": "2024-09-12T12:49:18.018Z",
     "0.0.1": "2024-09-12T13:02:24.470Z",
-    "0.1.1": "2024-10-07T12:24:13.653Z"
+    "0.1.1": "2024-10-07T12:24:13.653Z",
+    "1.0.0": "2024-10-18T13:40:53.378Z",
+    "1.0.1": "2024-10-24T13:26:53.159Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -25,12 +29,13 @@
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
+  "description": "This library was generated with [Nx](https://nx.dev).",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
-  "readmeFilename": "",
-  "_contentLength": 4972,
-  "version": "0.1.1",
+  "readmeFilename": "README.md",
+  "_contentLength": 8284,
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -44,30 +49,23 @@
     "access": "public"
   },
   "dependencies": {
-    "@midas-ds/checkbox": "0.3.28",
-    "lucide-react": "^0.383.0",
+    "@midas-ds/checkbox": "1.0.1",
     "react-aria-components": "^1.1.1",
-    "@nx/vite": "19.7.2",
-    "@vitejs/plugin-react": "^4.2.0",
-    "clsx": "^2.1.1",
-    "rollup-preserve-directives": "^1.1.1",
-    "vite": "^5.2.12",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vite-plugin-dts": "~2.3.0"
+    "lucide-react": "^0.453.0"
   },
-  "gitHead": "56c65f084f7737fe854618037d6f8681be3215a7",
+  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-Os9V0e2bTO8C0ImuKIr4SI02rJf6u2dw7iZCgHvYEsh0jOObcTif6X/XQSP9IxdW3sI+D88QiIPn8Ri5Qna/Hg==",
-    "shasum": "0fd988db0aec79d00057f858277ab1bee315eb04",
-    "tarball": "https://registry.npmjs.org/@midas-ds/table/-/table-0.1.1.tgz",
-    "fileCount": 5,
-    "unpackedSize": 431956,
+    "integrity": "sha512-MGDJ/0CwVtmFHUQMyxDaTGqK2eBrJ2XiE83564rXKJfpQoj9i0OE7Eb5ETqs0UM5J6Qk7NHFN0G4LrrmI/TIjg==",
+    "shasum": "aa27426bc3a9ebb15d16b5e85954735629cefd01",
+    "tarball": "https://registry.npmjs.org/@midas-ds/table/-/table-1.0.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 420204,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQDmXSDDHVUfuApKu6BB2ujUAsdLXhqVpulwhB2uamDuDQIgRs+xixVQ9liWcQW5QyalIazfhLdX6M5bq7GZ2x9bkuQ="
+        "sig": "MEUCIQC3UweJ9KjxD6LM8X6XnO+IdO00IHzfkgLgyK9y9h802wIgPHYoKMHUAjyO9CZi8IQIp8yHrYHj0DXhJ8/oS8c9XOs="
       }
     ]
   },
@@ -75,7 +73,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/table_0.1.1_1728303853446_0.6663710968052519"
+    "tmp": "tmp/table_1.0.1_1729776412996_0.6274283563605649"
   },
   "_hasShrinkwrap": false
 }

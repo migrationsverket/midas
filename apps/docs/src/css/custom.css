@@ -139,7 +139,8 @@ this is a bit ad hoc, will fix this later
   margin-top: unset;
 }
 
-p a {
+p a,
+li:not(.menu__list-item) a {
   text-decoration: underline;
 }
 
@@ -180,6 +181,13 @@ p a {
     background-color: #e6e6e6;
   }
 }
+
+.nodeLabel,
+.edgeLabel {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
 .primary rect {
   fill: #143c50 !important;
   stroke-width: 0 !important;
@@ -208,4 +216,13 @@ p a {
   .prism-code {
     background-color: transparent !important;
   }
+}
+
+table th,
+table td {
+  border: none;
+}
+
+.button-row > div {
+  align-items: center;
 }

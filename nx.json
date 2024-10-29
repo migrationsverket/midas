@@ -16,7 +16,6 @@
         "specifierSource": "conventional-commits",
         "currentVersionResolver": "git-tag",
         "fallbackCurrentVersionResolver": "disk",
-        "packageRoot": "dist/packages/{projectName}",
         "updateDependents": "auto"
       }
     }
@@ -65,7 +64,6 @@
       "cache": true
     },
     "@nx/vite:build": {
-      "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
     },

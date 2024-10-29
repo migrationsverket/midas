@@ -1,3 +1,32 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **date-picker:** update deps ([768544a](https://github.com/migrationsverket/midas/commit/768544a))
+- **date-picker:** remove stories from build ([101b473](https://github.com/migrationsverket/midas/commit/101b473))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **date-picker:** new build ([b395ea7](https://github.com/migrationsverket/midas/commit/b395ea7))
+
+### 🩹 Fixes
+
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **date-picker:** new build ([b395ea7](https://github.com/migrationsverket/midas/commit/b395ea7))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.2.0 (2024-10-07)
 
 

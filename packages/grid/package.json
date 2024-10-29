@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/grid",
-  "version": "0.1.2",
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,7 @@
     }
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.3.1"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

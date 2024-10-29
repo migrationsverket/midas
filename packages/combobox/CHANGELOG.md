@@ -1,3 +1,36 @@
+## 1.0.1 (2024-10-24)
+
+### 🩹 Fixes
+
+- **combobox:** remove stories from build ([1f7dbca](https://github.com/migrationsverket/midas/commit/1f7dbca))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+# 1.0.0 (2024-10-18)
+
+### 🚀 Features
+
+- ⚠️  **combobox:** new build ([e867ce4](https://github.com/migrationsverket/midas/commit/e867ce4))
+
+### 🩹 Fixes
+
+- **combobox:** remove unessecary component rename + a11y ([c55c5cd](https://github.com/migrationsverket/midas/commit/c55c5cd))
+- **combobox:** add aria-expanded to css to rotate chevron icon ([548503d](https://github.com/migrationsverket/midas/commit/548503d))
+- **combobox:** chevron icon will be upp when select is opened ([817ef6f](https://github.com/migrationsverket/midas/commit/817ef6f))
+- dependencies ([31903a3](https://github.com/migrationsverket/midas/commit/31903a3))
+- **combobox:** focus style fix ([a341465](https://github.com/migrationsverket/midas/commit/a341465))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **combobox:** new build ([e867ce4](https://github.com/migrationsverket/midas/commit/e867ce4))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 0.1.1 (2024-10-07)
 
 

@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "dbaeumer.vscode-eslint",
+    "unifiedjs.vscode-mdx",
+    "nrwl.angular-console",
+    "csstools.postcss",
+    "esbenp.prettier-vscode",
+    "clinyong.vscode-css-modules"
+  ]
+}

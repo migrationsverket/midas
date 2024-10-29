@@ -45,15 +45,15 @@ import { Button } from '@midas-ds/button';
 
 ## Primärknapp
 
-Den primära knapp används för den primära/positiva handlingar i ett flöde (OK,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta. 
+Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta. 
   
-  <Button>Slutför</Button>
+<Button>Slutför</Button>
 
 
 ## Sekundär knapp
 Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka).
 
-  <Button variant={'secondary'}>Tillbaka</Button>
+<Button variant={'secondary'}>Tillbaka</Button>
 
 ## Tertiär knapp
 
@@ -61,24 +61,24 @@ Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp 
 
 <div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
   <Button>Slutför</Button>
-  <Button variant={'secondary'}>Tillbaka</Button>
-  <Button variant={'tertiary'}>Ta bort anmälan</Button>
-  </div>
+  <Button variant="secondary">Tillbaka</Button>
+  <Button variant="tertiary">Ta bort anmälan</Button>
+</div>
 
-  <br/>
+<br/>
 
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
-
+Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 ```tsx
 import { Plus } from 'lucide-react'
-  <Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
+<Button icon={Plus} variant="tertiary">Lägg till rad</Button>
 ```
 
-  <Button icon={Plus} variant={'tertiary'}>Lägg till rad</Button>
+<Button icon={Plus} variant="tertiary">Lägg till rad</Button>
 
 
 ## Små knappar
-För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size={'small'}`
+För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size="small"`
 
 <div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
   <Button size={'small'}>Primär</Button>
@@ -129,6 +129,6 @@ I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (n
 
 
 
-## Dependencies
+## Beroenden
 
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

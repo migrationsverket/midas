@@ -1,21 +1,25 @@
 {
-  "_id": "@midas-ds/spinner@0.0.3",
-  "_rev": "3-7166fb35df424abe161d875322ca5f67",
+  "_id": "@midas-ds/spinner@1.0.1",
+  "_rev": "5-ab1f2d41506540b1764c144836c5cecb",
   "name": "@midas-ds/spinner",
   "dist-tags": {
-    "latest": "0.0.3"
+    "latest": "1.0.1"
   },
   "versions": [
     "0.0.1",
     "0.0.2",
-    "0.0.3"
+    "0.0.3",
+    "1.0.0",
+    "1.0.1"
   ],
   "time": {
     "created": "2024-09-10T14:38:24.661Z",
-    "modified": "2024-10-07T12:22:11.600Z",
+    "modified": "2024-10-24T13:26:50.162Z",
     "0.0.1": "2024-09-10T14:38:24.936Z",
     "0.0.2": "2024-09-11T07:13:03.358Z",
-    "0.0.3": "2024-10-07T12:22:11.408Z"
+    "0.0.3": "2024-10-07T12:22:11.408Z",
+    "1.0.0": "2024-10-18T13:40:52.737Z",
+    "1.0.1": "2024-10-24T13:26:49.943Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -25,13 +29,13 @@
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "description": "```bash npm i @midas-ds/spinner ```",
+  "description": "This library was generated with [Nx](https://nx.dev).",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 5214,
-  "version": "0.0.3",
+  "_contentLength": 8270,
+  "version": "1.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -42,27 +46,24 @@
     }
   },
   "peerDependencies": {
-    "lucide-react": "^0.383.0",
-    "clsx": "^2.1.1",
-    "vite-plugin-css-injected-by-js": "^3.5.1",
-    "rollup-preserve-directives": "^1.1.1"
+    "lucide-react": "^0.453.0"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "56c65f084f7737fe854618037d6f8681be3215a7",
+  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-XhM/sUbEt+R3XX4hsAbazHatvllydqlzgNP0KyOSge9moBLpWrdV96oN9G0c0q08LgssQpClTVDB7FoS3bghKg==",
-    "shasum": "ce0e8b4f47e04aff9e549bb45691feba29b2a34f",
-    "tarball": "https://registry.npmjs.org/@midas-ds/spinner/-/spinner-0.0.3.tgz",
-    "fileCount": 6,
-    "unpackedSize": 8620,
+    "integrity": "sha512-UiG7eb55RxZ7t6rEaBOdU5c6dO2ZhW5xMmjhH4bB+c495CXq7ZhXA1QbFSfPWXr+L9LdlhzNMChs9fY9HFLF7Q==",
+    "shasum": "5c1194c44e91220226da1aca4d07c7e659e08a4e",
+    "tarball": "https://registry.npmjs.org/@midas-ds/spinner/-/spinner-1.0.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 8711,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIFSSpfM7MUkVAbhhssi34A63sUdtXxDsJviNtT0LnuEUAiEAn9r7Gia6UuXODzMTbI7ZMxEIUkwGeNASWz9Y23nBMSw="
+        "sig": "MEQCIF9jCOq8/qNcUPTpp6iT3iTT9fJIYp1Vl5X55tTWHsLBAiA4b8o2vTkiVnpdWKlm5u/xPJgfjzqOnmL+5mDDBZAlwA=="
       }
     ]
   },
@@ -70,7 +71,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/spinner_0.0.3_1728303731146_0.8641070331643297"
+    "tmp": "tmp/spinner_1.0.1_1729776409766_0.557491192911886"
   },
   "_hasShrinkwrap": false
 }

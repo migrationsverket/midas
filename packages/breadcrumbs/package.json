@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/breadcrumbs",
-  "version": "0.0.5",
+  "version": "1.0.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -12,7 +12,7 @@
   },
   "peerDependencies": {
     "react-aria-components": "^1.1.1",
-    "@midas-ds/link": "0.0.3"
+    "@midas-ds/link": "1.0.1"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
