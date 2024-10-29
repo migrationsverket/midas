@@ -8276,6 +8276,7 @@ __webpack_require__.r(__webpack_exports__);
       "backgroundColor": "#eaf2f6"
     },
     "navbar": {
+      "title": "Designsystem",
       "logo": {
         "alt": "Migrationsverket Logotyp",
         "src": "img/mig-logo.svg",
