@@ -27,7 +27,9 @@ const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
-  baseUrl: process.env.GITHUB_ACTIONS ? `${process.env.BASE_URL}/` : '/',
+  baseUrl: process.env.PR_NUMBER
+    ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
+    : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico?v=2',
