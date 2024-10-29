@@ -169,9 +169,7 @@ li:not(.menu__list-item) a {
 }
 
 .migNavbarLogo {
-  /* padding-right: 1rem;
-  border-right: solid 1px black; */
-  margin-right: 1rem;
+  margin: 0 1rem;
 }
 
 .footer--dark {
