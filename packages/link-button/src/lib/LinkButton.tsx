@@ -21,6 +21,7 @@ export const LinkButton: React.FC<MidasLinkProps> = ({
   size,
   icon: IconComponent,
   iconSize,
+  iconPlacement,
   ...rest
 }) => {
   const effectiveIconSize =
@@ -37,6 +38,9 @@ export const LinkButton: React.FC<MidasLinkProps> = ({
         variant === 'icon' && ButtonStyles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'small' && ButtonStyles.small,
+        iconPlacement === 'right'
+          ? ButtonStyles.iconRight
+          : ButtonStyles.iconLeft,
         styles.link,
         rest.className
       )}
