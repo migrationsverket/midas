@@ -1,0 +1,77 @@
+{
+  "_id": "@midas-ds/link@1.0.1",
+  "_rev": "5-661948ec38b5e8f7cd5ecabb3d70debb",
+  "name": "@midas-ds/link",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": [
+    "0.0.1",
+    "0.0.2",
+    "0.0.3",
+    "1.0.0",
+    "1.0.1"
+  ],
+  "time": {
+    "created": "2024-09-10T14:35:32.127Z",
+    "modified": "2024-10-24T13:26:06.988Z",
+    "0.0.1": "2024-09-10T14:35:32.368Z",
+    "0.0.2": "2024-09-12T12:34:14.036Z",
+    "0.0.3": "2024-10-07T12:16:39.947Z",
+    "1.0.0": "2024-10-18T13:40:24.933Z",
+    "1.0.1": "2024-10-24T13:26:06.785Z"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "description": "This library was generated with [Nx](https://nx.dev).",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 8200,
+  "version": "1.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "react-aria-components": "^1.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-t2/aa4fgURXKaz9lPDEsjh4xjBNfkmPx0Zyt8d1OSKjbIUuKrcJPT53g0ZPbBezHqRL2EmZOsy6+cRSME9gFGA==",
+    "shasum": "b7134ce15a0c6ed603715f158a7a9773b48c1290",
+    "tarball": "https://registry.npmjs.org/@midas-ds/link/-/link-1.0.1.tgz",
+    "fileCount": 8,
+    "unpackedSize": 73998,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIBa4+IoWCBpQ4GALTDCehu0zd7CYZC9wC0xhpapZbH3WAiEAqZbSgmFyCCLfWwJgnW7apz0N14HWKY6glQopGab14GE="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/link_1.0.1_1729776366512_0.31716055566122625"
+  },
+  "_hasShrinkwrap": false
+}
