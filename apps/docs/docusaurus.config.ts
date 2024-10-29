@@ -21,8 +21,6 @@ fs.readdirSync(packagesDir).forEach(dir => {
   }
 })
 
-console.log(process.env)
-
 const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
@@ -105,7 +103,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'components/index',
+          docId: '/',
           position: 'left',
           label: 'Designsystem'
         },
