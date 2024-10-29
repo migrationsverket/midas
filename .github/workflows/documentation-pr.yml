@@ -14,6 +14,9 @@ permissions:
   pages: write # to deploy to Pages
   id-token: write # to verify the deployment originates from an appropriate source
 
+env:
+  PR_NUMBER: ${{ github.event.number }}
+
 concurrency: preview-${{ github.ref }}
 
 jobs:
