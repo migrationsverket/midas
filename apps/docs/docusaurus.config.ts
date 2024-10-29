@@ -25,7 +25,7 @@ const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
-  baseUrl: '/',
+  baseUrl: process.env.GITHUB_ACTIONS ? `${process.env.BASE_URL}/` : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico?v=2',
@@ -95,9 +95,8 @@ const config: Config = {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
         height: '100%',
-        width: '100px'
-        // width: '100%',
-        //className: 'migNavbarLogo'
+        width: '100%',
+        className: 'migNavbarLogo'
       },
       items: [
         {
