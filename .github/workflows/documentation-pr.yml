@@ -9,8 +9,8 @@ on:
       - closed
 
 permissions:
+  contents: write
   pull-requests: read
-  statuses: write
   pages: write # to deploy to Pages
   id-token: write # to verify the deployment originates from an appropriate source
 
