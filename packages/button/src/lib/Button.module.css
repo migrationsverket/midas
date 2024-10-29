@@ -142,6 +142,13 @@
     outline-offset: 0.125rem;
   }
 }
+.iconLeft {
+  flex-direction: row;
+}
+
+.iconRight {
+  flex-direction: row-reverse;
+}
 
 .fullwidth {
   width: 100%;

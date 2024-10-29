@@ -17,6 +17,7 @@ export interface MidasButtonProps {
   size?: 'small'
   icon?: LucideIcon /**Optional icon prop */
   iconSize?: number /**Optional prop to customize icon size */
+  iconPlacement?: 'left' | 'right'
   children?:
     | React.ReactNode
     | ((
@@ -37,6 +38,7 @@ export const Button: React.FC<MidasButton> = ({
   variant = 'primary',
   fullwidth,
   className,
+  iconPlacement,
   size,
   icon: IconComponent,
   iconSize,
@@ -44,7 +46,6 @@ export const Button: React.FC<MidasButton> = ({
 }) => {
   const effectiveIconSize =
     size === 'small' ? 14 : iconSize || 16 /**Default size if not specified */
-
   return (
     <AriaButton
       className={clsx(
@@ -56,6 +57,7 @@ export const Button: React.FC<MidasButton> = ({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'small' && styles.small,
+        iconPlacement === 'right' ? styles.iconRight : styles.iconLeft,
         className
       )}
       {...rest}
