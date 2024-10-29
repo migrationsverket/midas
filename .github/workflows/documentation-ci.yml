@@ -27,27 +27,34 @@ jobs:
       - name: Build storybook
         run: npx nx run ui:build-storybook:ci
 
-      - name: Upload Build Artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: build
+          folder: build
+          branch: gh-pages
+          clean-exclude: pr-preview
+          force: false
 
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: build
+      # - name: Upload Build Artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: build
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
+  # deploy:
+  #   name: Deploy to GitHub Pages
+  #   needs: build
 
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  #   # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+  #   permissions:
+  #     pages: write # to deploy to Pages
+  #     id-token: write # to verify the deployment originates from an appropriate source
 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  #   # Deploy to the github-pages environment
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
