@@ -9,7 +9,7 @@ import { Flex, FlexItem } from '@midas-ds/flex'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
 import Info from '@site/static/data/link.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Plus } from 'lucide-react'
+
 
 <ComponentHeader name={'LinkButton'} info={Info} friendlyName={'Länkknapp'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Link.html" />
 
@@ -38,19 +38,6 @@ import { LinkButton } from '@midas-ds/link-button'
 </Flex>`}
 </LiveCodeBlock>
 
-
-### Tertiär knapp
-Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
-Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
-```tsx
-import { Plus } from 'lucide-react'
-<LinkButton iconPlacement="right" variant="tertiary" icon={Plus} href="Om">Om</LinkButton>
-```
-
-<LinkButton iconPlacement="right" variant="tertiary" icon={Plus} href="Om">Om</LinkButton>
-
-
-
 ### Headlessreferens
 Beskrivning av hur `RouterProvider` används finns på [React Aria Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).
 
@@ -74,9 +61,6 @@ export default function App() {
   );
 }
 ```
-
-
-
 
 ## Dependencies
 
