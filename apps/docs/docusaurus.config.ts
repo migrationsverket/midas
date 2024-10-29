@@ -103,7 +103,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: '/',
+          docId: 'intro',
           position: 'left',
           label: 'Designsystem'
         },
