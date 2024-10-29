@@ -5,14 +5,6 @@
   position: fixed;
   inset: 0;
   background: rgba(45 0 0 / 0.3);
-
-  &[data-entering] {
-    animation: mymodal-blur 300ms;
-  }
-
-  &[data-exiting] {
-    animation: mymodal-blur 300ms reverse ease-in;
-  }
 }
 
 .modal {
@@ -41,29 +33,7 @@
 .icon {
   background-color: transform;
 }
-.divChildren {
+.divContainer {
   padding: 0 2rem 2rem 2rem;
   font-family: display;
-}
-
-@keyframes mymodal-blur {
-  from {
-    background: rgba(45 0 0 / 0);
-    backdrop-filter: blur(0);
-  }
-
-  to {
-    background: rgba(45 0 0 / 0.3);
-    backdrop-filter: blur(0.625rem);
-  }
-}
-
-@keyframes mymodal-slide {
-  from {
-    transform: translateX(100%);
-  }
-}
-.buttonContainer {
-  display: flex;
-  gap: 0.8rem;
 }

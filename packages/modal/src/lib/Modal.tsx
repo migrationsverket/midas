@@ -34,7 +34,7 @@ export const Modal: React.FC<KeyboardModalTriggerProps> = ({ children }) => {
                   />
                 </Button>
               </Heading>
-              <div className={styles.divChildren}>{children}</div>
+              <div className={styles.divContainer}>{children}</div>
             </>
           )}
         </Dialog>
