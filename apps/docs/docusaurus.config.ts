@@ -92,7 +92,6 @@ const config: Config = {
       backgroundColor: '#eaf2f6'
     },
     navbar: {
-      title: 'Designsystem',
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
