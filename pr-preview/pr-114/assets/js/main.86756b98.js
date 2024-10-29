@@ -8287,7 +8287,7 @@ __webpack_require__.r(__webpack_exports__);
       "items": [
         {
           "type": "doc",
-          "docId": "components/index",
+          "docId": "intro",
           "position": "left",
           "label": "Designsystem"
         },
