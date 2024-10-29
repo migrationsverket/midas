@@ -11,15 +11,14 @@ on:
 permissions:
   pull-requests: read
   statuses: write
+  pages: write # to deploy to Pages
+  id-token: write # to verify the deployment originates from an appropriate source
 
 concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
     name: Build Docusaurus and Storybook and deploy PR preview
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -46,4 +45,4 @@ jobs:
         with:
           source-dir: ./build/
           preview-branch: main
-          custom-url: 'https://designsystem.migrationsverket.se'
+          custom-url: 'designsystem.migrationsverket.se'
