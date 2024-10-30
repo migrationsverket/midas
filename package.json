@@ -5,8 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "commitlint": "commitlint --edit",
-    "commit": "cz",
-    "plop": "plop --plopfile plopfile.js"
+    "commit": "cz"
   },
   "private": false,
   "dependencies": {
