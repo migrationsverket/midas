@@ -1,14 +1,48 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, black, signalRed130, smBreakpoint, gray50, gray20, gray10, backgroundSecondary from tokens;
 
+.input {
+  width: -webkit-fill-available;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  color: black;
+  height: 3rem;
+  background-color: backgroundSecondary;
+  box-shadow: 0 1px 0 0 black;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: gray20;
+  }
+
+  &[data-focus-visible] {
+    outline-offset: 0.125rem;
+    border: none;
+    outline: 0.125rem solid black;
+  }
+
+  &[data-disabled] {
+    background: backgroundSecondary;
+    box-shadow: none;
+    border-bottom: 0.063rem solid gray50;
+  }
+}
+
 .combobox {
   font-family: display;
   display: flex;
   flex-direction: column;
   width: 100%;
+
   &[data-disabled] {
     color: gray50;
   }
+
   &[data-invalid] .input {
     border: 0.125rem solid signalRed130;
     box-shadow: none;
@@ -25,35 +59,6 @@
   position: relative;
 }
 
-.input {
-  width: -webkit-fill-available;
-  padding-left: 1rem;
-  border: none;
-  border-radius: 0;
-  font-size: 1rem;
-  color: black;
-  height: 3rem;
-  background-color: backgroundSecondary;
-  box-shadow: 0 1px 0 0 black;
-
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    background-color: gray20;
-  }
-  &[data-focus-visible] {
-    outline-offset: 0.125rem;
-    border: none;
-    outline: 0.125rem solid black;
-  }
-  &[data-disabled] {
-    background: backgroundSecondary;
-    box-shadow: none;
-    border-bottom: 0.063rem solid gray50;
-  }
-}
-
 .button {
   display: flex;
   align-items: center;
@@ -65,6 +70,7 @@
   right: 0;
   height: 100%;
   transition: transform 0.3s ease;
+
   &[aria-expanded='true'] {
     transform: rotate(180deg);
   }
@@ -89,6 +95,7 @@
   display: flex;
   gap: 0.625rem;
   font-size: 0.875rem;
+
   & svg {
     color: signalRed130;
   }
