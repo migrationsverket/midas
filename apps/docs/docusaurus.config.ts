@@ -25,7 +25,9 @@ const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
-  baseUrl: '/',
+  baseUrl: process.env.PR_NUMBER
+    ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
+    : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico?v=2',
@@ -90,19 +92,18 @@ const config: Config = {
       backgroundColor: '#eaf2f6'
     },
     navbar: {
-      // title: 'Designsystem',
+      title: 'Designsystem',
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
         height: '100%',
-        width: '100px'
-        // width: '100%',
-        //className: 'migNavbarLogo'
+        width: '100%',
+        className: 'migNavbarLogo'
       },
       items: [
         {
           type: 'doc',
-          docId: 'components/index',
+          docId: 'intro',
           position: 'left',
           label: 'Designsystem'
         },
