@@ -4,7 +4,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(45 0 0 / 0.3);
+  background: rgba(45 0 0 / 30%);
 }
 
 .modal {
@@ -14,11 +14,10 @@
   transform: translate(-50%, -50%);
   max-width: 22.25rem;
   background-color: white;
-  outline: none;
 }
+
 .dialog {
   outline: none;
-  background-color: white;
 }
 
 .header {
@@ -33,7 +32,8 @@
 .icon {
   background-color: transform;
 }
+
 .divContainer {
-  padding: 0 2rem 2rem 2rem;
+  padding: 0 2rem 2rem;
   font-family: display;
 }
