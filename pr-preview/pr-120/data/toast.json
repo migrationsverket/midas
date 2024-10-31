@@ -1,0 +1,85 @@
+{
+  "_id": "@midas-ds/toast@1.0.1",
+  "_rev": "6-1846e41c7a67f0651cd8a535562b425c",
+  "name": "@midas-ds/toast",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": [
+    "0.4.0",
+    "0.5.0",
+    "0.5.1",
+    "0.5.2",
+    "1.0.0",
+    "1.0.1"
+  ],
+  "time": {
+    "created": "2024-09-10T14:39:22.818Z",
+    "modified": "2024-10-22T14:09:09.096Z",
+    "0.4.0": "2024-09-10T14:39:23.053Z",
+    "0.5.0": "2024-09-12T05:55:09.470Z",
+    "0.5.1": "2024-09-12T12:58:03.661Z",
+    "0.5.2": "2024-10-07T12:28:12.102Z",
+    "1.0.0": "2024-10-18T13:40:35.175Z",
+    "1.0.1": "2024-10-22T14:09:08.896Z"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "description": "Toast is a component in Midas design system.",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 10663,
+  "version": "1.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "dependencies": {
+    "@midas-ds/button": "1.0.1",
+    "react": "^18.3.1",
+    "@react-aria/toast": "^3.0.0-beta.12",
+    "@react-stately/toast": "3.0.0-beta.6",
+    "react-dom": "18.3.1",
+    "lucide-react": "^0.383.0"
+  },
+  "peerDependencies": {},
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-UwvKCZCgCBB8YjFA5a24NNBUDQpETp9s+HwsJ+k1rsAx/ho3v2EYQ+pc8o6lvcboRiqgIc1+GLglTw0pUR5mNA==",
+    "shasum": "d63cd72130c67102e4adeff12b0d603e04c435a0",
+    "tarball": "https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.1.tgz",
+    "fileCount": 10,
+    "unpackedSize": 157172,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEQCIDXlIjAnTTuRi2XZNPAnHhQq3Ikd4M26ixnXgdBHZH4sAiBiv0fSypqvRm+hnXO2ZSFhSYYNsuoP4aEWbyI1K4THZw=="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/toast_1.0.1_1729606148689_0.4365718627786559"
+  },
+  "_hasShrinkwrap": false
+}
