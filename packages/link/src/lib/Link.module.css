@@ -5,9 +5,11 @@
   font-family: display;
   color: blue130;
   text-decoration: underline;
+
   &:hover {
     color: blue150;
   }
+
   &[data-disabled='true'] {
     cursor: disabled;
     text-decoration: none;

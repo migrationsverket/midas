@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+
   &[data-disabled] {
     pointer-events: none;
     opacity: 1;
@@ -46,17 +47,21 @@
   &[data-disabled] {
     color: gray50;
   }
+
   &[data-disabled]::before {
     border-color: gray50;
   }
+
   &[data-pressed]::before {
     border-color: borderSecondary;
   }
+
   &[data-selected]::before {
     padding: 0.188rem;
     border-width: 0.1rem;
     background: blue150 50% 50% no-repeat content-box;
   }
+
   &[data-selected][data-pressed]::before {
     border-color: gray60;
     background: gray60 50% 50% no-repeat content-box;
