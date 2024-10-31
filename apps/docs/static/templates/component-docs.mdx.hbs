@@ -6,7 +6,7 @@ description: Kort beskrivning av {{ properName }}
 
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
-// import Info from '@site/static/data/{{ componentName }}.json'
+import Info from '@site/static/data/{{ componentName }}.json'
 import { {{ properName }} } from '@midas-ds/{{ componentName }}'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
@@ -26,8 +26,8 @@ npm install @midas-ds/{{ componentName }}
 import { {{ properName }} } from '@midas-ds/{{ componentName }}'
 ```
 
-<LiveCodeBlock scope={{ {{properName}} }}>
-{`[lägg in ett litet showcase på {{ componentName }}]`}
+<LiveCodeBlock scope={""}>
+    {`[lägg in ett litet showcase på {{ componentName }}]`}
 </LiveCodeBlock>
 
 ## Riktlinjer

@@ -1,14 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { DialogTrigger, Modal } from './Modal'
+import { DialogTrigger, Modal, ModalHeader, ModalBody } from './Modal'
 import { Button } from '@midas-ds/button'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { TextArea } from '@midas-ds/textarea'
+import { Heading } from 'react-aria-components'
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
   title: 'Components/Modal',
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered',
-  },
+    layout: 'centered'
+  }
 }
 export default meta
 type Story = StoryObj<typeof Modal>
@@ -16,35 +19,58 @@ type Story = StoryObj<typeof Modal>
 export const Default: Story = {
   args: {},
   render: () => {
-    const buttonContainerStyle = {
-      display: 'flex',
-      gap: '0.8rem',
-    }
-    const divStyle = {
-      marginBottom: '1.875rem',
-    }
     return (
       <DialogTrigger>
-        <Button>Öppna Modal</Button>
+        <Button>Öppna modal</Button>
         <Modal>
-          <h3>Vill du spara korrespondens?</h3>
-          <div style={divStyle}>
-            <p>AB Förekommer</p>
-            <p>AC Förekommer ej</p>
-          </div>
-
-          <p>i ärendenummer 12345678</p>
-          <div style={buttonContainerStyle}>
-            <Button size="small">Spara korr.</Button>
-            <Button
-              variant="secondary"
-              size="small"
-            >
-              Avbrytt
-            </Button>
-          </div>
+          {({ close }) => (
+            <>
+              <ModalHeader />
+              <ModalBody
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '2rem'
+                }}
+              >
+                <Flex>
+                  <FlexItem>
+                    <Heading
+                      slot='title'
+                      style={{ margin: 0 }}
+                    >
+                      Vill du avsluta uppdraget?
+                    </Heading>
+                  </FlexItem>
+                </Flex>
+                <Flex>
+                  <FlexItem>
+                    <TextArea
+                      autoFocus
+                      label='Ange anledning'
+                      description='Skriv anledning'
+                      maxCharacters={100}
+                    />
+                  </FlexItem>
+                </Flex>
+                <Flex>
+                  <FlexItem col='auto'>
+                    <Button onPress={close}>Spara korrespondens</Button>
+                  </FlexItem>
+                  <FlexItem>
+                    <Button
+                      onPress={close}
+                      variant='secondary'
+                    >
+                      Avbryt
+                    </Button>
+                  </FlexItem>
+                </Flex>
+              </ModalBody>
+            </>
+          )}
         </Modal>
       </DialogTrigger>
     )
-  },
+  }
 }

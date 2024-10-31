@@ -62,6 +62,7 @@ export const ComponentHeader = ({
         <FlexItem col='auto'>
           <LinkButton
             href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}/CHANGELOG.md`}
+            target='_blank'
             variant='tertiary'
             icon={Logs}
           >
@@ -85,6 +86,7 @@ export const ComponentHeader = ({
                   ? overrideHeadlessLink
                   : `https://react-spectrum.adobe.com/react-aria/${name}.html`
               }
+              target='_blank'
               variant='tertiary'
               icon={FileCode2}
             >
