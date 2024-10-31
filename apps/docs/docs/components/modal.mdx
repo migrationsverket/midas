@@ -14,7 +14,7 @@ import { Flex, FlexItem } from '@midas-ds/flex'
 import { TextArea } from '@midas-ds/textarea'
 import { Heading } from 'react-aria-components'
 
-<ComponentHeader name={'Modal'} info={Info} friendlyName="Skriv svenska namn för komponenten" overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Dialog.html" />
+<ComponentHeader name={'Modal'} info={Info} friendlyName="Modal, Dialog, Dialogruta" overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Dialog.html" />
 
 ## Introduktion
 
@@ -27,7 +27,7 @@ npm install @midas-ds/modal
 ```
 
 ```tsx
-import { Modal } from '@midas-ds/modal'
+import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
 ```
 
 <LiveCodeBlock scope={{DialogTrigger, Button, Modal, ModalHeader, ModalBody, Flex, FlexItem, Heading, TextArea}}>
@@ -155,7 +155,7 @@ För att komma åt funktionen för att stänga modalen kan du antingen komma åt
 ```
 
 ### useContext
-```tsx {1,4,8}
+```tsx {1,4,8,16}
 import { OverlayTriggerStateContext } from '@midas-ds/modal'
 
 const CloseButton: React.FC () => {
@@ -169,7 +169,7 @@ const CloseButton: React.FC () => {
         </Button>
     )
 }
-
+...
 <Modal>
     <CloseButton />
 </Modal>
