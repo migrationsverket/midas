@@ -7,8 +7,8 @@ const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered',
-  },
+    layout: 'centered'
+  }
 }
 export default meta
 type Story = StoryObj<typeof Modal>
@@ -18,10 +18,10 @@ export const Default: Story = {
   render: () => {
     const buttonContainerStyle = {
       display: 'flex',
-      gap: '0.8rem',
+      gap: '0.8rem'
     }
     const divStyle = {
-      marginBottom: '1.875rem',
+      marginBottom: '1.875rem'
     }
     return (
       <DialogTrigger>
@@ -35,16 +35,11 @@ export const Default: Story = {
 
           <p>i ärendenummer 12345678</p>
           <div style={buttonContainerStyle}>
-            <Button size="small">Spara korr.</Button>
-            <Button
-              variant="secondary"
-              size="small"
-            >
-              Avbrytt
-            </Button>
+            <Button>Spara korr.</Button>
+            <Button variant='secondary'>Avbrytt</Button>
           </div>
         </Modal>
       </DialogTrigger>
     )
-  },
+  }
 }

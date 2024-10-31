@@ -4,7 +4,7 @@ import {
   DialogTrigger,
   Heading,
   Modal as ModalAria,
-  ModalOverlay,
+  ModalOverlay
 } from 'react-aria-components'
 import { X } from 'lucide-react'
 import { Button } from '@midas-ds/button'
@@ -23,8 +23,7 @@ export const Modal: React.FC<KeyboardModalTriggerProps> = ({ children }) => {
               <Heading className={styles.header}>
                 <Button
                   onPress={close}
-                  variant="tertiary"
-                  size="small"
+                  variant='tertiary'
                 >
                   Stäng
                   <X
