@@ -4,7 +4,6 @@
 .inputField {
   height: 100%;
 
-  &[data-disabled],
   &[data-disabled] {
     color: gray50;
   }
@@ -23,7 +22,6 @@
     'Desc Count'
     'Error Error'
     'Input Input';
-
   height: 100%;
   width: 100%;
   align-content: flex-end;
@@ -31,14 +29,12 @@
 
 .label {
   grid-area: Label;
-
   font-size: 1rem;
   font-weight: mediumWeight;
 }
 
 .text {
   grid-area: Desc;
-
   font-size: 0.875rem;
   font-weight: regularWeight;
 }
@@ -80,6 +76,7 @@
 
   &:hover {
     background-color: gray20;
+
     & + .passwordText {
       background-color: gray20;
     }
