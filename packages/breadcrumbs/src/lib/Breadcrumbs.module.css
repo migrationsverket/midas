@@ -15,6 +15,7 @@
     alt: ' ';
     padding: 0 5px;
   }
+
   li[data-current='true'] a {
     cursor: default;
   }

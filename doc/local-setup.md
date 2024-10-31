@@ -1,70 +1,69 @@
 # Lokal setup
 
-## Förutsättningar
+## Quickstart
 
----
+### Dependencies
 
+- Klona repot `git clone git@github.com:migrationsverket/midas.git`
 - Node ≥20 är ett krav, använd [NVM](https://github.com/nvm-sh/nvm) om du behöver växla mellan olika versioner.
-
 - [Python](https://www.python.org/downloads/) behöver vara installerat för att installera nx-dependencies. Python ingår i Ubuntu så om du kör WSL funkar det lika bra.
+- [Nx](https://nx.dev) installerat globalt `npm install --global nx@latest`
+- Se till att rekomenderade extensions och inställningar för VS Code är tillämpade. Se till att du har motsvarande om du kör en annan IDE.
 
-* Installera [Nx](https://nx.dev) globalt:
-
-```shell
-npm install --global nx@latest
-```
-
-## Hämta och installera
-
----
-
-- Klona repot (du behöver SSH-nyckel mot GitHub):
-
-```
-git clone git@github.com:migrationsverket/midas.git
-```
-
-- Installera dependencies:
-
-```
+```bash
 npm install
 ```
 
+### Starta DocWeb
+
+Starta dokumentationen:
+
+```bash
+nx serve docs
+```
+
+### Starta Storybook
+
+Starta storybook:
+
+```bash
+nx run ui:storybook
+```
+
+### Starta Playground-appen (React)
+
+React:
+
+```bash
+nx serve playground
+```
+
+Vi har även en remix och en next.js-app uppsatta - se NX
+
 ## Komponentbibliotek
 
----
-
-Komponenterna är separata och publicerbara paket som ligger under `/packages`. Det finns en app för att testköra kod `nx serve playground` samt [Storybook](https://storybook.js.org/)
-för mer strukturerad test- och utvecklingsmiljö. Alla komponenter exporteras som separata npm-paket.
-
-- Starta upp Storybook lokalt:
-
-```
-nx storybook ui
-```
+Komponenterna är separata och publicerbara paket som ligger under `/packages`. Alla komponenter exporteras som separata npm-paket.
 
 - Kör enhetstester för alla komponenter
 
-```
+```bash
 nx run-many -t test
 ```
 
 ## Dokumentationswebb
 
----
-
 Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https://docusaurus.io/).
 
 - Kör dokumentationen lokalt:
 
-```
+```bash
 nx serve docs
 ```
 
 - Hämta hem senaste publicerade info från NPM:
 
 ```
-nx run-many -t info
+nx run docs:generate-info
 ```
 
 ## Bygga och publicera

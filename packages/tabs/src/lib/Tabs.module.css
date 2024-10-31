@@ -17,11 +17,13 @@
 
   &[data-selected='true'] {
     font-weight: semiBoldWeight;
-    box-shadow: inset 0px -3px 0px 0px blue130;
+    box-shadow: inset 0 -3px 0 0 blue130;
   }
+
   &:focus {
     outline: none;
   }
+
   &[data-focus-visible='true'] {
     outline: 1px solid black;
   }
@@ -29,9 +31,11 @@
 
 .panel {
   margin-top: 1rem;
+
   &:focus {
     outline: none;
   }
+
   &[data-focus-visible='true'] {
     outline: 1px solid black;
   }

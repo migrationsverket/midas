@@ -9,6 +9,7 @@
   color: red100;
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
+
   @media (prefers-reduced-motion) {
     animation-duration: 2s;
   }
@@ -34,6 +35,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

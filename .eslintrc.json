@@ -4,6 +4,15 @@
   "plugins": ["@nx", "jsx-a11y"],
   "overrides": [
     {
+      "files": ["*.md", "*.mdx"],
+      "extends": ["plugin:mdx/recommended"],
+      "excludedFiles": ["**/README.md"],
+      "settings": {
+        "mdx/code-blocks": true,
+        "mdx/language-mapper": {}
+      }
+    },
+    {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
         "@nx/enforce-module-boundaries": [
