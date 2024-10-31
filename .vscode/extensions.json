@@ -6,6 +6,7 @@
     "nrwl.angular-console",
     "csstools.postcss",
     "esbenp.prettier-vscode",
-    "clinyong.vscode-css-modules"
+    "clinyong.vscode-css-modules",
+    "stylelint.vscode-stylelint"
   ]
 }
