@@ -46,6 +46,7 @@ export const Default: Story = {
                 <Flex>
                   <FlexItem>
                     <TextArea
+                      // eslint-disable-next-line jsx-a11y/no-autofocus
                       autoFocus
                       label='Ange anledning'
                       description='Skriv anledning'
