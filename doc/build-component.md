@@ -10,7 +10,7 @@
 - Skapa en ny komponent via Nx:
 
 ```shell
-nx g @nx/react:library ComponentName --publishable --importPath=@midas-ds/component-name --bundler=vite --style=css --directory packages/component-name --projectNameAndRootFormat=as-provided
+nx g @nx/react:library ComponentName --publishable --importPath=@midas-ds/component-name --bundler=vite --style=css --directory packages/component-name
 ```
 
 - Generera storybook stories med:
@@ -22,14 +22,14 @@ nx g @nx/react:stories
 - Generera dokumentation via (komponenten måste finnas):
 
 ```shell
-npm run plop docs
+nx run docs:generate-component-page
 ```
 
 ## Styleguide
 
 - Som standard, exportera en komponent per fil
 - React-filnamn i `PascalCase` som motsvarar komponenter
-- Använd barrel-files i stil med `index.js` för att exportera hela mappar
+- Använd barrel-files i stil med `index.ts` för att exportera hela mappar
 - Formatera enligt [Prettier](https://prettier.io/) standard
 - Kör nx format:check --project=komponentnamn för att kontrollera formatering [referens](https://nx.dev/nx-api/nx/documents/format-check)
 

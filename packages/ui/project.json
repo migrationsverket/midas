@@ -89,7 +89,7 @@
           "nx run-many -t build --exclude=tag:apps --skipNxCache --emptyOutDir",
           "nx release publish",
           "nx run-many -t info",
-          "npx git-cliff -o CHANGELOG.md"
+          "npx git-cliff -c tools/cliff.toml -o CHANGELOG.md"
         ],
         "parallel": false
       }

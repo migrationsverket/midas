@@ -27,23 +27,7 @@ och där hittar du all info om hur versionshantering och publicering är uppsatt
 på andra komponenter även om du bara har ändringar på en.
 
 ```bash
-nx release --dry-run // remove dry-run when you know it works
+nx run ui:release-components --dry-run // remove dry-run when you know it works
 ```
 
 Välj `yes|no` på frågan om publicering till npm-repot.
-
-### För att filtrera på specifika projekt
-
-```
-nx release --projects=button,link --dry-run
-
-```
-
-### Samt för att bumpa till en viss version
-
-Använd sparsamt!
-
-```
-nx release 1.0.2 --projects=button --dry-run
-
-```
