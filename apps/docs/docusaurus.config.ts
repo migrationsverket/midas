@@ -104,7 +104,7 @@ const config: Config = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'Designsystem'
+          label: 'Dokumentation'
         },
         {
           to: '/blog',
