@@ -37,7 +37,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   if (show)
     return (
       <div
-        className={clsx(styles.infoBanner, styles[type])}
+        className={clsx(styles.infoBanner, styles[type], rest.className)}
         {...rest}
       >
         <Icon
