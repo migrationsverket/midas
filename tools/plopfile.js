@@ -1,4 +1,6 @@
 const { exec } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 
 module.exports = function (plop) {
   function parseNxOutput(stream) {
@@ -41,6 +43,15 @@ module.exports = function (plop) {
           type: 'add',
           path: `apps/docs/docs/components/${componentName}.mdx`,
           templateFile: 'apps/docs/static/templates/component-docs.mdx.hbs',
+          data: {
+            componentName: '{{componentName}}',
+            properName: plop.getHelper('pascalCase')(componentName)
+          }
+        },
+        {
+          type: 'add',
+          path: `apps/docs/static/data/${componentName}.json`,
+          templateFile: 'apps/docs/static/templates/component-info.json.hbs',
           data: {
             componentName: '{{componentName}}',
             properName: plop.getHelper('pascalCase')(componentName)
