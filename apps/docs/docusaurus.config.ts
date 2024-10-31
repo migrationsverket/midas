@@ -30,7 +30,7 @@ const config: Config = {
     : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.ico?v=2',
+  favicon: 'img/favicon.ico?v=3',
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
@@ -92,12 +92,11 @@ const config: Config = {
       backgroundColor: '#eaf2f6'
     },
     navbar: {
-      title: 'Designsystem',
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
         height: '100%',
-        width: '100%',
+        width: 'auto',
         className: 'migNavbarLogo'
       },
       items: [

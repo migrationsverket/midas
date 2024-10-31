@@ -44,6 +44,7 @@
 @media xlBreakpoint {
   .container {
     max-width: var(--maxWidth);
+
     --padding: 0;
   }
 }
@@ -119,6 +120,7 @@
   .col-11 {
     width: calc((11 * 100% / 12) - (1 * var(--gutter) / 12));
   }
+
   .col-auto {
     width: auto;
   }
