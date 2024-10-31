@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText from tokens;
 
@@ -40,7 +41,7 @@
 }
 
 .fieldError {
-  color: inputText;
+  color: signalRed100;
   grid-area: Error;
   font-size: 0.875rem;
   display: flex;
@@ -54,6 +55,19 @@
     align-self: flex-start;
     color: signalRed100;
   }
+}
+
+.passwordText {
+  background-color: gray10;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  top: 0;
+  left: 1rem;
+  width: calc(100% - 1rem);
+  height: 46px;
+  pointer-events: none;
 }
 
 .input {
@@ -103,19 +117,6 @@
 .wrap {
   grid-area: Input;
   position: relative;
-}
-
-.passwordText {
-  background-color: gray10;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-  top: 0;
-  left: 1rem;
-  width: calc(100% - 1rem);
-  height: 46px;
-  pointer-events: none;
 }
 
 .passwordButton {
