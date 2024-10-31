@@ -3251,12 +3251,12 @@ li:not(.menu__list-item) a {
 }
 
 .navbar__logo {
-  height: 3.25rem;
+  height: 2.6rem;
 }
 
-.migNavbarLogo {
-  margin: 0 1rem;
-}
+/* .migNavbarLogo {
+  margin: 0 1rem 0 0;
+} */
 
 .footer--dark {
   --ifm-footer-background-color: #b90835;
@@ -3279,7 +3279,7 @@ li:not(.menu__list-item) a {
 }
 
 nav.menu {
-  padding: 0.5rem 0 0.5rem 1rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
 }
 
 .nodeLabel,

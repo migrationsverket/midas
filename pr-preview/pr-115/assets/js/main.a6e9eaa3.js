@@ -8288,7 +8288,7 @@ __webpack_require__.r(__webpack_exports__);
           "type": "doc",
           "docId": "intro",
           "position": "left",
-          "label": "Designsystem"
+          "label": "Dokumentation"
         },
         {
           "to": "/blog",
