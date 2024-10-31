@@ -151,15 +151,6 @@ li:not(.menu__list-item) a {
   text-decoration: underline;
 }
 
-.playgroundHeader_node_modules-@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module {
-  display: none !important;
-}
-
-.playgroundHeader_node_modules-\@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module:first-of-type {
-  background: var(--ifm-color-emphasis-200) !important;
-  color: var(--ifm-color-content) !important;
-}
-
 .badge {
   padding: 0.4rem 0.5rem;
 }
@@ -193,7 +184,7 @@ li:not(.menu__list-item) a {
 }
 
 nav.menu {
-  padding: 0.5rem 0 0.5rem 0.625rem;
+  padding: 0.5rem 0 0.5rem 1rem;
 }
 
 .nodeLabel,
