@@ -6,6 +6,12 @@
   height: 100%;
 }
 
+.arrowIcon {
+  flex: 0 0 auto;
+  transform: translateX(0);
+  transition: transform fastTransition ease-in-out;
+}
+
 .button {
   all: unset;
   cursor: pointer;
@@ -49,12 +55,6 @@
   align-items: center;
   padding-bottom: 0.625rem;
   gap: 0.5rem;
-}
-
-.arrowIcon {
-  flex: 0 0 auto;
-  transform: translateX(0);
-  transition: transform fastTransition ease-in-out;
 }
 
 .image {

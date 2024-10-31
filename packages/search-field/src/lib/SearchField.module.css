@@ -1,3 +1,4 @@
+/* stylelint-disable property-no-vendor-prefix */
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, blue150, gray150 from tokens;
 
@@ -19,7 +20,7 @@
   margin-left: 0.75rem;
   left: 0;
   top: 50%;
-  transform: translatey(-50%);
+  transform: translateY(-50%);
 }
 
 .clear {
@@ -30,7 +31,7 @@
   border: none;
   right: 0;
   top: 50%;
-  transform: translatey(-50%);
+  transform: translateY(-50%);
   background-color: transparent;
 }
 
