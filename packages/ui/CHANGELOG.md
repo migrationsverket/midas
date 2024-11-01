@@ -1,3 +1,13 @@
+## 0.7.5 (2024-11-01)
+
+### 🩹 Fixes
+
+- **ui:** add modal ([df294b2](https://github.com/migrationsverket/midas/commit/df294b2))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.4 (2024-11-01)
 
 ### 🩹 Fixes
