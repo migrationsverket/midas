@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6796],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
 
-/***/ 55120:
+/***/ 70003:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,79 +27,69 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToastRegion.mjs + 1 modules
-var useToastRegion = __webpack_require__(96766);
-// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToast.mjs
-var useToast = __webpack_require__(93187);
-// EXTERNAL MODULE: ./node_modules/@react-stately/toast/dist/useToastState.mjs
-var dist_useToastState = __webpack_require__(8737);
-// EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(40961);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
 var src = __webpack_require__(81706);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-check.js
-var circle_check = __webpack_require__(79804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-alert.js
-var circle_alert = __webpack_require__(37946);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
-var triangle_alert = __webpack_require__(418);
-;// ./packages/toast/src/lib/Toast.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Toast_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalGreen10":"#d5f2d9","signalGreen100":"#008d3c","signalBlue10":"#eaf2f6","signalBlue100":"#0066cc","signalYellow10":"#fff8e1","signalYellow100":"#f1c21b","signalRed10":"#ffdfdf","signalRed100":"#e62323","gray150":"#1f1f1f","toastRegion":"toastRegion_D8P5","toast":"toast_KTs7","success":"success_uWpg","info":"info_gZit","important":"important_NPeI","warning":"warning_QRWE","icon":"icon_KIoW","slideIn":"slideIn_VQTe","slideOut":"slideOut_wWyA","fadeIn":"fadeIn_cOPN"});
-;// ./packages/toast/src/lib/Toast.tsx
-'use client';var _excluded=(/* unused pure expression or super */ null && (["children"])),_excluded2=["state"],_excluded3=["state"];function ToastProvider(_ref){var children=_ref.children,props=_objectWithoutPropertiesLoose(_ref,_excluded);var state=useToastState({maxVisibleToasts:5,hasExitAnimation:true});return/*#__PURE__*/_jsxs(_Fragment,{children:[children(state),state.visibleToasts.length>0&&/*#__PURE__*/_jsx(ToastRegion,Object.assign({},props,{state:state}))]});}function ToastRegion(_ref2){var state=_ref2.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);var ref=react.useRef(null);var _useToastRegion=(0,useToastRegion/* useToastRegion */.J)(props,state,ref),regionProps=_useToastRegion.regionProps;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},regionProps,{ref:ref,className:Toast_module.toastRegion,children:state.visibleToasts.map(function(toast){return/*#__PURE__*/(0,jsx_runtime.jsx)(Toast,{toast:toast,state:state},toast.key);})}));}function Toast(_ref3){var state=_ref3.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded3);var ref=react.useRef(null);var _useToast=(0,useToast/* useToast */.d)(props,state,ref),toastProps=_useToast.toastProps,closeButtonProps=_useToast.closeButtonProps;var Icon=iconMap[props.toast.content.type];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},toastProps,{ref:ref,className:(0,clsx/* default */.A)(Toast_module.toast,Toast_module[props.toast.content.type]),"data-animation":props.toast.animation,onAnimationEnd:function onAnimationEnd(){// Remove the toast when the exiting animation completes.
-if(props.toast.animation==='exiting'){state.remove(props.toast.key);}},children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{className:Toast_module.icon}),props.toast.content.message]}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,Object.assign({},closeButtonProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{height:16,width:16})}))]}));}// Create a global toast queue.
-var toastQueue=new dist_useToastState/* ToastQueue */.Vv({maxVisibleToasts:5,hasExitAnimation:true});function GlobalToastRegion(props){// Subscribe to it.
-var state=(0,dist_useToastState/* useToastQueue */.oS)(toastQueue);// Render toast region.
-return state.visibleToasts.length>0?/*#__PURE__*/(0,react_dom.createPortal)(/*#__PURE__*/(0,jsx_runtime.jsx)(ToastRegion,Object.assign({},props,{state:state,type:props})),document.body):null;}var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};
-;// ./packages/toast/src/index.ts
-
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/toast.json
-const toast_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/toast@1.0.1","_rev":"6-1846e41c7a67f0651cd8a535562b425c","name":"@midas-ds/toast","dist-tags":{"latest":"1.0.1"},"versions":["0.4.0","0.5.0","0.5.1","0.5.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:39:22.818Z","modified":"2024-10-22T14:09:09.096Z","0.4.0":"2024-09-10T14:39:23.053Z","0.5.0":"2024-09-12T05:55:09.470Z","0.5.1":"2024-09-12T12:58:03.661Z","0.5.2":"2024-10-07T12:28:12.102Z","1.0.0":"2024-10-18T13:40:35.175Z","1.0.1":"2024-10-22T14:09:08.896Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"Toast is a component in Midas design system.","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10663,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"@midas-ds/button":"1.0.1","react":"^18.3.1","@react-aria/toast":"^3.0.0-beta.12","@react-stately/toast":"3.0.0-beta.6","react-dom":"18.3.1","lucide-react":"^0.383.0"},"peerDependencies":{},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-UwvKCZCgCBB8YjFA5a24NNBUDQpETp9s+HwsJ+k1rsAx/ho3v2EYQ+pc8o6lvcboRiqgIc1+GLglTw0pUR5mNA==","shasum":"d63cd72130c67102e4adeff12b0d603e04c435a0","tarball":"https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.1.tgz","fileCount":10,"unpackedSize":157172,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIDXlIjAnTTuRi2XZNPAnHhQq3Ikd4M26ixnXgdBHZH4sAiBiv0fSypqvRm+hnXO2ZSFhSYYNsuoP4aEWbyI1K4THZw=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/toast_1.0.1_1729606148689_0.4365718627786559"},"_hasShrinkwrap":false}');
-;// ./apps/docs/docs/components/toast.mdx
+;// ./apps/docs/static/data/button.json
+const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.1.0","_rev":"19-3acd7224074148c741044b96a7d91087","name":"@midas-ds/button","dist-tags":{"latest":"1.1.0"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2","1.1.0"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-11-01T10:27:02.755Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z","1.1.0":"2024-11-01T10:27:02.521Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":20368,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-KTOOtV7K/RqVGh3WA0Dj1N3Zwofq2v1EvrIl3ktZy4fprI5shfRx8gWbLsUeGxV/eAgGARMPR+E6fqb73iLPdg==","shasum":"32f012a4dfe7e57c137f3c5b7c72c1c0af1f8c13","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.1.0.tgz","fileCount":9,"unpackedSize":88663,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDPF7McX33R6T6drKYlZ3wkZ89sB5LLbKtq57NncEgcYQIgUS/UInvswgiAQdej3uaDgb6GporunB1VphlT0BhivMw="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.1.0_1730456822325_0.6191442598705927"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
+// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
+var CodeBlock = __webpack_require__(29511);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
+var plus = __webpack_require__(80697);
+;// ./apps/docs/docs/components/button.mdx
 
 
 const frontMatter = {
-	title: 'Toast',
-	description: 'Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.'
+	title: 'Button',
+	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
+	tags: [
+		'button',
+		'form'
+	]
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/toast",
-  "title": "Toast",
-  "description": "Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.",
-  "source": "@site/docs/components/toast.mdx",
+  "id": "components/button",
+  "title": "Button",
+  "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
+  "source": "@site/docs/components/button.mdx",
   "sourceDirName": "components",
-  "slug": "/components/toast",
-  "permalink": "/pr-preview/pr-123/components/toast",
+  "slug": "/components/button",
+  "permalink": "/pr-preview/pr-123/components/button",
   "draft": false,
   "unlisted": false,
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "button",
+      "permalink": "/pr-preview/pr-123/tags/button"
+    },
+    {
+      "inline": true,
+      "label": "form",
+      "permalink": "/pr-preview/pr-123/tags/form"
+    }
+  ],
   "version": "current",
   "frontMatter": {
-    "title": "Toast",
-    "description": "Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation."
+    "title": "Button",
+    "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
+    "tags": [
+      "button",
+      "form"
+    ]
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "TextField",
-    "permalink": "/pr-preview/pr-123/components/textfield"
+    "title": "Breadcrumbs",
+    "permalink": "/pr-preview/pr-123/components/breadcrumbs"
   },
   "next": {
-    "title": "Designmönster",
-    "permalink": "/pr-preview/pr-123/design-patterns/"
+    "title": "Card",
+    "permalink": "/pr-preview/pr-123/components/card"
   }
 };
 const assets = {
@@ -115,30 +105,48 @@ const assets = {
 
 
 
+
+
 const toc = [{
   "value": "Introduktion",
   "id": "introduktion",
   "level": 2
 }, {
-  "value": "Installation",
-  "id": "installation",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Varianter",
-  "id": "varianter",
-  "level": 3
+  "value": "Primärknapp",
+  "id": "primärknapp",
+  "level": 2
 }, {
-  "value": "Lokal implementation",
-  "id": "lokal-implementation",
-  "level": 3
+  "value": "Sekundär knapp",
+  "id": "sekundär-knapp",
+  "level": 2
 }, {
-  "value": "Global implementation",
-  "id": "global-implementation",
-  "level": 3
+  "value": "Tertiär knapp",
+  "id": "tertiär-knapp",
+  "level": 2
+}, {
+  "value": "Små knappar",
+  "id": "små-knappar",
+  "level": 2
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
+  "level": 3
+}, {
+  "value": "Generella riktlinjer",
+  "id": "generella-riktlinjer",
+  "level": 3
+}, {
+  "value": "Placering och ordning",
+  "id": "placering-och-ordning",
+  "level": 3
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -146,48 +154,30 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
+    li: "li",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Toast',
-      info: toast_namespaceObject,
-      friendlyName: 'Notifiering, notiser',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/useToast.html"
+      name: 'Button',
+      info: button_namespaceObject,
+      friendlyName: 'Knapp'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan\neller via en timeout som sätts via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "{timeout: ms}"
-      }), ". Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<ToastRegion>"
-      }), " som i\nnuvarande implementation återfinns i skärmens nedre högra hörn."]
-    }), "\n", (0,jsx_runtime.jsxs)("section", {
-      style: {
-        marginBottom: '1rem'
-      },
-      children: [(0,jsx_runtime.jsx)(GlobalToastRegion, {}), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          type: 'success',
-          message: 'Allt funkar som det ska!'
-        }, {
-          timeout: 5000
-        }),
-        children: "Tryck här för en notifiering"
-      })]
+      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation",
-      children: "Installation"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -195,7 +185,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/toast\n"
+            children: "npm install @midas-ds/button\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -204,7 +194,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/toast\n"
+            children: "yarn add @midas-ds/button\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -213,103 +203,160 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/toast\n"
+            children: "pnpm add @midas-ds/button\n"
           })
         })
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "varianter",
-      children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En toast har fyra olika varianter, ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "success"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "info"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "warning"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "important"
-      }), ". Använd lämplig typ beroende på vilken information som ska visas."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { Button } from '@midas-ds/button'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Button: src/* Button */.$
+      },
+      children: `<Flex>
+<FlexItem col="auto">
+  <Button>{fruits.shuffled(1).name}</Button>
+</FlexItem>
+<FlexItem col="auto">
+  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+</FlexItem>
+<FlexItem col="auto">
+  <Button isDisabled>{fruits.shuffled(1).name}</Button>
+</FlexItem>
+</Flex>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "primärknapp",
+      children: "Primärknapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
+    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
+      children: "Slutför"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "sekundär-knapp",
+      children: "Sekundär knapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka)."
+    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
+      variant: 'secondary',
+      children: "Tillbaka"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "tertiär-knapp",
+      children: "Tertiär knapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
     }), "\n", (0,jsx_runtime.jsxs)("div", {
       style: {
+        gap: '8px',
         display: 'flex',
-        gap: '5px'
+        margin: '8px'
       },
       children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          type: 'success',
-          message: 'Allt funkar som det ska!'
-        }, {
-          timeout: 5000
-        }),
-        children: "Success"
+        children: "Slutför"
       }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          type: 'info',
-          message: 'Här kommer ett meddelande'
-        }, {
-          timeout: 5000
-        }),
-        children: "Info"
+        variant: "secondary",
+        children: "Tillbaka"
       }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          message: 'Viktigt meddelande',
-          type: 'important'
-        }, {
-          timeout: 5000
-        }),
-        children: "Important"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          message: "Farlig varning!",
-          type: 'warning'
-        }, {
-          timeout: 5000
-        }),
-        children: "Warning"
+        variant: "tertiary",
+        children: "Ta bort anmälan"
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "lokal-implementation",
-      children: "Lokal implementation"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "toastProvider"
-      }), " för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,\nanvänd den ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "#global-implementation",
-        children: "globala varianten"
+    }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "icon"
+      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "iconPlacement"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ToastProvider, MidasToastState } from '@midas-ds/toast';\n\n<ToastProvider>\n  {(state: MidasToastState) => (\n    <Button\n      onPress={() => state.add({message: \"Success\", type: 'success'}, {timeout: 5000 })}\n    >\n      Show toast\n    </Button>\n  )}\n</ToastProvider>;\n"
+        children: "import { Plus } from 'lucide-react'\n;<Button\n  icon={Plus}\n  variant='tertiary'\n>\n  Lägg till rad\n</Button>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "global-implementation",
-      children: "Global implementation"
+    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
+      icon: plus/* default */.A,
+      variant: "tertiary",
+      children: "Lägg till rad"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "små-knappar",
+      children: "Små knappar"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Välj en global kö för toasts om det passar ditt användsningsscenario bättre. Lägg en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<GlobalToastRegion>"
-      }), " någonstans i appen\noch lägg nya toasts i kön enligt:"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';\n\n<GlobalToastRegion />\n//...\n<Button onPress={\n  () => toastQueue.add({type: 'success', message: 'Toast is done'})\n}>Show toast</Button>\n"
-      })
+      children: ["För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "size=\"small\""
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        size: 'small',
+        children: "Primär"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        size: 'small',
+        variant: 'secondary',
+        children: "Sekundär"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        size: 'small',
+        variant: 'tertiary',
+        children: "Tertiär"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "\nflowchart TD;\n\n    A[Vad är syftet?]:::primary\n    A-->|Handling| B[Använd Button]:::primary\n    A -->|Navigering| C[Är länken i ett textstycke?]\n    C--> |Ja| D[Använd Link]\n    C-->|Nej| E[Använd LinkButton]\n\n\n"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "generella-riktlinjer",
+      children: "Generella riktlinjer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Undvik att ha för många knappar på samma sida."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "placering-och-ordning",
+      children: "Placering och ordning"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Timeout ska av tillgänglighetsskäl vara minst 5000ms:"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "{timeout: 5000ms}\n"
-      })
+      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan."
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        children: "Skicka"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        variant: 'secondary',
+        children: "Avbryt"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: [(0,jsx_runtime.jsx)("br", {}), "I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen\n(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från\nvänster till höger (som att bläddra i en bok) och knapparna motsvarar detta."]
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        variant: 'secondary',
+        children: "Föregående"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        children: "Nästa"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: toast_namespaceObject
+      info: button_namespaceObject
     })]
   });
 }
@@ -327,6 +374,45 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 29511:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  A: () => (/* binding */ CodeBlock)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/prism-react-renderer/dist/index.mjs
+var dist = __webpack_require__(71765);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
+var useDocusaurusContext = __webpack_require__(44586);
+// EXTERNAL MODULE: ./node_modules/react-live/dist/index.mjs + 58 modules
+var react_live_dist = __webpack_require__(86850);
+;// ./apps/docs/src/components/CodeBlock/styles.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+// EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
+var fruits = __webpack_require__(46638);
+// EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
+var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
+var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var usePrismTheme=function usePrismTheme(){var _useDocusaurusContext=(0,useDocusaurusContext/* default */.A)(),_useDocusaurusContext2=_useDocusaurusContext.siteConfig.themeConfig.prism,prism=_useDocusaurusContext2===void 0?{}:_useDocusaurusContext2;var prismTheme=dist/* themes */.Zj.github;return prismTheme;};
 
 /***/ }),
 
@@ -397,6 +483,34 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link-button/src/lib/index.ts
 
 ;// ./packages/link-button/src/index.ts
+
+
+/***/ }),
+
+/***/ 80697:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Plus)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+]);
+
+
+//# sourceMappingURL=plus.js.map
 
 
 /***/ }),

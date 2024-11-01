@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 70003:
+/***/ 91260:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,75 +27,53 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/button.json
-const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.0.2","_rev":"18-b6d6032800f5ecc51bbce45a1c9097a1","name":"@midas-ds/button","dist-tags":{"latest":"1.0.2"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-10-24T13:26:03.085Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":18861,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-VuQgFjyMp23KkNJa0NRhOt7EFz1SORJQ/+Clp9aZxPJTstTKZ8DlaZULewfamThjcU+as27ULexCKGlfoXKoLQ==","shasum":"6947944a61f1d8e83925c0aca1c7bb5bc1148add","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.0.2.tgz","fileCount":9,"unpackedSize":88249,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIGA4e7ox4++jhd8cwLXKuaJAB/5/e0/SUkeB9IK5oAeLAiEArasDexUixJTKuT61oQIKAPrWJtDF2XD5j2ooxdS4Tk4="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.0.2_1729776362631_0.3385628929815332"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
+;// ./apps/docs/static/data/textfield.json
+const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.2","_rev":"10-b0679865ddb235d86e257d7f3e583314","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.2"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-11-01T10:27:07.900Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13465,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","lucide-react":"^0.453.0","@midas-ds/button":"1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-4ME7WAt9BZrXdGdt3rQHIt1qC1dQ+0qvXPJZoYy5j+/5P90VCoM4J16BCIM1hC+nbeNq17Jge1Gxj2G27HaAcw==","shasum":"e48a6eca840e86653d77bffa47d2b0062c668cb7","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.2.tgz","fileCount":9,"unpackedSize":124042,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDKl++oPNK0WmVjd+Yg2lOcHCr2GSVBgrIuqV6rLYQEMAIgFhDdiXD847J1bCkiCVZPqbvZyT2ST8baijVolw16rjY="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.2_1730456827502_0.05294009338582084"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
+var grid_src = __webpack_require__(17172);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
-var plus = __webpack_require__(80697);
-;// ./apps/docs/docs/components/button.mdx
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'Button',
-	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
-	tags: [
-		'button',
-		'form'
-	]
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/button",
-  "title": "Button",
-  "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
-  "source": "@site/docs/components/button.mdx",
+  "id": "components/textfield",
+  "title": "TextField",
+  "description": "Använd ett textfält när användaren ska fylla i en rad med text.",
+  "source": "@site/docs/components/textfield.mdx",
   "sourceDirName": "components",
-  "slug": "/components/button",
-  "permalink": "/pr-preview/pr-123/components/button",
+  "slug": "/components/textfield",
+  "permalink": "/pr-preview/pr-123/components/textfield",
   "draft": false,
   "unlisted": false,
-  "tags": [
-    {
-      "inline": true,
-      "label": "button",
-      "permalink": "/pr-preview/pr-123/tags/button"
-    },
-    {
-      "inline": true,
-      "label": "form",
-      "permalink": "/pr-preview/pr-123/tags/form"
-    }
-  ],
+  "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "Button",
-    "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
-    "tags": [
-      "button",
-      "form"
-    ]
+    "title": "TextField",
+    "description": "Använd ett textfält när användaren ska fylla i en rad med text."
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Breadcrumbs",
-    "permalink": "/pr-preview/pr-123/components/breadcrumbs"
+    "title": "TextArea",
+    "permalink": "/pr-preview/pr-123/components/textarea"
   },
   "next": {
-    "title": "Card",
-    "permalink": "/pr-preview/pr-123/components/card"
+    "title": "Toast",
+    "permalink": "/pr-preview/pr-123/components/toast"
   }
 };
 const assets = {
 
 };
-
 
 
 
@@ -116,36 +94,28 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Primärknapp",
-  "id": "primärknapp",
+  "value": "Validering",
+  "id": "validering",
   "level": 2
 }, {
-  "value": "Sekundär knapp",
-  "id": "sekundär-knapp",
-  "level": 2
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
 }, {
-  "value": "Tertiär knapp",
-  "id": "tertiär-knapp",
-  "level": 2
+  "value": "Personnummer",
+  "id": "personnummer",
+  "level": 3
 }, {
-  "value": "Små knappar",
-  "id": "små-knappar",
+  "value": "Lösenord",
+  "id": "lösenord",
   "level": 2
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
 }, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
-}, {
-  "value": "Generella riktlinjer",
-  "id": "generella-riktlinjer",
-  "level": 3
-}, {
-  "value": "Placering och ordning",
-  "id": "placering-och-ordning",
+  "value": "Desktop",
+  "id": "desktop",
   "level": 3
 }, {
   "value": "Beroenden",
@@ -154,11 +124,11 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
     li: "li",
-    mermaid: "mermaid",
     p: "p",
     pre: "pre",
     ul: "ul",
@@ -167,14 +137,17 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Button',
-      info: button_namespaceObject,
-      friendlyName: 'Knapp'
+      name: 'TextField',
+      info: textfield_namespaceObject,
+      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-123/components/textarea",
+        children: "TextArea"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -185,7 +158,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/button\n"
+            children: "npm install @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -194,7 +167,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/button\n"
+            children: "yarn add @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -203,160 +176,160 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/button\n"
+            children: "pnpm add @midas-ds/textfield\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Button } from '@midas-ds/button'\n"
+        children: "import { TextField } from '@midas-ds/textfield';\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$
+        TextField: src/* TextField */.A_
       },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button>{fruits.shuffled(1).name}</Button>
-</FlexItem>
-<FlexItem col="auto">
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-</FlexItem>
-<FlexItem col="auto">
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</FlexItem>
-</Flex>`
+      children: `<TextField 
+  label={'Etikett'}
+  description={'Beskrivning'}
+/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "primärknapp",
-      children: "Primärknapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      children: "Slutför"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sekundär-knapp",
-      children: "Sekundär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka)."
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      variant: 'secondary',
-      children: "Tillbaka"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tertiär-knapp",
-      children: "Tertiär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Slutför"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: "secondary",
-        children: "Tillbaka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: "tertiary",
-        children: "Ta bort anmälan"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "icon"
-      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "iconPlacement"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Plus } from 'lucide-react'\n;<Button\n  icon={Plus}\n  variant='tertiary'\n>\n  Lägg till rad\n</Button>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      icon: plus/* default */.A,
-      variant: "tertiary",
-      children: "Lägg till rad"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "små-knappar",
-      children: "Små knappar"
+      id: "validering",
+      children: "Validering"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "size=\"small\""
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
+      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
       },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        children: "Primär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        variant: 'secondary',
-        children: "Sekundär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        variant: 'tertiary',
-        children: "Tertiär"
+      children: `<TextField
+  label="Skriv in din e-post *"
+  description="Obligatorisk"
+  isRequired
+  errorMessage="Felaktig e-postadress"
+  type="email"
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egen-validering",
+      children: "Egen validering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Det går också att definiera en egen funktion för validering:"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "personnummer",
+      children: "Personnummer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användare.\nFöljande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
       })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Frivilliga sekelsiffor 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:19:20)?"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Matchar nästkommande siffor som 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|1[0-2])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Matchar nästkommande siffor som 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|[12]\\\\d|3[01])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Matchar avgränsaren som ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "+"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "-"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "blanksteg"
+        }), " eller ingen samt fyra efterföljande siffor ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:[-+ ]?\\\\d{4})?"
+        })]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rätt sålänge det är 10 eller 12 siffror. Däremot returnerar vi alltid formatet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "ÅÅÅÅMMDDXXXX"
+      }), " från komponenten oavsett vad användaren skrev."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="text"
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type={'password'}"
+      }), " för att kunna visa och dölja inmatad text."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="password" 
+  name="pw" 
+  label="Skriv in ditt lösenord" 
+  autoComplete="off"
+/>
+`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "\nflowchart TD;\n\n    A[Vad är syftet?]:::primary\n    A-->|Handling| B[Använd Button]:::primary\n    A -->|Navigering| C[Är länken i ett textstycke?]\n    C--> |Ja| D[Använd Link]\n    C-->|Nej| E[Använd LinkButton]\n\n\n"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "generella-riktlinjer",
-      children: "Generella riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik att ha för många knappar på samma sida."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "placering-och-ordning",
-      children: "Placering och ordning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan."
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Skicka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: 'secondary',
-        children: "Avbryt"
-      })]
+      id: "desktop",
+      children: "Desktop"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [(0,jsx_runtime.jsx)("br", {}), "I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen\n(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från\nvänster till höger (som att bläddra i en bok) och knapparna motsvarar detta."]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
+      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-123/components/grid",
+        children: "Grid"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-123/components/flex",
+        children: "Flex"
+      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Grid: grid_src/* Grid */.x,
+        TextField: src/* TextField */.A_,
+        GridItem: grid_src/* GridItem */.E
       },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: 'secondary',
-        children: "Föregående"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Nästa"
-      })]
+      children: `<Grid fluid={true}>
+  <GridItem col={2}>
+    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+  </GridItem>
+  <GridItem col={8}>
+    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+  </GridItem>
+</Grid>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: button_namespaceObject
+      info: textfield_namespaceObject
     })]
   });
 }
@@ -449,6 +422,44 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
+/***/ 17172:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  x: () => (/* reexport */ Grid),
+  E: () => (/* reexport */ GridItem)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/grid/src/lib/Grid.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/grid/src/lib/Grid.tsx
+var _excluded=["children","fluid"];/**
+ * Grid baserat på display: grid;
+ * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
+ *
+ * ### Children
+ * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
+ */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
+;// ./packages/grid/src/lib/GridItem.tsx
+var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
+var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
+;// ./packages/grid/src/lib/index.ts
+
+;// ./packages/grid/src/index.ts
+
+
+/***/ }),
+
 /***/ 9687:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -487,30 +498,48 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 80697:
+/***/ 42619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Plus)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  oi: () => (/* reexport */ InputWrapper),
+  A_: () => (/* reexport */ TextField),
+  Ql: () => (/* reexport */ TextField_module)
+});
 
+// UNUSED EXPORTS: ssnRegEx
 
-const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-]);
+;// ./packages/textfield/src/lib/TextField.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","inputField":"inputField_kJaH","inputWrapper":"inputWrapper_RfiT","label":"label_Pxyb","text":"text_CvV8","fieldError":"fieldError_kz46","passwordText":"passwordText_Gtww","input":"input_B57n","wrap":"wrap_g1RZ","passwordButton":"passwordButton_bCY3"});
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var dist_TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var Text = __webpack_require__(27279);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
+var triangle_alert = __webpack_require__(418);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/textfield/src/lib/TextField.tsx
+'use client';var _excluded=["label","description","errorMessage","validationType"];var TextField=function TextField(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,validationType=_ref.validationType,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),input=_React$useState[0],setInput=_React$useState[1];var _React$useState2=react.useState(true),isValid=_React$useState2[0],setIsValid=_React$useState2[1];var validateInput=function validateInput(value){if(validationType===undefined)return true;if(validationType==='ssn')setIsValid(ssnRegEx.test(value));if(validationType instanceof RegExp)setIsValid(new RegExp(validationType).test(value));};var handleInputBlur=function handleInputBlur(e){var value=e.target.value;validateInput(value);};var handleInputChange=function handleInputChange(e){setInput(e.target.value);};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextField/* TextField */.A,Object.assign({className:TextField_module.inputField,isInvalid:validationType!==undefined?!isValid:props.isInvalid},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(InputWrapper,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{type:props.type,className:TextField_module.input,onChange:handleInputChange,onBlur:handleInputBlur}),/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,{type:props.type,input:input})]})})}));};var PasswordField=function PasswordField(_ref2){var type=_ref2.type,input=_ref2.input;var _React$useState3=react.useState(false),showPassword=_React$useState3[0],setShowPassword=_React$useState3[1];if(type==='password')return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.passwordText,children:input}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"tertiary",onPress:function onPress(){return setShowPassword(!showPassword);},className:TextField_module.passwordButton,children:showPassword?'Dölj':'Visa'})]});return null;};var InputWrapper=function InputWrapper(_ref3){var label=_ref3.label,description=_ref3.description,errorMessage=_ref3.errorMessage,children=_ref3.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.inputWrapper,children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{className:TextField_module.label,children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.text,children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{className:TextField_module.fieldError,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(triangle_alert/* default */.A,{width:16,height:16}),errorMessage]})}),children]});};var ssnRegEx=new RegExp('^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$');
+;// ./packages/textfield/src/lib/index.ts
 
-
-//# sourceMappingURL=plus.js.map
+;// ./packages/textfield/src/index.ts
 
 
 /***/ }),
