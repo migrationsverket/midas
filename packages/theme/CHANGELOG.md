@@ -1,3 +1,7 @@
+## 1.0.1 (2024-11-01)
+
+This was a version bump only for theme to align it with other projects, there were no code changes.
+
 ## 0.6.2 (2024-11-01)
 
 ### 🩹 Fixes
