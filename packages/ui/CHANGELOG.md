@@ -1,3 +1,13 @@
+## 0.7.6 (2024-11-01)
+
+### 🩹 Fixes
+
+- **ui:** update theme version ([0fd97a0](https://github.com/migrationsverket/midas/commit/0fd97a0))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.5 (2024-11-01)
 
 ### 🩹 Fixes
