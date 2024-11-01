@@ -209,6 +209,7 @@ All notable changes to this project will be documented in this file. See [conven
 - add swedish names - ([1f9c17c](https://github.com/migrationsverket/midas/commits/1f9c17ce6bd15977acabde75cb2586c38eefe8bb)) - Wilhelm Hjelm
 - 14 release notes - ([96e3f5a](https://github.com/migrationsverket/midas/commits/96e3f5afc24e40a5155192f46433c001770e09a3)) - Wilhelm Hjelm
 - add new info - ([8f319ff](https://github.com/migrationsverket/midas/commits/8f319ffb7d46781182d6a15091fe2d4bed516402)) - Wilhelm Hjelm
+- new info - ([cae5f15](https://github.com/migrationsverket/midas/commits/cae5f15ee824f184a07a0c88364c1c0facf42770)) - Wilhelm Hjelm
 
 ### 🚧 Miscellaneous Chores
 
@@ -485,6 +486,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(ui)** update deps - ([0f35eb6](https://github.com/migrationsverket/midas/commits/0f35eb66a35fc93855e8e396b7f058b9e40f22f4)) - Wilhelm Hjelm
 - **(ui)** update deps - ([ed768b1](https://github.com/migrationsverket/midas/commits/ed768b1448689ed40e89d584225c4a755e1c10b3)) - Wilhelm Hjelm
 - **(ui)** add modal - ([df294b2](https://github.com/migrationsverket/midas/commits/df294b204871b54a57cbf15ceac64e187dd33c7d)) - Wilhelm Hjelm
+- **(ui)** update theme version - ([0fd97a0](https://github.com/migrationsverket/midas/commits/0fd97a049542ab36fb663db3c78f53b17da41d75)) - Wilhelm Hjelm
 - a littel fixing - ([1853317](https://github.com/migrationsverket/midas/commits/18533172505c5cb5ff2bd297bc873a2197e1a08a)) - jabir Khalil
 - add test for textarea in textfield.spec - ([b95cbf6](https://github.com/migrationsverket/midas/commits/b95cbf67480cc8f935f3fe3f0b840f0605e3f105)) - jabir Khalil
 - add test for textarea - ([3b9c7a9](https://github.com/migrationsverket/midas/commits/3b9c7a9c976e141f6067272fbd5d651bc2472220)) - jabir Khalil
