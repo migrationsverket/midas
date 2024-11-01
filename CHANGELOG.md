@@ -208,6 +208,7 @@ All notable changes to this project will be documented in this file. See [conven
 - fix transparent backgrund to favicon - ([fe4a7d5](https://github.com/migrationsverket/midas/commits/fe4a7d5b68fe15fedc2ebe5a967c0f5c40d11d3c)) - jabir Khalil
 - add swedish names - ([1f9c17c](https://github.com/migrationsverket/midas/commits/1f9c17ce6bd15977acabde75cb2586c38eefe8bb)) - Wilhelm Hjelm
 - 14 release notes - ([96e3f5a](https://github.com/migrationsverket/midas/commits/96e3f5afc24e40a5155192f46433c001770e09a3)) - Wilhelm Hjelm
+- add new info - ([8f319ff](https://github.com/migrationsverket/midas/commits/8f319ffb7d46781182d6a15091fe2d4bed516402)) - Wilhelm Hjelm
 
 ### 🚧 Miscellaneous Chores
 
@@ -266,6 +267,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.26 [skip-ci] - ([197993d](https://github.com/migrationsverket/midas/commits/197993d37ab7f0b2fb3729becf0f01bd2ecf11e8)) - Wilhelm Hjelm
 - **(theme)** release version 0.5.3 [skip-ci] - ([6d0d75e](https://github.com/migrationsverket/midas/commits/6d0d75e590789ec7ddd7ca3dd69c588b56e26cdc)) - Wilhelm Hjelm
 - **(theme)** release version 0.5.4 [skip-ci] - ([65012ab](https://github.com/migrationsverket/midas/commits/65012abf7c41458801d5a17336184f2e8e393436)) - Wilhelm Hjelm
+- **(theme)** release version 1.0.1 [skip-ci] - ([e85c42a](https://github.com/migrationsverket/midas/commits/e85c42addcd1cf98f7ffd1e151a0226fac6bbcc4)) - Wilhelm Hjelm
 - **(toast)** release version 0.5.2 [skip-ci] - ([426a627](https://github.com/migrationsverket/midas/commits/426a627a59462154a517b68d79888e5fc7b3339d)) - Wilhelm Hjelm
 - **(toast)** release version 0.5.2 [skip-ci] - ([021864e](https://github.com/migrationsverket/midas/commits/021864e9f5555e2605003e29dba1e582a7c3d2f4)) - Wilhelm Hjelm
 - **(ui)** release version 0.5.29 [skip-ci] - ([1b66902](https://github.com/migrationsverket/midas/commits/1b66902975cfec358c01a475a1e46de234b2ee04)) - Wilhelm Hjelm
@@ -474,6 +476,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(textfield, textarea)** fix spacing - ([c1c78d1](https://github.com/migrationsverket/midas/commits/c1c78d1dd35e1a940dcf3df4fd5f17f17e00e982)) - Wilhelm Hjelm
 - **(theme)** include tokens again - ([03b6516](https://github.com/migrationsverket/midas/commits/03b65163c8178f39ff3db52dbe860cb9e17ed7bb)) - Wilhelm Hjelm
 - **(theme)** clear changelog - ([e9e454a](https://github.com/migrationsverket/midas/commits/e9e454acb10401893d9d44e6f686a13dfe152144)) - Wilhelm Hjelm
+- **(theme)** update version - ([cf91176](https://github.com/migrationsverket/midas/commits/cf91176744548f349697245dfc38d2e2b34407b9)) - Wilhelm Hjelm
 - **(toast)** larger icon - ([d109d95](https://github.com/migrationsverket/midas/commits/d109d95481a2579ed92e828dd795bf6a3a81074d)) - Wilhelm Hjelm
 - **(toast)** fix button size + new build - ([76d967c](https://github.com/migrationsverket/midas/commits/76d967cf49160128e1327ef28d25289972dab815)) - Wilhelm Hjelm
 - **(toast)** remove stories from build - ([c059437](https://github.com/migrationsverket/midas/commits/c059437415d05b230850799650b13bf26510e941)) - Wilhelm Hjelm
@@ -481,6 +484,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(toast)** update readme - ([a0e8786](https://github.com/migrationsverket/midas/commits/a0e87863ee5da83fbf9e64d2896a2a1a5273ee45)) - Wilhelm Hjelm
 - **(ui)** update deps - ([0f35eb6](https://github.com/migrationsverket/midas/commits/0f35eb66a35fc93855e8e396b7f058b9e40f22f4)) - Wilhelm Hjelm
 - **(ui)** update deps - ([ed768b1](https://github.com/migrationsverket/midas/commits/ed768b1448689ed40e89d584225c4a755e1c10b3)) - Wilhelm Hjelm
+- **(ui)** add modal - ([df294b2](https://github.com/migrationsverket/midas/commits/df294b204871b54a57cbf15ceac64e187dd33c7d)) - Wilhelm Hjelm
 - a littel fixing - ([1853317](https://github.com/migrationsverket/midas/commits/18533172505c5cb5ff2bd297bc873a2197e1a08a)) - jabir Khalil
 - add test for textarea in textfield.spec - ([b95cbf6](https://github.com/migrationsverket/midas/commits/b95cbf67480cc8f935f3fe3f0b840f0605e3f105)) - jabir Khalil
 - add test for textarea - ([3b9c7a9](https://github.com/migrationsverket/midas/commits/3b9c7a9c976e141f6067272fbd5d651bc2472220)) - jabir Khalil
