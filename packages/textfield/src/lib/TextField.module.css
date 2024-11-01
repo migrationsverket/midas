@@ -1,4 +1,3 @@
-/* stylelint-disable declaration-block-no-redundant-longhand-properties */
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText from tokens;
 
