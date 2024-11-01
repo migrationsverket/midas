@@ -1,0 +1,50 @@
+name: DocWeb - Deploy PR preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write # to deploy to Pages
+  id-token: write # to verify the deployment originates from an appropriate source
+
+env:
+  PR_NUMBER: ${{ github.event.number }}
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    name: Build Docusaurus and Storybook and deploy PR preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        if: github.event.action != 'closed'
+        run: npm ci
+
+      - name: Build website
+        if: github.event.action != 'closed'
+        run: npx nx run docs:build --minify=false --outputPath=build
+      - name: Build storybook
+        if: github.event.action != 'closed'
+        run: npx nx run ui:build-storybook:ci
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./build/
+          custom-url: 'designsystem.migrationsverket.se'

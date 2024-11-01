@@ -1,3 +1,43 @@
+## 0.7.6 (2024-11-01)
+
+### 🩹 Fixes
+
+- **ui:** update theme version ([0fd97a0](https://github.com/migrationsverket/midas/commit/0fd97a0))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 0.7.5 (2024-11-01)
+
+### 🩹 Fixes
+
+- **ui:** add modal ([df294b2](https://github.com/migrationsverket/midas/commit/df294b2))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 0.7.4 (2024-11-01)
+
+### 🩹 Fixes
+
+- **modal:** update modal docs ([62f2546](https://github.com/migrationsverket/midas/commit/62f2546))
+
+### 🧱 Updated Dependencies
+
+- Updated info-banner to 1.0.3
+- Updated link-button to 1.2.0
+- Updated textfield to 1.0.2
+- Updated combobox to 1.0.2
+- Updated button to 1.1.0
+- Updated table to 1.0.2
+- Updated toast to 1.0.2
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.3 (2024-10-24)
 
 ### 🩹 Fixes

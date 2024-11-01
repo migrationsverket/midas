@@ -23,6 +23,12 @@
       "options": {
         "command": "npx nx affected --target info"
       }
+    },
+    "generate-component-page": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx plop --plopfile tools/plopfile.js"
+      }
     }
   },
   "tags": ["docs", "apps"]

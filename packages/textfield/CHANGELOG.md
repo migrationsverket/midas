@@ -1,3 +1,20 @@
+## 1.0.2 (2024-11-01)
+
+### 🩹 Fixes
+
+- **textfield:** fix text color in invald error to red color ([d0b65d1](https://github.com/migrationsverket/midas/commit/d0b65d1))
+- **textField:** fix text color in invald error to red color ([a5b38a9](https://github.com/migrationsverket/midas/commit/a5b38a9))
+- **modal:** update modal docs ([62f2546](https://github.com/migrationsverket/midas/commit/62f2546))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.1.0
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-22)
 
 ### 🧱 Updated Dependencies

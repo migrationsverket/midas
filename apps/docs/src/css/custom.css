@@ -5,11 +5,11 @@
  */
 
 @font-face {
-  font-family: 'Inter';
+  font-family: "'Inter'";
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2)
+  src: url('https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2')
     format('woff2-variations');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
@@ -35,14 +35,25 @@
   --ifm-color-primary-light: #0070e0;
   --ifm-color-primary-lighter: #0075eb;
   --ifm-color-primary-lightest: #0a85ff;
-  --ifm-menu-color-active: #663366;
-
+  --ifm-menu-color-active: #636;
   --ifm-code-font-size: 1rem;
   --ifm-font-family-monospace: 'Fira Code', monospace;
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   --ifm-font-family-base: 'Inter', sans-serif;
   --ifm-font-size-base: 1rem;
   --ifm-hr-height: 0.1em;
+  --ifm-navbar-padding-vertical: 1.5rem;
+  --ifm-navbar-height: calc(
+    3.25rem + calc(var(--ifm-navbar-padding-vertical) * 2)
+  );
+}
+
+.code-card {
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -55,7 +66,6 @@
   --ifm-color-primary-lighter: #fde967;
   --ifm-color-primary-lightest: #feef95;
   --ifm-menu-color-active: #fddb0b;
-
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 30%);
 
   .code-card {
@@ -76,14 +86,6 @@ this is a bit ad hoc, will fix this later
   padding: 24px;
 }
 
-.code-card {
-  padding: 10px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
-}
-
 .code-card > form {
   display: flex;
   justify-content: space-between;
@@ -92,6 +94,11 @@ this is a bit ad hoc, will fix this later
 
 .code-card > form > span > button {
   margin-right: 5px;
+}
+
+table th,
+table td {
+  border: none;
 }
 
 .token-table {
@@ -144,24 +151,17 @@ li:not(.menu__list-item) a {
   text-decoration: underline;
 }
 
-.playgroundHeader_node_modules-@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module {
-  display: none !important;
-}
-
-.playgroundHeader_node_modules-\@docusaurus-theme-live-codeblock-lib-theme-Playground-styles-module:first-of-type {
-  background: var(--ifm-color-emphasis-200) !important;
-  color: var(--ifm-color-content) !important;
-}
-
 .badge {
   padding: 0.4rem 0.5rem;
 }
 
-.migNavbarLogo {
-  padding-right: 1rem;
-  border-right: solid 1px black;
-  margin-right: 1rem;
+.navbar__logo {
+  height: 2.6rem;
 }
+
+/* .migNavbarLogo {
+  margin: 0 1rem 0 0;
+} */
 
 .footer--dark {
   --ifm-footer-background-color: #b90835;
@@ -177,15 +177,20 @@ li:not(.menu__list-item) a {
   transition:
     transform 250ms ease-in-out,
     background-color 250ms ease-in-out;
+
   &:hover {
     background-color: #e6e6e6;
   }
 }
 
+nav.menu {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
 .nodeLabel,
 .edgeLabel {
   font-size: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: "'Inter'", sans-serif;
 }
 
 .primary rect {
@@ -195,34 +200,37 @@ li:not(.menu__list-item) a {
 }
 
 .primary .nodeLabel {
-  color: #ffffff !important;
+  color: #fff !important;
 }
 
 .edgeLabel {
-  background-color: #ffffff !important;
+  background-color: #fff !important;
 }
+
 .node rect {
-  fill: #ffffff !important;
+  fill: #fff !important;
   stroke: #143c50 !important;
   stroke-width: 2 !important;
 }
+
 .primary.node rect {
   fill: #143c50 !important;
 }
+
 .theme-code-block {
   background-color: transparent !important;
   border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 0px !important;
+  border-radius: 0 !important;
+
   .prism-code {
     background-color: transparent !important;
   }
 }
 
-table th,
-table td {
-  border: none;
-}
-
 .button-row > div {
   align-items: center;
+}
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 1.5rem;
 }

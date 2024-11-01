@@ -1,0 +1,33 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, white, gray10 from tokens;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45 0 0 / 30%);
+  z-index: 2000;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 75%;
+  background-color: white;
+}
+
+.modalDialog {
+  outline: none;
+}
+
+.modalHeader {
+  background-color: gray10;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalBody {
+  padding: 1rem 2rem 2rem;
+  font-family: display;
+}

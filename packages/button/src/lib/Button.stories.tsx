@@ -25,6 +25,11 @@ const meta: Meta<typeof Button> = {
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' }
+    },
+    iconPlacement: {
+      options: ['right', 'left'],
+      control: { type: 'radio' },
+      defaultValue: 'left'
     }
   }
 }

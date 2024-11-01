@@ -25,10 +25,12 @@ const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
-  baseUrl: '/',
+  baseUrl: process.env.PR_NUMBER
+    ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
+    : '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
-  favicon: 'img/favicon.ico?v=2',
+  favicon: 'img/favicon.ico?v=3',
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
@@ -90,21 +92,19 @@ const config: Config = {
       backgroundColor: '#eaf2f6'
     },
     navbar: {
-      // title: 'Designsystem',
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
         height: '100%',
-        width: '100px'
-        // width: '100%',
-        //className: 'migNavbarLogo'
+        width: 'auto',
+        className: 'migNavbarLogo'
       },
       items: [
         {
           type: 'doc',
-          docId: 'components/index',
+          docId: 'intro',
           position: 'left',
-          label: 'Designsystem'
+          label: 'Dokumentation'
         },
         {
           to: '/blog',
@@ -117,7 +117,7 @@ const config: Config = {
           label: 'Om'
         },
         {
-          to: '/blog/release-13',
+          to: '/blog/release-14',
           label: 'Senaste versionen',
           position: 'right'
         },

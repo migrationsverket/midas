@@ -1,24 +1,28 @@
 const { exec } = require('child_process')
+const fs = require('fs')
+const path = require('path')
 
 module.exports = function (plop) {
   function parseNxOutput(stream) {
     let chunks = []
 
     return new Promise((resolve, reject) => {
-      stream.on('data', (chunk) => {
+      stream.on('data', chunk => {
         chunks = JSON.parse(chunk)
-          .filter((value) => !value.includes('playground') && value !== 'docs')
-          .map((item) => ({ name: item, value: item }))
+          .filter(value => !value.includes('playground') && value !== 'docs')
+          .map(item => ({ name: item, value: item }))
 
         return Buffer.from(chunks)
       })
-      stream.on('error', (err) => reject(err))
+      stream.on('error', err => reject(err))
       stream.on('end', () => resolve(chunks))
     })
   }
 
   const getProjects = async () => {
-    return await parseNxOutput(exec('npx nx show projects --json').stdout)
+    return await parseNxOutput(
+      exec('nx show projects --json --exclude=tag:apps').stdout
+    )
   }
 
   plop.setGenerator('docs', {
@@ -28,10 +32,10 @@ module.exports = function (plop) {
         type: 'list',
         name: 'componentName',
         message: 'Which component do you want to generate documentation for?',
-        choices: getProjects,
-      },
+        choices: getProjects
+      }
     ],
-    actions: (data) => {
+    actions: data => {
       let { componentName } = data
       process.chdir(plop.getPlopfilePath())
       let actions = [
@@ -41,12 +45,21 @@ module.exports = function (plop) {
           templateFile: 'apps/docs/static/templates/component-docs.mdx.hbs',
           data: {
             componentName: '{{componentName}}',
-            properName: plop.getHelper('pascalCase')(componentName),
-          },
+            properName: plop.getHelper('pascalCase')(componentName)
+          }
         },
+        {
+          type: 'add',
+          path: `apps/docs/static/data/${componentName}.json`,
+          templateFile: 'apps/docs/static/templates/component-info.json.hbs',
+          data: {
+            componentName: '{{componentName}}',
+            properName: plop.getHelper('pascalCase')(componentName)
+          }
+        }
       ]
 
       return [...actions]
-    },
+    }
   })
 }
