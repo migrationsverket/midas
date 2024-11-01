@@ -1,3 +1,14 @@
+## 1.0.2 (2024-11-01)
+
+### 🩹 Fixes
+
+- **modal:** update modal docs ([62f2546](https://github.com/migrationsverket/midas/commit/62f2546))
+- **combobox:** update readme ([76ebbab](https://github.com/migrationsverket/midas/commit/76ebbab))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-24)
 
 ### 🩹 Fixes
