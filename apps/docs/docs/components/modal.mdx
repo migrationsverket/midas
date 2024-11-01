@@ -1,11 +1,14 @@
 ---
 title: Modal
 tags: []
-description: Modal som lägger sig över allt annat innehåll. 
+description: Modal som lägger sig över allt annat innehåll.
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/modal.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { DialogTrigger, Modal, ModalHeader, ModalBody } from '@midas-ds/modal'
@@ -14,11 +17,16 @@ import { Flex, FlexItem } from '@midas-ds/flex'
 import { TextArea } from '@midas-ds/textarea'
 import { Heading } from 'react-aria-components'
 
-<ComponentHeader name={'Modal'} info={Info} friendlyName="Modal, Dialog, Dialogruta" overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/Dialog.html" />
+<ComponentHeader
+  name={'Modal'}
+  info={Info}
+  friendlyName='Modal, Dialog, Dialogruta'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Dialog.html'
+/>
 
 ## Introduktion
 
-Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak. 
+Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak.
 
 ## Installation och användning
 
@@ -30,8 +38,20 @@ npm install @midas-ds/modal
 import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
 ```
 
-<LiveCodeBlock scope={{DialogTrigger, Button, Modal, ModalHeader, ModalBody, Flex, FlexItem, Heading, TextArea}}>
-{`<DialogTrigger>
+<LiveCodeBlock
+  scope={{
+    DialogTrigger,
+    Button,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    Flex,
+    FlexItem,
+    Heading,
+    TextArea
+  }}
+>
+  {`<DialogTrigger>
     <Button>Radera frukter</Button>
     <Modal>
         {({ close }) => (
@@ -44,7 +64,7 @@ import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
                 gap: '2rem'
             }}
             >
-            <Flex>
+            <Flex fluid={true}>
                 <FlexItem>
                     <Heading
                         slot='title'
@@ -55,7 +75,7 @@ import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
                     <p>Är du säker? De kan inte återskapas.</p>
                 </FlexItem>
             </Flex>
-            <Flex>
+            <Flex fluid={true}>
                 <FlexItem col='auto'>
                     <Button onPress={close} variant="danger">Radera</Button>
                 </FlexItem>
@@ -77,10 +97,23 @@ import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
 </LiveCodeBlock>
 
 ## Avancerat innehåll
+
 Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas.
 
-<LiveCodeBlock scope={{DialogTrigger, Button, Modal, ModalHeader, ModalBody, Flex, FlexItem, Heading, TextArea}}>
-{`<DialogTrigger>
+<LiveCodeBlock
+  scope={{
+    DialogTrigger,
+    Button,
+    Modal,
+    ModalHeader,
+    ModalBody,
+    Flex,
+    FlexItem,
+    Heading,
+    TextArea
+  }}
+>
+  {`<DialogTrigger>
     <Button>Öppna ansökan</Button>
     <Modal>
         {({ close }) => (
@@ -93,7 +126,7 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
                     gap: '2rem'
                 }}
                 >
-                <Flex>
+                <Flex fluid={true}>
                     <FlexItem>
                     <Heading
                         slot='title'
@@ -103,27 +136,27 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
                     </Heading>
                     </FlexItem>
                 </Flex>
-                <Flex>
+                <Flex fluid={true}>
                     <FlexItem>
-                    <TextArea
-                        autoFocus
-                        label='Ange anledning'
-                        description='Skriv anledning'
-                        maxCharacters={100}
-                    />
+                        <TextArea
+                            autoFocus
+                            label='Ange anledning'
+                            description='Skriv anledning'
+                            maxCharacters={100}
+                        />
                     </FlexItem>
                 </Flex>
-                <Flex>
+                <Flex fluid={true}>
                     <FlexItem col='auto'>
-                    <Button onPress={close}>Spara korrespondens</Button>
+                        <Button onPress={close}>Spara korrespondens</Button>
                     </FlexItem>
                     <FlexItem>
-                    <Button
-                        onPress={close}
-                        variant='secondary'
-                    >
-                        Avbryt
-                    </Button>
+                        <Button
+                            onPress={close}
+                            variant='secondary'
+                        >
+                            Avbryt
+                        </Button>
                     </FlexItem>
                 </Flex>
                 </ModalBody>
@@ -135,16 +168,18 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 </LiveCodeBlock>
 
 ## Stänga modal
+
 I vår komponent `<ModalHeader />` som du bör placera först innuti din modal ingår en knapp för att stänga modalen. Modaler kan även stängas med tangentbordet (`esc`).
 För att komma åt funktionen för att stänga modalen kan du antingen komma åt det via useContext eller via funktionen som kan används som direkt barn till `<Modal>`.
 
 ### Funktionen close
+
 ```tsx {3,6}
 ...
 <Modal>
     {({close}) => (
         ...
-        <Button 
+        <Button
          onPress={close}
         >
             Stäng modal
@@ -155,6 +190,7 @@ För att komma åt funktionen för att stänga modalen kan du antingen komma åt
 ```
 
 ### useContext
+
 ```tsx {1,4,8,16}
 import { OverlayTriggerStateContext } from '@midas-ds/modal'
 
@@ -162,7 +198,7 @@ const CloseButton: React.FC () => {
     const state = React.useContext(OverlayTriggerStateContext)
 
     return (
-        <Button 
+        <Button
          onPress={state.close}
         >
             Stäng modal
@@ -176,7 +212,9 @@ const CloseButton: React.FC () => {
 ```
 
 ## Riktlinjer
+
 TBD
 
 ## Beroenden
-<ComponentFooter info={Info}/>
+
+<ComponentFooter info={Info} />

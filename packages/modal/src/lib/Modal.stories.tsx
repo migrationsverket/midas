@@ -33,7 +33,7 @@ export const Default: Story = {
                   gap: '2rem'
                 }}
               >
-                <Flex>
+                <Flex fluid={true}>
                   <FlexItem>
                     <Heading
                       slot='title'
@@ -43,7 +43,7 @@ export const Default: Story = {
                     </Heading>
                   </FlexItem>
                 </Flex>
-                <Flex>
+                <Flex fluid={true}>
                   <FlexItem>
                     <TextArea
                       // eslint-disable-next-line jsx-a11y/no-autofocus
@@ -54,7 +54,7 @@ export const Default: Story = {
                     />
                   </FlexItem>
                 </Flex>
-                <Flex>
+                <Flex fluid={true}>
                   <FlexItem col='auto'>
                     <Button onPress={close}>Spara korrespondens</Button>
                   </FlexItem>
