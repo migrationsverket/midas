@@ -17,7 +17,7 @@
     "@midas-ds/logo": "1.0.1",
     "@midas-ds/radio": "1.0.1",
     "@midas-ds/select": "1.0.1",
-    "@midas-ds/theme": "0.6.1",
+    "@midas-ds/theme": "1.0.1",
     "@midas-ds/accordion": "1.0.2",
     "@midas-ds/card": "1.0.2",
     "@midas-ds/info-banner": "1.0.3",
@@ -35,7 +35,8 @@
     "@midas-ds/spinner": "1.0.1",
     "@midas-ds/table": "1.0.2",
     "@midas-ds/tabs": "1.0.1",
-    "@midas-ds/textarea": "1.0.2"
+    "@midas-ds/textarea": "1.0.2",
+    "@midas-ds/modal": "0.1.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
