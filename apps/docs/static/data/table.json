@@ -1,25 +1,27 @@
 {
-  "_id": "@midas-ds/table@1.0.1",
-  "_rev": "4-e76530a4337668437476a59127c7037a",
+  "_id": "@midas-ds/table@1.0.2",
+  "_rev": "5-af05cadfbfac9bf33a7920ac59cb5a63",
   "name": "@midas-ds/table",
   "dist-tags": {
-    "latest": "1.0.1"
+    "latest": "1.0.2"
   },
   "versions": [
     "0.0.1",
     "0.1.0",
     "0.1.1",
     "1.0.0",
-    "1.0.1"
+    "1.0.1",
+    "1.0.2"
   ],
   "time": {
     "created": "2024-09-12T12:49:17.620Z",
-    "modified": "2024-10-24T13:26:53.344Z",
+    "modified": "2024-11-01T10:27:46.622Z",
     "0.1.0": "2024-09-12T12:49:18.018Z",
     "0.0.1": "2024-09-12T13:02:24.470Z",
     "0.1.1": "2024-10-07T12:24:13.653Z",
     "1.0.0": "2024-10-18T13:40:53.378Z",
-    "1.0.1": "2024-10-24T13:26:53.159Z"
+    "1.0.1": "2024-10-24T13:26:53.159Z",
+    "1.0.2": "2024-11-01T10:27:46.398Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -29,13 +31,13 @@
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "description": "This library was generated with [Nx](https://nx.dev).",
+  "description": "```bash npm i @midas-ds/table ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 8284,
-  "version": "1.0.1",
+  "_contentLength": 0,
+  "version": "1.0.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -53,19 +55,19 @@
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.453.0"
   },
-  "gitHead": "ead3133f0643b7915ada3e7ccd2a21764ae1323f",
+  "gitHead": "70edd4f7163e73616f4c7eadaeb38f6a2ba341eb",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-MGDJ/0CwVtmFHUQMyxDaTGqK2eBrJ2XiE83564rXKJfpQoj9i0OE7Eb5ETqs0UM5J6Qk7NHFN0G4LrrmI/TIjg==",
-    "shasum": "aa27426bc3a9ebb15d16b5e85954735629cefd01",
-    "tarball": "https://registry.npmjs.org/@midas-ds/table/-/table-1.0.1.tgz",
+    "integrity": "sha512-FOPR7LrPLIVYk52kVRD1ZtIzaL9w276ndyI/fSKjj2ZP6yaaQ5SpAxUyP5Wh7NNsgLA70wRcyklgaQAIJ1mPpQ==",
+    "shasum": "8e1b1310c20e458f57a87a1d04be979f58187113",
+    "tarball": "https://registry.npmjs.org/@midas-ds/table/-/table-1.0.2.tgz",
     "fileCount": 8,
-    "unpackedSize": 420204,
+    "unpackedSize": 421302,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEUCIQC3UweJ9KjxD6LM8X6XnO+IdO00IHzfkgLgyK9y9h802wIgPHYoKMHUAjyO9CZi8IQIp8yHrYHj0DXhJ8/oS8c9XOs="
+        "sig": "MEYCIQDJDMZqaPXTMhNJmBhaFuBpk2D2wYOs/76B5Sm9z4KwFwIhAJ3hCgo/OUNPBF9zHIaYu5wGw4Re+OWgYis2LXVJ2Q13"
       }
     ]
   },
@@ -73,7 +75,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/table_1.0.1_1729776412996_0.6274283563605649"
+    "tmp": "tmp/table_1.0.2_1730456866239_0.35516182202709334"
   },
   "_hasShrinkwrap": false
 }

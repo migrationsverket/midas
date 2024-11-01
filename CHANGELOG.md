@@ -37,6 +37,9 @@ All notable changes to this project will be documented in this file. See [conven
 
 ### ✨Features
 
+- **(Modal)** create a new component - ([9f3ba44](https://github.com/migrationsverket/midas/commits/9f3ba445f2e4c60c4d029377978ab1b8c623635a)) - jabir Khalil
+- **(Modal)** create a new component - ([02ca9df](https://github.com/migrationsverket/midas/commits/02ca9df1b5d115bacb669dd1c8c8dda42b7d8ebb)) - jabir Khalil
+- **(Modal)** fix styling, delete not used codes and add button component - ([d13c8d0](https://github.com/migrationsverket/midas/commits/d13c8d0d56f07f38f58dd9a3ddf0746bb7ada095)) - jabir Khalil
 - **(accordion)** [**breaking**] new build - ([d7a3d40](https://github.com/migrationsverket/midas/commits/d7a3d40c2cf86e068c16fa5004fa7146d76ee640)) - Wilhelm Hjelm
 - **(breadcrumbs)** [**breaking**] new build - ([33ae364](https://github.com/migrationsverket/midas/commits/33ae364ae4fdc8aae5178ae0cbf5431a68f3fbf9)) - Wilhelm Hjelm
 - **(button)** [**breaking**] new build - ([cf0f9b2](https://github.com/migrationsverket/midas/commits/cf0f9b2e7962f93232cdc8742274e353155c74e8)) - Wilhelm Hjelm
@@ -44,6 +47,8 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** add icon and iconSize prop and logic to make icon smaller when size=small - ([44c637f](https://github.com/migrationsverket/midas/commits/44c637f81f6be797b59b91187379c845a6052929)) - PHIEKS
 - **(button)** update button stories - ([2a85551](https://github.com/migrationsverket/midas/commits/2a85551a3694789683c78cff47fc9dcd78f5543a)) - PHIEKS
 - **(button)** remove unused icon - ([91b8e5b](https://github.com/migrationsverket/midas/commits/91b8e5b7c65e31adc9ef0cd2f3dd669e7f17c9c0)) - PHIEKS
+- **(button)** add property to change button's icon direction - ([cfd3dbe](https://github.com/migrationsverket/midas/commits/cfd3dbe31bd11ee6e40bb08e4e8eeeed3f59a6dd)) - jabir Khalil
+- **(button)** change inline style to class style - ([724d45d](https://github.com/migrationsverket/midas/commits/724d45d85b9b61e204ffea627a62422f78cd3e7b)) - jabir Khalil
 - **(card)** [**breaking**] new build - ([8d3d9f1](https://github.com/migrationsverket/midas/commits/8d3d9f14bf9d9ef46b85b425648289d0bc8517bc)) - Wilhelm Hjelm
 - **(checkbox)** new wrapper - ([6f23b57](https://github.com/migrationsverket/midas/commits/6f23b57b9efc08efcfc913ca75aff799c96d2707)) - Wilhelm Hjelm
 - **(checkbox)** [**breaking**] new build - ([9d4bbde](https://github.com/migrationsverket/midas/commits/9d4bbde760f16321b573a2072a601491e2602565)) - Wilhelm Hjelm
@@ -67,6 +72,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link)** [**breaking**] new build - ([62a1b20](https://github.com/migrationsverket/midas/commits/62a1b20a686fbbc60ba829331027052903320d02)) - Wilhelm Hjelm
 - **(link-button)** [**breaking**] new build - ([9f7c29a](https://github.com/migrationsverket/midas/commits/9f7c29aa4bfed8447eaa01be718b28876685ab10)) - Wilhelm Hjelm
 - **(link-button)** inherits api from button - ([7cd24c0](https://github.com/migrationsverket/midas/commits/7cd24c01097861428c864a02a5edb79a61ff40d3)) - Wilhelm Hjelm
+- **(linkButton)** add icon - ([ee4dab9](https://github.com/migrationsverket/midas/commits/ee4dab978ddd33e23be09258dc72fc7dddeadeae)) - jabir Khalil
 - **(logo)** [**breaking**] new build - ([633018f](https://github.com/migrationsverket/midas/commits/633018f687c3f86874cb89516a719ebf93606767)) - Wilhelm Hjelm
 - **(radio)** new wrapper - ([bf415ce](https://github.com/migrationsverket/midas/commits/bf415ce0b6bcf9eed7d5f9dc0e9d8236e1e0e92b)) - Wilhelm Hjelm
 - **(radio)** [**breaking**] new build + replace vite test - ([20fbca5](https://github.com/migrationsverket/midas/commits/20fbca552745ffff9a82f229036249bd628accd2)) - Wilhelm Hjelm
@@ -103,13 +109,18 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** structure guidelines with subheadings and change some wording - ([c6dea49](https://github.com/migrationsverket/midas/commits/c6dea4986636756cb6329060f77e31758cba5526)) - PHIEKS
 - **(button)** remove duplicate text - ([aafbc84](https://github.com/migrationsverket/midas/commits/aafbc840cda75235159403936b3a42e5b3b64db0)) - PHIEKS
 - **(button)** update button documentation - ([bb81047](https://github.com/migrationsverket/midas/commits/bb810474c333d49dca78c1a2318e08ab7a45dcec)) - PHIEKS
+- **(button)** add text about iconPlacement - ([e60b42f](https://github.com/migrationsverket/midas/commits/e60b42f743917504a5ba28c639bf31d18997a2a4)) - jabir Khalil
 - **(button flowchart)** fix flowchart order - ([379db93](https://github.com/migrationsverket/midas/commits/379db9343d42d3174f33a5afa2ca4644edb63ea6)) - PHIEKS
 - **(card)** remove old instructions and tbd guidelines - ([ecce285](https://github.com/migrationsverket/midas/commits/ecce285f3d80c20d26dca1cfb765307ef48ae855)) - PHIEKS
 - **(card)** remove old instructions and tbd guidelines - ([984e8be](https://github.com/migrationsverket/midas/commits/984e8beeb7404e8e7d788d023ae5cf049dec8d0c)) - PHIEKS
 - **(checkbox)** remove sentence about using select as alternative to checkbox - ([a5ba68b](https://github.com/migrationsverket/midas/commits/a5ba68b4aee59dba2659f26d62c9619527a8dc4a)) - PHIEKS
 - **(checkbox)** remove sentence about using select as alternative to checkbox - ([5b55085](https://github.com/migrationsverket/midas/commits/5b550850cc6fc14f95b08e848b79c6de6f235141)) - PHIEKS
+- **(config)** add cache magic to favicon path - ([aeb74c0](https://github.com/migrationsverket/midas/commits/aeb74c09e01a4459a191da68a30b4d5a7b252a11)) - PHIEKS
 - **(design)** add XD-file as a downloadable asset - ([8af0238](https://github.com/migrationsverket/midas/commits/8af0238c3b424caad9a3bb4910492d50f7a8a6cd)) - PHIEKS
 - **(design)** add asset in zip format instead - ([2b69438](https://github.com/migrationsverket/midas/commits/2b694389bb6adb011a38249950f789ac141c769a)) - PHIEKS
+- **(design)** add latest UI kit - ([e046db0](https://github.com/migrationsverket/midas/commits/e046db00e7c3613cc8d77977d2b5280985dd35c9)) - PHIEKS
+- **(design)** add new version of UI-kit - ([58ae7dc](https://github.com/migrationsverket/midas/commits/58ae7dc99e0ef91241b4c99901565bf2e6c772a4)) - PHIEKS
+- **(design)** remove stray link - ([e66d78b](https://github.com/migrationsverket/midas/commits/e66d78b4769854e048307d3fb2bfb10b27e2b5d3)) - PHIEKS
 - **(design/index)** change wording to make it clearer - ([25c416d](https://github.com/migrationsverket/midas/commits/25c416db405b1e746e599635733345881c88399d)) - PHIEKS
 - **(design/index)** change wording to make it clearer - ([16c8242](https://github.com/migrationsverket/midas/commits/16c8242adf3817338fa1870039ab3a38546c45e9)) - PHIEKS
 - **(docs)** rewrite examples and fix domain - ([e45987d](https://github.com/migrationsverket/midas/commits/e45987dd7da2467597f029cc566ac25f11785c81)) - Wilhelm Hjelm
@@ -136,6 +147,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(radio)** change wording on intro section - ([f2e6750](https://github.com/migrationsverket/midas/commits/f2e6750a645e6388e375686c7900ddd9a32e42fc)) - PHIEKS
 - **(radio)** change example to 3 fruits to follow our guidelines - ([02f75cd](https://github.com/migrationsverket/midas/commits/02f75cd95929eebf1199c3f3a96ba797aae5821c)) - PHIEKS
 - **(radio)** merge trouble - ([30f5c3f](https://github.com/migrationsverket/midas/commits/30f5c3ffa7fa0c7d3000cea822115767583ed0a5)) - PHIEKS
+- **(relase14)** remove text - ([8ea8b10](https://github.com/migrationsverket/midas/commits/8ea8b103bd94a29fc7ab6b140d86a52d43e90208)) - PHIEKS
 - **(release 12)** change wording - ([91cd220](https://github.com/migrationsverket/midas/commits/91cd220252d9c829f28f62efadd45cdb7727ce54)) - PHIEKS
 - **(release 12)** change wording - ([7863443](https://github.com/migrationsverket/midas/commits/7863443fb79636340a76daade8a2961eb788009a)) - PHIEKS
 - **(release 13)** add base for release notes - ([7c203c0](https://github.com/migrationsverket/midas/commits/7c203c02a9cfd69ba08ee354e449bd1c74ab73c1)) - PHIEKS
@@ -143,6 +155,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(release12)** change more wording - ([6143c0d](https://github.com/migrationsverket/midas/commits/6143c0d19a65136bef822ed3f91c5d2930604494)) - PHIEKS
 - **(release13)** added info about Remix - ([afa47b7](https://github.com/migrationsverket/midas/commits/afa47b796a52c666b4e98e50d6afadd1d72fa4ad)) - PHIEKS
 - **(release13)** release notes update - ([caecd6b](https://github.com/migrationsverket/midas/commits/caecd6b4ca7fcfdfc5eaa250a3303ddc2197d394)) - PHIEKS
+- **(release14)** change wording - ([14f9874](https://github.com/migrationsverket/midas/commits/14f9874ebe9efaaae188d766377115c2240be731)) - PHIEKS
 - **(select)** change guidelines regarding when to use select - ([62cde9c](https://github.com/migrationsverket/midas/commits/62cde9c0d6a52b872a4f991c46d6fd3fa0751c07)) - PHIEKS
 - **(spinner)** add use case and guidelines - ([fb9a70d](https://github.com/migrationsverket/midas/commits/fb9a70d35002796750d56edc8652c1a194db2dec)) - PHIEKS
 - **(tabs)** fix install command - ([f85745d](https://github.com/migrationsverket/midas/commits/f85745d2e124642060ee6f7701416082ba732faa)) - PHIEKS
@@ -184,6 +197,17 @@ All notable changes to this project will be documented in this file. See [conven
 - remove changelog - ([8bab931](https://github.com/migrationsverket/midas/commits/8bab93117c85eb1ccf9506e89fbba5d079cbbfc2)) - Wilhelm Hjelm
 - update info - ([75632b7](https://github.com/migrationsverket/midas/commits/75632b7b503c8899b9701d565f67ab810fec3f5b)) - Wilhelm Hjelm
 - update info - ([1a439a9](https://github.com/migrationsverket/midas/commits/1a439a99988637104921bd3be14939f0e2f8548e)) - Wilhelm Hjelm
+- fix download links - ([c40d589](https://github.com/migrationsverket/midas/commits/c40d58901f44a573023012c5cba7328fdf3fe474)) - Wilhelm Hjelm
+- change some swedish wording - ([ffb45c2](https://github.com/migrationsverket/midas/commits/ffb45c2b8ed94f1856a99ebce34f7d1fd593022a)) - Wilhelm Hjelm
+- change favicon and delete files which are not used - ([3c86428](https://github.com/migrationsverket/midas/commits/3c86428c0e2dc3c64db9f28c2c586ea34a0567d5)) - jabir Khalil
+- add linkButton with icon - ([5b53315](https://github.com/migrationsverket/midas/commits/5b533152a9c7939987a266e158b3c56441d6607a)) - jabir Khalil
+- fix merge - ([ef857c4](https://github.com/migrationsverket/midas/commits/ef857c4390998ae6bc1585242f9a108a94120623)) - jabir Khalil
+- add icon to linkbutton - ([ee4bb86](https://github.com/migrationsverket/midas/commits/ee4bb86d45690ce5a3dea38e61ac4c07539eb51c)) - jabir Khalil
+- fix text - ([1c7f000](https://github.com/migrationsverket/midas/commits/1c7f00065a4c6f519d65b521de33167b1232be60)) - jabir Khalil
+- test new header - ([71bd8ff](https://github.com/migrationsverket/midas/commits/71bd8ffd22e7f21fe7c185a7d1bdf462788d6514)) - Wilhelm Hjelm
+- fix transparent backgrund to favicon - ([fe4a7d5](https://github.com/migrationsverket/midas/commits/fe4a7d5b68fe15fedc2ebe5a967c0f5c40d11d3c)) - jabir Khalil
+- add swedish names - ([1f9c17c](https://github.com/migrationsverket/midas/commits/1f9c17ce6bd15977acabde75cb2586c38eefe8bb)) - Wilhelm Hjelm
+- 14 release notes - ([96e3f5a](https://github.com/migrationsverket/midas/commits/96e3f5afc24e40a5155192f46433c001770e09a3)) - Wilhelm Hjelm
 
 ### 🚧 Miscellaneous Chores
 
@@ -213,6 +237,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(deps-dev)** bump vite in the npm_and_yarn group across 1 directory - ([5df3d9c](https://github.com/migrationsverket/midas/commits/5df3d9c581f3ec570d5bdca3af743d035f6f20ad)) - dependabot[bot]
 - **(deps-dev)** bump axios in the npm_and_yarn group across 1 directory - ([ccc1a2f](https://github.com/migrationsverket/midas/commits/ccc1a2f235095192e54359a774ae6ef57029abc8)) - dependabot[bot]
 - **(deps-dev)** bump the npm_and_yarn group across 2 directories with 1 update - ([988f86e](https://github.com/migrationsverket/midas/commits/988f86e8dcbfc833810f2e4ad2b4902984cfc5e5)) - dependabot[bot]
+- **(deps-dev)** bump mermaid - ([f224f70](https://github.com/migrationsverket/midas/commits/f224f704b93c11a8ce05c3995a57e4b94f1057e4)) - dependabot[bot]
 - **(docs)** new template - ([8cefe30](https://github.com/migrationsverket/midas/commits/8cefe301cad97ad1fc8da21a288b3f18c1f66172)) - Wilhelm Hjelm
 - **(docs)** new info - ([fd7bc75](https://github.com/migrationsverket/midas/commits/fd7bc751d7eaaf05abe5ed6fe0f4089d2786ec7b)) - Wilhelm Hjelm
 - **(file-upload)** remove padding - ([a33b96d](https://github.com/migrationsverket/midas/commits/a33b96d547f9ef106ccc7bf5535a1f4e82ee2425)) - Wilhelm Hjelm
@@ -222,6 +247,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link)** release version 0.0.2 [skip-ci] - ([2a7781f](https://github.com/migrationsverket/midas/commits/2a7781fdfc7f37392a23937e08417beb4e1b3485)) - Wilhelm Hjelm
 - **(link)** release version 0.0.3 [skip-ci] - ([0269940](https://github.com/migrationsverket/midas/commits/026994029f3377fcd8c4e6bc2ea4edba6b43d792)) - Wilhelm Hjelm
 - **(logo)** release version 0.2.54 [skip-ci] - ([295b718](https://github.com/migrationsverket/midas/commits/295b718b05657461265fe2a0a4785c2ffc7185fb)) - Wilhelm Hjelm
+- **(modal)** add readme - ([a1881a0](https://github.com/migrationsverket/midas/commits/a1881a0efbbeb6cabf0b76be691d913d6a96b7eb)) - Wilhelm Hjelm
 - **(radio)** release version 0.6.3 [skip-ci] - ([1f7061c](https://github.com/migrationsverket/midas/commits/1f7061c7a2be1fbae8ef05c62ca37bae181914fd)) - Wilhelm Hjelm
 - **(radio)** release version 0.7.0 [skip-ci] - ([673f115](https://github.com/migrationsverket/midas/commits/673f11569e40385557630ba7a3db2f9f10486098)) - Wilhelm Hjelm
 - **(radio)** release version 0.7.0 [skip-ci] - ([8b45ef1](https://github.com/migrationsverket/midas/commits/8b45ef16f69d8cea797e40b20e6fe7602fd7a55c)) - Wilhelm Hjelm
@@ -278,6 +304,36 @@ All notable changes to this project will be documented in this file. See [conven
 - update packages - ([4c55232](https://github.com/migrationsverket/midas/commits/4c552326dfd13fc3f3e028214aa0c00e59bd9158)) - Wilhelm Hjelm
 - add vs code extensions recomendations - ([99e1388](https://github.com/migrationsverket/midas/commits/99e1388ae1d26c2f8295cc031910d37fd94c4563)) - Wilhelm Hjelm
 - lint fixes - ([26a6f49](https://github.com/migrationsverket/midas/commits/26a6f49f553addfd34d33cf40397a437afe667be)) - Wilhelm Hjelm
+- project files - ([e25b542](https://github.com/migrationsverket/midas/commits/e25b5423ecc4bae714437b145d6b5cb289c59664)) - Wilhelm Hjelm
+- test new changelog - ([f0a49dd](https://github.com/migrationsverket/midas/commits/f0a49dd2697302b719202ca19fe16fec2cc58bfc)) - Wilhelm Hjelm
+- fix proper stylelinting - ([79b0104](https://github.com/migrationsverket/midas/commits/79b0104d068399c43c1f8819089e4e176f887773)) - Wilhelm Hjelm
+- test pr-release workflow - ([ca2ff0f](https://github.com/migrationsverket/midas/commits/ca2ff0f694ee416a10df8191d4022ccee1708c39)) - Wilhelm Hjelm
+- test updated workflow - ([8484188](https://github.com/migrationsverket/midas/commits/8484188c8144e761b1b439ca7f945dcf6a009b0b)) - Wilhelm Hjelm
+- test permissions - ([12ee266](https://github.com/migrationsverket/midas/commits/12ee26615b9922464ecc7936178f68d62505faef)) - Wilhelm Hjelm
+- test permission - ([a176ee0](https://github.com/migrationsverket/midas/commits/a176ee03063035bcfeb4391c255c217de646809e)) - Wilhelm Hjelm
+- remove main as target - ([5246d26](https://github.com/migrationsverket/midas/commits/5246d264506d60a0c9244fecbc6570670ed0cc69)) - Wilhelm Hjelm
+- fix title - ([220cd92](https://github.com/migrationsverket/midas/commits/220cd92a935d93c71797dc5604003a2c9fb5e24f)) - Wilhelm Hjelm
+- test env - ([8c631a0](https://github.com/migrationsverket/midas/commits/8c631a0ef7f6faacc04664c2b356c6c050f7b708)) - Wilhelm Hjelm
+- test PR_NUMBER - ([94cd258](https://github.com/migrationsverket/midas/commits/94cd258d9269af6152effffcfbe85709cd9de842)) - Wilhelm Hjelm
+- test pr-preview - ([b31e261](https://github.com/migrationsverket/midas/commits/b31e2617f8b0810f043d3589b66a99b63bd87587)) - Wilhelm Hjelm
+- remove console.log - ([997cbc0](https://github.com/migrationsverket/midas/commits/997cbc06e9d1bc9fe58a017e5a7e114cb9cd1e32)) - Wilhelm Hjelm
+- test new permission - ([fb9c53d](https://github.com/migrationsverket/midas/commits/fb9c53dfce0fb553f581cd026e3d3d4aa625e381)) - Wilhelm Hjelm
+- fix docId - ([0e0f968](https://github.com/migrationsverket/midas/commits/0e0f96812adad41924800df12690c19f2bfe1309)) - Wilhelm Hjelm
+- remove documentation test - ([ee42001](https://github.com/migrationsverket/midas/commits/ee42001597f478349286c5dc7b4a520cf0c4d47a)) - Wilhelm Hjelm
+- fix padding - ([7994992](https://github.com/migrationsverket/midas/commits/7994992867ec88c09078abefcd6ce6d991537a88)) - Wilhelm Hjelm
+- fix margin - ([591c646](https://github.com/migrationsverket/midas/commits/591c64668c6659dd5486f5090c725e5ddef32d89)) - Wilhelm Hjelm
+- 80% - ([c4eb098](https://github.com/migrationsverket/midas/commits/c4eb0985b141eaeb3650b29250f2890d39b8ea49)) - Wilhelm Hjelm
+- update project readme - ([d16d9ae](https://github.com/migrationsverket/midas/commits/d16d9aeb0828c9493bcf20e0f8f1fcc8c3e315e3)) - Wilhelm Hjelm
+- add mdx support to prettier and eslint - ([6260942](https://github.com/migrationsverket/midas/commits/6260942e534a370b838200d8cc5feb94f1721b48)) - Wilhelm Hjelm
+- lint css files - ([7c6916c](https://github.com/migrationsverket/midas/commits/7c6916cbbf209889019aeee11f198cf2ebe7271e)) - Wilhelm Hjelm
+- move some project files - ([3331156](https://github.com/migrationsverket/midas/commits/3331156948aad13e9e8ed8b079a7331163e2d3a9)) - Wilhelm Hjelm
+- add new extension recommendation - ([98bfff6](https://github.com/migrationsverket/midas/commits/98bfff67b7392ee4a27402927ed8d09e2c9cf189)) - Wilhelm Hjelm
+- remove pr comments - ([23f3cda](https://github.com/migrationsverket/midas/commits/23f3cda506271128eb7cd42d2b5729a61b1179b6)) - Wilhelm Hjelm
+- fix lint - ([8e90b89](https://github.com/migrationsverket/midas/commits/8e90b89d63eaab515dfc60960ba31b08d58b01c4)) - Wilhelm Hjelm
+- release fixes - ([321e027](https://github.com/migrationsverket/midas/commits/321e027bcdbfa9f6a797f0a1e06fb4fc919b3700)) - Wilhelm Hjelm
+- force scopes to have exact project names - ([4f009cb](https://github.com/migrationsverket/midas/commits/4f009cbfc31b23a86779d8bfc16b2e533aa9e81b)) - Wilhelm Hjelm
+- test new workflow - ([14df129](https://github.com/migrationsverket/midas/commits/14df129a6adeca4e6259e1ed3af95ff63ed515ac)) - Wilhelm Hjelm
+- test permissions - ([4296e17](https://github.com/migrationsverket/midas/commits/4296e17de38373899e20f27169bdade32b9ebfa3)) - Wilhelm Hjelm
 
 ### 🩹 Bug Fixes
 
@@ -294,6 +350,8 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** add icon variant - ([22c93b2](https://github.com/migrationsverket/midas/commits/22c93b2460bde11727052c9ba6b4662a24635fa3)) - Wilhelm Hjelm
 - **(button)** clear changelog - ([8679f61](https://github.com/migrationsverket/midas/commits/8679f61668fbd8d7caf054bebf746c281c024642)) - Wilhelm Hjelm
 - **(button)** share api with link-button - ([7a4ca21](https://github.com/migrationsverket/midas/commits/7a4ca217453d3891d9fb8abfd90c8f11f0fff124)) - Wilhelm Hjelm
+- **(button)** change property name to iconPlacement - ([d4aa3ee](https://github.com/migrationsverket/midas/commits/d4aa3eed32dc7725b2938e90fafe1d0ac52afafe)) - jabir Khalil
+- **(button)** delete unuse inline style and fix merge - ([c87b2bf](https://github.com/migrationsverket/midas/commits/c87b2bf3de9bbc0e5858f8d3181d70b25340fbb0)) - jabir Khalil
 - **(card)** accecibility fix on icon - ([7053535](https://github.com/migrationsverket/midas/commits/705353556cdcdfedc38be9dcd15c094af7e0b461)) - Wilhelm Hjelm
 - **(card)** new build - ([06b10cc](https://github.com/migrationsverket/midas/commits/06b10cc36c585d92dd0e2b297a8fa91110b1d3c6)) - Wilhelm Hjelm
 - **(card)** only animate out arrow - ([7cebdd5](https://github.com/migrationsverket/midas/commits/7cebdd523ff3acb2fd6b4f3d0eb08ed1700915ed)) - Wilhelm Hjelm
@@ -325,6 +383,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(combobox)** add aria-expanded to css to rotate chevron icon - ([548503d](https://github.com/migrationsverket/midas/commits/548503d2d8f9db8363bedf5a4954ad8186103206)) - jabir Khalil
 - **(combobox)** remove unessecary component rename + a11y - ([c55c5cd](https://github.com/migrationsverket/midas/commits/c55c5cd948008a22afaebe4c857cd105e8c3c6fb)) - Wilhelm Hjelm
 - **(combobox)** remove stories from build - ([1f7dbca](https://github.com/migrationsverket/midas/commits/1f7dbcaa7f1021ee5a1f36cf7930e734f760f8e4)) - Wilhelm Hjelm
+- **(combobox)** update readme - ([76ebbab](https://github.com/migrationsverket/midas/commits/76ebbab3f4998933713b2b5ab6611fb546bedd5d)) - Wilhelm Hjelm
 - **(date-picker)** new build - ([728228c](https://github.com/migrationsverket/midas/commits/728228cf91371a61002c39bd24d9620389c955cf)) - Wilhelm Hjelm
 - **(date-picker)** correct color on placeholder - ([8e78cce](https://github.com/migrationsverket/midas/commits/8e78cce53c8388a16b5ecdaad99f6153367debea)) - Wilhelm Hjelm
 - **(date-picker)** correct colors - ([b0b58db](https://github.com/migrationsverket/midas/commits/b0b58dbb439bdc6ecedd7b9025846150e2e60285)) - Wilhelm Hjelm
@@ -347,17 +406,27 @@ All notable changes to this project will be documented in this file. See [conven
 - **(flex)** remove stories from build - ([c62361f](https://github.com/migrationsverket/midas/commits/c62361f71a079832dddbb47de5db77b8f6fd8cff)) - Wilhelm Hjelm
 - **(grid)** new build - ([8103518](https://github.com/migrationsverket/midas/commits/8103518cefb84b6214405fe52908b34eebd4eb0e)) - Wilhelm Hjelm
 - **(grid)** remove stories from build - ([2735373](https://github.com/migrationsverket/midas/commits/27353736d1e9ae673232628c995341388b85fa85)) - Wilhelm Hjelm
+- **(grid)** update readme - ([4a238f6](https://github.com/migrationsverket/midas/commits/4a238f6373f9ee3ed92cab2c86cc512f9ca3ba9d)) - Wilhelm Hjelm
 - **(info-banner)** new build - ([c8fa059](https://github.com/migrationsverket/midas/commits/c8fa059d641ec74d511c058be9eda983e0cc5149)) - Wilhelm Hjelm
 - **(info-banner)** fix dismissable button - ([ad2ffdf](https://github.com/migrationsverket/midas/commits/ad2ffdff56068959580c99717176c35f7adbff13)) - Wilhelm Hjelm
 - **(info-banner)** add div props to info-banner - ([66c5669](https://github.com/migrationsverket/midas/commits/66c5669f58e4389e9350c9b9d24b17784e8c3e56)) - Wilhelm Hjelm
 - **(info-banner)** remove stories from build - ([24a837a](https://github.com/migrationsverket/midas/commits/24a837a8c7e6b36543d72958801997d95e3a8663)) - Wilhelm Hjelm
 - **(info-banner)** update deps - ([44408ac](https://github.com/migrationsverket/midas/commits/44408ac02b1f7636f95ec359fb2721f252cb8fc8)) - Wilhelm Hjelm
+- **(info-banner)** fix classname info clsx - ([841fccb](https://github.com/migrationsverket/midas/commits/841fccb62e10cbfda4d22604ae941a5df7a5c0ac)) - Wilhelm Hjelm
 - **(link)** new build - ([a7f0a5f](https://github.com/migrationsverket/midas/commits/a7f0a5ff62ea71b6a46e088f80ae94a3b7f52345)) - Wilhelm Hjelm
 - **(link)** remove stories from build - ([4071754](https://github.com/migrationsverket/midas/commits/4071754f910930e3d41f1face293acba4a79ec1c)) - Wilhelm Hjelm
+- **(link)** update readme - ([e2f295f](https://github.com/migrationsverket/midas/commits/e2f295f62e555f256f5b3b8d8f20c62c73ec94ad)) - Wilhelm Hjelm
 - **(link-button)** new build - ([e8feb75](https://github.com/migrationsverket/midas/commits/e8feb751e67779c90058bc9e27a7136977927488)) - Wilhelm Hjelm
 - **(link-button)** update deps - ([859365c](https://github.com/migrationsverket/midas/commits/859365ce82a70e2a861508a330ec52e4691f747d)) - Wilhelm Hjelm
+- **(link-button)** update readme - ([0339220](https://github.com/migrationsverket/midas/commits/0339220ae15f3b471f3e377db3df1c63357c022f)) - Wilhelm Hjelm
+- **(linkButton)** use button style and fix the story for icon - ([12b4ace](https://github.com/migrationsverket/midas/commits/12b4ace2444c47f5d583e548e2b08ce9843e5e8d)) - jabir Khalil
 - **(logo)** new build - ([2ed0f63](https://github.com/migrationsverket/midas/commits/2ed0f639255b546600d8d1c78a89031ba35a12ec)) - Wilhelm Hjelm
 - **(logo)** remove stories from build + clear changelog - ([a045d3d](https://github.com/migrationsverket/midas/commits/a045d3d6eda1c2e1bd804afab3619686781dc8bb)) - Wilhelm Hjelm
+- **(modal)** delete trigger button and fix styling - ([64a93e6](https://github.com/migrationsverket/midas/commits/64a93e623bd3a80216ededb5fa0dee1daeeb73f7)) - jabir Khalil
+- **(modal)** delete unuse styling, and move styling for storybook to storybook - ([b1631b0](https://github.com/migrationsverket/midas/commits/b1631b02e02755ec0165ae5ee0845843077a1b9e)) - jabir Khalil
+- **(modal)** fix styling in css file - ([577c812](https://github.com/migrationsverket/midas/commits/577c8124542f7fc34ce371e540d8789119fca4a8)) - jabir Khalil
+- **(modal)** delete icon backgrund-color in css file - ([983e3dc](https://github.com/migrationsverket/midas/commits/983e3dc8fe7a5f3d266fc752556a1203466a7bdb)) - jabir Khalil
+- **(modal)** update modal docs - ([62f2546](https://github.com/migrationsverket/midas/commits/62f254652334eeb33e26ed41eb3259422b48dc5b)) - Wilhelm Hjelm
 - **(radio)** remove padding - ([d091ca4](https://github.com/migrationsverket/midas/commits/d091ca412e9840f7a6f586667991eff1c802371a)) - Wilhelm Hjelm
 - **(radio)** new build - ([8ec235c](https://github.com/migrationsverket/midas/commits/8ec235ce95bcb252abc818133e7bb9f18e080b69)) - Wilhelm Hjelm
 - **(radio)** change padding on label and helper text - ([9064f56](https://github.com/migrationsverket/midas/commits/9064f56f76f738bf9f6d24f74f3078ec75bceef8)) - PHIEKS
@@ -367,6 +436,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(search-field)** remove stories from build - ([7a6adf0](https://github.com/migrationsverket/midas/commits/7a6adf03ff121db7fa6bb43128f1b988facb4f12)) - Wilhelm Hjelm
 - **(search-field)** update deps - ([965bf29](https://github.com/migrationsverket/midas/commits/965bf295ce71c75bd7c6db60f05cd2fc29db1d88)) - Wilhelm Hjelm
 - **(search-field)** update deps - ([b6a2670](https://github.com/migrationsverket/midas/commits/b6a2670deec2b3594f39e0a4b7d1f7390e2a3e33)) - Wilhelm Hjelm
+- **(search-field)** update readme - ([47592c0](https://github.com/migrationsverket/midas/commits/47592c093f5a793eb6b6dd874d445975c633f5b5)) - Wilhelm Hjelm
 - **(select)** remove padding and add variables - ([7609a86](https://github.com/migrationsverket/midas/commits/7609a8642418bd30a356cc385bb9ed6250556028)) - Wilhelm Hjelm
 - **(select)** fix list spacing - ([9e079e9](https://github.com/migrationsverket/midas/commits/9e079e9436b66d3e309b30430920a4092cb983fe)) - Wilhelm Hjelm
 - **(select)** new build - ([56d48d0](https://github.com/migrationsverket/midas/commits/56d48d03e11c41afd964d733e9055a9306754aeb)) - Wilhelm Hjelm
@@ -379,14 +449,19 @@ All notable changes to this project will be documented in this file. See [conven
 - **(spinner)** new build - ([8c77bf0](https://github.com/migrationsverket/midas/commits/8c77bf06c7cc59629c1304886e43de1d899c841a)) - Wilhelm Hjelm
 - **(spinner)** remove stories from build - ([d2e8c1d](https://github.com/migrationsverket/midas/commits/d2e8c1d18d652931d181f3c219c6d28459e9bdca)) - Wilhelm Hjelm
 - **(spinner)** update deps - ([4615050](https://github.com/migrationsverket/midas/commits/46150509aae06e7ea3a6a80da61c2686ea0ca8c0)) - Wilhelm Hjelm
+- **(spinner)** update readme - ([a41246e](https://github.com/migrationsverket/midas/commits/a41246ea694454402655e35f9df18c33957a5d6d)) - Wilhelm Hjelm
 - **(table)** use client - ([fc9bda5](https://github.com/migrationsverket/midas/commits/fc9bda5cd3fd446fc3e857b3c1db20d4cddd1d43)) - Wilhelm Hjelm
 - **(table)** remove stories from build - ([8287a67](https://github.com/migrationsverket/midas/commits/8287a67d0c09eebcecf5ea99966b4d2c0b56ab85)) - Wilhelm Hjelm
 - **(table)** update deps - ([647fda3](https://github.com/migrationsverket/midas/commits/647fda3c0100ae452d8b8a892ec7fc7e67babbbf)) - Wilhelm Hjelm
+- **(table)** update readme - ([c05fdac](https://github.com/migrationsverket/midas/commits/c05fdaca74b64405edb49cd78284b76ae431d4a0)) - Wilhelm Hjelm
 - **(tabs)** new build - ([91a58e1](https://github.com/migrationsverket/midas/commits/91a58e1c0c96c12e665596cbc274c79b034a70e6)) - Wilhelm Hjelm
+- **(tabs)** update readme - ([723eb3f](https://github.com/migrationsverket/midas/commits/723eb3f893e7a7b1d7e1a3f563b21bedf7522f35)) - Wilhelm Hjelm
+- **(textField)** fix text color in invald error to red color - ([a5b38a9](https://github.com/migrationsverket/midas/commits/a5b38a99416e0b33a350394da02d32070825e957)) - jabir Khalil
 - **(textarea)** fix handleChange run when element focus - ([e631acd](https://github.com/migrationsverket/midas/commits/e631acd0568e63135541b0e0296142255ad1ce5d)) - Wilhelm Hjelm
 - **(textarea)** naming - ([0c0498c](https://github.com/migrationsverket/midas/commits/0c0498c63389169e95fabd36a63e78d4446e6275)) - Wilhelm Hjelm
 - **(textarea)** remove stories from build - ([418f2fe](https://github.com/migrationsverket/midas/commits/418f2fe7cc35ec7a6c8fa89bab3ccfc1084be7e0)) - Wilhelm Hjelm
 - **(textarea)** remove stories from build - ([b4176ff](https://github.com/migrationsverket/midas/commits/b4176ff040aaeb0adc2343e703325366344fa2d1)) - Wilhelm Hjelm
+- **(textarea)** update readme - ([4e68e35](https://github.com/migrationsverket/midas/commits/4e68e3538389d1c4b5b2451c2f3a78db9a7ed05f)) - Wilhelm Hjelm
 - **(textfield)** remove padding - ([21422a2](https://github.com/migrationsverket/midas/commits/21422a2976e8b93346e4d52d5e4df8d006154d94)) - Wilhelm Hjelm
 - **(textfield)** style - ([b525f0e](https://github.com/migrationsverket/midas/commits/b525f0e742aa7561bf19d404a3c4e9dd3c3c4104)) - Wilhelm Hjelm
 - **(textfield)** new build - ([082df93](https://github.com/migrationsverket/midas/commits/082df93df1b250bf3be6d351a49a35ca86212b9f)) - Wilhelm Hjelm
@@ -394,6 +469,8 @@ All notable changes to this project will be documented in this file. See [conven
 - **(textfield)** fix error message alignment - ([6478166](https://github.com/migrationsverket/midas/commits/647816687cfa2b7d7018c73151f0f638d877c606)) - Wilhelm Hjelm
 - **(textfield)** fix stories - ([650a55d](https://github.com/migrationsverket/midas/commits/650a55d985dee8c6f3a6378226e5b42e19c352e3)) - Wilhelm Hjelm
 - **(textfield)** update deps - ([ad01f0a](https://github.com/migrationsverket/midas/commits/ad01f0a23ae0b64ca066a468be987c624377ec0c)) - Wilhelm Hjelm
+- **(textfield)** update readme - ([ef5d329](https://github.com/migrationsverket/midas/commits/ef5d329c8a3d0f14994d2c54483d7e0246c4395d)) - Wilhelm Hjelm
+- **(textfield)** fix text color in invald error to red color - ([d0b65d1](https://github.com/migrationsverket/midas/commits/d0b65d17db1e89c04eef25205a798629e24e504a)) - Wilhelm Hjelm
 - **(textfield, textarea)** fix spacing - ([c1c78d1](https://github.com/migrationsverket/midas/commits/c1c78d1dd35e1a940dcf3df4fd5f17f17e00e982)) - Wilhelm Hjelm
 - **(theme)** include tokens again - ([03b6516](https://github.com/migrationsverket/midas/commits/03b65163c8178f39ff3db52dbe860cb9e17ed7bb)) - Wilhelm Hjelm
 - **(theme)** clear changelog - ([e9e454a](https://github.com/migrationsverket/midas/commits/e9e454acb10401893d9d44e6f686a13dfe152144)) - Wilhelm Hjelm
@@ -401,6 +478,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(toast)** fix button size + new build - ([76d967c](https://github.com/migrationsverket/midas/commits/76d967cf49160128e1327ef28d25289972dab815)) - Wilhelm Hjelm
 - **(toast)** remove stories from build - ([c059437](https://github.com/migrationsverket/midas/commits/c059437415d05b230850799650b13bf26510e941)) - Wilhelm Hjelm
 - **(toast)** update deps - ([338dc1d](https://github.com/migrationsverket/midas/commits/338dc1de0103e8d06cbc4e6630331fa0051325a0)) - Wilhelm Hjelm
+- **(toast)** update readme - ([a0e8786](https://github.com/migrationsverket/midas/commits/a0e87863ee5da83fbf9e64d2896a2a1a5273ee45)) - Wilhelm Hjelm
 - **(ui)** update deps - ([0f35eb6](https://github.com/migrationsverket/midas/commits/0f35eb66a35fc93855e8e396b7f058b9e40f22f4)) - Wilhelm Hjelm
 - **(ui)** update deps - ([ed768b1](https://github.com/migrationsverket/midas/commits/ed768b1448689ed40e89d584225c4a755e1c10b3)) - Wilhelm Hjelm
 - a littel fixing - ([1853317](https://github.com/migrationsverket/midas/commits/18533172505c5cb5ff2bd297bc873a2197e1a08a)) - jabir Khalil

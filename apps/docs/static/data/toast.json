@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/toast@1.0.1",
-  "_rev": "6-1846e41c7a67f0651cd8a535562b425c",
+  "_id": "@midas-ds/toast@1.0.2",
+  "_rev": "7-db1a3335060b2a9876f67db7f80e385b",
   "name": "@midas-ds/toast",
   "dist-tags": {
-    "latest": "1.0.1"
+    "latest": "1.0.2"
   },
   "versions": [
     "0.4.0",
@@ -11,17 +11,19 @@
     "0.5.1",
     "0.5.2",
     "1.0.0",
-    "1.0.1"
+    "1.0.1",
+    "1.0.2"
   ],
   "time": {
     "created": "2024-09-10T14:39:22.818Z",
-    "modified": "2024-10-22T14:09:09.096Z",
+    "modified": "2024-11-01T10:27:37.784Z",
     "0.4.0": "2024-09-10T14:39:23.053Z",
     "0.5.0": "2024-09-12T05:55:09.470Z",
     "0.5.1": "2024-09-12T12:58:03.661Z",
     "0.5.2": "2024-10-07T12:28:12.102Z",
     "1.0.0": "2024-10-18T13:40:35.175Z",
-    "1.0.1": "2024-10-22T14:09:08.896Z"
+    "1.0.1": "2024-10-22T14:09:08.896Z",
+    "1.0.2": "2024-11-01T10:27:37.626Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -31,13 +33,13 @@
     "type": "git",
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
-  "description": "Toast is a component in Midas design system.",
+  "description": "```bash npm i @midas-ds/toast ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 10663,
-  "version": "1.0.1",
+  "_contentLength": 0,
+  "version": "1.0.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -48,12 +50,12 @@
     }
   },
   "dependencies": {
-    "@midas-ds/button": "1.0.1",
+    "@midas-ds/button": "1.1.0",
     "react": "^18.3.1",
     "@react-aria/toast": "^3.0.0-beta.12",
     "@react-stately/toast": "3.0.0-beta.6",
     "react-dom": "18.3.1",
-    "lucide-react": "^0.383.0"
+    "lucide-react": "^0.453.0"
   },
   "peerDependencies": {},
   "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
@@ -63,15 +65,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-UwvKCZCgCBB8YjFA5a24NNBUDQpETp9s+HwsJ+k1rsAx/ho3v2EYQ+pc8o6lvcboRiqgIc1+GLglTw0pUR5mNA==",
-    "shasum": "d63cd72130c67102e4adeff12b0d603e04c435a0",
-    "tarball": "https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.1.tgz",
+    "integrity": "sha512-EUj+LIu7QzhK3DXRRU8LZGeuJdbBdl7ZbKSsnOO228eTaO15eJa9ARbPFIghSZ2ImLqZwXbt14iGm2v6YQDYUg==",
+    "shasum": "c79b97e857f26dd9dcaafd09651bcf9e6b24eaf3",
+    "tarball": "https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.2.tgz",
     "fileCount": 10,
-    "unpackedSize": 157172,
+    "unpackedSize": 158065,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIDXlIjAnTTuRi2XZNPAnHhQq3Ikd4M26ixnXgdBHZH4sAiBiv0fSypqvRm+hnXO2ZSFhSYYNsuoP4aEWbyI1K4THZw=="
+        "sig": "MEYCIQCTYWkTB6GGXWtktdT99L53zjciKbjIe0M20h1fww2BVAIhALlv88isAIEbqapfbA/LGOwFHAzI1lrMgFsxJMOL68Sc"
       }
     ]
   },
@@ -79,7 +81,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/toast_1.0.1_1729606148689_0.4365718627786559"
+    "tmp": "tmp/toast_1.0.2_1730456857406_0.7659919508745787"
   },
   "_hasShrinkwrap": false
 }
