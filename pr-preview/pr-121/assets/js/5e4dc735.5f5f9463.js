@@ -44,7 +44,7 @@ const metadata = {
       "permalink": "/pr-preview/pr-121/blog/tags/releaser"
     }
   ],
-  "readingTime": 1.35,
+  "readingTime": 1.415,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {

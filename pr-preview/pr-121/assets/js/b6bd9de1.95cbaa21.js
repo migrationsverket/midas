@@ -48,7 +48,7 @@ const metadata = {
       "permalink": "/pr-preview/pr-121/blog/tags/releaser"
     }
   ],
-  "readingTime": 1.35,
+  "readingTime": 1.415,
   "hasTruncateMarker": true,
   "authors": [],
   "frontMatter": {
@@ -113,7 +113,7 @@ function _createMdxContent(props) {
       id: "ny-komponent-modal",
       children: "Ny komponent: Modal"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Använd modal för att förtydliga att konsekvenserna av en händelse inte går att återskapa eller låt användaren fokusera på något specifikt. Läs mer på komponentsidan för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
+      children: ["Modalen öppnar en ruta ovanför gränssnittet som användaren måste interagera med innan den kan gå vidare. Modalen har flera användningsområden, t.ex. för att förtydliga konsekvenserna av ett val i gränssnittet eller presentera mer information. Läs mer på komponentsidan för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
         href: "/components/modal",
         children: "Modal"
       }), "."]
