@@ -19,7 +19,7 @@ Nedan är en sammanfattning av nyheterna i release 14.
 
 ## Ny komponent: Modal
 
-Använd modal för att förtydliga att konsekvenserna av en händelse inte går att återskapa eller låt användaren fokusera på något specifikt. Läs mer på komponentsidan för [Modal](/components/modal).
+Modalen öppnar en ruta ovanför gränssnittet som användaren måste interagera med innan den kan gå vidare. Modalen har flera användningsområden, t.ex. för att förtydliga konsekvenserna av ett val i gränssnittet eller presentera mer information. Läs mer på komponentsidan för [Modal](/components/modal).
 
 ```bash npm2yarn
 npm install @midas-ds/modal
@@ -51,37 +51,37 @@ npm install @midas-ds/modal
                     gap: '2rem'
                 }}
                 >
-                <Flex>
+                <Flex fluid={true}>
                     <FlexItem>
-                    <Heading
-                        slot='title'
-                        style={{ margin: 0 }}
-                    >
-                        Vill du avsluta uppdraget?
-                    </Heading>
+                      <Heading
+                          slot='title'
+                          style={{ margin: 0 }}
+                      >
+                          Vill du avsluta uppdraget?
+                      </Heading>
                     </FlexItem>
                 </Flex>
-                <Flex>
+                <Flex fluid={true}>
                     <FlexItem>
-                    <TextArea
-                        autoFocus
-                        label='Ange anledning'
-                        description='Skriv anledning'
-                        maxCharacters={100}
-                    />
+                      <TextArea
+                          autoFocus
+                          label='Ange anledning'
+                          description='Skriv anledning'
+                          maxCharacters={100}
+                      />
                     </FlexItem>
                 </Flex>
-                <Flex>
+                <Flex fluid={true}>
                     <FlexItem col='auto'>
-                    <Button onPress={close}>Spara korrespondens</Button>
+                      <Button onPress={close}>Spara korrespondens</Button>
                     </FlexItem>
                     <FlexItem>
-                    <Button
-                        onPress={close}
-                        variant='secondary'
-                    >
-                        Avbryt
-                    </Button>
+                      <Button
+                          onPress={close}
+                          variant='secondary'
+                      >
+                          Avbryt
+                      </Button>
                     </FlexItem>
                 </Flex>
                 </ModalBody>

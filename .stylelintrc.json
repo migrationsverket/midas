@@ -25,6 +25,12 @@
     "font-family-no-missing-generic-family-keyword": [
       true,
       { "ignoreFontFamilies": ["display"] }
+    ],
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": ["grid-template", "transition"]
+      }
     ]
   }
 }
