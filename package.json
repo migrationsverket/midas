@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "commit": "cz"
+    "commit": "git-cz"
   },
   "private": false,
   "dependencies": {
@@ -83,7 +83,8 @@
     "clsx": "^2.1.1",
     "commitizen": "^4.3.0",
     "cypress": "13.14.2",
-    "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.10.1",
+    "czg": "^1.10.1",
     "docusaurus-plugin-module-alias": "^0.0.2",
     "docusaurus-plugin-react-docgen-typescript": "^1.2.0",
     "eslint": "8.57.0",
@@ -123,12 +124,12 @@
     "vite-plugin-dts": "^4.2.4",
     "vite-plugin-lib-inject-css": "^2.1.1"
   },
-  "engines": {
-    "node": ">=18.0"
-  },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-git"
     }
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }
