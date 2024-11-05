@@ -1,27 +1,45 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, desktopSize, mediumWeight, blue150, blue130, blue90 from tokens;
+@value display, desktopSize, mediumWeight, blue150, gray10, gray50, blue100, smBreakpoint from tokens;
 
-.link {
-  padding: 0.8125rem 1.9375rem;
+.linkButton {
+  font-family: display;
+  font-size: desktopSize;
+  font-weight: mediumWeight;
+  padding: 0.875rem 1.688rem 0.875rem 1rem;
+  background-color: blue150;
+  border: solid 0.0625rem transparent;
+  color: white;
   cursor: pointer;
+  opacity: 1;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.688rem;
   text-decoration: none;
 
   &:hover {
-    color: inhereit;
-    text-decoration: none;
+    background-color: blue100;
   }
 
   &[data-pressed] {
-    background-color: blue90;
+    background-color: blue100;
     outline: none;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: gray10;
   }
 }
 
-.link[data-focus-visible] {
-  outline: 0.125rem solid black;
-  outline-offset: 0.125rem;
+.icon {
+  margin: 0.188rem -1rem 0 0;
 }
 
-.fullwidth {
-  width: calc(100% - calc(1.9375rem * 2));
+@media smBreakpoint {
+  .linkButton {
+    width: 100%;
+  }
 }

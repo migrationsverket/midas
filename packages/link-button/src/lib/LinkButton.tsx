@@ -8,48 +8,36 @@ import {
 } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
-import { type MidasButtonProps, ButtonStyles } from '@midas-ds/button'
-
-type MidasLinkProps = MidasButtonProps & LinkProps
+import { ChevronRight } from 'lucide-react'
+interface MidasLinkProps extends LinkProps {
+  children?: React.ReactNode
+  isDisabled?: boolean
+}
 
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */
 export const LinkButton: React.FC<MidasLinkProps> = ({
-  variant = 'primary',
-  fullwidth,
-  size,
-  icon: IconComponent,
-  iconSize,
-  iconPlacement,
+  children,
+  isDisabled,
   ...rest
 }) => {
-  const effectiveIconSize =
-    size === 'small' ? 14 : iconSize || 16 /**Default size if not specified */
-
   return (
     <AriaLink
+      isDisabled={isDisabled}
       className={clsx(
-        ButtonStyles.button,
-        variant === 'primary' && ButtonStyles.primary,
-        variant === 'secondary' && ButtonStyles.secondary,
-        variant === 'tertiary' && ButtonStyles.tertiary,
-        variant === 'danger' && ButtonStyles.danger,
-        variant === 'icon' && ButtonStyles.iconBtn,
-        fullwidth && styles.fullwidth,
-        size === 'small' && ButtonStyles.small,
-        iconPlacement === 'right'
-          ? ButtonStyles.iconRight
-          : ButtonStyles.iconLeft,
+        styles.linkButton,
+
         styles.link,
         rest.className
       )}
       {...rest}
     >
-      <>
-        {IconComponent && <IconComponent size={effectiveIconSize} />}
-        {rest.children}
-      </>
+      {children}
+      <ChevronRight
+        size={20}
+        className={styles.icon}
+      ></ChevronRight>
     </AriaLink>
   )
 }
