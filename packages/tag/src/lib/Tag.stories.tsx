@@ -1,39 +1,40 @@
-
-
-import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
-import {  Tag , TagGroup} from './Tag'; 
+import React from 'react'
+import { Meta, StoryObj } from '@storybook/react'
+import { Tag, TagGroup } from './Tag'
 
 const meta: Meta<typeof Tag> = {
   component: Tag,
-  title: 'Components/Tag', 
+  title: 'Components/Tag',
   tags: ['autodocs'],
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Tag>;
-
-
-
+type Story = StoryObj<typeof Tag>
 
 export const Default: Story = {
-  args: {},
+  args: {
+    title: 'titel',
+    isDisabled: false,
+  },
   render: ({ ...args }) => {
     return (
-      <TagGroup >
-        <Tag title='title'></Tag>
+      <TagGroup>
+        <Tag {...args}></Tag>
       </TagGroup>
     )
   },
 }
 
 export const Disabled: Story = {
-  args: {},
+  args: {
+    title: 'titel',
+    isDisabled: true,
+  },
   render: ({ ...args }) => {
     return (
-      <TagGroup >
-        <Tag isDisabled title='title'></Tag>
+      <TagGroup>
+        <Tag {...args}> </Tag>
       </TagGroup>
     )
   },
