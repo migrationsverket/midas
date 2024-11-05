@@ -1,5 +1,5 @@
 {
-  "name": "Tag",
+  "name": "tag",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/tag/src",
   "projectType": "library",

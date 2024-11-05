@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react'
+import React from 'react'
 import styles from './Tag.module.css'
 import {
   Button,
@@ -6,12 +6,9 @@ import {
   TagGroup as AriaTagGroup,
   TagGroupProps as AriaTagGroupProps,
   TagList,
-  TagListProps,
-  Text,
-  TagProps as AriaTagProps,
+  TagProps as AriaTagProps
 } from 'react-aria-components'
 import { X } from 'lucide-react'
-import { title } from 'process'
 
 export interface TagGroupProp extends AriaTagGroupProps {
   children: React.ReactNode
@@ -22,17 +19,10 @@ export interface TagProps extends AriaTagProps {
   title?: string
 }
 
-export const TagGroup: React.FC<TagGroupProp> = ({
-  children,
-  onRemove,
-  title,
-  ...props
-}) => {
+export const TagGroup: React.FC<TagGroupProp> = ({ children }) => {
   return (
     <AriaTagGroup className={styles.tagGroup}>
-      <TagList className={styles.tagList}>
-      {children}
-      </TagList>
+      <TagList className={styles.tagList}>{children}</TagList>
     </AriaTagGroup>
   )
 }
@@ -46,7 +36,7 @@ export const Tag: React.FC<TagProps> = ({ title, ...props }) => {
       {title}
       <Button
         className={styles.button}
-        slot="remove"
+        slot='remove'
       >
         <X
           className={styles.icon}
