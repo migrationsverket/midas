@@ -9,7 +9,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTrigger
 } from '@midas-ds/accordion'
 import { Logo } from '@midas-ds/logo'
 import { TextField } from '@midas-ds/textfield'
@@ -17,8 +17,13 @@ import {
   GlobalToastRegion,
   toastQueue,
   ToastProvider,
-  MidasToastState,
+  MidasToastState
 } from '@midas-ds/toast'
+
+import { DialogTrigger, Modal, ModalHeader, ModalBody } from '@midas-ds/modal'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { TextArea } from '@midas-ds/textarea'
+import { Heading } from 'react-aria-components'
 
 export function App() {
   return (
@@ -40,7 +45,7 @@ export function App() {
         </ToastProvider>
       </div>
       <GlobalToastRegion />
-      <form action="">
+      <form action=''>
         <TextField
           type={'email'}
           label={'Email'}
@@ -77,7 +82,7 @@ export function App() {
             orientation={'vertical'}
             label={'Säg ett datum'}
             description={'beskrivande text'}
-            onChange={(value) => console.log('change radio', value)}
+            onChange={value => console.log('change radio', value)}
           >
             <Radio value={'hallå'}>Tjugonionde maj</Radio>
             <Radio value={'goodbye'}>29:e maj</Radio>
@@ -88,7 +93,7 @@ export function App() {
             isInvalid={true}
             errorMessage={'Nåt gick snett'}
             description={'beskrivande text'}
-            onChange={(value) => console.log('change radio', value)}
+            onChange={value => console.log('change radio', value)}
           >
             <Radio value={'hallå'}>Tjugonionde maj</Radio>
             <Radio value={'goodbye'}>29:e maj</Radio>
@@ -97,7 +102,7 @@ export function App() {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <TextField
             label={'Textfield'}
-            validate={(value) => (value === 'glass' ? true : 'error')}
+            validate={value => (value === 'glass' ? true : 'error')}
             errorMessage={'hej'}
             description={'hallå'}
           ></TextField>
@@ -152,7 +157,7 @@ export function App() {
             flexDirection: 'column',
             gap: '15px',
             margin: 'auto',
-            padding: '10px',
+            padding: '10px'
           }}
         >
           <Checkbox>Check or not to check</Checkbox>
@@ -164,7 +169,7 @@ export function App() {
             display: 'flex',
             flexDirection: 'column',
             margin: 'auto',
-            maxWidth: '100%',
+            maxWidth: '100%'
           }}
         >
           <CheckboxGroup
@@ -180,7 +185,7 @@ export function App() {
               Required
             </Checkbox>
           </CheckboxGroup>
-          <form action="">
+          <form action=''>
             <CheckboxGroup
               label={'Required group'}
               description={'>0 must be selected'}
@@ -191,7 +196,7 @@ export function App() {
               <Checkbox value={'3'}>Value 3</Checkbox>
             </CheckboxGroup>
           </form>
-          <form action="">
+          <form action=''>
             <CheckboxGroup
               label={'Individual required'}
               description={'first two must be selected'}
@@ -219,6 +224,58 @@ export function App() {
           <Button isDisabled>Disabled</Button>
         </div>
       </div>
+      <DialogTrigger>
+        <Button>Öppna modal</Button>
+        <Modal>
+          {({ close }) => (
+            <>
+              <ModalHeader />
+              <ModalBody
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '2rem'
+                }}
+              >
+                <Flex fluid={true}>
+                  <FlexItem>
+                    <Heading
+                      slot='title'
+                      style={{ margin: 0 }}
+                    >
+                      Vill du avsluta uppdraget?
+                    </Heading>
+                  </FlexItem>
+                </Flex>
+                <Flex fluid={true}>
+                  <FlexItem>
+                    <TextArea
+                      // eslint-disable-next-line jsx-a11y/no-autofocus
+                      autoFocus
+                      label='Ange anledning'
+                      description='Skriv anledning'
+                      maxCharacters={100}
+                    />
+                  </FlexItem>
+                </Flex>
+                <Flex fluid={true}>
+                  <FlexItem col='auto'>
+                    <Button onPress={close}>Spara korrespondens</Button>
+                  </FlexItem>
+                  <FlexItem>
+                    <Button
+                      onPress={close}
+                      variant='secondary'
+                    >
+                      Avbryt
+                    </Button>
+                  </FlexItem>
+                </Flex>
+              </ModalBody>
+            </>
+          )}
+        </Modal>
+      </DialogTrigger>
     </div>
   )
 }
