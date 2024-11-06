@@ -2,7 +2,7 @@
 @value display, desktopSize, mediumWeight, blue150, gray10, gray50, blue100 from tokens;
 
 .linkButton {
-  width: calc(100% - calc(1.9375rem * 2));
+  width: 100%;
   font-family: display;
   font-size: desktopSize;
   font-weight: mediumWeight;
@@ -20,6 +20,8 @@
   text-decoration: none;
 
   &:hover {
+    color: white;
+    text-decoration: none;
     background-color: blue100;
   }
 
@@ -28,13 +30,14 @@
     outline: none;
   }
 
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+
   &[data-disabled] {
     color: gray50;
     pointer-events: none;
     background-color: gray10;
   }
-}
-
-.icon {
-  margin-right: 1px;
 }
