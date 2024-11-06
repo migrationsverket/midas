@@ -5935,7 +5935,7 @@ CSS variables, meant to be overridden by final theme
   outline: none;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1.688rem;
   text-decoration: none;
 
@@ -5961,7 +5961,6 @@ CSS variables, meant to be overridden by final theme
 
 .fullwidth_EeuX {
   width: calc(100% - calc(1.9375rem * 2));
-  justify-content: space-between;
 }
 
 @media (max-width: 767px) {
