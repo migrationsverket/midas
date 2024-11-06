@@ -1,7 +1,8 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, desktopSize, mediumWeight, blue150, gray10, gray50, blue100, smBreakpoint from tokens;
+@value display, desktopSize, mediumWeight, blue150, gray10, gray50, blue100 from tokens;
 
 .linkButton {
+  width: calc(100% - calc(1.9375rem * 2));
   font-family: display;
   font-size: desktopSize;
   font-weight: mediumWeight;
@@ -36,14 +37,4 @@
 
 .icon {
   margin: 0.188rem -1rem 0 0;
-}
-
-.fullwidth {
-  width: calc(100% - calc(1.9375rem * 2));
-}
-
-@media smBreakpoint {
-  .linkButton {
-    width: 100%;
-  }
 }

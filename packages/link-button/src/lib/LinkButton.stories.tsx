@@ -23,14 +23,7 @@ export const Disabled: Story = {
     isDisabled: true
   }
 }
-export const PrimaryFullwidth = {
-  args: {
-    children: 'Till E-tjänst',
-    href: '#',
-    fullwidth: true
-  },
-  parameters: {}
-}
+
 export const AppLink: Story = {
   args: {
     children: 'Till E-tjänst',

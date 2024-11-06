@@ -12,7 +12,6 @@ import { ChevronRight } from 'lucide-react'
 interface MidasLinkProps extends LinkProps {
   children?: React.ReactNode
   isDisabled?: boolean
-  fullwidth?: boolean
 }
 
 /**
@@ -21,7 +20,6 @@ interface MidasLinkProps extends LinkProps {
 export const LinkButton: React.FC<MidasLinkProps> = ({
   children,
   isDisabled,
-  fullwidth,
   ...rest
 }) => {
   return (
@@ -29,7 +27,6 @@ export const LinkButton: React.FC<MidasLinkProps> = ({
       isDisabled={isDisabled}
       className={clsx(
         styles.linkButton,
-        fullwidth && styles.fullwidth,
         styles.link,
         rest.className
       )}
