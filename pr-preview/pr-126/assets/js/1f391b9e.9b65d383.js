@@ -626,7 +626,7 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link-button/src/lib/LinkButton.tsx
 'use client';var _excluded=["children"];/**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
- * */var LinkButton=function LinkButton(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,rest.className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon})]}));};
+ * */var LinkButton=function LinkButton(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,rest.className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:16,className:LinkButton_module.icon})]}));};
 ;// ./packages/link-button/src/lib/index.ts
 
 ;// ./packages/link-button/src/index.ts

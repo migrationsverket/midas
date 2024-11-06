@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4813,8401],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7643,8401],{
 
 /***/ 6429:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -145,6 +145,58 @@ code:function code(props){var children=props.children;var scope=Object.assign({}
 
 /***/ }),
 
+/***/ 35124:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ BlogListPage)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
+var useDocusaurusContext = __webpack_require__(44586);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/metadataUtils.js + 1 modules
+var metadataUtils = __webpack_require__(61213);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
+var ThemeClassNames = __webpack_require__(17559);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogLayout/index.js + 6 modules
+var BlogLayout = __webpack_require__(28027);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPaginator/index.js
+var BlogListPaginator = __webpack_require__(47713);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/SearchMetadata/index.js
+var SearchMetadata = __webpack_require__(41463);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItems/index.js
+var BlogPostItems = __webpack_require__(33892);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Head.js
+var Head = __webpack_require__(5260);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/plugin-content-blog/lib/client/index.js + 3 modules
+var client = __webpack_require__(44096);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPage/StructuredData/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function BlogListPageStructuredData(props){var structuredData=(0,client/* useBlogListPageStructuredData */.kJ)(props);return/*#__PURE__*/(0,jsx_runtime.jsx)(Head/* default */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("script",{type:"application/ld+json",children:JSON.stringify(structuredData)})});}
+;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPage/index.js
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function BlogListPageMetadata(props){var metadata=props.metadata;var _useDocusaurusContext=(0,useDocusaurusContext/* default */.A)(),siteTitle=_useDocusaurusContext.siteConfig.title;var blogDescription=metadata.blogDescription,blogTitle=metadata.blogTitle,permalink=metadata.permalink;var isBlogOnlyMode=permalink==='/';var title=isBlogOnlyMode?siteTitle:blogTitle;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(metadataUtils/* PageMetadata */.be,{title:title,description:blogDescription}),/*#__PURE__*/(0,jsx_runtime.jsx)(SearchMetadata/* default */.A,{tag:"blog_posts_list"})]});}function BlogListPageContent(props){var metadata=props.metadata,items=props.items,sidebar=props.sidebar;return/*#__PURE__*/(0,jsx_runtime.jsxs)(BlogLayout/* default */.A,{sidebar:sidebar,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItems/* default */.A,{items:items}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPaginator/* default */.A,{metadata:metadata})]});}function BlogListPage(props){return/*#__PURE__*/(0,jsx_runtime.jsxs)(metadataUtils/* HtmlClassNameProvider */.e3,{className:(0,clsx/* default */.A)(ThemeClassNames/* ThemeClassNames */.G.wrapper.blogPages,ThemeClassNames/* ThemeClassNames */.G.page.blogListPage),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageMetadata,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageStructuredData,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageContent,Object.assign({},props))]});}
+
+/***/ }),
+
 /***/ 47713:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -180,109 +232,6 @@ code:function code(props){var children=props.children;var scope=Object.assign({}
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */function BlogPostItems(_ref){var items=_ref.items,_ref$component=_ref.component,BlogPostItemComponent=_ref$component===void 0?_theme_BlogPostItem__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A:_ref$component;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment,{children:items.map(function(_ref2){var BlogPostContent=_ref2.content;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_plugin_content_blog_client__WEBPACK_IMPORTED_MODULE_1__/* .BlogPostProvider */ ["in"],{content:BlogPostContent,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(BlogPostItemComponent,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(BlogPostContent,{})})},BlogPostContent.metadata.permalink);})});}
-
-/***/ }),
-
-/***/ 11086:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ BlogTagsPostsPage)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var exports_Translate = __webpack_require__(21312);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/metadataUtils.js + 1 modules
-var metadataUtils = __webpack_require__(61213);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
-var ThemeClassNames = __webpack_require__(17559);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/usePluralForm.js
-var usePluralForm = __webpack_require__(53465);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./node_modules/@docusaurus/theme-common/lib/translations/blogTranslations.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */// Only used locally
-function useBlogPostsPlural(){var _usePluralForm=(0,usePluralForm/* usePluralForm */.W)(),selectMessage=_usePluralForm.selectMessage;return function(count){return selectMessage(count,(0,exports_Translate/* translate */.T)({id:'theme.blog.post.plurals',description:'Pluralized label for "{count} posts". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',message:'One post|{count} posts'},{count:count}));};}function useBlogTagsPostsPageTitle(tag){var blogPostsPlural=useBlogPostsPlural();return (0,exports_Translate/* translate */.T)({id:'theme.blog.tagTitle',description:'The title of the page for a blog tag',message:'{nPosts} tagged with "{tagName}"'},{nPosts:blogPostsPlural(tag.count),tagName:tag.label});}function useBlogAuthorPageTitle(author){var blogPostsPlural=useBlogPostsPlural();return translate({id:'theme.blog.author.pageTitle',description:'The title of the page for a blog author',message:'{authorName} - {nPosts}'},{nPosts:blogPostsPlural(author.count),authorName:author.name||author.key});}var translateBlogAuthorsListPageTitle=function translateBlogAuthorsListPageTitle(){return translate({id:'theme.blog.authorsList.pageTitle',message:'Authors',description:'The title of the authors page'});};function BlogAuthorsListViewAllLabel(){return/*#__PURE__*/_jsx(Translate,{id:"theme.blog.authorsList.viewAll",description:"The label of the link targeting the blog authors page",children:"View all authors"});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
-var Link = __webpack_require__(28774);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogLayout/index.js + 6 modules
-var BlogLayout = __webpack_require__(28027);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPaginator/index.js
-var BlogListPaginator = __webpack_require__(47713);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/SearchMetadata/index.js
-var SearchMetadata = __webpack_require__(41463);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItems/index.js
-var BlogPostItems = __webpack_require__(33892);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/ContentVisibility/Unlisted/index.js
-var Unlisted = __webpack_require__(32234);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/Heading/index.js + 1 modules
-var Heading = __webpack_require__(51107);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogTagsPostsPage/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogTagsPostsPageMetadata(_ref){var tag=_ref.tag;var title=useBlogTagsPostsPageTitle(tag);return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(metadataUtils/* PageMetadata */.be,{title:title,description:tag.description}),/*#__PURE__*/(0,jsx_runtime.jsx)(SearchMetadata/* default */.A,{tag:"blog_tags_posts"})]});}function BlogTagsPostsPageContent(_ref2){var tag=_ref2.tag,items=_ref2.items,sidebar=_ref2.sidebar,listMetadata=_ref2.listMetadata;var title=useBlogTagsPostsPageTitle(tag);return/*#__PURE__*/(0,jsx_runtime.jsxs)(BlogLayout/* default */.A,{sidebar:sidebar,children:[tag.unlisted&&/*#__PURE__*/(0,jsx_runtime.jsx)(Unlisted/* default */.A,{}),/*#__PURE__*/(0,jsx_runtime.jsxs)("header",{className:"margin-bottom--xl",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* default */.A,{as:"h1",children:title}),tag.description&&/*#__PURE__*/(0,jsx_runtime.jsx)("p",{children:tag.description}),/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* default */.A,{href:tag.allTagsPath,children:/*#__PURE__*/(0,jsx_runtime.jsx)(exports_Translate/* default */.A,{id:"theme.tags.tagsPageLink",description:"The label of the link targeting the tag list page",children:"View All Tags"})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItems/* default */.A,{items:items}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPaginator/* default */.A,{metadata:listMetadata})]});}function BlogTagsPostsPage(props){return/*#__PURE__*/(0,jsx_runtime.jsxs)(metadataUtils/* HtmlClassNameProvider */.e3,{className:(0,clsx/* default */.A)(ThemeClassNames/* ThemeClassNames */.G.wrapper.blogPages,ThemeClassNames/* ThemeClassNames */.G.page.blogTagPostListPage),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogTagsPostsPageMetadata,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogTagsPostsPageContent,Object.assign({},props))]});}
-
-/***/ }),
-
-/***/ 32234:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Unlisted)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(44084);
-/* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(17559);
-/* harmony import */ var _theme_Admonition__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27293);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function UnlistedBanner(_ref){var className=_ref.className;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_theme_Admonition__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{type:"caution",title:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_3__/* .UnlistedBannerTitle */ .Rc,{}),className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(className,_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_5__/* .ThemeClassNames */ .G.common.unlistedBanner),children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_3__/* .UnlistedBannerMessage */ .Uh,{})});}function Unlisted(props){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_3__/* .UnlistedMetadata */ .AE,{}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(UnlistedBanner,Object.assign({},props))]});}
-
-/***/ }),
-
-/***/ 44084:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   AE: () => (/* binding */ UnlistedMetadata),
-/* harmony export */   Rc: () => (/* binding */ UnlistedBannerTitle),
-/* harmony export */   TT: () => (/* binding */ DraftBannerMessage),
-/* harmony export */   Uh: () => (/* binding */ UnlistedBannerMessage),
-/* harmony export */   Yh: () => (/* binding */ DraftBannerTitle)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21312);
-/* harmony import */ var _docusaurus_Head__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5260);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function UnlistedBannerTitle(){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{id:"theme.contentVisibility.unlistedBanner.title",description:"The unlisted content banner title",children:"Unlisted page"});}function UnlistedBannerMessage(){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{id:"theme.contentVisibility.unlistedBanner.message",description:"The unlisted content banner message",children:"This page is unlisted. Search engines will not index it, and only users having a direct link can access it."});}// TODO Docusaurus v4 breaking change (since it's v3 public theme-common API :/)
-//  Move this to theme/ContentVisibility/Unlisted
-function UnlistedMetadata(){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Head__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("meta",{name:"robots",content:"noindex, nofollow"})});}function DraftBannerTitle(){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{id:"theme.contentVisibility.draftBanner.title",description:"The draft content banner title",children:"Draft page"});}function DraftBannerMessage(){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{id:"theme.contentVisibility.draftBanner.message",description:"The draft content banner message",children:"This page is a draft. It will only be visible in dev and be excluded from the production build."});}
 
 /***/ }),
 
@@ -495,7 +444,7 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link-button/src/lib/LinkButton.tsx
 'use client';var _excluded=["children"];/**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
- * */var LinkButton=function LinkButton(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,rest.className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon})]}));};
+ * */var LinkButton=function LinkButton(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,rest.className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:16,className:LinkButton_module.icon})]}));};
 ;// ./packages/link-button/src/lib/index.ts
 
 ;// ./packages/link-button/src/index.ts
