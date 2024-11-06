@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, desktopSize, mediumWeight, blue150, gray10, gray50, blue100 from tokens;
+@value display, desktopSize, mediumWeight, blue150, gray10, gray50, blue130, blue90 from tokens;
 
 .linkButton {
   width: 100%;
@@ -22,11 +22,11 @@
   &:hover {
     color: white;
     text-decoration: none;
-    background-color: blue100;
+    background-color: blue130;
   }
 
   &[data-pressed] {
-    background-color: blue100;
+    background-color: blue90;
     outline: none;
   }
 
