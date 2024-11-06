@@ -21,10 +21,7 @@ export interface TagProps extends AriaTagProps {
 
 export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
   return (
-    <AriaTagGroup
-      className={styles.tagGroup}
-      {...rest}
-    >
+    <AriaTagGroup {...rest}>
       <TagList className={styles.tagList}>{children}</TagList>
     </AriaTagGroup>
   )

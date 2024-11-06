@@ -21,6 +21,11 @@
   }
 }
 
+.tagList {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .button {
   background: none;
   border: none;
