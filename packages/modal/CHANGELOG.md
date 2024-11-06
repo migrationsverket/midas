@@ -1,3 +1,13 @@
+## 0.1.1 (2024-11-06)
+
+### 🩹 Fixes
+
+- **modal:** fix bug of unopenable modal + new docs ([e21f7ee](https://github.com/migrationsverket/midas/commit/e21f7ee))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.0 (2024-11-01)
 
 ### 🚀 Features
