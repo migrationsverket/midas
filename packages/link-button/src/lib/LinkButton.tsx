@@ -25,7 +25,7 @@ export const LinkButton: React.FC<MidasLinkProps> = ({ children, ...rest }) => {
     >
       {children}
       <ChevronRight
-        size={20}
+        size={16}
         className={styles.icon}
       />
     </AriaLink>
