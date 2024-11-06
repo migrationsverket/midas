@@ -4,25 +4,34 @@ import styles from './Link.module.css'
 import {
   Link as AriaLink,
   LinkProps,
-  RouterProvider,
+  RouterProvider
 } from 'react-aria-components'
 import clsx from 'clsx'
+import { ArrowRight } from 'lucide-react'
 
-export const Link: React.FC<LinkProps> = ({
+interface MidasLink extends LinkProps {
+  children: React.ReactNode
+  standalone?: boolean
+}
+
+export const Link: React.FC<MidasLink> = ({
   children,
-  href,
-  className,
-  isDisabled,
+  standalone,
   ...rest
 }) => {
   return (
     <AriaLink
-      className={clsx(styles.link, className)}
-      href={href}
-      isDisabled={isDisabled}
+      className={clsx(
+        styles.link,
+        standalone && styles.standalone,
+        rest.className
+      )}
       {...rest}
     >
-      {children}
+      <>
+        {children}
+        {standalone && <ArrowRight size={20} />}
+      </>
     </AriaLink>
   )
 }
