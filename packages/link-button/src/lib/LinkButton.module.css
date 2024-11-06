@@ -6,7 +6,7 @@
   font-family: display;
   font-size: desktopSize;
   font-weight: mediumWeight;
-  padding: 0.875rem 1.688rem 0.875rem 1rem;
+  padding: 0.875rem 1rem;
   background-color: blue150;
   border: solid 0.0625rem transparent;
   color: white;
@@ -16,7 +16,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.688rem;
+  gap: 1.25rem;
   text-decoration: none;
 
   &:hover {
@@ -36,5 +36,5 @@
 }
 
 .icon {
-  margin: 0.188rem -1rem 0 0;
+  margin-right: 1px;
 }
