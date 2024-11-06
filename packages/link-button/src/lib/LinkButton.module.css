@@ -38,6 +38,11 @@
   margin: 0.188rem -1rem 0 0;
 }
 
+.fullwidth {
+  width: calc(100% - calc(1.9375rem * 2));
+  justify-content: space-between;
+}
+
 @media smBreakpoint {
   .linkButton {
     width: 100%;
