@@ -5,14 +5,15 @@
   font-family: display;
   font-size: desktopSize;
   font-weight: mediumWeight;
-  padding: 0.8125rem 1.9375rem;
+  padding: calc(0.875rem - 1px) calc(2rem - 1px);
   background-color: blue150;
-  border: solid 0.0625rem transparent;
+  border: solid 1px transparent;
   color: white;
   cursor: pointer;
   opacity: 1;
   outline: none;
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -25,11 +26,11 @@
     background-color: blue90;
     outline: none;
   }
-}
 
-.button[data-focus-visible] {
-  outline: 0.125rem solid black;
-  outline-offset: 0.125rem;
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
 }
 
 .primary[data-disabled] {
@@ -141,10 +142,6 @@
     outline: 0.125rem solid black;
     outline-offset: 0.125rem;
   }
-}
-
-.iconLeft {
-  flex-direction: row;
 }
 
 .iconRight {
