@@ -8,48 +8,44 @@ import {
 } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
-import { type MidasButtonProps, ButtonStyles } from '@midas-ds/button'
+import { ChevronRight } from 'lucide-react'
 
-type MidasLinkProps = MidasButtonProps & LinkProps
+interface MidasLinkProps extends LinkProps {
+  children: React.ReactNode
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger'
+  fullwidth?: boolean
+  iconPlacement?: 'left' | 'right'
+}
 
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */
 export const LinkButton: React.FC<MidasLinkProps> = ({
-  variant = 'primary',
+  children,
+  variant,
   fullwidth,
-  size,
-  icon: IconComponent,
-  iconSize,
   iconPlacement,
   ...rest
 }) => {
-  const effectiveIconSize =
-    size === 'small' ? 14 : iconSize || 16 /**Default size if not specified */
-
   return (
     <AriaLink
       className={clsx(
-        ButtonStyles.button,
-        variant === 'primary' && ButtonStyles.primary,
-        variant === 'secondary' && ButtonStyles.secondary,
-        variant === 'tertiary' && ButtonStyles.tertiary,
-        variant === 'danger' && ButtonStyles.danger,
-        variant === 'icon' && ButtonStyles.iconBtn,
+        styles.linkButton,
+        variant === 'primary' && styles.primary,
+        variant === 'secondary' && styles.secondary,
+        variant === 'tertiary' && styles.tertiary,
+        variant === 'danger' && styles.danger,
         fullwidth && styles.fullwidth,
-        size === 'small' && ButtonStyles.small,
-        iconPlacement === 'right'
-          ? ButtonStyles.iconRight
-          : ButtonStyles.iconLeft,
-        styles.link,
+        iconPlacement === 'left' && styles.iconLeft,
         rest.className
       )}
       {...rest}
     >
-      <>
-        {IconComponent && <IconComponent size={effectiveIconSize} />}
-        {rest.children}
-      </>
+      {children}
+      <ChevronRight
+        size={20}
+        className={styles.icon}
+      />
     </AriaLink>
   )
 }

@@ -1,18 +1,36 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, blue130, blue150, gray150 from tokens;
+@value display, blue130, blue150, gray150, mediumWeight from tokens;
 
 .link {
   font-family: display;
   color: blue130;
   text-decoration: underline;
+  display: inline;
 
   &:hover {
     color: blue150;
   }
 
-  &[data-disabled='true'] {
+  &[data-disabled] {
     cursor: disabled;
     text-decoration: none;
     color: gray150;
+  }
+
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+}
+
+.standalone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: mediumWeight;
+
+  &:hover {
+    text-decoration: underline;
   }
 }

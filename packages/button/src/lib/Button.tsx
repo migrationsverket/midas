@@ -57,7 +57,7 @@ export const Button: React.FC<MidasButton> = ({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'small' && styles.small,
-        iconPlacement === 'right' ? styles.iconRight : styles.iconLeft,
+        iconPlacement === 'right' && styles.iconRight,
         className
       )}
       {...rest}

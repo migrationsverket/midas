@@ -227,10 +227,6 @@ nav.menu {
   }
 }
 
-.button-row > div {
-  align-items: center;
-}
-
 .theme-doc-breadcrumbs {
   margin-bottom: 1.5rem;
 }
