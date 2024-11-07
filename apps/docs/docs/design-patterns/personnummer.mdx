@@ -1,0 +1,16 @@
+# Personnummer
+
+Personnummer skrivs ihop med bindestreck (eller med plustecken för personer som är äldre än
+hundra år) före de fyra sista siffrorna, dvs ÅÅMMDD-XXXX ([Myndigheternas skrivregler, s103](https://www.isof.se/stod-och-sprakrad/vagledningar/myndigheternas-skrivregler)).
+
+Det finns en färdig implementation av en förlåtande personnummerinmatning i TextField. Med den blir de flesta inmatningar rätt så länge det är 10 eller 12 siffror.
+Implementationen är uppbyggd så att den:
+
+- Tillåter frivilliga sekelsiffor: 19 eller 20
+- Tillåter avgränsare `+`, `-`, `blanksteg` eller inget
+
+[Mer information om förlåtande personnummerinmatning](/components/textfield/#personnummer)
+
+## Födelsedatum
+
+I flera av våra tjänster är endast födelsedatum obligatoriskt då det inte är säkert att sökande har svenskt personnummer. Födelsedatum skrivs på samma sätt som personnummer ihop, dvs ÅÅMMDD
