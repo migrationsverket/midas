@@ -6,6 +6,7 @@
   color: blue130;
   text-decoration: underline;
   display: inline;
+  cursor: pointer;
 
   &:hover {
     color: blue150;
@@ -32,5 +33,14 @@
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.stretched {
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: '';
   }
 }

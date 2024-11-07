@@ -12,11 +12,13 @@ import { ArrowRight } from 'lucide-react'
 interface MidasLink extends LinkProps {
   children: React.ReactNode
   standalone?: boolean
+  stretched?: boolean
 }
 
 export const Link: React.FC<MidasLink> = ({
   children,
   standalone,
+  stretched,
   ...rest
 }) => {
   return (
@@ -24,6 +26,7 @@ export const Link: React.FC<MidasLink> = ({
       className={clsx(
         styles.link,
         standalone && styles.standalone,
+        stretched && styles.stretched,
         rest.className
       )}
       {...rest}
