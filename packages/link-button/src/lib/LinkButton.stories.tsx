@@ -6,7 +6,23 @@ const meta: Meta<typeof LinkButton> = {
   title: 'Components/LinkButton',
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
-  argTypes: {}
+  argTypes: {
+    children: { name: 'label' },
+    variant: {
+      options: ['primary', 'secondary', 'tertiary', 'danger'],
+      control: { type: 'radio' },
+      defaultValue: 'primary'
+    },
+    isDisabled: {
+      options: [true, false],
+      control: { type: 'radio' }
+    },
+    iconPlacement: {
+      options: ['right', 'left'],
+      control: { type: 'radio' },
+      defaultValue: 'left'
+    }
+  }
 }
 export default meta
 type Story = StoryObj<typeof LinkButton>
@@ -18,10 +34,31 @@ export const Primary: Story = {
   }
 }
 
+export const Secondary: Story = {
+  args: {
+    ...Primary.args,
+    variant: 'secondary'
+  }
+}
+
+export const Tertiary: Story = {
+  args: {
+    ...Primary.args,
+    variant: 'tertiary'
+  }
+}
+
+export const Previous: Story = {
+  args: {
+    ...Primary.args,
+    children: 'Föregående',
+    iconPlacement: 'left'
+  }
+}
+
 export const Disabled: Story = {
   args: {
-    children: 'Till E-tjänst',
-    href: '#',
+    ...Primary.args,
     isDisabled: true
   }
 }
