@@ -44,8 +44,8 @@ export const Button: React.FC<MidasButton> = ({
   iconSize,
   ...rest
 }) => {
-  const effectiveIconSize =
-    size === 'small' ? 14 : iconSize || 16 /**Default size if not specified */
+  const effectiveIconSize = size === 'small' ? 14 : iconSize || 20
+
   return (
     <AriaButton
       className={clsx(
@@ -63,7 +63,12 @@ export const Button: React.FC<MidasButton> = ({
       {...rest}
     >
       <>
-        {IconComponent && <IconComponent size={effectiveIconSize} />}
+        {IconComponent && (
+          <IconComponent
+            aria-hidden
+            size={effectiveIconSize}
+          />
+        )}
         {rest.children}
       </>
     </AriaButton>
