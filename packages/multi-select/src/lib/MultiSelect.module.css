@@ -1,0 +1,87 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
+
+.multiSelect {
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.button {
+  grid-area: Input;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: backgroundSecondary;
+  border-bottom: 1px solid black;
+
+  &[aria-expanded='true'] div {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: gray20;
+  }
+
+  &[data-focus-visible] {
+    outline-offset: 2px;
+    outline: 2px solid black;
+  }
+
+  &[data-disabled] {
+    background: backgroundSecondary;
+    color: gray50;
+    box-shadow: 0 1px 0 0 gray50;
+  }
+}
+
+.popover {
+  font-family: display;
+  border: 1px solid black;
+  background: white;
+  overflow-y: auto;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.listBoxItem {
+  margin: auto;
+  padding: 1rem;
+  background-color: white;
+  outline: none;
+  cursor: default;
+  color: black;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  &[data-selected='true'] {
+    background: gray50;
+  }
+
+  &[data-focused='true'] {
+    background: gray20;
+  }
+
+  &[data-disabled='true'] {
+    color: gray50;
+  }
+}
