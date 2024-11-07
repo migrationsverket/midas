@@ -1,3 +1,14 @@
+## 1.0.3 (2024-11-07)
+
+### 🩹 Fixes
+
+- **search-field:** fix deps ([ea51719](https://github.com/migrationsverket/midas/commit/ea51719))
+- **modal:** update modal docs ([62f2546](https://github.com/migrationsverket/midas/commit/62f2546))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-10-24)
 
 ### 🩹 Fixes
