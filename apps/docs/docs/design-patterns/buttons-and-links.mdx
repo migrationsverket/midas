@@ -1,5 +1,7 @@
 import { Button } from '@midas-ds/button'
 import { Flex, FlexItem } from '@midas-ds/flex'
+import { LinkButton } from '@midas-ds/link-button'
+import { Link } from '@midas-ds/link'
 
 # Knappar och länkar
 
@@ -9,8 +11,8 @@ Detta mönster är till för beskriva i vilka situationer Knapp, Länkknapp och 
 Knappar används för att initiera en aktivitet. När användaren klickar på en knapp händer något på sidan. 
 Exempel på situationer där det är lämpligt med en knapp: 
 - När ett formulär ska skickas in. 
-- När en sökning ska göras. 
-- Om en modal ska öppnas. 
+- För att initiera en sökning 
+- För att öppna en modal 
 
 <Button onPress={() => { alert('Du tryckte på knappen och här är din popup');}}>Visa en popup</Button>
 
@@ -19,12 +21,24 @@ Länkar används för att ta användaren till en ny sida eller en annan del av e
 
 ### Länkknapp
 
-Länkknappen är tekniskt en länk men visuellt mer lik en knapp. Den används där det ska vara en länk men där 
-- Vid navigering inom eller från en applikation
-- Som en startpunkten länk från webben till en e-tjänst
+Länkknappen är tekniskt en länk men visuellt lik en knapp. Den används vid navigering när det behövs en tydligare visuell markering än vad en vanlig länk ger. 
+Exempel på situationer där det är lämpligt med en länkknapp:
+
+- Vid navigering inom en applikation (Nästa, Tillbaka)
+- Som en startpunkt, t.ex. en länk från webben till en e-tjänst
+- Vid inloggning med e-id
+
+<LinkButton>Till sidan för Länkknapp</LinkButton>
+
 
 ### Fristående länk
 
+Fristående länk är en variant av länk som används när en länk ligger utanför ett textstycke. 
+
+<Link standalone>Läs mer om länkar</Link>
+
 ### Länk
 
-Länk används när länken är det är i ett textstycke. 
+Länk används när länken är i ett textstycke. Här kan du läsa mer om <Link>våra länkar</Link>
+
+
