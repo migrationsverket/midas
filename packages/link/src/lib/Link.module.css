@@ -9,7 +9,7 @@
   cursor: pointer;
   gap: 0.25rem;
   font-weight: regularWeight;
-  text-align: center;
+  align-items: center;
 
   &:hover {
     color: blue150;
