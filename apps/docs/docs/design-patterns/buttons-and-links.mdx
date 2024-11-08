@@ -1,18 +1,30 @@
+import { Button } from '@midas-ds/button'
+import { Flex, FlexItem } from '@midas-ds/flex'
+
 # Knappar och länkar
 
-Detta mönster är till för beskriva i vilka situationer Knapp, Länkknapp, Fristående länk respektive Länk ska användas
+Detta mönster är till för beskriva i vilka situationer Knapp, Länkknapp och Länk ska användas
 
-## Knapp
+## Knappar
+Knappar används för att initiera en aktivitet. När användaren klickar på en knapp händer något på sidan. 
+Exempel på situationer där det är lämpligt med en knapp: 
+- När ett formulär ska skickas in. 
+- När en sökning ska göras. 
+- Om en modal ska öppnas. 
 
-Använd knapp när det 
-Tex Skicka
+<Button onPress={() => { alert('Du tryckte på knappen och här är din popup');}}>Visa en popup</Button>
 
-## Knapplänk
+## Länkar
+Länkar används för att ta användaren till en ny sida eller en annan del av en sida/applikation. På en webbsida eller i en webbapplikation syns detta som en ny URL. 
+
+### Länkknapp
+
+Länkknappen är tekniskt en länk men visuellt mer lik en knapp.
 
 Vid navigering inom eller från en applikation används knapplänk. 
 
-## Fristående länk
+### Fristående länk
 
-## Länk
+### Länk
 
 Länk används när länken är det är i ett textstycke. 
