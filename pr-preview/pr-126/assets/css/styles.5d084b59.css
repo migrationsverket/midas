@@ -5592,6 +5592,7 @@ CSS variables, meant to be overridden by final theme
   cursor: pointer;
   gap: 0.25rem;
   font-weight: 400;
+  text-align: center;
 
   &:hover {
     color: #143c50;
