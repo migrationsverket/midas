@@ -33,7 +33,12 @@ export const Link: React.FC<MidasLink> = ({
     >
       <>
         {children}
-        {standalone && <ArrowRight size={20} />}
+        {standalone && (
+          <ArrowRight
+            className={styles.icon}
+            size={20}
+          />
+        )}
       </>
     </AriaLink>
   )
