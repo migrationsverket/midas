@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, blue130, blue150, gray150, gray50, mediumWeight, regularWeight, black from tokens;
+@value display, blue130, blue150, gray150, gray50, mediumWeight, regularWeight, linkVisited, black from tokens;
 
 .link {
   font-family: display;
@@ -14,6 +14,10 @@
   &:hover {
     color: blue150;
     text-decoration: underline;
+  }
+
+  &:visited {
+    color: linkVisited;
   }
 
   &[data-disabled] {
