@@ -13,11 +13,17 @@
 
   &:hover {
     color: blue150;
+    text-decoration: underline;
   }
 
   &[data-disabled] {
     cursor: disabled;
     color: gray50;
+  }
+
+  &[data-pressed] {
+    color: black;
+    text-decoration: underline;
   }
 
   &[data-focused] {
