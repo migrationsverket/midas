@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, blue130, blue150, gray150, mediumWeight from tokens;
+@value display, blue130, blue150, gray150, gray50, mediumWeight, regularWeight, black from tokens;
 
 .link {
   font-family: display;
@@ -7,6 +7,8 @@
   text-decoration: underline;
   display: inline-flex;
   cursor: pointer;
+  gap: 0.25rem;
+  font-weight: regularWeight;
 
   &:hover {
     color: blue150;
@@ -14,8 +16,11 @@
 
   &[data-disabled] {
     cursor: disabled;
-    text-decoration: none;
-    color: gray150;
+    color: gray50;
+  }
+
+  &[data-focused] {
+    outline: none;
   }
 
   &[data-focus-visible] {
@@ -30,14 +35,9 @@
 
 .standalone {
   display: inline-flex;
-  align-items: center;
   gap: 0.5rem;
   text-decoration: none;
   font-weight: mediumWeight;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .stretched {
