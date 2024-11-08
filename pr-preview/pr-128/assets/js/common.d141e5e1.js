@@ -2876,7 +2876,7 @@ __webpack_require__.d(__webpack_exports__, {
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 ;// ./packages/link/src/lib/Link.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Link_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","blue130":"#25607f","blue150":"#143c50","gray150":"#1f1f1f","mediumWeight":"500","link":"link_Db78","icon":"icon_uCwm","standalone":"standalone_ptM8","stretched":"stretched_fWsF"});
+/* harmony default export */ const Link_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","blue130":"#25607f","blue150":"#143c50","gray150":"#1f1f1f","gray50":"#bfbfbf","mediumWeight":"500","regularWeight":"400","black":"#000000","link":"link_Db78","icon":"icon_uCwm","standalone":"standalone_ptM8","stretched":"stretched_fWsF"});
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
 var dist_Link = __webpack_require__(73099);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
@@ -2904,7 +2904,7 @@ const ArrowRight = (0,createLucideIcon/* default */.A)("ArrowRight", [
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
-'use client';var _excluded=["children","standalone","stretched"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(ArrowRight,{className:Link_module.icon,size:20})]})}));};
+'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(ArrowRight,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
 
 
