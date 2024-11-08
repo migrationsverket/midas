@@ -4,7 +4,7 @@ import React from 'react'
 import type {
   ListBoxItemProps,
   SelectProps as AriaSelectProps,
-  ValidationResult,
+  ValidationResult
 } from 'react-aria-components'
 import {
   Select as AriaSelect,
@@ -12,7 +12,7 @@ import {
   SelectValue,
   Popover,
   ListBox,
-  ListBoxItem,
+  ListBoxItem
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import styles from './Select.module.css'
@@ -49,11 +49,11 @@ export function Select<T extends object>({
           <SelectValue />
           <div
             className={styles.icon}
-            aria-hidden="true"
+            aria-hidden='true'
           >
             <ChevronDown
-              height={16}
-              width={16}
+              size={20}
+              aria-hidden
             />
           </div>
         </Button>

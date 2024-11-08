@@ -8,7 +8,7 @@ import {
   FieldError,
   Text,
   TextFieldProps as AriaTextFieldProps,
-  ValidationResult,
+  ValidationResult
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { TriangleAlert } from 'lucide-react'
@@ -79,7 +79,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
 const PasswordField = ({
   type,
-  input,
+  input
 }: {
   type: TextFieldProps['type']
   input: string
@@ -91,14 +91,14 @@ const PasswordField = ({
       <>
         {showPassword && (
           <Text
-            slot="description"
+            slot='description'
             className={styles.passwordText}
           >
             {input}
           </Text>
         )}
         <Button
-          variant="tertiary"
+          variant='tertiary'
           onPress={() => setShowPassword(!showPassword)}
           className={styles.passwordButton}
         >
@@ -119,14 +119,14 @@ export const InputWrapper = ({
   label,
   description,
   errorMessage,
-  children,
+  children
 }: InputWrapperProps) => {
   return (
     <div className={styles.inputWrapper}>
       {label && <Label className={styles.label}>{label}</Label>}
       {description && (
         <Text
-          slot="description"
+          slot='description'
           className={styles.text}
         >
           {description}
@@ -135,8 +135,8 @@ export const InputWrapper = ({
       <FieldError className={styles.fieldError}>
         <>
           <TriangleAlert
-            width={16}
-            height={16}
+            size={20}
+            aria-hidden
           />
           {errorMessage}
         </>

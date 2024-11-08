@@ -4,7 +4,7 @@ import type {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
-  ValidationResult,
+  ValidationResult
 } from 'react-aria-components'
 import {
   Button,
@@ -19,7 +19,7 @@ import {
   Heading,
   Popover,
   RangeCalendar,
-  Calendar,
+  Calendar
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
@@ -57,22 +57,22 @@ export const DateRangePicker = <T extends DateValue>({
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput
-            slot="start"
+            slot='start'
             className={styles.date}
           >
-            {(segment) => (
+            {segment => (
               <DateSegment
                 className={styles.dateSegment}
                 segment={segment}
               />
             )}
           </DateInput>
-          <span aria-hidden="true">-</span>
+          <span aria-hidden='true'>-</span>
           <DateInput
-            slot="end"
+            slot='end'
             className={styles.date}
           >
-            {(segment) => (
+            {segment => (
               <DateSegment
                 segment={segment}
                 className={styles.dateSegment}
@@ -81,7 +81,10 @@ export const DateRangePicker = <T extends DateValue>({
           </DateInput>
 
           <Button>
-            <CalendarDays size={16} />
+            <CalendarDays
+              size={20}
+              aria-hidden
+            />
           </Button>
         </Group>
 
@@ -89,16 +92,22 @@ export const DateRangePicker = <T extends DateValue>({
           <Dialog className={styles.dialog}>
             <RangeCalendar>
               <header className={styles.dialogHeader}>
-                <Button slot="previous">
-                  <ChevronLeft />
+                <Button slot='previous'>
+                  <ChevronLeft
+                    size={20}
+                    aria-hidden
+                  />
                 </Button>
                 <Heading className={styles.dialogHeading} />
-                <Button slot="next">
-                  <ChevronRight />
+                <Button slot='next'>
+                  <ChevronRight
+                    size={20}
+                    aria-hidden
+                  />
                 </Button>
               </header>
               <CalendarGrid className={styles.calendar}>
-                {(date) => (
+                {date => (
                   <CalendarCell
                     date={date}
                     className={styles.day}
@@ -143,7 +152,7 @@ export const DatePicker = <T extends DateValue>({
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput className={styles.date}>
-            {(segment) => (
+            {segment => (
               <DateSegment
                 segment={segment}
                 className={styles.dateSegment}
@@ -159,16 +168,16 @@ export const DatePicker = <T extends DateValue>({
           <Dialog className={styles.dialog}>
             <Calendar>
               <header className={styles.dialogHeader}>
-                <Button slot="previous">
+                <Button slot='previous'>
                   <ChevronLeft />
                 </Button>
                 <Heading className={styles.dialogHeading} />
-                <Button slot="next">
+                <Button slot='next'>
                   <ChevronRight />
                 </Button>
               </header>
               <CalendarGrid className={styles.calendar}>
-                {(date) => (
+                {date => (
                   <CalendarCell
                     date={date}
                     className={styles.day}

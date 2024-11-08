@@ -12,6 +12,7 @@ import {
 import Info from '@site/static/data/link.json'
 import { Link } from '@midas-ds/link'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { baseColors } from '@midas-ds/theme'
 
 <ComponentHeader
   name={'Link'}
@@ -51,6 +52,29 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
         Läs mer om designsystemets nyheter
     </Link>
 </>`}
+</LiveCodeBlock>
+
+## "Utsträckt"
+
+Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
+
+<LiveCodeBlock scope={{ Link, baseColors }}>
+  {`<div 
+      style={{
+        position: 'relative',
+        background: baseColors.gray10,
+        padding: '1rem'
+      }}
+    >
+    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
+    <Link 
+        standalone 
+        stretched
+        href="/blog"
+    >
+        Läs mer om designsystemets nyheter
+    </Link>
+</div>`}
 </LiveCodeBlock>
 
 ## Riktlinjer

@@ -7,7 +7,7 @@ import type {
   TableHeaderProps,
   ColumnProps,
   TableProps as AriaTableProps,
-  CellProps,
+  CellProps
 } from 'react-aria-components'
 
 import {
@@ -19,13 +19,13 @@ import {
   Cell as AriaCell,
   Button,
   Table as AriaTable,
-  TableBody,
+  TableBody
 } from 'react-aria-components'
 import { Checkbox } from '@midas-ds/checkbox'
 import {
   ArrowDownNarrowWide,
   ArrowUpWideNarrow,
-  GripVertical,
+  GripVertical
 } from 'lucide-react'
 import clsx from 'clsx'
 
@@ -56,7 +56,7 @@ export const Table = <T extends object>({
 
 export const TableHeader = <T extends object>({
   columns,
-  children,
+  children
 }: TableHeaderProps<T>) => {
   const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions()
 
@@ -66,7 +66,7 @@ export const TableHeader = <T extends object>({
       {allowsDragging && <Column />}
       {selectionBehavior === 'toggle' && (
         <Column width={50}>
-          {selectionMode === 'multiple' && <Checkbox slot="selection" />}
+          {selectionMode === 'multiple' && <Checkbox slot='selection' />}
         </Column>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -90,14 +90,14 @@ export const Row = <T extends object>({
     >
       {allowsDragging && (
         <Cell>
-          <Button slot="drag">
-            <GripVertical />
+          <Button slot='drag'>
+            <GripVertical size={20} />
           </Button>
         </Cell>
       )}
       {selectionBehavior === 'toggle' && (
         <Cell>
-          <Checkbox slot="selection" />
+          <Checkbox slot='selection' />
         </Cell>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -116,13 +116,13 @@ export const Column = ({ children, ...rest }: ColumnProps) => {
           {children}
           {allowsSorting && (
             <span
-              aria-hidden="true"
-              className="sort-indicator"
+              aria-hidden='true'
+              className='sort-indicator'
             >
               {sortDirection === 'ascending' ? (
-                <ArrowUpWideNarrow />
+                <ArrowUpWideNarrow size={20} />
               ) : (
-                <ArrowDownNarrowWide />
+                <ArrowDownNarrowWide size={20} />
               )}
             </span>
           )}

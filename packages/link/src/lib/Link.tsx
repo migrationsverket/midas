@@ -12,12 +12,14 @@ import { LucideIcon } from 'lucide-react'
 interface MidasLink extends LinkProps {
   children: React.ReactNode
   standalone?: boolean
+  stretched?: boolean
   icon?: LucideIcon
 }
 
 export const Link: React.FC<MidasLink> = ({
   children,
   standalone,
+  stretched,
   icon: IconComponent,
   ...rest
 }) => {
@@ -26,6 +28,7 @@ export const Link: React.FC<MidasLink> = ({
       className={clsx(
         styles.link,
         standalone && styles.standalone,
+        stretched && styles.stretched,
         rest.className
       )}
       {...rest}
@@ -38,7 +41,7 @@ export const Link: React.FC<MidasLink> = ({
             className={styles.icon}
           />
         )}
-        {standalone && <ArrowRight size={20} />}
+        {standalone && <ArrowRight size={20} className={styles.icon} />}
       </>
     </AriaLink>
   )
