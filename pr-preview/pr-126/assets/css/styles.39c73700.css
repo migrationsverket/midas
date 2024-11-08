@@ -5596,11 +5596,17 @@ CSS variables, meant to be overridden by final theme
 
   &:hover {
     color: #143c50;
+    text-decoration: underline;
   }
 
   &[data-disabled] {
     cursor: disabled;
     color: #bfbfbf;
+  }
+
+  &[data-pressed] {
+    color: #000000;
+    text-decoration: underline;
   }
 
   &[data-focused] {
