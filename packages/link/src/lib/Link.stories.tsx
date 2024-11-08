@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
-import { ArrowRight, Plus } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 const meta: Meta<typeof Link> = {
   component: Link,
   title: 'Components/Link',
@@ -36,7 +36,6 @@ export const Standalone: Story = {
   args: {
     children: 'En fristående länk',
     standalone: true,
-    icon: Plus,
     href: '#'
   }
 }
