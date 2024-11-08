@@ -35,7 +35,7 @@ export const Link: React.FC<MidasLink> = ({
     >
       <>
         {children}
-        {IconComponent && (
+        {!standalone && IconComponent && (
           <IconComponent
             size={20}
             className={styles.icon}

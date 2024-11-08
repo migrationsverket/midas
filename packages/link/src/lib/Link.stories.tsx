@@ -8,13 +8,12 @@ const meta: Meta<typeof Link> = {
   parameters: {
     layout: 'centered'
   },
-  argTypes:{
+  argTypes: {
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' }
-    },
+    }
   }
-  
 }
 export default meta
 type Story = StoryObj<typeof Link>
@@ -29,7 +28,7 @@ export const Primary: Story = {
 export const PrimaryDisabled: Story = {
   args: {
     ...Primary.args,
-    isDisabled:true,
+    isDisabled: true
   }
 }
 
@@ -43,7 +42,7 @@ export const Standalone: Story = {
 
 export const StandaloneDisabled: Story = {
   args: {
-  ...Standalone.args,
-    isDisabled:true,
+    ...Standalone.args,
+    isDisabled: true
   }
 }
