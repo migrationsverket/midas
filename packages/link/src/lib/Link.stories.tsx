@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Plus } from 'lucide-react'
 const meta: Meta<typeof Link> = {
   component: Link,
   title: 'Components/Link',
@@ -8,13 +8,12 @@ const meta: Meta<typeof Link> = {
   parameters: {
     layout: 'centered'
   },
-  argTypes:{
+  argTypes: {
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' }
-    },
+    }
   }
-  
 }
 export default meta
 type Story = StoryObj<typeof Link>
@@ -29,7 +28,7 @@ export const Primary: Story = {
 export const PrimaryDisabled: Story = {
   args: {
     ...Primary.args,
-    isDisabled:true,
+    isDisabled: true
   }
 }
 
@@ -37,13 +36,14 @@ export const Standalone: Story = {
   args: {
     children: 'En fristående länk',
     standalone: true,
+    icon: Plus,
     href: '#'
   }
 }
 
 export const StandaloneDisabled: Story = {
   args: {
-  ...Standalone.args,
-    isDisabled:true,
+    ...Standalone.args,
+    isDisabled: true
   }
 }
