@@ -5588,7 +5588,7 @@ CSS variables, meant to be overridden by final theme
   font-family: "Inter", sans-serif;
   color: #25607f;
   text-decoration: underline;
-  display: inline;
+  display: inline-flex;
   cursor: pointer;
 
   &:hover {
@@ -5605,6 +5605,10 @@ CSS variables, meant to be overridden by final theme
     outline: 0.125rem solid black;
     outline-offset: 0.125rem;
   }
+}
+
+.icon_uCwm {
+  flex: 0 0 auto;
 }
 
 .standalone_ptM8 {
