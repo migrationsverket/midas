@@ -6,7 +6,19 @@
   "exports": {
     ".": {
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
+  },
+  "dependencies": {
+    "lucide-react": "^0.453.0",
+    "@midas-ds/button": "1.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "access": "public"
   }
 }
