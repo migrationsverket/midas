@@ -9,14 +9,11 @@ hide_table_of_contents: true
 sidebar_class_name: chapter-end
 ---
 
-import { Card } from '@midas-ds/card';
-import { Grid, GridItem } from '@midas-ds/grid';
+import { Card } from '@midas-ds/card'
+import { Grid, GridItem } from '@midas-ds/grid'
 import Link from '@docusaurus/Link'
-import { Figma, Component, Code } from 'lucide-react'
-import { InfoBanner } from "@midas-ds/info-banner";
-
-
-
+import { PenTool, Component, Code } from 'lucide-react'
+import { InfoBanner } from '@midas-ds/info-banner'
 
 <div className="row">
   <div className="col col--8">
@@ -29,35 +26,58 @@ import { InfoBanner } from "@midas-ds/info-banner";
       title="Status: Beta"
       message="Migrationsverkets designsystem är för närvarande i beta-stadiet. Information på denna dokumentationsweb är i vissa fall ofullständig och kan ändras med kort varsel."
     />
+
   </div>
 </div>
 
-<Grid fluid="true">
+<Grid fluid='true'>
   <GridItem col={4}>
     <Card
-      title="För designers"
-      content="Här hittar du resurser för att använda våra designkomponenter."
+      title='För designers'
+      content='Här hittar du resurser för att använda våra designkomponenter.'
       headingTag={'h2'}
-      onPress={() => window.location.href = "/get-started/design"}
-      customImageComponent={<div className="card-icon"><Figma size={48} strokeWidth={1.5} /></div>}
+      link={{ href: '/get-started/design', title: 'Läs mer om design' }}
+      customImageComponent={
+        <div className='card-icon'>
+          <PenTool
+            size={48}
+            strokeWidth={1.5}
+          />
+        </div>
+      }
     />
   </GridItem>
   <GridItem col={4}>
     <Card
-      title="För utvecklare"
-      content="Här hittar du guider för hur du kommer igång med våra komponenter."
+      title='För utvecklare'
+      content='Här hittar du guider för hur du kommer igång med våra komponenter.'
       headingTag={'h2'}
-      onPress={() => window.location.href = "/get-started/develop"}
-      customImageComponent={<div className="card-icon"><Code size={48} strokeWidth={1.5} /></div>}
+      link={{ href: '/get-started/develop', title: 'Läs mer om utveckling' }}
+      customImageComponent={
+        <div className='card-icon'>
+          <Code
+            size={48}
+            strokeWidth={1.5}
+          />
+        </div>
+      }
     />
   </GridItem>
   <GridItem col={4}>
     <Card
-      title="Komponenter"
-      content="Utforska våra komponenter."
+      title='Komponenter'
+      content='Utforska våra komponenter.'
       headingTag={'h2'}
-      onPress={() => window.location.href = "/components"}
-      customImageComponent={<div className="card-icon"><Component size={48} strokeWidth={1.5} /></div>}
+      link={{ href: '/components', title: 'Utforska komponenterna' }}
+      customImageComponent={
+        <div className='card-icon'>
+          <Component
+            size={48}
+            strokeWidth={1.5}
+          />
+        </div>
+      }
     />
+
   </GridItem>
 </Grid>

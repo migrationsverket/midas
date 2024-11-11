@@ -4,9 +4,9 @@
     "dbaeumer.vscode-eslint",
     "unifiedjs.vscode-mdx",
     "nrwl.angular-console",
-    "csstools.postcss",
     "esbenp.prettier-vscode",
     "clinyong.vscode-css-modules",
-    "stylelint.vscode-stylelint"
+    "stylelint.vscode-stylelint",
+    "andrewleedham.vscode-css-modules"
   ]
 }

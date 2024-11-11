@@ -4,17 +4,25 @@ tags: []
 description: Komponent som skapar en länk
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/link.json'
 import { Link } from '@midas-ds/link'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { baseColors } from '@midas-ds/theme'
 
-<ComponentHeader name={'Link'} info={Info} friendlyName={'Länk'} />
+<ComponentHeader
+  name={'Link'}
+  info={Info}
+  friendlyName={'Länk'}
+/>
 
 ## Introduktion
 
-Komponenten Link skapar en länk.
+Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående.
 
 ## Installation och användning
 
@@ -26,22 +34,53 @@ npm install @midas-ds/link
 import { Link } from '@midas-ds/link'
 ```
 
-<LiveCodeBlock scope={{Link}}>
-{`<Link href="/blog">En länk till designsystemets nyheter</Link>`}
+<LiveCodeBlock scope={{ Link }}>
+  {`<p>Designsystemet utvecklas ständigt, <Link href="/blog">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`}
+</LiveCodeBlock>
+
+## Fristående
+
+Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
+
+<LiveCodeBlock scope={{ Link }}>
+  {`<>
+    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
+    <Link 
+        standalone 
+        href="/blog"
+    >
+        Läs mer om designsystemets nyheter
+    </Link>
+</>`}
+</LiveCodeBlock>
+
+## "Utsträckt"
+
+Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
+
+<LiveCodeBlock scope={{ Link, baseColors }}>
+  {`<div 
+      style={{
+        position: 'relative',
+        background: baseColors.gray10,
+        padding: '1rem'
+      }}
+    >
+    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
+    <Link 
+        standalone 
+        stretched
+        href="/blog"
+    >
+        Läs mer om designsystemets nyheter
+    </Link>
+</div>`}
 </LiveCodeBlock>
 
 ## Riktlinjer
 
-### Val av komponent
-
-```mermaid
-flowchart TD;
-    A[Vad är syftet?]:::primary
-    A-->|Handling| B[Använd Button]
-    A -->|Navigering| C[Är länken i ett textstycke?]:::primary
-    C--> |Ja| D[Använd Link]:::primary
-    C-->|Nej| E[Använd LinkButton]
-```
+Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 ## Beroenden
-<ComponentFooter info={Info}/>
+
+<ComponentFooter info={Info} />

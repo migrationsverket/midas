@@ -5,13 +5,13 @@ import {
   AriaToastProps,
   useToast,
   AriaToastRegionProps,
-  useToastRegion,
+  useToastRegion
 } from '@react-aria/toast'
 import {
   ToastQueue,
   ToastState,
   useToastQueue,
-  useToastState,
+  useToastState
 } from '@react-stately/toast'
 import { createPortal } from 'react-dom'
 import clsx from 'clsx'
@@ -21,7 +21,7 @@ import {
   CircleCheckIcon,
   Info,
   TriangleAlert,
-  X,
+  X
 } from 'lucide-react'
 import styles from './Toast.module.css'
 
@@ -32,7 +32,7 @@ interface ToastRegionProps<T> extends AriaToastRegionProps {
 export function ToastProvider({ children, ...props }: any) {
   const state = useToastState<MidasToast>({
     maxVisibleToasts: 5,
-    hasExitAnimation: true,
+    hasExitAnimation: true
   })
 
   return (
@@ -58,7 +58,7 @@ function ToastRegion({ state, ...props }: ToastRegionProps<MidasToast>) {
       ref={ref}
       className={styles.toastRegion}
     >
-      {state.visibleToasts.map((toast) => (
+      {state.visibleToasts.map(toast => (
         <Toast
           key={toast.key}
           toast={toast}
@@ -93,13 +93,17 @@ export function Toast({ state, ...props }: ToastProps<MidasToast>) {
       }}
     >
       <div>
-        <Icon className={styles.icon} />
+        <Icon
+          className={styles.icon}
+          size={20}
+          aria-hidden
+        />
         {props.toast.content.message}
       </div>
       <Button {...closeButtonProps}>
         <X
-          height={16}
-          width={16}
+          size={20}
+          aria-hidden
         />
       </Button>
     </div>
@@ -114,7 +118,7 @@ type MidasToast = {
 // Create a global toast queue.
 export const toastQueue = new ToastQueue<MidasToast>({
   maxVisibleToasts: 5,
-  hasExitAnimation: true,
+  hasExitAnimation: true
 })
 
 export function GlobalToastRegion(props: any) {
@@ -138,5 +142,5 @@ const iconMap = {
   success: CircleCheckIcon,
   info: Info,
   important: CircleAlert,
-  warning: TriangleAlert,
+  warning: TriangleAlert
 }

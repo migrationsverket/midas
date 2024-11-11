@@ -1,27 +1,142 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, desktopSize, mediumWeight, blue150, blue130, blue90 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
 
-.link {
-  padding: 0.8125rem 1.9375rem;
+.linkButton {
+  font-family: display;
+  font-size: desktopSize;
+  font-weight: mediumWeight;
+  padding: calc(0.875rem - 1px) calc(1rem - 1px);
+  background-color: blue150;
+  border: solid 1px transparent;
+  color: white;
   cursor: pointer;
+  opacity: 1;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   text-decoration: none;
 
   &:hover {
-    color: inhereit;
+    color: white;
     text-decoration: none;
+    background-color: blue130;
   }
 
   &[data-pressed] {
     background-color: blue90;
     outline: none;
   }
+
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: gray10;
+  }
 }
 
-.link[data-focus-visible] {
-  outline: 0.125rem solid black;
-  outline-offset: 0.125rem;
+.secondary {
+  color: blue150;
+  background-color: white;
+  border-color: blue150;
+  opacity: 1;
+
+  &:hover {
+    color: blue150;
+    background-color: gray10;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+    border-color: gray50;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+    border-color: blue150;
+  }
+
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+}
+
+.tertiary {
+  color: blue150;
+  background-color: transparent;
+  opacity: 1;
+
+  &:hover {
+    color: blue150;
+    background-color: gray10;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: white;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+  }
+
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+}
+
+.danger {
+  color: white;
+  background-color: signalRed100;
+  opacity: 1;
+
+  &:hover {
+    color: white;
+    background-color: signalRed130;
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: gray10;
+  }
+
+  &[data-pressed] {
+    background-color: signalRed150;
+    outline: none;
+  }
+
+  &[data-focus-visible] {
+    outline: 0.125rem solid black;
+    outline-offset: 0.125rem;
+  }
+}
+
+.iconLeft {
+  flex-direction: row-reverse;
+
+  .icon {
+    transform: rotate(180deg);
+  }
 }
 
 .fullwidth {
-  width: calc(100% - calc(1.9375rem * 2));
+  width: 100%;
+}
+
+@media smBreakpoint {
+  .button {
+    width: 100%;
+  }
 }
