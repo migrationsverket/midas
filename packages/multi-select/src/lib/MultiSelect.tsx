@@ -21,7 +21,7 @@ interface MidasMultiSelect {
   items: { name: string; id: string }[]
   onSelectionChange?: (selectedKeys: Set<Key>) => void
   selectedKeys?: string[]
-  defaultSelectedKeys?: string[]
+  defaultSelectedKeys?: string[] | 'all'
 }
 
 export const MultiSelect: React.FC<MidasMultiSelect> = ({

@@ -6,7 +6,22 @@
   "exports": {
     ".": {
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
+  },
+  "dependencies": {
+    "@midas-ds/tag": "0.0.1",
+    "react-aria-components": "^1.1.1",
+    "lucide-react": "^0.453.0",
+    "@midas-ds/textfield": "1.0.2",
+    "@midas-ds/checkbox": "1.0.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "repository": "https://github.com/migrationsverket/midas.git",
+  "publishConfig": {
+    "access": "public"
   }
 }
