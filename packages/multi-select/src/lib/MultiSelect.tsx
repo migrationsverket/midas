@@ -129,6 +129,7 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
                 {item.name}
               </Tag>
             )
+          return null
         })}
       </TagGroup>
     </div>
