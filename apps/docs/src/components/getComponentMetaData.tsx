@@ -67,7 +67,7 @@ export const ComponentHeader = ({
         </FlexItem>
         <FlexItem col='auto'>
           <Link
-            href={`https://designsystem.migrationsverket.se/storybook/?path=/docs/components-${name.toLowerCase()}--docs`}
+            href={`/storybook/?path=/docs/components-${name.toLowerCase()}--docs`}
             standalone
           >
             Storybook
