@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9758],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
 
-/***/ 30475:
+/***/ 51594:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,53 +27,66 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/radio/src/index.ts + 2 modules
+var src = __webpack_require__(34378);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/search-field.json
-const search_field_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/search-field@1.0.2","_rev":"6-ecf5fe2c34d3859d5c9f45782708ce03","name":"@midas-ds/search-field","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.0.2","0.1.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:38:08.720Z","modified":"2024-10-24T13:32:54.239Z","0.0.1":"2024-09-10T14:38:09.007Z","0.0.2":"2024-09-12T12:43:45.772Z","0.1.0":"2024-10-07T12:19:44.725Z","1.0.0":"2024-10-18T13:40:43.577Z","1.0.1":"2024-10-24T13:26:46.347Z","1.0.2":"2024-10-24T13:32:54.084Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"This library was generated with [Nx](https://nx.dev).","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10372,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0","react-aria-components":"^1.1.1","lucide-react":"^0.453.0","@midas-ds/textfield":"1.0.1","@midas-ds/button":"1.0.2"},"publishConfig":{"access":"public"},"gitHead":"299738cc211e4aa1a60b155e8a9289b5b00cb56c","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-iDJQyuyiP3m9UlfMiQUL7B88AXU/qFloonSDHDQ9noEBJDWJLLIotLNbS9sE2qkS+n91Ts50yYCSX6HP0oKxOw==","shasum":"6806e7521fd799116cfa8c05080fd956a340dd33","tarball":"https://registry.npmjs.org/@midas-ds/search-field/-/search-field-1.0.2.tgz","fileCount":8,"unpackedSize":136570,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDlJnNk4NKfIIqj2SnfmnjWqgPy3nkm3rzuQ/tIL4guOgIgUF6Ju3GuGslmWCWP1A8deXHT0Gnfy2hNOXDx0+gHceU="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/search-field_1.0.2_1729776773851_0.9281120559896041"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/search-field/src/index.ts + 2 modules
-var src = __webpack_require__(91725);
+;// ./apps/docs/static/data/radio.json
+const radio_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/radio@1.0.1","_rev":"7-c37f72c62143407f474660704552370b","name":"@midas-ds/radio","dist-tags":{"latest":"1.0.1"},"versions":["0.6.1","0.6.2","0.6.3","0.7.0","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:59.126Z","modified":"2024-10-24T13:26:37.615Z","0.6.1":"2024-09-10T14:37:59.408Z","0.6.2":"2024-09-12T12:42:10.930Z","0.6.3":"2024-09-19T12:26:24.985Z","0.7.0":"2024-10-07T12:18:39.699Z","1.0.0":"2024-10-18T13:40:39.975Z","1.0.1":"2024-10-24T13:26:37.442Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/radio ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9973,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-YdDOfb2TgN9l7Itr8PsW47G3Azz/nQKdndDAp8wal1PXNBsjkbSJVioIf11I3R9UEHOVf0MZr/C8oLCYv8gI1w==","shasum":"4807487bc05e8ccbe7e880be602e3f69c9c5f8ef","tarball":"https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.1.tgz","fileCount":9,"unpackedSize":126274,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIGLt9dUVDiB24Uy43XXA3pUdXIzj6EUdk66c7XdpxGSnAiAMF3miI/byvsgwOmrNUt7E/W98QzeUk/tEAsexpvi9HQ=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/radio_1.0.1_1729776397186_0.24599049100813497"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/search-field.mdx
+;// ./apps/docs/docs/components/radio.mdx
 
 
 const frontMatter = {
-	title: 'SearchField',
-	tags: [],
-	description: 'Sökfält är en kombinationskomponent av TextField och Button'
+	title: 'Radio',
+	description: 'Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
+	tags: [
+		'form'
+	]
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/search-field",
-  "title": "SearchField",
-  "description": "Sökfält är en kombinationskomponent av TextField och Button",
-  "source": "@site/docs/components/search-field.mdx",
+  "id": "components/radio",
+  "title": "Radio",
+  "description": "Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ",
+  "source": "@site/docs/components/radio.mdx",
   "sourceDirName": "components",
-  "slug": "/components/search-field",
-  "permalink": "/pr-preview/pr-126/components/search-field",
+  "slug": "/components/radio",
+  "permalink": "/pr-preview/pr-126/components/radio",
   "draft": false,
   "unlisted": false,
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "form",
+      "permalink": "/pr-preview/pr-126/tags/form"
+    }
+  ],
   "version": "current",
   "frontMatter": {
-    "title": "SearchField",
-    "tags": [],
-    "description": "Sökfält är en kombinationskomponent av TextField och Button"
+    "title": "Radio",
+    "description": "Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ",
+    "tags": [
+      "form"
+    ]
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Radio",
-    "permalink": "/pr-preview/pr-126/components/radio"
+    "title": "Modal",
+    "permalink": "/pr-preview/pr-126/components/modal"
   },
   "next": {
-    "title": "Select",
-    "permalink": "/pr-preview/pr-126/components/select"
+    "title": "SearchField",
+    "permalink": "/pr-preview/pr-126/components/search-field"
   }
 };
 const assets = {
 
 };
+
 
 
 
@@ -93,6 +106,26 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
+  "value": "Normal användning",
+  "id": "normal-användning",
+  "level": 3
+}, {
+  "value": "Disabled",
+  "id": "disabled",
+  "level": 3
+}, {
+  "value": "Validering",
+  "id": "validering",
+  "level": 3
+}, {
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
+  "level": 3
+}, {
   "value": "Beroenden",
   "id": "beroenden",
   "level": 2
@@ -101,21 +134,36 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'SearchField',
-      info: search_field_namespaceObject,
-      friendlyName: 'Sökfält'
+      name: 'Radio',
+      info: radio_namespaceObject,
+      friendlyName: 'Radioknappar',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Sökfält är en kombinationskomponent av TextField och Button."
+      children: "Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -126,7 +174,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/search-field\n"
+            children: "npm install @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -135,7 +183,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/search-field\n"
+            children: "yarn add @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -144,25 +192,87 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/search-field\n"
+            children: "pnpm add @midas-ds/radio\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { SearchField } from '@midas-ds/search-field'\n"
+        children: "import { Radio, RadioGroup } from '@midas-ds/radio';\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "normal-användning",
+      children: "Normal användning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Gruppera flera ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Radio>"
+      }), " i en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<RadioGroup>"
+      }), " och sätt rubrik och beskrivande text."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        SearchField: src/* SearchField */.L
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
       },
-      children: `<SearchField placeholder="Sök efter fruker" />`
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "disabled",
+      children: "Disabled"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isDisabled"
+      }), " antingen på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "RadioGroup"
+      }), " eller på enskilda val av ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Radio"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+     ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt validering med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isInvalid"
+      }), " eller använd inbyggda tester som ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "flowchart TD;\n    A[Ska användaren kunna välja mer än ett alternativ?]:::primary\n    A -->|Ja| B[Använd Checkbox]\n    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary\n    C -->|Ja| E[Använd Select]\n    C -->|Nej| D[Använd Radio]:::primary\n    "
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: search_field_namespaceObject
+      info: radio_namespaceObject
     })]
   });
 }
@@ -235,8 +345,9 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86025);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74848);
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');var storybookLink=(0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Ay)("/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs");if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:storybookLink,standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -284,46 +395,37 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 91725:
+/***/ 34378:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  L: () => (/* reexport */ SearchField)
+  s: () => (/* reexport */ Radio),
+  z: () => (/* reexport */ RadioGroup)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/SearchField.mjs + 37 modules
-var dist_SearchField = __webpack_require__(91521);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
-var Label = __webpack_require__(21704);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
-var search = __webpack_require__(98445);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var button_src = __webpack_require__(81706);
-;// ./packages/search-field/src/lib/SearchField.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const SearchField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","blue150":"#143c50","gray150":"#1f1f1f","container":"container_bTyD","inputContainer":"inputContainer_FEyv","icon":"icon_fL1_","clear":"clear_PAHR","input":"input_Mp7b"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
+;// ./packages/radio/src/lib/Radio.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Radio_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","inputLabel":"undefined","inputText":"#1f1f1f","black":"#000000","blue150":"#143c50","gray50":"#bfbfbf","gray60":"#b3b3b3","signalRed10":"#ffdfdf","signalRed100":"#e62323","medium":"undefined","gray150":"#1f1f1f","regular":"undefined","smBreakpoint":"(max-width: 767px)","mdBreakpoint":"(min-width: 768px)","borderSecondary":"#b3b3b3","radioGroup":"radioGroup_rXoc","wrap":"wrap_M_eK","radio":"radio_jFRQ"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
+var dist_RadioGroup = __webpack_require__(96325);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
+var Group = __webpack_require__(63899);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/search-field/src/lib/SearchField.tsx
-'use client';var _excluded=["placeholder","buttonText"];var SearchField=function SearchField(_ref){var placeholder=_ref.placeholder,buttonText=_ref.buttonText,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(false),hasInput=_React$useState[0],setHasInput=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_SearchField/* SearchField */.L,Object.assign({onInput:function onInput(){return setHasInput(true);},onClear:function onClear(){return setHasInput(false);},className:SearchField_module.container},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{hidden:true,children:placeholder}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:SearchField_module.inputContainer,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(search/* default */.A,{size:20,className:SearchField_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(src/* TextFieldStyles */.Ql.input,SearchField_module.input),placeholder:placeholder}),hasInput&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{variant:"icon",size:"small",className:SearchField_module.clear,children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{type:"submit",children:buttonText?buttonText:'Sök'})]}));};
-;// ./packages/search-field/src/index.ts
+;// ./packages/radio/src/lib/Radio.tsx
+'use client';var _excluded=["label","description","errorMessage","children"];var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
+ * Radio item
+ * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
+;// ./packages/radio/src/index.ts
 
 
 /***/ }),
@@ -676,373 +778,23 @@ webpackContext.id = 35358;
 
 /***/ }),
 
-/***/ 92122:
+/***/ 87979:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   B: () => (/* binding */ $5b160d28a433310d$export$c17fa47878dc55b6)
+/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
+/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
 /* harmony export */ });
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ const $5b160d28a433310d$var$localeSymbol = Symbol.for('react-aria.i18n.locale');
-const $5b160d28a433310d$var$stringsSymbol = Symbol.for('react-aria.i18n.strings');
-let $5b160d28a433310d$var$cachedGlobalStrings = undefined;
-class $5b160d28a433310d$export$c17fa47878dc55b6 {
-    /** Returns a localized string for the given key and locale. */ getStringForLocale(key, locale) {
-        let strings = this.getStringsForLocale(locale);
-        let string = strings[key];
-        if (!string) throw new Error(`Could not find intl message ${key} in ${locale} locale`);
-        return string;
-    }
-    /** Returns all localized strings for the given locale. */ getStringsForLocale(locale) {
-        let strings = this.strings[locale];
-        if (!strings) {
-            strings = $5b160d28a433310d$var$getStringsForLocale(locale, this.strings, this.defaultLocale);
-            this.strings[locale] = strings;
-        }
-        return strings;
-    }
-    static getGlobalDictionaryForPackage(packageName) {
-        if (typeof window === 'undefined') return null;
-        let locale = window[$5b160d28a433310d$var$localeSymbol];
-        if ($5b160d28a433310d$var$cachedGlobalStrings === undefined) {
-            let globalStrings = window[$5b160d28a433310d$var$stringsSymbol];
-            if (!globalStrings) return null;
-            $5b160d28a433310d$var$cachedGlobalStrings = {};
-            for(let pkg in globalStrings)$5b160d28a433310d$var$cachedGlobalStrings[pkg] = new $5b160d28a433310d$export$c17fa47878dc55b6({
-                [locale]: globalStrings[pkg]
-            }, locale);
-        }
-        let dictionary = $5b160d28a433310d$var$cachedGlobalStrings === null || $5b160d28a433310d$var$cachedGlobalStrings === void 0 ? void 0 : $5b160d28a433310d$var$cachedGlobalStrings[packageName];
-        if (!dictionary) throw new Error(`Strings for package "${packageName}" were not included by LocalizedStringProvider. Please add it to the list passed to createLocalizedStringDictionary.`);
-        return dictionary;
-    }
-    constructor(messages, defaultLocale = 'en-US'){
-        // Clone messages so we don't modify the original object.
-        // Filter out entries with falsy values which may have been caused by applying optimize-locales-plugin.
-        this.strings = Object.fromEntries(Object.entries(messages).filter(([, v])=>v));
-        this.defaultLocale = defaultLocale;
-    }
-}
-function $5b160d28a433310d$var$getStringsForLocale(locale, strings, defaultLocale = 'en-US') {
-    // If there is an exact match, use it.
-    if (strings[locale]) return strings[locale];
-    // Attempt to find the closest match by language.
-    // For example, if the locale is fr-CA (French Canadian), but there is only
-    // an fr-FR (France) set of strings, use that.
-    // This could be replaced with Intl.LocaleMatcher once it is supported.
-    // https://github.com/tc39/proposal-intl-localematcher
-    let language = $5b160d28a433310d$var$getLanguage(locale);
-    if (strings[language]) return strings[language];
-    for(let key in strings){
-        if (key.startsWith(language + '-')) return strings[key];
-    }
-    // Nothing close, use english.
-    return strings[defaultLocale];
-}
-function $5b160d28a433310d$var$getLanguage(locale) {
-    // @ts-ignore
-    if (Intl.Locale) // @ts-ignore
-    return new Intl.Locale(locale).language;
-    return locale.split('-')[0];
-}
-
-
-
-//# sourceMappingURL=LocalizedStringDictionary.module.js.map
-
-
-/***/ }),
-
-/***/ 57612:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ $6db58dc88e78b024$export$2f817fcdc4b89ae0)
-/* harmony export */ });
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ const $6db58dc88e78b024$var$pluralRulesCache = new Map();
-const $6db58dc88e78b024$var$numberFormatCache = new Map();
-class $6db58dc88e78b024$export$2f817fcdc4b89ae0 {
-    /** Formats a localized string for the given key with the provided variables. */ format(key, variables) {
-        let message = this.strings.getStringForLocale(key, this.locale);
-        return typeof message === 'function' ? message(variables, this) : message;
-    }
-    plural(count, options, type = 'cardinal') {
-        let opt = options['=' + count];
-        if (opt) return typeof opt === 'function' ? opt() : opt;
-        let key = this.locale + ':' + type;
-        let pluralRules = $6db58dc88e78b024$var$pluralRulesCache.get(key);
-        if (!pluralRules) {
-            pluralRules = new Intl.PluralRules(this.locale, {
-                type: type
-            });
-            $6db58dc88e78b024$var$pluralRulesCache.set(key, pluralRules);
-        }
-        let selected = pluralRules.select(count);
-        opt = options[selected] || options.other;
-        return typeof opt === 'function' ? opt() : opt;
-    }
-    number(value) {
-        let numberFormat = $6db58dc88e78b024$var$numberFormatCache.get(this.locale);
-        if (!numberFormat) {
-            numberFormat = new Intl.NumberFormat(this.locale);
-            $6db58dc88e78b024$var$numberFormatCache.set(this.locale, numberFormat);
-        }
-        return numberFormat.format(value);
-    }
-    select(options, value) {
-        let opt = options[value] || options.other;
-        return typeof opt === 'function' ? opt() : opt;
-    }
-    constructor(locale, strings){
-        this.locale = locale;
-        this.strings = strings;
-    }
-}
-
-
-
-//# sourceMappingURL=LocalizedStringFormatter.module.js.map
-
-
-/***/ }),
-
-/***/ 39892:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Y: () => (/* binding */ $18f2051aff69b9bf$export$43bb16f9c6d9e3f7)
-});
-
-// UNUSED EXPORTS: I18nProvider
-
-;// ./node_modules/@react-aria/i18n/dist/utils.mjs
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ // https://en.wikipedia.org/wiki/Right-to-left
-const $148a7a147e38ea7f$var$RTL_SCRIPTS = new Set([
-    'Arab',
-    'Syrc',
-    'Samr',
-    'Mand',
-    'Thaa',
-    'Mend',
-    'Nkoo',
-    'Adlm',
-    'Rohg',
-    'Hebr'
-]);
-const $148a7a147e38ea7f$var$RTL_LANGS = new Set([
-    'ae',
-    'ar',
-    'arc',
-    'bcc',
-    'bqi',
-    'ckb',
-    'dv',
-    'fa',
-    'glk',
-    'he',
-    'ku',
-    'mzn',
-    'nqo',
-    'pnb',
-    'ps',
-    'sd',
-    'ug',
-    'ur',
-    'yi'
-]);
-function utils_$148a7a147e38ea7f$export$702d680b21cbd764(localeString) {
-    // If the Intl.Locale API is available, use it to get the locale's text direction.
-    // @ts-ignore
-    if (Intl.Locale) {
-        let locale = new Intl.Locale(localeString).maximize();
-        // Use the text info object to get the direction if possible.
-        // @ts-ignore - this was implemented as a property by some browsers before it was standardized as a function.
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTextInfo
-        let textInfo = typeof locale.getTextInfo === 'function' ? locale.getTextInfo() : locale.textInfo;
-        if (textInfo) return textInfo.direction === 'rtl';
-        // Fallback: guess using the script.
-        // This is more accurate than guessing by language, since languages can be written in multiple scripts.
-        if (locale.script) return $148a7a147e38ea7f$var$RTL_SCRIPTS.has(locale.script);
-    }
-    // If not, just guess by the language (first part of the locale)
-    let lang = localeString.split('-')[0];
-    return $148a7a147e38ea7f$var$RTL_LANGS.has(lang);
-}
-
-
-
-//# sourceMappingURL=utils.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-aria/ssr/dist/SSRProvider.mjs
-var SSRProvider = __webpack_require__(60415);
-;// ./node_modules/@react-aria/i18n/dist/useDefaultLocale.mjs
-
-
-
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-// Locale passed from server by PackageLocalizationProvider.
-const $1e5a04cdaf7d1af8$var$localeSymbol = Symbol.for('react-aria.i18n.locale');
-function $1e5a04cdaf7d1af8$export$f09106e7c6677ec5() {
-    let locale = typeof window !== 'undefined' && window[$1e5a04cdaf7d1af8$var$localeSymbol] || typeof navigator !== 'undefined' && (navigator.language || navigator.userLanguage) || 'en-US';
-    try {
-        // @ts-ignore
-        Intl.DateTimeFormat.supportedLocalesOf([
-            locale
-        ]);
-    } catch (_err) {
-        locale = 'en-US';
-    }
-    return {
-        locale: locale,
-        direction: (0, utils_$148a7a147e38ea7f$export$702d680b21cbd764)(locale) ? 'rtl' : 'ltr'
-    };
-}
-let $1e5a04cdaf7d1af8$var$currentLocale = $1e5a04cdaf7d1af8$export$f09106e7c6677ec5();
-let $1e5a04cdaf7d1af8$var$listeners = new Set();
-function $1e5a04cdaf7d1af8$var$updateLocale() {
-    $1e5a04cdaf7d1af8$var$currentLocale = $1e5a04cdaf7d1af8$export$f09106e7c6677ec5();
-    for (let listener of $1e5a04cdaf7d1af8$var$listeners)listener($1e5a04cdaf7d1af8$var$currentLocale);
-}
-function useDefaultLocale_$1e5a04cdaf7d1af8$export$188ec29ebc2bdc3a() {
-    let isSSR = (0, SSRProvider/* useIsSSR */.wR)();
-    let [defaultLocale, setDefaultLocale] = (0, react.useState)($1e5a04cdaf7d1af8$var$currentLocale);
-    (0, react.useEffect)(()=>{
-        if ($1e5a04cdaf7d1af8$var$listeners.size === 0) window.addEventListener('languagechange', $1e5a04cdaf7d1af8$var$updateLocale);
-        $1e5a04cdaf7d1af8$var$listeners.add(setDefaultLocale);
-        return ()=>{
-            $1e5a04cdaf7d1af8$var$listeners.delete(setDefaultLocale);
-            if ($1e5a04cdaf7d1af8$var$listeners.size === 0) window.removeEventListener('languagechange', $1e5a04cdaf7d1af8$var$updateLocale);
-        };
-    }, []);
-    // We cannot determine the browser's language on the server, so default to
-    // en-US. This will be updated after hydration on the client to the correct value.
-    if (isSSR) return {
-        locale: 'en-US',
-        direction: 'ltr'
-    };
-    return defaultLocale;
-}
-
-
-
-//# sourceMappingURL=useDefaultLocale.module.js.map
-
-;// ./node_modules/@react-aria/i18n/dist/context.mjs
-
-
-
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-const $18f2051aff69b9bf$var$I18nContext = /*#__PURE__*/ (0, react).createContext(null);
-function $18f2051aff69b9bf$export$a54013f0d02a8f82(props) {
-    let { locale: locale, children: children } = props;
-    let defaultLocale = (0, $1e5a04cdaf7d1af8$export$188ec29ebc2bdc3a)();
-    let value = (0, $h9FiU$react).useMemo(()=>{
-        if (!locale) return defaultLocale;
-        return {
-            locale: locale,
-            direction: (0, $148a7a147e38ea7f$export$702d680b21cbd764)(locale) ? 'rtl' : 'ltr'
-        };
-    }, [
-        defaultLocale,
-        locale
-    ]);
-    return /*#__PURE__*/ (0, $h9FiU$react).createElement($18f2051aff69b9bf$var$I18nContext.Provider, {
-        value: value
-    }, children);
-}
-function $18f2051aff69b9bf$export$43bb16f9c6d9e3f7() {
-    let defaultLocale = (0, useDefaultLocale_$1e5a04cdaf7d1af8$export$188ec29ebc2bdc3a)();
-    let context = (0, react.useContext)($18f2051aff69b9bf$var$I18nContext);
-    return context || defaultLocale;
-}
-
-
-
-//# sourceMappingURL=context.module.js.map
-
-
-/***/ }),
-
-/***/ 29571:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   e: () => (/* binding */ $fca6afa0e843324b$export$87b761675e8eaa10),
-/* harmony export */   o: () => (/* binding */ $fca6afa0e843324b$export$f12b703ca79dfbb1)
-/* harmony export */ });
-/* harmony import */ var _context_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39892);
-/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92122);
-/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57612);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
 
 
 
 
 /*
- * Copyright 2022 Adobe. All rights reserved.
+ * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -1054,30 +806,54 @@ function $18f2051aff69b9bf$export$43bb16f9c6d9e3f7() {
  */ 
 
 
-const $fca6afa0e843324b$var$cache = new WeakMap();
-function $fca6afa0e843324b$var$getCachedDictionary(strings) {
-    let dictionary = $fca6afa0e843324b$var$cache.get(strings);
-    if (!dictionary) {
-        dictionary = new (0, _internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B)(strings);
-        $fca6afa0e843324b$var$cache.set(strings, dictionary);
-    }
-    return dictionary;
-}
-function $fca6afa0e843324b$export$87b761675e8eaa10(strings, packageName) {
-    return packageName && (0, _internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B).getGlobalDictionaryForPackage(packageName) || $fca6afa0e843324b$var$getCachedDictionary(strings);
-}
-function $fca6afa0e843324b$export$f12b703ca79dfbb1(strings, packageName) {
-    let { locale: locale } = (0, _context_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useLocale */ .Y)();
-    let dictionary = $fca6afa0e843324b$export$87b761675e8eaa10(strings, packageName);
-    return (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>new (0, _internationalized_string__WEBPACK_IMPORTED_MODULE_3__/* .LocalizedStringFormatter */ .J)(locale, dictionary), [
-        locale,
-        dictionary
+const $5c3e21d68f1c4674$var$styles = {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: '1px',
+    whiteSpace: 'nowrap'
+};
+function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
+    let { style: style, isFocusable: isFocusable } = props;
+    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
+        isDisabled: !isFocusable,
+        onFocusWithinChange: (val)=>setFocused(val)
+    });
+    // If focused, don't hide the element.
+    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
+        if (isFocused) return style;
+        else if (style) return {
+            ...$5c3e21d68f1c4674$var$styles,
+            ...style
+        };
+        else return $5c3e21d68f1c4674$var$styles;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        isFocused
     ]);
+    return {
+        visuallyHiddenProps: {
+            ...focusWithinProps,
+            style: combinedStyles
+        }
+    };
+}
+function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
+    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
 }
 
 
 
-//# sourceMappingURL=useLocalizedStringFormatter.module.js.map
+//# sourceMappingURL=VisuallyHidden.module.js.map
 
 
 /***/ }),

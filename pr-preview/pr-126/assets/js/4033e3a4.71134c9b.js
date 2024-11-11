@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9196],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 83525:
+/***/ 91260:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,48 +27,48 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/textarea.json
-const textarea_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textarea@1.0.2","_rev":"6-1e066224a3b6a100a86f2c478a1adc83","name":"@midas-ds/textarea","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.0.3","0.1.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-19T09:08:52.207Z","modified":"2024-11-01T10:27:15.288Z","0.0.1":"2024-09-19T09:08:52.548Z","0.0.3":"2024-09-24T06:38:03.732Z","0.1.0":"2024-10-07T12:26:01.764Z","1.0.0":"2024-10-18T13:40:52.798Z","1.0.1":"2024-10-22T14:09:13.325Z","1.0.2":"2024-11-01T10:27:15.096Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textarea ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10180,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/textfield":"1.0.2"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Rk7qTqrG6bzz7W4tRkfkcRhhe0eVXgjFJxlrPRzGpHiTvu95TS2Y67dsTmntlxsBQGsZUK37eI8+G3JE9Qh9qQ==","shasum":"d47a1184f883efd57d5add7fdc4fe8b45e864ba4","tarball":"https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.2.tgz","fileCount":8,"unpackedSize":77829,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCICcXfTePzqkAPyYzYnnCTiiJhrVv+bgsz/rNiyyuLgHtAiBOVrh7mvHkK7LlhanCkRCLUXUqqOGjbMjKdjqcE58O2g=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textarea_1.0.2_1730456834926_0.34701456151949994"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/textarea/src/index.ts + 2 modules
-var src = __webpack_require__(26196);
+;// ./apps/docs/static/data/textfield.json
+const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.2","_rev":"10-b0679865ddb235d86e257d7f3e583314","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.2"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-11-01T10:27:07.900Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13465,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","lucide-react":"^0.453.0","@midas-ds/button":"1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-4ME7WAt9BZrXdGdt3rQHIt1qC1dQ+0qvXPJZoYy5j+/5P90VCoM4J16BCIM1hC+nbeNq17Jge1Gxj2G27HaAcw==","shasum":"e48a6eca840e86653d77bffa47d2b0062c668cb7","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.2.tgz","fileCount":9,"unpackedSize":124042,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDKl++oPNK0WmVjd+Yg2lOcHCr2GSVBgrIuqV6rLYQEMAIgFhDdiXD847J1bCkiCVZPqbvZyT2ST8baijVolw16rjY="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.2_1730456827502_0.05294009338582084"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
+var grid_src = __webpack_require__(17172);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/textarea.mdx
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'TextArea',
-	tags: [],
-	description: 'När användaren ska fylla i längre information'
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/textarea",
-  "title": "TextArea",
-  "description": "När användaren ska fylla i längre information",
-  "source": "@site/docs/components/textarea.mdx",
+  "id": "components/textfield",
+  "title": "TextField",
+  "description": "Använd ett textfält när användaren ska fylla i en rad med text.",
+  "source": "@site/docs/components/textfield.mdx",
   "sourceDirName": "components",
-  "slug": "/components/textarea",
-  "permalink": "/pr-preview/pr-126/components/textarea",
+  "slug": "/components/textfield",
+  "permalink": "/pr-preview/pr-126/components/textfield",
   "draft": false,
   "unlisted": false,
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "TextArea",
-    "tags": [],
-    "description": "När användaren ska fylla i längre information"
+    "title": "TextField",
+    "description": "Använd ett textfält när användaren ska fylla i en rad med text."
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Tabs",
-    "permalink": "/pr-preview/pr-126/components/tabs"
+    "title": "TextArea",
+    "permalink": "/pr-preview/pr-126/components/textarea"
   },
   "next": {
-    "title": "TextField",
-    "permalink": "/pr-preview/pr-126/components/textfield"
+    "title": "Toast",
+    "permalink": "/pr-preview/pr-126/components/toast"
   }
 };
 const assets = {
@@ -84,14 +84,39 @@ const assets = {
 
 
 
+
 const toc = [{
   "value": "Introduktion",
   "id": "introduktion",
   "level": 2
 }, {
-  "value": "Installation och användnin",
-  "id": "installation-och-användnin",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
+}, {
+  "value": "Validering",
+  "id": "validering",
+  "level": 2
+}, {
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
+}, {
+  "value": "Personnummer",
+  "id": "personnummer",
+  "level": 3
+}, {
+  "value": "Lösenord",
+  "id": "lösenord",
+  "level": 2
+}, {
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "Desktop",
+  "id": "desktop",
+  "level": 3
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -102,27 +127,30 @@ function _createMdxContent(props) {
     a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'TextArea',
-      info: textarea_namespaceObject,
-      friendlyName: "Textfält"
+      name: 'TextField',
+      info: textfield_namespaceObject,
+      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-126/components/textfield",
-        children: "TextField"
+      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-126/components/textarea",
+        children: "TextArea"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användnin",
-      children: "Installation och användnin"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -130,7 +158,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/textarea\n"
+            children: "npm install @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -139,7 +167,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/textarea\n"
+            children: "yarn add @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -148,30 +176,160 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/textarea\n"
+            children: "pnpm add @midas-ds/textfield\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { TextArea } from '@midas-ds/textarea'\n"
+        children: "import { TextField } from '@midas-ds/textfield';\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        TextArea: src/* TextArea */.f
+        TextField: src/* TextField */.A_
       },
-      children: `<TextArea 
-  label="Kommentar"
-  description="Skriv en kommentar"
-  maxCharacters={50}
-  // showCounter={true}
+      children: `<TextField 
+  label={'Etikett'}
+  description={'Beskrivning'}
 />`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in din e-post *"
+  description="Obligatorisk"
+  isRequired
+  errorMessage="Felaktig e-postadress"
+  type="email"
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egen-validering",
+      children: "Egen validering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Det går också att definiera en egen funktion för validering:"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "personnummer",
+      children: "Personnummer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användare.\nFöljande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Frivilliga sekelsiffor 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:19:20)?"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Matchar nästkommande siffor som 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|1[0-2])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Matchar nästkommande siffor som 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|[12]\\\\d|3[01])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Matchar avgränsaren som ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "+"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "-"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "blanksteg"
+        }), " eller ingen samt fyra efterföljande siffor ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:[-+ ]?\\\\d{4})?"
+        })]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rätt sålänge det är 10 eller 12 siffror. Däremot returnerar vi alltid formatet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "ÅÅÅÅMMDDXXXX"
+      }), " från komponenten oavsett vad användaren skrev."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="text"
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type={'password'}"
+      }), " för att kunna visa och dölja inmatad text."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="password" 
+  name="pw" 
+  label="Skriv in ditt lösenord" 
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "desktop",
+      children: "Desktop"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-126/components/grid",
+        children: "Grid"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-126/components/flex",
+        children: "Flex"
+      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Grid: grid_src/* Grid */.x,
+        TextField: src/* TextField */.A_,
+        GridItem: grid_src/* GridItem */.E
+      },
+      children: `<Grid fluid={true}>
+  <GridItem col={2}>
+    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+  </GridItem>
+  <GridItem col={8}>
+    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+  </GridItem>
+</Grid>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: textarea_namespaceObject
+      info: textfield_namespaceObject
     })]
   });
 }
@@ -244,8 +402,9 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86025);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74848);
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');var storybookLink=(0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Ay)("/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs");if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:storybookLink,standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -258,6 +417,44 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 // import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
 var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=useDynamicImport(name);if(!props){return null;}return/*#__PURE__*/_jsx(_Fragment,{children:/*#__PURE__*/_jsxs("table",{children:[/*#__PURE__*/_jsx("thead",{children:/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("th",{children:"Name"}),/*#__PURE__*/_jsx("th",{children:"Type"}),/*#__PURE__*/_jsx("th",{children:"Default Value"}),/*#__PURE__*/_jsx("th",{children:"Required"}),/*#__PURE__*/_jsx("th",{children:"Description"})]})}),/*#__PURE__*/_jsx("tbody",{children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:key})}),/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/_jsx("td",{children:props[key].defaultValue&&/*#__PURE__*/_jsx("code",{children:props[key].defaultValue.value})}),/*#__PURE__*/_jsx("td",{children:props[key].required?'Yes':'No'}),/*#__PURE__*/_jsx("td",{style:{width:'30%'},children:props[key].description})]},key);})})]})});};
+
+/***/ }),
+
+/***/ 17172:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  x: () => (/* reexport */ Grid),
+  E: () => (/* reexport */ GridItem)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/grid/src/lib/Grid.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/grid/src/lib/Grid.tsx
+var _excluded=["children","fluid"];/**
+ * Grid baserat på display: grid;
+ * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
+ *
+ * ### Children
+ * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
+ */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
+;// ./packages/grid/src/lib/GridItem.tsx
+var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
+var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
+;// ./packages/grid/src/lib/index.ts
+
+;// ./packages/grid/src/index.ts
+
 
 /***/ }),
 
@@ -289,38 +486,6 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
-
-
-/***/ }),
-
-/***/ 26196:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  f: () => (/* reexport */ TextArea)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/textarea/src/lib/TextArea.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","textArea":"textArea_tiIs","count":"count_OzSk"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
-var TextField = __webpack_require__(32945);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
-var dist_TextArea = __webpack_require__(43660);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/textarea/src/lib/TextArea.tsx
-'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var _React$useState2=react.useState(false),hasExceededMaxCharacters=_React$useState2[0],setHasExceededMaxCharacters=_React$useState2[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);if(maxCharacters){setHasExceededMaxCharacters(newValue.length>maxCharacters);}};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:TextArea_module.count,children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var getErrorMessage=function getErrorMessage(maxCharacters){if(hasExceededMaxCharacters){return value.length-maxCharacters+" tecken f\xF6r mycket";}return errorMessage;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:src/* TextFieldStyles */.Ql.inputField},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,Object.assign({label:label,description:description,errorMessage:getErrorMessage(maxCharacters||0),isInvalid:hasExceededMaxCharacters||props.isInvalid},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]}))}));};
-;// ./packages/textarea/src/index.ts
 
 
 /***/ }),

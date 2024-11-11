@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2169],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
 
-/***/ 74180:
+/***/ 70003:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,80 +27,76 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
-var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var src = __webpack_require__(81706);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/accordion.json
-const accordion_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/accordion@1.0.2","_rev":"7-10e9bb6ee89e42063cb5858faf808c77","name":"@midas-ds/accordion","dist-tags":{"latest":"1.0.2"},"versions":["0.4.23","0.4.24","0.4.25","0.5.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:34:18.911Z","modified":"2024-10-24T13:26:41.091Z","0.4.23":"2024-09-10T14:34:19.191Z","0.4.24":"2024-09-11T08:41:50.970Z","0.4.25":"2024-09-12T13:02:08.663Z","0.5.1":"2024-10-07T12:03:45.519Z","1.0.0":"2024-10-18T13:40:30.502Z","1.0.1":"2024-10-22T12:44:33.119Z","1.0.2":"2024-10-24T13:26:40.881Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/accordion ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":12235,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-00WjrYjmdr9GDwIcfUu/HvUBz3G4FDfvJAy3HSwxGue5RnyW3pq/c2kYyWnHkjH1XoPJHoIo5+90B0uNpq0dpQ==","shasum":"0f2a152410b301c455a6db7dc764be24a7ad30fb","tarball":"https://registry.npmjs.org/@midas-ds/accordion/-/accordion-1.0.2.tgz","fileCount":12,"unpackedSize":45881,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIBpNDO5UsF6V4ZoF4GoWAwDUfiMASBtfrg53QrYeNWlqAiB6lxzcW3j2+Vy9b/CtOiFn/D/7WMGvPaXDaukWH1phXg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/accordion_1.0.2_1729776400663_0.28891734005095704"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/button.json
+const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.1.0","_rev":"19-3acd7224074148c741044b96a7d91087","name":"@midas-ds/button","dist-tags":{"latest":"1.1.0"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2","1.1.0"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-11-01T10:27:02.755Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z","1.1.0":"2024-11-01T10:27:02.521Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":20368,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-KTOOtV7K/RqVGh3WA0Dj1N3Zwofq2v1EvrIl3ktZy4fprI5shfRx8gWbLsUeGxV/eAgGARMPR+E6fqb73iLPdg==","shasum":"32f012a4dfe7e57c137f3c5b7c72c1c0af1f8c13","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.1.0.tgz","fileCount":9,"unpackedSize":88663,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDPF7McX33R6T6drKYlZ3wkZ89sB5LLbKtq57NncEgcYQIgUS/UInvswgiAQdej3uaDgb6GporunB1VphlT0BhivMw="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.1.0_1730456822325_0.6191442598705927"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/accordion.mdx
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
+var plus = __webpack_require__(80697);
+;// ./apps/docs/docs/components/button.mdx
 
 
 const frontMatter = {
-	title: 'Accordion',
-	sidebar_position: 1,
+	title: 'Button',
+	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
 	tags: [
-		'components',
-		'menu',
-		'accordion'
-	],
-	description: 'Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.'
+		'button',
+		'form'
+	]
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/accordion",
-  "title": "Accordion",
-  "description": "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.",
-  "source": "@site/docs/components/accordion.mdx",
+  "id": "components/button",
+  "title": "Button",
+  "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
+  "source": "@site/docs/components/button.mdx",
   "sourceDirName": "components",
-  "slug": "/components/accordion",
-  "permalink": "/pr-preview/pr-126/components/accordion",
+  "slug": "/components/button",
+  "permalink": "/pr-preview/pr-126/components/button",
   "draft": false,
   "unlisted": false,
   "tags": [
     {
       "inline": true,
-      "label": "components",
-      "permalink": "/pr-preview/pr-126/tags/components"
+      "label": "button",
+      "permalink": "/pr-preview/pr-126/tags/button"
     },
     {
       "inline": true,
-      "label": "menu",
-      "permalink": "/pr-preview/pr-126/tags/menu"
-    },
-    {
-      "inline": true,
-      "label": "accordion",
-      "permalink": "/pr-preview/pr-126/tags/accordion"
+      "label": "form",
+      "permalink": "/pr-preview/pr-126/tags/form"
     }
   ],
   "version": "current",
-  "sidebarPosition": 1,
   "frontMatter": {
-    "title": "Accordion",
-    "sidebar_position": 1,
+    "title": "Button",
+    "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
     "tags": [
-      "components",
-      "menu",
-      "accordion"
-    ],
-    "description": "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida."
+      "button",
+      "form"
+    ]
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Komponenter",
-    "permalink": "/pr-preview/pr-126/components/"
-  },
-  "next": {
     "title": "Breadcrumbs",
     "permalink": "/pr-preview/pr-126/components/breadcrumbs"
+  },
+  "next": {
+    "title": "Card",
+    "permalink": "/pr-preview/pr-126/components/card"
   }
 };
 const assets = {
 
 };
+
+
 
 
 
@@ -120,9 +116,37 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
+  "value": "Primärknapp",
+  "id": "primärknapp",
+  "level": 2
+}, {
+  "value": "Sekundär knapp",
+  "id": "sekundär-knapp",
+  "level": 2
+}, {
+  "value": "Tertiär knapp",
+  "id": "tertiär-knapp",
+  "level": 2
+}, {
+  "value": "Små knappar",
+  "id": "små-knappar",
+  "level": 2
+}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
+  "level": 3
+}, {
+  "value": "Generella riktlinjer",
+  "id": "generella-riktlinjer",
+  "level": 3
+}, {
+  "value": "Placering och ordning",
+  "id": "placering-och-ordning",
+  "level": 3
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -130,8 +154,10 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
     li: "li",
     p: "p",
     pre: "pre",
@@ -141,15 +167,14 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Accordion',
-      info: accordion_namespaceObject,
-      friendlyName: 'Dragspel',
-      overrideHeadlessLink: "https://www.radix-ui.com/primitives/docs/components/accordion"
+      name: 'Button',
+      info: button_namespaceObject,
+      friendlyName: 'Knapp'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren."
+      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -160,7 +185,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/accordion\n"
+            children: "npm install @midas-ds/button\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -169,7 +194,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/accordion\n"
+            children: "yarn add @midas-ds/button\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -178,44 +203,163 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/accordion\n"
+            children: "pnpm add @midas-ds/button\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import {\n  Accordion,\n  AccordionItem,\n  AccordionTrigger,\n  AccordionContent,\n} from '@midas-ds/accordion';\n"
+        children: "import { Button } from '@midas-ds/button'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Accordion: src/* Accordion */.nD,
-        AccordionItem: src/* AccordionItem */.As,
-        AccordionTrigger: src/* AccordionTrigger */.$m,
-        AccordionContent: src/* AccordionContent */.ub
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Button: src/* Button */.$
       },
-      children: `<Accordion type={'multiple'}>
-  {fruits.shuffled().map(fruit => (
-    <AccordionItem key={fruit.value} value={fruit.value}>
-      <AccordionTrigger>{fruit.name}</AccordionTrigger>
-      <AccordionContent>
-        {fruit.description}
-      </AccordionContent>
-    </AccordionItem>
-  ))}
-</Accordion>`
+      children: `<Flex>
+<FlexItem col="auto">
+  <Button>{fruits.shuffled(1).name}</Button>
+</FlexItem>
+<FlexItem col="auto">
+  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+</FlexItem>
+<FlexItem col="auto">
+  <Button isDisabled>{fruits.shuffled(1).name}</Button>
+</FlexItem>
+</Flex>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "primärknapp",
+      children: "Primärknapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
+    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
+      children: "Slutför"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "sekundär-knapp",
+      children: "Sekundär knapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka)."
+    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
+      variant: 'secondary',
+      children: "Tillbaka"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "tertiär-knapp",
+      children: "Tertiär knapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        children: "Slutför"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        variant: "secondary",
+        children: "Tillbaka"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        variant: "tertiary",
+        children: "Ta bort anmälan"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "icon"
+      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "iconPlacement"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { Plus } from 'lucide-react'\n;<Button\n  icon={Plus}\n  variant='tertiary'\n>\n  Lägg till rad\n</Button>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
+      icon: plus/* default */.A,
+      variant: "tertiary",
+      children: "Lägg till rad"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "små-knappar",
+      children: "Små knappar"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "size=\"small\""
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        size: 'small',
+        children: "Primär"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        size: 'small',
+        variant: 'secondary',
+        children: "Sekundär"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        size: 'small',
+        variant: 'tertiary',
+        children: "Tertiär"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/design-patterns/buttons-and-links",
+        children: "Knappar och länkar"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "generella-riktlinjer",
+      children: "Generella riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan."
+        children: "Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Undvik att ha för många knappar på samma sida."
       }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "placering-och-ordning",
+      children: "Placering och ordning"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan."
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        children: "Skicka"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        variant: 'secondary',
+        children: "Avbryt"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: [(0,jsx_runtime.jsx)("br", {}), "I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen\n(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från\nvänster till höger (som att bläddra i en bok) och knapparna motsvarar detta."]
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      style: {
+        gap: '8px',
+        display: 'flex',
+        margin: '8px'
+      },
+      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
+        variant: 'secondary',
+        children: "Föregående"
+      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
+        children: "Nästa"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: accordion_namespaceObject
+      info: button_namespaceObject
     })]
   });
 }
@@ -288,8 +432,9 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86025);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74848);
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');var storybookLink=(0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Ay)("/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs");if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:storybookLink,standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -333,6 +478,34 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
+
+
+/***/ }),
+
+/***/ 80697:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Plus)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+]);
+
+
+//# sourceMappingURL=plus.js.map
 
 
 /***/ }),

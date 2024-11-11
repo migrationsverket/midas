@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6960],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2169],{
 
-/***/ 26126:
+/***/ 74180:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,56 +27,80 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
+var src = __webpack_require__(17986);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/spinner.json
-const spinner_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/spinner@1.0.1","_rev":"5-ab1f2d41506540b1764c144836c5cecb","name":"@midas-ds/spinner","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.0.2","0.0.3","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:38:24.661Z","modified":"2024-10-24T13:26:50.162Z","0.0.1":"2024-09-10T14:38:24.936Z","0.0.2":"2024-09-11T07:13:03.358Z","0.0.3":"2024-10-07T12:22:11.408Z","1.0.0":"2024-10-18T13:40:52.737Z","1.0.1":"2024-10-24T13:26:49.943Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"This library was generated with [Nx](https://nx.dev).","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":8270,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"lucide-react":"^0.453.0"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-UiG7eb55RxZ7t6rEaBOdU5c6dO2ZhW5xMmjhH4bB+c495CXq7ZhXA1QbFSfPWXr+L9LdlhzNMChs9fY9HFLF7Q==","shasum":"5c1194c44e91220226da1aca4d07c7e659e08a4e","tarball":"https://registry.npmjs.org/@midas-ds/spinner/-/spinner-1.0.1.tgz","fileCount":8,"unpackedSize":8711,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIF9jCOq8/qNcUPTpp6iT3iTT9fJIYp1Vl5X55tTWHsLBAiA4b8o2vTkiVnpdWKlm5u/xPJgfjzqOnmL+5mDDBZAlwA=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/spinner_1.0.1_1729776409766_0.557491192911886"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/spinner/src/index.ts + 2 modules
-var src = __webpack_require__(75735);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var button_src = __webpack_require__(81706);
+;// ./apps/docs/static/data/accordion.json
+const accordion_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/accordion@1.0.2","_rev":"7-10e9bb6ee89e42063cb5858faf808c77","name":"@midas-ds/accordion","dist-tags":{"latest":"1.0.2"},"versions":["0.4.23","0.4.24","0.4.25","0.5.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:34:18.911Z","modified":"2024-10-24T13:26:41.091Z","0.4.23":"2024-09-10T14:34:19.191Z","0.4.24":"2024-09-11T08:41:50.970Z","0.4.25":"2024-09-12T13:02:08.663Z","0.5.1":"2024-10-07T12:03:45.519Z","1.0.0":"2024-10-18T13:40:30.502Z","1.0.1":"2024-10-22T12:44:33.119Z","1.0.2":"2024-10-24T13:26:40.881Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/accordion ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":12235,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-00WjrYjmdr9GDwIcfUu/HvUBz3G4FDfvJAy3HSwxGue5RnyW3pq/c2kYyWnHkjH1XoPJHoIo5+90B0uNpq0dpQ==","shasum":"0f2a152410b301c455a6db7dc764be24a7ad30fb","tarball":"https://registry.npmjs.org/@midas-ds/accordion/-/accordion-1.0.2.tgz","fileCount":12,"unpackedSize":45881,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIBpNDO5UsF6V4ZoF4GoWAwDUfiMASBtfrg53QrYeNWlqAiB6lxzcW3j2+Vy9b/CtOiFn/D/7WMGvPaXDaukWH1phXg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/accordion_1.0.2_1729776400663_0.28891734005095704"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/spinner.mdx
+;// ./apps/docs/docs/components/accordion.mdx
 
 
 const frontMatter = {
-	title: 'Spinner',
-	tags: [],
-	description: 'Upplys användaren om att systemet/tjänsten laddar'
+	title: 'Accordion',
+	sidebar_position: 1,
+	tags: [
+		'components',
+		'menu',
+		'accordion'
+	],
+	description: 'Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/spinner",
-  "title": "Spinner",
-  "description": "Upplys användaren om att systemet/tjänsten laddar",
-  "source": "@site/docs/components/spinner.mdx",
+  "id": "components/accordion",
+  "title": "Accordion",
+  "description": "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.",
+  "source": "@site/docs/components/accordion.mdx",
   "sourceDirName": "components",
-  "slug": "/components/spinner",
-  "permalink": "/pr-preview/pr-126/components/spinner",
+  "slug": "/components/accordion",
+  "permalink": "/pr-preview/pr-126/components/accordion",
   "draft": false,
   "unlisted": false,
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "components",
+      "permalink": "/pr-preview/pr-126/tags/components"
+    },
+    {
+      "inline": true,
+      "label": "menu",
+      "permalink": "/pr-preview/pr-126/tags/menu"
+    },
+    {
+      "inline": true,
+      "label": "accordion",
+      "permalink": "/pr-preview/pr-126/tags/accordion"
+    }
+  ],
   "version": "current",
+  "sidebarPosition": 1,
   "frontMatter": {
-    "title": "Spinner",
-    "tags": [],
-    "description": "Upplys användaren om att systemet/tjänsten laddar"
+    "title": "Accordion",
+    "sidebar_position": 1,
+    "tags": [
+      "components",
+      "menu",
+      "accordion"
+    ],
+    "description": "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida."
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Select",
-    "permalink": "/pr-preview/pr-126/components/select"
+    "title": "Komponenter",
+    "permalink": "/pr-preview/pr-126/components/"
   },
   "next": {
-    "title": "Table",
-    "permalink": "/pr-preview/pr-126/components/table"
+    "title": "Breadcrumbs",
+    "permalink": "/pr-preview/pr-126/components/breadcrumbs"
   }
 };
 const assets = {
 
 };
-
 
 
 
@@ -96,10 +120,6 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Kombinerat med andra komponenter",
-  "id": "kombinerat-med-andra-komponenter",
-  "level": 3
-}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
@@ -112,23 +132,24 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Spinner',
-      info: spinner_namespaceObject,
-      friendlyName: 'Laddningsindikator',
-      overrideHeadlessLink: ""
+      name: 'Accordion',
+      info: accordion_namespaceObject,
+      friendlyName: 'Dragspel',
+      overrideHeadlessLink: "https://www.radix-ui.com/primitives/docs/components/accordion"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenten används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden."
+      children: "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -139,7 +160,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/spinner\n"
+            children: "npm install @midas-ds/accordion\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -148,7 +169,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/spinner\n"
+            children: "yarn add @midas-ds/accordion\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -157,47 +178,44 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/spinner\n"
+            children: "pnpm add @midas-ds/accordion\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Spinner } from '@midas-ds/spinner'\n"
+        children: "import {\n  Accordion,\n  AccordionItem,\n  AccordionTrigger,\n  AccordionContent,\n} from '@midas-ds/accordion';\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Spinner: src/* Spinner */.y
+        Accordion: src/* Accordion */.nD,
+        AccordionItem: src/* AccordionItem */.As,
+        AccordionTrigger: src/* AccordionTrigger */.$m,
+        AccordionContent: src/* AccordionContent */.ub
       },
-      children: `<Spinner />`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "kombinerat-med-andra-komponenter",
-      children: "Kombinerat med andra komponenter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använd varianten small för att kombinera med andra komponenter t.ex Button"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Spinner: src/* Spinner */.y,
-        Button: button_src/* Button */.$
-      },
-      children: `<Button>
-<Spinner
-  dark
-  small
-/>
-Laddar
-</Button>`
+      children: `<Accordion type={'multiple'}>
+  {fruits.shuffled().map(fruit => (
+    <AccordionItem key={fruit.value} value={fruit.value}>
+      <AccordionTrigger>{fruit.name}</AccordionTrigger>
+      <AccordionContent>
+        {fruit.description}
+      </AccordionContent>
+    </AccordionItem>
+  ))}
+</Accordion>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Om det väntas ta mer än 10 sekunder att ladda sidan bör det förutom en spinner finnas ett meddelande till användaren om det."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan."
+      }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: spinner_namespaceObject
+      info: accordion_namespaceObject
     })]
   });
 }
@@ -270,8 +288,9 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86025);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74848);
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');var storybookLink=(0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Ay)("/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs");if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:storybookLink,standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -315,59 +334,6 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
-
-
-/***/ }),
-
-/***/ 75735:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  y: () => (/* reexport */ Spinner)
-});
-
-;// ./packages/spinner/src/lib/Spinner.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Spinner_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","red100":"#b90835","blue150":"#143c50","container":"container_q2e8","spinner":"spinner_TRW8","rotating":"rotating_kCFF","dark":"dark_Z44f","vsHidden":"vsHidden_FrrE"});
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/loader-circle.js
-var loader_circle = __webpack_require__(8723);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/spinner/src/lib/Spinner.tsx
-var Spinner=function Spinner(_ref){var small=_ref.small,dark=_ref.dark;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Spinner_module.container,role:"status",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(loader_circle/* default */.A,{className:(0,clsx/* default */.A)(Spinner_module.spinner,dark&&Spinner_module.dark),size:small?16:32,strokeWidth:small?2:3,absoluteStrokeWidth:true}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:Spinner_module.vsHidden,children:"Laddar, v\xE4nligen v\xE4nta."})]});};
-;// ./packages/spinner/src/index.ts
-
-
-/***/ }),
-
-/***/ 8723:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ LoaderCircle)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const LoaderCircle = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("LoaderCircle", [
-  ["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]
-]);
-
-
-//# sourceMappingURL=loader-circle.js.map
 
 
 /***/ }),

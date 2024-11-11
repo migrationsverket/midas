@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9078],{
 
-/***/ 70003:
+/***/ 15264:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,75 +27,65 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var src = __webpack_require__(81706);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/button.json
-const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.1.0","_rev":"19-3acd7224074148c741044b96a7d91087","name":"@midas-ds/button","dist-tags":{"latest":"1.1.0"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2","1.1.0"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-11-01T10:27:02.755Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z","1.1.0":"2024-11-01T10:27:02.521Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":20368,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-KTOOtV7K/RqVGh3WA0Dj1N3Zwofq2v1EvrIl3ktZy4fprI5shfRx8gWbLsUeGxV/eAgGARMPR+E6fqb73iLPdg==","shasum":"32f012a4dfe7e57c137f3c5b7c72c1c0af1f8c13","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.1.0.tgz","fileCount":9,"unpackedSize":88663,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDPF7McX33R6T6drKYlZ3wkZ89sB5LLbKtq57NncEgcYQIgUS/UInvswgiAQdej3uaDgb6GporunB1VphlT0BhivMw="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.1.0_1730456822325_0.6191442598705927"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/flex.json
+const flex_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/flex@1.0.1","_rev":"6-a358097f2c62e04fbf713ef284bfcd2c","name":"@midas-ds/flex","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.1.0","0.1.1","0.1.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:00.258Z","modified":"2024-10-24T13:26:44.017Z","0.0.1":"2024-09-10T14:37:00.555Z","0.1.0":"2024-09-12T12:26:58.577Z","0.1.1":"2024-09-12T13:02:19.212Z","0.1.2":"2024-10-07T12:13:46.840Z","1.0.0":"2024-10-18T13:40:48.416Z","1.0.1":"2024-10-24T13:26:43.836Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/flex ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9818,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-T6h+Ke3QzvKPEtxcSZfZTWGabQMmkgjBIrh1k+alrQqXHwhgH4sVH22A2bADEi8RE3XB6FISUfr41EnIYCtOIw==","shasum":"cb5dca8f1262944a9d17611aff0380053a1df137","tarball":"https://registry.npmjs.org/@midas-ds/flex/-/flex-1.0.1.tgz","fileCount":10,"unpackedSize":10519,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIHs8WQsyXX5eMIfqYcv+KJFli2RLyDrWO/t7jVbXRfnKAiByuYOhwwEj/QMGleZodoiAaDpKnuaaNaQX8m9hJ+5EEg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/flex_1.0.1_1729776403619_0.11168719737503108"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
+var src = __webpack_require__(93294);
+// EXTERNAL MODULE: ./packages/card/src/index.ts + 3 modules
+var card_src = __webpack_require__(70720);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
-var plus = __webpack_require__(80697);
-;// ./apps/docs/docs/components/button.mdx
+;// ./apps/docs/docs/components/flex.mdx
 
 
 const frontMatter = {
-	title: 'Button',
-	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
+	title: 'Flex',
 	tags: [
-		'button',
-		'form'
-	]
+		'grid'
+	],
+	description: 'Grid baserat på tekniken display flex i css'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/button",
-  "title": "Button",
-  "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
-  "source": "@site/docs/components/button.mdx",
+  "id": "components/flex",
+  "title": "Flex",
+  "description": "Grid baserat på tekniken display flex i css",
+  "source": "@site/docs/components/flex.mdx",
   "sourceDirName": "components",
-  "slug": "/components/button",
-  "permalink": "/pr-preview/pr-126/components/button",
+  "slug": "/components/flex",
+  "permalink": "/pr-preview/pr-126/components/flex",
   "draft": false,
   "unlisted": false,
   "tags": [
     {
       "inline": true,
-      "label": "button",
-      "permalink": "/pr-preview/pr-126/tags/button"
-    },
-    {
-      "inline": true,
-      "label": "form",
-      "permalink": "/pr-preview/pr-126/tags/form"
+      "label": "grid",
+      "permalink": "/pr-preview/pr-126/tags/grid"
     }
   ],
   "version": "current",
   "frontMatter": {
-    "title": "Button",
-    "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
+    "title": "Flex",
     "tags": [
-      "button",
-      "form"
-    ]
+      "grid"
+    ],
+    "description": "Grid baserat på tekniken display flex i css"
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Breadcrumbs",
-    "permalink": "/pr-preview/pr-126/components/breadcrumbs"
+    "title": "FileUpload",
+    "permalink": "/pr-preview/pr-126/components/fileupload"
   },
   "next": {
-    "title": "Card",
-    "permalink": "/pr-preview/pr-126/components/card"
+    "title": "Grid",
+    "permalink": "/pr-preview/pr-126/components/grid"
   }
 };
 const assets = {
 
 };
-
 
 
 
@@ -116,65 +106,57 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Primärknapp",
-  "id": "primärknapp",
-  "level": 2
+  "value": "Grid",
+  "id": "grid",
+  "level": 3
 }, {
-  "value": "Sekundär knapp",
-  "id": "sekundär-knapp",
-  "level": 2
-}, {
-  "value": "Tertiär knapp",
-  "id": "tertiär-knapp",
-  "level": 2
-}, {
-  "value": "Små knappar",
-  "id": "små-knappar",
-  "level": 2
+  "value": "FlexItem",
+  "id": "flexitem",
+  "level": 3
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
 }, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
+  "value": "När ska du använda Flex ?",
+  "id": "när-ska-du-använda-flex-",
   "level": 3
 }, {
-  "value": "Generella riktlinjer",
-  "id": "generella-riktlinjer",
+  "value": "Så här använder du Flex",
+  "id": "så-här-använder-du-flex",
   "level": 3
-}, {
-  "value": "Placering och ordning",
-  "id": "placering-och-ordning",
-  "level": 3
-}, {
-  "value": "Beroenden",
-  "id": "beroenden",
-  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
+    table: "table",
+    tbody: "tbody",
+    td: "td",
+    th: "th",
+    thead: "thead",
+    tr: "tr",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Button',
-      info: button_namespaceObject,
-      friendlyName: 'Knapp'
+      name: 'Flex',
+      info: flex_namespaceObject,
+      friendlyName: 'Rutnät',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Grid baserat på tekniken ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "display: flex;"
+      }), " i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
+      children: "Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -185,7 +167,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/button\n"
+            children: "npm install @midas-ds/flex\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -194,7 +176,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/button\n"
+            children: "yarn add @midas-ds/flex\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -203,163 +185,132 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/button\n"
+            children: "pnpm add @midas-ds/flex\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Button } from '@midas-ds/button'\n"
+        children: "import { Flex } from '@midas-ds/flex'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$
+        Flex: src/* Flex */.s,
+        FlexItem: src/* FlexItem */.Z,
+        Card: card_src/* Card */.Z
       },
       children: `<Flex>
-<FlexItem col="auto">
-  <Button>{fruits.shuffled(1).name}</Button>
-</FlexItem>
-<FlexItem col="auto">
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-</FlexItem>
-<FlexItem col="auto">
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</FlexItem>
+  <FlexItem col={12}>
+      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem>
+      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem col={"auto"}>
+      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem col={6}>
+      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
 </Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "primärknapp",
-      children: "Primärknapp"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "grid",
+      children: "Grid"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      children: "Slutför"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sekundär-knapp",
-      children: "Sekundär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka)."
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      variant: 'secondary',
-      children: "Tillbaka"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tertiär-knapp",
-      children: "Tertiär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Slutför"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: "secondary",
-        children: "Tillbaka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: "tertiary",
-        children: "Ta bort anmälan"
+      children: "Grids skalas enligt följande specifikation."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
+      children: [(0,jsx_runtime.jsx)(_components.thead, {
+        children: (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.th, {
+            children: "Skärmstorlek"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Margin"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Children"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Kollumner"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Gutter"
+          })]
+        })
+      }), (0,jsx_runtime.jsxs)(_components.tbody, {
+        children: [(0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "0 - 767 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "1"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "768 px - 1199 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "32 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "1200 px - 1440 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "32 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "24 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "> 1440 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "1368 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "24 px"
+          })]
+        })]
       })]
-    }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "icon"
-      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "iconPlacement"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Plus } from 'lucide-react'\n;<Button\n  icon={Plus}\n  variant='tertiary'\n>\n  Lägg till rad\n</Button>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      icon: plus/* default */.A,
-      variant: "tertiary",
-      children: "Lägg till rad"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "små-knappar",
-      children: "Små knappar"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "flexitem",
+      children: "FlexItem"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "size=\"small\""
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        children: "Primär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        variant: 'secondary',
-        children: "Sekundär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        variant: 'tertiary',
-        children: "Tertiär"
-      })]
+      children: ["Komponenten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<FlexItem>"
+      }), " agrerar som direkt child till ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Flex>"
+      }), ". FlexItem accepterar en prop col som kan ta värdena auto eller 1-12."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "generella-riktlinjer",
-      children: "Generella riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik att ha för många knappar på samma sida."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "placering-och-ordning",
-      children: "Placering och ordning"
+      id: "när-ska-du-använda-flex-",
+      children: "När ska du använda Flex ?"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan."
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Skicka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: 'secondary',
-        children: "Avbryt"
-      })]
+      children: "Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "så-här-använder-du-flex",
+      children: "Så här använder du Flex"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [(0,jsx_runtime.jsx)("br", {}), "I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen\n(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från\nvänster till höger (som att bläddra i en bok) och knapparna motsvarar detta."]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: 'secondary',
-        children: "Föregående"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Nästa"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: button_namespaceObject
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Flex></Flex>"
+      }), " som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<FlexItem col=\"antal-kolumner\"></FlexItem>"
+      }), "."]
     })]
   });
 }
@@ -432,8 +383,9 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+/* harmony import */ var _docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(86025);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(74848);
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');var storybookLink=(0,_docusaurus_useBaseUrl__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Ay)("/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs");if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:storybookLink,standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -446,6 +398,40 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 // import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
 var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=useDynamicImport(name);if(!props){return null;}return/*#__PURE__*/_jsx(_Fragment,{children:/*#__PURE__*/_jsxs("table",{children:[/*#__PURE__*/_jsx("thead",{children:/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("th",{children:"Name"}),/*#__PURE__*/_jsx("th",{children:"Type"}),/*#__PURE__*/_jsx("th",{children:"Default Value"}),/*#__PURE__*/_jsx("th",{children:"Required"}),/*#__PURE__*/_jsx("th",{children:"Description"})]})}),/*#__PURE__*/_jsx("tbody",{children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:key})}),/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/_jsx("td",{children:props[key].defaultValue&&/*#__PURE__*/_jsx("code",{children:props[key].defaultValue.value})}),/*#__PURE__*/_jsx("td",{children:props[key].required?'Yes':'No'}),/*#__PURE__*/_jsx("td",{style:{width:'30%'},children:props[key].description})]},key);})})]})});};
+
+/***/ }),
+
+/***/ 70720:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Z: () => (/* reexport */ Card)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/link/src/index.ts + 2 modules
+var src = __webpack_require__(10515);
+;// ./packages/card/src/lib/Card.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Card_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray20":"#e6e6e6","gray10":"#f2f2f2","gray150":"#1f1f1f","blue20":"#d5e5ed","black":"#000000","mediumWeight":"500","fastTransition":"250ms","card":"card_k6lA","content":"content_IA2f","heading":"heading_KjLb","image":"image_APT7","background":"background_SqGP","text":"text_v73H"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/card/src/lib/Card.tsx
+'use client';var _excluded=["image","background","title","content","link","headingTag","customImageComponent"];/**
+ * This component renders a card with optional image, title, content.
+ */var Card=function Card(_ref){var image=_ref.image,background=_ref.background,title=_ref.title,content=_ref.content,link=_ref.link,_ref$headingTag=_ref.headingTag,HeadingTag=_ref$headingTag===void 0?'h1':_ref$headingTag,customImageComponent=_ref.customImageComponent,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(Card_module.card,background&&Card_module.background,rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Card_module.content,children:[customImageComponent?customImageComponent:(image==null?void 0:image.source)&&/*#__PURE__*/(0,jsx_runtime.jsx)("img",{src:image.source,alt:image.description,className:Card_module.image}),/*#__PURE__*/(0,jsx_runtime.jsx)(HeadingTag,{className:Card_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsx)("p",{className:Card_module.text,children:content})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Link */.N,{href:link.href,target:link.target,standalone:true,stretched:true,children:link.title})]}));};
+;// ./packages/card/src/lib/index.ts
+
+;// ./packages/card/src/index.ts
+
 
 /***/ }),
 
@@ -477,34 +463,6 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
-
-
-/***/ }),
-
-/***/ 80697:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Plus)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-]);
-
-
-//# sourceMappingURL=plus.js.map
 
 
 /***/ }),
