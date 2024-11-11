@@ -4,7 +4,7 @@ import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
-  ValidationResult,
+  ValidationResult
 } from 'react-aria-components'
 import {
   Button,
@@ -12,7 +12,7 @@ import {
   Popover,
   ComboBox as AriaComboBox,
   ListBox,
-  ListBoxItem,
+  ListBoxItem
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import { InputWrapper } from '@midas-ds/textfield'
@@ -49,15 +49,15 @@ export function ComboBox<T extends object>({
           <Input className={styles.input} />
           <Button
             className={styles.button}
-            aria-label="Visa lista"
+            aria-label='Visa lista'
           >
             <div
               className={styles.icon}
-              aria-hidden="true"
+              aria-hidden='true'
             >
               <ChevronDown
-                height={16}
-                width={16}
+                size={20}
+                aria-hidden
               />
             </div>
           </Button>

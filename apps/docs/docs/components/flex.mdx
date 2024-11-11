@@ -4,21 +4,25 @@ tags: [grid]
 description: Grid baserat på tekniken display flex i css
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/flex.json'
 import { Flex, FlexItem } from '../../../../packages/flex/src'
 import { Card } from '../../../../packages/card/src'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Flex'} info={Info} friendlyName={'Rutnät'} overrideHeadlessLink="" />
+<ComponentHeader
+  name={'Flex'}
+  info={Info}
+  friendlyName={'Rutnät'}
+  overrideHeadlessLink=''
+/>
 
 ## Introduktion
 
 Grid baserat på tekniken `display: flex;` i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element.
 
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
-
 
 ## Installation och användning
 
@@ -30,19 +34,19 @@ npm install @midas-ds/flex
 import { Flex } from '@midas-ds/flex'
 ```
 
-<LiveCodeBlock scope={{Flex, FlexItem, Card}}>
-{`<Flex>
+<LiveCodeBlock scope={{ Flex, FlexItem, Card }}>
+  {`<Flex>
     <FlexItem col={12}>
-        <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} />
+        <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{title: 'Länk', href: '#'}} />
     </FlexItem>
     <FlexItem>
-        <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} />
+        <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{title: 'Länk', href: '#'}} />
     </FlexItem>
     <FlexItem col={"auto"}>
-        <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} />
+        <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{title: 'Länk', href: '#'}} />
     </FlexItem>
     <FlexItem col={6}>
-        <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} />
+        <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{title: 'Länk', href: '#'}} />
     </FlexItem>
 </Flex>`}
 </LiveCodeBlock>
@@ -51,24 +55,23 @@ import { Flex } from '@midas-ds/flex'
 
 Grids skalas enligt följande specifikation.
 
-| Skärmstorlek        | Margin  | Children  | Kollumner | Gutter |
-| ---                 | ---     | ---       | ---       | ---    |
-| 0 - 767 px          | 16 px   | Skalas    | 1         | 16 px  |
-| 768 px - 1199 px    | 32 px   | Skalas    | 12        | 16 px  |
-| 1200 px - 1440 px   | 32 px   | Skalas    | 12        | 24 px  |
-| > 1440 px           | Skalas  | 1368 px   | 12        | 24 px  |
+| Skärmstorlek      | Margin | Children | Kollumner | Gutter |
+| ----------------- | ------ | -------- | --------- | ------ |
+| 0 - 767 px        | 16 px  | Skalas   | 1         | 16 px  |
+| 768 px - 1199 px  | 32 px  | Skalas   | 12        | 16 px  |
+| 1200 px - 1440 px | 32 px  | Skalas   | 12        | 24 px  |
+| > 1440 px         | Skalas | 1368 px  | 12        | 24 px  |
 
 ### FlexItem
 
-Komponenten ```<FlexItem>``` agrerar som direkt child till ```<Flex>```. FlexItem accepterar en prop col som kan ta värdena auto eller 1-12.
+Komponenten `<FlexItem>` agrerar som direkt child till `<Flex>`. FlexItem accepterar en prop col som kan ta värdena auto eller 1-12.
 
 ## Riktlinjer
 
-
 ### När ska du använda Flex ?
 
-Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner. 
+Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner.
 
 ### Så här använder du Flex
 
-Använd ```<Flex></Flex>``` som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ```<FlexItem col="antal-kolumner"></FlexItem>```. 
+Använd `<Flex></Flex>` som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten `<FlexItem col="antal-kolumner"></FlexItem>`.

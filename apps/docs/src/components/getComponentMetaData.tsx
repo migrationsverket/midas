@@ -1,8 +1,8 @@
 import React from 'react'
 import moment from 'moment'
-import { LinkButton } from '@midas-ds/link-button'
-import { Bookmark, FileCode2, Logs } from 'lucide-react'
+import { Link } from '@midas-ds/link'
 import { Flex, FlexItem } from '@midas-ds/flex'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 export const ComponentFooter = ({ info, children }) => {
   if (!info || !info.dependencies) return <></>
@@ -27,6 +27,9 @@ export const ComponentHeader = ({
   overrideHeadlessLink?: string
 }) => {
   moment.locale('sv')
+  const storybookLink = useBaseUrl(
+    `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`
+  )
 
   if (!info) {
     return (
@@ -54,44 +57,38 @@ export const ComponentHeader = ({
       <div style={{ marginBottom: 16 }}>
         <b>{friendlyName}</b>
       </div>
-      <Flex
-        fluid={true}
-        className='button-row'
-      >
+      <Flex fluid={true}>
         <FlexItem>Version: {info.version}</FlexItem>
         <FlexItem col='auto'>
-          <LinkButton
+          <Link
             href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}/CHANGELOG.md`}
             target='_blank'
-            variant='tertiary'
-            icon={Logs}
+            standalone
           >
             Versionslogg
-          </LinkButton>
+          </Link>
         </FlexItem>
         <FlexItem col='auto'>
-          <LinkButton
-            href={`https://designsystem.migrationsverket.se/storybook/?path=/docs/components-${name.toLowerCase()}--docs`}
-            variant='tertiary'
-            icon={Bookmark}
+          <Link
+            href={storybookLink}
+            standalone
           >
             Storybook
-          </LinkButton>
+          </Link>
         </FlexItem>
         <FlexItem col='auto'>
           {overrideHeadlessLink !== '' && (
-            <LinkButton
+            <Link
               href={
                 overrideHeadlessLink
                   ? overrideHeadlessLink
                   : `https://react-spectrum.adobe.com/react-aria/${name}.html`
               }
               target='_blank'
-              variant='tertiary'
-              icon={FileCode2}
+              standalone
             >
               Referens
-            </LinkButton>
+            </Link>
           )}
         </FlexItem>
       </Flex>
