@@ -1,8 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import { Link } from '@midas-ds/link'
-import { Bookmark, FileCode2, Logs } from 'lucide-react'
 import { Flex, FlexItem } from '@midas-ds/flex'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 export const ComponentFooter = ({ info, children }) => {
   if (!info || !info.dependencies) return <></>
@@ -27,6 +27,9 @@ export const ComponentHeader = ({
   overrideHeadlessLink?: string
 }) => {
   moment.locale('sv')
+  const storybookLink = useBaseUrl(
+    `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`
+  )
 
   if (!info) {
     return (
@@ -67,7 +70,7 @@ export const ComponentHeader = ({
         </FlexItem>
         <FlexItem col='auto'>
           <Link
-            href={`/storybook/?path=/docs/components-${name.toLowerCase()}--docs`}
+            href={storybookLink}
             standalone
           >
             Storybook

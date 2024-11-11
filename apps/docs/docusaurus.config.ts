@@ -55,9 +55,7 @@ const config: Config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: process.env.PR_NUMBER
-            ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
-            : '/',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [
             [
