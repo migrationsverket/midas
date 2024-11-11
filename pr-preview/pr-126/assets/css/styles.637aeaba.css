@@ -5596,7 +5596,6 @@ CSS variables, meant to be overridden by final theme
 
   &:hover {
     color: #143c50;
-    text-decoration: underline;
   }
 
   &:visited {
@@ -5610,7 +5609,6 @@ CSS variables, meant to be overridden by final theme
 
   &[data-pressed] {
     color: #000000;
-    text-decoration: underline;
   }
 
   &[data-focused] {
@@ -5632,6 +5630,14 @@ CSS variables, meant to be overridden by final theme
   gap: 0.5rem;
   text-decoration: none;
   font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &[data-pressed] {
+    text-decoration: underline;
+  }
 }
 
 .stretched_fWsF {
