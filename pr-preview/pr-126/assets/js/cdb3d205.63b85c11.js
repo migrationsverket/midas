@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5320],{
 
-/***/ 70003:
+/***/ 96863:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,46 +27,36 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./packages/file-upload/src/index.ts + 3 modules
+var src = __webpack_require__(45679);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/button.json
-const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.1.0","_rev":"19-3acd7224074148c741044b96a7d91087","name":"@midas-ds/button","dist-tags":{"latest":"1.1.0"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2","1.1.0"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-11-01T10:27:02.755Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z","1.1.0":"2024-11-01T10:27:02.521Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":20368,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-KTOOtV7K/RqVGh3WA0Dj1N3Zwofq2v1EvrIl3ktZy4fprI5shfRx8gWbLsUeGxV/eAgGARMPR+E6fqb73iLPdg==","shasum":"32f012a4dfe7e57c137f3c5b7c72c1c0af1f8c13","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.1.0.tgz","fileCount":9,"unpackedSize":88663,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDPF7McX33R6T6drKYlZ3wkZ89sB5LLbKtq57NncEgcYQIgUS/UInvswgiAQdej3uaDgb6GporunB1VphlT0BhivMw="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.1.0_1730456822325_0.6191442598705927"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
+;// ./apps/docs/static/data/file-upload.json
+const file_upload_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/file-upload@1.0.2","_rev":"6-9d56e5e2929a9c5b039dedb6ca83fef3","name":"@midas-ds/file-upload","dist-tags":{"latest":"1.0.2"},"versions":["0.3.19","0.3.20","0.3.22","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:36:46.893Z","modified":"2024-11-01T10:27:41.805Z","0.3.19":"2024-09-10T14:36:47.146Z","0.3.20":"2024-09-12T12:21:00.654Z","0.3.22":"2024-10-07T12:12:28.880Z","1.0.0":"2024-10-18T13:40:44.514Z","1.0.2":"2024-10-22T14:09:13.890Z","1.0.1":"2024-10-24T13:26:47.217Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"url":"git+https://github.com/migrationsverket/midas.git","type":"git"},"description":"```bash npm i @midas-ds/file-upload ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":11038,"version":"1.0.2","dist":{"shasum":"9b767ada804d9c8574a5d89f03fa95670b33ddfe","tarball":"https://registry.npmjs.org/@midas-ds/file-upload/-/file-upload-1.0.2.tgz","fileCount":9,"integrity":"sha512-GNygp08r5KRiB11x5S5jwUHi9/6QM7De9NtX4FDakbXpbu+4d5CtGuCqmJNCNX5otUJTTyfQ8F0l4XQ+Ha6p3Q==","signatures":[{"sig":"MEUCICTPww2MuQcCJ8ue3cq3SSld1nb6HRxXwRnFAtmFaeSxAiEAqtqvj3W5d46A0+/4UmhonldHqmwYs7ccPupfDIMOP3Y=","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":334532},"main":"./index.js","types":"./index.d.ts","exports":{".":{"types":"./index.d.ts","import":"./index.mjs","require":"./index.js"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","_npmVersion":"10.2.4","directories":{},"_nodeVersion":"20.11.1","dependencies":{"lucide-react":"^0.383.0","@midas-ds/button":"1.0.1","@midas-ds/textfield":"1.0.1","react-aria-components":"^1.0.0-rc.0"},"publishConfig":{"access":"public"},"_hasShrinkwrap":false,"peerDependencies":{"react":"^18.2.0"},"_npmOperationalInternal":{"tmp":"tmp/file-upload_1.0.2_1729606153716_0.9738000394158912","host":"s3://npm-registry-packages"}}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
-var plus = __webpack_require__(80697);
-;// ./apps/docs/docs/components/button.mdx
+;// ./apps/docs/docs/components/fileupload.mdx
 
 
 const frontMatter = {
-	title: 'Button',
-	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
+	title: 'FileUpload',
+	description: 'Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.',
 	tags: [
-		'button',
 		'form'
 	]
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/button",
-  "title": "Button",
-  "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
-  "source": "@site/docs/components/button.mdx",
+  "id": "components/fileupload",
+  "title": "FileUpload",
+  "description": "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.",
+  "source": "@site/docs/components/fileupload.mdx",
   "sourceDirName": "components",
-  "slug": "/components/button",
-  "permalink": "/pr-preview/pr-126/components/button",
+  "slug": "/components/fileupload",
+  "permalink": "/pr-preview/pr-126/components/fileupload",
   "draft": false,
   "unlisted": false,
   "tags": [
-    {
-      "inline": true,
-      "label": "button",
-      "permalink": "/pr-preview/pr-126/tags/button"
-    },
     {
       "inline": true,
       "label": "form",
@@ -75,27 +65,25 @@ const metadata = {
   ],
   "version": "current",
   "frontMatter": {
-    "title": "Button",
-    "description": "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.",
+    "title": "FileUpload",
+    "description": "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.",
     "tags": [
-      "button",
       "form"
     ]
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Breadcrumbs",
-    "permalink": "/pr-preview/pr-126/components/breadcrumbs"
+    "title": "DatePicker",
+    "permalink": "/pr-preview/pr-126/components/date-picker"
   },
   "next": {
-    "title": "Card",
-    "permalink": "/pr-preview/pr-126/components/card"
+    "title": "Flex",
+    "permalink": "/pr-preview/pr-126/components/flex"
   }
 };
 const assets = {
 
 };
-
 
 
 
@@ -116,65 +104,30 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Primärknapp",
-  "id": "primärknapp",
-  "level": 2
-}, {
-  "value": "Sekundär knapp",
-  "id": "sekundär-knapp",
-  "level": 2
-}, {
-  "value": "Tertiär knapp",
-  "id": "tertiär-knapp",
-  "level": 2
-}, {
-  "value": "Små knappar",
-  "id": "små-knappar",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
-}, {
-  "value": "Generella riktlinjer",
-  "id": "generella-riktlinjer",
-  "level": 3
-}, {
-  "value": "Placering och ordning",
-  "id": "placering-och-ordning",
-  "level": 3
-}, {
   "value": "Beroenden",
   "id": "beroenden",
   "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Button',
-      info: button_namespaceObject,
-      friendlyName: 'Knapp'
+      name: 'FileUpload',
+      info: file_upload_namespaceObject,
+      friendlyName: 'Filuppladdning',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/FileTrigger.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
+      children: "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -185,7 +138,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/button\n"
+            children: "npm install @midas-ds/fileupload\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -194,7 +147,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/button\n"
+            children: "yarn add @midas-ds/fileupload\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -203,163 +156,25 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/button\n"
+            children: "pnpm add @midas-ds/fileupload\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Button } from '@midas-ds/button'\n"
+        children: "import { FileUpload } from '@midas-ds/fileupload';\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$
+        FileUpload: src/* FileUpload */.e
       },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button>{fruits.shuffled(1).name}</Button>
-</FlexItem>
-<FlexItem col="auto">
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-</FlexItem>
-<FlexItem col="auto">
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "primärknapp",
-      children: "Primärknapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      children: "Slutför"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sekundär-knapp",
-      children: "Sekundär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka)."
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      variant: 'secondary',
-      children: "Tillbaka"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tertiär-knapp",
-      children: "Tertiär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Slutför"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: "secondary",
-        children: "Tillbaka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: "tertiary",
-        children: "Ta bort anmälan"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "icon"
-      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "iconPlacement"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Plus } from 'lucide-react'\n;<Button\n  icon={Plus}\n  variant='tertiary'\n>\n  Lägg till rad\n</Button>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      icon: plus/* default */.A,
-      variant: "tertiary",
-      children: "Lägg till rad"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "små-knappar",
-      children: "Små knappar"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "size=\"small\""
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        children: "Primär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        variant: 'secondary',
-        children: "Sekundär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        size: 'small',
-        variant: 'tertiary',
-        children: "Tertiär"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "generella-riktlinjer",
-      children: "Generella riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik att ha för många knappar på samma sida."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "placering-och-ordning",
-      children: "Placering och ordning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan."
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Skicka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: 'secondary',
-        children: "Avbryt"
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [(0,jsx_runtime.jsx)("br", {}), "I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen\n(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från\nvänster till höger (som att bläddra i en bok) och knapparna motsvarar detta."]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        gap: '8px',
-        display: 'flex',
-        margin: '8px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        variant: 'secondary',
-        children: "Föregående"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        children: "Nästa"
-      })]
+      children: `<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: button_namespaceObject
+      info: file_upload_namespaceObject
     })]
   });
 }
@@ -433,7 +248,7 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://designsystem.migrationsverket.se/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -446,6 +261,49 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 // import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
 var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=useDynamicImport(name);if(!props){return null;}return/*#__PURE__*/_jsx(_Fragment,{children:/*#__PURE__*/_jsxs("table",{children:[/*#__PURE__*/_jsx("thead",{children:/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("th",{children:"Name"}),/*#__PURE__*/_jsx("th",{children:"Type"}),/*#__PURE__*/_jsx("th",{children:"Default Value"}),/*#__PURE__*/_jsx("th",{children:"Required"}),/*#__PURE__*/_jsx("th",{children:"Description"})]})}),/*#__PURE__*/_jsx("tbody",{children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:key})}),/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/_jsx("td",{children:props[key].defaultValue&&/*#__PURE__*/_jsx("code",{children:props[key].defaultValue.value})}),/*#__PURE__*/_jsx("td",{children:props[key].required?'Yes':'No'}),/*#__PURE__*/_jsx("td",{style:{width:'30%'},children:props[key].description})]},key);})})]})});};
+
+/***/ }),
+
+/***/ 45679:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  e: () => (/* reexport */ FileUpload)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js
+var regeneratorRuntime = __webpack_require__(90675);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(10467);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DropZone.mjs + 41 modules
+var DropZone = __webpack_require__(46090);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var Text = __webpack_require__(27279);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FileTrigger.mjs
+var FileTrigger = __webpack_require__(77064);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+;// ./packages/file-upload/src/lib/FileUpload.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const FileUpload_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray90":"#8c8c8c","mediumWeight":"500","regularWeight":"400","box":"box_bSkU","list":"list_FZEM","container":"container_YgUg","label":"label_m4WB","text":"text__cO9","dropzone":"dropzone_yvPs","input":"input__Ncf"});
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var textfield_src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/file-upload/src/lib/FileUpload.tsx
+'use client';var FileUpload=function FileUpload(_ref){var allowsMultiple=_ref.allowsMultiple,label=_ref.label,description=_ref.description,dropzone=_ref.dropzone;var _React$useState=react.useState(null),files=_React$useState[0],setFiles=_React$useState[1];var handleUpload=function handleUpload(files){setFiles(files!==null?Array.from(files):[]);// TODO: actually handle files?
+};var handleDrop=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee(e){var filePromises,resolvedFiles;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee$(_context){while(1)switch(_context.prev=_context.next){case 0:filePromises=e.items.filter(function(file){return file.kind==='file';}).map(function(file){return file.getFile();});_context.next=3;return Promise.all(filePromises);case 3:resolvedFiles=_context.sent;setFiles(resolvedFiles);case 5:case"end":return _context.stop();}},_callee);}));return function handleDrop(_x){return _ref2.apply(this,arguments);};}();if(dropzone)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DropZone/* DropZone */.w,{onDrop:handleDrop,className:FileUpload_module.dropzone,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",style:{display:'block'},children:"Dra och sl\xE4pp en fil inuti det streckade omr\xE5det"})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_src/* InputWrapper */.oi,{label:label,description:description,children:/*#__PURE__*/(0,jsx_runtime.jsx)(FileTrigger/* FileTrigger */.F,{allowsMultiple:allowsMultiple,onSelect:function onSelect(files){return handleUpload(files);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"secondary","aria-labelledby":"fileUpload",className:FileUpload_module.input,children:allowsMultiple?'Välj filer':'Välj fil'})})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});};var FileList=function FileList(_ref3){var files=_ref3.files,setFiles=_ref3.setFiles;var handleRemove=function handleRemove(index){setFiles(files==null?void 0:files.filter(function(f,i){return i!==index;}));};return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",{className:FileUpload_module.list,children:files.map(function(file,index){return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",{className:FileUpload_module.box,children:[file.name,/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"icon",size:"small",onPress:function onPress(){return handleRemove(index);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]},index);})});};
+;// ./packages/file-upload/src/lib/index.ts
+
+;// ./packages/file-upload/src/index.ts
+
 
 /***/ }),
 
@@ -481,30 +339,48 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 80697:
+/***/ 42619:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Plus)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  oi: () => (/* reexport */ InputWrapper),
+  A_: () => (/* reexport */ TextField),
+  Ql: () => (/* reexport */ TextField_module)
+});
 
+// UNUSED EXPORTS: ssnRegEx
 
-const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-]);
+;// ./packages/textfield/src/lib/TextField.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","inputField":"inputField_kJaH","inputWrapper":"inputWrapper_RfiT","label":"label_Pxyb","text":"text_CvV8","fieldError":"fieldError_kz46","passwordText":"passwordText_Gtww","input":"input_B57n","wrap":"wrap_g1RZ","passwordButton":"passwordButton_bCY3"});
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var dist_TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var Text = __webpack_require__(27279);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
+var triangle_alert = __webpack_require__(418);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/textfield/src/lib/TextField.tsx
+'use client';var _excluded=["label","description","errorMessage","validationType"];var TextField=function TextField(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,validationType=_ref.validationType,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),input=_React$useState[0],setInput=_React$useState[1];var _React$useState2=react.useState(true),isValid=_React$useState2[0],setIsValid=_React$useState2[1];var validateInput=function validateInput(value){if(validationType===undefined)return true;if(validationType==='ssn')setIsValid(ssnRegEx.test(value));if(validationType instanceof RegExp)setIsValid(new RegExp(validationType).test(value));};var handleInputBlur=function handleInputBlur(e){var value=e.target.value;validateInput(value);};var handleInputChange=function handleInputChange(e){setInput(e.target.value);};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextField/* TextField */.A,Object.assign({className:TextField_module.inputField,isInvalid:validationType!==undefined?!isValid:props.isInvalid},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(InputWrapper,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{type:props.type,className:TextField_module.input,onChange:handleInputChange,onBlur:handleInputBlur}),/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,{type:props.type,input:input})]})})}));};var PasswordField=function PasswordField(_ref2){var type=_ref2.type,input=_ref2.input;var _React$useState3=react.useState(false),showPassword=_React$useState3[0],setShowPassword=_React$useState3[1];if(type==='password')return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.passwordText,children:input}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"tertiary",onPress:function onPress(){return setShowPassword(!showPassword);},className:TextField_module.passwordButton,children:showPassword?'Dölj':'Visa'})]});return null;};var InputWrapper=function InputWrapper(_ref3){var label=_ref3.label,description=_ref3.description,errorMessage=_ref3.errorMessage,children=_ref3.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.inputWrapper,children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{className:TextField_module.label,children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.text,children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{className:TextField_module.fieldError,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(triangle_alert/* default */.A,{size:20,"aria-hidden":true}),errorMessage]})}),children]});};var ssnRegEx=new RegExp('^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$');
+;// ./packages/textfield/src/lib/index.ts
 
-
-//# sourceMappingURL=plus.js.map
+;// ./packages/textfield/src/index.ts
 
 
 /***/ }),

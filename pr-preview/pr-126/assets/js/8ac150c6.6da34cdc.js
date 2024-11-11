@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6253],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9758],{
 
-/***/ 44347:
+/***/ 30475:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,58 +27,48 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/breadcrumbs/src/index.ts + 2 modules
-var src = __webpack_require__(65574);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/breadcrumbs.json
-const breadcrumbs_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/breadcrumbs@1.0.2","_rev":"7-90cec7c4a948fb12a009738387cfe0f3","name":"@midas-ds/breadcrumbs","dist-tags":{"latest":"1.0.2"},"versions":["0.0.2","0.0.3","0.0.4","0.0.5","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:35:35.621Z","modified":"2024-10-24T13:32:57.255Z","0.0.2":"2024-09-10T14:35:35.894Z","0.0.3":"2024-09-12T08:53:25.530Z","0.0.4":"2024-09-12T12:22:32.293Z","0.0.5":"2024-10-07T12:04:50.265Z","1.0.0":"2024-10-18T13:40:48.534Z","1.0.1":"2024-10-24T13:26:50.748Z","1.0.2":"2024-10-24T13:32:57.069Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/breadcrumbs ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":11479,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1","@midas-ds/link":"1.0.1"},"publishConfig":{"access":"public"},"gitHead":"299738cc211e4aa1a60b155e8a9289b5b00cb56c","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-K9jw3kSBZotMrzMsAYr3yElL0Vp231IbA+gYuhWhQE2li48vnRyJBMJ70//LBi8s73mFNwxlI6RC/h25JpwMAA==","shasum":"9ca509b330202e69b8e76e40995f32a53bf838f0","tarball":"https://registry.npmjs.org/@midas-ds/breadcrumbs/-/breadcrumbs-1.0.2.tgz","fileCount":8,"unpackedSize":129742,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQCNVfoKzSXhBD6SVkucJBq4IMNsHOYayxWQnPum+sjMtQIhAIgR6WPuzNLr3OmrfKk/U8LmfTDFIhnuVREeQugD+Vsd"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/breadcrumbs_1.0.2_1729776776817_0.22987390445508238"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/search-field.json
+const search_field_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/search-field@1.0.2","_rev":"6-ecf5fe2c34d3859d5c9f45782708ce03","name":"@midas-ds/search-field","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.0.2","0.1.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:38:08.720Z","modified":"2024-10-24T13:32:54.239Z","0.0.1":"2024-09-10T14:38:09.007Z","0.0.2":"2024-09-12T12:43:45.772Z","0.1.0":"2024-10-07T12:19:44.725Z","1.0.0":"2024-10-18T13:40:43.577Z","1.0.1":"2024-10-24T13:26:46.347Z","1.0.2":"2024-10-24T13:32:54.084Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"This library was generated with [Nx](https://nx.dev).","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10372,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0","react-aria-components":"^1.1.1","lucide-react":"^0.453.0","@midas-ds/textfield":"1.0.1","@midas-ds/button":"1.0.2"},"publishConfig":{"access":"public"},"gitHead":"299738cc211e4aa1a60b155e8a9289b5b00cb56c","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-iDJQyuyiP3m9UlfMiQUL7B88AXU/qFloonSDHDQ9noEBJDWJLLIotLNbS9sE2qkS+n91Ts50yYCSX6HP0oKxOw==","shasum":"6806e7521fd799116cfa8c05080fd956a340dd33","tarball":"https://registry.npmjs.org/@midas-ds/search-field/-/search-field-1.0.2.tgz","fileCount":8,"unpackedSize":136570,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDlJnNk4NKfIIqj2SnfmnjWqgPy3nkm3rzuQ/tIL4guOgIgUF6Ju3GuGslmWCWP1A8deXHT0Gnfy2hNOXDx0+gHceU="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/search-field_1.0.2_1729776773851_0.9281120559896041"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/search-field/src/index.ts + 2 modules
+var src = __webpack_require__(91725);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/breadcrumbs.mdx
+;// ./apps/docs/docs/components/search-field.mdx
 
 
 const frontMatter = {
-	title: 'Breadcrumbs',
-	tags: [
-		'menu'
-	],
-	description: 'Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.'
+	title: 'SearchField',
+	tags: [],
+	description: 'Sökfält är en kombinationskomponent av TextField och Button'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/breadcrumbs",
-  "title": "Breadcrumbs",
-  "description": "Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.",
-  "source": "@site/docs/components/breadcrumbs.mdx",
+  "id": "components/search-field",
+  "title": "SearchField",
+  "description": "Sökfält är en kombinationskomponent av TextField och Button",
+  "source": "@site/docs/components/search-field.mdx",
   "sourceDirName": "components",
-  "slug": "/components/breadcrumbs",
-  "permalink": "/pr-preview/pr-126/components/breadcrumbs",
+  "slug": "/components/search-field",
+  "permalink": "/pr-preview/pr-126/components/search-field",
   "draft": false,
   "unlisted": false,
-  "tags": [
-    {
-      "inline": true,
-      "label": "menu",
-      "permalink": "/pr-preview/pr-126/tags/menu"
-    }
-  ],
+  "tags": [],
   "version": "current",
   "frontMatter": {
-    "title": "Breadcrumbs",
-    "tags": [
-      "menu"
-    ],
-    "description": "Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd."
+    "title": "SearchField",
+    "tags": [],
+    "description": "Sökfält är en kombinationskomponent av TextField och Button"
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Accordion",
-    "permalink": "/pr-preview/pr-126/components/accordion"
+    "title": "Radio",
+    "permalink": "/pr-preview/pr-126/components/radio"
   },
   "next": {
-    "title": "Button",
-    "permalink": "/pr-preview/pr-126/components/button"
+    "title": "Select",
+    "permalink": "/pr-preview/pr-126/components/select"
   }
 };
 const assets = {
@@ -118,14 +108,14 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Breadcrumbs',
-      info: breadcrumbs_namespaceObject,
-      friendlyName: 'Brödsmulor'
+      name: 'SearchField',
+      info: search_field_namespaceObject,
+      friendlyName: 'Sökfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd."
+      children: "Sökfält är en kombinationskomponent av TextField och Button."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -136,7 +126,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/breadcrumbs\n"
+            children: "npm install @midas-ds/search-field\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -145,7 +135,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/breadcrumbs\n"
+            children: "yarn add @midas-ds/search-field\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -154,25 +144,25 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/breadcrumbs\n"
+            children: "pnpm add @midas-ds/search-field\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Breadcrumbs } from '@midas-ds/breadcrumbs';\n"
+        children: "import { SearchField } from '@midas-ds/search-field'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Breadcrumbs: src/* Breadcrumbs */.B
+        SearchField: src/* SearchField */.L
       },
-      children: `<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`
+      children: `<SearchField placeholder="Sök efter fruker" />`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: breadcrumbs_namespaceObject
+      info: search_field_namespaceObject
     })]
   });
 }
@@ -246,7 +236,7 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://designsystem.migrationsverket.se/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -259,32 +249,6 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 // import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
 var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=useDynamicImport(name);if(!props){return null;}return/*#__PURE__*/_jsx(_Fragment,{children:/*#__PURE__*/_jsxs("table",{children:[/*#__PURE__*/_jsx("thead",{children:/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("th",{children:"Name"}),/*#__PURE__*/_jsx("th",{children:"Type"}),/*#__PURE__*/_jsx("th",{children:"Default Value"}),/*#__PURE__*/_jsx("th",{children:"Required"}),/*#__PURE__*/_jsx("th",{children:"Description"})]})}),/*#__PURE__*/_jsx("tbody",{children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:key})}),/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/_jsx("td",{children:props[key].defaultValue&&/*#__PURE__*/_jsx("code",{children:props[key].defaultValue.value})}),/*#__PURE__*/_jsx("td",{children:props[key].required?'Yes':'No'}),/*#__PURE__*/_jsx("td",{style:{width:'30%'},children:props[key].description})]},key);})})]})});};
-
-/***/ }),
-
-/***/ 65574:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  B: () => (/* reexport */ Breadcrumbs)
-});
-
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Breadcrumbs.mjs + 36 modules
-var dist_Breadcrumbs = __webpack_require__(57214);
-// EXTERNAL MODULE: ./packages/link/src/index.ts + 2 modules
-var src = __webpack_require__(10515);
-;// ./packages/breadcrumbs/src/lib/Breadcrumbs.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Breadcrumbs_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray150":"#1f1f1f","container":"container_P3jL"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/breadcrumbs/src/lib/Breadcrumbs.tsx
-var Breadcrumbs=function Breadcrumbs(_ref){var items=_ref.items;return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumbs */.BI,{className:Breadcrumbs_module.container,children:items.map(function(item,index){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumb */.Qp,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Link */.N,{href:item.href,isDisabled:item.isDisabled,children:item.title})},item.title.toLocaleLowerCase()+index);})});};
-;// ./packages/breadcrumbs/src/index.ts
-
 
 /***/ }),
 
@@ -316,6 +280,96 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
+
+
+/***/ }),
+
+/***/ 91725:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  L: () => (/* reexport */ SearchField)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/SearchField.mjs + 37 modules
+var dist_SearchField = __webpack_require__(91521);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
+var search = __webpack_require__(98445);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
+;// ./packages/search-field/src/lib/SearchField.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const SearchField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","blue150":"#143c50","gray150":"#1f1f1f","container":"container_bTyD","inputContainer":"inputContainer_FEyv","icon":"icon_fL1_","clear":"clear_PAHR","input":"input_Mp7b"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/search-field/src/lib/SearchField.tsx
+'use client';var _excluded=["placeholder","buttonText"];var SearchField=function SearchField(_ref){var placeholder=_ref.placeholder,buttonText=_ref.buttonText,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(false),hasInput=_React$useState[0],setHasInput=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_SearchField/* SearchField */.L,Object.assign({onInput:function onInput(){return setHasInput(true);},onClear:function onClear(){return setHasInput(false);},className:SearchField_module.container},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{hidden:true,children:placeholder}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:SearchField_module.inputContainer,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(search/* default */.A,{size:20,className:SearchField_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(src/* TextFieldStyles */.Ql.input,SearchField_module.input),placeholder:placeholder}),hasInput&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{variant:"icon",size:"small",className:SearchField_module.clear,children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{type:"submit",children:buttonText?buttonText:'Sök'})]}));};
+;// ./packages/search-field/src/index.ts
+
+
+/***/ }),
+
+/***/ 42619:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  oi: () => (/* reexport */ InputWrapper),
+  A_: () => (/* reexport */ TextField),
+  Ql: () => (/* reexport */ TextField_module)
+});
+
+// UNUSED EXPORTS: ssnRegEx
+
+;// ./packages/textfield/src/lib/TextField.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","inputField":"inputField_kJaH","inputWrapper":"inputWrapper_RfiT","label":"label_Pxyb","text":"text_CvV8","fieldError":"fieldError_kz46","passwordText":"passwordText_Gtww","input":"input_B57n","wrap":"wrap_g1RZ","passwordButton":"passwordButton_bCY3"});
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var dist_TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var Text = __webpack_require__(27279);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
+var triangle_alert = __webpack_require__(418);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/textfield/src/lib/TextField.tsx
+'use client';var _excluded=["label","description","errorMessage","validationType"];var TextField=function TextField(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,validationType=_ref.validationType,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),input=_React$useState[0],setInput=_React$useState[1];var _React$useState2=react.useState(true),isValid=_React$useState2[0],setIsValid=_React$useState2[1];var validateInput=function validateInput(value){if(validationType===undefined)return true;if(validationType==='ssn')setIsValid(ssnRegEx.test(value));if(validationType instanceof RegExp)setIsValid(new RegExp(validationType).test(value));};var handleInputBlur=function handleInputBlur(e){var value=e.target.value;validateInput(value);};var handleInputChange=function handleInputChange(e){setInput(e.target.value);};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextField/* TextField */.A,Object.assign({className:TextField_module.inputField,isInvalid:validationType!==undefined?!isValid:props.isInvalid},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(InputWrapper,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{type:props.type,className:TextField_module.input,onChange:handleInputChange,onBlur:handleInputBlur}),/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,{type:props.type,input:input})]})})}));};var PasswordField=function PasswordField(_ref2){var type=_ref2.type,input=_ref2.input;var _React$useState3=react.useState(false),showPassword=_React$useState3[0],setShowPassword=_React$useState3[1];if(type==='password')return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.passwordText,children:input}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"tertiary",onPress:function onPress(){return setShowPassword(!showPassword);},className:TextField_module.passwordButton,children:showPassword?'Dölj':'Visa'})]});return null;};var InputWrapper=function InputWrapper(_ref3){var label=_ref3.label,description=_ref3.description,errorMessage=_ref3.errorMessage,children=_ref3.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.inputWrapper,children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{className:TextField_module.label,children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.text,children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{className:TextField_module.fieldError,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(triangle_alert/* default */.A,{size:20,"aria-hidden":true}),errorMessage]})}),children]});};var ssnRegEx=new RegExp('^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$');
+;// ./packages/textfield/src/lib/index.ts
+
+;// ./packages/textfield/src/index.ts
 
 
 /***/ }),
@@ -1028,529 +1082,19 @@ function $fca6afa0e843324b$export$f12b703ca79dfbb1(strings, packageName) {
 
 /***/ }),
 
-/***/ 57214:
+/***/ 63899:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Qp: () => (/* binding */ $778035c5624f61e7$export$dabcc1ec9dd9d1cc),
-  BI: () => (/* binding */ $778035c5624f61e7$export$2dc68d50d56fbbd)
-});
-
-// UNUSED EXPORTS: BreadcrumbsContext
-
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Collection.mjs
-var Collection = __webpack_require__(64606);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var Link = __webpack_require__(73099);
-;// ./node_modules/@react-aria/breadcrumbs/dist/ar-AE.mjs
-var $b91590b2dc47de39$exports = {};
-$b91590b2dc47de39$exports = {
-    "breadcrumbs": `\u{639}\u{646}\u{627}\u{635}\u{631} \u{627}\u{644}\u{648}\u{627}\u{62C}\u{647}\u{629}`
-};
-
-
-
-//# sourceMappingURL=ar-AE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/bg-BG.mjs
-var $55b0693b2cf3fe91$exports = {};
-$55b0693b2cf3fe91$exports = {
-    "breadcrumbs": `\u{422}\u{440}\u{43E}\u{445}\u{438} \u{445}\u{43B}\u{44F}\u{431}`
-};
-
-
-
-//# sourceMappingURL=bg-BG.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/cs-CZ.mjs
-var $6ec1ed7729e948cc$exports = {};
-$6ec1ed7729e948cc$exports = {
-    "breadcrumbs": `Popis cesty`
-};
-
-
-
-//# sourceMappingURL=cs-CZ.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/da-DK.mjs
-var $5a41bb2baa6861e4$exports = {};
-$5a41bb2baa6861e4$exports = {
-    "breadcrumbs": `Br\xf8dkrummer`
-};
-
-
-
-//# sourceMappingURL=da-DK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/de-DE.mjs
-var $f28bbea439e87eca$exports = {};
-$f28bbea439e87eca$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=de-DE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/el-GR.mjs
-var $b3eca51cb720961a$exports = {};
-$b3eca51cb720961a$exports = {
-    "breadcrumbs": `\u{3A0}\u{3BB}\u{3BF}\u{3B7}\u{3B3}\u{3AE}\u{3C3}\u{3B5}\u{3B9}\u{3C2} breadcrumb`
-};
-
-
-
-//# sourceMappingURL=el-GR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/en-US.mjs
-var $0b39b205118db415$exports = {};
-$0b39b205118db415$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=en-US.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/es-ES.mjs
-var $f467c0ee7bfb0950$exports = {};
-$f467c0ee7bfb0950$exports = {
-    "breadcrumbs": `Migas de pan`
-};
-
-
-
-//# sourceMappingURL=es-ES.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/et-EE.mjs
-var $ab711d2ffb4cdf3d$exports = {};
-$ab711d2ffb4cdf3d$exports = {
-    "breadcrumbs": `Lingiread`
-};
-
-
-
-//# sourceMappingURL=et-EE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fi-FI.mjs
-var $b63105d663e6f9d5$exports = {};
-$b63105d663e6f9d5$exports = {
-    "breadcrumbs": `Navigointilinkit`
-};
-
-
-
-//# sourceMappingURL=fi-FI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fr-FR.mjs
-var $9d2ed7be7fcdc2a1$exports = {};
-$9d2ed7be7fcdc2a1$exports = {
-    "breadcrumbs": `Chemin de navigation`
-};
-
-
-
-//# sourceMappingURL=fr-FR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/he-IL.mjs
-var $c5704294d85c7b5d$exports = {};
-$c5704294d85c7b5d$exports = {
-    "breadcrumbs": `\u{5E9}\u{5D1}\u{5D9}\u{5DC}\u{5D9} \u{5E0}\u{5D9}\u{5D5}\u{5D5}\u{5D8}`
-};
-
-
-
-//# sourceMappingURL=he-IL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hr-HR.mjs
-var $20c975671d6bbc63$exports = {};
-$20c975671d6bbc63$exports = {
-    "breadcrumbs": `Navigacijski putovi`
-};
-
-
-
-//# sourceMappingURL=hr-HR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hu-HU.mjs
-var $2569ca3917233115$exports = {};
-$2569ca3917233115$exports = {
-    "breadcrumbs": `Morzsamen\xfc`
-};
-
-
-
-//# sourceMappingURL=hu-HU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/it-IT.mjs
-var $caa152f7f8e96c85$exports = {};
-$caa152f7f8e96c85$exports = {
-    "breadcrumbs": `Breadcrumb`
-};
-
-
-
-//# sourceMappingURL=it-IT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ja-JP.mjs
-var $cbc6af0cc98fad10$exports = {};
-$cbc6af0cc98fad10$exports = {
-    "breadcrumbs": `\u{30D1}\u{30F3}\u{304F}\u{305A}\u{30EA}\u{30B9}\u{30C8}`
-};
-
-
-
-//# sourceMappingURL=ja-JP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ko-KR.mjs
-var $ad9be5d332b4d607$exports = {};
-$ad9be5d332b4d607$exports = {
-    "breadcrumbs": `\u{D0D0}\u{C0C9} \u{D45C}\u{C2DC}`
-};
-
-
-
-//# sourceMappingURL=ko-KR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lt-LT.mjs
-var $659de19a00ff9617$exports = {};
-$659de19a00ff9617$exports = {
-    "breadcrumbs": `Nar\u{161}ymo kelias`
-};
-
-
-
-//# sourceMappingURL=lt-LT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lv-LV.mjs
-var $173e9fb4d14fe309$exports = {};
-$173e9fb4d14fe309$exports = {
-    "breadcrumbs": `Atpaka\u{13C}ce\u{13C}i`
-};
-
-
-
-//# sourceMappingURL=lv-LV.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nb-NO.mjs
-var $d8e2640a066567a9$exports = {};
-$d8e2640a066567a9$exports = {
-    "breadcrumbs": `Navigasjonsstier`
-};
-
-
-
-//# sourceMappingURL=nb-NO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nl-NL.mjs
-var $d71fd764236c0d12$exports = {};
-$d71fd764236c0d12$exports = {
-    "breadcrumbs": `Broodkruimels`
-};
-
-
-
-//# sourceMappingURL=nl-NL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pl-PL.mjs
-var $f4ad3faf9f4aaec6$exports = {};
-$f4ad3faf9f4aaec6$exports = {
-    "breadcrumbs": `Struktura nawigacyjna`
-};
-
-
-
-//# sourceMappingURL=pl-PL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-BR.mjs
-var $9703be9d55d8e9c2$exports = {};
-$9703be9d55d8e9c2$exports = {
-    "breadcrumbs": `Caminho detalhado`
-};
-
-
-
-//# sourceMappingURL=pt-BR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-PT.mjs
-var $7e23baec8a14f309$exports = {};
-$7e23baec8a14f309$exports = {
-    "breadcrumbs": `Categorias`
-};
-
-
-
-//# sourceMappingURL=pt-PT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ro-RO.mjs
-var $568f95594049d56e$exports = {};
-$568f95594049d56e$exports = {
-    "breadcrumbs": `Miez de p\xe2ine`
-};
-
-
-
-//# sourceMappingURL=ro-RO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ru-RU.mjs
-var $625df06cecc70764$exports = {};
-$625df06cecc70764$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{438}\u{433}\u{430}\u{446}\u{438}\u{44F}`
-};
-
-
-
-//# sourceMappingURL=ru-RU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sk-SK.mjs
-var $b5a67525f3a2f594$exports = {};
-$b5a67525f3a2f594$exports = {
-    "breadcrumbs": `Naviga\u{10D}n\xe9 prvky Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=sk-SK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sl-SI.mjs
-var $16125922964febca$exports = {};
-$16125922964febca$exports = {
-    "breadcrumbs": `Drobtine`
-};
-
-
-
-//# sourceMappingURL=sl-SI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sr-SP.mjs
-var $de104bf355206bcf$exports = {};
-$de104bf355206bcf$exports = {
-    "breadcrumbs": `Putanje navigacije`
-};
-
-
-
-//# sourceMappingURL=sr-SP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sv-SE.mjs
-var $d5ab76bcbadc9c07$exports = {};
-$d5ab76bcbadc9c07$exports = {
-    "breadcrumbs": `S\xf6kv\xe4gar`
-};
-
-
-
-//# sourceMappingURL=sv-SE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/tr-TR.mjs
-var $a6a1af5968159b55$exports = {};
-$a6a1af5968159b55$exports = {
-    "breadcrumbs": `\u{130}\xe7erik haritalar\u{131}`
-};
-
-
-
-//# sourceMappingURL=tr-TR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/uk-UA.mjs
-var $5204a30f0d17ffec$exports = {};
-$5204a30f0d17ffec$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{456}\u{433}\u{430}\u{446}\u{456}\u{439}\u{43D}\u{430} \u{441}\u{442}\u{435}\u{436}\u{43A}\u{430}`
-};
-
-
-
-//# sourceMappingURL=uk-UA.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-CN.mjs
-var $8d15e736e12d3dfd$exports = {};
-$8d15e736e12d3dfd$exports = {
-    "breadcrumbs": `\u{5BFC}\u{822A}\u{680F}`
-};
-
-
-
-//# sourceMappingURL=zh-CN.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-TW.mjs
-var $f8c49dd804b75140$exports = {};
-$f8c49dd804b75140$exports = {
-    "breadcrumbs": `\u{5C0E}\u{89BD}\u{5217}`
-};
-
-
-
-//# sourceMappingURL=zh-TW.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/intlStrings.mjs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var $8229b34715874f89$exports = {};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$8229b34715874f89$exports = {
-    "ar-AE": $b91590b2dc47de39$exports,
-    "bg-BG": $55b0693b2cf3fe91$exports,
-    "cs-CZ": $6ec1ed7729e948cc$exports,
-    "da-DK": $5a41bb2baa6861e4$exports,
-    "de-DE": $f28bbea439e87eca$exports,
-    "el-GR": $b3eca51cb720961a$exports,
-    "en-US": $0b39b205118db415$exports,
-    "es-ES": $f467c0ee7bfb0950$exports,
-    "et-EE": $ab711d2ffb4cdf3d$exports,
-    "fi-FI": $b63105d663e6f9d5$exports,
-    "fr-FR": $9d2ed7be7fcdc2a1$exports,
-    "he-IL": $c5704294d85c7b5d$exports,
-    "hr-HR": $20c975671d6bbc63$exports,
-    "hu-HU": $2569ca3917233115$exports,
-    "it-IT": $caa152f7f8e96c85$exports,
-    "ja-JP": $cbc6af0cc98fad10$exports,
-    "ko-KR": $ad9be5d332b4d607$exports,
-    "lt-LT": $659de19a00ff9617$exports,
-    "lv-LV": $173e9fb4d14fe309$exports,
-    "nb-NO": $d8e2640a066567a9$exports,
-    "nl-NL": $d71fd764236c0d12$exports,
-    "pl-PL": $f4ad3faf9f4aaec6$exports,
-    "pt-BR": $9703be9d55d8e9c2$exports,
-    "pt-PT": $7e23baec8a14f309$exports,
-    "ro-RO": $568f95594049d56e$exports,
-    "ru-RU": $625df06cecc70764$exports,
-    "sk-SK": $b5a67525f3a2f594$exports,
-    "sl-SI": $16125922964febca$exports,
-    "sr-SP": $de104bf355206bcf$exports,
-    "sv-SE": $d5ab76bcbadc9c07$exports,
-    "tr-TR": $a6a1af5968159b55$exports,
-    "uk-UA": $5204a30f0d17ffec$exports,
-    "zh-CN": $8d15e736e12d3dfd$exports,
-    "zh-TW": $f8c49dd804b75140$exports
-};
-
-
-
-//# sourceMappingURL=intlStrings.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/filterDOMProps.mjs
-var filterDOMProps = __webpack_require__(5987);
-// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/useLocalizedStringFormatter.mjs
-var useLocalizedStringFormatter = __webpack_require__(29571);
-;// ./node_modules/@react-aria/breadcrumbs/dist/useBreadcrumbs.mjs
-
-
-
-
-
-function $parcel$interopDefault(a) {
-  return a && a.__esModule ? a.default : a;
-}
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-function $848231d7a2b3998e$export$8cefe241bd876ca0(props) {
-    let { 'aria-label': ariaLabel, ...otherProps } = props;
-    let strings = (0, useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)((0, ($parcel$interopDefault($8229b34715874f89$exports))), '@react-aria/breadcrumbs');
-    return {
-        navProps: {
-            ...(0, filterDOMProps/* filterDOMProps */.$)(otherProps, {
-                labelable: true
-            }),
-            'aria-label': ariaLabel || strings.format('breadcrumbs')
-        }
-    };
-}
-
-
-
-//# sourceMappingURL=useBreadcrumbs.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./node_modules/react-aria-components/dist/Breadcrumbs.mjs
-
-
-
-
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
 
@@ -1568,67 +1112,53 @@ var react = __webpack_require__(96540);
  */ 
 
 
-
-
-
-
-const $778035c5624f61e7$export$65596d3621b0a4a0 = /*#__PURE__*/ (0, react.createContext)(null);
-function $778035c5624f61e7$var$Breadcrumbs(props, ref) {
-    [props, ref] = (0, utils/* useContextProps */.JT)(props, ref, $778035c5624f61e7$export$65596d3621b0a4a0);
-    let { CollectionRoot: CollectionRoot } = (0, react.useContext)((0, Collection/* CollectionRendererContext */.zL));
-    let { navProps: navProps } = (0, $848231d7a2b3998e$export$8cefe241bd876ca0)(props);
-    return /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* CollectionBuilder */.GQ), {
-        content: /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* Collection */.pM), props)
-    }, (collection)=>/*#__PURE__*/ {
-        var _props_className;
-        return (0, react).createElement("ol", {
-            ref: ref,
-            ...navProps,
-            slot: props.slot || undefined,
-            style: props.style,
-            className: (_props_className = props.className) !== null && _props_className !== void 0 ? _props_className : 'react-aria-Breadcrumbs'
-        }, /*#__PURE__*/ (0, react).createElement($778035c5624f61e7$export$65596d3621b0a4a0.Provider, {
-            value: props
-        }, /*#__PURE__*/ (0, react).createElement(CollectionRoot, {
-            collection: collection
-        })));
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+function $a049562f99e7db0e$var$Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
     });
-}
-/**
- * Breadcrumbs display a hierarchy of links to the current page or resource in an application.
- */ const $778035c5624f61e7$export$2dc68d50d56fbbd = /*#__PURE__*/ (0, react.forwardRef)($778035c5624f61e7$var$Breadcrumbs);
-const $778035c5624f61e7$export$dabcc1ec9dd9d1cc = /*#__PURE__*/ (0, CollectionBuilder/* createLeafComponent */.KU)('item', function Breadcrumb(props, ref, node) {
-    // Recreating useBreadcrumbItem because we want to use composition instead of having the link builtin.
-    let isCurrent = node.nextKey == null;
-    let { isDisabled: isDisabled, onAction: onAction } = (0, utils/* useSlottedContext */.CC)($778035c5624f61e7$export$65596d3621b0a4a0);
-    let linkProps = {
-        'aria-current': isCurrent ? 'page' : null,
-        isDisabled: isDisabled || isCurrent,
-        onPress: ()=>onAction === null || onAction === void 0 ? void 0 : onAction(node.key)
-    };
-    let renderProps = (0, utils/* useRenderProps */.Sl)({
-        ...node.props,
-        children: node.rendered,
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
         values: {
-            isDisabled: isDisabled || isCurrent,
-            isCurrent: isCurrent
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
         },
-        defaultClassName: 'react-aria-Breadcrumb'
+        defaultClassName: 'react-aria-Group'
     });
-    return /*#__PURE__*/ (0, react).createElement("li", {
-        ...(0, filterDOMProps/* filterDOMProps */.$)(props),
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
         ...renderProps,
         ref: ref,
-        "data-disabled": isDisabled || isCurrent || undefined,
-        "data-current": isCurrent || undefined
-    }, /*#__PURE__*/ (0, react).createElement((0, Link/* LinkContext */.s).Provider, {
-        value: linkProps
-    }, renderProps.children));
-});
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+}
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
 
 
 
-//# sourceMappingURL=Breadcrumbs.module.js.map
+//# sourceMappingURL=Group.module.js.map
 
 
 /***/ })

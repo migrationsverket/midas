@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2169],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4203],{
 
-/***/ 74180:
+/***/ 14540:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -25,77 +25,48 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
+// EXTERNAL MODULE: ./packages/logo/src/index.ts + 3 modules
+var src = __webpack_require__(2647);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
-var src = __webpack_require__(17986);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/accordion.json
-const accordion_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/accordion@1.0.2","_rev":"7-10e9bb6ee89e42063cb5858faf808c77","name":"@midas-ds/accordion","dist-tags":{"latest":"1.0.2"},"versions":["0.4.23","0.4.24","0.4.25","0.5.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:34:18.911Z","modified":"2024-10-24T13:26:41.091Z","0.4.23":"2024-09-10T14:34:19.191Z","0.4.24":"2024-09-11T08:41:50.970Z","0.4.25":"2024-09-12T13:02:08.663Z","0.5.1":"2024-10-07T12:03:45.519Z","1.0.0":"2024-10-18T13:40:30.502Z","1.0.1":"2024-10-22T12:44:33.119Z","1.0.2":"2024-10-24T13:26:40.881Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/accordion ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":12235,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-00WjrYjmdr9GDwIcfUu/HvUBz3G4FDfvJAy3HSwxGue5RnyW3pq/c2kYyWnHkjH1XoPJHoIo5+90B0uNpq0dpQ==","shasum":"0f2a152410b301c455a6db7dc764be24a7ad30fb","tarball":"https://registry.npmjs.org/@midas-ds/accordion/-/accordion-1.0.2.tgz","fileCount":12,"unpackedSize":45881,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIBpNDO5UsF6V4ZoF4GoWAwDUfiMASBtfrg53QrYeNWlqAiB6lxzcW3j2+Vy9b/CtOiFn/D/7WMGvPaXDaukWH1phXg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/accordion_1.0.2_1729776400663_0.28891734005095704"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/logo.json
+const logo_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/logo@1.0.1","_rev":"5-88fcfb43973e0e51ff0f9d8a00a0bef1","name":"@midas-ds/logo","dist-tags":{"latest":"1.0.1"},"versions":["0.2.51","0.2.52","0.2.54","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:51.669Z","modified":"2024-10-24T13:26:40.838Z","0.2.51":"2024-09-10T14:37:51.962Z","0.2.52":"2024-09-12T12:40:53.983Z","0.2.54":"2024-10-07T12:17:56.616Z","1.0.0":"2024-10-18T13:40:34.594Z","1.0.1":"2024-10-24T13:26:40.640Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/logo ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":8247,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-jiCOTj+YLq922cK0pBs9LrSO4t+gukw7QczVlbpe83xsjEbQXJ8uaMjoG3PwU02U7YlRxZoX9BnM+KpUKIA1SQ==","shasum":"524bb981e8e1ce1fff6c3a02bfad5647e780f8be","tarball":"https://registry.npmjs.org/@midas-ds/logo/-/logo-1.0.1.tgz","fileCount":12,"unpackedSize":14579,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQC8Yb7g7nHOJCP5PNbLyWJeTZ4b7NpFEW2qv/9fWYTzPAIgAlDvluqQmBi43yeN8HxNqDzLYFXhYgqKD6YzgPYgPWo="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/logo_1.0.1_1729776400447_0.5861607100385444"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/accordion.mdx
+;// ./apps/docs/docs/components/logo.mdx
 
 
 const frontMatter = {
-	title: 'Accordion',
-	sidebar_position: 1,
-	tags: [
-		'components',
-		'menu',
-		'accordion'
-	],
-	description: 'Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.'
+	title: 'Logo',
+	description: 'Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/accordion",
-  "title": "Accordion",
-  "description": "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.",
-  "source": "@site/docs/components/accordion.mdx",
+  "id": "components/logo",
+  "title": "Logo",
+  "description": "Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet",
+  "source": "@site/docs/components/logo.mdx",
   "sourceDirName": "components",
-  "slug": "/components/accordion",
-  "permalink": "/pr-preview/pr-126/components/accordion",
+  "slug": "/components/logo",
+  "permalink": "/pr-preview/pr-126/components/logo",
   "draft": false,
   "unlisted": false,
-  "tags": [
-    {
-      "inline": true,
-      "label": "components",
-      "permalink": "/pr-preview/pr-126/tags/components"
-    },
-    {
-      "inline": true,
-      "label": "menu",
-      "permalink": "/pr-preview/pr-126/tags/menu"
-    },
-    {
-      "inline": true,
-      "label": "accordion",
-      "permalink": "/pr-preview/pr-126/tags/accordion"
-    }
-  ],
+  "tags": [],
   "version": "current",
-  "sidebarPosition": 1,
   "frontMatter": {
-    "title": "Accordion",
-    "sidebar_position": 1,
-    "tags": [
-      "components",
-      "menu",
-      "accordion"
-    ],
-    "description": "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida."
+    "title": "Logo",
+    "description": "Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet"
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Komponenter",
-    "permalink": "/pr-preview/pr-126/components/"
+    "title": "Link",
+    "permalink": "/pr-preview/pr-126/components/link"
   },
   "next": {
-    "title": "Breadcrumbs",
-    "permalink": "/pr-preview/pr-126/components/breadcrumbs"
+    "title": "Modal",
+    "permalink": "/pr-preview/pr-126/components/modal"
   }
 };
 const assets = {
@@ -120,8 +91,8 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
+  "value": "SVG",
+  "id": "svg",
   "level": 2
 }, {
   "value": "Beroenden",
@@ -132,24 +103,22 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Accordion',
-      info: accordion_namespaceObject,
-      friendlyName: 'Dragspel',
-      overrideHeadlessLink: "https://www.radix-ui.com/primitives/docs/components/accordion"
+      name: 'Logo',
+      info: logo_namespaceObject,
+      friendlyName: 'Logotyp',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren."
+      children: "På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -160,7 +129,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/accordion\n"
+            children: "npm install @midas-ds/logo\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -169,7 +138,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/accordion\n"
+            children: "yarn add @midas-ds/logo\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -178,44 +147,41 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/accordion\n"
+            children: "pnpm add @midas-ds/logo\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import {\n  Accordion,\n  AccordionItem,\n  AccordionTrigger,\n  AccordionContent,\n} from '@midas-ds/accordion';\n"
+        children: "import { Logo } from '@midas-ds/logo';\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Accordion: src/* Accordion */.nD,
-        AccordionItem: src/* AccordionItem */.As,
-        AccordionTrigger: src/* AccordionTrigger */.$m,
-        AccordionContent: src/* AccordionContent */.ub
+        Logo: src/* Logo */.g
       },
-      children: `<Accordion type={'multiple'}>
-  {fruits.shuffled().map(fruit => (
-    <AccordionItem key={fruit.value} value={fruit.value}>
-      <AccordionTrigger>{fruit.name}</AccordionTrigger>
-      <AccordionContent>
-        {fruit.description}
-      </AccordionContent>
-    </AccordionItem>
-  ))}
-</Accordion>`
+      children: `<>
+  <Logo/>
+  <Logo background/>
+  <Logo dark/>
+  <Logo dark background/>
+  <Logo size={'small'}/>
+</>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan."
-      }), "\n"]
+      id: "svg",
+      children: "SVG"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["I vissa fall kan det vara mer fördelaktigt med en vanlig fil. ", (0,jsx_runtime.jsx)("a", {
+        target: "_blank",
+        href: (__webpack_require__(61252)/* ["default"] */ .A),
+        download: true,
+        children: "Ladda ner logotypen som SVG här (komprimerad fil)"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: accordion_namespaceObject
+      info: logo_namespaceObject
     })]
   });
 }
@@ -289,7 +255,7 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://designsystem.migrationsverket.se/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -334,6 +300,45 @@ var jsx_runtime = __webpack_require__(74848);
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
 
+
+/***/ }),
+
+/***/ 2647:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  g: () => (/* reexport */ Logo)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/logo/src/lib/Logo.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Logo_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","red100":"#b90835","black":"#000000","gray130":"#5d5d5d","white":"#ffffff","logo":"logo_tYIG","primary":"primary_Y5gB","dark":"dark_ZLNv","small":"small_vjO9","background-primary":"background-primary_DO6_","background-dark":"background-dark_tFvn"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/logo/src/lib/Logo.tsx
+var Logo=function Logo(_ref){var _ref$primary=_ref.primary,primary=_ref$primary===void 0?true:_ref$primary,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,background=_ref.background;var classNames=(0,clsx/* default */.A)(Logo_module.logo,primary?Logo_module.primary:Logo_module.dark,size==='small'&&Logo_module.small,background?primary?Logo_module['background-primary']:Logo_module['background-dark']:null);return/*#__PURE__*/(0,jsx_runtime.jsxs)("svg",{role:'img',className:classNames,xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 145.8 52.22",children:[/*#__PURE__*/(0,jsx_runtime.jsx)("title",{children:"Migrationsverkets logotyp"}),/*#__PURE__*/(0,jsx_runtime.jsx)("defs",{children:/*#__PURE__*/(0,jsx_runtime.jsx)("clipPath",{children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M0 0h145.8v52.22H0z"})})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("g",{clipPath:"url(#mig-logo_svg__a)",children:[/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M127.44 28.21c-9.76-12.7-26.18-20.93-44.8-20.93-17.06 0-32.45 6.88-42.38 17.82a50.37 50.37 0 0 1 33.5-12.33c14.84 0 28.09 6 36.78 15.44Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M117.87 16.43C92.06-2 53.66 3.61 35.68 28.21h-16c20-32 69.23-38 98.15-11.78Z"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M15.32 48.47A1.72 1.72 0 0 1 14.7 47V35.82a1.64 1.64 0 0 1 .58-1.36H13l-5.19 10-5.93-10H0a1.46 1.46 0 0 1 .6 1.26V47.3a1.52 1.52 0 0 1-.6 1.17h2.5a1.56 1.56 0 0 1-.6-1.22V38.4l5.55 9.41 5.06-9.69v9a1.37 1.37 0 0 1-.51 1.35ZM21 48.47a1.51 1.51 0 0 1-.58-1.39v-8.36h-2.6c.49.24.64.75.64 1.52v6.83a1.49 1.49 0 0 1-.6 1.39zm-.55-13.4a1.05 1.05 0 1 0-1.05 1.05 1.05 1.05 0 0 0 1.05-1.05zm9.22 14.44c0 1-1.07 1.71-2.52 1.71-.77 0-2.22-.4-2.2-1.51a1.62 1.62 0 0 1 .77-1.3l2.56.06c.66 0 1.39.13 1.39 1zm-.81-7.45c0 1-.49 2.11-1.77 2.11s-1.92-1.58-1.92-2.73.66-2.05 1.71-2.05c1.56 0 2 1.64 2 2.67zm2.94-1.62a2.74 2.74 0 0 0-.49-1.24h-1.77a3.69 3.69 0 0 0-2.54-.76 3.35 3.35 0 0 0-3.65 3.37 3.23 3.23 0 0 0 1.71 3c-.56.49-1.81 1.28-1.81 2.11s1 1.3 1.81 1.43c-1.15.34-2.18 1.07-2.18 2.07 0 1.49 2.26 1.84 3.44 1.84 2 0 5.1-1 5.1-3.44 0-1.58-1.6-1.94-2.9-2-3.16-.08-3.28-.26-3.28-.73 0-.26.55-.88.72-1.05a7.6 7.6 0 0 0 .92.08c2.3 0 3.82-1.22 3.82-3.52a2.74 2.74 0 0 0-.38-1.45 1.41 1.41 0 0 1 .49-.06 1.74 1.74 0 0 1 1 .36zM39.11 40.75l-.3-2.13a1.92 1.92 0 0 0-.85-.19 2.76 2.76 0 0 0-2.33 1.79v-1.5h-2.57a1.58 1.58 0 0 1 .62 1.49V47a1.56 1.56 0 0 1-.58 1.49h3.07a1.63 1.63 0 0 1-.55-1.49v-5.57a2.06 2.06 0 0 1 1.86-1.35 2.59 2.59 0 0 1 1.62.68ZM45.43 46.49a2.52 2.52 0 0 1-1.79 1.11c-1 0-1.54-1-1.54-2a1.78 1.78 0 0 1 1.17-1.79l2.16-.81v3.52Zm2.5 2c-.49-.43-.56-.77-.56-1.64v-5.1c0-2.88-1.86-3.33-3.65-3.33a7.61 7.61 0 0 0-2.65.55 12.33 12.33 0 0 0-.53 2.18 4.23 4.23 0 0 1 3.12-1.79c1.54 0 1.77 1.07 1.77 2.22v.51l-2.88 1a3.16 3.16 0 0 0-2.45 3 2.57 2.57 0 0 0 2.8 2.71 3.36 3.36 0 0 0 2.52-1.22v.94ZM55.38 47.19a2.19 2.19 0 0 1-1.45.6c-1.13 0-1.39-1.28-1.39-2.16v-5.89h1.11a3.77 3.77 0 0 1 1.73.45l-.23-1.47h-2.61v-2.3a11.1 11.1 0 0 1-3.37 3.31h1.43v5.78c0 1.86.41 3.22 2.54 3.22a3.37 3.37 0 0 0 1.81-.47 5.35 5.35 0 0 0 .43-1.07ZM59.91 48.47a1.51 1.51 0 0 1-.58-1.39v-8.36h-2.59c.49.24.64.75.64 1.52v6.83a1.49 1.49 0 0 1-.6 1.39zm-.55-13.4a1.05 1.05 0 1 0-1.05 1.05 1.05 1.05 0 0 0 1.05-1.05zm10.18 9.37c0 1.66-.68 3.35-2.43 3.35-2.33 0-3.16-3.18-3.16-5 0-1.58.62-3.35 2.45-3.35 2.33 0 3.14 3.18 3.14 5zm2-.88c0-2.69-1.69-5.16-4.57-5.16a5 5 0 0 0-5 5.23c0 2.69 1.68 5.16 4.55 5.16a5 5 0 0 0 5-5.23zM82.52 48.47c-.36-.28-.58-.55-.58-1.45v-5.14c0-2.13-.51-3.44-2.84-3.44a4.55 4.55 0 0 0-3.1 1.47v-1.19h-2.59a1.38 1.38 0 0 1 .64 1.37v7c0 .77-.19 1.15-.62 1.41h3.12c-.3-.3-.57-.49-.57-1.52V41.2a3.57 3.57 0 0 1 2.41-1.62c1.32 0 1.6 1.32 1.6 2.35v5.17a1.43 1.43 0 0 1-.6 1.37ZM90.91 45.95c0-2.88-4.46-3.54-4.46-5.31 0-1 .92-1.28 1.75-1.28a2.94 2.94 0 0 1 2.28 1.05l-.09-1.54a6.73 6.73 0 0 0-2.2-.45c-1.88 0-3.5.83-3.5 2.47 0 3.09 4.52 3.5 4.52 5.55 0 1-.81 1.37-1.71 1.37a4.33 4.33 0 0 1-3.29-1.58v.13c0 .53 0 1.3.4 1.66a5 5 0 0 0 2.84.73c1.77 0 3.48-.81 3.48-2.8ZM101.6 38.72h-1.87c.17.13.15.73-.24 1.73l-2.43 6.16-2.45-6.14c-.34-.85-.41-1.51-.21-1.75h-2.69a7.41 7.41 0 0 1 1.07 2.18l3 7.57h1.71l3.07-7.79a5.36 5.36 0 0 1 1-2ZM108.59 42.92c-1.43.11-2.82.13-4.27.13 0-1 .38-3.69 2.22-3.69s2.05 2.24 2.05 3.56Zm2.05.87v-.3c0-2.5-.81-5.06-3.76-5.06s-4.65 2.64-4.65 5.36a4.64 4.64 0 0 0 4.67 5 6.49 6.49 0 0 0 2.79-.58 3.46 3.46 0 0 0 .77-1.66 5 5 0 0 1-3 1.09c-1.94 0-3.07-2.05-3.11-3.76l6.31-.06ZM118.53 40.75l-.3-2.13a1.92 1.92 0 0 0-.85-.19 2.76 2.76 0 0 0-2.38 1.8v-1.51h-2.56a1.58 1.58 0 0 1 .62 1.49V47a1.56 1.56 0 0 1-.58 1.49h3.07A1.63 1.63 0 0 1 115 47v-5.57a2.06 2.06 0 0 1 1.86-1.35 2.59 2.59 0 0 1 1.62.68zm11.54 7.76c-3-.49-3.26-5.27-6.14-5.27l3.43-3.65a8.37 8.37 0 0 1 1-.87H126c.19.19.17.51-.17.87l-3.46 3.69v-9.23h-2.58a1.45 1.45 0 0 1 .64 1.32v11.76a1.54 1.54 0 0 1-.6 1.34h3.07a1.59 1.59 0 0 1-.53-1.34v-3.35a2.26 2.26 0 0 1 1.07.34c1.68 1.07 2.54 4.07 3.48 4.5a7.44 7.44 0 0 0 1.49.13 4.38 4.38 0 0 0 1.64-.24zM136.51 42.92c-1.43.11-2.82.13-4.27.13 0-1 .38-3.69 2.22-3.69s2.05 2.24 2.05 3.56Zm2.05.87v-.3c0-2.5-.81-5.06-3.76-5.06s-4.65 2.64-4.65 5.36a4.64 4.64 0 0 0 4.67 5 6.49 6.49 0 0 0 2.79-.58 3.46 3.46 0 0 0 .77-1.66 5 5 0 0 1-3 1.09c-1.94 0-3.07-2.05-3.11-3.76l6.31-.06ZM145.8 47.19a2.19 2.19 0 0 1-1.45.6c-1.13 0-1.39-1.28-1.39-2.16v-5.89h1.11a3.77 3.77 0 0 1 1.73.45l-.23-1.47H143v-2.3a11.1 11.1 0 0 1-3.37 3.31H141v5.78c0 1.86.41 3.22 2.54 3.22a3.37 3.37 0 0 0 1.81-.47 5.32 5.32 0 0 0 .43-1.07Z"})]});};
+;// ./packages/logo/src/lib/index.ts
+
+;// ./packages/logo/src/index.ts
+
+
+/***/ }),
+
+/***/ 61252:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "assets/files/Mig_logo_SVG-4fdf391110ee30929aca69b9d5d723e1.zip");
 
 /***/ }),
 

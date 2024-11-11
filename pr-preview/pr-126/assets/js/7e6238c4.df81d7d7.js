@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9196],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
 
-/***/ 83525:
+/***/ 51594:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,48 +27,60 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/radio/src/index.ts + 2 modules
+var src = __webpack_require__(34378);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/textarea.json
-const textarea_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textarea@1.0.2","_rev":"6-1e066224a3b6a100a86f2c478a1adc83","name":"@midas-ds/textarea","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.0.3","0.1.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-19T09:08:52.207Z","modified":"2024-11-01T10:27:15.288Z","0.0.1":"2024-09-19T09:08:52.548Z","0.0.3":"2024-09-24T06:38:03.732Z","0.1.0":"2024-10-07T12:26:01.764Z","1.0.0":"2024-10-18T13:40:52.798Z","1.0.1":"2024-10-22T14:09:13.325Z","1.0.2":"2024-11-01T10:27:15.096Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textarea ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10180,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/textfield":"1.0.2"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Rk7qTqrG6bzz7W4tRkfkcRhhe0eVXgjFJxlrPRzGpHiTvu95TS2Y67dsTmntlxsBQGsZUK37eI8+G3JE9Qh9qQ==","shasum":"d47a1184f883efd57d5add7fdc4fe8b45e864ba4","tarball":"https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.2.tgz","fileCount":8,"unpackedSize":77829,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCICcXfTePzqkAPyYzYnnCTiiJhrVv+bgsz/rNiyyuLgHtAiBOVrh7mvHkK7LlhanCkRCLUXUqqOGjbMjKdjqcE58O2g=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textarea_1.0.2_1730456834926_0.34701456151949994"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/textarea/src/index.ts + 2 modules
-var src = __webpack_require__(26196);
+;// ./apps/docs/static/data/radio.json
+const radio_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/radio@1.0.1","_rev":"7-c37f72c62143407f474660704552370b","name":"@midas-ds/radio","dist-tags":{"latest":"1.0.1"},"versions":["0.6.1","0.6.2","0.6.3","0.7.0","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:59.126Z","modified":"2024-10-24T13:26:37.615Z","0.6.1":"2024-09-10T14:37:59.408Z","0.6.2":"2024-09-12T12:42:10.930Z","0.6.3":"2024-09-19T12:26:24.985Z","0.7.0":"2024-10-07T12:18:39.699Z","1.0.0":"2024-10-18T13:40:39.975Z","1.0.1":"2024-10-24T13:26:37.442Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/radio ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9973,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-YdDOfb2TgN9l7Itr8PsW47G3Azz/nQKdndDAp8wal1PXNBsjkbSJVioIf11I3R9UEHOVf0MZr/C8oLCYv8gI1w==","shasum":"4807487bc05e8ccbe7e880be602e3f69c9c5f8ef","tarball":"https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.1.tgz","fileCount":9,"unpackedSize":126274,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIGLt9dUVDiB24Uy43XXA3pUdXIzj6EUdk66c7XdpxGSnAiAMF3miI/byvsgwOmrNUt7E/W98QzeUk/tEAsexpvi9HQ=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/radio_1.0.1_1729776397186_0.24599049100813497"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/textarea.mdx
+;// ./apps/docs/docs/components/radio.mdx
 
 
 const frontMatter = {
-	title: 'TextArea',
-	tags: [],
-	description: 'När användaren ska fylla i längre information'
+	title: 'Radio',
+	description: 'Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
+	tags: [
+		'form'
+	]
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/textarea",
-  "title": "TextArea",
-  "description": "När användaren ska fylla i längre information",
-  "source": "@site/docs/components/textarea.mdx",
+  "id": "components/radio",
+  "title": "Radio",
+  "description": "Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ",
+  "source": "@site/docs/components/radio.mdx",
   "sourceDirName": "components",
-  "slug": "/components/textarea",
-  "permalink": "/pr-preview/pr-126/components/textarea",
+  "slug": "/components/radio",
+  "permalink": "/pr-preview/pr-126/components/radio",
   "draft": false,
   "unlisted": false,
-  "tags": [],
+  "tags": [
+    {
+      "inline": true,
+      "label": "form",
+      "permalink": "/pr-preview/pr-126/tags/form"
+    }
+  ],
   "version": "current",
   "frontMatter": {
-    "title": "TextArea",
-    "tags": [],
-    "description": "När användaren ska fylla i längre information"
+    "title": "Radio",
+    "description": "Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ",
+    "tags": [
+      "form"
+    ]
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "Tabs",
-    "permalink": "/pr-preview/pr-126/components/tabs"
+    "title": "Modal",
+    "permalink": "/pr-preview/pr-126/components/modal"
   },
   "next": {
-    "title": "TextField",
-    "permalink": "/pr-preview/pr-126/components/textfield"
+    "title": "SearchField",
+    "permalink": "/pr-preview/pr-126/components/search-field"
   }
 };
 const assets = {
@@ -84,14 +96,35 @@ const assets = {
 
 
 
+
 const toc = [{
   "value": "Introduktion",
   "id": "introduktion",
   "level": 2
 }, {
-  "value": "Installation och användnin",
-  "id": "installation-och-användnin",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
+}, {
+  "value": "Normal användning",
+  "id": "normal-användning",
+  "level": 3
+}, {
+  "value": "Disabled",
+  "id": "disabled",
+  "level": 3
+}, {
+  "value": "Validering",
+  "id": "validering",
+  "level": 3
+}, {
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
+  "level": 3
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -99,30 +132,41 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'TextArea',
-      info: textarea_namespaceObject,
-      friendlyName: "Textfält"
+      name: 'Radio',
+      info: radio_namespaceObject,
+      friendlyName: 'Radioknappar',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-126/components/textfield",
-        children: "TextField"
-      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användnin",
-      children: "Installation och användnin"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -130,7 +174,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/textarea\n"
+            children: "npm install @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -139,7 +183,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/textarea\n"
+            children: "yarn add @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -148,30 +192,87 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/textarea\n"
+            children: "pnpm add @midas-ds/radio\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { TextArea } from '@midas-ds/textarea'\n"
+        children: "import { Radio, RadioGroup } from '@midas-ds/radio';\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "normal-användning",
+      children: "Normal användning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Gruppera flera ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Radio>"
+      }), " i en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<RadioGroup>"
+      }), " och sätt rubrik och beskrivande text."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        TextArea: src/* TextArea */.f
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
       },
-      children: `<TextArea 
-  label="Kommentar"
-  description="Skriv en kommentar"
-  maxCharacters={50}
-  // showCounter={true}
-/>`
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "disabled",
+      children: "Disabled"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isDisabled"
+      }), " antingen på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "RadioGroup"
+      }), " eller på enskilda val av ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Radio"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+     ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt validering med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isInvalid"
+      }), " eller använd inbyggda tester som ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "flowchart TD;\n    A[Ska användaren kunna välja mer än ett alternativ?]:::primary\n    A -->|Ja| B[Använd Checkbox]\n    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary\n    C -->|Ja| E[Använd Select]\n    C -->|Nej| D[Använd Radio]:::primary\n    "
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: textarea_namespaceObject
+      info: radio_namespaceObject
     })]
   });
 }
@@ -245,7 +346,7 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://designsystem.migrationsverket.se/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -293,34 +394,37 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 26196:
+/***/ 34378:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  f: () => (/* reexport */ TextArea)
+  s: () => (/* reexport */ Radio),
+  z: () => (/* reexport */ RadioGroup)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/textarea/src/lib/TextArea.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","textArea":"textArea_tiIs","count":"count_OzSk"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
-var TextField = __webpack_require__(32945);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
-var dist_TextArea = __webpack_require__(43660);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
+;// ./packages/radio/src/lib/Radio.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Radio_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","inputLabel":"undefined","inputText":"#1f1f1f","black":"#000000","blue150":"#143c50","gray50":"#bfbfbf","gray60":"#b3b3b3","signalRed10":"#ffdfdf","signalRed100":"#e62323","medium":"undefined","gray150":"#1f1f1f","regular":"undefined","smBreakpoint":"(max-width: 767px)","mdBreakpoint":"(min-width: 768px)","borderSecondary":"#b3b3b3","radioGroup":"radioGroup_rXoc","wrap":"wrap_M_eK","radio":"radio_jFRQ"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
+var dist_RadioGroup = __webpack_require__(96325);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
+var Group = __webpack_require__(63899);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/textarea/src/lib/TextArea.tsx
-'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var _React$useState2=react.useState(false),hasExceededMaxCharacters=_React$useState2[0],setHasExceededMaxCharacters=_React$useState2[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);if(maxCharacters){setHasExceededMaxCharacters(newValue.length>maxCharacters);}};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:TextArea_module.count,children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var getErrorMessage=function getErrorMessage(maxCharacters){if(hasExceededMaxCharacters){return value.length-maxCharacters+" tecken f\xF6r mycket";}return errorMessage;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:src/* TextFieldStyles */.Ql.inputField},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,Object.assign({label:label,description:description,errorMessage:getErrorMessage(maxCharacters||0),isInvalid:hasExceededMaxCharacters||props.isInvalid},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]}))}));};
-;// ./packages/textarea/src/index.ts
+;// ./packages/radio/src/lib/Radio.tsx
+'use client';var _excluded=["label","description","errorMessage","children"];var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
+ * Radio item
+ * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
+;// ./packages/radio/src/index.ts
 
 
 /***/ }),
@@ -670,6 +774,167 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
+
+/***/ }),
+
+/***/ 87979:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
+/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
+/* harmony export */ });
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
+
+
+
+
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $5c3e21d68f1c4674$var$styles = {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: '1px',
+    whiteSpace: 'nowrap'
+};
+function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
+    let { style: style, isFocusable: isFocusable } = props;
+    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
+        isDisabled: !isFocusable,
+        onFocusWithinChange: (val)=>setFocused(val)
+    });
+    // If focused, don't hide the element.
+    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
+        if (isFocused) return style;
+        else if (style) return {
+            ...$5c3e21d68f1c4674$var$styles,
+            ...style
+        };
+        else return $5c3e21d68f1c4674$var$styles;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        isFocused
+    ]);
+    return {
+        visuallyHiddenProps: {
+            ...focusWithinProps,
+            style: combinedStyles
+        }
+    };
+}
+function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
+    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
+}
+
+
+
+//# sourceMappingURL=VisuallyHidden.module.js.map
+
+
+/***/ }),
+
+/***/ 63899:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+function $a049562f99e7db0e$var$Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
+    });
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Group'
+    });
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+}
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
+
+
+
+//# sourceMappingURL=Group.module.js.map
+
 
 /***/ })
 

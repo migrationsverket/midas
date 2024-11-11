@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5320],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9078],{
 
-/***/ 96863:
+/***/ 15264:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -27,58 +27,60 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/file-upload/src/index.ts + 3 modules
-var src = __webpack_require__(45679);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/file-upload.json
-const file_upload_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/file-upload@1.0.2","_rev":"6-9d56e5e2929a9c5b039dedb6ca83fef3","name":"@midas-ds/file-upload","dist-tags":{"latest":"1.0.2"},"versions":["0.3.19","0.3.20","0.3.22","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:36:46.893Z","modified":"2024-11-01T10:27:41.805Z","0.3.19":"2024-09-10T14:36:47.146Z","0.3.20":"2024-09-12T12:21:00.654Z","0.3.22":"2024-10-07T12:12:28.880Z","1.0.0":"2024-10-18T13:40:44.514Z","1.0.2":"2024-10-22T14:09:13.890Z","1.0.1":"2024-10-24T13:26:47.217Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"url":"git+https://github.com/migrationsverket/midas.git","type":"git"},"description":"```bash npm i @midas-ds/file-upload ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":11038,"version":"1.0.2","dist":{"shasum":"9b767ada804d9c8574a5d89f03fa95670b33ddfe","tarball":"https://registry.npmjs.org/@midas-ds/file-upload/-/file-upload-1.0.2.tgz","fileCount":9,"integrity":"sha512-GNygp08r5KRiB11x5S5jwUHi9/6QM7De9NtX4FDakbXpbu+4d5CtGuCqmJNCNX5otUJTTyfQ8F0l4XQ+Ha6p3Q==","signatures":[{"sig":"MEUCICTPww2MuQcCJ8ue3cq3SSld1nb6HRxXwRnFAtmFaeSxAiEAqtqvj3W5d46A0+/4UmhonldHqmwYs7ccPupfDIMOP3Y=","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":334532},"main":"./index.js","types":"./index.d.ts","exports":{".":{"types":"./index.d.ts","import":"./index.mjs","require":"./index.js"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","_npmVersion":"10.2.4","directories":{},"_nodeVersion":"20.11.1","dependencies":{"lucide-react":"^0.383.0","@midas-ds/button":"1.0.1","@midas-ds/textfield":"1.0.1","react-aria-components":"^1.0.0-rc.0"},"publishConfig":{"access":"public"},"_hasShrinkwrap":false,"peerDependencies":{"react":"^18.2.0"},"_npmOperationalInternal":{"tmp":"tmp/file-upload_1.0.2_1729606153716_0.9738000394158912","host":"s3://npm-registry-packages"}}');
+;// ./apps/docs/static/data/flex.json
+const flex_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/flex@1.0.1","_rev":"6-a358097f2c62e04fbf713ef284bfcd2c","name":"@midas-ds/flex","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.1.0","0.1.1","0.1.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:00.258Z","modified":"2024-10-24T13:26:44.017Z","0.0.1":"2024-09-10T14:37:00.555Z","0.1.0":"2024-09-12T12:26:58.577Z","0.1.1":"2024-09-12T13:02:19.212Z","0.1.2":"2024-10-07T12:13:46.840Z","1.0.0":"2024-10-18T13:40:48.416Z","1.0.1":"2024-10-24T13:26:43.836Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/flex ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9818,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-T6h+Ke3QzvKPEtxcSZfZTWGabQMmkgjBIrh1k+alrQqXHwhgH4sVH22A2bADEi8RE3XB6FISUfr41EnIYCtOIw==","shasum":"cb5dca8f1262944a9d17611aff0380053a1df137","tarball":"https://registry.npmjs.org/@midas-ds/flex/-/flex-1.0.1.tgz","fileCount":10,"unpackedSize":10519,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIHs8WQsyXX5eMIfqYcv+KJFli2RLyDrWO/t7jVbXRfnKAiByuYOhwwEj/QMGleZodoiAaDpKnuaaNaQX8m9hJ+5EEg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/flex_1.0.1_1729776403619_0.11168719737503108"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var src = __webpack_require__(93294);
+// EXTERNAL MODULE: ./packages/card/src/index.ts + 3 modules
+var card_src = __webpack_require__(70720);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/fileupload.mdx
+;// ./apps/docs/docs/components/flex.mdx
 
 
 const frontMatter = {
-	title: 'FileUpload',
-	description: 'Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.',
+	title: 'Flex',
 	tags: [
-		'form'
-	]
+		'grid'
+	],
+	description: 'Grid baserat på tekniken display flex i css'
 };
 const contentTitle = undefined;
 const metadata = {
-  "id": "components/fileupload",
-  "title": "FileUpload",
-  "description": "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.",
-  "source": "@site/docs/components/fileupload.mdx",
+  "id": "components/flex",
+  "title": "Flex",
+  "description": "Grid baserat på tekniken display flex i css",
+  "source": "@site/docs/components/flex.mdx",
   "sourceDirName": "components",
-  "slug": "/components/fileupload",
-  "permalink": "/pr-preview/pr-126/components/fileupload",
+  "slug": "/components/flex",
+  "permalink": "/pr-preview/pr-126/components/flex",
   "draft": false,
   "unlisted": false,
   "tags": [
     {
       "inline": true,
-      "label": "form",
-      "permalink": "/pr-preview/pr-126/tags/form"
+      "label": "grid",
+      "permalink": "/pr-preview/pr-126/tags/grid"
     }
   ],
   "version": "current",
   "frontMatter": {
-    "title": "FileUpload",
-    "description": "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.",
+    "title": "Flex",
     "tags": [
-      "form"
-    ]
+      "grid"
+    ],
+    "description": "Grid baserat på tekniken display flex i css"
   },
   "sidebar": "sideBar",
   "previous": {
-    "title": "DatePicker",
-    "permalink": "/pr-preview/pr-126/components/date-picker"
+    "title": "FileUpload",
+    "permalink": "/pr-preview/pr-126/components/fileupload"
   },
   "next": {
-    "title": "Flex",
-    "permalink": "/pr-preview/pr-126/components/flex"
+    "title": "Grid",
+    "permalink": "/pr-preview/pr-126/components/grid"
   }
 };
 const assets = {
@@ -104,30 +106,57 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Beroenden",
-  "id": "beroenden",
+  "value": "Grid",
+  "id": "grid",
+  "level": 3
+}, {
+  "value": "FlexItem",
+  "id": "flexitem",
+  "level": 3
+}, {
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "När ska du använda Flex ?",
+  "id": "när-ska-du-använda-flex-",
+  "level": 3
+}, {
+  "value": "Så här använder du Flex",
+  "id": "så-här-använder-du-flex",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
+    h3: "h3",
     p: "p",
     pre: "pre",
+    table: "table",
+    tbody: "tbody",
+    td: "td",
+    th: "th",
+    thead: "thead",
+    tr: "tr",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'FileUpload',
-      info: file_upload_namespaceObject,
-      friendlyName: 'Filuppladdning',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/FileTrigger.html"
+      name: 'Flex',
+      info: flex_namespaceObject,
+      friendlyName: 'Rutnät',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Grid baserat på tekniken ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "display: flex;"
+      }), " i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet."
+      children: "Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -138,7 +167,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/fileupload\n"
+            children: "npm install @midas-ds/flex\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -147,7 +176,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/fileupload\n"
+            children: "yarn add @midas-ds/flex\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -156,25 +185,132 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/fileupload\n"
+            children: "pnpm add @midas-ds/flex\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { FileUpload } from '@midas-ds/fileupload';\n"
+        children: "import { Flex } from '@midas-ds/flex'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        FileUpload: src/* FileUpload */.e
+        Flex: src/* Flex */.s,
+        FlexItem: src/* FlexItem */.Z,
+        Card: card_src/* Card */.Z
       },
-      children: `<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`
+      children: `<Flex>
+  <FlexItem col={12}>
+      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem>
+      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem col={"auto"}>
+      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem col={6}>
+      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+</Flex>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "grid",
+      children: "Grid"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Grids skalas enligt följande specifikation."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
+      children: [(0,jsx_runtime.jsx)(_components.thead, {
+        children: (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.th, {
+            children: "Skärmstorlek"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Margin"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Children"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Kollumner"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Gutter"
+          })]
+        })
+      }), (0,jsx_runtime.jsxs)(_components.tbody, {
+        children: [(0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "0 - 767 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "1"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "768 px - 1199 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "32 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "1200 px - 1440 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "32 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "24 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "> 1440 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "1368 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "24 px"
+          })]
+        })]
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "flexitem",
+      children: "FlexItem"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Komponenten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<FlexItem>"
+      }), " agrerar som direkt child till ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Flex>"
+      }), ". FlexItem accepterar en prop col som kan ta värdena auto eller 1-12."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: file_upload_namespaceObject
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "när-ska-du-använda-flex-",
+      children: "När ska du använda Flex ?"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "så-här-använder-du-flex",
+      children: "Så här använder du Flex"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Flex></Flex>"
+      }), " som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<FlexItem col=\"antal-kolumner\"></FlexItem>"
+      }), "."]
     })]
   });
 }
@@ -248,7 +384,7 @@ var _excluded=["children","transformCode"];Array.prototype.shuffled=function(cou
 /* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10515);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93294);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74848);
-var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://designsystem.migrationsverket.se/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
+var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_ref.children;if(!info||!info.dependencies)return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment,{});return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul",{children:Object.keys(info.dependencies).map(function(k,i){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li",{children:k+"@"+info.dependencies[k]},'dep'+i);})});};var ComponentHeader=function ComponentHeader(_ref2){var name=_ref2.name,info=_ref2.info,friendlyName=_ref2.friendlyName,overrideHeadlessLink=_ref2.overrideHeadlessLink;moment__WEBPACK_IMPORTED_MODULE_1___default().locale('sv');if(!info){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div",{style:{display:'flex',justifyContent:'space-between'},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span",{className:'badge badge--secondary',children:"Under utveckling"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{display:'flex',gap:'3px'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a",{href:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img",{alt:"Static Badge",src:"https://img.shields.io/badge/React%20Aria-FF0000?style=for-the-badge&logo=adobe&logoColor=white"})})})]});}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section",{style:{marginBottom:32,marginTop:-20},children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div",{style:{marginBottom:16},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .Flex */ .s,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{children:["Version: ",info.version]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"https://github.com/migrationsverket/midas/tree/main/packages/"+name.toLowerCase()+"/CHANGELOG.md",target:"_blank",standalone:true,children:"Versionslogg"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:"/storybook/?path=/docs/components-"+name.toLowerCase()+"--docs",standalone:true,children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_flex__WEBPACK_IMPORTED_MODULE_3__/* .FlexItem */ .Z,{col:"auto",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_2__/* .Link */ .N,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",standalone:true,children:"Referens"})})]})]});};
 
 /***/ }),
 
@@ -264,45 +400,36 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 45679:
+/***/ 70720:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  e: () => (/* reexport */ FileUpload)
+  Z: () => (/* reexport */ Card)
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js
-var regeneratorRuntime = __webpack_require__(90675);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(10467);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DropZone.mjs + 41 modules
-var DropZone = __webpack_require__(46090);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
-var Text = __webpack_require__(27279);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FileTrigger.mjs
-var FileTrigger = __webpack_require__(77064);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-;// ./packages/file-upload/src/lib/FileUpload.module.css
+// EXTERNAL MODULE: ./packages/link/src/index.ts + 2 modules
+var src = __webpack_require__(10515);
+;// ./packages/card/src/lib/Card.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const FileUpload_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray90":"#8c8c8c","mediumWeight":"500","regularWeight":"400","box":"box_bSkU","list":"list_FZEM","container":"container_YgUg","label":"label_m4WB","text":"text__cO9","dropzone":"dropzone_yvPs","input":"input__Ncf"});
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var src = __webpack_require__(81706);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var textfield_src = __webpack_require__(42619);
+/* harmony default export */ const Card_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray20":"#e6e6e6","gray10":"#f2f2f2","gray150":"#1f1f1f","blue20":"#d5e5ed","black":"#000000","mediumWeight":"500","fastTransition":"250ms","card":"card_k6lA","content":"content_IA2f","heading":"heading_KjLb","image":"image_APT7","background":"background_SqGP","text":"text_v73H"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/file-upload/src/lib/FileUpload.tsx
-'use client';var FileUpload=function FileUpload(_ref){var allowsMultiple=_ref.allowsMultiple,label=_ref.label,description=_ref.description,dropzone=_ref.dropzone;var _React$useState=react.useState(null),files=_React$useState[0],setFiles=_React$useState[1];var handleUpload=function handleUpload(files){setFiles(files!==null?Array.from(files):[]);// TODO: actually handle files?
-};var handleDrop=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee(e){var filePromises,resolvedFiles;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee$(_context){while(1)switch(_context.prev=_context.next){case 0:filePromises=e.items.filter(function(file){return file.kind==='file';}).map(function(file){return file.getFile();});_context.next=3;return Promise.all(filePromises);case 3:resolvedFiles=_context.sent;setFiles(resolvedFiles);case 5:case"end":return _context.stop();}},_callee);}));return function handleDrop(_x){return _ref2.apply(this,arguments);};}();if(dropzone)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DropZone/* DropZone */.w,{onDrop:handleDrop,className:FileUpload_module.dropzone,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",style:{display:'block'},children:"Dra och sl\xE4pp en fil inuti det streckade omr\xE5det"})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_src/* InputWrapper */.oi,{label:label,description:description,children:/*#__PURE__*/(0,jsx_runtime.jsx)(FileTrigger/* FileTrigger */.F,{allowsMultiple:allowsMultiple,onSelect:function onSelect(files){return handleUpload(files);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"secondary","aria-labelledby":"fileUpload",className:FileUpload_module.input,children:allowsMultiple?'Välj filer':'Välj fil'})})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});};var FileList=function FileList(_ref3){var files=_ref3.files,setFiles=_ref3.setFiles;var handleRemove=function handleRemove(index){setFiles(files==null?void 0:files.filter(function(f,i){return i!==index;}));};return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",{className:FileUpload_module.list,children:files.map(function(file,index){return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",{className:FileUpload_module.box,children:[file.name,/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"icon",size:"small",onPress:function onPress(){return handleRemove(index);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]},index);})});};
-;// ./packages/file-upload/src/lib/index.ts
+;// ./packages/card/src/lib/Card.tsx
+'use client';var _excluded=["image","background","title","content","link","headingTag","customImageComponent"];/**
+ * This component renders a card with optional image, title, content.
+ */var Card=function Card(_ref){var image=_ref.image,background=_ref.background,title=_ref.title,content=_ref.content,link=_ref.link,_ref$headingTag=_ref.headingTag,HeadingTag=_ref$headingTag===void 0?'h1':_ref$headingTag,customImageComponent=_ref.customImageComponent,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(Card_module.card,background&&Card_module.background,rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Card_module.content,children:[customImageComponent?customImageComponent:(image==null?void 0:image.source)&&/*#__PURE__*/(0,jsx_runtime.jsx)("img",{src:image.source,alt:image.description,className:Card_module.image}),/*#__PURE__*/(0,jsx_runtime.jsx)(HeadingTag,{className:Card_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsx)("p",{className:Card_module.text,children:content})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Link */.N,{href:link.href,target:link.target,standalone:true,stretched:true,children:link.title})]}));};
+;// ./packages/card/src/lib/index.ts
 
-;// ./packages/file-upload/src/index.ts
+;// ./packages/card/src/index.ts
 
 
 /***/ }),
@@ -335,52 +462,6 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/link/src/lib/Link.tsx
 'use client';var _excluded=["children","standalone","stretched","icon"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
 ;// ./packages/link/src/index.ts
-
-
-/***/ }),
-
-/***/ 42619:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  oi: () => (/* reexport */ InputWrapper),
-  A_: () => (/* reexport */ TextField),
-  Ql: () => (/* reexport */ TextField_module)
-});
-
-// UNUSED EXPORTS: ssnRegEx
-
-;// ./packages/textfield/src/lib/TextField.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const TextField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","inputField":"inputField_kJaH","inputWrapper":"inputWrapper_RfiT","label":"label_Pxyb","text":"text_CvV8","fieldError":"fieldError_kz46","passwordText":"passwordText_Gtww","input":"input_B57n","wrap":"wrap_g1RZ","passwordButton":"passwordButton_bCY3"});
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
-var dist_TextField = __webpack_require__(32945);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
-var Text = __webpack_require__(27279);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
-var Label = __webpack_require__(21704);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
-var triangle_alert = __webpack_require__(418);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var src = __webpack_require__(81706);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/textfield/src/lib/TextField.tsx
-'use client';var _excluded=["label","description","errorMessage","validationType"];var TextField=function TextField(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,validationType=_ref.validationType,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),input=_React$useState[0],setInput=_React$useState[1];var _React$useState2=react.useState(true),isValid=_React$useState2[0],setIsValid=_React$useState2[1];var validateInput=function validateInput(value){if(validationType===undefined)return true;if(validationType==='ssn')setIsValid(ssnRegEx.test(value));if(validationType instanceof RegExp)setIsValid(new RegExp(validationType).test(value));};var handleInputBlur=function handleInputBlur(e){var value=e.target.value;validateInput(value);};var handleInputChange=function handleInputChange(e){setInput(e.target.value);};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextField/* TextField */.A,Object.assign({className:TextField_module.inputField,isInvalid:validationType!==undefined?!isValid:props.isInvalid},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(InputWrapper,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{type:props.type,className:TextField_module.input,onChange:handleInputChange,onBlur:handleInputBlur}),/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,{type:props.type,input:input})]})})}));};var PasswordField=function PasswordField(_ref2){var type=_ref2.type,input=_ref2.input;var _React$useState3=react.useState(false),showPassword=_React$useState3[0],setShowPassword=_React$useState3[1];if(type==='password')return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.passwordText,children:input}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"tertiary",onPress:function onPress(){return setShowPassword(!showPassword);},className:TextField_module.passwordButton,children:showPassword?'Dölj':'Visa'})]});return null;};var InputWrapper=function InputWrapper(_ref3){var label=_ref3.label,description=_ref3.description,errorMessage=_ref3.errorMessage,children=_ref3.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module.inputWrapper,children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{className:TextField_module.label,children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module.text,children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{className:TextField_module.fieldError,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(triangle_alert/* default */.A,{size:20,"aria-hidden":true}),errorMessage]})}),children]});};var ssnRegEx=new RegExp('^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$');
-;// ./packages/textfield/src/lib/index.ts
-
-;// ./packages/textfield/src/index.ts
 
 
 /***/ }),
