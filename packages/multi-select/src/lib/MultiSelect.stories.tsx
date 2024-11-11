@@ -48,7 +48,6 @@ export const Primary: Story = {
   args: {
     label: 'Etikett',
     description: 'Valfri hjälptext',
-    items: options,
-    onSelectionChange: selectedKeys => console.log(selectedKeys)
+    items: options
   }
 }
