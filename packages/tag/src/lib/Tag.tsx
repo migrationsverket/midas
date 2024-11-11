@@ -39,11 +39,7 @@ export const Tag: React.FC<TagProps> = ({ children, ...props }) => {
         className={styles.button}
         slot='remove'
       >
-        <X
-          className={styles.icon}
-          height={16}
-          width={16}
-        />
+        <X size={20} />
       </Button>
     </AriaTag>
   )

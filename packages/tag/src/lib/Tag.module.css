@@ -28,16 +28,17 @@
 }
 
 .tagText {
-  line-height: 1;
+  line-height: 1.15;
   padding: 0.25rem 0.75rem 0.25rem 0.5rem;
 }
 
 .tagList {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
 }
 
 .button {
   min-height: unset;
-  padding: 0.25rem;
+  padding: 0 0.25rem;
 }

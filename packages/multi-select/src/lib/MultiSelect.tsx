@@ -20,18 +20,26 @@ interface MidasMultiSelect {
   description?: string
   items: { name: string; id: string }[]
   onSelectionChange?: (selectedKeys: Set<Key>) => void
+  selectedKeys?: string[]
+  defaultSelectedKeys?: string[]
 }
 
 export const MultiSelect: React.FC<MidasMultiSelect> = ({
   label,
   description,
   items,
-  onSelectionChange
+  onSelectionChange,
+  selectedKeys,
+  defaultSelectedKeys
 }) => {
   const triggerRef = React.useRef<HTMLButtonElement>(null)
   const [popoverWidth, setPopoverWidth] = React.useState<number | undefined>(
     undefined
   )
+  const list = useListData({
+    initialItems: items,
+    initialSelectedKeys: defaultSelectedKeys ? defaultSelectedKeys : []
+  })
 
   React.useEffect(() => {
     const updatePopoverWidth = () => {
@@ -49,13 +57,14 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
     }
   }, [])
 
-  const list = useListData({
-    initialItems: items
-  })
-
   React.useEffect(() => {
     if (onSelectionChange) onSelectionChange(new Set(list.selectedKeys))
   }, [list.selectedKeys, onSelectionChange])
+
+  React.useEffect(() => {
+    if (selectedKeys) list.setSelectedKeys(new Set(selectedKeys))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedKeys])
 
   return (
     <div className={styles.multiSelect}>
@@ -110,15 +119,16 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
       >
         {Array.from(list.selectedKeys).map(key => {
           const item = list.getItem(key)
-          return (
-            <Tag
-              key={item.id}
-              id={item.id}
-              textValue={item.name}
-            >
-              {item.name}
-            </Tag>
-          )
+          if (item)
+            return (
+              <Tag
+                key={item.id}
+                id={item.id}
+                textValue={item.name}
+              >
+                {item.name}
+              </Tag>
+            )
         })}
       </TagGroup>
     </div>

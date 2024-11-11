@@ -51,3 +51,12 @@ export const Primary: Story = {
     items: options
   }
 }
+
+export const DefaultSelectedKeys: Story = {
+  args: {
+    label: 'Etikett',
+    description: 'Blackberry är förvalt',
+    items: options,
+    defaultSelectedKeys: ['blackberry']
+  }
+}
