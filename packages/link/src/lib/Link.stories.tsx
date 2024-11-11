@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Link>
 export const Primary: Story = {
   args: {
     children: 'Länk',
-    href: '#',
+    href: 'https://designsystem.migrationsverket.se/components/link/',
     icon: ArrowRight
   }
 }
@@ -36,7 +36,7 @@ export const Standalone: Story = {
   args: {
     children: 'En fristående länk',
     standalone: true,
-    href: '#'
+    href: 'https://designsystem.migrationsverket.se/components/link/'
   }
 }
 
