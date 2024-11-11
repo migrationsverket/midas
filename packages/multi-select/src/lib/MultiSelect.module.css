@@ -73,11 +73,15 @@
   flex-direction: row;
   gap: 1rem;
 
-  &[data-selected='true'] {
-    background: gray50;
+  &:hover {
+    background-color: gray20;
   }
 
   &[data-focused='true'] {
+    background: gray20;
+  }
+
+  &[data-selected='true'] {
     background: gray20;
   }
 

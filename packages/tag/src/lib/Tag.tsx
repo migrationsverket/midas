@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Tag.module.css'
 import {
-  Button,
   Tag as AriaTag,
   TagGroup as AriaTagGroup,
   TagGroupProps as AriaTagGroupProps,
@@ -9,14 +8,14 @@ import {
   TagProps as AriaTagProps
 } from 'react-aria-components'
 import { X } from 'lucide-react'
+import { Button } from '@midas-ds/button'
 
 export interface TagGroupProp extends AriaTagGroupProps {
   children: React.ReactNode
-  title?: string
 }
 
 export interface TagProps extends AriaTagProps {
-  title?: string
+  children: React.ReactNode
 }
 
 export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
@@ -27,14 +26,16 @@ export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
   )
 }
 
-export const Tag: React.FC<TagProps> = ({ title, ...props }) => {
+export const Tag: React.FC<TagProps> = ({ children, ...props }) => {
   return (
     <AriaTag
       className={styles.tag}
       {...props}
     >
-      {title}
+      <div className={styles.tagText}>{children}</div>
       <Button
+        variant='icon'
+        size='small'
         className={styles.button}
         slot='remove'
       >

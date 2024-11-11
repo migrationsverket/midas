@@ -40,7 +40,7 @@ const fruits = [
   'Passionfruit'
 ]
 
-export const options = fruits.map(fruit => {
+const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
 
@@ -48,6 +48,7 @@ export const Primary: Story = {
   args: {
     label: 'Etikett',
     description: 'Valfri hjälptext',
-    items: options
+    items: options,
+    onSelectionChange: selectedKeys => console.log(selectedKeys)
   }
 }
