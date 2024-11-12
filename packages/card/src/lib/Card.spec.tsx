@@ -1,8 +1,10 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import { render, RenderResult } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { Card, CardProps } from './Card'
 expect.extend(toHaveNoViolations)
+
+const link = { title: 'Läs mer', href: '#' }
 
 describe('given a default card', () => {
   let rendered: RenderResult
@@ -12,7 +14,8 @@ describe('given a default card', () => {
       <CardTest
         title={'Rubrik'}
         content={'Lorem ipsum'}
-      ></CardTest>
+        link={link}
+      />
     )
   })
 
@@ -30,6 +33,7 @@ describe('given a card with background', () => {
         title={'Rubrik'}
         content={'Lorem ipsum'}
         background
+        link={link}
       />
     )
   })
@@ -49,33 +53,13 @@ describe('given a card with image', () => {
         title={'Rubrik'}
         content={'Lorem ipsum'}
         image={{ source: '', description: '' }}
+        link={link}
       />
     )
   })
 
   it('should have no accessibility violations', async () => {
     expect(await axe(rendered.container)).toHaveNoViolations()
-  })
-})
-describe('given a clickable card', () => {
-  let rendered: RenderResult
-  const handleClick = jest.fn()
-  let card: HTMLElement
-
-  beforeEach(() => {
-    rendered = render(
-      <CardTest
-        title={'Rubrik'}
-        content={'Lorem ipsum'}
-        onPress={handleClick}
-      />
-    )
-    card = rendered.getByText('Rubrik')
-    fireEvent.click(card)
-  })
-
-  it('should trigger function when card is clicked', async () => {
-    expect(handleClick).toHaveBeenCalledTimes(1)
   })
 })
 

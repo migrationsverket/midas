@@ -1,7 +1,11 @@
 'use client'
 
-import React, { ElementType, ReactElement } from 'react'
-import { ArrowRight } from 'lucide-react'
+import React, {
+  ElementType,
+  HTMLAttributeAnchorTarget,
+  ReactElement
+} from 'react'
+import { Link } from '@midas-ds/link'
 import styles from './Card.module.css'
 import clsx from 'clsx'
 
@@ -18,7 +22,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Content as p element for the component rendered at the bottom */
   content: string
   /** Handler for when card element is clicked */
-  onPress?: () => void
+  link: { href: string; title: string; target?: HTMLAttributeAnchorTarget }
   /** Tag to be used for the header
    *  @default 'h1'
    */
@@ -35,7 +39,7 @@ export const Card: React.FC<CardProps> = ({
   background,
   title,
   content,
-  onPress,
+  link,
   headingTag: HeadingTag = 'h1',
   customImageComponent,
   ...rest
@@ -49,12 +53,7 @@ export const Card: React.FC<CardProps> = ({
       )}
       {...rest}
     >
-      <button
-        className={styles.button}
-        onClick={onPress}
-        role="link"
-        aria-label={title}
-      >
+      <div className={styles.content}>
         {customImageComponent
           ? customImageComponent
           : image?.source && (
@@ -64,17 +63,17 @@ export const Card: React.FC<CardProps> = ({
                 className={styles.image}
               />
             )}
-        <HeadingTag className={styles.heading}>
-          {title}
-          <ArrowRight
-            className={styles.arrowIcon}
-            aria-hidden={true}
-            size={32}
-            strokeWidth={1.5}
-          />
-        </HeadingTag>
+        <HeadingTag className={styles.heading}>{title}</HeadingTag>
         <p className={styles.text}>{content}</p>
-      </button>
+      </div>
+      <Link
+        href={link.href}
+        target={link.target}
+        standalone
+        stretched
+      >
+        {link.title}
+      </Link>
     </div>
   )
 }

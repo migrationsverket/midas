@@ -5,5 +5,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[mdx]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "css.lint.validProperties": ["composes"],
+  "css.lint.unknownAtRules": "ignore",
+  "cssModules.camelCase": true
 }

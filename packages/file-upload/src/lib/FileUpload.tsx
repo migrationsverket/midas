@@ -4,7 +4,7 @@ import {
   FileTrigger as AriaFileTrigger,
   FileTriggerProps as AriaFileTriggerProps,
   DropZone,
-  Text,
+  Text
 } from 'react-aria-components'
 import React from 'react'
 import { X } from 'lucide-react'
@@ -27,7 +27,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   allowsMultiple,
   label,
   description,
-  dropzone,
+  dropzone
 }) => {
   const [files, setFiles] = React.useState<FileState>(null)
 
@@ -53,7 +53,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
           className={styles.dropzone}
         >
           <Text
-            slot="description"
+            slot='description'
             style={{ display: 'block' }}
           >
             Dra och släpp en fil inuti det streckade området
@@ -76,11 +76,11 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
       >
         <AriaFileTrigger
           allowsMultiple={allowsMultiple}
-          onSelect={(files) => handleUpload(files)}
+          onSelect={files => handleUpload(files)}
         >
           <Button
-            variant="secondary"
-            aria-labelledby="fileUpload"
+            variant='secondary'
+            aria-labelledby='fileUpload'
             className={styles.input}
           >
             {allowsMultiple ? 'Välj filer' : 'Välj fil'}
@@ -115,12 +115,16 @@ const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
           className={styles.box}
         >
           {file.name}
-          <button onClick={() => handleRemove(index)}>
+          <Button
+            variant='icon'
+            size='small'
+            onPress={() => handleRemove(index)}
+          >
             <X
-              height={16}
-              width={16}
+              size={20}
+              aria-hidden
             />
-          </button>
+          </Button>
         </li>
       ))}
     </ul>

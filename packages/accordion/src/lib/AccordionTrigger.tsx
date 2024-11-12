@@ -24,7 +24,7 @@ export const AccordionTrigger = forwardRef<
         {...props}
       >
         <Tag className={styles.triggerText}>{children}</Tag>
-        <ChevronDown />
+        <ChevronDown size={20} />
       </RadixAccordion.Trigger>
     </RadixAccordion.Header>
   )

@@ -42,6 +42,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
       >
         <Icon
           size={20}
+          aria-hidden
           className={styles.icon}
         />
         <div className={styles.content}>
@@ -58,7 +59,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
               aria-label='Stäng'
               onPress={() => setShow(false)}
             >
-              <X size={16} />
+              <X size={20} />
             </Button>
           </div>
         )}

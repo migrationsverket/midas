@@ -90,7 +90,12 @@ export const PrimaryFullwidth = {
 
 export const Icon = {
   args: {
-    children: <X size={16} />,
+    children: (
+      <X
+        size={20}
+        aria-hidden
+      />
+    ),
     variant: 'icon',
     'aria-label': 'Stäng'
   }
