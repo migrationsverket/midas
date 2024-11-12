@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9196],{
 
-/***/ 30099:
+/***/ 93381:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textarea_mdx_846_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
-const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/pr-preview/pr-129/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text."},"sidebar":"sideBar","previous":{"title":"TextArea","permalink":"/pr-preview/pr-129/components/textarea"},"next":{"title":"Toast","permalink":"/pr-preview/pr-129/components/toast"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textarea-mdx-846.json
+const site_docs_components_textarea_mdx_846_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textarea","title":"TextArea","description":"När användaren ska fylla i längre information","source":"@site/docs/components/textarea.mdx","sourceDirName":"components","slug":"/components/textarea","permalink":"/pr-preview/pr-129/components/textarea","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextArea","tags":[],"description":"När användaren ska fylla i längre information"},"sidebar":"sideBar","previous":{"title":"Tabs","permalink":"/pr-preview/pr-129/components/tabs"},"next":{"title":"TextField","permalink":"/pr-preview/pr-129/components/textfield"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,21 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/textfield.json
-const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.2","_rev":"10-b0679865ddb235d86e257d7f3e583314","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.2"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-11-01T10:27:07.900Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13465,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","lucide-react":"^0.453.0","@midas-ds/button":"1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-4ME7WAt9BZrXdGdt3rQHIt1qC1dQ+0qvXPJZoYy5j+/5P90VCoM4J16BCIM1hC+nbeNq17Jge1Gxj2G27HaAcw==","shasum":"e48a6eca840e86653d77bffa47d2b0062c668cb7","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.2.tgz","fileCount":9,"unpackedSize":124042,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDKl++oPNK0WmVjd+Yg2lOcHCr2GSVBgrIuqV6rLYQEMAIgFhDdiXD847J1bCkiCVZPqbvZyT2ST8baijVolw16rjY="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.2_1730456827502_0.05294009338582084"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
-var grid_src = __webpack_require__(17172);
+;// ./apps/docs/static/data/textarea.json
+const textarea_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textarea@1.0.2","_rev":"6-1e066224a3b6a100a86f2c478a1adc83","name":"@midas-ds/textarea","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.0.3","0.1.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-19T09:08:52.207Z","modified":"2024-11-01T10:27:15.288Z","0.0.1":"2024-09-19T09:08:52.548Z","0.0.3":"2024-09-24T06:38:03.732Z","0.1.0":"2024-10-07T12:26:01.764Z","1.0.0":"2024-10-18T13:40:52.798Z","1.0.1":"2024-10-22T14:09:13.325Z","1.0.2":"2024-11-01T10:27:15.096Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textarea ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10180,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/textfield":"1.0.2"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Rk7qTqrG6bzz7W4tRkfkcRhhe0eVXgjFJxlrPRzGpHiTvu95TS2Y67dsTmntlxsBQGsZUK37eI8+G3JE9Qh9qQ==","shasum":"d47a1184f883efd57d5add7fdc4fe8b45e864ba4","tarball":"https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.2.tgz","fileCount":8,"unpackedSize":77829,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCICcXfTePzqkAPyYzYnnCTiiJhrVv+bgsz/rNiyyuLgHtAiBOVrh7mvHkK7LlhanCkRCLUXUqqOGjbMjKdjqcE58O2g=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textarea_1.0.2_1730456834926_0.34701456151949994"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/textarea/src/index.ts + 2 modules
+var src = __webpack_require__(26196);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/textfield.mdx
+;// ./apps/docs/docs/components/textarea.mdx
 
 
 const frontMatter = {
-	title: 'TextField',
-	description: 'Använd ett textfält när användaren ska fylla i en rad med text.'
+	title: 'TextArea',
+	tags: [],
+	description: 'När användaren ska fylla i längre information'
 };
 const contentTitle = undefined;
 
@@ -61,39 +60,14 @@ const assets = {
 
 
 
-
 const toc = [{
   "value": "Introduktion",
   "id": "introduktion",
   "level": 2
 }, {
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation och användnin",
+  "id": "installation-och-användnin",
   "level": 2
-}, {
-  "value": "Validering",
-  "id": "validering",
-  "level": 2
-}, {
-  "value": "Egen validering",
-  "id": "egen-validering",
-  "level": 3
-}, {
-  "value": "Personnummer",
-  "id": "personnummer",
-  "level": 3
-}, {
-  "value": "Lösenord",
-  "id": "lösenord",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Desktop",
-  "id": "desktop",
-  "level": 3
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -104,30 +78,27 @@ function _createMdxContent(props) {
     a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'TextField',
-      info: textfield_namespaceObject,
-      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält'
+      name: 'TextArea',
+      info: textarea_namespaceObject,
+      friendlyName: "Textfält"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-129/components/textarea",
-        children: "TextArea"
+      children: ["Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-129/components/textfield",
+        children: "TextField"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation-och-användnin",
+      children: "Installation och användnin"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -135,7 +106,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/textfield\n"
+            children: "npm install @midas-ds/textarea\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -144,7 +115,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/textfield\n"
+            children: "yarn add @midas-ds/textarea\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -153,160 +124,30 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/textfield\n"
+            children: "pnpm add @midas-ds/textarea\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { TextField } from '@midas-ds/textfield';\n"
+        children: "import { TextArea } from '@midas-ds/textarea'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        TextField: src/* TextField */.A_
+        TextArea: src/* TextArea */.f
       },
-      children: `<TextField 
-  label={'Etikett'}
-  description={'Beskrivning'}
+      children: `<TextArea 
+  label="Kommentar"
+  description="Skriv en kommentar"
+  maxCharacters={50}
+  // showCounter={true}
 />`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isRequired"
-      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "pattern"
-      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in din e-post *"
-  description="Obligatorisk"
-  isRequired
-  errorMessage="Felaktig e-postadress"
-  type="email"
-/>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "egen-validering",
-      children: "Egen validering"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Det går också att definiera en egen funktion för validering:"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in frukt"
-  errorMessage="Du måste skriva 'frukt'!"
-  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
-/>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "personnummer",
-      children: "Personnummer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationType=\"ssn\""
-      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användare.\nFöljande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Frivilliga sekelsiffor 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:19:20)?"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Matchar nästkommande siffor som 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:0[1-9]|1[0-2])"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Matchar nästkommande siffor som 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:0[1-9]|[12]\\\\d|3[01])"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Matchar avgränsaren som ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "+"
-        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "-"
-        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "blanksteg"
-        }), " eller ingen samt fyra efterföljande siffor ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:[-+ ]?\\\\d{4})?"
-        })]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rätt sålänge det är 10 eller 12 siffror. Däremot returnerar vi alltid formatet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "ÅÅÅÅMMDDXXXX"
-      }), " från komponenten oavsett vad användaren skrev."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField 
-  type="text"
-  name="ssn"
-  label="Personnummer"
-  validationType="ssn"
-  errorMessage="Fel format för ett personnummer"
-  autoComplete="off"
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "lösenord",
-      children: "Lösenord"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type={'password'}"
-      }), " för att kunna visa och dölja inmatad text."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField 
-  type="password" 
-  name="pw" 
-  label="Skriv in ditt lösenord" 
-  autoComplete="off"
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "desktop",
-      children: "Desktop"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-129/components/grid",
-        children: "Grid"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-129/components/flex",
-        children: "Flex"
-      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Grid: grid_src/* Grid */.x,
-        TextField: src/* TextField */.A_,
-        GridItem: grid_src/* GridItem */.E
-      },
-      children: `<Grid fluid={true}>
-  <GridItem col={2}>
-    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
-  </GridItem>
-  <GridItem col={8}>
-    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
-  </GridItem>
-</Grid>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: textfield_namespaceObject
+      info: textarea_namespaceObject
     })]
   });
 }
@@ -349,15 +190,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -397,40 +240,34 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 17172:
+/***/ 26196:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  x: () => (/* reexport */ Grid),
-  E: () => (/* reexport */ GridItem)
+  f: () => (/* reexport */ TextArea)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/grid/src/lib/Grid.module.css
+;// ./packages/textarea/src/lib/TextArea.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
+/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","textArea":"textArea_tiIs","count":"count_OzSk"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
+var dist_TextArea = __webpack_require__(43660);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/grid/src/lib/Grid.tsx
-var _excluded=["children","fluid"];/**
- * Grid baserat på display: grid;
- * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
- *
- * ### Children
- * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
- */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
-;// ./packages/grid/src/lib/GridItem.tsx
-var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
-var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
-;// ./packages/grid/src/lib/index.ts
-
-;// ./packages/grid/src/index.ts
+;// ./packages/textarea/src/lib/TextArea.tsx
+'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var _React$useState2=react.useState(false),hasExceededMaxCharacters=_React$useState2[0],setHasExceededMaxCharacters=_React$useState2[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);if(maxCharacters){setHasExceededMaxCharacters(newValue.length>maxCharacters);}};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:TextArea_module.count,children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var getErrorMessage=function getErrorMessage(maxCharacters){if(hasExceededMaxCharacters){return value.length-maxCharacters+" tecken f\xF6r mycket";}return errorMessage;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:src/* TextFieldStyles */.Ql.inputField},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,Object.assign({label:label,description:description,errorMessage:getErrorMessage(maxCharacters||0),isInvalid:hasExceededMaxCharacters||props.isInvalid},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]}))}));};
+;// ./packages/textarea/src/index.ts
 
 
 /***/ }),

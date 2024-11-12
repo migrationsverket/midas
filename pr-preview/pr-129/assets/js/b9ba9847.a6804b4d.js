@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9078],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4203],{
 
-/***/ 22384:
+/***/ 73338:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_flex_mdx_6dc_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_logo_mdx_b9b_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-flex-mdx-6dc.json
-const site_docs_components_flex_mdx_6dc_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/flex","title":"Flex","description":"Grid baserat på tekniken display flex i css","source":"@site/docs/components/flex.mdx","sourceDirName":"components","slug":"/components/flex","permalink":"/pr-preview/pr-129/components/flex","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"grid","permalink":"/pr-preview/pr-129/tags/grid"}],"version":"current","frontMatter":{"title":"Flex","tags":["grid"],"description":"Grid baserat på tekniken display flex i css"},"sidebar":"sideBar","previous":{"title":"FileUpload","permalink":"/pr-preview/pr-129/components/fileupload"},"next":{"title":"Grid","permalink":"/pr-preview/pr-129/components/grid"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-logo-mdx-b9b.json
+const site_docs_components_logo_mdx_b9b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/logo","title":"Logo","description":"Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet","source":"@site/docs/components/logo.mdx","sourceDirName":"components","slug":"/components/logo","permalink":"/pr-preview/pr-129/components/logo","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Logo","description":"Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet"},"sidebar":"sideBar","previous":{"title":"Link","permalink":"/pr-preview/pr-129/components/link"},"next":{"title":"Modal","permalink":"/pr-preview/pr-129/components/modal"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,34 +27,28 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
+// EXTERNAL MODULE: ./packages/logo/src/index.ts + 3 modules
+var src = __webpack_require__(2647);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/flex.json
-const flex_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/flex@1.0.1","_rev":"6-a358097f2c62e04fbf713ef284bfcd2c","name":"@midas-ds/flex","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.1.0","0.1.1","0.1.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:00.258Z","modified":"2024-10-24T13:26:44.017Z","0.0.1":"2024-09-10T14:37:00.555Z","0.1.0":"2024-09-12T12:26:58.577Z","0.1.1":"2024-09-12T13:02:19.212Z","0.1.2":"2024-10-07T12:13:46.840Z","1.0.0":"2024-10-18T13:40:48.416Z","1.0.1":"2024-10-24T13:26:43.836Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/flex ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9818,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-T6h+Ke3QzvKPEtxcSZfZTWGabQMmkgjBIrh1k+alrQqXHwhgH4sVH22A2bADEi8RE3XB6FISUfr41EnIYCtOIw==","shasum":"cb5dca8f1262944a9d17611aff0380053a1df137","tarball":"https://registry.npmjs.org/@midas-ds/flex/-/flex-1.0.1.tgz","fileCount":10,"unpackedSize":10519,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIHs8WQsyXX5eMIfqYcv+KJFli2RLyDrWO/t7jVbXRfnKAiByuYOhwwEj/QMGleZodoiAaDpKnuaaNaQX8m9hJ+5EEg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/flex_1.0.1_1729776403619_0.11168719737503108"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var src = __webpack_require__(93294);
-// EXTERNAL MODULE: ./packages/card/src/index.ts + 3 modules
-var card_src = __webpack_require__(70720);
+;// ./apps/docs/static/data/logo.json
+const logo_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/logo@1.0.1","_rev":"5-88fcfb43973e0e51ff0f9d8a00a0bef1","name":"@midas-ds/logo","dist-tags":{"latest":"1.0.1"},"versions":["0.2.51","0.2.52","0.2.54","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:51.669Z","modified":"2024-10-24T13:26:40.838Z","0.2.51":"2024-09-10T14:37:51.962Z","0.2.52":"2024-09-12T12:40:53.983Z","0.2.54":"2024-10-07T12:17:56.616Z","1.0.0":"2024-10-18T13:40:34.594Z","1.0.1":"2024-10-24T13:26:40.640Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/logo ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":8247,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-jiCOTj+YLq922cK0pBs9LrSO4t+gukw7QczVlbpe83xsjEbQXJ8uaMjoG3PwU02U7YlRxZoX9BnM+KpUKIA1SQ==","shasum":"524bb981e8e1ce1fff6c3a02bfad5647e780f8be","tarball":"https://registry.npmjs.org/@midas-ds/logo/-/logo-1.0.1.tgz","fileCount":12,"unpackedSize":14579,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQC8Yb7g7nHOJCP5PNbLyWJeTZ4b7NpFEW2qv/9fWYTzPAIgAlDvluqQmBi43yeN8HxNqDzLYFXhYgqKD6YzgPYgPWo="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/logo_1.0.1_1729776400447_0.5861607100385444"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/flex.mdx
+;// ./apps/docs/docs/components/logo.mdx
 
 
 const frontMatter = {
-	title: 'Flex',
-	tags: [
-		'grid'
-	],
-	description: 'Grid baserat på tekniken display flex i css'
+	title: 'Logo',
+	description: 'Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet'
 };
 const contentTitle = undefined;
 
 const assets = {
 
 };
-
 
 
 
@@ -74,57 +68,34 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Grid",
-  "id": "grid",
-  "level": 3
-}, {
-  "value": "FlexItem",
-  "id": "flexitem",
-  "level": 3
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
+  "value": "SVG",
+  "id": "svg",
   "level": 2
 }, {
-  "value": "När ska du använda Flex ?",
-  "id": "när-ska-du-använda-flex-",
-  "level": 3
-}, {
-  "value": "Så här använder du Flex",
-  "id": "så-här-använder-du-flex",
-  "level": 3
+  "value": "Beroenden",
+  "id": "beroenden",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
-    table: "table",
-    tbody: "tbody",
-    td: "td",
-    th: "th",
-    thead: "thead",
-    tr: "tr",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Flex',
-      info: flex_namespaceObject,
-      friendlyName: 'Rutnät',
+      name: 'Logo',
+      info: logo_namespaceObject,
+      friendlyName: 'Logotyp',
       overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Grid baserat på tekniken ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "display: flex;"
-      }), " i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera."
+      children: "På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -135,7 +106,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/flex\n"
+            children: "npm install @midas-ds/logo\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -144,7 +115,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/flex\n"
+            children: "yarn add @midas-ds/logo\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -153,132 +124,41 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/flex\n"
+            children: "pnpm add @midas-ds/logo\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Flex } from '@midas-ds/flex'\n"
+        children: "import { Logo } from '@midas-ds/logo';\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Flex: src/* Flex */.s,
-        FlexItem: src/* FlexItem */.Z,
-        Card: card_src/* Card */.Z
+        Logo: src/* Logo */.g
       },
-      children: `<Flex>
-  <FlexItem col={12}>
-      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{title: 'Länk', href: '#'}} />
-  </FlexItem>
-  <FlexItem>
-      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{title: 'Länk', href: '#'}} />
-  </FlexItem>
-  <FlexItem col={"auto"}>
-      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{title: 'Länk', href: '#'}} />
-  </FlexItem>
-  <FlexItem col={6}>
-      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{title: 'Länk', href: '#'}} />
-  </FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "grid",
-      children: "Grid"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Grids skalas enligt följande specifikation."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
-      children: [(0,jsx_runtime.jsx)(_components.thead, {
-        children: (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.th, {
-            children: "Skärmstorlek"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Margin"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Children"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Kollumner"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Gutter"
-          })]
-        })
-      }), (0,jsx_runtime.jsxs)(_components.tbody, {
-        children: [(0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "0 - 767 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "1"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "768 px - 1199 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "32 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "1200 px - 1440 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "32 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "24 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "> 1440 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "1368 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "24 px"
-          })]
-        })]
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "flexitem",
-      children: "FlexItem"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Komponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<FlexItem>"
-      }), " agrerar som direkt child till ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Flex>"
-      }), ". FlexItem accepterar en prop col som kan ta värdena auto eller 1-12."]
+      children: `<>
+  <Logo/>
+  <Logo background/>
+  <Logo dark/>
+  <Logo dark background/>
+  <Logo size={'small'}/>
+</>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "när-ska-du-använda-flex-",
-      children: "När ska du använda Flex ?"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "så-här-använder-du-flex",
-      children: "Så här använder du Flex"
+      id: "svg",
+      children: "SVG"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Flex></Flex>"
-      }), " som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<FlexItem col=\"antal-kolumner\"></FlexItem>"
-      }), "."]
+      children: ["I vissa fall kan det vara mer fördelaktigt med en vanlig fil. ", (0,jsx_runtime.jsx)("a", {
+        target: "_blank",
+        href: (__webpack_require__(61252)/* ["default"] */ .A),
+        download: true,
+        children: "Ladda ner logotypen som SVG här (komprimerad fil)"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "beroenden",
+      children: "Beroenden"
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: logo_namespaceObject
     })]
   });
 }
@@ -321,15 +201,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -369,37 +251,42 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 70720:
+/***/ 2647:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Z: () => (/* reexport */ Card)
+  g: () => (/* reexport */ Logo)
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
-var src = __webpack_require__(85560);
-;// ./packages/card/src/lib/Card.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Card_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray20":"#e6e6e6","gray10":"#f2f2f2","gray150":"#1f1f1f","blue20":"#d5e5ed","black":"#000000","mediumWeight":"500","fastTransition":"250ms","card":"card_k6lA","content":"content_IA2f","heading":"heading_KjLb","image":"image_APT7","background":"background_SqGP","text":"text_v73H"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
+;// ./packages/logo/src/lib/Logo.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Logo_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","red100":"#b90835","black":"#000000","gray130":"#5d5d5d","white":"#ffffff","logo":"logo_tYIG","primary":"primary_Y5gB","dark":"dark_ZLNv","small":"small_vjO9","background-primary":"background-primary_DO6_","background-dark":"background-dark_tFvn"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/card/src/lib/Card.tsx
-'use client';var _excluded=["image","background","title","content","link","headingTag","customImageComponent"];/**
- * This component renders a card with optional image, title, content.
- */var Card=function Card(_ref){var image=_ref.image,background=_ref.background,title=_ref.title,content=_ref.content,link=_ref.link,_ref$headingTag=_ref.headingTag,HeadingTag=_ref$headingTag===void 0?'h1':_ref$headingTag,customImageComponent=_ref.customImageComponent,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(Card_module.card,background&&Card_module.background,rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Card_module.content,children:[customImageComponent?customImageComponent:(image==null?void 0:image.source)&&/*#__PURE__*/(0,jsx_runtime.jsx)("img",{src:image.source,alt:image.description,className:Card_module.image}),/*#__PURE__*/(0,jsx_runtime.jsx)(HeadingTag,{className:Card_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsx)("p",{className:Card_module.text,children:content})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Link */.N,{href:link.href,target:link.target,standalone:true,stretched:true,children:link.title})]}));};
-;// ./packages/card/src/lib/index.ts
+;// ./packages/logo/src/lib/Logo.tsx
+var Logo=function Logo(_ref){var _ref$primary=_ref.primary,primary=_ref$primary===void 0?true:_ref$primary,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,background=_ref.background;var classNames=(0,clsx/* default */.A)(Logo_module.logo,primary?Logo_module.primary:Logo_module.dark,size==='small'&&Logo_module.small,background?primary?Logo_module['background-primary']:Logo_module['background-dark']:null);return/*#__PURE__*/(0,jsx_runtime.jsxs)("svg",{role:'img',className:classNames,xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 145.8 52.22",children:[/*#__PURE__*/(0,jsx_runtime.jsx)("title",{children:"Migrationsverkets logotyp"}),/*#__PURE__*/(0,jsx_runtime.jsx)("defs",{children:/*#__PURE__*/(0,jsx_runtime.jsx)("clipPath",{children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M0 0h145.8v52.22H0z"})})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("g",{clipPath:"url(#mig-logo_svg__a)",children:[/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M127.44 28.21c-9.76-12.7-26.18-20.93-44.8-20.93-17.06 0-32.45 6.88-42.38 17.82a50.37 50.37 0 0 1 33.5-12.33c14.84 0 28.09 6 36.78 15.44Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M117.87 16.43C92.06-2 53.66 3.61 35.68 28.21h-16c20-32 69.23-38 98.15-11.78Z"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M15.32 48.47A1.72 1.72 0 0 1 14.7 47V35.82a1.64 1.64 0 0 1 .58-1.36H13l-5.19 10-5.93-10H0a1.46 1.46 0 0 1 .6 1.26V47.3a1.52 1.52 0 0 1-.6 1.17h2.5a1.56 1.56 0 0 1-.6-1.22V38.4l5.55 9.41 5.06-9.69v9a1.37 1.37 0 0 1-.51 1.35ZM21 48.47a1.51 1.51 0 0 1-.58-1.39v-8.36h-2.6c.49.24.64.75.64 1.52v6.83a1.49 1.49 0 0 1-.6 1.39zm-.55-13.4a1.05 1.05 0 1 0-1.05 1.05 1.05 1.05 0 0 0 1.05-1.05zm9.22 14.44c0 1-1.07 1.71-2.52 1.71-.77 0-2.22-.4-2.2-1.51a1.62 1.62 0 0 1 .77-1.3l2.56.06c.66 0 1.39.13 1.39 1zm-.81-7.45c0 1-.49 2.11-1.77 2.11s-1.92-1.58-1.92-2.73.66-2.05 1.71-2.05c1.56 0 2 1.64 2 2.67zm2.94-1.62a2.74 2.74 0 0 0-.49-1.24h-1.77a3.69 3.69 0 0 0-2.54-.76 3.35 3.35 0 0 0-3.65 3.37 3.23 3.23 0 0 0 1.71 3c-.56.49-1.81 1.28-1.81 2.11s1 1.3 1.81 1.43c-1.15.34-2.18 1.07-2.18 2.07 0 1.49 2.26 1.84 3.44 1.84 2 0 5.1-1 5.1-3.44 0-1.58-1.6-1.94-2.9-2-3.16-.08-3.28-.26-3.28-.73 0-.26.55-.88.72-1.05a7.6 7.6 0 0 0 .92.08c2.3 0 3.82-1.22 3.82-3.52a2.74 2.74 0 0 0-.38-1.45 1.41 1.41 0 0 1 .49-.06 1.74 1.74 0 0 1 1 .36zM39.11 40.75l-.3-2.13a1.92 1.92 0 0 0-.85-.19 2.76 2.76 0 0 0-2.33 1.79v-1.5h-2.57a1.58 1.58 0 0 1 .62 1.49V47a1.56 1.56 0 0 1-.58 1.49h3.07a1.63 1.63 0 0 1-.55-1.49v-5.57a2.06 2.06 0 0 1 1.86-1.35 2.59 2.59 0 0 1 1.62.68ZM45.43 46.49a2.52 2.52 0 0 1-1.79 1.11c-1 0-1.54-1-1.54-2a1.78 1.78 0 0 1 1.17-1.79l2.16-.81v3.52Zm2.5 2c-.49-.43-.56-.77-.56-1.64v-5.1c0-2.88-1.86-3.33-3.65-3.33a7.61 7.61 0 0 0-2.65.55 12.33 12.33 0 0 0-.53 2.18 4.23 4.23 0 0 1 3.12-1.79c1.54 0 1.77 1.07 1.77 2.22v.51l-2.88 1a3.16 3.16 0 0 0-2.45 3 2.57 2.57 0 0 0 2.8 2.71 3.36 3.36 0 0 0 2.52-1.22v.94ZM55.38 47.19a2.19 2.19 0 0 1-1.45.6c-1.13 0-1.39-1.28-1.39-2.16v-5.89h1.11a3.77 3.77 0 0 1 1.73.45l-.23-1.47h-2.61v-2.3a11.1 11.1 0 0 1-3.37 3.31h1.43v5.78c0 1.86.41 3.22 2.54 3.22a3.37 3.37 0 0 0 1.81-.47 5.35 5.35 0 0 0 .43-1.07ZM59.91 48.47a1.51 1.51 0 0 1-.58-1.39v-8.36h-2.59c.49.24.64.75.64 1.52v6.83a1.49 1.49 0 0 1-.6 1.39zm-.55-13.4a1.05 1.05 0 1 0-1.05 1.05 1.05 1.05 0 0 0 1.05-1.05zm10.18 9.37c0 1.66-.68 3.35-2.43 3.35-2.33 0-3.16-3.18-3.16-5 0-1.58.62-3.35 2.45-3.35 2.33 0 3.14 3.18 3.14 5zm2-.88c0-2.69-1.69-5.16-4.57-5.16a5 5 0 0 0-5 5.23c0 2.69 1.68 5.16 4.55 5.16a5 5 0 0 0 5-5.23zM82.52 48.47c-.36-.28-.58-.55-.58-1.45v-5.14c0-2.13-.51-3.44-2.84-3.44a4.55 4.55 0 0 0-3.1 1.47v-1.19h-2.59a1.38 1.38 0 0 1 .64 1.37v7c0 .77-.19 1.15-.62 1.41h3.12c-.3-.3-.57-.49-.57-1.52V41.2a3.57 3.57 0 0 1 2.41-1.62c1.32 0 1.6 1.32 1.6 2.35v5.17a1.43 1.43 0 0 1-.6 1.37ZM90.91 45.95c0-2.88-4.46-3.54-4.46-5.31 0-1 .92-1.28 1.75-1.28a2.94 2.94 0 0 1 2.28 1.05l-.09-1.54a6.73 6.73 0 0 0-2.2-.45c-1.88 0-3.5.83-3.5 2.47 0 3.09 4.52 3.5 4.52 5.55 0 1-.81 1.37-1.71 1.37a4.33 4.33 0 0 1-3.29-1.58v.13c0 .53 0 1.3.4 1.66a5 5 0 0 0 2.84.73c1.77 0 3.48-.81 3.48-2.8ZM101.6 38.72h-1.87c.17.13.15.73-.24 1.73l-2.43 6.16-2.45-6.14c-.34-.85-.41-1.51-.21-1.75h-2.69a7.41 7.41 0 0 1 1.07 2.18l3 7.57h1.71l3.07-7.79a5.36 5.36 0 0 1 1-2ZM108.59 42.92c-1.43.11-2.82.13-4.27.13 0-1 .38-3.69 2.22-3.69s2.05 2.24 2.05 3.56Zm2.05.87v-.3c0-2.5-.81-5.06-3.76-5.06s-4.65 2.64-4.65 5.36a4.64 4.64 0 0 0 4.67 5 6.49 6.49 0 0 0 2.79-.58 3.46 3.46 0 0 0 .77-1.66 5 5 0 0 1-3 1.09c-1.94 0-3.07-2.05-3.11-3.76l6.31-.06ZM118.53 40.75l-.3-2.13a1.92 1.92 0 0 0-.85-.19 2.76 2.76 0 0 0-2.38 1.8v-1.51h-2.56a1.58 1.58 0 0 1 .62 1.49V47a1.56 1.56 0 0 1-.58 1.49h3.07A1.63 1.63 0 0 1 115 47v-5.57a2.06 2.06 0 0 1 1.86-1.35 2.59 2.59 0 0 1 1.62.68zm11.54 7.76c-3-.49-3.26-5.27-6.14-5.27l3.43-3.65a8.37 8.37 0 0 1 1-.87H126c.19.19.17.51-.17.87l-3.46 3.69v-9.23h-2.58a1.45 1.45 0 0 1 .64 1.32v11.76a1.54 1.54 0 0 1-.6 1.34h3.07a1.59 1.59 0 0 1-.53-1.34v-3.35a2.26 2.26 0 0 1 1.07.34c1.68 1.07 2.54 4.07 3.48 4.5a7.44 7.44 0 0 0 1.49.13 4.38 4.38 0 0 0 1.64-.24zM136.51 42.92c-1.43.11-2.82.13-4.27.13 0-1 .38-3.69 2.22-3.69s2.05 2.24 2.05 3.56Zm2.05.87v-.3c0-2.5-.81-5.06-3.76-5.06s-4.65 2.64-4.65 5.36a4.64 4.64 0 0 0 4.67 5 6.49 6.49 0 0 0 2.79-.58 3.46 3.46 0 0 0 .77-1.66 5 5 0 0 1-3 1.09c-1.94 0-3.07-2.05-3.11-3.76l6.31-.06ZM145.8 47.19a2.19 2.19 0 0 1-1.45.6c-1.13 0-1.39-1.28-1.39-2.16v-5.89h1.11a3.77 3.77 0 0 1 1.73.45l-.23-1.47H143v-2.3a11.1 11.1 0 0 1-3.37 3.31H141v5.78c0 1.86.41 3.22 2.54 3.22a3.37 3.37 0 0 0 1.81-.47 5.32 5.32 0 0 0 .43-1.07Z"})]});};
+;// ./packages/logo/src/lib/index.ts
 
-;// ./packages/card/src/index.ts
+;// ./packages/logo/src/index.ts
 
+
+/***/ }),
+
+/***/ 61252:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "assets/files/Mig_logo_SVG-4fdf391110ee30929aca69b9d5d723e1.zip");
 
 /***/ }),
 

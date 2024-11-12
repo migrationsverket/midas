@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6731],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6530],{
 
-/***/ 58464:
+/***/ 19044:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29511);
 /* harmony import */ var _midas_ds_textfield__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(42619);
 /* harmony import */ var _midas_ds_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81706);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(80697);
 /* harmony import */ var _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(24926);
 
 
@@ -36,6 +37,7 @@ const assets = {
 "authorsImageUrls": [],
 };
 
+/*truncate*/
 
 
 
@@ -43,15 +45,196 @@ const assets = {
 
 
 
-const toc = [];
+const toc = [{
+  "value": "Nya instruktioner för er som använder Remix",
+  "id": "nya-instruktioner-för-er-som-använder-remix",
+  "level": 2
+}, {
+  "value": "Remix med Vite",
+  "id": "remix-med-vite",
+  "level": 4
+}, {
+  "value": "Äldre Remix - Classic Remix Compiler",
+  "id": "äldre-remix---classic-remix-compiler",
+  "level": 4
+}, {
+  "value": "Ikoner på knappar",
+  "id": "ikoner-på-knappar",
+  "level": 2
+}, {
+  "value": "Validera personnummer",
+  "id": "validera-personnummer",
+  "level": 2
+}, {
+  "value": "Table",
+  "id": "table",
+  "level": 2
+}, {
+  "value": "UI-kit finns nu på Docwebben",
+  "id": "ui-kit-finns-nu-på-docwebben",
+  "level": 2
+}, {
+  "value": "Mindre justeringar",
+  "id": "mindre-justeringar",
+  "level": 2
+}];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
+    code: "code",
+    h2: "h2",
+    h4: "h4",
+    li: "li",
     p: "p",
+    pre: "pre",
+    ul: "ul",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_6__/* .useMDXComponents */ .R)(),
     ...props.components
   };
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-    children: "Nedan är en sammanfattning av nyheterna i release 13."
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "Nedan är en sammanfattning av nyheterna i release 13."
+    }), "\n", "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "nya-instruktioner-för-er-som-använder-remix",
+      children: "Nya instruktioner för er som använder Remix"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Vi har skrivit om grunden för hur komponenterna bundlas. Detta kommer lösa ett problem som upplevts av att komponenterna får sin styling \"försent\" eller att de \"glitchar\" lite när sidan laddas. För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/get-started/develop/",
+        children: "Kom igång för utvecklare"
+      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h4, {
+      id: "remix-med-vite",
+      children: "Remix med Vite"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{2-4} title=\"vite.config.ts\"",
+        children: "export default defineConfig({\n  ssr: {\n    noExternal: [/^@midas-ds\\/.+/],\n  }\n})\n"
+      })
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h4, {
+      id: "äldre-remix---classic-remix-compiler",
+      children: "Äldre Remix - Classic Remix Compiler"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Följ detta: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://remix.run/docs/en/main/styling/bundling",
+        children: "CSS Bundling"
+      }), " och ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "https://remix.run/docs/en/main/styling/css-imports",
+        children: "CSS Imports"
+      })]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "title=\"root.tsx\"",
+        children: "import { cssBundleHref } from '@remix-run/css-bundle'\nimport type { LinksFunction } from '@remix-run/node'\n\n// ...\n\nexport const links: LinksFunction = () => [\n  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),\n  // ...\n]\n"
+      })
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        className: "language-js",
+        metastring: "{4} title=\"remix.config.js\"",
+        children: "// ...\nexport default {\n  // ...\n  serverDependenciesToBundle: [/^@midas-ds\\/.+/],\n}\n"
+      })
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "ikoner-på-knappar",
+      children: "Ikoner på knappar"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Våra knappar kan nu ha en ikon till vänster om texten. Använd ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "icon"
+      }), " för att slå på det."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_button__WEBPACK_IMPORTED_MODULE_4__/* .Button */ .$, {
+      variant: "tertiary",
+      icon: lucide_react__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A,
+      children: "Lägg till"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "validera-personnummer",
+      children: "Validera personnummer"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Vi har skapat en förlåtande validering för personnummer baserat på Försäkringskassans referensimplementation. Den tillåter de flesta varianterna av ett personnummer så länge det är 10 eller 12 siffror. Använd ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " på Textfield för att slå på den. ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/components/textfield/#personnummer",
+        children: "Läs mer om det här"
+      }), ". Fler valideringsmönster kommer tillkomma framöver. Det går även att lägga in en egen RegExp i ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "validationType"
+      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A, {
+      scope: {
+        TextField: _midas_ds_textfield__WEBPACK_IMPORTED_MODULE_3__/* .TextField */ .A_
+      },
+      children: `<TextField 
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+/>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "table",
+      children: "Table"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Dokumentationen för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "<Table />"
+      }), " har tillkommit samt en ny design ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "striped"
+      }), " går att aktivera på tabellen."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A, {
+      scope: {
+        Table: _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__/* .Table */ .XI,
+        TableHeader: _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__/* .TableHeader */ .A0,
+        TableBody: _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__/* .TableBody */ .BF,
+        Column: _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__/* .Column */ .VP,
+        Row: _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__/* .Row */ .fI,
+        Cell: _midas_ds_table__WEBPACK_IMPORTED_MODULE_5__/* .Cell */ .fh
+      },
+      children: `<Table
+  striped
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "ui-kit-finns-nu-på-docwebben",
+      children: "UI-kit finns nu på Docwebben"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Vårt UI-kit till XD finns nu att ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/get-started/design/",
+        children: "ladda ner"
+      }), " här på docwebben. UI-kitet uppdateras löpande!"]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "mindre-justeringar",
+      children: "Mindre justeringar"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
+      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
+        children: "I förra releasen fick flertalet komponenter lite väl många dependencies. Det är nu åtgärdat."
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "FlexItem"
+        }), " och ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "GridItem"
+        }), " accepterar nu samtliga egenskaper som en vanlig ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "div"
+        }), ", främst efterfrågat är såklart ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "className"
+        }), "."]
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: ["Chevronikonen på ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "Select"
+        }), " och ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "ComboBox"
+        }), " animeras nu när man öppnar dem"]
+      }), "\n"]
+    })]
   });
 }
 function MDXContent(props = {}) {
@@ -92,15 +275,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -239,6 +424,33 @@ var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/textfield/src/lib/index.ts
 
 ;// ./packages/textfield/src/index.ts
+
+
+/***/ }),
+
+/***/ 80697:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Plus)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "M12 5v14", key: "s699le" }]
+]);
+
+
+//# sourceMappingURL=plus.js.map
 
 
 /***/ }),

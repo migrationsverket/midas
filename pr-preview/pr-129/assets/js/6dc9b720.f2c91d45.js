@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1982],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9078],{
 
-/***/ 61443:
+/***/ 22384:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_link_button_mdx_0ab_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_flex_mdx_6dc_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-link-button-mdx-0ab.json
-const site_docs_components_link_button_mdx_0ab_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/link-button","title":"LinkButton","description":"Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.","source":"@site/docs/components/link-button.mdx","sourceDirName":"components","slug":"/components/link-button","permalink":"/pr-preview/pr-129/components/link-button","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"LinkButton","description":"Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation."},"sidebar":"sideBar","previous":{"title":"InfoBanner","permalink":"/pr-preview/pr-129/components/info-banner"},"next":{"title":"Link","permalink":"/pr-preview/pr-129/components/link"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-flex-mdx-6dc.json
+const site_docs_components_flex_mdx_6dc_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/flex","title":"Flex","description":"Grid baserat på tekniken display flex i css","source":"@site/docs/components/flex.mdx","sourceDirName":"components","slug":"/components/flex","permalink":"/pr-preview/pr-129/components/flex","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"grid","permalink":"/pr-preview/pr-129/tags/grid"}],"version":"current","frontMatter":{"title":"Flex","tags":["grid"],"description":"Grid baserat på tekniken display flex i css"},"sidebar":"sideBar","previous":{"title":"FileUpload","permalink":"/pr-preview/pr-129/components/fileupload"},"next":{"title":"Grid","permalink":"/pr-preview/pr-129/components/grid"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,29 +29,31 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/link-button/src/index.ts + 3 modules
-var src = __webpack_require__(9687);
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./apps/docs/static/data/link.json
-var data_link = __webpack_require__(29169);
+;// ./apps/docs/static/data/flex.json
+const flex_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/flex@1.0.1","_rev":"6-a358097f2c62e04fbf713ef284bfcd2c","name":"@midas-ds/flex","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.1.0","0.1.1","0.1.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:00.258Z","modified":"2024-10-24T13:26:44.017Z","0.0.1":"2024-09-10T14:37:00.555Z","0.1.0":"2024-09-12T12:26:58.577Z","0.1.1":"2024-09-12T13:02:19.212Z","0.1.2":"2024-10-07T12:13:46.840Z","1.0.0":"2024-10-18T13:40:48.416Z","1.0.1":"2024-10-24T13:26:43.836Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/flex ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9818,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-T6h+Ke3QzvKPEtxcSZfZTWGabQMmkgjBIrh1k+alrQqXHwhgH4sVH22A2bADEi8RE3XB6FISUfr41EnIYCtOIw==","shasum":"cb5dca8f1262944a9d17611aff0380053a1df137","tarball":"https://registry.npmjs.org/@midas-ds/flex/-/flex-1.0.1.tgz","fileCount":10,"unpackedSize":10519,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIHs8WQsyXX5eMIfqYcv+KJFli2RLyDrWO/t7jVbXRfnKAiByuYOhwwEj/QMGleZodoiAaDpKnuaaNaQX8m9hJ+5EEg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/flex_1.0.1_1729776403619_0.11168719737503108"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var src = __webpack_require__(93294);
+// EXTERNAL MODULE: ./packages/card/src/index.ts + 3 modules
+var card_src = __webpack_require__(70720);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/link-button.mdx
+;// ./apps/docs/docs/components/flex.mdx
 
 
 const frontMatter = {
-	title: 'LinkButton',
-	description: 'Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.'
+	title: 'Flex',
+	tags: [
+		'grid'
+	],
+	description: 'Grid baserat på tekniken display flex i css'
 };
 const contentTitle = undefined;
 
 const assets = {
 
 };
-
 
 
 
@@ -72,44 +74,57 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Headlessreferens",
-  "id": "headlessreferens",
+  "value": "Grid",
+  "id": "grid",
   "level": 3
 }, {
-  "value": "Client Side Routing",
-  "id": "client-side-routing",
-  "level": 2
-}, {
-  "value": "Beroenden",
-  "id": "beroenden",
-  "level": 2
+  "value": "FlexItem",
+  "id": "flexitem",
+  "level": 3
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "När ska du använda Flex ?",
+  "id": "när-ska-du-använda-flex-",
+  "level": 3
+}, {
+  "value": "Så här använder du Flex",
+  "id": "så-här-använder-du-flex",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
     p: "p",
     pre: "pre",
+    table: "table",
+    tbody: "tbody",
+    td: "td",
+    th: "th",
+    thead: "thead",
+    tr: "tr",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'LinkButton',
-      info: data_link,
-      friendlyName: 'Länkknapp',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/Link.html"
+      name: 'Flex',
+      info: flex_namespaceObject,
+      friendlyName: 'Rutnät',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Grid baserat på tekniken ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "display: flex;"
+      }), " i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation."
+      children: "Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -120,7 +135,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/link-button\n"
+            children: "npm install @midas-ds/flex\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -129,7 +144,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/link-button\n"
+            children: "yarn add @midas-ds/flex\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -138,62 +153,132 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/link-button\n"
+            children: "pnpm add @midas-ds/flex\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { LinkButton } from '@midas-ds/link-button'\n"
+        children: "import { Flex } from '@midas-ds/flex'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        LinkButton: src/* LinkButton */.z
+        Flex: src/* Flex */.s,
+        FlexItem: src/* FlexItem */.Z,
+        Card: card_src/* Card */.Z
       },
       children: `<Flex>
   <FlexItem col={12}>
-    <LinkButton href="#">Starta tjänst</LinkButton>
+      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem>
+      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem col={"auto"}>
+      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{title: 'Länk', href: '#'}} />
+  </FlexItem>
+  <FlexItem col={6}>
+      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{title: 'Länk', href: '#'}} />
   </FlexItem>
 </Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "headlessreferens",
-      children: "Headlessreferens"
+      id: "grid",
+      children: "Grid"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Grids skalas enligt följande specifikation."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
+      children: [(0,jsx_runtime.jsx)(_components.thead, {
+        children: (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.th, {
+            children: "Skärmstorlek"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Margin"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Children"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Kollumner"
+          }), (0,jsx_runtime.jsx)(_components.th, {
+            children: "Gutter"
+          })]
+        })
+      }), (0,jsx_runtime.jsxs)(_components.tbody, {
+        children: [(0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "0 - 767 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "1"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "768 px - 1199 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "32 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "16 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "1200 px - 1440 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "32 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "24 px"
+          })]
+        }), (0,jsx_runtime.jsxs)(_components.tr, {
+          children: [(0,jsx_runtime.jsx)(_components.td, {
+            children: "> 1440 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "Skalas"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "1368 px"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "12"
+          }), (0,jsx_runtime.jsx)(_components.td, {
+            children: "24 px"
+          })]
+        })]
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "flexitem",
+      children: "FlexItem"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Beskrivning av hur ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "RouterProvider"
-      }), " används finns på ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/routing.html",
-        children: "React Aria Client Side Routing"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "client-side-routing",
-      children: "Client Side Routing"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Navigering i klienten, det vill säga i webbläsaren. Exempel på uppsättning för ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://remix.run/docs/en/main",
-        children: "Remix"
-      }), " men principen är densamma för andra ramverk."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Link, RouterProvider } from '@midas-ds/link-button';\nimport { useNavigate } from '@remix-run/react'; // or any other framwork router\n...\nexport default function App() {\n  const navigate = useNavigate();\n  return (\n      <RouterProvider navigate={navigate}>\n          <LinkButton href={'/'}>Home</LinkButton>\n          <LinkButton href={'about'}>About</LinkButton>\n          <LinkButton href={'more'}>More</LinkButton>\n        <Outlet />\n      </RouterProvider>\n  );\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_link
+      children: ["Komponenten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<FlexItem>"
+      }), " agrerar som direkt child till ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Flex>"
+      }), ". FlexItem accepterar en prop col som kan ta värdena auto eller 1-12."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "när-ska-du-använda-flex-",
+      children: "När ska du använda Flex ?"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "så-här-använder-du-flex",
+      children: "Så här använder du Flex"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Flex></Flex>"
+      }), " som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<FlexItem col=\"antal-kolumner\"></FlexItem>"
+      }), "."]
     })]
   });
 }
@@ -236,15 +321,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -284,67 +371,36 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 9687:
+/***/ 70720:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  z: () => (/* reexport */ LinkButton)
+  Z: () => (/* reexport */ Card)
 });
-
-// UNUSED EXPORTS: RouterProvider
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var Link = __webpack_require__(73099);
-;// ./packages/link-button/src/lib/LinkButton.module.css
+// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
+var src = __webpack_require__(85560);
+;// ./packages/card/src/lib/Card.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const LinkButton_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","blue150":"#143c50","blue130":"#25607f","blue90":"#4289ad","display":"\"Inter\", sans-serif","desktopSize":"1rem","mediumWeight":"500","white":"#ffffff","gray50":"#bfbfbf","gray10":"#f2f2f2","gray20":"#e6e6e6","black":"#000000","medium":"undefined","smBreakpoint":"(max-width: 767px)","signalRed100":"#e62323","signalRed130":"#b31b1b","signalRed150":"#801313","linkButton":"linkButton_YIrq","secondary":"secondary_fWmT","tertiary":"tertiary_mRIr","danger":"danger_VEbs","iconLeft":"iconLeft_vyt7","icon":"icon_d8GV","fullwidth":"fullwidth_EeuX","button":"button_rUVC"});
+/* harmony default export */ const Card_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray20":"#e6e6e6","gray10":"#f2f2f2","gray150":"#1f1f1f","blue20":"#d5e5ed","black":"#000000","mediumWeight":"500","fastTransition":"250ms","card":"card_k6lA","content":"content_IA2f","heading":"heading_KjLb","image":"image_APT7","background":"background_SqGP","text":"text_v73H"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-right.js
-var chevron_right = __webpack_require__(87677);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/link-button/src/lib/LinkButton.tsx
-'use client';var _excluded=["children","variant","fullwidth","iconPlacement"];/**
- * A link to be used when a user expects a button but web technologies force us to use a a-tag
- * */var LinkButton=function LinkButton(_ref){var children=_ref.children,variant=_ref.variant,fullwidth=_ref.fullwidth,iconPlacement=_ref.iconPlacement,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Link/* Link */.N,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,variant==='primary'&&LinkButton_module.primary,variant==='secondary'&&LinkButton_module.secondary,variant==='tertiary'&&LinkButton_module.tertiary,variant==='danger'&&LinkButton_module.danger,fullwidth&&LinkButton_module.fullwidth,iconPlacement==='left'&&LinkButton_module.iconLeft,rest.className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon})]}));};
-;// ./packages/link-button/src/lib/index.ts
+;// ./packages/card/src/lib/Card.tsx
+'use client';var _excluded=["image","background","title","content","link","headingTag","customImageComponent"];/**
+ * This component renders a card with optional image, title, content.
+ */var Card=function Card(_ref){var image=_ref.image,background=_ref.background,title=_ref.title,content=_ref.content,link=_ref.link,_ref$headingTag=_ref.headingTag,HeadingTag=_ref$headingTag===void 0?'h1':_ref$headingTag,customImageComponent=_ref.customImageComponent,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(Card_module.card,background&&Card_module.background,rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Card_module.content,children:[customImageComponent?customImageComponent:(image==null?void 0:image.source)&&/*#__PURE__*/(0,jsx_runtime.jsx)("img",{src:image.source,alt:image.description,className:Card_module.image}),/*#__PURE__*/(0,jsx_runtime.jsx)(HeadingTag,{className:Card_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsx)("p",{className:Card_module.text,children:content})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Link */.N,{href:link.href,target:link.target,standalone:true,stretched:true,children:link.title})]}));};
+;// ./packages/card/src/lib/index.ts
 
-;// ./packages/link-button/src/index.ts
-
-
-/***/ }),
-
-/***/ 87677:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ ChevronRight)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const ChevronRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ChevronRight", [
-  ["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]
-]);
-
-
-//# sourceMappingURL=chevron-right.js.map
+;// ./packages/card/src/index.ts
 
 
 /***/ }),
@@ -648,14 +704,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
-
-/***/ }),
-
-/***/ 29169:
-/***/ ((module) => {
-
-"use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/link@1.0.1","_rev":"5-661948ec38b5e8f7cd5ecabb3d70debb","name":"@midas-ds/link","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.0.2","0.0.3","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:35:32.127Z","modified":"2024-10-24T13:26:06.988Z","0.0.1":"2024-09-10T14:35:32.368Z","0.0.2":"2024-09-12T12:34:14.036Z","0.0.3":"2024-10-07T12:16:39.947Z","1.0.0":"2024-10-18T13:40:24.933Z","1.0.1":"2024-10-24T13:26:06.785Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"This library was generated with [Nx](https://nx.dev).","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":8200,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-t2/aa4fgURXKaz9lPDEsjh4xjBNfkmPx0Zyt8d1OSKjbIUuKrcJPT53g0ZPbBezHqRL2EmZOsy6+cRSME9gFGA==","shasum":"b7134ce15a0c6ed603715f158a7a9773b48c1290","tarball":"https://registry.npmjs.org/@midas-ds/link/-/link-1.0.1.tgz","fileCount":8,"unpackedSize":73998,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIBa4+IoWCBpQ4GALTDCehu0zd7CYZC9wC0xhpapZbH3WAiEAqZbSgmFyCCLfWwJgnW7apz0N14HWKY6glQopGab14GE="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/link_1.0.1_1729776366512_0.31716055566122625"},"_hasShrinkwrap":false}');
 
 /***/ })
 

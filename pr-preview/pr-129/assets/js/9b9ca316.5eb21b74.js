@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[8116],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5095],{
 
-/***/ 85107:
+/***/ 71513:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_table_mdx_903_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_combobox_mdx_9b9_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-table-mdx-903.json
-const site_docs_components_table_mdx_903_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/table","title":"Table","description":"En enkel tabell för att visualisera data.","source":"@site/docs/components/table.mdx","sourceDirName":"components","slug":"/components/table","permalink":"/pr-preview/pr-129/components/table","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Table","tags":[],"description":"En enkel tabell för att visualisera data."},"sidebar":"sideBar","previous":{"title":"Spinner","permalink":"/pr-preview/pr-129/components/spinner"},"next":{"title":"Tabs","permalink":"/pr-preview/pr-129/components/tabs"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-combobox-mdx-9b9.json
+const site_docs_components_combobox_mdx_9b9_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/combobox","title":"ComboBox","description":"Sökbar version av Select","source":"@site/docs/components/combobox.mdx","sourceDirName":"components","slug":"/components/combobox","permalink":"/pr-preview/pr-129/components/combobox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"ComboBox","tags":[],"description":"Sökbar version av Select"},"sidebar":"sideBar","previous":{"title":"Checkbox","permalink":"/pr-preview/pr-129/components/checkbox"},"next":{"title":"DatePicker","permalink":"/pr-preview/pr-129/components/date-picker"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -31,19 +31,19 @@ var TabItem = __webpack_require__(19365);
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/table.json
-const table_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/table@1.0.2","_rev":"5-af05cadfbfac9bf33a7920ac59cb5a63","name":"@midas-ds/table","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.1.0","0.1.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-12T12:49:17.620Z","modified":"2024-11-01T10:27:46.622Z","0.1.0":"2024-09-12T12:49:18.018Z","0.0.1":"2024-09-12T13:02:24.470Z","0.1.1":"2024-10-07T12:24:13.653Z","1.0.0":"2024-10-18T13:40:53.378Z","1.0.1":"2024-10-24T13:26:53.159Z","1.0.2":"2024-11-01T10:27:46.398Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/table ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10707,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"publishConfig":{"access":"public"},"dependencies":{"@midas-ds/checkbox":"1.0.1","react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-FOPR7LrPLIVYk52kVRD1ZtIzaL9w276ndyI/fSKjj2ZP6yaaQ5SpAxUyP5Wh7NNsgLA70wRcyklgaQAIJ1mPpQ==","shasum":"8e1b1310c20e458f57a87a1d04be979f58187113","tarball":"https://registry.npmjs.org/@midas-ds/table/-/table-1.0.2.tgz","fileCount":8,"unpackedSize":421302,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQDJDMZqaPXTMhNJmBhaFuBpk2D2wYOs/76B5Sm9z4KwFwIhAJ3hCgo/OUNPBF9zHIaYu5wGw4Re+OWgYis2LXVJ2Q13"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/table_1.0.2_1730456866239_0.35516182202709334"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/table/src/index.ts + 2 modules
-var src = __webpack_require__(24926);
+;// ./apps/docs/static/data/combobox.json
+const combobox_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/combobox@1.0.2","_rev":"5-ed89c51e06f74236c5b960e2aaaf315e","name":"@midas-ds/combobox","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.1.0","0.1.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-10-02T14:28:10.145Z","modified":"2024-11-01T10:27:46.569Z","0.1.0":"2024-10-02T14:28:10.431Z","0.0.1":"2024-10-07T11:31:16.286Z","0.1.1":"2024-10-07T12:10:23.238Z","1.0.0":"2024-10-18T13:40:57.353Z","1.0.1":"2024-10-24T13:26:52.517Z","1.0.2":"2024-11-01T10:27:46.374Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/combobox ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9872,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0","react-aria-components":"^1.1.1"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Yoy5lii9D8b7BoBf5lopjFZfwXlkQ+I7fq4AVRkyzo2l0MhA3PdgBnJwRTghDZH+uP9x8fNjAEiu7i20j82wCQ==","shasum":"a5ceb479c6556e0998256d17c0f24fd986e5b1ee","tarball":"https://registry.npmjs.org/@midas-ds/combobox/-/combobox-1.0.2.tgz","fileCount":8,"unpackedSize":427315,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQD8UC/cVURtZmkK6B3ER3V+R6SKGfaAd/ziZdUiqAV+jwIhAOQQzuJlUQfNxDdaxeh5rTlKc7VtaVN5dFOu8u4zlFRA"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/combobox_1.0.2_1730456866193_0.9546146129008615"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/combobox/src/index.ts + 2 modules
+var src = __webpack_require__(48517);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/table.mdx
+;// ./apps/docs/docs/components/combobox.mdx
 
 
 const frontMatter = {
-	title: 'Table',
+	title: 'ComboBox',
 	tags: [],
-	description: 'En enkel tabell för att visualisera data.'
+	description: 'Sökbar version av Select'
 };
 const contentTitle = undefined;
 
@@ -69,17 +69,9 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Väljbara rader",
-  "id": "väljbara-rader",
-  "level": 3
-}, {
-  "value": "Smalare rader",
-  "id": "smalare-rader",
-  "level": 3
-}, {
-  "value": "Randiga rader",
-  "id": "randiga-rader",
-  "level": 3
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -87,26 +79,35 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
+    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Table',
-      info: table_namespaceObject,
-      friendlyName: 'Tabell'
+      name: 'Combobox',
+      info: combobox_namespaceObject,
+      friendlyName: "Flerval med sök, väljare med sök, dropdown med sök"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "En ComboBox (kombination av Select och TextField) visar en hopfällbar lista med alternativ och låter en användare söka bland dem och välja ett av dem."
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "Select"
-      }), " för att filtrera eller liknande."]
+      children: ["ComboBox är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "ett"
+      }), " alternativ av fler än fyra (4) av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-129/components/checkbox",
+        children: "Checkbox"
+      }), " som ska användas\nOm det är fler alternativ än färre än fyra (4) används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-129/components/radio",
+        children: "Radio"
+      }), " istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -117,7 +118,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/table\n"
+            children: "npm install @midas-ds/combobox\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -126,7 +127,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/table\n"
+            children: "yarn add @midas-ds/combobox\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -135,159 +136,37 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/table\n"
+            children: "pnpm add @midas-ds/combobox\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Table } from '@midas-ds/table'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "id"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "const columns = [\n  { name: 'Namn', id: 'name', isRowHeader: true },\n  { name: 'Beskrivning', id: 'desc', width: 'max-content' },\n]\n\nconst rows = fruits.map((fruit) => {\n  return {\n    id: fruit.value,\n    name: fruit.name,\n    desc: fruit.description,\n  }\n})\n"
+        children: "import { ComboBox } from '@midas-ds/combobox'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
+        ComboBox: src/* ComboBox */.a,
+        ComboBoxItem: src/* ComboBoxItem */.x
       },
-      children: `<Table
-  aria-label="Frukter"
+      children: `<ComboBox
+  label="Vad är din favoritfrukt?"
+  placeholder="Välj en frukt"
+  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 >
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "väljbara-rader",
-      children: "Väljbara rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Tabellen har inbyggd funktion för att kunna välja en eller flera rader med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "selectionMode"
-      }), " vilket kan vara antingen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "single"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "multiple"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
-      },
-      children: `<Table
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "smalare-rader",
-      children: "Smalare rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "narrow"
-      }), " om du vill ha en mindre tabell."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
-      },
-      children: `<Table
-  narrow
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "randiga-rader",
-      children: "Randiga rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "striped"
-      }), " om du vill ha en randig tabell."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
-      },
-      children: `<Table
-  striped
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
+  {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+</ComboBox>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "TBD"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: table_namespaceObject
+      info: combobox_namespaceObject
     })]
   });
 }
@@ -330,15 +209,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -378,93 +259,43 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 61813:
+/***/ 48517:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  S: () => (/* reexport */ Checkbox),
-  $: () => (/* reexport */ CheckboxGroup)
+  a: () => (/* reexport */ ComboBox_ComboBox),
+  x: () => (/* reexport */ ComboBoxItem)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/combobox/src/lib/ComboBox.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const ComboBox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","gray10":"#f2f2f2","backgroundSecondary":"#f2f2f2","input":"input_gDb3","combobox":"combobox_rehA","text":"text_A7Tx","wrap":"wrap_UCxY","button":"button_teGE","icon":"icon_DT7M","popover":"popover_qr5d","fieldError":"fieldError_secg","listBoxItem":"listBoxItem_fgbv"});
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Checkbox.mjs + 7 modules
-var dist_Checkbox = __webpack_require__(92466);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
-var Group = __webpack_require__(63899);
-;// ./packages/checkbox/src/lib/Checkbox.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Checkbox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","primaryBackground":"#143c50","blue80":"#5897b8","blue130":"#25607f","signalRed10":"#ffdfdf","signalRed100":"#e62323","signalRed130":"#b31b1b","white":"#ffffff","gray10":"#f2f2f2","gray40":"#cccccc","gray100":"#808080","gray50":"#bfbfbf","gray20":"#e6e6e6","regularWeight":"400","mediumWeight":"500","smBreakpoint":"(max-width: 767px)","borderSecondary":"#b3b3b3","wrap":"wrap_gmzk","checkboxInner":"checkboxInner_QnDn","checkbox":"checkbox_Uv4H","checkboxGroup":"checkboxGroup_uby9"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/checkbox/src/lib/Checkbox.tsx
-'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* Checkbox */.Sc,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Checkbox_module.checkboxInner,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-;// ./packages/checkbox/src/lib/CheckboxGroup.tsx
-'use client';var CheckboxGroup_excluded=["label","description","errorMessage","showSelectAll","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,showSelectAll=_ref.showSelectAll,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,CheckboxGroup_excluded);var _React$useState=react.useState(false),isAllSelected=_React$useState[0],setIsAllSelected=_React$useState[1];var ToogleAll=function ToogleAll(){// Get the current state of the checkbox group
-var state=react.useContext(dist_Checkbox/* CheckboxGroupStateContext */.pf);// Retrieve all childern
-var childValues=react.Children.toArray(children).filter(react.isValidElement).map(function(child){return child.props.value;});// Toogle all values
-function toggleAll(){setIsAllSelected(!isAllSelected);if(!isAllSelected)return state.setValue(['toggleAll'].concat(childValues));return state.setValue([]);}//listen and change the select all accordingly
-react.useEffect(function(){if(state.value.length!==childValues.length+1)state.removeValue('toggleAll');if(state.value.length===childValues.length&&!state.value.includes('toggleAll')){state.addValue('toggleAll');setIsAllSelected(true);}// eslint-disable-next-line react-hooks/exhaustive-deps
-},[childValues.length,state.value]);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox,{value:"toggleAll",isSelected:isAllSelected,onChange:function onChange(){return toggleAll();},children:"V\xE4lj alla"});};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* CheckboxGroup */.$Q,Object.assign({className:Checkbox_module.checkboxGroup},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:Checkbox_module.wrap,children:[showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(ToogleAll,{}),children]})})}));};
-;// ./packages/checkbox/src/lib/index.ts
-
-;// ./packages/checkbox/src/index.ts
-
-
-/***/ }),
-
-/***/ 24926:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  fh: () => (/* reexport */ Cell),
-  VP: () => (/* reexport */ Column),
-  fI: () => (/* reexport */ Row),
-  XI: () => (/* reexport */ Table),
-  BF: () => (/* reexport */ dist_Table/* TableBody */.BF),
-  A0: () => (/* reexport */ TableHeader)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
-var objectDestructuringEmpty = __webpack_require__(20454);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/table/src/lib/Table.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Table_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray30":"#d9d9d9","gray40":"#cccccc","gray60":"#b3b3b3","mediumWeight":"500","cell":"cell_AsQp","table":"table_FqqN","narrow":"narrow_WZlN","striped":"striped__cZi","row":"row_evpi","tableHeader":"tableHeader_gdzy","column":"column_Ddxt"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 93 modules
-var dist_Table = __webpack_require__(67079);
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ComboBox.mjs + 37 modules
+var ComboBox = __webpack_require__(20050);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
 var Button = __webpack_require__(44080);
-// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
-var src = __webpack_require__(61813);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/grip-vertical.js
-var grip_vertical = __webpack_require__(21436);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-up-wide-narrow.js
-var arrow_up_wide_narrow = __webpack_require__(4804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-narrow-wide.js
-var arrow_down_narrow_wide = __webpack_require__(85785);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 5 modules
+var Popover = __webpack_require__(8119);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ListBox.mjs + 6 modules
+var ListBox = __webpack_require__(61235);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
+var chevron_down = __webpack_require__(75107);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/table/src/lib/Table.tsx
-'use client';var _excluded=["narrow","striped"],_excluded2=["id","columns","children"],_excluded3=["children"];var Table=function Table(_ref){var narrow=_ref.narrow,striped=_ref.striped,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames=(0,clsx/* default */.A)(Table_module.table,narrow&&Table_module.narrow,striped&&Table_module.striped);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Table */.XI,Object.assign({className:classNames},rest));};var TableHeader=function TableHeader(_ref2){var columns=_ref2.columns,children=_ref2.children;var _useTableOptions=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions.selectionBehavior,selectionMode=_useTableOptions.selectionMode,allowsDragging=_useTableOptions.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableHeader */.A0,{className:Table_module.tableHeader,children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{width:50,children:selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]});};var Row=function Row(_ref3){var id=_ref3.id,columns=_ref3.columns,children=_ref3.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded2);var _useTableOptions2=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions2.selectionBehavior,allowsDragging=_useTableOptions2.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* Row */.fI,Object.assign({id:id,className:(0,clsx/* default */.A)(Table_module.row)},rest,{children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"drag",children:/*#__PURE__*/(0,jsx_runtime.jsx)(grip_vertical/* default */.A,{size:20})})}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]}));};var Column=function Column(_ref4){var _children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Column */.VP,Object.assign({className:Table_module.column},rest,{children:function children(_ref5){var allowsSorting=_ref5.allowsSorting,sortDirection=_ref5.sortDirection;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[_children,allowsSorting&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",className:"sort-indicator",children:sortDirection==='ascending'?/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_wide_narrow/* default */.A,{size:20}):/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_narrow_wide/* default */.A,{size:20})})]});}}));};var Cell=function Cell(_ref6){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref6),_ref6));return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Cell */.fh,Object.assign({className:Table_module.cell},rest));};
-;// ./packages/table/src/index.ts
+;// ./packages/combobox/src/lib/ComboBox.tsx
+'use client';var _excluded=["label","description","errorMessage","children","items"];function ComboBox_ComboBox(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:ComboBox_module.combobox},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:ComboBox_module.input}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:ComboBox_module.button,"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:ComboBox_module.popover,offset:0,children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.qF,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBoxItem */.nh,Object.assign({className:ComboBox_module.listBoxItem},props));}
+;// ./packages/combobox/src/index.ts
 
 
 /***/ }),
@@ -814,6 +645,167 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
+
+/***/ }),
+
+/***/ 15371:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   U: () => (/* binding */ $bb77f239b46e8c72$export$3274cf84b703fff)
+/* harmony export */ });
+/* harmony import */ var _useCollator_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(82627);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+function $bb77f239b46e8c72$export$3274cf84b703fff(options) {
+    let collator = (0, _useCollator_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useCollator */ .Q)({
+        usage: 'search',
+        ...options
+    });
+    // TODO(later): these methods don't currently support the ignorePunctuation option.
+    let startsWith = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((string, substring)=>{
+        if (substring.length === 0) return true;
+        // Normalize both strings so we can slice safely
+        // TODO: take into account the ignorePunctuation option as well...
+        string = string.normalize('NFC');
+        substring = substring.normalize('NFC');
+        return collator.compare(string.slice(0, substring.length), substring) === 0;
+    }, [
+        collator
+    ]);
+    let endsWith = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((string, substring)=>{
+        if (substring.length === 0) return true;
+        string = string.normalize('NFC');
+        substring = substring.normalize('NFC');
+        return collator.compare(string.slice(-substring.length), substring) === 0;
+    }, [
+        collator
+    ]);
+    let contains = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((string, substring)=>{
+        if (substring.length === 0) return true;
+        string = string.normalize('NFC');
+        substring = substring.normalize('NFC');
+        let scan = 0;
+        let sliceLen = substring.length;
+        for(; scan + sliceLen <= string.length; scan++){
+            let slice = string.slice(scan, scan + sliceLen);
+            if (collator.compare(substring, slice) === 0) return true;
+        }
+        return false;
+    }, [
+        collator
+    ]);
+    return (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>({
+            startsWith: startsWith,
+            endsWith: endsWith,
+            contains: contains
+        }), [
+        startsWith,
+        endsWith,
+        contains
+    ]);
+}
+
+
+
+//# sourceMappingURL=useFilter.module.js.map
+
+
+/***/ }),
+
+/***/ 63899:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+function $a049562f99e7db0e$var$Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
+    });
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Group'
+    });
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+}
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
+
+
+
+//# sourceMappingURL=Group.module.js.map
+
 
 /***/ })
 

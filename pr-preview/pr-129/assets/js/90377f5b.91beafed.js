@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5320],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[8116],{
 
-/***/ 72194:
+/***/ 85107:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_fileupload_mdx_cdb_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_table_mdx_903_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-fileupload-mdx-cdb.json
-const site_docs_components_fileupload_mdx_cdb_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/fileupload","title":"FileUpload","description":"Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.","source":"@site/docs/components/fileupload.mdx","sourceDirName":"components","slug":"/components/fileupload","permalink":"/pr-preview/pr-129/components/fileupload","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-129/tags/form"}],"version":"current","frontMatter":{"title":"FileUpload","description":"Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.","tags":["form"]},"sidebar":"sideBar","previous":{"title":"DatePicker","permalink":"/pr-preview/pr-129/components/date-picker"},"next":{"title":"Flex","permalink":"/pr-preview/pr-129/components/flex"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-table-mdx-903.json
+const site_docs_components_table_mdx_903_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/table","title":"Table","description":"En enkel tabell för att visualisera data.","source":"@site/docs/components/table.mdx","sourceDirName":"components","slug":"/components/table","permalink":"/pr-preview/pr-129/components/table","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Table","tags":[],"description":"En enkel tabell för att visualisera data."},"sidebar":"sideBar","previous":{"title":"Spinner","permalink":"/pr-preview/pr-129/components/spinner"},"next":{"title":"Tabs","permalink":"/pr-preview/pr-129/components/tabs"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,30 +29,27 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/file-upload/src/index.ts + 3 modules
-var src = __webpack_require__(45679);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/file-upload.json
-const file_upload_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/file-upload@1.0.2","_rev":"6-9d56e5e2929a9c5b039dedb6ca83fef3","name":"@midas-ds/file-upload","dist-tags":{"latest":"1.0.2"},"versions":["0.3.19","0.3.20","0.3.22","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:36:46.893Z","modified":"2024-11-01T10:27:41.805Z","0.3.19":"2024-09-10T14:36:47.146Z","0.3.20":"2024-09-12T12:21:00.654Z","0.3.22":"2024-10-07T12:12:28.880Z","1.0.0":"2024-10-18T13:40:44.514Z","1.0.2":"2024-10-22T14:09:13.890Z","1.0.1":"2024-10-24T13:26:47.217Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"url":"git+https://github.com/migrationsverket/midas.git","type":"git"},"description":"```bash npm i @midas-ds/file-upload ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":11038,"version":"1.0.2","dist":{"shasum":"9b767ada804d9c8574a5d89f03fa95670b33ddfe","tarball":"https://registry.npmjs.org/@midas-ds/file-upload/-/file-upload-1.0.2.tgz","fileCount":9,"integrity":"sha512-GNygp08r5KRiB11x5S5jwUHi9/6QM7De9NtX4FDakbXpbu+4d5CtGuCqmJNCNX5otUJTTyfQ8F0l4XQ+Ha6p3Q==","signatures":[{"sig":"MEUCICTPww2MuQcCJ8ue3cq3SSld1nb6HRxXwRnFAtmFaeSxAiEAqtqvj3W5d46A0+/4UmhonldHqmwYs7ccPupfDIMOP3Y=","keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"}],"unpackedSize":334532},"main":"./index.js","types":"./index.d.ts","exports":{".":{"types":"./index.d.ts","import":"./index.mjs","require":"./index.js"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","_npmVersion":"10.2.4","directories":{},"_nodeVersion":"20.11.1","dependencies":{"lucide-react":"^0.383.0","@midas-ds/button":"1.0.1","@midas-ds/textfield":"1.0.1","react-aria-components":"^1.0.0-rc.0"},"publishConfig":{"access":"public"},"_hasShrinkwrap":false,"peerDependencies":{"react":"^18.2.0"},"_npmOperationalInternal":{"tmp":"tmp/file-upload_1.0.2_1729606153716_0.9738000394158912","host":"s3://npm-registry-packages"}}');
+;// ./apps/docs/static/data/table.json
+const table_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/table@1.0.2","_rev":"5-af05cadfbfac9bf33a7920ac59cb5a63","name":"@midas-ds/table","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.1.0","0.1.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-12T12:49:17.620Z","modified":"2024-11-01T10:27:46.622Z","0.1.0":"2024-09-12T12:49:18.018Z","0.0.1":"2024-09-12T13:02:24.470Z","0.1.1":"2024-10-07T12:24:13.653Z","1.0.0":"2024-10-18T13:40:53.378Z","1.0.1":"2024-10-24T13:26:53.159Z","1.0.2":"2024-11-01T10:27:46.398Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/table ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10707,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"publishConfig":{"access":"public"},"dependencies":{"@midas-ds/checkbox":"1.0.1","react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-FOPR7LrPLIVYk52kVRD1ZtIzaL9w276ndyI/fSKjj2ZP6yaaQ5SpAxUyP5Wh7NNsgLA70wRcyklgaQAIJ1mPpQ==","shasum":"8e1b1310c20e458f57a87a1d04be979f58187113","tarball":"https://registry.npmjs.org/@midas-ds/table/-/table-1.0.2.tgz","fileCount":8,"unpackedSize":421302,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQDJDMZqaPXTMhNJmBhaFuBpk2D2wYOs/76B5Sm9z4KwFwIhAJ3hCgo/OUNPBF9zHIaYu5wGw4Re+OWgYis2LXVJ2Q13"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/table_1.0.2_1730456866239_0.35516182202709334"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/table/src/index.ts + 2 modules
+var src = __webpack_require__(24926);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/fileupload.mdx
+;// ./apps/docs/docs/components/table.mdx
 
 
 const frontMatter = {
-	title: 'FileUpload',
-	description: 'Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.',
-	tags: [
-		'form'
-	]
+	title: 'Table',
+	tags: [],
+	description: 'En enkel tabell för att visualisera data.'
 };
 const contentTitle = undefined;
 
 const assets = {
 
 };
-
 
 
 
@@ -72,6 +69,18 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
+  "value": "Väljbara rader",
+  "id": "väljbara-rader",
+  "level": 3
+}, {
+  "value": "Smalare rader",
+  "id": "smalare-rader",
+  "level": 3
+}, {
+  "value": "Randiga rader",
+  "id": "randiga-rader",
+  "level": 3
+}, {
   "value": "Beroenden",
   "id": "beroenden",
   "level": 2
@@ -80,6 +89,7 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
+    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -87,15 +97,16 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'FileUpload',
-      info: file_upload_namespaceObject,
-      friendlyName: 'Filuppladdning',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/FileTrigger.html"
+      name: 'Table',
+      info: table_namespaceObject,
+      friendlyName: 'Tabell'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Select"
+      }), " för att filtrera eller liknande."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -106,7 +117,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/fileupload\n"
+            children: "npm install @midas-ds/table\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -115,7 +126,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/fileupload\n"
+            children: "yarn add @midas-ds/table\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -124,25 +135,159 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/fileupload\n"
+            children: "pnpm add @midas-ds/table\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { FileUpload } from '@midas-ds/fileupload';\n"
+        children: "import { Table } from '@midas-ds/table'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "id"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "const columns = [\n  { name: 'Namn', id: 'name', isRowHeader: true },\n  { name: 'Beskrivning', id: 'desc', width: 'max-content' },\n]\n\nconst rows = fruits.map((fruit) => {\n  return {\n    id: fruit.value,\n    name: fruit.name,\n    desc: fruit.description,\n  }\n})\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        FileUpload: src/* FileUpload */.e
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
       },
-      children: `<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`
+      children: `<Table
+  aria-label="Frukter"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "väljbara-rader",
+      children: "Väljbara rader"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Tabellen har inbyggd funktion för att kunna välja en eller flera rader med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "selectionMode"
+      }), " vilket kan vara antingen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "single"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "multiple"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
+      },
+      children: `<Table
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "smalare-rader",
+      children: "Smalare rader"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "narrow"
+      }), " om du vill ha en mindre tabell."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
+      },
+      children: `<Table
+  narrow
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "randiga-rader",
+      children: "Randiga rader"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "striped"
+      }), " om du vill ha en randig tabell."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
+      },
+      children: `<Table
+  striped
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: file_upload_namespaceObject
+      info: table_namespaceObject
     })]
   });
 }
@@ -185,15 +330,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -233,45 +380,93 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 45679:
+/***/ 61813:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  e: () => (/* reexport */ FileUpload)
+  S: () => (/* reexport */ Checkbox),
+  $: () => (/* reexport */ CheckboxGroup)
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js
-var regeneratorRuntime = __webpack_require__(90675);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(10467);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DropZone.mjs + 41 modules
-var DropZone = __webpack_require__(46090);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
-var Text = __webpack_require__(27279);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FileTrigger.mjs
-var FileTrigger = __webpack_require__(77064);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-;// ./packages/file-upload/src/lib/FileUpload.module.css
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Checkbox.mjs + 7 modules
+var dist_Checkbox = __webpack_require__(92466);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
+var Group = __webpack_require__(63899);
+;// ./packages/checkbox/src/lib/Checkbox.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const FileUpload_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray90":"#8c8c8c","mediumWeight":"500","regularWeight":"400","box":"box_bSkU","list":"list_FZEM","container":"container_YgUg","label":"label_m4WB","text":"text__cO9","dropzone":"dropzone_yvPs","input":"input__Ncf"});
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var src = __webpack_require__(81706);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var textfield_src = __webpack_require__(42619);
+/* harmony default export */ const Checkbox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","primaryBackground":"#143c50","blue80":"#5897b8","blue130":"#25607f","signalRed10":"#ffdfdf","signalRed100":"#e62323","signalRed130":"#b31b1b","white":"#ffffff","gray10":"#f2f2f2","gray40":"#cccccc","gray100":"#808080","gray50":"#bfbfbf","gray20":"#e6e6e6","regularWeight":"400","mediumWeight":"500","smBreakpoint":"(max-width: 767px)","borderSecondary":"#b3b3b3","wrap":"wrap_gmzk","checkboxInner":"checkboxInner_QnDn","checkbox":"checkbox_Uv4H","checkboxGroup":"checkboxGroup_uby9"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/file-upload/src/lib/FileUpload.tsx
-'use client';var FileUpload=function FileUpload(_ref){var allowsMultiple=_ref.allowsMultiple,label=_ref.label,description=_ref.description,dropzone=_ref.dropzone;var _React$useState=react.useState(null),files=_React$useState[0],setFiles=_React$useState[1];var handleUpload=function handleUpload(files){setFiles(files!==null?Array.from(files):[]);// TODO: actually handle files?
-};var handleDrop=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee(e){var filePromises,resolvedFiles;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee$(_context){while(1)switch(_context.prev=_context.next){case 0:filePromises=e.items.filter(function(file){return file.kind==='file';}).map(function(file){return file.getFile();});_context.next=3;return Promise.all(filePromises);case 3:resolvedFiles=_context.sent;setFiles(resolvedFiles);case 5:case"end":return _context.stop();}},_callee);}));return function handleDrop(_x){return _ref2.apply(this,arguments);};}();if(dropzone)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DropZone/* DropZone */.w,{onDrop:handleDrop,className:FileUpload_module.dropzone,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",style:{display:'block'},children:"Dra och sl\xE4pp en fil inuti det streckade omr\xE5det"})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_src/* InputWrapper */.oi,{label:label,description:description,children:/*#__PURE__*/(0,jsx_runtime.jsx)(FileTrigger/* FileTrigger */.F,{allowsMultiple:allowsMultiple,onSelect:function onSelect(files){return handleUpload(files);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"secondary","aria-labelledby":"fileUpload",className:FileUpload_module.input,children:allowsMultiple?'Välj filer':'Välj fil'})})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});};var FileList=function FileList(_ref3){var files=_ref3.files,setFiles=_ref3.setFiles;var handleRemove=function handleRemove(index){setFiles(files==null?void 0:files.filter(function(f,i){return i!==index;}));};return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",{className:FileUpload_module.list,children:files.map(function(file,index){return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",{className:FileUpload_module.box,children:[file.name,/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$,{variant:"icon",size:"small",onPress:function onPress(){return handleRemove(index);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]},index);})});};
-;// ./packages/file-upload/src/lib/index.ts
+;// ./packages/checkbox/src/lib/Checkbox.tsx
+'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* Checkbox */.Sc,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Checkbox_module.checkboxInner,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+;// ./packages/checkbox/src/lib/CheckboxGroup.tsx
+'use client';var CheckboxGroup_excluded=["label","description","errorMessage","showSelectAll","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,showSelectAll=_ref.showSelectAll,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,CheckboxGroup_excluded);var _React$useState=react.useState(false),isAllSelected=_React$useState[0],setIsAllSelected=_React$useState[1];var ToogleAll=function ToogleAll(){// Get the current state of the checkbox group
+var state=react.useContext(dist_Checkbox/* CheckboxGroupStateContext */.pf);// Retrieve all childern
+var childValues=react.Children.toArray(children).filter(react.isValidElement).map(function(child){return child.props.value;});// Toogle all values
+function toggleAll(){setIsAllSelected(!isAllSelected);if(!isAllSelected)return state.setValue(['toggleAll'].concat(childValues));return state.setValue([]);}//listen and change the select all accordingly
+react.useEffect(function(){if(state.value.length!==childValues.length+1)state.removeValue('toggleAll');if(state.value.length===childValues.length&&!state.value.includes('toggleAll')){state.addValue('toggleAll');setIsAllSelected(true);}// eslint-disable-next-line react-hooks/exhaustive-deps
+},[childValues.length,state.value]);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox,{value:"toggleAll",isSelected:isAllSelected,onChange:function onChange(){return toggleAll();},children:"V\xE4lj alla"});};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* CheckboxGroup */.$Q,Object.assign({className:Checkbox_module.checkboxGroup},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:Checkbox_module.wrap,children:[showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(ToogleAll,{}),children]})})}));};
+;// ./packages/checkbox/src/lib/index.ts
 
-;// ./packages/file-upload/src/index.ts
+;// ./packages/checkbox/src/index.ts
+
+
+/***/ }),
+
+/***/ 24926:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  fh: () => (/* reexport */ Cell),
+  VP: () => (/* reexport */ Column),
+  fI: () => (/* reexport */ Row),
+  XI: () => (/* reexport */ Table),
+  BF: () => (/* reexport */ dist_Table/* TableBody */.BF),
+  A0: () => (/* reexport */ TableHeader)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
+var objectDestructuringEmpty = __webpack_require__(20454);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/table/src/lib/Table.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Table_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray30":"#d9d9d9","gray40":"#cccccc","gray60":"#b3b3b3","mediumWeight":"500","cell":"cell_AsQp","table":"table_FqqN","narrow":"narrow_WZlN","striped":"striped__cZi","row":"row_evpi","tableHeader":"tableHeader_gdzy","column":"column_Ddxt"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 93 modules
+var dist_Table = __webpack_require__(67079);
+// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
+var CollectionBuilder = __webpack_require__(41177);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
+var Button = __webpack_require__(44080);
+// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
+var src = __webpack_require__(61813);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/grip-vertical.js
+var grip_vertical = __webpack_require__(21436);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-up-wide-narrow.js
+var arrow_up_wide_narrow = __webpack_require__(4804);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-narrow-wide.js
+var arrow_down_narrow_wide = __webpack_require__(85785);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/table/src/lib/Table.tsx
+'use client';var _excluded=["narrow","striped"],_excluded2=["id","columns","children"],_excluded3=["children"];var Table=function Table(_ref){var narrow=_ref.narrow,striped=_ref.striped,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames=(0,clsx/* default */.A)(Table_module.table,narrow&&Table_module.narrow,striped&&Table_module.striped);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Table */.XI,Object.assign({className:classNames},rest));};var TableHeader=function TableHeader(_ref2){var columns=_ref2.columns,children=_ref2.children;var _useTableOptions=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions.selectionBehavior,selectionMode=_useTableOptions.selectionMode,allowsDragging=_useTableOptions.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableHeader */.A0,{className:Table_module.tableHeader,children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{width:50,children:selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]});};var Row=function Row(_ref3){var id=_ref3.id,columns=_ref3.columns,children=_ref3.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded2);var _useTableOptions2=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions2.selectionBehavior,allowsDragging=_useTableOptions2.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* Row */.fI,Object.assign({id:id,className:(0,clsx/* default */.A)(Table_module.row)},rest,{children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"drag",children:/*#__PURE__*/(0,jsx_runtime.jsx)(grip_vertical/* default */.A,{size:20})})}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]}));};var Column=function Column(_ref4){var _children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Column */.VP,Object.assign({className:Table_module.column},rest,{children:function children(_ref5){var allowsSorting=_ref5.allowsSorting,sortDirection=_ref5.sortDirection;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[_children,allowsSorting&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",className:"sort-indicator",children:sortDirection==='ascending'?/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_wide_narrow/* default */.A,{size:20}):/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_narrow_wide/* default */.A,{size:20})})]});}}));};var Cell=function Cell(_ref6){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref6),_ref6));return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Cell */.fh,Object.assign({className:Table_module.cell},rest));};
+;// ./packages/table/src/index.ts
 
 
 /***/ }),

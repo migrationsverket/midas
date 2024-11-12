@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5095],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
 
-/***/ 71513:
+/***/ 90869:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_combobox_mdx_9b9_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_radio_mdx_7e6_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-combobox-mdx-9b9.json
-const site_docs_components_combobox_mdx_9b9_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/combobox","title":"ComboBox","description":"Sökbar version av Select","source":"@site/docs/components/combobox.mdx","sourceDirName":"components","slug":"/components/combobox","permalink":"/pr-preview/pr-129/components/combobox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"ComboBox","tags":[],"description":"Sökbar version av Select"},"sidebar":"sideBar","previous":{"title":"Checkbox","permalink":"/pr-preview/pr-129/components/checkbox"},"next":{"title":"DatePicker","permalink":"/pr-preview/pr-129/components/date-picker"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-radio-mdx-7e6.json
+const site_docs_components_radio_mdx_7e6_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/radio","title":"Radio","description":"Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","source":"@site/docs/components/radio.mdx","sourceDirName":"components","slug":"/components/radio","permalink":"/pr-preview/pr-129/components/radio","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-129/tags/form"}],"version":"current","frontMatter":{"title":"Radio","description":"Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","tags":["form"]},"sidebar":"sideBar","previous":{"title":"Modal","permalink":"/pr-preview/pr-129/components/modal"},"next":{"title":"SearchField","permalink":"/pr-preview/pr-129/components/search-field"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,27 +29,32 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/radio/src/index.ts + 2 modules
+var src = __webpack_require__(34378);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/combobox.json
-const combobox_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/combobox@1.0.2","_rev":"5-ed89c51e06f74236c5b960e2aaaf315e","name":"@midas-ds/combobox","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.1.0","0.1.1","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-10-02T14:28:10.145Z","modified":"2024-11-01T10:27:46.569Z","0.1.0":"2024-10-02T14:28:10.431Z","0.0.1":"2024-10-07T11:31:16.286Z","0.1.1":"2024-10-07T12:10:23.238Z","1.0.0":"2024-10-18T13:40:57.353Z","1.0.1":"2024-10-24T13:26:52.517Z","1.0.2":"2024-11-01T10:27:46.374Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/combobox ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9872,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0","react-aria-components":"^1.1.1"},"publishConfig":{"access":"public"},"gitHead":"70edd4f7163e73616f4c7eadaeb38f6a2ba341eb","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Yoy5lii9D8b7BoBf5lopjFZfwXlkQ+I7fq4AVRkyzo2l0MhA3PdgBnJwRTghDZH+uP9x8fNjAEiu7i20j82wCQ==","shasum":"a5ceb479c6556e0998256d17c0f24fd986e5b1ee","tarball":"https://registry.npmjs.org/@midas-ds/combobox/-/combobox-1.0.2.tgz","fileCount":8,"unpackedSize":427315,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQD8UC/cVURtZmkK6B3ER3V+R6SKGfaAd/ziZdUiqAV+jwIhAOQQzuJlUQfNxDdaxeh5rTlKc7VtaVN5dFOu8u4zlFRA"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/combobox_1.0.2_1730456866193_0.9546146129008615"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/combobox/src/index.ts + 2 modules
-var src = __webpack_require__(48517);
+;// ./apps/docs/static/data/radio.json
+const radio_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/radio@1.0.1","_rev":"7-c37f72c62143407f474660704552370b","name":"@midas-ds/radio","dist-tags":{"latest":"1.0.1"},"versions":["0.6.1","0.6.2","0.6.3","0.7.0","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:59.126Z","modified":"2024-10-24T13:26:37.615Z","0.6.1":"2024-09-10T14:37:59.408Z","0.6.2":"2024-09-12T12:42:10.930Z","0.6.3":"2024-09-19T12:26:24.985Z","0.7.0":"2024-10-07T12:18:39.699Z","1.0.0":"2024-10-18T13:40:39.975Z","1.0.1":"2024-10-24T13:26:37.442Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/radio ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9973,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-YdDOfb2TgN9l7Itr8PsW47G3Azz/nQKdndDAp8wal1PXNBsjkbSJVioIf11I3R9UEHOVf0MZr/C8oLCYv8gI1w==","shasum":"4807487bc05e8ccbe7e880be602e3f69c9c5f8ef","tarball":"https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.1.tgz","fileCount":9,"unpackedSize":126274,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIGLt9dUVDiB24Uy43XXA3pUdXIzj6EUdk66c7XdpxGSnAiAMF3miI/byvsgwOmrNUt7E/W98QzeUk/tEAsexpvi9HQ=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/radio_1.0.1_1729776397186_0.24599049100813497"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/combobox.mdx
+;// ./apps/docs/docs/components/radio.mdx
 
 
 const frontMatter = {
-	title: 'ComboBox',
-	tags: [],
-	description: 'Sökbar version av Select'
+	title: 'Radio',
+	description: 'Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
+	tags: [
+		'form'
+	]
 };
 const contentTitle = undefined;
 
 const assets = {
 
 };
+
 
 
 
@@ -69,9 +74,25 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
+  "value": "Normal användning",
+  "id": "normal-användning",
+  "level": 3
+}, {
+  "value": "Disabled",
+  "id": "disabled",
+  "level": 3
+}, {
+  "value": "Validering",
+  "id": "validering",
+  "level": 3
+}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
+  "level": 3
 }, {
   "value": "Beroenden",
   "id": "beroenden",
@@ -79,35 +100,38 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    strong: "strong",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Combobox',
-      info: combobox_namespaceObject,
-      friendlyName: "Flerval med sök, väljare med sök, dropdown med sök"
+      name: 'Radio',
+      info: radio_namespaceObject,
+      friendlyName: 'Radioknappar',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En ComboBox (kombination av Select och TextField) visar en hopfällbar lista med alternativ och låter en användare söka bland dem och välja ett av dem."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["ComboBox är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett"
-      }), " alternativ av fler än fyra (4) av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-129/components/checkbox",
-        children: "Checkbox"
-      }), " som ska användas\nOm det är fler alternativ än färre än fyra (4) används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-129/components/radio",
-        children: "Radio"
-      }), " istället."]
+      children: "Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -118,7 +142,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/combobox\n"
+            children: "npm install @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -127,7 +151,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/combobox\n"
+            children: "yarn add @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -136,37 +160,87 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/combobox\n"
+            children: "pnpm add @midas-ds/radio\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ComboBox } from '@midas-ds/combobox'\n"
+        children: "import { Radio, RadioGroup } from '@midas-ds/radio';\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "normal-användning",
+      children: "Normal användning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Gruppera flera ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Radio>"
+      }), " i en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<RadioGroup>"
+      }), " och sätt rubrik och beskrivande text."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        ComboBox: src/* ComboBox */.a,
-        ComboBoxItem: src/* ComboBoxItem */.x
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
       },
-      children: `<ComboBox
-  label="Vad är din favoritfrukt?"
-  placeholder="Välj en frukt"
-  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-  {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-</ComboBox>`
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "disabled",
+      children: "Disabled"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isDisabled"
+      }), " antingen på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "RadioGroup"
+      }), " eller på enskilda val av ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Radio"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+     ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt validering med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isInvalid"
+      }), " eller använd inbyggda tester som ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "TBD"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "flowchart TD;\n    A[Ska användaren kunna välja mer än ett alternativ?]:::primary\n    A -->|Ja| B[Använd Checkbox]\n    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary\n    C -->|Ja| E[Använd Select]\n    C -->|Nej| D[Använd Radio]:::primary\n    "
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: combobox_namespaceObject
+      info: radio_namespaceObject
     })]
   });
 }
@@ -209,15 +283,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -257,43 +333,37 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 48517:
+/***/ 34378:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  a: () => (/* reexport */ ComboBox_ComboBox),
-  x: () => (/* reexport */ ComboBoxItem)
+  s: () => (/* reexport */ Radio),
+  z: () => (/* reexport */ RadioGroup)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/combobox/src/lib/ComboBox.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const ComboBox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","gray10":"#f2f2f2","backgroundSecondary":"#f2f2f2","input":"input_gDb3","combobox":"combobox_rehA","text":"text_A7Tx","wrap":"wrap_UCxY","button":"button_teGE","icon":"icon_DT7M","popover":"popover_qr5d","fieldError":"fieldError_secg","listBoxItem":"listBoxItem_fgbv"});
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ComboBox.mjs + 37 modules
-var ComboBox = __webpack_require__(20050);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
-var Button = __webpack_require__(44080);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 5 modules
-var Popover = __webpack_require__(8119);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ListBox.mjs + 6 modules
-var ListBox = __webpack_require__(61235);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
-var chevron_down = __webpack_require__(75107);
+;// ./packages/radio/src/lib/Radio.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Radio_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","inputLabel":"undefined","inputText":"#1f1f1f","black":"#000000","blue150":"#143c50","gray50":"#bfbfbf","gray60":"#b3b3b3","signalRed10":"#ffdfdf","signalRed100":"#e62323","medium":"undefined","gray150":"#1f1f1f","regular":"undefined","smBreakpoint":"(max-width: 767px)","mdBreakpoint":"(min-width: 768px)","borderSecondary":"#b3b3b3","radioGroup":"radioGroup_rXoc","wrap":"wrap_M_eK","radio":"radio_jFRQ"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
+var dist_RadioGroup = __webpack_require__(96325);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
+var Group = __webpack_require__(63899);
 // EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
 var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/combobox/src/lib/ComboBox.tsx
-'use client';var _excluded=["label","description","errorMessage","children","items"];function ComboBox_ComboBox(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:ComboBox_module.combobox},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:ComboBox_module.input}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:ComboBox_module.button,"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:ComboBox_module.popover,offset:0,children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.qF,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBoxItem */.nh,Object.assign({className:ComboBox_module.listBoxItem},props));}
-;// ./packages/combobox/src/index.ts
+;// ./packages/radio/src/lib/Radio.tsx
+'use client';var _excluded=["label","description","errorMessage","children"];var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
+ * Radio item
+ * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
+;// ./packages/radio/src/index.ts
 
 
 /***/ }),
@@ -646,15 +716,18 @@ webpackContext.id = 35358;
 
 /***/ }),
 
-/***/ 15371:
+/***/ 87979:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   U: () => (/* binding */ $bb77f239b46e8c72$export$3274cf84b703fff)
+/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
+/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
 /* harmony export */ });
-/* harmony import */ var _useCollator_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(82627);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
+
 
 
 
@@ -670,58 +743,55 @@ webpackContext.id = 35358;
  * governing permissions and limitations under the License.
  */ 
 
-function $bb77f239b46e8c72$export$3274cf84b703fff(options) {
-    let collator = (0, _useCollator_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useCollator */ .Q)({
-        usage: 'search',
-        ...options
+
+const $5c3e21d68f1c4674$var$styles = {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: '1px',
+    whiteSpace: 'nowrap'
+};
+function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
+    let { style: style, isFocusable: isFocusable } = props;
+    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
+        isDisabled: !isFocusable,
+        onFocusWithinChange: (val)=>setFocused(val)
     });
-    // TODO(later): these methods don't currently support the ignorePunctuation option.
-    let startsWith = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((string, substring)=>{
-        if (substring.length === 0) return true;
-        // Normalize both strings so we can slice safely
-        // TODO: take into account the ignorePunctuation option as well...
-        string = string.normalize('NFC');
-        substring = substring.normalize('NFC');
-        return collator.compare(string.slice(0, substring.length), substring) === 0;
+    // If focused, don't hide the element.
+    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
+        if (isFocused) return style;
+        else if (style) return {
+            ...$5c3e21d68f1c4674$var$styles,
+            ...style
+        };
+        else return $5c3e21d68f1c4674$var$styles;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [
-        collator
+        isFocused
     ]);
-    let endsWith = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((string, substring)=>{
-        if (substring.length === 0) return true;
-        string = string.normalize('NFC');
-        substring = substring.normalize('NFC');
-        return collator.compare(string.slice(-substring.length), substring) === 0;
-    }, [
-        collator
-    ]);
-    let contains = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((string, substring)=>{
-        if (substring.length === 0) return true;
-        string = string.normalize('NFC');
-        substring = substring.normalize('NFC');
-        let scan = 0;
-        let sliceLen = substring.length;
-        for(; scan + sliceLen <= string.length; scan++){
-            let slice = string.slice(scan, scan + sliceLen);
-            if (collator.compare(substring, slice) === 0) return true;
+    return {
+        visuallyHiddenProps: {
+            ...focusWithinProps,
+            style: combinedStyles
         }
-        return false;
-    }, [
-        collator
-    ]);
-    return (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>({
-            startsWith: startsWith,
-            endsWith: endsWith,
-            contains: contains
-        }), [
-        startsWith,
-        endsWith,
-        contains
-    ]);
+    };
+}
+function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
+    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
 }
 
 
 
-//# sourceMappingURL=useFilter.module.js.map
+//# sourceMappingURL=VisuallyHidden.module.js.map
 
 
 /***/ }),

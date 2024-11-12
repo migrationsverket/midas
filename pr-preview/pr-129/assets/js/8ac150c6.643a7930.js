@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3207],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9758],{
 
-/***/ 11668:
+/***/ 352:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_date_picker_mdx_03d_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_search_field_mdx_8ac_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-date-picker-mdx-03d.json
-const site_docs_components_date_picker_mdx_03d_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/date-picker","title":"DatePicker","description":"Fält för att välja ett datum eller ett spann av datum med kalender.","source":"@site/docs/components/date-picker.mdx","sourceDirName":"components","slug":"/components/date-picker","permalink":"/pr-preview/pr-129/components/date-picker","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"DatePicker","tags":[],"description":"Fält för att välja ett datum eller ett spann av datum med kalender."},"sidebar":"sideBar","previous":{"title":"ComboBox","permalink":"/pr-preview/pr-129/components/combobox"},"next":{"title":"FileUpload","permalink":"/pr-preview/pr-129/components/fileupload"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-search-field-mdx-8ac.json
+const site_docs_components_search_field_mdx_8ac_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/search-field","title":"SearchField","description":"Sökfält är en kombinationskomponent av TextField och Button","source":"@site/docs/components/search-field.mdx","sourceDirName":"components","slug":"/components/search-field","permalink":"/pr-preview/pr-129/components/search-field","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"SearchField","tags":[],"description":"Sökfält är en kombinationskomponent av TextField och Button"},"sidebar":"sideBar","previous":{"title":"Radio","permalink":"/pr-preview/pr-129/components/radio"},"next":{"title":"Select","permalink":"/pr-preview/pr-129/components/select"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -31,19 +31,19 @@ var TabItem = __webpack_require__(19365);
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/date-picker.json
-const date_picker_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/date-picker@1.0.1","_rev":"6-420c0ee2c4215bdd9dc9bc43bfe61ffd","name":"@midas-ds/date-picker","dist-tags":{"latest":"1.0.1"},"versions":["0.0.1","0.1.0","0.1.1","0.2.0","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:36:31.432Z","modified":"2024-10-24T13:26:54.368Z","0.0.1":"2024-09-10T14:36:31.793Z","0.1.0":"2024-09-12T09:22:57.399Z","0.1.1":"2024-09-12T12:23:40.759Z","0.2.0":"2024-10-07T12:11:26.810Z","1.0.0":"2024-10-18T13:40:58.357Z","1.0.1":"2024-10-24T13:26:54.194Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/date-picker ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10020,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"@midas-ds/textfield":"1.0.1","react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"publishConfig":{"access":"public"},"gitHead":"ead3133f0643b7915ada3e7ccd2a21764ae1323f","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-ClHwh4FDFOcP8zzpiJeUMQ2BNwpcf6B94RvOlXrDsBU4EPVj0KnDR/tE5EQPg1xBV33gpxC6mNyRGDwR08HCzg==","shasum":"089b3ea93a790ac86c2dfc2e4ca747013180db90","tarball":"https://registry.npmjs.org/@midas-ds/date-picker/-/date-picker-1.0.1.tgz","fileCount":8,"unpackedSize":550843,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIG+hg2lMKrl2HLzGl5HCGwcbP7XEZld0pTbxC+ceIyV7AiAbEOs/ahw2mL/JzN7lUU/X2QViswqhb3/9D59GfYZXCg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/date-picker_1.0.1_1729776413947_0.1935883163991452"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/date-picker/src/index.ts + 2 modules
-var src = __webpack_require__(56657);
+;// ./apps/docs/static/data/search-field.json
+const search_field_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/search-field@1.0.2","_rev":"6-ecf5fe2c34d3859d5c9f45782708ce03","name":"@midas-ds/search-field","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.0.2","0.1.0","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:38:08.720Z","modified":"2024-10-24T13:32:54.239Z","0.0.1":"2024-09-10T14:38:09.007Z","0.0.2":"2024-09-12T12:43:45.772Z","0.1.0":"2024-10-07T12:19:44.725Z","1.0.0":"2024-10-18T13:40:43.577Z","1.0.1":"2024-10-24T13:26:46.347Z","1.0.2":"2024-10-24T13:32:54.084Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"This library was generated with [Nx](https://nx.dev).","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":10372,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0","react-aria-components":"^1.1.1","lucide-react":"^0.453.0","@midas-ds/textfield":"1.0.1","@midas-ds/button":"1.0.2"},"publishConfig":{"access":"public"},"gitHead":"299738cc211e4aa1a60b155e8a9289b5b00cb56c","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-iDJQyuyiP3m9UlfMiQUL7B88AXU/qFloonSDHDQ9noEBJDWJLLIotLNbS9sE2qkS+n91Ts50yYCSX6HP0oKxOw==","shasum":"6806e7521fd799116cfa8c05080fd956a340dd33","tarball":"https://registry.npmjs.org/@midas-ds/search-field/-/search-field-1.0.2.tgz","fileCount":8,"unpackedSize":136570,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDlJnNk4NKfIIqj2SnfmnjWqgPy3nkm3rzuQ/tIL4guOgIgUF6Ju3GuGslmWCWP1A8deXHT0Gnfy2hNOXDx0+gHceU="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/search-field_1.0.2_1729776773851_0.9281120559896041"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/search-field/src/index.ts + 2 modules
+var src = __webpack_require__(91725);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/date-picker.mdx
+;// ./apps/docs/docs/components/search-field.mdx
 
 
 const frontMatter = {
-	title: 'DatePicker',
+	title: 'SearchField',
 	tags: [],
-	description: 'Fält för att välja ett datum eller ett spann av datum med kalender.'
+	description: 'Sökfält är en kombinationskomponent av TextField och Button'
 };
 const contentTitle = undefined;
 
@@ -69,14 +69,6 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "DatePicker",
-  "id": "datepicker",
-  "level": 3
-}, {
-  "value": "DateRangePicker",
-  "id": "daterangepicker",
-  "level": 3
-}, {
   "value": "Beroenden",
   "id": "beroenden",
   "level": 2
@@ -85,7 +77,6 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -93,18 +84,14 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'DatePicker',
-      info: date_picker_namespaceObject,
-      friendlyName: 'Datumväljare'
+      name: 'SearchField',
+      info: search_field_namespaceObject,
+      friendlyName: 'Sökfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Fält för att välja ett datum eller ett spann av datum med kalender. Består av två komponenter ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "DatePicker"
-      }), " för att välja ett datum samt ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "DateRangePicker"
-      }), " för att välja ett spann av (2) datum."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Sökfält är en kombinationskomponent av TextField och Button."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -115,7 +102,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/date-picker\n"
+            children: "npm install @midas-ds/search-field\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -124,7 +111,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/date-picker\n"
+            children: "yarn add @midas-ds/search-field\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -133,41 +120,25 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/date-picker\n"
+            children: "pnpm add @midas-ds/search-field\n"
           })
         })
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "datepicker",
-      children: "DatePicker"
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { DatePicker } from '@midas-ds/date-picker'\n"
+        children: "import { SearchField } from '@midas-ds/search-field'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        DatePicker: src/* DatePicker */.l
+        SearchField: src/* SearchField */.L
       },
-      children: `<DatePicker />`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "daterangepicker",
-      children: "DateRangePicker"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { DateRangePicker } from '@midas-ds/date-picker'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        DateRangePicker: src/* DateRangePicker */.U
-      },
-      children: `<DateRangePicker />`
+      children: `<SearchField placeholder="Sök efter fruker" />`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: date_picker_namespaceObject
+      info: search_field_namespaceObject
     })]
   });
 }
@@ -210,15 +181,17 @@ var useDocusaurusContext = __webpack_require__(44586);
 var react_live_dist = __webpack_require__(86850);
 ;// ./apps/docs/src/components/CodeBlock/styles.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","borderBottom":"borderBottom_SKni","playgroundPreview":"playgroundPreview_d6Ft"});
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
 var fruits = __webpack_require__(46638);
 // EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
 var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
-var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+var _excluded=["children","transformCode","hideCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});var Playground=function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,hideCode=_ref.hideCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.playgroundEditor,!hideCode&&styles_module.borderBottom),children:!hideCode&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));};/* harmony default export */ const CodeBlock = (Playground);/**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
  * This source code is licensed under the MIT license found in the
@@ -258,53 +231,46 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 56657:
+/***/ 91725:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  l: () => (/* reexport */ DatePicker),
-  U: () => (/* reexport */ DateRangePicker)
+  L: () => (/* reexport */ SearchField)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DatePicker.mjs + 4 modules
-var dist_DatePicker = __webpack_require__(98013);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
-var Group = __webpack_require__(63899);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 42 modules
-var DateField = __webpack_require__(44114);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
-var Button = __webpack_require__(44080);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 5 modules
-var Popover = __webpack_require__(8119);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 1 modules
-var Dialog = __webpack_require__(86484);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Calendar.mjs + 44 modules
-var Calendar = __webpack_require__(88519);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Heading.mjs
-var Heading = __webpack_require__(57936);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/calendar-days.js
-var calendar_days = __webpack_require__(93347);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-left.js
-var chevron_left = __webpack_require__(60250);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-right.js
-var chevron_right = __webpack_require__(87677);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/SearchField.mjs + 37 modules
+var dist_SearchField = __webpack_require__(91521);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
+var search = __webpack_require__(98445);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
 // EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
 var src = __webpack_require__(42619);
-;// ./packages/date-picker/src/lib/DatePicker.module.css
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
+;// ./packages/search-field/src/lib/SearchField.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const DatePicker_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray20":"#e6e6e6","gray60":"#b3b3b3","gray150":"#1f1f1f","blue20":"#d5e5ed","blue150":"#143c50","datePicker":"datePicker_o9AA","datePickerTextfield":"datePickerTextfield_Ugf1","date":"date_HzvK","dialog":"dialog_M74H","dialogHeader":"dialogHeader_Pvcw","dialogHeading":"dialogHeading_lDjb","day":"day_x9rH","calendar":"calendar_Bnb1"});
+/* harmony default export */ const SearchField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","blue150":"#143c50","gray150":"#1f1f1f","container":"container_bTyD","inputContainer":"inputContainer_FEyv","icon":"icon_fL1_","clear":"clear_PAHR","input":"input_Mp7b"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/date-picker/src/lib/DatePicker.tsx
-'use client';var _excluded=["label","description","errorMessage"],_excluded2=["label","description","errorMessage"];var DateRangePicker=function DateRangePicker(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_DatePicker/* DateRangePicker */.Ur,Object.assign({},props,{className:(0,clsx/* clsx */.$)(src/* TextFieldStyles */.Ql.inputField,DatePicker_module.datePicker,props.className),children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:(0,clsx/* clsx */.$)(src/* TextFieldStyles */.Ql.input,DatePicker_module.datePickerTextfield),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateInput */.J3,{slot:"start",className:DatePicker_module.date,children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,{className:DatePicker_module.dateSegment,segment:segment});}}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",children:"-"}),/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateInput */.J3,{slot:"end",className:DatePicker_module.date,children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,{segment:segment,className:DatePicker_module.dateSegment});}}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(calendar_days/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Dialog/* Dialog */.lG,{className:DatePicker_module.dialog,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Calendar/* RangeCalendar */._e,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("header",{className:DatePicker_module.dialogHeader,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"previous",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_left/* default */.A,{size:20,"aria-hidden":true})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* Heading */.D,{className:DatePicker_module.dialogHeading}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"next",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Calendar/* CalendarGrid */.r8,{className:DatePicker_module.calendar,children:function children(date){return/*#__PURE__*/(0,jsx_runtime.jsx)(Calendar/* CalendarCell */.Zr,{date:date,className:DatePicker_module.day});}})]})})})]})}));};var DatePicker=function DatePicker(_ref2){var label=_ref2.label,description=_ref2.description,errorMessage=_ref2.errorMessage,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_DatePicker/* DatePicker */.lr,Object.assign({},props,{className:(0,clsx/* clsx */.$)(src/* TextFieldStyles */.Ql.inputField,DatePicker_module.datePicker,props.className),children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:(0,clsx/* clsx */.$)(src/* TextFieldStyles */.Ql.input,DatePicker_module.datePickerTextfield),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateInput */.J3,{className:DatePicker_module.date,children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,{segment:segment,className:DatePicker_module.dateSegment});}}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(calendar_days/* default */.A,{size:16})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Dialog/* Dialog */.lG,{className:DatePicker_module.dialog,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Calendar/* Calendar */.Vv,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("header",{className:DatePicker_module.dialogHeader,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"previous",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_left/* default */.A,{})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* Heading */.D,{className:DatePicker_module.dialogHeading}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"next",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Calendar/* CalendarGrid */.r8,{className:DatePicker_module.calendar,children:function children(date){return/*#__PURE__*/(0,jsx_runtime.jsx)(Calendar/* CalendarCell */.Zr,{date:date,className:DatePicker_module.day});}})]})})})]})}));};
-;// ./packages/date-picker/src/index.ts
+;// ./packages/search-field/src/lib/SearchField.tsx
+'use client';var _excluded=["placeholder","buttonText"];var SearchField=function SearchField(_ref){var placeholder=_ref.placeholder,buttonText=_ref.buttonText,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(false),hasInput=_React$useState[0],setHasInput=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_SearchField/* SearchField */.L,Object.assign({onInput:function onInput(){return setHasInput(true);},onClear:function onClear(){return setHasInput(false);},className:SearchField_module.container},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{hidden:true,children:placeholder}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:SearchField_module.inputContainer,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(search/* default */.A,{size:20,className:SearchField_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(src/* TextFieldStyles */.Ql.input,SearchField_module.input),placeholder:placeholder}),hasInput&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{variant:"icon",size:"small",className:SearchField_module.clear,children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{type:"submit",children:buttonText?buttonText:'Sök'})]}));};
+;// ./packages/search-field/src/index.ts
 
 
 /***/ }),
@@ -657,18 +623,15 @@ webpackContext.id = 35358;
 
 /***/ }),
 
-/***/ 82627:
+/***/ 92122:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Q: () => (/* binding */ $325a3faab7a68acd$export$a16aca283550c30d)
+/* harmony export */   B: () => (/* binding */ $5b160d28a433310d$export$c17fa47878dc55b6)
 /* harmony export */ });
-/* harmony import */ var _context_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39892);
-
-
 /*
- * Copyright 2020 Adobe. All rights reserved.
+ * Copyright 2022 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -677,33 +640,85 @@ webpackContext.id = 35358;
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
- */ 
-let $325a3faab7a68acd$var$cache = new Map();
-function $325a3faab7a68acd$export$a16aca283550c30d(options) {
-    let { locale: locale } = (0, _context_mjs__WEBPACK_IMPORTED_MODULE_0__/* .useLocale */ .Y)();
-    let cacheKey = locale + (options ? Object.entries(options).sort((a, b)=>a[0] < b[0] ? -1 : 1).join() : '');
-    if ($325a3faab7a68acd$var$cache.has(cacheKey)) return $325a3faab7a68acd$var$cache.get(cacheKey);
-    let formatter = new Intl.Collator(locale, options);
-    $325a3faab7a68acd$var$cache.set(cacheKey, formatter);
-    return formatter;
+ */ const $5b160d28a433310d$var$localeSymbol = Symbol.for('react-aria.i18n.locale');
+const $5b160d28a433310d$var$stringsSymbol = Symbol.for('react-aria.i18n.strings');
+let $5b160d28a433310d$var$cachedGlobalStrings = undefined;
+class $5b160d28a433310d$export$c17fa47878dc55b6 {
+    /** Returns a localized string for the given key and locale. */ getStringForLocale(key, locale) {
+        let strings = this.getStringsForLocale(locale);
+        let string = strings[key];
+        if (!string) throw new Error(`Could not find intl message ${key} in ${locale} locale`);
+        return string;
+    }
+    /** Returns all localized strings for the given locale. */ getStringsForLocale(locale) {
+        let strings = this.strings[locale];
+        if (!strings) {
+            strings = $5b160d28a433310d$var$getStringsForLocale(locale, this.strings, this.defaultLocale);
+            this.strings[locale] = strings;
+        }
+        return strings;
+    }
+    static getGlobalDictionaryForPackage(packageName) {
+        if (typeof window === 'undefined') return null;
+        let locale = window[$5b160d28a433310d$var$localeSymbol];
+        if ($5b160d28a433310d$var$cachedGlobalStrings === undefined) {
+            let globalStrings = window[$5b160d28a433310d$var$stringsSymbol];
+            if (!globalStrings) return null;
+            $5b160d28a433310d$var$cachedGlobalStrings = {};
+            for(let pkg in globalStrings)$5b160d28a433310d$var$cachedGlobalStrings[pkg] = new $5b160d28a433310d$export$c17fa47878dc55b6({
+                [locale]: globalStrings[pkg]
+            }, locale);
+        }
+        let dictionary = $5b160d28a433310d$var$cachedGlobalStrings === null || $5b160d28a433310d$var$cachedGlobalStrings === void 0 ? void 0 : $5b160d28a433310d$var$cachedGlobalStrings[packageName];
+        if (!dictionary) throw new Error(`Strings for package "${packageName}" were not included by LocalizedStringProvider. Please add it to the list passed to createLocalizedStringDictionary.`);
+        return dictionary;
+    }
+    constructor(messages, defaultLocale = 'en-US'){
+        // Clone messages so we don't modify the original object.
+        // Filter out entries with falsy values which may have been caused by applying optimize-locales-plugin.
+        this.strings = Object.fromEntries(Object.entries(messages).filter(([, v])=>v));
+        this.defaultLocale = defaultLocale;
+    }
+}
+function $5b160d28a433310d$var$getStringsForLocale(locale, strings, defaultLocale = 'en-US') {
+    // If there is an exact match, use it.
+    if (strings[locale]) return strings[locale];
+    // Attempt to find the closest match by language.
+    // For example, if the locale is fr-CA (French Canadian), but there is only
+    // an fr-FR (France) set of strings, use that.
+    // This could be replaced with Intl.LocaleMatcher once it is supported.
+    // https://github.com/tc39/proposal-intl-localematcher
+    let language = $5b160d28a433310d$var$getLanguage(locale);
+    if (strings[language]) return strings[language];
+    for(let key in strings){
+        if (key.startsWith(language + '-')) return strings[key];
+    }
+    // Nothing close, use english.
+    return strings[defaultLocale];
+}
+function $5b160d28a433310d$var$getLanguage(locale) {
+    // @ts-ignore
+    if (Intl.Locale) // @ts-ignore
+    return new Intl.Locale(locale).language;
+    return locale.split('-')[0];
 }
 
 
 
-//# sourceMappingURL=useCollator.module.js.map
+//# sourceMappingURL=LocalizedStringDictionary.module.js.map
 
 
 /***/ }),
 
-/***/ 47912:
+/***/ 57612:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   o: () => (/* binding */ $cc38e7bd3fc7b213$export$2bb74740c4e19def)
+/* harmony export */   J: () => (/* binding */ $6db58dc88e78b024$export$2f817fcdc4b89ae0)
 /* harmony export */ });
 /*
- * Copyright 2024 Adobe. All rights reserved.
+ * Copyright 2022 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -712,63 +727,66 @@ function $325a3faab7a68acd$export$a16aca283550c30d(options) {
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
- */ function $cc38e7bd3fc7b213$export$2bb74740c4e19def(node, checkForOverflow) {
-    let style = window.getComputedStyle(node);
-    let isScrollable = /(auto|scroll)/.test(style.overflow + style.overflowX + style.overflowY);
-    if (isScrollable && checkForOverflow) isScrollable = node.scrollHeight !== node.clientHeight || node.scrollWidth !== node.clientWidth;
-    return isScrollable;
+ */ const $6db58dc88e78b024$var$pluralRulesCache = new Map();
+const $6db58dc88e78b024$var$numberFormatCache = new Map();
+class $6db58dc88e78b024$export$2f817fcdc4b89ae0 {
+    /** Formats a localized string for the given key with the provided variables. */ format(key, variables) {
+        let message = this.strings.getStringForLocale(key, this.locale);
+        return typeof message === 'function' ? message(variables, this) : message;
+    }
+    plural(count, options, type = 'cardinal') {
+        let opt = options['=' + count];
+        if (opt) return typeof opt === 'function' ? opt() : opt;
+        let key = this.locale + ':' + type;
+        let pluralRules = $6db58dc88e78b024$var$pluralRulesCache.get(key);
+        if (!pluralRules) {
+            pluralRules = new Intl.PluralRules(this.locale, {
+                type: type
+            });
+            $6db58dc88e78b024$var$pluralRulesCache.set(key, pluralRules);
+        }
+        let selected = pluralRules.select(count);
+        opt = options[selected] || options.other;
+        return typeof opt === 'function' ? opt() : opt;
+    }
+    number(value) {
+        let numberFormat = $6db58dc88e78b024$var$numberFormatCache.get(this.locale);
+        if (!numberFormat) {
+            numberFormat = new Intl.NumberFormat(this.locale);
+            $6db58dc88e78b024$var$numberFormatCache.set(this.locale, numberFormat);
+        }
+        return numberFormat.format(value);
+    }
+    select(options, value) {
+        let opt = options[value] || options.other;
+        return typeof opt === 'function' ? opt() : opt;
+    }
+    constructor(locale, strings){
+        this.locale = locale;
+        this.strings = strings;
+    }
 }
 
 
 
-//# sourceMappingURL=isScrollable.module.js.map
+//# sourceMappingURL=LocalizedStringFormatter.module.js.map
 
 
 /***/ }),
 
-/***/ 6868:
+/***/ 39892:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  R: () => (/* binding */ $2f04cbc44ee30ce0$export$53a0910f038337bd),
-  o: () => (/* binding */ $2f04cbc44ee30ce0$export$c826860796309d1b)
+  Y: () => (/* binding */ $18f2051aff69b9bf$export$43bb16f9c6d9e3f7)
 });
 
-// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/isScrollable.mjs
-var isScrollable = __webpack_require__(47912);
-;// ./node_modules/@react-aria/utils/dist/getScrollParents.mjs
+// UNUSED EXPORTS: I18nProvider
 
-
-/*
- * Copyright 2024 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-function $a40c673dc9f6d9c7$export$94ed1c92c7beeb22(node, checkForOverflow) {
-    const scrollParents = [];
-    while(node && node !== document.documentElement){
-        if ((0, isScrollable/* isScrollable */.o)(node, checkForOverflow)) scrollParents.push(node);
-        node = node.parentElement;
-    }
-    return scrollParents;
-}
-
-
-
-//# sourceMappingURL=getScrollParents.module.js.map
-
-;// ./node_modules/@react-aria/utils/dist/scrollIntoView.mjs
-
-
+;// ./node_modules/@react-aria/i18n/dist/utils.mjs
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -779,97 +797,69 @@ function $a40c673dc9f6d9c7$export$94ed1c92c7beeb22(node, checkForOverflow) {
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
- */ 
-function $2f04cbc44ee30ce0$export$53a0910f038337bd(scrollView, element) {
-    let offsetX = $2f04cbc44ee30ce0$var$relativeOffset(scrollView, element, 'left');
-    let offsetY = $2f04cbc44ee30ce0$var$relativeOffset(scrollView, element, 'top');
-    let width = element.offsetWidth;
-    let height = element.offsetHeight;
-    let x = scrollView.scrollLeft;
-    let y = scrollView.scrollTop;
-    // Account for top/left border offsetting the scroll top/Left
-    let { borderTopWidth: borderTopWidth, borderLeftWidth: borderLeftWidth } = getComputedStyle(scrollView);
-    let borderAdjustedX = scrollView.scrollLeft + parseInt(borderLeftWidth, 10);
-    let borderAdjustedY = scrollView.scrollTop + parseInt(borderTopWidth, 10);
-    // Ignore end/bottom border via clientHeight/Width instead of offsetHeight/Width
-    let maxX = borderAdjustedX + scrollView.clientWidth;
-    let maxY = borderAdjustedY + scrollView.clientHeight;
-    if (offsetX <= x) x = offsetX - parseInt(borderLeftWidth, 10);
-    else if (offsetX + width > maxX) x += offsetX + width - maxX;
-    if (offsetY <= borderAdjustedY) y = offsetY - parseInt(borderTopWidth, 10);
-    else if (offsetY + height > maxY) y += offsetY + height - maxY;
-    scrollView.scrollLeft = x;
-    scrollView.scrollTop = y;
-}
-/**
- * Computes the offset left or top from child to ancestor by accumulating
- * offsetLeft or offsetTop through intervening offsetParents.
- */ function $2f04cbc44ee30ce0$var$relativeOffset(ancestor, child, axis) {
-    const prop = axis === 'left' ? 'offsetLeft' : 'offsetTop';
-    let sum = 0;
-    while(child.offsetParent){
-        sum += child[prop];
-        if (child.offsetParent === ancestor) break;
-        else if (child.offsetParent.contains(ancestor)) {
-            // If the ancestor is not `position:relative`, then we stop at
-            // _its_ offset parent, and we subtract off _its_ offset, so that
-            // we end up with the proper offset from child to ancestor.
-            sum -= ancestor[prop];
-            break;
-        }
-        child = child.offsetParent;
+ */ // https://en.wikipedia.org/wiki/Right-to-left
+const $148a7a147e38ea7f$var$RTL_SCRIPTS = new Set([
+    'Arab',
+    'Syrc',
+    'Samr',
+    'Mand',
+    'Thaa',
+    'Mend',
+    'Nkoo',
+    'Adlm',
+    'Rohg',
+    'Hebr'
+]);
+const $148a7a147e38ea7f$var$RTL_LANGS = new Set([
+    'ae',
+    'ar',
+    'arc',
+    'bcc',
+    'bqi',
+    'ckb',
+    'dv',
+    'fa',
+    'glk',
+    'he',
+    'ku',
+    'mzn',
+    'nqo',
+    'pnb',
+    'ps',
+    'sd',
+    'ug',
+    'ur',
+    'yi'
+]);
+function utils_$148a7a147e38ea7f$export$702d680b21cbd764(localeString) {
+    // If the Intl.Locale API is available, use it to get the locale's text direction.
+    // @ts-ignore
+    if (Intl.Locale) {
+        let locale = new Intl.Locale(localeString).maximize();
+        // Use the text info object to get the direction if possible.
+        // @ts-ignore - this was implemented as a property by some browsers before it was standardized as a function.
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getTextInfo
+        let textInfo = typeof locale.getTextInfo === 'function' ? locale.getTextInfo() : locale.textInfo;
+        if (textInfo) return textInfo.direction === 'rtl';
+        // Fallback: guess using the script.
+        // This is more accurate than guessing by language, since languages can be written in multiple scripts.
+        if (locale.script) return $148a7a147e38ea7f$var$RTL_SCRIPTS.has(locale.script);
     }
-    return sum;
-}
-function $2f04cbc44ee30ce0$export$c826860796309d1b(targetElement, opts) {
-    if (document.contains(targetElement)) {
-        let root = document.scrollingElement || document.documentElement;
-        let isScrollPrevented = window.getComputedStyle(root).overflow === 'hidden';
-        // If scrolling is not currently prevented then we aren’t in a overlay nor is a overlay open, just use element.scrollIntoView to bring the element into view
-        if (!isScrollPrevented) {
-            var // use scrollIntoView({block: 'nearest'}) instead of .focus to check if the element is fully in view or not since .focus()
-            // won't cause a scroll if the element is already focused and doesn't behave consistently when an element is partially out of view horizontally vs vertically
-            _targetElement_scrollIntoView;
-            let { left: originalLeft, top: originalTop } = targetElement.getBoundingClientRect();
-            targetElement === null || targetElement === void 0 ? void 0 : (_targetElement_scrollIntoView = targetElement.scrollIntoView) === null || _targetElement_scrollIntoView === void 0 ? void 0 : _targetElement_scrollIntoView.call(targetElement, {
-                block: 'nearest'
-            });
-            let { left: newLeft, top: newTop } = targetElement.getBoundingClientRect();
-            // Account for sub pixel differences from rounding
-            if (Math.abs(originalLeft - newLeft) > 1 || Math.abs(originalTop - newTop) > 1) {
-                var _opts_containingElement_scrollIntoView, _opts_containingElement, _targetElement_scrollIntoView1;
-                opts === null || opts === void 0 ? void 0 : (_opts_containingElement = opts.containingElement) === null || _opts_containingElement === void 0 ? void 0 : (_opts_containingElement_scrollIntoView = _opts_containingElement.scrollIntoView) === null || _opts_containingElement_scrollIntoView === void 0 ? void 0 : _opts_containingElement_scrollIntoView.call(_opts_containingElement, {
-                    block: 'center',
-                    inline: 'center'
-                });
-                (_targetElement_scrollIntoView1 = targetElement.scrollIntoView) === null || _targetElement_scrollIntoView1 === void 0 ? void 0 : _targetElement_scrollIntoView1.call(targetElement, {
-                    block: 'nearest'
-                });
-            }
-        } else {
-            let scrollParents = (0, $a40c673dc9f6d9c7$export$94ed1c92c7beeb22)(targetElement);
-            // If scrolling is prevented, we don't want to scroll the body since it might move the overlay partially offscreen and the user can't scroll it back into view.
-            for (let scrollParent of scrollParents)$2f04cbc44ee30ce0$export$53a0910f038337bd(scrollParent, targetElement);
-        }
-    }
+    // If not, just guess by the language (first part of the locale)
+    let lang = localeString.split('-')[0];
+    return $148a7a147e38ea7f$var$RTL_LANGS.has(lang);
 }
 
 
 
-//# sourceMappingURL=scrollIntoView.module.js.map
+//# sourceMappingURL=utils.module.js.map
 
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@react-aria/ssr/dist/SSRProvider.mjs
+var SSRProvider = __webpack_require__(60415);
+;// ./node_modules/@react-aria/i18n/dist/useDefaultLocale.mjs
 
-/***/ }),
-
-/***/ 44346:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   I: () => (/* binding */ $ef06256079686ba0$export$f8aeda7b10753fa1)
-/* harmony export */ });
-/* harmony import */ var _useLayoutEffect_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(49953);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
 
@@ -885,63 +875,61 @@ function $2f04cbc44ee30ce0$export$c826860796309d1b(targetElement, opts) {
  * governing permissions and limitations under the License.
  */ 
 
-let $ef06256079686ba0$var$descriptionId = 0;
-const $ef06256079686ba0$var$descriptionNodes = new Map();
-function $ef06256079686ba0$export$f8aeda7b10753fa1(description) {
-    let [id, setId] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)();
-    (0, _useLayoutEffect_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useLayoutEffect */ .N)(()=>{
-        if (!description) return;
-        let desc = $ef06256079686ba0$var$descriptionNodes.get(description);
-        if (!desc) {
-            let id = `react-aria-description-${$ef06256079686ba0$var$descriptionId++}`;
-            setId(id);
-            let node = document.createElement('div');
-            node.id = id;
-            node.style.display = 'none';
-            node.textContent = description;
-            document.body.appendChild(node);
-            desc = {
-                refCount: 0,
-                element: node
-            };
-            $ef06256079686ba0$var$descriptionNodes.set(description, desc);
-        } else setId(desc.element.id);
-        desc.refCount++;
-        return ()=>{
-            if (desc && --desc.refCount === 0) {
-                desc.element.remove();
-                $ef06256079686ba0$var$descriptionNodes.delete(description);
-            }
-        };
-    }, [
-        description
-    ]);
+
+// Locale passed from server by PackageLocalizationProvider.
+const $1e5a04cdaf7d1af8$var$localeSymbol = Symbol.for('react-aria.i18n.locale');
+function $1e5a04cdaf7d1af8$export$f09106e7c6677ec5() {
+    let locale = typeof window !== 'undefined' && window[$1e5a04cdaf7d1af8$var$localeSymbol] || typeof navigator !== 'undefined' && (navigator.language || navigator.userLanguage) || 'en-US';
+    try {
+        // @ts-ignore
+        Intl.DateTimeFormat.supportedLocalesOf([
+            locale
+        ]);
+    } catch (_err) {
+        locale = 'en-US';
+    }
     return {
-        'aria-describedby': description ? id : undefined
+        locale: locale,
+        direction: (0, utils_$148a7a147e38ea7f$export$702d680b21cbd764)(locale) ? 'rtl' : 'ltr'
     };
 }
+let $1e5a04cdaf7d1af8$var$currentLocale = $1e5a04cdaf7d1af8$export$f09106e7c6677ec5();
+let $1e5a04cdaf7d1af8$var$listeners = new Set();
+function $1e5a04cdaf7d1af8$var$updateLocale() {
+    $1e5a04cdaf7d1af8$var$currentLocale = $1e5a04cdaf7d1af8$export$f09106e7c6677ec5();
+    for (let listener of $1e5a04cdaf7d1af8$var$listeners)listener($1e5a04cdaf7d1af8$var$currentLocale);
+}
+function useDefaultLocale_$1e5a04cdaf7d1af8$export$188ec29ebc2bdc3a() {
+    let isSSR = (0, SSRProvider/* useIsSSR */.wR)();
+    let [defaultLocale, setDefaultLocale] = (0, react.useState)($1e5a04cdaf7d1af8$var$currentLocale);
+    (0, react.useEffect)(()=>{
+        if ($1e5a04cdaf7d1af8$var$listeners.size === 0) window.addEventListener('languagechange', $1e5a04cdaf7d1af8$var$updateLocale);
+        $1e5a04cdaf7d1af8$var$listeners.add(setDefaultLocale);
+        return ()=>{
+            $1e5a04cdaf7d1af8$var$listeners.delete(setDefaultLocale);
+            if ($1e5a04cdaf7d1af8$var$listeners.size === 0) window.removeEventListener('languagechange', $1e5a04cdaf7d1af8$var$updateLocale);
+        };
+    }, []);
+    // We cannot determine the browser's language on the server, so default to
+    // en-US. This will be updated after hydration on the client to the correct value.
+    if (isSSR) return {
+        locale: 'en-US',
+        direction: 'ltr'
+    };
+    return defaultLocale;
+}
 
 
 
-//# sourceMappingURL=useDescription.module.js.map
+//# sourceMappingURL=useDefaultLocale.module.js.map
 
+;// ./node_modules/@react-aria/i18n/dist/context.mjs
 
-/***/ }),
-
-/***/ 17460:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   _: () => (/* binding */ $e9faafb641e167db$export$90fc3a17d93f704c)
-/* harmony export */ });
-/* harmony import */ var _useEffectEvent_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7049);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
 
 /*
- * Copyright 2021 Adobe. All rights reserved.
+ * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
@@ -952,28 +940,172 @@ function $ef06256079686ba0$export$f8aeda7b10753fa1(description) {
  * governing permissions and limitations under the License.
  */ 
 
-function $e9faafb641e167db$export$90fc3a17d93f704c(ref, event, handler, options) {
-    let handleEvent = (0, _useEffectEvent_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useEffectEvent */ .J)(handler);
-    let isDisabled = handler == null;
-    (0, react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
-        if (isDisabled || !ref.current) return;
-        let element = ref.current;
-        element.addEventListener(event, handleEvent, options);
-        return ()=>{
-            element.removeEventListener(event, handleEvent, options);
+
+const $18f2051aff69b9bf$var$I18nContext = /*#__PURE__*/ (0, react).createContext(null);
+function $18f2051aff69b9bf$export$a54013f0d02a8f82(props) {
+    let { locale: locale, children: children } = props;
+    let defaultLocale = (0, $1e5a04cdaf7d1af8$export$188ec29ebc2bdc3a)();
+    let value = (0, $h9FiU$react).useMemo(()=>{
+        if (!locale) return defaultLocale;
+        return {
+            locale: locale,
+            direction: (0, $148a7a147e38ea7f$export$702d680b21cbd764)(locale) ? 'rtl' : 'ltr'
         };
     }, [
-        ref,
-        event,
-        options,
-        isDisabled,
-        handleEvent
+        defaultLocale,
+        locale
+    ]);
+    return /*#__PURE__*/ (0, $h9FiU$react).createElement($18f2051aff69b9bf$var$I18nContext.Provider, {
+        value: value
+    }, children);
+}
+function $18f2051aff69b9bf$export$43bb16f9c6d9e3f7() {
+    let defaultLocale = (0, useDefaultLocale_$1e5a04cdaf7d1af8$export$188ec29ebc2bdc3a)();
+    let context = (0, react.useContext)($18f2051aff69b9bf$var$I18nContext);
+    return context || defaultLocale;
+}
+
+
+
+//# sourceMappingURL=context.module.js.map
+
+
+/***/ }),
+
+/***/ 29571:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   e: () => (/* binding */ $fca6afa0e843324b$export$87b761675e8eaa10),
+/* harmony export */   o: () => (/* binding */ $fca6afa0e843324b$export$f12b703ca79dfbb1)
+/* harmony export */ });
+/* harmony import */ var _context_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39892);
+/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92122);
+/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57612);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $fca6afa0e843324b$var$cache = new WeakMap();
+function $fca6afa0e843324b$var$getCachedDictionary(strings) {
+    let dictionary = $fca6afa0e843324b$var$cache.get(strings);
+    if (!dictionary) {
+        dictionary = new (0, _internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B)(strings);
+        $fca6afa0e843324b$var$cache.set(strings, dictionary);
+    }
+    return dictionary;
+}
+function $fca6afa0e843324b$export$87b761675e8eaa10(strings, packageName) {
+    return packageName && (0, _internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B).getGlobalDictionaryForPackage(packageName) || $fca6afa0e843324b$var$getCachedDictionary(strings);
+}
+function $fca6afa0e843324b$export$f12b703ca79dfbb1(strings, packageName) {
+    let { locale: locale } = (0, _context_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useLocale */ .Y)();
+    let dictionary = $fca6afa0e843324b$export$87b761675e8eaa10(strings, packageName);
+    return (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>new (0, _internationalized_string__WEBPACK_IMPORTED_MODULE_3__/* .LocalizedStringFormatter */ .J)(locale, dictionary), [
+        locale,
+        dictionary
     ]);
 }
 
 
 
-//# sourceMappingURL=useEvent.module.js.map
+//# sourceMappingURL=useLocalizedStringFormatter.module.js.map
+
+
+/***/ }),
+
+/***/ 63899:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+function $a049562f99e7db0e$var$Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
+    });
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Group'
+    });
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+}
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
+
+
+
+//# sourceMappingURL=Group.module.js.map
 
 
 /***/ })
