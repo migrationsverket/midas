@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from '@midas-ds/accordion'
+import clsx from 'clsx'
 
 declare global {
   interface Array<T> {
@@ -35,7 +36,7 @@ const rows = fruits.shuffled(7).map(fruit => {
   }
 })
 
-function Playground({ children, transformCode, ...props }) {
+const Playground = ({ children, transformCode, hideCode, ...props }) => {
   const theme = usePrismTheme()
   const scope = { columns, rows, fruits, ...props.scope }
 
@@ -51,18 +52,25 @@ function Playground({ children, transformCode, ...props }) {
         <LivePreview />
         <LiveError />
       </div>
-      <div className={styles.playgroundEditor}>
-        <Accordion
-          headingTag='h3'
-          type='multiple'
-        >
-          <AccordionItem value='example'>
-            <AccordionTrigger>Exempelkod</AccordionTrigger>
-            <AccordionContent>
-              <LiveEditor />
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+      <div
+        className={clsx(
+          styles.playgroundEditor,
+          !hideCode && styles.borderBottom
+        )}
+      >
+        {!hideCode && (
+          <Accordion
+            headingTag='h3'
+            type='multiple'
+          >
+            <AccordionItem value='example'>
+              <AccordionTrigger>Exempelkod</AccordionTrigger>
+              <AccordionContent>
+                <LiveEditor />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        )}
       </div>
     </LiveProvider>
   )
