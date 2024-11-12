@@ -38,7 +38,7 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
   )
   const list = useListData({
     initialItems: items,
-    initialSelectedKeys: defaultSelectedKeys ? defaultSelectedKeys : []
+    initialSelectedKeys: defaultSelectedKeys
   })
 
   React.useEffect(() => {
@@ -65,6 +65,15 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
     if (selectedKeys) list.setSelectedKeys(new Set(selectedKeys))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedKeys])
+
+  const tagList =
+    list.selectedKeys === 'all'
+      ? new Set(
+          list.items.map(item => {
+            return item.id
+          })
+        )
+      : list.selectedKeys
 
   return (
     <div className={styles.multiSelect}>
@@ -117,19 +126,18 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
         aria-label='Valda'
         onRemove={keys => list.remove(...keys)}
       >
-        {Array.from(list.selectedKeys).map(key => {
+        {Array.from(tagList).map(key => {
           const item = list.getItem(key)
-          if (item)
-            return (
-              <Tag
-                key={item.id}
-                id={item.id}
-                textValue={item.name}
-              >
-                {item.name}
-              </Tag>
-            )
-          return null
+
+          return (
+            <Tag
+              key={item.id}
+              id={item.id}
+              textValue={item.name}
+            >
+              {item.name}
+            </Tag>
+          )
         })}
       </TagGroup>
     </div>

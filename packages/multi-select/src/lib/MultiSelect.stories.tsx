@@ -60,3 +60,12 @@ export const DefaultSelectedKeys: Story = {
     defaultSelectedKeys: ['blackberry']
   }
 }
+
+export const AllKeysSelected: Story = {
+  args: {
+    label: 'Etikett',
+    description: 'Alla val är förvalda',
+    items: options,
+    defaultSelectedKeys: 'all'
+  }
+}
