@@ -31,6 +31,8 @@ var flex_src = __webpack_require__(93294);
 var link_button_src = __webpack_require__(9687);
 // EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
 var link_src = __webpack_require__(85560);
+// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
+var CodeBlock = __webpack_require__(29511);
 ;// ./apps/docs/docs/design-patterns/buttons-and-links.mdx
 
 
@@ -40,6 +42,7 @@ const contentTitle = 'Knappar och länkar';
 const assets = {
 
 };
+
 
 
 
@@ -101,11 +104,17 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "För att öppna en modal"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$, {
-      onPress: () => {
-        alert('Du tryckte på knappen och här är din popup');
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Button: src/* Button */.$
       },
-      children: "Visa en popup"
+      children: `<Flex>
+<FlexItem col="auto">
+<Button onPress={() => { alert('Du tryckte på knappen och här är din popup');}}>Visa en popup</Button>
+</FlexItem>
+</Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "länkar",
       children: "Länkar"
@@ -124,23 +133,49 @@ function _createMdxContent(props) {
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Vid inloggning med e-id"
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(link_button_src/* LinkButton */.z, {
-      children: "Till sidan för Länkknapp"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        LinkButton: link_button_src/* LinkButton */.z
+      },
+      children: `<Flex>
+<FlexItem col="auto">
+<LinkButton href="/components/link-button">Till sidan för Länkknapp</LinkButton>
+</FlexItem>
+</Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "fristående-länk",
       children: "Fristående länk"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Fristående länk är en variant av länk som används när en länk ligger utanför ett textstycke."
-    }), "\n", (0,jsx_runtime.jsx)(link_src/* Link */.N, {
-      standalone: true,
-      children: "Läs mer om länkar"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Link: link_src/* Link */.N
+      },
+      children: `<Flex>
+<FlexItem col="auto">
+<Link standalone href="/components/link">Läs mer om länkar</Link>
+</FlexItem>
+</Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "länk",
       children: "Länk"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Länk används när länken är i ett textstycke. Här kan du läsa mer om ", (0,jsx_runtime.jsx)(link_src/* Link */.N, {
-        children: "våra länkar"
-      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Länk används när länken är i ett textstycke."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Link: link_src/* Link */.N
+      },
+      children: `<Flex>
+<FlexItem col="auto">
+Designsystemet har två olika varianter av <Link href="/components/link">länkar</Link>.  
+</FlexItem>
+</Flex>`
     })]
   });
 }
@@ -158,6 +193,44 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 29511:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  A: () => (/* binding */ CodeBlock)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/prism-react-renderer/dist/index.mjs
+var dist = __webpack_require__(71765);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
+var useDocusaurusContext = __webpack_require__(44586);
+// EXTERNAL MODULE: ./node_modules/react-live/dist/index.mjs + 58 modules
+var react_live_dist = __webpack_require__(86850);
+;// ./apps/docs/src/components/CodeBlock/styles.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const styles_module = ({"playgroundEditor":"playgroundEditor_hiaS","playgroundPreview":"playgroundPreview_d6Ft"});
+// EXTERNAL MODULE: ./apps/docs/src/components/examples/fruits.ts
+var fruits = __webpack_require__(46638);
+// EXTERNAL MODULE: ./packages/accordion/src/index.ts + 22 modules
+var src = __webpack_require__(17986);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./apps/docs/src/components/CodeBlock/CodeBlock.tsx
+var _excluded=["children","transformCode"];Array.prototype.shuffled=function(count){if(count===void 0){count=5;}var result=this.sort(function(){return Math.random()-Math.random();}).slice(0,count);return count===1?result[0]:result;};var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'desc'}];var rows=fruits/* fruits */.g.shuffled(7).map(function(fruit){return{id:fruit.value,name:fruit.name,desc:fruit.description};});function Playground(_ref){var children=_ref.children,transformCode=_ref.transformCode,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var theme=usePrismTheme();var scope=Object.assign({columns:columns,rows:rows,fruits:fruits/* fruits */.g},props.scope);return/*#__PURE__*/(0,jsx_runtime.jsxs)(react_live_dist/* LiveProvider */.Q,Object.assign({code:children.replace(/\n$/,''),transformCode:transformCode||function(code){return code+";";},theme:theme},props,{scope:scope,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:styles_module.playgroundPreview,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LivePreview */.pA,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveError */.p1,{})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:styles_module.playgroundEditor,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Accordion */.nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* AccordionItem */.As,{value:"example",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionTrigger */.$m,{children:"Exempelkod"}),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* AccordionContent */.ub,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(react_live_dist/* LiveEditor */.w,{})})]})})})]}));}/* harmony default export */ const CodeBlock = (Playground);/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */var usePrismTheme=function usePrismTheme(){var _useDocusaurusContext=(0,useDocusaurusContext/* default */.A)(),_useDocusaurusContext2=_useDocusaurusContext.siteConfig.themeConfig.prism,prism=_useDocusaurusContext2===void 0?{}:_useDocusaurusContext2;var prismTheme=dist/* themes */.Zj.github;return prismTheme;};
 
 /***/ }),
 
