@@ -235,37 +235,39 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
         children: "validationType=\"ssn\""
-      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användare.\nFöljande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
         children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
       })]
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Frivilliga sekelsiffor 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
           children: "(?:19:20)?"
         })]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Matchar nästkommande siffor som 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
           children: "(?:0[1-9]|1[0-2])"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Matchar nästkommande siffor som 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
           children: "(?:0[1-9]|[12]\\\\d|3[01])"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Matchar avgränsaren som ", (0,jsx_runtime.jsx)(_components.code, {
+        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
           children: "+"
         }), ", ", (0,jsx_runtime.jsx)(_components.code, {
           children: "-"
         }), ", ", (0,jsx_runtime.jsx)(_components.code, {
           children: "blanksteg"
-        }), " eller ingen samt fyra efterföljande siffor ", (0,jsx_runtime.jsx)(_components.code, {
+        }), " eller ingen, samt"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
           children: "(?:[-+ ]?\\\\d{4})?"
         })]
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rätt sålänge det är 10 eller 12 siffror. Däremot returnerar vi alltid formatet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "ÅÅÅÅMMDDXXXX"
-      }), " från komponenten oavsett vad användaren skrev."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         TextField: src/* TextField */.A_

@@ -23,7 +23,7 @@ const contentTitle = 'Personnummer';
 const metadata = {
   "id": "design-patterns/personnummer",
   "title": "Personnummer",
-  "description": "Vi följer Skatteverkets regler gällande hur ett personnummer är formaterat. Personnummer består av födelsetid (ÅÅMMDD) och födelsenummer (NNNN) separerat med bindestreck - eller med plustecken + för personer som är äldre än hundra år. Ett personnummer skrivs alltså på formen ÅÅMMDD-NNNN och det är så vi anger det i hjälptexter m.m",
+  "description": "Vi följer Skatteverkets regler gällande hur ett personnummer är formaterat. Personnummer består av födelsetid (ÅÅMMDD) och födelsenummer (NNNN) separerat med bindestreck - eller med plus + för personer som är äldre än hundra år. Ett personnummer skrivs alltså på formen ÅÅMMDD-NNNN och det är så vi anger det i hjälptexter m.m.",
   "source": "@site/docs/design-patterns/personnummer.mdx",
   "sourceDirName": "design-patterns",
   "slug": "/design-patterns/personnummer",
@@ -72,16 +72,16 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
       children: ["Vi följer Skatteverkets regler gällande hur ett personnummer är formaterat. Personnummer består av födelsetid (ÅÅMMDD) och födelsenummer (NNNN) separerat med bindestreck ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "-"
-      }), " eller med plustecken ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+      }), " eller med plus ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "+"
       }), " för personer som är äldre än hundra år. Ett personnummer skrivs alltså på formen ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
         children: "ÅÅMMDD-NNNN"
-      }), " och det är så vi anger det i hjälptexter m.m"]
+      }), " och det är så vi anger det i hjälptexter m.m."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
       children: ["Men för att göra det så lätt som möjligt för användaren att mata in personnummer finns det en förlåtande personnummerinmatning som en egenskap till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_1__/* .Link */ .N, {
         href: "/components/textfield",
         children: "TextField"
-      }), ". Med den blir de flesta inmatningar rätt så länge det är 10 eller 12 siffror. Implementationen är uppbyggd så att den:"]
+      }), ". Med den accepteras alla möjliga sätt att skriva ett (giltigt) personnummer. Implementationen är uppbyggd så att den:"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.ul, {
       children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
         children: ["Tillåter frivilliga sekelsiffor: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
@@ -101,14 +101,12 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_1__/* .Link */ .N, {
       standalone: true,
       href: "/components/textfield/#personnummer",
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-        children: "Mer information om förlåtande personnummerinmatning"
-      })
+      children: "Mer information om vår förlåtande personnummerinmatning"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
       id: "födelsetid",
       children: "Födelsetid"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "I flera av våra tjänster är endast födelsetid obligatoriskt då det inte är säkert att sökande har svenskt personnummer. Födelstid skrivs ÅÅMMDD."
+      children: "I flera av våra tjänster är endast födelsetid obligatoriskt då det inte är säkert att användaren har svenskt personnummer. Födelstid skrivs ÅÅMMDD."
     })]
   });
 }
