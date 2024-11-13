@@ -11,5 +11,4 @@
   "arrowParens": "avoid",
   "endOfLine": "lf",
   "singleAttributePerLine": true,
-  "proseWrap": "never"
 }
