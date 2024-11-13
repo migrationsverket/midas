@@ -23,7 +23,7 @@ const contentTitle = 'Personnummer';
 const metadata = {
   "id": "design-patterns/personnummer",
   "title": "Personnummer",
-  "description": "Personnummer skrivs ihop med bindestreck (eller med plustecken för personer som är äldre än",
+  "description": "Vi följer Skatteverkets regler gällande hur ett personnummer är formaterat. Personnummer består av födelsetid (ÅÅMMDD) och födelsenummer (NNNN) separerat med bindestreck - eller med plustecken + för personer som är äldre än hundra år. Ett personnummer skrivs alltså på formen ÅÅMMDD-NNNN och det är så vi anger det i hjälptexter m.m",
   "source": "@site/docs/design-patterns/personnummer.mdx",
   "sourceDirName": "design-patterns",
   "slug": "/design-patterns/personnummer",
@@ -47,13 +47,12 @@ const assets = {
 
 
 const toc = [{
-  "value": "Födelsedatum",
-  "id": "födelsedatum",
+  "value": "Födelsetid",
+  "id": "födelsetid",
   "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h1: "h1",
     h2: "h2",
@@ -71,15 +70,18 @@ function _createMdxContent(props) {
         children: "Personnummer"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Personnummer skrivs ihop med bindestreck (eller med plustecken för personer som är äldre än\nhundra år) före de fyra sista siffrorna, dvs ÅÅMMDD-XXXX (", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.a, {
-        href: "https://www.isof.se/stod-och-sprakrad/vagledningar/myndigheternas-skrivregler",
-        children: "Myndigheternas skrivregler, s103"
-      }), ")."]
+      children: ["Vi följer Skatteverkets regler gällande hur ett personnummer är formaterat. Personnummer består av födelsetid (ÅÅMMDD) och födelsenummer (NNNN) separerat med bindestreck ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+        children: "-"
+      }), " eller med plustecken ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+        children: "+"
+      }), " för personer som är äldre än hundra år. Ett personnummer skrivs alltså på formen ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
+        children: "ÅÅMMDD-NNNN"
+      }), " och det är så vi anger det i hjälptexter m.m"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.p, {
-      children: ["Det finns en färdig implementation av en förlåtande personnummerinmatning som en egenskap till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_1__/* .Link */ .N, {
+      children: ["Men för att göra det så lätt som möjligt för användaren att mata in personnummer finns det en förlåtande personnummerinmatning som en egenskap till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_1__/* .Link */ .N, {
         href: "/components/textfield",
         children: "TextField"
-      }), ". Med den blir de flesta inmatningar rätt så länge det är 10 eller 12 siffror.\nImplementationen är uppbyggd så att den:"]
+      }), ". Med den blir de flesta inmatningar rätt så länge det är 10 eller 12 siffror. Implementationen är uppbyggd så att den:"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.ul, {
       children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components.li, {
         children: ["Tillåter frivilliga sekelsiffor: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.code, {
@@ -99,12 +101,14 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_1__/* .Link */ .N, {
       standalone: true,
       href: "/components/textfield/#personnummer",
-      children: "Mer information om förlåtande personnummerinmatning"
+      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
+        children: "Mer information om förlåtande personnummerinmatning"
+      })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.h2, {
-      id: "födelsedatum",
-      children: "Födelsedatum"
+      id: "födelsetid",
+      children: "Födelsetid"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_components.p, {
-      children: "I flera av våra tjänster är endast födelsedatum obligatoriskt då det inte är säkert att sökande har svenskt personnummer. Födelsedatum skrivs, på samma sätt som personnummer, ihop, dvs ÅÅMMDD"
+      children: "I flera av våra tjänster är endast födelsetid obligatoriskt då det inte är säkert att sökande har svenskt personnummer. Födelstid skrivs ÅÅMMDD."
     })]
   });
 }
