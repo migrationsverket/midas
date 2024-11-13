@@ -142,3 +142,7 @@ export const accessibility = {
 export const font = {
   display: '"Inter", sans-serif',
 }
+
+export const boxShadow = {
+  focus: '0 0 0 2px white, 0 0 0 4px black'
+}

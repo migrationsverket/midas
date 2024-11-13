@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, focus, signalRed100, signalRed130, signalRed150 from tokens;
 
 .button {
   font-family: display;
@@ -19,9 +19,7 @@
   gap: 0.5rem;
 
   &[data-focus-visible] {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 4px black;
+    box-shadow: focus;
   }
 
   &:hover {
