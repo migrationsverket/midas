@@ -1,6 +1,12 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
 
+[data-focus-visible] {
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 4px black;
+}
+
 .button {
   font-family: display;
   font-size: desktopSize;
@@ -25,12 +31,6 @@
   &[data-pressed] {
     background-color: blue90;
     outline: none;
-  }
-
-  &[data-focus-visible] {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 4px black;
   }
 }
 
@@ -62,12 +62,6 @@
     background-color: gray20;
     border-color: blue150;
   }
-
-  &[data-focus-visible] {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 4px black;
-  }
 }
 
 .tertiary {
@@ -90,12 +84,6 @@
   &[data-pressed] {
     background-color: gray20;
   }
-
-  &[data-focus-visible] {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 4px black;
-  }
 }
 
 .iconBtn {
@@ -112,12 +100,6 @@
   &[data-disabled] {
     color: gray50;
     pointer-events: none;
-  }
-
-  &[data-focus-visible] {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 4px black;
   }
 }
 
@@ -140,12 +122,6 @@
   &[data-pressed] {
     background-color: signalRed150;
     outline: none;
-  }
-
-  &[data-focus-visible] {
-    box-shadow:
-      0 0 0 2px white,
-      0 0 0 4px black;
   }
 }
 
