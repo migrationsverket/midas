@@ -30,8 +30,7 @@
   &[data-focus-visible] {
     box-shadow:
       0 0 0 2px white,
-      0 0 0 4px black,
-      0 0 0 6px white;
+      0 0 0 4px black;
   }
 }
 
@@ -65,8 +64,9 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow:
+      0 0 0 2px white,
+      0 0 0 4px black;
   }
 }
 
@@ -92,8 +92,9 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow:
+      0 0 0 2px white,
+      0 0 0 4px black;
   }
 }
 
@@ -114,8 +115,9 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow:
+      0 0 0 2px white,
+      0 0 0 4px black;
   }
 }
 
@@ -141,8 +143,9 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow:
+      0 0 0 2px white,
+      0 0 0 4px black;
   }
 }
 
