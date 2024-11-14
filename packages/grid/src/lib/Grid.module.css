@@ -50,6 +50,7 @@
 
 /* Grid item classes */
 .col {
+  display: flex;
   grid-column: span 1;
 }
 
