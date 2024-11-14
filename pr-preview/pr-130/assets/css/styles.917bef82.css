@@ -5209,6 +5209,7 @@ CSS variables, meant to be overridden by final theme
 
 /* Grid item classes */
 .col_kaYV {
+  display: flex;
   grid-column: span 1;
 }
 
@@ -5648,8 +5649,8 @@ CSS variables, meant to be overridden by final theme
 .card_k6lA {
   position: relative;
   font-family: "Inter", sans-serif;
-  height: 100%;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
@@ -6082,6 +6083,7 @@ CSS variables, meant to be overridden by final theme
 }
 
 .flex_I6b3 > * {
+  display: flex;
   flex: 0 0 auto;
   width: calc(
     (100% / var(--columns)) - var(--gutter) + (var(--gutter) / var(--columns))
