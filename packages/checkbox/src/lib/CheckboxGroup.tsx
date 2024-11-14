@@ -6,7 +6,7 @@ import {
   CheckboxGroupProps as AriaCheckboxGroupProps,
   CheckboxGroupStateContext,
   Group,
-  ValidationResult,
+  ValidationResult
 } from 'react-aria-components'
 import styles from './Checkbox.module.css'
 import { Checkbox } from './Checkbox'
@@ -29,7 +29,9 @@ export const CheckboxGroup = ({
   children,
   ...props
 }: CheckboxGroupProps) => {
-  const [isAllSelected, setIsAllSelected] = React.useState<boolean>(false)
+  const [isAllSelected, setIsAllSelected] = React.useState<
+    'all' | 'some' | 'none'
+  >()
 
   const ToogleAll = () => {
     // Get the current state of the checkbox group
@@ -41,23 +43,35 @@ export const CheckboxGroup = ({
       .map((child: React.ReactElement) => child.props.value)
 
     // Toogle all values
-    function toggleAll() {
-      setIsAllSelected(!isAllSelected)
-      if (!isAllSelected) return state.setValue(['toggleAll', ...childValues])
+    const toggleAll = () => {
+      if (isAllSelected !== 'all') {
+        setIsAllSelected('all')
+        return state.setValue(['toggleAll', ...childValues])
+      }
 
+      setIsAllSelected('none')
       return state.setValue([])
     }
 
     //listen and change the select all accordingly
     React.useEffect(() => {
-      if (state.value.length !== childValues.length + 1)
-        state.removeValue('toggleAll')
+      const amountOfChildren = childValues.length
+      const totalAmount = childValues.length + 1
+      const currentAmount = state.value.length
+
+      if (currentAmount === 0) setIsAllSelected('none')
+
+      if (currentAmount > 0 && currentAmount < amountOfChildren)
+        setIsAllSelected('some')
+
+      if (currentAmount !== totalAmount) state.removeValue('toggleAll')
+
       if (
-        state.value.length === childValues.length &&
+        currentAmount === amountOfChildren &&
         !state.value.includes('toggleAll')
       ) {
         state.addValue('toggleAll')
-        setIsAllSelected(true)
+        setIsAllSelected('all')
       }
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,8 +79,9 @@ export const CheckboxGroup = ({
 
     return (
       <Checkbox
-        value="toggleAll"
-        isSelected={isAllSelected}
+        value='toggleAll'
+        isSelected={isAllSelected === 'all'}
+        isIndeterminate={isAllSelected === 'some'}
         onChange={() => toggleAll()}
       >
         Välj alla

@@ -1,6 +1,6 @@
 {
-  "name": "@midas-ds/search-field",
-  "version": "1.0.3",
+  "name": "@midas-ds/tag",
+  "version": "0.0.1",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -10,12 +10,12 @@
       "types": "./index.d.ts"
     }
   },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-aria-components": "^1.1.1",
+  "dependencies": {
     "lucide-react": "^0.453.0",
-    "@midas-ds/textfield": "1.0.2",
     "@midas-ds/button": "1.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
