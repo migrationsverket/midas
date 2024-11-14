@@ -1,8 +1,8 @@
-import{L as k,A as y}from"./Link-DZc51rRk.js";import"./jsx-runtime-Nms4Y4qS.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./Link-XcigMV-L.js";import"./useFocusable-C6jNUHDg.js";import"./index-Drt3gf4w.js";import"./clsx-B-dksMZM.js";import"./createLucideIcon-WuqQdmgs.js";const w={component:k,title:"Components/Link",tags:["autodocs"],parameters:{layout:"centered"},argTypes:{isDisabled:{options:[!0,!1],control:{type:"radio"}}}},e={args:{children:"Länk",href:"https://designsystem.migrationsverket.se/components/link/",icon:y}},s={args:{...e.args,isDisabled:!0}},r={args:{children:"En fristående länk",standalone:!0,href:"https://designsystem.migrationsverket.se/components/link/"}},a={args:{...r.args,isDisabled:!0}};var n,t,o;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
+import{L as k,A as y}from"./Link-DZc51rRk.js";import"./jsx-runtime-Nms4Y4qS.js";import"./index-BwDkhjyp.js";import"./_commonjsHelpers-BosuxZz1.js";import"./Link-XcigMV-L.js";import"./useFocusable-C6jNUHDg.js";import"./index-Drt3gf4w.js";import"./clsx-B-dksMZM.js";import"./createLucideIcon-WuqQdmgs.js";const w={component:k,title:"Components/Link",tags:["autodocs"],parameters:{layout:"centered"},argTypes:{isDisabled:{options:[!0,!1],control:{type:"radio"}}}},e={args:{children:"Länk",icon:y,href:"https://designsystem.migrationsverket.se/components/link/"}},s={args:{...e.args,isDisabled:!0}},r={args:{children:"En fristående länk",standalone:!0,href:"https://designsystem.migrationsverket.se/components/link/"}},a={args:{...r.args,isDisabled:!0}};var n,t,o;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
   args: {
     children: 'Länk',
-    href: 'https://designsystem.migrationsverket.se/components/link/',
-    icon: ArrowRight
+    icon: ArrowRight,
+    href: 'https://designsystem.migrationsverket.se/components/link/'
   }
 }`,...(o=(t=e.parameters)==null?void 0:t.docs)==null?void 0:o.source}}};var i,m,c;s.parameters={...s.parameters,docs:{...(i=s.parameters)==null?void 0:i.docs,source:{originalSource:`{
   args: {
