@@ -62,10 +62,6 @@
     background-color: gray20;
     border-color: blue150;
   }
-
-  &[data-focus-visible] {
-    box-shadow: focus;
-  }
 }
 
 .tertiary {
@@ -86,10 +82,6 @@
 
   &[data-pressed] {
     background-color: gray20;
-  }
-
-  &[data-focus-visible] {
-    box-shadow: focus;
   }
 }
 
@@ -112,10 +104,6 @@
   &[data-pressed] {
     background-color: signalRed150;
     outline: none;
-  }
-
-  &[data-focus-visible] {
-    box-shadow: focus;
   }
 }
 
