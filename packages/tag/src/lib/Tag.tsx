@@ -9,6 +9,7 @@ import {
 } from 'react-aria-components'
 import { X } from 'lucide-react'
 import { Button } from '@midas-ds/button'
+import clsx from 'clsx'
 
 export interface TagGroupProp extends AriaTagGroupProps {
   children: React.ReactNode
@@ -16,6 +17,7 @@ export interface TagGroupProp extends AriaTagGroupProps {
 
 export interface TagProps extends AriaTagProps {
   children: React.ReactNode
+  dismissable?: boolean
 }
 
 export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
@@ -26,21 +28,27 @@ export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
   )
 }
 
-export const Tag: React.FC<TagProps> = ({ children, ...props }) => {
+export const Tag: React.FC<TagProps> = ({
+  children,
+  dismissable,
+  ...props
+}) => {
   return (
     <AriaTag
-      className={styles.tag}
+      className={clsx(styles.tag, dismissable && styles.dismissable)}
       {...props}
     >
       <div className={styles.tagText}>{children}</div>
-      <Button
-        variant='icon'
-        size='small'
-        className={styles.button}
-        slot='remove'
-      >
-        <X size={20} />
-      </Button>
+      {dismissable && (
+        <Button
+          variant='icon'
+          size='small'
+          className={styles.button}
+          slot='remove'
+        >
+          <X size={20} />
+        </Button>
+      )}
     </AriaTag>
   )
 }

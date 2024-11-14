@@ -1,5 +1,15 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, signalRed130, smBreakpoint, gray50, gray30,gray20, gray10, backgroundSecondary from tokens;
+@value display, black, signalRed130, smBreakpoint, gray50, gray30, gray20, gray10, backgroundSecondary from tokens;
+
+.button {
+  min-height: unset;
+  padding: 0.25rem !important;
+  border-radius: 1.5rem;
+
+  &[data-pressed] {
+    background-color: gray30;
+  }
+}
 
 .tag {
   display: inline-flex;
@@ -8,7 +18,6 @@
   background-color: gray10;
   font-size: 0.875rem;
   font-family: display;
-  overflow: hidden;
 
   &[data-disabled] {
     color: gray50;
@@ -17,13 +26,16 @@
     border-color: gray50;
   }
 
-  &[data-focused] {
+  &[data-focused],
+  &[data-focus-visible] {
     outline: none;
   }
 
-  &[data-focus-visible] {
-    outline-offset: 2px;
-    outline: 2px solid black;
+  &.dismissable {
+    &[data-focus-visible] {
+      outline-offset: 2px;
+      outline: 2px solid black;
+    }
   }
 }
 
@@ -36,9 +48,4 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.25rem;
-}
-
-.button {
-  min-height: unset;
-  padding: 0 0.25rem;
 }

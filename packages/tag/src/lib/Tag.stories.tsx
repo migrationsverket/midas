@@ -5,7 +5,7 @@ import { Tag, TagGroup } from './Tag'
 const meta: Meta<typeof Tag> = {
   component: Tag,
   title: 'Components/Tag',
-  tags: ['autodocs'],
+  tags: ['autodocs']
 }
 
 export default meta
@@ -14,28 +14,30 @@ type Story = StoryObj<typeof Tag>
 
 export const Default: Story = {
   args: {
-    title: 'titel',
     isDisabled: false,
+    children: 'Title',
+    dismissable: true
   },
   render: ({ ...args }) => {
     return (
-      <TagGroup>
-        <Tag {...args}></Tag>
+      <TagGroup aria-label='Taggar'>
+        <Tag {...args}>{args.children}</Tag>
       </TagGroup>
     )
-  },
+  }
 }
 
 export const Disabled: Story = {
   args: {
-    title: 'titel',
+    children: 'Title',
     isDisabled: true,
+    dismissable: true
   },
   render: ({ ...args }) => {
     return (
-      <TagGroup>
-        <Tag {...args}> </Tag>
+      <TagGroup aria-label='Taggar'>
+        <Tag {...args}>{args.children}</Tag>
       </TagGroup>
     )
-  },
+  }
 }
