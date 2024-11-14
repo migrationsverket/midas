@@ -5193,7 +5193,6 @@ CSS variables, meant to be overridden by final theme
   font-weight: 400;
 
   --borderColorPressed: #b3b3b3;
-  --focusRingColor: #000000;
   --selectedColor: #143c50;
   --selectedPressed: #5897b8;
   --selectedHover: #25607f;
@@ -5216,9 +5215,10 @@ CSS variables, meant to be overridden by final theme
     border-color: var(--borderColorPressed);
   }
 
-  &[data-focus-visible] {
-    outline: 2px solid var(--focusRingColor);
-    outline-offset: 2px;
+  &[data-focus-visible],
+  &:focus-visible {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+    outline: none;
   }
 
   &[data-selected] div,
