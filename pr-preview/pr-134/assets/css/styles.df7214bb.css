@@ -6005,17 +6005,14 @@ CSS variables, meant to be overridden by final theme
     transition: transform 0.3s ease;
   }
 
-  &:focus {
-    outline: none;
-  }
-
   &:hover {
     background-color: #e6e6e6;
   }
 
-  &[data-focus-visible] {
-    outline-offset: 2px;
-    outline: 2px solid #000000;
+  &[data-focus-visible],
+  &:focus-visible {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+    outline: none;
   }
 
   &[data-disabled] {

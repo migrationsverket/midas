@@ -170,7 +170,7 @@ var ListBox = __webpack_require__(61235);
 var chevron_down = __webpack_require__(75107);
 ;// ./packages/select/src/lib/Select.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Select_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","button":"button_XgNv","select":"select_GoPk","popover":"popover_Fgts","listBoxItem":"listBoxItem_yN3S","icon":"icon_X17X"});
+/* harmony default export */ const Select_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","backgroundSecondary":"#f2f2f2","button":"button_XgNv","select":"select_GoPk","popover":"popover_Fgts","listBoxItem":"listBoxItem_yN3S","icon":"icon_X17X"});
 // EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
 var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
