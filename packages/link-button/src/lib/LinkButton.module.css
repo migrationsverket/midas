@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, focus, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
 
 .linkButton {
   font-family: display;
@@ -30,8 +30,7 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow: focus;
   }
 
   &[data-disabled] {
@@ -65,8 +64,7 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow: focus;
   }
 }
 
@@ -91,8 +89,7 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow: focus;
   }
 }
 
@@ -118,8 +115,7 @@
   }
 
   &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
+    box-shadow: focus;
   }
 }
 
