@@ -15,7 +15,7 @@ Exempel på situationer där det är lämpligt med en knapp:
 - För att initiera en sökning 
 - För att öppna en modal 
 
-<LiveCodeBlock scope={{ Flex, FlexItem, Button }}>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
   {`<Flex>
   <FlexItem col="auto">
 <Button onPress={() => { alert('Du tryckte på knappen och här är din popup');}}>Visa en popup</Button>
@@ -37,7 +37,7 @@ Exempel på situationer där det är lämpligt med en länkknapp:
 - Som en startpunkt, t.ex. en länk från webben till en e-tjänst
 - Vid inloggning med e-id
 
-<LiveCodeBlock scope={{ Flex, FlexItem, LinkButton }}>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, LinkButton }}>
   {`<Flex>
   <FlexItem col="auto">
 <LinkButton href="/components/link-button">Till sidan för Länkknapp</LinkButton>
@@ -51,7 +51,7 @@ Exempel på situationer där det är lämpligt med en länkknapp:
 
 Fristående länk är en variant av länk som används när en länk ligger utanför ett textstycke. 
 
-<LiveCodeBlock scope={{ Flex, FlexItem, Link }}>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Link }}>
   {`<Flex>
   <FlexItem col="auto">
 <Link standalone href="/components/link">Läs mer om länkar</Link>
@@ -65,7 +65,7 @@ Fristående länk är en variant av länk som används när en länk ligger utan
 
 Länk används när länken är i ett textstycke. 
 
-<LiveCodeBlock scope={{ Flex, FlexItem, Link }}>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Link }}>
   {`<Flex>
   <FlexItem col="auto">
 Designsystemet har två olika varianter av <Link href="/components/link">länkar</Link>.  
