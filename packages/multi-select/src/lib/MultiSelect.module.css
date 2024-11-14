@@ -41,11 +41,11 @@
   }
 }
 
-.select {
+.multiSelect {
   font-family: display;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: 0.5rem;
 
   &[data-disabled] {
     color: gray50;
@@ -60,9 +60,14 @@
 .popover {
   font-family: display;
   border: 1px solid black;
-  width: calc(var(--trigger-width) - 2px);
   background: white;
   overflow-y: auto;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .listBoxItem {
@@ -73,9 +78,12 @@
   cursor: default;
   color: black;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 
-  &[data-selected='true'] {
-    background: gray50;
+  &:hover {
+    background-color: gray20;
   }
 
   &[data-focused='true'] {
@@ -85,10 +93,4 @@
   &[data-disabled='true'] {
     color: gray50;
   }
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s ease;
 }

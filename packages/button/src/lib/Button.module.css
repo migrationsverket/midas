@@ -111,6 +111,10 @@
     pointer-events: none;
   }
 
+  &[data-pressed] {
+    background-color: gray20;
+  }
+
   &[data-focus-visible] {
     outline: 0.125rem solid black;
     outline-offset: 0.125rem;
