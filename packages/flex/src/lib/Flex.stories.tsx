@@ -56,7 +56,9 @@ export const Primary = {
       <FlexItem col={4}>
         <Card
           title={'Ett kort'}
-          content={'Som är i ett grid'}
+          content={
+            'Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
+          }
           link={{ title: 'Länk', href: '#' }}
         />
       </FlexItem>
