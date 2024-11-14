@@ -5792,10 +5792,6 @@ CSS variables, meant to be overridden by final theme
     background-color: #e6e6e6;
     border-color: #143c50;
   }
-
-  &[data-focus-visible] {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
-  }
 }
 
 .tertiary_mRIr {
@@ -5816,10 +5812,6 @@ CSS variables, meant to be overridden by final theme
 
   &[data-pressed] {
     background-color: #e6e6e6;
-  }
-
-  &[data-focus-visible] {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
   }
 }
 
@@ -5842,10 +5834,6 @@ CSS variables, meant to be overridden by final theme
   &[data-pressed] {
     background-color: #801313;
     outline: none;
-  }
-
-  &[data-focus-visible] {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
   }
 }
 
