@@ -69,3 +69,24 @@ export const AllKeysSelected: Story = {
     defaultSelectedKeys: 'all'
   }
 }
+
+export const Disabled: Story = {
+  args: {
+    label: 'Etikett',
+    description: 'Blackberry är förvalt',
+    items: options,
+    defaultSelectedKeys: ['blackberry'],
+    isDisabled: true
+  }
+}
+
+export const Invalid: Story = {
+  args: {
+    label: 'Etikett',
+    description: 'Blackberry är förvalt',
+    items: options,
+    defaultSelectedKeys: ['blackberry'],
+    isInvalid: true,
+    errorMessage: 'Du får inte välja Blackberry'
+  }
+}

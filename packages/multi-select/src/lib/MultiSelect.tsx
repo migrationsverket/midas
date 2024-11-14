@@ -6,7 +6,10 @@ import {
   DialogTrigger,
   GridList,
   GridListItem,
-  Popover
+  Popover,
+  ValidationResult,
+  Provider,
+  FieldErrorContext
 } from 'react-aria-components'
 import { InputWrapper } from '@midas-ds/textfield'
 import { Checkbox } from '@midas-ds/checkbox'
@@ -22,6 +25,9 @@ interface MidasMultiSelect {
   onSelectionChange?: (selectedKeys: Set<Key>) => void
   selectedKeys?: string[]
   defaultSelectedKeys?: string[] | 'all'
+  isDisabled?: boolean
+  isInvalid?: boolean
+  errorMessage?: string | ((validation: ValidationResult) => string) | undefined
 }
 
 export const MultiSelect: React.FC<MidasMultiSelect> = ({
@@ -30,7 +36,10 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
   items,
   onSelectionChange,
   selectedKeys,
-  defaultSelectedKeys
+  defaultSelectedKeys,
+  isDisabled,
+  isInvalid,
+  errorMessage
 }) => {
   const triggerRef = React.useRef<HTMLButtonElement>(null)
   const [popoverWidth, setPopoverWidth] = React.useState<number | undefined>(
@@ -76,70 +85,113 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
       : list.selectedKeys
 
   return (
-    <div className={styles.multiSelect}>
-      <InputWrapper
-        label={label}
-        description={description}
+    <div
+      className={styles.multiSelect}
+      data-disabled={isDisabled}
+      data-invalid={isInvalid}
+    >
+      <Provider
+        values={[
+          [
+            // we should maybe add more here
+            // [LabelContext, {...labelProps, ref: labelRef}],
+            // [InputContext, {...inputProps, ref: inputOrTextAreaRef}],
+            // [TextAreaContext, {...inputProps, ref: inputOrTextAreaRef}],
+            // [TextContext, {
+            //   slots: {
+            //     description: descriptionProps,
+            //     errorMessage: errorMessageProps
+            //   }
+            // }],
+            FieldErrorContext,
+            {
+              isInvalid: isInvalid ? isInvalid : false,
+              validationErrors: [],
+              validationDetails: {
+                customError: isInvalid ? isInvalid : false,
+                badInput: false,
+                patternMismatch: false,
+                rangeOverflow: false,
+                rangeUnderflow: false,
+                stepMismatch: false,
+                tooLong: false,
+                tooShort: false,
+                typeMismatch: false,
+                valid: false,
+                valueMissing: false
+              }
+            }
+          ]
+        ]}
       >
-        <DialogTrigger>
-          <Button
-            className={styles.button}
-            ref={triggerRef}
-          >
-            Välj
-            <div
-              className={styles.icon}
-              aria-hidden='true'
+        <InputWrapper
+          label={label}
+          description={description}
+          errorMessage={errorMessage}
+        >
+          <DialogTrigger>
+            <Button
+              className={styles.button}
+              ref={triggerRef}
+              isDisabled={isDisabled}
             >
-              <ChevronDown size={20} />
-            </div>
-          </Button>
-          <Popover
-            className={styles.popover}
-            style={{ width: popoverWidth }}
-            offset={0}
-          >
-            <GridList
-              aria-label={label}
-              selectionMode='multiple'
-              selectedKeys={list.selectedKeys}
-              onSelectionChange={list.setSelectedKeys}
+              Välj
+              <div
+                className={styles.icon}
+                aria-hidden='true'
+              >
+                <ChevronDown size={20} />
+              </div>
+            </Button>
+            <Popover
+              className={styles.popover}
+              style={{ width: popoverWidth }}
+              offset={0}
             >
-              {list.items.map(item => {
-                return (
-                  <GridListItem
-                    key={item.id}
-                    id={item.id}
-                    textValue={item.name}
-                    className={styles.listBoxItem}
-                  >
-                    <Checkbox slot='selection' />
-                    {item.name}
-                  </GridListItem>
-                )
-              })}
-            </GridList>
-          </Popover>
-        </DialogTrigger>
-      </InputWrapper>
-      <TagGroup
-        aria-label='Valda'
-        onRemove={keys => list.remove(...keys)}
-      >
-        {Array.from(tagList).map(key => {
-          const item = list.getItem(key)
+              <GridList
+                aria-label={label}
+                selectionMode='multiple'
+                selectedKeys={list.selectedKeys}
+                onSelectionChange={list.setSelectedKeys}
+              >
+                {list.items.map(item => {
+                  return (
+                    <GridListItem
+                      key={item.id}
+                      id={item.id}
+                      textValue={item.name}
+                      className={styles.listBoxItem}
+                    >
+                      <Checkbox slot='selection' />
+                      {item.name}
+                    </GridListItem>
+                  )
+                })}
+              </GridList>
+            </Popover>
+          </DialogTrigger>
+        </InputWrapper>
+        <TagGroup
+          aria-label='Valda'
+          onRemove={keys => list.remove(...keys)}
+        >
+          {Array.from(tagList).map(key => {
+            const item = list.getItem(key)
 
-          return (
-            <Tag
-              key={item.id}
-              id={item.id}
-              textValue={item.name}
-            >
-              {item.name}
-            </Tag>
-          )
-        })}
-      </TagGroup>
+            return (
+              <Tag
+                key={item.id}
+                id={item.id}
+                textValue={item.name}
+                isDisabled={isDisabled}
+                dismissable
+              >
+                {item.name}
+              </Tag>
+            )
+          })}
+        </TagGroup>
+      </Provider>
     </div>
   )
 }
