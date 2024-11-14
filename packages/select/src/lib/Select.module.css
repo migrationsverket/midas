@@ -37,7 +37,7 @@
   &[data-disabled] {
     background: backgroundSecondary;
     color: gray50;
-    box-shadow: 0 1px 0 0 gray50;
+    border-color: gray50;
   }
 }
 
