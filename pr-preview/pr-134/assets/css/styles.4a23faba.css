@@ -5106,9 +5106,10 @@ CSS variables, meant to be overridden by final theme
     transition: all 200ms;
   }
 
-  &[data-focus-visible] {
-    outline: 2px solid #000000;
-    outline-offset: 2px;
+  &[data-focus-visible],
+  &:focus-visible {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+    outline: none;
   }
 
   &[data-disabled] {
