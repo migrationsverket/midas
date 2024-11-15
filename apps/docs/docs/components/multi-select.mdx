@@ -20,10 +20,8 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Introduktion
 
-En MultiSelect visar en hopfällbar lista med alternativ och låter en användare välja ett eller flera av dem.
+MultiSelect är en typ av inmatningsfält som används för att välja **ett eller flera** alternativ från en längre lista. Om det är endast är ett fåtal alternativ kan [Checkbox](./checkbox.mdx) användas istället.
 
-MultiSelect är en typ av inmatningsfält som används för att välja **ett eller flera** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ men är det [Checkbox](./checkbox.mdx) som ska användas
-Om det är färre alternativ än fem används med fördel [Radio](./radio.mdx) istället.
 
 ## Installation och användning
 
@@ -44,17 +42,6 @@ import { MultiSelect } from '@midas-ds/multi-select'
 </LiveCodeBlock>
 
 ## Riktlinjer
-
-### Val av komponent
-
-```mermaid
-flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
-    A -->|Ja| B[Använd Checkbox]
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary
-    C -->|Ja| E[Använd Select]:::primary
-    C -->|Nej| D[Använd Radio]
-```
 
 ## Beroenden
 
