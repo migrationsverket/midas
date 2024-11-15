@@ -103,18 +103,13 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En Select visar en hopfällbar lista med alternativ och låter en användare välja ett av dem."
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Select är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
         children: "ett"
-      }), " alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-137/components/checkbox",
-        children: "Checkbox"
-      }), " som ska användas\nOm det är färre alternativ än fem används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
+      }), " alternativ från en uppsättning av flera alternativ. Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
         href: "/pr-preview/pr-137/components/radio",
         children: "Radio"
-      }), " istället."]
+      }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"

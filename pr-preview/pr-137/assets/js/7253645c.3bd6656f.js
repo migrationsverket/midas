@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5605],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7470],{
 
-/***/ 57075:
+/***/ 73873:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_checkbox_mdx_1c7_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_multi_select_mdx_725_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-checkbox-mdx-1c7.json
-const site_docs_components_checkbox_mdx_1c7_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/checkbox","title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","source":"@site/docs/components/checkbox.mdx","sourceDirName":"components","slug":"/components/checkbox","permalink":"/pr-preview/pr-137/components/checkbox","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-137/tags/form"}],"version":"current","frontMatter":{"title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","tags":["form"]},"sidebar":"sideBar","previous":{"title":"Card","permalink":"/pr-preview/pr-137/components/card"},"next":{"title":"ComboBox","permalink":"/pr-preview/pr-137/components/combobox"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-multi-select-mdx-725.json
+const site_docs_components_multi_select_mdx_725_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/multi-select","title":"MultiSelect","description":"<ComponentHeader","source":"@site/docs/components/multi-select.mdx","sourceDirName":"components","slug":"/components/multi-select","permalink":"/pr-preview/pr-137/components/multi-select","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-137/tags/form"}],"version":"current","frontMatter":{"title":"MultiSelect","tags":["form"]},"sidebar":"sideBar","previous":{"title":"Modal","permalink":"/pr-preview/pr-137/components/modal"},"next":{"title":"Radio","permalink":"/pr-preview/pr-137/components/radio"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,26 +27,21 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
+// EXTERNAL MODULE: ./packages/multi-select/src/index.ts + 5 modules
+var src = __webpack_require__(21464);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/checkbox.json
-const checkbox_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/checkbox@1.0.1","_rev":"7-182b4246db00c8be7429e912e8cd0502","name":"@midas-ds/checkbox","dist-tags":{"latest":"1.0.1"},"versions":["0.3.28","0.4.0","0.5.0","0.5.1","0.5.2","0.6.0","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:36:11.026Z","modified":"2024-10-24T13:26:14.853Z","0.3.28":"2024-09-10T14:36:11.408Z","0.4.0":"2024-09-12T09:14:34.093Z","0.5.0":"2024-09-12T12:23:17.089Z","0.5.1":"2024-09-12T13:02:08.142Z","0.5.2":"2024-09-24T14:55:11.723Z","0.6.0":"2024-10-07T12:08:59.780Z","1.0.0":"2024-10-18T13:40:39.690Z","1.0.1":"2024-10-24T13:26:14.645Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/checkbox ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13181,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-n5bP1bGEnSPMiiFc3V7C/hBjxnyFeMu6/Qh3EhyoivvGWthAMBXZf+V+bINkFlcjiBBxo62HlE1WUpJDk4mrbw==","shasum":"6cc3c0ed6d9ddff03d9b27650a2e5fa48cbed0d5","tarball":"https://registry.npmjs.org/@midas-ds/checkbox/-/checkbox-1.0.1.tgz","fileCount":10,"unpackedSize":127842,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIEWtqEbZPo4wWrV9Prbv/HVSMUg9zEk9rMxp+QPpxFPkAiBud06Es1LSsa5Pmfp41btG1LdfiH44OXQoeucCntxQwA=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/checkbox_1.0.1_1729776374483_0.12362208057892343"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
-var src = __webpack_require__(61813);
+// EXTERNAL MODULE: ./apps/docs/static/data/select.json
+var data_select = __webpack_require__(41229);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var button_src = __webpack_require__(81706);
-;// ./apps/docs/docs/components/checkbox.mdx
+;// ./apps/docs/docs/components/multi-select.mdx
 
 
 const frontMatter = {
-	title: 'Checkbox',
-	description: 'Används för att låta användaren välja inget, ett eller flera alternativ.',
+	title: 'MultiSelect',
 	tags: [
 		'form'
 	]
@@ -66,44 +61,14 @@ const assets = {
 
 
 
-
-
 const toc = [{
   "value": "Introduktion",
   "id": "introduktion",
   "level": 2
 }, {
-  "value": "Installation",
-  "id": "installation",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
-}, {
-  "value": "Exempel",
-  "id": "exempel",
-  "level": 2
-}, {
-  "value": "Gruppera flera checkboxar",
-  "id": "gruppera-flera-checkboxar",
-  "level": 3
-}, {
-  "value": "Etikett och beskrivning",
-  "id": "etikett-och-beskrivning",
-  "level": 3
-}, {
-  "value": "Disabled",
-  "id": "disabled",
-  "level": 3
-}, {
-  "value": "Validering",
-  "id": "validering",
-  "level": 3
-}, {
-  "value": "Readonly och defaultSelected",
-  "id": "readonly-och-defaultselected",
-  "level": 3
-}, {
-  "value": "Välj alla",
-  "id": "välj-alla",
-  "level": 3
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
@@ -123,30 +88,31 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
-    li: "li",
     mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    ul: "ul",
+    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Checkbox',
-      info: checkbox_namespaceObject,
-      friendlyName: 'Kryssruta'
+      name: 'MultiSelect',
+      info: data_select,
+      friendlyName: 'Flerval, multiväljare, dropdown'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det endast ska gå att välja ett objekt i listan är det en ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-137/components/radio",
-        children: "Radioknapp"
-      }), " som ska användas."]
+      children: ["MultiSelect är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "ett eller flera"
+      }), " alternativ från en längre lista. Om det är endast är ett fåtal alternativ bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-137/components/checkbox",
+        children: "Checkbox"
+      }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation",
-      children: "Installation"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -154,7 +120,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/checkbox\n"
+            children: "npm install @midas-ds/select\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -163,7 +129,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/checkbox\n"
+            children: "yarn add @midas-ds/select\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -172,164 +138,24 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/checkbox\n"
+            children: "pnpm add @midas-ds/select\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Checkbox } from '@midas-ds/checkbox'\n;<Checkbox>Jag godkänner villkoren</Checkbox>\n"
+        children: "import { MultiSelect } from '@midas-ds/multi-select'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "exempel",
-      children: "Exempel"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Checkbox: src/* Checkbox */.S,
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: button_src/* Button */.$
+        MultiSelect: src/* MultiSelect */.K
       },
-      children: `<Flex>
-  <FlexItem style={{alignSelf: 'center'}}>
-    <Checkbox>Jag godkänner villkoren</Checkbox>
-  </FlexItem>
-  <FlexItem col="auto" style={{display: 'flex', gap: '0.5rem'}}>
-    <Button
-      variant='secondary'
-    >
-      Bakåt
-    </Button>
-    <Button>Fortsätt</Button>
-  </FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "gruppera-flera-checkboxar",
-      children: "Gruppera flera checkboxar"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " för att gruppera flera checkboxar som hör samman."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: src/* Checkbox */.S,
-        CheckboxGroup: src/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-      label='Etikett'
-      description='Beskrivande text'
-    >
-      <Checkbox value='1'>Jag har läst texten</Checkbox>
-      <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
-      <Checkbox value='3'>Jag är över 20 år gammal</Checkbox>
-  </CheckboxGroup>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "etikett-och-beskrivning",
-      children: "Etikett och beskrivning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Etikett för enskild checkbox sätts i template via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Checkbox>Etikett</Checkbox>"
-      }), ". ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " har en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "label"
-      }), " och en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "desciption"
-      }), " för ytterligare förklarande text."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "disabled",
-      children: "Disabled"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["När en kryssruta inte är tillämplig i den aktuella situationen ska kryssruta och fältetikett tonas ned via attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isDisabled"
-      }), " men inte tas bort."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: src/* Checkbox */.S
-      },
-      children: `<Checkbox
-      isDisabled
-      isSelected
-    >
-      Jag har läst texten
-  </Checkbox>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Används prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isInvalid"
-      }), " och implementera lämplig logik för att hantera fel och felmeddelanden. Se ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html#validation",
-        children: "React Aria"
-      }), "\nför ytterligare referens."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: src/* Checkbox */.S,
-        CheckboxGroup: src/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-    label="Bekräfta att du är med på tåget"
-    errorMessage="Det här ser inte bra ut!"
-    isInvalid
-  >
-    <Checkbox
-      value="1"
-      isRequired
-    >
-      Jag har läst texten
-    </Checkbox>
-    <Checkbox
-      value="2"
-      isRequired
-    >
-      Jag godkänner villkoren
-    </Checkbox>
-</CheckboxGroup>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "readonly-och-defaultselected",
-      children: "Readonly och defaultSelected"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isReadonly"
-      }), " när användaren inte ska kunna påverka checkboxens tillstånd. ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "defaultSelected"
-      }), " sätter checkboxen i ett\nvalt läge."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "välj-alla",
-      children: "Välj alla"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Ibland kan det vara lämligt att inkludera en checkbox för att \"Välja alla\". Denna funktion finns inbyggt i ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup />"
-      }), " via egenskapen: showSelectAll"]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: src/* Checkbox */.S,
-        CheckboxGroup: src/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-  label={'Välj en frukt'}
-  description={'Välj alla eller bara några'}
-  showSelectAll
-  >
-    <Checkbox
-      value="1"
-      isRequired
-    >
-      Jag har läst texten
-    </Checkbox>
-    <Checkbox
-      value="2"
-      isRequired
-    >
-      Jag godkänner villkoren
-    </Checkbox>
-</CheckboxGroup>
-`
+      children: `<MultiSelect
+      label="Vad är din favoritfrukt?"
+      placeholder="Välj en frukt"
+      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
@@ -337,30 +163,12 @@ function _createMdxContent(props) {
       id: "val-av-komponent",
       children: "Val av komponent"
     }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]:::primary\n  A ---> C[2 - 4]:::primary\n  A ---> D[5 - 10]\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]:::primary\n  C ---> G[Hur många val kan göras?]:::primary\n  G --->|Flera| F:::primary\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt"
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Om flera kryssrutor är placerade under varandra, kan det ibland vara lämpligt att användaren kan markera alla kryssrutor\ngenom att klicka i det översta alternativet, ”Alla”, som är placerat direkt ovanför de ordinarie kryssrutorna.\nRutan ska vara avmarkerad tills användaren klickar i den och då ska alla följande rutor och eventuella subrutor markeras.\nOm användaren väljer att avmarkera en post så ska kryssrutan avmarkeras."
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas."
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Fältetikett ska inledas med en stor bokstav och inte följas av punkt."
-        }), "\n"]
-      }), "\n"]
+      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]:::primary\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: checkbox_namespaceObject
+      info: data_select
     })]
   });
 }
@@ -452,6 +260,78 @@ react.useEffect(function(){var amountOfChildren=childValues.length;var totalAmou
 ;// ./packages/checkbox/src/lib/index.ts
 
 ;// ./packages/checkbox/src/index.ts
+
+
+/***/ }),
+
+/***/ 21464:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  K: () => (/* reexport */ MultiSelect)
+});
+
+;// ./packages/multi-select/src/lib/MultiSelect.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const MultiSelect_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","button":"button_ICtj","multiSelect":"multiSelect_Eode","popover":"popover_jYDN","icon":"icon_D7C5","listBoxItem":"listBoxItem_c3_5"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 1 modules
+var Dialog = __webpack_require__(86484);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
+var Button = __webpack_require__(44080);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 5 modules
+var Popover = __webpack_require__(8119);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/GridList.mjs + 1 modules
+var GridList = __webpack_require__(65379);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
+var checkbox_src = __webpack_require__(61813);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
+var chevron_down = __webpack_require__(75107);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/tag/src/lib/Tag.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Tag_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray30":"#d9d9d9","gray20":"#e6e6e6","gray10":"#f2f2f2","backgroundSecondary":"#f2f2f2","button":"button_KL5r","tag":"tag_QfCn","dismissable":"dismissable_Ta3F","tagText":"tagText_tTSG","tagList":"tagList_CRsJ"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 37 modules
+var dist_TagGroup = __webpack_require__(2790);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/tag/src/lib/Tag.tsx
+var _excluded=["children"],_excluded2=["children","dismissable"];var TagGroup=function TagGroup(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagGroup */.CR,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{className:Tag_module.tagList,children:children})}));};var Tag=function Tag(_ref2){var children=_ref2.children,dismissable=_ref2.dismissable,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_TagGroup/* Tag */.vw,Object.assign({className:(0,clsx/* default */.A)(Tag_module.tag,dismissable&&Tag_module.dismissable)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Tag_module.tagText,children:children}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{variant:"icon",size:"small",className:Tag_module.button,slot:"remove",children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})]}));};
+;// ./packages/tag/src/index.ts
+
+// EXTERNAL MODULE: ./node_modules/@react-stately/data/dist/useListData.mjs
+var useListData = __webpack_require__(7424);
+;// ./packages/multi-select/src/lib/MultiSelect.tsx
+'use client';var MultiSelect=function MultiSelect(_ref){var label=_ref.label,description=_ref.description,items=_ref.items,onSelectionChange=_ref.onSelectionChange,selectedKeys=_ref.selectedKeys,defaultSelectedKeys=_ref.defaultSelectedKeys,isDisabled=_ref.isDisabled,isInvalid=_ref.isInvalid,errorMessage=_ref.errorMessage;var triggerRef=react.useRef(null);var _React$useState=react.useState(undefined),popoverWidth=_React$useState[0],setPopoverWidth=_React$useState[1];var list=(0,useListData/* useListData */.u)({initialItems:items,initialSelectedKeys:defaultSelectedKeys});react.useEffect(function(){var updatePopoverWidth=function updatePopoverWidth(){if(triggerRef.current){setPopoverWidth(triggerRef.current.offsetWidth-2);}};updatePopoverWidth();window.addEventListener('resize',updatePopoverWidth);return function(){window.removeEventListener('resize',updatePopoverWidth);};},[]);react.useEffect(function(){if(onSelectionChange)onSelectionChange(new Set(list.selectedKeys));},[list.selectedKeys,onSelectionChange]);react.useEffect(function(){if(selectedKeys)list.setSelectedKeys(new Set(selectedKeys));// eslint-disable-next-line react-hooks/exhaustive-deps
+},[selectedKeys]);var tagList=list.selectedKeys==='all'?new Set(list.items.map(function(item){return item.id;})):list.selectedKeys;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.multiSelect,"data-disabled":isDisabled,"data-invalid":isInvalid,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(utils/* Provider */.Kq,{values:[[// we should maybe add more here
+// [LabelContext, {...labelProps, ref: labelRef}],
+// [InputContext, {...inputProps, ref: inputOrTextAreaRef}],
+// [TextAreaContext, {...inputProps, ref: inputOrTextAreaRef}],
+// [TextContext, {
+//   slots: {
+//     description: descriptionProps,
+//     errorMessage: errorMessageProps
+//   }
+// }],
+FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){return list.remove.apply(list,keys);},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item.id,textValue:item.name,isDisabled:isDisabled,dismissable:true,children:item.name},item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
+;// ./packages/multi-select/src/index.ts
 
 
 /***/ }),
@@ -804,120 +684,11 @@ webpackContext.id = 35358;
 
 /***/ }),
 
-/***/ 87979:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ 41229:
+/***/ ((module) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
-/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
-/* harmony export */ });
-/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
-
-
-
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-const $5c3e21d68f1c4674$var$styles = {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    clipPath: 'inset(50%)',
-    height: '1px',
-    margin: '-1px',
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    width: '1px',
-    whiteSpace: 'nowrap'
-};
-function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
-    let { style: style, isFocusable: isFocusable } = props;
-    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
-        isDisabled: !isFocusable,
-        onFocusWithinChange: (val)=>setFocused(val)
-    });
-    // If focused, don't hide the element.
-    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
-        if (isFocused) return style;
-        else if (style) return {
-            ...$5c3e21d68f1c4674$var$styles,
-            ...style
-        };
-        else return $5c3e21d68f1c4674$var$styles;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [
-        isFocused
-    ]);
-    return {
-        visuallyHiddenProps: {
-            ...focusWithinProps,
-            style: combinedStyles
-        }
-    };
-}
-function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
-    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
-}
-
-
-
-//# sourceMappingURL=VisuallyHidden.module.js.map
-
-
-/***/ }),
-
-/***/ 32373:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A3: () => (/* binding */ $4e85f108e88277b8$export$d688439359537581),
-/* harmony export */   BP: () => (/* binding */ $4e85f108e88277b8$export$b085522c77523c51)
-/* harmony export */ });
-/* unused harmony exports ColorAreaContext, ColorFieldContext, ColorSliderContext, ColorWheelContext */
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-/*
- * Copyright 2024 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the 'License');
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-const $4e85f108e88277b8$export$b085522c77523c51 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$ebe63fadcdce34ed = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$44644b8a16031b5b = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$717b2c0a523a0b53 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$265015d6dc85bf21 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$d688439359537581 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-
-
-
-//# sourceMappingURL=RSPContexts.module.js.map
-
+module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/select@1.0.1","_rev":"8-5b93e8ff9968abe09df8f4fdfa61a260","name":"@midas-ds/select","dist-tags":{"latest":"1.0.1"},"versions":["0.4.23","0.4.24","0.4.25","0.5.0","0.5.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:38:16.404Z","modified":"2024-10-24T13:26:40.231Z","0.4.23":"2024-09-10T14:38:16.733Z","0.5.0":"2024-09-12T06:52:21.974Z","0.4.24":"2024-09-12T12:44:35.219Z","0.4.25":"2024-09-26T08:45:56.205Z","0.5.2":"2024-10-07T12:21:23.062Z","1.0.0":"2024-10-18T13:40:43.787Z","1.0.1":"2024-10-24T13:26:40.048Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/select ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":12032,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23","react-aria-components":"^1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-oW+fe5S1ecnXfdhLB80/bymIkHm2OR3Gta82pRVAU3Gxl0E4suJDW9384pXAE0bb0N6/yYdHl1PaqDFST7ZA1Q==","shasum":"375a2ad27128f71edcbd3fe2e3763d67ddb3e3c1","tarball":"https://registry.npmjs.org/@midas-ds/select/-/select-1.0.1.tgz","fileCount":9,"unpackedSize":380209,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIGbEutdv5F4+PdlGAYOTl00r1peB13H9n4K5tzwTE+qvAiEA6kp6l77nDIwRJsekMHPzToeO1sCVHYC+oZ7d+RAYaug="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/select_1.0.1_1729776399837_0.6169838510022243"},"_hasShrinkwrap":false}');
 
 /***/ })
 

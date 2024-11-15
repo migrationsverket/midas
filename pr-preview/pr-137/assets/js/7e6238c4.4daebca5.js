@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7470],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
 
-/***/ 73873:
+/***/ 90869:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_multi_select_mdx_725_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_radio_mdx_7e6_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-multi-select-mdx-725.json
-const site_docs_components_multi_select_mdx_725_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/multi-select","title":"MultiSelect","description":"<ComponentHeader","source":"@site/docs/components/multi-select.mdx","sourceDirName":"components","slug":"/components/multi-select","permalink":"/pr-preview/pr-137/components/multi-select","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-137/tags/form"}],"version":"current","frontMatter":{"title":"MultiSelect","tags":["form"]},"sidebar":"sideBar","previous":{"title":"Modal","permalink":"/pr-preview/pr-137/components/modal"},"next":{"title":"Radio","permalink":"/pr-preview/pr-137/components/radio"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-radio-mdx-7e6.json
+const site_docs_components_radio_mdx_7e6_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/radio","title":"Radio","description":"Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","source":"@site/docs/components/radio.mdx","sourceDirName":"components","slug":"/components/radio","permalink":"/pr-preview/pr-137/components/radio","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-137/tags/form"}],"version":"current","frontMatter":{"title":"Radio","description":"Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","tags":["form"]},"sidebar":"sideBar","previous":{"title":"MultiSelect","permalink":"/pr-preview/pr-137/components/multi-select"},"next":{"title":"SearchField","permalink":"/pr-preview/pr-137/components/search-field"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,21 +27,24 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
-// EXTERNAL MODULE: ./packages/multi-select/src/index.ts + 5 modules
-var src = __webpack_require__(21464);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/radio/src/index.ts + 2 modules
+var src = __webpack_require__(34378);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
+var button_src = __webpack_require__(81706);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./apps/docs/static/data/select.json
-var data_select = __webpack_require__(41229);
+;// ./apps/docs/static/data/radio.json
+const radio_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/radio@1.0.1","_rev":"7-c37f72c62143407f474660704552370b","name":"@midas-ds/radio","dist-tags":{"latest":"1.0.1"},"versions":["0.6.1","0.6.2","0.6.3","0.7.0","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:37:59.126Z","modified":"2024-10-24T13:26:37.615Z","0.6.1":"2024-09-10T14:37:59.408Z","0.6.2":"2024-09-12T12:42:10.930Z","0.6.3":"2024-09-19T12:26:24.985Z","0.7.0":"2024-10-07T12:18:39.699Z","1.0.0":"2024-10-18T13:40:39.975Z","1.0.1":"2024-10-24T13:26:37.442Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/radio ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9973,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-YdDOfb2TgN9l7Itr8PsW47G3Azz/nQKdndDAp8wal1PXNBsjkbSJVioIf11I3R9UEHOVf0MZr/C8oLCYv8gI1w==","shasum":"4807487bc05e8ccbe7e880be602e3f69c9c5f8ef","tarball":"https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.1.tgz","fileCount":9,"unpackedSize":126274,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIGLt9dUVDiB24Uy43XXA3pUdXIzj6EUdk66c7XdpxGSnAiAMF3miI/byvsgwOmrNUt7E/W98QzeUk/tEAsexpvi9HQ=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/radio_1.0.1_1729776397186_0.24599049100813497"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/multi-select.mdx
+;// ./apps/docs/docs/components/radio.mdx
 
 
 const frontMatter = {
-	title: 'MultiSelect',
+	title: 'Radio',
+	description: 'Radio Button är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
 	tags: [
 		'form'
 	]
@@ -61,6 +64,7 @@ const assets = {
 
 
 
+
 const toc = [{
   "value": "Introduktion",
   "id": "introduktion",
@@ -69,6 +73,18 @@ const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
+}, {
+  "value": "Normal användning",
+  "id": "normal-användning",
+  "level": 3
+}, {
+  "value": "Disabled",
+  "id": "disabled",
+  "level": 3
+}, {
+  "value": "Validering",
+  "id": "validering",
+  "level": 3
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
@@ -88,33 +104,38 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
+    li: "li",
     mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    strong: "strong",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'MultiSelect',
-      info: data_select,
-      friendlyName: 'Flerval, multiväljare, dropdown'
+      name: 'Radio',
+      info: radio_namespaceObject,
+      friendlyName: 'Radioknappar',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En MultiSelect visar en hopfällbar lista med alternativ och låter en användare välja ett eller flera av dem."
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["MultiSelect är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett eller flera"
-      }), " alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ men är det ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-137/components/checkbox",
-        children: "Checkbox"
-      }), " som ska användas\nOm det är färre alternativ än fem används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-137/components/radio",
-        children: "Radio"
-      }), " istället."]
+      children: ["Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-137/components/select",
+        children: "Select"
+      }), " användas istället."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -125,7 +146,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/select\n"
+            children: "npm install @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -134,7 +155,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/select\n"
+            children: "yarn add @midas-ds/radio\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -143,24 +164,64 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/select\n"
+            children: "pnpm add @midas-ds/radio\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { MultiSelect } from '@midas-ds/multi-select'\n"
+        children: "import { Radio, RadioGroup } from '@midas-ds/radio'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "normal-användning",
+      children: "Normal användning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Gruppera flera ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Radio>"
+      }), " i en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<RadioGroup>"
+      }), " och sätt rubrik och beskrivande text."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        MultiSelect: src/* MultiSelect */.K
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
       },
-      children: `<MultiSelect
-      label="Vad är din favoritfrukt?"
-      placeholder="Välj en frukt"
-      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-/>`
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+  ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "disabled",
+      children: "Disabled"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isDisabled"
+      }), " antingen på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "RadioGroup"
+      }), " eller på enskilda val av ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Radio"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        RadioGroup: src/* RadioGroup */.z,
+        Radio: src/* Radio */.s
+      },
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
+  {fruits.shuffled(3).map(fruit => (
+    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+     ))}
+</RadioGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt validering med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isInvalid"
+      }), " eller använd inbyggda tester som ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
@@ -168,12 +229,22 @@ function _createMdxContent(props) {
       id: "val-av-komponent",
       children: "Val av komponent"
     }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]:::primary\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]:::primary\n  A ---> D[5 - 10]\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]:::primary\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]:::primary\n  D ---> I[Hur många val kan göras?]\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_select
+      info: radio_namespaceObject
     })]
   });
 }
@@ -225,118 +296,37 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 61813:
+/***/ 34378:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  S: () => (/* reexport */ Checkbox),
-  $: () => (/* reexport */ CheckboxGroup)
+  s: () => (/* reexport */ Radio),
+  z: () => (/* reexport */ RadioGroup)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Checkbox.mjs + 7 modules
-var dist_Checkbox = __webpack_require__(92466);
+;// ./packages/radio/src/lib/Radio.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Radio_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","inputLabel":"undefined","inputText":"#1f1f1f","black":"#000000","blue150":"#143c50","gray50":"#bfbfbf","gray60":"#b3b3b3","signalRed10":"#ffdfdf","signalRed100":"#e62323","medium":"undefined","gray150":"#1f1f1f","regular":"undefined","smBreakpoint":"(max-width: 767px)","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","mdBreakpoint":"(min-width: 768px)","borderSecondary":"#b3b3b3","radioGroup":"radioGroup_rXoc","wrap":"wrap_M_eK","radio":"radio_jFRQ"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
+var dist_RadioGroup = __webpack_require__(96325);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
 var Group = __webpack_require__(63899);
-;// ./packages/checkbox/src/lib/Checkbox.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Checkbox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","primaryBackground":"#143c50","blue80":"#5897b8","blue130":"#25607f","signalRed10":"#ffdfdf","signalRed100":"#e62323","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","signalRed130":"#b31b1b","white":"#ffffff","gray10":"#f2f2f2","gray40":"#cccccc","gray100":"#808080","gray50":"#bfbfbf","gray20":"#e6e6e6","regularWeight":"400","mediumWeight":"500","smBreakpoint":"(max-width: 767px)","borderSecondary":"#b3b3b3","wrap":"wrap_gmzk","checkboxInner":"checkboxInner_QnDn","checkbox":"checkbox_Uv4H","checkboxGroup":"checkboxGroup_uby9"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/checkbox/src/lib/Checkbox.tsx
-'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* Checkbox */.Sc,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Checkbox_module.checkboxInner,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
 // EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
 var src = __webpack_require__(42619);
-;// ./packages/checkbox/src/lib/CheckboxGroup.tsx
-'use client';var CheckboxGroup_excluded=["label","description","errorMessage","showSelectAll","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,showSelectAll=_ref.showSelectAll,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,CheckboxGroup_excluded);var _React$useState=react.useState(),isAllSelected=_React$useState[0],setIsAllSelected=_React$useState[1];var ToogleAll=function ToogleAll(){// Get the current state of the checkbox group
-var state=react.useContext(dist_Checkbox/* CheckboxGroupStateContext */.pf);// Retrieve all childern
-var childValues=react.Children.toArray(children).filter(react.isValidElement).map(function(child){return child.props.value;});// Toogle all values
-var toggleAll=function toggleAll(){if(isAllSelected!=='all'){setIsAllSelected('all');return state.setValue(['toggleAll'].concat(childValues));}setIsAllSelected('none');return state.setValue([]);};//listen and change the select all accordingly
-react.useEffect(function(){var amountOfChildren=childValues.length;var totalAmount=childValues.length+1;var currentAmount=state.value.length;if(currentAmount===0)setIsAllSelected('none');if(currentAmount>0&&currentAmount<amountOfChildren)setIsAllSelected('some');if(currentAmount!==totalAmount)state.removeValue('toggleAll');if(currentAmount===amountOfChildren&&!state.value.includes('toggleAll')){state.addValue('toggleAll');setIsAllSelected('all');}// eslint-disable-next-line react-hooks/exhaustive-deps
-},[childValues.length,state.value]);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox,{value:"toggleAll",isSelected:isAllSelected==='all',isIndeterminate:isAllSelected==='some',onChange:function onChange(){return toggleAll();},children:"V\xE4lj alla"});};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* CheckboxGroup */.$Q,Object.assign({className:Checkbox_module.checkboxGroup},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:Checkbox_module.wrap,children:[showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(ToogleAll,{}),children]})})}));};
-;// ./packages/checkbox/src/lib/index.ts
-
-;// ./packages/checkbox/src/index.ts
-
-
-/***/ }),
-
-/***/ 21464:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  K: () => (/* reexport */ MultiSelect)
-});
-
-;// ./packages/multi-select/src/lib/MultiSelect.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const MultiSelect_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","button":"button_ICtj","multiSelect":"multiSelect_Eode","popover":"popover_jYDN","icon":"icon_D7C5","listBoxItem":"listBoxItem_c3_5"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 1 modules
-var Dialog = __webpack_require__(86484);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
-var Button = __webpack_require__(44080);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 5 modules
-var Popover = __webpack_require__(8119);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/GridList.mjs + 1 modules
-var GridList = __webpack_require__(65379);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
-var checkbox_src = __webpack_require__(61813);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
-var chevron_down = __webpack_require__(75107);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/tag/src/lib/Tag.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Tag_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray30":"#d9d9d9","gray20":"#e6e6e6","gray10":"#f2f2f2","backgroundSecondary":"#f2f2f2","button":"button_KL5r","tag":"tag_QfCn","dismissable":"dismissable_Ta3F","tagText":"tagText_tTSG","tagList":"tagList_CRsJ"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 37 modules
-var dist_TagGroup = __webpack_require__(2790);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var button_src = __webpack_require__(81706);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/tag/src/lib/Tag.tsx
-var _excluded=["children"],_excluded2=["children","dismissable"];var TagGroup=function TagGroup(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagGroup */.CR,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{className:Tag_module.tagList,children:children})}));};var Tag=function Tag(_ref2){var children=_ref2.children,dismissable=_ref2.dismissable,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_TagGroup/* Tag */.vw,Object.assign({className:(0,clsx/* default */.A)(Tag_module.tag,dismissable&&Tag_module.dismissable)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Tag_module.tagText,children:children}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{variant:"icon",size:"small",className:Tag_module.button,slot:"remove",children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})]}));};
-;// ./packages/tag/src/index.ts
-
-// EXTERNAL MODULE: ./node_modules/@react-stately/data/dist/useListData.mjs
-var useListData = __webpack_require__(7424);
-;// ./packages/multi-select/src/lib/MultiSelect.tsx
-'use client';var MultiSelect=function MultiSelect(_ref){var label=_ref.label,description=_ref.description,items=_ref.items,onSelectionChange=_ref.onSelectionChange,selectedKeys=_ref.selectedKeys,defaultSelectedKeys=_ref.defaultSelectedKeys,isDisabled=_ref.isDisabled,isInvalid=_ref.isInvalid,errorMessage=_ref.errorMessage;var triggerRef=react.useRef(null);var _React$useState=react.useState(undefined),popoverWidth=_React$useState[0],setPopoverWidth=_React$useState[1];var list=(0,useListData/* useListData */.u)({initialItems:items,initialSelectedKeys:defaultSelectedKeys});react.useEffect(function(){var updatePopoverWidth=function updatePopoverWidth(){if(triggerRef.current){setPopoverWidth(triggerRef.current.offsetWidth-2);}};updatePopoverWidth();window.addEventListener('resize',updatePopoverWidth);return function(){window.removeEventListener('resize',updatePopoverWidth);};},[]);react.useEffect(function(){if(onSelectionChange)onSelectionChange(new Set(list.selectedKeys));},[list.selectedKeys,onSelectionChange]);react.useEffect(function(){if(selectedKeys)list.setSelectedKeys(new Set(selectedKeys));// eslint-disable-next-line react-hooks/exhaustive-deps
-},[selectedKeys]);var tagList=list.selectedKeys==='all'?new Set(list.items.map(function(item){return item.id;})):list.selectedKeys;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.multiSelect,"data-disabled":isDisabled,"data-invalid":isInvalid,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(utils/* Provider */.Kq,{values:[[// we should maybe add more here
-// [LabelContext, {...labelProps, ref: labelRef}],
-// [InputContext, {...inputProps, ref: inputOrTextAreaRef}],
-// [TextAreaContext, {...inputProps, ref: inputOrTextAreaRef}],
-// [TextContext, {
-//   slots: {
-//     description: descriptionProps,
-//     errorMessage: errorMessageProps
-//   }
-// }],
-FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){return list.remove.apply(list,keys);},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item.id,textValue:item.name,isDisabled:isDisabled,dismissable:true,children:item.name},item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
-;// ./packages/multi-select/src/index.ts
+;// ./packages/radio/src/lib/Radio.tsx
+'use client';var _excluded=["label","description","errorMessage","children"];var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
+ * Radio item
+ * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
+;// ./packages/radio/src/index.ts
 
 
 /***/ }),
@@ -689,11 +679,164 @@ webpackContext.id = 35358;
 
 /***/ }),
 
-/***/ 41229:
-/***/ ((module) => {
+/***/ 87979:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/select@1.0.1","_rev":"8-5b93e8ff9968abe09df8f4fdfa61a260","name":"@midas-ds/select","dist-tags":{"latest":"1.0.1"},"versions":["0.4.23","0.4.24","0.4.25","0.5.0","0.5.2","1.0.0","1.0.1"],"time":{"created":"2024-09-10T14:38:16.404Z","modified":"2024-10-24T13:26:40.231Z","0.4.23":"2024-09-10T14:38:16.733Z","0.5.0":"2024-09-12T06:52:21.974Z","0.4.24":"2024-09-12T12:44:35.219Z","0.4.25":"2024-09-26T08:45:56.205Z","0.5.2":"2024-10-07T12:21:23.062Z","1.0.0":"2024-10-18T13:40:43.787Z","1.0.1":"2024-10-24T13:26:40.048Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/select ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":12032,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23","react-aria-components":"^1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-oW+fe5S1ecnXfdhLB80/bymIkHm2OR3Gta82pRVAU3Gxl0E4suJDW9384pXAE0bb0N6/yYdHl1PaqDFST7ZA1Q==","shasum":"375a2ad27128f71edcbd3fe2e3763d67ddb3e3c1","tarball":"https://registry.npmjs.org/@midas-ds/select/-/select-1.0.1.tgz","fileCount":9,"unpackedSize":380209,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIGbEutdv5F4+PdlGAYOTl00r1peB13H9n4K5tzwTE+qvAiEA6kp6l77nDIwRJsekMHPzToeO1sCVHYC+oZ7d+RAYaug="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/select_1.0.1_1729776399837_0.6169838510022243"},"_hasShrinkwrap":false}');
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
+/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
+/* harmony export */ });
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
+
+
+
+
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $5c3e21d68f1c4674$var$styles = {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: '1px',
+    whiteSpace: 'nowrap'
+};
+function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
+    let { style: style, isFocusable: isFocusable } = props;
+    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
+        isDisabled: !isFocusable,
+        onFocusWithinChange: (val)=>setFocused(val)
+    });
+    // If focused, don't hide the element.
+    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
+        if (isFocused) return style;
+        else if (style) return {
+            ...$5c3e21d68f1c4674$var$styles,
+            ...style
+        };
+        else return $5c3e21d68f1c4674$var$styles;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        isFocused
+    ]);
+    return {
+        visuallyHiddenProps: {
+            ...focusWithinProps,
+            style: combinedStyles
+        }
+    };
+}
+function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
+    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
+}
+
+
+
+//# sourceMappingURL=VisuallyHidden.module.js.map
+
+
+/***/ }),
+
+/***/ 63899:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+function $a049562f99e7db0e$var$Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
+    });
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Group'
+    });
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+}
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
+
+
+
+//# sourceMappingURL=Group.module.js.map
+
 
 /***/ })
 
