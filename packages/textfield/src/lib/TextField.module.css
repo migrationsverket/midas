@@ -81,11 +81,6 @@
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  transition-delay: 0s;
-  transition-property: border, background-color, outline-offset, outline;
-  transition-timing-function: ease-in-out, ease-in-out;
-  transition-duration: 0.15s, 0.15s;
-  will-change: border, background-color, outline-offset, outline;
 
   &:hover {
     background-color: gray20;
