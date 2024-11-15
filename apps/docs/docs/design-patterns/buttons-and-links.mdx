@@ -9,7 +9,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 Detta mönster är till för beskriva i vilka situationer Knapp, Länkknapp och Länk ska användas
 
 ## Knappar
-Knappar används för att initiera en aktivitet. När användaren klickar på en knapp händer något på sidan. 
+Knappar används för att initiera en aktivitet. När användaren interagerar med en knapp händer något på sidan. 
 Exempel på situationer där det är lämpligt med en knapp: 
 - När ett formulär ska skickas in. 
 - För att initiera en sökning 
@@ -30,12 +30,11 @@ Länkar används för att ta användaren till en ny sida eller en annan del av e
 
 ### Länkknapp
 
-Länkknappen är tekniskt en länk men visuellt lik en knapp. Den används vid navigering när det behövs en tydligare visuell markering än vad en vanlig länk ger. 
-Exempel på situationer där det är lämpligt med en länkknapp:
+Länkknappen är tekniskt en länk men visuellt lik en knapp. Den används vid navigering när det behövs en tydligare visuell signal till användaren att välja länken, än vad en vanlig länk ger. 
+Användaren ska uppfatta att en handling utförs. Exempel på situationer där det är lämpligt med en länkknapp:
 
-- Vid navigering inom en applikation (Nästa, Tillbaka)
+- Vid navigering inom en applikation
 - Som en startpunkt, t.ex. en länk från webben till en e-tjänst
-- Vid inloggning med e-id
 
 <LiveCodeBlock hideCode scope={{ Flex, FlexItem, LinkButton }}>
   {`<Flex>
