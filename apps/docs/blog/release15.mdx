@@ -1,0 +1,73 @@
+---
+title: 'Release 15'
+description: .
+slug: release-15
+tags: [releaser]
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { MultiSelect } from '@midas-ds/multi-select'
+import { LinkButton } from '@midas-ds/link-button'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { Link } from '@midas-ds/link'
+import { Heading } from 'react-aria-components'
+import { Plus } from 'lucide-react'
+
+Nedan är en sammanfattning av nyheterna i release 15.
+
+{/* truncate */}
+
+## Ny komponent: MultiSelect
+
+Modalen öppnar en ruta ovanför gränssnittet som användaren måste interagera med innan den kan gå vidare. Modalen har flera användningsområden, t.ex. för att förtydliga konsekvenserna av ett val i gränssnittet eller presentera mer information. Läs mer på komponentsidan för [Modal](/components/modal).
+
+```bash npm2yarn
+npm install @midas-ds/multi-select
+```
+
+<LiveCodeBlock scope={{ MultiSelect }}>
+  {`<MultiSelect
+        label="Vad är din favoritfrukt?"
+        placeholder="Välj en frukt"
+        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+/>`}
+</LiveCodeBlock>
+
+## Uppdatering: LinkButton
+
+LinkButton har en ny, förtydligande design. LinkButton var tydligare grafiskt exakt lik en `Button` fast som ett `<a>-element`. Det nya utseendet förtydligar att detta är just en länk. Däremot har den fortfarande liknande varianter och storlekar som en `Button`.
+
+<LiveCodeBlock scope={{ Flex, FlexItem, LinkButton }}>
+  {`<LinkButton href="#">Starta tjänst</LinkButton>`}
+</LiveCodeBlock>
+
+## Fristående länk
+
+Link har en ny variant `standalone`
+
+<LiveCodeBlock scope={{ Link }}>
+  {`<>
+    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
+    <Link 
+        standalone 
+        href="/blog"
+    >
+        Läs mer om designsystemets nyheter
+    </Link>
+</>`}
+</LiveCodeBlock>
+
+Det finns även ett nytt mönster som förtydligar användandet mellan Button, LinkButton och Link och dess varianter.
+
+<Link
+  standalone
+  href='/design-patterns/buttons-and-links'
+>
+  {'Läs nya designmönstret'}
+</Link>
+
+## Mindre justeringar
+
+- Varningsmeddelanden på samtliga inputfält är ny röda för tydlighetens skull.
+- InfoBanner beter sig nu som en vanlig `<div>`
+- LinkButton har nu samma egenskaper som Button
