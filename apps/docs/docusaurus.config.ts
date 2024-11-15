@@ -117,7 +117,7 @@ const config: Config = {
           label: 'Om'
         },
         {
-          to: '/blog/release-14',
+          to: '/blog/release-15',
           label: 'Senaste versionen',
           position: 'right'
         },
