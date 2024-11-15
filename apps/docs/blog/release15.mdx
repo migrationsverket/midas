@@ -26,9 +26,9 @@ npm install @midas-ds/multi-select
 
 <LiveCodeBlock scope={{ MultiSelect }}>
   {`<MultiSelect
-        label="Vad är din favoritfrukt?"
-        placeholder="Välj en frukt"
-        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+      label="Favoritfrukter"
+      placeholder="Välj dina favoritfrukter"
+      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 />`}
 </LiveCodeBlock>
 
@@ -55,7 +55,7 @@ Fristående länk används när länken ligger utanför ett textstycke.
         standalone 
         href="/blog"
     >
-        {"Läs mer om designsystemets nyheter"}
+        Läs mer om designsystemets nyheter
     </Link>
 </>`}
 </LiveCodeBlock>
@@ -78,7 +78,7 @@ Utsträckt länk används för att göra hela föräldraelementet klickbart.
         stretched
         href="/blog"
     >
-        {"Läs mer om designsystemets nyheter"}
+        Läs mer om designsystemets nyheter
     </Link>
 </div>`}
 </LiveCodeBlock>
