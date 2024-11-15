@@ -1,18 +1,77 @@
+import { Button } from '@midas-ds/button'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { LinkButton } from '@midas-ds/link-button'
+import { Link } from '@midas-ds/link'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
 # Knappar och länkar
 
-Detta mönster är till för beskriva i vilka situationer Knapp, Länkknapp, Fristående länk respektive Länk ska användas
+Detta mönster är till för beskriva i vilka situationer Knapp, Länkknapp och Länk ska användas
 
-## Knapp
+## Knappar
+Knappar används för att initiera en aktivitet. När användaren interagerar med en knapp händer något på sidan. 
+Exempel på situationer där det är lämpligt med en knapp: 
+- När ett formulär ska skickas in. 
+- För att initiera en sökning 
+- För att öppna en modal 
 
-Använd knapp när det 
-Tex Skicka
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
+  {`<Flex>
+  <FlexItem col="auto">
+<Button onPress={() => { alert('Du tryckte på knappen och här är din popup');}}>Visa en popup</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
-## Knapplänk
 
-Vid navigering inom eller från en applikation används knapplänk. 
 
-## Fristående länk
+## Länkar
+Länkar används för att ta användaren till en ny sida eller en annan del av en sida/applikation. På en webbsida eller i en webbapplikation syns detta som en ny URL. 
 
-## Länk
+### Länkknapp
 
-Länk används när länken är det är i ett textstycke. 
+Länkknappen är tekniskt en länk men visuellt lik en knapp. Den används vid navigering när det behövs en tydligare visuell signal till användaren att välja länken, än vad en vanlig länk ger. 
+Användaren ska uppfatta att en handling utförs. Exempel på situationer där det är lämpligt med en länkknapp:
+
+- Vid navigering inom en applikation
+- Som en startpunkt, t.ex. en länk från webben till en e-tjänst
+
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, LinkButton }}>
+  {`<Flex>
+  <FlexItem col="auto">
+<LinkButton href="/components/link-button">Till sidan för Länkknapp</LinkButton>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
+
+
+
+### Fristående länk
+
+Fristående länk är en variant av länk som används när en länk ligger utanför ett textstycke. 
+
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Link }}>
+  {`<Flex>
+  <FlexItem col="auto">
+<Link standalone href="/components/link">Läs mer om länkar</Link>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
+
+
+
+### Länk
+
+Länk används när länken är i ett textstycke. 
+
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Link }}>
+  {`<Flex>
+  <FlexItem col="auto">
+Designsystemet har två olika varianter av <Link href="/components/link">länkar</Link>.  
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
+
+
+
+

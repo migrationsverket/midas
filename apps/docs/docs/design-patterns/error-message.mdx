@@ -1,5 +1,10 @@
 # Validering
 
+
+import { TextField } from '@midas-ds/textfield';
+import { Flex, FlexItem } from '@midas-ds/grid'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
 ## Sammanfattning
 
 Vid valideringsfel visas en sammanfattning av de fel som förekommer högst upp på sidan. Sammanfattningen ska bestå av förklaring
@@ -9,9 +14,13 @@ på vad som är fel och konkreta råd på hur det/de går att åtgärda för att
 ## Felmeddelande
 
 När det sker ett fel eller om det saknas obligatorisk information visas ett felmeddelande under komponenten. Meddelandet ska förklara
-vad som är fel och hur det går att åtgärda.
+vad som är fel och hur det går att åtgärda. Felmeddelandet skrivs med text i rött och inleds med en varningstriangel.
 
-- Felmeddelandet skrivs med text i svart och placeras nedanför komponenten där felet uppstod. Meddelandet inleds
-  med varningstriangel i rött.
-- En röd vertikal linje i vänstermarginalen markerar det område som innehåller felet, inklusive frågan eller etiketten, felmeddelandet och fältet.
-- Om felet berör ett specifikt inmatningsfält ska även detta markeras med en röd ram.
+<LiveCodeBlock scope={{TextField}}>
+{`<TextField
+    label="Exempel på validering"
+    description="Oavsett vad du skriver i fältet så visar vi ett felmeddelande"
+    isInvalid
+    errorMessage="Eftersom komponenten är satt till isInvalid går detta fel inte att åtgärda utan att ändra i koden. Om du vill ta bort felmeddelandet, ta bort isInvalid i exempelkoden nedan"
+/>`}
+</LiveCodeBlock>

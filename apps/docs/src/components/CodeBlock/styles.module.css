@@ -10,8 +10,12 @@
   border-top: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-bottom: 0;
   color: var(--ifm-color-content);
+
+  :has(:not(.borderBottom)) {
+    border-bottom: 0;
+  }
+
   pre {
     padding: 0 !important;
     background-color: transparent !important;
@@ -21,10 +25,8 @@
 .playgroundPreview {
   border: 1px solid var(--ifm-color-emphasis-300);
   border-bottom: 0;
-
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   position: relative;
   padding: 1rem;
-  /* margin-bottom: 1rem; */
 }
