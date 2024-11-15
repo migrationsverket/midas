@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/link-button@1.2.0",
-  "_rev": "6-a7cd4c498d6e42d0c1d8944899355f81",
+  "_id": "@midas-ds/link-button@1.3.0",
+  "_rev": "7-02db1eb19bee0d7ad8c5eedf146d0af5",
   "name": "@midas-ds/link-button",
   "dist-tags": {
-    "latest": "1.2.0"
+    "latest": "1.3.0"
   },
   "versions": [
     "0.2.5",
@@ -11,17 +11,19 @@
     "0.2.8",
     "1.0.0",
     "1.1.0",
-    "1.2.0"
+    "1.2.0",
+    "1.3.0"
   ],
   "time": {
     "created": "2024-09-10T14:37:43.477Z",
-    "modified": "2024-11-01T10:27:44.096Z",
+    "modified": "2024-11-15T14:06:27.118Z",
     "0.2.5": "2024-09-10T14:37:43.824Z",
     "0.2.6": "2024-09-12T12:35:38.053Z",
     "0.2.8": "2024-10-07T12:17:20.541Z",
     "1.0.0": "2024-10-18T13:40:48.864Z",
     "1.1.0": "2024-10-24T13:26:49.318Z",
-    "1.2.0": "2024-11-01T10:27:43.912Z"
+    "1.2.0": "2024-11-01T10:27:43.912Z",
+    "1.3.0": "2024-11-15T14:06:26.919Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -36,8 +38,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 10241,
-  "version": "1.2.0",
+  "_contentLength": 11815,
+  "version": "1.3.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -49,7 +51,7 @@
   },
   "dependencies": {
     "react-aria-components": "^1.1.1",
-    "@midas-ds/button": "1.1.0"
+    "lucide-react": "^0.453.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
@@ -61,15 +63,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-gqSR9n4dbdyXUlPJVnD5L8OydGBzdqJqthpHed+xvi/EAKjhI2QwRSxMhM4ysJXlZ0jMJTQM2zjjfoXOsVR8Xw==",
-    "shasum": "cc790eba58592ada7eacba10afba7790e6618013",
-    "tarball": "https://registry.npmjs.org/@midas-ds/link-button/-/link-button-1.2.0.tgz",
+    "integrity": "sha512-P1/lVvBLF4O8EpikiaDDiNRYs1/SFaZMW60vhiVkQ/glrMGakpyXuCqAtD7TtVqusf1IkPdj1QMYkZY0P0uk1g==",
+    "shasum": "0b8e2d99697b9a4a4a35efc16379ba61e0025e2d",
+    "tarball": "https://registry.npmjs.org/@midas-ds/link-button/-/link-button-1.3.0.tgz",
     "fileCount": 9,
-    "unpackedSize": 79599,
+    "unpackedSize": 83196,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIFt8Jk5x5lkqzjiQReVm6gH7dWIqJfhanDi9AQtdFns5AiBusQMLlROS7QSriAxcwwl2LtnOjQwLK9EviC7HpFTrWg=="
+        "sig": "MEYCIQD/3+/+EHg5gJkqk8XEcX9V63n742tMHZh3/y6ighkpEgIhALD1gUPilyzEjeW91jifhQ61VfeblxUbwjTl+p5AOp4A"
       }
     ]
   },
@@ -77,7 +79,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/link-button_1.2.0_1730456863732_0.586185486103115"
+    "tmp": "tmp/link-button_1.3.0_1731679586708_0.3017249311058672"
   },
   "_hasShrinkwrap": false
 }
