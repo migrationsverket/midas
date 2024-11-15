@@ -36,6 +36,8 @@ npm install @midas-ds/modal
 
 ```tsx
 import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
+
+const [isOpened, setIsOpened] = React.useState<boolean>(false)
 ```
 
 <LiveCodeBlock
@@ -51,9 +53,10 @@ import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
     TextArea
   }}
 >
-  {`<DialogTrigger>
-    <Button>Radera frukter</Button>
-    <Modal>
+  {`
+  <>
+        <Button onPress={setIsOpened}>Radera frukter</Button>
+        <Modal isDismissable isOpen={isOpened} onOpenChange={setIsOpened}>
         {({ close }) => (
         <>
             <ModalHeader />
@@ -92,7 +95,7 @@ import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
         </>
         )}
     </Modal>
-</DialogTrigger>
+</>
 `}
 </LiveCodeBlock>
 
@@ -113,9 +116,9 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
     TextArea
   }}
 >
-  {`<DialogTrigger>
-    <Button>Öppna ansökan</Button>
-    <Modal>
+  {`<>
+    <Button onPress={setIsOpened}>Öppna modal</Button>
+    <Modal isDismissable isOpen={isOpened} onOpenChange={setIsOpened}>
         {({ close }) => (
             <>
                 <ModalHeader />
@@ -163,7 +166,7 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
             </>
         )}
     </Modal>
-</DialogTrigger>
+    </>
 `}
 </LiveCodeBlock>
 

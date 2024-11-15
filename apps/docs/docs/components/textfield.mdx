@@ -62,14 +62,16 @@ Det går också att definiera en egen funktion för validering:
 
 ### Personnummer
 
-Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användare. 
-Följande RegEx används <br /> ```^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$```
-- Frivilliga sekelsiffor 19 eller 20 `(?:19:20)?`
-- Matchar nästkommande siffor som 01 - 12 `(?:0[1-9]|1[0-2])`
-- Matchar nästkommande siffor som 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`
-- Matchar avgränsaren som `+`, `-`, `blanksteg` eller ingen samt fyra efterföljande siffor `(?:[-+ ]?\\d{4})?`
+Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer. 
 
-För slutanvändaren blir detta förlåtande och de flesta inmatningar blir rätt sålänge det är 10 eller 12 siffror. Däremot returnerar vi alltid formatet `ÅÅÅÅMMDDXXXX` från komponenten oavsett vad användaren skrev.
+Följande RegEx används <br /> ```^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$```
+- Frivilliga sekelsiffor: 19 eller 20 `(?:19:20)?`
+- Verifierar att det är minst två siffror i början av personnumret (ÅÅ)
+- Verifierar att MM är 01 - 12 `(?:0[1-9]|1[0-2])`
+- Verifierar att DD är 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`
+- Tillåter avgränsare: `+`, `-`, `blanksteg` eller ingen, samt 
+- Verifierar att det är fyra siffror efter avgränsaren `(?:[-+ ]?\\d{4})?`
+
 
 <LiveCodeBlock scope={{TextField}}>
 {`<TextField 

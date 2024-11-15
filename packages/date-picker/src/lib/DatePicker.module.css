@@ -14,8 +14,9 @@
   align-items: center;
   gap: 1rem;
 
-  &:focus-visible {
-    box-shadow: focus;
+  &:focus-visible,
+  &[data-focus-visible] {
+    outline: none;
   }
 
   & button {
@@ -28,6 +29,12 @@
 
     &:hover {
       background-color: gray20;
+    }
+
+    &:focus-visible,
+    &[data-focus-visible] {
+      outline: none;
+      box-shadow: focus;
     }
   }
 }
@@ -42,6 +49,12 @@
 
   & div[data-readonly='true'] {
     color: gray60;
+  }
+
+  & div:focus-visible,
+  & div[data-focus-visible] {
+    outline: none;
+    box-shadow: focus;
   }
 }
 

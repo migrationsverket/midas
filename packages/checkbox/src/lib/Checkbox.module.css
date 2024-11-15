@@ -124,25 +124,6 @@
     border: none;
     background: gray20;
   }
-
-  @media smBreakpoint {
-    padding: 0.875rem 1rem;
-    border: 1px solid black;
-    width: auto;
-
-    &:hover {
-      background-color: gray10;
-    }
-
-    &[data-invalid] {
-      border: 2px solid var(--invalidColor);
-    }
-
-    &[data-disabled] {
-      pointer-events: none;
-      border-color: gray50;
-    }
-  }
 }
 
 .checkboxGroup {
@@ -161,5 +142,26 @@
 
   &[data-disabled] {
     color: gray50;
+  }
+
+  .checkbox {
+    @media smBreakpoint {
+      padding: 0.875rem 1rem;
+      border: 1px solid black;
+      width: auto;
+
+      &:hover {
+        background-color: gray10;
+      }
+
+      &[data-invalid] {
+        border: 2px solid var(--invalidColor);
+      }
+
+      &[data-disabled] {
+        pointer-events: none;
+        border-color: gray50;
+      }
+    }
   }
 }

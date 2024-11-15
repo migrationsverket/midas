@@ -37,6 +37,7 @@
 
 .input {
   width: 100%;
+  appearance: none;
   -webkit-appearance: none;
   padding-left: 2.75rem;
   padding-right: 2.75rem;

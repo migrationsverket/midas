@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, gray150 from tokens;
+@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, gray150, focus from tokens;
 
 @keyframes slideIn {
   from {
@@ -58,6 +58,12 @@
   padding-left: 19px;
   border-left: 3px solid transparent;
 
+  &[data-focus-visible],
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+
   &.success {
     --bg: signalGreen10;
     --border: signalGreen100;
@@ -103,10 +109,6 @@
     width: 42px;
     color: gray150;
     padding: 0;
-
-    &:focus-visible {
-      outline: none;
-    }
 
     &:hover {
       background: none;
