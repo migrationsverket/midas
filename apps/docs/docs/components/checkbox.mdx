@@ -23,7 +23,7 @@ import { Button } from '@midas-ds/button'
 
 ## Introduktion
 
-Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det endast ska gå att välja ett objekt i listan är det en [Radioknapp](./radio.mdx) som ska användas.
+Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det är många alternativ så bör [MultiSelect](./multi-select.mdx) användas istället.
 
 ## Installation
 
@@ -147,18 +147,6 @@ Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". D
 </LiveCodeBlock>
 
 ## Riktlinjer
-
-### Val av komponent
-
-```mermaid
-flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
-    A -->|Ja| B[Använd Checkbox]:::primary
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]
-    C -->|Ja| E[Använd Select]
-    C -->|Nej| D[Använd Radio]
-
-```
 
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
 
