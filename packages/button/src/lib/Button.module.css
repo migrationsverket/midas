@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
+@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, smBreakpoint, focus, signalRed100, signalRed130, signalRed150 from tokens;
 
 .button {
   font-family: display;
@@ -18,6 +18,11 @@
   justify-content: center;
   gap: 0.5rem;
 
+  &[data-focus-visible],
+  &:focus-visible {
+    box-shadow: focus;
+  }
+
   &:hover {
     background-color: blue130;
   }
@@ -25,11 +30,6 @@
   &[data-pressed] {
     background-color: blue90;
     outline: none;
-  }
-
-  &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
   }
 }
 
@@ -61,11 +61,6 @@
     background-color: gray20;
     border-color: blue150;
   }
-
-  &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
-  }
 }
 
 .tertiary {
@@ -88,11 +83,6 @@
   &[data-pressed] {
     background-color: gray20;
   }
-
-  &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
-  }
 }
 
 .iconBtn {
@@ -113,11 +103,6 @@
 
   &[data-pressed] {
     background-color: gray20;
-  }
-
-  &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
   }
 }
 
@@ -140,11 +125,6 @@
   &[data-pressed] {
     background-color: signalRed150;
     outline: none;
-  }
-
-  &[data-focus-visible] {
-    outline: 0.125rem solid black;
-    outline-offset: 0.125rem;
   }
 }
 

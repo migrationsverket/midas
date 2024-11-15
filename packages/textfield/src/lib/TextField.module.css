@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText from tokens;
+@value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText, focus from tokens;
 
 .inputField {
   height: 100%;
@@ -81,11 +81,6 @@
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  transition-delay: 0s;
-  transition-property: border, background-color, outline-offset, outline;
-  transition-timing-function: ease-in-out, ease-in-out;
-  transition-duration: 0.15s, 0.15s;
-  will-change: border, background-color, outline-offset, outline;
 
   &:hover {
     background-color: gray20;
@@ -95,9 +90,9 @@
     }
   }
 
-  &[data-focused] {
-    outline-offset: 2px;
-    outline: 2px solid black;
+  &[data-focused],
+  &[data-focus-visible] {
+    box-shadow: focus;
   }
 
   &[data-invalid] {

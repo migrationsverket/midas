@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, gray50, semiBoldWeight, blue130 from tokens;
+@value display, gray50, semiBoldWeight, blue130, focus from tokens;
 
 .container {
   font-family: display;
@@ -15,28 +15,32 @@
   padding: 0.5rem 1.25rem;
   cursor: pointer;
 
-  &[data-selected='true'] {
+  &[data-selected] {
     font-weight: semiBoldWeight;
     box-shadow: inset 0 -3px 0 0 blue130;
   }
 
-  &:focus {
+  &[data-focus-visible],
+  &:focus-visible {
     outline: none;
+    box-shadow: focus;
   }
 
-  &[data-focus-visible='true'] {
-    outline: 1px solid black;
+  &:focus {
+    outline: none;
   }
 }
 
 .panel {
   margin-top: 1rem;
 
-  &:focus {
+  &[data-focus-visible],
+  &:focus-visible {
     outline: none;
+    box-shadow: focus;
   }
 
-  &[data-focus-visible='true'] {
-    outline: 1px solid black;
+  &:focus {
+    outline: none;
   }
 }

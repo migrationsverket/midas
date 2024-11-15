@@ -37,6 +37,7 @@
 
 .input {
   width: 100%;
+  appearance: none;
   -webkit-appearance: none;
   padding-left: 2.75rem;
   padding-right: 2.75rem;
@@ -44,12 +45,6 @@
   background-color: white;
   border: solid 1px blue150;
   box-shadow: none;
-
-  &[data-focused='true'] {
-    border: solid 1px gray150;
-    outline: solid 2px black;
-    outline-offset: 1px;
-  }
 
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,

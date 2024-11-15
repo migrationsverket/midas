@@ -23,6 +23,7 @@
 
 .flex > * {
   display: flex;
+  flex-flow: column wrap;
   flex: 0 0 auto;
   width: calc(
     (100% / var(--columns)) - var(--gutter) + (var(--gutter) / var(--columns))

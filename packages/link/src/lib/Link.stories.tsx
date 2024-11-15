@@ -21,8 +21,9 @@ type Story = StoryObj<typeof Link>
 export const Primary: Story = {
   args: {
     children: 'Länk',
-    href: 'https://designsystem.migrationsverket.se/components/link/',
-    icon: ArrowRight
+    icon: ArrowRight,
+    href: 'https://designsystem.migrationsverket.se/components/link/'
+    
   }
 }
 export const PrimaryDisabled: Story = {
