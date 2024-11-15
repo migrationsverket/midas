@@ -18,6 +18,7 @@ import {
   midasColors,
   midasTransitions,
   signalColors,
+  boxShadow,
 } from './src/lib/tokens'
 import fs from 'fs'
 
@@ -44,6 +45,7 @@ export default defineConfig({
           breakpoints,
           accessibility,
           font,
+          boxShadow,
         ]
         let cssContents = ''
 

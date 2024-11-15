@@ -4,13 +4,20 @@ tags: []
 description: Sökbar version av Select
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/combobox.json'
 import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Combobox'} info={Info} friendlyName="Flerval med sök, väljare med sök, dropdown med sök" />
+<ComponentHeader
+  name={'Combobox'}
+  info={Info}
+  friendlyName='Flerval med sök, väljare med sök, dropdown med sök'
+/>
 
 ## Introduktion
 
@@ -29,8 +36,8 @@ npm install @midas-ds/combobox
 import { ComboBox } from '@midas-ds/combobox'
 ```
 
-<LiveCodeBlock scope={{ComboBox, ComboBoxItem}}>
-{`<ComboBox
+<LiveCodeBlock scope={{ ComboBox, ComboBoxItem }}>
+  {`<ComboBox
     label="Vad är din favoritfrukt?"
     placeholder="Välj en frukt"
     items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
@@ -40,7 +47,28 @@ import { ComboBox } from '@midas-ds/combobox'
 </LiveCodeBlock>
 
 ## Riktlinjer
-TBD
+
+### Val av komponent
+
+```mermaid
+flowchart TD;
+  A[Hur många val ska presenteras för användaren?]:::primary
+  A ---> B[1]
+  A ---> C[2 - 4]
+  A ---> D[5 - 10]
+  A ---> E[11 +]:::primary
+  B ---> F[Använd Checkbox]
+  C ---> G[Hur många val kan göras?]
+  G --->|Flera| F
+  G --->|Ett| H[Använd Radio]
+  D ---> I[Hur många val kan göras?]
+  I --->|Flera| J[Använd MultiSelect]
+  I --->|Ett| K[Använd Select]
+  E ---> L[Hur många val kan göras?]:::primary
+  L -.Flera.-> M[Använd ComboBox multiple]:::primary
+  L --->|Ett| N[Använd ComboBox]:::primary
+```
 
 ## Beroenden
-<ComponentFooter info={Info}/>
+
+<ComponentFooter info={Info} />

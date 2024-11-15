@@ -1,3 +1,20 @@
+## 1.0.3 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **file-upload:** update icon size ([8751ee62](https://github.com/migrationsverket/midas/commit/8751ee62))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.3
+- Updated button to 1.1.1
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-24)
 
 ### 🩹 Fixes

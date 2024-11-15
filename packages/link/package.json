@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/link",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,8 @@
     }
   },
   "peerDependencies": {
-    "react-aria-components": "^1.1.1"
+    "react-aria-components": "^1.1.1",
+    "lucide-react": "^0.453.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {

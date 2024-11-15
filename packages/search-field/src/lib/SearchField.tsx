@@ -1,12 +1,11 @@
 'use client'
 
 import {
-  Button as AriaButton,
   FieldError,
   Input,
   Label,
   SearchField as AriaSearchField,
-  SearchFieldProps as AriaSearchFieldProps,
+  SearchFieldProps as AriaSearchFieldProps
 } from 'react-aria-components'
 import { Search, X } from 'lucide-react'
 import { TextFieldStyles } from '@midas-ds/textfield'
@@ -45,13 +44,20 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           placeholder={placeholder}
         />
         {hasInput && (
-          <AriaButton className={styles.clear}>
-            <X size={16} />
-          </AriaButton>
+          <Button
+            variant='icon'
+            size='small'
+            className={styles.clear}
+          >
+            <X
+              size={20}
+              aria-hidden
+            />
+          </Button>
         )}
       </div>
       <FieldError />
-      <Button type="submit">{buttonText ? buttonText : 'Sök'}</Button>
+      <Button type='submit'>{buttonText ? buttonText : 'Sök'}</Button>
     </AriaSearchField>
   )
 }

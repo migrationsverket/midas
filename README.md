@@ -21,8 +21,8 @@ smidigt sätt.
 
 - [Starta](/doc/local-setup.md)
 - [Bygg en komponent](/doc/build-component.md)
-- [Hantera Git](/doc/git)
-- [Publicera komponenter](/doc/publish)
+- [Hantera Git](/doc/git.md)
+- [Publicera komponenter](/doc/publish.md)
 
 ### Process
 

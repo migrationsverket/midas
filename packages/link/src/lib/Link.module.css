@@ -1,18 +1,66 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, blue130, blue150, gray150 from tokens;
+@value display, blue130, blue150, gray150, gray50, mediumWeight, focus, regularWeight, linkVisited, black from tokens;
 
 .link {
   font-family: display;
   color: blue130;
   text-decoration: underline;
+  display: inline-flex;
+  cursor: pointer;
+  gap: 0.25rem;
+  font-weight: regularWeight;
+  align-items: center;
 
   &:hover {
     color: blue150;
   }
 
-  &[data-disabled='true'] {
+  &:visited {
+    color: linkVisited;
+  }
+
+  &[data-disabled] {
     cursor: disabled;
-    text-decoration: none;
-    color: gray150;
+    color: gray50;
+  }
+
+  &[data-pressed] {
+    color: black;
+  }
+
+  &[data-focused] {
+    outline: none;
+  }
+
+  &[data-focus-visible] {
+    box-shadow: focus;
+  }
+}
+
+.icon {
+  flex: 0 0 auto;
+}
+
+.standalone {
+  display: inline-flex;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: mediumWeight;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &[data-pressed] {
+    text-decoration: underline;
+  }
+}
+
+.stretched {
+  &::after {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    content: '';
   }
 }

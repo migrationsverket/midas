@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/file-upload@1.0.2",
-  "_rev": "6-9d56e5e2929a9c5b039dedb6ca83fef3",
+  "_id": "@midas-ds/file-upload@1.0.3",
+  "_rev": "7-76717f3f882f6315e9337b5653713bfb",
   "name": "@midas-ds/file-upload",
   "dist-tags": {
-    "latest": "1.0.2"
+    "latest": "1.0.3"
   },
   "versions": [
     "0.3.19",
@@ -11,75 +11,77 @@
     "0.3.22",
     "1.0.0",
     "1.0.1",
-    "1.0.2"
+    "1.0.2",
+    "1.0.3"
   ],
   "time": {
     "created": "2024-09-10T14:36:46.893Z",
-    "modified": "2024-11-01T10:27:41.805Z",
+    "modified": "2024-11-15T14:06:23.180Z",
     "0.3.19": "2024-09-10T14:36:47.146Z",
     "0.3.20": "2024-09-12T12:21:00.654Z",
     "0.3.22": "2024-10-07T12:12:28.880Z",
     "1.0.0": "2024-10-18T13:40:44.514Z",
     "1.0.2": "2024-10-22T14:09:13.890Z",
-    "1.0.1": "2024-10-24T13:26:47.217Z"
+    "1.0.1": "2024-10-24T13:26:47.217Z",
+    "1.0.3": "2024-11-15T14:06:23.006Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
   },
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
-    "url": "git+https://github.com/migrationsverket/midas.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
   },
   "description": "```bash npm i @midas-ds/file-upload ```",
   "maintainers": [
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 11038,
-  "version": "1.0.2",
-  "dist": {
-    "shasum": "9b767ada804d9c8574a5d89f03fa95670b33ddfe",
-    "tarball": "https://registry.npmjs.org/@midas-ds/file-upload/-/file-upload-1.0.2.tgz",
-    "fileCount": 9,
-    "integrity": "sha512-GNygp08r5KRiB11x5S5jwUHi9/6QM7De9NtX4FDakbXpbu+4d5CtGuCqmJNCNX5otUJTTyfQ8F0l4XQ+Ha6p3Q==",
-    "signatures": [
-      {
-        "sig": "MEUCICTPww2MuQcCJ8ue3cq3SSld1nb6HRxXwRnFAtmFaeSxAiEAqtqvj3W5d46A0+/4UmhonldHqmwYs7ccPupfDIMOP3Y=",
-        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
-      }
-    ],
-    "unpackedSize": 334532
-  },
+  "_contentLength": 12668,
+  "version": "1.0.3",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "types": "./index.d.ts",
       "import": "./index.mjs",
-      "require": "./index.js"
+      "require": "./index.js",
+      "types": "./index.d.ts"
     }
   },
-  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
-  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
-  "_npmVersion": "10.2.4",
-  "directories": {},
-  "_nodeVersion": "20.11.1",
   "dependencies": {
-    "lucide-react": "^0.383.0",
-    "@midas-ds/button": "1.0.1",
-    "@midas-ds/textfield": "1.0.1",
-    "react-aria-components": "^1.0.0-rc.0"
+    "@midas-ds/button": "1.1.1",
+    "react-aria-components": "^1.0.0-rc.0",
+    "lucide-react": "^0.453.0",
+    "@midas-ds/textfield": "1.0.3"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "_hasShrinkwrap": false,
   "peerDependencies": {
     "react": "^18.2.0"
   },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-zzyUpJhx1n+7qDFYJFMHb1zYeplaLttD7o9DtlNPQVwKowhdna+isXWKm9qORbyLGMRXNj1trD1NOl0Tp2N7pw==",
+    "shasum": "0e7b9474d937ac32aaee03137cfe7963b985ab40",
+    "tarball": "https://registry.npmjs.org/@midas-ds/file-upload/-/file-upload-1.0.3.tgz",
+    "fileCount": 9,
+    "unpackedSize": 335650,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEYCIQCCvxS5hgpBG5jzBFNaCFHwvKJ2QETyf5za3L4dn691DQIhAPyYI4dIUV7Tlcm0+Wq7C9EDrAbAmuxBdjDToBJSp2om"
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
   "_npmOperationalInternal": {
-    "tmp": "tmp/file-upload_1.0.2_1729606153716_0.9738000394158912",
-    "host": "s3://npm-registry-packages"
-  }
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/file-upload_1.0.3_1731679582772_0.589867284000998"
+  },
+  "_hasShrinkwrap": false
 }

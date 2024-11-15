@@ -2,7 +2,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
+  AccordionTrigger
 } from '@midas-ds/accordion'
 import { Button } from '@midas-ds/button'
 import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
@@ -22,6 +22,7 @@ import { Select, Item } from '@midas-ds/select'
 import { Tabs } from '@midas-ds/tabs'
 import { TextArea } from '@midas-ds/textarea'
 import { theme } from '@midas-ds/theme'
+import { MultiSelect } from '@midas-ds/multi-select'
 
 export {
   Button,
@@ -51,4 +52,5 @@ export {
   Tabs,
   TextArea,
   theme,
+  MultiSelect
 }

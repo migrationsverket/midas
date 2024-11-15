@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
+@value display, black, signalRed130, smBreakpoint, gray50, gray20, focus, backgroundSecondary from tokens;
 
 .button {
   grid-area: Input;
@@ -21,23 +21,20 @@
     transition: transform 0.3s ease;
   }
 
-  &:focus {
-    outline: none;
-  }
-
   &:hover {
     background-color: gray20;
   }
 
-  &[data-focus-visible] {
-    outline-offset: 2px;
-    outline: 2px solid black;
+  &[data-focus-visible],
+  &:focus-visible {
+    box-shadow: focus;
+    outline: none;
   }
 
   &[data-disabled] {
     background: backgroundSecondary;
     color: gray50;
-    box-shadow: 0 1px 0 0 gray50;
+    border-color: gray50;
   }
 }
 

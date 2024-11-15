@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, signalRed130, white, gray10, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint, borderSecondary from tokens;
+@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, focus, signalRed130, white, gray10, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint, borderSecondary from tokens;
 
 .wrap {
   grid-area: Input;
@@ -36,7 +36,6 @@
   font-weight: regularWeight;
 
   --borderColorPressed: borderSecondary;
-  --focusRingColor: black;
   --selectedColor: primaryBackground;
   --selectedPressed: blue80;
   --selectedHover: blue130;
@@ -58,9 +57,10 @@
     border-color: var(--borderColorPressed);
   }
 
-  &[data-focus-visible] {
-    outline: 2px solid var(--focusRingColor);
-    outline-offset: 2px;
+  &[data-focus-visible],
+  &:focus-visible {
+    box-shadow: focus;
+    outline: none;
   }
 
   &[data-selected] div,
@@ -124,25 +124,6 @@
     border: none;
     background: gray20;
   }
-
-  @media smBreakpoint {
-    padding: 0.875rem 1rem;
-    border: 1px solid black;
-    width: auto;
-
-    &:hover {
-      background-color: gray10;
-    }
-
-    &[data-invalid] {
-      border: 2px solid var(--invalidColor);
-    }
-
-    &[data-disabled] {
-      pointer-events: none;
-      border-color: gray50;
-    }
-  }
 }
 
 .checkboxGroup {
@@ -161,5 +142,26 @@
 
   &[data-disabled] {
     color: gray50;
+  }
+
+  .checkbox {
+    @media smBreakpoint {
+      padding: 0.875rem 1rem;
+      border: 1px solid black;
+      width: auto;
+
+      &:hover {
+        background-color: gray10;
+      }
+
+      &[data-invalid] {
+        border: 2px solid var(--invalidColor);
+      }
+
+      &[data-disabled] {
+        pointer-events: none;
+        border-color: gray50;
+      }
+    }
   }
 }

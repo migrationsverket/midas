@@ -1,3 +1,13 @@
+## 0.1.2 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+
+### ❤️  Thank You
+
+- jabir Khalil
+
 ## 0.1.1 (2024-11-06)
 
 ### 🩹 Fixes

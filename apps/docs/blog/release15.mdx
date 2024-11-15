@@ -1,0 +1,102 @@
+---
+title: 'Release 15'
+description: .
+slug: release-15
+tags: [releaser]
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { MultiSelect } from '@midas-ds/multi-select'
+import { LinkButton } from '@midas-ds/link-button'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { Link } from '@midas-ds/link'
+import { Heading } from 'react-aria-components'
+import { Plus } from 'lucide-react'
+import { baseColors } from '@midas-ds/theme'
+
+Nedan är en sammanfattning av nyheterna i release 15.
+
+{/* truncate */}
+
+## Ny komponent: Multiselect
+
+```bash npm2yarn
+npm install @midas-ds/multi-select
+```
+
+<LiveCodeBlock scope={{ MultiSelect }}>
+  {`<MultiSelect
+      label="Favoritfrukter"
+      placeholder="Välj dina favoritfrukter"
+      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+/>`}
+</LiveCodeBlock>
+
+## Uppdatering: LinkButton
+
+LinkButton har en ny, förtydligande design. LinkButton var tydligare grafiskt exakt lik en `Button` fast som ett `<a>-element`. Det nya utseendet förtydligar att detta är just en länk. Däremot har den fortfarande varianter och storlekar som en `Button`.
+
+<LiveCodeBlock scope={{ Flex, FlexItem, LinkButton }}>
+  {`<LinkButton href="#">Starta tjänst</LinkButton>`}
+</LiveCodeBlock>
+
+## Uppdatering: Link
+
+Komponenten <Link href='/components/link'>Link</Link> är nu uppdaterad med varianterna Fristående och Utsträckt.
+
+### Fristående länk
+
+Fristående länk används när länken ligger utanför ett textstycke.
+
+<LiveCodeBlock scope={{ Link }}>
+  {`<>
+    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
+    <Link 
+        standalone 
+        href="/blog"
+    >
+        Läs mer om designsystemets nyheter
+    </Link>
+</>`}
+</LiveCodeBlock>
+
+### Utsträckt länk
+
+Utsträckt länk används för att göra hela föräldraelementet klickbart.
+
+<LiveCodeBlock scope={{ Link, baseColors }}>
+  {`<div 
+      style={{
+        position: 'relative',
+        background: baseColors.gray10,
+        padding: '1rem'
+      }}
+    >
+    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
+    <Link 
+        standalone 
+        stretched
+        href="/blog"
+    >
+        Läs mer om designsystemets nyheter
+    </Link>
+</div>`}
+</LiveCodeBlock>
+
+## Nytt designmönster för knappar och länkar
+
+I syfte att göra våra applikationer så tillgängliga som möjligt har vi skapat ett designmönster som stöd för att välja rätt komponent.
+
+<Link
+  standalone
+  href='/design-patterns/buttons-and-links'
+>
+  {'Läs mer om designmönstret här'}
+</Link>
+
+## Mindre justeringar
+
+- Alla ikoner är nu 20x20px
+- Merparten av komponenternas fokusutseende är uppdaterat så att det följer vårt mönster
+- Riktlinjer för <Link href="/design-patterns/personnummer">Personnummer</Link> har fått ett eget designmönster
+- <Link href='/components/card'>Card</Link> har ny design med Fristående länk

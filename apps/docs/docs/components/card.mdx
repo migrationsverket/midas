@@ -3,18 +3,26 @@ title: Card
 description: En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
 ---
 
-import { PropTable } from '@site/src/components/propsTable';
+import { PropTable } from '@site/src/components/propsTable'
 import { Grid, GridItem } from '@midas-ds/grid'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/card.json'
-import { Card } from '@midas-ds/card';
+import { Card } from '@midas-ds/card'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Card'} info={Info} friendlyName={'Kort'} overrideHeadlessLink="" />
+<ComponentHeader
+  name={'Card'}
+  info={Info}
+  friendlyName={'Kort'}
+  overrideHeadlessLink=''
+/>
 
 ## Introduktion
 
-Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt. 
+Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt.
 
 ## Installation
 
@@ -23,17 +31,18 @@ npm install @midas-ds/card
 ```
 
 ```tsx
-import { Card } from '@midas-ds/card';
+import { Card } from '@midas-ds/card'
 ```
 
-<LiveCodeBlock scope={{Grid, GridItem, Card}}>
-{`<Grid>
+<LiveCodeBlock scope={{ Grid, GridItem, Card }}>
+  {`<Grid>
   {fruits.shuffled(3).map(fruit => (
     <GridItem col={4} key={fruit.value}>
       <Card
         title={fruit.name}
         content={fruit.description}
         image={{ source: fruit.image, description: fruit.description }}
+        link={{href: '#', title: 'Läs mer om denna frukt'}}
       />
     </GridItem>
   ))}
@@ -41,6 +50,6 @@ import { Card } from '@midas-ds/card';
 </LiveCodeBlock>
 <br />
 
-
 ## Beroenden
-<ComponentFooter info={Info}/>
+
+<ComponentFooter info={Info} />

@@ -4,21 +4,29 @@ description: Radio Button är en typ av inmatningsfält som används för att v�
 tags: [form]
 ---
 
-import { PropTable } from '@site/src/components/propsTable';
-import { Radio, RadioGroup } from '../../../../packages/radio/src';
-import { Button } from '../../../../packages/button/src';
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
-import Info from '@site/static/data/radio.json';
+import { PropTable } from '@site/src/components/propsTable'
+import { Radio, RadioGroup } from '../../../../packages/radio/src'
+import { Button } from '../../../../packages/button/src'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
+import Info from '@site/static/data/radio.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Radio'} info={Info} friendlyName={'Radioknappar'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/RadioGroup.html" />
+<ComponentHeader
+  name={'Radio'}
+  info={Info}
+  friendlyName={'Radioknappar'}
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/RadioGroup.html'
+/>
 
 ## Introduktion
 
-Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. 
+Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. Om det är fler alternativ än fem bör [Select](./select.mdx) användas istället.
 
-<LiveCodeBlock scope={{RadioGroup, Radio}}>
-{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+<LiveCodeBlock scope={{ RadioGroup, Radio }}>
+  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
     {fruits.shuffled(3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
     ))}
@@ -32,28 +40,27 @@ npm install @midas-ds/radio
 ```
 
 ```tsx
-import { Radio, RadioGroup } from '@midas-ds/radio';
+import { Radio, RadioGroup } from '@midas-ds/radio'
 ```
 
 ### Normal användning
 
 Gruppera flera `<Radio>` i en `<RadioGroup>` och sätt rubrik och beskrivande text.
 
-<LiveCodeBlock scope={{RadioGroup, Radio}}>
-{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
+<LiveCodeBlock scope={{ RadioGroup, Radio }}>
+  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
     {fruits.shuffled(3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
     ))}
 </RadioGroup>`}
 </LiveCodeBlock>
 
-
 ### Disabled
 
 Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
 
-<LiveCodeBlock scope={{RadioGroup, Radio}}>
-{`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
+<LiveCodeBlock scope={{ RadioGroup, Radio }}>
+  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
     {fruits.shuffled(3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
        ))}
@@ -64,20 +71,27 @@ Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
 
 Sätt validering med `isInvalid` eller använd inbyggda tester som `isRequired`.
 
-
 ## Riktlinjer
 
 ### Val av komponent
 
-
 ```mermaid
 flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
-    A -->|Ja| B[Använd Checkbox]
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary
-    C -->|Ja| E[Använd Select]
-    C -->|Nej| D[Använd Radio]:::primary
-    
+  A[Hur många val ska presenteras för användaren?]:::primary
+  A ---> B[1]
+  A ---> C[2 - 4]:::primary
+  A ---> D[5 - 10]
+  A ---> E[11 +]
+  B ---> F[Använd Checkbox]
+  C ---> G[Hur många val kan göras?]:::primary
+  G --->|Flera| F
+  G --->|Ett| H[Använd Radio]:::primary
+  D ---> I[Hur många val kan göras?]
+  I --->|Flera| J[Använd MultiSelect]
+  I --->|Ett| K[Använd Select]
+  E ---> L[Hur många val kan göras?]
+  L -.Flera.-> M[Använd ComboBox multiple]
+  L --->|Ett| N[Använd ComboBox]
 ```
 
 - En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar "Inget av ovanstående" eller liknande.
@@ -86,4 +100,5 @@ flowchart TD;
 - Fältetiketten ska inledas med stor bokstav och inte följas av punkt.
 
 ## Beroenden
-<ComponentFooter info={Info}/>
+
+<ComponentFooter info={Info} />

@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './Tag.module.css'
 import {
-  Button,
   Tag as AriaTag,
   TagGroup as AriaTagGroup,
   TagGroupProps as AriaTagGroupProps,
@@ -9,44 +8,47 @@ import {
   TagProps as AriaTagProps
 } from 'react-aria-components'
 import { X } from 'lucide-react'
+import { Button } from '@midas-ds/button'
+import clsx from 'clsx'
 
 export interface TagGroupProp extends AriaTagGroupProps {
   children: React.ReactNode
-  title?: string
 }
 
 export interface TagProps extends AriaTagProps {
-  title?: string
+  children: React.ReactNode
+  dismissable?: boolean
 }
 
 export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
   return (
-    <AriaTagGroup
-      className={styles.tagGroup}
-      {...rest}
-    >
+    <AriaTagGroup {...rest}>
       <TagList className={styles.tagList}>{children}</TagList>
     </AriaTagGroup>
   )
 }
 
-export const Tag: React.FC<TagProps> = ({ title, ...props }) => {
+export const Tag: React.FC<TagProps> = ({
+  children,
+  dismissable,
+  ...props
+}) => {
   return (
     <AriaTag
-      className={styles.tag}
+      className={clsx(styles.tag, dismissable && styles.dismissable)}
       {...props}
     >
-      {title}
-      <Button
-        className={styles.button}
-        slot='remove'
-      >
-        <X
-          className={styles.icon}
-          height={16}
-          width={16}
-        />
-      </Button>
+      <div className={styles.tagText}>{children}</div>
+      {dismissable && (
+        <Button
+          variant='icon'
+          size='small'
+          className={styles.button}
+          slot='remove'
+        >
+          <X size={20} />
+        </Button>
+      )}
     </AriaTag>
   )
 }

@@ -1,3 +1,37 @@
+## 1.0.5 (2024-11-15)
+
+### 🩹 Fixes
+
+- **search-field:** dependency update ([92777f52](https://github.com/migrationsverket/midas/commit/92777f52))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 1.0.4 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **search-field:** inherit focus from textField ([6657845a](https://github.com/migrationsverket/midas/commit/6657845a))
+- **search-field:** update icon size ([149abd6e](https://github.com/migrationsverket/midas/commit/149abd6e))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
+## 1.0.3 (2024-11-07)
+
+### 🩹 Fixes
+
+- **search-field:** fix deps ([ea51719](https://github.com/migrationsverket/midas/commit/ea51719))
+- **modal:** update modal docs ([62f2546](https://github.com/migrationsverket/midas/commit/62f2546))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-10-24)
 
 ### 🩹 Fixes
