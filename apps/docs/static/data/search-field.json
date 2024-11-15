@@ -5,14 +5,7 @@
   "dist-tags": {
     "latest": "1.0.2"
   },
-  "versions": [
-    "0.0.1",
-    "0.0.2",
-    "0.1.0",
-    "1.0.0",
-    "1.0.1",
-    "1.0.2"
-  ],
+  "versions": ["0.0.1", "0.0.2", "0.1.0", "1.0.0", "1.0.1", "1.0.2"],
   "time": {
     "created": "2024-09-10T14:38:08.720Z",
     "modified": "2024-10-24T13:32:54.239Z",
@@ -32,9 +25,7 @@
     "url": "git+https://github.com/migrationsverket/midas.git"
   },
   "description": "This library was generated with [Nx](https://nx.dev).",
-  "maintainers": [
-    "wilhelmconsid <wilhelm.hjelm@consid.se>"
-  ],
+  "maintainers": ["wilhelmconsid <wilhelm.hjelm@consid.se>"],
   "readmeFilename": "README.md",
   "_contentLength": 10372,
   "version": "1.0.2",

@@ -18,7 +18,8 @@
   justify-content: center;
   gap: 0.5rem;
 
-  &[data-focus-visible] {
+  &[data-focus-visible],
+  &:focus-visible {
     box-shadow: focus;
   }
 
@@ -98,6 +99,10 @@
   &[data-disabled] {
     color: gray50;
     pointer-events: none;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
   }
 }
 

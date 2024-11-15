@@ -8,110 +8,95 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   args: {
     label: 'Etikett',
-    description: 'Beskrivning',
+    description: 'Beskrivning'
   },
   argTypes: {
-    placeholder: { type: 'string' },
+    placeholder: { type: 'string' }
   },
-  parameters: {},
+  parameters: {}
 }
 
 export default meta
 
 type Story = StoryObj<typeof Select>
 
-const ITEMS: string[] = []
-for (let i = 0; i < 40; i += 1) {
-  ITEMS.push(`value ${i}`)
-}
+const fruits = [
+  'Apple',
+  'Banana',
+  'Kiwi',
+  'Elderflower',
+  'Nectarine',
+  'Watermelon',
+  'Pineapple',
+  'Apricot',
+  'Cloudberry',
+  'Mango',
+  'Strawberry',
+  'Blueberry',
+  'Raspberry',
+  'Blackberry',
+  'Cherry',
+  'Peach',
+  'Plum',
+  'Grape',
+  'Orange',
+  'Lemon',
+  'Lime',
+  'Coconut',
+  'Fig',
+  'Papaya',
+  'Guava',
+  'Pomegranate',
+  'Dragonfruit',
+  'Starfruit',
+  'Passionfruit'
+]
 
-function generateMockOptions(
-  count: number
-): Iterable<{ id: number; name: string }> {
-  const fruits = [
-    'Apple',
-    'Banana',
-    'Kiwi',
-    'Elderflower',
-    'Nectarine',
-    'Watermelon',
-    'Pineapple',
-    'Apricot',
-    'Cloudberry',
-    'Mango',
-    'Strawberry',
-    'Blueberry',
-    'Raspberry',
-    'Blackberry',
-    'Cherry',
-    'Peach',
-    'Plum',
-    'Grape',
-    'Orange',
-    'Lemon',
-    'Lime',
-    'Coconut',
-    'Fig',
-    'Papaya',
-    'Guava',
-    'Pomegranate',
-    'Dragonfruit',
-    'Starfruit',
-    'Passionfruit',
-  ]
-
-  return Array.from({ length: count }, (_, index) => {
-    const randomFruit = fruits[Math.floor(Math.random() * fruits.length)]
-    return {
-      id: index + 1,
-      name: randomFruit,
-    }
-  })
-}
-
-const options = generateMockOptions(300)
+const options = fruits.map(fruit => {
+  return { name: fruit, id: fruit.toLocaleLowerCase() }
+})
 
 export const Default: Story = {
   args: {
-    placeholder: 'Many items...',
+    placeholder: 'Many items...'
   },
   render: () => (
     <Select
-      label="Välj en frukt"
+      label='Välj en frukt'
       items={options}
     >
-      {(item) => <Item>{item.name}</Item>}
+      {item => <Item>{item.name}</Item>}
     </Select>
-  ),
+  )
 }
 
 export const Invalid: Story = {
   args: {
     isInvalid: true,
-    errorMessage: 'Fel!',
+    errorMessage: 'Fel!'
   },
-  render: (args) => (
+  render: args => (
     <Select {...args}>
       <Item>Apple</Item>
       <Item>Lemon</Item>
     </Select>
-  ),
+  )
 }
 
 export const disabled: Story = {
   args: {
-    isDisabled: true,
+    isDisabled: true
   },
   parameters: {
     docs: {
       description: {
-        story: 'Avoid using disabled',
-      },
-    },
+        story: 'Avoid using disabled'
+      }
+    }
   },
-  render: (args) => (
+  render: args => (
     <Select {...args}>
       <Item>Hej</Item>
     </Select>
-  ),
+  )
 }
