@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, signalRed10,smBreakpoint, gray10, gray20, gray50, black, signalRed100, blue100, mediumWeight, regularWeight, inputText from tokens;
+@value display, signalRed10,smBreakpoint, gray10, gray20, gray50, black, signalRed100, blue100, mediumWeight, regularWeight, inputText, focus from tokens;
 
 .textArea {
   all: unset;
@@ -19,9 +19,9 @@
     background-color: gray20;
   }
 
-  &[data-focused] {
-    outline-offset: 2px;
-    outline: 2px solid black;
+  &[data-focused],
+  &[data-focus-visible] {
+    box-shadow: focus;
   }
 
   &[data-invalid] {
