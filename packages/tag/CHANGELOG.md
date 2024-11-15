@@ -1,3 +1,13 @@
+## 0.1.1 (2024-11-15)
+
+### 🩹 Fixes
+
+- **tag:** fix project ([97e289b0](https://github.com/migrationsverket/midas/commit/97e289b0))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.0 (2024-11-15)
 
 ### 🚀 Features

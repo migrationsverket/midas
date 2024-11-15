@@ -1,3 +1,17 @@
+## 0.1.2 (2024-11-15)
+
+### 🩹 Fixes
+
+- **multi-select:** fix project ([ced8ad13](https://github.com/migrationsverket/midas/commit/ced8ad13))
+
+### 🧱 Updated Dependencies
+
+- Updated tag to 0.1.1
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.1 (2024-11-15)
 
 This was a version bump only for multi-select to align it with other projects, there were no code changes.

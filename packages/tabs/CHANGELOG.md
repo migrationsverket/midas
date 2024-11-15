@@ -1,3 +1,13 @@
+## 1.0.3 (2024-11-15)
+
+### 🩹 Fixes
+
+- **tabs:** fix styles ([83404036](https://github.com/migrationsverket/midas/commit/83404036))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-11-15)
 
 ### 🩹 Fixes

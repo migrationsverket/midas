@@ -1,3 +1,13 @@
+## 1.0.4 (2024-11-15)
+
+### 🩹 Fixes
+
+- **combobox:** fix style ([f754c720](https://github.com/migrationsverket/midas/commit/f754c720))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes
