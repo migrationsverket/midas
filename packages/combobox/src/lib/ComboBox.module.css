@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, black, signalRed130, smBreakpoint, gray50, gray20, gray10,focus, backgroundSecondary from tokens;
+@value display, black, signalRed130, smBreakpoint, gray50, gray20, gray10, focus, backgroundSecondary from tokens;
 
 .input {
   width: -webkit-fill-available;
