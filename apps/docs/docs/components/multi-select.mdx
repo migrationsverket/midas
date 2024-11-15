@@ -49,11 +49,21 @@ import { MultiSelect } from '@midas-ds/multi-select'
 
 ```mermaid
 flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
-    A -->|Ja| B[Använd Checkbox]
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary
-    C -->|Ja| E[Använd Select]:::primary
-    C -->|Nej| D[Använd Radio]
+  A[Hur många val ska presenteras för användaren?]:::primary
+  A ---> B[1]
+  A ---> C[2 - 4]
+  A ---> D[5 - 10]:::primary
+  A ---> E[11 +]
+  B ---> F[Använd Checkbox]
+  C ---> G[Hur många val kan göras?]
+  G --->|Flera| F
+  G --->|Ett| H[Använd Radio]
+  D ---> I[Hur många val kan göras?]:::primary
+  I --->|Flera| J[Använd MultiSelect]:::primary
+  I --->|Ett| K[Använd Select]
+  E ---> L[Hur många val kan göras?]
+  L -.Flera.-> M[Använd ComboBox multiple]
+  L --->|Ett| N[Använd ComboBox]
 ```
 
 ## Beroenden

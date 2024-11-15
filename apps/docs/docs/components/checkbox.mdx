@@ -152,12 +152,21 @@ Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". D
 
 ```mermaid
 flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
-    A -->|Ja| B[Använd Checkbox]:::primary
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]
-    C -->|Ja| E[Använd Select]
-    C -->|Nej| D[Använd Radio]
-
+  A[Hur många val ska presenteras för användaren?]:::primary
+  A ---> B[1]:::primary
+  A ---> C[2 - 4]:::primary
+  A ---> D[5 - 10]
+  A ---> E[11 +]
+  B ---> F[Använd Checkbox]:::primary
+  C ---> G[Hur många val kan göras?]:::primary
+  G --->|Flera| F:::primary
+  G --->|Ett| H[Använd Radio]
+  D ---> I[Hur många val kan göras?]
+  I --->|Flera| J[Använd MultiSelect]
+  I --->|Ett| K[Använd Select]
+  E ---> L[Hur många val kan göras?]
+  L -.Flera.-> M[Använd ComboBox multiple]
+  L --->|Ett| N[Använd ComboBox]
 ```
 
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
