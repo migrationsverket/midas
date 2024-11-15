@@ -1,7 +1,7 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, white, gray10 from tokens;
 
-.overlay {
+:global .react-aria-ModalOverlay {
   position: fixed;
   inset: 0;
   background: rgba(45 0 0 / 30%);
