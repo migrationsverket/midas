@@ -3,7 +3,8 @@ import { MultiSelect } from './MultiSelect'
 
 const meta: Meta<typeof MultiSelect> = {
   component: MultiSelect,
-  title: 'Components/MultiSelect'
+  title: 'Components/MultiSelect',
+  tags: ['autodocs']
 }
 export default meta
 type Story = StoryObj<typeof MultiSelect>
