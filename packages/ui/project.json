@@ -81,6 +81,13 @@
         }
       }
     },
+    "pre-release-components": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["nx release --skip-publish", "nx run-many -t lint --fix"],
+        "parallel": false
+      }
+    },
     "release-components": {
       "executor": "nx:run-commands",
       "options": {
