@@ -3,10 +3,9 @@
 import styles from './Modal.module.css'
 import {
   Dialog,
-  DialogProps,
   DialogTrigger,
   Modal as ModalAria,
-  ModalOverlay,
+  ModalOverlayProps,
   OverlayTriggerStateContext
 } from 'react-aria-components'
 import { X } from 'lucide-react'
@@ -20,6 +19,10 @@ interface MidasModalBody
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
+  children: React.ReactNode
+}
+
+interface MidasModal extends ModalOverlayProps {
   children: React.ReactNode
 }
 
@@ -50,17 +53,13 @@ export const ModalBody: React.FC<MidasModalBody> = ({ children, ...rest }) => {
   )
 }
 
-export const Modal: React.FC<DialogProps> = ({ children, ...rest }) => {
+export const Modal: React.FC<MidasModal> = ({ children, ...rest }) => {
   return (
-    <ModalOverlay className={styles.overlay}>
-      <ModalAria className={styles.modal}>
-        <Dialog
-          className={styles.modalDialog}
-          {...rest}
-        >
-          {children}
-        </Dialog>
-      </ModalAria>
-    </ModalOverlay>
+    <ModalAria
+      className={styles.modal}
+      {...rest}
+    >
+      <Dialog className={styles.modalDialog}>{children}</Dialog>
+    </ModalAria>
   )
 }
