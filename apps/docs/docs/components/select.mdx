@@ -12,9 +12,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Introduktion
 
-En Select visar en hopfällbar lista med alternativ och låter en användare välja ett av dem.
-
-Select är en typ av inmatningsfält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas
+Select är en typ av inmatningsfält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [MultiSelect](./multi-select.mdx) eller [Checkbox](./checkbox.mdx) som ska användas.
 Om det är färre alternativ än fem används med fördel [Radio](./radio.mdx) istället.
 
 ## Installation och användning
@@ -38,18 +36,6 @@ import { Item, Select } from '@midas-ds/select'
 </LiveCodeBlock>
 
 ## Riktlinjer
-
-### Val av komponent
-
-```mermaid
-flowchart TD;
-    A[Ska användaren kunna välja mer än ett alternativ?]:::primary
-    A -->|Ja| B[Använd Checkbox]
-    A -->|Nej| C[Är det fler än fyra alternativ att välja mellan?]:::primary
-    C -->|Ja| E[Använd Select]:::primary
-    C -->|Nej| D[Använd Radio]
-    
-```
 
 ## Beroenden
 
