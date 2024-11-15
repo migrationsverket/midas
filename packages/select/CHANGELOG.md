@@ -1,3 +1,18 @@
+## 1.0.2 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **select:** change the styling in focus visible to a variable ([8353e472](https://github.com/migrationsverket/midas/commit/8353e472))
+- **select:** change box-shadow to border ([6784d149](https://github.com/migrationsverket/midas/commit/6784d149))
+- **select:** update icon size ([c9560e84](https://github.com/migrationsverket/midas/commit/c9560e84))
+- **modal:** update modal docs ([62f25465](https://github.com/migrationsverket/midas/commit/62f25465))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-24)
 
 ### 🩹 Fixes

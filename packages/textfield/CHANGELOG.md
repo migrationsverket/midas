@@ -1,3 +1,21 @@
+## 1.0.3 (2024-11-15)
+
+### 🩹 Fixes
+
+- **textfield:** fix focus ([202b8f64](https://github.com/migrationsverket/midas/commit/202b8f64))
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **textfield:** remove focus animation ([b2fb4025](https://github.com/migrationsverket/midas/commit/b2fb4025))
+- **textfield:** update icon size ([f3afab85](https://github.com/migrationsverket/midas/commit/f3afab85))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.1.1
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-11-01)
 
 ### 🩹 Fixes

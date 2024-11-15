@@ -1,3 +1,20 @@
+## 1.0.2 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **date-picker:** new focus state ([0c1d4049](https://github.com/migrationsverket/midas/commit/0c1d4049))
+- **date-picker:** add variable ([26ecb155](https://github.com/migrationsverket/midas/commit/26ecb155))
+- **date-picker:** change the styling in focus visible to a variable ([1b206943](https://github.com/migrationsverket/midas/commit/1b206943))
+- **date-picker:** update icon size ([0ecaa4a9](https://github.com/migrationsverket/midas/commit/0ecaa4a9))
+- **date-picker:** fix deps ([56d7613c](https://github.com/migrationsverket/midas/commit/56d7613c))
+- **modal:** update modal docs ([62f25465](https://github.com/migrationsverket/midas/commit/62f25465))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-24)
 
 ### 🩹 Fixes

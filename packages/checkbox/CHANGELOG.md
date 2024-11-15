@@ -1,3 +1,18 @@
+## 1.0.2 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **checkbox:** change the styling in focus visible to a variable ([fcd76924](https://github.com/migrationsverket/midas/commit/fcd76924))
+- **checkbox:** select all can be indeterminate ([8d6c8c3b](https://github.com/migrationsverket/midas/commit/8d6c8c3b))
+- **checkbox:** adjust styling ([b663ef15](https://github.com/migrationsverket/midas/commit/b663ef15))
+- **modal:** update modal docs ([62f25465](https://github.com/migrationsverket/midas/commit/62f25465))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-10-24)
 
 ### 🩹 Fixes

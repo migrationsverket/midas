@@ -1,3 +1,16 @@
+## 1.0.4 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **search-field:** inherit focus from textField ([6657845a](https://github.com/migrationsverket/midas/commit/6657845a))
+- **search-field:** update icon size ([149abd6e](https://github.com/migrationsverket/midas/commit/149abd6e))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-07)
 
 ### 🩹 Fixes

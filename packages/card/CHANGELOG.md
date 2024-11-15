@@ -1,3 +1,29 @@
+# 2.0.0 (2024-11-15)
+
+### 🚀 Features
+
+- ⚠️  **card:** new api, replace button with stretched link ([a87d0210](https://github.com/migrationsverket/midas/commit/a87d0210))
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **card:** better column stretching ([67fa08e0](https://github.com/migrationsverket/midas/commit/67fa08e0))
+- **card:** update deps ([d0bde7c6](https://github.com/migrationsverket/midas/commit/d0bde7c6))
+- **modal:** update modal docs ([62f25465](https://github.com/migrationsverket/midas/commit/62f25465))
+
+### ⚠️  Breaking Changes
+
+- **card:** new card api
+
+### 🧱 Updated Dependencies
+
+- Updated link to 1.1.0
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-10-24)
 
 ### 🩹 Fixes

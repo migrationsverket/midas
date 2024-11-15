@@ -1,3 +1,30 @@
+## 1.3.0 (2024-11-15)
+
+### 🚀 Features
+
+- **link-button:** add full width and delete unuse code ([7cc43d84](https://github.com/migrationsverket/midas/commit/7cc43d84))
+- **link-button:** add full width ([3a183ce5](https://github.com/migrationsverket/midas/commit/3a183ce5))
+- **link-button:** add own style, delete unuse codes, and fix the stories ([14895149](https://github.com/migrationsverket/midas/commit/14895149))
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **link-button:** change justify-content to center to make fullwidth look better ([dae79327](https://github.com/migrationsverket/midas/commit/dae79327))
+- **link-button:** remove the duplicated code ([f5a3a40e](https://github.com/migrationsverket/midas/commit/f5a3a40e))
+- **button:** change the styling in focus visible to a variable ([5f2f9128](https://github.com/migrationsverket/midas/commit/5f2f9128))
+- **link-button:** change gap to 0.5rem ([8d1e94a5](https://github.com/migrationsverket/midas/commit/8d1e94a5))
+- **link-button:** add variants ([641dad30](https://github.com/migrationsverket/midas/commit/641dad30))
+- **link-button:** adjust styles + add focus styles ([830c8809](https://github.com/migrationsverket/midas/commit/830c8809))
+- **link-button:** fix padding ([4e67d492](https://github.com/migrationsverket/midas/commit/4e67d492))
+- **link-button:** fix styling justify-content ([71ff50d8](https://github.com/migrationsverket/midas/commit/71ff50d8))
+- **link-button:** fix dependency ([78571259](https://github.com/migrationsverket/midas/commit/78571259))
+
+### ❤️  Thank You
+
+- jabir Khalil
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 1.2.0 (2024-11-01)
 
 ### 🚀 Features

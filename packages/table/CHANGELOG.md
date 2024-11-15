@@ -1,3 +1,19 @@
+## 1.0.3 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **table:** update icon size ([7de821b8](https://github.com/migrationsverket/midas/commit/7de821b8))
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 1.0.2
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-11-01)
 
 ### 🩹 Fixes

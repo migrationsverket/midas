@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/tag",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "lucide-react": "^0.453.0",
-    "@midas-ds/button": "1.1.0"
+    "@midas-ds/button": "1.1.1"
   },
   "peerDependencies": {
     "react": "^18.2.0"

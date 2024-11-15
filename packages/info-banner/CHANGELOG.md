@@ -1,3 +1,19 @@
+## 1.0.4 (2024-11-15)
+
+### 🩹 Fixes
+
+- fix the link path in readme ([3cec027a](https://github.com/migrationsverket/midas/commit/3cec027a))
+- **info-banner:** update icon size ([e137456b](https://github.com/migrationsverket/midas/commit/e137456b))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.1.1
+
+### ❤️  Thank You
+
+- jabir Khalil
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-01)
 
 ### 🩹 Fixes
