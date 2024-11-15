@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/multi-select",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@midas-ds/tag": "0.1.1",
+    "@midas-ds/tag": "0.1.2",
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.453.0",
     "@midas-ds/textfield": "1.0.3",

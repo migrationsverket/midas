@@ -1,3 +1,9 @@
+## 0.1.3 (2024-11-15)
+
+### 🧱 Updated Dependencies
+
+- Updated tag to 0.1.2
+
 ## 0.1.2 (2024-11-15)
 
 ### 🩹 Fixes

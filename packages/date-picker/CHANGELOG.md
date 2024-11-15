@@ -1,3 +1,13 @@
+## 1.0.3 (2024-11-15)
+
+### 🩹 Fixes
+
+- **date-picker:** dependency update ([cd6842a4](https://github.com/migrationsverket/midas/commit/cd6842a4))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-11-15)
 
 ### 🩹 Fixes

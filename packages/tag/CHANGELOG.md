@@ -1,3 +1,13 @@
+## 0.1.2 (2024-11-15)
+
+### 🩹 Fixes
+
+- **tag:** dependency update ([108c6e35](https://github.com/migrationsverket/midas/commit/108c6e35))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.1 (2024-11-15)
 
 ### 🩹 Fixes

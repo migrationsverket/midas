@@ -1,3 +1,13 @@
+## 1.0.5 (2024-11-15)
+
+### 🩹 Fixes
+
+- **search-field:** dependency update ([92777f52](https://github.com/migrationsverket/midas/commit/92777f52))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.4 (2024-11-15)
 
 ### 🩹 Fixes

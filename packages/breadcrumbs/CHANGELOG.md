@@ -1,3 +1,13 @@
+## 1.0.4 (2024-11-15)
+
+### 🩹 Fixes
+
+- **breadcrumbs:** dependency update ([ab6cf967](https://github.com/migrationsverket/midas/commit/ab6cf967))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes

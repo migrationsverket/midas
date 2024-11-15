@@ -1,3 +1,20 @@
+## 0.7.9 (2024-11-15)
+
+### 🩹 Fixes
+
+- **ui:** dependency update + added multi-select ([1cf07294](https://github.com/migrationsverket/midas/commit/1cf07294))
+
+### 🧱 Updated Dependencies
+
+- Updated multi-select to 0.1.3
+- Updated search-field to 1.0.5
+- Updated breadcrumbs to 1.0.4
+- Updated date-picker to 1.0.3
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.6 (2024-11-01)
 
 ### 🩹 Fixes
