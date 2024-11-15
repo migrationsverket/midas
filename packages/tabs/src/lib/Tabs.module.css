@@ -25,10 +25,6 @@
     outline: none;
     box-shadow: focus;
   }
-
-  &:focus {
-    outline: none;
-  }
 }
 
 .panel {
@@ -38,9 +34,5 @@
   &:focus-visible {
     outline: none;
     box-shadow: focus;
-  }
-
-  &:focus {
-    outline: none;
   }
 }
