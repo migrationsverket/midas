@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/radio@1.0.1",
-  "_rev": "7-c37f72c62143407f474660704552370b",
+  "_id": "@midas-ds/radio@1.0.2",
+  "_rev": "8-a311dbb6ad19e5e775f6ea332a1937dd",
   "name": "@midas-ds/radio",
   "dist-tags": {
-    "latest": "1.0.1"
+    "latest": "1.0.2"
   },
   "versions": [
     "0.6.1",
@@ -11,17 +11,19 @@
     "0.6.3",
     "0.7.0",
     "1.0.0",
-    "1.0.1"
+    "1.0.1",
+    "1.0.2"
   ],
   "time": {
     "created": "2024-09-10T14:37:59.126Z",
-    "modified": "2024-10-24T13:26:37.615Z",
+    "modified": "2024-11-15T14:06:16.891Z",
     "0.6.1": "2024-09-10T14:37:59.408Z",
     "0.6.2": "2024-09-12T12:42:10.930Z",
     "0.6.3": "2024-09-19T12:26:24.985Z",
     "0.7.0": "2024-10-07T12:18:39.699Z",
     "1.0.0": "2024-10-18T13:40:39.975Z",
-    "1.0.1": "2024-10-24T13:26:37.442Z"
+    "1.0.1": "2024-10-24T13:26:37.442Z",
+    "1.0.2": "2024-11-15T14:06:16.681Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -36,8 +38,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 9973,
-  "version": "1.0.1",
+  "_contentLength": 11477,
+  "version": "1.0.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -60,15 +62,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-YdDOfb2TgN9l7Itr8PsW47G3Azz/nQKdndDAp8wal1PXNBsjkbSJVioIf11I3R9UEHOVf0MZr/C8oLCYv8gI1w==",
-    "shasum": "4807487bc05e8ccbe7e880be602e3f69c9c5f8ef",
-    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.1.tgz",
+    "integrity": "sha512-lXlSSg22HycQ+xOwEcjvEn1uFi4fD43jII5Ihft/9482Wsj8zIdI4rxNF3594zMojO0wi+uqR5XKfWY8Tdsgmg==",
+    "shasum": "971346befd1ecfea2eb6988617d4ea69482e5a27",
+    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.2.tgz",
     "fileCount": 9,
-    "unpackedSize": 126274,
+    "unpackedSize": 126783,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIGLt9dUVDiB24Uy43XXA3pUdXIzj6EUdk66c7XdpxGSnAiAMF3miI/byvsgwOmrNUt7E/W98QzeUk/tEAsexpvi9HQ=="
+        "sig": "MEYCIQD6XvRofNtdxsySaKFOD+lRe9KZ1+d7sYUHrEJiQsnKSAIhAJvT2sBnAuBIUOaW2+IuIM8FIYb7B1GJDHzj2mS/2lC/"
       }
     ]
   },
@@ -76,7 +78,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/radio_1.0.1_1729776397186_0.24599049100813497"
+    "tmp": "tmp/radio_1.0.2_1731679576352_0.020403986140226982"
   },
   "_hasShrinkwrap": false
 }
