@@ -5,6 +5,8 @@ import dts from 'vite-plugin-dts'
 import * as path from 'path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import preserveDirectives from 'rollup-preserve-directives'
 
 export default defineConfig({
   root: __dirname,
@@ -16,14 +18,11 @@ export default defineConfig({
     dts({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
-    })
+    }),
+    libInjectCss(),
+    preserveDirectives()
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
-  // Configuration for building your library.
-  // See: https://vitejs.dev/guide/build.html#library-mode
+
   build: {
     outDir: '../../dist/packages/multi-select',
     emptyOutDir: true,
@@ -31,6 +30,7 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true
     },
+    cssCodeSplit: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
@@ -42,7 +42,10 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime']
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      output: {
+        preserveModules: false
+      }
     }
   }
 })
