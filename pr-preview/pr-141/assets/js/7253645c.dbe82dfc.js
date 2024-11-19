@@ -99,7 +99,8 @@ function _createMdxContent(props) {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
       name: 'MultiSelect',
       info: data_select,
-      friendlyName: 'Flerval, multiväljare, dropdown'
+      friendlyName: 'Flerval, multiväljare, dropdown',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
