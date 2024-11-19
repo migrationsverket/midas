@@ -11,6 +11,7 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   color: var(--ifm-color-content);
+  margin-bottom: 1rem;
 
   :has(:not(.borderBottom)) {
     border-bottom: 0;

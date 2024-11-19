@@ -46,7 +46,7 @@ TextField validerar automatiskt på `type` och `isRequired` eller ett eget `patt
 
 <LiveCodeBlock scope={{ TextField }}>
   {`<TextField
-    label="Skriv in din e-post *"
+    label="Skriv in din e-post"
     description="Obligatorisk"
     isRequired
     errorMessage="Felaktig e-postadress"
@@ -80,12 +80,20 @@ Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. 
         if (validation.validationDetails.valueMissing) return "Det måste finnas en frukt.";
         if (validation.validationDetails.badInput) return "Det där är inte en frukt.";
         if (validation.validationDetails.customError) return "Du måste skriva frukt.";
-        if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
-        if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
+
+        // Det finns flertalet typer på validationDetails
+        // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
+        // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
+        // med flera
+
         return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
     }}
+
 />`}
+
 </LiveCodeBlock>
+
+Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
 
 ### Personnummer
 
