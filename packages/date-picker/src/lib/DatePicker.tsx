@@ -19,8 +19,7 @@ import {
   Heading,
   Popover,
   RangeCalendar,
-  Calendar,
-  TimeField
+  Calendar
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
