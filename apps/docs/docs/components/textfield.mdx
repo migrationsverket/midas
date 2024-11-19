@@ -3,15 +3,21 @@ title: TextField
 description: Använd ett textfält när användaren ska fylla i en rad med text.
 ---
 
-import { PropTable } from '@site/src/components/propsTable';
-import { TextField } from '@midas-ds/textfield';
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { TextField } from '@midas-ds/textfield'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/textfield.json'
 import { Grid, GridItem } from '@midas-ds/grid'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'TextField'} info={Info} friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}/>
-
+<ComponentHeader
+  name={'TextField'}
+  info={Info}
+  friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}
+/>
 
 ## Introduktion
 
@@ -24,21 +30,22 @@ npm install @midas-ds/textfield
 ```
 
 ```tsx
-import { TextField } from '@midas-ds/textfield';
+import { TextField } from '@midas-ds/textfield'
 ```
 
-<LiveCodeBlock scope={{TextField}}>
-{`<TextField 
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField 
     label={'Etikett'}
     description={'Beskrivning'}
 />`}
 </LiveCodeBlock>
 
 ## Validering
+
 TextField validerar automatiskt på `type` och `isRequired` eller ett eget `pattern`. Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner.
 
-<LiveCodeBlock scope={{TextField}}>
-{`<TextField
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField
     label="Skriv in din e-post *"
     description="Obligatorisk"
     isRequired
@@ -47,34 +54,54 @@ TextField validerar automatiskt på `type` och `isRequired` eller ett eget `patt
 />`}
 </LiveCodeBlock>
 
-
 ### Egen validering
+
 Det går också att definiera en egen funktion för validering:
 
-<LiveCodeBlock scope={{TextField}}>
-{`<TextField
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField
     label="Skriv in frukt"
     errorMessage="Du måste skriva 'frukt'!"
     validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
 />`}
 </LiveCodeBlock>
 
+### Egna felmeddelanden
+
+Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel.
+
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField
+    label="Skriv in frukt"
+    errorMessage="Du måste skriva 'frukt'!"
+    isRequired
+    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
+    errorMessage={(validation) => {
+        if (validation.validationDetails.valueMissing) return "Det måste finnas en frukt.";
+        if (validation.validationDetails.badInput) return "Det där är inte en frukt.";
+        if (validation.validationDetails.customError) return "Du måste skriva frukt.";
+        if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
+        if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
+        return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
+    }}
+/>`}
+</LiveCodeBlock>
 
 ### Personnummer
 
-Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer. 
+Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer.
 
-Följande RegEx används <br /> ```^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$```
+Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$`
+
 - Frivilliga sekelsiffor: 19 eller 20 `(?:19:20)?`
 - Verifierar att det är minst två siffror i början av personnumret (ÅÅ)
 - Verifierar att MM är 01 - 12 `(?:0[1-9]|1[0-2])`
 - Verifierar att DD är 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`
-- Tillåter avgränsare: `+`, `-`, `blanksteg` eller ingen, samt 
+- Tillåter avgränsare: `+`, `-`, `blanksteg` eller ingen, samt
 - Verifierar att det är fyra siffror efter avgränsaren `(?:[-+ ]?\\d{4})?`
 
-
-<LiveCodeBlock scope={{TextField}}>
-{`<TextField 
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField 
     type="text"
     name="ssn"
     label="Personnummer"
@@ -89,8 +116,8 @@ Följande RegEx används <br /> ```^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]
 
 Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 
-<LiveCodeBlock scope={{TextField}}>
-{`<TextField 
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField 
     type="password" 
     name="pw" 
     label="Skriv in ditt lösenord" 
@@ -102,10 +129,11 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 ## Riktlinjer
 
 ### Desktop
+
 Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./flex.mdx), så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt
 
-<LiveCodeBlock scope={{Grid, TextField, GridItem}}>
-{`<Grid fluid={true}>
+<LiveCodeBlock scope={{ Grid, TextField, GridItem }}>
+  {`<Grid fluid={true}>
     <GridItem col={2}>
       <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
     </GridItem>
@@ -117,4 +145,4 @@ Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./
 
 ## Beroenden
 
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />
