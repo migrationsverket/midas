@@ -1,3 +1,13 @@
+## 1.0.4 (2024-11-19)
+
+### 🩹 Fixes
+
+- **date-picker:** spacing on timefields ([9d544555](https://github.com/migrationsverket/midas/commit/9d544555))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes
