@@ -1,3 +1,10 @@
+## 0.7.11 (2024-11-19)
+
+### 🧱 Updated Dependencies
+
+- Updated search-field to 1.0.6
+- Updated date-picker to 1.0.5
+
 ## 0.7.10 (2024-11-19)
 
 ### 🧱 Updated Dependencies
