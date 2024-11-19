@@ -11,7 +11,6 @@ import {
   ValidationResult
 } from 'react-aria-components'
 import styles from './TextField.module.css'
-import { TriangleAlert } from 'lucide-react'
 import { Button } from '@midas-ds/button'
 
 export interface TextFieldProps extends AriaTextFieldProps {
@@ -132,15 +131,7 @@ export const InputWrapper = ({
           {description}
         </Text>
       )}
-      <FieldError className={styles.fieldError}>
-        <>
-          <TriangleAlert
-            size={20}
-            aria-hidden
-          />
-          {errorMessage}
-        </>
-      </FieldError>
+      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
       {children}
     </div>
   )

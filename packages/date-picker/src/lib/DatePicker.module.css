@@ -49,6 +49,7 @@
 
   & div[data-readonly='true'] {
     color: gray60;
+    padding: 0 2px;
   }
 
   & div:focus-visible,
@@ -73,6 +74,12 @@
   & button {
     border: none;
     background-color: gray10;
+
+    &:focus-visible,
+    &[data-focus-visible] {
+      outline: none;
+      box-shadow: focus;
+    }
   }
 }
 
@@ -138,5 +145,10 @@
   & .day {
     text-align: center;
     padding: 0.75rem;
+  }
+
+  & div:focus-visible,
+  & div[data-focus-visible] {
+    outline: 2px solid black;
   }
 }

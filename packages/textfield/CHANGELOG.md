@@ -1,3 +1,13 @@
+## 1.0.4 (2024-11-19)
+
+### 🩹 Fixes
+
+- **textfield:** update error message docs + support ([beba7493](https://github.com/migrationsverket/midas/commit/beba7493))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/search-field",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -14,7 +14,7 @@
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.453.0",
-    "@midas-ds/textfield": "1.0.3",
+    "@midas-ds/textfield": "1.0.4",
     "@midas-ds/button": "1.1.1"
   },
   "repository": "https://github.com/migrationsverket/midas.git",

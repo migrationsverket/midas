@@ -1,3 +1,17 @@
+## 0.1.4 (2024-11-19)
+
+### 🩹 Fixes
+
+- **multi-select:** fix build ([3e64cdd4](https://github.com/migrationsverket/midas/commit/3e64cdd4))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.4
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.3 (2024-11-15)
 
 ### 🧱 Updated Dependencies

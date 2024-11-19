@@ -1,3 +1,20 @@
+## 0.7.11 (2024-11-19)
+
+### 🧱 Updated Dependencies
+
+- Updated search-field to 1.0.6
+- Updated date-picker to 1.0.5
+
+## 0.7.10 (2024-11-19)
+
+### 🧱 Updated Dependencies
+
+- Updated multi-select to 0.1.4
+- Updated date-picker to 1.0.4
+- Updated file-upload to 1.0.4
+- Updated textfield to 1.0.4
+- Updated textarea to 1.0.4
+
 ## 0.7.9 (2024-11-15)
 
 ### 🩹 Fixes
