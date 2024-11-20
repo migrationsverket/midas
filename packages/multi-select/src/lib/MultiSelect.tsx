@@ -173,7 +173,12 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
         </InputWrapper>
         <TagGroup
           aria-label='Valda'
-          onRemove={keys => list.remove(...keys)}
+          onRemove={keys => {
+            const newSelectedKeys = new Set(
+              [...list.selectedKeys].filter(key => !keys.has(key))
+            )
+            list.setSelectedKeys(newSelectedKeys)
+          }}
         >
           {Array.from(tagList).map(key => {
             const item = list.getItem(key)
