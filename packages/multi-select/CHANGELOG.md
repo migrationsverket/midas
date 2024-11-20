@@ -1,3 +1,13 @@
+## 0.1.5 (2024-11-20)
+
+### 🩹 Fixes
+
+- **multi-select:** change remove to update list ([a856f021](https://github.com/migrationsverket/midas/commit/a856f021))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.4 (2024-11-19)
 
 ### 🩹 Fixes

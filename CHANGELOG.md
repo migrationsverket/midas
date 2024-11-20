@@ -261,6 +261,7 @@ All notable changes to this project will be documented in this file. See [conven
 - textfield validation - ([c57c9fb](https://github.com/migrationsverket/midas/commits/c57c9fb2780e5e2b7dc5fcc73674dfab8dc43575)) - Wilhelm Hjelm
 - move mobile menu trigger - ([d18b1cc](https://github.com/migrationsverket/midas/commits/d18b1cc515776916077886bbf15537d272e05d41)) - Wilhelm Hjelm
 - no reference on multiselect - ([ea7cad4](https://github.com/migrationsverket/midas/commits/ea7cad4707f1135ebbb94901df63a69860f5a13b)) - Wilhelm Hjelm
+- updated info - ([10c421f](https://github.com/migrationsverket/midas/commits/10c421f539d8ee808c718af4f185dd96805693b6)) - Wilhelm Hjelm
 
 ### 🚧 Miscellaneous Chores
 
@@ -556,6 +557,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(multi-select)** validation - ([bdc09e9](https://github.com/migrationsverket/midas/commits/bdc09e908a10a1a3f3362042732c25bdff6fe320)) - Wilhelm Hjelm
 - **(multi-select)** fix project - ([ced8ad1](https://github.com/migrationsverket/midas/commits/ced8ad1394339c0ecda71227dc6a9bbcc5f2ad2a)) - Wilhelm Hjelm
 - **(multi-select)** fix build - ([3e64cdd](https://github.com/migrationsverket/midas/commits/3e64cdd45fab8bd72d23b805f652428516e1ac4e)) - Wilhelm Hjelm
+- **(multi-select)** change remove to update list - ([a856f02](https://github.com/migrationsverket/midas/commits/a856f0216f201b608524ff91620a26432286d2a1)) - Wilhelm Hjelm
 - **(radio)** remove padding - ([d091ca4](https://github.com/migrationsverket/midas/commits/d091ca412e9840f7a6f586667991eff1c802371a)) - Wilhelm Hjelm
 - **(radio)** new build - ([8ec235c](https://github.com/migrationsverket/midas/commits/8ec235ce95bcb252abc818133e7bb9f18e080b69)) - Wilhelm Hjelm
 - **(radio)** change padding on label and helper text - ([9064f56](https://github.com/migrationsverket/midas/commits/9064f56f76f738bf9f6d24f74f3078ec75bceef8)) - PHIEKS
