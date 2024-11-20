@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7470],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 73873:
+/***/ 30099:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_multi_select_mdx_725_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-multi-select-mdx-725.json
-const site_docs_components_multi_select_mdx_725_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/multi-select","title":"MultiSelect","description":"<ComponentHeader","source":"@site/docs/components/multi-select.mdx","sourceDirName":"components","slug":"/components/multi-select","permalink":"/pr-preview/pr-142/components/multi-select","draft":false,"unlisted":false,"tags":[{"inline":true,"label":"form","permalink":"/pr-preview/pr-142/tags/form"}],"version":"current","frontMatter":{"title":"MultiSelect","tags":["form"]},"sidebar":"sideBar","previous":{"title":"Modal","permalink":"/pr-preview/pr-142/components/modal"},"next":{"title":"Radio","permalink":"/pr-preview/pr-142/components/radio"}}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
+const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/pr-preview/pr-142/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text."},"sidebar":"sideBar","previous":{"title":"TextArea","permalink":"/pr-preview/pr-142/components/textarea"},"next":{"title":"Toast","permalink":"/pr-preview/pr-142/components/toast"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,30 +27,31 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
-// EXTERNAL MODULE: ./packages/multi-select/src/index.ts + 5 modules
-var src = __webpack_require__(21464);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./apps/docs/static/data/select.json
-var data_select = __webpack_require__(41229);
+;// ./apps/docs/static/data/textfield.json
+const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.4","_rev":"12-a925e74f2f6b8520dbb9c31801e7b429","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.4"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-11-19T14:48:42.751Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z","1.0.3":"2024-11-15T14:05:41.473Z","1.0.4":"2024-11-19T14:48:42.571Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":16607,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/button":"1.1.1"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"e2a88e481aaa098829e25a125a7767fcbc430170","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-22fB8UueqoFiKY6a3rUg1ePMy+Bvv0SxpQRCF6qYrlbl8VRqjR877eEFocp5ftPBHD4jGDj4iPHQlDYNbtO47w==","shasum":"316e4519513251030af4a6504a00de44c44aae20","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.4.tgz","fileCount":9,"unpackedSize":120795,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIG5g9OpMvmSJt5v6bWj2ofHcq2ZMEWinxW8KRca5lsU+AiEAyYTqTIa6H8YNAzSoszVkOO9USY9RbAmnW/q71gtameU="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.4_1732027722313_0.7306415528855694"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
+var grid_src = __webpack_require__(17172);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/multi-select.mdx
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'MultiSelect',
-	tags: [
-		'form'
-	]
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.'
 };
 const contentTitle = undefined;
 
 const assets = {
 
 };
+
 
 
 
@@ -70,12 +71,32 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
+  "value": "Validering",
+  "id": "validering",
+  "level": 2
+}, {
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
+}, {
+  "value": "Egna felmeddelanden",
+  "id": "egna-felmeddelanden",
+  "level": 3
+}, {
+  "value": "Personnummer",
+  "id": "personnummer",
+  "level": 3
+}, {
+  "value": "Lösenord",
+  "id": "lösenord",
+  "level": 2
+}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
 }, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
+  "value": "Desktop",
+  "id": "desktop",
   "level": 3
 }, {
   "value": "Beroenden",
@@ -88,29 +109,26 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
-    mermaid: "mermaid",
+    li: "li",
     p: "p",
     pre: "pre",
-    strong: "strong",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'MultiSelect',
-      info: data_select,
-      friendlyName: 'Flerval, multiväljare, dropdown',
-      overrideHeadlessLink: ""
+      name: 'TextField',
+      info: textfield_namespaceObject,
+      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "introduktion",
       children: "Introduktion"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["MultiSelect är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett eller flera"
-      }), " alternativ från en längre lista. Om det är endast är ett fåtal alternativ bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-142/components/checkbox",
-        children: "Checkbox"
-      }), " användas istället."]
+      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-142/components/textarea",
+        children: "TextArea"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -121,7 +139,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/select\n"
+            children: "npm install @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -130,7 +148,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/select\n"
+            children: "yarn add @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -139,37 +157,195 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/select\n"
+            children: "pnpm add @midas-ds/textfield\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { MultiSelect } from '@midas-ds/multi-select'\n"
+        children: "import { TextField } from '@midas-ds/textfield'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        MultiSelect: src/* MultiSelect */.K
+        TextField: src/* TextField */.A_
       },
-      children: `<MultiSelect
-      label="Vad är din favoritfrukt?"
-      placeholder="Välj en frukt"
-      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+      children: `<TextField 
+  label={'Etikett'}
+  description={'Beskrivning'}
 />`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in din e-post"
+  description="Obligatorisk"
+  isRequired
+  errorMessage="Felaktig e-postadress"
+  type="email"
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egen-validering",
+      children: "Egen validering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Det går också att definiera en egen funktion för validering:"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egna-felmeddelanden",
+      children: "Egna felmeddelanden"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  isRequired
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
+  errorMessage={(validation) => {
+      if (validation.validationDetails.valueMissing) return "Det måste finnas en frukt.";
+      if (validation.validationDetails.badInput) return "Det där är inte en frukt.";
+      if (validation.validationDetails.customError) return "Du måste skriva frukt.";
+
+      // Det finns flertalet typer på validationDetails
+      // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
+      // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
+      // med flera
+
+      return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
+  }}
+
+/>`
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
+        children: "React Arias dokumentation"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "personnummer",
+      children: "Personnummer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:19:20)?"
+        })]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|1[0-2])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|[12]\\\\d|3[01])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "+"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "-"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "blanksteg"
+        }), " eller ingen, samt"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:[-+ ]?\\\\d{4})?"
+        })]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="text"
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type={'password'}"
+      }), " för att kunna visa och dölja inmatad text."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="password" 
+  name="pw" 
+  label="Skriv in ditt lösenord" 
+  autoComplete="off"
+/>
+`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]:::primary\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+      id: "desktop",
+      children: "Desktop"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-142/components/grid",
+        children: "Grid"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-142/components/flex",
+        children: "Flex"
+      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Grid: grid_src/* Grid */.x,
+        TextField: src/* TextField */.A_,
+        GridItem: grid_src/* GridItem */.E
+      },
+      children: `<Grid fluid={true}>
+  <GridItem col={2}>
+    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+  </GridItem>
+  <GridItem col={8}>
+    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+  </GridItem>
+</Grid>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beroenden",
       children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_select
+      info: textfield_namespaceObject
     })]
   });
 }
@@ -221,118 +397,40 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 61813:
+/***/ 17172:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  S: () => (/* reexport */ Checkbox),
-  $: () => (/* reexport */ CheckboxGroup)
+  x: () => (/* reexport */ Grid),
+  E: () => (/* reexport */ GridItem)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Checkbox.mjs + 7 modules
-var dist_Checkbox = __webpack_require__(92466);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
-var Group = __webpack_require__(63899);
-;// ./packages/checkbox/src/lib/Checkbox.module.css
+;// ./packages/grid/src/lib/Grid.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Checkbox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","primaryBackground":"#143c50","blue80":"#5897b8","blue130":"#25607f","signalRed10":"#ffdfdf","signalRed100":"#e62323","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","signalRed130":"#b31b1b","white":"#ffffff","gray10":"#f2f2f2","gray40":"#cccccc","gray100":"#808080","gray50":"#bfbfbf","gray20":"#e6e6e6","regularWeight":"400","mediumWeight":"500","smBreakpoint":"(max-width: 767px)","borderSecondary":"#b3b3b3","wrap":"wrap_gmzk","checkboxInner":"checkboxInner_QnDn","checkbox":"checkbox_Uv4H","checkboxGroup":"checkboxGroup_uby9"});
+/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/checkbox/src/lib/Checkbox.tsx
-'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* Checkbox */.Sc,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Checkbox_module.checkboxInner,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-;// ./packages/checkbox/src/lib/CheckboxGroup.tsx
-'use client';var CheckboxGroup_excluded=["label","description","errorMessage","showSelectAll","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,showSelectAll=_ref.showSelectAll,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,CheckboxGroup_excluded);var _React$useState=react.useState(),isAllSelected=_React$useState[0],setIsAllSelected=_React$useState[1];var ToogleAll=function ToogleAll(){// Get the current state of the checkbox group
-var state=react.useContext(dist_Checkbox/* CheckboxGroupStateContext */.pf);// Retrieve all childern
-var childValues=react.Children.toArray(children).filter(react.isValidElement).map(function(child){return child.props.value;});// Toogle all values
-var toggleAll=function toggleAll(){if(isAllSelected!=='all'){setIsAllSelected('all');return state.setValue(['toggleAll'].concat(childValues));}setIsAllSelected('none');return state.setValue([]);};//listen and change the select all accordingly
-react.useEffect(function(){var amountOfChildren=childValues.length;var totalAmount=childValues.length+1;var currentAmount=state.value.length;if(currentAmount===0)setIsAllSelected('none');if(currentAmount>0&&currentAmount<amountOfChildren)setIsAllSelected('some');if(currentAmount!==totalAmount)state.removeValue('toggleAll');if(currentAmount===amountOfChildren&&!state.value.includes('toggleAll')){state.addValue('toggleAll');setIsAllSelected('all');}// eslint-disable-next-line react-hooks/exhaustive-deps
-},[childValues.length,state.value]);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox,{value:"toggleAll",isSelected:isAllSelected==='all',isIndeterminate:isAllSelected==='some',onChange:function onChange(){return toggleAll();},children:"V\xE4lj alla"});};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* CheckboxGroup */.$Q,Object.assign({className:Checkbox_module.checkboxGroup},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:Checkbox_module.wrap,children:[showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(ToogleAll,{}),children]})})}));};
-;// ./packages/checkbox/src/lib/index.ts
+;// ./packages/grid/src/lib/Grid.tsx
+var _excluded=["children","fluid"];/**
+ * Grid baserat på display: grid;
+ * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
+ *
+ * ### Children
+ * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
+ */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
+;// ./packages/grid/src/lib/GridItem.tsx
+var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
+var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
+;// ./packages/grid/src/lib/index.ts
 
-;// ./packages/checkbox/src/index.ts
-
-
-/***/ }),
-
-/***/ 21464:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  K: () => (/* reexport */ MultiSelect)
-});
-
-;// ./packages/multi-select/src/lib/MultiSelect.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const MultiSelect_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","button":"button_ICtj","multiSelect":"multiSelect_Eode","popover":"popover_jYDN","icon":"icon_D7C5","listBoxItem":"listBoxItem_c3_5"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 1 modules
-var Dialog = __webpack_require__(86484);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
-var Button = __webpack_require__(44080);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 5 modules
-var Popover = __webpack_require__(8119);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/GridList.mjs + 1 modules
-var GridList = __webpack_require__(65379);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
-var checkbox_src = __webpack_require__(61813);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
-var chevron_down = __webpack_require__(75107);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/tag/src/lib/Tag.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Tag_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray30":"#d9d9d9","gray20":"#e6e6e6","gray10":"#f2f2f2","backgroundSecondary":"#f2f2f2","button":"button_KL5r","tag":"tag_QfCn","dismissable":"dismissable_Ta3F","tagText":"tagText_tTSG","tagList":"tagList_CRsJ"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 37 modules
-var dist_TagGroup = __webpack_require__(2790);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 3 modules
-var button_src = __webpack_require__(81706);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/tag/src/lib/Tag.tsx
-var _excluded=["children"],_excluded2=["children","dismissable"];var TagGroup=function TagGroup(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagGroup */.CR,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{className:Tag_module.tagList,children:children})}));};var Tag=function Tag(_ref2){var children=_ref2.children,dismissable=_ref2.dismissable,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_TagGroup/* Tag */.vw,Object.assign({className:(0,clsx/* default */.A)(Tag_module.tag,dismissable&&Tag_module.dismissable)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Tag_module.tagText,children:children}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$,{variant:"icon",size:"small",className:Tag_module.button,slot:"remove",children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})]}));};
-;// ./packages/tag/src/index.ts
-
-// EXTERNAL MODULE: ./node_modules/@react-stately/data/dist/useListData.mjs
-var useListData = __webpack_require__(7424);
-;// ./packages/multi-select/src/lib/MultiSelect.tsx
-'use client';var MultiSelect=function MultiSelect(_ref){var label=_ref.label,description=_ref.description,items=_ref.items,onSelectionChange=_ref.onSelectionChange,selectedKeys=_ref.selectedKeys,defaultSelectedKeys=_ref.defaultSelectedKeys,isDisabled=_ref.isDisabled,isInvalid=_ref.isInvalid,errorMessage=_ref.errorMessage;var triggerRef=react.useRef(null);var _React$useState=react.useState(undefined),popoverWidth=_React$useState[0],setPopoverWidth=_React$useState[1];var list=(0,useListData/* useListData */.u)({initialItems:items,initialSelectedKeys:defaultSelectedKeys});react.useEffect(function(){var updatePopoverWidth=function updatePopoverWidth(){if(triggerRef.current){setPopoverWidth(triggerRef.current.offsetWidth-2);}};updatePopoverWidth();window.addEventListener('resize',updatePopoverWidth);return function(){window.removeEventListener('resize',updatePopoverWidth);};},[]);react.useEffect(function(){if(onSelectionChange)onSelectionChange(new Set(list.selectedKeys));},[list.selectedKeys,onSelectionChange]);react.useEffect(function(){if(selectedKeys)list.setSelectedKeys(new Set(selectedKeys));// eslint-disable-next-line react-hooks/exhaustive-deps
-},[selectedKeys]);var tagList=list.selectedKeys==='all'?new Set(list.items.map(function(item){return item.id;})):list.selectedKeys;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.multiSelect,"data-disabled":isDisabled,"data-invalid":isInvalid,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(utils/* Provider */.Kq,{values:[[// we should maybe add more here
-// [LabelContext, {...labelProps, ref: labelRef}],
-// [InputContext, {...inputProps, ref: inputOrTextAreaRef}],
-// [TextAreaContext, {...inputProps, ref: inputOrTextAreaRef}],
-// [TextContext, {
-//   slots: {
-//     description: descriptionProps,
-//     errorMessage: errorMessageProps
-//   }
-// }],
-FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){return list.remove.apply(list,keys);},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item.id,textValue:item.name,isDisabled:isDisabled,dismissable:true,children:item.name},item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
-;// ./packages/multi-select/src/index.ts
+;// ./packages/grid/src/index.ts
 
 
 /***/ }),
@@ -680,14 +778,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
-
-/***/ }),
-
-/***/ 41229:
-/***/ ((module) => {
-
-"use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/select@1.0.2","_rev":"9-14ca527d9f9604067816f5c154366d26","name":"@midas-ds/select","dist-tags":{"latest":"1.0.2"},"versions":["0.4.23","0.4.24","0.4.25","0.5.0","0.5.2","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:38:16.404Z","modified":"2024-11-15T14:06:18.498Z","0.4.23":"2024-09-10T14:38:16.733Z","0.5.0":"2024-09-12T06:52:21.974Z","0.4.24":"2024-09-12T12:44:35.219Z","0.4.25":"2024-09-26T08:45:56.205Z","0.5.2":"2024-10-07T12:21:23.062Z","1.0.0":"2024-10-18T13:40:43.787Z","1.0.1":"2024-10-24T13:26:40.048Z","1.0.2":"2024-11-15T14:06:18.268Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/select ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13573,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23","react-aria-components":"^1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Brl+7gHrAsFO0ymVskLU4KvJAb2U1UqXanpt2MEXUdWWotZDN0F8FVFRylGCX6Ir8nTnUHZyLAUO5P7Zfcp+dA==","shasum":"12ee726669a2b43ed8571ae6c9d63b28b2162655","tarball":"https://registry.npmjs.org/@midas-ds/select/-/select-1.0.2.tgz","fileCount":9,"unpackedSize":380905,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIHsICVf20rzywkIz47yP/vFLhalLUILE4r6XSUUEvwDhAiEAlv3vBYV+XceymoDCOOfeKRhaptEZG78WuLWM5+s1aT0="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/select_1.0.2_1731679578091_0.0945387888825211"},"_hasShrinkwrap":false}');
 
 /***/ })
 
