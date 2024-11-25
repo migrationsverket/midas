@@ -20,11 +20,6 @@ import {
   MidasToastState
 } from '@midas-ds/toast'
 
-import { DialogTrigger, Modal, ModalHeader, ModalBody } from '@midas-ds/modal'
-import { Flex, FlexItem } from '@midas-ds/flex'
-import { TextArea } from '@midas-ds/textarea'
-import { Heading } from 'react-aria-components'
-
 export function App() {
   return (
     <div className={styles.container}>
@@ -224,58 +219,6 @@ export function App() {
           <Button isDisabled>Disabled</Button>
         </div>
       </div>
-      <DialogTrigger>
-        <Button>Öppna modal</Button>
-        <Modal>
-          {({ close }) => (
-            <>
-              <ModalHeader />
-              <ModalBody
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '2rem'
-                }}
-              >
-                <Flex fluid={true}>
-                  <FlexItem>
-                    <Heading
-                      slot='title'
-                      style={{ margin: 0 }}
-                    >
-                      Vill du avsluta uppdraget?
-                    </Heading>
-                  </FlexItem>
-                </Flex>
-                <Flex fluid={true}>
-                  <FlexItem>
-                    <TextArea
-                      // eslint-disable-next-line jsx-a11y/no-autofocus
-                      autoFocus
-                      label='Ange anledning'
-                      description='Skriv anledning'
-                      maxCharacters={100}
-                    />
-                  </FlexItem>
-                </Flex>
-                <Flex fluid={true}>
-                  <FlexItem col='auto'>
-                    <Button onPress={close}>Spara korrespondens</Button>
-                  </FlexItem>
-                  <FlexItem>
-                    <Button
-                      onPress={close}
-                      variant='secondary'
-                    >
-                      Avbryt
-                    </Button>
-                  </FlexItem>
-                </Flex>
-              </ModalBody>
-            </>
-          )}
-        </Modal>
-      </DialogTrigger>
     </div>
   )
 }
