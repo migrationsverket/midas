@@ -23,8 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _midas_ds_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(81706);
 /* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(93294);
 /* harmony import */ var _midas_ds_textarea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(26196);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(57936);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(80697);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(80697);
 
 
 const frontMatter = {
@@ -120,68 +119,31 @@ function _createMdxContent(props) {
       })]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A, {
       scope: {
-        DialogTrigger: _midas_ds_modal__WEBPACK_IMPORTED_MODULE_5__.DialogTrigger,
         Button: _midas_ds_button__WEBPACK_IMPORTED_MODULE_6__/* .Button */ .$,
         Modal: _midas_ds_modal__WEBPACK_IMPORTED_MODULE_5__/* .Modal */ .a,
-        ModalHeader: _midas_ds_modal__WEBPACK_IMPORTED_MODULE_5__.ModalHeader,
-        ModalBody: _midas_ds_modal__WEBPACK_IMPORTED_MODULE_5__.ModalBody,
         Flex: _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__/* .Flex */ .s,
-        FlexItem: _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__/* .FlexItem */ .Z,
-        Heading: react_aria_components__WEBPACK_IMPORTED_MODULE_10__/* .Heading */ .D,
-        TextArea: _midas_ds_textarea__WEBPACK_IMPORTED_MODULE_8__/* .TextArea */ .f
+        FlexItem: _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__/* .FlexItem */ .Z
       },
-      children: `<DialogTrigger>
-  <Button>Öppna ansökan</Button>
-  <Modal>
-      {({ close }) => (
-          <>
-              <ModalHeader />
-              <ModalBody
-              style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '2rem'
-              }}
+      children: `<>
+  <Button onPress={setIsOpen}>Radera frukter</Button>
+  <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
+      <p>Är du säker? De går inte att återskapa.</p>
+      <Flex fluid={true}>
+          <FlexItem col='auto'>
+              <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
+          </FlexItem>
+          <FlexItem>
+              <Button
+                  onPress={() => setIsOpen(false)}
+                  variant='secondary'
               >
-              <Flex fluid={true}>
-                  <FlexItem>
-                    <Heading
-                        slot='title'
-                        style={{ margin: 0 }}
-                    >
-                        Vill du avsluta uppdraget?
-                    </Heading>
-                  </FlexItem>
-              </Flex>
-              <Flex fluid={true}>
-                  <FlexItem>
-                    <TextArea
-                        autoFocus
-                        label='Ange anledning'
-                        description='Skriv anledning'
-                        maxCharacters={100}
-                    />
-                  </FlexItem>
-              </Flex>
-              <Flex fluid={true}>
-                  <FlexItem col='auto'>
-                    <Button onPress={close}>Spara korrespondens</Button>
-                  </FlexItem>
-                  <FlexItem>
-                    <Button
-                        onPress={close}
-                        variant='secondary'
-                    >
-                        Avbryt
-                    </Button>
-                  </FlexItem>
-              </Flex>
-              </ModalBody>
-          </>
-      )}
+                  Avbryt
+              </Button>
+          </FlexItem>
+      </Flex>
   </Modal>
-</DialogTrigger>
-`
+
+</>`
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
       id: "ikoner-på-button",
       children: "Ikoner på Button"
@@ -193,7 +155,7 @@ function _createMdxContent(props) {
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A, {
       scope: {
-        Plus: lucide_react__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .A,
+        Plus: lucide_react__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .A,
         Button: _midas_ds_button__WEBPACK_IMPORTED_MODULE_6__/* .Button */ .$
       },
       children: `<Button
@@ -488,91 +450,10 @@ const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 
 /***/ }),
 
-/***/ 57936:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   D: () => (/* binding */ $5cb03073d3f54797$export$a8a3e93435678ff9)
-/* harmony export */ });
-/* harmony import */ var _RSPContexts_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32373);
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-
-
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-function $5cb03073d3f54797$var$Heading(props, ref) {
-    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, (0, _RSPContexts_mjs__WEBPACK_IMPORTED_MODULE_2__/* .HeadingContext */ .A3));
-    let { children: children, level: level = 3, className: className, ...domProps } = props;
-    let Element = `h${level}`;
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, {
-        ...domProps,
-        ref: ref,
-        className: className !== null && className !== void 0 ? className : 'react-aria-Heading'
-    }, children);
-}
-const $5cb03073d3f54797$export$a8a3e93435678ff9 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($5cb03073d3f54797$var$Heading);
-
-
-
-//# sourceMappingURL=Heading.module.js.map
-
-
-/***/ }),
-
-/***/ 32373:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A3: () => (/* binding */ $4e85f108e88277b8$export$d688439359537581),
-/* harmony export */   BP: () => (/* binding */ $4e85f108e88277b8$export$b085522c77523c51)
-/* harmony export */ });
-/* unused harmony exports ColorAreaContext, ColorFieldContext, ColorSliderContext, ColorWheelContext */
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-/*
- * Copyright 2024 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the 'License');
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-const $4e85f108e88277b8$export$b085522c77523c51 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$ebe63fadcdce34ed = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$44644b8a16031b5b = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$717b2c0a523a0b53 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$265015d6dc85bf21 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$d688439359537581 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-
-
-
-//# sourceMappingURL=RSPContexts.module.js.map
-
-
-/***/ }),
-
 /***/ 94281:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-150/blog/release-14","source":"@site/blog/release14.mdx","title":"Release 14","description":".","date":"2024-10-31T15:22:12.000Z","tags":[{"inline":true,"label":"releaser","permalink":"/pr-preview/pr-150/blog/tags/releaser"}],"readingTime":1.36,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 14","description":".","slug":"release-14","tags":["releaser"]},"unlisted":false,"prevItem":{"title":"Release 15","permalink":"/pr-preview/pr-150/blog/release-15"},"nextItem":{"title":"Release 13","permalink":"/pr-preview/pr-150/blog/release-13"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-150/blog/release-14","source":"@site/blog/release14.mdx","title":"Release 14","description":".","date":"2024-10-31T15:22:12.000Z","tags":[{"inline":true,"label":"releaser","permalink":"/pr-preview/pr-150/blog/tags/releaser"}],"readingTime":1.17,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 14","description":".","slug":"release-14","tags":["releaser"]},"unlisted":false,"prevItem":{"title":"Release 15","permalink":"/pr-preview/pr-150/blog/release-15"},"nextItem":{"title":"Release 13","permalink":"/pr-preview/pr-150/blog/release-13"}}');
 
 /***/ })
 

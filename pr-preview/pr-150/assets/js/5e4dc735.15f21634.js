@@ -209,7 +209,7 @@ const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ 
 /***/ 94281:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-150/blog/release-14","source":"@site/blog/release14.mdx","title":"Release 14","description":".","date":"2024-10-31T15:22:12.000Z","tags":[{"inline":true,"label":"releaser","permalink":"/pr-preview/pr-150/blog/tags/releaser"}],"readingTime":1.36,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 14","description":".","slug":"release-14","tags":["releaser"]},"unlisted":false,"prevItem":{"title":"Release 15","permalink":"/pr-preview/pr-150/blog/release-15"},"nextItem":{"title":"Release 13","permalink":"/pr-preview/pr-150/blog/release-13"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-150/blog/release-14","source":"@site/blog/release14.mdx","title":"Release 14","description":".","date":"2024-10-31T15:22:12.000Z","tags":[{"inline":true,"label":"releaser","permalink":"/pr-preview/pr-150/blog/tags/releaser"}],"readingTime":1.17,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 14","description":".","slug":"release-14","tags":["releaser"]},"unlisted":false,"prevItem":{"title":"Release 15","permalink":"/pr-preview/pr-150/blog/release-15"},"nextItem":{"title":"Release 13","permalink":"/pr-preview/pr-150/blog/release-13"}}');
 
 /***/ })
 
