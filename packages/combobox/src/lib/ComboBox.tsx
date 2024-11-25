@@ -35,9 +35,12 @@ export function ComboBox<T extends object>({
   items,
   ...props
 }: ComboBoxProps<T>) {
+  const ref = React.useRef<HTMLDivElement>(null)
+
   return (
     <AriaComboBox
       className={styles.combobox}
+      ref={ref}
       {...props}
     >
       <InputWrapper
@@ -67,6 +70,7 @@ export function ComboBox<T extends object>({
       <Popover
         className={styles.popover}
         offset={0}
+        UNSTABLE_portalContainer={ref.current || undefined}
       >
         <ListBox items={items}>{children}</ListBox>
       </Popover>
