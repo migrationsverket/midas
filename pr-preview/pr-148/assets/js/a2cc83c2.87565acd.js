@@ -211,6 +211,7 @@ function _createMdxContent(props) {
         children: "important"
       }), ". Använd lämplig typ beroende på vilken information som ska visas."]
     }), "\n", (0,jsx_runtime.jsxs)(flex_src/* Flex */.s, {
+      fluid: true,
       children: [(0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
         col: 6,
         children: (0,jsx_runtime.jsx)(src/* Button */.$, {
