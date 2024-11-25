@@ -53,40 +53,57 @@ import { Button } from '@midas-ds/button'
 
 Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta.
 
-<Button>Slutför</Button>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
+  {`<Flex>
+  <FlexItem col="auto">
+    <Button>Slutför</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 ## Sekundär knapp
 
-Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka).
+Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka).
 
-<Button variant={'secondary'}>Tillbaka</Button>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
+  {`<Flex>
+  <FlexItem col="auto">
+    <Button variant={'secondary'}>Tillbaka</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
+
 
 ## Tertiär knapp
 
 Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button>Slutför</Button>
-  <Button variant='secondary'>Tillbaka</Button>
-  <Button variant='tertiary'>Ta bort anmälan</Button>
-</div>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
+  {`<Flex>
+    <FlexItem col="auto">
+      <Button>Slutför</Button>
+  </FlexItem>
+  <FlexItem col="auto">
+    <Button variant={'secondary'}>Tillbaka</Button>
+  </FlexItem>
+    <FlexItem col="auto">
+   <Button variant='tertiary'>Ta bort anmälan</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
-<br />
 
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
 Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
-```tsx
-import { Plus } from 'lucide-react'
-;<Button
-  icon={Plus}
-  variant='tertiary'
->
-  Lägg till rad
-</Button>
-```
+<LiveCodeBlock scope={{ Flex, FlexItem, Button, Plus }}>
+  {`<Flex>
+    <FlexItem col="auto">
+<Button icon={Plus} iconPlacement='left' variant='tertiary'>Lägg till rad</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
-<Button icon={Plus} variant='tertiary'>Lägg till rad</Button>
 
 ## Små knappar
 
@@ -117,10 +134,16 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button>Skicka</Button>
-  <Button variant={'secondary'}>Avbryt</Button>
-</div>
+<LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
+  {`<Flex>
+    <FlexItem col="auto">
+      <Button>Skicka</Button>
+  </FlexItem>
+  <FlexItem col="auto">
+    <Button variant={'secondary'}>Avbryt</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 <br />I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen
 (nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från
