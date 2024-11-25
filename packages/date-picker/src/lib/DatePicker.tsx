@@ -25,6 +25,7 @@ import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
 import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
 import styles from './DatePicker.module.css'
+import React from 'react'
 
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
@@ -39,6 +40,8 @@ export const DateRangePicker = <T extends DateValue>({
   errorMessage,
   ...props
 }: MidasDateRangePickerProps<T>) => {
+  const ref = React.useRef<HTMLDivElement>(null)
+
   return (
     <AriaDateRangePicker
       {...props}
@@ -47,6 +50,7 @@ export const DateRangePicker = <T extends DateValue>({
         styles.datePicker,
         props.className
       )}
+      ref={ref}
     >
       <InputWrapper
         label={label}
@@ -88,7 +92,7 @@ export const DateRangePicker = <T extends DateValue>({
           </Button>
         </Group>
 
-        <Popover>
+        <Popover UNSTABLE_portalContainer={ref.current || undefined}>
           <Dialog className={styles.dialog}>
             <RangeCalendar>
               <header className={styles.dialogHeader}>
@@ -134,6 +138,8 @@ export const DatePicker = <T extends DateValue>({
   errorMessage,
   ...props
 }: MidasDatePickerProps<T>) => {
+  const ref = React.useRef<HTMLDivElement>(null)
+
   return (
     <AriaDatePicker
       {...props}
@@ -142,6 +148,7 @@ export const DatePicker = <T extends DateValue>({
         styles.datePicker,
         props.className
       )}
+      ref={ref}
     >
       <InputWrapper
         label={label}
@@ -164,7 +171,7 @@ export const DatePicker = <T extends DateValue>({
           </Button>
         </Group>
 
-        <Popover>
+        <Popover UNSTABLE_portalContainer={ref.current || undefined}>
           <Dialog className={styles.dialog}>
             <Calendar>
               <header className={styles.dialogHeader}>
