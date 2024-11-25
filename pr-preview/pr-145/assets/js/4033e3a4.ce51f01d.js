@@ -215,29 +215,11 @@ function _createMdxContent(props) {
       children: "Egna felmeddelanden"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in frukt"
-  errorMessage="Du måste skriva 'frukt'!"
-  isRequired
-  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
-  errorMessage={(validation) => {
-      if (validation.validationDetails.valueMissing) return "Det måste finnas en frukt.";
-      if (validation.validationDetails.badInput) return "Det där är inte en frukt.";
-      if (validation.validationDetails.customError) return "Du måste skriva frukt.";
-
-      // Det finns flertalet typer på validationDetails
-      // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
-      // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
-      // med flera
-
-      return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
-  }}
-
-/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n    label=\"Skriv in frukt\"\n    errorMessage=\"Du måste skriva 'frukt'!\"\n    isRequired\n    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n    errorMessage={(validation) => {\n        if (validation.validationDetails.valueMissing) return \"Det måste finnas en frukt.\";\n        if (validation.validationDetails.badInput) return \"Det där är inte en frukt.\";\n        if (validation.validationDetails.customError) return \"Du måste skriva frukt.\";\n\n        // Det finns flertalet typer på validationDetails\n        // if (validation.validationDetails.patternMismatch) return \"Det där ser inte ut som en frukt.\";\n        // if (validation.validationDetails.rangeOverflow) return \"Nu blev det nog för många frukter.\";\n        // med flera\n\n        return \"Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.\";\n    }}\n\n/>\n"
+      })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
         href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",

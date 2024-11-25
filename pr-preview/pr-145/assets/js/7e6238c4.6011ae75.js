@@ -74,10 +74,6 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Normal användning",
-  "id": "normal-användning",
-  "level": 3
-}, {
   "value": "Disabled",
   "id": "disabled",
   "level": 3
@@ -126,16 +122,6 @@ function _createMdxContent(props) {
         href: "/pr-preview/pr-145/components/select",
         children: "Select"
       }), " användas istället."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        RadioGroup: src/* RadioGroup */.z,
-        Radio: src/* Radio */.s
-      },
-      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-  {fruits.shuffled(3).map(fruit => (
-    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-  ))}
-</RadioGroup>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -173,15 +159,6 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Radio, RadioGroup } from '@midas-ds/radio'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "normal-användning",
-      children: "Normal användning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Gruppera flera ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Radio>"
-      }), " i en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<RadioGroup>"
-      }), " och sätt rubrik och beskrivande text."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         RadioGroup: src/* RadioGroup */.z,
