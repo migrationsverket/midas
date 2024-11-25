@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/date-picker",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,7 @@
     }
   },
   "peerDependencies": {
-    "@midas-ds/textfield": "1.0.3",
+    "@midas-ds/textfield": "1.0.4",
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.453.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/textfield",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "react-aria-components": "^1.1.0",
-    "lucide-react": "^0.453.0",
     "@midas-ds/button": "1.1.1"
   },
   "peerDependencies": {
