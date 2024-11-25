@@ -1,24 +1,29 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
 @value display, white, gray10 from tokens;
 
-:global .react-aria-ModalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(45 0 0 / 30%);
-  z-index: 2000;
-}
-
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  font-family: display;
+  position: fixed;
   max-width: 75%;
+  min-width: 300px;
+  max-height: 75vh;
+  overflow-y: auto;
   background-color: white;
-}
+  border: none;
+  padding: 0;
 
-.modalDialog {
-  outline: none;
+  &&:-internal-dialog-in-top-layer {
+    overflow: visible;
+  }
+
+  &&::backdrop {
+    inset: 0;
+    background: rgba(45 0 0 / 30%);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .modalHeader {
@@ -28,6 +33,14 @@
 }
 
 .modalBody {
+  position: relative;
   padding: 1rem 2rem 2rem;
   font-family: display;
+}
+
+.modalHeading {
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
 }
