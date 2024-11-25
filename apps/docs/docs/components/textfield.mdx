@@ -69,9 +69,8 @@ Det går också att definiera en egen funktion för validering:
 ### Egna felmeddelanden
 
 Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel.
-
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
+```
+<TextField
     label="Skriv in frukt"
     errorMessage="Du måste skriva 'frukt'!"
     isRequired
@@ -89,9 +88,9 @@ Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. 
         return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
     }}
 
-/>`}
+/>
+```
 
-</LiveCodeBlock>
 
 Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
 
