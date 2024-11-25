@@ -1,21 +1,81 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Radio } from './Radio'
+import { RadioGroup, Radio } from './Radio'
 
-const meta: Meta<typeof Radio> = {
+const meta: Meta<typeof RadioGroup> = {
   title: 'Components/Radio',
-  component: Radio,
+  component: RadioGroup,
   tags: ['autodocs'],
+  args: {
+    label: 'Group label',
+    errorMessage: 'Du måste välja en frukt?'
+  },
+  argTypes: {
+    children: { table: { disable: true } },
+    label: {
+      type: 'string',
+      control: { type: 'text' }
+    },
+    isDisabled: {
+      type: 'boolean',
+      options: [false, true],
+      control: { type: 'radio' }
+    },
+    isInvalid: {
+      type: 'boolean',
+      options: [false, true],
+      control: { type: 'radio' }
+    }
+  }
 }
 export default meta
 
-type Story = StoryObj<typeof Radio>
+type Story = StoryObj<typeof RadioGroup>
 
-export const Example: Story = {
+const radioItems = [
+  <Radio value={'banan'}>Banan</Radio>,
+  <Radio value={'apelsin'}>Apelsin</Radio>,
+  <Radio value={'kiwi'}>Kiwi</Radio>
+]
+const radioItemsOneDisabled = [
+  <Radio value={'banan'}>Banan</Radio>,
+  <Radio
+    value={'apelsin'}
+    isDisabled={true}
+  >
+    Apelsin
+  </Radio>,
+  <Radio value={'kiwi'}>Kiwi</Radio>
+]
+
+export const Normal: Story = {
   args: {
-    value: 'unsubscribe',
-    isDisabled: false,
-  },
-  render: ({ ...args }) => {
-    return <Radio {...args}>Unsubscribe</Radio>
-  },
+    label: 'Frukt',
+    description: 'Välj en frukt',
+    children: [
+      <Radio value={'banan'}>Banan</Radio>,
+      <Radio value={'apelsin'}>Apelsin</Radio>,
+      <Radio value={'kiwi'}>Kiwi</Radio>
+    ]
+  }
+}
+
+export const Disabled: Story = {
+  args: {
+    children: radioItems,
+    isDisabled: true
+  }
+}
+
+export const OneItemDisabled: Story = {
+  args: {
+    children: radioItemsOneDisabled
+  }
+}
+
+export const Invalid: Story = {
+  args: {
+    children: radioItems,
+    isInvalid: true,
+    errorMessage: 'Det här stämmer inte!'
+  }
 }
