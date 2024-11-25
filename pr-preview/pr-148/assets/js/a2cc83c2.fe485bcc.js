@@ -213,7 +213,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsxs)(flex_src/* Flex */.s, {
       fluid: true,
       children: [(0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 6,
+        col: 3,
         children: (0,jsx_runtime.jsx)(src/* Button */.$, {
           onPress: () => toastQueue.add({
             type: 'success',
@@ -224,7 +224,7 @@ function _createMdxContent(props) {
           children: "Success"
         })
       }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 6,
+        col: 3,
         children: (0,jsx_runtime.jsx)(src/* Button */.$, {
           onPress: () => toastQueue.add({
             type: 'info',
@@ -235,7 +235,7 @@ function _createMdxContent(props) {
           children: "Info"
         })
       }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 6,
+        col: 3,
         children: (0,jsx_runtime.jsx)(src/* Button */.$, {
           onPress: () => toastQueue.add({
             message: 'Viktigt meddelande',
@@ -246,7 +246,7 @@ function _createMdxContent(props) {
           children: "Important"
         })
       }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 6,
+        col: 3,
         children: (0,jsx_runtime.jsx)(src/* Button */.$, {
           onPress: () => toastQueue.add({
             message: "Farlig varning!",
