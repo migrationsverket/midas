@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-basics-accessibility-mdx-e01.json
-const site_docs_basics_accessibility_mdx_e01_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/accessibility","title":"Tillgänglighet","description":"Migrationsverket strävar efter att uppfylla riktlinjerna för nivå A och AA i WCAG 2.1 i sina system och digitala tjänster.","source":"@site/docs/basics/accessibility.mdx","sourceDirName":"basics","slug":"/basics/accessibility","permalink":"/pr-preview/pr-145/basics/accessibility","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"id":"accessibility","title":"Tillgänglighet"},"sidebar":"sideBar","previous":{"title":"Ikoner","permalink":"/pr-preview/pr-145/basics/icons"},"next":{"title":"Språk och skrivregler","permalink":"/pr-preview/pr-145/basics/language"}}');
+const site_docs_basics_accessibility_mdx_e01_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/accessibility","title":"Tillgänglighet","description":"Kraven på tillgänglig utformning av IT-system och tjänster, som nyttjas inom ramen för Migrationsverkets verksamhet, är högt ställda. Migrationsverkets IT-system och tjänster ska kunna användas av bredast möjlig krets av användare, oavsett funktionsförmåga. Personer med funktionsnedsättning ska kunna arbeta och anställas på Migrationsverket på likvärdiga villkor som andra. De som vänder sig till Migrationsverket ska oavsett funktionsförmåga kunna ta del av Migrationsverkets service på likvärdiga villkor.","source":"@site/docs/basics/accessibility.mdx","sourceDirName":"basics","slug":"/basics/accessibility","permalink":"/pr-preview/pr-145/basics/accessibility","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"id":"accessibility","title":"Tillgänglighet"},"sidebar":"sideBar","previous":{"title":"Ikoner","permalink":"/pr-preview/pr-145/basics/icons"},"next":{"title":"Språk och skrivregler","permalink":"/pr-preview/pr-145/basics/language"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -50,11 +50,15 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(_components.p, {
-      children: "Migrationsverket strävar efter att uppfylla riktlinjerna för nivå A och AA i WCAG 2.1 i sina system och digitala tjänster."
+      children: "Kraven på tillgänglig utformning av IT-system och tjänster, som nyttjas inom ramen för Migrationsverkets verksamhet, är högt ställda. Migrationsverkets IT-system och tjänster ska kunna användas av bredast möjlig krets av användare, oavsett funktionsförmåga. Personer med funktionsnedsättning ska kunna arbeta och anställas på Migrationsverket på likvärdiga villkor som andra. De som vänder sig till Migrationsverket ska oavsett funktionsförmåga kunna ta del av Migrationsverkets service på likvärdiga villkor."
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Migrationsverket e-tjänster ska uppfylla kraven i nivå A och AA i WCAG 2.1."
     }), "\n", (0,jsx_runtime.jsx)(src/* Link */.N, {
       standalone: true,
       href: "https://www.digg.se/webbriktlinjer/alla-webbriktlinjer",
-      children: "DIGGs Webbriktlinjer"
+      children: (0,jsx_runtime.jsx)(_components.p, {
+        children: "DIGGs Webbriktlinjer"
+      })
     })]
   });
 }
