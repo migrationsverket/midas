@@ -56,9 +56,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(src/* Link */.N, {
       standalone: true,
       href: "https://www.digg.se/webbriktlinjer/alla-webbriktlinjer",
-      children: (0,jsx_runtime.jsx)(_components.p, {
-        children: "DIGGs Webbriktlinjer"
-      })
+      children: "DIGGs Webbriktlinjer"
     })]
   });
 }

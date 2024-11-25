@@ -70,6 +70,8 @@ return state.visibleToasts.length>0?/*#__PURE__*/(0,react_dom.createPortal)(/*#_
 var getComponentMetaData = __webpack_require__(13225);
 ;// ./apps/docs/static/data/toast.json
 const toast_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/toast@1.0.3","_rev":"8-490d1ead9ef3a35f4b2621fa1b1622e7","name":"@midas-ds/toast","dist-tags":{"latest":"1.0.3"},"versions":["0.4.0","0.5.0","0.5.1","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:39:22.818Z","modified":"2024-11-15T14:06:21.227Z","0.4.0":"2024-09-10T14:39:23.053Z","0.5.0":"2024-09-12T05:55:09.470Z","0.5.1":"2024-09-12T12:58:03.661Z","0.5.2":"2024-10-07T12:28:12.102Z","1.0.0":"2024-10-18T13:40:35.175Z","1.0.1":"2024-10-22T14:09:08.896Z","1.0.2":"2024-11-01T10:27:37.626Z","1.0.3":"2024-11-15T14:06:21.034Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/toast ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":14165,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"@midas-ds/button":"1.1.1","react":"^18.3.1","@react-aria/toast":"^3.0.0-beta.12","@react-stately/toast":"3.0.0-beta.6","react-dom":"18.3.1","lucide-react":"^0.453.0"},"peerDependencies":{},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-/uPAJpW3ubq8G2XunmYFYBt3FK8XRk2URRFDQGIp/iKAnGcwcMIfwGdH/CldFna9pk6sSnu3iFrU3OWDTuugJg==","shasum":"3dd20a34ffb6cfb07bbeccbe42c17149a020a350","tarball":"https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.3.tgz","fileCount":10,"unpackedSize":158663,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQDjaS9i9pS060ddce6/FF8+S29Np6HKSzWfK3erS5zhkgIhAImb4cbEeq7puaqmgC/CqHXyTIZLYvHskl6fpAGjD5b5"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/toast_1.0.3_1731679580803_0.7545325299342285"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
 ;// ./apps/docs/docs/components/toast.mdx
 
 
@@ -82,6 +84,7 @@ const contentTitle = undefined;
 const assets = {
 
 };
+
 
 
 
@@ -207,43 +210,52 @@ function _createMdxContent(props) {
       }), ", ", (0,jsx_runtime.jsx)(_components.code, {
         children: "important"
       }), ". Använd lämplig typ beroende på vilken information som ska visas."]
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      style: {
-        display: 'flex',
-        gap: '5px'
-      },
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          type: 'success',
-          message: 'Allt funkar som det ska!'
-        }, {
-          timeout: 5000
-        }),
-        children: "Success"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          type: 'info',
-          message: 'Här kommer ett meddelande'
-        }, {
-          timeout: 5000
-        }),
-        children: "Info"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          message: 'Viktigt meddelande',
-          type: 'important'
-        }, {
-          timeout: 5000
-        }),
-        children: "Important"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$, {
-        onPress: () => toastQueue.add({
-          message: "Farlig varning!",
-          type: 'warning'
-        }, {
-          timeout: 5000
-        }),
-        children: "Warning"
+    }), "\n", (0,jsx_runtime.jsxs)(flex_src/* Flex */.s, {
+      fluid: true,
+      children: [(0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$, {
+          onPress: () => toastQueue.add({
+            type: 'success',
+            message: 'Allt funkar som det ska!'
+          }, {
+            timeout: 5000
+          }),
+          children: "Success"
+        })
+      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$, {
+          onPress: () => toastQueue.add({
+            type: 'info',
+            message: 'Här kommer ett meddelande'
+          }, {
+            timeout: 5000
+          }),
+          children: "Info"
+        })
+      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$, {
+          onPress: () => toastQueue.add({
+            message: 'Viktigt meddelande',
+            type: 'important'
+          }, {
+            timeout: 5000
+          }),
+          children: "Important"
+        })
+      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$, {
+          onPress: () => toastQueue.add({
+            message: "Farlig varning!",
+            type: 'warning'
+          }, {
+            timeout: 5000
+          }),
+          children: "Warning"
+        })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "lokal-implementation",
