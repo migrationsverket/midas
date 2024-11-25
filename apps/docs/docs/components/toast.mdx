@@ -39,14 +39,14 @@ npm install @midas-ds/toast
 
 En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas.
 <Flex fluid={true}>
-  <FlexItem col={6}>
+  <FlexItem col={3}>
   <Button
     onPress={() =>
       toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, {timeout: 5000 })
     }
   >Success</Button>
  </FlexItem>
-  <FlexItem col={6}>
+  <FlexItem col={3}>
   <Button
     onPress={() =>
       toastQueue.add({ type: 'info', message: 'Här kommer ett meddelande' }, {
@@ -55,14 +55,14 @@ En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. An
     }
   >Info</Button>
   </FlexItem>
-  <FlexItem col={6}>
+  <FlexItem col={3}>
   <Button
     onPress={() =>
       toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })
     }
   >Important</Button>
    </FlexItem>
-  <FlexItem col={6}>
+  <FlexItem col={3}>
   <Button
     onPress={() =>
       toastQueue.add({ message: "Farlig varning!", type: 'warning' }, { timeout: 5000 })
