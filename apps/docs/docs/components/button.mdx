@@ -105,16 +105,6 @@ Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 </LiveCodeBlock>
 
 
-## Små knappar
-
-För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size="small"`
-
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button size={'small'}>Primär</Button>
-  <Button size={'small'} variant={'secondary'}>Sekundär</Button>
-  <Button size={'small'} variant={'tertiary'}>Tertiär</Button>
-</div>
-
 ## Beroenden
 
 <ComponentFooter info={Info} />
@@ -132,7 +122,7 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 ### Placering och ordning
 
-Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
+Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. 
 
 <LiveCodeBlock hideCode scope={{ Flex, FlexItem, Button }}>
   {`<Flex>
@@ -145,11 +135,3 @@ Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primär
 </Flex>`}
 </LiveCodeBlock>
 
-<br />I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen
-(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från
-vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
-
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button variant={'secondary'}>Föregående</Button>
-  <Button>Nästa</Button>
-</div>
