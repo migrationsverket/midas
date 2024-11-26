@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, gray10, gray20, gray60, gray150, blue20, focus, blue150 from tokens;
+@value display, black, gray10, gray20, gray60, gray150, blue20, focus, blue150 from tokens;
 
 .datePicker {
   font-family: display;
@@ -25,6 +25,7 @@
     height: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
+    color: black;
     background-color: gray10;
 
     &:hover {
@@ -73,6 +74,7 @@
 
   & button {
     border: none;
+    color: black;
     background-color: gray10;
 
     &:focus-visible,

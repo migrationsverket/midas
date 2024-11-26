@@ -5,10 +5,7 @@ tags: [form]
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/checkbox.json'
 import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -43,7 +40,7 @@ import { Checkbox } from '@midas-ds/checkbox'
     <FlexItem style={{alignSelf: 'center'}}>
       <Checkbox>Jag godkänner villkoren</Checkbox>
     </FlexItem>
-    <FlexItem col="auto" style={{display: 'flex', gap: '0.5rem'}}>
+    <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
       <Button
         variant='secondary'
       >
@@ -184,3 +181,4 @@ flowchart TD;
 
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 
+<ComponentFooter info={Info} />
