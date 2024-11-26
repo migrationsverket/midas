@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { DialogTrigger, Modal, ModalHeader, ModalBody } from './Modal'
+import { Modal } from './Modal'
 import { Button } from '@midas-ds/button'
+import React from 'react'
+import { Select, Item } from '@midas-ds/select'
 import { Flex, FlexItem } from '@midas-ds/flex'
-import { TextArea } from '@midas-ds/textarea'
-import { Heading } from 'react-aria-components'
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
@@ -18,60 +18,43 @@ type Story = StoryObj<typeof Modal>
 
 export const Default: Story = {
   args: {},
-  render: () => {
+  render: function Render() {
+    const [isOpen, setIsOpen] = React.useState<boolean>(false)
+
     return (
-      <DialogTrigger>
-        <Button>Öppna modal</Button>
-        <Modal>
-          {({ close }) => (
-            <>
-              <ModalHeader />
-              <ModalBody
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '2rem'
-                }}
+      <>
+        <Button onPress={() => setIsOpen(true)}>Öppna</Button>
+        <Modal
+          id='modal'
+          title='Välj ärende'
+          isOpen={isOpen}
+          onOpenChange={isOpen => setIsOpen(isOpen)}
+        >
+          <Flex fluid={true}>
+            <FlexItem col={12}>
+              <Select
+                label='Ärenden'
+                placeholder='Hej'
+                description='Välj ärende'
+                items={[{ id: 1, name: 'test' }]}
               >
-                <Flex fluid={true}>
-                  <FlexItem>
-                    <Heading
-                      slot='title'
-                      style={{ margin: 0 }}
-                    >
-                      Vill du avsluta uppdraget?
-                    </Heading>
-                  </FlexItem>
-                </Flex>
-                <Flex fluid={true}>
-                  <FlexItem>
-                    <TextArea
-                      // eslint-disable-next-line jsx-a11y/no-autofocus
-                      autoFocus
-                      label='Ange anledning'
-                      description='Skriv anledning'
-                      maxCharacters={100}
-                    />
-                  </FlexItem>
-                </Flex>
-                <Flex fluid={true}>
-                  <FlexItem col='auto'>
-                    <Button onPress={close}>Spara korrespondens</Button>
-                  </FlexItem>
-                  <FlexItem>
-                    <Button
-                      onPress={close}
-                      variant='secondary'
-                    >
-                      Avbryt
-                    </Button>
-                  </FlexItem>
-                </Flex>
-              </ModalBody>
-            </>
-          )}
+                {item => <Item>{item.name}</Item>}
+              </Select>
+            </FlexItem>
+            <FlexItem col={12}>
+              <Button onPress={() => setIsOpen(false)}>Spara</Button>
+            </FlexItem>
+            <FlexItem col={12}>
+              <Button
+                variant='secondary'
+                onPress={() => setIsOpen(false)}
+              >
+                Avbryt
+              </Button>
+            </FlexItem>
+          </Flex>
         </Modal>
-      </DialogTrigger>
+      </>
     )
   }
 }

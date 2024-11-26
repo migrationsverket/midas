@@ -11,7 +11,7 @@ import {
 } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/modal.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { DialogTrigger, Modal, ModalHeader, ModalBody } from '@midas-ds/modal'
+import { Modal } from '@midas-ds/modal'
 import { Button } from '@midas-ds/button'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import { TextArea } from '@midas-ds/textarea'
@@ -35,68 +35,39 @@ npm install @midas-ds/modal
 ```
 
 ```tsx
-import { Modal, DialogTrigger, ModalHeader, ModalBody } from '@midas-ds/modal'
+import { Modal } from '@midas-ds/modal'
 
-const [isOpened, setIsOpened] = React.useState<boolean>(false)
+const [isOpen, setIsOpen] = React.useState<boolean>(false)
 ```
 
 <LiveCodeBlock
   scope={{
-    DialogTrigger,
     Button,
     Modal,
-    ModalHeader,
-    ModalBody,
     Flex,
-    FlexItem,
-    Heading,
-    TextArea
+    FlexItem
   }}
 >
-  {`
-  <>
-        <Button onPress={setIsOpened}>Radera frukter</Button>
-        <Modal isDismissable isOpen={isOpened} onOpenChange={setIsOpened}>
-        {({ close }) => (
-        <>
-            <ModalHeader />
-            <ModalBody
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '2rem'
-            }}
-            >
-            <Flex fluid={true}>
-                <FlexItem>
-                    <Heading
-                        slot='title'
-                        style={{ margin: 0 }}
-                    >
-                        Vill du radera alla frukter?
-                    </Heading>
-                    <p>Är du säker? De kan inte återskapas.</p>
-                </FlexItem>
-            </Flex>
-            <Flex fluid={true}>
-                <FlexItem col='auto'>
-                    <Button onPress={close} variant="danger">Radera</Button>
-                </FlexItem>
-                <FlexItem>
-                    <Button
-                        onPress={close}
-                        variant='secondary'
-                    >
-                        Avbryt
-                    </Button>
-                </FlexItem>
-            </Flex>
-            </ModalBody>
-        </>
-        )}
+  {`<>
+    <Button onPress={setIsOpen}>Radera frukter</Button>
+    <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
+        <p>Är du säker? De går inte att återskapa.</p>
+        <Flex fluid={true}>
+            <FlexItem col='auto'>
+                <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
+            </FlexItem>
+            <FlexItem>
+                <Button
+                    onPress={() => setIsOpen(false)}
+                    variant='secondary'
+                >
+                    Avbryt
+                </Button>
+            </FlexItem>
+        </Flex>
     </Modal>
-</>
-`}
+
+</>`}
 </LiveCodeBlock>
 
 ## Avancerat innehåll
@@ -105,11 +76,8 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 
 <LiveCodeBlock
   scope={{
-    DialogTrigger,
     Button,
     Modal,
-    ModalHeader,
-    ModalBody,
     Flex,
     FlexItem,
     Heading,
@@ -117,102 +85,35 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
   }}
 >
   {`<>
-    <Button onPress={setIsOpened}>Öppna modal</Button>
-    <Modal isDismissable isOpen={isOpened} onOpenChange={setIsOpened}>
-        {({ close }) => (
-            <>
-                <ModalHeader />
-                <ModalBody
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '2rem'
-                }}
+    <Button onPress={setIsOpen}>Öppna modal</Button>
+    <Modal id="avsluta" title="Vill du avsluta uppdraget?" isOpen={isOpen} onOpenChange={setIsOpen}>
+        <Flex fluid={true} style={{marginBottom: '1rem'}}>
+            <FlexItem col>
+                <TextArea
+                    autoFocus
+                    label='Ange anledning'
+                    description='Skriv anledning'
+                    maxCharacters={100}
+                />
+            </FlexItem>
+        </Flex>
+        <Flex fluid={true}>
+            <FlexItem col='auto'>
+                <Button onPress={() => setIsOpen(false)}>Spara korrespondens</Button>
+            </FlexItem>
+            <FlexItem>
+                <Button
+                    onPress={() => setIsOpen(false)}
+                    variant='secondary'
                 >
-                <Flex fluid={true}>
-                    <FlexItem>
-                    <Heading
-                        slot='title'
-                        style={{ margin: 0 }}
-                    >
-                        Vill du avsluta uppdraget?
-                    </Heading>
-                    </FlexItem>
-                </Flex>
-                <Flex fluid={true}>
-                    <FlexItem>
-                        <TextArea
-                            autoFocus
-                            label='Ange anledning'
-                            description='Skriv anledning'
-                            maxCharacters={100}
-                        />
-                    </FlexItem>
-                </Flex>
-                <Flex fluid={true}>
-                    <FlexItem col='auto'>
-                        <Button onPress={close}>Spara korrespondens</Button>
-                    </FlexItem>
-                    <FlexItem>
-                        <Button
-                            onPress={close}
-                            variant='secondary'
-                        >
-                            Avbryt
-                        </Button>
-                    </FlexItem>
-                </Flex>
-                </ModalBody>
-            </>
-        )}
+                    Avbryt
+                </Button>
+            </FlexItem>
+        </Flex>
     </Modal>
-    </>
-`}
+</>`}
+
 </LiveCodeBlock>
-
-## Stänga modal
-
-I vår komponent `<ModalHeader />` som du bör placera först innuti din modal ingår en knapp för att stänga modalen. Modaler kan även stängas med tangentbordet (`esc`).
-För att komma åt funktionen för att stänga modalen kan du antingen komma åt det via useContext eller via funktionen som kan används som direkt barn till `<Modal>`.
-
-### Funktionen close
-
-```tsx {3,6}
-...
-<Modal>
-    {({close}) => (
-        ...
-        <Button
-         onPress={close}
-        >
-            Stäng modal
-        </Button>
-        ...
-    )}
-</Modal>
-```
-
-### useContext
-
-```tsx {1,4,8,16}
-import { OverlayTriggerStateContext } from '@midas-ds/modal'
-
-const CloseButton: React.FC () => {
-    const state = React.useContext(OverlayTriggerStateContext)
-
-    return (
-        <Button
-         onPress={state.close}
-        >
-            Stäng modal
-        </Button>
-    )
-}
-...
-<Modal>
-    <CloseButton />
-</Modal>
-```
 
 ## Riktlinjer
 
