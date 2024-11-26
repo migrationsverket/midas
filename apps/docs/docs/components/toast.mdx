@@ -6,10 +6,7 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 import { PropTable } from '@site/src/components/propsTable'
 import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src'
 import { Button } from '../../../../packages/button/src'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/toast.json'
 import { Flex, FlexItem } from '../../../../packages/flex/src'
 
@@ -40,7 +37,7 @@ nuvarande implementation återfinns i skärmens nedre högra hörn.
       )
     }
   >
-    Tryck här för en notifiering
+    {'Tryck här för en notifiering'}
   </Button>
 </section>
 
@@ -56,15 +53,8 @@ En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. An
 
 <Flex fluid={true}>
   <FlexItem col={3}>
-    <Button
-      onPress={() =>
-        toastQueue.add(
-          { type: 'success', message: 'Allt funkar som det ska!' },
-          { timeout: 5000 }
-        )
-      }
-    >
-      Success
+    <Button onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}>
+      {'Success'}
     </Button>
   </FlexItem>
   <FlexItem col={3}>
@@ -78,31 +68,17 @@ En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. An
         )
       }
     >
-      Info
+      {'Info'}
     </Button>
   </FlexItem>
   <FlexItem col={3}>
-    <Button
-      onPress={() =>
-        toastQueue.add(
-          { message: 'Viktigt meddelande', type: 'important' },
-          { timeout: 5000 }
-        )
-      }
-    >
-      Important
+    <Button onPress={() => toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })}>
+      {'Important'}
     </Button>
   </FlexItem>
   <FlexItem col={3}>
-    <Button
-      onPress={() =>
-        toastQueue.add(
-          { message: 'Farlig varning!', type: 'warning' },
-          { timeout: 5000 }
-        )
-      }
-    >
-      Warning
+    <Button onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000 })}>
+      {'Warning'}
     </Button>
   </FlexItem>
 </Flex>
@@ -114,16 +90,9 @@ använd den [globala varianten](#global-implementation).
 
 ```tsx
 import { ToastProvider, MidasToastState } from '@midas-ds/toast'
-
 ;<ToastProvider>
   {(state: MidasToastState) => (
-    <Button
-      onPress={() =>
-        state.add({ message: 'Success', type: 'success' }, { timeout: 5000 })
-      }
-    >
-      Show toast
-    </Button>
+    <Button onPress={() => state.add({ message: 'Success', type: 'success' }, { timeout: 5000 })}>Show toast</Button>
   )}
 </ToastProvider>
 ```
