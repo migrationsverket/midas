@@ -235,6 +235,10 @@ nav.menu {
   background: none;
 }
 
+.padding-top--md {
+  padding-top: 2rem !important;
+}
+
 /* stylelint-disable-next-line media-feature-range-notation */
 @media (max-width: 1024px) {
   .navbar__items {

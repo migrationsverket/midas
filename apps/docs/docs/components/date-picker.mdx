@@ -1,14 +1,10 @@
 ---
 title: DatePicker
-tags: []
 description: Fält för att välja ett datum eller ett spann av datum med kalender.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/date-picker.json'
 import { DatePicker, DateRangePicker } from '@midas-ds/date-picker'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -43,8 +39,6 @@ import { DatePicker } from '@midas-ds/date-picker'
 import { DateRangePicker } from '@midas-ds/date-picker'
 ```
 
-<LiveCodeBlock scope={{ DateRangePicker }}>
-  {`<DateRangePicker />`}
-</LiveCodeBlock>
+<LiveCodeBlock scope={{ DateRangePicker }}>{`<DateRangePicker />`}</LiveCodeBlock>
 
 <ComponentFooter info={Info} />

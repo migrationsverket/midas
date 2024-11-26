@@ -2,7 +2,6 @@
 title: Midas har nu öppen källkod
 description: Designsystemet har nu öppen källkod och versionshanterat på GitHub. Detta för att vi enklare ska kunna dela med oss av vårt designsystem med andra myndigheter som också gått samma väg.
 slug: midas-open-source
-tags: [midas]
 hide_table_of_contents: true
 ---
 

@@ -1,14 +1,10 @@
 ---
 title: Grid
-tags: [grid]
 description: Grid baserat på tekniken display grid i css
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/grid.json'
 import { Grid, GridItem } from '../../../../packages/grid/src'
 import { Card } from '../../../../packages/card/src'
@@ -68,12 +64,12 @@ import { Grid } from '@midas-ds/grid'
 
 Grids skalas enligt följande specifikation.
 
-| Skärmstorlek      | Margin | Children | Kollumner | Gutter |
-| ----------------- | ------ | -------- | --------- | ------ |
-| 0 - 767 px        | 16 px  | Skalas   | 1         | 16 px  |
-| 768 px - 1199 px  | 32 px  | Skalas   | 12        | 16 px  |
-| 1200 px - 1440 px | 32 px  | Skalas   | 12        | 24 px  |
-| > 1440 px         | Skalas | 1368 px  | 12        | 24 px  |
+| Skärmstorlek      | Yttre marginaler | Underliggande element | Kolumner | Inre marginaler |
+| ----------------- | ---------------- | --------------------- | -------- | --------------- |
+| 0 - 767 px        | 16 px            | Skalas                | 1        | 16 px           |
+| 768 px - 1199 px  | 32 px            | Skalas                | 12       | 16 px           |
+| 1200 px - 1440 px | 32 px            | Skalas                | 12       | 24 px           |
+| > 1440 px         | Skalas           | 1368 px               | 12       | 24 px           |
 
 ## Riktlinjer
 
