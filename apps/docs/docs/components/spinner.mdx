@@ -4,14 +4,22 @@ tags: []
 description: Upplys användaren om att systemet/tjänsten laddar
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/spinner.json'
 import { Spinner } from '@midas-ds/spinner'
 import { Button } from '@midas-ds/button'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
- 
-<ComponentHeader name={'Spinner'} info={Info} friendlyName={'Laddningsindikator'} overrideHeadlessLink="" />
+
+;<ComponentHeader
+  name={'Spinner'}
+  info={Info}
+  friendlyName={'Laddningsindikator'}
+  overrideHeadlessLink=''
+/>
 
 ## Introduktion
 
@@ -27,15 +35,14 @@ npm install @midas-ds/spinner
 import { Spinner } from '@midas-ds/spinner'
 ```
 
-<LiveCodeBlock scope={{Spinner}}>
-{`<Spinner />`}
-</LiveCodeBlock>
+<LiveCodeBlock scope={{ Spinner }}>{`<Spinner />`}</LiveCodeBlock>
 
 ### Kombinerat med andra komponenter
+
 Använd varianten small för att kombinera med andra komponenter t.ex Button
 
-<LiveCodeBlock scope={{Spinner, Button}}>
-{`<Button>
+<LiveCodeBlock scope={{ Spinner, Button }}>
+  {`<Button>
   <Spinner
     dark
     small
@@ -48,5 +55,4 @@ Använd varianten small för att kombinera med andra komponenter t.ex Button
 
 Om det väntas ta mer än 10 sekunder att ladda sidan bör det förutom en spinner finnas ett meddelande till användaren om det.
 
-## Beroenden
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

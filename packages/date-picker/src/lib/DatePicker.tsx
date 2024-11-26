@@ -167,7 +167,10 @@ export const DatePicker = <T extends DateValue>({
             )}
           </DateInput>
           <Button>
-            <CalendarDays size={16} />
+            <CalendarDays
+              size={20}
+              aria-hidden
+            />
           </Button>
         </Group>
 

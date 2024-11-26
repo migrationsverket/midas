@@ -3,13 +3,21 @@ title: Logo
 description: Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet
 ---
 
-import { Logo } from '@midas-ds/logo';
-import { PropTable } from '@site/src/components/propsTable';
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { Logo } from '@midas-ds/logo'
+import { PropTable } from '@site/src/components/propsTable'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/logo.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Logo'} info={Info} friendlyName={'Logotyp'} overrideHeadlessLink="" />
+<ComponentHeader
+  name={'Logo'}
+  info={Info}
+  friendlyName={'Logotyp'}
+  overrideHeadlessLink=''
+/>
 
 ## Introduktion
 
@@ -22,11 +30,11 @@ npm install @midas-ds/logo
 ```
 
 ```tsx
-import { Logo } from '@midas-ds/logo';
+import { Logo } from '@midas-ds/logo'
 ```
 
-<LiveCodeBlock scope={{Logo}}>
-{`<>
+<LiveCodeBlock scope={{ Logo }}>
+  {`<>
     <Logo/>
     <Logo background/>
     <Logo dark/>
@@ -34,8 +42,15 @@ import { Logo } from '@midas-ds/logo';
     <Logo size={'small'}/>
 </>`}
 </LiveCodeBlock>
-## SVG
-I vissa fall kan det vara mer fördelaktigt med en vanlig fil. <a target="_blank" href={ require("/files/Mig_logo_SVG.zip").default } download>Ladda ner logotypen som SVG här (komprimerad fil)</a>
 
-## Beroenden
-<ComponentFooter info={Info}/>
+## SVG I vissa fall kan det vara mer fördelaktigt med en vanlig fil.
+
+<a
+  target='_blank'
+  href={require('/files/Mig_logo_SVG.zip').default}
+  download
+>
+  Ladda ner logotypen som SVG här (komprimerad fil)
+</a>
+
+<ComponentFooter info={Info} />
