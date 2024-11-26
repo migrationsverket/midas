@@ -11,4 +11,12 @@
   "arrowParens": "avoid",
   "endOfLine": "lf",
   "singleAttributePerLine": true,
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "options": {
+        "printWidth": 120
+      }
+    }
+  ]
 }

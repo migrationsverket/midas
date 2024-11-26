@@ -5,11 +5,8 @@ tags: [button, form]
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Button } from '@midas-ds/button'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { Button, ButtonGroup } from '@midas-ds/button'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/button.json'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -35,18 +32,12 @@ npm install @midas-ds/button
 import { Button } from '@midas-ds/button'
 ```
 
-<LiveCodeBlock scope={{ Flex, FlexItem, Button }}>
-  {`<Flex>
-  <FlexItem col="auto">
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj frukt">
     <Button>{fruits.shuffled(1).name}</Button>
-  </FlexItem>
-  <FlexItem col="auto">
     <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-  </FlexItem>
-  <FlexItem col="auto">
     <Button isDisabled>{fruits.shuffled(1).name}</Button>
-  </FlexItem>
-</Flex>`}
+</ButtonGroup>`}
 </LiveCodeBlock>
 
 ## Primärknapp
@@ -65,11 +56,11 @@ Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avb
 
 Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
+<ButtonGroup aria-label='Hantera anmälan'>
   <Button>Slutför</Button>
   <Button variant='secondary'>Tillbaka</Button>
   <Button variant='tertiary'>Ta bort anmälan</Button>
-</div>
+</ButtonGroup>
 
 <br />
 
@@ -86,17 +77,44 @@ import { Plus } from 'lucide-react'
 </Button>
 ```
 
-<Button icon={Plus} variant='tertiary'>Lägg till rad</Button>
+<Button
+  icon={Plus}
+  variant='tertiary'
+>
+  {'Lägg till rad'}
+</Button>
 
 ## Små knappar
 
 För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size="small"`
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button size={'small'}>Primär</Button>
-  <Button size={'small'} variant={'secondary'}>Sekundär</Button>
-  <Button size={'small'} variant={'tertiary'}>Tertiär</Button>
-</div>
+<ButtonGroup>
+  <Button size='small'>Primär</Button>
+  <Button
+    size='small'
+    variant='secondary'
+  >
+    {'Sekundär'}
+  </Button>
+  <Button
+    size='small'
+    variant='tertiary'
+  >
+    {'Tertiär'}
+  </Button>
+</ButtonGroup>
+
+## Grupp av knappar
+
+För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
+
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj frukt">
+    <Button>{fruits.shuffled(1).name}</Button>
+    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+    <Button isDisabled>{fruits.shuffled(1).name}</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 
@@ -113,20 +131,17 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
+<ButtonGroup aria-label='Skicka formulär'>
   <Button>Skicka</Button>
-  <Button variant={'secondary'}>Avbryt</Button>
-</div>
+  <Button variant='secondary'>Avbryt</Button>
+</ButtonGroup>
 
-<br />I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen
-(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från
-vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
+<br />I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära
+(tillbaka) till vänster. Flödet går från vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button variant={'secondary'}>Föregående</Button>
+<ButtonGroup aria-label='Skicka formulär'>
+  <Button variant='secondary'>Föregående</Button>
   <Button>Nästa</Button>
-</div>
-
-## Beroenden
+</ButtonGroup>
 
 <ComponentFooter info={Info} />

@@ -147,6 +147,7 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
               className={styles.popover}
               style={{ width: popoverWidth }}
               offset={0}
+              UNSTABLE_portalContainer={triggerRef.current || undefined}
             >
               <GridList
                 aria-label={label}
