@@ -1,0 +1,81 @@
+{
+  "_id": "@midas-ds/grid@1.0.2",
+  "_rev": "7-964b094f25813cb6d6daaa9ac7e5f88c",
+  "name": "@midas-ds/grid",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": [
+    "0.0.1",
+    "0.1.0",
+    "0.1.1",
+    "0.1.2",
+    "1.0.0",
+    "1.0.1",
+    "1.0.2"
+  ],
+  "time": {
+    "created": "2024-09-10T14:37:08.211Z",
+    "modified": "2024-11-15T14:06:22.690Z",
+    "0.0.1": "2024-09-10T14:37:08.486Z",
+    "0.1.0": "2024-09-12T12:30:11.793Z",
+    "0.1.1": "2024-09-12T13:02:20.193Z",
+    "0.1.2": "2024-10-07T12:14:17.627Z",
+    "1.0.0": "2024-10-18T13:40:30.373Z",
+    "1.0.1": "2024-10-24T13:26:44.138Z",
+    "1.0.2": "2024-11-15T14:06:22.520Z"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "description": "```bash npm i @midas-ds/grid ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 11306,
+  "version": "1.0.2",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "ab5cd78ac08049bda4af96abc4842d7ec6a1091a",
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-yY7bM2xFmQ57NPyqH9/LrGhOh6c8bPEsjAQ+1/aT7F+mZ4q1tyfqYSA2ywkkIJNj4HSn+DchLplKtbK0uB51pg==",
+    "shasum": "18baf7ea4e3102e48eeab93e8377dd9d88a8cb1c",
+    "tarball": "https://registry.npmjs.org/@midas-ds/grid/-/grid-1.0.2.tgz",
+    "fileCount": 10,
+    "unpackedSize": 9151,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCICvsGlwjUmXIhraoUl75B2JjrN+tBQfPUYvc3BuoiFl5AiEA1tKJiHXC4pWmF4RlwTtMP3Vhv+rTvrw33DjnaaH6Z/g="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/grid_1.0.2_1731679582310_0.7297558576728485"
+  },
+  "_hasShrinkwrap": false
+}
