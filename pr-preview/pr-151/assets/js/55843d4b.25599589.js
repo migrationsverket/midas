@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-basics-language-mdx-558.json
-const site_docs_basics_language_mdx_558_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/language","title":"Språk och skrivregler","description":"Språket i offentlig verksamhet ska enligt språklagen, vara vårdat, enkelt och begripligt.","source":"@site/docs/basics/language.mdx","sourceDirName":"basics","slug":"/basics/language","permalink":"/pr-preview/pr-151/basics/language","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Språk och skrivregler"},"sidebar":"sideBar","previous":{"title":"Tillgänglighetsriktlinjer","permalink":"/pr-preview/pr-151/basics/accessibility"},"next":{"title":"Komponenter","permalink":"/pr-preview/pr-151/components/"}}');
+const site_docs_basics_language_mdx_558_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/language","title":"Språk och skrivregler","description":"Språket i offentlig verksamhet ska enligt språklagen, vara vårdat, enkelt och begripligt.","source":"@site/docs/basics/language.mdx","sourceDirName":"basics","slug":"/basics/language","permalink":"/pr-preview/pr-151/basics/language","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Språk och skrivregler"},"sidebar":"sideBar","previous":{"title":"Tillgänglighet","permalink":"/pr-preview/pr-151/basics/accessibility"},"next":{"title":"Komponenter","permalink":"/pr-preview/pr-151/components/"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js

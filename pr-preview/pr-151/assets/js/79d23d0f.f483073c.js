@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-basics-icons-mdx-79d.json
-const site_docs_basics_icons_mdx_79d_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/icons","title":"Ikoner","description":"Ikoner används på Migrationsverkets webbplatser, i e-tjänster och interna system.","source":"@site/docs/basics/icons.mdx","sourceDirName":"basics","slug":"/basics/icons","permalink":"/pr-preview/pr-151/basics/icons","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":4,"frontMatter":{"title":"Ikoner","sidebar_position":4},"sidebar":"sideBar","previous":{"title":"Typografi","permalink":"/pr-preview/pr-151/basics/typography"},"next":{"title":"Tillgänglighetsriktlinjer","permalink":"/pr-preview/pr-151/basics/accessibility"}}');
+const site_docs_basics_icons_mdx_79d_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/icons","title":"Ikoner","description":"Ikoner används på Migrationsverkets webbplatser, i e-tjänster och interna system.","source":"@site/docs/basics/icons.mdx","sourceDirName":"basics","slug":"/basics/icons","permalink":"/pr-preview/pr-151/basics/icons","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":4,"frontMatter":{"title":"Ikoner","sidebar_position":4},"sidebar":"sideBar","previous":{"title":"Typografi","permalink":"/pr-preview/pr-151/basics/typography"},"next":{"title":"Tillgänglighet","permalink":"/pr-preview/pr-151/basics/accessibility"}}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
