@@ -16,7 +16,7 @@
   background-color: backgroundSecondary;
   border-bottom: 1px solid black;
 
-  &[aria-expanded='true'] div {
+  &[aria-expanded='true'] .icon {
     transform: rotate(180deg);
     transition: transform 0.3s ease;
   }
