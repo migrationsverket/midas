@@ -1,65 +1,76 @@
 'use client'
 
 import styles from './Modal.module.css'
-import {
-  Dialog,
-  DialogTrigger,
-  Modal as ModalAria,
-  ModalOverlayProps,
-  OverlayTriggerStateContext
-} from 'react-aria-components'
 import { X } from 'lucide-react'
 import { Button } from '@midas-ds/button'
 import React from 'react'
+import clsx from 'clsx'
 
-export { DialogTrigger, OverlayTriggerStateContext }
-
-interface MidasModalBody
+interface MidasModal
   extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
+    React.DialogHTMLAttributes<HTMLDialogElement>,
+    HTMLDialogElement
   > {
-  children: React.ReactNode
+  id: string
+  title: string
+  isOpen: boolean
+  onOpenChange: (isOpen: boolean) => void
 }
 
-interface MidasModal extends ModalOverlayProps {
-  children: React.ReactNode
-}
+export const Modal: React.FC<MidasModal> = ({
+  id,
+  isOpen,
+  onOpenChange,
+  children,
+  title,
+  className,
+  ...rest
+}) => {
+  const ref = React.useRef<HTMLDialogElement>(null)
 
-export const ModalHeader: React.FC = () => {
-  const state = React.useContext(OverlayTriggerStateContext)
+  React.useEffect(() => {
+    if (isOpen) {
+      ref.current?.showModal()
+    } else {
+      ref.current?.close()
+    }
+  }, [isOpen])
+
+  const handleClose = () => {
+    ref.current?.close()
+    onOpenChange(false)
+  }
+
+  const headingId = id + '_heading'
+
   return (
-    <div className={styles.modalHeader}>
-      <Button
-        onPress={state.close}
-        variant='tertiary'
-        icon={X}
-        iconPlacement='right'
-      >
-        Stäng
-      </Button>
-    </div>
-  )
-}
-
-export const ModalBody: React.FC<MidasModalBody> = ({ children, ...rest }) => {
-  return (
-    <div
-      className={styles.modalBody}
+    <dialog
+      id={id}
+      ref={ref}
+      onCancel={() => onOpenChange(false)}
+      className={clsx(styles.modal, className)}
+      aria-labelledby={headingId}
       {...rest}
     >
-      {children}
-    </div>
-  )
-}
-
-export const Modal: React.FC<MidasModal> = ({ children, ...rest }) => {
-  return (
-    <ModalAria
-      className={styles.modal}
-      {...rest}
-    >
-      <Dialog className={styles.modalDialog}>{children}</Dialog>
-    </ModalAria>
+      <div className={styles.modalHeader}>
+        <Button
+          onPress={() => handleClose()}
+          variant='tertiary'
+          icon={X}
+          iconPlacement='right'
+        >
+          Stäng
+        </Button>
+      </div>
+      <div className={styles.modalBody}>
+        <h2
+          className={styles.modalHeading}
+          id={headingId}
+        >
+          {title}
+        </h2>
+        {children}
+      </div>
+    </dialog>
   )
 }

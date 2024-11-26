@@ -38,9 +38,9 @@ const rows = fruits.shuffled(7).map(fruit => {
 
 const Playground = ({ children, transformCode, hideCode, ...props }) => {
   const theme = usePrismTheme()
-  const [isOpened, setIsOpened] = React.useState<boolean>(false)
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
-  const scope = { columns, rows, fruits, ...props.scope, isOpened, setIsOpened }
+  const scope = { columns, rows, fruits, ...props.scope, isOpen, setIsOpen }
 
   return (
     <LiveProvider
