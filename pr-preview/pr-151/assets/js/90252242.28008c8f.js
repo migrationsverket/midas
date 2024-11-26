@@ -88,10 +88,6 @@ const toc = [{
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer-1",
-  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -226,11 +222,6 @@ function _createMdxContent(props) {
       children: "Kommer snart"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
       info: modal_namespaceObject
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer-1",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "TBD"
     })]
   });
 }
