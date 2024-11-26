@@ -4,13 +4,20 @@ tags: []
 description: Fält för att välja ett datum eller ett spann av datum med kalender.
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/date-picker.json'
 import { DatePicker, DateRangePicker } from '@midas-ds/date-picker'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'DatePicker'} info={Info} friendlyName={'Datumväljare'} />
+<ComponentHeader
+  name={'DatePicker'}
+  info={Info}
+  friendlyName={'Datumväljare'}
+/>
 
 ## Introduktion
 
@@ -28,22 +35,16 @@ npm install @midas-ds/date-picker
 import { DatePicker } from '@midas-ds/date-picker'
 ```
 
-<LiveCodeBlock scope={{DatePicker}}>
-{`<DatePicker />`}
-</LiveCodeBlock>
+<LiveCodeBlock scope={{ DatePicker }}>{`<DatePicker />`}</LiveCodeBlock>
 
 ### DateRangePicker
-
 
 ```tsx
 import { DateRangePicker } from '@midas-ds/date-picker'
 ```
 
-<LiveCodeBlock scope={{DateRangePicker}}>
-{`<DateRangePicker />`}
+<LiveCodeBlock scope={{ DateRangePicker }}>
+  {`<DateRangePicker />`}
 </LiveCodeBlock>
 
-
-## Beroenden
-
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

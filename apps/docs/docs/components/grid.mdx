@@ -5,7 +5,10 @@ description: Grid baserat på tekniken display grid i css
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/grid.json'
 import { Grid, GridItem } from '../../../../packages/grid/src'
 import { Card } from '../../../../packages/card/src'
@@ -81,3 +84,5 @@ Grid används för att strukturera upp en sida och placera olika saker i kolumne
 ### Så här använder du Grid
 
 Använd `<Grid></Grid>` som komponent och justera de direkt underliggande komponenter till Grid justeras enligt griddets bestämmelser. Justera med barnkomponenten `<GridItem col="antal-kolumner"></GridItem>`.
+
+<ComponentFooter info={Info} />

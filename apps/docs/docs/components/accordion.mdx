@@ -5,23 +5,30 @@ tags: [components, menu, accordion]
 description: Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida.
 ---
 
-import { PropTable } from '@site/src/components/propsTable';
+import { PropTable } from '@site/src/components/propsTable'
 import {
   Accordion,
   AccordionItem,
   AccordionContent,
-  AccordionTrigger,
-} from '@midas-ds/accordion';
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+  AccordionTrigger
+} from '@midas-ds/accordion'
+import {
+  ComponentHeader,
+  ComponentFooter
+} from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/accordion.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Accordion'} info={Info} friendlyName={'Dragspel'} overrideHeadlessLink="https://www.radix-ui.com/primitives/docs/components/accordion" />
+<ComponentHeader
+  name={'Accordion'}
+  info={Info}
+  friendlyName={'Dragspel'}
+  overrideHeadlessLink='https://www.radix-ui.com/primitives/docs/components/accordion'
+/>
 
 ## Introduktion
 
 Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren.
-
 
 ## Installation och användning
 
@@ -34,12 +41,14 @@ import {
   Accordion,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
-} from '@midas-ds/accordion';
+  AccordionContent
+} from '@midas-ds/accordion'
 ```
 
-<LiveCodeBlock scope={{Accordion, AccordionItem, AccordionTrigger, AccordionContent}}>
-{`<Accordion type={'multiple'}>
+<LiveCodeBlock
+  scope={{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }}
+>
+  {`<Accordion type={'multiple'}>
     {fruits.shuffled().map(fruit => (
       <AccordionItem key={fruit.value} value={fruit.value}>
         <AccordionTrigger>{fruit.name}</AccordionTrigger>
@@ -52,7 +61,7 @@ import {
 </LiveCodeBlock>
 
 ## Riktlinjer
-- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan. 
 
-## Beroenden
-<ComponentFooter info={Info}/>
+- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
+
+<ComponentFooter info={Info} />
