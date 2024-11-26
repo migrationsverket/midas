@@ -43,7 +43,7 @@ import { Checkbox } from '@midas-ds/checkbox'
     <FlexItem style={{alignSelf: 'center'}}>
       <Checkbox>Jag godkänner villkoren</Checkbox>
     </FlexItem>
-    <FlexItem col="auto" style={{display: 'flex', gap: '0.5rem'}}>
+    <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
       <Button
         variant='secondary'
       >
@@ -179,7 +179,5 @@ flowchart TD;
 - Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
 
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
-
-## Beroenden
 
 <ComponentFooter info={Info} />
