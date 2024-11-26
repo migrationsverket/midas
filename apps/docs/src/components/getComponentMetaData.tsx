@@ -3,6 +3,7 @@ import moment from 'moment'
 import { Link } from '@midas-ds/link'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import useBaseUrl from '@docusaurus/useBaseUrl'
+import { kebabCase } from 'lodash'
 
 export const ComponentFooter = ({ info, children }) => {
   if (!info) return <></>
@@ -37,9 +38,13 @@ export const ComponentHeader = ({
   overrideHeadlessLink?: string
 }) => {
   moment.locale('sv')
-  const storybookLink = useBaseUrl(
-    `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`
-  )
+
+  const storybookLink =
+    process.env.NODE_ENV === 'development'
+      ? `http://localhost:4400/?path=/docs/components-${name.toLowerCase()}--docs`
+      : useBaseUrl(
+          `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`
+        )
 
   if (!info) {
     return (
@@ -71,7 +76,7 @@ export const ComponentHeader = ({
         <FlexItem>Version: {info.version}</FlexItem>
         <FlexItem col='auto'>
           <Link
-            href={`https://github.com/migrationsverket/midas/tree/main/packages/${name.toLowerCase()}/CHANGELOG.md`}
+            href={`https://github.com/migrationsverket/midas/tree/main/packages/${kebabCase(name)}/CHANGELOG.md`}
             target='_blank'
             standalone
           >
