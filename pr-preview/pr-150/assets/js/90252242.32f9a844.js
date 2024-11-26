@@ -194,7 +194,7 @@ function _createMdxContent(props) {
       children: `<>
   <Button onPress={setIsOpen}>Öppna modal</Button>
   <Modal id="avsluta" title="Vill du avsluta uppdraget?" isOpen={isOpen} onOpenChange={setIsOpen}>
-      <Flex fluid={true}>
+      <Flex fluid={true} style={{marginBottom: '1rem'}}>
           <FlexItem col>
               <TextArea
                   autoFocus
