@@ -100,26 +100,6 @@ import { Plus } from 'lucide-react'
   {'Lägg till rad'}
 </Button>
 
-## Små knappar
-
-För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size="small"`
-
-<ButtonGroup>
-  <Button size='small'>Primär</Button>
-  <Button
-    size='small'
-    variant='secondary'
-  >
-    {'Sekundär'}
-  </Button>
-  <Button
-    size='small'
-    variant='tertiary'
-  >
-    {'Tertiär'}
-  </Button>
-</ButtonGroup>
-
 ## Grupp av knappar
 
 För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
@@ -151,13 +131,3 @@ Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primär
   <Button>Skicka</Button>
   <Button variant='secondary'>Avbryt</Button>
 </ButtonGroup>
-
-<br />I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära
-(tillbaka) till vänster. Flödet går från vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
-
-<ButtonGroup aria-label='Skicka formulär'>
-  <Button variant='secondary'>Föregående</Button>
-  <Button>Nästa</Button>
-</ButtonGroup>
-
-<ComponentFooter info={Info} />
