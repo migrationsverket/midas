@@ -74,31 +74,33 @@ Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Till
 
 Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val
 
-<ButtonGroup aria-label='Hantera anmälan'>
+<LiveCodeBlock
+  hideCode
+  scope={{ ButtonGroup, Button }}
+>
+  {`<ButtonGroup aria-label='Hantera anmälan'>
   <Button>Slutför</Button>
   <Button variant='secondary'>Tillbaka</Button>
   <Button variant='tertiary'>Ta bort anmälan</Button>
-</ButtonGroup>
+</ButtonGroup>`}
+</LiveCodeBlock>
 
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
 Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
-```tsx
-import { Plus } from 'lucide-react'
-;<Button
-  icon={Plus}
-  variant='tertiary'
->
-  Lägg till rad
-</Button>
-```
-
-<Button
-  icon={Plus}
-  variant='tertiary'
->
-  {'Lägg till rad'}
-</Button>
+<LiveCodeBlock scope={{ Flex, FlexItem, Button, Plus }}>
+  {`<Flex>
+  <FlexItem col="auto">
+    <Button
+      icon={Plus}
+      variant='tertiary'
+      iconPlacement='left'
+      >
+      {'Lägg till rad'}
+    </Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 ## Grupp av knappar
 
@@ -127,7 +129,12 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster.
 
-<ButtonGroup aria-label='Skicka formulär'>
+<LiveCodeBlock
+  hideCode
+  scope={{ ButtonGroup, Button }}
+>
+  {`<ButtonGroup aria-label='Skicka formulär'>
   <Button>Skicka</Button>
   <Button variant='secondary'>Avbryt</Button>
-</ButtonGroup>
+</ButtonGroup>`}
+</LiveCodeBlock>
