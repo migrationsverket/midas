@@ -14,9 +14,10 @@ import { Grid, GridItem } from '@midas-ds/grid'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
-  name={'TextField'}
+  name={'Textfield'}
   info={Info}
   friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}
+  overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/TextField.html"
 />
 
 ## Introduktion
@@ -69,6 +70,7 @@ Det går också att definiera en egen funktion för validering:
 ### Egna felmeddelanden
 
 Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel.
+
 ```tsx
 <TextField
     label="Skriv in frukt"
@@ -90,7 +92,6 @@ Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. 
 
 />
 ```
-
 
 Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
 
