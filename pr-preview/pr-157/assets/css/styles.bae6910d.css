@@ -3735,8 +3735,10 @@ nav.menu {
   background: none;
 }
 
-.padding-top--md {
-  padding-top: 2rem !important;
+@media (min-width: 1620px) {
+  .padding-top--md {
+    padding-top: 3rem !important;
+  }
 }
 
 /* stylelint-disable-next-line media-feature-range-notation */
