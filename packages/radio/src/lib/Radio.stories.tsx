@@ -31,37 +31,35 @@ export default meta
 
 type Story = StoryObj<typeof RadioGroup>
 
-const radioItems = [
-  <Radio value={'banan'}>Banan</Radio>,
-  <Radio value={'apelsin'}>Apelsin</Radio>,
-  <Radio value={'kiwi'}>Kiwi</Radio>
-]
+const fruits = [
+  'Äpple',
+  'Banan',
+  'Kiwi',
+  'Apelsin',
+];
+const items = fruits.map(fruit => 
+  <Radio key={fruit} value={fruit} id={fruit.toLowerCase()}>{fruit}</Radio>
+)
+
 const radioItemsOneDisabled = [
-  <Radio value={'banan'}>Banan</Radio>,
-  <Radio
-    value={'apelsin'}
-    isDisabled={true}
-  >
+  <Radio key="radio-banan" value="banan">Banan</Radio>,
+  <Radio key="radio-apelsin" value="apelsin" isDisabled={true}>
     Apelsin
   </Radio>,
-  <Radio value={'kiwi'}>Kiwi</Radio>
-]
+  <Radio key="radio-kiwi" value="kiwi">Kiwi</Radio>
+];
 
 export const Normal: Story = {
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',
-    children: [
-      <Radio value={'banan'}>Banan</Radio>,
-      <Radio value={'apelsin'}>Apelsin</Radio>,
-      <Radio value={'kiwi'}>Kiwi</Radio>
-    ]
+    children: items
   }
 }
 
 export const Disabled: Story = {
   args: {
-    children: radioItems,
+    children: items,
     isDisabled: true
   }
 }
@@ -74,7 +72,7 @@ export const OneItemDisabled: Story = {
 
 export const Invalid: Story = {
   args: {
-    children: radioItems,
+    children: items,
     isInvalid: true,
     errorMessage: 'Det här stämmer inte!'
   }
