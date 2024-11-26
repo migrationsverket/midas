@@ -6,14 +6,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import { kebabCase } from 'lodash'
 
 export const ComponentFooter = ({ info, children }) => {
-  if (!info || !info.dependencies) return <></>
+  if (!info) return <></>
 
   return (
-    <ul>
-      {Object.keys(info.dependencies).map((k, i) => (
-        <li key={'dep' + i}>{`${k}@${info.dependencies[k]}`}</li>
-      ))}
-    </ul>
+    <>
+      <h2 id='dependencies'>Beroenden</h2>
+      <ul style={{ marginBottom: 0 }}>
+        {info?.dependencies &&
+          Object.keys(info.dependencies).map((k, i) => (
+            <li key={'dep' + i}>{`${k}@${info.dependencies[k]}`}</li>
+          ))}
+      </ul>
+      <ul>
+        {info?.peerDependencies &&
+          Object.keys(info.peerDependencies).map((k, i) => (
+            <li key={'dep' + i}>{`${k}@${info.peerDependencies[k]}`}</li>
+          ))}
+      </ul>
+    </>
   )
 }
 export const ComponentHeader = ({

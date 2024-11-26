@@ -73,23 +73,25 @@ Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. 
 
 ```tsx
 <TextField
-    label="Skriv in frukt"
-    errorMessage="Du måste skriva 'frukt'!"
-    isRequired
-    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
-    errorMessage={(validation) => {
-        if (validation.validationDetails.valueMissing) return "Det måste finnas en frukt.";
-        if (validation.validationDetails.badInput) return "Det där är inte en frukt.";
-        if (validation.validationDetails.customError) return "Du måste skriva frukt.";
+  label='Skriv in frukt'
+  errorMessage="Du måste skriva 'frukt'!"
+  isRequired
+  validate={value => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
+  errorMessage={validation => {
+    if (validation.validationDetails.valueMissing)
+      return 'Det måste finnas en frukt.'
+    if (validation.validationDetails.badInput)
+      return 'Det där är inte en frukt.'
+    if (validation.validationDetails.customError)
+      return 'Du måste skriva frukt.'
 
-        // Det finns flertalet typer på validationDetails
-        // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
-        // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
-        // med flera
+    // Det finns flertalet typer på validationDetails
+    // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
+    // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
+    // med flera
 
-        return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
-    }}
-
+    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'
+  }}
 />
 ```
 
@@ -150,7 +152,5 @@ Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./
     </GridItem>
 </Grid>`}
 </LiveCodeBlock>
-
-## Beroenden
 
 <ComponentFooter info={Info} />
