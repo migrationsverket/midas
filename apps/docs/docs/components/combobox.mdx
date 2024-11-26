@@ -5,10 +5,7 @@ description: Sökbar version av Select
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/combobox.json'
 import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -17,7 +14,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   name={'Combobox'}
   info={Info}
   friendlyName='Flerval med sök, väljare med sök, dropdown med sök'
-  overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/ComboBox.html"
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/ComboBox.html'
 />
 
 ## Introduktion
@@ -45,6 +42,10 @@ import { ComboBox } from '@midas-ds/combobox'
     {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
 </ComboBox>`}
 </LiveCodeBlock>
+
+## Beroenden
+
+<ComponentFooter info={Info} />
 
 ## Riktlinjer
 

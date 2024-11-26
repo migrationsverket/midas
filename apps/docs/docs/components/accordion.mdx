@@ -6,16 +6,8 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionContent,
-  AccordionTrigger
-} from '@midas-ds/accordion'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { Accordion, AccordionItem, AccordionContent, AccordionTrigger } from '@midas-ds/accordion'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/accordion.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
@@ -37,17 +29,10 @@ npm install @midas-ds/accordion
 ```
 
 ```tsx
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent
-} from '@midas-ds/accordion'
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@midas-ds/accordion'
 ```
 
-<LiveCodeBlock
-  scope={{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }}
->
+<LiveCodeBlock scope={{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }}>
   {`<Accordion type={'multiple'}>
     {fruits.shuffled().map(fruit => (
       <AccordionItem key={fruit.value} value={fruit.value}>
@@ -60,8 +45,8 @@ import {
 </Accordion>`}
 </LiveCodeBlock>
 
+<ComponentFooter info={Info} />
+
 ## Riktlinjer
 
 - Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
-
-<ComponentFooter info={Info} />

@@ -5,20 +5,17 @@ description: Upplys användaren om att systemet/tjänsten laddar
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/spinner.json'
 import { Spinner } from '@midas-ds/spinner'
 import { Button } from '@midas-ds/button'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ;<ComponentHeader
-  name={'Spinner'}
-  info={Info}
-  friendlyName={'Laddningsindikator'}
-  overrideHeadlessLink=''
+name={'Spinner'}
+info={Info}
+friendlyName={'Laddningsindikator'}
+overrideHeadlessLink=''
 />
 
 ## Introduktion
@@ -50,6 +47,10 @@ Använd varianten small för att kombinera med andra komponenter t.ex Button
   Laddar
 </Button>`}
 </LiveCodeBlock>
+
+## Beroenden
+
+<ComponentFooter info={Info} />
 
 ## Riktlinjer
 
