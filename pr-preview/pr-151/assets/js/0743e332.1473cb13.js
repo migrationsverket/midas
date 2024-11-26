@@ -90,10 +90,6 @@ const toc = [{
   "id": "tertiär-knapp",
   "level": 2
 }, {
-  "value": "Små knappar",
-  "id": "små-knappar",
-  "level": 2
-}, {
   "value": "Grupp av knappar",
   "id": "grupp-av-knappar",
   "level": 2
@@ -223,52 +219,41 @@ function _createMdxContent(props) {
       children: "Tertiär knapp"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
-    }), "\n", (0,jsx_runtime.jsxs)(src/* ButtonGroup */.e2, {
-      "aria-label": "Hantera anmälan",
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$n, {
-        children: "Slutför"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$n, {
-        variant: "secondary",
-        children: "Tillbaka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$n, {
-        variant: "tertiary",
-        children: "Ta bort anmälan"
-      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        ButtonGroup: src/* ButtonGroup */.e2,
+        Button: src/* Button */.$n
+      },
+      children: `<ButtonGroup aria-label='Hantera anmälan'>
+<Button>Slutför</Button>
+<Button variant='secondary'>Tillbaka</Button>
+<Button variant='tertiary'>Ta bort anmälan</Button>
+</ButtonGroup>`
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
         children: "icon"
       }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
         children: "iconPlacement"
       }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Plus } from 'lucide-react'\n;<Button\n  icon={Plus}\n  variant='tertiary'\n>\n  Lägg till rad\n</Button>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(src/* Button */.$n, {
-      icon: plus/* default */.A,
-      variant: "tertiary",
-      children: 'Lägg till rad'
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "små-knappar",
-      children: "Små knappar"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "size=\"small\""
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)(src/* ButtonGroup */.e2, {
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$n, {
-        size: "small",
-        children: "Primär"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$n, {
-        size: "small",
-        variant: "secondary",
-        children: 'Sekundär'
-      }), (0,jsx_runtime.jsx)(src/* Button */.$n, {
-        size: "small",
-        variant: "tertiary",
-        children: 'Tertiär'
-      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Button: src/* Button */.$n,
+        Plus: plus/* default */.A
+      },
+      children: `<Flex>
+<FlexItem col="auto">
+  <Button
+    icon={Plus}
+    variant='tertiary'
+    iconPlacement='left'
+    >
+    {'Lägg till rad'}
+  </Button>
+</FlexItem>
+</Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "grupp-av-knappar",
       children: "Grupp av knappar"
@@ -311,26 +296,16 @@ function _createMdxContent(props) {
       children: "Placering och ordning"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster."
-    }), "\n", (0,jsx_runtime.jsxs)(src/* ButtonGroup */.e2, {
-      "aria-label": "Skicka formulär",
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$n, {
-        children: "Skicka"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$n, {
-        variant: "secondary",
-        children: "Avbryt"
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [(0,jsx_runtime.jsx)("br", {}), "I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen (nästa) till höger och den sekundära\n(tillbaka) till vänster. Flödet går från vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta."]
-    }), "\n", (0,jsx_runtime.jsxs)(src/* ButtonGroup */.e2, {
-      "aria-label": "Skicka formulär",
-      children: [(0,jsx_runtime.jsx)(src/* Button */.$n, {
-        variant: "secondary",
-        children: "Föregående"
-      }), (0,jsx_runtime.jsx)(src/* Button */.$n, {
-        children: "Nästa"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: button_namespaceObject
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        ButtonGroup: src/* ButtonGroup */.e2,
+        Button: src/* Button */.$n
+      },
+      children: `<ButtonGroup aria-label='Skicka formulär'>
+<Button>Skicka</Button>
+<Button variant='secondary'>Avbryt</Button>
+</ButtonGroup>`
     })]
   });
 }
