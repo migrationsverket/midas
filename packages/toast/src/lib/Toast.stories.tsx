@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Meta, StoryObj } from '@storybook/react'
 import { GlobalToastRegion, ToastProvider, toastQueue } from './Toast'
 import { Button } from '@midas-ds/button'
@@ -11,18 +12,18 @@ const meta: Meta<typeof ToastProvider> = {
       control: 'select',
       description: 'Choose toast type',
       options: ['success', 'info', 'warning', 'important'],
-      table: { defaultValue: { summary: 'success' } },
-    },
-  },
+      table: { defaultValue: { summary: 'success' } }
+    }
+  }
 }
 export default meta
 type Story = StoryObj<typeof ToastProvider>
 
 export const Primary: Story = {
   args: {
-    type: 'success',
+    type: 'success'
   },
-  render: (args) => (
+  render: args => (
     <ToastProvider>
       {(state: any) => (
         <Button
@@ -37,14 +38,14 @@ export const Primary: Story = {
         </Button>
       )}
     </ToastProvider>
-  ),
+  )
 }
 
 export const Global: Story = {
   args: {
-    type: 'warning',
+    type: 'warning'
   },
-  render: (args) => (
+  render: args => (
     <>
       <GlobalToastRegion />
       <Button
@@ -58,5 +59,5 @@ export const Global: Story = {
         Show toast
       </Button>
     </>
-  ),
+  )
 }

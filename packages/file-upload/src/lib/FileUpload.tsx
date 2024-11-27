@@ -114,7 +114,7 @@ const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
           key={index}
           className={styles.box}
         >
-          {file.name}
+          <span>{file.name}</span>
           <Button
             variant='icon'
             size='small'
