@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7643,8401],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[8401],{
 
 /***/ 6429:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -145,74 +145,6 @@ var multi_select_src = __webpack_require__(21464);
 var MDXComponents={Head:Head/* default */.A,details:MDXDetails,Details:MDXDetails,// This is a fix to allow for importing of our custom components in any code block
 // code: MDXCode,
 code:function code(props){var children=props.children;var scope=Object.assign({},react,mvdsExports_namespaceObject);if(typeof children==='string'){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXCode,Object.assign({},props,{scope:scope}));}return children;},a:MDXA,pre:MDXPre,ul:MDXUl,img:MDXImg,h1:function h1(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h1"},props));},h2:function h2(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h2"},props));},h3:function h3(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h3"},props));},h4:function h4(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h4"},props));},h5:function h5(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h5"},props));},h6:function h6(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h6"},props));},admonition:Admonition/* default */.A,mermaid:Mermaid/* default */.A};/* harmony default export */ const theme_MDXComponents = (MDXComponents);
-
-/***/ }),
-
-/***/ 82052:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ BlogListPage)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
-var useDocusaurusContext = __webpack_require__(44586);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/metadataUtils.js + 1 modules
-var metadataUtils = __webpack_require__(61213);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
-var ThemeClassNames = __webpack_require__(17559);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogLayout/index.js + 6 modules
-var BlogLayout = __webpack_require__(28027);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(21312);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/PaginatorNavLink/index.js
-var PaginatorNavLink = __webpack_require__(39022);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPaginator/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogListPaginator(props){var metadata=props.metadata;var previousPage=metadata.previousPage,nextPage=metadata.nextPage;return/*#__PURE__*/(0,jsx_runtime.jsxs)("nav",{className:"pagination-nav","aria-label":(0,Translate/* translate */.T)({id:'theme.blog.paginator.navAriaLabel',message:'Blog list page navigation',description:'The ARIA label for the blog pagination'}),children:[previousPage&&/*#__PURE__*/(0,jsx_runtime.jsx)(PaginatorNavLink/* default */.A,{permalink:previousPage,title:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"theme.blog.paginator.newerEntries",description:"The label used to navigate to the newer blog posts page (previous page)",children:"Newer entries"})}),nextPage&&/*#__PURE__*/(0,jsx_runtime.jsx)(PaginatorNavLink/* default */.A,{permalink:nextPage,title:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"theme.blog.paginator.olderEntries",description:"The label used to navigate to the older blog posts page (next page)",children:"Older entries"}),isNext:true})]});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/SearchMetadata/index.js
-var SearchMetadata = __webpack_require__(41463);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/plugin-content-blog/lib/client/index.js + 3 modules
-var client = __webpack_require__(44096);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/index.js + 23 modules
-var BlogPostItem = __webpack_require__(31240);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItems/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogPostItems(_ref){var items=_ref.items,_ref$component=_ref.component,BlogPostItemComponent=_ref$component===void 0?BlogPostItem/* default */.A:_ref$component;return/*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment,{children:items.map(function(_ref2){var BlogPostContent=_ref2.content;return/*#__PURE__*/(0,jsx_runtime.jsx)(client/* BlogPostProvider */["in"],{content:BlogPostContent,children:/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItemComponent,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostContent,{})})},BlogPostContent.metadata.permalink);})});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Head.js
-var Head = __webpack_require__(5260);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPage/StructuredData/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogListPageStructuredData(props){var structuredData=(0,client/* useBlogListPageStructuredData */.kJ)(props);return/*#__PURE__*/(0,jsx_runtime.jsx)(Head/* default */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("script",{type:"application/ld+json",children:JSON.stringify(structuredData)})});}
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPage/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogListPageMetadata(props){var metadata=props.metadata;var _useDocusaurusContext=(0,useDocusaurusContext/* default */.A)(),siteTitle=_useDocusaurusContext.siteConfig.title;var blogDescription=metadata.blogDescription,blogTitle=metadata.blogTitle,permalink=metadata.permalink;var isBlogOnlyMode=permalink==='/';var title=isBlogOnlyMode?siteTitle:blogTitle;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(metadataUtils/* PageMetadata */.be,{title:title,description:blogDescription}),/*#__PURE__*/(0,jsx_runtime.jsx)(SearchMetadata/* default */.A,{tag:"blog_posts_list"})]});}function BlogListPageContent(props){var metadata=props.metadata,items=props.items,sidebar=props.sidebar;return/*#__PURE__*/(0,jsx_runtime.jsxs)(BlogLayout/* default */.A,{sidebar:sidebar,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItems,{items:items}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPaginator,{metadata:metadata})]});}function BlogListPage(props){return/*#__PURE__*/(0,jsx_runtime.jsxs)(metadataUtils/* HtmlClassNameProvider */.e3,{className:(0,clsx/* default */.A)(ThemeClassNames/* ThemeClassNames */.G.wrapper.blogPages,ThemeClassNames/* ThemeClassNames */.G.page.blogListPage),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageMetadata,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageStructuredData,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageContent,Object.assign({},props))]});}
 
 /***/ }),
 
@@ -712,7 +644,7 @@ __webpack_require__.d(__webpack_exports__, {
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 ;// ./packages/textarea/src/lib/TextArea.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_tiIs","count":"count_OzSk","countExceeded":"countExceeded_YJf_"});
+/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_tiIs","count":"count_OzSk","countExceeded":"countExceeded_YJf_"});
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
 var TextField = __webpack_require__(32945);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
