@@ -2,7 +2,6 @@
 title: 'Release 12'
 description: .
 slug: release-12
-tags: [releaser]
 ---
 
 import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
@@ -34,9 +33,7 @@ ComboBox är ett alternativ till Select som lämpar sig bra när listan har fler
 DatePicker har delats upp i två komponenter: `DatePicker` och `DateRangePicker`. Om du använde DatePicker innan behöver du troligtvis byta namn till `DateRangePicker`.
 DatePicker används för att välja ett (1) datum, DateRangePicker för att välja flera datum i ett intervall.
 
-<LiveCodeBlock scope={{ DatePicker }}>
-  {`<DatePicker label="Välj datum" />`}
-</LiveCodeBlock>
+<LiveCodeBlock scope={{ DatePicker }}>{`<DatePicker label="Välj datum" />`}</LiveCodeBlock>
 
 ## Refactor av inmatningskomponenter
 
@@ -59,9 +56,7 @@ Vi har lagt till en property som ger användaren möjlighet att stänga en InfoB
 
 Ett tidigare fel gjorde att inga props kunde passas till SearchField. Nu är det rättat!
 
-<LiveCodeBlock scope={{ SearchField }}>
-  {`<SearchField placeholder="Sök..." />`}
-</LiveCodeBlock>
+<LiveCodeBlock scope={{ SearchField }}>{`<SearchField placeholder="Sök..." />`}</LiveCodeBlock>
 
 ## Kodexempel i Storybook
 
