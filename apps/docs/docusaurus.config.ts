@@ -47,7 +47,16 @@ const config: Config = {
     ]
   ],
   markdown: {
-    mermaid: true
+    mermaid: true,
+    parseFrontMatter: async params => {
+      const result = await params.defaultParseFrontMatter(params)
+
+      // Remove previous / next links at bottom of pages
+      result.frontMatter.pagination_prev = null
+      result.frontMatter.pagination_next = null
+
+      return result
+    }
   },
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
   presets: [
@@ -62,7 +71,8 @@ const config: Config = {
               require('@docusaurus/remark-plugin-npm2yarn'),
               { converters: ['yarn', 'pnpm'], sync: true }
             ]
-          ]
+          ],
+          breadcrumbs: false
         },
         blog: {
           showReadingTime: true,
