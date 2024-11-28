@@ -11,7 +11,7 @@ import { Link } from '@midas-ds/link'
 import { baseColors } from '@midas-ds/theme'
 import { Button, ButtonGroup } from '@midas-ds/button'
 
-Nedan är en sammanfattning av nyheterna i release 16. Denna release innehåller inte så många nya komponenter utan vi har istället fokuserat på att göra mindre justeringar och uppdateringar.
+Nedan är en sammanfattning av nyheterna i release 16. I denna release har vi fokuserat på att göra nödvändiga justeringar och uppdateringar.
 
 {/* truncate */}
 
@@ -41,4 +41,9 @@ I och med att ButtonGroup innehåller denna funktionalitet så har vi tagit bort
 
 ## Mindre justeringar
 
-- Fixat bugg på Multiselect där val togs bort ur listan när taggen togs bort.
+- Fixat bugg på <Link href='/components/multi-select'>Multiselect</Link> där val togs bort ur listan när taggen togs bort.
+- <Link href='/components/textarea'>Text Area:</Link> Om `maxCharacters` används blir räknaren röd när det är för många
+  tecken i fältet
+- <Link href='/components/tabs'>Tabs</Link> är nu responsiva och läggs vertikalt i mobilläge
+- <Link href='/components/date-picker'>Date picker:</Link> När både datum och tid ska anges så överlappar inte texten
+  längre
