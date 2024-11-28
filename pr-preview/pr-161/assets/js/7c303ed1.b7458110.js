@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3067],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7597],{
 
-/***/ 82503:
+/***/ 74277:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -37,6 +37,7 @@ const assets = {
 "authorsImageUrls": [],
 };
 
+/*truncate*/
 
 
 
@@ -45,15 +46,88 @@ const assets = {
 
 
 
-const toc = [];
+const toc = [{
+  "value": "Modal",
+  "id": "modal",
+  "level": 2
+}, {
+  "value": "ButtonGroup",
+  "id": "buttongroup",
+  "level": 2
+}, {
+  "value": "Mindre justeringar",
+  "id": "mindre-justeringar",
+  "level": 2
+}];
 function _createMdxContent(props) {
   const _components = {
+    code: "code",
+    h2: "h2",
+    li: "li",
     p: "p",
+    ul: "ul",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_8__/* .useMDXComponents */ .R)(),
     ...props.components
   };
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-    children: "Nedan är en sammanfattning av nyheterna i release 16. Denna release innehåller inte så många nya komponenter utan vi har istället fokuserat på att göra mindre justeringar och uppdateringar."
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "Nedan är en sammanfattning av nyheterna i release 16. I denna release har vi fokuserat på att göra nödvändiga justeringar och uppdateringar."
+    }), "\n", "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "modal",
+      children: "Modal"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["På grund av problem med att komponenter med popover, tex Select, inte kunde öppnas när vi använda React Arias modalkomponent så har vi byggt en ny modal som bygger på HTML-elementet ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "<dialog>"
+      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_5__/* .Link */ .N, {
+      standalone: true,
+      href: "/components/modal",
+      children: 'Läs mer om hur du använder vår Modal'
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "buttongroup",
+      children: "ButtonGroup"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Button har kompletterats med ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "ButtonGroup"
+      }), ". Den ger automatiskt rätt avstånd mellan knapparna och hanterar knapparnas beteende vid olika brytpunkter.\nI och med att ButtonGroup innehåller denna funktionalitet så har vi tagit bort det ur Button, vilket gör att Button är mer flexibel och lättare att anpassa om det behövs."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A, {
+      scope: {
+        ButtonGroup: _midas_ds_button__WEBPACK_IMPORTED_MODULE_7__/* .ButtonGroup */ .e2,
+        Button: _midas_ds_button__WEBPACK_IMPORTED_MODULE_7__/* .Button */ .$n
+      },
+      children: `<ButtonGroup aria-label="Välj frukt">
+  <Button>{fruits.shuffled(1).name}</Button>
+  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+  <Button variant="tertiary">{fruits.shuffled(1).name}</Button>
+</ButtonGroup>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "mindre-justeringar",
+      children: "Mindre justeringar"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
+      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: ["Fixat bugg på ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_5__/* .Link */ .N, {
+          href: "/components/multi-select",
+          children: "Multiselect"
+        }), " där val togs bort ur listan när taggen togs bort."]
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_5__/* .Link */ .N, {
+          href: "/components/textarea",
+          children: "Text Area:"
+        }), " Om ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+          children: "maxCharacters"
+        }), " används blir räknaren röd när det är för många\ntecken i fältet"]
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_5__/* .Link */ .N, {
+          href: "/components/tabs",
+          children: "Tabs"
+        }), " är nu responsiva och läggs vertikalt i mobilläge"]
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_5__/* .Link */ .N, {
+          href: "/components/date-picker",
+          children: "Date picker:"
+        }), " När både datum och tid ska anges så överlappar inte texten\nlängre"]
+      }), "\n"]
+    })]
   });
 }
 function MDXContent(props = {}) {
@@ -236,7 +310,7 @@ var theme=Object.assign({},tokens_namespaceObject);
 /***/ 42878:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-161/blog/release-16","source":"@site/blog/release16.mdx","title":"Release 16","description":".","date":"2024-11-28T19:44:33.000Z","tags":[],"readingTime":0.995,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 16","description":".","slug":"release-16","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 15","permalink":"/pr-preview/pr-161/blog/release-15"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-161/blog/release-16","source":"@site/blog/release16.mdx","title":"Release 16","description":".","date":"2024-11-28T19:44:33.000Z","tags":[],"readingTime":1.19,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 16","description":".","slug":"release-16","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 15","permalink":"/pr-preview/pr-161/blog/release-15"}}');
 
 /***/ })
 
