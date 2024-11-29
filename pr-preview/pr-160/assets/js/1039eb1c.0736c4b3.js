@@ -301,7 +301,7 @@ const ChevronRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 /***/ 27648:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-160/blog/release-15","source":"@site/blog/release15.mdx","title":"Release 15","description":".","date":"2024-11-15T07:33:50.000Z","tags":[],"readingTime":1.785,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 15","description":".","slug":"release-15","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 14","permalink":"/pr-preview/pr-160/blog/release-14"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-160/blog/release-15","source":"@site/blog/release15.mdx","title":"Release 15","description":".","date":"2024-11-15T07:33:50.000Z","tags":[],"readingTime":1.785,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 15","description":".","slug":"release-15","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 16","permalink":"/pr-preview/pr-160/blog/release-16"},"nextItem":{"title":"Release 14","permalink":"/pr-preview/pr-160/blog/release-14"}}');
 
 /***/ })
 
