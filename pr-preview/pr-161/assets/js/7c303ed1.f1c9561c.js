@@ -125,7 +125,7 @@ function _createMdxContent(props) {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_5__/* .Link */ .N, {
           href: "/components/date-picker",
           children: "Date picker:"
-        }), " När både datum och tid ska anges så överlappar inte texten\nlängre"]
+        }), " När både datum och tid ska anges så överlappar inte elementen\nlängre"]
       }), "\n"]
     })]
   });

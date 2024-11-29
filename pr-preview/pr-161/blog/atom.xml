@@ -28,7 +28,7 @@ I och med att ButtonGroup innehåller denna funktionalitet så har vi tagit bort
 <li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/textarea">Text Area:</a> Om <code scope="[object Object]">maxCharacters</code> används blir räknaren röd när det är för många
 tecken i fältet</li>
 <li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/tabs">Tabs</a> är nu responsiva och läggs vertikalt i mobilläge</li>
-<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/date-picker">Date picker:</a> När både datum och tid ska anges så överlappar inte texten
+<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/date-picker">Date picker:</a> När både datum och tid ska anges så överlappar inte elementen
 längre</li>
 </ul>]]></content>
     </entry>
