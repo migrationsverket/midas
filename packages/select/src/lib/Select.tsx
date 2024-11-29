@@ -35,9 +35,12 @@ export function Select<T extends object>({
   items,
   ...props
 }: SelectProps<T>) {
+  const selectRef = React.useRef<HTMLDivElement>(null)
+
   return (
     <AriaSelect
       className={styles.select}
+      ref={selectRef}
       {...props}
     >
       <InputWrapper
@@ -61,6 +64,7 @@ export function Select<T extends object>({
       <Popover
         className={styles.popover}
         offset={0}
+        UNSTABLE_portalContainer={selectRef.current || undefined}
       >
         <ListBox items={items}>{children}</ListBox>
       </Popover>

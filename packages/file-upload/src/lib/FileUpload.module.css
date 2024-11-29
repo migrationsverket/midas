@@ -4,18 +4,25 @@
 .box {
   background-color: gray10;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  padding-left: 16px;
-  font-size: 16px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+
+  & > span {
+    word-wrap: break-all;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    hyphens: auto;
+    flex: 1 0 0%;
+  }
 }
 
 .box button {
   border: none;
-  margin-right: 10px;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
 .list {

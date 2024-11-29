@@ -3,13 +3,19 @@ title: Toast
 description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.
 ---
 
-import { PropTable } from '@site/src/components/propsTable';
-import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src';
-import { Button } from '../../../../packages/button/src';
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src'
+import { Button } from '../../../../packages/button/src'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/toast.json'
+import { Flex, FlexItem } from '../../../../packages/flex/src'
 
-<ComponentHeader name={'Toast'} info={Info} friendlyName={'Notifiering, notiser'} overrideHeadlessLink="https://react-spectrum.adobe.com/react-aria/useToast.html" />
+<ComponentHeader
+  name={'Toast'}
+  info={Info}
+  friendlyName={'Notifiering, notiser'}
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
+/>
 
 ## Introduktion
 
@@ -19,13 +25,20 @@ Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet ä
 eller via en timeout som sätts via `{timeout: ms}`. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en`<ToastRegion>` som i
 nuvarande implementation återfinns i skärmens nedre högra hörn.
 
-
 <section style={{ marginBottom: '1rem' }}>
   <GlobalToastRegion />
   <Button
-    onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!'}, {
-        timeout: 5000,
-    })}>Tryck här för en notifiering</Button>
+    onPress={() =>
+      toastQueue.add(
+        { type: 'success', message: 'Allt funkar som det ska!' },
+        {
+          timeout: 5000
+        }
+      )
+    }
+  >
+    {'Tryck här för en notifiering'}
+  </Button>
 </section>
 
 ## Installation
@@ -38,30 +51,37 @@ npm install @midas-ds/toast
 
 En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas.
 
-<div style={{ display: 'flex', gap: '5px' }}>
-  <Button
-    onPress={() =>
-      toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, {timeout: 5000 })
-    }
-  >Success</Button>
-  <Button
-    onPress={() =>
-      toastQueue.add({ type: 'info', message: 'Här kommer ett meddelande' }, {
-        timeout: 5000,
-      })
-    }
-  >Info</Button>
-  <Button
-    onPress={() =>
-      toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })
-    }
-  >Important</Button>
-  <Button
-    onPress={() =>
-      toastQueue.add({ message: "Farlig varning!", type: 'warning' }, { timeout: 5000 })
-    }
-  >Warning</Button>
-</div>
+<Flex fluid={true}>
+  <FlexItem col={3}>
+    <Button onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}>
+      {'Success'}
+    </Button>
+  </FlexItem>
+  <FlexItem col={3}>
+    <Button
+      onPress={() =>
+        toastQueue.add(
+          { type: 'info', message: 'Här kommer ett meddelande' },
+          {
+            timeout: 5000
+          }
+        )
+      }
+    >
+      {'Info'}
+    </Button>
+  </FlexItem>
+  <FlexItem col={3}>
+    <Button onPress={() => toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })}>
+      {'Important'}
+    </Button>
+  </FlexItem>
+  <FlexItem col={3}>
+    <Button onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000 })}>
+      {'Warning'}
+    </Button>
+  </FlexItem>
+</Flex>
 
 ### Lokal implementation
 
@@ -69,17 +89,12 @@ Använd `toastProvider` för att sätta en kö av Toasts på valfritt ställe i 
 använd den [globala varianten](#global-implementation).
 
 ```tsx
-import { ToastProvider, MidasToastState } from '@midas-ds/toast';
-
-<ToastProvider>
+import { ToastProvider, MidasToastState } from '@midas-ds/toast'
+;<ToastProvider>
   {(state: MidasToastState) => (
-    <Button
-      onPress={() => state.add({message: "Success", type: 'success'}, {timeout: 5000 })}
-    >
-      Show toast
-    </Button>
+    <Button onPress={() => state.add({ message: 'Success', type: 'success' }, { timeout: 5000 })}>Show toast</Button>
   )}
-</ToastProvider>;
+</ToastProvider>
 ```
 
 ### Global implementation
@@ -97,12 +112,16 @@ import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
 }>Show toast</Button>
 ```
 
-## Riktlinjer
-Timeout ska av tillgänglighetsskäl vara minst 5000ms:
- ```tsx
- {timeout: 5000ms}
-```
-
 ## Beroenden
 
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />
+
+## Riktlinjer
+
+Timeout ska av tillgänglighetsskäl vara minst 5000ms:
+
+```tsx
+{timeout: 5000ms}
+```
+
+<ComponentFooter info={Info} />

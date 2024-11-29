@@ -1,17 +1,20 @@
 ---
 title: Tabs
-tags: []
 description: Fördela information över flertalet tabbar.
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/tabs.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Button } from '@midas-ds/button'
 import { Tabs as MidasTabs } from '@midas-ds/tabs'
 
-<ComponentHeader name={'Tabs'} info={Info} friendlyName={'Flikar'} />
+<ComponentHeader
+  name={'Tabs'}
+  info={Info}
+  friendlyName={'Flikar'}
+/>
 
 ## Introduktion
 
@@ -27,8 +30,8 @@ npm install @midas-ds/tabs
 import { Tabs } from '@midas-ds/tabs'
 ```
 
-<LiveCodeBlock scope={{MidasTabs, Button}}>
-{`<MidasTabs
+<LiveCodeBlock scope={{ MidasTabs, Button }}>
+  {`<MidasTabs
     defaultSelected="Viktigt att veta"
     label="Följ processen"
     tabs={['Processen', 'Viktigt att veta', 'Ansök'] as const}
@@ -51,6 +54,4 @@ import { Tabs } from '@midas-ds/tabs'
 </MidasTabs>`}
 </LiveCodeBlock>
 
-## Beroenden
-
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

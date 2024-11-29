@@ -1,23 +1,23 @@
 ---
 title: Breadcrumbs
-tags: [menu]
 description: Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
 ---
 
-import { PropTable } from '@site/src/components/propsTable';
-import {
-  Breadcrumbs
-} from '@midas-ds/breadcrumbs';
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { Breadcrumbs } from '@midas-ds/breadcrumbs'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/breadcrumbs.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Breadcrumbs'} info={Info} friendlyName={'Brödsmulor'} />
+<ComponentHeader
+  name={'Breadcrumbs'}
+  info={Info}
+  friendlyName={'Brödsmulor'}
+/>
 
 ## Introduktion
 
 Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
-
 
 ## Installation och användning
 
@@ -26,14 +26,11 @@ npm install @midas-ds/breadcrumbs
 ```
 
 ```tsx
-import { Breadcrumbs } from '@midas-ds/breadcrumbs';
+import { Breadcrumbs } from '@midas-ds/breadcrumbs'
 ```
 
-<LiveCodeBlock scope={{Breadcrumbs}}>
-{`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
+<LiveCodeBlock scope={{ Breadcrumbs }}>
+  {`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
 </LiveCodeBlock>
 
-
-
-## Beroenden
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

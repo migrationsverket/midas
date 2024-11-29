@@ -5,10 +5,11 @@ import {
   TextField as AriaTextField,
   TextArea as AriaTextArea,
   ValidationResult,
-  TextFieldProps as AriaTextFieldProps,
+  TextFieldProps as AriaTextFieldProps
 } from 'react-aria-components'
 import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
 import React from 'react'
+import clsx from 'clsx'
 
 export interface TextAreaProps extends AriaTextFieldProps {
   label?: string
@@ -26,52 +27,57 @@ export const TextArea: React.FC<TextAreaProps> = ({
   maxCharacters,
   errorMessage,
   showCounter,
+  validate,
   ...props
 }) => {
   const [value, setValue] = React.useState('')
-  const [hasExceededMaxCharacters, setHasExceededMaxCharacters] =
-    React.useState(false)
-
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value
     setValue(newValue)
-    if (maxCharacters) {
-      setHasExceededMaxCharacters(newValue.length > maxCharacters)
-    }
   }
 
   const Count = () => {
     if (maxCharacters) {
       return (
-        <span className={styles.count}>
+        <span
+          className={clsx(
+            styles.count,
+            value.length > maxCharacters && styles.countExceeded
+          )}
+        >
           {value.length} / {maxCharacters}
         </span>
       )
     }
+
     if (showCounter) {
       return <span className={styles.count}>{value.length}</span>
     }
+
     return null
   }
 
-  const getErrorMessage = (maxCharacters: number) => {
-    if (hasExceededMaxCharacters) {
-      return `${value.length - maxCharacters} tecken för mycket`
-    }
-    return errorMessage
+  const validateInput = (value: string) => {
+    const maxCharactersError =
+      maxCharacters && value.length > maxCharacters
+        ? `${value.length - maxCharacters} tecken för mycket`
+        : null
+
+    const otherValidationError = validate ? validate(value) : null
+
+    return maxCharactersError || otherValidationError || true
   }
 
   return (
     <AriaTextField
       className={TextFieldStyles.inputField}
+      validate={validateInput}
       {...props}
     >
       <InputWrapper
         label={label}
         description={description}
-        errorMessage={getErrorMessage(maxCharacters || 0)}
-        isInvalid={hasExceededMaxCharacters || props.isInvalid}
-        {...props}
+        errorMessage={errorMessage}
       >
         <Count />
         <AriaTextArea

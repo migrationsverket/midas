@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, signalRed10,smBreakpoint, gray10, gray20, gray50, black, signalRed100, blue100, mediumWeight, regularWeight, inputText, focus from tokens;
+@value display, signalRed10, smBreakpoint, gray10, gray20, gray50, black, signalRed100, blue100, mediumWeight, regularWeight, inputText, focus from tokens;
 
 .textArea {
   all: unset;
@@ -38,8 +38,13 @@
 }
 
 .count {
+  font-size: 0.875rem;
   color: inputText;
   text-align: right;
   grid-area: Count;
   align-self: flex-end;
+}
+
+.countExceeded {
+  color: signalRed100;
 }
