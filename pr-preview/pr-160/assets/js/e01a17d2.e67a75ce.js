@@ -54,11 +54,11 @@ function _createMdxContent(props) {
     children: [(0,jsx_runtime.jsx)(_components.p, {
       children: "Kraven på tillgänglig utformning av IT-system och tjänster, som nyttjas inom ramen för Migrationsverkets verksamhet, är högt ställda. Migrationsverkets IT-system och tjänster ska kunna användas av bredast möjlig krets av användare, oavsett funktionsförmåga. Personer med funktionsnedsättning ska kunna arbeta och anställas på Migrationsverket på likvärdiga villkor som andra. De som vänder sig till Migrationsverket ska oavsett funktionsförmåga kunna ta del av Migrationsverkets service på likvärdiga villkor."
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Migrationsverket e-tjänster ska uppfylla kraven i nivå A och AA i WCAG 2.1."
+      children: "Migrationsverket e-tjänster och webbar ska uppfylla kraven i nivå A och AA i WCAG 2.1. På DIGGs webbplats finns alla krav presenterade med länkar till källan (WCAG) för fördjupning. Listan som visas i länken nedan är filtrerad så att det bara är de\nkrav som ställs på myndigheten som finns med."
     }), "\n", (0,jsx_runtime.jsx)(src/* Link */.N, {
       standalone: true,
-      href: "https://www.digg.se/webbriktlinjer/alla-webbriktlinjer",
-      children: "DIGGs Webbriktlinjer"
+      href: "https://www.digg.se/webbriktlinjer/alla-webbriktlinjer?sort=en&legalrequirements=true",
+      children: 'DIGGs webbriktlinjer som innehåller lagkrav'
     })]
   });
 }
