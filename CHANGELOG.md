@@ -301,6 +301,7 @@ All notable changes to this project will be documented in this file. See [conven
 - add more stuff - ([57a3216](https://github.com/migrationsverket/midas/commits/57a3216c0025c1bd6d9c64afcdf7feac67b11c99)) - PHIEKS
 - change wording - ([f15a729](https://github.com/migrationsverket/midas/commits/f15a7297b45ab942d2777b159cdd14c479c1593a)) - PHIEKS
 - automatically get latest release - ([d953654](https://github.com/migrationsverket/midas/commits/d95365482815e6995677a856688476e97dc6f007)) - Wilhelm Hjelm
+- update info - ([da600fa](https://github.com/migrationsverket/midas/commits/da600fa98c4f3682b5b6a2a1f55c68190e7ca213)) - Wilhelm Hjelm
 
 ### 🚧 Miscellaneous Chores
 
@@ -606,6 +607,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(modal)** delete icon backgrund-color in css file - ([983e3dc](https://github.com/migrationsverket/midas/commits/983e3dc8fe7a5f3d266fc752556a1203466a7bdb)) - jabir Khalil
 - **(modal)** update modal docs - ([62f2546](https://github.com/migrationsverket/midas/commits/62f254652334eeb33e26ed41eb3259422b48dc5b)) - Wilhelm Hjelm
 - **(modal)** fix bug of unopenable modal + new docs - ([e21f7ee](https://github.com/migrationsverket/midas/commits/e21f7eefa10c4de898dfce7dfaf2580eb6caec15)) - Wilhelm Hjelm
+- **(modal)** fix spacing - ([9c5a41a](https://github.com/migrationsverket/midas/commits/9c5a41a15451378889c5e48c156a750f2d14aa2b)) - Wilhelm Hjelm
 - **(multi-select)** style adjustments - ([6caf8b6](https://github.com/migrationsverket/midas/commits/6caf8b669613d46ba58c1c1bd345ca0e9c68a50e)) - Wilhelm Hjelm
 - **(multi-select)** support for all default key - ([99394f9](https://github.com/migrationsverket/midas/commits/99394f927aadde38fa5ccb35a80e8c6383320cc7)) - Wilhelm Hjelm
 - **(multi-select)** validation - ([bdc09e9](https://github.com/migrationsverket/midas/commits/bdc09e908a10a1a3f3362042732c25bdff6fe320)) - Wilhelm Hjelm

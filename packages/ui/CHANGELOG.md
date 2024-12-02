@@ -1,3 +1,9 @@
+## 0.7.17 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated modal to 1.0.1
+
 ## 0.7.16 (2024-12-02)
 
 ### 🧱 Updated Dependencies
