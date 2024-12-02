@@ -1,3 +1,13 @@
+## 1.0.3 (2024-12-02)
+
+### 🩹 Fixes
+
+- **select:** support modals ([4b004d51](https://github.com/migrationsverket/midas/commit/4b004d51))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-11-15)
 
 ### 🩹 Fixes

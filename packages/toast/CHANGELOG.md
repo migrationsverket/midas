@@ -1,3 +1,18 @@
+## 1.0.4 (2024-12-02)
+
+### 🩹 Fixes
+
+- **toast:** update deps + lint ([717bc9bd](https://github.com/migrationsverket/midas/commit/717bc9bd))
+- **toast:** update deps + fix lint for now ([24a95068](https://github.com/migrationsverket/midas/commit/24a95068))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.2.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes

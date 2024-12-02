@@ -1,3 +1,14 @@
+## 1.0.3 (2024-12-02)
+
+### 🩹 Fixes
+
+- **radio:** fix data in stories ([20d938b9](https://github.com/migrationsverket/midas/commit/20d938b9))
+- **radio:** move radioGroup storybook to radio storybook, and fix tsconfig ([6a9b2365](https://github.com/migrationsverket/midas/commit/6a9b2365))
+
+### ❤️  Thank You
+
+- jabir Khalil
+
 ## 1.0.2 (2024-11-15)
 
 ### 🩹 Fixes

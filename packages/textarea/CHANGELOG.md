@@ -1,3 +1,18 @@
+## 1.0.5 (2024-12-02)
+
+### 🩹 Fixes
+
+- **textarea:** change color ([92d32e36](https://github.com/migrationsverket/midas/commit/92d32e36))
+- **textarea:** fix to show the error when the characters be more from max ([19199f1c](https://github.com/migrationsverket/midas/commit/19199f1c))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.5
+
+### ❤️  Thank You
+
+- jabir Khalil
+
 ## 1.0.4 (2024-11-19)
 
 ### 🧱 Updated Dependencies

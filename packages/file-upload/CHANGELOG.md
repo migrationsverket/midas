@@ -1,3 +1,18 @@
+## 1.0.5 (2024-12-02)
+
+### 🩹 Fixes
+
+- **file-upload:** fix text overflow mobile ([93af02b0](https://github.com/migrationsverket/midas/commit/93af02b0))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.5
+- Updated button to 1.2.0
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.4 (2024-11-19)
 
 ### 🧱 Updated Dependencies

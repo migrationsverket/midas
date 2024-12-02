@@ -1,3 +1,13 @@
+## 1.0.4 (2024-12-02)
+
+### 🩹 Fixes
+
+- **accordion:** color on iOS ([af63b92c](https://github.com/migrationsverket/midas/commit/af63b92c))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes

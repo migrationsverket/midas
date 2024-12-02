@@ -1,3 +1,18 @@
+## 0.1.6 (2024-12-02)
+
+### 🩹 Fixes
+
+- **multi-select:** support modals ([83824912](https://github.com/migrationsverket/midas/commit/83824912))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.5
+- Updated tag to 0.1.3
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.5 (2024-11-20)
 
 ### 🩹 Fixes

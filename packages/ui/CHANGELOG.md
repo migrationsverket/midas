@@ -1,3 +1,19 @@
+## 0.7.13 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated date-picker to 1.0.6
+- Updated info-banner to 1.0.5
+- Updated accordion to 1.0.4
+- Updated textfield to 1.0.5
+- Updated combobox to 1.0.5
+- Updated button to 1.2.0
+- Updated select to 1.0.3
+- Updated modal to 1.0.0
+- Updated radio to 1.0.3
+- Updated toast to 1.0.4
+- Updated tabs to 1.0.4
+
 ## 0.7.12 (2024-11-20)
 
 ### 🧱 Updated Dependencies
