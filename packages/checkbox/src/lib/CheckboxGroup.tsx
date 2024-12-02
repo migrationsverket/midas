@@ -46,36 +46,36 @@ export const CheckboxGroup = ({
     const toggleAll = () => {
       if (isAllSelected !== 'all') {
         setIsAllSelected('all')
-        return state.setValue(['toggleAll', ...childValues])
+        return state?.setValue(['toggleAll', ...childValues])
       }
 
       setIsAllSelected('none')
-      return state.setValue([])
+      return state?.setValue([])
     }
 
     //listen and change the select all accordingly
     React.useEffect(() => {
       const amountOfChildren = childValues.length
       const totalAmount = childValues.length + 1
-      const currentAmount = state.value.length
+      const currentAmount = state?.value?.length || 0
 
       if (currentAmount === 0) setIsAllSelected('none')
 
       if (currentAmount > 0 && currentAmount < amountOfChildren)
         setIsAllSelected('some')
 
-      if (currentAmount !== totalAmount) state.removeValue('toggleAll')
+      if (currentAmount !== totalAmount) state?.removeValue('toggleAll')
 
       if (
         currentAmount === amountOfChildren &&
-        !state.value.includes('toggleAll')
+        !state?.value?.includes('toggleAll')
       ) {
-        state.addValue('toggleAll')
+        state?.addValue('toggleAll')
         setIsAllSelected('all')
       }
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [childValues.length, state.value])
+    }, [childValues.length, state?.value])
 
     return (
       <Checkbox
