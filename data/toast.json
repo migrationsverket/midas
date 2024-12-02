@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/toast@1.0.3",
-  "_rev": "8-490d1ead9ef3a35f4b2621fa1b1622e7",
+  "_id": "@midas-ds/toast@1.0.4",
+  "_rev": "9-2a95ea98e82e75447cf44cd203e0e5e0",
   "name": "@midas-ds/toast",
   "dist-tags": {
-    "latest": "1.0.3"
+    "latest": "1.0.4"
   },
   "versions": [
     "0.4.0",
@@ -13,11 +13,12 @@
     "1.0.0",
     "1.0.1",
     "1.0.2",
-    "1.0.3"
+    "1.0.3",
+    "1.0.4"
   ],
   "time": {
     "created": "2024-09-10T14:39:22.818Z",
-    "modified": "2024-11-15T14:06:21.227Z",
+    "modified": "2024-12-02T09:03:49.158Z",
     "0.4.0": "2024-09-10T14:39:23.053Z",
     "0.5.0": "2024-09-12T05:55:09.470Z",
     "0.5.1": "2024-09-12T12:58:03.661Z",
@@ -25,7 +26,8 @@
     "1.0.0": "2024-10-18T13:40:35.175Z",
     "1.0.1": "2024-10-22T14:09:08.896Z",
     "1.0.2": "2024-11-01T10:27:37.626Z",
-    "1.0.3": "2024-11-15T14:06:21.034Z"
+    "1.0.3": "2024-11-15T14:06:21.034Z",
+    "1.0.4": "2024-12-02T09:03:48.913Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -40,8 +42,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 14165,
-  "version": "1.0.3",
+  "_contentLength": 0,
+  "version": "1.0.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -52,10 +54,10 @@
     }
   },
   "dependencies": {
-    "@midas-ds/button": "1.1.1",
+    "@midas-ds/button": "1.2.0",
     "react": "^18.3.1",
     "@react-aria/toast": "^3.0.0-beta.12",
-    "@react-stately/toast": "3.0.0-beta.6",
+    "@react-stately/toast": "3.0.0-beta.7",
     "react-dom": "18.3.1",
     "lucide-react": "^0.453.0"
   },
@@ -67,15 +69,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-/uPAJpW3ubq8G2XunmYFYBt3FK8XRk2URRFDQGIp/iKAnGcwcMIfwGdH/CldFna9pk6sSnu3iFrU3OWDTuugJg==",
-    "shasum": "3dd20a34ffb6cfb07bbeccbe42c17149a020a350",
-    "tarball": "https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.3.tgz",
+    "integrity": "sha512-8ZrnYb5Be9Hdsgt6nycPWIp7B8s6VRmYWhnsa4YH1ua1nf5fhVFUA7sX56jUGJqZ1w+B6c65k9DNI30dCnkBAQ==",
+    "shasum": "b6fe0e8ced134080a80b9cddd09b2fdc3bea90b1",
+    "tarball": "https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.4.tgz",
     "fileCount": 10,
-    "unpackedSize": 158663,
+    "unpackedSize": 159283,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEYCIQDjaS9i9pS060ddce6/FF8+S29Np6HKSzWfK3erS5zhkgIhAImb4cbEeq7puaqmgC/CqHXyTIZLYvHskl6fpAGjD5b5"
+        "sig": "MEYCIQD2AXqC901DV52wJqdZi2gqthGRWE7FdZncPxvHsuo1/wIhAM6Bq8tImzfI1YXA0eeZl3e60/aU/ip1CQ505KAhNWEI"
       }
     ]
   },
@@ -83,7 +85,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/toast_1.0.3_1731679580803_0.7545325299342285"
+    "tmp": "tmp/toast_1.0.4_1733130228718_0.5837321119062786"
   },
   "_hasShrinkwrap": false
 }

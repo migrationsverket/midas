@@ -1,21 +1,23 @@
 {
-  "_id": "@midas-ds/modal@0.1.2",
-  "_rev": "2-029a8e15f1e454d2074d3cf5a389007f",
+  "_id": "@midas-ds/modal@1.0.0",
+  "_rev": "3-99eb16eb39a6969f534bb4ac6f89cb77",
   "name": "@midas-ds/modal",
   "dist-tags": {
-    "latest": "0.1.2"
+    "latest": "1.0.0"
   },
   "versions": [
     "0.1.0",
     "0.1.1",
-    "0.1.2"
+    "0.1.2",
+    "1.0.0"
   ],
   "time": {
     "created": "2024-11-01T10:27:54.664Z",
-    "modified": "2024-11-15T14:06:18.478Z",
+    "modified": "2024-12-02T09:04:03.675Z",
     "0.1.0": "2024-11-01T10:27:54.939Z",
     "0.1.1": "2024-11-06T12:37:42.935Z",
-    "0.1.2": "2024-11-15T14:06:18.284Z"
+    "0.1.2": "2024-11-15T14:06:18.284Z",
+    "1.0.0": "2024-12-02T09:04:03.467Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -30,8 +32,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 6288,
-  "version": "0.1.2",
+  "_contentLength": 0,
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -47,19 +49,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "ab5cd78ac08049bda4af96abc4842d7ec6a1091a",
+  "gitHead": "7a152a390fea614fec9658b4e063384cf2bbf7d2",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-vSDvickWU+ZYyQ3DiuuvbruUkpO+LjFPppr6Cfgny3EAdItdqts0tGiZVJxUV0a2JGACShIma3nHaYXM275H1Q==",
-    "shasum": "0f2ad3bd4ab32be3f81cc44efa61c828115d7594",
-    "tarball": "https://registry.npmjs.org/@midas-ds/modal/-/modal-0.1.2.tgz",
+    "integrity": "sha512-VFFzSWMRK46Nzc8t/qJjWdwPM48dySihP1GWSg9PLD0Q0/n5A64xRlkM7kxWmMs50LVL9OVgrnr8/75tF32HMA==",
+    "shasum": "33c8189f5222a006f156268cc20aee41a0db3703",
+    "tarball": "https://registry.npmjs.org/@midas-ds/modal/-/modal-1.0.0.tgz",
     "fileCount": 8,
-    "unpackedSize": 166608,
+    "unpackedSize": 94343,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIHkXJoq90wSCT4nLam0GDbwJr/cE+k8fBDOSfLHRc/M7AiAEZBmvJi/tyA24UDYFkF2METo0NZTj2rw2SLwCpakdsw=="
+        "sig": "MEUCIQCg3eEJyb/kpegrfEXJGcy54w+xIyjXsD63MyaH9w6icwIgEqjg1v2QJ85lgDgX9FlWA/cUxAtNd2+meetK0/5h7Vc="
       }
     ]
   },
@@ -67,7 +69,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/modal_0.1.2_1731679577946_0.9763708798930835"
+    "tmp": "tmp/modal_1.0.0_1733130243303_0.5975610023776916"
   },
   "_hasShrinkwrap": false
 }
