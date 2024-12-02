@@ -1,3 +1,13 @@
+## 0.1.8 (2024-12-02)
+
+### 🩹 Fixes
+
+- **multi-select:** null on item fix ([d9e0b013](https://github.com/migrationsverket/midas/commit/d9e0b013))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.7 (2024-12-02)
 
 ### 🧱 Updated Dependencies

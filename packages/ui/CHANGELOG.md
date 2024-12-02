@@ -1,3 +1,9 @@
+## 0.7.16 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated multi-select to 0.1.8
+
 ## 0.7.15 (2024-12-02)
 
 ### 🧱 Updated Dependencies

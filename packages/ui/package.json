@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/ui",
-  "version": "0.7.15",
+  "version": "0.7.16",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -37,7 +37,7 @@
     "@midas-ds/tabs": "1.0.4",
     "@midas-ds/textarea": "1.0.5",
     "@midas-ds/modal": "1.0.0",
-    "@midas-ds/multi-select": "0.1.7"
+    "@midas-ds/multi-select": "0.1.8"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
