@@ -1,3 +1,12 @@
+## 0.7.15 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated multi-select to 0.1.7
+- Updated checkbox to 1.0.3
+- Updated combobox to 1.0.6
+- Updated table to 1.0.4
+
 ## 0.7.14 (2024-12-02)
 
 ### 🩹 Fixes

@@ -1,3 +1,13 @@
+## 1.0.6 (2024-12-02)
+
+### 🩹 Fixes
+
+- **combobox:** fix build ([2c15ffd0](https://github.com/migrationsverket/midas/commit/2c15ffd0))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.5 (2024-12-02)
 
 ### 🩹 Fixes

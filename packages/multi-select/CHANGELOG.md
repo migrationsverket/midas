@@ -1,3 +1,9 @@
+## 0.1.7 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 1.0.3
+
 ## 0.1.6 (2024-12-02)
 
 ### 🩹 Fixes
