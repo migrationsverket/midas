@@ -186,13 +186,13 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
 
             return (
               <Tag
-                key={item.id}
-                id={item.id}
-                textValue={item.name}
+                key={item?.id}
+                id={item?.id}
+                textValue={item?.name}
                 isDisabled={isDisabled}
                 dismissable
               >
-                {item.name}
+                {item?.name}
               </Tag>
             )
           })}
