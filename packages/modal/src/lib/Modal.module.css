@@ -11,6 +11,7 @@
   background-color: white;
   border: none;
   padding: 0;
+  margin: auto;
 
   &&:-internal-dialog-in-top-layer {
     overflow: visible;
