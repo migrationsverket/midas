@@ -18,7 +18,7 @@
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "procuction",
+      "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/{projectName}"
       },
