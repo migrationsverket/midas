@@ -1,3 +1,18 @@
+## 0.7.14 (2024-12-02)
+
+### 🩹 Fixes
+
+- **ui:** update deps ([220dae3c](https://github.com/migrationsverket/midas/commit/220dae3c))
+
+### 🧱 Updated Dependencies
+
+- Updated search-field to 1.0.7
+- Updated date-picker to 1.0.7
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.7.13 (2024-12-02)
 
 ### 🧱 Updated Dependencies

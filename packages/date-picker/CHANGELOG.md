@@ -1,3 +1,13 @@
+## 1.0.7 (2024-12-02)
+
+### 🩹 Fixes
+
+- **date-picker:** update deps ([6647cbdb](https://github.com/migrationsverket/midas/commit/6647cbdb))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.6 (2024-12-02)
 
 ### 🩹 Fixes

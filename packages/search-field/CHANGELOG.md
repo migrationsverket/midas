@@ -1,3 +1,13 @@
+## 1.0.7 (2024-12-02)
+
+### 🩹 Fixes
+
+- **search-field:** update deps ([156e2c2b](https://github.com/migrationsverket/midas/commit/156e2c2b))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.6 (2024-11-19)
 
 ### 🩹 Fixes
