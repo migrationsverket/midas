@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/file-upload",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,10 +11,10 @@
     }
   },
   "dependencies": {
-    "@midas-ds/button": "1.1.1",
+    "@midas-ds/button": "1.2.0",
     "react-aria-components": "^1.0.0-rc.0",
     "lucide-react": "^0.453.0",
-    "@midas-ds/textfield": "1.0.4"
+    "@midas-ds/textfield": "1.0.5"
   },
   "peerDependencies": {
     "react": "^18.2.0"

@@ -1,3 +1,17 @@
+# 1.0.0 (2024-12-02)
+
+### 🚀 Features
+
+- ⚠️  **modal:** new API ([61473485](https://github.com/migrationsverket/midas/commit/61473485))
+
+### ⚠️  Breaking Changes
+
+- **modal:** new API
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.2 (2024-11-15)
 
 ### 🩹 Fixes

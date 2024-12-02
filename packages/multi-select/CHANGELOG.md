@@ -1,3 +1,34 @@
+## 0.1.8 (2024-12-02)
+
+### 🩹 Fixes
+
+- **multi-select:** null on item fix ([d9e0b013](https://github.com/migrationsverket/midas/commit/d9e0b013))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 0.1.7 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated checkbox to 1.0.3
+
+## 0.1.6 (2024-12-02)
+
+### 🩹 Fixes
+
+- **multi-select:** support modals ([83824912](https://github.com/migrationsverket/midas/commit/83824912))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.0.5
+- Updated tag to 0.1.3
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.1.5 (2024-11-20)
 
 ### 🩹 Fixes

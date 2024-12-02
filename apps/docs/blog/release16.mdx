@@ -1,0 +1,49 @@
+---
+title: 'Release 16'
+description: .
+slug: release-16
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { MultiSelect } from '@midas-ds/multi-select'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { Link } from '@midas-ds/link'
+import { baseColors } from '@midas-ds/theme'
+import { Button, ButtonGroup } from '@midas-ds/button'
+
+Nedan är en sammanfattning av nyheterna i release 16. I denna release har vi fokuserat på att göra nödvändiga justeringar och uppdateringar.
+
+{/* truncate */}
+
+## Modal
+
+På grund av problem med att komponenter med popover, tex Select, inte kunde öppnas när vi använda React Arias modalkomponent så har vi byggt en ny modal som bygger på HTML-elementet `<dialog>`.
+
+<Link
+  standalone
+  href='/components/modal'
+>
+  {'Läs mer om hur du använder vår Modal'}
+</Link>
+
+## ButtonGroup
+
+Button har kompletterats med `ButtonGroup`. Den ger automatiskt rätt avstånd mellan knapparna och hanterar knapparnas beteende vid olika brytpunkter.
+I och med att ButtonGroup innehåller denna funktionalitet så har vi tagit bort det ur Button, vilket gör att Button är mer flexibel och lättare att anpassa om det behövs.
+
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj frukt">
+    <Button>{fruits.shuffled(1).name}</Button>
+    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+    <Button variant="tertiary">{fruits.shuffled(1).name}</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>
+
+## Mindre justeringar
+
+- Fixat bugg på <Link href='/components/multi-select'>MultiSelect</Link>: där val togs bort ur listan när taggen togs bort.
+- <Link href='/components/textarea'>TextArea</Link>: Om `maxCharacters` används blir räknaren röd när det är för många
+  tecken i fältet
+- <Link href='/components/tabs'>Tabs</Link>: är nu responsiva och läggs vertikalt i mobilläge
+- <Link href='/components/date-picker'>DatePicker</Link>: När både datum och tid ska anges så överlappar inte elementen
+  längre

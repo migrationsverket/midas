@@ -1,8 +1,7 @@
 ---
-title: "Release 13"
+title: 'Release 13'
 description: .
 slug: release-13
-tags: [releaser]
 ---
 
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -16,15 +15,15 @@ Nedan är en sammanfattning av nyheterna i release 13.
 {/* truncate */}
 
 ## Nya instruktioner för er som använder Remix
-Vi har skrivit om grunden för hur komponenterna bundlas. Detta kommer lösa ett problem som upplevts av att komponenterna får sin styling "försent" eller att de "glitchar" lite när sidan laddas. För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under [Kom igång för utvecklare](/get-started/develop/).
 
+Vi har skrivit om grunden för hur komponenterna bundlas. Detta kommer lösa ett problem som upplevts av att komponenterna får sin styling "försent" eller att de "glitchar" lite när sidan laddas. För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under [Kom igång för utvecklare](/get-started/develop/).
 
 #### Remix med Vite
 
 ```tsx {2-4} title="vite.config.ts"
 export default defineConfig({
   ssr: {
-    noExternal: [/^@midas-ds\/.+/],
+    noExternal: [/^@midas-ds\/.+/]
   }
 })
 ```
@@ -40,7 +39,7 @@ import type { LinksFunction } from '@remix-run/node'
 // ...
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
+  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : [])
   // ...
 ]
 ```
@@ -49,22 +48,27 @@ export const links: LinksFunction = () => [
 // ...
 export default {
   // ...
-  serverDependenciesToBundle: [/^@midas-ds\/.+/],
+  serverDependenciesToBundle: [/^@midas-ds\/.+/]
 }
 ```
 
 ## Ikoner på knappar
 
-Våra knappar kan nu ha en ikon till vänster om texten. Använd `icon` för att slå på det. 
- 
-<Button variant="tertiary" icon={Plus}>Lägg till</Button>
+Våra knappar kan nu ha en ikon till vänster om texten. Använd `icon` för att slå på det.
+
+<Button
+  variant='tertiary'
+  icon={Plus}
+>
+  {'Lägg till'}
+</Button>
 
 ## Validera personnummer
 
 Vi har skapat en förlåtande validering för personnummer baserat på Försäkringskassans referensimplementation. Den tillåter de flesta varianterna av ett personnummer så länge det är 10 eller 12 siffror. Använd `validationType="ssn"` på Textfield för att slå på den. [Läs mer om det här](/components/textfield/#personnummer). Fler valideringsmönster kommer tillkomma framöver. Det går även att lägga in en egen RegExp i `validationType`.
 
-<LiveCodeBlock scope={{TextField}}>
-{`<TextField 
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField 
     name="ssn"
     label="Personnummer"
     validationType="ssn"
@@ -74,10 +78,10 @@ Vi har skapat en förlåtande validering för personnummer baserat på Försäkr
 
 ## Table
 
-Dokumentationen för `<Table />` har tillkommit samt en ny design `striped` går att aktivera på tabellen. 
+Dokumentationen för `<Table />` har tillkommit samt en ny design `striped` går att aktivera på tabellen.
 
-<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
-{`<Table
+<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
+  {`<Table
     striped
     aria-label="Frukter"
     selectionMode="multiple"
@@ -98,9 +102,11 @@ Dokumentationen för `<Table />` har tillkommit samt en ny design `striped` går
 </LiveCodeBlock>
 
 ## UI-kit finns nu på Docwebben
-Vårt UI-kit till XD finns nu att [ladda ner](/get-started/design/) här på docwebben. UI-kitet uppdateras löpande! 
+
+Vårt UI-kit till XD finns nu att [ladda ner](/get-started/design/) här på docwebben. UI-kitet uppdateras löpande!
 
 ## Mindre justeringar
+
 - I förra releasen fick flertalet komponenter lite väl många dependencies. Det är nu åtgärdat.
 - `FlexItem` och `GridItem` accepterar nu samtliga egenskaper som en vanlig `div`, främst efterfrågat är såklart `className`.
 - Chevronikonen på `Select` och `ComboBox` animeras nu när man öppnar dem

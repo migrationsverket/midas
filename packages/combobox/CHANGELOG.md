@@ -1,3 +1,24 @@
+## 1.0.6 (2024-12-02)
+
+### 🩹 Fixes
+
+- **combobox:** fix build ([2c15ffd0](https://github.com/migrationsverket/midas/commit/2c15ffd0))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 1.0.5 (2024-12-02)
+
+### 🩹 Fixes
+
+- **combobox:** color on iOS ([52bbe02b](https://github.com/migrationsverket/midas/commit/52bbe02b))
+- **combobox:** support modals ([faa16f03](https://github.com/migrationsverket/midas/commit/faa16f03))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.4 (2024-11-15)
 
 ### 🩹 Fixes

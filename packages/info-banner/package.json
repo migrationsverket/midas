@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/info-banner",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "lucide-react": "^0.453.0",
-    "@midas-ds/button": "1.1.1"
+    "@midas-ds/button": "1.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"

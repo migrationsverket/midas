@@ -84,7 +84,10 @@
     "pre-release-components": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["nx release --skip-publish", "nx run-many -t lint --fix"],
+        "commands": [
+          "nx release --skip-publish",
+          "nx run-many -t lint --fix --exclude=tag:apps"
+        ],
         "parallel": false
       }
     },

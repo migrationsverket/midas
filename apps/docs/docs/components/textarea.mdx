@@ -1,16 +1,20 @@
 ---
 title: TextArea
-tags: []
 description: När användaren ska fylla i längre information
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/textarea.json'
 import { TextArea } from '@midas-ds/textarea'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'TextArea'} info={Info} friendlyName="Textfält" />
+<ComponentHeader
+  name={'Textarea'}
+  info={Info}
+  friendlyName='Textfält'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1'
+/>
 
 ## Introduktion
 
@@ -27,7 +31,7 @@ import { TextArea } from '@midas-ds/textarea'
 ```
 
 <LiveCodeBlock scope={{ TextArea }}>
-{`<TextArea 
+  {`<TextArea 
     label="Kommentar"
     description="Skriv en kommentar"
     maxCharacters={50}
@@ -35,6 +39,4 @@ import { TextArea } from '@midas-ds/textarea'
 />`}
 </LiveCodeBlock>
 
-
-## Beroenden
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />

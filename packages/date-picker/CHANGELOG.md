@@ -1,3 +1,25 @@
+## 1.0.7 (2024-12-02)
+
+### 🩹 Fixes
+
+- **date-picker:** update deps ([6647cbdb](https://github.com/migrationsverket/midas/commit/6647cbdb))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 1.0.6 (2024-12-02)
+
+### 🩹 Fixes
+
+- **date-picker:** color on iOS ([26b827c5](https://github.com/migrationsverket/midas/commit/26b827c5))
+- **date-picker:** add deps ([3e4bd506](https://github.com/migrationsverket/midas/commit/3e4bd506))
+- **date-picker:** support modals ([3ae02ca5](https://github.com/migrationsverket/midas/commit/3ae02ca5))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.5 (2024-11-19)
 
 ### 🩹 Fixes

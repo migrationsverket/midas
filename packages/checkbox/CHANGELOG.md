@@ -1,3 +1,13 @@
+## 1.0.3 (2024-12-02)
+
+### 🩹 Fixes
+
+- **checkbox:** fix state could be null ([a3368b2f](https://github.com/migrationsverket/midas/commit/a3368b2f))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.2 (2024-11-15)
 
 ### 🩹 Fixes

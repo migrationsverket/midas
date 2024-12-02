@@ -1,15 +1,11 @@
 ---
 title: Button
 description: Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
-tags: [button, form]
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Button } from '@midas-ds/button'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { Button, ButtonGroup } from '@midas-ds/button'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/button.json'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -35,68 +31,87 @@ npm install @midas-ds/button
 import { Button } from '@midas-ds/button'
 ```
 
-<LiveCodeBlock scope={{ Flex, FlexItem, Button }}>
-  {`<Flex>
-  <FlexItem col="auto">
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj frukt">
     <Button>{fruits.shuffled(1).name}</Button>
-  </FlexItem>
-  <FlexItem col="auto">
     <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-  </FlexItem>
-  <FlexItem col="auto">
     <Button isDisabled>{fruits.shuffled(1).name}</Button>
-  </FlexItem>
-</Flex>`}
+</ButtonGroup>`}
 </LiveCodeBlock>
 
 ## Primärknapp
 
 Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta.
 
-<Button>Slutför</Button>
+<LiveCodeBlock
+  hideCode
+  scope={{ Flex, FlexItem, Button }}
+>
+  {`<Flex>
+  <FlexItem col="auto">
+    <Button>Slutför</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 ## Sekundär knapp
 
-Sekundär knapp används för underordnade/negativa handlingar i ett flöde (Avbryt, Tillbaka).
+Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka).
 
-<Button variant={'secondary'}>Tillbaka</Button>
+<LiveCodeBlock
+  hideCode
+  scope={{ Flex, FlexItem, Button }}
+>
+  {`<Flex>
+  <FlexItem col="auto">
+    <Button variant={'secondary'}>Tillbaka</Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 ## Tertiär knapp
 
 Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
+<LiveCodeBlock
+  hideCode
+  scope={{ ButtonGroup, Button }}
+>
+  {`<ButtonGroup aria-label='Hantera anmälan'>
   <Button>Slutför</Button>
   <Button variant='secondary'>Tillbaka</Button>
   <Button variant='tertiary'>Ta bort anmälan</Button>
-</div>
-
-<br />
+</ButtonGroup>`}
+</LiveCodeBlock>
 
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
 Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
-```tsx
-import { Plus } from 'lucide-react'
-;<Button
-  icon={Plus}
-  variant='tertiary'
->
-  Lägg till rad
-</Button>
-```
+<LiveCodeBlock scope={{ Flex, FlexItem, Button, Plus }}>
+  {`<Flex>
+  <FlexItem col="auto">
+    <Button
+      icon={Plus}
+      variant='tertiary'
+      iconPlacement='left'
+      >
+      {'Lägg till rad'}
+    </Button>
+  </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
-<Button icon={Plus} variant='tertiary'>Lägg till rad</Button>
+## Grupp av knappar
 
-## Små knappar
+För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
 
-För interna system finns det en liten version av knapparna som kan användas där det är ont om utrymme. Byt till liten knapp med `size="small"`
-
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button size={'small'}>Primär</Button>
-  <Button size={'small'} variant={'secondary'}>Sekundär</Button>
-  <Button size={'small'} variant={'tertiary'}>Tertiär</Button>
-</div>
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj frukt">
+    <Button>{fruits.shuffled(1).name}</Button>
+    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+    <Button isDisabled>{fruits.shuffled(1).name}</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>
 
 ## Riktlinjer
 
@@ -111,22 +126,14 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 ### Placering och ordning
 
-Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster. Undantaget är flerstegsflöden såsom e-tjänster, se nedan.
+Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster.
 
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
+<LiveCodeBlock
+  hideCode
+  scope={{ ButtonGroup, Button }}
+>
+  {`<ButtonGroup aria-label='Skicka formulär'>
   <Button>Skicka</Button>
-  <Button variant={'secondary'}>Avbryt</Button>
-</div>
-
-<br />I flerstegsflöden, som t.ex. e-tjänster, sätts alltid den primära knappen
-(nästa) till höger och den sekundära (tillbaka) till vänster. Flödet går från
-vänster till höger (som att bläddra i en bok) och knapparna motsvarar detta.
-
-<div style={{ gap: '8px', display: 'flex', margin: '8px' }}>
-  <Button variant={'secondary'}>Föregående</Button>
-  <Button>Nästa</Button>
-</div>
-
-## Beroenden
-
-<ComponentFooter info={Info} />
+  <Button variant='secondary'>Avbryt</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>

@@ -147,6 +147,7 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
               className={styles.popover}
               style={{ width: popoverWidth }}
               offset={0}
+              UNSTABLE_portalContainer={triggerRef.current || undefined}
             >
               <GridList
                 aria-label={label}
@@ -185,13 +186,13 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
 
             return (
               <Tag
-                key={item.id}
-                id={item.id}
-                textValue={item.name}
+                key={item?.id}
+                id={item?.id}
+                textValue={item?.name}
                 isDisabled={isDisabled}
                 dismissable
               >
-                {item.name}
+                {item?.name}
               </Tag>
             )
           })}

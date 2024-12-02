@@ -5,18 +5,16 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { TextField } from '@midas-ds/textfield'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/textfield.json'
 import { Grid, GridItem } from '@midas-ds/grid'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
-  name={'TextField'}
+  name={'Textfield'}
   info={Info}
   friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
 ## Introduktion
@@ -68,30 +66,28 @@ Det går också att definiera en egen funktion för validering:
 
 ### Egna felmeddelanden
 
-Komponenten har flertalet inbyggda felmeddelanden beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel.
+Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel.
 
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    label="Skriv in frukt"
-    errorMessage="Du måste skriva 'frukt'!"
-    isRequired
-    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
-    errorMessage={(validation) => {
-        if (validation.validationDetails.valueMissing) return "Det måste finnas en frukt.";
-        if (validation.validationDetails.badInput) return "Det där är inte en frukt.";
-        if (validation.validationDetails.customError) return "Du måste skriva frukt.";
+```tsx
+<TextField
+  label='Skriv in frukt'
+  errorMessage="Du måste skriva 'frukt'!"
+  isRequired
+  validate={value => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
+  errorMessage={validation => {
+    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'
+    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'
+    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'
 
-        // Det finns flertalet typer på validationDetails
-        // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
-        // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
-        // med flera
+    // Det finns flertalet typer på validationDetails
+    // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
+    // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
+    // med flera
 
-        return "Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.";
-    }}
-
-/>`}
-
-</LiveCodeBlock>
+    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'
+  }}
+/>
+```
 
 Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
 
@@ -134,6 +130,10 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 `}
 </LiveCodeBlock>
 
+## Beroenden
+
+<ComponentFooter info={Info} />
+
 ## Riktlinjer
 
 ### Desktop
@@ -150,7 +150,5 @@ Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./
     </GridItem>
 </Grid>`}
 </LiveCodeBlock>
-
-## Beroenden
 
 <ComponentFooter info={Info} />

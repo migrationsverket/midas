@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/table",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@midas-ds/checkbox": "1.0.2",
+    "@midas-ds/checkbox": "1.0.3",
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.453.0"
   }

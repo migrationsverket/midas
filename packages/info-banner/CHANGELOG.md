@@ -1,3 +1,9 @@
+## 1.0.5 (2024-12-02)
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.2.0
+
 ## 1.0.4 (2024-11-15)
 
 ### 🩹 Fixes

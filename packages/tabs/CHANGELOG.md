@@ -1,3 +1,13 @@
+## 1.0.4 (2024-12-02)
+
+### 🩹 Fixes
+
+- **tabs:** responsive ([212eff6c](https://github.com/migrationsverket/midas/commit/212eff6c))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.3 (2024-11-15)
 
 ### 🩹 Fixes

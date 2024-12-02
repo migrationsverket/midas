@@ -1,3 +1,13 @@
+## 1.2.0 (2024-12-02)
+
+### 🚀 Features
+
+- **button:** add buttongroup component, move mobile rules ([6ba8ec5d](https://github.com/migrationsverket/midas/commit/6ba8ec5d))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 0.6.8 (2024-10-08)
 
 ### 🩹 Fixes

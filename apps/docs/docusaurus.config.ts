@@ -1,10 +1,13 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
+import { getLatestReleasePath } from './src/components/getLastestReleasePath'
 const path = require('path')
 const fs = require('fs')
 
 const packagesDir = path.resolve(__dirname, '../../packages')
+const blogDir = path.resolve(__dirname, './blog')
+
 const packageAliases = {}
 
 fs.readdirSync(packagesDir).forEach(dir => {
@@ -20,6 +23,8 @@ fs.readdirSync(packagesDir).forEach(dir => {
     )
   }
 })
+
+const latestReleasePath = getLatestReleasePath(blogDir)
 
 const config: Config = {
   title: 'Migrationsverkets designsystem',
@@ -47,7 +52,16 @@ const config: Config = {
     ]
   ],
   markdown: {
-    mermaid: true
+    mermaid: true,
+    parseFrontMatter: async params => {
+      const result = await params.defaultParseFrontMatter(params)
+
+      // Remove previous / next links at bottom of pages
+      result.frontMatter.pagination_prev = null
+      result.frontMatter.pagination_next = null
+
+      return result
+    }
   },
   themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
   presets: [
@@ -62,7 +76,8 @@ const config: Config = {
               require('@docusaurus/remark-plugin-npm2yarn'),
               { converters: ['yarn', 'pnpm'], sync: true }
             ]
-          ]
+          ],
+          breadcrumbs: false
         },
         blog: {
           showReadingTime: true,
@@ -117,7 +132,7 @@ const config: Config = {
           label: 'Om'
         },
         {
-          to: '/blog/release-15',
+          to: latestReleasePath,
           label: 'Senaste versionen',
           position: 'right'
         },

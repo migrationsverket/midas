@@ -1,16 +1,19 @@
 ---
 title: Table
-tags: []
 description: En enkel tabell för att visualisera data.
 ---
 
-import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/table.json'
 import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/table'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'Table'} info={Info} friendlyName={'Tabell'} />
+<ComponentHeader
+  name={'Table'}
+  info={Info}
+  friendlyName={'Tabell'}
+/>
 
 ## Introduktion
 
@@ -28,23 +31,23 @@ import { Table } from '@midas-ds/table'
 
 För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas `id`.
 
-``` tsx
+```tsx
 const columns = [
   { name: 'Namn', id: 'name', isRowHeader: true },
-  { name: 'Beskrivning', id: 'desc', width: 'max-content' },
+  { name: 'Beskrivning', id: 'desc', width: 'max-content' }
 ]
 
-const rows = fruits.map((fruit) => {
+const rows = fruits.map(fruit => {
   return {
     id: fruit.value,
     name: fruit.name,
-    desc: fruit.description,
+    desc: fruit.description
   }
 })
 ```
 
-<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
-{`<Table
+<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
+  {`<Table
     aria-label="Frukter"
 >
     <TableHeader columns={columns}>
@@ -63,10 +66,11 @@ const rows = fruits.map((fruit) => {
 </LiveCodeBlock>
 
 ### Väljbara rader
+
 Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`
 
-<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
-{`<Table
+<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
+  {`<Table
     aria-label="Frukter"
     selectionMode="multiple"
 >
@@ -86,10 +90,11 @@ Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `se
 </LiveCodeBlock>
 
 ### Smalare rader
+
 Använd `narrow` om du vill ha en mindre tabell.
 
-<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
-{`<Table
+<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
+  {`<Table
     narrow
     aria-label="Frukter"
     selectionMode="multiple"
@@ -110,10 +115,11 @@ Använd `narrow` om du vill ha en mindre tabell.
 </LiveCodeBlock>
 
 ### Randiga rader
+
 Använd `striped` om du vill ha en randig tabell.
 
-<LiveCodeBlock scope={{Table, TableHeader, TableBody, Column, Row, Cell}}>
-{`<Table
+<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
+  {`<Table
     striped
     aria-label="Frukter"
     selectionMode="multiple"
@@ -133,5 +139,4 @@ Använd `striped` om du vill ha en randig tabell.
 </Table>`}
 </LiveCodeBlock>
 
-## Beroenden
-<ComponentFooter info={Info}/>
+<ComponentFooter info={Info} />
