@@ -14,8 +14,8 @@
     "react": "^18.2.0",
     "react-aria-components": "^1.1.1",
     "lucide-react": "^0.453.0",
-    "@midas-ds/textfield": "1.0.4",
-    "@midas-ds/button": "1.1.1"
+    "@midas-ds/textfield": "1.0.5",
+    "@midas-ds/button": "1.2.0"
   },
   "repository": "https://github.com/migrationsverket/midas.git",
   "publishConfig": {
