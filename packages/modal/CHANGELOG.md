@@ -1,3 +1,13 @@
+## 1.0.1 (2024-12-02)
+
+### 🩹 Fixes
+
+- **modal:** fix spacing ([9c5a41a1](https://github.com/migrationsverket/midas/commit/9c5a41a1))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 # 1.0.0 (2024-12-02)
 
 ### 🚀 Features
