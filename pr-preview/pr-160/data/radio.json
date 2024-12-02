@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/radio@1.0.2",
-  "_rev": "8-a311dbb6ad19e5e775f6ea332a1937dd",
+  "_id": "@midas-ds/radio@1.0.3",
+  "_rev": "9-071002d29a9590fe356b34ffd0f1a117",
   "name": "@midas-ds/radio",
   "dist-tags": {
-    "latest": "1.0.2"
+    "latest": "1.0.3"
   },
   "versions": [
     "0.6.1",
@@ -12,18 +12,20 @@
     "0.7.0",
     "1.0.0",
     "1.0.1",
-    "1.0.2"
+    "1.0.2",
+    "1.0.3"
   ],
   "time": {
     "created": "2024-09-10T14:37:59.126Z",
-    "modified": "2024-11-15T14:06:16.891Z",
+    "modified": "2024-12-02T09:03:45.259Z",
     "0.6.1": "2024-09-10T14:37:59.408Z",
     "0.6.2": "2024-09-12T12:42:10.930Z",
     "0.6.3": "2024-09-19T12:26:24.985Z",
     "0.7.0": "2024-10-07T12:18:39.699Z",
     "1.0.0": "2024-10-18T13:40:39.975Z",
     "1.0.1": "2024-10-24T13:26:37.442Z",
-    "1.0.2": "2024-11-15T14:06:16.681Z"
+    "1.0.2": "2024-11-15T14:06:16.681Z",
+    "1.0.3": "2024-12-02T09:03:45.085Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -38,8 +40,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 11477,
-  "version": "1.0.2",
+  "_contentLength": 0,
+  "version": "1.0.3",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -62,15 +64,15 @@
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-lXlSSg22HycQ+xOwEcjvEn1uFi4fD43jII5Ihft/9482Wsj8zIdI4rxNF3594zMojO0wi+uqR5XKfWY8Tdsgmg==",
-    "shasum": "971346befd1ecfea2eb6988617d4ea69482e5a27",
-    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.2.tgz",
-    "fileCount": 9,
-    "unpackedSize": 126783,
+    "integrity": "sha512-8rn0t/4P6Qi28Q+5rpD3DXVJAoKtbpcfsPF5QUyRPbhNBKxz94tqzPN6he3X5+8442LwTWxoUCgjaJ+q9unBFw==",
+    "shasum": "22b65c06952090c23bd3eb3d02d990ea3a8511b3",
+    "tarball": "https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.3.tgz",
+    "fileCount": 10,
+    "unpackedSize": 123860,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEYCIQD6XvRofNtdxsySaKFOD+lRe9KZ1+d7sYUHrEJiQsnKSAIhAJvT2sBnAuBIUOaW2+IuIM8FIYb7B1GJDHzj2mS/2lC/"
+        "sig": "MEUCIQCRbthhcOiYZzxi9UO3s6PqOCdBjzDP4AagTf3wCw31zgIgGF32yReY48VVY9jdvS8Ya4MvoENx8uwZc+CPY4dRgfo="
       }
     ]
   },
@@ -78,7 +80,7 @@
   "directories": {},
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/radio_1.0.2_1731679576352_0.020403986140226982"
+    "tmp": "tmp/radio_1.0.3_1733130224830_0.3830672314616146"
   },
   "_hasShrinkwrap": false
 }

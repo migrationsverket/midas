@@ -24,11 +24,11 @@ I och med att ButtonGroup innehåller denna funktionalitet så har vi tagit bort
 <div class="playgroundPreview_d6Ft"><div></div></div><div class="playgroundEditor_hiaS borderBottom_SKni"><div class="root_Yd8o" data-orientation="vertical"><div data-state="closed" data-orientation="vertical" class="item_Jr7L"><button type="button" aria-controls="radix-:R6elbeh:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:R2elbeh:" class="trigger_lAVx" data-radix-collection-item=""><h3 class="triggerText_xViX">Exempelkod</h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg></button><div data-state="closed" id="radix-:R6elbeh:" hidden="" role="region" aria-labelledby="radix-:R2elbeh:" data-orientation="vertical" class="content_QNal" style="--radix-accordion-content-height:var(--radix-collapsible-content-height);--radix-accordion-content-width:var(--radix-collapsible-content-width)"></div></div></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="mindre-justeringar">Mindre justeringar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-160/blog/release-16/#mindre-justeringar" class="hash-link" aria-label="Direktlänk till Mindre justeringar" title="Direktlänk till Mindre justeringar">​</a></h2>
 <ul>
-<li>Fixat bugg på <a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/multi-select">Multiselect</a> där val togs bort ur listan när taggen togs bort.</li>
-<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/textarea">Text Area:</a> Om <code scope="[object Object]">maxCharacters</code> används blir räknaren röd när det är för många
+<li>Fixat bugg på <a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/multi-select">MultiSelect</a>: där val togs bort ur listan när taggen togs bort.</li>
+<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/textarea">TextArea</a>: Om <code scope="[object Object]">maxCharacters</code> används blir räknaren röd när det är för många
 tecken i fältet</li>
-<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/tabs">Tabs</a> är nu responsiva och läggs vertikalt i mobilläge</li>
-<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/date-picker">Date picker:</a> När både datum och tid ska anges så överlappar inte elementen
+<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/tabs">Tabs</a>: är nu responsiva och läggs vertikalt i mobilläge</li>
+<li><a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/components/date-picker">DatePicker</a>: När både datum och tid ska anges så överlappar inte elementen
 längre</li>
 </ul>]]></content>
     </entry>
