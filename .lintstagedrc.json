@@ -1,5 +1,5 @@
 {
   "*.ts*": ["nx affected:lint --fix --files"],
-  "*": ["npx nx format:write --files"],
-  "*.scss": ["npx stylelint --fix"]
+  "*": ["nx format:write --files"],
+  "*.css": ["npx stylelint --fix"]
 }

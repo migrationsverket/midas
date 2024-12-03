@@ -76,6 +76,18 @@
   pointer-events: none;
 }
 
+.count {
+  font-size: 0.875rem;
+  color: inputText;
+  text-align: right;
+  grid-area: Count;
+  align-self: flex-end;
+}
+
+.countExceeded {
+  color: signalRed100;
+}
+
 .input {
   all: unset;
   grid-area: Input;

@@ -60,7 +60,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   const validateInput = (value: string) => {
     const maxCharactersError =
       maxCharacters && value.length > maxCharacters
-        ? `${value.length - maxCharacters} tecken för mycket`
+        ? `Just nu är det ${value.length - maxCharacters} tecken för mycket`
         : null
 
     const otherValidationError = validate ? validate(value) : null
