@@ -84,6 +84,10 @@
   align-self: flex-end;
 }
 
+.countExceeded {
+  color: signalRed100;
+}
+
 .input {
   all: unset;
   grid-area: Input;
