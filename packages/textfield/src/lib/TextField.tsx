@@ -54,7 +54,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
     if (maxCharacters)
       return maxCharacters && value.length > maxCharacters
-        ? `Just nu är det ${value.length - maxCharacters} tecken för mycket`
+        ? `Du har angett ${value.length - maxCharacters} tecken för mycket. Fältet är begränsat till ${maxCharacters} tecken.`
         : null
 
     if (validate) return validate(value)
