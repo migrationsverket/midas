@@ -86,10 +86,6 @@
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
 
-  @media mdBreakpoint {
-    max-width: 18rem;
-  }
-
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
@@ -146,6 +142,10 @@
   & .icon {
     color: var(--border);
     flex: 0 0 auto;
+  }
+
+  @media mdBreakpoint {
+    width: 18rem;
   }
 }
 

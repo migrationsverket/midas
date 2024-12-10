@@ -37,7 +37,7 @@ export const Global: Story = {
               message: args.message,
               type: args.type
             },
-            { timeout: 500000 }
+            { timeout: 5000 }
           )
         }
       >
@@ -62,7 +62,7 @@ export const Local: Story = {
                 type: args.type,
                 message: args.message
               },
-              { timeout: 500000 }
+              { timeout: 5000 }
             )
           }
         >
