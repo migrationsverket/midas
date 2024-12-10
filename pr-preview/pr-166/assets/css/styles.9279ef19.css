@@ -7354,13 +7354,6 @@ CSS variables, meant to be overridden by final theme
   width: calc(100% - 1rem);
 }
 
-@media (min-width: 768px) {
-
-.toast_KTs7 {
-    max-width: 18rem;
-}
-  }
-
 .toast_KTs7[data-focus-visible],.toast_KTs7:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
@@ -7430,6 +7423,13 @@ CSS variables, meant to be overridden by final theme
 .toast_KTs7 .icon_KIoW {
     color: var(--border);
     flex: 0 0 auto;
+  }
+
+@media (min-width: 768px) {
+
+.toast_KTs7 {
+    width: 18rem;
+}
   }
 
 .toastContent_U3Cz {
