@@ -1,10 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Meta, StoryObj } from '@storybook/react'
-import { GlobalToastRegion, ToastProvider, toastQueue } from './Toast'
+import {
+  GlobalToastRegion,
+  ToastProvider,
+  toastQueue,
+  MidasToast
+} from './Toast'
 import { Button } from '@midas-ds/button'
 
-const meta: Meta<typeof ToastProvider> = {
-  component: ToastProvider,
+const meta: Meta<MidasToast> = {
   title: 'Components/Toast',
   tags: ['autodocs'],
   argTypes: {
@@ -17,33 +20,12 @@ const meta: Meta<typeof ToastProvider> = {
   }
 }
 export default meta
-type Story = StoryObj<typeof ToastProvider>
-
-export const Primary: Story = {
-  args: {
-    type: 'success'
-  },
-  render: args => (
-    <ToastProvider>
-      {(state: any) => (
-        <Button
-          onPress={() =>
-            state.add(
-              { type: args.type, message: 'hello' },
-              { type: args.type, timeout: 2000 }
-            )
-          }
-        >
-          Show {args.type} toast
-        </Button>
-      )}
-    </ToastProvider>
-  )
-}
+type Story = StoryObj<MidasToast>
 
 export const Global: Story = {
   args: {
-    type: 'warning'
+    type: 'success',
+    message: 'Inloggningen lyckades'
   },
   render: args => (
     <>
@@ -51,13 +33,42 @@ export const Global: Story = {
       <Button
         onPress={() =>
           toastQueue.add(
-            { message: 'Varning varning', type: args.type },
-            { timeout: 3000 }
+            {
+              message: args.message,
+              type: args.type
+            },
+            { timeout: 500000 }
           )
         }
       >
-        Show toast
+        Visa en {args.type}-toast
       </Button>
     </>
+  )
+}
+
+export const Local: Story = {
+  args: {
+    type: 'success',
+    message: 'Inloggningen lyckades'
+  },
+  render: args => (
+    <ToastProvider>
+      {state => (
+        <Button
+          onPress={() =>
+            state.add(
+              {
+                type: args.type,
+                message: args.message
+              },
+              { timeout: 500000 }
+            )
+          }
+        >
+          Visa en {args.type}-toast
+        </Button>
+      )}
+    </ToastProvider>
   )
 }
