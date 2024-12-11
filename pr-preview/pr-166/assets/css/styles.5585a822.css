@@ -7352,6 +7352,7 @@ CSS variables, meant to be overridden by final theme
   padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
+  font-size: 0.875rem;
 }
 
 .toast_KTs7[data-focus-visible],.toast_KTs7:focus-visible {
@@ -7423,7 +7424,7 @@ CSS variables, meant to be overridden by final theme
 }
 
 .toastMessage_p9OY {
-  padding: 0;
+  padding: 0.125rem 0 0;
   margin: 0;
   line-height: 1.2;
 }
