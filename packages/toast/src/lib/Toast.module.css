@@ -81,8 +81,8 @@
   justify-content: space-between;
   gap: 1rem;
   background: white;
-  color: black;
-  padding-left: 1rem;
+  color: gray150;
+  padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
 
@@ -122,21 +122,6 @@
 
     background: var(--bg);
     border-left-color: var(--border);
-  }
-
-  & button {
-    background: none;
-    appearance: none;
-    color: gray150;
-
-    &:hover {
-      background: none;
-    }
-
-    &:active {
-      background: none;
-      color: black;
-    }
   }
 
   & .icon {
