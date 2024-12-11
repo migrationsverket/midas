@@ -7348,8 +7348,8 @@ CSS variables, meant to be overridden by final theme
   justify-content: space-between;
   gap: 1rem;
   background: white;
-  color: black;
-  padding-left: 1rem;
+  color: #1f1f1f;
+  padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
 }
@@ -7402,23 +7402,6 @@ CSS variables, meant to be overridden by final theme
     border-left-color: #e62323;
     border-left-color: var(--border);
   }
-
-.toast_KTs7 button {
-    background: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    color: #1f1f1f;
-  }
-
-.toast_KTs7 button:hover {
-      background: none;
-    }
-
-.toast_KTs7 button:active {
-      background: none;
-      color: black;
-    }
 
 .toast_KTs7 .icon_KIoW {
     color: var(--border);
