@@ -85,6 +85,7 @@
   padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
+  font-size: 0.875rem;
 
   &[data-focus-visible],
   &:focus-visible {
@@ -142,7 +143,7 @@
 }
 
 .toastMessage {
-  padding: 0;
+  padding: 0.125rem 0 0;
   margin: 0;
   line-height: 1.2;
 }
