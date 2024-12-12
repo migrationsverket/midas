@@ -1,22 +1,22 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
-import React from 'react'
+import { Button } from '@midas-ds/button'
 import {
   AriaToastProps,
-  useToast,
   AriaToastRegionProps,
+  useToast,
   useToastRegion
 } from '@react-aria/toast'
 import {
+  QueuedToast,
   ToastQueue,
   ToastState,
   useToastQueue,
   useToastState
 } from '@react-stately/toast'
+import React from 'react'
 import { createPortal } from 'react-dom'
-import clsx from 'clsx'
-import { Button } from '@midas-ds/button'
+import styles from './Toast.module.css'
 import {
   CircleAlert,
   CircleCheckIcon,
@@ -24,13 +24,57 @@ import {
   TriangleAlert,
   X
 } from 'lucide-react'
-import styles from './Toast.module.css'
+import clsx from 'clsx'
+
+export interface MidasToast {
+  message: string
+  type: 'success' | 'info' | 'warning' | 'important'
+  children?: React.ReactNode
+}
 
 interface ToastRegionProps<T> extends AriaToastRegionProps {
   state: ToastState<T>
 }
 
-export function ToastProvider({ children, ...props }: any) {
+export interface ToastProps<T> extends AriaToastProps<T> {
+  state: ToastState<T>
+  toast: QueuedToast<T>
+  children?: React.ReactNode
+}
+
+interface ToastProviderProps extends AriaToastRegionProps {
+  children?:
+    | ((state: ToastState<MidasToast>) => React.ReactNode)
+    | React.ReactNode
+}
+
+const iconMap = {
+  success: CircleCheckIcon,
+  info: Info,
+  important: CircleAlert,
+  warning: TriangleAlert
+}
+
+export const toastQueue = new ToastQueue<MidasToast>({
+  maxVisibleToasts: 5,
+  hasExitAnimation: true
+})
+
+export const GlobalToastRegion = (props: ToastProviderProps) => {
+  const state = useToastQueue(toastQueue)
+
+  return state.visibleToasts.length > 0
+    ? createPortal(
+        <ToastRegion
+          {...props}
+          state={state}
+        />,
+        document.body
+      )
+    : null
+}
+
+export const ToastProvider = ({ children, ...props }: ToastProviderProps) => {
   const state = useToastState<MidasToast>({
     maxVisibleToasts: 5,
     hasExitAnimation: true
@@ -38,7 +82,7 @@ export function ToastProvider({ children, ...props }: any) {
 
   return (
     <>
-      {children(state)}
+      {typeof children === 'function' ? children(state) : children}
       {state.visibleToasts.length > 0 && (
         <ToastRegion
           {...props}
@@ -49,7 +93,10 @@ export function ToastProvider({ children, ...props }: any) {
   )
 }
 
-function ToastRegion({ state, ...props }: ToastRegionProps<MidasToast>) {
+export function ToastRegion<T extends MidasToast>({
+  state,
+  ...props
+}: ToastRegionProps<T>) {
   const ref = React.useRef(null)
   const { regionProps } = useToastRegion(props, state, ref)
 
@@ -70,14 +117,16 @@ function ToastRegion({ state, ...props }: ToastRegionProps<MidasToast>) {
   )
 }
 
-export type MidasToastState = ToastState<MidasToast>
-export interface ToastProps<T> extends AriaToastProps<T> {
-  state: ToastState<T>
-}
-
-export function Toast({ state, ...props }: ToastProps<MidasToast>) {
-  const ref = React.useRef(null)
-  const { toastProps, closeButtonProps } = useToast(props, state, ref)
+export function Toast<T extends MidasToast>({
+  state,
+  ...props
+}: ToastProps<T>) {
+  const ref = React.useRef<HTMLDivElement>(null)
+  const { toastProps, contentProps, titleProps, closeButtonProps } = useToast(
+    props,
+    state,
+    ref
+  )
   const Icon = iconMap[props.toast.content.type]
 
   return (
@@ -87,21 +136,34 @@ export function Toast({ state, ...props }: ToastProps<MidasToast>) {
       className={clsx(styles.toast, styles[props.toast.content.type])}
       data-animation={props.toast.animation}
       onAnimationEnd={() => {
-        // Remove the toast when the exiting animation completes.
         if (props.toast.animation === 'exiting') {
           state.remove(props.toast.key)
         }
       }}
     >
-      <div>
+      <div
+        className={styles.toastContent}
+        {...contentProps}
+      >
         <Icon
           className={styles.icon}
           size={20}
           aria-hidden
         />
-        {props.toast.content.message}
+        <div>
+          <p
+            className={styles.toastMessage}
+            {...titleProps}
+          >
+            {props.toast.content.message}
+          </p>
+          {props.toast.content.children}
+        </div>
       </div>
-      <Button {...closeButtonProps}>
+      <Button
+        variant='icon'
+        {...closeButtonProps}
+      >
         <X
           size={20}
           aria-hidden
@@ -109,39 +171,4 @@ export function Toast({ state, ...props }: ToastProps<MidasToast>) {
       </Button>
     </div>
   )
-}
-
-type MidasToast = {
-  message: string
-  type: 'success' | 'info' | 'warning' | 'important'
-}
-
-// Create a global toast queue.
-export const toastQueue = new ToastQueue<MidasToast>({
-  maxVisibleToasts: 5,
-  hasExitAnimation: true
-})
-
-export function GlobalToastRegion(props: any) {
-  // Subscribe to it.
-  const state = useToastQueue(toastQueue)
-
-  // Render toast region.
-  return state.visibleToasts.length > 0
-    ? createPortal(
-        <ToastRegion
-          {...props}
-          state={state}
-          type={props}
-        />,
-        document.body
-      )
-    : null
-}
-
-const iconMap = {
-  success: CircleCheckIcon,
-  info: Info,
-  important: CircleAlert,
-  warning: TriangleAlert
 }
