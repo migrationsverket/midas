@@ -68,12 +68,8 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation",
-  "id": "installation",
-  "level": 2
-}, {
-  "value": "Exempel",
-  "id": "exempel",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
 }, {
   "value": "Gruppera flera checkboxar",
@@ -137,8 +133,8 @@ function _createMdxContent(props) {
         children: "MultiSelect"
       }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation",
-      children: "Installation"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -173,9 +169,6 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Checkbox } from '@midas-ds/checkbox'\n;<Checkbox>Jag godkänner villkoren</Checkbox>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "exempel",
-      children: "Exempel"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Checkbox: src/* Checkbox */.S,
