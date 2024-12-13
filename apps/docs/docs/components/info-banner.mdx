@@ -6,10 +6,7 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 import { PropTable } from '@site/src/components/propsTable'
 import { InfoBanner } from '@midas-ds/info-banner'
 import { Tabs as MidasTabs } from '@midas-ds/tabs'
-import {
-  ComponentHeader,
-  ComponentFooter
-} from '@site/src/components/getComponentMetaData'
+import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/info-banner.json'
 
 <ComponentHeader
@@ -18,8 +15,6 @@ import Info from '@site/static/data/info-banner.json'
   friendlyName={'Informationsmeddelande'}
   overrideHeadlessLink=''
 />
-
-## Introduktion
 
 Informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
 
@@ -59,9 +54,7 @@ import { InfoBanner } from '@midas-ds/info-banner'
   <InfoBanner
     type={'success'}
     title={'Formuläret har skickats'}
-    message={
-      'Visas för användaren för att bekräfta att en action gått rätt till.'
-    }
+    message={'Visas för användaren för att bekräfta att en action gått rätt till.'}
   />
 </MidasTabs>
 
