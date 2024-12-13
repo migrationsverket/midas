@@ -278,7 +278,7 @@ function _createMdxContent(props) {
       children: "Generella riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven (t.ex för att gå till nästa sida i en etjänst) ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
+        children: "Undvik inaktiva knappar. Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven, t.ex för att gå till nästa sida i en e-tjänst, ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Undvik att ha för många knappar på samma sida."
       }), "\n"]
