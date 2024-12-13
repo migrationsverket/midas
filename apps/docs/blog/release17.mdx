@@ -1,16 +1,15 @@
 ---
-title: 'Release 16'
+title: 'Release 17'
 description: .
-slug: release-16
+slug: release-17
 ---
 
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { MultiSelect } from '@midas-ds/multi-select'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import { Link } from '@midas-ds/link'
-import { baseColors } from '@midas-ds/theme'
 import { TextField } from '@midas-ds/textfield'
 import { Button, ButtonGroup } from '@midas-ds/button'
+import { GlobalToastRegion, toastQueue } from '@midas-ds/toast'
 
 Nedan är en sammanfattning av nyheterna i release 17.
 
@@ -18,41 +17,35 @@ Nedan är en sammanfattning av nyheterna i release 17.
 
 ## Räknare till Textfield
 
-Textfield har fått en räknare som kan slås på via prop `showCounter` precis som hos TextArea.
+Textfield har fått en räknare som kan slås på via prop `showCounter`. Antalet tecken som ska matas in i fältet kan styras med `maxCharacters` precis som hos TextArea.
 
 <LiveCodeBlock scope={{ TextField }}>
   {`<TextField
-    label="Skriv in din e-post"
-    description="Obligatorisk"
+    label="Skriv så många tecken du vill"
+    description="Antalet tecken du skrivit ser du på räknaren till höger"
     showCounter
-    type="email"
 />`}
 </LiveCodeBlock>
 
 ## Toast
 
-Bytt position till top right i desktop och top i mobil. Putsat på designen.
+För att Toast ska vara lättare för användarna att se så har vi ändrat så att de dyker upp högst upp till höger på stora skärmar och högst upp i mitten på mindre skärmar. Vi har även gjort små justeringar i utseendet.
 
-<Link
-  standalone
-  href='/components/modal'
+<GlobalToastRegion />
+<Button
+  onPress={() =>
+    toastQueue.add(
+      { type: 'success', message: 'Här är din notifiering!' },
+      {
+        timeout: 5000
+      }
+    )
+  }
 >
-  {'Läs mer om hur du använder vår Modal'}
-</Link>
-
-## Räknare till Textfield
-
-Textfield har fått en räknare som kan slås på via prop
-
-<LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj frukt">
-    <Button>{fruits.shuffled(1).name}</Button>
-    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-    <Button variant="tertiary">{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+  {'Tryck här för en notifiering'}
+</Button>
 
 ## Mindre justeringar
 
-- Fler designprinciper!
-- Nytt och tydligare felmeddelande vid för många tecken
+- Lagt till <Link href='/basics/principles#designprinciper-för-extern-webbplats'>designprinciper för externwebb</Link>
+- Tydligare felmeddelande när användaren skriver in fler tecken än vad som tillåts av `maxCharacter` på Textfield och TextArea
