@@ -44,6 +44,17 @@ För att Toast ska vara lättare för användarna att se så har vi ändrat så 
 >
   {'Tryck här för en notifiering'}
 </Button>
+<br />
+<br />
+```tsx
+<ToastProvider>
+  {state => (
+    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>
+      Tryck här för en notifiering
+    </Button>
+  )}
+</ToastProvider>
+```
 
 ## Mindre justeringar
 
