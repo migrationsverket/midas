@@ -1,3 +1,13 @@
+## 1.0.8 (2024-12-13)
+
+### 🩹 Fixes
+
+- **search-field:** update deps ([b04c43c2](https://github.com/migrationsverket/midas/commit/b04c43c2))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.7 (2024-12-02)
 
 ### 🩹 Fixes
