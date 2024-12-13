@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react'
+import React from 'react'
 import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
 import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
@@ -11,8 +11,8 @@ export interface InfoBannerProps
   > {
   type: 'success' | 'info' | 'important' | 'warning'
   title?: string
-  message?: ReactNode | string
-  children?: ReactNode
+  message?: React.ReactNode | string
+  children?: React.ReactNode
   dismissable?: boolean
 }
 
@@ -32,7 +32,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   ...rest
 }) => {
   const Icon = iconMap[type]
-  const [show, setShow] = useState<boolean>(true)
+  const [show, setShow] = React.useState<boolean>(true)
 
   if (show)
     return (

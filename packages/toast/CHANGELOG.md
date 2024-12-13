@@ -1,3 +1,17 @@
+## 1.0.5 (2024-12-13)
+
+### 🩹 Fixes
+
+- **toast:** refreshed code, design and docs ([df43d007](https://github.com/migrationsverket/midas/commit/df43d007))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.2.1
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.4 (2024-12-02)
 
 ### 🩹 Fixes

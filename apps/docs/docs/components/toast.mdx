@@ -17,39 +17,45 @@ import { Flex, FlexItem } from '../../../../packages/flex/src'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
 />
 
-## Introduktion
-
 En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart.
 
 Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan
-eller via en timeout som sätts via `{timeout: ms}`. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en`<ToastRegion>` som i
-nuvarande implementation återfinns i skärmens nedre högra hörn.
+eller via en timeout. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en`<ToastRegion>`.
 
-<section style={{ marginBottom: '1rem' }}>
-  <GlobalToastRegion />
-  <Button
-    onPress={() =>
-      toastQueue.add(
-        { type: 'success', message: 'Allt funkar som det ska!' },
-        {
-          timeout: 5000
-        }
-      )
-    }
-  >
-    {'Tryck här för en notifiering'}
-  </Button>
-</section>
-
-## Installation
+## Installation och användning
 
 ```bash npm2yarn
 npm install @midas-ds/toast
 ```
 
-### Varianter
+```tsx
+import { ToastProvider } from '@midas-ds/toast'
+;<ToastProvider>
+  {state => (
+    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>
+      Tryck här för en notifiering
+    </Button>
+  )}
+</ToastProvider>
+```
 
-En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas.
+<GlobalToastRegion />
+<Button
+  onPress={() =>
+    toastQueue.add(
+      { type: 'success', message: 'Allt funkar som det ska!' },
+      {
+        timeout: 5000
+      }
+    )
+  }
+>
+  {'Tryck här för en notifiering'}
+</Button>
+
+## Varianter
+
+En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas. Här har även varningsnotisen högsta prioritet vilket gör att den alltid går före i kön.
 
 <Flex fluid={true}>
   <FlexItem col={3}>
@@ -77,27 +83,32 @@ En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. An
     </Button>
   </FlexItem>
   <FlexItem col={3}>
-    <Button onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000 })}>
+    <Button
+      onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000, priority: 1 })}
+    >
       {'Warning'}
     </Button>
   </FlexItem>
 </Flex>
 
-### Lokal implementation
+## Implementationer
+
+### Lokalt
 
 Använd `toastProvider` för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,
 använd den [globala varianten](#global-implementation).
 
 ```tsx
-import { ToastProvider, MidasToastState } from '@midas-ds/toast'
-;<ToastProvider>
-  {(state: MidasToastState) => (
-    <Button onPress={() => state.add({ message: 'Success', type: 'success' }, { timeout: 5000 })}>Show toast</Button>
+<ToastProvider>
+  {state => (
+    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>
+      Tryck här för en notifiering
+    </Button>
   )}
 </ToastProvider>
 ```
 
-### Global implementation
+### Globalt
 
 Välj en global kö för toasts om det passar ditt användsningsscenario bättre. Lägg en `<GlobalToastRegion>` någonstans i appen
 och lägg nya toasts i kön enligt:
@@ -109,19 +120,29 @@ import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
 //...
 <Button onPress={
   () => toastQueue.add({type: 'success', message: 'Toast is done'})
-}>Show toast</Button>
+}>Visa notis</Button>
 ```
 
-## Beroenden
+## Notiskön
 
-<ComponentFooter info={Info} />
+Varje gång en toast läggs till i kön går det att bestämma livslängs och prioritering för notisen. Prioritet kan sättas till 1, 2 eller 3 och notiserna kommer gå före i kön beroende på detta.
+
+```tsx {3}
+.add(
+  {...},
+  { priority: 1 }
+)
+```
 
 ## Riktlinjer
 
 Timeout ska av tillgänglighetsskäl vara minst 5000ms:
 
-```tsx
-{timeout: 5000ms}
+```tsx {3}
+.add(
+  {...},
+  { timeout: 5000 }
+)
 ```
 
 <ComponentFooter info={Info} />

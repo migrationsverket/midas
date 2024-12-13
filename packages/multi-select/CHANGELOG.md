@@ -1,3 +1,10 @@
+## 0.1.9 (2024-12-13)
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.1.0
+- Updated tag to 0.1.4
+
 ## 0.1.8 (2024-12-02)
 
 ### 🩹 Fixes

@@ -1,3 +1,13 @@
+## 1.2.1 (2024-12-13)
+
+### 🩹 Fixes
+
+- **button:** correct spacing on icon button ([1bd04c0f](https://github.com/migrationsverket/midas/commit/1bd04c0f))
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
 ## 1.2.0 (2024-12-02)
 
 ### 🚀 Features

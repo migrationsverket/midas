@@ -1,3 +1,27 @@
+## 0.7.19 (2024-12-13)
+
+### 🩹 Fixes
+
+- **ui:** update deps ([4a3d4976](https://github.com/migrationsverket/midas/commit/4a3d4976))
+
+### 🧱 Updated Dependencies
+
+- Updated search-field to 1.0.8
+- Updated date-picker to 1.0.8
+
+### ❤️  Thank You
+
+- Wilhelm Hjelm
+
+## 0.7.18 (2024-12-13)
+
+### 🧱 Updated Dependencies
+
+- Updated info-banner to 1.0.6
+- Updated textfield to 1.1.0
+- Updated button to 1.2.1
+- Updated toast to 1.0.5
+
 ## 0.7.17 (2024-12-02)
 
 ### 🧱 Updated Dependencies

@@ -12,6 +12,7 @@ import {
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Button } from '@midas-ds/button'
+import clsx from 'clsx'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   children?: ReactNode
@@ -19,6 +20,8 @@ export interface TextFieldProps extends AriaTextFieldProps {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string) | undefined
   validationType?: 'ssn' | RegExp
+  maxCharacters?: number
+  showCounter?: boolean
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
@@ -26,32 +29,64 @@ export const TextField: React.FC<TextFieldProps> = ({
   description,
   errorMessage,
   validationType,
+  validate,
+  maxCharacters,
+  showCounter,
   ...props
 }) => {
-  const [input, setInput] = React.useState<string>('')
-  const [isValid, setIsValid] = React.useState<boolean>(true)
+  const [value, setValue] = React.useState<string>('')
 
-  const validateInput = (value: string) => {
-    if (validationType === undefined) return true
-    if (validationType === 'ssn') setIsValid(ssnRegEx.test(value))
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.value
+    setValue(newValue)
+  }
+
+  const validateInput = (
+    value: string
+  ): string | string[] | true | null | undefined => {
+    if (validationType === 'ssn')
+      return ssnRegEx.test(value) ? null : 'Felaktigt personnummer'
 
     if (validationType instanceof RegExp)
-      setIsValid(new RegExp(validationType).test(value))
+      return new RegExp(validationType).test(value)
+        ? null
+        : errorMessage?.toString()
+
+    if (maxCharacters)
+      return maxCharacters && value.length > maxCharacters
+        ? `Du har angett ${value.length - maxCharacters} tecken för mycket. Fältet är begränsat till ${maxCharacters} tecken.`
+        : null
+
+    if (validate) return validate(value)
+
+    return true
   }
 
-  const handleInputBlur = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    validateInput(value)
-  }
+  const Count = () => {
+    if (maxCharacters) {
+      return (
+        <span
+          className={clsx(
+            styles.count,
+            value.length > maxCharacters && styles.countExceeded
+          )}
+        >
+          {value.length} / {maxCharacters}
+        </span>
+      )
+    }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInput(e.target.value)
+    if (showCounter) {
+      return <span className={styles.count}>{value.length}</span>
+    }
+
+    return null
   }
 
   return (
     <AriaTextField
       className={styles.inputField}
-      isInvalid={validationType !== undefined ? !isValid : props.isInvalid}
+      validate={validateInput}
       {...props}
     >
       <InputWrapper
@@ -59,16 +94,17 @@ export const TextField: React.FC<TextFieldProps> = ({
         description={description}
         errorMessage={errorMessage}
       >
+        <Count />
         <div className={styles.wrap}>
           <Input
             type={props.type}
             className={styles.input}
-            onChange={handleInputChange}
-            onBlur={handleInputBlur}
+            onChange={handleChange}
+            onBlur={handleChange}
           />
           <PasswordField
             type={props.type}
-            input={input}
+            input={value}
           />
         </div>
       </InputWrapper>

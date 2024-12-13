@@ -1,3 +1,19 @@
+## 1.0.6 (2024-12-13)
+
+### 🩹 Fixes
+
+- **textarea:** change error message when > maxCharacter ([25512c62](https://github.com/migrationsverket/midas/commit/25512c62))
+- **textarea:** change error message at maxCharacters ([14b27745](https://github.com/migrationsverket/midas/commit/14b27745))
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.1.0
+
+### ❤️  Thank You
+
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 1.0.5 (2024-12-02)
 
 ### 🩹 Fixes
