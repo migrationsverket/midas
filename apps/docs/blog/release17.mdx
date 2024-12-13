@@ -1,0 +1,58 @@
+---
+title: 'Release 16'
+description: .
+slug: release-16
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { MultiSelect } from '@midas-ds/multi-select'
+import { Flex, FlexItem } from '@midas-ds/flex'
+import { Link } from '@midas-ds/link'
+import { baseColors } from '@midas-ds/theme'
+import { TextField } from '@midas-ds/textfield'
+import { Button, ButtonGroup } from '@midas-ds/button'
+
+Nedan är en sammanfattning av nyheterna i release 17.
+
+{/* truncate */}
+
+## Räknare till Textfield
+
+Textfield har fått en räknare som kan slås på via prop `showCounter` precis som hos TextArea.
+
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField
+    label="Skriv in din e-post"
+    description="Obligatorisk"
+    showCounter
+    type="email"
+/>`}
+</LiveCodeBlock>
+
+## Toast
+
+Bytt position till top right i desktop och top i mobil. Putsat på designen.
+
+<Link
+  standalone
+  href='/components/modal'
+>
+  {'Läs mer om hur du använder vår Modal'}
+</Link>
+
+## Räknare till Textfield
+
+Textfield har fått en räknare som kan slås på via prop
+
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj frukt">
+    <Button>{fruits.shuffled(1).name}</Button>
+    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+    <Button variant="tertiary">{fruits.shuffled(1).name}</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>
+
+## Mindre justeringar
+
+- Fler designprinciper!
+- Nytt och tydligare felmeddelande vid för många tecken
