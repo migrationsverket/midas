@@ -83,8 +83,6 @@ function _createMdxContent(props) {
       name: 'Tabs',
       info: tabs_namespaceObject,
       friendlyName: 'Flikar'
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Fördela information över flertalet tabbar."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {

@@ -93,8 +93,6 @@ function _createMdxContent(props) {
       name: 'Table',
       info: table_namespaceObject,
       friendlyName: 'Tabell'
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: ""
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
         children: "Select"

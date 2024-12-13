@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6505],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6796],{
 
-/***/ 22622:
+/***/ 27942:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_link_mdx_7d4_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_toast_mdx_a2c_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-link-mdx-7d4.json
-const site_docs_components_link_mdx_7d4_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/link","title":"Link","description":"Komponent som skapar en länk","source":"@site/docs/components/link.mdx","sourceDirName":"components","slug":"/components/link","permalink":"/pr-preview/pr-173/components/link","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Link","description":"Komponent som skapar en länk","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-toast-mdx-a2c.json
+const site_docs_components_toast_mdx_a2c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/toast","title":"Toast","description":"Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.","source":"@site/docs/components/toast.mdx","sourceDirName":"components","slug":"/components/toast","permalink":"/pr-preview/pr-173/components/toast","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Toast","description":"Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,51 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
+var src = __webpack_require__(63918);
+// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToastRegion.mjs + 1 modules
+var useToastRegion = __webpack_require__(96766);
+// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToast.mjs
+var useToast = __webpack_require__(93187);
+// EXTERNAL MODULE: ./node_modules/@react-stately/toast/dist/useToastState.mjs
+var dist_useToastState = __webpack_require__(8737);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-dom/index.js
+var react_dom = __webpack_require__(40961);
+;// ./packages/toast/src/lib/Toast.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Toast_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalGreen10":"#d5f2d9","signalGreen100":"#008d3c","signalBlue10":"#eaf2f6","signalBlue100":"#0066cc","signalYellow10":"#fff8e1","signalYellow100":"#f1c21b","signalRed10":"#ffdfdf","signalRed100":"#e62323","gray150":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","mdBreakpoint":"(min-width: 768px)","toastRegion":"toastRegion_D8P5","toast":"toast_KTs7","success":"success_uWpg","info":"info_gZit","important":"important_NPeI","warning":"warning_QRWE","icon":"icon_KIoW","toastContent":"toastContent_U3Cz","toastMessage":"toastMessage_p9OY","slideInTop":"slideInTop_l9cG","slideInEnd":"slideInEnd_nrEv","slideOutTop":"slideOutTop_ENmT","slideOutEnd":"slideOutEnd_Pml0"});
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-check.js
+var circle_check = __webpack_require__(79804);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-alert.js
+var circle_alert = __webpack_require__(37946);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
+var triangle_alert = __webpack_require__(418);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/toast/src/lib/Toast.tsx
+'use client';var _excluded=(/* unused pure expression or super */ null && (["children"])),_excluded2=["state"],_excluded3=["state"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};var toastQueue=new dist_useToastState/* ToastQueue */.Vv({maxVisibleToasts:5,hasExitAnimation:true});var GlobalToastRegion=function GlobalToastRegion(props){var state=(0,dist_useToastState/* useToastQueue */.oS)(toastQueue);return state.visibleToasts.length>0?/*#__PURE__*/(0,react_dom.createPortal)(/*#__PURE__*/(0,jsx_runtime.jsx)(ToastRegion,Object.assign({},props,{state:state})),document.body):null;};var ToastProvider=function ToastProvider(_ref){var children=_ref.children,props=_objectWithoutPropertiesLoose(_ref,_excluded);var state=useToastState({maxVisibleToasts:5,hasExitAnimation:true});return/*#__PURE__*/_jsxs(_Fragment,{children:[typeof children==='function'?children(state):children,state.visibleToasts.length>0&&/*#__PURE__*/_jsx(ToastRegion,Object.assign({},props,{state:state}))]});};function ToastRegion(_ref2){var state=_ref2.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);var ref=react.useRef(null);var _useToastRegion=(0,useToastRegion/* useToastRegion */.J)(props,state,ref),regionProps=_useToastRegion.regionProps;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},regionProps,{ref:ref,className:Toast_module.toastRegion,children:state.visibleToasts.map(function(toast){return/*#__PURE__*/(0,jsx_runtime.jsx)(Toast,{toast:toast,state:state},toast.key);})}));}function Toast(_ref3){var state=_ref3.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded3);var ref=react.useRef(null);var _useToast=(0,useToast/* useToast */.d)(props,state,ref),toastProps=_useToast.toastProps,contentProps=_useToast.contentProps,titleProps=_useToast.titleProps,closeButtonProps=_useToast.closeButtonProps;var Icon=iconMap[props.toast.content.type];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},toastProps,{ref:ref,className:(0,clsx/* default */.A)(Toast_module.toast,Toast_module[props.toast.content.type]),"data-animation":props.toast.animation,onAnimationEnd:function onAnimationEnd(){if(props.toast.animation==='exiting'){state.remove(props.toast.key);}},children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:Toast_module.toastContent},contentProps,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{className:Toast_module.icon,size:20,"aria-hidden":true}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("p",Object.assign({className:Toast_module.toastMessage},titleProps,{children:props.toast.content.message})),props.toast.content.children]})]})),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,Object.assign({variant:"icon"},closeButtonProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})}))]}));}
+;// ./packages/toast/src/index.ts
+
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./apps/docs/static/data/link.json
-var data_link = __webpack_require__(29169);
-// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
-var src = __webpack_require__(85560);
-// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
-var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./packages/theme/src/index.ts + 2 modules
-var theme_src = __webpack_require__(32976);
-;// ./apps/docs/docs/components/link.mdx
+;// ./apps/docs/static/data/toast.json
+const toast_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/toast@1.0.4","_rev":"9-2a95ea98e82e75447cf44cd203e0e5e0","name":"@midas-ds/toast","dist-tags":{"latest":"1.0.4"},"versions":["0.4.0","0.5.0","0.5.1","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-10T14:39:22.818Z","modified":"2024-12-02T09:03:49.158Z","0.4.0":"2024-09-10T14:39:23.053Z","0.5.0":"2024-09-12T05:55:09.470Z","0.5.1":"2024-09-12T12:58:03.661Z","0.5.2":"2024-10-07T12:28:12.102Z","1.0.0":"2024-10-18T13:40:35.175Z","1.0.1":"2024-10-22T14:09:08.896Z","1.0.2":"2024-11-01T10:27:37.626Z","1.0.3":"2024-11-15T14:06:21.034Z","1.0.4":"2024-12-02T09:03:48.913Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/toast ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":15790,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"@midas-ds/button":"1.2.0","react":"^18.3.1","@react-aria/toast":"^3.0.0-beta.12","@react-stately/toast":"3.0.0-beta.7","react-dom":"18.3.1","lucide-react":"^0.453.0"},"peerDependencies":{},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-8ZrnYb5Be9Hdsgt6nycPWIp7B8s6VRmYWhnsa4YH1ua1nf5fhVFUA7sX56jUGJqZ1w+B6c65k9DNI30dCnkBAQ==","shasum":"b6fe0e8ced134080a80b9cddd09b2fdc3bea90b1","tarball":"https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.4.tgz","fileCount":10,"unpackedSize":159283,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQD2AXqC901DV52wJqdZi2gqthGRWE7FdZncPxvHsuo1/wIhAM6Bq8tImzfI1YXA0eeZl3e60/aU/ip1CQ505KAhNWEI"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/toast_1.0.4_1733130228718_0.5837321119062786"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
+;// ./apps/docs/docs/components/toast.mdx
 
 
 const frontMatter = {
-	title: 'Link',
-	description: 'Komponent som skapar en länk',
+	title: 'Toast',
+	description: 'Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -69,16 +98,24 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Fristående",
-  "id": "fristående",
+  "value": "Varianter",
+  "id": "varianter",
   "level": 2
 }, {
-  "value": "&quot;Utsträckt&quot;",
-  "id": "utsträckt",
+  "value": "Implementationer",
+  "id": "implementationer",
   "level": 2
 }, {
-  "value": "Beroenden",
-  "id": "beroenden",
+  "value": "Lokalt",
+  "id": "lokalt",
+  "level": 3
+}, {
+  "value": "Globalt",
+  "id": "globalt",
+  "level": 3
+}, {
+  "value": "Notiskön",
+  "id": "notiskön",
   "level": 2
 }, {
   "value": "Riktlinjer",
@@ -90,6 +127,7 @@ function _createMdxContent(props) {
     a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -97,13 +135,16 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Link',
-      info: data_link,
-      friendlyName: 'Länk'
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: ""
+      name: 'Toast',
+      info: toast_namespaceObject,
+      friendlyName: 'Notifiering, notiser',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/useToast.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående."
+      children: "En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan\neller via en timeout. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<ToastRegion>"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -114,7 +155,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/link\n"
+            children: "npm install @midas-ds/toast\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -123,7 +164,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/link\n"
+            children: "yarn add @midas-ds/toast\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -132,83 +173,138 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/link\n"
+            children: "pnpm add @midas-ds/toast\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Link } from '@midas-ds/link'\n"
+        children: "import { ToastProvider } from '@midas-ds/toast'\n;<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Link: src/* Link */.N
-      },
-      children: `<p>Designsystemet utvecklas ständigt, <Link href="/blog">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`
+    }), "\n", (0,jsx_runtime.jsx)(GlobalToastRegion, {}), "\n", (0,jsx_runtime.jsx)(src/* Button */.$n, {
+      onPress: () => toastQueue.add({
+        type: 'success',
+        message: 'Allt funkar som det ska!'
+      }, {
+        timeout: 5000
+      }),
+      children: 'Tryck här för en notifiering'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "fristående",
-      children: "Fristående"
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["En toast har fyra olika varianter, ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "success"
+      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "info"
+      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "warning"
+      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "important"
+      }), ". Använd lämplig typ beroende på vilken information som ska visas. Här har även varningsnotisen högsta prioritet vilket gör att den alltid går före i kön."]
+    }), "\n", (0,jsx_runtime.jsxs)(flex_src/* Flex */.s, {
+      fluid: true,
+      children: [(0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
+          onPress: () => toastQueue.add({
+            type: 'success',
+            message: 'Allt funkar som det ska!'
+          }, {
+            timeout: 5000
+          }),
+          children: 'Success'
+        })
+      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
+          onPress: () => toastQueue.add({
+            type: 'info',
+            message: 'Här kommer ett meddelande'
+          }, {
+            timeout: 5000
+          }),
+          children: 'Info'
+        })
+      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
+          onPress: () => toastQueue.add({
+            message: 'Viktigt meddelande',
+            type: 'important'
+          }, {
+            timeout: 5000
+          }),
+          children: 'Important'
+        })
+      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
+        col: 3,
+        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
+          onPress: () => toastQueue.add({
+            message: 'Farlig varning!',
+            type: 'warning'
+          }, {
+            timeout: 5000,
+            priority: 1
+          }),
+          children: 'Warning'
+        })
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "implementationer",
+      children: "Implementationer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "lokalt",
+      children: "Lokalt"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "standalone"
-      }), " för att använda komponenten som en fristående länk under t.ex ett textblock."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Link: src/* Link */.N
-      },
-      children: `<>
-  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
-  <Link 
-      standalone 
-      href="/blog"
-  >
-      Läs mer om designsystemets nyheter
-  </Link>
-</>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "utsträckt",
-      children: "\"Utsträckt\""
+        children: "toastProvider"
+      }), " för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,\nanvänd den ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "#global-implementation",
+        children: "globala varianten"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "globalt",
+      children: "Globalt"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "stretched"
-      }), " för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "position: relative;"
-      }), " för att länkens klickyta inte ska gå för långt."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Link: src/* Link */.N,
-        baseColors: theme_src/* baseColors */.as
-      },
-      children: `<div 
-    style={{
-      position: 'relative',
-      background: baseColors.gray10,
-      padding: '1rem'
-    }}
-  >
-  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
-  <Link 
-      standalone 
-      stretched
-      href="/blog"
-  >
-      Läs mer om designsystemets nyheter
-  </Link>
-</div>`
+      children: ["Välj en global kö för toasts om det passar ditt användsningsscenario bättre. Lägg en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<GlobalToastRegion>"
+      }), " någonstans i appen\noch lägg nya toasts i kön enligt:"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';\n\n<GlobalToastRegion />\n//...\n<Button onPress={\n  () => toastQueue.add({type: 'success', message: 'Toast is done'})\n}>Visa notis</Button>\n"
+      })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_link
+      id: "notiskön",
+      children: "Notiskön"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Varje gång en toast läggs till i kön går det att bestämma livslängs och prioritering för notisen. Prioritet kan sättas till 1, 2 eller 3 och notiserna kommer gå före i kön beroende på detta."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{3}",
+        children: ".add(\n  {...},\n  { priority: 1 }\n)\n"
+      })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Timeout ska av tillgänglighetsskäl vara minst 5000ms:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{3}",
+        children: ".add(\n  {...},\n  { timeout: 5000 }\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: toast_namespaceObject
     })]
   });
 }
@@ -259,53 +355,6 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 // import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
 var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=useDynamicImport(name);if(!props){return null;}return/*#__PURE__*/_jsx(_Fragment,{children:/*#__PURE__*/_jsxs("table",{children:[/*#__PURE__*/_jsx("thead",{children:/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("th",{children:"Name"}),/*#__PURE__*/_jsx("th",{children:"Type"}),/*#__PURE__*/_jsx("th",{children:"Default Value"}),/*#__PURE__*/_jsx("th",{children:"Required"}),/*#__PURE__*/_jsx("th",{children:"Description"})]})}),/*#__PURE__*/_jsx("tbody",{children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:key})}),/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/_jsx("td",{children:props[key].defaultValue&&/*#__PURE__*/_jsx("code",{children:props[key].defaultValue.value})}),/*#__PURE__*/_jsx("td",{children:props[key].required?'Yes':'No'}),/*#__PURE__*/_jsx("td",{style:{width:'30%'},children:props[key].description})]},key);})})]})});};
-
-/***/ }),
-
-/***/ 32976:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  as: () => (/* reexport */ baseColors),
-  w4: () => (/* reexport */ theme)
-});
-
-// UNUSED EXPORTS: accessibility, borderRadius, borderWidths, boxShadow, breakpoints, buttonColors, font, fontSizes, fontWeights, inputColor, midasColors, midasTransitions, signalColors
-
-// NAMESPACE OBJECT: ./packages/theme/src/lib/tokens.ts
-var tokens_namespaceObject = {};
-__webpack_require__.r(tokens_namespaceObject);
-__webpack_require__.d(tokens_namespaceObject, {
-  accessibility: () => (accessibility),
-  baseColors: () => (baseColors),
-  borderRadius: () => (borderRadius),
-  borderWidths: () => (borderWidths),
-  boxShadow: () => (boxShadow),
-  breakpoints: () => (breakpoints),
-  buttonColors: () => (buttonColors),
-  font: () => (font),
-  fontSizes: () => (fontSizes),
-  fontWeights: () => (fontWeights),
-  inputColor: () => (inputColor),
-  midasColors: () => (midasColors),
-  midasTransitions: () => (midasTransitions),
-  signalColors: () => (signalColors)
-});
-
-;// ./packages/theme/src/lib/tokens.ts
-var baseColors={white:'#ffffff',black:'#000000',gray10:'#f2f2f2',gray20:'#e6e6e6',gray30:'#d9d9d9',gray40:'#cccccc',gray50:'#bfbfbf',gray60:'#b3b3b3',gray70:'#a6a6a6',gray80:'#999999',gray90:'#8c8c8c',gray100:'#808080',gray130:'#5d5d5d',gray150:'#1f1f1f',red10:'#f7e9e7',red20:'#f1d4d1',red30:'#e9beba',red40:'#e2a8a4',red50:'#d9918e',red60:'#d37a7a',red70:'#cc6467',red80:'#c54c56',red90:'#be3345',red100:'#b90835',red130:'#8b1327',red150:'#641018',blue10:'#eaf2f6',blue20:'#d5e5ed',blue30:'#c0d7e4',blue40:'#abcbdb',blue50:'#94bcd1',blue60:'#82b0c9',blue70:'#6ca3c0',blue80:'#5897b8',blue90:'#4289ad',blue100:'#2e7ca5',blue130:'#25607f',blue150:'#143c50'};var buttonColors={outline:'#303030',primaryBackground:baseColors['blue150'],primaryText:'#303030',primaryHover:baseColors['blue130'],primaryFocus:baseColors['black'],primaryActive:'#4289ae',secondaryBackground:baseColors['gray130'],secondaryText:baseColors['white'],secondaryHover:'#303030',secondaryActive:'#303030'};var inputColor={inputText:baseColors['gray150']};var signalColors={signalGreen10:'#d5f2d9',signalGreen100:'#008d3c',signalBlue10:baseColors['blue10'],signalBlue100:'#0066cc',signalYellow10:'#fff8e1',signalYellow100:'#f1c21b',signalRed10:'#ffdfdf',signalRed100:'#e62323',signalRed130:'#b31b1b',signalRed150:'#801313'};var borderRadius={sRadius:' 0.125rem',// 2px
-mRadius:' 0.25rem'// 4px
-};var borderWidths={xsWidth:' 0.0625rem',// 1px
-sWidth:' 0.125rem',// 2px
-mWidth:' 0.25rem'// 4px
-};var fontWeights={lightWeight:'300',regularWeight:'400',mediumWeight:'500',semiBoldWeight:'600',boldWeight:'700',blackWeight:'900'};var fontSizes={desktopSize:'1rem',mobileSize:'1rem',largeSize:'1.5rem',inputNormalSize:'0.875rem',inputMessageSize:'0.75rem',inputLabelSize:'1rem',inputDescriptionSize:'0.875rem'};var midasColors={logoPrimary:baseColors['red100'],logoSecondary:baseColors['white'],textPrimary:baseColors['gray150'],textSecondary:baseColors['white'],textTertiary:baseColors['red100'],link:baseColors['blue130'],linkVisited:'#663366',backgroundPrimary:baseColors['white'],backgroundSecondary:baseColors['gray10'],backgroundFooter1:baseColors['red100'],backgroundFooter2:baseColors['red130'],backgroundInfo:baseColors['blue10'],backgroundImportant:signalColors['signalYellow10'],borderPrimary:baseColors['black'],borderSecondary:baseColors['gray60'],borderFocusOuter:baseColors['black'],borderFocusInner:baseColors['white'],iconPrimary:baseColors['black'],iconInverted:baseColors['white']};var midasTransitions={slowTransition:'500ms',normalTransition:'300ms',fastTransition:'250ms'};var breakpoints={smBreakpoint:'(max-width: 767px)',mdBreakpoint:'(min-width: 768px)',lgBreakpoint:'(min-width: 1200px)',xlBreakpoint:'(min-width: 1440px)'};var accessibility={forcedColorsMode:'(forced-colors: active)',prefersReducedMotion:'(prefers-reduced-motion: reduced)'};var font={display:'"Inter", sans-serif'};var boxShadow={focus:'0 0 0 2px white, 0 0 0 4px black'};
-;// ./packages/theme/src/lib/index.ts
-var theme=Object.assign({},tokens_namespaceObject);
-;// ./packages/theme/src/index.ts
-
 
 /***/ }),
 
@@ -608,14 +657,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
-
-/***/ }),
-
-/***/ 29169:
-/***/ ((module) => {
-
-"use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/link@1.1.0","_rev":"6-2ecc3a2a675cccbbfcfe044a598e2d5e","name":"@midas-ds/link","dist-tags":{"latest":"1.1.0"},"versions":["0.0.1","0.0.2","0.0.3","1.0.0","1.0.1","1.1.0"],"time":{"created":"2024-09-10T14:35:32.127Z","modified":"2024-11-15T14:05:36.749Z","0.0.1":"2024-09-10T14:35:32.368Z","0.0.2":"2024-09-12T12:34:14.036Z","0.0.3":"2024-10-07T12:16:39.947Z","1.0.0":"2024-10-18T13:40:24.933Z","1.0.1":"2024-10-24T13:26:06.785Z","1.1.0":"2024-11-15T14:05:36.540Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/link ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9646,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"publishConfig":{"access":"public"},"gitHead":"ab5cd78ac08049bda4af96abc4842d7ec6a1091a","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Xerm0dDYYCOoU0AwHkExbWfp+rDSr33E1MqTerMAk+IHpy9eFVWtnJ1mcbwQk+XuksAv3xCr3eZXLI11ehgOpA==","shasum":"37abf514186df74278d8a0f6e2749aad3fade436","tarball":"https://registry.npmjs.org/@midas-ds/link/-/link-1.1.0.tgz","fileCount":8,"unpackedSize":81638,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIEM3slQb7zEIDnA1ukOAjS73fkziVTwnknQgm9liKjLMAiAmsBCFHzNj7yEF+hyc4Z+T4XoF7bXKN4LOnlrSduLitg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/link_1.1.0_1731679536307_0.21069856884830407"},"_hasShrinkwrap":false}');
 
 /***/ })
 

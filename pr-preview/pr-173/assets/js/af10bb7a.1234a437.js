@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[153],{
 
-/***/ 6347:
+/***/ 57921:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_button_mdx_074_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_select_mdx_af1_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-button-mdx-074.json
-const site_docs_components_button_mdx_074_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/button","title":"Button","description":"Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.","source":"@site/docs/components/button.mdx","sourceDirName":"components","slug":"/components/button","permalink":"/pr-preview/pr-173/components/button","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Button","description":"Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-select-mdx-af1.json
+const site_docs_components_select_mdx_af1_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/select","title":"Select","description":"<ComponentHeader","source":"@site/docs/components/select.mdx","sourceDirName":"components","slug":"/components/select","permalink":"/pr-preview/pr-173/components/select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,26 +27,21 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
+// EXTERNAL MODULE: ./packages/select/src/index.ts + 2 modules
+var src = __webpack_require__(67743);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/button.json
-const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.2.0","_rev":"21-d82b69a96ad874b8e9ccf4f7fed777a6","name":"@midas-ds/button","dist-tags":{"latest":"1.2.0"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2","1.1.0","1.1.1","1.2.0"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-12-02T09:03:05.415Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z","1.1.0":"2024-11-01T10:27:02.521Z","1.1.1":"2024-11-15T14:05:36.791Z","1.2.0":"2024-12-02T09:03:05.177Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":23383,"version":"1.2.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-ADc7uWae+h3e3jQEBZYZlc3Mg11pJav1hsBsOEUFALIMlymptu10FbckIkxFmWlnAsd8HUY/KzEu/zZmUkzUKA==","shasum":"9f441d1de2a4deb7f9042bc990b0189b670166b1","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.2.0.tgz","fileCount":10,"unpackedSize":89665,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQCQTIJqWenmx35idtT/pr9+bk7ukyObuaWuR3Ad20O75wIhAM5nzdFcxizVcItfNepJ7O9ghBgQmDZh893JxKJdpiHI"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.2.0_1733130184968_0.8950765720113276"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
+// EXTERNAL MODULE: ./apps/docs/static/data/select.json
+var data_select = __webpack_require__(41229);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
-var plus = __webpack_require__(80697);
-;// ./apps/docs/docs/components/button.mdx
+;// ./apps/docs/docs/components/select.mdx
 
 
 const frontMatter = {
-	title: 'Button',
-	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
+	title: 'Select',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -65,27 +60,13 @@ const assets = {
 
 
 
-
-
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Primärknapp",
-  "id": "primärknapp",
-  "level": 2
-}, {
-  "value": "Sekundär knapp",
-  "id": "sekundär-knapp",
-  "level": 2
-}, {
-  "value": "Tertiär knapp",
-  "id": "tertiär-knapp",
-  "level": 2
-}, {
-  "value": "Grupp av knappar",
-  "id": "grupp-av-knappar",
+  "value": "Beroenden",
+  "id": "beroenden",
   "level": 2
 }, {
   "value": "Riktlinjer",
@@ -95,14 +76,6 @@ const toc = [{
   "value": "Val av komponent",
   "id": "val-av-komponent",
   "level": 3
-}, {
-  "value": "Generella riktlinjer",
-  "id": "generella-riktlinjer",
-  "level": 3
-}, {
-  "value": "Placering och ordning",
-  "id": "placering-och-ordning",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -110,20 +83,25 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
-    li: "li",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    ul: "ul",
+    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Button',
-      info: button_namespaceObject,
-      friendlyName: 'Knapp'
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
+      name: 'Select',
+      info: data_select,
+      friendlyName: 'Flerval, väljare, dropdown'
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Select är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "ett"
+      }), " alternativ från en uppsättning av flera alternativ. Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-173/components/radio",
+        children: "Radio"
+      }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -134,7 +112,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/button\n"
+            children: "npm install @midas-ds/select\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -143,7 +121,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/button\n"
+            children: "yarn add @midas-ds/select\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -152,151 +130,42 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/button\n"
+            children: "pnpm add @midas-ds/select\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Button } from '@midas-ds/button'\n"
+        children: "import { Item, Select } from '@midas-ds/select'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
+        Select: src/* Select */.l,
+        Item: src/* Item */.q
       },
-      children: `<ButtonGroup aria-label="Välj frukt">
-  <Button>{fruits.shuffled(1).name}</Button>
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`
+      children: `<Select
+  label="Vad är din favoritfrukt?"
+  placeholder="Välj en frukt"
+  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+>
+  {(item) => <Item>{item.name}</Item>}
+</Select>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "primärknapp",
-      children: "Primärknapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$n
-      },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button>Slutför</Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sekundär-knapp",
-      children: "Sekundär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka)."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$n
-      },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button variant={'secondary'}>Tillbaka</Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tertiär-knapp",
-      children: "Tertiär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
-      },
-      children: `<ButtonGroup aria-label='Hantera anmälan'>
-<Button>Slutför</Button>
-<Button variant='secondary'>Tillbaka</Button>
-<Button variant='tertiary'>Ta bort anmälan</Button>
-</ButtonGroup>`
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "icon"
-      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "iconPlacement"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$n,
-        Plus: plus/* default */.A
-      },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button
-    icon={Plus}
-    variant='tertiary'
-    iconPlacement='left'
-    >
-    {'Lägg till rad'}
-  </Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "grupp-av-knappar",
-      children: "Grupp av knappar"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att få korrekt layout på flertalet knappar kan komponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "ButtonGroup"
-      }), " användas."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
-      },
-      children: `<ButtonGroup aria-label="Välj frukt">
-  <Button>{fruits.shuffled(1).name}</Button>
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`
+      id: "beroenden",
+      children: "Beroenden"
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: data_select
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "val-av-komponent",
       children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "generella-riktlinjer",
-      children: "Generella riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik inaktiva knappar. Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven, t.ex för att gå till nästa sida i en e-tjänst, ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik att ha för många knappar på samma sida."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "placering-och-ordning",
-      children: "Placering och ordning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
-      },
-      children: `<ButtonGroup aria-label='Skicka formulär'>
-<Button>Skicka</Button>
-<Button variant='secondary'>Avbryt</Button>
-</ButtonGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]:::primary\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: data_select
     })]
   });
 }
@@ -350,30 +219,41 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 80697:
+/***/ 67743:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Plus)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  q: () => (/* reexport */ Item),
+  l: () => (/* reexport */ Select_Select)
+});
 
-
-const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-]);
-
-
-//# sourceMappingURL=plus.js.map
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Select.mjs + 3 modules
+var Select = __webpack_require__(77686);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
+var Button = __webpack_require__(44080);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 44 modules
+var Popover = __webpack_require__(86351);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ListBox.mjs + 5 modules
+var ListBox = __webpack_require__(79046);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
+var chevron_down = __webpack_require__(75107);
+;// ./packages/select/src/lib/Select.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Select_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","backgroundSecondary":"#f2f2f2","button":"button_XgNv","select":"select_GoPk","popover":"popover_Fgts","listBoxItem":"listBoxItem_yN3S","icon":"icon_X17X"});
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/select/src/lib/Select.tsx
+'use client';var _excluded=["label","description","errorMessage","children","items"];function Select_Select(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var selectRef=react.useRef(null);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Select/* Select */.l6,Object.assign({className:Select_module.select,ref:selectRef},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:Select_module.button,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* SelectValue */.yv,{}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:Select_module.popover,offset:0,UNSTABLE_portalContainer:selectRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.qF,{items:items,children:children})})]}));}function Item(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBoxItem */.nh,Object.assign({className:Select_module.listBoxItem},props));}
+;// ./packages/select/src/index.ts
 
 
 /***/ }),
@@ -677,6 +557,14 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
+
+/***/ }),
+
+/***/ 41229:
+/***/ ((module) => {
+
+"use strict";
+module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/select@1.0.3","_rev":"10-b9137a40343380e9626995d3872c4003","name":"@midas-ds/select","dist-tags":{"latest":"1.0.3"},"versions":["0.4.23","0.4.24","0.4.25","0.5.0","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:38:16.404Z","modified":"2024-12-02T09:03:16.649Z","0.4.23":"2024-09-10T14:38:16.733Z","0.5.0":"2024-09-12T06:52:21.974Z","0.4.24":"2024-09-12T12:44:35.219Z","0.4.25":"2024-09-26T08:45:56.205Z","0.5.2":"2024-10-07T12:21:23.062Z","1.0.0":"2024-10-18T13:40:43.787Z","1.0.1":"2024-10-24T13:26:40.048Z","1.0.2":"2024-11-15T14:06:18.268Z","1.0.3":"2024-12-02T09:03:16.461Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/select ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":15116,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23","react-aria-components":"^1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-OHDijTbHZ8NbGy4ZIFReihi065UZM2DE3u3Y1ulbiW9rapfDfcOpI8dlWM6/g6274QSicWU8klYBiYSRaSKkKA==","shasum":"bcf56f3901ff09c8f092dafca9eab9414acfcef7","tarball":"https://registry.npmjs.org/@midas-ds/select/-/select-1.0.3.tgz","fileCount":9,"unpackedSize":388710,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCwgrYc+pocmMRGjGZhwHXyaZMF9OoNsGO2V9iIpkj0hAIgYeBINzfuuMNfMpJE2f7W3cGJhuACudCJy0JXJK1uigk="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/select_1.0.3_1733130196313_0.19139238870590458"},"_hasShrinkwrap":false}');
 
 /***/ })
 

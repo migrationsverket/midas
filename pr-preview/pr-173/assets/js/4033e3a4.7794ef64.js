@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6796],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 27942:
+/***/ 30099:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_toast_mdx_a2c_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-toast-mdx-a2c.json
-const site_docs_components_toast_mdx_a2c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/toast","title":"Toast","description":"Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.","source":"@site/docs/components/toast.mdx","sourceDirName":"components","slug":"/components/toast","permalink":"/pr-preview/pr-173/components/toast","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Toast","description":"Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
+const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/pr-preview/pr-173/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,51 +29,22 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var src = __webpack_require__(63918);
-// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToastRegion.mjs + 1 modules
-var useToastRegion = __webpack_require__(96766);
-// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToast.mjs
-var useToast = __webpack_require__(93187);
-// EXTERNAL MODULE: ./node_modules/@react-stately/toast/dist/useToastState.mjs
-var dist_useToastState = __webpack_require__(8737);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(40961);
-;// ./packages/toast/src/lib/Toast.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Toast_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalGreen10":"#d5f2d9","signalGreen100":"#008d3c","signalBlue10":"#eaf2f6","signalBlue100":"#0066cc","signalYellow10":"#fff8e1","signalYellow100":"#f1c21b","signalRed10":"#ffdfdf","signalRed100":"#e62323","gray150":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","mdBreakpoint":"(min-width: 768px)","toastRegion":"toastRegion_D8P5","toast":"toast_KTs7","success":"success_uWpg","info":"info_gZit","important":"important_NPeI","warning":"warning_QRWE","icon":"icon_KIoW","toastContent":"toastContent_U3Cz","toastMessage":"toastMessage_p9OY","slideInTop":"slideInTop_l9cG","slideInEnd":"slideInEnd_nrEv","slideOutTop":"slideOutTop_ENmT","slideOutEnd":"slideOutEnd_Pml0"});
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-check.js
-var circle_check = __webpack_require__(79804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-alert.js
-var circle_alert = __webpack_require__(37946);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
-var triangle_alert = __webpack_require__(418);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-;// ./packages/toast/src/lib/Toast.tsx
-'use client';var _excluded=(/* unused pure expression or super */ null && (["children"])),_excluded2=["state"],_excluded3=["state"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};var toastQueue=new dist_useToastState/* ToastQueue */.Vv({maxVisibleToasts:5,hasExitAnimation:true});var GlobalToastRegion=function GlobalToastRegion(props){var state=(0,dist_useToastState/* useToastQueue */.oS)(toastQueue);return state.visibleToasts.length>0?/*#__PURE__*/(0,react_dom.createPortal)(/*#__PURE__*/(0,jsx_runtime.jsx)(ToastRegion,Object.assign({},props,{state:state})),document.body):null;};var ToastProvider=function ToastProvider(_ref){var children=_ref.children,props=_objectWithoutPropertiesLoose(_ref,_excluded);var state=useToastState({maxVisibleToasts:5,hasExitAnimation:true});return/*#__PURE__*/_jsxs(_Fragment,{children:[typeof children==='function'?children(state):children,state.visibleToasts.length>0&&/*#__PURE__*/_jsx(ToastRegion,Object.assign({},props,{state:state}))]});};function ToastRegion(_ref2){var state=_ref2.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);var ref=react.useRef(null);var _useToastRegion=(0,useToastRegion/* useToastRegion */.J)(props,state,ref),regionProps=_useToastRegion.regionProps;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},regionProps,{ref:ref,className:Toast_module.toastRegion,children:state.visibleToasts.map(function(toast){return/*#__PURE__*/(0,jsx_runtime.jsx)(Toast,{toast:toast,state:state},toast.key);})}));}function Toast(_ref3){var state=_ref3.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded3);var ref=react.useRef(null);var _useToast=(0,useToast/* useToast */.d)(props,state,ref),toastProps=_useToast.toastProps,contentProps=_useToast.contentProps,titleProps=_useToast.titleProps,closeButtonProps=_useToast.closeButtonProps;var Icon=iconMap[props.toast.content.type];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},toastProps,{ref:ref,className:(0,clsx/* default */.A)(Toast_module.toast,Toast_module[props.toast.content.type]),"data-animation":props.toast.animation,onAnimationEnd:function onAnimationEnd(){if(props.toast.animation==='exiting'){state.remove(props.toast.key);}},children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:Toast_module.toastContent},contentProps,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{className:Toast_module.icon,size:20,"aria-hidden":true}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("p",Object.assign({className:Toast_module.toastMessage},titleProps,{children:props.toast.content.message})),props.toast.content.children]})]})),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,Object.assign({variant:"icon"},closeButtonProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})}))]}));}
-;// ./packages/toast/src/index.ts
-
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/toast.json
-const toast_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/toast@1.0.4","_rev":"9-2a95ea98e82e75447cf44cd203e0e5e0","name":"@midas-ds/toast","dist-tags":{"latest":"1.0.4"},"versions":["0.4.0","0.5.0","0.5.1","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-10T14:39:22.818Z","modified":"2024-12-02T09:03:49.158Z","0.4.0":"2024-09-10T14:39:23.053Z","0.5.0":"2024-09-12T05:55:09.470Z","0.5.1":"2024-09-12T12:58:03.661Z","0.5.2":"2024-10-07T12:28:12.102Z","1.0.0":"2024-10-18T13:40:35.175Z","1.0.1":"2024-10-22T14:09:08.896Z","1.0.2":"2024-11-01T10:27:37.626Z","1.0.3":"2024-11-15T14:06:21.034Z","1.0.4":"2024-12-02T09:03:48.913Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/toast ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":15790,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"@midas-ds/button":"1.2.0","react":"^18.3.1","@react-aria/toast":"^3.0.0-beta.12","@react-stately/toast":"3.0.0-beta.7","react-dom":"18.3.1","lucide-react":"^0.453.0"},"peerDependencies":{},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-8ZrnYb5Be9Hdsgt6nycPWIp7B8s6VRmYWhnsa4YH1ua1nf5fhVFUA7sX56jUGJqZ1w+B6c65k9DNI30dCnkBAQ==","shasum":"b6fe0e8ced134080a80b9cddd09b2fdc3bea90b1","tarball":"https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.4.tgz","fileCount":10,"unpackedSize":159283,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQD2AXqC901DV52wJqdZi2gqthGRWE7FdZncPxvHsuo1/wIhAM6Bq8tImzfI1YXA0eeZl3e60/aU/ip1CQ505KAhNWEI"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/toast_1.0.4_1733130228718_0.5837321119062786"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
-;// ./apps/docs/docs/components/toast.mdx
+;// ./apps/docs/static/data/textfield.json
+const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.5","_rev":"13-ec03e56857807b66426aeda7cc88939e","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.5"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-12-02T09:03:10.402Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z","1.0.3":"2024-11-15T14:05:41.473Z","1.0.4":"2024-11-19T14:48:42.571Z","1.0.5":"2024-12-02T09:03:10.160Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":18165,"version":"1.0.5","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/button":"1.2.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-+uyW2TMdjY4ryLd6WlF4urBVX4AsgYnaGfqC2fucpQWuRjZRufWFQhGRcE7PARN+CHLkTFB0BkIb0mXtzoIRmw==","shasum":"1f89f0f97f32a8556af663c50f9f6fb586e4f793","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.5.tgz","fileCount":9,"unpackedSize":120950,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCvJsHgAacF5tT6oBApUkKiFJRV/Iy7lcGwCkGMWK1zHQIgH+tI1C2NshePiEBvjO3ffyhMxH0WrZBGlTRWkROmrls="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.5_1733130189955_0.6374629477714915"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
+var grid_src = __webpack_require__(17172);
+// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
+var CodeBlock = __webpack_require__(29511);
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'Toast',
-	description: 'Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.',
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -98,29 +69,37 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Varianter",
-  "id": "varianter",
+  "value": "Validering",
+  "id": "validering",
   "level": 2
 }, {
-  "value": "Implementationer",
-  "id": "implementationer",
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
+}, {
+  "value": "Egna felmeddelanden",
+  "id": "egna-felmeddelanden",
+  "level": 3
+}, {
+  "value": "Personnummer",
+  "id": "personnummer",
+  "level": 3
+}, {
+  "value": "Lösenord",
+  "id": "lösenord",
   "level": 2
 }, {
-  "value": "Lokalt",
-  "id": "lokalt",
-  "level": 3
-}, {
-  "value": "Globalt",
-  "id": "globalt",
-  "level": 3
-}, {
-  "value": "Notiskön",
-  "id": "notiskön",
+  "value": "Beroenden",
+  "id": "beroenden",
   "level": 2
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "Desktop",
+  "id": "desktop",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -128,24 +107,23 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Toast',
-      info: toast_namespaceObject,
-      friendlyName: 'Notifiering, notiser',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/useToast.html"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: ""
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart."
+      name: 'Textfield',
+      info: textfield_namespaceObject,
+      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan\neller via en timeout. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<ToastRegion>"
+      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-173/components/textarea",
+        children: "TextArea"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
@@ -157,7 +135,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/toast\n"
+            children: "npm install @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -166,7 +144,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/toast\n"
+            children: "yarn add @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -175,138 +153,179 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/toast\n"
+            children: "pnpm add @midas-ds/textfield\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ToastProvider } from '@midas-ds/toast'\n;<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
+        children: "import { TextField } from '@midas-ds/textfield'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(GlobalToastRegion, {}), "\n", (0,jsx_runtime.jsx)(src/* Button */.$n, {
-      onPress: () => toastQueue.add({
-        type: 'success',
-        message: 'Allt funkar som det ska!'
-      }, {
-        timeout: 5000
-      }),
-      children: 'Tryck här för en notifiering'
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  label={'Etikett'}
+  description={'Beskrivning'}
+/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
+      id: "validering",
+      children: "Validering"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En toast har fyra olika varianter, ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "success"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "info"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "warning"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "important"
-      }), ". Använd lämplig typ beroende på vilken information som ska visas. Här har även varningsnotisen högsta prioritet vilket gör att den alltid går före i kön."]
-    }), "\n", (0,jsx_runtime.jsxs)(flex_src/* Flex */.s, {
-      fluid: true,
-      children: [(0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
-          onPress: () => toastQueue.add({
-            type: 'success',
-            message: 'Allt funkar som det ska!'
-          }, {
-            timeout: 5000
-          }),
-          children: 'Success'
-        })
-      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
-          onPress: () => toastQueue.add({
-            type: 'info',
-            message: 'Här kommer ett meddelande'
-          }, {
-            timeout: 5000
-          }),
-          children: 'Info'
-        })
-      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
-          onPress: () => toastQueue.add({
-            message: 'Viktigt meddelande',
-            type: 'important'
-          }, {
-            timeout: 5000
-          }),
-          children: 'Important'
-        })
-      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(src/* Button */.$n, {
-          onPress: () => toastQueue.add({
-            message: 'Farlig varning!',
-            type: 'warning'
-          }, {
-            timeout: 5000,
-            priority: 1
-          }),
-          children: 'Warning'
-        })
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "implementationer",
-      children: "Implementationer"
+      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in din e-post"
+  description="Obligatorisk"
+  isRequired
+  errorMessage="Felaktig e-postadress"
+  type="email"
+/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "lokalt",
-      children: "Lokalt"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "toastProvider"
-      }), " för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,\nanvänd den ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "#global-implementation",
-        children: "globala varianten"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "globalt",
-      children: "Globalt"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Välj en global kö för toasts om det passar ditt användsningsscenario bättre. Lägg en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<GlobalToastRegion>"
-      }), " någonstans i appen\noch lägg nya toasts i kön enligt:"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';\n\n<GlobalToastRegion />\n//...\n<Button onPress={\n  () => toastQueue.add({type: 'success', message: 'Toast is done'})\n}>Visa notis</Button>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "notiskön",
-      children: "Notiskön"
+      id: "egen-validering",
+      children: "Egen validering"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Varje gång en toast läggs till i kön går det att bestämma livslängs och prioritering för notisen. Prioritet kan sättas till 1, 2 eller 3 och notiserna kommer gå före i kön beroende på detta."
+      children: "Det går också att definiera en egen funktion för validering:"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egna-felmeddelanden",
+      children: "Egna felmeddelanden"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        metastring: "{3}",
-        children: ".add(\n  {...},\n  { priority: 1 }\n)\n"
+        children: "<TextField\n  label='Skriv in frukt'\n  errorMessage=\"Du måste skriva 'frukt'!\"\n  isRequired\n  validate={value => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n  errorMessage={validation => {\n    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'\n    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'\n    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'\n\n    // Det finns flertalet typer på validationDetails\n    // if (validation.validationDetails.patternMismatch) return \"Det där ser inte ut som en frukt.\";\n    // if (validation.validationDetails.rangeOverflow) return \"Nu blev det nog för många frukter.\";\n    // med flera\n\n    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'\n  }}\n/>\n"
       })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
+        children: "React Arias dokumentation"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "personnummer",
+      children: "Personnummer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:19:20)?"
+        })]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|1[0-2])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|[12]\\\\d|3[01])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "+"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "-"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "blanksteg"
+        }), " eller ingen, samt"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:[-+ ]?\\\\d{4})?"
+        })]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="text"
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type={'password'}"
+      }), " för att kunna visa och dölja inmatad text."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="password" 
+  name="pw" 
+  label="Skriv in ditt lösenord" 
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "beroenden",
+      children: "Beroenden"
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: textfield_namespaceObject
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Timeout ska av tillgänglighetsskäl vara minst 5000ms:"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "{3}",
-        children: ".add(\n  {...},\n  { timeout: 5000 }\n)\n"
-      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "desktop",
+      children: "Desktop"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-173/components/grid",
+        children: "Grid"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-173/components/flex",
+        children: "Flex"
+      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Grid: grid_src/* Grid */.x,
+        TextField: src/* TextField */.A_,
+        GridItem: grid_src/* GridItem */.E
+      },
+      children: `<Grid fluid={true}>
+  <GridItem col={2}>
+    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+  </GridItem>
+  <GridItem col={8}>
+    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+  </GridItem>
+</Grid>`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: toast_namespaceObject
+      info: textfield_namespaceObject
     })]
   });
 }
@@ -357,6 +376,44 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 // import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
 var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=useDynamicImport(name);if(!props){return null;}return/*#__PURE__*/_jsx(_Fragment,{children:/*#__PURE__*/_jsxs("table",{children:[/*#__PURE__*/_jsx("thead",{children:/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("th",{children:"Name"}),/*#__PURE__*/_jsx("th",{children:"Type"}),/*#__PURE__*/_jsx("th",{children:"Default Value"}),/*#__PURE__*/_jsx("th",{children:"Required"}),/*#__PURE__*/_jsx("th",{children:"Description"})]})}),/*#__PURE__*/_jsx("tbody",{children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/_jsxs("tr",{children:[/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:key})}),/*#__PURE__*/_jsx("td",{children:/*#__PURE__*/_jsx("code",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/_jsx("td",{children:props[key].defaultValue&&/*#__PURE__*/_jsx("code",{children:props[key].defaultValue.value})}),/*#__PURE__*/_jsx("td",{children:props[key].required?'Yes':'No'}),/*#__PURE__*/_jsx("td",{style:{width:'30%'},children:props[key].description})]},key);})})]})});};
+
+/***/ }),
+
+/***/ 17172:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  x: () => (/* reexport */ Grid),
+  E: () => (/* reexport */ GridItem)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/grid/src/lib/Grid.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/grid/src/lib/Grid.tsx
+var _excluded=["children","fluid"];/**
+ * Grid baserat på display: grid;
+ * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
+ *
+ * ### Children
+ * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
+ */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
+;// ./packages/grid/src/lib/GridItem.tsx
+var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
+var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
+;// ./packages/grid/src/lib/index.ts
+
+;// ./packages/grid/src/index.ts
+
 
 /***/ }),
 
