@@ -92,13 +92,11 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsxs)(_components.p, {
-      children: [";", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-        name: 'Spinner',
-        info: spinner_namespaceObject,
-        friendlyName: 'Laddningsindikator',
-        overrideHeadlessLink: ""
-      })]
+    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
+      name: 'Spinner',
+      info: spinner_namespaceObject,
+      friendlyName: 'Laddningsindikator',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Komponenten används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
