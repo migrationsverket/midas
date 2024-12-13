@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[396],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9196],{
 
-/***/ 6347:
+/***/ 93381:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_button_mdx_074_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textarea_mdx_846_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-button-mdx-074.json
-const site_docs_components_button_mdx_074_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/button","title":"Button","description":"Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.","source":"@site/docs/components/button.mdx","sourceDirName":"components","slug":"/components/button","permalink":"/pr-preview/pr-171/components/button","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Button","description":"Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textarea-mdx-846.json
+const site_docs_components_textarea_mdx_846_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textarea","title":"TextArea","description":"När användaren ska fylla i längre information","source":"@site/docs/components/textarea.mdx","sourceDirName":"components","slug":"/components/textarea","permalink":"/pr-preview/pr-171/components/textarea","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextArea","description":"När användaren ska fylla i längre information","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,24 +29,20 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/button.json
-const button_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/button@1.2.0","_rev":"21-d82b69a96ad874b8e9ccf4f7fed777a6","name":"@midas-ds/button","dist-tags":{"latest":"1.2.0"},"versions":["0.5.28","0.5.29","0.5.30","0.5.31","0.6.0","0.6.1","0.6.2","0.6.3","0.6.4","1.0.0","1.0.1","1.0.2","1.1.0","1.1.1","1.2.0"],"time":{"created":"2024-09-05T12:44:43.399Z","modified":"2024-12-02T09:03:05.415Z","0.6.0":"2024-09-05T12:44:43.759Z","0.5.28":"2024-09-10T14:35:50.047Z","0.5.29":"2024-09-11T07:14:39.435Z","0.5.30":"2024-09-11T08:38:04.254Z","0.5.31":"2024-09-11T09:05:37.161Z","0.6.1":"2024-09-11T09:11:00.245Z","0.6.2":"2024-09-11T09:28:25.996Z","0.6.3":"2024-09-11T11:25:46.446Z","0.6.4":"2024-10-07T12:06:12.651Z","1.0.0":"2024-10-18T13:40:30.553Z","1.0.1":"2024-10-22T13:40:24.563Z","1.0.2":"2024-10-24T13:26:02.833Z","1.1.0":"2024-11-01T10:27:02.521Z","1.1.1":"2024-11-15T14:05:36.791Z","1.2.0":"2024-12-02T09:03:05.177Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/button ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":23383,"version":"1.2.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-ADc7uWae+h3e3jQEBZYZlc3Mg11pJav1hsBsOEUFALIMlymptu10FbckIkxFmWlnAsd8HUY/KzEu/zZmUkzUKA==","shasum":"9f441d1de2a4deb7f9042bc990b0189b670166b1","tarball":"https://registry.npmjs.org/@midas-ds/button/-/button-1.2.0.tgz","fileCount":10,"unpackedSize":89665,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQCQTIJqWenmx35idtT/pr9+bk7ukyObuaWuR3Ad20O75wIhAM5nzdFcxizVcItfNepJ7O9ghBgQmDZh893JxKJdpiHI"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/button_1.2.0_1733130184968_0.8950765720113276"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
+;// ./apps/docs/static/data/textarea.json
+const textarea_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textarea@1.0.5","_rev":"9-3f430368ae6bfc57f3648737e97cf818","name":"@midas-ds/textarea","dist-tags":{"latest":"1.0.5"},"versions":["0.0.1","0.0.3","0.1.0","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5"],"time":{"created":"2024-09-19T09:08:52.207Z","modified":"2024-12-02T09:03:53.925Z","0.0.1":"2024-09-19T09:08:52.548Z","0.0.3":"2024-09-24T06:38:03.732Z","0.1.0":"2024-10-07T12:26:01.764Z","1.0.0":"2024-10-18T13:40:52.798Z","1.0.1":"2024-10-22T14:09:13.325Z","1.0.2":"2024-11-01T10:27:15.096Z","1.0.3":"2024-11-15T14:05:47.724Z","1.0.4":"2024-11-19T14:48:48.309Z","1.0.5":"2024-12-02T09:03:53.770Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textarea ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":0,"version":"1.0.5","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/textfield":"1.0.5"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-v3ed2SUdFxdNvwCCqnFPkuq4tX5NgXKmAVq7UCXRIMkbEVv8Q60++EX/oLqMObwF9aphsds11AW8QQzMbo/lhg==","shasum":"28803b3b78d7d4aa2d9132b9bb1e8a00f682161e","tarball":"https://registry.npmjs.org/@midas-ds/textarea/-/textarea-1.0.5.tgz","fileCount":8,"unpackedSize":75310,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCst9iIeYQCcmf6bYFoGJUC2/sUZPnMfgy/pVp0Mj8gygIgXRvISswkDV4MDsRW4CF1L4s4K2VEYhWioeKXByrgnl4="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textarea_1.0.5_1733130233595_0.001950572769243708"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/textarea/src/index.ts + 2 modules
+var src = __webpack_require__(26196);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
-var plus = __webpack_require__(80697);
-;// ./apps/docs/docs/components/button.mdx
+;// ./apps/docs/docs/components/textarea.mdx
 
 
 const frontMatter = {
-	title: 'Button',
-	description: 'Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.',
+	title: 'TextArea',
+	description: 'När användaren ska fylla i längre information',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -65,68 +61,35 @@ const assets = {
 
 
 
-
-
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation och användnin",
+  "id": "installation-och-användnin",
   "level": 2
-}, {
-  "value": "Primärknapp",
-  "id": "primärknapp",
-  "level": 2
-}, {
-  "value": "Sekundär knapp",
-  "id": "sekundär-knapp",
-  "level": 2
-}, {
-  "value": "Tertiär knapp",
-  "id": "tertiär-knapp",
-  "level": 2
-}, {
-  "value": "Grupp av knappar",
-  "id": "grupp-av-knappar",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
-}, {
-  "value": "Generella riktlinjer",
-  "id": "generella-riktlinjer",
-  "level": 3
-}, {
-  "value": "Placering och ordning",
-  "id": "placering-och-ordning",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Button',
-      info: button_namespaceObject,
-      friendlyName: 'Knapp'
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
+      name: 'Textarea',
+      info: textarea_namespaceObject,
+      friendlyName: "Textfält",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-171/components/textfield",
+        children: "TextField"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation-och-användnin",
+      children: "Installation och användnin"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -134,7 +97,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/button\n"
+            children: "npm install @midas-ds/textarea\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -143,7 +106,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/button\n"
+            children: "yarn add @midas-ds/textarea\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -152,151 +115,27 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/button\n"
+            children: "pnpm add @midas-ds/textarea\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Button } from '@midas-ds/button'\n"
+        children: "import { TextArea } from '@midas-ds/textarea'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
+        TextArea: src/* TextArea */.f
       },
-      children: `<ButtonGroup aria-label="Välj frukt">
-  <Button>{fruits.shuffled(1).name}</Button>
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "primärknapp",
-      children: "Primärknapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$n
-      },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button>Slutför</Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sekundär-knapp",
-      children: "Sekundär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka)."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$n
-      },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button variant={'secondary'}>Tillbaka</Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tertiär-knapp",
-      children: "Tertiär knapp"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
-      },
-      children: `<ButtonGroup aria-label='Hantera anmälan'>
-<Button>Slutför</Button>
-<Button variant='secondary'>Tillbaka</Button>
-<Button variant='tertiary'>Ta bort anmälan</Button>
-</ButtonGroup>`
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "icon"
-      }), ".\nDu kan välja vilken sida av texten ikonen ska vara på med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "iconPlacement"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: src/* Button */.$n,
-        Plus: plus/* default */.A
-      },
-      children: `<Flex>
-<FlexItem col="auto">
-  <Button
-    icon={Plus}
-    variant='tertiary'
-    iconPlacement='left'
-    >
-    {'Lägg till rad'}
-  </Button>
-</FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "grupp-av-knappar",
-      children: "Grupp av knappar"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att få korrekt layout på flertalet knappar kan komponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "ButtonGroup"
-      }), " användas."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
-      },
-      children: `<ButtonGroup aria-label="Välj frukt">
-  <Button>{fruits.shuffled(1).name}</Button>
-  <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-  <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "generella-riktlinjer",
-      children: "Generella riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik inaktiva knappar. Alla knappar i externa system ska gå att interagera med. Om användaren inte uppfyllt kraven, t.ex för att gå till nästa sida i en e-tjänst, ska ett felmeddelande visas som påtalar vad som krävs för att kunna gå vidare."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik att ha för många knappar på samma sida."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "placering-och-ordning",
-      children: "Placering och ordning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        ButtonGroup: src/* ButtonGroup */.e2,
-        Button: src/* Button */.$n
-      },
-      children: `<ButtonGroup aria-label='Skicka formulär'>
-<Button>Skicka</Button>
-<Button variant='secondary'>Avbryt</Button>
-</ButtonGroup>`
+      children: `<TextArea 
+  label="Kommentar"
+  description="Skriv en kommentar"
+  maxCharacters={50}
+  // showCounter={true}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: textarea_namespaceObject
     })]
   });
 }
@@ -350,30 +189,36 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 80697:
+/***/ 26196:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Plus)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
 
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  f: () => (/* reexport */ TextArea)
+});
 
-
-const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Plus", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "M12 5v14", key: "s699le" }]
-]);
-
-
-//# sourceMappingURL=plus.js.map
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/textarea/src/lib/TextArea.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_tiIs","count":"count_OzSk","countExceeded":"countExceeded_YJf_"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
+var dist_TextArea = __webpack_require__(43660);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/textarea/src/lib/TextArea.tsx
+'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter","validate"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,validate=_ref.validate,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:(0,clsx/* default */.A)(TextArea_module.count,value.length>maxCharacters&&TextArea_module.countExceeded),children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var validateInput=function validateInput(value){var maxCharactersError=maxCharacters&&value.length>maxCharacters?"Du har angett "+(value.length-maxCharacters)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxCharacters+" tecken.":null;var otherValidationError=validate?validate(value):null;return maxCharactersError||otherValidationError||true;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:src/* TextFieldStyles */.Ql.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]})}));};
+;// ./packages/textarea/src/index.ts
 
 
 /***/ }),

@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6796],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5521],{
 
-/***/ 93272:
+/***/ 39543:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_toast_mdx_a2c_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_modal_mdx_902_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-toast-mdx-a2c.json
-const site_docs_components_toast_mdx_a2c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/toast","title":"Toast","description":"Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.","source":"@site/docs/components/toast.mdx","sourceDirName":"components","slug":"/components/toast","permalink":"/pr-preview/pr-171/components/toast","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Toast","description":"Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-modal-mdx-902.json
+const site_docs_components_modal_mdx_902_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/modal","title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","source":"@site/docs/components/modal.mdx","sourceDirName":"components","slug":"/components/modal","permalink":"/pr-preview/pr-171/components/modal","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,28 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/toast/src/index.ts + 2 modules
-var src = __webpack_require__(96573);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var button_src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/toast.json
-const toast_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/toast@1.0.4","_rev":"9-2a95ea98e82e75447cf44cd203e0e5e0","name":"@midas-ds/toast","dist-tags":{"latest":"1.0.4"},"versions":["0.4.0","0.5.0","0.5.1","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-10T14:39:22.818Z","modified":"2024-12-02T09:03:49.158Z","0.4.0":"2024-09-10T14:39:23.053Z","0.5.0":"2024-09-12T05:55:09.470Z","0.5.1":"2024-09-12T12:58:03.661Z","0.5.2":"2024-10-07T12:28:12.102Z","1.0.0":"2024-10-18T13:40:35.175Z","1.0.1":"2024-10-22T14:09:08.896Z","1.0.2":"2024-11-01T10:27:37.626Z","1.0.3":"2024-11-15T14:06:21.034Z","1.0.4":"2024-12-02T09:03:48.913Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/toast ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":15790,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"@midas-ds/button":"1.2.0","react":"^18.3.1","@react-aria/toast":"^3.0.0-beta.12","@react-stately/toast":"3.0.0-beta.7","react-dom":"18.3.1","lucide-react":"^0.453.0"},"peerDependencies":{},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-8ZrnYb5Be9Hdsgt6nycPWIp7B8s6VRmYWhnsa4YH1ua1nf5fhVFUA7sX56jUGJqZ1w+B6c65k9DNI30dCnkBAQ==","shasum":"b6fe0e8ced134080a80b9cddd09b2fdc3bea90b1","tarball":"https://registry.npmjs.org/@midas-ds/toast/-/toast-1.0.4.tgz","fileCount":10,"unpackedSize":159283,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEYCIQD2AXqC901DV52wJqdZi2gqthGRWE7FdZncPxvHsuo1/wIhAM6Bq8tImzfI1YXA0eeZl3e60/aU/ip1CQ505KAhNWEI"}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/toast_1.0.4_1733130228718_0.5837321119062786"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/modal.json
+const modal_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/modal@1.0.1","_rev":"4-940ea2d13453197f5e7db14e93e8d0f9","name":"@midas-ds/modal","dist-tags":{"latest":"1.0.1"},"versions":["0.1.0","0.1.1","0.1.2","1.0.0","1.0.1"],"time":{"created":"2024-11-01T10:27:54.664Z","modified":"2024-12-02T10:03:18.911Z","0.1.0":"2024-11-01T10:27:54.939Z","0.1.1":"2024-11-06T12:37:42.935Z","0.1.2":"2024-11-15T14:06:18.284Z","1.0.0":"2024-12-02T09:04:03.467Z","1.0.1":"2024-12-02T10:03:18.681Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/modal ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9213,"version":"1.0.1","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"bee2f5be407db4c98502e5d69c580a8ba3f13929","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-KwUwnzswKVizEgb4K5ewy20GEQ3AoKT7DuyZ0YuIXpfziz6VPNXFcZBomJdBY96J3sSeBLxLuMf1vXJJMRSh7g==","shasum":"896e1d246098c69d587d96ca36cdad2535f2c490","tarball":"https://registry.npmjs.org/@midas-ds/modal/-/modal-1.0.1.tgz","fileCount":8,"unpackedSize":94532,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIGWcYG2i+aNU6sUPphmM9liMYO1ZSMwKfodEm5fjG8C8AiAlIedRrYLAHYQUfwhtDiLL6DscdxQ6MJ4lDq9NHAAZVQ=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/modal_1.0.1_1733133798522_0.29151805708738987"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
+var CodeBlock = __webpack_require__(29511);
+// EXTERNAL MODULE: ./packages/modal/src/index.ts + 2 modules
+var src = __webpack_require__(16771);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
+var button_src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
 var flex_src = __webpack_require__(93294);
-;// ./apps/docs/docs/components/toast.mdx
+// EXTERNAL MODULE: ./packages/textarea/src/index.ts + 2 modules
+var textarea_src = __webpack_require__(26196);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Heading.mjs
+var Heading = __webpack_require__(57936);
+;// ./apps/docs/docs/components/modal.mdx
 
 
 const frontMatter = {
-	title: 'Toast',
-	description: 'Toasts visar korta, tillfälliga meddelanden om åtgärder, fel eller andra händelser i en applikation.',
+	title: 'Modal',
+	description: 'Modal som lägger sig över allt annat innehåll.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -64,29 +70,16 @@ const assets = {
 
 
 
+
+
+
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Varianter",
-  "id": "varianter",
-  "level": 2
-}, {
-  "value": "Implementationer",
-  "id": "implementationer",
-  "level": 2
-}, {
-  "value": "Lokalt",
-  "id": "lokalt",
-  "level": 3
-}, {
-  "value": "Globalt",
-  "id": "globalt",
-  "level": 3
-}, {
-  "value": "Notiskön",
-  "id": "notiskön",
+  "value": "Avancerat innehåll",
+  "id": "avancerat-innehåll",
   "level": 2
 }, {
   "value": "Riktlinjer",
@@ -95,10 +88,8 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -106,16 +97,12 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Toast',
-      info: toast_namespaceObject,
-      friendlyName: 'Notifiering, notiser',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/useToast.html"
+      name: 'Modal',
+      info: modal_namespaceObject,
+      friendlyName: "Modal, Dialog, Dialogruta",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/Dialog.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan\neller via en timeout. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<ToastRegion>"
-      }), "."]
+      children: "Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -126,7 +113,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/toast\n"
+            children: "npm install @midas-ds/modal\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -135,7 +122,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/toast\n"
+            children: "yarn add @midas-ds/modal\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -144,138 +131,91 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/toast\n"
+            children: "pnpm add @midas-ds/modal\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ToastProvider } from '@midas-ds/toast'\n;<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
+        children: "import { Modal } from '@midas-ds/modal'\n\nconst [isOpen, setIsOpen] = React.useState<boolean>(false)\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(src/* GlobalToastRegion */.r$, {}), "\n", (0,jsx_runtime.jsx)(button_src/* Button */.$n, {
-      onPress: () => src/* toastQueue */.ni.add({
-        type: 'success',
-        message: 'Allt funkar som det ska!'
-      }, {
-        timeout: 5000
-      }),
-      children: 'Tryck här för en notifiering'
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Button: button_src/* Button */.$n,
+        Modal: src/* Modal */.a,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<>
+  <Button onPress={setIsOpen}>Radera frukter</Button>
+  <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
+      <p>Är du säker? De går inte att återskapa.</p>
+      <Flex fluid={true}>
+          <FlexItem col='auto'>
+              <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
+          </FlexItem>
+          <FlexItem>
+              <Button
+                  onPress={() => setIsOpen(false)}
+                  variant='secondary'
+              >
+                  Avbryt
+              </Button>
+          </FlexItem>
+      </Flex>
+  </Modal>
+
+</>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En toast har fyra olika varianter, ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "success"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "info"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "warning"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "important"
-      }), ". Använd lämplig typ beroende på vilken information som ska visas. Här har även varningsnotisen högsta prioritet vilket gör att den alltid går före i kön."]
-    }), "\n", (0,jsx_runtime.jsxs)(flex_src/* Flex */.s, {
-      fluid: true,
-      children: [(0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(button_src/* Button */.$n, {
-          onPress: () => src/* toastQueue */.ni.add({
-            type: 'success',
-            message: 'Allt funkar som det ska!'
-          }, {
-            timeout: 5000
-          }),
-          children: 'Success'
-        })
-      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(button_src/* Button */.$n, {
-          onPress: () => src/* toastQueue */.ni.add({
-            type: 'info',
-            message: 'Här kommer ett meddelande'
-          }, {
-            timeout: 5000
-          }),
-          children: 'Info'
-        })
-      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(button_src/* Button */.$n, {
-          onPress: () => src/* toastQueue */.ni.add({
-            message: 'Viktigt meddelande',
-            type: 'important'
-          }, {
-            timeout: 5000
-          }),
-          children: 'Important'
-        })
-      }), (0,jsx_runtime.jsx)(flex_src/* FlexItem */.Z, {
-        col: 3,
-        children: (0,jsx_runtime.jsx)(button_src/* Button */.$n, {
-          onPress: () => src/* toastQueue */.ni.add({
-            message: 'Farlig varning!',
-            type: 'warning'
-          }, {
-            timeout: 5000,
-            priority: 1
-          }),
-          children: 'Warning'
-        })
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "implementationer",
-      children: "Implementationer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "lokalt",
-      children: "Lokalt"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "toastProvider"
-      }), " för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,\nanvänd den ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "#global-implementation",
-        children: "globala varianten"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "globalt",
-      children: "Globalt"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Välj en global kö för toasts om det passar ditt användsningsscenario bättre. Lägg en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<GlobalToastRegion>"
-      }), " någonstans i appen\noch lägg nya toasts i kön enligt:"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';\n\n<GlobalToastRegion />\n//...\n<Button onPress={\n  () => toastQueue.add({type: 'success', message: 'Toast is done'})\n}>Visa notis</Button>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "notiskön",
-      children: "Notiskön"
+      id: "avancerat-innehåll",
+      children: "Avancerat innehåll"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Varje gång en toast läggs till i kön går det att bestämma livslängs och prioritering för notisen. Prioritet kan sättas till 1, 2 eller 3 och notiserna kommer gå före i kön beroende på detta."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "{3}",
-        children: ".add(\n  {...},\n  { priority: 1 }\n)\n"
-      })
+      children: "Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Button: button_src/* Button */.$n,
+        Modal: src/* Modal */.a,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Heading: Heading/* Heading */.D,
+        TextArea: textarea_src/* TextArea */.f
+      },
+      children: `<>
+  <Button onPress={setIsOpen}>Öppna modal</Button>
+  <Modal id="avsluta" title="Vill du avsluta uppdraget?" isOpen={isOpen} onOpenChange={setIsOpen}>
+      <Flex fluid={true} style={{marginBottom: '1rem'}}>
+          <FlexItem col>
+              <TextArea
+                  autoFocus
+                  label='Ange anledning'
+                  description='Skriv anledning'
+                  maxCharacters={100}
+              />
+          </FlexItem>
+      </Flex>
+      <Flex fluid={true}>
+          <FlexItem col='auto'>
+              <Button onPress={() => setIsOpen(false)}>Spara korrespondens</Button>
+          </FlexItem>
+          <FlexItem>
+              <Button
+                  onPress={() => setIsOpen(false)}
+                  variant='secondary'
+              >
+                  Avbryt
+              </Button>
+          </FlexItem>
+      </Flex>
+  </Modal>
+</>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Timeout ska av tillgänglighetsskäl vara minst 5000ms:"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "{3}",
-        children: ".add(\n  {...},\n  { timeout: 5000 }\n)\n"
-      })
+      children: "Kommer snart"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: toast_namespaceObject
+      info: modal_namespaceObject
     })]
   });
 }
@@ -329,53 +269,96 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 96573:
+/***/ 16771:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  r$: () => (/* reexport */ GlobalToastRegion),
-  ni: () => (/* reexport */ toastQueue)
+  a: () => (/* reexport */ Modal)
 });
-
-// UNUSED EXPORTS: Toast, ToastProvider, ToastRegion
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var src = __webpack_require__(63918);
-// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToastRegion.mjs + 1 modules
-var useToastRegion = __webpack_require__(96766);
-// EXTERNAL MODULE: ./node_modules/@react-aria/toast/dist/useToast.mjs
-var useToast = __webpack_require__(93187);
-// EXTERNAL MODULE: ./node_modules/@react-stately/toast/dist/useToastState.mjs
-var dist_useToastState = __webpack_require__(8737);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-dom/index.js
-var react_dom = __webpack_require__(40961);
-;// ./packages/toast/src/lib/Toast.module.css
+;// ./packages/modal/src/lib/Modal.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Toast_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalGreen10":"#d5f2d9","signalGreen100":"#008d3c","signalBlue10":"#eaf2f6","signalBlue100":"#0066cc","signalYellow10":"#fff8e1","signalYellow100":"#f1c21b","signalRed10":"#ffdfdf","signalRed100":"#e62323","gray150":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","mdBreakpoint":"(min-width: 768px)","toastRegion":"toastRegion_D8P5","toast":"toast_KTs7","success":"success_uWpg","info":"info_gZit","important":"important_NPeI","warning":"warning_QRWE","icon":"icon_KIoW","toastContent":"toastContent_U3Cz","toastMessage":"toastMessage_p9OY","slideInTop":"slideInTop_l9cG","slideInEnd":"slideInEnd_nrEv","slideOutTop":"slideOutTop_ENmT","slideOutEnd":"slideOutEnd_Pml0"});
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-check.js
-var circle_check = __webpack_require__(79804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-alert.js
-var circle_alert = __webpack_require__(37946);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
-var triangle_alert = __webpack_require__(418);
+/* harmony default export */ const Modal_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray10":"#f2f2f2","modal":"modal_oR1A","modalHeader":"modalHeader_StAp","modalBody":"modalBody_C0aM","modalHeading":"modalHeading_flMZ"});
 // EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
 var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
+var src = __webpack_require__(63918);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/toast/src/lib/Toast.tsx
-'use client';var _excluded=(/* unused pure expression or super */ null && (["children"])),_excluded2=["state"],_excluded3=["state"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};var toastQueue=new dist_useToastState/* ToastQueue */.Vv({maxVisibleToasts:5,hasExitAnimation:true});var GlobalToastRegion=function GlobalToastRegion(props){var state=(0,dist_useToastState/* useToastQueue */.oS)(toastQueue);return state.visibleToasts.length>0?/*#__PURE__*/(0,react_dom.createPortal)(/*#__PURE__*/(0,jsx_runtime.jsx)(ToastRegion,Object.assign({},props,{state:state})),document.body):null;};var ToastProvider=function ToastProvider(_ref){var children=_ref.children,props=_objectWithoutPropertiesLoose(_ref,_excluded);var state=useToastState({maxVisibleToasts:5,hasExitAnimation:true});return/*#__PURE__*/_jsxs(_Fragment,{children:[typeof children==='function'?children(state):children,state.visibleToasts.length>0&&/*#__PURE__*/_jsx(ToastRegion,Object.assign({},props,{state:state}))]});};function ToastRegion(_ref2){var state=_ref2.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);var ref=react.useRef(null);var _useToastRegion=(0,useToastRegion/* useToastRegion */.J)(props,state,ref),regionProps=_useToastRegion.regionProps;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},regionProps,{ref:ref,className:Toast_module.toastRegion,children:state.visibleToasts.map(function(toast){return/*#__PURE__*/(0,jsx_runtime.jsx)(Toast,{toast:toast,state:state},toast.key);})}));}function Toast(_ref3){var state=_ref3.state,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded3);var ref=react.useRef(null);var _useToast=(0,useToast/* useToast */.d)(props,state,ref),toastProps=_useToast.toastProps,contentProps=_useToast.contentProps,titleProps=_useToast.titleProps,closeButtonProps=_useToast.closeButtonProps;var Icon=iconMap[props.toast.content.type];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},toastProps,{ref:ref,className:(0,clsx/* default */.A)(Toast_module.toast,Toast_module[props.toast.content.type]),"data-animation":props.toast.animation,onAnimationEnd:function onAnimationEnd(){if(props.toast.animation==='exiting'){state.remove(props.toast.key);}},children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:Toast_module.toastContent},contentProps,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{className:Toast_module.icon,size:20,"aria-hidden":true}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("p",Object.assign({className:Toast_module.toastMessage},titleProps,{children:props.toast.content.message})),props.toast.content.children]})]})),/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,Object.assign({variant:"icon"},closeButtonProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})}))]}));}
-;// ./packages/toast/src/index.ts
+;// ./packages/modal/src/lib/Modal.tsx
+'use client';var _excluded=["id","isOpen","onOpenChange","children","title","className"];var Modal=function Modal(_ref){var id=_ref.id,isOpen=_ref.isOpen,onOpenChange=_ref.onOpenChange,children=_ref.children,title=_ref.title,className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var ref=react.useRef(null);react.useEffect(function(){if(isOpen){var _ref$current;(_ref$current=ref.current)==null||_ref$current.showModal();}else{var _ref$current2;(_ref$current2=ref.current)==null||_ref$current2.close();}},[isOpen]);var handleClose=function handleClose(){var _ref$current3;(_ref$current3=ref.current)==null||_ref$current3.close();onOpenChange(false);};var headingId=id+'_heading';return/*#__PURE__*/(0,jsx_runtime.jsxs)("dialog",Object.assign({id:id,ref:ref,onCancel:function onCancel(){return onOpenChange(false);},className:(0,clsx/* default */.A)(Modal_module.modal,className),"aria-labelledby":headingId},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Modal_module.modalHeader,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,{onPress:function onPress(){return handleClose();},variant:"tertiary",icon:x/* default */.A,iconPlacement:"right",children:"St\xE4ng"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Modal_module.modalBody,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("h2",{className:Modal_module.modalHeading,id:headingId,children:title}),children]})]}));};
+;// ./packages/modal/src/index.ts
+
+
+/***/ }),
+
+/***/ 26196:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  f: () => (/* reexport */ TextArea)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/textarea/src/lib/TextArea.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextArea_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_tiIs","count":"count_OzSk","countExceeded":"countExceeded_YJf_"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
+var dist_TextArea = __webpack_require__(43660);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/textarea/src/lib/TextArea.tsx
+'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter","validate"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,validate=_ref.validate,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:(0,clsx/* default */.A)(TextArea_module.count,value.length>maxCharacters&&TextArea_module.countExceeded),children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var validateInput=function validateInput(value){var maxCharactersError=maxCharacters&&value.length>maxCharacters?"Du har angett "+(value.length-maxCharacters)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxCharacters+" tecken.":null;var otherValidationError=validate?validate(value):null;return maxCharactersError||otherValidationError||true;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:src/* TextFieldStyles */.Ql.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]})}));};
+;// ./packages/textarea/src/index.ts
+
+
+/***/ }),
+
+/***/ 48697:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ X)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+]);
+
+
+//# sourceMappingURL=x.js.map
 
 
 /***/ }),
@@ -679,6 +662,89 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
+
+/***/ }),
+
+/***/ 57936:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   D: () => (/* binding */ $5cb03073d3f54797$export$a8a3e93435678ff9)
+/* harmony export */ });
+/* harmony import */ var _RSPContexts_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32373);
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+function $5cb03073d3f54797$var$Heading(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, (0, _RSPContexts_mjs__WEBPACK_IMPORTED_MODULE_2__/* .HeadingContext */ .A3));
+    let { children: children, level: level = 3, className: className, ...domProps } = props;
+    let Element = `h${level}`;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, {
+        ...domProps,
+        ref: ref,
+        className: className !== null && className !== void 0 ? className : 'react-aria-Heading'
+    }, children);
+}
+const $5cb03073d3f54797$export$a8a3e93435678ff9 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($5cb03073d3f54797$var$Heading);
+
+
+
+//# sourceMappingURL=Heading.module.js.map
+
+
+/***/ }),
+
+/***/ 32373:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A3: () => (/* binding */ $4e85f108e88277b8$export$d688439359537581),
+/* harmony export */   BP: () => (/* binding */ $4e85f108e88277b8$export$b085522c77523c51)
+/* harmony export */ });
+/* unused harmony exports ColorAreaContext, ColorFieldContext, ColorSliderContext, ColorWheelContext */
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+/*
+ * Copyright 2024 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the 'License');
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+const $4e85f108e88277b8$export$b085522c77523c51 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$ebe63fadcdce34ed = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$44644b8a16031b5b = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$717b2c0a523a0b53 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$265015d6dc85bf21 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$d688439359537581 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+
+
+
+//# sourceMappingURL=RSPContexts.module.js.map
+
 
 /***/ })
 
