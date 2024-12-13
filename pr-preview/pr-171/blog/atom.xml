@@ -29,6 +29,19 @@
 <ul>
 <li>Lagt till <a class="link_Db78" data-rac="" href="https://designsystem.migrationsverket.se/basics/principles#designprinciper-f%C3%B6r-extern-webbplats">designprinciper för externwebb</a></li>
 <li>Tydligare felmeddelande när användaren skriver in fler tecken än vad som tillåts av <code scope="[object Object]">maxCharacter</code> på Textfield och TextArea</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="uppdaterade-komponenter">Uppdaterade komponenter<a href="https://designsystem.migrationsverket.se/pr-preview/pr-171/blog/release-17/#uppdaterade-komponenter" class="hash-link" aria-label="Direktlänk till Uppdaterade komponenter" title="Direktlänk till Uppdaterade komponenter">​</a></h2>
+<ul>
+<li>Button (1.2.1)</li>
+<li>TextField (1.1.0)</li>
+<li>SearchField (1.0.8)</li>
+<li>Toast (1.0.5)</li>
+<li>FileUpload (1.0.6)</li>
+<li>MultiSelect (0.1.9)</li>
+<li>Tag (0.1.4)</li>
+<li>InfoBanner (1.0.6)</li>
+<li>DatePicker (1.0.8)</li>
+<li>UI (0.7.19)</li>
 </ul>]]></content>
     </entry>
     <entry>
