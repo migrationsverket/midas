@@ -1,3 +1,12 @@
+## 0.7.18 (2024-12-13)
+
+### 🧱 Updated Dependencies
+
+- Updated info-banner to 1.0.6
+- Updated textfield to 1.1.0
+- Updated button to 1.2.1
+- Updated toast to 1.0.5
+
 ## 0.7.17 (2024-12-02)
 
 ### 🧱 Updated Dependencies

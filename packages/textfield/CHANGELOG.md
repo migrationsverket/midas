@@ -1,3 +1,22 @@
+## 1.1.0 (2024-12-13)
+
+### 🚀 Features
+
+- **textfield:** support counter and maxCharacters ([ab97d0c9](https://github.com/migrationsverket/midas/commit/ab97d0c9))
+
+### 🩹 Fixes
+
+- **textfield:** change error message when > maxCharacter ([221abdf9](https://github.com/migrationsverket/midas/commit/221abdf9))
+
+### 🧱 Updated Dependencies
+
+- Updated button to 1.2.1
+
+### ❤️  Thank You
+
+- PHIEKS
+- Wilhelm Hjelm
+
 ## 1.0.5 (2024-12-02)
 
 ### 🧱 Updated Dependencies

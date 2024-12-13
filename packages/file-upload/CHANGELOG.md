@@ -1,3 +1,10 @@
+## 1.0.6 (2024-12-13)
+
+### 🧱 Updated Dependencies
+
+- Updated textfield to 1.1.0
+- Updated button to 1.2.1
+
 ## 1.0.5 (2024-12-02)
 
 ### 🩹 Fixes
