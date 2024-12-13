@@ -5,27 +5,17 @@ import { Button } from '@midas-ds/button'
 import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
 import { Item, Select } from '@midas-ds/select'
 import { RadioGroup, Radio } from '@midas-ds/radio'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@midas-ds/accordion'
+import { Accordion, AccordionItem } from '@midas-ds/accordion'
 import { Logo } from '@midas-ds/logo'
 import { TextField } from '@midas-ds/textfield'
-import {
-  GlobalToastRegion,
-  toastQueue,
-  ToastProvider,
-  MidasToastState
-} from '@midas-ds/toast'
+import { GlobalToastRegion, toastQueue, ToastProvider } from '@midas-ds/toast'
 
 export function App() {
   return (
     <div className={styles.container}>
       <div>
         <ToastProvider>
-          {(state: MidasToastState) => (
+          {state => (
             <Button
               onPress={() =>
                 state.add(
@@ -127,23 +117,9 @@ export function App() {
           />
         </div>
         <div className={styles['component']}>
-          <Accordion type={'multiple'}>
-            <AccordionItem value={'x'}>
-              <AccordionTrigger>Rubrik</AccordionTrigger>
-              <AccordionContent>
-                Du som ska studera vid ett unions-program eller ett
-                multilateralt program som innefattar rörlighetsåtgärder, och som
-                ska påbörja dina studier på programmet i Sverige, kan ansöka om
-                uppehållstillstånd för högre utbildning i Sverige för hela
-                programmet.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value={'y'}>
-              <AccordionTrigger>
-                En annan rubrik som är lite längre
-              </AccordionTrigger>
-              <AccordionContent>Mer innehåll</AccordionContent>
-            </AccordionItem>
+          <Accordion variant='subtle'>
+            <AccordionItem title='Hej'>Hejdå</AccordionItem>
+            <AccordionItem title='hej'>Hejsan igen</AccordionItem>
           </Accordion>
         </div>
         <div
