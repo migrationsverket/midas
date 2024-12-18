@@ -1,0 +1,90 @@
+{
+  "_id": "@midas-ds/checkbox@1.0.3",
+  "_rev": "9-767071df178ceb9b6bff2db579c9e9b9",
+  "name": "@midas-ds/checkbox",
+  "dist-tags": {
+    "latest": "1.0.3"
+  },
+  "versions": [
+    "0.3.28",
+    "0.4.0",
+    "0.5.0",
+    "0.5.1",
+    "0.5.2",
+    "0.6.0",
+    "1.0.0",
+    "1.0.1",
+    "1.0.2",
+    "1.0.3"
+  ],
+  "time": {
+    "created": "2024-09-10T14:36:11.026Z",
+    "modified": "2024-12-02T09:03:15.017Z",
+    "0.3.28": "2024-09-10T14:36:11.408Z",
+    "0.4.0": "2024-09-12T09:14:34.093Z",
+    "0.5.0": "2024-09-12T12:23:17.089Z",
+    "0.5.1": "2024-09-12T13:02:08.142Z",
+    "0.5.2": "2024-09-24T14:55:11.723Z",
+    "0.6.0": "2024-10-07T12:08:59.780Z",
+    "1.0.0": "2024-10-18T13:40:39.690Z",
+    "1.0.1": "2024-10-24T13:26:14.645Z",
+    "1.0.2": "2024-11-15T14:05:46.379Z",
+    "1.0.3": "2024-12-02T09:03:14.811Z"
+  },
+  "bugs": {
+    "url": "https://github.com/migrationsverket/midas/issues"
+  },
+  "homepage": "https://github.com/migrationsverket/midas#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git"
+  },
+  "description": "```bash npm i @midas-ds/checkbox ```",
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
+  "readmeFilename": "README.md",
+  "_contentLength": 16223,
+  "version": "1.0.3",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "gitHead": "660173f9a53a45cd053cc3ee2523dc3bcc65d9fa",
+  "dependencies": {
+    "@midas-ds/theme": "^0.5.23"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_nodeVersion": "20.11.1",
+  "_npmVersion": "10.2.4",
+  "dist": {
+    "integrity": "sha512-SeURf24EoizN5/o2CdUnisZNeCya/KNqdAxAR0lNc842jPs8sGknhv+Woy8QTKswALTk0PrSP3Q/4MvdpFabNQ==",
+    "shasum": "ae85582bb5babc838de8d208858274d5541e5df3",
+    "tarball": "https://registry.npmjs.org/@midas-ds/checkbox/-/checkbox-1.0.3.tgz",
+    "fileCount": 10,
+    "unpackedSize": 125993,
+    "signatures": [
+      {
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+        "sig": "MEUCIQDQJR84xvAX4KcEIR2HUjIZiSMiqnOBXNu9kx+eefUwPgIgCzdqT1+dzBwKuWSuM1IuCeo4ikBmi21hnIXLcK7dosY="
+      }
+    ]
+  },
+  "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
+  "directories": {},
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/checkbox_1.0.3_1733130194590_0.7249133325380819"
+  },
+  "_hasShrinkwrap": false
+}
