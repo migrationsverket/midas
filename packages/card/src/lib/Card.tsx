@@ -19,7 +19,7 @@ export interface CardProps<C extends ElementType = typeof Link>
   /** Content as p element for the component rendered at the bottom */
   content: string
   /** Handler for when card element is clicked */
-  link: LinkProps<C> & { title: string }
+  link: LinkProps<C>
   /** Tag to be used for the header
    *  @default 'h1'
    */
@@ -70,9 +70,7 @@ export const Card: React.FC<CardProps> = ({
         standalone
         stretched
         as={CustomLinkComponent}
-      >
-        {link.title}
-      </Link>
+      />
     </div>
   )
 }
