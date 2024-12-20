@@ -38,31 +38,6 @@ import { LinkButton } from '@midas-ds/link-button'
 </Flex>`}
 </LiveCodeBlock>
 
-### Headlessreferens
-
-Beskrivning av hur `RouterProvider` används finns på [React Aria Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).
-
-## Client Side Routing
-
-Navigering i klienten, det vill säga i webbläsaren. Exempel på uppsättning för [Remix](https://remix.run/docs/en/main) men principen är densamma för andra ramverk.
-
-```tsx
-import { Link, RouterProvider } from '@midas-ds/link-button';
-import { useNavigate } from '@remix-run/react'; // or any other framwork router
-...
-export default function App() {
-  const navigate = useNavigate();
-  return (
-      <RouterProvider navigate={navigate}>
-          <LinkButton href={'/'}>Home</LinkButton>
-          <LinkButton href={'about'}>About</LinkButton>
-          <LinkButton href={'more'}>More</LinkButton>
-        <Outlet />
-      </RouterProvider>
-  );
-}
-```
-
 ## Riktlinjer
 
 Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)

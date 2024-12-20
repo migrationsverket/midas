@@ -13,19 +13,14 @@ import {
 } from '@midas-ds/accordion'
 import { Logo } from '@midas-ds/logo'
 import { TextField } from '@midas-ds/textfield'
-import {
-  GlobalToastRegion,
-  toastQueue,
-  ToastProvider,
-  MidasToastState
-} from '@midas-ds/toast'
+import { GlobalToastRegion, toastQueue, ToastProvider } from '@midas-ds/toast'
 
 export function App() {
   return (
     <div className={styles.container}>
       <div>
         <ToastProvider>
-          {(state: MidasToastState) => (
+          {state => (
             <Button
               onPress={() =>
                 state.add(

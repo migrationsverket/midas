@@ -107,12 +107,29 @@
   }
 }
 
+.iconBtn {
+  background-color: transparent;
+  padding: 0.875rem;
+  color: black;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(0 0 0 / 10%);
+  }
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+  }
+}
+
 .iconLeft {
   flex-direction: row-reverse;
-
-  .icon {
-    transform: rotate(180deg);
-  }
 }
 
 .fullwidth {

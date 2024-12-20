@@ -13,7 +13,7 @@
   "singleAttributePerLine": true,
   "overrides": [
     {
-      "files": "*.mdx",
+      "files": ["*.mdx", "*.md"],
       "options": {
         "printWidth": 120
       }
