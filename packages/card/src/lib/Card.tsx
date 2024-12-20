@@ -1,15 +1,12 @@
 'use client'
 
-import React, {
-  ElementType,
-  HTMLAttributeAnchorTarget,
-  ReactElement
-} from 'react'
-import { Link } from '@midas-ds/link'
+import React, { ElementType, ReactElement } from 'react'
+import { Link, LinkProps, RouterProvider } from '@midas-ds/link'
 import styles from './Card.module.css'
 import clsx from 'clsx'
 
-export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface CardProps<C extends ElementType = typeof Link>
+  extends React.HTMLAttributes<HTMLDivElement> {
   /** Optional image displayed at the top of card */
   image?: { source: string; description: string }
   /** Sets background to predetermined color
@@ -22,13 +19,14 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   /** Content as p element for the component rendered at the bottom */
   content: string
   /** Handler for when card element is clicked */
-  link: { href: string; title: string; target?: HTMLAttributeAnchorTarget }
+  link: LinkProps<C> & { title: string }
   /** Tag to be used for the header
    *  @default 'h1'
    */
   headingTag?: ElementType
   /** Custom image component to be used instead of the default img tag */
   customImageComponent?: ReactElement
+  customLinkComponent?: ElementType
 }
 
 /**
@@ -42,6 +40,7 @@ export const Card: React.FC<CardProps> = ({
   link,
   headingTag: HeadingTag = 'h1',
   customImageComponent,
+  customLinkComponent: CustomLinkComponent,
   ...rest
 }) => {
   return (
@@ -67,13 +66,15 @@ export const Card: React.FC<CardProps> = ({
         <p className={styles.text}>{content}</p>
       </div>
       <Link
-        href={link.href}
-        target={link.target}
+        {...link}
         standalone
         stretched
+        as={CustomLinkComponent}
       >
         {link.title}
       </Link>
     </div>
   )
 }
+
+export { RouterProvider }
