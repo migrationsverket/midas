@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
 import { ArrowRight } from 'lucide-react'
+import { Link as ReactRouterLink } from 'react-router'
+
 const meta: Meta<typeof Link> = {
   component: Link,
   title: 'Components/Link',
@@ -23,7 +25,6 @@ export const Primary: Story = {
     children: 'Länk',
     icon: ArrowRight,
     href: 'https://designsystem.migrationsverket.se/components/link/'
-    
   }
 }
 export const PrimaryDisabled: Story = {
@@ -45,5 +46,12 @@ export const StandaloneDisabled: Story = {
   args: {
     ...Standalone.args,
     isDisabled: true
+  }
+}
+
+export const FrameworkLink: Story = {
+  args: {
+    ...Primary.args,
+    as: ReactRouterLink
   }
 }
