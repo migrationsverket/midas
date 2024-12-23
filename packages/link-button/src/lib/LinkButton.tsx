@@ -8,7 +8,12 @@ import {
 } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
-import { ChevronRight } from 'lucide-react'
+import {
+  ChevronLeft,
+  ChevronRight,
+  LucideIcon,
+  SquareArrowOutUpRight
+} from 'lucide-react'
 
 interface MidasLinkProps extends LinkProps {
   children: React.ReactNode
@@ -26,7 +31,40 @@ export const LinkButton: React.FC<MidasLinkProps> = ({
   fullwidth,
   iconPlacement,
   ...rest
-}) => {
+}: LinkButtonProps<C>) => {
+  const Component = as || AriaLink
+
+  const Icon = () => {
+    if (IconComponent)
+      return (
+        <IconComponent
+          size={20}
+          className={styles.icon}
+        />
+      )
+
+    if (rest.target === '_blank')
+      return (
+        <SquareArrowOutUpRight
+          size={20}
+          className={styles.icon}
+        />
+      )
+    if (iconPlacement === 'left')
+      return (
+        <ChevronLeft
+          size={20}
+          className={styles.icon}
+        />
+      )
+
+    return (
+      <ChevronRight
+        size={20}
+        className={styles.icon}
+      />
+    )
+  }
   return (
     <AriaLink
       className={clsx(
