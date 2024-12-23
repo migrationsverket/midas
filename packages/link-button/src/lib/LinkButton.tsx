@@ -1,11 +1,7 @@
 'use client'
 
 import React from 'react'
-import {
-  Link as AriaLink,
-  LinkProps,
-  RouterProvider
-} from 'react-aria-components'
+import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
 import {
@@ -15,21 +11,30 @@ import {
   SquareArrowOutUpRight
 } from 'lucide-react'
 
-interface MidasLinkProps extends LinkProps {
+interface MidasLinkProps<C extends React.ElementType> {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
   fullwidth?: boolean
   iconPlacement?: 'left' | 'right'
+  icon?: LucideIcon /**Optional icon prop */
+  className?: string
+  as?: C
 }
+
+export type LinkButtonProps<C extends React.ElementType> = MidasLinkProps<C> &
+  Omit<React.ComponentProps<C>, keyof MidasLinkProps<C>>
 
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */
-export const LinkButton: React.FC<MidasLinkProps> = ({
+export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
   children,
   variant,
   fullwidth,
+  icon: IconComponent,
   iconPlacement,
+  className,
+  as,
   ...rest
 }: LinkButtonProps<C>) => {
   const Component = as || AriaLink
@@ -66,25 +71,23 @@ export const LinkButton: React.FC<MidasLinkProps> = ({
     )
   }
   return (
-    <AriaLink
+    <Component
       className={clsx(
         styles.linkButton,
         variant === 'primary' && styles.primary,
         variant === 'secondary' && styles.secondary,
         variant === 'tertiary' && styles.tertiary,
         variant === 'danger' && styles.danger,
+        variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         iconPlacement === 'left' && styles.iconLeft,
-        rest.className
+        className
       )}
       {...rest}
     >
       {children}
-      <ChevronRight
-        size={20}
-        className={styles.icon}
-      />
-    </AriaLink>
+      <Icon />
+    </Component>
   )
 }
 
