@@ -9,7 +9,13 @@ describe('Sidebar', () => {
         items={[]}
         title={''}
         children={undefined}
+        headerChildren={undefined}
         user={{ name: '', title: '' }}
+        app={{
+          name: '',
+          shortName: '',
+          color: undefined
+        }}
       />
     )
     expect(baseElement).toBeTruthy()
