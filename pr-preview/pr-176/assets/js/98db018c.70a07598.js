@@ -73,10 +73,6 @@ const toc = [{
   "id": "kombinerat-med-andra-komponenter",
   "level": 3
 }, {
-  "value": "Beroenden",
-  "id": "beroenden",
-  "level": 2
-}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
@@ -158,9 +154,6 @@ function _createMdxContent(props) {
 />
 Laddar
 </Button>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
       info: spinner_namespaceObject
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {

@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1982],{
 
-/***/ 30099:
+/***/ 61443:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_link_button_mdx_0ab_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
-const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/pr-preview/pr-176/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-link-button-mdx-0ab.json
+const site_docs_components_link_button_mdx_0ab_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/link-button","title":"LinkButton","description":"Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.","source":"@site/docs/components/link-button.mdx","sourceDirName":"components","slug":"/components/link-button","permalink":"/pr-preview/pr-176/components/link-button","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"LinkButton","description":"Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,22 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./packages/link-button/src/index.ts + 3 modules
+var src = __webpack_require__(9687);
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/textfield.json
-const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.5","_rev":"13-ec03e56857807b66426aeda7cc88939e","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.5"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-12-02T09:03:10.402Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z","1.0.3":"2024-11-15T14:05:41.473Z","1.0.4":"2024-11-19T14:48:42.571Z","1.0.5":"2024-12-02T09:03:10.160Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":0,"version":"1.0.5","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/button":"1.2.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-+uyW2TMdjY4ryLd6WlF4urBVX4AsgYnaGfqC2fucpQWuRjZRufWFQhGRcE7PARN+CHLkTFB0BkIb0mXtzoIRmw==","shasum":"1f89f0f97f32a8556af663c50f9f6fb586e4f793","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.5.tgz","fileCount":9,"unpackedSize":120950,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCvJsHgAacF5tT6oBApUkKiFJRV/Iy7lcGwCkGMWK1zHQIgH+tI1C2NshePiEBvjO3ffyhMxH0WrZBGlTRWkROmrls="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.5_1733130189955_0.6374629477714915"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
-var grid_src = __webpack_require__(17172);
+// EXTERNAL MODULE: ./apps/docs/static/data/link.json
+var data_link = __webpack_require__(29169);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/textfield.mdx
+;// ./apps/docs/docs/components/link-button.mdx
 
 
 const frontMatter = {
-	title: 'TextField',
-	description: 'Använd ett textfält när användaren ska fylla i en rad med text.',
+	title: 'LinkButton',
+	description: 'Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -64,67 +64,34 @@ const assets = {
 
 
 
+
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Validering",
-  "id": "validering",
-  "level": 2
-}, {
-  "value": "Egen validering",
-  "id": "egen-validering",
-  "level": 3
-}, {
-  "value": "Egna felmeddelanden",
-  "id": "egna-felmeddelanden",
-  "level": 3
-}, {
-  "value": "Personnummer",
-  "id": "personnummer",
-  "level": 3
-}, {
-  "value": "Lösenord",
-  "id": "lösenord",
-  "level": 2
-}, {
-  "value": "Beroenden",
-  "id": "beroenden",
-  "level": 2
-}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
-}, {
-  "value": "Desktop",
-  "id": "desktop",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Textfield',
-      info: textfield_namespaceObject,
-      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-176/components/textarea",
-        children: "TextArea"
-      }), "."]
+      name: 'LinkButton',
+      info: data_link,
+      friendlyName: 'Länkknapp',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/Link.html"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -135,7 +102,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/textfield\n"
+            children: "npm install @midas-ds/link-button\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -144,7 +111,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/textfield\n"
+            children: "yarn add @midas-ds/link-button\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -153,179 +120,36 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/textfield\n"
+            children: "pnpm add @midas-ds/link-button\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { TextField } from '@midas-ds/textfield'\n"
+        children: "import { LinkButton } from '@midas-ds/link-button'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        TextField: src/* TextField */.A_
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        LinkButton: src/* LinkButton */.z
       },
-      children: `<TextField 
-  label={'Etikett'}
-  description={'Beskrivning'}
-/>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isRequired"
-      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "pattern"
-      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in din e-post"
-  description="Obligatorisk"
-  isRequired
-  errorMessage="Felaktig e-postadress"
-  type="email"
-/>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "egen-validering",
-      children: "Egen validering"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Det går också att definiera en egen funktion för validering:"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in frukt"
-  errorMessage="Du måste skriva 'frukt'!"
-  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
-/>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "egna-felmeddelanden",
-      children: "Egna felmeddelanden"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<TextField\n  label='Skriv in frukt'\n  errorMessage=\"Du måste skriva 'frukt'!\"\n  isRequired\n  validate={value => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n  errorMessage={validation => {\n    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'\n    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'\n    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'\n\n    // Det finns flertalet typer på validationDetails\n    // if (validation.validationDetails.patternMismatch) return \"Det där ser inte ut som en frukt.\";\n    // if (validation.validationDetails.rangeOverflow) return \"Nu blev det nog för många frukter.\";\n    // med flera\n\n    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'\n  }}\n/>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
-        children: "React Arias dokumentation"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "personnummer",
-      children: "Personnummer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationType=\"ssn\""
-      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
-      })]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:19:20)?"
-        })]
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:0[1-9]|1[0-2])"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:0[1-9]|[12]\\\\d|3[01])"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "+"
-        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "-"
-        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "blanksteg"
-        }), " eller ingen, samt"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:[-+ ]?\\\\d{4})?"
-        })]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField 
-  type="text"
-  name="ssn"
-  label="Personnummer"
-  validationType="ssn"
-  errorMessage="Fel format för ett personnummer"
-  autoComplete="off"
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "lösenord",
-      children: "Lösenord"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type={'password'}"
-      }), " för att kunna visa och dölja inmatad text."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: src/* TextField */.A_
-      },
-      children: `<TextField 
-  type="password" 
-  name="pw" 
-  label="Skriv in ditt lösenord" 
-  autoComplete="off"
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: textfield_namespaceObject
+      children: `<Flex>
+  <FlexItem col={12}>
+    <LinkButton href="#">Starta tjänst</LinkButton>
+  </FlexItem>
+</Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "desktop",
-      children: "Desktop"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-176/components/grid",
-        children: "Grid"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-176/components/flex",
-        children: "Flex"
-      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Grid: grid_src/* Grid */.x,
-        TextField: src/* TextField */.A_,
-        GridItem: grid_src/* GridItem */.E
-      },
-      children: `<Grid fluid={true}>
-  <GridItem col={2}>
-    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
-  </GridItem>
-  <GridItem col={8}>
-    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
-  </GridItem>
-</Grid>`
+      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/design-patterns/buttons-and-links",
+        children: "Knappar och länkar"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: textfield_namespaceObject
+      info: data_link
     })]
   });
 }
@@ -379,40 +203,96 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 17172:
+/***/ 9687:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  x: () => (/* reexport */ Grid),
-  E: () => (/* reexport */ GridItem)
+  z: () => (/* reexport */ LinkButton)
 });
+
+// UNUSED EXPORTS: RouterProvider
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/grid/src/lib/Grid.module.css
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
+var Link = __webpack_require__(73099);
+;// ./packages/link-button/src/lib/LinkButton.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
+/* harmony default export */ const LinkButton_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","blue150":"#143c50","blue130":"#25607f","blue90":"#4289ad","display":"\"Inter\", sans-serif","desktopSize":"1rem","mediumWeight":"500","white":"#ffffff","gray50":"#bfbfbf","gray10":"#f2f2f2","gray20":"#e6e6e6","black":"#000000","medium":"undefined","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","smBreakpoint":"(max-width: 767px)","signalRed100":"#e62323","signalRed130":"#b31b1b","signalRed150":"#801313","linkButton":"linkButton_YIrq","secondary":"secondary_fWmT","tertiary":"tertiary_mRIr","danger":"danger_VEbs","iconBtn":"iconBtn_JdYI","iconLeft":"iconLeft_vyt7","fullwidth":"fullwidth_EeuX","button":"button_rUVC"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+var chevron_left = __webpack_require__(60250);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-right.js
+var chevron_right = __webpack_require__(87677);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/grid/src/lib/Grid.tsx
-var _excluded=["children","fluid"];/**
- * Grid baserat på display: grid;
- * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
- *
- * ### Children
- * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
- */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
-;// ./packages/grid/src/lib/GridItem.tsx
-var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
-var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
-;// ./packages/grid/src/lib/index.ts
+;// ./packages/link-button/src/lib/LinkButton.tsx
+'use client';var _excluded=["children","variant","fullwidth","icon","iconPlacement","className","as"];/**
+ * A link to be used when a user expects a button but web technologies force us to use a a-tag
+ * */var LinkButton=function LinkButton(_ref){var children=_ref.children,variant=_ref.variant,fullwidth=_ref.fullwidth,IconComponent=_ref.icon,iconPlacement=_ref.iconPlacement,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||Link/* Link */.N;var Icon=function Icon(){if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:LinkButton_module.icon});if(iconPlacement==='left')return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_left/* default */.A,{size:20,className:LinkButton_module.icon});return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon});};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Component,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,variant==='primary'&&LinkButton_module.primary,variant==='secondary'&&LinkButton_module.secondary,variant==='tertiary'&&LinkButton_module.tertiary,variant==='danger'&&LinkButton_module.danger,variant==='icon'&&LinkButton_module.iconBtn,fullwidth&&LinkButton_module.fullwidth,iconPlacement==='left'&&LinkButton_module.iconLeft,className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{})]}));};
+;// ./packages/link-button/src/lib/index.ts
 
-;// ./packages/grid/src/index.ts
+;// ./packages/link-button/src/index.ts
+
+
+/***/ }),
+
+/***/ 60250:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ChevronLeft)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ChevronLeft = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ChevronLeft", [
+  ["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]
+]);
+
+
+//# sourceMappingURL=chevron-left.js.map
+
+
+/***/ }),
+
+/***/ 87677:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ChevronRight)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ChevronRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ChevronRight", [
+  ["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]
+]);
+
+
+//# sourceMappingURL=chevron-right.js.map
 
 
 /***/ }),
@@ -716,6 +596,14 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
+
+/***/ }),
+
+/***/ 29169:
+/***/ ((module) => {
+
+"use strict";
+module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/link@1.1.0","_rev":"6-2ecc3a2a675cccbbfcfe044a598e2d5e","name":"@midas-ds/link","dist-tags":{"latest":"1.1.0"},"versions":["0.0.1","0.0.2","0.0.3","1.0.0","1.0.1","1.1.0"],"time":{"created":"2024-09-10T14:35:32.127Z","modified":"2024-11-15T14:05:36.749Z","0.0.1":"2024-09-10T14:35:32.368Z","0.0.2":"2024-09-12T12:34:14.036Z","0.0.3":"2024-10-07T12:16:39.947Z","1.0.0":"2024-10-18T13:40:24.933Z","1.0.1":"2024-10-24T13:26:06.785Z","1.1.0":"2024-11-15T14:05:36.540Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/link ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9646,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"publishConfig":{"access":"public"},"gitHead":"ab5cd78ac08049bda4af96abc4842d7ec6a1091a","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Xerm0dDYYCOoU0AwHkExbWfp+rDSr33E1MqTerMAk+IHpy9eFVWtnJ1mcbwQk+XuksAv3xCr3eZXLI11ehgOpA==","shasum":"37abf514186df74278d8a0f6e2749aad3fade436","tarball":"https://registry.npmjs.org/@midas-ds/link/-/link-1.1.0.tgz","fileCount":8,"unpackedSize":81638,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIEM3slQb7zEIDnA1ukOAjS73fkziVTwnknQgm9liKjLMAiAmsBCFHzNj7yEF+hyc4Z+T4XoF7bXKN4LOnlrSduLitg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/link_1.1.0_1731679536307_0.21069856884830407"},"_hasShrinkwrap":false}');
 
 /***/ })
 

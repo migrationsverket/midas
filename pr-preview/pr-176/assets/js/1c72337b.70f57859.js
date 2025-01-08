@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5605],{
 
-/***/ 90869:
+/***/ 57075:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_radio_mdx_7e6_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_checkbox_mdx_1c7_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-radio-mdx-7e6.json
-const site_docs_components_radio_mdx_7e6_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/radio","title":"Radio","description":"Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","source":"@site/docs/components/radio.mdx","sourceDirName":"components","slug":"/components/radio","permalink":"/pr-preview/pr-176/components/radio","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Radio","description":"Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-checkbox-mdx-1c7.json
+const site_docs_components_checkbox_mdx_1c7_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/checkbox","title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","source":"@site/docs/components/checkbox.mdx","sourceDirName":"components","slug":"/components/checkbox","permalink":"/pr-preview/pr-176/components/checkbox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,24 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/radio/src/index.ts + 2 modules
-var src = __webpack_require__(34378);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var button_src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/radio.json
-const radio_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/radio@1.0.3","_rev":"9-071002d29a9590fe356b34ffd0f1a117","name":"@midas-ds/radio","dist-tags":{"latest":"1.0.3"},"versions":["0.6.1","0.6.2","0.6.3","0.7.0","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:37:59.126Z","modified":"2024-12-02T09:03:45.259Z","0.6.1":"2024-09-10T14:37:59.408Z","0.6.2":"2024-09-12T12:42:10.930Z","0.6.3":"2024-09-19T12:26:24.985Z","0.7.0":"2024-10-07T12:18:39.699Z","1.0.0":"2024-10-18T13:40:39.975Z","1.0.1":"2024-10-24T13:26:37.442Z","1.0.2":"2024-11-15T14:06:16.681Z","1.0.3":"2024-12-02T09:03:45.085Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/radio ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":12980,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-8rn0t/4P6Qi28Q+5rpD3DXVJAoKtbpcfsPF5QUyRPbhNBKxz94tqzPN6he3X5+8442LwTWxoUCgjaJ+q9unBFw==","shasum":"22b65c06952090c23bd3eb3d02d990ea3a8511b3","tarball":"https://registry.npmjs.org/@midas-ds/radio/-/radio-1.0.3.tgz","fileCount":10,"unpackedSize":123860,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCRbthhcOiYZzxi9UO3s6PqOCdBjzDP4AagTf3wCw31zgIgGF32yReY48VVY9jdvS8Ya4MvoENx8uwZc+CPY4dRgfo="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/radio_1.0.3_1733130224830_0.3830672314616146"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/checkbox.json
+const checkbox_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/checkbox@1.0.3","_rev":"9-767071df178ceb9b6bff2db579c9e9b9","name":"@midas-ds/checkbox","dist-tags":{"latest":"1.0.3"},"versions":["0.3.28","0.4.0","0.5.0","0.5.1","0.5.2","0.6.0","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:36:11.026Z","modified":"2024-12-02T09:03:15.017Z","0.3.28":"2024-09-10T14:36:11.408Z","0.4.0":"2024-09-12T09:14:34.093Z","0.5.0":"2024-09-12T12:23:17.089Z","0.5.1":"2024-09-12T13:02:08.142Z","0.5.2":"2024-09-24T14:55:11.723Z","0.6.0":"2024-10-07T12:08:59.780Z","1.0.0":"2024-10-18T13:40:39.690Z","1.0.1":"2024-10-24T13:26:14.645Z","1.0.2":"2024-11-15T14:05:46.379Z","1.0.3":"2024-12-02T09:03:14.811Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/checkbox ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":16223,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-SeURf24EoizN5/o2CdUnisZNeCya/KNqdAxAR0lNc842jPs8sGknhv+Woy8QTKswALTk0PrSP3Q/4MvdpFabNQ==","shasum":"ae85582bb5babc838de8d208858274d5541e5df3","tarball":"https://registry.npmjs.org/@midas-ds/checkbox/-/checkbox-1.0.3.tgz","fileCount":10,"unpackedSize":125993,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDQJR84xvAX4KcEIR2HUjIZiSMiqnOBXNu9kx+eefUwPgIgCzdqT1+dzBwKuWSuM1IuCeo4ikBmi21hnIXLcK7dosY="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/checkbox_1.0.3_1733130194590_0.7249133325380819"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
+var src = __webpack_require__(61813);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/radio.mdx
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
+var button_src = __webpack_require__(63918);
+;// ./apps/docs/docs/components/checkbox.mdx
 
 
 const frontMatter = {
-	title: 'Radio',
-	description: 'Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
+	title: 'Checkbox',
+	description: 'Används för att låta användaren välja inget, ett eller flera alternativ.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -64,10 +66,19 @@ const assets = {
 
 
 
+
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
+}, {
+  "value": "Gruppera flera checkboxar",
+  "id": "gruppera-flera-checkboxar",
+  "level": 3
+}, {
+  "value": "Etikett och beskrivning",
+  "id": "etikett-och-beskrivning",
+  "level": 3
 }, {
   "value": "Disabled",
   "id": "disabled",
@@ -77,9 +88,13 @@ const toc = [{
   "id": "validering",
   "level": 3
 }, {
-  "value": "Beroenden",
-  "id": "beroenden",
-  "level": 2
+  "value": "Readonly och defaultSelected",
+  "id": "readonly-och-defaultselected",
+  "level": 3
+}, {
+  "value": "Välj alla",
+  "id": "välj-alla",
+  "level": 3
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
@@ -105,14 +120,13 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Radio',
-      info: radio_namespaceObject,
-      friendlyName: 'Radioknappar',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
+      name: 'Checkbox',
+      info: checkbox_namespaceObject,
+      friendlyName: 'Kryssruta'
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-176/components/select",
-        children: "Select"
+      children: ["Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det är många alternativ så bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-176/components/multi-select",
+        children: "MultiSelect"
       }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
@@ -124,7 +138,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/radio\n"
+            children: "npm install @midas-ds/checkbox\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -133,7 +147,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/radio\n"
+            children: "yarn add @midas-ds/checkbox\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -142,60 +156,163 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/radio\n"
+            children: "pnpm add @midas-ds/checkbox\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Radio, RadioGroup } from '@midas-ds/radio'\n"
+        children: "import { Checkbox } from '@midas-ds/checkbox'\n;<Checkbox>Jag godkänner villkoren</Checkbox>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        RadioGroup: src/* RadioGroup */.z,
-        Radio: src/* Radio */.s
+        Checkbox: src/* Checkbox */.S,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z,
+        Button: button_src/* Button */.$n
       },
-      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-  {fruits.shuffled(3).map(fruit => (
-    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-  ))}
-</RadioGroup>`
+      children: `<Flex>
+  <FlexItem style={{alignSelf: 'center'}}>
+    <Checkbox>Jag godkänner villkoren</Checkbox>
+  </FlexItem>
+  <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
+    <Button
+      variant='secondary'
+    >
+      Bakåt
+    </Button>
+    <Button>Fortsätt</Button>
+  </FlexItem>
+</Flex>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "gruppera-flera-checkboxar",
+      children: "Gruppera flera checkboxar"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<CheckboxGroup>"
+      }), " för att gruppera flera checkboxar som hör samman."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Checkbox: src/* Checkbox */.S,
+        CheckboxGroup: src/* CheckboxGroup */.$
+      },
+      children: `<CheckboxGroup
+      label='Etikett'
+      description='Beskrivande text'
+    >
+      <Checkbox value='1'>Jag har läst texten</Checkbox>
+      <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
+      <Checkbox value='3'>Jag är över 20 år gammal</Checkbox>
+  </CheckboxGroup>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "etikett-och-beskrivning",
+      children: "Etikett och beskrivning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Etikett för enskild checkbox sätts i template via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Checkbox>Etikett</Checkbox>"
+      }), ". ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<CheckboxGroup>"
+      }), " har en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "label"
+      }), " och en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "desciption"
+      }), " för ytterligare förklarande text."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "disabled",
       children: "Disabled"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["När en kryssruta inte är tillämplig i den aktuella situationen ska kryssruta och fältetikett tonas ned via attributet ", (0,jsx_runtime.jsx)(_components.code, {
         children: "isDisabled"
-      }), " antingen på ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "RadioGroup"
-      }), " eller på enskilda val av ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "Radio"
-      })]
+      }), " men inte tas bort."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        RadioGroup: src/* RadioGroup */.z,
-        Radio: src/* Radio */.s
+        Checkbox: src/* Checkbox */.S
       },
-      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
-  {fruits.shuffled(3).map(fruit => (
-    <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-     ))}
-</RadioGroup>`
+      children: `<Checkbox
+      isDisabled
+      isSelected
+    >
+      Jag har läst texten
+  </Checkbox>
+`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "validering",
       children: "Validering"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt validering med ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Används prop ", (0,jsx_runtime.jsx)(_components.code, {
         children: "isInvalid"
-      }), " eller använd inbyggda tester som ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isRequired"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
+      }), " och implementera lämplig logik för att hantera fel och felmeddelanden. Se ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html#validation",
+        children: "React Aria"
+      }), "\nför ytterligare referens."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Checkbox: src/* Checkbox */.S,
+        CheckboxGroup: src/* CheckboxGroup */.$
+      },
+      children: `<CheckboxGroup
+    label="Bekräfta att du är med på tåget"
+    errorMessage="Det här ser inte bra ut!"
+    isInvalid
+  >
+    <Checkbox
+      value="1"
+      isRequired
+    >
+      Jag har läst texten
+    </Checkbox>
+    <Checkbox
+      value="2"
+      isRequired
+    >
+      Jag godkänner villkoren
+    </Checkbox>
+</CheckboxGroup>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "readonly-och-defaultselected",
+      children: "Readonly och defaultSelected"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt prop ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isReadonly"
+      }), " när användaren inte ska kunna påverka checkboxens tillstånd. ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "defaultSelected"
+      }), " sätter checkboxen i ett\nvalt läge."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "välj-alla",
+      children: "Välj alla"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Ibland kan det vara lämligt att inkludera en checkbox för att \"Välja alla\". Denna funktion finns inbyggt i ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<CheckboxGroup />"
+      }), " via egenskapen: showSelectAll"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Checkbox: src/* Checkbox */.S,
+        CheckboxGroup: src/* CheckboxGroup */.$
+      },
+      children: `<CheckboxGroup
+  label={'Välj en frukt'}
+  description={'Välj alla eller bara några'}
+  showSelectAll
+  >
+    <Checkbox
+      value="1"
+      isRequired
+    >
+      Jag har läst texten
+    </Checkbox>
+    <Checkbox
+      value="2"
+      isRequired
+    >
+      Jag godkänner villkoren
+    </Checkbox>
+</CheckboxGroup>
+`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: radio_namespaceObject
+      info: checkbox_namespaceObject
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
@@ -203,19 +320,27 @@ function _createMdxContent(props) {
       id: "val-av-komponent",
       children: "Val av komponent"
     }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]:::primary\n  A ---> D[5 - 10]\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]:::primary\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]:::primary\n  D ---> I[Hur många val kan göras?]\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]:::primary\n  A ---> C[2 - 4]:::primary\n  A ---> D[5 - 10]\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]:::primary\n  C ---> G[Hur många val kan göras?]:::primary\n  G --->|Flera| F:::primary\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
+          children: "Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt"
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
+          children: "Om flera kryssrutor är placerade under varandra, kan det ibland vara lämpligt att användaren kan markera alla kryssrutor\ngenom att klicka i det översta alternativet, ”Alla”, som är placerat direkt ovanför de ordinarie kryssrutorna.\nRutan ska vara avmarkerad tills användaren klickar i den och då ska alla följande rutor och eventuella subrutor markeras.\nOm användaren väljer att avmarkera en post så ska kryssrutan avmarkeras."
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
+          children: "Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas."
+        }), "\n"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
+          children: "Fältetikett ska inledas med en stor bokstav och inte följas av punkt."
+        }), "\n"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: radio_namespaceObject
+      info: checkbox_namespaceObject
     })]
   });
 }
@@ -269,37 +394,46 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 34378:
+/***/ 61813:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  s: () => (/* reexport */ Radio),
-  z: () => (/* reexport */ RadioGroup)
+  S: () => (/* reexport */ Checkbox),
+  $: () => (/* reexport */ CheckboxGroup)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-;// ./packages/radio/src/lib/Radio.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Radio_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","inputLabel":"undefined","inputText":"#1f1f1f","black":"#000000","blue150":"#143c50","gray50":"#bfbfbf","gray60":"#b3b3b3","signalRed10":"#ffdfdf","signalRed100":"#e62323","medium":"undefined","gray150":"#1f1f1f","regular":"undefined","smBreakpoint":"(max-width: 767px)","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","mdBreakpoint":"(min-width: 768px)","borderSecondary":"#b3b3b3","radioGroup":"radioGroup_rXoc","wrap":"wrap_M_eK","radio":"radio_jFRQ"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
-var dist_RadioGroup = __webpack_require__(96325);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Checkbox.mjs + 7 modules
+var dist_Checkbox = __webpack_require__(92466);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
 var Group = __webpack_require__(63899);
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
+;// ./packages/checkbox/src/lib/Checkbox.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Checkbox_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","primaryBackground":"#143c50","blue80":"#5897b8","blue130":"#25607f","signalRed10":"#ffdfdf","signalRed100":"#e62323","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","signalRed130":"#b31b1b","white":"#ffffff","gray10":"#f2f2f2","gray40":"#cccccc","gray100":"#808080","gray50":"#bfbfbf","gray20":"#e6e6e6","regularWeight":"400","mediumWeight":"500","smBreakpoint":"(max-width: 767px)","borderSecondary":"#b3b3b3","wrap":"wrap_gmzk","checkboxInner":"checkboxInner_QnDn","checkbox":"checkbox_Uv4H","checkboxGroup":"checkboxGroup_uby9"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/radio/src/lib/Radio.tsx
-'use client';var _excluded=["label","description","errorMessage","children"];var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
- * Radio item
- * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
-;// ./packages/radio/src/index.ts
+;// ./packages/checkbox/src/lib/Checkbox.tsx
+'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* Checkbox */.Sc,Object.assign({className:(0,clsx/* default */.A)(Checkbox_module.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Checkbox_module.checkboxInner,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+;// ./packages/checkbox/src/lib/CheckboxGroup.tsx
+'use client';var CheckboxGroup_excluded=["label","description","errorMessage","showSelectAll","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,showSelectAll=_ref.showSelectAll,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,CheckboxGroup_excluded);var _React$useState=react.useState(),isAllSelected=_React$useState[0],setIsAllSelected=_React$useState[1];var ToogleAll=function ToogleAll(){// Get the current state of the checkbox group
+var state=react.useContext(dist_Checkbox/* CheckboxGroupStateContext */.pf);// Retrieve all childern
+var childValues=react.Children.toArray(children).filter(react.isValidElement).map(function(child){return child.props.value;});// Toogle all values
+var toggleAll=function toggleAll(){if(isAllSelected!=='all'){setIsAllSelected('all');return state==null?void 0:state.setValue(['toggleAll'].concat(childValues));}setIsAllSelected('none');return state==null?void 0:state.setValue([]);};//listen and change the select all accordingly
+react.useEffect(function(){var _state$value,_state$value2;var amountOfChildren=childValues.length;var totalAmount=childValues.length+1;var currentAmount=(state==null||(_state$value=state.value)==null?void 0:_state$value.length)||0;if(currentAmount===0)setIsAllSelected('none');if(currentAmount>0&&currentAmount<amountOfChildren)setIsAllSelected('some');if(currentAmount!==totalAmount)state==null||state.removeValue('toggleAll');if(currentAmount===amountOfChildren&&!(state!=null&&(_state$value2=state.value)!=null&&_state$value2.includes('toggleAll'))){state==null||state.addValue('toggleAll');setIsAllSelected('all');}// eslint-disable-next-line react-hooks/exhaustive-deps
+},[childValues.length,state==null?void 0:state.value]);return/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox,{value:"toggleAll",isSelected:isAllSelected==='all',isIndeterminate:isAllSelected==='some',onChange:function onChange(){return toggleAll();},children:"V\xE4lj alla"});};return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Checkbox/* CheckboxGroup */.$Q,Object.assign({className:Checkbox_module.checkboxGroup},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Group/* Group */.Y,{className:Checkbox_module.wrap,children:[showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(ToogleAll,{}),children]})})}));};
+;// ./packages/checkbox/src/lib/index.ts
+
+;// ./packages/checkbox/src/index.ts
 
 
 /***/ }),
@@ -686,83 +820,39 @@ function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
 
 /***/ }),
 
-/***/ 63899:
+/***/ 32373:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
-/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */   A3: () => (/* binding */ $4e85f108e88277b8$export$d688439359537581),
+/* harmony export */   BP: () => (/* binding */ $4e85f108e88277b8$export$b085522c77523c51)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* unused harmony exports ColorAreaContext, ColorFieldContext, ColorSliderContext, ColorWheelContext */
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
-
-
 /*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * Copyright 2024 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License. You may obtain a copy
  * of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */ 
-
-
-const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-function $a049562f99e7db0e$var$Group(props, ref) {
-    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
-    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
-    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
-        onHoverStart: onHoverStart,
-        onHoverChange: onHoverChange,
-        onHoverEnd: onHoverEnd,
-        isDisabled: isDisabled
-    });
-    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
-        within: true
-    });
-    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
-    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
-    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
-        ...props,
-        values: {
-            isHovered: isHovered,
-            isFocusWithin: isFocused,
-            isFocusVisible: isFocusVisible,
-            isDisabled: isDisabled,
-            isInvalid: isInvalid
-        },
-        defaultClassName: 'react-aria-Group'
-    });
-    var _props_role, _props_slot;
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
-        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
-        ...renderProps,
-        ref: ref,
-        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
-        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
-        "data-focus-within": isFocused || undefined,
-        "data-hovered": isHovered || undefined,
-        "data-focus-visible": isFocusVisible || undefined,
-        "data-disabled": isDisabled || undefined,
-        "data-invalid": isInvalid || undefined
-    }, renderProps.children);
-}
-/**
- * A group represents a set of related UI controls, and supports interactive states for styling.
- */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
+const $4e85f108e88277b8$export$b085522c77523c51 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$ebe63fadcdce34ed = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$44644b8a16031b5b = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$717b2c0a523a0b53 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$265015d6dc85bf21 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const $4e85f108e88277b8$export$d688439359537581 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
 
 
 
-//# sourceMappingURL=Group.module.js.map
+//# sourceMappingURL=RSPContexts.module.js.map
 
 
 /***/ })

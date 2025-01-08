@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6505],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 22622:
+/***/ 30099:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_link_mdx_7d4_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-link-mdx-7d4.json
-const site_docs_components_link_mdx_7d4_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/link","title":"Link","description":"Komponent som skapar en länk","source":"@site/docs/components/link.mdx","sourceDirName":"components","slug":"/components/link","permalink":"/pr-preview/pr-176/components/link","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Link","description":"Komponent som skapar en länk","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
+const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/pr-preview/pr-176/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,22 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./apps/docs/static/data/link.json
-var data_link = __webpack_require__(29169);
-// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
-var src = __webpack_require__(85560);
+;// ./apps/docs/static/data/textfield.json
+const textfield_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/textfield@1.0.5","_rev":"13-ec03e56857807b66426aeda7cc88939e","name":"@midas-ds/textfield","dist-tags":{"latest":"1.0.5"},"versions":["0.9.24","0.9.25","0.10.0","0.10.1","0.11.0","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5"],"time":{"created":"2024-09-10T14:36:27.336Z","modified":"2024-12-02T09:03:10.402Z","0.9.24":"2024-09-10T14:36:27.567Z","0.9.25":"2024-09-12T12:55:35.421Z","0.10.0":"2024-09-19T09:06:27.230Z","0.10.1":"2024-09-19T12:19:18.800Z","0.11.0":"2024-10-07T12:26:42.240Z","1.0.0":"2024-10-18T13:40:34.894Z","1.0.1":"2024-10-22T14:08:33.698Z","1.0.2":"2024-11-01T10:27:07.697Z","1.0.3":"2024-11-15T14:05:41.473Z","1.0.4":"2024-11-19T14:48:42.571Z","1.0.5":"2024-12-02T09:03:10.160Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/textfield ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":0,"version":"1.0.5","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"react-aria-components":"^1.1.0","@midas-ds/button":"1.2.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-+uyW2TMdjY4ryLd6WlF4urBVX4AsgYnaGfqC2fucpQWuRjZRufWFQhGRcE7PARN+CHLkTFB0BkIb0mXtzoIRmw==","shasum":"1f89f0f97f32a8556af663c50f9f6fb586e4f793","tarball":"https://registry.npmjs.org/@midas-ds/textfield/-/textfield-1.0.5.tgz","fileCount":9,"unpackedSize":120950,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCvJsHgAacF5tT6oBApUkKiFJRV/Iy7lcGwCkGMWK1zHQIgH+tI1C2NshePiEBvjO3ffyhMxH0WrZBGlTRWkROmrls="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/textfield_1.0.5_1733130189955_0.6374629477714915"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
+var grid_src = __webpack_require__(17172);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./packages/theme/src/index.ts + 2 modules
-var theme_src = __webpack_require__(32976);
-;// ./apps/docs/docs/components/link.mdx
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'Link',
-	description: 'Komponent som skapar en länk',
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -69,39 +69,58 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Fristående",
-  "id": "fristående",
+  "value": "Validering",
+  "id": "validering",
   "level": 2
 }, {
-  "value": "&quot;Utsträckt&quot;",
-  "id": "utsträckt",
-  "level": 2
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
 }, {
-  "value": "Beroenden",
-  "id": "beroenden",
+  "value": "Egna felmeddelanden",
+  "id": "egna-felmeddelanden",
+  "level": 3
+}, {
+  "value": "Personnummer",
+  "id": "personnummer",
+  "level": 3
+}, {
+  "value": "Lösenord",
+  "id": "lösenord",
   "level": 2
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
+}, {
+  "value": "Desktop",
+  "id": "desktop",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Link',
-      info: data_link,
-      friendlyName: 'Länk'
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående."
+      name: 'Textfield',
+      info: textfield_namespaceObject,
+      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ett inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-176/components/textarea",
+        children: "TextArea"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -112,7 +131,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/link\n"
+            children: "npm install @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -121,7 +140,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/link\n"
+            children: "yarn add @midas-ds/textfield\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -130,83 +149,176 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/link\n"
+            children: "pnpm add @midas-ds/textfield\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Link } from '@midas-ds/link'\n"
+        children: "import { TextField } from '@midas-ds/textfield'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Link: src/* Link */.N
+        TextField: src/* TextField */.A_
       },
-      children: `<p>Designsystemet utvecklas ständigt, <Link href="/blog">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`
+      children: `<TextField 
+  label={'Etikett'}
+  description={'Beskrivning'}
+/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "fristående",
-      children: "Fristående"
+      id: "validering",
+      children: "Validering"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "standalone"
-      }), " för att använda komponenten som en fristående länk under t.ex ett textblock."]
+      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Link: src/* Link */.N
+        TextField: src/* TextField */.A_
       },
-      children: `<>
-  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
-  <Link 
-      standalone 
-      href="/blog"
-  >
-      Läs mer om designsystemets nyheter
-  </Link>
-</>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "utsträckt",
-      children: "\"Utsträckt\""
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "stretched"
-      }), " för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "position: relative;"
-      }), " för att länkens klickyta inte ska gå för långt."]
+      children: `<TextField
+  label="Skriv in din e-post"
+  description="Obligatorisk"
+  isRequired
+  errorMessage="Felaktig e-postadress"
+  type="email"
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egen-validering",
+      children: "Egen validering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Det går också att definiera en egen funktion för validering:"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Link: src/* Link */.N,
-        baseColors: theme_src/* baseColors */.as
+        TextField: src/* TextField */.A_
       },
-      children: `<div 
-    style={{
-      position: 'relative',
-      background: baseColors.gray10,
-      padding: '1rem'
-    }}
-  >
-  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
-  <Link 
-      standalone 
-      stretched
-      href="/blog"
-  >
-      Läs mer om designsystemets nyheter
-  </Link>
-</div>`
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egna-felmeddelanden",
+      children: "Egna felmeddelanden"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n  label='Skriv in frukt'\n  errorMessage=\"Du måste skriva 'frukt'!\"\n  isRequired\n  validate={value => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n  errorMessage={validation => {\n    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'\n    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'\n    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'\n\n    // Det finns flertalet typer på validationDetails\n    // if (validation.validationDetails.patternMismatch) return \"Det där ser inte ut som en frukt.\";\n    // if (validation.validationDetails.rangeOverflow) return \"Nu blev det nog för många frukter.\";\n    // med flera\n\n    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'\n  }}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
+        children: "React Arias dokumentation"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "personnummer",
+      children: "Personnummer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:19:20)?"
+        })]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|1[0-2])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|[12]\\\\d|3[01])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "+"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "-"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "blanksteg"
+        }), " eller ingen, samt"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:[-+ ]?\\\\d{4})?"
+        })]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="text"
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+  autoComplete="off"
+/>
+`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type={'password'}"
+      }), " för att kunna visa och dölja inmatad text."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: src/* TextField */.A_
+      },
+      children: `<TextField 
+  type="password" 
+  name="pw" 
+  label="Skriv in ditt lösenord" 
+  autoComplete="off"
+/>
+`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_link
+      info: textfield_namespaceObject
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "desktop",
+      children: "Desktop"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/design-patterns/buttons-and-links",
-        children: "Knappar och länkar"
-      })]
+      children: ["Anpassa längden på inmatningsfält, tex med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-176/components/grid",
+        children: "Grid"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-176/components/flex",
+        children: "Flex"
+      }), ", så att det matchar förväntad längd på det användaren ska mata in. Ett svenskt postnummer är alltid 5 siffror och då bör fältet vara kort medan ett fält där användaren ska fylla i alla sina namn behöver vara långt"]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Grid: grid_src/* Grid */.x,
+        TextField: src/* TextField */.A_,
+        GridItem: grid_src/* GridItem */.E
+      },
+      children: `<Grid fluid={true}>
+  <GridItem col={2}>
+    <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+  </GridItem>
+  <GridItem col={8}>
+    <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+  </GridItem>
+</Grid>`
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: textfield_namespaceObject
     })]
   });
 }
@@ -260,49 +372,40 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 32976:
+/***/ 17172:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  as: () => (/* reexport */ baseColors),
-  w4: () => (/* reexport */ theme)
+  x: () => (/* reexport */ Grid),
+  E: () => (/* reexport */ GridItem)
 });
 
-// UNUSED EXPORTS: accessibility, borderRadius, borderWidths, boxShadow, breakpoints, buttonColors, font, fontSizes, fontWeights, inputColor, midasColors, midasTransitions, signalColors
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/grid/src/lib/Grid.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Grid_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_lmBC","grid":"grid_mI9C","fluid":"fluid_KIzx","col":"col_kaYV","col-1":"col-1_Y6p8","col-2":"col-2_lCuZ","col-3":"col-3_tBWx","col-4":"col-4_gBWu","col-5":"col-5_sq5b","col-6":"col-6_FKf3","col-7":"col-7_Aug2","col-8":"col-8_enZy","col-9":"col-9_y37e","col-10":"col-10_LlVF","col-11":"col-11_rc_R","col-12":"col-12_svqf","offset-1":"offset-1_GJj8","offset-2":"offset-2_M090","offset-3":"offset-3_B_Bj","offset-4":"offset-4_uBLN","offset-5":"offset-5_zJ4M","offset-6":"offset-6_C6Yz","offset-7":"offset-7_LlzJ","offset-8":"offset-8_Gxmr","offset-9":"offset-9_ZbLa","offset-10":"offset-10_Z5yB","offset-11":"offset-11__W4d"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/grid/src/lib/Grid.tsx
+var _excluded=["children","fluid"];/**
+ * Grid baserat på display: grid;
+ * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
+ *
+ * ### Children
+ * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
+ */var Grid=function Grid(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.container,fluid&&Grid_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Grid_module.grid,children:children})}));};
+;// ./packages/grid/src/lib/GridItem.tsx
+var GridItem_excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,GridItem_excluded);// Convert numeric values to string if necessary
+var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Grid_module.col,Grid_module[colClass],rest.className)},rest,{children:children}));};
+;// ./packages/grid/src/lib/index.ts
 
-// NAMESPACE OBJECT: ./packages/theme/src/lib/tokens.ts
-var tokens_namespaceObject = {};
-__webpack_require__.r(tokens_namespaceObject);
-__webpack_require__.d(tokens_namespaceObject, {
-  accessibility: () => (accessibility),
-  baseColors: () => (baseColors),
-  borderRadius: () => (borderRadius),
-  borderWidths: () => (borderWidths),
-  boxShadow: () => (boxShadow),
-  breakpoints: () => (breakpoints),
-  buttonColors: () => (buttonColors),
-  font: () => (font),
-  fontSizes: () => (fontSizes),
-  fontWeights: () => (fontWeights),
-  inputColor: () => (inputColor),
-  midasColors: () => (midasColors),
-  midasTransitions: () => (midasTransitions),
-  signalColors: () => (signalColors)
-});
-
-;// ./packages/theme/src/lib/tokens.ts
-var baseColors={white:'#ffffff',black:'#000000',gray10:'#f2f2f2',gray20:'#e6e6e6',gray30:'#d9d9d9',gray40:'#cccccc',gray50:'#bfbfbf',gray60:'#b3b3b3',gray70:'#a6a6a6',gray80:'#999999',gray90:'#8c8c8c',gray100:'#808080',gray130:'#5d5d5d',gray150:'#1f1f1f',red10:'#f7e9e7',red20:'#f1d4d1',red30:'#e9beba',red40:'#e2a8a4',red50:'#d9918e',red60:'#d37a7a',red70:'#cc6467',red80:'#c54c56',red90:'#be3345',red100:'#b90835',red130:'#8b1327',red150:'#641018',blue10:'#eaf2f6',blue20:'#d5e5ed',blue30:'#c0d7e4',blue40:'#abcbdb',blue50:'#94bcd1',blue60:'#82b0c9',blue70:'#6ca3c0',blue80:'#5897b8',blue90:'#4289ad',blue100:'#2e7ca5',blue130:'#25607f',blue150:'#143c50'};var buttonColors={outline:'#303030',primaryBackground:baseColors['blue150'],primaryText:'#303030',primaryHover:baseColors['blue130'],primaryFocus:baseColors['black'],primaryActive:'#4289ae',secondaryBackground:baseColors['gray130'],secondaryText:baseColors['white'],secondaryHover:'#303030',secondaryActive:'#303030'};var inputColor={inputText:baseColors['gray150']};var signalColors={signalGreen10:'#d5f2d9',signalGreen100:'#008d3c',signalBlue10:baseColors['blue10'],signalBlue100:'#0066cc',signalYellow10:'#fff8e1',signalYellow100:'#f1c21b',signalRed10:'#ffdfdf',signalRed100:'#e62323',signalRed130:'#b31b1b',signalRed150:'#801313'};var borderRadius={sRadius:' 0.125rem',// 2px
-mRadius:' 0.25rem'// 4px
-};var borderWidths={xsWidth:' 0.0625rem',// 1px
-sWidth:' 0.125rem',// 2px
-mWidth:' 0.25rem'// 4px
-};var fontWeights={lightWeight:'300',regularWeight:'400',mediumWeight:'500',semiBoldWeight:'600',boldWeight:'700',blackWeight:'900'};var fontSizes={desktopSize:'1rem',mobileSize:'1rem',largeSize:'1.5rem',inputNormalSize:'0.875rem',inputMessageSize:'0.75rem',inputLabelSize:'1rem',inputDescriptionSize:'0.875rem'};var midasColors={logoPrimary:baseColors['red100'],logoSecondary:baseColors['white'],textPrimary:baseColors['gray150'],textSecondary:baseColors['white'],textTertiary:baseColors['red100'],link:baseColors['blue130'],linkVisited:'#663366',backgroundPrimary:baseColors['white'],backgroundSecondary:baseColors['gray10'],backgroundFooter1:baseColors['red100'],backgroundFooter2:baseColors['red130'],backgroundInfo:baseColors['blue10'],backgroundImportant:signalColors['signalYellow10'],borderPrimary:baseColors['black'],borderSecondary:baseColors['gray60'],borderFocusOuter:baseColors['black'],borderFocusInner:baseColors['white'],iconPrimary:baseColors['black'],iconInverted:baseColors['white']};var midasTransitions={slowTransition:'500ms',normalTransition:'300ms',fastTransition:'250ms'};var breakpoints={smBreakpoint:'(max-width: 767px)',mdBreakpoint:'(min-width: 768px)',lgBreakpoint:'(min-width: 1200px)',xlBreakpoint:'(min-width: 1440px)'};var accessibility={forcedColorsMode:'(forced-colors: active)',prefersReducedMotion:'(prefers-reduced-motion: reduced)'};var font={display:'"Inter", sans-serif'};var boxShadow={focus:'0 0 0 2px white, 0 0 0 4px black'};
-;// ./packages/theme/src/lib/index.ts
-var theme=Object.assign({},tokens_namespaceObject);
-;// ./packages/theme/src/index.ts
+;// ./packages/grid/src/index.ts
 
 
 /***/ }),
@@ -606,14 +709,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
-
-/***/ }),
-
-/***/ 29169:
-/***/ ((module) => {
-
-"use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/link@1.1.0","_rev":"6-2ecc3a2a675cccbbfcfe044a598e2d5e","name":"@midas-ds/link","dist-tags":{"latest":"1.1.0"},"versions":["0.0.1","0.0.2","0.0.3","1.0.0","1.0.1","1.1.0"],"time":{"created":"2024-09-10T14:35:32.127Z","modified":"2024-11-15T14:05:36.749Z","0.0.1":"2024-09-10T14:35:32.368Z","0.0.2":"2024-09-12T12:34:14.036Z","0.0.3":"2024-10-07T12:16:39.947Z","1.0.0":"2024-10-18T13:40:24.933Z","1.0.1":"2024-10-24T13:26:06.785Z","1.1.0":"2024-11-15T14:05:36.540Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/link ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9646,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"publishConfig":{"access":"public"},"gitHead":"ab5cd78ac08049bda4af96abc4842d7ec6a1091a","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Xerm0dDYYCOoU0AwHkExbWfp+rDSr33E1MqTerMAk+IHpy9eFVWtnJ1mcbwQk+XuksAv3xCr3eZXLI11ehgOpA==","shasum":"37abf514186df74278d8a0f6e2749aad3fade436","tarball":"https://registry.npmjs.org/@midas-ds/link/-/link-1.1.0.tgz","fileCount":8,"unpackedSize":81638,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIEM3slQb7zEIDnA1ukOAjS73fkziVTwnknQgm9liKjLMAiAmsBCFHzNj7yEF+hyc4Z+T4XoF7bXKN4LOnlrSduLitg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/link_1.1.0_1731679536307_0.21069856884830407"},"_hasShrinkwrap":false}');
 
 /***/ })
 

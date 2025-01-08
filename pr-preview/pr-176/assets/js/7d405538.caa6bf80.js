@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[153],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6505],{
 
-/***/ 57921:
+/***/ 22622:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_select_mdx_af1_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_link_mdx_7d4_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-select-mdx-af1.json
-const site_docs_components_select_mdx_af1_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/select","title":"Select","description":"<ComponentHeader","source":"@site/docs/components/select.mdx","sourceDirName":"components","slug":"/components/select","permalink":"/pr-preview/pr-176/components/select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-link-mdx-7d4.json
+const site_docs_components_link_mdx_7d4_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/link","title":"Link","description":"Komponent som skapar en länk","source":"@site/docs/components/link.mdx","sourceDirName":"components","slug":"/components/link","permalink":"/pr-preview/pr-176/components/link","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Link","description":"Komponent som skapar en länk","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,21 +27,24 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
-// EXTERNAL MODULE: ./packages/select/src/index.ts + 2 modules
-var src = __webpack_require__(67743);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./apps/docs/static/data/select.json
-var data_select = __webpack_require__(41229);
+// EXTERNAL MODULE: ./apps/docs/static/data/link.json
+var data_link = __webpack_require__(29169);
+// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
+var src = __webpack_require__(85560);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/select.mdx
+// EXTERNAL MODULE: ./packages/theme/src/index.ts + 2 modules
+var theme_src = __webpack_require__(32976);
+;// ./apps/docs/docs/components/link.mdx
 
 
 const frontMatter = {
-	title: 'Select',
+	title: 'Link',
+	description: 'Komponent som skapar en länk',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -60,48 +63,41 @@ const assets = {
 
 
 
+
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Beroenden",
-  "id": "beroenden",
+  "value": "Fristående",
+  "id": "fristående",
+  "level": 2
+}, {
+  "value": "&quot;Utsträckt&quot;",
+  "id": "utsträckt",
   "level": 2
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Select',
-      info: data_select,
-      friendlyName: 'Flerval, väljare, dropdown'
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Select är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett"
-      }), " alternativ från en uppsättning av flera alternativ. Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-176/components/radio",
-        children: "Radio"
-      }), " användas istället."]
+      name: 'Link',
+      info: data_link,
+      friendlyName: 'Länk'
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -112,7 +108,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/select\n"
+            children: "npm install @midas-ds/link\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -121,7 +117,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/select\n"
+            children: "yarn add @midas-ds/link\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -130,42 +126,80 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/select\n"
+            children: "pnpm add @midas-ds/link\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Item, Select } from '@midas-ds/select'\n"
+        children: "import { Link } from '@midas-ds/link'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Select: src/* Select */.l,
-        Item: src/* Item */.q
+        Link: src/* Link */.N
       },
-      children: `<Select
-  label="Vad är din favoritfrukt?"
-  placeholder="Välj en frukt"
-  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-  {(item) => <Item>{item.name}</Item>}
-</Select>`
+      children: `<p>Designsystemet utvecklas ständigt, <Link href="/blog">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "beroenden",
-      children: "Beroenden"
+      id: "fristående",
+      children: "Fristående"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "standalone"
+      }), " för att använda komponenten som en fristående länk under t.ex ett textblock."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Link: src/* Link */.N
+      },
+      children: `<>
+  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
+  <Link 
+      standalone 
+      href="/blog"
+  >
+      Läs mer om designsystemets nyheter
+  </Link>
+</>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "utsträckt",
+      children: "\"Utsträckt\""
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "stretched"
+      }), " för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "position: relative;"
+      }), " för att länkens klickyta inte ska gå för långt."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Link: src/* Link */.N,
+        baseColors: theme_src/* baseColors */.as
+      },
+      children: `<div 
+    style={{
+      position: 'relative',
+      background: baseColors.gray10,
+      padding: '1rem'
+    }}
+  >
+  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
+  <Link 
+      standalone 
+      stretched
+      href="/blog"
+  >
+      Läs mer om designsystemets nyheter
+  </Link>
+</div>`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_select
+      info: data_link
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]:::primary\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: data_select
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/design-patterns/buttons-and-links",
+        children: "Knappar och länkar"
+      })]
     })]
   });
 }
@@ -219,41 +253,49 @@ var PropTable=function PropTable(_ref){var name=_ref.name;return null;var props=
 
 /***/ }),
 
-/***/ 67743:
+/***/ 32976:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  q: () => (/* reexport */ Item),
-  l: () => (/* reexport */ Select_Select)
+  as: () => (/* reexport */ baseColors),
+  w4: () => (/* reexport */ theme)
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Select.mjs + 3 modules
-var Select = __webpack_require__(77686);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
-var Button = __webpack_require__(44080);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 44 modules
-var Popover = __webpack_require__(86351);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ListBox.mjs + 5 modules
-var ListBox = __webpack_require__(79046);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
-var chevron_down = __webpack_require__(75107);
-;// ./packages/select/src/lib/Select.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Select_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","backgroundSecondary":"#f2f2f2","button":"button_XgNv","select":"select_GoPk","popover":"popover_Fgts","listBoxItem":"listBoxItem_yN3S","icon":"icon_X17X"});
-// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
-var src = __webpack_require__(42619);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/select/src/lib/Select.tsx
-'use client';var _excluded=["label","description","errorMessage","children","items"];function Select_Select(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var selectRef=react.useRef(null);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Select/* Select */.l6,Object.assign({className:Select_module.select,ref:selectRef},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:Select_module.button,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* SelectValue */.yv,{}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:Select_module.popover,offset:0,UNSTABLE_portalContainer:selectRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.qF,{items:items,children:children})})]}));}function Item(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBoxItem */.nh,Object.assign({className:Select_module.listBoxItem},props));}
-;// ./packages/select/src/index.ts
+// UNUSED EXPORTS: accessibility, borderRadius, borderWidths, boxShadow, breakpoints, buttonColors, font, fontSizes, fontWeights, inputColor, midasColors, midasTransitions, signalColors
+
+// NAMESPACE OBJECT: ./packages/theme/src/lib/tokens.ts
+var tokens_namespaceObject = {};
+__webpack_require__.r(tokens_namespaceObject);
+__webpack_require__.d(tokens_namespaceObject, {
+  accessibility: () => (accessibility),
+  baseColors: () => (baseColors),
+  borderRadius: () => (borderRadius),
+  borderWidths: () => (borderWidths),
+  boxShadow: () => (boxShadow),
+  breakpoints: () => (breakpoints),
+  buttonColors: () => (buttonColors),
+  font: () => (font),
+  fontSizes: () => (fontSizes),
+  fontWeights: () => (fontWeights),
+  inputColor: () => (inputColor),
+  midasColors: () => (midasColors),
+  midasTransitions: () => (midasTransitions),
+  signalColors: () => (signalColors)
+});
+
+;// ./packages/theme/src/lib/tokens.ts
+var baseColors={white:'#ffffff',black:'#000000',gray10:'#f2f2f2',gray20:'#e6e6e6',gray30:'#d9d9d9',gray40:'#cccccc',gray50:'#bfbfbf',gray60:'#b3b3b3',gray70:'#a6a6a6',gray80:'#999999',gray90:'#8c8c8c',gray100:'#808080',gray130:'#5d5d5d',gray150:'#1f1f1f',red10:'#f7e9e7',red20:'#f1d4d1',red30:'#e9beba',red40:'#e2a8a4',red50:'#d9918e',red60:'#d37a7a',red70:'#cc6467',red80:'#c54c56',red90:'#be3345',red100:'#b90835',red130:'#8b1327',red150:'#641018',blue10:'#eaf2f6',blue20:'#d5e5ed',blue30:'#c0d7e4',blue40:'#abcbdb',blue50:'#94bcd1',blue60:'#82b0c9',blue70:'#6ca3c0',blue80:'#5897b8',blue90:'#4289ad',blue100:'#2e7ca5',blue130:'#25607f',blue150:'#143c50'};var buttonColors={outline:'#303030',primaryBackground:baseColors['blue150'],primaryText:'#303030',primaryHover:baseColors['blue130'],primaryFocus:baseColors['black'],primaryActive:'#4289ae',secondaryBackground:baseColors['gray130'],secondaryText:baseColors['white'],secondaryHover:'#303030',secondaryActive:'#303030'};var inputColor={inputText:baseColors['gray150']};var signalColors={signalGreen10:'#d5f2d9',signalGreen100:'#008d3c',signalBlue10:baseColors['blue10'],signalBlue100:'#0066cc',signalYellow10:'#fff8e1',signalYellow100:'#f1c21b',signalRed10:'#ffdfdf',signalRed100:'#e62323',signalRed130:'#b31b1b',signalRed150:'#801313'};var borderRadius={sRadius:' 0.125rem',// 2px
+mRadius:' 0.25rem'// 4px
+};var borderWidths={xsWidth:' 0.0625rem',// 1px
+sWidth:' 0.125rem',// 2px
+mWidth:' 0.25rem'// 4px
+};var fontWeights={lightWeight:'300',regularWeight:'400',mediumWeight:'500',semiBoldWeight:'600',boldWeight:'700',blackWeight:'900'};var fontSizes={desktopSize:'1rem',mobileSize:'1rem',largeSize:'1.5rem',inputNormalSize:'0.875rem',inputMessageSize:'0.75rem',inputLabelSize:'1rem',inputDescriptionSize:'0.875rem'};var midasColors={logoPrimary:baseColors['red100'],logoSecondary:baseColors['white'],textPrimary:baseColors['gray150'],textSecondary:baseColors['white'],textTertiary:baseColors['red100'],link:baseColors['blue130'],linkVisited:'#663366',backgroundPrimary:baseColors['white'],backgroundSecondary:baseColors['gray10'],backgroundFooter1:baseColors['red100'],backgroundFooter2:baseColors['red130'],backgroundInfo:baseColors['blue10'],backgroundImportant:signalColors['signalYellow10'],borderPrimary:baseColors['black'],borderSecondary:baseColors['gray60'],borderFocusOuter:baseColors['black'],borderFocusInner:baseColors['white'],iconPrimary:baseColors['black'],iconInverted:baseColors['white']};var midasTransitions={slowTransition:'500ms',normalTransition:'300ms',fastTransition:'250ms'};var breakpoints={smBreakpoint:'(max-width: 767px)',mdBreakpoint:'(min-width: 768px)',lgBreakpoint:'(min-width: 1200px)',xlBreakpoint:'(min-width: 1440px)'};var accessibility={forcedColorsMode:'(forced-colors: active)',prefersReducedMotion:'(prefers-reduced-motion: reduced)'};var font={display:'"Inter", sans-serif'};var boxShadow={focus:'0 0 0 2px white, 0 0 0 4px black'};
+;// ./packages/theme/src/lib/index.ts
+var theme=Object.assign({},tokens_namespaceObject);
+;// ./packages/theme/src/index.ts
 
 
 /***/ }),
@@ -560,11 +602,11 @@ webpackContext.id = 35358;
 
 /***/ }),
 
-/***/ 41229:
+/***/ 29169:
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/select@1.0.3","_rev":"10-b9137a40343380e9626995d3872c4003","name":"@midas-ds/select","dist-tags":{"latest":"1.0.3"},"versions":["0.4.23","0.4.24","0.4.25","0.5.0","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:38:16.404Z","modified":"2024-12-02T09:03:16.649Z","0.4.23":"2024-09-10T14:38:16.733Z","0.5.0":"2024-09-12T06:52:21.974Z","0.4.24":"2024-09-12T12:44:35.219Z","0.4.25":"2024-09-26T08:45:56.205Z","0.5.2":"2024-10-07T12:21:23.062Z","1.0.0":"2024-10-18T13:40:43.787Z","1.0.1":"2024-10-24T13:26:40.048Z","1.0.2":"2024-11-15T14:06:18.268Z","1.0.3":"2024-12-02T09:03:16.461Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/select ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":15116,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23","react-aria-components":"^1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-OHDijTbHZ8NbGy4ZIFReihi065UZM2DE3u3Y1ulbiW9rapfDfcOpI8dlWM6/g6274QSicWU8klYBiYSRaSKkKA==","shasum":"bcf56f3901ff09c8f092dafca9eab9414acfcef7","tarball":"https://registry.npmjs.org/@midas-ds/select/-/select-1.0.3.tgz","fileCount":9,"unpackedSize":388710,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCwgrYc+pocmMRGjGZhwHXyaZMF9OoNsGO2V9iIpkj0hAIgYeBINzfuuMNfMpJE2f7W3cGJhuACudCJy0JXJK1uigk="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/select_1.0.3_1733130196313_0.19139238870590458"},"_hasShrinkwrap":false}');
+module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/link@1.1.0","_rev":"6-2ecc3a2a675cccbbfcfe044a598e2d5e","name":"@midas-ds/link","dist-tags":{"latest":"1.1.0"},"versions":["0.0.1","0.0.2","0.0.3","1.0.0","1.0.1","1.1.0"],"time":{"created":"2024-09-10T14:35:32.127Z","modified":"2024-11-15T14:05:36.749Z","0.0.1":"2024-09-10T14:35:32.368Z","0.0.2":"2024-09-12T12:34:14.036Z","0.0.3":"2024-10-07T12:16:39.947Z","1.0.0":"2024-10-18T13:40:24.933Z","1.0.1":"2024-10-24T13:26:06.785Z","1.1.0":"2024-11-15T14:05:36.540Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/link ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9646,"version":"1.1.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"publishConfig":{"access":"public"},"gitHead":"ab5cd78ac08049bda4af96abc4842d7ec6a1091a","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Xerm0dDYYCOoU0AwHkExbWfp+rDSr33E1MqTerMAk+IHpy9eFVWtnJ1mcbwQk+XuksAv3xCr3eZXLI11ehgOpA==","shasum":"37abf514186df74278d8a0f6e2749aad3fade436","tarball":"https://registry.npmjs.org/@midas-ds/link/-/link-1.1.0.tgz","fileCount":8,"unpackedSize":81638,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIEM3slQb7zEIDnA1ukOAjS73fkziVTwnknQgm9liKjLMAiAmsBCFHzNj7yEF+hyc4Z+T4XoF7bXKN4LOnlrSduLitg=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/link_1.1.0_1731679536307_0.21069856884830407"},"_hasShrinkwrap":false}');
 
 /***/ })
 
