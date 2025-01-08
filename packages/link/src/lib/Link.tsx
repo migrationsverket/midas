@@ -1,35 +1,40 @@
 'use client'
 
 import styles from './Link.module.css'
-import {
-  Link as AriaLink,
-  LinkProps,
-  RouterProvider
-} from 'react-aria-components'
+import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import clsx from 'clsx'
-import { ArrowRight } from 'lucide-react'
-import { LucideIcon } from 'lucide-react'
-interface MidasLink extends LinkProps {
+import { ArrowRight, type LucideIcon } from 'lucide-react'
+
+interface MidasLinkProps<C extends React.ElementType> {
   children: React.ReactNode
   standalone?: boolean
   stretched?: boolean
   icon?: LucideIcon
+  className?: string
+  as?: C
 }
 
-export const Link: React.FC<MidasLink> = ({
+export type LinkProps<C extends React.ElementType> = MidasLinkProps<C> &
+  Omit<React.ComponentProps<C>, keyof MidasLinkProps<C>>
+
+export const Link = <C extends React.ElementType = typeof AriaLink>({
   children,
   standalone,
   stretched,
   icon: IconComponent,
+  className,
+  as,
   ...rest
-}) => {
+}: LinkProps<C>) => {
+  const Component = as || AriaLink
+
   return (
-    <AriaLink
+    <Component
       className={clsx(
         styles.link,
         standalone && styles.standalone,
         stretched && styles.stretched,
-        rest.className
+        className
       )}
       {...rest}
     >
@@ -41,9 +46,14 @@ export const Link: React.FC<MidasLink> = ({
             className={styles.icon}
           />
         )}
-        {standalone && <ArrowRight size={20} className={styles.icon} />}
+        {standalone && (
+          <ArrowRight
+            size={20}
+            className={styles.icon}
+          />
+        )}
       </>
-    </AriaLink>
+    </Component>
   )
 }
 

@@ -4,7 +4,7 @@ import { axe, toHaveNoViolations } from 'jest-axe'
 import { Card, CardProps } from './Card'
 expect.extend(toHaveNoViolations)
 
-const link = { title: 'Läs mer', href: '#' }
+const link = { children: 'Läs mer', href: '#' }
 
 describe('given a default card', () => {
   let rendered: RenderResult
