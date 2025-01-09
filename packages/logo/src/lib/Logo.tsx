@@ -2,7 +2,11 @@ import React from 'react'
 import clsx from 'clsx'
 import styles from './Logo.module.css'
 
-export type LogoProps = {
+export interface LogoProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
   /**
    *  Display logo in primary color, set to false for monochrome/dark version of the logo
    *  @default true
@@ -22,7 +26,8 @@ export const Logo: React.FC<LogoProps> = ({
   primary = true,
   size = 'medium',
   background = false,
-  padding = true
+  padding = true,
+  ...rest
 }) => {
   const classNames = clsx(
     styles.logo,
@@ -116,6 +121,7 @@ export const Logo: React.FC<LogoProps> = ({
             : styles.backgroundDark
           : null
       )}
+      {...rest}
     >
       <SVG />
     </div>
