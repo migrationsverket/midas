@@ -8,6 +8,8 @@ import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/logo.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Link } from '@midas-ds/link'
+import { Flex, FlexItem } from '@midas-ds/flex'
 
 <ComponentHeader
   name={'Logo'}
@@ -32,42 +34,96 @@ import { Logo } from '@midas-ds/logo'
 
 ## Varianter
 
-Det finns flertalet storlekar samt med eller utan bakgrund. Det finns även en liten variant av logotypen med bara bokstaven M. Denna kan användas i mindre skärmstorlekar.
+Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
 
-<LiveCodeBlock scope={{ Logo }}>
-  {`<>
-    <Logo size="small" />
-    <Logo primary={false} size="small" />
-    <Logo primary={false} background size="small" />
-    <Logo background size="small" />
-    <br />
-    <Logo size="medium" />
-    <Logo primary={false} size="medium" />
-    <Logo primary={false} background size="medium" />
-    <Logo background size="medium" />
-    <br />
-    <Logo size="large" />
-    <Logo primary={false} size="large" />
-    <Logo primary={false} background size="large" />
-    <Logo background size="large" />
-    <br />
-    <Logo size="x-small" />
-    <Logo primary={false} size="x-small" />
-    <Logo primary={false} background size="x-small" />
-    <Logo background size="x-small" />
-</>`}
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<Flex>
+    <FlexItem col="auto">
+     <Logo size="small" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo primary={false} size="small" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo primary={false} background size="small" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo background size="small" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo size="medium" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo primary={false} size="medium" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo primary={false} background size="medium" />
+    </FlexItem>
+    <FlexItem col="auto">
+      <Logo background size="medium" />
+      </FlexItem>
+    <FlexItem col='auto'>
+      <Logo size='large' />
+    </FlexItem>
+    <FlexItem col='auto'>
+      <Logo
+        primary={false}
+        size='large'
+      />
+    </FlexItem>
+    <FlexItem col='auto'>
+      <Logo
+        primary={false}
+        background
+        size='large'
+      />
+    </FlexItem>
+    <FlexItem col='auto'>
+      <Logo
+        background
+        size='large'
+      />
+    </FlexItem>
+
+    <FlexItem col='auto'>
+      <Logo size='x-small' />
+    </FlexItem>
+
+    <FlexItem col='auto'>
+      <Logo
+        primary={false}
+        size='x-small'
+      />
+    </FlexItem>
+
+    <FlexItem col='auto'>
+      <Logo
+        primary={false}
+        background
+        size='x-small'
+      />
+    </FlexItem>
+
+    <FlexItem col='auto'>
+      <Logo
+        background
+        size='x-small'
+      />
+    </FlexItem>
+
+  </Flex>`}
 </LiveCodeBlock>
 
-## SVG
+## Logotyp i SVG-format
 
-I vissa fall kan det vara mer fördelaktigt med en vanlig fil.
+För de fall där komponenten inte kan användas tilhandahåller vi även logotypen som SVG. I paketet finns två SVG-filer, en med logotypen och en med bara M:et för små skärmar.
 
-<a
+<Link
   target='_blank'
   href={require('/files/Mig_logo_SVG.zip').default}
   download
 >
-  Ladda ner logotypen som SVG här (komprimerad fil)
-</a>
+  Ladda ner logotypen som SVG (komprimerad fil)
+</Link>
 
 <ComponentFooter info={Info} />
