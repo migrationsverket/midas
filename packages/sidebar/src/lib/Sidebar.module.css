@@ -6,26 +6,29 @@
   --headerHeight: 60px;
 
   @media mdBreakpoint {
-    --headerHeight: 80px;
+    --headerHeight: 85px;
   }
 }
 
-.mainNavigation {
+.mainContent {
   display: flex;
   flex-direction: row;
 }
 
 .header {
+  position: sticky;
+  top: 0;
   font-family: display;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid gray70;
-  min-height: var(--headerHeight);
+  background-color: white;
 
   @media mdBreakpoint {
-    padding: 0.5rem 0.5rem 0.5rem 0;
+    padding: 1rem;
+    z-index: 3;
   }
 }
 
@@ -33,6 +36,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  gap: 2rem;
 
   > svg {
     display: none;
@@ -45,7 +49,8 @@
   }
 }
 
-.headerItems {
+.headerItems,
+.logo {
   display: none;
 
   @media mdBreakpoint {
@@ -87,6 +92,7 @@
 
   @media mdBreakpoint {
     position: sticky;
+    top: var(--headerHeight);
     align-self: start;
     min-height: calc(100vh - var(--headerHeight));
     transform: none;
@@ -151,6 +157,7 @@
 
 .userName {
   margin: 0;
+  margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   display: none;

@@ -128,7 +128,11 @@ export const Sidebar: React.FC<MidasSidebar> = ({
         }}
       >
         <div className={styles.headerContent}>
-          <Logo />
+          <Logo
+            padding={false}
+            size='small'
+            className={styles.logo}
+          />
           <Button
             variant='icon'
             className={styles.toggleButton}
@@ -172,7 +176,7 @@ export const Sidebar: React.FC<MidasSidebar> = ({
   return (
     <div className={styles.baseLayout}>
       <Header />
-      <div className={styles.mainNavigation}>
+      <div className={styles.mainContent}>
         <aside
           id='midasMainMenu'
           className={clsx(
