@@ -1,0 +1,118 @@
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: brown;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stepsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  align-items: center;
+}
+
+.stepGroup {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.stepNumber {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.stepTitle {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.step.completed {
+  background-color: #76c7c0;
+}
+
+.step.current {
+  background-color: #ff4081;
+  border-color: #ff4081;
+  color: #fff;
+}
+
+.step.invalid {
+  background-color: #f44336;
+}
+
+.progressBar {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: #e0e0e0;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.progressBarCompleted {
+  background-color: #76c7c0;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background-color: #0056b3;
+}
+
+.panel {
+  margin-top: 1rem;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+}

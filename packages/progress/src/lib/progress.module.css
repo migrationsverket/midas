@@ -1,0 +1,86 @@
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: brown;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.stepsContainer {
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  align-items: center;
+  pointer-events: none;
+}
+
+.step {
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.stepTitle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.stepTitle.completed {
+  background-color: #76c7c0;
+  pointer-events: none;
+}
+
+.stepTitle.current {
+  background-color: gray;
+}
+
+.progressBar {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.progressBarCompleted {
+  background-color: #76c7c0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background-color: #0056b3;
+}
+
+.panel {
+  margin-top: 1rem;
+  color: white;
+}

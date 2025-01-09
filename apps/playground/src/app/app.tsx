@@ -19,8 +19,16 @@ import {
   ToastProvider,
   MidasToastState
 } from '@midas-ds/toast'
+import { Progress, Steps, DynamicForm } from '@midas-ds/progress'
 
 export function App() {
+  // const canProgress =
+  const steps: Steps[] = [
+    { title: 'Step 1', canProgress: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 2', canProgress: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 3', canProgress: false, hasProgressed: false } // Initial step, not progressed
+  ]
+
   return (
     <div className={styles.container}>
       <div>
@@ -58,7 +66,13 @@ export function App() {
         show global toast
       </Button>
       <h1>Playground app</h1>
+      
+      <Progress steps={steps}>
+        <DynamicForm />
+        <DynamicForm />
 
+        <DynamicForm />
+      </Progress>
       <Select
         label={'select label'}
         description={'beskrivning'}
