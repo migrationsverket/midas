@@ -28,17 +28,39 @@ npm install @midas-ds/logo
 import { Logo } from '@midas-ds/logo'
 ```
 
+<LiveCodeBlock scope={{ Logo }}>{`<Logo />`}</LiveCodeBlock>
+
+## Varianter
+
+Det finns flertalet storlekar samt med eller utan bakgrund. Det finns även en liten variant av logotypen med bara bokstaven M. Denna kan användas i mindre skärmstorlekar.
+
 <LiveCodeBlock scope={{ Logo }}>
   {`<>
-    <Logo/>
-    <Logo background/>
-    <Logo dark/>
-    <Logo dark background/>
-    <Logo size={'small'}/>
+    <Logo size="small" />
+    <Logo primary={false} size="small" />
+    <Logo primary={false} background size="small" />
+    <Logo background size="small" />
+    <br />
+    <Logo size="medium" />
+    <Logo primary={false} size="medium" />
+    <Logo primary={false} background size="medium" />
+    <Logo background size="medium" />
+    <br />
+    <Logo size="large" />
+    <Logo primary={false} size="large" />
+    <Logo primary={false} background size="large" />
+    <Logo background size="large" />
+    <br />
+    <Logo size="x-small" />
+    <Logo primary={false} size="x-small" />
+    <Logo primary={false} background size="x-small" />
+    <Logo background size="x-small" />
 </>`}
 </LiveCodeBlock>
 
-## SVG I vissa fall kan det vara mer fördelaktigt med en vanlig fil.
+## SVG
+
+I vissa fall kan det vara mer fördelaktigt med en vanlig fil.
 
 <a
   target='_blank'
