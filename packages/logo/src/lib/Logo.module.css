@@ -3,8 +3,7 @@
 
 .logo {
   width: 100%;
-  padding: 0.75rem 1rem;
-  max-width: 161px;
+  max-height: 48px;
 }
 
 .primary {
@@ -15,16 +14,39 @@
   fill: black;
 }
 
+.xSmall {
+  max-height: 36px;
+}
+
 .small {
-  max-width: 80px;
+  max-height: 40px;
 }
 
-.background-primary {
+.large {
+  max-height: 52px;
+}
+
+.backgroundPrimary {
   background-color: red100;
-  fill: white;
+
+  svg {
+    fill: white;
+  }
 }
 
-.background-dark {
+.backgroundDark {
   background-color: gray130;
-  fill: white;
+
+  svg {
+    fill: white;
+  }
+}
+
+.container {
+  padding: 1rem;
+  display: inline-flex;
+}
+
+.noPadding {
+  padding: 0;
 }
