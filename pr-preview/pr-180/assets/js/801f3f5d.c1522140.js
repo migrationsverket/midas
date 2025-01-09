@@ -98,7 +98,7 @@ var react = __webpack_require__(96540);
 var clsx = __webpack_require__(34164);
 ;// ./packages/logo/src/lib/Logo.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Logo_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","red100":"#b90835","black":"#000000","gray130":"#5d5d5d","white":"#ffffff","logo":"logo_tYIG","primary":"primary_Y5gB","dark":"dark_ZLNv","xSmall":"xSmall_Wq4Z","small":"small_vjO9","large":"large_rMoD","backgroundPrimary":"backgroundPrimary_t5A_","backgroundDark":"backgroundDark_LbaQ","container":"container_sGuq","noPadding":"noPadding_tHIb"});
+/* harmony default export */ const Logo_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","red100":"#b90835","black":"#000000","gray130":"#5d5d5d","white":"#ffffff","container":"container_sGuq","noPadding":"noPadding_tHIb","logo":"logo_tYIG","primary":"primary_Y5gB","dark":"dark_ZLNv","xSmall":"xSmall_Wq4Z","small":"small_vjO9","large":"large_rMoD","backgroundPrimary":"backgroundPrimary_t5A_","backgroundDark":"backgroundDark_LbaQ"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/logo/src/lib/Logo.tsx
