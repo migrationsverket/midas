@@ -60,8 +60,8 @@ export const Primary: Story = {
   args: {
     items: items,
     user: {
-      name: 'Philip Hjälmrud Ekströmersson',
-      title: 'Teknisk förvaltare i myndighetssfären'
+      name: 'Namn Namnsson',
+      title: 'Roll eller behörighet'
     },
     app: {
       name: 'Namn på applikationen',
