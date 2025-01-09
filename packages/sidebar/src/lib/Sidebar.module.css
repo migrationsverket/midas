@@ -94,7 +94,7 @@
     position: sticky;
     top: var(--headerHeight);
     align-self: start;
-    min-height: calc(100vh - var(--headerHeight));
+    height: calc(100vh - var(--headerHeight));
     transform: none;
     width: var(--sideBarWidth);
   }
