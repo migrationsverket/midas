@@ -102,7 +102,7 @@ export const Sidebar: React.FC<MidasSidebar> = ({
                 styles.listLink,
                 isCollapsed && styles.listLinkCollapsed
               )}
-              variant='icon'
+              variant='primary'
             >
               <span
                 className={clsx(
@@ -206,7 +206,7 @@ export const Sidebar: React.FC<MidasSidebar> = ({
           </nav>
           <div className={styles.sidebarFooter}>
             <Button
-              variant='icon'
+              variant='primary'
               aria-label={
                 isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'
               }

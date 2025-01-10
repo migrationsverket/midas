@@ -258,6 +258,7 @@
 
 .collapseButton {
   color: currentColor !important;
+  padding: calc(0.875rem - 1px) !important;
 }
 
 .backdrop {
