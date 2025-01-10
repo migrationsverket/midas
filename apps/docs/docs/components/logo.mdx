@@ -36,83 +36,49 @@ import { Logo } from '@midas-ds/logo'
 
 Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
 
+### X-small
 <LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
-  {`<Flex>
-    <FlexItem col="auto">
-     <Logo size="small" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo primary={false} size="small" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo primary={false} background size="small" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo background size="small" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo size="medium" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo primary={false} size="medium" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo primary={false} background size="medium" />
-    </FlexItem>
-    <FlexItem col="auto">
-      <Logo background size="medium" />
-      </FlexItem>
-    <FlexItem col='auto'>
-      <Logo size='large' />
-    </FlexItem>
-    <FlexItem col='auto'>
-      <Logo
-        primary={false}
-        size='large'
-      />
-    </FlexItem>
-    <FlexItem col='auto'>
-      <Logo
-        primary={false}
-        background
-        size='large'
-      />
-    </FlexItem>
-    <FlexItem col='auto'>
-      <Logo
-        background
-        size='large'
-      />
-    </FlexItem>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="x-small" />
+    <Logo primary={false} size="x-small" />
+    <Logo background size="x-small" /> 
+    <Logo primary={false} background size="x-small" />
 
-    <FlexItem col='auto'>
-      <Logo size='x-small' />
-    </FlexItem>
-
-    <FlexItem col='auto'>
-      <Logo
-        primary={false}
-        size='x-small'
-      />
-    </FlexItem>
-
-    <FlexItem col='auto'>
-      <Logo
-        primary={false}
-        background
-        size='x-small'
-      />
-    </FlexItem>
-
-    <FlexItem col='auto'>
-      <Logo
-        background
-        size='x-small'
-      />
-    </FlexItem>
-
-  </Flex>`}
+    </div>`}
 </LiveCodeBlock>
+
+### Small 
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <Logo size="small" />
+      <Logo primary={false} size="small" />
+      <Logo background size="small" />
+      <Logo primary={false} background size="small" />
+    </div>`}
+</LiveCodeBlock>
+
+### Medium
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <Logo size="medium" />
+      <Logo primary={false} size="medium" />
+      <Logo background size="medium" />
+      <Logo primary={false} background size="medium" />
+    </div>`}
+</LiveCodeBlock>
+
+### Large
+
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <Logo size="large" />
+      <Logo primary={false} size="large" />
+      <Logo background size="large" />
+      <Logo primary={false} background size="large" />
+    </div>`}
+</LiveCodeBlock>
+
+
 
 ## Logotyp i SVG-format
 
