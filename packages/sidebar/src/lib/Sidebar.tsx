@@ -31,7 +31,6 @@ export interface SidebarLink {
 export interface SidebarUser {
   name: string
   title: string
-  imageUrl?: string
 }
 
 type HEX = `#${string}`
@@ -102,7 +101,7 @@ export const Sidebar: React.FC<MidasSidebar> = ({
                 styles.listLink,
                 isCollapsed && styles.listLinkCollapsed
               )}
-              variant='primary'
+              variant='tertiary'
             >
               <span
                 className={clsx(
@@ -206,7 +205,7 @@ export const Sidebar: React.FC<MidasSidebar> = ({
           </nav>
           <div className={styles.sidebarFooter}>
             <Button
-              variant='primary'
+              variant='tertiary'
               aria-label={
                 isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'
               }
@@ -218,7 +217,9 @@ export const Sidebar: React.FC<MidasSidebar> = ({
           </div>
         </aside>
         <FlexItem>
-          <main className={styles.main}>{children}</main>
+          <main className={styles.main}>
+            <div className={styles.app}>{children}</div>
+          </main>
         </FlexItem>
         <div
           className={clsx(styles.backdrop, isOpened && styles.backdropOpened)}

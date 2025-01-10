@@ -1,5 +1,5 @@
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, primaryBackground, gray10, gray30, gray70, mdBreakpoint, logoPrimary from tokens;
+@value display, primaryBackground, gray10, gray30, gray60, gray70, gray130, mdBreakpoint, logoPrimary from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -76,8 +76,7 @@
 
 .sidebar {
   font-family: display;
-  background-color: primaryBackground;
-  color: white;
+  background-color: white;
   display: flex;
   flex-flow: wrap column;
   flex: 0 0 var(--sideBarWidth);
@@ -88,6 +87,7 @@
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
   z-index: 2;
+  border-right: 1px solid gray60;
 
   @media mdBreakpoint {
     position: sticky;
@@ -101,12 +101,20 @@
 
 .main {
   font-family: display;
-  background-color: white;
   flex: 0 0 auto;
   width: 100%;
 
   @media mdBreakpoint {
     background-color: gray10;
+  }
+}
+
+.app {
+  background-color: white;
+  background-clip: content-box;
+
+  @media mdBreakpoint {
+    padding: 2rem;
   }
 }
 
@@ -116,7 +124,7 @@
 
 .sidebarHeader {
   padding: 1rem;
-  border-bottom: 1px solid gray70;
+  border-bottom: 1px solid gray60;
 
   & p {
     margin: 0;
@@ -138,7 +146,7 @@
 }
 
 .sidebarCollapsed {
-  --sideBarWidth: 66px;
+  --sideBarWidth: 68px;
 
   transition: all 0.2s ease-out;
 
@@ -168,7 +176,7 @@
 
 .abbr {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   align-self: center;
 }
 
@@ -201,7 +209,6 @@
 }
 
 .list {
-  color: white;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -209,6 +216,7 @@
 }
 
 .listGroupTitle {
+  color: gray130;
   font-size: 0.75rem;
   letter-spacing: 0.0375rem;
   text-transform: uppercase;
@@ -225,8 +233,8 @@
 }
 
 .listLink {
-  flex-grow: 1;
   color: currentColor !important;
+  flex-grow: 1;
   transition: 100ms;
   justify-content: flex-end !important;
 }
