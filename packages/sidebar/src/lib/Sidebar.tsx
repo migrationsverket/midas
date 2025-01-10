@@ -35,14 +35,30 @@ export interface SidebarUser {
 
 type HEX = `#${string}`
 
+interface App {
+  name: string
+  shortName: string
+  color?: HEX
+}
+
 export interface MidasSidebar {
   items: SidebarLinkGroup[]
   title: string
   children: React.ReactNode
   headerChildren: React.ReactNode
   user: SidebarUser
-  app: { name: string; shortName: string; color?: HEX }
+  app: App
   clientSideRouter?: (path: string, routerOptions: undefined) => void
+}
+
+export interface MidasHeader {
+  title: string
+  headerChildren: React.ReactNode
+  user: SidebarUser
+  app: App
+  isOpened?: boolean
+  setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>
+  setIsCollapsed?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const Sidebar: React.FC<MidasSidebar> = ({
@@ -118,63 +134,17 @@ export const Sidebar: React.FC<MidasSidebar> = ({
     )
   }
 
-  const Header = () => {
-    return (
-      <header
-        className={styles.header}
-        style={{
-          borderTop: `solid 4px ${app.color ? app.color : midasColors.logoPrimary}`
-        }}
-      >
-        <div className={styles.headerContent}>
-          <Logo
-            padding={false}
-            size='small'
-            className={styles.logo}
-          />
-          <Button
-            variant='icon'
-            className={styles.toggleButton}
-            aria-label={isOpened ? 'Stäng meny' : 'Öppna meny'}
-            aria-controls='midasMainMenu'
-            onPress={() => {
-              setIsCollapsed(false)
-              setIsOpened(!isOpened)
-            }}
-          >
-            {isOpened ? (
-              <X
-                size={20}
-                aria-hidden
-              />
-            ) : (
-              <Menu
-                size={20}
-                aria-hidden
-              />
-            )}
-          </Button>
-          <div>
-            <p className={styles.userName}>{user.name}</p>
-            <p className={styles.userTitle}>{user.title}</p>
-            <p className={styles.title}>{title}</p>
-          </div>
-        </div>
-        <div className={styles.headerItems}>{headerChildren}</div>
-        <div className={styles.headerMenu}>
-          <Dropdown>
-            {React.Children.map(headerChildren, child => (
-              <DropdownItem>{child}</DropdownItem>
-            ))}
-          </Dropdown>
-        </div>
-      </header>
-    )
-  }
-
   return (
     <div className={styles.baseLayout}>
-      <Header />
+      <Header
+        title={title}
+        headerChildren={headerChildren}
+        user={user}
+        app={app}
+        isOpened={isOpened}
+        setIsOpened={setIsOpened}
+        setIsCollapsed={setIsCollapsed}
+      />
       <div className={styles.mainContent}>
         <aside
           id='midasMainMenu'
@@ -228,5 +198,69 @@ export const Sidebar: React.FC<MidasSidebar> = ({
         />
       </div>
     </div>
+  )
+}
+
+export const Header: React.FC<MidasHeader> = ({
+  title,
+  user,
+  app,
+  headerChildren,
+  isOpened,
+  setIsOpened,
+  setIsCollapsed
+}) => {
+  return (
+    <header
+      className={styles.header}
+      style={{
+        borderTop: `solid 4px ${app.color ? app.color : midasColors.logoPrimary}`
+      }}
+    >
+      <div className={styles.headerContent}>
+        <Logo
+          padding={false}
+          size='small'
+          className={styles.logo}
+        />
+        {isOpened !== undefined && setIsCollapsed && setIsOpened && (
+          <Button
+            variant='icon'
+            className={styles.toggleButton}
+            aria-label={isOpened ? 'Stäng meny' : 'Öppna meny'}
+            aria-controls='midasMainMenu'
+            onPress={() => {
+              setIsCollapsed(false)
+              setIsOpened(!isOpened)
+            }}
+          >
+            {isOpened ? (
+              <X
+                size={20}
+                aria-hidden
+              />
+            ) : (
+              <Menu
+                size={20}
+                aria-hidden
+              />
+            )}
+          </Button>
+        )}
+        <div>
+          <p className={styles.userName}>{user.name}</p>
+          <p className={styles.userTitle}>{user.title}</p>
+          <p className={styles.title}>{title}</p>
+        </div>
+      </div>
+      <div className={styles.headerItems}>{headerChildren}</div>
+      <div className={styles.headerMenu}>
+        <Dropdown>
+          {React.Children.map(headerChildren, child => (
+            <DropdownItem>{child}</DropdownItem>
+          ))}
+        </Dropdown>
+      </div>
+    </header>
   )
 }

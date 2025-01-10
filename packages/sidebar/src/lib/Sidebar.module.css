@@ -110,8 +110,8 @@
 }
 
 .app {
-  background-color: white;
   background-clip: content-box;
+  background-color: white;
 
   @media mdBreakpoint {
     padding: 2rem;
