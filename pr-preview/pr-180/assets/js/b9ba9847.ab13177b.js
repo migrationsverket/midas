@@ -76,6 +76,22 @@ const toc = [{
   "id": "varianter",
   "level": 2
 }, {
+  "value": "X-small",
+  "id": "x-small",
+  "level": 3
+}, {
+  "value": "Small",
+  "id": "small",
+  "level": 3
+}, {
+  "value": "Medium",
+  "id": "medium",
+  "level": 3
+}, {
+  "value": "Large",
+  "id": "large",
+  "level": 3
+}, {
   "value": "Logotyp i SVG-format",
   "id": "logotyp-i-svg-format",
   "level": 2
@@ -84,6 +100,7 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
+    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -144,87 +161,67 @@ function _createMdxContent(props) {
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "x-small",
+      children: "X-small"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Logo: src/* Logo */.g,
         Flex: flex_src/* Flex */.s,
         FlexItem: flex_src/* FlexItem */.Z
       },
-      children: `<Flex>
-  <FlexItem col="auto">
-   <Logo size="small" />
-  </FlexItem>
-  <FlexItem col="auto">
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+  <Logo size="x-small" />
+  <Logo primary={false} size="x-small" />
+  <Logo background size="x-small" /> 
+  <Logo primary={false} background size="x-small" />
+
+  </div>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "small",
+      children: "Small"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="small" />
     <Logo primary={false} size="small" />
-  </FlexItem>
-  <FlexItem col="auto">
-    <Logo primary={false} background size="small" />
-  </FlexItem>
-  <FlexItem col="auto">
     <Logo background size="small" />
-  </FlexItem>
-  <FlexItem col="auto">
+    <Logo primary={false} background size="small" />
+  </div>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "medium",
+      children: "Medium"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
     <Logo size="medium" />
-  </FlexItem>
-  <FlexItem col="auto">
     <Logo primary={false} size="medium" />
-  </FlexItem>
-  <FlexItem col="auto">
-    <Logo primary={false} background size="medium" />
-  </FlexItem>
-  <FlexItem col="auto">
     <Logo background size="medium" />
-    </FlexItem>
-  <FlexItem col='auto'>
-    <Logo size='large' />
-  </FlexItem>
-  <FlexItem col='auto'>
-    <Logo
-      primary={false}
-      size='large'
-    />
-  </FlexItem>
-  <FlexItem col='auto'>
-    <Logo
-      primary={false}
-      background
-      size='large'
-    />
-  </FlexItem>
-  <FlexItem col='auto'>
-    <Logo
-      background
-      size='large'
-    />
-  </FlexItem>
-
-  <FlexItem col='auto'>
-    <Logo size='x-small' />
-  </FlexItem>
-
-  <FlexItem col='auto'>
-    <Logo
-      primary={false}
-      size='x-small'
-    />
-  </FlexItem>
-
-  <FlexItem col='auto'>
-    <Logo
-      primary={false}
-      background
-      size='x-small'
-    />
-  </FlexItem>
-
-  <FlexItem col='auto'>
-    <Logo
-      background
-      size='x-small'
-    />
-  </FlexItem>
-
-</Flex>`
+    <Logo primary={false} background size="medium" />
+  </div>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "large",
+      children: "Large"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="large" />
+    <Logo primary={false} size="large" />
+    <Logo background size="large" />
+    <Logo primary={false} background size="large" />
+  </div>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "logotyp-i-svg-format",
       children: "Logotyp i SVG-format"
