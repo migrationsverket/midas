@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Sidebar, SidebarLinkGroup } from './Sidebar'
-import { Gavel, House, Plus } from 'lucide-react'
+import { Header, Sidebar, SidebarLinkGroup } from './Sidebar'
+import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
 import { baseColors } from '@midas-ds/theme'
 import { LinkButton } from '@midas-ds/link-button'
 
@@ -34,6 +34,21 @@ const items: SidebarLinkGroup[] = [
         title: 'Beslut',
         href: '#',
         icon: Gavel
+      }
+    ]
+  },
+  {
+    title: 'Kort och konto',
+    items: [
+      {
+        title: 'LMA-kort',
+        href: '#',
+        icon: Calendar
+      },
+      {
+        title: 'Avvikelser',
+        href: '#',
+        icon: ClipboardList
       }
     ]
   }
@@ -83,4 +98,22 @@ export const Primary: Story = {
       </LinkButton>
     )
   }
+}
+
+export const OnlyHeader: Story = {
+  render: () => (
+    <Header
+      title='Skapa ansökningar'
+      user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+      app={{ name: 'Namn på applikationen', shortName: 'NPA' }}
+      headerChildren={
+        <LinkButton
+          variant='tertiary'
+          target='_blank'
+        >
+          Öppna annan tjänst
+        </LinkButton>
+      }
+    />
+  )
 }
