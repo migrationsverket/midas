@@ -20,7 +20,7 @@ import {
   MidasToastState
 } from '@midas-ds/toast'
 import { Progress, Steps, DynamicForm } from '@midas-ds/progress'
-import { TextArea } from 'react-aria-components'
+
 
 export function App() {
   // const canProgress =
