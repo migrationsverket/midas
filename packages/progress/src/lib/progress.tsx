@@ -86,10 +86,7 @@ export const Progress: React.FC<ProgressProps> = ({ steps: initialSteps, childre
   const [selectedTab, setSelectedTab] = useState<string>(initialSteps[0]?.title);
   const [valueFromChild, setValueFromChild] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    console.log('Steps state has changed:', steps);
-  }, [steps]);
-
+  
   const handleChildValueChange = (value: boolean) => {
     setValueFromChild(value); // Update the value based on child validation
     if (value !== null) {
