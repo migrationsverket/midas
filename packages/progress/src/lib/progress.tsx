@@ -1,52 +1,36 @@
-import React, { Children, ReactNode, useContext, useEffect, useState } from 'react';
+import React, { Children, ReactNode, useState, useEffect, useContext } from 'react';
 import styles from './progress.module.css';
 import clsx from 'clsx';
-import {
-  Tabs,
-  Tab,
-  TabList,
-  TabPanel,
-  TabListStateContext,
-} from 'react-aria-components';
+import { Tabs, Tab, TabList, TabPanel, TabListStateContext } from 'react-aria-components';
 import { ChevronRight, Check } from 'lucide-react';
 
 export interface Steps {
   title: string;
-  hasProgressed?: boolean; // Controlled by parent logic
-  canProgress?: boolean; // Controlled by child validation
+  hasProgressed?: boolean;
+  canProgress?: boolean;
 }
 
 export interface ProgressProps {
   steps: Steps[];
-  children?: ReactNode; // Pass dynamic components as children
-}
-
-interface TabListState {
-  collection: {
-    getKeyBefore: (key: string) => string | null;
-    getKeyAfter: (key: string) => string | null;
-  };
-  selectedKey: string;
-  setSelectedKey: (key: string) => void;
+  children?: ReactNode;
 }
 
 function TabNavigation({
   steps,
   setSteps,
+  setSelectedTab,
 }: {
   steps: Steps[];
   setSteps: React.Dispatch<React.SetStateAction<Steps[]>>;
+  setSelectedTab: React.Dispatch<React.SetStateAction<string>>;
 }) {
-  const state = useContext(TabListStateContext) as TabListState;
+  const state = useContext(TabListStateContext);
 
-  if (!state) {
+  if (!state || !state.selectedKey) {
     return null;
   }
 
-  const currentStepIndex = steps.findIndex(
-    (step) => step.title === state.selectedKey
-  );
-
+  const currentStepIndex = steps.findIndex((step) => step.title === state.selectedKey);
   const prevKey = state.collection.getKeyBefore(state.selectedKey);
   const nextKey = state.collection.getKeyAfter(state.selectedKey);
 
@@ -55,7 +39,9 @@ function TabNavigation({
     currentStepIndex < steps.length - 1 && steps[currentStepIndex]?.canProgress;
 
   const onPrev =
-    prevKey && canMoveToPrev ? () => state.setSelectedKey(prevKey) : undefined;
+    prevKey && canMoveToPrev
+      ? () => state.setSelectedKey(prevKey)
+      : undefined;
 
   const onNext =
     nextKey && canMoveToNext
@@ -67,8 +53,9 @@ function TabNavigation({
                 : step
             )
           );
-
-          state.setSelectedKey(nextKey);
+          if (nextKey) {
+            setSelectedTab(nextKey as string); // Ensure nextKey is a string before passing
+          }
         }
       : undefined;
 
@@ -84,7 +71,7 @@ function TabNavigation({
       </button>
       <button
         aria-label="Next tab"
-        onClick={onNext}
+        onClick={onNext} // Here we are correctly calling `onNext`, which executes the logic
         disabled={!canMoveToNext}
         className={clsx(!canMoveToNext && styles.disabled)}
       >
@@ -94,24 +81,42 @@ function TabNavigation({
   );
 }
 
-export const Progress: React.FC<ProgressProps> = ({
-  steps: initialSteps,
-  children,
-}) => {
+export const Progress: React.FC<ProgressProps> = ({ steps: initialSteps, children }) => {
   const [steps, setSteps] = useState<Steps[]>(initialSteps);
-  const [selectedTab, setSelectedTab] = useState<string>(steps[0]?.title);
-  const currentStep = steps.findIndex((step) => step.title === selectedTab);
+  const [selectedTab, setSelectedTab] = useState<string>(initialSteps[0]?.title);
+  const [valueFromChild, setValueFromChild] = useState<boolean | null>(null);
+
   useEffect(() => {
     console.log('Steps state has changed:', steps);
   }, [steps]);
 
-  const handleValueChange = (value: string, valid: boolean) => {
-    setSteps((prevSteps) =>
-      prevSteps.map((step, index) =>
-        index === currentStep ? { ...step, canProgress: valid } : step
-      )
-    );
+  const handleChildValueChange = (value: boolean) => {
+    setValueFromChild(value); // Update the value based on child validation
+    if (value !== null) {
+      setSteps((prevSteps) =>
+        prevSteps.map((step, index) =>
+          index === 0 // Example: Only update the first step (could be generalized for all steps)
+            ? { ...step, canProgress: value }
+            : step
+        )
+      );
+    }
+  };
 
+  const handleNext = () => {
+    if (valueFromChild) {
+      setSteps((prevSteps) =>
+        prevSteps.map((step, index) =>
+          index === 0 // Update current step's state
+            ? { ...step, hasProgressed: true }
+            : step
+        )
+      );
+      const nextIndex = steps.findIndex((step) => step.title === selectedTab) + 1;
+      if (nextIndex < steps.length) {
+        setSelectedTab(steps[nextIndex].title);
+      }
+    }
   };
 
   return (
@@ -121,42 +126,34 @@ export const Progress: React.FC<ProgressProps> = ({
         selectedKey={selectedTab}
         onSelectionChange={(key) => setSelectedTab(key as string)}
       >
-        <TabList aria-label="Tabs" className={styles.stepsContainer}>
-          {steps.map((step, index) => {
-            const isCompleted = index < currentStep;
-            return (
-              <Tab
-                key={step.title}
-                id={step.title}
-                isDisabled={!step.canProgress}
-                className={clsx(
-                  styles.step,
-                  isCompleted && styles.completed,
-                  index === currentStep && styles.current
-                )}
-              >
+        <TabList aria-label="Steps" className={styles.stepsContainer}>
+          {steps.map((step, index) => (
+            <Tab
+              key={step.title}
+              id={step.title}
+              isDisabled={index > 0 && !steps[index - 1]?.hasProgressed}
+              className={clsx(
+                styles.step,
+                step.hasProgressed && styles.completed, // Apply completed style if `hasProgressed` is true
+                index === steps.findIndex((step) => step.title === selectedTab) &&
+                  styles.current
+              )}
+            >
+              <div className={clsx(styles.stepTitle)}>
+                {step.hasProgressed && <Check />} {/* Render Check if the step is completed */}
+                {index === steps.findIndex((step) => step.title === selectedTab) && <ChevronRight />}
+              </div>
+              {step.title}
+              {index < steps.length - 1 && (
                 <div
                   className={clsx(
-                    styles.stepTitle,
-                    isCompleted && styles.completed,
-                    index === currentStep && styles.current
+                    styles.progressBar,
+                    step.hasProgressed && styles.progressBarCompleted
                   )}
-                >
-                  {index === currentStep && <ChevronRight />}
-                  {isCompleted && index < currentStep && <Check />}
-                </div>
-                {step.title}
-                {index < steps.length - 1 && (
-                  <div
-                    className={clsx(
-                      styles.progressBar,
-                      isCompleted && styles.progressBarCompleted
-                    )}
-                  />
-                )}
-              </Tab>
-            );
-          })}
+                />
+              )}
+            </Tab>
+          ))}
         </TabList>
 
         {Children.map(children, (child, index) => (
@@ -166,12 +163,17 @@ export const Progress: React.FC<ProgressProps> = ({
             className={styles.panel}
           >
             {React.cloneElement(child as React.ReactElement<any>, {
-              onValueChange: handleValueChange,
+              onValueChange: handleChildValueChange, // Pass the handler for validation to the child
             })}
           </TabPanel>
-        ))}
+        ))} 
 
-        <TabNavigation steps={steps} setSteps={setSteps} />
+        {/* Use TabNavigation with setSteps and setSelectedTab */}
+        <TabNavigation
+          steps={steps}
+          setSteps={setSteps}
+          setSelectedTab={setSelectedTab}
+        />
       </Tabs>
     </div>
   );
@@ -215,8 +217,11 @@ const formConfig: FormField[] = [
     validation: (value) => value === true,
   },
 ];
+interface ChildProps {
+  onValueChange?: (value: boolean) => void; // Optional to handle any child
+}
 
-export const DynamicForm: React.FC = () => {
+export const DynamicForm: React.FC<ChildProps> = ({ onValueChange }) =>{
   // State to hold form values dynamically
   const [formData, setFormData] = useState<{ [key: string]: string | boolean }>(
     {}
@@ -231,7 +236,6 @@ export const DynamicForm: React.FC = () => {
       return field.validation ? field.validation(value) : true;
     });
   };
-
   // Handle input change dynamically
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, type, value, checked } = e.target;
@@ -247,15 +251,16 @@ export const DynamicForm: React.FC = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (isValid) {
-      alert("Form submitted successfully!");
+ 
+
+  useEffect(() => {
+    if (onValueChange) {
+      onValueChange(isValid); // Pass the current value of `isActive` directly
     }
-  };
+  }, [isValid, onValueChange]);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form >
       {formConfig.map((field) => (
         <div key={field.name}>
           <label htmlFor={field.name}>
@@ -279,9 +284,7 @@ export const DynamicForm: React.FC = () => {
           </label>
         </div>
       ))}
-      <button type="submit" disabled={!isValid}>
-        Submit
-      </button>
+      
     </form>
   );
 };

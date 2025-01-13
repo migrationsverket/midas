@@ -20,13 +20,15 @@ import {
   MidasToastState
 } from '@midas-ds/toast'
 import { Progress, Steps, DynamicForm } from '@midas-ds/progress'
+import { TextArea } from 'react-aria-components'
 
 export function App() {
   // const canProgress =
   const steps: Steps[] = [
     { title: 'Step 1', canProgress: false, hasProgressed: false }, // Initial step, not progressed
     { title: 'Step 2', canProgress: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 3', canProgress: false, hasProgressed: false } // Initial step, not progressed
+    { title: 'Step 3', canProgress: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 4', canProgress: false, hasProgressed: false } // Initial step, not progressed
   ]
 
   return (
@@ -69,9 +71,18 @@ export function App() {
       
       <Progress steps={steps}>
         <DynamicForm />
-        <DynamicForm />
-
-        <DynamicForm />
+        <Select
+        label={'select label'}
+        description={'beskrivning'}
+        isRequired
+      >
+        <Item>Hej</Item>
+        <Item>Hejdå</Item>
+        <Item>Hallå</Item>
+        <Item>Nej</Item>
+      </Select>
+       <TextField/>
+       <TextArea/>
       </Progress>
       <Select
         label={'select label'}
