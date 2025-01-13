@@ -71,18 +71,7 @@ export function App() {
       
       <Progress steps={steps}>
         <DynamicForm />
-        <Select
-        label={'select label'}
-        description={'beskrivning'}
-        isRequired
-      >
-        <Item>Hej</Item>
-        <Item>Hejdå</Item>
-        <Item>Hallå</Item>
-        <Item>Nej</Item>
-      </Select>
-       <TextField/>
-       <TextArea/>
+    
       </Progress>
       <Select
         label={'select label'}
