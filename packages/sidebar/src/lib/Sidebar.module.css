@@ -274,8 +274,18 @@
   position: fixed;
   inset: 0;
   background-color: rgb(50 50 50 / 50%);
+  opacity: 0;
+  transition: all 100ms;
+  transition-behavior: allow-discrete;
 
   &.backdropOpened {
+    opacity: 1;
     display: block;
+  }
+}
+
+@starting-style {
+  .backdrop.backdropOpened {
+    opacity: 0;
   }
 }
