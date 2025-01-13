@@ -37,6 +37,10 @@ var getComponentMetaData = __webpack_require__(13225);
 const logo_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/logo@1.0.2","_rev":"6-b9dd0602631dcf13633b34433c9ac47a","name":"@midas-ds/logo","dist-tags":{"latest":"1.0.2"},"versions":["0.2.51","0.2.52","0.2.54","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:37:51.669Z","modified":"2024-11-15T14:06:13.855Z","0.2.51":"2024-09-10T14:37:51.962Z","0.2.52":"2024-09-12T12:40:53.983Z","0.2.54":"2024-10-07T12:17:56.616Z","1.0.0":"2024-10-18T13:40:34.594Z","1.0.1":"2024-10-24T13:26:40.640Z","1.0.2":"2024-11-15T14:06:13.704Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm install @midas-ds/logo ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":9749,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-DlCCjPJCExM19KvMvDE92xpn/E7M5YpSWITN1nAeQNdFrYr4lXt44Hhcw2Q4uDXcFxTxrvdYRBeJDCtidmbvdQ==","shasum":"f128de1959ca304aea09eeebd8d61858a994f2a9","tarball":"https://registry.npmjs.org/@midas-ds/logo/-/logo-1.0.2.tgz","fileCount":12,"unpackedSize":14879,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIESoI0TqoqmP8nZP2gL3ZiT9erLXQ2iW3n3qMv4OGAPeAiEA2lJQgMb7JZpbtSJF+rl8YrAG5yC3g7moIhJoMJ+IneE="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/logo_1.0.2_1731679573443_0.8108641302169992"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
+// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
+var link_src = __webpack_require__(85560);
+// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
+var flex_src = __webpack_require__(93294);
 ;// ./apps/docs/docs/components/logo.mdx
 
 
@@ -61,6 +65,8 @@ const assets = {
 
 
 
+
+
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
@@ -70,14 +76,31 @@ const toc = [{
   "id": "varianter",
   "level": 2
 }, {
-  "value": "SVG",
-  "id": "svg",
+  "value": "X-small",
+  "id": "x-small",
+  "level": 3
+}, {
+  "value": "Small",
+  "id": "small",
+  "level": 3
+}, {
+  "value": "Medium",
+  "id": "medium",
+  "level": 3
+}, {
+  "value": "Large",
+  "id": "large",
+  "level": 3
+}, {
+  "value": "Logotyp i SVG-format",
+  "id": "logotyp-i-svg-format",
   "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
+    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -137,43 +160,79 @@ function _createMdxContent(props) {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Det finns flertalet storlekar samt med eller utan bakgrund. Det finns även en liten variant av logotypen med bara bokstaven M. Denna kan användas i mindre skärmstorlekar."
+      children: "Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "x-small",
+      children: "X-small"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Logo: src/* Logo */.g
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
       },
-      children: `<>
-  <Logo size="small" />
-  <Logo primary={false} size="small" />
-  <Logo primary={false} background size="small" />
-  <Logo background size="small" />
-  <br />
-  <Logo size="medium" />
-  <Logo primary={false} size="medium" />
-  <Logo primary={false} background size="medium" />
-  <Logo background size="medium" />
-  <br />
-  <Logo size="large" />
-  <Logo primary={false} size="large" />
-  <Logo primary={false} background size="large" />
-  <Logo background size="large" />
-  <br />
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
   <Logo size="x-small" />
   <Logo primary={false} size="x-small" />
+  <Logo background size="x-small" /> 
   <Logo primary={false} background size="x-small" />
-  <Logo background size="x-small" />
-</>`
+
+  </div>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "small",
+      children: "Small"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="small" />
+    <Logo primary={false} size="small" />
+    <Logo background size="small" />
+    <Logo primary={false} background size="small" />
+  </div>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "medium",
+      children: "Medium"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="medium" />
+    <Logo primary={false} size="medium" />
+    <Logo background size="medium" />
+    <Logo primary={false} background size="medium" />
+  </div>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "large",
+      children: "Large"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Logo: src/* Logo */.g,
+        Flex: flex_src/* Flex */.s,
+        FlexItem: flex_src/* FlexItem */.Z
+      },
+      children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="large" />
+    <Logo primary={false} size="large" />
+    <Logo background size="large" />
+    <Logo primary={false} background size="large" />
+  </div>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "svg",
-      children: "SVG"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "I vissa fall kan det vara mer fördelaktigt med en vanlig fil."
-    }), "\n", (0,jsx_runtime.jsx)("a", {
+      id: "logotyp-i-svg-format",
+      children: "Logotyp i SVG-format"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För de fall där komponenten inte kan användas tilhandahåller vi även logotypen som SVG. I paketet finns två SVG-filer, en med logotypen och en med bara M", ":et", " för små skärmar."]
+    }), "\n", (0,jsx_runtime.jsx)(link_src/* Link */.N, {
       target: "_blank",
       href: (__webpack_require__(61252)/* ["default"] */ .A),
       download: true,
       children: (0,jsx_runtime.jsx)(_components.p, {
-        children: "Ladda ner logotypen som SVG här (komprimerad fil)"
+        children: "Ladda ner logotypen som SVG (komprimerad fil)"
       })
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
       info: logo_namespaceObject

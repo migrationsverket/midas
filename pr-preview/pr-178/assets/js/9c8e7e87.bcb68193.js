@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3293],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6881],{
 
-/***/ 13214:
+/***/ 55786:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15,13 +15,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_15_mdx_9c8_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27648);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
-/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(28453);
-/* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29511);
-/* harmony import */ var _midas_ds_multi_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21464);
-/* harmony import */ var _midas_ds_link_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9687);
-/* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(93294);
-/* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(85560);
-/* harmony import */ var _midas_ds_theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(32976);
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(28453);
+/* harmony import */ var _theme_Tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11470);
+/* harmony import */ var _theme_TabItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19365);
+/* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(29511);
+/* harmony import */ var _midas_ds_multi_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21464);
+/* harmony import */ var _midas_ds_link_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9687);
+/* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(93294);
+/* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(85560);
+/* harmony import */ var _midas_ds_theme__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(32976);
 
 
 const frontMatter = {
@@ -37,6 +39,7 @@ const assets = {
 "authorsImageUrls": [],
 };
 
+/*truncate*/
 
 
 
@@ -47,20 +50,197 @@ const assets = {
 
 
 
-const toc = [];
+
+
+const toc = [{
+  "value": "Ny komponent: Multiselect",
+  "id": "ny-komponent-multiselect",
+  "level": 2
+}, {
+  "value": "Uppdatering: LinkButton",
+  "id": "uppdatering-linkbutton",
+  "level": 2
+}, {
+  "value": "Uppdatering: Link",
+  "id": "uppdatering-link",
+  "level": 2
+}, {
+  "value": "Fristående länk",
+  "id": "fristående-länk",
+  "level": 3
+}, {
+  "value": "Utsträckt länk",
+  "id": "utsträckt-länk",
+  "level": 3
+}, {
+  "value": "Nytt designmönster för knappar och länkar",
+  "id": "nytt-designmönster-för-knappar-och-länkar",
+  "level": 2
+}, {
+  "value": "Mindre justeringar",
+  "id": "mindre-justeringar",
+  "level": 2
+}];
 function _createMdxContent(props) {
   const _components = {
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    li: "li",
     p: "p",
-    ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_8__/* .useMDXComponents */ .R)(),
+    pre: "pre",
+    ul: "ul",
+    ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_10__/* .useMDXComponents */ .R)(),
     ...props.components
   };
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-    children: "Nedan är en sammanfattning av nyheterna i release 15."
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "Nedan är en sammanfattning av nyheterna i release 15."
+    }), "\n", "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "ny-komponent-multiselect",
+      children: "Ny komponent: Multiselect"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_theme_Tabs__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A, {
+      groupId: "npm2yarn",
+      children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_theme_TabItem__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A, {
+        value: "npm",
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
+          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+            className: "language-bash",
+            children: "npm install @midas-ds/multi-select\n"
+          })
+        })
+      }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_theme_TabItem__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A, {
+        value: "yarn",
+        label: "Yarn",
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
+          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+            className: "language-bash",
+            children: "yarn add @midas-ds/multi-select\n"
+          })
+        })
+      }), (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_theme_TabItem__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A, {
+        value: "pnpm",
+        label: "pnpm",
+        children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
+          children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+            className: "language-bash",
+            children: "pnpm add @midas-ds/multi-select\n"
+          })
+        })
+      })]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A, {
+      scope: {
+        MultiSelect: _midas_ds_multi_select__WEBPACK_IMPORTED_MODULE_5__/* .MultiSelect */ .K
+      },
+      children: `<MultiSelect
+    label="Favoritfrukter"
+    placeholder="Välj dina favoritfrukter"
+    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+/>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "uppdatering-linkbutton",
+      children: "Uppdatering: LinkButton"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["LinkButton har en ny, förtydligande design. LinkButton var tydligare grafiskt exakt lik en ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "Button"
+      }), " fast som ett ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "<a>-element"
+      }), ". Det nya utseendet förtydligar att detta är just en länk. Däremot har den fortfarande varianter och storlekar som en ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "Button"
+      }), "."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A, {
+      scope: {
+        Flex: _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__/* .Flex */ .s,
+        FlexItem: _midas_ds_flex__WEBPACK_IMPORTED_MODULE_7__/* .FlexItem */ .Z,
+        LinkButton: _midas_ds_link_button__WEBPACK_IMPORTED_MODULE_6__/* .LinkButton */ .z
+      },
+      children: `<LinkButton href="#">Starta tjänst</LinkButton>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "uppdatering-link",
+      children: "Uppdatering: Link"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Komponenten ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_8__/* .Link */ .N, {
+        href: "/components/link",
+        children: "Link"
+      }), " är nu uppdaterad med varianterna Fristående och Utsträckt."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
+      id: "fristående-länk",
+      children: "Fristående länk"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "Fristående länk används när länken ligger utanför ett textstycke."
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A, {
+      scope: {
+        Link: _midas_ds_link__WEBPACK_IMPORTED_MODULE_8__/* .Link */ .N
+      },
+      children: `<>
+  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
+  <Link 
+      standalone 
+      href="/blog"
+  >
+      Läs mer om designsystemets nyheter
+  </Link>
+</>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
+      id: "utsträckt-länk",
+      children: "Utsträckt länk"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "Utsträckt länk används för att göra hela föräldraelementet klickbart."
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A, {
+      scope: {
+        Link: _midas_ds_link__WEBPACK_IMPORTED_MODULE_8__/* .Link */ .N,
+        baseColors: _midas_ds_theme__WEBPACK_IMPORTED_MODULE_9__/* .baseColors */ .as
+      },
+      children: `<div 
+    style={{
+      position: 'relative',
+      background: baseColors.gray10,
+      padding: '1rem'
+    }}
+  >
+  <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
+  <Link 
+      standalone 
+      stretched
+      href="/blog"
+  >
+      Läs mer om designsystemets nyheter
+  </Link>
+</div>`
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "nytt-designmönster-för-knappar-och-länkar",
+      children: "Nytt designmönster för knappar och länkar"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+      children: "I syfte att göra våra applikationer så tillgängliga som möjligt har vi skapat ett designmönster som stöd för att välja rätt komponent."
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_8__/* .Link */ .N, {
+      standalone: true,
+      href: "/design-patterns/buttons-and-links",
+      children: 'Läs mer om designmönstret här'
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "mindre-justeringar",
+      children: "Mindre justeringar"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
+      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
+        children: "Alla ikoner är nu 20x20px"
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
+        children: "Merparten av komponenternas fokusutseende är uppdaterat så att det följer vårt mönster"
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: ["Riktlinjer för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_8__/* .Link */ .N, {
+          href: "/design-patterns/personnummer",
+          children: "Personnummer"
+        }), " har fått ett eget designmönster"]
+      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
+        children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_8__/* .Link */ .N, {
+          href: "/components/card",
+          children: "Card"
+        }), " har ny design med Fristående länk"]
+      }), "\n"]
+    })]
   });
 }
 function MDXContent(props = {}) {
   const {wrapper: MDXLayout} = {
-    ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_8__/* .useMDXComponents */ .R)(),
+    ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_10__/* .useMDXComponents */ .R)(),
     ...props.components
   };
   return MDXLayout ? (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(MDXLayout, {
@@ -224,7 +404,7 @@ var useListData = __webpack_require__(7424);
 //     errorMessage: errorMessageProps
 //   }
 // }],
-FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,UNSTABLE_portalContainer:triggerRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){var newSelectedKeys=new Set([].concat(list.selectedKeys).filter(function(key){return!keys.has(key);}));list.setSelectedKeys(newSelectedKeys);},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item==null?void 0:item.id,textValue:item==null?void 0:item.name,isDisabled:isDisabled,dismissable:true,children:item==null?void 0:item.name},item==null?void 0:item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
+FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,UNSTABLE_portalContainer:triggerRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){list.setSelectedKeys(new Set(Array.from(list.selectedKeys).filter(function(k){return!keys.has(k);})));},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item==null?void 0:item.id,textValue:item==null?void 0:item.name,isDisabled:isDisabled,dismissable:true,children:item==null?void 0:item.name},item==null?void 0:item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
 ;// ./packages/multi-select/src/index.ts
 
 

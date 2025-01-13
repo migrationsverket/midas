@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3067],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3293],{
 
-/***/ 82503:
+/***/ 13214:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,24 +10,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_16_mdx_7c3_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_15_mdx_9c8_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_16_mdx_7c3_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42878);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_15_mdx_9c8_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27648);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(28453);
 /* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29511);
 /* harmony import */ var _midas_ds_multi_select__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21464);
-/* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93294);
-/* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(85560);
-/* harmony import */ var _midas_ds_theme__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(32976);
-/* harmony import */ var _midas_ds_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(63918);
+/* harmony import */ var _midas_ds_link_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9687);
+/* harmony import */ var _midas_ds_flex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(93294);
+/* harmony import */ var _midas_ds_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(85560);
+/* harmony import */ var _midas_ds_theme__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(32976);
 
 
 const frontMatter = {
-	title: 'Release 16',
+	title: 'Release 15',
 	description: '.',
-	slug: 'release-16',
+	slug: 'release-15',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -45,6 +45,8 @@ const assets = {
 
 
 
+
+
 const toc = [];
 function _createMdxContent(props) {
   const _components = {
@@ -53,7 +55,7 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-    children: "Nedan är en sammanfattning av nyheterna i release 16. I denna release har vi fokuserat på att göra nödvändiga justeringar och uppdateringar."
+    children: "Nedan är en sammanfattning av nyheterna i release 15."
   });
 }
 function MDXContent(props = {}) {
@@ -112,6 +114,47 @@ react.useEffect(function(){var _state$value,_state$value2;var amountOfChildren=c
 ;// ./packages/checkbox/src/lib/index.ts
 
 ;// ./packages/checkbox/src/index.ts
+
+
+/***/ }),
+
+/***/ 9687:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  z: () => (/* reexport */ LinkButton)
+});
+
+// UNUSED EXPORTS: RouterProvider
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
+var Link = __webpack_require__(73099);
+;// ./packages/link-button/src/lib/LinkButton.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LinkButton_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","blue150":"#143c50","blue130":"#25607f","blue90":"#4289ad","display":"\"Inter\", sans-serif","desktopSize":"1rem","mediumWeight":"500","white":"#ffffff","gray50":"#bfbfbf","gray10":"#f2f2f2","gray20":"#e6e6e6","black":"#000000","medium":"undefined","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","smBreakpoint":"(max-width: 767px)","signalRed100":"#e62323","signalRed130":"#b31b1b","signalRed150":"#801313","linkButton":"linkButton_YIrq","secondary":"secondary_fWmT","tertiary":"tertiary_mRIr","danger":"danger_VEbs","iconBtn":"iconBtn_JdYI","iconLeft":"iconLeft_vyt7","fullwidth":"fullwidth_EeuX","button":"button_rUVC"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/square-arrow-out-up-right.js
+var square_arrow_out_up_right = __webpack_require__(8866);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-left.js
+var chevron_left = __webpack_require__(60250);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-right.js
+var chevron_right = __webpack_require__(87677);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/link-button/src/lib/LinkButton.tsx
+'use client';var _excluded=["children","variant","fullwidth","icon","iconPlacement","className","as"];/**
+ * A link to be used when a user expects a button but web technologies force us to use a a-tag
+ * */var LinkButton=function LinkButton(_ref){var children=_ref.children,variant=_ref.variant,fullwidth=_ref.fullwidth,IconComponent=_ref.icon,iconPlacement=_ref.iconPlacement,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||Link/* Link */.N;var Icon=function Icon(){if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:LinkButton_module.icon});if(rest.target==='_blank')return/*#__PURE__*/(0,jsx_runtime.jsx)(square_arrow_out_up_right/* default */.A,{size:20,className:LinkButton_module.icon});if(iconPlacement==='left')return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_left/* default */.A,{size:20,className:LinkButton_module.icon});return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon});};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Component,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,variant==='primary'&&LinkButton_module.primary,variant==='secondary'&&LinkButton_module.secondary,variant==='tertiary'&&LinkButton_module.tertiary,variant==='danger'&&LinkButton_module.danger,variant==='icon'&&LinkButton_module.iconBtn,fullwidth&&LinkButton_module.fullwidth,iconPlacement==='left'&&LinkButton_module.iconLeft,className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{})]}));};
+;// ./packages/link-button/src/lib/index.ts
+
+;// ./packages/link-button/src/index.ts
 
 
 /***/ }),
@@ -181,7 +224,7 @@ var useListData = __webpack_require__(7424);
 //     errorMessage: errorMessageProps
 //   }
 // }],
-FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,UNSTABLE_portalContainer:triggerRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){var newSelectedKeys=new Set([].concat(list.selectedKeys).filter(function(key){return!keys.has(key);}));list.setSelectedKeys(newSelectedKeys);},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item==null?void 0:item.id,textValue:item==null?void 0:item.name,isDisabled:isDisabled,dismissable:true,children:item==null?void 0:item.name},item==null?void 0:item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
+FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,UNSTABLE_portalContainer:triggerRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){list.setSelectedKeys(new Set(Array.from(list.selectedKeys).filter(function(k){return!keys.has(k);})));},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item==null?void 0:item.id,textValue:item==null?void 0:item.name,isDisabled:isDisabled,dismissable:true,children:item==null?void 0:item.name},item==null?void 0:item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
 ;// ./packages/multi-select/src/index.ts
 
 
@@ -233,10 +276,90 @@ var theme=Object.assign({},tokens_namespaceObject);
 
 /***/ }),
 
-/***/ 42878:
+/***/ 60250:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ChevronLeft)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ChevronLeft = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ChevronLeft", [
+  ["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]
+]);
+
+
+//# sourceMappingURL=chevron-left.js.map
+
+
+/***/ }),
+
+/***/ 87677:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ChevronRight)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ChevronRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ChevronRight", [
+  ["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]
+]);
+
+
+//# sourceMappingURL=chevron-right.js.map
+
+
+/***/ }),
+
+/***/ 8866:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ SquareArrowOutUpRight)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const SquareArrowOutUpRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("SquareArrowOutUpRight", [
+  ["path", { d: "M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6", key: "y09zxi" }],
+  ["path", { d: "m21 3-9 9", key: "mpx6sq" }],
+  ["path", { d: "M15 3h6v6", key: "1q9fwt" }]
+]);
+
+
+//# sourceMappingURL=square-arrow-out-up-right.js.map
+
+
+/***/ }),
+
+/***/ 27648:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-178/blog/release-16","source":"@site/blog/release16.mdx","title":"Release 16","description":".","date":"2024-11-28T19:44:33.000Z","tags":[],"readingTime":1.18,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 16","description":".","slug":"release-16","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 17","permalink":"/pr-preview/pr-178/blog/release-17"},"nextItem":{"title":"Release 15","permalink":"/pr-preview/pr-178/blog/release-15"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-178/blog/release-15","source":"@site/blog/release15.mdx","title":"Release 15","description":".","date":"2024-11-15T07:33:50.000Z","tags":[],"readingTime":1.785,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 15","description":".","slug":"release-15","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 16","permalink":"/pr-preview/pr-178/blog/release-16"},"nextItem":{"title":"Release 14","permalink":"/pr-preview/pr-178/blog/release-14"}}');
 
 /***/ })
 
