@@ -1,8 +1,8 @@
-// import useDynamicImport from 'docusaurus-plugin-react-docgen-typescript'
+// @ts-ignore
+import {useDynamicImport} from 'docusaurus-plugin-react-docgen-typescript/useDynamicImport'
 import React from 'react'
 
 export const PropTable = ({ name }) => {
-  return null
 
   const props = useDynamicImport(name)
 
@@ -12,8 +12,8 @@ export const PropTable = ({ name }) => {
 
   return (
     <>
-      <table>
-        <thead>
+      <table style={{'fontSize':'small'}}>
+        <thead style={{'textAlign':'left'}}>
           <tr>
             <th>Name</th>
             <th>Type</th>
@@ -22,19 +22,19 @@ export const PropTable = ({ name }) => {
             <th>Description</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{'fontSize':'small'}}>
           {Object.keys(props).map((key) => {
             return (
               <tr key={key}>
                 <td>
-                  <code>{key}</code>
+                  <p>{key}</p>
                 </td>
                 <td>
-                  <code>{props[key].type?.name}</code>
+                  <p>{props[key].type?.name}</p>
                 </td>
                 <td>
                   {props[key].defaultValue && (
-                    <code>{props[key].defaultValue.value}</code>
+                    <p>{props[key].defaultValue.value}</p>
                   )}
                 </td>
                 <td>{props[key].required ? 'Yes' : 'No'}</td>
