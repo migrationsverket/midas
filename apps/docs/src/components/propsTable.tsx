@@ -1,10 +1,12 @@
-// @ts-ignore
-import {useDynamicImport} from 'docusaurus-plugin-react-docgen-typescript/useDynamicImport'
-import React from 'react'
+import useGlobalData from '@docusaurus/useGlobalData';
+import React from 'react';
+import {Props, ComponentDoc} from "react-docgen-typescript";
 
 export const PropTable = ({ name }) => {
 
-  const props = useDynamicImport(name)
+  const globalData = useGlobalData();
+  const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']['default'] as ComponentDoc[];
+  const props: Props = ComponentsDocs.find(componentDoc => componentDoc.displayName === name)?.props;
 
   if (!props) {
     return null

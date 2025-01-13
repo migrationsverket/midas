@@ -49,6 +49,7 @@ const config: Config = {
       /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
       {
         // pass in a single string or an array of strings
+        global: true,
         src: ["../../packages/**/src/lib/*.tsx"],
         ignore: ["../..packages/**/*test|spec|stories.*"],
         parserOptions: {
