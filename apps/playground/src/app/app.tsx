@@ -19,8 +19,7 @@ import {
   ToastProvider,
   MidasToastState
 } from '@midas-ds/toast'
-import { Progress, Steps, DynamicForm } from '@midas-ds/progress'
-
+import { Progress, Steps, DynamicForm, Checkboxes } from '@midas-ds/progress'
 
 export function App() {
   // const canProgress =
@@ -28,7 +27,8 @@ export function App() {
     { title: 'Step 1', canProgress: false, hasProgressed: false }, // Initial step, not progressed
     { title: 'Step 2', canProgress: false, hasProgressed: false }, // Initial step, not progressed
     { title: 'Step 3', canProgress: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 4', canProgress: false, hasProgressed: false } // Initial step, not progressed
+    { title: 'Step 4', canProgress: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 5', canProgress: false, hasProgressed: false } // Initial step, not progressed
   ]
 
   return (
@@ -68,10 +68,24 @@ export function App() {
         show global toast
       </Button>
       <h1>Playground app</h1>
-      
+
       <Progress steps={steps}>
-        <DynamicForm />
-    
+        <Checkboxes
+          onValueChange={value => console.log('from child ' + value)}
+          label={'Testing'}
+        />
+
+        <DynamicForm
+          onValueChange={value => console.log('from child ' + value)}
+        />
+        <Checkboxes
+          onValueChange={value => console.log('from child ' + value)}
+          label={'Testing'}
+        />
+
+        <DynamicForm
+          onValueChange={value => console.log('from child ' + value)}
+        />
       </Progress>
       <Select
         label={'select label'}
