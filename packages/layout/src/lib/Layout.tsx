@@ -41,7 +41,7 @@ interface App {
   color?: HEX
 }
 
-export interface MidasSidebar {
+export interface MidasLayout {
   items: SidebarLinkGroup[]
   title: string
   children: React.ReactNode
@@ -61,7 +61,16 @@ export interface MidasHeader {
   setIsCollapsed?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Layout: React.FC<MidasSidebar> = ({
+export interface MidasSidebar {
+  items: SidebarLinkGroup[]
+  app: App
+  isOpened?: boolean
+  isCollapsed: boolean
+  setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>
+  clientSideRouter?: (path: string, routerOptions: undefined) => void
+}
+
+export const Layout: React.FC<MidasLayout> = ({
   items,
   title,
   user,
@@ -86,6 +95,49 @@ export const Layout: React.FC<MidasSidebar> = ({
     }
   }, [])
 
+  return (
+    <div className={styles.baseLayout}>
+      <Header
+        title={title}
+        headerChildren={headerChildren}
+        user={user}
+        app={app}
+        isOpened={isOpened}
+        setIsOpened={setIsOpened}
+        setIsCollapsed={setIsCollapsed}
+      />
+      <div className={styles.mainContent}>
+        <Sidebar
+          items={items}
+          app={app}
+          isOpened={isOpened}
+          isCollapsed={isCollapsed}
+          setIsCollapsed={setIsCollapsed}
+          clientSideRouter={clientSideRouter}
+        />
+        <FlexItem>
+          <main className={styles.main}>
+            <div className={styles.app}>{children}</div>
+          </main>
+        </FlexItem>
+        <div
+          className={clsx(styles.backdrop, isOpened && styles.backdropOpened)}
+          onClick={() => setIsOpened(false)}
+          aria-hidden
+        />
+      </div>
+    </div>
+  )
+}
+
+export const Sidebar: React.FC<MidasSidebar> = ({
+  items,
+  app,
+  isOpened,
+  isCollapsed,
+  setIsCollapsed,
+  clientSideRouter
+}) => {
   const SidebarHeader = () => {
     return (
       <div className={styles.sidebarHeader}>
@@ -135,69 +187,44 @@ export const Layout: React.FC<MidasSidebar> = ({
   }
 
   return (
-    <div className={styles.baseLayout}>
-      <Header
-        title={title}
-        headerChildren={headerChildren}
-        user={user}
-        app={app}
-        isOpened={isOpened}
-        setIsOpened={setIsOpened}
-        setIsCollapsed={setIsCollapsed}
-      />
-      <div className={styles.mainContent}>
-        <aside
-          id='midasMainMenu'
-          className={clsx(
-            styles.sidebar,
-            isCollapsed && styles.sidebarCollapsed,
-            isOpened && styles.sidebarOpened
-          )}
+    <aside
+      id='midasMainMenu'
+      className={clsx(
+        styles.sidebar,
+        isCollapsed && styles.sidebarCollapsed,
+        isOpened && styles.sidebarOpened
+      )}
+    >
+      <SidebarHeader />
+      <nav className={styles.sidebarNav}>
+        <ul className={styles.list}>
+          {items.map((group, i) => (
+            <li key={'list_' + i}>
+              {group.title && !isCollapsed && (
+                <p className={styles.listGroupTitle}>{group.title}</p>
+              )}
+              {clientSideRouter ? (
+                <RouterProvider navigate={clientSideRouter}>
+                  <LinkTree group={group} />
+                </RouterProvider>
+              ) : (
+                <LinkTree group={group} />
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div className={styles.sidebarFooter}>
+        <Button
+          variant='tertiary'
+          aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
+          onPress={() => setIsCollapsed(!isCollapsed)}
+          className={styles.collapseButton}
         >
-          <SidebarHeader />
-          <nav className={styles.sidebarNav}>
-            <ul className={styles.list}>
-              {items.map((group, i) => (
-                <li key={'list_' + i}>
-                  {group.title && !isCollapsed && (
-                    <p className={styles.listGroupTitle}>{group.title}</p>
-                  )}
-                  {clientSideRouter ? (
-                    <RouterProvider navigate={clientSideRouter}>
-                      <LinkTree group={group} />
-                    </RouterProvider>
-                  ) : (
-                    <LinkTree group={group} />
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className={styles.sidebarFooter}>
-            <Button
-              variant='tertiary'
-              aria-label={
-                isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'
-              }
-              onPress={() => setIsCollapsed(!isCollapsed)}
-              className={styles.collapseButton}
-            >
-              {isCollapsed ? <PanelRightClose /> : <PanelLeftClose />}
-            </Button>
-          </div>
-        </aside>
-        <FlexItem>
-          <main className={styles.main}>
-            <div className={styles.app}>{children}</div>
-          </main>
-        </FlexItem>
-        <div
-          className={clsx(styles.backdrop, isOpened && styles.backdropOpened)}
-          onClick={() => setIsOpened(false)}
-          aria-hidden
-        />
+          {isCollapsed ? <PanelRightClose /> : <PanelLeftClose />}
+        </Button>
       </div>
-    </div>
+    </aside>
   )
 }
 

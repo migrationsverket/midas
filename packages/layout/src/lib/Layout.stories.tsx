@@ -9,6 +9,7 @@ const meta: Meta<typeof Layout> = {
   title: 'Components/Layout',
   parameters: { layout: 'fullscreen' }
 }
+
 export default meta
 type Story = StoryObj<typeof Layout>
 
