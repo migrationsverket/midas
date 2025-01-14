@@ -10,7 +10,7 @@ import preserveDirectives from 'rollup-preserve-directives'
 
 export default defineConfig({
   root: __dirname,
-  cacheDir: '../../node_modules/.vite/packages/sidebar',
+  cacheDir: '../../node_modules/.vite/packages/layout',
   plugins: [
     react(),
     nxViteTsPaths(),
@@ -29,7 +29,7 @@ export default defineConfig({
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
   build: {
-    outDir: '../../dist/packages/sidebar',
+    outDir: '../../dist/packages/layout',
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {

@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react'
 
-import { Sidebar } from './sidebar'
+import { Layout } from './Layout'
 
 describe('Sidebar', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <Sidebar
+      <Layout
         items={[]}
         title={''}
         children={undefined}

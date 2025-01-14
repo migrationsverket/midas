@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Header, Sidebar, SidebarLinkGroup } from './Sidebar'
+import { Header, Layout, SidebarLinkGroup } from './Layout'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
 import { baseColors } from '@midas-ds/theme'
 import { LinkButton } from '@midas-ds/link-button'
 
-const meta: Meta<typeof Sidebar> = {
-  component: Sidebar,
-  title: 'Components/Sidebar',
+const meta: Meta<typeof Layout> = {
+  component: Layout,
+  title: 'Components/Layout',
   parameters: { layout: 'fullscreen' }
 }
 export default meta
-type Story = StoryObj<typeof Sidebar>
+type Story = StoryObj<typeof Layout>
 
 const items: SidebarLinkGroup[] = [
   {

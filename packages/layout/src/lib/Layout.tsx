@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './Sidebar.module.css'
+import styles from './Layout.module.css'
 import {
   LucideIcon,
   Menu,
@@ -61,7 +61,7 @@ export interface MidasHeader {
   setIsCollapsed?: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Sidebar: React.FC<MidasSidebar> = ({
+export const Layout: React.FC<MidasSidebar> = ({
   items,
   title,
   user,
