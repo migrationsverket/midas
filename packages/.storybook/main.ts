@@ -2,42 +2,42 @@ import type { StorybookConfig } from '@storybook/react-vite'
 
 const config: StorybookConfig = {
   core: {
-    disableTelemetry: true,
+    disableTelemetry: true
   },
   stories: [
     '../../**/src/lib/**/*.docs.@(md|mdx)',
-    '../../**/src/lib/**/*.stories.@(js|jsx|ts|tsx)',
+    '../../**/src/lib/**/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
+    '@storybook/addon-a11y'
   ],
   framework: {
     name: '@storybook/react-vite',
     options: {
       builder: {
-        viteConfigPath: 'packages/ui/vite.config.ts',
-      },
-    },
+        viteConfigPath: 'packages/ui/vite.config.ts'
+      }
+    }
   },
   staticDirs: ['./static'],
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       compilerOptions: {
-        allowSyntheticDefaultImports: false,
-        esModuleInterop: false,
+        allowSyntheticDefaultImports: true,
+        esModuleInterop: false
       },
       // Filter out third-party props from node_modules except @mui packages.
-      propFilter: (prop) =>
+      propFilter: prop =>
         prop.parent
           ? !/node_modules\/(?!react-aria-components)/.test(
               prop.parent.fileName
             )
-          : true,
-    },
-  },
+          : true
+    }
+  }
 }
 
 export default config
