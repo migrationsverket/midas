@@ -11,8 +11,6 @@ import { Props, ComponentDoc } from 'react-docgen-typescript'
 export const PropTable = ({ name }) => {
   const globalData = useGlobalData()
 
-  console.log(globalData)
-
   const ComponentsDocs = globalData[
     'docusaurus-plugin-react-docgen-typescript'
   ]['default'] as ComponentDoc[]
