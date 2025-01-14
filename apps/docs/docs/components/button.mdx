@@ -45,7 +45,7 @@ Den primära knapp används för den primära/positiva handlingar i ett flöde (
   hideCode
   scope={{ Flex, FlexItem, Button }}
 >
-  {`<Flex>
+  {`<Flex fluid>
   <FlexItem col="auto">
     <Button>Slutför</Button>
   </FlexItem>
@@ -60,7 +60,7 @@ Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Till
   hideCode
   scope={{ Flex, FlexItem, Button }}
 >
-  {`<Flex>
+  {`<Flex fluid>
   <FlexItem col="auto">
     <Button variant={'secondary'}>Tillbaka</Button>
   </FlexItem>
@@ -86,7 +86,7 @@ Om den tertiära knappen används fristående från andra knappar ska den ha en 
 Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
 <LiveCodeBlock scope={{ Flex, FlexItem, Button, Plus }}>
-  {`<Flex>
+  {`<Flex fluid>
   <FlexItem col="auto">
     <Button
       icon={Plus}
