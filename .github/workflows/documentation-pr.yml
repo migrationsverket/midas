@@ -38,8 +38,10 @@ jobs:
 
       - name: Build website
         if: github.event.action != 'closed'
-        run: npx nx run docs:build --minify=false --outputPath=build
+        working-directory: ./apps/docs
+        run: npx docusaurus build out-dir=../../build
       - name: Build storybook
+        working-directory: ./
         if: github.event.action != 'closed'
         run: npx nx run ui:build-storybook:ci
 
