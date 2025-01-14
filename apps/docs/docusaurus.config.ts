@@ -63,7 +63,19 @@ const config: Config = {
       return result
     }
   },
-  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
+  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock',
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        // reference: https://github.com/easyops-cn/docusaurus-search-local
+        hashed: true,
+        docsRouteBasePath: '/',
+        language: ['sv','en'],
+        searchBarShortcut: true,
+        highlightSearchTermsOnTargetPage: false,
+      }
+    ]
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
