@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5605],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[8116],{
 
-/***/ 57075:
+/***/ 85107:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_checkbox_mdx_1c7_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_table_mdx_903_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-checkbox-mdx-1c7.json
-const site_docs_components_checkbox_mdx_1c7_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/checkbox","title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","source":"@site/docs/components/checkbox.mdx","sourceDirName":"components","slug":"/components/checkbox","permalink":"/pr-preview/pr-184/components/checkbox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-table-mdx-903.json
+const site_docs_components_table_mdx_903_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/table","title":"Table","description":"En enkel tabell för att visualisera data.","source":"@site/docs/components/table.mdx","sourceDirName":"components","slug":"/components/table","permalink":"/pr-preview/pr-184/components/table","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Table","description":"En enkel tabell för att visualisera data.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -31,22 +31,18 @@ var TabItem = __webpack_require__(19365);
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/checkbox.json
-const checkbox_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/checkbox@1.0.3","_rev":"9-767071df178ceb9b6bff2db579c9e9b9","name":"@midas-ds/checkbox","dist-tags":{"latest":"1.0.3"},"versions":["0.3.28","0.4.0","0.5.0","0.5.1","0.5.2","0.6.0","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:36:11.026Z","modified":"2024-12-02T09:03:15.017Z","0.3.28":"2024-09-10T14:36:11.408Z","0.4.0":"2024-09-12T09:14:34.093Z","0.5.0":"2024-09-12T12:23:17.089Z","0.5.1":"2024-09-12T13:02:08.142Z","0.5.2":"2024-09-24T14:55:11.723Z","0.6.0":"2024-10-07T12:08:59.780Z","1.0.0":"2024-10-18T13:40:39.690Z","1.0.1":"2024-10-24T13:26:14.645Z","1.0.2":"2024-11-15T14:05:46.379Z","1.0.3":"2024-12-02T09:03:14.811Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/checkbox ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":16223,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-SeURf24EoizN5/o2CdUnisZNeCya/KNqdAxAR0lNc842jPs8sGknhv+Woy8QTKswALTk0PrSP3Q/4MvdpFabNQ==","shasum":"ae85582bb5babc838de8d208858274d5541e5df3","tarball":"https://registry.npmjs.org/@midas-ds/checkbox/-/checkbox-1.0.3.tgz","fileCount":10,"unpackedSize":125993,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQDQJR84xvAX4KcEIR2HUjIZiSMiqnOBXNu9kx+eefUwPgIgCzdqT1+dzBwKuWSuM1IuCeo4ikBmi21hnIXLcK7dosY="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/checkbox_1.0.3_1733130194590_0.7249133325380819"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
-var src = __webpack_require__(61813);
+;// ./apps/docs/static/data/table.json
+const table_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/table@1.0.4","_rev":"7-ba430d99a974fdb0491d979cb7f2e269","name":"@midas-ds/table","dist-tags":{"latest":"1.0.4"},"versions":["0.0.1","0.1.0","0.1.1","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-12T12:49:17.620Z","modified":"2024-12-02T09:04:01.090Z","0.1.0":"2024-09-12T12:49:18.018Z","0.0.1":"2024-09-12T13:02:24.470Z","0.1.1":"2024-10-07T12:24:13.653Z","1.0.0":"2024-10-18T13:40:53.378Z","1.0.1":"2024-10-24T13:26:53.159Z","1.0.2":"2024-11-01T10:27:46.398Z","1.0.3":"2024-11-15T14:06:34.093Z","1.0.4":"2024-12-02T09:04:00.858Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/table ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13754,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"publishConfig":{"access":"public"},"dependencies":{"@midas-ds/checkbox":"1.0.3","react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-GWbXIbkpH9wExNa4th500GJK32qmsvOUdSmwFUakyrydRS8uZCXTXRgaxPVhlminijwURzCFr5NbrzlulhLx0Q==","shasum":"c951ef702b80a2eb0337040dd526c8460e8af15b","tarball":"https://registry.npmjs.org/@midas-ds/table/-/table-1.0.4.tgz","fileCount":8,"unpackedSize":436020,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIApi0ApsL9h4jiX3ytUeX+n71pjuHPbLc3PFUp8JFz1HAiEA6JUnaPKt0QemLutYFfubNgKl+FpC0J+OkXM5griyZKc="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/table_1.0.4_1733130240676_0.2392992661689648"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/table/src/index.ts + 2 modules
+var src = __webpack_require__(24926);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-// EXTERNAL MODULE: ./packages/flex/src/index.ts + 4 modules
-var flex_src = __webpack_require__(93294);
-// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
-var button_src = __webpack_require__(63918);
-;// ./apps/docs/docs/components/checkbox.mdx
+;// ./apps/docs/docs/components/table.mdx
 
 
 const frontMatter = {
-	title: 'Checkbox',
-	description: 'Används för att låta användaren välja inget, ett eller flera alternativ.',
+	title: 'Table',
+	description: 'En enkel tabell för att visualisera data.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -65,69 +61,42 @@ const assets = {
 
 
 
-
-
 const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Gruppera flera checkboxar",
-  "id": "gruppera-flera-checkboxar",
+  "value": "Väljbara rader",
+  "id": "väljbara-rader",
   "level": 3
 }, {
-  "value": "Etikett och beskrivning",
-  "id": "etikett-och-beskrivning",
+  "value": "Smalare rader",
+  "id": "smalare-rader",
   "level": 3
 }, {
-  "value": "Disabled",
-  "id": "disabled",
-  "level": 3
-}, {
-  "value": "Validering",
-  "id": "validering",
-  "level": 3
-}, {
-  "value": "Readonly och defaultSelected",
-  "id": "readonly-och-defaultselected",
-  "level": 3
-}, {
-  "value": "Välj alla",
-  "id": "välj-alla",
-  "level": 3
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
+  "value": "Randiga rader",
+  "id": "randiga-rader",
   "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
-    li: "li",
-    mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Checkbox',
-      info: checkbox_namespaceObject,
-      friendlyName: 'Kryssruta'
+      name: 'Table',
+      info: table_namespaceObject,
+      friendlyName: 'Tabell'
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det är många alternativ så bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-184/components/multi-select",
-        children: "MultiSelect"
-      }), " användas istället."]
+      children: ["En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Select"
+      }), " för att filtrera eller liknande."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -138,7 +107,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/checkbox\n"
+            children: "npm install @midas-ds/table\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -147,7 +116,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/checkbox\n"
+            children: "yarn add @midas-ds/table\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -156,191 +125,156 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/checkbox\n"
+            children: "pnpm add @midas-ds/table\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Checkbox } from '@midas-ds/checkbox'\n;<Checkbox>Jag godkänner villkoren</Checkbox>\n"
+        children: "import { Table } from '@midas-ds/table'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "id"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "const columns = [\n  { name: 'Namn', id: 'name', isRowHeader: true },\n  { name: 'Beskrivning', id: 'desc', width: 'max-content' }\n]\n\nconst rows = fruits.map(fruit => {\n  return {\n    id: fruit.value,\n    name: fruit.name,\n    desc: fruit.description\n  }\n})\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Checkbox: src/* Checkbox */.S,
-        Flex: flex_src/* Flex */.s,
-        FlexItem: flex_src/* FlexItem */.Z,
-        Button: button_src/* Button */.$n
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
       },
-      children: `<Flex>
-  <FlexItem style={{alignSelf: 'center'}}>
-    <Checkbox>Jag godkänner villkoren</Checkbox>
-  </FlexItem>
-  <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
-    <Button
-      variant='secondary'
-    >
-      Bakåt
-    </Button>
-    <Button>Fortsätt</Button>
-  </FlexItem>
-</Flex>`
+      children: `<Table
+  aria-label="Frukter"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "gruppera-flera-checkboxar",
-      children: "Gruppera flera checkboxar"
+      id: "väljbara-rader",
+      children: "Väljbara rader"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Tabellen har inbyggd funktion för att kunna välja en eller flera rader med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "selectionMode"
+      }), " vilket kan vara antingen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "single"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "multiple"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
+      },
+      children: `<Table
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "smalare-rader",
+      children: "Smalare rader"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " för att gruppera flera checkboxar som hör samman."]
+        children: "narrow"
+      }), " om du vill ha en mindre tabell."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Checkbox: src/* Checkbox */.S,
-        CheckboxGroup: src/* CheckboxGroup */.$
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
       },
-      children: `<CheckboxGroup
-      label='Etikett'
-      description='Beskrivande text'
-    >
-      <Checkbox value='1'>Jag har läst texten</Checkbox>
-      <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
-      <Checkbox value='3'>Jag är över 20 år gammal</Checkbox>
-  </CheckboxGroup>
-`
+      children: `<Table
+  narrow
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "etikett-och-beskrivning",
-      children: "Etikett och beskrivning"
+      id: "randiga-rader",
+      children: "Randiga rader"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Etikett för enskild checkbox sätts i template via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Checkbox>Etikett</Checkbox>"
-      }), ". ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " har en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "label"
-      }), " och en ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "desciption"
-      }), " för ytterligare förklarande text."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "disabled",
-      children: "Disabled"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["När en kryssruta inte är tillämplig i den aktuella situationen ska kryssruta och fältetikett tonas ned via attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isDisabled"
-      }), " men inte tas bort."]
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "striped"
+      }), " om du vill ha en randig tabell."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Checkbox: src/* Checkbox */.S
+        Table: src/* Table */.XI,
+        TableHeader: src/* TableHeader */.A0,
+        TableBody: src/* TableBody */.BF,
+        Column: src/* Column */.VP,
+        Row: src/* Row */.fI,
+        Cell: src/* Cell */.fh
       },
-      children: `<Checkbox
-      isDisabled
-      isSelected
-    >
-      Jag har läst texten
-  </Checkbox>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Används prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isInvalid"
-      }), " och implementera lämplig logik för att hantera fel och felmeddelanden. Se ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html#validation",
-        children: "React Aria"
-      }), "\nför ytterligare referens."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: src/* Checkbox */.S,
-        CheckboxGroup: src/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-    label="Bekräfta att du är med på tåget"
-    errorMessage="Det här ser inte bra ut!"
-    isInvalid
-  >
-    <Checkbox
-      value="1"
-      isRequired
-    >
-      Jag har läst texten
-    </Checkbox>
-    <Checkbox
-      value="2"
-      isRequired
-    >
-      Jag godkänner villkoren
-    </Checkbox>
-</CheckboxGroup>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "readonly-och-defaultselected",
-      children: "Readonly och defaultSelected"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isReadonly"
-      }), " när användaren inte ska kunna påverka checkboxens tillstånd. ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "defaultSelected"
-      }), " sätter checkboxen i ett\nvalt läge."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "välj-alla",
-      children: "Välj alla"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Ibland kan det vara lämligt att inkludera en checkbox för att \"Välja alla\". Denna funktion finns inbyggt i ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup />"
-      }), " via egenskapen: showSelectAll"]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: src/* Checkbox */.S,
-        CheckboxGroup: src/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-  label={'Välj en frukt'}
-  description={'Välj alla eller bara några'}
-  showSelectAll
-  >
-    <Checkbox
-      value="1"
-      isRequired
-    >
-      Jag har läst texten
-    </Checkbox>
-    <Checkbox
-      value="2"
-      isRequired
-    >
-      Jag godkänner villkoren
-    </Checkbox>
-</CheckboxGroup>
-`
+      children: `<Table
+  striped
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: checkbox_namespaceObject
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]:::primary\n  A ---> C[2 - 4]:::primary\n  A ---> D[5 - 10]\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]:::primary\n  C ---> G[Hur många val kan göras?]:::primary\n  G --->|Flera| F:::primary\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt"
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Om flera kryssrutor är placerade under varandra, kan det ibland vara lämpligt att användaren kan markera alla kryssrutor\ngenom att klicka i det översta alternativet, ”Alla”, som är placerat direkt ovanför de ordinarie kryssrutorna.\nRutan ska vara avmarkerad tills användaren klickar i den och då ska alla följande rutor och eventuella subrutor markeras.\nOm användaren väljer att avmarkera en post så ska kryssrutan avmarkeras."
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas."
-        }), "\n"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["\n", (0,jsx_runtime.jsx)(_components.p, {
-          children: "Fältetikett ska inledas med en stor bokstav och inte följas av punkt."
-        }), "\n"]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: checkbox_namespaceObject
+      info: table_namespaceObject
     })]
   });
 }
@@ -393,7 +327,7 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var _midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17986);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(96540);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
-var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:'docs',children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Visa props"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Nej'})]},key);})})]})})]})});};
+var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;console.log(props);var _Object$entries$reduc=Object.entries(props).reduce(function(acc,_ref2){var key=_ref2[0],value=_ref2[1];if(key.startsWith('on')){acc.events[key]=value;}else if(key.startsWith('aria-')){acc.accessibility[key]=value;}else{acc.rest[key]=value;}return acc;},{events:{},accessibility:{},rest:{}}),events=_Object$entries$reduc.events,accessibility=_Object$entries$reduc.accessibility,rest=_Object$entries$reduc.rest;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(rest).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Ja'}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"events",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Events"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(events).map(function(key){var _props$key$type2;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type2=props[key].type)==null?void 0:_props$key$type2.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"accessibility",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Tillg\xE4nglighet"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(accessibility).map(function(key){var _props$key$type3;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type3=props[key].type)==null?void 0:_props$key$type3.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]})]})]});};
 
 /***/ }),
 
@@ -437,6 +371,53 @@ react.useEffect(function(){var _state$value,_state$value2;var amountOfChildren=c
 ;// ./packages/checkbox/src/lib/index.ts
 
 ;// ./packages/checkbox/src/index.ts
+
+
+/***/ }),
+
+/***/ 24926:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  fh: () => (/* reexport */ Cell),
+  VP: () => (/* reexport */ Column),
+  fI: () => (/* reexport */ Row),
+  XI: () => (/* reexport */ Table),
+  BF: () => (/* reexport */ dist_Table/* TableBody */.BF),
+  A0: () => (/* reexport */ TableHeader)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
+var objectDestructuringEmpty = __webpack_require__(20454);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/table/src/lib/Table.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Table_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray30":"#d9d9d9","gray40":"#cccccc","gray60":"#b3b3b3","mediumWeight":"500","cell":"cell_AsQp","table":"table_FqqN","narrow":"narrow_WZlN","striped":"striped__cZi","row":"row_evpi","tableHeader":"tableHeader_gdzy","column":"column_Ddxt"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
+var dist_Table = __webpack_require__(53790);
+// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
+var CollectionBuilder = __webpack_require__(41177);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
+var Button = __webpack_require__(44080);
+// EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
+var src = __webpack_require__(61813);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/grip-vertical.js
+var grip_vertical = __webpack_require__(21436);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-up-wide-narrow.js
+var arrow_up_wide_narrow = __webpack_require__(4804);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-narrow-wide.js
+var arrow_down_narrow_wide = __webpack_require__(85785);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/table/src/lib/Table.tsx
+'use client';var _excluded=["narrow","striped"],_excluded2=["id","columns","children"],_excluded3=["children"];var Table=function Table(_ref){var narrow=_ref.narrow,striped=_ref.striped,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames=(0,clsx/* default */.A)(Table_module.table,narrow&&Table_module.narrow,striped&&Table_module.striped);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Table */.XI,Object.assign({className:classNames},rest));};var TableHeader=function TableHeader(_ref2){var columns=_ref2.columns,children=_ref2.children;var _useTableOptions=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions.selectionBehavior,selectionMode=_useTableOptions.selectionMode,allowsDragging=_useTableOptions.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableHeader */.A0,{className:Table_module.tableHeader,children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{width:50,children:selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]});};var Row=function Row(_ref3){var id=_ref3.id,columns=_ref3.columns,children=_ref3.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded2);var _useTableOptions2=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions2.selectionBehavior,allowsDragging=_useTableOptions2.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* Row */.fI,Object.assign({id:id,className:(0,clsx/* default */.A)(Table_module.row)},rest,{children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"drag",children:/*#__PURE__*/(0,jsx_runtime.jsx)(grip_vertical/* default */.A,{size:20})})}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]}));};var Column=function Column(_ref4){var _children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Column */.VP,Object.assign({className:Table_module.column},rest,{children:function children(_ref5){var allowsSorting=_ref5.allowsSorting,sortDirection=_ref5.sortDirection;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[_children,allowsSorting&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",className:"sort-indicator",children:sortDirection==='ascending'?/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_wide_narrow/* default */.A,{size:20}):/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_narrow_wide/* default */.A,{size:20})})]});}}));};var Cell=function Cell(_ref6){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref6),_ref6));return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Cell */.fh,Object.assign({className:Table_module.cell},rest));};
+;// ./packages/table/src/index.ts
 
 
 /***/ }),
@@ -740,123 +721,6 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
-
-/***/ }),
-
-/***/ 87979:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
-/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
-/* harmony export */ });
-/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
-
-
-
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-const $5c3e21d68f1c4674$var$styles = {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    clipPath: 'inset(50%)',
-    height: '1px',
-    margin: '-1px',
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    width: '1px',
-    whiteSpace: 'nowrap'
-};
-function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
-    let { style: style, isFocusable: isFocusable } = props;
-    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
-        isDisabled: !isFocusable,
-        onFocusWithinChange: (val)=>setFocused(val)
-    });
-    // If focused, don't hide the element.
-    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
-        if (isFocused) return style;
-        else if (style) return {
-            ...$5c3e21d68f1c4674$var$styles,
-            ...style
-        };
-        else return $5c3e21d68f1c4674$var$styles;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [
-        isFocused
-    ]);
-    return {
-        visuallyHiddenProps: {
-            ...focusWithinProps,
-            style: combinedStyles
-        }
-    };
-}
-function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
-    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
-}
-
-
-
-//# sourceMappingURL=VisuallyHidden.module.js.map
-
-
-/***/ }),
-
-/***/ 32373:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A3: () => (/* binding */ $4e85f108e88277b8$export$d688439359537581),
-/* harmony export */   BP: () => (/* binding */ $4e85f108e88277b8$export$b085522c77523c51)
-/* harmony export */ });
-/* unused harmony exports ColorAreaContext, ColorFieldContext, ColorSliderContext, ColorWheelContext */
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-/*
- * Copyright 2024 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the 'License');
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-const $4e85f108e88277b8$export$b085522c77523c51 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$ebe63fadcdce34ed = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$44644b8a16031b5b = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$717b2c0a523a0b53 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$265015d6dc85bf21 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
-const $4e85f108e88277b8$export$d688439359537581 = (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-
-
-
-//# sourceMappingURL=RSPContexts.module.js.map
-
 
 /***/ })
 

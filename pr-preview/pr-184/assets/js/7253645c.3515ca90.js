@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[8116],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7470],{
 
-/***/ 85107:
+/***/ 73873:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_table_mdx_903_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_multi_select_mdx_725_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-table-mdx-903.json
-const site_docs_components_table_mdx_903_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/table","title":"Table","description":"En enkel tabell för att visualisera data.","source":"@site/docs/components/table.mdx","sourceDirName":"components","slug":"/components/table","permalink":"/pr-preview/pr-184/components/table","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Table","description":"En enkel tabell för att visualisera data.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-multi-select-mdx-725.json
+const site_docs_components_multi_select_mdx_725_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/multi-select","title":"MultiSelect","description":"<ComponentHeader","source":"@site/docs/components/multi-select.mdx","sourceDirName":"components","slug":"/components/multi-select","permalink":"/pr-preview/pr-184/components/multi-select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"MultiSelect","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,22 +27,21 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
+// EXTERNAL MODULE: ./packages/multi-select/src/index.ts + 5 modules
+var src = __webpack_require__(21464);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/table.json
-const table_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/table@1.0.4","_rev":"7-ba430d99a974fdb0491d979cb7f2e269","name":"@midas-ds/table","dist-tags":{"latest":"1.0.4"},"versions":["0.0.1","0.1.0","0.1.1","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-12T12:49:17.620Z","modified":"2024-12-02T09:04:01.090Z","0.1.0":"2024-09-12T12:49:18.018Z","0.0.1":"2024-09-12T13:02:24.470Z","0.1.1":"2024-10-07T12:24:13.653Z","1.0.0":"2024-10-18T13:40:53.378Z","1.0.1":"2024-10-24T13:26:53.159Z","1.0.2":"2024-11-01T10:27:46.398Z","1.0.3":"2024-11-15T14:06:34.093Z","1.0.4":"2024-12-02T09:04:00.858Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/table ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":13754,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"publishConfig":{"access":"public"},"dependencies":{"@midas-ds/checkbox":"1.0.3","react-aria-components":"^1.1.1","lucide-react":"^0.453.0"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-GWbXIbkpH9wExNa4th500GJK32qmsvOUdSmwFUakyrydRS8uZCXTXRgaxPVhlminijwURzCFr5NbrzlulhLx0Q==","shasum":"c951ef702b80a2eb0337040dd526c8460e8af15b","tarball":"https://registry.npmjs.org/@midas-ds/table/-/table-1.0.4.tgz","fileCount":8,"unpackedSize":436020,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIApi0ApsL9h4jiX3ytUeX+n71pjuHPbLc3PFUp8JFz1HAiEA6JUnaPKt0QemLutYFfubNgKl+FpC0J+OkXM5griyZKc="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/table_1.0.4_1733130240676_0.2392992661689648"},"_hasShrinkwrap":false}');
-// EXTERNAL MODULE: ./packages/table/src/index.ts + 2 modules
-var src = __webpack_require__(24926);
+// EXTERNAL MODULE: ./apps/docs/static/data/select.json
+var data_select = __webpack_require__(41229);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/table.mdx
+;// ./apps/docs/docs/components/multi-select.mdx
 
 
 const frontMatter = {
-	title: 'Table',
-	description: 'En enkel tabell för att visualisera data.',
+	title: 'MultiSelect',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -66,37 +65,40 @@ const toc = [{
   "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Väljbara rader",
-  "id": "väljbara-rader",
-  "level": 3
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
 }, {
-  "value": "Smalare rader",
-  "id": "smalare-rader",
-  "level": 3
-}, {
-  "value": "Randiga rader",
-  "id": "randiga-rader",
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
   "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
+    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Table',
-      info: table_namespaceObject,
-      friendlyName: 'Tabell'
+      name: 'MultiSelect',
+      info: data_select,
+      friendlyName: 'Flerval, multiväljare, dropdown',
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "Select"
-      }), " för att filtrera eller liknande."]
+      children: ["MultiSelect är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "ett eller flera"
+      }), " alternativ från en längre lista. Om det är endast är ett fåtal alternativ bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-184/components/checkbox",
+        children: "Checkbox"
+      }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -107,7 +109,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/table\n"
+            children: "npm install @midas-ds/select\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -116,7 +118,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/table\n"
+            children: "yarn add @midas-ds/select\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -125,156 +127,35 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/table\n"
+            children: "pnpm add @midas-ds/select\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Table } from '@midas-ds/table'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "id"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "const columns = [\n  { name: 'Namn', id: 'name', isRowHeader: true },\n  { name: 'Beskrivning', id: 'desc', width: 'max-content' }\n]\n\nconst rows = fruits.map(fruit => {\n  return {\n    id: fruit.value,\n    name: fruit.name,\n    desc: fruit.description\n  }\n})\n"
+        children: "import { MultiSelect } from '@midas-ds/multi-select'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
+        MultiSelect: src/* MultiSelect */.K
       },
-      children: `<Table
-  aria-label="Frukter"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "väljbara-rader",
-      children: "Väljbara rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Tabellen har inbyggd funktion för att kunna välja en eller flera rader med ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "selectionMode"
-      }), " vilket kan vara antingen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "single"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "multiple"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
-      },
-      children: `<Table
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "smalare-rader",
-      children: "Smalare rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "narrow"
-      }), " om du vill ha en mindre tabell."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
-      },
-      children: `<Table
-  narrow
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "randiga-rader",
-      children: "Randiga rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "striped"
-      }), " om du vill ha en randig tabell."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: src/* Table */.XI,
-        TableHeader: src/* TableHeader */.A0,
-        TableBody: src/* TableBody */.BF,
-        Column: src/* Column */.VP,
-        Row: src/* Row */.fI,
-        Cell: src/* Cell */.fh
-      },
-      children: `<Table
-  striped
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
+      children: `<MultiSelect
+      label="Vad är din favoritfrukt?"
+      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+/>`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: table_namespaceObject
+      info: data_select
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]:::primary\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+    }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
+      info: data_select
     })]
   });
 }
@@ -327,7 +208,7 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var _midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17986);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(96540);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
-var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:'docs',children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Visa props"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Nej'})]},key);})})]})})]})});};
+var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;console.log(props);var _Object$entries$reduc=Object.entries(props).reduce(function(acc,_ref2){var key=_ref2[0],value=_ref2[1];if(key.startsWith('on')){acc.events[key]=value;}else if(key.startsWith('aria-')){acc.accessibility[key]=value;}else{acc.rest[key]=value;}return acc;},{events:{},accessibility:{},rest:{}}),events=_Object$entries$reduc.events,accessibility=_Object$entries$reduc.accessibility,rest=_Object$entries$reduc.rest;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(rest).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Ja'}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"events",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Events"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(events).map(function(key){var _props$key$type2;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type2=props[key].type)==null?void 0:_props$key$type2.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"accessibility",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Tillg\xE4nglighet"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(accessibility).map(function(key){var _props$key$type3;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type3=props[key].type)==null?void 0:_props$key$type3.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]})]})]});};
 
 /***/ }),
 
@@ -375,49 +256,74 @@ react.useEffect(function(){var _state$value,_state$value2;var amountOfChildren=c
 
 /***/ }),
 
-/***/ 24926:
+/***/ 21464:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  fh: () => (/* reexport */ Cell),
-  VP: () => (/* reexport */ Column),
-  fI: () => (/* reexport */ Row),
-  XI: () => (/* reexport */ Table),
-  BF: () => (/* reexport */ dist_Table/* TableBody */.BF),
-  A0: () => (/* reexport */ TableHeader)
+  K: () => (/* reexport */ MultiSelect)
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
-var objectDestructuringEmpty = __webpack_require__(20454);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/table/src/lib/Table.module.css
+;// ./packages/multi-select/src/lib/MultiSelect.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Table_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray10":"#f2f2f2","gray30":"#d9d9d9","gray40":"#cccccc","gray60":"#b3b3b3","mediumWeight":"500","cell":"cell_AsQp","table":"table_FqqN","narrow":"narrow_WZlN","striped":"striped__cZi","row":"row_evpi","tableHeader":"tableHeader_gdzy","column":"column_Ddxt"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
-var dist_Table = __webpack_require__(53790);
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
+/* harmony default export */ const MultiSelect_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","button":"button_ICtj","icon":"icon_D7C5","multiSelect":"multiSelect_Eode","popover":"popover_jYDN","listBoxItem":"listBoxItem_c3_5"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 3 modules
+var Dialog = __webpack_require__(17772);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs + 1 modules
 var Button = __webpack_require__(44080);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 44 modules
+var Popover = __webpack_require__(86351);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/GridList.mjs + 1 modules
+var GridList = __webpack_require__(65379);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./packages/checkbox/src/index.ts + 4 modules
-var src = __webpack_require__(61813);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/grip-vertical.js
-var grip_vertical = __webpack_require__(21436);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-up-wide-narrow.js
-var arrow_up_wide_narrow = __webpack_require__(4804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-narrow-wide.js
-var arrow_down_narrow_wide = __webpack_require__(85785);
+var checkbox_src = __webpack_require__(61813);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
+var chevron_down = __webpack_require__(75107);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/tag/src/lib/Tag.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Tag_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","gray50":"#bfbfbf","gray30":"#d9d9d9","gray20":"#e6e6e6","gray10":"#f2f2f2","backgroundSecondary":"#f2f2f2","button":"button_KL5r","tag":"tag_QfCn","dismissable":"dismissable_Ta3F","tagText":"tagText_tTSG","tagList":"tagList_CRsJ"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 37 modules
+var dist_TagGroup = __webpack_require__(2790);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
+var button_src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/table/src/lib/Table.tsx
-'use client';var _excluded=["narrow","striped"],_excluded2=["id","columns","children"],_excluded3=["children"];var Table=function Table(_ref){var narrow=_ref.narrow,striped=_ref.striped,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames=(0,clsx/* default */.A)(Table_module.table,narrow&&Table_module.narrow,striped&&Table_module.striped);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Table */.XI,Object.assign({className:classNames},rest));};var TableHeader=function TableHeader(_ref2){var columns=_ref2.columns,children=_ref2.children;var _useTableOptions=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions.selectionBehavior,selectionMode=_useTableOptions.selectionMode,allowsDragging=_useTableOptions.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableHeader */.A0,{className:Table_module.tableHeader,children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{width:50,children:selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]});};var Row=function Row(_ref3){var id=_ref3.id,columns=_ref3.columns,children=_ref3.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded2);var _useTableOptions2=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions2.selectionBehavior,allowsDragging=_useTableOptions2.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* Row */.fI,Object.assign({id:id,className:(0,clsx/* default */.A)(Table_module.row)},rest,{children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"drag",children:/*#__PURE__*/(0,jsx_runtime.jsx)(grip_vertical/* default */.A,{size:20})})}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]}));};var Column=function Column(_ref4){var _children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Column */.VP,Object.assign({className:Table_module.column},rest,{children:function children(_ref5){var allowsSorting=_ref5.allowsSorting,sortDirection=_ref5.sortDirection;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[_children,allowsSorting&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",className:"sort-indicator",children:sortDirection==='ascending'?/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_wide_narrow/* default */.A,{size:20}):/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_narrow_wide/* default */.A,{size:20})})]});}}));};var Cell=function Cell(_ref6){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref6),_ref6));return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Cell */.fh,Object.assign({className:Table_module.cell},rest));};
-;// ./packages/table/src/index.ts
+;// ./packages/tag/src/lib/Tag.tsx
+var _excluded=["children"],_excluded2=["children","dismissable"];var TagGroup=function TagGroup(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagGroup */.CR,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{className:Tag_module.tagList,children:children})}));};var Tag=function Tag(_ref2){var children=_ref2.children,dismissable=_ref2.dismissable,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_TagGroup/* Tag */.vw,Object.assign({className:(0,clsx/* default */.A)(Tag_module.tag,dismissable&&Tag_module.dismissable)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Tag_module.tagText,children:children}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$n,{variant:"icon",size:"small",className:Tag_module.button,slot:"remove",children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})]}));};
+;// ./packages/tag/src/index.ts
+
+// EXTERNAL MODULE: ./node_modules/@react-stately/data/dist/useListData.mjs
+var useListData = __webpack_require__(7424);
+;// ./packages/multi-select/src/lib/MultiSelect.tsx
+'use client';var MultiSelect=function MultiSelect(_ref){var label=_ref.label,description=_ref.description,items=_ref.items,onSelectionChange=_ref.onSelectionChange,selectedKeys=_ref.selectedKeys,defaultSelectedKeys=_ref.defaultSelectedKeys,isDisabled=_ref.isDisabled,isInvalid=_ref.isInvalid,errorMessage=_ref.errorMessage;var triggerRef=react.useRef(null);var _React$useState=react.useState(undefined),popoverWidth=_React$useState[0],setPopoverWidth=_React$useState[1];var list=(0,useListData/* useListData */.u)({initialItems:items,initialSelectedKeys:defaultSelectedKeys});react.useEffect(function(){var updatePopoverWidth=function updatePopoverWidth(){if(triggerRef.current){setPopoverWidth(triggerRef.current.offsetWidth-2);}};updatePopoverWidth();window.addEventListener('resize',updatePopoverWidth);return function(){window.removeEventListener('resize',updatePopoverWidth);};},[]);react.useEffect(function(){if(onSelectionChange)onSelectionChange(new Set(list.selectedKeys));},[list.selectedKeys,onSelectionChange]);react.useEffect(function(){if(selectedKeys)list.setSelectedKeys(new Set(selectedKeys));// eslint-disable-next-line react-hooks/exhaustive-deps
+},[selectedKeys]);var tagList=list.selectedKeys==='all'?new Set(list.items.map(function(item){return item.id;})):list.selectedKeys;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.multiSelect,"data-disabled":isDisabled,"data-invalid":isInvalid,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(utils/* Provider */.Kq,{values:[[// we should maybe add more here
+// [LabelContext, {...labelProps, ref: labelRef}],
+// [InputContext, {...inputProps, ref: inputOrTextAreaRef}],
+// [TextAreaContext, {...inputProps, ref: inputOrTextAreaRef}],
+// [TextContext, {
+//   slots: {
+//     description: descriptionProps,
+//     errorMessage: errorMessageProps
+//   }
+// }],
+FieldError/* FieldErrorContext */.C,{isInvalid:isInvalid?isInvalid:false,validationErrors:[],validationDetails:{customError:isInvalid?isInvalid:false,badInput:false,patternMismatch:false,rangeOverflow:false,rangeUnderflow:false,stepMismatch:false,tooLong:false,tooShort:false,typeMismatch:false,valid:false,valueMissing:false}}]],children:[/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{className:MultiSelect_module.button,ref:triggerRef,isDisabled:isDisabled,children:["V\xE4lj",/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:MultiSelect_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:MultiSelect_module.popover,style:{width:popoverWidth},offset:0,UNSTABLE_portalContainer:triggerRef.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(GridList/* GridList */.FK,{"aria-label":label,selectionMode:"multiple",selectedKeys:list.selectedKeys,onSelectionChange:list.setSelectedKeys,children:list.items.map(function(item){return/*#__PURE__*/(0,jsx_runtime.jsxs)(GridList/* GridListItem */.KP,{id:item.id,textValue:item.name,className:MultiSelect_module.listBoxItem,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(checkbox_src/* Checkbox */.S,{slot:"selection"}),item.name]},item.id);})})})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,{"aria-label":"Valda",onRemove:function onRemove(keys){list.setSelectedKeys(new Set(Array.from(list.selectedKeys).filter(function(k){return!keys.has(k);})));},children:Array.from(tagList).map(function(key){var item=list.getItem(key);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{id:item==null?void 0:item.id,textValue:item==null?void 0:item.name,isDisabled:isDisabled,dismissable:true,children:item==null?void 0:item.name},item==null?void 0:item.id);})})]})});};/* harmony default export */ const lib_MultiSelect = ((/* unused pure expression or super */ null && (MultiSelect)));
+;// ./packages/multi-select/src/index.ts
 
 
 /***/ }),
@@ -721,6 +627,14 @@ webpackContext.keys = function webpackContextKeys() {
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = 35358;
+
+/***/ }),
+
+/***/ 41229:
+/***/ ((module) => {
+
+"use strict";
+module.exports = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/select@1.0.3","_rev":"10-b9137a40343380e9626995d3872c4003","name":"@midas-ds/select","dist-tags":{"latest":"1.0.3"},"versions":["0.4.23","0.4.24","0.4.25","0.5.0","0.5.2","1.0.0","1.0.1","1.0.2","1.0.3"],"time":{"created":"2024-09-10T14:38:16.404Z","modified":"2024-12-02T09:03:16.649Z","0.4.23":"2024-09-10T14:38:16.733Z","0.5.0":"2024-09-12T06:52:21.974Z","0.4.24":"2024-09-12T12:44:35.219Z","0.4.25":"2024-09-26T08:45:56.205Z","0.5.2":"2024-10-07T12:21:23.062Z","1.0.0":"2024-10-18T13:40:43.787Z","1.0.1":"2024-10-24T13:26:40.048Z","1.0.2":"2024-11-15T14:06:18.268Z","1.0.3":"2024-12-02T09:03:16.461Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/select ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":15116,"version":"1.0.3","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","dependencies":{"@midas-ds/theme":"^0.5.23","react-aria-components":"^1.1.0"},"peerDependencies":{"react":"^18.2.0"},"publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-OHDijTbHZ8NbGy4ZIFReihi065UZM2DE3u3Y1ulbiW9rapfDfcOpI8dlWM6/g6274QSicWU8klYBiYSRaSKkKA==","shasum":"bcf56f3901ff09c8f092dafca9eab9414acfcef7","tarball":"https://registry.npmjs.org/@midas-ds/select/-/select-1.0.3.tgz","fileCount":9,"unpackedSize":388710,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIQCwgrYc+pocmMRGjGZhwHXyaZMF9OoNsGO2V9iIpkj0hAIgYeBINzfuuMNfMpJE2f7W3cGJhuACudCJy0JXJK1uigk="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/select_1.0.3_1733130196313_0.19139238870590458"},"_hasShrinkwrap":false}');
 
 /***/ })
 

@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4730],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1680],{
 
-/***/ 45596:
+/***/ 93953:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_grid_mdx_93f_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_card_mdx_c20_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-grid-mdx-93f.json
-const site_docs_components_grid_mdx_93f_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/grid","title":"Grid","description":"Grid baserat på tekniken display grid i css","source":"@site/docs/components/grid.mdx","sourceDirName":"components","slug":"/components/grid","permalink":"/pr-preview/pr-184/components/grid","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Grid","description":"Grid baserat på tekniken display grid i css","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-card-mdx-c20.json
+const site_docs_components_card_mdx_c20_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/card","title":"Card","description":"En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.","source":"@site/docs/components/card.mdx","sourceDirName":"components","slug":"/components/card","permalink":"/pr-preview/pr-184/components/card","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Card","description":"En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +29,22 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
-var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/grid.json
-const grid_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/grid@1.0.2","_rev":"7-964b094f25813cb6d6daaa9ac7e5f88c","name":"@midas-ds/grid","dist-tags":{"latest":"1.0.2"},"versions":["0.0.1","0.1.0","0.1.1","0.1.2","1.0.0","1.0.1","1.0.2"],"time":{"created":"2024-09-10T14:37:08.211Z","modified":"2024-11-15T14:06:22.690Z","0.0.1":"2024-09-10T14:37:08.486Z","0.1.0":"2024-09-12T12:30:11.793Z","0.1.1":"2024-09-12T13:02:20.193Z","0.1.2":"2024-10-07T12:14:17.627Z","1.0.0":"2024-10-18T13:40:30.373Z","1.0.1":"2024-10-24T13:26:44.138Z","1.0.2":"2024-11-15T14:06:22.520Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/grid ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":11306,"version":"1.0.2","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.3.1"},"publishConfig":{"access":"public"},"gitHead":"ab5cd78ac08049bda4af96abc4842d7ec6a1091a","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-yY7bM2xFmQ57NPyqH9/LrGhOh6c8bPEsjAQ+1/aT7F+mZ4q1tyfqYSA2ywkkIJNj4HSn+DchLplKtbK0uB51pg==","shasum":"18baf7ea4e3102e48eeab93e8377dd9d88a8cb1c","tarball":"https://registry.npmjs.org/@midas-ds/grid/-/grid-1.0.2.tgz","fileCount":10,"unpackedSize":9151,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCICvsGlwjUmXIhraoUl75B2JjrN+tBQfPUYvc3BuoiFl5AiEA1tKJiHXC4pWmF4RlwTtMP3Vhv+rTvrw33DjnaaH6Z/g="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/grid_1.0.2_1731679582310_0.7297558576728485"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./packages/grid/src/index.ts + 4 modules
 var src = __webpack_require__(17172);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
+var getComponentMetaData = __webpack_require__(13225);
+;// ./apps/docs/static/data/card.json
+const card_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/card@2.0.0","_rev":"11-8ba39b2c52a3da13f2ebc8028689d5b7","name":"@midas-ds/card","dist-tags":{"latest":"2.0.0"},"versions":["0.2.5","0.2.6","0.3.0","0.3.1","0.3.2","0.3.3","0.3.4","1.0.0","1.0.1","1.0.2","2.0.0"],"time":{"created":"2024-09-10T14:35:59.668Z","modified":"2024-11-15T14:05:41.146Z","0.2.5":"2024-09-10T14:35:59.923Z","0.3.0":"2024-09-12T08:57:22.184Z","0.3.1":"2024-09-12T12:23:03.880Z","0.3.2":"2024-09-12T13:02:06.916Z","0.3.3":"2024-09-13T09:56:54.871Z","0.3.4":"2024-09-24T08:49:07.476Z","0.2.6":"2024-10-07T11:30:21.749Z","1.0.0":"2024-10-18T13:40:24.774Z","1.0.1":"2024-10-22T13:45:22.007Z","1.0.2":"2024-10-24T13:25:58.793Z","2.0.0":"2024-11-15T14:05:40.964Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/card ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":17713,"version":"2.0.0","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"dependencies":{"@midas-ds/link":"1.1.0"},"peerDependencies":{"react":"^18.2.0"},"gitHead":"660173f9a53a45cd053cc3ee2523dc3bcc65d9fa","publishConfig":{"access":"public"},"_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-Kf4f13nmDriSaCJZOgH0Pz+bRHWaCMV8/Wc5CWIE51a1Gi3y11u9ABZFDQXXagqgtNqyjSRWMIsfw164wU2VmA==","shasum":"6344cdfef71418ba1a0c277f03c0806b098ab160","tarball":"https://registry.npmjs.org/@midas-ds/card/-/card-2.0.0.tgz","fileCount":9,"unpackedSize":85165,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEUCIFPBn7VvmjXF+JTG79wiohd5uJogBtn+Oyq2cleqDbGtAiEArK4z6xsIsO5uwyYc/x2+u6d/dYDtIjmaN/fdMZGzvX0="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/card_2.0.0_1731679540815_0.906455460015436"},"_hasShrinkwrap":false}');
 // EXTERNAL MODULE: ./packages/card/src/index.ts + 3 modules
 var card_src = __webpack_require__(70720);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/grid.mdx
+;// ./apps/docs/docs/components/card.mdx
 
 
 const frontMatter = {
-	title: 'Grid',
-	description: 'Grid baserat på tekniken display grid i css',
+	title: 'Card',
+	description: 'En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -68,51 +68,24 @@ const toc = [{
   "value": "Installation och användning",
   "id": "installation-och-användning",
   "level": 2
-}, {
-  "value": "Grid",
-  "id": "grid",
-  "level": 3
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "När ska du använda Grid ?",
-  "id": "när-ska-du-använda-grid-",
-  "level": 3
-}, {
-  "value": "Så här använder du Grid",
-  "id": "så-här-använder-du-grid",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
-    table: "table",
-    tbody: "tbody",
-    td: "td",
-    th: "th",
-    thead: "thead",
-    tr: "tr",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Grid',
-      info: grid_namespaceObject,
-      friendlyName: 'Rutnät',
+      name: 'Card',
+      info: card_namespaceObject,
+      friendlyName: 'Kort',
       overrideHeadlessLink: ""
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Grid baserat på tekniken ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "display: grid;"
-      }), " i css. Grid är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera."
+      children: "Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -123,7 +96,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/grid\n"
+            children: "npm install @midas-ds/card\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -132,7 +105,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/grid\n"
+            children: "yarn add @midas-ds/card\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -141,14 +114,14 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/grid\n"
+            children: "pnpm add @midas-ds/card\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Grid } from '@midas-ds/grid'\n"
+        children: "import { Card } from '@midas-ds/card'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
@@ -157,119 +130,19 @@ function _createMdxContent(props) {
         Card: card_src/* Card */.Z
       },
       children: `<Grid>
-  <GridItem col={12}>
-      <h2>Rubrik</h2>
+{fruits.shuffled(3).map(fruit => (
+  <GridItem col={4} key={fruit.value}>
+    <Card
+      title={fruit.name}
+      content={fruit.description}
+      image={{ source: fruit.image, description: fruit.description }}
+      link={{href: '#', title: 'Läs mer om denna frukt'}}
+    />
   </GridItem>
-  <GridItem col={3}>
-      <Card title={'Ett kort'} content={'Som är i tre kolumner'} link={{title: 'Länk', href: '#'}} />
-  </GridItem>
-  <GridItem col={4}>
-      <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-  </GridItem>
-  <GridItem col={5}>
-      <Card title={'Ett kort'} content={'Som är i fem kolumner'} link={{title: 'Länk', href: '#'}} />
-  </GridItem>
-  <GridItem col={4}>
-      <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-  </GridItem>
-  <GridItem col={4}>
-      <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-  </GridItem>
-  <GridItem col={4}>
-      <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-  </GridItem>
-</Grid>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "grid",
-      children: "Grid"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Grids skalas enligt följande specifikation."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
-      children: [(0,jsx_runtime.jsx)(_components.thead, {
-        children: (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.th, {
-            children: "Skärmstorlek"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Yttre marginaler"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Underliggande element"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Kolumner"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Inre marginaler"
-          })]
-        })
-      }), (0,jsx_runtime.jsxs)(_components.tbody, {
-        children: [(0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "0 - 767 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "1"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "768 px - 1199 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "32 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "1200 px - 1440 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "32 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "24 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "> 1440 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "1368 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "24 px"
-          })]
-        })]
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "när-ska-du-använda-grid-",
-      children: "När ska du använda Grid ?"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Grid används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "så-här-använder-du-grid",
-      children: "Så här använder du Grid"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Grid></Grid>"
-      }), " som komponent och justera de direkt underliggande komponenter till Grid justeras enligt griddets bestämmelser. Justera med barnkomponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<GridItem col=\"antal-kolumner\"></GridItem>"
-      }), "."]
+))}
+</Grid>`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: grid_namespaceObject
+      info: card_namespaceObject
     })]
   });
 }
@@ -322,7 +195,7 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var _midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17986);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(96540);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
-var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:'docs',children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Visa props"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Nej'})]},key);})})]})})]})});};
+var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;console.log(props);var _Object$entries$reduc=Object.entries(props).reduce(function(acc,_ref2){var key=_ref2[0],value=_ref2[1];if(key.startsWith('on')){acc.events[key]=value;}else if(key.startsWith('aria-')){acc.accessibility[key]=value;}else{acc.rest[key]=value;}return acc;},{events:{},accessibility:{},rest:{}}),events=_Object$entries$reduc.events,accessibility=_Object$entries$reduc.accessibility,rest=_Object$entries$reduc.rest;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(rest).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Ja'}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"events",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Events"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(events).map(function(key){var _props$key$type2;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type2=props[key].type)==null?void 0:_props$key$type2.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"accessibility",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Tillg\xE4nglighet"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(accessibility).map(function(key){var _props$key$type3;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type3=props[key].type)==null?void 0:_props$key$type3.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]})]})]});};
 
 /***/ }),
 

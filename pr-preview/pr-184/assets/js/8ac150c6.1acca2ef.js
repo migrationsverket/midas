@@ -1,6 +1,6 @@
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6253],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9758],{
 
-/***/ 99217:
+/***/ 352:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_breadcrumbs_mdx_aca_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_search_field_mdx_8ac_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-breadcrumbs-mdx-aca.json
-const site_docs_components_breadcrumbs_mdx_aca_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/breadcrumbs","title":"Breadcrumbs","description":"Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.","source":"@site/docs/components/breadcrumbs.mdx","sourceDirName":"components","slug":"/components/breadcrumbs","permalink":"/pr-preview/pr-184/components/breadcrumbs","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Breadcrumbs","description":"Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-search-field-mdx-8ac.json
+const site_docs_components_search_field_mdx_8ac_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/search-field","title":"SearchField","description":"Sökfält är en kombinationskomponent av TextField och Button","source":"@site/docs/components/search-field.mdx","sourceDirName":"components","slug":"/components/search-field","permalink":"/pr-preview/pr-184/components/search-field","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"SearchField","description":"Sökfält är en kombinationskomponent av TextField och Button","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,20 +29,20 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx
 var propsTable = __webpack_require__(91117);
-// EXTERNAL MODULE: ./packages/breadcrumbs/src/index.ts + 2 modules
-var src = __webpack_require__(65574);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/static/data/breadcrumbs.json
-const breadcrumbs_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/breadcrumbs@1.0.4","_rev":"9-c6dddffaeae0047137d4e4849c1cfa9c","name":"@midas-ds/breadcrumbs","dist-tags":{"latest":"1.0.4"},"versions":["0.0.2","0.0.3","0.0.4","0.0.5","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4"],"time":{"created":"2024-09-10T14:35:35.621Z","modified":"2024-11-15T14:24:06.518Z","0.0.2":"2024-09-10T14:35:35.894Z","0.0.3":"2024-09-12T08:53:25.530Z","0.0.4":"2024-09-12T12:22:32.293Z","0.0.5":"2024-10-07T12:04:50.265Z","1.0.0":"2024-10-18T13:40:48.534Z","1.0.1":"2024-10-24T13:26:50.748Z","1.0.2":"2024-10-24T13:32:57.069Z","1.0.3":"2024-11-15T14:06:25.544Z","1.0.4":"2024-11-15T14:24:06.342Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/breadcrumbs ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":14546,"version":"1.0.4","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react-aria-components":"^1.1.1","@midas-ds/link":"1.1.0"},"publishConfig":{"access":"public"},"gitHead":"1b851fa63eb50dca8a28fc98a02e53cdb2f5bf92","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-bvwMzWZEPc9KwWMvXZqFpGvST1H0HEp/EhcyO/ATRxnvPDaTcqPuyoNI6tY1OZJqafw7vvD74cVS2WDBEVkDUQ==","shasum":"4e835eb54e2610e768fd69cf3bbe15faf1f1d963","tarball":"https://registry.npmjs.org/@midas-ds/breadcrumbs/-/breadcrumbs-1.0.4.tgz","fileCount":8,"unpackedSize":135754,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCICFVZlGgGiXS2ULBSfU2iiBzTLhbLSPjNA+gg91Z/LFGAiAfVQ1f/fVVlWFuHo2RG3QdZNAwlqPOWNI7JAhZ0ZRI2w=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/breadcrumbs_1.0.4_1731680646097_0.8381664284538313"},"_hasShrinkwrap":false}');
+;// ./apps/docs/static/data/search-field.json
+const search_field_namespaceObject = /*#__PURE__*/JSON.parse('{"_id":"@midas-ds/search-field@1.0.7","_rev":"11-7fc95c2fa91eba7e20d037e513d9eab9","name":"@midas-ds/search-field","dist-tags":{"latest":"1.0.7"},"versions":["0.0.1","0.0.2","0.1.0","1.0.0","1.0.1","1.0.2","1.0.3","1.0.4","1.0.5","1.0.6","1.0.7"],"time":{"created":"2024-09-10T14:38:08.720Z","modified":"2024-12-02T09:03:59.514Z","0.0.1":"2024-09-10T14:38:09.007Z","0.0.2":"2024-09-12T12:43:45.772Z","0.1.0":"2024-10-07T12:19:44.725Z","1.0.0":"2024-10-18T13:40:43.577Z","1.0.1":"2024-10-24T13:26:46.347Z","1.0.2":"2024-10-24T13:32:54.084Z","1.0.3":"2024-11-07T12:20:35.499Z","1.0.4":"2024-11-15T14:06:29.742Z","1.0.5":"2024-11-15T14:24:05.971Z","1.0.6":"2024-11-19T14:49:25.332Z","1.0.7":"2024-12-02T09:03:59.296Z"},"bugs":{"url":"https://github.com/migrationsverket/midas/issues"},"homepage":"https://github.com/migrationsverket/midas#readme","repository":{"type":"git","url":"git+https://github.com/migrationsverket/midas.git"},"description":"```bash npm i @midas-ds/search-field ```","maintainers":["wilhelmconsid <wilhelm.hjelm@consid.se>"],"readmeFilename":"README.md","_contentLength":0,"version":"1.0.7","main":"./index.js","types":"./index.d.ts","exports":{".":{"import":"./index.mjs","require":"./index.js","types":"./index.d.ts"}},"peerDependencies":{"react":"^18.2.0","react-aria-components":"^1.1.1","lucide-react":"^0.453.0","@midas-ds/textfield":"1.0.5","@midas-ds/button":"1.2.0"},"publishConfig":{"access":"public"},"gitHead":"7a152a390fea614fec9658b4e063384cf2bbf7d2","_nodeVersion":"20.11.1","_npmVersion":"10.2.4","dist":{"integrity":"sha512-OQDmPBzD8oT9XvgUphf06gQdC06oRCyoI15RZWdqYqkLSGC/if+XmxQZ0SM9Ea9SfNAoAiyDr0nRyvd0foBMDg==","shasum":"68cb1b29e6feeddddd8d0981dd4ee933af40e466","tarball":"https://registry.npmjs.org/@midas-ds/search-field/-/search-field-1.0.7.tgz","fileCount":8,"unpackedSize":138830,"signatures":[{"keyid":"SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA","sig":"MEQCIE9Juh0SpuhQuPn7lvWHnRFsJhhq9ql6ow5dPeV36oTgAiArsmmjMCWxSxq72d0/y/w2G9fIjLOQAQG7Sj5BnY7UVw=="}]},"_npmUser":"wilhelmconsid <wilhelm.hjelm@consid.se>","directories":{},"_npmOperationalInternal":{"host":"s3://npm-registry-packages","tmp":"tmp/search-field_1.0.7_1733130239100_0.22742340083817592"},"_hasShrinkwrap":false}');
+// EXTERNAL MODULE: ./packages/search-field/src/index.ts + 2 modules
+var src = __webpack_require__(91725);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(29511);
-;// ./apps/docs/docs/components/breadcrumbs.mdx
+;// ./apps/docs/docs/components/search-field.mdx
 
 
 const frontMatter = {
-	title: 'Breadcrumbs',
-	description: 'Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.',
+	title: 'SearchField',
+	description: 'Sökfält är en kombinationskomponent av TextField och Button',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -77,11 +77,11 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Breadcrumbs',
-      info: breadcrumbs_namespaceObject,
-      friendlyName: 'Brödsmulor'
+      name: 'SearchField',
+      info: search_field_namespaceObject,
+      friendlyName: 'Sökfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd."
+      children: "Sökfält är en kombinationskomponent av TextField och Button."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -92,7 +92,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "npm install @midas-ds/breadcrumbs\n"
+            children: "npm install @midas-ds/search-field\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -101,7 +101,7 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "yarn add @midas-ds/breadcrumbs\n"
+            children: "yarn add @midas-ds/search-field\n"
           })
         })
       }), (0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -110,22 +110,22 @@ function _createMdxContent(props) {
         children: (0,jsx_runtime.jsx)(_components.pre, {
           children: (0,jsx_runtime.jsx)(_components.code, {
             className: "language-bash",
-            children: "pnpm add @midas-ds/breadcrumbs\n"
+            children: "pnpm add @midas-ds/search-field\n"
           })
         })
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Breadcrumbs } from '@midas-ds/breadcrumbs'\n"
+        children: "import { SearchField } from '@midas-ds/search-field'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Breadcrumbs: src/* Breadcrumbs */.B
+        SearchField: src/* SearchField */.L
       },
-      children: `<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`
+      children: `<SearchField placeholder="Sök efter fruker" />`
     }), "\n", (0,jsx_runtime.jsx)(getComponentMetaData/* ComponentFooter */.p, {
-      info: breadcrumbs_namespaceObject
+      info: search_field_namespaceObject
     })]
   });
 }
@@ -178,32 +178,78 @@ var ComponentFooter=function ComponentFooter(_ref){var info=_ref.info,children=_
 /* harmony import */ var _midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17986);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(96540);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
-var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:'docs',children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Visa props"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(props).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Nej'})]},key);})})]})})]})});};
+var PropTable=function PropTable(_ref){var _ComponentsDocs$find;var name=_ref.name;var globalData=(0,_docusaurus_useGlobalData__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']['default'];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;console.log(props);var _Object$entries$reduc=Object.entries(props).reduce(function(acc,_ref2){var key=_ref2[0],value=_ref2[1];if(key.startsWith('on')){acc.events[key]=value;}else if(key.startsWith('aria-')){acc.accessibility[key]=value;}else{acc.rest[key]=value;}return acc;},{events:{},accessibility:{},rest:{}}),events=_Object$entries$reduc.events,accessibility=_Object$entries$reduc.accessibility,rest=_Object$entries$reduc.rest;if(!props){return null;}return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Obligatorisk"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(rest).map(function(key){var _props$key$type;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type=props[key].type)==null?void 0:_props$key$type.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].required&&'Ja'}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .Accordion */ .nD,{headingTag:"h3",type:"multiple",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"events",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Events"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(events).map(function(key){var _props$key$type2;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type2=props[key].type)==null?void 0:_props$key$type2.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionItem */ .As,{value:"accessibility",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionTrigger */ .$m,{children:"Tillg\xE4nglighet"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_midas_ds_accordion__WEBPACK_IMPORTED_MODULE_1__/* .AccordionContent */ .ub,{style:{padding:0},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead",{style:{textAlign:'left'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Namn"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Typ"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Default"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th",{children:"Beskrivning"})]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody",{style:{fontSize:'0.875rem'},children:Object.keys(accessibility).map(function(key){var _props$key$type3;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr",{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:key})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:(_props$key$type3=props[key].type)==null?void 0:_props$key$type3.name})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].defaultValue&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p",{children:props[key].defaultValue.value})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td",{style:{verticalAlign:'top'},children:props[key].description})]},key);})})]})})]})]})]});};
 
 /***/ }),
 
-/***/ 65574:
+/***/ 91725:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  B: () => (/* reexport */ Breadcrumbs)
+  L: () => (/* reexport */ SearchField)
 });
 
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Breadcrumbs.mjs + 36 modules
-var dist_Breadcrumbs = __webpack_require__(57214);
-// EXTERNAL MODULE: ./packages/link/src/index.ts + 3 modules
-var src = __webpack_require__(85560);
-;// ./packages/breadcrumbs/src/lib/Breadcrumbs.module.css
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/SearchField.mjs + 37 modules
+var dist_SearchField = __webpack_require__(91521);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
+var search = __webpack_require__(98445);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/textfield/src/index.ts + 3 modules
+var src = __webpack_require__(42619);
+// EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
+var button_src = __webpack_require__(63918);
+;// ./packages/search-field/src/lib/SearchField.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Breadcrumbs_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","gray150":"#1f1f1f","container":"container_P3jL"});
+/* harmony default export */ const SearchField_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","blue150":"#143c50","gray150":"#1f1f1f","container":"container_bTyD","inputContainer":"inputContainer_FEyv","icon":"icon_fL1_","clear":"clear_PAHR","input":"input_Mp7b"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/breadcrumbs/src/lib/Breadcrumbs.tsx
-var Breadcrumbs=function Breadcrumbs(_ref){var items=_ref.items;return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumbs */.BI,{className:Breadcrumbs_module.container,children:items.map(function(item,index){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumb */.Qp,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Link */.N,{href:item.href,isDisabled:item.isDisabled,children:item.title})},item.title.toLocaleLowerCase()+index);})});};
-;// ./packages/breadcrumbs/src/index.ts
+;// ./packages/search-field/src/lib/SearchField.tsx
+'use client';var _excluded=["placeholder","buttonText"];var SearchField=function SearchField(_ref){var placeholder=_ref.placeholder,buttonText=_ref.buttonText,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(false),hasInput=_React$useState[0],setHasInput=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_SearchField/* SearchField */.L,Object.assign({onInput:function onInput(){return setHasInput(true);},onClear:function onClear(){return setHasInput(false);},className:SearchField_module.container},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{hidden:true,children:placeholder}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:SearchField_module.inputContainer,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(search/* default */.A,{size:20,className:SearchField_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(src/* TextFieldStyles */.Ql.input,SearchField_module.input),placeholder:placeholder}),hasInput&&/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$n,{variant:"icon",size:"small",className:SearchField_module.clear,children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(button_src/* Button */.$n,{type:"submit",children:buttonText?buttonText:'Sök'})]}));};
+;// ./packages/search-field/src/index.ts
+
+
+/***/ }),
+
+/***/ 48697:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ X)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+]);
+
+
+//# sourceMappingURL=x.js.map
 
 
 /***/ }),
@@ -914,529 +960,19 @@ function $fca6afa0e843324b$export$f12b703ca79dfbb1(strings, packageName) {
 
 /***/ }),
 
-/***/ 57214:
+/***/ 63899:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Qp: () => (/* binding */ $778035c5624f61e7$export$dabcc1ec9dd9d1cc),
-  BI: () => (/* binding */ $778035c5624f61e7$export$2dc68d50d56fbbd)
-});
-
-// UNUSED EXPORTS: BreadcrumbsContext
-
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Collection.mjs
-var Collection = __webpack_require__(64606);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var Link = __webpack_require__(73099);
-;// ./node_modules/@react-aria/breadcrumbs/dist/ar-AE.mjs
-var $b91590b2dc47de39$exports = {};
-$b91590b2dc47de39$exports = {
-    "breadcrumbs": `\u{639}\u{646}\u{627}\u{635}\u{631} \u{627}\u{644}\u{648}\u{627}\u{62C}\u{647}\u{629}`
-};
-
-
-
-//# sourceMappingURL=ar-AE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/bg-BG.mjs
-var $55b0693b2cf3fe91$exports = {};
-$55b0693b2cf3fe91$exports = {
-    "breadcrumbs": `\u{422}\u{440}\u{43E}\u{445}\u{438} \u{445}\u{43B}\u{44F}\u{431}`
-};
-
-
-
-//# sourceMappingURL=bg-BG.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/cs-CZ.mjs
-var $6ec1ed7729e948cc$exports = {};
-$6ec1ed7729e948cc$exports = {
-    "breadcrumbs": `Popis cesty`
-};
-
-
-
-//# sourceMappingURL=cs-CZ.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/da-DK.mjs
-var $5a41bb2baa6861e4$exports = {};
-$5a41bb2baa6861e4$exports = {
-    "breadcrumbs": `Br\xf8dkrummer`
-};
-
-
-
-//# sourceMappingURL=da-DK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/de-DE.mjs
-var $f28bbea439e87eca$exports = {};
-$f28bbea439e87eca$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=de-DE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/el-GR.mjs
-var $b3eca51cb720961a$exports = {};
-$b3eca51cb720961a$exports = {
-    "breadcrumbs": `\u{3A0}\u{3BB}\u{3BF}\u{3B7}\u{3B3}\u{3AE}\u{3C3}\u{3B5}\u{3B9}\u{3C2} breadcrumb`
-};
-
-
-
-//# sourceMappingURL=el-GR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/en-US.mjs
-var $0b39b205118db415$exports = {};
-$0b39b205118db415$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=en-US.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/es-ES.mjs
-var $f467c0ee7bfb0950$exports = {};
-$f467c0ee7bfb0950$exports = {
-    "breadcrumbs": `Migas de pan`
-};
-
-
-
-//# sourceMappingURL=es-ES.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/et-EE.mjs
-var $ab711d2ffb4cdf3d$exports = {};
-$ab711d2ffb4cdf3d$exports = {
-    "breadcrumbs": `Lingiread`
-};
-
-
-
-//# sourceMappingURL=et-EE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fi-FI.mjs
-var $b63105d663e6f9d5$exports = {};
-$b63105d663e6f9d5$exports = {
-    "breadcrumbs": `Navigointilinkit`
-};
-
-
-
-//# sourceMappingURL=fi-FI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fr-FR.mjs
-var $9d2ed7be7fcdc2a1$exports = {};
-$9d2ed7be7fcdc2a1$exports = {
-    "breadcrumbs": `Chemin de navigation`
-};
-
-
-
-//# sourceMappingURL=fr-FR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/he-IL.mjs
-var $c5704294d85c7b5d$exports = {};
-$c5704294d85c7b5d$exports = {
-    "breadcrumbs": `\u{5E9}\u{5D1}\u{5D9}\u{5DC}\u{5D9} \u{5E0}\u{5D9}\u{5D5}\u{5D5}\u{5D8}`
-};
-
-
-
-//# sourceMappingURL=he-IL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hr-HR.mjs
-var $20c975671d6bbc63$exports = {};
-$20c975671d6bbc63$exports = {
-    "breadcrumbs": `Navigacijski putovi`
-};
-
-
-
-//# sourceMappingURL=hr-HR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hu-HU.mjs
-var $2569ca3917233115$exports = {};
-$2569ca3917233115$exports = {
-    "breadcrumbs": `Morzsamen\xfc`
-};
-
-
-
-//# sourceMappingURL=hu-HU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/it-IT.mjs
-var $caa152f7f8e96c85$exports = {};
-$caa152f7f8e96c85$exports = {
-    "breadcrumbs": `Breadcrumb`
-};
-
-
-
-//# sourceMappingURL=it-IT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ja-JP.mjs
-var $cbc6af0cc98fad10$exports = {};
-$cbc6af0cc98fad10$exports = {
-    "breadcrumbs": `\u{30D1}\u{30F3}\u{304F}\u{305A}\u{30EA}\u{30B9}\u{30C8}`
-};
-
-
-
-//# sourceMappingURL=ja-JP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ko-KR.mjs
-var $ad9be5d332b4d607$exports = {};
-$ad9be5d332b4d607$exports = {
-    "breadcrumbs": `\u{D0D0}\u{C0C9} \u{D45C}\u{C2DC}`
-};
-
-
-
-//# sourceMappingURL=ko-KR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lt-LT.mjs
-var $659de19a00ff9617$exports = {};
-$659de19a00ff9617$exports = {
-    "breadcrumbs": `Nar\u{161}ymo kelias`
-};
-
-
-
-//# sourceMappingURL=lt-LT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lv-LV.mjs
-var $173e9fb4d14fe309$exports = {};
-$173e9fb4d14fe309$exports = {
-    "breadcrumbs": `Atpaka\u{13C}ce\u{13C}i`
-};
-
-
-
-//# sourceMappingURL=lv-LV.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nb-NO.mjs
-var $d8e2640a066567a9$exports = {};
-$d8e2640a066567a9$exports = {
-    "breadcrumbs": `Navigasjonsstier`
-};
-
-
-
-//# sourceMappingURL=nb-NO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nl-NL.mjs
-var $d71fd764236c0d12$exports = {};
-$d71fd764236c0d12$exports = {
-    "breadcrumbs": `Broodkruimels`
-};
-
-
-
-//# sourceMappingURL=nl-NL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pl-PL.mjs
-var $f4ad3faf9f4aaec6$exports = {};
-$f4ad3faf9f4aaec6$exports = {
-    "breadcrumbs": `Struktura nawigacyjna`
-};
-
-
-
-//# sourceMappingURL=pl-PL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-BR.mjs
-var $9703be9d55d8e9c2$exports = {};
-$9703be9d55d8e9c2$exports = {
-    "breadcrumbs": `Caminho detalhado`
-};
-
-
-
-//# sourceMappingURL=pt-BR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-PT.mjs
-var $7e23baec8a14f309$exports = {};
-$7e23baec8a14f309$exports = {
-    "breadcrumbs": `Categorias`
-};
-
-
-
-//# sourceMappingURL=pt-PT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ro-RO.mjs
-var $568f95594049d56e$exports = {};
-$568f95594049d56e$exports = {
-    "breadcrumbs": `Miez de p\xe2ine`
-};
-
-
-
-//# sourceMappingURL=ro-RO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ru-RU.mjs
-var $625df06cecc70764$exports = {};
-$625df06cecc70764$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{438}\u{433}\u{430}\u{446}\u{438}\u{44F}`
-};
-
-
-
-//# sourceMappingURL=ru-RU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sk-SK.mjs
-var $b5a67525f3a2f594$exports = {};
-$b5a67525f3a2f594$exports = {
-    "breadcrumbs": `Naviga\u{10D}n\xe9 prvky Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=sk-SK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sl-SI.mjs
-var $16125922964febca$exports = {};
-$16125922964febca$exports = {
-    "breadcrumbs": `Drobtine`
-};
-
-
-
-//# sourceMappingURL=sl-SI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sr-SP.mjs
-var $de104bf355206bcf$exports = {};
-$de104bf355206bcf$exports = {
-    "breadcrumbs": `Putanje navigacije`
-};
-
-
-
-//# sourceMappingURL=sr-SP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sv-SE.mjs
-var $d5ab76bcbadc9c07$exports = {};
-$d5ab76bcbadc9c07$exports = {
-    "breadcrumbs": `S\xf6kv\xe4gar`
-};
-
-
-
-//# sourceMappingURL=sv-SE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/tr-TR.mjs
-var $a6a1af5968159b55$exports = {};
-$a6a1af5968159b55$exports = {
-    "breadcrumbs": `\u{130}\xe7erik haritalar\u{131}`
-};
-
-
-
-//# sourceMappingURL=tr-TR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/uk-UA.mjs
-var $5204a30f0d17ffec$exports = {};
-$5204a30f0d17ffec$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{456}\u{433}\u{430}\u{446}\u{456}\u{439}\u{43D}\u{430} \u{441}\u{442}\u{435}\u{436}\u{43A}\u{430}`
-};
-
-
-
-//# sourceMappingURL=uk-UA.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-CN.mjs
-var $8d15e736e12d3dfd$exports = {};
-$8d15e736e12d3dfd$exports = {
-    "breadcrumbs": `\u{5BFC}\u{822A}\u{680F}`
-};
-
-
-
-//# sourceMappingURL=zh-CN.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-TW.mjs
-var $f8c49dd804b75140$exports = {};
-$f8c49dd804b75140$exports = {
-    "breadcrumbs": `\u{5C0E}\u{89BD}\u{5217}`
-};
-
-
-
-//# sourceMappingURL=zh-TW.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/intlStrings.mjs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var $8229b34715874f89$exports = {};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$8229b34715874f89$exports = {
-    "ar-AE": $b91590b2dc47de39$exports,
-    "bg-BG": $55b0693b2cf3fe91$exports,
-    "cs-CZ": $6ec1ed7729e948cc$exports,
-    "da-DK": $5a41bb2baa6861e4$exports,
-    "de-DE": $f28bbea439e87eca$exports,
-    "el-GR": $b3eca51cb720961a$exports,
-    "en-US": $0b39b205118db415$exports,
-    "es-ES": $f467c0ee7bfb0950$exports,
-    "et-EE": $ab711d2ffb4cdf3d$exports,
-    "fi-FI": $b63105d663e6f9d5$exports,
-    "fr-FR": $9d2ed7be7fcdc2a1$exports,
-    "he-IL": $c5704294d85c7b5d$exports,
-    "hr-HR": $20c975671d6bbc63$exports,
-    "hu-HU": $2569ca3917233115$exports,
-    "it-IT": $caa152f7f8e96c85$exports,
-    "ja-JP": $cbc6af0cc98fad10$exports,
-    "ko-KR": $ad9be5d332b4d607$exports,
-    "lt-LT": $659de19a00ff9617$exports,
-    "lv-LV": $173e9fb4d14fe309$exports,
-    "nb-NO": $d8e2640a066567a9$exports,
-    "nl-NL": $d71fd764236c0d12$exports,
-    "pl-PL": $f4ad3faf9f4aaec6$exports,
-    "pt-BR": $9703be9d55d8e9c2$exports,
-    "pt-PT": $7e23baec8a14f309$exports,
-    "ro-RO": $568f95594049d56e$exports,
-    "ru-RU": $625df06cecc70764$exports,
-    "sk-SK": $b5a67525f3a2f594$exports,
-    "sl-SI": $16125922964febca$exports,
-    "sr-SP": $de104bf355206bcf$exports,
-    "sv-SE": $d5ab76bcbadc9c07$exports,
-    "tr-TR": $a6a1af5968159b55$exports,
-    "uk-UA": $5204a30f0d17ffec$exports,
-    "zh-CN": $8d15e736e12d3dfd$exports,
-    "zh-TW": $f8c49dd804b75140$exports
-};
-
-
-
-//# sourceMappingURL=intlStrings.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/filterDOMProps.mjs
-var filterDOMProps = __webpack_require__(5987);
-// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/useLocalizedStringFormatter.mjs
-var useLocalizedStringFormatter = __webpack_require__(29571);
-;// ./node_modules/@react-aria/breadcrumbs/dist/useBreadcrumbs.mjs
-
-
-
-
-
-function $parcel$interopDefault(a) {
-  return a && a.__esModule ? a.default : a;
-}
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-function $848231d7a2b3998e$export$8cefe241bd876ca0(props) {
-    let { 'aria-label': ariaLabel, ...otherProps } = props;
-    let strings = (0, useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)((0, ($parcel$interopDefault($8229b34715874f89$exports))), '@react-aria/breadcrumbs');
-    return {
-        navProps: {
-            ...(0, filterDOMProps/* filterDOMProps */.$)(otherProps, {
-                labelable: true
-            }),
-            'aria-label': ariaLabel || strings.format('breadcrumbs')
-        }
-    };
-}
-
-
-
-//# sourceMappingURL=useBreadcrumbs.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./node_modules/react-aria-components/dist/Breadcrumbs.mjs
-
-
-
-
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
 
@@ -1454,67 +990,53 @@ var react = __webpack_require__(96540);
  */ 
 
 
-
-
-
-
-const $778035c5624f61e7$export$65596d3621b0a4a0 = /*#__PURE__*/ (0, react.createContext)(null);
-function $778035c5624f61e7$var$Breadcrumbs(props, ref) {
-    [props, ref] = (0, utils/* useContextProps */.JT)(props, ref, $778035c5624f61e7$export$65596d3621b0a4a0);
-    let { CollectionRoot: CollectionRoot } = (0, react.useContext)((0, Collection/* CollectionRendererContext */.zL));
-    let { navProps: navProps } = (0, $848231d7a2b3998e$export$8cefe241bd876ca0)(props);
-    return /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* CollectionBuilder */.GQ), {
-        content: /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* Collection */.pM), props)
-    }, (collection)=>{
-        var _props_className;
-        return /*#__PURE__*/ (0, react).createElement("ol", {
-            ref: ref,
-            ...navProps,
-            slot: props.slot || undefined,
-            style: props.style,
-            className: (_props_className = props.className) !== null && _props_className !== void 0 ? _props_className : 'react-aria-Breadcrumbs'
-        }, /*#__PURE__*/ (0, react).createElement($778035c5624f61e7$export$65596d3621b0a4a0.Provider, {
-            value: props
-        }, /*#__PURE__*/ (0, react).createElement(CollectionRoot, {
-            collection: collection
-        })));
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+function $a049562f99e7db0e$var$Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
     });
-}
-/**
- * Breadcrumbs display a hierarchy of links to the current page or resource in an application.
- */ const $778035c5624f61e7$export$2dc68d50d56fbbd = /*#__PURE__*/ (0, react.forwardRef)($778035c5624f61e7$var$Breadcrumbs);
-const $778035c5624f61e7$export$dabcc1ec9dd9d1cc = /*#__PURE__*/ (0, CollectionBuilder/* createLeafComponent */.KU)('item', function Breadcrumb(props, ref, node) {
-    // Recreating useBreadcrumbItem because we want to use composition instead of having the link builtin.
-    let isCurrent = node.nextKey == null;
-    let { isDisabled: isDisabled, onAction: onAction } = (0, utils/* useSlottedContext */.CC)($778035c5624f61e7$export$65596d3621b0a4a0);
-    let linkProps = {
-        'aria-current': isCurrent ? 'page' : null,
-        isDisabled: isDisabled || isCurrent,
-        onPress: ()=>onAction === null || onAction === void 0 ? void 0 : onAction(node.key)
-    };
-    let renderProps = (0, utils/* useRenderProps */.Sl)({
-        ...node.props,
-        children: node.rendered,
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
         values: {
-            isDisabled: isDisabled || isCurrent,
-            isCurrent: isCurrent
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
         },
-        defaultClassName: 'react-aria-Breadcrumb'
+        defaultClassName: 'react-aria-Group'
     });
-    return /*#__PURE__*/ (0, react).createElement("li", {
-        ...(0, filterDOMProps/* filterDOMProps */.$)(props),
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
         ...renderProps,
         ref: ref,
-        "data-disabled": isDisabled || isCurrent || undefined,
-        "data-current": isCurrent || undefined
-    }, /*#__PURE__*/ (0, react).createElement((0, Link/* LinkContext */.s).Provider, {
-        value: linkProps
-    }, renderProps.children));
-});
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+}
+/**
+ * A group represents a set of related UI controls, and supports interactive states for styling.
+ */ const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)($a049562f99e7db0e$var$Group);
 
 
 
-//# sourceMappingURL=Breadcrumbs.module.js.map
+//# sourceMappingURL=Group.module.js.map
 
 
 /***/ })
