@@ -39,7 +39,7 @@ jobs:
       - name: Build website
         if: github.event.action != 'closed'
         working-directory: ./apps/docs
-        run: npx docusaurus build out-dir=./build
+        run: npx docusaurus build
       - name: Build storybook
         working-directory: ./
         if: github.event.action != 'closed'
@@ -48,5 +48,5 @@ jobs:
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./build/
+          source-dir: ./apps/docs/dist
           custom-url: 'designsystem.migrationsverket.se'
