@@ -18,8 +18,6 @@ export const PropTable = ({ name }) => {
     componentDoc => componentDoc.displayName === name
   )?.props
 
-  console.log(props)
-
   const { events, accessibility, rest } = Object.entries(props).reduce(
     (acc, [key, value]) => {
       if (key.startsWith('on')) {
