@@ -187,7 +187,7 @@ function _createMdxContent(props) {
         FlexItem: flex_src/* FlexItem */.Z,
         Button: src/* Button */.$n
       },
-      children: `<Flex>
+      children: `<Flex fluid>
 <FlexItem col="auto">
   <Button>Slutför</Button>
 </FlexItem>
@@ -204,7 +204,7 @@ function _createMdxContent(props) {
         FlexItem: flex_src/* FlexItem */.Z,
         Button: src/* Button */.$n
       },
-      children: `<Flex>
+      children: `<Flex fluid>
 <FlexItem col="auto">
   <Button variant={'secondary'}>Tillbaka</Button>
 </FlexItem>
@@ -238,7 +238,7 @@ function _createMdxContent(props) {
         Button: src/* Button */.$n,
         Plus: plus/* default */.A
       },
-      children: `<Flex>
+      children: `<Flex fluid>
 <FlexItem col="auto">
   <Button
     icon={Plus}
