@@ -1,12 +1,18 @@
-import useGlobalData from '@docusaurus/useGlobalData';
-import React from 'react';
-import {Props, ComponentDoc} from "react-docgen-typescript";
+import useGlobalData from '@docusaurus/useGlobalData'
+import React from 'react'
+import { Props, ComponentDoc } from 'react-docgen-typescript'
 
 export const PropTable = ({ name }) => {
+  const globalData = useGlobalData()
 
-  const globalData = useGlobalData();
-  const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']['default'] as ComponentDoc[];
-  const props: Props = ComponentsDocs.find(componentDoc => componentDoc.displayName === name)?.props;
+  console.log(globalData)
+
+  const ComponentsDocs = globalData[
+    'docusaurus-plugin-react-docgen-typescript'
+  ]['default'] as ComponentDoc[]
+  const props: Props = ComponentsDocs.find(
+    componentDoc => componentDoc.displayName === name
+  )?.props
 
   if (!props) {
     return null
@@ -14,18 +20,18 @@ export const PropTable = ({ name }) => {
 
   return (
     <>
-      <table style={{'fontSize':'small'}}>
-        <thead style={{'textAlign':'left'}}>
+      <table style={{ fontSize: 'small' }}>
+        <thead style={{ textAlign: 'left' }}>
           <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Default Value</th>
-            <th>Required</th>
-            <th>Description</th>
+            <th>Namn</th>
+            <th>Typ</th>
+            <th>Default</th>
+            <th>Obligatorisk</th>
+            <th>Beskrivning</th>
           </tr>
         </thead>
-        <tbody style={{'fontSize':'small'}}>
-          {Object.keys(props).map((key) => {
+        <tbody style={{ fontSize: 'small' }}>
+          {Object.keys(props).map(key => {
             return (
               <tr key={key}>
                 <td>
