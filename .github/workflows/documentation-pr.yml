@@ -36,7 +36,7 @@ jobs:
         if: github.event.action != 'closed'
         run: npm ci
 
-      - name: Build website
+      - name: Build docs website
         if: github.event.action != 'closed'
         working-directory: ./apps/docs
         run: npx docusaurus build --out-dir
