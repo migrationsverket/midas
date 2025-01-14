@@ -6,6 +6,7 @@ import { LinkButton } from '@midas-ds/link-button'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
+  tags: ['autodocs'],
   title: 'Components/Layout',
   parameters: { layout: 'fullscreen' }
 }
@@ -63,7 +64,7 @@ const AppExample = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '90vh',
+        height: '80vh',
         border: `dotted 2px ${baseColors.gray20}`
       }}
     >
@@ -84,12 +85,7 @@ export const Primary: Story = {
       shortName: 'NPA'
     },
     title: 'Skapa ansökningar',
-    children: (
-      <>
-        <AppExample />
-        <AppExample />
-      </>
-    ),
+    children: <AppExample />,
     headerChildren: (
       <LinkButton
         variant='tertiary'
