@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4230],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2980],{
 
-/***/ 49529:
+/***/ 78747:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(28453);
 /* harmony import */ var _midas_ds_combobox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48517);
 /* harmony import */ var _midas_ds_date_picker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56657);
-/* harmony import */ var _midas_ds_info_banner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(28778);
+/* harmony import */ var _midas_ds_info_banner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(26271);
 /* harmony import */ var _midas_ds_search_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(91725);
 /* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(29511);
 
@@ -36,7 +36,6 @@ const assets = {
 "authorsImageUrls": [],
 };
 
-/*truncate*/
 
 
 
@@ -44,111 +43,15 @@ const assets = {
 
 
 
-const toc = [{
-  "value": "Ny komponent: ComboBox",
-  "id": "ny-komponent-combobox",
-  "level": 2
-}, {
-  "value": "Ny komponent: DatePicker",
-  "id": "ny-komponent-datepicker",
-  "level": 2
-}, {
-  "value": "Refactor av inmatningskomponenter",
-  "id": "refactor-av-inmatningskomponenter",
-  "level": 2
-}, {
-  "value": "InfoBanner kan nu stängas",
-  "id": "infobanner-kan-nu-stängas",
-  "level": 2
-}, {
-  "value": "SearchField har nu rätt props",
-  "id": "searchfield-har-nu-rätt-props",
-  "level": 2
-}, {
-  "value": "Kodexempel i Storybook",
-  "id": "kodexempel-i-storybook",
-  "level": 2
-}];
+const toc = [];
 function _createMdxContent(props) {
   const _components = {
-    code: "code",
-    h2: "h2",
     p: "p",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_7__/* .useMDXComponents */ .R)(),
     ...props.components
   };
-  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Nedan är en sammanfattning av nyheterna i release 12. Med denna release går Designsystemet över från kontinuerliga uppdateringar till att släppa en release varannan vecka."
-    }), "\n", "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "ny-komponent-combobox",
-      children: "Ny komponent: ComboBox"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "ComboBox är ett alternativ till Select som lämpar sig bra när listan har fler än runt 10 val. Användaren kan då filtrera listan genom att skriva i fältet."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A, {
-      scope: {
-        ComboBox: _midas_ds_combobox__WEBPACK_IMPORTED_MODULE_2__/* .ComboBox */ .a,
-        ComboBoxItem: _midas_ds_combobox__WEBPACK_IMPORTED_MODULE_2__/* .ComboBoxItem */ .x
-      },
-      children: `<ComboBox
-  label="Vad är din favoritfrukt?"
-  placeholder="Välj en frukt"
-  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-  {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-</ComboBox>`
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "ny-komponent-datepicker",
-      children: "Ny komponent: DatePicker"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["DatePicker har delats upp i två komponenter: ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "DatePicker"
-      }), " och ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "DateRangePicker"
-      }), ". Om du använde DatePicker innan behöver du troligtvis byta namn till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "DateRangePicker"
-      }), ".\nDatePicker används för att välja ett (1) datum, DateRangePicker för att välja flera datum i ett intervall."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A, {
-      scope: {
-        DatePicker: _midas_ds_date_picker__WEBPACK_IMPORTED_MODULE_3__/* .DatePicker */ .l
-      },
-      children: `<DatePicker label="Välj datum" />`
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "refactor-av-inmatningskomponenter",
-      children: "Refactor av inmatningskomponenter"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Samtliga inmatningskomponenter har uppdaterats med en wrapper för etikett, hjälptext och validering."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "infobanner-kan-nu-stängas",
-      children: "InfoBanner kan nu stängas"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Vi har lagt till en property som ger användaren möjlighet att stänga en InfoBanner. Standardbeteende är att InfoBanner inte kan stängas."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A, {
-      scope: {
-        InfoBanner: _midas_ds_info_banner__WEBPACK_IMPORTED_MODULE_4__/* .InfoBanner */ .z
-      },
-      children: `<InfoBanner
-dismissable
-message="Ditt formulär skickades korrekt."
-title="Tack!"
-type="success"
-/>`
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "searchfield-har-nu-rätt-props",
-      children: "SearchField har nu rätt props"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Ett tidigare fel gjorde att inga props kunde passas till SearchField. Nu är det rättat!"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A, {
-      scope: {
-        SearchField: _midas_ds_search_field__WEBPACK_IMPORTED_MODULE_5__/* .SearchField */ .L
-      },
-      children: `<SearchField placeholder="Sök..." />`
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "kodexempel-i-storybook",
-      children: "Kodexempel i Storybook"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Vi har börjat med en sektion i Storybook där vi samlar exempel på layouter med flera komponenter."
-    })]
+  return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
+    children: "Nedan är en sammanfattning av nyheterna i release 12. Med denna release går Designsystemet över från kontinuerliga uppdateringar till att släppa en release varannan vecka."
   });
 }
 function MDXContent(props = {}) {
@@ -260,7 +163,7 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 28778:
+/***/ 26271:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -294,6 +197,8 @@ var src = __webpack_require__(63918);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/info-banner/src/lib/InfoBanner.tsx
 var _excluded=["title","message","type","children","dismissable"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};var InfoBanner=function InfoBanner(_ref){var title=_ref.title,message=_ref.message,type=_ref.type,children=_ref.children,_ref$dismissable=_ref.dismissable,dismissable=_ref$dismissable===void 0?false:_ref$dismissable,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Icon=iconMap[type];var _React$useState=react.useState(true),show=_React$useState[0],setShow=_React$useState[1];if(show)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(InfoBanner_module.infoBanner,InfoBanner_module[type],rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,"aria-hidden":true,className:InfoBanner_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.content,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)("strong",{className:InfoBanner_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.text,children:[message,children]})]}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:InfoBanner_module.dismissable,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,{variant:"icon","aria-label":"St\xE4ng",onPress:function onPress(){return setShow(false);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})})]}));return null;};
+;// ./packages/info-banner/src/lib/index.ts
+
 ;// ./packages/info-banner/src/index.ts
 
 

@@ -125,8 +125,8 @@ const Component = (0,createLucideIcon/* default */.A)("Component", [
 
 //# sourceMappingURL=component.js.map
 
-// EXTERNAL MODULE: ./packages/info-banner/src/index.ts + 2 modules
-var info_banner_src = __webpack_require__(28778);
+// EXTERNAL MODULE: ./packages/info-banner/src/index.ts + 3 modules
+var info_banner_src = __webpack_require__(26271);
 ;// ./apps/docs/docs/intro.mdx
 
 
@@ -338,7 +338,7 @@ var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Obje
 
 /***/ }),
 
-/***/ 28778:
+/***/ 26271:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -372,6 +372,8 @@ var src = __webpack_require__(63918);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/info-banner/src/lib/InfoBanner.tsx
 var _excluded=["title","message","type","children","dismissable"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};var InfoBanner=function InfoBanner(_ref){var title=_ref.title,message=_ref.message,type=_ref.type,children=_ref.children,_ref$dismissable=_ref.dismissable,dismissable=_ref$dismissable===void 0?false:_ref$dismissable,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Icon=iconMap[type];var _React$useState=react.useState(true),show=_React$useState[0],setShow=_React$useState[1];if(show)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(InfoBanner_module.infoBanner,InfoBanner_module[type],rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,"aria-hidden":true,className:InfoBanner_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.content,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)("strong",{className:InfoBanner_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.text,children:[message,children]})]}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:InfoBanner_module.dismissable,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,{variant:"icon","aria-label":"St\xE4ng",onPress:function onPress(){return setShow(false);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})})]}));return null;};
+;// ./packages/info-banner/src/lib/index.ts
+
 ;// ./packages/info-banner/src/index.ts
 
 
