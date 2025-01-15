@@ -1,1 +1,1 @@
-export * from './lib/InfoBanner'
+export * from './lib'

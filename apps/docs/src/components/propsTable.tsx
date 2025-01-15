@@ -7,16 +7,23 @@ import {
 } from '@midas-ds/accordion'
 import React from 'react'
 import { Props, ComponentDoc } from 'react-docgen-typescript'
+import styles from '../css/propstable.module.css'
 
-export const PropTable = ({ name }) => {
+export const PropTable = ({ name, defaultOpen = true }) => {
   const globalData = useGlobalData()
 
-  const ComponentsDocs = globalData[
-    'docusaurus-plugin-react-docgen-typescript'
-  ]['default'] as ComponentDoc[]
+  const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
+    .default as ComponentDoc[]
+
+  console.log(ComponentsDocs)
+
   const props: Props = ComponentsDocs.find(
     componentDoc => componentDoc.displayName === name
   )?.props
+
+  if (!props) {
+    return null
+  }
 
   const { events, accessibility, rest } = Object.entries(props).reduce(
     (acc, [key, value]) => {
@@ -32,39 +39,33 @@ export const PropTable = ({ name }) => {
     { events: {}, accessibility: {}, rest: {} }
   )
 
-  if (!props) {
-    return null
-  }
-
-  return (
-    <>
-      <table>
-        <thead style={{ textAlign: 'left' }}>
+  const Table = ({ propGroup }) => {
+    return (
+      <table className={styles.table}>
+        <thead className={styles.thead}>
           <tr>
             <th>Namn</th>
             <th>Typ</th>
-            <th>Default</th>
-            <th>Obligatorisk</th>
+            <th>Standard</th>
             <th>Beskrivning</th>
           </tr>
         </thead>
-        <tbody style={{ fontSize: '0.875rem' }}>
-          {Object.keys(rest).map(key => {
+        <tbody className={styles.tbody}>
+          {Object.keys(propGroup).map(key => {
             return (
               <tr key={key}>
                 <td style={{ verticalAlign: 'top' }}>
-                  <p>{key}</p>
+                  {key} {props[key].required && ' *'}
                 </td>
-                <td style={{ verticalAlign: 'top' }}>
-                  <p>{props[key].type?.name}</p>
+                <td style={{ verticalAlign: 'top', maxWidth: '250px' }}>
+                  <code>{props[key].type?.name}</code>
                 </td>
-                <td style={{ verticalAlign: 'top' }}>
-                  {props[key].defaultValue && (
-                    <p>{props[key].defaultValue.value}</p>
+                <td style={{ verticalAlign: 'top', maxWidth: '50px' }}>
+                  {props[key].defaultValue ? (
+                    <code>{props[key].defaultValue.value}</code>
+                  ) : (
+                    '-'
                   )}
-                </td>
-                <td style={{ verticalAlign: 'top' }}>
-                  {props[key].required && 'Ja'}
                 </td>
                 <td style={{ verticalAlign: 'top' }}>
                   {props[key].description}
@@ -74,85 +75,40 @@ export const PropTable = ({ name }) => {
           })}
         </tbody>
       </table>
+    )
+  }
 
+  return (
+    <>
       <Accordion
         headingTag='h3'
         type='multiple'
+        defaultValue={defaultOpen ? ['props'] : []}
       >
-        <AccordionItem value='events'>
-          <AccordionTrigger>Events</AccordionTrigger>
-          <AccordionContent style={{ padding: 0 }}>
-            <table>
-              <thead style={{ textAlign: 'left' }}>
-                <tr>
-                  <th>Namn</th>
-                  <th>Typ</th>
-                  <th>Default</th>
-                  <th>Beskrivning</th>
-                </tr>
-              </thead>
-              <tbody style={{ fontSize: '0.875rem' }}>
-                {Object.keys(events).map(key => {
-                  return (
-                    <tr key={key}>
-                      <td style={{ verticalAlign: 'top' }}>
-                        <p>{key}</p>
-                      </td>
-                      <td style={{ verticalAlign: 'top' }}>
-                        <p>{props[key].type?.name}</p>
-                      </td>
-                      <td style={{ verticalAlign: 'top' }}>
-                        {props[key].defaultValue && (
-                          <p>{props[key].defaultValue.value}</p>
-                        )}
-                      </td>
-                      <td style={{ verticalAlign: 'top' }}>
-                        {props[key].description}
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value='accessibility'>
-          <AccordionTrigger>Tillgänglighet</AccordionTrigger>
-          <AccordionContent style={{ padding: 0 }}>
-            <table>
-              <thead style={{ textAlign: 'left' }}>
-                <tr>
-                  <th>Namn</th>
-                  <th>Typ</th>
-                  <th>Default</th>
-                  <th>Beskrivning</th>
-                </tr>
-              </thead>
-              <tbody style={{ fontSize: '0.875rem' }}>
-                {Object.keys(accessibility).map(key => {
-                  return (
-                    <tr key={key}>
-                      <td style={{ verticalAlign: 'top' }}>
-                        <p>{key}</p>
-                      </td>
-                      <td style={{ verticalAlign: 'top' }}>
-                        <p>{props[key].type?.name}</p>
-                      </td>
-                      <td style={{ verticalAlign: 'top' }}>
-                        {props[key].defaultValue && (
-                          <p>{props[key].defaultValue.value}</p>
-                        )}
-                      </td>
-                      <td style={{ verticalAlign: 'top' }}>
-                        {props[key].description}
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </AccordionContent>
-        </AccordionItem>
+        {Object.getOwnPropertyNames(rest).length !== 0 && (
+          <AccordionItem value='props'>
+            <AccordionTrigger>Props</AccordionTrigger>
+            <AccordionContent className={styles.item}>
+              <Table propGroup={rest} />
+            </AccordionContent>
+          </AccordionItem>
+        )}
+        {Object.getOwnPropertyNames(events).length !== 0 && (
+          <AccordionItem value='events'>
+            <AccordionTrigger>Events</AccordionTrigger>
+            <AccordionContent className={styles.item}>
+              <Table propGroup={events} />
+            </AccordionContent>
+          </AccordionItem>
+        )}
+        {Object.getOwnPropertyNames(accessibility).length !== 0 && (
+          <AccordionItem value='accessibility'>
+            <AccordionTrigger>Tillgänglighet</AccordionTrigger>
+            <AccordionContent className={styles.item}>
+              <Table propGroup={accessibility} />
+            </AccordionContent>
+          </AccordionItem>
+        )}
       </Accordion>
     </>
   )

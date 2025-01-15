@@ -50,18 +50,18 @@ const config: Config = {
       {
         // pass in a single string or an array of strings
         global: true,
-        src: Object.values(packageAliases),
-        ignore: ['../..packages/**/*test|spec|stories.*'],
+        //src: Object.values(packageAliases),
+        src: ['/Users/wilhelmhjelm/Sites/midas/packages/card/src/lib/index.ts'],
         parserOptions: {
           // pass parserOptions to react-docgen-typescript
           // here is a good starting point which filters out all
           // types from react
-          // propFilter: (prop, component) => {
-          //   if (prop.parent) {
-          //     return !prop.parent.fileName.includes('@types/react')
-          //   }
-          //   return true
-          // }
+          propFilter: (prop, component) => {
+            // if (prop.parent) {
+            //   return !prop.parent.fileName.includes('@types/react')
+            // }
+            // return true
+          }
         }
       }
     ],
