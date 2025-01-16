@@ -48,10 +48,8 @@ const config: Config = {
       'docusaurus-plugin-react-docgen-typescript',
       /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
       {
-        // pass in a single string or an array of strings
         global: true,
-        //src: Object.values(packageAliases),
-        src: ['/Users/wilhelmhjelm/Sites/midas/packages/card/src/lib/index.ts'],
+        src: Object.values(packageAliases),
         parserOptions: {
           // pass parserOptions to react-docgen-typescript
           // here is a good starting point which filters out all

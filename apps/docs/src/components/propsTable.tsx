@@ -15,8 +15,6 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
     .default as ComponentDoc[]
 
-  console.log(ComponentsDocs)
-
   const props: Props = ComponentsDocs.find(
     componentDoc => componentDoc.displayName === name
   )?.props
