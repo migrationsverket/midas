@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1295],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7679],{
 
-/***/ 28092:
+/***/ 26597:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,10 +10,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_17_mdx_b04_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_18_mdx_578_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_17_mdx_b04_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94324);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_18_mdx_578_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88783);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(28453);
 /* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29511);
@@ -25,9 +25,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const frontMatter = {
-	title: 'Release 17',
+	title: 'Release 18',
 	description: '.',
-	slug: 'release-17',
+	slug: 'release-18',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -53,7 +53,7 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-    children: "Nedan är en sammanfattning av nyheterna i release 17."
+    children: "Nedan är en sammanfattning av nyheterna i release 18 ."
   });
 }
 function MDXContent(props = {}) {
@@ -123,10 +123,10 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 94324:
+/***/ 88783:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-186/blog/release-17","source":"@site/blog/release17.mdx","title":"Release 17","description":".","date":"2024-12-13T12:24:58.000Z","tags":[],"readingTime":1.37,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 17","description":".","slug":"release-17","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 16","permalink":"/pr-preview/pr-186/blog/release-16"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-186/blog/release-18","source":"@site/blog/release18.mdx","title":"Release 18","description":".","date":"2025-01-16T10:48:42.000Z","tags":[],"readingTime":0.77,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 18","description":".","slug":"release-18","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 17","permalink":"/pr-preview/pr-186/blog/release-17"}}');
 
 /***/ })
 

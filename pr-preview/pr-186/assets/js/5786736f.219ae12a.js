@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7376],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7071],{
 
-/***/ 49232:
+/***/ 53363:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,10 +10,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_17_mdx_b04_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_18_mdx_578_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_17_mdx_b04_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94324);
+/* harmony import */ var _site_docusaurus_docusaurus_plugin_content_blog_default_site_blog_release_18_mdx_578_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(88783);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(28453);
 /* harmony import */ var _site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29511);
@@ -25,9 +25,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const frontMatter = {
-	title: 'Release 17',
+	title: 'Release 18',
 	description: '.',
-	slug: 'release-17',
+	slug: 'release-18',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -47,12 +47,20 @@ const assets = {
 
 
 const toc = [{
-  "value": "Räknare till Textfield",
-  "id": "räknare-till-textfield",
+  "value": "API på komponenter är tillbaka",
+  "id": "api-på-komponenter-är-tillbaka",
   "level": 2
 }, {
-  "value": "Toast",
-  "id": "toast",
+  "value": "Instruktioner för klientnavigering (Client Side Routing)",
+  "id": "instruktioner-för-klientnavigering-client-side-routing",
+  "level": 2
+}, {
+  "value": "Nya varianter på Logo",
+  "id": "nya-varianter-på-logo",
+  "level": 2
+}, {
+  "value": "Sök",
+  "id": "sök",
   "level": 2
 }, {
   "value": "Mindre justeringar",
@@ -65,93 +73,64 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     li: "li",
     p: "p",
-    pre: "pre",
     ul: "ul",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_8__/* .useMDXComponents */ .R)(),
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Nedan är en sammanfattning av nyheterna i release 17."
+      children: "Nedan är en sammanfattning av nyheterna i release 18 ."
     }), "\n", "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "räknare-till-textfield",
-      children: "Räknare till Textfield"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Textfield har fått en räknare som kan slås på via prop ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "showCounter"
-      }), ". Antalet tecken som ska matas in i fältet kan styras med ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "maxCharacters"
-      }), " precis som hos TextArea."]
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_site_src_components_CodeBlock_CodeBlock__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A, {
-      scope: {
-        TextField: _midas_ds_textfield__WEBPACK_IMPORTED_MODULE_5__/* .TextField */ .A_
-      },
-      children: `<TextField
-  label="Skriv så många tecken du vill"
-  description="Antalet tecken du skrivit ser du på räknaren till höger"
-  showCounter
-/>`
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "toast",
-      children: "Toast"
+      id: "api-på-komponenter-är-tillbaka",
+      children: "API på komponenter är tillbaka"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "För att Toast ska vara lättare för användarna att se så har vi ändrat så att de dyker upp högst upp till höger på stora skärmar och högst upp i mitten på mindre skärmar. Vi har även gjort små justeringar i utseendet."
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_toast__WEBPACK_IMPORTED_MODULE_7__/* .GlobalToastRegion */ .r$, {}), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_button__WEBPACK_IMPORTED_MODULE_6__/* .Button */ .$n, {
-      onPress: () => _midas_ds_toast__WEBPACK_IMPORTED_MODULE_7__/* .toastQueue */ .ni.add({
-        type: 'success',
-        message: 'Här är din notifiering!'
-      }, {
-        timeout: 5000
-      }),
-      children: 'Tryck här för en notifiering'
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
-      children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
-      })
+      children: "Nu finns efter en tids uppehåll API och props för varera komponent beskrivna på komponentsidorna."
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "instruktioner-för-klientnavigering-client-side-routing",
+      children: "Instruktioner för klientnavigering (Client Side Routing)"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Tydligare instruktioner och fler möjligheter för att integrera komponenterna med din router finns nu på ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/dev/client-side-routing",
+        children: "denna sida"
+      })]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "nya-varianter-på-logo",
+      children: "Nya varianter på Logo"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Komponenten ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/components/logo",
+        children: "Logo"
+      }), " har fått nya storlekar och varianter."]
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
+      id: "sök",
+      children: "Sök"
+    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Du kan nu söka på denna site. Du finner söken högst upp i högra hörnet eller med kortkommandot ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "ctrl"
+      }), " + ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "K"
+      }), " alternativt på Mac ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "⌘"
+      }), " + ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "K"
+      }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
       id: "mindre-justeringar",
       children: "Mindre justeringar"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
-      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
-        children: ["Lagt till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_link__WEBPACK_IMPORTED_MODULE_4__/* .Link */ .N, {
-          href: "/basics/principles#designprinciper-för-extern-webbplats",
-          children: "designprinciper för externwebb"
-        })]
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
-        children: ["Tydligare felmeddelande när användaren skriver in fler tecken än vad som tillåts av ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-          children: "maxCharacter"
-        }), " på Textfield och TextArea"]
+      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
+        children: "Justerat och förbättrat hur Modal växer beroende på innehåll."
       }), "\n"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
       id: "uppdaterade-komponenter",
       children: "Uppdaterade komponenter"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
-      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "Button (1.2.1)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "TextField (1.1.0)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "SearchField (1.0.8)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "Toast (1.0.5)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "FileUpload (1.0.6)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "MultiSelect (0.1.9)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "Tag (0.1.4)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "InfoBanner (1.0.6)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "DatePicker (1.0.8)"
-      }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {
-        children: "UI (0.7.19)"
-      }), "\n"]
+      children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.li, {}), "\n"]
     })]
   });
 }
@@ -222,10 +201,10 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 94324:
+/***/ 88783:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-186/blog/release-17","source":"@site/blog/release17.mdx","title":"Release 17","description":".","date":"2024-12-13T12:24:58.000Z","tags":[],"readingTime":1.37,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 17","description":".","slug":"release-17","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 16","permalink":"/pr-preview/pr-186/blog/release-16"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-186/blog/release-18","source":"@site/blog/release18.mdx","title":"Release 18","description":".","date":"2025-01-16T10:48:42.000Z","tags":[],"readingTime":0.77,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 18","description":".","slug":"release-18","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 17","permalink":"/pr-preview/pr-186/blog/release-17"}}');
 
 /***/ })
 
