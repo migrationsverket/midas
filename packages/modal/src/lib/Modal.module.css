@@ -6,7 +6,7 @@
   position: fixed;
   max-width: 75%;
   min-width: 300px;
-  max-height: 75vh;
+  max-height: 90vh;
   overflow-y: auto;
   background-color: white;
   border: none;
@@ -14,7 +14,7 @@
   margin: auto;
 
   &&:-internal-dialog-in-top-layer {
-    overflow: visible;
+    overflow-y: auto;
   }
 
   &&::backdrop {
@@ -31,6 +31,9 @@
   background-color: gray10;
   display: flex;
   justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 .modalBody {
