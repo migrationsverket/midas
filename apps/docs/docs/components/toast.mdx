@@ -96,7 +96,7 @@ En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. An
 ### Lokalt
 
 Använd `toastProvider` för att sätta en kö av Toasts på valfritt ställe i en app. Om det inte går att wrappa hela appen i en kö med en provider,
-använd den [globala varianten](#global-implementation).
+använd den [globala varianten](#globalt).
 
 ```tsx
 <ToastProvider>
@@ -144,5 +144,32 @@ Timeout ska av tillgänglighetsskäl vara minst 5000ms:
   { timeout: 5000 }
 )
 ```
+
+## API
+
+### Toast
+
+<PropTable name='Toast' />
+
+### ToastRegion
+
+<PropTable
+  name='ToastRegion'
+  defaultOpen={false}
+/>
+
+### GlobalToastRegion
+
+<PropTable
+  name='GlobalToastRegion'
+  defaultOpen={false}
+/>
+
+### ToastProvider
+
+<PropTable
+  name='ToastProvider'
+  defaultOpen={false}
+/>
 
 <ComponentFooter info={Info} />
