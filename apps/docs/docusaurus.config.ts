@@ -50,17 +50,7 @@ const config: Config = {
       {
         global: true,
         src: Object.values(packageAliases),
-        parserOptions: {
-          // pass parserOptions to react-docgen-typescript
-          // here is a good starting point which filters out all
-          // types from react
-          propFilter: (prop, component) => {
-            // if (prop.parent) {
-            //   return !prop.parent.fileName.includes('@types/react')
-            // }
-            // return true
-          }
-        }
+        parserOptions: {},// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
       }
     ],
     [
