@@ -33,6 +33,7 @@
     "@docusaurus/theme-mermaid": "^3.4.0",
     "@docusaurus/tsconfig": "^3.4.0",
     "@docusaurus/types": "^3.4.0",
+    "@easyops-cn/docusaurus-search-local": "^0.48.3",
     "@nx-extend/docusaurus": "^3.0.0",
     "@nx/cypress": "20.0.1",
     "@nx/eslint": "20.0.1",

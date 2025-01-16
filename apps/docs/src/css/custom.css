@@ -47,6 +47,10 @@
   --ifm-navbar-height: calc(
     3.25rem + calc(var(--ifm-navbar-padding-vertical) * 2)
   );
+  --search-local-modal-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
+  --search-local-modal-background: white;
+  --search-local-muted-color: #808080;
+  --search-local-highlight-color: #25607f;
 }
 
 .code-card {
@@ -238,6 +242,20 @@ nav.menu {
 
 .padding-top--md {
   padding-top: 2rem !important;
+}
+
+mark {
+  background-color: #eaf2f6;
+}
+
+.navbar__search-input {
+  border-radius: 0;
+}
+
+[class^='searchBar_'] [class^='dropdownMenu_'],
+[class^='searchBar_'] [class^='dropdownMenu_'] [class^='suggestion_'],
+[class^='searchQueryInput_'] {
+  border-radius: 0 !important;
 }
 
 @media (min-width: 1620px) {
