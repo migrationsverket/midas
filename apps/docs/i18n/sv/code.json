@@ -1,0 +1,26 @@
+{
+  "theme.SearchBar.label": { "message": "Sök" },
+  "theme.SearchBar.seeAll": { "message": "Se alla resultat" },
+  "theme.SearchBar.noResultsText": { "message": "Inga resultat" },
+  "theme.SearchBar.searchInContext": {
+    "message": "Resultat för \"{context}\""
+  },
+  "theme.SearchBar.seeAllOutsideContext": {
+    "message": "Visa alla resultat utanför \"{context}\""
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Sökresultat för \"{query}\""
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Sök i dokumentationen"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "Ett resultat hittades|{count} resultat hittades"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "Inga dokument hittades"
+  },
+  "theme.SearchPage.searchContext.everywhere": {
+    "message": "Överallt"
+  }
+}

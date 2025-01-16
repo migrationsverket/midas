@@ -63,16 +63,20 @@ const config: Config = {
       return result
     }
   },
-  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock',
+  themes: [
+    '@docusaurus/theme-mermaid',
+    '@docusaurus/theme-live-codeblock',
     [
       '@easyops-cn/docusaurus-search-local',
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       {
         // reference: https://github.com/easyops-cn/docusaurus-search-local
         hashed: true,
         docsRouteBasePath: '/',
-        language: ['sv','en'],
+        language: ['sv'],
         searchBarShortcut: true,
-        highlightSearchTermsOnTargetPage: false,
+        highlightSearchTermsOnTargetPage: true,
+        indexPages: true
       }
     ]
   ],
