@@ -1,0 +1,22 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, focus, gray10 from tokens;
+
+.dropDownMenu {
+  font-family: display;
+  box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 25%);
+  background-color: gray10;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+}
+
+.dropdownMenu {
+  width: 100%;
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+}

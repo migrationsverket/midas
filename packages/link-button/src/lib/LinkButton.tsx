@@ -4,7 +4,12 @@ import React from 'react'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
-import { ChevronLeft, ChevronRight, LucideIcon } from 'lucide-react'
+import {
+  ChevronLeft,
+  ChevronRight,
+  LucideIcon,
+  SquareArrowOutUpRight
+} from 'lucide-react'
 
 interface MidasLinkProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -38,6 +43,14 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
     if (IconComponent)
       return (
         <IconComponent
+          size={20}
+          className={styles.icon}
+        />
+      )
+
+    if (rest.target === '_blank')
+      return (
+        <SquareArrowOutUpRight
           size={20}
           className={styles.icon}
         />
