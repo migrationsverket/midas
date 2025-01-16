@@ -45,6 +45,15 @@ const config: Config = {
   },
   plugins: [
     [
+      'docusaurus-plugin-react-docgen-typescript',
+      /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
+      {
+        global: true,
+        src: Object.values(packageAliases),
+        parserOptions: {},// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
+      }
+    ],
+    [
       'docusaurus-plugin-module-alias',
       {
         alias: packageAliases
