@@ -3,6 +3,15 @@
 
 .root {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  --border-width: 0;
+
+  &.boxed {
+    --border-width: 1px;
+  }
 }
 
 .trigger {
@@ -10,81 +19,33 @@
   color: black;
   background-color: transparent;
   border: 0;
-  padding: 1.5rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  gap: 10px;
+  margin: 0;
 
-  &:focus-visible {
-    outline: black auto 2px;
-  }
+  button {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0;
+    transform: rotate(0deg);
+    transition: transform normalTransition ease;
 
-  svg {
-    transition: transform normalTransition cubic-bezier(0.87, 0, 0.13, 1);
-  }
-
-  &[data-state='open'] svg {
-    transform: rotate(180deg);
+    &[aria-expanded='true'] svg {
+      transform: rotate(180deg);
+      transition: transform normalTransition ease;
+    }
   }
 }
 
 .item {
   font-family: display;
-  border-style: solid;
-  border-color: gray50;
-  border-width: 1px 0 0;
-  overflow: hidden;
-
-  &:hover {
-    .trigger {
-      background-color: gray20;
-    }
-  }
-
-  &:last-child {
-    border-width: 1px 0;
-  }
 }
 
 .content {
-  padding: 0 1.5rem;
-  overflow: hidden;
-
-  &[data-state='open'] {
-    animation: slideDown normalTransition cubic-bezier(0.87, 0, 0.13, 1);
-    margin-bottom: 1.5rem;
-  }
-
-  &[data-state='closed'] {
-    animation: slideUp normalTransition cubic-bezier(0.87, 0, 0.13, 1);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    height: 0;
-    margin-bottom: 0;
-  }
-
-  to {
-    height: var(--radix--content-height);
-    margin-bottom: 1.5rem;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    height: var(--radix--content-height);
-    margin-bottom: 1.5rem;
-  }
-
-  to {
-    height: 0;
-    margin: 0;
-  }
+  padding: 0.5rem 2rem;
 }
 
 .header {
@@ -94,6 +55,6 @@
 .triggerText {
   margin: 0;
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: regularWeight;
 }
