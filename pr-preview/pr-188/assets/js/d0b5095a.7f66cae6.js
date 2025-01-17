@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-forms-md-d0b.json
-const site_docs_design_patterns_forms_md_d0b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/forms","title":"Frågeformulär","description":"Obligatorisk vs valfri","source":"@site/docs/design-patterns/forms.md","sourceDirName":"design-patterns","slug":"/design-patterns/forms","permalink":"/pr-preview/pr-188/design-patterns/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_design_patterns_forms_md_d0b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/forms","title":"Formulär","description":"Obligatorisk vs valfri","source":"@site/docs/design-patterns/forms.md","sourceDirName":"design-patterns","slug":"/design-patterns/forms","permalink":"/pr-preview/pr-188/design-patterns/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -36,7 +36,7 @@ const frontMatter = {
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = 'Frågeformulär';
+const contentTitle = 'Formulär';
 
 const assets = {
 
@@ -74,8 +74,8 @@ function _createMdxContent(props) {
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "frågeformulär",
-        children: "Frågeformulär"
+        id: "formulär",
+        children: "Formulär"
       })
     }), "\n", "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "obligatorisk-vs-valfri",
