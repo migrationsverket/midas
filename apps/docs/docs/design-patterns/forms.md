@@ -1,4 +1,4 @@
-# Frågeformulär
+# Formulär
 
 import { TextField } from '@midas-ds/textfield';
 import { Flex, FlexItem } from '@midas-ds/flex'
