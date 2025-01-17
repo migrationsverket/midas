@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/card",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -11,7 +11,7 @@
     }
   },
   "dependencies": {
-    "@midas-ds/link": "1.1.0"
+    "@midas-ds/link": "1.1.1"
   },
   "peerDependencies": {
     "react": "^18.2.0"

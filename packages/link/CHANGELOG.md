@@ -1,3 +1,13 @@
+## 1.1.1 (2025-01-17)
+
+### 🩹 Fixes
+
+- **link:** support custom link component ([01f5653c](https://github.com/migrationsverket/midas/commit/01f5653c))
+
+### ❤️ Thank You
+
+- Wilhelm Hjelm
+
 ## 1.1.0 (2024-11-15)
 
 ### 🚀 Features
