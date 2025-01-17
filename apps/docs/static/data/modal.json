@@ -1,25 +1,27 @@
 {
-  "_id": "@midas-ds/modal@1.0.1",
-  "_rev": "4-940ea2d13453197f5e7db14e93e8d0f9",
+  "_id": "@midas-ds/modal@1.0.2",
+  "_rev": "5-638a220fe90d46eab6b2ca79758c353c",
   "name": "@midas-ds/modal",
   "dist-tags": {
-    "latest": "1.0.1"
+    "latest": "1.0.2"
   },
   "versions": [
     "0.1.0",
     "0.1.1",
     "0.1.2",
     "1.0.0",
-    "1.0.1"
+    "1.0.1",
+    "1.0.2"
   ],
   "time": {
     "created": "2024-11-01T10:27:54.664Z",
-    "modified": "2024-12-02T10:03:18.911Z",
+    "modified": "2025-01-17T09:37:36.786Z",
     "0.1.0": "2024-11-01T10:27:54.939Z",
     "0.1.1": "2024-11-06T12:37:42.935Z",
     "0.1.2": "2024-11-15T14:06:18.284Z",
     "1.0.0": "2024-12-02T09:04:03.467Z",
-    "1.0.1": "2024-12-02T10:03:18.681Z"
+    "1.0.1": "2024-12-02T10:03:18.681Z",
+    "1.0.2": "2025-01-17T09:37:36.595Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -34,8 +36,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 9213,
-  "version": "1.0.1",
+  "_contentLength": 0,
+  "version": "1.0.2",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -51,27 +53,27 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "bee2f5be407db4c98502e5d69c580a8ba3f13929",
+  "gitHead": "3d95f6f763bdead46efebc6f1a95ee8e3bd034e5",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-KwUwnzswKVizEgb4K5ewy20GEQ3AoKT7DuyZ0YuIXpfziz6VPNXFcZBomJdBY96J3sSeBLxLuMf1vXJJMRSh7g==",
-    "shasum": "896e1d246098c69d587d96ca36cdad2535f2c490",
-    "tarball": "https://registry.npmjs.org/@midas-ds/modal/-/modal-1.0.1.tgz",
+    "integrity": "sha512-Fokk1MI4pxhgO8Xl2u8r+I6BlCjYa2oGvmd6o0Xh0uHqXzDiC41h74Qv12TM54gCZaTZH/LVH53cn+0+vDun8w==",
+    "shasum": "c7e574b838ab583a125f46ca851d8fcd2bb11733",
+    "tarball": "https://registry.npmjs.org/@midas-ds/modal/-/modal-1.0.2.tgz",
     "fileCount": 8,
-    "unpackedSize": 94532,
+    "unpackedSize": 94757,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCIGWcYG2i+aNU6sUPphmM9liMYO1ZSMwKfodEm5fjG8C8AiAlIedRrYLAHYQUfwhtDiLL6DscdxQ6MJ4lDq9NHAAZVQ=="
+        "sig": "MEUCIGEISJlAw5/mfcycgQeidBJhVhq8kIdWch7WWmtNq/hDAiEA8W+8ReJi5WV4uyc5Lmu1KF5zc9D7phe/kn34+4unzHo="
       }
     ]
   },
   "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
   "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/modal_1.0.1_1733133798522_0.29151805708738987"
+    "host": "s3://npm-registry-packages-npm-production",
+    "tmp": "tmp/modal_1.0.2_1737106656401_0.42958495050714096"
   },
   "_hasShrinkwrap": false
 }

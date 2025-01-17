@@ -1,9 +1,9 @@
 {
-  "_id": "@midas-ds/breadcrumbs@1.0.4",
-  "_rev": "9-c6dddffaeae0047137d4e4849c1cfa9c",
+  "_id": "@midas-ds/breadcrumbs@1.0.5",
+  "_rev": "10-2d81ad985c778ec95c4232c8b780edb6",
   "name": "@midas-ds/breadcrumbs",
   "dist-tags": {
-    "latest": "1.0.4"
+    "latest": "1.0.5"
   },
   "versions": [
     "0.0.2",
@@ -14,11 +14,12 @@
     "1.0.1",
     "1.0.2",
     "1.0.3",
-    "1.0.4"
+    "1.0.4",
+    "1.0.5"
   ],
   "time": {
     "created": "2024-09-10T14:35:35.621Z",
-    "modified": "2024-11-15T14:24:06.518Z",
+    "modified": "2025-01-17T09:37:32.408Z",
     "0.0.2": "2024-09-10T14:35:35.894Z",
     "0.0.3": "2024-09-12T08:53:25.530Z",
     "0.0.4": "2024-09-12T12:22:32.293Z",
@@ -27,7 +28,8 @@
     "1.0.1": "2024-10-24T13:26:50.748Z",
     "1.0.2": "2024-10-24T13:32:57.069Z",
     "1.0.3": "2024-11-15T14:06:25.544Z",
-    "1.0.4": "2024-11-15T14:24:06.342Z"
+    "1.0.4": "2024-11-15T14:24:06.342Z",
+    "1.0.5": "2025-01-17T09:37:32.222Z"
   },
   "bugs": {
     "url": "https://github.com/migrationsverket/midas/issues"
@@ -42,8 +44,8 @@
     "wilhelmconsid <wilhelm.hjelm@consid.se>"
   ],
   "readmeFilename": "README.md",
-  "_contentLength": 14546,
-  "version": "1.0.4",
+  "_contentLength": 0,
+  "version": "1.0.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -55,32 +57,32 @@
   },
   "peerDependencies": {
     "react-aria-components": "^1.1.1",
-    "@midas-ds/link": "1.1.0"
+    "@midas-ds/link": "1.1.1"
   },
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "1b851fa63eb50dca8a28fc98a02e53cdb2f5bf92",
+  "gitHead": "3d95f6f763bdead46efebc6f1a95ee8e3bd034e5",
   "_nodeVersion": "20.11.1",
   "_npmVersion": "10.2.4",
   "dist": {
-    "integrity": "sha512-bvwMzWZEPc9KwWMvXZqFpGvST1H0HEp/EhcyO/ATRxnvPDaTcqPuyoNI6tY1OZJqafw7vvD74cVS2WDBEVkDUQ==",
-    "shasum": "4e835eb54e2610e768fd69cf3bbe15faf1f1d963",
-    "tarball": "https://registry.npmjs.org/@midas-ds/breadcrumbs/-/breadcrumbs-1.0.4.tgz",
+    "integrity": "sha512-ZbmkxJaEFCMzvwG1M9sBB2Kpwl6bjT2gmM2zkEMxosMMSH8oiiRscIMwxL/cn5SBti02mDd6qLq3vn9KHl15zA==",
+    "shasum": "eef92c3dea2bf42726c3b8d6fc490800259902d6",
+    "tarball": "https://registry.npmjs.org/@midas-ds/breadcrumbs/-/breadcrumbs-1.0.5.tgz",
     "fileCount": 8,
-    "unpackedSize": 135754,
+    "unpackedSize": 136062,
     "signatures": [
       {
         "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
-        "sig": "MEQCICFVZlGgGiXS2ULBSfU2iiBzTLhbLSPjNA+gg91Z/LFGAiAfVQ1f/fVVlWFuHo2RG3QdZNAwlqPOWNI7JAhZ0ZRI2w=="
+        "sig": "MEUCIQD8Oly/o92vNlai+wgFT6hP0d9pMk3ck67UP3dAkFuuTgIgWq9OF2/C3glznCMi2SDhJ+hUGMb1Gi/Kc5czdCy+ZN8="
       }
     ]
   },
   "_npmUser": "wilhelmconsid <wilhelm.hjelm@consid.se>",
   "directories": {},
   "_npmOperationalInternal": {
-    "host": "s3://npm-registry-packages",
-    "tmp": "tmp/breadcrumbs_1.0.4_1731680646097_0.8381664284538313"
+    "host": "s3://npm-registry-packages-npm-production",
+    "tmp": "tmp/breadcrumbs_1.0.5_1737106652029_0.49034971182290765"
   },
   "_hasShrinkwrap": false
 }
