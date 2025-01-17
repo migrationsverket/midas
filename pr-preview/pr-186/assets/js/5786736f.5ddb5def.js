@@ -83,7 +83,7 @@ function _createMdxContent(props) {
       id: "api-på-komponenter-är-tillbaka",
       children: "API på komponenter är tillbaka"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Nu finns efter en tids uppehåll API och props för varera komponent beskrivna på komponentsidorna. Dessa kommer fortsätta förbättras i nästa release."
+      children: "Nu finns efter en tids uppehåll API och props för vardera komponent beskrivna på komponentsidorna. Dessa kommer fortsätta förbättras i nästa release."
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
       id: "instruktioner-för-klientnavigering-client-side-routing",
       children: "Instruktioner för klientnavigering (Client Side Routing)"
