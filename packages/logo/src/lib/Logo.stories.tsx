@@ -8,9 +8,18 @@ const meta: Meta<typeof Logo> = {
   argTypes: {
     size: {
       control: { type: 'radio' },
-      options: ['small', 'large'],
+      options: ['x-small', 'small', 'medium', 'large']
     },
-  },
+    background: {
+      control: { type: 'boolean' }
+    },
+    primary: {
+      control: { type: 'boolean' }
+    },
+    padding: {
+      control: { type: 'boolean' }
+    }
+  }
 }
 export default meta
 
@@ -20,19 +29,19 @@ export const Primary: Story = {}
 
 export const Dark: Story = {
   args: {
-    primary: false,
-  },
+    primary: false
+  }
 }
 
 export const BackgroundPrimary: Story = {
   args: {
-    background: true,
-  },
+    background: true
+  }
 }
 
 export const BackgroundDark: Story = {
   args: {
     primary: false,
-    background: true,
-  },
+    background: true
+  }
 }

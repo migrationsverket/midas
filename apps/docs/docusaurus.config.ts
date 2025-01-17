@@ -45,6 +45,15 @@ const config: Config = {
   },
   plugins: [
     [
+      'docusaurus-plugin-react-docgen-typescript',
+      /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
+      {
+        global: true,
+        src: Object.values(packageAliases),
+        parserOptions: {},// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
+      }
+    ],
+    [
       'docusaurus-plugin-module-alias',
       {
         alias: packageAliases
@@ -63,7 +72,23 @@ const config: Config = {
       return result
     }
   },
-  themes: ['@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    '@docusaurus/theme-live-codeblock',
+    [
+      '@easyops-cn/docusaurus-search-local',
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        // reference: https://github.com/easyops-cn/docusaurus-search-local
+        hashed: true,
+        docsRouteBasePath: '/',
+        language: ['sv'],
+        searchBarShortcut: true,
+        highlightSearchTermsOnTargetPage: true,
+        indexPages: true
+      }
+    ]
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',

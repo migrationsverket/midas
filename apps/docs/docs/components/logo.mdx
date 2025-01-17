@@ -8,6 +8,8 @@ import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
 import Info from '@site/static/data/logo.json'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Link } from '@midas-ds/link'
+import { Flex, FlexItem } from '@midas-ds/flex'
 
 <ComponentHeader
   name={'Logo'}
@@ -28,24 +30,66 @@ npm install @midas-ds/logo
 import { Logo } from '@midas-ds/logo'
 ```
 
-<LiveCodeBlock scope={{ Logo }}>
-  {`<>
-    <Logo/>
-    <Logo background/>
-    <Logo dark/>
-    <Logo dark background/>
-    <Logo size={'small'}/>
-</>`}
+<LiveCodeBlock scope={{ Logo }}>{`<Logo />`}</LiveCodeBlock>
+
+## Varianter
+
+Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
+
+### X-small
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="x-small" />
+    <Logo primary={false} size="x-small" />
+    <Logo background size="x-small" /> 
+    <Logo primary={false} background size="x-small" />
+
+    </div>`}
 </LiveCodeBlock>
 
-## SVG I vissa fall kan det vara mer fördelaktigt med en vanlig fil.
+### Small 
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <Logo size="small" />
+      <Logo primary={false} size="small" />
+      <Logo background size="small" />
+      <Logo primary={false} background size="small" />
+    </div>`}
+</LiveCodeBlock>
 
-<a
+### Medium
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <Logo size="medium" />
+      <Logo primary={false} size="medium" />
+      <Logo background size="medium" />
+      <Logo primary={false} background size="medium" />
+    </div>`}
+</LiveCodeBlock>
+
+### Large
+
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+      <Logo size="large" />
+      <Logo primary={false} size="large" />
+      <Logo background size="large" />
+      <Logo primary={false} background size="large" />
+    </div>`}
+</LiveCodeBlock>
+
+
+
+## Logotyp i SVG-format
+
+För de fall där komponenten inte kan användas tilhandahåller vi även logotypen som SVG. I paketet finns två SVG-filer, en med logotypen och en med bara M:et för små skärmar.
+
+<Link
   target='_blank'
   href={require('/files/Mig_logo_SVG.zip').default}
   download
 >
-  Ladda ner logotypen som SVG här (komprimerad fil)
-</a>
+  Ladda ner logotypen som SVG (komprimerad fil)
+</Link>
 
 <ComponentFooter info={Info} />

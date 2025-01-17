@@ -1,3 +1,21 @@
+## 2.1.0 (2025-01-17)
+
+### 🚀 Features
+
+- **card:** support custom link component ([556a24b8](https://github.com/migrationsverket/midas/commit/556a24b8))
+
+### 🩹 Fixes
+
+- **card:** support custom link ([7eb6948e](https://github.com/migrationsverket/midas/commit/7eb6948e))
+
+### 🧱 Updated Dependencies
+
+- Updated link to 1.1.1
+
+### ❤️ Thank You
+
+- Wilhelm Hjelm
+
 # 2.0.0 (2024-11-15)
 
 ### 🚀 Features

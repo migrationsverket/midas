@@ -1,0 +1,49 @@
+---
+title: Routing på klientnivå
+description: Hantera Client Side Navigation tillsammans med designsystemet
+---
+
+# Routing på klientnivå
+
+**Client Side Routing, navigering i webbläsaren**
+
+Våra komponenter har i grunden vanliga ankarlänkar (`<a>`-element) för att navigera mellan URL:er då dessa är absolut mest tillgänliga från grunden och standardiserade.
+Ofta vill man dock använda sig av olika ramverks möjligheter till att navigera mellan routes på klientnivå. För att integrera detta med designsystemets komponenter kan man gå tillväga på två olika sätt.
+
+## RouterProvider
+
+Från vardera komponent som exponerar en länk kan man även importera en `RouterProvider`. Denna accepterar navigatorn från ditt ramverk. Följande exempel är för komponenten `<Link />` och ramverket React Router men fungerar likadant med respektive komponent samt ramverk.
+
+```tsx
+import { Link, RouterProvider } from '@midas-ds/link';
+import { useNavigate, useHref } from 'react-router';
+...
+export default function App() {
+  const navigate = useNavigate();
+
+  return (
+      <RouterProvider navigate={navigate} useHref={useHref}>
+          <Link href="/">Startsida</Link>
+          <Link href="/om">Om oss</Link>
+          <Link href="/kontakta-oss">Kontakta oss</Link>
+      </RouterProvider>
+  );
+}
+```
+
+## Ersätt grundkomponent
+
+Istället för en `<RouterProvider>` går det att ersätta grundkomponenten till en från ditt ramverk. Detta gör vi med en egenskap vi kallar `as`. Observera att egenskaperna på komponenten då förändras något.
+Egenskaper som vi från designsystemet erbjuder är kvar men egenskaper från grundkomponenten som man nu ersätt försvinner och ersätts med egenskaper från ramverkets komponent. Vi ser i exemplet nedan att komponenten `<Link />` justerats för att använda `<Link />` från React Router och inte från React Aria.
+Istället för att skriva `href` för länken som vi hade gjort i React Arias komponent skriver vi `to` som React Router vill ha det. Däremot är vår egenskap `standalone` fortfarande möjlig att använda.
+
+```tsx
+import { Link } from '@midas-ds/link';
+import { Link as ReactRouterLink } from 'react-router';
+...
+export default function App() {
+  return <Link as={ReactRouterLink} to="/" standalone>Startsida</Link>;
+}
+```
+
+Du kan läsa mer om detta på React Arias dokumentationswebb. [React Aria Client Side Routing](https://react-spectrum.adobe.com/react-aria/routing.html).

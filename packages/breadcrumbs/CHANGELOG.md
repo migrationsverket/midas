@@ -1,3 +1,13 @@
+## 1.0.5 (2025-01-17)
+
+### 🩹 Fixes
+
+- **breadcrumbs:** update deps ([85f51a86](https://github.com/migrationsverket/midas/commit/85f51a86))
+
+### ❤️ Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.4 (2024-11-15)
 
 ### 🩹 Fixes

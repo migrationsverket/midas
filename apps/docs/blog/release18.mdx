@@ -1,0 +1,55 @@
+---
+title: 'Release 18'
+description: .
+slug: release-18
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Logo } from '@midas-ds/logo'
+import { Flex, FlexItem } from '@midas-ds/flex'
+
+Nedan är en sammanfattning av nyheterna i release 18.
+
+{/* truncate */}
+
+## API på komponenter är tillbaka
+
+Nu finns efter en tids uppehåll API och props för vardera komponent beskrivna på komponentsidorna. Dessa kommer fortsätta förbättras i nästa release.
+
+## Instruktioner för klientnavigering (Client Side Routing)
+
+Tydligare instruktioner och fler möjligheter för att integrera komponenterna med din router finns nu på [denna sida](/dev/client-side-routing)
+
+## Nya varianter på Logo
+
+Komponenten [Logo](/components/logo) har fått nya storlekar och varianter.
+
+<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
+  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <Logo size="x-small" />
+    <Logo size="small" />
+    <Logo size="medium" /> 
+    <Logo size="large" />
+</div>`}
+</LiveCodeBlock>
+
+## Sök
+
+Du kan nu söka på denna webplats. Du finner söken högst upp i högra hörnet eller med kortkommandot `ctrl` + `K` alternativt på Mac `⌘` + `K`.
+
+## Mindre justeringar
+
+- Justerat och förbättrat hur Modal växer beroende på innehållet.
+
+## Uppdaterade komponenter
+
+- MultiSelect (0.1.10)
+- LinkButton (1.3.1)
+- Modal (1.0.2)
+- Card (2.1.0)
+- Link (1.1.1)
+- Logo (1.1.0)
+- UI (0.7.21)
+- Dropdown (0.1.0)
+- Layout (0.0.1-beta.1)
+- Breadcrumbs (1.0.5)

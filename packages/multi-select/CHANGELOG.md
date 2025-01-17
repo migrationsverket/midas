@@ -1,3 +1,13 @@
+## 0.1.10 (2025-01-17)
+
+### 🩹 Fixes
+
+- **multi-select:** fix intermittent errors in tag removal ([7ec65ea4](https://github.com/migrationsverket/midas/commit/7ec65ea4))
+
+### ❤️ Thank You
+
+- pixelrickdreamer
+
 ## 0.1.9 (2024-12-13)
 
 ### 🧱 Updated Dependencies

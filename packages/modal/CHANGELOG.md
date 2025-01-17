@@ -1,3 +1,13 @@
+## 1.0.2 (2025-01-17)
+
+### 🩹 Fixes
+
+- **modal:** adjust max height and overflow ([6e14b30d](https://github.com/migrationsverket/midas/commit/6e14b30d))
+
+### ❤️ Thank You
+
+- Wilhelm Hjelm
+
 ## 1.0.1 (2024-12-02)
 
 ### 🩹 Fixes

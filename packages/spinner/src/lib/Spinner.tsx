@@ -3,7 +3,13 @@ import { LoaderCircle } from 'lucide-react'
 import clsx from 'clsx'
 
 export interface SpinnerProps {
+  /** Displays a smaller when set to true
+   * @default false
+   * */
   small?: boolean
+  /** For use on dark background
+   * @default false
+   * */
   dark?: boolean
 }
 

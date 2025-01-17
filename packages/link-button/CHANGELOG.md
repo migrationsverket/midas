@@ -1,3 +1,14 @@
+## 1.3.1 (2025-01-17)
+
+### 🩹 Fixes
+
+- **link-button:** external link icon on target _blank ([358520d1](https://github.com/migrationsverket/midas/commit/358520d1))
+- **link-button:** custom link component ([414e233e](https://github.com/migrationsverket/midas/commit/414e233e))
+
+### ❤️ Thank You
+
+- Wilhelm Hjelm
+
 ## 1.3.0 (2024-11-15)
 
 ### 🚀 Features
