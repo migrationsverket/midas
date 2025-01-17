@@ -39,6 +39,7 @@ export function App() {
   const handleValidationChange = (isValid: boolean) => {
     setIsFormValid(isValid); // Store the validation result in the parent
     console.log("Validation result from Form:", isValid);
+    console.log("value of is isFormValid "+ isFormValid)
   };
   return (
     <div className={styles.container}>
