@@ -1,3 +1,20 @@
+## 0.7.21 (2025-01-17)
+
+### 🧱 Updated Dependencies
+
+- Updated breadcrumbs to 1.0.5
+
+## 0.7.20 (2025-01-17)
+
+### 🧱 Updated Dependencies
+
+- Updated multi-select to 0.1.10
+- Updated link-button to 1.3.1
+- Updated modal to 1.0.2
+- Updated card to 2.1.0
+- Updated link to 1.1.1
+- Updated logo to 1.1.0
+
 ## 0.7.19 (2024-12-13)
 
 ### 🩹 Fixes
