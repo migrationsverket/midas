@@ -1,3 +1,9 @@
+## 0.7.21 (2025-01-17)
+
+### 🧱 Updated Dependencies
+
+- Updated breadcrumbs to 1.0.5
+
 ## 0.7.20 (2025-01-17)
 
 ### 🧱 Updated Dependencies

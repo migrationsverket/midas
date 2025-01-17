@@ -1,6 +1,6 @@
 {
   "name": "@midas-ds/ui",
-  "version": "0.7.20",
+  "version": "0.7.21",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
@@ -25,7 +25,7 @@
     "@midas-ds/toast": "1.0.5",
     "@midas-ds/link": "1.1.1",
     "@midas-ds/file-upload": "1.0.6",
-    "@midas-ds/breadcrumbs": "1.0.4",
+    "@midas-ds/breadcrumbs": "1.0.5",
     "@midas-ds/combobox": "1.0.6",
     "@midas-ds/date-picker": "1.0.8",
     "@midas-ds/flex": "1.0.2",
