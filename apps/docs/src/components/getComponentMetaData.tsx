@@ -26,7 +26,7 @@ export const ComponentHeader = ({
   return (
     <section style={{ marginBottom: 32, marginTop: -20 }}>
       <Flex fluid={true}>
-        <FlexItem style={{ alignSelf: 'center' }}>
+        <FlexItem className='friendlyName'>
           <b>{friendlyName}</b>
         </FlexItem>
         <FlexItem col='auto'>
