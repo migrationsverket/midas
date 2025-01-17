@@ -19,18 +19,27 @@ import {
   ToastProvider,
   MidasToastState
 } from '@midas-ds/toast'
-import { Progress, Steps, DynamicForm, Checkboxes } from '@midas-ds/progress'
+import { Form, Progress, Steps } from '@midas-ds/progress'
+import { useState } from 'react'
+
+
 
 export function App() {
   // const canProgress =
   const steps: Steps[] = [
-    { title: 'Step 1', canProgress: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 2', canProgress: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 3', canProgress: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 4', canProgress: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 5', canProgress: false, hasProgressed: false } // Initial step, not progressed
+    { title: 'Step 1', onValidation: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 2', onValidation: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 3', onValidation: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 4', onValidation: false, hasProgressed: false }, // Initial step, not progressed
+    { title: 'Step 5', onValidation: false, hasProgressed: false } // Initial step, not progressed
   ]
+  const [isFormValid, setIsFormValid] = useState(false);
 
+  // This function will be passed as the 'onValidationChange' prop to Form
+  const handleValidationChange = (isValid: boolean) => {
+    setIsFormValid(isValid); // Store the validation result in the parent
+    console.log("Validation result from Form:", isValid);
+  };
   return (
     <div className={styles.container}>
       <div>
@@ -69,23 +78,12 @@ export function App() {
       </Button>
       <h1>Playground app</h1>
 
-      <Progress steps={steps}>
-        <Checkboxes
-          onValueChange={value => console.log('from child ' + value)}
-          label={'Testing'}
-        />
-
-        <DynamicForm
-          onValueChange={value => console.log('from child ' + value)}
-        />
-        <Checkboxes
-          onValueChange={value => console.log('from child ' + value)}
-          label={'Testing'}
-        />
-
-        <DynamicForm
-          onValueChange={value => console.log('from child ' + value)}
-        />
+      <Progress steps={steps} >
+        <Form onValidationChange={handleValidationChange} />
+       <TextField isRequired/>
+       <Checkbox isRequired/>
+       <Checkbox isRequired/>
+       <Checkbox isRequired/>
       </Progress>
       <Select
         label={'select label'}

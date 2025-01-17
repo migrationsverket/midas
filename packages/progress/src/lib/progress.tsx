@@ -1,9 +1,9 @@
 import React, {
   Children,
-  useState,
-  useEffect,
+  ReactNode,
   useContext,
-  ReactElement
+  useEffect,
+  useState
 } from 'react'
 import styles from './progress.module.css'
 import clsx from 'clsx'
@@ -15,62 +15,53 @@ import {
   TabListStateContext
 } from 'react-aria-components'
 import { ChevronRight, Check } from 'lucide-react'
-
+import { Checkbox } from '@midas-ds/checkbox'
 export interface Steps {
   title: string
-  hasProgressed?: boolean
-  canProgress?: boolean
-}
-interface ChildProps {
-  onValueChange: (value: boolean) => void
+  hasProgressed?: boolean // vi styr
+  onValidation?: boolean // de styr
 }
 
 export interface ProgressProps {
   steps: Steps[]
-  children: ReactElement<ChildProps>[]
+  children: ReactNode
+}
+
+interface TabListState {
+  collection: {
+    getKeyBefore: (key: string) => string | null
+    getKeyAfter: (key: string) => string | null
+  }
+  selectedKey: string
+  setSelectedKey: (key: string) => void
 }
 
 function TabNavigation({
   steps,
-  setSteps,
-  setSelectedTab
+  setSteps
 }: {
   steps: Steps[]
   setSteps: React.Dispatch<React.SetStateAction<Steps[]>>
-  setSelectedTab: React.Dispatch<React.SetStateAction<string>>
 }) {
-  const state = useContext(TabListStateContext)
+  const state = useContext(TabListStateContext) as TabListState
 
-  if (!state || !state.selectedKey) {
+  if (!state) {
     return null
   }
 
   const currentStepIndex = steps.findIndex(
     step => step.title === state.selectedKey
   )
+
   const prevKey = state.collection.getKeyBefore(state.selectedKey)
   const nextKey = state.collection.getKeyAfter(state.selectedKey)
 
   const canMoveToPrev = currentStepIndex > 0
   const canMoveToNext =
-    currentStepIndex < steps.length - 1 && steps[currentStepIndex]?.canProgress
+    currentStepIndex < steps.length - 1 && steps[currentStepIndex]?.onValidation
 
   const onPrev =
-    prevKey && canMoveToPrev
-      ? () => {
-          // Update the steps to mark the current step as not progressed and cannot progress
-          setSteps(prevSteps =>
-            prevSteps.map((step, index) =>
-              index === currentStepIndex
-                ? { ...step, hasProgressed: false, canProgress: false } // Set both hasProgressed and canProgress to false
-                : step
-            )
-          )
-          if (prevKey) {
-            setSelectedTab(prevKey as string) // Ensure prevKey is a string before passing
-          }
-        }
-      : undefined
+    prevKey && canMoveToPrev ? () => state.setSelectedKey(prevKey) : undefined
 
   const onNext =
     nextKey && canMoveToNext
@@ -82,9 +73,8 @@ function TabNavigation({
                 : step
             )
           )
-          if (nextKey) {
-            setSelectedTab(nextKey as string) // Ensure nextKey is a string before passing
-          }
+
+          state.setSelectedKey(nextKey)
         }
       : undefined
 
@@ -100,7 +90,7 @@ function TabNavigation({
       </button>
       <button
         aria-label='Next tab'
-        onClick={onNext} // Here we are correctly calling `onNext`, which executes the logic
+        onClick={onNext}
         disabled={!canMoveToNext}
         className={clsx(!canMoveToNext && styles.disabled)}
       >
@@ -115,25 +105,19 @@ export const Progress: React.FC<ProgressProps> = ({
   children
 }) => {
   const [steps, setSteps] = useState<Steps[]>(initialSteps)
-  const [selectedTab, setSelectedTab] = useState<string>(initialSteps[0]?.title)
-  const [valueFromChild, setValueFromChild] = useState<boolean | null>(null)
-  useEffect(() => {
-    console.log('Steps state has changed:', steps)
-  }, [steps])
+  const [selectedTab, setSelectedTab] = useState<string>(steps[0]?.title)
+  const [isFormValid, setIsFormValid] = useState(false) // This state will hold the `isInvalid` value
 
-  const handleChildValueChange = (value: boolean) => {
-    console.log('Steps state has changed:', value)
-    setValueFromChild(value) // Update the value based on child validation
-    if (value !== null) {
-      setSteps(prevSteps =>
-        prevSteps.map((step, index) =>
-          index === steps.findIndex(step => step.title === selectedTab)
-            ? { ...step, canProgress: value } // Only update the current step's canProgress state
-            : step
-        )
+  const handleValidationResult = (isValid: boolean) => {
+    setIsFormValid(isValid)
+    setSteps(prevSteps =>
+      prevSteps.map((step, index) =>
+        index === currentStep ? { ...step, onValidation: isValid } : step
       )
-    }
+    )
   }
+
+  const currentStep = steps.findIndex(step => step.title === selectedTab)
 
   return (
     <div>
@@ -143,44 +127,44 @@ export const Progress: React.FC<ProgressProps> = ({
         onSelectionChange={key => setSelectedTab(key as string)}
       >
         <TabList
-          aria-label='Steps'
+          aria-label='Tabs'
           className={styles.stepsContainer}
         >
-          {steps.map((step, index) => (
-            <Tab
-              key={step.title}
-              id={step.title}
-              isDisabled={index > 0 && !steps[index - 1]?.hasProgressed}
-              className={clsx(
-                styles.step,
-                step.hasProgressed && styles.completed, // Apply completed style if `hasProgressed` is true
-                index === steps.findIndex(step => step.title === selectedTab) &&
-                  styles.current
-              )}
-            >
-              <div className={clsx(styles.stepTitle)}>
-                {step.hasProgressed &&
-                  index !==
-                    steps.findIndex(step => step.title === selectedTab) && (
-                    <Check />
-                  )}{' '}
-                {/* Render Check if the step is completed */}
-                {index ===
-                  steps.findIndex(step => step.title === selectedTab) && (
-                  <ChevronRight />
+          {steps.map((step, index) => {
+            const isCompleted = index < currentStep
+            return (
+              <Tab
+                key={step.title}
+                id={step.title}
+                isDisabled={!step.onValidation}
+                className={clsx(
+                  styles.step,
+                  isCompleted && styles.completed,
+                  index === currentStep && styles.current
                 )}
-              </div>
-              {step.title}
-              {index < steps.length - 1 && (
+              >
                 <div
                   className={clsx(
-                    styles.progressBar,
-                    step.hasProgressed && styles.progressBarCompleted
+                    styles.stepTitle,
+                    isCompleted && styles.completed,
+                    index === currentStep && styles.current
                   )}
-                />
-              )}
-            </Tab>
-          ))}
+                >
+                  {index === currentStep && <ChevronRight />}
+                  {isCompleted && index < currentStep && <Check />}
+                </div>
+                {step.title}
+                {index < steps.length - 1 && (
+                  <div
+                    className={clsx(
+                      styles.progressBar,
+                      isCompleted && styles.progressBarCompleted
+                    )}
+                  />
+                )}
+              </Tab>
+            )
+          })}
         </TabList>
 
         {Children.map(children, (child, index) => (
@@ -189,9 +173,9 @@ export const Progress: React.FC<ProgressProps> = ({
             id={steps[index]?.title}
             className={styles.panel}
           >
-            {steps[index]?.title}
             {React.cloneElement(child as React.ReactElement<any>, {
-              onValueChange: handleChildValueChange // Pass the handler for validation to the child
+              isInvalid: !isFormValid, // Pass the validation result to the child component
+              onValidationChange: handleValidationResult // Pass the validation change handler to the child
             })}
           </TabPanel>
         ))}
@@ -199,147 +183,103 @@ export const Progress: React.FC<ProgressProps> = ({
         <TabNavigation
           steps={steps}
           setSteps={setSteps}
-          setSelectedTab={setSelectedTab}
+
         />
       </Tabs>
     </div>
   )
 }
-//####   TESTING COMPONENTS  ##########
-
-// Define types for form fields
-interface FormField {
-  name: string
-  type: 'text' | 'email' | 'checkbox'
-  label: string
-  required?: boolean
-  validation?: (value: string | boolean) => boolean
+type FormProps = {
+  isInvalid?: boolean
+  onValidationChange: (isValid: boolean) => void
 }
 
-// Define the configuration of the form
-const formConfig: FormField[] = [
-  {
-    name: 'username',
-    type: 'text',
-    label: 'Username',
-    required: true,
-    validation: value => typeof value === 'string' && value.trim().length > 0
-  },
-  {
-    name: 'email',
-    type: 'email',
-    label: 'Email',
-    required: true,
-    validation: value =>
-      typeof value === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-  },
-  {
-    name: 'agreeToTerms',
-    type: 'checkbox',
-    label: 'Agree to terms and conditions',
-    required: true,
-    validation: value => value === true
-  }
-]
-interface ChildProps {
-  onValueChange: (value: boolean) => void // Optional to handle any child
-}
+export function Form({ onValidationChange }: FormProps) {
+  const [isChecked, setIsChecked] = useState(false)
+  const [isInvalid, setIsInvalid] = useState(true)
 
-export const DynamicForm: React.FC<ChildProps> = ({ onValueChange }) => {
-  // State to hold form values dynamically
-  const [formData, setFormData] = useState<{ [key: string]: string | boolean }>(
-    {}
-  )
-  const [isValid, setIsValid] = useState(false)
-
-  // Function to validate the form dynamically
-  const validateForm = (data: { [key: string]: string | boolean }) => {
-    return formConfig.every(field => {
-      if (!field.required) return true
-      const value = data[field.name]
-      return field.validation ? field.validation(value) : true
-    })
-  }
-  // Handle input change dynamically
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, type, value, checked } = e.target
-    const newValue = type === 'checkbox' ? checked : value
-
-    const updatedFormData = {
-      ...formData,
-      [name]: newValue
-    }
-
-    setFormData(updatedFormData)
-    setIsValid(validateForm(updatedFormData))
-  }
-
-  // Handle form submission
+  // Calculate form validity based on checkbox state and isInvalid prop
+  const formInvalid = !isChecked || isInvalid // The form is invalid if the checkbox is not checked or isInvalid is true.
+  // This effect will run when formInvalid or isInvalid changes
+  console.log()
+  useEffect(() => {
+    // Log the updated state value for isChecked
+    console.log('Updated checkbox value (isInvalid):', formInvalid)
+  }, [formInvalid])
 
   useEffect(() => {
-    if (onValueChange) {
-      onValueChange(isValid) // Pass the current value of `isActive` directly
-    }
-  }, [isValid, onValueChange])
+    // Call the parent function when validation changes
+    onValidationChange(!formInvalid) // Pass true if valid, false if invalid
+  }, [formInvalid, isInvalid, onValidationChange]) // Only run this effect when formInvalid or isInvalid changes
+
+  const handleCheckboxChange = (isSelected: boolean) => {
+    setIsChecked(isSelected) // Update the state with the checkbox selection status
+    console.log('Checkbox value is:', isSelected) // Log the new checkbox value
+    setIsInvalid(!isSelected)
+  }
 
   return (
-    <form>
-      {formConfig.map(field => (
-        <div key={field.name}>
-          <label htmlFor={field.name}>
-            {field.label}
-            <input
-              type={field.type}
-              id={field.name}
-              name={field.name}
-              onChange={handleChange}
-              value={
-                field.type !== 'checkbox'
-                  ? (formData[field.name] as string) || ''
-                  : undefined
-              }
-              checked={
-                field.type === 'checkbox'
-                  ? (formData[field.name] as boolean) || false
-                  : undefined
-              }
-            />
-          </label>
-        </div>
-      ))}
+    <form
+      style={{
+        border: '2px solid',
+        borderColor: isChecked ? 'green' : 'red', // Dynamic border color based on isChecked
+        padding: 16
+      }}
+    >
+      <Checkbox
+        isSelected={isChecked}
+        onChange={handleCheckboxChange}
+      >
+        Agree to terms
+      </Checkbox>
+      {!isChecked && <p style={{ color: 'red' }}>You must agree to proceed.</p>}
+
+      {/* Display the values in the UI */}
+      <div>
+        <p>
+          <strong>isInvalid:</strong> {isInvalid ? 'true' : 'false'}
+        </p>
+        <p>
+          <strong>formInvalid:</strong> {formInvalid ? 'true' : 'false'}
+        </p>
+        <p>
+          <strong>Validation Result Passed to Parent:</strong>{' '}
+          {formInvalid ? 'false' : 'true'}
+        </p>
+      </div>
     </form>
   )
 }
-
-interface CheckboxProps {
-  onValueChange: (value: boolean) => void // Callback to notify parent of checkbox value
-  label: string // Optional label for the checkbox
-  defaultChecked?: boolean // Default state of the checkbox
-}
-
-export const Checkboxes: React.FC<CheckboxProps> = ({
-  onValueChange,
-  label,
-  defaultChecked = false
-}) => {
-  const [isChecked, setIsChecked] = useState<boolean>(defaultChecked)
-
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.checked
-    setIsChecked(newValue) // Update internal state
-    onValueChange(newValue) // Notify parent component with the new value
-  }
+/*
+const AnotherComponent: React.FC<{
+  steps: Steps[]
+  currentStepIndex: number
+  textValue: string
+  isValid: boolean
+}> = ({ steps, currentStepIndex, textValue, isValid }) => {
+  useEffect(() => {
+    console.table(steps)
+  }, [steps])
 
   return (
     <div>
-      <label>
-        <input
-          type='checkbox'
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-        />
-        {label}
-      </label>
+      <h2>Another Component</h2>
+      <p>Current Step: {steps[currentStepIndex]?.title}</p>
+      <p>
+        Has Progressed: {steps[currentStepIndex]?.hasProgressed ? 'Yes' : 'No'}
+      </p>
+      <p>Can Progress: {steps[currentStepIndex]?.canProgress ? 'Yes' : 'No'}</p>
+      <p>Text Value: {textValue}</p>
+      <p>Is Valid: {isValid ? 'Yes' : 'No'}</p>
     </div>
   )
 }
+
+
+      <AnotherComponent
+        steps={steps}
+        currentStepIndex={currentStep}
+        textValue={textValue}
+        isValid={isValid}
+      />
+*/
