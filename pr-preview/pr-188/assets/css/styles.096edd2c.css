@@ -3767,13 +3767,16 @@ mark {
 /* stylelint-disable-next-line media-feature-range-notation */
 @media (max-width: 996px) {
   .navbar__items {
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    gap: 1.5rem;
   }
 
     .navbar__items .navbar__toggle {
       margin: 0;
     }
+
+  .navbarSearchContainer_Bca1 {
+    position: relative;
+  }
 }
 
 /**
