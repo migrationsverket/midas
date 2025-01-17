@@ -6,14 +6,12 @@ description: Komponent med samma utseende och beteende som knapp men avsedd att 
 import { PropTable } from '@site/src/components/propsTable'
 import { LinkButton } from '@midas-ds/link-button'
 import { Flex, FlexItem } from '@midas-ds/flex'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/link.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
 
 <ComponentHeader
   name={'LinkButton'}
-  info={Info}
   friendlyName={'Länkknapp'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Link.html'
 />
@@ -45,5 +43,3 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 ## API
 
 <PropTable name='LinkButton' />
-
-<ComponentFooter info={Info} />

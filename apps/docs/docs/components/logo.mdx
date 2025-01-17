@@ -5,15 +5,13 @@ description: Migrationsverkets officiella logotyp, den röda bron tillsammans me
 
 import { Logo } from '@midas-ds/logo'
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/logo.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Link } from '@midas-ds/link'
 import { Flex, FlexItem } from '@midas-ds/flex'
 
 <ComponentHeader
   name={'Logo'}
-  info={Info}
   friendlyName={'Logotyp'}
   overrideHeadlessLink=''
 />
@@ -37,6 +35,7 @@ import { Logo } from '@midas-ds/logo'
 Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
 
 ### X-small
+
 <LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
   {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
     <Logo size="x-small" />
@@ -45,9 +44,11 @@ Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt me
     <Logo primary={false} background size="x-small" />
 
     </div>`}
+
 </LiveCodeBlock>
 
-### Small 
+### Small
+
 <LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
   {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
       <Logo size="small" />
@@ -58,6 +59,7 @@ Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt me
 </LiveCodeBlock>
 
 ### Medium
+
 <LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
   {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
       <Logo size="medium" />
@@ -78,8 +80,6 @@ Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt me
     </div>`}
 </LiveCodeBlock>
 
-
-
 ## Logotyp i SVG-format
 
 För de fall där komponenten inte kan användas tilhandahåller vi även logotypen som SVG. I paketet finns två SVG-filer, en med logotypen och en med bara M:et för små skärmar.
@@ -91,5 +91,3 @@ För de fall där komponenten inte kan användas tilhandahåller vi även logoty
 >
   Ladda ner logotypen som SVG (komprimerad fil)
 </Link>
-
-<ComponentFooter info={Info} />

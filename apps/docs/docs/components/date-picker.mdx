@@ -4,14 +4,12 @@ description: Fält för att välja ett datum eller ett spann av datum med kalend
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/date-picker.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DatePicker, DateRangePicker } from '@midas-ds/date-picker'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'DatePicker'}
-  info={Info}
   friendlyName={'Datumväljare'}
 />
 
@@ -51,5 +49,3 @@ import { DateRangePicker } from '@midas-ds/date-picker'
   name='DateRangePicker'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

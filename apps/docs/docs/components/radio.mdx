@@ -6,13 +6,11 @@ description: Radio är en typ av inmatningsfält som används för att välja et
 import { PropTable } from '@site/src/components/propsTable'
 import { Radio, RadioGroup } from '../../../../packages/radio/src'
 import { Button } from '../../../../packages/button/src'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/radio.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Radio'}
-  info={Info}
   friendlyName={'Radioknappar'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/RadioGroup.html'
 />
@@ -53,8 +51,6 @@ Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
 
 Sätt validering med `isInvalid` eller använd inbyggda tester som `isRequired`.
 
-<ComponentFooter info={Info} />
-
 ## Riktlinjer
 
 ### Val av komponent
@@ -86,5 +82,3 @@ flowchart TD;
 ## API
 
 <PropTable name='Radio' />
-
-<ComponentFooter info={Info} />

@@ -4,14 +4,12 @@ description: Sökbar version av Select
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/combobox.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Combobox'}
-  info={Info}
   friendlyName='Flerval med sök, väljare med sök, dropdown med sök'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/ComboBox.html'
 />
@@ -39,8 +37,6 @@ import { ComboBox } from '@midas-ds/combobox'
     {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
 </ComboBox>`}
 </LiveCodeBlock>
-
-<ComponentFooter info={Info} />
 
 ## Riktlinjer
 
@@ -77,5 +73,3 @@ flowchart TD;
   name='ComboBoxItem'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

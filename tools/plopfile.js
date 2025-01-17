@@ -41,17 +41,8 @@ module.exports = function (plop) {
       let actions = [
         {
           type: 'add',
-          path: `apps/docs/docs/components/${componentName}.mdx`,
-          templateFile: 'apps/docs/static/templates/component-docs.mdx.hbs',
-          data: {
-            componentName: '{{componentName}}',
-            properName: plop.getHelper('pascalCase')(componentName)
-          }
-        },
-        {
-          type: 'add',
-          path: `apps/docs/static/data/${componentName}.json`,
-          templateFile: 'apps/docs/static/templates/component-info.json.hbs',
+          path: `../apps/docs/docs/components/${componentName}.mdx`,
+          templateFile: '../apps/docs/static/templates/component-docs.mdx.hbs',
           data: {
             componentName: '{{componentName}}',
             properName: plop.getHelper('pascalCase')(componentName)

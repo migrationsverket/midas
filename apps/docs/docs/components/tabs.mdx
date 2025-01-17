@@ -4,15 +4,13 @@ description: Fördela information över flertalet tabbar.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/tabs.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Button } from '@midas-ds/button'
 import { Tabs as MidasTabs } from '@midas-ds/tabs'
 
 <ComponentHeader
   name={'Tabs'}
-  info={Info}
   friendlyName={'Flikar'}
 />
 
@@ -55,5 +53,3 @@ import { Tabs } from '@midas-ds/tabs'
 ## API
 
 <PropTable name='Tabs' />
-
-<ComponentFooter info={Info} />
