@@ -4,13 +4,12 @@ title: Select
 
 import { Select, Item } from '@midas-ds/select'
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/select.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Select'}
-  info={Info}
   friendlyName={'Flerval, väljare, dropdown'}
 />
 
@@ -35,8 +34,6 @@ import { Item, Select } from '@midas-ds/select'
     {(item) => <Item>{item.name}</Item>}
 </Select>`}
 </LiveCodeBlock>
-
-<ComponentFooter info={Info} />
 
 ## Riktlinjer
 
@@ -73,5 +70,3 @@ flowchart TD;
   name='Item'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

@@ -6,13 +6,12 @@ description: Filuppladdning används när användaren behöver ladda upp en elle
 import { PropTable } from '@site/src/components/propsTable'
 import { FileUpload } from '@midas-ds/file-upload'
 import CodeBlock from '@theme/CodeBlock'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/file-upload.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'FileUpload'}
-  info={Info}
   friendlyName={'Filuppladdning'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
 />
@@ -32,5 +31,3 @@ import { FileUpload } from '@midas-ds/fileupload'
 <LiveCodeBlock scope={{ FileUpload }}>
   {`<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`}
 </LiveCodeBlock>
-
-<ComponentFooter info={Info} />

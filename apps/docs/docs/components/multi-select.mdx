@@ -4,13 +4,12 @@ title: MultiSelect
 
 import { MultiSelect } from '@midas-ds/multi-select'
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/select.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'MultiSelect'}
-  info={Info}
   friendlyName={'Flerval, multiväljare, dropdown'}
   overrideHeadlessLink=''
 />
@@ -34,8 +33,6 @@ import { MultiSelect } from '@midas-ds/multi-select'
 />`}
 </LiveCodeBlock>
 
-<ComponentFooter info={Info} />
-
 ## Riktlinjer
 
 ### Val av komponent
@@ -58,5 +55,3 @@ flowchart TD;
   L -.Flera.-> M[Använd ComboBox multiple]
   L --->|Ett| N[Använd ComboBox]
 ```
-
-<ComponentFooter info={Info} />

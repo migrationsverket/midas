@@ -5,13 +5,12 @@ description: Brödsmulor används för att visa användaren vart hen är i ett d
 
 import { PropTable } from '@site/src/components/propsTable'
 import { Breadcrumbs } from '@midas-ds/breadcrumbs'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/breadcrumbs.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Breadcrumbs'}
-  info={Info}
   friendlyName={'Brödsmulor'}
 />
 
@@ -34,5 +33,3 @@ import { Breadcrumbs } from '@midas-ds/breadcrumbs'
 ## API
 
 <PropTable name='Breadcrumbs' />
-
-<ComponentFooter info={Info} />

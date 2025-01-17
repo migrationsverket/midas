@@ -4,14 +4,13 @@ description: Sökfält är en kombinationskomponent av TextField och Button
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/search-field.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import { SearchField } from '@midas-ds/search-field'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'SearchField'}
-  info={Info}
   friendlyName={'Sökfält'}
 />
 
@@ -28,5 +27,3 @@ import { SearchField } from '@midas-ds/search-field'
 ```
 
 <LiveCodeBlock scope={{ SearchField }}>{`<SearchField placeholder="Sök efter fruker" />`}</LiveCodeBlock>
-
-<ComponentFooter info={Info} />

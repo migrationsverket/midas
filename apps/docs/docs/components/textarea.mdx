@@ -4,14 +4,13 @@ description: När användaren ska fylla i längre information
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/textarea.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import { TextArea } from '@midas-ds/textarea'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Textarea'}
-  info={Info}
   friendlyName='Textfält'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1'
 />
@@ -36,5 +35,3 @@ import { TextArea } from '@midas-ds/textarea'
     // showCounter={true}
 />`}
 </LiveCodeBlock>
-
-<ComponentFooter info={Info} />

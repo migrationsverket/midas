@@ -18,12 +18,6 @@
         "port": 3000
       }
     },
-    "generate-info": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "npx nx affected --target info"
-      }
-    },
     "generate-component-page": {
       "executor": "nx:run-commands",
       "options": {

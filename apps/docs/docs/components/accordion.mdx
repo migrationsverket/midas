@@ -6,15 +6,15 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 
 import { PropTable } from '@site/src/components/propsTable'
 import { Accordion, AccordionItem, AccordionContent, AccordionTrigger } from '@midas-ds/accordion'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/accordion.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Accordion'}
-  info={Info}
   friendlyName={'Dragspel'}
   overrideHeadlessLink='https://www.radix-ui.com/primitives/docs/components/accordion'
+  overrideHeadlessLinkTitle='Radix UI'
 />
 
 Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren.
@@ -72,5 +72,3 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@m
   name={'AccordionItem'}
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

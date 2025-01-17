@@ -4,8 +4,8 @@ description: Modal som lägger sig över allt annat innehåll.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/modal.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Modal } from '@midas-ds/modal'
 import { Button } from '@midas-ds/button'
@@ -15,7 +15,6 @@ import { Heading } from 'react-aria-components'
 
 <ComponentHeader
   name={'Modal'}
-  info={Info}
   friendlyName='Modal, Dialog, Dialogruta'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Dialog.html'
 />
@@ -116,5 +115,3 @@ Kommer snart
 ## API
 
 <PropTable name='Modal' />
-
-<ComponentFooter info={Info} />

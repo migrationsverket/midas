@@ -9,9 +9,6 @@
       "executor": "@nx/eslint:lint"
     },
 
-    "info": {
-      "command": "npm view @midas-ds/{projectName} --json > apps/docs/static/data/{projectName}.json"
-    },
     "build": {
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],

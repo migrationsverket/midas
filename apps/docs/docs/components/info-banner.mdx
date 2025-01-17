@@ -6,12 +6,10 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 import { PropTable } from '@site/src/components/propsTable'
 import { InfoBanner } from '@midas-ds/info-banner'
 import { Tabs as MidasTabs } from '@midas-ds/tabs'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/info-banner.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
   name={'info-banner'}
-  info={Info}
   friendlyName={'Informationsmeddelande'}
   overrideHeadlessLink=''
 />
@@ -68,5 +66,3 @@ import {InfoBanner} from "@midas-ds/info-banner";
 <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
 <InfoBanner type={'success'} title={'Success'} message={'Message'}/>
 ```
-
-<ComponentFooter info={Info} />
