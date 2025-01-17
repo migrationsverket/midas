@@ -4883,41 +4883,6 @@ See https://x.com/JoshWComeau/status/1332015868725891076
  * LICENSE file in the root directory of this source tree.
  */
 
-.cardContainer_fWXF {
-  --ifm-link-color: var(--ifm-color-emphasis-800);
-  --ifm-link-hover-color: var(--ifm-color-emphasis-700);
-  --ifm-link-hover-decoration: none;
-
-  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.15);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all var(--ifm-transition-fast) ease;
-  transition-property: border, box-shadow;
-}
-
-.cardContainer_fWXF:hover {
-  border-color: var(--ifm-color-primary);
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-}
-
-.cardContainer_fWXF *:last-child {
-  margin-bottom: 0;
-}
-
-.cardTitle_rnsV {
-  font-size: 1.2rem;
-}
-
-.cardDescription_PWke {
-  font-size: 0.8rem;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 html,
 body {
   height: 100%;

@@ -104,11 +104,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Component } from '@midas-ds/component';\n...\n<Component/>\n"
       })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För specfika instruktioner, se respektive ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components",
-        children: "komponent"
-      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "För specfika instruktioner, se respektive komponent."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installera-globala-stilmallen",
       children: "Installera globala stilmallen"
