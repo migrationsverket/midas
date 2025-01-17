@@ -65,7 +65,7 @@ function _createMdxContent(props) {
           target: "\\_blank",
           href: (__webpack_require__(82663)/* ["default"] */ .A),
           download: true,
-          children: "UI-kit till Adobe XD (version 15)"
+          children: "UI-kit till Adobe XD (version 16)"
         })]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
         children: ["Om du inte har Adobe XD kan du kolla på ", (0,jsx_runtime.jsx)(_components.a, {
