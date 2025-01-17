@@ -4,10 +4,45 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/blog/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Fri, 13 Dec 2024 12:24:58 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 Jan 2025 10:48:42 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 18]]></title>
+            <link>https://designsystem.migrationsverket.se/blog/release-18/</link>
+            <guid>https://designsystem.migrationsverket.se/blog/release-18/</guid>
+            <pubDate>Thu, 16 Jan 2025 10:48:42 GMT</pubDate>
+            <description><![CDATA[.]]></description>
+            <content:encoded><![CDATA[<p>Nedan är en sammanfattning av nyheterna i release 18.</p>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="api-på-komponenter-är-tillbaka">API på komponenter är tillbaka<a href="https://designsystem.migrationsverket.se/blog/release-18/#api-p%C3%A5-komponenter-%C3%A4r-tillbaka" class="hash-link" aria-label="Direktlänk till API på komponenter är tillbaka" title="Direktlänk till API på komponenter är tillbaka">​</a></h2>
+<p>Nu finns efter en tids uppehåll API och props för vardera komponent beskrivna på komponentsidorna. Dessa kommer fortsätta förbättras i nästa release.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="instruktioner-för-klientnavigering-client-side-routing">Instruktioner för klientnavigering (Client Side Routing)<a href="https://designsystem.migrationsverket.se/blog/release-18/#instruktioner-f%C3%B6r-klientnavigering-client-side-routing" class="hash-link" aria-label="Direktlänk till Instruktioner för klientnavigering (Client Side Routing)" title="Direktlänk till Instruktioner för klientnavigering (Client Side Routing)">​</a></h2>
+<p>Tydligare instruktioner och fler möjligheter för att integrera komponenterna med din router finns nu på <a href="https://designsystem.migrationsverket.se/dev/client-side-routing/">denna sida</a></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nya-varianter-på-logo">Nya varianter på Logo<a href="https://designsystem.migrationsverket.se/blog/release-18/#nya-varianter-p%C3%A5-logo" class="hash-link" aria-label="Direktlänk till Nya varianter på Logo" title="Direktlänk till Nya varianter på Logo">​</a></h2>
+<p>Komponenten <a href="https://designsystem.migrationsverket.se/components/logo/">Logo</a> har fått nya storlekar och varianter.</p>
+<div class="playgroundPreview_d6Ft"><div></div></div><div class="playgroundEditor_hiaS borderBottom_SKni"><div class="root_Yd8o" data-orientation="vertical"><div data-state="closed" data-orientation="vertical" class="item_Jr7L"><button type="button" aria-controls="radix-:R6glbeh:" aria-expanded="false" data-state="closed" data-orientation="vertical" id="radix-:R2glbeh:" class="trigger_lAVx" data-radix-collection-item=""><h3 class="triggerText_xViX">Exempelkod</h3><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"></path></svg></button><div data-state="closed" id="radix-:R6glbeh:" hidden="" role="region" aria-labelledby="radix-:R2glbeh:" data-orientation="vertical" class="content_QNal" style="--radix-accordion-content-height:var(--radix-collapsible-content-height);--radix-accordion-content-width:var(--radix-collapsible-content-width)"></div></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="sök">Sök<a href="https://designsystem.migrationsverket.se/blog/release-18/#s%C3%B6k" class="hash-link" aria-label="Direktlänk till Sök" title="Direktlänk till Sök">​</a></h2>
+<p>Du kan nu söka på denna webplats. Du finner söken högst upp i högra hörnet eller med kortkommandot <code scope="[object Object]">ctrl</code> + <code scope="[object Object]">K</code> alternativt på Mac <code scope="[object Object]">⌘</code> + <code scope="[object Object]">K</code>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="mindre-justeringar">Mindre justeringar<a href="https://designsystem.migrationsverket.se/blog/release-18/#mindre-justeringar" class="hash-link" aria-label="Direktlänk till Mindre justeringar" title="Direktlänk till Mindre justeringar">​</a></h2>
+<ul>
+<li>Justerat och förbättrat hur Modal växer beroende på innehållet.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="uppdaterade-komponenter">Uppdaterade komponenter<a href="https://designsystem.migrationsverket.se/blog/release-18/#uppdaterade-komponenter" class="hash-link" aria-label="Direktlänk till Uppdaterade komponenter" title="Direktlänk till Uppdaterade komponenter">​</a></h2>
+<ul>
+<li>MultiSelect (0.1.10)</li>
+<li>LinkButton (1.3.1)</li>
+<li>Modal (1.0.2)</li>
+<li>Card (2.1.0)</li>
+<li>Link (1.1.1)</li>
+<li>Logo (1.1.0)</li>
+<li>UI (0.7.21)</li>
+<li>Dropdown (0.1.0)</li>
+<li>Layout (0.0.1-beta.1)</li>
+<li>Breadcrumbs (1.0.5)</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Release 17]]></title>
             <link>https://designsystem.migrationsverket.se/blog/release-17/</link>
