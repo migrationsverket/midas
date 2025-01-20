@@ -258,20 +258,34 @@ mark {
   border-radius: 0 !important;
 }
 
+.friendlyName {
+  align-self: center;
+  flex: 1 0 0% !important;
+}
+
 @media (min-width: 1620px) {
   .padding-top--md {
     padding-top: 3rem !important;
   }
 }
 
+@media (max-width: 1200px) {
+  .friendlyName {
+    flex: 0 0 100% !important;
+  }
+}
+
 /* stylelint-disable-next-line media-feature-range-notation */
 @media (max-width: 996px) {
   .navbar__items {
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    gap: 1.5rem;
 
     .navbar__toggle {
       margin: 0;
     }
+  }
+
+  [class^='navbarSearchContainer_'] {
+    position: relative;
   }
 }

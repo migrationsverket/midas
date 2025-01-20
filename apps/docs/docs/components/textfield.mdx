@@ -5,14 +5,12 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { TextField } from '@midas-ds/textfield'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/textfield.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Grid, GridItem } from '@midas-ds/grid'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Textfield'}
-  info={Info}
   friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
@@ -128,8 +126,6 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 `}
 </LiveCodeBlock>
 
-<ComponentFooter info={Info} />
-
 ## Riktlinjer
 
 ### Desktop
@@ -146,5 +142,3 @@ Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./
     </GridItem>
 </Grid>`}
 </LiveCodeBlock>
-
-<ComponentFooter info={Info} />

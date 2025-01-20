@@ -5,15 +5,13 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 
 import { PropTable } from '@site/src/components/propsTable'
 import { Button, ButtonGroup } from '@midas-ds/button'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/button.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Flex, FlexItem } from '@midas-ds/flex'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
 
 <ComponentHeader
   name={'Button'}
-  info={Info}
   friendlyName={'Knapp'}
 />
 
@@ -148,5 +146,3 @@ Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primär
   name='ButtonGroup'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

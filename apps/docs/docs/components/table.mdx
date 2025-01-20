@@ -4,14 +4,12 @@ description: En enkel tabell för att visualisera data.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/table.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/table'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Table'}
-  info={Info}
   friendlyName={'Tabell'}
 />
 
@@ -170,5 +168,3 @@ Använd `striped` om du vill ha en randig tabell.
   name='Cell'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

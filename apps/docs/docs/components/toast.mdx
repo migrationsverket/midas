@@ -6,13 +6,11 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 import { PropTable } from '@site/src/components/propsTable'
 import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src'
 import { Button } from '../../../../packages/button/src'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/toast.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Flex, FlexItem } from '../../../../packages/flex/src'
 
 <ComponentHeader
   name={'Toast'}
-  info={Info}
   friendlyName={'Notifiering, notiser'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
 />
@@ -171,5 +169,3 @@ Timeout ska av tillgänglighetsskäl vara minst 5000ms:
   name='ToastProvider'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />

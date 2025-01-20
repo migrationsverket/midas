@@ -4,15 +4,13 @@ description: Komponent som skapar en länk
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/link.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link } from '@midas-ds/link'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { baseColors } from '@midas-ds/theme'
 
 <ComponentHeader
   name={'Link'}
-  info={Info}
   friendlyName={'Länk'}
 />
 
@@ -78,5 +76,3 @@ Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 ## API
 
 <PropTable name='Link' />
-
-<ComponentFooter info={Info} />

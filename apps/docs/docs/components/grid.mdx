@@ -4,15 +4,13 @@ description: Grid baserat på tekniken display grid i css
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData'
-import Info from '@site/static/data/grid.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Grid, GridItem } from '../../../../packages/grid/src'
 import { Card } from '../../../../packages/card/src'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'Grid'}
-  info={Info}
   friendlyName={'Rutnät'}
   overrideHeadlessLink=''
 />
@@ -91,5 +89,3 @@ Använd `<Grid></Grid>` som komponent och justera de direkt underliggande kompon
   name='GridItem'
   defaultOpen={false}
 />
-
-<ComponentFooter info={Info} />
