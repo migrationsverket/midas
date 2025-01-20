@@ -9,16 +9,18 @@ export interface InfoBannerProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  /** Set appearance of banner accoring to type of message */
+  /**
+   *  Specify what state the InfoBanner represents
+   **/
   type: 'success' | 'info' | 'important' | 'warning'
-  /** InfoBanner title */
+  /** Specify the title */
   title?: string
-  /** InfoBanner message */
-  message?: React.ReactNode | string
+  /** Specify the message. Element or string */
+  message?: string | React.ReactNode
   /** Additional elements displayed inside the banner */
   children?: React.ReactNode
   /**
-   *  Set to true to let user interact and dismiss banner via button in the top right corner
+   *  Specify if the InfoBanner should have a dismiss button in the top right corner
    */
   dismissable?: boolean
 }
@@ -30,7 +32,7 @@ const iconMap = {
   warning: AlertTriangle
 }
 /**
- * Displays a static message as a banner
+ * Displays a static message as an inline banner
  */
 export const InfoBanner: React.FC<InfoBannerProps> = ({
   title,
