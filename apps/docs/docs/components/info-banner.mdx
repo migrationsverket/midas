@@ -51,6 +51,7 @@ import { InfoBanner } from '@midas-ds/info-banner'
   />
   <InfoBanner
     type={'success'}
+    dismissable={true}
     title={'Formuläret har skickats'}
     message={'Visas för användaren för att bekräfta att en action gått rätt till.'}
   />
@@ -61,8 +62,11 @@ import { InfoBanner } from '@midas-ds/info-banner'
 ```tsx
 import {InfoBanner} from "@midas-ds/info-banner";
 
-<InfoBanner type={'info'} title={'Information'} message={'Message'}/>
+<InfoBanner type={'info'} title={'Information'} message={'Message'} />
 <InfoBanner type={'important'} title={'Important'} message={'Message'}/>
 <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
-<InfoBanner type={'success'} title={'Success'} message={'Message'}/>
+<InfoBanner type={'success'} title={'Success'} message={'Message'} dismissable={true}/>
 ```
+## API
+
+<PropTable name={'InfoBanner'}/>
