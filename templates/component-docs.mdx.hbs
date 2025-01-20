@@ -4,12 +4,11 @@ description: Kort beskrivning av {{ properName }}
 ---
 
 import { PropTable } from "@site/src/components/propsTable";
-import { ComponentHeader, ComponentFooter } from '@site/src/components/getComponentMetaData';
-import Info from '@site/static/data/{{ componentName }}.json'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData';
 import { {{ properName }} } from '@midas-ds/{{ componentName }}'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-<ComponentHeader name={'{{ properName }}'} info={Info} friendlyName="Skriv svenska namn för komponenten" />
+<ComponentHeader name={'{{ properName }}'}  friendlyName="Skriv svenska namn för komponenten" />
 
 ## Introduktion
 
@@ -30,6 +29,9 @@ import { {{ properName }} } from '@midas-ds/{{ componentName }}'
 </LiveCodeBlock>
 
 ## Riktlinjer
+
 Kommer snart
 
-<ComponentFooter info={Info} />
+## API
+
+<PropTable name={'{{ properName }}'} />
