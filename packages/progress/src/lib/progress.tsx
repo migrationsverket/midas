@@ -205,10 +205,7 @@ export function Form({ onValidationChange }: FormProps) {
   // Calculate form validity based on checkbox state and isInvalid prop
   const formInvalid = !isChecked || isInvalid // The form is invalid if the checkbox is not checked or isInvalid is true.
   // This effect will run when formInvalid or isInvalid changes
-  useEffect(() => {
-    // Log the updated state value for isChecked
-    console.log('Updated checkbox value (isInvalid):', formInvalid)
-  }, [formInvalid])
+  
 
   useEffect(() => {
     // Call the parent function when validation changes
