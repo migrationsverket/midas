@@ -118,7 +118,11 @@ export const Progress: React.FC<ProgressProps> = ({
   }
 
   const currentStep = steps.findIndex(step => step.title === selectedTab)
-
+  /*
+useEffect(() => {
+    console.table(steps)
+  }, [steps])
+  */
   return (
     <div>
       <Tabs
@@ -201,7 +205,6 @@ export function Form({ onValidationChange }: FormProps) {
   // Calculate form validity based on checkbox state and isInvalid prop
   const formInvalid = !isChecked || isInvalid // The form is invalid if the checkbox is not checked or isInvalid is true.
   // This effect will run when formInvalid or isInvalid changes
-  console.log()
   useEffect(() => {
     // Log the updated state value for isChecked
     console.log('Updated checkbox value (isInvalid):', formInvalid)
