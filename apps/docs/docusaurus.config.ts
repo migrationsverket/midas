@@ -50,7 +50,17 @@ const config: Config = {
       {
         global: true,
         src: Object.values(packageAliases),
-        parserOptions: {},// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
+        parserOptions: {
+          // prop table gets a bit crowded if we allow everything
+          propFilter: (prop, component) => {
+            if (prop.parent) {
+              return !prop.parent.fileName.includes("@types/react");
+            }
+            return true;
+          },
+          savePropValueAsString: true,
+          shouldExtractLiteralValuesFromEnum: true,
+        },// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
       }
     ],
     [
