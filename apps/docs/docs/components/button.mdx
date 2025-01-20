@@ -28,46 +28,46 @@ import { Button } from '@midas-ds/button'
 ```
 
 <LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj frukt">
-    <Button>{fruits.shuffled(1).name}</Button>
-    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-    <Button isDisabled>{fruits.shuffled(1).name}</Button>
+  {`<ButtonGroup aria-label="Välj knapp">
+    <Button>Primär</Button>
+    <Button variant="secondary">Sekundär</Button>
+    <Button variant='tertiary'>Tertiär</Button>
+    <Button isDisabled>Disabled</Button>
 </ButtonGroup>`}
 </LiveCodeBlock>
 
-## Primärknapp
+## Varianter
 
-Den primära knapp används för den primära/positiva handlingar i ett flöde (OK ,Skicka, Nästa). Det bör endast finnas en primärknapp per sida/sektion/tydligt avgränsad yta.
+### Primär
+
+En primär knapp används för den primära eller positiva handlingen i ett flöde (OK, Skicka, Nästa). Det bör endast finnas en primärknapp per sida, sektion eller tydligt avgränsad yta.
 
 <LiveCodeBlock
   hideCode
-  scope={{ Flex, FlexItem, Button }}
+  scope={{ ButtonGroup, Button }}
 >
-  {`<Flex fluid>
-  <FlexItem col="auto">
+  {`<ButtonGroup aria-label="Välj knapp">
     <Button>Slutför</Button>
-  </FlexItem>
-</Flex>`}
+  </ButtonGroup>`}
 </LiveCodeBlock>
 
-## Sekundär knapp
+### Sekundär
 
-Sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka).
+En sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka). Används alltid tillsammans med en primär knapp.
 
 <LiveCodeBlock
   hideCode
-  scope={{ Flex, FlexItem, Button }}
+  scope={{ ButtonGroup, Button }}
 >
-  {`<Flex fluid>
-  <FlexItem col="auto">
+  {`<ButtonGroup aria-label="Välj knapp">
+    <Button>Slutför</Button>
     <Button variant={'secondary'}>Tillbaka</Button>
-  </FlexItem>
-</Flex>`}
+</ButtonGroup>`}
 </LiveCodeBlock>
 
-## Tertiär knapp
+### Tertiär
 
-Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp där det finns behov av ett ytterligare val
+Den tertiära knappen kan användas tillsammans med primär- och sekundär knapp där det finns behov av ett ytterligare val
 
 <LiveCodeBlock
   hideCode
@@ -83,18 +83,14 @@ Den tertiära knappen kan användas tillsammans med primär- och sekundärknapp 
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
 Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
-<LiveCodeBlock scope={{ Flex, FlexItem, Button, Plus }}>
-  {`<Flex fluid>
-  <FlexItem col="auto">
-    <Button
+<LiveCodeBlock scope={{ Button, Plus }}>
+  {`<Button
       icon={Plus}
       variant='tertiary'
       iconPlacement='left'
-      >
+    >
       {'Lägg till rad'}
-    </Button>
-  </FlexItem>
-</Flex>`}
+    </Button>`}
 </LiveCodeBlock>
 
 ## Grupp av knappar
