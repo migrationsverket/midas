@@ -66,6 +66,10 @@ const toc = [{
   "value": "Exempel",
   "id": "exempel",
   "level": 2
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -82,7 +86,7 @@ function _createMdxContent(props) {
       friendlyName: 'Informationsmeddelande',
       overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Informationsmeddelande används för att visa statisk information, som till exempel systemnotiser"
+      children: "Informationsmeddelande visar viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.\nDen används för att ge användaren feedback, exempelvis vid fel, varningar eller bekräftelser och är\nutformad för att vara tydlig och lätt att förstå utan att störa användarens flöde."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -140,14 +144,20 @@ function _createMdxContent(props) {
         message: 'Visas för användaren för att bekräfta att en action gått snett.'
       }), (0,jsx_runtime.jsx)(src/* InfoBanner */.z, {
         type: 'success',
+        dismissable: true,
         title: 'Formuläret har skickats',
         message: 'Visas för användaren för att bekräfta att en action gått rätt till.'
       })]
     }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import {InfoBanner} from \"@midas-ds/info-banner\";\n\n<InfoBanner type={'info'} title={'Information'} message={'Message'}/>\n<InfoBanner type={'important'} title={'Important'} message={'Message'}/>\n<InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>\n<InfoBanner type={'success'} title={'Success'} message={'Message'}/>\n"
+        children: "<InfoBanner type={'info'} title={'Information'} message={'Message'} />\n<InfoBanner type={'important'} title={'Important'} message={'Message'}/>\n<InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>\n<InfoBanner type={'success'} title={'Success'} message={'Message'} dismissable={true}/>\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: 'InfoBanner'
     })]
   });
 }
@@ -201,7 +211,9 @@ var src = __webpack_require__(63918);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/info-banner/src/lib/InfoBanner.tsx
-var _excluded=["title","message","type","children","dismissable"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};var InfoBanner=function InfoBanner(_ref){var title=_ref.title,message=_ref.message,type=_ref.type,children=_ref.children,_ref$dismissable=_ref.dismissable,dismissable=_ref$dismissable===void 0?false:_ref$dismissable,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Icon=iconMap[type];var _React$useState=react.useState(true),show=_React$useState[0],setShow=_React$useState[1];if(show)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(InfoBanner_module.infoBanner,InfoBanner_module[type],rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,"aria-hidden":true,className:InfoBanner_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.content,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)("strong",{className:InfoBanner_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.text,children:[message,children]})]}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:InfoBanner_module.dismissable,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,{variant:"icon","aria-label":"St\xE4ng",onPress:function onPress(){return setShow(false);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})})]}));return null;};
+var _excluded=["title","message","type","children","dismissable"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};/**
+ * Displays a static message as an inline banner
+ */var InfoBanner=function InfoBanner(_ref){var title=_ref.title,message=_ref.message,type=_ref.type,children=_ref.children,_ref$dismissable=_ref.dismissable,dismissable=_ref$dismissable===void 0?false:_ref$dismissable,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Icon=iconMap[type];var _React$useState=react.useState(true),show=_React$useState[0],setShow=_React$useState[1];if(show)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(InfoBanner_module.infoBanner,InfoBanner_module[type],rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,"aria-hidden":true,className:InfoBanner_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.content,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)("strong",{className:InfoBanner_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.text,children:[message,children]})]}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:InfoBanner_module.dismissable,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* Button */.$n,{variant:"icon","aria-label":"St\xE4ng",onPress:function onPress(){return setShow(false);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})})]}));return null;};
 ;// ./packages/info-banner/src/lib/index.ts
 
 ;// ./packages/info-banner/src/index.ts
