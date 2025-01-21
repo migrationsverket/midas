@@ -56,9 +56,10 @@ const config: Config = {
             if (prop.parent) {
               return !prop.parent.fileName.includes("@types/react");
             }
-
             return true;
           },
+          savePropValueAsString: true,
+          shouldExtractLiteralValuesFromEnum: true,
         },// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
       }
     ],
