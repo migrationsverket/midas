@@ -1,9 +1,9 @@
 'use client'
 
+import * as React from 'react'
 import styles from './Modal.module.css'
 import { X } from 'lucide-react'
 import { Button } from '@midas-ds/button'
-import React from 'react'
 import clsx from 'clsx'
 
 interface MidasModal
@@ -11,9 +11,13 @@ interface MidasModal
     React.DialogHTMLAttributes<HTMLDialogElement>,
     HTMLDialogElement
   > {
+  /** Id for accessibility */
   id: string
+  /** Heading for the modal window */
   title: string
+  /** Wheither the modal is open or not */
   isOpen: boolean
+  /** State handler to toggle isOpen */
   onOpenChange: (isOpen: boolean) => void
 }
 
