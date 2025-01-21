@@ -92,6 +92,10 @@ const toc = [{
   "value": "Logotyp i SVG-format",
   "id": "logotyp-i-svg-format",
   "level": 2
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -169,7 +173,7 @@ function _createMdxContent(props) {
       children: `<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
   <Logo size="x-small" />
   <Logo primary={false} size="x-small" />
-  <Logo background size="x-small" /> 
+  <Logo background size="x-small" />
   <Logo primary={false} background size="x-small" />
 
   </div>`
@@ -230,6 +234,11 @@ function _createMdxContent(props) {
       children: (0,jsx_runtime.jsx)(_components.p, {
         children: "Ladda ner logotypen som SVG (komprimerad fil)"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: 'Logo'
     })]
   });
 }
