@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
 import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
@@ -9,10 +9,19 @@ export interface InfoBannerProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
+  /**
+   *  Specify what state the InfoBanner represents
+   **/
   type: 'success' | 'info' | 'important' | 'warning'
+  /** Specify the title */
   title?: string
-  message?: React.ReactNode | string
+  /** Specify the message. Element or string */
+  message?: string | React.ReactNode
+  /** Additional elements displayed inside the banner */
   children?: React.ReactNode
+  /**
+   *  Specify if the InfoBanner should have a dismiss button in the top right corner
+   */
   dismissable?: boolean
 }
 
@@ -22,7 +31,9 @@ const iconMap = {
   important: AlertCircle,
   warning: AlertTriangle
 }
-
+/**
+ * Displays a static message as an inline banner
+ */
 export const InfoBanner: React.FC<InfoBannerProps> = ({
   title,
   message,
