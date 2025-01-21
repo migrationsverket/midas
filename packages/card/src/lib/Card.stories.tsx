@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from './Card'
+
 const testImage = {
   source:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
@@ -22,7 +23,7 @@ export const Example: Story = {
     image: testImage,
     background: false,
     link: {
-      title: 'Läs mer om Card',
+      children: 'Läs mer om Card',
       href: '#'
     },
     headingTag: 'h2'
