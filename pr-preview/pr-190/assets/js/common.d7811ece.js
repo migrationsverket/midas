@@ -3108,6 +3108,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 ;// ./packages/flex/src/lib/Flex.module.css
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const Flex_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_SzNq","flex":"flex_I6b3","fluid":"fluid_cfLm","col":"col_KcgT","col-1":"col-1_RqPY","col-2":"col-2_RuNY","col-3":"col-3_Srvt","col-4":"col-4_RlcM","col-5":"col-5_u_KX","col-6":"col-6_agsb","col-7":"col-7_asZf","col-8":"col-8_Qdf1","col-9":"col-9_L8OO","col-10":"col-10_hPJh","col-11":"col-11_piSA","col-12":"col-12_iYrE","col-auto":"col-auto_xXXj","offset-1":"offset-1_EPob","offset-2":"offset-2_Yjfh","offset-3":"offset-3_vjDy","offset-4":"offset-4_HpQG","offset-5":"offset-5_S0to","offset-6":"offset-6_MUHp","offset-7":"offset-7_NS3V","offset-8":"offset-8_asG_","offset-9":"offset-9_ZMZX","offset-10":"offset-10_aDnf","offset-11":"offset-11_Lx4Y"});
@@ -3117,17 +3119,22 @@ var clsx = __webpack_require__(34164);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/flex/src/lib/Flex.tsx
 var _excluded=["children","fluid"];/**
- * Grid baserat på display: flex;
- * Använder en uträkning i flex för att få rätt antal kolumner per breakpoint.
+ * Grid based on display: flex;
+ * Calculates breakpoints and distributes columns according to MV specifications
  *
  * ### Children
- * Utan ytterligare flex-regler lägger sig childs efter 12 kolumner men 1 i mobilt läge.
- * Använd komponenten FlexItem för att hantera objekt i olika kolumner.
- * FlexItem accepterar värden från 1 - 12 och auto.
- * Dessa räknas sedan ut beroende på bestämmelser kring kolumner i olika breakpoints.
- */var Flex=function Flex(_ref){var children=_ref.children,fluid=_ref.fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Flex_module.container,fluid&&Flex_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Flex_module.flex,children:children})}));};
+ * Use FlexItem to manage each column.
+ * FlexItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/flex}
+ */var Flex=function Flex(_ref){var children=_ref.children,_ref$fluid=_ref.fluid,fluid=_ref$fluid===void 0?false:_ref$fluid,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Flex_module.container,fluid&&Flex_module.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Flex_module.flex,children:children})}));};
 ;// ./packages/flex/src/lib/FlexItem.tsx
-var FlexItem_excluded=["children","col","offset"];var FlexItem=function FlexItem(_ref){var children=_ref.children,col=_ref.col,offset=_ref.offset,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,FlexItem_excluded);var colClass=col?"col-"+col:'';var offsetClass=offset?"offset-"+offset:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Flex_module.col,Flex_module[colClass],Flex_module[offsetClass],props.className)},props,{children:children}));};
+var FlexItem_excluded=["children","col","offset"];/**
+ * Columns based on display: flex;
+ * FlexItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/flex}
+ */var FlexItem=function FlexItem(_ref){var children=_ref.children,col=_ref.col,offset=_ref.offset,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,FlexItem_excluded);var colClass=col?"col-"+col:'';var offsetClass=offset?"offset-"+offset:'';return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Flex_module.col,Flex_module[colClass],Flex_module[offsetClass],props.className)},props,{children:children}));};
 ;// ./packages/flex/src/lib/index.ts
 
 ;// ./packages/flex/src/index.ts

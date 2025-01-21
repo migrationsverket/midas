@@ -170,16 +170,16 @@ function _createMdxContent(props) {
       },
       children: `<Flex>
   <FlexItem col={12}>
-      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{title: 'Länk', href: '#'}} />
+      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{children: 'Länk', href: '#'}} />
   </FlexItem>
   <FlexItem>
-      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{title: 'Länk', href: '#'}} />
+      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{children: 'Länk', href: '#'}} />
   </FlexItem>
   <FlexItem col={"auto"}>
-      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{title: 'Länk', href: '#'}} />
+      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{children: 'Länk', href: '#'}} />
   </FlexItem>
   <FlexItem col={6}>
-      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{title: 'Länk', href: '#'}} />
+      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{children: 'Länk', href: '#'}} />
   </FlexItem>
 </Flex>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
