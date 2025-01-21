@@ -1,1 +1,1 @@
-export * from './lib/progress'
+export * from './lib/Progress'

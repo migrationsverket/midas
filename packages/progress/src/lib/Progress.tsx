@@ -1,11 +1,12 @@
 import React, {
   Children,
+  ReactElement,
   ReactNode,
   useContext,
   useEffect,
   useState
 } from 'react'
-import styles from './progress.module.css'
+import styles from './Progress.module.css'
 import clsx from 'clsx'
 import {
   Tabs,
@@ -15,11 +16,11 @@ import {
   TabListStateContext
 } from 'react-aria-components'
 import { ChevronRight, Check } from 'lucide-react'
-import { Checkbox } from '@midas-ds/checkbox'
+
 export interface Steps {
   title: string
-  hasProgressed?: boolean // vi styr
-  onValidation?: boolean // de styr
+  hasProgressed?: boolean
+  onValidation?: boolean
 }
 
 export interface ProgressProps {
@@ -106,23 +107,44 @@ export const Progress: React.FC<ProgressProps> = ({
 }) => {
   const [steps, setSteps] = useState<Steps[]>(initialSteps)
   const [selectedTab, setSelectedTab] = useState<string>(steps[0]?.title)
-  const [isFormValid, setIsFormValid] = useState(false) // This state will hold the `isInvalid` value
 
-  const handleValidationResult = (isValid: boolean) => {
-    setIsFormValid(isValid)
+  // Maintain form data for each step
+  const [formStates, setFormStates] = useState<
+    Record<string, { isChecked: boolean; isInvalid: boolean }>
+  >(
+    steps.reduce(
+      (acc, step) => ({
+        ...acc,
+        [step.title]: { isChecked: false, isInvalid: true }
+      }),
+      {}
+    )
+  )
+
+  const handleValidationResult = (stepTitle: string, isValid: boolean) => {
     setSteps(prevSteps =>
-      prevSteps.map((step, index) =>
-        index === currentStep ? { ...step, onValidation: isValid } : step
+      prevSteps.map(step =>
+        step.title === stepTitle ? { ...step, onValidation: isValid } : step
       )
     )
+    setFormStates(prev => ({
+      ...prev,
+      [stepTitle]: { ...prev[stepTitle], isInvalid: !isValid }
+    }))
+  }
+
+  const updateFormState = (
+    stepTitle: string,
+    newState: Partial<{ isChecked: boolean; isInvalid: boolean }>
+  ) => {
+    setFormStates(prev => ({
+      ...prev,
+      [stepTitle]: { ...prev[stepTitle], ...newState }
+    }))
   }
 
   const currentStep = steps.findIndex(step => step.title === selectedTab)
-  /*
-useEffect(() => {
-    console.table(steps)
-  }, [steps])
-  */
+
   return (
     <div>
       <Tabs
@@ -171,70 +193,92 @@ useEffect(() => {
           })}
         </TabList>
 
-        {Children.map(children, (child, index) => (
-          <TabPanel
-            key={steps[index]?.title || index}
-            id={steps[index]?.title}
-            className={styles.panel}
-          >
-            {React.cloneElement(child as React.ReactElement<any>, {
-              isInvalid: !isFormValid, // Pass the validation result to the child component
-              onValidationChange: handleValidationResult // Pass the validation change handler to the child
-            })}
-          </TabPanel>
-        ))}
+        {Children.map(children, (child, index) => {
+          const stepTitle = steps[index]?.title
+          const formState = formStates[stepTitle || '']
+
+          return (
+            <TabPanel
+              key={stepTitle || index}
+              id={stepTitle}
+              className={styles.panel}
+            >
+              {React.cloneElement(child as React.ReactElement<any>, {
+                ...formState,
+                onValidationChange: (isValid: boolean) =>
+                  handleValidationResult(stepTitle || '', isValid),
+                updateFormState: (
+                  newState: Partial<{ isChecked: boolean; isInvalid: boolean }>
+                ) => updateFormState(stepTitle || '', newState)
+              })}
+            </TabPanel>
+          )
+        })}
 
         <TabNavigation
           steps={steps}
           setSteps={setSteps}
-
         />
       </Tabs>
     </div>
   )
 }
+
 type FormProps = {
+  isChecked?: boolean
   isInvalid?: boolean
   onValidationChange: (isValid: boolean) => void
+  updateFormState: (
+    newState: Partial<{ isChecked: boolean; isInvalid: boolean }>
+  ) => void
+  children: ReactNode
 }
 
-export function Form({ onValidationChange }: FormProps) {
-  const [isChecked, setIsChecked] = useState(false)
-  const [isInvalid, setIsInvalid] = useState(true)
+type CheckboxChild = ReactElement<{
+  isSelected?: boolean
+  onChange?: (isSelected: boolean) => void
+}>
 
-  // Calculate form validity based on checkbox state and isInvalid prop
-  const formInvalid = !isChecked || isInvalid // The form is invalid if the checkbox is not checked or isInvalid is true.
-  // This effect will run when formInvalid or isInvalid changes
-  
+export const Form: React.FC<FormProps> = ({
+  isChecked = false,
+  isInvalid = true,
+  onValidationChange,
+  updateFormState,
+  children
+}) => {
+  const formInvalid = !isChecked || isInvalid
 
   useEffect(() => {
-    // Call the parent function when validation changes
-    onValidationChange(!formInvalid) // Pass true if valid, false if invalid
-  }, [formInvalid, isInvalid, onValidationChange]) // Only run this effect when formInvalid or isInvalid changes
+    onValidationChange(!formInvalid)
+  }, [formInvalid, onValidationChange])
 
   const handleCheckboxChange = (isSelected: boolean) => {
-    setIsChecked(isSelected) // Update the state with the checkbox selection status
-    console.log('Checkbox value is:', isSelected) // Log the new checkbox value
-    setIsInvalid(!isSelected)
+    updateFormState({ isChecked: isSelected, isInvalid: !isSelected })
   }
+
+  const renderChildren = () =>
+    React.Children.map(children, child => {
+      if (React.isValidElement(child)) {
+        const childWithProps = child as CheckboxChild
+        return React.cloneElement(childWithProps, {
+          isSelected: isChecked,
+          onChange: handleCheckboxChange
+        })
+      }
+      return child
+    })
 
   return (
     <form
       style={{
         border: '2px solid',
-        borderColor: isChecked ? 'green' : 'red', // Dynamic border color based on isChecked
+        borderColor: isChecked ? 'green' : 'red',
         padding: 16
       }}
     >
-      <Checkbox
-        isSelected={isChecked}
-        onChange={handleCheckboxChange}
-      >
-        Agree to terms
-      </Checkbox>
-      {!isChecked && <p style={{ color: 'red' }}>You must agree to proceed.</p>}
+      {renderChildren()}
 
-      {/* Display the values in the UI */}
+      {!isChecked && <p style={{ color: 'red' }}>You must agree to proceed.</p>}
       <div>
         <p>
           <strong>isInvalid:</strong> {isInvalid ? 'true' : 'false'}
@@ -242,44 +286,9 @@ export function Form({ onValidationChange }: FormProps) {
         <p>
           <strong>formInvalid:</strong> {formInvalid ? 'true' : 'false'}
         </p>
-        <p>
-          <strong>Validation Result Passed to Parent:</strong>{' '}
+        <strong>Validation Result Passed to Parent:</strong>{' '}
           {formInvalid ? 'false' : 'true'}
-        </p>
       </div>
     </form>
   )
 }
-/*
-const AnotherComponent: React.FC<{
-  steps: Steps[]
-  currentStepIndex: number
-  textValue: string
-  isValid: boolean
-}> = ({ steps, currentStepIndex, textValue, isValid }) => {
-  useEffect(() => {
-    console.table(steps)
-  }, [steps])
-
-  return (
-    <div>
-      <h2>Another Component</h2>
-      <p>Current Step: {steps[currentStepIndex]?.title}</p>
-      <p>
-        Has Progressed: {steps[currentStepIndex]?.hasProgressed ? 'Yes' : 'No'}
-      </p>
-      <p>Can Progress: {steps[currentStepIndex]?.canProgress ? 'Yes' : 'No'}</p>
-      <p>Text Value: {textValue}</p>
-      <p>Is Valid: {isValid ? 'Yes' : 'No'}</p>
-    </div>
-  )
-}
-
-
-      <AnotherComponent
-        steps={steps}
-        currentStepIndex={currentStep}
-        textValue={textValue}
-        isValid={isValid}
-      />
-*/

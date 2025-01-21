@@ -19,28 +19,48 @@ import {
   ToastProvider,
   MidasToastState
 } from '@midas-ds/toast'
-import { Form, Progress, Steps } from '@midas-ds/progress'
+import { Form, Progress } from '@midas-ds/progress'
 import { useState } from 'react'
 
-
-
 export function App() {
+  const [formStates, setFormStates] = useState<
+    Record<string, { isChecked: boolean; isInvalid: boolean }>
+  >({
+    Step1: { isChecked: false, isInvalid: true },
+    Step2: { isChecked: false, isInvalid: true }
+  })
   // const canProgress =
-  const steps: Steps[] = [
-    { title: 'Step 1', onValidation: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 2', onValidation: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 3', onValidation: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 4', onValidation: false, hasProgressed: false }, // Initial step, not progressed
-    { title: 'Step 5', onValidation: false, hasProgressed: false } // Initial step, not progressed
+  const steps = [
+    {
+      title: 'Step1',
+      hasProgressed: false,
+      onValidation: !formStates.Step1.isInvalid
+    },
+    {
+      title: 'Step2',
+      hasProgressed: false,
+      onValidation: !formStates.Step2.isInvalid
+    },
+    {
+      title: 'Step3',
+      hasProgressed: false,
+      onValidation: !formStates.Step2.isInvalid
+    },
+    {
+      title: 'Step4',
+      hasProgressed: false,
+      onValidation: !formStates.Step2.isInvalid
+    }
   ]
-  const [isFormValid, setIsFormValid] = useState(false);
-
-  // This function will be passed as the 'onValidationChange' prop to Form
-  const handleValidationChange = (isValid: boolean) => {
-    setIsFormValid(isValid); // Store the validation result in the parent
-    console.log("Validation result from Form:", isValid);
-    console.log("value of is isFormValid "+ isFormValid)
-  };
+  const updateFormState = (
+    step: string,
+    newState: Partial<{ isChecked: boolean; isInvalid: boolean }>
+  ) => {
+    setFormStates(prev => ({
+      ...prev,
+      [step]: { ...prev[step], ...newState }
+    }))
+  }
   return (
     <div className={styles.container}>
       <div>
@@ -79,12 +99,30 @@ export function App() {
       </Button>
       <h1>Playground app</h1>
 
-      <Progress steps={steps} >
-        <Form onValidationChange={handleValidationChange} />
-       <TextField isRequired/>
-       <Checkbox isRequired/>
-       <Checkbox isRequired/>
-       <Checkbox isRequired/>
+      <Progress steps={steps}>
+        {/* Step 1 */}
+        <Form
+          isChecked={formStates.Step1.isChecked}
+          isInvalid={formStates.Step1.isInvalid}
+          onValidationChange={isValid =>
+            updateFormState('Step1', { isInvalid: !isValid })
+          }
+          updateFormState={newState => updateFormState('Step1', newState)}
+        >
+          <Checkbox />
+        </Form>
+
+        {/* Step 2 */}
+        <Form
+          isChecked={formStates.Step2.isChecked}
+          isInvalid={formStates.Step2.isInvalid}
+          onValidationChange={isValid =>
+            updateFormState('Step2', { isInvalid: !isValid })
+          }
+          updateFormState={newState => updateFormState('Step2', newState)}
+        >
+          <Checkbox />
+        </Form>
       </Progress>
       <Select
         label={'select label'}
