@@ -15,7 +15,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink=''
 />
 
-Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt.
+Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt samt länka till innehållet.
 
 ## Installation och användning
 
@@ -28,14 +28,15 @@ import { Card } from '@midas-ds/card'
 ```
 
 <LiveCodeBlock scope={{ Grid, GridItem, Card }}>
-  {`<Grid>
+  {`<Grid fluid>
   {fruits.shuffled(3).map(fruit => (
     <GridItem col={4} key={fruit.value}>
       <Card
         title={fruit.name}
         content={fruit.description}
         image={{ source: fruit.image, description: fruit.description }}
-        link={{href: '#', title: 'Läs mer om denna frukt'}}
+        link={{href: '#', children: 'Läs mer om denna frukt'}}
+        headingTag="h2"
       />
     </GridItem>
   ))}
