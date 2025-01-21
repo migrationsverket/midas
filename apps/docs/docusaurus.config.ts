@@ -60,6 +60,7 @@ const config: Config = {
           },
           savePropValueAsString: true,
           shouldExtractLiteralValuesFromEnum: true,
+          },
         },// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
       }
     ],
