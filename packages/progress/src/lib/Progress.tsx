@@ -16,6 +16,7 @@ import {
   TabListStateContext
 } from 'react-aria-components'
 import { ChevronRight, Check } from 'lucide-react'
+import { Button } from '@midas-ds/button'
 
 export interface Steps {
   title: string
@@ -81,22 +82,21 @@ function TabNavigation({
 
   return (
     <div className={styles.buttonGroup}>
-      <button
-        aria-label='Previous tab'
-        onClick={onPrev}
-        disabled={!canMoveToPrev}
+      <Button
+        variant='secondary'
+        onPress={onPrev}
+        isDisabled={!canMoveToPrev}
         className={clsx(!canMoveToPrev && styles.disabled)}
       >
         ←
-      </button>
-      <button
-        aria-label='Next tab'
-        onClick={onNext}
-        disabled={!canMoveToNext}
+      </Button>
+      <Button
+        onPress={onNext}
+        isDisabled={!canMoveToNext}
         className={clsx(!canMoveToNext && styles.disabled)}
       >
         →
-      </button>
+      </Button>
     </div>
   )
 }
@@ -176,8 +176,8 @@ export const Progress: React.FC<ProgressProps> = ({
                     index === currentStep && styles.current
                   )}
                 >
-                  {index === currentStep && <ChevronRight />}
-                  {isCompleted && index < currentStep && <Check />}
+                  {index === currentStep && <ChevronRight className={styles.icon}/>}
+                  {isCompleted && index < currentStep && <Check className={styles.icon}/>}
                 </div>
                 {step.title}
                 {index < steps.length - 1 && (
@@ -287,7 +287,7 @@ export const Form: React.FC<FormProps> = ({
           <strong>formInvalid:</strong> {formInvalid ? 'true' : 'false'}
         </p>
         <strong>Validation Result Passed to Parent:</strong>{' '}
-          {formInvalid ? 'false' : 'true'}
+        {formInvalid ? 'false' : 'true'}
       </div>
     </form>
   )
