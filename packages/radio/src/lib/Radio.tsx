@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import * as React from 'react'
 
 import styles from './Radio.module.css'
 import {
@@ -15,11 +15,17 @@ import { InputWrapper } from '@midas-ds/textfield'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
+  /** Label for the RadioGroup */
   label?: string
+  /** Additional description rendered below the label */
   description?: string
+  /** String to display as error message or function to handle the result and produce the error message */
   errorMessage?: string | ((validation: ValidationResult) => string)
 }
 
+/**
+ * RadioGroup is used to group several radio items together
+ */
 export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   label,
   description,
