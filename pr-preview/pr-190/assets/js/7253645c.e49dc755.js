@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-multi-select-mdx-725.json
-const site_docs_components_multi_select_mdx_725_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/multi-select","title":"MultiSelect","description":"<ComponentHeader","source":"@site/docs/components/multi-select.mdx","sourceDirName":"components","slug":"/components/multi-select","permalink":"/pr-preview/pr-190/components/multi-select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"MultiSelect","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_components_multi_select_mdx_725_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/multi-select","title":"MultiSelect","description":"MultiSelect är en typ av inmatningsfält som tillåter användaren att välja flera alternativ från en längre lista.","source":"@site/docs/components/multi-select.mdx","sourceDirName":"components","slug":"/components/multi-select","permalink":"/pr-preview/pr-190/components/multi-select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"MultiSelect","description":"MultiSelect är en typ av inmatningsfält som tillåter användaren att välja flera alternativ från en längre lista.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -40,6 +40,7 @@ var CodeBlock = __webpack_require__(29511);
 
 const frontMatter = {
 	title: 'MultiSelect',
+	description: 'MultiSelect är en typ av inmatningsfält som tillåter användaren att välja flera alternativ från en längre lista.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -66,20 +67,20 @@ const toc = [{
   "id": "riktlinjer",
   "level": 2
 }, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
+  "value": "API",
+  "id": "api",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    mermaid: "mermaid",
+    li: "li",
     p: "p",
     pre: "pre",
     strong: "strong",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
@@ -89,12 +90,9 @@ function _createMdxContent(props) {
       friendlyName: 'Flerval, multiväljare, dropdown',
       overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["MultiSelect är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett eller flera"
-      }), " alternativ från en längre lista. Om det är endast är ett fåtal alternativ bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-190/components/checkbox",
-        children: "Checkbox"
-      }), " användas istället."]
+      children: ["MultiSelect är en typ av inmatningsfält som tillåter användaren att välja ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "flera"
+      }), " alternativ från en längre lista."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -137,17 +135,30 @@ function _createMdxContent(props) {
         MultiSelect: src/* MultiSelect */.K
       },
       children: `<MultiSelect
-      label="Vad är din favoritfrukt?"
+      label="Vilka är dina favoritfrukter?"
+      description="Om de är små får man ta två"
       items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 />`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]:::primary\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om det finns mer än 11 alternativ, överväg att använda en ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/pr-preview/pr-190/components/combobox",
+          children: "ComboBox"
+        }), " för\natt göra det lättare att söka fram alternativen."]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om det är endast är ett fåtal alternativ bör ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/pr-preview/pr-190/components/checkbox",
+          children: "Checkbox"
+        }), " användas istället."]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: 'MultiSelect'
     })]
   });
 }
