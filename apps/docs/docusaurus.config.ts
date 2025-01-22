@@ -134,13 +134,13 @@ const config: Config = {
   ],
 
   themeConfig: {
-    announcementBar: {
-      id: 'open_source',
-      content:
-        'Midas har nu öppen källkod. <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
-      isCloseable: false,
-      backgroundColor: '#eaf2f6'
-    },
+    // announcementBar: {
+    //   id: 'open_source',
+    //   content:
+    //     'Midas har nu öppen källkod. <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+    //   isCloseable: false,
+    //   backgroundColor: '#eaf2f6'
+    // },
     navbar: {
       logo: {
         alt: 'Migrationsverket Logotyp',

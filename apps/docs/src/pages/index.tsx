@@ -35,9 +35,9 @@ export default function Hello() {
                 <LinkButton
                   variant='secondary'
                   as={Link}
-                  to='/basics/principles/'
+                  to='/components/accordion'
                 >
-                  Läs mer om designsystemet
+                  Se komponenter
                 </LinkButton>
               </ButtonGroup>
             </div>
