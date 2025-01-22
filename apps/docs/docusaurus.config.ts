@@ -54,13 +54,13 @@ const config: Config = {
           // prop table gets a bit crowded if we allow everything
           propFilter: (prop, component) => {
             if (prop.parent) {
-              return !prop.parent.fileName.includes("@types/react");
+              return !prop.parent.fileName.includes('@types/react')
             }
-            return true;
+            return true
           },
           savePropValueAsString: true,
-          shouldExtractLiteralValuesFromEnum: true,
-        },// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
+          shouldExtractLiteralValuesFromEnum: true
+        } // see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
       }
     ],
     [
@@ -152,7 +152,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'get-started',
           position: 'left',
           label: 'Dokumentation'
         },

@@ -1,0 +1,51 @@
+---
+title: Kom igång
+sidebar_position: 2
+sidebar_label: Kom igång
+sidebar_class_name: chapter-end
+---
+
+## Designa med designsystemet
+
+Här hittar du designkit i Adobe XD som används för att designa gränssnitt för Migrationsverkets digitala produkter och tjänster
+I vårt designkit finns färdiga designkomponenter som följer Migrationsverkets digitala stil och grafiska profil.
+
+- Här kan du ladda ner vårt <a target="\_blank" href={ require("/files/MIDAS_UIkit_16.zip").default } download>UI-kit till Adobe XD (version 16)</a>
+- Om du inte har Adobe XD kan du kolla på [UI-kit online](https://xd.adobe.com/view/95ad014c-2540-44e2-9adf-5ad4c8751bbd-c0fe/?hints=off)
+
+## Att utveckla med designsystemet
+
+Installera komponenter via `npm install @midas-ds/[component]`.
+
+### Importera och använd komponent
+
+Generellt, importera och använd direkt:
+
+```tsx
+import { Component } from '@midas-ds/component';
+...
+<Component/>
+```
+
+För specfika instruktioner, se respektive komponent.
+
+## Installera globala stilmallen
+
+För att komponenterna ska renderas exakt korrekt behövs lite global css. Detta finns i paketet `@midas-ds/theme`.
+
+```bash npm2yarn
+npm install @midas-ds/theme
+```
+
+```tsx {1} title="App.tsx (rootfilen i din app)"
+import '@midas-ds/theme/index.css'
+
+export default function App({ children }) {
+  return <main>{children}</main>
+}
+
+export default App
+```
+
+Mer info finns på [GitHub](https://github.com/migrationsverket/midas)
+Samt under [guider](/dev/common-issues)
