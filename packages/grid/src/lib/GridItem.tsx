@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import * as React from 'react'
 import styles from './Grid.module.css'
 import clsx from 'clsx'
 
@@ -7,7 +7,8 @@ export interface GridItemProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  children: ReactNode
+  children: React.ReactNode
+  /** Column size and behaviour */
   col?:
     | '1'
     | '2'
@@ -39,7 +40,6 @@ export const GridItem: React.FC<GridItemProps> = ({
   col,
   ...rest
 }) => {
-  // Convert numeric values to string if necessary
   const colClass = col ? `col-${col}` : ''
 
   return (

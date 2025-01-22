@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import * as React from 'react'
 import styles from './Flex.module.css'
 import clsx from 'clsx'
 
@@ -7,7 +7,8 @@ export interface FlexItemProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  children: ReactNode
+  children: React.ReactNode
+  /** Column size and behaviour */
   col?:
     | '1'
     | '2'
@@ -34,6 +35,7 @@ export interface FlexItemProps
     | 10
     | 11
     | 12
+  /** Additional spacing between columns */
   offset?:
     | '1'
     | '2'
@@ -60,6 +62,13 @@ export interface FlexItemProps
     | 11
     | 12
 }
+
+/**
+ * Columns based on display: flex;
+ * FlexItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/flex}
+ */
 
 export const FlexItem: React.FC<FlexItemProps> = ({
   children,

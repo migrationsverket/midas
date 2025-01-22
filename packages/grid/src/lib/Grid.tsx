@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import * as React from 'react'
 import styles from './Grid.module.css'
 import clsx from 'clsx'
 
@@ -7,20 +7,25 @@ interface GridProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  children: ReactNode
-  /** Tar bort alla marginaler för nestad användning */
+  children: React.ReactNode
+  /** Removes outer margins for nested use. First Flex on a page should have outer margins. */
   fluid?: boolean
 }
 
 /**
- * Grid baserat på display: grid;
- * Använder grid-template för att bygga rätt antal kolumner per breakpoint.
+ * Grid based on display: grid;
+ * Calculates breakpoints and distributes columns according to MV specifications
  *
  * ### Children
- * Använd "grid-column: span $antalKollumner';" för att låta en child växa över flera kolumner.
+ * Use GridItem to manage each column.
+ * GridItem accepts values of 1 through 12 and auto.
  */
 
-export const Grid: React.FC<GridProps> = ({ children, fluid, ...rest }) => {
+export const Grid: React.FC<GridProps> = ({
+  children,
+  fluid = false,
+  ...rest
+}) => {
   return (
     <div
       className={clsx(styles.container, fluid && styles.fluid, rest.className)}

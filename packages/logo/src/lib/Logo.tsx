@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import clsx from 'clsx'
 import styles from './Logo.module.css'
 
@@ -9,11 +9,10 @@ export interface LogoProps
   > {
   /**
    *  Display logo in primary color, set to false for monochrome/dark version of the logo
-   *  @default true
-   *  */
+   */
   primary?: boolean
-  /** Display large or small logo
-   * @default 'large'
+  /**
+   * Specify logo size
    */
   size?: 'x-small' | 'small' | 'medium' | 'large'
   /** Display background fill using selected primary or dark color */

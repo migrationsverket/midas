@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import * as React from 'react'
 import styles from './Flex.module.css'
 import clsx from 'clsx'
 
@@ -7,23 +7,27 @@ export interface FlexProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  children: ReactNode
-  /** Tar bort alla marginaler för nestad användning */
+  children: React.ReactNode
+  /** Removes outer margins for nested use. First Flex on a page should have outer margins. */
   fluid?: boolean
 }
 
 /**
- * Grid baserat på display: flex;
- * Använder en uträkning i flex för att få rätt antal kolumner per breakpoint.
+ * Grid based on display: flex;
+ * Calculates breakpoints and distributes columns according to MV specifications
  *
  * ### Children
- * Utan ytterligare flex-regler lägger sig childs efter 12 kolumner men 1 i mobilt läge.
- * Använd komponenten FlexItem för att hantera objekt i olika kolumner.
- * FlexItem accepterar värden från 1 - 12 och auto.
- * Dessa räknas sedan ut beroende på bestämmelser kring kolumner i olika breakpoints.
+ * Use FlexItem to manage each column.
+ * FlexItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/flex}
  */
 
-export const Flex: React.FC<FlexProps> = ({ children, fluid, ...rest }) => {
+export const Flex: React.FC<FlexProps> = ({
+  children,
+  fluid = false,
+  ...rest
+}) => {
   return (
     <div
       className={clsx(styles.container, fluid && styles.fluid, rest.className)}
