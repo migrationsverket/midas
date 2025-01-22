@@ -4,9 +4,11 @@ import { LinkButton } from '@midas-ds/link-button'
 import { ButtonGroup } from '@midas-ds/button'
 import styles from './index.module.css'
 import Link from '@docusaurus/Link'
-import heroImage from '@site/static/img/HeroImage.png'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 export default function Hello() {
+  const imgSrc = useBaseUrl('/img/HeroImage.png')
+
   return (
     <Layout
       title='Migrationsverkets designsystem'
@@ -43,7 +45,7 @@ export default function Hello() {
           <div className='col col--6'>
             <img
               className={styles.image}
-              src={heroImage}
+              src={imgSrc}
               alt=''
             />
           </div>
