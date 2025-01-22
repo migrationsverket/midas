@@ -4,6 +4,7 @@ import { LinkButton } from '@midas-ds/link-button'
 import { ButtonGroup } from '@midas-ds/button'
 import styles from './index.module.css'
 import Link from '@docusaurus/Link'
+import heroImage from '@site/static/img/HeroImage.png'
 
 export default function Hello() {
   return (
@@ -42,20 +43,12 @@ export default function Hello() {
           <div className='col col--6'>
             <img
               className={styles.image}
-              src='/img/HeroImage.png'
+              src={heroImage}
               alt=''
             />
           </div>
         </div>
       </div>
-      {/* <div className='col col--12'>![hero](/img/HeroImage.png)</div> */}
-
-      {/* <div className='row'>
-        <div className='col col--8'>
-          # Midas Midas är migrationsverkets designsystem. Det är coolt och open
-          source!
-        </div>
-      </div> */}
     </Layout>
   )
 }
