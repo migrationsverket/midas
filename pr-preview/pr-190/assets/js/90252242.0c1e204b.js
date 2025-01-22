@@ -79,10 +79,6 @@ const toc = [{
   "id": "avancerat-innehåll",
   "level": 2
 }, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
   "value": "API",
   "id": "api",
   "level": 2
@@ -210,11 +206,6 @@ function _createMdxContent(props) {
   </Modal>
 </>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Kommer snart"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
@@ -250,6 +241,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 ;// ./packages/modal/src/lib/Modal.module.css
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const Modal_module = ({"tokens":"\"../../../theme/src/lib/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray10":"#f2f2f2","modal":"modal_oR1A","modalHeader":"modalHeader_StAp","modalBody":"modalBody_C0aM","modalHeading":"modalHeading_flMZ"});
@@ -257,8 +250,6 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var x = __webpack_require__(48697);
 // EXTERNAL MODULE: ./packages/button/src/index.ts + 5 modules
 var src = __webpack_require__(63918);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
