@@ -78,13 +78,17 @@ const toc = [{
   "id": "riktlinjer",
   "level": 2
 }, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
-}, {
   "value": "API",
   "id": "api",
   "level": 2
+}, {
+  "value": "Radio",
+  "id": "radio",
+  "level": 3
+}, {
+  "value": "RadioGroup",
+  "id": "radiogroup",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -93,7 +97,6 @@ function _createMdxContent(props) {
     h2: "h2",
     h3: "h3",
     li: "li",
-    mermaid: "mermaid",
     p: "p",
     pre: "pre",
     ul: "ul",
@@ -105,11 +108,8 @@ function _createMdxContent(props) {
       name: 'Radio',
       friendlyName: 'Radioknappar',
       overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-200/components/select",
-        children: "Select"
-      }), " användas istället."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Radioknappar är en typ av inmatningsfält som används för att välja exakt ett alternativ från en uppsättning av flera alternativ."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation-och-användning",
       children: "Installation och användning"
@@ -152,8 +152,8 @@ function _createMdxContent(props) {
         RadioGroup: src/* RadioGroup */.z,
         Radio: src/* Radio */.s
       },
-      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-  {fruits.shuffled(3).map(fruit => (
+      children: `<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} defaultValue={fruits[0].value}>
+  {fruits.slice(0,3).map(fruit => (
     <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
   ))}
 </RadioGroup>`
@@ -190,26 +190,39 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]:::primary\n  A ---> D[5 - 10]\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]:::primary\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]:::primary\n  D ---> I[Hur många val kan göras?]\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
+        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något,\nskapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera."
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är\nbegränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om alternativen inte utesluter varandra, använd ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/pr-preview/pr-200/components/checkbox",
+          children: "Checkbox"
+        }), "."]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/pr-preview/pr-200/components/select",
+          children: "Select"
+        }), " användas istället."]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "radio",
+      children: "Radio"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
       name: "Radio"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "radiogroup",
+      children: "RadioGroup"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: "RadioGroup"
     })]
   });
 }
@@ -256,7 +269,9 @@ var src = __webpack_require__(42619);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/radio/src/lib/Radio.tsx
-'use client';var _excluded=["label","description","errorMessage","children"];var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
+'use client';var _excluded=["label","description","errorMessage","children"];/**
+ * RadioGroup is used to group several radio items together
+ */var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(src/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
  * Radio item
  * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
 ;// ./packages/radio/src/index.ts
