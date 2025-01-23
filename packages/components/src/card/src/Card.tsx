@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { Link, LinkProps, RouterProvider } from '@midas-ds/link'
+import { Link, LinkProps, RouterProvider } from '../../link'
 import styles from 'packages/components/src/card/src/Card.module.css'
 import clsx from 'clsx'
 

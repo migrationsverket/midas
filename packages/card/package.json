@@ -10,9 +10,7 @@
       "types": "./index.d.ts"
     }
   },
-  "dependencies": {
-    "@midas-ds/link": "1.1.1"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^18.2.0"
   },
