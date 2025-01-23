@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../../../../packages/accordion/src';
-import { Checkbox } from '../../../../packages/checkbox/src';
+import { Checkbox } from '../../../../packages/checkbox/src/lib';
 import { Select } from '../../../../packages/select/src';
 import { Button } from '../../../../packages/button/src';
 import { Radio, RadioGroup } from '../../../../packages/radio/src';

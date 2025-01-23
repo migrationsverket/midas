@@ -1,0 +1,28 @@
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from 'packages/components/src/button/src/Button'
+import { ButtonGroup } from 'packages/components/src/button/src/ButtonGroup'
+import React from 'react'
+
+const meta: Meta<typeof ButtonGroup> = {
+  component: ButtonGroup,
+  title: 'Components/Button/ButtonGroup',
+  tags: ['autodocs'],
+  parameters: { layout: 'centered' },
+  args: {},
+  argTypes: {}
+}
+
+export default meta
+type Story = StoryObj<typeof ButtonGroup>
+
+export const Primary: Story = {
+  args: {
+    'aria-label': 'Navigera i listan'
+  },
+  render: ({ ...args }) => (
+    <ButtonGroup {...args}>
+      <Button>Fortsätt</Button>
+      <Button variant='secondary'>Avbryt</Button>
+    </ButtonGroup>
+  )
+}
