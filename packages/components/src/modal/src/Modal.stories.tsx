@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Modal } from 'packages/components/src/modal/src/Modal'
+import { Modal } from './Modal'
 import { Button } from '../../button'
 import React from 'react'
 import { Select, Item } from '../../select'

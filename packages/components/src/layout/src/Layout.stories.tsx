@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Header, Layout, SidebarLinkGroup } from 'packages/components/src/layout/src/Layout'
+import { Header, Layout, SidebarLinkGroup } from './Layout'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
 import { baseColors } from '../../theme'
 import { LinkButton } from '../../link-button'

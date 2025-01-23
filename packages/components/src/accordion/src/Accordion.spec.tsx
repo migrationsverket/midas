@@ -11,7 +11,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from 'packages/components/src/accordion/src/index'
+} from './'
 expect.extend(toHaveNoViolations)
 
 const ITEMS = ['One', 'Two', 'Three']

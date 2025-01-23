@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Link } from 'packages/components/src/link/src/Link'
+import { Link } from './Link'
 import { ArrowRight } from 'lucide-react'
 import { Link as ReactRouterLink } from 'react-router'
 

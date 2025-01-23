@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from 'packages/components/src/button/src/Button'
+import { Button } from './Button'
 import { Plus, X } from 'lucide-react'
 import React from 'react'
 

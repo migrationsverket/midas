@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from 'packages/components/src/card/src/Card'
+import { Card } from './Card'
 
 const testImage = {
   source:

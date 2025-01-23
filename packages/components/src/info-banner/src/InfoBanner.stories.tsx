@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react'
-import { InfoBanner } from 'packages/components/src/info-banner/src/InfoBanner'
+import { InfoBanner } from './InfoBanner'
 
 const meta: Meta<typeof InfoBanner> = {
   component: InfoBanner,

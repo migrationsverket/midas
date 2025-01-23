@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SearchField } from 'packages/components/src/search-field/src/SearchField'
+import { SearchField } from './SearchField'
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,
