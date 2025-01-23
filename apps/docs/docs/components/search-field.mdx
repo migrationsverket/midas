@@ -1,6 +1,6 @@
 ---
 title: SearchField
-description: Sökfält är en kombinationskomponent av TextField och Button
+description: Sökfält är ett inmatningsfält anpassat för sökning
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
@@ -13,7 +13,8 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Sökfält'}
 />
 
-Sökfält är en kombinationskomponent av TextField och Button.
+Sökfält är ett inmatningsfält anpassat för sökning. Sökfältet fungerar med tangentbord där `Enter` fungerar
+som submit och `ESC` rensar sökfältet.
 
 ## Installation och användning
 
@@ -25,4 +26,9 @@ npm install @midas-ds/search-field
 import { SearchField } from '@midas-ds/search-field'
 ```
 
-<LiveCodeBlock scope={{ SearchField }}>{`<SearchField placeholder="Sök efter fruker" />`}</LiveCodeBlock>
+<LiveCodeBlock scope={{ SearchField }}>{`
+<SearchField placeholder="Sök efter frukter"/>`}
+</LiveCodeBlock>
+
+## API
+<PropTable name={'SearchField'}/>
