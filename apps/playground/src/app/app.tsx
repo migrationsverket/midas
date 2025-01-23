@@ -27,7 +27,8 @@ export function App() {
     Record<string, { isChecked: boolean; isInvalid: boolean }>
   >({
     Step1: { isChecked: false, isInvalid: true },
-    Step2: { isChecked: false, isInvalid: true }
+    Step2: { isChecked: false, isInvalid: true },
+    Step3: { isChecked: false, isInvalid: true }
   })
   // const canProgress =
   const steps = [
@@ -44,12 +45,7 @@ export function App() {
     {
       title: 'Step3',
       hasProgressed: false,
-      onValidation: !formStates.Step2.isInvalid
-    },
-    {
-      title: 'Step4',
-      hasProgressed: false,
-      onValidation: !formStates.Step2.isInvalid
+      onValidation: !formStates.Step3.isInvalid
     }
   ]
   const updateFormState = (
@@ -120,6 +116,17 @@ export function App() {
             updateFormState('Step2', { isInvalid: !isValid })
           }
           updateFormState={newState => updateFormState('Step2', newState)}
+        >
+          <Checkbox />
+        </Form>
+        {/* Step 3 */}
+        <Form
+          isChecked={formStates.Step3.isChecked}
+          isInvalid={formStates.Step3.isInvalid}
+          onValidationChange={isValid =>
+            updateFormState('Step3', { isInvalid: !isValid })
+          }
+          updateFormState={newState => updateFormState('Step3', newState)}
         >
           <Checkbox />
         </Form>

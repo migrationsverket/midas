@@ -40,10 +40,12 @@ interface TabListState {
 
 function TabNavigation({
   steps,
-  setSteps
+  setSteps,
+  setIsCompleted
 }: {
   steps: Steps[]
   setSteps: React.Dispatch<React.SetStateAction<Steps[]>>
+  setIsCompleted: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   const state = useContext(TabListStateContext) as TabListState
 
@@ -60,25 +62,28 @@ function TabNavigation({
 
   const canMoveToPrev = currentStepIndex > 0
   const canMoveToNext =
-    currentStepIndex < steps.length - 1 && steps[currentStepIndex]?.onValidation
+    steps[currentStepIndex]?.onValidation &&
+    (nextKey !== null || currentStepIndex === steps.length - 1)
 
   const onPrev =
     prevKey && canMoveToPrev ? () => state.setSelectedKey(prevKey) : undefined
 
-  const onNext =
-    nextKey && canMoveToNext
-      ? () => {
-          setSteps(prevSteps =>
-            prevSteps.map((step, index) =>
-              index === currentStepIndex
-                ? { ...step, hasProgressed: true }
-                : step
-            )
+  const onNext = canMoveToNext
+    ? () => {
+        setSteps(prevSteps =>
+          prevSteps.map((step, index) =>
+            index === currentStepIndex ? { ...step, hasProgressed: true } : step
           )
+        )
 
+        // If last step, complete process
+        if (currentStepIndex === steps.length - 1) {
+          setIsCompleted(true)
+        } else if (nextKey) {
           state.setSelectedKey(nextKey)
         }
-      : undefined
+      }
+    : undefined
 
   return (
     <div className={styles.buttonGroup}>
@@ -95,7 +100,7 @@ function TabNavigation({
         isDisabled={!canMoveToNext}
         className={clsx(!canMoveToNext && styles.disabled)}
       >
-        →
+        {currentStepIndex === steps.length - 1 ? 'Avsluta' : '→'}
       </Button>
     </div>
   )
@@ -107,8 +112,8 @@ export const Progress: React.FC<ProgressProps> = ({
 }) => {
   const [steps, setSteps] = useState<Steps[]>(initialSteps)
   const [selectedTab, setSelectedTab] = useState<string>(steps[0]?.title)
+  const [isCompleted, setIsCompleted] = useState(false)
 
-  // Maintain form data for each step
   const [formStates, setFormStates] = useState<
     Record<string, { isChecked: boolean; isInvalid: boolean }>
   >(
@@ -145,6 +150,39 @@ export const Progress: React.FC<ProgressProps> = ({
 
   const currentStep = steps.findIndex(step => step.title === selectedTab)
 
+  // Early return if completed
+  if (isCompleted) {
+    return (
+      <div>
+        <p>Grattis! Du har slutfört stegen.</p>
+        <div>
+          <h3>Sammanfattning av steg:</h3>
+          <ul>
+            {steps.map((step, index) => (
+              <li key={index}>
+                <strong>Step {index + 1}:</strong> {step.title} <br />
+                <span>Has Progressed: {step.hasProgressed ? 'Yes' : 'No'}</span>
+                <br />
+                <span>
+                  Validation Passed: {step.onValidation ? 'Yes' : 'No'}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Button
+          variant='primary'
+          onPress={() => {
+            setIsCompleted(false) // Reset to start again if needed
+            setSelectedTab(steps[0]?.title) // Reset to the first step
+          }}
+        >
+          Börja om
+        </Button>
+      </div>
+    )
+  }
+
   return (
     <div>
       <Tabs
@@ -176,8 +214,12 @@ export const Progress: React.FC<ProgressProps> = ({
                     index === currentStep && styles.current
                   )}
                 >
-                  {index === currentStep && <ChevronRight className={styles.icon}/>}
-                  {isCompleted && index < currentStep && <Check className={styles.icon}/>}
+                  {index === currentStep && (
+                    <ChevronRight className={styles.icon} />
+                  )}
+                  {isCompleted && index < currentStep && (
+                    <Check className={styles.iconCheck} />
+                  )}
                 </div>
                 {step.title}
                 {index < steps.length - 1 && (
@@ -218,6 +260,7 @@ export const Progress: React.FC<ProgressProps> = ({
         <TabNavigation
           steps={steps}
           setSteps={setSteps}
+          setIsCompleted={setIsCompleted} // Pass the setIsCompleted function
         />
       </Tabs>
     </div>
