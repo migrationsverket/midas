@@ -62,6 +62,10 @@ const toc = [{
   "value": "Installation och användnin",
   "id": "installation-och-användnin",
   "level": 2
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -124,12 +128,17 @@ function _createMdxContent(props) {
       scope: {
         TextArea: src/* TextArea */.f
       },
-      children: `<TextArea 
+      children: `<TextArea
   label="Kommentar"
   description="Skriv en kommentar"
   maxCharacters={50}
-  // showCounter={true}
+  type={'email'}
 />`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: 'TextArea'
     })]
   });
 }
