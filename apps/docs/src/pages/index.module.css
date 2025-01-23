@@ -10,7 +10,12 @@
 }
 
 .text {
-  margin: 2rem var(--ifm-navbar-padding-horizontal) 25%;
+  margin: 2rem 20% 25% var(--ifm-navbar-padding-horizontal);
+
+  @media (max-width: 996px) {
+    margin: 2rem var(--ifm-navbar-padding-horizontal);
+  }
+
 }
 
 .display1 {

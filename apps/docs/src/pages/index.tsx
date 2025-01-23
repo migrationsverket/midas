@@ -21,8 +21,8 @@ export default function Hello() {
               <h1 className={styles.display1}>Midas</h1>
               <p>
                 Midas är Migrationsverkets designsystem för att skapa
-                användarvänliga, tillgängliga och enhetliga e-tjänster och
-                interna produkter. Det innehåller designkomponenter, kod och
+                användarvänliga, tillgängliga och enhetliga tjänster och
+                produkter. Det innehåller designkomponenter, kod och
                 riktlinjer som underlättar utveckling och design.
               </p>
               <ButtonGroup aria-label='Länkar'>
