@@ -15,8 +15,8 @@ import {
   ListBoxItem
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
-import styles from 'packages/components/src/select/src/Select.module.css'
-import { InputWrapper } from '@midas-ds/textfield'
+import styles from './Select.module.css'
+import { InputWrapper } from '../../textfield'
 
 export interface SelectProps<T extends object>
   extends Omit<AriaSelectProps<T>, 'children'> {

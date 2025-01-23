@@ -15,7 +15,7 @@ import {
   ListBoxItem
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
-import { InputWrapper } from '@midas-ds/textfield'
+import { InputWrapper } from '../../textfield'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {

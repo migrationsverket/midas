@@ -1,4 +1,4 @@
-import styles from 'packages/components/src/spinner/src/Spinner.module.css'
+import styles from './Spinner.module.css'
 import { LoaderCircle } from 'lucide-react'
 import clsx from 'clsx'
 

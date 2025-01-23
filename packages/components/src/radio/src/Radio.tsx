@@ -11,7 +11,7 @@ import {
   Radio as AriaRadio,
   Group,
 } from 'react-aria-components'
-import { InputWrapper } from '@midas-ds/textfield'
+import { InputWrapper } from '../../textfield'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode

@@ -23,8 +23,8 @@ import {
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
-import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
-import styles from 'packages/components/src/date-picker/src/DatePicker.module.css'
+import { InputWrapper, TextFieldStyles } from '../../textfield'
+import styles from './DatePicker.module.css'
 import React from 'react'
 
 interface MidasDateRangePickerProps<T extends DateValue>
@@ -46,6 +46,7 @@ export const DateRangePicker = <T extends DateValue>({
     <AriaDateRangePicker
       {...props}
       className={clsx(
+        // @ts-ignore
         TextFieldStyles.inputField,
         styles.datePicker,
         props.className
@@ -58,6 +59,7 @@ export const DateRangePicker = <T extends DateValue>({
         errorMessage={errorMessage}
       >
         <Group
+          // @ts-ignore
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput
@@ -66,6 +68,7 @@ export const DateRangePicker = <T extends DateValue>({
           >
             {segment => (
               <DateSegment
+                // @ts-ignore
                 className={styles.dateSegment}
                 segment={segment}
               />
@@ -144,6 +147,7 @@ export const DatePicker = <T extends DateValue>({
     <AriaDatePicker
       {...props}
       className={clsx(
+        // @ts-ignore
         TextFieldStyles.inputField,
         styles.datePicker,
         props.className
@@ -156,6 +160,7 @@ export const DatePicker = <T extends DateValue>({
         errorMessage={errorMessage}
       >
         <Group
+          // @ts-ignore
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput className={styles.date}>

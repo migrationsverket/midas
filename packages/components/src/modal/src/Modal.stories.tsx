@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from 'packages/components/src/modal/src/Modal'
-import { Button } from '@midas-ds/button'
+import { Button } from '../../button'
 import React from 'react'
-import { Select, Item } from '@midas-ds/select'
-import { Flex, FlexItem } from '@midas-ds/flex'
+import { Select, Item } from '../../select'
+import { Flex, FlexItem } from '../../flex'
 
 const meta: Meta<typeof Modal> = {
   component: Modal,

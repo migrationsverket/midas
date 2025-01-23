@@ -1,6 +1,6 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import styles from 'packages/components/src/logo/src/Logo.module.css'
+import styles from './Logo.module.css'
 
 export interface LogoProps
   extends React.DetailedHTMLProps<

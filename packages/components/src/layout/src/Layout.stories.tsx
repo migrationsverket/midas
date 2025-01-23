@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Header, Layout, SidebarLinkGroup } from './Layout'
+import { Header, Layout, SidebarLinkGroup } from 'packages/components/src/layout/src/Layout'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
-import { baseColors } from '@midas-ds/theme'
-import { LinkButton } from '@midas-ds/link-button'
+import { baseColors } from '../../theme'
+import { LinkButton } from '../../link-button'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,

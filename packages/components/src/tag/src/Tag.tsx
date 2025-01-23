@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from 'packages/components/src/tag/src/Tag.module.css'
+import styles from './Tag.module.css'
 import {
   Tag as AriaTag,
   TagGroup as AriaTagGroup,
@@ -8,7 +8,7 @@ import {
   TagProps as AriaTagProps
 } from 'react-aria-components'
 import { X } from 'lucide-react'
-import { Button } from '@midas-ds/button'
+import { Button } from '../../button'
 import clsx from 'clsx'
 
 export interface TagGroupProp extends AriaTagGroupProps {

@@ -10,7 +10,7 @@ import {
 } from 'react-aria-components'
 import styles from './Checkbox.module.css'
 import { Checkbox } from './Checkbox'
-import { InputWrapper } from '@midas-ds/textfield'
+import { InputWrapper } from '../../textfield'
 
 export interface CheckboxGroupProps
   extends Omit<AriaCheckboxGroupProps, 'children'> {

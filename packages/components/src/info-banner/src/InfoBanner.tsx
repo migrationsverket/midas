@@ -2,7 +2,7 @@ import * as React from 'react'
 import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
 import styles from 'packages/components/src/info-banner/src/InfoBanner.module.css'
 import clsx from 'clsx'
-import { Button } from '@midas-ds/button'
+import { Button } from '../../button'
 
 export interface InfoBannerProps
   extends React.DetailedHTMLProps<

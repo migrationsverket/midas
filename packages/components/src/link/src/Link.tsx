@@ -1,6 +1,6 @@
 'use client'
 
-import styles from 'packages/components/src/link/src/Link.module.css'
+import styles from './Link.module.css'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import clsx from 'clsx'
 import { ArrowRight, type LucideIcon } from 'lucide-react'

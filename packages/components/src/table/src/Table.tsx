@@ -21,7 +21,7 @@ import {
   Table as AriaTable,
   TableBody
 } from 'react-aria-components'
-import { Checkbox } from '@midas-ds/checkbox'
+import { Checkbox } from '../../checkbox'
 import {
   ArrowDownNarrowWide,
   ArrowUpWideNarrow,

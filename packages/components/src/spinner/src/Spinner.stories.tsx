@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Spinner } from 'packages/components/src/spinner/src/Spinner'
-import { Button } from '@midas-ds/button'
+import { Spinner } from './Spinner'
+import { Button } from '../../button'
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,

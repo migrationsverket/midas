@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react'
-import { Card } from '@midas-ds/card'
-import { Flex } from './Flex'
-import { FlexItem } from './FlexItem'
+import { Card } from '../../card'
+import { Flex } from 'packages/components/src/flex/src/Flex'
+import { FlexItem } from 'packages/components/src/flex/src/FlexItem'
 
 const meta: Meta<typeof Flex> = {
   component: Flex,

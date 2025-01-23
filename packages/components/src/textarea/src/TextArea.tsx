@@ -1,13 +1,13 @@
 'use client'
 
-import styles from 'packages/components/src/textarea/src/TextArea.module.css'
+import styles from './TextArea.module.css'
 import {
   TextField as AriaTextField,
   TextArea as AriaTextArea,
   ValidationResult,
   TextFieldProps as AriaTextFieldProps
 } from 'react-aria-components'
-import { InputWrapper, TextFieldStyles } from '@midas-ds/textfield'
+import { InputWrapper, TextFieldStyles } from '../../textfield'
 import * as React from 'react'
 import clsx from 'clsx'
 
@@ -79,6 +79,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <AriaTextField
+      // @ts-ignore
       className={TextFieldStyles.inputField}
       validate={validateInput}
       {...props}

@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './Layout.module.css'
+import styles from 'packages/components/src/layout/src/Layout.module.css'
 import {
   LucideIcon,
   Menu,
@@ -8,14 +8,14 @@ import {
   PanelRightClose,
   X
 } from 'lucide-react'
-import { LinkButton, RouterProvider } from '@midas-ds/link-button'
-import { Button } from '@midas-ds/button'
-import { FlexItem } from '@midas-ds/flex'
-import { Logo } from '@midas-ds/logo'
+import { LinkButton, RouterProvider } from '../../link-button'
+import { Button } from '../../button'
+import { FlexItem } from '../../flex'
+import { Logo } from '../../logo'
 import React from 'react'
 import clsx from 'clsx'
-import { midasColors } from '@midas-ds/theme'
-import { Dropdown, DropdownItem } from '@midas-ds/dropdown'
+import { midasColors } from '../../theme'
+import { Dropdown, DropdownItem } from '../../dropdown'
 
 export interface SidebarLinkGroup {
   title?: string

@@ -11,11 +11,11 @@ import {
   Provider,
   FieldErrorContext
 } from 'react-aria-components'
-import { InputWrapper } from '@midas-ds/textfield'
-import { Checkbox } from '@midas-ds/checkbox'
+import { InputWrapper } from '../../textfield'
+import { Checkbox } from '../../checkbox'
 import { ChevronDown } from 'lucide-react'
 import * as React from 'react'
-import { TagGroup, Tag } from '@midas-ds/tag'
+import { TagGroup, Tag } from '../../tag'
 import { Key, useListData } from 'react-stately'
 
 interface MidasMultiSelect {

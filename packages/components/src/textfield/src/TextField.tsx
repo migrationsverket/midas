@@ -10,8 +10,8 @@ import {
   TextFieldProps as AriaTextFieldProps,
   ValidationResult
 } from 'react-aria-components'
-import styles from 'packages/components/src/textfield/src/TextField.module.css'
-import { Button } from '@midas-ds/button'
+import styles from './TextField.module.css'
+import { Button } from '../../button'
 import clsx from 'clsx'
 
 export interface TextFieldProps extends AriaTextFieldProps {

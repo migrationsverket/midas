@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 
-import { Layout } from './Layout'
+import { Layout } from 'packages/components/src/layout/src/Layout'
 
 describe('Sidebar', () => {
   it('should render successfully', () => {

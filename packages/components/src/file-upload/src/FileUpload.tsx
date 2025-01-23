@@ -9,8 +9,8 @@ import {
 import React from 'react'
 import { X } from 'lucide-react'
 import styles from 'packages/components/src/file-upload/src/FileUpload.module.css'
-import { Button } from '@midas-ds/button'
-import { InputWrapper } from '@midas-ds/textfield'
+import { Button } from '../../button'
+import { InputWrapper } from '../../textfield'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */

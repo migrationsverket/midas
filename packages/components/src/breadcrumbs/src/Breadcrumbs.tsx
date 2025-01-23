@@ -2,7 +2,7 @@ import {
   Breadcrumbs as AriaBreadcrumbs,
   Breadcrumb,
 } from 'react-aria-components'
-import { Link } from '@midas-ds/link'
+import { Link } from '../../link'
 
 import styles from 'packages/components/src/breadcrumbs/src/Breadcrumbs.module.css'
 

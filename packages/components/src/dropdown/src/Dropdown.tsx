@@ -7,7 +7,7 @@ import {
   type MenuProps,
   type MenuTriggerProps
 } from 'react-aria-components'
-import { Button } from '@midas-ds/button'
+import { Button } from '../../button'
 import { EllipsisVertical } from 'lucide-react'
 import styles from 'packages/components/src/dropdown/src/Dropdown.module.css'
 

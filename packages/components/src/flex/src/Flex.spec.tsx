@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 
-import { Flex } from './Flex'
-import { FlexItem } from './FlexItem'
+import { Flex } from 'packages/components/src/flex/src/Flex'
+import { FlexItem } from 'packages/components/src/flex/src/FlexItem'
 
 describe('Flex', () => {
   it('should render successfully', () => {
