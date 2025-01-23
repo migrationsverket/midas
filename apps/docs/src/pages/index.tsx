@@ -37,7 +37,7 @@ export default function Hello() {
                   as={Link}
                   to='/components/accordion'
                 >
-                  Se komponenter
+                  Komponenter
                 </LinkButton>
               </ButtonGroup>
             </div>
