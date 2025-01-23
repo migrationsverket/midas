@@ -12,10 +12,16 @@ import { TextFieldStyles } from '@midas-ds/textfield'
 import { Button } from '@midas-ds/button'
 import styles from './SearchField.module.css'
 import clsx from 'clsx'
-import React from 'react'
+import * as React from 'react'
 
 export interface SearchFieldProps extends AriaSearchFieldProps {
+  /** Placeholder text */
   placeholder: string
+  /**
+   *  Text displayed on the 'search' button
+   *  @default
+   *  'Sök'
+   */
   buttonText?: string
 }
 
