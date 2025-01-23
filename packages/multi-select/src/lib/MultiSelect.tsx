@@ -14,19 +14,28 @@ import {
 import { InputWrapper } from '@midas-ds/textfield'
 import { Checkbox } from '@midas-ds/checkbox'
 import { ChevronDown } from 'lucide-react'
-import React from 'react'
+import * as React from 'react'
 import { TagGroup, Tag } from '@midas-ds/tag'
 import { Key, useListData } from 'react-stately'
 
 interface MidasMultiSelect {
+  /** Label for multiselect */
   label: string
+  /** Description for multiselect */
   description?: string
+  /** Array of items that will be included in the list */
   items: { name: string; id: string }[]
+  /** Handler for when list of selected item is changed */
   onSelectionChange?: (selectedKeys: Set<Key>) => void
+  /** Control selected keys */
   selectedKeys?: string[]
+  /** Set list of pre-selected keys, or 'all' */
   defaultSelectedKeys?: string[] | 'all'
+  /** Set MultiSelect in disabled state */
   isDisabled?: boolean
+  /** Set MultiSelect in invalid state */
   isInvalid?: boolean
+  /** Set error message as string or as a validation function */
   errorMessage?: string | ((validation: ValidationResult) => string) | undefined
 }
 
