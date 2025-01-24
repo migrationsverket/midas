@@ -1,5 +1,6 @@
 ---
 title: MultiSelect
+description: MultiSelect är en typ av inmatningsfält som tillåter användaren att välja flera alternativ från en längre lista.
 ---
 
 import { MultiSelect } from '@midas-ds/multi-select'
@@ -13,7 +14,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink=''
 />
 
-MultiSelect är en typ av inmatningsfält som används för att välja **ett eller flera** alternativ från en längre lista. Om det är endast är ett fåtal alternativ bör [Checkbox](./checkbox.mdx) användas istället.
+MultiSelect är en typ av inmatningsfält som tillåter användaren att välja **flera** alternativ från en längre lista.
 
 ## Installation och användning
 
@@ -27,30 +28,17 @@ import { MultiSelect } from '@midas-ds/multi-select'
 
 <LiveCodeBlock scope={{ MultiSelect }}>
   {`<MultiSelect
-        label="Vad är din favoritfrukt?"
+        label="Vilka är dina favoritfrukter?"
+        description="Om de är små får man ta två"
         items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
 />`}
 </LiveCodeBlock>
 
 ## Riktlinjer
 
-### Val av komponent
+- Om det finns mer än 11 alternativ, överväg att använda en [ComboBox](./combobox.mdx) för
+att göra det lättare att söka fram alternativen.
+- Om det är endast är ett fåtal alternativ bör [Checkbox](./checkbox.mdx) användas istället.
 
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]
-  A ---> C[2 - 4]
-  A ---> D[5 - 10]:::primary
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]
-  C ---> G[Hur många val kan göras?]
-  G --->|Flera| F
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]:::primary
-  I --->|Flera| J[Använd MultiSelect]:::primary
-  I --->|Ett| K[Använd Select]
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
+## API
+<PropTable name={'MultiSelect'}/>
