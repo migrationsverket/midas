@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 
-import styles from 'packages/components/src/radio/src/Radio.module.css'
+import styles from './Radio.module.css'
 import {
   RadioGroup as AriaRadioGroup,
   RadioGroupProps,

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styles from 'packages/components/src/grid/src/Grid.module.css'
+import styles from './Grid.module.css'
 import clsx from 'clsx'
 
 interface GridProps

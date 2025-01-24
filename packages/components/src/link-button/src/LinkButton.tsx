@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
-import styles from 'packages/components/src/link-button/src/LinkButton.module.css'
+import styles from './LinkButton.module.css'
 import clsx from 'clsx'
 import {
   ChevronLeft,

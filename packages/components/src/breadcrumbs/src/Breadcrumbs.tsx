@@ -4,7 +4,7 @@ import {
 } from 'react-aria-components'
 import { Link } from '../../link'
 
-import styles from 'packages/components/src/breadcrumbs/src/Breadcrumbs.module.css'
+import styles from './Breadcrumbs.module.css'
 
 export interface BreadcrumbProps {
   items: MidasBreadcrumb[]

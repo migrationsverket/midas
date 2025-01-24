@@ -10,7 +10,7 @@ import {
 import { Search, X } from 'lucide-react'
 import { TextFieldStyles } from '../../textfield'
 import { Button } from '../../button'
-import styles from 'packages/components/src/search-field/src/SearchField.module.css'
+import styles from './SearchField.module.css'
 import clsx from 'clsx'
 import * as React from 'react'
 

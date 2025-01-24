@@ -8,7 +8,7 @@ import {
 } from 'react-aria-components'
 import React from 'react'
 import { X } from 'lucide-react'
-import styles from 'packages/components/src/file-upload/src/FileUpload.module.css'
+import styles from './FileUpload.module.css'
 import { Button } from '../../button'
 import { InputWrapper } from '../../textfield'
 

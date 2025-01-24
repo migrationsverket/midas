@@ -5,9 +5,9 @@ description: Komponent som skapar en länk
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Link } from '@midas-ds/link'
+import { Link } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { baseColors } from '@midas-ds/theme'
+import { baseColors } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Link'}
@@ -23,7 +23,7 @@ npm install @midas-ds/link
 ```
 
 ```tsx
-import { Link } from '@midas-ds/link'
+import { Link } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ Link }}>
@@ -37,8 +37,8 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
 <LiveCodeBlock scope={{ Link }}>
   {`<>
     <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
-    <Link 
-        standalone 
+    <Link
+        standalone
         href="/blog"
     >
         Läs mer om designsystemets nyheter
@@ -51,7 +51,7 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
 Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
 
 <LiveCodeBlock scope={{ Link, baseColors }}>
-  {`<div 
+  {`<div
       style={{
         position: 'relative',
         background: baseColors.gray10,
@@ -59,8 +59,8 @@ Använd `stretched` för att låta hela förälderelementet vara klickbart till 
       }}
     >
     <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
-    <Link 
-        standalone 
+    <Link
+        standalone
         stretched
         href="/blog"
     >

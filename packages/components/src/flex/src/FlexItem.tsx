@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styles from 'packages/components/src/flex/src/Flex.module.css'
+import styles from './Flex.module.css'
 import clsx from 'clsx'
 
 export interface FlexItemProps

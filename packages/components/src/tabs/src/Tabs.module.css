@@ -1,0 +1,50 @@
+@value tokens: "../../../../theme/src/lib/tokens.css";
+@value display, gray50, semiBoldWeight, blue130, focus, smBreakpoint from tokens;
+
+.container {
+  font-family: display;
+}
+
+.list {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 1px solid gray50;
+}
+
+.listItem {
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+
+  &[data-selected] {
+    font-weight: semiBoldWeight;
+    padding-bottom: calc(0.5rem - 3px);
+    border-bottom: 3px solid blue130;
+  }
+
+  &[data-focus-visible],
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+
+  @media smBreakpoint {
+    flex: 0 0 100%;
+
+    &[data-selected] {
+      border-left: 3px solid blue130;
+      padding-left: calc(1.125rem - 3px);
+      border-bottom: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+.panel {
+  margin-top: 1rem;
+
+  &[data-focus-visible],
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+}

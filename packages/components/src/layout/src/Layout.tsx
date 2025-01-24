@@ -1,6 +1,6 @@
 'use client'
 
-import styles from 'packages/components/src/layout/src/Layout.module.css'
+import styles from './Layout.module.css'
 import {
   LucideIcon,
   Menu,

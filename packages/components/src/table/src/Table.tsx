@@ -1,6 +1,6 @@
 'use client'
 
-import styles from 'packages/components/src/table/src/Table.module.css'
+import styles from './Table.module.css'
 
 import type {
   RowProps,

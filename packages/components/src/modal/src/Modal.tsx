@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import styles from 'packages/components/src/modal/src/Modal.module.css'
+import styles from './Modal.module.css'
 import { X } from 'lucide-react'
 import { Button } from '../../button'
 import clsx from 'clsx'

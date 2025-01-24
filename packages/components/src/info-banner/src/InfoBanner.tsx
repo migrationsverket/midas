@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
-import styles from 'packages/components/src/info-banner/src/InfoBanner.module.css'
+import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
 import { Button } from '../../button'
 

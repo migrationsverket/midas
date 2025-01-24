@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components'
 import { Button } from '../../button'
 import { EllipsisVertical } from 'lucide-react'
-import styles from 'packages/components/src/dropdown/src/Dropdown.module.css'
+import styles from './Dropdown.module.css'
 
 interface MidasMenuButtonProps<T>
   extends MenuProps<T>,

@@ -1,7 +1,7 @@
 # Formulär
 
-import { TextField } from '@midas-ds/textfield';
-import { Flex, FlexItem } from '@midas-ds/flex'
+import { TextField } from '@midas-ds/components'
+import { Flex, FlexItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Obligatorisk vs valfri

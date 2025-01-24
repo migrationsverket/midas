@@ -27,7 +27,7 @@ npm install @midas-ds/toast
 ```
 
 ```tsx
-import { ToastProvider } from '@midas-ds/toast'
+import { ToastProvider } from '@midas-ds/components'
 ;<ToastProvider>
   {state => (
     <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>
@@ -112,7 +112,7 @@ Välj en global kö för toasts om det passar ditt användsningsscenario bättre
 och lägg nya toasts i kön enligt:
 
 ```tsx
-import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
+import { GlobalToastRegion, toastQueue } from '@midas-ds/components'
 
 <GlobalToastRegion />
 //...

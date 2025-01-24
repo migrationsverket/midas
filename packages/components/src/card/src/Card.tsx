@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Link, LinkProps, RouterProvider } from '../../link'
-import styles from 'packages/components/src/card/src/Card.module.css'
+import styles from './Card.module.css'
 import clsx from 'clsx'
 
 export interface CardProps<C extends React.ElementType = typeof Link>

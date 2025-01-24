@@ -1,5 +1,5 @@
 'use client'
-import styles from 'packages/components/src/combobox/src/ComboBox.module.css'
+import styles from './ComboBox.module.css'
 import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,

@@ -1,6 +1,6 @@
 'use client'
 
-import styles from 'packages/components/src/multi-select/src/MultiSelect.module.css'
+import styles from './MultiSelect.module.css'
 import {
   Button,
   DialogTrigger,
