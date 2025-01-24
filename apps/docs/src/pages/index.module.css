@@ -27,9 +27,11 @@
   object-fit: cover;
   object-position: left center;
   min-height: 80vh;
+  margin: 1rem 0;
 
   @media (max-width: 998px) {
     width: 100%;
     min-height: 20vh;
+    margin: 0 1rem;
   }
 }
