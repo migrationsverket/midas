@@ -5,7 +5,7 @@
   font-family: display;
   font-size: desktopSize;
   font-weight: mediumWeight;
-  padding: calc(0.875rem - 1px) calc(2rem - 1px);
+  padding: 0.8125rem 1.9375rem;
   background-color: blue150;
   border: solid 1px transparent;
   color: white;

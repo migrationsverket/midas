@@ -1,6 +1,6 @@
 /* stylelint-disable property-no-vendor-prefix */
 @value tokens: "../../../theme/src/lib/tokens.css";
-@value display, blue150, gray150 from tokens;
+@value display, blue150, gray150, backgroundPrimary from tokens;
 
 .container {
   font-family: display;
@@ -36,16 +36,14 @@
 }
 
 .input {
-  width: 100%;
+  all: unset;
+  box-sizing: border-box;
+  line-height: 1rem;
   appearance: none;
-  -webkit-appearance: none;
-  padding-left: 2.75rem;
-  padding-right: 2.75rem;
-  margin-top: 0;
-  background-color: white;
-  border: solid 1px blue150;
-  box-shadow: none;
-
+  border: blue150 solid 1px;
+  width: 100%;
+  padding: 0.8125rem 0 0.8125rem 2.75rem;
+  background-color: backgroundPrimary;
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,
