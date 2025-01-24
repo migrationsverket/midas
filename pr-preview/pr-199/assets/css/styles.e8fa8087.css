@@ -8282,6 +8282,7 @@ CSS variables, meant to be overridden by final theme
   -o-object-position: left center;
      object-position: left center;
   min-height: 80vh;
+  margin: 1rem 0;
 }
 
 @media (max-width: 998px) {
@@ -8289,6 +8290,7 @@ CSS variables, meant to be overridden by final theme
 .image__rcj {
     width: 100%;
     min-height: 20vh;
+    margin: 0 1rem;
 }
   }
 
