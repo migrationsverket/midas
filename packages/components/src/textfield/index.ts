@@ -1,2 +1,3 @@
-export * from './src'
-export * as TextFieldStyles from './src/TextField.module.css'
+import TextFieldStyles from './TextField.module.css'
+export * from './TextField'
+export { TextFieldStyles }

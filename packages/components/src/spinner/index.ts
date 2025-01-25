@@ -1,1 +1,1 @@
-export * from './src'
+export {Spinner} from './Spinner'

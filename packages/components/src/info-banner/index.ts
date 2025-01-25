@@ -1,1 +1,1 @@
-export * from './src'
+export {InfoBanner} from './InfoBanner'

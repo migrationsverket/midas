@@ -1,1 +1,1 @@
-export * from './src'
+export {ComboBox, ComboBoxItem} from './ComboBox'

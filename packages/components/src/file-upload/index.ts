@@ -1,1 +1,1 @@
-export * from './src'
+export {FileUpload} from './FileUpload'

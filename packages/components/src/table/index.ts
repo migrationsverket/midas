@@ -1,1 +1,1 @@
-export * from './src'
+export {Table, TableHeader, TableBody, Row, Cell, Column} from './Table'

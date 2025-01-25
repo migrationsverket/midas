@@ -1,1 +1,1 @@
-export * from './src'
+export {Breadcrumbs} from './Breadcrumbs'

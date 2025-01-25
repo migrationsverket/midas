@@ -1,1 +1,1 @@
-export * from './src'
+export {MultiSelect} from './MultiSelect'

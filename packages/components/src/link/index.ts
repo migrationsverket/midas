@@ -1,1 +1,1 @@
-export * from './src'
+export {Link, RouterProvider} from './Link'

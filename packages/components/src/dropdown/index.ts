@@ -1,1 +1,1 @@
-export * from './src'
+export {Dropdown, DropdownItem} from './Dropdown'

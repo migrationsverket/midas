@@ -1,0 +1,61 @@
+@value tokens: "../../../theme/src/lib/tokens.css";
+@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, black, semiBoldWeight from tokens;
+
+.infoBanner {
+  font-family: display;
+  display: flex;
+  font-size: 1rem;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+
+  &.success {
+    --border: signalGreen100;
+    --bg: signalGreen10;
+  }
+
+  &.info {
+    --border: signalBlue100;
+    --bg: signalBlue10;
+  }
+
+  &.important {
+    --border: signalYellow100;
+    --bg: signalYellow10;
+  }
+
+  &.warning {
+    --border: signalRed100;
+    --bg: signalRed10;
+  }
+
+  border-left: 3px solid var(--border);
+  background-color: var(--bg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0%;
+}
+
+.heading {
+  font-weight: semiBoldWeight;
+  margin-bottom: 0.25rem;
+}
+
+.text {
+  white-space: pre-line;
+  margin: 0;
+}
+
+.icon {
+  color: var(--border);
+  min-width: 20px;
+}
+
+.dismissable {
+  margin-top: -1rem;
+  margin-right: -1rem;
+  justify-self: flex-end;
+}
