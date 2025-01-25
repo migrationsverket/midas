@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Tabs } from './Tabs'
-import { Button } from '@midas-ds/components'
+import { Button } from '../../button'
 import React from 'react'
 
 const meta: Meta<typeof Tabs> = {
