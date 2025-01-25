@@ -1,5 +1,5 @@
 /* stylelint-disable property-no-vendor-prefix */
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, blue150, gray150, backgroundPrimary from tokens;
 
 .container {

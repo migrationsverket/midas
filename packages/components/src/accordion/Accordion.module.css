@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, gray50, gray20, black, normalTransition, regularWeight from tokens;
 
 .root {

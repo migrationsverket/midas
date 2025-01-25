@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText, focus from tokens;
 
 .inputField {

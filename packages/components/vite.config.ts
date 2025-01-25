@@ -7,6 +7,9 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import preserveDirectives from 'rollup-preserve-directives'
+import { extname, relative, resolve } from 'path'
+import { fileURLToPath } from 'node:url'
+import { glob } from 'glob'
 
 export default defineConfig({
   root: __dirname,
@@ -17,7 +20,9 @@ export default defineConfig({
     nxCopyAssetsPlugin(['*.md']),
     dts({
       entryRoot: 'src',
-      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json')
+      tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
+      include: ['src'],
+      exclude: ['*.stories.tsx'],
     }),
     libInjectCss(),
     preserveDirectives(),
@@ -37,7 +42,7 @@ export default defineConfig({
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: [path.resolve(__dirname, 'src/index.ts')],
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'components',
       fileName: 'index',
       // Change this to the formats you want to support.
@@ -47,6 +52,28 @@ export default defineConfig({
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
+      input: Object.fromEntries(
+        // https://rollupjs.org/configuration-options/#input
+        glob.sync('packages/components/src/**/*.{ts,tsx}', {
+          ignore: ["src/**/*.d.ts", '*.stories.tsx'],
+        }).map(file => [
+          // 1. The name of the entry point
+          // lib/nested/foo.js becomes nested/foo
+          relative(
+            'src',
+            file.slice(0, file.length - extname(file).length)
+          ),
+          // 2. The absolute path to the entry file
+          // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
+          // TODO: some error here and can't set folder names correctly in output
+          `${file}`
+          // fileURLToPath(new URL(file, import.meta.url))
+        ])
+      ),
+      output: {
+        // assetFileNames: 'assets/[name][extname]',
+        // entryFileNames: '[name].js',
+      }
     }
   }
 })

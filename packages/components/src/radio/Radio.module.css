@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, inputLabel, inputText, black, blue150, gray50, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, focus, mdBreakpoint, borderSecondary from tokens;
 
 .radioGroup {

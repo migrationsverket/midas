@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
 
 .button {

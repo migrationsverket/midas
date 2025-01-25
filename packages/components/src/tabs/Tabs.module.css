@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, gray50, semiBoldWeight, blue130, focus, smBreakpoint from tokens;
 
 .container {

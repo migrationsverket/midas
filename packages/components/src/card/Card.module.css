@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, white, gray20, gray10, gray150, blue20, black, mediumWeight, fastTransition from tokens;
 
 .card {

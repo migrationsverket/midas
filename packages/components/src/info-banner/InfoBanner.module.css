@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, black, semiBoldWeight from tokens;
 
 .infoBanner {

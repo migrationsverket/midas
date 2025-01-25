@@ -1,4 +1,4 @@
-@value tokens: "../../../theme/src/lib/tokens.css";
+@value tokens: "../theme/tokens.css";
 @value display, gray10, gray30, gray40, gray60, mediumWeight from tokens;
 
 .cell {
