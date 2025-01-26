@@ -6,7 +6,6 @@ import * as path from 'path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import preserveDirectives from 'rollup-preserve-directives'
 import { extname, relative, resolve } from 'path'
 import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
@@ -22,10 +21,9 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
       include: ['src'],
-      exclude: ['*.stories.tsx'],
+      exclude: ['**/*.stories.{ts,tsx}']
     }),
-    libInjectCss(),
-    preserveDirectives(),
+    libInjectCss()
   ],
   // Uncomment this if you are using workers.
   // worker: {
@@ -47,28 +45,29 @@ export default defineConfig({
       fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ['es', 'cjs']
+      formats: ['es']
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       input: Object.fromEntries(
         // https://rollupjs.org/configuration-options/#input
-        glob.sync('packages/components/src/**/*.{ts,tsx}', {
-          ignore: ["src/**/*.d.ts", '*.stories.tsx'],
-        }).map(file => [
-          // 1. The name of the entry point
-          // lib/nested/foo.js becomes nested/foo
-          relative(
-            'src',
-            file.slice(0, file.length - extname(file).length)
-          ),
-          // 2. The absolute path to the entry file
-          // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-          // TODO: some error here and can't set folder names correctly in output
-          `${file}`
-          // fileURLToPath(new URL(file, import.meta.url))
-        ])
+        glob
+          .sync('packages/components/src/**/*.{ts,tsx}', {
+            ignore: ['**/*.d.ts', '**/*.stories.{ts,tsx}']
+          })
+          .map(file => [
+            // 1. The name of the entry point
+            // lib/nested/foo.js becomes nested/foo
+            relative('src', file.slice(0, file.length - extname(file).length)),
+            // 2. The absolute path to the entry file
+            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
+            /**
+             * TODO: some error here and can't set folder names correctly in output
+             */
+            `${file}`
+            // fileURLToPath(new URL(file, import.meta.url))
+          ])
       ),
       output: {
         // assetFileNames: 'assets/[name][extname]',
