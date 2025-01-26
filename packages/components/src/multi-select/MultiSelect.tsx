@@ -207,5 +207,3 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
     </div>
   )
 }
-
-export default MultiSelect
