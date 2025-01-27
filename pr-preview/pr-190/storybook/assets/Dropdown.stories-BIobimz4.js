@@ -1,0 +1,8 @@
+import{j as o}from"./jsx-runtime-CfatFE5O.js";import{D as e,a}from"./Dropdown-C6dU5CFP.js";import{L as s}from"./LinkButton-7ps7DP61.js";import"./index-ClcD9ViR.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./Dialog-0tKFQKsB.js";import"./Button-2KCD5_KE.js";import"./useFocusable-D_XT9yGL.js";import"./index-ZuzByk-F.js";import"./clsx-B-dksMZM.js";import"./Hidden-BAsLqWFN.js";import"./RSPContexts-Djf1EgA4.js";import"./Collection-B-efTaNC.js";import"./index-DvHoLfqc.js";import"./Separator-0tySCNVb.js";import"./SelectionManager-DnXZ6a4a.js";import"./FocusScope-DET1Ddde.js";import"./context-dgBkp4xb.js";import"./useDescription-h6ucxGnb.js";import"./useControlledState-D4tkfNix.js";import"./ListKeyboardDelegate-D1r6xHoY.js";import"./Text-BU-eztOh.js";import"./PressResponder-kwyxQayG.js";import"./useLocalizedStringFormatter-HXVaNQBz.js";import"./VisuallyHidden-Q_EkBmK7.js";import"./Button-BB3MClES.js";import"./createLucideIcon-DQK9Z80p.js";import"./Link-DqO9kW8W.js";import"./chevron-right-CvgscaxW.js";const F={component:e,title:"Components/Dropdown"},d=["Ett","Två","Tre"],r={args:{label:"Meny",children:d.map((p,n)=>o.jsx(a,{children:o.jsx(s,{variant:"tertiary",children:p})},"dropdown_"+n))}};var t,i,m;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
+  args: {
+    label: 'Meny',
+    children: ITEMS.map((item, i) => <DropdownItem key={'dropdown_' + i}>
+        <LinkButton variant='tertiary'>{item}</LinkButton>
+      </DropdownItem>)
+  }
+}`,...(m=(i=r.parameters)==null?void 0:i.docs)==null?void 0:m.source}}};const G=["Primary"];export{r as Primary,G as __namedExportsOrder,F as default};
