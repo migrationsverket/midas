@@ -5,8 +5,7 @@ on:
   workflow_dispatch:
   push:
     tags:
-      - "components@*.*.*"
-
+      - "v*.*.*"
 jobs:
   test:
     name: Publish
