@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '@theme/Layout'
-import { LinkButton } from '@midas-ds/link-button'
-import { ButtonGroup } from '@midas-ds/button'
-import styles from './index.module.css'
+import { LinkButton, ButtonGroup } from '@midas-ds/components'
+import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
+import CodeBlock from '@theme/CodeBlock'
 
 export default function Hello() {
   const imgSrc = useBaseUrl('/img/HeroImage.png')
@@ -22,8 +22,8 @@ export default function Hello() {
               <p>
                 Midas är Migrationsverkets designsystem för att skapa
                 användarvänliga, tillgängliga och enhetliga tjänster och
-                produkter. Det innehåller designkomponenter, kod och
-                riktlinjer som underlättar utveckling och design.
+                produkter. Det innehåller designkomponenter, kod och riktlinjer
+                som underlättar utveckling och design.
               </p>
               <ButtonGroup aria-label='Länkar'>
                 <LinkButton
@@ -40,6 +40,9 @@ export default function Hello() {
                   Komponenter
                 </LinkButton>
               </ButtonGroup>
+              <CodeBlock className={styles.code}>
+                npm install @midas-ds/components
+              </CodeBlock>
             </div>
           </div>
           <div className='col col--6'>

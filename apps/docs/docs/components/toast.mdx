@@ -4,10 +4,8 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src'
-import { Button } from '../../../../packages/button/src'
+import { GlobalToastRegion, toastQueue, Button, Flex, FlexItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Flex, FlexItem } from '../../../../packages/flex/src'
 
 <ComponentHeader
   name={'Toast'}
@@ -23,11 +21,11 @@ eller via en timeout. Det går även att sätta en prioritet på meddelanden rel
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/toast
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { ToastProvider } from '@midas-ds/toast'
+import { ToastProvider } from '@midas-ds/components'
 ;<ToastProvider>
   {state => (
     <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>
@@ -112,7 +110,7 @@ Välj en global kö för toasts om det passar ditt användsningsscenario bättre
 och lägg nya toasts i kön enligt:
 
 ```tsx
-import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
+import { GlobalToastRegion, toastQueue } from '@midas-ds/components'
 
 <GlobalToastRegion />
 //...

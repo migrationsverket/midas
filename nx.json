@@ -6,7 +6,7 @@
       "automaticFromRef": true
     },
     "projectsRelationship": "independent",
-    "projects": ["packages/components"],
+    "projects": ["packages/components", "!packages/.storybook"],
     "releaseTagPattern": "@midas-ds/{projectName}@{version}",
     "git": {
       "commitMessage": "chore({projectName}): release version {version} [skip-ci]"
@@ -136,6 +136,17 @@
       "plugin": "@nx/eslint/plugin",
       "options": {
         "targetName": "eslint:lint"
+      }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "vite:build",
+        "testTargetName": "test",
+        "serveTargetName": "vite:serve",
+        "previewTargetName": "vite:preview",
+        "serveStaticTargetName": "vite:serve-static",
+        "typecheckTargetName": "typecheck"
       }
     }
   ]
