@@ -1,17 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Form as AriaForm } from 'react-aria-components'
-import { TextField } from '@midas-ds/textfield'
-import { Flex, FlexItem } from '@midas-ds/flex'
-import { CheckboxGroup, Checkbox } from '@midas-ds/checkbox'
-import { RadioGroup, Radio } from '@midas-ds/radio'
-import { Select, Item } from '@midas-ds/select'
-import { Button } from '@midas-ds/button'
+import {
+  TextField,
+  Flex,
+  FlexItem,
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Select,
+  Item,
+  Button
+} from '@midas-ds/components'
 
 const meta: Meta<typeof AriaForm> = {
   component: AriaForm,
   title: 'Examples/Form',
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {}
 }
 export default meta
 type Story = StoryObj<typeof AriaForm>
@@ -25,20 +31,20 @@ export const SimpleForm: Story = {
       <Flex>
         <FlexItem col={12}>
           <TextField
-            label="Ange ditt fullständiga namn"
-            description="Glöm inte dina eventuella mellannamn!"
+            label='Ange ditt fullständiga namn'
+            description='Glöm inte dina eventuella mellannamn!'
           />
         </FlexItem>
         <FlexItem col={12}>
           <TextField
-            label="Personnummmer"
-            description="Anges på formen ÅÅMMDD-XXXX"
+            label='Personnummmer'
+            description='Anges på formen ÅÅMMDD-XXXX'
           />
         </FlexItem>
         <FlexItem col={12}>
           <Select
-            label="Vilken är din favoritfrukt"
-            placeholder="Välj en frukt"
+            label='Vilken är din favoritfrukt'
+            placeholder='Välj en frukt'
           >
             {ITEMS.map((item: string) => (
               <Item key={item}>{item}</Item>
@@ -51,7 +57,7 @@ export const SimpleForm: Story = {
         </FlexItem>
       </Flex>
     )
-  },
+  }
 }
 
 export const TwoColumnForm: Story = {
@@ -65,8 +71,8 @@ export const TwoColumnForm: Story = {
         <Flex>
           <FlexItem col={6}>
             <RadioGroup
-              label="Anledning"
-              description="Ange anledning till att du söker i databasen"
+              label='Anledning'
+              description='Ange anledning till att du söker i databasen'
             >
               {RADIOITEMS.map((item: string) => (
                 <Radio
@@ -80,8 +86,8 @@ export const TwoColumnForm: Story = {
           </FlexItem>
           <FlexItem col={6}>
             <CheckboxGroup
-              label="Databas"
-              description="Välj databas att söka i"
+              label='Databas'
+              description='Välj databas att söka i'
             >
               {ITEMS.map((item: string) => (
                 <Checkbox
@@ -95,19 +101,19 @@ export const TwoColumnForm: Story = {
           </FlexItem>
           <FlexItem col={6}>
             <TextField
-              label="Namn"
-              description=""
+              label='Namn'
+              description=''
             />
           </FlexItem>
           <FlexItem col={6}>
-            <TextField label="Personnummer" />
+            <TextField label='Personnummer' />
           </FlexItem>
 
           <FlexItem col={6}>
             <Select
-              label="Kön"
-              description="Kan lämnas tomt"
-              placeholder="Välj kön"
+              label='Kön'
+              description='Kan lämnas tomt'
+              placeholder='Välj kön'
             >
               {SEX.map((item: string) => (
                 <Item key={item}>{item}</Item>
@@ -115,17 +121,17 @@ export const TwoColumnForm: Story = {
             </Select>
           </FlexItem>
           <FlexItem col={6}>
-            <TextField label="Ärendekod" />
+            <TextField label='Ärendekod' />
           </FlexItem>
 
           <FlexItem col={'auto'}>
             <Button>Sök</Button>
           </FlexItem>
           <FlexItem col={'auto'}>
-            <Button variant="secondary">Rensa</Button>
+            <Button variant='secondary'>Rensa</Button>
           </FlexItem>
         </Flex>
       </div>
     )
-  },
+  }
 }

@@ -11,7 +11,7 @@ import {
 } from '@storybook/blocks'
 import React from 'react'
 import { customViewports } from './custom-viewports'
-import '../theme/src/lib/global.css'
+import '../components/src/theme/global.css'
 
 export const autoDocsTemplate = () => (
   <>
