@@ -59,7 +59,7 @@ const config: Config = {
             return true
           },
           savePropValueAsString: true,
-          shouldExtractLiteralValuesFromEnum: false,
+          shouldExtractLiteralValuesFromEnum: false
         }
       }
     ],
@@ -160,11 +160,6 @@ const config: Config = {
           to: '/blog',
           position: 'left',
           label: 'Nyheter'
-        },
-        {
-          to: '/about',
-          position: 'left',
-          label: 'Om'
         },
         {
           to: latestReleasePath,
