@@ -4,6 +4,7 @@ import { LinkButton, ButtonGroup } from '@midas-ds/components'
 import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
+import CodeBlock from '@theme/CodeBlock'
 
 export default function Hello() {
   const imgSrc = useBaseUrl('/img/HeroImage.png')
@@ -39,9 +40,9 @@ export default function Hello() {
                   Komponenter
                 </LinkButton>
               </ButtonGroup>
-              <pre className={styles.code}>
+              <CodeBlock className={styles.code}>
                 npm install @midas-ds/components
-              </pre>
+              </CodeBlock>
             </div>
           </div>
           <div className='col col--6'>
