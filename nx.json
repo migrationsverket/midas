@@ -5,11 +5,11 @@
       "projectChangelogs": true,
       "automaticFromRef": true
     },
-    "projectsRelationship": "independent",
+    "projectsRelationship": "fixed",
     "projects": ["packages/components", "!packages/.storybook"],
-    "releaseTagPattern": "@midas-ds/{projectName}@{version}",
+    "releaseTagPattern": "components@{version}",
     "git": {
-      "commitMessage": "chore({projectName}): release version {version} [skip-ci]"
+      "commitMessage": "chore(components): release version {version} [skip-ci]"
     },
     "version": {
       "generatorOptions": {

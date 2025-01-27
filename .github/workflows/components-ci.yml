@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Test and Build Component Library
+    name: Test, Lint and Build Component Library
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,4 +18,4 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-      - run: npx nx run-many -t lint,test,build --projects=tag:ui
+      - run: npx nx run-many -t lint,test,build --projects=components
