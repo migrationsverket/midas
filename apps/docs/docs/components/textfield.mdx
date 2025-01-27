@@ -4,9 +4,9 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { TextField } from '@midas-ds/textfield'
+import { TextField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Grid, GridItem } from '@midas-ds/grid'
+import { Grid, GridItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -20,15 +20,15 @@ Använd ett inmatningsfält när användaren ska fylla i kortare information, te
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/textfield
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { TextField } from '@midas-ds/textfield'
+import { TextField } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ TextField }}>
-  {`<TextField 
+  {`<TextField
     label={'Etikett'}
     description={'Beskrivning'}
 />`}
@@ -101,7 +101,7 @@ Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[
 - Verifierar att det är fyra siffror efter avgränsaren `(?:[-+ ]?\\d{4})?`
 
 <LiveCodeBlock scope={{ TextField }}>
-  {`<TextField 
+  {`<TextField
     type="text"
     name="ssn"
     label="Personnummer"
@@ -117,10 +117,10 @@ Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[
 Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 
 <LiveCodeBlock scope={{ TextField }}>
-  {`<TextField 
-    type="password" 
-    name="pw" 
-    label="Skriv in ditt lösenord" 
+  {`<TextField
+    type="password"
+    name="pw"
+    label="Skriv in ditt lösenord"
     autoComplete="off"
 />
 `}
@@ -135,10 +135,10 @@ Anpassa längden på inmatningsfält, tex med [Grid](./grid.mdx) eller [Flex](./
 <LiveCodeBlock scope={{ Grid, TextField, GridItem }}>
   {`<Grid fluid={true}>
     <GridItem col={2}>
-      <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" /> 
+      <TextField name={'nameExample'} label={'Postnummer'} description="XXX XX" />
     </GridItem>
     <GridItem col={8}>
-      <TextField name={'nameExample'} label={'Fyll i alla dina namn'} /> 
+      <TextField name={'nameExample'} label={'Fyll i alla dina namn'} />
     </GridItem>
 </Grid>`}
 </LiveCodeBlock>

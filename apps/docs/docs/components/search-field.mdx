@@ -5,7 +5,7 @@ description: Sökfält är ett inmatningsfält anpassat för sökning
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { SearchField } from '@midas-ds/search-field'
+import { SearchField } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -19,16 +19,18 @@ som submit och `ESC` rensar sökfältet.
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/search-field
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { SearchField } from '@midas-ds/search-field'
+import { SearchField } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ SearchField }}>{`
+<LiveCodeBlock scope={{ SearchField }}>
+  {`
 <SearchField placeholder="Sök efter frukter"/>`}
 </LiveCodeBlock>
 
 ## API
-<PropTable name={'SearchField'}/>
+
+<PropTable name={'SearchField'} />

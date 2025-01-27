@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent
-} from '@midas-ds/accordion'
+} from '@midas-ds/components'
 import React from 'react'
 import { Props, ComponentDoc } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'

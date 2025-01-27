@@ -1,23 +1,37 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+:global {
+  .container--fullscreen {
+    max-width: 100%;
+    padding: 0;
+  }
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+  .textColumn {
+    align-content: center;
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.text {
+  margin: 2rem 20% 25% var(--ifm-navbar-padding-horizontal);
+
+  @media (max-width: 996px) {
+    margin: 2rem var(--ifm-navbar-padding-horizontal);
+  }
+
+}
+
+.display1 {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.image {
+  object-fit: cover;
+  object-position: left center;
+  min-height: 80vh;
+  margin: 1rem 0;
+
+  @media (max-width: 998px) {
+    width: 100%;
+    min-height: 20vh;
+    margin: 0 1rem;
+  }
 }

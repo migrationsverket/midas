@@ -3,12 +3,10 @@ title: Logo
 description: Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet
 ---
 
-import { Logo } from '@midas-ds/logo'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Link } from '@midas-ds/link'
-import { Flex, FlexItem } from '@midas-ds/flex'
+import { Link, Flex, FlexItem, Logo } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Logo'}
@@ -21,11 +19,11 @@ På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/logo
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Logo } from '@midas-ds/logo'
+import { Logo } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ Logo }}>{`<Logo />`}</LiveCodeBlock>
@@ -93,4 +91,5 @@ För de fall där komponenten inte kan användas tilhandahåller vi även logoty
 </Link>
 
 ## API
-<PropTable name={'Logo'}/>
+
+<PropTable name={'Logo'} />

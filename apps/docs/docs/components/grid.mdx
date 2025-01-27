@@ -5,8 +5,7 @@ description: Grid baserat på tekniken display grid i css
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Grid, GridItem } from '../../../../packages/grid/src'
-import { Card } from '../../../../packages/card/src'
+import { Grid, GridItem, Card } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -22,11 +21,11 @@ Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är 
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/grid
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Grid } from '@midas-ds/grid'
+import { Grid } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ Grid, GridItem, Card }}>

@@ -4,9 +4,8 @@ description: En card-komponent är en modulär enhet som används för att prese
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Grid, GridItem } from '@midas-ds/grid'
+import { Grid, GridItem, Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Card } from '@midas-ds/card'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -20,11 +19,11 @@ Kortkomponenten är en yta med plats för information och åtgärder relaterat t
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/card
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Card } from '@midas-ds/card'
+import { Card } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ Grid, GridItem, Card }}>
