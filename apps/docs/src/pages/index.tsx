@@ -21,8 +21,8 @@ export default function Hello() {
               <p>
                 Midas är Migrationsverkets designsystem för att skapa
                 användarvänliga, tillgängliga och enhetliga tjänster och
-                produkter. Det innehåller designkomponenter, kod och
-                riktlinjer som underlättar utveckling och design.
+                produkter. Det innehåller designkomponenter, kod och riktlinjer
+                som underlättar utveckling och design.
               </p>
               <ButtonGroup aria-label='Länkar'>
                 <LinkButton
