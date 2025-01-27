@@ -28,16 +28,16 @@ import { Component } from '@midas-ds/component';
 
 För specfika instruktioner, se respektive komponent.
 
-## Installera globala stilmallen
+## Installera Inter som typsnitt
 
-För att komponenterna ska renderas exakt korrekt behövs lite global css. Detta finns i paketet `@midas-ds/theme`.
+Detta är ett rekommenderat sätt att installera vårt typsnitt Inter. Det går självklart att använda andra metoder så länge vikterna 400, 500 och 600 inkluderas.
 
 ```bash npm2yarn
-npm install @midas-ds/theme
+npm install @fontsource/inter
 ```
 
 ```tsx {1} title="App.tsx (rootfilen i din app)"
-import '@midas-ds/theme/index.css'
+import '@fontsource/inter/latin.css'
 
 export default function App({ children }) {
   return <main>{children}</main>
