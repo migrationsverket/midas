@@ -1,18 +1,20 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import { Logo } from '../../../../packages/logo/src';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '../../../../packages/accordion/src';
-import { Checkbox } from '../../../../packages/checkbox/src/lib';
-import { Select } from '../../../../packages/select/src';
-import { Button } from '../../../../packages/button/src';
-import { Radio, RadioGroup } from '../../../../packages/radio/src';
+  Checkbox,
+  Select,
+  Button,
+  Radio,
+  RadioGroup,
+  TextField,
+  Logo,
+} from '@midas-ds/components';
 import styles from '@site/src/css/playground.module.css';
-import { TextField } from '../../../../packages/textfield/src';
+
 
 export default function Playground() {
   return (
