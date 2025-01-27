@@ -5,8 +5,8 @@ const config: StorybookConfig = {
     disableTelemetry: true
   },
   stories: [
-    '../../**/src/lib/**/*.docs.@(md|mdx)',
-    '../../**/src/lib/**/*.stories.@(js|jsx|ts|tsx)'
+    '../components/src/**/*.docs.@(md|mdx)',
+    '../components/src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
   addons: [
     '@storybook/addon-essentials',

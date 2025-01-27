@@ -1,17 +1,14 @@
-// + import '../src/index.css';
-
-//👇 Configures Storybook to log the actions( onArchiveTask and onPinTask ) in the UI.
 import {
   Controls,
   Description,
   Primary,
   Stories,
   Subtitle,
-  Title,
+  Title
 } from '@storybook/blocks'
 import React from 'react'
 import { customViewports } from './custom-viewports'
-import '../theme/src/lib/global.css'
+import '@fontsource/inter/latin.css'
 
 export const autoDocsTemplate = () => (
   <>
@@ -32,24 +29,24 @@ const preview = {
       default: 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: '#143c50' },
-      ],
+        { name: 'Dark', value: '#143c50' }
+      ]
     },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/,
-      },
+        date: /Date$/
+      }
     },
     docs: autoDocsTemplate(),
     viewport: {
-      viewports: customViewports,
+      viewports: customViewports
     },
     storySort: {
       method: 'alphabetical',
-      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
-    },
-  },
+      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']]
+    }
+  }
 }
 
 export default preview

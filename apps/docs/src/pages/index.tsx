@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '@theme/Layout'
-import { LinkButton } from '@midas-ds/link-button'
-import { ButtonGroup } from '@midas-ds/button'
+import { LinkButton, ButtonGroup } from '@midas-ds/components'
 import styles from './index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
@@ -22,8 +21,8 @@ export default function Hello() {
               <p>
                 Midas är Migrationsverkets designsystem för att skapa
                 användarvänliga, tillgängliga och enhetliga tjänster och
-                produkter. Det innehåller designkomponenter, kod och
-                riktlinjer som underlättar utveckling och design.
+                produkter. Det innehåller designkomponenter, kod och riktlinjer
+                som underlättar utveckling och design.
               </p>
               <ButtonGroup aria-label='Länkar'>
                 <LinkButton

@@ -5,7 +5,7 @@ description: Fält för att välja ett datum eller ett spann av datum med kalend
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { DatePicker, DateRangePicker } from '@midas-ds/date-picker'
+import { DatePicker, DateRangePicker } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -18,13 +18,13 @@ Fält för att välja ett datum eller ett spann av datum med kalender. Består a
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/date-picker
+npm install @midas-ds/components
 ```
 
 ### DatePicker
 
 ```tsx
-import { DatePicker } from '@midas-ds/date-picker'
+import { DatePicker } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ DatePicker }}>{`<DatePicker aria-label="Välj datum" />`}</LiveCodeBlock>
@@ -32,7 +32,7 @@ import { DatePicker } from '@midas-ds/date-picker'
 ### DateRangePicker
 
 ```tsx
-import { DateRangePicker } from '@midas-ds/date-picker'
+import { DateRangePicker } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ DateRangePicker }}>{`<DateRangePicker aria-label="Välj spann av datum" />`}</LiveCodeBlock>

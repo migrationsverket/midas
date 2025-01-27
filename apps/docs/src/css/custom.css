@@ -5,7 +5,8 @@
  */
 
 @font-face {
-  font-family: "'Inter'";
+  /* stylelint-disable-next-line font-family-name-quotes */
+  font-family: 'Inter';
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;

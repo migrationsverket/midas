@@ -1,0 +1,50 @@
+@value tokens: "../theme/tokens.css";
+@value display, white, gray10 from tokens;
+
+.modal {
+  font-family: display;
+  position: fixed;
+  max-width: 75%;
+  min-width: 300px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: white;
+  border: none;
+  padding: 0;
+  margin: auto;
+
+  &&:-internal-dialog-in-top-layer {
+    overflow-y: auto;
+  }
+
+  &&::backdrop {
+    inset: 0;
+    background: rgba(45 0 0 / 30%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.modalHeader {
+  background-color: gray10;
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.modalBody {
+  position: relative;
+  padding: 1rem 2rem 2rem;
+  font-family: display;
+}
+
+.modalHeading {
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
