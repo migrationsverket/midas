@@ -6670,229 +6670,6 @@ CSS variables, meant to be overridden by final theme
     cursor: default;
   }
 
-.card_k6lA {
-  position: relative;
-  font-family: "Inter", sans-serif;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 2rem 1.5rem;
-  border-bottom: 1px solid #000000;
-  background-color: #ffffff;
-  transition:
-    transform 250ms ease-in-out, background-color 250ms ease-in-out;
-}
-
-.card_k6lA:hover {
-    background-color: #e6e6e6;
-  }
-
-.card_k6lA:active {
-    background-color: #f2f2f2;
-  }
-
-.card_k6lA:focus-visible {
-    outline: 2px solid #000000;
-    outline-offset: -2px;
-  }
-
-.content_IA2f {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.heading_KjLb {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 500;
-  color: #1f1f1f;
-}
-
-.image_APT7 {
-  height: auto;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 100%;
-  vertical-align: middle;
-  aspect-ratio: 4/3;
-}
-
-.background_SqGP {
-  background-color: #d5e5ed;
-}
-
-.text_v73H {
-  margin-top: 0;
-  color: #000000;
-  margin: 0;
-  padding: 0;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-:root {
-  --docusaurus-tag-list-border: var(--ifm-color-emphasis-300);
-}
-
-.tag_zVej {
-  border: 1px solid var(--docusaurus-tag-list-border);
-  transition: border var(--ifm-transition-fast);
-}
-
-.tag_zVej:hover {
-  --docusaurus-tag-list-border: var(--ifm-link-color);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.tagRegular_sFm0 {
-  border-radius: var(--ifm-global-radius);
-  padding: 0.2rem 0.5rem 0.3rem;
-  font-size: 90%;
-}
-
-.tagWithCount_h2kH {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 0 0.5rem 0 1rem;
-  border-left: 0;
-}
-
-.tagWithCount_h2kH::before,
-.tagWithCount_h2kH::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  border: 1px solid var(--docusaurus-tag-list-border);
-  transition: inherit;
-}
-
-.tagWithCount_h2kH::before {
-  right: 100%;
-  transform: translate(50%, -50%) rotate(-45deg);
-  width: 1.18rem;
-  height: 1.18rem;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.tagWithCount_h2kH::after {
-  left: 0;
-  transform: translateY(-50%);
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-}
-
-.tagWithCount_h2kH span {
-  background: var(--ifm-color-secondary);
-  color: var(--ifm-color-black);
-  font-size: 0.7rem;
-  line-height: 1.2;
-  border-radius: var(--ifm-global-radius);
-  padding: 0.1rem 0.4rem;
-  margin-left: 0.3rem;
-}
-
-.button_XgNv {
-  grid-area: Input;
-  border: none;
-  border-radius: 0;
-  font-size: 1rem;
-  color: #000000;
-  display: flex;
-  justify-content: space-between;
-  height: 48px;
-  align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #000000;
-}
-
-.button_XgNv[aria-expanded='true'] div {
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
-  }
-
-.button_XgNv:hover {
-    background-color: #e6e6e6;
-  }
-
-.button_XgNv[data-focus-visible],.button_XgNv:focus-visible {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
-    outline: none;
-  }
-
-.button_XgNv[data-disabled] {
-    background: #f2f2f2;
-    color: #bfbfbf;
-    border-color: #bfbfbf;
-  }
-
-.select_GoPk {
-  font-family: "Inter", sans-serif;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.select_GoPk[data-disabled] {
-    color: #bfbfbf;
-  }
-
-.select_GoPk[data-invalid] .button_XgNv {
-    box-shadow: none;
-    border: 2px solid #b31b1b;
-  }
-
-.popover_Fgts {
-  font-family: "Inter", sans-serif;
-  border: 1px solid #000000;
-  width: calc(var(--trigger-width) - 2px);
-  background: white;
-  overflow-y: auto;
-}
-
-.listBoxItem_yN3S {
-  margin: auto;
-  padding: 1rem;
-  background-color: white;
-  outline: none;
-  cursor: default;
-  color: #000000;
-  position: relative;
-}
-
-.listBoxItem_yN3S[data-selected='true'] {
-    background: #bfbfbf;
-  }
-
-.listBoxItem_yN3S[data-focused='true'] {
-    background: #e6e6e6;
-  }
-
-.listBoxItem_yN3S[data-disabled='true'] {
-    color: #bfbfbf;
-  }
-
-.icon_X17X {
-  display: flex;
-  align-items: center;
-  transition: transform 0.3s ease;
-}
-
 .button_Zydc {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
@@ -7187,25 +6964,157 @@ CSS variables, meant to be overridden by final theme
  * LICENSE file in the root directory of this source tree.
  */
 
-.tags_jXut {
-  display: inline;
+:root {
+  --docusaurus-tag-list-border: var(--ifm-color-emphasis-300);
 }
 
-.tag_QGVx {
-  margin: 0 0.4rem 0.5rem 0;
-  display: inline-block;
+.tag_zVej {
+  border: 1px solid var(--docusaurus-tag-list-border);
+  transition: border var(--ifm-transition-fast);
 }
 
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+.tag_zVej:hover {
+  --docusaurus-tag-list-border: var(--ifm-link-color);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
 
-.iconEdit_Z9Sw {
-  margin-right: 0.3em;
-  vertical-align: sub;
+.tagRegular_sFm0 {
+  border-radius: var(--ifm-global-radius);
+  padding: 0.2rem 0.5rem 0.3rem;
+  font-size: 90%;
+}
+
+.tagWithCount_h2kH {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 0.5rem 0 1rem;
+  border-left: 0;
+}
+
+.tagWithCount_h2kH::before,
+.tagWithCount_h2kH::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border: 1px solid var(--docusaurus-tag-list-border);
+  transition: inherit;
+}
+
+.tagWithCount_h2kH::before {
+  right: 100%;
+  transform: translate(50%, -50%) rotate(-45deg);
+  width: 1.18rem;
+  height: 1.18rem;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.tagWithCount_h2kH::after {
+  left: 0;
+  transform: translateY(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.tagWithCount_h2kH span {
+  background: var(--ifm-color-secondary);
+  color: var(--ifm-color-black);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  border-radius: var(--ifm-global-radius);
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.3rem;
+}
+
+.button_XgNv {
+  grid-area: Input;
+  border: none;
+  border-radius: 0;
+  font-size: 1rem;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #000000;
+}
+
+.button_XgNv[aria-expanded='true'] div {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+
+.button_XgNv:hover {
+    background-color: #e6e6e6;
+  }
+
+.button_XgNv[data-focus-visible],.button_XgNv:focus-visible {
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+    outline: none;
+  }
+
+.button_XgNv[data-disabled] {
+    background: #f2f2f2;
+    color: #bfbfbf;
+    border-color: #bfbfbf;
+  }
+
+.select_GoPk {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.select_GoPk[data-disabled] {
+    color: #bfbfbf;
+  }
+
+.select_GoPk[data-invalid] .button_XgNv {
+    box-shadow: none;
+    border: 2px solid #b31b1b;
+  }
+
+.popover_Fgts {
+  font-family: "Inter", sans-serif;
+  border: 1px solid #000000;
+  width: calc(var(--trigger-width) - 2px);
+  background: white;
+  overflow-y: auto;
+}
+
+.listBoxItem_yN3S {
+  margin: auto;
+  padding: 1rem;
+  background-color: white;
+  outline: none;
+  cursor: default;
+  color: #000000;
+  position: relative;
+}
+
+.listBoxItem_yN3S[data-selected='true'] {
+    background: #bfbfbf;
+  }
+
+.listBoxItem_yN3S[data-focused='true'] {
+    background: #e6e6e6;
+  }
+
+.listBoxItem_yN3S[data-disabled='true'] {
+    color: #bfbfbf;
+  }
+
+.icon_X17X {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .container_SzNq {
@@ -7856,6 +7765,69 @@ CSS variables, meant to be overridden by final theme
   }
 }
 
+.card_k6lA {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid #000000;
+  background-color: #ffffff;
+  transition:
+    transform 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.card_k6lA:hover {
+    background-color: #e6e6e6;
+  }
+
+.card_k6lA:active {
+    background-color: #f2f2f2;
+  }
+
+.card_k6lA:focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: -2px;
+  }
+
+.content_IA2f {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.heading_KjLb {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.image_APT7 {
+  height: auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  vertical-align: middle;
+  aspect-ratio: 4/3;
+}
+
+.background_SqGP {
+  background-color: #d5e5ed;
+}
+
+.text_v73H {
+  margin-top: 0;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
 /* stylelint-disable property-no-vendor-prefix */
 
 .container_bTyD {
@@ -7907,6 +7879,34 @@ CSS variables, meant to be overridden by final theme
 .input_Mp7b::-webkit-search-decoration,.input_Mp7b::-webkit-search-cancel-button,.input_Mp7b::-webkit-search-results-button,.input_Mp7b::-webkit-search-results-decoration {
     -webkit-appearance: none;
   }
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.tags_jXut {
+  display: inline;
+}
+
+.tag_QGVx {
+  margin: 0 0.4rem 0.5rem 0;
+  display: inline-block;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.iconEdit_Z9Sw {
+  margin-right: 0.3em;
+  vertical-align: sub;
+}
 
 .container_ic9e {
   font-family: "Inter", sans-serif;
@@ -8247,6 +8247,52 @@ CSS variables, meant to be overridden by final theme
     width: 100%;
   }
 }
+
+
+  .container--fullscreen {
+    max-width: 100%;
+    padding: 0;
+  }
+
+.textColumn {
+    align-content: center;
+  }
+
+.text_X87z {
+  margin: 2rem 20% 25% var(--ifm-navbar-padding-horizontal);
+
+}
+
+@media (max-width: 996px) {
+
+.text_X87z {
+    margin: 2rem var(--ifm-navbar-padding-horizontal);
+
+}
+  }
+
+.display1_itoy {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.image__rcj {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left center;
+     object-position: left center;
+  min-height: 80vh;
+  margin: 1rem 0;
+}
+
+@media (max-width: 998px) {
+
+.image__rcj {
+    width: 100%;
+    min-height: 20vh;
+    margin: 0 1rem;
+}
+  }
 
 .button_ICtj {
   grid-area: Input;

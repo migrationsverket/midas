@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1135],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2240],{
 
-/***/ 87628:
+/***/ 4504:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_get_started_develop_index_mdx_a32_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_get_started_mdx_c7e_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-develop-index-mdx-a32.json
-const site_docs_get_started_develop_index_mdx_a32_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/develop/index","title":"Att utveckla med designsystemet","description":"Installera komponenter via npm install @midas-ds/[component].","source":"@site/docs/get-started/develop/index.mdx","sourceDirName":"get-started/develop","slug":"/get-started/develop/","permalink":"/pr-preview/pr-190/get-started/develop/","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"sidebar_label":"För utvecklare","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-mdx-c7e.json
+const site_docs_get_started_mdx_c7e_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started","title":"Kom igång","description":"Designer","source":"@site/docs/get-started.mdx","sourceDirName":".","slug":"/get-started","permalink":"/pr-preview/pr-190/get-started","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Kom igång","sidebar_position":2,"sidebar_label":"Kom igång","sidebar_class_name":"chapter-end","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,15 +27,18 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(11470);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(19365);
-;// ./apps/docs/docs/get-started/develop/index.mdx
+;// ./apps/docs/docs/get-started.mdx
 
 
 const frontMatter = {
-	sidebar_label: 'För utvecklare',
+	title: 'Kom igång',
+	sidebar_position: 2,
+	sidebar_label: 'Kom igång',
+	sidebar_class_name: 'chapter-end',
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = 'Att utveckla med designsystemet';
+const contentTitle = undefined;
 
 const assets = {
 
@@ -46,55 +49,63 @@ const assets = {
 
 
 const toc = [{
+  "value": "Designer",
+  "id": "designer",
+  "level": 2
+}, {
+  "value": "Utvecklare",
+  "id": "utvecklare",
+  "level": 2
+}, {
   "value": "Importera och använd komponent",
   "id": "importera-och-använd-komponent",
-  "level": 2
+  "level": 3
 }, {
   "value": "Installera globala stilmallen",
   "id": "installera-globala-stilmallen",
   "level": 2
-}, {
-  "value": "Vanliga problem",
-  "id": "vanliga-problem",
-  "level": 2
-}, {
-  "value": "Remix",
-  "id": "remix",
-  "level": 3
-}, {
-  "value": "Remix med Vite",
-  "id": "remix-med-vite",
-  "level": 4
-}, {
-  "value": "Äldre Remix - Classic Remix Compiler",
-  "id": "äldre-remix---classic-remix-compiler",
-  "level": 4
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
-    h1: "h1",
     h2: "h2",
     h3: "h3",
-    h4: "h4",
-    header: "header",
+    li: "li",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.header, {
-      children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "att-utveckla-med-designsystemet",
-        children: "Att utveckla med designsystemet"
-      })
+    children: [(0,jsx_runtime.jsx)(_components.h2, {
+      id: "designer",
+      children: "Designer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "För dig som designar gränssnitt finns ett UI-kit till Adobe XD. Det innehåller färdiga designkomponenter och layoutmallar som följer Migrationsverkets digitala stil och grafiska profil."
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Här kan du ladda ner vårt ", (0,jsx_runtime.jsx)("a", {
+          target: "\\_blank",
+          href: (__webpack_require__(82663)/* ["default"] */ .A),
+          download: true,
+          children: "UI-kit till Adobe XD (version 16)"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om du inte har Adobe XD kan se hur komponenterna ser ut via ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://xd.adobe.com/view/95ad014c-2540-44e2-9adf-5ad4c8751bbd-c0fe/?hints=off",
+          children: "onlineversionen"
+        })]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "utvecklare",
+      children: "Utvecklare"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Installera komponenter via ", (0,jsx_runtime.jsx)(_components.code, {
         children: "npm install @midas-ds/[component]"
       }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "importera-och-använd-komponent",
       children: "Importera och använd komponent"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -146,53 +157,16 @@ function _createMdxContent(props) {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
         metastring: "{1} title=\"App.tsx (rootfilen i din app)\"",
-        children: "import \"@midas-ds/theme/index.css\";\n\nexport default function App({children}) {\n  return <main>\n    {children}\n  </main>\n}\n\nexport default App;\n"
+        children: "import '@midas-ds/theme/index.css'\n\nexport default function App({ children }) {\n  return <main>{children}</main>\n}\n\nexport default App\n"
       })
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Mer info finns på ", (0,jsx_runtime.jsx)(_components.a, {
         href: "https://github.com/migrationsverket/midas",
         children: "GitHub"
+      }), " samt under ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/dev/common-issues",
+        children: "guider"
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "vanliga-problem",
-      children: "Vanliga problem"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "remix",
-      children: "Remix"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använder ni Remix? Då behöver ni lägga till följande i er config för att låta CSS ladda korrekt."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "remix-med-vite",
-      children: "Remix med Vite"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "{2-4} title=\"vite.config.ts\"",
-        children: "export default defineConfig({\n  ssr: {\n    noExternal: [/^@midas-ds\\/.+/],\n  }\n})\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "äldre-remix---classic-remix-compiler",
-      children: "Äldre Remix - Classic Remix Compiler"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Följ detta: ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://remix.run/docs/en/main/styling/bundling",
-        children: "CSS Bundling"
-      }), " och ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://remix.run/docs/en/main/styling/css-imports",
-        children: "CSS Imports"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "title=\"root.tsx\"",
-        children: "import { cssBundleHref } from '@remix-run/css-bundle'\nimport type { LinksFunction } from '@remix-run/node'\n\n// ...\n\nexport const links: LinksFunction = () => [\n  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),\n  // ...\n]\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-js",
-        metastring: "{4} title=\"remix.config.js\"",
-        children: "// ...\nexport default {\n  // ...\n  serverDependenciesToBundle: [/^@midas-ds\\/.+/],\n}\n"
-      })
     })]
   });
 }
@@ -210,6 +184,16 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 82663:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "assets/files/MIDAS_UIkit_16-c1a262cb56aba3245a2c76bfc8c327c0.zip");
 
 /***/ })
 

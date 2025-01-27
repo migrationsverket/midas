@@ -98,7 +98,7 @@ function _createMdxContent(props) {
       children: "Nya instruktioner för er som använder Remix"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["Vi har skrivit om grunden för hur komponenterna bundlas. Detta kommer lösa ett problem som upplevts av att komponenterna får sin styling \"försent\" eller att de \"glitchar\" lite när sidan laddas. För att använda komponenterna från designsystemet i Remix krävs ett litet tillägg i config för att CSS ska ladda korrekt. Instruktionerna finns också under ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "/get-started/develop/",
+        href: "/dev/common-issues",
         children: "Kom igång för utvecklare"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h4, {
@@ -207,7 +207,7 @@ function _createMdxContent(props) {
       children: "UI-kit finns nu på Docwebben"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["Vårt UI-kit till XD finns nu att ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "/get-started/design/",
+        href: "/get-started",
         children: "ladda ner"
       }), " här på docwebben. UI-kitet uppdateras löpande!"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
