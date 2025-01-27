@@ -15,7 +15,11 @@
   @media (max-width: 996px) {
     margin: 2rem var(--ifm-navbar-padding-horizontal);
   }
+}
 
+.code {
+  margin-top: 1.5rem;
+  border-radius: 0;
 }
 
 .display1 {
