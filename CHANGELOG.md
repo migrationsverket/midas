@@ -1,3 +1,413 @@
+## 1.0.1 (2025-01-27)
+
+### 🚀 Features
+
+- **DS-434/tag:** create a new component
+- **Modal:** create a new component
+- **Modal:** create a new component
+- **Modal:** fix styling, delete not used codes and add button component
+- ⚠️  **accordion:** new build
+- ⚠️  **breadcrumbs:** new build
+- **button:** added tertiary and danger themes
+- ⚠️  **button:** new build
+- **button:** remove underline from tertiary button
+- **button:** add icon and iconSize prop and logic to make icon smaller when size=small
+- **button:** update button stories
+- **button:** remove unused icon
+- **button:** add property to change button's icon direction
+- **button:** change inline style to class style
+- **button:** add buttongroup component, move mobile rules
+- ⚠️  **card:** new build
+- ⚠️  **card:** new api, replace button with stretched link
+- **card:** support custom link component
+- **checkbox:** select all checkbox
+- **checkbox:** new wrapper
+- ⚠️  **checkbox:** new build
+- **combobox:** create a combobox component with styling
+- ⚠️  **combobox:** new build
+- **date-picker:** new wrapper
+- **date-picker:** new datepicker
+- **date-picker:** datepicker renamed daterangepicker in favor of datepicker
+- ⚠️  **date-picker:** new build
+- **dropdown:** new component
+- ⚠️  **file-upload:** new build
+- **fileupload:** new wrapper
+- **flex:** add fluid variant
+- **flex:** can now take all props of usual div
+- ⚠️  **flex:** new build
+- **grid:** add fluid variant
+- **grid:** can now take all props of usual div
+- ⚠️  **grid:** new build
+- **info-banner:** add support for ReactNodes in message
+- **info-banner:** dismissable banner
+- ⚠️  **info-banner:** new build
+- ⚠️  **link:** new build
+- **link:** add standalone link variant
+- **link:** ability to stretch link in parent
+- **link:** add icon in prop, add disabeld, and add states in css
+- ⚠️  **link-button:** new build
+- **link-button:** inherits api from button
+- **link-button:** add own style, delete unuse codes, and fix the stories
+- **link-button:** add full width
+- **link-button:** add full width and delete unuse code
+- **linkButton:** add icon
+- ⚠️  **logo:** new build
+- **logo:** new variants and refactor
+- ⚠️  **modal:** new API
+- **multi-select:** new component
+- **radio:** new wrapper
+- ⚠️  **radio:** new build + replace vite test
+- ⚠️  **search-field:** new build
+- **searchfield:** props rewrite
+- **select:** new wrapper
+- ⚠️  **select:** new build
+- **sidebar:** new component
+- ⚠️  **spinner:** new build
+- **table:** new component!
+- ⚠️  **table:** new build
+- **table:** add docs + striped option
+- ⚠️  **tabs:** new build
+- **tag:** new component
+- **tertiary button:** change padding
+- **textArea:** creat textArea component
+- **textarea:** new component
+- **textarea:** new wrapper
+- ⚠️  **textarea:** new build
+- **textfield:** add ssn validation
+- ⚠️  **textfield:** new build
+- **textfield:** support counter and maxCharacters
+- **theme:** new build
+- ⚠️  **toast:** new build
+- **ui:** export new components
+- **ui:** new build
+
+### 🩹 Fixes
+
+- change node version on deploy
+- new readme + doc build
+- a littel fixing
+- add test for textarea in textfield.spec
+- add test for textarea
+- shows an error when the max current charaters are more from max charecters
+- shows an error when the max current charaters are more from max charecters
+- shows an error when the max current charaters are more from max charecters
+- add how many characters are over from max characters
+- fix disable state text color and change px to rem
+- add a character's collector when there is no max characters was given
+- add isDisabled in AriaSelect tag and fix the style in css
+- remove file
+- dependencies
+- fix the link path in readme
+- **accordion:** new build
+- **accordion:** fix changelog
+- **accordion:** hover on trigger
+- **accordion:** update icon size
+- **accordion:** color on iOS
+- **breadcrumbs:** fix styles + new build
+- **breadcrumbs:** remove stories from build
+- **breadcrumbs:** update deps
+- **breadcrumbs:** dependency update
+- **breadcrumbs:** update deps
+- **button:** add large option to size in storybook and fix styling to tertiary
+- **button:** change name large to null in the size option in storybook
+- **button:** new build
+- **button:** test fix
+- **button:** add icon variant
+- **button:** clear changelog
+- **button:** share api with link-button
+- **button:** change property name to iconPlacement
+- **button:** delete unuse inline style and fix merge
+- **button:** adjust spacing
+- **button:** update icon size
+- **button:** fix styling to focus-visible state
+- **button:** delete the third box-shadow and fix style to all
+- **button:** remove the duplicated code
+- **button:** move the styling from global to under button class
+- **button:** add variable focus in tokens.css and fix the style with variable
+- **button:** add press style on icon btn
+- **button:** change the styling in focus visible to a variable
+- **button:** correct spacing on icon button
+- **button:** remove pixel and rem mixing
+- **card:** accecibility fix on icon
+- **card:** new build
+- **card:** only animate out arrow
+- **card:** correct border-color
+- **card:** clear changelog
+- **card:** remove stories from build
+- **card:** update deps
+- **card:** update deps
+- **card:** better column stretching
+- **card:** support custom link
+- **checkbox:** new build
+- **checkbox:** change styling of description
+- **checkbox:** fix gap between label and description
+- **checkbox:** change to luide icon and fix css
+- **checkbox:** fix checkbox size and disabled state css
+- **checkbox:** change back to polyline for checkmark
+- **checkbox:** add the animation back again
+- **checkbox:** remove unused icons
+- **checkbox:** change gap to 0.5rem
+- **checkbox:** remove left line when invalid
+- **checkbox:** change gap to 0,5rem
+- **checkbox:** remove stories from build + clear changelog
+- **checkbox:** adjust styling
+- **checkbox:** select all can be indeterminate
+- **checkbox:** change the styling in focus visible to a variable
+- **checkbox:** fix state could be null
+- **combobox:** add a story autocomplete,fix storybook name,the tag to ComboBox,and style focus state
+- **combobox:** fix diabled state style and fix combobox test
+- **combobox:** naming, docs, build
+- **combobox:** rewrite to new wrapper
+- **combobox:** fix props
+- **combobox:** button alignment
+- **combobox:** naming
+- **combobox:** focus style fix
+- **combobox:** chevron icon will be upp when select is opened
+- **combobox:** add aria-expanded to css to rotate chevron icon
+- **combobox:** remove unessecary component rename + a11y
+- **combobox:** remove stories from build
+- **combobox:** update readme
+- **combobox:** update icon size
+- **combobox:** new focus style
+- **combobox:** fix style
+- **combobox:** support modals
+- **combobox:** color on iOS
+- **combobox:** fix build
+- **date-picker:** new build
+- **date-picker:** correct color on placeholder
+- **date-picker:** correct colors
+- **date-picker:** remove stories from build
+- **date-picker:** update deps
+- **date-picker:** fix deps
+- **date-picker:** update icon size
+- **date-picker:** change the styling in focus visible to a variable
+- **date-picker:** add variable
+- **date-picker:** new focus state
+- **date-picker:** dependency update
+- **date-picker:** spacing on timefields
+- **date-picker:** update deps
+- **date-picker:** support modals
+- **date-picker:** add deps
+- **date-picker:** color on iOS
+- **date-picker:** update deps
+- **date-picker:** update deps
+- **docs:** change doc structure
+- **docs:** accessibility is back
+- **docs:** mend broken pages
+- **docs:** fix top banner
+- **docs:** test commit on GitHub
+- **docs:** updates to accomodate storybook
+- **docs:** remove "build with"
+- **docs:** fix storybook link
+- **docs:** new frontpage
+- **docs:** fix broken link
+- **docs:** update url
+- **docs:** update url
+- **docs:** fix broken link
+- **file-upload:** fix build
+- **file-upload:** remove stories from build
+- **file-upload:** update deps
+- **file-upload:** update icon size
+- **file-upload:** fix text overflow mobile
+- **flex:** new build
+- **flex:** remove stories from build
+- **flex:** better column stretching
+- **flex:** fix column wrapping
+- **grid:** new build
+- **grid:** remove stories from build
+- **grid:** update readme
+- **grid:** better column stretching
+- **info-banner:** new build
+- **info-banner:** fix dismissable button
+- **info-banner:** add div props to info-banner
+- **info-banner:** remove stories from build
+- **info-banner:** update deps
+- **info-banner:** fix classname info clsx
+- **info-banner:** update icon size
+- **link:** new build
+- **link:** remove stories from build
+- **link:** update readme
+- **link:** icon stays in size
+- **link:** ignore icon prop if link is standalone
+- **link:** fix style to center the icon with text
+- **link:** fix the wrong style
+- **link:** add style underline to hover and active state
+- **link:** add visited state to css
+- **link:** add url address which leads to link component in docsweb
+- **link:** commit
+- **link:** support custom link component
+- **link-button:** new build
+- **link-button:** update deps
+- **link-button:** update readme
+- **link-button:** fix dependency
+- **link-button:** fix styling justify-content
+- **link-button:** fix padding
+- **link-button:** adjust styles + add focus styles
+- **link-button:** add variants
+- **link-button:** change gap to 0.5rem
+- **link-button:** remove the duplicated code
+- **link-button:** change justify-content to center to make fullwidth look better
+- **link-button:** custom link component
+- **link-button:** external link icon on target _blank
+- **linkButton:** use button style and fix the story for icon
+- **logo:** new build
+- **logo:** remove stories from build + clear changelog
+- **logo:** add support for all <div> props, like className
+- **logo:** html tag name fix
+- **modal:** delete trigger button and fix styling
+- **modal:** delete unuse styling, and move styling for storybook to storybook
+- **modal:** fix styling in css file
+- **modal:** delete icon backgrund-color in css file
+- **modal:** update modal docs
+- **modal:** fix bug of unopenable modal + new docs
+- **modal:** fix spacing
+- **modal:** adjust max height and overflow
+- **multi-select:** style adjustments
+- **multi-select:** support for all default key
+- **multi-select:** validation
+- **multi-select:** fix project
+- **multi-select:** fix build
+- **multi-select:** change remove to update list
+- **multi-select:** support modals
+- **multi-select:** null on item fix
+- **multi-select:** fix intermittent errors in tag removal
+- **radio:** remove padding
+- **radio:** new build
+- **radio:** change padding on label and helper text
+- **radio:** remove invalid line and fix css
+- **radio:** change gap between elements to 0.5rem
+- **radio:** remove stories from build + clear changelog
+- **radio:** change the styling in focus visible to a variable
+- **radio:** move radioGroup storybook to radio storybook, and fix tsconfig
+- **radio:** fix data in stories
+- **search-field:** remove stories from build
+- **search-field:** update deps
+- **search-field:** update deps
+- **search-field:** update readme
+- **search-field:** fix deps
+- **search-field:** update icon size
+- **search-field:** inherit focus from textField
+- **search-field:** dependency update
+- **search-field:** update deps
+- **search-field:** update deps
+- **search-field:** update deps
+- **search-field:** fix padding to remove style error between button and input
+- **select:** remove padding and add variables
+- **select:** fix list spacing
+- **select:** new build
+- **select:** use client
+- **select:** change to lucide icon
+- **select:** fix icon alignment
+- **select:** remove hard value
+- **select:** add aria-expanded to css to rotate chevron icon
+- **select:** change to border
+- **select:** update icon size
+- **select:** change box-shadow to border
+- **select:** change the styling in focus visible to a variable
+- **select:** support modals
+- **spinner:** new build
+- **spinner:** remove stories from build
+- **spinner:** update deps
+- **spinner:** update readme
+- **table:** use client
+- **table:** remove stories from build
+- **table:** update deps
+- **table:** update readme
+- **table:** update icon size
+- **tabs:** new build
+- **tabs:** update readme
+- **tabs:** new focus state
+- **tabs:** fix styles
+- **tabs:** responsive
+- **tag:** fix stories and css and delete unuse codes
+- **tag:** styling + dismissable
+- **tag:** fix project
+- **tag:** dependency update
+- **textField:** fix text color in invald error to red color
+- **textarea:** fix handleChange run when element focus
+- **textarea:** naming
+- **textarea:** remove stories from build
+- **textarea:** remove stories from build
+- **textarea:** update readme
+- **textarea:** remove focus animation
+- **textarea:** fix focus
+- **textarea:** fix to show the error when the characters be more from max
+- **textarea:** change color
+- **textarea:** change error message at maxCharacters
+- **textarea:** change error message when > maxCharacter
+- **textfield:** remove padding
+- **textfield:** new build
+- **textfield:** style
+- **textfield:** fix alignment
+- **textfield:** fix error message alignment
+- **textfield:** fix stories
+- **textfield:** update deps
+- **textfield:** update readme
+- **textfield:** fix text color in invald error to red color
+- **textfield:** update icon size
+- **textfield:** remove focus animation
+- **textfield:** fix focus
+- **textfield:** update error message docs + support
+- **textfield:** change error message when > maxCharacter
+- **textfield, textarea:** fix spacing
+- **theme:** include tokens again
+- **theme:** clear changelog
+- **theme:** update version
+- **theme:** add new variable (bump)
+- **toast:** larger icon
+- **toast:** fix button size + new build
+- **toast:** remove stories from build
+- **toast:** update deps
+- **toast:** update readme
+- **toast:** update icon size
+- **toast:** new focus state
+- **toast:** update deps + fix lint for now
+- **toast:** update deps + lint
+- **toast:** refreshed code, design and docs
+- **ui:** update deps
+- **ui:** update deps
+- **ui:** add modal
+- **ui:** update theme version
+- **ui:** dependency update + added multi-select
+- **ui:** update deps
+- **ui:** update deps
+
+### ⚠️  Breaking Changes
+
+- **modal:** new API
+- **card:** new card api
+- ⚠️  **toast:** new build
+- ⚠️  **textfield:** new build
+- ⚠️  **textarea:** new build
+- ⚠️  **tabs:** new build
+- ⚠️  **table:** new build
+- ⚠️  **spinner:** new build
+- ⚠️  **select:** new build
+- ⚠️  **search-field:** new build
+- ⚠️  **radio:** new build + replace vite test
+- ⚠️  **logo:** new build
+- ⚠️  **link-button:** new build
+- ⚠️  **link:** new build
+- ⚠️  **info-banner:** new build
+- ⚠️  **grid:** new build
+- ⚠️  **flex:** new build
+- ⚠️  **file-upload:** new build
+- ⚠️  **date-picker:** new build
+- ⚠️  **combobox:** new build
+- ⚠️  **checkbox:** new build
+- ⚠️  **card:** new build
+- ⚠️  **button:** new build
+- ⚠️  **breadcrumbs:** new build
+- ⚠️  **accordion:** new build
+
+### ❤️ Thank You
+
+- jabir Khalil
+- PHIEKS
+- pixelrickdreamer
+- Wilhelm Hjelm
+- wilhjelmig
+
 # 1.0.0 (2025-01-27)
 
 ### 🚀 Features
