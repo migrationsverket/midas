@@ -1,4 +1,4 @@
-import{j as o}from"./jsx-runtime-CfatFE5O.js";import{s as e}from"./FlexItem-D9avoiAP.js";import{c as t}from"./clsx-B-dksMZM.js";const l=({children:a,fluid:r=!1,...s})=>o.jsx("div",{className:t(e.container,r&&e.fluid,s.className),...s,children:o.jsx("div",{className:e.flex,children:a})});try{l.displayName="Flex",l.__docgenInfo={description:`Grid based on display: flex;
+import{j as o}from"./jsx-runtime-CfatFE5O.js";import{s as e}from"./FlexItem-yQJAfyjp.js";import{c as t}from"./clsx-B-dksMZM.js";const l=({children:a,fluid:r=!1,...s})=>o.jsx("div",{className:t(e.container,r&&e.fluid,s.className),...s,children:o.jsx("div",{className:e.flex,children:a})});try{l.displayName="Flex",l.__docgenInfo={description:`Grid based on display: flex;
 Calculates breakpoints and distributes columns according to MV specifications
 
 ### Children
