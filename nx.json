@@ -5,9 +5,9 @@
       "projectChangelogs": true,
       "automaticFromRef": true
     },
-    "projectsRelationship": "independent",
+    "projectsRelationship": "fixed",
     "projects": ["packages/components", "!packages/.storybook"],
-    "releaseTagPattern": "@midas-ds/{projectName}@{version}",
+    "releaseTagPattern": "{projectName}@{version}",
     "git": {
       "commitMessage": "chore({projectName}): release version {version} [skip-ci]"
     },
