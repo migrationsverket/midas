@@ -7,7 +7,7 @@
     },
     "projectsRelationship": "fixed",
     "projects": ["packages/components", "!packages/.storybook"],
-    "releaseTagPattern": "components@{version}",
+    "releaseTagPattern": "v{version}",
     "git": {
       "commitMessage": "chore(components): release version {version} [skip-ci]"
     },
