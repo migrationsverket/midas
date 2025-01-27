@@ -1,6 +1,3 @@
-import '@fontsource/inter/latin.css'
-
-//👇 Configures Storybook to log the actions( onArchiveTask and onPinTask ) in the UI.
 import {
   Controls,
   Description,
@@ -11,7 +8,7 @@ import {
 } from '@storybook/blocks'
 import React from 'react'
 import { customViewports } from './custom-viewports'
-import '../components/src/theme/global.css'
+import '@fontsource/inter/latin.css'
 
 export const autoDocsTemplate = () => (
   <>
