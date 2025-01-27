@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '@theme/Layout'
 import { LinkButton, ButtonGroup } from '@midas-ds/components'
-import styles from './index.module.css'
+import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
