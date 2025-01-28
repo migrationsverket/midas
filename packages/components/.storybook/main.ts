@@ -4,24 +4,26 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true
   },
+
   stories: [
-    '../components/src/**/*.docs.@(md|mdx)',
-    '../components/src/**/*.stories.@(js|jsx|ts|tsx)'
+    './examples/*.stories.@(md|mdx|tsx)',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)'
   ],
+
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-a11y'
+    '@storybook/addon-a11y',
+    '@chromatic-com/storybook'
   ],
+
   framework: {
     name: '@storybook/react-vite',
-    options: {
-      builder: {
-        viteConfigPath: 'packages/ui/vite.config.ts'
-      }
-    }
+    options: {}
   },
+
   staticDirs: ['./static'],
+
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
@@ -37,7 +39,9 @@ const config: StorybookConfig = {
             )
           : true
     }
-  }
+  },
+
+  docs: {}
 }
 
 export default config
