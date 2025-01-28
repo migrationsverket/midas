@@ -9,7 +9,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from '@midas-ds/accordion'
+} from '@midas-ds/components'
 import clsx from 'clsx'
 
 declare global {

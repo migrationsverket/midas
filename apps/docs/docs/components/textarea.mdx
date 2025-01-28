@@ -5,7 +5,7 @@ description: När användaren ska fylla i längre information
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { TextArea } from '@midas-ds/textarea'
+import { TextArea } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -19,18 +19,22 @@ Använd ett textfält när användaren ska fylla i längre information tex en be
 ## Installation och användnin
 
 ```bash npm2yarn
-npm install @midas-ds/textarea
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { TextArea } from '@midas-ds/textarea'
+import { TextArea } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ TextArea }}>
-  {`<TextArea 
+  {`<TextArea
     label="Kommentar"
     description="Skriv en kommentar"
     maxCharacters={50}
-    // showCounter={true}
+    type={'email'}
 />`}
 </LiveCodeBlock>
+
+## API
+
+<PropTable name={'TextArea'} />

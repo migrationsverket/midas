@@ -1,0 +1,45 @@
+---
+title: 'Ett komponentpaket'
+description: 'I och med release 19 går vi över till ett komponentpaket.'
+slug: one-package
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Logo } from '@midas-ds/components'
+import { Flex, FlexItem } from '@midas-ds/components'
+
+I och med release 19 går vi över till ett komponentpaket.
+
+{/* truncate */}
+
+Istället för att varje komponent har varsitt installerabart paket kommer nu alla komponenter att finnas i ett paket. Detta för att underlätta installation, uppdateringar och användning av komponenterna.
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+Du kan då alltså importera samtliga komponenter från detta paket istället för från flertalet olika.
+
+```tsx
+import { Button, Modal, Checkbox } from '@midas-ds/components'
+```
+
+Det innebär att du endast behöver installera Midas en gång och uppdatera ett paket för att få alla uppdateringar på samtliga komponenter. Vi gör detta för att underlätta för alla att hålla sig uppdaterade. Vi ser ofta att många problem uppstår då man inte har uppdateringar mellan komponenterna i synk med varandra då många komponenter ska fungera ihop.
+
+---
+
+Vi har även uppdaterat hur typsnittet Inter installeras. Detta är det nya rekommenderade sättet att installera vårt typsnitt Inter. Det går självklart att använda andra metoder så länge vikterna 400, 500 och 600 inkluderas.
+
+```bash npm2yarn
+npm install @fontsource/inter
+```
+
+```tsx {1} title="App.tsx (rootfilen i din app)"
+import '@fontsource/inter/latin.css'
+
+export default function App({ children }) {
+  return <main>{children}</main>
+}
+
+export default App
+```

@@ -4,8 +4,7 @@ description: Radio är en typ av inmatningsfält som används för att välja et
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Radio, RadioGroup } from '../../../../packages/radio/src'
-import { Button } from '../../../../packages/button/src'
+import { Radio, RadioGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
@@ -15,21 +14,21 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/RadioGroup.html'
 />
 
-Radioknappar är en typ av inmatningsfält som används för att välja ett (1) alternativ från en uppsättning av flera alternativ. Om det är fler alternativ än fem bör [Select](./select.mdx) användas istället.
+Radioknappar är en typ av inmatningsfält som används för att välja exakt ett alternativ från en uppsättning av flera alternativ.
 
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/radio
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Radio, RadioGroup } from '@midas-ds/radio'
+import { Radio, RadioGroup } from '@midas-ds/components'
 ```
 
 <LiveCodeBlock scope={{ RadioGroup, Radio }}>
-  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'}>
-    {fruits.shuffled(3).map(fruit => (
+  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} defaultValue={fruits[0].value}>
+    {fruits.slice(0,3).map(fruit => (
       <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
     ))}
 </RadioGroup>`}
@@ -53,32 +52,19 @@ Sätt validering med `isInvalid` eller använd inbyggda tester som `isRequired`.
 
 ## Riktlinjer
 
-### Val av komponent
-
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]
-  A ---> C[2 - 4]:::primary
-  A ---> D[5 - 10]
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]
-  C ---> G[Hur många val kan göras?]:::primary
-  G --->|Flera| F
-  G --->|Ett| H[Använd Radio]:::primary
-  D ---> I[Hur många val kan göras?]
-  I --->|Flera| J[Använd MultiSelect]
-  I --->|Ett| K[Använd Select]
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
-
-- En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något, skapa ett sista alternativ som du kallar "Inget av ovanstående" eller liknande.
+- En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något,
+  skapa ett sista alternativ som du kallar "Inget av ovanstående" eller liknande.
 - Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera.
-- Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
+- Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är
+  begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
 - Fältetiketten ska inledas med stor bokstav och inte följas av punkt.
+- Om alternativen inte utesluter varandra, använd [Checkbox](./checkbox.mdx).
+- Om det är fler alternativ än fem bör [Select](./select.mdx) användas istället.
 
 ## API
 
+### Radio
+
 <PropTable name='Radio' />
+### RadioGroup
+<PropTable name='RadioGroup' />

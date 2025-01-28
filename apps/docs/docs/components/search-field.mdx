@@ -1,11 +1,11 @@
 ---
 title: SearchField
-description: Sökfält är en kombinationskomponent av TextField och Button
+description: Sökfält är ett inmatningsfält anpassat för sökning
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { SearchField } from '@midas-ds/search-field'
+import { SearchField } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -13,16 +13,24 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Sökfält'}
 />
 
-Sökfält är en kombinationskomponent av TextField och Button.
+Sökfält är ett inmatningsfält anpassat för sökning. Sökfältet fungerar med tangentbord där `Enter` fungerar
+som submit och `ESC` rensar sökfältet.
 
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/search-field
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { SearchField } from '@midas-ds/search-field'
+import { SearchField } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ SearchField }}>{`<SearchField placeholder="Sök efter fruker" />`}</LiveCodeBlock>
+<LiveCodeBlock scope={{ SearchField }}>
+  {`
+<SearchField placeholder="Sök efter frukter"/>`}
+</LiveCodeBlock>
+
+## API
+
+<PropTable name={'SearchField'} />

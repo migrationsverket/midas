@@ -1,8 +1,7 @@
 import React from 'react'
-import { Flex, FlexItem } from '@midas-ds/flex'
+import { Flex, FlexItem, LinkButton } from '@midas-ds/components'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import { kebabCase } from 'lodash'
-import { LinkButton } from '@midas-ds/link-button'
 import { BookMarked, BookText, FileCode } from 'lucide-react'
 
 export const ComponentHeader = ({
@@ -26,7 +25,7 @@ export const ComponentHeader = ({
   return (
     <section style={{ marginBottom: 32, marginTop: -20 }}>
       <Flex fluid={true}>
-        <FlexItem style={{ alignSelf: 'center' }}>
+        <FlexItem className='friendlyName'>
           <b>{friendlyName}</b>
         </FlexItem>
         <FlexItem col='auto'>
