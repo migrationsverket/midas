@@ -7,7 +7,8 @@ import {
   ValidationResult,
   TextFieldProps as AriaTextFieldProps
 } from 'react-aria-components'
-import { InputWrapper, TextFieldStyles } from '../textfield'
+import { InputWrapper } from '../textfield'
+import TextFieldStyles from '../textfield/TextField.module.css'
 import * as React from 'react'
 import clsx from 'clsx'
 
@@ -79,7 +80,6 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <AriaTextField
-      // @ts-ignore
       className={TextFieldStyles.inputField}
       validate={validateInput}
       {...props}
