@@ -33,8 +33,7 @@
       "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "packages/components/.storybook",
-        "noManagerCache": true
+        "configDir": "packages/components/.storybook"
       },
       "configurations": {
         "ci": {
@@ -52,7 +51,7 @@
       "configurations": {
         "ci": {
           "quiet": true,
-          "outputDir": "build/storybook"
+          "outputDir": "dist/docs/storybook"
         }
       }
     }

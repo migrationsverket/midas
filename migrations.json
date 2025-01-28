@@ -15,6 +15,27 @@
       "name": "add-file-extensions-to-overrides"
     },
     {
+      "version": "20.0.4-beta.0",
+      "description": "Add gitignore entry for temporary vite config files.",
+      "implementation": "./src/migrations/update-20-0-4/add-vite-temp-files-to-git-ignore",
+      "package": "@nx/vite",
+      "name": "update-20-0-4"
+    },
+    {
+      "version": "20.0.6-beta.0",
+      "description": "Add gitignore entry for temporary vite config files and remove previous incorrect glob.",
+      "implementation": "./src/migrations/update-20-0-4/add-vite-temp-files-to-git-ignore",
+      "package": "@nx/vite",
+      "name": "update-20-0-6"
+    },
+    {
+      "version": "20.3.0-beta.2",
+      "description": "Add gitignore entry for temporary vitest config files.",
+      "implementation": "./src/migrations/update-20-3-0/add-vitest-temp-files-to-git-ignore",
+      "package": "@nx/vite",
+      "name": "update-20-3-0"
+    },
+    {
       "cli": "nx",
       "version": "20.2.0-beta.2",
       "description": "Update the ModuleFederationConfig import use @nx/module-federation.",
@@ -39,25 +60,12 @@
       "name": "ensure-nx-module-federation-package"
     },
     {
-      "version": "20.0.4-beta.0",
-      "description": "Add gitignore entry for temporary vite config files.",
-      "implementation": "./src/migrations/update-20-0-4/add-vite-temp-files-to-git-ignore",
-      "package": "@nx/vite",
-      "name": "update-20-0-4"
-    },
-    {
-      "version": "20.0.6-beta.0",
-      "description": "Add gitignore entry for temporary vite config files and remove previous incorrect glob.",
-      "implementation": "./src/migrations/update-20-0-4/add-vite-temp-files-to-git-ignore",
-      "package": "@nx/vite",
-      "name": "update-20-0-6"
-    },
-    {
-      "version": "20.3.0-beta.2",
-      "description": "Add gitignore entry for temporary vitest config files.",
-      "implementation": "./src/migrations/update-20-3-0/add-vitest-temp-files-to-git-ignore",
-      "package": "@nx/vite",
-      "name": "update-20-3-0"
+      "cli": "nx",
+      "version": "20.4.0-beta.0",
+      "description": "Add NX_MF_DEV_REMOTES to inputs for task hashing when '@nx/webpack:webpack' or '@nx/rspack:rspack' is used for Module Federation.",
+      "factory": "./src/migrations/update-18-0-0/add-mf-env-var-to-target-defaults",
+      "package": "@nx/react",
+      "name": "add-mf-env-var-to-target-defaults"
     }
   ]
 }
