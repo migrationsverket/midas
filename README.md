@@ -1,4 +1,5 @@
 ![Component build](https://github.com/migrationsverket/midas/actions/workflows/components-ci.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/documentation-ci.yml/badge.svg)
+[![Publish Component Lib](https://github.com/migrationsverket/midas/actions/workflows/publish.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/publish.yml)
 
 # Migrationsverkets designsystem
 
