@@ -6,7 +6,6 @@ import {
   Subtitle,
   Title
 } from '@storybook/blocks'
-import React from 'react'
 import { customViewports } from './custom-viewports'
 import '@fontsource/inter/latin.css'
 
@@ -20,11 +19,9 @@ export const autoDocsTemplate = () => (
     <Stories />
   </>
 )
-/** @type { import('@storybook/react').Preview } */
+
 const preview = {
   parameters: {
-    // a11y: {},
-    // actions: { argTypesRegex: '^on[A-Z].*' },
     backgrounds: {
       default: 'Light',
       values: [
@@ -46,7 +43,9 @@ const preview = {
       method: 'alphabetical',
       order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']]
     }
-  }
+  },
+
+  tags: ['autodocs']
 }
 
 export default preview
