@@ -23,7 +23,8 @@ import {
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
-import { InputWrapper, TextFieldStyles } from '../textfield'
+import { InputWrapper } from '../textfield'
+import TextFieldStyles from '../textfield/TextField.module.css'
 import styles from './DatePicker.module.css'
 import React from 'react'
 
@@ -46,7 +47,6 @@ export const DateRangePicker = <T extends DateValue>({
     <AriaDateRangePicker
       {...props}
       className={clsx(
-        // @ts-ignore
         TextFieldStyles.inputField,
         styles.datePicker,
         props.className
@@ -59,7 +59,6 @@ export const DateRangePicker = <T extends DateValue>({
         errorMessage={errorMessage}
       >
         <Group
-          // @ts-ignore
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput
