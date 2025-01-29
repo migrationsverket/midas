@@ -54,7 +54,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
           slot='trigger'
           variant='icon'
         >
-          <ChevronDown />
+          <ChevronDown size={20} />
           <span className={styles.triggerText}>{title}</span>
         </Button>
       </Heading>
