@@ -4,12 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import styles from './styles.module.css'
 import { fruits } from '../examples/fruits'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@midas-ds/components'
+import { Accordion, AccordionItem } from '@midas-ds/components'
 import clsx from 'clsx'
 
 declare global {
@@ -61,15 +56,12 @@ const Playground = ({ children, transformCode, hideCode, ...props }) => {
         )}
       >
         {!hideCode && (
-          <Accordion
-            headingTag='h3'
-            type='multiple'
-          >
-            <AccordionItem value='example'>
-              <AccordionTrigger>Exempelkod</AccordionTrigger>
-              <AccordionContent>
-                <LiveEditor />
-              </AccordionContent>
+          <Accordion>
+            <AccordionItem
+              id='example'
+              title='Exempelkod'
+            >
+              <LiveEditor />
             </AccordionItem>
           </Accordion>
         )}

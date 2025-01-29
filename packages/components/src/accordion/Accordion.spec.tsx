@@ -6,12 +6,7 @@ import '@testing-library/jest-dom'
 import * as React from 'react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { render, RenderResult } from '@testing-library/react'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from './'
+import { Accordion, AccordionItem } from './'
 expect.extend(toHaveNoViolations)
 
 const ITEMS = ['One', 'Two', 'Three']
@@ -21,7 +16,12 @@ describe('given a single Accordion', () => {
 
   describe('with default orientation=vertical', () => {
     beforeEach(() => {
-      rendered = render(<AccordionTest variant='subtle' />)
+      rendered = render(
+        <AccordionTest
+          variant='uncontained'
+          type='single'
+        />
+      )
     })
 
     it('should have no accessibility violations in default state', async () => {
@@ -142,7 +142,12 @@ describe('given a multiple Accordion', () => {
   let rendered: RenderResult
 
   beforeEach(() => {
-    rendered = render(<AccordionTest variant='subtle' />)
+    rendered = render(
+      <AccordionTest
+        variant='uncontained'
+        type='multiple'
+      />
+    )
   })
 
   it('should have no accessibility violations in default state', async () => {

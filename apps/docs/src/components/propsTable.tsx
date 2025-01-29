@@ -1,10 +1,5 @@
 import useGlobalData from '@docusaurus/useGlobalData'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent
-} from '@midas-ds/components'
+import { Accordion, AccordionItem } from '@midas-ds/components'
 import React from 'react'
 import { Props, ComponentDoc } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
@@ -79,32 +74,31 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   return (
     <>
       <Accordion
-        headingTag='h3'
         type='multiple'
-        defaultValue={defaultOpen ? ['props'] : []}
+        defaultExpandedKeys={defaultOpen ? ['props'] : []}
       >
         {Object.getOwnPropertyNames(rest).length !== 0 && (
-          <AccordionItem value='props'>
-            <AccordionTrigger>Props</AccordionTrigger>
-            <AccordionContent className={styles.item}>
-              <Table propGroup={rest} />
-            </AccordionContent>
+          <AccordionItem
+            id='props'
+            title='Props'
+          >
+            <Table propGroup={rest} />
           </AccordionItem>
         )}
         {Object.getOwnPropertyNames(events).length !== 0 && (
-          <AccordionItem value='events'>
-            <AccordionTrigger>Events</AccordionTrigger>
-            <AccordionContent className={styles.item}>
-              <Table propGroup={events} />
-            </AccordionContent>
+          <AccordionItem
+            id='events'
+            title='Events'
+          >
+            <Table propGroup={events} />
           </AccordionItem>
         )}
         {Object.getOwnPropertyNames(accessibility).length !== 0 && (
-          <AccordionItem value='accessibility'>
-            <AccordionTrigger>Tillgänglighet</AccordionTrigger>
-            <AccordionContent className={styles.item}>
-              <Table propGroup={accessibility} />
-            </AccordionContent>
+          <AccordionItem
+            id='accessibility'
+            title='Tillgänglighet'
+          >
+            <Table propGroup={accessibility} />
           </AccordionItem>
         )}
       </Accordion>

@@ -13,8 +13,14 @@
   color: var(--ifm-color-content);
   margin-bottom: 1rem;
 
+  &.borderBottom {
+    padding: 1rem 0.75rem;
+    border-top: 1px solid var(--ifm-color-emphasis-300);
+  }
+
   :has(:not(.borderBottom)) {
     border-bottom: 0;
+    padding: 0;
   }
 
   pre {
