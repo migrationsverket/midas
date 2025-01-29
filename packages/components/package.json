@@ -3,10 +3,16 @@
   "author": {
     "name": "Migrationsverket"
   },
+  "keywords": [
+    "react",
+    "design system",
+    "migrationsverket"
+  ],
   "publishConfig": {
     "access": "public"
   },
   "description": "Midas Components",
+  "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
   "version": "1.0.2",
   "main": "./index.js",
