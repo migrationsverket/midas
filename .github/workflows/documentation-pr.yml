@@ -38,13 +38,13 @@ jobs:
 
       - name: Build website
         if: github.event.action != 'closed'
-        run: npx nx run docs:build --minify=false --outputPath=build
+        run: npx nx run docs:build --minify=false --outputPath=dist/docs
       - name: Build storybook
         if: github.event.action != 'closed'
-        run: npx nx run ui:build-storybook:ci
+        run: npx nx run components:build-storybook:ci
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./build/
+          source-dir: ./dist/docs
           custom-url: 'designsystem.migrationsverket.se'
