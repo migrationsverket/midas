@@ -8,7 +8,7 @@ import {
   SearchFieldProps as AriaSearchFieldProps
 } from 'react-aria-components'
 import { Search, X } from 'lucide-react'
-import { TextFieldStyles } from '../textfield'
+import TextFieldStyles from '../textfield/TextField.module.css'
 import { Button } from '../button'
 import styles from './SearchField.module.css'
 import clsx from 'clsx'
@@ -46,7 +46,6 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           className={styles.icon}
         />
         <Input
-          // @ts-ignore
           className={clsx(TextFieldStyles.input, styles.input)}
           placeholder={placeholder}
         />
