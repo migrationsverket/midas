@@ -1,1 +1,0 @@
-import{a as o}from"./useFocusable-D_XT9yGL.js";import{r as t,R as $}from"./index-ClcD9ViR.js";const f=t.createContext({});function n(e,a){[e,a]=o(e,a,f);let{elementType:r="span",...c}=e;return $.createElement(r,{className:"react-aria-Text",...c,ref:a})}const b=t.forwardRef(n);export{f as $,b as a};
