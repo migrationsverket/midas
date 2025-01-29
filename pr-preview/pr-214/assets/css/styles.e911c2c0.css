@@ -3910,7 +3910,6 @@ mark {
 
 .playgroundEditor_hiaS :has(:not(.borderBottom_SKni)) {
     border-bottom: 0;
-    padding: 0;
   }
 
 .playgroundEditor_hiaS pre {
@@ -5896,8 +5895,12 @@ CSS variables, meant to be overridden by final theme
         transition: transform 300ms ease;
       }
 
+.trigger_H4x6 button[aria-expanded='true']:hover {
+        background-color: var(--background-hover);
+      }
+
 .trigger_H4x6 button:hover {
-      background-color: var(--background-hover);
+      background-color: var(--background-active);
     }
 
 .item_EcMn {
@@ -5905,14 +5908,14 @@ CSS variables, meant to be overridden by final theme
   font-family: "Inter", sans-serif;
 }
 
-.panel_aCgP {
+/* safari can't calculate correct so we skip the animation there as a compriomise */
+.panel_aCgP:not(.panel0_cd8e) {
   height: 0;
   overflow: hidden;
   transition: height 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.panel_aCgP[aria-hidden='false'] {
-    height: var(--content-height);
+.panel_aCgP[aria-hidden='false']:not(.panel0_cd8e) {
+    height: var(--panel-height);
   }
 
 .content_eG9O {
