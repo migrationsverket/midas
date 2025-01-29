@@ -20,7 +20,6 @@
 
   :has(:not(.borderBottom)) {
     border-bottom: 0;
-    padding: 0;
   }
 
   pre {

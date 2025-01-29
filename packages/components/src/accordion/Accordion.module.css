@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray10, gray30, gray20, black, normalTransition, regularWeight, mediumWeight from tokens;
+@value display, gray10, gray20, gray30, black, normalTransition, regularWeight, mediumWeight from tokens;
 
 .root {
   --gap: 0.75rem;
@@ -63,10 +63,14 @@
         transform: rotate(-180deg);
         transition: transform normalTransition ease;
       }
+
+      &:hover {
+        background-color: var(--background-hover);
+      }
     }
 
     &:hover {
-      background-color: var(--background-hover);
+      background-color: var(--background-active);
     }
   }
 }
@@ -76,13 +80,14 @@
   font-family: display;
 }
 
-.panel {
+/* safari can't calculate correct so we skip the animation there as a compriomise */
+.panel:not(.panel0) {
   height: 0;
   overflow: hidden;
   transition: height 500ms cubic-bezier(0.16, 1, 0.3, 1);
 
   &[aria-hidden='false'] {
-    height: var(--content-height);
+    height: var(--panel-height);
   }
 }
 

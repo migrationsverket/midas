@@ -21,10 +21,6 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   headingLevel?: HeadingProps['level']
 }
 
-interface CSSPropertiesWithVars extends React.CSSProperties {
-  '--content-height': string
-}
-
 export const AccordionItem: React.FC<MidasAccordionItem> = ({
   title,
   children,
@@ -35,11 +31,11 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   const panelRef = React.useRef<HTMLDivElement>(null)
   const [panelHeight, setPanelHeight] = React.useState(0)
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (panelRef.current) {
       setPanelHeight(panelRef.current.clientHeight)
     }
-  }, [children])
+  }, [])
 
   return (
     <Disclosure
@@ -59,10 +55,8 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
         </Button>
       </Heading>
       <DisclosurePanel
-        style={
-          { '--content-height': `${panelHeight}px` } as CSSPropertiesWithVars
-        }
-        className={styles.panel}
+        style={{ '--panel-height': `${panelHeight}px` } as React.CSSProperties}
+        className={clsx(styles.panel, panelHeight === 0 && styles.panel0)}
       >
         <div
           ref={panelRef}
