@@ -1,3 +1,13 @@
+## 1.0.3 (2025-01-30)
+
+### 🩹 Fixes
+
+- import/export textfield css directly from css module
+
+### ❤️ Thank You
+
+- pixelrickdreamer
+
 ## 1.0.2 (2025-01-27)
 
 ### 🚀 Features
