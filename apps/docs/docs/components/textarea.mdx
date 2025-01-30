@@ -14,9 +14,18 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1'
 />
 
-Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare inmatning används [TextField](./textfield.mdx).
+Inmatningsfält awdsom används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används [TextField](./textfield.mdx).
 
-## Installation och användnin
+<LiveCodeBlock hideCode scope={{ TextArea }}>
+  {`<TextArea
+    label="Kommentar"
+    description="Skriv en kommentar"
+    maxCharacters={50}
+    type={'email'}
+/>`}
+</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,14 +35,6 @@ npm install @midas-ds/components
 import { TextArea } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ TextArea }}>
-  {`<TextArea
-    label="Kommentar"
-    description="Skriv en kommentar"
-    maxCharacters={50}
-    type={'email'}
-/>`}
-</LiveCodeBlock>
 
 ## API
 
