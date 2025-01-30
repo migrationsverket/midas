@@ -18,17 +18,7 @@ Grid baserat på tekniken `display: grid;` i css. Grid är både en container f�
 
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
 
-## Installation och användning
-
-```bash npm2yarn
-npm install @midas-ds/components
-```
-
-```tsx
-import { Grid } from '@midas-ds/components'
-```
-
-<LiveCodeBlock scope={{ Grid, GridItem, Card }}>
+<LiveCodeBlock hideCode scope={{ Grid, GridItem, Card }}>
   {`<Grid>
     <GridItem col={12}>
         <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{children: 'Länk', href: '#'}} />
@@ -55,7 +45,19 @@ import { Grid } from '@midas-ds/components'
 `}
 </LiveCodeBlock>
 
-### Grid
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Grid } from '@midas-ds/components'
+```
+
+
+
+## Grid
 
 Grids skalas enligt följande specifikation.
 
