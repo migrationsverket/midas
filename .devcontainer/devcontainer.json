@@ -1,0 +1,19 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install && npm install -g nx",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "nx serve docs"
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "DocWeb",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000]
+}
