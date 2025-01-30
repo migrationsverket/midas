@@ -12,19 +12,9 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Flerval, väljare, dropdown'}
 />
 
-Select är en typ av inmatningsfält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
+Select är en typ av inmatningsfält som används för att välja **ett** alternativ från en uppsättning av flera förbestämda alternativ.
 
-## Installation och användning
-
-```bash npm2yarn
-npm install @midas-ds/components
-```
-
-```tsx
-import { Item, Select } from '@midas-ds/components'
-```
-
-<LiveCodeBlock scope={{ Select, Item }}>
+<LiveCodeBlock hideCode scope={{ Select, Item }}>
   {`<Select
     label="Vad är din favoritfrukt?"
     placeholder="Välj en frukt"
@@ -34,28 +24,20 @@ import { Item, Select } from '@midas-ds/components'
 </Select>`}
 </LiveCodeBlock>
 
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Item, Select } from '@midas-ds/components'
+```
+
+
 ## Riktlinjer
 
-### Val av komponent
-
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]
-  A ---> C[2 - 4]
-  A ---> D[5 - 10]:::primary
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]
-  C ---> G[Hur många val kan göras?]
-  G --->|Flera| F
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]:::primary
-  I --->|Flera| J[Använd MultiSelect]
-  I --->|Ett| K[Använd Select]:::primary
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
+ Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
 
 ## API
 
