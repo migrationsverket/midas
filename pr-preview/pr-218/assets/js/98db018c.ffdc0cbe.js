@@ -73,8 +73,8 @@ const toc = [{
   "id": "fristående-spinner",
   "level": 3
 }, {
-  "value": "Kombinerat med andra komponenter",
-  "id": "kombinerat-med-andra-komponenter",
+  "value": "Kombinerad med andra komponenter",
+  "id": "kombinerad-med-andra-komponenter",
   "level": 3
 }, {
   "value": "Riktlinjer",
@@ -157,12 +157,12 @@ function _createMdxContent(props) {
       },
       children: `<Spinner />`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "kombinerat-med-andra-komponenter",
-      children: "Kombinerat med andra komponenter"
+      id: "kombinerad-med-andra-komponenter",
+      children: "Kombinerad med andra komponenter"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd varianten ", (0,jsx_runtime.jsx)(_components.code, {
         children: "small"
-      }), " för att kombinera med andra komponenter t.ex Button"]
+      }), " för att kombinera med andra komponenter t.ex. Button"]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Spinner: Spinner/* Spinner */.y,
