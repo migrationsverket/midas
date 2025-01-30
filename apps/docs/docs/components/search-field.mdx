@@ -13,10 +13,13 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Sökfält'}
 />
 
-Sökfält är ett inmatningsfält anpassat för sökning. Sökfältet fungerar med tangentbord där `Enter` fungerar
-som submit och `ESC` rensar sökfältet.
+Inmatningsfält anpassat för sökning.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ SearchField }}>
+  {`<SearchField placeholder="Sök efter frukter"/>`}
+</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,10 +29,7 @@ npm install @midas-ds/components
 import { SearchField } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ SearchField }}>
-  {`
-<SearchField placeholder="Sök efter frukter"/>`}
-</LiveCodeBlock>
+
 
 ## API
 
