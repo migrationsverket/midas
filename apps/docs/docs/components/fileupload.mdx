@@ -15,9 +15,13 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
 />
 
-Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.
+Komponent som används när användaren behöver ladda upp filer från det egen filsystemet.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ FileUpload }}>
+  {`<FileUpload allowsMultiple label={'Välj filer att ladda upp'} description={'Du kan välja flera filer!'}/>`}
+</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -27,6 +31,4 @@ npm install @midas-ds/components
 import { FileUpload } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ FileUpload }}>
-  {`<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`}
-</LiveCodeBlock>
+
