@@ -14,9 +14,16 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/RadioGroup.html'
 />
 
-Radioknappar är en typ av inmatningsfält som används för att välja exakt ett alternativ från en uppsättning av flera alternativ.
+Inmatningsfält som används för att välja exakt ett alternativ från en uppsättning av flera förvalda alternativ.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ RadioGroup, Radio }}>
+  {`<RadioGroup label={'Välj din favoritfrukt'} description={'Du kan bara välja en'} defaultValue={fruits[0].value}>
+    {fruits.slice(0,3).map(fruit => (
+      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+    )))</RadioGroup>`}
+</LiveCodeBlock>
+
+## Installation 
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,35 +33,10 @@ npm install @midas-ds/components
 import { Radio, RadioGroup } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ RadioGroup, Radio }}>
-  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} defaultValue={fruits[0].value}>
-    {fruits.slice(0,3).map(fruit => (
-      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-    ))}
-</RadioGroup>`}
-</LiveCodeBlock>
-
-### Disabled
-
-Sätt `isDisabled` antingen på `RadioGroup` eller på enskilda val av `Radio`
-
-<LiveCodeBlock scope={{ RadioGroup, Radio }}>
-  {`<RadioGroup label={'Välj en frukt'} description={'Perfekt komponent när ett val ska väljas'} isDisabled>
-    {fruits.shuffled(3).map(fruit => (
-      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-       ))}
-</RadioGroup>`}
-</LiveCodeBlock>
-
-### Validering
-
-Sätt validering med `isInvalid` eller använd inbyggda tester som `isRequired`.
-
 ## Riktlinjer
 
 - En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något,
   skapa ett sista alternativ som du kallar "Inget av ovanstående" eller liknande.
-- Givet ovanstående riktlinje kan radioknappar inte användas ensamma, utan måste alltid vara två eller flera.
 - Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är
   begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
 - Fältetiketten ska inledas med stor bokstav och inte följas av punkt.
