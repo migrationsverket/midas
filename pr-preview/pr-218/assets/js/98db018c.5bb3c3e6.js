@@ -61,9 +61,17 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
+}, {
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Fristående spinner",
+  "id": "fristående-spinner",
+  "level": 3
 }, {
   "value": "Kombinerat med andra komponenter",
   "id": "kombinerat-med-andra-komponenter",
@@ -93,10 +101,16 @@ function _createMdxContent(props) {
       friendlyName: 'Laddningsindikator',
       overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenten används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden."
+      children: "Komponent som används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        Spinner: Spinner/* Spinner */.y
+      },
+      children: `<Spinner />`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -131,6 +145,12 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Spinner } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "fristående-spinner",
+      children: "Fristående spinner"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Spinner: Spinner/* Spinner */.y
@@ -139,8 +159,10 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "kombinerat-med-andra-komponenter",
       children: "Kombinerat med andra komponenter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använd varianten small för att kombinera med andra komponenter t.ex Button"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd varianten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "small"
+      }), " för att kombinera med andra komponenter t.ex Button"]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Spinner: Spinner/* Spinner */.y,

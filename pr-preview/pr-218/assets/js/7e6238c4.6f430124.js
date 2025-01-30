@@ -98,7 +98,7 @@ function _createMdxContent(props) {
       friendlyName: 'Radioknappar',
       overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält som används för att välja exakt ett alternativ från en uppsättning av flera förvalda alternativ."
+      children: "Inmatningsfält som används för att välja exakt ett alternativ."
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       hideCode: true,
       scope: {

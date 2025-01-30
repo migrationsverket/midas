@@ -58,17 +58,13 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
 }, {
   "value": "API",
   "id": "api",
@@ -88,10 +84,8 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
-    mermaid: "mermaid",
     p: "p",
     pre: "pre",
-    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
@@ -99,16 +93,24 @@ function _createMdxContent(props) {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
       name: 'Select',
       friendlyName: 'Flerval, väljare, dropdown'
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Select är en typ av inmatningsfält som används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett"
-      }), " alternativ från en uppsättning av flera alternativ. Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-218/components/radio",
-        children: "Radio"
-      }), " användas istället."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Inmatningsfält som används för att välja exakt ett alternativ."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        Select: Select/* Select */.l,
+        Item: Select/* Item */.q
+      },
+      children: `<Select
+  label="Vad är din favoritfrukt?"
+  placeholder="Välj en frukt"
+  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+>
+  {(item) => <Item>{item.name}</Item>}
+</Select>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -143,26 +145,14 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Item, Select } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Select: Select/* Select */.l,
-        Item: Select/* Item */.q
-      },
-      children: `<Select
-  label="Vad är din favoritfrukt?"
-  placeholder="Välj en frukt"
-  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-  {(item) => <Item>{item.name}</Item>}
-</Select>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
-      value: "flowchart TD;\n  A[Hur många val ska presenteras för användaren?]:::primary\n  A ---> B[1]\n  A ---> C[2 - 4]\n  A ---> D[5 - 10]:::primary\n  A ---> E[11 +]\n  B ---> F[Använd Checkbox]\n  C ---> G[Hur många val kan göras?]\n  G --->|Flera| F\n  G --->|Ett| H[Använd Radio]\n  D ---> I[Hur många val kan göras?]:::primary\n  I --->|Flera| J[Använd MultiSelect]\n  I --->|Ett| K[Använd Select]:::primary\n  E ---> L[Hur många val kan göras?]\n  L -.Flera.-> M[Använd ComboBox multiple]\n  L --->|Ett| N[Använd ComboBox]"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-218/components/radio",
+        children: "Radio"
+      }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"

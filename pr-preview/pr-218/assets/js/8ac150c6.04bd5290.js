@@ -59,8 +59,8 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
   "value": "API",
@@ -80,15 +80,17 @@ function _createMdxContent(props) {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
       name: 'SearchField',
       friendlyName: 'Sökfält'
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sökfält är ett inmatningsfält anpassat för sökning. Sökfältet fungerar med tangentbord där ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "Enter"
-      }), " fungerar\nsom submit och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "ESC"
-      }), " rensar sökfältet."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Inmatningsfält anpassat för sökning."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        SearchField: SearchField/* SearchField */.L
+      },
+      children: `<SearchField placeholder="Sök efter frukter"/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -123,12 +125,6 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { SearchField } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        SearchField: SearchField/* SearchField */.L
-      },
-      children: `
-<SearchField placeholder="Sök efter frukter"/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
