@@ -1,0 +1,173 @@
+@value tokens: "../theme/tokens.css";
+@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, gray150, focus, mdBreakpoint from tokens;
+
+@keyframes slideInEnd {
+  from {
+    transform: translateX(calc(100% + 1rem));
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutEnd {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(calc(100% + 1rem));
+    opacity: 0;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    transform: translateY(calc(-100% + 1rem));
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(1rem);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutTop {
+  from {
+    transform: translateY(1rem);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(calc(-100% + 1rem));
+    opacity: 0;
+  }
+}
+
+.toastRegion {
+  position: fixed;
+  left: 50%;
+  top: calc(92px + 1rem);
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  width: calc(100% - 2rem);
+  z-index: 1001;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  @media mdBreakpoint {
+    width: unset;
+    left: unset;
+    transform: unset;
+    top: calc(80px + 1rem);
+    right: 1rem;
+  }
+}
+
+.toast {
+  font-family: display;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background: white;
+  color: gray150;
+  padding-left: calc(1rem - 3px);
+  border-left: 3px solid transparent;
+  width: calc(100% - 1rem);
+  font-size: 0.875rem;
+
+  &[data-focus-visible],
+  &:focus-visible {
+    outline: none;
+    box-shadow: focus;
+  }
+
+  &.success {
+    --bg: signalGreen10;
+    --border: signalGreen100;
+
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  &.info {
+    --bg: signalBlue10;
+    --border: signalBlue100;
+
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  &.important {
+    --bg: signalYellow10;
+    --border: signalYellow100;
+
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  &.warning {
+    --bg: signalRed10;
+    --border: signalRed100;
+
+    background: var(--bg);
+    border-left-color: var(--border);
+  }
+
+  & .icon {
+    color: var(--border);
+    flex: 0 0 auto;
+  }
+
+  @media mdBreakpoint {
+    width: 18rem;
+  }
+}
+
+.toastContent {
+  padding: 0.875rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.toastMessage {
+  padding: 0.125rem 0 0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.toast[data-animation='entering'] {
+  animation-name: slideInTop;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-direction: normal;
+  animation-fill-mode: both;
+
+  @media mdBreakpoint {
+    animation-name: slideInEnd;
+  }
+}
+
+.toast[data-animation='exiting'] {
+  animation-name: slideOutTop;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-direction: normal;
+  animation-fill-mode: both;
+
+  @media mdBreakpoint {
+    animation-name: slideOutEnd;
+  }
+}

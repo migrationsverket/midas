@@ -4,8 +4,7 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { InfoBanner } from '@midas-ds/info-banner'
-import { Tabs as MidasTabs } from '@midas-ds/tabs'
+import { InfoBanner, Tabs as MidasTabs } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -14,16 +13,18 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-Informationsmeddelande används för att visa statisk information, som till exempel systemnotiser
+Informationsmeddelande visar viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
+Den används för att ge användaren feedback, exempelvis vid fel, varningar eller bekräftelser och är
+utformad för att vara tydlig och lätt att förstå utan att störa användarens flöde.
 
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/info-banner
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { InfoBanner } from '@midas-ds/info-banner'
+import { InfoBanner } from '@midas-ds/components'
 ```
 
 ## Exempel
@@ -51,6 +52,7 @@ import { InfoBanner } from '@midas-ds/info-banner'
   />
   <InfoBanner
     type={'success'}
+    dismissable={true}
     title={'Formuläret har skickats'}
     message={'Visas för användaren för att bekräfta att en action gått rätt till.'}
   />
@@ -59,10 +61,11 @@ import { InfoBanner } from '@midas-ds/info-banner'
 <br />
 
 ```tsx
-import {InfoBanner} from "@midas-ds/info-banner";
-
-<InfoBanner type={'info'} title={'Information'} message={'Message'}/>
+<InfoBanner type={'info'} title={'Information'} message={'Message'} />
 <InfoBanner type={'important'} title={'Important'} message={'Message'}/>
 <InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
-<InfoBanner type={'success'} title={'Success'} message={'Message'}/>
+<InfoBanner type={'success'} title={'Success'} message={'Message'} dismissable={true}/>
 ```
+## API
+
+<PropTable name={'InfoBanner'}/>

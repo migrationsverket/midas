@@ -5,7 +5,7 @@ description: En enkel tabell för att visualisera data.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/table'
+import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
@@ -18,11 +18,11 @@ En enkel tabell för att visualisera data. Går att kombinera med andra komponen
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/table
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Table } from '@midas-ds/table'
+import { Table } from '@midas-ds/components'
 ```
 
 För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas `id`.

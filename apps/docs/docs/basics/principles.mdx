@@ -3,67 +3,173 @@ title: Designprinciper
 sidebar_position: 1
 ---
 
+import { Accordion, AccordionItem, AccordionContent, AccordionTrigger } from '@midas-ds/components'
+
 ## Generella designprinciper
 
-### Utgå från målgruppens behov
-
-Om du inte vet vilka användarna är och vilka behov de har kommer du inte bygga rätt sak. Gör inga antaganden. Utforska, gör användarstudier och analysera data.
-
-### Etisk och inkluderande design
-
-Det vi bygger ska fungera för alla. Tillgänglighet och användbarhet står i första rummet. De som är i störst behov av våra tjänster är ofta de personer som har svårast att använda dem. Arbeta inkluderande och prioritera att våra system och tjänster ska kunna användas av alla.
-
-### Helhet
-
-Ha förståelse för kontexten. Vi designar flöden, kundresor och tjänster, inte enstaka webbplatser. En tjänst är något som hjälper människor att göra något. Vårt jobb är att ta reda på i vilka sammanhang våra användare befinner sig i och skapa tjänster som tar hänsyn till dessa.
-
-### Iterera
-
-Arbeta med ständiga förbättringar. Vi är aldrig klara med något; allt kan alltid bli lite bättre. Det bästa sättet att bygga bra tjänster är att börja smått, testa med användare och iterera. Om och om igen. Om en prototyp eller skiss inte fungerar, var inte rädd för att skrota den och börja om. Misslyckas tidigt och gör om.
-
-### Datadrivet arbetssätt
-
-Tillämpa alltid ett datadrivet arbetssätt. Gissa inte - ta beslut utifrån fakta. Detta gäller både under analysfasen och utvecklingsfasen, men också när en tjänst eller ett system är lanserat. Gör fältstudier, intervjua användare, analysera hur liknande tjänster ser ut och används. Testa skisser och prototyper med representanter ur målgruppen. Använd analysverktyg för att se hur en tjänst fungerar i drift och var eventuella problem eller flaskhalsar uppstår.
-
-### Arbeta enligt en designorienterad process
-
-Design bygger på att kontinuerligt involvera användare i designprocessen för att se till att lösningen blir lätt att använda för målgruppen. Det är en iterativ process som består av fyra delar: utforska målgruppen och användningssituationen, definiera målgruppen behov och mål med användningen, utforma och utforska lösningsidéer, specificera lösningar och testa med målgruppen.
-
-### Enhetlighet
-
-Det är viktigt att våra användare känner igen sig i mötet med Migrationsverket. Det skapar förtroende och trygghet. Därför strävar vi efter enhetlighet. Var konsekvent när det gäller designmönster, grafiskt uttryck och språklig tonalitet - även mellan olika tjänster och system.
+<Accordion type={'multiple'}>
+  <AccordionItem
+    key='1'
+    value='Utgå från målgruppens behov'
+  >
+    <AccordionTrigger>Utgå från målgruppens behov</AccordionTrigger>
+    <AccordionContent>
+      Om du inte vet vilka användarna är och vilka behov de har kommer du inte bygga rätt sak. Gör inga antaganden.
+      Utforska, gör användarstudier och analysera data.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='2'
+    value='Etisk och inkluderande design'
+  >
+    <AccordionTrigger>Etisk och inkluderande design</AccordionTrigger>
+    <AccordionContent>
+      Det vi bygger ska fungera för alla. Tillgänglighet och användbarhet står i första rummet. De som är i störst behov
+      av våra tjänster är ofta de personer som har svårast att använda dem. Arbeta inkluderande och prioritera att våra
+      system och tjänster ska kunna användas av alla.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='3'
+    value='Helhet'
+  >
+    <AccordionTrigger>Helhet</AccordionTrigger>
+    <AccordionContent>
+      Ha förståelse för kontexten. Vi designar flöden, kundresor och tjänster, inte enstaka webbplatser. En tjänst är
+      något som hjälper människor att göra något. Vårt jobb är att ta reda på i vilka sammanhang våra användare befinner
+      sig i och skapa tjänster som tar hänsyn till dessa.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='4'
+    value='Iterera'
+  >
+    <AccordionTrigger>Iterera</AccordionTrigger>
+    <AccordionContent>
+      Arbeta med ständiga förbättringar. Vi är aldrig klara med något; allt kan alltid bli lite bättre. Det bästa sättet
+      att bygga bra tjänster är att börja smått, testa med användare och iterera. Om och om igen. Om en prototyp eller
+      skiss inte fungerar, var inte rädd för att skrota den och börja om. Misslyckas tidigt och gör om.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='5'
+    value='Datadrivet arbetssätt'
+  >
+    <AccordionTrigger>Datadrivet arbetssätt</AccordionTrigger>
+    <AccordionContent>
+      Tillämpa alltid ett datadrivet arbetssätt. Gissa inte - ta beslut utifrån fakta. Detta gäller både under
+      analysfasen och utvecklingsfasen, men också när en tjänst eller ett system är lanserat. Gör fältstudier, intervjua
+      användare, analysera hur liknande tjänster ser ut och används. Testa skisser och prototyper med representanter ur
+      målgruppen. Använd analysverktyg för att se hur en tjänst fungerar i drift och var eventuella problem eller
+      flaskhalsar uppstår.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='6'
+    value='Arbeta enligt en designorienterad process'
+  >
+    <AccordionTrigger>Arbeta enligt en designorienterad process</AccordionTrigger>
+    <AccordionContent>
+      Design bygger på att kontinuerligt involvera användare i designprocessen för att se till att lösningen blir lätt
+      att använda för målgruppen. Det är en iterativ process som består av fyra delar: utforska målgruppen och
+      användningssituationen, definiera målgruppen behov och mål med användningen, utforma och utforska lösningsidéer,
+      specificera lösningar och testa med målgruppen.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='7'
+    value='Enhetlighet'
+  >
+    <AccordionTrigger>Enhetlighet</AccordionTrigger>
+    <AccordionContent>
+      Det är viktigt att våra användare känner igen sig i mötet med Migrationsverket. Det skapar förtroende och
+      trygghet. Därför strävar vi efter enhetlighet. Var konsekvent när det gäller designmönster, grafiskt uttryck och
+      språklig tonalitet - även mellan olika tjänster och system.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
 
 ## Designprinciper för extern webbplats
 
-### De sökande först
-
-Vi sätter de sökandes behov först och kompromissar
-inte på deras bekostnad.
-
-### Tydlig guidning
-
-Vi guidar användarna med utgångspunkt i vem de är och vilken situation de befinner sig i just nu. De är experter på sin situation, inte på Migrationsverkets processer. Vi ger dem möjlighet att avgränsa information och fördjupa sig vid behov.
-
-### Trygghet genom hela processen
-
-Vi vill att användarna ska känna sig trygga och ha förtroende för Migrationsverket. Den tilliten bygger vi bland annat genom att vara transparenta med vad som händer och ge tydlig information om status i ärenden.
-
-### Mobilt först
-
-Majoriteten av våra användare besöker vår webbplats via sina mobiltelefoner. Genom att designa för mobilanvändning först så tvingas vi prioritera och förenkla för att skapa en bra användarupplevelse. Det är enklare att skala upp till större format än att skala ner till ett mindre format.
-
-### Inkluderande design
-
-Vi designar för tillgänglighet, mångfald och med respekt för olika kognitiva förmågor och livssituationer. Det gör vi bland annat genom en medveten visuell tonalitet med fokus på tydlighet.
-
-### Ett språk anpassat efter användaren
-
-Vi skriver vårdat, enkelt och begripligt med ett språk anpassat efter användarens behov. Vi erbjuder förklaringar av begrepp när det behövs.
-
-### Enhetlig användarupplevelse
-
-Vi skapar en sammanhängande upplevelse genom konsekvent användning av element, komponenter och designmönster, så att användaren kan känna igen sig genom hela användarresan.
-
-### Enkelt att orientera sig
-
-Vi vet att en stor del av våra användare landar på någon av våra undersidor via sökmotorer eller länkar. Därför behöver vi på varje sida ge dem möjlighet att orientera sig och förstå var de hamnat. Det gör vi till exempel med hjälp av brödsmulor, tydliga rubriker, ingresser samt lokal och global navigering.
+<Accordion type={'multiple'}>
+  <AccordionItem
+    key='8'
+    value='De sökande först'
+  >
+    <AccordionTrigger>De sökande först</AccordionTrigger>
+    <AccordionContent>Vi sätter de sökandes behov först och kompromissar inte på deras bekostnad.</AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='9'
+    value='Tydlig guidning'
+  >
+    <AccordionTrigger>Tydlig guidning</AccordionTrigger>
+    <AccordionContent>
+      Vi guidar användarna med utgångspunkt i vem de är och vilken situation de befinner sig i just nu. De är experter
+      på sin situation, inte på Migrationsverkets processer. Vi ger dem möjlighet att avgränsa information och fördjupa
+      sig vid behov.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='10'
+    value='Trygghet genom hela processen'
+  >
+    <AccordionTrigger>Trygghet genom hela processen</AccordionTrigger>
+    <AccordionContent>
+      Vi vill att användarna ska känna sig trygga och ha förtroende för Migrationsverket. Den tilliten bygger vi bland
+      annat genom att vara transparenta med vad som händer och ge tydlig information om status i ärenden.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='11'
+    value='Mobilt först'
+  >
+    <AccordionTrigger>Mobilt först</AccordionTrigger>
+    <AccordionContent>
+      Majoriteten av våra användare besöker vår webbplats via sina mobiltelefoner. Genom att designa för mobilanvändning
+      först så tvingas vi prioritera och förenkla för att skapa en bra användarupplevelse. Det är enklare att skala upp
+      till större format än att skala ner till ett mindre format.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='12'
+    value='Inkluderande design'
+  >
+    <AccordionTrigger>Inkluderande design</AccordionTrigger>
+    <AccordionContent>
+      Vi designar för tillgänglighet, mångfald och med respekt för olika kognitiva förmågor och livssituationer. Det gör
+      vi bland annat genom en medveten visuell tonalitet med fokus på tydlighet.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='13'
+    value='Ett språk anpassat efter användaren'
+  >
+    <AccordionTrigger>Ett språk anpassat efter användaren</AccordionTrigger>
+    <AccordionContent>
+      Vi skriver vårdat, enkelt och begripligt med ett språk anpassat efter användarens behov. Vi erbjuder förklaringar
+      av begrepp när det behövs.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='14'
+    value='Enhetlig användarupplevelse'
+  >
+    <AccordionTrigger>Enhetlig användarupplevelse</AccordionTrigger>
+    <AccordionContent>
+      Vi skapar en sammanhängande upplevelse genom konsekvent användning av element, komponenter och designmönster, så
+      att användaren kan känna igen sig genom hela användarresan.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem
+    key='15'
+    value='Enkelt att orientera sig'
+  >
+    <AccordionTrigger>Enkelt att orientera sig</AccordionTrigger>
+    <AccordionContent>
+      Vi vet att en stor del av våra användare landar på någon av våra undersidor via sökmotorer eller länkar. Därför
+      behöver vi på varje sida ge dem möjlighet att orientera sig och förstå var de hamnat. Det gör vi till exempel med
+      hjälp av brödsmulor, tydliga rubriker, ingresser samt lokal och global navigering.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>

@@ -29,13 +29,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build website
-        run: npx nx run docs:build --minify=false --outputPath=build
+        run: npx nx run docs:build --minify=false --outputPath=dist/docs
       - name: Build storybook
-        run: npx nx run ui:build-storybook:ci
+        run: npx nx run components:build-storybook:ci
 
       - uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
+          folder: dist/docs
           branch: gh-pages
           clean-exclude: pr-preview
           force: false

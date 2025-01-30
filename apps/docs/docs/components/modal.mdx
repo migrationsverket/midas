@@ -6,10 +6,7 @@ description: Modal som lägger sig över allt annat innehåll.
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Modal } from '@midas-ds/modal'
-import { Button } from '@midas-ds/button'
-import { Flex, FlexItem } from '@midas-ds/flex'
-import { TextArea } from '@midas-ds/textarea'
+import { Flex, FlexItem, TextArea, Button, Modal } from '@midas-ds/components'
 import { Heading } from 'react-aria-components'
 
 <ComponentHeader
@@ -23,11 +20,11 @@ Modaler lägger sig över allt annat innehåll för att fokusera användarens fo
 ## Installation och användning
 
 ```bash npm2yarn
-npm install @midas-ds/modal
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Modal } from '@midas-ds/modal'
+import { Modal } from '@midas-ds/components'
 
 const [isOpen, setIsOpen] = React.useState<boolean>(false)
 ```
@@ -106,10 +103,6 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 </>`}
 
 </LiveCodeBlock>
-
-## Riktlinjer
-
-Kommer snart
 
 ## API
 
