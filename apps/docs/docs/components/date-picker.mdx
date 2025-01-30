@@ -13,29 +13,33 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Datumväljare'}
 />
 
-Fält för att välja ett datum eller ett spann av datum med kalender. Består av två komponenter `DatePicker` för att välja ett datum samt `DateRangePicker` för att välja ett spann av (2) datum.
+Inmatningsfält för att välja ett eller flera datum. Består av två komponenter `DatePicker` för att välja ett datum samt `DateRangePicker` för att välja ett spann mellan två datum.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ DatePicker }}>{`<DatePicker label="Välj ett datum" aria-label="Välj datum" />`}</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
 ```
 
-### DatePicker
-
 ```tsx
 import { DatePicker } from '@midas-ds/components'
 ```
-
-<LiveCodeBlock scope={{ DatePicker }}>{`<DatePicker aria-label="Välj datum" />`}</LiveCodeBlock>
-
-### DateRangePicker
 
 ```tsx
 import { DateRangePicker } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ DateRangePicker }}>{`<DateRangePicker aria-label="Välj spann av datum" />`}</LiveCodeBlock>
+## Varianter
+### DatePicker
+
+<LiveCodeBlock scope={{ DatePicker }}>{`<DatePicker label="Välj ett datum när du vill vara ledig" aria-label="Välj datum" />`}</LiveCodeBlock>
+
+
+### DateRangePicker
+
+<LiveCodeBlock scope={{ DateRangePicker }}>{`<DateRangePicker label="Ange din semesterperiod" aria-label="Välj spann av datum" />`}</LiveCodeBlock>
 
 ## API
 
