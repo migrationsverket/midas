@@ -7,7 +7,6 @@ import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { extname, relative, resolve } from 'path'
-import { fileURLToPath } from 'node:url'
 import { glob } from 'glob'
 
 export default defineConfig({
