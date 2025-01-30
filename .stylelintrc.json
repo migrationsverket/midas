@@ -22,6 +22,7 @@
     ],
     "value-keyword-case": null,
     "custom-property-pattern": null,
+    "font-family-name-quotes": "always-unless-keyword",
     "font-family-no-missing-generic-family-keyword": [
       true,
       { "ignoreFontFamilies": ["display"] }
