@@ -16,19 +16,9 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLinkTitle='Radix UI'
 />
 
-Dragspelskomponenten låter användare visa och dölja delar av relaterat innehåll på en sida. Den används primärt för att minska informationsmängden som direkt presenteras för användaren.
+Utfällbar komponent som används för att minska informationsmängden som direkt presenteras för användaren.
 
-## Installation och användning
-
-```bash npm2yarn
-npm install @midas-ds/components
-```
-
-```tsx
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@midas-ds/components'
-```
-
-<LiveCodeBlock scope={{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }}>
+<LiveCodeBlock hideCode scope={{ Accordion, AccordionItem, AccordionTrigger, AccordionContent }}>
   {`<Accordion type={'multiple'}>
     {fruits.shuffled().map(fruit => (
       <AccordionItem key={fruit.value} value={fruit.value}>
@@ -40,6 +30,18 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@m
     ))}
 </Accordion>`}
 </LiveCodeBlock>
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@midas-ds/components'
+```
+
+
 
 ## Riktlinjer
 
