@@ -61,16 +61,24 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
-  "value": "Väljbara rader",
-  "id": "väljbara-rader",
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Standardtabell",
+  "id": "standardtabell",
   "level": 3
 }, {
-  "value": "Smalare rader",
-  "id": "smalare-rader",
+  "value": "Kompakt tabell",
+  "id": "kompakt-tabell",
+  "level": 3
+}, {
+  "value": "Valbara rader",
+  "id": "valbara-rader",
   "level": 3
 }, {
   "value": "Randiga rader",
@@ -116,12 +124,38 @@ function _createMdxContent(props) {
       name: 'Table',
       friendlyName: 'Tabell'
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Komponent för att visualisera data. Går att kombinera med andra komponenter, till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
         children: "Select"
-      }), " för att filtrera eller liknande."]
+      }), ", för att filtrera eller liknande."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        Table: Table/* Table */.XI,
+        TableHeader: Table/* TableHeader */.A0,
+        TableBody: dist_Table/* TableBody */.BF,
+        Column: Table/* Column */.VP,
+        Row: Table/* Row */.fI,
+        Cell: Table/* Cell */.fh
+      },
+      children: `<Table
+  aria-label="Frukter"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -156,6 +190,9 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Table } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas ", (0,jsx_runtime.jsx)(_components.code, {
         children: "id"
@@ -165,6 +202,9 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "const columns = [\n  { name: 'Namn', id: 'name', isRowHeader: true },\n  { name: 'Beskrivning', id: 'desc', width: 'max-content' }\n]\n\nconst rows = fruits.map(fruit => {\n  return {\n    id: fruit.value,\n    name: fruit.name,\n    desc: fruit.description\n  }\n})\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "standardtabell",
+      children: "Standardtabell"
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Table: Table/* Table */.XI,
@@ -191,8 +231,42 @@ function _createMdxContent(props) {
   </TableBody>
 </Table>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "väljbara-rader",
-      children: "Väljbara rader"
+      id: "kompakt-tabell",
+      children: "Kompakt tabell"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "narrow"
+      }), " om du vill ha en kompaktare tabell."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Table: Table/* Table */.XI,
+        TableHeader: Table/* TableHeader */.A0,
+        TableBody: dist_Table/* TableBody */.BF,
+        Column: Table/* Column */.VP,
+        Row: Table/* Row */.fI,
+        Cell: Table/* Cell */.fh
+      },
+      children: `<Table
+  narrow
+  aria-label="Frukter"
+  selectionMode="multiple"
+>
+  <TableHeader columns={columns}>
+      {(column) => (
+          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+      )}
+  </TableHeader>
+  <TableBody items={rows}>
+      {(item) => (
+          <Row columns={columns}>
+              {(column) => <Cell>{item[column.id]}</Cell>}
+          </Row>
+      )}
+  </TableBody>
+</Table>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "valbara-rader",
+      children: "Valbara rader"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Tabellen har inbyggd funktion för att kunna välja en eller flera rader med ", (0,jsx_runtime.jsx)(_components.code, {
         children: "selectionMode"
@@ -228,46 +302,12 @@ function _createMdxContent(props) {
   </TableBody>
 </Table>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "smalare-rader",
-      children: "Smalare rader"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "narrow"
-      }), " om du vill ha en mindre tabell."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Table: Table/* Table */.XI,
-        TableHeader: Table/* TableHeader */.A0,
-        TableBody: dist_Table/* TableBody */.BF,
-        Column: Table/* Column */.VP,
-        Row: Table/* Row */.fI,
-        Cell: Table/* Cell */.fh
-      },
-      children: `<Table
-  narrow
-  aria-label="Frukter"
-  selectionMode="multiple"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "randiga-rader",
       children: "Randiga rader"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
         children: "striped"
-      }), " om du vill ha en randig tabell."]
+      }), " om du vill att raderna ska alternera mellan vit och grå."]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
         Table: Table/* Table */.XI,

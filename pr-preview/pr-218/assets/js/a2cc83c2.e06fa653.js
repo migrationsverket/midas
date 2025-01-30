@@ -62,8 +62,8 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
   "value": "Varianter",
@@ -82,8 +82,8 @@ const toc = [{
   "id": "globalt",
   "level": 3
 }, {
-  "value": "Notiskön",
-  "id": "notiskön",
+  "value": "Toastkö",
+  "id": "toastkö",
   "level": 2
 }, {
   "value": "Riktlinjer",
@@ -127,14 +127,18 @@ function _createMdxContent(props) {
       friendlyName: 'Notifiering, notiser',
       overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/useToast.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan\neller via en timeout. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<ToastRegion>"
-      }), "."]
+      children: "Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation."
+    }), "\n", (0,jsx_runtime.jsx)(Toast/* GlobalToastRegion */.r$, {}), "\n", (0,jsx_runtime.jsx)(Button/* Button */.$, {
+      onPress: () => Toast/* toastQueue */.ni.add({
+        type: 'success',
+        message: 'Allt funkar som det ska!'
+      }, {
+        timeout: 5000
+      }),
+      children: 'Tryck här för en notifiering'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -167,29 +171,21 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ToastProvider } from '@midas-ds/components'\n;<ToastProvider>\n  {state => (\n    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>\n      Tryck här för en notifiering\n    </Button>\n  )}\n</ToastProvider>\n"
+        children: "import { ToastProvider } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(Toast/* GlobalToastRegion */.r$, {}), "\n", (0,jsx_runtime.jsx)(Button/* Button */.$, {
-      onPress: () => Toast/* toastQueue */.ni.add({
-        type: 'success',
-        message: 'Allt funkar som det ska!'
-      }, {
-        timeout: 5000
-      }),
-      children: 'Tryck här för en notifiering'
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En toast har fyra olika varianter, ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Toast har fyra olika varianter: ", (0,jsx_runtime.jsx)(_components.code, {
         children: "success"
       }), ", ", (0,jsx_runtime.jsx)(_components.code, {
         children: "info"
       }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "warning"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
         children: "important"
-      }), ". Använd lämplig typ beroende på vilken information som ska visas. Här har även varningsnotisen högsta prioritet vilket gör att den alltid går före i kön."]
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "warning"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsxs)(Flex/* Flex */.s, {
       fluid: true,
       children: [(0,jsx_runtime.jsx)(FlexItem/* FlexItem */.Z, {
@@ -269,10 +265,12 @@ function _createMdxContent(props) {
         children: "import { GlobalToastRegion, toastQueue } from '@midas-ds/components'\n\n<GlobalToastRegion />\n//...\n<Button onPress={\n  () => toastQueue.add({type: 'success', message: 'Toast is done'})\n}>Visa notis</Button>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "notiskön",
-      children: "Notiskön"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Varje gång en toast läggs till i kön går det att bestämma livslängs och prioritering för notisen. Prioritet kan sättas till 1, 2 eller 3 och notiserna kommer gå före i kön beroende på detta."
+      id: "toastkö",
+      children: "Toastkö"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om det triggas flera Toast sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5. Varje gång en toast läggs till i kön går det att bestämma livslängd och prioritering. Prioritet kan sättas till 1, 2 eller 3. ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "warning"
+      }), " har dock alltid högsta prioritet och kommer därmed först i kön."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",

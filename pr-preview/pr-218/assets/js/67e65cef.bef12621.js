@@ -109,7 +109,7 @@ function _createMdxContent(props) {
       friendlyName: 'Informationsmeddelande',
       overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Informationsmeddelande visar viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.\nDen används för att ge användaren feedback, exempelvis vid fel, varningar eller bekräftelser."
+      children: "Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser."
     }), "\n", (0,jsx_runtime.jsxs)(tabs_Tabs/* Tabs */.t, {
       label: 'Välj typ',
       tabs: ['Sucess', 'Info', 'Important', 'Warning'],

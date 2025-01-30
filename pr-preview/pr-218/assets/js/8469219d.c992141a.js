@@ -59,8 +59,8 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användnin",
-  "id": "installation-och-användnin",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
   "value": "API",
@@ -83,13 +83,24 @@ function _createMdxContent(props) {
       friendlyName: "Textfält",
       overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ett textfält när användaren ska fylla i längre information tex en beskrivning, kommentar, fritext osv. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+      children: ["Inmatningsfält awdsom används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
         href: "/pr-preview/pr-218/components/textfield",
         children: "TextField"
       }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        TextArea: TextArea/* TextArea */.f
+      },
+      children: `<TextArea
+  label="Kommentar"
+  description="Skriv en kommentar"
+  maxCharacters={50}
+  type={'email'}
+/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användnin",
-      children: "Installation och användnin"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -124,16 +135,6 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { TextArea } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextArea: TextArea/* TextArea */.f
-      },
-      children: `<TextArea
-  label="Kommentar"
-  description="Skriv en kommentar"
-  maxCharacters={50}
-  type={'email'}
-/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"

@@ -61,8 +61,8 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
   "value": "API",
@@ -83,10 +83,40 @@ function _createMdxContent(props) {
       name: 'Tabs',
       friendlyName: 'Flikar'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Fördela information över flertalet tabbar."
+      children: "Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren."
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      hideCode: true,
+      scope: {
+        MidasTabs: tabs_Tabs/* Tabs */.t,
+        Button: Button/* Button */.$
+      },
+      children: `<MidasTabs
+  defaultSelected="Viktigt att veta"
+  label="Följ processen"
+  tabs={['Frukter', 'Bär', 'Fruktförband av stenfrukter'] as const}
+>
+  <div>
+      Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+      maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+      Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+  </div>
+  <div>
+      Lorem, ipsum dolor sit amet consectetur
+      adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
+      nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
+      consequatur nam culpa nesciunt cupiditate autem suscipit.
+  </div>
+  <div>
+     Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+      maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+      Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+  </div>
+</MidasTabs>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -121,32 +151,6 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Tabs } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        MidasTabs: tabs_Tabs/* Tabs */.t,
-        Button: Button/* Button */.$
-      },
-      children: `<MidasTabs
-  defaultSelected="Viktigt att veta"
-  label="Följ processen"
-  tabs={['Processen', 'Viktigt att veta', 'Ansök'] as const}
->
-  <div>
-      Processen går till såhär Lorem ipsum dolor sit amet consectetur
-      adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-      maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-      Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-  </div>
-  <div>
-      Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur
-      adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
-      nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
-      consequatur nam culpa nesciunt cupiditate autem suscipit.
-  </div>
-  <div>
-      Ansök här: <Button>Ansök</Button>
-  </div>
-</MidasTabs>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
