@@ -1,9 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Accordion } from './Accordion'
-import { AccordionItem } from './AccordionItem'
-import { AccordionTrigger } from './AccordionTrigger'
-import { AccordionContent } from './AccordionContent'
-import React from 'react'
+import { Accordion, AccordionItem } from './'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
@@ -11,63 +7,69 @@ const meta: Meta<typeof Accordion> = {
   component: Accordion,
   title: 'Components/Accordion',
   tags: ['autodocs'],
-  args: {
-    type: 'single'
-  },
-  argTypes: {
-    type: {
-      name: 'type',
-      options: ['multiple', 'single'],
-      control: { type: 'radio' }
-    },
-    collapsible: {
-      options: [true, false],
-      control: { type: 'radio' }
-    },
-    headingTag: {
-      description: 'Choose HTML element to wrap the title on each item'
-    }
-  }
+  args: {}
 }
 
 export default meta
 type Story = StoryObj<typeof Accordion>
 
-const AccordionTemplate: Story = {
+export const SingleSubtle: Story = {
   args: {
-    type: 'single'
-  },
-  render: ({ ...args }) => {
-    return (
-      <Accordion
-        {...args}
-        headingTag='h3'
+    children: ITEMS.map(item => (
+      <AccordionItem
+        id={item}
+        key={item}
+        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
       >
-        {ITEMS.map(item => (
-          <AccordionItem
-            key={item}
-            value={item}
-          >
-            <AccordionTrigger>Trigger {item}</AccordionTrigger>
-            <AccordionContent>Content {item}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    )
+        Innehåll i öppningsbarpanel {item}. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Dolore nesciunt at aliquam! Blanditiis
+        quasi consequuntur doloremque harum commodi odit velit pariatur
+        voluptate aliquid, inventore praesentium tempore dignissimos officia
+        sint libero!
+      </AccordionItem>
+    ))
   }
 }
 
-export const OneItemOpenedAtTheTime: Story = {
-  ...AccordionTemplate,
+export const SingleBoxed: Story = {
   args: {
-    type: 'single',
-    collapsible: true
+    variant: 'contained',
+    children: ITEMS.map(item => (
+      <AccordionItem
+        id={item}
+        key={item}
+        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
+      >
+        Innehåll i öppningsbarpanel {item} Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repellendus perspiciatis officia,
+        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
+        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Impedit dolorem tempora
+        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
+        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
+        illum consequuntur?
+      </AccordionItem>
+    ))
   }
 }
 
-export const MultipleItemOpenedAtTheSameTime: Story = {
-  ...AccordionTemplate,
+export const MultipleSubtle: Story = {
   args: {
+    ...SingleSubtle.args,
     type: 'multiple'
+  }
+}
+
+export const MultipleBoxed: Story = {
+  args: {
+    ...SingleBoxed.args,
+    type: 'multiple'
+  }
+}
+
+export const DefaultOpen: Story = {
+  args: {
+    ...SingleBoxed.args,
+    defaultExpandedKeys: ['Två']
   }
 }

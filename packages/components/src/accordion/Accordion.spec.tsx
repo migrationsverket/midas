@@ -6,28 +6,20 @@ import '@testing-library/jest-dom'
 import * as React from 'react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 import { render, RenderResult } from '@testing-library/react'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from './'
+import { Accordion, AccordionItem } from './'
 expect.extend(toHaveNoViolations)
 
 const ITEMS = ['One', 'Two', 'Three']
 
 describe('given a single Accordion', () => {
-  let handleValueChange: jest.Mock
   let rendered: RenderResult
 
   describe('with default orientation=vertical', () => {
     beforeEach(() => {
-      handleValueChange = jest.fn()
       rendered = render(
         <AccordionTest
-          type="single"
-          collapsible
-          onValueChange={handleValueChange}
+          variant='uncontained'
+          type='single'
         />
       )
     })
@@ -147,15 +139,13 @@ describe('given a single Accordion', () => {
 })
 
 describe('given a multiple Accordion', () => {
-  let handleValueChange: jest.Mock
   let rendered: RenderResult
 
   beforeEach(() => {
-    handleValueChange = jest.fn()
     rendered = render(
       <AccordionTest
-        type="multiple"
-        onValueChange={handleValueChange}
+        variant='uncontained'
+        type='multiple'
       />
     )
   })
@@ -258,13 +248,12 @@ describe('given a multiple Accordion', () => {
 
 const AccordionTest = (props: React.ComponentProps<typeof Accordion>) => (
   <Accordion {...props}>
-    {ITEMS.map((item) => (
+    {ITEMS.map(item => (
       <AccordionItem
-        value={item}
         key={item}
+        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
       >
-        <AccordionTrigger>Trigger {item}</AccordionTrigger>
-        <AccordionContent>Content {item}</AccordionContent>
+        Innehåll i öppningsbarpanel {item}
       </AccordionItem>
     ))}
   </Accordion>

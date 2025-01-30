@@ -7,7 +7,7 @@ import {
   Title
 } from '@storybook/blocks'
 import { customViewports } from './custom-viewports'
-import '@fontsource/inter/latin.css'
+import '../src/theme/global.css'
 
 export const autoDocsTemplate = () => (
   <>

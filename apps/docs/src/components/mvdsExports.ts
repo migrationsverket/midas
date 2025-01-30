@@ -1,8 +1,6 @@
 import {
   Accordion,
-  AccordionContent,
   AccordionItem,
-  AccordionTrigger,
   Button,
   Checkbox,
   CheckboxGroup,
@@ -29,13 +27,10 @@ import {
   theme
 } from '@midas-ds/components'
 
-
 export {
   Button,
   Accordion,
-  AccordionContent,
   AccordionItem,
-  AccordionTrigger,
   Checkbox,
   CheckboxGroup,
   Logo,

@@ -28,16 +28,12 @@ import { Component } from '@midas-ds/components';
 
 För specfika instruktioner, se respektive komponent.
 
-## Installera Inter som typsnitt
+### Installera Inter som typsnitt
 
 Detta är ett rekommenderat sätt att installera vårt typsnitt Inter. Det går självklart att använda andra metoder så länge vikterna 400, 500 och 600 inkluderas.
 
-```bash npm2yarn
-npm install @fontsource/inter
-```
-
 ```tsx {1} title="App.tsx (rootfilen i din app)"
-import '@fontsource/inter/latin.css'
+import '@midas-ds/components/global.css'
 
 export default function App({ children }) {
   return <main>{children}</main>
