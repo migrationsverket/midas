@@ -1,5 +1,5 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
   "hostRequirements": {
     "cpus": 2
   },
@@ -15,5 +15,19 @@
       "onAutoForward": "openPreview"
     }
   },
-  "forwardPorts": [3000]
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "unifiedjs.vscode-mdx",
+        "nrwl.angular-console",
+        "esbenp.prettier-vscode",
+        "clinyong.vscode-css-modules",
+        "stylelint.vscode-stylelint",
+        "andrewleedham.vscode-css-modules"
+      ]
+    }
+  }
 }
