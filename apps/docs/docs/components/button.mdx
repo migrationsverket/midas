@@ -14,9 +14,18 @@ import { Plus } from 'lucide-react'
   friendlyName={'Knapp'}
 />
 
-Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
+Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup aria-label="Välj knapp">
+    <Button>Primär</Button>
+    <Button variant="secondary">Sekundär</Button>
+    <Button variant='tertiary'>Tertiär</Button>
+    <Button isDisabled>Disabled</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,14 +35,7 @@ npm install @midas-ds/components
 import { Button } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj knapp">
-    <Button>Primär</Button>
-    <Button variant="secondary">Sekundär</Button>
-    <Button variant='tertiary'>Tertiär</Button>
-    <Button isDisabled>Disabled</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+
 
 ## Varianter
 
