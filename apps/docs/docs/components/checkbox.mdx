@@ -13,9 +13,11 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Kryssruta'}
 />
 
-Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det är många alternativ så bör [MultiSelect](./multi-select.mdx) användas istället.
+Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ. 
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ Checkbox }}>{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -25,25 +27,11 @@ npm install @midas-ds/components
 import { Checkbox } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Checkbox, Flex, FlexItem}}>
-  {`<Flex>
-    <FlexItem style={{alignSelf: 'center'}}>
-      <Checkbox>Jag godkänner villkoren</Checkbox>
-    </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
-
 ## Varianter
 
 ### Ensam checkbox
 
-<LiveCodeBlock scope={{ Checkbox, Flex, FlexItem}}>
-  {`<Flex>
-    <FlexItem style={{alignSelf: 'center'}}>
-      <Checkbox>Jag godkänner villkoren</Checkbox>
-    </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
+<LiveCodeBlock scope={{ Checkbox }}>{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
 
 ### Flera checkboxar
 
@@ -59,7 +47,6 @@ Använd `<CheckboxGroup>` för att gruppera flera checkboxar som hör samman.
     </CheckboxGroup>
 `}
 </LiveCodeBlock>
-
 
 ## Välj alla
 
@@ -89,29 +76,8 @@ Ibland kan det vara lämligt att ge användaren möjlighet att snabbt kryssa i a
 
 ## Riktlinjer
 
-### Val av komponent
-
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]:::primary
-  A ---> C[2 - 4]:::primary
-  A ---> D[5 - 10]
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]:::primary
-  C ---> G[Hur många val kan göras?]:::primary
-  G --->|Flera| F:::primary
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]
-  I --->|Flera| J[Använd MultiSelect]
-  I --->|Ett| K[Använd Select]
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
-
+- Om det är många alternativ så bör [MultiSelect](./multi-select.mdx) användas istället.
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
-
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 
 ## API
