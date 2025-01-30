@@ -16,7 +16,17 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ. 
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ ComboBox, ComboBoxItem }}>
+  {`<ComboBox
+    label="Vad är din favoritfrukt?"
+    placeholder="Välj en frukt"
+    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+>
+    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+</ComboBox>`}
+</LiveCodeBlock>
+
+## Installation 
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,15 +36,7 @@ npm install @midas-ds/components
 import { ComboBox } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ ComboBox, ComboBoxItem }}>
-  {`<ComboBox
-    label="Vad är din favoritfrukt?"
-    placeholder="Välj en frukt"
-    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-</ComboBox>`}
-</LiveCodeBlock>
+
 
 ## Riktlinjer
 
