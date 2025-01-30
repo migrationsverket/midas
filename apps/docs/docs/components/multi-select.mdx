@@ -14,9 +14,17 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink=''
 />
 
-MultiSelect är en typ av inmatningsfält som tillåter användaren att välja **flera** alternativ från en längre lista.
+Inmatningsfält som tillåter användaren att välja **flera** alternativ från en längre lista.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ MultiSelect }}>
+  {`<MultiSelect
+        label="Vilka är dina favoritfrukter?"
+        description="Om de är små får man ta två"
+        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+/>`}
+</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,13 +34,6 @@ npm install @midas-ds/components
 import { MultiSelect } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ MultiSelect }}>
-  {`<MultiSelect
-        label="Vilka är dina favoritfrukter?"
-        description="Om de är små får man ta två"
-        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-/>`}
-</LiveCodeBlock>
 
 ## Riktlinjer
 
