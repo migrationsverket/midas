@@ -1,13 +1,13 @@
-import { default as React } from '../../../../node_modules/react';
-import { TextElementTag } from './AccordionTagContext';
-import * as RadixAccordion from '@radix-ui/react-accordion';
-type AccordionRootCombined = RadixAccordion.AccordionSingleProps | RadixAccordion.AccordionMultipleProps;
-interface AccordionProps {
-    /** Pick a heading tag to be rendered as the title in each accordion */
-    headingTag?: TextElementTag;
+import { DisclosureGroupProps } from 'react-aria-components';
+import * as React from 'react';
+interface MidasAccordion extends DisclosureGroupProps {
+    /** Display either the larger contained variant or a smaller uncontained variant */
+    variant?: 'uncontained' | 'contained';
+    /** Weither to allow the user to have multiple accordions open at the same time */
+    type?: 'single' | 'multiple';
 }
 /**
  * Accordions are used primarily to reduce the direct amount of information on a page and to sort it clearly.
  */
-export declare const Accordion: React.ForwardRefExoticComponent<(AccordionRootCombined & AccordionProps) & React.RefAttributes<HTMLDivElement>>;
+export declare const Accordion: React.FC<MidasAccordion>;
 export {};
