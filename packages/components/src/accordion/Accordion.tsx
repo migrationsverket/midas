@@ -1,34 +1,37 @@
 'use client'
 
 import styles from './Accordion.module.css'
-import * as RadixAccordion from '@radix-ui/react-accordion'
-import React, { forwardRef } from 'react'
-import { AccordionTagContext, TextElementTag } from './AccordionTagContext' // Adjust the path as necessary
+import * as React from 'react'
 import clsx from 'clsx'
+import { DisclosureGroup, DisclosureGroupProps } from 'react-aria-components'
 
-// Define a type for the combined props
-type AccordionRootCombined =
-  | RadixAccordion.AccordionSingleProps
-  | RadixAccordion.AccordionMultipleProps
-
-interface AccordionProps {
-  /** Pick a heading tag to be rendered as the title in each accordion */
-  headingTag?: TextElementTag
+interface MidasAccordion extends DisclosureGroupProps {
+  /** Display either the larger contained variant or a smaller uncontained variant */
+  variant?: 'uncontained' | 'contained'
+  /** Weither to allow the user to have multiple accordions open at the same time */
+  type?: 'single' | 'multiple'
 }
 
 /**
  * Accordions are used primarily to reduce the direct amount of information on a page and to sort it clearly.
  */
 
-export const Accordion = forwardRef<
-  React.ElementRef<typeof RadixAccordion.Root>,
-  AccordionRootCombined & AccordionProps
->(({ headingTag = 'p', ...props }, ref) => (
-  <AccordionTagContext.Provider value={headingTag}>
-    <RadixAccordion.Root
-      className={clsx(styles.root, ...(props.className || ''))}
-      ref={ref}
+export const Accordion: React.FC<MidasAccordion> = ({
+  variant = 'uncontained',
+  type = 'single',
+  children,
+  ...props
+}) => {
+  return (
+    <DisclosureGroup
+      allowsMultipleExpanded={type === 'multiple'}
+      className={clsx(
+        styles.root,
+        variant === 'contained' ? styles.contained : styles.uncontained
+      )}
       {...props}
-    />
-  </AccordionTagContext.Provider>
-))
+    >
+      {children}
+    </DisclosureGroup>
+  )
+}
