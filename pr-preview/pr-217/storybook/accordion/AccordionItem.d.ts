@@ -1,3 +1,11 @@
-import { default as React } from '../../../../node_modules/react';
-import * as RadixAccordion from '@radix-ui/react-accordion';
-export declare const AccordionItem: React.ForwardRefExoticComponent<RadixAccordion.AccordionItemProps & React.RefAttributes<HTMLDivElement>>;
+import { DisclosureProps, HeadingProps } from 'react-aria-components';
+import * as React from 'react';
+interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
+    /** The text displayed in the collapsed state */
+    title?: string;
+    children?: React.ReactNode;
+    /** Adjust the titles heading level to your heading tag structure */
+    headingLevel?: HeadingProps['level'];
+}
+export declare const AccordionItem: React.FC<MidasAccordionItem>;
+export {};
