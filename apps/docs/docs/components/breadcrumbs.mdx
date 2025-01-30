@@ -13,9 +13,13 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Brödsmulor'}
 />
 
-Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.
+Komponent som används för att visa användaren var den är i ett djupt navigationsträd.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ Breadcrumbs }}>
+  {`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
+</LiveCodeBlock>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -25,9 +29,6 @@ npm install @midas-ds/components
 import { Breadcrumbs } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Breadcrumbs }}>
-  {`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
-</LiveCodeBlock>
 
 ## API
 
