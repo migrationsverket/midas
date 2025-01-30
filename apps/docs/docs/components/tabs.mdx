@@ -13,9 +13,36 @@ import { Tabs as MidasTabs, Button } from '@midas-ds/components'
   friendlyName={'Flikar'}
 />
 
-Fördela information över flertalet tabbar.
+Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren.
 
-## Installation och användning
+<LiveCodeBlock hideCode scope={{ MidasTabs, Button }}>
+  {`<MidasTabs
+    defaultSelected="Viktigt att veta"
+    label="Följ processen"
+    tabs={['Frukter', 'Bär', 'Fruktförband av stenfrukter'] as const}
+>
+    <div>
+        Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+    </div>
+    <div>
+        Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
+        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
+        consequatur nam culpa nesciunt cupiditate autem suscipit.
+    </div>
+    <div>
+       Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+    </div>
+</MidasTabs>`}
+</LiveCodeBlock>
+
+## Installation 
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -25,29 +52,6 @@ npm install @midas-ds/components
 import { Tabs } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ MidasTabs, Button }}>
-  {`<MidasTabs
-    defaultSelected="Viktigt att veta"
-    label="Följ processen"
-    tabs={['Processen', 'Viktigt att veta', 'Ansök'] as const}
->
-    <div>
-        Processen går till såhär Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-    </div>
-    <div>
-        Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
-        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
-        consequatur nam culpa nesciunt cupiditate autem suscipit.
-    </div>
-    <div>
-        Ansök här: <Button>Ansök</Button>
-    </div>
-</MidasTabs>`}
-</LiveCodeBlock>
 
 ## API
 
