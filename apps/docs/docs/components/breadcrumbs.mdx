@@ -8,6 +8,17 @@ import { Breadcrumbs } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Breadcrumbs }}
+      {...props}
+    >
+      {`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Breadcrumbs'}
   friendlyName={'Brödsmulor'}
@@ -15,9 +26,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Komponent som används för att visa användaren var den är i ett djupt navigationsträd.
 
-<LiveCodeBlock hideCode scope={{ Breadcrumbs }}>
-  {`<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -29,6 +38,7 @@ npm install @midas-ds/components
 import { Breadcrumbs } from '@midas-ds/components'
 ```
 
+<Example hideExample />
 
 ## API
 

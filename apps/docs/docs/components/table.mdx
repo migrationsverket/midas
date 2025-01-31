@@ -8,6 +8,32 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}
+      {...props}
+    >
+      {`<Table
+            aria-label="Frukter"
+        >
+            <TableHeader columns={columns}>
+                {(column) => (
+                    <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+                )}
+            </TableHeader>
+            <TableBody items={rows}>
+                {(item) => (
+                    <Row columns={columns}>
+                        {(column) => <Cell>{item[column.id]}</Cell>}
+                    </Row>
+                )}
+            </TableBody>
+        </Table>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Table'}
   friendlyName={'Tabell'}
@@ -15,24 +41,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Komponent för att visualisera data. Går att kombinera med andra komponenter, till exemepel `Select`, för att filtrera eller liknande.
 
-<LiveCodeBlock hideCode scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
-  {`<Table
-    aria-label="Frukter"
->
-    <TableHeader columns={columns}>
-        {(column) => (
-            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-        )}
-    </TableHeader>
-    <TableBody items={rows}>
-        {(item) => (
-            <Row columns={columns}>
-                {(column) => <Cell>{item[column.id]}</Cell>}
-            </Row>
-        )}
-    </TableBody>
-</Table>`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -43,6 +52,8 @@ npm install @midas-ds/components
 ```tsx
 import { Table } from '@midas-ds/components'
 ```
+
+<Example hideExample />
 
 ## Varianter
 
@@ -63,9 +74,7 @@ const rows = fruits.map(fruit => {
 })
 ```
 
-
 ### Standardtabell
-
 
 <LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
   {`<Table
@@ -111,7 +120,6 @@ Använd `narrow` om du vill ha en kompaktare tabell.
 </Table>`}
 </LiveCodeBlock>
 
-
 ### Valbara rader
 
 Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`
@@ -135,7 +143,6 @@ Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `se
     </TableBody>
 </Table>`}
 </LiveCodeBlock>
-
 
 ### Randiga rader
 

@@ -9,6 +9,17 @@ import CodeBlock from '@theme/CodeBlock'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ FileUpload }}
+      {...props}
+    >
+      {`<FileUpload allowsMultiple label={'Välj filer att ladda upp'} description={'Du kan välja flera filer!'}/>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'FileUpload'}
   friendlyName={'Filuppladdning'}
@@ -17,9 +28,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Komponent som används när användaren behöver ladda upp filer från det egen filsystemet.
 
-<LiveCodeBlock hideCode scope={{ FileUpload }}>
-  {`<FileUpload allowsMultiple label={'Välj filer att ladda upp'} description={'Du kan välja flera filer!'}/>`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -31,4 +40,4 @@ npm install @midas-ds/components
 import { FileUpload } from '@midas-ds/components'
 ```
 
-
+<Example hideExample />

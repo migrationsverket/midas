@@ -9,12 +9,11 @@ import { Accordion, AccordionItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-export const Example = ({ hideExample, hideCode }) => {
+export const Example = props => {
   return (
     <LiveCodeBlock
-      hideExample={hideExample}
-      hideCode={hideCode}
       scope={{ Accordion, AccordionItem }}
+      {...props}
     >
       {`<Accordion>
         {fruits.shuffled().map(fruit => (

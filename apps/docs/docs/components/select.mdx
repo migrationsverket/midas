@@ -7,6 +7,23 @@ import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Select, Item }}
+      {...props}
+    >
+      {`<Select
+        label="Vad är din favoritfrukt?"
+        placeholder="Välj en frukt"
+        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+      >
+          {(item) => <Item>{item.name}</Item>}
+      </Select>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Select'}
   friendlyName={'Flerval, väljare, dropdown'}
@@ -14,15 +31,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Inmatningsfält som används för att välja exakt ett alternativ.
 
-<LiveCodeBlock hideCode scope={{ Select, Item }}>
-  {`<Select
-    label="Vad är din favoritfrukt?"
-    placeholder="Välj en frukt"
-    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-    {(item) => <Item>{item.name}</Item>}
-</Select>`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -34,10 +43,11 @@ npm install @midas-ds/components
 import { Item, Select } from '@midas-ds/components'
 ```
 
+<Example hideExample />
 
 ## Riktlinjer
 
- Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
+Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
 
 ## API
 

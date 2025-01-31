@@ -13,7 +13,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
 />
 
-Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. 
+Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation.
 
 <GlobalToastRegion />
 <Button
@@ -39,11 +39,9 @@ npm install @midas-ds/components
 import { ToastProvider } from '@midas-ds/components'
 ```
 
-
-
 ## Varianter
 
-Toast har fyra olika varianter: `success`, `info`, `important` och `warning`.
+Toast har fyra olika varianter som matchar InfoBanner: `success`, `info`, `important` och `warning`.
 
 <Flex fluid={true}>
   <FlexItem col={3}>
@@ -112,6 +110,7 @@ import { GlobalToastRegion, toastQueue } from '@midas-ds/components'
 ```
 
 ## Toastkö
+
 Om det triggas flera Toast sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5. Varje gång en toast läggs till i kön går det att bestämma livslängd och prioritering. Prioritet kan sättas till 1, 2 eller 3. `warning` har dock alltid högsta prioritet och kommer därmed först i kön.
 
 ```tsx {3}

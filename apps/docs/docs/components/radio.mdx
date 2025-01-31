@@ -8,6 +8,20 @@ import { Radio, RadioGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ RadioGroup, Radio }}
+      {...props}
+    >
+      {`<RadioGroup label={'Välj din favoritfrukt'} description={'Du kan bara välja en'} defaultValue={fruits[0].value}>
+        {fruits.slice(0,3).map(fruit => (
+          <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+        )))</RadioGroup>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Radio'}
   friendlyName={'Radioknappar'}
@@ -16,14 +30,9 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Inmatningsfält som används för att välja exakt ett alternativ.
 
-<LiveCodeBlock hideCode scope={{ RadioGroup, Radio }}>
-  {`<RadioGroup label={'Välj din favoritfrukt'} description={'Du kan bara välja en'} defaultValue={fruits[0].value}>
-    {fruits.slice(0,3).map(fruit => (
-      <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-    )))</RadioGroup>`}
-</LiveCodeBlock>
+<Example hideCode />
 
-## Installation 
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -32,6 +41,8 @@ npm install @midas-ds/components
 ```tsx
 import { Radio, RadioGroup } from '@midas-ds/components'
 ```
+
+<Example hideExample />
 
 ## Riktlinjer
 

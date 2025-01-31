@@ -145,9 +145,8 @@ const config: Config = {
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
-        height: '100%',
-        width: 'auto',
-        className: 'migNavbarLogo'
+        height: '52px',
+        width: 'auto'
       },
       items: [
         {
@@ -178,8 +177,8 @@ const config: Config = {
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo-white.svg',
-        height: '100%',
-        width: '100px'
+        height: '45px',
+        width: 'auto'
       },
       // links: [
       //   {

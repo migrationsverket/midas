@@ -8,25 +8,34 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { ComboBox, ComboBoxItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ ComboBox, ComboBoxItem }}
+      {...props}
+    >
+      {`<ComboBox
+          label="Vad är din favoritfrukt?"
+          placeholder="Välj en frukt"
+          items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+        >
+          {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      </ComboBox>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Combobox'}
   friendlyName='Flerval med sök, väljare med sök, dropdown med sök'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/ComboBox.html'
 />
 
-En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ. 
+En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ.
 
-<LiveCodeBlock hideCode scope={{ ComboBox, ComboBoxItem }}>
-  {`<ComboBox
-    label="Vad är din favoritfrukt?"
-    placeholder="Välj en frukt"
-    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-</ComboBox>`}
-</LiveCodeBlock>
+<Example hideCode />
 
-## Installation 
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -36,15 +45,14 @@ npm install @midas-ds/components
 import { ComboBox } from '@midas-ds/components'
 ```
 
-
+<Example hideExample />
 
 ## Riktlinjer
 
 ### Val av komponent
 
-- Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) eller [MultiSelect](./multi-select.mdx) som ska användas. 
+- Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) eller [MultiSelect](./multi-select.mdx) som ska användas.
 - Om det är färre alternativ än fyra (4) används med fördel [Radio](./radio.mdx) istället.
-
 
 ## API
 

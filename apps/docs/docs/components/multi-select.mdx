@@ -8,6 +8,21 @@ import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ MultiSelect }}
+      {...props}
+    >
+      {`<MultiSelect
+            label="Vilka är dina favoritfrukter?"
+            description="Välj en eller flera frukter"
+            items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+    />`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'MultiSelect'}
   friendlyName={'Flerval, multiväljare, dropdown'}
@@ -16,13 +31,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Inmatningsfält som tillåter användaren att välja **flera** alternativ från en längre lista.
 
-<LiveCodeBlock hideCode scope={{ MultiSelect }}>
-  {`<MultiSelect
-        label="Vilka är dina favoritfrukter?"
-        description="Om de är små får man ta två"
-        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-/>`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -34,6 +43,7 @@ npm install @midas-ds/components
 import { MultiSelect } from '@midas-ds/components'
 ```
 
+<Example hideExample />
 
 ## Riktlinjer
 

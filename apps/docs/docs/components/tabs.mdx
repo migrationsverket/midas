@@ -8,6 +8,40 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Tabs as MidasTabs, Button } from '@midas-ds/components'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ MidasTabs, Button }}
+      {...props}
+    >
+      {`<MidasTabs
+          defaultSelected="Viktigt att veta"
+          label="Följ processen"
+          tabs={['Frukter', 'Bär', 'Fruktförband av stenfrukter'] as const}
+      >
+          <div>
+              Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+              maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+              Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+          </div>
+          <div>
+              Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
+              nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
+              consequatur nam culpa nesciunt cupiditate autem suscipit.
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+              maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+              Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+          </div>
+      </MidasTabs>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Tabs'}
   friendlyName={'Flikar'}
@@ -15,34 +49,9 @@ import { Tabs as MidasTabs, Button } from '@midas-ds/components'
 
 Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren.
 
-<LiveCodeBlock hideCode scope={{ MidasTabs, Button }}>
-  {`<MidasTabs
-    defaultSelected="Viktigt att veta"
-    label="Följ processen"
-    tabs={['Frukter', 'Bär', 'Fruktförband av stenfrukter'] as const}
->
-    <div>
-        Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-    </div>
-    <div>
-        Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
-        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
-        consequatur nam culpa nesciunt cupiditate autem suscipit.
-    </div>
-    <div>
-       Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-    </div>
-</MidasTabs>`}
-</LiveCodeBlock>
+<Example hideCode />
 
-## Installation 
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -52,6 +61,7 @@ npm install @midas-ds/components
 import { Tabs } from '@midas-ds/components'
 ```
 
+<Example hideExample />
 
 ## API
 

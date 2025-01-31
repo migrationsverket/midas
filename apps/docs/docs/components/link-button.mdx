@@ -9,6 +9,27 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Flex, FlexItem, LinkButton }}
+      {...props}
+    >
+      {`<Flex>
+          <FlexItem col={"auto"}>
+            <LinkButton href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+      </Flex>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'LinkButton'}
   friendlyName={'Länkknapp'}
@@ -17,22 +38,9 @@ import { Plus } from 'lucide-react'
 
 Komponent med samma utseende och beteende som [Button](/components/button) men avsedd att använda som länk internt eller externt i en applikation.
 
+<Example hideCode />
 
-<LiveCodeBlock hideCode scope={{ Flex, FlexItem, LinkButton }}>
-  {`<Flex>
-    <FlexItem col={"auto"}>
-      <LinkButton href="#">Starta tjänst</LinkButton>
-    </FlexItem>
-      <FlexItem col={"auto"}>
-      <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
-    </FlexItem>
-      <FlexItem col={"auto"}>
-      <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
-    </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
-
-## Installation 
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -41,6 +49,8 @@ npm install @midas-ds/components
 ```tsx
 import { LinkButton } from '@midas-ds/components'
 ```
+
+<Example hideExample />
 
 ## Riktlinjer
 

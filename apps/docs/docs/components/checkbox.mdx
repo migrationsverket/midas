@@ -8,6 +8,17 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Checkbox, CheckboxGroup, Flex, FlexItem, Button } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Checkbox }}
+      {...props}
+    >
+      {`<Checkbox>Jag godkänner villkoren</Checkbox>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Checkbox'}
   friendlyName={'Kryssruta'}
@@ -15,10 +26,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ Checkbox }}
->{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -29,6 +37,8 @@ npm install @midas-ds/components
 ```tsx
 import { Checkbox } from '@midas-ds/components'
 ```
+
+<Example hideExample />
 
 ## Varianter
 

@@ -28,8 +28,7 @@ Komponent för att visa viktiga och aktuella meddelanden om händelser eller fö
   <InfoBanner
     type={'info'}
     title={'Kom ihåg att fylla i din semesterplan'}
-    message={'Vi behöver din semesterplan för att kunna gå vidare.'
-    }
+    message={'Vi behöver din semesterplan för att kunna gå vidare.'}
   />
   <InfoBanner
     type={'important'}
@@ -41,7 +40,6 @@ Komponent för att visa viktiga och aktuella meddelanden om händelser eller fö
     title={'Formuläret kunde inte skickas!'}
     message={'Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'}
   />
-
 </MidasTabs>
 
 ## Installation
@@ -104,10 +102,10 @@ import { InfoBanner } from '@midas-ds/components'
 
 ## Dismissable
 
-Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `dismissable`. Det bör inte användas för varningar. 
+Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `dismissable`. Det bör inte användas för varningar.
 
 <LiveCodeBlock scope={{ InfoBanner }}>
- {`<InfoBanner
+  {`<InfoBanner
     dismissable
     type={'success'}
     title={'Det gick bra!'}
@@ -115,8 +113,6 @@ Det går att göra det möjligt för användaren att stänga informationsmeddela
   />
 `}
 </LiveCodeBlock>
-
-
 
 ## API
 

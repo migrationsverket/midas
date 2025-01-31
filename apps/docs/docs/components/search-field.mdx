@@ -8,6 +8,17 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { SearchField } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ SearchField }}
+      {...props}
+    >
+      {`<SearchField placeholder="Sök efter frukter"/>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'SearchField'}
   friendlyName={'Sökfält'}
@@ -15,9 +26,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Inmatningsfält anpassat för sökning.
 
-<LiveCodeBlock hideCode scope={{ SearchField }}>
-  {`<SearchField placeholder="Sök efter frukter"/>`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -29,7 +38,7 @@ npm install @midas-ds/components
 import { SearchField } from '@midas-ds/components'
 ```
 
-
+<Example hideExample />
 
 ## API
 
