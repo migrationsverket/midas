@@ -173,13 +173,13 @@ const config: Config = {
       ]
     },
     footer: {
-      style: 'dark',
-      logo: {
-        alt: 'Migrationsverket Logotyp',
-        src: 'img/mig-logo-white.svg',
-        height: '45px',
-        width: 'auto'
-      },
+      style: 'dark'
+      // logo: {
+      //   alt: 'Migrationsverket Logotyp',
+      //   src: 'img/mig-logo-white.svg',
+      //   height: '45px',
+      //   width: 'auto'
+      // },
       // links: [
       //   {
       //     title: 'Dokumentation',
@@ -229,7 +229,7 @@ const config: Config = {
       //     ]
       //   }
       // ],
-      copyright: 'Migrationsverkets designsystem - Midas'
+      // copyright: 'Migrationsverkets designsystem - Midas'
     },
     colorMode: {
       defaultMode: 'light',
