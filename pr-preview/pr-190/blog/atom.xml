@@ -8,7 +8,7 @@
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
     <icon>https://designsystem.migrationsverket.se/pr-preview/pr-190/img/favicon.ico?v=3</icon>
     <entry>
-        <title type="html"><![CDATA[Release 19 (v1.0.4)]]></title>
+        <title type="html"><![CDATA[Release 19 (v1.1.0)]]></title>
         <id>https://designsystem.migrationsverket.se/pr-preview/pr-190/blog/release-19/</id>
         <link href="https://designsystem.migrationsverket.se/pr-preview/pr-190/blog/release-19/"/>
         <updated>2025-01-31T09:11:58.000Z</updated>
@@ -49,7 +49,7 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="uppdatering-av-docwebben">Uppdatering av DocWebben<a href="https://designsystem.migrationsverket.se/pr-preview/pr-190/blog/release-19/#uppdatering-av-docwebben" class="hash-link" aria-label="Direktlänk till Uppdatering av DocWebben" title="Direktlänk till Uppdatering av DocWebben">​</a></h2>
 <p>Här på DocWebben har vi flyttat om saker samt skapat en ny startsida. Varje komponentsida har en ny tydligare struktur samt API-tabeller. Flertalet sidor har också gjorts om och slagits ihop för en enklare navigering.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="releaseversioner">Releaseversioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-190/blog/release-19/#releaseversioner" class="hash-link" aria-label="Direktlänk till Releaseversioner" title="Direktlänk till Releaseversioner">​</a></h2>
-<p>I och med att vi går över till ett paket så kommer vi endast ha ett versionsnummer att hålla koll på. Framöver kommer dessa releasenotes följa den strukturen. Senaste release är alltså egentligen v1.0.4.</p>]]></content>
+<p>I och med att vi går över till ett paket så kommer vi endast ha ett versionsnummer att hålla koll på. Framöver kommer dessa releasenotes följa den strukturen. Senaste release är alltså egentligen v1.1.0.</p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 18]]></title>

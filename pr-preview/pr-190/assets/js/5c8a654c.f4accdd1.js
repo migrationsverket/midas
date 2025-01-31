@@ -25,7 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const frontMatter = {
-	title: 'Release 19 (v1.0.4)',
+	title: 'Release 19 (v1.1.0)',
 	description: 'I och med release 19 går vi över till ett komponentpaket.',
 	slug: 'release-19',
 	pagination_prev: null,
@@ -187,7 +187,7 @@ function _createMdxContent(props) {
       id: "releaseversioner",
       children: "Releaseversioner"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "I och med att vi går över till ett paket så kommer vi endast ha ett versionsnummer att hålla koll på. Framöver kommer dessa releasenotes följa den strukturen. Senaste release är alltså egentligen v1.0.4."
+      children: "I och med att vi går över till ett paket så kommer vi endast ha ett versionsnummer att hålla koll på. Framöver kommer dessa releasenotes följa den strukturen. Senaste release är alltså egentligen v1.1.0."
     })]
   });
 }
@@ -267,7 +267,7 @@ const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 /***/ 70328:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-190/blog/release-19","source":"@site/blog/release19.mdx","title":"Release 19 (v1.0.4)","description":"I och med release 19 går vi över till ett komponentpaket.","date":"2025-01-31T09:11:58.000Z","tags":[],"readingTime":2.09,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 19 (v1.0.4)","description":"I och med release 19 går vi över till ett komponentpaket.","slug":"release-19","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 18","permalink":"/pr-preview/pr-190/blog/release-18"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-190/blog/release-19","source":"@site/blog/release19.mdx","title":"Release 19 (v1.1.0)","description":"I och med release 19 går vi över till ett komponentpaket.","date":"2025-01-31T09:11:58.000Z","tags":[],"readingTime":2.09,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 19 (v1.1.0)","description":"I och med release 19 går vi över till ett komponentpaket.","slug":"release-19","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 18","permalink":"/pr-preview/pr-190/blog/release-18"}}');
 
 /***/ })
 
