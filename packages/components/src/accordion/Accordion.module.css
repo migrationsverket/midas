@@ -29,6 +29,8 @@
   padding: 0;
   font-size: 1rem;
   font-weight: regularWeight;
+  flex: 1 0 0%;
+  text-align: left;
 }
 
 .trigger {
