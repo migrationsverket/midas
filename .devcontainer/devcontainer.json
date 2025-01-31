@@ -1,0 +1,33 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install && npm install -g nx",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "nx serve docs"
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "DocWeb",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "dbaeumer.vscode-eslint",
+        "unifiedjs.vscode-mdx",
+        "nrwl.angular-console",
+        "esbenp.prettier-vscode",
+        "clinyong.vscode-css-modules",
+        "stylelint.vscode-stylelint",
+        "andrewleedham.vscode-css-modules"
+      ]
+    }
+  }
+}
