@@ -206,7 +206,7 @@ var _excluded=["primary","size","background","padding"];var Logo=function Logo(_
 /***/ 88783:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-218/blog/release-18","source":"@site/blog/release18.mdx","title":"Release 18","description":".","date":"2025-01-16T10:48:42.000Z","tags":[],"readingTime":0.98,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 18","description":".","slug":"release-18","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Ett komponentpaket","permalink":"/pr-preview/pr-218/blog/one-package"},"nextItem":{"title":"Release 17","permalink":"/pr-preview/pr-218/blog/release-17"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-218/blog/release-18","source":"@site/blog/release18.mdx","title":"Release 18","description":".","date":"2025-01-16T10:48:42.000Z","tags":[],"readingTime":0.98,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 18","description":".","slug":"release-18","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 19 (v1.0.4)","permalink":"/pr-preview/pr-218/blog/release-19"},"nextItem":{"title":"Release 17","permalink":"/pr-preview/pr-218/blog/release-17"}}');
 
 /***/ })
 

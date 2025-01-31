@@ -171,7 +171,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@midas-ds/components'\n"
+        children: "import { Accordion, AccordionItem } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideExample: true
