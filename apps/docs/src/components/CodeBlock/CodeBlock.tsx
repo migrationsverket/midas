@@ -4,12 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import styles from './styles.module.css'
 import { fruits } from '../examples/fruits'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger
-} from '@midas-ds/accordion'
+import { Accordion, AccordionItem } from '@midas-ds/components'
 import clsx from 'clsx'
 
 declare global {
@@ -36,7 +31,13 @@ const rows = fruits.shuffled(7).map(fruit => {
   }
 })
 
-const Playground = ({ children, transformCode, hideCode, ...props }) => {
+const Playground = ({
+  children,
+  transformCode,
+  hideCode,
+  hideExample,
+  ...props
+}) => {
   const theme = usePrismTheme()
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
@@ -50,10 +51,12 @@ const Playground = ({ children, transformCode, hideCode, ...props }) => {
       {...props}
       scope={scope}
     >
-      <div className={styles.playgroundPreview}>
-        <LivePreview />
-        <LiveError />
-      </div>
+      {!hideExample && (
+        <div className={styles.playgroundPreview}>
+          <LivePreview />
+          <LiveError />
+        </div>
+      )}
       <div
         className={clsx(
           styles.playgroundEditor,
@@ -61,15 +64,12 @@ const Playground = ({ children, transformCode, hideCode, ...props }) => {
         )}
       >
         {!hideCode && (
-          <Accordion
-            headingTag='h3'
-            type='multiple'
-          >
-            <AccordionItem value='example'>
-              <AccordionTrigger>Exempelkod</AccordionTrigger>
-              <AccordionContent>
-                <LiveEditor />
-              </AccordionContent>
+          <Accordion>
+            <AccordionItem
+              id='example'
+              title='Exempelkod'
+            >
+              <LiveEditor />
             </AccordionItem>
           </Accordion>
         )}

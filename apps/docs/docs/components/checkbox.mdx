@@ -5,31 +5,45 @@ description: Används för att låta användaren välja inget, ett eller flera a
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Checkbox, CheckboxGroup } from '@midas-ds/checkbox'
+import { Checkbox, CheckboxGroup, Flex, FlexItem, Button } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Flex, FlexItem } from '@midas-ds/flex'
-import { Button } from '@midas-ds/button'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Checkbox }}
+      {...props}
+    >
+      {`<Checkbox>Jag godkänner villkoren</Checkbox>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Checkbox'}
   friendlyName={'Kryssruta'}
 />
 
-Kryssrutor används för att låta användaren välja inget, ett eller flera alternativ. Om det är många alternativ så bör [MultiSelect](./multi-select.mdx) användas istället.
+Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/checkbox
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Checkbox } from '@midas-ds/checkbox'
-;<Checkbox>Jag godkänner villkoren</Checkbox>
+import { Checkbox } from '@midas-ds/components'
 ```
 
+<Example hideExample />
+
+## Varianter
+
 <LiveCodeBlock scope={{ Checkbox, Flex, FlexItem, Button }}>
-  {`<Flex>
+  {`<Flex fluid>
     <FlexItem style={{alignSelf: 'center'}}>
       <Checkbox>Jag godkänner villkoren</Checkbox>
     </FlexItem>
@@ -44,80 +58,33 @@ import { Checkbox } from '@midas-ds/checkbox'
 </Flex>`}
 </LiveCodeBlock>
 
-### Gruppera flera checkboxar
+### Ensam checkbox
+
+<LiveCodeBlock scope={{ Checkbox }}>{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
+
+### Flera checkboxar
 
 Använd `<CheckboxGroup>` för att gruppera flera checkboxar som hör samman.
 
 <LiveCodeBlock scope={{ Checkbox, CheckboxGroup }}>
   {`<CheckboxGroup
-        label='Etikett'
-        description='Beskrivande text'
+        label='Godkänner du våra villkor?'
+        description='Läs texten först'
       >
         <Checkbox value='1'>Jag har läst texten</Checkbox>
         <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
-        <Checkbox value='3'>Jag är över 20 år gammal</Checkbox>
     </CheckboxGroup>
 `}
 </LiveCodeBlock>
 
-### Etikett och beskrivning
+## Välj alla
 
-Etikett för enskild checkbox sätts i template via `<Checkbox>Etikett</Checkbox>`. `<CheckboxGroup>` har en `label` och en `desciption` för ytterligare förklarande text.
-
-### Disabled
-
-När en kryssruta inte är tillämplig i den aktuella situationen ska kryssruta och fältetikett tonas ned via attributet `isDisabled` men inte tas bort.
-
-<LiveCodeBlock scope={{ Checkbox }}>
-  {`<Checkbox
-        isDisabled
-        isSelected
-      >
-        Jag har läst texten
-    </Checkbox>
-`}
-</LiveCodeBlock>
-
-### Validering
-
-Används prop `isInvalid` och implementera lämplig logik för att hantera fel och felmeddelanden. Se [React Aria](https://react-spectrum.adobe.com/react-aria/CheckboxGroup.html#validation)
-för ytterligare referens.
+Ibland kan det vara lämligt att ge användaren möjlighet att snabbt kryssa i alla kryssrutor. Denna funktion finns inbyggt i `<CheckboxGroup>` via egenskapen `showSelectAll`. Om detta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
 
 <LiveCodeBlock scope={{ Checkbox, CheckboxGroup }}>
   {`<CheckboxGroup
-      label="Bekräfta att du är med på tåget"
-      errorMessage="Det här ser inte bra ut!"
-      isInvalid
-    >
-      <Checkbox
-        value="1"
-        isRequired
-      >
-        Jag har läst texten
-      </Checkbox>
-      <Checkbox
-        value="2"
-        isRequired
-      >
-        Jag godkänner villkoren
-      </Checkbox>
-  </CheckboxGroup>
-`}
-</LiveCodeBlock>
-
-### Readonly och defaultSelected
-
-Sätt prop `isReadonly` när användaren inte ska kunna påverka checkboxens tillstånd. `defaultSelected` sätter checkboxen i ett
-valt läge.
-
-### Välj alla
-
-Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". Denna funktion finns inbyggt i `<CheckboxGroup />` via egenskapen: showSelectAll
-
-<LiveCodeBlock scope={{ Checkbox, CheckboxGroup }}>
-  {`<CheckboxGroup
-    label={'Välj en frukt'}
-    description={'Välj alla eller bara några'}
+    label={'Godkänner du våra villkor'}
+    description={'Läs texten först'}
     showSelectAll
     >
       <Checkbox
@@ -138,36 +105,8 @@ Ibland kan det vara lämligt att inkludera en checkbox för att "Välja alla". D
 
 ## Riktlinjer
 
-### Val av komponent
-
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]:::primary
-  A ---> C[2 - 4]:::primary
-  A ---> D[5 - 10]
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]:::primary
-  C ---> G[Hur många val kan göras?]:::primary
-  G --->|Flera| F:::primary
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]
-  I --->|Flera| J[Använd MultiSelect]
-  I --->|Ett| K[Använd Select]
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
-
+- Om det är många alternativ så bör [MultiSelect](./multi-select.mdx) användas istället.
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
-
-- Om flera kryssrutor är placerade under varandra, kan det ibland vara lämpligt att användaren kan markera alla kryssrutor
-  genom att klicka i det översta alternativet, ”Alla”, som är placerat direkt ovanför de ordinarie kryssrutorna.
-  Rutan ska vara avmarkerad tills användaren klickar i den och då ska alla följande rutor och eventuella subrutor markeras.
-  Om användaren väljer att avmarkera en post så ska kryssrutan avmarkeras.
-
-- Om ”Markera alla”-kryssruta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
-
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 
 ## API

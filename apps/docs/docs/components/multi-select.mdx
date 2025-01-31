@@ -1,11 +1,27 @@
 ---
 title: MultiSelect
+description: MultiSelect är en typ av inmatningsfält som tillåter användaren att välja flera alternativ från en längre lista.
 ---
 
-import { MultiSelect } from '@midas-ds/multi-select'
+import { MultiSelect } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ MultiSelect }}
+      {...props}
+    >
+      {`<MultiSelect
+            label="Vilka är dina favoritfrukter?"
+            description="Välj en eller flera frukter"
+            items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+    />`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'MultiSelect'}
@@ -13,44 +29,28 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink=''
 />
 
-MultiSelect är en typ av inmatningsfält som används för att välja **ett eller flera** alternativ från en längre lista. Om det är endast är ett fåtal alternativ bör [Checkbox](./checkbox.mdx) användas istället.
+Inmatningsfält som tillåter användaren att välja **flera** alternativ från en längre lista.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/select
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { MultiSelect } from '@midas-ds/multi-select'
+import { MultiSelect } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ MultiSelect }}>
-  {`<MultiSelect
-        label="Vad är din favoritfrukt?"
-        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-/>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Riktlinjer
 
-### Val av komponent
+- Om det finns mer än 11 alternativ, överväg att använda en [ComboBox](./combobox.mdx) för
+  att göra det lättare att söka fram alternativen.
+- Om det är endast är ett fåtal alternativ bör [Checkbox](./checkbox.mdx) användas istället.
 
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]
-  A ---> C[2 - 4]
-  A ---> D[5 - 10]:::primary
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]
-  C ---> G[Hur många val kan göras?]
-  G --->|Flera| F
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]:::primary
-  I --->|Flera| J[Använd MultiSelect]:::primary
-  I --->|Ett| K[Använd Select]
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
+## API
+
+<PropTable name={'MultiSelect'} />

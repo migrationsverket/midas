@@ -5,25 +5,57 @@ description: En enkel tabell för att visualisera data.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/table'
+import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}
+      {...props}
+    >
+      {`<Table
+            aria-label="Frukter"
+        >
+            <TableHeader columns={columns}>
+                {(column) => (
+                    <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+                )}
+            </TableHeader>
+            <TableBody items={rows}>
+                {(item) => (
+                    <Row columns={columns}>
+                        {(column) => <Cell>{item[column.id]}</Cell>}
+                    </Row>
+                )}
+            </TableBody>
+        </Table>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Table'}
   friendlyName={'Tabell'}
 />
 
-En enkel tabell för att visualisera data. Går att kombinera med andra komponenter som till exemepel `Select` för att filtrera eller liknande.
+Komponent för att visualisera data. Går att kombinera med andra komponenter, till exemepel `Select`, för att filtrera eller liknande.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/table
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Table } from '@midas-ds/table'
+import { Table } from '@midas-ds/components'
 ```
+
+<Example hideExample />
+
+## Varianter
 
 För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas `id`.
 
@@ -41,6 +73,8 @@ const rows = fruits.map(fruit => {
   }
 })
 ```
+
+### Standardtabell
 
 <LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
   {`<Table
@@ -61,7 +95,32 @@ const rows = fruits.map(fruit => {
 </Table>`}
 </LiveCodeBlock>
 
-### Väljbara rader
+### Kompakt tabell
+
+Använd `narrow` om du vill ha en kompaktare tabell.
+
+<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
+  {`<Table
+    narrow
+    aria-label="Frukter"
+    selectionMode="multiple"
+>
+    <TableHeader columns={columns}>
+        {(column) => (
+            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+        )}
+    </TableHeader>
+    <TableBody items={rows}>
+        {(item) => (
+            <Row columns={columns}>
+                {(column) => <Cell>{item[column.id]}</Cell>}
+            </Row>
+        )}
+    </TableBody>
+</Table>`}
+</LiveCodeBlock>
+
+### Valbara rader
 
 Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`
 
@@ -85,34 +144,9 @@ Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `se
 </Table>`}
 </LiveCodeBlock>
 
-### Smalare rader
-
-Använd `narrow` om du vill ha en mindre tabell.
-
-<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
-  {`<Table
-    narrow
-    aria-label="Frukter"
-    selectionMode="multiple"
->
-    <TableHeader columns={columns}>
-        {(column) => (
-            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-        )}
-    </TableHeader>
-    <TableBody items={rows}>
-        {(item) => (
-            <Row columns={columns}>
-                {(column) => <Cell>{item[column.id]}</Cell>}
-            </Row>
-        )}
-    </TableBody>
-</Table>`}
-</LiveCodeBlock>
-
 ### Randiga rader
 
-Använd `striped` om du vill ha en randig tabell.
+Använd `striped` om du vill att raderna ska alternera mellan vit och grå.
 
 <LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
   {`<Table

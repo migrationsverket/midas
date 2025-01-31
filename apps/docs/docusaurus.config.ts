@@ -50,7 +50,17 @@ const config: Config = {
       {
         global: true,
         src: Object.values(packageAliases),
-        parserOptions: {},// see https://github.com/atomicpages/docusaurus-plugin-react-docgen-typescript for options
+        parserOptions: {
+          // prop table gets a bit crowded if we allow everything
+          propFilter: (prop, component) => {
+            if (prop.parent) {
+              return !prop.parent.fileName.includes('@types/react')
+            }
+            return true
+          },
+          savePropValueAsString: true,
+          shouldExtractLiteralValuesFromEnum: false
+        }
       }
     ],
     [
@@ -124,25 +134,24 @@ const config: Config = {
   ],
 
   themeConfig: {
-    announcementBar: {
-      id: 'open_source',
-      content:
-        'Midas har nu öppen källkod. <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
-      isCloseable: false,
-      backgroundColor: '#eaf2f6'
-    },
+    // announcementBar: {
+    //   id: 'open_source',
+    //   content:
+    //     'Midas har nu öppen källkod. <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
+    //   isCloseable: false,
+    //   backgroundColor: '#eaf2f6'
+    // },
     navbar: {
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
-        height: '100%',
-        width: 'auto',
-        className: 'migNavbarLogo'
+        height: '52px',
+        width: 'auto'
       },
       items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'get-started',
           position: 'left',
           label: 'Dokumentation'
         },
@@ -150,11 +159,6 @@ const config: Config = {
           to: '/blog',
           position: 'left',
           label: 'Nyheter'
-        },
-        {
-          to: '/about',
-          position: 'left',
-          label: 'Om'
         },
         {
           to: latestReleasePath,
@@ -169,13 +173,13 @@ const config: Config = {
       ]
     },
     footer: {
-      style: 'dark',
-      logo: {
-        alt: 'Migrationsverket Logotyp',
-        src: 'img/mig-logo-white.svg',
-        height: '100%',
-        width: '100px'
-      },
+      style: 'dark'
+      // logo: {
+      //   alt: 'Migrationsverket Logotyp',
+      //   src: 'img/mig-logo-white.svg',
+      //   height: '45px',
+      //   width: 'auto'
+      // },
       // links: [
       //   {
       //     title: 'Dokumentation',
@@ -225,7 +229,7 @@ const config: Config = {
       //     ]
       //   }
       // ],
-      copyright: 'Migrationsverkets designsystem - Midas'
+      // copyright: 'Migrationsverkets designsystem - Midas'
     },
     colorMode: {
       defaultMode: 'light',

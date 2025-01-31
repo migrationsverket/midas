@@ -2,60 +2,52 @@
 title: Select
 ---
 
-import { Select, Item } from '@midas-ds/select'
+import { Select, Item } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Select, Item }}
+      {...props}
+    >
+      {`<Select
+        label="Vad är din favoritfrukt?"
+        placeholder="Välj en frukt"
+        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+      >
+          {(item) => <Item>{item.name}</Item>}
+      </Select>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Select'}
   friendlyName={'Flerval, väljare, dropdown'}
 />
 
-Select är en typ av inmatningsfält som används för att välja **ett** alternativ från en uppsättning av flera alternativ. Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
+Inmatningsfält som används för att välja exakt ett alternativ.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/select
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Item, Select } from '@midas-ds/select'
+import { Item, Select } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Select, Item }}>
-  {`<Select
-    label="Vad är din favoritfrukt?"
-    placeholder="Välj en frukt"
-    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-    {(item) => <Item>{item.name}</Item>}
-</Select>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Riktlinjer
 
-### Val av komponent
-
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]
-  A ---> C[2 - 4]
-  A ---> D[5 - 10]:::primary
-  A ---> E[11 +]
-  B ---> F[Använd Checkbox]
-  C ---> G[Hur många val kan göras?]
-  G --->|Flera| F
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]:::primary
-  I --->|Flera| J[Använd MultiSelect]
-  I --->|Ett| K[Använd Select]:::primary
-  E ---> L[Hur många val kan göras?]
-  L -.Flera.-> M[Använd ComboBox multiple]
-  L --->|Ett| N[Använd ComboBox]
-```
+Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
 
 ## API
 

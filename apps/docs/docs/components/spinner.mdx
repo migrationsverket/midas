@@ -5,9 +5,19 @@ description: Upplys användaren om att systemet/tjänsten laddar
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Spinner } from '@midas-ds/spinner'
-import { Button } from '@midas-ds/button'
+import { Spinner, Button } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Spinner }}
+      {...props}
+    >
+      {`<Spinner />`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Spinner'}
@@ -15,23 +25,31 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink=''
 />
 
-Komponenten används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden.
+Komponent som används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/spinner
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Spinner } from '@midas-ds/spinner'
+import { Spinner } from '@midas-ds/components'
 ```
+
+<Example hideExample />
+
+## Varianter
+
+### Fristående spinner
 
 <LiveCodeBlock scope={{ Spinner }}>{`<Spinner />`}</LiveCodeBlock>
 
-### Kombinerat med andra komponenter
+### Kombinerad med andra komponenter
 
-Använd varianten small för att kombinera med andra komponenter t.ex Button
+Använd varianten `small` för att kombinera med andra komponenter t.ex. Button
 
 <LiveCodeBlock scope={{ Spinner, Button }}>
   {`<Button>

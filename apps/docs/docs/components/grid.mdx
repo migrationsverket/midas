@@ -5,9 +5,42 @@ description: Grid baserat på tekniken display grid i css
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Grid, GridItem } from '../../../../packages/grid/src'
-import { Card } from '../../../../packages/card/src'
+import { Grid, GridItem, Card } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Grid, GridItem, Card }}
+      {...props}
+    >
+      {`<Grid>
+            <GridItem col={12}>
+                <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{children: 'Länk', href: '#'}} />
+            </GridItem>
+            <GridItem col={3}>
+                <Card title={'col=3'} content={'Som är i tre kolumner'} link={{children: 'Länk', href: '#'}} />
+            </GridItem>
+            <GridItem col={4}>
+                <Card title={'col=4'} content={'Som är i fyra kolumner'} link={{children: 'Länk', href: '#'}} />
+            </GridItem>
+            <GridItem col={5}>
+                <Card title={'col=5'} content={'Som är i fem kolumner'} link={{children: 'Länk', href: '#'}} />
+            </GridItem>
+            <GridItem col={4}>
+                <Card title={'col=4'} content={'Som är i fyra kolumner'} link={{children: 'Länk', href: '#'}} />
+            </GridItem>
+            <GridItem col={4}>
+                <Card title={'col=4'} content={'Som är i fyra kolumner'} link={{children: 'Länk', href: '#'}} />
+            </GridItem>
+            <GridItem col={4}>
+                <Card title={'col=4'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
+            </GridItem>
+        </Grid>
+        `}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Grid'}
@@ -19,44 +52,21 @@ Grid baserat på tekniken `display: grid;` i css. Grid är både en container f�
 
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/grid
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Grid } from '@midas-ds/grid'
+import { Grid } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Grid, GridItem, Card }}>
-  {`<Grid>
-    <GridItem col={12}>
-        <h2>Rubrik</h2>
-    </GridItem>
-    <GridItem col={3}>
-        <Card title={'Ett kort'} content={'Som är i tre kolumner'} link={{title: 'Länk', href: '#'}} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-    </GridItem>
-    <GridItem col={5}>
-        <Card title={'Ett kort'} content={'Som är i fem kolumner'} link={{title: 'Länk', href: '#'}} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-    </GridItem>
-    <GridItem col={4}>
-        <Card title={'Ett kort'} content={'Som är i fyra kolumner'} link={{title: 'Länk', href: '#'}} />
-    </GridItem>
-</Grid>
-`}
-</LiveCodeBlock>
+<Example hideExample />
 
-### Grid
+## Grid
 
 Grids skalas enligt följande specifikation.
 

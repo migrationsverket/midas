@@ -4,10 +4,8 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { GlobalToastRegion, toastQueue } from '../../../../packages/toast/src'
-import { Button } from '../../../../packages/button/src'
+import { GlobalToastRegion, toastQueue, Button, Flex, FlexItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Flex, FlexItem } from '../../../../packages/flex/src'
 
 <ComponentHeader
   name={'Toast'}
@@ -15,27 +13,7 @@ import { Flex, FlexItem } from '../../../../packages/flex/src'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
 />
 
-En notifiering är ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation. De är utformade för att vara diskreta och inte kräva att användaren stänger dem omedelbart.
-
-Notifieringarna sätts i en kö för att visas i turordning. Maximala antalet är för närvarande satt till 5. En notifiering kan stängas via kryssrutan
-eller via en timeout. Det går även att sätta en prioritet på meddelanden relativt andra i kön. Notifieringar renderas i en`<ToastRegion>`.
-
-## Installation och användning
-
-```bash npm2yarn
-npm install @midas-ds/toast
-```
-
-```tsx
-import { ToastProvider } from '@midas-ds/toast'
-;<ToastProvider>
-  {state => (
-    <Button onPress={() => state.add({ message: 'Allt funkar som det ska!', type: 'success' }, { timeout: 5000 })}>
-      Tryck här för en notifiering
-    </Button>
-  )}
-</ToastProvider>
-```
+Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation.
 
 <GlobalToastRegion />
 <Button
@@ -51,9 +29,19 @@ import { ToastProvider } from '@midas-ds/toast'
   {'Tryck här för en notifiering'}
 </Button>
 
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { ToastProvider } from '@midas-ds/components'
+```
+
 ## Varianter
 
-En toast har fyra olika varianter, `success`, `info`, `warning`, `important`. Använd lämplig typ beroende på vilken information som ska visas. Här har även varningsnotisen högsta prioritet vilket gör att den alltid går före i kön.
+Toast har fyra olika varianter som matchar InfoBanner: `success`, `info`, `important` och `warning`.
 
 <Flex fluid={true}>
   <FlexItem col={3}>
@@ -112,7 +100,7 @@ Välj en global kö för toasts om det passar ditt användsningsscenario bättre
 och lägg nya toasts i kön enligt:
 
 ```tsx
-import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
+import { GlobalToastRegion, toastQueue } from '@midas-ds/components'
 
 <GlobalToastRegion />
 //...
@@ -121,9 +109,9 @@ import { GlobalToastRegion, toastQueue } from '@midas-ds/toast';
 }>Visa notis</Button>
 ```
 
-## Notiskön
+## Toastkö
 
-Varje gång en toast läggs till i kön går det att bestämma livslängs och prioritering för notisen. Prioritet kan sättas till 1, 2 eller 3 och notiserna kommer gå före i kön beroende på detta.
+Om det triggas flera Toast sätts de i en kö för att visas i turordning. Maximala antalet som visas samtidigt är 5. Varje gång en toast läggs till i kön går det att bestämma livslängd och prioritering. Prioritet kan sättas till 1, 2 eller 3. `warning` har dock alltid högsta prioritet och kommer därmed först i kön.
 
 ```tsx {3}
 .add(

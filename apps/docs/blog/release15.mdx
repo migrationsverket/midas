@@ -5,13 +5,13 @@ slug: release-15
 ---
 
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { MultiSelect } from '@midas-ds/multi-select'
-import { LinkButton } from '@midas-ds/link-button'
-import { Flex, FlexItem } from '@midas-ds/flex'
-import { Link } from '@midas-ds/link'
+import { MultiSelect } from '@midas-ds/components'
+import { LinkButton } from '@midas-ds/components'
+import { Flex, FlexItem } from '@midas-ds/components'
+import { Link } from '@midas-ds/components'
 import { Heading } from 'react-aria-components'
 import { Plus } from 'lucide-react'
-import { baseColors } from '@midas-ds/theme'
+import { baseColors } from '@midas-ds/components'
 
 Nedan är en sammanfattning av nyheterna i release 15.
 
@@ -50,8 +50,8 @@ Fristående länk används när länken ligger utanför ett textstycke.
 <LiveCodeBlock scope={{ Link }}>
   {`<>
     <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
-    <Link 
-        standalone 
+    <Link
+        standalone
         href="/blog"
     >
         Läs mer om designsystemets nyheter
@@ -64,7 +64,7 @@ Fristående länk används när länken ligger utanför ett textstycke.
 Utsträckt länk används för att göra hela föräldraelementet klickbart.
 
 <LiveCodeBlock scope={{ Link, baseColors }}>
-  {`<div 
+  {`<div
       style={{
         position: 'relative',
         background: baseColors.gray10,
@@ -72,8 +72,8 @@ Utsträckt länk används för att göra hela föräldraelementet klickbart.
       }}
     >
     <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
-    <Link 
-        standalone 
+    <Link
+        standalone
         stretched
         href="/blog"
     >

@@ -1,0 +1,51 @@
+@value tokens: "../theme/tokens.css";
+@value display, black, signalRed130, smBreakpoint, gray50, gray30, gray20, gray10, backgroundSecondary from tokens;
+
+.button {
+  min-height: unset;
+  padding: 0.25rem !important;
+  border-radius: 1.5rem;
+
+  &[data-pressed] {
+    background-color: gray30;
+  }
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 1.25rem;
+  background-color: gray10;
+  font-size: 0.875rem;
+  font-family: display;
+
+  &[data-disabled] {
+    color: gray50;
+    pointer-events: none;
+    background-color: gray10;
+    border-color: gray50;
+  }
+
+  &[data-focused],
+  &[data-focus-visible] {
+    outline: none;
+  }
+
+  &.dismissable {
+    &[data-focus-visible] {
+      outline-offset: 2px;
+      outline: 2px solid black;
+    }
+  }
+}
+
+.tagText {
+  line-height: 1.15;
+  padding: 0.25rem 0.75rem 0.25rem 0.5rem;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}

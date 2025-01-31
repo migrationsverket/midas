@@ -5,8 +5,25 @@ description: Sökbar version av Select
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ComboBox, ComboBoxItem } from '@midas-ds/combobox'
+import { ComboBox, ComboBoxItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ ComboBox, ComboBoxItem }}
+      {...props}
+    >
+      {`<ComboBox
+          label="Vad är din favoritfrukt?"
+          placeholder="Välj en frukt"
+          items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+        >
+          {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      </ComboBox>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Combobox'}
@@ -14,52 +31,28 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/ComboBox.html'
 />
 
-En ComboBox (kombination av Select och TextField) visar en hopfällbar lista med alternativ och låter en användare söka bland dem och välja ett av dem.
+En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ.
 
-ComboBox är en typ av inmatningsfält som används för att välja **ett** alternativ av fler än fyra (4) av flera alternativ. Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) som ska användas Om det är fler alternativ än färre än fyra (4) används med fördel [Radio](./radio.mdx) istället.
+<Example hideCode />
 
-## Installation och användning
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/combobox
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { ComboBox } from '@midas-ds/combobox'
+import { ComboBox } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ ComboBox, ComboBoxItem }}>
-  {`<ComboBox
-    label="Vad är din favoritfrukt?"
-    placeholder="Välj en frukt"
-    items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-    {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-</ComboBox>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Riktlinjer
 
 ### Val av komponent
 
-```mermaid
-flowchart TD;
-  A[Hur många val ska presenteras för användaren?]:::primary
-  A ---> B[1]
-  A ---> C[2 - 4]
-  A ---> D[5 - 10]
-  A ---> E[11 +]:::primary
-  B ---> F[Använd Checkbox]
-  C ---> G[Hur många val kan göras?]
-  G --->|Flera| F
-  G --->|Ett| H[Använd Radio]
-  D ---> I[Hur många val kan göras?]
-  I --->|Flera| J[Använd MultiSelect]
-  I --->|Ett| K[Använd Select]
-  E ---> L[Hur många val kan göras?]:::primary
-  L -.Flera.-> M[Använd ComboBox multiple]:::primary
-  L --->|Ett| N[Använd ComboBox]:::primary
-```
+- Om det ska gå att välja flera eller inget alternativ är det [Checkbox](./checkbox.mdx) eller [MultiSelect](./multi-select.mdx) som ska användas.
+- Om det är färre alternativ än fyra (4) används med fördel [Radio](./radio.mdx) istället.
 
 ## API
 

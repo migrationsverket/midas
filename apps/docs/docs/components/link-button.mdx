@@ -4,11 +4,31 @@ description: Komponent med samma utseende och beteende som knapp men avsedd att 
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { LinkButton } from '@midas-ds/link-button'
-import { Flex, FlexItem } from '@midas-ds/flex'
+import { LinkButton, Flex, FlexItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Flex, FlexItem, LinkButton }}
+      {...props}
+    >
+      {`<Flex>
+          <FlexItem col={"auto"}>
+            <LinkButton href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+      </Flex>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'LinkButton'}
@@ -16,25 +36,21 @@ import { Plus } from 'lucide-react'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Link.html'
 />
 
-Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.
+Komponent med samma utseende och beteende som [Button](/components/button) men avsedd att använda som länk internt eller externt i en applikation.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/link-button
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { LinkButton } from '@midas-ds/link-button'
+import { LinkButton } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Flex, FlexItem, LinkButton }}>
-  {`<Flex>
-    <FlexItem col={12}>
-      <LinkButton href="#">Starta tjänst</LinkButton>
-    </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Riktlinjer
 

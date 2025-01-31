@@ -4,10 +4,21 @@ description: Filuppladdning används när användaren behöver ladda upp en elle
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { FileUpload } from '@midas-ds/file-upload'
+import { FileUpload } from '@midas-ds/components'
 import CodeBlock from '@theme/CodeBlock'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ FileUpload }}
+      {...props}
+    >
+      {`<FileUpload allowsMultiple label={'Välj filer att ladda upp'} description={'Du kan välja flera filer!'}/>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'FileUpload'}
@@ -15,18 +26,18 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
 />
 
-Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.
+Komponent som används när användaren behöver ladda upp filer från det egen filsystemet.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/fileupload
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { FileUpload } from '@midas-ds/fileupload'
+import { FileUpload } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ FileUpload }}>
-  {`<FileUpload allowsMultiple label={'Etikett'} description={'Beskrivning'}/>`}
-</LiveCodeBlock>
+<Example hideExample />

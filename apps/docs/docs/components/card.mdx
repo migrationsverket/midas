@@ -4,10 +4,32 @@ description: En card-komponent är en modulär enhet som används för att prese
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Grid, GridItem } from '@midas-ds/grid'
+import { Grid, GridItem, Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Card } from '@midas-ds/card'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Grid, GridItem, Card }}
+      {...props}
+    >
+      {`<Grid fluid>
+        {fruits.shuffled(3).map(fruit => (
+          <GridItem col={4} key={fruit.value}>
+            <Card
+              title={fruit.name}
+              content={fruit.description}
+              image={{ source: fruit.image, description: fruit.description }}
+              link={{href: '#', children: 'Läs mer om denna frukt'}}
+              headingTag="h2"
+            />
+          </GridItem>
+        ))}
+      </Grid>`}
+    </LiveCodeBlock>
+  )
+}
 
 <ComponentHeader
   name={'Card'}
@@ -15,32 +37,21 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   overrideHeadlessLink=''
 />
 
-Kortkomponenten är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt.
+Komponent som är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt samt länka till innehållet.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
-npm install @midas-ds/card
+npm install @midas-ds/components
 ```
 
 ```tsx
-import { Card } from '@midas-ds/card'
+import { Card } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Grid, GridItem, Card }}>
-  {`<Grid>
-  {fruits.shuffled(3).map(fruit => (
-    <GridItem col={4} key={fruit.value}>
-      <Card
-        title={fruit.name}
-        content={fruit.description}
-        image={{ source: fruit.image, description: fruit.description }}
-        link={{href: '#', title: 'Läs mer om denna frukt'}}
-      />
-    </GridItem>
-  ))}
-</Grid>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## API
 
