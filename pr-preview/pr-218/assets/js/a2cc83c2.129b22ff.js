@@ -177,7 +177,7 @@ function _createMdxContent(props) {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Toast har fyra olika varianter: ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Toast har fyra olika varianter som matchar InfoBanner: ", (0,jsx_runtime.jsx)(_components.code, {
         children: "success"
       }), ", ", (0,jsx_runtime.jsx)(_components.code, {
         children: "info"

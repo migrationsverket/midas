@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -60,6 +61,15 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      Link: Link/* Link */.N
+    },
+    ...props,
+    children: `<p>Varannan vecka släpper vi en ny release, vilket du kan <Link href="/blog">läsa mer om här.</Link></p>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -106,12 +116,8 @@ function _createMdxContent(props) {
       friendlyName: 'Länk'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Link: Link/* Link */.N
-      },
-      children: `<p>Varannan vecka släpper vi en ny release, vilket du kan <Link href="/blog">läsa mer om här.</Link></p>`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -149,6 +155,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Link } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"

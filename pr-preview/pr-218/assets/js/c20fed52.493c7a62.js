@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9078],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1680],{
 
-/***/ 32833:
+/***/ 19049:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -9,16 +9,17 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_flex_mdx_6dc_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_card_mdx_c20_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-flex-mdx-6dc.json
-const site_docs_components_flex_mdx_6dc_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/flex","title":"Flex","description":"Grid baserat på tekniken display flex i css","source":"@site/docs/components/flex.mdx","sourceDirName":"components","slug":"/components/flex","permalink":"/pr-preview/pr-218/components/flex","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Flex","description":"Grid baserat på tekniken display flex i css","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-card-mdx-c20.json
+const site_docs_components_card_mdx_c20_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/card","title":"Card","description":"En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.","source":"@site/docs/components/card.mdx","sourceDirName":"components","slug":"/components/card","permalink":"/pr-preview/pr-218/components/card","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Card","description":"En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,22 +30,22 @@ var Tabs = __webpack_require__(65537);
 var TabItem = __webpack_require__(79329);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx + 1 modules
 var propsTable = __webpack_require__(38355);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
-// EXTERNAL MODULE: ./packages/components/src/flex/Flex.tsx
-var Flex = __webpack_require__(39996);
-// EXTERNAL MODULE: ./packages/components/src/flex/FlexItem.tsx
-var FlexItem = __webpack_require__(52981);
+// EXTERNAL MODULE: ./packages/components/src/grid/Grid.tsx
+var Grid = __webpack_require__(12186);
+// EXTERNAL MODULE: ./packages/components/src/grid/GridItem.tsx
+var GridItem = __webpack_require__(85523);
 // EXTERNAL MODULE: ./packages/components/src/card/Card.tsx + 1 modules
 var Card = __webpack_require__(26333);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
+var getComponentMetaData = __webpack_require__(68219);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-;// ./apps/docs/docs/components/flex.mdx
+;// ./apps/docs/docs/components/card.mdx
 
 
 const frontMatter = {
-	title: 'Flex',
-	description: 'Grid baserat på tekniken display flex i css',
+	title: 'Card',
+	description: 'En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -62,91 +63,56 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      Grid: Grid/* Grid */.x,
+      GridItem: GridItem/* GridItem */.E,
+      Card: Card/* Card */.Z
+    },
+    ...props,
+    children: `<Grid fluid>
+        {fruits.shuffled(3).map(fruit => (
+          <GridItem col={4} key={fruit.value}>
+            <Card
+              title={fruit.name}
+              content={fruit.description}
+              image={{ source: fruit.image, description: fruit.description }}
+              link={{href: '#', children: 'Läs mer om denna frukt'}}
+              headingTag="h2"
+            />
+          </GridItem>
+        ))}
+      </Grid>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
   "level": 2
 }, {
-  "value": "Grid",
-  "id": "grid",
-  "level": 2
-}, {
-  "value": "FlexItem",
-  "id": "flexitem",
-  "level": 3
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "När ska du använda Flex ?",
-  "id": "när-ska-du-använda-flex-",
-  "level": 3
-}, {
-  "value": "Så här använder du Flex",
-  "id": "så-här-använder-du-flex",
-  "level": 3
-}, {
   "value": "API",
   "id": "api",
   "level": 2
-}, {
-  "value": "Flex",
-  "id": "flex",
-  "level": 3
-}, {
-  "value": "FlexItem",
-  "id": "flexitem-1",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
-    table: "table",
-    tbody: "tbody",
-    td: "td",
-    th: "th",
-    thead: "thead",
-    tr: "tr",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Flex',
-      friendlyName: 'Rutnät',
+      name: 'Card',
+      friendlyName: 'Kort',
       overrideHeadlessLink: ""
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Grid baserat på tekniken ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "display: flex;"
-      }), " i css. Flex är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element."]
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Flex: Flex/* Flex */.s,
-        FlexItem: FlexItem/* FlexItem */.Z,
-        Card: Card/* Card */.Z
-      },
-      children: `<Flex>
-  <FlexItem col={12}>
-      <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{children: 'Länk', href: '#'}} />
-  </FlexItem>
-  <FlexItem>
-      <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{children: 'Länk', href: '#'}} />
-  </FlexItem>
-  <FlexItem col={"auto"}>
-      <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{children: 'Länk', href: '#'}} />
-  </FlexItem>
-  <FlexItem col={6}>
-      <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{children: 'Länk', href: '#'}} />
-  </FlexItem>
-</Flex>`
+      children: "Komponent som är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt samt länka till innehållet."
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -182,119 +148,15 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Flex } from '@midas-ds/components'\n"
+        children: "import { Card } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "grid",
-      children: "Grid"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Grids skalas enligt följande specifikation."
-    }), "\n", (0,jsx_runtime.jsxs)(_components.table, {
-      children: [(0,jsx_runtime.jsx)(_components.thead, {
-        children: (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.th, {
-            children: "Skärmstorlek"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Yttre marginaler"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Underliggande element"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Kolumner"
-          }), (0,jsx_runtime.jsx)(_components.th, {
-            children: "Inre marginaler"
-          })]
-        })
-      }), (0,jsx_runtime.jsxs)(_components.tbody, {
-        children: [(0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "0 - 767 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "1"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "768 px - 1199 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "32 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "16 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "1200 px - 1440 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "32 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "24 px"
-          })]
-        }), (0,jsx_runtime.jsxs)(_components.tr, {
-          children: [(0,jsx_runtime.jsx)(_components.td, {
-            children: "> 1440 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "Skalas"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "1368 px"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "12"
-          }), (0,jsx_runtime.jsx)(_components.td, {
-            children: "24 px"
-          })]
-        })]
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "flexitem",
-      children: "FlexItem"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Komponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<FlexItem>"
-      }), " agrerar som direkt child till ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Flex>"
-      }), ". FlexItem accepterar en prop col som kan ta värdena auto eller 1-12."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "när-ska-du-använda-flex-",
-      children: "När ska du använda Flex ?"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "så-här-använder-du-flex",
-      children: "Så här använder du Flex"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Flex></Flex>"
-      }), " som komponent och justera de direkt underliggande komponenter till Flex justeras enligt griddets bestämmelser. Justera med barnkomponenten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<FlexItem col=\"antal-kolumner\"></FlexItem>"
-      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "flex",
-      children: "Flex"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: "Flex"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "flexitem-1",
-      children: "FlexItem"
-    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: "FlexItem",
-      defaultOpen: false
+      name: "Card"
     })]
   });
 }
@@ -345,6 +207,43 @@ var jsx_runtime = __webpack_require__(74848);
  *
  * @see {@link https://designsystem.migrationsverket.se/components/card/}
  */var Card=function Card(_ref){var image=_ref.image,background=_ref.background,title=_ref.title,content=_ref.content,link=_ref.link,_ref$headingTag=_ref.headingTag,HeadingTag=_ref$headingTag===void 0?'h1':_ref$headingTag,customImageComponent=_ref.customImageComponent,CustomLinkComponent=_ref.customLinkComponent,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(Card_module.card,background&&Card_module.background,rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Card_module.content,children:[customImageComponent?customImageComponent:(image==null?void 0:image.source)&&/*#__PURE__*/(0,jsx_runtime.jsx)("img",{src:image.source,alt:image.description,className:Card_module.image}),/*#__PURE__*/(0,jsx_runtime.jsx)(HeadingTag,{className:Card_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsx)("p",{className:Card_module.text,children:content})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,Object.assign({},link,{standalone:true,stretched:true,as:CustomLinkComponent}))]}));};
+
+/***/ }),
+
+/***/ 12186:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   x: () => (/* binding */ Grid)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(96708);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["children","fluid"];/**
+ * Grid based on display: grid;
+ * Calculates breakpoints and distributes columns according to MV specifications
+ *
+ * ### Children
+ * Use GridItem to manage each column.
+ * GridItem accepts values of 1 through 12 and auto.
+ */var Grid=function Grid(_ref){var children=_ref.children,_ref$fluid=_ref.fluid,fluid=_ref$fluid===void 0?false:_ref$fluid,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.container,fluid&&_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fluid,rest.className)},rest,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.grid,children:children})}));};
+
+/***/ }),
+
+/***/ 85523:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ GridItem)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(96708);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["children","col"];var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var colClass=col?"col-"+col:'';return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.col,_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[colClass],rest.className)},rest,{children:children}));};
 
 /***/ }),
 
@@ -401,6 +300,17 @@ const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 
 //# sourceMappingURL=arrow-right.js.map
 
+
+/***/ }),
+
+/***/ 96708:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","mdBreakpoint":"(min-width: 768px)","lgBreakpoint":"(min-width: 1200px)","xlBreakpoint":"(min-width: 1440px)","container":"container_uCKZ","grid":"grid_M0Fc","fluid":"fluid_Y1tE","col":"col_tmG6","col-1":"col-1_OVvW","col-2":"col-2_XfVI","col-3":"col-3_KxqE","col-4":"col-4_Ovxr","col-5":"col-5_uIyd","col-6":"col-6_i8WR","col-7":"col-7_devX","col-8":"col-8_tlAZ","col-9":"col-9_Nbjm","col-10":"col-10_rwyP","col-11":"col-11_ShOw","col-12":"col-12_eQeJ","offset-1":"offset-1_ZQkJ","offset-2":"offset-2_Reek","offset-3":"offset-3_SDkl","offset-4":"offset-4_L0XB","offset-5":"offset-5_Mz95","offset-6":"offset-6_Zp68","offset-7":"offset-7_ZApX","offset-8":"offset-8_UZTZ","offset-9":"offset-9_FiKS","offset-10":"offset-10_hN9R","offset-11":"offset-11_cqgv"});
 
 /***/ })
 

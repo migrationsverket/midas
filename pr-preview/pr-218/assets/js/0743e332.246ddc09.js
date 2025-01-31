@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -63,6 +64,21 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      ButtonGroup: ButtonGroup/* ButtonGroup */.e,
+      Button: Button/* Button */.$
+    },
+    ...props,
+    children: `<ButtonGroup aria-label="Välj knapp">
+          <Button>Primär</Button>
+          <Button variant="secondary">Sekundär</Button>
+          <Button variant='tertiary'>Tertiär</Button>
+          <Button isDisabled>Disabled</Button>
+      </ButtonGroup>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -135,18 +151,8 @@ function _createMdxContent(props) {
       friendlyName: 'Knapp'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        ButtonGroup: ButtonGroup/* ButtonGroup */.e,
-        Button: Button/* Button */.$
-      },
-      children: `<ButtonGroup aria-label="Välj knapp">
-  <Button>Primär</Button>
-  <Button variant="secondary">Sekundär</Button>
-  <Button variant='tertiary'>Tertiär</Button>
-  <Button isDisabled>Disabled</Button>
-</ButtonGroup>`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -184,6 +190,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Button } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"

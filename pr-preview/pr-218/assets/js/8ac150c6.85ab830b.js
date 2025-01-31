@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6253],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9758],{
 
-/***/ 24819:
+/***/ 56304:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -9,16 +9,17 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_breadcrumbs_mdx_aca_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_search_field_mdx_8ac_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-breadcrumbs-mdx-aca.json
-const site_docs_components_breadcrumbs_mdx_aca_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/breadcrumbs","title":"Breadcrumbs","description":"Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.","source":"@site/docs/components/breadcrumbs.mdx","sourceDirName":"components","slug":"/components/breadcrumbs","permalink":"/pr-preview/pr-218/components/breadcrumbs","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Breadcrumbs","description":"Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-search-field-mdx-8ac.json
+const site_docs_components_search_field_mdx_8ac_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/search-field","title":"SearchField","description":"Sökfält är ett inmatningsfält anpassat för sökning","source":"@site/docs/components/search-field.mdx","sourceDirName":"components","slug":"/components/search-field","permalink":"/pr-preview/pr-218/components/search-field","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"SearchField","description":"Sökfält är ett inmatningsfält anpassat för sökning","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,18 +30,18 @@ var Tabs = __webpack_require__(65537);
 var TabItem = __webpack_require__(79329);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx + 1 modules
 var propsTable = __webpack_require__(38355);
-// EXTERNAL MODULE: ./packages/components/src/breadcrumbs/Breadcrumbs.tsx + 1 modules
-var Breadcrumbs = __webpack_require__(11743);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
 var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./packages/components/src/search-field/SearchField.tsx + 1 modules
+var SearchField = __webpack_require__(97100);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-;// ./apps/docs/docs/components/breadcrumbs.mdx
+;// ./apps/docs/docs/components/search-field.mdx
 
 
 const frontMatter = {
-	title: 'Breadcrumbs',
-	description: 'Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.',
+	title: 'SearchField',
+	description: 'Sökfält är ett inmatningsfält anpassat för sökning',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -58,6 +59,15 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      SearchField: SearchField/* SearchField */.L
+    },
+    ...props,
+    children: `<SearchField placeholder="Sök efter frukter"/>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -78,16 +88,12 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Breadcrumbs',
-      friendlyName: 'Brödsmulor'
+      name: 'SearchField',
+      friendlyName: 'Sökfält'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponent som används för att visa användaren var den är i ett djupt navigationsträd."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Breadcrumbs: Breadcrumbs/* Breadcrumbs */.B
-      },
-      children: `<Breadcrumbs items={fruits.shuffled().map(fruit => {return {href: fruit.value, title: fruit.name}})} />`
+      children: "Inmatningsfält anpassat för sökning."
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -123,13 +129,15 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Breadcrumbs } from '@midas-ds/components'\n"
+        children: "import { SearchField } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: "Breadcrumbs"
+      name: 'SearchField'
     })]
   });
 }
@@ -150,63 +158,52 @@ function MDXContent(props = {}) {
 
 /***/ }),
 
-/***/ 11743:
+/***/ 97100:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  B: () => (/* binding */ Breadcrumbs)
+  L: () => (/* binding */ SearchField)
 });
-
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Breadcrumbs.mjs + 36 modules
-var dist_Breadcrumbs = __webpack_require__(57214);
-// EXTERNAL MODULE: ./packages/components/src/link/Link.tsx + 1 modules
-var Link = __webpack_require__(78815);
-;// ./packages/components/src/breadcrumbs/Breadcrumbs.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Breadcrumbs_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","gray150":"#1f1f1f","container":"container_QqG_"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/breadcrumbs/Breadcrumbs.tsx
-var Breadcrumbs=function Breadcrumbs(_ref){var items=_ref.items;return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumbs */.BI,{className:Breadcrumbs_module.container,children:items.map(function(item,index){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumb */.Qp,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,{href:item.href,isDisabled:item.isDisabled,children:item.title})},item.title.toLocaleLowerCase()+index);})});};
-
-/***/ }),
-
-/***/ 78815:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  N: () => (/* binding */ Link)
-});
-
-// UNUSED EXPORTS: RouterProvider
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/components/src/link/Link.module.css
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/SearchField.mjs + 37 modules
+var dist_SearchField = __webpack_require__(91521);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var Label = __webpack_require__(21704);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
+var search = __webpack_require__(98445);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
+var TextField_module = __webpack_require__(53502);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
+var Button = __webpack_require__(86559);
+;// ./packages/components/src/search-field/SearchField.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Link_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","blue130":"#25607f","blue150":"#143c50","gray150":"#1f1f1f","gray50":"#bfbfbf","mediumWeight":"500","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","regularWeight":"400","linkVisited":"#663366","black":"#000000","link":"link_RCbb","icon":"icon_Bxuv","standalone":"standalone_Cg9F","stretched":"stretched_pvQw"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var dist_Link = __webpack_require__(73099);
+/* harmony default export */ const SearchField_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","blue150":"#143c50","gray150":"#1f1f1f","backgroundPrimary":"#ffffff","container":"container_o5YK","inputContainer":"inputContainer_hVqH","icon":"icon_KMPT","clear":"clear_cC1p","input":"input_Z0RI"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
-var arrow_right = __webpack_require__(48635);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/link/Link.tsx
-'use client';var _excluded=["children","standalone","stretched","icon","className","as"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||dist_Link/* Link */.N;return/*#__PURE__*/(0,jsx_runtime.jsx)(Component,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
+;// ./packages/components/src/search-field/SearchField.tsx
+'use client';var _excluded=["placeholder","buttonText"];var SearchField=function SearchField(_ref){var placeholder=_ref.placeholder,buttonText=_ref.buttonText,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(false),hasInput=_React$useState[0],setHasInput=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_SearchField/* SearchField */.L,Object.assign({onInput:function onInput(){return setHasInput(true);},onClear:function onClear(){return setHasInput(false);},className:SearchField_module.container},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{hidden:true,children:placeholder}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:SearchField_module.inputContainer,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(search/* default */.A,{size:20,className:SearchField_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,SearchField_module.input),placeholder:placeholder}),hasInput&&/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"small",className:SearchField_module.clear,children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:buttonText?buttonText:'Sök'})]}));};
 
 /***/ }),
 
-/***/ 48635:
+/***/ 48697:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ ArrowRight)
+/* harmony export */   A: () => (/* binding */ X)
 /* harmony export */ });
 /* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
 /**
@@ -218,14 +215,25 @@ var jsx_runtime = __webpack_require__(74848);
 
 
 
-const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ArrowRight", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ]);
 
 
-//# sourceMappingURL=arrow-right.js.map
+//# sourceMappingURL=x.js.map
 
+
+/***/ }),
+
+/***/ 53502:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","inputField":"inputField_NRYV","inputWrapper":"inputWrapper_NR0B","label":"label_UgTd","text":"text_E1GG","fieldError":"fieldError_GOHN","passwordText":"passwordText_gBIs","count":"count_PsfX","countExceeded":"countExceeded_hrAA","input":"input_g6A6","wrap":"wrap_ljmz","passwordButton":"passwordButton_kacG"});
 
 /***/ }),
 
@@ -629,489 +637,30 @@ function $fca6afa0e843324b$export$f12b703ca79dfbb1(strings, packageName) {
 
 /***/ }),
 
-/***/ 57214:
+/***/ 11811:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   v: () => (/* binding */ $2d73ec29415bd339$export$712718f7aec83d5)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5987);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8343);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(24836);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(32217);
+/* harmony import */ var _react_stately_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8356);
+/* harmony import */ var _react_aria_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(85441);
+/* harmony import */ var _react_aria_focus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58382);
+/* harmony import */ var _react_aria_form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(48868);
+/* harmony import */ var _react_stately_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71144);
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Qp: () => (/* binding */ $778035c5624f61e7$export$dabcc1ec9dd9d1cc),
-  BI: () => (/* binding */ $778035c5624f61e7$export$2dc68d50d56fbbd)
-});
 
-// UNUSED EXPORTS: BreadcrumbsContext
 
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Collection.mjs
-var Collection = __webpack_require__(64606);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var Link = __webpack_require__(73099);
-;// ./node_modules/@react-aria/breadcrumbs/dist/ar-AE.mjs
-var $b91590b2dc47de39$exports = {};
-$b91590b2dc47de39$exports = {
-    "breadcrumbs": `\u{639}\u{646}\u{627}\u{635}\u{631} \u{627}\u{644}\u{648}\u{627}\u{62C}\u{647}\u{629}`
-};
 
 
 
-//# sourceMappingURL=ar-AE.module.js.map
 
-;// ./node_modules/@react-aria/breadcrumbs/dist/bg-BG.mjs
-var $55b0693b2cf3fe91$exports = {};
-$55b0693b2cf3fe91$exports = {
-    "breadcrumbs": `\u{422}\u{440}\u{43E}\u{445}\u{438} \u{445}\u{43B}\u{44F}\u{431}`
-};
 
-
-
-//# sourceMappingURL=bg-BG.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/cs-CZ.mjs
-var $6ec1ed7729e948cc$exports = {};
-$6ec1ed7729e948cc$exports = {
-    "breadcrumbs": `Popis cesty`
-};
-
-
-
-//# sourceMappingURL=cs-CZ.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/da-DK.mjs
-var $5a41bb2baa6861e4$exports = {};
-$5a41bb2baa6861e4$exports = {
-    "breadcrumbs": `Br\xf8dkrummer`
-};
-
-
-
-//# sourceMappingURL=da-DK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/de-DE.mjs
-var $f28bbea439e87eca$exports = {};
-$f28bbea439e87eca$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=de-DE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/el-GR.mjs
-var $b3eca51cb720961a$exports = {};
-$b3eca51cb720961a$exports = {
-    "breadcrumbs": `\u{3A0}\u{3BB}\u{3BF}\u{3B7}\u{3B3}\u{3AE}\u{3C3}\u{3B5}\u{3B9}\u{3C2} breadcrumb`
-};
-
-
-
-//# sourceMappingURL=el-GR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/en-US.mjs
-var $0b39b205118db415$exports = {};
-$0b39b205118db415$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=en-US.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/es-ES.mjs
-var $f467c0ee7bfb0950$exports = {};
-$f467c0ee7bfb0950$exports = {
-    "breadcrumbs": `Migas de pan`
-};
-
-
-
-//# sourceMappingURL=es-ES.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/et-EE.mjs
-var $ab711d2ffb4cdf3d$exports = {};
-$ab711d2ffb4cdf3d$exports = {
-    "breadcrumbs": `Lingiread`
-};
-
-
-
-//# sourceMappingURL=et-EE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fi-FI.mjs
-var $b63105d663e6f9d5$exports = {};
-$b63105d663e6f9d5$exports = {
-    "breadcrumbs": `Navigointilinkit`
-};
-
-
-
-//# sourceMappingURL=fi-FI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fr-FR.mjs
-var $9d2ed7be7fcdc2a1$exports = {};
-$9d2ed7be7fcdc2a1$exports = {
-    "breadcrumbs": `Chemin de navigation`
-};
-
-
-
-//# sourceMappingURL=fr-FR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/he-IL.mjs
-var $c5704294d85c7b5d$exports = {};
-$c5704294d85c7b5d$exports = {
-    "breadcrumbs": `\u{5E9}\u{5D1}\u{5D9}\u{5DC}\u{5D9} \u{5E0}\u{5D9}\u{5D5}\u{5D5}\u{5D8}`
-};
-
-
-
-//# sourceMappingURL=he-IL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hr-HR.mjs
-var $20c975671d6bbc63$exports = {};
-$20c975671d6bbc63$exports = {
-    "breadcrumbs": `Navigacijski putovi`
-};
-
-
-
-//# sourceMappingURL=hr-HR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hu-HU.mjs
-var $2569ca3917233115$exports = {};
-$2569ca3917233115$exports = {
-    "breadcrumbs": `Morzsamen\xfc`
-};
-
-
-
-//# sourceMappingURL=hu-HU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/it-IT.mjs
-var $caa152f7f8e96c85$exports = {};
-$caa152f7f8e96c85$exports = {
-    "breadcrumbs": `Breadcrumb`
-};
-
-
-
-//# sourceMappingURL=it-IT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ja-JP.mjs
-var $cbc6af0cc98fad10$exports = {};
-$cbc6af0cc98fad10$exports = {
-    "breadcrumbs": `\u{30D1}\u{30F3}\u{304F}\u{305A}\u{30EA}\u{30B9}\u{30C8}`
-};
-
-
-
-//# sourceMappingURL=ja-JP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ko-KR.mjs
-var $ad9be5d332b4d607$exports = {};
-$ad9be5d332b4d607$exports = {
-    "breadcrumbs": `\u{D0D0}\u{C0C9} \u{D45C}\u{C2DC}`
-};
-
-
-
-//# sourceMappingURL=ko-KR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lt-LT.mjs
-var $659de19a00ff9617$exports = {};
-$659de19a00ff9617$exports = {
-    "breadcrumbs": `Nar\u{161}ymo kelias`
-};
-
-
-
-//# sourceMappingURL=lt-LT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lv-LV.mjs
-var $173e9fb4d14fe309$exports = {};
-$173e9fb4d14fe309$exports = {
-    "breadcrumbs": `Atpaka\u{13C}ce\u{13C}i`
-};
-
-
-
-//# sourceMappingURL=lv-LV.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nb-NO.mjs
-var $d8e2640a066567a9$exports = {};
-$d8e2640a066567a9$exports = {
-    "breadcrumbs": `Navigasjonsstier`
-};
-
-
-
-//# sourceMappingURL=nb-NO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nl-NL.mjs
-var $d71fd764236c0d12$exports = {};
-$d71fd764236c0d12$exports = {
-    "breadcrumbs": `Broodkruimels`
-};
-
-
-
-//# sourceMappingURL=nl-NL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pl-PL.mjs
-var $f4ad3faf9f4aaec6$exports = {};
-$f4ad3faf9f4aaec6$exports = {
-    "breadcrumbs": `Struktura nawigacyjna`
-};
-
-
-
-//# sourceMappingURL=pl-PL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-BR.mjs
-var $9703be9d55d8e9c2$exports = {};
-$9703be9d55d8e9c2$exports = {
-    "breadcrumbs": `Caminho detalhado`
-};
-
-
-
-//# sourceMappingURL=pt-BR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-PT.mjs
-var $7e23baec8a14f309$exports = {};
-$7e23baec8a14f309$exports = {
-    "breadcrumbs": `Categorias`
-};
-
-
-
-//# sourceMappingURL=pt-PT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ro-RO.mjs
-var $568f95594049d56e$exports = {};
-$568f95594049d56e$exports = {
-    "breadcrumbs": `Miez de p\xe2ine`
-};
-
-
-
-//# sourceMappingURL=ro-RO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ru-RU.mjs
-var $625df06cecc70764$exports = {};
-$625df06cecc70764$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{438}\u{433}\u{430}\u{446}\u{438}\u{44F}`
-};
-
-
-
-//# sourceMappingURL=ru-RU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sk-SK.mjs
-var $b5a67525f3a2f594$exports = {};
-$b5a67525f3a2f594$exports = {
-    "breadcrumbs": `Naviga\u{10D}n\xe9 prvky Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=sk-SK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sl-SI.mjs
-var $16125922964febca$exports = {};
-$16125922964febca$exports = {
-    "breadcrumbs": `Drobtine`
-};
-
-
-
-//# sourceMappingURL=sl-SI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sr-SP.mjs
-var $de104bf355206bcf$exports = {};
-$de104bf355206bcf$exports = {
-    "breadcrumbs": `Putanje navigacije`
-};
-
-
-
-//# sourceMappingURL=sr-SP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sv-SE.mjs
-var $d5ab76bcbadc9c07$exports = {};
-$d5ab76bcbadc9c07$exports = {
-    "breadcrumbs": `S\xf6kv\xe4gar`
-};
-
-
-
-//# sourceMappingURL=sv-SE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/tr-TR.mjs
-var $a6a1af5968159b55$exports = {};
-$a6a1af5968159b55$exports = {
-    "breadcrumbs": `\u{130}\xe7erik haritalar\u{131}`
-};
-
-
-
-//# sourceMappingURL=tr-TR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/uk-UA.mjs
-var $5204a30f0d17ffec$exports = {};
-$5204a30f0d17ffec$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{456}\u{433}\u{430}\u{446}\u{456}\u{439}\u{43D}\u{430} \u{441}\u{442}\u{435}\u{436}\u{43A}\u{430}`
-};
-
-
-
-//# sourceMappingURL=uk-UA.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-CN.mjs
-var $8d15e736e12d3dfd$exports = {};
-$8d15e736e12d3dfd$exports = {
-    "breadcrumbs": `\u{5BFC}\u{822A}\u{680F}`
-};
-
-
-
-//# sourceMappingURL=zh-CN.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-TW.mjs
-var $f8c49dd804b75140$exports = {};
-$f8c49dd804b75140$exports = {
-    "breadcrumbs": `\u{5C0E}\u{89BD}\u{5217}`
-};
-
-
-
-//# sourceMappingURL=zh-TW.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/intlStrings.mjs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var $8229b34715874f89$exports = {};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$8229b34715874f89$exports = {
-    "ar-AE": $b91590b2dc47de39$exports,
-    "bg-BG": $55b0693b2cf3fe91$exports,
-    "cs-CZ": $6ec1ed7729e948cc$exports,
-    "da-DK": $5a41bb2baa6861e4$exports,
-    "de-DE": $f28bbea439e87eca$exports,
-    "el-GR": $b3eca51cb720961a$exports,
-    "en-US": $0b39b205118db415$exports,
-    "es-ES": $f467c0ee7bfb0950$exports,
-    "et-EE": $ab711d2ffb4cdf3d$exports,
-    "fi-FI": $b63105d663e6f9d5$exports,
-    "fr-FR": $9d2ed7be7fcdc2a1$exports,
-    "he-IL": $c5704294d85c7b5d$exports,
-    "hr-HR": $20c975671d6bbc63$exports,
-    "hu-HU": $2569ca3917233115$exports,
-    "it-IT": $caa152f7f8e96c85$exports,
-    "ja-JP": $cbc6af0cc98fad10$exports,
-    "ko-KR": $ad9be5d332b4d607$exports,
-    "lt-LT": $659de19a00ff9617$exports,
-    "lv-LV": $173e9fb4d14fe309$exports,
-    "nb-NO": $d8e2640a066567a9$exports,
-    "nl-NL": $d71fd764236c0d12$exports,
-    "pl-PL": $f4ad3faf9f4aaec6$exports,
-    "pt-BR": $9703be9d55d8e9c2$exports,
-    "pt-PT": $7e23baec8a14f309$exports,
-    "ro-RO": $568f95594049d56e$exports,
-    "ru-RU": $625df06cecc70764$exports,
-    "sk-SK": $b5a67525f3a2f594$exports,
-    "sl-SI": $16125922964febca$exports,
-    "sr-SP": $de104bf355206bcf$exports,
-    "sv-SE": $d5ab76bcbadc9c07$exports,
-    "tr-TR": $a6a1af5968159b55$exports,
-    "uk-UA": $5204a30f0d17ffec$exports,
-    "zh-CN": $8d15e736e12d3dfd$exports,
-    "zh-TW": $f8c49dd804b75140$exports
-};
-
-
-
-//# sourceMappingURL=intlStrings.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/filterDOMProps.mjs
-var filterDOMProps = __webpack_require__(5987);
-// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/useLocalizedStringFormatter.mjs
-var useLocalizedStringFormatter = __webpack_require__(29571);
-;// ./node_modules/@react-aria/breadcrumbs/dist/useBreadcrumbs.mjs
-
-
-
-
-
-function $parcel$interopDefault(a) {
-  return a && a.__esModule ? a.default : a;
-}
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -1125,31 +674,120 @@ function $parcel$interopDefault(a) {
  */ 
 
 
-function $848231d7a2b3998e$export$8cefe241bd876ca0(props) {
-    let { 'aria-label': ariaLabel, ...otherProps } = props;
-    let strings = (0, useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)((0, ($parcel$interopDefault($8229b34715874f89$exports))), '@react-aria/breadcrumbs');
-    return {
-        navProps: {
-            ...(0, filterDOMProps/* filterDOMProps */.$)(otherProps, {
-                labelable: true
-            }),
-            'aria-label': ariaLabel || strings.format('breadcrumbs')
+
+
+
+
+function $2d73ec29415bd339$export$712718f7aec83d5(props, ref) {
+    let { inputElementType: inputElementType = 'input', isDisabled: isDisabled = false, isRequired: isRequired = false, isReadOnly: isReadOnly = false, type: type = 'text', validationBehavior: validationBehavior = 'aria' } = props;
+    let [value, setValue] = (0, _react_stately_utils__WEBPACK_IMPORTED_MODULE_1__/* .useControlledState */ .P)(props.value, props.defaultValue || '', props.onChange);
+    let { focusableProps: focusableProps } = (0, _react_aria_focus__WEBPACK_IMPORTED_MODULE_2__/* .useFocusable */ .W)(props, ref);
+    let validationState = (0, _react_stately_form__WEBPACK_IMPORTED_MODULE_3__/* .useFormValidationState */ .KZ)({
+        ...props,
+        value: value
+    });
+    let { isInvalid: isInvalid, validationErrors: validationErrors, validationDetails: validationDetails } = validationState.displayValidation;
+    let { labelProps: labelProps, fieldProps: fieldProps, descriptionProps: descriptionProps, errorMessageProps: errorMessageProps } = (0, _react_aria_label__WEBPACK_IMPORTED_MODULE_4__/* .useField */ .M)({
+        ...props,
+        isInvalid: isInvalid,
+        errorMessage: props.errorMessage || validationErrors
+    });
+    let domProps = (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_5__/* .filterDOMProps */ .$)(props, {
+        labelable: true
+    });
+    const inputOnlyProps = {
+        type: type,
+        pattern: props.pattern
+    };
+    (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_6__/* .useFormReset */ .F)(ref, value, setValue);
+    (0, _react_aria_form__WEBPACK_IMPORTED_MODULE_7__/* .useFormValidation */ .X)(props, validationState, ref);
+    (0, react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(()=>{
+        // This works around a React/Chrome bug that prevents textarea elements from validating when controlled.
+        // We prevent React from updating defaultValue (i.e. children) of textarea when `value` changes,
+        // which causes Chrome to skip validation. Only updating `value` is ok in our case since our
+        // textareas are always controlled. React is planning on removing this synchronization in a
+        // future major version.
+        // https://github.com/facebook/react/issues/19474
+        // https://github.com/facebook/react/issues/11896
+        if (ref.current instanceof (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_8__/* .getOwnerWindow */ .m)(ref.current).HTMLTextAreaElement) {
+            let input = ref.current;
+            Object.defineProperty(input, 'defaultValue', {
+                get: ()=>input.value,
+                set: ()=>{},
+                configurable: true
+            });
         }
+    }, [
+        ref
+    ]);
+    return {
+        labelProps: labelProps,
+        inputProps: (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_9__/* .mergeProps */ .v)(domProps, inputElementType === 'input' ? inputOnlyProps : undefined, {
+            disabled: isDisabled,
+            readOnly: isReadOnly,
+            required: isRequired && validationBehavior === 'native',
+            'aria-required': isRequired && validationBehavior === 'aria' || undefined,
+            'aria-invalid': isInvalid || undefined,
+            'aria-errormessage': props['aria-errormessage'],
+            'aria-activedescendant': props['aria-activedescendant'],
+            'aria-autocomplete': props['aria-autocomplete'],
+            'aria-haspopup': props['aria-haspopup'],
+            'aria-controls': props['aria-controls'],
+            value: value,
+            onChange: (e)=>setValue(e.target.value),
+            autoComplete: props.autoComplete,
+            autoCapitalize: props.autoCapitalize,
+            maxLength: props.maxLength,
+            minLength: props.minLength,
+            name: props.name,
+            placeholder: props.placeholder,
+            inputMode: props.inputMode,
+            autoCorrect: props.autoCorrect,
+            spellCheck: props.spellCheck,
+            // Clipboard events
+            onCopy: props.onCopy,
+            onCut: props.onCut,
+            onPaste: props.onPaste,
+            // Composition events
+            onCompositionEnd: props.onCompositionEnd,
+            onCompositionStart: props.onCompositionStart,
+            onCompositionUpdate: props.onCompositionUpdate,
+            // Selection events
+            onSelect: props.onSelect,
+            // Input events
+            onBeforeInput: props.onBeforeInput,
+            onInput: props.onInput,
+            ...focusableProps,
+            ...fieldProps
+        }),
+        descriptionProps: descriptionProps,
+        errorMessageProps: errorMessageProps,
+        isInvalid: isInvalid,
+        validationErrors: validationErrors,
+        validationDetails: validationDetails
     };
 }
 
 
 
-//# sourceMappingURL=useBreadcrumbs.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./node_modules/react-aria-components/dist/Breadcrumbs.mjs
+//# sourceMappingURL=useTextField.module.js.map
 
 
+/***/ }),
 
+/***/ 79950:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ $3985021b0ad6602f$export$37fb8590cf2c088c),
+/* harmony export */   p: () => (/* binding */ $3985021b0ad6602f$export$f5b8910cec6cf069)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5933);
+/* harmony import */ var _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75127);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
 
@@ -1169,63 +807,46 @@ var react = __webpack_require__(96540);
 
 
 
-
-
-
-const $778035c5624f61e7$export$65596d3621b0a4a0 = /*#__PURE__*/ (0, react.createContext)(null);
-const $778035c5624f61e7$export$2dc68d50d56fbbd = /*#__PURE__*/ (0, react.forwardRef)(function Breadcrumbs(props, ref) {
-    [props, ref] = (0, utils/* useContextProps */.JT)(props, ref, $778035c5624f61e7$export$65596d3621b0a4a0);
-    let { CollectionRoot: CollectionRoot } = (0, react.useContext)((0, Collection/* CollectionRendererContext */.zL));
-    let { navProps: navProps } = (0, $848231d7a2b3998e$export$8cefe241bd876ca0)(props);
-    return /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* CollectionBuilder */.GQ), {
-        content: /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* Collection */.pM), props)
-    }, (collection)=>{
-        var _props_className;
-        return /*#__PURE__*/ (0, react).createElement("ol", {
-            ref: ref,
-            ...navProps,
-            slot: props.slot || undefined,
-            style: props.style,
-            className: (_props_className = props.className) !== null && _props_className !== void 0 ? _props_className : 'react-aria-Breadcrumbs'
-        }, /*#__PURE__*/ (0, react).createElement($778035c5624f61e7$export$65596d3621b0a4a0.Provider, {
-            value: props
-        }, /*#__PURE__*/ (0, react).createElement(CollectionRoot, {
-            collection: collection
-        })));
+const $3985021b0ad6602f$export$37fb8590cf2c088c = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+let $3985021b0ad6602f$var$filterHoverProps = (props)=>{
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    return otherProps;
+};
+const $3985021b0ad6602f$export$f5b8910cec6cf069 = /*#__PURE__*/ (0, _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__/* .createHideableComponent */ .U7)(function Input(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useContextProps */ .JT)(props, ref, $3985021b0ad6602f$export$37fb8590cf2c088c);
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useHover */ .M)(props);
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .useFocusRing */ .o)({
+        isTextInput: true,
+        autoFocus: props.autoFocus
     });
-});
-const $778035c5624f61e7$export$dabcc1ec9dd9d1cc = /*#__PURE__*/ (0, CollectionBuilder/* createLeafComponent */.KU)('item', function Breadcrumb(props, ref, node) {
-    // Recreating useBreadcrumbItem because we want to use composition instead of having the link builtin.
-    let isCurrent = node.nextKey == null;
-    let { isDisabled: isDisabled, onAction: onAction } = (0, utils/* useSlottedContext */.CC)($778035c5624f61e7$export$65596d3621b0a4a0);
-    let linkProps = {
-        'aria-current': isCurrent ? 'page' : null,
-        isDisabled: isDisabled || isCurrent,
-        onPress: ()=>onAction === null || onAction === void 0 ? void 0 : onAction(node.key)
-    };
-    let renderProps = (0, utils/* useRenderProps */.Sl)({
-        ...node.props,
-        children: node.rendered,
+    let isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useRenderProps */ .Sl)({
+        ...props,
         values: {
-            isDisabled: isDisabled || isCurrent,
-            isCurrent: isCurrent
+            isHovered: isHovered,
+            isFocused: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: props.disabled || false,
+            isInvalid: isInvalid
         },
-        defaultClassName: 'react-aria-Breadcrumb'
+        defaultClassName: 'react-aria-Input'
     });
-    return /*#__PURE__*/ (0, react).createElement("li", {
-        ...(0, filterDOMProps/* filterDOMProps */.$)(props),
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("input", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_5__/* .mergeProps */ .v)($3985021b0ad6602f$var$filterHoverProps(props), focusProps, hoverProps),
         ...renderProps,
         ref: ref,
-        "data-disabled": isDisabled || isCurrent || undefined,
-        "data-current": isCurrent || undefined
-    }, /*#__PURE__*/ (0, react).createElement((0, Link/* LinkContext */.s).Provider, {
-        value: linkProps
-    }, renderProps.children));
+        "data-focused": isFocused || undefined,
+        "data-disabled": props.disabled || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-invalid": isInvalid || undefined
+    });
 });
 
 
 
-//# sourceMappingURL=Breadcrumbs.module.js.map
+//# sourceMappingURL=Input.module.js.map
 
 
 /***/ })

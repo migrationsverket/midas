@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -60,6 +61,35 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      Table: Table/* Table */.XI,
+      TableHeader: Table/* TableHeader */.A0,
+      TableBody: dist_Table/* TableBody */.BF,
+      Column: Table/* Column */.VP,
+      Row: Table/* Row */.fI,
+      Cell: Table/* Cell */.fh
+    },
+    ...props,
+    children: `<Table
+            aria-label="Frukter"
+        >
+            <TableHeader columns={columns}>
+                {(column) => (
+                    <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
+                )}
+            </TableHeader>
+            <TableBody items={rows}>
+                {(item) => (
+                    <Row columns={columns}>
+                        {(column) => <Cell>{item[column.id]}</Cell>}
+                    </Row>
+                )}
+            </TableBody>
+        </Table>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -127,32 +157,8 @@ function _createMdxContent(props) {
       children: ["Komponent för att visualisera data. Går att kombinera med andra komponenter, till exemepel ", (0,jsx_runtime.jsx)(_components.code, {
         children: "Select"
       }), ", för att filtrera eller liknande."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Table: Table/* Table */.XI,
-        TableHeader: Table/* TableHeader */.A0,
-        TableBody: dist_Table/* TableBody */.BF,
-        Column: Table/* Column */.VP,
-        Row: Table/* Row */.fI,
-        Cell: Table/* Cell */.fh
-      },
-      children: `<Table
-  aria-label="Frukter"
->
-  <TableHeader columns={columns}>
-      {(column) => (
-          <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-      )}
-  </TableHeader>
-  <TableBody items={rows}>
-      {(item) => (
-          <Row columns={columns}>
-              {(column) => <Cell>{item[column.id]}</Cell>}
-          </Row>
-      )}
-  </TableBody>
-</Table>`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -190,6 +196,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { Table } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"

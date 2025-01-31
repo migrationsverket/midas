@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -58,6 +59,15 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      DatePicker: DatePicker/* DatePicker */.l
+    },
+    ...props,
+    children: `<DatePicker label="Välj ett datum" aria-label="Välj datum" />`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -107,12 +117,8 @@ function _createMdxContent(props) {
       }), " för att välja ett datum samt ", (0,jsx_runtime.jsx)(_components.code, {
         children: "DateRangePicker"
       }), " för att välja ett spann mellan två datum."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        DatePicker: DatePicker/* DatePicker */.l
-      },
-      children: `<DatePicker label="Välj ett datum" aria-label="Välj datum" />`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -148,13 +154,10 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { DatePicker } from '@midas-ds/components'\n"
+        children: "import { DatePicker } from '@midas-ds/components'\n// import { DateRangePicker } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { DateRangePicker } from '@midas-ds/components'\n"
-      })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"

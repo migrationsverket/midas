@@ -62,14 +62,13 @@ const assets = {
 
 
 
-const Example = ({hideExample, hideCode}) => {
+const Example = props => {
   return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-    hideExample: hideExample,
-    hideCode: hideCode,
     scope: {
       Accordion: Accordion/* Accordion */.n,
       AccordionItem: AccordionItem/* AccordionItem */.A
     },
+    ...props,
     children: `<Accordion>
         {fruits.shuffled().map(fruit => (
           <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>

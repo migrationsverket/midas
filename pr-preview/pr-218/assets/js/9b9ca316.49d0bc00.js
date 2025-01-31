@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -58,6 +59,22 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      ComboBox: ComboBox/* ComboBox */.a,
+      ComboBoxItem: ComboBox/* ComboBoxItem */.x
+    },
+    ...props,
+    children: `<ComboBox
+          label="Vad är din favoritfrukt?"
+          placeholder="Välj en frukt"
+          items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+        >
+          {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      </ComboBox>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -106,19 +123,8 @@ function _createMdxContent(props) {
       children: ["En ComboBox är en sökbar version av Select. Combobox används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
         children: "ett"
       }), " alternativ av fler än fyra (4) alternativ."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        ComboBox: ComboBox/* ComboBox */.a,
-        ComboBoxItem: ComboBox/* ComboBoxItem */.x
-      },
-      children: `<ComboBox
-  label="Vad är din favoritfrukt?"
-  placeholder="Välj en frukt"
-  items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
->
-  {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-</ComboBox>`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -156,6 +162,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { ComboBox } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"

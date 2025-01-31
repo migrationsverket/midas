@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -58,6 +59,19 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      MultiSelect: MultiSelect/* MultiSelect */.K
+    },
+    ...props,
+    children: `<MultiSelect
+            label="Vilka är dina favoritfrukter?"
+            description="Välj en eller flera frukter"
+            items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+    />`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -93,16 +107,8 @@ function _createMdxContent(props) {
       children: ["Inmatningsfält som tillåter användaren att välja ", (0,jsx_runtime.jsx)(_components.strong, {
         children: "flera"
       }), " alternativ från en längre lista."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        MultiSelect: MultiSelect/* MultiSelect */.K
-      },
-      children: `<MultiSelect
-      label="Vilka är dina favoritfrukter?"
-      description="Om de är små får man ta två"
-      items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-/>`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -140,6 +146,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { MultiSelect } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"

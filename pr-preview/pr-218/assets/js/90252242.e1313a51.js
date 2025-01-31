@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5605],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5521],{
 
-/***/ 45968:
+/***/ 61851:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -9,16 +9,17 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_checkbox_mdx_1c7_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_modal_mdx_902_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-checkbox-mdx-1c7.json
-const site_docs_components_checkbox_mdx_1c7_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/checkbox","title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","source":"@site/docs/components/checkbox.mdx","sourceDirName":"components","slug":"/components/checkbox","permalink":"/pr-preview/pr-218/components/checkbox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-modal-mdx-902.json
+const site_docs_components_modal_mdx_902_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/modal","title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","source":"@site/docs/components/modal.mdx","sourceDirName":"components","slug":"/components/modal","permalink":"/pr-preview/pr-218/components/modal","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -31,24 +32,26 @@ var TabItem = __webpack_require__(79329);
 var propsTable = __webpack_require__(38355);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
 var getComponentMetaData = __webpack_require__(68219);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx
-var Checkbox = __webpack_require__(93284);
+// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
+var CodeBlock = __webpack_require__(71372);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
+var Button = __webpack_require__(86559);
+// EXTERNAL MODULE: ./packages/components/src/modal/Modal.tsx + 1 modules
+var Modal = __webpack_require__(5776);
 // EXTERNAL MODULE: ./packages/components/src/flex/Flex.tsx
 var Flex = __webpack_require__(39996);
 // EXTERNAL MODULE: ./packages/components/src/flex/FlexItem.tsx
 var FlexItem = __webpack_require__(52981);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
-var Button = __webpack_require__(86559);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/CheckboxGroup.tsx
-var CheckboxGroup = __webpack_require__(74183);
-// EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
-var CodeBlock = __webpack_require__(71372);
-;// ./apps/docs/docs/components/checkbox.mdx
+// EXTERNAL MODULE: ./packages/components/src/textarea/TextArea.tsx + 1 modules
+var TextArea = __webpack_require__(75756);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Heading.mjs
+var Heading = __webpack_require__(57936);
+;// ./apps/docs/docs/components/modal.mdx
 
 
 const frontMatter = {
-	title: 'Checkbox',
-	description: 'Används för att låta användaren välja inget, ett eller flera alternativ.',
+	title: 'Modal',
+	description: 'Modal som lägger sig över allt annat innehåll.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -66,71 +69,71 @@ const assets = {
 
 
 
+
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      Button: Button/* Button */.$,
+      Modal: Modal/* Modal */.a,
+      Flex: Flex/* Flex */.s,
+      FlexItem: FlexItem/* FlexItem */.Z
+    },
+    ...props,
+    children: `<>
+            <Button onPress={setIsOpen}>Radera frukter</Button>
+            <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
+                <p>Är du säker? De går inte att återskapa.</p>
+                <Flex fluid={true}>
+                    <FlexItem col='auto'>
+                        <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
+                    </FlexItem>
+                    <FlexItem>
+                        <Button
+                            onPress={() => setIsOpen(false)}
+                            variant='secondary'
+                        >
+                            Avbryt
+                        </Button>
+                    </FlexItem>
+                </Flex>
+            </Modal>
+        </>`
+  });
+};
 const toc = [{
-  "value": "Installation",
-  "id": "installation",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
 }, {
-  "value": "Varianter",
-  "id": "varianter",
-  "level": 2
-}, {
-  "value": "Ensam checkbox",
-  "id": "ensam-checkbox",
-  "level": 3
-}, {
-  "value": "Flera checkboxar",
-  "id": "flera-checkboxar",
-  "level": 3
-}, {
-  "value": "Välj alla",
-  "id": "välj-alla",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
+  "value": "Avancerat innehåll",
+  "id": "avancerat-innehåll",
   "level": 2
 }, {
   "value": "API",
   "id": "api",
   "level": 2
-}, {
-  "value": "Checkbox",
-  "id": "checkbox",
-  "level": 3
-}, {
-  "value": "CheckboxGroup",
-  "id": "checkboxgroup",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Checkbox',
-      friendlyName: 'Kryssruta'
+      name: 'Modal',
+      friendlyName: "Modal, Dialog, Dialogruta",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/Dialog.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ."
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Checkbox: Checkbox/* Checkbox */.S
-      },
-      children: `<Checkbox>Jag godkänner villkoren</Checkbox>`
+      children: "Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak."
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation",
-      children: "Installation"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -163,119 +166,57 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Checkbox } from '@midas-ds/components'\n"
+        children: "import { Modal } from '@midas-ds/components'\n\nconst [isOpen, setIsOpen] = React.useState<boolean>(false)\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
+      id: "avancerat-innehåll",
+      children: "Avancerat innehåll"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas."
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Checkbox: Checkbox/* Checkbox */.S,
+        Button: Button/* Button */.$,
+        Modal: Modal/* Modal */.a,
         Flex: Flex/* Flex */.s,
         FlexItem: FlexItem/* FlexItem */.Z,
-        Button: Button/* Button */.$
+        Heading: Heading/* Heading */.D,
+        TextArea: TextArea/* TextArea */.f
       },
-      children: `<Flex fluid>
-  <FlexItem style={{alignSelf: 'center'}}>
-    <Checkbox>Jag godkänner villkoren</Checkbox>
-  </FlexItem>
-  <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
-    <Button
-      variant='secondary'
-    >
-      Bakåt
-    </Button>
-    <Button>Fortsätt</Button>
-  </FlexItem>
-</Flex>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "ensam-checkbox",
-      children: "Ensam checkbox"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: Checkbox/* Checkbox */.S
-      },
-      children: `<Checkbox>Jag godkänner villkoren</Checkbox>`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "flera-checkboxar",
-      children: "Flera checkboxar"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " för att gruppera flera checkboxar som hör samman."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: Checkbox/* Checkbox */.S,
-        CheckboxGroup: CheckboxGroup/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-      label='Godkänner du våra villkor?'
-      description='Läs texten först'
-    >
-      <Checkbox value='1'>Jag har läst texten</Checkbox>
-      <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
-  </CheckboxGroup>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "välj-alla",
-      children: "Välj alla"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Ibland kan det vara lämligt att ge användaren möjlighet att snabbt kryssa i alla kryssrutor. Denna funktion finns inbyggt i ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " via egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "showSelectAll"
-      }), ". Om detta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Checkbox: Checkbox/* Checkbox */.S,
-        CheckboxGroup: CheckboxGroup/* CheckboxGroup */.$
-      },
-      children: `<CheckboxGroup
-  label={'Godkänner du våra villkor'}
-  description={'Läs texten först'}
-  showSelectAll
-  >
-    <Checkbox
-      value="1"
-      isRequired
-    >
-      Jag har läst texten
-    </Checkbox>
-    <Checkbox
-      value="2"
-      isRequired
-    >
-      Jag godkänner villkoren
-    </Checkbox>
-</CheckboxGroup>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det är många alternativ så bör ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/pr-preview/pr-218/components/multi-select",
-          children: "MultiSelect"
-        }), " användas istället."]
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt"
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Fältetikett ska inledas med en stor bokstav och inte följas av punkt."
-      }), "\n"]
+      children: `<>
+  <Button onPress={setIsOpen}>Öppna modal</Button>
+  <Modal id="avsluta" title="Vill du avsluta uppdraget?" isOpen={isOpen} onOpenChange={setIsOpen}>
+      <Flex fluid={true} style={{marginBottom: '1rem'}}>
+          <FlexItem col>
+              <TextArea
+                  autoFocus
+                  label='Ange anledning'
+                  description='Skriv anledning'
+                  maxCharacters={100}
+              />
+          </FlexItem>
+      </Flex>
+      <Flex fluid={true}>
+          <FlexItem col='auto'>
+              <Button onPress={() => setIsOpen(false)}>Spara korrespondens</Button>
+          </FlexItem>
+          <FlexItem>
+              <Button
+                  onPress={() => setIsOpen(false)}
+                  variant='secondary'
+              >
+                  Avbryt
+              </Button>
+          </FlexItem>
+      </Flex>
+  </Modal>
+</>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "checkbox",
-      children: "Checkbox"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: 'Checkbox'
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "checkboxgroup",
-      children: "CheckboxGroup"
-    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: 'Checkbox'
+      name: "Modal"
     })]
   });
 }
@@ -296,41 +237,65 @@ function MDXContent(props = {}) {
 
 /***/ }),
 
-/***/ 93284:
+/***/ 5776:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   S: () => (/* binding */ Checkbox)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(98587);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(92466);
-/* harmony import */ var _Checkbox_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(76578);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
-'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_3__/* .Checkbox */ .Sc,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Checkbox_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div",{className:_Checkbox_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.checkboxInner,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  a: () => (/* binding */ Modal)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/modal/Modal.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Modal_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray10":"#f2f2f2","modal":"modal_PJ14","modalHeader":"modalHeader_xDfh","modalBody":"modalBody_J9X6","modalHeading":"modalHeading_Q1ex"});
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
+var Button = __webpack_require__(86559);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/modal/Modal.tsx
+'use client';var _excluded=["id","isOpen","onOpenChange","children","title","className"];var Modal=function Modal(_ref){var id=_ref.id,isOpen=_ref.isOpen,onOpenChange=_ref.onOpenChange,children=_ref.children,title=_ref.title,className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var ref=react.useRef(null);react.useEffect(function(){if(isOpen){var _ref$current;(_ref$current=ref.current)==null||_ref$current.showModal();}else{var _ref$current2;(_ref$current2=ref.current)==null||_ref$current2.close();}},[isOpen]);var handleClose=function handleClose(){var _ref$current3;(_ref$current3=ref.current)==null||_ref$current3.close();onOpenChange(false);};var headingId=id+'_heading';return/*#__PURE__*/(0,jsx_runtime.jsxs)("dialog",Object.assign({id:id,ref:ref,onCancel:function onCancel(){return onOpenChange(false);},className:(0,clsx/* default */.A)(Modal_module.modal,className),"aria-labelledby":headingId},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Modal_module.modalHeader,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return handleClose();},variant:"tertiary",icon:x/* default */.A,iconPlacement:"right",children:"St\xE4ng"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Modal_module.modalBody,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("h2",{className:Modal_module.modalHeading,id:headingId,children:title}),children]})]}));};
 
 /***/ }),
 
-/***/ 74183:
+/***/ 75756:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   $: () => (/* binding */ CheckboxGroup)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(92466);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(63899);
-/* harmony import */ var _Checkbox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(76578);
-/* harmony import */ var _Checkbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(93284);
-/* harmony import */ var _textfield__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(69240);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-'use client';var _excluded=["label","description","errorMessage","showSelectAll","children"];var CheckboxGroup=function CheckboxGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,showSelectAll=_ref.showSelectAll,children=_ref.children,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var _React$useState=react__WEBPACK_IMPORTED_MODULE_0__.useState(),isAllSelected=_React$useState[0],setIsAllSelected=_React$useState[1];var ToogleAll=function ToogleAll(){// Get the current state of the checkbox group
-var state=react__WEBPACK_IMPORTED_MODULE_0__.useContext(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .CheckboxGroupStateContext */ .pf);// Retrieve all childern
-var childValues=react__WEBPACK_IMPORTED_MODULE_0__.Children.toArray(children).filter(react__WEBPACK_IMPORTED_MODULE_0__.isValidElement).map(function(child){return child.props.value;});// Toogle all values
-var toggleAll=function toggleAll(){if(isAllSelected!=='all'){setIsAllSelected('all');return state==null?void 0:state.setValue(['toggleAll'].concat(childValues));}setIsAllSelected('none');return state==null?void 0:state.setValue([]);};//listen and change the select all accordingly
-react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function(){var _state$value,_state$value2;var amountOfChildren=childValues.length;var totalAmount=childValues.length+1;var currentAmount=(state==null||(_state$value=state.value)==null?void 0:_state$value.length)||0;if(currentAmount===0)setIsAllSelected('none');if(currentAmount>0&&currentAmount<amountOfChildren)setIsAllSelected('some');if(currentAmount!==totalAmount)state==null||state.removeValue('toggleAll');if(currentAmount===amountOfChildren&&!(state!=null&&(_state$value2=state.value)!=null&&_state$value2.includes('toggleAll'))){state==null||state.addValue('toggleAll');setIsAllSelected('all');}// eslint-disable-next-line react-hooks/exhaustive-deps
-},[childValues.length,state==null?void 0:state.value]);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Checkbox__WEBPACK_IMPORTED_MODULE_5__/* .Checkbox */ .S,{value:"toggleAll",isSelected:isAllSelected==='all',isIndeterminate:isAllSelected==='some',onChange:function onChange(){return toggleAll();},children:"V\xE4lj alla"});};return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .CheckboxGroup */ .$Q,Object.assign({className:_Checkbox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.checkboxGroup},props,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_textfield__WEBPACK_IMPORTED_MODULE_6__/* .InputWrapper */ .oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_aria_components__WEBPACK_IMPORTED_MODULE_7__/* .Group */ .Y,{className:_Checkbox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.wrap,children:[showSelectAll&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(ToogleAll,{}),children]})})}));};
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  f: () => (/* binding */ TextArea)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/components/src/textarea/TextArea.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextArea_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_r3SS","count":"count_om8K","countExceeded":"countExceeded_GeTp"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
+var dist_TextArea = __webpack_require__(43660);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx
+var textfield_TextField = __webpack_require__(69240);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
+var TextField_module = __webpack_require__(53502);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/textarea/TextArea.tsx
+'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter","validate"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,validate=_ref.validate,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:(0,clsx/* default */.A)(TextArea_module.count,value.length>maxCharacters&&TextArea_module.countExceeded),children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var validateInput=function validateInput(value){var maxCharactersError=maxCharacters&&value.length>maxCharacters?"Du har angett "+(value.length-maxCharacters)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxCharacters+" tecken.":null;var otherValidationError=validate?validate(value):null;return maxCharactersError||otherValidationError||true;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:TextField_module/* default */.A.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(textfield_TextField/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]})}));};
 
 /***/ }),
 
@@ -357,14 +322,30 @@ react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function(){var _state$value,_state$
 
 /***/ }),
 
-/***/ 76578:
+/***/ 48697:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   A: () => (/* binding */ X)
 /* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","black":"#000000","primaryBackground":"#143c50","blue80":"#5897b8","blue130":"#25607f","signalRed10":"#ffdfdf","signalRed100":"#e62323","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","signalRed130":"#b31b1b","white":"#ffffff","gray10":"#f2f2f2","gray40":"#cccccc","gray100":"#808080","gray50":"#bfbfbf","gray20":"#e6e6e6","regularWeight":"400","mediumWeight":"500","smBreakpoint":"(max-width: 767px)","borderSecondary":"#b3b3b3","wrap":"wrap_YzPY","checkboxInner":"checkboxInner_Nam1","checkbox":"checkbox_J2GB","checkboxGroup":"checkboxGroup_iAq9"});
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+]);
+
+
+//# sourceMappingURL=x.js.map
+
 
 /***/ }),
 
@@ -513,162 +494,6 @@ function $2d73ec29415bd339$export$712718f7aec83d5(props, ref) {
 
 
 //# sourceMappingURL=useTextField.module.js.map
-
-
-/***/ }),
-
-/***/ 87979:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
-/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
-/* harmony export */ });
-/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
-
-
-
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-const $5c3e21d68f1c4674$var$styles = {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    clipPath: 'inset(50%)',
-    height: '1px',
-    margin: '-1px',
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    width: '1px',
-    whiteSpace: 'nowrap'
-};
-function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
-    let { style: style, isFocusable: isFocusable } = props;
-    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
-        isDisabled: !isFocusable,
-        onFocusWithinChange: (val)=>setFocused(val)
-    });
-    // If focused, don't hide the element.
-    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
-        if (isFocused) return style;
-        else if (style) return {
-            ...$5c3e21d68f1c4674$var$styles,
-            ...style
-        };
-        else return $5c3e21d68f1c4674$var$styles;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [
-        isFocused
-    ]);
-    return {
-        visuallyHiddenProps: {
-            ...focusWithinProps,
-            style: combinedStyles
-        }
-    };
-}
-function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
-    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
-}
-
-
-
-//# sourceMappingURL=VisuallyHidden.module.js.map
-
-
-/***/ }),
-
-/***/ 63899:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
-/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
-/* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-
-
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function Group(props, ref) {
-    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
-    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
-    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
-        onHoverStart: onHoverStart,
-        onHoverChange: onHoverChange,
-        onHoverEnd: onHoverEnd,
-        isDisabled: isDisabled
-    });
-    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
-        within: true
-    });
-    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
-    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
-    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
-        ...props,
-        values: {
-            isHovered: isHovered,
-            isFocusWithin: isFocused,
-            isFocusVisible: isFocusVisible,
-            isDisabled: isDisabled,
-            isInvalid: isInvalid
-        },
-        defaultClassName: 'react-aria-Group'
-    });
-    var _props_role, _props_slot;
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
-        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
-        ...renderProps,
-        ref: ref,
-        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
-        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
-        "data-focus-within": isFocused || undefined,
-        "data-hovered": isHovered || undefined,
-        "data-focus-visible": isFocusVisible || undefined,
-        "data-disabled": isDisabled || undefined,
-        "data-invalid": isInvalid || undefined
-    }, renderProps.children);
-});
-
-
-
-//# sourceMappingURL=Group.module.js.map
 
 
 /***/ }),

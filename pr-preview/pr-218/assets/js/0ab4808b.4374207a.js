@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
@@ -63,6 +64,27 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      Flex: Flex/* Flex */.s,
+      FlexItem: FlexItem/* FlexItem */.Z,
+      LinkButton: LinkButton/* LinkButton */.z
+    },
+    ...props,
+    children: `<Flex>
+          <FlexItem col={"auto"}>
+            <LinkButton href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+      </Flex>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
@@ -96,24 +118,8 @@ function _createMdxContent(props) {
         href: "/components/button",
         children: "Button"
       }), " men avsedd att använda som länk internt eller externt i en applikation."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      hideCode: true,
-      scope: {
-        Flex: Flex/* Flex */.s,
-        FlexItem: FlexItem/* FlexItem */.Z,
-        LinkButton: LinkButton/* LinkButton */.z
-      },
-      children: `<Flex>
-  <FlexItem col={"auto"}>
-    <LinkButton href="#">Starta tjänst</LinkButton>
-  </FlexItem>
-    <FlexItem col={"auto"}>
-    <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
-  </FlexItem>
-    <FlexItem col={"auto"}>
-    <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
-  </FlexItem>
-</Flex>`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -151,6 +157,8 @@ function _createMdxContent(props) {
         className: "language-tsx",
         children: "import { LinkButton } from '@midas-ds/components'\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
