@@ -1,3 +1,18 @@
+## 1.1.0 (2025-01-31)
+
+### 🚀 Features
+
+- **components:** new api and style for accordion
+
+### 🩹 Fixes
+
+- import/export textfield css directly from css module
+
+### ❤️ Thank You
+
+- pixelrickdreamer
+- Wilhelm Hjelm
+
 ## 1.0.2 (2025-01-27)
 
 ### 🚀 Features
