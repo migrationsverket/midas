@@ -31,7 +31,13 @@ const rows = fruits.shuffled(7).map(fruit => {
   }
 })
 
-const Playground = ({ children, transformCode, hideCode, ...props }) => {
+const Playground = ({
+  children,
+  transformCode,
+  hideCode,
+  hideExample,
+  ...props
+}) => {
   const theme = usePrismTheme()
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
@@ -45,10 +51,12 @@ const Playground = ({ children, transformCode, hideCode, ...props }) => {
       {...props}
       scope={scope}
     >
-      <div className={styles.playgroundPreview}>
-        <LivePreview />
-        <LiveError />
-      </div>
+      {!hideExample && (
+        <div className={styles.playgroundPreview}>
+          <LivePreview />
+          <LiveError />
+        </div>
+      )}
       <div
         className={clsx(
           styles.playgroundEditor,

@@ -9,6 +9,24 @@ import { Accordion, AccordionItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = ({ hideExample, hideCode }) => {
+  return (
+    <LiveCodeBlock
+      hideExample={hideExample}
+      hideCode={hideCode}
+      scope={{ Accordion, AccordionItem }}
+    >
+      {`<Accordion>
+        {fruits.shuffled().map(fruit => (
+          <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
+              {fruit.description}
+          </AccordionItem>
+        ))}
+      </Accordion>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Accordion'}
   friendlyName={'Dragspel'}
@@ -17,15 +35,7 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Utfällbar komponent som används för att minska informationsmängden som direkt presenteras för användaren.
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion>
-    {fruits.shuffled().map(fruit => (
-      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-          {fruit.description}
-      </AccordionItem>
-    ))}
-</Accordion>`}
-</LiveCodeBlock>
+<Example hideCode />
 
 ## Installation
 
@@ -36,6 +46,8 @@ npm install @midas-ds/components
 ```tsx
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@midas-ds/components'
 ```
+
+<Example hideExample />
 
 ## Egenskaper
 
