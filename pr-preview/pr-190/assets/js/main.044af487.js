@@ -14162,13 +14162,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     "footer": {
       "style": "dark",
-      "logo": {
-        "alt": "Migrationsverket Logotyp",
-        "src": "img/mig-logo-white.svg",
-        "height": "45px",
-        "width": "auto"
-      },
-      "copyright": "Migrationsverkets designsystem - Midas",
       "links": []
     },
     "colorMode": {
