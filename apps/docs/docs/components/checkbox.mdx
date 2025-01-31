@@ -13,9 +13,12 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
   friendlyName={'Kryssruta'}
 />
 
-Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ. 
+Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ.
 
-<LiveCodeBlock hideCode scope={{ Checkbox }}>{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
+<LiveCodeBlock
+  hideCode
+  scope={{ Checkbox }}
+>{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
 
 ## Installation
 
@@ -28,6 +31,22 @@ import { Checkbox } from '@midas-ds/components'
 ```
 
 ## Varianter
+
+<LiveCodeBlock scope={{ Checkbox, Flex, FlexItem, Button }}>
+  {`<Flex fluid>
+    <FlexItem style={{alignSelf: 'center'}}>
+      <Checkbox>Jag godkänner villkoren</Checkbox>
+    </FlexItem>
+    <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
+      <Button
+        variant='secondary'
+      >
+        Bakåt
+      </Button>
+      <Button>Fortsätt</Button>
+    </FlexItem>
+</Flex>`}
+</LiveCodeBlock>
 
 ### Ensam checkbox
 

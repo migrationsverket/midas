@@ -1,99 +1,100 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray50, gray20, black, normalTransition, regularWeight from tokens;
+@value display, gray10, gray20, gray30, black, normalTransition, regularWeight, mediumWeight from tokens;
 
 .root {
-  width: 100%;
-}
+  --gap: 0.75rem;
+  --item-padding: 0;
+  --content-padding: 0.5rem 0.5rem 0.5rem 1.85rem;
+  --background: transparent;
+  --background-active: transparent;
+  --background-hover: transparent;
 
-.trigger {
-  font-family: display;
-  color: black;
-  background-color: transparent;
-  border: 0;
-  padding: 1.5rem;
-  cursor: pointer;
+  &.contained {
+    --gap: 0.25rem;
+    --item-padding: 0.875rem;
+    --content-padding: 1rem;
+    --background: gray10;
+    --background-active: gray20;
+    --background-hover: gray30;
+  }
+
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 10px;
-
-  &:focus-visible {
-    outline: black auto 2px;
-  }
-
-  svg {
-    transition: transform normalTransition cubic-bezier(0.87, 0, 0.13, 1);
-  }
-
-  &[data-state='open'] svg {
-    transform: rotate(180deg);
-  }
-}
-
-.item {
-  font-family: display;
-  border-style: solid;
-  border-color: gray50;
-  border-width: 1px 0 0;
-  overflow: hidden;
-
-  &:hover {
-    .trigger {
-      background-color: gray20;
-    }
-  }
-
-  &:last-child {
-    border-width: 1px 0;
-  }
-}
-
-.content {
-  padding: 0 1.5rem;
-  overflow: hidden;
-
-  &[data-state='open'] {
-    animation: slideDown normalTransition cubic-bezier(0.87, 0, 0.13, 1);
-    margin-bottom: 1.5rem;
-  }
-
-  &[data-state='closed'] {
-    animation: slideUp normalTransition cubic-bezier(0.87, 0, 0.13, 1);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    height: 0;
-    margin-bottom: 0;
-  }
-
-  to {
-    height: var(--radix--content-height);
-    margin-bottom: 1.5rem;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    height: var(--radix--content-height);
-    margin-bottom: 1.5rem;
-  }
-
-  to {
-    height: 0;
-    margin: 0;
-  }
-}
-
-.header {
-  margin: 0;
+  flex-direction: column;
+  gap: var(--gap);
 }
 
 .triggerText {
   margin: 0;
   padding: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: regularWeight;
+}
+
+.trigger {
+  font-family: display;
+  color: black;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+
+  button {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: var(--item-padding);
+
+    svg {
+      transform: rotate(0deg);
+      transition: transform normalTransition ease;
+    }
+
+    &[aria-expanded='true'] {
+      background-color: var(--background-active);
+
+      .triggerText {
+        font-weight: mediumWeight;
+      }
+
+      svg {
+        transform: rotate(-180deg);
+        transition: transform normalTransition ease;
+      }
+
+      &:hover {
+        background-color: var(--background-hover);
+      }
+    }
+
+    &:hover {
+      background-color: var(--background-active);
+    }
+  }
+}
+
+.item {
+  background-color: var(--background);
+  font-family: display;
+}
+
+/* safari can't calculate correct so we skip the animation there as a compriomise */
+.panel:not(.panel0) {
+  height: 0;
+  overflow: hidden;
+  transition: height 500ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  &[aria-hidden='false'] {
+    height: var(--panel-height);
+  }
+}
+
+.content {
+  padding: var(--content-padding);
+}
+
+.header {
+  margin: 0;
 }
