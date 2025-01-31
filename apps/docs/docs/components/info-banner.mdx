@@ -6,6 +6,7 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 import { PropTable } from '@site/src/components/propsTable'
 import { InfoBanner, Tabs as MidasTabs } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'info-banner'}
@@ -13,11 +14,35 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink=''
 />
 
-Informationsmeddelande visar viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
-Den används för att ge användaren feedback, exempelvis vid fel, varningar eller bekräftelser och är
-utformad för att vara tydlig och lätt att förstå utan att störa användarens flöde.
+Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
 
-## Installation och användning
+<MidasTabs
+  label={'Välj typ'}
+  tabs={['Sucess', 'Info', 'Important', 'Warning']}
+>
+  <InfoBanner
+    type={'success'}
+    title={'Formuläret har skickats'}
+    message={'Allt gick bra. Du kan nu stänga fönstret.'}
+  />
+  <InfoBanner
+    type={'info'}
+    title={'Kom ihåg att fylla i din semesterplan'}
+    message={'Vi behöver din semesterplan för att kunna gå vidare.'}
+  />
+  <InfoBanner
+    type={'important'}
+    title={'Du behöver komplettera!'}
+    message={'Vi saknar din semesterplan.'}
+  />
+  <InfoBanner
+    type={'warning'}
+    title={'Formuläret kunde inte skickas!'}
+    message={'Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'}
+  />
+</MidasTabs>
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -27,45 +52,68 @@ npm install @midas-ds/components
 import { InfoBanner } from '@midas-ds/components'
 ```
 
-## Exempel
+## Varianter
 
-<MidasTabs
-  label={'Välj typ'}
-  tabs={['Info', 'Important', 'Warning', 'Success']}
->
-  <InfoBanner
+### Success
+
+<LiveCodeBlock scope={{ InfoBanner }}>
+  {`<InfoBanner
+    type={'success'}
+    title={'Det gick bra!'}
+    message={'Detta är ett meddelande om att allt gick bra.'}
+  />
+`}
+</LiveCodeBlock>
+
+### Info
+
+<LiveCodeBlock scope={{ InfoBanner }}>
+  {`<InfoBanner
     type={'info'}
     title={'Information'}
-    message={
-      'Detta är ett informationsmeddelande om att informationsmeddelande visar statisk information, till exempel systemnotiser.'
-    }
+    message={'Detta är ett meddelande med information.'}
   />
-  <InfoBanner
+`}
+</LiveCodeBlock>
+
+### Important
+
+{' '}
+
+<LiveCodeBlock scope={{ InfoBanner }}>
+  {`<InfoBanner
     type={'important'}
-    title={'Du behöver komplettera'}
-    message={'Visas för användaren för att uppmana till att något måste göras.'}
+    title={'Viktig information'}
+    message={'Detta är ett meddelande med viktig information.'}
   />
-  <InfoBanner
+`}
+</LiveCodeBlock>
+
+### Warning
+
+<LiveCodeBlock scope={{ InfoBanner }}>
+  {`<InfoBanner
     type={'warning'}
-    title={'Formuläret har inte skickats'}
-    message={'Visas för användaren för att bekräfta att en action gått snett.'}
+    title={'Varning'}
+    message={'Detta är en varning som används när något gått fel.'}
   />
-  <InfoBanner
+`}
+</LiveCodeBlock>
+
+## Dismissable
+
+Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `dismissable`. Det bör inte användas för varningar.
+
+<LiveCodeBlock scope={{ InfoBanner }}>
+  {`<InfoBanner
+    dismissable
     type={'success'}
-    dismissable={true}
-    title={'Formuläret har skickats'}
-    message={'Visas för användaren för att bekräfta att en action gått rätt till.'}
+    title={'Det gick bra!'}
+    message={'Detta är ett meddelande om att allt gick bra.'}
   />
-</MidasTabs>
+`}
+</LiveCodeBlock>
 
-<br />
-
-```tsx
-<InfoBanner type={'info'} title={'Information'} message={'Message'} />
-<InfoBanner type={'important'} title={'Important'} message={'Message'}/>
-<InfoBanner type={'warning'} title={'Warning'} message={'Message'}/>
-<InfoBanner type={'success'} title={'Success'} message={'Message'} dismissable={true}/>
-```
 ## API
 
-<PropTable name={'InfoBanner'}/>
+<PropTable name={'InfoBanner'} />

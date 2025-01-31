@@ -8,6 +8,17 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link, baseColors } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Link }}
+      {...props}
+    >
+      {`<p>Varannan vecka släpper vi en ny release, vilket du kan <Link href="/blog">läsa mer om här.</Link></p>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Link'}
   friendlyName={'Länk'}
@@ -15,7 +26,9 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -25,11 +38,17 @@ npm install @midas-ds/components
 import { Link } from '@midas-ds/components'
 ```
 
+<Example hideExample />
+
+## Varianter
+
+### Länk
+
 <LiveCodeBlock scope={{ Link }}>
   {`<p>Designsystemet utvecklas ständigt, <Link href="/blog">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`}
 </LiveCodeBlock>
 
-## Fristående
+### Fristående
 
 Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
 
@@ -45,7 +64,7 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
 </>`}
 </LiveCodeBlock>
 
-## "Utsträckt"
+### "Utsträckt"
 
 Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
 

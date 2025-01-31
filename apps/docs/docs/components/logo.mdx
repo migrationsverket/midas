@@ -8,6 +8,15 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Link, Flex, FlexItem, Logo } from '@midas-ds/components'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Logo }}
+      {...props}
+    >{`<Logo />`}</LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Logo'}
   friendlyName={'Logotyp'}
@@ -16,7 +25,9 @@ import { Link, Flex, FlexItem, Logo } from '@midas-ds/components'
 
 På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,7 +37,7 @@ npm install @midas-ds/components
 import { Logo } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Logo }}>{`<Logo />`}</LiveCodeBlock>
+<Example hideExample />
 
 ## Varianter
 

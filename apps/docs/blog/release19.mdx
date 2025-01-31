@@ -1,0 +1,87 @@
+---
+title: 'Release 19 (v1.0.4)'
+description: 'I och med release 19 går vi över till ett komponentpaket.'
+slug: release-19
+---
+
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Flex, FlexItem, Accordion, AccordionItem, Link } from '@midas-ds/components'
+
+I och med release 19 går vi över till ett komponentpaket.
+
+{/* truncate */}
+
+## Ett komponentpaket
+
+**@midas-ds/components**
+
+Istället för att varje komponent har varsitt installerbart paket kommer nu alla komponenter att finnas i ett paket. Detta för att underlätta installation, uppdateringar och användning av komponenterna. Byt gärna så snart du kan för att få framtida uppdateringar. Installera nya paketet och byt importer bör räcka. Vi finns i supportkanalen för assistans.
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+Du kan då alltså importera samtliga komponenter från detta paket istället för från flertalet olika.
+
+```tsx
+import { Button, Modal, Checkbox } from '@midas-ds/components'
+```
+
+Det innebär att du endast behöver installera Midas en gång och uppdatera ett paket för att få alla uppdateringar på samtliga komponenter. Vi gör detta för att underlätta för alla att hålla sig uppdaterade. Vi ser ofta att många problem uppstår då man inte har uppdateringar mellan komponenterna i synk med varandra då många komponenter ska fungera ihop.
+
+---
+
+Vi har även uppdaterat hur typsnittet Inter installeras. Detta är det nya rekommenderade sättet att installera vårt typsnitt Inter. Det går självklart att använda andra metoder så länge vikterna 400, 500 och 600 inkluderas.
+
+```tsx {1} title="App.tsx (rootfilen i din app)"
+import '@midas-ds/components/global.css'
+
+export default function App({ children }) {
+  return <main>{children}</main>
+}
+
+export default App
+```
+
+## Ny version av Accordion
+
+Vi har bytt API på Accordion då den tidigare byggde på Radix UI. Nu har React Aria lagt till Accordions i sitt paket så därför har vi följt detta istället. Det nya APIet är förenklat från den tidigare vilket vi tror kommer underlätta. Tillsammmans med förenklingen av APIet kommer även en ny varaint av Accordion.
+
+### Uncontained
+
+<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
+  {`<Accordion>
+    {fruits.shuffled().map(fruit => (
+      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
+          {fruit.description}
+      </AccordionItem>
+    ))}
+</Accordion>`}
+</LiveCodeBlock>
+
+### Contained
+
+<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
+  {`<Accordion variant="contained">
+    {fruits.shuffled().map(fruit => (
+      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
+          {fruit.description}
+      </AccordionItem>
+    ))}
+</Accordion>`}
+</LiveCodeBlock>
+
+<Link
+  href='/components/accordion'
+  standalone
+>
+  {'Läs mer på komponentens sida'}
+</Link>
+
+## Uppdatering av DocWebben
+
+Här på DocWebben har vi flyttat om saker samt skapat en ny startsida. Varje komponentsida har en ny tydligare struktur samt API-tabeller. Flertalet sidor har också gjorts om och slagits ihop för en enklare navigering.
+
+## Releaseversioner
+
+I och med att vi går över till ett paket så kommer vi endast ha ett versionsnummer att hålla koll på. Framöver kommer dessa releasenotes följa den strukturen. Senaste release är alltså egentligen v1.0.4.

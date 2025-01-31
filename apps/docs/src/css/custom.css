@@ -36,7 +36,7 @@
   --ifm-color-primary-light: #0070e0;
   --ifm-color-primary-lighter: #0075eb;
   --ifm-color-primary-lightest: #0a85ff;
-  --ifm-menu-color-active: #636;
+  --ifm-menu-color-active: var(--ifm-navbar-link-active-color);
   --ifm-code-font-size: 1rem;
   --ifm-font-family-monospace: 'Fira Code', monospace;
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
@@ -165,13 +165,15 @@ li:not(.menu__list-item) a {
   height: 2.6rem;
 }
 
-/* .migNavbarLogo {
-  margin: 0 1rem 0 0;
-} */
-
 .footer--dark {
   --ifm-footer-background-color: #b90835;
   --ifm-footer-link-hover-color: #f2f2f2;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 [class*='cardContainer'],

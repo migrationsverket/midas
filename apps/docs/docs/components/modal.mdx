@@ -9,6 +9,40 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Flex, FlexItem, TextArea, Button, Modal } from '@midas-ds/components'
 import { Heading } from 'react-aria-components'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{
+        Button,
+        Modal,
+        Flex,
+        FlexItem
+      }}
+      {...props}
+    >
+      {`<>
+            <Button onPress={setIsOpen}>Radera frukter</Button>
+            <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
+                <p>Är du säker? De går inte att återskapa.</p>
+                <Flex fluid={true}>
+                    <FlexItem col='auto'>
+                        <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
+                    </FlexItem>
+                    <FlexItem>
+                        <Button
+                            onPress={() => setIsOpen(false)}
+                            variant='secondary'
+                        >
+                            Avbryt
+                        </Button>
+                    </FlexItem>
+                </Flex>
+            </Modal>
+        </>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Modal'}
   friendlyName='Modal, Dialog, Dialogruta'
@@ -16,6 +50,8 @@ import { Heading } from 'react-aria-components'
 />
 
 Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak.
+
+<Example hideCode />
 
 ## Installation och användning
 
@@ -29,35 +65,7 @@ import { Modal } from '@midas-ds/components'
 const [isOpen, setIsOpen] = React.useState<boolean>(false)
 ```
 
-<LiveCodeBlock
-  scope={{
-    Button,
-    Modal,
-    Flex,
-    FlexItem
-  }}
->
-  {`<>
-    <Button onPress={setIsOpen}>Radera frukter</Button>
-    <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
-        <p>Är du säker? De går inte att återskapa.</p>
-        <Flex fluid={true}>
-            <FlexItem col='auto'>
-                <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
-            </FlexItem>
-            <FlexItem>
-                <Button
-                    onPress={() => setIsOpen(false)}
-                    variant='secondary'
-                >
-                    Avbryt
-                </Button>
-            </FlexItem>
-        </Flex>
-    </Modal>
-
-</>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Avancerat innehåll
 

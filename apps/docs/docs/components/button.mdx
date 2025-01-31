@@ -9,14 +9,32 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ ButtonGroup, Button }}
+      {...props}
+    >
+      {`<ButtonGroup aria-label="Välj knapp">
+          <Button>Primär</Button>
+          <Button variant="secondary">Sekundär</Button>
+          <Button variant='tertiary'>Tertiär</Button>
+          <Button isDisabled>Disabled</Button>
+      </ButtonGroup>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'Button'}
   friendlyName={'Knapp'}
 />
 
-Knappar används när användaren vill utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
+Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -26,14 +44,7 @@ npm install @midas-ds/components
 import { Button } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj knapp">
-    <Button>Primär</Button>
-    <Button variant="secondary">Sekundär</Button>
-    <Button variant='tertiary'>Tertiär</Button>
-    <Button isDisabled>Disabled</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Varianter
 

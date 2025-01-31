@@ -9,15 +9,38 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
 
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Flex, FlexItem, LinkButton }}
+      {...props}
+    >
+      {`<Flex>
+          <FlexItem col={"auto"}>
+            <LinkButton href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+            <FlexItem col={"auto"}>
+            <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
+          </FlexItem>
+      </Flex>`}
+    </LiveCodeBlock>
+  )
+}
+
 <ComponentHeader
   name={'LinkButton'}
   friendlyName={'Länkknapp'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Link.html'
 />
 
-Komponent med samma utseende och beteende som knapp men avsedd att använda som länk internt eller externt i en applikation.
+Komponent med samma utseende och beteende som [Button](/components/button) men avsedd att använda som länk internt eller externt i en applikation.
 
-## Installation och användning
+<Example hideCode />
+
+## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -27,13 +50,7 @@ npm install @midas-ds/components
 import { LinkButton } from '@midas-ds/components'
 ```
 
-<LiveCodeBlock scope={{ Flex, FlexItem, LinkButton }}>
-  {`<Flex>
-    <FlexItem col={12}>
-      <LinkButton href="#">Starta tjänst</LinkButton>
-    </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
+<Example hideExample />
 
 ## Riktlinjer
 
