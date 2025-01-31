@@ -92,7 +92,7 @@ function _createMdxContent(props) {
         children: "@midas-ds/components"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Istället för att varje komponent har varsitt installerabart paket kommer nu alla komponenter att finnas i ett paket. Detta för att underlätta installation, uppdateringar och användning av komponenterna. Byt gärna så snart du kan för att få framtida uppdateringar. Installera nya paketet och byt importer bör räcka. Vi finns i supportkanalen för assistans."
+      children: "Istället för att varje komponent har varsitt installerbart paket kommer nu alla komponenter att finnas i ett paket. Detta för att underlätta installation, uppdateringar och användning av komponenterna. Byt gärna så snart du kan för att få framtida uppdateringar. Installera nya paketet och byt importer bör räcka. Vi finns i supportkanalen för assistans."
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_theme_Tabs__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A, {
       groupId: "npm2yarn",
       children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_theme_TabItem__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A, {
@@ -143,7 +143,7 @@ function _createMdxContent(props) {
       id: "ny-version-av-accordion",
       children: "Ny version av Accordion"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
-      children: "Vi har bytt API på accordion då den tidigare byggde på Radix UI. Nu har React Aria lagt till Accordions i sitt paket så därför har vi följt detta istället. Det nya APIet är förenklat från den tidigare vilket vi tror kommer unerlätta. Tillsammmans med förenklingen av APIet kommer även en ny varaint av Accordion."
+      children: "Vi har bytt API på Accordion då den tidigare byggde på Radix UI. Nu har React Aria lagt till Accordions i sitt paket så därför har vi följt detta istället. Det nya APIet är förenklat från den tidigare vilket vi tror kommer underlätta. Tillsammmans med förenklingen av APIet kommer även en ny varaint av Accordion."
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
       id: "uncontained",
       children: "Uncontained"
