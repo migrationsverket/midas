@@ -151,7 +151,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'get-started',
+          docId: 'get-started/get-started',
           position: 'left',
           label: 'Dokumentation'
         },
