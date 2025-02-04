@@ -119,6 +119,10 @@ const toc = [{
   "value": "Release &amp; publish",
   "id": "release--publish",
   "level": 2
+}, {
+  "value": "Arbetsflöde",
+  "id": "arbetsflöde",
+  "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -131,6 +135,7 @@ function _createMdxContent(props) {
     header: "header",
     hr: "hr",
     li: "li",
+    mermaid: "mermaid",
     p: "p",
     pre: "pre",
     ul: "ul",
@@ -383,6 +388,11 @@ function _createMdxContent(props) {
         className: "language-bash",
         children: "nx release --skip-publish --dry-run // remove dry-run when you know it works\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.hr, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "arbetsflöde",
+      children: "Arbetsflöde"
+    }), "\n", (0,jsx_runtime.jsx)(_components.mermaid, {
+      value: "flowchart LR;\n    A1-->B1\n    B1-->B2\n    B2-->|GH Action|C1\n    B2-->E1\n    E1-->|GH Action|C2\n    E1-->|GH Action|D1\n    F1-->|Synk 24h|G1\n    E1-->|GH Action|F1\n    subgraph \"Jira\"\n        A1@{ shape: procs, label: \"Tickets\"}\n    end\n    subgraph \"GitHub\"\n        subgraph \"Repo\"\n            B1@{ shape: procs, label: \"Brancher [type/scope/desc]\"}\n            B2@{ shape: procs, label: \"Pull requests [pr-xxx]\"}\n        end\n        subgraph \"Pages\"\n            C1@{ shape: div-rect, label: \"/pr-preview/pr-xxx\" }\n            C2@{shape: div-rect, label: \"designsystem.migrationsverket.se\"}\n        end\n        subgraph \"Releases\"\n            D1@{ shape: procs, label: \"Release vX.X.X\"}\n        end\n        E1[\"Godkänd PR\"]\n    end\n    subgraph \"npm\"\n        F1[\"@midas-ds/components\"]\n    end\n    subgraph \"Migrationsverket\"\n        G1[\"@midas-ds/components\"]\n    end"
     })]
   });
 }

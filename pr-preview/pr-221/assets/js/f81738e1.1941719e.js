@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-use-mdx-f81.json
-const site_docs_get_started_use_mdx_f81_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/use","title":"Använda Midas","description":"Designer","source":"@site/docs/get-started/use.mdx","sourceDirName":"get-started","slug":"/get-started/use","permalink":"/pr-preview/pr-221/get-started/use","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Använda Midas","sidebar_label":"Använda","id":"use","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_get_started_use_mdx_f81_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/use","title":"Använda Midas","description":"Designer","source":"@site/docs/get-started/use.mdx","sourceDirName":"get-started","slug":"/get-started/use","permalink":"/pr-preview/pr-221/get-started/use","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"title":"Använda Midas","sidebar_label":"Använda","sidebar_position":1,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,7 +29,7 @@ var lib = __webpack_require__(28453);
 const frontMatter = {
 	title: 'Använda Midas',
 	sidebar_label: 'Använda',
-	id: 'use',
+	sidebar_position: 1,
 	pagination_prev: null,
 	pagination_next: null
 };
