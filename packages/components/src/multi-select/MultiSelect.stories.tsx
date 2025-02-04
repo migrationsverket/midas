@@ -49,6 +49,7 @@ export const Primary: Story = {
   args: {
     label: 'Etikett',
     description: 'Valfri hjälptext',
+    placeholder: 'Valfri text',
     items: options
   }
 }
@@ -57,6 +58,7 @@ export const DefaultSelectedKeys: Story = {
   args: {
     label: 'Etikett',
     description: 'Blackberry är förvalt',
+    placeholder: 'Valfri text',
     items: options,
     defaultSelectedKeys: ['blackberry']
   }
@@ -66,6 +68,7 @@ export const AllKeysSelected: Story = {
   args: {
     label: 'Etikett',
     description: 'Alla val är förvalda',
+    placeholder: 'Valfri text',
     items: options,
     defaultSelectedKeys: 'all'
   }
@@ -75,6 +78,7 @@ export const Disabled: Story = {
   args: {
     label: 'Etikett',
     description: 'Blackberry är förvalt',
+    placeholder: 'Valfri text',
     items: options,
     defaultSelectedKeys: ['blackberry'],
     isDisabled: true
@@ -85,6 +89,7 @@ export const Invalid: Story = {
   args: {
     label: 'Etikett',
     description: 'Blackberry är förvalt',
+    placeholder: 'Valfri text',
     items: options,
     defaultSelectedKeys: ['blackberry'],
     isInvalid: true,

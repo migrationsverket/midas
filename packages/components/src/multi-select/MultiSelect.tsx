@@ -19,6 +19,8 @@ import { TagGroup, Tag } from '../tag'
 import { Key, useListData } from 'react-stately'
 
 interface MidasMultiSelect {
+  /** placeholder for multiselect */
+  placeholder?: string
   /** Label for multiselect */
   label: string
   /** Description for multiselect */
@@ -48,7 +50,8 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
   defaultSelectedKeys,
   isDisabled,
   isInvalid,
-  errorMessage
+  errorMessage,
+  placeholder
 }) => {
   const triggerRef = React.useRef<HTMLButtonElement>(null)
   const [popoverWidth, setPopoverWidth] = React.useState<number | undefined>(
@@ -143,8 +146,10 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
               className={styles.button}
               ref={triggerRef}
               isDisabled={isDisabled}
+
             >
-              Välj
+            {placeholder}
+              
               <div
                 className={styles.icon}
                 aria-hidden='true'
