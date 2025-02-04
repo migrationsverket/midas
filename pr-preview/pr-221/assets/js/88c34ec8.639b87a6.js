@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4119],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3681],{
 
-/***/ 8130:
+/***/ 31590:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,20 +13,21 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_get_started_contribute_md_fec_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_get_started_contribute_mdx_88c_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-contribute-md-fec.json
-const site_docs_get_started_contribute_md_fec_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/contribute","title":"Bidra till komponentbiblioteket","description":"Att komma igång och bidra med kod till Midas är enkelt!","source":"@site/docs/get-started/contribute.md","sourceDirName":"get-started","slug":"/get-started/contribute","permalink":"/pr-preview/pr-221/get-started/contribute","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-contribute-mdx-88c.json
+const site_docs_get_started_contribute_mdx_88c_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/contribute","title":"Bidra till komponentbiblioteket","description":"Att komma igång och bidra med kod till Midas är enkelt!","source":"@site/docs/get-started/contribute.mdx","sourceDirName":"get-started","slug":"/get-started/contribute","permalink":"/pr-preview/pr-221/get-started/contribute","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"sidebar_label":"Bidra","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-;// ./apps/docs/docs/get-started/contribute.md
+;// ./apps/docs/docs/get-started/contribute.mdx
 
 
 const frontMatter = {
+	sidebar_label: 'Bidra',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -259,9 +260,9 @@ function _createMdxContent(props) {
       children: "Branch"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Branch namnges enligt ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "[feature|bugfix|hotfix|test]/[jira-ref]/[description]"
+        children: "[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/"
       }), ", till exempel ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "feature/DS-1337/button"
+        children: "feature/button"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "commit",

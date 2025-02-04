@@ -329,7 +329,7 @@ Du kan välja vilken sida av texten ikonen ska vara på med <code scope="[object
 </span><span class="token-line" style="color:#393A34"><span class="token plain-text"></span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag class-name" style="color:#00009f">Table</span><span class="token tag punctuation" style="color:#393A34">&gt;</span>
 </span></pre></div></div></div></div></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="ui-kit-finns-nu-på-docwebben">UI-kit finns nu på Docwebben<a href="https://designsystem.migrationsverket.se/pr-preview/pr-221/blog/release-13/#ui-kit-finns-nu-p%C3%A5-docwebben" class="hash-link" aria-label="Direktlänk till UI-kit finns nu på Docwebben" title="Direktlänk till UI-kit finns nu på Docwebben">​</a></h2>
-<p>Vårt UI-kit till XD finns nu att <a href="https://designsystem.migrationsverket.se/pr-preview/pr-221/get-started/">ladda ner</a> här på docwebben. UI-kitet uppdateras löpande!</p>
+<p>Vårt UI-kit till XD finns nu att <a href="https://designsystem.migrationsverket.se/pr-preview/pr-221/get-started/use/">ladda ner</a> här på docwebben. UI-kitet uppdateras löpande!</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="mindre-justeringar">Mindre justeringar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-221/blog/release-13/#mindre-justeringar" class="hash-link" aria-label="Direktlänk till Mindre justeringar" title="Direktlänk till Mindre justeringar">​</a></h2>
 <ul>
 <li>I förra releasen fick flertalet komponenter lite väl många dependencies. Det är nu åtgärdat.</li>
