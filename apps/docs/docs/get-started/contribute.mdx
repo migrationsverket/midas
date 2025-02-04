@@ -1,6 +1,7 @@
 ---
-sidebar_label: "Bidra"
+sidebar_label: 'Bidra'
 ---
+
 # Bidra till komponentbiblioteket
 
 Att komma igång och bidra med kod till Midas är enkelt!
@@ -67,7 +68,6 @@ nx build <namn>
 och allt som byggs hamnar i `/dist`. Om du vill testa utanför monorepot går det att zippa med `npm pack` och installera i
 separat app med `npm install [sökväg]`.
 
-
 ## Instruktioner för Git
 
 ### Branch
@@ -103,6 +103,7 @@ Introduce new css variable to automatically
 select style based on input type
 
 ```
+
 ## Bygga komponenter
 
 ### Styleguide
@@ -138,7 +139,7 @@ Komponenten dokumenteras på dokumentationswebben med lämpliga exempel, beskriv
 properties upp från komponenten via [react-docgen-typescript](https://github.com/styleguidist/react-docgen-typescript)
 men om det har införts nya types eller interfaces kan de behöva specificeras enligt [JSDoc](https://jsdoc.app/).
 
------
+---
 
 ## Release & publish
 
@@ -148,7 +149,45 @@ och Nx gör en commit med uppdaterad changelog samt sätter en git tag med versi
 `git push --follow-tags` vilket i sin tur triggar en publicering till NPM. Kör gärna en `--dry-run` först
 och kontrollera att allt stämmer.
 
-
 ```bash
 nx release --skip-publish --dry-run // remove dry-run when you know it works
+```
+
+---
+
+## Arbetsflöde
+
+```mermaid
+flowchart LR;
+    A1-->B1
+    B1-->B2
+    B2-->|GH Action|C1
+    B2-->E1
+    E1-->|GH Action|C2
+    E1-->|GH Action|D1
+    F1-->|Synk 24h|G1
+    E1-->|GH Action|F1
+    subgraph "Jira"
+        A1@{ shape: procs, label: "Tickets"}
+    end
+    subgraph "GitHub"
+        subgraph "Repo"
+            B1@{ shape: procs, label: "Brancher [type/scope/desc]"}
+            B2@{ shape: procs, label: "Pull requests [pr-xxx]"}
+        end
+        subgraph "Pages"
+            C1@{ shape: div-rect, label: "/pr-preview/pr-xxx" }
+            C2@{shape: div-rect, label: "designsystem.migrationsverket.se"}
+        end
+        subgraph "Releases"
+            D1@{ shape: procs, label: "Release vX.X.X"}
+        end
+        E1["Godkänd PR"]
+    end
+    subgraph "npm"
+        F1["@midas-ds/components"]
+    end
+    subgraph "Migrationsverket"
+        G1["@midas-ds/components"]
+    end
 ```
