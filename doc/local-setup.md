@@ -27,7 +27,7 @@ nx serve docs
 Starta storybook:
 
 ```bash
-nx run ui:storybook
+nx run components:storybook
 ```
 
 ### Starta Playground-appen (React)
@@ -47,7 +47,7 @@ Komponenterna är separata och publicerbara paket som ligger under `/packages`. 
 - Kör enhetstester för alla komponenter
 
 ```bash
-nx run-many -t test
+nx run components:test
 ```
 
 ## Dokumentationswebb
@@ -62,7 +62,7 @@ nx serve docs
 
 - Hämta hem senaste publicerade info från NPM:
 
-```
+```bash
 nx run docs:generate-info
 ```
 
@@ -84,19 +84,19 @@ och allt som byggs hamnar i `/dist`. Om du vill provköra går det att zippa med
 
 Bygg Storybook för produktion:
 
-```
-nx build-storybook ui
+```bash
+nx build-storybook components
 ```
 
 För att testa att bygget funkar lokalt:
 
-```
-npx http-server ./dist/storybook/storybook-host
+```bash
+npx http-server ./dist/storybook/ui
 ```
 
 ### Bygg dokumentation
 
-```
+```bash
 nx build docs
 ```
 
