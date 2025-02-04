@@ -1,3 +1,6 @@
+---
+sidebar_label: "Bidra"
+---
 # Bidra till komponentbiblioteket
 
 Att komma igång och bidra med kod till Midas är enkelt!
@@ -69,7 +72,7 @@ separat app med `npm install [sökväg]`.
 
 ### Branch
 
-Branch namnges enligt `[feature|bugfix|hotfix|test]/[jira-ref]/[description]`, till exempel `feature/DS-1337/button`.
+Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/`, till exempel `feature/button`.
 
 ### Commit
 
@@ -77,7 +80,7 @@ Commits görs enligt [conventional commits](https://www.conventionalcommits.org/
 imperativ form, definiera type `feat|docs|fix|refactor|test|ci` och scope `(button|etc...)` och lägg till referenser
 till andra issues vid behov. Tänk på att även en merge (med squash) skapar en commit så lägg en extra tanke på
 vilken information som kommer med och inte kommer med. Våra commits är hela projektets historik och är indata till
-changelogs och release notes så lägg gärna en extra minut på att vara tydlig. 
+changelogs och release notes så lägg gärna en extra minut på att vara tydlig.
 
 #### Varför conventional commits?
 
@@ -104,7 +107,7 @@ select style based on input type
 
 ### Styleguide
 
-Generellt, använd övriga komponenter som referens när nya läggs till. 
+Generellt, använd övriga komponenter som referens när nya läggs till.
 
 - Som standard, exportera en komponent per fil
 - Använd barrel-files `index.ts` för att exportera hela mappar
