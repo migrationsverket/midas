@@ -148,7 +148,7 @@ export const MultiSelect: React.FC<MidasMultiSelect> = ({
               isDisabled={isDisabled}
 
             >
-            {placeholder}
+            {placeholder || "Välj"}
               
               <div
                 className={styles.icon}
