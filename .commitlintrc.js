@@ -1,3 +1,6 @@
+const fs = require('fs')
+const path = require('path')
+
 async function getConfig() {
   const {
     default: {
@@ -5,12 +8,18 @@ async function getConfig() {
     }
   } = await import('@commitlint/config-nx-scopes')
 
+  const componentsPath = path.join(__dirname, 'packages', 'components', 'src')
+  const componentFolders = fs
+    .readdirSync(componentsPath, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name)
+
   return {
     rules: {
       'scope-enum': async ctx => [
         2,
         'always',
-        [...(await getProjects(ctx, ({ tags }) => !tags.includes('apps')))]
+        [...(await getProjects(ctx)), ...componentFolders, 'release']
       ],
       'body-leading-blank': [1, 'always'],
       'body-max-line-length': [2, 'always', 100],
