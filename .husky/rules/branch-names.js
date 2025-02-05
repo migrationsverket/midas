@@ -3,15 +3,12 @@
 const { execSync } = require('child_process')
 
 const allowedPrefixes = [
-  'feat/',
-  'fix/',
+  'feature/',
+  'bugfix/',
   'docs/',
-  'style/',
   'refactor/',
   'test/',
-  'test/',
   'chore/',
-  'release/',
   'hotfix/',
   'main',
 ]
