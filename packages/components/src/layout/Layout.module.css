@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, primaryBackground, gray10, gray30, gray60, gray70, gray130, mdBreakpoint, logoPrimary from tokens;
+@value display, primaryBackground, mediumWeight, gray10, gray20, gray30, gray60, gray70, gray130, gray150, mdBreakpoint, logoPrimary, focus from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -78,8 +78,9 @@
   font-family: display;
   background-color: white;
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
+  overflow-y: auto;
   transition: 200ms;
   position: fixed;
   top: 0;
@@ -122,26 +123,29 @@
   transform: translateX(0);
 }
 
-.sidebarHeader {
-  padding: 1rem;
-  border-bottom: 1px solid gray60;
-
-  & p {
-    margin: 0;
-  }
-}
-
 .sidebarFooter {
-  display: none;
   padding: 0.5rem 1rem;
   position: sticky;
   bottom: 0;
+  border-top: 1px solid gray70;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.appName {
+  font-size: 0.875rem;
+  font-weight: mediumWeight;
+  margin: 0;
+}
+
+.collapseButton {
+  display: none;
+  color: currentColor !important;
+  padding: calc(0.875rem - 1px) !important;
 
   @media mdBreakpoint {
-    justify-self: flex-end;
     display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid gray70;
   }
 }
 
@@ -217,9 +221,7 @@
 
 .listGroupTitle {
   color: gray130;
-  font-size: 0.75rem;
-  letter-spacing: 0.0375rem;
-  text-transform: uppercase;
+  font-size: 0.875rem;
   padding: 0.5rem;
   margin: 0;
 }
@@ -233,10 +235,50 @@
 }
 
 .listLink {
-  color: currentColor !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 0.5rem;
+  color: gray150;
   flex-grow: 1;
   transition: 100ms;
-  justify-content: flex-end !important;
+  text-decoration: none;
+
+  svg {
+    stroke: gray130;
+  }
+
+  &:hover,
+  &:visited {
+    background-color: gray10;
+    color: black;
+
+    svg {
+      stroke: black;
+    }
+  }
+
+  &[data-pressed] {
+    background-color: gray20;
+  }
+
+  &[data-focused] {
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &[data-focus-visible] {
+    box-shadow: focus;
+    outline: none;
+  }
+}
+
+.active {
+  background-color: gray10;
+  color: black;
 }
 
 .linkText {
@@ -262,11 +304,6 @@
 
 .listLinkCollapsed {
   flex-grow: unset;
-}
-
-.collapseButton {
-  color: currentColor !important;
-  padding: calc(0.875rem - 1px) !important;
 }
 
 .backdrop {
