@@ -1,5 +1,8 @@
 @value tokens: "../theme/tokens.css";
 @value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
+* > ul {
+  padding: 0;
+}
 
 .button {
   grid-area: Input;
@@ -16,13 +19,13 @@
   background-color: backgroundSecondary;
   border-bottom: 1px solid black;
 
-  &[aria-expanded='true'] .icon {
+/*  &[aria-expanded='true'] .icon {
     transform: rotate(180deg);
     transition: transform 0.3s ease;
-  }
+  }*/
 
   &:focus {
-    outline: none;
+   outline: none;
   }
 
   &:hover {
@@ -33,14 +36,32 @@
     outline-offset: 2px;
     outline: 2px solid black;
   }
-
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid black;
+  }
   &[data-disabled] {
     background: backgroundSecondary;
     color: gray50;
     border-color: gray50;
   }
 }
-
+.buttonOpen {
+  .icon {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+  }
+}
+.buttonDisabled {
+  background: backgroundSecondary;
+  color: gray50;
+  border-color: gray50;
+}
+/** not working? */
+.buttonFocused {
+  outline-offset: 2px;
+  outline: 2px solid black;
+}
 .multiSelect {
   font-family: display;
   display: flex;
@@ -61,7 +82,17 @@
   font-family: display;
   border: 1px solid black;
   background: white;
-  overflow-y: auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+
+  --select-popover-width: max(
+    var(--select-width, var(--field-width-base)),
+    200px
+  ); /* 1 */
+
+/*  background-color: var(--select-background);*/
+  width: var(--select-popover-width);
 }
 
 .icon {
@@ -71,6 +102,7 @@
 }
 
 .listBoxItem {
+  font-family: display;
   margin: auto;
   padding: 1rem;
   background-color: white;
@@ -90,7 +122,52 @@
     background: gray20;
   }
 
+  /*TODO: remove */
   &[data-disabled='true'] {
     color: gray50;
   }
+}
+
+.listBoxItemDisabled {
+  color: gray50;
+}
+.listBoxItemFocused {
+  background: gray20;
+}
+
+
+/** copied stuff */
+.select__popover {
+  --select-background: #fff;
+  --select-border: #00f;
+  --select-border--hover: #aac1ff;
+  --select-border--focus: #ff739d;
+  --select-text: #000;
+  --select-text-base: 10px;
+  --select-label-text: var(--select-text);
+  --select-label-text--active: var(--select-border);
+  --select-option-text: var(--select-text);
+  --select-option-text--disabled: #aaa;
+  --select-option-text--hover: var(--select-text);
+  --select-option-text--selected: var(--select-text);
+  --select-option-background: transparent;
+  --select-option-background--disabled: transparent;
+  --select-option-background--hover: #aac1ff;
+  --select-option-background--selected: #ff739d;
+  --select-divider: var(--select-border--hover);
+  --select-section-heading-text: var(--select-text);
+}
+.select__popover {
+/*  border: 2px solid var(--select-border);
+  padding: 20px;*/
+  display: flex;
+  flex-direction: column;
+
+  --select-popover-width: max(
+    var(--select-width, var(--field-width-base)),
+    200px
+  ); /* 1 */
+
+  background-color: var(--select-background);
+  width: var(--select-popover-width);
 }

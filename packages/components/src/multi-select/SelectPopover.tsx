@@ -7,6 +7,7 @@ import {
 } from "@react-aria/overlays";
 import {mergeProps} from "@react-aria/utils";
 import * as React from "react";
+import styles from './MultiSelect.module.css'
 
 type PopoverProps = {
     children: React.ReactNode;

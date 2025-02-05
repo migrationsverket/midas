@@ -50,7 +50,11 @@ export const Primary: Story = {
     label: 'Etikett',
     selectionMode: 'multiple',
     // description: 'Valfri hjälptext',
-    options: options
+    options: options,
+    isDisabled: false,
+    isClearable: true,
+    isSelectableAll: false,
+    disabledKeys: ['kiwi']
   }
 }
 

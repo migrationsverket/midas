@@ -6,6 +6,7 @@ import styles from './MultiSelect.module.css'
 import type {MultiSelectState} from "./useMultiSelectState";
 import type {AriaListBoxOptions} from "@react-aria/listbox";
 import type {Node} from "@react-types/shared";
+import { Checkbox } from '@midas-ds/components'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
     listBoxRef?: React.RefObject<HTMLUListElement>;
@@ -36,14 +37,15 @@ const Option = <T, >({item, state}: OptionProps<T>) => {
         <li
             {...optionProps}
             ref={ref}
-            className={clsx("select__option", {
-                "select__option--disabled": isDisabled,
-                "select__option--focused": isFocused,
+            className={clsx(styles.listBoxItem, {
+                [styles.listBoxItemDisabled]: isDisabled,
+                [styles.listBoxItemFocused]: isFocused,
                 "select__option--selected": isSelected
             })}
         >
             {state.selectionMode === "multiple" && (
-                <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly/>
+              <Checkbox isDisabled={isDisabled} isSelected={isSelected} isReadOnly/>
+                /*<input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly/>*/
             )}
             {typeof item.rendered === "string" ? (
                 <span className="truncate block">{item.rendered}</span>
