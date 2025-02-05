@@ -28,7 +28,7 @@ export default function Hello() {
               <ButtonGroup aria-label='Länkar'>
                 <LinkButton
                   as={Link}
-                  to='/get-started'
+                  to='/get-started/use'
                 >
                   Kom igång
                 </LinkButton>
