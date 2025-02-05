@@ -165,7 +165,6 @@ flowchart LR;
     B2-->E1
     E1-->|GH Action|C2
     E1-->|GH Action|D1
-    F1-->|Synk 24h|G1
     E1-->|GH Action|F1
     subgraph "Jira"
         A1@{ shape: procs, label: "Tickets"}
@@ -186,8 +185,5 @@ flowchart LR;
     end
     subgraph "npm"
         F1["@midas-ds/components"]
-    end
-    subgraph "Migrationsverket"
-        G1["@midas-ds/components"]
     end
 ```
