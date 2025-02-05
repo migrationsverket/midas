@@ -65,9 +65,15 @@ export const Card: React.FC<CardProps> = ({
               />
             )}
         <HeadingTag className={styles.heading}>{title}</HeadingTag>
-        <p className={styles.text}>{content}</p>
+        <p
+          id='content'
+          className={styles.text}
+        >
+          {content}
+        </p>
       </div>
       <Link
+        aria-describedby='content'
         {...link}
         standalone
         stretched
