@@ -8,7 +8,7 @@ import {
   PanelRightClose,
   X
 } from 'lucide-react'
-import { LinkButton, RouterProvider } from '../link-button'
+import { RouterProvider } from '../link-button'
 import { Button } from '../button'
 import { FlexItem } from '../flex'
 import { Logo } from '../logo'
@@ -16,6 +16,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { midasColors } from '../theme'
 import { Dropdown, DropdownItem } from '../dropdown'
+import { Link, LinkProps } from 'react-aria-components'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -26,6 +27,7 @@ export interface SidebarLink {
   title: string
   href: string
   icon: LucideIcon
+  active?: boolean
 }
 
 export interface SidebarUser {
@@ -37,7 +39,6 @@ type HEX = `#${string}`
 
 interface App {
   name: string
-  shortName: string
   color?: HEX
 }
 
@@ -138,18 +139,6 @@ export const Sidebar: React.FC<MidasSidebar> = ({
   setIsCollapsed,
   clientSideRouter
 }) => {
-  const SidebarHeader = () => {
-    return (
-      <div className={styles.sidebarHeader}>
-        {isCollapsed ? (
-          <p className={styles.name}>{app.shortName}</p>
-        ) : (
-          <p className={styles.abbr}>{app.name}</p>
-        )}
-      </div>
-    )
-  }
-
   const LinkTree = ({ group }: { group: SidebarLinkGroup }) => {
     return (
       <ul className={styles.list}>
@@ -161,16 +150,15 @@ export const Sidebar: React.FC<MidasSidebar> = ({
               isCollapsed && styles.listItemCollapsed
             )}
           >
-            <LinkButton
-              iconPlacement='left'
+            <SidebarLink
               href={link.href}
-              icon={link.icon}
               className={clsx(
                 styles.listLink,
+                link.active && styles.active,
                 isCollapsed && styles.listLinkCollapsed
               )}
-              variant='tertiary'
             >
+              {React.createElement(link.icon, { size: 20 })}
               <span
                 className={clsx(
                   styles.linkText,
@@ -179,7 +167,7 @@ export const Sidebar: React.FC<MidasSidebar> = ({
               >
                 {link.title}
               </span>
-            </LinkButton>
+            </SidebarLink>
           </li>
         ))}
       </ul>
@@ -195,7 +183,6 @@ export const Sidebar: React.FC<MidasSidebar> = ({
         isOpened && styles.sidebarOpened
       )}
     >
-      <SidebarHeader />
       <nav className={styles.sidebarNav}>
         <ul className={styles.list}>
           {items.map((group, i) => (
@@ -221,8 +208,13 @@ export const Sidebar: React.FC<MidasSidebar> = ({
           onPress={() => setIsCollapsed(!isCollapsed)}
           className={styles.collapseButton}
         >
-          {isCollapsed ? <PanelRightClose /> : <PanelLeftClose />}
+          {isCollapsed ? (
+            <PanelRightClose size={20} />
+          ) : (
+            <PanelLeftClose size={20} />
+          )}
         </Button>
+        {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
       </div>
     </aside>
   )
@@ -289,5 +281,20 @@ export const Header: React.FC<MidasHeader> = ({
         </Dropdown>
       </div>
     </header>
+  )
+}
+
+const SidebarLink = ({
+  children,
+  href,
+  ...rest
+}: LinkProps & React.RefAttributes<HTMLAnchorElement>) => {
+  return (
+    <Link
+      href={href}
+      {...rest}
+    >
+      {children}
+    </Link>
   )
 }
