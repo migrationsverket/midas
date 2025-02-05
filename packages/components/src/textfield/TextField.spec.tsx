@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { axe } from 'jest-axe'
 import { TextField } from './'
-import user from 'utils/user'
+import user from '../../tests/utils/user'
 
 const labelText = "Label for input";
 

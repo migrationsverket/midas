@@ -1,4 +1,4 @@
-import fs from "fs"
+import fs from 'fs'
 
 /**
  * Logs the current DOM to a file
@@ -6,10 +6,10 @@ import fs from "fs"
  */
 export function logDom() {
   fs.writeFile(
-    "./test-dom.html",
+    './test-dom.html',
     `<html lang="sv"><head><title>Test page</title>${document.head.innerHTML}</head><body>${document.body.innerHTML}</body></html>`,
-    (error) => {
-      if (error) throw new Error(error.message);
+    error => {
+      if (error) throw new Error(error.message)
     }
-  );
+  )
 }

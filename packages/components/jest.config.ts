@@ -9,9 +9,4 @@ export default {
   coverageDirectory: '../../coverage/packages/components',
   setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
   testEnvironment: 'jsdom',
-  moduleDirectories: [
-    'node_modules',
-    '<rootDir>/tests/utils',
-    '__dirname'
-  ],
 }
