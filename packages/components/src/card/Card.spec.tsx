@@ -1,36 +1,48 @@
 import '@testing-library/jest-dom'
-import { render, RenderResult } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { axe } from 'jest-axe'
-import { Card, CardProps } from './'
+import { Card } from './'
+import user from 'utils/user'
 
-const link = { children: 'Läs mer', href: '#' }
+const linkText = 'Läs mer'
+const link = { children: linkText, href: '#' }
+const title = 'Rubrik'
+const content = 'Lorem ipsum'
+const testId = 'card'
 
 describe('given a default card', () => {
-  let rendered: RenderResult
-
   beforeEach(() => {
-    rendered = render(
-      <CardTest
-        title={'Rubrik'}
-        content={'Lorem ipsum'}
+    render(
+      <Card
+        data-testid={testId}
+        title={title}
+        content={content}
         link={link}
       />
     )
   })
 
   it('should have no accessibility violations', async () => {
-    expect(await axe(rendered.container)).toHaveNoViolations()
+    expect(await axe(screen.getByTestId(testId))).toHaveNoViolations()
+  })
+
+  it('should be possible to focus the link', async () => {
+    expect(screen.getByText(linkText)).not.toHaveFocus()
+
+    // focus the link
+    await user.tab()
+
+    expect(screen.getByText(linkText)).toHaveFocus()
   })
 })
 
 describe('given a card with background', () => {
-  let rendered: RenderResult
-
   beforeEach(() => {
-    rendered = render(
-      <CardTest
-        title={'Rubrik'}
-        content={'Lorem ipsum'}
+    render(
+      <Card
+        data-testid={testId}
+        title={title}
+        content={content}
         background
         link={link}
       />
@@ -38,19 +50,18 @@ describe('given a card with background', () => {
   })
 
   it('should have no accessibility violations', async () => {
-    expect(await axe(rendered.container)).toHaveNoViolations()
+    expect(await axe(screen.getByTestId(testId))).toHaveNoViolations()
   })
 })
 
 // TODO: maybe add proper image
 describe('given a card with image', () => {
-  let rendered: RenderResult
-
   beforeEach(() => {
-    rendered = render(
-      <CardTest
-        title={'Rubrik'}
-        content={'Lorem ipsum'}
+    render(
+      <Card
+        data-testid={testId}
+        title={title}
+        content={content}
         image={{ source: '', description: '' }}
         link={link}
       />
@@ -58,8 +69,6 @@ describe('given a card with image', () => {
   })
 
   it('should have no accessibility violations', async () => {
-    expect(await axe(rendered.container)).toHaveNoViolations()
+    expect(await axe(screen.getByTestId(testId))).toHaveNoViolations()
   })
 })
-
-const CardTest = (props: CardProps) => <Card {...props} />
