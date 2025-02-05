@@ -206,7 +206,7 @@ function _createMdxContent(props) {
       children: "UI-kit finns nu på Docwebben"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
       children: ["Vårt UI-kit till XD finns nu att ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
-        href: "/get-started",
+        href: "/get-started/use",
         children: "ladda ner"
       }), " här på docwebben. UI-kitet uppdateras löpande!"]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {

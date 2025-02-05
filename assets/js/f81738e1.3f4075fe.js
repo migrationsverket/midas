@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2240],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5990],{
 
-/***/ 34036:
+/***/ 2690:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,24 +13,23 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_get_started_mdx_c7e_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_get_started_use_mdx_f81_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-mdx-c7e.json
-const site_docs_get_started_mdx_c7e_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started","title":"Kom igång","description":"Designer","source":"@site/docs/get-started.mdx","sourceDirName":".","slug":"/get-started","permalink":"/get-started","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Kom igång","sidebar_position":2,"sidebar_label":"Kom igång","sidebar_class_name":"chapter-end","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-use-mdx-f81.json
+const site_docs_get_started_use_mdx_f81_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/use","title":"Använda Midas","description":"Designer","source":"@site/docs/get-started/use.mdx","sourceDirName":"get-started","slug":"/get-started/use","permalink":"/get-started/use","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"title":"Använda Midas","sidebar_label":"Använda","sidebar_position":1,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-;// ./apps/docs/docs/get-started.mdx
+;// ./apps/docs/docs/get-started/use.mdx
 
 
 const frontMatter = {
-	title: 'Kom igång',
-	sidebar_position: 2,
-	sidebar_label: 'Kom igång',
-	sidebar_class_name: 'chapter-end',
+	title: 'Använda Midas',
+	sidebar_label: 'Använda',
+	sidebar_position: 1,
 	pagination_prev: null,
 	pagination_next: null
 };
