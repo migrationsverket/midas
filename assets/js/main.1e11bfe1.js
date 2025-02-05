@@ -14148,7 +14148,7 @@ __webpack_require__.r(__webpack_exports__);
           "label": "Nyheter"
         },
         {
-          "to": "/blog/release-19",
+          "href": "https://github.com/migrationsverket/midas/releases",
           "label": "Senaste versionen",
           "position": "right"
         },
