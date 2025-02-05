@@ -182,3 +182,6 @@ storybook-static
 .cache-loader/
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+
+# Test files
+test-dom.html

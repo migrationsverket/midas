@@ -1,8 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, RenderResult } from '@testing-library/react'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import { Card, CardProps } from './'
-expect.extend(toHaveNoViolations)
 
 const link = { children: 'Läs mer', href: '#' }
 

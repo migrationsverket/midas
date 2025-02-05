@@ -1,9 +1,7 @@
 import { render, RenderResult } from '@testing-library/react'
 import { TextArea } from './TextArea'
 import { AriaTextFieldProps as TextFieldProps } from 'react-aria'
-import { axe, toHaveNoViolations } from 'jest-axe'
-
-expect.extend(toHaveNoViolations)
+import { axe } from 'jest-axe'
 
 describe('given a default TextField', () => {
   let rendered: RenderResult

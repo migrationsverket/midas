@@ -3,7 +3,11 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "module": "commonjs",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "baseUrl": "./",
+    "paths": {
+      "utils/*": ["tests/utils/*"],
+    }
   },
   "include": [
     "jest.config.ts",
@@ -16,6 +20,7 @@
     "src/**/*.test.jsx",
     "src/**/*.spec.jsx",
     "src/**/*.d.ts",
-    "src/**/*.stories.tsx"
+    "src/**/*.stories.tsx",
+    "tests/**/*.ts",
   ]
 }
