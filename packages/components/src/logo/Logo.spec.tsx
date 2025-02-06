@@ -1,8 +1,7 @@
 import { render, RenderResult } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Logo, LogoProps } from './Logo'
-import { axe, toHaveNoViolations } from 'jest-axe'
-expect.extend(toHaveNoViolations)
+import { axe } from 'jest-axe'
 
 describe('given a default Logo', () => {
   let rendered: RenderResult
