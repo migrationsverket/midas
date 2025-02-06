@@ -45,56 +45,68 @@ const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
 
-export const Primary: Story = {
+export const Normal: Story = {
   args: {
-    label: 'Etikett',
-    selectionMode: 'multiple',
+    label: 'Label',
+    selectionMode: 'single',
     options: options,
     isDisabled: false,
     isClearable: true,
     isSelectableAll: false,
-    disabledKeys: ['kiwi'],
-    description: 'beskrivande text',
+    description: 'Description',
     showTags: false,
-    placeholder: 'Gör ett val',
+    placeholder: 'Select an option',
   }
 }
 
-/*export const DefaultSelectedKeys: Story = {
+export const DefaultSelectedKey: Story = {
   args: {
-    label: 'Etikett',
-    description: 'Blackberry är förvalt',
-    items: options,
-    defaultSelectedKeys: ['blackberry']
+    ...Normal.args,
+    description: 'Kiwi is pre-selected',
+    defaultSelectedKeys: ['kiwi']
   }
 }
 
 export const AllKeysSelected: Story = {
   args: {
-    label: 'Etikett',
-    description: 'Alla val är förvalda',
-    items: options,
-    defaultSelectedKeys: 'all'
+    ...Normal.args,
+    selectionMode: 'multiple',
+    description: 'All options are selected',
+    defaultSelectedKeys: 'all',
   }
 }
 
 export const Disabled: Story = {
   args: {
-    label: 'Etikett',
-    description: 'Blackberry är förvalt',
-    items: options,
-    defaultSelectedKeys: ['blackberry'],
-    isDisabled: true
+    ...Normal.args,
+    isDisabled: true,
   }
 }
-
+export const DisabledOption: Story = {
+  args: {
+    ...Normal.args,
+    description: 'Kiwi is disabled',
+    disabledKeys: ['kiwi'],
+  }
+}
+/** TODO! */
 export const Invalid: Story = {
   args: {
-    label: 'Etikett',
-    description: 'Blackberry är förvalt',
-    items: options,
-    defaultSelectedKeys: ['blackberry'],
-    isInvalid: true,
-    errorMessage: 'Du får inte välja Blackberry'
+    ...Normal.args,
   }
-}*/
+}
+export const WithTags: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    showTags: true,
+    defaultSelectedKeys: ['apple','kiwi']
+  }
+}
+export const SelectAllEnabled: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    isSelectableAll: true,
+  }
+}
