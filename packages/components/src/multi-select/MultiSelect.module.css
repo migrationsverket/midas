@@ -1,7 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value display, black, signalRed130, smBreakpoint, gray50, gray20, backgroundSecondary from tokens;
+@value display, regularWeight, black, signalRed130, smBreakpoint, gray50, blue150, gray20, backgroundSecondary from tokens;
 * > ul {
   padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .button {
@@ -78,16 +80,21 @@
   }
 }
 
+.description {
+  font-size: 0.875rem;
+  font-weight: regularWeight;
+}
+
 .popover {
   font-family: display;
   border: 1px solid black;
   background: white;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
+
+/*  display: flex;
+  flex-direction: column;*/
 
   --select-popover-width: max(
-    var(--select-width, var(--field-width-base)),
+    var(--select-width, var(--field-width-base)) - 2px,
     200px
   ); /* 1 */
 
@@ -99,6 +106,13 @@
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
+}
+/**
+ * 1. Represents max ~10 options in the list.
+ */
+.listBox {
+  max-height: 295px; /* 1 */
+  overflow-y: auto;
 }
 
 .listBoxItem {
@@ -127,6 +141,8 @@
     color: gray50;
   }
 }
+.listBoxItemSelected {
+}
 
 .listBoxItemDisabled {
   color: gray50;
@@ -134,8 +150,21 @@
 .listBoxItemFocused {
   background: gray20;
 }
-
-
+.selectValueTag {
+  font-family: display;
+  background-color: blue150;
+  color: white;
+  border-radius: 1.25rem;
+  font-size: 0.875rem;
+  min-height: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.selectDivider {}
+.selectSectionHeading {}
 /** copied stuff */
 .select__popover {
   --select-background: #fff;

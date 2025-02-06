@@ -49,12 +49,14 @@ export const Primary: Story = {
   args: {
     label: 'Etikett',
     selectionMode: 'multiple',
-    // description: 'Valfri hjälptext',
     options: options,
     isDisabled: false,
     isClearable: true,
     isSelectableAll: false,
-    disabledKeys: ['kiwi']
+    disabledKeys: ['kiwi'],
+    description: 'beskrivande text',
+    showTags: false,
+    placeholder: 'Gör ett val',
   }
 }
 

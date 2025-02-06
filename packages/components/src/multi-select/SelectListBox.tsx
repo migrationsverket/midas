@@ -40,12 +40,11 @@ const Option = <T, >({item, state}: OptionProps<T>) => {
             className={clsx(styles.listBoxItem, {
                 [styles.listBoxItemDisabled]: isDisabled,
                 [styles.listBoxItemFocused]: isFocused,
-                "select__option--selected": isSelected
+                [styles.listBoxItemSelected]: isSelected
             })}
         >
             {state.selectionMode === "multiple" && (
               <Checkbox isDisabled={isDisabled} isSelected={isSelected} isReadOnly/>
-                /*<input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly/>*/
             )}
             {typeof item.rendered === "string" ? (
                 <span className="truncate block">{item.rendered}</span>
@@ -66,7 +65,7 @@ const Section = <T, >({section, state}: SectionProps<T>) => {
         <>
             <li {...itemProps} className={''}>
                 {section.rendered && (
-                    <span {...headingProps} className="select__section-heading">
+                    <span {...headingProps} className={styles.selectSectionHeading}>
             {section.rendered}
           </span>
                 )}
@@ -84,18 +83,18 @@ export const SelectListBox = <T, >(props: ListBoxProps<T>) => {
     const ref = React.useRef<HTMLUListElement>(null);
     const {listBoxRef = ref, state} = props;
 
-    const {listBoxProps} = useListBox(
-        {
-            ...props,
-            // When Select is clearable, do not clear the selection once ESC key is pressed, see https://github.com/adobe/react-spectrum/blob/main/packages/@react-aria/selection/src/useSelectableCollection.ts#L226
-            disallowEmptySelection: true
-        },
-        state,
-        listBoxRef
-    );
+    const { listBoxProps } = useListBox(
+      {
+        ...props,
+        // When Select is clearable, do not clear the selection once ESC key is pressed, see https://github.com/adobe/react-spectrum/blob/main/packages/@react-aria/selection/src/useSelectableCollection.ts#L226
+        disallowEmptySelection: true
+      },
+      state,
+      listBoxRef
+    )
 
     return (
-        <ul {...listBoxProps} className="select__listbox" ref={listBoxRef}>
+        <ul {...listBoxProps} className={styles.listBox} ref={listBoxRef}>
             {[...state.collection].map((item) =>
                 item.type === "section" ? (
                     <Section key={item.key} section={item} state={state}/>

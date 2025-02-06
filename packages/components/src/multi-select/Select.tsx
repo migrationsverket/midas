@@ -5,7 +5,7 @@ import { Item, Section } from '@react-stately/collections'
 import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import React, { useEffect, useRef } from 'react'
-import { TagList } from 'react-aria-components'
+import { SelectValue, TagList, Text } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -13,6 +13,7 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './MultiSelect.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
+import {InputWrapper, Button} from '@midas-ds/components'
 
 export type OptionItem = {
   children?: never
@@ -74,6 +75,12 @@ type SelectProps = {
   /** The content to display as the label. */
   label: string
 
+  /** Optional description */
+  description?: string
+  /** Placeholder value */
+  placeholder?: string
+  /** Show selected items as tags below select */
+  showTags?: boolean
   /** Handler that is called when the select's open state changes. */
   onOpenChange?: Parameters<typeof useMultiSelectState>['0']['onOpenChange']
 
@@ -98,7 +105,10 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       isClearable,
       isDisabled,
       isSelectableAll,
-      label
+      label,
+      description,
+      placeholder,
+      showTags,
     } = props
 
     const refAllButton = useRef<HTMLInputElement>(null)
@@ -109,7 +119,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
       {
         ...props,
-        disallowEmptySelection
+        disallowEmptySelection,
       },
       state,
       ref
@@ -134,9 +144,10 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
     ) => (
-      <span className='truncate block'>
-        {items.length > 1 ? `${items.length} selected` : items[0].textValue}
-      </span>
+        <div className={styles.selectValueTag}>
+        {items.length > 1 ? `${items.length} valda` : items[0].textValue}
+        </div>
+
     )
 
     useEffect(() => {
@@ -148,7 +159,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     return (
       <div
         className={clsx(
-          'select-wrapper',
+          [styles.multiSelect],
           {
             'select-wrapper--open': state.isOpen
           },
@@ -159,6 +170,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           {label && (
             <label
               {...labelProps}
+              slot={'label'}
               className={clsx('select__label', {
                 'select__label--active': isActive
               })}
@@ -166,6 +178,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               {label}
             </label>
           )}
+          {description && (<span className={styles.description} slot={'description'}>{description}</span>)}
           <FocusRing
             focusRingClass={styles.buttonFocused}
             autoFocus={autoFocus}
@@ -180,14 +193,16 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               type='button'
               ref={ref}
             >
-              <span {...valueProps}>
+              {state.selectionMode === 'multiple' ? (
+                <span {...valueProps}>
                 {state.selectedItems
                   ? formatItems(state.selectedItems)
-                  : undefined}
+                  : placeholder}
               </span>
+              ) : <span>{state.selectedItems?.length === 1 ? state.selectedItems[0].textValue: placeholder}</span>}
               <div
                 className={styles.icon}
-                aria-hidden='true'
+                aria-hidden="true"
               >
                 <ChevronDown size={20} />
               </div>
@@ -218,7 +233,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                       Select all
                     </button>
                   )}
-                  <div className='select__divider' />
+                  <div className='selectDivider' />
                 </>
               )}
               <SelectListBox
@@ -227,7 +242,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               />
               {hasClearButton && (
                 <>
-                  <div className='select__divider' />
+                  <div className='selectDivider' />
                   {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}
                   <button
                     type='button'
@@ -242,26 +257,29 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           )}
         </div>
         {/*TODO FIX AND REFACTOR*/}
-        <TagGroup
-          aria-label={'Selected Items'}
-          selectionBehavior={'toggle'}
-          onRemove={keys => handleRemove([...keys][0])}
-          {...mergeProps}
-        >
-          {/*@ts-ignore*/}
-          <TagList items={state.selectedItems}>
-            {item => (
-              <Tag
-                key={item.key}
-                textValue={item.textValue}
-                id={item.key}
-                dismissable
-              >
-                {item.textValue}
-              </Tag>
-            )}
-          </TagList>
-        </TagGroup>
+        {showTags && (
+          <TagGroup
+            aria-label={'Selected Items'}
+            selectionBehavior={'toggle'}
+            onRemove={keys => handleRemove([...keys][0])}
+            {...mergeProps}
+          >
+            {/*@ts-ignore*/}
+            <TagList items={state.selectedItems}>
+              {item => (
+                <Tag
+                  key={item.key}
+                  textValue={item.textValue}
+                  id={item.key}
+                  dismissable
+                  isDisabled={isDisabled}
+                >
+                  {item.textValue}
+                </Tag>
+              )}
+            </TagList>
+          </TagGroup>
+        )}
       </div>
     )
   }

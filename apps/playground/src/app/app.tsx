@@ -43,14 +43,32 @@ export function App() {
       <SearchField placeholder={'Search...'} />
       <Logo />
       <TextField label={'Text'} />
+      <div className={styles.section}>
+        <div className={styles.col}>
       <Select
+        placeholder={'Select...'}
         defaultSelectedKeys={['kiwi']}
-        label={'hej'}
+        label={'Select many fruits'}
         selectionMode={'multiple'}
         options={options}
-        isClearable
+        isClearable={true}
+        isSelectableAll={true}
         onSelectionChange={x => console.log('onSelectionChange', x)}
       ></Select>
+        </div>
+        <div className={styles.col}>
+        <Select
+          placeholder={'Select...'}
+          defaultSelectedKeys={['kiwi']}
+          label={'Select a single fruit'}
+          selectionMode={'single'}
+          options={options}
+          isClearable={false}
+          isSelectableAll={false}
+          onSelectionChange={x => console.log('onSelectionChange', x)}
+        ></Select>
+        </div>
+      </div>
     </div>
   )
 }

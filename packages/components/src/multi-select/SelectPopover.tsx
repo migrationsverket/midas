@@ -38,7 +38,8 @@ export const SelectPopover: React.VFC<PopoverProps> = ({
 
     const {overlayProps: positionProps, updatePosition} = useOverlayPosition({
         isOpen,
-        offset: 2,
+        offset: 0,
+        crossOffset: 0,
         containerPadding: 0,
         overlayRef: ref,
         targetRef: triggerRef,
