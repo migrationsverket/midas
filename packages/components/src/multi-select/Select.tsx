@@ -13,7 +13,7 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './MultiSelect.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
-import {InputWrapper, Button} from '@midas-ds/components'
+import { InputWrapper, Button, Checkbox } from '@midas-ds/components'
 
 export type OptionItem = {
   children?: never
@@ -218,20 +218,27 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               {hasHeader && (
                 <>
                   {isSelectableAll && (
+                    <FocusRing focusRingClass={styles.listItemfocusRing}>
+
                     <button
                       type='button'
                       onClick={handleSelectAll}
-                      className='select__all-button'
+                      className={styles.selectAllButton}
                     >
-                      <input
+                      <div className={styles.listBoxItem} tabIndex={-1}>
+                        <Checkbox isDisabled={isDisabled} isSelected={isAllSelection} isReadOnly isIndeterminate={isIndeterminateSelection} excludeFromTabOrder={true}/>
+{/*                      <input
                         type='checkbox'
                         checked={isAllSelection}
                         ref={refAllButton}
                         readOnly
                         tabIndex={-1}
-                      />
-                      Select all
+                      />*/}
+                      {isAllSelection ? 'Clear selection' : 'Select All'}
+                      </div>
                     </button>
+
+                    </FocusRing>
                   )}
                   <div className='selectDivider' />
                 </>
@@ -240,7 +247,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {...menuProps}
                 state={state}
               />
-              {hasClearButton && (
+              {/** Bottom clear button disabled for now, work in progress */}
+              {hasClearButton && false && (
                 <>
                   <div className='selectDivider' />
                   {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}

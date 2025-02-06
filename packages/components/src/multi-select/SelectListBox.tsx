@@ -7,6 +7,7 @@ import type {MultiSelectState} from "./useMultiSelectState";
 import type {AriaListBoxOptions} from "@react-aria/listbox";
 import type {Node} from "@react-types/shared";
 import { Checkbox } from '@midas-ds/components'
+import { FocusRing } from '@react-aria/focus'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
     listBoxRef?: React.RefObject<HTMLUListElement>;
@@ -34,6 +35,7 @@ const Option = <T, >({item, state}: OptionProps<T>) => {
     );
 
     return (
+      <FocusRing focusRingClass={styles.listItemfocusRing}>
         <li
             {...optionProps}
             ref={ref}
@@ -52,6 +54,7 @@ const Option = <T, >({item, state}: OptionProps<T>) => {
                 item.rendered
             )}
         </li>
+      </FocusRing>
     );
 };
 

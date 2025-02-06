@@ -6,6 +6,18 @@
   margin-bottom: 0;
 }
 
+.listItemfocusRing {
+  border: black solid 2px;
+}
+.selectAllButton {
+  all: unset;
+  width: 100%;
+  margin-bottom: 2px;
+  &:focus-visible {
+    outline: 2px black solid;
+  }
+}
+
 .button {
   grid-area: Input;
   border: none;
@@ -120,7 +132,6 @@
   margin: auto;
   padding: 1rem;
   background-color: white;
-  outline: none;
   cursor: default;
   color: black;
   position: relative;
@@ -131,10 +142,17 @@
   &:hover {
     background-color: gray20;
   }
-
-  &[data-focused='true'] {
-    background: gray20;
+  &:focus {
+    outline: none;
+    background-color: gray20;
   }
+  &:focus-visible {
+    outline: none;
+  }
+
+/*  &[data-focused='true'] {
+    background: gray20;
+  }*/
 
   /*TODO: remove */
   &[data-disabled='true'] {
@@ -147,9 +165,7 @@
 .listBoxItemDisabled {
   color: gray50;
 }
-.listBoxItemFocused {
-  background: gray20;
-}
+.listBoxItemFocused {}
 .selectValueTag {
   font-family: display;
   background-color: blue150;
