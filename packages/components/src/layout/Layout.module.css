@@ -240,7 +240,7 @@
   gap: 0.5rem;
   padding: 0.625rem 0.5rem;
   color: gray150;
-  flex-grow: 1;
+  flex: 1 0 0%;
   transition: 100ms;
   text-decoration: none;
 
@@ -255,6 +255,7 @@
 
     svg {
       stroke: black;
+      min-width: 1.25rem;
     }
   }
 
@@ -276,34 +277,21 @@
   }
 }
 
+.listLinkCollapsed {
+  padding: 0.625rem;
+  flex-grow: unset;
+}
+
 .active {
   background-color: gray10;
   color: black;
 }
 
 .linkText {
-  transform: translateX(0);
   opacity: 1;
-  width: auto;
-  transition-property: transform width opacity;
-  transition-duration: 0s 0s 10ms;
-  transition-delay: 0s 0s 200ms;
+  display: block;
+  transition: all 100ms;
   transition-behavior: allow-discrete;
-}
-
-.linkTextCollapsed {
-  display: none;
-  transform: translateX(-200px);
-  opacity: 0;
-  width: 0;
-  transition-property: transform, opacity, width;
-  transition-duration: 0, 100ms, 100ms;
-  transition-delay: 0s;
-  transition-behavior: allow-discrete;
-}
-
-.listLinkCollapsed {
-  flex-grow: unset;
 }
 
 .backdrop {
@@ -323,6 +311,10 @@
 
 @starting-style {
   .backdrop.backdropOpened {
+    opacity: 0;
+  }
+
+  .linkText {
     opacity: 0;
   }
 }
