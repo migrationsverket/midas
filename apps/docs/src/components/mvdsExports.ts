@@ -24,6 +24,7 @@ import {
   Select,
   GridItem,
   Item,
+  Tooltip,
   theme
 } from '@midas-ds/components'
 
@@ -53,5 +54,6 @@ export {
   Tabs,
   TextArea,
   theme,
-  MultiSelect
+  MultiSelect,
+  Tooltip
 }

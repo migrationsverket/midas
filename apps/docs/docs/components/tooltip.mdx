@@ -1,0 +1,68 @@
+---
+title: Tooltip
+description: Kort beskrivning av Tooltip
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Button, Tooltip, TooltipTrigger } from '@midas-ds/components'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Save } from 'lucide-react'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Tooltip, TooltipTrigger, Button, Save }}
+      {...props}
+    >
+      {`<TooltipTrigger>
+      <Button
+        variant='tertiary'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      <Tooltip>Spara</Tooltip>
+    </TooltipTrigger>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'Tooltip'}
+  friendlyName='Hjälptext'
+/>
+
+Tooltip kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen.
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Tooltip, TooltipTrigger, Button } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Riktlinjer
+
+- I första hand skall knappen vara tydlig nog så användaren förstår innebörden. Tooltip är till för en design där detta inte är möjligt och vi måste gömma undan informationen. Tooltip måste alltid kompletteras med en aria-label eller text som är dold visuellt men läses upp av skärmläsare.
+- Tooltips kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
+
+## API
+
+### Tooltip
+
+<PropTable name={'Tooltip'} />
+
+### TooltipTrigger
+
+<PropTable
+  name={'TooltipTrigger'}
+  defaultOpen={false}
+/>
