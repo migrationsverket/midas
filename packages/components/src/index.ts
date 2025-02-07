@@ -1,3 +1,7 @@
+import './theme/global.css'
+
+export * from './tooltip'
+export * from './theme/index'
 export * from './accordion'
 export * from './breadcrumbs'
 export * from './button'
