@@ -2,8 +2,7 @@ import { render, RenderResult } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Checkbox } from './Checkbox'
 import { CheckboxProps } from 'react-aria-components'
-import { axe, toHaveNoViolations } from 'jest-axe'
-expect.extend(toHaveNoViolations)
+import { axe } from 'jest-axe'
 
 describe('given a default Checkbox', () => {
   // setup
