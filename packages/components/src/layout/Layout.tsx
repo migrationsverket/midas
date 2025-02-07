@@ -16,7 +16,8 @@ import React from 'react'
 import clsx from 'clsx'
 import { midasColors } from '../theme'
 import { Dropdown, DropdownItem } from '../dropdown'
-import { Link, LinkProps } from 'react-aria-components'
+import { Link } from 'react-aria-components'
+import { Tooltip, TooltipTrigger } from '../tooltip'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -151,23 +152,9 @@ export const Sidebar: React.FC<MidasSidebar> = ({
             )}
           >
             <SidebarLink
-              href={link.href}
-              className={clsx(
-                styles.listLink,
-                link.active && styles.active,
-                isCollapsed && styles.listLinkCollapsed
-              )}
-            >
-              {React.createElement(link.icon, { size: 20 })}
-              <span
-                className={clsx(
-                  styles.linkText,
-                  isCollapsed && styles.linkTextCollapsed
-                )}
-              >
-                {link.title}
-              </span>
-            </SidebarLink>
+              {...link}
+              isCollapsed={isCollapsed}
+            />
           </li>
         ))}
       </ul>
@@ -285,16 +272,57 @@ export const Header: React.FC<MidasHeader> = ({
 }
 
 const SidebarLink = ({
-  children,
+  title,
   href,
-  ...rest
-}: LinkProps & React.RefAttributes<HTMLAnchorElement>) => {
+  active,
+  icon: IconComponent,
+  isCollapsed
+}: SidebarLink & { isCollapsed: boolean }) => {
+  const [showText, setShowText] = React.useState(false)
+
+  React.useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+
+    if (!isCollapsed) {
+      timeoutId = setTimeout(() => {
+        setShowText(true)
+      }, 100)
+    } else {
+      setShowText(false)
+    }
+
+    return () => {
+      clearTimeout(timeoutId)
+    }
+  }, [isCollapsed])
+
+  if (isCollapsed)
+    return (
+      <TooltipTrigger>
+        <Link
+          href={href}
+          className={clsx(
+            styles.listLink,
+            styles.listLinkCollapsed,
+            active && styles.active
+          )}
+        >
+          <IconComponent
+            size={20}
+            aria-label={title}
+          />
+        </Link>
+        <Tooltip placement='right'>{title}</Tooltip>
+      </TooltipTrigger>
+    )
+
   return (
     <Link
       href={href}
-      {...rest}
+      className={clsx(styles.listLink, active && styles.active)}
     >
-      {children}
+      <IconComponent size={20} />
+      {showText && <span className={styles.linkText}>{title}</span>}
     </Link>
   )
 }
