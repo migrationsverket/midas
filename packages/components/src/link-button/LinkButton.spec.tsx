@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom'
 import { render, RenderResult } from '@testing-library/react'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import { ButtonProps } from 'react-aria-components'
 import { LinkButton } from './'
-expect.extend(toHaveNoViolations)
 
 describe('given a default link', () => {
   let rendered: RenderResult
