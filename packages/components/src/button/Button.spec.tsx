@@ -1,9 +1,8 @@
 import '@testing-library/jest-dom'
 import { render, RenderResult } from '@testing-library/react'
 import { Button } from './Button'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import { ButtonProps } from 'react-aria-components'
-expect.extend(toHaveNoViolations)
 
 describe('given a default button', () => {
   let rendered: RenderResult
