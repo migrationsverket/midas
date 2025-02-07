@@ -7,7 +7,8 @@
 }
 
 .listItemfocusRing {
-  border: black solid 2px;
+/*  outline: black solid 2px;
+  outline-offset: -2px;*/
 }
 .selectAllButton {
   all: unset;
@@ -16,6 +17,16 @@
   &:focus-visible {
     outline: 2px black solid;
   }
+}
+
+.selectLabel {
+  /** Select Label */
+}
+.selectLabelActive {
+  /** Label in active state*/
+}
+.selectLabelDisabled {
+  color: gray50;
 }
 
 .button {
@@ -46,10 +57,6 @@
     background-color: gray20;
   }
 
-  &[data-focus-visible] {
-    outline-offset: 2px;
-    outline: 2px solid black;
-  }
   &:focus-visible {
     outline-offset: 2px;
     outline: 2px solid black;
@@ -73,8 +80,11 @@
 }
 /** not working? */
 .buttonFocused {
-  outline-offset: 2px;
-  outline: 2px solid black;
+/*  outline-offset: 2px;
+  outline: 2px solid black;*/
+}
+.buttonActive {
+  /** when select input (button) is active */
 }
 .multiSelect {
   font-family: display;
@@ -91,19 +101,23 @@
     border: 2px solid signalRed130;
   }
 }
+.multiSelectOpen {
+  /** TODO some styles here with the border? */
+}
 
 .description {
   font-size: 0.875rem;
   font-weight: regularWeight;
+}
+.descriptionActive {}
+.descriptionDisabled {
+  color: gray50;
 }
 
 .popover {
   font-family: display;
   border: 1px solid black;
   background: white;
-
-/*  display: flex;
-  flex-direction: column;*/
 
   --select-popover-width: max(
     var(--select-width, var(--field-width-base)) - 2px,
@@ -120,7 +134,7 @@
   transition: transform 0.3s ease;
 }
 /**
- * 1. Represents max ~10 options in the list.
+ * 1. Represents max ~5 options in the list.
  */
 .listBox {
   max-height: 295px; /* 1 */
@@ -129,7 +143,6 @@
 
 .listBoxItem {
   font-family: display;
-  margin: auto;
   padding: 1rem;
   background-color: white;
   cursor: default;
@@ -138,29 +151,22 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-bottom: 1px;
+  transition: background-color 60ms;
 
   &:hover {
     background-color: gray20;
+    transition-delay: 60ms;
   }
-  &:focus {
-    outline: none;
-    background-color: gray20;
-  }
-  &:focus-visible {
-    outline: none;
-  }
-
-/*  &[data-focused='true'] {
-    background: gray20;
-  }*/
+  &:focus {}
+  &:focus-visible {}
 
   /*TODO: remove */
   &[data-disabled='true'] {
     color: gray50;
   }
 }
-.listBoxItemSelected {
-}
+.listBoxItemSelected {}
 
 .listBoxItemDisabled {
   color: gray50;

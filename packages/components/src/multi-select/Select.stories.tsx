@@ -3,7 +3,7 @@ import { Select } from './Select'
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: 'Components/NEWMultiSelect',
+  title: 'Components/NEWSelect',
   tags: ['autodocs']
 }
 export default meta

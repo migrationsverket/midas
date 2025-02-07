@@ -13,6 +13,8 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './MultiSelect.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
+import { useToggleState } from 'react-stately'
+import { useCheckbox } from 'react-aria'
 import { InputWrapper, Button, Checkbox } from '@midas-ds/components'
 
 export type OptionItem = {
@@ -108,7 +110,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       label,
       description,
       placeholder,
-      showTags,
+      showTags
     } = props
 
     const refAllButton = useRef<HTMLInputElement>(null)
@@ -119,7 +121,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
       {
         ...props,
-        disallowEmptySelection,
+        disallowEmptySelection
       },
       state,
       ref
@@ -144,10 +146,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
     ) => (
-        <div className={styles.selectValueTag}>
+      <div className={styles.selectValueTag}>
         {items.length > 1 ? `${items.length} valda` : items[0].textValue}
-        </div>
-
+      </div>
     )
 
     useEffect(() => {
@@ -161,7 +162,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
         className={clsx(
           [styles.multiSelect],
           {
-            'select-wrapper--open': state.isOpen
+            [styles.multiSelectOpen]: state.isOpen
           },
           className
         )}
@@ -171,14 +172,24 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             <label
               {...labelProps}
               slot={'label'}
-              className={clsx('select__label', {
-                'select__label--active': isActive
+              className={clsx(styles.selectLabel, {
+                [styles.selectLabelActive]: isActive,
+                [styles.selectLabelDisabled]: isDisabled
               })}
             >
               {label}
             </label>
           )}
-          {description && (<span className={styles.description} slot={'description'}>{description}</span>)}
+          {description && (
+            <span
+              className={clsx(styles.description, {
+                [styles.descriptionDisabled]: isDisabled
+              })}
+              slot={'description'}
+            >
+              {description}
+            </span>
+          )}
           <FocusRing
             focusRingClass={styles.buttonFocused}
             autoFocus={autoFocus}
@@ -187,7 +198,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               {...buttonProps}
               className={clsx(styles.button, {
                 [styles.buttonOpen]: state.isOpen,
-                'select--active': state.selectedItems,
+                [styles.buttonActive]: state.selectedItems,
                 [styles.buttonDisabled]: isDisabled
               })}
               type='button'
@@ -195,14 +206,20 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             >
               {state.selectionMode === 'multiple' ? (
                 <span {...valueProps}>
-                {state.selectedItems
-                  ? formatItems(state.selectedItems)
-                  : placeholder}
-              </span>
-              ) : <span>{state.selectedItems?.length === 1 ? state.selectedItems[0].textValue: placeholder}</span>}
+                  {state.selectedItems
+                    ? formatItems(state.selectedItems)
+                    : placeholder}
+                </span>
+              ) : (
+                <span>
+                  {state.selectedItems?.length === 1
+                    ? state.selectedItems[0].textValue
+                    : placeholder}
+                </span>
+              )}
               <div
                 className={styles.icon}
-                aria-hidden="true"
+                aria-hidden='true'
               >
                 <ChevronDown size={20} />
               </div>
@@ -219,25 +236,32 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 <>
                   {isSelectableAll && (
                     <FocusRing focusRingClass={styles.listItemfocusRing}>
-
-                    <button
-                      type='button'
-                      onClick={handleSelectAll}
-                      className={styles.selectAllButton}
-                    >
-                      <div className={styles.listBoxItem} tabIndex={-1}>
-                        <Checkbox isDisabled={isDisabled} isSelected={isAllSelection} isReadOnly isIndeterminate={isIndeterminateSelection} excludeFromTabOrder={true}/>
-{/*                      <input
+                      <button
+                        type='button'
+                        onClick={handleSelectAll}
+                        className={styles.selectAllButton}
+                      >
+                        <div
+                          className={styles.listBoxItem}
+                          tabIndex={-1}
+                        >
+                          <Checkbox
+                            isDisabled={isDisabled}
+                            isSelected={isAllSelection}
+                            isReadOnly
+                            isIndeterminate={isIndeterminateSelection}
+                            excludeFromTabOrder={true}
+                          />
+                          {/*                      <input
                         type='checkbox'
                         checked={isAllSelection}
                         ref={refAllButton}
                         readOnly
                         tabIndex={-1}
                       />*/}
-                      {isAllSelection ? 'Clear selection' : 'Select All'}
-                      </div>
-                    </button>
-
+                          {isAllSelection ? 'Clear selection' : 'Select All'}
+                        </div>
+                      </button>
                     </FocusRing>
                   )}
                   <div className='selectDivider' />

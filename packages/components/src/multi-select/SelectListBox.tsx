@@ -46,7 +46,11 @@ const Option = <T, >({item, state}: OptionProps<T>) => {
             })}
         >
             {state.selectionMode === "multiple" && (
-              <Checkbox isDisabled={isDisabled} isSelected={isSelected} isReadOnly/>
+              <div>
+                <input type="checkbox" disabled={isDisabled} checked={isSelected} readOnly/>
+              </div>
+              /** TODO Checkbox has shitty performance, look into this */
+              /*<Checkbox isDisabled={isDisabled} isSelected={isSelected} isReadOnly/>*/
             )}
             {typeof item.rendered === "string" ? (
                 <span className="truncate block">{item.rendered}</span>
