@@ -146,6 +146,8 @@ var TextArea = __webpack_require__(75756);
 // EXTERNAL MODULE: ./packages/components/src/multi-select/MultiSelect.tsx + 3 modules
 var MultiSelect = __webpack_require__(45721);
 ;// ./apps/docs/src/components/mvdsExports.ts
+// TODO: Uncomment me soon 
+// import { theme } from '@midas-ds/components/theme'
 
 ;// ./apps/docs/src/theme/MDXComponents/index.js
 var MDXComponents={Head:Head/* default */.A,details:MDXDetails,Details:MDXDetails,// This is a fix to allow for importing of our custom components in any code block
