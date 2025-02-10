@@ -16,7 +16,6 @@
 
   & .arrow svg {
     display: block;
-    fill: var(--highlight-background);
   }
 
   &[data-entering],
