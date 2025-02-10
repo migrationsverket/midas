@@ -8,6 +8,7 @@
   flex-direction: row;
   gap: 1rem;
   padding: 1rem;
+  line-height: 1.3;
 
   &.success {
     --border: signalGreen100;
