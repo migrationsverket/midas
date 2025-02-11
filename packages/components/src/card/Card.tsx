@@ -68,9 +68,7 @@ export const Card: React.FC<CardProps> = ({
             )}
         <div id={contentId}>
           <HeadingTag className={styles.heading}>{title}</HeadingTag>
-          <p className={styles.text}>
-            {content} id={contentId}
-          </p>
+          <p className={styles.text}>{content}</p>
         </div>
       </div>
       <Link
