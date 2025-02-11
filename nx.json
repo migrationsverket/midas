@@ -44,7 +44,7 @@
       "cache": true
     },
     "nx-release-publish": {
-      "dependsOn": [],
+      "dependsOn": ["^build"],
       "options": {
         "packageRoot": "{workspaceRoot}/dist/packages/{projectName}"
       }
