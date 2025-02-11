@@ -15,7 +15,7 @@
       "generatorOptions": {
         "specifierSource": "conventional-commits",
         "currentVersionResolver": "git-tag",
-        "fallbackCurrentVersionResolver": "registry",
+        "fallbackCurrentVersionResolver": "disk",
         "updateDependents": "auto"
       }
     }
@@ -42,7 +42,7 @@
       "cache": true
     },
     "nx-release-publish": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["build"],
       "options": {
         "packageRoot": "{workspaceRoot}/dist/packages/{projectName}"
       }
@@ -73,11 +73,6 @@
       "inputs": ["production", "^production"]
     },
     "@nx/next:build": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
