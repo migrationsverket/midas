@@ -25,11 +25,11 @@ import {
   GridItem,
   Item,
   Tooltip,
-  theme
+  Dropdown,
+  DropdownItem
 } from '@midas-ds/components'
 
-// TODO: Uncomment me soon 
-// import { theme } from '@midas-ds/components/theme'
+import { theme } from '@midas-ds/components/theme'
 
 export {
   Button,
@@ -58,5 +58,7 @@ export {
   TextArea,
   theme,
   MultiSelect,
-  Tooltip
+  Tooltip,
+  Dropdown,
+  DropdownItem
 }
