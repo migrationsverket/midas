@@ -4,6 +4,7 @@ import {
   SearchField,
   Logo,
   TextField,
+  Skeleton,
 } from '@midas-ds/components'
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
       <SearchField placeholder={'Search...'} />
       <Logo/>
       <TextField label={'Text'}/>
+      <Skeleton variant="rectangle"/>
     </div>
   )
 }
