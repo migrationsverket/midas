@@ -1,4 +1,3 @@
-export * from './theme/index';
 export * from './accordion';
 export * from './breadcrumbs';
 export * from './button';
@@ -26,5 +25,4 @@ export * from './tag';
 export * from './tabs';
 export * from './textarea';
 export * from './textfield';
-export * from './theme';
 export * from './toast';

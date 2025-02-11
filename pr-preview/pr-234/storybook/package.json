@@ -15,7 +15,8 @@
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
   "version": "1.1.0",
-  "main": "./index.js",
+  "main": "./index.cjs",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "type": "module",
   "files": [
@@ -31,5 +32,15 @@
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",
     "react-dom": "^18.3.1 || ^19.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./theme": {
+      "import": "./theme.js",
+      "require": "./theme.cjs"
+    }
   }
 }
