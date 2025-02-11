@@ -1,6 +1,6 @@
 import './theme/global.css'
 
-export * from './skeleton/Skeleton'
+export * from './skeleton'
 export * from './theme/index'
 export * from './accordion'
 export * from './breadcrumbs'
