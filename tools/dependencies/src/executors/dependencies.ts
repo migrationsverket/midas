@@ -23,8 +23,6 @@ export default async function buildExecutor(
     }
   )
 
-  console.log(context.projectsConfigurations.projects)
-
   const filteredPackageJson = !!options.filter ? {
     ...packageJson,
     dependencies: Object.entries(packageJson.dependencies).filter(v =>
