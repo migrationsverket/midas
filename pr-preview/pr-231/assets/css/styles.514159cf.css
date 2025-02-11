@@ -7797,6 +7797,78 @@ CSS variables, meant to be overridden by final theme
     -webkit-appearance: none;
   }
 
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+:root {
+  --docusaurus-tag-list-border: var(--ifm-color-emphasis-300);
+}
+
+.tag_zVej {
+  border: 1px solid var(--docusaurus-tag-list-border);
+  transition: border var(--ifm-transition-fast);
+}
+
+.tag_zVej:hover {
+  --docusaurus-tag-list-border: var(--ifm-link-color);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.tagRegular_sFm0 {
+  border-radius: var(--ifm-global-radius);
+  padding: 0.2rem 0.5rem 0.3rem;
+  font-size: 90%;
+}
+
+.tagWithCount_h2kH {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 0.5rem 0 1rem;
+  border-left: 0;
+}
+
+.tagWithCount_h2kH::before,
+.tagWithCount_h2kH::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border: 1px solid var(--docusaurus-tag-list-border);
+  transition: inherit;
+}
+
+.tagWithCount_h2kH::before {
+  right: 100%;
+  transform: translate(50%, -50%) rotate(-45deg);
+  width: 1.18rem;
+  height: 1.18rem;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.tagWithCount_h2kH::after {
+  left: 0;
+  transform: translateY(-50%);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.tagWithCount_h2kH span {
+  background: var(--ifm-color-secondary);
+  color: var(--ifm-color-black);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  border-radius: var(--ifm-global-radius);
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.3rem;
+}
+
 .linkButton_DlJV {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
@@ -8423,127 +8495,6 @@ CSS variables, meant to be overridden by final theme
  * LICENSE file in the root directory of this source tree.
  */
 
-:root {
-  --docusaurus-tag-list-border: var(--ifm-color-emphasis-300);
-}
-
-.tag_zVej {
-  border: 1px solid var(--docusaurus-tag-list-border);
-  transition: border var(--ifm-transition-fast);
-}
-
-.tag_zVej:hover {
-  --docusaurus-tag-list-border: var(--ifm-link-color);
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.tagRegular_sFm0 {
-  border-radius: var(--ifm-global-radius);
-  padding: 0.2rem 0.5rem 0.3rem;
-  font-size: 90%;
-}
-
-.tagWithCount_h2kH {
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 0 0.5rem 0 1rem;
-  border-left: 0;
-}
-
-.tagWithCount_h2kH::before,
-.tagWithCount_h2kH::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  border: 1px solid var(--docusaurus-tag-list-border);
-  transition: inherit;
-}
-
-.tagWithCount_h2kH::before {
-  right: 100%;
-  transform: translate(50%, -50%) rotate(-45deg);
-  width: 1.18rem;
-  height: 1.18rem;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.tagWithCount_h2kH::after {
-  left: 0;
-  transform: translateY(-50%);
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-}
-
-.tagWithCount_h2kH span {
-  background: var(--ifm-color-secondary);
-  color: var(--ifm-color-black);
-  font-size: 0.7rem;
-  line-height: 1.2;
-  border-radius: var(--ifm-global-radius);
-  padding: 0.1rem 0.4rem;
-  margin-left: 0.3rem;
-}
-
-.container_eqN_ {
-  font-family: "Inter", sans-serif;
-}
-
-.list_hLP_ {
-  display: flex;
-  flex-flow: row wrap;
-  border-bottom: 1px solid #bfbfbf;
-}
-
-.listItem_P0Ws {
-  padding: 0.5rem 1.25rem;
-  cursor: pointer;
-}
-
-.listItem_P0Ws[data-selected] {
-    font-weight: 600;
-    padding-bottom: calc(0.5rem - 3px);
-    border-bottom: 3px solid #25607f;
-  }
-
-.listItem_P0Ws[data-focus-visible],.listItem_P0Ws:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
-  }
-
-@media (max-width: 767px) {
-
-.listItem_P0Ws {
-    flex: 0 0 100%;
-}
-
-    .listItem_P0Ws[data-selected] {
-      border-left: 3px solid #25607f;
-      padding-left: calc(1.125rem - 3px);
-      border-bottom: 0;
-      box-shadow: none;
-    }
-  }
-
-.panel_Geh5 {
-  margin-top: 1rem;
-}
-
-.panel_Geh5[data-focus-visible],.panel_Geh5:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
-  }
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 .tags_jXut {
   display: inline;
 }
@@ -8666,6 +8617,55 @@ CSS variables, meant to be overridden by final theme
   }
 }
 
+.container_eqN_ {
+  font-family: "Inter", sans-serif;
+}
+
+.list_hLP_ {
+  display: flex;
+  flex-flow: row wrap;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+.listItem_P0Ws {
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+}
+
+.listItem_P0Ws[data-selected] {
+    font-weight: 600;
+    padding-bottom: calc(0.5rem - 3px);
+    border-bottom: 3px solid #25607f;
+  }
+
+.listItem_P0Ws[data-focus-visible],.listItem_P0Ws:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+  }
+
+@media (max-width: 767px) {
+
+.listItem_P0Ws {
+    flex: 0 0 100%;
+}
+
+    .listItem_P0Ws[data-selected] {
+      border-left: 3px solid #25607f;
+      padding-left: calc(1.125rem - 3px);
+      border-bottom: 0;
+      box-shadow: none;
+    }
+  }
+
+.panel_Geh5 {
+  margin-top: 1rem;
+}
+
+.panel_Geh5[data-focus-visible],.panel_Geh5:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
+  }
+
 .textArea_r3SS {
   all: unset;
   display: flex !important;
@@ -8711,23 +8711,6 @@ CSS variables, meant to be overridden by final theme
 
 .countExceeded_GeTp {
   color: #e62323;
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url('https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2')
-    format('woff2-variations');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .button__qOH {
