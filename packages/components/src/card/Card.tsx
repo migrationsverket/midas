@@ -4,6 +4,7 @@ import * as React from 'react'
 import { Link, LinkProps, RouterProvider } from '../link/Link'
 import styles from './Card.module.css'
 import clsx from 'clsx'
+import { useId } from 'react'
 
 export interface CardProps<C extends React.ElementType = typeof Link>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -45,6 +46,7 @@ export const Card: React.FC<CardProps> = ({
   customLinkComponent: CustomLinkComponent,
   ...rest
 }) => {
+  const contentId = useId()
   return (
     <div
       className={clsx(
@@ -64,10 +66,13 @@ export const Card: React.FC<CardProps> = ({
                 className={styles.image}
               />
             )}
-        <HeadingTag className={styles.heading}>{title}</HeadingTag>
-        <p className={styles.text}>{content}</p>
+        <div id={contentId}>
+          <HeadingTag className={styles.heading}>{title}</HeadingTag>
+          <p className={styles.text}>{content}</p>
+        </div>
       </div>
       <Link
+        aria-describedby={contentId}
         {...link}
         standalone
         stretched
