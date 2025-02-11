@@ -17,7 +17,8 @@
     "baseUrl": "./apps/docs",
     "paths": {
       "@site/*": ["./*"],
-      "@midas-ds/*": ["../../../../packages/*/src/index.ts"]
+      "@midas-ds/components": ["../../../../packages/components/src/index.ts"],
+      "@midas-ds/components/theme": ["../../../../packages/components/src/theme/index.ts"],
     }
   }
 }
