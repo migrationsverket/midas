@@ -32,8 +32,8 @@ var TabItem = __webpack_require__(79329);
 var propsTable = __webpack_require__(38355);
 // EXTERNAL MODULE: ./packages/components/src/file-upload/FileUpload.tsx + 1 modules
 var FileUpload = __webpack_require__(57135);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
 ;// ./apps/docs/docs/components/fileupload.mdx

@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7310],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[645],{
 
-/***/ 97054:
+/***/ 13912:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -9,16 +9,17 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_info_banner_mdx_67e_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_tabs_mdx_1a6_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-info-banner-mdx-67e.json
-const site_docs_components_info_banner_mdx_67e_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/info-banner","title":"InfoBanner","description":"Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.","source":"@site/docs/components/info-banner.mdx","sourceDirName":"components","slug":"/components/info-banner","permalink":"/components/info-banner","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"InfoBanner","description":"Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-tabs-mdx-1a6.json
+const site_docs_components_tabs_mdx_1a6_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/tabs","title":"Tabs","description":"Fördela information över flertalet tabbar.","source":"@site/docs/components/tabs.mdx","sourceDirName":"components","slug":"/components/tabs","permalink":"/components/tabs","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Tabs","description":"Fördela information över flertalet tabbar.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,20 +30,20 @@ var Tabs = __webpack_require__(65537);
 var TabItem = __webpack_require__(79329);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx + 1 modules
 var propsTable = __webpack_require__(38355);
-// EXTERNAL MODULE: ./packages/components/src/tabs/Tabs.tsx + 1 modules
-var tabs_Tabs = __webpack_require__(71383);
-// EXTERNAL MODULE: ./packages/components/src/info-banner/InfoBanner.tsx + 1 modules
-var InfoBanner = __webpack_require__(89672);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-;// ./apps/docs/docs/components/info-banner.mdx
+// EXTERNAL MODULE: ./packages/components/src/tabs/Tabs.tsx + 1 modules
+var tabs_Tabs = __webpack_require__(71383);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
+var Button = __webpack_require__(86559);
+;// ./apps/docs/docs/components/tabs.mdx
 
 
 const frontMatter = {
-	title: 'InfoBanner',
-	description: 'Information banner visar viktiga och aktuella meddelanden, som till exempel systemnotiser.',
+	title: 'Tabs',
+	description: 'Fördela information över flertalet tabbar.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -60,33 +61,42 @@ const assets = {
 
 
 
+const Example = props => {
+  return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    scope: {
+      MidasTabs: tabs_Tabs/* Tabs */.t,
+      Button: Button/* Button */.$
+    },
+    ...props,
+    children: `<MidasTabs
+          defaultSelected="Viktigt att veta"
+          label="Följ processen"
+          tabs={['Frukter', 'Bär', 'Fruktförband av stenfrukter'] as const}
+      >
+          <div>
+              Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+              maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+              Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+          </div>
+          <div>
+              Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
+              nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
+              consequatur nam culpa nesciunt cupiditate autem suscipit.
+          </div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
+              maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
+              Eveniet reprehenderit sapiente quidem culpa nam? Vel?
+          </div>
+      </MidasTabs>`
+  });
+};
 const toc = [{
   "value": "Installation",
   "id": "installation",
-  "level": 2
-}, {
-  "value": "Varianter",
-  "id": "varianter",
-  "level": 2
-}, {
-  "value": "Success",
-  "id": "success",
-  "level": 3
-}, {
-  "value": "Info",
-  "id": "info",
-  "level": 3
-}, {
-  "value": "Important",
-  "id": "important",
-  "level": 3
-}, {
-  "value": "Warning",
-  "id": "warning",
-  "level": 3
-}, {
-  "value": "Dismissable",
-  "id": "dismissable",
   "level": 2
 }, {
   "value": "API",
@@ -97,7 +107,6 @@ function _createMdxContent(props) {
   const _components = {
     code: "code",
     h2: "h2",
-    h3: "h3",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -105,31 +114,12 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'info-banner',
-      friendlyName: 'Informationsmeddelande',
-      overrideHeadlessLink: ""
+      name: 'Tabs',
+      friendlyName: 'Flikar'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser."
-    }), "\n", (0,jsx_runtime.jsxs)(tabs_Tabs/* Tabs */.t, {
-      label: 'Välj typ',
-      tabs: ['Sucess', 'Info', 'Important', 'Warning'],
-      children: [(0,jsx_runtime.jsx)(InfoBanner/* InfoBanner */.z, {
-        type: 'success',
-        title: 'Formuläret har skickats',
-        message: 'Allt gick bra. Du kan nu stänga fönstret.'
-      }), (0,jsx_runtime.jsx)(InfoBanner/* InfoBanner */.z, {
-        type: 'info',
-        title: 'Kom ihåg att fylla i din semesterplan',
-        message: 'Vi behöver din semesterplan för att kunna gå vidare.'
-      }), (0,jsx_runtime.jsx)(InfoBanner/* InfoBanner */.z, {
-        type: 'important',
-        title: 'Du behöver komplettera!',
-        message: 'Vi saknar din semesterplan.'
-      }), (0,jsx_runtime.jsx)(InfoBanner/* InfoBanner */.z, {
-        type: 'warning',
-        title: 'Formuläret kunde inte skickas!',
-        message: 'Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'
-      })]
+      children: "Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren."
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -165,86 +155,15 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { InfoBanner } from '@midas-ds/components'\n"
+        children: "import { Tabs } from '@midas-ds/components'\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "success",
-      children: "Success"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        InfoBanner: InfoBanner/* InfoBanner */.z
-      },
-      children: `<InfoBanner
-  type={'success'}
-  title={'Det gick bra!'}
-  message={'Detta är ett meddelande om att allt gick bra.'}
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "info",
-      children: "Info"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        InfoBanner: InfoBanner/* InfoBanner */.z
-      },
-      children: `<InfoBanner
-  type={'info'}
-  title={'Information'}
-  message={'Detta är ett meddelande med information.'}
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "important",
-      children: "Important"
-    }), "\n", ' ', "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        InfoBanner: InfoBanner/* InfoBanner */.z
-      },
-      children: `<InfoBanner
-  type={'important'}
-  title={'Viktig information'}
-  message={'Detta är ett meddelande med viktig information.'}
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "warning",
-      children: "Warning"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        InfoBanner: InfoBanner/* InfoBanner */.z
-      },
-      children: `<InfoBanner
-  type={'warning'}
-  title={'Varning'}
-  message={'Detta är en varning som används när något gått fel.'}
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "dismissable",
-      children: "Dismissable"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Det går att göra det möjligt för användaren att stänga informationsmeddelandet via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "dismissable"
-      }), ". Det bör inte användas för varningar."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        InfoBanner: InfoBanner/* InfoBanner */.z
-      },
-      children: `<InfoBanner
-  dismissable
-  type={'success'}
-  title={'Det gick bra!'}
-  message={'Detta är ett meddelande om att allt gick bra.'}
-/>
-`
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: 'InfoBanner'
+      name: "Tabs"
     })]
   });
 }
@@ -262,45 +181,6 @@ function MDXContent(props = {}) {
 }
 
 
-
-/***/ }),
-
-/***/ 89672:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  z: () => (/* binding */ InfoBanner)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-check.js
-var circle_check = __webpack_require__(79804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/circle-alert.js
-var circle_alert = __webpack_require__(37946);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/triangle-alert.js
-var triangle_alert = __webpack_require__(418);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-;// ./packages/components/src/info-banner/InfoBanner.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const InfoBanner_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","signalGreen10":"#d5f2d9","signalGreen100":"#008d3c","signalBlue10":"#eaf2f6","signalBlue100":"#0066cc","signalYellow10":"#fff8e1","signalYellow100":"#f1c21b","signalRed10":"#ffdfdf","signalRed100":"#e62323","black":"#000000","semiBoldWeight":"600","infoBanner":"infoBanner_SGaB","success":"success_tp2_","info":"info_M4dU","important":"important_LJBl","warning":"warning_El6H","content":"content_DhUR","heading":"heading_iaBZ","text":"text_FCS8","icon":"icon_F71c","dismissable":"dismissable_tG9p"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
-var Button = __webpack_require__(86559);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/info-banner/InfoBanner.tsx
-var _excluded=["title","message","type","children","dismissable"];var iconMap={success:circle_check/* default */.A,info:info/* default */.A,important:circle_alert/* default */.A,warning:triangle_alert/* default */.A};/**
- * Displays a static message as an inline banner
- */var InfoBanner=function InfoBanner(_ref){var title=_ref.title,message=_ref.message,type=_ref.type,children=_ref.children,_ref$dismissable=_ref.dismissable,dismissable=_ref$dismissable===void 0?false:_ref$dismissable,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Icon=iconMap[type];var _React$useState=react.useState(true),show=_React$useState[0],setShow=_React$useState[1];if(show)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({className:(0,clsx/* default */.A)(InfoBanner_module.infoBanner,InfoBanner_module[type],rest.className)},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,"aria-hidden":true,className:InfoBanner_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.content,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)("strong",{className:InfoBanner_module.heading,children:title}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:InfoBanner_module.text,children:[message,children]})]}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:InfoBanner_module.dismissable,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon","aria-label":"St\xE4ng",onPress:function onPress(){return setShow(false);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})})]}));return null;};
 
 /***/ }),
 
@@ -327,150 +207,6 @@ var jsx_runtime = __webpack_require__(74848);
 var Tabs=function Tabs(_ref){var tabs=_ref.tabs,label=_ref.label,defaultSelected=_ref.defaultSelected,children=_ref.children;var childrenArray=react.Children.toArray(children);// Check if the number of children matches the number of tabs
 if(childrenArray.length!==tabs.length){throw new Error("The number of children must match the number of tabs. Children: "+childrenArray.length+" Tabs: "+tabs.length);}// Create a map of tab titles to their corresponding content
 var tabContentMap=childrenArray.reduce(function(acc,child,index){if(/*#__PURE__*/react.isValidElement(child)){var _tabs$index;var title=(_tabs$index=tabs[index])==null?void 0:_tabs$index.toLowerCase();if(title){acc[title]=/*#__PURE__*/react.cloneElement(child,{id:title});}}return acc;},{});return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Tabs/* Tabs */.tU,{orientation:"vertical",defaultSelectedKey:defaultSelected&&defaultSelected.toLowerCase(),className:Tabs_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Tabs/* TabList */.wb,{"aria-label":label,className:Tabs_module.list,children:tabs.map(function(tab){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Tabs/* Tab */.oz,{id:tab.toLowerCase(),className:Tabs_module.listItem,children:tab},tab);})}),tabs.map(function(tab){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Tabs/* TabPanel */.Kp,{id:tab.toLowerCase(),className:Tabs_module.panel,children:tabContentMap[tab.toLowerCase()]},tab);})]});};
-
-/***/ }),
-
-/***/ 37946:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ CircleAlert)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const CircleAlert = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("CircleAlert", [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
-  ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-]);
-
-
-//# sourceMappingURL=circle-alert.js.map
-
-
-/***/ }),
-
-/***/ 79804:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ CircleCheck)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const CircleCheck = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("CircleCheck", [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-]);
-
-
-//# sourceMappingURL=circle-check.js.map
-
-
-/***/ }),
-
-/***/ 97213:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ Info)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const Info = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Info", [
-  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
-  ["path", { d: "M12 16v-4", key: "1dtifu" }],
-  ["path", { d: "M12 8h.01", key: "e9boi3" }]
-]);
-
-
-//# sourceMappingURL=info.js.map
-
-
-/***/ }),
-
-/***/ 418:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ TriangleAlert)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const TriangleAlert = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("TriangleAlert", [
-  [
-    "path",
-    {
-      d: "m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3",
-      key: "wmoenq"
-    }
-  ],
-  ["path", { d: "M12 9v4", key: "juzpu7" }],
-  ["path", { d: "M12 17h.01", key: "p32p05" }]
-]);
-
-
-//# sourceMappingURL=triangle-alert.js.map
-
-
-/***/ }),
-
-/***/ 48697:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ X)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
-  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
-  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-]);
-
-
-//# sourceMappingURL=x.js.map
-
 
 /***/ }),
 

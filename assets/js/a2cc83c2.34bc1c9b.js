@@ -37,8 +37,8 @@ var Button = __webpack_require__(86559);
 var Flex = __webpack_require__(39996);
 // EXTERNAL MODULE: ./packages/components/src/flex/FlexItem.tsx
 var FlexItem = __webpack_require__(52981);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 ;// ./apps/docs/docs/components/toast.mdx
 
 

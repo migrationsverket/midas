@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
 
-/***/ 48249:
+/***/ 39890:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -14,12 +14,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_radio_mdx_7e6_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
-const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-radio-mdx-7e6.json
+const site_docs_components_radio_mdx_7e6_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/radio","title":"Radio","description":"Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","source":"@site/docs/components/radio.mdx","sourceDirName":"components","slug":"/components/radio","permalink":"/components/radio","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Radio","description":"Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -30,18 +30,18 @@ var Tabs = __webpack_require__(65537);
 var TabItem = __webpack_require__(79329);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx + 1 modules
 var propsTable = __webpack_require__(38355);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx
-var TextField = __webpack_require__(69240);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./packages/components/src/radio/Radio.tsx + 1 modules
+var Radio = __webpack_require__(80408);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-;// ./apps/docs/docs/components/textfield.mdx
+;// ./apps/docs/docs/components/radio.mdx
 
 
 const frontMatter = {
-	title: 'TextField',
-	description: 'Använd ett textfält när användaren ska fylla i en rad med text.',
+	title: 'Radio',
+	description: 'Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -59,17 +59,17 @@ const assets = {
 
 
 
-
 const Example = props => {
   return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
     scope: {
-      TextField: TextField/* TextField */.A_
+      RadioGroup: Radio/* RadioGroup */.z,
+      Radio: Radio/* Radio */.s
     },
     ...props,
-    children: `<TextField
-        label={'Etikett'}
-        description={'Beskrivning'}
-    />`
+    children: `<RadioGroup label={'Välj din favoritfrukt'} description={'Du kan bara välja en'} defaultValue={fruits[0].value}>
+        {fruits.slice(0,3).map(fruit => (
+          <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
+        )))</RadioGroup>`
   });
 };
 const toc = [{
@@ -77,28 +77,20 @@ const toc = [{
   "id": "installation",
   "level": 2
 }, {
-  "value": "Varianter",
-  "id": "varianter",
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
   "level": 2
 }, {
-  "value": "Personnummer",
-  "id": "personnummer",
-  "level": 3
-}, {
-  "value": "Lösenord",
-  "id": "lösenord",
-  "level": 3
-}, {
-  "value": "Validering",
-  "id": "validering",
+  "value": "API",
+  "id": "api",
   "level": 2
 }, {
-  "value": "Egen validering",
-  "id": "egen-validering",
+  "value": "Radio",
+  "id": "radio",
   "level": 3
 }, {
-  "value": "Egna felmeddelanden",
-  "id": "egna-felmeddelanden",
+  "value": "RadioGroup",
+  "id": "radiogroup",
   "level": 3
 }];
 function _createMdxContent(props) {
@@ -116,14 +108,11 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Textfield',
-      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält',
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components/textarea",
-        children: "TextArea"
-      }), "."]
+      name: 'Radio',
+      friendlyName: 'Radioknappar',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Inmatningsfält som används för att välja exakt ett alternativ."
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
@@ -161,134 +150,44 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { TextField } from '@midas-ds/components'\n"
+        children: "import { Radio, RadioGroup } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "personnummer",
-      children: "Personnummer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationType=\"ssn\""
-      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
-      })]
+      id: "riktlinjer",
+      children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:19:20)?"
-        })]
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "En av radioknapparna ska alltid vara ifylld. Om du misstänker att användaren vill kunna avstå från att välja något,\nskapa ett sista alternativ som du kallar \"Inget av ovanstående\" eller liknande."
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är\nbegränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:0[1-9]|1[0-2])"
-        })]
+        children: ["Om alternativen inte utesluter varandra, använd ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/checkbox",
+          children: "Checkbox"
+        }), "."]
       }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:0[1-9]|[12]\\\\d|3[01])"
-        })]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "+"
-        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "-"
-        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "blanksteg"
-        }), " eller ingen, samt"]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "(?:[-+ ]?\\\\d{4})?"
-        })]
+        children: ["Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/select",
+          children: "Select"
+        }), " användas istället."]
       }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: TextField/* TextField */.A_
-      },
-      children: `<TextField
-  type="text"
-  name="ssn"
-  label="Personnummer"
-  validationType="ssn"
-  errorMessage="Fel format för ett personnummer"
-  autoComplete="off"
-/>
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "lösenord",
-      children: "Lösenord"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type={'password'}"
-      }), " för att kunna visa och dölja inmatad text."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: TextField/* TextField */.A_
-      },
-      children: `<TextField
-  type="password"
-  name="pw"
-  label="Skriv in ditt lösenord"
-  autoComplete="off"
-/>
-`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isRequired"
-      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "pattern"
-      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: TextField/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in din e-post"
-  description="Obligatorisk"
-  isRequired
-  errorMessage="Felaktig e-postadress"
-  type="email"
-/>`
+      id: "api",
+      children: "API"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "egen-validering",
-      children: "Egen validering"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Det går också att definiera en egen funktion för validering:"
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        TextField: TextField/* TextField */.A_
-      },
-      children: `<TextField
-  label="Skriv in frukt"
-  errorMessage="Du måste skriva 'frukt'!"
-  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
-/>`
+      id: "radio",
+      children: "Radio"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: "Radio"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "egna-felmeddelanden",
-      children: "Egna felmeddelanden"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<TextField\n  label='Skriv in frukt'\n  errorMessage=\"Du måste skriva 'frukt'!\"\n  isRequired\n  validate={value => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n  errorMessage={validation => {\n    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'\n    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'\n    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'\n\n    // Det finns flertalet typer på validationDetails\n    // if (validation.validationDetails.patternMismatch) return \"Det där ser inte ut som en frukt.\";\n    // if (validation.validationDetails.rangeOverflow) return \"Nu blev det nog för många frukter.\";\n    // med flera\n\n    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'\n  }}\n/>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
-        children: "React Arias dokumentation"
-      }), "."]
+      id: "radiogroup",
+      children: "RadioGroup"
+    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
+      name: "RadioGroup"
     })]
   });
 }
@@ -306,6 +205,40 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 80408:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  s: () => (/* binding */ Radio),
+  z: () => (/* binding */ RadioGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/radio/Radio.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","inputLabel":"undefined","inputText":"#1f1f1f","black":"#000000","blue150":"#143c50","gray50":"#bfbfbf","gray60":"#b3b3b3","signalRed10":"#ffdfdf","signalRed100":"#e62323","medium":"undefined","gray150":"#1f1f1f","regular":"undefined","smBreakpoint":"(max-width: 767px)","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","mdBreakpoint":"(min-width: 768px)","borderSecondary":"#b3b3b3","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
+var dist_RadioGroup = __webpack_require__(96325);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
+var Group = __webpack_require__(63899);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx
+var TextField = __webpack_require__(69240);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/radio/Radio.tsx
+'use client';var _excluded=["label","description","errorMessage","children"];/**
+ * RadioGroup is used to group several radio items together
+ */var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:Radio_module.radioGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children})})}));};/**
+ * Radio item
+ * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
 
 /***/ }),
 
@@ -477,6 +410,162 @@ function $2d73ec29415bd339$export$712718f7aec83d5(props, ref) {
 
 
 //# sourceMappingURL=useTextField.module.js.map
+
+
+/***/ }),
+
+/***/ 87979:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   B: () => (/* binding */ $5c3e21d68f1c4674$export$a966af930f325cab),
+/* harmony export */   s: () => (/* binding */ $5c3e21d68f1c4674$export$439d29a4e110a164)
+/* harmony export */ });
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(59461);
+
+
+
+
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $5c3e21d68f1c4674$var$styles = {
+    border: 0,
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
+    width: '1px',
+    whiteSpace: 'nowrap'
+};
+function $5c3e21d68f1c4674$export$a966af930f325cab(props = {}) {
+    let { style: style, isFocusable: isFocusable } = props;
+    let [isFocused, setFocused] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+    let { focusWithinProps: focusWithinProps } = (0, _react_aria_interactions__WEBPACK_IMPORTED_MODULE_1__/* .useFocusWithin */ .R)({
+        isDisabled: !isFocusable,
+        onFocusWithinChange: (val)=>setFocused(val)
+    });
+    // If focused, don't hide the element.
+    let combinedStyles = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
+        if (isFocused) return style;
+        else if (style) return {
+            ...$5c3e21d68f1c4674$var$styles,
+            ...style
+        };
+        else return $5c3e21d68f1c4674$var$styles;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        isFocused
+    ]);
+    return {
+        visuallyHiddenProps: {
+            ...focusWithinProps,
+            style: combinedStyles
+        }
+    };
+}
+function $5c3e21d68f1c4674$export$439d29a4e110a164(props) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { children: children, elementType: Element = 'div', isFocusable: isFocusable, style: style, ...otherProps } = props;
+    let { visuallyHiddenProps: visuallyHiddenProps } = $5c3e21d68f1c4674$export$a966af930f325cab(props);
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Element, (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(otherProps, visuallyHiddenProps), children);
+}
+
+
+
+//# sourceMappingURL=VisuallyHidden.module.js.map
+
+
+/***/ }),
+
+/***/ 63899:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Y: () => (/* binding */ $a049562f99e7db0e$export$eb2fcfdbd7ba97d4),
+/* harmony export */   t: () => (/* binding */ $a049562f99e7db0e$export$f9c6924e160136d1)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+const $a049562f99e7db0e$export$f9c6924e160136d1 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+const $a049562f99e7db0e$export$eb2fcfdbd7ba97d4 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function Group(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $a049562f99e7db0e$export$f9c6924e160136d1);
+    let { isDisabled: isDisabled, isInvalid: isInvalid, onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_2__/* .useHover */ .M)({
+        onHoverStart: onHoverStart,
+        onHoverChange: onHoverChange,
+        onHoverEnd: onHoverEnd,
+        isDisabled: isDisabled
+    });
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useFocusRing */ .o)({
+        within: true
+    });
+    isDisabled !== null && isDisabled !== void 0 ? isDisabled : isDisabled = !!props['aria-disabled'] && props['aria-disabled'] !== 'false';
+    isInvalid !== null && isInvalid !== void 0 ? isInvalid : isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocusWithin: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: isDisabled,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Group'
+    });
+    var _props_role, _props_slot;
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("div", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .mergeProps */ .v)(otherProps, focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        role: (_props_role = props.role) !== null && _props_role !== void 0 ? _props_role : 'group',
+        slot: (_props_slot = props.slot) !== null && _props_slot !== void 0 ? _props_slot : undefined,
+        "data-focus-within": isFocused || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-disabled": isDisabled || undefined,
+        "data-invalid": isInvalid || undefined
+    }, renderProps.children);
+});
+
+
+
+//# sourceMappingURL=Group.module.js.map
 
 
 /***/ }),

@@ -36,8 +36,8 @@ var Flex = __webpack_require__(39996);
 var FlexItem = __webpack_require__(52981);
 // EXTERNAL MODULE: ./packages/components/src/link-button/LinkButton.tsx + 2 modules
 var LinkButton = __webpack_require__(1353);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
 ;// ./apps/docs/docs/components/link-button.mdx

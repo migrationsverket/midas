@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5521],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 61851:
+/***/ 48249:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -14,12 +14,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_modal_mdx_902_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-modal-mdx-902.json
-const site_docs_components_modal_mdx_902_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/modal","title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","source":"@site/docs/components/modal.mdx","sourceDirName":"components","slug":"/components/modal","permalink":"/components/modal","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
+const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -30,28 +30,18 @@ var Tabs = __webpack_require__(65537);
 var TabItem = __webpack_require__(79329);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx + 1 modules
 var propsTable = __webpack_require__(38355);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx
+var TextField = __webpack_require__(69240);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
-var Button = __webpack_require__(86559);
-// EXTERNAL MODULE: ./packages/components/src/modal/Modal.tsx + 1 modules
-var Modal = __webpack_require__(5776);
-// EXTERNAL MODULE: ./packages/components/src/flex/Flex.tsx
-var Flex = __webpack_require__(39996);
-// EXTERNAL MODULE: ./packages/components/src/flex/FlexItem.tsx
-var FlexItem = __webpack_require__(52981);
-// EXTERNAL MODULE: ./packages/components/src/textarea/TextArea.tsx + 1 modules
-var TextArea = __webpack_require__(75756);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Heading.mjs
-var Heading = __webpack_require__(57936);
-;// ./apps/docs/docs/components/modal.mdx
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'Modal',
-	description: 'Modal som lägger sig över allt annat innehåll.',
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -73,67 +63,72 @@ const assets = {
 const Example = props => {
   return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
     scope: {
-      Button: Button/* Button */.$,
-      Modal: Modal/* Modal */.a,
-      Flex: Flex/* Flex */.s,
-      FlexItem: FlexItem/* FlexItem */.Z
+      TextField: TextField/* TextField */.A_
     },
     ...props,
-    children: `<>
-            <Button onPress={setIsOpen}>Radera frukter</Button>
-            <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
-                <p>Är du säker? De går inte att återskapa.</p>
-                <Flex fluid={true}>
-                    <FlexItem col='auto'>
-                        <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
-                    </FlexItem>
-                    <FlexItem>
-                        <Button
-                            onPress={() => setIsOpen(false)}
-                            variant='secondary'
-                        >
-                            Avbryt
-                        </Button>
-                    </FlexItem>
-                </Flex>
-            </Modal>
-        </>`
+    children: `<TextField
+        label={'Etikett'}
+        description={'Beskrivning'}
+    />`
   });
 };
 const toc = [{
-  "value": "Installation och användning",
-  "id": "installation-och-användning",
+  "value": "Installation",
+  "id": "installation",
   "level": 2
 }, {
-  "value": "Avancerat innehåll",
-  "id": "avancerat-innehåll",
+  "value": "Varianter",
+  "id": "varianter",
   "level": 2
 }, {
-  "value": "API",
-  "id": "api",
+  "value": "Personnummer",
+  "id": "personnummer",
+  "level": 3
+}, {
+  "value": "Lösenord",
+  "id": "lösenord",
+  "level": 3
+}, {
+  "value": "Validering",
+  "id": "validering",
   "level": 2
+}, {
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
+}, {
+  "value": "Egna felmeddelanden",
+  "id": "egna-felmeddelanden",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Modal',
-      friendlyName: "Modal, Dialog, Dialogruta",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/Dialog.html"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak."
+      name: 'Textfield',
+      friendlyName: 'Inmatningsfält, textfält, nummerfält, lösenordsfält',
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/textarea",
+        children: "TextArea"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation-och-användning",
-      children: "Installation och användning"
+      id: "installation",
+      children: "Installation"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -166,57 +161,134 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Modal } from '@midas-ds/components'\n\nconst [isOpen, setIsOpen] = React.useState<boolean>(false)\n"
+        children: "import { TextField } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "avancerat-innehåll",
-      children: "Avancerat innehåll"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas."
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "personnummer",
+      children: "Personnummer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validationType=\"ssn\""
+      }), " för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer."]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Följande RegEx används ", (0,jsx_runtime.jsx)("br", {}), " ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01]))(?:[-+ ]?\\d{4})?$"
+      })]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Frivilliga sekelsiffor: 19 eller 20 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:19:20)?"
+        })]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Verifierar att det är minst två siffror i början av personnumret (ÅÅ)"
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att MM är 01 - 12 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|1[0-2])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att DD är 01 - 31 ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:0[1-9]|[12]\\\\d|3[01])"
+        })]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Tillåter avgränsare: ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "+"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "-"
+        }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "blanksteg"
+        }), " eller ingen, samt"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Verifierar att det är fyra siffror efter avgränsaren ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "(?:[-+ ]?\\\\d{4})?"
+        })]
+      }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Button: Button/* Button */.$,
-        Modal: Modal/* Modal */.a,
-        Flex: Flex/* Flex */.s,
-        FlexItem: FlexItem/* FlexItem */.Z,
-        Heading: Heading/* Heading */.D,
-        TextArea: TextArea/* TextArea */.f
+        TextField: TextField/* TextField */.A_
       },
-      children: `<>
-  <Button onPress={setIsOpen}>Öppna modal</Button>
-  <Modal id="avsluta" title="Vill du avsluta uppdraget?" isOpen={isOpen} onOpenChange={setIsOpen}>
-      <Flex fluid={true} style={{marginBottom: '1rem'}}>
-          <FlexItem col>
-              <TextArea
-                  autoFocus
-                  label='Ange anledning'
-                  description='Skriv anledning'
-                  maxCharacters={100}
-              />
-          </FlexItem>
-      </Flex>
-      <Flex fluid={true}>
-          <FlexItem col='auto'>
-              <Button onPress={() => setIsOpen(false)}>Spara korrespondens</Button>
-          </FlexItem>
-          <FlexItem>
-              <Button
-                  onPress={() => setIsOpen(false)}
-                  variant='secondary'
-              >
-                  Avbryt
-              </Button>
-          </FlexItem>
-      </Flex>
-  </Modal>
-</>`
+      children: `<TextField
+  type="text"
+  name="ssn"
+  label="Personnummer"
+  validationType="ssn"
+  errorMessage="Fel format för ett personnummer"
+  autoComplete="off"
+/>
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type={'password'}"
+      }), " för att kunna visa och dölja inmatad text."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: TextField/* TextField */.A_
+      },
+      children: `<TextField
+  type="password"
+  name="pw"
+  label="Skriv in ditt lösenord"
+  autoComplete="off"
+/>
+`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "api",
-      children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: "Modal"
+      id: "validering",
+      children: "Validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["TextField validerar automatiskt på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), " eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), ". Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: TextField/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in din e-post"
+  description="Obligatorisk"
+  isRequired
+  errorMessage="Felaktig e-postadress"
+  type="email"
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egen-validering",
+      children: "Egen validering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Det går också att definiera en egen funktion för validering:"
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        TextField: TextField/* TextField */.A_
+      },
+      children: `<TextField
+  label="Skriv in frukt"
+  errorMessage="Du måste skriva 'frukt'!"
+  validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
+/>`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egna-felmeddelanden",
+      children: "Egna felmeddelanden"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n  label='Skriv in frukt'\n  errorMessage=\"Du måste skriva 'frukt'!\"\n  isRequired\n  validate={value => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n  errorMessage={validation => {\n    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'\n    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'\n    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'\n\n    // Det finns flertalet typer på validationDetails\n    // if (validation.validationDetails.patternMismatch) return \"Det där ser inte ut som en frukt.\";\n    // if (validation.validationDetails.rangeOverflow) return \"Nu blev det nog för många frukter.\";\n    // med flera\n\n    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'\n  }}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
+        children: "React Arias dokumentation"
+      }), "."]
     })]
   });
 }
@@ -234,68 +306,6 @@ function MDXContent(props = {}) {
 }
 
 
-
-/***/ }),
-
-/***/ 5776:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  a: () => (/* binding */ Modal)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./packages/components/src/modal/Modal.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Modal_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray10":"#f2f2f2","modal":"modal_PJ14","modalHeader":"modalHeader_xDfh","modalBody":"modalBody_J9X6","modalHeading":"modalHeading_Q1ex"});
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
-var Button = __webpack_require__(86559);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/modal/Modal.tsx
-'use client';var _excluded=["id","isOpen","onOpenChange","children","title","className"];var Modal=function Modal(_ref){var id=_ref.id,isOpen=_ref.isOpen,onOpenChange=_ref.onOpenChange,children=_ref.children,title=_ref.title,className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var ref=react.useRef(null);react.useEffect(function(){if(isOpen){var _ref$current;(_ref$current=ref.current)==null||_ref$current.showModal();}else{var _ref$current2;(_ref$current2=ref.current)==null||_ref$current2.close();}},[isOpen]);var handleClose=function handleClose(){var _ref$current3;(_ref$current3=ref.current)==null||_ref$current3.close();onOpenChange(false);};var headingId=id+'_heading';return/*#__PURE__*/(0,jsx_runtime.jsxs)("dialog",Object.assign({id:id,ref:ref,onCancel:function onCancel(){return onOpenChange(false);},className:(0,clsx/* default */.A)(Modal_module.modal,className),"aria-labelledby":headingId},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Modal_module.modalHeader,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return handleClose();},variant:"tertiary",icon:x/* default */.A,iconPlacement:"right",children:"St\xE4ng"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Modal_module.modalBody,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("h2",{className:Modal_module.modalHeading,id:headingId,children:title}),children]})]}));};
-
-/***/ }),
-
-/***/ 75756:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  f: () => (/* binding */ TextArea)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/components/src/textarea/TextArea.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const TextArea_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_r3SS","count":"count_om8K","countExceeded":"countExceeded_GeTp"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
-var TextField = __webpack_require__(32945);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
-var dist_TextArea = __webpack_require__(43660);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx
-var textfield_TextField = __webpack_require__(69240);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
-var TextField_module = __webpack_require__(53502);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/textarea/TextArea.tsx
-'use client';var _excluded=["label","description","rows","maxCharacters","errorMessage","showCounter","validate"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxCharacters=_ref.maxCharacters,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,validate=_ref.validate,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:(0,clsx/* default */.A)(TextArea_module.count,value.length>maxCharacters&&TextArea_module.countExceeded),children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var validateInput=function validateInput(value){var maxCharactersError=maxCharacters&&value.length>maxCharacters?"Du har angett "+(value.length-maxCharacters)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxCharacters+" tecken.":null;var otherValidationError=validate?validate(value):null;return maxCharactersError||otherValidationError||true;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:TextField_module/* default */.A.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(textfield_TextField/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]})}));};
 
 /***/ }),
 
@@ -319,33 +329,6 @@ var jsx_runtime = __webpack_require__(74848);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
 'use client';var _excluded=["label","description","errorMessage","validationType","validate","maxCharacters","showCounter"];var TextField=function TextField(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,validationType=_ref.validationType,validate=_ref.validate,maxCharacters=_ref.maxCharacters,showCounter=_ref.showCounter,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var _React$useState=react__WEBPACK_IMPORTED_MODULE_0__.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var validateInput=function validateInput(value){if(validationType==='ssn')return ssnRegEx.test(value)?null:'Felaktigt personnummer';if(validationType instanceof RegExp)return new RegExp(validationType).test(value)?null:errorMessage==null?void 0:errorMessage.toString();if(maxCharacters)return maxCharacters&&value.length>maxCharacters?"Du har angett "+(value.length-maxCharacters)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxCharacters+" tecken.":null;if(validate)return validate(value);return true;};var Count=function Count(){if(maxCharacters){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span",{className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.count,value.length>maxCharacters&&_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.countExceeded),children:[value.length," / ",maxCharacters]});}if(showCounter){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span",{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.count,children:value.length});}return null;};return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .TextField */ .A,Object.assign({className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(InputWrapper,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Count,{}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div",{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.wrap,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_6__/* .Input */ .p,{type:props.type,className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.input,onChange:handleChange,onBlur:handleChange}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(PasswordField,{type:props.type,input:value})]})]})}));};var PasswordField=function PasswordField(_ref2){var type=_ref2.type,input=_ref2.input;var _React$useState2=react__WEBPACK_IMPORTED_MODULE_0__.useState(false),showPassword=_React$useState2[0],setShowPassword=_React$useState2[1];if(type==='password')return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[showPassword&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_7__/* .Text */ .E,{slot:"description",className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.passwordText,children:input}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_button__WEBPACK_IMPORTED_MODULE_8__/* .Button */ .$,{variant:"tertiary",onPress:function onPress(){return setShowPassword(!showPassword);},className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.passwordButton,children:showPassword?'Dölj':'Visa'})]});return null;};var InputWrapper=function InputWrapper(_ref3){var label=_ref3.label,description=_ref3.description,errorMessage=_ref3.errorMessage,children=_ref3.children;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div",{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.inputWrapper,children:[label&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_9__/* .Label */ .J,{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.label,children:label}),description&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_7__/* .Text */ .E,{slot:"description",className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.text,children:description}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_10__/* .FieldError */ .b,{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fieldError,children:errorMessage}),children]});};var ssnRegEx=new RegExp('^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$');
-
-/***/ }),
-
-/***/ 48697:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ X)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
-  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
-  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-]);
-
-
-//# sourceMappingURL=x.js.map
-
 
 /***/ }),
 

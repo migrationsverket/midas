@@ -34,8 +34,8 @@ var propsTable = __webpack_require__(38355);
 var ButtonGroup = __webpack_require__(94839);
 // EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
 var Button = __webpack_require__(86559);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 3 modules
-var getComponentMetaData = __webpack_require__(68219);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
+var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
 // EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
