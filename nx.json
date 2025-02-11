@@ -12,11 +12,13 @@
       "commitMessage": "chore(release): release version {version} [skip-ci]"
     },
     "version": {
+      "preVersionCommand": "npx nx generate-dependencies components",
       "generatorOptions": {
+        "packageRoot": "dist/packages/{projectName}",
         "specifierSource": "conventional-commits",
         "currentVersionResolver": "git-tag",
-        "fallbackCurrentVersionResolver": "disk",
-        "updateDependents": "auto"
+        "fallbackCurrentVersionResolver": "registry",
+        "updateDependents": "never"
       }
     }
   },
