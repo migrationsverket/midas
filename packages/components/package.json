@@ -40,7 +40,8 @@
     },
     "./theme": {
       "import": "./theme.js",
-      "require": "./theme.cjs"
+      "require": "./theme.cjs",
+      "types": "./theme/index.d.ts"
     }
   },
   "dependencies": {
