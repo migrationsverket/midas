@@ -19,10 +19,7 @@ export const SingleSubtle: Story = {
       <AccordionItem
         id={item}
         key={item}
-        title={
-          'En öppningsbar panel med jättelång titel som kommer flöda över flera rader förhoppningsvis. Nej inte riktigt så här kommer lite flera ord. ' +
-          item.toLocaleLowerCase()
-        }
+        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
       >
         Innehåll i öppningsbarpanel {item}. Lorem ipsum dolor sit amet
         consectetur adipisicing elit. Dolore nesciunt at aliquam! Blanditiis

@@ -1,5 +1,5 @@
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import '../../../../packages/theme/src/lib/global.css'
+import '../../../../packages/components/src/theme/global.css'
 import { Button, Link, Card } from '@midas-ds/components'
 import NextLink from 'next/link'
 

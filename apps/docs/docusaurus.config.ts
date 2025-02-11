@@ -1,12 +1,10 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
-import { getLatestReleasePath } from './src/components/getLastestReleasePath'
 const path = require('path')
 const fs = require('fs')
 
 const packagesDir = path.resolve(__dirname, '../../packages')
-const blogDir = path.resolve(__dirname, './blog')
 
 const packageAliases = {}
 
@@ -17,14 +15,16 @@ fs.readdirSync(packagesDir).forEach(dir => {
 
   const packagePath = path.resolve(packagesDir, dir)
   if (fs.statSync(packagePath).isDirectory()) {
+    packageAliases[`@midas-ds/${dir}/theme`] = path.resolve(
+      packagePath,
+      'src/theme/index.ts'
+    )
     packageAliases[`@midas-ds/${dir}`] = path.resolve(
       packagePath,
       'src/index.ts'
     )
   }
 })
-
-const latestReleasePath = getLatestReleasePath(blogDir)
 
 const config: Config = {
   title: 'Migrationsverkets designsystem',
@@ -151,7 +151,7 @@ const config: Config = {
       items: [
         {
           type: 'doc',
-          docId: 'get-started',
+          docId: 'get-started/use',
           position: 'left',
           label: 'Dokumentation'
         },
@@ -161,7 +161,7 @@ const config: Config = {
           label: 'Nyheter'
         },
         {
-          to: latestReleasePath,
+          href: 'https://github.com/migrationsverket/midas/releases',
           label: 'Senaste versionen',
           position: 'right'
         },

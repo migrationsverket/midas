@@ -1,3 +1,37 @@
+## 1.2.3 (2025-02-11)
+
+This was a version bump only, there were no code changes.
+
+## 1.2.2 (2025-02-11)
+
+This was a version bump only, there were no code changes.
+
+## 1.2.1 (2025-02-11)
+
+This was a version bump only, there were no code changes.
+
+## 1.2.0 (2025-02-11)
+
+### 🚀 Features
+
+- **components:** new api and style for accordion ([efab0a198](https://github.com/migrationsverket/midas/commit/efab0a198))
+- **components:** add nvm config ([7cbbce66e](https://github.com/migrationsverket/midas/commit/7cbbce66e))
+
+### 🩹 Fixes
+
+- import/export textfield css directly from css module ([#212](https://github.com/migrationsverket/midas/pull/212))
+- **components:** fix text when titles are longer than one row ([28b06cd31](https://github.com/migrationsverket/midas/commit/28b06cd31))
+- **info-banner:** fix icon to be in same line with text in docs and story ([f37b798c3](https://github.com/migrationsverket/midas/commit/f37b798c3))
+- **theme:** create separate theme export ([a6c95a23c](https://github.com/migrationsverket/midas/commit/a6c95a23c))
+- **theme:** search replace theme paths ([305581347](https://github.com/migrationsverket/midas/commit/305581347))
+
+### ❤️ Thank You
+
+- Axel Engström
+- jabir Khalil
+- pixelrickdreamer @pixelrickdreamer
+- Wilhelm Hjelm
+
 ## 1.1.0 (2025-01-31)
 
 ### 🚀 Features
