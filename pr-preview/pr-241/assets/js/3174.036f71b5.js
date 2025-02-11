@@ -403,7 +403,7 @@ var IntlUtils = __webpack_require__(98569);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(28453);
-/* harmony import */ var _theme_MDXComponents__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(73513);
+/* harmony import */ var _theme_MDXComponents__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77434);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
