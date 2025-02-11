@@ -1,8 +1,7 @@
 import { FileUpload, FileTriggerProps } from './FileUpload'
 import '@testing-library/jest-dom'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import { render, RenderResult } from '@testing-library/react'
-expect.extend(toHaveNoViolations)
 
 describe('given default fileupload', () => {
   let rendered: RenderResult

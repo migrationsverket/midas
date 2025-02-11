@@ -4,10 +4,9 @@
 
 import '@testing-library/jest-dom'
 import * as React from 'react'
-import { axe, toHaveNoViolations } from 'jest-axe'
+import { axe } from 'jest-axe'
 import { render, RenderResult } from '@testing-library/react'
 import { Accordion, AccordionItem } from './'
-expect.extend(toHaveNoViolations)
 
 const ITEMS = ['One', 'Two', 'Three']
 
