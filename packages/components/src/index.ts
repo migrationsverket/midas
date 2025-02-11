@@ -1,6 +1,7 @@
 import './theme/global.css'
 
 export * from './tooltip'
+export * from './skeleton/Skeleton'
 export * from './theme/index'
 export * from './accordion'
 export * from './breadcrumbs'
