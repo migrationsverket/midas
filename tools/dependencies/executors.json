@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "dependencies": {
+      "implementation": "./src/executors/dependencies",
+      "schema": "./src/executors/schema.json",
+      "description": "dependencies executor"
+    }
+  }
+}

@@ -55,6 +55,18 @@
           "outputDir": "dist/docs/storybook"
         }
       }
+    },
+    "generate-dependencies": {
+      "dependsOn": [
+        {
+          "target": "build"
+        }
+      ],
+      "executor": "@midas-ds/dependencies:dependencies",
+      "options": {
+        "outputDir": "dist/packages/components",
+        "filter": "@storybook"
+      }
     }
   }
 }
