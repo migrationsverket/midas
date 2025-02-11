@@ -1,8 +1,0 @@
-import{j as o}from"./jsx-runtime-DtgEGaVE.js";import{D as e,a}from"./Dropdown-Cbxl-Td3.js";import{L as s}from"./LinkButton-D5GcMg3X.js";import"./index-BbAIUH2N.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./Dialog-CmDJib1-.js";import"./Button-PMtIgk3z.js";import"./useFocusable-BTV2lCc9.js";import"./clsx-B-dksMZM.js";import"./Hidden-BxZRcyi_.js";import"./index-i7ZvCR4f.js";import"./RSPContexts-CeCCo7XS.js";import"./Collection-CP0FkJ5j.js";import"./index-DwWe6W7f.js";import"./Separator-Z3nJnnSt.js";import"./SelectionManager-CiLjFixb.js";import"./useEvent-CfffaCDc.js";import"./FocusScope-BeeEVvPP.js";import"./context-DC_sGW0u.js";import"./useDescription-c_sn7U9n.js";import"./useControlledState-DGyHFLi9.js";import"./ListKeyboardDelegate-VWRpf7NQ.js";import"./Text-DrzpM1Jb.js";import"./PressResponder-DzydwzD8.js";import"./useLocalizedStringFormatter-BrmR15lP.js";import"./useLabels-BlF-T0UY.js";import"./VisuallyHidden-CK0-3K8r.js";import"./Button-D8-dz4sF.js";import"./createLucideIcon-8wDOqnHv.js";import"./Link-CQB74Beb.js";import"./chevron-right-CjCwHShF.js";const H={component:e,title:"Components/Dropdown"},d=["Ett","Två","Tre"],r={args:{label:"Meny",children:d.map((p,n)=>o.jsx(a,{children:o.jsx(s,{variant:"tertiary",children:p})},"dropdown_"+n))}};var t,i,m;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  args: {
-    label: 'Meny',
-    children: ITEMS.map((item, i) => <DropdownItem key={'dropdown_' + i}>
-        <LinkButton variant='tertiary'>{item}</LinkButton>
-      </DropdownItem>)
-  }
-}`,...(m=(i=r.parameters)==null?void 0:i.docs)==null?void 0:m.source}}};const J=["Primary"];export{r as Primary,J as __namedExportsOrder,H as default};
