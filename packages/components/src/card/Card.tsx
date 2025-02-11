@@ -66,13 +66,12 @@ export const Card: React.FC<CardProps> = ({
                 className={styles.image}
               />
             )}
-        <HeadingTag className={styles.heading}>{title}</HeadingTag>
-        <p
-          id={contentId}
-          className={styles.text}
-        >
-          {content}
-        </p>
+        <div id={contentId}>
+          <HeadingTag className={styles.heading}>{title}</HeadingTag>
+          <p className={styles.text}>
+            {content} id={contentId}
+          </p>
+        </div>
       </div>
       <Link
         aria-describedby={contentId}
