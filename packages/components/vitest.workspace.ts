@@ -6,6 +6,7 @@ export default defineWorkspace([
     test: {
       name: 'unit',
       include: ['**/*.{test,spec}.{ts,tsx}'],
+      exclude: ['**/*.browser.{test,spec}.{ts,tsx}'],
       environment: "jsdom",
     },
   },
