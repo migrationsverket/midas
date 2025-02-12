@@ -11,7 +11,8 @@ import {
   Select,
   Item,
   Button
-} from '@midas-ds/components'
+} from '../../src'
+import React from 'react'
 
 const meta: Meta<typeof AriaForm> = {
   component: AriaForm,

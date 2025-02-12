@@ -7,8 +7,8 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
+    '@storybook/experimental-addon-test',
     '@chromatic-com/storybook'
   ],
   core: {

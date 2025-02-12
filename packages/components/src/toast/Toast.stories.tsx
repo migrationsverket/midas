@@ -5,7 +5,7 @@ import {
   toastQueue,
   MidasToast
 } from './Toast'
-import { Button } from '@midas-ds/components'
+import { Button } from '../button'
 
 const meta: Meta<MidasToast> = {
   title: 'Components/Toast',
