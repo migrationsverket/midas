@@ -1,5 +1,6 @@
 import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
 import { useState } from 'react'
+import {Key} from 'react-aria'
 
 import {
   MultiSelectListState,
@@ -18,6 +19,11 @@ import type {
   Validation
 } from '@react-types/shared'
 
+/** Added this for a better output, will see how this plays out */
+interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'>{
+  onSelectionChange: (value: Selection | Key[]) => void
+}
+
 export interface MultiSelectProps<T>
   extends CollectionBase<T>,
     AsyncLoadable,
@@ -25,7 +31,8 @@ export interface MultiSelectProps<T>
     Validation,
     LabelableProps,
     TextInputBase,
-    MultipleSelection,
+    ArraySelection,
+    // MultipleSelection,
     FocusableProps,
     OverlayTriggerProps {
   /**
@@ -58,9 +65,9 @@ export function useMultiSelectState<T extends object>(
         if (keys === 'all') {
           // This may change back to "all" once we will implement async loading of additional
           // items and differentiation between "select all" vs. "select visible".
-          props.onSelectionChange(new Set(listState.collection.getKeys()))
+          props.onSelectionChange(Array.from(listState.collection.getKeys()))
         } else {
-          props.onSelectionChange(new Set(listState.selectionManager.selectedKeys))
+          props.onSelectionChange(Array.from(keys))
         }
       }
 

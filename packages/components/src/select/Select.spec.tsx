@@ -43,7 +43,7 @@ let baseElement: RenderResult<
   HTMLElement,
   HTMLElement
 >
-const onchange = jest.fn(ch => console.info('onSelectionChange', ch))
+const onchange = jest.fn()
 
 describe('Select', () => {
   beforeEach(() => {
@@ -77,6 +77,6 @@ describe('Select', () => {
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     await user.keyboard('[Esc]')
-    expect(onchange).toHaveBeenCalled()
+    expect(onchange).toHaveBeenCalledWith(['kiwi'])
   })
 })

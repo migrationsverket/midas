@@ -4,7 +4,6 @@ import {
   SearchField,
   Logo,
   TextField,
-  Item,
   Select
 } from '@midas-ds/components'
 import React from 'react'
@@ -76,7 +75,6 @@ export function App() {
             onSelectionChange={x => console.log('[single]onSelectionChange', x)}
           ></Select>
         </div>
-        <span>{selected}</span>
       </div>
     </div>
   )
