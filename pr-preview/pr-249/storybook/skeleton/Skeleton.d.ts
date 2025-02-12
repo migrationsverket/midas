@@ -1,6 +1,9 @@
 import { default as React } from '../../../../node_modules/react';
 type SkeletonProps = {
-    variant?: "text" | "circle" | "rectangle";
+    width?: string | number;
+    height?: string | number;
+    variant?: 'text' | 'circle' | 'rectangular';
+    animation?: 'pulse' | 'wave' | false;
 };
 export declare const Skeleton: React.FC<SkeletonProps>;
 export {};
