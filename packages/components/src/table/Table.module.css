@@ -41,7 +41,7 @@
   }
 
   &[data-hovered='true'] td {
-    background-color: gray40;
+    background-color: gray40 !important;
   }
 }
 
