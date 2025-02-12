@@ -5,18 +5,22 @@ type SkeletonProps = {
   width?: string | number
   height?: string | number
   variant?: 'text' | 'circle' | 'rectangular'
-  animation?: 'pulse' | 'wave' | false
+  animation?: 'pulse' | 'wave'
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({
   variant = 'text',
   width,
   height,
-  animation='wave'
+  animation
 }) => {
   return (
     <div
-      className={clsx(styles.skeleton, styles[variant],animation && styles[animation])}
+      className={clsx(
+        styles.skeleton,
+        styles[variant],
+        animation ? styles[animation] : ''
+      )}
       style={{ width, height }}
     />
   )

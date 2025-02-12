@@ -13,11 +13,11 @@ const meta: Meta<typeof Skeleton> = {
     width: {
       type: 'string'
     },
-    height:{
+    height: {
       type: 'string'
     },
-    animation:{
-      options: ['wave', 'pulse', false],
+    animation: {
+      options: [false, 'pulse', 'wave'],
       control: { type: 'radio' }
     }
   }
@@ -29,7 +29,7 @@ export const Text: Story = {
   args: {
     variant: 'text',
     width: '100%',
-    height: '30px',
+    height: '40px'
   }
 }
 export const Circle: Story = {
@@ -49,13 +49,18 @@ export const Rectangular: Story = {
 }
 export const NoAnimation: Story = {
   args: {
-    variant: 'text',
-    animation: false
+    variant: 'text'
   }
 }
 export const Pulse: Story = {
   args: {
     variant: 'text',
     animation: 'pulse'
+  }
+}
+export const Wave: Story = {
+  args: {
+    variant: 'text',
+    animation: 'wave'
   }
 }
