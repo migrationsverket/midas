@@ -1,21 +1,23 @@
-import React from "react";
-import styles from "./Skeleton.module.css";
+import React from 'react'
+import styles from './Skeleton.module.css'
 import clsx from 'clsx'
 type SkeletonProps = {
-
-  variant?: "text" | "circle" | "rectangle" ;
-  
-};
+  width?: string | number
+  height?: string | number
+  variant?: 'text' | 'circle' | 'rectangular'
+  animation?: 'pulse' | 'wave' | false
+}
 
 export const Skeleton: React.FC<SkeletonProps> = ({
-  
-  variant="text",
- 
+  variant = 'text',
+  width,
+  height,
+  animation='wave'
 }) => {
   return (
     <div
-      className={clsx(styles.skeleton,styles[variant])}
-      
+      className={clsx(styles.skeleton, styles[variant],animation && styles[animation])}
+      style={{ width, height }}
     />
-  );
-};
+  )
+}

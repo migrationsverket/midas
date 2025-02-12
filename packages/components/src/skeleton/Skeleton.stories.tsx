@@ -6,35 +6,56 @@ const meta: Meta<typeof Skeleton> = {
   title: 'Components/Skeleton',
   tags: ['autodocs'],
   argTypes: {
-    
     variant: {
-      options: ["text" ,"circle" , "rectangle"],
-      control: { type: 'radio' },
-      defaultValue: undefined
+      options: ['text', 'circle', 'rectangular'],
+      control: { type: 'radio' }
     },
-}
+    width: {
+      type: 'string'
+    },
+    height:{
+      type: 'string'
+    },
+    animation:{
+      options: ['wave', 'pulse', false],
+      control: { type: 'radio' }
+    }
+  }
 }
 export default meta
 type Story = StoryObj<typeof Skeleton>
 
-export const Default: Story = {
-  args: {
-    
-  },
-}
 export const Text: Story = {
   args: {
-    variant:'text'
-  },
+    variant: 'text',
+    width: '100%',
+    height: '30px',
+  }
 }
 export const Circle: Story = {
   args: {
-    variant:'circle'
-  },
+    variant: 'circle',
+    width: '50px',
+    height: '50px'
+  }
 }
 
-export const rectangle: Story = {
+export const Rectangular: Story = {
   args: {
-    variant:'rectangle'
-  },
+    variant: 'rectangular',
+    width: '100px',
+    height: '40px'
+  }
+}
+export const NoAnimation: Story = {
+  args: {
+    variant: 'text',
+    animation: false
+  }
+}
+export const Pulse: Story = {
+  args: {
+    variant: 'text',
+    animation: 'pulse'
+  }
 }
