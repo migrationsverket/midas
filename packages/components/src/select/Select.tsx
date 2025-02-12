@@ -11,7 +11,7 @@ import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
 import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
 import { Checkbox } from '../checkbox'
 
@@ -141,11 +141,34 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const handleRemove = (key: Key) =>
       state.selectionManager.toggleSelection(key)
 
+    const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
+      event.stopPropagation()
+      event.nativeEvent.stopImmediatePropagation();
+
+      if (["Enter", "Space"].includes(event.code)) {
+        handleClear()
+        ref?.current?.focus()
+      }
+    }
+
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
     ) => (
       <div className={styles.selectValueTag}>
         {items.length > 1 ? `${items.length} valda` : items[0].textValue}
+        <div
+          aria-label='Rensa alla'
+          className={styles.clearButton}
+          onClick={handleClear}
+          onKeyDown={handleKeyDown}
+          role="button"
+          tabIndex={0}
+        >
+          <X
+            width={16}
+            height={16}
+          />
+        </div>
       </div>
     )
 
