@@ -1,7 +1,7 @@
 import {useListBox, useListBoxSection, useOption} from "@react-aria/listbox";
 import clsx from "clsx";
 import * as React from "react";
-import styles from './MultiSelect.module.css'
+import styles from './Select.module.css'
 
 import type {MultiSelectState} from "./useMultiSelectState";
 import type {AriaListBoxOptions} from "@react-aria/listbox";

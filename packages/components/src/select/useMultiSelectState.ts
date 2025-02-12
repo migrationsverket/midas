@@ -60,7 +60,7 @@ export function useMultiSelectState<T extends object>(
           // items and differentiation between "select all" vs. "select visible".
           props.onSelectionChange(new Set(listState.collection.getKeys()))
         } else {
-          props.onSelectionChange(keys)
+          props.onSelectionChange(new Set(listState.selectionManager.selectedKeys))
         }
       }
 

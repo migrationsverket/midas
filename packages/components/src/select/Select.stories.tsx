@@ -1,23 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Select, Item } from './Select'
-import React from 'react'
+import { Select } from './Select'
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: 'Components/Select',
-  tags: ['autodocs'],
-  args: {
-    label: 'Etikett',
-    description: 'Beskrivning'
-  },
-  argTypes: {
-    placeholder: { type: 'string' }
-  },
-  parameters: {}
+  title: 'Components/NEWSelect',
+  tags: ['autodocs']
 }
-
 export default meta
-
 type Story = StoryObj<typeof Select>
 
 const fruits = [
@@ -56,47 +45,68 @@ const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
 
-export const Default: Story = {
+export const Normal: Story = {
   args: {
-    placeholder: 'Many items...'
-  },
-  render: () => (
-    <Select
-      label='Välj en frukt'
-      items={options}
-    >
-      {item => <Item>{item.name}</Item>}
-    </Select>
-  )
+    label: 'Label',
+    selectionMode: 'single',
+    options: options,
+    isDisabled: false,
+    isClearable: true,
+    isSelectableAll: false,
+    description: 'Description',
+    showTags: false,
+    placeholder: 'Select an option',
+  }
 }
 
+export const DefaultSelectedKey: Story = {
+  args: {
+    ...Normal.args,
+    description: 'Kiwi is pre-selected',
+    defaultSelectedKeys: ['kiwi']
+  }
+}
+
+export const AllKeysSelected: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    description: 'All options are selected',
+    defaultSelectedKeys: 'all',
+  }
+}
+
+export const Disabled: Story = {
+  args: {
+    ...Normal.args,
+    isDisabled: true,
+  }
+}
+export const DisabledOption: Story = {
+  args: {
+    ...Normal.args,
+    description: 'Kiwi is disabled',
+    disabledKeys: ['kiwi'],
+  }
+}
+/** TODO! */
 export const Invalid: Story = {
   args: {
-    isInvalid: true,
-    errorMessage: 'Fel!'
-  },
-  render: args => (
-    <Select {...args}>
-      <Item>Apple</Item>
-      <Item>Lemon</Item>
-    </Select>
-  )
+    ...Normal.args,
+  }
 }
-
-export const disabled: Story = {
+export const WithTags: Story = {
   args: {
-    isDisabled: true
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Avoid using disabled'
-      }
-    }
-  },
-  render: args => (
-    <Select {...args}>
-      <Item>Hej</Item>
-    </Select>
-  )
+    ...Normal.args,
+    selectionMode: 'multiple',
+    showTags: true,
+    defaultSelectedKeys: ['apple','kiwi']
+  }
+}
+export const SelectAllEnabled: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    isSelectableAll: true,
+  }
 }

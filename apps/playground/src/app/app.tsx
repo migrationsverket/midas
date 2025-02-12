@@ -4,11 +4,10 @@ import {
   SearchField,
   Logo,
   TextField,
-  MultiSelect,
   Item,
-  Select as LegacySelect
+  Select
 } from '@midas-ds/components'
-import { Select } from '../../../../packages/components/src/multi-select/Select'
+import React from 'react'
 const fruits = [
   'Apple',
   'Banana',
@@ -44,6 +43,7 @@ const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
 export function App() {
+  const [selected, setSelected] = React.useState<any>(undefined)
   return (
     <div className={styles.container}>
       <Button variant={'secondary'}>Secondary Button</Button>
@@ -61,15 +61,8 @@ export function App() {
             options={options}
             isClearable={true}
             isSelectableAll={true}
-            onSelectionChange={x => console.log('onSelectionChange', x)}
+            onSelectionChange={x => console.log('[multi]onSelectionChange', x)}
           ></Select>
-          <MultiSelect
-            items={options}
-            label={'legacy select'}
-            onSelectionChange={sc =>
-              console.log('onSelectionChange legacy', sc)
-            }
-          ></MultiSelect>
         </div>
         <div className={styles.col}>
           <Select
@@ -80,17 +73,10 @@ export function App() {
             options={options}
             isClearable={false}
             isSelectableAll={false}
-            onSelectionChange={x => console.log('onSelectionChange', x)}
+            onSelectionChange={x => console.log('[single]onSelectionChange', x)}
           ></Select>
-          <LegacySelect
-            items={options}
-            label={'legacy single select'}
-          >
-            {item => {
-              return <Item>{item.name}</Item>
-            }}
-          </LegacySelect>
         </div>
+        <span>{selected}</span>
       </div>
     </div>
   )
