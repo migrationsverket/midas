@@ -5,17 +5,15 @@ import { Item, Section } from '@react-stately/collections'
 import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import React, { useEffect, useRef } from 'react'
-import { SelectValue, TagList, Text } from 'react-aria-components'
+import { TagList } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
 import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './MultiSelect.module.css'
-import { ChevronDown, X } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
-import { useToggleState } from 'react-stately'
-import { useCheckbox } from 'react-aria'
-import { InputWrapper, Button, Checkbox } from '@midas-ds/components'
+import { Checkbox } from '../checkbox'
 
 export type OptionItem = {
   children?: never
@@ -259,7 +257,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                         readOnly
                         tabIndex={-1}
                       />*/}
-                          {isAllSelection ? 'Clear selection' : 'Select All'}
+                          {'Select All'}
                         </div>
                       </button>
                     </FocusRing>
