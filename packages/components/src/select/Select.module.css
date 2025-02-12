@@ -50,13 +50,9 @@
   background-color: backgroundSecondary;
   border-bottom: 1px solid black;
 
-  /*  &[aria-expanded='true'] .icon {
-      transform: rotate(180deg);
-      transition: transform 0.3s ease;
-    }*/
-
   &:focus {
-    outline: none;
+    outline-offset: 2px;
+    outline: 2px solid black;
   }
 
   &:hover {
@@ -86,8 +82,8 @@
 
 /** not working? */
 .buttonFocused {
-  /*  outline-offset: 2px;
-    outline: 2px solid black;*/
+    outline-offset: 2px;
+    outline: 2px solid black;
 }
 
 .buttonActive {
@@ -178,6 +174,7 @@
   }
 
   &:focus-visible {
+    outline: none;
   }
 
   /*TODO: remove */
