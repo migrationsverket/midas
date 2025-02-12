@@ -39,9 +39,9 @@
       "require": "./index.cjs"
     },
     "./theme": {
+      "types": "./theme/index.d.ts",
       "import": "./theme.js",
-      "require": "./theme.cjs",
-      "types": "./theme/index.d.ts"
+      "require": "./theme.cjs"
     }
   },
   "dependencies": {

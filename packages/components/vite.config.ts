@@ -75,5 +75,13 @@ export default defineConfig({
       //   // entryFileNames: '[name].js',
       // }
     }
+  },
+  test: {
+    setupFiles: [
+      "./tests/setup.ts"
+    ],
+    environment: "jsdom",
+    reporters: ['verbose'],
+    globals: true,
   }
 })

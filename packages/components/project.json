@@ -6,10 +6,10 @@
   "tags": [],
   "targets": {
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/components/jest.config.ts"
+        "config": "packages/components/vite.config.ts",
       }
     },
     "build": {

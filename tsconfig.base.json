@@ -17,7 +17,8 @@
     "paths": {
       "@midas-ds/*": ["packages/*/src/index.ts"],
       "@midas-ds/dependencies": ["tools/dependencies/src/index.ts"]
-    }
+    },
+    "typeRoots": ["node_modules"],
   },
   "exclude": ["node_modules", "tmp"]
 }
