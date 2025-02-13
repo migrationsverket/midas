@@ -80,3 +80,25 @@ describe('Select', () => {
     expect(onchange).toHaveBeenCalledWith(['kiwi'])
   })
 })
+
+describe('An empty Select', () => {
+  beforeEach(() => {
+    render(
+      <Select
+        label={'Label for select'}
+        selectionMode={'single'}
+        options={[]}
+      />
+    )
+  })
+
+  it('should render successfully', () => {
+    expect(screen.getByLabelText('Label for select')).toBeTruthy()
+  })
+  
+  it('should have no axe violations', async () => {
+    expect(
+      await axe(screen.getByLabelText('Label for select'))
+    ).toHaveNoViolations()
+  })
+})
