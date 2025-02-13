@@ -7,12 +7,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
 
 export default function Hello() {
-  const imgSrc = useBaseUrl('/img/HeroImage.png')
+  const imgSrc = useBaseUrl('/img/HeroImage-Valentines.png')
 
   return (
     <Layout
       title='Migrationsverkets designsystem'
-      description='Hello React Page'
+      description='Midas är Migrationsverkets designsystem för att skapa
+                användarvänliga, tillgängliga och enhetliga tjänster och
+                produkter. Det innehåller designkomponenter, kod och riktlinjer
+                som underlättar utveckling och design.'
     >
       <div className='container container--fullscreen'>
         <div className='row row--no-gutters'>
