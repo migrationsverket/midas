@@ -7,17 +7,7 @@ const meta: Meta<typeof Skeleton> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: [
-        'text',
-        'circle',
-        'rectangular',
-        'h1',
-        'h2',
-        'h3',
-        'h4',
-        'h5',
-        'h6'
-      ],
+      options: ['rectangular', 'circle'],
       control: { type: 'radio' }
     },
     width: {
@@ -27,7 +17,7 @@ const meta: Meta<typeof Skeleton> = {
       type: 'string'
     },
     animation: {
-      options: [false, 'pulse', 'wave'],
+      options: [false, 'wave'],
       control: { type: 'radio' }
     }
   }
@@ -35,42 +25,12 @@ const meta: Meta<typeof Skeleton> = {
 export default meta
 type Story = StoryObj<typeof Skeleton>
 
-export const Text: Story = {
+export const Rectangular: Story = {
   args: {
-    variant: 'text',
-    width: '100%',
+    variant: 'rectangular',
+    width: '100px',
     height: '40px'
   }
-}
-export const Headings: Story = {
-  render: () => (
-    <div>
-      <Skeleton
-        variant='h1'
-        width='50%'
-      />
-      <Skeleton
-        variant='h2'
-        width='60%'
-      />
-      <Skeleton
-        variant='h3'
-        width='70%'
-      />
-      <Skeleton
-        variant='h4'
-        width='80%'
-      />
-      <Skeleton
-        variant='h5'
-        width='90%'
-      />
-      <Skeleton
-        variant='h6'
-        width='100%'
-      />
-    </div>
-  )
 }
 
 export const Circle: Story = {
@@ -81,27 +41,15 @@ export const Circle: Story = {
   }
 }
 
-export const Rectangular: Story = {
-  args: {
-    variant: 'rectangular',
-    width: '100px',
-    height: '40px'
-  }
-}
 export const NoAnimation: Story = {
   args: {
-    variant: 'text'
+    ...Rectangular.args
   }
 }
-export const Pulse: Story = {
-  args: {
-    variant: 'text',
-    animation: 'pulse'
-  }
-}
+
 export const Wave: Story = {
   args: {
-    variant: 'text',
+    ...Rectangular.args,
     animation: 'wave'
   }
 }
