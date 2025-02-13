@@ -5,6 +5,9 @@ const meta: Meta<typeof Skeleton> = {
   component: Skeleton,
   title: 'Components/Skeleton',
   tags: ['autodocs'],
+  args: {
+    variant: 'rectangular'
+  },
   argTypes: {
     variant: {
       options: ['rectangular', 'circle'],
@@ -18,7 +21,8 @@ const meta: Meta<typeof Skeleton> = {
     },
     animation: {
       options: [false, 'wave'],
-      control: { type: 'radio' }
+      control: { type: 'radio' },
+      defaultValue: false
     }
   }
 }
@@ -43,7 +47,8 @@ export const Circle: Story = {
 
 export const NoAnimation: Story = {
   args: {
-    ...Rectangular.args
+    ...Rectangular.args,
+    animation: false
   }
 }
 
