@@ -18,9 +18,9 @@ export default function useObserveElement(element: HTMLElement | null) {
   useEffect(() => {
     if (!element) return
 
-    const resizeObserver = new ResizeObserver(debounce((event) => {
-        setWidth(event[0].contentBoxSize[0].inlineSize);
-        setHeight(event[0].contentBoxSize[0].blockSize);
+    const resizeObserver = new ResizeObserver(debounce((entries) => {
+        setWidth(entries[0].contentBoxSize[0].inlineSize);
+        setHeight(entries[0].contentBoxSize[0].blockSize);
     }, 500));
 
     resizeObserver.observe(element);
