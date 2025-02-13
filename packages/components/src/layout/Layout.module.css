@@ -256,6 +256,7 @@
   &:visited {
     background-color: gray10;
     color: gray150;
+    cursor: pointer;
 
     svg {
       stroke: black;

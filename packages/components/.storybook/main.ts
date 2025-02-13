@@ -8,8 +8,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    '@chromatic-com/storybook'
+    '@storybook/addon-a11y'
   ],
   core: {
     disableTelemetry: true
