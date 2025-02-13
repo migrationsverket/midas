@@ -1,6 +1,6 @@
 @value tokens: "../theme/tokens.css";
 
-@value display, regularWeight, black, signalRed130, smBreakpoint, gray50, blue150, blue100, gray20, backgroundSecondary from tokens;
+@value display, regularWeight, black, signalRed130, smBreakpoint, gray50, blue150, blue130, gray20, backgroundSecondary from tokens;
 
 * > ul {
   padding: 0;
@@ -222,7 +222,7 @@
 
   &:hover {
     cursor: pointer;
-    background-color: blue100;
+    background-color: blue130;
   }
 }
 
