@@ -1,11 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 import styles from './Skeleton.module.css'
 import clsx from 'clsx'
 type SkeletonProps = {
   width?: string | number
   height?: string | number
   variant?: 'circle' | 'rectangular'
-  animation?: 'wave'
+  animation: 'wave' | false
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({
@@ -19,7 +19,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
       className={clsx(
         styles.skeleton,
         styles[variant],
-        animation ? styles[animation] : ''
+        animation && styles[animation]
       )}
       style={{ width, height }}
     />
