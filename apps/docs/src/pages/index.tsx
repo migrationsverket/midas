@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
 
 export default function Hello() {
-  const imgSrc = useBaseUrl('/img/HeroImage-Valentines.png')
+  const imgSrc = useBaseUrl('/img/HeroImage.png')
 
   return (
     <Layout
