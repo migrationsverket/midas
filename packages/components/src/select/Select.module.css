@@ -2,6 +2,7 @@
 
 @value display, regularWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, gray20, backgroundSecondary from tokens;
 
+
 * > ul {
   padding: 0;
   margin-top: 0;
@@ -42,7 +43,7 @@
   font-size: 1rem;
   color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 48px;
   align-items: center;
   padding-left: 16px;
@@ -68,9 +69,8 @@
 }
 
 .buttonOpen {
-  .icon {
+  .icon svg {
     transform: rotate(180deg);
-    transition: transform 0.3s ease;
   }
 }
 
@@ -140,6 +140,12 @@
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
+  flex: 1 0 auto;
+  justify-content: flex-end;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
 }
 
 /**
@@ -200,6 +206,12 @@
   background-color: gray20;
 }
 
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .selectValueTag {
   font-family: display;
   background-color: blue150;
@@ -211,7 +223,32 @@
   justify-content: center;
   align-items: center;
   padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clearButton {
+  padding: 0.5rem;
+  margin: 0;
+  margin-left: 0.5rem;
+  display: flex;
+  border-radius: 100%;
+  background-color: blue150;
+  color: white;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: blue130;
+  }
 }
 
 .selectDivider {

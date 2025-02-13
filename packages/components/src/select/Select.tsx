@@ -11,9 +11,10 @@ import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
 import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
 import { Checkbox } from '../checkbox'
+import useObserveElement from '../utils/useObserveElement'
 
 export type OptionItem = {
   children?: never
@@ -148,11 +149,28 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const handleRemove = (key: Key) =>
       state.selectionManager.toggleSelection(key)
 
+    const { width: buttonWidth } = useObserveElement(ref.current) 
+
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
     ) => (
       <div className={styles.selectValueTag}>
-        {items.length > 1 ? `${items.length} valda` : items[0].textValue}
+        <span className={styles.truncate} style={{ maxWidth: buttonWidth - 64 }}>
+          {items.length > 1 ? `${items.length} valda` : items[0].textValue}
+        </span>
+        <button
+          aria-label='Rensa alla'
+          className={styles.clearButton}
+          onClick={() => {
+            handleClear()
+            ref?.current?.focus()
+          }}
+        >
+          <X
+            width={16}
+            height={16}
+          />
+        </button>
       </div>
     )
 
@@ -201,36 +219,40 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             focusRingClass={styles.buttonFocused}
             autoFocus={autoFocus}
           >
-            <button
-              {...buttonProps}
-              className={clsx(styles.button, {
-                [styles.buttonOpen]: state.isOpen,
-                [styles.buttonActive]: state.selectedItems,
-                [styles.buttonDisabled]: isDisabled
-              })}
-              type='button'
-              ref={ref}
-            >
-              {state.selectionMode === 'multiple' ? (
-                <span {...valueProps}>
-                  {state.selectedItems
-                    ? formatItems(state.selectedItems)
-                    : placeholder}
-                </span>
-              ) : (
-                <span>
-                  {state.selectedItems?.length === 1
-                    ? state.selectedItems[0].textValue
-                    : placeholder}
-                </span>
-              )}
-              <div
-                className={styles.icon}
-                aria-hidden='true'
+            <div className={styles.selectContainer}>
+              <button
+                {...buttonProps}
+                className={clsx(styles.button, {
+                  [styles.buttonOpen]: state.isOpen,
+                  [styles.buttonActive]: state.selectedItems,
+                  [styles.buttonDisabled]: isDisabled
+                })}
+                type='button'
+                ref={ref}
               >
-                <ChevronDown size={20} />
-              </div>
-            </button>
+                {state.selectionMode === 'multiple' && !state.selectedItems ? (
+                  <span>{placeholder}</span>
+                ) : null} 
+                {state.selectionMode !== 'multiple' ? (
+                  <span>
+                    {state.selectedItems?.length === 1
+                      ? state.selectedItems[0].textValue
+                      : placeholder}
+                  </span>
+                ) : null}
+                <div
+                  className={styles.icon}
+                  aria-hidden='true'
+                >
+                  <ChevronDown size={20} />
+                </div>
+              </button>
+              {state.selectionMode === 'multiple' && state.selectedItems ? (
+                <span {...valueProps}>
+                  {formatItems(state.selectedItems)}
+                </span>
+              ) : null}
+            </div>
           </FocusRing>
           {state.isOpen && (
             <SelectPopover
