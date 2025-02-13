@@ -5,7 +5,7 @@ import { Item, Section } from '@react-stately/collections'
 import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import React, { useEffect, useRef } from 'react'
-import { TagList } from 'react-aria-components'
+import { FieldError, Label, TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -93,7 +93,13 @@ type SelectProps = {
   selectedKeys?: Parameters<typeof useMultiSelectState>['0']['selectedKeys']
 
   /** The type of selection that is allowed in the collection. */
-  selectionMode: 'single' | 'multiple'
+  selectionMode: 'single' | 'multiple',
+  /** The selection is valid or not  */
+  isInvalid?: boolean
+  /** Error message to be displayed in case of invalid state*/
+  errorMessage?: string
+  /** Not implemented */
+  isRequired?: boolean
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
@@ -108,7 +114,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       label,
       description,
       placeholder,
-      showTags
+      showTags,
+      errorMessage
     } = props
 
     const refAllButton = useRef<HTMLInputElement>(null)
@@ -156,7 +163,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     }, [isIndeterminateSelection])
 
     return (
-      <div
+      <TextField
+        {...props}
         className={clsx(
           [styles.multiSelect],
           {
@@ -167,7 +175,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       >
         <div className={styles.multiSelect}>
           {label && (
-            <label
+            <Label
               {...labelProps}
               slot={'label'}
               className={clsx(styles.selectLabel, {
@@ -176,7 +184,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               })}
             >
               {label}
-            </label>
+            </Label>
           )}
           {description && (
             <span
@@ -188,6 +196,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               {description}
             </span>
           )}
+          <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
           <FocusRing
             focusRingClass={styles.buttonFocused}
             autoFocus={autoFocus}
@@ -310,7 +319,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             </TagList>
           </TagGroup>
         )}
-      </div>
+      </TextField>
     )
   }
 )
