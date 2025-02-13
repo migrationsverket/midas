@@ -20,7 +20,7 @@ const meta: Meta<typeof Skeleton> = {
       type: 'string'
     },
     animation: {
-      options: [false, 'wave'],
+      options: ['wave', false],
       control: { type: 'radio' },
       defaultValue: false
     }

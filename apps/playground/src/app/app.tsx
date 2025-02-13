@@ -12,7 +12,11 @@ export function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 5000)
+    const timeoutId = setTimeout(() => {
+      setLoading(false)
+    }, 5000)
+
+    return () => clearTimeout(timeoutId)
   }, [])
 
   return (
