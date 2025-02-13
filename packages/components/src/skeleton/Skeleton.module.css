@@ -1,0 +1,33 @@
+@keyframes wave {
+  0% {
+    background-position: -12.5rem 0;
+  }
+
+  100% {
+    background-position: 12.5rem 0;
+  }
+}
+
+.skeleton {
+  background: #e0e0e0;
+  display: inline-block;
+}
+
+.skeleton.text {
+  height: 1rem;
+  width: 100%;
+}
+
+.skeleton.circle {
+  border-radius: 50%;
+}
+
+.skeleton.wave {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f5f5f5 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: wave 5s infinite linear;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
