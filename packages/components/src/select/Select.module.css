@@ -42,7 +42,7 @@
   font-size: 1rem;
   color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 48px;
   align-items: center;
   padding-left: 16px;
@@ -68,9 +68,8 @@
 }
 
 .buttonOpen {
-  .icon {
+  .icon svg {
     transform: rotate(180deg);
-    transition: transform 0.3s ease;
   }
 }
 
@@ -140,6 +139,12 @@
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
+  flex: 1 0 auto;
+  justify-content: flex-end;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
 }
 
 /**
@@ -197,6 +202,12 @@
   background-color: gray20;
 }
 
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .selectValueTag {
   font-family: display;
   background-color: blue150;
@@ -208,6 +219,10 @@
   justify-content: center;
   align-items: center;
   padding-left: 0.5rem;
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
 }
 
 .clearButton {

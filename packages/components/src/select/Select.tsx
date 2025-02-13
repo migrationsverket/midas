@@ -141,36 +141,29 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const handleRemove = (key: Key) =>
       state.selectionManager.toggleSelection(key)
 
-    const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (event) => {
-      event.stopPropagation()
-      event.nativeEvent.stopImmediatePropagation();
-
-      if (["Enter", "Space"].includes(event.code)) {
-        handleClear()
-        ref?.current?.focus()
-      }
-    }
-
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
-    ) => (
-      <div className={styles.selectValueTag}>
-        {items.length > 1 ? `${items.length} valda` : items[0].textValue}
-        <div
+    ) => {
+      const firstItem = items[0].textValue.length > 20 ? `${items[0].textValue.slice(0, 20)}...` : items[0].textValue
+      
+      return (
+      <span className={styles.selectValueTag}>
+        {items.length > 1 ? `${items.length} valda` : firstItem}
+        <button
           aria-label='Rensa alla'
           className={styles.clearButton}
-          onClick={handleClear}
-          onKeyDown={handleKeyDown}
-          role="button"
-          tabIndex={0}
+          onClick={() => {
+            handleClear()
+            ref?.current?.focus()
+          }}
         >
           <X
             width={16}
             height={16}
           />
-        </div>
-      </div>
-    )
+        </button>
+      </span>
+    )}
 
     useEffect(() => {
       if (refAllButton.current) {
@@ -215,36 +208,39 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             focusRingClass={styles.buttonFocused}
             autoFocus={autoFocus}
           >
-            <button
-              {...buttonProps}
-              className={clsx(styles.button, {
-                [styles.buttonOpen]: state.isOpen,
-                [styles.buttonActive]: state.selectedItems,
-                [styles.buttonDisabled]: isDisabled
-              })}
-              type='button'
-              ref={ref}
-            >
-              {state.selectionMode === 'multiple' ? (
-                <span {...valueProps}>
-                  {state.selectedItems
-                    ? formatItems(state.selectedItems)
-                    : placeholder}
-                </span>
-              ) : (
-                <span>
-                  {state.selectedItems?.length === 1
-                    ? state.selectedItems[0].textValue
-                    : placeholder}
-                </span>
-              )}
-              <div
-                className={styles.icon}
-                aria-hidden='true'
+            <div className={styles.selectContainer}>
+              <button
+                {...buttonProps}
+                className={clsx(styles.button, {
+                  [styles.buttonOpen]: state.isOpen,
+                  [styles.buttonActive]: state.selectedItems,
+                  [styles.buttonDisabled]: isDisabled
+                })}
+                type='button'
+                ref={ref}
               >
-                <ChevronDown size={20} />
-              </div>
-            </button>
+                {state.selectionMode === 'multiple' ? (
+                  <span>{placeholder}</span>
+                ) : (
+                  <span>
+                    {state.selectedItems?.length === 1
+                      ? state.selectedItems[0].textValue
+                      : placeholder}
+                  </span>
+                )}
+                <div
+                  className={styles.icon}
+                  aria-hidden='true'
+                >
+                  <ChevronDown size={20} />
+                </div>
+              </button>
+              {state.selectionMode === 'multiple' && state.selectedItems ? (
+                <span {...valueProps}>
+                  {formatItems(state.selectedItems)}
+                </span>
+              ) : null}
+            </div>
           </FocusRing>
           {state.isOpen && (
             <SelectPopover
