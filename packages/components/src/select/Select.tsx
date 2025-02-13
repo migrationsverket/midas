@@ -323,7 +323,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           )}
         </div>
         {/*TODO FIX AND REFACTOR*/}
-        {showTags && (
+        {showTags && state.selectedItems !== null &&  (
           <TagGroup
             aria-label={'Selected Items'}
             selectionBehavior={'toggle'}

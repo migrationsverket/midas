@@ -1,6 +1,6 @@
 @value tokens: "../theme/tokens.css";
 
-@value display, regularWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, gray10, gray20, backgroundSecondary from tokens;
+@value display, regularWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, backgroundSecondary from tokens;
 
 
 * > ul {
