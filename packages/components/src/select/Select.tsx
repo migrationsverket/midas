@@ -14,6 +14,7 @@ import styles from './Select.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
 import { Checkbox } from '../checkbox'
+import useObserveElement from '../utils/useObserveElement'
 
 export type OptionItem = {
   children?: never
@@ -141,14 +142,15 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const handleRemove = (key: Key) =>
       state.selectionManager.toggleSelection(key)
 
+    const { width: buttonWidth } = useObserveElement(ref.current) 
+
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
-    ) => {
-      const firstItem = items[0].textValue.length > 20 ? `${items[0].textValue.slice(0, 20)}...` : items[0].textValue
-      
-      return (
-      <span className={styles.selectValueTag}>
-        {items.length > 1 ? `${items.length} valda` : firstItem}
+    ) => (
+      <div className={styles.selectValueTag}>
+        <span className={styles.truncate} style={{ maxWidth: buttonWidth - 64 }}>
+          {items.length > 1 ? `${items.length} valda` : items[0].textValue}
+        </span>
         <button
           aria-label='Rensa alla'
           className={styles.clearButton}
@@ -162,8 +164,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             height={16}
           />
         </button>
-      </span>
-    )}
+      </div>
+    )
 
     useEffect(() => {
       if (refAllButton.current) {
@@ -219,15 +221,16 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 type='button'
                 ref={ref}
               >
-                {state.selectionMode === 'multiple' ? (
+                {state.selectionMode === 'multiple' && !state.selectedItems ? (
                   <span>{placeholder}</span>
-                ) : (
+                ) : null} 
+                {state.selectionMode !== 'multiple' ? (
                   <span>
                     {state.selectedItems?.length === 1
                       ? state.selectedItems[0].textValue
                       : placeholder}
                   </span>
-                )}
+                ) : null}
                 <div
                   className={styles.icon}
                   aria-hidden='true'

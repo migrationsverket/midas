@@ -225,6 +225,12 @@
   transform: translateY(-50%);
 }
 
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .clearButton {
   padding: 0.5rem;
   margin: 0;
