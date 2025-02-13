@@ -12,7 +12,7 @@ export function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000) // Simulate API call
+    setTimeout(() => setLoading(false), 5000)
   }, [])
 
   return (
@@ -25,7 +25,7 @@ export function App() {
         <>
           <Skeleton
             variant='rectangular'
-            height={50}
+            height={10}
             width='50px'
             animation='pulse'
           />

@@ -4,7 +4,16 @@ import clsx from 'clsx'
 type SkeletonProps = {
   width?: string | number
   height?: string | number
-  variant?: 'text' | 'circle' | 'rectangular'
+  variant?:
+    | 'text'
+    | 'circle'
+    | 'rectangular'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
   animation?: 'pulse' | 'wave'
 }
 
@@ -14,6 +23,9 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   height,
   animation
 }) => {
+  const isHeadingVariant = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(
+    variant
+  )
   return (
     <div
       className={clsx(
@@ -21,7 +33,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
         styles[variant],
         animation ? styles[animation] : ''
       )}
-      style={{ width, height }}
+      style={{ width, ...(isHeadingVariant ? {} : { height }) }}
     />
   )
 }
