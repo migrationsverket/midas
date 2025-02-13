@@ -1,0 +1,78 @@
+---
+title: Dropdown
+description: Kort beskrivning av Dropdown
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Dropdown, DropdownItem, Button } from '@midas-ds/components'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Dropdown, DropdownItem, Button }}
+      {...props}
+    >
+      {`
+        <Dropdown title="Meny">
+          <DropdownItem>
+            <Button variant="tertiary">
+              Skriv ut
+            </Button>
+          </DropdownItem>
+          <DropdownItem>
+            <Button variant="tertiary">
+              Avbryt
+            </Button>
+          </DropdownItem>
+          <DropdownItem>
+            <Button variant="tertiary">
+              Dela
+            </Button>
+          </DropdownItem>
+        </Dropdown>
+      `}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'Dropdown'}
+  friendlyName='Meny, menylist, kontextmeny'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Menu.html'
+/>
+
+En dropdown kan användas för att samla ihop funktioner som sällan används eller som kompletterar nuvarande funktion.
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Dropdown } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Riktlinjer
+
+- Använd endast till sekundära handlingar som inte är högt prioriterade.
+- Knappen ska helst ha en titel, annars bör en aria-label användas.
+
+## API
+
+### Dropdown
+
+<PropTable name={'Dropdown'} />
+
+### DropdownItem
+
+<PropTable
+  name={'DropdownItem'}
+  defaultOpen={false}
+/>

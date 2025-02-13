@@ -152,10 +152,10 @@ table td {
   margin-top: unset;
 }
 
-p a,
+/* p a,
 li:not(.menu__list-item) a {
   text-decoration: underline;
-}
+} */
 
 .badge {
   padding: 0.4rem 0.5rem;
