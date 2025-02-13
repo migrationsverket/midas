@@ -25,11 +25,15 @@ export function App() {
         <>
           <Skeleton
             variant='rectangular'
-            height={10}
+            height={20}
             width='50px'
-            animation='pulse'
+            animation='wave'
           />
-          <Skeleton variant='text' />
+          <Skeleton
+            variant='rectangular'
+            width='100%'
+            height='2.5rem'
+          />
         </>
       ) : (
         <div>
