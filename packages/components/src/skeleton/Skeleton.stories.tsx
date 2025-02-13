@@ -7,7 +7,17 @@ const meta: Meta<typeof Skeleton> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      options: ['text', 'circle', 'rectangular'],
+      options: [
+        'text',
+        'circle',
+        'rectangular',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6'
+      ],
       control: { type: 'radio' }
     },
     width: {
@@ -32,6 +42,37 @@ export const Text: Story = {
     height: '40px'
   }
 }
+export const Headings: Story = {
+  render: () => (
+    <div>
+      <Skeleton
+        variant='h1'
+        width='50%'
+      />
+      <Skeleton
+        variant='h2'
+        width='60%'
+      />
+      <Skeleton
+        variant='h3'
+        width='70%'
+      />
+      <Skeleton
+        variant='h4'
+        width='80%'
+      />
+      <Skeleton
+        variant='h5'
+        width='90%'
+      />
+      <Skeleton
+        variant='h6'
+        width='100%'
+      />
+    </div>
+  )
+}
+
 export const Circle: Story = {
   args: {
     variant: 'circle',
