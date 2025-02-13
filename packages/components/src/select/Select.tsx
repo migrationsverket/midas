@@ -154,11 +154,16 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
     ) => (
-      <div className={styles.selectValueTag}>
+      <div
+        className={clsx(styles.selectValueTag, { 
+          [styles.selectValueTagDisabled]: isDisabled 
+        })}
+      >
         <span className={styles.truncate} style={{ maxWidth: buttonWidth - 64 }}>
           {items.length > 1 ? `${items.length} valda` : items[0].textValue}
         </span>
         <button
+          disabled={isDisabled}
           aria-label='Rensa alla'
           className={styles.clearButton}
           onClick={() => {

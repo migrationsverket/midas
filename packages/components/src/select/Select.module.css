@@ -1,6 +1,6 @@
 @value tokens: "../theme/tokens.css";
 
-@value display, regularWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, gray20, backgroundSecondary from tokens;
+@value display, regularWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, gray10, gray20, backgroundSecondary from tokens;
 
 
 * > ul {
@@ -60,8 +60,8 @@
     background-color: gray20;
   }
 
-
-  &[data-disabled] {
+  &:disabled  {
+    pointer-events: none;
     background: backgroundSecondary;
     color: gray50;
     border-color: gray50;
@@ -200,6 +200,7 @@
 
 .listBoxItemDisabled {
   color: gray50;
+  pointer-events: none;
 }
 
 .listBoxItemFocused {
@@ -229,6 +230,13 @@
   transform: translateY(-50%);
 }
 
+.selectValueTagDisabled {
+  pointer-events: none;
+  background: backgroundSecondary;
+  color: gray50;
+  border-color: gray50;
+}
+
 .truncate {
   white-space: nowrap;
   overflow: hidden;
@@ -248,6 +256,12 @@
   &:hover {
     cursor: pointer;
     background-color: blue130;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: gray50;
+    background-color: gray10;
   }
 }
 
