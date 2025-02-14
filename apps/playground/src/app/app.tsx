@@ -4,10 +4,17 @@ import {
   SearchField,
   Logo,
   TextField,
-  Select
+  Select,
+  Flex,
+  FlexItem,
+  Modal,
+  Dialog,
+  NewModal,
+  ModalTrigger
 } from '@midas-ds/components'
-import { Form } from 'react-aria-components'
+import { Form, PressEvent } from 'react-aria-components'
 import React from 'react'
+
 const fruits = [
   'Apple',
   'Banana',
@@ -42,9 +49,38 @@ const fruits = [
 const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
+
 export function App() {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
   return (
     <div className={styles.container}>
+      <ModalTrigger
+        label={'open dialog'}
+        isDismissable
+      >
+        {(close: ((e: PressEvent) => void) | undefined) => (
+          <Dialog title='Enter your name'>
+            <Select
+              placeholder={'Select...'}
+              defaultSelectedKeys={['kiwi']}
+              label={'Select a single fruit'}
+              selectionMode={'single'}
+              options={options}
+              isClearable={false}
+              isSelectableAll={false}
+              onSelectionChange={x =>
+                console.log('[single]onSelectionChange', x)
+              }
+            ></Select>
+            <Button
+              onPress={close}
+              style={{ marginTop: 10 }}
+            >
+              Submit
+            </Button>
+          </Dialog>
+        )}
+      </ModalTrigger>
       <Button variant={'secondary'}>Secondary Button</Button>
       <Button>Primary Button</Button>
       <SearchField placeholder={'Search...'} />
@@ -100,7 +136,7 @@ export function App() {
             options={options}
             isClearable={false}
             isSelectableAll={false}
-            disabledKeys={['kiwi', "banan"]}
+            disabledKeys={['kiwi', 'banan']}
             onSelectionChange={x => console.log('[single]onSelectionChange', x)}
           ></Select>
         </div>
@@ -130,7 +166,7 @@ export function App() {
             options={options}
             isClearable={false}
             isSelectableAll={false}
-            disabledKeys={['kiwi', "banan"]}
+            disabledKeys={['kiwi', 'banan']}
             onSelectionChange={x => console.log('[single]onSelectionChange', x)}
           ></Select>
         </div>
