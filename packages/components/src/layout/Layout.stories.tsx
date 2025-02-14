@@ -81,8 +81,7 @@ export const Primary: Story = {
       title: 'Roll eller behörighet'
     },
     app: {
-      name: 'Namn på applikationen',
-      shortName: 'NPA'
+      name: 'Namn på applikationen'
     },
     title: 'Skapa ansökningar',
     children: <AppExample />,
@@ -102,7 +101,7 @@ export const OnlyHeader: Story = {
     <Header
       title='Skapa ansökningar'
       user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
-      app={{ name: 'Namn på applikationen', shortName: 'NPA' }}
+      app={{ name: 'Namn på applikationen' }}
       headerChildren={
         <LinkButton
           variant='tertiary'
@@ -113,4 +112,17 @@ export const OnlyHeader: Story = {
       }
     />
   )
+}
+
+export const ActivePage: Story = {
+  args: {
+    ...Primary.args,
+    items: [
+      ...items,
+      {
+        title: 'Aktiv sida',
+        items: [{ title: 'Aktiv sida', href: '#', icon: House, active: true }]
+      }
+    ]
+  }
 }

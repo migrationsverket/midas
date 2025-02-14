@@ -1,0 +1,62 @@
+@value tokens: "../theme/tokens.css";
+@value display, gray150 from tokens;
+
+.tooltip {
+  font-family: display, sans-serif;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  background-color: gray150;
+  max-width: 150px;
+  outline: none;
+  transform: translate3d(0, 0, 0);
+  transition:
+    transform 200ms,
+    opacity 200ms;
+
+  & .arrow svg {
+    display: block;
+  }
+
+  &[data-entering],
+  &[data-exiting] {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
+  &[data-placement='top'] {
+    margin-bottom: 8px;
+
+    --origin: translateY(4px);
+  }
+
+  &[data-placement='bottom'] {
+    margin-top: 8px;
+
+    --origin: translateY(-4px);
+
+    .arrow svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &[data-placement='right'] {
+    margin-left: 8px;
+
+    --origin: translateX(-4px);
+
+    & .arrow svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &[data-placement='left'] {
+    margin-right: 8px;
+
+    --origin: translateX(4px);
+
+    & .arrow svg {
+      transform: rotate(-90deg);
+    }
+  }
+}

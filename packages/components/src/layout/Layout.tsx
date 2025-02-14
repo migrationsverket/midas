@@ -5,17 +5,19 @@ import {
   LucideIcon,
   Menu,
   PanelLeftClose,
-  PanelRightClose,
+  PanelLeftOpen,
   X
 } from 'lucide-react'
-import { LinkButton, RouterProvider } from '../link-button'
+import { RouterProvider } from '../link-button'
 import { Button } from '../button'
 import { FlexItem } from '../flex'
 import { Logo } from '../logo'
-import React from 'react'
+import * as React from 'react'
 import clsx from 'clsx'
 import { midasColors } from '../theme'
 import { Dropdown, DropdownItem } from '../dropdown'
+import { Link } from 'react-aria-components'
+import { Tooltip, TooltipTrigger } from '../tooltip'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -26,6 +28,7 @@ export interface SidebarLink {
   title: string
   href: string
   icon: LucideIcon
+  active?: boolean
 }
 
 export interface SidebarUser {
@@ -37,17 +40,26 @@ type HEX = `#${string}`
 
 interface App {
   name: string
-  shortName: string
   color?: HEX
 }
 
 export interface MidasLayout {
+  /** The menu items/item groups */
   items: SidebarLinkGroup[]
+  /** Title displayed at the top of the application header */
   title: string
   children: React.ReactNode
+  /** List of links in the top right of the application header */
   headerChildren: React.ReactNode
+  /** Current user details */
   user: SidebarUser
+  /** Name of the app */
   app: App
+  /** Provide the layout with your router for client side navigation
+   *
+   * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/}
+   */
+
   clientSideRouter?: (path: string, routerOptions: undefined) => void
 }
 
@@ -138,18 +150,6 @@ export const Sidebar: React.FC<MidasSidebar> = ({
   setIsCollapsed,
   clientSideRouter
 }) => {
-  const SidebarHeader = () => {
-    return (
-      <div className={styles.sidebarHeader}>
-        {isCollapsed ? (
-          <p className={styles.name}>{app.shortName}</p>
-        ) : (
-          <p className={styles.abbr}>{app.name}</p>
-        )}
-      </div>
-    )
-  }
-
   const LinkTree = ({ group }: { group: SidebarLinkGroup }) => {
     return (
       <ul className={styles.list}>
@@ -161,25 +161,10 @@ export const Sidebar: React.FC<MidasSidebar> = ({
               isCollapsed && styles.listItemCollapsed
             )}
           >
-            <LinkButton
-              iconPlacement='left'
-              href={link.href}
-              icon={link.icon}
-              className={clsx(
-                styles.listLink,
-                isCollapsed && styles.listLinkCollapsed
-              )}
-              variant='tertiary'
-            >
-              <span
-                className={clsx(
-                  styles.linkText,
-                  isCollapsed && styles.linkTextCollapsed
-                )}
-              >
-                {link.title}
-              </span>
-            </LinkButton>
+            <SidebarLink
+              {...link}
+              isCollapsed={isCollapsed}
+            />
           </li>
         ))}
       </ul>
@@ -195,7 +180,6 @@ export const Sidebar: React.FC<MidasSidebar> = ({
         isOpened && styles.sidebarOpened
       )}
     >
-      <SidebarHeader />
       <nav className={styles.sidebarNav}>
         <ul className={styles.list}>
           {items.map((group, i) => (
@@ -215,13 +199,18 @@ export const Sidebar: React.FC<MidasSidebar> = ({
         </ul>
       </nav>
       <div className={styles.sidebarFooter}>
+        {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
         <Button
           variant='tertiary'
           aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
           onPress={() => setIsCollapsed(!isCollapsed)}
           className={styles.collapseButton}
         >
-          {isCollapsed ? <PanelRightClose /> : <PanelLeftClose />}
+          {isCollapsed ? (
+            <PanelLeftOpen size={20} />
+          ) : (
+            <PanelLeftClose size={20} />
+          )}
         </Button>
       </div>
     </aside>
@@ -282,12 +271,70 @@ export const Header: React.FC<MidasHeader> = ({
       </div>
       <div className={styles.headerItems}>{headerChildren}</div>
       <div className={styles.headerMenu}>
-        <Dropdown>
+        <Dropdown label='Öppna meny'>
           {React.Children.map(headerChildren, child => (
             <DropdownItem>{child}</DropdownItem>
           ))}
         </Dropdown>
       </div>
     </header>
+  )
+}
+
+const SidebarLink = ({
+  title,
+  href,
+  active,
+  icon: IconComponent,
+  isCollapsed
+}: SidebarLink & { isCollapsed: boolean }) => {
+  const [showText, setShowText] = React.useState(false)
+
+  React.useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+
+    if (!isCollapsed) {
+      timeoutId = setTimeout(() => {
+        setShowText(true)
+      }, 100)
+    } else {
+      setShowText(false)
+    }
+
+    return () => {
+      clearTimeout(timeoutId)
+    }
+  }, [isCollapsed])
+
+  if (isCollapsed)
+    return (
+      <TooltipTrigger>
+        <Link
+          href={href}
+          aria-label={title}
+          className={clsx(
+            styles.listLink,
+            styles.listLinkCollapsed,
+            active && styles.active
+          )}
+        >
+          <IconComponent
+            size={20}
+            aria-label={title}
+          />
+        </Link>
+        <Tooltip placement='right'>{title}</Tooltip>
+      </TooltipTrigger>
+    )
+
+  return (
+    <Link
+      href={href}
+      aria-label={title}
+      className={clsx(styles.listLink, active && styles.active)}
+    >
+      <IconComponent size={20} />
+      {showText && <span className={styles.linkText}>{title}</span>}
+    </Link>
   )
 }
