@@ -29,17 +29,16 @@ import {
 } from 'lucide-react'
 import clsx from 'clsx'
 
-export interface TableProps<T> extends AriaTableProps {
+export interface TableProps extends AriaTableProps {
   narrow?: boolean
   striped?: boolean
-  rows: T[]
 }
 
-export const Table = <T extends object>({
+export const Table = ({
   narrow,
   striped,
   ...rest
-}: TableProps<T>) => {
+}: TableProps) => {
   const classNames = clsx(
     styles.table,
     narrow && styles.narrow,
