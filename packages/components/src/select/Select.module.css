@@ -263,6 +263,11 @@
     color: gray50;
     background-color: gray10;
   }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid black;
+  }
 }
 
 .selectDivider {
@@ -339,7 +344,7 @@
   .selectValueTag {
     border: ButtonBorder solid;
   }
-  .button {
+  .button, .clearButton {
     border: Highlight 1px solid;
   }
   .fieldError {
