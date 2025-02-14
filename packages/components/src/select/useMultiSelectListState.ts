@@ -1,7 +1,5 @@
 import { ListState, useListState } from "@react-stately/list";
-import { CollectionBase, MultipleSelection, Node } from "@react-types/shared";
-import { Key } from "react";
-
+import { Key, CollectionBase, MultipleSelection, Node } from "@react-types/shared";
 export interface MultiSelectListProps<T>
     extends CollectionBase<T>,
         MultipleSelection {}
@@ -20,7 +18,7 @@ export interface MultiSelectListState<T> extends ListState<T> {
     selectionMode: MultipleSelection["selectionMode"];
 }
 
-export function useMultiSelectListState<T extends {}>(
+export function useMultiSelectListState<T extends object>(
     props: MultiSelectListProps<T>
 ): MultiSelectListState<T> {
     const {
@@ -45,7 +43,7 @@ export function useMultiSelectListState<T extends {}>(
                     return item;
                 })
                 // Remove undefined values when some keys are not present in the collection
-                .filter(Boolean)
+                .filter(Boolean) as Node<T>[]
             : null;
 
     if (missingKeys.length) {

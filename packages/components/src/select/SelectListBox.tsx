@@ -6,7 +6,6 @@ import styles from './Select.module.css'
 import type {MultiSelectState} from "./useMultiSelectState";
 import type {AriaListBoxOptions} from "@react-aria/listbox";
 import type {Node} from "@react-types/shared";
-import { Checkbox } from '@midas-ds/components'
 import { FocusRing } from '@react-aria/focus'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
@@ -69,8 +68,7 @@ const Section = <T, >({section, state}: SectionProps<T>) => {
     });
 
     return (
-        <>
-            <li {...itemProps} className={''}>
+        <li {...itemProps} className={''}>
                 {section.rendered && (
                     <span {...headingProps} className={styles.selectSectionHeading}>
             {section.rendered}
@@ -82,7 +80,6 @@ const Section = <T, >({section, state}: SectionProps<T>) => {
                     ))}
                 </ul>
             </li>
-        </>
     );
 };
 

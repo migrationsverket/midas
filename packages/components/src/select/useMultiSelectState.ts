@@ -21,7 +21,7 @@ import type {
 
 /** Added this for a better output, will see how this plays out */
 interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'>{
-  onSelectionChange: (value: Selection | Key[]) => void
+  onSelectionChange?: (value: Selection | Key[]) => void
 }
 
 export interface MultiSelectProps<T>

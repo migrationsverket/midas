@@ -1,4 +1,5 @@
 import { useCollator } from "react-aria";
+import { Key } from "@react-types/shared";
 import { setInteractionModality } from "@react-aria/interactions";
 import { useField } from "react-aria";
 import { AriaListBoxOptions } from "react-aria";
@@ -53,7 +54,7 @@ export function useMultiSelect<T>(
         [state.collection, state.disabledKeys, collator]
     );
 
-    const { menuTriggerProps, menuProps } = useMenuTrigger(
+    const { menuTriggerProps, menuProps } = useMenuTrigger<T>(
         {
             isDisabled,
             type: "listbox"
@@ -63,17 +64,19 @@ export function useMultiSelect<T>(
     );
 
     const triggerOnKeyDown = (e: KeyboardEvent) => {
+        const { selectedKeys, selectionMode } = state
+        const firstKey = selectedKeys.values().next().value
         // Select items when trigger has focus - imitating default `<select>` behaviour.
         // In multi selection mode it does not make sense.
-        if (state.selectionMode === "single") {
+        if (selectionMode === "single") {
             switch (e.key) {
                 case "ArrowLeft": {
                     // prevent scrolling containers
                     e.preventDefault();
 
                     const key =
-                        state.selectedKeys.size > 0
-                            ? delegate.getKeyAbove(state.selectedKeys.values().next().value)
+                        selectedKeys.size > 0
+                            ? delegate.getKeyAbove(firstKey as Key)
                             : delegate.getFirstKey();
 
                     if (key) {
@@ -86,8 +89,8 @@ export function useMultiSelect<T>(
                     e.preventDefault();
 
                     const key =
-                        state.selectedKeys.size > 0
-                            ? delegate.getKeyBelow(state.selectedKeys.values().next().value)
+                        selectedKeys.size > 0
+                            ? delegate.getKeyBelow(firstKey as Key)
                             : delegate.getFirstKey();
 
                     if (key) {
@@ -198,7 +201,6 @@ export function useMultiSelect<T>(
                 }
                 state.setFocused(false);
             },
-            onFocus: menuProps.onFocus as never,
             "aria-labelledby": [
                 fieldProps["aria-labelledby"],
                 triggerProps["aria-label"] && !fieldProps["aria-labelledby"]

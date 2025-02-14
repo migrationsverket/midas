@@ -339,7 +339,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             onRemove={keys => handleRemove([...keys][0])}
             {...mergeProps}
           >
-            {/*@ts-ignore*/}
             <TagList items={state.selectedItems}>
               {item => (
                 <Tag
