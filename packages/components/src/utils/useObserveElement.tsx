@@ -5,10 +5,10 @@ export default function useObserveElement(element: HTMLElement | null) {
     let timeout: NodeJS.Timeout;
     
     return (entries, observer) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            callback(entries, observer);
-        }, delay);
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        callback(entries, observer);
+      }, delay);
     };
   }
   
@@ -19,14 +19,16 @@ export default function useObserveElement(element: HTMLElement | null) {
     if (!element) return
 
     const resizeObserver = new ResizeObserver(debounce((entries) => {
-        setWidth(entries[0].contentBoxSize[0].inlineSize);
-        setHeight(entries[0].contentBoxSize[0].blockSize);
+      const { inlineSize, blockSize } = entries[0].contentBoxSize[0];
+
+      setWidth(inlineSize);
+      setHeight(blockSize);
     }, 500));
 
     resizeObserver.observe(element);
 
     return () => {
-        resizeObserver.disconnect();
+      resizeObserver.disconnect();
     };
   }, [element]);
 
