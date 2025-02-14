@@ -93,7 +93,10 @@ type SelectProps = {
   /** The currently selected keys in the collection (controlled). */
   selectedKeys?: Parameters<typeof useMultiSelectState>['0']['selectedKeys']
 
-  /** The type of selection that is allowed in the collection. */
+  /**
+   * The type of selection that is allowed in the collection.
+   * @default 'single'
+   */
   selectionMode: 'single' | 'multiple',
   /** The selection is valid or not  */
   isInvalid?: boolean
@@ -104,7 +107,13 @@ type SelectProps = {
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
-  (props, forwardedRef) => {
+  ({ selectionMode = 'single', ...rest}, forwardedRef) => {
+
+    const props = {
+      selectionMode,
+      ...rest,
+    }
+
     const {
       autoFocus,
       className,
