@@ -45,7 +45,7 @@ let baseElement: RenderResult<
 >
 const onchange = jest.fn()
 
-describe('Select', () => {
+describe('A single Select', () => {
   beforeEach(() => {
     baseElement = render(
       <Select
@@ -77,11 +77,11 @@ describe('Select', () => {
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     await user.keyboard('[Esc]')
-    expect(onchange).toHaveBeenCalledWith(['kiwi'])
+    expect(onchange).toHaveBeenCalledWith('kiwi')
   })
 })
 
-describe('An empty Select', () => {
+describe('An empty single Select', () => {
   beforeEach(() => {
     render(
       <Select
@@ -102,3 +102,40 @@ describe('An empty Select', () => {
     ).toHaveNoViolations()
   })
 })
+
+describe('A multi Select', () => {
+  beforeEach(() => {
+    baseElement = render(
+      <Select
+        label={'Label for select'}
+        selectionMode={'multiple'}
+        options={options}
+        onSelectionChange={onchange}
+      />
+    )
+  })
+  it('should render successfully', () => {
+    expect(baseElement).toBeTruthy()
+  })
+  it('should have no axe violations', async () => {
+    expect(
+      await axe(screen.getByLabelText('Label for select'))
+    ).toHaveNoViolations()
+  })
+  it('should be possible to select two values using keyboard', async () => {
+    const selectButton: HTMLButtonElement =
+      screen.getByLabelText('Label for select')
+
+    expect(selectButton).toBeInTheDocument()
+    expect(selectButton).not.toHaveFocus()
+    await user.tab()
+    expect(selectButton).toHaveFocus()
+    await user.keyboard('[Enter]')
+    await user.keyboard('[Enter]')
+    expect(onchange).toHaveBeenCalledWith(['apple'])
+    await user.keyboard('[ArrowDown]')
+    await user.keyboard('[Enter]')
+    expect(onchange).toHaveBeenCalledWith(['apple', 'banana'])
+  })
+})
+
