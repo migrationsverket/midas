@@ -3,7 +3,7 @@ import{j as i}from"./jsx-runtime-DtgEGaVE.js";import{C as t}from"./Checkbox-B6ZS
   render: ({
     ...args
   }) => {
-    return <Checkbox value='unsubscribe' {...args}>
+    return <Checkbox value="unsubscribe" {...args}>
         Unsubscribe
       </Checkbox>;
   }

@@ -4,13 +4,17 @@
   "dist-tags": {
     "latest": "0.0.1-beta.1"
   },
-  "versions": ["0.0.1-beta.1"],
+  "versions": [
+    "0.0.1-beta.1"
+  ],
   "time": {
     "created": "2025-01-14T08:24:23.398Z",
     "0.0.1-beta.1": "2025-01-14T08:24:23.702Z",
     "modified": "2025-01-14T08:24:24.304Z"
   },
-  "maintainers": ["wilhelmconsid <wilhelm.hjelm@consid.se>"],
+  "maintainers": [
+    "wilhelmconsid <wilhelm.hjelm@consid.se>"
+  ],
   "homepage": "https://github.com/migrationsverket/midas#readme",
   "repository": {
     "type": "git",
