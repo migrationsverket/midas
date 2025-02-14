@@ -77,7 +77,7 @@ describe('Select', () => {
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     await user.keyboard('[Esc]')
-    expect(onchange).toHaveBeenCalledWith(['kiwi'])
+    expect(onchange).toHaveBeenCalledWith('kiwi')
   })
 })
 

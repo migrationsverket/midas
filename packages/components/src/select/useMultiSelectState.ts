@@ -1,6 +1,6 @@
 import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
 import { useState } from 'react'
-import {Key} from 'react-aria'
+import { Key } from 'react-aria'
 
 import {
   MultiSelectListState,
@@ -16,12 +16,13 @@ import type {
   LabelableProps,
   MultipleSelection,
   TextInputBase,
-  Validation
+  Validation,
+  Selection
 } from '@react-types/shared'
 
 /** Added this for a better output, will see how this plays out */
-interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'>{
-  onSelectionChange?: (value: Selection | Key[]) => void
+interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
+  onSelectionChange?: (value: Selection | Key | Key[]) => void
 }
 
 export interface MultiSelectProps<T>
@@ -61,18 +62,22 @@ export function useMultiSelectState<T extends object>(
   const listState = useMultiSelectListState({
     ...props,
     onSelectionChange: keys => {
-      if (props.onSelectionChange != null) {
+      const { onSelectionChange, selectionMode } = props
+
+      if (onSelectionChange != null) {
         if (keys === 'all') {
           // This may change back to "all" once we will implement async loading of additional
           // items and differentiation between "select all" vs. "select visible".
-          props.onSelectionChange(Array.from(listState.collection.getKeys()))
+          onSelectionChange(Array.from(listState.collection.getKeys()))
         } else {
-          props.onSelectionChange(Array.from(keys))
+          selectionMode === 'single'
+            ? onSelectionChange(keys.values().next().value as Key)
+            : onSelectionChange(Array.from(keys))
         }
       }
 
       // Multi select stays open after item selection
-      if (props.selectionMode === 'single') {
+      if (selectionMode === 'single') {
         triggerState.close()
       }
     }
