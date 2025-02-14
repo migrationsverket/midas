@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Modal } from './Modal'
 import { Button } from '../button'
 import React from 'react'
-import { Select, Item } from '../select'
+import { Select } from '../select'
 import { Flex, FlexItem } from '../flex'
 
 const meta: Meta<typeof Modal> = {
@@ -33,13 +33,12 @@ export const Default: Story = {
           <Flex fluid={true}>
             <FlexItem col={12}>
               <Select
+                selectionMode={'single'}
                 label='Ärenden'
                 placeholder='Hej'
                 description='Välj ärende'
-                items={[{ id: 1, name: 'test' }]}
-              >
-                {item => <Item>{item.name}</Item>}
-              </Select>
+                options={[{ id: 'test', name: 'test' }]}
+              />
             </FlexItem>
             <FlexItem col={12}>
               <Button onPress={() => setIsOpen(false)}>Spara</Button>
