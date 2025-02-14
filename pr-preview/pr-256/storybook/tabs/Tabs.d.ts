@@ -9,4 +9,4 @@ export interface TabsProps<T extends string> {
     /** Amount of children must match the amount of tabs */
     children: React.ReactNode;
 }
-export declare const Tabs: <T extends string>({ tabs, label, defaultSelected, children, }: TabsProps<T>) => import("react/jsx-runtime").JSX.Element;
+export declare const Tabs: <T extends string>({ tabs, label, defaultSelected, children }: TabsProps<T>) => import("react/jsx-runtime").JSX.Element;
