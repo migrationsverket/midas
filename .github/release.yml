@@ -1,0 +1,17 @@
+changelog:
+  exclude:
+    authors:
+      - dependabot
+  categories:
+    - title: Breaking Changes
+      labels:
+        - breaking-change
+    - title: Exciting New Features
+      labels:
+        - Semver-Major
+    - title: Improvements
+      labels:
+        - Semver-Minor
+    - title: Patches
+      labels:
+        - Semver-Patch
