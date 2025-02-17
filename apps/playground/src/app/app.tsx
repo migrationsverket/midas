@@ -5,7 +5,7 @@ import {
   SearchField,
   Logo,
   TextField,
-  Skeleton
+  Skeleton,
 } from '@midas-ds/components'
 
 export function App() {
@@ -25,18 +25,15 @@ export function App() {
       <Button>Primary Button</Button>
       <SearchField placeholder={'Search...'} />
       <Logo />
+
       {loading ? (
         <>
           <Skeleton
             variant='rectangular'
-            height={20}
-            width='50px'
             animation='wave'
           />
           <Skeleton
             variant='rectangular'
-            width='100%'
-            height='2.5rem'
             animation={false}
           />
         </>
