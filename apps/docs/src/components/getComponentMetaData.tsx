@@ -1,14 +1,13 @@
 import React from 'react'
 import { Flex, FlexItem, LinkButton } from '@midas-ds/components'
 import useBaseUrl from '@docusaurus/useBaseUrl'
-import { kebabCase } from 'lodash'
-import { BookMarked, BookText, FileCode } from 'lucide-react'
+import { BookMarked, BookText } from 'lucide-react'
 
 export const ComponentHeader = ({
   name,
   friendlyName,
   overrideHeadlessLink,
-  overrideHeadlessLinkTitle
+  overrideHeadlessLinkTitle,
 }: {
   name: string
   friendlyName: string
@@ -19,7 +18,7 @@ export const ComponentHeader = ({
     process.env.NODE_ENV === 'development'
       ? `http://localhost:4400/?path=/docs/components-${name.toLowerCase()}--docs`
       : useBaseUrl(
-          `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`
+          `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`,
         )
 
   return (
@@ -27,17 +26,6 @@ export const ComponentHeader = ({
       <Flex fluid={true}>
         <FlexItem className='friendlyName'>
           <b>{friendlyName}</b>
-        </FlexItem>
-        <FlexItem col='auto'>
-          <LinkButton
-            href={`https://github.com/migrationsverket/midas/tree/main/packages/${kebabCase(name)}/CHANGELOG.md`}
-            target='_blank'
-            variant='tertiary'
-            icon={FileCode}
-            iconPlacement='left'
-          >
-            Versionslogg
-          </LinkButton>
         </FlexItem>
         <FlexItem col='auto'>
           <LinkButton
