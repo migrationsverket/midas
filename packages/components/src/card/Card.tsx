@@ -50,7 +50,7 @@ export const Card: React.FC<CardProps> = ({
       className={clsx(
         styles.card,
         background && styles.background,
-        rest.className
+        rest.className,
       )}
       {...rest}
     >
