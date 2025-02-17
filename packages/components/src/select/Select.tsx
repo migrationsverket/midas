@@ -99,7 +99,7 @@ type SelectProps = {
    * The type of selection that is allowed in the collection.
    * @default 'single'
    */
-  selectionMode: SelectionMode,
+  selectionMode: SelectionMode
   /** The selection is valid or not  */
   isInvalid?: boolean
   /** Error message to be displayed in case of invalid state*/
@@ -109,11 +109,10 @@ type SelectProps = {
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
-  ({ selectionMode = 'single', ...rest}, forwardedRef) => {
-
+  ({ selectionMode = 'single', ...rest }, forwardedRef) => {
     const props = {
       selectionMode,
-      ...rest,
+      ...rest
     }
 
     const {
@@ -127,7 +126,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       description,
       placeholder,
       showTags,
-      errorMessage,
+      errorMessage
     } = props
 
     const refAllButton = useRef<HTMLInputElement>(null)
@@ -170,7 +169,10 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           [styles.selectValueTagDisabled]: isDisabled
         })}
       >
-        <span className={styles.truncate} style={{ maxWidth: buttonWidth - 64 }}>
+        <span
+          className={styles.truncate}
+          style={{ maxWidth: buttonWidth - 64 }}
+        >
           {items.length > 1 ? `${items.length} valda` : items[0].textValue}
         </span>
         <button
@@ -224,7 +226,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             <span
               className={clsx(styles.description, {
                 [styles.descriptionDisabled]: isDisabled,
-                [styles.descriptionInvalid]: !!errorMessage,
+                [styles.descriptionInvalid]: !!errorMessage
               })}
               slot={'description'}
             >
@@ -265,9 +267,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 </div>
               </button>
               {state.selectionMode === 'multiple' && state.selectedItems ? (
-                <span {...valueProps}>
-                  {formatItems(state.selectedItems)}
-                </span>
+                <span {...valueProps}>{formatItems(state.selectedItems)}</span>
               ) : null}
             </div>
           </FocusRing>
@@ -291,20 +291,20 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                           className={styles.listBoxItem}
                           tabIndex={-1}
                         >
-                          <Checkbox
+{/*                                                    <Checkbox
                             isDisabled={isDisabled}
                             isSelected={isAllSelection}
                             isReadOnly
                             isIndeterminate={isIndeterminateSelection}
                             excludeFromTabOrder={true}
+                          />*/}
+                          <input
+                            type='checkbox'
+                            checked={isAllSelection}
+                            ref={refAllButton}
+                            readOnly
+                            tabIndex={-1}
                           />
-                          {/*                      <input
-                        type='checkbox'
-                        checked={isAllSelection}
-                        ref={refAllButton}
-                        readOnly
-                        tabIndex={-1}
-                      />*/}
                           {'Select All'}
                         </div>
                       </button>
@@ -335,7 +335,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           )}
         </div>
         {/*TODO FIX AND REFACTOR*/}
-        {showTags && state.selectedItems !== null &&  (
+        {showTags && state.selectedItems !== null && (
           <TagGroup
             aria-label={'Selected Items'}
             selectionBehavior={'toggle'}
