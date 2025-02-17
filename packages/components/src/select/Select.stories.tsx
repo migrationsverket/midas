@@ -3,7 +3,7 @@ import { Select } from './Select'
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: 'Components/NEWSelect',
+  title: 'Components/Select',
   tags: ['autodocs']
 }
 export default meta
@@ -89,10 +89,12 @@ export const DisabledOption: Story = {
     disabledKeys: ['kiwi'],
   }
 }
-/** TODO! */
+
 export const Invalid: Story = {
   args: {
     ...Normal.args,
+    isInvalid: true,
+    errorMessage:'Error msg',
   }
 }
 export const WithTags: Story = {

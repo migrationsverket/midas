@@ -58,7 +58,7 @@ export function App() {
         label={'open dialog'}
         isDismissable
       >
-        {(close: ((e: PressEvent) => void) | undefined) => (
+        {(close) => (
           <Dialog title='Enter your name'>
             <Select
               placeholder={'Select...'}
