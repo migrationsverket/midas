@@ -4,7 +4,6 @@ import * as React from 'react'
 import { Link, LinkProps, RouterProvider } from '../link/Link'
 import styles from './Card.module.css'
 import clsx from 'clsx'
-import { useId } from 'react'
 
 export interface CardProps<C extends React.ElementType = typeof Link>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -46,7 +45,7 @@ export const Card: React.FC<CardProps> = ({
   customLinkComponent: CustomLinkComponent,
   ...rest
 }) => {
-  const contentId = useId()
+  const contentId = React.useId()
   return (
     <div
       className={clsx(
