@@ -4,8 +4,8 @@ const path = require('path')
 async function getConfig() {
   const {
     default: {
-      utils: { getProjects }
-    }
+      utils: { getProjects },
+    },
   } = await import('@commitlint/config-nx-scopes')
 
   const componentsPath = path.join(__dirname, 'packages', 'components', 'src')
@@ -19,7 +19,12 @@ async function getConfig() {
       'scope-enum': async ctx => [
         2,
         'always',
-        [...(await getProjects(ctx)), ...componentFolders, 'release']
+        [
+          ...(await getProjects(ctx)),
+          ...componentFolders,
+          'release',
+          'project',
+        ],
       ],
       'body-leading-blank': [1, 'always'],
       'body-max-line-length': [2, 'always', 100],
@@ -30,7 +35,7 @@ async function getConfig() {
       'subject-case': [
         2,
         'never',
-        ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
+        ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
       ],
       'subject-empty': [2, 'never'],
       'subject-full-stop': [2, 'never', '.'],
@@ -50,10 +55,10 @@ async function getConfig() {
           'refactor',
           'revert',
           'style',
-          'test'
-        ]
-      ]
-    }
+          'test',
+        ],
+      ],
+    },
   }
 }
 
