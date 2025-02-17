@@ -15,6 +15,7 @@ type OptionSection = {
     name: string;
 };
 export type Option = OptionItem | OptionSection;
+export type SelectionMode = 'single' | 'multiple';
 type SelectProps = {
     /** Whether the element should receive focus on render. */
     autoFocus?: boolean;
@@ -55,7 +56,7 @@ type SelectProps = {
      * The type of selection that is allowed in the collection.
      * @default 'single'
      */
-    selectionMode: 'single' | 'multiple';
+    selectionMode: SelectionMode;
     /** The selection is valid or not  */
     isInvalid?: boolean;
     /** Error message to be displayed in case of invalid state*/
