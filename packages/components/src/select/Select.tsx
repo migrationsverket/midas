@@ -4,7 +4,8 @@ import { mergeProps, useObjectRef } from '@react-aria/utils'
 import { Item, Section } from '@react-stately/collections'
 import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import * as React from 'react'
 import { FieldError, Label, TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
@@ -158,14 +159,14 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const handleRemove = (key: Key) =>
       state.selectionManager.toggleSelection(key)
 
-    const { width: buttonWidth } = useObserveElement(ref.current) 
+    const { width: buttonWidth } = useObserveElement(ref.current)
 
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>
     ) => (
       <div
-        className={clsx(styles.selectValueTag, { 
-          [styles.selectValueTagDisabled]: isDisabled 
+        className={clsx(styles.selectValueTag, {
+          [styles.selectValueTagDisabled]: isDisabled
         })}
       >
         <span className={styles.truncate} style={{ maxWidth: buttonWidth - 64 }}>
@@ -246,7 +247,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               >
                 {state.selectionMode === 'multiple' && !state.selectedItems ? (
                   <span>{placeholder}</span>
-                ) : null} 
+                ) : null}
                 {state.selectionMode !== 'multiple' ? (
                   <span>
                     {state.selectedItems?.length === 1

@@ -2,24 +2,29 @@
 title: Select
 ---
 
-import { Select, Item } from '@midas-ds/components'
+import { Select } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
+
 export const Example = props => {
   return (
     <LiveCodeBlock
-      scope={{ Select, Item }}
+      scope={{ Select }}
       {...props}
     >
       {`<Select
         label="Vad är din favoritfrukt?"
         placeholder="Välj en frukt"
-        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-      >
-          {(item) => <Item>{item.name}</Item>}
-      </Select>`}
+        description="Beskrivning"
+        selectionMode={'single'}
+        isClearable={false}
+        isSelectableAll={false}
+        showTags={false}
+        defaultSelectedKeys={['kiwi']}
+        options={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+      ></Select>`}
     </LiveCodeBlock>
   )
 }
@@ -40,7 +45,7 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { Item, Select } from '@midas-ds/components'
+import { Select } from '@midas-ds/components'
 ```
 
 <Example hideExample />
@@ -54,10 +59,3 @@ Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas iställ
 ### Select
 
 <PropTable name='Select' />
-
-### Item
-
-<PropTable
-  name='Item'
-  defaultOpen={false}
-/>

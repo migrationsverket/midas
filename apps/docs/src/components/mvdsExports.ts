@@ -14,7 +14,6 @@ import {
   SearchField,
   Grid,
   Tabs,
-  MultiSelect,
   FileUpload,
   Flex,
   FlexItem,
@@ -23,7 +22,6 @@ import {
   Card,
   Select,
   GridItem,
-  Item,
 } from '@midas-ds/components'
 
 import { theme } from '@midas-ds/components/theme'
@@ -50,9 +48,7 @@ export {
   LinkButton,
   SearchField,
   Select,
-  Item,
   Tabs,
   TextArea,
   theme,
-  MultiSelect
 }
