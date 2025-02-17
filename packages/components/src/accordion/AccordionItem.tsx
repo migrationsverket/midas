@@ -14,7 +14,7 @@ import clsx from 'clsx'
 import styles from './Accordion.module.css'
 
 interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
-  /** The text displayed in the collapsed state */
+  /** The text displayed in the collapsed state. If a ReactNode is proveded we're not adding a heading and you have to provide one yourself. */
   title?: string | React.ReactNode
   children?: React.ReactNode
   /** Adjust the titles heading level to your heading tag structure */
