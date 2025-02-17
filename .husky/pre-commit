@@ -1,2 +1,2 @@
-npx nx affected -t format --base=HEAD
+npx lint-staged --relative
 node .husky/rules/branch-names.js
