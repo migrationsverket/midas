@@ -34,7 +34,7 @@
 }
 
 .trigger {
-  font-family: 'display';
+  font-family: display;
   color: black;
   border: 0;
   cursor: pointer;
@@ -79,7 +79,7 @@
 
 .item {
   background-color: var(--background);
-  font-family: 'display';
+  font-family: display;
 }
 
 /* safari can't calculate correct so we skip the animation there as a compriomise */
