@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion, AccordionItem } from './'
+import { File } from 'lucide-react'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
@@ -7,7 +8,7 @@ const meta: Meta<typeof Accordion> = {
   component: Accordion,
   title: 'Components/Accordion',
   tags: ['autodocs'],
-  args: {}
+  args: {},
 }
 
 export default meta
@@ -27,8 +28,8 @@ export const SingleSubtle: Story = {
         voluptate aliquid, inventore praesentium tempore dignissimos officia
         sint libero!
       </AccordionItem>
-    ))
-  }
+    )),
+  },
 }
 
 export const SingleBoxed: Story = {
@@ -49,27 +50,55 @@ export const SingleBoxed: Story = {
         beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
         illum consequuntur?
       </AccordionItem>
-    ))
-  }
+    )),
+  },
 }
 
 export const MultipleSubtle: Story = {
   args: {
     ...SingleSubtle.args,
-    type: 'multiple'
-  }
+    type: 'multiple',
+  },
 }
 
 export const MultipleBoxed: Story = {
   args: {
     ...SingleBoxed.args,
-    type: 'multiple'
-  }
+    type: 'multiple',
+  },
 }
 
 export const DefaultOpen: Story = {
   args: {
     ...SingleBoxed.args,
-    defaultExpandedKeys: ['Två']
-  }
+    defaultExpandedKeys: ['Två'],
+  },
+}
+
+export const CustomTriggerElements: Story = {
+  args: {
+    ...SingleBoxed.args,
+    children: ITEMS.map((item, i) => (
+      <AccordionItem
+        id={item}
+        key={item}
+        title={
+          <>
+            <File />
+            <b>En öppningsbar panel ' + item.toLocaleLowerCase()</b>
+            <p style={{ margin: 0 }}>2025-03-0{i}</p>
+          </>
+        }
+      >
+        Innehåll i öppningsbarpanel {item} Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repellendus perspiciatis officia,
+        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
+        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Impedit dolorem tempora
+        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
+        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
+        illum consequuntur?
+      </AccordionItem>
+    )),
+  },
 }
