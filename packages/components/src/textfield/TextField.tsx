@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ReactNode } from 'react'
+import * as React from 'react'
 import {
   TextField as AriaTextField,
   Label,
@@ -8,19 +8,29 @@ import {
   FieldError,
   Text,
   TextFieldProps as AriaTextFieldProps,
-  ValidationResult
+  ValidationResult,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Button } from '../button'
 import clsx from 'clsx'
 
 export interface TextFieldProps extends AriaTextFieldProps {
-  children?: ReactNode
+  children?: React.ReactNode
+  /** Specify label displayed above the TextField*/
   label?: string
+  /** Specify description displayed below the label */
   description?: string
+  /** Custom error messages */
   errorMessage?: string | ((validation: ValidationResult) => string) | undefined
-  validationType?: 'ssn' | RegExp
+  /** Enable validations or add your own regex */
+  validationType?: 'ssn' | 'dossnr' | RegExp
+  /** Set number of characters that are allowed before the TextField is put in an invalid state */
   maxCharacters?: number
+  /**
+   * Whether to show the character counter or not
+   * @default
+   * false
+   */
   showCounter?: boolean
 }
 
@@ -42,10 +52,13 @@ export const TextField: React.FC<TextFieldProps> = ({
   }
 
   const validateInput = (
-    value: string
+    value: string,
   ): string | string[] | true | null | undefined => {
     if (validationType === 'ssn')
       return ssnRegEx.test(value) ? null : 'Felaktigt personnummer'
+
+    if (validationType === 'dossnr')
+      return dossNrRegEx.test(value) ? null : 'Felaktigt dossiernummer'
 
     if (validationType instanceof RegExp)
       return new RegExp(validationType).test(value)
@@ -68,7 +81,7 @@ export const TextField: React.FC<TextFieldProps> = ({
         <span
           className={clsx(
             styles.count,
-            value.length > maxCharacters && styles.countExceeded
+            value.length > maxCharacters && styles.countExceeded,
           )}
         >
           {value.length} / {maxCharacters}
@@ -114,7 +127,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
 const PasswordField = ({
   type,
-  input
+  input,
 }: {
   type: TextFieldProps['type']
   input: string
@@ -154,7 +167,7 @@ export const InputWrapper = ({
   label,
   description,
   errorMessage,
-  children
+  children,
 }: InputWrapperProps) => {
   return (
     <div className={styles.inputWrapper}>
@@ -174,5 +187,7 @@ export const InputWrapper = ({
 }
 
 export const ssnRegEx = new RegExp(
-  '^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$'
+  '^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$',
 )
+
+export const dossNrRegEx = new RegExp('\\d{1,2}[-+]\\d{6}(/\\d{1,2})?$')
