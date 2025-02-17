@@ -37,6 +37,7 @@ type OptionSection = {
 }
 
 export type Option = OptionItem | OptionSection
+export type SelectionMode = 'single' | 'multiple'
 
 type SelectProps = {
   /** Whether the element should receive focus on render. */
@@ -98,7 +99,7 @@ type SelectProps = {
    * The type of selection that is allowed in the collection.
    * @default 'single'
    */
-  selectionMode: 'single' | 'multiple',
+  selectionMode: SelectionMode,
   /** The selection is valid or not  */
   isInvalid?: boolean
   /** Error message to be displayed in case of invalid state*/
@@ -126,7 +127,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       description,
       placeholder,
       showTags,
-      errorMessage
+      errorMessage,
     } = props
 
     const refAllButton = useRef<HTMLInputElement>(null)
@@ -222,7 +223,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           {description && (
             <span
               className={clsx(styles.description, {
-                [styles.descriptionDisabled]: isDisabled
+                [styles.descriptionDisabled]: isDisabled,
+                [styles.descriptionInvalid]: !!errorMessage,
               })}
               slot={'description'}
             >

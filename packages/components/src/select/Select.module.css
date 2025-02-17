@@ -1,6 +1,6 @@
 @value tokens: "../theme/tokens.css";
 
-@value display, regularWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, backgroundSecondary from tokens;
+@value display, regularWeight, mediumWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, backgroundSecondary from tokens;
 
 
 * > ul {
@@ -25,6 +25,8 @@
 }
 
 .selectLabel {
+  grid-area: Label;
+  font-weight: mediumWeight;
   /** Select Label */
 }
 
@@ -94,7 +96,7 @@
   font-family: display;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 
   &[data-disabled] {
     color: gray50;
@@ -110,11 +112,16 @@
 }
 
 .description {
+  grid-area: Desc;
   font-size: 0.875rem;
   font-weight: regularWeight;
+  margin-bottom: 0.25rem;
 }
 
 .descriptionActive {
+}
+.descriptionInvalid {
+  margin-bottom: 0;
 }
 
 .descriptionDisabled {
