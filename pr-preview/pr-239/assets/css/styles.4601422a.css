@@ -6628,7 +6628,7 @@ CSS variables, meant to be overridden by final theme
   }
 
 .row_o3yW[data-hovered='true'] td {
-    background-color: #cccccc;
+    background-color: #cccccc !important;
   }
 
 .tableHeader_BmsY {
