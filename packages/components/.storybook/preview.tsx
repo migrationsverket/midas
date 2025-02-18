@@ -4,7 +4,7 @@ import {
   Primary,
   Stories,
   Subtitle,
-  Title
+  Title,
 } from '@storybook/blocks'
 import { customViewports } from './custom-viewports'
 import '../src/theme/global.css'
@@ -26,26 +26,26 @@ const preview = {
       default: 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: '#143c50' }
-      ]
+        { name: 'Dark', value: '#143c50' },
+      ],
     },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
+        date: /Date$/,
+      },
     },
     docs: autoDocsTemplate(),
     viewport: {
-      viewports: customViewports
+      viewports: customViewports,
     },
     storySort: {
       method: 'alphabetical',
-      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']]
-    }
+      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+    },
   },
 
-  tags: ['autodocs']
+  tags: ['autodocs', 'autodocs'],
 }
 
 export default preview

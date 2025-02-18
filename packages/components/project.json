@@ -56,6 +56,20 @@
         }
       }
     },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c packages/components/.storybook --url=http://localhost:4400"
+      },
+      "configurations": {
+        "watch": {
+          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
+        },
+        "external": {
+          "command": "test-storybook -c packages/components/.storybook --browsers=chromium,firefox,webkit --url=https://designsystem.migrationsverket.se/storybook"
+        }
+      }
+    },
     "generate-dependencies": {
       "dependsOn": [
         {
