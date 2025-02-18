@@ -8488,6 +8488,12 @@ CSS variables, meant to be overridden by final theme
   width: var(--select-popover-width);
 }
 
+.checkboxContainer_u2A7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* checkbox stuff*/
 input[type="checkbox"] {
   -webkit-appearance: none;
@@ -8495,9 +8501,6 @@ input[type="checkbox"] {
        appearance: none;
   background-color: #143c50;
   display: grid;
-  align-content: center;
-  justify-content: center;
-  place-content: center;
   margin: 0;
   font: inherit;
   color: currentColor;
@@ -8505,7 +8508,6 @@ input[type="checkbox"] {
   height: 1em;
   border: 1px solid currentColor;
   border-radius: 0;
-  transform: translateY(-0.075em);
 }
 input[type="checkbox"]::before {
   content: "";

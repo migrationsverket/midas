@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3249,7643,8401],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3249,8401],{
 
 /***/ 77434:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -149,74 +149,6 @@ var theme=Object.assign({},tokens);
 var MDXComponents={Head:Head/* default */.A,details:MDXDetails,Details:MDXDetails,// This is a fix to allow for importing of our custom components in any code block
 // code: MDXCode,
 code:function code(props){var children=props.children;var scope=Object.assign({},react,mvdsExports_namespaceObject);if(typeof children==='string'){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXCode,Object.assign({},props,{scope:scope}));}return children;},a:MDXA,pre:MDXPre,ul:MDXUl,img:MDXImg,h1:function h1(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h1"},props));},h2:function h2(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h2"},props));},h3:function h3(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h3"},props));},h4:function h4(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h4"},props));},h5:function h5(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h5"},props));},h6:function h6(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(MDXHeading,Object.assign({as:"h6"},props));},admonition:Admonition/* default */.A,mermaid:Mermaid/* default */.A};/* harmony default export */ const theme_MDXComponents = (MDXComponents);
-
-/***/ }),
-
-/***/ 88518:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ BlogListPage)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
-var useDocusaurusContext = __webpack_require__(40797);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/metadataUtils.js + 1 modules
-var metadataUtils = __webpack_require__(81082);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
-var ThemeClassNames = __webpack_require__(204);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogLayout/index.js + 6 modules
-var BlogLayout = __webpack_require__(60569);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(50539);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/PaginatorNavLink/index.js
-var PaginatorNavLink = __webpack_require__(11865);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPaginator/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogListPaginator(props){var metadata=props.metadata;var previousPage=metadata.previousPage,nextPage=metadata.nextPage;return/*#__PURE__*/(0,jsx_runtime.jsxs)("nav",{className:"pagination-nav","aria-label":(0,Translate/* translate */.T)({id:'theme.blog.paginator.navAriaLabel',message:'Blog list page navigation',description:'The ARIA label for the blog pagination'}),children:[previousPage&&/*#__PURE__*/(0,jsx_runtime.jsx)(PaginatorNavLink/* default */.A,{permalink:previousPage,title:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"theme.blog.paginator.newerEntries",description:"The label used to navigate to the newer blog posts page (previous page)",children:"Newer entries"})}),nextPage&&/*#__PURE__*/(0,jsx_runtime.jsx)(PaginatorNavLink/* default */.A,{permalink:nextPage,title:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"theme.blog.paginator.olderEntries",description:"The label used to navigate to the older blog posts page (next page)",children:"Older entries"}),isNext:true})]});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/SearchMetadata/index.js
-var SearchMetadata = __webpack_require__(37220);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/plugin-content-blog/lib/client/index.js + 3 modules
-var client = __webpack_require__(83750);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItem/index.js + 31 modules
-var BlogPostItem = __webpack_require__(2384);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItems/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogPostItems(_ref){var items=_ref.items,_ref$component=_ref.component,BlogPostItemComponent=_ref$component===void 0?BlogPostItem/* default */.A:_ref$component;return/*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment,{children:items.map(function(_ref2){var BlogPostContent=_ref2.content;return/*#__PURE__*/(0,jsx_runtime.jsx)(client/* BlogPostProvider */["in"],{content:BlogPostContent,children:/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItemComponent,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostContent,{})})},BlogPostContent.metadata.permalink);})});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Head.js
-var Head = __webpack_require__(27143);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPage/StructuredData/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogListPageStructuredData(props){var structuredData=(0,client/* useBlogListPageStructuredData */.kJ)(props);return/*#__PURE__*/(0,jsx_runtime.jsx)(Head/* default */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("script",{type:"application/ld+json",children:JSON.stringify(structuredData)})});}
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPage/index.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogListPageMetadata(props){var metadata=props.metadata;var _useDocusaurusContext=(0,useDocusaurusContext/* default */.A)(),siteTitle=_useDocusaurusContext.siteConfig.title;var blogDescription=metadata.blogDescription,blogTitle=metadata.blogTitle,permalink=metadata.permalink;var isBlogOnlyMode=permalink==='/';var title=isBlogOnlyMode?siteTitle:blogTitle;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(metadataUtils/* PageMetadata */.be,{title:title,description:blogDescription}),/*#__PURE__*/(0,jsx_runtime.jsx)(SearchMetadata/* default */.A,{tag:"blog_posts_list"})]});}function BlogListPageContent(props){var metadata=props.metadata,items=props.items,sidebar=props.sidebar;return/*#__PURE__*/(0,jsx_runtime.jsxs)(BlogLayout/* default */.A,{sidebar:sidebar,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItems,{items:items}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPaginator,{metadata:metadata})]});}function BlogListPage(props){return/*#__PURE__*/(0,jsx_runtime.jsxs)(metadataUtils/* HtmlClassNameProvider */.e3,{className:(0,clsx/* default */.A)(ThemeClassNames/* ThemeClassNames */.G.wrapper.blogPages,ThemeClassNames/* ThemeClassNames */.G.page.blogListPage),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageMetadata,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageStructuredData,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPageContent,Object.assign({},props))]});}
 
 /***/ }),
 
@@ -563,11 +495,11 @@ var useListBoxSection = __webpack_require__(72016);
 var useListBox = __webpack_require__(77059);
 ;// ./packages/components/src/select/Select.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Select_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","regularWeight":"400","mediumWeight":"500","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","signalRed100":"#e62323","gray50":"#bfbfbf","blue150":"#143c50","blue130":"#25607f","gray10":"#f2f2f2","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","listItemfocusRing":"listItemfocusRing_y9jm","selectAllButton":"selectAllButton_vETM","selectLabel":"selectLabel_ym7d","selectLabelActive":"selectLabelActive_tAtM","selectLabelDisabled":"selectLabelDisabled_q13p","button":"button_qOaA","buttonOpen":"buttonOpen_JL6G","icon":"icon_roiA","buttonDisabled":"buttonDisabled_hGbG","buttonFocused":"buttonFocused_BKJS","buttonActive":"buttonActive_C0n8","multiSelect":"multiSelect_fCqw","multiSelectOpen":"multiSelectOpen_a4R5","description":"description_Zgpc","descriptionActive":"descriptionActive_AqbQ","descriptionInvalid":"descriptionInvalid_GyuZ","descriptionDisabled":"descriptionDisabled_gloN","popover":"popover_Bl6D","listBox":"listBox_BiFm","listBoxItem":"listBoxItem_yOJV","listBoxItemSelected":"listBoxItemSelected_USLD","listBoxItemDisabled":"listBoxItemDisabled_IkTb","listBoxItemFocused":"listBoxItemFocused_dAO1","selectContainer":"selectContainer_ChZ6","selectValueTag":"selectValueTag_Bx1C","selectValueTagDisabled":"selectValueTagDisabled_hNWH","truncate":"truncate_J6cE","clearButton":"clearButton_p8du","selectDivider":"selectDivider_CTym","selectSectionHeading":"selectSectionHeading_AOh9","fieldError":"fieldError_DzbR","select__popover":"select__popover_jBEy","restyle":"restyle_jybt"});
+/* harmony default export */ const Select_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","regularWeight":"400","mediumWeight":"500","black":"#000000","signalRed130":"#b31b1b","smBreakpoint":"(max-width: 767px)","signalRed100":"#e62323","gray50":"#bfbfbf","blue150":"#143c50","blue130":"#25607f","gray10":"#f2f2f2","gray20":"#e6e6e6","backgroundSecondary":"#f2f2f2","listItemfocusRing":"listItemfocusRing_y9jm","selectAllButton":"selectAllButton_vETM","selectLabel":"selectLabel_ym7d","selectLabelActive":"selectLabelActive_tAtM","selectLabelDisabled":"selectLabelDisabled_q13p","button":"button_qOaA","buttonOpen":"buttonOpen_JL6G","icon":"icon_roiA","buttonDisabled":"buttonDisabled_hGbG","buttonFocused":"buttonFocused_BKJS","buttonActive":"buttonActive_C0n8","multiSelect":"multiSelect_fCqw","multiSelectOpen":"multiSelectOpen_a4R5","description":"description_Zgpc","descriptionActive":"descriptionActive_AqbQ","descriptionInvalid":"descriptionInvalid_GyuZ","descriptionDisabled":"descriptionDisabled_gloN","popover":"popover_Bl6D","listBox":"listBox_BiFm","listBoxItem":"listBoxItem_yOJV","listBoxItemSelected":"listBoxItemSelected_USLD","listBoxItemDisabled":"listBoxItemDisabled_IkTb","listBoxItemFocused":"listBoxItemFocused_dAO1","selectContainer":"selectContainer_ChZ6","selectValueTag":"selectValueTag_Bx1C","selectValueTagDisabled":"selectValueTagDisabled_hNWH","truncate":"truncate_J6cE","clearButton":"clearButton_p8du","selectDivider":"selectDivider_CTym","selectSectionHeading":"selectSectionHeading_AOh9","fieldError":"fieldError_DzbR","select__popover":"select__popover_jBEy","checkboxContainer":"checkboxContainer_u2A7","restyle":"restyle_jybt"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/select/SelectListBox.tsx
-var Option=function Option(_ref){var _clsx;var item=_ref.item,state=_ref.state;var ref=react.useRef(null);var _useOption=(0,useOption/* useOption */.x)({key:item.key},state,ref),optionProps=_useOption.optionProps,isDisabled=_useOption.isDisabled,isSelected=_useOption.isSelected,isFocused=_useOption.isFocused;return/*#__PURE__*/(0,jsx_runtime.jsx)(FocusRing/* FocusRing */.v,{focusRingClass:Select_module.listItemfocusRing,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("li",Object.assign({},optionProps,{ref:ref,className:(0,clsx/* default */.A)(Select_module.listBoxItem,(_clsx={},_clsx[Select_module.listBoxItemDisabled]=isDisabled,_clsx[Select_module.listBoxItemFocused]=isFocused,_clsx[Select_module.listBoxItemSelected]=isSelected,_clsx)),children:[state.selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{children:/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"checkbox",disabled:isDisabled,checked:isSelected,readOnly:true})}),typeof item.rendered==='string'?/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:"truncate block",children:item.rendered}):item.rendered]}))});};var SelectListBox_Section=function Section(_ref2){var section=_ref2.section,state=_ref2.state;var _useListBoxSection=(0,useListBoxSection/* useListBoxSection */.u)({heading:section.rendered,'aria-label':section['aria-label']}),itemProps=_useListBoxSection.itemProps,headingProps=_useListBoxSection.headingProps,groupProps=_useListBoxSection.groupProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",Object.assign({},itemProps,{className:'',children:[section.rendered&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",Object.assign({},headingProps,{className:Select_module.selectSectionHeading,children:section.rendered})),/*#__PURE__*/(0,jsx_runtime.jsx)("ul",Object.assign({},groupProps,{children:Array.from(section.childNodes).map(function(node){return/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:node,state:state},node.key);})}))]}));};var SelectListBox=function SelectListBox(props){var ref=react.useRef(null);var _props$listBoxRef=props.listBoxRef,listBoxRef=_props$listBoxRef===void 0?ref:_props$listBoxRef,state=props.state;var _useListBox=(0,useListBox/* useListBox */.X)(Object.assign({},props,{// When Select is clearable, do not clear the selection once ESC key is pressed, see https://github.com/adobe/react-spectrum/blob/main/packages/@react-aria/selection/src/useSelectableCollection.ts#L226
+var Option=function Option(_ref){var _clsx;var item=_ref.item,state=_ref.state;var ref=react.useRef(null);var _useOption=(0,useOption/* useOption */.x)({key:item.key},state,ref),optionProps=_useOption.optionProps,isDisabled=_useOption.isDisabled,isSelected=_useOption.isSelected,isFocused=_useOption.isFocused;return/*#__PURE__*/(0,jsx_runtime.jsx)(FocusRing/* FocusRing */.v,{focusRingClass:Select_module.listItemfocusRing,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("li",Object.assign({},optionProps,{ref:ref,className:(0,clsx/* default */.A)(Select_module.listBoxItem,(_clsx={},_clsx[Select_module.listBoxItemDisabled]=isDisabled,_clsx[Select_module.listBoxItemFocused]=isFocused,_clsx[Select_module.listBoxItemSelected]=isSelected,_clsx)),children:[state.selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"checkbox",disabled:isDisabled,checked:isSelected,readOnly:true})}),typeof item.rendered==='string'?/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:"truncate block",children:item.rendered}):item.rendered]}))});};var SelectListBox_Section=function Section(_ref2){var section=_ref2.section,state=_ref2.state;var _useListBoxSection=(0,useListBoxSection/* useListBoxSection */.u)({heading:section.rendered,'aria-label':section['aria-label']}),itemProps=_useListBoxSection.itemProps,headingProps=_useListBoxSection.headingProps,groupProps=_useListBoxSection.groupProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",Object.assign({},itemProps,{className:'',children:[section.rendered&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",Object.assign({},headingProps,{className:Select_module.selectSectionHeading,children:section.rendered})),/*#__PURE__*/(0,jsx_runtime.jsx)("ul",Object.assign({},groupProps,{children:Array.from(section.childNodes).map(function(node){return/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:node,state:state},node.key);})}))]}));};var SelectListBox=function SelectListBox(props){var ref=react.useRef(null);var _props$listBoxRef=props.listBoxRef,listBoxRef=_props$listBoxRef===void 0?ref:_props$listBoxRef,state=props.state;var _useListBox=(0,useListBox/* useListBox */.X)(Object.assign({},props,{// When Select is clearable, do not clear the selection once ESC key is pressed, see https://github.com/adobe/react-spectrum/blob/main/packages/@react-aria/selection/src/useSelectableCollection.ts#L226
 disallowEmptySelection:true}),state,listBoxRef),listBoxProps=_useListBox.listBoxProps;return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",Object.assign({},listBoxProps,{className:Select_module.listBox,ref:listBoxRef,children:Array.from(state.collection).map(function(item){return item.type==='section'?/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox_Section,{section:item,state:state},item.key):/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item,state:state},item.key);})}));};
 // EXTERNAL MODULE: ./node_modules/@react-aria/focus/dist/FocusScope.mjs + 1 modules
 var FocusScope = __webpack_require__(68305);
