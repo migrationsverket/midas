@@ -7,7 +7,7 @@ export const ComponentHeader = ({
   name,
   friendlyName,
   overrideHeadlessLink,
-  overrideHeadlessLinkTitle
+  overrideHeadlessLinkTitle,
 }: {
   name: string
   friendlyName: string
@@ -18,7 +18,7 @@ export const ComponentHeader = ({
     process.env.NODE_ENV === 'development'
       ? `http://localhost:4400/?path=/docs/components-${name.toLowerCase()}--docs`
       : useBaseUrl(
-          `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`
+          `/storybook/?path=/docs/components-${name.toLowerCase()}--docs`,
         )
 
   return (
