@@ -6627,8 +6627,12 @@ CSS variables, meant to be overridden by final theme
     outline: 2px solid black;
   }
 
+.row_o3yW[data-href] {
+    cursor: pointer;
+  }
+
 .row_o3yW[data-hovered='true'] td {
-    background-color: #cccccc;
+    background-color: #cccccc !important;
   }
 
 .tableHeader_BmsY {
