@@ -7,7 +7,7 @@ import type {
   TableHeaderProps,
   ColumnProps,
   TableProps as AriaTableProps,
-  CellProps
+  CellProps,
 } from 'react-aria-components'
 
 import {
@@ -19,13 +19,13 @@ import {
   Cell as AriaCell,
   Button,
   Table as AriaTable,
-  TableBody
+  TableBody,
 } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
 import {
   ArrowDownNarrowWide,
   ArrowUpWideNarrow,
-  GripVertical
+  GripVertical,
 } from 'lucide-react'
 import clsx from 'clsx'
 
@@ -34,15 +34,12 @@ export interface TableProps extends AriaTableProps {
   striped?: boolean
 }
 
-export const Table = ({
-  narrow,
-  striped,
-  ...rest
-}: TableProps) => {
+export const Table = ({ narrow, striped, className, ...rest }: TableProps) => {
   const classNames = clsx(
     styles.table,
     narrow && styles.narrow,
-    striped && styles.striped
+    striped && styles.striped,
+    className,
   )
 
   return (
@@ -55,7 +52,7 @@ export const Table = ({
 
 export const TableHeader = <T extends object>({
   columns,
-  children
+  children,
 }: TableHeaderProps<T>) => {
   const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions()
 
