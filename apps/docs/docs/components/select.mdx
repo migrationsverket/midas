@@ -34,7 +34,7 @@ export const Example = props => {
   friendlyName={'Flerval, väljare, dropdown'}
 />
 
-Inmatningsfält som används för att välja exakt ett alternativ.
+Inmatningsfält som används för att välja ett eller flera fördefinerade alternativ.
 
 <Example hideCode />
 
@@ -53,6 +53,58 @@ import { Select } from '@midas-ds/components'
 ## Riktlinjer
 
 Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
+
+## Varianter
+
+### Flerval
+
+Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
+
+<LiveCodeBlock scope={{ Select }} {...props}>
+  {`
+    <Select
+      label='Vilka är dina favoritfrukter?'
+      placeholder='Välj en eller flera frukter'
+      description='Beskrivning'
+      selectionMode='multiple'
+      options={fruits.map(({ value, name }) => ({ id: value, name }))}
+    />
+  `}
+</LiveCodeBlock>
+
+#### Välj alla
+
+Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-knapp.
+
+<LiveCodeBlock scope={{ Select }} {...props}>
+  {`
+    <Select
+      label='Vilka är dina favoritfrukter?'
+      placeholder='Välj en eller flera frukter'
+      description='Beskrivning'
+      selectionMode='multiple'
+      options={fruits.map(({ value, name }) => ({ id: value, name }))}
+      isSelectableAll
+    />
+  `}
+</LiveCodeBlock>
+
+#### Tags
+
+Egenskapen `showTags` kan användas för att visa valda alternativ som taggar.
+
+<LiveCodeBlock scope={{ Select }} {...props}>
+  {`
+    <Select
+      label='Vilka är dina favoritfrukter?'
+      placeholder='Välj en eller flera frukter'
+      description='Beskrivning'
+      selectionMode='multiple'
+      options={fruits.map(({ value, name }) => ({ id: value, name }))}
+      showTags
+    />
+  `}
+</LiveCodeBlock>
 
 ## API
 
