@@ -28,10 +28,10 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
   const ref = React.useRef<HTMLLIElement>(null)
   const { optionProps, isDisabled, isSelected, isFocused } = useOption(
     {
-      key: item.key
+      key: item.key,
     },
     state,
-    ref
+    ref,
   )
 
   return (
@@ -42,7 +42,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
         className={clsx(styles.listBoxItem, {
           [styles.listBoxItemDisabled]: isDisabled,
           [styles.listBoxItemFocused]: isFocused,
-          [styles.listBoxItemSelected]: isSelected
+          [styles.listBoxItemSelected]: isSelected,
         })}
       >
         {state.selectionMode === 'multiple' && (
@@ -68,7 +68,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
 const Section = <T,>({ section, state }: SectionProps<T>) => {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,
-    'aria-label': section['aria-label']
+    'aria-label': section['aria-label'],
   })
 
   return (
@@ -85,7 +85,7 @@ const Section = <T,>({ section, state }: SectionProps<T>) => {
         </span>
       )}
       <ul {...groupProps}>
-        {[...section.childNodes].map(node => (
+        {Array.from(section.childNodes).map(node => (
           <Option
             key={node.key}
             item={node}
@@ -105,10 +105,10 @@ export const SelectListBox = <T,>(props: ListBoxProps<T>) => {
     {
       ...props,
       // When Select is clearable, do not clear the selection once ESC key is pressed, see https://github.com/adobe/react-spectrum/blob/main/packages/@react-aria/selection/src/useSelectableCollection.ts#L226
-      disallowEmptySelection: true
+      disallowEmptySelection: true,
     },
     state,
-    listBoxRef
+    listBoxRef,
   )
 
   return (
@@ -117,7 +117,7 @@ export const SelectListBox = <T,>(props: ListBoxProps<T>) => {
       className={styles.listBox}
       ref={listBoxRef}
     >
-      {[...state.collection].map(item =>
+      {Array.from(state.collection).map(item =>
         item.type === 'section' ? (
           <Section
             key={item.key}
@@ -130,7 +130,7 @@ export const SelectListBox = <T,>(props: ListBoxProps<T>) => {
             item={item}
             state={state}
           />
-        )
+        ),
       )}
     </ul>
   )
