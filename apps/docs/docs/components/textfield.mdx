@@ -104,10 +104,10 @@ Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[
 
 Använd egenskapen `validationType="dossnr"` för att slå på vår validering av dossiernummer.
 
-Följande RegEx används <br /> `\d{1,2}[-+]\d{6}(/\d{1,2})?$`
+Följande RegEx används <br /> `/\d{1,2}[-+]?\d{6}(/\d{1,2})?$/`
 
 - En eller två siffror `d{1,2}`.
-- Följt av skiljetecken, antingen `-` eller `+` `[-+]`.
+- Följt av frivillig del av skiljetecken, antingen ett `-` eller ett `+` `[-+]?`.
 - Följt av sex siffror `d{6}`.
 - Följt av frivillig del av `/` samt en eller två siffror `(/\d{1,2})?`.
 
