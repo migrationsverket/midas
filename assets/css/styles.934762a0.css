@@ -5881,7 +5881,7 @@ CSS variables, meant to be overridden by final theme
     padding: var(--item-padding);
   }
 
-.trigger_H4x6 button svg {
+.trigger_H4x6 button .icon_Ofz7 {
       transform: rotate(0deg);
       transition: transform 300ms ease;
     }
@@ -5894,7 +5894,7 @@ CSS variables, meant to be overridden by final theme
         font-weight: 500;
       }
 
-.trigger_H4x6 button[aria-expanded='true'] svg {
+.trigger_H4x6 button[aria-expanded='true'] .icon_Ofz7 {
         transform: rotate(-180deg);
         transition: transform 300ms ease;
       }
