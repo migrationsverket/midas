@@ -34,6 +34,11 @@
 
   &[data-focus-visible] {
     box-shadow: focus;
+
+    @media (forced-colors: active) {
+      outline-offset: 2px;
+      outline: 3px solid Highlight !important;
+    }
   }
 }
 

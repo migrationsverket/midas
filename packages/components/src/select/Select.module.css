@@ -29,6 +29,11 @@
   &:focus-visible {
     box-shadow: focus;
     outline: none;
+
+    @media (forced-colors: active) {
+      outline-offset: 2px;
+      outline: 3px solid Highlight !important;
+    }
   }
 
   &[data-disabled] {
