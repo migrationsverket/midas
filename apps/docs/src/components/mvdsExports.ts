@@ -24,8 +24,9 @@ import {
   Select,
   GridItem,
   Item,
-  theme
 } from '@midas-ds/components'
+
+import { theme } from '@midas-ds/components/theme'
 
 export {
   Button,
@@ -53,5 +54,5 @@ export {
   Tabs,
   TextArea,
   theme,
-  MultiSelect
+  MultiSelect,
 }

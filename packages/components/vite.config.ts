@@ -6,8 +6,7 @@ import * as path from 'path'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
-import { extname, relative, resolve } from 'path'
-import { glob } from 'glob'
+import { resolve } from 'path'
 
 export default defineConfig({
   root: __dirname,
@@ -20,9 +19,9 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
       include: ['src'],
-      exclude: ['**/*.stories.{ts,tsx}']
+      exclude: ['**/*.stories.{ts,tsx}'],
     }),
-    libInjectCss()
+    libInjectCss(),
   ],
   // Uncomment this if you are using workers.
   // worker: {
@@ -35,43 +34,46 @@ export default defineConfig({
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
-      transformMixedEsModules: true
+      transformMixedEsModules: true,
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: {
+        index: resolve(__dirname, 'src/index.ts'),
+        theme: resolve(__dirname, 'src/theme/index.ts'),
+        global: resolve(__dirname, 'src/theme/global.css'),
+      },
       name: 'components',
-      fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
-      formats: ['es']
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
-      input: Object.fromEntries(
-        // https://rollupjs.org/configuration-options/#input
-        glob
-          .sync('packages/components/src/**/*.{ts,tsx}', {
-            ignore: ['**/*.d.ts', '**/*.stories.{ts,tsx}']
-          })
-          .map(file => [
-            // 1. The name of the entry point
-            // lib/nested/foo.js becomes nested/foo
-            relative('src', file.slice(0, file.length - extname(file).length)),
-            // 2. The absolute path to the entry file
-            // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
-            /**
-             * TODO: some error here and can't set folder names correctly in output
-             */
-            `${file}`
-            // fileURLToPath(new URL(file, import.meta.url))
-          ])
-      ),
-      output: {
-        // assetFileNames: 'assets/[name][extname]',
-        // entryFileNames: '[name].js',
-      }
-    }
-  }
+      // input: Object.fromEntries(
+      //   // https://rollupjs.org/configuration-options/#input
+      //   glob
+      //     .sync('packages/components/src/**/*.{ts,tsx}', {
+      //       ignore: ['**/*.d.ts', '**/*.stories.{ts,tsx}']
+      //     })
+      //     .map(file => [
+      //       // 1. The name of the entry point
+      //       // lib/nested/foo.js becomes nested/foo
+      //       relative('src', file.slice(0, file.length - extname(file).length)),
+      //       // 2. The absolute path to the entry file
+      //       // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
+      //       /**
+      //        * TODO: some error here and can't set folder names correctly in output
+      //        */
+      //       `${file}`
+      //       // fileURLToPath(new URL(file, import.meta.url))
+      //     ])
+      // ),
+      // output: {
+      //   // assetFileNames: 'assets/[name][extname]',
+      //   // entryFileNames: '[name].js',
+      // }
+    },
+  },
 })

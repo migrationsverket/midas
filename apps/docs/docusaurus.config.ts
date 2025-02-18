@@ -15,9 +15,13 @@ fs.readdirSync(packagesDir).forEach(dir => {
 
   const packagePath = path.resolve(packagesDir, dir)
   if (fs.statSync(packagePath).isDirectory()) {
+    packageAliases[`@midas-ds/${dir}/theme`] = path.resolve(
+      packagePath,
+      'src/theme/index.ts',
+    )
     packageAliases[`@midas-ds/${dir}`] = path.resolve(
       packagePath,
-      'src/index.ts'
+      'src/index.ts',
     )
   }
 })
@@ -37,7 +41,7 @@ const config: Config = {
   trailingSlash: true,
   i18n: {
     defaultLocale: 'sv',
-    locales: ['sv']
+    locales: ['sv'],
   },
   plugins: [
     [
@@ -55,16 +59,16 @@ const config: Config = {
             return true
           },
           savePropValueAsString: true,
-          shouldExtractLiteralValuesFromEnum: false
-        }
-      }
+          shouldExtractLiteralValuesFromEnum: false,
+        },
+      },
     ],
     [
       'docusaurus-plugin-module-alias',
       {
-        alias: packageAliases
-      }
-    ]
+        alias: packageAliases,
+      },
+    ],
   ],
   markdown: {
     mermaid: true,
@@ -76,7 +80,7 @@ const config: Config = {
       result.frontMatter.pagination_next = null
 
       return result
-    }
+    },
   },
   themes: [
     '@docusaurus/theme-mermaid',
@@ -91,9 +95,9 @@ const config: Config = {
         language: ['sv'],
         searchBarShortcut: true,
         highlightSearchTermsOnTargetPage: true,
-        indexPages: true
-      }
-    ]
+        indexPages: true,
+      },
+    ],
   ],
   presets: [
     [
@@ -105,10 +109,10 @@ const config: Config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['yarn', 'pnpm'], sync: true }
-            ]
+              { converters: ['yarn', 'pnpm'], sync: true },
+            ],
           ],
-          breadcrumbs: false
+          breadcrumbs: false,
         },
         blog: {
           showReadingTime: true,
@@ -117,16 +121,16 @@ const config: Config = {
           remarkPlugins: [
             [
               require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['yarn', 'pnpm'], sync: true }
-            ]
-          ]
+              { converters: ['yarn', 'pnpm'], sync: true },
+            ],
+          ],
         },
         pages: {},
         theme: {
-          customCss: ['./src/css/custom.css']
-        }
-      } satisfies Preset.Options
-    ]
+          customCss: ['./src/css/custom.css'],
+        },
+      } satisfies Preset.Options,
+    ],
   ],
 
   themeConfig: {
@@ -142,34 +146,34 @@ const config: Config = {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
         height: '52px',
-        width: 'auto'
+        width: 'auto',
       },
       items: [
         {
           type: 'doc',
           docId: 'get-started/use',
           position: 'left',
-          label: 'Dokumentation'
+          label: 'Dokumentation',
         },
         {
           to: '/blog',
           position: 'left',
-          label: 'Nyheter'
+          label: 'Nyheter',
         },
         {
           href: 'https://github.com/migrationsverket/midas/releases',
           label: 'Senaste versionen',
-          position: 'right'
+          position: 'right',
         },
         {
           href: 'https://github.com/migrationsverket/midas',
           label: 'GitHub',
-          position: 'right'
-        }
-      ]
+          position: 'right',
+        },
+      ],
     },
     footer: {
-      style: 'dark'
+      style: 'dark',
       // logo: {
       //   alt: 'Migrationsverket Logotyp',
       //   src: 'img/mig-logo-white.svg',
@@ -230,20 +234,20 @@ const config: Config = {
     colorMode: {
       defaultMode: 'light',
       disableSwitch: true,
-      respectPrefersColorScheme: false
+      respectPrefersColorScheme: false,
     },
     prism: {
-      theme: prismThemes.github
+      theme: prismThemes.github,
       //darkTheme: prismThemes.dracula,
     },
     mermaid: {
       options: {
         flowchart: {
-          curve: 'linear'
-        }
-      }
-    }
-  } satisfies Preset.ThemeConfig
+          curve: 'linear',
+        },
+      },
+    },
+  } satisfies Preset.ThemeConfig,
 }
 
 export default config
