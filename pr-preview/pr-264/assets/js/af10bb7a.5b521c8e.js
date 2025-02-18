@@ -86,6 +86,22 @@ const toc = [{
   "id": "riktlinjer",
   "level": 2
 }, {
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Flerval",
+  "id": "flerval",
+  "level": 3
+}, {
+  "value": "Välj alla",
+  "id": "välj-alla",
+  "level": 4
+}, {
+  "value": "Tags",
+  "id": "tags",
+  "level": 4
+}, {
   "value": "API",
   "id": "api",
   "level": 2
@@ -100,6 +116,7 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
+    h4: "h4",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -110,7 +127,7 @@ function _createMdxContent(props) {
       name: 'Select',
       friendlyName: 'Flerval, väljare, dropdown'
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält som används för att välja exakt ett alternativ."
+      children: "Inmatningsfält som används för att välja ett eller flera fördefinerade alternativ."
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
@@ -160,6 +177,74 @@ function _createMdxContent(props) {
         href: "/pr-preview/pr-264/components/radio",
         children: "Radio"
       }), " användas istället."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "flerval",
+      children: "Flerval"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "selectionMode=\"multiple\""
+      }), " för att slå på flervalsläget."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Select: Select/* Select */.l
+      },
+      ...props,
+      children: `
+  <Select
+    label='Vilka är dina favoritfrukter?'
+    placeholder='Välj en eller flera frukter'
+    description='Beskrivning'
+    selectionMode='multiple'
+    options={fruits.map(({ value, name }) => ({ id: value, name }))}
+  />
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "välj-alla",
+      children: "Välj alla"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isSelectableAll"
+      }), " kan användas för att lägga till en \"Välj alla\"-knapp."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Select: Select/* Select */.l
+      },
+      ...props,
+      children: `
+  <Select
+    label='Vilka är dina favoritfrukter?'
+    placeholder='Välj en eller flera frukter'
+    description='Beskrivning'
+    selectionMode='multiple'
+    options={fruits.map(({ value, name }) => ({ id: value, name }))}
+    isSelectableAll
+  />
+`
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "tags",
+      children: "Tags"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "showTags"
+      }), " kan användas för att visa valda alternativ som taggar."]
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+      scope: {
+        Select: Select/* Select */.l
+      },
+      ...props,
+      children: `
+  <Select
+    label='Vilka är dina favoritfrukter?'
+    placeholder='Välj en eller flera frukter'
+    description='Beskrivning'
+    selectionMode='multiple'
+    options={fruits.map(({ value, name }) => ({ id: value, name }))}
+    showTags
+  />
+`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
