@@ -178,7 +178,7 @@
   transition: background-color 60ms;
 
   &:hover {
-    background-color: gray20;
+    background-color: gray10;
     transition-delay: 60ms;
   }
 
@@ -197,10 +197,10 @@
 }
 
 .listBoxItemSelected {
-  background-color: gray50;
+  background-color: gray20;
   color: black;
   &.listBoxItemDisabled {
-    color: gray20;
+    color: gray50;
   }
 }
 
