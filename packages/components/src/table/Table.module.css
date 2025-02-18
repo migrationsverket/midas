@@ -36,6 +36,10 @@
     outline: 2px solid black;
   }
 
+  &[data-href] {
+    cursor: pointer;
+  }
+
   &[data-hovered='true'] td {
     background-color: gray40 !important;
   }
