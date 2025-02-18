@@ -166,16 +166,20 @@
 
 .listBoxItem {
   font-family: display;
-  padding: 1rem;
+  padding: 0 1rem;
   background-color: white;
   cursor: default;
   color: black;
   position: relative;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
   margin-bottom: 0;
   transition: background-color 60ms;
+
+  span {
+    padding: 1rem 0;
+    line-height: 1;
+  }
 
   &:hover {
     background-color: gray10;
@@ -347,6 +351,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem 0.5rem 1rem 0;
 }
 
 /* checkbox stuff*/

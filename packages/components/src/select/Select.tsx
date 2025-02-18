@@ -298,14 +298,18 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                             isIndeterminate={isIndeterminateSelection}
                             excludeFromTabOrder={true}
                           />*/}
-                          <input
-                            type='checkbox'
-                            checked={isAllSelection}
-                            ref={refAllButton}
-                            readOnly
-                            tabIndex={-1}
-                          />
-                          {'Select All'}
+                          <div className={styles.checkboxContainer}>
+                            <input
+                              type='checkbox'
+                              checked={isAllSelection}
+                              ref={refAllButton}
+                              readOnly
+                              tabIndex={-1}
+                            />
+                          </div>
+                          <span>
+                            {'Select All'}
+                          </span>
                         </div>
                       </button>
                     </FocusRing>
