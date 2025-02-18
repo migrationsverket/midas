@@ -46,7 +46,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
         })}
       >
         {state.selectionMode === 'multiple' && (
-          <div>
+          <div className={styles.checkboxContainer}>
             <input
               type='checkbox'
               disabled={isDisabled}

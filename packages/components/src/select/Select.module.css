@@ -343,13 +343,18 @@
   width: var(--select-popover-width);
 }
 
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* checkbox stuff*/
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   background-color: blue150;
   display: grid;
-  place-content: center;
   margin: 0;
   font: inherit;
   color: currentColor;
@@ -357,7 +362,6 @@ input[type="checkbox"] {
   height: 1em;
   border: 1px solid currentColor;
   border-radius: 0;
-  transform: translateY(-0.075em);
 }
 input[type="checkbox"]::before {
   content: "";
