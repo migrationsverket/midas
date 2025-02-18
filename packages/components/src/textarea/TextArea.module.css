@@ -24,8 +24,8 @@
     box-shadow: focus;
 
     @media (forced-colors: active) {
+      outline: 3px solid highlight;
       outline-offset: 2px;
-      outline: 3px solid Highlight !important;
     }
   }
 
