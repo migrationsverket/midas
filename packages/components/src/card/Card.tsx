@@ -45,6 +45,7 @@ export const Card: React.FC<CardProps> = ({
   customLinkComponent: CustomLinkComponent,
   ...rest
 }) => {
+  const contentId = React.useId()
   return (
     <div
       className={clsx(
@@ -64,10 +65,13 @@ export const Card: React.FC<CardProps> = ({
                 className={styles.image}
               />
             )}
-        <HeadingTag className={styles.heading}>{title}</HeadingTag>
-        <p className={styles.text}>{content}</p>
+        <div id={contentId}>
+          <HeadingTag className={styles.heading}>{title}</HeadingTag>
+          <p className={styles.text}>{content}</p>
+        </div>
       </div>
       <Link
+        aria-describedby={contentId}
         {...link}
         standalone
         stretched

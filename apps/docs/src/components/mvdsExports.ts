@@ -54,5 +54,5 @@ export {
   Tabs,
   TextArea,
   theme,
-  MultiSelect
+  MultiSelect,
 }
