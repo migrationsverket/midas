@@ -26,7 +26,7 @@ import {
   Item,
   Tooltip,
   Dropdown,
-  DropdownItem
+  DropdownItem,
 } from '@midas-ds/components'
 
 import { theme } from '@midas-ds/components/theme'
@@ -60,5 +60,5 @@ export {
   MultiSelect,
   Tooltip,
   Dropdown,
-  DropdownItem
+  DropdownItem,
 }

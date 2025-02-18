@@ -3,5 +3,6 @@
 .nx
 dist
 scripts
+*.hbs
 
 /.nx/workspace-data
