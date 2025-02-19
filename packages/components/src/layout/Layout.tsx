@@ -4,10 +4,13 @@ import styles from './Layout.module.css'
 import { LucideIcon } from 'lucide-react'
 import { FlexItem } from '../flex'
 import * as React from 'react'
-import clsx from 'clsx'
-import { Sidebar } from './components/Sidebar'
-import { Header } from './components/Header'
+import { Sidebar as LayoutSidebar } from './components/Sidebar'
+import { Header as LayoutHeader } from './components/Header'
+import { SidebarLink as LayoutSidebarLink } from './components/SidebarLink'
 import { SkipLink } from './components/SkipLink'
+import { Href } from '@react-types/shared'
+import { LayoutProvider } from './context/LayoutContext'
+import { Backdrop } from './components/Backdrop'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -51,11 +54,16 @@ export interface MidasLayout {
    *
    * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/}
    */
-
   clientSideRouter?: (path: string, routerOptions: undefined) => void
+  clientSideHref?: (href: Href) => string
 }
 
-export const Layout: React.FC<MidasLayout> = ({
+export const Layout: React.FC<MidasLayout> & {
+  Provider: typeof LayoutProvider
+  Header: typeof LayoutHeader
+  Sidebar: typeof LayoutSidebar
+  SidebarLink: typeof LayoutSidebarLink
+} = ({
   items,
   title,
   user,
@@ -63,56 +71,43 @@ export const Layout: React.FC<MidasLayout> = ({
   children,
   headerChildren,
   clientSideRouter,
+  clientSideHref,
 }) => {
   const [isCollapsed, setIsCollapsed] = React.useState<boolean>(false)
   const [isOpened, setIsOpened] = React.useState<boolean>(false)
 
-  React.useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpened(false)
-      }
-    }
-    window.addEventListener('keydown', handleEsc)
-
-    return () => {
-      window.removeEventListener('keydown', handleEsc)
-    }
-  }, [])
-
   return (
-    <div className={styles.baseLayout}>
-      <SkipLink />
-      <Header
-        title={title}
-        headerChildren={headerChildren}
-        user={user}
-        app={app}
-        isOpened={isOpened}
-        setIsOpened={setIsOpened}
-        setIsCollapsed={setIsCollapsed}
-      />
-      <div className={styles.mainContent}>
-        <Sidebar
-          items={items}
-          app={app}
-          isOpened={isOpened}
-          isCollapsed={isCollapsed}
-          setIsCollapsed={setIsCollapsed}
-          setIsOpened={setIsOpened}
-          clientSideRouter={clientSideRouter}
-        />
-        <FlexItem>
-          <main className={styles.main}>
-            <div className={styles.app}>{children}</div>
-          </main>
-        </FlexItem>
-        <div
-          className={clsx(styles.backdrop, isOpened && styles.backdropOpened)}
-          onClick={() => setIsOpened(false)}
-          aria-hidden
-        />
+    <Layout.Provider
+      items={items}
+      title={title}
+      user={user}
+      app={app}
+      clientSideRouter={clientSideRouter}
+      clientSideHref={clientSideHref}
+      headerChildren={headerChildren}
+      isCollapsed={isCollapsed}
+      setIsCollapsed={setIsCollapsed}
+      isOpened={isOpened}
+      setIsOpened={setIsOpened}
+    >
+      <div className={styles.baseLayout}>
+        <SkipLink />
+        <Layout.Header />
+        <div className={styles.mainContent}>
+          <Layout.Sidebar />
+          <FlexItem>
+            <main className={styles.main}>
+              <div className={styles.app}>{children}</div>
+            </main>
+          </FlexItem>
+          <Backdrop />
+        </div>
       </div>
-    </div>
+    </Layout.Provider>
   )
 }
+
+Layout.Provider = LayoutProvider
+Layout.Header = LayoutHeader
+Layout.Sidebar = LayoutSidebar
+Layout.SidebarLink = LayoutSidebarLink

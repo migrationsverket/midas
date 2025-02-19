@@ -1,4 +1,5 @@
-import { App, SidebarUser } from '../Layout'
+'use client'
+
 import styles from '../Layout.module.css'
 import { midasColors } from '../../theme'
 import { Logo } from '../../logo'
@@ -6,26 +7,23 @@ import { Button } from '../../button'
 import { Menu, X } from 'lucide-react'
 import { Dropdown, DropdownItem } from '../../dropdown'
 import * as React from 'react'
+import { useLayoutContext } from '../context/LayoutContext'
 
 export interface MidasHeader {
-  title: string
-  headerChildren: React.ReactNode
-  user: SidebarUser
-  app: App
-  isOpened?: boolean
-  setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>
-  setIsCollapsed?: React.Dispatch<React.SetStateAction<boolean>>
+  headerChildren?: React.ReactNode
 }
 
-export const Header: React.FC<MidasHeader> = ({
-  title,
-  user,
-  app,
-  headerChildren,
-  isOpened,
-  setIsOpened,
-  setIsCollapsed,
-}) => {
+export const Header: React.FC = () => {
+  const {
+    title,
+    user,
+    app,
+    isOpened,
+    setIsOpened,
+    setIsCollapsed,
+    headerChildren,
+  } = useLayoutContext()
+
   return (
     <header
       className={styles.header}
@@ -39,30 +37,28 @@ export const Header: React.FC<MidasHeader> = ({
           size='small'
           className={styles.logo}
         />
-        {isOpened !== undefined && setIsCollapsed && setIsOpened && (
-          <Button
-            variant='icon'
-            className={styles.toggleButton}
-            aria-label={isOpened ? 'Stäng meny' : 'Öppna meny'}
-            aria-controls='midasMainMenu'
-            onPress={() => {
-              setIsCollapsed(false)
-              setIsOpened(!isOpened)
-            }}
-          >
-            {isOpened ? (
-              <X
-                size={20}
-                aria-hidden
-              />
-            ) : (
-              <Menu
-                size={20}
-                aria-hidden
-              />
-            )}
-          </Button>
-        )}
+        <Button
+          variant='icon'
+          className={styles.toggleButton}
+          aria-label={isOpened ? 'Stäng meny' : 'Öppna meny'}
+          aria-controls='midasMainMenu'
+          onPress={() => {
+            setIsCollapsed(false)
+            setIsOpened(true)
+          }}
+        >
+          {isOpened ? (
+            <X
+              size={20}
+              aria-hidden='true'
+            />
+          ) : (
+            <Menu
+              size={20}
+              aria-hidden='true'
+            />
+          )}
+        </Button>
         <div>
           <p className={styles.userName}>{user.name}</p>
           <p className={styles.userTitle}>{user.title}</p>

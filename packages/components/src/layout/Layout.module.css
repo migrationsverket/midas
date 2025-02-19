@@ -131,6 +131,7 @@
   border-top: 1px solid gray70;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 
@@ -296,7 +297,7 @@
 .linkText {
   opacity: 1;
   display: block;
-  transition: all 100ms;
+  transition: all 200ms;
   transition-behavior: allow-discrete;
 }
 
@@ -328,8 +329,9 @@
 .skipToContent {
   position: absolute;
   top: 0;
-  right: 100%; /* moves off screen */
-  z-index: 1047; /* above the navbar */
+  right: 100%;
+  z-index: 1047;
+  visibility: hidden;
 
   &[data-focus-visible],
   &:focus-visible {

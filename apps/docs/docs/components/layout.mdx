@@ -19,7 +19,7 @@ export const AppExample = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        border: `dotted 2px ${baseColors.gray20}`
+        border: `dotted 2px ${baseColors.gray20}`,
       }}
     >
       Din applikation
@@ -84,7 +84,9 @@ export const Example = props => {
             Öppna annan tjänst
           </LinkButton>
         }
-      ><AppExample /></Layout>`}
+      >
+          <AppExample /> 
+      </Layout>`}
     </LiveCodeBlock>
   )
 }
@@ -116,7 +118,7 @@ import { Layout } from '@midas-ds/components'
 Det går att importera sidomenyn samt sidhuvudet som separata komponenter om så önskas, det är dock rekommenderat att använda hela Layoutkomponenten.
 
 ```tsx
-import { Header, Sidebar } from '@midas-ds/components'
+import { Layout.Header, Layout.Sidebar } from '@midas-ds/components'
 ```
 
 ## Riktlinjer
