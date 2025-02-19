@@ -1,3 +1,42 @@
+## 1.3.0 (2025-02-19)
+
+### 🚀 Features
+
+- **accordion:** support react nodes in title ([#259](https://github.com/migrationsverket/midas/pull/259))
+- **textfield:** add dossier number validation ([9092008ef](https://github.com/migrationsverket/midas/commit/9092008ef))
+- **textfield:** add dossier number validation ([#261](https://github.com/migrationsverket/midas/pull/261))
+
+### 🩹 Fixes
+
+- fix content to be readable by screen reader when use tab ([d49d8d4f9](https://github.com/migrationsverket/midas/commit/d49d8d4f9))
+- **accordion:** support any elements in title ([1129fd742](https://github.com/migrationsverket/midas/commit/1129fd742))
+- **card:** add React.useId to generate unique id ([160319d03](https://github.com/migrationsverket/midas/commit/160319d03))
+- **card:** fix to read title and content ([dd8d07c72](https://github.com/migrationsverket/midas/commit/dd8d07c72))
+- **card:** remove the id content from p tag ([54e4fe9cd](https://github.com/migrationsverket/midas/commit/54e4fe9cd))
+- **card:** clean the code ([a17aa2941](https://github.com/migrationsverket/midas/commit/a17aa2941))
+- **docs:** update theme imports ([5cbd797f4](https://github.com/migrationsverket/midas/commit/5cbd797f4))
+- **docs:** update theme imports ([#246](https://github.com/migrationsverket/midas/pull/246))
+- **table:** show hover background color for striped table ([a6b4f35d5](https://github.com/migrationsverket/midas/commit/a6b4f35d5))
+- **table:** remove unused props ([1cb0c2e69](https://github.com/migrationsverket/midas/commit/1cb0c2e69))
+- **table:** striped table hover effect and unused props ([#250](https://github.com/migrationsverket/midas/pull/250))
+- **table:** add pointer if row has a link ([9a62302ff](https://github.com/migrationsverket/midas/commit/9a62302ff))
+- **table:** add pointer if row has a link ([#262](https://github.com/migrationsverket/midas/pull/262))
+- **table:** preserve classNames when using props.className ([d7a9142cd](https://github.com/migrationsverket/midas/commit/d7a9142cd))
+- **table:** preserve classNames when using props.className ([#266](https://github.com/migrationsverket/midas/pull/266))
+- **textfield:** add dossier number validation ([b3027b5b9](https://github.com/migrationsverket/midas/commit/b3027b5b9))
+- **textfield:** +/- divider should be optional ([b1393263a](https://github.com/migrationsverket/midas/commit/b1393263a))
+- **theme:** point to theme types ([98e09424f](https://github.com/migrationsverket/midas/commit/98e09424f))
+- **theme:** point to theme types ([#248](https://github.com/migrationsverket/midas/pull/248))
+- **theme:** reorder theme export ([3398a0f68](https://github.com/migrationsverket/midas/commit/3398a0f68))
+- **theme:** reorder theme export ([#265](https://github.com/migrationsverket/midas/pull/265))
+
+### ❤️ Thank You
+
+- derpbravely
+- jabir Khalil
+- Wilhelm Hjelm
+- wilhjelmig @wilhjelmig
+
 ## 1.2.3 (2025-02-11)
 
 This was a version bump only, there were no code changes.
