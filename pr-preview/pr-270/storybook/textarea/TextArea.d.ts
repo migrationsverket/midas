@@ -7,8 +7,6 @@ export interface TextAreaProps extends AriaTextFieldProps {
     description?: string;
     /** Set number of rows for the TextArea */
     rows?: number;
-    /** Set number of characters that are allowed before the TextArea is put in an invalid state */
-    maxCharacters?: number;
     /** Set minimum number of characters that are allowed before the TextArea is put in an invalid state */
     minLength?: number;
     /**
