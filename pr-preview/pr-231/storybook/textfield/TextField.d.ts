@@ -10,8 +10,6 @@ export interface TextFieldProps extends AriaTextFieldProps {
     errorMessage?: string | ((validation: ValidationResult) => string) | undefined;
     /** Enable validations or add your own regex */
     validationType?: 'ssn' | 'dossnr' | RegExp;
-    /** Set number of characters that are allowed before the TextField is put in an invalid state */
-    maxCharacters?: number;
     /**
      * Whether to show the character counter or not
      * @default

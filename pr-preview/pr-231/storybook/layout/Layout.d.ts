@@ -1,4 +1,9 @@
 import { LucideIcon } from 'lucide-react';
+import { Sidebar as LayoutSidebar } from './components/Sidebar';
+import { Header as LayoutHeader } from './components/Header';
+import { SidebarLink as LayoutSidebarLink } from './components/SidebarLink';
+import { Href } from '@react-types/shared';
+import { LayoutProvider } from './context/LayoutContext';
 import * as React from 'react';
 export interface SidebarLinkGroup {
     title?: string;
@@ -38,6 +43,12 @@ export interface MidasLayout {
      * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/}
      */
     clientSideRouter?: (path: string, routerOptions: undefined) => void;
+    clientSideHref?: (href: Href) => string;
 }
-export declare const Layout: React.FC<MidasLayout>;
+export declare const Layout: React.FC<MidasLayout> & {
+    Provider: typeof LayoutProvider;
+    Header: typeof LayoutHeader;
+    Sidebar: typeof LayoutSidebar;
+    SidebarLink: typeof LayoutSidebarLink;
+};
 export {};
