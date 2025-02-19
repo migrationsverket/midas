@@ -1,14 +1,14 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { Checkbox } from './Checkbox'
-import { CheckboxProps } from 'react-aria-components'
 import { axe } from 'jest-axe'
 import user from '../../tests/utils/user'
+import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'basic checkbox'
 
 describe('given a default Checkbox', () => {
   beforeEach(() => {
-    render(<TestForm />)
+    renderWithForm(<Checkbox aria-label={label} />)
   })
 
   it('should have no accessibility violations', async () => {
@@ -18,7 +18,12 @@ describe('given a default Checkbox', () => {
 
 describe('given a required Checkbox', () => {
   beforeEach(() => {
-    render(<TestForm isRequired />)
+    renderWithForm(
+      <Checkbox
+        aria-label={label}
+        isRequired
+      />,
+    )
   })
 
   it('should be (aria) invalid if the user submitted without checking the box', async () => {
@@ -29,15 +34,3 @@ describe('given a required Checkbox', () => {
     expect(checkbox).toBeInvalid()
   })
 })
-
-const TestForm = (props: CheckboxProps) => (
-  <form>
-    <Checkbox
-      aria-label={label}
-      {...props}
-    >
-      Click
-    </Checkbox>
-    <button type='submit'>Submit</button>
-  </form>
-)
