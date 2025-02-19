@@ -6235,56 +6235,6 @@ CSS variables, meant to be overridden by final theme
   margin: 0 0 1rem;
 }
 
-.container_U3H4 {
-  padding: 1rem;
-  display: inline-flex;
-}
-
-.noPadding__BF5 {
-  padding: 0;
-}
-
-.logo_GI7z {
-  max-width: 100%;
-  height: 48px;
-}
-
-.primary_TCiF {
-  fill: #b90835;
-}
-
-.dark_F_Ks {
-  fill: #000000;
-}
-
-.xSmall_IZ4K {
-  height: 36px;
-}
-
-.small_KAZl {
-  height: 40px;
-}
-
-.large_iAB3 {
-  height: 52px;
-}
-
-.backgroundPrimary_qYL9 {
-  background-color: #b90835;
-}
-
-.backgroundPrimary_qYL9 svg {
-    fill: #ffffff;
-  }
-
-.backgroundDark_UHEQ {
-  background-color: #5d5d5d;
-}
-
-.backgroundDark_UHEQ svg {
-    fill: #ffffff;
-  }
-
 .wrap_YzPY {
   grid-area: Input;
   display: flex;
@@ -6447,6 +6397,56 @@ CSS variables, meant to be overridden by final theme
         border-color: #bfbfbf;
       }
     }
+
+.container_U3H4 {
+  padding: 1rem;
+  display: inline-flex;
+}
+
+.noPadding__BF5 {
+  padding: 0;
+}
+
+.logo_GI7z {
+  max-width: 100%;
+  height: 48px;
+}
+
+.primary_TCiF {
+  fill: #b90835;
+}
+
+.dark_F_Ks {
+  fill: #000000;
+}
+
+.xSmall_IZ4K {
+  height: 36px;
+}
+
+.small_KAZl {
+  height: 40px;
+}
+
+.large_iAB3 {
+  height: 52px;
+}
+
+.backgroundPrimary_qYL9 {
+  background-color: #b90835;
+}
+
+.backgroundPrimary_qYL9 svg {
+    fill: #ffffff;
+  }
+
+.backgroundDark_UHEQ {
+  background-color: #5d5d5d;
+}
+
+.backgroundDark_UHEQ svg {
+    fill: #ffffff;
+  }
 
 .inputField_NRYV {
   height: 100%;
@@ -8853,30 +8853,6 @@ CSS variables, meant to be overridden by final theme
   gap: 0.25rem;
 }
 
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.tableOfContents_bqdL {
-  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
-  overflow-y: auto;
-  position: sticky;
-  top: calc(var(--ifm-navbar-height) + 1rem);
-}
-
-@media (max-width: 996px) {
-  .tableOfContents_bqdL {
-    display: none;
-  }
-
-  .docItemContainer_F8PC {
-    padding: 0 0.3rem;
-  }
-}
-
 .tooltip_L2zx {
   font-family: "Inter", sans-serif, sans-serif;
   font-size: 0.75rem;
@@ -8934,6 +8910,30 @@ CSS variables, meant to be overridden by final theme
 .tooltip_L2zx[data-placement='left'] .arrow_bl7N svg {
       transform: rotate(-90deg);
     }
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.tableOfContents_bqdL {
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+  overflow-y: auto;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+@media (max-width: 996px) {
+  .tableOfContents_bqdL {
+    display: none;
+  }
+
+  .docItemContainer_F8PC {
+    padding: 0 0.3rem;
+  }
+}
 
 .dropDownMenu_VQGa {
   font-family: "Inter", sans-serif;
