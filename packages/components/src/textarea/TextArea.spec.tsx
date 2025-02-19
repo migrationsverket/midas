@@ -23,11 +23,11 @@ describe('given a default TextArea', () => {
   })
 })
 
-describe('given a TextArea with maxCharacters and minLength', () => {
+describe('given a TextArea with maxLength and minLength', () => {
   beforeEach(() =>
     render(
       <TestForm
-        maxCharacters={4}
+        maxLength={4}
         minLength={2}
       />,
     ),
