@@ -8,7 +8,7 @@ const meta: Meta<typeof Layout> = {
   component: Layout,
   tags: ['autodocs'],
   title: 'Components/Layout',
-  parameters: { layout: 'fullscreen' }
+  parameters: { layout: 'fullscreen' },
 }
 
 export default meta
@@ -20,9 +20,9 @@ const items: SidebarLinkGroup[] = [
       {
         title: 'Översikt',
         href: '#',
-        icon: House
-      }
-    ]
+        icon: House,
+      },
+    ],
   },
   {
     title: 'Ansökan',
@@ -30,14 +30,14 @@ const items: SidebarLinkGroup[] = [
       {
         title: 'Skapa ansökan',
         href: '#',
-        icon: Plus
+        icon: Plus,
       },
       {
         title: 'Beslut',
         href: '#',
-        icon: Gavel
-      }
-    ]
+        icon: Gavel,
+      },
+    ],
   },
   {
     title: 'Kort och konto',
@@ -45,15 +45,15 @@ const items: SidebarLinkGroup[] = [
       {
         title: 'LMA-kort',
         href: '#',
-        icon: Calendar
+        icon: Calendar,
       },
       {
         title: 'Avvikelser',
         href: '#',
-        icon: ClipboardList
-      }
-    ]
-  }
+        icon: ClipboardList,
+      },
+    ],
+  },
 ]
 
 const AppExample = () => {
@@ -65,7 +65,7 @@ const AppExample = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '80vh',
-        border: `dotted 2px ${baseColors.gray20}`
+        border: `dotted 2px ${baseColors.gray20}`,
       }}
     >
       Din applikation
@@ -78,10 +78,10 @@ export const Primary: Story = {
     items: items,
     user: {
       name: 'Namn Namnsson',
-      title: 'Roll eller behörighet'
+      title: 'Roll eller behörighet',
     },
     app: {
-      name: 'Namn på applikationen'
+      name: 'Namn på applikationen',
     },
     title: 'Skapa ansökningar',
     children: <AppExample />,
@@ -92,8 +92,8 @@ export const Primary: Story = {
       >
         Öppna annan tjänst
       </LinkButton>
-    )
-  }
+    ),
+  },
 }
 
 export const OnlyHeader: Story = {
@@ -111,7 +111,7 @@ export const OnlyHeader: Story = {
         </LinkButton>
       }
     />
-  )
+  ),
 }
 
 export const ActivePage: Story = {
@@ -121,8 +121,8 @@ export const ActivePage: Story = {
       ...items,
       {
         title: 'Aktiv sida',
-        items: [{ title: 'Aktiv sida', href: '#', icon: House, active: true }]
-      }
-    ]
-  }
+        items: [{ title: 'Aktiv sida', href: '#', icon: House, active: true }],
+      },
+    ],
+  },
 }
