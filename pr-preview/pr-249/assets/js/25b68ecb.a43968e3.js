@@ -276,7 +276,7 @@ var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/skeleton/Skeleton.tsx
-var Skeleton=function Skeleton(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'rectangular':_ref$variant,width=_ref.width,height=_ref.height,_ref$animation=_ref.animation,animation=_ref$animation===void 0?'wave':_ref$animation;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(Skeleton_module.skeleton,Skeleton_module[variant],animation&&Skeleton_module[animation]),style:{width:width,height:height}});};
+var Skeleton=function Skeleton(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'rectangular':_ref$variant,width=_ref.width,height=_ref.height,_ref$animation=_ref.animation,animation=_ref$animation===void 0?'wave':_ref$animation;if(variant==='circle'&&height!==undefined){console.warn('Height is not allowed when using circle, control size with width');}return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(Skeleton_module.skeleton,Skeleton_module[variant],animation&&Skeleton_module[animation]),style:{width:width,height:height}});};
 
 /***/ }),
 
