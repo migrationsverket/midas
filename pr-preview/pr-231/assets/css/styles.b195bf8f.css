@@ -7952,7 +7952,7 @@ CSS variables, meant to be overridden by final theme
 @media (min-width: 768px) {
 
 .baseLayout_zbio {
-    --headerHeight: 85px;
+    --headerHeight: 80px;
 }
   }
 
