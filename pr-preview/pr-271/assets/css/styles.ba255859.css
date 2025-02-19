@@ -7796,9 +7796,9 @@ CSS variables, meant to be overridden by final theme
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
   background: rgba(45, 0, 0, 0.3);
   display: flex;
   align-items: center;
@@ -7812,6 +7812,7 @@ CSS variables, meant to be overridden by final theme
   position: sticky;
   top: 0;
   z-index: 2;
+  padding: 4px;
 }
 
 .modalBody_FPgg {
