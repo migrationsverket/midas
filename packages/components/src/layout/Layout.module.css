@@ -104,6 +104,7 @@
   font-family: display;
   flex: 0 0 auto;
   width: 100%;
+  min-height: 100%;
 
   @media mdBreakpoint {
     background-color: gray10;
@@ -321,5 +322,19 @@
 
   .linkText {
     opacity: 0;
+  }
+}
+
+.skipToContent {
+  position: absolute;
+  top: 0;
+  right: 100%; /* moves off screen */
+  z-index: 1047; /* above the navbar */
+
+  &[data-focus-visible],
+  &:focus-visible {
+    right: auto;
+    left: 5px;
+    top: 5px;
   }
 }
