@@ -3,26 +3,32 @@ import type { StorybookConfig } from '@storybook/react-vite'
 const config: StorybookConfig = {
   stories: [
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
-    './examples/*.stories.@(md|mdx|tsx)'
+    './examples/*.stories.@(md|mdx|tsx)',
   ],
+
   addons: [
     '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
     '@storybook/addon-a11y',
-    '@chromatic-com/storybook'
+    '@storybook/experimental-addon-test',
+    // '@chromatic-com/storybook', <-- add this if we enable chromatic
   ],
+
   core: {
-    disableTelemetry: true
+    disableTelemetry: true,
   },
+
   framework: {
     name: '@storybook/react-vite',
     options: {
       builder: {
-        viteConfigPath: 'packages/components/vite.config.ts'
-      }
-    }
+        viteConfigPath: 'packages/components/vite.config.ts',
+      },
+    },
   },
-  staticDirs: ['./static']
+
+  staticDirs: ['./static'],
+
+  docs: {},
 }
 
 export default config
