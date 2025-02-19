@@ -1,0 +1,70 @@
+---
+title: Skeleton
+description: Laddningsindikator för komponenter
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Skeleton } from '@midas-ds/components'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Skeleton }}
+      {...props}
+    >
+      {`<Skeleton height='48px'/>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'Skeleton'}
+  friendlyName={'Laddningsindikator'}
+  overrideHeadlessLink=''
+/>
+
+Komponent som används som en platshållare för den riktiga komponenten innan sidan laddat klart
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Skeleton } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Varianter
+
+### Rectangular
+
+Detta är standardvarianten. Används som platshållare för text och de flesta komponenter vi har. Ange storleken i px, rem eller % med `width` och `height`. Om inget anges kommer den att fylla sin parent container.
+
+<Example />
+
+### Circle
+
+Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` och sätter automatiskt höjden så att den blir rund.
+
+{' '}
+<LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton variant='circle' width='48px'/>`}</LiveCodeBlock>
+
+## Animation
+
+Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga av med `animation= 'false'`.
+
+{' '}
+<LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton height='48px' animation='false'/>`}</LiveCodeBlock>
+
+## Riktlinjer
+
+## API
+
+<PropTable name={'Skeleton'} />
