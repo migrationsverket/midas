@@ -9,8 +9,8 @@ const meta: Meta<typeof ModalTrigger> = {
   title: 'Components/Modal',
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered'
-  }
+    layout: 'centered',
+  },
 }
 export default meta
 type Story = StoryObj<typeof ModalTrigger>
@@ -43,41 +43,37 @@ const fruits = [
   'Pomegranate',
   'Dragonfruit',
   'Starfruit',
-  'Passionfruit'
+  'Passionfruit',
 ]
 const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
-const Render = ({...args}) => {
+const Render = ({ ...args }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
 
   return (
-    <>
-      <ModalTrigger
-        {...args}
-      >
-        {(close) => (
-          <Dialog title='Enter your name'>
-            <Select
-              autoFocus
-              placeholder={'Select...'}
-              defaultSelectedKeys={['kiwi']}
-              label={'Select fruits'}
-              selectionMode={'multiple'}
-              options={options}
-              isClearable
-              isSelectableAll={false}
-            ></Select>
-            <Button
-              onPress={close}
-              style={{ marginTop: 10 }}
-            >
-              Submit
-            </Button>
-          </Dialog>
-        )}
-      </ModalTrigger>
-    </>
+    <ModalTrigger {...args}>
+      {close => (
+        <Dialog title='Enter your name'>
+          <Select
+            autoFocus
+            placeholder={'Select...'}
+            defaultSelectedKeys={['kiwi']}
+            label={'Select fruits'}
+            selectionMode={'multiple'}
+            options={options}
+            isClearable
+            isSelectableAll={false}
+          ></Select>
+          <Button
+            onPress={close}
+            style={{ marginTop: 10 }}
+          >
+            Submit
+          </Button>
+        </Dialog>
+      )}
+    </ModalTrigger>
   )
 }
 
@@ -98,4 +94,3 @@ export const NotDismissable: Story = {
   },
   render: Render,
 }
-
