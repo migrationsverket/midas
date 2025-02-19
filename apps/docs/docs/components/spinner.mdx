@@ -5,7 +5,7 @@ description: Upplys användaren om att systemet/tjänsten laddar
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Spinner, Button } from '@midas-ds/components'
+import { Spinner, Button, Link } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
@@ -64,6 +64,8 @@ Använd varianten `small` för att kombinera med andra komponenter t.ex. Button
 ## Riktlinjer
 
 Om det väntas ta mer än 10 sekunder att ladda sidan bör det förutom en spinner finnas ett meddelande till användaren om det.
+
+För val av laddningsindikator se <Link href="/design-patterns/page-loading" >Mönster för laddningsindikatorer</Link>
 
 ## API
 

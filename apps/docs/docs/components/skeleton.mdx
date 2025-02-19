@@ -6,7 +6,7 @@ description: Laddningsindikator för komponenter
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Skeleton } from '@midas-ds/components'
+import { Skeleton, Link } from '@midas-ds/components'
 
 export const Example = props => {
   return (
@@ -62,6 +62,8 @@ Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga 
 <LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton height='48px' animation='false'/>`}</LiveCodeBlock>
 
 ## Riktlinjer
+
+För val av laddningsindikator se <Link href="/design-patterns/page-loading" >Mönster för laddningsindikatorer</Link>
 
 ## API
 
