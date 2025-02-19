@@ -9,6 +9,8 @@ export interface SidebarLink {
     href: string;
     icon: LucideIcon;
     active?: boolean;
+    isCollapsed?: boolean;
+    setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export interface SidebarUser {
     name: string;
@@ -26,7 +28,7 @@ export interface MidasLayout {
     title: string;
     children: React.ReactNode;
     /** List of links in the top right of the application header */
-    headerChildren: React.ReactNode;
+    headerChildren?: React.ReactNode;
     /** Current user details */
     user: SidebarUser;
     /** Name of the app */
@@ -52,6 +54,7 @@ export interface MidasSidebar {
     isOpened?: boolean;
     isCollapsed: boolean;
     setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
     clientSideRouter?: (path: string, routerOptions: undefined) => void;
 }
 export declare const Layout: React.FC<MidasLayout>;

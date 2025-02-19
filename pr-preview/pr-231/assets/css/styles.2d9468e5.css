@@ -5880,7 +5880,7 @@ CSS variables, meant to be overridden by final theme
     padding: var(--item-padding);
   }
 
-.trigger_H4x6 button svg {
+.trigger_H4x6 button .icon_Ofz7 {
       transform: rotate(0deg);
       transition: transform 300ms ease;
     }
@@ -5893,7 +5893,7 @@ CSS variables, meant to be overridden by final theme
         font-weight: 500;
       }
 
-.trigger_H4x6 button[aria-expanded='true'] svg {
+.trigger_H4x6 button[aria-expanded='true'] .icon_Ofz7 {
         transform: rotate(-180deg);
         transition: transform 300ms ease;
       }
@@ -8067,6 +8067,7 @@ CSS variables, meant to be overridden by final theme
   font-family: "Inter", sans-serif;
   flex: 0 0 auto;
   width: 100%;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -8312,6 +8313,19 @@ CSS variables, meant to be overridden by final theme
     opacity: 0;
   }
 }
+
+.skipToContent_ihMq {
+  position: absolute;
+  top: 0;
+  right: 100%; /* moves off screen */
+  z-index: 1047; /* above the navbar */
+}
+
+.skipToContent_ihMq[data-focus-visible],.skipToContent_ihMq:focus-visible {
+    right: auto;
+    left: 5px;
+    top: 5px;
+  }
 
 .button_qOaA {
   grid-area: Input;
