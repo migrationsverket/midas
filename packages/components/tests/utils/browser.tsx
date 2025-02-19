@@ -12,6 +12,16 @@ const Wrapper = ({ children }: WrapperProps) => (
   </form>
 )
 
+/**
+ * A custom render function that wraps the component(s) in a form element
+ * ```tsx
+ * <form>
+ *   {ui}
+ *   <button type='submit'>Submit</button>
+ * </form>
+ * ```
+ * @param ui - the component to render
+ */
 export const renderWithForm = (
   ui: ReactElement,
   options?: Omit<RenderOptions, 'wrapper'>,
