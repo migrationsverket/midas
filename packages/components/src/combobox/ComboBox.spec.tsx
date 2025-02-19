@@ -1,17 +1,24 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { axe } from 'jest-axe'
 import user from '../../tests/utils/user'
-import { ComboBox, ComboBoxItem, ComboBoxProps } from './ComboBox'
+import { ComboBox, ComboBoxItem } from './ComboBox'
 import { generateMockOptions } from './utils'
 import { Item } from './types'
+import { renderWithForm } from '../../tests/utils/browser'
 
-const label = 'basic checkbox'
-
+const label = 'basic combobox'
 const items = generateMockOptions(30)
 
 describe('given a default ComboBox', () => {
   beforeEach(() => {
-    render(<TestForm />)
+    renderWithForm(
+      <ComboBox
+        items={items}
+        aria-label={label}
+      >
+        {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
+      </ComboBox>,
+    )
   })
 
   it('should have no accessibility violations', async () => {
@@ -21,7 +28,15 @@ describe('given a default ComboBox', () => {
 
 describe('given a required ComboBox', () => {
   beforeEach(() => {
-    render(<TestForm isRequired />)
+    renderWithForm(
+      <ComboBox
+        items={items}
+        aria-label={label}
+        isRequired
+      >
+        {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
+      </ComboBox>,
+    )
   })
 
   it('should be (aria) invalid and show a validation error message if the user submitted without selecting anything', async () => {
@@ -38,11 +53,15 @@ describe('given a required ComboBox with a custom error message', () => {
   const errorMessage = 'derp'
 
   beforeEach(() => {
-    render(
-      <TestForm
+    renderWithForm(
+      <ComboBox
+        items={items}
+        aria-label={label}
         isRequired
         errorMessage={errorMessage}
-      />,
+      >
+        {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
+      </ComboBox>,
     )
   })
 
@@ -55,16 +74,3 @@ describe('given a required ComboBox with a custom error message', () => {
     expect(screen.getByText(errorMessage)).toBeInTheDocument()
   })
 })
-
-const TestForm = (props: Partial<ComboBoxProps<Item>>) => (
-  <form>
-    <ComboBox
-      items={items}
-      aria-label={label}
-      {...props}
-    >
-      {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
-    </ComboBox>
-    <button type='submit'>Submit</button>
-  </form>
-)
