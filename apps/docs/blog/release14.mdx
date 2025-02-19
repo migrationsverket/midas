@@ -20,36 +20,6 @@ Modalen öppnar en ruta ovanför gränssnittet som användaren måste interagera
 npm install @midas-ds/modal
 ```
 
-<LiveCodeBlock
-  scope={{
-    Button,
-    Modal,
-    Flex,
-    FlexItem
-  }}
->
-  {`<>
-    <Button onPress={setIsOpen}>Radera frukter</Button>
-    <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
-        <p>Är du säker? De går inte att återskapa.</p>
-        <Flex fluid={true}>
-            <FlexItem col='auto'>
-                <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
-            </FlexItem>
-            <FlexItem>
-                <Button
-                    onPress={() => setIsOpen(false)}
-                    variant='secondary'
-                >
-                    Avbryt
-                </Button>
-            </FlexItem>
-        </Flex>
-    </Modal>
-
-</>`}
-</LiveCodeBlock>
-
 ## Ikoner på Button
 
 Button kan nu acceptera ikoner som prop. Ikonen läggs till via `icon`.

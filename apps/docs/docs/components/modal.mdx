@@ -6,7 +6,7 @@ description: Modal som lägger sig över allt annat innehåll.
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Flex, FlexItem, TextArea, Button, Modal } from '@midas-ds/components'
+import { Flex, FlexItem, TextArea, Button, ModalTrigger, Dialog, Select } from '@midas-ds/components'
 import { Heading } from 'react-aria-components'
 
 export const Example = props => {
@@ -14,30 +14,43 @@ export const Example = props => {
     <LiveCodeBlock
       scope={{
         Button,
-        Modal,
+        ModalTrigger,
+        Dialog,
         Flex,
-        FlexItem
+        FlexItem,
+        Select,
       }}
       {...props}
     >
       {`<>
-            <Button onPress={setIsOpen}>Radera frukter</Button>
-            <Modal id="modal" title="Vill du radera alla frukter?" isOpen={isOpen} onOpenChange={setIsOpen}>
-                <p>Är du säker? De går inte att återskapa.</p>
-                <Flex fluid={true}>
-                    <FlexItem col='auto'>
-                        <Button onPress={() => setIsOpen(false)} variant="danger">Radera frukter</Button>
-                    </FlexItem>
-                    <FlexItem>
-                        <Button
-                            onPress={() => setIsOpen(false)}
-                            variant='secondary'
-                        >
-                            Avbryt
-                        </Button>
-                    </FlexItem>
-                </Flex>
-            </Modal>
+            <ModalTrigger
+        label={'Radera frukter'}
+        isDismissable={true}
+      >
+        {(close) => (
+          <Dialog title='Vill du radera alla frukter?'>
+          <p>Är du säker? De går inte att återskapa.</p>
+          <Flex fluid={true}>
+            <FlexItem col='auto'>
+            <Button
+              variant={'danger'}
+              onPress={close}
+            >
+              Radera frukter
+            </Button>
+            </FlexItem>
+            <FlexItem col='auto'>
+             <Button
+              variant={'secondary'}
+              onPress={close}
+            >
+              Avbryt
+            </Button>
+            </FlexItem>
+            </Flex>
+          </Dialog>
+        )}
+      </ModalTrigger>
         </>`}
     </LiveCodeBlock>
   )
@@ -46,7 +59,7 @@ export const Example = props => {
 <ComponentHeader
   name={'Modal'}
   friendlyName='Modal, Dialog, Dialogruta'
-  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Dialog.html'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useDialog.html'
 />
 
 Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak.
@@ -60,12 +73,15 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { Modal } from '@midas-ds/components'
-
-const [isOpen, setIsOpen] = React.useState<boolean>(false)
+import { ModalTrigger, Dialog } from '@midas-ds/components'
 ```
 
 <Example hideExample />
+
+## Varianter
+
+Använd `isOpen` och `onOpenChange` för att kontrollera om modalen är öppen eller stängd. För att stänga modal via klick utanför
+modalens yta, sätt `isDismissable={true}`.
 
 ## Avancerat innehåll
 
@@ -74,44 +90,51 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 <LiveCodeBlock
   scope={{
     Button,
-    Modal,
+    ModalTrigger,
+    Dialog,
     Flex,
     FlexItem,
     Heading,
+    Select,
     TextArea
   }}
 >
   {`<>
-    <Button onPress={setIsOpen}>Öppna modal</Button>
-    <Modal id="avsluta" title="Vill du avsluta uppdraget?" isOpen={isOpen} onOpenChange={setIsOpen}>
-        <Flex fluid={true} style={{marginBottom: '1rem'}}>
-            <FlexItem col>
-                <TextArea
-                    autoFocus
-                    label='Ange anledning'
-                    description='Skriv anledning'
-                    maxCharacters={100}
-                />
-            </FlexItem>
-        </Flex>
-        <Flex fluid={true}>
+       <ModalTrigger
+        label={'Öppna modal'}
+        isDismissable={true}
+      >
+        {(close) => (
+          <Dialog title='Vill du avsluta uppdraget?'>
+          <Flex fluid={true} style={{marginBottom: '1rem'}}>
+          <FlexItem col>
+          <TextArea label={'Ange anledning'} description={'Skriv anledning'} maxCharacters={100} autoFocus />
+          </FlexItem>
+          </Flex>
+          <Flex fluid={true}>
             <FlexItem col='auto'>
-                <Button onPress={() => setIsOpen(false)}>Spara korrespondens</Button>
+            <Button
+              onPress={close}
+            >
+              Spara korrespondens
+            </Button>
             </FlexItem>
-            <FlexItem>
-                <Button
-                    onPress={() => setIsOpen(false)}
-                    variant='secondary'
-                >
-                    Avbryt
-                </Button>
+            <FlexItem col='auto'>
+             <Button
+              variant={'secondary'}
+              onPress={close}
+            >
+              Avbryt
+            </Button>
             </FlexItem>
-        </Flex>
-    </Modal>
-</>`}
+            </Flex>
+          </Dialog>
+        )}
+      </ModalTrigger>
+        </>`}
 
 </LiveCodeBlock>
 
 ## API
 
-<PropTable name='Modal' />
+<PropTable name='ModalTrigger' />

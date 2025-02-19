@@ -6,7 +6,7 @@ import { Select } from '../select'
 
 const meta: Meta<typeof ModalTrigger> = {
   component: ModalTrigger,
-  title: 'Components/Dialog',
+  title: 'Components/Modal',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered'
