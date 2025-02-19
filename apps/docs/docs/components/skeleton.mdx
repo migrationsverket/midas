@@ -1,5 +1,5 @@
 ---
-title: Skeleton
+title: Skeleton loader
 description: Laddningsindikator för komponenter
 ---
 
@@ -53,14 +53,12 @@ Detta är standardvarianten. Används som platshållare för text och de flesta 
 
 Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` och sätter automatiskt höjden så att den blir rund.
 
-{' '}
 <LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton variant='circle' width='48px'/>`}</LiveCodeBlock>
 
 ## Animation
 
 Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga av med `animation= 'false'`.
 
-{' '}
 <LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton height='48px' animation='false'/>`}</LiveCodeBlock>
 
 ## Riktlinjer
