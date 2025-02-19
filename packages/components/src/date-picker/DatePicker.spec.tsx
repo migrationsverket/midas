@@ -1,9 +1,12 @@
-import { render } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import { renderWithForm } from '../../tests/utils/browser'
 import { DatePicker } from './'
+
+const label = 'Välj ett datum'
 
 describe('DatePicker', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<DatePicker label={'Välj ett datum'}/>)
-    expect(baseElement).toBeTruthy()
+    renderWithForm(<DatePicker label={label} />)
+    expect(screen.getByText(label)).toBeInTheDocument()
   })
 })
