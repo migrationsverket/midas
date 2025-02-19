@@ -6,7 +6,7 @@
   --headerHeight: 60px;
 
   @media mdBreakpoint {
-    --headerHeight: 85px;
+    --headerHeight: 80px;
   }
 }
 
