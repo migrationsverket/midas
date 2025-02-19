@@ -36,6 +36,8 @@ var getComponentMetaData = __webpack_require__(80059);
 var CodeBlock = __webpack_require__(71372);
 // EXTERNAL MODULE: ./packages/components/src/skeleton/Skeleton.tsx + 1 modules
 var Skeleton = __webpack_require__(3264);
+// EXTERNAL MODULE: ./packages/components/src/link/Link.tsx + 1 modules
+var Link = __webpack_require__(78815);
 ;// ./apps/docs/docs/components/skeleton.mdx
 
 
@@ -196,6 +198,11 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För val av laddningsindikator se ", (0,jsx_runtime.jsx)(Link/* Link */.N, {
+        href: "/design-patterns/page-loading",
+        children: "Mönster för laddningsindikatorer"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
@@ -221,6 +228,35 @@ function MDXContent(props = {}) {
 
 /***/ }),
 
+/***/ 78815:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  N: () => (/* binding */ Link)
+});
+
+// UNUSED EXPORTS: RouterProvider
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/components/src/link/Link.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Link_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","blue130":"#25607f","blue150":"#143c50","gray150":"#1f1f1f","gray50":"#bfbfbf","mediumWeight":"500","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","regularWeight":"400","linkVisited":"#663366","black":"#000000","link":"link_RCbb","icon":"icon_Bxuv","standalone":"standalone_Cg9F","stretched":"stretched_pvQw"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
+var dist_Link = __webpack_require__(73099);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+var arrow_right = __webpack_require__(48635);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/link/Link.tsx
+'use client';var _excluded=["children","standalone","stretched","icon","className","as"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||dist_Link/* Link */.N;return/*#__PURE__*/(0,jsx_runtime.jsx)(Component,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
+
+/***/ }),
+
 /***/ 3264:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -241,6 +277,33 @@ var clsx = __webpack_require__(34164);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/skeleton/Skeleton.tsx
 var Skeleton=function Skeleton(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'rectangular':_ref$variant,width=_ref.width,height=_ref.height,_ref$animation=_ref.animation,animation=_ref$animation===void 0?'wave':_ref$animation;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(Skeleton_module.skeleton,Skeleton_module[variant],animation&&Skeleton_module[animation]),style:{width:width,height:height}});};
+
+/***/ }),
+
+/***/ 48635:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ArrowRight)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ArrowRight", [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+]);
+
+
+//# sourceMappingURL=arrow-right.js.map
+
 
 /***/ })
 
