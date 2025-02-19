@@ -7290,6 +7290,13 @@ CSS variables, meant to be overridden by final theme
     background: #143c50 50% 50% no-repeat content-box;
   }
 
+@media (forced-colors: active) {
+
+.radio_U9gG[data-selected]::before {
+      background: buttonText;
+  }
+    }
+
 .radio_U9gG[data-selected][data-pressed]::before {
     border-color: #b3b3b3;
     background: #b3b3b3 50% 50% no-repeat content-box;
