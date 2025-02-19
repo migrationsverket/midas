@@ -1,38 +1,27 @@
+'use client'
+
 import clsx from 'clsx'
 import { Link } from 'react-aria-components'
 import { Tooltip, TooltipTrigger } from '../../tooltip'
 import styles from '../Layout.module.css'
 import { SidebarLinkProps } from '../Layout'
 import * as React from 'react'
+import { useLayoutContext } from '../context/LayoutContext'
 
-export const SidebarLink = ({
+export const SidebarLink: React.FC<SidebarLinkProps> = ({
   title,
   href,
-  active,
   icon: IconComponent,
-  isCollapsed,
-  setIsOpened,
-}: SidebarLinkProps & {
-  isCollapsed: boolean
-  setIsOpened: React.Dispatch<React.SetStateAction<boolean>>
+  active,
 }) => {
-  const [showText, setShowText] = React.useState(false)
+  const { isCollapsed, setIsOpened } = useLayoutContext()
+  const [isActive, setIsActive] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    let timeoutId: NodeJS.Timeout
-
-    if (!isCollapsed) {
-      timeoutId = setTimeout(() => {
-        setShowText(true)
-      }, 100)
-    } else {
-      setShowText(false)
+    if (typeof window !== 'undefined') {
+      setIsActive(active ?? window.location.pathname === href)
     }
-
-    return () => {
-      clearTimeout(timeoutId)
-    }
-  }, [isCollapsed])
+  }, [active, href])
 
   if (isCollapsed)
     return (
@@ -43,9 +32,9 @@ export const SidebarLink = ({
           className={clsx(
             styles.listLink,
             styles.listLinkCollapsed,
-            active && styles.active,
+            isActive && styles.active,
           )}
-          onPressChange={() => setIsOpened(false)}
+          onPress={() => setIsOpened(false)}
         >
           <IconComponent
             size={20}
@@ -60,11 +49,11 @@ export const SidebarLink = ({
     <Link
       href={href}
       aria-label={title}
-      className={clsx(styles.listLink, active && styles.active)}
-      onPressChange={() => setIsOpened(false)}
+      className={clsx(styles.listLink, isActive && styles.active)}
+      onPress={() => setIsOpened(false)}
     >
       <IconComponent size={20} />
-      {showText && <span className={styles.linkText}>{title}</span>}
+      {title}
     </Link>
   )
 }

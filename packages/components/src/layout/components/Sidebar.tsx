@@ -1,33 +1,27 @@
 'use client'
 
 import clsx from 'clsx'
-import { App, SidebarLinkGroup } from '../Layout'
+import { SidebarLinkGroup } from '../Layout'
 import styles from '../Layout.module.css'
-import { RouterProvider } from '../../link'
+import { RouterProvider } from 'react-aria-components'
 import { Button } from '../../button'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import * as React from 'react'
 import { SidebarLink } from './SidebarLink'
+import { useLayoutContext } from '../context/LayoutContext'
 
-export interface MidasSidebar {
-  items: SidebarLinkGroup[]
-  app: App
-  isOpened?: boolean
-  isCollapsed: boolean
-  setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>
-  setIsOpened: React.Dispatch<React.SetStateAction<boolean>>
-  clientSideRouter?: (path: string, routerOptions: undefined) => void
-}
+export const Sidebar: React.FC = () => {
+  const {
+    items,
+    app,
+    isOpened,
+    isCollapsed,
+    setIsCollapsed,
+    setIsOpened,
+    clientSideRouter,
+    clientSideHref,
+  } = useLayoutContext()
 
-export const Sidebar: React.FC<MidasSidebar> = ({
-  items,
-  app,
-  isOpened,
-  isCollapsed,
-  setIsCollapsed,
-  setIsOpened,
-  clientSideRouter,
-}) => {
   const LinkTree = ({ group }: { group: SidebarLinkGroup }) => {
     return (
       <ul className={styles.list}>
@@ -39,16 +33,25 @@ export const Sidebar: React.FC<MidasSidebar> = ({
               isCollapsed && styles.listItemCollapsed,
             )}
           >
-            <SidebarLink
-              {...link}
-              isCollapsed={isCollapsed}
-              setIsOpened={setIsOpened}
-            />
+            <SidebarLink {...link} />
           </li>
         ))}
       </ul>
     )
   }
+
+  React.useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpened(false)
+      }
+    }
+    window.addEventListener('keydown', handleEsc)
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc)
+    }
+  }, [setIsOpened])
 
   return (
     <aside
@@ -67,7 +70,10 @@ export const Sidebar: React.FC<MidasSidebar> = ({
                 <p className={styles.listGroupTitle}>{group.title}</p>
               )}
               {clientSideRouter ? (
-                <RouterProvider navigate={clientSideRouter}>
+                <RouterProvider
+                  navigate={clientSideRouter}
+                  useHref={clientSideHref}
+                >
                   <LinkTree group={group} />
                 </RouterProvider>
               ) : (

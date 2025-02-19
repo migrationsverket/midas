@@ -3,7 +3,6 @@ import { Layout, SidebarLinkGroup } from './Layout'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
 import { baseColors } from '../theme'
 import { LinkButton } from '../link-button'
-import { Header } from './components/Header'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
@@ -77,41 +76,31 @@ const AppExample = () => {
 export const Primary: Story = {
   args: {
     items: items,
-    user: {
-      name: 'Namn Namnsson',
-      title: 'Roll eller behörighet',
-    },
-    app: {
-      name: 'Namn på applikationen',
-    },
+    user: { name: 'Namn Namnsson', title: 'Roll eller behörighet' },
+    app: { name: 'Namn på applikationen' },
     title: 'Skapa ansökningar',
     children: <AppExample />,
-    headerChildren: (
-      <LinkButton
-        variant='tertiary'
-        target='_blank'
-      >
-        Öppna annan tjänst
-      </LinkButton>
-    ),
   },
 }
 
 export const OnlyHeader: Story = {
   render: () => (
-    <Header
-      title='Skapa ansökningar'
-      user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
-      app={{ name: 'Namn på applikationen' }}
-      headerChildren={
-        <LinkButton
-          variant='tertiary'
-          target='_blank'
-        >
-          Öppna annan tjänst
-        </LinkButton>
-      }
-    />
+    <Layout.Provider
+      title='Remix Vite Test App'
+      user={{ name: 'Test Testsson', title: 'Testare' }}
+      app={{ name: 'Remix Vite Test App' }}
+    >
+      <Layout.Header
+        headerChildren={
+          <LinkButton
+            variant='tertiary'
+            target='_blank'
+          >
+            Öppna annan tjänst
+          </LinkButton>
+        }
+      />
+    </Layout.Provider>
   ),
 }
 

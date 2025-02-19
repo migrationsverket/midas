@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '../../button'
 import styles from '../Layout.module.css'
 import * as React from 'react'
