@@ -34,11 +34,12 @@ export interface TableProps extends AriaTableProps {
   striped?: boolean
 }
 
-export const Table = ({ narrow, striped, ...rest }: TableProps) => {
+export const Table = ({ narrow, striped, className, ...rest }: TableProps) => {
   const classNames = clsx(
     styles.table,
     narrow && styles.narrow,
     striped && styles.striped,
+    className,
   )
 
   return (
