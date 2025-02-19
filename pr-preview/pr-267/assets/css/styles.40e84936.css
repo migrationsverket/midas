@@ -6201,6 +6201,14 @@ CSS variables, meant to be overridden by final theme
     background: #e6e6e6;
   }
 
+@media (forced-colors: active) {
+
+.listBoxItem_snA8[data-focused='true'] {
+      outline: 3px solid highlight;
+      outline-offset: -2px;
+  }
+    }
+
 .modal_PJ14 {
   font-family: "Inter", sans-serif;
   position: fixed;
@@ -6320,6 +6328,14 @@ CSS variables, meant to be overridden by final theme
   forced-color-adjust: none;
   display: flex;
 }
+
+@media (forced-colors: active) {
+
+.checkboxInner_Nam1 {
+    outline: 3px solid highlight;
+    outline-offset: -2px;
+}
+  }
 
 .checkboxInner_Nam1 svg {
     width: 1rem;
@@ -6712,6 +6728,19 @@ CSS variables, meant to be overridden by final theme
       box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
     }
 
+@media (forced-colors: active) {
+
+.datePickerTextfield_ALJK button:focus-visible {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+    }
+
+.datePickerTextfield_ALJK button[data-focus-visible] {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+    }
+      }
+
 .date_KkTk {
   display: flex;
 }
@@ -6730,6 +6759,14 @@ CSS variables, meant to be overridden by final theme
     outline: none;
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
   }
+
+@media (forced-colors: active) {
+
+.date_KkTk div:focus-visible,.date_KkTk div[data-focus-visible] {
+      outline: 3px solid highlight;
+      outline-offset: 0;
+  }
+    }
 
 .dialog_YZ_z {
   background-color: #f2f2f2;
@@ -6759,6 +6796,19 @@ CSS variables, meant to be overridden by final theme
       outline: none;
       box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000000;
     }
+
+@media (forced-colors: active) {
+
+.dialogHeader_dLeC button:focus-visible {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+    }
+
+.dialogHeader_dLeC button[data-focus-visible] {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+    }
+      }
 
 .dialogHeading_khTB {
   font-size: 1rem;
@@ -6829,6 +6879,14 @@ CSS variables, meant to be overridden by final theme
 .calendar_X6VN div:focus-visible,.calendar_X6VN div[data-focus-visible] {
     outline: 2px solid #000000;
   }
+
+@media (forced-colors: active) {
+
+.calendar_X6VN div:focus-visible,.calendar_X6VN div[data-focus-visible] {
+      outline: 3px solid activeText;
+      outline-offset: 2px;
+  }
+    }
 
 @keyframes slideInEnd_Alfu {
   from {
@@ -8280,6 +8338,14 @@ CSS variables, meant to be overridden by final theme
     background: #e6e6e6;
   }
 
+@media (forced-colors: active) {
+
+.listBoxItem_yOJV[data-focused='true'] {
+      outline: 3px solid highlight;
+      outline-offset: -2px;
+  }
+    }
+
 .listBoxItem_yOJV[data-disabled='true'] {
     color: #bfbfbf;
   }
@@ -8483,6 +8549,14 @@ CSS variables, meant to be overridden by final theme
 .listBoxItem__2sz[data-focused='true'] {
     background: #e6e6e6;
   }
+
+@media (forced-colors: active) {
+
+.listBoxItem__2sz[data-focused='true'] {
+      outline: 3px solid highlight;
+      outline-offset: -2px;
+  }
+    }
 
 .listBoxItem__2sz[data-disabled='true'] {
     color: #bfbfbf;
