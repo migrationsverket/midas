@@ -8,16 +8,16 @@ const meta: Meta<typeof TextField> = {
   argTypes: {
     label: {
       type: 'string',
-      description: 'Etikett'
+      description: 'Etikett',
     },
     description: {
-      type: 'string'
+      type: 'string',
     },
     type: {
       options: ['password', 'text', 'email'],
-      control: { type: 'select' }
-    }
-  }
+      control: { type: 'select' },
+    },
+  },
 }
 export default meta
 type Story = StoryObj<typeof TextField>
@@ -25,37 +25,37 @@ type Story = StoryObj<typeof TextField>
 export const Primary: Story = {
   args: {
     label: 'Label',
-    description: 'Description'
-  }
+    description: 'Description',
+  },
 }
 
 export const Password = {
   args: {
     label: 'Enter Password',
-    type: 'password'
-  }
+    type: 'password',
+  },
 }
 
 export const NotValid = {
   args: {
     ...Primary.args,
     isInvalid: true,
-    errorMessage: 'Fel i valideringen'
-  }
+    errorMessage: 'Fel i valideringen',
+  },
 }
 
 export const Required = {
   args: {
     ...Primary.args,
-    isRequired: true
-  }
+    isRequired: true,
+  },
 }
 
 export const Disabled = {
   args: {
     ...Primary.args,
-    isDisabled: true
-  }
+    isDisabled: true,
+  },
 }
 
 export const Personnummer = {
@@ -65,20 +65,20 @@ export const Personnummer = {
     label: 'Personnummer',
     description: undefined,
     errorMessage: `Fel format för ett personnummer`,
-    maxCharacters: 12
-  }
+    maxLength: 12,
+  },
 }
 
-export const MaxCharacters = {
+export const MaxLength = {
   args: {
     ...Primary.args,
-    maxCharacters: 50
-  }
+    maxLength: 50,
+  },
 }
 
 export const ShowCounter = {
   args: {
     ...Primary.args,
-    showCounter: true
-  }
+    showCounter: true,
+  },
 }
