@@ -36,15 +36,21 @@ jobs:
         if: github.event.action != 'closed'
         run: npm ci
 
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
       - name: Build website
         if: github.event.action != 'closed'
         run: npx nx run docs:build --minify=false --outputPath=dist/docs
+
       - name: Build storybook
         if: github.event.action != 'closed'
         run: npx nx run components:build-storybook:ci
+        env:
+          TARGET_URL: '${{ github.event.deployment_status.target_url }}'
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./dist/docs
-          custom-url: 'designsystem.migrationsverket.se'
+          pages-base-url: 'designsystem.migrationsverket.se'
