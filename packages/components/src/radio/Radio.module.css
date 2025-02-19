@@ -66,6 +66,10 @@
     padding: 0.188rem;
     border-width: 0.1rem;
     background: blue150 50% 50% no-repeat content-box;
+
+    @media (forced-colors: active) {
+      background: buttonText;
+    }
   }
 
   &[data-selected][data-pressed]::before {
