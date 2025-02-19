@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Dialog, ModalTrigger } from './Dialog'
 import { Button } from '../button'
 import React from 'react'
-import { PressEvent } from 'react-aria-components'
 import { Select } from '../select'
 
 const meta: Meta<typeof ModalTrigger> = {
@@ -49,42 +48,54 @@ const fruits = [
 const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
+const Render = ({...args}) => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false)
+
+  return (
+    <>
+      <ModalTrigger
+        {...args}
+      >
+        {(close) => (
+          <Dialog title='Enter your name'>
+            <Select
+              autoFocus
+              placeholder={'Select...'}
+              defaultSelectedKeys={['kiwi']}
+              label={'Select fruits'}
+              selectionMode={'multiple'}
+              options={options}
+              isClearable
+              isSelectableAll={false}
+            ></Select>
+            <Button
+              onPress={close}
+              style={{ marginTop: 10 }}
+            >
+              Submit
+            </Button>
+          </Dialog>
+        )}
+      </ModalTrigger>
+    </>
+  )
+}
 
 export const Default: Story = {
-  args: {},
-  render: function Render() {
-    const [isOpen, setIsOpen] = React.useState<boolean>(false)
-
-    return (
-      <>
-        <ModalTrigger
-          label={'open dialog'}
-          isDismissable
-        >
-          {(close: ((e: PressEvent) => void) | undefined) => (
-            <Dialog title='Enter your name'>
-              <Select
-                placeholder={'Select...'}
-                defaultSelectedKeys={['kiwi']}
-                label={'Select a single fruit'}
-                selectionMode={'single'}
-                options={options}
-                isClearable={false}
-                isSelectableAll={false}
-                onSelectionChange={x =>
-                  console.log('[single]onSelectionChange', x)
-                }
-              ></Select>
-              <Button
-                onPress={close}
-                style={{ marginTop: 10 }}
-              >
-                Submit
-              </Button>
-            </Dialog>
-          )}
-        </ModalTrigger>
-      </>
-    )
-  }
+  args: {
+    isDismissable: true,
+    label: 'Visa fruktval',
+    defaultOpen: false,
+  },
+  render: Render,
 }
+
+export const NotDismissable: Story = {
+  args: {
+    ...Default.args,
+    label: 'Klicka utanför',
+    isDismissable: false,
+  },
+  render: Render,
+}
+

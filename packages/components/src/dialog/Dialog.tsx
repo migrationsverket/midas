@@ -1,14 +1,23 @@
-import { AriaDialogProps, useModalOverlay, Overlay, useOverlayTrigger } from 'react-aria'
-import {useDialog} from 'react-aria';
-import React from 'react'
+import {
+  AriaDialogProps,
+  useModalOverlay,
+  Overlay,
+  useOverlayTrigger,
+  OverlayTriggerAria,
+} from 'react-aria'
+import { useDialog } from 'react-aria'
+import * as React from 'react'
 import { useOverlayTriggerState } from 'react-stately'
 import { Button } from '../button'
 import styles from './Dialog.module.css'
 import { X } from 'lucide-react'
+import { AriaModalOverlayProps } from '@react-aria/overlays'
+import { OverlayTriggerState } from '@react-stately/overlays'
+import { OverlayTriggerProps } from '@react-types/overlays'
 
 interface DialogProps extends AriaDialogProps {
-  title?: React.ReactNode;
-  children: React.ReactNode;
+  title?: React.ReactNode
+  children: React.ReactNode
 }
 
 export const Dialog: React.FC<DialogProps> = ({
@@ -40,7 +49,12 @@ export const Dialog: React.FC<DialogProps> = ({
   )
 }
 
-const Modal: React.FC<any> = ({ state, children,...props })=> {
+type MidasModalProps = {
+  state: OverlayTriggerState
+  children: React.ReactNode
+} & AriaModalOverlayProps
+
+const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
   let ref = React.useRef(null)
   let { modalProps, underlayProps } = useModalOverlay(props, state, ref)
 
@@ -54,10 +68,6 @@ const Modal: React.FC<any> = ({ state, children,...props })=> {
           className={styles.modal}
           {...modalProps}
           ref={ref}
-          style={{
-            background: 'white',
-            border: '1px solid gray'
-          }}
         >
           {children}
         </div>
@@ -66,9 +76,14 @@ const Modal: React.FC<any> = ({ state, children,...props })=> {
   )
 }
 
-export const ModalTrigger: React.FC<any> = ({ label, children, ...props })=> {
+export const ModalTrigger: React.FC<
+  OverlayTriggerProps & { isDismissable?: boolean } & {
+    children: (close: () => void) => any
+    label?: string | undefined
+  }
+> = ({ label, children, ...props }) => {
   let state = useOverlayTriggerState(props)
-  let { triggerProps, overlayProps } = useOverlayTrigger(
+  let { triggerProps, overlayProps }: OverlayTriggerAria = useOverlayTrigger(
     { type: 'dialog' },
     state,
   )

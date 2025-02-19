@@ -5,14 +5,9 @@ import {
   Logo,
   TextField,
   Select,
-  Flex,
-  FlexItem,
-  Modal,
   Dialog,
-  NewModal,
   ModalTrigger
 } from '@midas-ds/components'
-import { Form, PressEvent } from 'react-aria-components'
 import React from 'react'
 
 const fruits = [
@@ -54,13 +49,45 @@ export function App() {
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
   return (
     <div className={styles.container}>
+      <Button onPress={() => setIsOpen(p => !p)}>klick</Button>
       <ModalTrigger
-        label={'open dialog'}
-        isDismissable
+        label={'open dialog (not controlled)'}
+        isDismissable={true}
       >
         {(close) => (
           <Dialog title='Enter your name'>
             <Select
+              autoFocus={true}
+              placeholder={'Select...'}
+              defaultSelectedKeys={['kiwi']}
+              label={'Select a single fruit'}
+              selectionMode={'single'}
+              options={options}
+              isClearable={false}
+              isSelectableAll={false}
+              onSelectionChange={x =>
+                console.log('[single]onSelectionChange', x)
+              }
+            ></Select>
+            <Button
+              onPress={close}
+              style={{ marginTop: 10 }}
+            >
+              Submit
+            </Button>
+          </Dialog>
+        )}
+      </ModalTrigger>
+      <ModalTrigger
+        label={'open dialog (controlled)'}
+        onOpenChange={setIsOpen}
+        isDismissable={true}
+        isOpen={isOpen}
+      >
+        {(close) => (
+          <Dialog title='Enter your name'>
+            <Select
+              autoFocus={true}
               placeholder={'Select...'}
               defaultSelectedKeys={['kiwi']}
               label={'Select a single fruit'}
