@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6158],{
 
-/***/ 39546:
+/***/ 38434:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -19,7 +19,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-skeleton-mdx-25b.json
-const site_docs_components_skeleton_mdx_25b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/skeleton","title":"Skeleton","description":"Laddningsindikator för komponenter","source":"@site/docs/components/skeleton.mdx","sourceDirName":"components","slug":"/components/skeleton","permalink":"/pr-preview/pr-249/components/skeleton","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Skeleton","description":"Laddningsindikator för komponenter","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_components_skeleton_mdx_25b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/skeleton","title":"Skeleton loader","description":"Laddningsindikator för komponenter","source":"@site/docs/components/skeleton.mdx","sourceDirName":"components","slug":"/components/skeleton","permalink":"/pr-preview/pr-249/components/skeleton","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Skeleton loader","description":"Laddningsindikator för komponenter","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -34,20 +34,13 @@ var propsTable = __webpack_require__(38355);
 var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./packages/components/src/skeleton/Skeleton.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Skeleton_module = ({"skeleton":"skeleton_r1UF","circle":"circle_V2WO","wave":"wave_h9Fk"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-;// ./packages/components/src/skeleton/Skeleton.tsx
-var Skeleton=function Skeleton(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'rectangular':_ref$variant,width=_ref.width,height=_ref.height,_ref$animation=_ref.animation,animation=_ref$animation===void 0?'wave':_ref$animation;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(Skeleton_module.skeleton,Skeleton_module[variant],animation&&Skeleton_module[animation]),style:{width:width,height:height}});};
+// EXTERNAL MODULE: ./packages/components/src/skeleton/Skeleton.tsx + 1 modules
+var Skeleton = __webpack_require__(3264);
 ;// ./apps/docs/docs/components/skeleton.mdx
 
 
 const frontMatter = {
-	title: 'Skeleton',
+	title: 'Skeleton loader',
 	description: 'Laddningsindikator för komponenter',
 	pagination_prev: null,
 	pagination_next: null
@@ -69,7 +62,7 @@ const assets = {
 const Example = props => {
   return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
     scope: {
-      Skeleton: Skeleton
+      Skeleton: Skeleton/* Skeleton */.E
     },
     ...props,
     children: `<Skeleton height='48px'/>`
@@ -181,9 +174,9 @@ function _createMdxContent(props) {
       children: ["Används för cirkulära komponenter, tex avatar. Circle behöver bara ", (0,jsx_runtime.jsx)(_components.code, {
         children: "width"
       }), " och sätter automatiskt höjden så att den blir rund."]
-    }), "\n", ' ', "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Skeleton: Skeleton
+        Skeleton: Skeleton/* Skeleton */.E
       },
       children: `<Skeleton variant='circle' width='48px'/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
@@ -195,9 +188,9 @@ function _createMdxContent(props) {
       }), " aktiverad. Den går att stänga av med ", (0,jsx_runtime.jsx)(_components.code, {
         children: "animation= 'false'"
       }), "."]
-    }), "\n", ' ', "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Skeleton: Skeleton
+        Skeleton: Skeleton/* Skeleton */.E
       },
       children: `<Skeleton height='48px' animation='false'/>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
@@ -225,6 +218,29 @@ function MDXContent(props = {}) {
 }
 
 
+
+/***/ }),
+
+/***/ 3264:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  E: () => (/* binding */ Skeleton)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/skeleton/Skeleton.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Skeleton_module = ({"skeleton":"skeleton_r1UF","circle":"circle_V2WO","wave":"wave_h9Fk"});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/skeleton/Skeleton.tsx
+var Skeleton=function Skeleton(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'rectangular':_ref$variant,width=_ref.width,height=_ref.height,_ref$animation=_ref.animation,animation=_ref$animation===void 0?'wave':_ref$animation;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(Skeleton_module.skeleton,Skeleton_module[variant],animation&&Skeleton_module[animation]),style:{width:width,height:height}});};
 
 /***/ })
 
