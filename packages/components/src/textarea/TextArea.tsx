@@ -5,7 +5,7 @@ import {
   TextField as AriaTextField,
   TextArea as AriaTextArea,
   ValidationResult,
-  TextFieldProps as AriaTextFieldProps
+  TextFieldProps as AriaTextFieldProps,
 } from 'react-aria-components'
 import { InputWrapper } from '../textfield'
 import TextFieldStyles from '../textfield/TextField.module.css'
@@ -21,6 +21,8 @@ export interface TextAreaProps extends AriaTextFieldProps {
   rows?: number
   /** Set number of characters that are allowed before the TextArea is put in an invalid state */
   maxCharacters?: number
+  /** Set minimum number of characters that are allowed before the TextArea is put in an invalid state */
+  minLength?: number
   /**
    * Whether to show the character counter or not
    * @default
@@ -35,6 +37,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   description,
   rows,
   maxCharacters,
+  minLength,
   errorMessage,
   showCounter,
   validate,
@@ -52,7 +55,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
         <span
           className={clsx(
             styles.count,
-            value.length > maxCharacters && styles.countExceeded
+            value.length > maxCharacters && styles.countExceeded,
           )}
         >
           {value.length} / {maxCharacters}
@@ -73,9 +76,14 @@ export const TextArea: React.FC<TextAreaProps> = ({
         ? `Du har angett ${value.length - maxCharacters} tecken för mycket. Fältet är begränsat till ${maxCharacters} tecken.`
         : null
 
+    const minLengthError =
+      minLength && value.length < minLength
+        ? `Du har angett ${Math.abs(value.length - minLength)} tecken för lite. Fältet kräver åtminstone ${minLength} tecken.`
+        : null
+
     const otherValidationError = validate ? validate(value) : null
 
-    return maxCharactersError || otherValidationError || true
+    return maxCharactersError || minLengthError || otherValidationError || true
   }
 
   return (
