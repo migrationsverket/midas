@@ -14,8 +14,12 @@ import { X } from 'lucide-react'
 import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { OverlayTriggerState } from '@react-stately/overlays'
 import { OverlayTriggerProps } from '@react-types/overlays'
+import clsx from 'clsx'
 
 interface DialogProps extends AriaDialogProps {
+  /**
+   * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
+   */
   title?: React.ReactNode
   children: React.ReactNode
 }
@@ -25,24 +29,23 @@ export const Dialog: React.FC<DialogProps> = ({
   children,
   ...props
 }: DialogProps) => {
-  let ref = React.useRef(null)
-  let { dialogProps, titleProps } = useDialog(props, ref)
+  const ref = React.useRef(null)
+  const { dialogProps, titleProps } = useDialog(props, ref)
 
   return (
     <div
       {...dialogProps}
       ref={ref}
       className={styles.modalBody}
+      aria-modal={true}
     >
       {title && (
-        <>
-          <h2
-            {...titleProps}
-            className={styles.modalHeading}
-          >
-            {title}
-          </h2>
-        </>
+        <h2
+          {...titleProps}
+          className={clsx(styles.modalHeading, titleProps.className)}
+        >
+          {title}
+        </h2>
       )}
       {children}
     </div>
@@ -55,18 +58,18 @@ type MidasModalProps = {
 } & AriaModalOverlayProps
 
 const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
-  let ref = React.useRef(null)
-  let { modalProps, underlayProps } = useModalOverlay(props, state, ref)
+  const ref = React.useRef(null)
+  const { modalProps, underlayProps } = useModalOverlay(props, state, ref)
 
   return (
     <Overlay>
       <div
-        className={styles.overlay}
         {...underlayProps}
+        className={clsx(styles.overlay, underlayProps.className)}
       >
         <div
-          className={styles.modal}
           {...modalProps}
+          className={clsx(styles.modal, modalProps.className)}
           ref={ref}
         >
           {children}
@@ -78,12 +81,12 @@ const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
 
 export const ModalTrigger: React.FC<
   OverlayTriggerProps & { isDismissable?: boolean } & {
-    children: (close: () => void) => any
+    children: (close: () => void) => JSX.Element
     label?: string | undefined
   }
 > = ({ label, children, ...props }) => {
-  let state = useOverlayTriggerState(props)
-  let { triggerProps, overlayProps }: OverlayTriggerAria = useOverlayTrigger(
+  const state = useOverlayTriggerState(props)
+  const { triggerProps, overlayProps }: OverlayTriggerAria = useOverlayTrigger(
     { type: 'dialog' },
     state,
   )
@@ -92,24 +95,22 @@ export const ModalTrigger: React.FC<
     <>
       <Button {...triggerProps}>{label}</Button>
       {state.isOpen && (
-        <>
-          <Modal
-            {...props}
-            state={state}
-          >
-            <div className={styles.modalHeader}>
-              <Button
-                onPress={state.close}
-                variant='tertiary'
-                icon={X}
-                iconPlacement='right'
-              >
-                Stäng
-              </Button>
-            </div>
-            {React.cloneElement(children(state.close), overlayProps)}
-          </Modal>
-        </>
+        <Modal
+          {...props}
+          state={state}
+        >
+          <div className={styles.modalHeader}>
+            <Button
+              onPress={state.close}
+              variant='tertiary'
+              icon={X}
+              iconPlacement='right'
+            >
+              Stäng
+            </Button>
+          </div>
+          {React.cloneElement(children(state.close), overlayProps)}
+        </Modal>
       )}
     </>
   )
