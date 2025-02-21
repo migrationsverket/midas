@@ -1,2 +1,6 @@
 import * as React from 'react';
-export declare const SkipLink: React.FC;
+interface SkipLinkProps {
+    id?: string;
+}
+export declare const SkipLink: React.FC<SkipLinkProps>;
+export {};
