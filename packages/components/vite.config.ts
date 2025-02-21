@@ -19,9 +19,9 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
       include: ['src'],
-      exclude: ['**/*.stories.{ts,tsx}']
+      exclude: ['**/*.stories.{ts,tsx}'],
     }),
-    libInjectCss()
+    libInjectCss(),
   ],
   // Uncomment this if you are using workers.
   // worker: {
@@ -34,7 +34,7 @@ export default defineConfig({
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
-      transformMixedEsModules: true
+      transformMixedEsModules: true,
     },
     lib: {
       // Could also be a dictionary or array of multiple entry points.
@@ -74,6 +74,6 @@ export default defineConfig({
       //   // assetFileNames: 'assets/[name][extname]',
       //   // entryFileNames: '[name].js',
       // }
-    }
-  }
+    },
+  },
 })
