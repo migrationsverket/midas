@@ -1,6 +1,21 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "release": {
+    "conventionalCommits": {
+      "types": {
+        "docs": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "Documentation Changes"
+          }
+        },
+        "chore": {
+          "changelog": {
+            "hidden": true
+          }
+        }
+      }
+    },
     "changelog": {
       "projectChangelogs": true,
       "automaticFromRef": true
