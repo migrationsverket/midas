@@ -3,6 +3,12 @@
   "release": {
     "conventionalCommits": {
       "types": {
+        "test": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": true
+          }
+        },
         "docs": {
           "semverBump": "none",
           "changelog": {
