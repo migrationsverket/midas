@@ -4,13 +4,14 @@ import {
   FileTrigger as AriaFileTrigger,
   FileTriggerProps as AriaFileTriggerProps,
   DropZone,
-  Text
+  Text,
 } from 'react-aria-components'
 import React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
 import { InputWrapper } from '../textfield'
+import { DropEvent } from 'react-aria'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -27,7 +28,8 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   allowsMultiple,
   label,
   description,
-  dropzone
+  dropzone,
+  ...rest
 }) => {
   const [files, setFiles] = React.useState<FileState>(null)
 
@@ -36,10 +38,10 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
     // TODO: actually handle files?
   }
 
-  const handleDrop = async (e: any) => {
+  const handleDrop = async (e: DropEvent) => {
     const filePromises = e.items
-      .filter((file: any) => file.kind === 'file')
-      .map((file: any) => file.getFile())
+      .filter(file => file.kind === 'file')
+      .map(file => file.getFile())
 
     const resolvedFiles: File[] = await Promise.all(filePromises)
     setFiles(resolvedFiles)
@@ -77,6 +79,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
         <AriaFileTrigger
           allowsMultiple={allowsMultiple}
           onSelect={files => handleUpload(files)}
+          {...rest}
         >
           <Button
             variant='secondary'
