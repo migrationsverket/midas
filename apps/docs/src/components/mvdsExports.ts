@@ -22,6 +22,9 @@ import {
   Card,
   Select,
   GridItem,
+  Tooltip,
+  Dropdown,
+  DropdownItem,
 } from '@midas-ds/components'
 
 import { theme } from '@midas-ds/components/theme'
@@ -51,4 +54,7 @@ export {
   Tabs,
   TextArea,
   theme,
+  Tooltip,
+  Dropdown,
+  DropdownItem,
 }
