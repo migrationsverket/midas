@@ -103,12 +103,13 @@ Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[
 ### Dossiernummer
 
 Använd egenskapen `validationType="dossnr"` för att slå på vår validering av dossiernummer.
-Följande RegEx används <br /> `^(\\d{1,2}[-+]?\\d{6}(?:[-/]\\d{1,2})?|\\d{6})$`
+Följande RegEx används <br /> `^(\\d{1,2}\\+\\d{6}-\\d{1,2}$|\\d{1,2}-\\d{6}(/\\d{1,2})?$|\\d{1,2}\\d{6}$|\\d{6,8}$)`
 
 - En eller två siffror `\d{1,2}`.
-- Följt av antingen `-` eller `+` och sex siffror `[-+]?\\d{6}`.
-- Eventuellt följt av `-` eller `/` och en eller två siffror `(?:[-/]\\d{1,2})?`.
-- Eller sex siffror `\d{6}`.
+- Följt av antingen `+` och sex siffror, följt av `-` och en eller två siffror `\\+\\d{6}-\\d{1,2}`.
+- Eller följt av `-` och sex siffror, eventuellt följt av `/` och en eller två siffror `-\\d{6}(/\\d{1,2})?`.
+- Eller en eller två siffror följt av sex siffror `\d{1,2}\d{6}`.
+- Eller sex till åtta siffror `\d{6,8}`.
 
 <LiveCodeBlock scope={{ TextField }}>
   {`<TextField
@@ -164,3 +165,4 @@ Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adob
 ## API
 
 <PropTable name='TextField' />
+````
