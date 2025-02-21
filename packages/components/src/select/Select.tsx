@@ -119,7 +119,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       autoFocus,
       className,
       excludeFromTabOrder,
-      isClearable,
+      isClearable = true,
       isDisabled,
       isSelectableAll,
       label,
