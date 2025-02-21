@@ -69,6 +69,16 @@ export const Personnummer = {
   },
 }
 
+export const Dossnr: Story = {
+  args: {
+    ...Primary.args,
+    validationType: 'dossnr',
+    label: 'Dossiernummer',
+    description: undefined,
+    errorMessage: `Fel format för ett dossiernummer`,
+  },
+}
+
 export const MaxLength = {
   args: {
     ...Primary.args,
