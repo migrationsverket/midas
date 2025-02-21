@@ -1,4 +1,4 @@
 export interface DependenciesExecutorSchema {
-  outputDir: string;
+  outputDir: string
   filter?: string
 } // eslint-disable-line

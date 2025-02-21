@@ -43,6 +43,11 @@
   &:focus-visible {
     box-shadow: focus;
     outline: none;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
   }
 
   &[data-disabled] {
@@ -61,6 +66,10 @@
     padding: 0.188rem;
     border-width: 0.1rem;
     background: blue150 50% 50% no-repeat content-box;
+
+    @media (forced-colors: active) {
+      background: buttonText;
+    }
   }
 
   &[data-selected][data-pressed]::before {

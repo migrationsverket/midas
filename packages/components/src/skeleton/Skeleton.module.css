@@ -1,0 +1,44 @@
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  background: #f2f2f2;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  min-height: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.skeleton.circle {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.skeleton.wave::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0 0 0 /10%),
+    transparent
+  );
+  animation: wave 2s infinite ease-in-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}

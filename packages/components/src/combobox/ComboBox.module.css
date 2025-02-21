@@ -21,6 +21,11 @@
     border: none;
     outline: none;
     box-shadow: focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
   }
 
   &[data-disabled] {
@@ -114,5 +119,10 @@
 
   &[data-focused='true'] {
     background: gray20;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: -2px;
+    }
   }
 }
