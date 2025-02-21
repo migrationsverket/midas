@@ -6,16 +6,20 @@ import user from '../../tests/utils/user'
 import { mockedNow } from '../../tests/utils/time'
 
 const label = 'Calendar'
+const testId = 'Calendar'
 
 describe('given a basic DatePicker', () => {
   beforeEach(() => {
-    renderWithForm(<DatePicker label={label} />)
+    renderWithForm(
+      <DatePicker
+        data-testid={testId}
+        label={label}
+      />,
+    )
   })
 
   it('should have no accessibility violations', async () => {
-    expect(
-      await axe(screen.getByLabelText(label, { selector: 'button' })),
-    ).toHaveNoViolations()
+    expect(await axe(screen.getByTestId(testId))).toHaveNoViolations()
   })
 })
 
@@ -55,8 +59,8 @@ describe('given a DatePicker with a custom error message and custom validation r
   })
 
   /**
-   * This test is made to fail because the current year is not allowed
-   * the "user" selects todays date and submits the form
+   * This test is made to create an invalid DatePicker
+   * the current year is not allowed the "user" selects todays date and submits the form
    */
   it('should show the custom error message if the constraints was not satisfied', async () => {
     await user.tab()
