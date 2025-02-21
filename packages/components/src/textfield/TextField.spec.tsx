@@ -121,3 +121,48 @@ describe('given a TextField with showCounter and an initial defaultValue', () =>
     expect(screen.getByText('3')).toBeInTheDocument()
   })
 })
+
+describe('given a TextField with dossnr validation', () => {
+  const labelText = 'Dossiernummer'
+  const testCases = [
+    { value: '1-123456/1', isValid: true },
+    { value: '12+123456-1', isValid: true },
+    { value: '1-123456', isValid: true },
+    { value: '1+123456', isValid: true },
+    { value: '123456', isValid: true },
+    { value: '12123456', isValid: true },
+    { value: '123-123456/1', isValid: false },
+    { value: '1-123', isValid: false },
+  ]
+
+  beforeEach(() => {
+    render(
+      <TextField
+        label={labelText}
+        type='text'
+        validationType='dossnr'
+        errorMessage='Fel format för ett dossiernummer'
+      />,
+    )
+  })
+
+  testCases.forEach(({ value, isValid }) => {
+    it(`should ${isValid ? 'validate' : 'show error for'} dossiernummer format: ${value}`, async () => {
+      const input = screen.getByLabelText(labelText)
+
+      await user.type(input, value)
+      await user.tab() // Move focus away to trigger validation
+
+      expect(input).toHaveValue(value)
+      if (isValid) {
+        expect(
+          screen.queryByText('Fel format för ett dossiernummer'),
+        ).toBeNull()
+      } else {
+        expect(
+          screen.getByText('Fel format för ett dossiernummer'),
+        ).toBeInTheDocument()
+      }
+    })
+  })
+})

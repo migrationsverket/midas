@@ -103,12 +103,12 @@ Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[
 ### Dossiernummer
 
 Använd egenskapen `validationType="dossnr"` för att slå på vår validering av dossiernummer.
-Följande RegEx används <br /> `/\d{1,2}[-+]?\d{6}([-/]\d{1,2})?$/`
+Följande RegEx används <br /> `^(\\d{1,2}[-+]?\\d{6}(?:[-/]\\d{1,2})?|\\d{6})$`
 
-- En eller två siffror `d{1,2}`.
-- Följt av frivillig del av skiljetecken, antingen ett `-` eller ett `+` `[-+]?`.
-- Följt av sex siffror `d{6}`.
-- Följt av frivillig del av `/` eller `-` samt en eller två siffror `(/\d{1,2})?`.
+- En eller två siffror `\d{1,2}`.
+- Följt av antingen `-` eller `+` och sex siffror `[-+]?\\d{6}`.
+- Eventuellt följt av `-` eller `/` och en eller två siffror `(?:[-/]\\d{1,2})?`.
+- Eller sex siffror `\d{6}`.
 
 <LiveCodeBlock scope={{ TextField }}>
   {`<TextField
