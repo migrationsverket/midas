@@ -19,6 +19,7 @@ export * from './multi-select';
 export * from './radio';
 export * from './search-field';
 export * from './select';
+export * from './skeleton';
 export * from './spinner';
 export * from './table';
 export * from './tag';
