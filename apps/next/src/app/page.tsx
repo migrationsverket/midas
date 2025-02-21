@@ -25,7 +25,7 @@ export default function Index() {
         link={{
           href: '',
           children: '',
-          title: ''
+          title: '',
         }}
         content='Hej'
       ></Card>
