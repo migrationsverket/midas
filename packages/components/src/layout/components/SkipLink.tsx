@@ -4,13 +4,15 @@ import { Button } from '../../button'
 import styles from '../Layout.module.css'
 import * as React from 'react'
 
-export const SkipLink: React.FC = ({
-  id = 'main:first-of-type',
-}: {
+interface SkipLinkProps {
   id?: string
+}
+
+export const SkipLink: React.FC<SkipLinkProps> = ({
+  id = '#main:first-of-type',
 }) => {
   const handleSkipToContent = () => {
-    const container: HTMLElement | null = document.querySelector(id)
+    const container = document.querySelector<HTMLElement>(id)
 
     if (container) {
       container.tabIndex = -1

@@ -302,6 +302,7 @@
 }
 
 .backdrop {
+  pointer-events: none;
   display: none;
   position: fixed;
   inset: 0;
@@ -311,8 +312,10 @@
   transition-behavior: allow-discrete;
 
   &.backdropOpened {
+    pointer-events: all;
     opacity: 1;
     display: block;
+    transition: all 200ms;
   }
 }
 
@@ -331,7 +334,6 @@
   top: 0;
   right: 100%;
   z-index: 1047;
-  visibility: hidden;
 
   &[data-focus-visible],
   &:focus-visible {

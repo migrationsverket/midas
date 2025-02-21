@@ -42,7 +42,7 @@ export const Header: React.FC = () => {
           className={styles.toggleButton}
           aria-label={isOpened ? 'Stäng meny' : 'Öppna meny'}
           aria-controls='midasMainMenu'
-          onPress={() => {
+          onPressStart={() => {
             setIsCollapsed(false)
             setIsOpened(true)
           }}
