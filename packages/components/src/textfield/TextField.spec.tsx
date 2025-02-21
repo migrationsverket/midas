@@ -85,3 +85,54 @@ describe('given a TextField with dossnr validation', () => {
     })
   })
 })
+
+describe('given a TextField with ssn validation', () => {
+  const labelText = 'Personnummer'
+  const testCases = [
+    { value: '19900101-1234', isValid: true },
+    { value: '900101-1234', isValid: true },
+    { value: '19900101 1234', isValid: true },
+    { value: '900101 1234', isValid: true },
+    { value: '199001011234', isValid: true },
+    { value: '9001011234', isValid: true },
+    { value: '19900101+1234', isValid: true },
+    { value: '900101+1234', isValid: true },
+    { value: '19900101-123', isValid: false },
+    { value: '900101-123', isValid: false },
+    { value: '19900101 123', isValid: false },
+    { value: '900101 123', isValid: false },
+    { value: '19900101123', isValid: false },
+    { value: '900101123', isValid: false },
+    { value: '19900101+123', isValid: false },
+    { value: '900101+123', isValid: false },
+  ]
+
+  beforeEach(() => {
+    render(
+      <TextField
+        label={labelText}
+        type='text'
+        validationType='ssn'
+        errorMessage='Fel format för ett personnummer'
+      />,
+    )
+  })
+
+  testCases.forEach(({ value, isValid }) => {
+    it(`should ${isValid ? 'validate' : 'show error for'} personnummer format: ${value}`, async () => {
+      const input = screen.getByLabelText(labelText)
+
+      await user.type(input, value)
+      await user.tab() // Move focus away to trigger validation
+
+      expect(input).toHaveValue(value)
+      if (isValid) {
+        expect(screen.queryByText('Fel format för ett personnummer')).toBeNull()
+      } else {
+        expect(
+          screen.getByText('Fel format för ett personnummer'),
+        ).toBeInTheDocument()
+      }
+    })
+  })
+})
