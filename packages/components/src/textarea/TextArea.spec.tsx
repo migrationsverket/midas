@@ -1,22 +1,13 @@
-import { render, screen } from '@testing-library/react'
-import { TextArea, TextAreaProps } from './TextArea'
+import { screen } from '@testing-library/react'
+import { TextArea } from './TextArea'
 import { axe } from 'jest-axe'
 import user from '../../tests/utils/user'
+import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'Enter your text here'
 
-const TestForm = (props: TextAreaProps) => (
-  <form>
-    <TextArea
-      {...props}
-      label={label}
-    />
-    <button type='submit'>Submit</button>
-  </form>
-)
-
 describe('given a default TextArea', () => {
-  beforeEach(() => render(<TestForm />))
+  beforeEach(() => renderWithForm(<TextArea label={label} />))
 
   it('should have no accessibility violations', async () => {
     expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
@@ -25,8 +16,9 @@ describe('given a default TextArea', () => {
 
 describe('given a TextArea with maxLength and minLength', () => {
   beforeEach(() =>
-    render(
-      <TestForm
+    renderWithForm(
+      <TextArea
+        label={label}
         maxLength={4}
         minLength={2}
       />,
@@ -59,7 +51,14 @@ describe('given a TextArea with maxLength and minLength', () => {
 })
 
 describe('given a required TextArea', () => {
-  beforeEach(() => render(<TestForm isRequired />))
+  beforeEach(() =>
+    renderWithForm(
+      <TextArea
+        label={label}
+        isRequired
+      />,
+    ),
+  )
 
   it('should give a validation error if the user entered no text', async () => {
     await user.tab()
@@ -75,8 +74,9 @@ describe('given a TextArea with custom validation', () => {
   const errorMessage = 'Only numbers are allowed'
 
   beforeEach(() =>
-    render(
-      <TestForm
+    renderWithForm(
+      <TextArea
+        label={label}
         validate={(value: string) =>
           !/^\d+$/.test(value) ? errorMessage : true
         }
