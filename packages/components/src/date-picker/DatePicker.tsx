@@ -4,7 +4,7 @@ import type {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
-  ValidationResult
+  ValidationResult,
 } from 'react-aria-components'
 import {
   Button,
@@ -19,7 +19,7 @@ import {
   Heading,
   Popover,
   RangeCalendar,
-  Calendar
+  Calendar,
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
@@ -49,7 +49,7 @@ export const DateRangePicker = <T extends DateValue>({
       className={clsx(
         TextFieldStyles.inputField,
         styles.datePicker,
-        props.className
+        props.className,
       )}
       ref={ref}
     >
@@ -67,7 +67,6 @@ export const DateRangePicker = <T extends DateValue>({
           >
             {segment => (
               <DateSegment
-                // @ts-ignore
                 className={styles.dateSegment}
                 segment={segment}
               />
@@ -146,10 +145,9 @@ export const DatePicker = <T extends DateValue>({
     <AriaDatePicker
       {...props}
       className={clsx(
-        // @ts-ignore
         TextFieldStyles.inputField,
         styles.datePicker,
-        props.className
+        props.className,
       )}
       ref={ref}
     >
@@ -159,7 +157,6 @@ export const DatePicker = <T extends DateValue>({
         errorMessage={errorMessage}
       >
         <Group
-          // @ts-ignore
           className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
         >
           <DateInput className={styles.date}>
