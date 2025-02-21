@@ -191,5 +191,5 @@ export const ssnRegEx = new RegExp(
 )
 
 const dossNrRegEx = new RegExp(
-  '^(\\d{1,2}[-+]?\\d{6}(?:[-/]\\d{1,2})?|\\d{6})$',
+  '^(\\d{1,2}\\+\\d{6}-\\d{1,2}$|\\d{1,2}-\\d{6}(/\\d{1,2})?$|\\d{1,2}\\d{6}$|\\d{6,8}$)',
 )
