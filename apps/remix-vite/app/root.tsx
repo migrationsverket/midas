@@ -10,7 +10,7 @@ import type { MetaFunction } from '@remix-run/node'
 import '../../../packages/components/src/theme/global.css'
 import { Layout as MidasLayout, SidebarLinkGroup } from '@midas-ds/components'
 import { House, Info } from 'lucide-react'
-import { useNavigate, useHref } from '@remix-run/react'
+import { useNavigate } from '@remix-run/react'
 
 export const meta: MetaFunction = () => [
   {
@@ -56,7 +56,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           user={{ name: 'Test Testsson', title: 'Testare' }}
           app={{ name: 'Remix Vite Test App' }}
           clientSideRouter={navigate}
-          clientSideHref={useHref}
         >
           {children}
         </MidasLayout>

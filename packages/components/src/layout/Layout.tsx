@@ -4,9 +4,9 @@ import styles from './Layout.module.css'
 import { LucideIcon } from 'lucide-react'
 import { FlexItem } from '../flex'
 import * as React from 'react'
-import { Sidebar as LayoutSidebar } from './components/Sidebar'
-import { Header as LayoutHeader } from './components/Header'
-import { SidebarLink as LayoutSidebarLink } from './components/SidebarLink'
+import { Sidebar } from './components/Sidebar'
+import { Header } from './components/Header'
+import { SidebarLink } from './components/SidebarLink'
 import { SkipLink } from './components/SkipLink'
 import { Href } from '@react-types/shared'
 import { LayoutProvider } from './context/LayoutContext'
@@ -60,9 +60,9 @@ export interface MidasLayout {
 
 export const Layout: React.FC<MidasLayout> & {
   Provider: typeof LayoutProvider
-  Header: typeof LayoutHeader
-  Sidebar: typeof LayoutSidebar
-  SidebarLink: typeof LayoutSidebarLink
+  Header: typeof Header
+  Sidebar: typeof Sidebar
+  SidebarLink: typeof SidebarLink
 } = ({
   items,
   title,
@@ -108,6 +108,6 @@ export const Layout: React.FC<MidasLayout> & {
 }
 
 Layout.Provider = LayoutProvider
-Layout.Header = LayoutHeader
-Layout.Sidebar = LayoutSidebar
-Layout.SidebarLink = LayoutSidebarLink
+Layout.Header = Header
+Layout.Sidebar = Sidebar
+Layout.SidebarLink = SidebarLink

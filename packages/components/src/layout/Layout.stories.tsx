@@ -86,20 +86,24 @@ export const Primary: Story = {
 export const OnlyHeader: Story = {
   render: () => (
     <Layout.Provider
+      items={items}
       title='Remix Vite Test App'
       user={{ name: 'Test Testsson', title: 'Testare' }}
       app={{ name: 'Remix Vite Test App' }}
+      headerChildren={
+        <LinkButton
+          variant='tertiary'
+          target='_blank'
+        >
+          Öppna annan tjänst
+        </LinkButton>
+      }
+      isCollapsed={false}
+      setIsCollapsed={() => null}
+      isOpened={false}
+      setIsOpened={() => null}
     >
-      <Layout.Header
-        headerChildren={
-          <LinkButton
-            variant='tertiary'
-            target='_blank'
-          >
-            Öppna annan tjänst
-          </LinkButton>
-        }
-      />
+      <Layout.Header />
     </Layout.Provider>
   ),
 }
