@@ -35,7 +35,11 @@ describe('given a FileUpload with a custom select handler', () => {
 
   it('should use the provided onSelect callback', async () => {
     const testFile = new File(['derp'], 'derp.png', { type: 'image/png' })
-    await user.upload(screen.getByTestId(label), testFile)
+    const fileUpload: HTMLInputElement = screen.getByTestId(label)
+    await user.upload(fileUpload, testFile)
     expect(onSelect).toHaveBeenCalledTimes(1)
+    expect(fileUpload?.files?.[0]).toStrictEqual(testFile)
+    expect(fileUpload?.files?.item(0)).toStrictEqual(testFile)
+    expect(fileUpload.files).toHaveLength(1)
   })
 })
