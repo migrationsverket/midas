@@ -2,52 +2,29 @@
 
 import {
   FileTrigger as AriaFileTrigger,
+  FileTriggerProps as AriaFileTriggerProps,
   DropZone,
   Text,
 } from 'react-aria-components'
-import React, { FC, ReactNode } from 'react'
+import React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
 import { InputWrapper } from '../textfield'
 import { DropEvent } from 'react-aria'
 
-export interface FileTriggerProps {
+export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
   label?: string
   /**  Additional description field */
   description?: string
   /**  Use DropZone version */
   dropzone?: boolean
-  /**
-   * Specifies what mime type of files are allowed.
-   */
-  acceptedFileTypes?: Array<string>
-  /**
-   * Whether multiple files can be selected.
-   */
-  allowsMultiple?: boolean
-  /**
-   * Specifies the use of a media capture mechanism to capture the media on the spot.
-   */
-  defaultCamera?: 'user' | 'environment'
-  /**
-   * Handler when a user selects a file.
-   */
-  onSelect?: (files: FileList | null) => void
-  /**
-   * The children of the component.
-   */
-  children?: ReactNode
-  /**
-   * Enables the selection of directories instead of individual files.
-   */
-  acceptDirectory?: boolean
 }
 
 type FileState = File[] | null | undefined
 
-export const FileUpload: FC<FileTriggerProps> = ({
+export const FileUpload: React.FC<FileTriggerProps> = ({
   allowsMultiple,
   label,
   description,
