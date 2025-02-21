@@ -24,8 +24,6 @@ export interface TextFieldProps extends AriaTextFieldProps {
   errorMessage?: string | ((validation: ValidationResult) => string) | undefined
   /** Enable validations or add your own regex */
   validationType?: 'ssn' | 'dossnr' | RegExp
-  /** Set number of characters that are allowed before the TextField is put in an invalid state */
-  maxCharacters?: number
   /**
    * Whether to show the character counter or not
    * @default
@@ -40,7 +38,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   errorMessage,
   validationType,
   validate,
-  maxCharacters,
+  maxLength,
   showCounter,
   ...props
 }) => {
@@ -65,9 +63,9 @@ export const TextField: React.FC<TextFieldProps> = ({
         ? null
         : errorMessage?.toString()
 
-    if (maxCharacters)
-      return maxCharacters && value.length > maxCharacters
-        ? `Du har angett ${value.length - maxCharacters} tecken för mycket. Fältet är begränsat till ${maxCharacters} tecken.`
+    if (maxLength)
+      return maxLength && value.length > maxLength
+        ? `Du har angett ${value.length - maxLength} tecken för mycket. Fältet är begränsat till ${maxLength} tecken.`
         : null
 
     if (validate) return validate(value)
@@ -76,15 +74,15 @@ export const TextField: React.FC<TextFieldProps> = ({
   }
 
   const Count = () => {
-    if (maxCharacters) {
+    if (maxLength) {
       return (
         <span
           className={clsx(
             styles.count,
-            value.length > maxCharacters && styles.countExceeded,
+            value.length > maxLength && styles.countExceeded,
           )}
         >
-          {value.length} / {maxCharacters}
+          {value.length} / {maxLength}
         </span>
       )
     }
