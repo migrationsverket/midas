@@ -7,7 +7,6 @@ import * as React from 'react'
 import { axe } from 'jest-axe'
 import { render, RenderResult, screen } from '@testing-library/react'
 import { Accordion, AccordionItem } from './'
-import { logDom } from 'packages/components/tests/utils/dom'
 
 const ITEMS = ['One', 'Two', 'Three']
 const testID = 'Accordion'
