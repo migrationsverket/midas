@@ -106,3 +106,19 @@ describe('given a TextArea with custom validation', () => {
     expect(screen.getByText(errorMessage)).toBeInTheDocument()
   })
 })
+
+describe('given a TextArea with showCounter and an initial value', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextArea
+        label={label}
+        showCounter
+        value='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
+  })
+})
