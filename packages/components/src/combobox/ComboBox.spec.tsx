@@ -30,9 +30,7 @@ describe('given a default ComboBox', () => {
   })
 
   it('should preserve its classNames when being passed new ones', async () => {
-    const accordion = screen.getByTestId(testID)
-    expect(accordion).toHaveClass('combobox')
-    expect(accordion).toHaveClass(testClass)
+    expect(screen.getByTestId(testID)).toHaveClass('combobox', testClass)
   })
 })
 
