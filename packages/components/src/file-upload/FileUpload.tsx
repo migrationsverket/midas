@@ -6,7 +6,7 @@ import {
   DropZone,
   Text,
 } from 'react-aria-components'
-import React from 'react'
+import * as React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
