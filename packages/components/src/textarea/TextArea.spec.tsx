@@ -5,12 +5,26 @@ import user from '../../tests/utils/user'
 import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'Enter your text here'
+const testID = 'test'
+const testClass = 'test'
 
 describe('given a default TextArea', () => {
-  beforeEach(() => renderWithForm(<TextArea label={label} />))
+  beforeEach(() =>
+    renderWithForm(
+      <TextArea
+        label={label}
+        className={testClass}
+        data-testid={testID}
+      />,
+    ),
+  )
 
   it('should have no accessibility violations', async () => {
     expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByTestId(testID)).toHaveClass('inputField', testClass)
   })
 })
 
