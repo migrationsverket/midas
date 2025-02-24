@@ -42,7 +42,9 @@ export const TextField: React.FC<TextFieldProps> = ({
   showCounter,
   ...props
 }) => {
-  const [value, setValue] = React.useState<string>(props.value || '')
+  const [value, setValue] = React.useState<string>(
+    props.defaultValue ?? props.value ?? '',
+  )
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value
