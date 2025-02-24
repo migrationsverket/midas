@@ -42,7 +42,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   className,
   ...props
 }) => {
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = React.useState(props.value || '')
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value
     setValue(newValue)
