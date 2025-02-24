@@ -5,26 +5,34 @@
 import '@testing-library/jest-dom'
 import * as React from 'react'
 import { axe } from 'jest-axe'
-import { render, RenderResult } from '@testing-library/react'
+import { render, RenderResult, screen } from '@testing-library/react'
 import { Accordion, AccordionItem } from './'
+import { logDom } from 'packages/components/tests/utils/dom'
 
 const ITEMS = ['One', 'Two', 'Three']
+const testID = 'Accordion'
+const testClass = 'test'
 
 describe('given a single Accordion', () => {
-  let rendered: RenderResult
-
   describe('with default orientation=vertical', () => {
     beforeEach(() => {
-      rendered = render(
+      render(
         <AccordionTest
           variant='uncontained'
           type='single'
-        />
+          data-testid={testID}
+          className={testClass}
+        />,
       )
     })
 
     it('should have no accessibility violations in default state', async () => {
-      expect(await axe(rendered.container)).toHaveNoViolations()
+      expect(await axe(screen.getByTestId(testID))).toHaveNoViolations()
+    })
+
+    it('should preserve its classNames when being passed new ones', async () => {
+      expect(screen.getByTestId(testID)).toHaveClass('root')
+      expect(screen.getByTestId(testID)).toHaveClass(testClass)
     })
 
     // describe('when navigating by keyboard', () => {
@@ -145,7 +153,7 @@ describe('given a multiple Accordion', () => {
       <AccordionTest
         variant='uncontained'
         type='multiple'
-      />
+      />,
     )
   })
 
