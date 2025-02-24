@@ -2,7 +2,6 @@
  * src: https://github.com/radix-ui/primitives/blob/main/packages/react/accordion/src/Accordion.test.tsx
  */
 
-import '@testing-library/jest-dom'
 import * as React from 'react'
 import { axe } from 'jest-axe'
 import { render, RenderResult, screen } from '@testing-library/react'
@@ -30,8 +29,7 @@ describe('given a single Accordion', () => {
     })
 
     it('should preserve its classNames when being passed new ones', async () => {
-      expect(screen.getByTestId(testID)).toHaveClass('root')
-      expect(screen.getByTestId(testID)).toHaveClass(testClass)
+      expect(screen.getByTestId(testID)).toHaveClass('root', testClass)
     })
 
     // describe('when navigating by keyboard', () => {
