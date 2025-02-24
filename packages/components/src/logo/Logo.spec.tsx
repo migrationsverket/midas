@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import { Logo } from './Logo'
 import { axe } from 'jest-axe'
 
@@ -27,7 +26,6 @@ describe('given a default Logo', () => {
   })
 
   it('should preserve its classNames when being passed new ones', async () => {
-    expect(screen.getByTestId(testID)).toHaveClass('container')
-    expect(screen.getByTestId(testID)).toHaveClass(testClass)
+    expect(screen.getByTestId(testID)).toHaveClass('container', testClass)
   })
 })
