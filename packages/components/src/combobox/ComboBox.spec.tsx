@@ -8,6 +8,8 @@ import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'basic combobox'
 const items = generateMockOptions(30)
+const testClass = 'test'
+const testID = 'test'
 
 describe('given a default ComboBox', () => {
   beforeEach(() => {
@@ -15,6 +17,8 @@ describe('given a default ComboBox', () => {
       <ComboBox
         items={items}
         aria-label={label}
+        data-testid={testID}
+        className={testClass}
       >
         {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
       </ComboBox>,
@@ -22,7 +26,13 @@ describe('given a default ComboBox', () => {
   })
 
   it('should have no accessibility violations', async () => {
-    expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+    expect(await axe(screen.getByTestId(testID))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    const accordion = screen.getByTestId(testID)
+    expect(accordion).toHaveClass('combobox')
+    expect(accordion).toHaveClass(testClass)
   })
 })
 
