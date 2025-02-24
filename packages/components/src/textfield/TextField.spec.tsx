@@ -81,3 +81,19 @@ describe('given a TextField with type "number"', () => {
     expect(screen.getByLabelText(label)).toHaveValue(null)
   })
 })
+
+describe('given a TextField with showCounter and an initial value', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        value='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
+  })
+})
