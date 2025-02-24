@@ -5,7 +5,7 @@ import {
   TagGroup as AriaTagGroup,
   TagGroupProps as AriaTagGroupProps,
   TagList,
-  TagProps as AriaTagProps
+  TagProps as AriaTagProps,
 } from 'react-aria-components'
 import { X } from 'lucide-react'
 import { Button } from '../button'
@@ -31,11 +31,12 @@ export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
 export const Tag: React.FC<TagProps> = ({
   children,
   dismissable,
+  className,
   ...props
 }) => {
   return (
     <AriaTag
-      className={clsx(styles.tag, dismissable && styles.dismissable)}
+      className={clsx(styles.tag, dismissable && styles.dismissable, className)}
       {...props}
     >
       <div className={styles.tagText}>{children}</div>
