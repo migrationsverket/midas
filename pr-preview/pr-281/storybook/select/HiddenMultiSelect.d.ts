@@ -21,11 +21,11 @@ export interface HiddenMultiSelectProps<T> extends AriaHiddenMultiSelectProps {
     /** A ref to the trigger element. */
     triggerRef: RefObject<FocusableElement | null>;
 }
-export interface AriaHiddenMultiSelectOptions extends AriaHiddenMultiSelectProps {
+interface AriaHiddenMultiSelectOptions extends AriaHiddenMultiSelectProps {
     /** A ref to the hidden `<select>` element. */
     selectRef?: RefObject<HTMLSelectElement | null>;
 }
-export interface HiddenMultiSelectAria {
+interface HiddenMultiSelectAria {
     /** Props for the container element. */
     containerProps: React.HTMLAttributes<FocusableElement>;
     /** Props for the hidden input element. */
@@ -44,3 +44,4 @@ export declare function useHiddenMultiSelect<T>({ autoComplete, name, isDisabled
  * form autofill, mobile form navigation, and native form submission.
  */
 export declare function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>): import("react/jsx-runtime").JSX.Element | null;
+export {};
