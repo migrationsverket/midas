@@ -8636,6 +8636,13 @@ CSS variables, meant to be overridden by final theme
     box-shadow: inset 0 0 0 3px #e62323;
   }
 
+@media (forced-colors: active) {
+
+.button_qOaA[data-invalid='true'] {
+      border: 5px solid Highlight !important;
+  }
+    }
+
 .buttonOpen_JL6G .icon_roiA svg {
     transform: rotate(180deg);
   }
