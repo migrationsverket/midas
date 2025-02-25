@@ -1,5 +1,5 @@
 import { FileTriggerProps as AriaFileTriggerProps } from 'react-aria-components';
-import { default as React } from '../../../../node_modules/react';
+import * as React from 'react';
 export interface FileTriggerProps extends AriaFileTriggerProps {
     /** Label for the file upload button */
     label?: string;
