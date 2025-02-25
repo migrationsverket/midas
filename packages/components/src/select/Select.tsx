@@ -106,6 +106,8 @@ type SelectProps = {
   errorMessage?: string
   /** Whether the field is required. */
   isRequired?: boolean
+  /** Name of the field, for uncontrolled use */
+  name?: string
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
@@ -206,10 +208,10 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
         <HiddenMultiSelect
           isDisabled={props.isDisabled}
           isRequired={props.isRequired}
+          name={props.name}
           state={state}
           triggerRef={ref}
           label={props.label}
-          name={'props.name'}
         />
         <TextField
           {...props}
