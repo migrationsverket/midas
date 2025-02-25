@@ -27,7 +27,7 @@ export function Dropdown<T extends object>({
   return (
     <MenuTrigger {...props}>
       <Button
-        aria-label={label}
+        aria-label={label || props['aria-label']}
         variant='icon'
       >
         {title}

@@ -36,6 +36,11 @@
     &[data-focus-visible] {
       outline: none;
       box-shadow: focus;
+
+      @media (forced-colors: active) {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+      }
     }
   }
 }
@@ -57,6 +62,11 @@
   & div[data-focus-visible] {
     outline: none;
     box-shadow: focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 0;
+    }
   }
 }
 
@@ -81,6 +91,11 @@
     &[data-focus-visible] {
       outline: none;
       box-shadow: focus;
+
+      @media (forced-colors: active) {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+      }
     }
   }
 }
@@ -152,5 +167,10 @@
   & div:focus-visible,
   & div[data-focus-visible] {
     outline: 2px solid black;
+
+    @media (forced-colors: active) {
+      outline: 3px solid activeText;
+      outline-offset: 2px;
+    }
   }
 }

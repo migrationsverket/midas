@@ -1,0 +1,130 @@
+---
+title: Layout
+description: En skalkomponent för att få en simpel sidomeny och sidhuvud.
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Layout, LinkButton } from '@midas-ds/components'
+import { baseColors } from '@midas-ds/components/theme'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
+
+export const AppExample = () => {
+  return (
+    <div
+      style={{
+        background: baseColors.white,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        border: `dotted 2px ${baseColors.gray20}`,
+      }}
+    >
+      Din applikation
+    </div>
+  )
+}
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Layout, LinkButton, Calendar, Gavel, House, Plus, ClipboardList, AppExample }}
+      {...props}
+    >
+      {`<Layout
+        items={[{
+          items: [
+            {
+              title: 'Översikt',
+              href: '#',
+              icon: House
+            }
+          ]
+        },
+        {
+          title: 'Ansökan',
+          items: [
+            {
+              title: 'Skapa ansökan',
+              href: '#',
+              icon: Plus
+            },
+            {
+              title: 'Beslut',
+              href: '#',
+              icon: Gavel
+            }
+          ]
+        },
+        {
+          title: 'Kort och konto',
+          items: [
+            {
+              title: 'LMA-kort',
+              href: '#',
+              icon: Calendar
+            },
+            {
+              title: 'Avvikelser',
+              href: '#',
+              icon: ClipboardList
+            }
+          ]
+        }]}
+        title='Skapa ansökningar'
+        user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+        app={{ name: 'Namn på applikationen' }}
+        headerChildren={
+          <LinkButton
+            variant='tertiary'
+            target='_blank'
+          >
+            Öppna annan tjänst
+          </LinkButton>
+        }
+      >
+          <AppExample /> 
+      </Layout>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'Layout'}
+  friendlyName='Meny, baslayout, sidomeny, sidhuvud'
+  overrideHeadlessLink=''
+/>
+
+En skalkomponent för att få en simpel sidomeny och sidhuvud.
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Layout } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+### Använda separat
+
+Det går att importera sidomenyn samt sidhuvudet som separata komponenter om så önskas, det är dock rekommenderat att använda hela Layoutkomponenten.
+
+```tsx
+import { Layout.Header, Layout.Sidebar } from '@midas-ds/components'
+```
+
+## Riktlinjer
+
+Kommer snart
+
+## API
+
+<PropTable name={'Layout'} />

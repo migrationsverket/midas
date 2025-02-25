@@ -1,3 +1,42 @@
+## 1.3.0 (2025-02-19)
+
+### 🚀 Features
+
+- **accordion:** support react nodes in title ([#259](https://github.com/migrationsverket/midas/pull/259))
+- **textfield:** add dossier number validation ([9092008ef](https://github.com/migrationsverket/midas/commit/9092008ef))
+- **textfield:** add dossier number validation ([#261](https://github.com/migrationsverket/midas/pull/261))
+
+### 🩹 Fixes
+
+- fix content to be readable by screen reader when use tab ([d49d8d4f9](https://github.com/migrationsverket/midas/commit/d49d8d4f9))
+- **accordion:** support any elements in title ([1129fd742](https://github.com/migrationsverket/midas/commit/1129fd742))
+- **card:** add React.useId to generate unique id ([160319d03](https://github.com/migrationsverket/midas/commit/160319d03))
+- **card:** fix to read title and content ([dd8d07c72](https://github.com/migrationsverket/midas/commit/dd8d07c72))
+- **card:** remove the id content from p tag ([54e4fe9cd](https://github.com/migrationsverket/midas/commit/54e4fe9cd))
+- **card:** clean the code ([a17aa2941](https://github.com/migrationsverket/midas/commit/a17aa2941))
+- **docs:** update theme imports ([5cbd797f4](https://github.com/migrationsverket/midas/commit/5cbd797f4))
+- **docs:** update theme imports ([#246](https://github.com/migrationsverket/midas/pull/246))
+- **table:** show hover background color for striped table ([a6b4f35d5](https://github.com/migrationsverket/midas/commit/a6b4f35d5))
+- **table:** remove unused props ([1cb0c2e69](https://github.com/migrationsverket/midas/commit/1cb0c2e69))
+- **table:** striped table hover effect and unused props ([#250](https://github.com/migrationsverket/midas/pull/250))
+- **table:** add pointer if row has a link ([9a62302ff](https://github.com/migrationsverket/midas/commit/9a62302ff))
+- **table:** add pointer if row has a link ([#262](https://github.com/migrationsverket/midas/pull/262))
+- **table:** preserve classNames when using props.className ([d7a9142cd](https://github.com/migrationsverket/midas/commit/d7a9142cd))
+- **table:** preserve classNames when using props.className ([#266](https://github.com/migrationsverket/midas/pull/266))
+- **textfield:** add dossier number validation ([b3027b5b9](https://github.com/migrationsverket/midas/commit/b3027b5b9))
+- **textfield:** +/- divider should be optional ([b1393263a](https://github.com/migrationsverket/midas/commit/b1393263a))
+- **theme:** point to theme types ([98e09424f](https://github.com/migrationsverket/midas/commit/98e09424f))
+- **theme:** point to theme types ([#248](https://github.com/migrationsverket/midas/pull/248))
+- **theme:** reorder theme export ([3398a0f68](https://github.com/migrationsverket/midas/commit/3398a0f68))
+- **theme:** reorder theme export ([#265](https://github.com/migrationsverket/midas/pull/265))
+
+### ❤️ Thank You
+
+- derpbravely
+- jabir Khalil
+- Wilhelm Hjelm
+- wilhjelmig @wilhjelmig
+
 ## 1.2.3 (2025-02-11)
 
 This was a version bump only, there were no code changes.
@@ -55,11 +94,11 @@ This was a version bump only, there were no code changes.
 - **Modal:** create a new component
 - **Modal:** create a new component
 - **Modal:** fix styling, delete not used codes and add button component
-- ⚠️  **accordion:** new build
-- ⚠️  **breadcrumbs:** new build
+- ⚠️ **accordion:** new build
+- ⚠️ **breadcrumbs:** new build
 - **button:** add react aria button component
 - **button:** added tertiary and danger themes
-- ⚠️  **button:** new build
+- ⚠️ **button:** new build
 - **button:** remove underline from tertiary button
 - **button:** add icon and iconSize prop and logic to make icon smaller when size=small
 - **button:** update button stories
@@ -67,69 +106,69 @@ This was a version bump only, there were no code changes.
 - **button:** add property to change button's icon direction
 - **button:** change inline style to class style
 - **button:** add buttongroup component, move mobile rules
-- ⚠️  **card:** new build
-- ⚠️  **card:** new api, replace button with stretched link
+- ⚠️ **card:** new build
+- ⚠️ **card:** new api, replace button with stretched link
 - **card:** support custom link component
 - **checkbox:** select all checkbox
 - **checkbox:** new wrapper
-- ⚠️  **checkbox:** new build
+- ⚠️ **checkbox:** new build
 - **combobox:** create a combobox component with styling
-- ⚠️  **combobox:** new build
+- ⚠️ **combobox:** new build
 - **date-picker:** new wrapper
 - **date-picker:** new datepicker
 - **date-picker:** datepicker renamed daterangepicker in favor of datepicker
-- ⚠️  **date-picker:** new build
+- ⚠️ **date-picker:** new build
 - **docs:** add docusaurus boilerplate
 - **dropdown:** new component
-- ⚠️  **file-upload:** new build
+- ⚠️ **file-upload:** new build
 - **fileupload:** new wrapper
 - **flex:** add fluid variant
 - **flex:** can now take all props of usual div
-- ⚠️  **flex:** new build
+- ⚠️ **flex:** new build
 - **grid:** add fluid variant
 - **grid:** can now take all props of usual div
-- ⚠️  **grid:** new build
+- ⚠️ **grid:** new build
 - **info-banner:** add support for ReactNodes in message
 - **info-banner:** dismissable banner
-- ⚠️  **info-banner:** new build
-- ⚠️  **link:** new build
+- ⚠️ **info-banner:** new build
+- ⚠️ **link:** new build
 - **link:** add standalone link variant
 - **link:** ability to stretch link in parent
 - **link:** add icon in prop, add disabeld, and add states in css
-- ⚠️  **link-button:** new build
+- ⚠️ **link-button:** new build
 - **link-button:** inherits api from button
 - **link-button:** add own style, delete unuse codes, and fix the stories
 - **link-button:** add full width
 - **link-button:** add full width and delete unuse code
 - **linkButton:** add icon
-- ⚠️  **logo:** new build
+- ⚠️ **logo:** new build
 - **logo:** new variants and refactor
-- ⚠️  **modal:** new API
+- ⚠️ **modal:** new API
 - **multi-select:** new component
 - **radio:** new wrapper
-- ⚠️  **radio:** new build + replace vite test
-- ⚠️  **search-field:** new build
+- ⚠️ **radio:** new build + replace vite test
+- ⚠️ **search-field:** new build
 - **searchfield:** props rewrite
 - **select:** new wrapper
-- ⚠️  **select:** new build
+- ⚠️ **select:** new build
 - **sidebar:** new component
-- ⚠️  **spinner:** new build
+- ⚠️ **spinner:** new build
 - **storybook:** add boilerplate storybook instance
 - **table:** new component!
-- ⚠️  **table:** new build
+- ⚠️ **table:** new build
 - **table:** add docs + striped option
-- ⚠️  **tabs:** new build
+- ⚠️ **tabs:** new build
 - **tag:** new component
 - **tertiary button:** change padding
 - **textArea:** creat textArea component
 - **textarea:** new component
 - **textarea:** new wrapper
-- ⚠️  **textarea:** new build
+- ⚠️ **textarea:** new build
 - **textfield:** add ssn validation
-- ⚠️  **textfield:** new build
+- ⚠️ **textfield:** new build
 - **textfield:** support counter and maxCharacters
 - **theme:** new build
-- ⚠️  **toast:** new build
+- ⚠️ **toast:** new build
 - **ui:** export new components
 - **ui:** new build
 
@@ -306,7 +345,7 @@ This was a version bump only, there were no code changes.
 - **link-button:** remove the duplicated code
 - **link-button:** change justify-content to center to make fullwidth look better
 - **link-button:** custom link component
-- **link-button:** external link icon on target _blank
+- **link-button:** external link icon on target \_blank
 - **linkButton:** use button style and fix the story for icon
 - **logo:** new build
 - **logo:** remove stories from build + clear changelog
@@ -430,33 +469,33 @@ This was a version bump only, there were no code changes.
 - **ui:** update deps
 - **ui:** update deps
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - **modal:** new API
 - **card:** new card api
-- ⚠️  **toast:** new build
-- ⚠️  **textfield:** new build
-- ⚠️  **textarea:** new build
-- ⚠️  **tabs:** new build
-- ⚠️  **table:** new build
-- ⚠️  **spinner:** new build
-- ⚠️  **select:** new build
-- ⚠️  **search-field:** new build
-- ⚠️  **radio:** new build + replace vite test
-- ⚠️  **logo:** new build
-- ⚠️  **link-button:** new build
-- ⚠️  **link:** new build
-- ⚠️  **info-banner:** new build
-- ⚠️  **grid:** new build
-- ⚠️  **flex:** new build
-- ⚠️  **file-upload:** new build
-- ⚠️  **date-picker:** new build
-- ⚠️  **combobox:** new build
-- ⚠️  **checkbox:** new build
-- ⚠️  **card:** new build
-- ⚠️  **button:** new build
-- ⚠️  **breadcrumbs:** new build
-- ⚠️  **accordion:** new build
+- ⚠️ **toast:** new build
+- ⚠️ **textfield:** new build
+- ⚠️ **textarea:** new build
+- ⚠️ **tabs:** new build
+- ⚠️ **table:** new build
+- ⚠️ **spinner:** new build
+- ⚠️ **select:** new build
+- ⚠️ **search-field:** new build
+- ⚠️ **radio:** new build + replace vite test
+- ⚠️ **logo:** new build
+- ⚠️ **link-button:** new build
+- ⚠️ **link:** new build
+- ⚠️ **info-banner:** new build
+- ⚠️ **grid:** new build
+- ⚠️ **flex:** new build
+- ⚠️ **file-upload:** new build
+- ⚠️ **date-picker:** new build
+- ⚠️ **combobox:** new build
+- ⚠️ **checkbox:** new build
+- ⚠️ **card:** new build
+- ⚠️ **button:** new build
+- ⚠️ **breadcrumbs:** new build
+- ⚠️ **accordion:** new build
 
 ### ❤️ Thank You
 
@@ -475,10 +514,10 @@ This was a version bump only, there were no code changes.
 - **Modal:** create a new component
 - **Modal:** create a new component
 - **Modal:** fix styling, delete not used codes and add button component
-- ⚠️  **accordion:** new build
-- ⚠️  **breadcrumbs:** new build
+- ⚠️ **accordion:** new build
+- ⚠️ **breadcrumbs:** new build
 - **button:** added tertiary and danger themes
-- ⚠️  **button:** new build
+- ⚠️ **button:** new build
 - **button:** remove underline from tertiary button
 - **button:** add icon and iconSize prop and logic to make icon smaller when size=small
 - **button:** update button stories
@@ -486,67 +525,67 @@ This was a version bump only, there were no code changes.
 - **button:** add property to change button's icon direction
 - **button:** change inline style to class style
 - **button:** add buttongroup component, move mobile rules
-- ⚠️  **card:** new build
-- ⚠️  **card:** new api, replace button with stretched link
+- ⚠️ **card:** new build
+- ⚠️ **card:** new api, replace button with stretched link
 - **card:** support custom link component
 - **checkbox:** select all checkbox
 - **checkbox:** new wrapper
-- ⚠️  **checkbox:** new build
+- ⚠️ **checkbox:** new build
 - **combobox:** create a combobox component with styling
-- ⚠️  **combobox:** new build
+- ⚠️ **combobox:** new build
 - **date-picker:** new wrapper
 - **date-picker:** new datepicker
 - **date-picker:** datepicker renamed daterangepicker in favor of datepicker
-- ⚠️  **date-picker:** new build
+- ⚠️ **date-picker:** new build
 - **dropdown:** new component
-- ⚠️  **file-upload:** new build
+- ⚠️ **file-upload:** new build
 - **fileupload:** new wrapper
 - **flex:** add fluid variant
 - **flex:** can now take all props of usual div
-- ⚠️  **flex:** new build
+- ⚠️ **flex:** new build
 - **grid:** add fluid variant
 - **grid:** can now take all props of usual div
-- ⚠️  **grid:** new build
+- ⚠️ **grid:** new build
 - **info-banner:** add support for ReactNodes in message
 - **info-banner:** dismissable banner
-- ⚠️  **info-banner:** new build
-- ⚠️  **link:** new build
+- ⚠️ **info-banner:** new build
+- ⚠️ **link:** new build
 - **link:** add standalone link variant
 - **link:** ability to stretch link in parent
 - **link:** add icon in prop, add disabeld, and add states in css
-- ⚠️  **link-button:** new build
+- ⚠️ **link-button:** new build
 - **link-button:** inherits api from button
 - **link-button:** add own style, delete unuse codes, and fix the stories
 - **link-button:** add full width
 - **link-button:** add full width and delete unuse code
 - **linkButton:** add icon
-- ⚠️  **logo:** new build
+- ⚠️ **logo:** new build
 - **logo:** new variants and refactor
-- ⚠️  **modal:** new API
+- ⚠️ **modal:** new API
 - **multi-select:** new component
 - **radio:** new wrapper
-- ⚠️  **radio:** new build + replace vite test
-- ⚠️  **search-field:** new build
+- ⚠️ **radio:** new build + replace vite test
+- ⚠️ **search-field:** new build
 - **searchfield:** props rewrite
 - **select:** new wrapper
-- ⚠️  **select:** new build
+- ⚠️ **select:** new build
 - **sidebar:** new component
-- ⚠️  **spinner:** new build
+- ⚠️ **spinner:** new build
 - **table:** new component!
-- ⚠️  **table:** new build
+- ⚠️ **table:** new build
 - **table:** add docs + striped option
-- ⚠️  **tabs:** new build
+- ⚠️ **tabs:** new build
 - **tag:** new component
 - **tertiary button:** change padding
 - **textArea:** creat textArea component
 - **textarea:** new component
 - **textarea:** new wrapper
-- ⚠️  **textarea:** new build
+- ⚠️ **textarea:** new build
 - **textfield:** add ssn validation
-- ⚠️  **textfield:** new build
+- ⚠️ **textfield:** new build
 - **textfield:** support counter and maxCharacters
 - **theme:** new build
-- ⚠️  **toast:** new build
+- ⚠️ **toast:** new build
 - **ui:** export new components
 - **ui:** new build
 
@@ -717,7 +756,7 @@ This was a version bump only, there were no code changes.
 - **link-button:** remove the duplicated code
 - **link-button:** change justify-content to center to make fullwidth look better
 - **link-button:** custom link component
-- **link-button:** external link icon on target _blank
+- **link-button:** external link icon on target \_blank
 - **linkButton:** use button style and fix the story for icon
 - **logo:** new build
 - **logo:** remove stories from build + clear changelog
@@ -841,33 +880,33 @@ This was a version bump only, there were no code changes.
 - **ui:** update deps
 - **ui:** update deps
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - **modal:** new API
 - **card:** new card api
-- ⚠️  **toast:** new build
-- ⚠️  **textfield:** new build
-- ⚠️  **textarea:** new build
-- ⚠️  **tabs:** new build
-- ⚠️  **table:** new build
-- ⚠️  **spinner:** new build
-- ⚠️  **select:** new build
-- ⚠️  **search-field:** new build
-- ⚠️  **radio:** new build + replace vite test
-- ⚠️  **logo:** new build
-- ⚠️  **link-button:** new build
-- ⚠️  **link:** new build
-- ⚠️  **info-banner:** new build
-- ⚠️  **grid:** new build
-- ⚠️  **flex:** new build
-- ⚠️  **file-upload:** new build
-- ⚠️  **date-picker:** new build
-- ⚠️  **combobox:** new build
-- ⚠️  **checkbox:** new build
-- ⚠️  **card:** new build
-- ⚠️  **button:** new build
-- ⚠️  **breadcrumbs:** new build
-- ⚠️  **accordion:** new build
+- ⚠️ **toast:** new build
+- ⚠️ **textfield:** new build
+- ⚠️ **textarea:** new build
+- ⚠️ **tabs:** new build
+- ⚠️ **table:** new build
+- ⚠️ **spinner:** new build
+- ⚠️ **select:** new build
+- ⚠️ **search-field:** new build
+- ⚠️ **radio:** new build + replace vite test
+- ⚠️ **logo:** new build
+- ⚠️ **link-button:** new build
+- ⚠️ **link:** new build
+- ⚠️ **info-banner:** new build
+- ⚠️ **grid:** new build
+- ⚠️ **flex:** new build
+- ⚠️ **file-upload:** new build
+- ⚠️ **date-picker:** new build
+- ⚠️ **combobox:** new build
+- ⚠️ **checkbox:** new build
+- ⚠️ **card:** new build
+- ⚠️ **button:** new build
+- ⚠️ **breadcrumbs:** new build
+- ⚠️ **accordion:** new build
 
 ### ❤️ Thank You
 
@@ -885,10 +924,10 @@ This was a version bump only, there were no code changes.
 - **Modal:** create a new component
 - **Modal:** create a new component
 - **Modal:** fix styling, delete not used codes and add button component
-- ⚠️  **accordion:** new build
-- ⚠️  **breadcrumbs:** new build
+- ⚠️ **accordion:** new build
+- ⚠️ **breadcrumbs:** new build
 - **button:** added tertiary and danger themes
-- ⚠️  **button:** new build
+- ⚠️ **button:** new build
 - **button:** remove underline from tertiary button
 - **button:** add icon and iconSize prop and logic to make icon smaller when size=small
 - **button:** update button stories
@@ -896,67 +935,67 @@ This was a version bump only, there were no code changes.
 - **button:** add property to change button's icon direction
 - **button:** change inline style to class style
 - **button:** add buttongroup component, move mobile rules
-- ⚠️  **card:** new build
-- ⚠️  **card:** new api, replace button with stretched link
+- ⚠️ **card:** new build
+- ⚠️ **card:** new api, replace button with stretched link
 - **card:** support custom link component
 - **checkbox:** select all checkbox
 - **checkbox:** new wrapper
-- ⚠️  **checkbox:** new build
+- ⚠️ **checkbox:** new build
 - **combobox:** create a combobox component with styling
-- ⚠️  **combobox:** new build
+- ⚠️ **combobox:** new build
 - **date-picker:** new wrapper
 - **date-picker:** new datepicker
 - **date-picker:** datepicker renamed daterangepicker in favor of datepicker
-- ⚠️  **date-picker:** new build
+- ⚠️ **date-picker:** new build
 - **dropdown:** new component
-- ⚠️  **file-upload:** new build
+- ⚠️ **file-upload:** new build
 - **fileupload:** new wrapper
 - **flex:** add fluid variant
 - **flex:** can now take all props of usual div
-- ⚠️  **flex:** new build
+- ⚠️ **flex:** new build
 - **grid:** add fluid variant
 - **grid:** can now take all props of usual div
-- ⚠️  **grid:** new build
+- ⚠️ **grid:** new build
 - **info-banner:** add support for ReactNodes in message
 - **info-banner:** dismissable banner
-- ⚠️  **info-banner:** new build
-- ⚠️  **link:** new build
+- ⚠️ **info-banner:** new build
+- ⚠️ **link:** new build
 - **link:** add standalone link variant
 - **link:** ability to stretch link in parent
 - **link:** add icon in prop, add disabeld, and add states in css
-- ⚠️  **link-button:** new build
+- ⚠️ **link-button:** new build
 - **link-button:** inherits api from button
 - **link-button:** add own style, delete unuse codes, and fix the stories
 - **link-button:** add full width
 - **link-button:** add full width and delete unuse code
 - **linkButton:** add icon
-- ⚠️  **logo:** new build
+- ⚠️ **logo:** new build
 - **logo:** new variants and refactor
-- ⚠️  **modal:** new API
+- ⚠️ **modal:** new API
 - **multi-select:** new component
 - **radio:** new wrapper
-- ⚠️  **radio:** new build + replace vite test
-- ⚠️  **search-field:** new build
+- ⚠️ **radio:** new build + replace vite test
+- ⚠️ **search-field:** new build
 - **searchfield:** props rewrite
 - **select:** new wrapper
-- ⚠️  **select:** new build
+- ⚠️ **select:** new build
 - **sidebar:** new component
-- ⚠️  **spinner:** new build
+- ⚠️ **spinner:** new build
 - **table:** new component!
-- ⚠️  **table:** new build
+- ⚠️ **table:** new build
 - **table:** add docs + striped option
-- ⚠️  **tabs:** new build
+- ⚠️ **tabs:** new build
 - **tag:** new component
 - **tertiary button:** change padding
 - **textArea:** creat textArea component
 - **textarea:** new component
 - **textarea:** new wrapper
-- ⚠️  **textarea:** new build
+- ⚠️ **textarea:** new build
 - **textfield:** add ssn validation
-- ⚠️  **textfield:** new build
+- ⚠️ **textfield:** new build
 - **textfield:** support counter and maxCharacters
 - **theme:** new build
-- ⚠️  **toast:** new build
+- ⚠️ **toast:** new build
 - **ui:** export new components
 - **ui:** new build
 
@@ -1127,7 +1166,7 @@ This was a version bump only, there were no code changes.
 - **link-button:** remove the duplicated code
 - **link-button:** change justify-content to center to make fullwidth look better
 - **link-button:** custom link component
-- **link-button:** external link icon on target _blank
+- **link-button:** external link icon on target \_blank
 - **linkButton:** use button style and fix the story for icon
 - **logo:** new build
 - **logo:** remove stories from build + clear changelog
@@ -1251,33 +1290,33 @@ This was a version bump only, there were no code changes.
 - **ui:** update deps
 - **ui:** update deps
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - **modal:** new API
 - **card:** new card api
-- ⚠️  **toast:** new build
-- ⚠️  **textfield:** new build
-- ⚠️  **textarea:** new build
-- ⚠️  **tabs:** new build
-- ⚠️  **table:** new build
-- ⚠️  **spinner:** new build
-- ⚠️  **select:** new build
-- ⚠️  **search-field:** new build
-- ⚠️  **radio:** new build + replace vite test
-- ⚠️  **logo:** new build
-- ⚠️  **link-button:** new build
-- ⚠️  **link:** new build
-- ⚠️  **info-banner:** new build
-- ⚠️  **grid:** new build
-- ⚠️  **flex:** new build
-- ⚠️  **file-upload:** new build
-- ⚠️  **date-picker:** new build
-- ⚠️  **combobox:** new build
-- ⚠️  **checkbox:** new build
-- ⚠️  **card:** new build
-- ⚠️  **button:** new build
-- ⚠️  **breadcrumbs:** new build
-- ⚠️  **accordion:** new build
+- ⚠️ **toast:** new build
+- ⚠️ **textfield:** new build
+- ⚠️ **textarea:** new build
+- ⚠️ **tabs:** new build
+- ⚠️ **table:** new build
+- ⚠️ **spinner:** new build
+- ⚠️ **select:** new build
+- ⚠️ **search-field:** new build
+- ⚠️ **radio:** new build + replace vite test
+- ⚠️ **logo:** new build
+- ⚠️ **link-button:** new build
+- ⚠️ **link:** new build
+- ⚠️ **info-banner:** new build
+- ⚠️ **grid:** new build
+- ⚠️ **flex:** new build
+- ⚠️ **file-upload:** new build
+- ⚠️ **date-picker:** new build
+- ⚠️ **combobox:** new build
+- ⚠️ **checkbox:** new build
+- ⚠️ **card:** new build
+- ⚠️ **button:** new build
+- ⚠️ **breadcrumbs:** new build
+- ⚠️ **accordion:** new build
 
 ### ❤️ Thank You
 
@@ -1292,6 +1331,7 @@ This was a version bump only, there were no code changes.
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+
 ## [unreleased]
 
 ### ♻️ Refactoring
@@ -1559,12 +1599,12 @@ All notable changes to this project will be documented in this file. See [conven
 - add period - ([43541f7](https://github.com/migrationsverket/midas/commits/43541f73059c396e6efcb850f0cc44c8793749f0)) - PHIEKS
 - search-field data - ([b35cb41](https://github.com/migrationsverket/midas/commits/b35cb4100632418a6bd45c32b6e0071601a6d9fd)) - Wilhelm Hjelm
 - release 15 start - ([f94f215](https://github.com/migrationsverket/midas/commits/f94f21596061a4477d8271a9a52ec7f6c5edda12)) - Wilhelm Hjelm
-- add draft of  releasenotes for release 15 - ([43a6880](https://github.com/migrationsverket/midas/commits/43a688030f2a29a2e7f94687b71ad160422da819)) - PHIEKS
+- add draft of releasenotes for release 15 - ([43a6880](https://github.com/migrationsverket/midas/commits/43a688030f2a29a2e7f94687b71ad160422da819)) - PHIEKS
 - new version of modal - ([0ec4dd3](https://github.com/migrationsverket/midas/commits/0ec4dd3b3b4d83af1e0db5c368f1fef47f627db1)) - Wilhelm Hjelm
 - add draft of design pattern for buttons and links - ([367dd0d](https://github.com/migrationsverket/midas/commits/367dd0d53e4c2ea1f0431b5ae3438d4bd578157d)) - PHIEKS
 - add more text - ([981d4b9](https://github.com/migrationsverket/midas/commits/981d4b912103499aea40b4ef6b071453ccb8961b)) - PHIEKS
 - add examples - ([3458741](https://github.com/migrationsverket/midas/commits/3458741f5244f44ecb3351c69afcc513a26d7832)) - PHIEKS
-- add live  code blocks - ([58f528d](https://github.com/migrationsverket/midas/commits/58f528d80f23ebd4f0eba43a4e37a380f106f5c5)) - PHIEKS
+- add live code blocks - ([58f528d](https://github.com/migrationsverket/midas/commits/58f528d80f23ebd4f0eba43a4e37a380f106f5c5)) - PHIEKS
 - hideCode on LiveCodeBlock - ([6c6b033](https://github.com/migrationsverket/midas/commits/6c6b033e7789b35a869ff68b9bef26aae4989224)) - Wilhelm Hjelm
 - add hideCode to codeblocks - ([06d504a](https://github.com/migrationsverket/midas/commits/06d504af1e5b640733a86a0756173c01dd9ac3f5)) - PHIEKS
 - change wording - ([de4eb76](https://github.com/migrationsverket/midas/commits/de4eb7611b7d4a33957f47969b19d16f9ceac1fe)) - PHIEKS
@@ -1953,7 +1993,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link-button)** change gap to 0.5rem - ([8d1e94a](https://github.com/migrationsverket/midas/commits/8d1e94a5cf536f893295c701c113eaa8fa050ff2)) - PHIEKS
 - **(link-button)** change justify-content to center to make fullwidth look better - ([dae7932](https://github.com/migrationsverket/midas/commits/dae793279802471011c0aeabe24685de2c27d96d)) - PHIEKS
 - **(link-button)** custom link component - ([414e233](https://github.com/migrationsverket/midas/commits/414e233e1b0e7bed7527c38efb529da66d5ea97d)) - Wilhelm Hjelm
-- **(link-button)** external link icon on target _blank - ([358520d](https://github.com/migrationsverket/midas/commits/358520d132516bd030469ff6fc822887bc70afd7)) - Wilhelm Hjelm
+- **(link-button)** external link icon on target \_blank - ([358520d](https://github.com/migrationsverket/midas/commits/358520d132516bd030469ff6fc822887bc70afd7)) - Wilhelm Hjelm
 - **(linkButton)** use button style and fix the story for icon - ([12b4ace](https://github.com/migrationsverket/midas/commits/12b4ace2444c47f5d583e548e2b08ce9843e5e8d)) - jabir Khalil
 - **(logo)** new build - ([2ed0f63](https://github.com/migrationsverket/midas/commits/2ed0f639255b546600d8d1c78a89031ba35a12ec)) - Wilhelm Hjelm
 - **(logo)** remove stories from build + clear changelog - ([a045d3d](https://github.com/migrationsverket/midas/commits/a045d3d6eda1c2e1bd804afab3619686781dc8bb)) - Wilhelm Hjelm
@@ -2092,6 +2132,7 @@ All notable changes to this project will be documented in this file. See [conven
 - fix the link path in readme - ([3cec027](https://github.com/migrationsverket/midas/commits/3cec027a74e8fe26d8304cc9117e3c92e3a71847)) - jabir Khalil
 
 ---
+
 ## [@mig-design/button@0.5.29](https://github.com/migrationsverket/midas/commits/@mig-design/button@0.5.29)
 
 ### 🚧 Miscellaneous Chores
@@ -2099,6 +2140,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** release version 0.5.29 [skip-ci] - ([b92452b](https://github.com/migrationsverket/midas/commits/b92452b7139a52f9c0af8ebffb392452b99c981b)) - Wilhelm Hjelm
 
 ---
+
 ## [@mig-design/theme@0.5.33](https://github.com/migrationsverket/midas/commits/@mig-design/theme@0.5.33)
 
 ### 🚧 Miscellaneous Chores
@@ -2106,6 +2148,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.33 [skip-ci] - ([9897f94](https://github.com/migrationsverket/midas/commits/9897f9414ac1ed39a764adf2f1282f3acf6f8e05)) - Wilhelm Hjelm
 
 ---
+
 ## [@mig-design/theme@0.5.32](https://github.com/migrationsverket/midas/commits/@mig-design/theme@0.5.32)
 
 ### 🚧 Miscellaneous Chores
@@ -2113,6 +2156,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.32 [skip-ci] - ([0208d45](https://github.com/migrationsverket/midas/commits/0208d454138869c768c19c1137fa8b39008edebf)) - Wilhelm Hjelm
 
 ---
+
 ## [@mig-design/theme@0.5.31](https://github.com/migrationsverket/midas/commits/@mig-design/theme@0.5.31)
 
 ### 🚧 Miscellaneous Chores
@@ -2120,6 +2164,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.31 [skip-ci] - ([796b1dd](https://github.com/migrationsverket/midas/commits/796b1dd9c8e9075242a0cbaefdd9a5ce4b9e7106)) - Wilhelm Hjelm
 
 ---
+
 ## [@mig-design/theme@0.5.30](https://github.com/migrationsverket/midas/commits/@mig-design/theme@0.5.30)
 
 ### 🚧 Miscellaneous Chores
@@ -2127,6 +2172,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.30 [skip-ci] - ([cafec01](https://github.com/migrationsverket/midas/commits/cafec010cff2a7a276fb9a5fca349038a954e55a)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/button@0.7.0](https://github.com/migrationsverket/midas/commits/@migrationsverket/button@0.7.0)
 
 ### ♻️ Refactoring
@@ -2149,6 +2195,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(docs)** mend broken pages - ([50c6381](https://github.com/migrationsverket/midas/commits/50c6381ff975f48b1282c43474f9623f537f5b0a)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/ui@0.5.25](https://github.com/migrationsverket/midas/commits/@migrationsverket/ui@0.5.25)
 
 ### 🚧 Miscellaneous Chores
@@ -2156,6 +2203,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(textfield)** release version 0.9.25 [skip-ci] - ([592fac7](https://github.com/migrationsverket/midas/commits/592fac7f4cc3eec66115844b46087ee73b0b5505)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/tabs@0.0.2](https://github.com/migrationsverket/midas/commits/@migrationsverket/tabs@0.0.2)
 
 ### 🚧 Miscellaneous Chores
@@ -2163,6 +2211,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(tabs)** release version 0.0.2 [skip-ci] - ([483c06e](https://github.com/migrationsverket/midas/commits/483c06ea4d7ecd38edd409188e7a73c99aad99e9)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/search-field@0.0.4](https://github.com/migrationsverket/midas/commits/@migrationsverket/search-field@0.0.4)
 
 ### 🚧 Miscellaneous Chores
@@ -2170,6 +2219,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(search-field)** release version 0.0.4 [skip-ci] - ([501eaa0](https://github.com/migrationsverket/midas/commits/501eaa014948a3ee8d006f05362885275ece371a)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/logo@0.2.54](https://github.com/migrationsverket/midas/commits/@migrationsverket/logo@0.2.54)
 
 ### 🚧 Miscellaneous Chores
@@ -2177,6 +2227,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(logo)** release version 0.2.54 [skip-ci] - ([49745e9](https://github.com/migrationsverket/midas/commits/49745e9c4870d578d5dc50cf7d13ca141c1dfa36)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/link@0.2.9](https://github.com/migrationsverket/midas/commits/@migrationsverket/link@0.2.9)
 
 ### 🚧 Miscellaneous Chores
@@ -2184,6 +2235,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link)** release version 0.2.9 [skip-ci] - ([df96d02](https://github.com/migrationsverket/midas/commits/df96d024f74bc89a2cf1d5e33b1d4e047b880d02)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/flex@0.0.4](https://github.com/migrationsverket/midas/commits/@migrationsverket/flex@0.0.4)
 
 ### 🚧 Miscellaneous Chores
@@ -2191,6 +2243,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(flex)** release version 0.0.4 [skip-ci] - ([fb1a7be](https://github.com/migrationsverket/midas/commits/fb1a7bec57dcdaf901169a57d57536a5b7438a1c)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/link-button@0.2.8](https://github.com/migrationsverket/midas/commits/@migrationsverket/link-button@0.2.8)
 
 ### 🚧 Miscellaneous Chores
@@ -2198,6 +2251,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link-button)** release version 0.2.8 [skip-ci] - ([dc7f58e](https://github.com/migrationsverket/midas/commits/dc7f58e62a4765cc7213eb02facd649e0fce9171)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/breadcrumbs@0.0.3](https://github.com/migrationsverket/midas/commits/@migrationsverket/breadcrumbs@0.0.3)
 
 ### 🚧 Miscellaneous Chores
@@ -2205,6 +2259,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(breadcrumbs)** release version 0.0.3 [skip-ci] - ([3c77cb2](https://github.com/migrationsverket/midas/commits/3c77cb2a4612691f36770cf09d0378edcce1a9c3)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/card@0.2.7](https://github.com/migrationsverket/midas/commits/@migrationsverket/card@0.2.7)
 
 ### 🚧 Miscellaneous Chores
@@ -2212,6 +2267,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(card)** release version 0.2.7 [skip-ci] - ([6a84cd2](https://github.com/migrationsverket/midas/commits/6a84cd2a0116829e44d3cf3c0de7152e1adf60d9)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/checkbox@0.3.30](https://github.com/migrationsverket/midas/commits/@migrationsverket/checkbox@0.3.30)
 
 ### 🚧 Miscellaneous Chores
@@ -2219,6 +2275,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(checkbox)** release version 0.3.30 [skip-ci] - ([1a6eefe](https://github.com/migrationsverket/midas/commits/1a6eefe4541be96842e177266c8fc149300c4fa1)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/grid@0.0.3](https://github.com/migrationsverket/midas/commits/@migrationsverket/grid@0.0.3)
 
 ### 🚧 Miscellaneous Chores
@@ -2226,6 +2283,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(grid)** release version 0.0.3 [skip-ci] - ([4be764a](https://github.com/migrationsverket/midas/commits/4be764af47d956e2039ae96ba716712e1f1d5c23)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/file-upload@0.3.22](https://github.com/migrationsverket/midas/commits/@migrationsverket/file-upload@0.3.22)
 
 ### 🚧 Miscellaneous Chores
@@ -2233,6 +2291,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(file-upload)** release version 0.3.22 [skip-ci] - ([d00e185](https://github.com/migrationsverket/midas/commits/d00e1858340717eed1c004997f2e501f65dafddc)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/date-picker@0.0.1](https://github.com/migrationsverket/midas/commits/@migrationsverket/date-picker@0.0.1)
 
 ### 🚧 Miscellaneous Chores
@@ -2240,6 +2299,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(date-picker)** release version 0.0.1 [skip-ci] - ([07f2983](https://github.com/migrationsverket/midas/commits/07f298386c29aad03d2c0d834641a7c770b4d0dd)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/file-upload@0.3.21](https://github.com/migrationsverket/midas/commits/@migrationsverket/file-upload@0.3.21)
 
 ### 🚧 Miscellaneous Chores
@@ -2247,6 +2307,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(file-upload)** release version 0.3.21 [skip-ci] - ([3732e28](https://github.com/migrationsverket/midas/commits/3732e28c9a2360ede8eb29b4ba71a73ae3cf8893)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/flex@0.0.3](https://github.com/migrationsverket/midas/commits/@migrationsverket/flex@0.0.3)
 
 ### 🚧 Miscellaneous Chores
@@ -2254,6 +2315,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(flex)** release version 0.0.3 [skip-ci] - ([ed9ac1d](https://github.com/migrationsverket/midas/commits/ed9ac1db93abb3535e83cfd6889afb40b2b124c4)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/link@0.2.8](https://github.com/migrationsverket/midas/commits/@migrationsverket/link@0.2.8)
 
 ### 🚧 Miscellaneous Chores
@@ -2261,6 +2323,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link)** release version 0.2.8 [skip-ci] - ([8cec674](https://github.com/migrationsverket/midas/commits/8cec6743c859d39dd3fe72b25dbd06edfb20f08f)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/link-button@0.2.7](https://github.com/migrationsverket/midas/commits/@migrationsverket/link-button@0.2.7)
 
 ### 🚧 Miscellaneous Chores
@@ -2268,6 +2331,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link-button)** release version 0.2.7 [skip-ci] - ([d363d43](https://github.com/migrationsverket/midas/commits/d363d43fc661072a76d61eca9f4e40b2e7053196)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/logo@0.2.53](https://github.com/migrationsverket/midas/commits/@migrationsverket/logo@0.2.53)
 
 ### 🚧 Miscellaneous Chores
@@ -2275,6 +2339,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(logo)** release version 0.2.53 [skip-ci] - ([eb718ae](https://github.com/migrationsverket/midas/commits/eb718ae658c72d265892dbc059042c155daa8596)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/search-field@0.0.3](https://github.com/migrationsverket/midas/commits/@migrationsverket/search-field@0.0.3)
 
 ### 🚧 Miscellaneous Chores
@@ -2282,6 +2347,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(search-field)** release version 0.0.3 [skip-ci] - ([ab8a56f](https://github.com/migrationsverket/midas/commits/ab8a56f81cee5ca542ac45bbd169cef39842d59c)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/select@0.4.24](https://github.com/migrationsverket/midas/commits/@migrationsverket/select@0.4.24)
 
 ### 🚧 Miscellaneous Chores
@@ -2289,6 +2355,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(search-field)** release version 0.0.2 [skip-ci] - ([c314d71](https://github.com/migrationsverket/midas/commits/c314d71576d9e74ba25659cc7f4444355be8f21a)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/date-picker@0.0.4](https://github.com/migrationsverket/midas/commits/@migrationsverket/date-picker@0.0.4)
 
 ### 🚧 Miscellaneous Chores
@@ -2296,6 +2363,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(date-picker)** release version 0.0.4 [skip-ci] - ([7640f9c](https://github.com/migrationsverket/midas/commits/7640f9c19d1cd493dfae4c2c2d4bf91b926a2842)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/radio@0.6.2](https://github.com/migrationsverket/midas/commits/@migrationsverket/radio@0.6.2)
 
 ### 🚧 Miscellaneous Chores
@@ -2303,6 +2371,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(radio)** release version 0.6.2 [skip-ci] - ([6581163](https://github.com/migrationsverket/midas/commits/658116351afda12830f6a6366242ec577a2f0849)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/logo@0.2.52](https://github.com/migrationsverket/midas/commits/@migrationsverket/logo@0.2.52)
 
 ### 🚧 Miscellaneous Chores
@@ -2310,6 +2379,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(logo)** release version 0.2.52 [skip-ci] - ([39d3e78](https://github.com/migrationsverket/midas/commits/39d3e78658931227ad32e2b01ce5c0538917eff0)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/link@0.2.7](https://github.com/migrationsverket/midas/commits/@migrationsverket/link@0.2.7)
 
 ### 🚧 Miscellaneous Chores
@@ -2317,6 +2387,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link)** release version 0.2.7 [skip-ci] - ([ef06755](https://github.com/migrationsverket/midas/commits/ef06755a81abffa70a449bd359f69bfcc37a6af5)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/date-picker@0.0.3](https://github.com/migrationsverket/midas/commits/@migrationsverket/date-picker@0.0.3)
 
 ### 🚧 Miscellaneous Chores
@@ -2324,6 +2395,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(date-picker)** release version 0.0.3 [skip-ci] - ([0dd5ceb](https://github.com/migrationsverket/midas/commits/0dd5cebb32a6110082a5c41d410a53bb9c7e2303)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/breadcrumbs@0.0.2](https://github.com/migrationsverket/midas/commits/@migrationsverket/breadcrumbs@0.0.2)
 
 ### ♻️ Refactoring
@@ -2346,6 +2418,7 @@ All notable changes to this project will be documented in this file. See [conven
 - delete not used imoprt from button component and delete not use test.txt - ([04d86cc](https://github.com/migrationsverket/midas/commits/04d86cc258e12861a3db1f9500b6dc088f79c35d)) - jabir Khalil
 
 ---
+
 ## [@migrationsverket/link@0.2.6](https://github.com/migrationsverket/midas/commits/@migrationsverket/link@0.2.6)
 
 ### 🚧 Miscellaneous Chores
@@ -2353,6 +2426,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(link)** release version 0.2.6 [skip-ci] - ([adaf177](https://github.com/migrationsverket/midas/commits/adaf177f60b1d64dce3f0cea8fa34cf5f10960e3)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/info-banner@0.1.2](https://github.com/migrationsverket/midas/commits/@migrationsverket/info-banner@0.1.2)
 
 ### 🚧 Miscellaneous Chores
@@ -2360,6 +2434,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(grid)** release version 0.0.2 [skip-ci] - ([c03e212](https://github.com/migrationsverket/midas/commits/c03e212bb1319b1ebae23cc12508289297d00c7c)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/flex@0.0.2](https://github.com/migrationsverket/midas/commits/@migrationsverket/flex@0.0.2)
 
 ### 🚧 Miscellaneous Chores
@@ -2367,6 +2442,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(flex)** release version 0.0.2 [skip-ci] - ([3b0b367](https://github.com/migrationsverket/midas/commits/3b0b367e12c8ad601d2bceeb0f3d513e5b1117c3)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/theme@0.5.29](https://github.com/migrationsverket/midas/commits/@migrationsverket/theme@0.5.29)
 
 ### 🚧 Miscellaneous Chores
@@ -2374,6 +2450,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.29 [skip-ci] - ([23b037a](https://github.com/migrationsverket/midas/commits/23b037aceaa0f48eebb1234e23fbead34627451a)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/theme@0.5.28](https://github.com/migrationsverket/midas/commits/@migrationsverket/theme@0.5.28)
 
 ### 🚧 Miscellaneous Chores
@@ -2381,6 +2458,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.28 [skip-ci] - ([1a36b87](https://github.com/migrationsverket/midas/commits/1a36b87e72bf339239c49c1d32223a88e7ef3a3e)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/theme@0.5.27](https://github.com/migrationsverket/midas/commits/@migrationsverket/theme@0.5.27)
 
 ### 🚧 Miscellaneous Chores
@@ -2388,6 +2466,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.27 [skip-ci] - ([cb9df2f](https://github.com/migrationsverket/midas/commits/cb9df2fc819e7abd6f11caceed6102d54d2e560f)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/theme@0.5.26](https://github.com/migrationsverket/midas/commits/@migrationsverket/theme@0.5.26)
 
 ### 🚧 Miscellaneous Chores
@@ -2395,6 +2474,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.26 [skip-ci] - ([288a450](https://github.com/migrationsverket/midas/commits/288a4505138055bb62d82a3e3336264c131283a2)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/theme@0.5.25](https://github.com/migrationsverket/midas/commits/@migrationsverket/theme@0.5.25)
 
 ### 🚧 Miscellaneous Chores
@@ -2402,6 +2482,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(theme)** release version 0.5.25 [skip-ci] - ([0a229da](https://github.com/migrationsverket/midas/commits/0a229da01a63da08c24560aa8a7a8911b45a9a1a)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/accordion@0.4.25](https://github.com/migrationsverket/midas/commits/@migrationsverket/accordion@0.4.25)
 
 ### 🚧 Miscellaneous Chores
@@ -2409,6 +2490,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(accordion)** release version 0.4.25 [skip-ci] - ([dfeb394](https://github.com/migrationsverket/midas/commits/dfeb3942347d76b4f2a5e15b4c6ab3f00c12fe3d)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/button@0.6.4](https://github.com/migrationsverket/midas/commits/@migrationsverket/button@0.6.4)
 
 ### 🚧 Miscellaneous Chores
@@ -2416,6 +2498,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** release version 0.6.4 [skip-ci] - ([b10087d](https://github.com/migrationsverket/midas/commits/b10087d85d96d806442412073f97c3658cecc2f1)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/button@0.6.3](https://github.com/migrationsverket/midas/commits/@migrationsverket/button@0.6.3)
 
 ### 🚧 Miscellaneous Chores
@@ -2423,6 +2506,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** release version 0.6.3 [skip-ci] - ([88b52da](https://github.com/migrationsverket/midas/commits/88b52daeff0977bc096e1411a20a5e6cda033e69)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/button@0.6.1](https://github.com/migrationsverket/midas/commits/@migrationsverket/button@0.6.1)
 
 ### 🚧 Miscellaneous Chores
@@ -2430,6 +2514,7 @@ All notable changes to this project will be documented in this file. See [conven
 - **(button)** release version 0.6.1 [skip-ci] - ([60a5d54](https://github.com/migrationsverket/midas/commits/60a5d547e46ba17e00e8d23f5b934f6052487284)) - Wilhelm Hjelm
 
 ---
+
 ## [@migrationsverket/theme@0.5.24] - 2024-06-12
 
 ### ♻️ Refactoring
