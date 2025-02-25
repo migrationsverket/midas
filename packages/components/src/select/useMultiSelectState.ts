@@ -113,9 +113,10 @@ export function useMultiSelectState<T extends object>(
     ...triggerState,
     close() {
       triggerState.close()
-      // Reset validation for multi selects when the list closes.
-      validationState.resetValidation()
-      validationState.commitValidation()
+      if (listState.selectedKeys.size) {
+        validationState.resetValidation()
+        validationState.commitValidation()
+      }
     },
     open() {
       // Don't open if the collection is empty.
