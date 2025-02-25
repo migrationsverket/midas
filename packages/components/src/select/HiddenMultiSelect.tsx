@@ -108,6 +108,7 @@ export function useHiddenMultiSelect<T>(
       disabled: isDisabled,
       required: validationBehavior === 'native' && isRequired,
       name,
+      value: Array.from(state.selectedKeys).map(key => key.toString()),
       onChange: (e: React.ChangeEvent<HTMLSelectElement>) =>
         state.setSelectedKeys(e.target.value),
     },
@@ -151,7 +152,6 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
                   <option
                     key={item.key}
                     value={item.key}
-                    selected={state.selectedKeys.has(item.key)}
                   >
                     {item.textValue}
                   </option>
@@ -170,7 +170,7 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
         autoComplete={selectProps.autoComplete}
         name={name}
         disabled={isDisabled}
-        value={state.selectedItems?.join(', ') ?? ''}
+        value={Array.from(state.selectedKeys).map(key => key.toString()) ?? ''}
       />
     )
   }
