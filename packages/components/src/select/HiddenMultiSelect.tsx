@@ -32,13 +32,12 @@ export interface HiddenMultiSelectProps<T> extends AriaHiddenMultiSelectProps {
   triggerRef: RefObject<FocusableElement | null>
 }
 
-export interface AriaHiddenMultiSelectOptions
-  extends AriaHiddenMultiSelectProps {
+interface AriaHiddenMultiSelectOptions extends AriaHiddenMultiSelectProps {
   /** A ref to the hidden `<select>` element. */
   selectRef?: RefObject<HTMLSelectElement | null>
 }
 
-export interface HiddenMultiSelectAria {
+interface HiddenMultiSelectAria {
   /** Props for the container element. */
   containerProps: React.HTMLAttributes<FocusableElement>
 
@@ -138,7 +137,6 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
             {...selectProps}
             ref={selectRef}
             multiple={state.selectionMode === 'multiple'}
-            name={name}
           >
             <option />
             {[...state.collection.getKeys()].map(key => {
