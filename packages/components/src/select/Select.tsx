@@ -244,9 +244,17 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            <FieldError className={styles.fieldError}>
+            {state.displayValidation.validationErrors.length ? (
+              <div className={styles.fieldError}>
+                {state.displayValidation.validationErrors.map(error => (
+                  <div key={error}>{error}</div>
+                ))}
+              </div>
+            ) : null}
+            {/* Is there some connection missing here? The FieldError wont show */}
+            {/* <FieldError className={styles.fieldError}>
               {errorMessage}
-            </FieldError>
+            </FieldError> */}
             <FocusRing
               focusRingClass={styles.buttonFocused}
               autoFocus={autoFocus}

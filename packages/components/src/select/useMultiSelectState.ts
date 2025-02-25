@@ -64,9 +64,8 @@ export function useMultiSelectState<T extends object>(
 ): MultiSelectState<T> {
   const [isFocused, setFocused] = useState(false)
 
-  // TODO: What is our value here?
-  const validationState = useFormValidationState({ ...props, value: '1' })
   const triggerState = useMenuTriggerState(props)
+
   const listState = useMultiSelectListState({
     ...props,
     onSelectionChange: keys => {
@@ -89,6 +88,12 @@ export function useMultiSelectState<T extends object>(
         triggerState.close()
       }
     },
+  })
+
+  const validationState = useFormValidationState({
+    ...props,
+    validationBehavior: 'native',
+    value: listState.selectedKeys,
   })
 
   return {
