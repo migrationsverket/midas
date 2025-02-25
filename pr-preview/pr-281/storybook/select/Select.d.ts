@@ -61,7 +61,7 @@ type SelectProps = {
     isInvalid?: boolean;
     /** Error message to be displayed in case of invalid state*/
     errorMessage?: string;
-    /** Not implemented */
+    /** Whether the field is required. */
     isRequired?: boolean;
 };
 export declare const SelectComponent: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLButtonElement>>;
