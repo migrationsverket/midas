@@ -6,7 +6,7 @@ import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 import * as React from 'react'
-import { FieldError, Label, TagList, TextField } from 'react-aria-components'
+import { Label, TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -249,15 +249,12 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             )}
             {state.displayValidation.validationErrors.length ? (
               <div className={styles.fieldError}>
-                {state.displayValidation.validationErrors.map(error => (
-                  <div key={error}>{error}</div>
-                ))}
+                {errorMessage ||
+                  state.displayValidation.validationErrors.map(error => (
+                    <React.Fragment key={error}>{error}</React.Fragment>
+                  ))}
               </div>
             ) : null}
-            {/* Is there some connection missing here? The FieldError wont show */}
-            {/* <FieldError className={styles.fieldError}>
-              {errorMessage}
-            </FieldError> */}
             <FocusRing
               focusRingClass={styles.buttonFocused}
               autoFocus={autoFocus}
@@ -270,6 +267,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                     [styles.buttonActive]: state.selectedItems,
                     [styles.buttonDisabled]: isDisabled,
                   })}
+                  data-invalid={
+                    state.displayValidation.validationErrors.length > 0
+                  }
                   type='button'
                   ref={ref}
                 >
