@@ -12,6 +12,8 @@ export interface AriaHiddenMultiSelectProps {
     name?: string;
     /** Sets the disabled state of the select and input. */
     isDisabled?: boolean;
+    /** Sets the required state of the select and input. */
+    isRequired?: boolean;
 }
 export interface HiddenMultiSelectProps<T> extends AriaHiddenMultiSelectProps {
     /** State for the select. */
@@ -36,7 +38,7 @@ export interface HiddenMultiSelectAria {
  * can be used in combination with `useSelect` to support browser form autofill, mobile form
  * navigation, and native HTML form submission.
  */
-export declare function useHiddenMultiSelect<T>(props: AriaHiddenMultiSelectOptions, state: MultiSelectState<T>, triggerRef: RefObject<FocusableElement | null>): HiddenMultiSelectAria;
+export declare function useHiddenMultiSelect<T>({ autoComplete, name, isDisabled, isRequired, selectRef, }: AriaHiddenMultiSelectOptions, state: MultiSelectState<T>, triggerRef: RefObject<FocusableElement | null>): HiddenMultiSelectAria;
 /**
  * Renders a hidden native `<select>` element, which can be used to support browser
  * form autofill, mobile form navigation, and native form submission.
