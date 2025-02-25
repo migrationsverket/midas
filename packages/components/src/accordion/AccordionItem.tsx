@@ -33,6 +33,12 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
 
   const titleIsReactNode = typeof title === 'object'
 
+  /**
+   * There might be a better way to do this.
+   * Normally this shouldn't be used without a dependency array
+   * we found no way to get around it without doing like this.
+   */
+  // eslint-disable-next-line
   React.useLayoutEffect(() => {
     if (panelRef.current) {
       setPanelHeight(panelRef.current.clientHeight)
