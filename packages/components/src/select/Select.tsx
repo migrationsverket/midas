@@ -211,7 +211,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           name={props.name}
           state={state}
           triggerRef={ref}
-          label={props.label}
+          label={props.label + '-hidden'}
         />
         <TextField
           {...props}
