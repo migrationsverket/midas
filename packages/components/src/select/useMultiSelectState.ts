@@ -101,6 +101,8 @@ export function useMultiSelectState<T extends object>(
     ...triggerState,
     close() {
       triggerState.close()
+      validationState.resetValidation()
+      validationState.commitValidation()
     },
     open() {
       // Don't open if the collection is empty.
