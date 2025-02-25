@@ -61,8 +61,10 @@ type SelectProps = {
     isInvalid?: boolean;
     /** Error message to be displayed in case of invalid state*/
     errorMessage?: string;
-    /** Not implemented */
+    /** Whether the field is required. */
     isRequired?: boolean;
+    /** Name of the field, for uncontrolled use */
+    name?: string;
 };
 export declare const SelectComponent: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLButtonElement>>;
 export declare const Select: React.ForwardRefExoticComponent<Omit<SelectProps, "children" | "items"> & {

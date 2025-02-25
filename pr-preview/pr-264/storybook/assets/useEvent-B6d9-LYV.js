@@ -1,0 +1,1 @@
+import{i}from"./useFocusable-C3Tvsz8-.js";import{r as l}from"./index-BbAIUH2N.js";function $(e,r,c,t){let a=i(c),f=c==null;l.useEffect(()=>{if(f||!e.current)return;let n=e.current;return n.addEventListener(r,a,t),()=>{n.removeEventListener(r,a,t)}},[e,r,t,f,a])}export{$};
