@@ -151,9 +151,13 @@ describe('A multi Select', () => {
     await user.keyboard('[Enter]')
     await user.keyboard('[Enter]')
     expect(onchange).toHaveBeenCalledWith(['apple'])
+    expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
+    expect(screen.queryByDisplayValue('Banana')).not.toBeInTheDocument()
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     expect(onchange).toHaveBeenCalledWith(['apple', 'banana'])
+    expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
+    expect(screen.getByDisplayValue('Banana')).toBeInTheDocument()
   })
 })
 
