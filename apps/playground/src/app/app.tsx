@@ -16,14 +16,6 @@ export function App() {
       <Logo />
       <TextField label={'Text'} />
       <form>
-        <select
-          name='test'
-          multiple
-        >
-          <option value='banana'>Option 1</option>
-          <option value='apple'>Option 2</option>
-          <option value='pear'>Option 3</option>
-        </select>
         <Select
           label={'Select'}
           selectionMode='multiple'
