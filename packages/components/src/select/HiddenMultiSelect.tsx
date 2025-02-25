@@ -1,15 +1,3 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
 import { FocusableElement, RefObject } from '@react-types/shared'
 import React, { ReactNode, useRef } from 'react'
 import { useFormReset } from '@react-aria/utils'
@@ -31,6 +19,9 @@ export interface AriaHiddenMultiSelectProps {
 
   /** Sets the disabled state of the select and input. */
   isDisabled?: boolean
+
+  /** Sets the required state of the select and input. */
+  isRequired?: boolean
 }
 
 export interface HiddenMultiSelectProps<T> extends AriaHiddenMultiSelectProps {
@@ -64,25 +55,26 @@ export interface HiddenMultiSelectAria {
  * navigation, and native HTML form submission.
  */
 export function useHiddenMultiSelect<T>(
-  props: AriaHiddenMultiSelectOptions,
+  {
+    autoComplete,
+    name,
+    isDisabled,
+    isRequired,
+    selectRef,
+  }: AriaHiddenMultiSelectOptions,
   state: MultiSelectState<T>,
   triggerRef: RefObject<FocusableElement | null>,
 ): HiddenMultiSelectAria {
-  // const data = selectData.get(state) || {}
-  const { autoComplete, name = 'derp', isDisabled = false } = props
-  const validationBehavior = 'native'
-  const isRequired = true
-  // const { validationBehavior, isRequired } = data
   const { visuallyHiddenProps } = useVisuallyHidden()
 
-  useFormReset(props.selectRef, state.selectedKeys, state.setSelectedKeys)
+  useFormReset(selectRef, state.selectedKeys, state.setSelectedKeys)
   useFormValidation(
     {
-      validationBehavior,
+      validationBehavior: 'native',
       focus: () => triggerRef.current?.focus(),
     },
     state,
-    props.selectRef,
+    selectRef,
   )
 
   // In Safari, the <select> cannot have `display: none` or `hidden` for autofill to work.
@@ -106,7 +98,7 @@ export function useHiddenMultiSelect<T>(
       tabIndex: -1,
       autoComplete,
       disabled: isDisabled,
-      required: validationBehavior === 'native' && isRequired,
+      required: isRequired,
       name,
       value: Array.from(state.selectedKeys).map(key => key.toString()),
       onChange: (e: React.ChangeEvent<HTMLSelectElement>) =>

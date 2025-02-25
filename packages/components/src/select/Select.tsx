@@ -205,6 +205,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       <>
         <HiddenMultiSelect
           isDisabled={props.isDisabled}
+          isRequired={props.isRequired}
           state={state}
           triggerRef={ref}
           label={props.label}
