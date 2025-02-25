@@ -37,7 +37,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
     if (panelRef.current) {
       setPanelHeight(panelRef.current.clientHeight)
     }
-  }, [])
+  })
 
   return (
     <Disclosure
