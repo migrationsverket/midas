@@ -4,7 +4,7 @@ import { Key } from 'react-aria'
 
 import {
   MultiSelectListState,
-  useMultiSelectListState
+  useMultiSelectListState,
 } from './useMultiSelectListState'
 
 import type { OverlayTriggerProps } from '@react-types/overlays'
@@ -17,8 +17,13 @@ import type {
   MultipleSelection,
   TextInputBase,
   Validation,
-  Selection
+  Selection,
 } from '@react-types/shared'
+
+import {
+  useFormValidationState,
+  type FormValidationState,
+} from '@react-stately/form'
 
 /** Added this for a better output, will see how this plays out */
 interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
@@ -45,7 +50,8 @@ export interface MultiSelectProps<T>
 
 export interface MultiSelectState<T>
   extends MultiSelectListState<T>,
-    MenuTriggerState {
+    MenuTriggerState,
+    FormValidationState {
   /** Whether the select is currently focused. */
   isFocused: boolean
 
@@ -54,10 +60,12 @@ export interface MultiSelectState<T>
 }
 
 export function useMultiSelectState<T extends object>(
-  props: MultiSelectProps<T>
+  props: MultiSelectProps<T>,
 ): MultiSelectState<T> {
   const [isFocused, setFocused] = useState(false)
 
+  // TODO: What is our value here?
+  const validationState = useFormValidationState({ ...props, value: '1' })
   const triggerState = useMenuTriggerState(props)
   const listState = useMultiSelectListState({
     ...props,
@@ -80,7 +88,7 @@ export function useMultiSelectState<T extends object>(
       if (selectionMode === 'single') {
         triggerState.close()
       }
-    }
+    },
   })
 
   return {
@@ -101,6 +109,7 @@ export function useMultiSelectState<T extends object>(
       }
     },
     isFocused,
-    setFocused
+    setFocused,
+    ...validationState,
   }
 }

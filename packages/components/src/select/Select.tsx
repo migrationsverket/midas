@@ -14,10 +14,8 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
-import { Checkbox } from '../checkbox'
 import useObserveElement from '../utils/useObserveElement'
-import { HiddenSelect, useSelect } from 'react-aria'
-import { useSelectState } from 'react-stately'
+import { HiddenMultiSelect } from './HiddenMultiSelect'
 
 export type OptionItem = {
   children?: never
@@ -131,20 +129,14 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       errorMessage,
     } = props
 
-    const selectState = useSelectState(props)
-    const selectRef = React.useRef(null)
-
-    const { validationErrors } = useSelect(
-      { ...props, validationBehavior: 'native' },
-      selectState,
-      selectRef,
-    )
-
     const refAllButton = useRef<HTMLInputElement>(null)
     const ref = useObjectRef(forwardedRef)
     const disallowEmptySelection = !isClearable
 
-    const state = useMultiSelectState({ ...props, disallowEmptySelection })
+    const state = useMultiSelectState({
+      ...props,
+      disallowEmptySelection,
+    })
     const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
       {
         ...props,
@@ -211,9 +203,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
 
     return (
       <>
-        <HiddenSelect
+        <HiddenMultiSelect
           isDisabled={props.isDisabled}
-          state={selectState}
+          state={state}
           triggerRef={ref}
           label={props.label}
           name={'props.name'}
