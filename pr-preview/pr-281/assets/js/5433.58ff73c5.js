@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5575],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5433],{
 
 /***/ 77059:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
@@ -653,75 +653,6 @@ function $e72dd72e1c76a225$export$2f645645f7bca764(props) {
 
 
 //# sourceMappingURL=useListState.module.js.map
-
-
-/***/ }),
-
-/***/ 319:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   V: () => (/* binding */ $a0d645289fe9b86b$export$e7f05e985daf4b5f)
-/* harmony export */ });
-/* harmony import */ var _useListState_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(46655);
-/* harmony import */ var _react_stately_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8356);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-function $a0d645289fe9b86b$export$e7f05e985daf4b5f(props) {
-    var _props_defaultSelectedKey;
-    let [selectedKey, setSelectedKey] = (0, _react_stately_utils__WEBPACK_IMPORTED_MODULE_1__/* .useControlledState */ .P)(props.selectedKey, (_props_defaultSelectedKey = props.defaultSelectedKey) !== null && _props_defaultSelectedKey !== void 0 ? _props_defaultSelectedKey : null, props.onSelectionChange);
-    let selectedKeys = (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>selectedKey != null ? [
-            selectedKey
-        ] : [], [
-        selectedKey
-    ]);
-    let { collection: collection, disabledKeys: disabledKeys, selectionManager: selectionManager } = (0, _useListState_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useListState */ .p)({
-        ...props,
-        selectionMode: 'single',
-        disallowEmptySelection: true,
-        allowDuplicateSelectionEvents: true,
-        selectedKeys: selectedKeys,
-        onSelectionChange: (keys)=>{
-            // impossible, but TS doesn't know that
-            if (keys === 'all') return;
-            var _keys_values_next_value;
-            let key = (_keys_values_next_value = keys.values().next().value) !== null && _keys_values_next_value !== void 0 ? _keys_values_next_value : null;
-            // Always fire onSelectionChange, even if the key is the same
-            // as the current key (useControlledState does not).
-            if (key === selectedKey && props.onSelectionChange) props.onSelectionChange(key);
-            setSelectedKey(key);
-        }
-    });
-    let selectedItem = selectedKey != null ? collection.getItem(selectedKey) : null;
-    return {
-        collection: collection,
-        disabledKeys: disabledKeys,
-        selectionManager: selectionManager,
-        selectedKey: selectedKey,
-        setSelectedKey: setSelectedKey,
-        selectedItem: selectedItem
-    };
-}
-
-
-
-//# sourceMappingURL=useSingleSelectListState.module.js.map
 
 
 /***/ }),
