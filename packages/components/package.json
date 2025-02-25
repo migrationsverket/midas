@@ -42,6 +42,9 @@
       "types": "./theme/index.d.ts",
       "import": "./theme.js",
       "require": "./theme.cjs"
+    },
+    "./global.css": {
+      "import": "./global.css"
     }
   },
   "dependencies": {
