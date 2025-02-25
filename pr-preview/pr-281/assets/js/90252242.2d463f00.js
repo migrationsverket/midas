@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[153],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5521],{
 
-/***/ 25424:
+/***/ 13208:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -14,12 +14,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_select_mdx_af1_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_modal_mdx_902_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-select-mdx-af1.json
-const site_docs_components_select_mdx_af1_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/select","title":"Select","description":"<ComponentHeader","source":"@site/docs/components/select.mdx","sourceDirName":"components","slug":"/components/select","permalink":"/pr-preview/pr-281/components/select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-modal-mdx-902.json
+const site_docs_components_modal_mdx_902_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/modal","title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","source":"@site/docs/components/modal.mdx","sourceDirName":"components","slug":"/components/modal","permalink":"/pr-preview/pr-281/components/modal","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -28,19 +28,111 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(65537);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(79329);
-// EXTERNAL MODULE: ./packages/components/src/select/Select.tsx + 10 modules
-var Select = __webpack_require__(81732);
 // EXTERNAL MODULE: ./apps/docs/src/components/propsTable.tsx + 1 modules
 var propsTable = __webpack_require__(38355);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx + 2 modules
 var getComponentMetaData = __webpack_require__(80059);
 // EXTERNAL MODULE: ./apps/docs/src/components/CodeBlock/CodeBlock.tsx + 1 modules
 var CodeBlock = __webpack_require__(71372);
-;// ./apps/docs/docs/components/select.mdx
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx + 1 modules
+var Button = __webpack_require__(86559);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/@react-aria/overlays/dist/ariaHideOutside.mjs
+var ariaHideOutside = __webpack_require__(2269);
+// EXTERNAL MODULE: ./node_modules/@react-aria/overlays/dist/useOverlay.mjs + 1 modules
+var useOverlay = __webpack_require__(90757);
+// EXTERNAL MODULE: ./node_modules/@react-aria/overlays/dist/Overlay.mjs + 1 modules
+var Overlay = __webpack_require__(75963);
+// EXTERNAL MODULE: ./node_modules/@react-aria/overlays/dist/usePreventScroll.mjs
+var usePreventScroll = __webpack_require__(20445);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/mergeProps.mjs
+var mergeProps = __webpack_require__(32217);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./node_modules/@react-aria/overlays/dist/useModalOverlay.mjs
+
+
+
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+
+
+function $8ac8429251c45e4b$export$dbc0f175b25fb0fb(props, state, ref) {
+    let { overlayProps: overlayProps, underlayProps: underlayProps } = (0, useOverlay/* useOverlay */.e)({
+        ...props,
+        isOpen: state.isOpen,
+        onClose: state.close
+    }, ref);
+    (0, usePreventScroll/* usePreventScroll */.H)({
+        isDisabled: !state.isOpen
+    });
+    (0, Overlay/* useOverlayFocusContain */.Se)();
+    (0, react.useEffect)(()=>{
+        if (state.isOpen && ref.current) return (0, ariaHideOutside/* ariaHideOutside */.h)([
+            ref.current
+        ]);
+    }, [
+        state.isOpen,
+        ref
+    ]);
+    return {
+        modalProps: (0, mergeProps/* mergeProps */.v)(overlayProps),
+        underlayProps: underlayProps
+    };
+}
+
+
+
+//# sourceMappingURL=useModalOverlay.module.js.map
+
+// EXTERNAL MODULE: ./node_modules/@react-aria/overlays/dist/useOverlayTrigger.mjs
+var useOverlayTrigger = __webpack_require__(26940);
+// EXTERNAL MODULE: ./node_modules/@react-aria/dialog/dist/useDialog.mjs
+var useDialog = __webpack_require__(4681);
+// EXTERNAL MODULE: ./node_modules/@react-stately/overlays/dist/useOverlayTriggerState.mjs
+var useOverlayTriggerState = __webpack_require__(71732);
+;// ./packages/components/src/modal/Dialog.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Dialog_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","white":"#ffffff","gray10":"#f2f2f2","modal":"modal_yuES","overlay":"overlay_eZeP","modalHeader":"modalHeader_B1eE","modalBody":"modalBody_FPgg","modalHeading":"modalHeading_rV3b"});
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/components/src/modal/Dialog.tsx
+var _excluded=["title","children"],_excluded2=["state","children"],_excluded3=["label","children"];var Dialog=function Dialog(_ref){var title=_ref.title,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var ref=react.useRef(null);var _useDialog=(0,useDialog/* useDialog */.s)(props,ref),dialogProps=_useDialog.dialogProps,titleProps=_useDialog.titleProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},dialogProps,{ref:ref,className:Dialog_module.modalBody,"aria-modal":true,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)("h2",Object.assign({},titleProps,{className:(0,clsx/* default */.A)(Dialog_module.modalHeading,titleProps.className),children:title})),children]}));};var Modal=function Modal(_ref2){var state=_ref2.state,children=_ref2.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);var ref=react.useRef(null);var _useModalOverlay=$8ac8429251c45e4b$export$dbc0f175b25fb0fb(props,state,ref),modalProps=_useModalOverlay.modalProps,underlayProps=_useModalOverlay.underlayProps;return/*#__PURE__*/(0,jsx_runtime.jsx)(Overlay/* Overlay */.hJ,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},underlayProps,{className:(0,clsx/* default */.A)(Dialog_module.overlay,underlayProps.className),children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},modalProps,{className:(0,clsx/* default */.A)(Dialog_module.modal,modalProps.className),ref:ref,children:children}))}))});};var ModalTrigger=function ModalTrigger(_ref3){var label=_ref3.label,children=_ref3.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded3);var state=(0,useOverlayTriggerState/* useOverlayTriggerState */.T)(props);var _useOverlayTrigger=(0,useOverlayTrigger/* useOverlayTrigger */.o)({type:'dialog'},state),triggerProps=_useOverlayTrigger.triggerProps,overlayProps=_useOverlayTrigger.overlayProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,Object.assign({},triggerProps,{children:label})),state.isOpen&&/*#__PURE__*/(0,jsx_runtime.jsxs)(Modal,Object.assign({},props,{state:state,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Dialog_module.modalHeader,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:state.close,variant:"tertiary",icon:x/* default */.A,iconPlacement:"right",children:"St\xE4ng"})}),/*#__PURE__*/react.cloneElement(children(state.close),overlayProps)]}))]});};
+// EXTERNAL MODULE: ./packages/components/src/flex/Flex.tsx
+var Flex = __webpack_require__(39996);
+// EXTERNAL MODULE: ./packages/components/src/flex/FlexItem.tsx
+var FlexItem = __webpack_require__(52981);
+// EXTERNAL MODULE: ./packages/components/src/select/Select.tsx + 10 modules
+var Select = __webpack_require__(81732);
+// EXTERNAL MODULE: ./packages/components/src/textarea/TextArea.tsx + 1 modules
+var TextArea = __webpack_require__(75756);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Heading.mjs
+var Heading = __webpack_require__(57936);
+;// ./apps/docs/docs/components/modal.mdx
 
 
 const frontMatter = {
-	title: 'Select',
+	title: 'Modal',
+	description: 'Modal som lägger sig över allt annat innehåll.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -58,65 +150,71 @@ const assets = {
 
 
 
+
 const Example = props => {
   return (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
     scope: {
+      Button: Button/* Button */.$,
+      ModalTrigger: ModalTrigger,
+      Dialog: Dialog,
+      Flex: Flex/* Flex */.s,
+      FlexItem: FlexItem/* FlexItem */.Z,
       Select: Select/* Select */.l
     },
     ...props,
-    children: `<Select
-        label="Vad är din favoritfrukt?"
-        placeholder="Välj en frukt"
-        description="Beskrivning"
-        selectionMode={'single'}
-        isClearable={false}
-        isSelectableAll={false}
-        showTags={false}
-        defaultSelectedKeys={['kiwi']}
-        options={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-      ></Select>`
+    children: `<>
+            <ModalTrigger
+        label={'Radera frukter'}
+        isDismissable={true}
+      >
+        {(close) => (
+          <Dialog title='Vill du radera alla frukter?'>
+          <p>Är du säker? De går inte att återskapa.</p>
+          <Flex fluid={true}>
+            <FlexItem col='auto'>
+            <Button
+              variant={'danger'}
+              onPress={close}
+            >
+              Radera frukter
+            </Button>
+            </FlexItem>
+            <FlexItem col='auto'>
+             <Button
+              variant={'secondary'}
+              onPress={close}
+            >
+              Avbryt
+            </Button>
+            </FlexItem>
+            </Flex>
+          </Dialog>
+        )}
+      </ModalTrigger>
+        </>`
   });
 };
 const toc = [{
-  "value": "Installation",
-  "id": "installation",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
+  "value": "Installation och användning",
+  "id": "installation-och-användning",
   "level": 2
 }, {
   "value": "Varianter",
   "id": "varianter",
   "level": 2
 }, {
-  "value": "Flerval",
-  "id": "flerval",
-  "level": 3
-}, {
-  "value": "Välj alla",
-  "id": "välj-alla",
-  "level": 4
-}, {
-  "value": "Tags",
-  "id": "tags",
-  "level": 4
+  "value": "Avancerat innehåll",
+  "id": "avancerat-innehåll",
+  "level": 2
 }, {
   "value": "API",
   "id": "api",
   "level": 2
-}, {
-  "value": "Select",
-  "id": "select",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
-    h4: "h4",
     p: "p",
     pre: "pre",
     ...(0,lib/* useMDXComponents */.R)(),
@@ -124,15 +222,16 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: 'Select',
-      friendlyName: 'Flerval, väljare, dropdown'
+      name: 'Modal',
+      friendlyName: "Modal, Dialog, Dialogruta",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/useDialog.html"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält som används för att välja ett eller flera fördefinerade alternativ."
+      children: "Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak."
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideCode: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "installation",
-      children: "Installation"
+      id: "installation-och-användning",
+      children: "Installation och användning"
     }), "\n", (0,jsx_runtime.jsxs)(Tabs/* default */.A, {
       groupId: "npm2yarn",
       children: [(0,jsx_runtime.jsx)(TabItem/* default */.A, {
@@ -165,94 +264,75 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Select } from '@midas-ds/components'\n"
+        children: "import { ModalTrigger, Dialog } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(Example, {
       hideExample: true
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/pr-preview/pr-281/components/radio",
-        children: "Radio"
-      }), " användas istället."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "flerval",
-      children: "Flerval"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "selectionMode=\"multiple\""
-      }), " för att slå på flervalsläget."]
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isOpen"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onOpenChange"
+      }), " för att kontrollera om modalen är öppen eller stängd. För att stänga modal via klick utanför\nmodalens yta, sätt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isDismissable={true}"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "avancerat-innehåll",
+      children: "Avancerat innehåll"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas."
     }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
       scope: {
-        Select: Select/* Select */.l
+        Button: Button/* Button */.$,
+        ModalTrigger: ModalTrigger,
+        Dialog: Dialog,
+        Flex: Flex/* Flex */.s,
+        FlexItem: FlexItem/* FlexItem */.Z,
+        Heading: Heading/* Heading */.D,
+        Select: Select/* Select */.l,
+        TextArea: TextArea/* TextArea */.f
       },
-      ...props,
-      children: `
-  <Select
-    label='Vilka är dina favoritfrukter?'
-    placeholder='Välj en eller flera frukter'
-    description='Beskrivning'
-    selectionMode='multiple'
-    options={fruits.map(({ value, name }) => ({ id: value, name }))}
-  />
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "välj-alla",
-      children: "Välj alla"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isSelectableAll"
-      }), " kan användas för att lägga till en \"Välj alla\"-knapp."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Select: Select/* Select */.l
-      },
-      ...props,
-      children: `
-  <Select
-    label='Vilka är dina favoritfrukter?'
-    placeholder='Välj en eller flera frukter'
-    description='Beskrivning'
-    selectionMode='multiple'
-    options={fruits.map(({ value, name }) => ({ id: value, name }))}
-    isSelectableAll
-  />
-`
-    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "tags",
-      children: "Tags"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "showTags"
-      }), " kan användas för att visa valda alternativ som taggar."]
-    }), "\n", (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
-      scope: {
-        Select: Select/* Select */.l
-      },
-      ...props,
-      children: `
-  <Select
-    label='Vilka är dina favoritfrukter?'
-    placeholder='Välj en eller flera frukter'
-    description='Beskrivning'
-    selectionMode='multiple'
-    options={fruits.map(({ value, name }) => ({ id: value, name }))}
-    showTags
-  />
-`
+      children: `<>
+     <ModalTrigger
+      label={'Öppna modal'}
+      isDismissable={true}
+    >
+      {(close) => (
+        <Dialog title='Vill du avsluta uppdraget?'>
+        <Flex fluid={true} style={{marginBottom: '1rem'}}>
+        <FlexItem col>
+        <TextArea label={'Ange anledning'} description={'Skriv anledning'} maxCharacters={100} autoFocus />
+        </FlexItem>
+        </Flex>
+        <Flex fluid={true}>
+          <FlexItem col='auto'>
+          <Button
+            onPress={close}
+          >
+            Spara korrespondens
+          </Button>
+          </FlexItem>
+          <FlexItem col='auto'>
+           <Button
+            variant={'secondary'}
+            onPress={close}
+          >
+            Avbryt
+          </Button>
+          </FlexItem>
+          </Flex>
+        </Dialog>
+      )}
+    </ModalTrigger>
+      </>`
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "select",
-      children: "Select"
     }), "\n", (0,jsx_runtime.jsx)(propsTable/* PropTable */.U, {
-      name: "Select"
+      name: "ModalTrigger"
     })]
   });
 }
@@ -424,15 +504,82 @@ var _useVisuallyHidden=(0,VisuallyHidden/* useVisuallyHidden */.B)(),visuallyHid
 // 1px rectangle. In addition, we hide from screen readers with aria-hidden, and make the <select>
 // non tabbable with tabIndex={-1}.
 return{containerProps:Object.assign({},visuallyHiddenProps,{'aria-hidden':true,// @ts-expect-error - data-a11y-ignore is not a standard attribute
-'data-react-aria-prevent-focus':true,'data-a11y-ignore':'aria-hidden-focus'}),inputProps:{style:{display:'none'}},selectProps:{tabIndex:-1,autoComplete:autoComplete,disabled:isDisabled,required:validationBehavior==='native'&&isRequired,name:name,onChange:function onChange(e){return state.setSelectedKeys(e.target.value);}}};}/**
+'data-react-aria-prevent-focus':true,'data-a11y-ignore':'aria-hidden-focus'}),inputProps:{style:{display:'none'}},selectProps:{tabIndex:-1,autoComplete:autoComplete,disabled:isDisabled,required:validationBehavior==='native'&&isRequired,name:name,value:Array.from(state.selectedKeys).map(function(key){return key.toString();}),onChange:function onChange(e){return state.setSelectedKeys(e.target.value);}}};}/**
  * Renders a hidden native `<select>` element, which can be used to support browser
  * form autofill, mobile form navigation, and native form submission.
  */function HiddenMultiSelect(props){var state=props.state,triggerRef=props.triggerRef,label=props.label,name=props.name,isDisabled=props.isDisabled;var selectRef=(0,react.useRef)(null);var _useHiddenMultiSelect=useHiddenMultiSelect(Object.assign({},props,{selectRef:selectRef}),state,triggerRef),containerProps=_useHiddenMultiSelect.containerProps,selectProps=_useHiddenMultiSelect.selectProps;// If used in a <form>, use a hidden input so the value can be submitted to a server.
 // If the collection isn't too big, use a hidden <select> element for this so that browser
 // autofill will work. Otherwise, use an <input type="hidden">.
-if(state.collection.size<=300){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},containerProps,{"data-testid":"hidden-select-container",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("label",{children:[label,/*#__PURE__*/(0,jsx_runtime.jsxs)("select",Object.assign({},selectProps,{ref:selectRef,multiple:true,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("option",{}),[].concat(state.collection.getKeys()).map(function(key){var item=state.collection.getItem(key);if(item&&item.type==='item'){return/*#__PURE__*/(0,jsx_runtime.jsx)("option",{value:item.key,selected:state.selectedKeys.has(item.key),children:item.textValue},item.key);}return null;})]}))]})}));}else if(name){var _state$selectedItems$,_state$selectedItems;return/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"hidden",autoComplete:selectProps.autoComplete,name:name,disabled:isDisabled,value:(_state$selectedItems$=(_state$selectedItems=state.selectedItems)==null?void 0:_state$selectedItems.join(', '))!=null?_state$selectedItems$:''});}return null;}
+if(state.collection.size<=300){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},containerProps,{"data-testid":"hidden-select-container",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("label",{children:[label,/*#__PURE__*/(0,jsx_runtime.jsxs)("select",Object.assign({},selectProps,{ref:selectRef,multiple:true,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("option",{}),[].concat(state.collection.getKeys()).map(function(key){var item=state.collection.getItem(key);if(item&&item.type==='item'){return/*#__PURE__*/(0,jsx_runtime.jsx)("option",{value:item.key,children:item.textValue},item.key);}return null;})]}))]})}));}else if(name){var _Array$from$map;return/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"hidden",autoComplete:selectProps.autoComplete,name:name,disabled:isDisabled,value:(_Array$from$map=Array.from(state.selectedKeys).map(function(key){return key.toString();}))!=null?_Array$from$map:''});}return null;}
 ;// ./packages/components/src/select/Select.tsx
 var Select_excluded=["selectionMode"],Select_excluded2=["options"];var SelectComponent=/*#__PURE__*/react.forwardRef(function(_ref,forwardedRef){var _clsx2,_clsx3,_clsx4,_clsx5,_state$selectedItems;var _ref$selectionMode=_ref.selectionMode,selectionMode=_ref$selectionMode===void 0?'single':_ref$selectionMode,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,Select_excluded);var props=Object.assign({selectionMode:selectionMode},rest);var autoFocus=props.autoFocus,className=props.className,excludeFromTabOrder=props.excludeFromTabOrder,_props$isClearable=props.isClearable,isClearable=_props$isClearable===void 0?true:_props$isClearable,isDisabled=props.isDisabled,isSelectableAll=props.isSelectableAll,label=props.label,description=props.description,placeholder=props.placeholder,showTags=props.showTags,errorMessage=props.errorMessage;var refAllButton=(0,react.useRef)(null);var ref=(0,useObjectRef/* useObjectRef */.U)(forwardedRef);var disallowEmptySelection=!isClearable;var state=useMultiSelectState(Object.assign({},props,{disallowEmptySelection:disallowEmptySelection}));var _useMultiSelect=useMultiSelect(Object.assign({},props,{disallowEmptySelection:disallowEmptySelection}),state,ref),labelProps=_useMultiSelect.labelProps,triggerProps=_useMultiSelect.triggerProps,valueProps=_useMultiSelect.valueProps,menuProps=_useMultiSelect.menuProps;var _useButton=(0,useButton/* useButton */.s)(Object.assign({},triggerProps,{autoFocus:autoFocus,excludeFromTabOrder:excludeFromTabOrder,isDisabled:isDisabled}),ref),buttonProps=_useButton.buttonProps;var isActive=state.isOpen||state.selectedItems;var isAllSelection=state.selectionManager.isSelectAll;var isIndeterminateSelection=!isAllSelection&&!state.selectionManager.isEmpty;var hasClearButton=isClearable&&state.selectedItems;var hasHeader=isSelectableAll;var handleClear=function handleClear(){return state.selectionManager.clearSelection();};var handleSelectAll=function handleSelectAll(){return state.selectionManager.toggleSelectAll();};var handleRemove=function handleRemove(key){return state.selectionManager.toggleSelection(key);};var _useObserveElement=useObserveElement(ref.current),buttonWidth=_useObserveElement.width;var formatItems=function formatItems(items){var _clsx;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:(0,clsx/* default */.A)(Select_module.selectValueTag,(_clsx={},_clsx[Select_module.selectValueTagDisabled]=isDisabled,_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:Select_module.truncate,style:{maxWidth:buttonWidth-64},children:items.length>1?items.length+" valda":items[0].textValue}),/*#__PURE__*/(0,jsx_runtime.jsx)("button",{disabled:isDisabled,"aria-label":"Rensa alla",className:Select_module.clearButton,onClick:function onClick(){var _ref$current;handleClear();ref==null||(_ref$current=ref.current)==null||_ref$current.focus();},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{width:16,height:16})})]});};(0,react.useEffect)(function(){if(refAllButton.current){refAllButton.current.indeterminate=isIndeterminateSelection;}},[isIndeterminateSelection]);return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(HiddenMultiSelect,{isDisabled:props.isDisabled,state:state,triggerRef:ref,label:props.label,name:'props.name'}),/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* default */.A)([Select_module.multiSelect],(_clsx2={},_clsx2[Select_module.multiSelectOpen]=state.isOpen,_clsx2),className),children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Select_module.multiSelect,children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{slot:'label',className:(0,clsx/* default */.A)(Select_module.selectLabel,(_clsx3={},_clsx3[Select_module.selectLabelActive]=isActive,_clsx3[Select_module.selectLabelDisabled]=isDisabled,_clsx3)),children:label})),description&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:(0,clsx/* default */.A)(Select_module.description,(_clsx4={},_clsx4[Select_module.descriptionDisabled]=isDisabled,_clsx4[Select_module.descriptionInvalid]=!!errorMessage,_clsx4)),slot:'description',children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{className:Select_module.fieldError,children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(FocusRing/* FocusRing */.v,{focusRingClass:Select_module.buttonFocused,autoFocus:autoFocus,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Select_module.selectContainer,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("button",Object.assign({},buttonProps,{className:(0,clsx/* default */.A)(Select_module.button,(_clsx5={},_clsx5[Select_module.buttonOpen]=state.isOpen,_clsx5[Select_module.buttonActive]=state.selectedItems,_clsx5[Select_module.buttonDisabled]=isDisabled,_clsx5)),type:"button",ref:ref,children:[state.selectionMode==='multiple'&&!state.selectedItems?/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:placeholder}):null,state.selectionMode!=='multiple'?/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:((_state$selectedItems=state.selectedItems)==null?void 0:_state$selectedItems.length)===1?state.selectedItems[0].textValue:placeholder}):null,/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]})),state.selectionMode==='multiple'&&state.selectedItems?/*#__PURE__*/(0,jsx_runtime.jsx)("span",Object.assign({},valueProps,{children:formatItems(state.selectedItems)})):null]})}),state.isOpen&&/*#__PURE__*/(0,jsx_runtime.jsxs)(SelectPopover,{isOpen:state.isOpen,onClose:state.close,className:Select_module.popover,triggerRef:ref,children:[hasHeader&&/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[isSelectableAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(FocusRing/* FocusRing */.v,{focusRingClass:Select_module.listItemfocusRing,children:/*#__PURE__*/(0,jsx_runtime.jsx)("button",{type:"button",onClick:handleSelectAll,className:Select_module.selectAllButton,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Select_module.listBoxItem,tabIndex:-1,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"checkbox",checked:isAllSelection,ref:refAllButton,readOnly:true,tabIndex:-1})}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:'Select All'})]})})}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"selectDivider"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox,Object.assign({},menuProps,{state:state})),hasClearButton&&false&&/*#__PURE__*/0]})]}),showTags&&state.selectedItems!==null&&/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup,Object.assign({"aria-label":'Selected Items',selectionBehavior:'toggle',onRemove:function onRemove(keys){return handleRemove([].concat(keys)[0]);}},mergeProps/* mergeProps */.v,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{items:state.selectedItems,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag,{textValue:item.textValue,id:item.key,dismissable:true,isDisabled:isDisabled,children:item.textValue},item.key);}})}))]}))]});});var Select=/*#__PURE__*/react.forwardRef(function(_ref2,ref){var options=_ref2.options,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,Select_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsx)(SelectComponent,Object.assign({},props,{items:options,ref:ref,children:function children(section){return section.children?/*#__PURE__*/(0,jsx_runtime.jsx)(Section/* Section */.w,{items:section.children,title:section.name,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:item.textValue,children:item.name});}},section.name):/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:section.textValue,children:section.name});}}));});Select.displayName='Select';
+
+/***/ }),
+
+/***/ 75756:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  f: () => (/* binding */ TextArea)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/components/src/textarea/TextArea.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const TextArea_module = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","smBreakpoint":"(max-width: 767px)","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","blue100":"#2e7ca5","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","textArea":"textArea_r3SS","count":"count_om8K","countExceeded":"countExceeded_GeTp"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextArea.mjs
+var dist_TextArea = __webpack_require__(43660);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx
+var textfield_TextField = __webpack_require__(69240);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
+var TextField_module = __webpack_require__(53502);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/textarea/TextArea.tsx
+'use client';var _excluded=["label","description","rows","maxLength","minLength","errorMessage","showCounter","validate"];var TextArea=function TextArea(_ref){var label=_ref.label,description=_ref.description,rows=_ref.rows,maxLength=_ref.maxLength,minLength=_ref.minLength,errorMessage=_ref.errorMessage,showCounter=_ref.showCounter,validate=_ref.validate,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var Count=function Count(){if(maxLength){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{className:(0,clsx/* default */.A)(TextArea_module.count,value.length>maxLength&&TextArea_module.countExceeded),children:[value.length," / ",maxLength]});}if(showCounter){return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:TextArea_module.count,children:value.length});}return null;};var validateInput=function validateInput(value){var maxLengthError=maxLength&&value.length>maxLength?"Du har angett "+(value.length-maxLength)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxLength+" tecken.":null;var minLengthError=minLength&&value.length<minLength?"Du har angett "+Math.abs(value.length-minLength)+" tecken f\xF6r lite. F\xE4ltet kr\xE4ver \xE5tminstone "+minLength+" tecken.":null;var otherValidationError=validate?validate(value):null;return maxLengthError||minLengthError||otherValidationError||true;};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,Object.assign({className:TextField_module/* default */.A.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(textfield_TextField/* InputWrapper */.oi,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Count,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TextArea/* TextArea */.f,{className:TextArea_module.textArea,rows:rows,onFocus:handleChange,onChange:handleChange})]})}));};
+
+/***/ }),
+
+/***/ 69240:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A_: () => (/* binding */ TextField),
+/* harmony export */   oi: () => (/* binding */ InputWrapper)
+/* harmony export */ });
+/* unused harmony exports ssnRegEx, dossNrRegEx */
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32945);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(79950);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(27279);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(21704);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(44300);
+/* harmony import */ var _TextField_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53502);
+/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(86559);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+'use client';var _excluded=["label","description","errorMessage","validationType","validate","maxLength","showCounter"];var TextField=function TextField(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,validationType=_ref.validationType,validate=_ref.validate,maxLength=_ref.maxLength,showCounter=_ref.showCounter,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var _React$useState=react__WEBPACK_IMPORTED_MODULE_0__.useState(''),value=_React$useState[0],setValue=_React$useState[1];var handleChange=function handleChange(event){var newValue=event.target.value;setValue(newValue);};var validateInput=function validateInput(value){if(validationType==='ssn')return ssnRegEx.test(value)?null:'Felaktigt personnummer';if(validationType==='dossnr')return dossNrRegEx.test(value)?null:'Felaktigt dossiernummer';if(validationType instanceof RegExp)return new RegExp(validationType).test(value)?null:errorMessage==null?void 0:errorMessage.toString();if(maxLength)return maxLength&&value.length>maxLength?"Du har angett "+(value.length-maxLength)+" tecken f\xF6r mycket. F\xE4ltet \xE4r begr\xE4nsat till "+maxLength+" tecken.":null;if(validate)return validate(value);return true;};var Count=function Count(){if(maxLength){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span",{className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.count,value.length>maxLength&&_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.countExceeded),children:[value.length," / ",maxLength]});}if(showCounter){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span",{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.count,children:value.length});}return null;};return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .TextField */ .A,Object.assign({className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.inputField,validate:validateInput},props,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(InputWrapper,{label:label,description:description,errorMessage:errorMessage,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Count,{}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div",{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.wrap,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_6__/* .Input */ .p,{type:props.type,className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.input,onChange:handleChange,onBlur:handleChange}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(PasswordField,{type:props.type,input:value})]})]})}));};var PasswordField=function PasswordField(_ref2){var type=_ref2.type,input=_ref2.input;var _React$useState2=react__WEBPACK_IMPORTED_MODULE_0__.useState(false),showPassword=_React$useState2[0],setShowPassword=_React$useState2[1];if(type==='password')return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[showPassword&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_7__/* .Text */ .E,{slot:"description",className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.passwordText,children:input}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_button__WEBPACK_IMPORTED_MODULE_8__/* .Button */ .$,{variant:"tertiary",onPress:function onPress(){return setShowPassword(!showPassword);},className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.passwordButton,children:showPassword?'Dölj':'Visa'})]});return null;};var InputWrapper=function InputWrapper(_ref3){var label=_ref3.label,description=_ref3.description,errorMessage=_ref3.errorMessage,children=_ref3.children;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div",{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.inputWrapper,children:[label&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_9__/* .Label */ .J,{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.label,children:label}),description&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_7__/* .Text */ .E,{slot:"description",className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.text,children:description}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_10__/* .FieldError */ .b,{className:_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fieldError,children:errorMessage}),children]});};var ssnRegEx=new RegExp('^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$');var dossNrRegEx=new RegExp('\\d{1,2}[-+]?\\d{6}(/\\d{1,2})?$');
+
+/***/ }),
+
+/***/ 53502:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","display":"\"Inter\", sans-serif","signalRed10":"#ffdfdf","gray10":"#f2f2f2","gray20":"#e6e6e6","gray50":"#bfbfbf","black":"#000000","signalRed100":"#e62323","mediumWeight":"500","regularWeight":"400","inputText":"#1f1f1f","focus":"0 0 0 2px #ffffff, 0 0 0 4px #000000","inputField":"inputField_NRYV","inputWrapper":"inputWrapper_NR0B","label":"label_UgTd","text":"text_E1GG","fieldError":"fieldError_GOHN","passwordText":"passwordText_gBIs","count":"count_PsfX","countExceeded":"countExceeded_hrAA","input":"input_g6A6","wrap":"wrap_ljmz","passwordButton":"passwordButton_kacG"});
 
 /***/ })
 
