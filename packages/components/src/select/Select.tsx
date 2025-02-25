@@ -6,7 +6,7 @@ import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 import * as React from 'react'
-import { FieldError, Label, TagList, TextField } from 'react-aria-components'
+import { Label, TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -14,8 +14,8 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
-import { Checkbox } from '../checkbox'
 import useObserveElement from '../utils/useObserveElement'
+import { HiddenMultiSelect } from './HiddenMultiSelect'
 
 export type OptionItem = {
   children?: never
@@ -104,15 +104,17 @@ type SelectProps = {
   isInvalid?: boolean
   /** Error message to be displayed in case of invalid state*/
   errorMessage?: string
-  /** Not implemented */
+  /** Whether the field is required. */
   isRequired?: boolean
+  /** Name of the field, for uncontrolled use */
+  name?: string
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
   ({ selectionMode = 'single', ...rest }, forwardedRef) => {
     const props = {
       selectionMode,
-      ...rest
+      ...rest,
     }
 
     const {
@@ -126,25 +128,28 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       description,
       placeholder,
       showTags,
-      errorMessage
+      errorMessage,
     } = props
 
     const refAllButton = useRef<HTMLInputElement>(null)
     const ref = useObjectRef(forwardedRef)
     const disallowEmptySelection = !isClearable
 
-    const state = useMultiSelectState({ ...props, disallowEmptySelection })
+    const state = useMultiSelectState({
+      ...props,
+      disallowEmptySelection,
+    })
     const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
       {
         ...props,
-        disallowEmptySelection
+        disallowEmptySelection,
       },
       state,
-      ref
+      ref,
     )
     const { buttonProps } = useButton(
       { ...triggerProps, autoFocus, excludeFromTabOrder, isDisabled },
-      ref
+      ref,
     )
 
     const isActive = state.isOpen || state.selectedItems
@@ -162,11 +167,11 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const { width: buttonWidth } = useObserveElement(ref.current)
 
     const formatItems = (
-      items: NonNullable<MultiSelectState<Option>['selectedItems']>
+      items: NonNullable<MultiSelectState<Option>['selectedItems']>,
     ) => (
       <div
         className={clsx(styles.selectValueTag, {
-          [styles.selectValueTagDisabled]: isDisabled
+          [styles.selectValueTagDisabled]: isDisabled,
         })}
       >
         <span
@@ -199,171 +204,192 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     }, [isIndeterminateSelection])
 
     return (
-      <TextField
-        {...props}
-        className={clsx(
-          [styles.multiSelect],
-          {
-            [styles.multiSelectOpen]: state.isOpen
-          },
-          className
-        )}
-      >
-        <div className={styles.multiSelect}>
-          {label && (
-            <Label
-              {...labelProps}
-              slot={'label'}
-              className={clsx(styles.selectLabel, {
-                [styles.selectLabelActive]: isActive,
-                [styles.selectLabelDisabled]: isDisabled
-              })}
-            >
-              {label}
-            </Label>
+      <>
+        <HiddenMultiSelect
+          isDisabled={props.isDisabled}
+          isRequired={props.isRequired}
+          name={props.name}
+          state={state}
+          triggerRef={ref}
+          label={props.label + '-hidden'}
+        />
+        <TextField
+          {...props}
+          className={clsx(
+            [styles.multiSelect],
+            {
+              [styles.multiSelectOpen]: state.isOpen,
+            },
+            className,
           )}
-          {description && (
-            <span
-              className={clsx(styles.description, {
-                [styles.descriptionDisabled]: isDisabled,
-                [styles.descriptionInvalid]: !!errorMessage
-              })}
-              slot={'description'}
-            >
-              {description}
-            </span>
-          )}
-          <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
-          <FocusRing
-            focusRingClass={styles.buttonFocused}
-            autoFocus={autoFocus}
-          >
-            <div className={styles.selectContainer}>
-              <button
-                {...buttonProps}
-                className={clsx(styles.button, {
-                  [styles.buttonOpen]: state.isOpen,
-                  [styles.buttonActive]: state.selectedItems,
-                  [styles.buttonDisabled]: isDisabled
+        >
+          <div className={styles.multiSelect}>
+            {label && (
+              <Label
+                {...labelProps}
+                slot={'label'}
+                className={clsx(styles.selectLabel, {
+                  [styles.selectLabelActive]: isActive,
+                  [styles.selectLabelDisabled]: isDisabled,
                 })}
-                type='button'
-                ref={ref}
               >
-                {state.selectionMode === 'multiple' && !state.selectedItems ? (
-                  <span>{placeholder}</span>
-                ) : null}
-                {state.selectionMode !== 'multiple' ? (
-                  <span>
-                    {state.selectedItems?.length === 1
-                      ? state.selectedItems[0].textValue
-                      : placeholder}
+                {label}
+              </Label>
+            )}
+            {description && (
+              <span
+                className={clsx(styles.description, {
+                  [styles.descriptionDisabled]: isDisabled,
+                  [styles.descriptionInvalid]: !!errorMessage,
+                })}
+                slot={'description'}
+              >
+                {description}
+              </span>
+            )}
+            {state.displayValidation.validationErrors.length || errorMessage ? (
+              <div className={styles.fieldError}>
+                {errorMessage ||
+                  state.displayValidation.validationErrors.map(error => (
+                    <React.Fragment key={error}>{error}</React.Fragment>
+                  ))}
+              </div>
+            ) : null}
+            <FocusRing
+              focusRingClass={styles.buttonFocused}
+              autoFocus={autoFocus}
+            >
+              <div className={styles.selectContainer}>
+                <button
+                  {...buttonProps}
+                  className={clsx(styles.button, {
+                    [styles.buttonOpen]: state.isOpen,
+                    [styles.buttonActive]: state.selectedItems,
+                    [styles.buttonDisabled]: isDisabled,
+                  })}
+                  data-invalid={
+                    state.displayValidation.validationErrors.length > 0
+                  }
+                  type='button'
+                  ref={ref}
+                >
+                  {state.selectionMode === 'multiple' &&
+                  !state.selectedItems ? (
+                    <span>{placeholder}</span>
+                  ) : null}
+                  {state.selectionMode !== 'multiple' ? (
+                    <span>
+                      {state.selectedItems?.length === 1
+                        ? state.selectedItems[0].textValue
+                        : placeholder}
+                    </span>
+                  ) : null}
+                  <div
+                    className={styles.icon}
+                    aria-hidden='true'
+                  >
+                    <ChevronDown size={20} />
+                  </div>
+                </button>
+                {state.selectionMode === 'multiple' && state.selectedItems ? (
+                  <span {...valueProps}>
+                    {formatItems(state.selectedItems)}
                   </span>
                 ) : null}
-                <div
-                  className={styles.icon}
-                  aria-hidden='true'
-                >
-                  <ChevronDown size={20} />
-                </div>
-              </button>
-              {state.selectionMode === 'multiple' && state.selectedItems ? (
-                <span {...valueProps}>{formatItems(state.selectedItems)}</span>
-              ) : null}
-            </div>
-          </FocusRing>
-          {state.isOpen && (
-            <SelectPopover
-              isOpen={state.isOpen}
-              onClose={state.close}
-              className={styles.popover}
-              triggerRef={ref}
-            >
-              {hasHeader && (
-                <>
-                  {isSelectableAll && (
-                    <FocusRing focusRingClass={styles.listItemfocusRing}>
-                      <button
-                        type='button'
-                        onClick={handleSelectAll}
-                        className={styles.selectAllButton}
-                      >
-                        <div
-                          className={styles.listBoxItem}
-                          tabIndex={-1}
+              </div>
+            </FocusRing>
+            {state.isOpen && (
+              <SelectPopover
+                isOpen={state.isOpen}
+                onClose={state.close}
+                className={styles.popover}
+                triggerRef={ref}
+              >
+                {hasHeader && (
+                  <>
+                    {isSelectableAll && (
+                      <FocusRing focusRingClass={styles.listItemfocusRing}>
+                        <button
+                          type='button'
+                          onClick={handleSelectAll}
+                          className={styles.selectAllButton}
                         >
-{/*                                                    <Checkbox
+                          <div
+                            className={styles.listBoxItem}
+                            tabIndex={-1}
+                          >
+                            {/*                                                    <Checkbox
                             isDisabled={isDisabled}
                             isSelected={isAllSelection}
                             isReadOnly
                             isIndeterminate={isIndeterminateSelection}
                             excludeFromTabOrder={true}
                           />*/}
-                          <div className={styles.checkboxContainer}>
-                            <input
-                              type='checkbox'
-                              checked={isAllSelection}
-                              ref={refAllButton}
-                              readOnly
-                              tabIndex={-1}
-                            />
+                            <div className={styles.checkboxContainer}>
+                              <input
+                                type='checkbox'
+                                checked={isAllSelection}
+                                ref={refAllButton}
+                                readOnly
+                                tabIndex={-1}
+                              />
+                            </div>
+                            <span>{'Select All'}</span>
                           </div>
-                          <span>
-                            {'Select All'}
-                          </span>
-                        </div>
-                      </button>
-                    </FocusRing>
-                  )}
-                  <div className='selectDivider' />
-                </>
-              )}
-              <SelectListBox
-                {...menuProps}
-                state={state}
-              />
-              {/** Bottom clear button disabled for now, work in progress */}
-              {hasClearButton && false && (
-                <>
-                  <div className='selectDivider' />
-                  {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}
-                  <button
-                    type='button'
-                    className={''}
-                    onClick={handleClear}
+                        </button>
+                      </FocusRing>
+                    )}
+                    <div className='selectDivider' />
+                  </>
+                )}
+                <SelectListBox
+                  {...menuProps}
+                  state={state}
+                />
+                {/** Bottom clear button disabled for now, work in progress */}
+                {hasClearButton && false && (
+                  <>
+                    <div className='selectDivider' />
+                    {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}
+                    <button
+                      type='button'
+                      className={''}
+                      onClick={handleClear}
+                    >
+                      Clear
+                    </button>
+                  </>
+                )}
+              </SelectPopover>
+            )}
+          </div>
+          {/*TODO FIX AND REFACTOR*/}
+          {showTags && state.selectedItems !== null && (
+            <TagGroup
+              aria-label={'Selected Items'}
+              selectionBehavior={'toggle'}
+              onRemove={keys => handleRemove([...keys][0])}
+              {...mergeProps}
+            >
+              <TagList items={state.selectedItems}>
+                {item => (
+                  <Tag
+                    key={item.key}
+                    textValue={item.textValue}
+                    id={item.key}
+                    dismissable
+                    isDisabled={isDisabled}
                   >
-                    Clear
-                  </button>
-                </>
-              )}
-            </SelectPopover>
+                    {item.textValue}
+                  </Tag>
+                )}
+              </TagList>
+            </TagGroup>
           )}
-        </div>
-        {/*TODO FIX AND REFACTOR*/}
-        {showTags && state.selectedItems !== null && (
-          <TagGroup
-            aria-label={'Selected Items'}
-            selectionBehavior={'toggle'}
-            onRemove={keys => handleRemove([...keys][0])}
-            {...mergeProps}
-          >
-            <TagList items={state.selectedItems}>
-              {item => (
-                <Tag
-                  key={item.key}
-                  textValue={item.textValue}
-                  id={item.key}
-                  dismissable
-                  isDisabled={isDisabled}
-                >
-                  {item.textValue}
-                </Tag>
-              )}
-            </TagList>
-          </TagGroup>
-        )}
-      </TextField>
+        </TextField>
+      </>
     )
-  }
+  },
 )
 
 type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
@@ -392,7 +418,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectContainerProps>(
         )
       }
     </SelectComponent>
-  )
+  ),
 )
 
 Select.displayName = 'Select'

@@ -1,10 +1,10 @@
 import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Key } from 'react-aria'
 
 import {
   MultiSelectListState,
-  useMultiSelectListState
+  useMultiSelectListState,
 } from './useMultiSelectListState'
 
 import type { OverlayTriggerProps } from '@react-types/overlays'
@@ -17,8 +17,13 @@ import type {
   MultipleSelection,
   TextInputBase,
   Validation,
-  Selection
+  Selection,
 } from '@react-types/shared'
+
+import {
+  useFormValidationState,
+  type FormValidationState,
+} from '@react-stately/form'
 
 /** Added this for a better output, will see how this plays out */
 interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
@@ -45,7 +50,8 @@ export interface MultiSelectProps<T>
 
 export interface MultiSelectState<T>
   extends MultiSelectListState<T>,
-    MenuTriggerState {
+    MenuTriggerState,
+    FormValidationState {
   /** Whether the select is currently focused. */
   isFocused: boolean
 
@@ -54,15 +60,17 @@ export interface MultiSelectState<T>
 }
 
 export function useMultiSelectState<T extends object>(
-  props: MultiSelectProps<T>
+  props: MultiSelectProps<T>,
 ): MultiSelectState<T> {
+  const { selectionMode } = props
   const [isFocused, setFocused] = useState(false)
 
   const triggerState = useMenuTriggerState(props)
+
   const listState = useMultiSelectListState({
     ...props,
     onSelectionChange: keys => {
-      const { onSelectionChange, selectionMode } = props
+      const { onSelectionChange } = props
 
       if (onSelectionChange != null) {
         if (keys === 'all') {
@@ -80,14 +88,35 @@ export function useMultiSelectState<T extends object>(
       if (selectionMode === 'single') {
         triggerState.close()
       }
-    }
+    },
   })
+
+  const validationState = useFormValidationState({
+    ...props,
+    validationBehavior: 'native',
+    value:
+      selectionMode === 'single'
+        ? listState.selectedKeys.values().next().value?.toString()
+        : listState.selectedKeys,
+  })
+
+  // Reset validation for single selects when the selected key changes.
+  useEffect(() => {
+    if (selectionMode === 'single' && listState.selectedKeys.size) {
+      validationState.resetValidation()
+      validationState.commitValidation()
+    }
+  }, [listState.selectedKeys.size, selectionMode, validationState])
 
   return {
     ...listState,
     ...triggerState,
     close() {
       triggerState.close()
+      if (listState.selectedKeys.size) {
+        validationState.resetValidation()
+        validationState.commitValidation()
+      }
     },
     open() {
       // Don't open if the collection is empty.
@@ -101,6 +130,7 @@ export function useMultiSelectState<T extends object>(
       }
     },
     isFocused,
-    setFocused
+    setFocused,
+    ...validationState,
   }
 }
