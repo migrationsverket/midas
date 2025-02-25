@@ -39,6 +39,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
   errorMessage,
   showCounter,
   validate,
+  className,
   ...props
 }) => {
   const [value, setValue] = React.useState(
@@ -88,7 +89,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <AriaTextField
-      className={TextFieldStyles.inputField}
+      className={clsx(TextFieldStyles.inputField, className)}
       validate={validateInput}
       {...props}
     >
