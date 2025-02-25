@@ -5,6 +5,8 @@ import user from '../../tests/utils/user'
 import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'Label for input'
+const testClass = 'test'
+const testID = 'test'
 
 describe('given a default TextField', () => {
   beforeEach(() => {
@@ -12,12 +14,18 @@ describe('given a default TextField', () => {
       <TextField
         label={label}
         type='text'
+        data-testid={testID}
+        className={testClass}
       />,
     )
   })
 
   it('should have no accessibility violations', async () => {
     expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByTestId(testID)).toHaveClass('inputField', testClass)
   })
 })
 
@@ -79,5 +87,37 @@ describe('given a TextField with type "number"', () => {
     await user.tab()
     await user.keyboard('abc')
     expect(screen.getByLabelText(label)).toHaveValue(null)
+  })
+})
+
+describe('given a TextField with showCounter and an initial value', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        value='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
+  })
+})
+
+describe('given a TextField with showCounter and an initial defaultValue', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        defaultValue='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
   })
 })
