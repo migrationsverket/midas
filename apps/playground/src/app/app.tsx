@@ -30,6 +30,23 @@ export function App() {
             },
           ]}
           isRequired
+          name='multiple'
+        />
+        <Select
+          label={'Select'}
+          selectionMode='single'
+          options={[
+            {
+              name: 'Option 1',
+              id: '1',
+            },
+            {
+              name: 'Option 2',
+              id: '2',
+            },
+          ]}
+          isRequired
+          name='single'
         />
         <button type='submit'>Submit</button>
       </form>
