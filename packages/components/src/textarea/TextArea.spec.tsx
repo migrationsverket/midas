@@ -5,12 +5,26 @@ import user from '../../tests/utils/user'
 import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'Enter your text here'
+const testID = 'test'
+const testClass = 'test'
 
 describe('given a default TextArea', () => {
-  beforeEach(() => renderWithForm(<TextArea label={label} />))
+  beforeEach(() =>
+    renderWithForm(
+      <TextArea
+        label={label}
+        className={testClass}
+        data-testid={testID}
+      />,
+    ),
+  )
 
   it('should have no accessibility violations', async () => {
     expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByTestId(testID)).toHaveClass('inputField', testClass)
   })
 })
 
@@ -90,5 +104,37 @@ describe('given a TextArea with custom validation', () => {
     await user.tab()
     await user.keyboard('[Enter]')
     expect(screen.getByText(errorMessage)).toBeInTheDocument()
+  })
+})
+
+describe('given a TextArea with showCounter and an initial value', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextArea
+        label={label}
+        showCounter
+        value='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
+  })
+})
+
+describe('given a TextArea with showCounter and an initial defaultValue', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextArea
+        label={label}
+        showCounter
+        defaultValue='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
   })
 })
