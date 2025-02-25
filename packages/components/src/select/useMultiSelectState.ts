@@ -1,5 +1,5 @@
 import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Key } from 'react-aria'
 
 import {
@@ -62,6 +62,7 @@ export interface MultiSelectState<T>
 export function useMultiSelectState<T extends object>(
   props: MultiSelectProps<T>,
 ): MultiSelectState<T> {
+  const { selectionMode } = props
   const [isFocused, setFocused] = useState(false)
 
   const triggerState = useMenuTriggerState(props)
@@ -69,7 +70,7 @@ export function useMultiSelectState<T extends object>(
   const listState = useMultiSelectListState({
     ...props,
     onSelectionChange: keys => {
-      const { onSelectionChange, selectionMode } = props
+      const { onSelectionChange } = props
 
       if (onSelectionChange != null) {
         if (keys === 'all') {
@@ -93,14 +94,26 @@ export function useMultiSelectState<T extends object>(
   const validationState = useFormValidationState({
     ...props,
     validationBehavior: 'native',
-    value: listState.selectedKeys,
+    value:
+      selectionMode === 'single'
+        ? listState.selectedKeys.values().next().value?.toString()
+        : listState.selectedKeys,
   })
+
+  // Reset validation for single selects when the selected key changes.
+  useEffect(() => {
+    if (selectionMode === 'single' && listState.selectedKeys.size) {
+      validationState.resetValidation()
+      validationState.commitValidation()
+    }
+  }, [listState.selectedKeys.size, selectionMode, validationState])
 
   return {
     ...listState,
     ...triggerState,
     close() {
       triggerState.close()
+      // Reset validation for multi selects when the list closes.
       validationState.resetValidation()
       validationState.commitValidation()
     },

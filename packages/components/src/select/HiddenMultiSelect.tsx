@@ -100,7 +100,10 @@ export function useHiddenMultiSelect<T>(
       disabled: isDisabled,
       required: isRequired,
       name,
-      value: Array.from(state.selectedKeys).map(key => key.toString()),
+      value:
+        state.selectionMode === 'single'
+          ? state.selectedKeys.values().next().value?.toString()
+          : Array.from(state.selectedKeys).map(key => key.toString()),
       onChange: (e: React.ChangeEvent<HTMLSelectElement>) =>
         state.setSelectedKeys(e.target.value),
     },
@@ -134,7 +137,8 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
           <select
             {...selectProps}
             ref={selectRef}
-            multiple
+            multiple={state.selectionMode === 'multiple'}
+            name={name}
           >
             <option />
             {[...state.collection.getKeys()].map(key => {
@@ -162,7 +166,11 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
         autoComplete={selectProps.autoComplete}
         name={name}
         disabled={isDisabled}
-        value={Array.from(state.selectedKeys).map(key => key.toString()) ?? ''}
+        value={
+          state.selectionMode === 'single'
+            ? (state.selectedKeys.values().next().value?.toString() ?? '')
+            : (Array.from(state.selectedKeys).map(key => key.toString()) ?? '')
+        }
       />
     )
   }
