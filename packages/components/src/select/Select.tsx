@@ -247,7 +247,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            {state.displayValidation.validationErrors.length ? (
+            {state.displayValidation.validationErrors.length || errorMessage ? (
               <div className={styles.fieldError}>
                 {errorMessage ||
                   state.displayValidation.validationErrors.map(error => (
