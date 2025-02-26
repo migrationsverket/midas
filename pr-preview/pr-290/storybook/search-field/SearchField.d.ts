@@ -22,5 +22,9 @@ export interface SearchFieldProps extends AriaSearchFieldProps {
      * Currently have troubles displaying an error message, please use the validate property if it's needed.
      */
     isRequired?: AriaSearchFieldProps['isRequired'];
+    /**
+     * A custom error message if using the isInvalid prop.
+     */
+    errorMessage?: string;
 }
 export declare const SearchField: React.FC<SearchFieldProps>;
