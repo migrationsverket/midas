@@ -10,9 +10,9 @@ import { Button } from '../button'
 import styles from './SearchField.module.css'
 import clsx from 'clsx'
 import * as React from 'react'
-
 import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
+import type { ValidationError } from '@react-types/shared'
 
 export interface SearchFieldProps extends AriaSearchFieldProps {
   /** Placeholder text */
@@ -40,6 +40,12 @@ export interface SearchFieldProps extends AriaSearchFieldProps {
    * A custom error message if using the isInvalid prop.
    */
   errorMessage?: string
+}
+
+function isValidationError(
+  error: ValidationError | true | null | undefined,
+): error is ValidationError {
+  return !!(error as ValidationError)?.length
 }
 
 export const SearchField: React.FC<SearchFieldProps> = props => {
@@ -71,7 +77,7 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
   const handleClear = () => setValue('')
 
   const handleSubmit = () => {
-    if (props.validate && props.validate(value) !== true) {
+    if (props.validate && isValidationError(props.validate(value))) {
       ref.current?.focus()
       return
     }
