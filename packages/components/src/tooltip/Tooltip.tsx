@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import styles from './Tooltip.module.css'
 import * as React from 'react'
 import {
@@ -5,7 +6,7 @@ import {
   TooltipTrigger as AriaTooltipTrigger,
   type TooltipProps,
   Tooltip as AriaTooltip,
-  TooltipTriggerComponentProps
+  TooltipTriggerComponentProps,
 } from 'react-aria-components'
 
 interface MidasTooltipProps extends Omit<TooltipProps, 'children'> {
@@ -13,10 +14,15 @@ interface MidasTooltipProps extends Omit<TooltipProps, 'children'> {
   placement?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-export function Tooltip({ children, placement, ...props }: MidasTooltipProps) {
+export function Tooltip({
+  children,
+  placement,
+  className,
+  ...props
+}: MidasTooltipProps) {
   return (
     <AriaTooltip
-      className={styles.tooltip}
+      className={clsx(styles.tooltip, className)}
       placement={placement}
       {...props}
     >

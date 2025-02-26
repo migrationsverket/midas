@@ -40,9 +40,12 @@ export const TextField: React.FC<TextFieldProps> = ({
   validate,
   maxLength,
   showCounter,
+  className,
   ...props
 }) => {
-  const [value, setValue] = React.useState<string>('')
+  const [value, setValue] = React.useState<string>(
+    props.defaultValue ?? props.value ?? '',
+  )
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value
@@ -96,7 +99,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <AriaTextField
-      className={styles.inputField}
+      className={clsx(styles.inputField, className)}
       validate={validateInput}
       {...props}
     >

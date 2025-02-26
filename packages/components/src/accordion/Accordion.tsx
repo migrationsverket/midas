@@ -20,6 +20,7 @@ export const Accordion: React.FC<MidasAccordion> = ({
   variant = 'uncontained',
   type = 'single',
   children,
+  className,
   ...props
 }) => {
   return (
@@ -27,7 +28,8 @@ export const Accordion: React.FC<MidasAccordion> = ({
       allowsMultipleExpanded={type === 'multiple'}
       className={clsx(
         styles.root,
-        variant === 'contained' ? styles.contained : styles.uncontained
+        variant === 'contained' ? styles.contained : styles.uncontained,
+        className,
       )}
       {...props}
     >

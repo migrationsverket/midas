@@ -5,14 +5,24 @@ import { renderWithForm } from '../../tests/utils/browser'
 import user from '../../tests/utils/user'
 
 const label = 'Välj ett av följande alternativ'
+const testClass = 'test'
 
 describe('given a basic Radio group', () => {
   beforeEach(() => {
-    render(<RadioGroup label={label} />)
+    render(
+      <RadioGroup
+        label={label}
+        className={testClass}
+      />,
+    )
   })
 
   it('should have no accessibility violations', async () => {
     expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByLabelText(label)).toHaveClass('radioGroup', testClass)
   })
 })
 
