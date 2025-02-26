@@ -1,6 +1,0 @@
-import{j as e}from"./jsx-runtime-CBDCb4rg.js";import{$ as p}from"./Link-BI5iYWNl.js";import{c as l}from"./clsx-B-dksMZM.js";import{c as m}from"./createLucideIcon-DjmUzaoT.js";/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */const h=m("ArrowRight",[["path",{d:"M5 12h14",key:"1ays0h"}],["path",{d:"m12 5 7 7-7 7",key:"xquz4c"}]]),_="_link_p1sqk_4",k="_icon_p1sqk_40",u="_standalone_p1sqk_44",f="_stretched_p1sqk_59",s={link:_,icon:k,standalone:u,stretched:f},q=({children:c,standalone:t,stretched:r,icon:n,className:a,as:i,...o})=>{const d=i||p;return e.jsx(d,{className:l(s.link,t&&s.standalone,r&&s.stretched,a),...o,children:e.jsxs(e.Fragment,{children:[c,!t&&n&&e.jsx(n,{size:20,className:s.icon}),t&&e.jsx(h,{size:20,className:s.icon})]})})};q.__docgenInfo={description:"",methods:[],displayName:"Link",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},standalone:{required:!1,tsType:{name:"boolean"},description:""},stretched:{required:!1,tsType:{name:"boolean"},description:""},icon:{required:!1,tsType:{name:"LucideIcon"},description:""},className:{required:!1,tsType:{name:"string"},description:""},as:{required:!1,tsType:{name:"C"},description:""}}};export{h as A,q as L};
