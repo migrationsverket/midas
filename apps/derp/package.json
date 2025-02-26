@@ -1,0 +1,39 @@
+{
+  "name": "derp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "build-components": "nx build components",
+    "pack-components": "cd ../../dist/packages/components && npm pack",
+    "install-components": "npm i ../../dist/packages/components/midas-ds-components-*.tgz",
+    "pre-test": "npm run build-components && npm run pack-components && npm run install-components",
+    "post-test": "npm i @midas-ds/components@latest",
+    "test": "playwright test",
+    "test:full": "npm run pre-test && npm run test && npm run post-test"
+  },
+  "dependencies": {
+    "@midas-ds/components": "^2.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0"
+  }
+}
