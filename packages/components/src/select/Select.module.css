@@ -1,5 +1,4 @@
 @value tokens: "../theme/tokens.css";
-
 @value display, regularWeight, mediumWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, backgroundSecondary from tokens;
 
 * > ul {
@@ -10,7 +9,7 @@
 
 .listItemfocusRing {
   /*  outline: black solid 2px;
-    outline-offset: -2px;*/
+    outline-offset: -2px; */
 }
 
 .selectAllButton {
@@ -26,11 +25,12 @@
 .selectLabel {
   grid-area: Label;
   font-weight: mediumWeight;
+
   /** Select Label */
 }
 
 .selectLabelActive {
-  /** Label in active state*/
+  /** Label in active state */
 }
 
 .selectLabelDisabled {
@@ -127,7 +127,9 @@
 }
 
 .descriptionActive {
+  /** Description in active state */
 }
+
 .descriptionInvalid {
   margin-bottom: 0;
 }
@@ -146,7 +148,7 @@
     200px
   ); /* 1 */
 
-  /*  background-color: var(--select-background);*/
+  /*  background-color: var(--select-background); */
   width: var(--select-popover-width);
 }
 
@@ -195,13 +197,14 @@
   }
 
   &:focus {
+    /** listBoxItem focus */
   }
 
   &:focus-visible {
     outline: none;
   }
 
-  /*TODO: remove */
+  /* TODO: remove */
 
   &[data-disabled='true'] {
     color: gray50;
@@ -211,6 +214,7 @@
 .listBoxItemSelected {
   background-color: gray20;
   color: black;
+
   &.listBoxItemDisabled {
     color: gray50;
   }
@@ -289,9 +293,11 @@
 }
 
 .selectDivider {
+  /** selectDivider */
 }
 
 .selectSectionHeading {
+  /** selectSectionHeading */
 }
 
 .fieldError {
@@ -338,11 +344,9 @@
   --select-option-background--selected: #ff739d;
   --select-divider: var(--select-border--hover);
   --select-section-heading-text: var(--select-text);
-}
 
-.select__popover {
   /*  border: 2px solid var(--select-border);
-    padding: 20px;*/
+    padding: 20px; */
   display: flex;
   flex-direction: column;
 
@@ -362,9 +366,9 @@
   padding: 1rem 0.5rem 1rem 0;
 }
 
-/* checkbox stuff*/
+/* checkbox stuff */
 input[type='checkbox'] {
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
   appearance: none;
   background-color: blue150;
   display: grid;
@@ -376,6 +380,7 @@ input[type='checkbox'] {
   border: 1px solid currentColor;
   border-radius: 0;
 }
+
 input[type='checkbox']::before {
   content: '';
   width: 0.9rem;
@@ -385,42 +390,48 @@ input[type='checkbox']::before {
   box-shadow: inset 1rem 1rem white;
   background-color: CanvasText;
 }
+
 input[type='checkbox']:checked::before {
   transform: scale(1);
   mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
   mask-size: 0.9rem 0.9rem;
 }
+
 input[type='checkbox']:indeterminate::before {
   width: 1rem;
   height: 1rem;
+  mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1pbnVzIj48cGF0aCBkPSJNNSAxMmgxNCIvPjwvc3ZnPg==');
   mask-repeat: no-repeat;
   mask-clip: border-box;
   transform: scale(1);
   mask-size: 0.9rem 0.9rem;
-  mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1pbnVzIj48cGF0aCBkPSJNNSAxMmgxNCIvPjwvc3ZnPg==');
 }
 
-/**/
-
 .restyle {
+  /** restyle */
 }
 
 @media (forced-colors: active) {
   [data-invalid] .button {
     border: 5px solid Highlight !important;
   }
+
   .listBoxItemFocused {
     border: 1px ButtonBorder solid;
   }
+
   .selectValueTag {
     border: ButtonBorder solid;
   }
+
   .button,
   .clearButton {
     border: Highlight 1px solid;
   }
+
   .fieldError {
     color: Highlight;
+
     &::before {
       background-color: Highlight;
     }

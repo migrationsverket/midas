@@ -38,7 +38,7 @@ const fruits = [
   'Pomegranate',
   'Dragonfruit',
   'Starfruit',
-  'Passionfruit'
+  'Passionfruit',
 ]
 
 const options = fruits.map(fruit => {
@@ -56,15 +56,15 @@ export const Normal: Story = {
     description: 'Description',
     showTags: false,
     placeholder: 'Select an option',
-  }
+  },
 }
 
 export const DefaultSelectedKey: Story = {
   args: {
     ...Normal.args,
     description: 'Kiwi is pre-selected',
-    defaultSelectedKeys: ['kiwi']
-  }
+    defaultSelectedKeys: ['kiwi'],
+  },
 }
 
 export const AllKeysSelected: Story = {
@@ -73,44 +73,44 @@ export const AllKeysSelected: Story = {
     selectionMode: 'multiple',
     description: 'All options are selected',
     defaultSelectedKeys: 'all',
-  }
+  },
 }
 
 export const Disabled: Story = {
   args: {
     ...Normal.args,
     isDisabled: true,
-  }
+  },
 }
 export const DisabledOption: Story = {
   args: {
     ...Normal.args,
     description: 'Kiwi is disabled',
     disabledKeys: ['kiwi'],
-  }
+  },
 }
 
 export const Invalid: Story = {
   args: {
     ...Normal.args,
     isInvalid: true,
-    errorMessage:'Error msg',
-  }
+    errorMessage: 'Error msg',
+  },
 }
 export const WithTags: Story = {
   args: {
     ...Normal.args,
     selectionMode: 'multiple',
     showTags: true,
-    defaultSelectedKeys: ['apple','kiwi']
-  }
+    defaultSelectedKeys: ['apple', 'kiwi'],
+  },
 }
 export const SelectAllEnabled: Story = {
   args: {
     ...Normal.args,
     selectionMode: 'multiple',
     isSelectableAll: true,
-  }
+  },
 }
 /** As default all options are clearable. `isClearable={false}` Experimental feature  */
 export const NotClearable: Story = {

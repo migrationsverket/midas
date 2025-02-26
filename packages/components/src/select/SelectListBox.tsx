@@ -7,7 +7,7 @@ import type { MultiSelectState } from './useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import { FocusRing } from '@react-aria/focus'
-import { Checkbox } from '../checkbox'
+// import { Checkbox } from '../checkbox'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
   listBoxRef?: React.RefObject<HTMLUListElement>
