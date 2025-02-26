@@ -1,32 +1,22 @@
 @value tokens: "../theme/tokens.css";
 @value display, regularWeight, mediumWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, backgroundSecondary from tokens;
 
+/** clear the default list styles */
 * > ul {
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.listItemfocusRing {
-  /*  outline: black solid 2px;
-    outline-offset: -2px; */
-}
-
 .selectAllButton {
   all: unset;
   width: 100%;
   margin-bottom: 2px;
-
-  &:focus-visible {
-    outline: 2px black solid;
-  }
 }
-
+/** Select Label */
 .selectLabel {
   grid-area: Label;
   font-weight: mediumWeight;
-
-  /** Select Label */
 }
 
 .selectLabelActive {
@@ -45,10 +35,10 @@
   color: black;
   display: flex;
   justify-content: flex-end;
-  height: 48px;
+  height: 3rem;
   align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: backgroundSecondary;
   border-bottom: 1px solid black;
 
@@ -88,12 +78,6 @@
   background: backgroundSecondary;
   color: gray50;
   border-color: gray50;
-}
-
-/** not working? */
-.buttonFocused {
-  outline-offset: 2px;
-  outline: 2px solid black;
 }
 
 .buttonActive {
@@ -196,16 +180,6 @@
     transition-delay: 60ms;
   }
 
-  &:focus {
-    /** listBoxItem focus */
-  }
-
-  &:focus-visible {
-    outline: none;
-  }
-
-  /* TODO: remove */
-
   &[data-disabled='true'] {
     color: gray50;
   }
@@ -226,7 +200,15 @@
 }
 
 .listBoxItemFocused {
-  background-color: gray20;
+    outline: none;
+}
+.listBoxItemFocusVisible {
+  outline: #171717 solid 1px;
+  outline-offset: -1px;
+}
+.listBoxItemCheckmark {
+  margin-left: auto;
+  align-self: center;
 }
 
 .selectContainer {
@@ -267,8 +249,7 @@
 
 .clearButton {
   padding: 0.5rem;
-  margin: 0;
-  margin-left: 0.5rem;
+  margin: 0 0 0 0.5rem;
   display: flex;
   border-radius: 100%;
   background-color: blue150;
@@ -284,11 +265,6 @@
     pointer-events: none;
     color: gray50;
     background-color: gray10;
-  }
-
-  &:focus-visible {
-    outline-offset: 2px;
-    outline: 2px solid black;
   }
 }
 
@@ -322,41 +298,6 @@
     align-self: flex-start;
     margin: 2px;
   }
-}
-
-/** copied stuff */
-.select__popover {
-  --select-background: #fff;
-  --select-border: #00f;
-  --select-border--hover: #aac1ff;
-  --select-border--focus: #ff739d;
-  --select-text: #000;
-  --select-text-base: 10px;
-  --select-label-text: var(--select-text);
-  --select-label-text--active: var(--select-border);
-  --select-option-text: var(--select-text);
-  --select-option-text--disabled: #aaa;
-  --select-option-text--hover: var(--select-text);
-  --select-option-text--selected: var(--select-text);
-  --select-option-background: transparent;
-  --select-option-background--disabled: transparent;
-  --select-option-background--hover: #aac1ff;
-  --select-option-background--selected: #ff739d;
-  --select-divider: var(--select-border--hover);
-  --select-section-heading-text: var(--select-text);
-
-  /*  border: 2px solid var(--select-border);
-    padding: 20px; */
-  display: flex;
-  flex-direction: column;
-
-  --select-popover-width: max(
-    var(--select-width, var(--field-width-base)),
-    200px
-  ); /* 1 */
-
-  background-color: var(--select-background);
-  width: var(--select-popover-width);
 }
 
 .checkboxContainer {
@@ -407,10 +348,7 @@ input[type='checkbox']:indeterminate::before {
   mask-size: 0.9rem 0.9rem;
 }
 
-.restyle {
-  /** restyle */
-}
-
+/** High contrast fixes */
 @media (forced-colors: active) {
   [data-invalid] .button {
     border: 5px solid Highlight !important;

@@ -318,13 +318,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                             className={styles.listBoxItem}
                             tabIndex={-1}
                           >
-                            {/*                                                    <Checkbox
-                            isDisabled={isDisabled}
-                            isSelected={isAllSelection}
-                            isReadOnly
-                            isIndeterminate={isIndeterminateSelection}
-                            excludeFromTabOrder={true}
-                          />*/}
                             <div className={styles.checkboxContainer}>
                               <input
                                 type='checkbox'

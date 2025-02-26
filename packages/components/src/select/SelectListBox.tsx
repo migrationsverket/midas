@@ -7,6 +7,8 @@ import type { MultiSelectState } from './useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import { FocusRing } from '@react-aria/focus'
+import {useFocusRing} from 'react-aria';
+import { Check } from 'lucide-react'
 // import { Checkbox } from '../checkbox'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
@@ -26,7 +28,7 @@ type OptionProps<T> = {
 
 const Option = <T,>({ item, state }: OptionProps<T>) => {
   const ref = React.useRef<HTMLLIElement>(null)
-  const { optionProps, isDisabled, isSelected, isFocused } = useOption(
+  const { optionProps, isDisabled, isSelected, isFocused, isFocusVisible } = useOption(
     {
       key: item.key,
     },
@@ -34,34 +36,40 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
     ref,
   )
 
+
+
   return (
-    <FocusRing focusRingClass={styles.listItemfocusRing}>
-      <li
-        {...optionProps}
-        ref={ref}
-        className={clsx(styles.listBoxItem, {
-          [styles.listBoxItemDisabled]: isDisabled,
-          [styles.listBoxItemFocused]: isFocused,
-          [styles.listBoxItemSelected]: isSelected,
-        })}
-      >
-        {state.selectionMode === 'multiple' && (
-          <div className={styles.checkboxContainer}>
-            <input
-              type='checkbox'
-              disabled={isDisabled}
-              checked={isSelected}
-              readOnly
-            />
-          </div>
-        )}
-        {typeof item.rendered === 'string' ? (
-          <span className='truncate block'>{item.rendered}</span>
+    <li
+      {...optionProps}
+      ref={ref}
+      className={clsx(styles.listBoxItem, {
+        [styles.listBoxItemDisabled]: isDisabled,
+        [styles.listBoxItemFocused]: isFocused,
+        [styles.listBoxItemFocusVisible]: isFocusVisible,
+        [styles.listBoxItemSelected]: isSelected,
+      })}
+    >
+      {state.selectionMode === 'multiple' && (
+        <div className={styles.checkboxContainer}>
+          <input
+            type='checkbox'
+            disabled={isDisabled}
+            checked={isSelected}
+            readOnly
+          />
+        </div>
+      )}
+      {typeof item.rendered === 'string' ? (
+        <span className='truncate block'>{item.rendered}</span>
+      ) : (
+        item.rendered
+      )}
+        {isSelected && state.selectionMode === 'single' ? (
+          <Check size={20} className={styles.listBoxItemCheckmark}/>
         ) : (
-          item.rendered
+          <></>
         )}
-      </li>
-    </FocusRing>
+    </li>
   )
 }
 
