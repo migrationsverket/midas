@@ -1,6 +1,6 @@
 /* stylelint-disable property-no-vendor-prefix */
 @value tokens: "../theme/tokens.css";
-@value display, blue150, gray150, backgroundPrimary, signalRed100, focus, gray10 from tokens;
+@value display, signalRed100, focus, gray10 from tokens;
 
 .fieldError {
   font-family: display;
