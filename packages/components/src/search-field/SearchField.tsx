@@ -70,9 +70,8 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
     ref,
   )
 
-  const handleChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLInputElement>) => setValue(value)
+  const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
+    setValue(target.value)
 
   const handleClear = () => setValue('')
 
@@ -92,8 +91,8 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
     }
   }
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Enter') {
+  const handleKeyDown = ({ key }: React.KeyboardEvent<HTMLInputElement>) => {
+    if (key === 'Enter') {
       handleSubmit()
     }
   }
