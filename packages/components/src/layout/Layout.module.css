@@ -1,12 +1,12 @@
 @value tokens: "../theme/tokens.css";
-@value display, primaryBackground, mediumWeight, gray10, gray20, gray30, gray60, gray70, gray130, gray150, mdBreakpoint, logoPrimary, focus from tokens;
+@value display, primaryBackground, regularWeight, mediumWeight, gray10, gray20, gray30, gray60, gray70, gray130, gray150, mdBreakpoint, logoPrimary, focus from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
   --headerHeight: 60px;
 
   @media mdBreakpoint {
-    --headerHeight: 80px;
+    --headerHeight: 85px;
   }
 }
 
@@ -27,7 +27,7 @@
   background-color: white;
 
   @media mdBreakpoint {
-    padding: 1rem;
+    padding: 1.25rem 1rem;
     z-index: 3;
   }
 }
@@ -124,11 +124,10 @@
   transform: translateX(0);
 }
 
-.sidebarFooter {
+.sidebarHeader {
   padding: 0.5rem 1rem;
   position: sticky;
   bottom: 0;
-  border-top: 1px solid gray70;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -138,17 +137,17 @@
 .appName {
   color: gray150;
   font-size: 0.875rem;
-  font-weight: mediumWeight;
+  font-weight: regularWeight;
   margin: 0;
 }
 
 .collapseButton {
-  display: none;
+  display: none !important;
   color: currentColor !important;
   padding: calc(0.875rem - 1px) !important;
 
   @media mdBreakpoint {
-    display: flex;
+    display: flex !important;
   }
 }
 
@@ -158,13 +157,6 @@
   transition: all 0.2s ease-out;
 
   .sidebarHeader {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-  }
-
-  .sidebarFooter {
-    padding: 0.5rem 0;
     justify-content: center;
   }
 }
