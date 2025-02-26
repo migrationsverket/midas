@@ -36,6 +36,10 @@ export interface SearchFieldProps extends AriaSearchFieldProps {
    * Currently have troubles displaying an error message, please use the validate property if it's needed.
    */
   isRequired?: AriaSearchFieldProps['isRequired']
+  /**
+   * A custom error message if using the isInvalid prop.
+   */
+  errorMessage?: string
 }
 
 export const SearchField: React.FC<SearchFieldProps> = props => {
@@ -95,7 +99,7 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
           {...errorMessageProps}
           className={styles.fieldError}
         >
-          {validationErrors.join(' ')}
+          {props.errorMessage ?? validationErrors.join(' ')}
         </div>
       )}
       <div className={styles.container}>
