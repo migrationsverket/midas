@@ -9,15 +9,11 @@ import {
   Column,
   Row,
   Cell,
-} from '@midas-ds/components'
+} from '../../src/index'
 
 const meta: Meta<typeof SearchField> = {
-  component: SearchField,
   title: 'Examples/Search',
   tags: ['autodocs'],
-  parameters: {
-    layout: 'centered',
-  },
   argTypes: {},
 }
 export default meta
@@ -32,10 +28,11 @@ type ColumnType = {
 
 export const SimpleSearch: Story = {
   args: {},
+
   render: function SimpleSearchComponent() {
     const columns: ColumnType[] = [
-      { name: 'Fruit', id: 'fruit', isRowHeader: true },
-      { name: 'Description', id: 'description' },
+      { name: 'Frukt', id: 'fruit', isRowHeader: true },
+      { name: 'Beskrivning', id: 'description' },
     ]
 
     const [searchTerm, setSearchTerm] = useState('')
@@ -43,7 +40,7 @@ export const SimpleSearch: Story = {
       Array.from(generateMockOptions(10)).map((item, index) => ({
         id: index + 1,
         fruit: item.name,
-        description: `A delicious ${item.name.toLowerCase()}.`,
+        description: `En frukt.`,
       })),
     )
 
@@ -54,41 +51,43 @@ export const SimpleSearch: Story = {
     return (
       <div style={{ maxWidth: '400px', margin: '0 auto' }}>
         <SearchField
-          placeholder='Search for a fruit...'
-          buttonText='Search'
+          placeholder='Sök efter en frukt...'
+          buttonText='Sök'
           onInput={e => setSearchTerm((e.target as HTMLInputElement).value)}
+          style={{ width: '100%' }}
         />
 
-        {filteredData.length === 0 && (
-          <p style={{ marginTop: '20px' }}>No results found</p>
-        )}
-
-        {filteredData.length > 0 && (
-          <Table
-            aria-label='Fruit Table'
-            style={{ width: '100%', marginTop: '20px' }}
-          >
-            <TableHeader>
-              {columns.map(column => (
-                <Column
-                  key={column.id}
-                  isRowHeader={column.isRowHeader ?? false}
-                >
-                  {column.name}
-                </Column>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {filteredData.map(item => (
-                <Row key={item.id}>
+        {searchTerm.length > 0 &&
+          (filteredData.length === 0 ? (
+            <p style={{ marginTop: '10px' }}>Inga träffar</p>
+          ) : (
+            <div style={{ marginTop: '20px' }}>
+              <Table
+                aria-label='Fruit Table'
+                style={{ width: '100%' }}
+              >
+                <TableHeader>
                   {columns.map(column => (
-                    <Cell key={column.id}>{item[column.id]}</Cell>
+                    <Column
+                      key={column.id}
+                      isRowHeader={column.isRowHeader ?? false}
+                    >
+                      {column.name}
+                    </Column>
                   ))}
-                </Row>
-              ))}
-            </TableBody>
-          </Table>
-        )}
+                </TableHeader>
+                <TableBody>
+                  {filteredData.map(item => (
+                    <Row key={item.id}>
+                      {columns.map(column => (
+                        <Cell key={column.id}>{item[column.id]}</Cell>
+                      ))}
+                    </Row>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          ))}
       </div>
     )
   },
