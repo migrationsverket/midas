@@ -1,11 +1,10 @@
 @value tokens: "../theme/tokens.css";
-@value display, inputLabel, inputText, black, blue150, gray50, gray60, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, focus, mdBreakpoint, borderSecondary from tokens;
+@value display, inputLabel, inputText, black, blue150, gray50, gray60, gray10, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, focus, mdBreakpoint, borderSecondary from tokens;
 
 .radioGroup {
   font-family: display;
   display: flex;
   flex-direction: column;
-  height: 100%;
 
   &[data-disabled] {
     pointer-events: none;
