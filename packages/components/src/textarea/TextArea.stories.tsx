@@ -33,10 +33,10 @@ export const NotValid = {
   },
 }
 
-export const MaxCharacters = {
+export const MaxLength = {
   args: {
     ...Primary.args,
-    maxCharacters: 50,
+    maxLength: 50,
   },
 }
 

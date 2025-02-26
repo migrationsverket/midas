@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ReactNode } from 'react'
+import * as React from 'react'
 import {
   TextField as AriaTextField,
   Label,
@@ -8,19 +8,27 @@ import {
   FieldError,
   Text,
   TextFieldProps as AriaTextFieldProps,
-  ValidationResult
+  ValidationResult,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Button } from '../button'
 import clsx from 'clsx'
 
 export interface TextFieldProps extends AriaTextFieldProps {
-  children?: ReactNode
+  children?: React.ReactNode
+  /** Specify label displayed above the TextField*/
   label?: string
+  /** Specify description displayed below the label */
   description?: string
+  /** Custom error messages */
   errorMessage?: string | ((validation: ValidationResult) => string) | undefined
-  validationType?: 'ssn' | RegExp
-  maxCharacters?: number
+  /** Enable validations or add your own regex */
+  validationType?: 'ssn' | 'dossnr' | RegExp
+  /**
+   * Whether to show the character counter or not
+   * @default
+   * false
+   */
   showCounter?: boolean
 }
 
@@ -30,11 +38,14 @@ export const TextField: React.FC<TextFieldProps> = ({
   errorMessage,
   validationType,
   validate,
-  maxCharacters,
+  maxLength,
   showCounter,
+  className,
   ...props
 }) => {
-  const [value, setValue] = React.useState<string>('')
+  const [value, setValue] = React.useState<string>(
+    props.defaultValue ?? props.value ?? '',
+  )
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value
@@ -42,19 +53,22 @@ export const TextField: React.FC<TextFieldProps> = ({
   }
 
   const validateInput = (
-    value: string
+    value: string,
   ): string | string[] | true | null | undefined => {
     if (validationType === 'ssn')
       return ssnRegEx.test(value) ? null : 'Felaktigt personnummer'
+
+    if (validationType === 'dossnr')
+      return dossNrRegEx.test(value) ? null : 'Felaktigt dossiernummer'
 
     if (validationType instanceof RegExp)
       return new RegExp(validationType).test(value)
         ? null
         : errorMessage?.toString()
 
-    if (maxCharacters)
-      return maxCharacters && value.length > maxCharacters
-        ? `Du har angett ${value.length - maxCharacters} tecken för mycket. Fältet är begränsat till ${maxCharacters} tecken.`
+    if (maxLength)
+      return maxLength && value.length > maxLength
+        ? `Du har angett ${value.length - maxLength} tecken för mycket. Fältet är begränsat till ${maxLength} tecken.`
         : null
 
     if (validate) return validate(value)
@@ -63,15 +77,15 @@ export const TextField: React.FC<TextFieldProps> = ({
   }
 
   const Count = () => {
-    if (maxCharacters) {
+    if (maxLength) {
       return (
         <span
           className={clsx(
             styles.count,
-            value.length > maxCharacters && styles.countExceeded
+            value.length > maxLength && styles.countExceeded,
           )}
         >
-          {value.length} / {maxCharacters}
+          {value.length} / {maxLength}
         </span>
       )
     }
@@ -85,7 +99,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <AriaTextField
-      className={styles.inputField}
+      className={clsx(styles.inputField, className)}
       validate={validateInput}
       {...props}
     >
@@ -114,7 +128,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
 const PasswordField = ({
   type,
-  input
+  input,
 }: {
   type: TextFieldProps['type']
   input: string
@@ -154,7 +168,7 @@ export const InputWrapper = ({
   label,
   description,
   errorMessage,
-  children
+  children,
 }: InputWrapperProps) => {
   return (
     <div className={styles.inputWrapper}>
@@ -172,7 +186,10 @@ export const InputWrapper = ({
     </div>
   )
 }
-
 export const ssnRegEx = new RegExp(
-  '^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$'
+  '^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$',
+)
+
+const dossNrRegEx = new RegExp(
+  '^(\\d{1,2}\\+\\d{6}-\\d{1,2}$|\\d{1,2}-\\d{6}(/\\d{1,2})?$|\\d{1,2}\\d{6}$|\\d{6,8}$)',
 )

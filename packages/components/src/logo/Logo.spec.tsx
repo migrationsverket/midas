@@ -1,26 +1,31 @@
-import { render, RenderResult } from '@testing-library/react'
-import '@testing-library/jest-dom'
-import { Logo, LogoProps } from './Logo'
+import { render, screen } from '@testing-library/react'
+import { Logo } from './Logo'
 import { axe } from 'jest-axe'
 
+const testID = 'logo'
+const testClass = 'test'
+
 describe('given a default Logo', () => {
-  let rendered: RenderResult
   beforeEach(() => {
-    rendered = render(
-      <LogoTest
+    render(
+      <Logo
         primary
         background
-      />
+        data-testid={testID}
+        className={testClass}
+      />,
     )
   })
 
   it('should render successfully', () => {
-    expect(rendered).toBeTruthy()
+    expect(screen.getByTestId(testID)).toBeTruthy()
   })
 
   it('should have no accessibility violations', async () => {
-    expect(await axe(await rendered.findByRole('img'))).toHaveNoViolations()
+    expect(await axe(screen.getByTestId(testID))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByTestId(testID)).toHaveClass('container', testClass)
   })
 })
-
-const LogoTest = (props: LogoProps) => <Logo {...props} />

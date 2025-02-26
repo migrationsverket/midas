@@ -16,16 +16,16 @@ export const Example = props => {
       {...props}
     >
       {`<TextField
-        label={'Etikett'}
-        description={'Beskrivning'}
+        label="Etikett"
+        description="Beskrivning"
     />`}
     </LiveCodeBlock>
   )
 }
 
 <ComponentHeader
-  name={'Textfield'}
-  friendlyName={'Inmatningsfält, textfält, nummerfält, lösenordsfält'}
+  name='Textfield'
+  friendlyName='Inmatningsfält, textfält, nummerfält, lösenordsfält'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
@@ -47,34 +47,9 @@ import { TextField } from '@midas-ds/components'
 
 ## Varianter
 
-### Personnummer
-
-Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer. Valideringen är väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett giltigt personnummer.
-
-Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$`
-
-- Frivilliga sekelsiffor: 19 eller 20 `(?:19:20)?`
-- Verifierar att det är minst två siffror i början av personnumret (ÅÅ)
-- Verifierar att MM är 01 - 12 `(?:0[1-9]|1[0-2])`
-- Verifierar att DD är 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`
-- Tillåter avgränsare: `+`, `-`, `blanksteg` eller ingen, samt
-- Verifierar att det är fyra siffror efter avgränsaren `(?:[-+ ]?\\d{4})?`
-
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    type="text"
-    name="ssn"
-    label="Personnummer"
-    validationType="ssn"
-    errorMessage="Fel format för ett personnummer"
-    autoComplete="off"
-/>
-`}
-</LiveCodeBlock>
-
 ### Lösenord
 
-Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
+Sätt `type="password"` för att kunna visa och dölja inmatad text.
 
 <LiveCodeBlock scope={{ TextField }}>
   {`<TextField
@@ -88,7 +63,7 @@ Sätt `type={'password'}` för att kunna visa och dölja inmatad text.
 
 ## Validering
 
-TextField validerar automatiskt på `type` och `isRequired` eller ett eget `pattern`. Vi erbjuder även färdiga valideringar på typiska scenarion, mer om det längre ner.
+TextField validerar automatiskt på `type`, `isRequired` eller ett eget `pattern` samt våra fördefinerade mönster i `validationType`. Komponenten innehåller vissa förbestämda valideringsmönster för typiska format. Dessa läggs till löpande efter förfrågan och behov. Valideringen är alltid väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett formats regler. Dessa förklaras i detalj nedan.
 
 <LiveCodeBlock scope={{ TextField }}>
   {`<TextField
@@ -98,6 +73,54 @@ TextField validerar automatiskt på `type` och `isRequired` eller ett eget `patt
     errorMessage="Felaktig e-postadress"
     type="email"
 />`}
+</LiveCodeBlock>
+
+### Personnummer
+
+Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer.
+
+Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$`
+
+- Frivilliga sekelsiffor: 19 eller 20 `(?:19:20)?`.
+- Verifierar att det är minst två siffror i början av personnumret (ÅÅ).
+- Verifierar att MM är 01 - 12 `(?:0[1-9]|1[0-2])`.
+- Verifierar att DD är 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`.
+- Tillåter avgränsare: `+`, `-`, `blanksteg` eller ingen, samt.
+- Verifierar att det är fyra siffror efter avgränsaren `(?:[-+ ]?\\d{4})?`.
+
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField
+    type="text"
+    name="ssn"
+    label="Personnummer"
+    validationType="ssn"
+    errorMessage="Fel format för ett personnummer"
+    autoComplete="off"
+/>
+`}
+</LiveCodeBlock>
+
+### Dossiernummer
+
+Använd egenskapen `validationType="dossnr"` för att slå på vår validering av dossiernummer.
+Följande RegEx används <br /> `^(\\d{1,2}\\+\\d{6}-\\d{1,2}$|\\d{1,2}-\\d{6}(/\\d{1,2})?$|\\d{1,2}\\d{6}$|\\d{6,8}$)`
+
+- En eller två siffror `\d{1,2}`.
+- Följt av antingen `+` och sex siffror, följt av `-` och en eller två siffror `\\+\\d{6}-\\d{1,2}`.
+- Eller följt av `-` och sex siffror, eventuellt följt av `/` och en eller två siffror `-\\d{6}(/\\d{1,2})?`.
+- Eller en eller två siffror följt av sex siffror `\d{1,2}\d{6}`.
+- Eller sex till åtta siffror `\d{6,8}`.
+
+<LiveCodeBlock scope={{ TextField }}>
+  {`<TextField
+    type="text"
+    name="dossnr"
+    label="Dossiernummer"
+    validationType="dossnr"
+    errorMessage="Fel format för ett dossiernummer"
+    autoComplete="off"
+/>
+`}
 </LiveCodeBlock>
 
 ### Egen validering
@@ -138,3 +161,8 @@ Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händ
 ```
 
 Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
+
+## API
+
+<PropTable name='TextField' />
+````
