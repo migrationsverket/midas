@@ -1,0 +1,103 @@
+'use client'
+
+import clsx from 'clsx'
+import { SidebarLinkGroup } from '../Layout'
+import styles from '../Layout.module.css'
+import { RouterProvider } from 'react-aria-components'
+import { Button } from '../../button'
+import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
+import * as React from 'react'
+import { SidebarLink } from './SidebarLink'
+import { useLayoutContext } from '../context/LayoutContext'
+
+export const Sidebar: React.FC = () => {
+  const {
+    items,
+    app,
+    isOpened,
+    isCollapsed,
+    setIsCollapsed,
+    setIsOpened,
+    clientSideRouter,
+    clientSideHref,
+  } = useLayoutContext()
+
+  const LinkTree = ({ group }: { group: SidebarLinkGroup }) => {
+    return (
+      <ul className={styles.list}>
+        {group.items.map((link, i) => (
+          <li
+            key={'link_' + i}
+            className={clsx(
+              styles.listItem,
+              isCollapsed && styles.listItemCollapsed,
+            )}
+          >
+            <SidebarLink {...link} />
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  React.useEffect(() => {
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpened(false)
+      }
+    }
+    window.addEventListener('keydown', handleEsc)
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc)
+    }
+  }, [setIsOpened])
+
+  return (
+    <aside
+      id='midasMainMenu'
+      className={clsx(
+        styles.sidebar,
+        isCollapsed && styles.sidebarCollapsed,
+        isOpened && styles.sidebarOpened,
+      )}
+    >
+      <nav className={styles.sidebarNav}>
+        <ul className={styles.list}>
+          {items.map((group, i) => (
+            <li key={'list_' + i}>
+              {group.title && !isCollapsed && (
+                <p className={styles.listGroupTitle}>{group.title}</p>
+              )}
+              {clientSideRouter ? (
+                <RouterProvider
+                  navigate={clientSideRouter}
+                  useHref={clientSideHref}
+                >
+                  <LinkTree group={group} />
+                </RouterProvider>
+              ) : (
+                <LinkTree group={group} />
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div className={styles.sidebarFooter}>
+        {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
+        <Button
+          variant='tertiary'
+          aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
+          onPress={() => setIsCollapsed(!isCollapsed)}
+          className={styles.collapseButton}
+        >
+          {isCollapsed ? (
+            <PanelLeftOpen size={20} />
+          ) : (
+            <PanelLeftClose size={20} />
+          )}
+        </Button>
+      </div>
+    </aside>
+  )
+}

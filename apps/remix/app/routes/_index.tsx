@@ -1,4 +1,4 @@
-import { Button } from '@midas-ds/button'
+import { Button } from '@midas-ds/components'
 
 export default function Index() {
   return (

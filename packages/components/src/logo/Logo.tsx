@@ -26,6 +26,7 @@ export const Logo: React.FC<LogoProps> = ({
   size = 'medium',
   background = false,
   padding = true,
+  className,
   ...rest
 }) => {
   const classNames = clsx(
@@ -34,7 +35,7 @@ export const Logo: React.FC<LogoProps> = ({
     size === 'x-small' && styles.xSmall,
     size === 'small' && styles.small,
     size === 'medium' && styles.medium,
-    size === 'large' && styles.large
+    size === 'large' && styles.large,
   )
 
   const SVG = () => {
@@ -118,7 +119,8 @@ export const Logo: React.FC<LogoProps> = ({
           ? primary
             ? styles.backgroundPrimary
             : styles.backgroundDark
-          : null
+          : null,
+        className,
       )}
       {...rest}
     >

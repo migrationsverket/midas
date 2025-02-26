@@ -1,28 +1,13 @@
-const { exec } = require('child_process')
 const fs = require('fs')
 const path = require('path')
 
 module.exports = function (plop) {
-  function parseNxOutput(stream) {
-    let chunks = []
-
-    return new Promise((resolve, reject) => {
-      stream.on('data', chunk => {
-        chunks = JSON.parse(chunk)
-          .filter(value => !value.includes('playground') && value !== 'docs')
-          .map(item => ({ name: item, value: item }))
-
-        return Buffer.from(chunks)
-      })
-      stream.on('error', err => reject(err))
-      stream.on('end', () => resolve(chunks))
-    })
-  }
-
-  const getProjects = async () => {
-    return await parseNxOutput(
-      exec('nx show projects --json --exclude=tag:apps').stdout
-    )
+  const getProjects = () => {
+    const srcPath = path.join(__dirname, '../packages/components/src')
+    return fs
+      .readdirSync(srcPath)
+      .filter(file => fs.statSync(path.join(srcPath, file)).isDirectory())
+      .map(folder => ({ name: folder, value: folder }))
   }
 
   plop.setGenerator('docs', {
@@ -32,8 +17,8 @@ module.exports = function (plop) {
         type: 'list',
         name: 'componentName',
         message: 'Which component do you want to generate documentation for?',
-        choices: getProjects
-      }
+        choices: getProjects,
+      },
     ],
     actions: data => {
       let { componentName } = data
@@ -45,12 +30,12 @@ module.exports = function (plop) {
           templateFile: '../apps/docs/static/templates/component-docs.mdx.hbs',
           data: {
             componentName: '{{componentName}}',
-            properName: plop.getHelper('pascalCase')(componentName)
-          }
-        }
+            properName: plop.getHelper('pascalCase')(componentName),
+          },
+        },
       ]
 
       return [...actions]
-    }
+    },
   })
 }

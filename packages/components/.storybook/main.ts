@@ -25,10 +25,23 @@ const config: StorybookConfig = {
       },
     },
   },
-
   staticDirs: ['./static'],
-
   docs: {},
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      tsconfigPath: 'packages/components/tsconfig.lib.json',
+      propFilter: prop => {
+        if (prop.parent) {
+          return !prop.parent.fileName.includes('@types/react')
+        }
+        return true
+      },
+      savePropValueAsString: true,
+      shouldExtractLiteralValuesFromEnum: true,
+      shouldRemoveUndefinedFromOptional: true,
+    },
+  },
 }
 
 export default config

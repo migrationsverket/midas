@@ -5,7 +5,7 @@ import {
   TextField as AriaTextField,
   TextArea as AriaTextArea,
   ValidationResult,
-  TextFieldProps as AriaTextFieldProps
+  TextFieldProps as AriaTextFieldProps,
 } from 'react-aria-components'
 import { InputWrapper } from '../textfield'
 import TextFieldStyles from '../textfield/TextField.module.css'
@@ -19,8 +19,8 @@ export interface TextAreaProps extends AriaTextFieldProps {
   description?: string
   /** Set number of rows for the TextArea */
   rows?: number
-  /** Set number of characters that are allowed before the TextArea is put in an invalid state */
-  maxCharacters?: number
+  /** Set minimum number of characters that are allowed before the TextArea is put in an invalid state */
+  minLength?: number
   /**
    * Whether to show the character counter or not
    * @default
@@ -34,28 +34,32 @@ export const TextArea: React.FC<TextAreaProps> = ({
   label,
   description,
   rows,
-  maxCharacters,
+  maxLength,
+  minLength,
   errorMessage,
   showCounter,
   validate,
+  className,
   ...props
 }) => {
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = React.useState(
+    props.defaultValue ?? props.value ?? '',
+  )
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value
     setValue(newValue)
   }
 
   const Count = () => {
-    if (maxCharacters) {
+    if (maxLength) {
       return (
         <span
           className={clsx(
             styles.count,
-            value.length > maxCharacters && styles.countExceeded
+            value.length > maxLength && styles.countExceeded,
           )}
         >
-          {value.length} / {maxCharacters}
+          {value.length} / {maxLength}
         </span>
       )
     }
@@ -68,19 +72,24 @@ export const TextArea: React.FC<TextAreaProps> = ({
   }
 
   const validateInput = (value: string) => {
-    const maxCharactersError =
-      maxCharacters && value.length > maxCharacters
-        ? `Du har angett ${value.length - maxCharacters} tecken för mycket. Fältet är begränsat till ${maxCharacters} tecken.`
+    const maxLengthError =
+      maxLength && value.length > maxLength
+        ? `Du har angett ${value.length - maxLength} tecken för mycket. Fältet är begränsat till ${maxLength} tecken.`
+        : null
+
+    const minLengthError =
+      minLength && value.length < minLength
+        ? `Du har angett ${Math.abs(value.length - minLength)} tecken för lite. Fältet kräver åtminstone ${minLength} tecken.`
         : null
 
     const otherValidationError = validate ? validate(value) : null
 
-    return maxCharactersError || otherValidationError || true
+    return maxLengthError || minLengthError || otherValidationError || true
   }
 
   return (
     <AriaTextField
-      className={TextFieldStyles.inputField}
+      className={clsx(TextFieldStyles.inputField, className)}
       validate={validateInput}
       {...props}
     >

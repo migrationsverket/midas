@@ -32,6 +32,7 @@
       {
         "ignoreShorthands": ["grid-template", "transition"]
       }
-    ]
+    ],
+    "no-descending-specificity": null
   }
 }

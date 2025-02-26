@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Header, Layout, SidebarLinkGroup } from './Layout'
+import { Layout, SidebarLinkGroup } from './Layout'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
 import { baseColors } from '../theme'
 import { LinkButton } from '../link-button'
@@ -8,7 +8,7 @@ const meta: Meta<typeof Layout> = {
   component: Layout,
   tags: ['autodocs'],
   title: 'Components/Layout',
-  parameters: { layout: 'fullscreen' }
+  parameters: { layout: 'fullscreen' },
 }
 
 export default meta
@@ -20,9 +20,9 @@ const items: SidebarLinkGroup[] = [
       {
         title: 'Översikt',
         href: '#',
-        icon: House
-      }
-    ]
+        icon: House,
+      },
+    ],
   },
   {
     title: 'Ansökan',
@@ -30,14 +30,14 @@ const items: SidebarLinkGroup[] = [
       {
         title: 'Skapa ansökan',
         href: '#',
-        icon: Plus
+        icon: Plus,
       },
       {
         title: 'Beslut',
         href: '#',
-        icon: Gavel
-      }
-    ]
+        icon: Gavel,
+      },
+    ],
   },
   {
     title: 'Kort och konto',
@@ -45,15 +45,15 @@ const items: SidebarLinkGroup[] = [
       {
         title: 'LMA-kort',
         href: '#',
-        icon: Calendar
+        icon: Calendar,
       },
       {
         title: 'Avvikelser',
         href: '#',
-        icon: ClipboardList
-      }
-    ]
-  }
+        icon: ClipboardList,
+      },
+    ],
+  },
 ]
 
 const AppExample = () => {
@@ -65,7 +65,7 @@ const AppExample = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: '80vh',
-        border: `dotted 2px ${baseColors.gray20}`
+        border: `dotted 2px ${baseColors.gray20}`,
       }}
     >
       Din applikation
@@ -76,33 +76,20 @@ const AppExample = () => {
 export const Primary: Story = {
   args: {
     items: items,
-    user: {
-      name: 'Namn Namnsson',
-      title: 'Roll eller behörighet'
-    },
-    app: {
-      name: 'Namn på applikationen',
-      shortName: 'NPA'
-    },
+    user: { name: 'Namn Namnsson', title: 'Roll eller behörighet' },
+    app: { name: 'Namn på applikationen' },
     title: 'Skapa ansökningar',
     children: <AppExample />,
-    headerChildren: (
-      <LinkButton
-        variant='tertiary'
-        target='_blank'
-      >
-        Öppna annan tjänst
-      </LinkButton>
-    )
-  }
+  },
 }
 
 export const OnlyHeader: Story = {
   render: () => (
-    <Header
-      title='Skapa ansökningar'
-      user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
-      app={{ name: 'Namn på applikationen', shortName: 'NPA' }}
+    <Layout.Provider
+      items={items}
+      title='Remix Vite Test App'
+      user={{ name: 'Test Testsson', title: 'Testare' }}
+      app={{ name: 'Remix Vite Test App' }}
       headerChildren={
         <LinkButton
           variant='tertiary'
@@ -111,6 +98,25 @@ export const OnlyHeader: Story = {
           Öppna annan tjänst
         </LinkButton>
       }
-    />
-  )
+      isCollapsed={false}
+      setIsCollapsed={() => null}
+      isOpened={false}
+      setIsOpened={() => null}
+    >
+      <Layout.Header />
+    </Layout.Provider>
+  ),
+}
+
+export const ActivePage: Story = {
+  args: {
+    ...Primary.args,
+    items: [
+      ...items,
+      {
+        title: 'Aktiv sida',
+        items: [{ title: 'Aktiv sida', href: '#', icon: House, active: true }],
+      },
+    ],
+  },
 }

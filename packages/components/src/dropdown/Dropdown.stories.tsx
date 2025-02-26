@@ -37,3 +37,11 @@ export const Opened: Story = {
     expect(canvas).toBeTruthy()
   },
 }
+
+export const WithoutTitle: Story = {
+  args: {
+    ...Primary.args,
+    title: undefined,
+    label: 'Meny',
+  },
+}

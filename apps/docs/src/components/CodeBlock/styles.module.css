@@ -35,4 +35,5 @@
   border-bottom-right-radius: 0;
   position: relative;
   padding: 1rem;
+  overflow: hidden;
 }

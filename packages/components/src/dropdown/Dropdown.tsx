@@ -5,7 +5,7 @@ import {
   Popover,
   type MenuItemProps,
   type MenuProps,
-  type MenuTriggerProps
+  type MenuTriggerProps,
 } from 'react-aria-components'
 import { Button } from '../button'
 import { EllipsisVertical } from 'lucide-react'
@@ -27,7 +27,7 @@ export function Dropdown<T extends object>({
   return (
     <MenuTrigger {...props}>
       <Button
-        aria-label={label}
+        aria-label={label || props['aria-label']}
         variant='icon'
       >
         {title}

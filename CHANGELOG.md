@@ -1,3 +1,109 @@
+# 2.0.0 (2025-02-25)
+
+### 🚀 Features
+
+- **layout:** design improvements + tooltip ([#231](https://github.com/migrationsverket/midas/pull/231))
+- ⚠️ **textarea:** rename maxCharacters property ([06116cee9](https://github.com/migrationsverket/midas/commit/06116cee9))
+- ⚠️ **textfield:** rename maxCharacters property ([44eec760e](https://github.com/migrationsverket/midas/commit/44eec760e))
+- **tooltip:** new component tooltip ([3bc3fcd4f](https://github.com/migrationsverket/midas/commit/3bc3fcd4f))
+
+### 🩹 Fixes
+
+- **accessibility:** fix focus for high contrast mode ([#267](https://github.com/migrationsverket/midas/pull/267))
+- **accordion:** append classname ([aaaa0ddb1](https://github.com/migrationsverket/midas/commit/aaaa0ddb1))
+- **accordion:** remove dependency array from useLayoutEffect - fix render of dynamic content in AccordionItem ([db4c920ee](https://github.com/migrationsverket/midas/commit/db4c920ee))
+- **accordion:** add comment ([56db5d49f](https://github.com/migrationsverket/midas/commit/56db5d49f))
+- **accordion:** fix render of dynamic content in AccordionItem ([#283](https://github.com/migrationsverket/midas/pull/283))
+- **combobox:** append classname ([570a1998e](https://github.com/migrationsverket/midas/commit/570a1998e))
+- **components:** append prop.className ([#279](https://github.com/migrationsverket/midas/pull/279))
+- **file-upload:** pass unhandled props ([fc90980d9](https://github.com/migrationsverket/midas/commit/fc90980d9))
+- **file-upload:** add autdocs config ([809f0b894](https://github.com/migrationsverket/midas/commit/809f0b894))
+- **file-upload:** import react to get autodocs props ([e6467ca66](https://github.com/migrationsverket/midas/commit/e6467ca66))
+- **file-upload:** pass unhandled props to the FileTrigger component ([#277](https://github.com/migrationsverket/midas/pull/277))
+- **layout:** design adjustments ([f086ad5fe](https://github.com/migrationsverket/midas/commit/f086ad5fe))
+- **layout:** add tooltips on layout collapsed state ([5e9d0090d](https://github.com/migrationsverket/midas/commit/5e9d0090d))
+- **layout:** design review ([b1928466c](https://github.com/migrationsverket/midas/commit/b1928466c))
+- **layout:** design adjustments + skip to content link ([facdaf64f](https://github.com/migrationsverket/midas/commit/facdaf64f))
+- **layout:** fix bug where mobile menu wouldn't open ([c61923662](https://github.com/migrationsverket/midas/commit/c61923662))
+- **logo:** append classname ([66a189a6c](https://github.com/migrationsverket/midas/commit/66a189a6c))
+- **radio:** append classname ([796173ba2](https://github.com/migrationsverket/midas/commit/796173ba2))
+- **tag:** append classname ([df88ec9fb](https://github.com/migrationsverket/midas/commit/df88ec9fb))
+- **textarea:** add validation for minLength property ([8df1f931a](https://github.com/migrationsverket/midas/commit/8df1f931a))
+- **textarea:** append classname ([cdd9f3e5c](https://github.com/migrationsverket/midas/commit/cdd9f3e5c))
+- **textarea:** set initial counter value on render ([924f5abda](https://github.com/migrationsverket/midas/commit/924f5abda))
+- **textarea:** set initial counter value on render ([15121e437](https://github.com/migrationsverket/midas/commit/15121e437))
+- **textfield:** append classname ([53f5b603c](https://github.com/migrationsverket/midas/commit/53f5b603c))
+- **textfield:** set initial counter value on render ([0e9e4a44d](https://github.com/migrationsverket/midas/commit/0e9e4a44d))
+- **textfield:** set initial counter value on render ([1f9a9cfc1](https://github.com/migrationsverket/midas/commit/1f9a9cfc1))
+- **textfield:** set the initial value for useState ([#280](https://github.com/migrationsverket/midas/pull/280))
+- **theme:** add global css export ([9786d79da](https://github.com/migrationsverket/midas/commit/9786d79da))
+- **theme:** add global css export ([#282](https://github.com/migrationsverket/midas/pull/282))
+- **tooltip:** append classname ([0e6e6e483](https://github.com/migrationsverket/midas/commit/0e6e6e483))
+
+### Documentation Changes
+
+- dropdown + layout + tooltip ([28d3bc661](https://github.com/migrationsverket/midas/commit/28d3bc661))
+- **components:** sync docusaurus and storybook autodocs config ([4e061ad4d](https://github.com/migrationsverket/midas/commit/4e061ad4d))
+- **docs:** add documentation about skeleton component ([460bf602c](https://github.com/migrationsverket/midas/commit/460bf602c))
+- **docs:** add design pattern about loaders ([702136a89](https://github.com/migrationsverket/midas/commit/702136a89))
+- **docs:** change name ([1d04e9c63](https://github.com/migrationsverket/midas/commit/1d04e9c63))
+- **docs:** add link to design pattern ([38db9d2de](https://github.com/migrationsverket/midas/commit/38db9d2de))
+- **docs:** change name back to SKeleton ([664b829f8](https://github.com/migrationsverket/midas/commit/664b829f8))
+- **file-upload:** manually extend react aria props for autodocs ([07ecde229](https://github.com/migrationsverket/midas/commit/07ecde229))
+
+### ⚠️ Breaking Changes
+
+- **textfield:** TextField property maxCharacters is renamed to maxLength
+- **textarea:** TextArea propert maxCharacters is renamed to maxLength
+
+### ❤️ Thank You
+
+- derpbravely
+- Jabir Khalil
+- PHIEKS
+- pixelrickdreamer @pixelrickdreamer
+- Wilhelm Hjelm
+- wilhjelmig @wilhjelmig
+
+## 1.3.0 (2025-02-19)
+
+### 🚀 Features
+
+- **accordion:** support react nodes in title ([#259](https://github.com/migrationsverket/midas/pull/259))
+- **textfield:** add dossier number validation ([9092008ef](https://github.com/migrationsverket/midas/commit/9092008ef))
+- **textfield:** add dossier number validation ([#261](https://github.com/migrationsverket/midas/pull/261))
+
+### 🩹 Fixes
+
+- fix content to be readable by screen reader when use tab ([d49d8d4f9](https://github.com/migrationsverket/midas/commit/d49d8d4f9))
+- **accordion:** support any elements in title ([1129fd742](https://github.com/migrationsverket/midas/commit/1129fd742))
+- **card:** add React.useId to generate unique id ([160319d03](https://github.com/migrationsverket/midas/commit/160319d03))
+- **card:** fix to read title and content ([dd8d07c72](https://github.com/migrationsverket/midas/commit/dd8d07c72))
+- **card:** remove the id content from p tag ([54e4fe9cd](https://github.com/migrationsverket/midas/commit/54e4fe9cd))
+- **card:** clean the code ([a17aa2941](https://github.com/migrationsverket/midas/commit/a17aa2941))
+- **docs:** update theme imports ([5cbd797f4](https://github.com/migrationsverket/midas/commit/5cbd797f4))
+- **docs:** update theme imports ([#246](https://github.com/migrationsverket/midas/pull/246))
+- **table:** show hover background color for striped table ([a6b4f35d5](https://github.com/migrationsverket/midas/commit/a6b4f35d5))
+- **table:** remove unused props ([1cb0c2e69](https://github.com/migrationsverket/midas/commit/1cb0c2e69))
+- **table:** striped table hover effect and unused props ([#250](https://github.com/migrationsverket/midas/pull/250))
+- **table:** add pointer if row has a link ([9a62302ff](https://github.com/migrationsverket/midas/commit/9a62302ff))
+- **table:** add pointer if row has a link ([#262](https://github.com/migrationsverket/midas/pull/262))
+- **table:** preserve classNames when using props.className ([d7a9142cd](https://github.com/migrationsverket/midas/commit/d7a9142cd))
+- **table:** preserve classNames when using props.className ([#266](https://github.com/migrationsverket/midas/pull/266))
+- **textfield:** add dossier number validation ([b3027b5b9](https://github.com/migrationsverket/midas/commit/b3027b5b9))
+- **textfield:** +/- divider should be optional ([b1393263a](https://github.com/migrationsverket/midas/commit/b1393263a))
+- **theme:** point to theme types ([98e09424f](https://github.com/migrationsverket/midas/commit/98e09424f))
+- **theme:** point to theme types ([#248](https://github.com/migrationsverket/midas/pull/248))
+- **theme:** reorder theme export ([3398a0f68](https://github.com/migrationsverket/midas/commit/3398a0f68))
+- **theme:** reorder theme export ([#265](https://github.com/migrationsverket/midas/pull/265))
+
+### ❤️ Thank You
+
+- derpbravely
+- jabir Khalil
+- Wilhelm Hjelm
+- wilhjelmig @wilhjelmig
+
 ## 1.2.3 (2025-02-11)
 
 This was a version bump only, there were no code changes.

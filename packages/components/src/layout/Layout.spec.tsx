@@ -13,10 +13,9 @@ describe('Sidebar', () => {
         user={{ name: '', title: '' }}
         app={{
           name: '',
-          shortName: '',
-          color: undefined
+          color: undefined,
         }}
-      />
+      />,
     )
     expect(baseElement).toBeTruthy()
   })

@@ -16,7 +16,7 @@ export const Example = props => {
         Button,
         Modal,
         Flex,
-        FlexItem
+        FlexItem,
       }}
       {...props}
     >
@@ -90,7 +90,7 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
                     autoFocus
                     label='Ange anledning'
                     description='Skriv anledning'
-                    maxCharacters={100}
+                    maxLength={100}
                 />
             </FlexItem>
         </Flex>
