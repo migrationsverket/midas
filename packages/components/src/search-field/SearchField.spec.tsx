@@ -107,3 +107,22 @@ describe('given a SearchField with custom validation', () => {
     expect(screen.getByText(errorMessage)).toBeInTheDocument()
   })
 })
+
+describe('given an invalid SearchField with custom errorMessage', () => {
+  const errorMessage = 'Random error'
+
+  beforeEach(() =>
+    render(
+      <SearchField
+        placeholder={placeholder}
+        errorMessage={errorMessage}
+        isInvalid
+      />,
+    ),
+  )
+
+  it('it should be invalid and show the custom message', async () => {
+    expect(screen.getByLabelText(placeholder)).toBeInvalid()
+    expect(screen.getByText(errorMessage)).toBeInTheDocument()
+  })
+})
