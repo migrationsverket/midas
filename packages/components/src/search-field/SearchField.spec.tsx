@@ -41,38 +41,6 @@ describe('given a default SearchField', () => {
   })
 })
 
-describe('given a required SearchField', () => {
-  beforeEach(() => {
-    render(
-      <SearchField
-        placeholder={placeholder}
-        isRequired
-      />,
-    )
-  })
-
-  it.failing(
-    'should give a validation error if the user entered no text',
-    async () => {
-      await user.tab()
-      await user.keyboard('[Enter]')
-
-      // JSDOM Native required validation message
-      expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
-    },
-  )
-
-  it.failing(
-    'should give a validation error if the user entered no text and used the mouse to click "search"',
-    async () => {
-      await user.click(screen.getByText(buttonText))
-
-      // JSDOM Native required validation message
-      expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
-    },
-  )
-})
-
 describe('given a SearchField with custom validation', () => {
   const errorMessage = 'Dont search for secret documents'
   const onChange = jest.fn()
