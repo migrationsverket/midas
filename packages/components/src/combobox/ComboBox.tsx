@@ -4,7 +4,7 @@ import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
-  ValidationResult
+  ValidationResult,
 } from 'react-aria-components'
 import {
   Button,
@@ -12,10 +12,11 @@ import {
   Popover,
   ComboBox as AriaComboBox,
   ListBox,
-  ListBoxItem
+  ListBoxItem,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import { InputWrapper } from '../textfield'
+import clsx from 'clsx'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -33,13 +34,14 @@ export function ComboBox<T extends object>({
   errorMessage,
   children,
   items,
+  className,
   ...props
 }: ComboBoxProps<T>) {
   const ref = React.useRef<HTMLDivElement>(null)
 
   return (
     <AriaComboBox
-      className={styles.combobox}
+      className={clsx(styles.combobox, className)}
       ref={ref}
       {...props}
     >

@@ -40,9 +40,12 @@ export const TextField: React.FC<TextFieldProps> = ({
   validate,
   maxLength,
   showCounter,
+  className,
   ...props
 }) => {
-  const [value, setValue] = React.useState<string>('')
+  const [value, setValue] = React.useState<string>(
+    props.defaultValue ?? props.value ?? '',
+  )
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = event.target.value
@@ -96,7 +99,7 @@ export const TextField: React.FC<TextFieldProps> = ({
 
   return (
     <AriaTextField
-      className={styles.inputField}
+      className={clsx(styles.inputField, className)}
       validate={validateInput}
       {...props}
     >
@@ -183,9 +186,10 @@ export const InputWrapper = ({
     </div>
   )
 }
-
 export const ssnRegEx = new RegExp(
   '^(?:(?:19|20)?\\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4})?|\\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\\d|3[01])(?:[-+ ]?\\d{4}))$',
 )
 
-export const dossNrRegEx = new RegExp('\\d{1,2}[-+]?\\d{6}(/\\d{1,2})?$')
+const dossNrRegEx = new RegExp(
+  '^(\\d{1,2}\\+\\d{6}-\\d{1,2}$|\\d{1,2}-\\d{6}(/\\d{1,2})?$|\\d{1,2}\\d{6}$|\\d{6,8}$)',
+)

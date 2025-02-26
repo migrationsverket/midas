@@ -39,9 +39,12 @@ export const TextArea: React.FC<TextAreaProps> = ({
   errorMessage,
   showCounter,
   validate,
+  className,
   ...props
 }) => {
-  const [value, setValue] = React.useState('')
+  const [value, setValue] = React.useState(
+    props.defaultValue ?? props.value ?? '',
+  )
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newValue = event.target.value
     setValue(newValue)
@@ -86,7 +89,7 @@ export const TextArea: React.FC<TextAreaProps> = ({
 
   return (
     <AriaTextField
-      className={TextFieldStyles.inputField}
+      className={clsx(TextFieldStyles.inputField, className)}
       validate={validateInput}
       {...props}
     >
