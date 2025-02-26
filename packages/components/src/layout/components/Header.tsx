@@ -32,11 +32,13 @@ export const Header: React.FC = () => {
       }}
     >
       <div className={styles.headerContent}>
-        <Logo
-          padding={false}
-          size='small'
-          className={styles.logo}
-        />
+        <div className={styles.logo}>
+          <Logo
+            padding={false}
+            size='small'
+            className={styles.logo}
+          />
+        </div>
         <Button
           variant='icon'
           className={styles.toggleButton}
