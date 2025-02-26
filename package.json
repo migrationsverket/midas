@@ -68,7 +68,6 @@
     "@storybook/react-vite": "^8.5.2",
     "@storybook/test": "^8.5.2",
     "@storybook/test-runner": "^0.21.0",
-    "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^8.5.2",
     "@swc-node/register": "1.9.2",
     "@swc/cli": "^0.5.2",

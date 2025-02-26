@@ -10,14 +10,15 @@ import {
   RadioGroup,
   Select,
   Item,
-  Button
-} from '@midas-ds/components'
+  Button,
+} from '../../src/index'
+import React from 'react'
 
 const meta: Meta<typeof AriaForm> = {
   component: AriaForm,
   title: 'Examples/Form',
   tags: ['autodocs'],
-  argTypes: {}
+  argTypes: {},
 }
 export default meta
 type Story = StoryObj<typeof AriaForm>
@@ -57,7 +58,7 @@ export const SimpleForm: Story = {
         </FlexItem>
       </Flex>
     )
-  }
+  },
 }
 
 export const TwoColumnForm: Story = {
@@ -133,5 +134,5 @@ export const TwoColumnForm: Story = {
         </Flex>
       </div>
     )
-  }
+  },
 }

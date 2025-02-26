@@ -3,9 +3,9 @@ import {
   GlobalToastRegion,
   ToastProvider,
   toastQueue,
-  MidasToast
+  MidasToast,
 } from './Toast'
-import { Button } from '@midas-ds/components'
+import { Button } from '../button'
 
 const meta: Meta<MidasToast> = {
   title: 'Components/Toast',
@@ -15,9 +15,9 @@ const meta: Meta<MidasToast> = {
       control: 'select',
       description: 'Choose toast type',
       options: ['success', 'info', 'warning', 'important'],
-      table: { defaultValue: { summary: 'success' } }
-    }
-  }
+      table: { defaultValue: { summary: 'success' } },
+    },
+  },
 }
 export default meta
 type Story = StoryObj<MidasToast>
@@ -25,7 +25,7 @@ type Story = StoryObj<MidasToast>
 export const Global: Story = {
   args: {
     type: 'success',
-    message: 'Inloggningen lyckades'
+    message: 'Inloggningen lyckades',
   },
   render: args => (
     <>
@@ -35,22 +35,22 @@ export const Global: Story = {
           toastQueue.add(
             {
               message: args.message,
-              type: args.type
+              type: args.type,
             },
-            { timeout: 5000 }
+            { timeout: 5000 },
           )
         }
       >
         Visa en {args.type}-toast
       </Button>
     </>
-  )
+  ),
 }
 
 export const Local: Story = {
   args: {
     type: 'success',
-    message: 'Inloggningen lyckades'
+    message: 'Inloggningen lyckades',
   },
   render: args => (
     <ToastProvider>
@@ -60,9 +60,9 @@ export const Local: Story = {
             state.add(
               {
                 type: args.type,
-                message: args.message
+                message: args.message,
               },
-              { timeout: 5000 }
+              { timeout: 5000 },
             )
           }
         >
@@ -70,5 +70,5 @@ export const Local: Story = {
         </Button>
       )}
     </ToastProvider>
-  )
+  ),
 }
