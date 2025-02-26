@@ -143,6 +143,7 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
           )}
         </div>
         <Button
+          isDisabled={props.isDisabled}
           excludeFromTabOrder
           onPress={handleSubmit}
           type='button'
