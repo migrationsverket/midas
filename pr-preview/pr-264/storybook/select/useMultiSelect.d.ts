@@ -3,9 +3,9 @@ import { HTMLAttributes, RefObject } from '../../../../node_modules/react';
 import { MultiSelectProps as MultiSelectStateProps, MultiSelectState } from './useMultiSelectState';
 import { AriaButtonProps } from '@react-types/button';
 import { AriaSelectProps } from '@react-types/select';
-type MultiSelectProps<T> = Omit<AriaSelectProps<T>, "onSelectionChange"> & {
+type MultiSelectProps<T> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
     disallowEmptySelection?: boolean;
-    onSelectionChange?: MultiSelectStateProps<T>["onSelectionChange"];
+    onSelectionChange?: MultiSelectStateProps<T>['onSelectionChange'];
 };
 interface MultiSelectAria<T> {
     /** Props for the label element. */

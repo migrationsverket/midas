@@ -10,6 +10,6 @@ export interface MultiSelectListState<T> extends ListState<T> {
     /** The value of the currently selected items. */
     selectedItems: Node<T>[] | null;
     /** The type of selection. */
-    selectionMode: MultipleSelection["selectionMode"];
+    selectionMode: MultipleSelection['selectionMode'];
 }
 export declare function useMultiSelectListState<T extends object>(props: MultiSelectListProps<T>): MultiSelectListState<T>;

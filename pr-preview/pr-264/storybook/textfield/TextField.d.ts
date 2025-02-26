@@ -21,5 +21,4 @@ export declare const TextField: React.FC<TextFieldProps>;
 type InputWrapperProps = Pick<TextFieldProps, 'label' | 'description' | 'errorMessage' | 'children'>;
 export declare const InputWrapper: ({ label, description, errorMessage, children, }: InputWrapperProps) => import("react/jsx-runtime").JSX.Element;
 export declare const ssnRegEx: RegExp;
-export declare const dossNrRegEx: RegExp;
 export {};
