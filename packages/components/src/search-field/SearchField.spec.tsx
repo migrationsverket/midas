@@ -4,6 +4,7 @@ import { SearchField } from './'
 import user from '../../tests/utils/user'
 
 const placeholder = 'Search'
+const buttonText = 'Sök'
 
 describe('given a default SearchField', () => {
   const onChange = jest.fn()
@@ -34,7 +35,7 @@ describe('given a default SearchField', () => {
   it('should be possible to submit a search string using the mouse', async () => {
     await user.tab()
     await user.keyboard('hello')
-    await user.click(screen.getByText('Sök'))
+    await user.click(screen.getByText(buttonText))
     expect(onChange).toHaveBeenCalledWith('hello')
     expect(onSubmit).toHaveBeenCalledWith('hello')
   })
@@ -64,7 +65,7 @@ describe('given a required SearchField', () => {
   it.failing(
     'should give a validation error if the user entered no text and used the mouse to click "search"',
     async () => {
-      await user.click(screen.getByText('Sök'))
+      await user.click(screen.getByText(buttonText))
 
       // JSDOM Native required validation message
       expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
@@ -101,7 +102,7 @@ describe('given a SearchField with custom validation', () => {
   it('should give a validation error if the user entered an unpermitted text and used the mouse to click "search"', async () => {
     await user.tab()
     await user.keyboard('secret')
-    await user.click(screen.getByText('Sök'))
+    await user.click(screen.getByText(buttonText))
     expect(onChange).toHaveBeenCalledWith('secret')
     expect(onSubmit).not.toHaveBeenCalled()
     expect(screen.getByText(errorMessage)).toBeInTheDocument()
