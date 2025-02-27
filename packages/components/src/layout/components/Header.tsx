@@ -34,9 +34,8 @@ export const Header: React.FC = () => {
       <div className={styles.headerContent}>
         <div className={styles.logo}>
           <Logo
-            padding={false}
             size='small'
-            className={styles.logo}
+            padding={false}
           />
         </div>
         <Button

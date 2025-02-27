@@ -25,10 +25,8 @@
   justify-content: space-between;
   border-bottom: 1px solid gray70;
   background-color: white;
-  max-height: 49px;
 
   @media mdBreakpoint {
-    max-height: 40px;
     padding: 1.25rem 1rem;
     z-index: 3;
   }
@@ -56,10 +54,15 @@
 .headerItems,
 .logo {
   display: none;
+  max-height: 40px;
 
   @media mdBreakpoint {
     display: block;
   }
+}
+
+.headerItems {
+  max-height: 40px;
 }
 
 .headerMenu {
