@@ -53,7 +53,7 @@ export const SimpleSearch: Story = {
         <SearchField
           placeholder='Sök efter en frukt...'
           buttonText='Sök'
-          onInput={e => setSearchTerm((e.target as HTMLInputElement).value)}
+          onChange={value => setSearchTerm(value)}
           style={{ width: '100%' }}
         />
 
