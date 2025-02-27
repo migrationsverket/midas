@@ -80,6 +80,14 @@ export const Primary: Story = {
     app: { name: 'Namn på applikationen' },
     title: 'Skapa ansökningar',
     children: <AppExample />,
+    headerChildren: (
+      <LinkButton
+        variant='tertiary'
+        target='_blank'
+      >
+        Öppna annan tjänst
+      </LinkButton>
+    ),
   },
 }
 
