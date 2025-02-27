@@ -13,6 +13,7 @@
   width: 100%;
   margin-bottom: 2px;
 }
+
 /** Select Label */
 .selectLabel {
   grid-area: Label;
@@ -200,12 +201,14 @@
 }
 
 .listBoxItemFocused {
-    outline: none;
+  outline: none;
 }
+
 .listBoxItemFocusVisible {
-  outline: #171717 solid 1px;
-  outline-offset: -1px;
+  outline: black solid 2px;
+  outline-offset: -2px;
 }
+
 .listBoxItemCheckmark {
   margin-left: auto;
   align-self: center;
