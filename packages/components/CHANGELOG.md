@@ -1,3 +1,17 @@
+## 2.0.1 (2025-02-27)
+
+### 🩹 Fixes
+
+- **radio:** fix hover on mobile, remove 100% height on RadioGroup ([789264afa](https://github.com/migrationsverket/midas/commit/789264afa))
+- **textfield:** cover more cases on dossnr ([0f27d8b33](https://github.com/migrationsverket/midas/commit/0f27d8b33))
+- **textfield:** add rule for matching delimiters for doss nr ([026073775](https://github.com/migrationsverket/midas/commit/026073775))
+- **textfield:** update dossnr regex to support new delimiter ([c5e1b4428](https://github.com/migrationsverket/midas/commit/c5e1b4428))
+
+### ❤️ Thank You
+
+- pixelrickdreamer
+- Wilhelm Hjelm
+
 # 2.0.0 (2025-02-25)
 
 ### 🚀 Features
