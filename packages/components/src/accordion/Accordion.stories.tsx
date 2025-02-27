@@ -85,7 +85,7 @@ export const CustomTriggerElements: Story = {
         title={
           <>
             <File />
-            <b>En öppningsbar panel ' + item.toLocaleLowerCase()</b>
+            <b>En öppningsbar panel ' + {item.toLocaleLowerCase()}</b>
             <p style={{ margin: 0 }}>2025-03-0{i}</p>
           </>
         }

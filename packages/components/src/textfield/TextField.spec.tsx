@@ -90,38 +90,6 @@ describe('given a TextField with type "number"', () => {
   })
 })
 
-describe('given a TextField with showCounter and an initial value', () => {
-  beforeEach(() =>
-    renderWithForm(
-      <TextField
-        label={label}
-        showCounter
-        value='HEJ'
-      />,
-    ),
-  )
-
-  it('should show the correct count for its initial value', async () => {
-    expect(screen.getByText('3')).toBeInTheDocument()
-  })
-})
-
-describe('given a TextField with showCounter and an initial defaultValue', () => {
-  beforeEach(() =>
-    renderWithForm(
-      <TextField
-        label={label}
-        showCounter
-        defaultValue='HEJ'
-      />,
-    ),
-  )
-
-  it('should show the correct count for its initial value', async () => {
-    expect(screen.getByText('3')).toBeInTheDocument()
-  })
-})
-
 describe('given a TextField with dossnr validation', () => {
   const labelText = 'Dossiernummer'
   const testCases = [
@@ -151,7 +119,7 @@ describe('given a TextField with dossnr validation', () => {
   ]
 
   beforeEach(() => {
-    render(
+    renderWithForm(
       <TextField
         label={labelText}
         type='text'
@@ -204,7 +172,7 @@ describe('given a TextField with ssn validation', () => {
   ]
 
   beforeEach(() => {
-    render(
+    renderWithForm(
       <TextField
         label={labelText}
         type='text'
@@ -230,5 +198,37 @@ describe('given a TextField with ssn validation', () => {
         ).toBeInTheDocument()
       }
     })
+  })
+})
+
+describe('given a TextField with showCounter and an initial value', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        value='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
+  })
+})
+
+describe('given a TextField with showCounter and an initial defaultValue', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        defaultValue='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
   })
 })
