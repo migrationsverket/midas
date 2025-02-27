@@ -3,7 +3,7 @@
 
 .baseLayout {
   --sideBarWidth: 230px;
-  --headerHeight: 60px;
+  --headerHeight: 69px;
 
   @media mdBreakpoint {
     --headerHeight: 85px;
@@ -19,14 +19,16 @@
   position: sticky;
   top: 0;
   font-family: display;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid gray70;
   background-color: white;
+  max-height: 49px;
 
   @media mdBreakpoint {
+    max-height: 40px;
     padding: 1.25rem 1rem;
     z-index: 3;
   }
@@ -36,13 +38,15 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 
   > svg {
     display: none;
   }
 
   @media mdBreakpoint {
+    gap: 2rem;
+
     > svg {
       display: initial;
     }
@@ -126,6 +130,7 @@
 
 .sidebarHeader {
   padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
   position: sticky;
   bottom: 0;
   display: flex;
