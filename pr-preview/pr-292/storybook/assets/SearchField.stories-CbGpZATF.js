@@ -1,5 +1,0 @@
-import{S as p}from"./SearchField-DIhBK7JW.js";import"./jsx-runtime-DtgEGaVE.js";import"./index-BbAIUH2N.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./Form-Co3XUpyT.js";import"./useFocusable-DvoOiisW.js";import"./clsx-B-dksMZM.js";import"./Text-EJwwmz-7.js";import"./TextField.module-B2RiHuHW.js";import"./useControlledState-DGyHFLi9.js";import"./useField-RzOmeqWZ.js";import"./Hidden-C-pamdWU.js";import"./index-cpIEhwLo.js";import"./useLabels-CtxEn0bM.js";import"./Button-QmryGY2x.js";import"./Group-ceAKJ6e-.js";import"./useLocalizedStringFormatter-m925tTwS.js";import"./context-DFhOKXSg.js";import"./createLucideIcon-8wDOqnHv.js";import"./Button-DdyTjWLy.js";import"./x-Cu6J0Y2u.js";const O={component:p,title:"Components/SearchField",tags:["autodocs"],parameters:{layout:"centered"}},r={args:{placeholder:"Sök efter en person"}};var o,t,e;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
-  args: {
-    placeholder: 'Sök efter en person'
-  }
-}`,...(e=(t=r.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const b=["Primary"];export{r as Primary,b as __namedExportsOrder,O as default};
