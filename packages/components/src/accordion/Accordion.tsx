@@ -5,6 +5,8 @@ import * as React from 'react'
 import clsx from 'clsx'
 import { DisclosureGroup, DisclosureGroupProps } from 'react-aria-components'
 
+export const ACCORDION_TEST_ID = 'accordion'
+
 interface MidasAccordion extends DisclosureGroupProps {
   /** Display either the larger contained variant or a smaller uncontained variant */
   variant?: 'uncontained' | 'contained'
@@ -25,6 +27,7 @@ export const Accordion: React.FC<MidasAccordion> = ({
 }) => {
   return (
     <DisclosureGroup
+      data-testid={ACCORDION_TEST_ID}
       allowsMultipleExpanded={type === 'multiple'}
       className={clsx(
         styles.root,
