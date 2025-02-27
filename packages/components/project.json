@@ -59,11 +59,17 @@
     "test-storybook": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "test-storybook -c packages/components/.storybook --url=http://localhost:4400 --browsers chromium firefox webkit"
+        "command": "test-storybook -c packages/components/.storybook --url=http://localhost:4400"
       },
       "configurations": {
+        "watch": {
+          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
+        },
         "remote": {
-          "command": "test-storybook --url=https://designsystem.migrationsverket.se/storybook"
+          "command": "test-storybook -c packages/components/.storybook --url=https://designsystem.migrationsverket.se/storybook"
+        },
+        "all-browsers": {
+          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
         }
       }
     },
