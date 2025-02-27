@@ -1,0 +1,16 @@
+import{j as o}from"./jsx-runtime-DtgEGaVE.js";import{C as g}from"./Checkbox-Zj3JhO-g.js";import{C as c}from"./CheckboxGroup-DizK8nrq.js";import"./index-BbAIUH2N.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./clsx-B-dksMZM.js";import"./RSPContexts-CeCCo7XS.js";import"./useFocusable-DvoOiisW.js";import"./Form-Co3XUpyT.js";import"./Text-EJwwmz-7.js";import"./useField-RzOmeqWZ.js";import"./Hidden-C-pamdWU.js";import"./index-cpIEhwLo.js";import"./useLabels-CtxEn0bM.js";import"./useControlledState-DGyHFLi9.js";import"./VisuallyHidden-DXoeczHE.js";import"./Group-ceAKJ6e-.js";import"./TextField-DTVtbhcD.js";import"./TextField.module-B2RiHuHW.js";import"./Button-P5AgZBSL.js";import"./Button-QmryGY2x.js";const D={title:"Components/Checkbox/CheckboxGroup",component:c,parameters:{layout:"centered"},args:{isInvalid:!1,isDisabled:!1,isRequired:!1,isReadOnly:!1},argTypes:{isInvalid:{type:"boolean"},isDisabled:{type:"boolean"},isRequired:{type:"boolean"},isReadOnly:{type:"boolean"},errorMessage:{type:"string"}},tags:["autodocs"]},u=["Banan","Apple","Mango"],m={args:{},render:({...d})=>o.jsx(c,{...d,children:u.map(t=>o.jsx(g,{value:t,children:t},t))})},e={...m,args:{label:"Etikett",description:"Beskrivning",errorMessage:"här gick det snett"}},r={...m,args:{label:"Etikett",description:"Beskrivning",errorMessage:"här gick det snett",showSelectAll:!0}};var s,a,i;e.parameters={...e.parameters,docs:{...(s=e.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  ...CheckboxGroupTemplate,
+  args: {
+    label: 'Etikett',
+    description: 'Beskrivning',
+    errorMessage: 'här gick det snett'
+  }
+}`,...(i=(a=e.parameters)==null?void 0:a.docs)==null?void 0:i.source}}};var n,p,l;r.parameters={...r.parameters,docs:{...(n=r.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  ...CheckboxGroupTemplate,
+  args: {
+    label: 'Etikett',
+    description: 'Beskrivning',
+    errorMessage: 'här gick det snett',
+    showSelectAll: true
+  }
+}`,...(l=(p=r.parameters)==null?void 0:p.docs)==null?void 0:l.source}}};const _=["Example","SelectAll"];export{e as Example,r as SelectAll,_ as __namedExportsOrder,D as default};
