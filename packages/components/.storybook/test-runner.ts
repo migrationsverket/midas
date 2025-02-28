@@ -28,11 +28,6 @@ const config: TestRunnerConfig = {
       verbose: false,
       axeOptions: {
         ...storyContext?.parameters?.a11y?.options,
-        rules: {
-          // axe finds a a11y violation in almost every story that storybook UI don't complain about
-          region: { enabled: false },
-          ...storyContext?.parameters?.a11y?.options?.rules,
-        },
       },
     })
   },
