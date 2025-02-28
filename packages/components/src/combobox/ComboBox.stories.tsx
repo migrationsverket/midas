@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ComboBox, ComboBoxItem } from './ComboBox'
 import { generateMockOptions } from './utils'
 import { Item } from './types'
+import { RunOptions } from 'axe-core'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -52,7 +53,7 @@ export const Invalid: Story = {
   ),
 }
 
-export const disabled: Story = {
+export const Disabled: Story = {
   args: {
     isDisabled: true,
   },
@@ -61,4 +62,23 @@ export const disabled: Story = {
       <ComboBoxItem>Hej</ComboBoxItem>
     </ComboBox>
   ),
+  parameters: {
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
+  },
 }

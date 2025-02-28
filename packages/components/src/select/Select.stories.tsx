@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
+import { RunOptions } from 'axe-core'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -77,6 +78,30 @@ export const AllKeysSelected: Story = {
 }
 
 export const Disabled: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Avoid using disabled',
+      },
+    },
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
+  },
   args: {
     ...Normal.args,
     isDisabled: true,
