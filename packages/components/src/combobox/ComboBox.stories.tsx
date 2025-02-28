@@ -21,7 +21,7 @@ const meta: Meta<typeof ComboBox> = {
 
 export default meta
 
-type Story = StoryObj<typeof ComboBox>
+type Story = StoryObj<typeof ComboBox<Item>>
 
 const options = generateMockOptions(30)
 
@@ -32,7 +32,7 @@ export const Default: Story = {
     description: 'Description',
     className: 'test',
   },
-  render: (args: any) => (
+  render: args => (
     <ComboBox
       data-testid='test'
       items={options}
@@ -58,7 +58,7 @@ export const Invalid: Story = {
     isInvalid: true,
     errorMessage: 'Fel!',
   },
-  render: (args: any) => (
+  render: args => (
     <ComboBox {...args}>
       <ComboBoxItem>Apple</ComboBoxItem>
       <ComboBoxItem>Lemon</ComboBoxItem>
@@ -70,7 +70,7 @@ export const Disabled: Story = {
   args: {
     isDisabled: true,
   },
-  render: (args: any) => (
+  render: args => (
     <ComboBox {...args}>
       <ComboBoxItem>Hej</ComboBoxItem>
     </ComboBox>
@@ -101,7 +101,7 @@ export const Required: Story = {
     'aria-label': 'test',
     isRequired: true,
   },
-  render: (args: any) => (
+  render: args => (
     <form>
       <ComboBox {...args}>
         <ComboBoxItem>Hej</ComboBoxItem>
@@ -119,7 +119,41 @@ export const Required: Story = {
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
         expect(comboBox).toBeInvalid()
-        expect(canvas.getByText(/Fyll i det här fältet/)).toBeInTheDocument()
+
+        // Error message depends on the browser language
+        expect(canvas.getByTestId('fieldError')).toBeInTheDocument()
+      },
+    )
+  },
+}
+
+export const CustomErrorMessage: Story = {
+  args: {
+    'aria-label': 'test',
+    isRequired: true,
+    errorMessage: 'Custom error message',
+  },
+  render: args => (
+    <form>
+      <ComboBox {...args}>
+        <ComboBoxItem>Hej</ComboBoxItem>
+      </ComboBox>
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+  play: async ({ canvasElement, step, args }) => {
+    const canvas = within(canvasElement)
+    step(
+      'it should be (aria) invalid and show a custom error message if the user submitted without selecting anything',
+      async () => {
+        const comboBox = canvas.getByLabelText(args['aria-label'] as string)
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(comboBox).toBeInvalid()
+        expect(
+          canvas.getByText(args.errorMessage as string),
+        ).toBeInTheDocument()
       },
     )
   },

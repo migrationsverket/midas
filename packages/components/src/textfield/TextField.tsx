@@ -181,7 +181,12 @@ export const InputWrapper = ({
           {description}
         </Text>
       )}
-      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <FieldError
+        data-testid='fieldError'
+        className={styles.fieldError}
+      >
+        {errorMessage}
+      </FieldError>
       {children}
     </div>
   )
