@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select, Item } from './Select'
-import React from 'react'
+import { RunOptions } from 'axe-core'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -8,12 +8,12 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   args: {
     label: 'Etikett',
-    description: 'Beskrivning'
+    description: 'Beskrivning',
   },
   argTypes: {
-    placeholder: { type: 'string' }
+    placeholder: { type: 'string' },
   },
-  parameters: {}
+  parameters: {},
 }
 
 export default meta
@@ -49,7 +49,7 @@ const fruits = [
   'Pomegranate',
   'Dragonfruit',
   'Starfruit',
-  'Passionfruit'
+  'Passionfruit',
 ]
 
 const options = fruits.map(fruit => {
@@ -58,7 +58,7 @@ const options = fruits.map(fruit => {
 
 export const Default: Story = {
   args: {
-    placeholder: 'Many items...'
+    placeholder: 'Many items...',
   },
   render: () => (
     <Select
@@ -67,36 +67,53 @@ export const Default: Story = {
     >
       {item => <Item>{item.name}</Item>}
     </Select>
-  )
+  ),
 }
 
 export const Invalid: Story = {
   args: {
     isInvalid: true,
-    errorMessage: 'Fel!'
+    errorMessage: 'Fel!',
   },
   render: args => (
     <Select {...args}>
       <Item>Apple</Item>
       <Item>Lemon</Item>
     </Select>
-  )
+  ),
 }
 
-export const disabled: Story = {
+export const Disabled: Story = {
   args: {
-    isDisabled: true
+    isDisabled: true,
   },
   parameters: {
     docs: {
       description: {
-        story: 'Avoid using disabled'
-      }
-    }
+        story: 'Avoid using disabled',
+      },
+    },
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
   },
   render: args => (
     <Select {...args}>
       <Item>Hej</Item>
     </Select>
-  )
+  ),
 }
