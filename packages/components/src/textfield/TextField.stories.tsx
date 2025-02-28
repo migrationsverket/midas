@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TextField } from './TextField'
+import { RunOptions } from 'axe-core'
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -51,10 +52,34 @@ export const Required = {
   },
 }
 
-export const Disabled = {
+export const Disabled: Story = {
   args: {
     ...Primary.args,
     isDisabled: true,
+  },
+  parameters: {
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      /*
+       * Axe's options parameter
+       * See https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter
+       * to learn more about the available options.
+       */
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
   },
 }
 
