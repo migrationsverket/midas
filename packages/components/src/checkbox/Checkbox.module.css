@@ -53,6 +53,7 @@
   forced-color-adjust: none;
   display: flex;
   width: max-content;
+  cursor: pointer;
 
   &:hover div {
     border-color: gray100;
