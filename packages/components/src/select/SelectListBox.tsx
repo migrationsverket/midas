@@ -2,14 +2,10 @@ import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox'
 import clsx from 'clsx'
 import * as React from 'react'
 import styles from './Select.module.css'
-
 import type { MultiSelectState } from './useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
-import { FocusRing } from '@react-aria/focus'
-import {useFocusRing} from 'react-aria';
 import { Check } from 'lucide-react'
-// import { Checkbox } from '../checkbox'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
   listBoxRef?: React.RefObject<HTMLUListElement>
@@ -28,15 +24,14 @@ type OptionProps<T> = {
 
 const Option = <T,>({ item, state }: OptionProps<T>) => {
   const ref = React.useRef<HTMLLIElement>(null)
-  const { optionProps, isDisabled, isSelected, isFocused, isFocusVisible } = useOption(
-    {
-      key: item.key,
-    },
-    state,
-    ref,
-  )
-
-
+  const { optionProps, isDisabled, isSelected, isFocused, isFocusVisible } =
+    useOption(
+      {
+        key: item.key,
+      },
+      state,
+      ref,
+    )
 
   return (
     <li
@@ -64,11 +59,14 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
       ) : (
         item.rendered
       )}
-        {isSelected && state.selectionMode === 'single' ? (
-          <Check size={20} className={styles.listBoxItemCheckmark}/>
-        ) : (
-          <></>
-        )}
+      {isSelected && state.selectionMode === 'single' ? (
+        <Check
+          size={20}
+          className={styles.listBoxItemCheckmark}
+        />
+      ) : (
+        <></>
+      )}
     </li>
   )
 }

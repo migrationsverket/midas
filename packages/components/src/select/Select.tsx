@@ -356,7 +356,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               </SelectPopover>
             )}
           </div>
-          {/*TODO FIX AND REFACTOR*/}
           {showTags && state.selectedItems !== null && (
             <TagGroup
               aria-label={'Selected Items'}
