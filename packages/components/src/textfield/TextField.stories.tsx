@@ -69,11 +69,6 @@ export const Disabled: Story = {
           },
         ],
       },
-      /*
-       * Axe's options parameter
-       * See https://github.com/dequelabs/axe-core/blob/develop/doc/API.md#options-parameter
-       * to learn more about the available options.
-       */
       options: {
         rules: {
           'color-contrast': { enabled: false },
