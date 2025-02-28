@@ -9,6 +9,7 @@ const link = { children: linkText, href: '#' }
 const title = 'Rubrik'
 const content = 'Lorem ipsum'
 const testId = 'card'
+const testClass = 'test-class'
 
 describe('given a default card', () => {
   beforeEach(() => {
@@ -18,7 +19,8 @@ describe('given a default card', () => {
         title={title}
         content={content}
         link={link}
-      />
+        className={testClass}
+      />,
     )
   })
 
@@ -34,6 +36,10 @@ describe('given a default card', () => {
 
     expect(screen.getByText(linkText)).toHaveFocus()
   })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByTestId(testId)).toHaveClass('card', testClass)
+  })
 })
 
 describe('given a card with background', () => {
@@ -45,7 +51,7 @@ describe('given a card with background', () => {
         content={content}
         background
         link={link}
-      />
+      />,
     )
   })
 
@@ -64,7 +70,7 @@ describe('given a card with image', () => {
         content={content}
         image={{ source: '', description: '' }}
         link={link}
-      />
+      />,
     )
   })
 

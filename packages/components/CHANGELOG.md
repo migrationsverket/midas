@@ -1,3 +1,33 @@
+# 3.0.0 (2025-02-28)
+
+### 🚀 Features
+
+- ⚠️ **search-field:** remove broken property ([1c04349ce](https://github.com/migrationsverket/midas/commit/1c04349ce))
+
+### 🩹 Fixes
+
+- **card:** append props.className ([dfcfa0439](https://github.com/migrationsverket/midas/commit/dfcfa0439))
+- **search-field:** add border bottom and pixel push some paddings ([e53d56bb7](https://github.com/migrationsverket/midas/commit/e53d56bb7))
+- **search-field:** remove unused tokens ([8e9ed07a9](https://github.com/migrationsverket/midas/commit/8e9ed07a9))
+- **search-field:** destructure function parameters ([8291eeede](https://github.com/migrationsverket/midas/commit/8291eeede))
+- **search-field:** add validation error utility function ([1f4758e41](https://github.com/migrationsverket/midas/commit/1f4758e41))
+- **search-field:** add disabled styling ([f508f2f6d](https://github.com/migrationsverket/midas/commit/f508f2f6d))
+- **search-field:** handle custom error messages ([99649c163](https://github.com/migrationsverket/midas/commit/99649c163))
+- **search-field:** useSearchField to validate input and use internal key events ([fbe8cf54a](https://github.com/migrationsverket/midas/commit/fbe8cf54a))
+- **search-field:** move validation error message ([85c1b7990](https://github.com/migrationsverket/midas/commit/85c1b7990))
+
+### Documentation Changes
+
+- **search-field:** add stories ([8766d4d8e](https://github.com/migrationsverket/midas/commit/8766d4d8e))
+
+### ⚠️ Breaking Changes
+
+- **search-field:** `isRequired` property of `SearchField` is no longer supported
+
+### ❤️ Thank You
+
+- derpbravely
+
 ## 2.0.1 (2025-02-27)
 
 ### 🩹 Fixes
