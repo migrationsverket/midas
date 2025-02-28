@@ -1,21 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from './Card'
+import { within, expect, userEvent } from '@storybook/test'
 
 const testImage = {
   source:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
-  description: 'Pineapple'
+  description: 'Pineapple',
 }
 
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Components/Card',
-  tags: ['autodocs']
-}
-export default meta
-type Story = StoryObj<typeof Card>
-
-export const Example: Story = {
+  tags: ['autodocs'],
   args: {
     title: 'Welcome to card',
     content:
@@ -24,8 +20,33 @@ export const Example: Story = {
     background: false,
     link: {
       children: 'Läs mer om Card',
-      href: '#'
+      href: '#',
     },
-    headingTag: 'h2'
-  }
+    headingTag: 'h2',
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof Card>
+
+export const Example: Story = {
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement)
+
+    step('It should be possible to focus the link', async () => {
+      const link = canvas.getByText('Läs mer om Card')
+      expect(link).not.toHaveFocus()
+
+      // focus the link
+      await userEvent.tab()
+
+      expect(link).toHaveFocus()
+    })
+  },
+}
+
+export const WithBackground: Story = {
+  args: {
+    background: true,
+  },
 }
