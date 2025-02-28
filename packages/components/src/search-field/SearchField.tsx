@@ -1,9 +1,6 @@
 'use client'
 
-import {
-  Label,
-  SearchFieldProps as AriaSearchFieldProps,
-} from 'react-aria-components'
+import { SearchFieldProps as AriaSearchFieldProps } from 'react-aria-components'
 import { Search, X } from 'lucide-react'
 import TextFieldStyles from '../textfield/TextField.module.css'
 import { Button } from '../button'
@@ -42,7 +39,6 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
   const ref = React.useRef<HTMLInputElement>(null)
 
   const {
-    labelProps,
     inputProps,
     errorMessageProps,
     isInvalid,
@@ -96,12 +92,6 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
         </div>
       )}
       <div className={styles.container}>
-        <Label
-          {...labelProps}
-          hidden
-        >
-          {props.placeholder}
-        </Label>
         <div className={styles.inputContainer}>
           <Search
             size={20}
@@ -119,6 +109,8 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
             value={value}
             aria-invalid={isInvalid}
             onKeyDown={handleKeyDown}
+            aria-label={props.placeholder}
+            aria-labelledby=''
           />
           {value.length > 0 && (
             <Button
