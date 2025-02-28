@@ -43,16 +43,13 @@ export const Card: React.FC<CardProps> = ({
   headingTag: HeadingTag = 'h1',
   customImageComponent,
   customLinkComponent: CustomLinkComponent,
+  className,
   ...rest
 }) => {
   const contentId = React.useId()
   return (
     <div
-      className={clsx(
-        styles.card,
-        background && styles.background,
-        rest.className,
-      )}
+      className={clsx(styles.card, background && styles.background, className)}
       {...rest}
     >
       <div className={styles.content}>
