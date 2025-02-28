@@ -15,8 +15,8 @@ const config: TestRunnerConfig = {
     // Get the entire context of a story, including parameters, args, argTypes, etc.
     const storyContext = await getStoryContext(page, context)
 
-    // Do not run a11y tests on disabled stories.
-    if (storyContext.parameters?.a11y?.disable) {
+    // Skip uncompleted stories.
+    if (storyContext.parameters?.a11y?.test === 'todo') {
       return
     }
 
@@ -25,6 +25,7 @@ const config: TestRunnerConfig = {
       detailedReportOptions: {
         html: true,
       },
+      verbose: false,
       axeOptions: {
         ...storyContext?.parameters?.a11y?.options,
         rules: {

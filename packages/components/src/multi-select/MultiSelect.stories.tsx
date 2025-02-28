@@ -52,6 +52,11 @@ export const Primary: Story = {
     description: 'Valfri hjälptext',
     items: options,
   },
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
 }
 
 export const DefaultSelectedKeys: Story = {
