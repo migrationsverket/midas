@@ -42,6 +42,7 @@
   padding-right: 1rem;
   background-color: backgroundSecondary;
   border-bottom: 1px solid black;
+  cursor: pointer;
 
   &:focus {
     outline-offset: 2px;
@@ -53,7 +54,7 @@
   }
 
   &:disabled {
-    pointer-events: none;
+    cursor: not-allowed;
     background: backgroundSecondary;
     color: gray50;
     border-color: gray50;
@@ -163,7 +164,7 @@
   font-family: display;
   padding: 0 1rem;
   background-color: white;
-  cursor: default;
+  cursor: pointer;
   color: black;
   position: relative;
   display: flex;
@@ -197,7 +198,7 @@
 
 .listBoxItemDisabled {
   color: gray50;
-  pointer-events: none;
+  cursor: not-allowed;
 }
 
 .listBoxItemFocused {
@@ -333,6 +334,7 @@ input[type='checkbox']::before {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1rem 1rem white;
   background-color: CanvasText;
+  cursor: pointer;
 }
 
 input[type='checkbox']:checked::before {
