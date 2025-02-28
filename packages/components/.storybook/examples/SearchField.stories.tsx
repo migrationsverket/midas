@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { generateMockOptions } from '../../src/combobox/utils'
 import React, { useState } from 'react'
+import { fruits } from './fruits'
 import {
   SearchField,
   Table,
@@ -23,6 +23,7 @@ type DataRow = { id: number; fruit: string; description: string }
 type ColumnType = {
   name: string
   id: string
+
   isRowHeader?: boolean
 }
 
@@ -37,10 +38,10 @@ export const SimpleSearch: Story = {
 
     const [searchTerm, setSearchTerm] = useState('')
     const [mockData] = useState<DataRow[]>(() =>
-      Array.from(generateMockOptions(10)).map((item, index) => ({
+      fruits.map((item, index) => ({
         id: index + 1,
         fruit: item.name,
-        description: `En frukt.`,
+        description: item.description,
       })),
     )
 
