@@ -17,3 +17,19 @@ export const Primary: Story = {
     placeholder: 'Sök efter en person',
   },
 }
+
+export const CustomValidation: Story = {
+  args: {
+    placeholder: 'Sök efter "secret"',
+    validate: (value: string) =>
+      value === 'secret' ? 'Sök inte efter hemligheter' : true,
+  },
+}
+
+export const Invalid: Story = {
+  args: {
+    placeholder: 'Sök efter dokument',
+    isInvalid: true,
+    errorMessage: 'Något gick fel, var god försök igen',
+  },
+}

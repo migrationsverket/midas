@@ -1,3 +1,123 @@
+# 3.0.0 (2025-02-28)
+
+### 🚀 Features
+
+- ⚠️ **search-field:** remove broken property ([1c04349ce](https://github.com/migrationsverket/midas/commit/1c04349ce))
+
+### 🩹 Fixes
+
+- **card:** append props.className ([dfcfa0439](https://github.com/migrationsverket/midas/commit/dfcfa0439))
+- **card:** append props.className ([#295](https://github.com/migrationsverket/midas/pull/295))
+- **search-field:** move validation error message ([85c1b7990](https://github.com/migrationsverket/midas/commit/85c1b7990))
+- **search-field:** useSearchField to validate input and use internal key events ([fbe8cf54a](https://github.com/migrationsverket/midas/commit/fbe8cf54a))
+- **search-field:** handle custom error messages ([99649c163](https://github.com/migrationsverket/midas/commit/99649c163))
+- **search-field:** add disabled styling ([f508f2f6d](https://github.com/migrationsverket/midas/commit/f508f2f6d))
+- **search-field:** add validation error utility function ([1f4758e41](https://github.com/migrationsverket/midas/commit/1f4758e41))
+- **search-field:** destructure function parameters ([8291eeede](https://github.com/migrationsverket/midas/commit/8291eeede))
+- **search-field:** remove unused tokens ([8e9ed07a9](https://github.com/migrationsverket/midas/commit/8e9ed07a9))
+- **search-field:** add border bottom and pixel push some paddings ([e53d56bb7](https://github.com/migrationsverket/midas/commit/e53d56bb7))
+- **search-field:** validation text ([#290](https://github.com/migrationsverket/midas/pull/290))
+
+### Documentation Changes
+
+- **search-field:** add stories ([8766d4d8e](https://github.com/migrationsverket/midas/commit/8766d4d8e))
+
+### ⚠️ Breaking Changes
+
+- **search-field:** `isRequired` property of `SearchField` is no longer supported
+
+### ❤️ Thank You
+
+- derpbravely
+
+## 2.0.1 (2025-02-27)
+
+### 🩹 Fixes
+
+- **radio:** fix hover on mobile, remove 100% height on RadioGroup ([789264afa](https://github.com/migrationsverket/midas/commit/789264afa))
+- **radio:** fix hover on mobile, remove 100% height on RadioGroup ([#286](https://github.com/migrationsverket/midas/pull/286))
+- **textfield:** update dossnr regex to support new delimiter ([c5e1b4428](https://github.com/migrationsverket/midas/commit/c5e1b4428))
+- **textfield:** add rule for matching delimiters for doss nr ([026073775](https://github.com/migrationsverket/midas/commit/026073775))
+- **textfield:** cover more cases on dossnr ([0f27d8b33](https://github.com/migrationsverket/midas/commit/0f27d8b33))
+- **textfield:** update dossnr regex to support new delimiter ([#274](https://github.com/migrationsverket/midas/pull/274))
+
+### Documentation Changes
+
+- update get started with node 22 ([098e4e1e0](https://github.com/migrationsverket/midas/commit/098e4e1e0))
+
+### ❤️ Thank You
+
+- pixelrickdreamer
+- Wilhelm Hjelm
+- wilhjelmig @wilhjelmig
+
+# 2.0.0 (2025-02-25)
+
+### 🚀 Features
+
+- **layout:** design improvements + tooltip ([#231](https://github.com/migrationsverket/midas/pull/231))
+- ⚠️ **textarea:** rename maxCharacters property ([06116cee9](https://github.com/migrationsverket/midas/commit/06116cee9))
+- ⚠️ **textfield:** rename maxCharacters property ([44eec760e](https://github.com/migrationsverket/midas/commit/44eec760e))
+- **tooltip:** new component tooltip ([3bc3fcd4f](https://github.com/migrationsverket/midas/commit/3bc3fcd4f))
+
+### 🩹 Fixes
+
+- **accessibility:** fix focus for high contrast mode ([#267](https://github.com/migrationsverket/midas/pull/267))
+- **accordion:** append classname ([aaaa0ddb1](https://github.com/migrationsverket/midas/commit/aaaa0ddb1))
+- **accordion:** remove dependency array from useLayoutEffect - fix render of dynamic content in AccordionItem ([db4c920ee](https://github.com/migrationsverket/midas/commit/db4c920ee))
+- **accordion:** add comment ([56db5d49f](https://github.com/migrationsverket/midas/commit/56db5d49f))
+- **accordion:** fix render of dynamic content in AccordionItem ([#283](https://github.com/migrationsverket/midas/pull/283))
+- **combobox:** append classname ([570a1998e](https://github.com/migrationsverket/midas/commit/570a1998e))
+- **components:** append prop.className ([#279](https://github.com/migrationsverket/midas/pull/279))
+- **file-upload:** pass unhandled props ([fc90980d9](https://github.com/migrationsverket/midas/commit/fc90980d9))
+- **file-upload:** add autdocs config ([809f0b894](https://github.com/migrationsverket/midas/commit/809f0b894))
+- **file-upload:** import react to get autodocs props ([e6467ca66](https://github.com/migrationsverket/midas/commit/e6467ca66))
+- **file-upload:** pass unhandled props to the FileTrigger component ([#277](https://github.com/migrationsverket/midas/pull/277))
+- **layout:** design adjustments ([f086ad5fe](https://github.com/migrationsverket/midas/commit/f086ad5fe))
+- **layout:** add tooltips on layout collapsed state ([5e9d0090d](https://github.com/migrationsverket/midas/commit/5e9d0090d))
+- **layout:** design review ([b1928466c](https://github.com/migrationsverket/midas/commit/b1928466c))
+- **layout:** design adjustments + skip to content link ([facdaf64f](https://github.com/migrationsverket/midas/commit/facdaf64f))
+- **layout:** fix bug where mobile menu wouldn't open ([c61923662](https://github.com/migrationsverket/midas/commit/c61923662))
+- **logo:** append classname ([66a189a6c](https://github.com/migrationsverket/midas/commit/66a189a6c))
+- **radio:** append classname ([796173ba2](https://github.com/migrationsverket/midas/commit/796173ba2))
+- **tag:** append classname ([df88ec9fb](https://github.com/migrationsverket/midas/commit/df88ec9fb))
+- **textarea:** add validation for minLength property ([8df1f931a](https://github.com/migrationsverket/midas/commit/8df1f931a))
+- **textarea:** append classname ([cdd9f3e5c](https://github.com/migrationsverket/midas/commit/cdd9f3e5c))
+- **textarea:** set initial counter value on render ([924f5abda](https://github.com/migrationsverket/midas/commit/924f5abda))
+- **textarea:** set initial counter value on render ([15121e437](https://github.com/migrationsverket/midas/commit/15121e437))
+- **textfield:** append classname ([53f5b603c](https://github.com/migrationsverket/midas/commit/53f5b603c))
+- **textfield:** set initial counter value on render ([0e9e4a44d](https://github.com/migrationsverket/midas/commit/0e9e4a44d))
+- **textfield:** set initial counter value on render ([1f9a9cfc1](https://github.com/migrationsverket/midas/commit/1f9a9cfc1))
+- **textfield:** set the initial value for useState ([#280](https://github.com/migrationsverket/midas/pull/280))
+- **theme:** add global css export ([9786d79da](https://github.com/migrationsverket/midas/commit/9786d79da))
+- **theme:** add global css export ([#282](https://github.com/migrationsverket/midas/pull/282))
+- **tooltip:** append classname ([0e6e6e483](https://github.com/migrationsverket/midas/commit/0e6e6e483))
+
+### Documentation Changes
+
+- dropdown + layout + tooltip ([28d3bc661](https://github.com/migrationsverket/midas/commit/28d3bc661))
+- **components:** sync docusaurus and storybook autodocs config ([4e061ad4d](https://github.com/migrationsverket/midas/commit/4e061ad4d))
+- **docs:** add documentation about skeleton component ([460bf602c](https://github.com/migrationsverket/midas/commit/460bf602c))
+- **docs:** add design pattern about loaders ([702136a89](https://github.com/migrationsverket/midas/commit/702136a89))
+- **docs:** change name ([1d04e9c63](https://github.com/migrationsverket/midas/commit/1d04e9c63))
+- **docs:** add link to design pattern ([38db9d2de](https://github.com/migrationsverket/midas/commit/38db9d2de))
+- **docs:** change name back to SKeleton ([664b829f8](https://github.com/migrationsverket/midas/commit/664b829f8))
+- **file-upload:** manually extend react aria props for autodocs ([07ecde229](https://github.com/migrationsverket/midas/commit/07ecde229))
+
+### ⚠️ Breaking Changes
+
+- **textfield:** TextField property maxCharacters is renamed to maxLength
+- **textarea:** TextArea propert maxCharacters is renamed to maxLength
+
+### ❤️ Thank You
+
+- derpbravely
+- Jabir Khalil
+- PHIEKS
+- pixelrickdreamer @pixelrickdreamer
+- Wilhelm Hjelm
+- wilhjelmig @wilhjelmig
+
 ## 1.3.0 (2025-02-19)
 
 ### 🚀 Features

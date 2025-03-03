@@ -5,6 +5,8 @@ import user from '../../tests/utils/user'
 import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'Label for input'
+const testClass = 'test'
+const testID = 'test'
 
 describe('given a default TextField', () => {
   beforeEach(() => {
@@ -12,12 +14,18 @@ describe('given a default TextField', () => {
       <TextField
         label={label}
         type='text'
+        data-testid={testID}
+        className={testClass}
       />,
     )
   })
 
   it('should have no accessibility violations', async () => {
     expect(await axe(screen.getByLabelText(label))).toHaveNoViolations()
+  })
+
+  it('should preserve its classNames when being passed new ones', async () => {
+    expect(screen.getByTestId(testID)).toHaveClass('inputField', testClass)
   })
 })
 
@@ -79,5 +87,148 @@ describe('given a TextField with type "number"', () => {
     await user.tab()
     await user.keyboard('abc')
     expect(screen.getByLabelText(label)).toHaveValue(null)
+  })
+})
+
+describe('given a TextField with dossnr validation', () => {
+  const labelText = 'Dossiernummer'
+  const testCases = [
+    { value: '9-028498/2', isValid: true },
+    { value: '9+028498-2', isValid: true },
+    { value: '9+028498/2', isValid: false },
+    { value: '9-028498-2', isValid: false },
+    { value: '19-028498/2', isValid: true },
+    { value: '19+028498-2', isValid: true },
+    { value: '19+028498/2', isValid: false },
+    { value: '19-028498-2', isValid: false },
+    { value: '19-028498/21', isValid: true },
+    { value: '19+028498-21', isValid: true },
+    { value: '19+028498/21', isValid: false },
+    { value: '19-028498-21', isValid: false },
+    { value: '9-028498', isValid: true },
+    { value: '19-028498', isValid: true },
+    { value: '9-028498/', isValid: false },
+    { value: '19-028498/', isValid: false },
+    { value: '12345', isValid: false },
+    { value: '123456', isValid: true },
+    { value: '1234567', isValid: true },
+    { value: '12345678', isValid: true },
+    { value: '123456789', isValid: false },
+    { value: '123-123456/1', isValid: false },
+    { value: '1-123', isValid: false },
+  ]
+
+  beforeEach(() => {
+    renderWithForm(
+      <TextField
+        label={labelText}
+        type='text'
+        validationType='dossnr'
+        errorMessage='Fel format för ett dossiernummer'
+      />,
+    )
+  })
+
+  testCases.forEach(({ value, isValid }) => {
+    it(`should ${isValid ? 'validate' : 'show error for'} dossiernummer format: ${value}`, async () => {
+      const input = screen.getByLabelText(labelText)
+
+      await user.type(input, value)
+      await user.tab() // Move focus away to trigger validation
+
+      expect(input).toHaveValue(value)
+      if (isValid) {
+        expect(
+          screen.queryByText('Fel format för ett dossiernummer'),
+        ).toBeNull()
+      } else {
+        expect(
+          screen.getByText('Fel format för ett dossiernummer'),
+        ).toBeInTheDocument()
+      }
+    })
+  })
+})
+
+describe('given a TextField with ssn validation', () => {
+  const labelText = 'Personnummer'
+  const testCases = [
+    { value: '19900101-1234', isValid: true },
+    { value: '900101-1234', isValid: true },
+    { value: '19900101 1234', isValid: true },
+    { value: '900101 1234', isValid: true },
+    { value: '199001011234', isValid: true },
+    { value: '9001011234', isValid: true },
+    { value: '19900101+1234', isValid: true },
+    { value: '900101+1234', isValid: true },
+    { value: '19900101-123', isValid: false },
+    { value: '900101-123', isValid: false },
+    { value: '19900101 123', isValid: false },
+    { value: '900101 123', isValid: false },
+    { value: '19900101123', isValid: false },
+    { value: '900101123', isValid: false },
+    { value: '19900101+123', isValid: false },
+    { value: '900101+123', isValid: false },
+  ]
+
+  beforeEach(() => {
+    renderWithForm(
+      <TextField
+        label={labelText}
+        type='text'
+        validationType='ssn'
+        errorMessage='Fel format för ett personnummer'
+      />,
+    )
+  })
+
+  testCases.forEach(({ value, isValid }) => {
+    it(`should ${isValid ? 'validate' : 'show error for'} personnummer format: ${value}`, async () => {
+      const input = screen.getByLabelText(labelText)
+
+      await user.type(input, value)
+      await user.tab() // Move focus away to trigger validation
+
+      expect(input).toHaveValue(value)
+      if (isValid) {
+        expect(screen.queryByText('Fel format för ett personnummer')).toBeNull()
+      } else {
+        expect(
+          screen.getByText('Fel format för ett personnummer'),
+        ).toBeInTheDocument()
+      }
+    })
+  })
+})
+
+describe('given a TextField with showCounter and an initial value', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        value='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
+  })
+})
+
+describe('given a TextField with showCounter and an initial defaultValue', () => {
+  beforeEach(() =>
+    renderWithForm(
+      <TextField
+        label={label}
+        showCounter
+        defaultValue='HEJ'
+      />,
+    ),
+  )
+
+  it('should show the correct count for its initial value', async () => {
+    expect(screen.getByText('3')).toBeInTheDocument()
   })
 })
