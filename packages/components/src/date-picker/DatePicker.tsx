@@ -28,6 +28,7 @@ import TextFieldStyles from '../textfield/TextField.module.css'
 import styles from './DatePicker.module.css'
 import React from 'react'
 
+const swedishWeekdays = ['Mån', 'Tis', 'Ons', 'Tors', 'Fre', 'Lör', 'Sön']
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
   label?: string
@@ -111,6 +112,17 @@ export const DateRangePicker = <T extends DateValue>({
                   />
                 </Button>
               </header>
+              {/* Weekday Labels */}
+              <div className={styles.weekdayRow}>
+                {swedishWeekdays.map(day => (
+                  <div
+                    key={day}
+                    className={styles.weekdayCell}
+                  >
+                    {day}
+                  </div>
+                ))}
+              </div>
               <CalendarGrid className={styles.calendar}>
                 {date => (
                   <CalendarCell
@@ -187,6 +199,17 @@ export const DatePicker = <T extends DateValue>({
                   <ChevronRight />
                 </Button>
               </header>
+              {/* Weekday Labels */}
+              <div className={styles.weekdayRow}>
+                {swedishWeekdays.map(day => (
+                  <div
+                    key={day}
+                    className={styles.weekdayCell}
+                  >
+                    {day}
+                  </div>
+                ))}
+              </div>
               <CalendarGrid className={styles.calendar}>
                 {date => (
                   <CalendarCell
