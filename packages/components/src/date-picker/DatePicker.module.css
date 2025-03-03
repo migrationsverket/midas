@@ -27,6 +27,7 @@
     padding-left: 1rem;
     color: black;
     background-color: gray10;
+    cursor: pointer;
 
     &:hover {
       background-color: gray20;
@@ -86,6 +87,7 @@
     border: none;
     color: black;
     background-color: gray10;
+    cursor: pointer;
 
     &:focus-visible,
     &[data-focus-visible] {
@@ -107,6 +109,7 @@
 
 .day {
   border: solid 2px gray10;
+  cursor: pointer;
 
   &:hover {
     background-color: gray20;
@@ -155,7 +158,7 @@
   }
 
   th {
-    font-weight: 500;
+    display: none;
   }
 
   & th,
@@ -173,4 +176,17 @@
       outline-offset: 2px;
     }
   }
+}
+
+.weekdayRow {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.weekdayCell {
+  padding: 4px;
+  color: #333;
 }

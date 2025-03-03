@@ -26,6 +26,7 @@
   align-items: center;
   gap: 0.5rem;
   color: inputText;
+  cursor: pointer;
 
   &::before {
     content: '';
@@ -51,6 +52,7 @@
 
   &[data-disabled] {
     color: gray50;
+    cursor: not-allowed;
   }
 
   &[data-disabled]::before {
