@@ -53,6 +53,7 @@
   forced-color-adjust: none;
   display: flex;
   width: max-content;
+  cursor: pointer;
 
   &:hover div {
     border-color: gray100;
@@ -116,6 +117,7 @@
 
   &[data-disabled] {
     color: gray50;
+    cursor: not-allowed;
   }
 
   &[data-disabled][data-selected] div {
