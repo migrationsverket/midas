@@ -1,135 +1,181 @@
-/* 0 */
-@value white: #ffffff;
+/* Base Colors */
 @value black: #000000;
-@value gray10: #f2f2f2;
-@value gray20: #e6e6e6;
-@value gray30: #d9d9d9;
-@value gray40: #cccccc;
-@value gray50: #bfbfbf;
-@value gray60: #b3b3b3;
-@value gray70: #a6a6a6;
-@value gray80: #999999;
-@value gray90: #8c8c8c;
-@value gray100: #808080;
-@value gray130: #5d5d5d;
-@value gray150: #1f1f1f;
-@value red10: #f7e9e7;
-@value red20: #f1d4d1;
-@value red30: #e9beba;
-@value red40: #e2a8a4;
-@value red50: #d9918e;
-@value red60: #d37a7a;
-@value red70: #cc6467;
-@value red80: #c54c56;
-@value red90: #be3345;
-@value red100: #b90835;
-@value red130: #8b1327;
-@value red150: #641018;
-@value blue10: #eaf2f6;
-@value blue20: #d5e5ed;
-@value blue30: #c0d7e4;
-@value blue40: #abcbdb;
-@value blue50: #94bcd1;
-@value blue60: #82b0c9;
-@value blue70: #6ca3c0;
-@value blue80: #5897b8;
-@value blue90: #4289ad;
-@value blue100: #2e7ca5;
-@value blue130: #25607f;
-@value blue150: #143c50;
+@value white: #f7f7f7;
+@value black-hover: #0d0d0d;
+@value white-hover: #e6e6e6;
+@value gray-100: #f2f2f2;
+@value gray-150: #e6e6e6;
+@value gray-200: #bfbfbf;
+@value gray-250: #cccccc;
+@value gray-300: #bfbfbf;
+@value gray-350: #b3b3b3;
+@value gray-400: #a6a6a6;
+@value gray-450: #999999;
+@value gray-500: #8c8c8c;
+@value gray-550: #808080;
+@value gray-600: #737373;
+@value gray-650: #666666;
+@value gray-700: #525252;
+@value gray-750: #5d5d5d;
+@value gray-800: #383838;
+@value gray-850: #474747;
+@value gray-900: #262626;
+@value gray-950: #333333;
+@value gray-1000: #171717;
+@value blue-700: #2e7ca5;
+@value blue-800: #25607f;
+@value blue-900: #143c50;
+@value purple: #663366;
+@value red-700: #b90835;
+@value signal-blue-100: #eaf2f6;
+@value signal-blue-700: #0066cc;
+@value signal-green-100: #d5f2d9;
+@value signal-green-700: #008d3c;
+@value signal-red-100: #ffdfdf;
+@value signal-red-700: #e62323;
+@value signal-red-800: #b31b1b;
+@value signal-red-900: #801313;
+@value signal-yellow-100: #fff8e1;
+@value signal-yellow-700: #fdb813;
 
-/* 1 */
-@value outline: #303030;
-@value primaryBackground: #143c50;
-@value primaryText: #303030;
-@value primaryHover: #25607f;
-@value primaryFocus: #000000;
-@value primaryActive: #4289ae;
-@value secondaryBackground: #5d5d5d;
-@value secondaryText: #ffffff;
-@value secondaryHover: #303030;
-@value secondaryActive: #303030;
+/* Typography */
+@value font-family: "Inter", sans-serif;
+@value line-height-01: 1;
+@value line-height-02: 1.125;
+@value line-height-03: 1.25;
+@value line-height-04: 1.375;
+@value line-height-05: 1.5;
+@value line-height-06: 1.75;
+@value line-height-07: 2;
+@value line-height-08: 2.25;
+@value line-height-09: 2.5;
+@value size-01: 0.75rem;
+@value size-02: 0.875rem;
+@value size-03: 1rem;
+@value size-04: 1.125rem;
+@value size-05: 1.25rem;
+@value size-06: 1.5rem;
+@value size-07: 1.75rem;
+@value size-08: 2rem;
+@value size-09: 2.25rem;
+@value size-10: 2.625rem;
+@value weight-thin: 100;
+@value weight-extra-light: 200;
+@value weight-light: 300;
+@value weight-regular: 400;
+@value weight-medium: 500;
+@value weight-semi-bold: 600;
+@value weight-bold: 700;
+@value weight-extra-bold: 800;
+@value weight-black: 900;
 
-/* 2 */
-@value inputText: #1f1f1f;
+/* Spacing */
+@value spacing-01: 0.125rem;
+@value spacing-02: 0.25rem;
+@value spacing-03: 0.5rem;
+@value spacing-04: 0.75rem;
+@value spacing-05: 1rem;
+@value spacing-06: 1.5rem;
+@value spacing-07: 2rem;
+@value spacing-08: 2.5rem;
+@value spacing-09: 3rem;
+@value spacing-10: 4rem;
+@value spacing-11: 5rem;
+@value spacing-12: 6rem;
 
-/* 3 */
-@value signalGreen10: #d5f2d9;
-@value signalGreen100: #008d3c;
-@value signalBlue10: #eaf2f6;
-@value signalBlue100: #0066cc;
-@value signalYellow10: #fff8e1;
-@value signalYellow100: #f1c21b;
-@value signalRed10: #ffdfdf;
-@value signalRed100: #e62323;
-@value signalRed130: #b31b1b;
-@value signalRed150: #801313;
-
-/* 4 */
-@value sRadius:  0.125rem;
-@value mRadius:  0.25rem;
-
-/* 5 */
-@value xsWidth:  0.0625rem;
-@value sWidth:  0.125rem;
-@value mWidth:  0.25rem;
-
-/* 6 */
-@value lightWeight: 300;
-@value regularWeight: 400;
-@value mediumWeight: 500;
-@value semiBoldWeight: 600;
-@value boldWeight: 700;
-@value blackWeight: 900;
-
-/* 7 */
-@value desktopSize: 1rem;
-@value mobileSize: 1rem;
-@value largeSize: 1.5rem;
-@value inputNormalSize: 0.875rem;
-@value inputMessageSize: 0.75rem;
-@value inputLabelSize: 1rem;
-@value inputDescriptionSize: 0.875rem;
-
-/* 8 */
-@value logoPrimary: #b90835;
-@value logoSecondary: #ffffff;
-@value textPrimary: #1f1f1f;
-@value textSecondary: #ffffff;
-@value textTertiary: #b90835;
-@value link: #25607f;
-@value linkVisited: #663366;
-@value backgroundPrimary: #ffffff;
-@value backgroundSecondary: #f2f2f2;
-@value backgroundFooter1: #b90835;
-@value backgroundFooter2: #8b1327;
-@value backgroundInfo: #eaf2f6;
-@value backgroundImportant: #fff8e1;
-@value borderPrimary: #000000;
-@value borderSecondary: #b3b3b3;
-@value borderFocusOuter: #000000;
-@value borderFocusInner: #ffffff;
-@value iconPrimary: #000000;
-@value iconInverted: #ffffff;
-
-/* 9 */
-@value slowTransition: 500ms;
-@value normalTransition: 300ms;
-@value fastTransition: 250ms;
-
-/* 10 */
-@value smBreakpoint: (max-width: 767px);
-@value mdBreakpoint: (min-width: 768px);
-@value lgBreakpoint: (min-width: 1200px);
-@value xlBreakpoint: (min-width: 1440px);
-
-/* 11 */
-@value forcedColorsMode: (forced-colors: active);
-@value prefersReducedMotion: (prefers-reduced-motion: reduced);
-
-/* 12 */
-@value display: "Inter", sans-serif;
-
-/* 13 */
+/* States */
 @value focus: 0 0 0 2px white, 0 0 0 4px black;
 
+/* Transitions */
+@value slow-transition: 500ms;
+@value normal-transition: 300ms;
+@value fast-transition: 250ms;
+
+/* Breakpoints */
+@value sm-breakpoint: (max-width: 767px);
+@value md-breakpoint: (min-width: 768px);
+@value lg-breakpoint: (min-width: 1200px);
+@value xl-breakpoint: (min-width: 1440px);
+@value forced-colors-mode: (forced-colors: active);
+@value dark-mode: (prefers-color-scheme: dark);
+@value prefers-reduced-motion: (prefers-reduced-motion: reduced);
+
+/* -- Semantic -- */
+
+/* Background */
+@value background-01: light-dark(white, black);
+@value background-01-hover: light-dark(white-hover, black-hover);
+@value background-01-inverse: light-dark(gray-1000, gray100);
+
+/* Layer 01 */
+@value layer-01: light-dark(gray-100, gray-900);
+@value layer-01-hover: light-dark(gray-150, gray-950);
+@value layer-01-selected: light-dark(gray-200, gray-700);
+@value layer-01-selected-hover: light-dark(gray-250, gray-850);
+
+/* Layer 02 */
+@value layer-02: light-dark(white, gray-800);
+@value layer-02-hover: light-dark(white-hover, gray-850);
+@value layer-02-selected: light-dark(gray-200, gray-850);
+@value layer-02-selected-hover: light-dark(gray-250, gray-750);
+
+/* Brand */
+@value brand-primary: light-dark(red-700, red-700);
+
+/* Border */
+@value border-strong: light-dark(gray-1000, gray-100);
+@value border-medium: light-dark(gray-600, gray-500);
+@value border-subtle: light-dark(gray-300, gray-800);
+@value border-brand: light-dark(blue-900, blue-900);
+@value border-invalid: light-dark(signal-red-700, signal-red-700);
+@value border-disabled: light-dark(gray-300, gray-700);
+@value border-skeleton: light-dark(gray-100, gray-900);
+@value border-inverse: light-dark(white, gray-900);
+
+/* Field */
+@value field-01: light-dark(gray-100, gray-900);
+@value field-hover-01: light-dark(gray-150, gray-950);
+@value field-active-01: light-dark(gray-200, gray-800);
+@value field-02: light-dark(white, gray-800);
+@value field-hover-02: light-dark(white-hover, gray-850);
+@value field-active-02: light-dark(gray-200, gray-700);
+@value field-disabled: light-dark(gray-100, gray-900);
+@value field-skeleton: light-dark(gray-100, gray-900);
+
+/* Icon */
+@value icon-primary: light-dark(gray-1000, gray-100);
+@value icon-secondary: light-dark(blue-900, blue-900);
+@value icon-inverse: light-dark(white, black);
+@value icon-on-color: light-dark(white, white);
+@value icon-danger: light-dark(signal-red-700, signal-red-700);
+@value icon-disabled: light-dark(gray-300, gray-700);
+@value icon-success: light-dark(signal-green-700, signal-green-700);
+@value icon-info: light-dark(signal-blue-700, signal-blue-700);
+@value icon-warning: light-dark(signal-red-700, signal-red-700);
+@value icon-important: light-dark(signal-yellow-700, signal-yellow-700);
+
+/* Link */
+@value link-enabled: light-dark(blue-700, blue-700);
+@value link-hover: light-dark(blue-900, blue-900);
+@value link-pressed: light-dark(black, black);
+@value link-visited: light-dark(purple, purple);
+
+/* Notification */
+@value notification-border-warning: light-dark(signal-red-700, signal-red-700);
+@value notification-border-success: light-dark(signal-green-700, signal-green-700);
+@value notification-border-info: light-dark(signal-blue-700, signal-blue-700);
+@value notification-border-important: light-dark(signal-yellow-700, signal-yellow-700);
+@value notification-background-success: light-dark(signal-green-100, layer-01);
+@value notification-background-warning: light-dark(signal-red-100, layer-01);
+@value notification-background-info: light-dark(signal-blue-100, layer-01);
+@value notification-background-important: light-dark(signal-yellow-100, layer-01);
+
+/* Text */
+@value text-primary: light-dark(gray-1000, gray-100);
+@value text-secondary: light-dark(blue-900, blue-900);
+@value text-on-color: light-dark(white, white);
+@value text-inverse: light-dark(white, black);
+@value text-subtle: light-dark(gray-500, gray-500);
+@value text-disabled: light-dark(gray-300, gray-700);
+@value text-invalid: light-dark(signal-red-700, signal-red-700);
+@value text-placeholder: light-dark(gray-500, gray-700);

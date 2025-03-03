@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '../Layout.module.css'
-import { midasColors } from '../../theme'
+import { baseColors } from '../../theme'
 import { Logo } from '../../logo'
 import { Button } from '../../button'
 import { Menu, X } from 'lucide-react'
@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
     <header
       className={styles.header}
       style={{
-        borderTop: `solid 4px ${app.color ? app.color : midasColors.logoPrimary}`,
+        borderTop: `solid 4px ${app.color ? app.color : baseColors.red700}`,
       }}
     >
       <div className={styles.headerContent}>
