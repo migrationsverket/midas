@@ -27,6 +27,7 @@
     padding-left: 1rem;
     color: black;
     background-color: gray10;
+    cursor: pointer;
 
     &:hover {
       background-color: gray20;
@@ -86,6 +87,7 @@
     border: none;
     color: black;
     background-color: gray10;
+    cursor: pointer;
 
     &:focus-visible,
     &[data-focus-visible] {
@@ -107,6 +109,7 @@
 
 .day {
   border: solid 2px gray10;
+  cursor: pointer;
 
   &:hover {
     background-color: gray20;
