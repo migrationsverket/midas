@@ -1,5 +1,5 @@
 'use client'
-
+import { getLocalTimeZone, today } from '@internationalized/date'
 import type {
   DatePickerProps,
   DateRangePickerProps,
@@ -143,7 +143,6 @@ export const DatePicker = <T extends DateValue>({
   ...props
 }: MidasDatePickerProps<T>) => {
   const ref = React.useRef<HTMLDivElement>(null)
-
   return (
     <AriaDatePicker
       {...props}
@@ -153,6 +152,7 @@ export const DatePicker = <T extends DateValue>({
         props.className,
       )}
       ref={ref}
+      isDateUnavailable={isDateUnavailable}
     >
       <InputWrapper
         label={label}
@@ -206,5 +206,13 @@ export const DatePicker = <T extends DateValue>({
         </Popover>
       </InputWrapper>
     </AriaDatePicker>
+  )
+}
+export const isDateUnavailable = (date: DateValue): boolean => {
+  const now = today(getLocalTimeZone())
+  const disabledRanges: [DateValue, DateValue][] = [[now, now.add({ days: 5 })]]
+
+  return disabledRanges.some(
+    ([start, end]) => date.compare(start) >= 0 && date.compare(end) <= 0,
   )
 }

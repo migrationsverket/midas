@@ -167,6 +167,10 @@
     padding: 0.75rem;
   }
 
+  & [data-unavailable] {
+    color: #bfbfbf;
+  }
+
   & div:focus-visible,
   & div[data-focus-visible] {
     outline: 2px solid black;

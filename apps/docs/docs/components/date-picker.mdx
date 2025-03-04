@@ -5,13 +5,13 @@ description: Fält för att välja ett datum eller ett spann av datum med kalend
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { DatePicker, DateRangePicker } from '@midas-ds/components'
+import { DatePicker, DateRangePicker, isDateUnavailable } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
   return (
     <LiveCodeBlock
-      scope={{ DatePicker }}
+      scope={{ DatePicker, isDateUnavailable }}
       {...props}
     >
       {`<DatePicker label="Välj ett datum" aria-label="Välj datum" />`}
@@ -54,6 +54,12 @@ import { DatePicker } from '@midas-ds/components'
 <LiveCodeBlock
   scope={{ DateRangePicker }}
 >{`<DateRangePicker label="Ange din semesterperiod" aria-label="Välj spann av datum" />`}</LiveCodeBlock>
+
+## Begränsa val
+
+<LiveCodeBlock
+  scope={{ DatePicker }}
+>{`<DatePicker label="Välj ett datum när du vill vara ledig" aria-label="Välj datum"  isDateUnavailable={isDateUnavailable} />`}</LiveCodeBlock>
 
 ## API
 
