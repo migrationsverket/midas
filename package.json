@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky && husky install",
+    "prepare": "husky",
     "commitlint": "commitlint --edit",
     "commit": "git-cz"
   },
