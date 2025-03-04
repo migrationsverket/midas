@@ -12,6 +12,9 @@
   border: none;
   padding: 0;
   margin: auto;
+  @media (forced-colors: active) {
+    outline: 2px solid;
+  }
 }
 
 .overlay {
