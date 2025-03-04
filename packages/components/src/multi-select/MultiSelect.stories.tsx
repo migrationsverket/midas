@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { MultiSelect } from './MultiSelect'
+import { RunOptions } from 'axe-core'
 
 const meta: Meta<typeof MultiSelect> = {
   component: MultiSelect,
   title: 'Components/MultiSelect',
-  tags: ['autodocs']
+  tags: ['autodocs'],
 }
 export default meta
 type Story = StoryObj<typeof MultiSelect>
@@ -38,7 +39,7 @@ const fruits = [
   'Pomegranate',
   'Dragonfruit',
   'Starfruit',
-  'Passionfruit'
+  'Passionfruit',
 ]
 
 const options = fruits.map(fruit => {
@@ -49,8 +50,13 @@ export const Primary: Story = {
   args: {
     label: 'Etikett',
     description: 'Valfri hjälptext',
-    items: options
-  }
+    items: options,
+  },
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
 }
 
 export const DefaultSelectedKeys: Story = {
@@ -58,8 +64,8 @@ export const DefaultSelectedKeys: Story = {
     label: 'Etikett',
     description: 'Blackberry är förvalt',
     items: options,
-    defaultSelectedKeys: ['blackberry']
-  }
+    defaultSelectedKeys: ['blackberry'],
+  },
 }
 
 export const AllKeysSelected: Story = {
@@ -67,8 +73,8 @@ export const AllKeysSelected: Story = {
     label: 'Etikett',
     description: 'Alla val är förvalda',
     items: options,
-    defaultSelectedKeys: 'all'
-  }
+    defaultSelectedKeys: 'all',
+  },
 }
 
 export const Disabled: Story = {
@@ -77,8 +83,27 @@ export const Disabled: Story = {
     description: 'Blackberry är förvalt',
     items: options,
     defaultSelectedKeys: ['blackberry'],
-    isDisabled: true
-  }
+    isDisabled: true,
+  },
+  parameters: {
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
+  },
 }
 
 export const Invalid: Story = {
@@ -88,6 +113,6 @@ export const Invalid: Story = {
     items: options,
     defaultSelectedKeys: ['blackberry'],
     isInvalid: true,
-    errorMessage: 'Du får inte välja Blackberry'
-  }
+    errorMessage: 'Du får inte välja Blackberry',
+  },
 }

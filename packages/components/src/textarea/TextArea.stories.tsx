@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TextArea } from './TextArea'
+import { RunOptions } from 'axe-core'
 
 const meta: Meta<typeof TextArea> = {
   component: TextArea,
@@ -51,5 +52,24 @@ export const Disabled = {
   args: {
     ...Primary.args,
     isDisabled: true,
+  },
+  parameters: {
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
   },
 }
