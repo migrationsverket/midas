@@ -117,8 +117,9 @@
   }
 
   &[data-selected='true'] {
-    background-color: blue20;
-    border-color: blue20;
+    color: white;
+    background-color: blue150;
+    border-color: blue150;
   }
 
   &[data-selection-start='true'] {
