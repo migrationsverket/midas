@@ -170,7 +170,7 @@ export const DatePicker = <T extends DateValue>({
               />
             )}
           </DateInput>
-          <Button>
+          <Button className={clsx(props.isInvalid && styles.buttonInvalid)}>
             <CalendarDays
               size={20}
               aria-hidden
