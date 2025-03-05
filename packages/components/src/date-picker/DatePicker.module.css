@@ -19,6 +19,12 @@
     outline: none;
   }
 
+  .buttonInvalid {
+    position: relative;
+    height: 2.5rem;
+    transform: translateX(-3px);
+  }
+
   & button {
     border: none;
     margin-left: auto;
@@ -28,6 +34,8 @@
     color: black;
     background-color: gray10;
     cursor: pointer;
+
+
 
     &:hover {
       background-color: gray20;
