@@ -1,13 +1,10 @@
 .table {
   width: 100%;
+  font-family: 'Inter', sans-serif;
 }
 
 .thead {
   text-align: left;
-
-  th {
-    background-color: #d9d9d9;
-  }
 }
 
 .tbody {

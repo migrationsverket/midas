@@ -145,6 +145,7 @@ const config: Config = {
       logo: {
         alt: 'Migrationsverket Logotyp',
         src: 'img/mig-logo.svg',
+        srcDark: 'img/mig-logo-white.svg',
         height: '52px',
         width: 'auto',
       },
@@ -233,12 +234,12 @@ const config: Config = {
     },
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     prism: {
-      theme: prismThemes.github,
-      //darkTheme: prismThemes.dracula,
+      theme: prismThemes.vsLight,
+      darkTheme: prismThemes.vsDark,
     },
     mermaid: {
       options: {

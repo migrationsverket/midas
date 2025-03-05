@@ -1,51 +1,69 @@
-import {
-  Controls,
-  Description,
-  Primary,
-  Stories,
-  Subtitle,
-  Title
-} from '@storybook/blocks'
 import { customViewports } from './custom-viewports'
 import '../src/theme/global.css'
-
-export const autoDocsTemplate = () => (
-  <>
-    <Title />
-    <Subtitle />
-    <Description />
-    <Primary />
-    <Controls />
-    <Stories />
-  </>
-)
+import {
+  customDarkTheme,
+  customLightTheme,
+  getPreferredColorScheme,
+} from './custom-theme'
 
 const preview = {
   parameters: {
     backgrounds: {
-      default: 'Light',
+      default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: '#143c50' }
-      ]
+        { name: 'Dark', value: 'black' },
+      ],
     },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/
-      }
+        date: /Date$/,
+      },
     },
-    docs: autoDocsTemplate(),
+    docs: {
+      theme:
+        getPreferredColorScheme() === 'dark'
+          ? customDarkTheme
+          : customLightTheme,
+    },
     viewport: {
-      viewports: customViewports
+      viewports: customViewports,
     },
     storySort: {
       method: 'alphabetical',
-      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']]
-    }
+      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+    },
   },
+  decorators: [
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (Story: any, context: any) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const Mode = () => {
+        const userSelectedBackground:
+          | 'white'
+          | 'black'
+          | 'transparent'
+          | undefined = context.globals.backgrounds?.value
 
-  tags: ['autodocs']
+        if (
+          userSelectedBackground === 'white' ||
+          userSelectedBackground === 'black'
+        ) {
+          return userSelectedBackground === 'black' ? 'dark' : 'light'
+        }
+
+        return getPreferredColorScheme()
+      }
+
+      return (
+        <div style={{ colorScheme: Mode() }}>
+          <Story />
+        </div>
+      )
+    },
+  ],
+  tags: ['autodocs'],
 }
 
 export default preview

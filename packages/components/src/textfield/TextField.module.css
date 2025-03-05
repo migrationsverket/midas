@@ -1,16 +1,16 @@
 @value tokens: "../theme/tokens.css";
-@value display, signalRed10, gray10, gray20, gray50, black, signalRed100, mediumWeight, regularWeight, inputText, focus from tokens;
+@value font-family, text-primary, field-01, border-strong, border-invalid, text-disabled, text-invalid from tokens;
 
 .inputField {
   height: 100%;
 
   &[data-disabled] {
-    color: gray50;
+    color: text-disabled;
   }
 }
 
 .inputWrapper {
-  font-family: display;
+  font-family: font-family;
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr 1fr;
@@ -28,19 +28,21 @@
 }
 
 .label {
+  color: text-primary;
   grid-area: Label;
   font-size: 1rem;
   font-weight: mediumWeight;
 }
 
 .text {
+  color: text-primary;
   grid-area: Desc;
   font-size: 0.875rem;
   font-weight: regularWeight;
 }
 
 .fieldError {
-  color: signalRed100;
+  color: text-invalid;
   grid-area: Error;
   font-size: 0.875rem;
   display: flex;
@@ -51,7 +53,7 @@
 
   &::before {
     content: '';
-    background-color: signalRed100;
+    background-color: text-invalid;
     display: block;
     width: 1rem;
     height: 1rem;
@@ -64,7 +66,7 @@
 }
 
 .passwordText {
-  background-color: gray10;
+  background-color: field-01;
   position: absolute;
   display: flex;
   align-items: center;
@@ -78,7 +80,7 @@
 
 .count {
   font-size: 0.875rem;
-  color: inputText;
+  color: text-primary;
   text-align: right;
   grid-area: Count;
   align-self: flex-end;
@@ -91,12 +93,12 @@
 .input {
   all: unset;
   grid-area: Input;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid border-strong;
   min-height: 48px;
   font-size: 1rem;
   padding-left: 1rem;
   line-height: 1;
-  background-color: gray10;
+  background-color: field-01;
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
@@ -121,7 +123,7 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 3px signalRed100;
+    box-shadow: inset 0 0 0 3px border-invalid;
   }
 
   &[data-disabled] {
