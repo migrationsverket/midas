@@ -3,6 +3,8 @@ import {
   Button,
   SearchField,
   Logo,
+  TextField,
+  Select,
   Accordion,
   AccordionItem,
 } from '@midas-ds/components'
@@ -86,6 +88,42 @@ export function App() {
       <Button>Primary Button</Button>
       <SearchField placeholder={'Search...'} />
       <Logo />
+      <TextField label={'Text'} />
+      <form>
+        <Select
+          label={'Select'}
+          selectionMode='multiple'
+          options={[
+            {
+              name: 'Option 1',
+              id: '1',
+            },
+            {
+              name: 'Option 2',
+              id: '2',
+            },
+          ]}
+          isRequired
+          name='multiple'
+        />
+        <Select
+          label={'Select'}
+          selectionMode='single'
+          options={[
+            {
+              name: 'Option 1',
+              id: '1',
+            },
+            {
+              name: 'Option 2',
+              id: '2',
+            },
+          ]}
+          isRequired
+          name='single'
+        />
+        <button type='submit'>Submit</button>
+      </form>
     </div>
   )
 }
