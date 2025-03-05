@@ -22,22 +22,21 @@ export const Example = props => {
 
 export const UnavailableDateExample = props => {
   const getTodayAndNextFiveDays = date => {
-  const now = today(getLocalTimeZone());
-  const disabledRanges = [[now, now.add({ days: 5 })]];
+    const now = today(getLocalTimeZone());
+    const disabledRanges = [[now, now.add({ days: 5 })]];
 
-return disabledRanges.some(
-([start, end]) => date.compare(start) >= 0 && date.compare(end) <= 0
+    return disabledRanges.some(
+      ([start, end]) => date.compare(start) >= 0 && date.compare(end) <= 0
+    );
+
+};
+
+return (
+<LiveCodeBlock scope={{ DatePicker, getTodayAndNextFiveDays }} {...props}>
+{`<DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />`}
+</LiveCodeBlock>
 );
 };
-return (
-
-<LiveCodeBlock
-  scope={{ DatePicker, getTodayAndNextFiveDays }}
-  {...props}
->
-  {`<DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />`}
-</LiveCodeBlock>
-) }
 
 <ComponentHeader
   name={'DatePicker'}
