@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, regularWeight, mediumWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, backgroundSecondary from tokens;
+@value display, regularWeight, mediumWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, gray30, gray40, backgroundSecondary from tokens;
 
 /** clear the default list styles */
 * > ul {
@@ -178,7 +178,7 @@
   }
 
   &:hover {
-    background-color: gray10;
+    background-color: gray20;
     transition-delay: 60ms;
   }
 
@@ -188,8 +188,13 @@
 }
 
 .listBoxItemSelected {
-  background-color: gray20;
+  background-color: gray30;
   color: black;
+
+  &:hover {
+    background-color: gray40;
+    transition-delay: 60ms;
+  }
 
   &.listBoxItemDisabled {
     color: gray50;
