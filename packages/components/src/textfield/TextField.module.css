@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value font-family, text-primary, field-01, border-strong, border-invalid, text-disabled, text-invalid from tokens;
+@value font-family, text-primary, field-01, border-strong, border-invalid, text-disabled, text-invalid, weight-medium, weight-regular, field-disabled from tokens;
 
 .inputField {
   height: 100%;
@@ -31,14 +31,14 @@
   color: text-primary;
   grid-area: Label;
   font-size: 1rem;
-  font-weight: mediumWeight;
+  font-weight: weight-medium;
 }
 
 .text {
   color: text-primary;
   grid-area: Desc;
   font-size: 0.875rem;
-  font-weight: regularWeight;
+  font-weight: weight-regular;
 }
 
 .fieldError {
@@ -87,7 +87,7 @@
 }
 
 .countExceeded {
-  color: signalRed100;
+  color: text-invalid;
 }
 
 .input {
@@ -104,10 +104,10 @@
   width: 100%;
 
   &:hover {
-    background-color: gray20;
+    background-color: field-hover-01;
 
     & + .passwordText {
-      background-color: gray20;
+      background-color: field-hover-01;
     }
   }
 
@@ -128,7 +128,7 @@
 
   &[data-disabled] {
     pointer-events: none;
-    background-color: gray10;
+    background-color: field-disabled;
     border: none;
     opacity: 0.7;
   }
