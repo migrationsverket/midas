@@ -1,3 +1,28 @@
+## 3.1.0 (2025-03-06)
+
+### 🚀 Features
+
+- **button:** set primary border to 2px when in high-contrast mode ([fdcf32e1d](https://github.com/migrationsverket/midas/commit/fdcf32e1d))
+
+### 🩹 Fixes
+
+- **date-picker:** resize button in invalid state, fixes #312 ([#312](https://github.com/migrationsverket/midas/issues/312))
+- **date-picker:** change selected date color to blue150 ([6a7e856a9](https://github.com/migrationsverket/midas/commit/6a7e856a9))
+- change the weekday names to swedish languge ([25609b243](https://github.com/migrationsverket/midas/commit/25609b243))
+- change disabled cursor to not-allowed ([97da5471a](https://github.com/migrationsverket/midas/commit/97da5471a))
+- **datepicker:** change cursor to pointer ([5425f7282](https://github.com/migrationsverket/midas/commit/5425f7282))
+- **radio:** change cursor to pointer ([c18ec8f4e](https://github.com/migrationsverket/midas/commit/c18ec8f4e))
+- **checkbox:** change cursor to pointer ([d5ce18403](https://github.com/migrationsverket/midas/commit/d5ce18403))
+
+### Documentation Changes
+
+- **date-picker:** add style unavailable and code example for Unavailable Date in docs ([469da9424](https://github.com/migrationsverket/midas/commit/469da9424))
+
+### ❤️ Thank You
+
+- jabir Khalil
+- pixelrickdreamer
+
 # 3.0.0 (2025-02-28)
 
 ### 🚀 Features
