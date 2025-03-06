@@ -57,7 +57,10 @@ const preview = {
       }
 
       return (
-        <div style={{ colorScheme: Mode() }}>
+        <div
+          id={Mode()}
+          style={{ colorScheme: Mode() }}
+        >
           <Story />
         </div>
       )

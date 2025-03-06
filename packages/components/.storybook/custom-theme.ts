@@ -17,7 +17,7 @@ export const customDarkTheme = create({
   brandTitle: 'Midas - Migrationsverkets designsystem',
   brandUrl: 'https://designsystem.migrationsverket.se',
   fontBase: '"Inter", sans-serif',
-  colorPrimary: '#143c50',
+  colorPrimary: '#eaf2f6',
   colorSecondary: '#143c50',
   appBorderRadius: 0,
 })
