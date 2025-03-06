@@ -1,6 +1,6 @@
 /* Base Colors */
 @value --black: #000000;
-@value --white: #f7f7f7;
+@value --white: #ffffff;
 @value --black-hover: #0d0d0d;
 @value --white-hover: #e6e6e6;
 @value --gray-100: #f2f2f2;
@@ -23,6 +23,7 @@
 @value --gray-950: #333333;
 @value --gray-1000: #171717;
 @value --gray-1050: #212121;
+@value --blue-200: #d5e5ed;
 @value --blue-700: #2e7ca5;
 @value --blue-800: #25607f;
 @value --blue-900: #143c50;
