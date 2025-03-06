@@ -5,7 +5,10 @@
     "stylelint-config-css-modules",
     "stylelint-prettier/recommended"
   ],
-  "plugins": ["stylelint-prettier"],
+  "plugins": [
+    "stylelint-prettier",
+    "./tools/stylelint-plugin/check-values-import"
+  ],
   "rules": {
     "prettier/prettier": true,
     "selector-class-pattern": [
@@ -25,7 +28,7 @@
     "font-family-name-quotes": null,
     "font-family-no-missing-generic-family-keyword": [
       true,
-      { "ignoreFontFamilies": ["font-family", "display"] }
+      { "ignoreFontFamilies": ["font-family", "display", "--font-family"] }
     ],
     "declaration-block-no-redundant-longhand-properties": [
       true,
@@ -33,6 +36,7 @@
         "ignoreShorthands": ["grid-template", "transition"]
       }
     ],
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "plugin/check-values-import": true
   }
 }
