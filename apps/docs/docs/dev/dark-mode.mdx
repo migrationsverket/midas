@@ -1,0 +1,36 @@
+---
+title: Mörkt läge
+description: Hantera mörkt i designsystemet
+---
+
+import { Link } from '@midas-ds/components'
+
+# Dark Mode / Mörkt läge
+
+Från och med version `whatever` stödjer designsystemet mörkt läge. Detta innebär att designsystemets komponenter kan anpassa sig till användarens inställningar för mörkt läge i operativsystemet eller webbläsaren. Detta sker automatiskt om du använder vår globala stylesheet `global.css`.
+I punkt 11.7 av EN 301 549 beskrivs krav på att följa en användares inställningar. Mörkt läge är ett av dessa val, därav stödjer Midas mörkt läge.
+
+<Link
+  standalone
+  href='/get-started/use/#installera-inter-som-typsnitt'
+>
+  {'Läs mer om hur du installerar global.css'}
+</Link>
+
+## Inte redo för mörkt läge?
+
+Implementationen sker som sagt automatiskt om projektet har uppdaterat `@midas-ds/components` och använder vår globala stylesheet. Om ert projekt inte är redo att stödja mörkt läge kan du stänga av mörkt läge genom att ändra färgschemat i CSS på vilken nivå som passar projektet.
+
+```
+body {
+    color-scheme: light;
+}
+```
+
+Använder du inte vår globala stylesheet kan du aktivera mörkt läge genom att definera bägge färgscheman.
+
+```
+body {
+    color-scheme: light dark;
+}
+```
