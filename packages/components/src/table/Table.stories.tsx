@@ -1,12 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent } from '@storybook/test'
 import styles from './Table.module.css'
 
 const meta: Meta<typeof Table> = {
   component: Table,
   title: 'Components/Table',
   tags: ['autodocs'],
+  args: {
+    'aria-label': 'Files',
+  },
 }
 export default meta
 type Story = StoryObj<typeof Table>
@@ -37,14 +40,10 @@ const rows = [
   { id: 4, name: 'log.txt', date: '1/18/2016', type: 'Text Document' },
 ] satisfies Row[]
 
-const label = 'Files'
-
 export const Primary: Story = {
-  args: {},
   render: ({ ...args }) => {
     return (
       <Table
-        aria-label={label}
         selectionMode='multiple'
         {...args}
       >
@@ -71,16 +70,15 @@ export const Striped: Story = {
     striped: true,
     className: 'my-class',
   },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
-    const table = await canvas.findByLabelText('Files')
+  play: async ({ canvas, step, args }) => {
+    const table = canvas.getByLabelText(args['aria-label'] as string)
 
     await step('Class names should be appended', async () => {
       expect(table).toHaveClass(styles.table, 'my-class')
     })
 
     await step('The rows should change background color on hover', async () => {
-      const anOddRow = await canvas.findByText(rows[2].name)
+      const anOddRow = canvas.getByText(rows[2].name)
       await userEvent.hover(anOddRow)
       expect(anOddRow).toHaveStyle({
         backgroundColor: 'rgb(204, 204, 204)',
