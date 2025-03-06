@@ -231,7 +231,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 0.5rem;
+  padding: 0.125rem 0 0.125rem 0.5rem;
   position: absolute;
   top: 50%;
   left: 0.5rem;
@@ -252,7 +252,7 @@
 }
 
 .clearButton {
-  padding: 0.5rem;
+  padding: 0.25rem;
   margin: 0 0 0 0.5rem;
   display: flex;
   border-radius: 100%;
