@@ -1,0 +1,117 @@
+@value tokens: "../theme/tokens.css";
+@value display, gray10, gray20, blue150, focus from tokens;
+
+.calendar {
+  * {
+    background: unset;
+    color: unset;
+    padding: unset;
+    border: unset;
+  }
+
+  thead tr,
+  tbody tr {
+    background-color: unset;
+  }
+
+  th {
+    font-weight: 500;
+  }
+
+  & th,
+  & .day {
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  background-color: gray10;
+  font-family: display;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  & [data-unavailable] {
+    color: #bfbfbf;
+  }
+
+  & div:focus-visible,
+  & div[data-focus-visible] {
+    outline: 2px solid black;
+
+    @media (forced-colors: active) {
+      outline: 3px solid activeText;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.header {
+  width: calc(100% - 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+
+  & button {
+    border: none;
+    color: black;
+    background-color: gray10;
+    cursor: pointer;
+
+    &:focus-visible,
+    &[data-focus-visible] {
+      outline: none;
+      box-shadow: focus;
+
+      @media (forced-colors: active) {
+        outline: 3px solid highlight;
+        outline-offset: 2px;
+      }
+    }
+  }
+}
+
+.heading {
+  font-size: 1rem;
+  margin: auto;
+
+}
+
+.day {
+  border: solid 2px gray10;
+  cursor: pointer;
+
+  &:hover {
+    background-color: gray20;
+    border-color: gray20;
+  }
+
+  &[data-selected='true'] {
+    color: white;
+    background-color: blue150;
+    border-color: blue150;
+  }
+
+  &[data-selection-start='true'] {
+    color: white;
+    background-color: blue150;
+    border-color: blue150;
+  }
+
+  &[data-selection-end='true'] {
+    color: inherit;
+    background-color: gray10;
+    border-color: blue150;
+  }
+
+  &[aria-label^='Idag'] {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
+
+  &[data-outside-month='true'] {
+    display: none;
+  }
+}
