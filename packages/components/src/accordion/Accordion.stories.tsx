@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion, AccordionItem } from './'
 import { File } from 'lucide-react'
-import { expect, within } from '@storybook/test'
+import { expect } from '@storybook/test'
 import { ACCORDION_TEST_ID } from './Accordion'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
@@ -33,10 +33,8 @@ export const SingleSubtle: Story = {
       </AccordionItem>
     )),
   },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
-
-    step(
+  play: async ({ canvas, step }) => {
+    await step(
       'It should preserve its classNames when being passed new ones',
       async () => {
         const accordion = canvas.getByTestId(ACCORDION_TEST_ID)

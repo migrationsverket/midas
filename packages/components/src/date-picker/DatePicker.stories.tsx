@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -40,17 +40,19 @@ export const Required: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvasElement, step, args: { errorMessage } }) => {
-    const canvas = within(canvasElement)
-    step('it should show an error message if submitted empty', async () => {
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.keyboard('[Enter]')
-      expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
-    })
+  play: async ({ canvas, step, args: { errorMessage } }) => {
+    await step(
+      'it should show an error message if submitted empty',
+      async () => {
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
+      },
+    )
   },
 }
 
@@ -66,13 +68,12 @@ export const CustomValiation: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
+  play: async ({ canvas, step }) => {
     /**
      * This test is made to create an invalid DatePicker
      * the current year is not allowed the "user" selects todays date and submits the form
      */
-    step('it should show a custom error message if invalid', async () => {
+    await step('it should show a custom error message if invalid', async () => {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.tab()

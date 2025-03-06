@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { FileUpload } from './FileUpload'
-import { expect, fn, userEvent, within } from '@storybook/test'
+import { expect, fn, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof FileUpload> = {
   component: FileUpload,
@@ -24,16 +24,15 @@ export const CustomSelectHandler: Story = {
     'data-testid': 'test',
     onSelect: fn(),
   },
-  play: async ({ canvasElement, step, args }) => {
-    const canvas = within(canvasElement)
-    step('it should use the provided onSelect callback', async () => {
+  play: async ({ canvas, step, args }) => {
+    await step('it should use the provided onSelect callback', async () => {
       const testFile = new File(['derp'], 'derp.png', { type: 'image/png' })
       const fileUpload: HTMLInputElement = canvas.getByTestId(
         // @ts-expect-error dont recognize this property
         args['data-testid'] as string,
       )
       await userEvent.upload(fileUpload, testFile)
-      expect(args.onSelect).toHaveBeenCalledTimes(3)
+      expect(args.onSelect).toHaveBeenCalledTimes(1)
       expect(fileUpload?.files?.[0]).toStrictEqual(testFile)
       expect(fileUpload?.files?.item(0)).toStrictEqual(testFile)
       expect(fileUpload.files).toHaveLength(1)

@@ -3,7 +3,7 @@ import { ComboBox, ComboBoxItem } from './ComboBox'
 import { generateMockOptions } from './utils'
 import { Item } from './types'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -41,9 +41,8 @@ export const Default: Story = {
       {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
-    step(
+  play: async ({ canvas, step }) => {
+    await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
         const comboBox = canvas.getByTestId('test')
@@ -109,9 +108,8 @@ export const Required: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvasElement, step, args }) => {
-    const canvas = within(canvasElement)
-    step(
+  play: async ({ canvas, step, args }) => {
+    await step(
       'it should be (aria) invalid and show a validation error message if the user submitted without selecting anything',
       async () => {
         const comboBox = canvas.getByLabelText(args['aria-label'] as string)
@@ -141,9 +139,8 @@ export const CustomErrorMessage: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvasElement, step, args }) => {
-    const canvas = within(canvasElement)
-    step(
+  play: async ({ canvas, step, args }) => {
+    await step(
       'it should be (aria) invalid and show a custom error message if the user submitted without selecting anything',
       async () => {
         const comboBox = canvas.getByLabelText(args['aria-label'] as string)

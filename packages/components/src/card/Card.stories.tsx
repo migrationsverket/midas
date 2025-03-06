@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Card } from './Card'
-import { within, expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from '@storybook/test'
 
 const testImage = {
   source:
@@ -30,10 +30,8 @@ export default meta
 type Story = StoryObj<typeof Card>
 
 export const Example: Story = {
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
-
-    step('It should be possible to focus the link', async () => {
+  play: async ({ canvas, step }) => {
+    await step('It should be possible to focus the link', async () => {
       const link = canvas.getByText('Läs mer om Card')
       expect(link).not.toHaveFocus()
 

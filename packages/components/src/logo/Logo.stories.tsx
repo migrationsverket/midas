@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Logo } from './Logo'
-import { expect, within } from '@storybook/test'
+import { expect } from '@storybook/test'
 
 const meta: Meta<typeof Logo> = {
   component: Logo,
@@ -32,11 +32,15 @@ export const Primary: Story = {
     // @ts-expect-error dont recognize this property
     'data-testid': 'test',
   },
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement)
-    // @ts-expect-error dont recognize this property
-    const logotype = canvas.getByTestId(args['data-testid'])
-    expect(logotype).toHaveClass(/container/, args.className as string)
+  play: async ({ canvas, step, args }) => {
+    await step(
+      'it should preserve its classNames when being passed new ones',
+      async () => {
+        // @ts-expect-error dont recognize this property
+        const logotype = canvas.getByTestId(args['data-testid'])
+        expect(logotype).toHaveClass(/container/, args.className as string)
+      },
+    )
   },
 }
 

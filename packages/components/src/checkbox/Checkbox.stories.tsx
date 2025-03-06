@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from './Checkbox'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -61,10 +61,8 @@ export const Required: Story = {
       </form>
     )
   },
-  play: async ({ canvasElement, step }) => {
-    const canvas = within(canvasElement)
-
-    step(
+  play: async ({ canvas, step }) => {
+    await step(
       'It should be (aria) invalid if the user submitted without checking the box',
       async () => {
         const checkbox = canvas.getByLabelText('test')

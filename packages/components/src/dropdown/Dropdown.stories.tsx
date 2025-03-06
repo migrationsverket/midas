@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dropdown, DropdownItem } from './Dropdown'
 import { LinkButton } from '../link-button'
-import { within, userEvent, expect } from '@storybook/test'
+import { userEvent, expect } from '@storybook/test'
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
@@ -21,11 +21,9 @@ type Story = StoryObj<typeof Dropdown>
 export const Primary: Story = {}
 
 export const Open: Story = {
-  play: async ({ canvasElement, step, args: { title } }) => {
-    const canvas = within(canvasElement)
-
-    step('It should render successfully', async () => {
-      const dropdown = await canvas.findByText(title as string)
+  play: async ({ canvas, step, args: { title } }) => {
+    await step('It should render successfully', async () => {
+      const dropdown = canvas.getByText(title as string)
       await userEvent.click(dropdown)
       expect(canvas).toBeTruthy()
     })
