@@ -3,6 +3,7 @@ import { Accordion, AccordionItem } from './'
 import { File } from 'lucide-react'
 import { expect } from '@storybook/test'
 import { ACCORDION_TEST_ID } from './Accordion'
+import styles from './Accordion.module.css'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
@@ -38,7 +39,7 @@ export const SingleSubtle: Story = {
       'It should preserve its classNames when being passed new ones',
       async () => {
         const accordion = canvas.getByTestId(ACCORDION_TEST_ID)
-        expect(accordion).toHaveClass(/root/, 'test')
+        expect(accordion).toHaveClass(styles.root, 'test')
       },
     )
   },

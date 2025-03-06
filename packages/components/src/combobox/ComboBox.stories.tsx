@@ -4,6 +4,7 @@ import { generateMockOptions } from './utils'
 import { Item } from './types'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
+import styles from './ComboBox.module.css'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -46,7 +47,7 @@ export const Default: Story = {
       'it should preserve its classNames when being passed new ones',
       async () => {
         const comboBox = canvas.getByTestId('test')
-        expect(comboBox).toHaveClass(/combobox/, 'test')
+        expect(comboBox).toHaveClass(styles.combobox, 'test')
       },
     )
   },

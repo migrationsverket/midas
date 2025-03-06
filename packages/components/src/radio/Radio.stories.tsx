@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { RadioGroup, Radio } from './Radio'
 import { expect, userEvent } from '@storybook/test'
+import styles from './Radio.module.css'
 
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/Radio',
@@ -77,7 +78,10 @@ export const Normal: Story = {
       'it should preserve its classNames when being passed new ones',
       async () => {
         const radioGroup = canvas.getByLabelText(args.label as string)
-        expect(radioGroup).toHaveClass(/radioGroup/, args.className as string)
+        expect(radioGroup).toHaveClass(
+          styles.radioGroup,
+          args.className as string,
+        )
       },
     )
   },

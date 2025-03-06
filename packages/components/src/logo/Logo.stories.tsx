@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Logo } from './Logo'
 import { expect } from '@storybook/test'
+import styles from './Logo.module.css'
 
 const meta: Meta<typeof Logo> = {
   component: Logo,
@@ -38,7 +39,7 @@ export const Primary: Story = {
       async () => {
         // @ts-expect-error dont recognize this property
         const logotype = canvas.getByTestId(args['data-testid'])
-        expect(logotype).toHaveClass(/container/, args.className as string)
+        expect(logotype).toHaveClass(styles.container, args.className as string)
       },
     )
   },
