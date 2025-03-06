@@ -20,7 +20,7 @@ const config: TestRunnerConfig = {
       return
     }
 
-    await checkA11y(page, 'body', {
+    await checkA11y(page, '#storybook-root', {
       detailedReport: true,
       detailedReportOptions: {
         html: true,
