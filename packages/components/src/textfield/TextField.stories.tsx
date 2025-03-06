@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { TextField } from './TextField'
 import { RunOptions } from 'axe-core'
+import { expect, userEvent } from '@storybook/test'
+import styles from './TextField.module.css'
 
 const meta: Meta<typeof TextField> = {
   component: TextField,
@@ -27,6 +29,18 @@ export const Primary: Story = {
   args: {
     label: 'Label',
     description: 'Description',
+    // @ts-expect-error dont recognize this property
+    'data-testid': 'test',
+  },
+  play: async ({ canvas, step, args }) => {
+    await step(
+      'it should preserve its classNames when being passed new ones',
+      async () => {
+        // @ts-expect-error dont recognize this property
+        const wrapper = canvas.getByTestId(args['data-testid'] as string)
+        expect(wrapper).toHaveClass(styles.inputField, args.className as string)
+      },
+    )
   },
 }
 
@@ -45,10 +59,68 @@ export const NotValid = {
   },
 }
 
-export const Required = {
+export const Required: Story = {
   args: {
     ...Primary.args,
     isRequired: true,
+    errorMessage: 'Var god fyll i detta fält',
+  },
+  render: args => (
+    <form>
+      <TextField {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+  play: async ({ canvas, step, args: { errorMessage } }) => {
+    await step(
+      'it should give a validation error if the user entered no text',
+      async () => {
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
+      },
+    )
+  },
+}
+
+export const CustomValidation: Story = {
+  args: {
+    label: 'Label',
+    validate: (value: string) =>
+      !/^\d+$/.test(value) ? 'Only numbers are allowed' : true,
+  },
+  render: args => (
+    <form>
+      <TextField {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should give a validation error if the user entered an unpermitted text',
+      async () => {
+        await userEvent.tab()
+        await userEvent.keyboard('abc')
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(canvas.getByText('Only numbers are allowed')).toBeInTheDocument()
+      },
+    )
+  },
+}
+
+export const Number: Story = {
+  args: {
+    label: 'Label',
+    type: 'number',
+  },
+  play: async ({ canvas, step, args: { label } }) => {
+    await step('it should not allow any non number input', async () => {
+      await userEvent.tab()
+      await userEvent.keyboard('abc')
+      expect(canvas.getByLabelText(label as string)).toHaveValue(null)
+    })
   },
 }
 
