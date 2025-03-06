@@ -33,7 +33,7 @@ export const CustomSelectHandler: Story = {
         args['data-testid'] as string,
       )
       await userEvent.upload(fileUpload, testFile)
-      expect(args.onSelect).toHaveBeenCalledTimes(1)
+      expect(args.onSelect).toHaveBeenCalledTimes(3)
       expect(fileUpload?.files?.[0]).toStrictEqual(testFile)
       expect(fileUpload?.files?.item(0)).toStrictEqual(testFile)
       expect(fileUpload.files).toHaveLength(1)
