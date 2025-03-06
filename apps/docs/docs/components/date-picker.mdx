@@ -3,6 +3,7 @@ title: DatePicker
 description: Fält för att välja ett datum eller ett spann av datum med kalender.
 ---
 
+import { getLocalTimeZone, today } from '@internationalized/date'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DatePicker, DateRangePicker } from '@midas-ds/components'
@@ -18,6 +19,24 @@ export const Example = props => {
     </LiveCodeBlock>
   )
 }
+
+export const UnavailableDateExample = props => {
+  const getTodayAndNextFiveDays = date => {
+    const now = today(getLocalTimeZone());
+    const disabledRanges = [[now, now.add({ days: 5 })]];
+
+    return disabledRanges.some(
+      ([start, end]) => date.compare(start) >= 0 && date.compare(end) <= 0
+    );
+
+};
+
+return (
+<LiveCodeBlock scope={{ DatePicker, getTodayAndNextFiveDays }} {...props}>
+{`<DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />`}
+</LiveCodeBlock>
+);
+};
 
 <ComponentHeader
   name={'DatePicker'}
@@ -54,6 +73,10 @@ import { DatePicker } from '@midas-ds/components'
 <LiveCodeBlock
   scope={{ DateRangePicker }}
 >{`<DateRangePicker label="Ange din semesterperiod" aria-label="Välj spann av datum" />`}</LiveCodeBlock>
+
+## Begränsa val
+
+<UnavailableDateExample />
 
 ## API
 
