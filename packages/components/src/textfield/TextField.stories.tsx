@@ -178,9 +178,36 @@ export const MaxLength = {
   },
 }
 
-export const ShowCounter = {
+export const ShowCounter: Story = {
   args: {
     ...Primary.args,
     showCounter: true,
+    value: 'HEJ',
+  },
+  play: async ({ canvas, step, args: { value } }) => {
+    await step(
+      'it should show the correct count for its initial value',
+      async () => {
+        expect(canvas.getByText(value?.length as number)).toBeInTheDocument()
+      },
+    )
+  },
+}
+
+export const ShowCounterWithDefaultValue: Story = {
+  args: {
+    ...Primary.args,
+    showCounter: true,
+    defaultValue: 'HEJ',
+  },
+  play: async ({ canvas, step, args: { defaultValue } }) => {
+    await step(
+      'it should show the correct count for its initial value',
+      async () => {
+        expect(
+          canvas.getByText(defaultValue?.length as number),
+        ).toBeInTheDocument()
+      },
+    )
   },
 }
