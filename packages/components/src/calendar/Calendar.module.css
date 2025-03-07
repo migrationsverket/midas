@@ -26,7 +26,7 @@
 
   background-color: gray10;
   font-family: display;
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   align-items: center;
   margin: auto;
@@ -75,14 +75,13 @@
 .heading {
   font-size: 1rem;
   margin: auto;
-
 }
 
 .day {
   border: solid 2px gray10;
   cursor: pointer;
 
-  &:hover {
+  &[data-hovered] {
     background-color: gray20;
     border-color: gray20;
   }
@@ -105,7 +104,7 @@
     border-color: blue150;
   }
 
-  &[aria-label^='Idag'] {
+  &.today {
     text-decoration: underline;
     text-underline-offset: 3px;
     font-weight: 600;
