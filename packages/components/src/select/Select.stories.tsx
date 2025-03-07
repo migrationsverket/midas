@@ -8,12 +8,14 @@ const meta: Meta<typeof Select> = {
   tags: ['autodocs'],
   args: {
     label: 'Etikett',
-    description: 'Beskrivning'
+    description: 'Beskrivning',
   },
   argTypes: {
-    placeholder: { type: 'string' }
+    placeholder: { type: 'string' },
+    label: { control: 'text' },
+    description: { control: 'text' },
   },
-  parameters: {}
+  parameters: {},
 }
 
 export default meta
@@ -49,7 +51,7 @@ const fruits = [
   'Pomegranate',
   'Dragonfruit',
   'Starfruit',
-  'Passionfruit'
+  'Passionfruit',
 ]
 
 const options = fruits.map(fruit => {
@@ -58,45 +60,46 @@ const options = fruits.map(fruit => {
 
 export const Default: Story = {
   args: {
-    placeholder: 'Many items...'
+    placeholder: 'Many items...',
+    label: 'Välj en frukt',
   },
-  render: () => (
+  render: args => (
     <Select
-      label='Välj en frukt'
+      {...args}
       items={options}
     >
       {item => <Item>{item.name}</Item>}
     </Select>
-  )
+  ),
 }
 
 export const Invalid: Story = {
   args: {
     isInvalid: true,
-    errorMessage: 'Fel!'
+    errorMessage: 'Fel!',
   },
   render: args => (
     <Select {...args}>
       <Item>Apple</Item>
       <Item>Lemon</Item>
     </Select>
-  )
+  ),
 }
 
 export const disabled: Story = {
   args: {
-    isDisabled: true
+    isDisabled: true,
   },
   parameters: {
     docs: {
       description: {
-        story: 'Avoid using disabled'
-      }
-    }
+        story: 'Avoid using disabled',
+      },
+    },
   },
   render: args => (
     <Select {...args}>
       <Item>Hej</Item>
     </Select>
-  )
+  ),
 }
