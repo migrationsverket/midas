@@ -3,15 +3,15 @@ changelog:
     authors:
       - dependabot
   categories:
-    - title: Breaking Changes
+    - title: ⛓️‍💥 Breaking Changes
       labels:
         - breaking-change
-    - title: Exciting New Features
+    - title: ✨ Exciting New Features
       labels:
         - Semver-Major
-    - title: Improvements
+    - title: 🔨 Improvements
       labels:
         - Semver-Minor
-    - title: Patches
+    - title: 🩹 Patches
       labels:
         - Semver-Patch
