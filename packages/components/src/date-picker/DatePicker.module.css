@@ -19,6 +19,12 @@
     outline: none;
   }
 
+  .buttonInvalid {
+    position: relative;
+    height: 2.5rem;
+    transform: translateX(-3px);
+  }
+
   & button {
     border: none;
     margin-left: auto;
@@ -27,6 +33,7 @@
     padding-left: 1rem;
     color: black;
     background-color: gray10;
+    cursor: pointer;
 
     &:hover {
       background-color: gray20;
@@ -86,6 +93,7 @@
     border: none;
     color: black;
     background-color: gray10;
+    cursor: pointer;
 
     &:focus-visible,
     &[data-focus-visible] {
@@ -107,6 +115,7 @@
 
 .day {
   border: solid 2px gray10;
+  cursor: pointer;
 
   &:hover {
     background-color: gray20;
@@ -114,8 +123,9 @@
   }
 
   &[data-selected='true'] {
-    background-color: blue20;
-    border-color: blue20;
+    color: white;
+    background-color: blue150;
+    border-color: blue150;
   }
 
   &[data-selection-start='true'] {
@@ -162,6 +172,10 @@
   & .day {
     text-align: center;
     padding: 0.75rem;
+  }
+
+  & [data-unavailable] {
+    color: #bfbfbf;
   }
 
   & div:focus-visible,

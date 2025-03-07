@@ -111,7 +111,10 @@ export const DateRangePicker = <T extends DateValue>({
                   />
                 </Button>
               </header>
-              <CalendarGrid className={styles.calendar}>
+              <CalendarGrid
+                className={styles.calendar}
+                weekdayStyle='short'
+              >
                 {date => (
                   <CalendarCell
                     date={date}
@@ -167,7 +170,7 @@ export const DatePicker = <T extends DateValue>({
               />
             )}
           </DateInput>
-          <Button>
+          <Button className={clsx(props.isInvalid && styles.buttonInvalid)}>
             <CalendarDays
               size={20}
               aria-hidden
@@ -187,7 +190,10 @@ export const DatePicker = <T extends DateValue>({
                   <ChevronRight />
                 </Button>
               </header>
-              <CalendarGrid className={styles.calendar}>
+              <CalendarGrid
+                className={styles.calendar}
+                weekdayStyle='short'
+              >
                 {date => (
                   <CalendarCell
                     date={date}
