@@ -182,3 +182,25 @@ describe('given a required multi Select', () => {
     expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
   })
 })
+
+describe('given an invalid select', () => {
+
+
+  beforeEach(() => {
+    baseElement = render(
+      <Select
+        label={label}
+        selectionMode={'single'}
+        options={options}
+        isInvalid={true}
+        errorMessage={'error'}
+      />,
+    )
+  })
+  it('should be in invalid state', () => {
+    expect(screen.getByLabelText(label)).toBeInvalid()
+  })
+  it('should should display error message', async () => {
+    expect(screen.getByText('error')).toBeInTheDocument()
+  })
+})

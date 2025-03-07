@@ -6,7 +6,7 @@ import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 import * as React from 'react'
-import { Label, TagList, TextField } from 'react-aria-components'
+import { FieldError, Label, TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -247,7 +247,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            {state.displayValidation.validationErrors.length || errorMessage ? (
+            <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+            {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
+            {state.displayValidation.validationErrors.length ? (
               <div className={styles.fieldError}>
                 {errorMessage ||
                   state.displayValidation.validationErrors.map(error => (
@@ -262,14 +264,16 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               <div className={styles.selectContainer}>
                 <button
                   {...buttonProps}
+                  {...mergeProps}
                   className={clsx(styles.button, {
                     [styles.buttonOpen]: state.isOpen,
                     [styles.buttonActive]: state.selectedItems,
                     [styles.buttonDisabled]: isDisabled,
                   })}
                   data-invalid={
-                    state.displayValidation.validationErrors.length > 0
+                    state.displayValidation.validationErrors.length > 0 || state.displayValidation.isInvalid
                   }
+                  aria-invalid={state.displayValidation.validationErrors.length > 0 || state.displayValidation.isInvalid}
                   type='button'
                   ref={ref}
                 >
