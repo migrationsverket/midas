@@ -12,6 +12,7 @@
 }
 
 .tag {
+  max-height: 2rem;
   display: inline-flex;
   align-items: center;
   border-radius: 1.25rem;
