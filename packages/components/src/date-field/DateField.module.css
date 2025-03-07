@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, signalRed100, gray10, gray20, gray60, mediumWeight, focus, regularWeight from tokens;
+@value display, signalRed100, gray10, gray20, gray50, gray60, mediumWeight, focus, regularWeight from tokens;
 
 .dateField {
   font-family: display;
@@ -7,6 +7,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.125rem;
+}
+
+.isDisabled {
+  color: gray50;
+  pointer-events: none;
+  .inputField {
+    border: none;
+  }
 }
 
 .inputField {
