@@ -1,0 +1,47 @@
+---
+title: Calendar
+description: Använd en kalender när användaren ska välja ett datum eller visualisera ett datum valt på annat sätt.
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { Calendar } from '@midas-ds/components'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Calendar }}
+      {...props}
+    >
+      {`<Calendar/>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name='Calendar'
+  friendlyName='Kalender'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Calendar.html'
+/>
+
+Datumfält används när användaren ska välja ett datum eller visualisera ett datum valt på annat sätt.
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Calendar } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## API
+
+<PropTable name='Calendar' />
+````
