@@ -1,0 +1,52 @@
+---
+title: DateField
+description: Använd ett datumfält när användaren ska fylla i ett datum.
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { DateField } from '@midas-ds/components'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Grid, GridItem } from '@midas-ds/components'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ DateField }}
+      {...props}
+    >
+      {`<DateField
+        label="Etikett"
+        description="Beskrivning"
+    />`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name='Datefield'
+  friendlyName='Datumfält'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/DateField.html'
+/>
+
+Datumfält används när användaren ska fylla i ett datum eller som ett fält där datum är representerat.
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { DateField } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+
+## API
+
+<PropTable name='DateField' />
+````
