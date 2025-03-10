@@ -8,4 +8,5 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/playground/remix',
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 }
