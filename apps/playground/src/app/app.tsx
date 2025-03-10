@@ -1,91 +1,105 @@
 import styles from './app.module.css'
 import {
+  Calendar,
+  DateField,
+  DatePicker,
   Button,
-  SearchField,
-  Logo,
-  Accordion,
-  AccordionItem,
+  Select,
 } from '@midas-ds/components'
 import React from 'react'
+import { DateValue } from 'react-aria-components'
 
 export function App() {
-  const [bolle, setBolle] = React.useState<boolean>(false)
+  const [date, setDate] = React.useState<DateValue | null>(null)
+  const [invalid, setInvalid] = React.useState<boolean>(false)
+
   return (
     <div className={styles.container}>
-      <Accordion
-        defaultExpandedKeys={['Två']}
-        variant='contained'
-      >
-        <AccordionItem
-          id='Ett'
-          title='En öppningsbar panel ett'
-        >
-          Innehåll i öppningsbarpanel Ett Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Repellendus perspiciatis officia, voluptate ratione
-          quam nemo quod aut maiores animi nostrum, in labore adipisci ullam
-          suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Impedit dolorem tempora laboriosam
-          asperiores eum dignissimos accusantium voluptate eligendi beatae vel
-          quis rerum error dolore cum incidunt pariatur accusamus, illum
-          consequuntur?
-        </AccordionItem>
-        <AccordionItem
-          id='Två'
-          title='En öppningsbar panel två'
-        >
-          Innehåll i öppningsbarpanel Två Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Repellendus perspiciatis officia, voluptate ratione
-          quam nemo quod aut maiores animi nostrum, in labore adipisci ullam
-          suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Impedit dolorem tempora laboriosam
-          asperiores eum dignissimos accusantium voluptate eligendi beatae vel
-          quis rerum error dolore cum incidunt pariatur accusamus, illum
-          consequuntur?
-          <button onClick={() => setBolle(!bolle)}>Visa mer</button>
-          {bolle && (
-            <div>
-              Innehåll i öppningsbarpanel Två Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Repellendus perspiciatis officia,
-              voluptate ratione quam nemo quod aut maiores animi nostrum, in
-              labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem
-              ipsum dolor, sit amet consectetur adipisicing elit. Impedit
-              dolorem tempora laboriosam asperiores eum dignissimos accusantium
-              voluptate eligendi beatae vel quis rerum error dolore cum incidunt
-              pariatur accusamus, illum consequuntur?
-            </div>
-          )}
-        </AccordionItem>
-        <AccordionItem
-          id='Tre'
-          title='En öppningsbar panel tre'
-        >
-          Innehåll i öppningsbarpanel Tre Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Repellendus perspiciatis officia, voluptate ratione
-          quam nemo quod aut maiores animi nostrum, in labore adipisci ullam
-          suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Impedit dolorem tempora laboriosam
-          asperiores eum dignissimos accusantium voluptate eligendi beatae vel
-          quis rerum error dolore cum incidunt pariatur accusamus, illum
-          consequuntur?
-        </AccordionItem>
-        <AccordionItem
-          id='Fyra'
-          title='En öppningsbar panel fyra'
-        >
-          Innehåll i öppningsbarpanel Fyra Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Repellendus perspiciatis officia,
-          voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
-          adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum
-          dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora
-          laboriosam asperiores eum dignissimos accusantium voluptate eligendi
-          beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
-          illum consequuntur?
-        </AccordionItem>
-      </Accordion>
-      <Button variant={'secondary'}>Secondary Button</Button>
-      <Button>Primary Button</Button>
-      <SearchField placeholder={'Search...'} />
-      <Logo />
+      <DateField
+        label={'label'}
+        description={'description'}
+        errorMessage={'hello'}
+        onChange={setDate}
+        value={date}
+      />
+      <DatePicker
+        label={'label'}
+        description={'description'}
+      ></DatePicker>
+      <DateField
+        label={'label'}
+        description={'description'}
+        errorMessage={'hello'}
+        isInvalid
+      />
+      <DatePicker
+        label={'label'}
+        description={'description'}
+        errorMessage={'hello'}
+        isInvalid
+      ></DatePicker>
+      <Calendar
+        value={date}
+        onChange={x => {
+          console.log('change', x)
+        }}
+      ></Calendar>
+      <span>{JSON.stringify(date)}</span>
+
+      <div className={styles.container}>
+        <Button onPress={() => setInvalid(p => !p)}>toggle invalid</Button>
+        <Select
+          errorMessage={'Error!'}
+          isInvalid={invalid}
+          label={'invalid testing'}
+          selectionMode={'single'}
+          options={[
+            {
+              name: 'Option 1',
+              id: '1',
+            },
+            {
+              name: 'Option 2',
+              id: '2',
+            },
+          ]}
+        />
+        <form>
+          <Select
+            label={'Select'}
+            selectionMode='multiple'
+            options={[
+              {
+                name: 'Option 1',
+                id: '1',
+              },
+              {
+                name: 'Option 2',
+                id: '2',
+              },
+            ]}
+            isRequired
+            name='multiple'
+          />
+          <Select
+            label={'Select'}
+            selectionMode='single'
+            options={[
+              {
+                name: 'Option 1',
+                id: '1',
+              },
+              {
+                name: 'Option 2',
+                id: '2',
+              },
+            ]}
+            isRequired
+            name='single'
+          />
+          <button type='submit'>Submit</button>
+        </form>
+      </div>
     </div>
   )
 }

@@ -19,7 +19,6 @@ import {
   Heading,
   Popover,
   RangeCalendar,
-  Calendar,
 } from 'react-aria-components'
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
 import { clsx } from 'clsx'
@@ -27,6 +26,7 @@ import { InputWrapper } from '../textfield'
 import TextFieldStyles from '../textfield/TextField.module.css'
 import styles from './DatePicker.module.css'
 import React from 'react'
+import { Calendar } from '../calendar'
 
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
@@ -180,28 +180,7 @@ export const DatePicker = <T extends DateValue>({
 
         <Popover UNSTABLE_portalContainer={ref.current || undefined}>
           <Dialog className={styles.dialog}>
-            <Calendar>
-              <header className={styles.dialogHeader}>
-                <Button slot='previous'>
-                  <ChevronLeft />
-                </Button>
-                <Heading className={styles.dialogHeading} />
-                <Button slot='next'>
-                  <ChevronRight />
-                </Button>
-              </header>
-              <CalendarGrid
-                className={styles.calendar}
-                weekdayStyle='short'
-              >
-                {date => (
-                  <CalendarCell
-                    date={date}
-                    className={styles.day}
-                  />
-                )}
-              </CalendarGrid>
-            </Calendar>
+            <Calendar />
           </Dialog>
         </Popover>
       </InputWrapper>

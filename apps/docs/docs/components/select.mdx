@@ -2,7 +2,7 @@
 title: Select
 ---
 
-import { Select, Item } from '@midas-ds/components'
+import { Select } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -10,16 +10,20 @@ import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 export const Example = props => {
   return (
     <LiveCodeBlock
-      scope={{ Select, Item }}
+      scope={{ Select }}
       {...props}
     >
       {`<Select
         label="Vad är din favoritfrukt?"
         placeholder="Välj en frukt"
-        items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-      >
-          {(item) => <Item>{item.name}</Item>}
-      </Select>`}
+        description="Beskrivning"
+        selectionMode={'single'}
+        isClearable={false}
+        isSelectableAll={false}
+        showTags={false}
+        defaultSelectedKeys={['kiwi']}
+        options={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
+      ></Select>`}
     </LiveCodeBlock>
   )
 }
@@ -29,7 +33,7 @@ export const Example = props => {
   friendlyName={'Flerval, väljare, dropdown'}
 />
 
-Inmatningsfält som används för att välja exakt ett alternativ.
+Inmatningsfält som används för att välja ett eller flera fördefinerade alternativ.
 
 <Example hideCode />
 
@@ -40,7 +44,7 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { Item, Select } from '@midas-ds/components'
+import { Select } from '@midas-ds/components'
 ```
 
 <Example hideExample />
@@ -49,15 +53,69 @@ import { Item, Select } from '@midas-ds/components'
 
 Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
 
+## Varianter
+
+### Flerval
+
+Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
+
+<LiveCodeBlock
+  scope={{ Select }}
+  {...props}
+>
+  {`
+    <Select
+      label='Vilka är dina favoritfrukter?'
+      placeholder='Välj en eller flera frukter'
+      description='Beskrivning'
+      selectionMode='multiple'
+      options={fruits.map(({ value, name }) => ({ id: value, name }))}
+    />
+  `}
+</LiveCodeBlock>
+
+#### Välj alla
+
+Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-knapp.
+
+<LiveCodeBlock
+  scope={{ Select }}
+  {...props}
+>
+  {`
+    <Select
+      label='Vilka är dina favoritfrukter?'
+      placeholder='Välj en eller flera frukter'
+      description='Beskrivning'
+      selectionMode='multiple'
+      options={fruits.map(({ value, name }) => ({ id: value, name }))}
+      isSelectableAll
+    />
+  `}
+</LiveCodeBlock>
+
+#### Tags
+
+Egenskapen `showTags` kan användas för att visa valda alternativ som taggar.
+
+<LiveCodeBlock
+  scope={{ Select }}
+  {...props}
+>
+  {`
+    <Select
+      label='Vilka är dina favoritfrukter?'
+      placeholder='Välj en eller flera frukter'
+      description='Beskrivning'
+      selectionMode='multiple'
+      options={fruits.map(({ value, name }) => ({ id: value, name }))}
+      showTags
+    />
+  `}
+</LiveCodeBlock>
+
 ## API
 
 ### Select
 
 <PropTable name='Select' />
-
-### Item
-
-<PropTable
-  name='Item'
-  defaultOpen={false}
-/>

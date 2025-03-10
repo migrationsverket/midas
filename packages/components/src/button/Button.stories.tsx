@@ -8,30 +8,30 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   tags: ['autodocs'],
   args: {
-    variant: 'primary'
+    variant: 'primary',
   },
   argTypes: {
-    children: { name: 'label' },
+    children: { type: 'string' },
     variant: {
       options: ['primary', 'secondary', 'tertiary', 'danger', 'icon'],
       control: { type: 'radio' },
-      defaultValue: 'primary'
+      defaultValue: 'primary',
     },
     size: {
       options: ['small', 'default (null)'],
       control: { type: 'radio' },
-      defaultValue: null
+      defaultValue: null,
     },
     isDisabled: {
       options: [true, false],
-      control: { type: 'radio' }
+      control: { type: 'radio' },
     },
     iconPlacement: {
       options: ['right', 'left'],
       control: { type: 'radio' },
-      defaultValue: 'left'
-    }
-  }
+      defaultValue: 'left',
+    },
+  },
 }
 
 export default meta
@@ -39,28 +39,28 @@ type Story = StoryObj<typeof Button>
 
 export const Primary = {
   args: {
-    children: 'Button'
+    children: 'Button',
   },
-  parameters: {}
+  parameters: {},
 }
 
 export const Secondary: Story = {
   ...Primary,
   args: {
     ...Primary.args,
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 }
 
 export const TertiaryWithIcon: Story = {
   args: {
     children: 'Lägg till',
     variant: 'tertiary',
-    icon: Plus
-  }
+    icon: Plus,
+  },
 }
 export const PrimaryDisabled: Story = {
-  args: { variant: 'primary', isDisabled: true, children: 'Lägg till' }
+  args: { variant: 'primary', isDisabled: true, children: 'Lägg till' },
 }
 
 export const SecondaryDisabled: Story = {
@@ -68,24 +68,24 @@ export const SecondaryDisabled: Story = {
   args: {
     ...Primary.args,
     variant: 'secondary',
-    isDisabled: true
-  }
+    isDisabled: true,
+  },
 }
 
 export const SmallPrimary = {
   args: {
     children: 'Button',
-    size: 'small'
+    size: 'small',
   },
-  parameters: {}
+  parameters: {},
 }
 
 export const PrimaryFullwidth = {
   args: {
     children: 'Button',
-    fullwidth: true
+    fullwidth: true,
   },
-  parameters: {}
+  parameters: {},
 }
 
 export const Icon = {
@@ -97,6 +97,6 @@ export const Icon = {
       />
     ),
     variant: 'icon',
-    'aria-label': 'Stäng'
-  }
+    'aria-label': 'Stäng',
+  },
 }

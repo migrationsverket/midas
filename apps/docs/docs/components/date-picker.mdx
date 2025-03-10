@@ -32,11 +32,14 @@ export const UnavailableDateExample = props => {
 };
 
 return (
-<LiveCodeBlock scope={{ DatePicker, getTodayAndNextFiveDays }} {...props}>
-{`<DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />`}
+
+<LiveCodeBlock
+  scope={{ DatePicker, getTodayAndNextFiveDays }}
+  {...props}
+>
+  {`<DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />`}
 </LiveCodeBlock>
-);
-};
+); };
 
 <ComponentHeader
   name={'DatePicker'}
