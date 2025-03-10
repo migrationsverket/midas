@@ -7,7 +7,6 @@ import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-
 export const Example = props => {
   return (
     <LiveCodeBlock
@@ -60,7 +59,10 @@ Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas iställ
 
 Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
 
-<LiveCodeBlock scope={{ Select }} {...props}>
+<LiveCodeBlock
+  scope={{ Select }}
+  {...props}
+>
   {`
     <Select
       label='Vilka är dina favoritfrukter?'
@@ -76,7 +78,10 @@ Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
 
 Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-knapp.
 
-<LiveCodeBlock scope={{ Select }} {...props}>
+<LiveCodeBlock
+  scope={{ Select }}
+  {...props}
+>
   {`
     <Select
       label='Vilka är dina favoritfrukter?'
@@ -85,23 +90,6 @@ Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-
       selectionMode='multiple'
       options={fruits.map(({ value, name }) => ({ id: value, name }))}
       isSelectableAll
-    />
-  `}
-</LiveCodeBlock>
-
-#### Tags
-
-Egenskapen `showTags` kan användas för att visa valda alternativ som taggar.
-
-<LiveCodeBlock scope={{ Select }} {...props}>
-  {`
-    <Select
-      label='Vilka är dina favoritfrukter?'
-      placeholder='Välj en eller flera frukter'
-      description='Beskrivning'
-      selectionMode='multiple'
-      options={fruits.map(({ value, name }) => ({ id: value, name }))}
-      showTags
     />
   `}
 </LiveCodeBlock>
