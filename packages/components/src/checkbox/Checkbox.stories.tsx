@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Checkbox } from './Checkbox'
-import React from 'react'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
@@ -31,15 +31,46 @@ export default meta
 type Story = StoryObj<typeof Checkbox>
 
 export const Example: Story = {
-  args: {},
   render: ({ ...args }) => {
     return (
       <Checkbox
-        value="unsubscribe"
+        value='unsubscribe'
         {...args}
       >
         Unsubscribe
       </Checkbox>
+    )
+  },
+}
+
+export const Required: Story = {
+  args: {
+    isRequired: true,
+    'aria-label': 'test',
+  },
+  render: ({ ...args }) => {
+    return (
+      <form>
+        <Checkbox
+          value='unsubscribe'
+          {...args}
+        >
+          Unsubscribe
+        </Checkbox>
+        <button type='submit'>submit</button>
+      </form>
+    )
+  },
+  play: async ({ canvas, step }) => {
+    await step(
+      'It should be (aria) invalid if the user submitted without checking the box',
+      async () => {
+        const checkbox = canvas.getByLabelText('test')
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(checkbox).toBeInvalid()
+      },
     )
   },
 }
