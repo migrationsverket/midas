@@ -26,12 +26,13 @@ interface MidasCalendarProps<T extends DateValue>
 export function Calendar<T extends DateValue>({
   errorMessage,
   weekdayStyle = 'short',
+  className,
   ...props
 }: MidasCalendarProps<T>) {
   return (
     <AriaCalendar
       {...props}
-      className={styles.calendar}
+      className={clsx(styles.calendar, className)}
     >
       <header className={styles.header}>
         <Button slot='previous'>
