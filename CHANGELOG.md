@@ -1,3 +1,58 @@
+# 4.0.0 (2025-03-10)
+
+### 🚀 Features
+
+- ⚠️  updated select, multi-select and modal components
+- **button:** set primary border to 2px when in high-contrast mode
+
+### 🩹 Fixes
+
+- change disabled cursor to not-allowed
+- set correct cursor for radio, checkbox, datepicker
+- change the weekday names to swedish languge
+- change the weekday names to swedish languge
+- **button:** write a deprecate comment that size small will be deprecate
+- **button:** write a deprecate comment that size small will be deprecate
+- **checkbox:** change cursor to pointer
+- **date-picker:** change selected date color to blue150
+- **date-picker:** resize button in invalid state, fixes #312
+- **datepicker:** change cursor to pointer
+- **layout:** design adjustments
+- **layout:** design tweaks
+- **layout:** design tweaks
+- **layout:** final design adjustments
+- **layout:** design adjustments
+- **radio:** change cursor to pointer
+- **table:** write a deprecate comment that narrow will be deprecate
+- **table:** write a deprecate comment that narrow will be deprecate
+
+### Documentation Changes
+
+- add new UIkit
+- add new UIkit
+- add instructions for bug reporting
+- add security disclaimers
+- add security disclaimers
+- **date-picker:** add style unavailable and code example for Unavailable Date in docs
+- **date-picker:** fix the indentation
+- **docs:** add new UIkit
+- **docs:** add new UIkit
+
+### ⚠️  Breaking Changes
+
+- `Select`, `MultiSelect` and `Modal` now have updated API:s, expect things not to work as before. Make sure to check the API:s before upgrading."
+
+### ❤️ Thank You
+
+- derpbravely
+- jabir Khalil
+- Jabir Khalil
+- PHIEKS
+- Philip Hjälmrud Ekströmer
+- pixelrickdreamer
+- Wilhelm Hjelm
+- wilhjelmig
+
 ## 3.1.0 (2025-03-06)
 
 ### 🚀 Features
