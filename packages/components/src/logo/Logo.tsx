@@ -33,9 +33,9 @@ export const Logo: React.FC<LogoProps> = ({
     styles.logo,
     primary ? styles.primary : styles.dark,
     size === 'x-small' && styles.xSmall,
-    size === 'small' && styles.small,
     size === 'medium' && styles.medium,
     size === 'large' && styles.large,
+    size === 'small' && styles.small,
   )
 
   const SVG = () => {
