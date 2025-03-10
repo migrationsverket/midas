@@ -22,7 +22,7 @@ export const Primary: Story = {
     <TooltipTrigger>
       <Button
         variant='tertiary'
-        aria-label={args['aria-label']}
+        aria-label='Spara'
       >
         <Save />
       </Button>
