@@ -8,6 +8,12 @@ assignees: ''
 
 **_Skriv på Svenska eller Engelska_**
 
+OBS.
+Vänligen beskriv _inte_ på något sätt några interna system på Migrationsverket, varken med text eller skärmbilder.
+
+N.B.
+Please do _not_ provide descriptions of any of Migrationsverkets internal systems, either via text or screenshots.
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
