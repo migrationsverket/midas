@@ -62,6 +62,21 @@ export const Sidebar: React.FC = () => {
         isOpened && styles.sidebarOpened,
       )}
     >
+      <div className={styles.sidebarHeader}>
+        {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
+        <Button
+          variant='tertiary'
+          aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
+          onPress={() => setIsCollapsed(!isCollapsed)}
+          className={styles.collapseButton}
+        >
+          {isCollapsed ? (
+            <PanelLeftOpen size={20} />
+          ) : (
+            <PanelLeftClose size={20} />
+          )}
+        </Button>
+      </div>
       <nav className={styles.sidebarNav}>
         <ul className={styles.list}>
           {items.map((group, i) => (
@@ -83,21 +98,6 @@ export const Sidebar: React.FC = () => {
           ))}
         </ul>
       </nav>
-      <div className={styles.sidebarFooter}>
-        {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
-        <Button
-          variant='tertiary'
-          aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
-          onPress={() => setIsCollapsed(!isCollapsed)}
-          className={styles.collapseButton}
-        >
-          {isCollapsed ? (
-            <PanelLeftOpen size={20} />
-          ) : (
-            <PanelLeftClose size={20} />
-          )}
-        </Button>
-      </div>
     </aside>
   )
 }
