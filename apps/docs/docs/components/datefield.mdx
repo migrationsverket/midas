@@ -3,10 +3,10 @@ title: DateField
 description: Använd ett datumfält när användaren ska fylla i ett datum.
 ---
 
+import { I18nProvider } from 'react-aria'
 import { PropTable } from '@site/src/components/propsTable'
 import { DateField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Grid, GridItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
@@ -19,6 +19,23 @@ export const Example = props => {
         label="Etikett"
         description="Beskrivning"
     />`}
+    </LiveCodeBlock>
+  )
+}
+
+export const I18nExample = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ DateField, I18nProvider }}
+      {...props}
+    >
+      {`
+<I18nProvider locale={'fr-Fr'}>
+    <DateField
+        label="Välj ett datum"
+        description="vilket datum som helst"/>
+</I18nProvider>
+`}
     </LiveCodeBlock>
   )
 }
@@ -44,6 +61,13 @@ import { DateField } from '@midas-ds/components'
 ```
 
 <Example hideExample />
+
+## Användning
+
+Tänk på att formatet för inmatning (exempelvis YYYY/MM/DD) beror av användarens språkinställning så referera inte till
+det i etikett eller hjälptext.
+
+<I18nExample />
 
 
 ## API
