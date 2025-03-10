@@ -7,22 +7,26 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   title: 'Components/Tooltip',
   tags: ['autodocs'],
-  argTypes: {}
+  argTypes: {
+    'aria-label': { control: 'text' },
+  },
 }
 export default meta
 type Story = StoryObj<typeof Tooltip>
 
 export const Primary: Story = {
-  args: {},
-  render: () => (
+  args: {
+    'aria-label': 'Spara',
+  },
+  render: args => (
     <TooltipTrigger>
       <Button
         variant='tertiary'
-        aria-label='Spara'
+        aria-label={args['aria-label']}
       >
         <Save />
       </Button>
-      <Tooltip>Spara</Tooltip>
+      <Tooltip>{args['aria-label']}</Tooltip>
     </TooltipTrigger>
-  )
+  ),
 }
