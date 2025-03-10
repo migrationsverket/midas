@@ -35,8 +35,6 @@
     background-color: gray10;
     cursor: pointer;
 
-
-
     &:hover {
       background-color: gray20;
     }
