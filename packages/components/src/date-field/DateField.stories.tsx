@@ -6,6 +6,11 @@ const meta: Meta<typeof DateField> = {
   component: DateField,
   title: 'Components/DateField',
   tags: ['autodocs'],
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
 }
 export default meta
 type Story = StoryObj<typeof DateField>
