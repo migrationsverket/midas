@@ -1,25 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Select, Item } from './Select'
-import React from 'react'
+import { Select } from './Select'
 
 const meta: Meta<typeof Select> = {
   component: Select,
   title: 'Components/Select',
   tags: ['autodocs'],
-  args: {
-    label: 'Etikett',
-    description: 'Beskrivning',
-  },
-  argTypes: {
-    placeholder: { type: 'string' },
-    label: { control: 'text' },
-    description: { control: 'text' },
-  },
-  parameters: {},
 }
-
 export default meta
-
 type Story = StoryObj<typeof Select>
 
 const fruits = [
@@ -58,48 +45,78 @@ const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
 
-export const Default: Story = {
+export const Normal: Story = {
   args: {
-    placeholder: 'Many items...',
-    label: 'Välj en frukt',
+    label: 'Label',
+    selectionMode: 'single',
+    options: options,
+    isDisabled: false,
+    isClearable: true,
+    isSelectableAll: false,
+    description: 'Description',
+    showTags: false,
+    placeholder: 'Select an option',
   },
-  render: args => (
-    <Select
-      {...args}
-      items={options}
-    >
-      {item => <Item>{item.name}</Item>}
-    </Select>
-  ),
+}
+
+export const DefaultSelectedKey: Story = {
+  args: {
+    ...Normal.args,
+    description: 'Kiwi is pre-selected',
+    defaultSelectedKeys: ['kiwi'],
+  },
+}
+
+export const AllKeysSelected: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    description: 'All options are selected',
+    defaultSelectedKeys: 'all',
+  },
+}
+
+export const Disabled: Story = {
+  args: {
+    ...Normal.args,
+    isDisabled: true,
+  },
+}
+export const DisabledOption: Story = {
+  args: {
+    ...Normal.args,
+    description: 'Kiwi is disabled',
+    disabledKeys: ['kiwi'],
+  },
 }
 
 export const Invalid: Story = {
   args: {
+    ...Normal.args,
     isInvalid: true,
-    errorMessage: 'Fel!',
+    errorMessage: 'Error msg',
   },
-  render: args => (
-    <Select {...args}>
-      <Item>Apple</Item>
-      <Item>Lemon</Item>
-    </Select>
-  ),
 }
-
-export const disabled: Story = {
+export const WithTags: Story = {
   args: {
-    isDisabled: true,
+    ...Normal.args,
+    selectionMode: 'multiple',
+    showTags: true,
+    defaultSelectedKeys: ['apple', 'kiwi'],
   },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Avoid using disabled',
-      },
-    },
+}
+export const SelectAllEnabled: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    isSelectableAll: true,
   },
-  render: args => (
-    <Select {...args}>
-      <Item>Hej</Item>
-    </Select>
-  ),
+}
+/** As default all options are clearable. `isClearable={false}` Experimental feature  */
+export const NotClearable: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    isClearable: false,
+  },
 }
