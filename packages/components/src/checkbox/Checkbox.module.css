@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, black, primaryBackground, blue80, blue130, signalRed10, signalRed100, focus, signalRed130, white, gray10, gray40, gray100, gray50, gray20, regularWeight, mediumWeight, smBreakpoint, borderSecondary from tokens;
+@value --font-family, --text-primary, --text-disabled, --border-strong, --layer-01-hover, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-01-hover, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid from tokens;
 
 .wrap {
   grid-area: Input;
@@ -12,7 +12,7 @@
   width: 1rem;
   height: 1rem;
   box-sizing: border-box;
-  border: 1px solid black;
+  border: 1px solid --border-strong;
   transition: all 200ms;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,7 @@
     width: 1rem;
     height: 1rem;
     fill: none;
-    stroke: var(--checkmarkColor, white);
+    stroke: --icon-on-color;
     stroke-width: 2px;
     stroke-dasharray: 22;
     stroke-dashoffset: 66;
@@ -37,30 +37,22 @@
 }
 
 .checkbox {
-  font-family: display;
-  font-weight: regularWeight;
-
-  --borderColorPressed: borderSecondary;
-  --selectedColor: primaryBackground;
-  --selectedPressed: blue80;
-  --selectedHover: blue130;
-  --invalidColor: signalRed100;
-  --invalidPressed: signalRed130;
-  --checkmarkColor: white;
-
+  font-family: --font-family;
+  font-weight: 400;
   gap: 0.5rem;
   align-items: center;
   forced-color-adjust: none;
   display: flex;
   width: max-content;
   cursor: pointer;
+  color: --text-primary;
 
   &:hover div {
-    border-color: gray100;
+    border-color: --button-background-primary-hover;
   }
 
   &[data-pressed] div {
-    border-color: var(--borderColorPressed);
+    border-color: --button-background-primary-active;
   }
 
   &[data-focus-visible],
@@ -71,12 +63,12 @@
 
   &[data-selected] div,
   &[data-indeterminate] div {
-    background: var(--selectedColor);
-    border-color: var(--selectedColor);
+    background: --button-background-primary;
+    border-color: --button-background-primary;
   }
 
   &[data-invalid] div {
-    border: 2px solid var(--invalidColor);
+    border: 2px solid --border-invalid;
   }
 
   &[data-disabled] div {
@@ -86,8 +78,8 @@
 
   &[data-selected]:hover div,
   &[data-indeterminate]:hover div {
-    background: var(--selectedHover);
-    border-color: var(--selectedHover);
+    background: --button-background-primary-hover;
+    border-color: --button-background-primary-hover;
   }
 
   &[data-selected][data-pressed] div,
@@ -103,16 +95,16 @@
 
   &[data-indeterminate] svg {
     stroke: none;
-    fill: var(--checkmarkColor);
+    fill: --icon-on-color;
   }
 
   &[data-invalid]:hover div {
     opacity: 0.5;
-    border-color: var(--invalidColor);
+    border-color: --border-invalid;
   }
 
   &[data-invalid][data-pressed] div {
-    border-color: var(--invalidPressed);
+    border-color: --border-invalid;
   }
 
   &[data-disabled] {
@@ -148,26 +140,26 @@
   }
 
   &[data-disabled] {
-    color: gray50;
+    color: --text-disabled;
   }
 
   .checkbox {
-    @media smBreakpoint {
+    @media --breakpoint-sm {
       padding: 0.875rem 1rem;
-      border: 1px solid black;
+      border: 1px solid --border-strong;
       width: auto;
 
       &:hover {
-        background-color: gray10;
+        background-color: --layer-01-hover;
       }
 
       &[data-invalid] {
-        border: 2px solid var(--invalidColor);
+        border: 2px solid --border-invalid;
       }
 
       &[data-disabled] {
         pointer-events: none;
-        border-color: gray50;
+        border-color: --border-disabled;
       }
     }
   }

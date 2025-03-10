@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value mdBreakpoint, lgBreakpoint, xlBreakpoint from tokens;
+@value --breakpoint-md, --breakpoint-lg, --breakpoint-xl from tokens;
 
 .container {
   --columns: 1;
@@ -30,20 +30,20 @@
   );
 }
 
-@media mdBreakpoint {
+@media --breakpoint-md {
   .container {
     --columns: 12;
     --padding: 2rem;
   }
 }
 
-@media lgBreakpoint {
+@media --breakpoint-lg {
   .container {
     --gutter: 1.5rem;
   }
 }
 
-@media xlBreakpoint {
+@media --breakpoint-xl {
   .container {
     max-width: var(--maxWidth);
 
@@ -78,7 +78,7 @@
   width: 100%;
 }
 
-@media mdBreakpoint {
+@media --breakpoint-md {
   .col-1 {
     width: calc((100% / 12) - (11 * var(--gutter) / 12));
   }

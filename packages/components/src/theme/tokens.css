@@ -85,10 +85,10 @@
 @value --fast-transition: 250ms;
 
 /* Breakpoints */
-@value --sm-breakpoint: (max-width: 767px);
-@value --md-breakpoint: (min-width: 768px);
-@value --lg-breakpoint: (min-width: 1200px);
-@value --xl-breakpoint: (min-width: 1440px);
+@value --breakpoint-sm: (max-width: 767px);
+@value --breakpoint-md: (min-width: 768px);
+@value --breakpoint-lg: (min-width: 1200px);
+@value --breakpoint-xl: (min-width: 1440px);
 @value --forced-colors-mode: (forced-colors: active);
 @value --dark-mode: (prefers-color-scheme: dark);
 @value --prefers-reduced-motion: (prefers-reduced-motion: reduced);
@@ -125,10 +125,6 @@
 @value --border-skeleton: light-dark(--gray-100, --gray-900);
 @value --border-inverse: light-dark(--white, --gray-900);
 @value --border-brand: light-dark(--blue-900, --blue-900);
-@value --border-invalid: light-dark(--signal-red-700, --signal-red-700);
-@value --border-disabled: light-dark(--gray-300, --gray-700);
-@value --border-skeleton: light-dark(--gray-100, --gray-900);
-@value --border-inverse: light-dark(--white, --gray-900);
 
 /* Field */
 @value --field-01: light-dark(--gray-100, --gray-900);
@@ -171,7 +167,7 @@
 /* Text */
 @value --text-primary: light-dark(--gray-1000, --gray-100);
 @value --text-secondary: light-dark(--blue-900, --blue-900);
-@value --text-brand: light-dark(--blue-900, --blue-900);
+@value --text-brand: light-dark(--blue-900, --gray-100);
 @value --text-on-color: light-dark(--white, --white);
 @value --text-inverse: light-dark(--white, --black);
 @value --text-subtle: light-dark(--gray-500, --gray-500);
@@ -193,4 +189,4 @@
 @value --button-background-danger-active: light-dark(--signal-red-900, --signal-red-900);
 @value --button-background-disabled: light-dark(--gray-100, --gray-900);
 @value --button-background-skeleton: light-dark(--gray-100, --gray-900);
-@value --button-border-secondary: light-dark(--border-brand, --border-brand);
+@value --button-border-primary: light-dark(--border-brand, --gray-100);

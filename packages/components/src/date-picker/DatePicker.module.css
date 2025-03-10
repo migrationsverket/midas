@@ -1,8 +1,8 @@
 @value tokens: "../theme/tokens.css";
-@value display, black, gray10, gray20, gray60, gray150, blue20, focus, blue150 from tokens;
+@value --font-family, --field-01, --icon-primary, --field-hover-01, --focus, --layer-01, --text-primary, --border-brand, --button-background-primary from tokens;
 
 .datePicker {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -31,20 +31,18 @@
     height: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
-    color: black;
-    background-color: gray10;
+    color: --icon-primary;
+    background-color: --field-01;
     cursor: pointer;
 
-
-
     &:hover {
-      background-color: gray20;
+      background-color: --field-hover-01;
     }
 
     &:focus-visible,
     &[data-focus-visible] {
       outline: none;
-      box-shadow: focus;
+      box-shadow: --focus;
 
       @media (forced-colors: active) {
         outline: 3px solid highlight;
@@ -80,8 +78,8 @@
 }
 
 .dialog {
-  background-color: gray10;
-  font-family: display;
+  background-color: --layer-01;
+  font-family: --font-family;
 }
 
 .dialogHeader {
@@ -93,14 +91,14 @@
 
   & button {
     border: none;
-    color: black;
-    background-color: gray10;
+    color: --text-primary;
+    background-color: --layer-01;
     cursor: pointer;
 
     &:focus-visible,
     &[data-focus-visible] {
       outline: none;
-      box-shadow: focus;
+      box-shadow: --focus;
 
       @media (forced-colors: active) {
         outline: 3px solid highlight;
@@ -116,18 +114,18 @@
 }
 
 .day {
-  border: solid 2px gray10;
+  border: solid 2px transparent;
   cursor: pointer;
 
   &:hover {
-    background-color: gray20;
-    border-color: gray20;
+    background-color: --field-hover-01;
+    border-color: --field-hover-01;
   }
 
   &[data-selected='true'] {
     color: white;
-    background-color: blue150;
-    border-color: blue150;
+    background-color: --button-background-primary;
+    border-color: --button-background-primary;
   }
 
   &[data-selection-start='true'] {
