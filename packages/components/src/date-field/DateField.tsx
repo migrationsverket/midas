@@ -22,12 +22,17 @@ export function DateField<T extends DateValue>({
   label,
   description,
   errorMessage,
+  className,
   ...props
 }: DateFieldProps<T>) {
   return (
     <AriaDateField
       {...props}
-      className={clsx(styles.dateField, props.isDisabled && styles.isDisabled)}
+      className={clsx(
+        styles.dateField,
+        props.isDisabled && styles.isDisabled,
+        className,
+      )}
     >
       <Label className={styles.label}>{label}</Label>
       {description && (
