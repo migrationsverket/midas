@@ -1,1 +1,0 @@
-import{$ as o}from"./useFocusable-DTLHoeQe.js";import{$}from"./Hidden-D9yAbrAR.js";import{R as b,r as f}from"./index-BbAIUH2N.js";const l=f.createContext({}),p=$(function(e,a){[e,a]=o(e,a,l);let{elementType:t="label",...r}=e;return b.createElement(t,{className:"react-aria-Label",...r,ref:a})});export{l as $,p as a};
