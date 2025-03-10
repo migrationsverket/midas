@@ -4,5 +4,5 @@ interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
     description?: string;
     errorMessage?: string | ((validation: ValidationResult) => string);
 }
-export declare function DateField<T extends DateValue>({ label, description, errorMessage, ...props }: DateFieldProps<T>): import("react/jsx-runtime").JSX.Element;
+export declare function DateField<T extends DateValue>({ label, description, errorMessage, className, ...props }: DateFieldProps<T>): import("react/jsx-runtime").JSX.Element;
 export {};
