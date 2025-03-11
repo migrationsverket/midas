@@ -1,0 +1,99 @@
+@value tokens: "../theme/tokens.css";
+@value black, display from tokens;
+
+h1,
+.h1,
+.h1External,
+h2,
+.h2,
+.h2External,
+h3,
+.h3,
+.h3External,
+h4,
+.h4,
+.h4External,
+h5,
+.h5,
+.h5External {
+  font-family: display;
+  color: black;
+  font-weight: 400;
+}
+
+h1,
+.h1 {
+  /* token: size-07 */
+  font-size: 1.625rem;
+
+  /* token: line-height-07 */
+  line-height: 2rem;
+}
+
+.h1External {
+  /* token: size-09 */
+  font-size: 2.25rem;
+
+  /* token: line-height-09 */
+  line-height: 2.75rem;
+}
+
+h2,
+.h2 {
+  /* token: size-05 */
+  font-size: 1.25rem;
+
+  /* token: line-height-06 */
+  line-height: 1.75rem;
+}
+
+.h2External {
+  font-weight: 500;
+
+  /* token: size-07 */
+  font-size: 1.625rem;
+
+  /* token: line-height-08 */
+  line-height: 2.25rem;
+}
+
+h3,
+.h3 {
+  font-weight: 600;
+
+  /* token: size-03 */
+  font-size: 1rem;
+
+  /* token: line-height-05 */
+  line-height: 1.5rem;
+}
+
+.h3External {
+  font-weight: 600;
+
+  /* token: size-06 */
+  font-size: 1.5rem;
+
+  /* token: line-height-07 */
+  line-height: 2rem;
+}
+
+.h4External {
+  font-weight: 600;
+
+  /* token: size-05 */
+  font-size: 1.25rem;
+
+  /* token: line-height-06 */
+  line-height: 1.75rem;
+}
+
+.h5External {
+  font-weight: 600;
+
+  /* token: size-04 */
+  font-size: 1.125rem;
+
+  /* token: line-height-05 */
+  line-height: 1.5rem;
+}

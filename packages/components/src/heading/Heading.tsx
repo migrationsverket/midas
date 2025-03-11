@@ -1,0 +1,69 @@
+import * as React from 'react'
+import clsx from 'clsx'
+import styles from './Heading.module.css'
+
+type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
+
+export interface HeadingProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLHeadingElement>,
+    HTMLHeadingElement
+  > {
+  children: React.ReactNode
+  /**
+   * The heading element to render
+   */
+  variant?: Variant
+  /**
+   * Override the semantic element of the component but keep the look of the variant property
+   */
+  component?: Variant
+  /**
+   * Use the external/expressive look
+   */
+  isExternal?: boolean
+}
+
+export const Heading: React.FC<HeadingProps> = ({ children, ...rest }) => {
+  return <Element {...rest}>{children}</Element>
+}
+
+const Element: React.FC<HeadingProps> = ({
+  component,
+  children,
+  className,
+  variant = 'h3',
+  isExternal = false,
+}) => {
+  const classNames = {
+    h1: isExternal ? styles.h1External : styles.h1,
+    h2: isExternal ? styles.h2External : styles.h2,
+    h3: isExternal ? styles.h3External : styles.h3,
+    h4: isExternal ? styles.h4External : styles.h4,
+    h5: isExternal ? styles.h5External : styles.h5,
+  }
+
+  const classes = clsx(classNames[variant], className)
+
+  if ([component, variant].includes('h1')) {
+    return <h1 className={classes}>{children}</h1>
+  }
+
+  if ([component, variant].includes('h2')) {
+    return <h2 className={classes}>{children}</h2>
+  }
+
+  if ([component, variant].includes('h3')) {
+    return <h3 className={classes}>{children}</h3>
+  }
+
+  if ([component, variant].includes('h4')) {
+    return <h4 className={classes}>{children}</h4>
+  }
+
+  if ([component, variant].includes('h5')) {
+    return <h5 className={classes}>{children}</h5>
+  }
+
+  return null
+}
