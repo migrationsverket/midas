@@ -1,16 +1,16 @@
 import * as React from 'react'
 import clsx from 'clsx'
 import { isSemanticElement } from './isSemanticElement'
+import {
+  Heading as AriaHeading,
+  type HeadingProps as AriaHeadingProps,
+} from 'react-aria-components'
 import styles from './Heading.module.css'
 
 export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 
-export interface HeadingProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLHeadingElement>,
-    HTMLHeadingElement
-  > {
-  children: React.ReactNode
+export interface HeadingProps extends Omit<AriaHeadingProps, 'level'> {
+  children?: React.ReactNode
   /**
    * The heading element to render
    */
@@ -37,7 +37,7 @@ const Element: React.FC<HeadingProps> = ({
   isExpressive = false,
   ...rest
 }) => {
-  const classNames = {
+  const classNames: Record<Variant, string> = {
     h1: isExpressive ? styles.h1Expressive : styles.h1,
     h2: isExpressive ? styles.h2Expressive : styles.h2,
     h3: isExpressive ? styles.h3Expressive : styles.h3,
@@ -55,12 +55,13 @@ const Element: React.FC<HeadingProps> = ({
     })
   ) {
     return (
-      <h1
+      <AriaHeading
+        level={1}
         className={classes}
         {...rest}
       >
         {children}
-      </h1>
+      </AriaHeading>
     )
   }
 
@@ -72,12 +73,13 @@ const Element: React.FC<HeadingProps> = ({
     })
   ) {
     return (
-      <h2
+      <AriaHeading
+        level={2}
         className={classes}
         {...rest}
       >
         {children}
-      </h2>
+      </AriaHeading>
     )
   }
 
@@ -89,12 +91,13 @@ const Element: React.FC<HeadingProps> = ({
     })
   ) {
     return (
-      <h3
+      <AriaHeading
+        level={3}
         className={classes}
         {...rest}
       >
         {children}
-      </h3>
+      </AriaHeading>
     )
   }
 
@@ -106,12 +109,13 @@ const Element: React.FC<HeadingProps> = ({
     })
   ) {
     return (
-      <h4
+      <AriaHeading
+        level={4}
         className={classes}
         {...rest}
       >
         {children}
-      </h4>
+      </AriaHeading>
     )
   }
 
@@ -123,12 +127,13 @@ const Element: React.FC<HeadingProps> = ({
     })
   ) {
     return (
-      <h5
+      <AriaHeading
+        level={5}
         className={classes}
         {...rest}
       >
         {children}
-      </h5>
+      </AriaHeading>
     )
   }
 
