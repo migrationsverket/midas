@@ -247,7 +247,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+            <FieldError className={styles.fieldError}>
+              {errorMessage}
+            </FieldError>
             {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
             {state.displayValidation.validationErrors.length ? (
               <div className={styles.fieldError}>
@@ -271,9 +273,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                     [styles.buttonDisabled]: isDisabled,
                   })}
                   data-invalid={
-                    state.displayValidation.validationErrors.length > 0 || state.displayValidation.isInvalid
+                    state.displayValidation.validationErrors.length > 0 ||
+                    state.displayValidation.isInvalid
                   }
-                  aria-invalid={state.displayValidation.validationErrors.length > 0 || state.displayValidation.isInvalid}
                   type='button'
                   ref={ref}
                 >
