@@ -6,5 +6,5 @@ type PopoverProps = {
     onClose: () => void;
     triggerRef: React.RefObject<HTMLButtonElement>;
 };
-export declare const SelectPopover: React.VFC<PopoverProps>;
+export declare const SelectPopover: React.FC<PopoverProps>;
 export {};
