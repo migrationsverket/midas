@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --white, --text-primary, --notification-background-success, --notification-border-success, --notification-background-info, --notification-border-info, --notification-background-important, --notification-border-important, --notification-border-warning, --notification-background-warning, --breakpoint-md, --focus from tokens;
+@value --font-family, --text-primary, --notification-background-success, --notification-border-success, --notification-background-info, --notification-border-info, --notification-background-important, --notification-border-important, --notification-border-warning, --notification-background-warning, --breakpoint-md, --focus from tokens;
 
 @keyframes slideInEnd {
   from {
@@ -65,7 +65,7 @@
     outline: none;
   }
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     width: unset;
     left: unset;
     transform: unset;
@@ -80,7 +80,6 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  background: --white;
   color: --text-primary;
   padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
