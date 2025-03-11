@@ -1,15 +1,15 @@
 @value tokens: "../theme/tokens.css";
-@value display, inputLabel, inputText, black, blue150, gray50, gray60, gray10, signalRed10, signalRed100, medium, gray150, regular, smBreakpoint, focus, mdBreakpoint, borderSecondary from tokens;
+@value --font-family, --text-disabled, --size-03, --text-primary, --border-strong, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-medium, --border-subtle, --breakpoint-sm, --field-hover-02, --border-invalid from tokens;
 
 .radioGroup {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex-direction: column;
 
   &[data-disabled] {
     pointer-events: none;
     opacity: 1;
-    color: gray50;
+    color: --text-disabled;
   }
 }
 
@@ -21,11 +21,11 @@
 }
 
 .radio {
-  font-size: inputLabel;
+  font-size: --size-03;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: inputText;
+  color: --text-primary;
   cursor: pointer;
 
   &::before {
@@ -34,14 +34,14 @@
     width: 1rem;
     height: 1rem;
     box-sizing: border-box;
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid --border-strong;
     border-radius: 1.286rem;
-    transition: all 200ms;
+    transition: all --fast-transition;
   }
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: focus;
+    box-shadow: --focus;
     outline: none;
 
     @media (forced-colors: active) {
@@ -50,26 +50,34 @@
     }
   }
 
+  &:hover {
+    &::before {
+      border-color: --border-medium;
+    }
+  }
+
   &[data-disabled] {
-    color: gray50;
+    color: --text-disabled;
     cursor: not-allowed;
+
+    &::before {
+      border-color: --border-disabled;
+    }
   }
 
-  &[data-disabled]::before {
-    border-color: gray50;
-  }
-
-  &[data-pressed]::before {
-    border-color: borderSecondary;
+  &[data-pressed] {
+    &::before {
+      border-color: --border-subtle;
+    }
   }
 
   &[data-selected]::before {
     padding: 0.188rem;
     border-width: 0.1rem;
-    background: blue150 50% 50% no-repeat content-box;
+    background: --icon-secondary 50% 50% no-repeat content-box;
 
     @media (forced-colors: active) {
-      background: buttonText;
+      background: ButtonText;
     }
   }
 
@@ -78,26 +86,28 @@
     background: gray60 50% 50% no-repeat content-box;
   }
 
-  &[data-invalid]::before {
-    border: 0.125rem solid signalRed100;
+  &[data-invalid] {
+    &::before {
+      border: 0.125rem solid signalRed100;
+    }
   }
 
-  @media smBreakpoint {
+  @media --breakpoint-sm {
     padding: 0.875rem 1rem;
-    border: 1px solid black;
+    border: 1px solid --border-strong;
     width: auto;
 
     &:hover {
-      background-color: gray10;
+      background-color: --field-hover-02;
     }
 
     &[data-invalid] {
-      border: 2px solid signalRed100;
+      border: 2px solid --border-invalid;
     }
 
     &[data-disabled] {
       pointer-events: none;
-      border-color: gray50;
+      border-color: --border-disabled;
     }
   }
 }

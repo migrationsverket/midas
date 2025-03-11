@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled, --border-strong, --layer-01-hover, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-01-hover, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid from tokens;
+@value --font-family, --text-primary, --text-disabled, --border-strong, --layer-hover-01, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid from tokens;
 
 .wrap {
   grid-area: Input;
@@ -150,7 +150,7 @@
       width: auto;
 
       &:hover {
-        background-color: --layer-01-hover;
+        background-color: --layer-hover-01;
       }
 
       &[data-invalid] {

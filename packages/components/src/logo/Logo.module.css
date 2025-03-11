@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value red100, black, gray130, white from tokens;
+@value --brand-primary, --background-inverse-01 from tokens;
 
 .container {
   padding: 1rem;
@@ -16,11 +16,11 @@
 }
 
 .primary {
-  fill: red100;
+  fill: --brand-primary;
 }
 
 .dark {
-  fill: black;
+  fill: --background-inverse-01;
 }
 
 .xSmall {
@@ -33,20 +33,4 @@
 
 .large {
   height: 52px;
-}
-
-.backgroundPrimary {
-  background-color: red100;
-
-  svg {
-    fill: white;
-  }
-}
-
-.backgroundDark {
-  background-color: gray130;
-
-  svg {
-    fill: white;
-  }
 }

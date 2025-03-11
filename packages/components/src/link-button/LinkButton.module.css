@@ -1,16 +1,15 @@
 @value tokens: "../theme/tokens.css";
-@value blue150, blue130, blue90, display, desktopSize, mediumWeight, white, gray50, gray10, gray20, black, medium, focus, smBreakpoint, signalRed100, signalRed130, signalRed150 from tokens;
+@value --font-family, --size-03, --button-background-primary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-brand, --border-brand, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white from tokens;
 
 .linkButton {
-  font-family: display;
-  font-size: desktopSize;
-  font-weight: mediumWeight;
+  font-family: --font-family;
+  font-size: --size-03;
+  font-weight: 500;
   padding: calc(0.875rem - 1px) calc(1rem - 1px);
-  background-color: blue150;
+  background-color: --button-background-primary;
   border: solid 1px transparent;
-  color: white;
+  color: --text-on-color;
   cursor: pointer;
-  opacity: 1;
   outline: none;
   display: inline-flex;
   align-items: center;
@@ -19,18 +18,17 @@
   text-decoration: none;
 
   &:hover {
-    color: white;
     text-decoration: none;
-    background-color: blue130;
+    background-color: --button-background-primary-hover;
   }
 
   &[data-pressed] {
-    background-color: blue90;
+    background-color: --button-background-primary-active;
     outline: none;
   }
 
   &[data-focus-visible] {
-    box-shadow: focus;
+    box-shadow: --focus;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -39,75 +37,55 @@
   }
 
   &[data-disabled] {
-    color: gray50;
+    color: --text-disabled;
     pointer-events: none;
-    background-color: gray10;
+    background-color: --button-background-disabled;
   }
 }
 
 .secondary {
-  color: blue150;
-  background-color: white;
-  border-color: blue150;
-  opacity: 1;
+  color: --text-brand;
+  background-color: --button-background-secondary;
+  border-color: --border-brand;
 
   &:hover {
-    color: blue150;
-    background-color: gray10;
+    background-color: --button-background-secondary-hover;
   }
 
   &[data-disabled] {
-    color: gray50;
-    pointer-events: none;
-    background-color: white;
-    border-color: gray50;
+    border-color: --border-disabled;
   }
 
   &[data-pressed] {
-    background-color: gray20;
-    border-color: blue150;
+    background-color: --button-background-secondary-active;
   }
 }
 
 .tertiary {
-  color: blue150;
+  color: --text-brand;
   background-color: transparent;
   opacity: 1;
 
   &:hover {
-    color: blue150;
-    background-color: gray10;
-  }
-
-  &[data-disabled] {
-    color: gray50;
-    pointer-events: none;
-    background-color: white;
+    background-color: --button-background-tertiary-hover;
   }
 
   &[data-pressed] {
-    background-color: gray20;
+    background-color: --button-background-tertiary-active;
   }
 }
 
 .danger {
-  color: white;
-  background-color: signalRed100;
+  color: --white;
+  background-color: --button-background-danger;
   opacity: 1;
 
   &:hover {
-    color: white;
-    background-color: signalRed130;
-  }
-
-  &[data-disabled] {
-    color: gray50;
-    pointer-events: none;
-    background-color: gray10;
+    background-color: --button-background-danger-hover;
   }
 
   &[data-pressed] {
-    background-color: signalRed150;
+    background-color: --button-background-danger-active;
     outline: none;
   }
 }
@@ -115,7 +93,7 @@
 .iconBtn {
   background-color: transparent;
   padding: 0.875rem;
-  color: black;
+  color: --text-brand;
   display: flex;
   align-items: center;
 
@@ -124,12 +102,12 @@
   }
 
   &[data-disabled] {
-    color: gray50;
+    color: --text-disabled;
     pointer-events: none;
   }
 
   &[data-pressed] {
-    background-color: gray20;
+    background-color: --button-background-tertiary-active;
   }
 }
 

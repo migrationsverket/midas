@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --field-hover-01, --layer-02, --layer-02-hover, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-02-selected, --border-invalid, --text-invalid from tokens;
+@value --font-family, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --text-invalid from tokens;
 
 .input {
   width: -webkit-fill-available;
@@ -118,11 +118,11 @@
   position: relative;
 
   &[data-selected='true'] {
-    background: --layer-02-selected;
+    background: --layer-selected-02;
   }
 
   &[data-focused='true'] {
-    background: --layer-02-hover;
+    background: --layer-hover-02;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
