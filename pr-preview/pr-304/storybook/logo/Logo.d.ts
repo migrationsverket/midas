@@ -8,8 +8,6 @@ export interface LogoProps extends React.DetailedHTMLProps<React.HTMLAttributes<
      * Specify logo size
      */
     size?: 'x-small' | 'small' | 'medium' | 'large';
-    /** Display background fill using selected primary or dark color */
-    background?: boolean;
     /** There must be whitespace around the logo. By disabling our built in padding you must add at least an equal amount yourself. */
     padding?: boolean;
 }
