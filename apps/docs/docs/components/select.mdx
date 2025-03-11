@@ -94,26 +94,6 @@ Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-
   `}
 </LiveCodeBlock>
 
-#### Tags
-
-Egenskapen `showTags` kan användas för att visa valda alternativ som taggar.
-
-<LiveCodeBlock
-  scope={{ Select }}
-  {...props}
->
-  {`
-    <Select
-      label='Vilka är dina favoritfrukter?'
-      placeholder='Välj en eller flera frukter'
-      description='Beskrivning'
-      selectionMode='multiple'
-      options={fruits.map(({ value, name }) => ({ id: value, name }))}
-      showTags
-    />
-  `}
-</LiveCodeBlock>
-
 ## API
 
 ### Select

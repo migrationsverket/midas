@@ -34,6 +34,7 @@ const preview = {
       method: 'alphabetical',
       order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
     },
+    a11y: { test: 'error' },
   },
   decorators: [
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
