@@ -1,5 +1,5 @@
 import * as React from 'react';
-type Variant = 'normal' | 'bold';
+type Variant = 'label-01' | 'label-02';
 export interface LabelProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {
     children: React.ReactNode;
     /**

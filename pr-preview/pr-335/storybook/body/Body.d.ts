@@ -1,5 +1,5 @@
 import * as React from 'react';
-type Variant = 'normal' | 'compact';
+type Variant = 'body-01' | 'body-02';
 type Component = 'p' | 'span';
 export interface BodyProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
     children: React.ReactNode;
