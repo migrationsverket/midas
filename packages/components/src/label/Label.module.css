@@ -1,7 +1,8 @@
 @value tokens: "../theme/tokens.css";
 @value black, display from tokens;
 
-label {
+.normal,
+.bold {
   color: black;
   font-family: display;
 }
