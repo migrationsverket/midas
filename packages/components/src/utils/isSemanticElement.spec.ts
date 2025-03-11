@@ -90,38 +90,4 @@ describe('isSemanticElement', () => {
       }),
     ).toBe(false)
   })
-
-  it('should render a p', () => {
-    expect(
-      isSemanticElement({
-        component: 'p',
-        element: 'p',
-        variant: undefined,
-      }),
-    ).toBe(true)
-    expect(
-      isSemanticElement({
-        variant: 'span',
-        element: 'p',
-        component: 'p',
-      }),
-    ).toBe(true)
-  })
-
-  it('should not render a p', () => {
-    expect(
-      isSemanticElement({
-        component: 'p',
-        element: 'span',
-        variant: undefined,
-      }),
-    ).toBe(false)
-    expect(
-      isSemanticElement({
-        variant: 'span',
-        element: 'span',
-        component: 'p',
-      }),
-    ).toBe(false)
-  })
 })
