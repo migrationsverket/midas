@@ -22,7 +22,7 @@ export interface HeadingProps
   /**
    * Use the external/expressive look
    */
-  isExternal?: boolean
+  isExpressive?: boolean
 }
 
 export const Heading: React.FC<HeadingProps> = ({ children, ...rest }) => {
@@ -34,15 +34,15 @@ const Element: React.FC<HeadingProps> = ({
   children,
   className,
   variant = 'h3',
-  isExternal = false,
+  isExpressive = false,
   ...rest
 }) => {
   const classNames = {
-    h1: isExternal ? styles.h1External : styles.h1,
-    h2: isExternal ? styles.h2External : styles.h2,
-    h3: isExternal ? styles.h3External : styles.h3,
-    h4: isExternal ? styles.h4External : styles.h4,
-    h5: isExternal ? styles.h5External : styles.h5,
+    h1: isExpressive ? styles.h1Expressive : styles.h1,
+    h2: isExpressive ? styles.h2Expressive : styles.h2,
+    h3: isExpressive ? styles.h3Expressive : styles.h3,
+    h4: isExpressive ? styles.h4Expressive : styles.h4,
+    h5: isExpressive ? styles.h5Expressive : styles.h5,
   }
 
   const classes = clsx(classNames[variant], className)

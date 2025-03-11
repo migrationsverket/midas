@@ -9,11 +9,11 @@ const meta: Meta<typeof Heading> = {
   title: 'Components/Typography/Heading',
   tags: ['autodocs'],
   args: {
-    isExternal: false,
+    isExpressive: false,
   },
 }
 
-export const InternalHeading1: Story = {
+export const Heading1: Story = {
   args: {
     variant: 'h1',
     children: 'Sapindales',
@@ -27,10 +27,10 @@ export const InternalHeading1: Story = {
   },
 }
 
-export const ExternalHeading1: Story = {
+export const ExpressiveHeading1: Story = {
   args: {
-    ...InternalHeading1.args,
-    isExternal: true,
+    ...Heading1.args,
+    isExpressive: true,
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -41,7 +41,7 @@ export const ExternalHeading1: Story = {
   },
 }
 
-export const InternalHeading2: Story = {
+export const Heading2: Story = {
   args: {
     variant: 'h2',
     children: 'Rutaceae',
@@ -55,10 +55,10 @@ export const InternalHeading2: Story = {
   },
 }
 
-export const ExternalHeading2: Story = {
+export const ExpressiveHeading2: Story = {
   args: {
-    ...InternalHeading2.args,
-    isExternal: true,
+    ...Heading2.args,
+    isExpressive: true,
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -69,7 +69,7 @@ export const ExternalHeading2: Story = {
   },
 }
 
-export const InternalHeading3: Story = {
+export const Heading3: Story = {
   args: {
     variant: 'h3',
     children: 'Citrus',
@@ -83,11 +83,11 @@ export const InternalHeading3: Story = {
   },
 }
 
-export const ExternalHeading3: Story = {
+export const ExpressiveHeading3: Story = {
   args: {
     variant: 'h3',
     children: 'Citrus',
-    isExternal: true,
+    isExpressive: true,
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -98,11 +98,11 @@ export const ExternalHeading3: Story = {
   },
 }
 
-export const ExternalHeading4: Story = {
+export const ExpressiveHeading4: Story = {
   args: {
     variant: 'h4',
     children: 'C. reticulata',
-    isExternal: true,
+    isExpressive: true,
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -113,11 +113,11 @@ export const ExternalHeading4: Story = {
   },
 }
 
-export const ExternalHeading5: Story = {
+export const ExpressiveHeading5: Story = {
   args: {
     variant: 'h5',
     children: 'Clementin',
-    isExternal: true,
+    isExpressive: true,
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -134,10 +134,10 @@ export const ChangeSemanticElement: Story = {
     component: 'h1',
     children: 'A h1 that looks just like a h3',
   },
-  play: async ({ canvas, args: { isExternal } }) => {
+  play: async ({ canvas, args: { isExpressive } }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
-      'font-size': isExternal ? '24px' : '16px',
-      'line-height': isExternal ? '32px' : '24px',
+      'font-size': isExpressive ? '24px' : '16px',
+      'line-height': isExpressive ? '32px' : '24px',
       'font-weight': 600,
     })
   },
