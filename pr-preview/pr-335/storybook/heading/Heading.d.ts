@@ -1,5 +1,5 @@
 import * as React from 'react';
-type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
 export interface HeadingProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
     children: React.ReactNode;
     /**
@@ -15,8 +15,4 @@ export interface HeadingProps extends React.DetailedHTMLProps<React.HTMLAttribut
      */
     isExternal?: boolean;
 }
-export declare const isSemanticElement: ({ element, component, variant, }: Pick<HeadingProps, "variant" | "component"> & {
-    element: Variant;
-}) => boolean;
 export declare const Heading: React.FC<HeadingProps>;
-export {};
