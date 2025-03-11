@@ -1,6 +1,6 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import { isSemanticElement } from './isSemanticElement'
+import { getHeadingLevel } from './getHeadingLevel'
 import {
   Heading as AriaHeading,
   type HeadingProps as AriaHeadingProps,
@@ -47,95 +47,13 @@ const Element: React.FC<HeadingProps> = ({
 
   const classes = clsx(classNames[variant], className)
 
-  if (
-    isSemanticElement({
-      component,
-      variant,
-      element: 'h1',
-    })
-  ) {
-    return (
-      <AriaHeading
-        level={1}
-        className={classes}
-        {...rest}
-      >
-        {children}
-      </AriaHeading>
-    )
-  }
-
-  if (
-    isSemanticElement({
-      component,
-      variant,
-      element: 'h2',
-    })
-  ) {
-    return (
-      <AriaHeading
-        level={2}
-        className={classes}
-        {...rest}
-      >
-        {children}
-      </AriaHeading>
-    )
-  }
-
-  if (
-    isSemanticElement({
-      component,
-      variant,
-      element: 'h3',
-    })
-  ) {
-    return (
-      <AriaHeading
-        level={3}
-        className={classes}
-        {...rest}
-      >
-        {children}
-      </AriaHeading>
-    )
-  }
-
-  if (
-    isSemanticElement({
-      component,
-      variant,
-      element: 'h4',
-    })
-  ) {
-    return (
-      <AriaHeading
-        level={4}
-        className={classes}
-        {...rest}
-      >
-        {children}
-      </AriaHeading>
-    )
-  }
-
-  if (
-    isSemanticElement({
-      component,
-      variant,
-      element: 'h5',
-    })
-  ) {
-    return (
-      <AriaHeading
-        level={5}
-        className={classes}
-        {...rest}
-      >
-        {children}
-      </AriaHeading>
-    )
-  }
-
-  return null
+  return (
+    <AriaHeading
+      level={getHeadingLevel({ component, variant })}
+      className={classes}
+      {...rest}
+    >
+      {children}
+    </AriaHeading>
+  )
 }
