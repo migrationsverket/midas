@@ -2,7 +2,7 @@
 
 ### 🚀 Features
 
-- ⚠️  updated select, multi-select and modal components
+- ⚠️ updated select, multi-select and modal components
 - **button:** set primary border to 2px when in high-contrast mode
 
 ### 🩹 Fixes
@@ -26,7 +26,7 @@
 - add security disclaimers
 - **date-picker:** add style unavailable and code example for Unavailable Date in docs
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - `Select`, `MultiSelect` and `Modal` now have updated API:s, expect things not to work as before. Make sure to check the API:s before upgrading."
 
