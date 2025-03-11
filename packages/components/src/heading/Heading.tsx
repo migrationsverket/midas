@@ -24,6 +24,14 @@ export interface HeadingProps
   isExternal?: boolean
 }
 
+export const isSemanticElement = ({
+  element,
+  component,
+  variant,
+}: Pick<HeadingProps, 'variant' | 'component'> & {
+  element: Variant
+}) => component === element || (!component && variant === element)
+
 export const Heading: React.FC<HeadingProps> = ({ children, ...rest }) => {
   return <Element {...rest}>{children}</Element>
 }
@@ -46,7 +54,13 @@ const Element: React.FC<HeadingProps> = ({
 
   const classes = clsx(classNames[variant], className)
 
-  if ([component, variant].includes('h1')) {
+  if (
+    isSemanticElement({
+      component,
+      variant,
+      element: 'h1',
+    })
+  ) {
     return (
       <h1
         className={classes}
@@ -57,7 +71,13 @@ const Element: React.FC<HeadingProps> = ({
     )
   }
 
-  if ([component, variant].includes('h2')) {
+  if (
+    isSemanticElement({
+      component,
+      variant,
+      element: 'h2',
+    })
+  ) {
     return (
       <h2
         className={classes}
@@ -68,7 +88,13 @@ const Element: React.FC<HeadingProps> = ({
     )
   }
 
-  if ([component, variant].includes('h3')) {
+  if (
+    isSemanticElement({
+      component,
+      variant,
+      element: 'h3',
+    })
+  ) {
     return (
       <h3
         className={classes}
@@ -79,7 +105,13 @@ const Element: React.FC<HeadingProps> = ({
     )
   }
 
-  if ([component, variant].includes('h4')) {
+  if (
+    isSemanticElement({
+      component,
+      variant,
+      element: 'h4',
+    })
+  ) {
     return (
       <h4
         className={classes}
@@ -90,7 +122,13 @@ const Element: React.FC<HeadingProps> = ({
     )
   }
 
-  if ([component, variant].includes('h5')) {
+  if (
+    isSemanticElement({
+      component,
+      variant,
+      element: 'h5',
+    })
+  ) {
     return (
       <h5
         className={classes}
