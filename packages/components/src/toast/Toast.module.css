@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, gray150, focus, mdBreakpoint from tokens;
+@value --font-family, --white, --text-primary, --notification-background-success, --notification-border-success, --notification-background-info, --notification-border-info, --notification-background-important, --notification-border-important, --notification-border-warning, --notification-background-warning, --breakpoint-md, --focus from tokens;
 
 @keyframes slideInEnd {
   from {
@@ -75,13 +75,13 @@
 }
 
 .toast {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  background: white;
-  color: gray150;
+  background: --white;
+  color: --text-primary;
   padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
@@ -90,36 +90,36 @@
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
-    box-shadow: focus;
+    box-shadow: --focus;
   }
 
   &.success {
-    --bg: signalGreen10;
-    --border: signalGreen100;
+    --bg: --notification-background-success;
+    --border: --notification-border-success;
 
     background: var(--bg);
     border-left-color: var(--border);
   }
 
   &.info {
-    --bg: signalBlue10;
-    --border: signalBlue100;
+    --bg: --notification-background-info;
+    --border: --notification-border-info;
 
     background: var(--bg);
     border-left-color: var(--border);
   }
 
   &.important {
-    --bg: signalYellow10;
-    --border: signalYellow100;
+    --border: --notification-border-important;
+    --bg: --notification-background-important;
 
     background: var(--bg);
     border-left-color: var(--border);
   }
 
   &.warning {
-    --bg: signalRed10;
-    --border: signalRed100;
+    --border: --notification-border-warning;
+    --bg: --notification-background-warning;
 
     background: var(--bg);
     border-left-color: var(--border);
@@ -130,7 +130,7 @@
     flex: 0 0 auto;
   }
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     width: 18rem;
   }
 }
@@ -155,7 +155,7 @@
   animation-direction: normal;
   animation-fill-mode: both;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     animation-name: slideInEnd;
   }
 }
@@ -167,7 +167,7 @@
   animation-direction: normal;
   animation-fill-mode: both;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     animation-name: slideOutEnd;
   }
 }
