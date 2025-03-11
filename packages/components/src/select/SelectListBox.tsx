@@ -64,9 +64,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
           size={20}
           className={styles.listBoxItemCheckmark}
         />
-      ) : (
-        <></>
-      )}
+      ) : null}
     </li>
   )
 }
