@@ -1,7 +1,8 @@
+import { HeadingProps as AriaHeadingProps } from 'react-aria-components';
 import * as React from 'react';
 export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
-export interface HeadingProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {
-    children: React.ReactNode;
+export interface HeadingProps extends Omit<AriaHeadingProps, 'level'> {
+    children?: React.ReactNode;
     /**
      * The heading element to render
      */
