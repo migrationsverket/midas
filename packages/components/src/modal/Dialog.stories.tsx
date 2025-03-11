@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Dialog, ModalTrigger } from './Dialog'
 import { Button } from '../button'
-import React from 'react'
 import { Select } from '../select'
 
 const meta: Meta<typeof ModalTrigger> = {
@@ -49,8 +48,6 @@ const options = fruits.map(fruit => {
   return { name: fruit, id: fruit.toLocaleLowerCase() }
 })
 const Render = ({ ...args }) => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(false)
-
   return (
     <ModalTrigger {...args}>
       {close => (
