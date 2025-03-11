@@ -9,14 +9,18 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   title: 'Components/Tooltip',
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    children: { control: 'text' },
+  },
 }
 export default meta
 type Story = StoryObj<typeof Tooltip>
 
 export const Primary: Story = {
-  args: {},
-  render: () => (
+  args: {
+    children: 'Spara',
+  },
+  render: args => (
     <TooltipTrigger>
       <Button
         variant='tertiary'
@@ -24,7 +28,7 @@ export const Primary: Story = {
       >
         <Save />
       </Button>
-      <Tooltip className={'derp'}>Spara</Tooltip>
+      <Tooltip {...args} />
     </TooltipTrigger>
   ),
 }
