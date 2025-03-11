@@ -1,6 +1,5 @@
-/* stylelint-disable plugin/check-values-import */
 @value tokens: "../theme/tokens.css";
-@value display, regularWeight, mediumWeight, black, signalRed130, smBreakpoint, signalRed100, gray50, blue150, blue130, gray10, gray20, gray30, gray40, backgroundSecondary from tokens;
+@value --font-family, --text-disabled, --border-strong, --text-primary, --focus, --layer-02, --border-invalid, --layer-hover-02, --layer-selected-02, --layer-selected-hover-02, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid from tokens;
 
 /** clear the default list styles */
 * > ul {
@@ -15,18 +14,16 @@
   margin-bottom: 2px;
 }
 
-/** Select Label */
 .selectLabel {
   grid-area: Label;
-  font-weight: mediumWeight;
+  font-weight: 500;
 }
 
-.selectLabelActive {
-  /** Label in active state */
-}
+/* .selectLabelActive {
+  } */
 
 .selectLabelDisabled {
-  color: gray50;
+  color: --text-disabled;
 }
 
 .button {
@@ -34,36 +31,36 @@
   border: none;
   border-radius: 0;
   font-size: 1rem;
-  color: black;
+  color: --text-primary;
   display: flex;
   justify-content: flex-end;
   height: 3rem;
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: backgroundSecondary;
-  border-bottom: 1px solid black;
+  background-color: --field-01;
+  border-bottom: 1px solid --border-strong;
   cursor: pointer;
 
-  &:focus {
-    outline-offset: 2px;
-    outline: 2px solid black;
+  &:focus-visible {
+    outline: none;
+    box-shadow: --focus;
   }
 
   &:hover {
-    background-color: gray20;
+    background-color: --field-hover-01;
   }
 
   &:disabled {
     cursor: not-allowed;
-    background: backgroundSecondary;
-    color: gray50;
-    border-color: gray50;
+    background: --field-disabled;
+    color: --text-disabled;
+    border-color: --border-disabled;
   }
 
   &[data-invalid='true'] {
     border: none;
-    box-shadow: inset 0 0 0 3px signalRed100;
+    box-shadow: inset 0 0 0 3px --border-invalid;
 
     @media (forced-colors: active) {
       border: 5px solid Highlight !important;
@@ -78,64 +75,61 @@
 }
 
 .buttonDisabled {
-  background: backgroundSecondary;
-  color: gray50;
-  border-color: gray50;
+  background-color: --field-disabled;
+  color: --text-disabled;
+  border-color: --border-disabled;
 }
 
-.buttonActive {
-  /** when select input (button) is active */
-}
+/* .buttonActive {
+} */
 
 .multiSelect {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  color: --text-primary;
 
   &[data-disabled] {
-    color: gray50;
+    color: --text-disabled;
   }
 
   &[data-invalid] .button {
-    box-shadow: inset 0 0 0 3px signalRed100;
+    box-shadow: inset 0 0 0 3px --border-invalid;
   }
 }
 
-.multiSelectOpen {
-  /** TODO some styles here with the border? */
-}
+/* .multiSelectOpen {
+  // TODO: some styles here with the border?
+} */
 
 .description {
   grid-area: Desc;
   font-size: 0.875rem;
-  font-weight: regularWeight;
+  font-weight: 400;
   margin-bottom: 0.25rem;
 }
 
-.descriptionActive {
-  /** Description in active state */
-}
+/* .descriptionActive {
+} */
 
 .descriptionInvalid {
   margin-bottom: 0;
 }
 
 .descriptionDisabled {
-  color: gray50;
+  color: --text-disabled;
 }
 
 .popover {
-  font-family: display;
-  border: 1px solid black;
-  background: white;
-
   --select-popover-width: max(
     var(--select-width, var(--field-width-base)) - 2px,
     200px
-  ); /* 1 */
+  );
 
-  /*  background-color: var(--select-background); */
+  font-family: --font-family;
+  border: 1px solid --border-strong;
+  background: --layer-02;
   width: var(--select-popover-width);
 }
 
@@ -162,11 +156,11 @@
 }
 
 .listBoxItem {
-  font-family: display;
+  font-family: --font-family;
   padding: 0 1rem;
-  background-color: white;
+  background-color: --layer-02;
   cursor: pointer;
-  color: black;
+  color: --text-primary;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -179,31 +173,30 @@
   }
 
   &:hover {
-    background-color: gray20;
+    background-color: --layer-hover-02;
     transition-delay: 60ms;
   }
 
   &[data-disabled='true'] {
-    color: gray50;
+    color: --text-disabled;
   }
 }
 
 .listBoxItemSelected {
-  background-color: gray30;
-  color: black;
+  background-color: --layer-selected-02;
 
   &:hover {
-    background-color: gray40;
+    background-color: --layer-selected-hover-02;
     transition-delay: 60ms;
   }
 
   &.listBoxItemDisabled {
-    color: gray50;
+    color: --text-disabled;
   }
 }
 
 .listBoxItemDisabled {
-  color: gray50;
+  color: --text-disabled;
   cursor: not-allowed;
 }
 
@@ -212,7 +205,7 @@
 }
 
 .listBoxItemFocusVisible {
-  outline: black solid 2px;
+  outline: --border-strong solid 2px;
   outline-offset: -2px;
 }
 
@@ -228,9 +221,9 @@
 }
 
 .selectValueTag {
-  font-family: display;
-  background-color: blue150;
-  color: white;
+  font-family: --font-family;
+  background-color: --button-background-primary;
+  color: --text-on-color;
   border-radius: 1.25rem;
   font-size: 0.875rem;
   min-height: 1.75rem;
@@ -246,9 +239,9 @@
 
 .selectValueTagDisabled {
   pointer-events: none;
-  background: backgroundSecondary;
-  color: gray50;
-  border-color: gray50;
+  background-color: --field-disabled;
+  color: --text-disabled;
+  border-color: --border-disabled;
 }
 
 .truncate {
@@ -262,32 +255,30 @@
   margin: 0 0 0 0.5rem;
   display: flex;
   border-radius: 100%;
-  background-color: blue150;
-  color: white;
+  background-color: --button-background-primary;
+  color: --text-on-color;
   border: none;
 
   &:hover {
     cursor: pointer;
-    background-color: blue130;
+    background-color: --button-background-primary-hover;
   }
 
   &:disabled {
     pointer-events: none;
-    color: gray50;
-    background-color: gray10;
+    color: --text-disabled;
+    background-color: --button-background-disabled;
   }
 }
 
-.selectDivider {
-  /** selectDivider */
-}
+/* .selectDivider {
+} */
 
-.selectSectionHeading {
-  /** selectSectionHeading */
-}
+/* .selectSectionHeading {
+} */
 
 .fieldError {
-  color: signalRed100;
+  color: --text-invalid;
   grid-area: Error;
   font-size: 0.875rem;
   display: flex;
@@ -298,7 +289,7 @@
 
   &::before {
     content: '';
-    background-color: signalRed100;
+    background-color: --text-invalid;
     display: block;
     width: 1rem;
     height: 1rem;
@@ -317,18 +308,16 @@
   padding: 1rem 0.5rem 1rem 0;
 }
 
-/* checkbox stuff */
 input[type='checkbox'] {
-  /* -webkit-appearance: none; */
   appearance: none;
-  background-color: blue150;
+  background-color: --button-background-primary;
   display: grid;
   margin: 0;
   font: inherit;
   color: currentColor;
   width: 1em;
   height: 1em;
-  border: 1px solid currentColor;
+  border: 1px solid --button-background-primary;
   border-radius: 0;
 }
 
@@ -359,7 +348,6 @@ input[type='checkbox']:indeterminate::before {
   mask-size: 0.9rem 0.9rem;
 }
 
-/** High contrast fixes */
 @media (forced-colors: active) {
   [data-invalid] .button {
     border: 5px solid Highlight !important;

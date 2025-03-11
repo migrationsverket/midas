@@ -1,14 +1,15 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray10, gray30, gray40, gray60, mediumWeight from tokens;
+@value --font-family, --layer-accent-01, --layer-01, --border-subtle, --layer-accent-hover-01, --layer-hover-01, --border-strong, --text-primary from tokens;
 
 .cell {
-  background-color: gray10;
-  border-top: 1px gray60 solid;
+  background-color: --layer-01;
+  border-top: 1px --border-subtle solid;
   padding: 1rem;
+  color: --text-primary;
 }
 
 .table {
-  font-family: display;
+  font-family: --font-family;
   border-spacing: 0;
 
   &.narrow {
@@ -19,21 +20,25 @@
   }
 
   th[data-focused='true'] {
-    outline: 2px solid black;
+    outline: 2px solid --border-strong;
   }
 
   th[data-hovered='true'] {
-    outline: 2px solid black;
+    outline: 2px solid --border-strong;
   }
 
-  &.striped .row:nth-child(2n - 1) .cell {
-    background-color: white;
+  &.striped .row:nth-child(2n) .cell {
+    background-color: --layer-accent-01;
+  }
+
+  &.striped .row:nth-child(2n):hover .cell {
+    background-color: --layer-accent-hover-01;
   }
 }
 
 .row {
   &[data-focused='true'] {
-    outline: 2px solid black;
+    outline: 2px solid --border-strong;
   }
 
   &[data-href] {
@@ -41,17 +46,17 @@
   }
 
   &[data-hovered='true'] td {
-    background-color: gray40 !important;
+    background-color: --layer-hover-01;
   }
 }
 
 .tableHeader {
-  background-color: gray30;
+  background-color: --layer-accent-01;
+  color: --text-primary;
 }
 
 .column {
-  background-color: gray30;
   padding: 1rem;
   text-align: left;
-  font-weight: mediumWeight;
+  font-weight: 500;
 }

@@ -112,6 +112,14 @@
 @value --layer-selected-02: light-dark(--gray-200, --gray-850);
 @value --layer-selected-hover-02: light-dark(--gray-250, --gray-750);
 
+/* Layer Accent */
+@value --layer-accent-01: light-dark(--gray-200, --gray-800);
+@value --layer-accent-hover-01: light-dark(--gray-250, --gray-850);
+@value --layer-accent-selected-01: light-dark(--gray-300, --gray-700);
+@value --layer-accent-02: light-dark(--gray-100, --gray-900);
+@value --layer-accent-hover-02: light-dark(--gray-150, --gray-950);
+@value --layer-accent-selected-02: light-dark(--gray-200, --gray-800);
+
 /* Brand */
 @value --brand-primary: light-dark(--red-700, --red-700);
 
