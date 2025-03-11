@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
 import { ArrowRight } from 'lucide-react'
-import { Link as ReactRouterLink } from 'react-router'
 
 const meta: Meta<typeof Link> = {
   component: Link,
