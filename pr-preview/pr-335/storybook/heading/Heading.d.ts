@@ -15,5 +15,8 @@ export interface HeadingProps extends React.DetailedHTMLProps<React.HTMLAttribut
      */
     isExternal?: boolean;
 }
+export declare const isSemanticElement: ({ element, component, variant, }: Pick<HeadingProps, "variant" | "component"> & {
+    element: Variant;
+}) => boolean;
 export declare const Heading: React.FC<HeadingProps>;
 export {};
