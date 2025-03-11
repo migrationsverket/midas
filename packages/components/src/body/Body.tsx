@@ -2,7 +2,7 @@ import * as React from 'react'
 import clsx from 'clsx'
 import styles from './Body.module.css'
 
-type Variant = 'normal' | 'compact'
+type Variant = 'body-01' | 'body-02'
 type Component = 'p' | 'span'
 
 export interface BodyProps
@@ -33,13 +33,13 @@ const Element: React.FC<BodyProps> = ({
   component = 'p',
   children,
   className,
-  variant = 'normal',
+  variant = 'body-02',
   isExpressive = false,
   ...rest
 }) => {
   const classNames: Record<Variant, string> = {
-    normal: isExpressive ? styles.expressive : styles.normal,
-    compact: styles.compact,
+    'body-01': styles['body-01'],
+    'body-02': isExpressive ? styles.expressive : styles['body-02'],
   }
 
   const classes = clsx(classNames[variant], className)

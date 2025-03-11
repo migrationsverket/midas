@@ -13,22 +13,9 @@ const meta: Meta<typeof Body> = {
   },
 }
 
-export const Body02: Story = {
-  args: {
-    variant: 'normal',
-    children: 'body-02',
-  },
-  play: async ({ canvas, args: { children } }) => {
-    expect(canvas.getByText(children as string)).toHaveStyle({
-      'font-size': '16px',
-      'line-height': '22px',
-    })
-  },
-}
-
 export const Body01: Story = {
   args: {
-    variant: 'compact',
+    variant: 'body-01',
     children: 'body-01',
   },
   play: async ({ canvas, args: { children } }) => {
@@ -39,9 +26,22 @@ export const Body01: Story = {
   },
 }
 
+export const Body02: Story = {
+  args: {
+    variant: 'body-02',
+    children: 'body-02',
+  },
+  play: async ({ canvas, args: { children } }) => {
+    expect(canvas.getByText(children as string)).toHaveStyle({
+      'font-size': '16px',
+      'line-height': '22px',
+    })
+  },
+}
+
 export const ExpressiveBody: Story = {
   args: {
-    variant: 'normal',
+    variant: 'body-02',
     children: 'Body',
     isExpressive: true,
   },
