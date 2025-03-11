@@ -13,6 +13,6 @@ export interface HeadingProps extends React.DetailedHTMLProps<React.HTMLAttribut
     /**
      * Use the external/expressive look
      */
-    isExternal?: boolean;
+    isExpressive?: boolean;
 }
 export declare const Heading: React.FC<HeadingProps>;

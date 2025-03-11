@@ -14,7 +14,7 @@ export interface BodyProps extends React.DetailedHTMLProps<React.HTMLAttributes<
     /**
      * Use the external/expressive look
      */
-    isExternal?: boolean;
+    isExpressive?: boolean;
 }
 export declare const Body: React.FC<BodyProps>;
 export {};
