@@ -22,7 +22,7 @@ export interface BodyProps
   /**
    * Use the external/expressive look
    */
-  isExternal?: boolean
+  isExpressive?: boolean
 }
 
 export const Body: React.FC<BodyProps> = ({ children, ...rest }) => {
@@ -34,11 +34,11 @@ const Element: React.FC<BodyProps> = ({
   children,
   className,
   variant = 'normal',
-  isExternal = false,
+  isExpressive = false,
   ...rest
 }) => {
   const classNames: Record<Variant, string> = {
-    normal: isExternal ? styles.normalExternal : styles.normal,
+    normal: isExpressive ? styles.expressive : styles.normal,
     compact: styles.compact,
   }
 

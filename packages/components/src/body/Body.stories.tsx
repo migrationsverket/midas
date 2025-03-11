@@ -9,7 +9,7 @@ const meta: Meta<typeof Body> = {
   title: 'Components/Typography/Body',
   tags: ['autodocs'],
   args: {
-    isExternal: false,
+    isExpressive: false,
   },
 }
 
@@ -43,7 +43,7 @@ export const ExpressiveBody: Story = {
   args: {
     variant: 'normal',
     children: 'Body',
-    isExternal: true,
+    isExpressive: true,
   },
   play: async ({ canvas, args: { children } }) => {
     expect(canvas.getByText(children as string)).toHaveStyle({

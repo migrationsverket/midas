@@ -1,9 +1,8 @@
 @value tokens: "../theme/tokens.css";
 @value black, display from tokens;
 
-.normal,
-.normalExternal,
-.compact {
+p,
+span {
   /* token: text/primary */
   color: black;
   font-weight: 400;
@@ -18,7 +17,7 @@
   line-height: 1.375rem;
 }
 
-.normalExternal {
+.expressive {
   /* token: line-height-05 */
   line-height: 1.5rem;
 }
