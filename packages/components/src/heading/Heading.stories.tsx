@@ -6,7 +6,7 @@ type Story = StoryObj<typeof Heading>
 
 const meta: Meta<typeof Heading> = {
   component: Heading,
-  title: 'Components/Heading',
+  title: 'Components/Typography/Heading',
   tags: ['autodocs'],
   args: {
     isExternal: false,

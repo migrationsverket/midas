@@ -1,7 +1,7 @@
 import * as React from 'react'
 import clsx from 'clsx'
+import { isSemanticElement } from './isSemanticElement'
 import styles from './Heading.module.css'
-import { isSemanticElement } from '../utils/isSemanticElement'
 
 export type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
 
@@ -48,7 +48,7 @@ const Element: React.FC<HeadingProps> = ({
   const classes = clsx(classNames[variant], className)
 
   if (
-    isSemanticElement<Variant>({
+    isSemanticElement({
       component,
       variant,
       element: 'h1',
@@ -65,7 +65,7 @@ const Element: React.FC<HeadingProps> = ({
   }
 
   if (
-    isSemanticElement<Variant>({
+    isSemanticElement({
       component,
       variant,
       element: 'h2',
@@ -82,7 +82,7 @@ const Element: React.FC<HeadingProps> = ({
   }
 
   if (
-    isSemanticElement<Variant>({
+    isSemanticElement({
       component,
       variant,
       element: 'h3',
@@ -99,7 +99,7 @@ const Element: React.FC<HeadingProps> = ({
   }
 
   if (
-    isSemanticElement<Variant>({
+    isSemanticElement({
       component,
       variant,
       element: 'h4',
@@ -116,7 +116,7 @@ const Element: React.FC<HeadingProps> = ({
   }
 
   if (
-    isSemanticElement<Variant>({
+    isSemanticElement({
       component,
       variant,
       element: 'h5',
