@@ -1,0 +1,29 @@
+@value tokens: "../theme/tokens.css";
+@value black, display from tokens;
+
+.normal,
+.normalExternal,
+.compact {
+  /* token: text/primary */
+  color: black;
+  font-weight: 400;
+  font-family: display;
+
+  /* token: size-03 */
+  font-size: 1rem;
+}
+
+.normal {
+  /* token: line-height-04 */
+  line-height: 1.375rem;
+}
+
+.normalExternal {
+  /* token: line-height-05 */
+  line-height: 1.5rem;
+}
+
+.compact {
+  /* token: line-height-03 */
+  line-height: 1.25rem;
+}
