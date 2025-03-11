@@ -1,13 +1,13 @@
 @value tokens: "../theme/tokens.css";
 @value black, display from tokens;
 
-.normal,
-.bold {
+.label-01,
+.label-02 {
   color: black;
   font-family: display;
 }
 
-.normal {
+.label-01 {
   /* token: size-02 */
   font-size: 0.875rem;
 
@@ -16,7 +16,7 @@
   font-weight: 400;
 }
 
-.bold {
+.label-02 {
   /* token: size-03 */
   font-size: 1rem;
 

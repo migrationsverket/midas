@@ -2,7 +2,7 @@ import * as React from 'react'
 import clsx from 'clsx'
 import styles from './Label.module.css'
 
-type Variant = 'normal' | 'bold'
+type Variant = 'label-01' | 'label-02'
 
 export interface LabelProps
   extends React.DetailedHTMLProps<
@@ -19,12 +19,12 @@ export interface LabelProps
 export const Label: React.FC<LabelProps> = ({
   children,
   className,
-  variant = 'normal',
+  variant = 'label-01',
   ...rest
 }) => {
   const classNames: Record<Variant, string> = {
-    normal: styles.normal,
-    bold: styles.bold,
+    'label-01': styles['label-01'],
+    'label-02': styles['label-02'],
   }
 
   const classes = clsx(classNames[variant], className)
