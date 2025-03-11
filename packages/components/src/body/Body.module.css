@@ -1,8 +1,9 @@
 @value tokens: "../theme/tokens.css";
 @value black, display from tokens;
 
-p,
-span {
+.normal,
+.expressive,
+.compact {
   /* token: text/primary */
   color: black;
   font-weight: 400;
