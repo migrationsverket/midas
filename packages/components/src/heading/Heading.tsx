@@ -34,6 +34,7 @@ const Element: React.FC<HeadingProps> = ({
   className,
   variant = 'h3',
   isExternal = false,
+  ...rest
 }) => {
   const classNames = {
     h1: isExternal ? styles.h1External : styles.h1,
@@ -46,23 +47,58 @@ const Element: React.FC<HeadingProps> = ({
   const classes = clsx(classNames[variant], className)
 
   if ([component, variant].includes('h1')) {
-    return <h1 className={classes}>{children}</h1>
+    return (
+      <h1
+        className={classes}
+        {...rest}
+      >
+        {children}
+      </h1>
+    )
   }
 
   if ([component, variant].includes('h2')) {
-    return <h2 className={classes}>{children}</h2>
+    return (
+      <h2
+        className={classes}
+        {...rest}
+      >
+        {children}
+      </h2>
+    )
   }
 
   if ([component, variant].includes('h3')) {
-    return <h3 className={classes}>{children}</h3>
+    return (
+      <h3
+        className={classes}
+        {...rest}
+      >
+        {children}
+      </h3>
+    )
   }
 
   if ([component, variant].includes('h4')) {
-    return <h4 className={classes}>{children}</h4>
+    return (
+      <h4
+        className={classes}
+        {...rest}
+      >
+        {children}
+      </h4>
+    )
   }
 
   if ([component, variant].includes('h5')) {
-    return <h5 className={classes}>{children}</h5>
+    return (
+      <h5
+        className={classes}
+        {...rest}
+      >
+        {children}
+      </h5>
+    )
   }
 
   return null
