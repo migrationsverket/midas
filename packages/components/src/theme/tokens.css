@@ -97,20 +97,20 @@
 
 /* Background */
 @value --background-01: light-dark(--white, --black);
-@value --background-01-hover: light-dark(--white-hover, --black-hover);
-@value --background-01-inverse: light-dark(--gray-1000, --gray100);
+@value --background-hover-01: light-dark(--white-hover, --black-hover);
+@value --background-inverse-01: light-dark(--gray-1000, --gray-100);
 
 /* Layer 01 */
 @value --layer-01: light-dark(--gray-100, --gray-900);
-@value --layer-01-hover: light-dark(--gray-150, --gray-950);
-@value --layer-01-selected: light-dark(--gray-200, --gray-700);
-@value --layer-01-selected-hover: light-dark(--gray-250, --gray-850);
+@value --layer-hover-01: light-dark(--gray-150, --gray-950);
+@value --layer-selected-01: light-dark(--gray-200, --gray-700);
+@value --layer-selected-hover-01: light-dark(--gray-250, --gray-850);
 
 /* Layer 02 */
 @value --layer-02: light-dark(--white, --gray-800);
-@value --layer-02-hover: light-dark(--white-hover, --gray-850);
-@value --layer-02-selected: light-dark(--gray-200, --gray-850);
-@value --layer-02-selected-hover: light-dark(--gray-250, --gray-750);
+@value --layer-hover-02: light-dark(--white-hover, --gray-850);
+@value --layer-selected-02: light-dark(--gray-200, --gray-850);
+@value --layer-selected-hover-02: light-dark(--gray-250, --gray-750);
 
 /* Brand */
 @value --brand-primary: light-dark(--red-700, --red-700);
