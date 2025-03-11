@@ -1,1 +1,1 @@
-export { DateField } from './DateField.tsx';
+export { DateField } from './DateField';
