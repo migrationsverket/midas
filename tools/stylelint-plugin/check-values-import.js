@@ -69,7 +69,7 @@ const ruleFunction = (primaryOption, secondaryOptionObject) => {
       if (matches) {
         matches.forEach(value => {
           // Ignore variables inside var() function
-          if (!decl.value.includes(`var(${value})`)) {
+          if (!decl.value.includes(`var(${value}`)) {
             usedValues.set(value, decl)
           }
         })
