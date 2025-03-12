@@ -144,7 +144,7 @@
 }
 
 .appName {
-  color: gray150;
+  color: --text-primary;
   font-size: 0.875rem;
   font-weight: 400;
   margin: 0;
@@ -152,7 +152,6 @@
 
 .collapseButton {
   display: none !important;
-  color: currentColor !important;
   padding: calc(0.875rem - 1px) !important;
 
   @media --breakpoint-md {

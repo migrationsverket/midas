@@ -53,6 +53,21 @@ const Playground = ({
   const scope = { columns, rows, fruits, ...props.scope, isOpen, setIsOpen }
 
   const Toolbar = () => {
+    React.useEffect(() => {
+      const observer = new MutationObserver(() => {
+        const popover = document.querySelector(
+          '[class*="popover_"], [class*="overlay_"], [class*="Popover"], [class*="tooltip_"]',
+        )
+        if (popover) {
+          ;(popover as HTMLElement).style.colorScheme = previewColorMode
+        }
+      })
+
+      observer.observe(document.body, { childList: true, subtree: true })
+
+      return () => observer.disconnect()
+    }, [previewColorMode])
+
     return (
       <div className={styles.previewToolbar}>
         <div className='toggle_vylO colorModeToggle_DEke'>

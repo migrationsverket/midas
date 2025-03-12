@@ -12,7 +12,7 @@ const preview = {
       default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: 'black' },
+        { name: 'Dark', value: 'rgb(18, 18, 18)' },
       ],
     },
     controls: {
@@ -36,7 +36,7 @@ const preview = {
         order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
       },
     },
-    a11y: { test: 'error' },
+    a11y: { test: 'error', element: '#storybook-root' },
   },
   decorators: [
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -45,15 +45,15 @@ const preview = {
       const Mode = () => {
         const userSelectedBackground:
           | 'white'
-          | 'black'
+          | 'rgb(18, 18, 18)'
           | 'transparent'
           | undefined = context.globals.backgrounds?.value
 
         if (
           userSelectedBackground === 'white' ||
-          userSelectedBackground === 'black'
+          userSelectedBackground === 'rgb(18, 18, 18)'
         ) {
-          return userSelectedBackground === 'black' ? 'dark' : 'light'
+          return userSelectedBackground === 'white' ? 'light' : 'dark'
         }
 
         return getPreferredColorScheme()
@@ -62,7 +62,10 @@ const preview = {
       return (
         <div
           id={Mode()}
-          style={{ colorScheme: Mode() }}
+          style={{
+            colorScheme: Mode(),
+            backgroundColor: Mode() === 'light' ? 'white' : 'rgb(18, 18, 18)',
+          }}
         >
           <Story />
         </div>
