@@ -6,7 +6,7 @@ import {
 } from 'react-aria-components'
 import styles from './Text.module.css'
 
-type Variant = 'body-01' | 'body-02'
+export type Variant = 'body-01' | 'body-02'
 
 export interface TextProps extends AriaTextProps {
   /**
