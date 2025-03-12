@@ -16,6 +16,7 @@
 
   & .arrow svg {
     display: block;
+    fill: --background-inverse-01;
   }
 
   &[data-entering],
