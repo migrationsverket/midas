@@ -1,0 +1,72 @@
+import type { Meta, StoryObj } from '@storybook/react'
+import { Text } from './Text'
+import { expect } from '@storybook/test'
+
+type Story = StoryObj<typeof Text>
+
+const meta: Meta<typeof Text> = {
+  component: Text,
+  title: 'Components/Typography/Text',
+  tags: ['autodocs'],
+  args: {
+    variant: 'body-01',
+    component: 'p',
+    children: 'I am a paragraph with the variant of "body-01"',
+    isExpressive: false,
+  },
+}
+
+export const Body01: Story = {
+  play: async ({ canvas, args: { children } }) => {
+    expect(canvas.getByText(children as string)).toHaveStyle({
+      'font-size': '16px',
+      'line-height': '20px',
+    })
+  },
+}
+
+export const Body02: Story = {
+  args: {
+    variant: 'body-02',
+    children: 'I am a paragraph with the variant of "body-02"',
+  },
+  play: async ({ canvas, args: { children } }) => {
+    expect(canvas.getByText(children as string)).toHaveStyle({
+      'font-size': '16px',
+      'line-height': '22px',
+    })
+  },
+}
+
+export const ExpressiveBody02: Story = {
+  args: {
+    variant: 'body-02',
+    children:
+      'I am a paragraph with the variant of "body-02" using the expressive/external look which has a slightly increased line height',
+    isExpressive: true,
+  },
+  play: async ({ canvas, args: { children } }) => {
+    expect(canvas.getByText(children as string)).toHaveStyle({
+      'font-size': '16px',
+      'line-height': '24px',
+    })
+  },
+}
+
+export const Span: Story = {
+  args: {
+    variant: 'body-02',
+    component: 'span',
+    children: 'I am a span element with the variant of "body-02"',
+  },
+  play: async ({ canvas, args: { children, component } }) => {
+    const span = canvas.getByText(children as string)
+    expect(span.nodeName.toLowerCase()).toBe(component)
+    expect(span).toHaveStyle({
+      'font-size': '16px',
+      'line-height': '22px',
+    })
+  },
+}
+
+export default meta

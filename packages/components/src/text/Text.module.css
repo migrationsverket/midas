@@ -2,8 +2,7 @@
 @value black, display from tokens;
 
 .body-01,
-.body-02,
-.expressive {
+.body-02 {
   /* token: text/primary */
   color: black;
   font-weight: 400;
@@ -21,9 +20,9 @@
 .body-02 {
   /* token: line-height-04 */
   line-height: 1.375rem;
-}
 
-.expressive {
-  /* token: line-height-05 */
-  line-height: 1.5rem;
+  &[data-expressive] {
+    /* token: line-height-05 */
+    line-height: 1.5rem;
+  }
 }

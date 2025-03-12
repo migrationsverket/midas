@@ -1,16 +1,15 @@
 import * as React from 'react'
 import clsx from 'clsx'
-import styles from './Body.module.css'
+import styles from './Text.module.css'
 
 type Variant = 'body-01' | 'body-02'
 type Component = 'p' | 'span'
 
-export interface BodyProps
+export interface TextProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLParagraphElement>,
     HTMLParagraphElement
   > {
-  children: React.ReactNode
   /**
    * The visual variant of the component
    */
@@ -25,11 +24,7 @@ export interface BodyProps
   isExpressive?: boolean
 }
 
-export const Body: React.FC<BodyProps> = ({ children, ...rest }) => {
-  return <Element {...rest}>{children}</Element>
-}
-
-const Element: React.FC<BodyProps> = ({
+export const Text: React.FC<TextProps> = ({
   component = 'p',
   children,
   className,
@@ -39,28 +34,18 @@ const Element: React.FC<BodyProps> = ({
 }) => {
   const classNames: Record<Variant, string> = {
     'body-01': styles['body-01'],
-    'body-02': isExpressive ? styles.expressive : styles['body-02'],
+    'body-02': styles['body-02'],
   }
 
-  const classes = clsx(classNames[variant], className)
+  const textProps = {
+    className: clsx(classNames[variant], className),
+    ...(isExpressive && { 'data-expressive': true }),
+    ...rest,
+  }
 
   if (component === 'span') {
-    return (
-      <span
-        className={classes}
-        {...rest}
-      >
-        {children}
-      </span>
-    )
+    return <span {...textProps}>{children}</span>
   }
 
-  return (
-    <p
-      className={classes}
-      {...rest}
-    >
-      {children}
-    </p>
-  )
+  return <p {...textProps}>{children}</p>
 }
