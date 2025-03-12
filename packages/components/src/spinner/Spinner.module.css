@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --icon-primary, --icon-inverse from tokens;
+@value --icon-primary, --icon-on-color from tokens;
 
 .container {
   display: inline-flex;
@@ -16,7 +16,7 @@
 }
 
 .dark {
-  color: --icon-inverse;
+  color: --icon-on-color;
 }
 
 .vsHidden {
