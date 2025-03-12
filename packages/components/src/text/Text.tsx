@@ -19,11 +19,14 @@ export interface TextProps extends AriaTextProps {
   isExpressive?: boolean
 }
 
+const DEFAULT_ELEMENT = 'span'
+
 export const Text: React.FC<TextProps> = ({
   children,
   className,
   variant = 'body-02',
   isExpressive = false,
+  elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
   const classNames: Record<Variant, string> = {
@@ -33,6 +36,7 @@ export const Text: React.FC<TextProps> = ({
 
   const textProps: TextProps = {
     className: clsx(classNames[variant], className),
+    elementType: elementType || DEFAULT_ELEMENT,
     ...(isExpressive && { 'data-expressive': true }),
     ...rest,
   }
