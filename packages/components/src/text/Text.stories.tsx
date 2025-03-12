@@ -9,14 +9,16 @@ const meta: Meta<typeof Text> = {
   title: 'Components/Typography/Text',
   tags: ['autodocs'],
   args: {
-    variant: 'body-01',
-    elementType: 'p',
-    children: 'I am a paragraph with the variant of "body-01"',
     isExpressive: false,
   },
 }
 
 export const Body01: Story = {
+  args: {
+    variant: 'body-01',
+    elementType: 'p',
+    children: 'I am a paragraph with the variant of "body-01"',
+  },
   play: async ({ canvas, args: { children } }) => {
     expect(canvas.getByText(children as string)).toHaveStyle({
       'font-size': '16px',
