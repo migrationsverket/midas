@@ -149,7 +149,9 @@ const usePrismTheme = () => {
       themeConfig: { prism = {} },
     },
   } = useDocusaurusContext()
-  const prismTheme = prismThemes.github
+  const { colorMode } = useColorMode()
+  const prismTheme =
+    colorMode === 'dark' ? prismThemes.vsDark : prismThemes.vsLight
 
   return prismTheme
 }
