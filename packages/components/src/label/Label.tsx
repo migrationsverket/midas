@@ -1,15 +1,14 @@
 import * as React from 'react'
 import clsx from 'clsx'
+import {
+  Label as AriaLabel,
+  type LabelProps as AriaLabelProps,
+} from 'react-aria-components'
 import styles from './Label.module.css'
 
 type Variant = 'label-01' | 'label-02'
 
-export interface LabelProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLLabelElement>,
-    HTMLLabelElement
-  > {
-  children: React.ReactNode
+export interface LabelProps extends AriaLabelProps {
   /**
    * The visual variant of the component
    */
@@ -27,14 +26,10 @@ export const Label: React.FC<LabelProps> = ({
     'label-02': styles['label-02'],
   }
 
-  const classes = clsx(classNames[variant], className)
+  const labelProps: LabelProps = {
+    className: clsx(classNames[variant], className),
+    ...rest,
+  }
 
-  return (
-    <label
-      className={classes}
-      {...rest}
-    >
-      {children}
-    </label>
-  )
+  return <AriaLabel {...labelProps}>{children}</AriaLabel>
 }
