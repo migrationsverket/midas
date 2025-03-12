@@ -248,6 +248,17 @@ const config: Config = {
         },
       },
     },
+    metadata: [
+      {
+        name: 'theme-color',
+        content: '#ffffff',
+      },
+      {
+        name: 'theme-color',
+        content: '#242526',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
   } satisfies Preset.ThemeConfig,
 }
 
