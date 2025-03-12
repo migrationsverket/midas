@@ -1,7 +1,7 @@
+import { LabelProps as AriaLabelProps } from 'react-aria-components';
 import * as React from 'react';
 type Variant = 'label-01' | 'label-02';
-export interface LabelProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {
-    children: React.ReactNode;
+export interface LabelProps extends AriaLabelProps {
     /**
      * The visual variant of the component
      */
