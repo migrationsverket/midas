@@ -326,6 +326,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                           >
                             <div className={styles.checkboxContainer}>
                               <input
+                                className={styles.checkbox}
                                 type='checkbox'
                                 checked={isAllSelection}
                                 ref={refAllButton}
