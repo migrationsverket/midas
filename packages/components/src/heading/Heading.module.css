@@ -1,17 +1,11 @@
 @value tokens: "../theme/tokens.css";
 @value black, display from tokens;
 
-h1,
 .h1,
-h2,
 .h2,
-h3,
 .h3,
-h4,
 .h4,
-h5,
 .h5,
-h6,
 .h6 {
   font-family: display;
   color: black;
@@ -19,7 +13,6 @@ h6,
   margin: 0;
 }
 
-h1,
 .h1 {
   /* token: size-07 */
   font-size: 1.625rem;
@@ -36,7 +29,6 @@ h1,
   }
 }
 
-h2,
 .h2 {
   /* token: size-05 */
   font-size: 1.25rem;
@@ -55,7 +47,6 @@ h2,
   }
 }
 
-h3,
 .h3 {
   font-weight: 600;
 
@@ -74,7 +65,6 @@ h3,
   }
 }
 
-h4,
 .h4 {
   &[data-expressive] {
     font-weight: 600;
@@ -87,7 +77,6 @@ h4,
   }
 }
 
-h5,
 .h5 {
   &[data-expressive] {
     font-weight: 600;
