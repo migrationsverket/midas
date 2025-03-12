@@ -8,7 +8,7 @@
 .list {
   display: flex;
   flex-flow: row wrap;
-  border-bottom: 0.063rem solid --border-subtle;
+  border-bottom: 1px solid --border-subtle;
 }
 
 .listItem {
@@ -17,8 +17,8 @@
 
   &[data-selected] {
     font-weight: 500;
-    padding-bottom: calc(0.5rem - 0.188rem);
-    border-bottom: 0.188rem solid --border-brand;
+    padding-bottom: calc(0.5rem - 3px);
+    border-bottom: 3px solid --border-brand;
   }
 
   &[data-focus-visible],
@@ -31,8 +31,8 @@
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: 0.188rem solid --border-brand;
-      padding-left: calc(1.125rem - 0.188rem);
+      border-left: 3px solid --border-brand;
+      padding-left: calc(1.125rem - 3px);
       border-bottom: 0;
       box-shadow: none;
     }
