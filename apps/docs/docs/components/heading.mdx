@@ -1,0 +1,82 @@
+---
+title: Heading
+---
+
+import { Heading } from '@midas-ds/components'
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Heading }}
+      {...props}
+    >
+      {`<Heading level={2}>Jag är en vanlig h2-rubrik</Heading>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'typography-heading'}
+  friendlyName={'Rubrik, h1, h2, h3, h4, h5, h6'}
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Heading.html'
+/>
+
+Rubrik med fördefinerad stil
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Heading } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Varianter
+
+### Nivå
+
+Använd egenskapen `level` för att justera rubrikens nivå
+
+<LiveCodeBlock
+  scope={{ Heading }}
+  {...props}
+>
+  {`<Heading level={3}>Jag är en vanlig h3-rubrik</Heading>`}
+</LiveCodeBlock>
+
+### Extern
+
+Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
+
+<LiveCodeBlock
+  scope={{ Heading }}
+  {...props}
+>
+  {`<Heading level={2} isExpressive>Jag är en luftig h2-rubrik</Heading>`}
+</LiveCodeBlock>
+
+### Val av semantiskt element
+
+Egenskapen `elementType` kan användas för att ändra rubrikens semantiska nivå utan att påverka utseendet.
+
+<LiveCodeBlock
+  scope={{ Heading }}
+  {...props}
+>
+  {`<Heading level={1} elementType="h3">Jag är h3:a som ser ut som en vanlig h1:a</Heading>`}
+</LiveCodeBlock>
+
+## API
+
+### Select
+
+<PropTable name='Heading' />
