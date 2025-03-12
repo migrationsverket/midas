@@ -1,5 +1,4 @@
 import React from 'react'
-import { themes as prismThemes } from 'prism-react-renderer'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import styles from './styles.module.css'
@@ -7,6 +6,7 @@ import { fruits } from '../examples/fruits'
 import { Accordion, AccordionItem } from '@midas-ds/components'
 import clsx from 'clsx'
 import { useColorMode } from '@docusaurus/theme-common'
+import { PrismConfig } from '@docusaurus/theme-common/lib/utils/useThemeConfig'
 
 declare global {
   interface Array<T> {
@@ -32,6 +32,8 @@ const rows = fruits.shuffled(7).map(fruit => {
   }
 })
 
+type ColorMode = 'light' | 'dark'
+
 const Playground = ({
   children,
   transformCode,
@@ -42,9 +44,8 @@ const Playground = ({
   const theme = usePrismTheme()
   const [isOpen, setIsOpen] = React.useState<boolean>(false)
   const { colorMode } = useColorMode()
-  const [previewColorMode, setPreviewColorMode] = React.useState<
-    'light' | 'dark'
-  >(colorMode)
+  const [previewColorMode, setPreviewColorMode] =
+    React.useState<ColorMode>(colorMode)
 
   React.useEffect(() => {
     setPreviewColorMode(colorMode)
@@ -159,14 +160,15 @@ export default Playground
  */
 
 const usePrismTheme = () => {
-  const {
-    siteConfig: {
-      themeConfig: { prism = {} },
-    },
-  } = useDocusaurusContext()
+  const { siteConfig } = useDocusaurusContext()
   const { colorMode } = useColorMode()
+
+  const docusaurusPrismThemes = siteConfig.themeConfig.prism as PrismConfig
+
   const prismTheme =
-    colorMode === 'dark' ? prismThemes.vsDark : prismThemes.vsLight
+    colorMode === 'light'
+      ? docusaurusPrismThemes.theme
+      : docusaurusPrismThemes.darkTheme
 
   return prismTheme
 }
