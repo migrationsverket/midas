@@ -74,6 +74,7 @@ h3,
   }
 }
 
+h4,
 .h4 {
   &[data-expressive] {
     font-weight: 600;
@@ -86,6 +87,7 @@ h3,
   }
 }
 
+h5,
 .h5 {
   &[data-expressive] {
     font-weight: 600;
