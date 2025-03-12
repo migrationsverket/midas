@@ -21,7 +21,7 @@ jobs:
       - run: npm ci
       - run: npx nx run-many -t lint,stylelint,test,build --projects=components
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: npx playwright install chromium --with-deps
       - name: Build Storybook
         run: npx nx run components:build-storybook --quiet
       - name: Serve Storybook and run tests

@@ -72,7 +72,7 @@
           "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
         },
         "ci": {
-          "command": "test-storybook -c packages/components/.storybook --url=http://localhost:6006"
+          "command": "test-storybook -c packages/components/.storybook --url=http://localhost:6006 --browsers=chromium"
         }
       }
     },
