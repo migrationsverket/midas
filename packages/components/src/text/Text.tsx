@@ -6,13 +6,13 @@ import {
 } from 'react-aria-components'
 import styles from './Text.module.css'
 
-export type Variant = 'body-01' | 'body-02'
+export type TextVariant = 'body-01' | 'body-02'
 
 export interface TextProps extends AriaTextProps {
   /**
    * The visual variant of the component
    */
-  variant?: Variant
+  variant?: TextVariant
   /**
    * Use the external/expressive look
    */
@@ -29,7 +29,7 @@ export const Text: React.FC<TextProps> = ({
   elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
-  const classNames: Record<Variant, string> = {
+  const classNames: Record<TextVariant, string> = {
     'body-01': styles['body-01'],
     'body-02': styles['body-02'],
   }
