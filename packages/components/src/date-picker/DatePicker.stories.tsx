@@ -8,7 +8,8 @@ const meta: Meta<typeof DatePicker> = {
   tags: ['autodocs'],
   args: {
     label: 'Välj datum',
-    description: 'YYYY-MM-DD',
+    description: 'Beskrivning',
+    errorMessage: 'Här var det fel!'
   },
   parameters: {
     a11y: {
