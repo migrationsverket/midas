@@ -1,9 +1,12 @@
 'use client'
 
-import type {
+import {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
+  FieldError,
+  Label,
+  Text,
   ValidationResult,
 } from 'react-aria-components'
 import {
@@ -18,8 +21,6 @@ import {
 } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
-import { InputWrapper } from '../textfield'
-import TextFieldStyles from '../textfield/TextField.module.css'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { Calendar, RangeCalendar } from '../calendar'
@@ -42,59 +43,62 @@ export const DateRangePicker = <T extends DateValue>({
   return (
     <AriaDateRangePicker
       {...props}
-      className={clsx(
-        TextFieldStyles.inputField,
-        styles.datePicker,
-        props.className,
-      )}
+      className={clsx(styles.datePicker, props.className)}
       ref={ref}
     >
-      <InputWrapper
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-      >
-        <Group
-          className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
+      <Label className={styles.label}>{label}</Label>
+      {description && (
+        <Text
+          slot='description'
+          className={styles.description}
         >
-          <DateInput
-            slot='start'
-            className={styles.date}
-          >
-            {segment => (
-              <DateSegment
-                className={styles.dateSegment}
-                segment={segment}
-              />
-            )}
-          </DateInput>
-          <span aria-hidden='true'>-</span>
-          <DateInput
-            slot='end'
-            className={styles.date}
-          >
-            {segment => (
-              <DateSegment
-                segment={segment}
-                className={styles.dateSegment}
-              />
-            )}
-          </DateInput>
-
-          <Button>
-            <CalendarDays
-              size={20}
-              aria-hidden
+          {description}
+        </Text>
+      )}
+      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <Group className={clsx(styles.inputField)}>
+        <DateInput
+          slot='start'
+          className={styles.date}
+        >
+          {segment => (
+            <DateSegment
+              className={styles.segment}
+              segment={segment}
             />
-          </Button>
-        </Group>
+          )}
+        </DateInput>
+        <span
+          aria-hidden='true'
+          className={styles.divider}
+        >
+          -
+        </span>
+        <DateInput
+          slot='end'
+          className={styles.date}
+        >
+          {segment => (
+            <DateSegment
+              segment={segment}
+              className={styles.segment}
+            />
+          )}
+        </DateInput>
 
-        <Popover UNSTABLE_portalContainer={ref.current || undefined}>
-          <Dialog className={styles.dialog}>
-            <RangeCalendar />
-          </Dialog>
-        </Popover>
-      </InputWrapper>
+        <Button className={clsx(props.isInvalid && styles.buttonInvalid)}>
+          <CalendarDays
+            size={20}
+            aria-hidden
+          />
+        </Button>
+      </Group>
+
+      <Popover UNSTABLE_portalContainer={ref.current || undefined}>
+        <Dialog className={styles.dialog}>
+          <RangeCalendar />
+        </Dialog>
+      </Popover>
     </AriaDateRangePicker>
   )
 }
@@ -116,43 +120,41 @@ export const DatePicker = <T extends DateValue>({
   return (
     <AriaDatePicker
       {...props}
-      className={clsx(
-        TextFieldStyles.inputField,
-        styles.datePicker,
-        props.className,
-      )}
+      className={clsx(styles.datePicker, props.className)}
       ref={ref}
     >
-      <InputWrapper
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-      >
-        <Group
-          className={clsx(TextFieldStyles.input, styles.datePickerTextfield)}
+      <Label className={styles.label}>{label}</Label>
+      {description && (
+        <Text
+          slot='description'
+          className={styles.description}
         >
-          <DateInput className={styles.date}>
-            {segment => (
-              <DateSegment
-                segment={segment}
-                className={styles.dateSegment}
-              />
-            )}
-          </DateInput>
-          <Button className={clsx(props.isInvalid && styles.buttonInvalid)}>
-            <CalendarDays
-              size={20}
-              aria-hidden
+          {description}
+        </Text>
+      )}
+      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <Group className={clsx(styles.inputField)}>
+        <DateInput className={styles.date}>
+          {segment => (
+            <DateSegment
+              segment={segment}
+              className={styles.segment}
             />
-          </Button>
-        </Group>
+          )}
+        </DateInput>
+        <Button className={clsx(props.isInvalid && styles.buttonInvalid)}>
+          <CalendarDays
+            size={20}
+            aria-hidden
+          />
+        </Button>
+      </Group>
 
-        <Popover UNSTABLE_portalContainer={ref.current || undefined}>
-          <Dialog className={styles.dialog}>
-            <Calendar />
-          </Dialog>
-        </Popover>
-      </InputWrapper>
+      <Popover UNSTABLE_portalContainer={ref.current || undefined}>
+        <Dialog className={styles.dialog}>
+          <Calendar />
+        </Dialog>
+      </Popover>
     </AriaDatePicker>
   )
 }

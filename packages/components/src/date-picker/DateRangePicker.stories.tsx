@@ -12,6 +12,7 @@ type Story = StoryObj<typeof DateRangePicker>
 export const Primary: Story = {
   args: {
     label: 'Välj datum',
-    description: 'YYYY-MM-DD',
+    description: 'Beskrivning',
+    errorMessage: 'Felmeddelande',
   },
 }
