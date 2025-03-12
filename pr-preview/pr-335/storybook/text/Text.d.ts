@@ -1,15 +1,11 @@
+import { TextProps as AriaTextProps } from 'react-aria-components';
 import * as React from 'react';
 type Variant = 'body-01' | 'body-02';
-type Component = 'p' | 'span';
-export interface TextProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement> {
+export interface TextProps extends AriaTextProps {
     /**
      * The visual variant of the component
      */
     variant?: Variant;
-    /**
-     * The semantic element of the component
-     */
-    component?: Component;
     /**
      * Use the external/expressive look
      */
