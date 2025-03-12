@@ -16,7 +16,7 @@ const meta: Meta<typeof Heading> = {
 export const Heading1: Story = {
   args: {
     level: 1,
-    children: 'Sapindales',
+    children: 'I am a regular h1 element',
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -30,6 +30,7 @@ export const Heading1: Story = {
 export const ExpressiveHeading1: Story = {
   args: {
     ...Heading1.args,
+    children: 'I am an expressive h1 element',
     isExpressive: true,
   },
   play: async ({ canvas }) => {
@@ -44,7 +45,7 @@ export const ExpressiveHeading1: Story = {
 export const Heading2: Story = {
   args: {
     level: 2,
-    children: 'Rutaceae',
+    children: 'I am a regular h2 element',
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -58,6 +59,7 @@ export const Heading2: Story = {
 export const ExpressiveHeading2: Story = {
   args: {
     ...Heading2.args,
+    children: 'I am an expressive h2 element',
     isExpressive: true,
   },
   play: async ({ canvas }) => {
@@ -72,7 +74,7 @@ export const ExpressiveHeading2: Story = {
 export const Heading3: Story = {
   args: {
     level: 3,
-    children: 'Citrus',
+    children: 'I am a regular h3 element',
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
@@ -86,7 +88,7 @@ export const Heading3: Story = {
 export const ExpressiveHeading3: Story = {
   args: {
     level: 3,
-    children: 'Citrus',
+    children: 'I am an expressive h3 element',
     isExpressive: true,
   },
   play: async ({ canvas }) => {
@@ -101,7 +103,7 @@ export const ExpressiveHeading3: Story = {
 export const ExpressiveHeading4: Story = {
   args: {
     level: 4,
-    children: 'C. reticulata',
+    children: 'I am an expressive h4 element',
     isExpressive: true,
   },
   play: async ({ canvas }) => {
@@ -116,7 +118,7 @@ export const ExpressiveHeading4: Story = {
 export const ExpressiveHeading5: Story = {
   args: {
     level: 5,
-    children: 'Clementin',
+    children: 'I am an expressive h5 element',
     isExpressive: true,
   },
   play: async ({ canvas }) => {
@@ -131,11 +133,13 @@ export const ExpressiveHeading5: Story = {
 export const ChangeSemanticElement: Story = {
   args: {
     level: 3,
-    semanticLevel: 1,
-    children: 'A h1 that looks just like a h3',
+    elementType: 'h1',
+    children: 'I am a regular h1 element with a look of a regular h3',
   },
-  play: async ({ canvas, args: { isExpressive } }) => {
-    expect(canvas.getByRole('heading')).toHaveStyle({
+  play: async ({ canvas, args: { isExpressive, elementType } }) => {
+    const heading = canvas.getByRole('heading')
+    expect(heading.nodeName.toLowerCase()).toBe(elementType)
+    expect(heading).toHaveStyle({
       'font-size': isExpressive ? '24px' : '16px',
       'line-height': isExpressive ? '32px' : '24px',
       'font-weight': 600,
