@@ -1,3 +1,4 @@
+import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
 import '../src/theme/global.css'
 import {
@@ -6,7 +7,7 @@ import {
   getPreferredColorScheme,
 } from './custom-theme'
 
-const preview = {
+const preview: Preview = {
   parameters: {
     backgrounds: {
       default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
