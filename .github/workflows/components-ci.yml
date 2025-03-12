@@ -20,3 +20,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx nx run-many -t lint,stylelint,test,build --projects=components
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Build Storybook
+        run: npx nx run components:build-storybook --quiet
+      - name: Serve Storybook and run tests
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server dist/storybook/ui --port 6006 --silent" \
+            "npx wait-on tcp:127.0.0.1:6006 && npx nx run components:test-storybook:ci"
