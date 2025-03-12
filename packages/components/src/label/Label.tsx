@@ -6,7 +6,7 @@ import {
 } from 'react-aria-components'
 import styles from './Label.module.css'
 
-type Variant = 'label-01' | 'label-02'
+export type Variant = 'label-01' | 'label-02'
 
 export interface LabelProps extends AriaLabelProps {
   /**
@@ -15,10 +15,13 @@ export interface LabelProps extends AriaLabelProps {
   variant?: Variant
 }
 
+const DEFAULT_ELEMENT = 'label'
+
 export const Label: React.FC<LabelProps> = ({
   children,
   className,
   variant = 'label-01',
+  elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
   const classNames: Record<Variant, string> = {
@@ -28,6 +31,7 @@ export const Label: React.FC<LabelProps> = ({
 
   const labelProps: LabelProps = {
     className: clsx(classNames[variant], className),
+    elementType: elementType || DEFAULT_ELEMENT,
     ...rest,
   }
 
