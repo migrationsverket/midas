@@ -1,6 +1,6 @@
 import { TextProps as AriaTextProps } from 'react-aria-components';
 import * as React from 'react';
-type Variant = 'body-01' | 'body-02';
+export type Variant = 'body-01' | 'body-02';
 export interface TextProps extends AriaTextProps {
     /**
      * The visual variant of the component
@@ -12,4 +12,3 @@ export interface TextProps extends AriaTextProps {
     isExpressive?: boolean;
 }
 export declare const Text: React.FC<TextProps>;
-export {};
