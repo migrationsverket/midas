@@ -8,13 +8,13 @@ const meta: Meta<typeof Label> = {
   component: Label,
   title: 'Components/Typography/Label',
   tags: ['autodocs'],
+}
+
+export const Label01: Story = {
   args: {
     variant: 'label-01',
     children: 'I am a label with the variant of "label-01"',
   },
-}
-
-export const Label01: Story = {
   play: async ({ canvas, args: { children } }) => {
     expect(canvas.getByText(children as string)).toHaveStyle({
       'font-size': '14px',
