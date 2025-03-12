@@ -59,7 +59,7 @@
 
 .text {
   margin-block-start: 0;
-  color: black;
+  color: --text-primary;
   margin: 0;
   padding: 0;
 }

@@ -30,9 +30,11 @@ const preview = {
     viewport: {
       viewports: customViewports,
     },
-    storySort: {
-      method: 'alphabetical',
-      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+      },
     },
     a11y: { test: 'error' },
   },

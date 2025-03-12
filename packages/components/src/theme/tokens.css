@@ -96,26 +96,28 @@
 /* -- Semantic -- */
 
 /* Background */
-@value --background-01: light-dark(--white, --black);
-@value --background-hover-01: light-dark(--white-hover, --black-hover);
+@value --background-01: light-dark(--white, --gray-1000);
+@value --background-hover-01: light-dark(--white-hover, --gray-1050);
 @value --background-inverse-01: light-dark(--gray-1000, --gray-100);
 
 /* Layer 01 */
 @value --layer-01: light-dark(--gray-100, --gray-900);
 @value --layer-hover-01: light-dark(--gray-150, --gray-950);
-@value --layer-selected-01: light-dark(--gray-200, --gray-700);
+@value --layer-selected-01: light-dark(--gray-200, --gray-800);
 @value --layer-selected-hover-01: light-dark(--gray-250, --gray-850);
 
 /* Layer 02 */
 @value --layer-02: light-dark(--white, --gray-800);
 @value --layer-hover-02: light-dark(--white-hover, --gray-850);
-@value --layer-selected-02: light-dark(--gray-200, --gray-850);
+@value --layer-selected-02: light-dark(--gray-200, --gray-700);
 @value --layer-selected-hover-02: light-dark(--gray-250, --gray-750);
 
-/* Layer Accent */
+/* Layer Accent 01 */
 @value --layer-accent-01: light-dark(--gray-200, --gray-800);
 @value --layer-accent-hover-01: light-dark(--gray-250, --gray-850);
 @value --layer-accent-selected-01: light-dark(--gray-300, --gray-700);
+
+/* Layer Accent 02 */
 @value --layer-accent-02: light-dark(--gray-100, --gray-900);
 @value --layer-accent-hover-02: light-dark(--gray-150, --gray-950);
 @value --layer-accent-selected-02: light-dark(--gray-200, --gray-800);
@@ -132,15 +134,18 @@
 @value --border-disabled: light-dark(--gray-300, --gray-700);
 @value --border-skeleton: light-dark(--gray-100, --gray-900);
 @value --border-inverse: light-dark(--white, --gray-900);
-@value --border-brand: light-dark(--blue-900, --blue-900);
 
-/* Field */
+/* Field 01 */
 @value --field-01: light-dark(--gray-100, --gray-900);
 @value --field-hover-01: light-dark(--gray-150, --gray-950);
 @value --field-active-01: light-dark(--gray-200, --gray-800);
+
+/* Field 02 */
 @value --field-02: light-dark(--white, --gray-800);
 @value --field-hover-02: light-dark(--white-hover, --gray-850);
 @value --field-active-02: light-dark(--gray-200, --gray-700);
+
+/* Field */
 @value --field-disabled: light-dark(--gray-100, --gray-900);
 @value --field-skeleton: light-dark(--gray-100, --gray-900);
 
@@ -158,35 +163,35 @@
 
 /* Link */
 @value --link-enabled: light-dark(--blue-700, --blue-700);
-@value --link-hover: light-dark(--blue-900, --blue-900);
-@value --link-pressed: light-dark(--black, --black);
+@value --link-hover: light-dark(--blue-900, --blue-700);
+@value --link-pressed: light-dark(--black, --white);
 @value --link-visited: light-dark(--purple, --purple);
 
 /* Notification */
-@value --notification-border-warning: light-dark(--signal-red-700, --signal-red-700);
 @value --notification-border-success: light-dark(--signal-green-700, --signal-green-700);
 @value --notification-border-info: light-dark(--signal-blue-700, --signal-blue-700);
 @value --notification-border-important: light-dark(--signal-yellow-700, --signal-yellow-700);
+@value --notification-border-warning: light-dark(--signal-red-700, --signal-red-700);
 @value --notification-background-success: light-dark(--signal-green-100, --layer-01);
-@value --notification-background-warning: light-dark(--signal-red-100, --layer-01);
 @value --notification-background-info: light-dark(--signal-blue-100, --layer-01);
 @value --notification-background-important: light-dark(--signal-yellow-100, --layer-01);
+@value --notification-background-warning: light-dark(--signal-red-100, --layer-01);
 
 /* Text */
 @value --text-primary: light-dark(--gray-1000, --gray-100);
-@value --text-secondary: light-dark(--blue-900, --blue-900);
+@value --text-secondary: light-dark(--gray-700, --gray-400);
 @value --text-brand: light-dark(--blue-900, --gray-100);
 @value --text-on-color: light-dark(--white, --white);
 @value --text-inverse: light-dark(--white, --black);
 @value --text-subtle: light-dark(--gray-500, --gray-500);
 @value --text-disabled: light-dark(--gray-300, --gray-700);
 @value --text-invalid: light-dark(--signal-red-700, --signal-red-700);
-@value --text-placeholder: light-dark(--gray-500, --gray-700);
+@value --text-placeholder: light-dark(--gray-400, --gray-700);
 
 /* Button */
-@value --button-background-primary: light-dark(--blue-900, --blue-900);
+@value --button-background-primary: light-dark(--blue-900, --blue-700);
 @value --button-background-primary-hover: light-dark(--blue-800, --blue-800);
-@value --button-background-primary-active: light-dark(--blue-700, --blue-700);
+@value --button-background-primary-active: light-dark(--blue-700, --blue-900);
 @value --button-background-secondary: light-dark(--white, --gray-1000);
 @value --button-background-secondary-hover: light-dark(--white-hover, --gray-1050);
 @value --button-background-secondary-active: light-dark(--gray-200, --gray-900);
@@ -197,4 +202,6 @@
 @value --button-background-danger-active: light-dark(--signal-red-900, --signal-red-900);
 @value --button-background-disabled: light-dark(--gray-100, --gray-900);
 @value --button-background-skeleton: light-dark(--gray-100, --gray-900);
+@value --button-background-ghost-hover: light-dark(--white-hover, --gray-1050);
+@value --button-background-ghost-active: light-dark(--gray-200, --gray-1050);
 @value --button-border-primary: light-dark(--border-brand, --gray-100);

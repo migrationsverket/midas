@@ -28,7 +28,7 @@
     "font-family-name-quotes": null,
     "font-family-no-missing-generic-family-keyword": [
       true,
-      { "ignoreFontFamilies": ["font-family", "display", "--font-family"] }
+      { "ignoreFontFamilies": ["--font-family"] }
     ],
     "declaration-block-no-redundant-longhand-properties": [
       true,
