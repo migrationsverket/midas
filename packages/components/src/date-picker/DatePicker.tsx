@@ -8,19 +8,15 @@ import type {
 } from 'react-aria-components'
 import {
   Button,
-  CalendarCell,
-  CalendarGrid,
   DateInput,
   DatePicker as AriaDatePicker,
   DateRangePicker as AriaDateRangePicker,
   DateSegment,
   Dialog,
   Group,
-  Heading,
   Popover,
-  // RangeCalendar,
 } from 'react-aria-components'
-import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react'
+import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
 import { InputWrapper } from '../textfield'
 import TextFieldStyles from '../textfield/TextField.module.css'
@@ -95,35 +91,7 @@ export const DateRangePicker = <T extends DateValue>({
 
         <Popover UNSTABLE_portalContainer={ref.current || undefined}>
           <Dialog className={styles.dialog}>
-{/*            <RangeCalendar>
-              <header className={styles.dialogHeader}>
-                <Button slot='previous'>
-                  <ChevronLeft
-                    size={20}
-                    aria-hidden
-                  />
-                </Button>
-                <Heading className={styles.dialogHeading} />
-                <Button slot='next'>
-                  <ChevronRight
-                    size={20}
-                    aria-hidden
-                  />
-                </Button>
-              </header>
-              <CalendarGrid
-                className={styles.calendar}
-                weekdayStyle='short'
-              >
-                {date => (
-                  <CalendarCell
-                    date={date}
-                    className={styles.day}
-                  />
-                )}
-              </CalendarGrid>
-            </RangeCalendar>*/}
-            <RangeCalendar/>
+            <RangeCalendar />
           </Dialog>
         </Popover>
       </InputWrapper>
