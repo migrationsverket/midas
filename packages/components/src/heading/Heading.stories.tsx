@@ -15,7 +15,7 @@ const meta: Meta<typeof Heading> = {
 
 export const Heading1: Story = {
   args: {
-    variant: 'h1',
+    level: 1,
     children: 'Sapindales',
   },
   play: async ({ canvas }) => {
@@ -43,7 +43,7 @@ export const ExpressiveHeading1: Story = {
 
 export const Heading2: Story = {
   args: {
-    variant: 'h2',
+    level: 2,
     children: 'Rutaceae',
   },
   play: async ({ canvas }) => {
@@ -71,7 +71,7 @@ export const ExpressiveHeading2: Story = {
 
 export const Heading3: Story = {
   args: {
-    variant: 'h3',
+    level: 3,
     children: 'Citrus',
   },
   play: async ({ canvas }) => {
@@ -85,7 +85,7 @@ export const Heading3: Story = {
 
 export const ExpressiveHeading3: Story = {
   args: {
-    variant: 'h3',
+    level: 3,
     children: 'Citrus',
     isExpressive: true,
   },
@@ -100,7 +100,7 @@ export const ExpressiveHeading3: Story = {
 
 export const ExpressiveHeading4: Story = {
   args: {
-    variant: 'h4',
+    level: 4,
     children: 'C. reticulata',
     isExpressive: true,
   },
@@ -115,7 +115,7 @@ export const ExpressiveHeading4: Story = {
 
 export const ExpressiveHeading5: Story = {
   args: {
-    variant: 'h5',
+    level: 5,
     children: 'Clementin',
     isExpressive: true,
   },
@@ -130,8 +130,8 @@ export const ExpressiveHeading5: Story = {
 
 export const ChangeSemanticElement: Story = {
   args: {
-    variant: 'h3',
-    component: 'h1',
+    level: 3,
+    semanticLevel: 1,
     children: 'A h1 that looks just like a h3',
   },
   play: async ({ canvas, args: { isExpressive } }) => {

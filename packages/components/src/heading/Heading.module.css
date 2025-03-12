@@ -3,19 +3,16 @@
 
 h1,
 .h1,
-.h1Expressive,
 h2,
 .h2,
-.h2Expressive,
 h3,
 .h3,
-.h3Expressive,
 h4,
 .h4,
-.h4Expressive,
 h5,
 .h5,
-.h5Expressive {
+h6,
+.h6 {
   font-family: display;
   color: black;
   font-weight: 400;
@@ -29,14 +26,14 @@ h1,
 
   /* token: line-height-07 */
   line-height: 2rem;
-}
 
-.h1Expressive {
-  /* token: size-09 */
-  font-size: 2.25rem;
+  &[data-expressive] {
+    /* token: size-09 */
+    font-size: 2.25rem;
 
-  /* token: line-height-09 */
-  line-height: 2.75rem;
+    /* token: line-height-09 */
+    line-height: 2.75rem;
+  }
 }
 
 h2,
@@ -46,16 +43,16 @@ h2,
 
   /* token: line-height-06 */
   line-height: 1.75rem;
-}
 
-.h2Expressive {
-  font-weight: 500;
+  &[data-expressive] {
+    font-weight: 500;
 
-  /* token: size-07 */
-  font-size: 1.625rem;
+    /* token: size-07 */
+    font-size: 1.625rem;
 
-  /* token: line-height-08 */
-  line-height: 2.25rem;
+    /* token: line-height-08 */
+    line-height: 2.25rem;
+  }
 }
 
 h3,
@@ -67,34 +64,36 @@ h3,
 
   /* token: line-height-05 */
   line-height: 1.5rem;
+
+  &[data-expressive] {
+    /* token: size-06 */
+    font-size: 1.5rem;
+
+    /* token: line-height-07 */
+    line-height: 2rem;
+  }
 }
 
-.h3Expressive {
-  font-weight: 600;
+.h4 {
+  &[data-expressive] {
+    font-weight: 600;
 
-  /* token: size-06 */
-  font-size: 1.5rem;
+    /* token: size-05 */
+    font-size: 1.25rem;
 
-  /* token: line-height-07 */
-  line-height: 2rem;
+    /* token: line-height-06 */
+    line-height: 1.75rem;
+  }
 }
 
-.h4Expressive {
-  font-weight: 600;
+.h5 {
+  &[data-expressive] {
+    font-weight: 600;
 
-  /* token: size-05 */
-  font-size: 1.25rem;
+    /* token: size-04 */
+    font-size: 1.125rem;
 
-  /* token: line-height-06 */
-  line-height: 1.75rem;
-}
-
-.h5Expressive {
-  font-weight: 600;
-
-  /* token: size-04 */
-  font-size: 1.125rem;
-
-  /* token: line-height-05 */
-  line-height: 1.5rem;
+    /* token: line-height-05 */
+    line-height: 1.5rem;
+  }
 }
