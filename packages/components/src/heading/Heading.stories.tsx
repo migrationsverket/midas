@@ -29,7 +29,7 @@ export const Heading1: Story = {
 
 export const ExpressiveHeading1: Story = {
   args: {
-    ...Heading1.args,
+    level: 1,
     children: 'I am an expressive h1 element',
     isExpressive: true,
   },
@@ -58,7 +58,7 @@ export const Heading2: Story = {
 
 export const ExpressiveHeading2: Story = {
   args: {
-    ...Heading2.args,
+    level: 2,
     children: 'I am an expressive h2 element',
     isExpressive: true,
   },
