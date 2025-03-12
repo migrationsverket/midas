@@ -10,7 +10,7 @@ const meta: Meta<typeof Text> = {
   tags: ['autodocs'],
   args: {
     variant: 'body-01',
-    component: 'p',
+    elementType: 'p',
     children: 'I am a paragraph with the variant of "body-01"',
     isExpressive: false,
   },
@@ -56,12 +56,12 @@ export const ExpressiveBody02: Story = {
 export const Span: Story = {
   args: {
     variant: 'body-02',
-    component: 'span',
+    elementType: 'span',
     children: 'I am a span element with the variant of "body-02"',
   },
-  play: async ({ canvas, args: { children, component } }) => {
+  play: async ({ canvas, args: { children, elementType } }) => {
     const span = canvas.getByText(children as string)
-    expect(span.nodeName.toLowerCase()).toBe(component)
+    expect(span.nodeName.toLowerCase()).toBe(elementType)
     expect(span).toHaveStyle({
       'font-size': '16px',
       'line-height': '22px',

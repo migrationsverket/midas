@@ -1,23 +1,18 @@
 import * as React from 'react'
 import clsx from 'clsx'
+import {
+  Text as AriaText,
+  TextProps as AriaTextProps,
+} from 'react-aria-components'
 import styles from './Text.module.css'
 
 type Variant = 'body-01' | 'body-02'
-type Component = 'p' | 'span'
 
-export interface TextProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLParagraphElement>,
-    HTMLParagraphElement
-  > {
+export interface TextProps extends AriaTextProps {
   /**
    * The visual variant of the component
    */
   variant?: Variant
-  /**
-   * The semantic element of the component
-   */
-  component?: Component
   /**
    * Use the external/expressive look
    */
@@ -25,7 +20,6 @@ export interface TextProps
 }
 
 export const Text: React.FC<TextProps> = ({
-  component = 'p',
   children,
   className,
   variant = 'body-02',
@@ -37,15 +31,11 @@ export const Text: React.FC<TextProps> = ({
     'body-02': styles['body-02'],
   }
 
-  const textProps = {
+  const textProps: TextProps = {
     className: clsx(classNames[variant], className),
     ...(isExpressive && { 'data-expressive': true }),
     ...rest,
   }
 
-  if (component === 'span') {
-    return <span {...textProps}>{children}</span>
-  }
-
-  return <p {...textProps}>{children}</p>
+  return <AriaText {...textProps}>{children}</AriaText>
 }
