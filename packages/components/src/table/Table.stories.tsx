@@ -78,7 +78,7 @@ export const Striped: Story = {
     })
 
     await step('The rows should change background color on hover', async () => {
-      const anOddRow = canvas.getByText(rows[2].name)
+      const anOddRow = await canvas.findByText(rows[2].name)
       await userEvent.hover(anOddRow)
       expect(anOddRow).toHaveStyle({
         backgroundColor: 'rgb(204, 204, 204)',

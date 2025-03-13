@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version-file: '.nvmrc'
           cache: npm
       - run: npm ci
       - run: npx nx run-many -t lint,stylelint,test,build --projects=components
