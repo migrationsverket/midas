@@ -190,6 +190,27 @@ li:not(.menu__list-item) a {
   align-items: flex-start;
 }
 
+.tabs {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+
+  .tabs__item {
+    border-radius: 0;
+    padding: 0.5rem 1.25rem;
+    font-weight: 400;
+    color: var(--ifm-font-color-base);
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &.tabs__item--active {
+      font-weight: 500;
+      color: var(--ifm-font-color-base);
+      border-bottom-color: var(--ifm-color-primary-darkest);
+    }
+  }
+}
+
 [class*='cardContainer'],
 .pagination-nav__link {
   box-shadow: none !important;
