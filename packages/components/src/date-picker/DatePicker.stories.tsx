@@ -34,6 +34,7 @@ export const Required: Story = {
     isRequired: true,
     errorMessage: 'Var god ange ett datum',
   },
+  tags: ['!dev'],
   render: args => (
     <form>
       <DatePicker {...args} />
@@ -62,6 +63,7 @@ export const CustomValiation: Story = {
     validate: ({ year }) =>
       year === new Date().getFullYear() ? 'Var god välj ett annat år' : true,
   },
+  tags: ['!dev'],
   render: args => (
     <form>
       <DatePicker {...args} />
