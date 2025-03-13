@@ -19,4 +19,4 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npx nx run-many -t lint,test,build --projects=components
+      - run: npx nx run-many -t lint,stylelint,test,build --projects=components

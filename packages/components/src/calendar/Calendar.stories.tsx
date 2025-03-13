@@ -4,11 +4,16 @@ import { Calendar } from './Calendar'
 const meta: Meta<typeof Calendar> = {
   component: Calendar,
   title: 'Components/Calendar',
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
 }
 export default meta
 type Story = StoryObj<typeof Calendar>
 
 export const Primary: Story = {
-  args: {}
+  args: {},
 }

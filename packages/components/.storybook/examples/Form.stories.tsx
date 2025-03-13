@@ -9,7 +9,6 @@ import {
   Radio,
   RadioGroup,
   Select,
-  Item,
   Button,
 } from '../../src/index'
 import React from 'react'
@@ -47,9 +46,8 @@ export const SimpleForm: Story = {
             label='Vilken är din favoritfrukt'
             placeholder='Välj en frukt'
             selectionMode={'single'}
-            options={ITEMS.map(i => ({id: i, name: i}))}
-          >
-          </Select>
+            options={ITEMS.map(i => ({ id: i, name: i }))}
+          ></Select>
         </FlexItem>
 
         <FlexItem>
@@ -65,7 +63,7 @@ export const TwoColumnForm: Story = {
   render: () => {
     const ITEMS = ['A', 'B', 'C']
     const RADIOITEMS = ['Anledning A', 'Anledning B', 'Anledning C']
-    const SEX = ['Man', 'Kvinna', 'Annat']
+
     return (
       <div>
         <Flex>
@@ -115,7 +113,7 @@ export const TwoColumnForm: Story = {
               description='Kan lämnas tomt'
               placeholder='Välj kön'
               selectionMode={'single'}
-              options={ITEMS.map(i => ({name: i, id: i}))}
+              options={ITEMS.map(i => ({ name: i, id: i }))}
             />
           </FlexItem>
           <FlexItem col={6}>

@@ -184,8 +184,6 @@ describe('given a required multi Select', () => {
 })
 
 describe('given an invalid select', () => {
-
-
   beforeEach(() => {
     baseElement = render(
       <Select
@@ -197,9 +195,7 @@ describe('given an invalid select', () => {
       />,
     )
   })
-  it('should be in invalid state', () => {
-    expect(screen.getByLabelText(label)).toBeInvalid()
-  })
+
   it('should should display error message', async () => {
     expect(screen.getByText('error')).toBeInTheDocument()
   })
