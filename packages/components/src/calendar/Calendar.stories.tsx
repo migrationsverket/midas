@@ -5,6 +5,11 @@ const meta: Meta<typeof Calendar> = {
   component: Calendar,
   title: 'Components/Calendar',
   tags: ['autodocs'],
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
 }
 export default meta
 type Story = StoryObj<typeof Calendar>

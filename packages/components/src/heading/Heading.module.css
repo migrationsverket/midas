@@ -1,0 +1,89 @@
+@value tokens: "../theme/tokens.css";
+@value --text-primary, --font-family from tokens;
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: --font-family;
+  color: --text-primary;
+  font-weight: 400;
+}
+
+.h1 {
+  /* token: size-07 */
+  font-size: 1.625rem;
+
+  /* token: line-height-07 */
+  line-height: 2rem;
+
+  &[data-expressive] {
+    /* token: size-09 */
+    font-size: 2.25rem;
+
+    /* token: line-height-09 */
+    line-height: 2.75rem;
+  }
+}
+
+.h2 {
+  /* token: size-05 */
+  font-size: 1.25rem;
+
+  /* token: line-height-06 */
+  line-height: 1.75rem;
+
+  &[data-expressive] {
+    font-weight: 500;
+
+    /* token: size-07 */
+    font-size: 1.625rem;
+
+    /* token: line-height-08 */
+    line-height: 2.25rem;
+  }
+}
+
+.h3 {
+  font-weight: 600;
+
+  /* token: size-03 */
+  font-size: 1rem;
+
+  /* token: line-height-05 */
+  line-height: 1.5rem;
+
+  &[data-expressive] {
+    /* token: size-06 */
+    font-size: 1.5rem;
+
+    /* token: line-height-07 */
+    line-height: 2rem;
+  }
+}
+
+.h4 {
+  &[data-expressive] {
+    font-weight: 600;
+
+    /* token: size-05 */
+    font-size: 1.25rem;
+
+    /* token: line-height-06 */
+    line-height: 1.75rem;
+  }
+}
+
+.h5 {
+  &[data-expressive] {
+    font-weight: 600;
+
+    /* token: size-04 */
+    font-size: 1.125rem;
+
+    /* token: line-height-05 */
+    line-height: 1.5rem;
+  }
+}

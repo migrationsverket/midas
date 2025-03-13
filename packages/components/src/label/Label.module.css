@@ -1,0 +1,26 @@
+@value tokens: "../theme/tokens.css";
+@value --text-primary, --font-family from tokens;
+
+.label-01,
+.label-02 {
+  color: --text-primary;
+  font-family: --font-family;
+}
+
+.label-01 {
+  /* token: size-02 */
+  font-size: 0.875rem;
+
+  /* token: line-height-02 */
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+.label-02 {
+  /* token: size-03 */
+  font-size: 1rem;
+
+  /* token: line-height-03 */
+  line-height: 1.25rem;
+  font-weight: 500;
+}

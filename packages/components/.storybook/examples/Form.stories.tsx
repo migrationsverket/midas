@@ -9,7 +9,6 @@ import {
   Radio,
   RadioGroup,
   Select,
-  Item,
   Button,
 } from '../../src/index'
 import React from 'react'
@@ -64,7 +63,7 @@ export const TwoColumnForm: Story = {
   render: () => {
     const ITEMS = ['A', 'B', 'C']
     const RADIOITEMS = ['Anledning A', 'Anledning B', 'Anledning C']
-    const SEX = ['Man', 'Kvinna', 'Annat']
+
     return (
       <div>
         <Flex>

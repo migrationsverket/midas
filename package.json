@@ -115,6 +115,7 @@
     "lint-staged": "^15.4.3",
     "lucide-react": "^0.453.0",
     "nx": "^20.5.0",
+    "nx-stylelint": "^18.0.0",
     "plop": "^4.0.1",
     "postcss": "8.4.38",
     "postcss-modules": "^6.0.0",

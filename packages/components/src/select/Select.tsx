@@ -277,10 +277,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                     state.displayValidation.validationErrors.length > 0 ||
                     state.displayValidation.isInvalid
                   }
-                  aria-invalid={
-                    state.displayValidation.validationErrors.length > 0 ||
-                    state.displayValidation.isInvalid
-                  }
                   type='button'
                   ref={ref}
                 >
@@ -331,6 +327,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                           >
                             <div className={styles.checkboxContainer}>
                               <input
+                                className={styles.checkbox}
                                 type='checkbox'
                                 checked={isAllSelection}
                                 ref={refAllButton}
