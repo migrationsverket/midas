@@ -45,7 +45,7 @@ export const Primary: Story = {
   },
 }
 
-export const NotValid = {
+export const Invalid = {
   args: {
     ...Primary.args,
     isInvalid: true,
@@ -54,6 +54,7 @@ export const NotValid = {
 }
 
 export const Required: Story = {
+  tags: ['!dev'],
   args: {
     isRequired: true,
     label: 'Label',
@@ -80,6 +81,7 @@ export const Required: Story = {
 }
 
 export const CustomValidation: Story = {
+  tags: ['!dev'],
   args: {
     label: 'Label',
     validate: (value: string) =>
@@ -166,6 +168,7 @@ export const ShowCounter: Story = {
 }
 
 export const ShowCounterWithDefaultValue: Story = {
+  tags: ['!dev'],
   args: {
     ...Primary.args,
     showCounter: true,
