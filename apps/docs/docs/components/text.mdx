@@ -1,0 +1,82 @@
+---
+title: Text
+---
+
+import { Text } from '@midas-ds/components'
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Text }}
+      {...props}
+    >
+      {`<Text>Jag är ett vanligt span-element</Text>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'typography-text'}
+  friendlyName={'Brödtext, p, span, i, em, strong'}
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Text.html'
+/>
+
+Brödtext med fördefinerad stil
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Text } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Varianter
+
+### Stil
+
+Använd egenskapen `variant` för att justera textens utseende
+
+<LiveCodeBlock
+  scope={{ Text }}
+  {...props}
+>
+  {`<Text variant="body-01">Jag är ett span-element av varianten 'body-01'</Text>`}
+</LiveCodeBlock>
+
+### Extern
+
+Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
+
+<LiveCodeBlock
+  scope={{ Text }}
+  {...props}
+>
+  {`<Text variant="body-02" isExpressive>Jag är ett externt span-element</Text>`}
+</LiveCodeBlock>
+
+### Val av element
+
+Egenskapen `elementType` kan användas för att ändra textens DOM-element.
+
+<LiveCodeBlock
+  scope={{ Text }}
+  {...props}
+>
+  {`<Text elementType="em">Jag är kursiv och viktig</Text>`}
+</LiveCodeBlock>
+
+## API
+
+### Text
+
+<PropTable name='Text' />
