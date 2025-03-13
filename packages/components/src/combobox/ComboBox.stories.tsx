@@ -101,6 +101,7 @@ export const Required: Story = {
     'aria-label': 'test',
     isRequired: true,
   },
+  tags: ['!dev'],
   render: args => (
     <form>
       <ComboBox {...args}>
@@ -132,6 +133,7 @@ export const CustomErrorMessage: Story = {
     isRequired: true,
     errorMessage: 'Custom error message',
   },
+  tags: ['!dev'],
   render: args => (
     <form>
       <ComboBox {...args}>
