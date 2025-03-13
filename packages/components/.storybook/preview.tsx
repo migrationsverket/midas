@@ -6,6 +6,7 @@ import {
   customLightTheme,
   getPreferredColorScheme,
 } from './custom-theme'
+import React from 'react'
 
 const preview: Preview = {
   parameters: {
@@ -13,7 +14,7 @@ const preview: Preview = {
       default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: 'rgb(18, 18, 18)' },
+        { name: 'Dark', value: '#121212' },
       ],
     },
     controls: {
@@ -42,30 +43,39 @@ const preview: Preview = {
   decorators: [
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (Story: any, context: any) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const Mode = () => {
+      const [colorMode, setColorMode] = React.useState<'light' | 'dark'>(
+        getPreferredColorScheme(),
+      )
+
+      React.useEffect(() => {
         const userSelectedBackground:
           | 'white'
-          | 'rgb(18, 18, 18)'
+          | '#121212'
           | 'transparent'
           | undefined = context.globals.backgrounds?.value
 
         if (
           userSelectedBackground === 'white' ||
-          userSelectedBackground === 'rgb(18, 18, 18)'
+          userSelectedBackground === '#121212'
         ) {
-          return userSelectedBackground === 'white' ? 'light' : 'dark'
+          return setColorMode(
+            userSelectedBackground === 'white' ? 'light' : 'dark',
+          )
         }
 
-        return getPreferredColorScheme()
-      }
+        return setColorMode(getPreferredColorScheme())
+      }, [context.globals.backgrounds])
+
+      React.useEffect(() => {
+        const popover = document.querySelector('body')
+        if (popover) (popover as HTMLElement).style.colorScheme = colorMode
+      }, [colorMode])
 
       return (
         <div
-          id={Mode()}
           style={{
-            colorScheme: Mode(),
-            backgroundColor: Mode() === 'light' ? 'white' : 'rgb(18, 18, 18)',
+            colorScheme: colorMode,
+            backgroundColor: colorMode === 'light' ? 'white' : '#121212',
           }}
         >
           <Story />
