@@ -1,24 +1,19 @@
 import {
   Button,
-  ButtonGroup,
+  ButtonGroup, Checkbox, CheckboxGroup,
   DatePicker,
   Radio,
   RadioGroup,
   Select,
-  TextField,
+  TextField
 } from '@midas-ds/components'
-import { countries } from '../assets/countries'
+import { carBrands } from '../assets/cars'
 import { FormEvent, useState } from 'react'
-
-const COUNTRIES = countries.map(country => ({
-  name: country.name,
-  id: country.code,
-}))
 
 export const FormPage = () => {
   const [submitted, setSubmitted] = useState<any>(null)
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    // event.preventDefault()
     // @ts-ignore
     const formData = Object.fromEntries(new FormData(event.currentTarget))
     setSubmitted(formData)
@@ -27,11 +22,15 @@ export const FormPage = () => {
     <>
       <h2>Native HTML form</h2>
       <form onSubmit={handleSubmit}>
+        <CheckboxGroup label="Form">
+          <Checkbox name={'likeForms'}>I like forms</Checkbox>
+        </CheckboxGroup>
         <TextField
           label='First Name'
           name={'firstName'}
         />
         <TextField
+          isRequired
           label='Last Name'
           name={'lastName'}
         />
@@ -43,10 +42,11 @@ export const FormPage = () => {
           <Radio value={'female'}>Female</Radio>
         </RadioGroup>
         <Select
-          label='Country'
-          name={'country'}
+          isRequired
+          label='Favorite car'
+          name={'car'}
           selectionMode={'single'}
-          options={COUNTRIES}
+          options={carBrands}
         ></Select>
         <DatePicker
           label={'Pick a date'}
