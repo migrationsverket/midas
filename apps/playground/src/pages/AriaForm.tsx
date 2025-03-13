@@ -11,44 +11,42 @@ import {
 } from '@midas-ds/components'
 import { carBrands } from '../assets/cars'
 import { FormEvent, useContext, useState } from 'react'
-import { Form, FormValidationContext } from 'react-aria-components'
+import { FieldError, Form, FormValidationContext, Input, TextField as AriaTextField, Label } from 'react-aria-components'
 
 // Fake server used in this example.
 function callServer(data: any) {
   if (data.firstName === 'pixelrick')
-  return {
-    errors: {
-      firstName: 'Sorry, this username is taken.'
+    return {
+      errors: {
+        firstName: 'Sorry, this username is taken.',
+      },
     }
-  };
-  return {}
 }
 
 export const AriaFormPage = () => {
   const [value, setValue] = useState<Record<string, any>>({})
-  let [errors, setErrors] = useState({});
+  let [errors, setErrors] = useState({})
 
   const handleChange = (value: Record<string, any>) => {
     setValue(prevState => ({ ...prevState, ...value }))
   }
-  const handleReset = () => {
+  const onReset = () => {
     setValue({})
   }
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     // @ts-ignore
     const formData = Object.fromEntries(new FormData(event.currentTarget))
     let result = callServer(formData)
-    setErrors(result.errors)
+    setErrors(result?.errors ?? {})
   }
   return (
     <>
       <h2>Aria Form</h2>
       <Form
         validationErrors={errors}
-        onSubmit={handleSubmit}
-        validationBehavior={'aria'}
-        onReset={handleReset}
+        onSubmit={onSubmit}
+        onReset={onReset}
       >
         <CheckboxGroup label='Form'>
           <Checkbox name={'likeForms'}>I like forms</Checkbox>
@@ -59,6 +57,7 @@ export const AriaFormPage = () => {
           description={'must be filled a valid name'}
           name={'firstName'}
           isRequired
+          value={value.firstName}
         />
         <TextField
           onChange={lastName => handleChange({ lastName })}
@@ -97,7 +96,10 @@ export const AriaFormPage = () => {
           </ButtonGroup>
         </div>
       </Form>
+      <h2>Form Value</h2>
       <pre>{value && JSON.stringify(value)}</pre>
+      <h2>Errors</h2>
+      <pre>{errors && JSON.stringify(errors)}</pre>
     </>
   )
 }

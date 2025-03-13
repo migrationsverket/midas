@@ -5,6 +5,7 @@ import App from './app/app';
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import { FormPage } from './pages/form'
 import { AriaFormPage } from './pages/AriaForm'
+import { ReactHookFormPage } from './pages/ReactHookForm'
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,8 @@ const router = createBrowserRouter([
         element: <AriaFormPage />,
       },
       {
-        path: "/contact",
-        element: <FormPage />,
+        path: "/react-hook-form",
+        element: <ReactHookFormPage />,
       },
     ],
   },

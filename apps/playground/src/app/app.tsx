@@ -7,9 +7,11 @@ export function App() {
       <nav>
         <Link to="/">Home</Link>
         {" | "}
-        <Link to="/form">Form</Link>
+        <Link to="/form">HtmlForm</Link>
         {" | "}
         <Link to="/aria-form">AriaForm</Link>
+        {" | "}
+        <Link to="/react-hook-form">ReactHookForm</Link>
       </nav>
 
       <Outlet />
