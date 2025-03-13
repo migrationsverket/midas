@@ -21,16 +21,33 @@ I punkt 11.7 av EN 301 549 beskrivs krav på att följa en användares inställn
 
 Implementationen sker som sagt automatiskt om projektet har uppdaterat `@midas-ds/components` och använder vår globala stylesheet. Om ert projekt inte är redo att stödja mörkt läge kan du stänga av mörkt läge genom att ändra färgschemat i CSS på vilken nivå som passar projektet.
 
-```
+```css
 body {
-    color-scheme: light;
+  color-scheme: light;
 }
 ```
 
 Använder du inte vår globala stylesheet kan du aktivera mörkt läge genom att definera bägge färgscheman.
 
-```
+```css
 body {
-    color-scheme: light dark;
+  color-scheme: light dark;
 }
+```
+
+## Tokens
+
+Du kan fortfarande använda tokens för att importera färger på egen hand. Observera dock att färgerna i `baseColors` är fasta värden och är inte dynamiska för ljust/mörkt läge. För att få en färg som anpassar sig behöver du importera en semantisk token.
+
+```tsx
+import { semantic, baseColors } from '@midas-ds/components/theme'
+```
+
+```tsx
+<div style={{ backgroundColor: semantic.background01 }}>
+  <p style={{ color: semantic.textPrimary }}>
+    En text som är mörk i ljust läge men ljus i mörkt läge på en bakgrund som gör tvärt om!
+  </p>
+  <p style={{ color: baseColors.black }}>En text som alltid är svart</p>
+</div>
 ```
