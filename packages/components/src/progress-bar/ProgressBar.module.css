@@ -1,0 +1,30 @@
+@value tokens: "../theme/tokens.css";
+@value smBreakpoint from tokens;
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+
+  @media smBreakpoint {
+    display: none;
+  }
+}
+
+.mobileHeading {
+  display: none;
+  text-align: right;
+
+  @media smBreakpoint {
+    display: block;
+  }
+}
+
+.bar {
+  background: #d9d9d9;
+  height: 0.25rem;
+}
+
+.fill {
+  background: #008d3c;
+  height: 100%;
+}
