@@ -1,28 +1,22 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family from tokens;
+@value --text-primary, --font-family, --size-03, --line-height-03, --line-height-04, --line-height-05 from tokens;
 
 .body-01,
 .body-02 {
-  /* token: text/primary */
   color: --text-primary;
   font-weight: 400;
   font-family: --font-family;
-
-  /* token: size-03 */
-  font-size: 1rem;
+  font-size: --size-03;
 }
 
 .body-01 {
-  /* token: line-height-03 */
-  line-height: 1.25rem;
+  line-height: --line-height-03;
 }
 
 .body-02 {
-  /* token: line-height-04 */
-  line-height: 1.375rem;
+  line-height: --line-height-04;
 
   &[data-expressive] {
-    /* token: line-height-05 */
-    line-height: 1.5rem;
+    line-height: --line-height-05;
   }
 }

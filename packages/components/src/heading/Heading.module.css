@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family from tokens;
+@value --font-family, --text-primary, --size-03, --size-04, --size-05, --size-06, --size-07, --size-09, --line-height-04, --line-height-05, --line-height-06, --line-height-07, --line-height-08, --line-height-09, --line-height-10 from tokens;
 
 .h1,
 .h2,
@@ -10,80 +10,61 @@
   font-family: --font-family;
   color: --text-primary;
   font-weight: 400;
+  font-size: --size-03;
+  line-height: --line-height-05;
 }
 
 .h1 {
-  /* token: size-07 */
+  /* 1.625 finns ej, hamnar mellan 06 och 07 */
   font-size: 1.625rem;
-
-  /* token: line-height-07 */
-  line-height: 2rem;
+  line-height: --line-height-07;
 
   &[data-expressive] {
-    /* token: size-09 */
-    font-size: 2.25rem;
+    font-size: --size-09;
 
-    /* token: line-height-09 */
-    line-height: 2.75rem;
+    /* 3 finns ej, större än 10 */
+    line-height: 3rem;
   }
 }
 
 .h2 {
-  /* token: size-05 */
-  font-size: 1.25rem;
-
-  /* token: line-height-06 */
-  line-height: 1.75rem;
+  font-size: --size-05;
+  line-height: --line-height-06;
 
   &[data-expressive] {
     font-weight: 500;
-
-    /* token: size-07 */
     font-size: 1.625rem;
 
-    /* token: line-height-08 */
-    line-height: 2.25rem;
+    /* 2.125 finns ej, mellan 7 och 8 */
+    line-height: 2.125rem;
   }
 }
 
 .h3 {
   font-weight: 600;
-
-  /* token: size-03 */
-  font-size: 1rem;
-
-  /* token: line-height-05 */
-  line-height: 1.5rem;
+  font-size: --size-03;
+  line-height: --line-height-05;
 
   &[data-expressive] {
-    /* token: size-06 */
-    font-size: 1.5rem;
-
-    /* token: line-height-07 */
-    line-height: 2rem;
+    font-size: --size-05;
+    line-height: --line-height-06;
   }
 }
 
 .h4 {
   &[data-expressive] {
     font-weight: 600;
+    font-size: --size-04;
 
-    /* token: size-05 */
-    font-size: 1.25rem;
-
-    /* token: line-height-06 */
-    line-height: 1.75rem;
+    /* 1.625 finns ej, mellan 6 och 7 */
+    line-height: 1.625rem;
   }
 }
 
 .h5 {
   &[data-expressive] {
     font-weight: 600;
-
-    /* token: size-04 */
-    font-size: 1.125rem;
-
-    /* token: line-height-05 */
-    line-height: 1.5rem;
+    font-size: --size-03;
+    line-height: --line-height-05;
   }
 }

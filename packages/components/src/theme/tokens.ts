@@ -7,7 +7,7 @@ export const baseColors = {
 
   gray100: '#f2f2f2',
   gray150: '#e6e6e6',
-  gray200: '#bfbfbf',
+  gray200: '#d9d9d9',
   gray250: '#cccccc',
   gray300: '#bfbfbf',
   gray350: '#b3b3b3',
