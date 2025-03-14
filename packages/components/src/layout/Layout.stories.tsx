@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Layout, SidebarLinkGroup } from './Layout'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
-import { baseColors } from '../theme'
+import { semantic } from '../theme'
 import { LinkButton } from '../link-button'
 
 const meta: Meta<typeof Layout> = {
@@ -60,12 +60,12 @@ const AppExample = () => {
   return (
     <div
       style={{
-        background: baseColors.white,
+        background: semantic.layer02,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         height: '80vh',
-        border: `dotted 2px ${baseColors.gray20}`,
+        border: `dotted 2px ${semantic.borderSubtle}`,
       }}
     >
       Din applikation

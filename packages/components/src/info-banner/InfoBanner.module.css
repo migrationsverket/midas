@@ -1,8 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value display, signalGreen10, signalGreen100, signalBlue10, signalBlue100, signalYellow10, signalYellow100, signalRed10, signalRed100, black, semiBoldWeight from tokens;
+@value --font-family, --text-primary, --notification-border-success, --notification-background-success, --notification-border-info, --notification-background-info, --notification-border-warning, --notification-background-warning, --notification-border-important, --notification-background-important from tokens;
 
 .infoBanner {
-  font-family: display;
+  font-family: --font-family;
+  color: --text-primary;
   display: flex;
   font-size: 1rem;
   flex-direction: row;
@@ -11,23 +12,23 @@
   line-height: 1.3;
 
   &.success {
-    --border: signalGreen100;
-    --bg: signalGreen10;
+    --border: --notification-border-success;
+    --bg: --notification-background-success;
   }
 
   &.info {
-    --border: signalBlue100;
-    --bg: signalBlue10;
+    --border: --notification-border-info;
+    --bg: --notification-background-info;
   }
 
   &.important {
-    --border: signalYellow100;
-    --bg: signalYellow10;
+    --border: --notification-border-important;
+    --bg: --notification-background-important;
   }
 
   &.warning {
-    --border: signalRed100;
-    --bg: signalRed10;
+    --border: --notification-border-warning;
+    --bg: --notification-background-warning;
   }
 
   border-left: 3px solid var(--border);
@@ -41,7 +42,7 @@
 }
 
 .heading {
-  font-weight: semiBoldWeight;
+  font-weight: 500;
   margin-bottom: 0.25rem;
 }
 

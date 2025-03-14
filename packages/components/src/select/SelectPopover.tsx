@@ -16,7 +16,7 @@ type PopoverProps = {
   triggerRef: React.RefObject<HTMLButtonElement>
 }
 
-export const SelectPopover: React.VFC<PopoverProps> = ({
+export const SelectPopover: React.FC<PopoverProps> = ({
   isOpen,
   onClose,
   children,

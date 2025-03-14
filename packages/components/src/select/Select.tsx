@@ -264,6 +264,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               autoFocus={autoFocus}
             >
               <div className={styles.selectContainer}>
+                {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
                 <button
                   {...buttonProps}
                   {...mergeProps}

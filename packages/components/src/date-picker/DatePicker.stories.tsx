@@ -8,11 +8,23 @@ const meta: Meta<typeof DatePicker> = {
   tags: ['autodocs'],
   args: {
     label: 'Välj datum',
-    description: 'YYYY-MM-DD',
+    description: 'Beskrivning',
   },
   parameters: {
+    // UX team rules that placeholder contrast shouldn't be checked
     a11y: {
-      test: 'todo',
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            selector: '[data-placeholder="true"]',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: { 'color-contrast': { enabled: false } },
+      },
     },
   },
 }

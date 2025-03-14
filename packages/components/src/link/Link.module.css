@@ -1,31 +1,31 @@
 @value tokens: "../theme/tokens.css";
-@value display, blue130, blue150, gray150, gray50, mediumWeight, focus, regularWeight, linkVisited, black from tokens;
+@value --font-family, --link-enabled, --link-hover, --link-pressed, --link-visited, --text-disabled, --focus from tokens;
 
 .link {
-  font-family: display;
-  color: blue130;
+  font-family: --font-family;
+  color: --link-enabled;
   text-decoration: underline;
   display: inline-flex;
   cursor: pointer;
   gap: 0.25rem;
-  font-weight: regularWeight;
+  font-weight: 400;
   align-items: center;
 
   &:hover {
-    color: blue150;
+    color: --link-hover;
   }
 
   &:visited {
-    color: linkVisited;
+    color: --link-visited;
   }
 
   &[data-disabled] {
     cursor: disabled;
-    color: gray50;
+    color: --text-disabled;
   }
 
   &[data-pressed] {
-    color: black;
+    color: --link-pressed;
   }
 
   &[data-focused] {
@@ -33,7 +33,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: focus;
+    box-shadow: --focus;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -50,7 +50,7 @@
   display: inline-flex;
   gap: 0.5rem;
   text-decoration: none;
-  font-weight: mediumWeight;
+  font-weight: 500;
 
   &:hover {
     text-decoration: underline;

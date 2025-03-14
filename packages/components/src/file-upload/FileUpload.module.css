@@ -1,8 +1,8 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray10, gray90, mediumWeight, regularWeight from tokens;
+@value --font-family, --field-01, --background-01, --background-hover-01, --border-subtle from tokens;
 
 .box {
-  background-color: gray10;
+  background-color: --field-01;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -36,7 +36,7 @@
 }
 
 .container {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -44,27 +44,27 @@
 
 .label {
   font-size: 1rem;
-  font-weight: mediumWeight;
+  font-weight: 500;
   margin-bottom: 8px;
 }
 
 .text {
   font-size: 14px;
-  font-weight: regularWeight;
+  font-weight: 400;
   margin-bottom: 8px;
 }
 
 .dropzone {
   grid-area: Input;
-  border: 1px dashed gray90;
+  border: 1px dashed --border-subtle;
 
   /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='1' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
   padding: 1.5rem;
   text-align: center;
-  background-color: white;
+  background-color: --background-01;
 
   &:hover {
-    background-color: gray10;
+    background-color: --background-hover-01;
   }
 }
 

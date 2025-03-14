@@ -36,4 +36,18 @@
   position: relative;
   padding: 1rem;
   overflow: hidden;
+  background-color: white;
+
+  &[data-theme='dark'] {
+    background-color: #1b1b1d;
+  }
+}
+
+.previewToolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 0 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }

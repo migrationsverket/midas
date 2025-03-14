@@ -5,7 +5,6 @@
 }
 
 .container {
-  font-family: 'Inter';
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -21,6 +20,7 @@
   gap: 1rem;
   flex: 1;
 }
+
 .col {
   width: 50%;
 }

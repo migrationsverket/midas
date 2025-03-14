@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray10, gray20, gray30, black, normalTransition, regularWeight, mediumWeight from tokens;
+@value --font-family, --layer-01, --layer-selected-01, --layer-hover-01, --normal-transition, --text-primary from tokens;
 
 .root {
   --gap: 0.75rem;
@@ -13,11 +13,13 @@
     --gap: 0.25rem;
     --item-padding: 0.875rem;
     --content-padding: 1rem;
-    --background: gray10;
-    --background-active: gray20;
-    --background-hover: gray30;
+    --background: --layer-01;
+    --background-active: --layer-selected-01;
+    --background-hover: --layer-hover-01;
   }
 
+  font-family: --font-family;
+  color: --text-primary;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -28,14 +30,13 @@
   margin: 0;
   padding: 0;
   font-size: 1rem;
-  font-weight: regularWeight;
+  font-weight: 400;
   flex: 1 0 0%;
   text-align: left;
 }
 
 .trigger {
-  font-family: display;
-  color: black;
+  color: --text-primary;
   border: 0;
   cursor: pointer;
   display: flex;
@@ -44,6 +45,7 @@
   margin: 0;
 
   button {
+    color: --text-primary;
     width: 100%;
     justify-content: flex-start;
     gap: 0.5rem;
@@ -51,19 +53,19 @@
 
     .icon {
       transform: rotate(0deg);
-      transition: transform normalTransition ease;
+      transition: transform --normal-transition ease;
     }
 
     &[aria-expanded='true'] {
       background-color: var(--background-active);
 
       .triggerText {
-        font-weight: mediumWeight;
+        font-weight: 500;
       }
 
       .icon {
         transform: rotate(-180deg);
-        transition: transform normalTransition ease;
+        transition: transform --normal-transition ease;
       }
 
       &:hover {
@@ -72,14 +74,13 @@
     }
 
     &:hover {
-      background-color: var(--background-active);
+      background-color: var(--background-hover);
     }
   }
 }
 
 .item {
   background-color: var(--background);
-  font-family: display;
 }
 
 /* safari can't calculate correct so we skip the animation there as a compriomise */

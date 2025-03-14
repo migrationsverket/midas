@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray10, gray20, blue150, focus from tokens;
+@value --font-family, --field-01,--text-primary,--text-on-color,--text-disabled, --button-background-primary,--border-strong, --field-hover-01, --focus from tokens;
 
 .calendar {
   * {
@@ -24,20 +24,21 @@
     padding: 0.75rem;
   }
 
-  background-color: gray10;
-  font-family: display;
+  background-color: --field-01;
+  font-family: --font-family;
   display: inline-block;
   flex-direction: column;
   align-items: center;
   margin: auto;
+  color: --text-primary;
 
   & [data-unavailable] {
-    color: #bfbfbf;
+    color: --text-disabled;
   }
 
   & div:focus-visible,
   & div[data-focus-visible] {
-    outline: 2px solid black;
+    outline: 2px solid --border-strong;
 
     @media (forced-colors: active) {
       outline: 3px solid activeText;
@@ -54,17 +55,17 @@
 
   & button {
     border: none;
-    color: black;
-    background-color: gray10;
+    color: --text-primary;
+    background-color: --field-01;
     cursor: pointer;
 
     &:focus-visible,
     &[data-focus-visible] {
       outline: none;
-      box-shadow: focus;
+      box-shadow: --focus;
 
       @media (forced-colors: active) {
-        outline: 3px solid highlight;
+        outline: 3px solid;
         outline-offset: 2px;
       }
     }
@@ -77,30 +78,30 @@
 }
 
 .day {
-  border: solid 2px gray10;
+  border: solid 2px --field-01;
   cursor: pointer;
 
   &[data-hovered] {
-    background-color: gray20;
-    border-color: gray20;
+    background-color: --field-hover-01;
+    border-color: --field-hover-01;
   }
 
   &[data-selected='true'] {
-    color: white;
-    background-color: blue150;
-    border-color: blue150;
+    color: --text-on-color;
+    background-color: --button-background-primary;
+    border-color: --button-background-primary;
   }
 
   &[data-selection-start='true'] {
-    color: white;
-    background-color: blue150;
-    border-color: blue150;
+    color: --text-on-color;
+    background-color: --button-background-primary;
+    border-color: --button-background-primary;
   }
 
   &[data-selection-end='true'] {
     color: inherit;
-    background-color: gray10;
-    border-color: blue150;
+    background-color: --field-01;
+    border-color: --button-background-primary;
   }
 
   &.today {

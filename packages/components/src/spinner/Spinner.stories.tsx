@@ -21,13 +21,6 @@ export const Small: Story = {
   args: { small: true },
 }
 
-export const Dark: Story = {
-  parameters: {
-    backgrounds: { default: 'Dark' },
-  },
-  args: { dark: true },
-}
-
 export const InButton: Story = {
   args: { small: true, dark: true },
   render: ({ ...args }) => {

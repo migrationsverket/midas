@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value mdBreakpoint, lgBreakpoint, xlBreakpoint from tokens;
+@value --breakpoint-md, --breakpoint-lg, --breakpoint-xl from tokens;
 
 .container {
   --columns: 1;
@@ -21,20 +21,20 @@
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
 }
 
-@media mdBreakpoint {
+@media --breakpoint-md {
   .container {
     --columns: 12;
     --padding: 2rem;
   }
 }
 
-@media lgBreakpoint {
+@media --breakpoint-lg {
   .container {
     --gutter: 1.5rem;
   }
 }
 
-@media xlBreakpoint {
+@media --breakpoint-xl {
   .container {
     --padding: 0;
 
@@ -54,7 +54,7 @@
   grid-column: span 1;
 }
 
-@media mdBreakpoint {
+@media --breakpoint-md {
   .col-1 {
     grid-column: span 1;
   }

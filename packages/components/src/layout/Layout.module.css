@@ -1,11 +1,11 @@
 @value tokens: "../theme/tokens.css";
-@value display, primaryBackground, regularWeight, mediumWeight, gray10, gray20, gray30, gray60, gray70, gray130, gray150, mdBreakpoint, logoPrimary, focus from tokens;
+@value --font-family, --breakpoint-md, --background-01, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
   --headerHeight: 69px;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     --headerHeight: 85px;
   }
 }
@@ -18,15 +18,15 @@
 .header {
   position: sticky;
   top: 0;
-  font-family: display;
+  font-family: --font-family;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid gray70;
-  background-color: white;
+  border-bottom: 1px solid --border-subtle;
+  background-color: --background-01;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     padding: 1.25rem 1rem;
     z-index: 3;
   }
@@ -42,7 +42,7 @@
     display: none;
   }
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     gap: 2rem;
 
     > svg {
@@ -56,7 +56,7 @@
   display: none;
   max-height: 40px;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: block;
   }
 }
@@ -68,7 +68,7 @@
 .headerMenu {
   display: block;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: none;
   }
 }
@@ -76,14 +76,14 @@
 .toggleButton {
   display: block;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: none !important;
   }
 }
 
 .sidebar {
-  font-family: display;
-  background-color: white;
+  font-family: --font-family;
+  background-color: --background-01;
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
@@ -95,9 +95,9 @@
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
   z-index: 2;
-  border-right: 1px solid gray60;
+  border-right: 1px solid --border-subtle;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     position: sticky;
     top: var(--headerHeight);
     align-self: start;
@@ -108,21 +108,21 @@
 }
 
 .main {
-  font-family: display;
+  font-family: --font-family;
   flex: 0 0 auto;
   width: 100%;
   min-height: 100%;
 
-  @media mdBreakpoint {
-    background-color: gray10;
+  @media --breakpoint-md {
+    background-color: --layer-01;
   }
 }
 
 .app {
   background-clip: content-box;
-  background-color: white;
+  background-color: --layer-01;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     padding: 2rem;
   }
 }
@@ -144,18 +144,17 @@
 }
 
 .appName {
-  color: gray150;
+  color: --text-primary;
   font-size: 0.875rem;
-  font-weight: regularWeight;
+  font-weight: 400;
   margin: 0;
 }
 
 .collapseButton {
   display: none !important;
-  color: currentColor !important;
   padding: calc(0.875rem - 1px) !important;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: flex !important;
   }
 }
@@ -171,14 +170,14 @@
 }
 
 .userName {
-  color: gray150;
+  color: --text-primary;
   margin: 0;
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   display: none;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: block;
   }
 }
@@ -190,13 +189,13 @@
 }
 
 .userTitle {
-  color: gray150;
+  color: --text-primary;
   margin: 0;
   font-size: 0.875rem;
   font-weight: 400;
   display: none;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: block;
   }
 }
@@ -207,7 +206,7 @@
   font-weight: 500;
   display: block;
 
-  @media mdBreakpoint {
+  @media --breakpoint-md {
     display: none;
   }
 }
@@ -226,7 +225,7 @@
 }
 
 .listGroupTitle {
-  color: gray130;
+  color: --text-secondary;
   font-size: 0.875rem;
   padding: 0.5rem;
   margin: 0;
@@ -246,29 +245,29 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 0.5rem;
-  color: gray150;
+  color: --text-primary;
   flex: 1 0 0%;
   transition: 100ms;
   text-decoration: none;
 
   svg {
-    stroke: black;
+    stroke: --icon-primary;
   }
 
   &:hover,
   &:visited {
-    background-color: gray10;
-    color: gray150;
+    background-color: --button-background-tertiary-hover;
+    color: --text-primary;
     cursor: pointer;
 
     svg {
-      stroke: black;
+      stroke: --icon-primary;
       min-width: 1.25rem;
     }
   }
 
   &[data-pressed] {
-    background-color: gray20;
+    background-color: --button-background-tertiary-active;
   }
 
   &[data-focused] {
@@ -280,7 +279,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: focus;
+    box-shadow: --focus;
     outline: none;
   }
 }
@@ -291,8 +290,8 @@
 }
 
 .active {
-  background-color: gray10;
-  color: black;
+  background-color: --button-background-tertiary-active;
+  color: --text-primary;
 }
 
 .linkText {

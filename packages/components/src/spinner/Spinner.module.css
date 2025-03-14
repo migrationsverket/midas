@@ -1,12 +1,12 @@
 @value tokens: "../theme/tokens.css";
-@value red100, blue150 from tokens;
+@value --icon-primary, --icon-on-color from tokens;
 
 .container {
   display: inline-flex;
 }
 
 .spinner {
-  color: red100;
+  color: --icon-primary;
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
 
@@ -16,7 +16,7 @@
 }
 
 .dark {
-  color: white;
+  color: --icon-on-color;
 }
 
 .vsHidden {

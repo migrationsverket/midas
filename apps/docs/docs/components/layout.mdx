@@ -6,7 +6,7 @@ description: En skalkomponent för att få en simpel sidomeny och sidhuvud.
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Layout, LinkButton } from '@midas-ds/components'
-import { baseColors } from '@midas-ds/components/theme'
+import { semantic } from '@midas-ds/components/theme'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
 
@@ -14,12 +14,12 @@ export const AppExample = () => {
   return (
     <div
       style={{
-        background: baseColors.white,
+        background: semantic.layer02,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        border: `dotted 2px ${baseColors.gray20}`,
+        border: `dotted 2px ${semantic.borderSubtle}`,
       }}
     >
       Din applikation

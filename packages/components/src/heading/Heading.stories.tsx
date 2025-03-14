@@ -11,6 +11,14 @@ const meta: Meta<typeof Heading> = {
   args: {
     isExpressive: false,
   },
+  argTypes: {
+    level: {
+      control: {
+        max: 6,
+        min: 1,
+      },
+    },
+  },
 }
 
 export const Heading1: Story = {
@@ -36,7 +44,7 @@ export const ExpressiveHeading1: Story = {
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
       'font-size': '36px',
-      'line-height': '44px',
+      'line-height': '48px',
       'font-weight': 400,
     })
   },
@@ -65,7 +73,7 @@ export const ExpressiveHeading2: Story = {
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
       'font-size': '26px',
-      'line-height': '36px',
+      'line-height': '34px',
       'font-weight': 500,
     })
   },
@@ -93,8 +101,8 @@ export const ExpressiveHeading3: Story = {
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
-      'font-size': '24px',
-      'line-height': '32px',
+      'font-size': '20px',
+      'line-height': '28px',
       'font-weight': 600,
     })
   },
@@ -108,8 +116,8 @@ export const ExpressiveHeading4: Story = {
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
-      'font-size': '20px',
-      'line-height': '28px',
+      'font-size': '18px',
+      'line-height': '26px',
       'font-weight': 600,
     })
   },
@@ -123,7 +131,7 @@ export const ExpressiveHeading5: Story = {
   },
   play: async ({ canvas }) => {
     expect(canvas.getByRole('heading')).toHaveStyle({
-      'font-size': '18px',
+      'font-size': '16px',
       'line-height': '24px',
       'font-weight': 600,
     })
