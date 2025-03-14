@@ -48,6 +48,7 @@ export const Required: Story = {
     isRequired: true,
     'aria-label': 'test',
   },
+  tags: ['!dev'],
   render: ({ ...args }) => {
     return (
       <form>
