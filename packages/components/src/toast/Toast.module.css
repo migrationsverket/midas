@@ -27,24 +27,24 @@
 
 @keyframes slideInTop {
   from {
-    transform: translateY(calc(-100% + 1rem));
+    transform: translateY(calc(-100%));
     opacity: 0;
   }
 
   to {
-    transform: translateY(1rem);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
 @keyframes slideOutTop {
   from {
-    transform: translateY(1rem);
+    transform: translateY(0);
     opacity: 1;
   }
 
   to {
-    transform: translateY(calc(-100% + 1rem));
+    transform: translateY(calc(-100%));
     opacity: 0;
   }
 }
@@ -147,7 +147,7 @@
   line-height: 1.2;
 }
 
-.toast[data-animation='entering'] {
+::view-transition-new(*):only-child {
   animation-name: slideInTop;
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
@@ -159,7 +159,7 @@
   }
 }
 
-.toast[data-animation='exiting'] {
+::view-transition-old(*):only-child {
   animation-name: slideOutTop;
   animation-duration: 500ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
