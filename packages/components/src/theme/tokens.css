@@ -102,9 +102,9 @@
 /* -- Semantic -- */
 
 /* Background */
-@value --background-01: light-dark(--white, --gray-30);
+@value --background-01: light-dark(--white, --gray-200);
 @value --background-hover-01: light-dark(--white-hover, --gray-190);
-@value --background-inverse-01: light-dark(--gray-30, --gray-10);
+@value --background-inverse-01: light-dark(--gray-200, --gray-10);
 
 /* Layer 01 */
 @value --layer-01: light-dark(--gray-10, --gray-180);
@@ -132,7 +132,7 @@
 @value --brand-primary: light-dark(--red-130, --red-130);
 
 /* Border */
-@value --border-strong: light-dark(--gray-30, --gray-10);
+@value --border-strong: light-dark(--gray-200, --gray-10);
 @value --border-medium: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
 @value --border-brand: light-dark(--blue-170, --blue-170);
@@ -156,7 +156,7 @@
 @value --field-skeleton: light-dark(--gray-10, --gray-180);
 
 /* Icon */
-@value --icon-primary: light-dark(--gray-30, --gray-10);
+@value --icon-primary: light-dark(--gray-200, --gray-10);
 @value --icon-secondary: light-dark(--blue-170, --blue-170);
 @value --icon-inverse: light-dark(--white, --black);
 @value --icon-on-color: light-dark(--white, --white);
@@ -170,7 +170,7 @@
 /* Link */
 @value --link-enabled: light-dark(--blue-120, --blue-100);
 @value --link-hover: light-dark(--blue-170, --blue-90);
-@value --link-pressed: light-dark(--gray-30, --blue-70);
+@value --link-pressed: light-dark(--gray-200, --blue-70);
 @value --link-visited: light-dark(--purple, --purple);
 
 /* Notification */
@@ -184,7 +184,7 @@
 @value --notification-background-warning: light-dark(--signal-red-20, --layer-01);
 
 /* Text */
-@value --text-primary: light-dark(--gray-30, --gray-10);
+@value --text-primary: light-dark(--gray-200, --gray-10);
 @value --text-secondary: light-dark(--gray-140, --gray-70);
 @value --text-brand: light-dark(--blue-170, --gray-10);
 @value --text-on-color: light-dark(--white, --white);
@@ -198,7 +198,7 @@
 @value --button-background-primary: light-dark(--blue-170, --blue-120);
 @value --button-background-primary-hover: light-dark(--blue-140, --blue-140);
 @value --button-background-primary-active: light-dark(--blue-120, --blue-170);
-@value --button-background-secondary: light-dark(--white, --gray-30);
+@value --button-background-secondary: light-dark(--white, --gray-200);
 @value --button-background-secondary-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-secondary-active: light-dark(--gray-30, --gray-180);
 @value --button-background-tertiary-hover: light-dark(--white-hover, --gray-190);

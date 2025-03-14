@@ -213,7 +213,7 @@ export const semantic = {
   buttonBackgroundTertiaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
   buttonBackgroundDanger: `light-dark(${baseColors.signalRed130}, ${baseColors.signalRed130})`,
   buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
-  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed900}, ${baseColors.signalRed900})`,
+  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed150})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBackgroundGhostHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
