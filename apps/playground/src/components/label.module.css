@@ -1,0 +1,15 @@
+@value tokens: "../../../../packages/components/src/theme/tokens.css";
+@value display, mediumWeight, regularWeight from tokens;
+
+
+.label {
+  font-family: display;
+  font-size: 1rem;
+  font-weight: mediumWeight;
+}
+
+.text {
+  font-family: display;
+  font-size: 0.875rem;
+  font-weight: regularWeight;
+}

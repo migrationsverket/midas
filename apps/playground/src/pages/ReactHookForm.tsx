@@ -1,12 +1,17 @@
 import { Controller, useForm } from 'react-hook-form'
 import {
-  FieldError,
+  FieldError as AriaFieldError,
   Form,
-  Input,
-  Label,
+  Input as AriaInput,
+  Label as AriaLabel,
   TextField as AriaTextField,
+  Text as AriaText,
 } from 'react-aria-components'
-import { TextField, Button } from '@midas-ds/components'
+import { Input } from '../../src/components/Input'
+import { Label, Text } from '../../src/components/Label'
+import { FieldError } from '../../src/components/FieldError'
+import { TextField as MidasTextField, Button, DateField } from '@midas-ds/components'
+import {TextField} from '../../src/components/TextField'
 import styles from '../app/app.module.css'
 
 export function ReactHookFormPage() {
@@ -14,6 +19,8 @@ export function ReactHookFormPage() {
     defaultValues: {
       name: '',
       lastName: '',
+      address: '',
+      date: null,
     },
   })
   let onSubmit = (data: any) => {
@@ -33,13 +40,16 @@ export function ReactHookFormPage() {
         <Controller
           control={control}
           name='name'
-          rules={{ required: 'Name is required.' }}
+          rules={{
+            required: 'Name is required.',
+            validate: x =>
+              x === 'pixelrick' ? 'PixelRick is taken!' : undefined,
+          }}
           render={({
             field: { name, value, onChange, onBlur, ref },
             fieldState: { invalid, error },
           }) => (
             <AriaTextField
-              // label={'Name'}
               name={name}
               value={value}
               onChange={onChange}
@@ -48,12 +58,12 @@ export function ReactHookFormPage() {
               // Let React Hook Form handle validation instead of the browser.
               validationBehavior='aria'
               isInvalid={invalid}
-              errorMessage={error?.message}
+              // errorMessage={error?.message}
             >
-              // Assign React Hook Form ref to Input so it can focus the Input
-              after validation.
-              <Input ref={ref} />
+              <Label>Namn</Label>
+              <Text slot={'description'}>Hej</Text>
               <FieldError>{error?.message}</FieldError>
+              <Input ref={ref} />
             </AriaTextField>
           )}
         />
@@ -66,7 +76,6 @@ export function ReactHookFormPage() {
             fieldState: { invalid, error },
           }) => (
             <TextField
-              ref={ref}
               label={'Last Name'}
               name={name}
               value={value}
@@ -80,9 +89,61 @@ export function ReactHookFormPage() {
             >
               // Assign React Hook Form ref to Input so it can focus the Input
               after validation.
-              {/*            <Input ref={ref} />
-            <FieldError>{error?.message}</FieldError>*/}
+              <FieldError>{error?.message}</FieldError>
             </TextField>
+          )}
+        />
+        <Controller
+          control={control}
+          name='address'
+          rules={{ required: 'Address is required.' }}
+          render={({
+            field: { name, value, onChange, onBlur, ref },
+            fieldState: { invalid, error },
+          }) => (
+            <AriaTextField
+              // label={'Address'}
+              name={name}
+              value={value}
+              onChange={onChange}
+              onBlur={onBlur}
+              isRequired
+              // Let React Hook Form handle validation instead of the browser.
+              validationBehavior='aria'
+              isInvalid={invalid}
+              // errorMessage={error?.message}
+            >
+              <AriaInput ref={ref}></AriaInput>
+              // Assign React Hook Form ref to Input so it can focus the Input
+              after validation.
+              <FieldError>{error?.message}</FieldError>
+            </AriaTextField>
+          )}
+        />
+        <Controller
+          control={control}
+          name='date'
+          rules={{ required: 'Date is required.' }}
+          render={({
+            field: { name, value, onChange, onBlur, ref },
+            fieldState: { invalid, error },
+          }) => (
+            <DateField
+              label={'Address'}
+              name={name}
+              value={value}
+              onChange={onChange}
+              onBlur={onBlur}
+              isRequired
+              // Let React Hook Form handle validation instead of the browser.
+              validationBehavior='aria'
+              isInvalid={invalid}
+              errorMessage={error?.message}
+            >
+              // Assign React Hook Form ref to Input so it can focus the Input
+              after validation.
+              <FieldError>{error?.message}</FieldError>
+            </DateField>
           )}
         />
         <Button type='submit'>Submit</Button>

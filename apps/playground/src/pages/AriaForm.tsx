@@ -10,8 +10,8 @@ import {
   TextField,
 } from '@midas-ds/components'
 import { carBrands } from '../assets/cars'
-import { FormEvent, useContext, useState } from 'react'
-import { FieldError, Form, FormValidationContext, Input, TextField as AriaTextField, Label } from 'react-aria-components'
+import { FormEvent, useState } from 'react'
+import { Form } from 'react-aria-components'
 
 // Fake server used in this example.
 function callServer(data: any) {
@@ -24,7 +24,10 @@ function callServer(data: any) {
 }
 
 export const AriaFormPage = () => {
-  const [value, setValue] = useState<Record<string, any>>({})
+  const [value, setValue] = useState<Record<string, any>>({
+    firstName: '',
+    lastName: '',
+  })
   let [errors, setErrors] = useState({})
 
   const handleChange = (value: Record<string, any>) => {
@@ -45,6 +48,7 @@ export const AriaFormPage = () => {
       <h2>Aria Form</h2>
       <Form
         validationErrors={errors}
+        onInvalid={e => console.log(e)}
         onSubmit={onSubmit}
         onReset={onReset}
       >
@@ -54,6 +58,8 @@ export const AriaFormPage = () => {
         <TextField
           onChange={firstName => handleChange({ firstName })}
           label='First Name'
+          minLength={3}
+          maxLength={10}
           description={'must be filled a valid name'}
           name={'firstName'}
           isRequired

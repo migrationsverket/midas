@@ -3,9 +3,10 @@ import * as ReactDOM from 'react-dom/client';
 
 import App from './app/app';
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import { FormPage } from './pages/form'
+import { FormPage } from './pages/HtmlForm'
 import { AriaFormPage } from './pages/AriaForm'
 import { ReactHookFormPage } from './pages/ReactHookForm'
+import { AriaFormCompositePage } from './pages/AriaFormComposite'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/react-hook-form",
         element: <ReactHookFormPage />,
+      },
+      {
+        path: "/aria-form-version-2",
+        element: <AriaFormCompositePage />,
       },
     ],
   },

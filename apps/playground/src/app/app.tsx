@@ -12,6 +12,8 @@ export function App() {
         <Link to="/aria-form">AriaForm</Link>
         {" | "}
         <Link to="/react-hook-form">ReactHookForm</Link>
+        {" | "}
+        <Link to="/aria-form-version-2">Aria with alternative cmp</Link>
       </nav>
 
       <Outlet />

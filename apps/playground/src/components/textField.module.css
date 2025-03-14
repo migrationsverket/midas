@@ -1,0 +1,10 @@
+@value tokens: "../../../../packages/components/src/theme/tokens.css";
+@value display, mediumWeight, regularWeight from tokens;
+
+
+.textField {
+  display: flex;
+  flex-direction: column;
+}
+
+
