@@ -33,4 +33,3 @@ export * from './text';
 export * from './heading';
 export * from './label';
 export * from './progress-bar';
-export * from './stepper';
