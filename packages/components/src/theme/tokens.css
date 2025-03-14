@@ -25,7 +25,7 @@
 @value --gray-200: #171717;
 @value --blue-10: #eaf2f6;
 @value --blue-20: #d5e5ed;
-@value --blue-50: #abcbdb;
+@value --blue-40: #abcbdb;
 @value --blue-60: #82b0c9;
 @value --blue-70: #6ca3c0;
 @value --blue-80: #5897b8;
@@ -34,7 +34,7 @@
 @value --blue-140: #25607f;
 @value --blue-170: #143c50;
 @value --purple: #663366;
-@value --red-130: #b90835;
+@value --red-100: #b90835;
 @value --signal-blue-20: #eaf2f6;
 @value --signal-blue-130: #0066cc;
 @value --signal-green-20: #d5f2d9;
@@ -130,7 +130,7 @@
 @value --layer-accent-selected-02: light-dark(--gray-30, --gray-160);
 
 /* Brand */
-@value --brand-primary: light-dark(--red-130, --red-130);
+@value --brand-primary: light-dark(--red-100, --red-100);
 
 /* Border */
 @value --border-strong: light-dark(--gray-200, --gray-10);
