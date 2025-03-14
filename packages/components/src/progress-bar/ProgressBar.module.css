@@ -1,0 +1,50 @@
+@value tokens: "../theme/tokens.css";
+@value gray30, signalGreen100 from tokens;
+
+.progressBar {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas:
+    'label value'
+    'bar bar';
+  grid-template-columns: 1fr auto;
+
+  .label {
+    grid-area: label;
+  }
+
+  .value {
+    grid-area: value;
+  }
+
+  .bar {
+    background: gray30;
+    grid-area: bar;
+    height: 0.25rem;
+    overflow: hidden;
+
+    .fill {
+      background: signalGreen100;
+      height: 100%;
+    }
+  }
+
+  &:not([aria-valuenow]) {
+    .fill {
+      will-change: transform;
+      background: signalGreen100;
+      height: 100%;
+      animation: 2s ease-in-out infinite indeterminate;
+    }
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    transform: translate(-100%);
+  }
+
+  100% {
+    transform: translate(200%);
+  }
+}
