@@ -4,55 +4,65 @@ import {
   ProgressBarProps as AriaProgressBarProps,
 } from 'react-aria-components'
 import styles from './ProgressBar.module.css'
-
-interface Step {
-  id: number
-  title: string
-}
+import { Label, LabelProps } from '../label'
+import clsx from 'clsx'
 
 interface ProgressBarProps extends AriaProgressBarProps {
-  steps: Step[]
+  /**
+   * A visual label
+   * */
+  label?: string
+  /**
+   * Props for the visual label and/or the value label
+   * */
+  labelProps?: LabelProps
+  /**
+   * Show the value label
+   */
+  showValueLabel?: boolean
 }
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
-  steps,
-  minValue = 0,
-  ...props
+  label,
+  labelProps,
+  showValueLabel = false,
+  ...progressBarProps
 }) => {
   return (
-    <div>
-      <div className={styles.heading}>
-        {steps.map(({ title }, i) => (
-          <div key={title + i}>
-            {props.value !== undefined &&
-              props.value < i &&
-              'uncompleted task: '}
-            {i === props.value && 'current task: '}
-            {!!props.value && i < props.value && 'completed task: '}
-            {title}
-          </div>
-        ))}
-      </div>
-      {props.value !== undefined && (
-        <div className={styles.mobileHeading}>
-          Steg {props.value === steps.length ? props.value : props.value + 1} av{' '}
-          {steps.length}
-        </div>
-      )}
-      <AriaProgressBar
-        minValue={minValue}
-        maxValue={props.maxValue || steps.length}
-        {...props}
-      >
-        {({ percentage }) => (
+    <AriaProgressBar
+      {...progressBarProps}
+      className={clsx(styles.progressBar, progressBarProps.className)}
+    >
+      {({ percentage, valueText: valueLabel, isIndeterminate }) => (
+        <>
+          {label && (
+            <Label
+              elementType='span'
+              {...labelProps}
+              className={clsx(labelProps?.className, styles.label)}
+            >
+              {label}
+            </Label>
+          )}
+          {showValueLabel && (
+            <Label
+              elementType='span'
+              {...labelProps}
+              // Override the label id to prevent duplicates
+              id=''
+              className={clsx(labelProps?.className, styles.value)}
+            >
+              {valueLabel}
+            </Label>
+          )}
           <div className={styles.bar}>
             <div
               className={styles.fill}
-              style={{ width: `${percentage}%` }}
+              style={{ width: `${isIndeterminate ? 50 : percentage}%` }}
             />
           </div>
-        )}
-      </AriaProgressBar>
-    </div>
+        </>
+      )}
+    </AriaProgressBar>
   )
 }
