@@ -27,7 +27,6 @@
 @value --blue-20: #d5e5ed;
 @value --blue-40: #abcbdb;
 @value --blue-60: #82b0c9;
-@value --blue-70: #6ca3c0;
 @value --blue-80: #5897b8;
 @value --blue-90: #4289ad;
 @value --blue-100: #2e7ca5;
@@ -111,7 +110,7 @@
 @value --layer-01: light-dark(--gray-10, --gray-180);
 @value --layer-hover-01: light-dark(--gray-20, --gray-170);
 @value --layer-selected-01: light-dark(--gray-30, --gray-160);
-@value --layer-selected-hover-01: light-dark(--gray-40, --gray-20);
+@value --layer-selected-hover-01: light-dark(--gray-40, --gray-150);
 
 /* Layer 02 */
 @value --layer-02: light-dark(--white, --gray-160);
@@ -159,7 +158,7 @@
 /* Icon */
 @value --icon-primary: light-dark(--gray-200, --gray-10);
 @value --icon-secondary: light-dark(--blue-170, --blue-100);
-@value --icon-inverse: light-dark(--white, --black);
+@value --icon-inverse: light-dark(--white, --gray-200);
 @value --icon-on-color: light-dark(--white, --white);
 @value --icon-danger: light-dark(--signal-red-130, --signal-red-130);
 @value --icon-disabled: light-dark(--gray-50, --gray-140);
@@ -169,9 +168,9 @@
 @value --icon-important: light-dark(--signal-yellow-130, --signal-yellow-130);
 
 /* Link */
-@value --link-enabled: light-dark(--blue-120, --blue-90);
+@value --link-enabled: light-dark(--blue-100, --blue-90);
 @value --link-hover: light-dark(--blue-170, --blue-80);
-@value --link-pressed: light-dark(--gray-200, --blue-70);
+@value --link-pressed: light-dark(--gray-200, --blue-60);
 @value --link-visited: light-dark(--purple, --purple);
 
 /* Notification */
@@ -196,9 +195,9 @@
 @value --text-placeholder: light-dark(--gray-70, --gray-140);
 
 /* Button */
-@value --button-background-primary: light-dark(--blue-170, --blue-120);
+@value --button-background-primary: light-dark(--blue-170, --blue-100);
 @value --button-background-primary-hover: light-dark(--blue-140, --blue-140);
-@value --button-background-primary-active: light-dark(--blue-120, --blue-170);
+@value --button-background-primary-active: light-dark(--blue-100, --blue-170);
 @value --button-background-secondary: light-dark(--white, --gray-200);
 @value --button-background-secondary-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-secondary-active: light-dark(--gray-30, --gray-180);
@@ -214,4 +213,4 @@
 @value --button-border-primary: light-dark(--border-brand, --gray-10);
 
 /* Logo */
-@value --logo-primary: light-dark(--red-130, --white);
+@value --logo-primary: light-dark(--red-100, --white);
