@@ -5,10 +5,9 @@ import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
+import { useColorMode } from '@docusaurus/theme-common'
 
 export default function Hello() {
-  const imgSrc = useBaseUrl('/img/HeroImage.png')
-
   return (
     <Layout
       title='Migrationsverkets designsystem'
@@ -49,14 +48,24 @@ export default function Hello() {
             </div>
           </div>
           <div className='col col--6'>
-            <img
-              className={styles.image}
-              src={imgSrc}
-              alt=''
-            />
+            <HeaderImage />
           </div>
         </div>
       </div>
     </Layout>
+  )
+}
+
+function HeaderImage() {
+  const imgSrc = useBaseUrl('/img/HeroImage.png')
+  const imgSrcDark = useBaseUrl('/img/HeroImageDark.png')
+  const { colorMode } = useColorMode()
+
+  return (
+    <img
+      className={styles.image}
+      src={colorMode === 'light' ? imgSrc : imgSrcDark}
+      alt=''
+    />
   )
 }
