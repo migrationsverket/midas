@@ -26,10 +26,11 @@
 @value --blue-10: #eaf2f6;
 @value --blue-20: #d5e5ed;
 @value --blue-50: #abcbdb;
-@value --blue-70: #82b0c9;
-@value --blue-90: #5897b8;
-@value --blue-100: #4289ad;
-@value --blue-120: #2e7ca5;
+@value --blue-60: #82b0c9;
+@value --blue-70: #6ca3c0;
+@value --blue-80: #5897b8;
+@value --blue-90: #4289ad;
+@value --blue-100: #2e7ca5;
 @value --blue-140: #25607f;
 @value --blue-170: #143c50;
 @value --purple: #663366;
@@ -114,13 +115,13 @@
 
 /* Layer 02 */
 @value --layer-02: light-dark(--white, --gray-160);
-@value --layer-hover-02: light-dark(--white-hover, --gray-20);
+@value --layer-hover-02: light-dark(--white-hover, --gray-150);
 @value --layer-selected-02: light-dark(--gray-30, --gray-140);
 @value --layer-selected-hover-02: light-dark(--gray-40, --gray-130);
 
 /* Layer Accent 01 */
 @value --layer-accent-01: light-dark(--gray-30, --gray-160);
-@value --layer-accent-hover-01: light-dark(--gray-40, --gray-20);
+@value --layer-accent-hover-01: light-dark(--gray-40, --gray-150);
 @value --layer-accent-selected-01: light-dark(--gray-50, --gray-140);
 
 /* Layer Accent 02 */
@@ -148,7 +149,7 @@
 
 /* Field 02 */
 @value --field-02: light-dark(--white, --gray-160);
-@value --field-hover-02: light-dark(--white-hover, --gray-20);
+@value --field-hover-02: light-dark(--white-hover, --gray-150);
 @value --field-active-02: light-dark(--gray-30, --gray-140);
 
 /* Field */
@@ -157,7 +158,7 @@
 
 /* Icon */
 @value --icon-primary: light-dark(--gray-200, --gray-10);
-@value --icon-secondary: light-dark(--blue-170, --blue-170);
+@value --icon-secondary: light-dark(--blue-170, --blue-100);
 @value --icon-inverse: light-dark(--white, --black);
 @value --icon-on-color: light-dark(--white, --white);
 @value --icon-danger: light-dark(--signal-red-130, --signal-red-130);
@@ -168,8 +169,8 @@
 @value --icon-important: light-dark(--signal-yellow-130, --signal-yellow-130);
 
 /* Link */
-@value --link-enabled: light-dark(--blue-120, --blue-100);
-@value --link-hover: light-dark(--blue-170, --blue-90);
+@value --link-enabled: light-dark(--blue-120, --blue-90);
+@value --link-hover: light-dark(--blue-170, --blue-80);
 @value --link-pressed: light-dark(--gray-200, --blue-70);
 @value --link-visited: light-dark(--purple, --purple);
 
@@ -188,7 +189,7 @@
 @value --text-secondary: light-dark(--gray-140, --gray-70);
 @value --text-brand: light-dark(--blue-170, --gray-10);
 @value --text-on-color: light-dark(--white, --white);
-@value --text-inverse: light-dark(--white, --black);
+@value --text-inverse: light-dark(--gray-10, --gray-200);
 @value --text-subtle: light-dark(--gray-90, --gray-90);
 @value --text-disabled: light-dark(--gray-50, --gray-140);
 @value --text-invalid: light-dark(--signal-red-130, --signal-red-130);
