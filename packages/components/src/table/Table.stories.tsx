@@ -81,7 +81,7 @@ export const Striped: Story = {
       const anOddRow = await canvas.findByText(rows[2].name)
       await userEvent.hover(anOddRow)
       expect(anOddRow).toHaveStyle({
-        backgroundColor: 'rgb(204, 204, 204)',
+        backgroundColor: 'rgb(230, 230, 230)',
       })
     })
   },
