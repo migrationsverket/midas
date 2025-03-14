@@ -34,7 +34,6 @@ export declare const theme: {
         blue80: string;
         blue90: string;
         blue100: string;
-        blue120: string;
         blue140: string;
         blue170: string;
         purple: string;
