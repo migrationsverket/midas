@@ -19,11 +19,13 @@ const meta: Meta<typeof Link> = {
 export default meta
 type Story = StoryObj<typeof Link>
 
+const r = (Math.random() + 1).toString(36).substring(7)
+
 export const Primary: Story = {
   args: {
     children: 'Länk',
     icon: ArrowRight,
-    href: 'https://designsystem.migrationsverket.se/components/link/',
+    href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
   },
 }
 export const PrimaryDisabled: Story = {
@@ -37,7 +39,7 @@ export const Standalone: Story = {
   args: {
     children: 'En fristående länk',
     standalone: true,
-    href: 'https://designsystem.migrationsverket.se/components/link/',
+    href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
   },
 }
 

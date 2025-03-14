@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --brand-primary, --background-inverse-01 from tokens;
+@value --logo-primary, --background-inverse-01 from tokens;
 
 .container {
   padding: 1rem;
@@ -16,7 +16,7 @@
 }
 
 .primary {
-  fill: --brand-primary;
+  fill: --logo-primary;
 }
 
 .dark {

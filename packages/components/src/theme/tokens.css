@@ -23,7 +23,12 @@
 @value --gray-950: #333333;
 @value --gray-1000: #171717;
 @value --gray-1050: #212121;
+@value --blue-100: #eaf2f6;
 @value --blue-200: #d5e5ed;
+@value --blue-300: #abcbdb;
+@value --blue-400: #82b0c9;
+@value --blue-500: #5897b8;
+@value --blue-600: #4289ad;
 @value --blue-700: #2e7ca5;
 @value --blue-800: #25607f;
 @value --blue-900: #143c50;
@@ -163,9 +168,9 @@
 @value --icon-important: light-dark(--signal-yellow-700, --signal-yellow-700);
 
 /* Link */
-@value --link-enabled: light-dark(--blue-700, --blue-700);
-@value --link-hover: light-dark(--blue-900, --blue-700);
-@value --link-pressed: light-dark(--black, --white);
+@value --link-enabled: light-dark(--blue-700, --blue-600);
+@value --link-hover: light-dark(--blue-900, --blue-500);
+@value --link-pressed: light-dark(--gray-1000, --blue-400);
 @value --link-visited: light-dark(--purple, --purple);
 
 /* Notification */
@@ -206,3 +211,6 @@
 @value --button-background-ghost-hover: light-dark(--white-hover, --gray-1050);
 @value --button-background-ghost-active: light-dark(--gray-200, --gray-1050);
 @value --button-border-primary: light-dark(--border-brand, --gray-100);
+
+/* Logo */
+@value --logo-primary: light-dark(--red-700, --white);
