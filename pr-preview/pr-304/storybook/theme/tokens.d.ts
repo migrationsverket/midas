@@ -23,6 +23,11 @@ export declare const baseColors: {
     gray950: string;
     gray1000: string;
     gray1050: string;
+    blue100: string;
+    blue300: string;
+    blue400: string;
+    blue500: string;
+    blue600: string;
     blue700: string;
     blue800: string;
     blue900: string;
@@ -184,4 +189,5 @@ export declare const semantic: {
     buttonBackgroundGhostHover: string;
     buttonBackgroundGhostActive: string;
     buttonBorderPrimary: string;
+    logoPrimary: string;
 };
