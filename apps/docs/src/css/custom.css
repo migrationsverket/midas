@@ -151,6 +151,10 @@ table td {
   all: unset;
 }
 
+article ul {
+  padding-left: 1.5rem;
+}
+
 .card-icon {
   display: flex;
   justify-content: center;
