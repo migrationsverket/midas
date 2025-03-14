@@ -126,7 +126,7 @@
 }
 
 .checkboxGroup {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

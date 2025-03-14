@@ -15,6 +15,7 @@
   word-wrap: break-word;
   width: 100%;
   color: --text-primary;
+
   @media (forced-colors: active) {
     outline: 3px solid;
     outline-offset: 2px;
