@@ -15,7 +15,7 @@
     "next": "^14.2.22",
     "prism-react-renderer": "^2.3.1",
     "react": "^18.3.1",
-    "react-aria-components": "^1.6.0",
+    "react-aria-components": "^1.7.1",
     "react-dom": "18.3.1",
     "react-is": "18.3.1",
     "tslib": "^2.3.0"
@@ -50,7 +50,7 @@
     "@nx/vite": "^20.5.0",
     "@nx/web": "^20.5.0",
     "@nx/workspace": "^20.5.0",
-    "@react-aria/toast": "^3.0.0-beta.12",
+    "@react-aria/toast": "^3.0.1",
     "@remix-run/css-bundle": "^2.15.2",
     "@remix-run/dev": "2.15.2",
     "@remix-run/eslint-config": "2.15.2",

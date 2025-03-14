@@ -5,24 +5,24 @@ import {
   AriaToastProps,
   AriaToastRegionProps,
   useToast,
-  useToastRegion
+  useToastRegion,
 } from '@react-aria/toast'
 import {
   QueuedToast,
   ToastQueue,
   ToastState,
   useToastQueue,
-  useToastState
+  useToastState,
 } from '@react-stately/toast'
 import React from 'react'
-import { createPortal } from 'react-dom'
+import { createPortal, flushSync } from 'react-dom'
 import styles from './Toast.module.css'
 import {
   CircleAlert,
   CircleCheckIcon,
   Info,
   TriangleAlert,
-  X
+  X,
 } from 'lucide-react'
 import clsx from 'clsx'
 
@@ -52,12 +52,20 @@ const iconMap = {
   success: CircleCheckIcon,
   info: Info,
   important: CircleAlert,
-  warning: TriangleAlert
+  warning: TriangleAlert,
 }
 
 export const toastQueue = new ToastQueue<MidasToast>({
+  wrapUpdate(fn) {
+    if ('startViewTransition' in document) {
+      document.startViewTransition(() => {
+        flushSync(fn)
+      })
+    } else {
+      fn()
+    }
+  },
   maxVisibleToasts: 5,
-  hasExitAnimation: true
 })
 
 export const GlobalToastRegion = (props: ToastProviderProps) => {
@@ -69,7 +77,7 @@ export const GlobalToastRegion = (props: ToastProviderProps) => {
           {...props}
           state={state}
         />,
-        document.body
+        document.body,
       )
     : null
 }
@@ -77,7 +85,6 @@ export const GlobalToastRegion = (props: ToastProviderProps) => {
 export const ToastProvider = ({ children, ...props }: ToastProviderProps) => {
   const state = useToastState<MidasToast>({
     maxVisibleToasts: 5,
-    hasExitAnimation: true
   })
 
   return (
@@ -125,7 +132,7 @@ export function Toast<T extends MidasToast>({
   const { toastProps, contentProps, titleProps, closeButtonProps } = useToast(
     props,
     state,
-    ref
+    ref,
   )
   const Icon = iconMap[props.toast.content.type]
 
@@ -134,12 +141,7 @@ export function Toast<T extends MidasToast>({
       {...toastProps}
       ref={ref}
       className={clsx(styles.toast, styles[props.toast.content.type])}
-      data-animation={props.toast.animation}
-      onAnimationEnd={() => {
-        if (props.toast.animation === 'exiting') {
-          state.remove(props.toast.key)
-        }
-      }}
+      style={{ viewTransitionName: props.toast.key }}
     >
       <div
         className={styles.toastContent}
