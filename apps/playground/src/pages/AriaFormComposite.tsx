@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react'
 import { Form } from 'react-aria-components'
-import { TextField, Input, Label, FieldError } from '../components'
+import { TextField, Input, Label, FieldError, TextArea } from '../components'
 import { Button, ButtonGroup } from '@midas-ds/components'
 
 export const AriaFormCompositePage = () => {
@@ -19,7 +19,10 @@ export const AriaFormCompositePage = () => {
   return (
     <>
       <h2>Aria Form using 'new' atomic components</h2>
-      <Form onSubmit={handleSubmit}>
+      <Form
+        onSubmit={handleSubmit}
+        style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+      >
         <TextField
           autoComplete={'off'}
           minLength={3}
@@ -41,6 +44,10 @@ export const AriaFormCompositePage = () => {
           <Label>Last Name</Label>
           <FieldError />
           <Input />
+        </TextField>
+        <TextField>
+          <Label>Text Area</Label>
+          <TextArea></TextArea>
         </TextField>
         <div>
           <ButtonGroup aria-label={''}>
