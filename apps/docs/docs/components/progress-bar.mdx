@@ -1,0 +1,102 @@
+---
+title: ProgressBar
+---
+
+import { ProgressBar } from '@midas-ds/components'
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ ProgressBar }}
+      {...props}
+    >
+      {`
+        <ProgressBar
+          label='Laddar...'
+          showValueLabel
+          value={30}
+        />
+      `}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader name='ProgressBar' />
+
+Progress bar med fördefinerad stil, använder `role="progressbar"` under huven
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { ProgressBar } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Varianter
+
+### Utan etiketter
+
+Utelämna `label` och `showValueLabel` för att dölja komponentens etiketter. Kom ihåg att ersätta `label` med `aria-label`.
+
+<LiveCodeBlock
+  scope={{ ProgressBar }}
+  {...props}
+>
+  {`
+    <ProgressBar
+      aria-label='Laddar...'
+      value={30}
+    />
+  `}
+</LiveCodeBlock>
+
+### Anpassad `valueLabel`
+
+Egenskapen `valueLabel` och `showValueLabel` kan användas för att ändra den högerställda etiketten.
+
+<LiveCodeBlock
+  scope={{ ProgressBar }}
+  {...props}
+>
+  {`
+    <ProgressBar
+      aria-label='Dina framsteg'
+      value={2}
+      maxValue={3}
+      valueLabel='Steg 2 av 3'
+      showValueLabel
+    />
+  `}
+</LiveCodeBlock>
+
+### Obestämdhet
+
+Egenskapen `isIndeterminate` kan användas för att indikera att ett förlopp är obestämt.
+
+<LiveCodeBlock
+  scope={{ ProgressBar }}
+  {...props}
+>
+  {`
+    <ProgressBar
+      label='Väntar...'
+      isIndeterminate
+    />
+  `}
+</LiveCodeBlock>
+
+## API
+
+### ProgressBar
+
+<PropTable name='ProgressBar' />
