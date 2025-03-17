@@ -153,8 +153,10 @@
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-direction: normal;
   animation-fill-mode: both;
+}
 
-  @media --breakpoint-md {
+@media --breakpoint-md {
+  ::view-transition-new(*):only-child {
     animation-name: slideInEnd;
   }
 }
@@ -165,8 +167,10 @@
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-direction: normal;
   animation-fill-mode: both;
+}
 
-  @media --breakpoint-md {
+@media --breakpoint-md {
+  ::view-transition-old(*):only-child {
     animation-name: slideOutEnd;
   }
 }
