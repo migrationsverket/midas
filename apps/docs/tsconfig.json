@@ -9,6 +9,7 @@
     "lib": ["DOM"],
     "noEmit": true,
     "noImplicitAny": false,
+    "strict": true,
     "types": [
       "node",
       "@docusaurus/module-type-aliases",

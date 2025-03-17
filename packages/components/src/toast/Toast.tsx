@@ -5,24 +5,24 @@ import {
   AriaToastProps,
   AriaToastRegionProps,
   useToast,
-  useToastRegion
-} from '@react-aria/toast'
+  useToastRegion,
+} from 'react-aria'
 import {
   QueuedToast,
   ToastQueue,
   ToastState,
+  ToastStateProps,
   useToastQueue,
-  useToastState
-} from '@react-stately/toast'
-import React from 'react'
-import { createPortal } from 'react-dom'
+} from 'react-stately'
+import React, { useMemo } from 'react'
+import { createPortal, flushSync } from 'react-dom'
 import styles from './Toast.module.css'
 import {
   CircleAlert,
   CircleCheckIcon,
   Info,
   TriangleAlert,
-  X
+  X,
 } from 'lucide-react'
 import clsx from 'clsx'
 
@@ -52,13 +52,36 @@ const iconMap = {
   success: CircleCheckIcon,
   info: Info,
   important: CircleAlert,
-  warning: TriangleAlert
+  warning: TriangleAlert,
 }
 
-export const toastQueue = new ToastQueue<MidasToast>({
+const toastStateProps: ToastStateProps = {
+  wrapUpdate(fn) {
+    if ('startViewTransition' in document) {
+      document.startViewTransition(() => {
+        flushSync(fn)
+      })
+    } else {
+      fn()
+    }
+  },
   maxVisibleToasts: 5,
-  hasExitAnimation: true
-})
+}
+
+/**
+ * Temporary implementation of https://github.com/adobe/react-spectrum/blob/main/packages/%40react-stately/toast/src/useToastState.ts#L59
+ * TODO: Erase this as soon as react-stately is released
+ */
+export function useToastState<T>(props: ToastStateProps = {}): ToastState<T> {
+  const { maxVisibleToasts = 1, wrapUpdate } = props
+  const queue = useMemo(
+    () => new ToastQueue<T>({ maxVisibleToasts, wrapUpdate }),
+    [maxVisibleToasts, wrapUpdate],
+  )
+  return useToastQueue(queue)
+}
+
+export const toastQueue = new ToastQueue<MidasToast>(toastStateProps)
 
 export const GlobalToastRegion = (props: ToastProviderProps) => {
   const state = useToastQueue(toastQueue)
@@ -69,16 +92,13 @@ export const GlobalToastRegion = (props: ToastProviderProps) => {
           {...props}
           state={state}
         />,
-        document.body
+        document.body,
       )
     : null
 }
 
 export const ToastProvider = ({ children, ...props }: ToastProviderProps) => {
-  const state = useToastState<MidasToast>({
-    maxVisibleToasts: 5,
-    hasExitAnimation: true
-  })
+  const state = useToastState<MidasToast>(toastStateProps)
 
   return (
     <>
@@ -125,7 +145,7 @@ export function Toast<T extends MidasToast>({
   const { toastProps, contentProps, titleProps, closeButtonProps } = useToast(
     props,
     state,
-    ref
+    ref,
   )
   const Icon = iconMap[props.toast.content.type]
 
@@ -134,12 +154,7 @@ export function Toast<T extends MidasToast>({
       {...toastProps}
       ref={ref}
       className={clsx(styles.toast, styles[props.toast.content.type])}
-      data-animation={props.toast.animation}
-      onAnimationEnd={() => {
-        if (props.toast.animation === 'exiting') {
-          state.remove(props.toast.key)
-        }
-      }}
+      style={{ viewTransitionName: props.toast.key }}
     >
       <div
         className={styles.toastContent}
