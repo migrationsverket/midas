@@ -32,7 +32,8 @@
 @value --blue-100: #2e7ca5;
 @value --blue-140: #25607f;
 @value --blue-170: #143c50;
-@value --purple: #663366;
+@value --purple-80: #b46ab4;
+@value --purple-140: #954b95;
 @value --red-100: #b90835;
 @value --signal-blue-20: #eaf2f6;
 @value --signal-blue-140: #0066cc;
@@ -171,7 +172,7 @@
 @value --link-enabled: light-dark(--blue-100, --blue-90);
 @value --link-hover: light-dark(--blue-170, --blue-80);
 @value --link-pressed: light-dark(--gray-200, --blue-60);
-@value --link-visited: light-dark(--purple, --purple);
+@value --link-visited: light-dark(--purple-140, --purple-80);
 
 /* Notification */
 @value --notification-border-success: light-dark(--signal-green-140, --signal-green-140);

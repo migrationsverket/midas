@@ -38,7 +38,8 @@ export const baseColors = {
   blue140: '#25607f',
   blue170: '#143c50',
 
-  purple: '#663366',
+  purple80: '#b46ab4',
+  purple140: '#954b95',
   red100: '#b90835',
 
   signalBlue20: '#eaf2f6',
@@ -181,7 +182,7 @@ export const semantic = {
   linkEnabled: `light-dark(${baseColors.blue100}, ${baseColors.blue90})`,
   linkHover: `light-dark(${baseColors.blue170}, ${baseColors.blue80})`,
   linkPressed: `light-dark(${baseColors.gray200}, ${baseColors.blue60})`,
-  linkVisited: `light-dark(${baseColors.purple}, ${baseColors.purple})`,
+  linkVisited: `light-dark(${baseColors.purple140}, ${baseColors.purple80})`,
 
   notificationBorderSuccess: `light-dark(${baseColors.signalGreen140}, ${baseColors.signalGreen140})`,
   notificationBorderInfo: `light-dark(${baseColors.signalBlue140}, ${baseColors.signalBlue140})`,
