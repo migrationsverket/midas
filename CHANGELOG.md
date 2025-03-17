@@ -1,3 +1,79 @@
+# 5.0.0 (2025-03-17)
+
+### 🚀 Features
+
+- ⚠️  updated select, multi-select and modal components
+- ⚠️  support for dark mode across all components
+- **button:** set primary border to 2px when in high-contrast mode
+
+### 🩹 Fixes
+
+- change disabled cursor to not-allowed
+- set correct cursor for radio, checkbox, datepicker
+- change the weekday names to swedish languge
+- change the weekday names to swedish languge
+- add and remove comments
+- **button:** write a deprecate comment that size small will be deprecate
+- **button:** write a deprecate comment that size small will be deprecate
+- **card:** deprecate card background
+- **checkbox:** change cursor to pointer
+- **date-picker:** change selected date color to blue150
+- **date-picker:** resize button in invalid state, fixes #312
+- **datepicker:** change cursor to pointer
+- **docs:** remove unused code
+- **layout:** design adjustments
+- **layout:** design tweaks
+- **layout:** design tweaks
+- **layout:** final design adjustments
+- **layout:** design adjustments
+- **link:** remove unused code
+- **link-button:** remove ts-ignore comment
+- **modal:** remove unused code
+- **radio:** change cursor to pointer
+- **search-field:** use aria-label instead of hidden label
+- **select:** remove useless fragment
+- **select:** remove unsupported attribute
+- **select:** change direct element selector
+- **table:** write a deprecate comment that narrow will be deprecate
+- **table:** write a deprecate comment that narrow will be deprecate
+
+### Documentation Changes
+
+- add new UIkit
+- dark mode support for storybook and docusaurus
+- add new UIkit
+- add instructions for bug reporting
+- dark mode page on docweb
+- add security disclaimers
+- add security disclaimers
+- update select docs
+- fix new tokens
+- fix typo on info banner docs
+- fix local dark mode on portals in SB
+- updated docs with tokens
+- dark mode header image
+- **date-picker:** add style unavailable and code example for Unavailable Date in docs
+- **date-picker:** fix the indentation
+- **docs:** add new UIkit
+- **docs:** add new UIkit
+- **localization:** add dev instructions for localization
+
+### ⚠️  Breaking Changes
+
+- dark mode
+- `Select`, `MultiSelect` and `Modal` now have updated API:s, expect things not to work as before. Make sure to check the API:s before upgrading."
+
+### ❤️ Thank You
+
+- derpbravely
+- jabir Khalil
+- Jabir Khalil
+- PHIEKS
+- Philip Hjälmrud Ekströmer
+- pixelrickdreamer
+- Wilhelm Hjelm
+- wilhjelmig
+
 # 4.0.0 (2025-03-10)
 
 ### 🚀 Features
