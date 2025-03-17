@@ -1,3 +1,54 @@
+# 5.0.0 (2025-03-17)
+
+### 🚀 Features
+
+- ⚠️  updated select, multi-select and modal components
+- **button:** set primary border to 2px when in high-contrast mode
+
+### 🩹 Fixes
+
+- **card:** deprecate card background
+- **select:** change direct element selector
+- **modal:** remove unused code
+- **link-button:** remove ts-ignore comment
+- **link:** remove unused code
+- **docs:** remove unused code
+- **select:** remove unsupported attribute
+- **select:** remove useless fragment
+- **search-field:** use aria-label instead of hidden label
+- add and remove comments
+- **layout:** final design adjustments
+- **layout:** design tweaks
+- **layout:** design tweaks
+- **layout:** design adjustments
+- **button:** write a deprecate comment that size small will be deprecate
+- **table:** write a deprecate comment that narrow will be deprecate
+- **date-picker:** resize button in invalid state, fixes #312
+- **date-picker:** change selected date color to blue150
+- change the weekday names to swedish languge
+- change disabled cursor to not-allowed
+- **datepicker:** change cursor to pointer
+- **radio:** change cursor to pointer
+- **checkbox:** change cursor to pointer
+
+### Documentation Changes
+
+- fix local dark mode on portals in SB
+- add security disclaimers
+- **date-picker:** add style unavailable and code example for Unavailable Date in docs
+- dark mode support for storybook and docusaurus
+
+### ⚠️  Breaking Changes
+
+- `Select`, `MultiSelect` and `Modal` now have updated API:s, expect things not to work as before. Make sure to check the API:s before upgrading."
+
+### ❤️ Thank You
+
+- derpbravely
+- jabir Khalil
+- pixelrickdreamer
+- Wilhelm Hjelm
+
 # 4.0.0 (2025-03-10)
 
 ### 🚀 Features
