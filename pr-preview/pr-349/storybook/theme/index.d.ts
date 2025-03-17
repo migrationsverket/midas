@@ -39,19 +39,14 @@ export declare const theme: {
         purple: string;
         red100: string;
         signalBlue20: string;
-        signalBlue130: string;
         signalBlue140: string;
         signalGreen20: string;
-        signalGreen130: string;
         signalGreen140: string;
         signalRed20: string;
-        signalRed130: string;
         signalRed140: string;
-        signalRed150: string;
         signalRed160: string;
         signalRed180: string;
         signalYellow20: string;
-        signalYellow130: string;
         signalYellow140: string;
     };
     typography: {
