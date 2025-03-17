@@ -56,12 +56,11 @@ const Playground = ({
   const Toolbar = () => {
     React.useEffect(() => {
       const observer = new MutationObserver(() => {
-        const popover = document.querySelector(
+        const popover = document.querySelector<HTMLElement>(
           '[class*="popover_"], [class*="overlay_"], [class*="Popover"], [class*="tooltip_"]',
         )
-        if (popover) {
-          ;(popover as HTMLElement).style.colorScheme = previewColorMode
-        }
+
+        if (popover) popover.style.colorScheme = previewColorMode
       })
 
       observer.observe(document.body, { childList: true, subtree: true })

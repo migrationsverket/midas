@@ -88,7 +88,7 @@
 
   &[data-invalid] {
     &::before {
-      border: 0.125rem solid signalRed100;
+      border: 0.125rem solid --border-invalid;
     }
   }
 

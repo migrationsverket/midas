@@ -41,8 +41,7 @@ const preview: Preview = {
     a11y: { test: 'error', element: '#storybook-root' },
   },
   decorators: [
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (Story: any, context: any) => {
+    (Story, context) => {
       const [colorMode, setColorMode] = React.useState<'light' | 'dark'>(
         getPreferredColorScheme(),
       )
@@ -67,8 +66,8 @@ const preview: Preview = {
       }, [context.globals.backgrounds])
 
       React.useEffect(() => {
-        const popover = document.querySelector('body')
-        if (popover) (popover as HTMLElement).style.colorScheme = colorMode
+        const popover = document.querySelector<HTMLElement>('body')
+        if (popover) popover.style.colorScheme = colorMode
       }, [colorMode])
 
       return (
