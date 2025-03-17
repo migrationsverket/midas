@@ -19,6 +19,7 @@ type Story = StoryObj<typeof FileUpload>
 export const Primary: Story = {}
 
 export const CustomSelectHandler: Story = {
+  tags: ['!dev'],
   args: {
     // @ts-expect-error dont recognize this property
     'data-testid': 'test',

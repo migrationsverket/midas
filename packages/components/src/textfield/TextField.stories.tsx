@@ -60,6 +60,7 @@ export const NotValid = {
 }
 
 export const Required: Story = {
+  tags: ['!dev'],
   args: {
     ...Primary.args,
     isRequired: true,
@@ -85,6 +86,7 @@ export const Required: Story = {
 }
 
 export const CustomValidation: Story = {
+  tags: ['!dev'],
   args: {
     label: 'Label',
     validate: (value: string) =>
@@ -195,6 +197,7 @@ export const ShowCounter: Story = {
 }
 
 export const ShowCounterWithDefaultValue: Story = {
+  tags: ['!dev'],
   args: {
     ...Primary.args,
     showCounter: true,
