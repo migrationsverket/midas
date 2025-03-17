@@ -11,6 +11,7 @@ export interface CardProps<C extends React.ElementType = typeof Link>
   image?: { source: string; description: string }
   /** Sets background to predetermined color
    *  @default false
+   *  @deprecated Not supported since v5.0.0
    * */
   background?: boolean
   /** Header as h1 for the component rendered below image if there is one */
@@ -36,7 +37,6 @@ export interface CardProps<C extends React.ElementType = typeof Link>
  */
 export const Card: React.FC<CardProps> = ({
   image,
-  background,
   title,
   content,
   link,
@@ -49,7 +49,7 @@ export const Card: React.FC<CardProps> = ({
   const contentId = React.useId()
   return (
     <div
-      className={clsx(styles.card, background && styles.background, className)}
+      className={clsx(styles.card, className)}
       {...rest}
     >
       <div className={styles.content}>
