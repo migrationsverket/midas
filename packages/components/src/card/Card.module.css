@@ -1,32 +1,32 @@
 @value tokens: "../theme/tokens.css";
-@value display, white, gray20, gray10, gray150, blue20, black, mediumWeight, fastTransition from tokens;
+@value --font-family, --border-strong, --layer-02, --layer-hover-02, --layer-selected-02, --focus, --fast-transition, --text-primary, --blue-20 from tokens;
 
 .card {
   position: relative;
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
   padding: 2rem 1.5rem;
-  border-bottom: 1px solid black;
-  background-color: white;
+  border-bottom: 1px solid --border-strong;
+  background-color: --layer-02;
   transition:
-    transform fastTransition ease-in-out,
-    background-color fastTransition ease-in-out;
+    transform --fast-transition ease-in-out,
+    background-color --fast-transition ease-in-out;
 
   &:hover {
-    background-color: gray20;
+    background-color: --layer-hover-02;
   }
 
   &:active {
-    background-color: gray10;
+    background-color: --layer-selected-02;
   }
 
   &:focus-visible {
-    outline: 2px solid black;
-    outline-offset: -2px;
+    outline: none;
+    box-shadow: --focus;
   }
 }
 
@@ -40,8 +40,8 @@
   margin: 0;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: mediumWeight;
-  color: gray150;
+  font-weight: 500;
+  color: --text-primary;
 }
 
 .image {
@@ -53,13 +53,9 @@
   aspect-ratio: 4/3;
 }
 
-.background {
-  background-color: blue20;
-}
-
 .text {
   margin-block-start: 0;
-  color: black;
+  color: --text-primary;
   margin: 0;
   padding: 0;
 }

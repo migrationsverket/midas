@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value display, black, signalRed130, smBreakpoint, gray50, gray20, gray10, focus, backgroundSecondary from tokens;
+@value --font-family, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --text-invalid from tokens;
 
 .input {
   width: -webkit-fill-available;
@@ -7,20 +7,24 @@
   border: none;
   border-radius: 0;
   font-size: 1rem;
-  color: black;
+  color: --text-primary;
   height: 3rem;
-  background-color: backgroundSecondary;
-  box-shadow: 0 1px 0 0 black;
+  background-color: --field-01;
+  box-shadow: 0 1px 0 0 --border-strong;
 
   &:hover {
-    background-color: gray20;
+    background-color: --field-hover-01;
+  }
+
+  &::placeholder {
+    color: --text-placeholder;
   }
 
   &[data-focus-visible],
   &:focus-visible {
     border: none;
     outline: none;
-    box-shadow: focus;
+    box-shadow: --focus;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -29,24 +33,24 @@
   }
 
   &[data-disabled] {
-    background: backgroundSecondary;
+    background: --field-disabled;
     box-shadow: none;
-    border-bottom: 0.063rem solid gray50;
+    border-bottom: 0.063rem solid --border-disabled;
   }
 }
 
 .combobox {
-  font-family: display;
+  font-family: --font-family;
   display: flex;
   flex-direction: column;
   width: 100%;
 
   &[data-disabled] {
-    color: gray50;
+    color: --text-invalid;
   }
 
   &[data-invalid] .input {
-    border: 0.125rem solid signalRed130;
+    border: 0.125rem solid --border-invalid;
     box-shadow: none;
   }
 }
@@ -66,7 +70,7 @@
   align-items: center;
   border: none;
   padding: 1rem;
-  color: black;
+  color: --icon-primary;
   background-color: transparent;
   position: absolute;
   top: 0;
@@ -86,10 +90,10 @@
 }
 
 .popover {
-  font-family: display;
-  border: 0.063rem solid black;
+  font-family: --font-family;
+  border: 0.063rem solid --border-strong;
   width: calc(var(--trigger-width) - 0.125rem);
-  background: white;
+  background: --layer-02;
   overflow-y: auto;
 }
 
@@ -100,25 +104,25 @@
   font-size: 0.875rem;
 
   & svg {
-    color: signalRed130;
+    color: --text-invalid;
   }
 }
 
 .listBoxItem {
   margin: auto;
   padding: 1rem;
-  background-color: white;
+  background-color: --layer-02;
   outline: none;
   cursor: default;
-  color: black;
+  color: --text-primary;
   position: relative;
 
   &[data-selected='true'] {
-    background: gray50;
+    background: --layer-selected-02;
   }
 
   &[data-focused='true'] {
-    background: gray20;
+    background: --layer-hover-02;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;

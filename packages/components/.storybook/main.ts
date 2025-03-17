@@ -24,9 +24,7 @@ const config: StorybookConfig = {
       },
     },
   },
-
   staticDirs: ['./static'],
-
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
@@ -42,7 +40,6 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
     },
   },
-
   docs: {
     autodocs: true,
   },

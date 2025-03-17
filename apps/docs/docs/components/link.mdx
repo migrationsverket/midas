@@ -6,8 +6,10 @@ description: Komponent som skapar en länk
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link } from '@midas-ds/components'
-import { baseColors } from '@midas-ds/components/theme'
+import { semantic } from '@midas-ds/components/theme'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+
+export const r = (Math.random() + 1).toString(36).substring(7)
 
 export const Example = props => {
   return (
@@ -15,7 +17,7 @@ export const Example = props => {
       scope={{ Link }}
       {...props}
     >
-      {`<p>Varannan vecka släpper vi en ny release, vilket du kan <Link href="/blog">läsa mer om här.</Link></p>`}
+      {`<p>Varannan vecka släpper vi en ny release, vilket du kan <Link href="/blog?v=${r}">läsa mer om här.</Link></p>`}
     </LiveCodeBlock>
   )
 }
@@ -46,7 +48,7 @@ import { Link } from '@midas-ds/components'
 ### Länk
 
 <LiveCodeBlock scope={{ Link }}>
-  {`<p>Designsystemet utvecklas ständigt, <Link href="/blog">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`}
+  {`<p>Designsystemet utvecklas ständigt, <Link href="/blog?v=${r}">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`}
 </LiveCodeBlock>
 
 ### Fristående
@@ -58,7 +60,7 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
     <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
     <Link
         standalone
-        href="/blog"
+        href="/blog?v=${r}"
     >
         Läs mer om designsystemets nyheter
     </Link>
@@ -69,11 +71,11 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
 
 Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
 
-<LiveCodeBlock scope={{ Link, baseColors }}>
+<LiveCodeBlock scope={{ Link, semantic }}>
   {`<div
       style={{
         position: 'relative',
-        background: baseColors.gray10,
+        background: semantic.layer01,
         padding: '1rem'
       }}
     >
@@ -81,7 +83,7 @@ Använd `stretched` för att låta hela förälderelementet vara klickbart till 
     <Link
         standalone
         stretched
-        href="/blog"
+        href="/blog?v=${r}"
     >
         Läs mer om designsystemets nyheter
     </Link>

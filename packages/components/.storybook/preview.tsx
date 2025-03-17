@@ -1,32 +1,20 @@
-import {
-  Controls,
-  Description,
-  Primary,
-  Stories,
-  Subtitle,
-  Title,
-} from '@storybook/blocks'
+import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
 import '../src/theme/global.css'
+import {
+  customDarkTheme,
+  customLightTheme,
+  getPreferredColorScheme,
+} from './custom-theme'
+import React from 'react'
 
-export const autoDocsTemplate = () => (
-  <>
-    <Title />
-    <Subtitle />
-    <Description />
-    <Primary />
-    <Controls />
-    <Stories />
-  </>
-)
-
-const preview = {
+const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: 'Light',
+      default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
       values: [
         { name: 'Light', value: 'white' },
-        { name: 'Dark', value: '#143c50' },
+        { name: 'Dark', value: '#121212' },
       ],
     },
     controls: {
@@ -35,17 +23,65 @@ const preview = {
         date: /Date$/,
       },
     },
-    docs: autoDocsTemplate(),
+    docs: {
+      theme:
+        getPreferredColorScheme() === 'dark'
+          ? customDarkTheme
+          : customLightTheme,
+    },
     viewport: {
       viewports: customViewports,
     },
-    storySort: {
-      method: 'alphabetical',
-      order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+    options: {
+      storySort: {
+        method: 'alphabetical',
+        order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
+      },
     },
-    a11y: { test: 'error' },
+    a11y: { test: 'error', element: '#storybook-root' },
   },
+  decorators: [
+    (Story, context) => {
+      const [colorMode, setColorMode] = React.useState<'light' | 'dark'>(
+        getPreferredColorScheme(),
+      )
 
+      React.useEffect(() => {
+        const userSelectedBackground:
+          | 'white'
+          | '#121212'
+          | 'transparent'
+          | undefined = context.globals.backgrounds?.value
+
+        if (
+          userSelectedBackground === 'white' ||
+          userSelectedBackground === '#121212'
+        ) {
+          return setColorMode(
+            userSelectedBackground === 'white' ? 'light' : 'dark',
+          )
+        }
+
+        return setColorMode(getPreferredColorScheme())
+      }, [context.globals.backgrounds])
+
+      React.useEffect(() => {
+        const popover = document.querySelector<HTMLElement>('body')
+        if (popover) popover.style.colorScheme = colorMode
+      }, [colorMode])
+
+      return (
+        <div
+          style={{
+            colorScheme: colorMode,
+            backgroundColor: colorMode === 'light' ? 'white' : '#121212',
+          }}
+        >
+          <Story />
+        </div>
+      )
+    },
+  ],
   tags: ['autodocs'],
 }
 

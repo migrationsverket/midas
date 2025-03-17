@@ -1,14 +1,15 @@
 @value tokens: "../theme/tokens.css";
-@value display, white, gray10 from tokens;
+@value --font-family, --layer-01, --background-01, --text-primary from tokens;
 
 .modal {
-  font-family: display;
+  font-family: --font-family;
   position: fixed;
   max-width: 75%;
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: white;
+  background-color: --background-01;
+  color: --text-primary;
   border: none;
   padding: 0;
   margin: auto;
@@ -29,23 +30,22 @@
 }
 
 .modalHeader {
-  background-color: gray10;
+  background-color: --layer-01;
   display: flex;
   justify-content: flex-end;
   position: sticky;
   top: 0;
   z-index: 2;
-  padding: 4px;
 }
 
 .modalBody {
   position: relative;
   padding: 1rem 2rem 2rem;
-  font-family: display;
+  font-family: --font-family;
 }
 
 .modalHeading {
-  font-family: display;
+  font-family: --font-family;
   font-weight: 600;
   line-height: 1.4;
   font-size: 1.25rem;

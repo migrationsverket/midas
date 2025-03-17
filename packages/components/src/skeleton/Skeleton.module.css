@@ -1,3 +1,6 @@
+@value tokens: "../theme/tokens.css";
+@value --field-skeleton, --background-inverse-01 from tokens;
+
 @keyframes wave {
   0% {
     transform: translateX(-100%);
@@ -9,7 +12,7 @@
 }
 
 .skeleton {
-  background: #f2f2f2;
+  background: --field-skeleton;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -30,15 +33,19 @@
   left: 0;
   width: 200%;
   height: 100%;
+  opacity: 0.1;
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0 0 0 /10%),
+    --background-inverse-01,
     transparent
   );
   animation: wave 2s infinite ease-in-out;
+}
 
-  @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
+  .skeleton.wave::after {
+    display: none;
     animation: none;
   }
 }

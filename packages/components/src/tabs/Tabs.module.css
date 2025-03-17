@@ -1,14 +1,14 @@
 @value tokens: "../theme/tokens.css";
-@value display, gray50, semiBoldWeight, blue130, focus, smBreakpoint from tokens;
+@value --font-family, --border-subtle, --border-brand, --focus, --breakpoint-sm from tokens;
 
 .container {
-  font-family: display;
+  font-family: --font-family;
 }
 
 .list {
   display: flex;
   flex-flow: row wrap;
-  border-bottom: 1px solid gray50;
+  border-bottom: 1px solid --border-subtle;
 }
 
 .listItem {
@@ -16,22 +16,22 @@
   cursor: pointer;
 
   &[data-selected] {
-    font-weight: semiBoldWeight;
+    font-weight: 500;
     padding-bottom: calc(0.5rem - 3px);
-    border-bottom: 3px solid blue130;
+    border-bottom: 3px solid --border-brand;
   }
 
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
-    box-shadow: focus;
+    box-shadow: --focus;
   }
 
-  @media smBreakpoint {
+  @media --breakpoint-sm {
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: 3px solid blue130;
+      border-left: 3px solid --border-brand;
       padding-left: calc(1.125rem - 3px);
       border-bottom: 0;
       box-shadow: none;
@@ -45,6 +45,6 @@
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
-    box-shadow: focus;
+    box-shadow: --focus;
   }
 }

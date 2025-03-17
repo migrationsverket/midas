@@ -7,8 +7,20 @@ const meta: Meta<typeof DateField> = {
   title: 'Components/DateField',
   tags: ['autodocs'],
   parameters: {
+    // UX team rules that placeholder contrast shouldn't be checked
     a11y: {
-      test: 'todo',
+      config: {
+        rules: [
+          {
+            id: 'color-contrast',
+            selector: '[data-placeholder="true"]',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: { 'color-contrast': { enabled: false } },
+      },
     },
   },
 }
@@ -18,8 +30,8 @@ type Story = StoryObj<typeof DateField>
 /** Don't put format in description, it changes with browser language settings! */
 export const Default: Story = {
   args: {
-    label: 'Välj datum',
-    description: 'vilket som helst',
+    label: 'Välj ett datum',
+    description: 'Vilket som helst',
   },
 }
 
@@ -27,7 +39,7 @@ export const Invalid: Story = {
   args: {
     ...Default.args,
     isInvalid: true,
-    errorMessage: 'Date must be tjugoniende maj',
+    errorMessage: 'Date must be tjugonionde maj',
   },
 }
 export const Disabled: Story = {
@@ -41,6 +53,6 @@ export const Disabled: Story = {
 export const WithDefaultValue: Story = {
   args: {
     ...Default.args,
-    defaultValue: new CalendarDate(1999, 5, 29),
+    defaultValue: new CalendarDate(1995, 5, 29),
   },
 }

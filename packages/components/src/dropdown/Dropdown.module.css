@@ -1,14 +1,14 @@
 @value tokens: "../theme/tokens.css";
-@value display, focus, gray10 from tokens;
+@value --font-family, --focus, --button-background-tertiary-hover from tokens;
 
 .dropDownMenu {
-  font-family: display;
+  font-family: --font-family;
   box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 25%);
-  background-color: gray10;
+  background-color: --button-background-tertiary-hover;
 
   &:focus-visible {
     outline: none;
-    box-shadow: focus;
+    box-shadow: --focus;
   }
 }
 
@@ -17,6 +17,6 @@
 
   &:focus-visible {
     outline: none;
-    box-shadow: focus;
+    box-shadow: --focus;
   }
 }

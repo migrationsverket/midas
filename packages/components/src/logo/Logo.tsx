@@ -15,8 +15,6 @@ export interface LogoProps
    * Specify logo size
    */
   size?: 'x-small' | 'small' | 'medium' | 'large'
-  /** Display background fill using selected primary or dark color */
-  background?: boolean
   /** There must be whitespace around the logo. By disabling our built in padding you must add at least an equal amount yourself. */
   padding?: boolean
 }
@@ -24,7 +22,6 @@ export interface LogoProps
 export const Logo: React.FC<LogoProps> = ({
   primary = true,
   size = 'medium',
-  background = false,
   padding = true,
   className,
   ...rest
@@ -115,11 +112,6 @@ export const Logo: React.FC<LogoProps> = ({
       className={clsx(
         styles.container,
         padding === false && styles.noPadding,
-        background
-          ? primary
-            ? styles.backgroundPrimary
-            : styles.backgroundDark
-          : null,
         className,
       )}
       {...rest}
