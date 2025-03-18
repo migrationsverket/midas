@@ -18,5 +18,5 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: npm
-      - run: npm ci
+      - run: npm ci --omit-dev
       - run: npx nx run-many -t lint,stylelint,test,build --projects=components
