@@ -1,0 +1,42 @@
+import{j as t}from"./jsx-runtime-CBDCb4rg.js";import{T as s,a as c,s as v}from"./Tooltip-Bl7OYa8Z.js";import{w as x,e as S}from"./index-iZ8NAl3x.js";import{B as d}from"./Button-DfRI4d68.js";import{c as b}from"./createLucideIcon-DjmUzaoT.js";import"./index-B-o1Wr-g.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./clsx-B-dksMZM.js";import"./OverlayArrow-CBK1XRIu.js";import"./utils-CyugoGNF.js";import"./index-BAyGJXOV.js";import"./useFocusable-CqLabGgp.js";import"./useFocusRing-BODiw1iP.js";import"./useOverlayTriggerState-_3rNuFLY.js";import"./ProgressBar-B2jw0c1b.js";import"./Label-ByRA_SKm.js";import"./Hidden-B6il94lO.js";import"./filterDOMProps-CeZl_uWj.js";import"./useLabel-DbJIstGE.js";import"./context-BwmME58u.js";import"./NumberFormatter-DNR9MAW-.js";import"./useControlledState-BgxdDqm0.js";import"./useModal-DrHYqVUB.js";import"./Button-iL9IzHG8.js";import"./LiveAnnouncer-CeCcBDbP.js";/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const g=b("Save",[["path",{d:"M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",key:"1c8476"}],["path",{d:"M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7",key:"1ydtos"}],["path",{d:"M7 3v4a1 1 0 0 0 1 1h7",key:"t51u73"}]]),Q={component:s,title:"Components/Tooltip",tags:["autodocs"],argTypes:{children:{control:"text"}}},r={args:{children:"Spara"},render:a=>t.jsxs(c,{children:[t.jsx(d,{variant:"tertiary","aria-label":"Spara",children:t.jsx(g,{})}),t.jsx(s,{...a})]})},e={args:{className:"test-class"},render:a=>t.jsxs(c,{isOpen:!0,children:[t.jsx(d,{variant:"tertiary","aria-label":"Spara",children:t.jsx(g,{})}),t.jsx(s,{"data-testid":"test",...a,children:"Spara"})]}),play:async({step:a,args:{className:y},canvasElement:u})=>{const T=u.ownerDocument.body,h=x(T).getByTestId("test");await a("it should preserve its classNames when being passed new ones",async()=>{S(h).toHaveClass(v.tooltip,y)})}};var o,n,i;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  args: {
+    children: 'Spara'
+  },
+  render: args => <TooltipTrigger>
+      <Button variant='tertiary' aria-label='Spara'>
+        <Save />
+      </Button>
+      <Tooltip {...args} />
+    </TooltipTrigger>
+}`,...(i=(n=r.parameters)==null?void 0:n.docs)==null?void 0:i.source}}};var p,l,m;e.parameters={...e.parameters,docs:{...(p=e.parameters)==null?void 0:p.docs,source:{originalSource:`{
+  args: {
+    className: 'test-class'
+  },
+  render: args => <TooltipTrigger isOpen>
+      <Button variant='tertiary' aria-label='Spara'>
+        <Save />
+      </Button>
+      <Tooltip data-testid='test' {...args}>
+        Spara
+      </Tooltip>
+    </TooltipTrigger>,
+  play: async ({
+    step,
+    args: {
+      className
+    },
+    canvasElement
+  }) => {
+    // Tooltip is outside of #storybook-root element
+    const body = canvasElement.ownerDocument.body;
+    const tooltip = within(body).getByTestId('test');
+    await step('it should preserve its classNames when being passed new ones', async () => {
+      expect(tooltip).toHaveClass(styles.tooltip, className as string);
+    });
+  }
+}`,...(m=(l=e.parameters)==null?void 0:l.docs)==null?void 0:m.source}}};const U=["Primary","Open"];export{e as Open,r as Primary,U as __namedExportsOrder,Q as default};
