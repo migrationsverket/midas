@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled, --border-strong, --layer-hover-01, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid, --field-disabled from tokens;
+@value --font-family, --text-primary, --text-disabled, --border-strong, --layer-hover-01, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid, --field-disabled, --focus from tokens;
 
 .wrap {
   grid-area: Input;
@@ -57,7 +57,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: focus;
+    box-shadow: --focus;
     outline: none;
   }
 
