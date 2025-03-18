@@ -139,7 +139,7 @@ const config: Config = {
         },
         {
           to: '/changelog',
-          label: 'Versionslogg',
+          label: 'Changelog',
         },
         {
           href: 'https://github.com/migrationsverket/midas',

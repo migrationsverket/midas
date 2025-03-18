@@ -23,7 +23,11 @@
       }
     },
     "changelog": {
-      "projectChangelogs": true,
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": false
+        }
+      },
       "automaticFromRef": true
     },
     "projectsRelationship": "fixed",
