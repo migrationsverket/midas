@@ -114,17 +114,6 @@ const config: Config = {
           ],
           breadcrumbs: false,
         },
-        blog: {
-          showReadingTime: true,
-          blogSidebarTitle: 'Alla inlägg',
-          blogSidebarCount: 'ALL',
-          remarkPlugins: [
-            [
-              require('@docusaurus/remark-plugin-npm2yarn'),
-              { converters: ['yarn', 'pnpm'], sync: true },
-            ],
-          ],
-        },
         pages: {},
         theme: {
           customCss: ['./src/css/custom.css'],
@@ -134,13 +123,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // announcementBar: {
-    //   id: 'open_source',
-    //   content:
-    //     'Midas har nu öppen källkod. <a href="/blog/midas-open-source">Läs mer om vad det innebär.</a>',
-    //   isCloseable: false,
-    //   backgroundColor: '#eaf2f6'
-    // },
     navbar: {
       logo: {
         alt: 'Migrationsverket Logotyp',
@@ -153,18 +135,11 @@ const config: Config = {
         {
           type: 'doc',
           docId: 'get-started/use',
-          position: 'left',
           label: 'Dokumentation',
         },
         {
-          to: '/blog',
-          position: 'left',
-          label: 'Nyheter',
-        },
-        {
-          href: 'https://github.com/migrationsverket/midas/releases',
-          label: 'Senaste versionen',
-          position: 'right',
+          to: '/changelog',
+          label: 'Versionslogg',
         },
         {
           href: 'https://github.com/migrationsverket/midas',
@@ -175,62 +150,6 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      // logo: {
-      //   alt: 'Migrationsverket Logotyp',
-      //   src: 'img/mig-logo-white.svg',
-      //   height: '45px',
-      //   width: 'auto'
-      // },
-      // links: [
-      //   {
-      //     title: 'Dokumentation',
-      //     items: [
-      //       {
-      //         label: 'Kom igång',
-      //         to: 'get-started'
-      //       },
-      //       {
-      //         label: 'Grunderna',
-      //         to: 'basics'
-      //       },
-      //       {
-      //         label: 'Komponenter',
-      //         to: 'components'
-      //       },
-      //       {
-      //         label: 'Designmönster',
-      //         to: 'design-patterns'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     title: 'Om',
-      //     items: [
-      //       {
-      //         label: 'Nyheter',
-      //         to: '/blog'
-      //       },
-      //       {
-      //         label: 'Om',
-      //         to: '/about'
-      //       }
-      //     ]
-      //   },
-      //   {
-      //     title: 'Övrigt',
-      //     items: [
-      //       {
-      //         label: 'GitHub',
-      //         href: 'https://github.com/migrationsverket/midas'
-      //       },
-      //       {
-      //         label: 'NPM',
-      //         href: 'https://www.npmjs.com/org/midas-ds'
-      //       }
-      //     ]
-      //   }
-      // ],
-      // copyright: 'Migrationsverkets designsystem - Midas'
     },
     colorMode: {
       defaultMode: 'light',
@@ -264,3 +183,33 @@ const config: Config = {
 }
 
 export default config
+
+function adjustChangelogHeadings() {
+  const changelogPath = path.resolve(
+    __dirname,
+    '../../packages/components/CHANGELOG.md',
+  )
+  const staticChangelogPath = path.resolve(__dirname, './static/CHANGELOG.md')
+
+  fs.readFile(changelogPath, 'utf8', (err: any, data: string) => {
+    if (err) {
+      console.error('Error reading changelog:', err)
+      return
+    }
+
+    const adjustedData = data.replace(
+      /^(#{1,5}) /gm,
+      (match, p1) => `${'#'.repeat(p1.length + 1)} `,
+    )
+
+    fs.writeFile(staticChangelogPath, adjustedData, 'utf8', err => {
+      if (err) {
+        console.error('Error writing adjusted changelog:', err)
+      } else {
+        console.log('Adjusted changelog saved to static folder.')
+      }
+    })
+  })
+}
+
+adjustChangelogHeadings()

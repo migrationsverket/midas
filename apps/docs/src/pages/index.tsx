@@ -7,7 +7,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
 import { useColorMode } from '@docusaurus/theme-common'
 
-export default function Hello() {
+export default function Startpage() {
   return (
     <Layout
       title='Migrationsverkets designsystem'
