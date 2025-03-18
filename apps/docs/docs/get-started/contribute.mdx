@@ -113,7 +113,16 @@ Generellt, använd övriga komponenter som referens när nya läggs till.
 - Som standard, exportera en komponent per fil
 - Använd barrel-files `index.ts` för att exportera hela mappar
 - Formatera enligt [Prettier](https://prettier.io/) standard
-- Använd variabler så långt det är möjligt i CSS (importeras från `tokens.ts`)
+- Importera och använd tokens i `[component].module.css` enligt
+```css title="Button.module.css"
+// highlight-start
+@value tokens: "../theme/tokens.css";
+@value --button-background-primary from tokens;
+// highlight-end
+.button {
+    background-color: --button-background-primary;
+}
+```
 
 ### Importera headless-bibliotek
 
@@ -145,13 +154,22 @@ men om det har införts nya types eller interfaces kan de behöva specificeras e
 
 Designsystemet använder Nx för versionshantering och release enligt [nx release](https://nx.dev/recipes/nx-release/get-started-with-nx-release).
 När du kör `nx release --skip-publish` räknas komponentbiblioteket upp till rätt version
-och Nx gör en commit med uppdaterad changelog samt sätter en git tag med versionsnummer. Pusha till remote
-`git push --follow-tags` vilket i sin tur triggar en publicering till NPM. Kör gärna en `--dry-run` först
-och kontrollera att allt stämmer.
+och Nx gör en commit med uppdaterad changelog samt sätter en git tag med rätt versionsnummer.
 
 ```bash
 nx release --skip-publish --dry-run // remove dry-run when you know it works
 ```
+
+Kontrollera att allt stämmer, gör release utan `--dry-run`, skapa en release-branch och pusha till remote.
+
+```bash
+git checkout -b release/[insert version number here]
+git push -u origin release/[insert version number here] --follow-tags
+```
+När en ny tag `v{x.x.x}` finns på remote triggas ett workflow med publicering till NPM.
+För att slutföra release, gör en PR till main och gör en **merge** när den är godkänd. Observera
+att du *inte* ska göra en rebase eftersom git tags då inte är kopplade till rätt commit och
+Nx kan inte längre räkna ut vilken version som är aktuell.
 
 ---
 
@@ -164,8 +182,8 @@ flowchart LR;
     B2-->|GH Action|C1
     B2-->E1
     E1-->|GH Action|C2
-    E1-->|GH Action|D1
-    E1-->|GH Action|F1
+    E1-->|Triggered manually|D1
+    E1-->|Triggered on release|F1
     subgraph "Jira"
         A1@{ shape: procs, label: "Tickets"}
     end
