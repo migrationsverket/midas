@@ -1,3 +1,0 @@
-import{j as t}from"./jsx-runtime-CBDCb4rg.js";import{useMDXComponents as r}from"./index-BSj771as.js";import{M as m}from"./index-DjWaOz0t.js";import"./index-B-o1Wr-g.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./iframe-cf76HfoJ.js";import"./index-BAyGJXOV.js";import"./index-CBft-ReK.js";import"./index-DrFu-skq.js";function o(e){const n={h1:"h1",p:"p",...r(),...e.components};return t.jsxs(t.Fragment,{children:[t.jsx(m,{title:"Examples/Intro"}),`
-`,t.jsx(n.h1,{id:"exempel-från-teamet",children:"Exempel från teamet"}),`
-`,t.jsx(n.p,{children:"Här samlar vi lite olika exempel på mönster som ofta återkommer...."})]})}function u(e={}){const{wrapper:n}={...r(),...e.components};return n?t.jsx(n,{...e,children:t.jsx(o,{...e})}):o(e)}export{u as default};
