@@ -19,8 +19,8 @@
 
   &:hover {
     text-decoration: none;
-    color: --text-on-color;
     background-color: --button-background-primary-hover;
+    color: --text-on-color;
   }
 
   &[data-pressed] {
@@ -54,6 +54,7 @@
   }
 
   &:hover {
+    color: --text-brand;
     background-color: --button-background-secondary-hover;
   }
 
@@ -72,6 +73,7 @@
   opacity: 1;
 
   &:hover {
+    color: --text-brand;
     background-color: --button-background-tertiary-hover;
   }
 
