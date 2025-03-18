@@ -82,8 +82,8 @@
   }
 
   &[data-selected][data-pressed]::before {
-    border-color: gray60;
-    background: gray60 50% 50% no-repeat content-box;
+    border-color: --border-subtle;
+    background: --icon-secondary 50% 50% no-repeat content-box;
   }
 
   &[data-invalid] {
