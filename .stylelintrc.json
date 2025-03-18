@@ -37,6 +37,14 @@
       }
     ],
     "no-descending-specificity": null,
-    "plugin/check-values-import": true
+    "plugin/check-values-import": true,
+    "declaration-property-value-no-unknown": [
+      true,
+      {
+        "ignoreProperties": {
+          "/.+/": "/--/"
+        }
+      }
+    ]
   }
 }
