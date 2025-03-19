@@ -12,7 +12,8 @@
   background-color: --field-01;
   box-shadow: 0 1px 0 0 --border-strong;
 
-  &:hover {
+  &[data-hovered],
+  &:has(+ [data-hovered]) {
     background-color: --field-hover-01;
   }
 
@@ -80,6 +81,10 @@
 
   &[aria-expanded='true'] {
     transform: rotate(180deg);
+  }
+
+  &[data-hovered] {
+    cursor: pointer;
   }
 }
 
