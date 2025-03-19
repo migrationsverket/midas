@@ -254,7 +254,7 @@
     stroke: --icon-primary;
   }
 
-  &:hover,
+  &[data-hovered],
   &:visited {
     background-color: --button-background-tertiary-hover;
     color: --text-primary;
