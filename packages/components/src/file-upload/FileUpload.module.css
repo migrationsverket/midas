@@ -63,7 +63,7 @@
   text-align: center;
   background-color: --background-01;
 
-  &:hover {
+  &[data-hovered] {
     background-color: --background-hover-01;
   }
 }

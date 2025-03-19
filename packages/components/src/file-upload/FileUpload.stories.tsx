@@ -18,6 +18,12 @@ type Story = StoryObj<typeof FileUpload>
 
 export const Primary: Story = {}
 
+export const DropZone: Story = {
+  args: {
+    dropzone: true,
+  },
+}
+
 export const CustomSelectHandler: Story = {
   tags: ['!dev'],
   args: {
