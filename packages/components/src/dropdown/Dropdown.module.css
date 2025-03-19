@@ -12,7 +12,7 @@
   }
 }
 
-.dropdownMenu {
+.menuItem {
   width: 100%;
 
   &:focus-visible {
