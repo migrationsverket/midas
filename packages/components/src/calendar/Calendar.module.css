@@ -72,11 +72,6 @@
   }
 }
 
-.heading {
-  font-size: 1rem;
-  margin: auto;
-}
-
 .day {
   border: solid 2px --field-01;
   cursor: pointer;

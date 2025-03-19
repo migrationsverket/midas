@@ -6,16 +6,16 @@ import {
   DateValue,
 } from 'react-aria-components'
 import {
-  Text,
   Calendar as AriaCalendar,
   CalendarGrid,
   Button,
-  Heading,
 } from 'react-aria-components'
 import styles from './Calendar.module.css'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { isToday, getLocalTimeZone } from '@internationalized/date'
 import { clsx } from 'clsx'
+import { Heading } from '../heading'
+import { Text } from '../text'
 
 interface MidasCalendarProps<T extends DateValue>
   extends CalendarProps<T>,
@@ -38,7 +38,7 @@ export function Calendar<T extends DateValue>({
         <Button slot='previous'>
           <ChevronLeft />
         </Button>
-        <Heading className={styles.heading} />
+        <Heading />
         <Button slot='next'>
           <ChevronRight />
         </Button>
