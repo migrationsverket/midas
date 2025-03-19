@@ -1,0 +1,9 @@
+import{j as r}from"./jsx-runtime-DtgEGaVE.js";import{B as a}from"./Button-Bg9PyEGq.js";import{c}from"./clsx-B-dksMZM.js";import{a as m}from"./Button-AXOEyd3Z.js";import"./index-BbAIUH2N.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./utils-C4wbeGu1.js";import"./ProgressBar-DVVijuUB.js";import"./Label-BXmCKTLy.js";import"./Hidden-DizQ9ce0.js";import"./filterDOMProps-BSfnXAP7.js";import"./useLabel-Bdg4Lht-.js";import"./context-gxVqox2x.js";import"./NumberFormatter-DT0cDaax.js";import"./LiveAnnouncer-DFDjXwI8.js";import"./useFocusRing-BPh1BF7L.js";import"./index-cpIEhwLo.js";import"./useFocusable-BNsiIlBy.js";const l='"../theme/tokens.css"',d="undefined",b="_buttonGroup_5pd8y_4",g={tokens:l,smBreakpoint:d,buttonGroup:b},e=({children:t,className:p,"aria-label":u})=>r.jsx("div",{role:"group",className:c(g.buttonGroup,p),children:r.jsx(m.Provider,{value:{"aria-label":u},children:t})});try{e.displayName="ButtonGroup",e.__docgenInfo={description:"Group several buttons together.",displayName:"ButtonGroup",props:{"aria-label":{defaultValue:null,description:"Set a descriptive lable for screen readers",name:"aria-label",required:!0,type:{name:"string"}}}}}catch{}const C={component:e,title:"Components/Button/ButtonGroup",tags:["autodocs"],parameters:{layout:"centered"},args:{},argTypes:{}},o={args:{"aria-label":"Navigera i listan"},render:t=>r.jsxs(e,{...t,children:[r.jsx(a,{children:"Fortsätt"}),r.jsx(a,{variant:"secondary",children:"Avbryt"})]})};var n,s,i;o.parameters={...o.parameters,docs:{...(n=o.parameters)==null?void 0:n.docs,source:{originalSource:`{
+  args: {
+    'aria-label': 'Navigera i listan'
+  },
+  render: args => <ButtonGroup {...args}>
+      <Button>Fortsätt</Button>
+      <Button variant='secondary'>Avbryt</Button>
+    </ButtonGroup>
+}`,...(i=(s=o.parameters)==null?void 0:s.docs)==null?void 0:i.source}}};const I=["Primary"];export{o as Primary,I as __namedExportsOrder,C as default};
