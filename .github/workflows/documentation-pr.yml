@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         if: github.event.action != 'closed'
-        run: npm ci --omit-dev
+        run: npm ci
 
       - name: Build website
         if: github.event.action != 'closed'
