@@ -86,7 +86,10 @@ export const DateRangePicker = <T extends DateValue>({
           )}
         </DateInput>
 
-        <Button className={clsx(props.isInvalid && styles.buttonInvalid)}>
+        <Button
+          className={clsx(props.isInvalid && styles.buttonInvalid)}
+          isDisabled={props.isDisabled}
+        >
           <CalendarDays
             size={20}
             aria-hidden
