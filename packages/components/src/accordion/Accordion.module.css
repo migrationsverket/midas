@@ -68,12 +68,12 @@
         transition: transform --normal-transition ease;
       }
 
-      &:hover {
+      &[data-hovered] {
         background-color: var(--background-hover);
       }
     }
 
-    &:hover {
+    &[data-hovered] {
       background-color: var(--background-hover);
     }
   }
