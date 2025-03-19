@@ -50,6 +50,7 @@ export const Card: React.FC<CardProps> = ({
   return (
     <div
       className={clsx(styles.card, className)}
+      data-disabled={link?.isDisabled}
       {...rest}
     >
       <div className={styles.content}>

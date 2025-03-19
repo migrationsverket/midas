@@ -53,3 +53,19 @@ export const WithBackground: Story = {
     },
   },
 }
+
+export const Disabled: Story = {
+  args: {
+    background: true,
+    link: {
+      children: 'Läs mer om Card',
+      href: '#',
+      isDisabled: true,
+    },
+  },
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
+}

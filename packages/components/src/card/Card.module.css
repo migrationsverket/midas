@@ -16,11 +16,11 @@
     transform --fast-transition ease-in-out,
     background-color --fast-transition ease-in-out;
 
-  &:hover {
+  &:hover:not([data-disabled='true']) {
     background-color: --layer-hover-02;
   }
 
-  &:active {
+  &:active:not([data-disabled='true']) {
     background-color: --layer-selected-02;
   }
 
