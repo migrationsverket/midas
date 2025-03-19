@@ -99,3 +99,10 @@ export const Icon = {
     'aria-label': 'Stäng',
   },
 }
+
+export const Danger: Story = {
+  args: {
+    children: 'Button',
+    variant: 'danger',
+  },
+}

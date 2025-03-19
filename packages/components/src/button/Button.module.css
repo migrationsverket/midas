@@ -28,7 +28,7 @@
     }
   }
 
-  &:hover {
+  &[data-hovered] {
     background-color: --button-background-primary-hover;
   }
 
@@ -50,7 +50,7 @@
   border-color: --button-border-primary;
   opacity: 1;
 
-  &:hover {
+  &[data-hovered] {
     background-color: --button-background-secondary-hover;
   }
 
@@ -73,7 +73,7 @@
   padding: 0.8125rem 0.9375rem;
   opacity: 1;
 
-  &:hover {
+  &[data-hovered] {
     background-color: --button-background-tertiary-hover;
   }
 
@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
 
-  &:hover {
+  &[data-hovered] {
     background-color: --button-background-icon-hover;
   }
 
@@ -114,7 +114,7 @@
   background-color: --button-background-danger;
   opacity: 1;
 
-  &:hover {
+  &[data-hovered] {
     color: --white;
     background-color: --button-background-danger-hover;
   }
