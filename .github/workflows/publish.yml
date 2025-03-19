@@ -30,6 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm install
         shell: bash
+        env:
+          NODE_ENV: production
 
       - name: Print Environment Info
         run: npx nx report
