@@ -52,7 +52,7 @@
   text-decoration: none;
   font-weight: 500;
 
-  &:hover {
+  &:hover:not([data-disabled='true']) {
     text-decoration: underline;
   }
 
