@@ -47,7 +47,7 @@
   cursor: pointer;
   color: --text-primary;
 
-  &:hover div {
+  &[data-hovered] div {
     border-color: --button-background-primary-hover;
   }
 
@@ -149,7 +149,7 @@
       border: 1px solid --border-strong;
       width: auto;
 
-      &:hover {
+      &[data-hovered] {
         background-color: --layer-hover-01;
       }
 
