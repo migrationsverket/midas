@@ -1,6 +1,10 @@
+import { ButtonProps, ContextValue } from 'react-aria-components';
+interface ButtonContextValue extends ButtonProps {
+    isPressed?: boolean;
+}
 export interface MidasButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
-    /** Set a descriptive lable for screen readers */
-    'aria-label': string;
+    /** Additional props to pass to child Buttons */
+    contextValue?: ContextValue<ButtonContextValue, HTMLButtonElement>;
 }
 /**
  * Group several buttons together.
@@ -10,3 +14,4 @@ export interface MidasButtonGroupProps extends React.HTMLAttributes<HTMLDivEleme
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */
 export declare const ButtonGroup: React.FC<MidasButtonGroupProps>;
+export {};
