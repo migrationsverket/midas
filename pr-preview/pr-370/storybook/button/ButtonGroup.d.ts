@@ -1,8 +1,6 @@
 import { ButtonContext } from 'react-aria-components';
 import * as React from 'react';
 export interface MidasButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
-    /** Set a descriptive visible lable */
-    title?: string;
     /** Set a descriptive lable for screen readers */
     'aria-label'?: string;
 }
