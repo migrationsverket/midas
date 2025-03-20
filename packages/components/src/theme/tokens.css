@@ -212,6 +212,8 @@
 @value --button-background-ghost-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-ghost-active: light-dark(--gray-30, --gray-190);
 @value --button-border-primary: light-dark(--border-brand, --gray-10);
+@value --button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
+@value --button-background-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
 
 /* Logo */
 @value --logo-primary: light-dark(--red-100, --white);
