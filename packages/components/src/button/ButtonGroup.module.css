@@ -1,12 +1,6 @@
 @value tokens: "../theme/tokens.css";
 @value --breakpoint-sm from tokens;
 
-.buttonGroupWrapper {
-  display: flex;
-  flex-flow: column wrap;
-  gap: 0.5rem;
-}
-
 .buttonGroup {
   display: flex;
   flex-flow: row wrap;

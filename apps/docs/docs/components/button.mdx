@@ -115,12 +115,12 @@ För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` 
 </ButtonGroup>`}
 </LiveCodeBlock>
 
-### Titel eller label
+### Label
 
-För god tillgänglighet bör du sätta en titel på gruppen av knappar. Antingen med en osynlig aria-label för skärmläsare eller en synlig titel.
+För god tillgänglighet bör du sätta en label på `ButtonGroup` för att beskriva vad knapparna gör.
 
 <LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup title="Välj en frukt">
+  {`<ButtonGroup aria-label="Välj en frukt">
     <Button>{fruits.shuffled(1).name}</Button>
     <Button variant="secondary">{fruits.shuffled(1).name}</Button>
     <Button isDisabled>{fruits.shuffled(1).name}</Button>

@@ -17,19 +17,7 @@ type Story = StoryObj<typeof ButtonGroup>
 
 export const Primary: Story = {
   args: {
-    'aria-label': 'Acceptera ändringen',
-  },
-  render: ({ ...args }) => (
-    <ButtonGroup {...args}>
-      <Button>Fortsätt</Button>
-      <Button variant='secondary'>Avbryt</Button>
-    </ButtonGroup>
-  ),
-}
-
-export const VisibleTitle: Story = {
-  args: {
-    title: 'Acceptera ändringen',
+    'aria-label': 'Vill du acceptera ändringen?',
   },
   render: ({ ...args }) => (
     <ButtonGroup {...args}>
