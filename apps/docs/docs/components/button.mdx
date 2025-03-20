@@ -4,7 +4,7 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Button, ButtonGroup, Flex, FlexItem } from '@midas-ds/components'
+import { Button, ButtonGroup, Flex, FlexItem, ButtonContext } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
@@ -108,11 +108,37 @@ Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
 
 <LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj frukt">
+  {`<ButtonGroup aria-label="Välj en frukt">
     <Button>{fruits.shuffled(1).name}</Button>
     <Button variant="secondary">{fruits.shuffled(1).name}</Button>
     <Button isDisabled>{fruits.shuffled(1).name}</Button>
 </ButtonGroup>`}
+</LiveCodeBlock>
+
+### Titel eller label
+
+För god tillgänglighet bör du sätta en titel på gruppen av knappar. Antingen med en osynlig aria-label för skärmläsare eller en synlig titel.
+
+<LiveCodeBlock scope={{ ButtonGroup, Button }}>
+  {`<ButtonGroup title="Välj en frukt">
+    <Button>{fruits.shuffled(1).name}</Button>
+    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+    <Button isDisabled>{fruits.shuffled(1).name}</Button>
+</ButtonGroup>`}
+</LiveCodeBlock>
+
+### Kontrollera flertalet knappar
+
+För att kontrollera flertalet knappar kan `ButtonContext` användas runtom flertalet knappar för att kontrollera attribut på samtliga knappar på ett ställe.
+
+<LiveCodeBlock scope={{ ButtonGroup, Button, ButtonContext }}>
+  {`<ButtonContext.Provider value={{isDisabled: true}}>
+      <ButtonGroup>
+        <Button>{fruits.shuffled(1).name}</Button>
+        <Button variant="secondary">{fruits.shuffled(1).name}</Button>
+        <Button>{fruits.shuffled(1).name}</Button>
+      </ButtonGroup>
+    </ButtonContext.Provider>`}
 </LiveCodeBlock>
 
 ## Riktlinjer
