@@ -5,6 +5,7 @@ import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
+import BrowserOnly from '@docusaurus/BrowserOnly'
 import { useColorMode } from '@docusaurus/theme-common'
 
 export default function Hello() {
@@ -62,10 +63,14 @@ function HeaderImage() {
   const { colorMode } = useColorMode()
 
   return (
-    <img
-      className={styles.image}
-      src={colorMode === 'light' ? imgSrc : imgSrcDark}
-      alt=''
-    />
+    <BrowserOnly>
+      {() => (
+        <img
+          className={styles.image}
+          src={colorMode === 'light' ? imgSrc : imgSrcDark}
+          alt=''
+        />
+      )}
+    </BrowserOnly>
   )
 }
