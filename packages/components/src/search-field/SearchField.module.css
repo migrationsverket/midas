@@ -75,7 +75,7 @@
   padding: 0.875rem 0 0.875rem 3rem;
   border-bottom: 1px solid --border-strong;
 
-  &:focus-visible {
+  &[data-focus-visible] {
     box-shadow: --focus;
 
     @media (forced-colors: active) {
@@ -88,7 +88,7 @@
     border: 2px solid --border-invalid;
   }
 
-  &:disabled {
+  &[data-disabled] {
     pointer-events: none;
   }
 
