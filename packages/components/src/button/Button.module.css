@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --button-background-primary-hover, --button-background-primary, --button-background-primary-active, --button-background-secondary, --size-03, --text-on-color, --button-border-primary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-brand, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus from tokens;
+@value --font-family, --button-background-primary-hover, --button-background-primary, --button-background-primary-active, --button-background-secondary, --size-03, --text-on-color, --button-border-primary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-brand, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus, --button-background-icon-hover, --button-background-icon-active from tokens;
 
 .button {
   font-family: --font-family;
@@ -96,7 +96,7 @@
   align-items: center;
 
   &:hover {
-    background-color: rgba(0 0 0 / 10%);
+    background-color: --button-background-icon-hover;
   }
 
   &[data-disabled] {
@@ -105,7 +105,7 @@
   }
 
   &[data-pressed] {
-    background-color: rgba(0 0 0 / 20%);
+    background-color: --button-background-icon-active;
   }
 }
 
