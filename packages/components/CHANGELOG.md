@@ -1,3 +1,20 @@
+## 5.0.1
+
+### 🩹 Fixes
+
+- **checkbox:** swap old focus token
+- **checkbox:** swap old tokens
+- **radio:** remove old tokens
+- **link-button:** fix colors on hover state
+- **toast:** re-organize animations and breakpoints
+- **toast:** remove explicit dep
+- **toast:** update react-aria deps
+- **toast:** add temporary implementation of useToastState
+
+### Documentation Changes
+
+- display project changelog on docweb
+
 # 5.0.0 (2025-03-17)
 
 ### 🚀 Features

@@ -1,3 +1,27 @@
+## 5.0.1
+
+### 🩹 Fixes
+
+- **checkbox:** swap old tokens
+- **checkbox:** swap old focus token
+- **link-button:** fix colors on hover state
+- **link-button:** fix colors on hover state
+- **radio:** remove old tokens
+- **toast:** add temporary implementation of useToastState
+- **toast:** update react-aria deps
+- **toast:** remove explicit dep
+- **toast:** re-organize animations and breakpoints
+
+### Documentation Changes
+
+- add strict mode to docs
+- add strict mode to docs
+- add additional prism languages
+- update release instructions and styleguide
+- run dark mode image switch on client
+- run dark mode image switch on client
+- display project changelog on docweb
+
 # 5.0.0 (2025-03-17)
 
 ### 🚀 Features
