@@ -300,6 +300,22 @@ mark {
   border-radius: 0 !important;
 }
 
+.changelog {
+  header {
+    padding-bottom: 1.5rem;
+  }
+
+  h2,
+  h3 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+
+  ul {
+    padding-bottom: 2rem;
+  }
+}
+
 .friendlyName {
   align-self: center;
   flex: 1 0 0% !important;

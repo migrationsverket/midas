@@ -23,7 +23,19 @@
       }
     },
     "changelog": {
-      "projectChangelogs": true,
+      "commitReferences": true,
+      "workspaceChangelog": {
+        "renderOptions": {
+          "authors": false,
+          "versionTitleDate": false
+        }
+      },
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": false,
+          "versionTitleDate": false
+        }
+      },
       "automaticFromRef": true
     },
     "projectsRelationship": "fixed",
