@@ -1,23 +1,16 @@
 import clsx from 'clsx'
 import styles from './ButtonGroup.module.css'
-import { ButtonContext } from 'react-aria-components'
 import * as React from 'react'
-
-export interface MidasButtonGroupProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  /** Set a descriptive lable for screen readers */
-  'aria-label'?: string
-}
 
 /**
  * Group several buttons together.
  *
- * @interface MidasButtonGroupProps
+ * @interface React.HTMLAttributes<HTMLDivElement>
  *
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */
 
-export const ButtonGroup: React.FC<MidasButtonGroupProps> = ({
+export const ButtonGroup: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
   className,
   'aria-label': ariaLabel,
@@ -34,5 +27,3 @@ export const ButtonGroup: React.FC<MidasButtonGroupProps> = ({
     </div>
   )
 }
-
-export { ButtonContext }

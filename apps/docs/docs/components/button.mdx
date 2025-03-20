@@ -4,10 +4,11 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Button, ButtonGroup, Flex, FlexItem, ButtonContext } from '@midas-ds/components'
+import { Button, ButtonGroup, Flex, FlexItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
+import { ButtonContext } from 'react-aria-components'
 
 export const Example = props => {
   return (
@@ -130,6 +131,10 @@ För god tillgänglighet bör du sätta en label på `ButtonGroup` för att besk
 ### Kontrollera flertalet knappar
 
 För att kontrollera flertalet knappar kan `ButtonContext` användas runtom flertalet knappar för att kontrollera attribut på samtliga knappar på ett ställe.
+
+```tsx
+import { ButtonContext } from 'react-aria-components'
+```
 
 <LiveCodeBlock scope={{ ButtonGroup, Button, ButtonContext }}>
   {`<ButtonContext.Provider value={{isDisabled: true}}>
