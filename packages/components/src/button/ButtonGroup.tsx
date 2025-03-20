@@ -1,10 +1,14 @@
 import clsx from 'clsx'
 import styles from './ButtonGroup.module.css'
+import { ButtonContext, ButtonProps, ContextValue } from 'react-aria-components'
 
+interface ButtonContextValue extends ButtonProps {
+  isPressed?: boolean
+}
 export interface MidasButtonGroupProps
   extends React.HTMLAttributes<HTMLDivElement> {
-  /** Set a descriptive lable for screen readers */
-  'aria-label': string
+  /** Additional props to pass to child Buttons */
+  contextValue?: ContextValue<ButtonContextValue, HTMLButtonElement>
 }
 
 /**
@@ -18,17 +22,22 @@ export interface MidasButtonGroupProps
 export const ButtonGroup: React.FC<MidasButtonGroupProps> = ({
   children,
   className,
-  'aria-label': ariaLabel,
+  contextValue,
   ...rest
 }) => {
   return (
     <div
       role='group'
-      aria-label={ariaLabel}
       className={clsx(styles.buttonGroup, className)}
       {...rest}
     >
-      {children}
+      {contextValue ? (
+        <ButtonContext.Provider value={contextValue}>
+          {children}
+        </ButtonContext.Provider>
+      ) : (
+        children
+      )}
     </div>
   )
 }

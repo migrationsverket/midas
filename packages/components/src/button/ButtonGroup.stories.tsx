@@ -9,7 +9,7 @@ const meta: Meta<typeof ButtonGroup> = {
   tags: ['autodocs'],
   parameters: { layout: 'centered' },
   args: {},
-  argTypes: {}
+  argTypes: {},
 }
 
 export default meta
@@ -17,12 +17,12 @@ type Story = StoryObj<typeof ButtonGroup>
 
 export const Primary: Story = {
   args: {
-    'aria-label': 'Navigera i listan'
+    'aria-label': 'Navigera i listan',
   },
-  render: ({ ...args }) => (
+  render: args => (
     <ButtonGroup {...args}>
       <Button>Fortsätt</Button>
       <Button variant='secondary'>Avbryt</Button>
     </ButtonGroup>
-  )
+  ),
 }
