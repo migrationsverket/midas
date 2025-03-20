@@ -65,7 +65,7 @@ export const Sidebar: React.FC = () => {
       <div className={styles.sidebarHeader}>
         {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
         <Button
-          variant='tertiary'
+          variant='icon'
           aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
           onPress={() => setIsCollapsed(!isCollapsed)}
           className={styles.collapseButton}
