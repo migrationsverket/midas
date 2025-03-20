@@ -8,7 +8,7 @@ import styles from './SearchField.module.css'
 import clsx from 'clsx'
 import * as React from 'react'
 import { useSearchFieldState } from 'react-stately'
-import { useSearchField } from 'react-aria'
+import { useFocusVisible, useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
 
 export interface SearchFieldProps
@@ -53,6 +53,8 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
     { value, setValue },
     ref,
   )
+
+  const { isFocusVisible } = useFocusVisible({ isTextInput: true })
 
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
     setValue(target.value)
@@ -99,6 +101,8 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
           />
           <input
             {...inputProps}
+            {...(isFocusVisible && { 'data-focus-visible': true })}
+            {...(inputProps.disabled && { 'data-disabled': true })}
             className={clsx(
               TextFieldStyles.input,
               styles.input,
