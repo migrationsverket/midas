@@ -26,7 +26,7 @@
 
 ### 🚀 Features
 
-- ⚠️  support for dark mode across all components
+- ⚠️ support for dark mode across all components
 
 ### 🩹 Fixes
 
@@ -55,7 +55,7 @@
 - **docs:** add new UIkit
 - **localization:** add dev instructions for localization
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - dark mode :city_sunrise:
 
@@ -74,6 +74,7 @@
 
 - **date-picker:** add style unavailable and code example for Unavailable Date in docs
 - **docs:** add new UIkit
+
 ### ⚠️ Breaking Changes
 
 - `Select`, `MultiSelect` and `Modal` now have updated API:s, expect things not to work as before. Make sure to check the API:s before upgrading.
@@ -280,6 +281,7 @@
 - **text-field:** support counter and maxCharacters
 - **ui:** export new components
 -
+
 ### 🩹 Fixes
 
 - **accordion:** hover on trigger
@@ -432,7 +434,6 @@
 - **toast:** new focus state
 - **ui:** add modal
 - **ui:** update theme version
-
 
 ### ⚠️ Breaking Changes
 
@@ -679,4 +680,3 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
-
