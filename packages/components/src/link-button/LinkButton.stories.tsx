@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { LinkButton } from './LinkButton'
+import { X } from 'lucide-react'
 
 const meta: Meta<typeof LinkButton> = {
   component: LinkButton,
@@ -11,18 +12,18 @@ const meta: Meta<typeof LinkButton> = {
     variant: {
       options: ['primary', 'secondary', 'tertiary', 'danger'],
       control: { type: 'radio' },
-      defaultValue: 'primary'
+      defaultValue: 'primary',
     },
     isDisabled: {
       options: [true, false],
-      control: { type: 'radio' }
+      control: { type: 'radio' },
     },
     iconPlacement: {
       options: ['right', 'left'],
       control: { type: 'radio' },
-      defaultValue: 'left'
-    }
-  }
+      defaultValue: 'left',
+    },
+  },
 }
 export default meta
 type Story = StoryObj<typeof LinkButton>
@@ -30,42 +31,57 @@ type Story = StoryObj<typeof LinkButton>
 export const Primary: Story = {
   args: {
     children: 'Till E-tjänst',
-    href: '#'
-  }
+    href: '#',
+  },
 }
 
 export const Secondary: Story = {
   args: {
     ...Primary.args,
-    variant: 'secondary'
-  }
+    variant: 'secondary',
+  },
 }
 
 export const Tertiary: Story = {
   args: {
     ...Primary.args,
-    variant: 'tertiary'
-  }
+    variant: 'tertiary',
+  },
 }
 
 export const Previous: Story = {
   args: {
     ...Primary.args,
     children: 'Föregående',
-    iconPlacement: 'left'
-  }
+    iconPlacement: 'left',
+  },
 }
 
 export const Disabled: Story = {
   args: {
     ...Primary.args,
-    isDisabled: true
-  }
+    isDisabled: true,
+  },
 }
 
 export const AppLink: Story = {
   args: {
     children: 'Till E-tjänst',
-    onPress: () => alert('navigation fn')
-  }
+    onPress: () => alert('navigation fn'),
+  },
+}
+
+export const Danger: Story = {
+  args: {
+    children: 'Radera',
+    variant: 'danger',
+  },
+}
+
+export const Icon: Story = {
+  args: {
+    variant: 'icon',
+    icon: X,
+    'aria-label': 'Close',
+  },
 }
