@@ -4,7 +4,6 @@ import { useFormReset } from '@react-aria/utils'
 import { useFormValidation } from '@react-aria/form'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
 import { MultiSelectState } from './useMultiSelectState'
-import { Label } from '../label'
 
 export interface AriaHiddenMultiSelectProps {
   /**
@@ -132,7 +131,7 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
         {...containerProps}
         data-testid='hidden-select-container'
       >
-        <Label>
+        <label>
           {label}
           <select
             {...selectProps}
@@ -155,7 +154,7 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
               return null
             })}
           </select>
-        </Label>
+        </label>
       </div>
     )
   } else if (name) {

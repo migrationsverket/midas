@@ -5,6 +5,8 @@ import {
   DateRangePickerProps,
   DateValue,
   FieldError,
+  Label,
+  Text,
   ValidationResult,
 } from 'react-aria-components'
 import {
@@ -16,14 +18,12 @@ import {
   Dialog,
   Group,
   Popover,
-  Text,
 } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { Calendar, RangeCalendar } from '../calendar'
-import { Label } from '../label'
 
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
@@ -46,7 +46,7 @@ export const DateRangePicker = <T extends DateValue>({
       className={clsx(styles.datePicker, props.className)}
       ref={ref}
     >
-      <Label variant='label-02'>{label}</Label>
+      <Label className={styles.label}>{label}</Label>
       {description && (
         <Text
           slot='description'
@@ -123,7 +123,7 @@ export const DatePicker = <T extends DateValue>({
       className={clsx(styles.datePicker, props.className)}
       ref={ref}
     >
-      <Label variant='label-02'>{label}</Label>
+      <Label className={styles.label}>{label}</Label>
       {description && (
         <Text
           slot='description'

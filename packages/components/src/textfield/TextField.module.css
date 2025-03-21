@@ -27,6 +27,13 @@
   align-content: flex-end;
 }
 
+.label {
+  color: --text-primary;
+  grid-area: Label;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .text {
   color: --text-primary;
   grid-area: Desc;
