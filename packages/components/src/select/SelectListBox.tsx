@@ -5,24 +5,29 @@ import styles from './Select.module.css'
 import type { MultiSelectState } from './useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
+import { SelectState } from 'react-stately'
+import { SelectProps } from './types'
 import { Check } from 'lucide-react'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
   listBoxRef?: React.RefObject<HTMLUListElement>
-  state: MultiSelectState<T>
+  state: SelectState<T> | MultiSelectState<T>
+  selectionMode: SelectProps['selectionMode']
 }
 
 type SectionProps<T> = {
   section: Node<T>
-  state: MultiSelectState<T>
+  state: SelectState<T> | MultiSelectState<T>
+  selectionMode: SelectProps['selectionMode']
 }
 
 type OptionProps<T> = {
   item: Node<T>
-  state: MultiSelectState<T>
+  state: SelectState<T> | MultiSelectState<T>
+  selectionMode: SelectProps['selectionMode']
 }
 
-const Option = <T,>({ item, state }: OptionProps<T>) => {
+const Option = <T,>({ item, state, selectionMode }: OptionProps<T>) => {
   const ref = React.useRef<HTMLLIElement>(null)
   const { optionProps, isDisabled, isSelected, isFocused, isFocusVisible } =
     useOption(
@@ -44,7 +49,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
         [styles.listBoxItemSelected]: isSelected,
       })}
     >
-      {state.selectionMode === 'multiple' && (
+      {selectionMode === 'multiple' && (
         <div className={styles.checkboxContainer}>
           <input
             className={styles.checkbox}
@@ -60,7 +65,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
       ) : (
         item.rendered
       )}
-      {isSelected && state.selectionMode === 'single' ? (
+      {isSelected && selectionMode === 'single' ? (
         <Check
           size={20}
           className={styles.listBoxItemCheckmark}
@@ -70,7 +75,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
   )
 }
 
-const Section = <T,>({ section, state }: SectionProps<T>) => {
+const Section = <T,>({ section, state, selectionMode }: SectionProps<T>) => {
   const { itemProps, headingProps, groupProps } = useListBoxSection({
     heading: section.rendered,
     'aria-label': section['aria-label'],
@@ -95,6 +100,7 @@ const Section = <T,>({ section, state }: SectionProps<T>) => {
             key={node.key}
             item={node}
             state={state}
+            selectionMode={selectionMode}
           />
         ))}
       </ul>
@@ -104,7 +110,7 @@ const Section = <T,>({ section, state }: SectionProps<T>) => {
 
 export const SelectListBox = <T,>(props: ListBoxProps<T>) => {
   const ref = React.useRef<HTMLUListElement>(null)
-  const { listBoxRef = ref, state } = props
+  const { listBoxRef = ref, state, selectionMode } = props
 
   const { listBoxProps } = useListBox(
     {
@@ -128,12 +134,14 @@ export const SelectListBox = <T,>(props: ListBoxProps<T>) => {
             key={item.key}
             section={item}
             state={state}
+            selectionMode={selectionMode}
           />
         ) : (
           <Option
             key={item.key}
             item={item}
             state={state}
+            selectionMode={selectionMode}
           />
         ),
       )}

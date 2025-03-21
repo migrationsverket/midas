@@ -18,9 +18,6 @@ export interface MultiSelectListState<T> extends ListState<T> {
 
   /** The value of the currently selected items. */
   selectedItems: Node<T>[] | null
-
-  /** The type of selection. */
-  selectionMode: MultipleSelection['selectionMode']
 }
 
 export function useMultiSelectListState<T extends object>(
@@ -30,7 +27,7 @@ export function useMultiSelectListState<T extends object>(
     collection,
     disabledKeys,
     selectionManager,
-    selectionManager: { setSelectedKeys, selectedKeys, selectionMode },
+    selectionManager: { setSelectedKeys, selectedKeys },
   } = useListState(props)
 
   const missingKeys: Key[] = []
@@ -64,7 +61,6 @@ export function useMultiSelectListState<T extends object>(
     collection,
     disabledKeys,
     selectionManager,
-    selectionMode,
     selectedKeys,
     setSelectedKeys: setSelectedKeys.bind(selectionManager),
     selectedItems,

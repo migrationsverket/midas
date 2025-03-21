@@ -1,5 +1,5 @@
 import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Key } from 'react-aria'
 
 import {
@@ -38,7 +38,6 @@ export interface MultiSelectProps<T>
     LabelableProps,
     TextInputBase,
     ArraySelection,
-    // MultipleSelection,
     FocusableProps,
     OverlayTriggerProps {
   /**
@@ -62,7 +61,6 @@ export interface MultiSelectState<T>
 export function useMultiSelectState<T extends object>(
   props: MultiSelectProps<T>,
 ): MultiSelectState<T> {
-  const { selectionMode } = props
   const [isFocused, setFocused] = useState(false)
 
   const triggerState = useMenuTriggerState(props)
@@ -78,15 +76,8 @@ export function useMultiSelectState<T extends object>(
           // items and differentiation between "select all" vs. "select visible".
           onSelectionChange(Array.from(listState.collection.getKeys()))
         } else {
-          selectionMode === 'single'
-            ? onSelectionChange(keys.values().next().value as Key)
-            : onSelectionChange(Array.from(keys))
+          onSelectionChange(Array.from(keys))
         }
-      }
-
-      // Multi select stays open after item selection
-      if (selectionMode === 'single') {
-        triggerState.close()
       }
     },
   })
@@ -94,19 +85,8 @@ export function useMultiSelectState<T extends object>(
   const validationState = useFormValidationState({
     ...props,
     validationBehavior: 'native',
-    value:
-      selectionMode === 'single'
-        ? listState.selectedKeys.values().next().value?.toString()
-        : listState.selectedKeys,
+    value: listState.selectedKeys,
   })
-
-  // Reset validation for single selects when the selected key changes.
-  useEffect(() => {
-    if (selectionMode === 'single' && listState.selectedKeys.size) {
-      validationState.resetValidation()
-      validationState.commitValidation()
-    }
-  }, [listState.selectedKeys.size, selectionMode, validationState])
 
   return {
     ...listState,

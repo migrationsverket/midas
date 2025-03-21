@@ -1,5 +1,4 @@
 import { useCollator } from 'react-aria'
-import { Key } from '@react-types/shared'
 import { setInteractionModality } from '@react-aria/interactions'
 import { useField } from 'react-aria'
 import { AriaListBoxOptions } from 'react-aria'
@@ -63,47 +62,6 @@ export function useMultiSelect<T>(
     ref,
   )
 
-  const triggerOnKeyDown = (e: KeyboardEvent) => {
-    const { selectedKeys, selectionMode } = state
-    const firstKey = selectedKeys.values().next().value
-    // Select items when trigger has focus - imitating default `<select>` behaviour.
-    // In multi selection mode it does not make sense.
-    if (selectionMode === 'single') {
-      switch (e.key) {
-        case 'ArrowLeft': {
-          // prevent scrolling containers
-          e.preventDefault()
-
-          const key =
-            selectedKeys.size > 0
-              ? delegate.getKeyAbove(firstKey as Key)
-              : delegate.getFirstKey()
-
-          if (key) {
-            state.setSelectedKeys([key])
-          }
-          break
-        }
-        case 'ArrowRight': {
-          // prevent scrolling containers
-          e.preventDefault()
-
-          const key =
-            selectedKeys.size > 0
-              ? delegate.getKeyBelow(firstKey as Key)
-              : delegate.getFirstKey()
-
-          if (key) {
-            state.setSelectedKeys([key])
-          }
-          break
-        }
-
-        // no default
-      }
-    }
-  }
-
   // Typeahead functionality - imitating default `<select>` behaviour.
   const { typeSelectProps } = useTypeSelect({
     keyboardDelegate: delegate,
@@ -140,11 +98,7 @@ export function useMultiSelect<T>(
     },
     triggerProps: mergeProps(domProps, {
       ...triggerProps,
-      onKeyDown: chain(
-        triggerProps.onKeyDown,
-        triggerOnKeyDown,
-        props.onKeyDown,
-      ),
+      onKeyDown: chain(triggerProps.onKeyDown, props.onKeyDown),
       onKeyUp: props.onKeyUp,
       'aria-labelledby': [
         triggerProps['aria-labelledby'],
