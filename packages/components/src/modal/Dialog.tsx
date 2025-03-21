@@ -5,6 +5,12 @@ import {
   useOverlayTrigger,
   OverlayTriggerAria,
 } from 'react-aria'
+import {
+  DialogTrigger,
+  Modal as AriaModal,
+  ModalOverlay,
+  Dialog as AriaDialog,
+} from 'react-aria-components'
 import { useDialog } from 'react-aria'
 import * as React from 'react'
 import { useOverlayTriggerState } from 'react-stately'
@@ -57,7 +63,11 @@ type MidasModalProps = {
   children: React.ReactNode
 } & AriaModalOverlayProps
 
-const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
+export const Modal: React.FC<MidasModalProps> = ({
+  state,
+  children,
+  ...props
+}) => {
   const ref = React.useRef(null)
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref)
 
@@ -113,5 +123,28 @@ export const ModalTrigger: React.FC<
         </Modal>
       )}
     </>
+  )
+}
+
+export { DialogTrigger }
+
+export const MidasModal: React.FC<
+  AriaModalOverlayProps & AriaDialogProps & { children: React.ReactNode } & {title?: string}
+> = ({ children,title, ...props }) => {
+  return (
+    <AriaDialog {...props}>
+      <ModalOverlay {...props} className={styles.overlay}>
+        <AriaModal
+          {...props}
+          isDismissable={props.isDismissable}
+          className={styles.modal}
+        >
+          <Dialog {...props}>
+            <div className={styles.modalHeader}>{title && (<h1>{title}</h1>) }<Button slot={'close'}>X</Button></div>
+              {children}
+          </Dialog>
+        </AriaModal>
+      </ModalOverlay>
+    </AriaDialog>
   )
 }
