@@ -24,6 +24,7 @@ import {
   useFormValidationState,
   type FormValidationState,
 } from '@react-stately/form'
+import { SingleSelectListState, useSingleSelectListState } from 'react-stately'
 
 /** Added this for a better output, will see how this plays out */
 interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
@@ -51,6 +52,7 @@ export interface MultiSelectProps<T>
 export interface MultiSelectState<T>
   extends MultiSelectListState<T>,
     MenuTriggerState,
+    SingleSelectListState<T>,
     FormValidationState {
   /** Whether the select is currently focused. */
   isFocused: boolean
@@ -67,7 +69,7 @@ export function useMultiSelectState<T extends object>(
 
   const triggerState = useMenuTriggerState(props)
 
-  const listState = useMultiSelectListState({
+  const multiSelectListState = useMultiSelectListState({
     ...props,
     onSelectionChange: keys => {
       const { onSelectionChange } = props
@@ -76,11 +78,35 @@ export function useMultiSelectState<T extends object>(
         if (keys === 'all') {
           // This may change back to "all" once we will implement async loading of additional
           // items and differentiation between "select all" vs. "select visible".
-          onSelectionChange(Array.from(listState.collection.getKeys()))
+          onSelectionChange(
+            Array.from(multiSelectListState.collection.getKeys()),
+          )
         } else {
-          selectionMode === 'single'
-            ? onSelectionChange(keys.values().next().value as Key)
-            : onSelectionChange(Array.from(keys))
+          onSelectionChange(Array.from(keys))
+        }
+      }
+
+      // Multi select stays open after item selection
+      if (selectionMode === 'single') {
+        triggerState.close()
+      }
+    },
+  })
+
+  const singleSelectListState = useSingleSelectListState({
+    ...props,
+    onSelectionChange: key => {
+      const { onSelectionChange } = props
+
+      if (onSelectionChange != null) {
+        if (key === 'all') {
+          // This may change back to "all" once we will implement async loading of additional
+          // items and differentiation between "select all" vs. "select visible".
+          onSelectionChange(
+            Array.from(singleSelectListState.collection.getKeys()),
+          )
+        } else {
+          onSelectionChange(key)
         }
       }
 
@@ -96,36 +122,37 @@ export function useMultiSelectState<T extends object>(
     validationBehavior: 'native',
     value:
       selectionMode === 'single'
-        ? listState.selectedKeys.values().next().value?.toString()
-        : listState.selectedKeys,
+        ? multiSelectListState.selectedKeys.values().next().value?.toString()
+        : singleSelectListState.selectedKey,
   })
 
   // Reset validation for single selects when the selected key changes.
   useEffect(() => {
-    if (selectionMode === 'single' && listState.selectedKeys.size) {
+    if (selectionMode === 'single' && singleSelectListState.selectedKey) {
       validationState.resetValidation()
       validationState.commitValidation()
     }
-  }, [listState.selectedKeys.size, selectionMode, validationState])
+  }, [selectionMode, singleSelectListState.selectedKey, validationState])
 
   return {
-    ...listState,
+    ...multiSelectListState,
+    ...singleSelectListState,
     ...triggerState,
     close() {
       triggerState.close()
-      if (listState.selectedKeys.size) {
+      if (multiSelectListState.selectedKeys.size) {
         validationState.resetValidation()
         validationState.commitValidation()
       }
     },
     open() {
       // Don't open if the collection is empty.
-      if (listState.collection.size !== 0) {
+      if (multiSelectListState.collection.size !== 0) {
         triggerState.open()
       }
     },
     toggle(focusStrategy) {
-      if (listState.collection.size !== 0) {
+      if (multiSelectListState.collection.size !== 0) {
         triggerState.toggle(focusStrategy)
       }
     },
