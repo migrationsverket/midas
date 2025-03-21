@@ -99,6 +99,7 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
           />
           <input
             {...inputProps}
+            {...(inputProps.disabled && { 'data-disabled': true })}
             className={clsx(
               TextFieldStyles.input,
               styles.input,

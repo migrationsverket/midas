@@ -5,11 +5,12 @@ import {
   Popover,
   type MenuItemProps,
   type MenuProps,
-  type MenuTriggerProps
+  type MenuTriggerProps,
 } from 'react-aria-components'
 import { Button } from '../button'
 import { EllipsisVertical } from 'lucide-react'
 import styles from './Dropdown.module.css'
+import clsx from 'clsx'
 
 interface MidasMenuButtonProps<T>
   extends MenuProps<T>,
@@ -58,7 +59,12 @@ export function DropdownItem(props: MenuItemProps) {
       {...props}
       textValue={textValue}
       className={({ isFocused, isOpen }) =>
-        `${styles.dropdownMenu} ${isFocused ? 'focused' : ''} ${isOpen ? 'open' : ''}`
+        clsx(
+          styles.menuItem,
+          props.className,
+          isFocused && 'focused',
+          isOpen && 'open',
+        )
       }
     >
       {({ hasSubmenu }) => (

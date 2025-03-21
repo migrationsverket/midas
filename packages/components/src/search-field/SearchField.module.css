@@ -88,7 +88,7 @@
     border: 2px solid --border-invalid;
   }
 
-  &:disabled {
+  &[data-disabled] {
     pointer-events: none;
   }
 

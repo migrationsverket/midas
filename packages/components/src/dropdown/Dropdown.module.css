@@ -6,16 +6,16 @@
   box-shadow: 2px 2px 4px 0 rgb(0 0 0 / 25%);
   background-color: --button-background-tertiary-hover;
 
-  &:focus-visible {
+  &[data-focus-visible] {
     outline: none;
     box-shadow: --focus;
   }
 }
 
-.dropdownMenu {
+.menuItem {
   width: 100%;
 
-  &:focus-visible {
+  &[data-focus-visible] {
     outline: none;
     box-shadow: --focus;
   }
