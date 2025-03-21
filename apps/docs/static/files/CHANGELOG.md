@@ -1,34 +1,10 @@
-## 5.0.1
+## 5.0.0 (2025-03-17)
 
-### 🩹 Fixes
-
-- **checkbox:** swap old tokens
-- **checkbox:** swap old focus token
-- **link-button:** fix colors on hover state
-- **link-button:** fix colors on hover state
-- **radio:** remove old tokens
-- **toast:** add temporary implementation of useToastState
-- **toast:** update react-aria deps
-- **toast:** remove explicit dep
-- **toast:** re-organize animations and breakpoints
-
-### Documentation Changes
-
-- add strict mode to docs
-- add strict mode to docs
-- add additional prism languages
-- update release instructions and styleguide
-- run dark mode image switch on client
-- run dark mode image switch on client
-- display project changelog on docweb
-
-# 5.0.0 (2025-03-17)
-
-### 🚀 Features
+#### 🚀 Features
 
 - ⚠️ support for dark mode across all components
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **button:** deprecate small version
 - **card:** deprecate card background
@@ -41,7 +17,7 @@
 - **select:** change direct element selector
 - **table:** deprecate narrow version
 
-### Documentation Changes
+#### Documentation Changes
 
 - dark mode support for storybook and docusaurus
 - add instructions for bug reporting
@@ -55,37 +31,37 @@
 - **docs:** add new UIkit
 - **localization:** add dev instructions for localization
 
-### ⚠️ Breaking Changes
+#### ⚠️ Breaking Changes
 
 - dark mode :city_sunrise:
 
-# 4.0.0 (2025-03-10)
+## 4.0.0 (2025-03-10)
 
-### 🚀 Features
+#### 🚀 Features
 
 - ⚠️ updated select, multi-select and modal components
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **layout:** design adjustments
 - **radio:** change cursor to pointer
 
-### Documentation Changes
+#### Documentation Changes
 
 - **date-picker:** add style unavailable and code example for Unavailable Date in docs
 - **docs:** add new UIkit
 
-### ⚠️ Breaking Changes
+#### ⚠️ Breaking Changes
 
 - `Select`, `MultiSelect` and `Modal` now have updated API:s, expect things not to work as before. Make sure to check the API:s before upgrading.
 
-## 3.1.0 (2025-03-06)
+### 3.1.0 (2025-03-06)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **button:** set primary border to 2px when in high-contrast mode ([fdcf32e1d](https://github.com/migrationsverket/midas/commit/fdcf32e1d))
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **calendar** set default weekday style to `short` ([#303](https://github.com/migrationsverket/midas/pull/303))
 - **checkbox:** change cursor to pointer ([d5ce18403](https://github.com/migrationsverket/midas/commit/d5ce18403))
@@ -94,19 +70,19 @@
 - **datepicker:** change cursor to pointer ([5425f7282](https://github.com/migrationsverket/midas/commit/5425f7282))
 - **radio:** change cursor to pointer ([c18ec8f4e](https://github.com/migrationsverket/midas/commit/c18ec8f4e))
 
-### Documentation Changes
+#### Documentation Changes
 
 - add new UIkit ([a47947b63](https://github.com/migrationsverket/midas/commit/a47947b63))
 - add instructions for bug reporting ([93205ee30](https://github.com/migrationsverket/midas/commit/93205ee30))
 - **date-picker:** add style unavailable and code example for Unavailable Date in docs ([469da9424](https://github.com/migrationsverket/midas/commit/469da9424))
 
-# 3.0.0 (2025-02-28)
+## 3.0.0 (2025-02-28)
 
-### 🚀 Features
+#### 🚀 Features
 
 - ⚠️ **search-field:** remove broken property ([1c04349ce](https://github.com/migrationsverket/midas/commit/1c04349ce))
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **card:** append props.className ([#295](https://github.com/migrationsverket/midas/pull/295))
 - **search-field:** move validation error message ([85c1b7990](https://github.com/migrationsverket/midas/commit/85c1b7990))
@@ -117,37 +93,37 @@
 - **search-field:** add border bottom and pixel push some paddings ([e53d56bb7](https://github.com/migrationsverket/midas/commit/e53d56bb7))
 - **search-field:** validation text ([#290](https://github.com/migrationsverket/midas/pull/290))
 
-### Documentation Changes
+#### Documentation Changes
 
 - **search-field:** add stories ([8766d4d8e](https://github.com/migrationsverket/midas/commit/8766d4d8e))
 
-### ⚠️ Breaking Changes
+#### ⚠️ Breaking Changes
 
 - **search-field:** `isRequired` property of `SearchField` is no longer supported
 
-## 2.0.1 (2025-02-27)
+### 2.0.1 (2025-02-27)
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **radio:** fix hover on mobile, remove 100% height on RadioGroup ([#286](https://github.com/migrationsverket/midas/pull/286))
 - **text-field:** update dossnr regex to support new delimiter ([c5e1b4428](https://github.com/migrationsverket/midas/commit/c5e1b4428))
 - **text-field:** add rule for matching delimiters for doss nr ([026073775](https://github.com/migrationsverket/midas/commit/026073775))
 - **text-field:** cover more cases on dossnr ([0f27d8b33](https://github.com/migrationsverket/midas/commit/0f27d8b33))
 
-### Documentation Changes
+#### Documentation Changes
 
 - update get started with node 22 ([098e4e1e0](https://github.com/migrationsverket/midas/commit/098e4e1e0))
 
-# 2.0.0 (2025-02-25)
+## 2.0.0 (2025-02-25)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **layout:** design improvements + tooltip ([#231](https://github.com/migrationsverket/midas/pull/231))
 - ⚠️ **textarea:** rename maxCharacters property ([06116cee9](https://github.com/migrationsverket/midas/commit/06116cee9))
 - ⚠️ **text-field:** rename maxCharacters property ([44eec760e](https://github.com/migrationsverket/midas/commit/44eec760e))
 - **tooltip:** new component tooltip ([3bc3fcd4f](https://github.com/migrationsverket/midas/commit/3bc3fcd4f))
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **accessibility:** fix focus for high contrast mode ([#267](https://github.com/migrationsverket/midas/pull/267))
 - **accordion:** append classname ([aaaa0ddb1](https://github.com/migrationsverket/midas/commit/aaaa0ddb1))
@@ -173,7 +149,7 @@
 - **theme:** add global css export ([#282](https://github.com/migrationsverket/midas/pull/282))
 - **tooltip:** append classname ([0e6e6e483](https://github.com/migrationsverket/midas/commit/0e6e6e483))
 
-### Documentation Changes
+#### Documentation Changes
 
 - dropdown + layout + tooltip ([28d3bc661](https://github.com/migrationsverket/midas/commit/28d3bc661))
 - **components:** sync docusaurus and storybook autodocs config ([4e061ad4d](https://github.com/migrationsverket/midas/commit/4e061ad4d))
@@ -182,18 +158,18 @@
 - **docs:** add link to design pattern ([38db9d2de](https://github.com/migrationsverket/midas/commit/38db9d2de))
 - **file-upload:** manually extend react aria props for autodocs ([07ecde229](https://github.com/migrationsverket/midas/commit/07ecde229))
 
-### ⚠️ Breaking Changes
+#### ⚠️ Breaking Changes
 
 - **textarea:** TextArea propert maxCharacters is renamed to maxLength
 
-## 1.3.0 (2025-02-19)
+### 1.3.0 (2025-02-19)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **accordion:** support react nodes in title ([#259](https://github.com/migrationsverket/midas/pull/259))
 - **text-field:** add dossier number validation ([#261](https://github.com/migrationsverket/midas/pull/261))
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **accordion:** support any elements in title ([1129fd742](https://github.com/migrationsverket/midas/commit/1129fd742))
 - **card:** add React.useId to generate unique id ([160319d03](https://github.com/migrationsverket/midas/commit/160319d03))
@@ -209,29 +185,29 @@
 - **theme:** point to theme types ([#248](https://github.com/migrationsverket/midas/pull/248))
 - **theme:** reorder theme export ([#265](https://github.com/migrationsverket/midas/pull/265))
 
-## 1.2.0 (2025-02-11)
+### 1.2.0 (2025-02-11)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **components:** new api and style for accordion ([efab0a198](https://github.com/migrationsverket/midas/commit/efab0a198))
 - **components:** add nvm config ([7cbbce66e](https://github.com/migrationsverket/midas/commit/7cbbce66e))
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - import/export text-field css directly from css module ([#212](https://github.com/migrationsverket/midas/pull/212))
 - **components:** fix text when titles are longer than one row ([28b06cd31](https://github.com/migrationsverket/midas/commit/28b06cd31))
 - **info-banner:** fix icon to be in same line with text in docs and story ([f37b798c3](https://github.com/migrationsverket/midas/commit/f37b798c3))
 - **theme:** create separate theme export ([a6c95a23c](https://github.com/migrationsverket/midas/commit/a6c95a23c))
 
-## 1.1.0 (2025-01-31)
+### 1.1.0 (2025-01-31)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **components:** new api and style for accordion
 
-## 1.0.2 (2025-01-27)
+### 1.0.2 (2025-01-27)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **modal:** create a new component
 - **button:** add react aria button component
@@ -282,7 +258,7 @@
 - **ui:** export new components
 -
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **accordion:** hover on trigger
 - **accordion:** update icon size
@@ -435,14 +411,14 @@
 - **ui:** add modal
 - **ui:** update theme version
 
-### ⚠️ Breaking Changes
+#### ⚠️ Breaking Changes
 
 - **modal:** new API
 - **card:** new card api
 
-## 1.0.1 (2025-01-27)
+### 1.0.1 (2025-01-27)
 
-### 🚀 Features
+#### 🚀 Features
 
 - **tag:** create a new component
 - **modal:** create a new component
@@ -492,7 +468,7 @@
 - **text-field:** support counter and maxCharacters
 - **ui:** export new components
 
-### 🩹 Fixes
+#### 🩹 Fixes
 
 - **accordion:** hover on trigger
 - **accordion:** update icon size
@@ -647,7 +623,7 @@
 - **toast:** new focus state
 - **ui:** add modal
 
-### ⚠️ Breaking Changes
+#### ⚠️ Breaking Changes
 
 - **modal:** new API
 - **card:** new card api
@@ -675,7 +651,7 @@
 - ⚠️ **breadcrumbs:** new build
 - ⚠️ **accordion:** new build
 
-# Changelog
+## Changelog
 
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
