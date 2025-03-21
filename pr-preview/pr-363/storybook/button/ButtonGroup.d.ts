@@ -1,12 +1,9 @@
-export interface MidasButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
-    /** Set a descriptive lable for screen readers */
-    'aria-label': string;
-}
+import * as React from 'react';
 /**
  * Group several buttons together.
  *
- * @interface MidasButtonGroupProps
+ * @interface React.HTMLAttributes<HTMLDivElement>
  *
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */
-export declare const ButtonGroup: React.FC<MidasButtonGroupProps>;
+export declare const ButtonGroup: React.FC<React.HTMLAttributes<HTMLDivElement>>;
