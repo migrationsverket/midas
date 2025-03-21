@@ -3,6 +3,7 @@
 import * as React from 'react'
 import {
   TextField as AriaTextField,
+  Label,
   Input,
   FieldError,
   Text,
@@ -12,7 +13,6 @@ import {
 import styles from './TextField.module.css'
 import { Button } from '../button'
 import clsx from 'clsx'
-import { Label } from '../label'
 
 export interface TextFieldProps extends AriaTextFieldProps {
   children?: React.ReactNode
@@ -172,7 +172,7 @@ export const InputWrapper = ({
 }: InputWrapperProps) => {
   return (
     <div className={styles.inputWrapper}>
-      {label && <Label variant='label-02'>{label}</Label>}
+      {label && <Label className={styles.label}>{label}</Label>}
       {description && (
         <Text
           slot='description'

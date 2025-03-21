@@ -63,6 +63,12 @@
   }
 }
 
+.label {
+  color: --text-primary;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .description {
   color: --text-primary;
   font-size: 0.875rem;

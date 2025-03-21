@@ -5,13 +5,13 @@ import {
   Disclosure,
   DisclosurePanel,
   DisclosureProps,
+  Heading,
   HeadingProps,
 } from 'react-aria-components'
 import { Button } from '../button'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
 import styles from './Accordion.module.css'
-import { Heading } from '../heading'
 
 interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   /** The text displayed in the collapsed state. If a ReactNode is proveded we're not adding a heading and you have to provide one yourself. */
