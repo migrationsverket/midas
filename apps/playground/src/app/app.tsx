@@ -1,6 +1,6 @@
 import styles from './app.module.css'
 import React from 'react'
-import { Modal, Button, DialogTrigger, FlexItem, ModalTrigger, Dialog, Flex } from '@midas-ds/components'
+import { Modal, Button, DialogTrigger, FlexItem, ModalTrigger, Dialog, Flex, TextField } from '@midas-ds/components'
 
 export function App() {
   const [open, setOpen] = React.useState<boolean>(false)
@@ -31,6 +31,7 @@ export function App() {
           title={'Modal Title'}
         >
           Any content here
+          <TextField label={'Name'} autoFocus></TextField>
           <Button
             onPress={() =>
               setOpen(p => {
