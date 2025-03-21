@@ -11,7 +11,7 @@
   font-weight: 400;
   align-items: center;
 
-  &:hover {
+  &[data-hovered] {
     color: --link-hover;
   }
 
@@ -52,7 +52,7 @@
   text-decoration: none;
   font-weight: 500;
 
-  &:hover:not([data-disabled='true']) {
+  &[data-hovered]:not([data-disabled='true']) {
     text-decoration: underline;
   }
 

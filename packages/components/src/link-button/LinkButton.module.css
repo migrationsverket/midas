@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --size-03, --button-background-primary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-brand, --border-brand, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary from tokens;
+@value --font-family, --size-03, --button-background-primary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-brand, --border-brand, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover from tokens;
 
 .linkButton {
   font-family: --font-family;
@@ -17,7 +17,7 @@
   gap: 0.5rem;
   text-decoration: none;
 
-  &:hover {
+  &[data-hovered] {
     text-decoration: none;
     background-color: --button-background-primary-hover;
     color: --text-on-color;
@@ -53,7 +53,7 @@
     color: --icon-secondary;
   }
 
-  &:hover {
+  &[data-hovered] {
     color: --text-brand;
     background-color: --button-background-secondary-hover;
   }
@@ -72,7 +72,7 @@
   background-color: transparent;
   opacity: 1;
 
-  &:hover {
+  &[data-hovered] {
     color: --text-brand;
     background-color: --button-background-tertiary-hover;
   }
@@ -87,7 +87,7 @@
   background-color: --button-background-danger;
   opacity: 1;
 
-  &:hover {
+  &[data-hovered] {
     background-color: --button-background-danger-hover;
   }
 
@@ -104,8 +104,8 @@
   display: flex;
   align-items: center;
 
-  &:hover {
-    background-color: rgba(0 0 0 / 10%);
+  &[data-hovered] {
+    background-color: --button-background-icon-hover;
   }
 
   &[data-disabled] {

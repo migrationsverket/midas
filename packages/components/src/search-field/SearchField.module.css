@@ -92,6 +92,10 @@
     border: 2px solid --border-invalid;
   }
 
+  &[data-disabled] {
+    pointer-events: none;
+  }
+
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,

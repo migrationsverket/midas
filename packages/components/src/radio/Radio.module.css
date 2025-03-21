@@ -50,7 +50,7 @@
     }
   }
 
-  &:hover {
+  &[data-hovered] {
     &::before {
       border-color: --border-medium;
     }
@@ -97,7 +97,7 @@
     border: 1px solid --border-strong;
     width: auto;
 
-    &:hover {
+    &[data-hovered] {
       background-color: --field-hover-02;
     }
 

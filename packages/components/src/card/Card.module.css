@@ -16,17 +16,12 @@
     transform --fast-transition ease-in-out,
     background-color --fast-transition ease-in-out;
 
-  &:hover:not([data-disabled='true']) {
+  &:has([data-hovered]) {
     background-color: --layer-hover-02;
   }
 
-  &:active:not([data-disabled='true']) {
+  &:has([data-pressed]) {
     background-color: --layer-selected-02;
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: --focus;
   }
 }
 

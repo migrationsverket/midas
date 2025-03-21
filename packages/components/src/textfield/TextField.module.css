@@ -103,7 +103,7 @@
   box-sizing: border-box;
   width: 100%;
 
-  &:hover {
+  &[data-hovered] {
     background-color: --field-hover-01;
 
     & + .passwordText {
