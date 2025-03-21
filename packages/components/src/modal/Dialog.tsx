@@ -63,7 +63,7 @@ type MidasModalProps = {
   children: React.ReactNode
 } & AriaModalOverlayProps
 
-export const Modal: React.FC<MidasModalProps> = ({
+const MidasModal: React.FC<MidasModalProps> = ({
   state,
   children,
   ...props
@@ -105,7 +105,7 @@ export const ModalTrigger: React.FC<
     <>
       <Button {...triggerProps}>{label}</Button>
       {state.isOpen && (
-        <Modal
+        <MidasModal
           {...props}
           state={state}
         >
@@ -120,7 +120,7 @@ export const ModalTrigger: React.FC<
             </Button>
           </div>
           {React.cloneElement(children(state.close), overlayProps)}
-        </Modal>
+        </MidasModal>
       )}
     </>
   )
@@ -128,21 +128,35 @@ export const ModalTrigger: React.FC<
 
 export { DialogTrigger }
 
-export const MidasModal: React.FC<
-  AriaModalOverlayProps & AriaDialogProps & { children: React.ReactNode } & {title?: string}
-> = ({ children,title, ...props }) => {
+export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
+  children,
+  title,
+  ...props
+}) => {
   return (
     <AriaDialog {...props}>
-      <ModalOverlay {...props} className={styles.overlay}>
+      <ModalOverlay
+        {...props}
+        className={styles.overlay}
+      >
         <AriaModal
           {...props}
-          isDismissable={props.isDismissable}
           className={styles.modal}
         >
-          <Dialog {...props}>
-            <div className={styles.modalHeader}>{title && (<h1>{title}</h1>) }<Button slot={'close'}>X</Button></div>
-              {children}
-          </Dialog>
+          <div className={styles.modalHeader}>
+            <Button
+              slot={'close'}
+              variant='tertiary'
+              icon={X}
+              iconPlacement='right'
+            >
+              Stäng
+            </Button>
+          </div>
+          <div className={styles.modalBody}>
+            {title && <h2 className={styles.modalHeading}>{title}</h2>}
+            {children}
+          </div>
         </AriaModal>
       </ModalOverlay>
     </AriaDialog>
