@@ -25,14 +25,14 @@ export const Tabs = <T extends string>({
   tabs,
   label,
   defaultSelected,
-  children
+  children,
 }: TabsProps<T>) => {
   const childrenArray = React.Children.toArray(children)
 
   // Check if the number of children matches the number of tabs
   if (childrenArray.length !== tabs.length) {
     throw new Error(
-      `The number of children must match the number of tabs. Children: ${childrenArray.length} Tabs: ${tabs.length}`
+      `The number of children must match the number of tabs. Children: ${childrenArray.length} Tabs: ${tabs.length}`,
     )
   }
 
@@ -47,7 +47,7 @@ export const Tabs = <T extends string>({
       }
       return acc
     },
-    {} as Record<string, React.ReactElement<TabPanelChildProps>>
+    {} as Record<string, React.ReactElement<TabPanelChildProps>>,
   )
 
   return (
