@@ -37,6 +37,7 @@
     background: --field-disabled;
     box-shadow: none;
     border-bottom: 0.063rem solid --border-disabled;
+    cursor: not-allowed;
   }
 }
 
@@ -81,6 +82,10 @@
 
   &[aria-expanded='true'] {
     transform: rotate(180deg);
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
   }
 
   &[data-hovered] {

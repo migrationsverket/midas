@@ -11,7 +11,7 @@
 
 .isDisabled {
   color: --text-disabled;
-  pointer-events: none;
+  cursor: not-allowed;
 
   .inputField {
     border: none;
@@ -32,7 +32,7 @@
     box-shadow: --focus;
   }
 
-  &[data-hovered] {
+  &[data-hovered]:not([data-disabled='true']) {
     background-color: --field-hover-01;
   }
 

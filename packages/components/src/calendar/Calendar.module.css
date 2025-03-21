@@ -45,6 +45,12 @@
       outline-offset: 2px;
     }
   }
+
+  &[data-disabled='true'],
+  &[data-disabled='true'] .day,
+  &[data-disabled='true'] button {
+    cursor: not-allowed;
+  }
 }
 
 .header {

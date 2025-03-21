@@ -41,6 +41,12 @@ export const WithTime: Story = {
   },
 }
 
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+}
+
 export const Required: Story = {
   args: {
     isRequired: true,

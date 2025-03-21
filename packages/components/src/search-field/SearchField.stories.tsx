@@ -86,3 +86,10 @@ export const Invalid: Story = {
     })
   },
 }
+
+export const Disabled: Story = {
+  args: {
+    placeholder: 'Sök efter dokument',
+    isDisabled: true,
+  },
+}

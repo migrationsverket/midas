@@ -127,7 +127,7 @@
   }
 
   &[data-disabled] {
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --field-disabled;
     border: none;
     opacity: 0.7;

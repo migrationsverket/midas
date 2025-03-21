@@ -27,7 +27,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
   }
 
   &[data-focused],
