@@ -21,6 +21,7 @@ import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { OverlayTriggerState } from '@react-stately/overlays'
 import { OverlayTriggerProps } from '@react-types/overlays'
 import clsx from 'clsx'
+import { FocusScope } from '@react-aria/focus'
 
 interface DialogProps extends AriaDialogProps {
   /**
@@ -139,25 +140,27 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
         {...props}
         className={styles.overlay}
       >
-        <AriaModal
-          {...props}
-          className={styles.modal}
-        >
-          <div className={styles.modalHeader}>
-            <Button
-              slot={'close'}
-              variant='tertiary'
-              icon={X}
-              iconPlacement='right'
-            >
-              Stäng
-            </Button>
-          </div>
-          <div className={styles.modalBody}>
-            {title && <h2 className={styles.modalHeading}>{title}</h2>}
-            {children}
-          </div>
-        </AriaModal>
+        <FocusScope contain autoFocus restoreFocus>
+          <AriaModal
+            {...props}
+            className={styles.modal}
+          >
+            <div className={styles.modalHeader}>
+              <Button
+                slot={'close'}
+                variant='tertiary'
+                icon={X}
+                iconPlacement='right'
+              >
+                Stäng
+              </Button>
+            </div>
+            <div className={styles.modalBody}>
+              {title && <h2 className={styles.modalHeading}>{title}</h2>}
+              {children}
+            </div>
+          </AriaModal>
+        </FocusScope>
       </ModalOverlay>
     </AriaDialog>
   )
