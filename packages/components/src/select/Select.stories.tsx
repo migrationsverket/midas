@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
+import { useState } from 'react'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -143,5 +145,44 @@ export const NotClearable: Story = {
     ...Normal.args,
     selectionMode: 'multiple',
     isClearable: false,
+  },
+}
+
+export const FixThisBug: Story = {
+  args: {
+    ...Normal.args,
+    selectionMode: 'single',
+    isClearable: false,
+    label: 'Ärende',
+    placeholder: 'Välj ärende',
+  },
+  render: args => {
+    const [selectedItem, setSelectedItem] = useState('')
+
+    return (
+      <Select
+        {...args}
+        selectedKeys={selectedItem}
+        onSelectionChange={item => setSelectedItem(item.toString())}
+        options={[
+          { id: '12', name: 'tolv' },
+          { id: '1', name: 'ett' },
+          { id: '2', name: 'två' },
+        ]}
+      />
+    )
+  },
+  play: async ({ args, step, canvas }) => {
+    await step(
+      'It should be possible to select an item with an ID greater than 9',
+      async () => {
+        await userEvent.tab()
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+        expect(
+          canvas.getByLabelText(args.label + '-hidden'),
+        ).toHaveDisplayValue(['tolv'])
+      },
+    )
   },
 }
