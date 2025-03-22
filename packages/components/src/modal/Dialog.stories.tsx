@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Dialog, ModalTrigger } from './Dialog'
+import { Modal, DialogTrigger } from './Dialog'
 import { Button } from '../button'
 import { Select } from '../select'
+import React from 'react'
 
-const meta: Meta<typeof ModalTrigger> = {
-  component: ModalTrigger,
+const meta: Meta<typeof DialogTrigger> = {
+  component: DialogTrigger,
   title: 'Components/Modal',
   tags: ['autodocs'],
   parameters: {
@@ -12,7 +13,7 @@ const meta: Meta<typeof ModalTrigger> = {
   },
 }
 export default meta
-type Story = StoryObj<typeof ModalTrigger>
+type Story = StoryObj<typeof DialogTrigger>
 const fruits = [
   'Apple',
   'Banana',
@@ -49,35 +50,36 @@ const options = fruits.map(fruit => {
 })
 const Render = ({ ...args }) => {
   return (
-    <ModalTrigger {...args}>
-      {close => (
-        <Dialog title='Enter your name'>
-          <Select
-            autoFocus
-            placeholder={'Select...'}
-            defaultSelectedKeys={['kiwi']}
-            label={'Select fruits'}
-            selectionMode={'multiple'}
-            options={options}
-            isClearable
-            isSelectableAll={false}
-          ></Select>
-          <Button
-            onPress={close}
-            style={{ marginTop: 10 }}
-          >
-            Submit
-          </Button>
-        </Dialog>
-      )}
-    </ModalTrigger>
+    <DialogTrigger {...args}>
+      <Button>Öppna</Button>
+      <Modal
+        title='Enter your name'
+        isDismissable={args?.isDismissable}
+      >
+        <Select
+          autoFocus
+          placeholder={'Select...'}
+          defaultSelectedKeys={['kiwi']}
+          label={'Select fruits'}
+          selectionMode={'multiple'}
+          options={options}
+          isClearable
+          isSelectableAll={false}
+        ></Select>
+        <Button
+          style={{ marginTop: 10 }}
+          slot={'close'}
+        >
+          Submit
+        </Button>
+      </Modal>
+    </DialogTrigger>
   )
 }
 
 export const Default: Story = {
   args: {
     isDismissable: true,
-    label: 'Visa fruktval',
     defaultOpen: false,
   },
   render: Render,
@@ -86,8 +88,35 @@ export const Default: Story = {
 export const NotDismissable: Story = {
   args: {
     ...Default.args,
-    label: 'Klicka utanför',
     isDismissable: false,
   },
   render: Render,
+}
+
+export const Controlled: Story = {
+  args: {
+    ...Default.args,
+  },
+  render: () => {
+    const [isOpen, setIsOpen] = React.useState(false)
+    return (
+      <>
+        <Button
+          variant={'secondary'}
+          onPress={() => setIsOpen(true)}
+        >
+          State open
+        </Button>
+        <DialogTrigger
+          isOpen={isOpen}
+          onOpenChange={setIsOpen}
+        >
+          <Modal>Content</Modal>
+        </DialogTrigger>
+        <pre style={{ position: 'absolute', bottom: 0 }}>
+          isOpen: {JSON.stringify(isOpen)}
+        </pre>
+      </>
+    )
+  },
 }
