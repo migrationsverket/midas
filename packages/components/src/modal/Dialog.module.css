@@ -21,12 +21,20 @@
 
 .overlay {
   position: fixed;
-  z-index: 100;
+  z-index: 1000000;
   inset: 0;
   background: rgba(45 0 0 / 30%);
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &[data-entering] {
+    animation: modal-fade 150ms;
+  }
+
+  &[data-exiting] {
+    animation: modal-fade 150ms reverse;
+  }
 }
 
 .modalHeader {
@@ -50,4 +58,14 @@
   line-height: 1.4;
   font-size: 1.25rem;
   margin: 0 0 1rem;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

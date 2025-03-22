@@ -5,6 +5,12 @@ import {
   useOverlayTrigger,
   OverlayTriggerAria,
 } from 'react-aria'
+import {
+  DialogTrigger,
+  Modal as AriaModal,
+  ModalOverlay,
+  Dialog as AriaDialog,
+} from 'react-aria-components'
 import { useDialog } from 'react-aria'
 import * as React from 'react'
 import { useOverlayTriggerState } from 'react-stately'
@@ -15,6 +21,7 @@ import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { OverlayTriggerState } from '@react-stately/overlays'
 import { OverlayTriggerProps } from '@react-types/overlays'
 import clsx from 'clsx'
+import { FocusScope } from '@react-aria/focus'
 
 interface DialogProps extends AriaDialogProps {
   /**
@@ -57,7 +64,11 @@ type MidasModalProps = {
   children: React.ReactNode
 } & AriaModalOverlayProps
 
-const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
+const MidasModal: React.FC<MidasModalProps> = ({
+  state,
+  children,
+  ...props
+}) => {
   const ref = React.useRef(null)
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref)
 
@@ -95,7 +106,7 @@ export const ModalTrigger: React.FC<
     <>
       <Button {...triggerProps}>{label}</Button>
       {state.isOpen && (
-        <Modal
+        <MidasModal
           {...props}
           state={state}
         >
@@ -110,8 +121,47 @@ export const ModalTrigger: React.FC<
             </Button>
           </div>
           {React.cloneElement(children(state.close), overlayProps)}
-        </Modal>
+        </MidasModal>
       )}
     </>
+  )
+}
+
+export { DialogTrigger }
+
+export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
+  children,
+  title,
+  ...props
+}) => {
+  return (
+    <AriaDialog {...props}>
+      <ModalOverlay
+        {...props}
+        className={styles.overlay}
+      >
+        <FocusScope contain autoFocus restoreFocus>
+          <AriaModal
+            {...props}
+            className={styles.modal}
+          >
+            <div className={styles.modalHeader}>
+              <Button
+                slot={'close'}
+                variant='tertiary'
+                icon={X}
+                iconPlacement='right'
+              >
+                Stäng
+              </Button>
+            </div>
+            <div className={styles.modalBody}>
+              {title && <h2 className={styles.modalHeading}>{title}</h2>}
+              {children}
+            </div>
+          </AriaModal>
+        </FocusScope>
+      </ModalOverlay>
+    </AriaDialog>
   )
 }
