@@ -14,6 +14,10 @@
   padding: 0;
   margin: auto;
 
+  &[data-entering] {
+    animation: modal-zoom 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
   @media (forced-colors: active) {
     outline: 2px solid;
   }
@@ -21,12 +25,15 @@
 
 .overlay {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1000000;
-  inset: 0;
+  width: 100vw;
   background: rgba(45 0 0 / 30%);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: var(--visual-viewport-height);
 
   &[data-entering] {
     animation: modal-fade 150ms;
@@ -67,5 +74,15 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@keyframes modal-zoom {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
