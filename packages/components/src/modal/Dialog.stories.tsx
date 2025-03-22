@@ -93,30 +93,3 @@ export const NotDismissable: Story = {
   render: Render,
 }
 
-export const Controlled: Story = {
-  args: {
-    ...Default.args,
-  },
-  render: () => {
-    const [isOpen, setIsOpen] = React.useState(false)
-    return (
-      <>
-        <Button
-          variant={'secondary'}
-          onPress={() => setIsOpen(true)}
-        >
-          State open
-        </Button>
-        <DialogTrigger
-          isOpen={isOpen}
-          onOpenChange={setIsOpen}
-        >
-          <Modal>Content</Modal>
-        </DialogTrigger>
-        <pre style={{ position: 'absolute', bottom: 0 }}>
-          isOpen: {JSON.stringify(isOpen)}
-        </pre>
-      </>
-    )
-  },
-}
