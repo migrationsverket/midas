@@ -4,6 +4,7 @@ import { MultiSelectListState } from './useMultiSelectListState';
 import { OverlayTriggerProps } from '@react-types/overlays';
 import { AsyncLoadable, CollectionBase, FocusableProps, InputBase, LabelableProps, MultipleSelection, TextInputBase, Validation, Selection } from '@react-types/shared';
 import { FormValidationState } from '@react-stately/form';
+import { SingleSelectListState } from 'react-stately';
 /** Added this for a better output, will see how this plays out */
 interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
     onSelectionChange?: (value: Selection | Key | Key[]) => void;
@@ -15,7 +16,7 @@ export interface MultiSelectProps<T> extends CollectionBase<T>, AsyncLoadable, O
      */
     shouldFlip?: boolean;
 }
-export interface MultiSelectState<T> extends MultiSelectListState<T>, MenuTriggerState, FormValidationState {
+export interface MultiSelectState<T> extends MultiSelectListState<T>, MenuTriggerState, SingleSelectListState<T>, FormValidationState {
     /** Whether the select is currently focused. */
     isFocused: boolean;
     /** Sets whether the select is focused. */
