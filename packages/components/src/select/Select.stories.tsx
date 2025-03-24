@@ -2,8 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
 import { options } from './utils'
-import { expect, userEvent } from '@storybook/test'
+import { expect, fn, userEvent } from '@storybook/test'
 import { useState } from 'react'
+
+const handleSubmit = fn()
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -188,6 +190,88 @@ export const NotClearable: Story = {
   args: {
     selectionMode: 'multiple',
     isClearable: false,
+  },
+}
+
+export const RequiredMultiple: Story = {
+  tags: ['!dev'],
+  args: {
+    selectionMode: 'multiple',
+    isRequired: true,
+  },
+  render: args => (
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+        handleSubmit()
+      }}
+    >
+      <Select {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+  play: async ({ step }) => {
+    // Submit the form without selecting a value
+    await step('It should not be possible to submit the form', async () => {
+      await userEvent.tab()
+      await userEvent.tab()
+      await userEvent.keyboard('[Enter]')
+      expect(handleSubmit).not.toHaveBeenCalled()
+    })
+
+    // Select a value then submit again
+    await step(
+      'It should be possible to submit the form if a value was selected',
+      async () => {
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Escape]')
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(handleSubmit).toHaveBeenCalled()
+      },
+    )
+  },
+}
+
+export const RequiredSingle: Story = {
+  tags: ['!dev'],
+  args: {
+    selectionMode: 'single',
+    isRequired: true,
+  },
+  render: args => (
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+        handleSubmit()
+      }}
+    >
+      <Select {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+  play: async ({ step }) => {
+    // Submit the form without selecting a value
+    await step('It should not be possible to submit the form', async () => {
+      await userEvent.tab()
+      await userEvent.tab()
+      await userEvent.keyboard('[Enter]')
+      expect(handleSubmit).not.toHaveBeenCalled()
+    })
+
+    // Select a value then submit again
+    await step(
+      'It should be possible to submit the form if a value was selected',
+      async () => {
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(handleSubmit).toHaveBeenCalled()
+      },
+    )
   },
 }
 
