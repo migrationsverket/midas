@@ -17,3 +17,9 @@ type Story = StoryObj<typeof Calendar>
 export const Primary: Story = {
   args: {},
 }
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+}

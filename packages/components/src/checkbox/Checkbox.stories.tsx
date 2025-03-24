@@ -43,6 +43,22 @@ export const Example: Story = {
   },
 }
 
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
+  render: ({ ...args }) => {
+    return (
+      <Checkbox
+        value='unsubscribe'
+        {...args}
+      >
+        Unsubscribe
+      </Checkbox>
+    )
+  },
+}
+
 export const Required: Story = {
   args: {
     isRequired: true,

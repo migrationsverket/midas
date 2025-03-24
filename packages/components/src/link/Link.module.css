@@ -20,7 +20,7 @@
   }
 
   &[data-disabled] {
-    cursor: disabled;
+    cursor: not-allowed;
     color: --text-disabled;
   }
 
@@ -52,7 +52,7 @@
   text-decoration: none;
   font-weight: 500;
 
-  &[data-hovered] {
+  &[data-hovered]:not([data-disabled='true']) {
     text-decoration: underline;
   }
 

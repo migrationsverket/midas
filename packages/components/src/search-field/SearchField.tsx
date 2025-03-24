@@ -91,7 +91,10 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
           {props.errorMessage ?? validationErrors.join(' ')}
         </div>
       )}
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        data-disabled={inputProps.disabled}
+      >
         <div className={styles.inputContainer}>
           <Search
             size={20}

@@ -39,7 +39,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --button-background-disabled;
   }
 }
