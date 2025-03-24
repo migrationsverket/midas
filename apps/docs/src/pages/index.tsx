@@ -1,6 +1,11 @@
 import React from 'react'
 import Layout from '@theme/Layout'
-import { LinkButton, ButtonGroup } from '@midas-ds/components'
+import {
+  LinkButton,
+  ButtonGroup,
+  GlobalToastRegion,
+  toastQueue,
+} from '@midas-ds/components'
 import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
@@ -51,6 +56,7 @@ export default function Startpage() {
           <div className='col col--6'>
             <HeaderImage />
           </div>
+          <AprilFools />
         </div>
       </div>
     </Layout>
@@ -73,4 +79,30 @@ function HeaderImage() {
       )}
     </BrowserOnly>
   )
+}
+
+function AprilFools() {
+  React.useEffect(() => {
+    document.body.style.transform = 'rotateY(180deg)'
+
+    const timer = setTimeout(() => {
+      document.body.style.transition = 'transform 0.3s'
+      document.body.style.transform = ''
+    }, 3000)
+
+    const toastTimer = setTimeout(() => {
+      toastQueue.add(
+        { message: 'April, april!', type: 'success' },
+        { timeout: 10000 },
+      )
+    }, 3500)
+
+    return () => {
+      document.body.style.transform = ''
+      clearTimeout(timer)
+      clearTimeout(toastTimer)
+    }
+  }, [])
+
+  return <BrowserOnly>{() => <GlobalToastRegion />}</BrowserOnly>
 }
