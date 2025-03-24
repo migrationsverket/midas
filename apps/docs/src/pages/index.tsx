@@ -88,14 +88,14 @@ function AprilFools() {
     const timer = setTimeout(() => {
       document.body.style.transition = 'transform 0.3s'
       document.body.style.transform = ''
-    }, 3000)
+    }, 5000)
 
     const toastTimer = setTimeout(() => {
       toastQueue.add(
         { message: 'April, april!', type: 'success' },
         { timeout: 10000 },
       )
-    }, 3500)
+    }, 5500)
 
     return () => {
       document.body.style.transform = ''
