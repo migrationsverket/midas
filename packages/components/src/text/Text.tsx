@@ -27,7 +27,6 @@ export const Text: React.FC<TextProps> = ({
   variant = 'body-02',
   isExpressive = false,
   elementType = DEFAULT_ELEMENT,
-  slot,
   ...rest
 }) => {
   const classNames: Record<TextVariant, string> = {
@@ -37,7 +36,7 @@ export const Text: React.FC<TextProps> = ({
 
   const textProps: TextProps = {
     className: clsx(
-      slot === 'description' ? styles.description : classNames[variant],
+      rest.slot === 'description' ? styles.description : classNames[variant],
       className,
     ),
     elementType: elementType || DEFAULT_ELEMENT,
