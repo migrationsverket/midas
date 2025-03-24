@@ -166,7 +166,7 @@ export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
         disabled={isDisabled}
         value={
           state.selectionMode === 'single'
-            ? (state.selectedKeys.values().next().value?.toString() ?? '')
+            ? (state.selectedKey?.toString() ?? '')
             : (Array.from(state.selectedKeys).map(key => key.toString()) ?? '')
         }
       />
