@@ -1,3 +1,30 @@
+# 6.0.0
+
+### 🚀 Features
+
+- **modal:** replace h2 with heading component
+- ⚠️  **modal:** deprecate `ModalTrigger` and `Dialog`
+- **modal:** fix overlay position to avoid moving the modal when y-overflow
+- **modal:** increase z-index on overlay
+- **modal:** add focustrap to modal
+- **modal:** add styles and clean up types
+- **modal:** add boilerplate code for new modal implementation
+- use `cursor: not-allowed` for disabled elements
+
+### 🩹 Fixes
+
+- **layout:** change minimize menu button to icon variant
+- **button:** change iconbtn color token
+- **button:** tokenize icon button for better dark mode support
+- **button:** clarify use of labels on button groups
+- **button:** clarify use of labels on button groups
+- add react types to dependencies
+- remove test setup from build
+
+### ⚠️  Breaking Changes
+
+- **modal:** Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.
+
 ## 5.0.1
 
 ### 🩹 Fixes
