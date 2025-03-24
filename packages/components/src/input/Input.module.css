@@ -1,0 +1,45 @@
+@value tokens: "../theme/tokens.css";
+@value --font-family, --text-primary, --field-01, --field-hover-01, --border-strong, --border-invalid, --text-disabled, --text-invalid, --field-disabled, --focus from tokens;
+
+.input {
+  all: unset;
+  font-family: --font-family;
+  border-bottom: 1px solid --border-strong;
+  min-height: 48px;
+  font-size: 1rem;
+  padding-left: 1rem;
+  line-height: 1;
+  background-color: --field-01;
+  border-radius: 0;
+  box-sizing: border-box;
+  width: 100%;
+
+  &[data-hovered] {
+    background-color: --field-hover-01;
+
+    & + .passwordText {
+      background-color: --field-hover-01;
+    }
+  }
+
+  &[data-focused] {
+    box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
+  }
+
+  &[data-invalid] {
+    border: none;
+    box-shadow: inset 0 0 0 3px --border-invalid;
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    background-color: --field-disabled;
+    border: none;
+    opacity: 0.7;
+  }
+}

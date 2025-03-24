@@ -113,5 +113,5 @@ export const ModalTrigger: React.FC<
         </Modal>
       )}
     </>
-  )
+  ) 
 }

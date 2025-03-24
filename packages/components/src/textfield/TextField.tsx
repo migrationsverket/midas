@@ -1,10 +1,10 @@
 'use client'
 
 import * as React from 'react'
+import {Input} from '../input'
 import {
   TextField as AriaTextField,
   Label,
-  Input,
   FieldError,
   Text,
   TextFieldProps as AriaTextFieldProps,
