@@ -1,3 +1,9 @@
+### 6.0.1
+
+#### 🩹 Fixes
+
+- **select:** 🐛 Selected values doesn't match selected IDs
+
 ## 6.0.0
 
 #### 🚀 Features
