@@ -65,6 +65,7 @@ export function useMultiSelectState<T extends object>(
   props: MultiSelectProps<T>,
 ): MultiSelectState<T> {
   const { selectionMode } = props
+
   const [isFocused, setFocused] = useState(false)
 
   const triggerState = useMenuTriggerState(props)
@@ -85,16 +86,13 @@ export function useMultiSelectState<T extends object>(
           onSelectionChange(Array.from(keys))
         }
       }
-
-      // Multi select stays open after item selection
-      if (selectionMode === 'single') {
-        triggerState.close()
-      }
     },
   })
 
   const singleSelectListState = useSingleSelectListState({
     ...props,
+    defaultSelectedKey: props.defaultSelectedKeys?.toString(),
+    selectedKey: props.selectedKeys?.toString(),
     onSelectionChange: key => {
       const { onSelectionChange } = props
 
@@ -135,8 +133,14 @@ export function useMultiSelectState<T extends object>(
   }, [selectionMode, singleSelectListState.selectedKey, validationState])
 
   return {
-    ...multiSelectListState,
-    ...singleSelectListState,
+    ...{
+      ...multiSelectListState,
+      ...singleSelectListState,
+      selectionManager:
+        selectionMode === 'multiple'
+          ? multiSelectListState.selectionManager
+          : singleSelectListState.selectionManager,
+    },
     ...triggerState,
     close() {
       triggerState.close()
