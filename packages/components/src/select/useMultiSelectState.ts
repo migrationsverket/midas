@@ -64,11 +64,11 @@ export interface MultiSelectState<T>
 export function useMultiSelectState<T extends object>(
   props: MultiSelectProps<T>,
 ): MultiSelectState<T> {
-  const { selectionMode } = props
-
   const [isFocused, setFocused] = useState(false)
 
   const triggerState = useMenuTriggerState(props)
+
+  const isSingleSelect = props.selectionMode === 'single'
 
   const multiSelectListState = useMultiSelectListState({
     ...props,
@@ -109,7 +109,7 @@ export function useMultiSelectState<T extends object>(
       }
 
       // Multi select stays open after item selection
-      if (selectionMode === 'single') {
+      if (isSingleSelect) {
         triggerState.close()
       }
     },
@@ -118,45 +118,49 @@ export function useMultiSelectState<T extends object>(
   const validationState = useFormValidationState({
     ...props,
     validationBehavior: 'native',
-    value:
-      selectionMode === 'single'
-        ? multiSelectListState.selectedKeys.values().next().value?.toString()
-        : singleSelectListState.selectedKey,
+    value: isSingleSelect
+      ? singleSelectListState.selectedKey
+      : multiSelectListState.selectedKeys,
   })
+
+  const isCollectionEmpty =
+    (!isSingleSelect && multiSelectListState.collection.size === 0) ||
+    (isSingleSelect && singleSelectListState.collection.size === 0)
+
+  const isAnyKeySelected =
+    !!singleSelectListState.selectedKey ||
+    !!multiSelectListState.selectedKeys.size
 
   // Reset validation for single selects when the selected key changes.
   useEffect(() => {
-    if (selectionMode === 'single' && singleSelectListState.selectedKey) {
+    if (isSingleSelect && isAnyKeySelected) {
       validationState.resetValidation()
       validationState.commitValidation()
     }
-  }, [selectionMode, singleSelectListState.selectedKey, validationState])
+  }, [isAnyKeySelected, isSingleSelect, validationState])
 
   return {
-    ...{
-      ...multiSelectListState,
-      ...singleSelectListState,
-      selectionManager:
-        selectionMode === 'multiple'
-          ? multiSelectListState.selectionManager
-          : singleSelectListState.selectionManager,
-    },
+    ...singleSelectListState,
+    ...multiSelectListState,
+    selectionManager: isSingleSelect
+      ? singleSelectListState.selectionManager
+      : multiSelectListState.selectionManager,
     ...triggerState,
     close() {
       triggerState.close()
-      if (multiSelectListState.selectedKeys.size) {
+      if (isAnyKeySelected) {
         validationState.resetValidation()
         validationState.commitValidation()
       }
     },
     open() {
       // Don't open if the collection is empty.
-      if (multiSelectListState.collection.size !== 0) {
+      if (!isCollectionEmpty) {
         triggerState.open()
       }
     },
     toggle(focusStrategy) {
-      if (multiSelectListState.collection.size !== 0) {
+      if (!isCollectionEmpty) {
         triggerState.toggle(focusStrategy)
       }
     },
