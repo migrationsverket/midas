@@ -1,0 +1,192 @@
+import{j as ee}from"./jsx-runtime-DtgEGaVE.js";import{S as Y}from"./Select-DiHcA4SF.js";import{u as l,e as s}from"./index-DtSMq7G1.js";import{r as ae}from"./index-BbAIUH2N.js";import"./Button-BAmjpgnq.js";import"./utils-Cd6MiihZ.js";import"./clsx-B-dksMZM.js";import"./ProgressBar-Dh0Vg3qS.js";import"./Label-Bf-bZThx.js";import"./Hidden-lswqw32w.js";import"./filterDOMProps-BSfnXAP7.js";import"./useLabel-ClMtG9eF.js";import"./context-BSqmORe6.js";import"./NumberFormatter-DT0cDaax.js";import"./LiveAnnouncer-DFDjXwI8.js";import"./useFocusRing--RQdELqC.js";import"./index-cpIEhwLo.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./useFocusable-5VAxOUE-.js";import"./Form-Cr76Dr7U.js";import"./Text-BkowhAon.js";import"./useFormValidation-BT6lxpQu.js";import"./Tag-Clvybp8i.js";import"./Collection-CC9oGC21.js";import"./index-DwWe6W7f.js";import"./ListBox-CKwgwK3H.js";import"./DragAndDrop-sISFPnlb.js";import"./Separator-Q6oUd1rz.js";import"./SelectionManager-DeX5238t.js";import"./useEvent-Yxrkvbn7.js";import"./scrollIntoView-DzftQ5Hl.js";import"./FocusScope-B7ZOkgD-.js";import"./useDescription-CVNFK32G.js";import"./useControlledState-DGyHFLi9.js";import"./ListKeyboardDelegate-xVJLa59h.js";import"./useCollator-C3PRVItH.js";import"./useListState-CMHXyEJa.js";import"./useField-9Cy_F6CL.js";import"./useHighlightSelectionDescription-CrqVFzKW.js";import"./useUpdateEffect-DVcG7G3u.js";import"./useLocalizedStringFormatter-CIgGmZTI.js";import"./useHasTabbableChild-CW7EX7UL.js";import"./getScrollParent-CrrBdd7g.js";import"./Button-CtxtdTfe.js";import"./x-Cu6J0Y2u.js";import"./createLucideIcon-8wDOqnHv.js";import"./TextField-DD1PHP0y.js";import"./Input-COAkbJ34.js";import"./useTextField-CYsm1yTN.js";import"./useOverlayTriggerState-CykkZ-dk.js";import"./useMenuTriggerState-VaHMadTP.js";import"./VisuallyHidden-DRXW-gYG.js";import"./useModal-BWKj4cMF.js";import"./useSingleSelectListState-DlUIQo0C.js";import"./chevron-down-U1dNK9nR.js";const r=["Apple","Banana","Kiwi","Elderflower","Nectarine","Watermelon","Pineapple","Apricot","Cloudberry","Mango","Strawberry","Blueberry","Raspberry","Blackberry","Cherry","Peach","Plum","Grape","Orange","Lemon","Lime","Coconut","Fig","Papaya","Guava","Pomegranate","Dragonfruit","Starfruit","Passionfruit"].map(a=>({name:a,id:a.toLocaleLowerCase()})),sa={component:Y,title:"Components/Select",tags:["autodocs"],args:{description:"Description",isClearable:!0,isDisabled:!1,isSelectableAll:!1,label:"Label",options:r,placeholder:"Select an option",selectionMode:"single",showTags:!1}},p={play:async({args:a,canvas:e,step:t})=>{await t("It should be possible to select an item using the keyboard",async()=>{await l.tab(),await l.keyboard("[Space]"),await l.keyboard("[Space]");const n=e.getByLabelText(`${a.label}-hidden`),i=e.getByText(r[0].name,{selector:"span"});s(n).toHaveDisplayValue([r[0].name]),s(i).toBeVisible()})}},d={args:{description:"Kiwi is pre-selected",defaultSelectedKeys:["kiwi"]},play:async({args:a,canvas:e,step:t})=>{await t("It should display and reflect the pre-selected value",async()=>{var h;const n=(h=r.find(Z=>Z.id===a.defaultSelectedKeys[0]))==null?void 0:h.name,i=e.getByLabelText(`${a.label}-hidden`),o=e.getByText(n,{selector:"span"});s(i).toHaveDisplayValue([n]),s(o).toBeVisible()})}},m={args:{selectionMode:"multiple",description:"All options are selected",defaultSelectedKeys:"all"},play:async({args:a,canvas:e,step:t})=>{await t("It should display and reflect the pre-selected values",async()=>{const n=e.getByLabelText(`${a.label}-hidden`),i=e.getByText(/valda/,{selector:"span"});s(n).toHaveDisplayValue(r.map(({name:o})=>o)),s(i).toBeVisible()})}},u={parameters:{docs:{description:{story:"Avoid using disabled"}},a11y:{element:"body",config:{rules:[{id:"color-contrast",enabled:!1}]},options:{rules:{"color-contrast":{enabled:!1}}}}},args:{isDisabled:!0}},b={args:{description:"Kiwi is disabled",disabledKeys:["kiwi"]}},y={args:{isInvalid:!0,errorMessage:"Error msg"}},g={args:{selectionMode:"multiple",showTags:!0,defaultSelectedKeys:["apple","kiwi"]},play:async({args:a,canvas:e,step:t})=>{await t("It should display and reflect the pre-selected values",async()=>{const n=e.getByLabelText(`${a.label}-hidden`),i=e.getByText("2 valda",{selector:"span"});s(n).toHaveDisplayValue(["Apple","Kiwi"]),s(i).toBeVisible(),s(e.getByText("Apple",{selector:"div"})).toBeVisible(),s(e.getByText("Kiwi",{selector:"div"})).toBeVisible()})}},v={args:{selectionMode:"multiple",isSelectableAll:!0},play:async({args:a,canvas:e,step:t})=>{await t("It should be possible to select all items",async()=>{await l.tab(),await l.keyboard("[Space]"),await l.tab({shift:!0}),await l.keyboard("[Space]"),await l.keyboard("[Escape]");const n=e.getByLabelText(`${a.label}-hidden`),i=e.getByText(`${r.length} valda`,{selector:"span"});s(n).toHaveDisplayValue(r.map(({name:o})=>o)),s(i).toBeVisible()})}},c={args:{selectionMode:"multiple",isClearable:!1}},S={tags:["!dev"],args:{...p.args,selectionMode:"single",isClearable:!1,label:"Ärende",placeholder:"Välj ärende"},render:a=>{const[e,t]=ae.useState("");return ee.jsx(Y,{...a,selectedKeys:e,onSelectionChange:n=>t(n.toString()),options:[{id:"12",name:"tolv"},{id:"1",name:"ett"},{id:"2",name:"två"}]})},play:async({args:a,step:e,canvas:t})=>{await e("It should be possible to select an item with an ID greater than 9",async()=>{await l.tab(),await l.keyboard("[Space]"),await l.keyboard("[Space]"),s(t.getByLabelText(a.label+"-hidden")).toHaveDisplayValue(["tolv"])})}};var w,x,f;p.parameters={...p.parameters,docs:{...(w=p.parameters)==null?void 0:w.docs,source:{originalSource:`{
+  play: async ({
+    args,
+    canvas,
+    step
+  }) => {
+    await step('It should be possible to select an item using the keyboard', async () => {
+      await userEvent.tab();
+      await userEvent.keyboard('[Space]');
+      await userEvent.keyboard('[Space]');
+      const hiddenSelect = canvas.getByLabelText(\`\${args.label}-hidden\`);
+      const visibleValue = canvas.getByText(options[0].name, {
+        selector: 'span'
+      });
+      expect(hiddenSelect).toHaveDisplayValue([options[0].name]);
+      expect(visibleValue).toBeVisible();
+    });
+  }
+}`,...(f=(x=p.parameters)==null?void 0:x.docs)==null?void 0:f.source}}};var B,V,T;d.parameters={...d.parameters,docs:{...(B=d.parameters)==null?void 0:B.docs,source:{originalSource:`{
+  args: {
+    description: 'Kiwi is pre-selected',
+    defaultSelectedKeys: ['kiwi']
+  },
+  play: async ({
+    args,
+    canvas,
+    step
+  }) => {
+    await step('It should display and reflect the pre-selected value', async () => {
+      const selectedOptionName = options.find(option => option.id === (args.defaultSelectedKeys as string[])[0])?.name as string;
+      const hiddenSelect = canvas.getByLabelText(\`\${args.label}-hidden\`);
+      const visibleValue = canvas.getByText(selectedOptionName, {
+        selector: 'span'
+      });
+      expect(hiddenSelect).toHaveDisplayValue([selectedOptionName]);
+      expect(visibleValue).toBeVisible();
+    });
+  }
+}`,...(T=(V=d.parameters)==null?void 0:V.docs)==null?void 0:T.source}}};var D,K,k;m.parameters={...m.parameters,docs:{...(D=m.parameters)==null?void 0:D.docs,source:{originalSource:`{
+  args: {
+    selectionMode: 'multiple',
+    description: 'All options are selected',
+    defaultSelectedKeys: 'all'
+  },
+  play: async ({
+    args,
+    canvas,
+    step
+  }) => {
+    await step('It should display and reflect the pre-selected values', async () => {
+      const hiddenSelect = canvas.getByLabelText(\`\${args.label}-hidden\`);
+      const visibleValue = canvas.getByText(/valda/, {
+        selector: 'span'
+      });
+      expect(hiddenSelect).toHaveDisplayValue(options.map(({
+        name
+      }) => name));
+      expect(visibleValue).toBeVisible();
+    });
+  }
+}`,...(k=(K=m.parameters)==null?void 0:K.docs)==null?void 0:k.source}}};var I,E,A;u.parameters={...u.parameters,docs:{...(I=u.parameters)==null?void 0:I.docs,source:{originalSource:`{
+  parameters: {
+    docs: {
+      description: {
+        story: 'Avoid using disabled'
+      }
+    },
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [{
+          // Dont check for color contrast on disabled elements
+          id: 'color-contrast',
+          enabled: false
+        }]
+      },
+      options: {
+        rules: {
+          'color-contrast': {
+            enabled: false
+          }
+        }
+      } satisfies RunOptions
+    }
+  },
+  args: {
+    isDisabled: true
+  }
+}`,...(A=(E=u.parameters)==null?void 0:E.docs)==null?void 0:A.source}}};var L,C,M;b.parameters={...b.parameters,docs:{...(L=b.parameters)==null?void 0:L.docs,source:{originalSource:`{
+  args: {
+    description: 'Kiwi is disabled',
+    disabledKeys: ['kiwi']
+  }
+}`,...(M=(C=b.parameters)==null?void 0:C.docs)==null?void 0:M.source}}};var H,$,N;y.parameters={...y.parameters,docs:{...(H=y.parameters)==null?void 0:H.docs,source:{originalSource:`{
+  args: {
+    isInvalid: true,
+    errorMessage: 'Error msg'
+  }
+}`,...(N=($=y.parameters)==null?void 0:$.docs)==null?void 0:N.source}}};var O,P,j;g.parameters={...g.parameters,docs:{...(O=g.parameters)==null?void 0:O.docs,source:{originalSource:`{
+  args: {
+    selectionMode: 'multiple',
+    showTags: true,
+    defaultSelectedKeys: ['apple', 'kiwi']
+  },
+  play: async ({
+    args,
+    canvas,
+    step
+  }) => {
+    await step('It should display and reflect the pre-selected values', async () => {
+      const hiddenSelect = canvas.getByLabelText(\`\${args.label}-hidden\`);
+      const visibleValue = canvas.getByText('2 valda', {
+        selector: 'span'
+      });
+      expect(hiddenSelect).toHaveDisplayValue(['Apple', 'Kiwi']);
+      expect(visibleValue).toBeVisible();
+      expect(canvas.getByText('Apple', {
+        selector: 'div'
+      })).toBeVisible();
+      expect(canvas.getByText('Kiwi', {
+        selector: 'div'
+      })).toBeVisible();
+    });
+  }
+}`,...(j=(P=g.parameters)==null?void 0:P.docs)==null?void 0:j.source}}};var R,W,G;v.parameters={...v.parameters,docs:{...(R=v.parameters)==null?void 0:R.docs,source:{originalSource:`{
+  args: {
+    selectionMode: 'multiple',
+    isSelectableAll: true
+  },
+  play: async ({
+    args,
+    canvas,
+    step
+  }) => {
+    await step('It should be possible to select all items', async () => {
+      await userEvent.tab();
+      await userEvent.keyboard('[Space]');
+      await userEvent.tab({
+        shift: true
+      });
+      await userEvent.keyboard('[Space]');
+      await userEvent.keyboard('[Escape]');
+      const hiddenSelect = canvas.getByLabelText(\`\${args.label}-hidden\`);
+      const visibleValue = canvas.getByText(\`\${options.length} valda\`, {
+        selector: 'span'
+      });
+      expect(hiddenSelect).toHaveDisplayValue(options.map(({
+        name
+      }) => name));
+      expect(visibleValue).toBeVisible();
+    });
+  }
+}`,...(G=(W=v.parameters)==null?void 0:W.docs)==null?void 0:G.source}}};var _,F,q,z,J;c.parameters={...c.parameters,docs:{...(_=c.parameters)==null?void 0:_.docs,source:{originalSource:`{
+  args: {
+    selectionMode: 'multiple',
+    isClearable: false
+  }
+}`,...(q=(F=c.parameters)==null?void 0:F.docs)==null?void 0:q.source},description:{story:"As default all options are clearable. `isClearable={false}` Experimental feature",...(J=(z=c.parameters)==null?void 0:z.docs)==null?void 0:J.description}}};var Q,U,X;S.parameters={...S.parameters,docs:{...(Q=S.parameters)==null?void 0:Q.docs,source:{originalSource:`{
+  tags: ['!dev'],
+  args: {
+    ...Normal.args,
+    selectionMode: 'single',
+    isClearable: false,
+    label: 'Ärende',
+    placeholder: 'Välj ärende'
+  },
+  render: args => {
+    const [selectedItem, setSelectedItem] = useState('');
+    return <Select {...args} selectedKeys={selectedItem} onSelectionChange={item => setSelectedItem(item.toString())} options={[{
+      id: '12',
+      name: 'tolv'
+    }, {
+      id: '1',
+      name: 'ett'
+    }, {
+      id: '2',
+      name: 'två'
+    }]} />;
+  },
+  play: async ({
+    args,
+    step,
+    canvas
+  }) => {
+    await step('It should be possible to select an item with an ID greater than 9', async () => {
+      await userEvent.tab();
+      await userEvent.keyboard('[Space]');
+      await userEvent.keyboard('[Space]');
+      expect(canvas.getByLabelText(args.label + '-hidden')).toHaveDisplayValue(['tolv']);
+    });
+  }
+}`,...(X=(U=S.parameters)==null?void 0:U.docs)==null?void 0:X.source}}};const na=["Normal","DefaultSelectedKey","AllKeysSelected","Disabled","DisabledOption","Invalid","WithTags","SelectAllEnabled","NotClearable","DS872"];export{m as AllKeysSelected,S as DS872,d as DefaultSelectedKey,u as Disabled,b as DisabledOption,y as Invalid,p as Normal,c as NotClearable,v as SelectAllEnabled,g as WithTags,na as __namedExportsOrder,sa as default};
