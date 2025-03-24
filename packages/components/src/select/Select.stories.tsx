@@ -191,7 +191,9 @@ export const NotClearable: Story = {
   },
 }
 
-export const FixThisBug: Story = {
+// https://jira.migrationsverket.se/browse/DS-872
+export const DS872: Story = {
+  tags: ['!dev'],
   args: {
     ...Normal.args,
     selectionMode: 'single',
