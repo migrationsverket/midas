@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import { Label } from '../label'
-import styles from './Select.module.css'
+import { Label } from '../../label'
+import styles from '../Select.module.css'
 import React, { DOMAttributes } from 'react'
 import type { FocusableElement } from '@react-types/shared'
 

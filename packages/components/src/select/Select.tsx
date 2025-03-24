@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Item, Section } from '@react-stately/collections'
-import { MultiSelect } from './MultiSelect'
+import { MultiSelect } from './components/MultiSelect'
 import { SelectContainerProps } from './types'
-import { SingleSelect } from './SingleSelect'
+import { SingleSelect } from './components/SingleSelect'
 
 export const Select = React.forwardRef<HTMLButtonElement, SelectContainerProps>(
   ({ options, selectionMode, ...props }, ref) =>

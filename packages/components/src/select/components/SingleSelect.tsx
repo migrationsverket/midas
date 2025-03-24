@@ -2,8 +2,8 @@ import { useObjectRef } from '@react-aria/utils'
 import * as React from 'react'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
-import styles from './Select.module.css'
-import { SelectProps } from './types'
+import styles from '../Select.module.css'
+import { SelectProps } from '../types'
 import { useSelectState } from 'react-stately'
 import { HiddenSelect, useSelect } from 'react-aria'
 import { SelectLabel } from './SelectLabel'
@@ -29,7 +29,12 @@ export const SingleSelect = React.forwardRef<HTMLButtonElement, SelectProps>(
       selectedKey: props.selectedKeys?.toString(),
       defaultSelectedKey: props.defaultSelectedKeys?.toString(),
     })
-    const { labelProps, triggerProps, menuProps } = useSelect(props, state, ref)
+
+    const { labelProps, triggerProps, menuProps, valueProps } = useSelect(
+      props,
+      state,
+      ref,
+    )
     const isActive = state.isOpen || !!state.selectedItem
 
     return (
@@ -71,6 +76,7 @@ export const SingleSelect = React.forwardRef<HTMLButtonElement, SelectProps>(
             }
             ref={ref}
             triggerProps={triggerProps}
+            valueProps={valueProps}
           />
           {state.isOpen && (
             <SelectPopover

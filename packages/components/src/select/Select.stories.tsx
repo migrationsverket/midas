@@ -185,7 +185,7 @@ export const SelectAllEnabled: Story = {
 /** As default all options are clearable. `isClearable={false}` Experimental feature  */
 export const NotClearable: Story = {
   args: {
-    selectionMode: 'multiple',
+    selectionMode: 'single',
     isClearable: false,
   },
 }

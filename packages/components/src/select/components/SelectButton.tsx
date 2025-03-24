@@ -1,10 +1,11 @@
 import { FocusRing } from '@react-aria/focus'
-import styles from './Select.module.css'
 import React from 'react'
-import { SelectProps } from './types'
+import { SelectProps } from '../types'
 import { AriaButtonProps, useButton, useObjectRef } from 'react-aria'
 import clsx from 'clsx'
 import { ChevronDown } from 'lucide-react'
+import type { DOMAttributes } from '@react-types/shared'
+import styles from '../Select.module.css'
 
 interface SelectButtonProps
   extends Pick<
@@ -12,6 +13,7 @@ interface SelectButtonProps
     'autoFocus' | 'excludeFromTabOrder' | 'isDisabled'
   > {
   triggerProps: AriaButtonProps<'button'>
+  valueProps: DOMAttributes
   isOpen?: boolean
   isActive?: boolean
   placeholder?: string
@@ -32,6 +34,7 @@ export const SelectButton = React.forwardRef<
       isOpen,
       placeholder,
       children,
+      valueProps,
     },
     forwardedRef,
   ) => {
@@ -57,7 +60,7 @@ export const SelectButton = React.forwardRef<
             type='button'
             ref={ref}
           >
-            {placeholder && <span>{placeholder}</span>}
+            {placeholder && <span {...valueProps}>{placeholder}</span>}
             <div
               className={styles.icon}
               aria-hidden='true'

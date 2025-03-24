@@ -3,7 +3,7 @@ import React, { ReactNode, useRef } from 'react'
 import { useFormReset } from '@react-aria/utils'
 import { useFormValidation } from '@react-aria/form'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { MultiSelectState } from './useMultiSelectState'
+import { MultiSelectState } from '../hooks/useMultiSelectState'
 
 export interface AriaHiddenMultiSelectProps {
   /**

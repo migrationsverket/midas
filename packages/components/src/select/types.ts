@@ -1,5 +1,5 @@
 import { CollectionChildren } from '@react-types/shared'
-import { useMultiSelectState } from './useMultiSelectState'
+import { useMultiSelectState } from './hooks/useMultiSelectState'
 
 export type OptionItem = {
   children?: never

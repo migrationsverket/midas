@@ -1,7 +1,7 @@
 import React from 'react'
-import styles from './Select.module.css'
+import styles from '../Select.module.css'
 import { FieldError } from 'react-aria-components'
-import { MultiSelectState } from './useMultiSelectState'
+import { MultiSelectState } from '../hooks/useMultiSelectState'
 import { SelectState } from 'react-stately'
 
 interface SelectFieldErrorProps<T> {

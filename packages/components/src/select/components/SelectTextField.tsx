@@ -1,8 +1,8 @@
 import { SelectState } from 'react-stately'
-import { MultiSelectState } from './useMultiSelectState'
+import { MultiSelectState } from '../hooks/useMultiSelectState'
 import { TextField } from 'react-aria-components'
 import clsx from 'clsx'
-import styles from './Select.module.css'
+import styles from '../Select.module.css'
 import React from 'react'
 
 interface SelectTextFieldProps<T> {

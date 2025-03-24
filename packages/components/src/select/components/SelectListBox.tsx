@@ -1,12 +1,12 @@
 import { useListBox, useListBoxSection, useOption } from '@react-aria/listbox'
 import clsx from 'clsx'
 import * as React from 'react'
-import styles from './Select.module.css'
-import type { MultiSelectState } from './useMultiSelectState'
+import styles from '../Select.module.css'
+import type { MultiSelectState } from '../hooks/useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import { SelectState } from 'react-stately'
-import { SelectProps } from './types'
+import { SelectProps } from '../types'
 import { Check } from 'lucide-react'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
