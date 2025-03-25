@@ -34,3 +34,4 @@ export * from './heading';
 export * from './label';
 export * from './progress-bar';
 export * from './input';
+export * from './field-error';
