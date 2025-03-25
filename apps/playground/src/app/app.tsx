@@ -1,18 +1,25 @@
 import styles from './app.module.css'
-import { Input, Label, Text } from '@midas-ds/components'
-import { TextField, FieldError } from 'react-aria-components'
+import {
+  CharacterCounter,
+  Input,
+  Label,
+  Text,
+  TextField,
+  FieldError,
+} from '@midas-ds/components'
 
 export function App() {
   return (
     <div className={styles.container}>
-      <TextField>
+      <TextField maxLength={4}>
         <Label>Label</Label>
         <Text slot={'description'}>Description</Text>
+        <CharacterCounter />
         <Input
           placeholder={'placeholder'}
           type={'email'}
         />
-        <FieldError/>
+        <FieldError />
       </TextField>
     </div>
   )

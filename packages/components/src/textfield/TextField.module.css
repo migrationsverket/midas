@@ -25,12 +25,12 @@
   height: 100%;
   width: 100%;
   align-content: flex-end;
+
   /** Temp solution so things look ok while refactoring */
-  [slot="errorMessage"] {
+  [slot='errorMessage'] {
     grid-area: Error;
   }
 }
-
 
 .label {
   color: --text-primary;
@@ -57,18 +57,6 @@
   width: calc(100% - 1rem);
   height: 46px;
   pointer-events: none;
-}
-
-.count {
-  font-size: 0.875rem;
-  color: --text-primary;
-  text-align: right;
-  grid-area: Count;
-  align-self: flex-end;
-}
-
-.countExceeded {
-  color: --text-invalid;
 }
 
 .wrap {

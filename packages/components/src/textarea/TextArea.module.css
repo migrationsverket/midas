@@ -46,15 +46,3 @@
     opacity: 0.7;
   }
 }
-
-.count {
-  font-size: 0.875rem;
-  color: --text-primary;
-  text-align: right;
-  grid-area: Count;
-  align-self: flex-end;
-}
-
-.countExceeded {
-  color: --text-invalid;
-}
