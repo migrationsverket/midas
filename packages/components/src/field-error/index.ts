@@ -1,1 +1,1 @@
-export { FieldError } from './FieldError.tsx'
+export { FieldError } from './FieldError'
