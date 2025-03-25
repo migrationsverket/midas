@@ -1,0 +1,14 @@
+@value tokens: "../theme/tokens.css";
+@value --text-primary, --text-invalid from tokens;
+
+.count {
+  font-size: 0.875rem;
+  color: --text-primary;
+  text-align: right;
+  grid-area: Count;
+  align-self: flex-end;
+}
+
+.countExceeded {
+  color: --text-invalid;
+}
