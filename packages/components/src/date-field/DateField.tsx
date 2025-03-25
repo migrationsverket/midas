@@ -7,8 +7,9 @@ import {
   DateValue,
   Label,
   ValidationResult,
+  Text,
 } from 'react-aria-components'
-import { FieldError, Text } from 'react-aria-components'
+import {FieldError} from '../field-error'
 import styles from './DateField.module.css'
 import clsx from 'clsx'
 
@@ -43,7 +44,7 @@ export function DateField<T extends DateValue>({
           {description}
         </Text>
       )}
-      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <FieldError>{errorMessage}</FieldError>
       <DateInput className={styles.inputField}>
         {segment => (
           <DateSegment

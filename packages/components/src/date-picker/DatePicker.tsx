@@ -4,7 +4,6 @@ import {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
-  FieldError,
   Label,
   Text,
   ValidationResult,
@@ -24,6 +23,7 @@ import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { Calendar, RangeCalendar } from '../calendar'
+import { FieldError } from '../field-error'
 
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
@@ -55,7 +55,7 @@ export const DateRangePicker = <T extends DateValue>({
           {description}
         </Text>
       )}
-      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <FieldError>{errorMessage}</FieldError>
       <Group className={clsx(styles.inputField)}>
         <DateInput
           slot='start'
@@ -135,7 +135,7 @@ export const DatePicker = <T extends DateValue>({
           {description}
         </Text>
       )}
-      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <FieldError>{errorMessage}</FieldError>
       <Group className={clsx(styles.inputField)}>
         <DateInput className={styles.date}>
           {segment => (

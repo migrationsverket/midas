@@ -5,13 +5,13 @@ import {Input} from '../input'
 import {
   TextField as AriaTextField,
   Label,
-  FieldError,
   Text,
   TextFieldProps as AriaTextFieldProps,
   ValidationResult,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Button } from '../button'
+import { FieldError } from '../field-error'
 import clsx from 'clsx'
 
 export interface TextFieldProps extends AriaTextFieldProps {
@@ -183,7 +183,6 @@ export const InputWrapper = ({
       )}
       <FieldError
         data-testid='fieldError'
-        className={styles.fieldError}
       >
         {errorMessage}
       </FieldError>
