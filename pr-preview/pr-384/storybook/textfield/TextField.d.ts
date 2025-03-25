@@ -1,4 +1,0 @@
-import { TextFieldProps } from 'react-aria-components';
-import * as React from 'react';
-export declare const TextField: React.ForwardRefExoticComponent<TextFieldProps & React.RefAttributes<HTMLDivElement>>;
-export declare const InputWrapper: () => null;
