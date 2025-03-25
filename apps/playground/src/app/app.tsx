@@ -21,6 +21,12 @@ export function App() {
         />
         <FieldError />
       </TextField>
+      <TextField>
+        <Label>Label</Label>
+        <Text slot={'description'}>Description</Text>
+        <Input placeholder={'placeholder'} />
+        <FieldError />
+      </TextField>
     </div>
   )
 }

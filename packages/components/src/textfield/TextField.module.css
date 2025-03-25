@@ -46,32 +46,7 @@
   font-weight: 400;
 }
 
-.passwordText {
-  background-color: --field-01;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-  top: 0;
-  left: 1rem;
-  width: calc(100% - 1rem);
-  height: 46px;
-  pointer-events: none;
-}
-
 .wrap {
   grid-area: Input;
   position: relative;
-}
-
-.passwordButton {
-  background: transparent !important;
-  border-color: transparent !important;
-  position: absolute;
-  width: max-content;
-  right: 0;
-  top: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  z-index: 3;
 }

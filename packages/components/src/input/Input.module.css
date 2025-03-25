@@ -1,6 +1,10 @@
 @value tokens: "../theme/tokens.css";
 @value --font-family, --text-primary, --field-01, --field-hover-01, --border-strong, --border-invalid, --text-disabled, --text-invalid, --field-disabled, --focus from tokens;
 
+.wrap {
+  position: relative;
+}
+
 .input {
   all: unset;
   font-family: --font-family;
@@ -42,4 +46,29 @@
     border: none;
     opacity: 0.7;
   }
+}
+
+.passwordText {
+  background-color: --field-01;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  top: 0;
+  left: 1rem;
+  width: calc(100% - 1rem);
+  height: 46px;
+  pointer-events: none;
+}
+
+.passwordButton {
+  background: transparent !important;
+  border-color: transparent !important;
+  position: absolute;
+  width: max-content;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 3;
 }
