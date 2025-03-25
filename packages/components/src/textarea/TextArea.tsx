@@ -10,6 +10,8 @@ import {
 import clsx from 'clsx'
 import styles from './TextArea.module.css'
 
+export type { TextAreaProps }
+
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (props, ref) => {
     ;[props, ref] = useContextProps(props, ref, TextAreaContext)

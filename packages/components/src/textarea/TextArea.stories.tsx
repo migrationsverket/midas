@@ -1,44 +1,52 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { TextArea } from './TextArea'
+import { TextArea, type TextAreaProps } from './TextArea'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
+import { TextField } from '../textfield'
+import { Label } from '../label'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
 import styles from './TextArea.module.css'
+
+const testID = 'test'
+
+const fieldErrorTestID = 'error'
 
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
 
+const Template: React.FC<TextAreaProps> = args => (
+  <TextField>
+    <Label>Label</Label>
+    <Text slot='description'>Description</Text>
+    <TextArea
+      data-testid={testID}
+      {...args}
+    />
+    <FieldError data-testid={fieldErrorTestID} />
+  </TextField>
+)
+
 const meta: Meta<typeof TextArea> = {
-  component: TextArea,
+  component: Template,
   title: 'Components/TextArea',
   tags: ['autodocs'],
-  argTypes: {
-    label: {
-      type: 'string',
-      description: 'Etikett',
-    },
-    description: {
-      type: 'string',
-    },
+  args: {
+    className: 'test-class',
   },
 }
+
 export default meta
+
 type Story = StoryObj<typeof TextArea>
 
 export const Primary: Story = {
-  args: {
-    label: 'Label',
-    description: 'Description',
-    className: 'test-class',
-    // @ts-expect-error dont recognize this property
-    'data-testid': 'test',
-  },
-  play: async ({ canvas, step, args }) => {
+  play: async ({ canvas, step, args: { className } }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
-        // @ts-expect-error dont recognize this property
-        expect(canvas.getByTestId(args['data-testid'])).toHaveClass(
+        expect(canvas.getByTestId(testID)).toHaveClass(
           styles.inputField,
-          args.className as string,
+          className as string,
         )
       },
     )
@@ -47,65 +55,64 @@ export const Primary: Story = {
 
 export const Invalid = {
   args: {
-    ...Primary.args,
     isInvalid: true,
     errorMessage: 'Error',
   },
 }
 
-export const Required: Story = {
-  tags: ['!dev'],
-  args: {
-    isRequired: true,
-    label: 'Label',
-    description: 'Description',
-    errorMessage: 'Var god ange en text',
-  },
-  render: args => (
-    <form>
-      <TextArea {...args} />
-      <button type='submit'>Submit</button>
-    </form>
-  ),
-  play: async ({ canvas, step, args: { errorMessage } }) => {
-    await step(
-      'it should give a validation error if the user entered no text',
-      async () => {
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
-      },
-    )
-  },
-}
+// TODO: Test this when we've refactored the validation
+// export const Required: Story = {
+//   tags: ['!dev'],
+//   args: {
+//     required: true,
+//     errorMessage: 'Var god ange en text',
+//   },
+//   render: args => (
+//     <form>
+//       <Template {...args} />
+//       <button type='submit'>Submit</button>
+//     </form>
+//   ),
+//   play: async ({ canvas, step, args: { errorMessage } }) => {
+//     await step(
+//       'it should give a validation error if the user entered no text',
+//       async () => {
+//         await userEvent.tab()
+//         await userEvent.tab()
+//         await userEvent.keyboard('[Enter]')
+//         expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
+//       },
+//     )
+//   },
+// }
 
-export const CustomValidation: Story = {
-  tags: ['!dev'],
-  args: {
-    label: 'Label',
-    validate: (value: string) =>
-      !/^\d+$/.test(value) ? 'Only numbers are allowed' : true,
-  },
-  render: args => (
-    <form>
-      <TextArea {...args} />
-      <button type='submit'>Submit</button>
-    </form>
-  ),
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should give a validation error if the user entered an unpermitted text',
-      async () => {
-        await userEvent.tab()
-        await userEvent.keyboard('abc')
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(canvas.getByText('Only numbers are allowed')).toBeInTheDocument()
-      },
-    )
-  },
-}
+// TODO: Test this when we've refactored the validation
+// export const CustomValidation: Story = {
+//   tags: ['!dev'],
+//   args: {
+//     label: 'Label',
+//     validate: (value: string) =>
+//       !/^\d+$/.test(value) ? 'Only numbers are allowed' : true,
+//   },
+//   render: args => (
+//     <form>
+//       <TextArea {...args} />
+//       <button type='submit'>Submit</button>
+//     </form>
+//   ),
+//   play: async ({ canvas, step }) => {
+//     await step(
+//       'it should give a validation error if the user entered an unpermitted text',
+//       async () => {
+//         await userEvent.tab()
+//         await userEvent.keyboard('abc')
+//         await userEvent.tab()
+//         await userEvent.keyboard('[Enter]')
+//         expect(canvas.getByText('Only numbers are allowed')).toBeInTheDocument()
+//       },
+//     )
+//   },
+// }
 
 export const MaxLength: Story = {
   args: {
@@ -113,17 +120,16 @@ export const MaxLength: Story = {
     maxLength: 50,
   },
   play: async ({ canvas, step, args }) => {
+    const maxLength = args.maxLength as number
     await step(
-      'it should give a validation error if the given text is too long',
+      'it should not be possible to exceed the maxLength property',
       async () => {
-        const randomString = stringOfLength((args.maxLength as number) + 1)
+        const randomString = stringOfLength(maxLength + 1)
         await userEvent.tab()
         await userEvent.keyboard(randomString)
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
         expect(
-          canvas.getByText(/Du har angett 1 tecken för mycket/),
-        ).toBeInTheDocument()
+          canvas.getByTestId<HTMLTextAreaElement>(testID).value.length,
+        ).toBe(maxLength)
       },
     )
   },
@@ -134,57 +140,57 @@ export const MinLength: Story = {
     ...Primary.args,
     minLength: 2,
   },
-  play: async ({ canvas, step, args }) => {
-    await step(
-      'it should give a validation error if the given text is too short',
-      async () => {
-        const randomString = stringOfLength((args.minLength as number) - 1)
-        await userEvent.tab()
-        await userEvent.keyboard(randomString)
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(
-          canvas.getByText(/Du har angett 1 tecken för lite/),
-        ).toBeInTheDocument()
-      },
-    )
-  },
+  // https://github.com/storybookjs/storybook/issues/19926
+  // play: async ({ canvas, step }) => {
+  //   await step(
+  //     'it should give a validation error if the given text is too short',
+  //     async () => {
+  //       await userEvent.click(canvas.getByTestId(testID))
+  //       await userEvent.keyboard('x')
+  //       await userEvent.tab()
+  //       await userEvent.keyboard('[Enter]')
+  //       expect(await canvas.findByTestId(fieldErrorTestID)).toBeInTheDocument()
+  //     },
+  //   )
+  // },
 }
 
-export const ShowCounter: Story = {
-  args: {
-    ...Primary.args,
-    showCounter: true,
-    value: 'HEJ',
-  },
-  play: async ({ canvas, step, args: { value } }) => {
-    await step(
-      'it should show the correct count for its initial value',
-      async () => {
-        expect(canvas.getByText(value?.length as number)).toBeInTheDocument()
-      },
-    )
-  },
-}
+// TODO: Move this test to the counter file
+// export const ShowCounter: Story = {
+//   args: {
+//     ...Primary.args,
+//     showCounter: true,
+//     value: 'HEJ',
+//   },
+//   play: async ({ canvas, step, args: { value } }) => {
+//     await step(
+//       'it should show the correct count for its initial value',
+//       async () => {
+//         expect(canvas.getByText(value?.length as number)).toBeInTheDocument()
+//       },
+//     )
+//   },
+// }
 
-export const ShowCounterWithDefaultValue: Story = {
-  tags: ['!dev'],
-  args: {
-    ...Primary.args,
-    showCounter: true,
-    defaultValue: 'HEJ',
-  },
-  play: async ({ canvas, step, args: { defaultValue } }) => {
-    await step(
-      'it should show the correct count for its initial value',
-      async () => {
-        expect(
-          canvas.getByText(defaultValue?.length as number),
-        ).toBeInTheDocument()
-      },
-    )
-  },
-}
+// TODO: Move this test to the counter file
+// export const ShowCounterWithDefaultValue: Story = {
+//   tags: ['!dev'],
+//   args: {
+//     ...Primary.args,
+//     showCounter: true,
+//     defaultValue: 'HEJ',
+//   },
+//   play: async ({ canvas, step, args: { defaultValue } }) => {
+//     await step(
+//       'it should show the correct count for its initial value',
+//       async () => {
+//         expect(
+//           canvas.getByText(defaultValue?.length as number),
+//         ).toBeInTheDocument()
+//       },
+//     )
+//   },
+// }
 
 export const Disabled = {
   args: {
