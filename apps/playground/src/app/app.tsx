@@ -24,7 +24,10 @@ export function App() {
       <TextField>
         <Label>Label</Label>
         <Text slot={'description'}>Description</Text>
-        <Input placeholder={'placeholder'} />
+        <Input
+          placeholder={'placeholder'}
+          type={'password'}
+        />
         <FieldError />
       </TextField>
     </div>
