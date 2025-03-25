@@ -35,3 +35,4 @@ export * from './label';
 export * from './progress-bar';
 export * from './input';
 export * from './field-error';
+export * from './character-counter';
