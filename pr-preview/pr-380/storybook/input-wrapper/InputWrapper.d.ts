@@ -5,6 +5,7 @@ interface InputWrapperProps {
     /** String to display as error message or function to handle the result and produce the error message */
     errorMessage?: string | ((validation: ValidationResult) => string);
     children?: React.ReactNode;
+    className?: string;
 }
 export declare const InputWrapper: React.FC<InputWrapperProps>;
 export {};
