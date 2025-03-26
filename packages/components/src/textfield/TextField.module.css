@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --field-01, --field-hover-01, --border-strong, --border-invalid, --text-disabled, --text-invalid, --field-disabled, --focus from tokens;
+@value --text-disabled from tokens;
 
 .inputField {
   height: 100%;
@@ -7,46 +7,4 @@
   &[data-disabled] {
     color: --text-disabled;
   }
-}
-
-.inputWrapper {
-  font-family: --font-family;
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr 1fr;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: min-content min-content min-content min-content;
-  gap: 0.25rem 0.5rem;
-  grid-template-areas:
-    'Label Count'
-    'Desc Count'
-    'Error Error'
-    'Input Input';
-  height: 100%;
-  width: 100%;
-  align-content: flex-end;
-
-  /** Temp solution so things look ok while refactoring */
-  [slot='errorMessage'] {
-    grid-area: Error;
-  }
-}
-
-.label {
-  color: --text-primary;
-  grid-area: Label;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.text {
-  color: --text-primary;
-  grid-area: Desc;
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-
-.wrap {
-  grid-area: Input;
-  position: relative;
 }

@@ -15,7 +15,7 @@ import {
   ListBoxItem,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
-import { InputWrapper } from '../textfield'
+import { InputWrapper } from '../input-wrapper'
 import clsx from 'clsx'
 
 export interface ComboBoxProps<T extends object>

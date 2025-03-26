@@ -10,7 +10,7 @@ import * as React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
-import { InputWrapper } from '../textfield'
+import { InputWrapper } from '../input-wrapper'
 import { DropEvent } from 'react-aria'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {

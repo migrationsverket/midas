@@ -11,7 +11,7 @@ import {
   Radio as AriaRadio,
   Group,
 } from 'react-aria-components'
-import { InputWrapper } from '../textfield'
+import { InputWrapper } from '../input-wrapper'
 import clsx from 'clsx'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {

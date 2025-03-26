@@ -41,6 +41,3 @@ export const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
     )
   },
 )
-
-// TODO: Remove component
-export const InputWrapper = () => null
