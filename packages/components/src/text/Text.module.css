@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --size-03, --line-height-03, --line-height-04, --line-height-05 from tokens;
+@value --text-primary, --font-family, --size-02, --size-03, --line-height-02, --line-height-03, --line-height-04, --line-height-05 from tokens;
 
 .body-01,
 .body-02 {
@@ -19,4 +19,11 @@
   &[data-expressive] {
     line-height: --line-height-05;
   }
+}
+
+.description {
+  font-size: --size-02;
+  line-height: --line-height-02;
+  font-weight: 400;
+  font-family: --font-family;
 }

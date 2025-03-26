@@ -102,6 +102,12 @@
         ]
       },
       "extends": ["plugin:testing-library/react"]
+    },
+    {
+      "files": ["**/*.stories.[jt]sx"],
+      "rules": {
+        "react-hooks/rules-of-hooks": "off"
+      }
     }
   ]
 }

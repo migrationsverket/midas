@@ -14,6 +14,10 @@
   padding: 0;
   margin: auto;
 
+  &[data-entering] {
+    animation: modal-zoom 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
   @media (forced-colors: active) {
     outline: 2px solid;
   }
@@ -21,12 +25,23 @@
 
 .overlay {
   position: fixed;
-  z-index: 100;
-  inset: 0;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  width: 100vw;
   background: rgba(45 0 0 / 30%);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: var(--visual-viewport-height);
+
+  &[data-entering] {
+    animation: modal-fade 150ms;
+  }
+
+  &[data-exiting] {
+    animation: modal-fade 150ms reverse;
+  }
 }
 
 .modalHeader {
@@ -45,9 +60,30 @@
 }
 
 .modalHeading {
+  /** Temp solution while we are working out which heading level we should use */
   font-family: --font-family;
-  font-weight: 600;
-  line-height: 1.4;
-  font-size: 1.25rem;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  font-size: 1.25rem !important;
   margin: 0 0 1rem;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-zoom {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }

@@ -5,6 +5,12 @@ import {
   useOverlayTrigger,
   OverlayTriggerAria,
 } from 'react-aria'
+import {
+  DialogTrigger,
+  Modal as AriaModal,
+  ModalOverlay,
+  Dialog as AriaDialog,
+} from 'react-aria-components'
 import { useDialog } from 'react-aria'
 import * as React from 'react'
 import { useOverlayTriggerState } from 'react-stately'
@@ -15,6 +21,8 @@ import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { OverlayTriggerState } from '@react-stately/overlays'
 import { OverlayTriggerProps } from '@react-types/overlays'
 import clsx from 'clsx'
+import { FocusScope } from '@react-aria/focus'
+import { Heading } from '../heading'
 
 interface DialogProps extends AriaDialogProps {
   /**
@@ -23,7 +31,9 @@ interface DialogProps extends AriaDialogProps {
   title?: React.ReactNode
   children: React.ReactNode
 }
-
+/** @deprecated since 6.0.0 use Modal instead.
+ * See docs {@link https://designsystem.migrationsverket.se/|Midas}
+ */
 export const Dialog: React.FC<DialogProps> = ({
   title,
   children,
@@ -57,7 +67,11 @@ type MidasModalProps = {
   children: React.ReactNode
 } & AriaModalOverlayProps
 
-const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
+const MidasModal: React.FC<MidasModalProps> = ({
+  state,
+  children,
+  ...props
+}) => {
   const ref = React.useRef(null)
   const { modalProps, underlayProps } = useModalOverlay(props, state, ref)
 
@@ -78,7 +92,9 @@ const Modal: React.FC<MidasModalProps> = ({ state, children, ...props }) => {
     </Overlay>
   )
 }
-
+/** @deprecated since version 6.0.0, use DialogTrigger instead.
+ * See docs {@link https://designsystem.migrationsverket.se/|Midas}
+ */
 export const ModalTrigger: React.FC<
   OverlayTriggerProps & { isDismissable?: boolean } & {
     children: (close: () => void) => JSX.Element
@@ -95,7 +111,7 @@ export const ModalTrigger: React.FC<
     <>
       <Button {...triggerProps}>{label}</Button>
       {state.isOpen && (
-        <Modal
+        <MidasModal
           {...props}
           state={state}
         >
@@ -110,8 +126,58 @@ export const ModalTrigger: React.FC<
             </Button>
           </div>
           {React.cloneElement(children(state.close), overlayProps)}
-        </Modal>
+        </MidasModal>
       )}
     </>
   ) 
+}
+
+export { DialogTrigger }
+
+export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
+  children,
+  title,
+  ...props
+}) => {
+  return (
+    <AriaDialog {...props}>
+      <ModalOverlay
+        {...props}
+        className={styles.overlay}
+      >
+        <FocusScope
+          contain
+          autoFocus
+          restoreFocus
+        >
+          <AriaModal
+            {...props}
+            className={styles.modal}
+          >
+            <div className={styles.modalHeader}>
+              <Button
+                slot={'close'}
+                variant='tertiary'
+                icon={X}
+                iconPlacement='right'
+              >
+                Stäng
+              </Button>
+            </div>
+            <div className={styles.modalBody}>
+              {title && (
+                <Heading
+                  level={2}
+                  className={styles.modalHeading}
+                >
+                  {title}
+                </Heading>
+              )}
+              {children}
+            </div>
+          </AriaModal>
+        </FocusScope>
+      </ModalOverlay>
+    </AriaDialog>
+  )
 }

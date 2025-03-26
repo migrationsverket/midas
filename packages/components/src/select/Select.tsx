@@ -153,11 +153,12 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       ref,
     )
 
-    const isActive = state.isOpen || state.selectedItems
+    const isActive = state.isOpen || state.selectedItems || state.selectedItem
     const isAllSelection = state.selectionManager.isSelectAll
     const isIndeterminateSelection =
       !isAllSelection && !state.selectionManager.isEmpty
-    const hasClearButton = isClearable && state.selectedItems
+    const hasClearButton =
+      isClearable && (state.selectedItems || state.selectedItem)
     const hasHeader = isSelectableAll
 
     const handleClear = () => state.selectionManager.clearSelection()
@@ -271,7 +272,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                   {...mergeProps}
                   className={clsx(styles.button, {
                     [styles.buttonOpen]: state.isOpen,
-                    [styles.buttonActive]: state.selectedItems,
+                    [styles.buttonActive]:
+                      state.selectedItems || state.selectedItem,
                     [styles.buttonDisabled]: isDisabled,
                   })}
                   data-invalid={
@@ -285,10 +287,10 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                   !state.selectedItems ? (
                     <span>{placeholder}</span>
                   ) : null}
-                  {state.selectionMode !== 'multiple' ? (
+                  {state.selectionMode === 'single' ? (
                     <span>
-                      {state.selectedItems?.length === 1
-                        ? state.selectedItems[0].textValue
+                      {state.selectedItem
+                        ? state.selectedItem.textValue
                         : placeholder}
                     </span>
                   ) : null}

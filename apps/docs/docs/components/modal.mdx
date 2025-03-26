@@ -6,52 +6,25 @@ description: Modal som lägger sig över allt annat innehåll.
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Flex, FlexItem, TextArea, Button, ModalTrigger, Dialog, Select } from '@midas-ds/components'
-import { Heading } from 'react-aria-components'
+import { Button, DialogTrigger, Modal } from '@midas-ds/components'
 
 export const Example = props => {
   return (
     <LiveCodeBlock
       scope={{
         Button,
-        ModalTrigger,
-        Dialog,
-        Flex,
-        FlexItem,
-        Select,
+        DialogTrigger,
+        Modal,
       }}
       {...props}
     >
-      {`<>
-            <ModalTrigger
-        label={'Radera frukter'}
-        isDismissable={true}
-      >
-        {(close) => (
-          <Dialog title='Vill du radera alla frukter?'>
-          <p>Är du säker? De går inte att återskapa.</p>
-          <Flex fluid={true}>
-            <FlexItem col='auto'>
-            <Button
-              variant={'danger'}
-              onPress={close}
-            >
-              Radera frukter
-            </Button>
-            </FlexItem>
-            <FlexItem col='auto'>
-             <Button
-              variant={'secondary'}
-              onPress={close}
-            >
-              Avbryt
-            </Button>
-            </FlexItem>
-            </Flex>
-          </Dialog>
-        )}
-      </ModalTrigger>
-        </>`}
+      {`
+      <DialogTrigger>
+        <Button>Öppna modal</Button>
+         <Modal title={'Rubrik'}>
+         Innehåll i modal
+         </Modal>
+      </DialogTrigger>`}
     </LiveCodeBlock>
   )
 }
@@ -59,7 +32,7 @@ export const Example = props => {
 <ComponentHeader
   name={'Modal'}
   friendlyName='Modal, Dialog, Dialogruta'
-  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useDialog.html'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog'
 />
 
 Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak.
@@ -73,68 +46,86 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { ModalTrigger, Dialog } from '@midas-ds/components'
+import { DialogTrigger, Modal } from '@midas-ds/components'
 ```
 
 <Example hideExample />
 
 ## Varianter
 
-Använd `isOpen` och `onOpenChange` för att kontrollera om modalen är öppen eller stängd. För att stänga modal via klick utanför
-modalens yta, sätt `isDismissable={true}`.
+För att stänga modal via klick utanför modalens yta, använd `isDismissable` på modalen.
+
+```tsx title='Dismissable'
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal
+    //highlight-start
+    isDismissable
+    //highlight-end
+    title={'Modal Title'}
+  >
+    /* Modal content */
+  </Modal>
+</DialogTrigger>
+```
+
+### Uncontrolled
+
+Alla varianter av `<Button>` samt alla övriga [pressable](https://react-spectrum.adobe.com/react-aria/Dialog.html#custom-trigger)
+element kan användas för att öppna modalen. För att stänga modalen med en knapp innanför modalen, använd `slot={'close'}`.
+
+```tsx title='Uncontrolled Modal'
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal title={'Modal Title'}>
+    //highlight-start
+    <Button slot={'close'}>Close</Button>
+    //highlight-end
+  </Modal>
+</DialogTrigger>
+```
+
+### Controlled
+
+Använd `isOpen` och `onOpenChange()` för att via state kontrollera om modalen är öppen eller stängd.
+
+```tsx title='Controlled Modal'
+/* imports and rest of app */
+const [open, setOpen] = React.useState<boolean>(false)
+/* trigger modal from anywhere */
+<Button onPress={() => setOpen(true))}>Open</Button>
+//highlight-start
+<DialogTrigger isOpen={open} onOpenChange={setOpen}>
+//highlight-end
+  <Modal
+    title={'Modal Title'}
+  >
+    /* Modal content */
+  </Modal>
+</DialogTrigger>
+```
 
 ## Avancerat innehåll
 
 Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas.
 
-<LiveCodeBlock
-  scope={{
-    Button,
-    ModalTrigger,
-    Dialog,
-    Flex,
-    FlexItem,
-    Heading,
-    Select,
-    TextArea
-  }}
->
-  {`<>
-       <ModalTrigger
-        label={'Öppna modal'}
-        isDismissable={true}
-      >
-        {(close) => (
-          <Dialog title='Vill du avsluta uppdraget?'>
-          <Flex fluid={true} style={{marginBottom: '1rem'}}>
-          <FlexItem col>
-          <TextArea label={'Ange anledning'} description={'Skriv anledning'} maxCharacters={100} autoFocus />
-          </FlexItem>
-          </Flex>
-          <Flex fluid={true}>
-            <FlexItem col='auto'>
-            <Button
-              onPress={close}
-            >
-              Spara korrespondens
-            </Button>
-            </FlexItem>
-            <FlexItem col='auto'>
-             <Button
-              variant={'secondary'}
-              onPress={close}
-            >
-              Avbryt
-            </Button>
-            </FlexItem>
-            </Flex>
-          </Dialog>
-        )}
-      </ModalTrigger>
-        </>`}
-
-</LiveCodeBlock>
+```tsx title=AutoFocus
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal title={'Modal Title'}>
+//highlight-start
+    <TextField label={'Name'} autoFocus>
+//highlight-end
+  </Modal>
+</DialogTrigger>
+```
 
 ## API
 
-<PropTable name='ModalTrigger' />
+### DialogTrigger
+
+<PropTable name='DialogTrigger' />
+
+### Modal
+
+<PropTable name='Modal' />
