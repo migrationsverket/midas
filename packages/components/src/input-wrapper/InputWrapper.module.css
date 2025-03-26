@@ -19,7 +19,7 @@
   align-content: flex-end;
 
   /** Temp solution so things look ok while refactoring */
-  [slot='errorMessage'] {
-    grid-area: Error;
+  [slot='description'] {
+    grid-area: Desc;
   }
 }
