@@ -2,52 +2,47 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextArea } from './TextArea'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
-import { TextField, TextFieldProps } from '../textfield'
+import { TextField } from '../textfield'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import styles from './TextArea.module.css'
 
-const testID = 'test'
-
 const fieldErrorTestID = 'error'
-
 const testClass = 'test-class'
 
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
 
-const Template: React.FC<TextFieldProps> = args => (
-  <TextField {...args}>
-    <Label>Label</Label>
-    <Text slot='description'>Description</Text>
-    <TextArea
-      data-testid={testID}
-      className={testClass}
-    />
-    <FieldError data-testid={fieldErrorTestID} />
-  </TextField>
-)
-
-const meta: Meta<typeof TextField> = {
-  render: args => <Template {...args} />,
+export default {
   title: 'Components/TextArea',
-  tags: ['autodocs'],
-  args: {
-    className: 'test-class',
-  },
-}
-
-export default meta
+  component: TextArea,
+  render: args => (
+    <TextField {...args}>
+      <Label>Label</Label>
+      <Text slot='description'>Description</Text>
+      <TextArea className={testClass} />
+      <FieldError data-testid={fieldErrorTestID} />
+    </TextField>
+  ),
+} as Meta<typeof TextField>
 
 type Story = StoryObj<typeof TextArea>
 
 export const Primary: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'A `<TextArea>` accepts all HTML attributes and is to be used inside a `<TextField>`.',
+      },
+    },
+  },
   play: async ({ canvas, step }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
-        expect(canvas.getByTestId(testID)).toHaveClass(
-          styles.inputField,
+        expect(canvas.getByRole('textbox')).toHaveClass(
+          styles.textArea,
           testClass,
         )
       },
@@ -58,7 +53,6 @@ export const Primary: Story = {
 export const Invalid = {
   args: {
     isInvalid: true,
-    errorMessage: 'Error',
   },
 }
 
@@ -117,8 +111,8 @@ export const Invalid = {
 // }
 
 export const MaxLength: Story = {
+  tags: ['!dev', '!autodocs'],
   args: {
-    ...Primary.args,
     maxLength: 50,
   },
   play: async ({ canvas, step, args }) => {
@@ -130,17 +124,10 @@ export const MaxLength: Story = {
         await userEvent.tab()
         await userEvent.keyboard(randomString)
         expect(
-          canvas.getByTestId<HTMLTextAreaElement>(testID).value.length,
+          canvas.getByRole<HTMLTextAreaElement>('textbox').value.length,
         ).toBe(maxLength)
       },
     )
-  },
-}
-
-export const MinLength: Story = {
-  args: {
-    ...Primary.args,
-    minLength: 2,
   },
 }
 
