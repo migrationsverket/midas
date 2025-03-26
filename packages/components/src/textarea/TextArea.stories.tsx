@@ -140,57 +140,7 @@ export const MinLength: Story = {
     ...Primary.args,
     minLength: 2,
   },
-  // https://github.com/storybookjs/storybook/issues/19926
-  // play: async ({ canvas, step }) => {
-  //   await step(
-  //     'it should give a validation error if the given text is too short',
-  //     async () => {
-  //       await userEvent.click(canvas.getByTestId(testID))
-  //       await userEvent.keyboard('x')
-  //       await userEvent.tab()
-  //       await userEvent.keyboard('[Enter]')
-  //       expect(await canvas.findByTestId(fieldErrorTestID)).toBeInTheDocument()
-  //     },
-  //   )
-  // },
 }
-
-// TODO: Move this test to the counter file
-// export const ShowCounter: Story = {
-//   args: {
-//     ...Primary.args,
-//     showCounter: true,
-//     value: 'HEJ',
-//   },
-//   play: async ({ canvas, step, args: { value } }) => {
-//     await step(
-//       'it should show the correct count for its initial value',
-//       async () => {
-//         expect(canvas.getByText(value?.length as number)).toBeInTheDocument()
-//       },
-//     )
-//   },
-// }
-
-// TODO: Move this test to the counter file
-// export const ShowCounterWithDefaultValue: Story = {
-//   tags: ['!dev'],
-//   args: {
-//     ...Primary.args,
-//     showCounter: true,
-//     defaultValue: 'HEJ',
-//   },
-//   play: async ({ canvas, step, args: { defaultValue } }) => {
-//     await step(
-//       'it should show the correct count for its initial value',
-//       async () => {
-//         expect(
-//           canvas.getByText(defaultValue?.length as number),
-//         ).toBeInTheDocument()
-//       },
-//     )
-//   },
-// }
 
 export const Disabled = {
   args: {
