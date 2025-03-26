@@ -31,7 +31,7 @@ export const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
     return (
       <AriaTextField
         {...props}
-        className={clsx(styles.inputField, props.className)}
+        className={clsx(styles.textField, props.className)}
         onChange={handleChange}
         onFocus={handleFocus}
         value={value}

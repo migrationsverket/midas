@@ -3,6 +3,7 @@
 
 .wrap {
   position: relative;
+  grid-area: Input;
 }
 
 .input {
