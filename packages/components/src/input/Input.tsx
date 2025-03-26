@@ -6,6 +6,8 @@ import { useContextProps, InputContext } from 'react-aria-components'
 import { Text } from '../text'
 import { Button } from '../button'
 
+export type { InputProps }
+
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     ;[props, ref] = useContextProps(props, ref, InputContext)

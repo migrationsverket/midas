@@ -10,6 +10,8 @@ import {
 import styles from './TextField.module.css'
 import clsx from 'clsx'
 
+export type { TextFieldProps }
+
 export const TextField = React.forwardRef<HTMLDivElement, TextFieldProps>(
   (props, ref) => {
     ;[props, ref] = useContextProps(props, ref, TextFieldContext)
