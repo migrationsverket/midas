@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import {
+  CheckboxGroupStateContext,
   DateFieldContext,
   InputContext,
   RadioGroupStateContext,
@@ -14,12 +15,14 @@ export default function useIsDisabled() {
   const radioProps = useContext(RadioGroupStateContext)
   const dateFieldStartProps = useSlottedContext(DateFieldContext, 'start')
   const dateFieldEndProps = useSlottedContext(DateFieldContext, 'end')
+  const checkboxGroupProps = useContext(CheckboxGroupStateContext)
 
   return (
     inputProps?.disabled ||
     radioProps?.isDisabled ||
     dateFieldStartProps?.isDisabled ||
     dateFieldEndProps?.isDisabled ||
+    checkboxGroupProps?.isDisabled ||
     undefined
   )
 }
