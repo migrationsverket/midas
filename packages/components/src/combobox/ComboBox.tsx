@@ -13,10 +13,13 @@ import {
   ComboBox as AriaComboBox,
   ListBox,
   ListBoxItem,
+  TextField,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
-import { InputWrapper } from '../input-wrapper'
 import clsx from 'clsx'
+import { Label } from '../label'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -45,11 +48,10 @@ export function ComboBox<T extends object>({
       ref={ref}
       {...props}
     >
-      <InputWrapper
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-      >
+      <TextField>
+        {label && <Label variant='label-02'>{label}</Label>}
+        {description && <Text slot='description'>{description}</Text>}
+        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
         <div className={styles.wrap}>
           <Input className={styles.input} />
           <Button
@@ -67,7 +69,7 @@ export function ComboBox<T extends object>({
             </div>
           </Button>
         </div>
-      </InputWrapper>
+      </TextField>
 
       <Popover
         className={styles.popover}

@@ -10,8 +10,9 @@ import * as React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
-import { InputWrapper } from '../input-wrapper'
 import { DropEvent } from 'react-aria'
+import { TextField } from '../textfield'
+import { Label } from '../label'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -72,10 +73,9 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
 
   return (
     <div className={styles.container}>
-      <InputWrapper
-        label={label}
-        description={description}
-      >
+      <TextField>
+        {label && <Label variant='label-02'>{label}</Label>}
+        {description && <Text slot='description'>{description}</Text>}
         <AriaFileTrigger
           allowsMultiple={allowsMultiple}
           onSelect={files => handleUpload(files)}
@@ -89,7 +89,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
             {allowsMultiple ? 'Välj filer' : 'Välj fil'}
           </Button>
         </AriaFileTrigger>
-      </InputWrapper>
+      </TextField>
       {files && (
         <FileList
           files={files}
