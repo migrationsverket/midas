@@ -5,6 +5,7 @@ import {
   TextProps as AriaTextProps,
 } from 'react-aria-components'
 import styles from './Text.module.css'
+import useIsDisabled from '../utils/useIsDisabled'
 
 export type TextVariant = 'body-01' | 'body-02'
 
@@ -29,6 +30,9 @@ export const Text: React.FC<TextProps> = ({
   elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
+  const isDisabled =
+    useIsDisabled() && (rest.slot === 'description' || undefined)
+
   const classNames: Record<TextVariant, string> = {
     'body-01': styles['body-01'],
     'body-02': styles['body-02'],
@@ -44,5 +48,12 @@ export const Text: React.FC<TextProps> = ({
     ...rest,
   }
 
-  return <AriaText {...textProps}>{children}</AriaText>
+  return (
+    <AriaText
+      {...textProps}
+      data-disabled={isDisabled}
+    >
+      {children}
+    </AriaText>
+  )
 }
