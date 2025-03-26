@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { TextArea, type TextAreaProps } from './TextArea'
+import { TextArea } from './TextArea'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
-import { TextField } from '../textfield'
+import { TextField, TextFieldProps } from '../textfield'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
@@ -12,21 +12,23 @@ const testID = 'test'
 
 const fieldErrorTestID = 'error'
 
+const testClass = 'test-class'
+
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
 
-const Template: React.FC<TextAreaProps> = args => (
-  <TextField>
+const Template: React.FC<TextFieldProps> = args => (
+  <TextField {...args}>
     <Label>Label</Label>
     <Text slot='description'>Description</Text>
     <TextArea
       data-testid={testID}
-      {...args}
+      className={testClass}
     />
     <FieldError data-testid={fieldErrorTestID} />
   </TextField>
 )
 
-const meta: Meta<typeof TextArea> = {
+const meta: Meta<typeof TextField> = {
   render: args => <Template {...args} />,
   title: 'Components/TextArea',
   tags: ['autodocs'],
@@ -40,13 +42,13 @@ export default meta
 type Story = StoryObj<typeof TextArea>
 
 export const Primary: Story = {
-  play: async ({ canvas, step, args: { className } }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
         expect(canvas.getByTestId(testID)).toHaveClass(
           styles.inputField,
-          className as string,
+          testClass,
         )
       },
     )

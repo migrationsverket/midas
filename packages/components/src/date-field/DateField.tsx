@@ -5,11 +5,11 @@ import {
   DateInput,
   DateSegment,
   DateValue,
-  Label,
   ValidationResult,
-  Text,
 } from 'react-aria-components'
-import {FieldError} from '../field-error'
+import { Text } from '../text'
+import { Label } from '../label'
+import { FieldError } from '../field-error'
 import styles from './DateField.module.css'
 import clsx from 'clsx'
 
@@ -35,15 +35,8 @@ export function DateField<T extends DateValue>({
         className,
       )}
     >
-      <Label className={styles.label}>{label}</Label>
-      {description && (
-        <Text
-          slot='description'
-          className={styles.description}
-        >
-          {description}
-        </Text>
-      )}
+      <Label variant='label-02'>{label}</Label>
+      {description && <Text slot='description'>{description}</Text>}
       <FieldError>{errorMessage}</FieldError>
       <DateInput className={styles.inputField}>
         {segment => (

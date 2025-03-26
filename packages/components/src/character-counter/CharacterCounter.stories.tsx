@@ -9,16 +9,14 @@ import { CharacterCounter } from './CharacterCounter'
 
 const testID = 'test'
 
-const fieldErrorTestID = 'error'
-
 export default {
   render: args => (
     <TextField {...args}>
-      <Label>Label</Label>
+      <Label variant='label-02'>Label</Label>
       <Text slot='description'>Description</Text>
       <CharacterCounter />
+      <FieldError />
       <Input data-testid={testID} />
-      <FieldError data-testid={fieldErrorTestID} />
     </TextField>
   ),
   title: 'Components/CharacterCounter',
