@@ -27,7 +27,7 @@ const Template: React.FC<TextAreaProps> = args => (
 )
 
 const meta: Meta<typeof TextArea> = {
-  component: Template,
+  render: args => <Template {...args} />,
   title: 'Components/TextArea',
   tags: ['autodocs'],
   args: {
