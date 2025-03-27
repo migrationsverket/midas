@@ -71,4 +71,17 @@ export const Span: Story = {
   },
 }
 
+export const Description: Story = {
+  args: {
+    slot: 'description',
+    children: 'I am a description with the slot of "description"',
+  },
+  play: async ({ canvas, args: { children } }) => {
+    expect(canvas.getByText(children as string)).toHaveStyle({
+      'font-size': '14px',
+      'line-height': '18px',
+      'font-weight': 400,
+    })
+  },
+}
 export default meta
