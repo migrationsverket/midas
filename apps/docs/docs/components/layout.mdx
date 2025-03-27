@@ -5,10 +5,10 @@ description: En skalkomponent för att få en simpel sidomeny och sidhuvud.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Layout, LinkButton } from '@midas-ds/components'
+import { Layout, LinkButton, Button } from '@midas-ds/components'
 import { semantic } from '@midas-ds/components/theme'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
+import { Calendar, Gavel, House, Plus, ClipboardList, Search, User, Bell, Languages, LogOut } from 'lucide-react'
 
 export const AppExample = () => {
   return (
@@ -20,6 +20,7 @@ export const AppExample = () => {
         alignItems: 'center',
         height: '100vh',
         border: `dotted 2px ${semantic.borderSubtle}`,
+        color: semantic.textPrimary,
       }}
     >
       Din applikation
@@ -113,7 +114,89 @@ import { Layout } from '@midas-ds/components'
 
 <Example hideExample />
 
-### Använda separat
+## Extern variant
+
+Använd `variant="external"` för en förenklad version av Layout med Navbar i botten av fönstret i mobilt läge.
+
+<LiveCodeBlock
+  scope={{
+    Layout,
+    LinkButton,
+    Calendar,
+    Search,
+    House,
+    Plus,
+    User,
+    ClipboardList,
+    AppExample,
+    Button,
+    Bell,
+    Languages,
+    LogOut,
+  }}
+  {...props}
+>
+  {`<Layout
+    items={[{
+      items: [
+        {
+          title: 'Hem',
+          href: '#',
+          icon: House,
+          active: true,
+        },
+        {
+          title: 'Ansökan',
+          href: '#',
+          icon: Search,
+        },
+        {
+          title: 'Boka',
+          href: '#',
+          icon: Calendar,
+        },
+        {
+          title: 'Profil',
+          href: '#',
+          icon: User,
+        },
+        {
+          title: 'Kontakt',
+          href: '#',
+          icon: Plus,
+        },
+      ],
+    }]}
+    title='Skapa ansökningar'
+    user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+    app={{ name: 'Namn på applikationen' }}
+    headerChildren={
+      <>
+        <Button
+          variant='icon'
+          icon={Bell}
+          aria-label='Notiser'
+        />
+        <Button
+          variant='icon'
+          icon={Languages}
+          aria-label='Byt språk'
+        />
+        <Button
+          variant='icon'
+          icon={LogOut}
+          aria-label='Logga ut'
+        />
+      </>
+      }
+      variant='external'
+    >
+      <AppExample />
+  </Layout>
+  `}
+</LiveCodeBlock>
+
+## Använda separat
 
 Det går att importera sidomenyn samt sidhuvudet som separata komponenter om så önskas, det är dock rekommenderat att använda hela Layoutkomponenten.
 
