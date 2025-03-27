@@ -1,11 +1,11 @@
 import { SidebarLinkProps } from '../Layout'
 import styles from '../Layout.module.css'
-import { Link } from 'react-aria-components'
+import { Link, RouterProvider } from 'react-aria-components'
 import clsx from 'clsx'
 import { useLayoutContext } from '../context/LayoutContext'
 
 export const Navbar: React.FC = () => {
-  const { items } = useLayoutContext()
+  const { items, clientSideRouter, clientSideHref } = useLayoutContext()
 
   const navBarGroup = items.at(0)?.items
 
@@ -16,32 +16,38 @@ export const Navbar: React.FC = () => {
     >
       {navBarGroup && (
         <ul className={clsx(styles.navbarList)}>
-          {navBarGroup.map((link, i) => (
-            <li key={i}>
-              <NavbarItem {...link} />
-            </li>
-          ))}
+          {clientSideRouter ? (
+            <RouterProvider
+              navigate={clientSideRouter}
+              useHref={clientSideHref}
+            >
+              <NavbarItemsList items={navBarGroup} />
+            </RouterProvider>
+          ) : (
+            <NavbarItemsList items={navBarGroup} />
+          )}
         </ul>
       )}
     </nav>
   )
 }
 
-export const NavbarItem: React.FC<SidebarLinkProps> = ({
-  title,
-  href,
-  icon: IconComponent,
-  active,
-}) => {
-  return (
-    <Link
-      href={href}
-      className={clsx(styles.navbarItem)}
-      data-active={active}
-      aria-current={active && 'page'}
-    >
-      <IconComponent size={20} />
-      {title}
-    </Link>
-  )
-}
+const NavbarItemsList: React.FC<{ items: SidebarLinkProps[] }> = ({
+  items,
+}) => (
+  <>
+    {items.map(({ href, active, icon: IconComponent, title }, i) => (
+      <li key={i}>
+        <Link
+          href={href}
+          className={clsx(styles.navbarItem)}
+          data-active={active}
+          aria-current={active && 'page'}
+        >
+          <IconComponent size={20} />
+          {title}
+        </Link>
+      </li>
+    ))}
+  </>
+)

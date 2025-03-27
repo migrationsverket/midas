@@ -5,7 +5,6 @@ import { semantic } from '../../theme'
 import { Logo } from '../../logo'
 import { Button } from '../../button'
 import { Menu, X } from 'lucide-react'
-import { Dropdown, DropdownItem } from '../../dropdown'
 import * as React from 'react'
 import { useLayoutContext } from '../context/LayoutContext'
 import clsx from 'clsx'
@@ -30,24 +29,23 @@ export const Header: React.FC = () => {
     return (
       <header className={clsx(styles.header, styles.headerExternal)}>
         <div className={styles.headerContentExternal}>
-          <Logo
-            size='x-small'
-            padding={false}
-          />
-          {headerChildren && (
-            <>
-              <div className={clsx(styles.headerItems, styles.headerChildrenH)}>
-                {headerChildren}
-              </div>
-              <div className={styles.headerMenu}>
-                <Dropdown label='Öppna meny'>
-                  {React.Children.map(headerChildren, child => (
-                    <DropdownItem>{child}</DropdownItem>
-                  ))}
-                </Dropdown>
-              </div>
-            </>
-          )}{' '}
+          <div className={styles.logoExternalContainer}>
+            <Logo
+              size='x-small'
+              padding={false}
+              className={styles.logoExternal}
+            />
+            <Logo
+              size='small'
+              padding={false}
+              className={styles.logoExternalDesktop}
+            />
+            <div>
+              <p className={styles.userName}>{user.name}</p>
+              <p className={styles.userTitle}>{user.title}</p>
+            </div>
+          </div>
+          <div className={styles.headerItems}>{headerChildren}</div>
         </div>
       </header>
     )
@@ -96,18 +94,7 @@ export const Header: React.FC = () => {
           <p className={styles.title}>{title}</p>
         </div>
       </div>
-      {headerChildren && (
-        <>
-          <div className={styles.headerItems}>{headerChildren}</div>
-          <div className={styles.headerMenu}>
-            <Dropdown label='Öppna meny'>
-              {React.Children.map(headerChildren, child => (
-                <DropdownItem>{child}</DropdownItem>
-              ))}
-            </Dropdown>
-          </div>
-        </>
-      )}
+      <div className={styles.headerItems}>{headerChildren}</div>
     </header>
   )
 }
