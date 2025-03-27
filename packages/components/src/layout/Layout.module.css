@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-md, --background-01, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus from tokens;
+@value --font-family, --breakpoint-sm, --breakpoint-md, --breakpoint-lg, --background-01, --border-subtle, --layer-01, --size-01, --text-primary, --text-on-color, --line-height-02, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -57,7 +57,7 @@
   max-height: 40px;
 
   @media --breakpoint-md {
-    display: block;
+    display: flex;
   }
 }
 
@@ -340,5 +340,98 @@
     right: auto;
     left: 5px;
     top: 5px;
+  }
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-family: --font-family;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid --border-subtle;
+  background-color: --background-01;
+}
+
+.navbarList {
+  flex: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  & > li {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  @media --breakpoint-lg {
+    max-width: 600px;
+  }
+}
+
+.navbarItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  color: --text-primary;
+  text-decoration: none;
+  font-size: --size-01;
+  line-height: --line-height-02;
+  text-align: center;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+
+  &[data-hovered],
+  &[data-active] {
+    background-color: --button-background-primary;
+    color: --text-on-color;
+    cursor: pointer;
+  }
+
+  & svg {
+    flex: 0 0 auto;
+  }
+
+  @media --breakpoint-md {
+    gap: 0.5rem;
+    flex-direction: row;
+    padding: 1rem 0.5rem;
+  }
+}
+
+.headerExternal {
+  @media --breakpoint-sm {
+    border: none;
+  }
+}
+
+.headerContentExternal {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.headerChildrenH {
+  flex-direction: row;
+}
+
+.navbarWrapper {
+  @media --breakpoint-md {
+    display: none;
   }
 }

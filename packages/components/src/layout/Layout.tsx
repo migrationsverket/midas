@@ -11,6 +11,7 @@ import { SkipLink } from './components/SkipLink'
 import { Href } from '@react-types/shared'
 import { LayoutProvider } from './context/LayoutContext'
 import { Backdrop } from './components/Backdrop'
+import { Navbar } from './components/Navbar'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -56,6 +57,7 @@ export interface MidasLayout {
    */
   clientSideRouter?: (path: string, routerOptions: undefined) => void
   clientSideHref?: (href: Href) => string
+  variant: 'internal' | 'external'
 }
 
 export const Layout: React.FC<MidasLayout> & {
@@ -63,6 +65,8 @@ export const Layout: React.FC<MidasLayout> & {
   Header: typeof Header
   Sidebar: typeof Sidebar
   SidebarLink: typeof SidebarLink
+  Navbar: typeof Navbar
+  Backdrop: typeof Backdrop
 } = ({
   items,
   title,
@@ -72,9 +76,43 @@ export const Layout: React.FC<MidasLayout> & {
   headerChildren,
   clientSideRouter,
   clientSideHref,
+  variant,
 }) => {
   const [isCollapsed, setIsCollapsed] = React.useState<boolean>(false)
   const [isOpened, setIsOpened] = React.useState<boolean>(false)
+
+  if (variant === 'external')
+    return (
+      <Layout.Provider
+        items={items}
+        title={title}
+        user={user}
+        app={app}
+        clientSideRouter={clientSideRouter}
+        clientSideHref={clientSideHref}
+        headerChildren={headerChildren}
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+        variant={variant}
+      >
+        <div className={styles.baseLayout}>
+          <SkipLink />
+          <Layout.Header />
+          <div className={styles.mainContent}>
+            <Layout.Sidebar />
+            <FlexItem>
+              <main className={styles.main}>
+                <div className={styles.app}>{children}</div>
+              </main>
+            </FlexItem>
+            <Layout.Backdrop />
+          </div>
+          <div className={styles.navbarWrapper}>
+            <Layout.Navbar />
+          </div>
+        </div>
+      </Layout.Provider>
+    )
 
   return (
     <Layout.Provider
@@ -89,6 +127,7 @@ export const Layout: React.FC<MidasLayout> & {
       setIsCollapsed={setIsCollapsed}
       isOpened={isOpened}
       setIsOpened={setIsOpened}
+      variant={variant}
     >
       <div className={styles.baseLayout}>
         <SkipLink />
@@ -100,7 +139,7 @@ export const Layout: React.FC<MidasLayout> & {
               <div className={styles.app}>{children}</div>
             </main>
           </FlexItem>
-          <Backdrop />
+          <Layout.Backdrop />
         </div>
       </div>
     </Layout.Provider>
@@ -111,3 +150,5 @@ Layout.Provider = LayoutProvider
 Layout.Header = Header
 Layout.Sidebar = Sidebar
 Layout.SidebarLink = SidebarLink
+Layout.Navbar = Navbar
+Layout.Backdrop = Backdrop
