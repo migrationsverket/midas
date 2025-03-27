@@ -170,6 +170,30 @@ export const OnlyHeader: Story = {
   ),
 }
 
+export const Navbar: Story = {
+  render: () => (
+    <Layout.Provider
+      items={items}
+      title='Skapa ansökningar'
+      user={{ name: 'Test Testsson', title: 'Testare' }}
+      app={{ name: 'Namn på applikationen' }}
+      variant='external'
+      headerChildren={
+        <LinkButton
+          variant='tertiary'
+          target='_blank'
+        >
+          Öppna annan tjänst
+        </LinkButton>
+      }
+      isCollapsed={false}
+      setIsCollapsed={() => null}
+    >
+      <Layout.Navbar />
+    </Layout.Provider>
+  ),
+}
+
 export const ActivePage: Story = {
   args: {
     ...Primary.args,
