@@ -29,8 +29,8 @@
 }
 
 .textArea {
-  font-family: --font-family;
   all: unset;
+  font-family: --font-family;
   display: flex !important;
   grid-area: Input;
   border-bottom: 1px solid --border-strong;
