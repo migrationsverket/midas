@@ -22,6 +22,7 @@
 }
 
 .description {
+  color: --text-primary;
   font-size: --size-02;
   line-height: --line-height-02;
   font-weight: 400;

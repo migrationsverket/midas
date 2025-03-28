@@ -8,7 +8,7 @@ import styles from './CharacterCounter.module.css'
 
 export const CharacterCounter = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
-    ;[props, ref] = useContextProps(props, ref, InputContext)
+    ;[props] = useContextProps(props, ref, InputContext)
     const { maxLength, value } = props
     const { length } = value?.toString() ?? ''
     const isMaxLengthDefined = maxLength !== undefined

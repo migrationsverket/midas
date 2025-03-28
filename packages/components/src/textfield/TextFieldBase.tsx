@@ -32,29 +32,14 @@ export const TextFieldBase = React.forwardRef<
   HTMLDivElement,
   TextFieldBaseProps
 >((props, ref) => {
-  ;[props, ref] = useContextProps(props, ref, TextFieldContext)
+  ;[props] = useContextProps(props, ref, TextFieldContext)
 
   const { label, description, errorMessage, showCounter } = props
-
-  const [value, setValue] = React.useState(
-    props.defaultValue ?? props.value ?? '',
-  )
-
-  const handleChange: TextFieldProps['onChange'] = value => {
-    setValue(value)
-  }
-
-  const handleFocus: React.FocusEventHandler<HTMLInputElement> = event => {
-    setValue(event.target.value)
-  }
 
   return (
     <AriaTextField
       {...props}
       className={styles.textField}
-      onChange={handleChange}
-      onFocus={handleFocus}
-      value={value}
     >
       {label && <Label variant='label-02'>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
