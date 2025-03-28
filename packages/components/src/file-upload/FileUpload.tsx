@@ -4,14 +4,14 @@ import {
   FileTrigger as AriaFileTrigger,
   FileTriggerProps as AriaFileTriggerProps,
   DropZone,
-  Text,
 } from 'react-aria-components'
 import * as React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
-import { InputWrapper } from '../textfield'
 import { DropEvent } from 'react-aria'
+import { Label } from '../label'
+import { Text } from '../text'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -72,24 +72,21 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
 
   return (
     <div className={styles.container}>
-      <InputWrapper
-        label={label}
-        description={description}
+      {label && <Label variant='label-02'>{label}</Label>}
+      {description && <Text slot='description'>{description}</Text>}
+      <AriaFileTrigger
+        allowsMultiple={allowsMultiple}
+        onSelect={files => handleUpload(files)}
+        {...rest}
       >
-        <AriaFileTrigger
-          allowsMultiple={allowsMultiple}
-          onSelect={files => handleUpload(files)}
-          {...rest}
+        <Button
+          variant='secondary'
+          aria-labelledby='fileUpload'
+          className={styles.input}
         >
-          <Button
-            variant='secondary'
-            aria-labelledby='fileUpload'
-            className={styles.input}
-          >
-            {allowsMultiple ? 'Välj filer' : 'Välj fil'}
-          </Button>
-        </AriaFileTrigger>
-      </InputWrapper>
+          {allowsMultiple ? 'Välj filer' : 'Välj fil'}
+        </Button>
+      </AriaFileTrigger>
       {files && (
         <FileList
           files={files}

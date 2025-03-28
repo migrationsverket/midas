@@ -1,70 +1,76 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { TextField } from './TextField'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
-import styles from './TextField.module.css'
+import { TextField } from '../textfield'
 
-const meta: Meta<typeof TextField> = {
-  component: TextField,
+export default {
   title: 'Components/TextField',
-  tags: ['autodocs'],
+  component: TextField,
   argTypes: {
-    label: {
-      type: 'string',
-      description: 'Etikett',
-    },
-    description: {
-      type: 'string',
-    },
     type: {
       options: ['password', 'text', 'email'],
       control: { type: 'select' },
     },
   },
-}
-export default meta
+  args: {
+    label: 'Label',
+    description: 'Description',
+  },
+} as Meta<typeof TextField>
+
 type Story = StoryObj<typeof TextField>
 
 export const Primary: Story = {
   args: {
-    label: 'Label',
-    description: 'Description',
-    // @ts-expect-error dont recognize this property
-    'data-testid': 'test',
+    className: 'test-class',
   },
-  play: async ({ canvas, step, args }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
-        // @ts-expect-error dont recognize this property
-        const wrapper = canvas.getByTestId(args['data-testid'] as string)
-        expect(wrapper).toHaveClass(styles.inputField, args.className as string)
+        expect(canvas.getByRole('textbox').classList.length).toBe(2)
       },
     )
   },
 }
 
-export const Password = {
+export const Password: Story = {
   args: {
-    label: 'Enter Password',
     type: 'password',
+  },
+  play: async ({ canvas, step }) => {
+    const password = 'secret'
+    await step(
+      'it should toggle the password when clicking "Show" and "Hide"',
+      async () => {
+        await userEvent.tab()
+        await userEvent.keyboard('secret')
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        expect(canvas.getByText(password)).toBeInTheDocument()
+        await userEvent.keyboard('[Enter]')
+        expect(canvas.queryByText(password)).toBeNull()
+      },
+    )
   },
 }
 
-export const NotValid = {
+export const NotValid: Story = {
   args: {
-    ...Primary.args,
     isInvalid: true,
-    errorMessage: 'Fel i valideringen',
+    errorMessage: 'Något blev fel',
+  },
+  play: async ({ canvas, step, args }) => {
+    await step('it should be invalid', async () => {
+      expect(canvas.getByLabelText(args.label as string)).toBeInvalid()
+    })
   },
 }
 
 export const Required: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
-    ...Primary.args,
     isRequired: true,
-    errorMessage: 'Var god fyll i detta fält',
   },
   render: args => (
     <form>
@@ -72,21 +78,21 @@ export const Required: Story = {
       <button type='submit'>Submit</button>
     </form>
   ),
-  play: async ({ canvas, step, args: { errorMessage } }) => {
+  play: async ({ canvas, step, args }) => {
     await step(
       'it should give a validation error if the user entered no text',
       async () => {
         await userEvent.tab()
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(canvas.getByText(errorMessage as string)).toBeInTheDocument()
+        expect(canvas.getByLabelText(args.label as string)).toBeInvalid()
       },
     )
   },
 }
 
 export const CustomValidation: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
     label: 'Label',
     validate: (value: string) =>
@@ -114,21 +120,19 @@ export const CustomValidation: Story = {
 
 export const Number: Story = {
   args: {
-    label: 'Label',
     type: 'number',
   },
-  play: async ({ canvas, step, args: { label } }) => {
+  play: async ({ canvas, step, args }) => {
     await step('it should not allow any non number input', async () => {
       await userEvent.tab()
       await userEvent.keyboard('abc')
-      expect(canvas.getByLabelText(label as string)).toHaveValue(null)
+      expect(canvas.getByLabelText(args.label as string)).toHaveValue(null)
     })
   },
 }
 
 export const Disabled: Story = {
   args: {
-    ...Primary.args,
     isDisabled: true,
   },
   parameters: {
@@ -152,63 +156,40 @@ export const Disabled: Story = {
   },
 }
 
-export const Personnummer = {
-  args: {
-    ...Primary.args,
-    validationType: 'ssn',
-    label: 'Personnummer',
-    description: undefined,
-    errorMessage: `Fel format för ett personnummer`,
-    maxLength: 12,
-  },
-}
-
-export const Dossnr: Story = {
-  args: {
-    ...Primary.args,
-    validationType: 'dossnr',
-    label: 'Dossiernummer',
-    description: undefined,
-    errorMessage: `Fel format för ett dossiernummer`,
-  },
-}
-
-export const MaxLength = {
-  args: {
-    ...Primary.args,
-    maxLength: 50,
-  },
-}
-
 export const ShowCounter: Story = {
   args: {
-    ...Primary.args,
+    value: 'I love apples',
     showCounter: true,
-    value: 'HEJ',
   },
   play: async ({ canvas, step, args: { value } }) => {
     await step(
       'it should show the correct count for its initial value',
       async () => {
-        expect(canvas.getByText(value?.length as number)).toBeInTheDocument()
+        expect(canvas.getByText((value as string).length)).toBeInTheDocument()
       },
     )
   },
 }
 
-export const ShowCounterWithDefaultValue: Story = {
-  tags: ['!dev'],
+export const MaxLengthAndShowCounter: Story = {
   args: {
-    ...Primary.args,
     showCounter: true,
+    maxLength: 50,
+  },
+}
+
+export const ShowCounterWithDefaultValue: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
     defaultValue: 'HEJ',
+    showCounter: true,
   },
   play: async ({ canvas, step, args: { defaultValue } }) => {
     await step(
-      'it should show the correct count for its initial value',
+      'it should show the correct count for its initial defaultValue',
       async () => {
         expect(
-          canvas.getByText(defaultValue?.length as number),
+          canvas.getByText((defaultValue as string).length),
         ).toBeInTheDocument()
       },
     )

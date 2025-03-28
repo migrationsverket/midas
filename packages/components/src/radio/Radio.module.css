@@ -5,16 +5,16 @@
   font-family: --font-family;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem 0.5rem;
 
   &[data-disabled] {
-    pointer-events: none;
+    cursor: not-allowed;
     opacity: 1;
     color: --text-disabled;
   }
 }
 
 .wrap {
-  grid-area: Input;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

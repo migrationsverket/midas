@@ -216,7 +216,7 @@ export const RequiredMultiple: Story = {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      expect(handleSubmit).not.toHaveBeenCalled()
+      await expect(handleSubmit).not.toHaveBeenCalled()
     })
 
     // Select a value then submit again
@@ -229,14 +229,14 @@ export const RequiredMultiple: Story = {
         await userEvent.tab()
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(handleSubmit).toHaveBeenCalled()
+        await expect(handleSubmit).toHaveBeenCalled()
       },
     )
   },
 }
 
 export const RequiredSingle: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
     selectionMode: 'single',
     isRequired: true,
@@ -258,7 +258,7 @@ export const RequiredSingle: Story = {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      expect(handleSubmit).not.toHaveBeenCalled()
+      await expect(handleSubmit).not.toHaveBeenCalled()
     })
 
     // Select a value then submit again
@@ -269,7 +269,7 @@ export const RequiredSingle: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(handleSubmit).toHaveBeenCalled()
+        await expect(handleSubmit).toHaveBeenCalled()
       },
     )
   },
