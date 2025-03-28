@@ -3,9 +3,7 @@ import * as React from 'react'
 import clsx from 'clsx'
 import styles from './TextField.module.css'
 import { useContextProps, InputContext } from 'react-aria-components'
-import { Text } from '../text'
-import { Button } from '../button'
-
+import { PasswordField } from './PasswordField'
 export type { InputProps }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -24,28 +22,3 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     )
   },
 )
-
-const PasswordField: React.FC<InputProps> = ({ value }) => {
-  const [showPassword, setShowPassword] = React.useState(false)
-  const handlePress = () => setShowPassword(previousValue => !previousValue)
-
-  return (
-    <>
-      {showPassword && (
-        <Text
-          slot='description'
-          className={styles.passwordText}
-        >
-          {value}
-        </Text>
-      )}
-      <Button
-        variant='tertiary'
-        onPress={handlePress}
-        className={styles.passwordButton}
-      >
-        {showPassword ? 'Dölj' : 'Visa'}
-      </Button>
-    </>
-  )
-}
