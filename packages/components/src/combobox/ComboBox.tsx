@@ -13,7 +13,6 @@ import {
   ComboBox as AriaComboBox,
   ListBox,
   ListBoxItem,
-  TextField,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
@@ -48,29 +47,26 @@ export function ComboBox<T extends object>({
       ref={ref}
       {...props}
     >
-      <TextField>
-        {label && <Label variant='label-02'>{label}</Label>}
-        {description && <Text slot='description'>{description}</Text>}
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-        <div className={styles.wrap}>
-          <Input className={styles.input} />
-          <Button
-            className={styles.button}
-            aria-label='Visa lista'
+      {label && <Label variant='label-02'>{label}</Label>}
+      {description && <Text slot='description'>{description}</Text>}
+      <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+      <div className={styles.wrap}>
+        <Input className={styles.input} />
+        <Button
+          className={styles.button}
+          aria-label='Visa lista'
+        >
+          <div
+            className={styles.icon}
+            aria-hidden='true'
           >
-            <div
-              className={styles.icon}
-              aria-hidden='true'
-            >
-              <ChevronDown
-                size={20}
-                aria-hidden
-              />
-            </div>
-          </Button>
-        </div>
-      </TextField>
-
+            <ChevronDown
+              size={20}
+              aria-hidden
+            />
+          </div>
+        </Button>
+      </div>
       <Popover
         className={styles.popover}
         offset={0}
