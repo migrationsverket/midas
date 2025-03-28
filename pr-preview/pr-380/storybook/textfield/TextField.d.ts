@@ -1,4 +1,3 @@
-import { TextFieldProps } from 'react-aria-components';
+import { TextFieldBaseProps } from './TextFieldBase';
 import * as React from 'react';
-export type { TextFieldProps };
-export declare const TextField: React.ForwardRefExoticComponent<TextFieldProps & React.RefAttributes<HTMLDivElement>>;
+export declare const TextField: React.FC<TextFieldBaseProps>;
