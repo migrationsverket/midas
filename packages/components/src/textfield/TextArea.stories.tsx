@@ -164,7 +164,7 @@ export const MaxLengthAndShowCounter: Story = {
 }
 
 export const ShowCounterWithDefaultValue: Story = {
-  // tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs'],
   args: {
     defaultValue: 'HEJ',
     showCounter: true,
