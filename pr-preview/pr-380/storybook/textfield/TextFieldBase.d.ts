@@ -1,6 +1,6 @@
 import { TextFieldProps, ValidationResult } from 'react-aria-components';
 import * as React from 'react';
-export interface TextFieldBaseProps extends TextFieldProps {
+export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
     children?: React.ReactNode;
     /** Specify label displayed above the TextField*/
     label?: string;
