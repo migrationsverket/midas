@@ -15,6 +15,7 @@ describe('Sidebar', () => {
           name: '',
           color: undefined,
         }}
+        variant='internal'
       />,
     )
     expect(baseElement).toBeTruthy()

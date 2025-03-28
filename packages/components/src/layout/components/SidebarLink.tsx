@@ -34,7 +34,7 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
             styles.listLinkCollapsed,
             isActive && styles.active,
           )}
-          onPress={() => setIsOpened(false)}
+          onPress={() => setIsOpened?.(false)}
         >
           <IconComponent
             size={20}
@@ -50,7 +50,7 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
       href={href}
       aria-label={title}
       className={clsx(styles.listLink, isActive && styles.active)}
-      onPress={() => setIsOpened(false)}
+      onPress={() => setIsOpened?.(false)}
     >
       <IconComponent size={20} />
       {title}

@@ -193,7 +193,7 @@ export const semantic = {
   notificationBackgroundImportant: `light-dark(${baseColors.signalYellow20}, ${baseColors.gray10})`,
   notificationBackgroundWarning: `light-dark(${baseColors.signalRed20}, ${baseColors.gray10})`,
 
-  textPrimary: `light-dark(${baseColors.gray30}, ${baseColors.gray10})`,
+  textPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   textSecondary: `light-dark(${baseColors.gray140}, ${baseColors.gray70})`,
   textBrand: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
   textOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,

@@ -1,4 +1,18 @@
 export const customViewports = {
+  smallest: {
+    name: 'Smallest',
+    styles: {
+      width: '320px',
+      height: '568px',
+    },
+  },
+  'x-small': {
+    name: 'X-small',
+    styles: {
+      width: '440px',
+      height: '100%',
+    },
+  },
   small: {
     name: 'Small',
     styles: {
@@ -27,4 +41,4 @@ export const customViewports = {
       height: '100%',
     },
   },
-};
+}
