@@ -2,11 +2,11 @@
 
 import * as React from 'react'
 import { TextFieldBase, type TextFieldBaseProps } from './TextFieldBase'
-import { Input, type InputProps } from '../input'
+import { Input, type InputProps } from './Input'
 
 export const TextField = React.forwardRef<
   HTMLInputElement,
-  TextFieldBaseProps & { className: InputProps['className'] }
+  TextFieldBaseProps & { className?: InputProps['className'] }
 >(({ className, ...props }, ref) => (
   <TextFieldBase {...props}>
     <Input

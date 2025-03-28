@@ -1,8 +1,11 @@
 @value tokens: "../theme/tokens.css";
 @value --focus, --field-disabled, --text-primary, --text-invalid, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled from tokens;
 
-.textField {
+* {
   font-family: --font-family;
+}
+
+.textField {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr 1fr;
@@ -12,13 +15,12 @@
   grid-template-areas:
     'Label Count'
     'Desc Count'
-    'Error Error'
+    'Error Count'
     'Input Input';
   height: 100%;
   width: 100%;
   align-content: flex-end;
 
-  /** Temp solution so things look ok while refactoring */
   [slot='description'] {
     grid-area: Desc;
   }
@@ -30,8 +32,7 @@
 
 .textArea {
   all: unset;
-  font-family: --font-family;
-  display: flex !important;
+  display: flex;
   grid-area: Input;
   border-bottom: 1px solid --border-strong;
   align-items: center;
@@ -73,4 +74,75 @@
     border: none;
     opacity: 0.7;
   }
+}
+
+.wrap {
+  position: relative;
+  grid-area: Input;
+}
+
+.input {
+  all: unset;
+  border-bottom: 1px solid --border-strong;
+  min-height: 48px;
+  font-size: 1rem;
+  padding-left: 1rem;
+  line-height: 1;
+  background-color: --field-01;
+  border-radius: 0;
+  box-sizing: border-box;
+  width: 100%;
+
+  &[data-hovered] {
+    background-color: --field-hover-01;
+
+    & + .passwordText {
+      background-color: --field-hover-01;
+    }
+  }
+
+  &[data-focused] {
+    box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
+  }
+
+  &[data-invalid] {
+    border: none;
+    box-shadow: inset 0 0 0 3px --border-invalid;
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    background-color: --field-disabled;
+    border: none;
+    opacity: 0.7;
+  }
+}
+
+.passwordText {
+  background-color: --field-01;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 3px;
+  z-index: 2;
+  left: 1rem;
+  height: calc(100% - 6px);
+  width: calc(100% - 2rem);
+}
+
+.passwordButton {
+  background: transparent !important;
+  border-color: transparent !important;
+  position: absolute;
+  width: max-content;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 3;
 }

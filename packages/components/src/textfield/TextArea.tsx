@@ -11,7 +11,7 @@ import styles from './TextField.module.css'
 
 export const TextArea = React.forwardRef<
   HTMLTextAreaElement,
-  TextFieldBaseProps & { className: TextAreaProps['className'] }
+  TextFieldBaseProps & { className?: TextAreaProps['className'] }
 >(({ className, ...props }, ref) => (
   <TextFieldBase {...props}>
     <AriaTextArea
