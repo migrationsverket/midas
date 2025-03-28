@@ -6,14 +6,13 @@ import {
   TextFieldProps,
   ValidationResult,
 } from 'react-aria-components'
-import clsx from 'clsx'
 import styles from './TextField.module.css'
 import { Label } from '../label'
 import { Text } from '../text/Text'
 import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 
-export interface TextFieldBaseProps extends TextFieldProps {
+export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
   /** Specify label displayed above the TextField*/
   label?: string
@@ -52,7 +51,7 @@ export const TextFieldBase = React.forwardRef<
   return (
     <AriaTextField
       {...props}
-      className={clsx(styles.textField, props.className)}
+      className={styles.textField}
       onChange={handleChange}
       onFocus={handleFocus}
       value={value}
