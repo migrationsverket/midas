@@ -1,7 +1,7 @@
 import { Input as AriaInput, InputProps } from 'react-aria-components'
 import * as React from 'react'
 import clsx from 'clsx'
-import styles from './Input.module.css'
+import styles from './TextField.module.css'
 import { useContextProps, InputContext } from 'react-aria-components'
 import { Text } from '../text'
 import { Button } from '../button'
