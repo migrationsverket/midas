@@ -236,7 +236,7 @@ export const RequiredMultiple: Story = {
 }
 
 export const RequiredSingle: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
     selectionMode: 'single',
     isRequired: true,
@@ -269,6 +269,7 @@ export const RequiredSingle: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
+        // TODO: this is flaky
         expect(handleSubmit).toHaveBeenCalled()
       },
     )
