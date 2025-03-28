@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import * as React from 'react'
 import {
   InputProps,
@@ -11,21 +10,16 @@ export const CharacterCounter = React.forwardRef<HTMLInputElement, InputProps>(
   (props, ref) => {
     ;[props, ref] = useContextProps(props, ref, InputContext)
     const { maxLength, value } = props
-    const stringValue = value?.toString() ?? ''
+    const { length } = value?.toString() ?? ''
+    const isMaxLengthDefined = maxLength !== undefined
 
-    if (maxLength !== undefined) {
-      return (
-        <span
-          className={clsx(
-            styles.count,
-            stringValue.length > maxLength && styles.countExceeded,
-          )}
-        >
-          {stringValue.length} / {maxLength}
-        </span>
-      )
-    }
-
-    return <span className={styles.count}>{stringValue.length}</span>
+    return (
+      <span
+        className={styles.characterCounter}
+        data-exceeded={(isMaxLengthDefined && length > maxLength) || undefined}
+      >
+        {isMaxLengthDefined ? `${length} / ${maxLength}` : length}
+      </span>
+    )
   },
 )
