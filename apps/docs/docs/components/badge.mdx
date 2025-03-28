@@ -1,6 +1,6 @@
 ---
 title: Badge
-description: Kort beskrivning av Badge
+description: Badge används tillsammans med en ikon eller knapp för att påvisa att användaren har något oläst att ta del av.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
@@ -15,7 +15,7 @@ export const Example = props => {
       scope={{ Button, Badge, BadgeContainer, Bell }}
       {...props}
     >
-      {`<Button variant='tertiary'>
+      {`<Button variant='tertiary' aria-label='Meddelanden'>
         <BadgeContainer>
           <Bell />
           <Badge />
@@ -28,6 +28,7 @@ export const Example = props => {
 <ComponentHeader
   name={'Badge'}
   friendlyName='Notisindikator, Statusindikator'
+  overrideHeadlessLink=''
 />
 
 Badge används tillsammans med en ikon eller knapp för att påvisa att användaren har något oläst att ta del av.
@@ -62,7 +63,7 @@ import { Badge } from '@midas-ds/components'
 Använd en label för att till exempel visa hur många meddelanden som är olästa.
 
 <LiveCodeBlock scope={{ Button, Badge, BadgeContainer, Bell }}>
-  {`<Button variant='tertiary'>
+  {`<Button variant='tertiary' aria-label='Meddelanden'>
     <BadgeContainer>
       <Bell />
       <Badge>12</Badge>
