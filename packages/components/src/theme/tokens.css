@@ -158,7 +158,7 @@
 
 /* Icon */
 @value --icon-primary: light-dark(--gray-200, --gray-10);
-@value --icon-secondary: light-dark(--blue-170, --blue-100);
+@value --icon-secondary: light-dark(--blue-170, --gray-10);
 @value --icon-inverse: light-dark(--white, --gray-200);
 @value --icon-on-color: light-dark(--white, --white);
 @value --icon-danger: light-dark(--signal-red-140, --signal-red-140);
