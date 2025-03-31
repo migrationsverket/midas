@@ -74,6 +74,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   return (
     <>
       <Accordion
+        className={styles.accordion}
         type='multiple'
         defaultExpandedKeys={defaultOpen ? ['props'] : []}
       >
