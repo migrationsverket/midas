@@ -1,3 +1,21 @@
+## 6.1.0
+
+### 🚀 Features
+
+- **text:** add description slot ([73d308a13](https://github.com/migrationsverket/midas/commit/73d308a13))
+
+### 🩹 Fixes
+
+- **link-button:** add pseudo-classes in CSS link-button ([#385](https://github.com/migrationsverket/midas/pull/385))
+- **textfield:** fix token on input value ([e79f935e3](https://github.com/migrationsverket/midas/commit/e79f935e3))
+- **textfield:** fix token on input value ([#388](https://github.com/migrationsverket/midas/pull/388))
+
+## 6.0.1
+
+### 🩹 Fixes
+
+- **select:** 🐛 Selected values doesn't match selected IDs
+
 # 6.0.0
 
 ### 🚀 Features
@@ -8,7 +26,7 @@
 - **modal:** add focustrap to modal
 - **modal:** increase z-index on overlay
 - **modal:** fix overlay position to avoid moving the modal when y-overflow
-- ⚠️  **modal:** deprecate `ModalTrigger` and `Dialog`
+- ⚠️ **modal:** deprecate `ModalTrigger` and `Dialog`
 - **modal:** replace h2 with heading component
 
 ### 🩹 Fixes
@@ -28,7 +46,7 @@
 
 - **modal:** update instructions with new modal API
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - **modal:** Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.
 

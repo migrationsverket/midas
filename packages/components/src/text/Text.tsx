@@ -35,7 +35,10 @@ export const Text: React.FC<TextProps> = ({
   }
 
   const textProps: TextProps = {
-    className: clsx(classNames[variant], className),
+    className: clsx(
+      rest.slot === 'description' ? styles.description : classNames[variant],
+      className,
+    ),
     elementType: elementType || DEFAULT_ELEMENT,
     ...(isExpressive && { 'data-expressive': true }),
     ...rest,
