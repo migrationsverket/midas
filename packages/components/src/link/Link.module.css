@@ -11,7 +11,8 @@
   font-weight: 400;
   align-items: center;
 
-  &[data-hovered] {
+  &[data-hovered],
+  &:hover {
     color: --link-hover;
   }
 
@@ -19,20 +20,24 @@
     color: --link-visited;
   }
 
-  &[data-disabled] {
+  &[data-disabled],
+  &:disabled {
     cursor: not-allowed;
     color: --text-disabled;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     color: --link-pressed;
   }
 
-  &[data-focused] {
+  &[data-focused],
+  &:focus {
     outline: none;
   }
 
-  &[data-focus-visible] {
+  &[data-focus-visible],
+  &:focus-visible {
     box-shadow: --focus;
 
     @media (forced-colors: active) {
@@ -52,11 +57,13 @@
   text-decoration: none;
   font-weight: 500;
 
-  &[data-hovered]:not([data-disabled='true']) {
+  &[data-hovered]:not([data-disabled='true']),
+  &:hover:not(:disabled) {
     text-decoration: underline;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     text-decoration: underline;
   }
 }
