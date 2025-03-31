@@ -83,6 +83,8 @@
 
 .input {
   all: unset;
+  grid-area: Input;
+  color: --text-primary;
   border-bottom: 1px solid --border-strong;
   min-height: 48px;
   font-size: 1rem;

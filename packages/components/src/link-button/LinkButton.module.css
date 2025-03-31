@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --size-03, --button-background-primary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-brand, --border-brand, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover from tokens;
+@value --font-family, --size-03, --breakpoint-sm, --button-background-primary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-brand, --border-brand, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover from tokens;
 
 .linkButton {
   font-family: --font-family;
@@ -17,18 +17,21 @@
   gap: 0.5rem;
   text-decoration: none;
 
-  &[data-hovered] {
+  &[data-hovered],
+  &:hover {
     text-decoration: none;
     background-color: --button-background-primary-hover;
     color: --text-on-color;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     background-color: --button-background-primary-active;
     outline: none;
   }
 
-  &[data-focus-visible] {
+  &[data-focus-visible],
+  &:focus-visible {
     box-shadow: --focus;
 
     @media (forced-colors: active) {
@@ -37,7 +40,8 @@
     }
   }
 
-  &[data-disabled] {
+  &[data-disabled],
+  &:disabled {
     color: --text-disabled;
     pointer-events: none;
     background-color: --button-background-disabled;
@@ -53,16 +57,19 @@
     color: --icon-secondary;
   }
 
-  &[data-hovered] {
+  &[data-hovered],
+  &:hover {
     color: --text-brand;
     background-color: --button-background-secondary-hover;
   }
 
-  &[data-disabled] {
+  &[data-disabled],
+  &:disabled {
     border-color: --border-disabled;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     background-color: --button-background-secondary-active;
   }
 }
@@ -72,12 +79,14 @@
   background-color: transparent;
   opacity: 1;
 
-  &[data-hovered] {
+  &[data-hovered],
+  &:hover {
     color: --text-brand;
     background-color: --button-background-tertiary-hover;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     background-color: --button-background-tertiary-active;
   }
 }
@@ -87,11 +96,13 @@
   background-color: --button-background-danger;
   opacity: 1;
 
-  &[data-hovered] {
+  &[data-hovered],
+  &:hover {
     background-color: --button-background-danger-hover;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     background-color: --button-background-danger-active;
     outline: none;
   }
@@ -104,16 +115,19 @@
   display: flex;
   align-items: center;
 
-  &[data-hovered] {
+  &[data-hovered],
+  &:hover {
     background-color: --button-background-icon-hover;
   }
 
-  &[data-disabled] {
+  &[data-disabled],
+  &:disabled {
     color: --text-disabled;
     pointer-events: none;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &:active {
     background-color: --button-background-tertiary-active;
   }
 }
@@ -126,7 +140,7 @@
   width: 100%;
 }
 
-@media smBreakpoint {
+@media --breakpoint-sm {
   .button {
     width: 100%;
   }
