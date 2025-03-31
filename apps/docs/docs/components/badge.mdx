@@ -6,7 +6,7 @@ description: Badge används tillsammans med en ikon eller knapp för att påvisa
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Button, BadgeContainer, Badge, InfoBanner } from '@midas-ds/components'
+import { Button, BadgeContainer, Badge } from '@midas-ds/components'
 import { Bell } from 'lucide-react'
 
 export const Example = props => {
@@ -47,16 +47,9 @@ import { Badge } from '@midas-ds/components'
 
 <Example hideExample />
 
-<InfoBanner
-  title='Observera'
-  type='info'
-  message={
-    <>
-      Badge måste placeras inom ett element med <code>position: relative;</code> för att fungera korrekt. Du kan använda
-      komponenten BadgeContainer för att enkelt uppnå detta.
-    </>
-  }
-/>
+## Placering
+
+För att placera Badge korrekt ovanpå till exempel en ikon eller knapp kan du använda komponenten BadgeContainer. Denna komponent skapar en relativ position för Badge att placera sig mot och säkerställer att den placeras korrekt. Använder du inte BadgeContainer kommer badge att placeras som ett normalt blockelement.
 
 ## Label
 

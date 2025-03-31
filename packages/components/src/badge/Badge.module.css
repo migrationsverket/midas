@@ -2,11 +2,6 @@
 @value --font-family, --signal-red-140, --text-on-color from tokens;
 
 .badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(50%, -50%);
-  transform-origin: center left;
   font-family: --font-family;
   background-color: --signal-red-140;
   min-width: 0.5rem;
@@ -27,4 +22,12 @@
 .badgeContainer {
   display: flex;
   position: relative;
+
+  .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    transform-origin: center left;
+  }
 }
