@@ -26,6 +26,15 @@
   border-bottom: 1px solid --border-subtle;
   background-color: --background-01;
 
+  &.headerExternal {
+    padding: 1rem;
+
+    @media --breakpoint-lg {
+      padding: 1.25rem 1rem;
+      z-index: 3;
+    }
+  }
+
   @media --breakpoint-lg {
     padding: 1.25rem 1rem;
     z-index: 3;
