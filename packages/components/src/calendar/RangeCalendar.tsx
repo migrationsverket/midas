@@ -38,7 +38,10 @@ export function RangeCalendar<T extends DateValue>({
         <Button slot='previous'>
           <ChevronLeft />
         </Button>
-        <Heading level={3} />
+        <Heading
+          level={3}
+          elementType='h2'
+        />
         <Button slot='next'>
           <ChevronRight />
         </Button>
