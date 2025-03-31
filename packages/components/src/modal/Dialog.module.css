@@ -58,15 +58,6 @@
   font-family: --font-family;
 }
 
-.modalHeading {
-  /** Temp solution while we are working out which heading level we should use */
-  font-family: --font-family;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-  font-size: 1.25rem !important;
-  margin: 0 0 1rem;
-}
-
 @keyframes modal-fade {
   from {
     opacity: 0;
