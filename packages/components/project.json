@@ -100,8 +100,7 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/components/**/*.css"],
-        "formatter": "unix",
-        "force": true
+        "formatter": "unix"
       }
     }
   }
