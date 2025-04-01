@@ -37,7 +37,6 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   className,
   ...props
 }) => {
-  // TODO: Should we refactor this aswell?
   return (
     <AriaRadioGroup
       {...props}
