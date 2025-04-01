@@ -10,21 +10,29 @@
  * governing permissions and limitations under the License.
  */
 
-import {LocalizedStrings, MessageDictionary, MessageFormatter} from '@internationalized/message';
-import {useCallback, useMemo} from 'react';
-import {useLocale} from 'react-aria';
+import {
+  LocalizedStrings,
+  MessageDictionary,
+  MessageFormatter,
+} from '@internationalized/message'
+import { useCallback, useMemo } from 'react'
+import { useLocale } from 'react-aria'
 
-export type FormatMessage = (key: string, variables?: {[key: string]: any}) => string;
+export type FormatMessage = (
+  key: string,
+  // eslint-disable-next-line
+  variables?: { [key: string]: any },
+) => string
 
-const cache = new WeakMap();
+const cache = new WeakMap()
 function getCachedDictionary(strings: LocalizedStrings) {
-  let dictionary = cache.get(strings);
+  let dictionary = cache.get(strings)
   if (!dictionary) {
-    dictionary = new MessageDictionary(strings);
-    cache.set(strings, dictionary);
+    dictionary = new MessageDictionary(strings)
+    cache.set(strings, dictionary)
   }
 
-  return dictionary;
+  return dictionary
 }
 
 /**
@@ -34,8 +42,14 @@ function getCachedDictionary(strings: LocalizedStrings) {
  * @deprecated - use useLocalizedStringFormatter instead.
  */
 export function useMessageFormatter(strings: LocalizedStrings): FormatMessage {
-  let {locale} = useLocale();
-  let dictionary = useMemo(() => getCachedDictionary(strings), [strings]);
-  let formatter = useMemo(() => new MessageFormatter(locale, dictionary), [locale, dictionary]);
-  return useCallback((key, variables) => formatter.format(key, variables), [formatter]);
+  const { locale } = useLocale()
+  const dictionary = useMemo(() => getCachedDictionary(strings), [strings])
+  const formatter = useMemo(
+    () => new MessageFormatter(locale, dictionary),
+    [locale, dictionary],
+  )
+  return useCallback(
+    (key, variables) => formatter.format(key, variables),
+    [formatter],
+  )
 }

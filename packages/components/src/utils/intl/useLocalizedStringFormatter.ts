@@ -1,4 +1,3 @@
-
 /*
  * Copyright 2022 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -11,26 +10,43 @@
  * governing permissions and limitations under the License.
  */
 
-import {LocalizedString, LocalizedStringDictionary, LocalizedStringFormatter, LocalizedStrings} from '@internationalized/string';
-import {useMemo} from 'react';
+import {
+  LocalizedString,
+  LocalizedStringDictionary,
+  LocalizedStringFormatter,
+  LocalizedStrings,
+} from '@internationalized/string'
+import { useMemo } from 'react'
 import { useLocale } from 'react-aria-components'
 
-const cache = new WeakMap();
-function getCachedDictionary<K extends string, T extends LocalizedString>(strings: LocalizedStrings<K, T>): LocalizedStringDictionary<K, T> {
-  let dictionary = cache.get(strings);
+const cache = new WeakMap()
+function getCachedDictionary<K extends string, T extends LocalizedString>(
+  strings: LocalizedStrings<K, T>,
+): LocalizedStringDictionary<K, T> {
+  let dictionary = cache.get(strings)
   if (!dictionary) {
-    dictionary = new LocalizedStringDictionary(strings);
-    cache.set(strings, dictionary);
+    dictionary = new LocalizedStringDictionary(strings)
+    cache.set(strings, dictionary)
   }
 
-  return dictionary;
+  return dictionary
 }
 
 /**
  * Returns a cached LocalizedStringDictionary for the given strings.
  */
-export function useLocalizedStringDictionary<K extends string = string, T extends LocalizedString = string>(strings: LocalizedStrings<K, T>, packageName?: string): LocalizedStringDictionary<K, T> {
-  return (packageName && LocalizedStringDictionary.getGlobalDictionaryForPackage(packageName)) || getCachedDictionary(strings);
+export function useLocalizedStringDictionary<
+  K extends string = string,
+  T extends LocalizedString = string,
+>(
+  strings: LocalizedStrings<K, T>,
+  packageName?: string,
+): LocalizedStringDictionary<K, T> {
+  return (
+    (packageName &&
+      LocalizedStringDictionary.getGlobalDictionaryForPackage(packageName)) ||
+    getCachedDictionary(strings)
+  )
 }
 
 /**
@@ -38,9 +54,17 @@ export function useLocalizedStringDictionary<K extends string = string, T extend
  * selecting the correct pluralization, and formatting numbers. Automatically updates when the locale changes.
  * @param strings - A mapping of languages to localized strings by key.
  */
-export function useLocalizedStringFormatter<K extends string = string, T extends LocalizedString = string>(strings: LocalizedStrings<K, T>, packageName?: string): LocalizedStringFormatter<K, T> {
-  let {locale} = useLocale();
-  let dictionary = new LocalizedStringDictionary(strings, 'sv-SV');
+export function useLocalizedStringFormatter<
+  K extends string = string,
+  T extends LocalizedString = string,
+>(
+  strings: LocalizedStrings<K, T>,
+  // packageName?: string,
+): LocalizedStringFormatter<K, T> {
+  const { locale } = useLocale()
   // let dictionary = useLocalizedStringDictionary(strings, packageName);
-  return useMemo(() => new LocalizedStringFormatter(locale, dictionary), [locale, dictionary]);
+  return useMemo(() => {
+    const dictionary = new LocalizedStringDictionary(strings, 'sv-SV')
+    return new LocalizedStringFormatter(locale, dictionary)
+  }, [locale, strings])
 }
