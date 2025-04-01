@@ -1,0 +1,65 @@
+---
+title: Badge
+description: Badge används tillsammans med en ikon eller knapp för att påvisa att användaren har något oläst att ta del av.
+---
+
+import { PropTable } from '@site/src/components/propsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { Button, BadgeContainer, Badge } from '@midas-ds/components'
+import { Bell } from 'lucide-react'
+
+export const Example = props => {
+  return (
+    <LiveCodeBlock
+      scope={{ Button, Badge, BadgeContainer, Bell }}
+      {...props}
+    >
+      {`<Button variant='tertiary' aria-label='Meddelanden'>
+        <BadgeContainer>
+          <Bell />
+          <Badge />
+        </BadgeContainer>
+      </Button>`}
+    </LiveCodeBlock>
+  )
+}
+
+<ComponentHeader
+  name={'Badge'}
+  friendlyName='Notisindikator, Statusindikator'
+  overrideHeadlessLink=''
+/>
+
+Badge används tillsammans med en ikon eller knapp för att påvisa att användaren har något oläst att ta del av.
+
+<Example hideCode />
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Badge } from '@midas-ds/components'
+```
+
+<Example hideExample />
+
+## Placering
+
+För att placera Badge korrekt ovanpå till exempel en ikon eller knapp kan du använda komponenten BadgeContainer. Denna komponent skapar en relativ position för Badge att placera sig mot och säkerställer att den placeras korrekt. Använder du inte BadgeContainer kommer badge att placeras som ett normalt blockelement.
+
+## Label
+
+Använd en label för att till exempel visa hur många meddelanden som är olästa.
+
+<LiveCodeBlock scope={{ Button, Badge, BadgeContainer, Bell }}>
+  {`<Button variant='tertiary' aria-label='Meddelanden'>
+    <BadgeContainer>
+      <Bell />
+      <Badge>12</Badge>
+    </BadgeContainer>
+  </Button>`}
+</LiveCodeBlock>
