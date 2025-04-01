@@ -26,9 +26,7 @@ export declare const baseColors: {
     blue10: string;
     blue20: string;
     blue40: string;
-    blue50: string;
     blue60: string;
-    blue70: string;
     blue80: string;
     blue90: string;
     blue100: string;
