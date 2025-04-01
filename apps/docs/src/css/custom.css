@@ -52,6 +52,7 @@
   --search-local-modal-background: white;
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
+  --ifm-link-color: #2e7ca5;
 }
 
 .code-card {
@@ -87,6 +88,7 @@
   --search-local-modal-background: white;
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
+  --ifm-link-color: #4289ad;
 
   .code-card {
     background-color: rgb(203 203 203 / 30%);
