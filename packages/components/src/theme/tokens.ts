@@ -123,30 +123,31 @@ export const breakpoints = {
 }
 
 export const semantic = {
-  background01: `light-dark(${baseColors.white}, ${baseColors.gray30})`,
+  background01: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
   backgroundHover01: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
-  backgroundInverse01: `light-dark(${baseColors.gray30}, ${baseColors.gray10})`,
+  backgroundInverse01: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
 
   layer01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   layerHover01: `light-dark(${baseColors.gray20}, ${baseColors.gray170})`,
   layerSelected01: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
-  layerSelectedHover01: `light-dark(${baseColors.gray40}, ${baseColors.gray20})`,
+  layerSelectedHover01: `light-dark(${baseColors.gray40}, ${baseColors.gray150})`,
 
   layer02: `light-dark(${baseColors.white}, ${baseColors.gray160})`,
-  layerHover02: `light-dark(${baseColors.whiteHover}, ${baseColors.gray20})`,
+  layerHover02: `light-dark(${baseColors.whiteHover}, ${baseColors.gray150})`,
   layerSelected02: `light-dark(${baseColors.gray30}, ${baseColors.gray140})`,
   layerSelectedHover02: `light-dark(${baseColors.gray40}, ${baseColors.gray130})`,
 
   layerAccent01: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
-  layerAccentHover01: `light-dark(${baseColors.gray40}, ${baseColors.gray20})`,
+  layerAccentHover01: `light-dark(${baseColors.gray40}, ${baseColors.gray150})`,
   layerAccentSelected01: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
+
   layerAccent02: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   layerAccentHover02: `light-dark(${baseColors.gray20}, ${baseColors.gray170})`,
   layerAccentSelected02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
 
   brandPrimary: `light-dark(${baseColors.red100}, ${baseColors.red100})`,
 
-  borderStrong: `light-dark(${baseColors.gray30}, ${baseColors.gray10})`,
+  borderStrong: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   borderMedium: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
   borderBrand: `light-dark(${baseColors.blue170}, ${baseColors.blue170})`,
@@ -160,7 +161,7 @@ export const semantic = {
   fieldActive01: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
 
   field02: `light-dark(${baseColors.white}, ${baseColors.gray160})`,
-  fieldHover02: `light-dark(${baseColors.whiteHover}, ${baseColors.gray20})`,
+  fieldHover02: `light-dark(${baseColors.whiteHover}, ${baseColors.gray150})`,
   fieldActive02: `light-dark(${baseColors.gray30}, ${baseColors.gray140})`,
 
   fieldDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
@@ -186,10 +187,10 @@ export const semantic = {
   notificationBorderInfo: `light-dark(${baseColors.signalBlue140}, ${baseColors.signalBlue140})`,
   notificationBorderImportant: `light-dark(${baseColors.signalYellow140}, ${baseColors.signalYellow140})`,
   notificationBorderWarning: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
-  notificationBackgroundSuccess: `light-dark(${baseColors.signalGreen20}, ${baseColors.gray10})`,
-  notificationBackgroundInfo: `light-dark(${baseColors.signalBlue20}, ${baseColors.gray10})`,
-  notificationBackgroundImportant: `light-dark(${baseColors.signalYellow20}, ${baseColors.gray10})`,
-  notificationBackgroundWarning: `light-dark(${baseColors.signalRed20}, ${baseColors.gray10})`,
+  notificationBackgroundSuccess: `light-dark(${baseColors.signalGreen20}, ${baseColors.gray180})`,
+  notificationBackgroundInfo: `light-dark(${baseColors.signalBlue20}, ${baseColors.gray180})`,
+  notificationBackgroundImportant: `light-dark(${baseColors.signalYellow20}, ${baseColors.gray180})`,
+  notificationBackgroundWarning: `light-dark(${baseColors.signalRed20}, ${baseColors.gray180})`,
 
   textPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   textSecondary: `light-dark(${baseColors.gray140}, ${baseColors.gray70})`,
