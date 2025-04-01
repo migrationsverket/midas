@@ -2,10 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
 import { options } from './utils'
-import { expect, fn, userEvent } from '@storybook/test'
-import { useState } from 'react'
-
-const handleSubmit = fn()
+import { expect, userEvent } from '@storybook/test'
+import React, { useState } from 'react'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -199,24 +197,31 @@ export const RequiredMultiple: Story = {
     selectionMode: 'multiple',
     isRequired: true,
   },
-  render: args => (
-    <form
-      onSubmit={e => {
-        e.preventDefault()
-        handleSubmit()
-      }}
-    >
-      <Select {...args} />
-      <button type='submit'>Submit</button>
-    </form>
-  ),
-  play: async ({ step }) => {
+  render: args => {
+    const [isSubmitted, setIsSubmitted] = React.useState(false)
+
+    return (
+      <>
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+            setIsSubmitted(true)
+          }}
+        >
+          <Select {...args} />
+          <button type='submit'>Submit</button>
+        </form>
+        {isSubmitted && 'success'}
+      </>
+    )
+  },
+  play: async ({ canvas, step }) => {
     // Submit the form without selecting a value
     await step('It should not be possible to submit the form', async () => {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      await expect(handleSubmit).not.toHaveBeenCalled()
+      expect(canvas.queryByText('success')).not.toBeInTheDocument()
     })
 
     // Select a value then submit again
@@ -229,7 +234,7 @@ export const RequiredMultiple: Story = {
         await userEvent.tab()
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        await expect(handleSubmit).toHaveBeenCalled()
+        expect(await canvas.findByText('success')).toBeInTheDocument()
       },
     )
   },
@@ -241,24 +246,31 @@ export const RequiredSingle: Story = {
     selectionMode: 'single',
     isRequired: true,
   },
-  render: args => (
-    <form
-      onSubmit={e => {
-        e.preventDefault()
-        handleSubmit()
-      }}
-    >
-      <Select {...args} />
-      <button type='submit'>Submit</button>
-    </form>
-  ),
-  play: async ({ step }) => {
+  render: args => {
+    const [isSubmitted, setIsSubmitted] = React.useState(false)
+
+    return (
+      <>
+        <form
+          onSubmit={e => {
+            e.preventDefault()
+            setIsSubmitted(true)
+          }}
+        >
+          <Select {...args} />
+          <button type='submit'>Submit</button>
+        </form>
+        {isSubmitted && 'success'}
+      </>
+    )
+  },
+  play: async ({ canvas, step }) => {
     // Submit the form without selecting a value
     await step('It should not be possible to submit the form', async () => {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      await expect(handleSubmit).not.toHaveBeenCalled()
+      expect(canvas.queryByText('success')).not.toBeInTheDocument()
     })
 
     // Select a value then submit again
@@ -269,13 +281,12 @@ export const RequiredSingle: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        await expect(handleSubmit).toHaveBeenCalled()
+        expect(await canvas.findByText('success')).toBeInTheDocument()
       },
     )
   },
 }
 
-// https://jira.migrationsverket.se/browse/DS-872
 export const DS872: Story = {
   tags: ['!dev'],
   args: {
