@@ -3,17 +3,25 @@
 import { Flex, FlexItem, Skeleton, Spinner, Link } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
-Laddningsindikatorer är visuella platshållare för komponenter eller information som visas medan data laddas.
+Laddningsindikatorer är visuella platshållare för komponenter eller information som visas medan de laddas.
 Vi använder oss av två olika laddningsindikator: <Link href="/components/skeleton" >Skeleton</Link> och <Link href="/components/spinner" >Spinner</Link>.
+
+Vi använder i regel Skeleton som laddningsindikator. Undantagen är 1) när sidan laddar utan att någon ändras eller 2) när du inte vet hur gränssnittet kommer att se ut efter att det har laddat klart
 
 ## Skeleton
 
-Skeleton är vår primära laddningsindikator och bör finnas för varje komponent i ett system. Den är en minimal representation av de komponenter som kommer finnas i gränssnittet, vilket ger användaren en bra förståelse för hur det färdiga gränssnittet kommer vara strukturerat.
+Skeleton är vår primära laddningsindikator. Den är en minimal representation av de komponenter som kommer finnas i gränssnittet, vilket ger användaren en bra förståelse för hur det färdiga gränssnittet kommer vara strukturerat.
 
-<LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton height='48px'/>`}</LiveCodeBlock>
+<LiveCodeBlock
+  hideCode
+  scope={{ Skeleton }}
+>{`<Skeleton height='48px'/>`}</LiveCodeBlock>
 
 ## Spinner
 
-Spinnern används när data har skickas eller sparats av användaren, till exempel när en fil har laddats upp eller vid inloggning. Om det väntas ta mer än 10 sekunder att ladda bör det finnas ett meddelande till användaren om det.
+Spinnern används primärt när gränssnittet inte ändras, till exempel när en fil laddas upp i bakgrunden. Om det väntas ta mer än 10 sekunder att ladda bör det finnas ett meddelande till användaren om det.
 
-<Spinner />
+<LiveCodeBlock
+  hideCode
+  scope={{ Spinner }}
+>{`<Spinner />`}</LiveCodeBlock>{' '}

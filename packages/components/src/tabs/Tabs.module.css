@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --border-subtle, --border-brand, --focus, --breakpoint-sm from tokens;
+@value --font-family, --text-primary, --border-subtle, --border-brand, --focus, --breakpoint-sm from tokens;
 
 .container {
   font-family: --font-family;
@@ -14,6 +14,7 @@
 .listItem {
   padding: 0.5rem 1.25rem;
   cursor: pointer;
+  color: --text-primary;
 
   &[data-selected] {
     font-weight: 500;
