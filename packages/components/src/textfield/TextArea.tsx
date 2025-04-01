@@ -9,7 +9,8 @@ import {
 import clsx from 'clsx'
 import styles from './TextField.module.css'
 
-export interface TextAreaProps extends Omit<TextFieldBaseProps, 'children'> {
+export interface TextAreaProps
+  extends Omit<TextFieldBaseProps, 'children' | 'type'> {
   className?: AriaTextAreaProps['className']
 }
 
