@@ -25,7 +25,7 @@ function getCachedDictionary<K extends string, T extends LocalizedString>(
 ): LocalizedStringDictionary<K, T> {
   let dictionary = cache.get(strings)
   if (!dictionary) {
-    dictionary = new LocalizedStringDictionary(strings)
+    dictionary = new LocalizedStringDictionary(strings, 'sv-SE')
     cache.set(strings, dictionary)
   }
 
@@ -59,12 +59,12 @@ export function useLocalizedStringFormatter<
   T extends LocalizedString = string,
 >(
   strings: LocalizedStrings<K, T>,
-  // packageName?: string,
+  packageName?: string,
 ): LocalizedStringFormatter<K, T> {
   const { locale } = useLocale()
-  // let dictionary = useLocalizedStringDictionary(strings, packageName);
-  return useMemo(() => {
-    const dictionary = new LocalizedStringDictionary(strings, 'sv-SV')
-    return new LocalizedStringFormatter(locale, dictionary)
-  }, [locale, strings])
+  const dictionary = useLocalizedStringDictionary(strings, packageName)
+  return useMemo(
+    () => new LocalizedStringFormatter(locale, dictionary),
+    [dictionary, locale],
+  )
 }
