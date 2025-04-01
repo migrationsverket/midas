@@ -4,19 +4,22 @@ import * as React from 'react'
 import { TextFieldBase, type TextFieldBaseProps } from './TextFieldBase'
 import {
   TextArea as AriaTextArea,
-  type TextAreaProps,
+  type TextAreaProps as AriaTextAreaProps,
 } from 'react-aria-components'
 import clsx from 'clsx'
 import styles from './TextField.module.css'
 
-export const TextArea = React.forwardRef<
-  HTMLTextAreaElement,
-  TextFieldBaseProps & { className?: TextAreaProps['className'] }
->(({ className, ...props }, ref) => (
-  <TextFieldBase {...props}>
-    <AriaTextArea
-      className={clsx(styles.textArea, className)}
-      ref={ref}
-    />
-  </TextFieldBase>
-))
+export interface TextAreaProps extends Omit<TextFieldBaseProps, 'children'> {
+  className?: AriaTextAreaProps['className']
+}
+
+export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
+  ({ className, ...props }, ref) => (
+    <TextFieldBase {...props}>
+      <AriaTextArea
+        className={clsx(styles.textArea, className)}
+        ref={ref}
+      />
+    </TextFieldBase>
+  ),
+)
