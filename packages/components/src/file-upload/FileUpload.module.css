@@ -52,7 +52,6 @@
   width: 100%;
   align-content: flex-end;
 
-  /** Temp solution so things look ok while refactoring */
   [slot='description'] {
     grid-area: Desc;
   }
