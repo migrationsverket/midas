@@ -8,4 +8,4 @@ export declare function useLocalizedStringDictionary<K extends string = string, 
  * selecting the correct pluralization, and formatting numbers. Automatically updates when the locale changes.
  * @param strings - A mapping of languages to localized strings by key.
  */
-export declare function useLocalizedStringFormatter<K extends string = string, T extends LocalizedString = string>(strings: LocalizedStrings<K, T>): LocalizedStringFormatter<K, T>;
+export declare function useLocalizedStringFormatter<K extends string = string, T extends LocalizedString = string>(strings: LocalizedStrings<K, T>, packageName?: string): LocalizedStringFormatter<K, T>;
