@@ -4,7 +4,7 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { TextField } from '@midas-ds/components'
+import { TextField, Link } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Grid, GridItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
@@ -29,7 +29,7 @@ export const Example = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
-Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används [TextArea](./textarea.mdx).
+Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används <Link href='/components/textarea'>{'TextArea'}</Link>.
 
 <Example hideCode />
 
@@ -160,7 +160,7 @@ Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händ
 />
 ```
 
-Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
+Läs mer om validering i <Link href='https://react-spectrum.adobe.com/react-aria/forms.html#validation'>{'React Arias dokumentation'}</Link>.
 
 ## API
 
