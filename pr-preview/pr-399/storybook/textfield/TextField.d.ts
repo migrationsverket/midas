@@ -1,25 +1,7 @@
-import { TextFieldProps as AriaTextFieldProps, ValidationResult } from 'react-aria-components';
+import { TextFieldBaseProps } from './TextFieldBase';
+import { InputProps } from './Input';
 import * as React from 'react';
-export interface TextFieldProps extends AriaTextFieldProps {
-    children?: React.ReactNode;
-    /** Specify label displayed above the TextField*/
-    label?: string;
-    /** Specify description displayed below the label */
-    description?: string;
-    /** Custom error messages */
-    errorMessage?: string | ((validation: ValidationResult) => string) | undefined;
-    /** Enable validations or add your own regex */
-    validationType?: 'ssn' | 'dossnr' | RegExp;
-    /**
-     * Whether to show the character counter or not
-     * @default
-     * false
-     */
-    showCounter?: boolean;
+export interface TextFieldProps extends Omit<TextFieldBaseProps, 'children'> {
+    className?: InputProps['className'];
 }
-export declare const TextField: React.FC<TextFieldProps>;
-type InputWrapperProps = Pick<TextFieldProps, 'label' | 'description' | 'errorMessage' | 'children'>;
-export declare const InputWrapper: ({ label, description, errorMessage, children, }: InputWrapperProps) => import("react/jsx-runtime").JSX.Element;
-export declare const ssnRegEx: RegExp;
-export declare const dossNrRegEx: RegExp;
-export {};
+export declare const TextField: React.ForwardRefExoticComponent<TextFieldProps & React.RefAttributes<HTMLInputElement>>;
