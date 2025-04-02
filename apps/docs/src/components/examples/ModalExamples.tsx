@@ -3,7 +3,10 @@ import {
   ButtonGroup,
   DialogTrigger,
   Modal,
+  Radio,
+  RadioGroup,
   Text,
+  TextField,
 } from '@midas-ds/components'
 
 export const ConfirmationExample = () => (
@@ -14,7 +17,12 @@ export const ConfirmationExample = () => (
         Är du säker att du vill plocka bort "Kiwi" från fruktkorgen?
       </Text>
       <ButtonGroup>
-        <Button slot='close'>Ja, ta bort</Button>
+        <Button
+          autoFocus
+          slot='close'
+        >
+          Ja, ta bort
+        </Button>
         <Button
           slot='close'
           variant='secondary'
@@ -22,6 +30,34 @@ export const ConfirmationExample = () => (
           Nej, ha kvar
         </Button>
       </ButtonGroup>
+    </Modal>
+  </DialogTrigger>
+)
+
+export const FormExample = () => (
+  <DialogTrigger>
+    <Button>Gör din egen fruktkorg</Button>
+    <Modal title='Gör din egen fruktkorg'>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+        <TextField
+          autoFocus
+          label='Namnge din fruktkorg'
+          description='Skriv valfritt namn'
+        />
+        <RadioGroup label='Vill du ha fruktkorgen hemskickad till din hemadress?'>
+          <Radio value='ja'>Ja</Radio>
+          <Radio value='nej'>Nej</Radio>
+        </RadioGroup>
+        <ButtonGroup>
+          <Button slot='close'>Skicka</Button>
+          <Button
+            slot='close'
+            variant='secondary'
+          >
+            Avbryt
+          </Button>
+        </ButtonGroup>
+      </div>
     </Modal>
   </DialogTrigger>
 )
