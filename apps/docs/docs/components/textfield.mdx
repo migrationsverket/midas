@@ -4,7 +4,7 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { TextField, TextFieldBase, Input, Label, Text, FieldError } from '@midas-ds/components'
+import { TextField, Link } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { ControlledValue } from '@site/src/components/examples/form/TextFieldExamples'
@@ -29,8 +29,7 @@ export const Example = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
-Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller e-postadress.
-För inmatning som kräver flera rader används [TextArea](./textarea.mdx).
+Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används <Link href='/components/textarea'>{'TextArea'}</Link>.
 
 <Example hideCode />
 
@@ -41,9 +40,11 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { TextField } from '@midas-ds/components';
-
-<TextField label='Etikett' description='Beskrivning'/>
+import { TextField } from '@midas-ds/components'
+;<TextField
+  label='Etikett'
+  description='Beskrivning'
+/>
 ```
 
 ## Beskrivning
@@ -81,7 +82,6 @@ Använd `defaultValue` för att sätta ett uncontrolled value på ett TextField.
   defaultValue={'Banan'}
 />
 
-
 ### Controlled value
 
 Använd `value` och `onChange` för att använda controlled value på TextField/Input. Använd prop `isInvalid` för att
@@ -99,7 +99,6 @@ const ControlledValue = () => {
 ```
 
 <ControlledValue />
-
 
 ### Inbyggd validering
 
@@ -121,7 +120,7 @@ Komponenten kan valideras med en egen funktion `validate()`.
 />
 ```
 
-Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
+Läs mer om validering i <Link href='https://react-spectrum.adobe.com/react-aria/forms.html#validation'>{'React Arias dokumentation'}</Link>.
 
 ## Varianter
 
