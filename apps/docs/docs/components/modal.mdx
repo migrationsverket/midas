@@ -6,28 +6,7 @@ description: Modal som lägger sig över allt annat innehåll.
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Button, DialogTrigger, Modal, Link } from '@midas-ds/components'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{
-        Button,
-        DialogTrigger,
-        Modal,
-      }}
-      {...props}
-    >
-      {`
-      <DialogTrigger>
-        <Button>Öppna modal</Button>
-         <Modal title={'Rubrik'}>
-         Innehåll i modal
-         </Modal>
-      </DialogTrigger>`}
-    </LiveCodeBlock>
-  )
-}
+import { FormExample, ConfirmationExample } from '@site/src/components/examples/ModalExamples'
 
 <ComponentHeader
   name={'Modal'}
@@ -38,7 +17,7 @@ Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hin
 lagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det krävs ett
 aktivt svar från användaren.
 
-<Example hideCode />
+<FormExample />
 
 ## Installation
 
@@ -50,7 +29,18 @@ npm install @midas-ds/components
 import { DialogTrigger, Modal } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+```tsx title='Exempelkod'
+<DialogTrigger>
+  <Button>Öppna modal</Button>
+  <Modal title='Rubrik'>Innehåll i modal</Modal>
+</DialogTrigger>
+```
+
+### Bekräftelsemodal
+
+För att undvika oönskade fel kan en modal användas för att bekräfta en handling som har konsekvenser för användaren.
+
+<ConfirmationExample />
 
 ## Varianter
 
