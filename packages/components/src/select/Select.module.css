@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --border-strong, --text-primary, --focus, --layer-02, --border-invalid, --layer-hover-02, --layer-selected-02, --layer-selected-hover-02, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid, --z-index-modal, --z-index-above from tokens;
+@value --font-family, --text-disabled, --border-strong, --text-primary, --focus, --layer-02, --border-invalid, --layer-hover-02, --layer-selected-02, --layer-selected-hover-02, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid from tokens;
 
 /** clear the default list styles */
 * > ul {
