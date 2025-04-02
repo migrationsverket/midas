@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
   top: 3px;
-  z-index: 2;
+  z-index: --z-index-base;
   left: 1rem;
   height: calc(100% - 6px);
   width: calc(100% - 2rem);
