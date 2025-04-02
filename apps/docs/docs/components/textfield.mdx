@@ -6,8 +6,8 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 import { PropTable } from '@site/src/components/propsTable'
 import { TextField, Link } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Grid, GridItem } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { ControlledValue } from '@site/src/components/examples/form/TextFieldExamples'
 
 export const Example = props => {
   return (
@@ -41,128 +41,135 @@ npm install @midas-ds/components
 
 ```tsx
 import { TextField } from '@midas-ds/components'
+;<TextField
+  label='Etikett'
+  description='Beskrivning'
+/>
 ```
 
-<Example hideExample />
+## Beskrivning
 
-## Varianter
+TextField är en komposition av `<Input>`, `<Label>`, `<FieldError>` samt `<Text>` som alla är React Aria komponenter.
+Beskrivning av hur de hänger ihop finns på React Arias [dokumentation för TextField](https://react-spectrum.adobe.com/react-aria/TextField.html#anatomy).
+Elementen renderas som vanliga html `<label>` och `<input>` med fördelen att tillgänglighet avseende korrekt `<label>` är inbyggt
+samt att validering fungerar både med native HTML eller med realtime/serverside validering. **MIDAS TextField** erbjuder därmed via
+React Arias komponenter:
 
-### Lösenord
+- Standard HTML-element renderade enligt MIDAS utseende
+- Tillgänglighet via semantiskt sammankopplade labels och description
+- Inbyggd formulärsvalidering för native HTML samt validering via andra bibliotek
 
-Sätt `type="password"` för att kunna visa och dölja inmatad text.
+## Användning i formulär
 
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    type="password"
-    name="pw"
-    label="Skriv in ditt lösenord"
-    autoComplete="off"
+React Aria stöder native HTML-formulär via `name` prop och eftersom TextField komponenten i grunden rymmer en standard `<input>` fungerar
+det som vanligt. Komponenten går också bra att använda i andra bibliotek för formulär. Se [React Arias dokumentation för
+formulär](https://react-spectrum.adobe.com/react-aria/forms.html) för detaljer om hur den kan integreras i till exempel
+React Hook Form eller server-side validation.
+
+### Uncontrolled value
+
+Använd `defaultValue` för att sätta ett uncontrolled value på ett TextField.
+
+```tsx
+<TextField
+  label={'Skriv din favoritfrukt'}
+  defaultValue={'Banan'}
 />
-`}
-</LiveCodeBlock>
+```
 
-## Validering
-
-TextField validerar automatiskt på `type`, `isRequired` eller ett eget `pattern` samt våra fördefinerade mönster i `validationType`. Komponenten innehåller vissa förbestämda valideringsmönster för typiska format. Dessa läggs till löpande efter förfrågan och behov. Valideringen är alltid väldigt förlåtande mot användaren och accepterar alla möjliga versioner av ett formats regler. Dessa förklaras i detalj nedan.
-
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    label="Skriv in din e-post"
-    description="Obligatorisk"
-    isRequired
-    errorMessage="Felaktig e-postadress"
-    type="email"
-/>`}
-</LiveCodeBlock>
-
-### Personnummer
-
-Använd egenskapen `validationType="ssn"` för att slå på vår validering av personnummer.
-
-Följande RegEx används <br /> `^(?:(?:19|20)?\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])|\d{4}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01]))(?:[-+ ]?\d{4})?$`
-
-- Frivilliga sekelsiffor: 19 eller 20 `(?:19:20)?`.
-- Verifierar att det är minst två siffror i början av personnumret (ÅÅ).
-- Verifierar att MM är 01 - 12 `(?:0[1-9]|1[0-2])`.
-- Verifierar att DD är 01 - 31 `(?:0[1-9]|[12]\\d|3[01])`.
-- Tillåter avgränsare: `+`, `-`, `blanksteg` eller ingen, samt.
-- Verifierar att det är fyra siffror efter avgränsaren `(?:[-+ ]?\\d{4})?`.
-
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    type="text"
-    name="ssn"
-    label="Personnummer"
-    validationType="ssn"
-    errorMessage="Fel format för ett personnummer"
-    autoComplete="off"
+<TextField
+  label={'Skriv din favoritfrukt'}
+  defaultValue={'Banan'}
 />
-`}
-</LiveCodeBlock>
 
-### Dossiernummer
+### Controlled value
 
-Använd egenskapen `validationType="dossnr"` för att slå på vår validering av dossiernummer.
-Följande RegEx används <br /> `^(\\d{1,2}\\+\\d{6}-\\d{1,2}$|\\d{1,2}-\\d{6}(/\\d{1,2})?$|\\d{1,2}\\d{6}$|\\d{6,8}$)`
+Använd `value` och `onChange` för att använda controlled value på TextField/Input. Använd prop `isInvalid` för att
+kontrollera fältets validering via state.
 
-- En eller två siffror `\d{1,2}`.
-- Följt av antingen `+` och sex siffror, följt av `-` och en eller två siffror `\\+\\d{6}-\\d{1,2}`.
-- Eller följt av `-` och sex siffror, eventuellt följt av `/` och en eller två siffror `-\\d{6}(/\\d{1,2})?`.
-- Eller en eller två siffror följt av sex siffror `\d{1,2}\d{6}`.
-- Eller sex till åtta siffror `\d{6,8}`.
+```tsx title="ControlledValue.tsx"
+const ControlledValue = () => {
+  const [text, setText] = React.useState('')
+  return (
+    <>
+      <TextField value={text} onChange={setText} label={'Controlled value'}/>
+      <Text>Text value: {text}</Text>
+    </>
+)
+```
 
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    type="text"
-    name="dossnr"
-    label="Dossiernummer"
-    validationType="dossnr"
-    errorMessage="Fel format för ett dossiernummer"
-    autoComplete="off"
-/>
-`}
-</LiveCodeBlock>
+<ControlledValue />
+
+### Inbyggd validering
+
+TextField kan valideras precis som en standard `<input>` via **HTML constraint validation** genom att sätta exempelvis
+`type="email"`, `isRequired`, `minLength` etc, eller ett eget `pattern` för godtycklig regular expression. Felmeddelanden
+renderas automatiskt på valt språk i browsern. Se [API](#api) för möjliga varianter.
 
 ### Egen validering
 
-Det går också att definiera en egen funktion för validering:
-
-<LiveCodeBlock scope={{ TextField }}>
-  {`<TextField
-    label="Skriv in frukt"
-    errorMessage="Du måste skriva 'frukt'!"
-    validate={(value) => (value === 'frukt' ? true : 'Du måste skriva "frukt"!')}
-/>`}
-</LiveCodeBlock>
-
-### Egna felmeddelanden
-
-Komponenten har flertalet inbyggda valideringsmetoder beroende på vad som händer. Dessa går att justera genom att skicka in olika felmeddelanden bereoende på fel.
+Komponenten kan valideras med en egen funktion `validate()`.
 
 ```tsx
 <TextField
   label='Skriv in frukt'
-  errorMessage="Du måste skriva 'frukt'!"
   isRequired
+  //highlight-start
   validate={value => (value === 'frukt' ? true : 'Du måste skriva "frukt"')}
-  errorMessage={validation => {
-    if (validation.validationDetails.valueMissing) return 'Det måste finnas en frukt.'
-    if (validation.validationDetails.badInput) return 'Det där är inte en frukt.'
-    if (validation.validationDetails.customError) return 'Du måste skriva frukt.'
-
-    // Det finns flertalet typer på validationDetails
-    // if (validation.validationDetails.patternMismatch) return "Det där ser inte ut som en frukt.";
-    // if (validation.validationDetails.rangeOverflow) return "Nu blev det nog för många frukter.";
-    // med flera
-
-    return 'Jag vet inte riktigt vad som blev fel men jag vill ha en frukt.'
-  }}
+  //highlight-end
 />
 ```
 
 Läs mer om validering i <Link href='https://react-spectrum.adobe.com/react-aria/forms.html#validation'>{'React Arias dokumentation'}</Link>.
 
+## Varianter
+
+Varianterna är tillägg till React Arias ursprungliga implementation.
+
+### Character counter
+
+Använd `showCounter` för att visa antalet tecken som skrivits in i fältet.
+
+```tsx
+<TextField
+  label='Skriv in frukt'
+  maxLength={10}
+  //highlight-start
+  showCounter
+  //highlight-end
+/>
+```
+
+<TextField
+  label='Skriv in frukt'
+  description={'Max 10 tecken'}
+  maxLength={10}
+  showCounter
+/>
+
+### Lösenord
+
+Använd `type={'password'}` för att aktivera en knapp för att visa/dölja inmatat värde.
+
+```tsx
+<TextField
+  label='Lösenord'
+  //highlight-start
+  type={'password'}
+  //highlight-end
+/>
+```
+
+<TextField
+  defaultValue={'super-secret'}
+  label='Lösenord'
+  autoComplete={'off'}
+  type={'password'}
+/>
+
 ## API
+
+### TextField
 
 <PropTable name='TextField' />
 ````
