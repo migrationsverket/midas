@@ -20,15 +20,11 @@ export const ConfirmationExample = () => (
         <Button
           autoFocus
           slot='close'
-        >
-          Ja, ta bort
-        </Button>
-        <Button
-          slot='close'
           variant='secondary'
         >
           Nej, ha kvar
         </Button>
+        <Button slot='close'>Ja, ta bort</Button>
       </ButtonGroup>
     </Modal>
   </DialogTrigger>
