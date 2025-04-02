@@ -221,3 +221,11 @@ export const semantic = {
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
 }
+
+export const zIndex = {
+  base: 1,
+  above: 10,
+  modal: 1000,
+  toast: 1100,
+  skipToContent: 1200,
+}
