@@ -1,3 +1,11 @@
+# 7.0.0
+
+### Documentation Changes
+
+- remove april fools ([4bcdaa31c](https://github.com/migrationsverket/midas/commit/4bcdaa31c))
+- remove april fools ([#381](https://github.com/migrationsverket/midas/pull/381))
+- ♿️💄ensure that markdown links use midas styling ([b79ce1b36](https://github.com/migrationsverket/midas/commit/b79ce1b36))
+
 ## 6.2.0
 
 ### 🚀 Features
