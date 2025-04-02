@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-md, --background-01, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus from tokens;
+@value --font-family, --breakpoint-md, --background-01, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -28,7 +28,7 @@
 
   @media --breakpoint-md {
     padding: 1.25rem 1rem;
-    z-index: 3;
+    z-index: calc(--z-index-base + --z-index-above);
   }
 }
 
@@ -94,7 +94,7 @@
   height: 100vh;
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
-  z-index: 2;
+  z-index: calc(--z-index-base);
   border-right: 1px solid --border-subtle;
 
   @media --breakpoint-md {
@@ -333,7 +333,7 @@
   position: absolute;
   top: 0;
   right: 100%;
-  z-index: 1047;
+  z-index: --z-index-skip-to-content;
 
   &[data-focus-visible],
   &:focus-visible {
