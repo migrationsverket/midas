@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --field-disabled, --text-primary, --text-invalid, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
+@value --focus, --field-disabled, --text-primary, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
 * {
   font-family: --font-family;
