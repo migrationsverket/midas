@@ -18,13 +18,18 @@ export const ConfirmationExample = () => (
       </Text>
       <ButtonGroup>
         <Button
+          variant='danger'
+          slot='close'
+        >
+          Ja, ta bort
+        </Button>
+        <Button
           autoFocus
           slot='close'
           variant='secondary'
         >
           Nej, ha kvar
         </Button>
-        <Button slot='close'>Ja, ta bort</Button>
       </ButtonGroup>
     </Modal>
   </DialogTrigger>
