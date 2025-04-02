@@ -46,7 +46,7 @@ export const FormExample = () => (
           description='Skriv valfritt namn'
         />
         <RadioGroup
-          value='ja'
+          defaultValue='ja'
           label='Vill du ha fruktkorgen hemskickad till din hemadress?'
         >
           <Radio value='ja'>Ja</Radio>
