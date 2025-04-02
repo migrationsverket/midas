@@ -217,3 +217,10 @@
 
 /* Logo */
 @value --logo-primary: light-dark(--red-100, --white);
+
+/* z-index */
+@value --z-index-base: 1;
+@value --z-index-above: 10;
+@value --z-index-modal: 1000;
+@value --z-index-toast: 1100;
+@value --z-index-skip-to-content: 1200;
