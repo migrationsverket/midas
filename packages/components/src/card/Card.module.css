@@ -1,56 +1,84 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --border-strong, --layer-02, --layer-hover-02, --layer-selected-02, --focus, --fast-transition, --text-primary, --blue-20 from tokens;
+@value --font-family, --background-01, --border-strong, --layer-01, --border-subtle, --notification-background-success, --notification-border-success, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
 
 .card {
-  position: relative;
   font-family: --font-family;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 2rem 1.5rem;
-  border-bottom: 1px solid --border-strong;
-  background-color: --layer-02;
-  transition:
-    transform --fast-transition ease-in-out,
-    background-color --fast-transition ease-in-out;
+  position: relative;
+  background-color: --layer-01;
+  border-bottom: 1px solid --border-subtle;
 
-  &:has([data-hovered]) {
-    background-color: --layer-hover-02;
+  &.cardEditable {
+    background-color: --background-01;
+    border: 2px solid --border-strong;
   }
 
-  &:has([data-pressed]) {
-    background-color: --layer-selected-02;
+  &.cardSuccess {
+    background-color: --notification-background-success;
+    border-bottom-color: --notification-border-success;
+  }
+
+  &.horizontal {
+    display: flex;
+    flex-flow: row wrap;
   }
 }
 
-.content {
+.cardContent {
+  padding: 0.5rem 1rem 1.5rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+
+  &.horizontal {
+    padding: 1rem 1.5rem;
+    flex-direction: row;
+  }
+
+  .cardTitle {
+    margin: 0.625rem 0;
+
+    &.horizontal {
+      margin: 0;
+    }
+  }
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: row;
   gap: 0.5rem;
 }
 
-.heading {
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 500;
-  color: --text-primary;
-}
-
-.image {
-  height: auto;
-  width: 100%;
-  object-fit: cover;
-  max-width: 100%;
-  vertical-align: middle;
-  aspect-ratio: 4/3;
-}
-
-.text {
-  margin-block-start: 0;
-  color: --text-primary;
-  margin: 0;
+.cardActionArea {
+  border: 0;
   padding: 0;
+  text-align: unset;
+  background-color: unset;
+  cursor: pointer;
+  width: 100%;
+
+  &[data-hovered] {
+    background-color: --button-background-icon-hover;
+  }
+
+  &[data-pressed] {
+    background-color: --button-background-icon-active;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[data-focused] {
+    box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      outline: 2px solid highlight;
+    }
+  }
+}
+
+.cardImage {
+  max-width: 100%;
+  height: auto;
 }

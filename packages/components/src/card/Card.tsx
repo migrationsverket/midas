@@ -1,82 +1,122 @@
-'use client'
-
-import * as React from 'react'
-import { Link, LinkProps, RouterProvider } from '../link/Link'
-import styles from './Card.module.css'
 import clsx from 'clsx'
+import styles from './Card.module.css'
+import * as React from 'react'
+import { Heading, HeadingProps } from '../heading'
+import { Button, ButtonProps } from 'react-aria-components'
 
-export interface CardProps<C extends React.ElementType = typeof Link>
-  extends React.HTMLAttributes<HTMLDivElement> {
-  /** Optional image displayed at the top of card */
-  image?: { source: string; description: string }
-  /** Sets background to predetermined color
-   *  @default false
-   *  @deprecated Not supported since v5.0.0
-   * */
-  background?: boolean
-  /** Header as h1 for the component rendered below image if there is one */
-  title: string
-  /** Content as p element for the component */
-  content: string
-  /** Props for when card element is clicked */
-  link: LinkProps<C>
-  /** Adjust the tag to be used for the header
-   * @default 'h1'
-   */
-  headingTag?: React.ElementType
-  /** Custom image component to be used instead of the default img tag */
-  customImageComponent?: React.ReactElement
-  /** Custom link component to be used instead of the default a tag. For example your client side router link. */
-  customLinkComponent?: React.ElementType
+export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
+  /** Stack content in card vertical or horizontal */
+  horizontal?: boolean
+  /** Card status to showcase different senarios */
+  status?: 'warning' | 'error' | 'success'
+  state?: 'active' | 'edit'
+  /** Card content, usually wrap with CardContent */
+  children: React.ReactNode
 }
 
-/**
- * This component renders a card with optional image, title, content.
- *
- * @see {@link https://designsystem.migrationsverket.se/components/card/}
- */
-export const Card: React.FC<CardProps> = ({
-  image,
-  title,
-  content,
-  link,
-  headingTag: HeadingTag = 'h1',
-  customImageComponent,
-  customLinkComponent: CustomLinkComponent,
+export interface MidasCardContext {
+  horizontal?: MidasCard['horizontal']
+  status?: MidasCard['status']
+  state?: MidasCard['state']
+}
+
+export interface MidasCardImage {
+  /** Custom image component to be used instead of the default img tag */
+  as?: React.ElementType
+  className?: string
+  [key: string]: unknown
+}
+
+const CardContext = React.createContext<MidasCardContext>({
+  horizontal: undefined,
+  status: undefined,
+  state: undefined,
+})
+
+export const Card: React.FC<MidasCard> = ({
+  horizontal,
+  status,
+  state,
   className,
+  children,
   ...rest
 }) => {
-  const contentId = React.useId()
   return (
-    <div
-      className={clsx(styles.card, className)}
-      data-disabled={link?.isDisabled}
-      {...rest}
-    >
-      <div className={styles.content}>
-        {customImageComponent
-          ? customImageComponent
-          : image?.source && (
-              <img
-                src={image.source}
-                alt={image.description}
-                className={styles.image}
-              />
-            )}
-        <div id={contentId}>
-          <HeadingTag className={styles.heading}>{title}</HeadingTag>
-          <p className={styles.text}>{content}</p>
-        </div>
+    <CardContext.Provider value={{ horizontal, status, state }}>
+      <div
+        {...rest}
+        className={clsx(
+          styles.card,
+          horizontal && styles.horizontal,
+          state === 'edit' && styles.cardEditable,
+          status === 'success' && styles.cardSuccess,
+          className,
+        )}
+      >
+        {children}
       </div>
-      <Link
-        aria-describedby={contentId}
-        {...link}
-        standalone
-        stretched
-        as={CustomLinkComponent}
-      />
+    </CardContext.Provider>
+  )
+}
+
+export const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  children,
+}) => {
+  const { horizontal } = React.useContext(CardContext)
+
+  return (
+    <div className={clsx(styles.cardContent, horizontal && styles.horizontal)}>
+      {children}
     </div>
   )
 }
 
-export { RouterProvider }
+export const CardTitle: React.FC<HeadingProps> = ({
+  elementType = 'h2',
+  children,
+}) => {
+  const { horizontal } = React.useContext(CardContext)
+
+  return (
+    <Heading
+      level={horizontal ? 5 : 2}
+      elementType={elementType}
+      isExpressive={horizontal}
+      className={clsx(styles.cardTitle, horizontal && styles.horizontal)}
+    >
+      {children}
+    </Heading>
+  )
+}
+
+export const CardActions: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+  children,
+}) => {
+  return <div className={styles.cardActions}>{children}</div>
+}
+
+export const CardActionArea: React.FC<
+  ButtonProps & React.RefAttributes<HTMLButtonElement>
+> = ({ children, className, ...rest }) => {
+  return (
+    <Button
+      {...rest}
+      className={clsx(styles.cardActionArea, className)}
+    >
+      {children}
+    </Button>
+  )
+}
+
+export const CardImage: React.FC<MidasCardImage> = ({
+  as: ImageComponent = 'img',
+  className,
+  ...rest
+}) => {
+  return (
+    <ImageComponent
+      className={clsx(styles.cardImage, className)}
+      {...rest}
+    />
+  )
+}
