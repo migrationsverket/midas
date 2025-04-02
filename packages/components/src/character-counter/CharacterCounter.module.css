@@ -1,0 +1,17 @@
+@value tokens: "../theme/tokens.css";
+@value --font-family, --line-height-02, --size-02, --text-invalid, --text-primary from tokens;
+
+.characterCounter {
+  font-size: --size-02;
+  line-height: --line-height-02;
+  font-weight: 400;
+  font-family: --font-family;
+  color: --text-primary;
+  text-align: right;
+  grid-area: Count;
+  align-self: flex-end;
+
+  &[data-exceeded] {
+    color: --text-invalid;
+  }
+}
