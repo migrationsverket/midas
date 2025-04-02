@@ -192,3 +192,10 @@ export declare const semantic: {
     buttonBorderPrimary: string;
     logoPrimary: string;
 };
+export declare const zIndex: {
+    base: number;
+    above: number;
+    modal: number;
+    toast: number;
+    skipToContent: number;
+};
