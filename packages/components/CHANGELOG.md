@@ -1,3 +1,19 @@
+## 6.2.0
+
+### 🚀 Features
+
+- **badge:** 🆕 new component - badge to indicate user of unread items
+
+### 🩹 Fixes
+
+- **theme:** update icon-secondary with new value for dark mode
+- **date-picker:** add disabled style to divider
+- **theme:** update more tokens in tokens.ts
+- **theme:** update some tokens to new naming convention
+- **tabs:** fix dark mode on tabs and example on docweb
+- **theme:** change the token value to icon secondary
+- **link-button:** fix secondary border and icon color in dark mode
+
 ## 6.1.0
 
 ### 🚀 Features
