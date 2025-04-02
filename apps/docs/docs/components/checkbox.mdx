@@ -5,7 +5,7 @@ description: Används för att låta användaren välja inget, ett eller flera a
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Checkbox, CheckboxGroup, Flex, FlexItem, Button } from '@midas-ds/components'
+import { Checkbox, CheckboxGroup, Flex, FlexItem, Button, Link } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
@@ -105,7 +105,7 @@ Ibland kan det vara lämligt att ge användaren möjlighet att snabbt kryssa i a
 
 ## Riktlinjer
 
-- Om det är många alternativ så bör [Select](./select.mdx) användas istället.
+- Om det är många alternativ så bör <Link href='/components/select'>{'Select'}</Link> användas istället.
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 

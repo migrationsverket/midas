@@ -4,12 +4,7 @@ import {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
-  FieldError,
-  Label,
-  Text,
   ValidationResult,
-} from 'react-aria-components'
-import {
   Button,
   DateInput,
   DatePicker as AriaDatePicker,
@@ -24,6 +19,9 @@ import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { Calendar, RangeCalendar } from '../calendar'
+import { FieldError } from '../field-error'
+import { Text } from '../text'
+import { Label } from '../label'
 
 interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
@@ -46,16 +44,9 @@ export const DateRangePicker = <T extends DateValue>({
       className={clsx(styles.datePicker, props.className)}
       ref={ref}
     >
-      <Label className={styles.label}>{label}</Label>
-      {description && (
-        <Text
-          slot='description'
-          className={styles.description}
-        >
-          {description}
-        </Text>
-      )}
-      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <Label variant='label-02'>{label}</Label>
+      {description && <Text slot='description'>{description}</Text>}
+      <FieldError>{errorMessage}</FieldError>
       <Group className={clsx(styles.inputField)}>
         <DateInput
           slot='start'
@@ -126,16 +117,9 @@ export const DatePicker = <T extends DateValue>({
       className={clsx(styles.datePicker, props.className)}
       ref={ref}
     >
-      <Label className={styles.label}>{label}</Label>
-      {description && (
-        <Text
-          slot='description'
-          className={styles.description}
-        >
-          {description}
-        </Text>
-      )}
-      <FieldError className={styles.fieldError}>{errorMessage}</FieldError>
+      <Label variant='label-02'>{label}</Label>
+      {description && <Text slot='description'>{description}</Text>}
+      <FieldError>{errorMessage}</FieldError>
       <Group className={clsx(styles.inputField)}>
         <DateInput className={styles.date}>
           {segment => (

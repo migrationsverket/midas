@@ -4,7 +4,7 @@ description: Använd en kalender när användaren ska välja ett datum eller vis
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Calendar } from '@midas-ds/components'
+import { Calendar, Link } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
@@ -26,7 +26,7 @@ export const Example = props => {
 />
 
 Kalender kan användas när användaren ska välja ett datum eller visualisera ett valt datum. Normalt sett
-är [DatePicker](/components/date-picker) standardvalet men kalendern kan användas när inputfältet inte
+är <Link href='/components/date-picker'>{'DatePicker'}</Link> standardvalet men kalendern kan användas när inputfältet inte
 behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte ska presenteras som en popover.
 
 <Example hideCode />

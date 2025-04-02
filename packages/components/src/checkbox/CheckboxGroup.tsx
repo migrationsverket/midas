@@ -6,11 +6,13 @@ import {
   CheckboxGroupProps as AriaCheckboxGroupProps,
   CheckboxGroupStateContext,
   Group,
-  ValidationResult
+  ValidationResult,
 } from 'react-aria-components'
 import styles from './Checkbox.module.css'
 import { Checkbox } from './Checkbox'
-import { InputWrapper } from '../textfield'
+import { Label } from '../label'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
 
 export interface CheckboxGroupProps
   extends Omit<AriaCheckboxGroupProps, 'children'> {
@@ -94,16 +96,13 @@ export const CheckboxGroup = ({
       className={styles.checkboxGroup}
       {...props}
     >
-      <InputWrapper
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-      >
-        <Group className={styles.wrap}>
-          {showSelectAll && <ToogleAll />}
-          {children}
-        </Group>
-      </InputWrapper>
+      <Label variant='label-02'>{label}</Label>
+      {description && <Text slot='description'>{description}</Text>}
+      <FieldError>{errorMessage}</FieldError>
+      <Group className={styles.wrap}>
+        {showSelectAll && <ToogleAll />}
+        {children}
+      </Group>
     </AriaCheckboxGroup>
   )
 }

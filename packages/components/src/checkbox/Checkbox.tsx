@@ -16,8 +16,8 @@ export const Checkbox = ({ children, ...props }: CheckboxProps) => {
             <svg
               width={16}
               height={16}
-              viewBox="0 0 18 18"
-              aria-hidden="true"
+              viewBox='0 0 18 18'
+              aria-hidden='true'
             >
               {isIndeterminate ? (
                 <rect
@@ -27,11 +27,10 @@ export const Checkbox = ({ children, ...props }: CheckboxProps) => {
                   height={2}
                 />
               ) : (
-                <polyline points="3,9 7,13 15,4" />
+                <polyline points='3,9 7,13 15,4' />
               )}
             </svg>
           </div>
-
           {children}
         </>
       )}

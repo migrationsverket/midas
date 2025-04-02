@@ -5,7 +5,7 @@ description: När användaren ska fylla i längre information
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { TextArea } from '@midas-ds/components'
+import { TextArea, Link } from '@midas-ds/components'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
@@ -14,23 +14,24 @@ export const Example = props => {
       scope={{ TextArea }}
       {...props}
     >
-      {`<TextArea
+      {`
+        <TextArea
           label="Kommentar"
           description="Skriv en kommentar"
           maxLength={50}
-          type={'email'}
-      />`}
+        />
+      `}
     </LiveCodeBlock>
   )
 }
 
 <ComponentHeader
-  name={'Textarea'}
-  friendlyName='Textfält'
+  name='Textarea'
+  friendlyName='Textfält, fritext'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1'
 />
 
-Inmatningsfält awdsom används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används [TextField](./textfield.mdx).
+Inmatningsfält som används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används <Link href='/components/textfield'>{'TextField'}</Link>.
 
 <Example hideCode />
 
@@ -46,6 +47,12 @@ import { TextArea } from '@midas-ds/components'
 
 <Example hideExample />
 
+## Beskrivning
+
+TextArea är en komposition av `<TextField>`, `<TextArea>`, `<Label>`, `<FieldError>` och `<Text>` som alla är React Aria-komponenter.
+
+Med undantag för `type`-attributet erbjuder `TextArea` samma API som `TextField`, vänligen använd [dokumentationen för TextField](../textfield) för mer information.
+
 ## API
 
-<PropTable name={'TextArea'} />
+<PropTable name='TextArea' />

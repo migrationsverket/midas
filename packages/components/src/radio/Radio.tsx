@@ -11,8 +11,10 @@ import {
   Radio as AriaRadio,
   Group,
 } from 'react-aria-components'
-import { InputWrapper } from '../textfield'
 import clsx from 'clsx'
+import { Label } from '../label'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
@@ -40,13 +42,10 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
       {...props}
       className={clsx(styles.radioGroup, className)}
     >
-      <InputWrapper
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-      >
-        <Group className={styles.wrap}>{children}</Group>
-      </InputWrapper>
+      {label && <Label variant='label-02'>{label}</Label>}
+      {description && <Text slot='description'>{description}</Text>}
+      <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+      <Group className={styles.wrap}>{children}</Group>
     </AriaRadioGroup>
   )
 }
