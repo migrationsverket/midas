@@ -1,71 +1,192 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
-import { expect, userEvent } from '@storybook/test'
-
-const testImage = {
-  source:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
-  description: 'Pineapple',
-}
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardImage,
+  CardTitle,
+} from './Card'
+import { Text } from '../text'
+import { Button } from '../button'
+import { Pen, X } from 'lucide-react'
+import { Link } from '../link'
 
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Components/Card',
   tags: ['autodocs'],
-  args: {
-    title: 'Welcome to card',
-    content:
-      "Sometimes the default accessible name of an element is missing, or does not accurately describe its contents, and there is no content visible in the DOM that can be associated with the object to give it meaning. A common example is a button containing an SVG or icon font (which you shouldn't be using) without any text.",
-    image: testImage,
-    background: false,
-    link: {
-      children: 'Läs mer om Card',
-      href: '#',
-    },
-    headingTag: 'h2',
-  },
 }
 
 export default meta
 type Story = StoryObj<typeof Card>
 
-export const Example: Story = {
-  play: async ({ canvas, step }) => {
-    await step('It should be possible to focus the link', async () => {
-      const link = canvas.getByText('Läs mer om Card')
-      expect(link).not.toHaveFocus()
+export const Primary: Story = {
+  args: {
+    children: (
+      <CardContent>
+        <CardTitle>Kort</CardTitle>
+      </CardContent>
+    ),
+  },
+  // play: async ({ canvas, step }) => {
+  //   await step('It should be possible to focus the link', async () => {
+  //     const link = canvas.getByText('Läs mer om Card')
+  //     expect(link).not.toHaveFocus()
 
-      // focus the link
-      await userEvent.tab()
+  //     // focus the link
+  //     await userEvent.tab()
 
-      expect(link).toHaveFocus()
-    })
+  //     expect(link).toHaveFocus()
+  //   })
+  // },
+}
+
+export const Horizontal: Story = {
+  args: {
+    ...Primary.args,
+    horizontal: true,
   },
 }
 
-export const WithBackground: Story = {
+export const Editable: Story = {
   args: {
-    background: true,
-  },
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
+    ...Primary.args,
+    state: 'edit',
   },
 }
 
-export const Disabled: Story = {
+export const Success: Story = {
   args: {
-    background: true,
-    link: {
-      children: 'Läs mer om Card',
-      href: '#',
-      isDisabled: true,
-    },
+    ...Primary.args,
+    status: 'success',
   },
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
+}
+
+export const WithActions: Story = {
+  args: {
+    children: (
+      <CardContent>
+        <CardTitle>Dina uppgifter</CardTitle>
+        <Text>Namn: Namn Namnsson</Text>
+        <CardActions>
+          <Button
+            variant='icon'
+            icon={Pen}
+          >
+            Ändra
+          </Button>
+          <Button
+            variant='icon'
+            icon={X}
+          >
+            Avbryt
+          </Button>
+        </CardActions>
+      </CardContent>
+    ),
+  },
+}
+
+export const WithPrimaryAction: Story = {
+  args: {
+    children: (
+      <>
+        <CardActionArea onPress={() => alert('Clicked!')}>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </CardActionArea>
+        <CardContent>
+          <CardActions>
+            <Button
+              variant='icon'
+              icon={Pen}
+            >
+              Ändra
+            </Button>
+            <Button
+              variant='icon'
+              icon={X}
+            >
+              Avbryt
+            </Button>
+          </CardActions>
+        </CardContent>
+      </>
+    ),
+  },
+}
+
+export const WithLink: Story = {
+  args: {
+    children: (
+      <CardContent>
+        <CardTitle>Dina uppgifter</CardTitle>
+        <Text>Namn: Namn Namnsson</Text>
+        <CardActions>
+          <Link
+            href='#'
+            standalone
+            stretched
+          >
+            Läs mer om detta här
+          </Link>
+        </CardActions>
+      </CardContent>
+    ),
+  },
+}
+
+export const WithImage: Story = {
+  args: {
+    style: { maxWidth: 300 },
+    children: (
+      <>
+        <CardImage
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
+          alt='Ananas'
+        />
+        <CardContent>
+          <CardTitle>Dina uppgifter</CardTitle>
+          <Text>Namn: Namn Namnsson</Text>
+          <CardActions>
+            <Link
+              href='#'
+              standalone
+              stretched
+            >
+              Läs mer om detta här
+            </Link>
+          </CardActions>
+        </CardContent>
+      </>
+    ),
+  },
+}
+
+export const WithContainedImage: Story = {
+  args: {
+    style: { maxWidth: 300 },
+    children: (
+      <CardContent>
+        <CardTitle>Dina uppgifter</CardTitle>
+        <CardImage
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
+          alt='Ananas'
+        />
+        <Text>Namn: Namn Namnsson</Text>
+        <CardActions>
+          <Link
+            href='#'
+            standalone
+            stretched
+          >
+            Läs mer om detta här
+          </Link>
+        </CardActions>
+      </CardContent>
+    ),
   },
 }

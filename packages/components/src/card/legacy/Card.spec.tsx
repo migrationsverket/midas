@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { axe } from 'jest-axe'
-import { Card } from './'
-import user from '../../tests/utils/user'
+import { Card } from './Card'
+import user from '../../../tests/utils/user'
 
 const linkText = 'Läs mer'
 const link = { children: linkText, href: '#' }
