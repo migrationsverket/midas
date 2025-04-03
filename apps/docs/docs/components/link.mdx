@@ -5,17 +5,17 @@ description: Komponent som skapar en länk
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Link } from '@midas-ds/components'
+import { Link, Text } from '@midas-ds/components'
 import { semantic } from '@midas-ds/components/theme'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
   return (
     <LiveCodeBlock
-      scope={{ Link }}
+      scope={{ Link, Text }}
       {...props}
     >
-      {`<p>I vår <Link href="/changelog">Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.</p>`}
+      {`<Text elementType="p">I vår <Link href="/changelog">Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.</Text>`}
     </LiveCodeBlock>
   )
 }
@@ -45,17 +45,17 @@ import { Link } from '@midas-ds/components'
 
 ### Länk
 
-<LiveCodeBlock scope={{ Link }}>
-  {`<p>Designsystemet utvecklas ständigt, <Link href="/changelog">vilket du kan kan se i vår Changelog</Link>. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.</p>`}
+<LiveCodeBlock scope={{ Link, Text }}>
+  {`<Text elementType="p">Designsystemet utvecklas ständigt, <Link href="/changelog">vilket du kan kan se i vår Changelog</Link>. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.</Text>`}
 </LiveCodeBlock>
 
 ### Fristående
 
 Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
 
-<LiveCodeBlock scope={{ Link }}>
+<LiveCodeBlock scope={{ Link, Text }}>
   {`<>
-    <p>Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.</p>
+    <Text elementType="p">Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.</Text>
     <Link
         standalone
         href="/changelog"
@@ -69,7 +69,7 @@ Använd `standalone` för att använda komponenten som en fristående länk unde
 
 Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
 
-<LiveCodeBlock scope={{ Link, semantic }}>
+<LiveCodeBlock scope={{ Link, semantic, Text }}>
   {`<div
       style={{
         position: 'relative',
@@ -77,7 +77,7 @@ Använd `stretched` för att låta hela förälderelementet vara klickbart till 
         padding: '1rem'
       }}
     >
-     <p>Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.</p>
+     <Text elementType="p">Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.</Text>
     <Link
         standalone
         stretched
