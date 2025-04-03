@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --icon-primary, --border-strong, --border-invalid, --text-disabled, --text-placeholder, --field-hover-01, --focus, --layer-01, --text-primary, --border-brand, --button-background-primary from tokens;
+@value --font-family, --field-01, --icon-primary, --border-strong, --border-invalid, --text-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-brand, --button-background-primary from tokens;
 
 .datePicker {
   font-family: --font-family;
@@ -23,6 +23,11 @@
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+
+  &[data-disabled='true'] {
+    cursor: not-allowed;
+    border-color: --border-disabled;
+  }
 
   &:focus-visible,
   &[data-focus-visible] {
@@ -48,6 +53,7 @@
 
     &[data-disabled='true'] {
       cursor: not-allowed;
+      color: --text-disabled;
     }
 
     &[data-hovered]:not([data-disabled='true']) {
