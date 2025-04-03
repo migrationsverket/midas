@@ -192,36 +192,28 @@ export const NotClearable: Story = {
 }
 
 export const RequiredMultiple: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
     selectionMode: 'multiple',
     isRequired: true,
   },
-  render: args => {
-    const [isSubmitted, setIsSubmitted] = React.useState(false)
-
-    return (
-      <>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            setIsSubmitted(true)
-          }}
-        >
-          <Select {...args} />
-          <button type='submit'>Submit</button>
-        </form>
-        {isSubmitted && 'success'}
-      </>
-    )
-  },
-  play: async ({ canvas, step }) => {
+  render: args => (
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+      }}
+    >
+      <Select {...args} />
+      <button type='submit'>Submit</button>
+    </form>
+  ),
+  play: async ({ canvas, step, args }) => {
     // Submit the form without selecting a value
     await step('It should not be possible to submit the form', async () => {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      expect(canvas.queryByText('success')).not.toBeInTheDocument()
+      expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeInvalid()
     })
 
     // Select a value then submit again
@@ -234,7 +226,7 @@ export const RequiredMultiple: Story = {
         await userEvent.tab()
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(await canvas.findByText('success')).toBeInTheDocument()
+        expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeValid()
       },
     )
   },
@@ -246,31 +238,14 @@ export const RequiredSingle: Story = {
     selectionMode: 'single',
     isRequired: true,
   },
-  render: args => {
-    const [isSubmitted, setIsSubmitted] = React.useState(false)
-
-    return (
-      <>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            setIsSubmitted(true)
-          }}
-        >
-          <Select {...args} />
-          <button type='submit'>Submit</button>
-        </form>
-        {isSubmitted && 'success'}
-      </>
-    )
-  },
-  play: async ({ canvas, step }) => {
+  render: RequiredMultiple.render,
+  play: async ({ canvas, step, args }) => {
     // Submit the form without selecting a value
     await step('It should not be possible to submit the form', async () => {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      expect(canvas.queryByText('success')).not.toBeInTheDocument()
+      expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeInvalid()
     })
 
     // Select a value then submit again
@@ -281,14 +256,14 @@ export const RequiredSingle: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(await canvas.findByText('success')).toBeInTheDocument()
+        expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeValid()
       },
     )
   },
 }
 
 export const DS872: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
     ...Normal.args,
     selectionMode: 'single',
