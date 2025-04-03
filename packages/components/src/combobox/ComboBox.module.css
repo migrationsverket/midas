@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-disabled --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --font-family from tokens;
+@value --text-disabled, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --font-family from tokens;
 
 .combobox {
   font-family: --font-family;
