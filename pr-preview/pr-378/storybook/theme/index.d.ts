@@ -194,4 +194,11 @@ export declare const theme: {
         buttonBorderPrimary: string;
         logoPrimary: string;
     };
+    zIndex: {
+        base: number;
+        above: number;
+        modal: number;
+        toast: number;
+        skipToContent: number;
+    };
 };
