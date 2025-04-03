@@ -8,6 +8,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { FormExample, ConfirmationExample } from '@site/src/components/examples/ModalExamples'
 import { Link } from '@midas-ds/components'
+import { Tabs as MidasTabs } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Modal'}
@@ -20,7 +21,14 @@ aktivt svar från användaren.
 
 <FormExample />
 
-## Installation
+<MidasTabs
+  defaultSelected='Viktigt att veta'
+  label='Följ processen'
+  tabs={['Kod', 'Riktlinjer', 'Tillgänglighet']}
+>
+  <div>
+  
+  ## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -112,7 +120,19 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 </DialogTrigger>
 ```
 
-## Riktlinjer
+## API
+
+### DialogTrigger
+
+<PropTable name='DialogTrigger' />
+
+### Modal
+
+<PropTable name='Modal' />
+
+</div>
+<div>
+  ## Riktlinjer
 
 ### Användning
 
@@ -133,12 +153,9 @@ Undvik att använda modal för:
 
 Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för <Link href="/components/button" >Knappar</Link>
 
-## API
-
-### DialogTrigger
-
-<PropTable name='DialogTrigger' />
-
-### Modal
-
-<PropTable name='Modal' />
+  </div>
+  <div>
+  Här kan man skriva något om tillgänglighet
+  </div>
+  
+</MidasTabs>
