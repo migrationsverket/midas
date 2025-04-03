@@ -2,7 +2,7 @@ name: 'Storybook - Build and test'
 
 on:
   pull_request:
-    branches: ['main', 'release/**']
+    branches: ['dev', 'main', 'release/**']
 
 jobs:
   test:

@@ -11,7 +11,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
     .default as ComponentDoc[]
 
   const props: Props = ComponentsDocs.find(
-    componentDoc => componentDoc.displayName === name
+    componentDoc => componentDoc.displayName === name,
   )?.props
 
   if (!props) {
@@ -29,7 +29,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
       }
       return acc
     },
-    { events: {}, accessibility: {}, rest: {} }
+    { events: {}, accessibility: {}, rest: {} },
   )
 
   const Table = ({ propGroup }) => {
@@ -74,6 +74,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   return (
     <>
       <Accordion
+        className={styles.accordion}
         type='multiple'
         defaultExpandedKeys={defaultOpen ? ['props'] : []}
       >

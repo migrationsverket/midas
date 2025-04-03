@@ -33,3 +33,11 @@ export const Primary: Story = {
     errorMessage: 'Felmeddelande',
   },
 }
+
+export const Disabled: Story = {
+  args: {
+    label: 'Välj datum',
+    description: 'Beskrivning',
+    isDisabled: true,
+  },
+}

@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --link-enabled, --link-hover, --link-pressed, --link-visited, --text-disabled, --focus from tokens;
+@value --font-family, --link-enabled, --link-hover, --link-pressed, --link-visited, --text-disabled, --focus, --z-index-base from tokens;
 
 .link {
   font-family: --font-family;
@@ -72,7 +72,7 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: --z-index-base;
     content: '';
   }
 }

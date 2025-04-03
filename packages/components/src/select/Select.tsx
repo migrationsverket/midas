@@ -6,7 +6,7 @@ import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 import * as React from 'react'
-import { FieldError, Label, TagList, TextField } from 'react-aria-components'
+import { Label, TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -14,6 +14,7 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
+import { FieldError } from '../field-error'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
 
@@ -248,9 +249,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            <FieldError className={styles.fieldError}>
-              {errorMessage}
-            </FieldError>
+            <FieldError>{errorMessage}</FieldError>
             {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
             {state.displayValidation.validationErrors.length ? (
               <div className={styles.fieldError}>

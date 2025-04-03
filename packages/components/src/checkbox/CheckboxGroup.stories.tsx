@@ -1,9 +1,8 @@
 import { Checkbox } from './Checkbox'
 import { Meta, StoryObj } from '@storybook/react'
 import { CheckboxGroup } from './CheckboxGroup'
-import React from 'react'
 
-const meta: Meta<typeof CheckboxGroup> = {
+export default {
   title: 'Components/Checkbox/CheckboxGroup',
   component: CheckboxGroup,
   parameters: {
@@ -14,6 +13,9 @@ const meta: Meta<typeof CheckboxGroup> = {
     isDisabled: false,
     isRequired: false,
     isReadOnly: false,
+    label: 'Etikett',
+    description: 'Beskrivning',
+    errorMessage: 'här gick det snett',
   },
   argTypes: {
     isInvalid: { type: 'boolean' },
@@ -23,20 +25,10 @@ const meta: Meta<typeof CheckboxGroup> = {
     errorMessage: { type: 'string' },
   },
   tags: ['autodocs'],
-}
-
-const ITEMS = ['Banan', 'Apple', 'Mango']
-
-export default meta
-
-type Story = StoryObj<typeof CheckboxGroup>
-
-const CheckboxGroupTemplate: Story = {
-  args: {},
   render: ({ ...args }) => {
     return (
       <CheckboxGroup {...args}>
-        {ITEMS.map((item: string) => (
+        {['Banan', 'Apple', 'Mango'].map((item: string) => (
           <Checkbox
             value={item}
             key={item}
@@ -47,23 +39,20 @@ const CheckboxGroupTemplate: Story = {
       </CheckboxGroup>
     )
   },
-}
+} as Meta<typeof CheckboxGroup>
 
-export const Example: Story = {
-  ...CheckboxGroupTemplate,
+type Story = StoryObj<typeof CheckboxGroup>
+
+export const Primary: Story = {}
+
+export const SelectAll: Story = {
   args: {
-    label: 'Etikett',
-    description: 'Beskrivning',
-    errorMessage: 'här gick det snett',
+    showSelectAll: true,
   },
 }
 
-export const SelectAll: Story = {
-  ...CheckboxGroupTemplate,
+export const Disabled: Story = {
   args: {
-    label: 'Etikett',
-    description: 'Beskrivning',
-    errorMessage: 'här gick det snett',
-    showSelectAll: true,
+    isDisabled: true,
   },
 }

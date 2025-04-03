@@ -1,3 +1,55 @@
+# 7.0.0
+
+### Documentation Changes
+
+- remove april fools ([4bcdaa31c](https://github.com/migrationsverket/midas/commit/4bcdaa31c))
+- remove april fools ([#381](https://github.com/migrationsverket/midas/pull/381))
+- ♿️💄ensure that markdown links use midas styling ([b79ce1b36](https://github.com/migrationsverket/midas/commit/b79ce1b36))
+
+## 6.2.0
+
+### 🚀 Features
+
+- **badge:** 🆕 new component - badge to indicate user of unread items
+- **badge:** 🆕 new component - badge to indicate user of unread items
+
+### 🩹 Fixes
+
+- **date-picker:** add disabled style to divider
+- **link-button:** fix secondary border and icon color in dark mode
+- **link-button:** fix secondary border and icon color in dark mode
+- **tabs:** fix dark mode on tabs and example on docweb
+- **tabs:** fix dark mode on tabs and example on docweb
+- **theme:** change the token value to icon secondary
+- **theme:** update some tokens to new naming convention
+- **theme:** update more tokens in tokens.ts
+- **theme:** update icon-secondary with new value for dark mode
+- **theme:** update some tokens to new naming convention
+
+### Documentation Changes
+
+- april fools
+- a bit longer april fools joke
+- fixes on badge page
+- april fools
+- add clarification on when to use which loader
+- **docs:** add new UI-kit
+- **docs:** change wording on dark mode guide page
+- **docs:** add clarification on when to use which loader
+- **docs:** add new UI-kit
+
+## 6.1.0
+
+### 🚀 Features
+
+- **text:** add description slot ([73d308a13](https://github.com/migrationsverket/midas/commit/73d308a13))
+
+### 🩹 Fixes
+
+- **link-button:** add pseudo-classes in CSS link-button ([#385](https://github.com/migrationsverket/midas/pull/385))
+- **textfield:** fix token on input value ([e79f935e3](https://github.com/migrationsverket/midas/commit/e79f935e3))
+- **textfield:** fix token on input value ([#388](https://github.com/migrationsverket/midas/pull/388))
+
 ## 6.0.1
 
 ### 🩹 Fixes
@@ -14,7 +66,7 @@
 - **modal:** add focustrap to modal
 - **modal:** increase z-index on overlay
 - **modal:** fix overlay position to avoid moving the modal when y-overflow
-- ⚠️  **modal:** deprecate `ModalTrigger` and `Dialog`
+- ⚠️ **modal:** deprecate `ModalTrigger` and `Dialog`
 - **modal:** replace h2 with heading component
 
 ### 🩹 Fixes
@@ -34,7 +86,7 @@
 
 - **modal:** update instructions with new modal API
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - **modal:** Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.
 

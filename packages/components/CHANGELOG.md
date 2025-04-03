@@ -1,3 +1,34 @@
+# 7.0.0
+
+This was a version bump only for components to align it with other projects, there were no code changes.
+
+## 6.2.0
+
+### 🚀 Features
+
+- **badge:** 🆕 new component - badge to indicate user of unread items
+
+### 🩹 Fixes
+
+- **theme:** update icon-secondary with new value for dark mode
+- **date-picker:** add disabled style to divider
+- **theme:** update more tokens in tokens.ts
+- **theme:** update some tokens to new naming convention
+- **tabs:** fix dark mode on tabs and example on docweb
+- **theme:** change the token value to icon secondary
+- **link-button:** fix secondary border and icon color in dark mode
+
+## 6.1.0
+
+### 🚀 Features
+
+- **text:** add description slot ([73d308a13](https://github.com/migrationsverket/midas/commit/73d308a13))
+
+### 🩹 Fixes
+
+- **textfield:** fix token on input value ([e79f935e3](https://github.com/migrationsverket/midas/commit/e79f935e3))
+- **link-button:** add pseudo-classes in CSS link-button ([#385](https://github.com/migrationsverket/midas/pull/385))
+
 ## 6.0.1
 
 ### 🩹 Fixes
@@ -9,7 +40,7 @@
 ### 🚀 Features
 
 - **modal:** replace h2 with heading component
-- ⚠️  **modal:** deprecate `ModalTrigger` and `Dialog`
+- ⚠️ **modal:** deprecate `ModalTrigger` and `Dialog`
 - **modal:** fix overlay position to avoid moving the modal when y-overflow
 - **modal:** increase z-index on overlay
 - **modal:** add focustrap to modal
@@ -27,7 +58,7 @@
 - add react types to dependencies
 - remove test setup from build
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
 - **modal:** Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.
 

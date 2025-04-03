@@ -1,16 +1,11 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --field-01, --field-hover-01, --border-strong, --border-invalid, --text-disabled, --text-invalid, --field-disabled, --focus from tokens;
+@value --focus, --field-disabled, --text-primary, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
-.inputField {
-  height: 100%;
-
-  &[data-disabled] {
-    color: --text-disabled;
-  }
+* {
+  font-family: --font-family;
 }
 
-.inputWrapper {
-  font-family: --font-family;
+.textField {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr 1fr;
@@ -20,79 +15,76 @@
   grid-template-areas:
     'Label Count'
     'Desc Count'
-    'Error Error'
+    'Error Count'
     'Input Input';
   height: 100%;
   width: 100%;
   align-content: flex-end;
-}
 
-.label {
-  color: --text-primary;
-  grid-area: Label;
-  font-size: 1rem;
-  font-weight: 500;
-}
+  [slot='description'] {
+    grid-area: Desc;
+  }
 
-.text {
-  color: --text-primary;
-  grid-area: Desc;
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-
-.fieldError {
-  color: --text-invalid;
-  grid-area: Error;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  margin: 0.25rem 0;
-  line-height: 1.28;
-
-  &::before {
-    content: '';
-    background-color: --text-invalid;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtdHJpYW5nbGUtYWxlcnQiPjxwYXRoIGQ9Im0yMS43MyAxOC04LTE0YTIgMiAwIDAgMC0zLjQ4IDBsLTggMTRBMiAyIDAgMCAwIDQgMjFoMTZhMiAyIDAgMCAwIDEuNzMtMyIvPjxwYXRoIGQ9Ik0xMiA5djQiLz48cGF0aCBkPSJNMTIgMTdoLjAxIi8+PC9zdmc+');
-    mask-size: 1rem 1rem;
-    flex: 0 0 auto;
-    align-self: flex-start;
-    margin: 2px;
+  &[data-disabled] {
+    color: --text-disabled;
   }
 }
 
-.passwordText {
-  background-color: --field-01;
-  position: absolute;
+.textArea {
+  all: unset;
   display: flex;
+  grid-area: Input;
+  border-bottom: 1px solid --border-strong;
   align-items: center;
-  z-index: 2;
-  top: 0;
-  left: 1rem;
-  width: calc(100% - 1rem);
-  height: 46px;
-  pointer-events: none;
-}
-
-.count {
-  font-size: 0.875rem;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 1rem 1rem 1.25rem;
+  background-color: --field-01;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  width: 100%;
   color: --text-primary;
-  text-align: right;
-  grid-area: Count;
-  align-self: flex-end;
+
+  @media (forced-colors: active) {
+    outline: 3px solid;
+    outline-offset: 2px;
+  }
+
+  &[data-hovered] {
+    background-color: --field-hover-01;
+  }
+
+  &[data-focused],
+  &[data-focus-visible] {
+    box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      border: 1px solid;
+    }
+  }
+
+  &[data-invalid] {
+    border: none;
+    box-shadow: inset 0 0 0 3px --border-invalid;
+  }
+
+  &[data-disabled] {
+    cursor: not-allowed;
+    background-color: --field-disabled;
+    border: none;
+    opacity: 0.7;
+  }
 }
 
-.countExceeded {
-  color: --text-invalid;
+.wrap {
+  position: relative;
+  grid-area: Input;
 }
 
 .input {
   all: unset;
   grid-area: Input;
+  color: --text-primary;
   border-bottom: 1px solid --border-strong;
   min-height: 48px;
   font-size: 1rem;
@@ -111,8 +103,7 @@
     }
   }
 
-  &[data-focused],
-  &[data-focus-visible] {
+  &[data-focused] {
     box-shadow: --focus;
 
     @media (forced-colors: active) {
@@ -134,9 +125,16 @@
   }
 }
 
-.wrap {
-  grid-area: Input;
-  position: relative;
+.passwordText {
+  background-color: --field-01;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 3px;
+  z-index: --z-index-base;
+  left: 1rem;
+  height: calc(100% - 6px);
+  width: calc(100% - 2rem);
 }
 
 .passwordButton {
@@ -148,5 +146,5 @@
   top: 0;
   box-sizing: border-box;
   cursor: pointer;
-  z-index: 3;
+  z-index: calc(--z-index-base + --z-index-above);
 }

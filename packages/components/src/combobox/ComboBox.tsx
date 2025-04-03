@@ -15,8 +15,10 @@ import {
   ListBoxItem,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
-import { InputWrapper } from '../textfield'
 import clsx from 'clsx'
+import { Label } from '../label'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -45,30 +47,26 @@ export function ComboBox<T extends object>({
       ref={ref}
       {...props}
     >
-      <InputWrapper
-        label={label}
-        description={description}
-        errorMessage={errorMessage}
-      >
-        <div className={styles.wrap}>
-          <Input className={styles.input} />
-          <Button
-            className={styles.button}
-            aria-label='Visa lista'
+      {label && <Label variant='label-02'>{label}</Label>}
+      {description && <Text slot='description'>{description}</Text>}
+      <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+      <div className={styles.wrap}>
+        <Input className={styles.input} />
+        <Button
+          className={styles.button}
+          aria-label='Visa lista'
+        >
+          <div
+            className={styles.icon}
+            aria-hidden='true'
           >
-            <div
-              className={styles.icon}
-              aria-hidden='true'
-            >
-              <ChevronDown
-                size={20}
-                aria-hidden
-              />
-            </div>
-          </Button>
-        </div>
-      </InputWrapper>
-
+            <ChevronDown
+              size={20}
+              aria-hidden
+            />
+          </div>
+        </Button>
+      </div>
       <Popover
         className={styles.popover}
         offset={0}

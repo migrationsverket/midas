@@ -1,3 +1,9 @@
+.accordion {
+  > div {
+    --content-padding: 0;
+  }
+}
+
 .table {
   width: 100%;
   font-family: 'Inter', sans-serif;
