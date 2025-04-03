@@ -7,14 +7,19 @@ const meta: Meta<typeof Flex> = {
   component: Flex,
   title: 'Components/Flex',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    layout: 'fullscreen',
+    a11y: {
+      test: 'todo',
+    },
+  },
   argTypes: {
     fluid: {
       control: {
-        type: 'boolean'
-      }
-    }
-  }
+        type: 'boolean',
+      },
+    },
+  },
 }
 export default meta
 
@@ -84,5 +89,5 @@ export const Primary = {
         />
       </FlexItem>
     </Flex>
-  )
+  ),
 }

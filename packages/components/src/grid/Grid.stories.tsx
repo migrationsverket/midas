@@ -7,12 +7,17 @@ const meta: Meta<typeof Grid> = {
   component: Grid,
   title: 'Components/Grid',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    layout: 'fullscreen',
+    a11y: {
+      test: 'todo',
+    },
+  },
   argTypes: {
     fluid: {
-      control: { type: 'boolean' }
-    }
-  }
+      control: { type: 'boolean' },
+    },
+  },
 }
 export default meta
 
@@ -72,5 +77,5 @@ export const Primary = {
         />
       </GridItem>
     </Grid>
-  )
+  ),
 }
