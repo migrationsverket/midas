@@ -23,6 +23,7 @@ export interface SidebarLinkProps {
   href: string
   icon: LucideIcon
   active?: boolean
+  hasBadge?: boolean
   isCollapsed?: boolean
   setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>
 }

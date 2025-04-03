@@ -3,6 +3,7 @@ import styles from '../Layout.module.css'
 import { Link, RouterProvider } from 'react-aria-components'
 import clsx from 'clsx'
 import { useLayoutContext } from '../context/LayoutContext'
+import { Badge, BadgeContainer } from '../../badge'
 
 export const Navbar: React.FC = () => {
   const { items, clientSideRouter, clientSideHref } = useLayoutContext()
@@ -36,7 +37,7 @@ const NavbarItemsList: React.FC<{ items: SidebarLinkProps[] }> = ({
   items,
 }) => (
   <>
-    {items.map(({ href, active, icon: IconComponent, title }, i) => (
+    {items.map(({ href, active, icon: IconComponent, title, hasBadge }, i) => (
       <li key={i}>
         <Link
           href={href}
@@ -44,7 +45,10 @@ const NavbarItemsList: React.FC<{ items: SidebarLinkProps[] }> = ({
           data-active={active}
           aria-current={active && 'page'}
         >
-          <IconComponent size={20} />
+          <BadgeContainer>
+            <IconComponent size={20} />
+            {hasBadge && <Badge />}
+          </BadgeContainer>
           {title}
         </Link>
       </li>

@@ -44,6 +44,7 @@ const items: SidebarLinkGroup[] = [
         title: 'Boka',
         href: '#',
         icon: Calendar,
+        hasBadge: true,
       },
       {
         title: 'Profil',
