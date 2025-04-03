@@ -26,9 +26,7 @@ export declare const baseColors: {
     blue10: string;
     blue20: string;
     blue40: string;
-    blue50: string;
     blue60: string;
-    blue70: string;
     blue80: string;
     blue90: string;
     blue100: string;
@@ -193,4 +191,11 @@ export declare const semantic: {
     buttonBackgroundGhostActive: string;
     buttonBorderPrimary: string;
     logoPrimary: string;
+};
+export declare const zIndex: {
+    base: number;
+    above: number;
+    modal: number;
+    toast: number;
+    skipToContent: number;
 };

@@ -28,9 +28,7 @@ export declare const theme: {
         blue10: string;
         blue20: string;
         blue40: string;
-        blue50: string;
         blue60: string;
-        blue70: string;
         blue80: string;
         blue90: string;
         blue100: string;
@@ -195,5 +193,12 @@ export declare const theme: {
         buttonBackgroundGhostActive: string;
         buttonBorderPrimary: string;
         logoPrimary: string;
+    };
+    zIndex: {
+        base: number;
+        above: number;
+        modal: number;
+        toast: number;
+        skipToContent: number;
     };
 };
