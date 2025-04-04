@@ -249,9 +249,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            <FieldError>
-              {errorMessage}
-            </FieldError>
+            <FieldError>{errorMessage}</FieldError>
             {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
             {state.displayValidation.validationErrors.length ? (
               <div className={styles.fieldError}>
