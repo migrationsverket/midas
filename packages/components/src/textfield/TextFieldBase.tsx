@@ -53,7 +53,7 @@ export const TextFieldBase = React.forwardRef<
     >
       {label && <Label variant='label-02'>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
-      {showCounter && <CharacterCounter />}
+      {showCounter && <CharacterCounter isLonely={!description} />}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
