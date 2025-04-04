@@ -6,14 +6,6 @@
   display: flex;
   flex-direction: column;
 
-  > label {
-    margin-bottom: 0.25rem;
-  }
-
-  > [slot='description'] {
-    margin-bottom: 0.5rem;
-  }
-
   &[data-invalid] .input {
     border: 0.125rem solid --border-invalid;
     box-shadow: none;

@@ -7,14 +7,6 @@
   flex-direction: column;
   align-items: flex-start;
 
-  > label {
-    margin-bottom: 0.25rem;
-  }
-
-  > [slot='description'] {
-    margin-bottom: 0.5rem;
-  }
-
   &[data-disabled='true'] {
     cursor: not-allowed;
   }

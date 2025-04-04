@@ -6,7 +6,7 @@ import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 import * as React from 'react'
-import { Label, TagList, TextField } from 'react-aria-components'
+import { TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -17,6 +17,7 @@ import { TagGroup, Tag } from '../tag'
 import { type ErrorPosition, FieldError } from '../field-error'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
+import { Label } from '../label'
 
 export type OptionItem = {
   children?: never
@@ -232,6 +233,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           <div className={styles.multiSelect}>
             {label && (
               <Label
+                variant='label-02'
                 {...labelProps}
                 slot={'label'}
                 className={clsx(styles.selectLabel, {
@@ -246,7 +248,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               <span
                 className={clsx(styles.description, {
                   [styles.descriptionDisabled]: isDisabled,
-                  [styles.descriptionInvalid]: !!errorMessage,
                 })}
                 slot={'description'}
               >

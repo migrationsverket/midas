@@ -21,12 +21,7 @@
   width: 100%;
   align-content: flex-end;
 
-  > label {
-    margin-bottom: 0.25rem;
-  }
-
   > [slot='description'] {
-    margin-bottom: 0.5rem;
     grid-area: Desc;
   }
 
