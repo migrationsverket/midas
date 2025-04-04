@@ -18,6 +18,7 @@ import { type ErrorPosition, FieldError } from '../field-error'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { Label } from '../label'
+import { Text } from '../text'
 
 export type OptionItem = {
   children?: never
@@ -244,16 +245,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {label}
               </Label>
             )}
-            {description && (
-              <span
-                className={clsx(styles.description, {
-                  [styles.descriptionDisabled]: isDisabled,
-                })}
-                slot={'description'}
-              >
-                {description}
-              </span>
-            )}
+            {description && <Text slot={'description'}>{description}</Text>}
             {errorPosition === 'top' && (
               <>
                 <FieldError>{errorMessage}</FieldError>

@@ -116,20 +116,6 @@
   // TODO: some styles here with the border?
 } */
 
-.description {
-  grid-area: Desc;
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin-bottom: 0.25rem;
-}
-
-/* .descriptionActive {
-} */
-
-.descriptionDisabled {
-  color: --text-disabled;
-}
-
 .popover {
   --select-popover-width: max(
     var(--select-width, var(--field-width-base)) - 2px,
