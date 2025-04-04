@@ -6,7 +6,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.125rem;
+
+  > label {
+    margin-bottom: 0.25rem;
+  }
+
+  > [slot='description'] {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .isDisabled {
@@ -19,6 +26,7 @@
 }
 
 .inputField {
+  box-sizing: border-box;
   width: 100%;
   min-height: 3rem;
   display: flex;

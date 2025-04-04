@@ -15,6 +15,7 @@ export default {
   args: {
     label: 'Label',
     description: 'Description',
+    errorPosition: 'top',
   },
 } as Meta<typeof TextField>
 
@@ -55,7 +56,7 @@ export const Password: Story = {
   },
 }
 
-export const NotValid: Story = {
+export const Invalid: Story = {
   args: {
     isInvalid: true,
     errorMessage: 'Något blev fel',

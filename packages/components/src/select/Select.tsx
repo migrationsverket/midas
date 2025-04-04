@@ -14,7 +14,7 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
-import { FieldError } from '../field-error'
+import { type ErrorPosition, FieldError } from '../field-error'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
 
@@ -109,10 +109,14 @@ type SelectProps = {
   isRequired?: boolean
   /** Name of the field, for uncontrolled use */
   name?: string
+  errorPosition?: ErrorPosition
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
-  ({ selectionMode = 'single', ...rest }, forwardedRef) => {
+  (
+    { selectionMode = 'single', errorPosition = 'top', ...rest },
+    forwardedRef,
+  ) => {
     const props = {
       selectionMode,
       ...rest,
@@ -249,18 +253,20 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {description}
               </span>
             )}
-            <FieldError>
-              {errorMessage}
-            </FieldError>
-            {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
-            {state.displayValidation.validationErrors.length ? (
-              <div className={styles.fieldError}>
-                {errorMessage ||
-                  state.displayValidation.validationErrors.map(error => (
-                    <React.Fragment key={error}>{error}</React.Fragment>
-                  ))}
-              </div>
-            ) : null}
+            {errorPosition === 'top' && (
+              <>
+                <FieldError>{errorMessage}</FieldError>
+                {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
+                {state.displayValidation.validationErrors.length ? (
+                  <div className={styles.fieldError}>
+                    {errorMessage ||
+                      state.displayValidation.validationErrors.map(error => (
+                        <React.Fragment key={error}>{error}</React.Fragment>
+                      ))}
+                  </div>
+                ) : null}
+              </>
+            )}
             <FocusRing
               focusRingClass={styles.buttonFocused}
               autoFocus={autoFocus}
@@ -308,6 +314,20 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 ) : null}
               </div>
             </FocusRing>
+            {errorPosition === 'bottom' && (
+              <>
+                <FieldError>{errorMessage}</FieldError>
+                {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
+                {state.displayValidation.validationErrors.length ? (
+                  <div className={styles.fieldError}>
+                    {errorMessage ||
+                      state.displayValidation.validationErrors.map(error => (
+                        <React.Fragment key={error}>{error}</React.Fragment>
+                      ))}
+                  </div>
+                ) : null}
+              </>
+            )}
             {state.isOpen && (
               <SelectPopover
                 isOpen={state.isOpen}
@@ -372,6 +392,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               aria-label={'Selected Items'}
               selectionBehavior={'toggle'}
               onRemove={keys => handleRemove([...keys][0])}
+              className={styles.tagGroup}
               {...mergeProps}
             >
               <TagList items={state.selectedItems}>

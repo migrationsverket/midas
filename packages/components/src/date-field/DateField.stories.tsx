@@ -23,6 +23,9 @@ const meta: Meta<typeof DateField> = {
       },
     },
   },
+  args: {
+    errorPosition: 'top',
+  },
 }
 export default meta
 type Story = StoryObj<typeof DateField>
