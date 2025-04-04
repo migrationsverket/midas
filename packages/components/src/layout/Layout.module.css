@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-sm, --breakpoint-lg, --background-01, --border-subtle, --layer-01, --size-01, --text-primary, --text-on-color, --line-height-02, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
+@value --font-family, --breakpoint-sm, --breakpoint-lg, --background, --border-subtle, --layer-01, --size-01, --text-primary, --text-on-color, --line-height-02, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid --border-subtle;
-  background-color: --background-01;
+  background-color: --background;
 
   &.headerExternal {
     padding: 1rem;
@@ -85,7 +85,7 @@
 
 .sidebar {
   font-family: --font-family;
-  background-color: --background-01;
+  background-color: --background;
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
@@ -355,7 +355,7 @@
   align-items: center;
   justify-content: center;
   border-top: 1px solid --border-subtle;
-  background-color: --background-01;
+  background-color: --background;
 }
 
 .navbarList {

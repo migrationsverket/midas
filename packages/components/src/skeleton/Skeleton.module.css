@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --field-skeleton, --background-inverse-01 from tokens;
+@value --field-skeleton, --background-inverse from tokens;
 
 @keyframes wave {
   0% {
@@ -37,7 +37,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    --background-inverse-01,
+    --background-inverse,
     transparent
   );
   animation: wave 2s infinite ease-in-out;

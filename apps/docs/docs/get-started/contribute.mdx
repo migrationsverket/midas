@@ -104,10 +104,11 @@ Ta dig gärna tid att läsa igenom [conventional commit summary](https://www.con
 och försök jobba enligt det flödet.
 
 :::tip
+
 - Jobbar du ensam i en feature branch och vill städa upp? Använd `git rebase -i`
 - Har du en feature branch som egentligen bara rör ett fåtal områden? Då kanske du vill vara mindre strikt
-med commits och använda `git squash` istället
-:::
+  med commits och använda `git squash` istället
+  :::
 
 ## Bygga komponenter
 
@@ -116,7 +117,6 @@ med commits och använda `git squash` istället
 Generellt, använd övriga komponenter som referens när nya läggs till. React Aria är en bra inspiration för namngivning
 och struktur, både via deras ostylade komponentbibliotek och via sin designsystemsimplementation
 [React Spectrum](https://github.com/adobe/react-spectrum/tree/main/packages/%40react-spectrum).
-
 
 - Målet är små funktioner, små komponenter, clean code. Det uppmuntras att hela tiden göra inkrementella förbättringar
 - Formatera enligt <Link href='https://prettier.io/'>{'Prettier'}</Link> standard
@@ -143,7 +143,6 @@ konventioner är att det följer med mycket gratis i form av stöd för skärml�
 Ur perspektivet att tillgänglighet är ett av designsystemets viktigaste fokusområden är det viktigt att vi regressionstestar och testar
 så stor del av möjliga states av alla komponenter på enhetsnivå. MIDAS använder primärt
 [Storybook som testplattform](https://storybook.js.org/docs/writing-tests).
-
 
 ### Skapa stories
 

@@ -30,8 +30,8 @@ export const Flex: React.FC<FlexProps> = ({
 }) => {
   return (
     <div
-      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
       {...rest}
+      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
     >
       <div className={styles.flex}>{children}</div>
     </div>

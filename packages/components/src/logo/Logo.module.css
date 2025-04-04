@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --logo-primary, --background-inverse-01 from tokens;
+@value --logo-primary, --background-inverse from tokens;
 
 .container {
   padding: 1rem;
@@ -20,7 +20,7 @@
 }
 
 .dark {
-  fill: --background-inverse-01;
+  fill: --background-inverse;
 }
 
 .xSmall {
