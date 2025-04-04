@@ -10,12 +10,14 @@ import { baseColors, semantic } from '@midas-ds/components/theme'
 Här kan du läsa om hur vi använder färger i Midas och hur de är tokeniserade. Tokens är en del av vår design och används för att skapa enhetlighet och konsekvens i våra produkter. Vi har definierat ett antal färger, typsnitt och storlekar som används genom hela vår plattform.
 
 <div style={{ display: 'flex', flexFlow: 'row wrap', marginBottom: '2rem' }}>
-  {Object.entries(baseColors).map(([key, value]) => (
-    <div
-      style={{ backgroundColor: value, width: 60, height: 60 }}
-      key={key}
-    />
-  ))}
+  {Object.entries(baseColors)
+    .filter(([key]) => key.startsWith('gray') || key.startsWith('blue') || key.startsWith('signal'))
+    .map(([key, value]) => (
+      <div
+        style={{ backgroundColor: value, width: 60, height: 60 }}
+        key={key}
+      />
+    ))}
 </div>
 
 ```tsx
