@@ -42,7 +42,7 @@ export const Sidebar: React.FC = () => {
 
   React.useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' && setIsOpened !== undefined) {
         setIsOpened(false)
       }
     }
@@ -77,7 +77,10 @@ export const Sidebar: React.FC = () => {
           )}
         </Button>
       </div>
-      <nav className={styles.sidebarNav}>
+      <nav
+        className={styles.sidebarNav}
+        aria-label='Sidomeny'
+      >
         <ul className={styles.list}>
           {items.map((group, i) => (
             <li key={'list_' + i}>
