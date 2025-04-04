@@ -22,22 +22,26 @@ const meta: Meta<typeof DateRangePicker> = {
       },
     },
   },
-}
-export default meta
-type Story = StoryObj<typeof DateRangePicker>
-
-export const Primary: Story = {
   args: {
     label: 'Välj datum',
     description: 'Beskrivning',
     errorMessage: 'Felmeddelande',
+    errorPosition: 'top',
   },
 }
+export default meta
+type Story = StoryObj<typeof DateRangePicker>
+
+export const Primary: Story = {}
 
 export const Disabled: Story = {
   args: {
-    label: 'Välj datum',
-    description: 'Beskrivning',
     isDisabled: true,
+  },
+}
+
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
   },
 }

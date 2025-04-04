@@ -10,6 +10,7 @@ import * as React from 'react'
 import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
+import { type ErrorPosition } from '../field-error'
 
 export interface SearchFieldProps
   extends Omit<AriaSearchFieldProps, 'isRequired'> {
@@ -25,6 +26,7 @@ export interface SearchFieldProps
    * A custom error message if using the isInvalid prop.
    */
   errorMessage?: string
+  errorPosition?: ErrorPosition
 }
 
 function isValidationError(
@@ -33,7 +35,10 @@ function isValidationError(
   return !!(error as ValidationError)?.length
 }
 
-export const SearchField: React.FC<SearchFieldProps> = props => {
+export const SearchField: React.FC<SearchFieldProps> = ({
+  errorPosition = 'top',
+  ...props
+}) => {
   const { value, setValue } = useSearchFieldState(props)
 
   const ref = React.useRef<HTMLInputElement>(null)
@@ -83,7 +88,7 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
 
   return (
     <div>
-      {isInvalid && (
+      {isInvalid && errorPosition === 'top' && (
         <div
           {...errorMessageProps}
           className={styles.fieldError}
@@ -140,6 +145,14 @@ export const SearchField: React.FC<SearchFieldProps> = props => {
           {props.buttonText ? props.buttonText : 'Sök'}
         </Button>
       </div>
+      {isInvalid && errorPosition === 'bottom' && (
+        <div
+          {...errorMessageProps}
+          className={styles.fieldError}
+        >
+          {props.errorMessage ?? validationErrors.join(' ')}
+        </div>
+      )}
     </div>
   )
 }

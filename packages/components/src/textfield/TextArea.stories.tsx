@@ -13,6 +13,7 @@ export default {
   args: {
     label: 'Label',
     description: 'Description',
+    errorPosition: 'top',
   },
 } as Meta<typeof TextField>
 

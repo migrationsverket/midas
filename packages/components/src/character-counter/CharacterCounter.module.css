@@ -10,6 +10,11 @@
   text-align: right;
   grid-area: Count;
   align-self: flex-end;
+  margin-bottom: 0.5rem;
+
+  &[data-lonely] {
+    margin-bottom: 0.25rem;
+  }
 
   &[data-exceeded] {
     color: --text-invalid;

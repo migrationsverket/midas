@@ -8,8 +8,10 @@ const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
   tags: ['autodocs'],
   args: {
-    label: 'Group label',
+    label: 'Välj frukt',
+    description: 'Valfri beskrivning',
     errorMessage: 'Du måste välja en frukt?',
+    errorPosition: 'top',
   },
   argTypes: {
     children: { table: { disable: true } },

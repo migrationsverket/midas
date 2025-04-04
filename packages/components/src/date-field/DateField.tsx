@@ -5,18 +5,22 @@ import {
   DateInput,
   DateSegment,
   DateValue,
-  ValidationResult,
 } from 'react-aria-components'
 import { Text } from '../text'
 import { Label } from '../label'
-import { FieldError } from '../field-error'
+import {
+  type ErrorMessage,
+  FieldError,
+  type ErrorPosition,
+} from '../field-error'
 import styles from './DateField.module.css'
 import clsx from 'clsx'
 
 interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
   label?: string
   description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorMessage?: ErrorMessage
+  errorPosition?: ErrorPosition
 }
 
 export function DateField<T extends DateValue>({
@@ -24,6 +28,7 @@ export function DateField<T extends DateValue>({
   description,
   errorMessage,
   className,
+  errorPosition = 'top',
   ...props
 }: DateFieldProps<T>) {
   return (
@@ -37,7 +42,7 @@ export function DateField<T extends DateValue>({
     >
       <Label variant='label-02'>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DateInput className={styles.inputField}>
         {segment => (
           <DateSegment
@@ -46,6 +51,7 @@ export function DateField<T extends DateValue>({
           />
         )}
       </DateInput>
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
     </AriaDateField>
   )
 }

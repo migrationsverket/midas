@@ -6,20 +6,26 @@ import {
 } from 'react-aria-components'
 import styles from './CharacterCounter.module.css'
 
-export const CharacterCounter = React.forwardRef<HTMLInputElement, InputProps>(
-  (props, ref) => {
-    ;[props] = useContextProps(props, ref, InputContext)
-    const { maxLength, value } = props
-    const { length } = value?.toString() ?? ''
-    const isMaxLengthDefined = maxLength !== undefined
+export interface CharacterCounterProps extends InputProps {
+  isLonely?: boolean
+}
 
-    return (
-      <span
-        className={styles.characterCounter}
-        data-exceeded={(isMaxLengthDefined && length > maxLength) || undefined}
-      >
-        {isMaxLengthDefined ? `${length} / ${maxLength}` : length}
-      </span>
-    )
-  },
-)
+export const CharacterCounter = React.forwardRef<
+  HTMLInputElement,
+  CharacterCounterProps
+>((props, ref) => {
+  ;[props] = useContextProps(props, ref, InputContext)
+  const { maxLength, value, isLonely } = props
+  const { length } = value?.toString() ?? ''
+  const isMaxLengthDefined = maxLength !== undefined
+
+  return (
+    <span
+      className={styles.characterCounter}
+      data-exceeded={(isMaxLengthDefined && length > maxLength) || undefined}
+      data-lonely={isLonely || undefined}
+    >
+      {isMaxLengthDefined ? `${length} / ${maxLength}` : length}
+    </span>
+  )
+})
