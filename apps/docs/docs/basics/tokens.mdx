@@ -1,0 +1,476 @@
+---
+id: tokens
+title: Färger och tokens
+sidebar_label: Färger
+---
+
+import { Flex, FlexItem, Text, Heading } from '@midas-ds/components'
+import { baseColors, semantic } from '@midas-ds/components/theme'
+
+Här kan du läsa om hur vi använder färger i Midas och hur de är tokeniserade. Tokens är en del av vår design och används för att skapa enhetlighet och konsekvens i våra produkter. Vi har definierat ett antal färger, typsnitt och storlekar som används genom hela vår plattform.
+
+<div style={{ display: 'flex', flexFlow: 'row wrap', marginBottom: '2rem' }}>
+  {Object.entries(baseColors).map(([key, value]) => (
+    <div
+      style={{ backgroundColor: value, width: 60, height: 60 }}
+      key={key}
+    />
+  ))}
+</div>
+
+```tsx
+import { semantic } from '@midas-ds/components/theme'
+```
+
+## Referenser och semantiska tokens
+
+Färger är uppdelade i två grupper: referens och semantiska färger. Referensfärger är de grundläggande enskilda färgvärdena som används för att bygga upp vår palett.
+
+Semantiska färger används för att sätta en färg på element i både ljust och mörk läge. De är döpta för att beskriva vart de bör användas. Nedan ser vi ett enkelt exempel med bakgrund och text med ett token men olika färger i ljust respektive mörkt läge.
+
+<Flex className='docs-card'>
+  <FlexItem col={12}>
+    <Text>Bakgrund: semantic.layer01</Text>
+    <Text>Text: semantic.textPrimary</Text>
+  </FlexItem>
+  <FlexItem
+    col={6}
+    style={{ backgroundColor: semantic.layer01, colorScheme: 'light', padding: '1rem' }}
+  >
+    <Text>Ljust läge</Text>
+  </FlexItem>
+  <FlexItem
+    col={6}
+    style={{ backgroundColor: semantic.layer01, colorScheme: 'dark', padding: '1rem' }}
+  >
+    <Text>Mörkt läge</Text>
+  </FlexItem>
+</Flex>
+
+## Lager
+
+Färgerna är strukturerade i lager. Detta gör det lättare att förstå hur de ska användas. Varje lager representerar en nivå av information eller innehåll. Det första lagret är det mest grundläggande och används för bakgrunder, medan de högre lagren används för text och andra element.
+Det finns två lager: layer01 och layer02. Dessa lager används för att skapa djup och hierarki i designen. De används också för att separera olika delar av gränssnittet.
+
+<Flex
+  fluid
+  className='docs-card'
+>
+  <FlexItem
+    col={6}
+    style={{ colorScheme: 'light', border: '1px solid var(--ifm-color-emphasis-200)' }}
+  >
+    <div style={{ backgroundColor: semantic.background, padding: '1rem' }}>
+      <Text>background</Text>
+      <div style={{ backgroundColor: semantic.layer01, padding: '1rem', margin: '1rem 0' }}>
+        <Text>layer01</Text>
+        <div style={{ backgroundColor: semantic.layer02, padding: '1rem', margin: '1rem 0' }}>
+          <Text>layer02</Text>
+        </div>
+      </div>
+    </div>
+  </FlexItem>
+  <FlexItem
+    col={6}
+    style={{ colorScheme: 'dark' }}
+  >
+    <div style={{ backgroundColor: semantic.background, padding: '1rem' }}>
+      <Text>background</Text>
+      <div style={{ backgroundColor: semantic.layer01, padding: '1rem', margin: '1rem 0' }}>
+        <Text>layer01</Text>
+        <div style={{ backgroundColor: semantic.layer02, padding: '1rem', margin: '1rem 0' }}>
+          <Text>layer02</Text>
+        </div>
+      </div>
+    </div>
+  </FlexItem>
+</Flex>
+
+Båda lagren har även accentfärger som används för att markera viktiga element eller interaktioner. Dessa accentfärger är också namngivna med prefixet "layer" följt av "Accent" och en siffra som anger vilket lager de tillhör. Till exempel `layerAccent02` används för att markera viktiga element på det andra lagret.
+
+## Namngivning
+
+Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "layer", "text", "border" eller "shadow". Detta gör det lättare att förstå hur och var de ska användas.
+
+<Flex className='docs-card'>Här ska till en bild som förklarar hur tokens bygger upp t.ex ett inputfield</Flex>
+
+## Tokenslista
+
+<TokenGroup title='Background'>
+  <Token
+    token='background'
+    desc='Standardbakgrund för våra applikationer'
+  />
+  <Token
+    token='backgroundHover'
+    desc='Hoverfärg för bakgrund'
+  />
+  <Token
+    token='backgroundInverse'
+    desc='Bakgrund eller element i med hög kontrast'
+  />
+</TokenGroup>
+
+<TokenGroup title='Layer'>
+  <Token
+    token='layer01'
+    desc='Yta som används på background. Sekundär bakgrundsfärg'
+  />
+  <Token
+    token='layerHover01'
+    desc='Hover state för layer01'
+  />
+  <Token
+    token='layerSelected01'
+    desc='Selected state för layer01'
+  />
+  <Token
+    token='layerSelectedHover01'
+    desc='Hover state för layerSelected01'
+  />
+  <Token
+    token='layer02'
+    desc='Yta som ligger på layer01'
+  />
+  <Token
+    token='layerHover02'
+    desc='Hover state för layer02'
+  />
+  <Token
+    token='layerSelected02'
+    desc='Selected state för layer02'
+  />
+  <Token
+    token='layerSelectedHover02'
+    desc='Hover state för layerSelected02'
+  />
+</TokenGroup>
+<TokenGroup title='Layer accent'>
+  <Token
+    token='layerAccent01'
+    desc='Accentfärg som används tillsammans med layer01'
+  />
+  <Token
+    token='layerAccentHover01'
+    desc='Hover state för layerAccent01'
+  />
+  <Token
+    token='layerAccentSelected01'
+    desc='Selected state för layerAccent01'
+  />
+  <Token
+    token='layerAccent02'
+    desc='Accentfärg som används tillsammans med layer02'
+  />
+  <Token
+    token='layerAccentHover02'
+    desc='Hover state för layerAccent02'
+  />
+  <Token
+    token='layerAccentSelected02'
+    desc='Selected state för layerAccent02'
+  />
+</TokenGroup>
+<TokenGroup title='Varumärke'>
+  <Token
+    token='brandPrimary'
+    desc='Primära röda färgen'
+  />
+  <Token
+    token='logoPrimary'
+    desc='Färg på logotypen'
+  />
+</TokenGroup>
+<TokenGroup title='Border'>
+  <Token
+    token='borderStrong'
+    desc='Kantlinje med hög kontrast, används med field01'
+  />
+  <Token
+    token='borderMedium'
+    desc='Kantlinje med medelög kontrast'
+  />
+  <Token
+    token='borderSubtle'
+    desc='Kantlinje med låg kontrast'
+  />
+  <Token
+    token='borderBrand'
+    desc='Primärblå kantlinje'
+  />
+  <Token
+    token='borderInvalid'
+    desc='Kantlinje för invalid state'
+  />
+  <Token
+    token='borderDisabled'
+    desc='Kantlinke för disabled state'
+  />
+</TokenGroup>
+<TokenGroup title='Field'>
+  <Token
+    token='field01'
+    desc='Standardfärg för fält, som ligger på background01'
+  />
+  <Token
+    token='fieldHover01'
+    desc='Hover state för field01'
+  />
+  <Token
+    token='fieldActive01'
+    desc='Active state för field01'
+  />
+  <Token
+    token='field02'
+    desc='Sekundfärfärg för fält, som ligger på layer01'
+  />
+  <Token
+    token='fieldHover02'
+    desc='Hover state för field02'
+  />
+  <Token
+    token='fieldActive02'
+    desc='Active state för field02'
+  />
+  <Token
+    token='fieldDisabled'
+    desc='Disabled state för fält'
+  />
+  <Token
+    token='fieldSkeleton'
+    desc='Skeleton state för fält'
+  />
+</TokenGroup>
+<TokenGroup title='Icon'>
+  <Token
+    token='iconPrimary'
+    desc='Primär ikonfärg'
+  />
+  <Token
+    token='iconSecondary'
+    desc='Sekundär ikonfärg'
+  />
+  <Token
+    token='iconInverse'
+    desc='Inverterad ikonfärg, för element på färgad bakgrunder. Ljus ikon i ljust läge och mörk ikon i mörkt läge.'
+  />
+  <Token
+    token='iconOnColor'
+    desc='Ikonfärg på färgade ytor som inte är lager'
+  />
+  <Token
+    token='iconDisabled'
+    desc='Ikoner som är disabled'
+  />
+  <Token
+    token='iconSuccess'
+    desc='Ikonfär för success state'
+  />
+  <Token
+    token='iconInfo'
+    desc='Ikonfärg för informationsikoner'
+  />
+  <Token
+    token='iconWarning'
+    desc='Ikonfärg för varningsikoner och invalid state'
+  />
+  <Token
+    token='iconImportant'
+    desc='Ikonfärg för viktig information'
+  />
+</TokenGroup>
+<TokenGroup title='Link'>
+  <Token
+    token='linkEnabled'
+    desc='Primärlänkfärg'
+  />
+  <Token
+    token='linkHover'
+    desc='Hover state för länkar'
+  />
+  <Token
+    token='linkPressed'
+    desc='Active/pressed state för länkar'
+  />
+  <Token
+    token='linkVisited'
+    desc='Färg för besökta länkar'
+  />
+</TokenGroup>
+<TokenGroup title='Notifikationer'>
+  <Token
+    token='notificationBorderSuccess'
+    desc='Kantlinje för success-notifikationer'
+  />
+  <Token
+    token='notificationBorderInfo'
+    desc='Kantlinje för notifikationer med information'
+  />
+  <Token
+    token='notificationBorderImportant'
+    desc='Kantlinje för notifikationer med viktig information'
+  />
+  <Token
+    token='notificationBorderWarning'
+    desc='Kantlinje för notifikationer med varningar'
+  />
+  <Token
+    token='notificationBackgroundSuccess'
+    desc='Bakgrund för success-notifikationer'
+  />
+  <Token
+    token='notificationBackgroundInfo'
+    desc='Bakgrund för notifikationer med information'
+  />
+  <Token
+    token='notificationBackgroundImportant'
+    desc='Bakgrund för notifikationer med varningar'
+  />
+  <Token
+    token='notificationBackgroundWarning'
+    desc='Bakgrund för notifikationer med viktig information'
+  />
+</TokenGroup>
+<TokenGroup title='Text'>
+  <Token
+    token='textPrimary'
+    desc='Primär textfärg. Rubriker och brödtext.'
+  />
+  <Token
+    token='textSecondary'
+    desc='Sekundär textfärg'
+  />
+  <Token
+    token='textTertiary'
+    desc='Textfärg på tertiär knapp'
+  />
+  <Token
+    token='textOnColor'
+    desc='Textfärg på färgade bakgrunder som inte är lager'
+  />
+  <Token
+    token='textInverse'
+    desc='Inverterad textfärg'
+  />
+  <Token
+    token='textDisabled'
+    desc='Textfärg för disabled state'
+  />
+  <Token
+    token='textInvalid'
+    desc='Textfärg för felmeddelanden'
+  />
+  <Token
+    token='textPlaceholder'
+    desc='Textfärg för platshållare'
+  />
+</TokenGroup>
+<TokenGroup title='Button'>
+  <Token
+    token='buttonBackgroundPrimary'
+    desc='Färg på primärknapp'
+  />
+  <Token
+    token='buttonBackgroundPrimaryHover'
+    desc='Hover state på primärknapp'
+  />
+  <Token
+    token='buttonBackgroundPrimaryActive'
+    desc='Active state för primärknapp'
+  />
+  <Token
+    token='buttonBackgroundSecondary'
+    desc='Färg på sekundärknapp'
+  />
+  <Token
+    token='buttonBackgroundSecondaryHover'
+    desc='Hover state på sekundärknapp'
+  />
+  <Token
+    token='buttonBackgroundSecondaryActive'
+    desc='Active state för sekundärknapp'
+  />
+  <Token
+    token='buttonBackgroundTertiaryHover'
+    desc='Hover state för tertiär knapp'
+  />
+  <Token
+    token='buttonBackgroundTertiaryActive'
+    desc='Active state för tertiär knapp'
+  />
+  <Token
+    token='buttonBackgroundDanger'
+    desc='Färg på danger knapp'
+  />
+  <Token
+    token='buttonBackgroundDangerHover'
+    desc='Hover state för danger knapp'
+  />
+  <Token
+    token='buttonBackgroundDangerActive'
+    desc='Active state för danger knapp'
+  />
+  <Token
+    token='buttonBackgroundDisabled'
+    desc='Disabled state för knappar'
+  />
+  <Token
+    token='buttonBackgroundSkeleton'
+    desc='Skeleton state för knappar'
+  />
+  <Token
+    token='buttonBorderSecondary'
+    desc='Kantfärg för sekundärknapp'
+  />
+</TokenGroup>
+
+export const TokenGroup = ({ title, children }) => {
+  return (
+    <>
+      <Flex fluid>
+        <FlexItem col={12}>
+          <Heading level={3}>{title}</Heading>
+        </FlexItem>
+      </Flex>
+      <Flex
+        fluid
+        className='docs-card'
+      >
+        {children}
+      </Flex>
+    </>
+  )
+}
+
+export const Token = ({token, desc}) => {
+    const tokenValue = semantic[token]
+
+    if (tokenValue === undefined) {
+        console.warn(`Token ${token} not found in semantic tokens`)
+        return null
+    }
+
+    return (
+        <FlexItem col={12} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)', paddingBottom: '1rem' }}>
+            <Flex fluid>
+                <FlexItem col={3}>
+                    <small style={{wordBreak: 'break-all'}}>{token}</small>
+                </FlexItem>
+                <FlexItem col={3}>
+                    <small>{desc}</small>
+                </FlexItem>
+                <FlexItem col={6} style={{alignItems: 'flex-end'}}>
+                    <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
+                        <div style={{display: 'flex', flexDirection: 'column'}}>
+                            <small>Ljust: #{tokenValue.match(/light-dark\(#(.*?),/)[1]}</small>
+                            <small>Mörkt: #{tokenValue.match(/light-dark\(.*?, #(.*?)\)/)[1]}</small>
+                        </div>
+                        <div style={{ colorScheme: 'light', backgroundColor: tokenValue, width: 60, height: 60, border: '1px solid var(--ifm-color-emphasis-100)' }} />
+                        <div style={{ colorScheme: 'dark', backgroundColor: tokenValue, width: 60, height: 60, border: '1px solid var(--ifm-color-emphasis-100)' }} />
+                    </div>
+                </FlexItem>
+            </Flex>
+        </FlexItem>
+    )
+
+}

@@ -63,6 +63,13 @@
   box-shadow: rgb(99 99 99 / 20%) 0 2px 8px 0;
 }
 
+.docs-card {
+  padding: var(--ifm-pre-padding);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: var(--ifm-global-shadow-lw);
+  margin-bottom: 1rem;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark']:root {
   --ifm-color-primary: #4289ad;
