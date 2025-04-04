@@ -12,12 +12,24 @@ Här kan du läsa om hur vi använder färger i Midas och hur de är tokeniserad
 <div style={{ display: 'flex', flexFlow: 'row wrap', marginBottom: '2rem' }}>
   {Object.entries(baseColors)
     .filter(([key]) => key.startsWith('gray') || key.startsWith('blue') || key.startsWith('signal'))
-    .map(([key, value]) => (
-      <div
-        style={{ backgroundColor: value, width: 60, height: 60 }}
-        key={key}
-      />
-    ))}
+    .reduce((acc, [key, value], index, array) => {
+      const prefix = key.split(/(?=[A-Z0-9])/)[0];
+      const lastPrefix = index > 0 ? array[index - 1][0].split(/(?=[A-Z0-9])/)[0] : null;
+
+      if (prefix !== lastPrefix) {
+        acc.push(<div style={{ flexBasis: '100%' }} key={`break-${index}`} />);
+      }
+
+      acc.push(
+        <div
+          style={{ backgroundColor: value, width: 60, height: 60 }}
+          key={key}
+        />
+      );
+
+      return acc;
+    }, [])}
+
 </div>
 
 ```tsx
@@ -254,7 +266,7 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
   />
   <Token
     token='iconInverse'
-    desc='Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge. För färgade plattor har vi iconOnColor'
+    desc='Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge'
   />
   <Token
     token='iconOnColor'
