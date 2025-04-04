@@ -44,3 +44,4 @@ jobs:
           git config --global user.email "bot@midas.dev"
           git config --global user.name "midas.bot"
           npx nx release --skip-publish
+          git push --follow-tags
