@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --background-01, --text-primary, --z-index-modal from tokens;
+@value --font-family, --layer-01, --background, --text-primary, --z-index-modal from tokens;
 
 .modal {
   font-family: --font-family;
@@ -8,7 +8,7 @@
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: --background-01;
+  background-color: --background;
   color: --text-primary;
   border: none;
   padding: 0;

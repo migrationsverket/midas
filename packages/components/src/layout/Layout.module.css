@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-md, --background-01, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
+@value --font-family, --breakpoint-md, --background, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid --border-subtle;
-  background-color: --background-01;
+  background-color: --background;
 
   @media --breakpoint-md {
     padding: 1.25rem 1rem;
@@ -83,7 +83,7 @@
 
 .sidebar {
   font-family: --font-family;
-  background-color: --background-01;
+  background-color: --background;
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
