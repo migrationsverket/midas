@@ -14,6 +14,7 @@ declare global {
   }
 }
 
+// eslint-disable-next-line
 Array.prototype.shuffled = function (count = 5) {
   const result = this.sort(() => Math.random() - Math.random()).slice(0, count)
   return count === 1 ? result[0] : result
@@ -66,7 +67,7 @@ const Playground = ({
       observer.observe(document.body, { childList: true, subtree: true })
 
       return () => observer.disconnect()
-    }, [previewColorMode])
+    }, [])
 
     return (
       <div className={styles.previewToolbar}>
