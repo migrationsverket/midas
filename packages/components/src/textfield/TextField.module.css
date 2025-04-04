@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --field-disabled, --text-primary, --text-invalid, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled from tokens;
+@value --focus, --field-disabled, --text-primary, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
 * {
   font-family: --font-family;
@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
   top: 3px;
-  z-index: 2;
+  z-index: --z-index-base;
   left: 1rem;
   height: calc(100% - 6px);
   width: calc(100% - 2rem);
@@ -146,5 +146,5 @@
   top: 0;
   box-sizing: border-box;
   cursor: pointer;
-  z-index: 3;
+  z-index: calc(--z-index-base + --z-index-above);
 }

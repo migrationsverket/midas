@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-disabled --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --text-invalid, --font-family from tokens;
+@value --text-disabled, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --font-family from tokens;
 
 .combobox {
   font-family: --font-family;
@@ -21,10 +21,6 @@
   /** Temp solution so things look ok while refactoring */
   [slot='description'] {
     grid-area: Desc;
-  }
-
-  &[data-disabled] {
-    color: --text-invalid;
   }
 
   &[data-invalid] .input {
@@ -121,17 +117,6 @@
   width: calc(var(--trigger-width) - 0.125rem);
   background: --layer-02;
   overflow-y: auto;
-}
-
-.fieldError {
-  margin-top: 0.625rem;
-  display: flex;
-  gap: 0.625rem;
-  font-size: 0.875rem;
-
-  & svg {
-    color: --text-invalid;
-  }
 }
 
 .listBoxItem {

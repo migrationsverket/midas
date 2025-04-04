@@ -12,7 +12,7 @@ export const Backdrop: React.FC = () => {
     <div
       className={clsx(styles.backdrop, styles.backdropOpened)}
       onClick={() => {
-        setIsOpened(false)
+        setIsOpened?.(false)
       }}
       aria-hidden
     />

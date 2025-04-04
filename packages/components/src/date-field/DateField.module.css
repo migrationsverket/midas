@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family,--text-placeholder,--text-invalid, --border-invalid, --focus, --field-hover-01, --border-strong, --field-01, --text-primary, --text-disabled from tokens;
+@value --font-family,--text-placeholder, --border-invalid, --focus, --field-hover-01, --border-strong, --field-01, --text-primary, --text-disabled from tokens;
 
 .dateField {
   font-family: --font-family;
