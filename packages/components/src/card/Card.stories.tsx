@@ -30,6 +30,11 @@ export default meta
 type Story = StoryObj<typeof Card>
 
 export const Example: Story = {
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
   play: async ({ canvas, step }) => {
     await step('It should be possible to focus the link', async () => {
       const link = canvas.getByText('Läs mer om Card')

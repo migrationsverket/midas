@@ -76,6 +76,26 @@
         }
       }
     },
+    "test-storybook:dark-mode": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=http://localhost:4400"
+      },
+      "configurations": {
+        "watch": {
+          "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
+        },
+        "remote": {
+          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=https://designsystem.migrationsverket.se/storybook"
+        },
+        "all-browsers": {
+          "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
+        },
+        "ci": {
+          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=http://localhost:6006 --browsers=chromium"
+        }
+      }
+    },
     "generate-dependencies": {
       "dependsOn": [
         {
