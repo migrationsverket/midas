@@ -143,7 +143,8 @@ const config: Config = {
         },
         {
           href: 'https://github.com/migrationsverket/midas',
-          label: 'GitHub',
+          className: 'navbar--github-link',
+          ariaLabel: 'GitHub Repository',
           position: 'right',
         },
       ],
