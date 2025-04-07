@@ -7,7 +7,7 @@ sidebar_label: Färger
 import { Flex, FlexItem, Text } from '@midas-ds/components'
 import { baseColors, semantic } from '@midas-ds/components/theme'
 
-Här kan du läsa om hur vi använder färger i Midas. Vi har definierat ett antal paletter som används i designsystemets komponenter.
+Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga upp interfacet med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.
 
 <div style={{ display: 'flex', flexFlow: 'row wrap', marginBottom: '2rem' }}>
   {Object.entries(baseColors)
@@ -36,9 +36,9 @@ Här kan du läsa om hur vi använder färger i Midas. Vi har definierat ett ant
 import { semantic } from '@midas-ds/components/theme'
 ```
 
-## Referenser och semantiska tokens
+## Färgtokens
 
-Våra färgtokens är uppdelade i två grupper: referenstokens och semantiska tokens.
+För att säkerställa konsekvent användning av färger använder vi designtokens, variabler som representerar färgernas syfte snarare än deras exakta värde. Våra färgtokens är uppdelade i två grupper: referenstokens och semantiska tokens.
 
 ### Referenstokens
 
@@ -69,7 +69,6 @@ Semantiska tokens är kopplade till referenstokens och är döpta för att beskr
 
 ## Lager
 
-Färgerna är strukturerade i lager. Detta gör det lättare att förstå hur de ska användas. Varje lager representerar en nivå av information eller innehåll. Det första lagret är det mest grundläggande och används för bakgrunder, medan de högre lagren används för text och andra element.
 Det finns två lager: layer01 och layer02. Dessa lager används för att skapa djup och hierarki i designen. De används också för att separera olika delar av gränssnittet.
 
 <Flex
