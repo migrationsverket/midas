@@ -1,5 +1,6 @@
 import { CollectionChildren } from '@react-types/shared';
 import { useMultiSelectState } from './useMultiSelectState';
+import { ErrorPosition } from '../field-error';
 import * as React from 'react';
 export type OptionItem = {
     children?: never;
@@ -65,6 +66,7 @@ type SelectProps = {
     isRequired?: boolean;
     /** Name of the field, for uncontrolled use */
     name?: string;
+    errorPosition?: ErrorPosition;
 };
 export declare const SelectComponent: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLButtonElement>>;
 export declare const Select: React.ForwardRefExoticComponent<Omit<SelectProps, "children" | "items"> & {

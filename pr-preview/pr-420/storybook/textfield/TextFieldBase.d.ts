@@ -1,4 +1,5 @@
-import { TextFieldProps, ValidationResult } from 'react-aria-components';
+import { TextFieldProps } from 'react-aria-components';
+import { ErrorMessage, ErrorPosition } from '../field-error';
 import * as React from 'react';
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
     children?: React.ReactNode;
@@ -7,7 +8,8 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
     /** Specify description displayed below the label */
     description?: string;
     /** Custom error messages */
-    errorMessage?: string | ((validation: ValidationResult) => string) | undefined;
+    errorMessage?: ErrorMessage;
+    errorPosition?: ErrorPosition;
     /**
      * Whether to show the character counter or not
      * @default
