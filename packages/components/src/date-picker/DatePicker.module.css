@@ -1,7 +1,6 @@
 @value tokens: "../theme/tokens.css";
 @value --font-family, --field-01, --icon-primary, --border-strong, --border-invalid, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-brand, --button-background-primary from tokens;
 
-
 .datePicker {
   font-family: --font-family;
   display: flex;
