@@ -20,22 +20,24 @@ Följer vi den regeln faller det sig naturligt att de flesta fält i ett formul�
 />
 ```
 
-<Flex>
-  <FlexItem col='6'>
-    <TextField
-      label='Fullständigt namn'
-      description='För och efternamn'
-      isRequired
-      errorMessage='Detta är ett obligatoriskt fält'
-    />
-  </FlexItem>
-  <FlexItem col='6'>
-    <TextField
-      label='Favoritfrukter (Valfritt)'
-      description='Kan lämnas tomt'
-    />
-  </FlexItem>
-</Flex>
+<div className='card'>
+  <Flex>
+    <FlexItem col='6'>
+      <TextField
+        label='Fullständigt namn'
+        description='För och efternamn'
+        isRequired
+        errorMessage='Detta är ett obligatoriskt fält'
+      />
+    </FlexItem>
+    <FlexItem col='6'>
+      <TextField
+        label='Favoritfrukter (Valfritt)'
+        description='Kan lämnas tomt'
+      />
+    </FlexItem>
+  </Flex>
+</div>
 
 ### Undantag 1: Valfria fält är fler än de obligatoriska
 
