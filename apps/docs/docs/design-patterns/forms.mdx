@@ -1,34 +1,43 @@
 # Formulär
 
 import { Flex, FlexItem, TextField } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 ## Obligatorisk vs valfri
 
 Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.
 Följer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten `”(valfritt)”`.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ Flex, FlexItem, TextField }}
->
-  {`<Flex>
-  <FlexItem col="fluid">
-  <TextField
-    label="Skriv ditt fullständiga namn"
-    description="Både för och efternamn"
-    isRequired
-    errorMessage="Detta är ett obligatoriskt fält"
+```jsx
+<TextField
+  label="Fullständigt namn"
+  description="För och efternamn"
+  isRequired
+  errorMessage="Detta är ett obligatoriskt fält"
 />
-  </FlexItem>
-  <FlexItem col="fluid">
-  <TextField
-    label="Skriv dina favoritfrukter (Valfritt)"
-    description="Du kan lämna fältet tomt om du inte har någon favoritfrukt"
+<TextField
+  label="Favoritfrukter (Valfritt)"
+  description="Kan lämnas tomt"
 />
- </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
+```
+
+<div className='card'>
+  <Flex>
+    <FlexItem col='6'>
+      <TextField
+        label='Fullständigt namn'
+        description='För och efternamn'
+        isRequired
+        errorMessage='Detta är ett obligatoriskt fält'
+      />
+    </FlexItem>
+    <FlexItem col='6'>
+      <TextField
+        label='Favoritfrukter (Valfritt)'
+        description='Kan lämnas tomt'
+      />
+    </FlexItem>
+  </Flex>
+</div>
 
 ### Undantag 1: Valfria fält är fler än de obligatoriska
 
@@ -38,3 +47,53 @@ Markera obligatoriska fält med svart asterisk och informera över formuläret a
 
 Markera valfria fält med ”(valfritt)” och obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält
 markeras med en asterisk.
+
+## Position av felmeddelande
+
+### Standard
+
+Som standard visas eventuella felmeddelanden ovanför våra formulärelement.
+
+```jsx
+<TextField
+  label='Skriv ditt fullständiga namn'
+  description='Både för och efternamn'
+  isRequired
+  errorMessage='Detta är ett obligatoriskt fält'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='Skriv ditt fullständiga namn'
+    description='Både för och efternamn'
+    isInvalid
+    errorMessage='Detta är ett obligatoriskt fält'
+  />
+</div>
+
+### Felmeddelande under element
+
+För att visa felmeddelanden under elementet använd attributet `errorPosition` med värdet `bottom`, attributet accepteras av samtliga formulärkomponenter.
+
+```jsx
+<TextField
+  label='Skriv ditt fullständiga namn'
+  description='Både för och efternamn'
+  // highlight-start
+  errorPosition='bottom'
+  // highlight-end
+  isRequired
+  errorMessage='Detta är ett obligatoriskt fält'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='Skriv ditt fullständiga namn'
+    description='Både för och efternamn'
+    isInvalid
+    errorPosition='bottom'
+    errorMessage='Detta är ett obligatoriskt fält'
+  />
+</div>
