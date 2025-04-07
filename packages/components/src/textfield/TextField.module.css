@@ -1,10 +1,6 @@
 @value tokens: "../theme/tokens.css";
 @value --focus, --field-disabled, --text-primary, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
-* {
-  font-family: --font-family;
-}
-
 .textField {
   display: grid;
   grid-auto-columns: 1fr;
@@ -36,6 +32,7 @@
 
 .textArea {
   all: unset;
+  font-family: --font-family;
   display: flex;
   grid-area: Input;
   border-bottom: 1px solid --border-strong;
@@ -87,6 +84,7 @@
 
 .input {
   all: unset;
+  font-family: --font-family;
   grid-area: Input;
   color: --text-primary;
   border-bottom: 1px solid --border-strong;
