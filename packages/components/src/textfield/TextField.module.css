@@ -11,18 +11,22 @@
   grid-auto-rows: 1fr 1fr;
   grid-template-columns: 1fr auto;
   grid-template-rows: min-content min-content min-content min-content;
-  gap: 0.25rem 0.5rem;
   grid-template-areas:
     'Label Count'
     'Desc Count'
     'Error Count'
-    'Input Input';
+    'Input Input'
+    'BottomError BottomError';
   height: 100%;
   width: 100%;
   align-content: flex-end;
 
-  [slot='description'] {
+  > [slot='description'] {
     grid-area: Desc;
+  }
+
+  > .bottomError {
+    grid-area: BottomError;
   }
 
   &[data-disabled] {

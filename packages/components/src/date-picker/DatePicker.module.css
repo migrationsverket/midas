@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.25rem 0.5rem;
 
   &[data-disabled='true'] {
     cursor: not-allowed;
@@ -14,6 +13,7 @@
 }
 
 .inputField {
+  box-sizing: border-box;
   width: 100%;
   min-height: 3rem;
   align-items: center;
