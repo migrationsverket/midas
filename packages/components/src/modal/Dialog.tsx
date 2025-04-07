@@ -129,7 +129,7 @@ export const ModalTrigger: React.FC<
         </MidasModal>
       )}
     </>
-  ) 
+  )
 }
 
 export { DialogTrigger }

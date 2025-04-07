@@ -12,8 +12,9 @@ import { FormExample, ConfirmationExample } from '@site/src/components/examples/
   friendlyName='Modal, Dialog, Dialogruta'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog'
 />
-
-Modaler lägger sig över allt annat innehåll för att fokusera användarens fokus på en sak.
+Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar åtkomst till det underliggande
+lagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det krävs ett
+aktivt svar från användaren.
 
 <FormExample />
 
@@ -108,6 +109,27 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
   </Modal>
 </DialogTrigger>
 ```
+
+## Riktlinjer
+
+### Användning
+
+Använd modaler sparsamt och endast när det är nödvändigt då de skapar avbrott i användarens flöde.
+
+Använd modal för:
+
+- Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras.
+- Enklare formulär
+
+Undvik att använda modal för:
+
+- Varningar. Använd istället [Toast](/components/toast) eller [InfoBanner](/components/info-banner)
+- Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut.
+- Långa formulär
+
+### Knapparnas placering och ordning
+
+Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för [Knappar](/components/button)
 
 ## API
 
