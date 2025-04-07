@@ -144,7 +144,7 @@ const config: Config = {
         {
           href: 'https://github.com/migrationsverket/midas',
           className: 'navbar--github-link',
-          ariaLabel: 'GitHub Repository',
+          'aria-label': 'GitHub Repository',
           position: 'right',
         },
       ],
