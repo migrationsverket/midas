@@ -4,6 +4,7 @@ import React from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
+  ValidationResult,
 } from 'react-aria-components'
 import {
   Button,
@@ -17,21 +18,17 @@ import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
 import { Label } from '../label'
 import { Text } from '../text'
-import {
-  FieldError,
-  type ErrorPosition,
-  type ErrorMessage,
-} from '../field-error'
+import { FieldError } from '../field-error'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
   label?: string
   description?: string
-  errorMessage?: ErrorMessage
+  errorMessage?: string | ((validation: ValidationResult) => string)
   items?: Iterable<T>
   children: React.ReactNode | ((item: T) => React.ReactNode)
   placeholder?: string
-  errorPosition?: ErrorPosition
+  errorPosition?: 'top' | 'bottom'
 }
 
 export function ComboBox<T extends object>({
