@@ -5,6 +5,7 @@
 .label-02 {
   color: --text-primary;
   font-family: --font-family;
+  margin-bottom: 0.25rem;
 
   &:has(~ [data-disabled]) {
     color: --text-disabled;

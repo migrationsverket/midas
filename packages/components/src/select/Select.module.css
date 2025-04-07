@@ -87,8 +87,17 @@
   font-family: --font-family;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
   color: --text-primary;
+
+  > .fieldError {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .selectContainer + .fieldError {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
 
   &[data-disabled] {
     color: --text-disabled;
@@ -99,27 +108,13 @@
   }
 }
 
+.tagGroup {
+  margin-top: 0.25rem;
+}
+
 /* .multiSelectOpen {
   // TODO: some styles here with the border?
 } */
-
-.description {
-  grid-area: Desc;
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin-bottom: 0.25rem;
-}
-
-/* .descriptionActive {
-} */
-
-.descriptionInvalid {
-  margin-bottom: 0;
-}
-
-.descriptionDisabled {
-  color: --text-disabled;
-}
 
 .popover {
   --select-popover-width: max(

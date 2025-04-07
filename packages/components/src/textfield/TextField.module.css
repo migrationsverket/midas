@@ -1,28 +1,28 @@
 @value tokens: "../theme/tokens.css";
 @value --focus, --field-disabled, --text-primary, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
-* {
-  font-family: --font-family;
-}
-
 .textField {
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr 1fr;
   grid-template-columns: 1fr auto;
   grid-template-rows: min-content min-content min-content min-content;
-  gap: 0.25rem 0.5rem;
   grid-template-areas:
     'Label Count'
     'Desc Count'
     'Error Count'
-    'Input Input';
+    'Input Input'
+    'BottomError BottomError';
   height: 100%;
   width: 100%;
   align-content: flex-end;
 
-  [slot='description'] {
+  > [slot='description'] {
     grid-area: Desc;
+  }
+
+  > .bottomError {
+    grid-area: BottomError;
   }
 
   &[data-disabled] {
@@ -32,6 +32,7 @@
 
 .textArea {
   all: unset;
+  font-family: --font-family;
   display: flex;
   grid-area: Input;
   border-bottom: 1px solid --border-strong;
@@ -83,6 +84,7 @@
 
 .input {
   all: unset;
+  font-family: --font-family;
   grid-area: Input;
   color: --text-primary;
   border-bottom: 1px solid --border-strong;

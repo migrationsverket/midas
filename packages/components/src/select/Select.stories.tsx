@@ -19,6 +19,7 @@ const meta: Meta<typeof Select> = {
     placeholder: 'Select an option',
     selectionMode: 'single',
     showTags: false,
+    errorPosition: 'top',
   },
 }
 export default meta

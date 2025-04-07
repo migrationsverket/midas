@@ -9,6 +9,7 @@ const meta: Meta<typeof DatePicker> = {
   args: {
     label: 'Välj datum',
     description: 'Beskrivning',
+    errorPosition: 'top',
   },
   parameters: {
     // UX team rules that placeholder contrast shouldn't be checked
@@ -47,12 +48,19 @@ export const Disabled: Story = {
   },
 }
 
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
+    errorMessage: 'Var god ange ett datum',
+  },
+}
+
 export const Required: Story = {
   args: {
     isRequired: true,
     errorMessage: 'Var god ange ett datum',
   },
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   render: args => (
     <form>
       <DatePicker {...args} />
@@ -81,7 +89,7 @@ export const CustomValiation: Story = {
     validate: ({ year }) =>
       year === new Date().getFullYear() ? 'Var god välj ett annat år' : true,
   },
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   render: args => (
     <form>
       <DatePicker {...args} />
