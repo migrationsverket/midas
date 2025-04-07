@@ -7,7 +7,7 @@ sidebar_label: Färger
 import { Flex, FlexItem, Text, Heading } from '@midas-ds/components'
 import { baseColors, semantic } from '@midas-ds/components/theme'
 
-Här kan du läsa om hur vi använder färger i Midas och hur de är tokeniserade. Tokens är en del av vår design och används för att skapa enhetlighet och konsekvens i våra produkter. Vi har definierat ett antal färger, typsnitt och storlekar som används genom hela vår plattform.
+Här kan du läsa om hur vi använder färger i Midas och hur de är tokeniserade. Tokens är en del av vår design och används för att skapa enhetlighet i våra produkter. Vi har definierat ett antal paletter som används i designsystemets komponenter.
 
 <div style={{ display: 'flex', flexFlow: 'row wrap', marginBottom: '2rem' }}>
   {Object.entries(baseColors)
@@ -38,9 +38,16 @@ import { semantic } from '@midas-ds/components/theme'
 
 ## Referenser och semantiska tokens
 
-Färger är uppdelade i två grupper: referens och semantiska färger. Referensfärger är de grundläggande enskilda färgvärdena som används för att bygga upp vår palett.
+Våra färgtokens är uppdelade i två grupper: referenstokens och semantiska tokens.
 
-Semantiska färger används för att sätta en färg på element i både ljust och mörk läge. De är döpta för att beskriva vart de bör användas. Nedan ser vi ett enkelt exempel med bakgrund och text med ett token men olika färger i ljust respektive mörkt läge.
+### Referenstokens
+
+Referenstokens är direkt kopplade till färgvärden och används för att bygga upp våra paletter. Varje palett har 20 steg, från 10 (ljusast) ill 200 (mörkast). Referenstokens används endast som byggstenar och ska inte användas direkt i koden.
+
+### Semantiska tokens
+
+Semantiska tokens är kopplade till referenstokens. De är döpta för att beskriva vart de bör användas.
+används för att sätta en färg på element i både ljust och mörk läge. Nedan ser vi ett enkelt exempel med bakgrund och text med ett token men olika färger i ljust respektive mörkt läge.
 
 <Flex className='docs-card'>
   <FlexItem col={12}>
