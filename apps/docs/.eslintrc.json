@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "../../.eslintrc.json",
+    "plugin:@nx/react",
+    "plugin:@docusaurus/recommended",
+    "plugin:mdx/recommended"
+  ],
+  "settings": {
+    "mdx/code-blocks": false
+  },
+  "ignorePatterns": ["!**/*", ".docusaurus"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "jsx-a11y/no-autofocus": "off"
+      }
+    }
+  ]
+}
