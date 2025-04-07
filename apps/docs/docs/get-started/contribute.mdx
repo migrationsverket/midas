@@ -2,8 +2,6 @@
 sidebar_label: 'Bidra'
 ---
 
-import { Link } from '@midas-ds/components'
-
 # Bidra till komponentbiblioteket
 
 Att komma igång och bidra med kod till Midas är enkelt!
@@ -72,7 +70,7 @@ Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/
 
 ### Commit
 
-Commits görs enligt <Link href='https://www.conventionalcommits.org/en/v1.0.0/#summary'>{'conventional commits'}</Link>. Använd engelska,
+Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
 imperativ form, definiera type `feat|docs|fix|refactor|test|ci` och scope `(button|etc...)` och lägg till referenser
 till andra issues vid behov. Tänk på att även en merge (med squash) skapar en commit så lägg en extra tanke på
 vilken information som kommer med och inte kommer med. Våra commits är hela projektets historik och är indata till
@@ -119,7 +117,7 @@ och struktur, både via deras ostylade komponentbibliotek och via sin designsyst
 [React Spectrum](https://github.com/adobe/react-spectrum/tree/main/packages/%40react-spectrum).
 
 - Målet är små funktioner, små komponenter, clean code. Det uppmuntras att hela tiden göra inkrementella förbättringar
-- Formatera enligt <Link href='https://prettier.io/'>{'Prettier'}</Link> standard
+- Formatera enligt [Prettier](https://prettier.io/) standard
 - Importera och använd tokens i `[component].module.css` enligt
 
 ```css title="Button.module.css"
@@ -134,7 +132,7 @@ och struktur, både via deras ostylade komponentbibliotek och via sin designsyst
 
 ### Importera headless-bibliotek
 
-Komponenter ska i första hand byggas på <Link href='https://react-spectrum.adobe.com/react-aria/getting-started.html'>{'React Aria'}</Link> i den mån det går. React Aria har ett omfattande bibliotek av
+Komponenter ska i första hand byggas på [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) i den mån det går. React Aria har ett omfattande bibliotek av
 färdiga komponenter och hooks som går att kombinera ihop för att uppnå önskat resultat. Fördelen med att följa React Arias
 konventioner är att det följer med mycket gratis i form av stöd för skärmläsare, tangentbordsnavigation och olika states.
 
@@ -153,16 +151,12 @@ representation av komponenterna.
 ### Dokumentation
 
 Komponenten dokumenteras på dokumentationswebben med lämpliga exempel, beskrivning och properties. Normalt plockas
-properties upp från komponenten via <Link href='https://github.com/styleguidist/react-docgen-typescript'>{'react-docgen-typescript'}</Link>
-men om det har införts nya types eller interfaces kan de behöva specificeras enligt <Link href='https://jsdoc.app/'>{'JSDoc'}</Link>.
+properties upp från komponenten via [react-docgen-typescript](https://github.com/styleguidist/react-docgen-typescript)
+men om det har införts nya types eller interfaces kan de behöva specificeras enligt [JSDoc](https://jsdoc.app/).
 
 ---
 
 ## Arbetsflöde versionshantering
-
-Branch `main` representerar alltid den publicerade versionen av paketet [@midas/components](https://www.npmjs.com/package/@midas-ds/components) samt
-korrekt version av dokumentationen på vår [dokumentationswebb](https://designsystem.migrationsverket.se/). Branch `dev` är arbetsversion och innehåller
-alla features och fixar som har passerat test men ännu inte är släppta. Feature branches som har en PR publiceras på `designsystem.migrationsverket.se/pr-preview/pr-xxx/` som en del i arbetsprocessen.
 
 ```mermaid
     gitGraph

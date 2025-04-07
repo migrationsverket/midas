@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useLocale } from 'react-aria'
-import { I18nProvider, useDateFormatter } from 'react-aria'
+import { I18nProvider } from 'react-aria'
 import { parseDate } from '@internationalized/date'
 import {
   Table,
@@ -71,7 +71,6 @@ export const I18nExample = () => {
 }
 
 function CurrentDate() {
-  let formatter = useDateFormatter()
   return (
     <DateField
       defaultValue={parseDate('2025-02-28')}

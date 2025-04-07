@@ -53,6 +53,7 @@
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
   --ifm-link-color: #2e7ca5;
+  --ifm-link-hover-color: #143c50;
 }
 
 .code-card {
@@ -96,6 +97,7 @@
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
   --ifm-link-color: #4289ad;
+  --ifm-link-hover-color: #5897b8;
 
   .code-card {
     background-color: rgb(203 203 203 / 30%);
@@ -179,10 +181,9 @@ article ul {
   margin-top: unset;
 }
 
-/* p a,
-li:not(.menu__list-item) a {
+p a {
   text-decoration: underline;
-} */
+}
 
 .badge {
   padding: 0.4rem 0.5rem;

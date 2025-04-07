@@ -1,4 +1,4 @@
-import React from 'react'
+import Heading from '@theme/Heading'
 import Layout from '@theme/Layout'
 import { LinkButton, ButtonGroup } from '@midas-ds/components'
 import styles from '../css/index.module.css'
@@ -21,7 +21,12 @@ export default function Startpage() {
         <div className='row row--no-gutters'>
           <div className='col col--6 textColumn'>
             <div className={styles.text}>
-              <h1 className={styles.display1}>Midas</h1>
+              <Heading
+                as='h1'
+                className={styles.display1}
+              >
+                Midas
+              </Heading>
               <p>
                 Midas är Migrationsverkets designsystem för att skapa
                 användarvänliga, tillgängliga och enhetliga tjänster och
