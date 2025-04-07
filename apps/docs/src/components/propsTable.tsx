@@ -36,32 +36,30 @@ export const PropTable = ({ name, defaultOpen = true }) => {
       <table className={styles.table}>
         <thead className={styles.thead}>
           <tr>
-            <th>Namn</th>
-            <th>Typ</th>
-            <th>Standard</th>
-            <th>Beskrivning</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody className={styles.tbody}>
           {Object.keys(propGroup).map(key => {
             return (
               <tr key={key}>
-                <td style={{ verticalAlign: 'top' }}>
+                <td>
                   {key} {props[key].required && ' *'}
                 </td>
-                <td style={{ verticalAlign: 'top', maxWidth: '250px' }}>
+                <td>
                   <code>{props[key].type?.name}</code>
                 </td>
-                <td style={{ verticalAlign: 'top', maxWidth: '50px' }}>
+                <td>
                   {props[key].defaultValue ? (
                     <code>{props[key].defaultValue.value}</code>
                   ) : (
                     '-'
                   )}
                 </td>
-                <td style={{ verticalAlign: 'top' }}>
-                  {props[key].description}
-                </td>
+                <td>{props[key].description}</td>
               </tr>
             )
           })}
