@@ -56,7 +56,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --button-background-disabled;
     border-color: --border-disabled;
   }
@@ -79,7 +79,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: white;
   }
 
@@ -101,7 +101,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
   }
 
   &[data-pressed] {
@@ -121,7 +121,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --button-background-disabled;
   }
 
