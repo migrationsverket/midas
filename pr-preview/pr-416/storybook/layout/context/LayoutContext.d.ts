@@ -9,10 +9,11 @@ interface LayoutContextProps {
     headerChildren: React.ReactNode;
     isCollapsed: boolean;
     setIsCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
-    isOpened: boolean;
-    setIsOpened: React.Dispatch<React.SetStateAction<boolean>>;
+    isOpened?: boolean;
+    setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>;
     clientSideRouter?: (path: string, routerOptions: undefined) => void;
     clientSideHref?: (href: Href) => string;
+    variant: 'internal' | 'external';
 }
 export declare const LayoutProvider: React.FC<LayoutContextProps & {
     children: React.ReactNode;
