@@ -20,7 +20,7 @@ const meta: Meta<typeof Layout> = {
   component: Layout,
   tags: ['autodocs'],
   title: 'Components/Layout',
-  parameters: { layout: 'fullscreen' },
+  parameters: { layout: 'fullscreen', rootElement: 'div' },
 }
 
 export default meta
