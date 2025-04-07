@@ -7,7 +7,7 @@ sidebar_label: Färger
 import { Flex, FlexItem, Text } from '@midas-ds/components'
 import { baseColors, semantic } from '@midas-ds/components/theme'
 
-Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga upp interfacet med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.
+Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.
 
 <ColorSpectrum />
 
@@ -31,11 +31,9 @@ Semantiska tokens är kopplade till referenstokens och är döpta för att beskr
 
 ## Lager
 
-Det finns två lager: layer01 och layer02. Dessa lager används för att skapa djup och hierarki i designen. De används också för att separera olika delar av gränssnittet.
+Lager används för att separera olika delar av gränssnittet. Våra färglägen har olika lagerstrutur: I ljust läge är varannat lager vitt och varannat grått och i mörkt läge är varje lager en ljusare grå än det föregående.
 
 <Layers />
-
-Båda lagren har även accentfärger som används för att markera viktiga element eller interaktioner. Dessa accentfärger är också namngivna med prefixet "layer" följt av "Accent" och en siffra som anger vilket lager de tillhör. Till exempel `layerAccent02` används för att markera viktiga element på det andra lagret.
 
 ## Namngivning
 
