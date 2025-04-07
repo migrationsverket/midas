@@ -5,7 +5,6 @@
   font-family: --font-family;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem 0.5rem;
 
   &[data-disabled] {
     cursor: not-allowed;

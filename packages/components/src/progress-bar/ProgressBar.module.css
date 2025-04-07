@@ -11,10 +11,12 @@
 
   .label {
     grid-area: label;
+    margin: 0;
   }
 
   .value {
     grid-area: value;
+    margin: 0;
   }
 
   .bar {

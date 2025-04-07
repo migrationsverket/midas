@@ -13,6 +13,8 @@ const meta: Meta<typeof ComboBox> = {
   args: {
     label: 'Etikett',
     description: 'Beskrivning',
+    errorMessage: 'Fel!',
+    errorPosition: 'top',
   },
   argTypes: {
     placeholder: { control: 'text' },
@@ -56,7 +58,6 @@ export const Default: Story = {
 export const Invalid: Story = {
   args: {
     isInvalid: true,
-    errorMessage: 'Fel!',
   },
   render: args => (
     <ComboBox {...args}>
