@@ -2,23 +2,11 @@ import React from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import styles from './styles.module.css'
-import { fruits } from '../examples/fruits'
+import { fruits } from '../../utils/fruits'
 import { Accordion, AccordionItem } from '@midas-ds/components'
 import clsx from 'clsx'
 import { useColorMode } from '@docusaurus/theme-common'
 import { PrismConfig } from '@docusaurus/theme-common/lib/utils/useThemeConfig'
-
-declare global {
-  interface Array<T> {
-    shuffled(count?: number): Array<T>
-  }
-}
-
-// eslint-disable-next-line
-Array.prototype.shuffled = function (count = 5) {
-  const result = this.sort(() => Math.random() - Math.random()).slice(0, count)
-  return count === 1 ? result[0] : result
-}
 
 const columns = [
   { name: 'Namn', id: 'name', isRowHeader: true },
