@@ -72,7 +72,7 @@
     "@remix-run/eslint-config": "2.15.2",
     "@remix-run/node": "2.15.2",
     "@remix-run/react": "2.15.2",
-    "@remix-run/serve": "2.15.2",
+    "@remix-run/serve": "2.16.4",
     "@remix-run/testing": "2.15.2",
     "@storybook/addon-a11y": "^8.6.0",
     "@storybook/addon-docs": "^8.6.0",
