@@ -4,8 +4,16 @@
   }
 }
 
+tr {
+  word-break: break-all;
+}
+
+td {
+  min-width: 6rem;
+  vertical-align: top;
+}
+
 .table {
-  width: 100%;
   font-family: 'Inter', sans-serif;
 }
 
@@ -15,10 +23,6 @@
 
 .tbody {
   font-size: 0.875rem;
-
-  code {
-    font-size: 0.75rem;
-  }
 }
 
 .item {

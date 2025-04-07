@@ -132,19 +132,6 @@
   font-size: 1rem;
   min-width: 150px;
 
-  > label:not(:has(+ [slot='description'])) {
-    margin-bottom: 0.25rem;
-  }
-
-  > [slot='description'] {
-    margin-bottom: 0.25rem;
-  }
-
-  > [slot='errorMessage'] {
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
-  }
-
   &[data-disabled] {
     color: --text-disabled;
   }

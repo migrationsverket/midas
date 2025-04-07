@@ -11,6 +11,7 @@ const meta: Meta<typeof SearchField> = {
   },
   args: {
     buttonText: 'Sök',
+    errorPosition: 'top',
   },
 }
 export default meta

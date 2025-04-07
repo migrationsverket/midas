@@ -4,7 +4,6 @@ import {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
-  ValidationResult,
   Button,
   DateInput,
   DatePicker as AriaDatePicker,
@@ -19,7 +18,11 @@ import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { Calendar, RangeCalendar } from '../calendar'
-import { FieldError } from '../field-error'
+import {
+  FieldError,
+  type ErrorMessage,
+  type ErrorPosition,
+} from '../field-error'
 import { Text } from '../text'
 import { Label } from '../label'
 
@@ -27,13 +30,15 @@ interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
   label?: string
   description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorMessage?: ErrorMessage
+  errorPosition?: ErrorPosition
 }
 
 export const DateRangePicker = <T extends DateValue>({
   label,
   description,
   errorMessage,
+  errorPosition = 'top',
   ...props
 }: MidasDateRangePickerProps<T>) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -46,7 +51,7 @@ export const DateRangePicker = <T extends DateValue>({
     >
       <Label variant='label-02'>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={clsx(styles.inputField)}>
         <DateInput
           slot='start'
@@ -87,7 +92,7 @@ export const DateRangePicker = <T extends DateValue>({
           />
         </Button>
       </Group>
-
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       <Popover UNSTABLE_portalContainer={ref.current || undefined}>
         <Dialog className={styles.dialog}>
           <RangeCalendar />
@@ -100,13 +105,15 @@ export const DateRangePicker = <T extends DateValue>({
 interface MidasDatePickerProps<T extends DateValue> extends DatePickerProps<T> {
   label?: string
   description?: string
-  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorMessage?: ErrorMessage
+  errorPosition?: ErrorPosition
 }
 
 export const DatePicker = <T extends DateValue>({
   label,
   description,
   errorMessage,
+  errorPosition = 'top',
   ...props
 }: MidasDatePickerProps<T>) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -119,7 +126,7 @@ export const DatePicker = <T extends DateValue>({
     >
       <Label variant='label-02'>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={clsx(styles.inputField)}>
         <DateInput className={styles.date}>
           {segment => (
@@ -136,7 +143,7 @@ export const DatePicker = <T extends DateValue>({
           />
         </Button>
       </Group>
-
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       <Popover UNSTABLE_portalContainer={ref.current || undefined}>
         <Dialog className={styles.dialog}>
           <Calendar />
