@@ -1,3 +1,15 @@
+## 7.1.0
+
+### 🚀 Features
+
+- ✨💄 add semantic z-index tokens ([#401](https://github.com/migrationsverket/midas/pull/401))
+
+### 🩹 Fixes
+
+- **date-picker:** add missing disabled styles ([10b394897](https://github.com/migrationsverket/midas/commit/10b394897))
+- **combobox:** fix background color to input ([997eac80b](https://github.com/migrationsverket/midas/commit/997eac80b))
+- **theme:** replace invalid text and border colors in dark mode ([3291a9cbd](https://github.com/migrationsverket/midas/commit/3291a9cbd))
+
 # 7.0.0
 
 This was a version bump only for components to align it with other projects, there were no code changes.
