@@ -82,9 +82,9 @@ Det finns två lager: layer01 och layer02. Dessa lager används för att skapa d
   >
     <div style={{ backgroundColor: semantic.background, padding: '1rem' }}>
       <Text>background</Text>
-      <div style={{ backgroundColor: semantic.layer01, padding: '1rem', margin: '1rem 0' }}>
+      <div style={{ backgroundColor: semantic.layer01, padding: '1rem', margin: '1rem 0 0 0' }}>
         <Text>layer01</Text>
-        <div style={{ backgroundColor: semantic.layer02, padding: '1rem', margin: '1rem 0' }}>
+        <div style={{ backgroundColor: semantic.layer02, padding: '1rem', margin: '1rem 0 0 0' }}>
           <Text>layer02</Text>
         </div>
       </div>
@@ -96,9 +96,9 @@ Det finns två lager: layer01 och layer02. Dessa lager används för att skapa d
   >
     <div style={{ backgroundColor: semantic.background, padding: '1rem' }}>
       <Text>background</Text>
-      <div style={{ backgroundColor: semantic.layer01, padding: '1rem', margin: '1rem 0' }}>
+      <div style={{ backgroundColor: semantic.layer01, padding: '1rem', margin: '1rem 0 0 0' }}>
         <Text>layer01</Text>
-        <div style={{ backgroundColor: semantic.layer02, padding: '1rem', margin: '1rem 0' }}>
+        <div style={{ backgroundColor: semantic.layer02, padding: '1rem', margin: '1rem 0 0 0' }}>
           <Text>layer02</Text>
         </div>
       </div>
@@ -116,7 +116,9 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
 
 ## Tokenslista
 
-<TokenGroup title='Background'>
+### Bakgrunder
+
+<TokenGroup>
   <Token
     token='background'
     desc='Standardbakgrund för våra applikationer'
@@ -131,7 +133,9 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
   />
 </TokenGroup>
 
-<TokenGroup title='Layer'>
+### Lager
+
+<TokenGroup>
   <Token
     token='layer01'
     desc='Yta som används på background. Sekundär bakgrundsfärg'
@@ -165,7 +169,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Hover state för layerSelected02'
   />
 </TokenGroup>
-<TokenGroup title='Layer accent'>
+
+### Accentfärger
+
+<TokenGroup>
   <Token
     token='layerAccent01'
     desc='Accentfärg som används tillsammans med layer01'
@@ -191,7 +198,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Selected state för layerAccent02'
   />
 </TokenGroup>
-<TokenGroup title='Varumärke'>
+
+### Varumärke
+
+<TokenGroup>
   <Token
     token='brandPrimary'
     desc='Primära röda färgen'
@@ -201,7 +211,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Färg på logotypen'
   />
 </TokenGroup>
-<TokenGroup title='Border'>
+
+### Kantlinje
+
+<TokenGroup>
   <Token
     token='borderStrong'
     desc='Kantlinje med hög kontrast, används med field01'
@@ -227,7 +240,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Kantlinke för disabled state'
   />
 </TokenGroup>
-<TokenGroup title='Field'>
+
+### Fält
+
+<TokenGroup>
   <Token
     token='field01'
     desc='Standardfärg för fält, som ligger på background'
@@ -261,7 +277,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Skeleton state för fält'
   />
 </TokenGroup>
-<TokenGroup title='Icon'>
+
+### Ikoner
+
+<TokenGroup>
   <Token
     token='iconPrimary'
     desc='Primär ikonfärg'
@@ -299,7 +318,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Ikonfärg för varningsikoner och invalid state'
   />
 </TokenGroup>
-<TokenGroup title='Link'>
+
+### Länkar
+
+<TokenGroup>
   <Token
     token='linkEnabled'
     desc='Primärlänkfärg'
@@ -317,7 +339,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Färg för besökta länkar'
   />
 </TokenGroup>
-<TokenGroup title='Notifikationer'>
+
+### Notifikationer
+
+<TokenGroup>
   <Token
     token='notificationBorderSuccess'
     desc='Kantlinje för success-notifikationer'
@@ -351,7 +376,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Bakgrund för notifikationer med varningar'
   />
 </TokenGroup>
-<TokenGroup title='Text'>
+
+### Text
+
+<TokenGroup>
   <Token
     token='textPrimary'
     desc='Primär textfärg. Rubriker och brödtext.'
@@ -385,7 +413,10 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
     desc='Textfärg för platshållare'
   />
 </TokenGroup>
-<TokenGroup title='Button'>
+
+### Knappar
+
+<TokenGroup>
   <Token
     token='buttonBackgroundPrimary'
     desc='Färg på primärknapp'
@@ -444,21 +475,14 @@ Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "lay
   />
 </TokenGroup>
 
-export const TokenGroup = ({ title, children }) => {
+export const TokenGroup = ({ children }) => {
   return (
-    <>
-      <Flex fluid>
-        <FlexItem col={12}>
-          <Heading level={3}>{title}</Heading>
-        </FlexItem>
-      </Flex>
-      <Flex
-        fluid
-        className='docs-card'
-      >
-        {children}
-      </Flex>
-    </>
+    <Flex
+      fluid
+      className='docs-card'
+    >
+      {children}
+    </Flex>
   )
 }
 
