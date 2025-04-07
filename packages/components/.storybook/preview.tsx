@@ -42,6 +42,9 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
+      const RootTag: React.ElementType =
+        context?.parameters?.rootElement || 'main'
+
       const [colorMode, setColorMode] = React.useState<'light' | 'dark'>(
         getPreferredColorScheme(),
       )
@@ -71,14 +74,14 @@ const preview: Preview = {
       }, [colorMode])
 
       return (
-        <div
+        <RootTag
           style={{
             colorScheme: colorMode,
             backgroundColor: colorMode === 'light' ? 'white' : '#121212',
           }}
         >
           <Story />
-        </div>
+        </RootTag>
       )
     },
   ],

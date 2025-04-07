@@ -5,9 +5,7 @@ description: Modal som lägger sig över allt annat innehåll.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { FormExample, ConfirmationExample } from '@site/src/components/examples/ModalExamples'
-import { Link } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Modal'}
@@ -20,7 +18,7 @@ aktivt svar från användaren.
 
 <FormExample />
 
-## Installation
+## Installation och användning
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -125,13 +123,13 @@ Använd modal för:
 
 Undvik att använda modal för:
 
-- Varningar. Använd istället <Link href="/components/toast" >Toast</Link> eller <Link href="/components/info-banner" >InfoBanner</Link>
+- Varningar. Använd istället [Toast](/components/toast) eller [InfoBanner](/components/info-banner)
 - Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut.
 - Långa formulär
 
 ### Knapparnas placering och ordning
 
-Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för <Link href="/components/button" >Knappar</Link>
+Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för [Knappar](/components/button)
 
 ## API
 

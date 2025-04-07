@@ -54,6 +54,7 @@
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
   --ifm-link-color: #2e7ca5;
+  --ifm-link-hover-color: #143c50;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -78,7 +79,7 @@
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
   --ifm-link-color: #4289ad;
-}
+  --ifm-link-hover-color: #5897b8;
 
 .prism-code {
   background-color: var(--ifm-code-background) !important;
@@ -150,6 +151,10 @@ article ul {
 
 .markdown li + li {
   margin-top: unset;
+}
+
+p a {
+  text-decoration: underline;
 }
 
 .badge {
