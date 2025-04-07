@@ -7,24 +7,7 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 import { PropTable } from '@site/src/components/propsTable'
 import { Accordion, AccordionItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Accordion, AccordionItem }}
-      {...props}
-    >
-      {`<Accordion>
-        {fruits.shuffled().map(fruit => (
-          <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-              {fruit.description}
-          </AccordionItem>
-        ))}
-      </Accordion>`}
-    </LiveCodeBlock>
-  )
-}
+import { fruits } from '@site/src/utils/fruits'
 
 <ComponentHeader
   name={'Accordion'}
@@ -34,7 +17,33 @@ export const Example = props => {
 
 Utfällbar komponent som används för att minska informationsmängden som direkt presenteras för användaren.
 
-<Example hideCode />
+```tsx
+<Accordion>
+  {data.map(({ description, name, value }) => (
+    <AccordionItem
+      key={value}
+      id={value}
+      title={name}
+    >
+      {description}
+    </AccordionItem>
+  ))}
+</Accordion>
+```
+
+<div className='card'>
+  <Accordion>
+    {fruits.shuffled().map(({ description, name, value }) => (
+      <AccordionItem
+        key={value}
+        id={value}
+        title={name}
+      >
+        {description}
+      </AccordionItem>
+    ))}
+  </Accordion>
+</div>
 
 ## Installation
 
@@ -46,8 +55,6 @@ npm install @midas-ds/components
 import { Accordion, AccordionItem } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Egenskaper
 
 Accordion har flertalet varianter och egenskaper.
@@ -56,43 +63,109 @@ Accordion har flertalet varianter och egenskaper.
 
 En tydligare variant av layouten när det finns en tydlig gräns mellan varje sektion.
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion variant="contained">
-    {fruits.shuffled().map(fruit => (
-      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-          {fruit.description}
+```tsx
+// highlight-start
+<Accordion variant='contained'>
+  // highlight-end
+  {data.map(({ description, name, value }) => (
+    <AccordionItem
+      key={value}
+      id={value}
+      title={name}
+    >
+      {description}
+    </AccordionItem>
+  ))}
+</Accordion>
+```
+
+<div className='card'>
+  <Accordion variant='contained'>
+    {fruits.shuffled().map(({ description, name, value }) => (
+      <AccordionItem
+        key={value}
+        id={value}
+        title={name}
+      >
+        {description}
       </AccordionItem>
     ))}
-</Accordion>`}
-</LiveCodeBlock>
+  </Accordion>
+</div>
 
 ### Flera öppna samtidigt
 
 En accordion har som standard bara en öppet samtidigt och stänger automatiskt andra sektioner när en ny öppnas. Detta kan ändras genom att sätta `type` till `multiple`.
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion type="multiple">
-    {fruits.shuffled().map(fruit => (
-      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-          {fruit.description}
+```tsx
+// highlight-start
+<Accordion type='multiple'>
+  // highlight-end
+  {data.map(({ description, name, value }) => (
+    <AccordionItem
+      key={value}
+      id={value}
+      title={name}
+    >
+      {description}
+    </AccordionItem>
+  ))}
+</Accordion>
+```
+
+<div className='card'>
+  <Accordion type='multiple'>
+    {fruits.shuffled().map(({ description, name, value }) => (
+      <AccordionItem
+        key={value}
+        id={value}
+        title={name}
+      >
+        {description}
       </AccordionItem>
     ))}
-</Accordion>`}
-</LiveCodeBlock>
+  </Accordion>
+</div>
 
 ### Öppen som standard
 
 En accordion kan ha en eller flera sektioner öppna som standard. Detta görs genom att sätta `defaultExpandedKeys` på `Accordion`. Detta är en array med nycklar för de sektioner som ska vara öppna som standard. Nycklarna bestäms med `id` på respektive `AccordionItem`.
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion type="multiple" defaultExpandedKeys={[2]}>
-    {fruits.shuffled().map((fruit, i) => (
-      <AccordionItem key={fruit.value} id={i} title={fruit.name}>
-          {fruit.description}
+```tsx
+<Accordion
+  type='multiple'
+  // highlight-start
+  defaultExpandedKeys={[2]}
+  // highlight-end
+>
+  {data.map(({ description, name, value }, i) => (
+    <AccordionItem
+      key={value}
+      id={i}
+      title={name}
+    >
+      {description}
+    </AccordionItem>
+  ))}
+</Accordion>
+```
+
+<div className='card'>
+  <Accordion
+    type='multiple'
+    defaultExpandedKeys={[2]}
+  >
+    {fruits.shuffled().map(({ description, name, value }, i) => (
+      <AccordionItem
+        key={value}
+        id={i}
+        title={name}
+      >
+        {description}
       </AccordionItem>
     ))}
-  </Accordion>`}
-</LiveCodeBlock>
+  </Accordion>
+</div>
 
 ## Riktlinjer
 
@@ -102,11 +175,11 @@ En accordion kan ha en eller flera sektioner öppna som standard. Detta görs ge
 
 ### Accordion
 
-<PropTable name={'Accordion'} />
+<PropTable name='Accordion' />
 
 ### AccordionItem
 
 <PropTable
-  name={'AccordionItem'}
+  name='AccordionItem'
   defaultOpen={false}
 />
