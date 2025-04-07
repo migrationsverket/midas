@@ -1,16 +1,11 @@
 import {
   FieldError as AriaFieldError,
   FieldErrorProps,
-  ValidationResult,
 } from 'react-aria-components'
 import * as React from 'react'
 import clsx from 'clsx'
 import styles from './FieldError.module.css'
 import { FieldErrorContext } from 'react-aria-components'
-
-export type ErrorPosition = 'top' | 'bottom'
-
-export type ErrorMessage = string | ((validation: ValidationResult) => string)
 
 export const FieldError = React.forwardRef(
   (props: FieldErrorProps, ref: React.ForwardedRef<HTMLElement>) => {
