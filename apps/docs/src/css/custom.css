@@ -84,7 +84,7 @@
   background-color: var(--ifm-code-background) !important;
   border-radius: 0;
 }
-.theme-code-block:has(+ .card) {
+.theme-code-block:has(~ .card) {
   margin-bottom: 0;
 }
 

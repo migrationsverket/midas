@@ -52,6 +52,10 @@ import { Link } from '@midas-ds/components'
 Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
 </p>
 ```
+<div className={'card'}>
+  <p>Designsystemet utvecklas ständigt,<Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>.
+    Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.</p>
+</div>
 
 ### Fristående
 
@@ -67,10 +71,12 @@ nya komponenter och nya funktioner på befintliga komponenter.</p>
   href="/changelog">
 Se vad som har ändrats i senaste versionen
 </Link>
-
 ```
+<div className={'card'}>
+  <Link standalone href="/changelog">Se vad som har ändrats i senaste versionen</Link>
+</div>
 
-### "Utsträckt"
+### Stretched
 
 Använd `stretched` för att låta hela föräldraelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
 
@@ -94,11 +100,11 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
   </Link>
 </div>
 ```
-
+<div className={'card'}>
 <div
   style={{
     position: 'relative',
-    background: semantic.layer01,
+    background: semantic.layer02,
     padding: '1rem',
   }}
 >
@@ -108,6 +114,7 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
     ytan.
   </p>
   <Link standalone stretched href='#'>Läs mer om designsystemets nyheter</Link>
+</div>
 </div>
 
 ## Riktlinjer
