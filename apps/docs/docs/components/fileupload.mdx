@@ -9,9 +9,8 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 export const Example = props => {
   return (
     <FileUpload
-      allowsMultiple
-      label={'Välj filer att ladda upp'}
-      description={'Du kan välja flera filer!'}
+      label={'Välj en fil att ladda upp'}
+      description={'Du kan välja en fil!'}
     />
   )
 }
@@ -21,14 +20,6 @@ export const Example = props => {
   friendlyName={'Filuppladdning'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
 />
-
-```tsx
-<FileUpload
-  allowsMultiple
-  label={'Välj filer att ladda upp'}
-  description={'Du kan välja flera filer!'}
-/>
-```
 
 Komponent som används när användaren behöver ladda upp filer från det egen filsystemet.
 
@@ -46,10 +37,41 @@ import { FileUpload } from '@midas-ds/components'
 
 ```tsx
 <FileUpload
-  allowsMultiple
   label={'Välj filer att ladda upp'}
   description={'Du kan välja flera filer!'}
 />
 ```
 
 <Example hideExample />
+
+## Varianter
+
+### välj en fil
+
+```tsx
+<FileUpload
+  label={'Välj en fil att ladda upp'}
+  description={'Du kan välja en fil!'}
+/>
+```
+
+<FileUpload
+  label={'Välj en fil att ladda upp'}
+  description={'Du kan välja en fil!'}
+/>
+
+### Välj flera filer
+
+```tsx
+<FileUpload
+  allowsMultiple
+  label={'Välj filer att ladda upp'}
+  description={'Du kan välja flera filer!'}
+/>
+```
+
+<FileUpload
+  allowsMultiple
+  label={'Välj filer att ladda upp'}
+  description={'Du kan välja flera filer!'}
+/>
