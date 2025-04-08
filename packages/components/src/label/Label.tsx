@@ -6,13 +6,11 @@ import {
 } from 'react-aria-components'
 import styles from './Label.module.css'
 
-export type LabelVariant = 'label-01' | 'label-02'
-
 export interface LabelProps extends AriaLabelProps {
   /**
    * The visual variant of the component
    */
-  variant?: LabelVariant
+  variant?: 'label-01' | 'label-02'
 }
 
 const DEFAULT_ELEMENT = 'label'
@@ -24,7 +22,7 @@ export const Label: React.FC<LabelProps> = ({
   elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
-  const classNames: Record<LabelVariant, string> = {
+  const classNames: Record<'label-01' | 'label-02', string> = {
     'label-01': styles['label-01'],
     'label-02': styles['label-02'],
   }
