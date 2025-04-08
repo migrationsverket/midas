@@ -12,17 +12,14 @@ import {
   Dialog,
   Group,
   Popover,
+  ValidationResult,
 } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { Calendar, RangeCalendar } from '../calendar'
-import {
-  FieldError,
-  type ErrorMessage,
-  type ErrorPosition,
-} from '../field-error'
+import { FieldError } from '../field-error'
 import { Text } from '../text'
 import { Label } from '../label'
 
@@ -30,8 +27,8 @@ interface MidasDateRangePickerProps<T extends DateValue>
   extends DateRangePickerProps<T> {
   label?: string
   description?: string
-  errorMessage?: ErrorMessage
-  errorPosition?: ErrorPosition
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const DateRangePicker = <T extends DateValue>({
@@ -105,8 +102,8 @@ export const DateRangePicker = <T extends DateValue>({
 interface MidasDatePickerProps<T extends DateValue> extends DatePickerProps<T> {
   label?: string
   description?: string
-  errorMessage?: ErrorMessage
-  errorPosition?: ErrorPosition
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const DatePicker = <T extends DateValue>({

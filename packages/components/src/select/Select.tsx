@@ -14,7 +14,7 @@ import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
 import { ChevronDown, X } from 'lucide-react'
 import { TagGroup, Tag } from '../tag'
-import { type ErrorPosition, FieldError } from '../field-error'
+import { FieldError } from '../field-error'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { Label } from '../label'
@@ -111,7 +111,7 @@ type SelectProps = {
   isRequired?: boolean
   /** Name of the field, for uncontrolled use */
   name?: string
-  errorPosition?: ErrorPosition
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
