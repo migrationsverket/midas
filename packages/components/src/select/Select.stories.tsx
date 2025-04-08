@@ -214,7 +214,7 @@ export const RequiredMultiple: Story = {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeInvalid()
+      await expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeInvalid()
     })
 
     // Select a value then submit again
@@ -227,7 +227,7 @@ export const RequiredMultiple: Story = {
         await userEvent.tab()
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeValid()
+        await expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeValid()
       },
     )
   },
@@ -246,7 +246,7 @@ export const RequiredSingle: Story = {
       await userEvent.tab()
       await userEvent.tab()
       await userEvent.keyboard('[Enter]')
-      expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeInvalid()
+      await expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeInvalid()
     })
 
     // Select a value then submit again
@@ -257,7 +257,7 @@ export const RequiredSingle: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeValid()
+        await expect(canvas.getByLabelText(`${args.label}-hidden`)).toBeValid()
       },
     )
   },
