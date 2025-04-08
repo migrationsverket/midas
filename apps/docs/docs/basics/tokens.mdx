@@ -1,6 +1,6 @@
 ---
 id: tokens
-title: Färger och tokens
+title: Färger
 sidebar_label: Färger
 ---
 
@@ -21,29 +21,23 @@ För att säkerställa konsekvent användning av färger använder vi designtoke
 
 ### Referenstokens
 
-Referenstokens är direkt kopplade till färger och används för att bygga upp våra paletter. Varje palett har 20 steg, från 10 (ljusast) till 200 (mörkast). Referenstokens används endast som byggstenar och ska inte refereras till i koden. Där används istället semantiska tokens.
+Referenstokens är direkt kopplade till färger och används för att bygga upp våra paletter. Referenstokens används endast som byggstenar och ska inte refereras till i koden. Där används istället semantiska tokens.
 
 ### Semantiska tokens
 
-Semantiska tokens är kopplade till referenstokens och är döpta för att beskriva var de bör användas. Varje semantisk token har två referenstokens kopplade till sig, en för ljust och en för mörk läge. Nedan ser vi ett enkelt exempel med bakgrund och text med en semantisk token men olika färger i ljust respektive mörkt läge.
+Semantiska tokens är kopplade till referenstokens och är döpta för att beskriva var de bör användas. De flesta börjar med ett prefix som anger deras syfte, t.ex "layer", "text" eller "border". Varje semantisk token har två referenstokens kopplade till sig, en för ljust och en för mörk läge.
 
-<SemanticTokens />
+<TokenNaming />
 
 ## Lager
 
-Vissa av våra tokens är kopplade till specifika lager, vilket indikeras av ett nummer i slutet av namnet: antingen 01 eller 02. Tokens som slutar på 01 (t.ex. `field01`) tillhör lager 1 och tokens som slutar på 02 tillhör lager 2. Alla tokens med samma nummer används tillsammans inom samma lager. Numreringen ger också lagerstrukturen: tokens som slutar på 01 (t.ex. `field01`) ligger på `background` (lager 0) och tokens som slutar på 02 ligger på `layer01`.
+Vissa av våra tokens är kopplade till ett specifikt lager, vilket indikeras av att de slutar med 01 eller 02. Tokens med samma nummer används alltid tillsammans när vi bygger komponenter. Numreringen används också för att avgöra vilka tokens som ska användas beroende på vilket lager en komponent ligger på. Tokens som slutar på 01 (t.ex. `field01`) används när en komponent ligger på `background` och tokens som slutar på 02 används när komponenten ligger på `layer01`.
 
 I ljust läge växlar färgerna mellan vitt och grått för varje lager medan varje nytt lager i mörkt läge får en ljusare grå nyans än det föregående, se exempel nedan.
 
 <Layers />
 
-## Namngivning
-
-Tokens är namngivna med en prefix som anger deras syfte. Prefixet kan vara "layer", "text", "border" eller "shadow". Detta gör det lättare att förstå hur och var de ska användas.
-
-<TokenNaming />
-
-## Tokenslista
+## Lista över semantiska tokens
 
 ### Bakgrunder
 
