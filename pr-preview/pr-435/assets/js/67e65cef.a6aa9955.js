@@ -196,7 +196,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<InfoBanner\n  type={'success'}\n  title={'Det gick bra!'}\n  message={'Detta är ett meddelande om att allt gick bra.'}\n/>\n"
+        children: "<InfoBanner\n  // highlight-start\n  type={'success'}\n  // highlight-end\n  title={'Det gick bra!'}\n  message={'Detta är ett meddelande om att allt gick bra.'}\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(InfoBanner, {
       type: 'success',
@@ -208,7 +208,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<InfoBanner\n  type={'info'}\n  title={'Information'}\n  message={'Detta är ett meddelande med information.'}\n/>\n"
+        children: "<InfoBanner\n  // highlight-start\n  type={'info'}\n  // highlight-end\n  title={'Information'}\n  message={'Detta är ett meddelande med information.'}\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(InfoBanner, {
       type: 'info',
@@ -220,7 +220,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<InfoBanner\n  type={'important'}\n  title={'Viktig information'}\n  message={'Detta är ett meddelande med viktig information.'}\n/>\n"
+        children: "<InfoBanner\n  // highlight-start\n  type={'important'}\n  // highlight-end\n  title={'Viktig information'}\n  message={'Detta är ett meddelande med viktig information.'}\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(InfoBanner, {
       type: 'important',
@@ -232,7 +232,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<InfoBanner\n  type={'warning'}\n  title={'Varning'}\n  message={'Detta är en varning som används när något gått fel.'}\n/>\n"
+        children: "<InfoBanner\n  // highlight-start\n  type={'warning'}\n  // highlight-end\n  title={'Varning'}\n  message={'Detta är en varning som används när något gått fel.'}\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(InfoBanner, {
       type: 'warning',
@@ -248,7 +248,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<InfoBanner\n  dismissable\n  type={'success'}\n  title={'Det gick bra!'}\n  message={'Detta är ett meddelande om att allt gick bra.'}\n/>\n"
+        children: "<InfoBanner\n  // highlight-start\n  dismissable\n  // highlight-end\n  type={'success'}\n  title={'Det gick bra!'}\n  message={'Detta är ett meddelande om att allt gick bra.'}\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(InfoBanner, {
       dismissable: true,
