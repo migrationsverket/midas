@@ -21,7 +21,7 @@ För att säkerställa konsekvent användning av färger använder vi designtoke
 
 ### Referenstokens
 
-Referenstokens är direkt kopplade till färgvärden och används för att bygga upp våra paletter. Varje palett har 20 steg, från 10 (ljusast) till 200 (mörkast). Referenstokens används endast som byggstenar och ska inte användas direkt i koden. Där används istället semantiska tokens.
+Referenstokens är direkt kopplade till färger och används för att bygga upp våra paletter. Varje palett har 20 steg, från 10 (ljusast) till 200 (mörkast). Referenstokens används endast som byggstenar och ska inte refereras till i koden. Där används istället semantiska tokens.
 
 ### Semantiska tokens
 
@@ -31,7 +31,10 @@ Semantiska tokens är kopplade till referenstokens och är döpta för att beskr
 
 ## Lager
 
-Lager används för att separera olika delar av gränssnittet. Våra färglägen har olika lagerstrutur: I ljust läge är varannat lager vitt och varannat grått och i mörkt läge är varje lager en ljusare grå än det föregående.
+Vissa av våra tokens hör till ett specifikt lager. Dessa tokens har ett nummer (01 eller 02) efter namnet och alla med samma nummer hör till ett lager och används tillsammans.
+Numreringen används också för att skapa ordningen på lager: Tokens som slutar på 01 (t.ex. `field01`) ligger på `background` (lager 0) och tokens som slutar på 02 ligger på `layer01`.
+
+I ljust läge är varannat lager vitt och varannat grått och i mörkt läge är varje nytt lager en ljusare grå än det föregående.
 
 <Layers />
 
