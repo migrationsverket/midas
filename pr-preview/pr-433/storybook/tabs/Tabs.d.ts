@@ -1,9 +1,9 @@
 import * as React from 'react';
-export interface TabsProps<T extends string> {
+export interface TabsProps {
     /**
      * An array of tab titles
      */
-    tabs: T[];
+    tabs: string[];
     /**
      * Label for accessibility
      */
@@ -11,10 +11,10 @@ export interface TabsProps<T extends string> {
     /**
      * Choose another than the first tab to be selected by default. Name must match one of the tabs
      */
-    defaultSelected?: T;
+    defaultSelected?: string;
     /**
      * Amount of children must match the amount of tabs
      */
     children: React.ReactNode;
 }
-export declare const Tabs: <T extends string>({ tabs, label, defaultSelected, children, }: TabsProps<T>) => import("react/jsx-runtime").JSX.Element;
+export declare const Tabs: React.FC<TabsProps>;
