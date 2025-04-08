@@ -1,5 +1,4 @@
 import { SearchFieldProps as AriaSearchFieldProps } from 'react-aria-components';
-import { ErrorPosition } from '../field-error';
 import * as React from 'react';
 export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'isRequired'> {
     /** Placeholder text */
@@ -14,6 +13,6 @@ export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'isRequired
      * A custom error message if using the isInvalid prop.
      */
     errorMessage?: string;
-    errorPosition?: ErrorPosition;
+    errorPosition?: 'top' | 'bottom';
 }
 export declare const SearchField: React.FC<SearchFieldProps>;
