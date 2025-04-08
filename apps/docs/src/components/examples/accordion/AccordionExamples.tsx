@@ -33,10 +33,19 @@ export const AccordionExample = (
 }
 
 export const AccordionExampleControlled = (props: typeof Accordion) => {
-  const [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(new Set(['mandarin']))
+  const [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(
+    new Set(['mandarin']),
+  )
   return (
-    <div className={'card'} style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
-      <Accordion {...props} expandedKeys={expandedKeys} onExpandedChange={setExpandedKeys}>
+    <div
+      className={'card'}
+      style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
+    >
+      <Accordion
+        {...props}
+        expandedKeys={expandedKeys}
+        onExpandedChange={setExpandedKeys}
+      >
         <AccordionItem
           {...props}
           id={'mandarin'}
@@ -57,7 +66,9 @@ export const AccordionExampleControlled = (props: typeof Accordion) => {
           Stor frukt med rött, saftigt kött
         </AccordionItem>
       </Accordion>
-      <pre>Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}</pre>
+      <pre>
+        Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}
+      </pre>
     </div>
   )
 }

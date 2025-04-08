@@ -8,7 +8,6 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link } from '@midas-ds/components'
 import { semantic } from '@midas-ds/components/theme'
 
-
 <ComponentHeader
   name={'Link'}
   friendlyName={'Länk'}
@@ -23,12 +22,12 @@ Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående
   dokumenterar vi de senaste ändringarna i komponenterna.
 </p>
 ```
+
 <div className={'card'}>
   <p>
     I vår <Link href='/changelog'>Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.
   </p>
 </div>
-
 
 ## Installation
 
@@ -45,16 +44,19 @@ import { Link } from '@midas-ds/components'
 ### Länk
 
 ```tsx title="default"
-<p> Designsystemet utvecklas ständigt,
-//highlight-start
+<p>
+  {' '}
+  Designsystemet utvecklas ständigt, //highlight-start
   <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>
-//highlight-end
-Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
+  //highlight-end Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
 </p>
 ```
+
 <div className={'card'}>
-  <p>Designsystemet utvecklas ständigt,<Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>.
-    Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.</p>
+  <p>
+    Designsystemet utvecklas ständigt,<Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>. Vi släpper
+    kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
+  </p>
 </div>
 
 ### Fristående
@@ -72,8 +74,14 @@ nya komponenter och nya funktioner på befintliga komponenter.</p>
 Se vad som har ändrats i senaste versionen
 </Link>
 ```
+
 <div className={'card'}>
-  <Link standalone href="/changelog">Se vad som har ändrats i senaste versionen</Link>
+  <Link
+    standalone
+    href='/changelog'
+  >
+    Se vad som har ändrats i senaste versionen
+  </Link>
 </div>
 
 ### Stretched
@@ -81,12 +89,9 @@ Se vad som har ändrats i senaste versionen
 Använd `stretched` för att låta hela föräldraelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
 
 ```tsx title="stretched"
-<div
-  style={{position: 'relative'}}
->
+<div style={{ position: 'relative' }}>
   <p>
-    Designsystemet utvecklas ständigt. Vi släpper kontinuerligt
-    nya versioner med buggfixar, nya komponenter och nya
+    Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya
     funktioner på befintliga komponenter.
   </p>
   <Link
@@ -100,21 +105,28 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
   </Link>
 </div>
 ```
+
 <div className={'card'}>
-<div
-  style={{
-    position: 'relative',
-    background: semantic.layer02,
-    padding: '1rem',
-  }}
->
-  <p>
-    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
-    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
-    ytan.
-  </p>
-  <Link standalone stretched href='#'>Läs mer om designsystemets nyheter</Link>
-</div>
+  <div
+    style={{
+      position: 'relative',
+      background: semantic.layer02,
+      padding: '1rem',
+    }}
+  >
+    <p>
+      Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller
+      nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den
+      gråa ytan.
+    </p>
+    <Link
+      standalone
+      stretched
+      href='#'
+    >
+      Läs mer om designsystemets nyheter
+    </Link>
+  </div>
 </div>
 
 ## Riktlinjer
