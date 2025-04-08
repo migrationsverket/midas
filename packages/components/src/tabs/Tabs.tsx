@@ -4,11 +4,11 @@ import * as React from 'react'
 import { Tabs as AriaTabs, Tab, TabList, TabPanel } from 'react-aria-components'
 import styles from './Tabs.module.css'
 
-export interface TabsProps<T extends string> {
+export interface TabsProps {
   /**
    * An array of tab titles
    */
-  tabs: T[]
+  tabs: string[]
   /**
    * Label for accessibility
    */
@@ -16,7 +16,7 @@ export interface TabsProps<T extends string> {
   /**
    * Choose another than the first tab to be selected by default. Name must match one of the tabs
    */
-  defaultSelected?: T // ensures to be the exact value of a title in items
+  defaultSelected?: string
   /**
    * Amount of children must match the amount of tabs
    */
@@ -29,12 +29,12 @@ interface TabPanelChildProps {
   children?: React.ReactNode
 }
 
-export const Tabs = <T extends string>({
+export const Tabs: React.FC<TabsProps> = ({
   tabs,
   label,
   defaultSelected,
   children,
-}: TabsProps<T>) => {
+}) => {
   const childrenArray = React.Children.toArray(children)
 
   // Check if the number of children matches the number of tabs
