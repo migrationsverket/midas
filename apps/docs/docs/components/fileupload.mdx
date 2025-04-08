@@ -5,16 +5,14 @@ description: Filuppladdning används när användaren behöver ladda upp en elle
 
 import { FileUpload } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
   return (
-    <LiveCodeBlock
-      scope={{ FileUpload }}
-      {...props}
-    >
-      {`<FileUpload allowsMultiple label={'Välj filer att ladda upp'} description={'Du kan välja flera filer!'}/>`}
-    </LiveCodeBlock>
+    <FileUpload
+      allowsMultiple
+      label={'Välj filer att ladda upp'}
+      description={'Du kan välja flera filer!'}
+    />
   )
 }
 
@@ -23,6 +21,14 @@ export const Example = props => {
   friendlyName={'Filuppladdning'}
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
 />
+
+```tsx
+<FileUpload
+  allowsMultiple
+  label={'Välj filer att ladda upp'}
+  description={'Du kan välja flera filer!'}
+/>
+```
 
 Komponent som används när användaren behöver ladda upp filer från det egen filsystemet.
 
@@ -36,6 +42,14 @@ npm install @midas-ds/components
 
 ```tsx
 import { FileUpload } from '@midas-ds/components'
+```
+
+```tsx
+<FileUpload
+  allowsMultiple
+  label={'Välj filer att ladda upp'}
+  description={'Du kan välja flera filer!'}
+/>
 ```
 
 <Example hideExample />
