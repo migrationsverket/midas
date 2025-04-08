@@ -67,12 +67,6 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                     {props[key].description}
                   </ReactMarkdown>
                 </td>
-                  {props[key].defaultValue ? (
-                    <code>{props[key].defaultValue.value}</code>
-                  ) : (
-                    '-'
-                  )}
-                </td>
               </tr>
             )
           })}
