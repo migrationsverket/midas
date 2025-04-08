@@ -58,7 +58,7 @@ export const TooltipPlacement = () => {
 }
 
 export const ControlledTooltip = () => {
-  let [isOpen, setOpen] = React.useState(false)
+  const [isOpen, setOpen] = React.useState(false)
   return (
     <>
       <TooltipTrigger

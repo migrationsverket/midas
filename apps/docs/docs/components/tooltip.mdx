@@ -119,7 +119,7 @@ Tooltipens placering i förhållande till dess trigger-element kan justeras med 
 
 ```tsx
 export const ControlledTooltip = () => {
-  let [isOpen, setOpen] = React.useState(false)
+  const [isOpen, setOpen] = React.useState(false)
   return (
     <>
       <TooltipTrigger
