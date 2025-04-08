@@ -9,15 +9,12 @@ import {
   RadioProps,
   Radio as AriaRadio,
   Group,
+  ValidationResult,
 } from 'react-aria-components'
 import clsx from 'clsx'
 import { Label } from '../label'
 import { Text } from '../text'
-import {
-  type ErrorMessage,
-  type ErrorPosition,
-  FieldError,
-} from '../field-error'
+import { FieldError } from '../field-error'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
@@ -26,8 +23,8 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   /** Additional description rendered below the label */
   description?: string
   /** String to display as error message or function to handle the result and produce the error message */
-  errorMessage?: ErrorMessage
-  errorPosition?: ErrorPosition
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 /**

@@ -4,15 +4,12 @@ import {
   useContextProps,
   TextField as AriaTextField,
   TextFieldProps,
+  ValidationResult,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Label } from '../label'
 import { Text } from '../text/Text'
-import {
-  type ErrorMessage,
-  type ErrorPosition,
-  FieldError,
-} from '../field-error'
+import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
@@ -22,8 +19,8 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   /** Specify description displayed below the label */
   description?: string
   /** Custom error messages */
-  errorMessage?: ErrorMessage
-  errorPosition?: ErrorPosition
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
   /**
    * Whether to show the character counter or not
    * @default

@@ -10,7 +10,6 @@ import * as React from 'react'
 import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
-import { type ErrorPosition } from '../field-error'
 
 export interface SearchFieldProps
   extends Omit<AriaSearchFieldProps, 'isRequired'> {
@@ -26,7 +25,7 @@ export interface SearchFieldProps
    * A custom error message if using the isInvalid prop.
    */
   errorMessage?: string
-  errorPosition?: ErrorPosition
+  errorPosition?: 'top' | 'bottom'
 }
 
 function isValidationError(

@@ -101,6 +101,11 @@
 .card {
   padding: 1.5rem;
   border-radius: 0;
+  margin-bottom: var(--ifm-leading);
+}
+
+.theme-code-block:has(+ .theme-code-block) {
+  margin-bottom: var(--ifm-leading);
 }
 
 .card-image {

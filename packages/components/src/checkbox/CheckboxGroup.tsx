@@ -6,16 +6,13 @@ import {
   CheckboxGroupProps as AriaCheckboxGroupProps,
   CheckboxGroupStateContext,
   Group,
+  ValidationResult,
 } from 'react-aria-components'
 import styles from './Checkbox.module.css'
 import { Checkbox } from './Checkbox'
 import { Label } from '../label'
 import { Text } from '../text'
-import {
-  FieldError,
-  type ErrorPosition,
-  type ErrorMessage,
-} from '../field-error'
+import { FieldError } from '../field-error'
 
 export interface CheckboxGroupProps
   extends Omit<AriaCheckboxGroupProps, 'children'> {
@@ -23,8 +20,8 @@ export interface CheckboxGroupProps
   label?: string
   description?: string
   showSelectAll?: boolean
-  errorMessage?: ErrorMessage
-  errorPosition?: ErrorPosition
+  errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const CheckboxGroup = ({
