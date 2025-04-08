@@ -31,10 +31,9 @@ Semantiska tokens är kopplade till referenstokens och är döpta för att beskr
 
 ## Lager
 
-Vissa av våra tokens hör till ett specifikt lager. Dessa tokens har ett nummer (01 eller 02) efter namnet och alla med samma nummer hör till ett lager och används tillsammans.
-Numreringen används också för att skapa ordningen på lager: Tokens som slutar på 01 (t.ex. `field01`) ligger på `background` (lager 0) och tokens som slutar på 02 ligger på `layer01`.
+Vissa av våra tokens är kopplade till specifika lager, vilket indikeras av ett nummer i slutet av namnet: antingen 01 eller 02. Tokens som slutar på 01 (t.ex. `field01`) tillhör lager 1 och tokens som slutar på 02 tillhör lager 2. Alla tokens med samma nummer används tillsammans inom samma lager. Numreringen ger också lagerstrukturen: tokens som slutar på 01 (t.ex. `field01`) ligger på `background` (lager 0) och tokens som slutar på 02 ligger på `layer01`.
 
-I ljust läge är varannat lager vitt och varannat grått och i mörkt läge är varje nytt lager en ljusare grå än det föregående.
+I ljust läge växlar färgerna mellan vitt och grått för varje lager medan varje nytt lager i mörkt läge får en ljusare grå nyans än det föregående, se exempel nedan.
 
 <Layers />
 
