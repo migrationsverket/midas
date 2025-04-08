@@ -5,43 +5,36 @@ description: En enkel tabell för att visualisera data.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Table, TableHeader, TableBody, Column, Row, Cell } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}
-      {...props}
-    >
-      {`<Table
-            aria-label="Frukter"
-        >
-            <TableHeader columns={columns}>
-                {(column) => (
-                    <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-                )}
-            </TableHeader>
-            <TableBody items={rows}>
-                {(item) => (
-                    <Row columns={columns}>
-                        {(column) => <Cell>{item[column.id]}</Cell>}
-                    </Row>
-                )}
-            </TableBody>
-        </Table>`}
-    </LiveCodeBlock>
-  )
-}
+import { BasicExample, FullExample, ControlledExample } from '@site/src/components/examples/table/TableExamples'
 
 <ComponentHeader
   name={'Table'}
   friendlyName={'Tabell'}
 />
 
-Komponent för att visualisera data. Går att kombinera med andra komponenter, till exemepel `Select`, för att filtrera eller liknande.
+Komponent för att visualisera data. Kan kombineras med andra komponenter, till exemepel [Select](/components/select),
+för att filtrera eller [SearchField](/components/search-field) för att söka osv.
 
-<Example hideCode />
+```tsx
+<Table aria-label='Fruit'>
+  <TableHeader>
+    <Column>Name</Column>
+    <Column>Description</Column>
+  </TableHeader>
+  <TableBody>
+    <Row>
+      <Cell>Banana</Cell>
+      <Cell>A yellow fruit</Cell>
+    </Row>
+    <Row>
+      <Cell>Pear</Cell>
+      <Cell>Usually green</Cell>
+    </Row>
+  </TableBody>
+</Table>
+```
+
+<BasicExample />
 
 ## Installation
 
@@ -50,124 +43,153 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { Table } from '@midas-ds/components'
+import { Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## Varianter
 
-För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset. Börja med att sätta upp dina kolumner. Raderna ska sedan referera till kolumnernas `id`.
+För en tabell behövs data för hur kolumnerna och raderna ska populeras. Vi kommer basera samliga tabeller på följande dataset.
+Börja med att sätta upp dina kolumner. Nycklarna på raderna ska sedan referera till värdet för kolumnernas `id`, i det här fallet `name` och `description`.
 
 ```tsx
 const columns = [
-  { name: 'Namn', id: 'name', isRowHeader: true },
-  { name: 'Beskrivning', id: 'desc', width: 'max-content' }
+  { name: 'Namn', id: 'name' },
+  { name: 'Beskrivning', id: 'description', width: 'max-content' },
 ]
 
-const rows = fruits.map(fruit => {
-  return {
-    id: fruit.value,
-    name: fruit.name,
-    desc: fruit.description
-  }
-})
+const rows = [
+  {
+    id: 'apple',
+    name: 'Apple',
+    description: 'Pink lady is a good one',
+  },
+  {
+    id: 'banana',
+    name: 'Banana',
+    description: 'A yellow fruit',
+  },
+  {
+    id: 'pear',
+    name: 'Pear',
+    description: 'Usually green',
+  },
+]
 ```
 
 ### Standardtabell
 
-<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
-  {`<Table
-    aria-label="Frukter"
->
-    <TableHeader columns={columns}>
-        {(column) => (
-            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-        )}
-    </TableHeader>
-    <TableBody items={rows}>
-        {(item) => (
-            <Row columns={columns}>
-                {(column) => <Cell>{item[column.id]}</Cell>}
-            </Row>
-        )}
-    </TableBody>
-</Table>`}
-</LiveCodeBlock>
+```tsx
+<Table aria-label='Fruit'>
+  <TableHeader columns={columns}>
+    {column => {
+      return <Column>{column.name}</Column>
+    }}
+  </TableHeader>
+  <TableBody items={rows}>
+    {item => {
+      return (
+        <Row columns={columns}>
+          {column => {
+            return <Cell>{item[column.id]}</Cell>
+          }}
+        </Row>
+      )
+    }}
+  </TableBody>
+</Table>
+```
+
+<FullExample />
 
 ### Kompakt tabell
 
 Använd `narrow` om du vill ha en kompaktare tabell.
 
-<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
-  {`<Table
-    narrow
-    aria-label="Frukter"
-    selectionMode="multiple"
+```tsx
+<Table
+  aria-label='Fruit'
+  // highlight-start
+  narrow
+  // highlight-end
 >
-    <TableHeader columns={columns}>
-        {(column) => (
-            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-        )}
-    </TableHeader>
-    <TableBody items={rows}>
-        {(item) => (
-            <Row columns={columns}>
-                {(column) => <Cell>{item[column.id]}</Cell>}
-            </Row>
-        )}
-    </TableBody>
-</Table>`}
-</LiveCodeBlock>
+  ...
+</Table>
+```
+
+<FullExample narrow />
 
 ### Valbara rader
 
 Tabellen har inbyggd funktion för att kunna välja en eller flera rader med `selectionMode` vilket kan vara antingen `single` eller `multiple`
 
-<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
-  {`<Table
-    aria-label="Frukter"
-    selectionMode="multiple"
+```tsx title="single"
+<Table
+  aria-label='Fruit'
+  // highlight-start
+  selectionMode='single'
+  // highlight-end
 >
-    <TableHeader columns={columns}>
-        {(column) => (
-            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-        )}
-    </TableHeader>
-    <TableBody items={rows}>
-        {(item) => (
-            <Row columns={columns}>
-                {(column) => <Cell>{item[column.id]}</Cell>}
-            </Row>
-        )}
-    </TableBody>
-</Table>`}
-</LiveCodeBlock>
+  ...
+</Table>
+```
+
+<FullExample selectionMode='single' />
+
+```tsx title="multiple"
+<Table
+  aria-label='Fruit'
+  // highlight-start
+  selectionMode='multiple'
+  // highlight-end
+>
+  ...
+</Table>
+```
+
+<FullExample selectionMode='multiple' />
+
+#### Kontrollerade val
+
+Om du själv vill ha kontroll över vilka eller vilken rad som är vald kan du använda `useState`
+
+```tsx
+import type React from 'react'
+import type { Selection } from 'react-aria-components'
+```
+
+```tsx
+const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set(['apple']))
+
+<Table
+  aria-label='Fruit'
+  // highlight-start
+  selectedKeys={selectedKeys}
+  onSelectionChange={setSelectedKeys}
+  selectionMode='multiple'
+  // highlight-end
+>
+  ...
+</Table>
+```
+
+<ControlledExample />
 
 ### Randiga rader
 
 Använd `striped` om du vill att raderna ska alternera mellan vit och grå.
 
-<LiveCodeBlock scope={{ Table, TableHeader, TableBody, Column, Row, Cell }}>
-  {`<Table
-    striped
-    aria-label="Frukter"
-    selectionMode="multiple"
+```tsx
+<Table
+  aria-label='Fruit'
+  // highlight-start
+  striped
+  // highlight-end
 >
-    <TableHeader columns={columns}>
-        {(column) => (
-            <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
-        )}
-    </TableHeader>
-    <TableBody items={rows}>
-        {(item) => (
-            <Row columns={columns}>
-                {(column) => <Cell>{item[column.id]}</Cell>}
-            </Row>
-        )}
-    </TableBody>
-</Table>`}
-</LiveCodeBlock>
+  ...
+</Table>
+```
+
+<FullExample striped />
 
 ## API
 
