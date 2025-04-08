@@ -123,9 +123,9 @@ export const breakpoints = {
 }
 
 export const semantic = {
-  background01: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
-  backgroundHover01: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
-  backgroundInverse01: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
+  background: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
+  backgroundHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
+  backgroundInverse: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
 
   layer01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   layerHover01: `light-dark(${baseColors.gray20}, ${baseColors.gray170})`,
@@ -153,8 +153,6 @@ export const semantic = {
   borderBrand: `light-dark(${baseColors.blue170}, ${baseColors.blue170})`,
   borderInvalid: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
-  borderSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  borderInverse: `light-dark(${baseColors.white}, ${baseColors.gray180})`,
 
   field01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   fieldHover01: `light-dark(${baseColors.gray20}, ${baseColors.gray170})`,
@@ -171,7 +169,6 @@ export const semantic = {
   iconSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
   iconInverse: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
   iconOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
-  iconDanger: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
   iconDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
   iconSuccess: `light-dark(${baseColors.signalGreen140}, ${baseColors.signalGreen140})`,
   iconInfo: `light-dark(${baseColors.signalBlue140}, ${baseColors.signalBlue140})`,
@@ -194,10 +191,9 @@ export const semantic = {
 
   textPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   textSecondary: `light-dark(${baseColors.gray140}, ${baseColors.gray70})`,
-  textBrand: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
+  textTertiary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
   textOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
   textInverse: `light-dark(${baseColors.gray10}, ${baseColors.gray200})`,
-  textSubtle: `light-dark(${baseColors.gray90}, ${baseColors.gray90})`,
   textDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
   textInvalid: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
   textPlaceholder: `light-dark(${baseColors.gray70}, ${baseColors.gray140})`,
@@ -215,9 +211,7 @@ export const semantic = {
   buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed180}, ${baseColors.signalRed180})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  buttonBackgroundGhostHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
-  buttonBackgroundGhostActive: `light-dark(${baseColors.gray30}, ${baseColors.gray190})`,
-  buttonBorderPrimary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
+  buttonBorderSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
 }

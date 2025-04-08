@@ -46,7 +46,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           {Object.keys(propGroup).map(key => {
             return (
               <tr key={key}>
-                <td >
+                <td>
                   {key} {props[key].required && ' *'}
                 </td>
                 <td>
@@ -59,9 +59,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                     '-'
                   )}
                 </td>
-                <td>
-                  {props[key].description}
-                </td>
+                <td>{props[key].description}</td>
               </tr>
             )
           })}

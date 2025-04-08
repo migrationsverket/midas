@@ -167,6 +167,7 @@ på `Accordion`. Värdena i defaultExpandedKeys måste matcha `id` på de Accord
 
 En controlled Accordion kan expanderas programmatiskt med `expandedKeys` och `onExpandedChange`.
 Värdena i `expandedKeys` måste matcha `id` på de AccordionItem-komponenter du vill expandera.
+
 ```tsx
 //highlight-next-line
 const [expandedKeys, setExpandedKeys] =
@@ -203,6 +204,7 @@ React.useState<Set<Key>>(new Set(['mandarin']))
 Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}
 </pre>
 ```
+
 <AccordionExampleControlled type={'multiple'} />
 
 ## API
