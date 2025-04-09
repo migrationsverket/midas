@@ -23,15 +23,10 @@ export const Small: Story = {
 
 export const InButton: Story = {
   args: { small: true, isOnColor: true },
-  render: ({ ...args }) => {
-    return (
-      <Button>
-        <Spinner
-          isOnColor={args.isOnColor}
-          small={args.small}
-        />
-        Laddar
-      </Button>
-    )
-  },
+  render: args => (
+    <Button>
+      <Spinner {...args} />
+      Laddar
+    </Button>
+  ),
 }
