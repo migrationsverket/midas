@@ -1,10 +1,17 @@
 'use client'
 
 import * as React from 'react'
-import { Tabs as AriaTabs, Tab, TabList, TabPanel } from 'react-aria-components'
+import {
+  Tabs as AriaTabs,
+  Tab,
+  TabList,
+  TabPanel,
+  type TabsProps as AriaTabsProps,
+} from 'react-aria-components'
+import clsx from 'clsx'
 import styles from './Tabs.module.css'
 
-export interface TabsProps {
+export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
   /**
    * An array of tab titles
    */
@@ -13,10 +20,6 @@ export interface TabsProps {
    * Label for accessibility
    */
   label: string
-  /**
-   * Choose another than the first tab to be selected by default. Name must match one of the tabs
-   */
-  defaultSelected?: string
   /**
    * Amount of children must match the amount of tabs
    */
@@ -32,23 +35,25 @@ interface TabPanelChildProps {
 export const Tabs: React.FC<TabsProps> = ({
   tabs,
   label,
-  defaultSelected,
   children,
+  className,
+  ...rest
 }) => {
   const childrenArray = React.Children.toArray(children)
 
   // Check if the number of children matches the number of tabs
   if (childrenArray.length !== tabs.length) {
-    throw new Error(
+    console.error(
       `The number of children must match the number of tabs. Children: ${childrenArray.length} Tabs: ${tabs.length}`,
     )
+    return null
   }
 
   // Create a map of tab titles to their corresponding content
   const tabContentMap = childrenArray.reduce(
     (acc, child, index) => {
       if (React.isValidElement<TabPanelChildProps>(child)) {
-        const title = tabs[index]?.toLowerCase()
+        const title = tabs[index]
         if (title) {
           acc[title] = React.cloneElement(child, { id: title })
         }
@@ -61,8 +66,8 @@ export const Tabs: React.FC<TabsProps> = ({
   return (
     <AriaTabs
       orientation='vertical'
-      defaultSelectedKey={defaultSelected && defaultSelected.toLowerCase()}
-      className={styles.container}
+      className={clsx(styles.container, className)}
+      {...rest}
     >
       <TabList
         aria-label={label}
@@ -71,7 +76,7 @@ export const Tabs: React.FC<TabsProps> = ({
         {tabs.map(tab => (
           <Tab
             key={tab}
-            id={tab.toLowerCase()}
+            id={tab}
             className={styles.listItem}
           >
             {tab}
@@ -81,10 +86,10 @@ export const Tabs: React.FC<TabsProps> = ({
       {tabs.map(tab => (
         <TabPanel
           key={tab}
-          id={tab.toLowerCase()}
+          id={tab}
           className={styles.panel}
         >
-          {tabContentMap[tab.toLowerCase()]}
+          {tabContentMap[tab]}
         </TabPanel>
       ))}
     </AriaTabs>
