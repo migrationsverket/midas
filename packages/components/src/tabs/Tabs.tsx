@@ -24,6 +24,11 @@ export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
    * Amount of children must match the amount of tabs
    */
   children: React.ReactNode
+  /**
+   * @deprecated
+   * Please use `defaultSelectedKey` instead
+   */
+  defaultSelected?: string
 }
 
 // Define a type for children elements that can accept an id prop
@@ -68,6 +73,7 @@ export const Tabs: React.FC<TabsProps> = ({
       orientation='vertical'
       className={clsx(styles.container, className)}
       {...rest}
+      defaultSelectedKey={rest.defaultSelected || rest.defaultSelectedKey}
     >
       <TabList
         aria-label={label}
