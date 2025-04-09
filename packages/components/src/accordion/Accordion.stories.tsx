@@ -121,38 +121,56 @@ export const DynamicContent: Story = {
   args: {},
   render: () => (
     <Accordion>
-      <AccordionItem title={'Hello'} >
-        <span data-testid='item-0'>Hej</span>
+      <AccordionItem title={'AccordionItem with dynamic content'}>
+        Knowledge is knowing a tomato is a fruit; wisdom is not putting it in a
+        fruit salad.
         <ExpandableStuff />
       </AccordionItem>
-      <AccordionItem title={'Goodbye'}>
-        Hej här kan vara annan text som tar plats
+      <AccordionItem title={'Another AccordionItem'}>
+        More text about another subject...
       </AccordionItem>
     </Accordion>
   ),
-  play: async ({canvasElement}) => {
-    const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByTestId('item-0'))
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(
+      canvas.getByRole('button', {
+        name: 'AccordionItem with dynamic content',
+      }),
+    )
     await userEvent.click(canvas.getByTestId('btn-0'))
-
-    await expect(
-      canvas.getByTestId('hidden-content'),
-    ).toBeInTheDocument()
-    await expect(
-      canvas.getByTestId('hidden-content')
-    ).toHaveTextContent('more info')
-  }
+    await expect(canvas.getByTestId('hidden-content')).toBeVisible()
+  },
 }
 
 const ExpandableStuff = () => {
   const [isVisible, setIsVisible] = React.useState(false)
   return (
     <div>
-      <button onClick={() => setIsVisible(p => !p)} data-testid={'btn-0'}>show</button>
-      Normal text on the panel
-      {isVisible ? <div style={{background: 'green', height: '10rem'}} data-testid={'hidden-content'}>
-        more info
-      </div> : null}
+      <button
+        onClick={() => setIsVisible(p => !p)}
+        data-testid={'btn-0'}
+      >
+        {isVisible ? 'hide' : 'show'}
+      </button>
+      {isVisible ? (
+        <div
+          style={{
+            background: 'lightblue',
+            color: 'white',
+            height: 'auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+          }}
+          data-testid={'hidden-content'}
+        >
+          🍍 Pineapples were once so rare and expensive in Europe that people
+          used them as a status symbol—even renting them for parties to show off
+          wealth, without ever eating them!
+        </div>
+      ) : null}
     </div>
   )
 }
