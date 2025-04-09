@@ -10,6 +10,8 @@ import {
 } from 'react-aria-components'
 import clsx from 'clsx'
 import styles from './Tabs.module.css'
+import useObserveElement from '../utils/useObserveElement'
+import { windowSizes } from '../theme'
 
 export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
   /**
@@ -44,6 +46,11 @@ export const Tabs: React.FC<TabsProps> = ({
   className,
   ...rest
 }) => {
+  const { width: bodyWidth } = useObserveElement(document.body, true)
+
+  const orientation: AriaTabsProps['orientation'] =
+    bodyWidth >= windowSizes.md ? 'horizontal' : 'vertical'
+
   const childrenArray = React.Children.toArray(children)
 
   // Check if the number of children matches the number of tabs
@@ -70,7 +77,7 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <AriaTabs
-      orientation='vertical'
+      orientation={orientation}
       className={clsx(styles.container, className)}
       {...rest}
       defaultSelectedKey={rest.defaultSelected || rest.defaultSelectedKey}

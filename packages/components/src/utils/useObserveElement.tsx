@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 
-export default function useObserveElement(element: HTMLElement | null) {
+export default function useObserveElement(
+  element: HTMLElement | null,
+  includePadding = false,
+) {
   const debounce = (
     callback: ResizeObserverCallback,
     delay: number,
@@ -23,7 +26,9 @@ export default function useObserveElement(element: HTMLElement | null) {
 
     const resizeObserver = new ResizeObserver(
       debounce(entries => {
-        const { inlineSize, blockSize } = entries[0].contentBoxSize[0]
+        const { inlineSize, blockSize } = includePadding
+          ? entries[0].borderBoxSize[0]
+          : entries[0].contentBoxSize[0]
 
         setWidth(inlineSize)
         setHeight(blockSize)
@@ -35,7 +40,7 @@ export default function useObserveElement(element: HTMLElement | null) {
     return () => {
       resizeObserver.disconnect()
     }
-  }, [element])
+  }, [element, includePadding])
 
   return { width, height }
 }
