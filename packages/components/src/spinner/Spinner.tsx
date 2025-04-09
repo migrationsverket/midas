@@ -10,17 +10,17 @@ export interface SpinnerProps {
   /** For use on dark background
    * @default false
    * */
-  dark?: boolean
+  isOnColor?: boolean
 }
 
-export const Spinner: React.FC<SpinnerProps> = ({ small, dark }) => {
+export const Spinner: React.FC<SpinnerProps> = ({ small, isOnColor }) => {
   return (
     <div
       className={styles.container}
-      role="status"
+      role='status'
     >
       <LoaderCircle
-        className={clsx(styles.spinner, dark && styles.dark)}
+        className={clsx(styles.spinner, isOnColor && styles.dark)}
         size={small ? 16 : 32}
         strokeWidth={small ? 2 : 3}
         absoluteStrokeWidth
