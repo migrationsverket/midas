@@ -37,24 +37,17 @@ import { Skeleton } from '@midas-ds/components'
 
 Detta är standardvarianten. Används som platshållare för text och de flesta komponenter vi har. Ange storleken i px, rem eller % med `width` och `height`. Om inget anges kommer den att fylla sin parent container.
 
-<div className='card'>
-  <Skeleton height='48px' />
-</div>
-
 ```tsx
 <Skeleton height='48px' />
 ```
 
+<div className='card'>
+  <Skeleton height='48px' />
+</div>
+
 ### Circle
 
 Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` och sätter automatiskt höjden så att den blir rund.
-
-<div className='card'>
-  <Skeleton
-    variant='circle'
-    width='48px'
-  />
-</div>
 
 ```tsx
 <Skeleton
@@ -63,16 +56,16 @@ Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` o
 />
 ```
 
+<div className='card'>
+  <Skeleton
+    variant='circle'
+    width='48px'
+  />
+</div>
+
 ## Animation
 
 Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga av med `animation= 'false'`.
-
-<div className='card'>
-  <Skeleton
-    height='48px'
-    animation='false'
-  />
-</div>
 
 ```tsx
 <Skeleton
@@ -80,6 +73,13 @@ Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga 
   animation='false'
 />
 ```
+
+<div className='card'>
+  <Skeleton
+    height='48px'
+    animation='false'
+  />
+</div>
 
 ## Riktlinjer
 
