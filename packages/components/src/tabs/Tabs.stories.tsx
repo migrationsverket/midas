@@ -106,17 +106,17 @@ export const DifferentCasedTabs: Story = {
   },
   render: args => (
     <Tabs {...args}>
-      <div>uppercase</div>
-      <div>lowercase</div>
+      <div data-testid='uppercase'>uppercase</div>
+      <div data-testid='lowercase'>lowercase</div>
     </Tabs>
   ),
   play: async ({ canvas, step }) => {
     await step(
       'it should be possible to have the same word in different cases as tab titles',
       async () => {
-        await expect(canvas.getByText('uppercase')).toBeVisible()
+        await expect(canvas.getByTestId('uppercase')).toBeVisible()
         await userEvent.click(canvas.getByText('test'))
-        await expect(canvas.getByText('lowercase')).toBeVisible()
+        await expect(canvas.getByTestId('lowercase')).toBeVisible()
       },
     )
   },
