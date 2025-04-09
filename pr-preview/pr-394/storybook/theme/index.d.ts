@@ -111,9 +111,9 @@ export declare const theme: {
         prefersReducedMotion: string;
     };
     semantic: {
-        background01: string;
-        backgroundHover01: string;
-        backgroundInverse01: string;
+        background: string;
+        backgroundHover: string;
+        backgroundInverse: string;
         layer01: string;
         layerHover01: string;
         layerSelected01: string;
@@ -135,8 +135,6 @@ export declare const theme: {
         borderBrand: string;
         borderInvalid: string;
         borderDisabled: string;
-        borderSkeleton: string;
-        borderInverse: string;
         field01: string;
         fieldHover01: string;
         fieldActive01: string;
@@ -149,7 +147,6 @@ export declare const theme: {
         iconSecondary: string;
         iconInverse: string;
         iconOnColor: string;
-        iconDanger: string;
         iconDisabled: string;
         iconSuccess: string;
         iconInfo: string;
@@ -169,10 +166,9 @@ export declare const theme: {
         notificationBackgroundWarning: string;
         textPrimary: string;
         textSecondary: string;
-        textBrand: string;
+        textTertiary: string;
         textOnColor: string;
         textInverse: string;
-        textSubtle: string;
         textDisabled: string;
         textInvalid: string;
         textPlaceholder: string;
@@ -189,9 +185,7 @@ export declare const theme: {
         buttonBackgroundDangerActive: string;
         buttonBackgroundDisabled: string;
         buttonBackgroundSkeleton: string;
-        buttonBackgroundGhostHover: string;
-        buttonBackgroundGhostActive: string;
-        buttonBorderPrimary: string;
+        buttonBorderSecondary: string;
         logoPrimary: string;
     };
     zIndex: {

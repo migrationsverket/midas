@@ -65,6 +65,7 @@ type SelectProps = {
     isRequired?: boolean;
     /** Name of the field, for uncontrolled use */
     name?: string;
+    errorPosition?: 'top' | 'bottom';
 };
 export declare const SelectComponent: React.ForwardRefExoticComponent<SelectProps & React.RefAttributes<HTMLButtonElement>>;
 export declare const Select: React.ForwardRefExoticComponent<Omit<SelectProps, "children" | "items"> & {
