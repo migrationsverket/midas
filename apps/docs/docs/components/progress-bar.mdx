@@ -36,14 +36,6 @@ npm install @midas-ds/components
 import { ProgressBar } from '@midas-ds/components'
 ```
 
-```tsx
-<ProgressBar
-  label='Laddar...'
-  showValueLabel
-  value={30}
-/>
-```
-
 ## Varianter
 
 ### Utan etiketter
@@ -52,7 +44,7 @@ Utelämna `label` och `showValueLabel` för att dölja komponentens etiketter. K
 
 ```tsx
 <ProgressBar
-  label='Laddar...'
+  aria-label='Laddar...'
   showValueLabel
   value={30}
 />
@@ -75,7 +67,9 @@ Egenskapen `valueLabel` och `showValueLabel` kan användas för att ändra den h
   value={2}
   maxValue={3}
   valueLabel='Steg 2 av 3'
+  // highlight-start
   showValueLabel
+  // highlight-end
 />
 ```
 
@@ -96,7 +90,9 @@ Egenskapen `isIndeterminate` kan användas för att indikera att ett förlopp ä
 ```tsx
 <ProgressBar
   label='Väntar...'
+  // highlight-start
   isIndeterminate
+  // highlight-end
 />
 ```
 
