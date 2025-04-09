@@ -101,6 +101,11 @@ export declare const theme: {
         normal: string;
         fast: string;
     };
+    windowSizes: {
+        md: number;
+        lg: number;
+        xl: number;
+    };
     breakpoints: {
         sm: string;
         md: string;
