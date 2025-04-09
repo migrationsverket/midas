@@ -6,6 +6,8 @@ import { ProgressBar } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
+<ComponentHeader name='ProgressBar' />
+
 ```tsx
 <ProgressBar
   label='Laddar...'
@@ -21,8 +23,6 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
     value={30}
   />
 </div>
-
-<ComponentHeader name='ProgressBar' />
 
 Progress bar med fördefinerad stil, använder `role="progressbar"` under huven
 
@@ -44,8 +44,9 @@ Utelämna `label` och `showValueLabel` för att dölja komponentens etiketter. K
 
 ```tsx
 <ProgressBar
+  // highlight-start
   aria-label='Laddar...'
-  showValueLabel
+  // highlight-end
   value={30}
 />
 ```
@@ -66,8 +67,8 @@ Egenskapen `valueLabel` och `showValueLabel` kan användas för att ändra den h
   aria-label='Dina framsteg'
   value={2}
   maxValue={3}
-  valueLabel='Steg 2 av 3'
   // highlight-start
+  valueLabel='Steg 2 av 3'
   showValueLabel
   // highlight-end
 />
