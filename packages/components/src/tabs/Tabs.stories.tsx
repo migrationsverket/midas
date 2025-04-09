@@ -70,7 +70,7 @@ export const SelectedKeyAndOnSelectionChange: Story = {
   },
   play: async ({ canvas, step }) => {
     await step('the tab "Ansök" should be opened', async () => {
-      await userEvent.click(canvas.getByRole('tab', { name: 'Ansök' }))
+      await userEvent.click(await canvas.findByRole('tab', { name: 'Ansök' }))
       await expect(canvas.getByRole('button')).toBeVisible()
     })
   },
