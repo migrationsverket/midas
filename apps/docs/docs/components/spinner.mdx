@@ -6,18 +6,6 @@ description: Upplys användaren om att systemet/tjänsten laddar
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Spinner, Button, Link } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Spinner }}
-      {...props}
-    >
-      {`<Spinner />`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Spinner'}
@@ -27,7 +15,9 @@ export const Example = props => {
 
 Komponent som används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden.
 
-<Example hideCode />
+<div className='card'>
+  <Spinner />
+</div>
 
 ## Installation
 
@@ -39,27 +29,48 @@ npm install @midas-ds/components
 import { Spinner } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+```tsx
+<Spinner />
+```
 
 ## Varianter
 
 ### Fristående spinner
 
-<LiveCodeBlock scope={{ Spinner }}>{`<Spinner />`}</LiveCodeBlock>
+```tsx
+<Spinner />
+```
+
+<div className='card'>
+  <Spinner />
+</div>
 
 ### Kombinerad med andra komponenter
 
 Använd varianten `small` för att kombinera med andra komponenter t.ex. Button
 
-<LiveCodeBlock scope={{ Spinner, Button }}>
-  {`<Button>
+```tsx
+<Button>
   <Spinner
     dark
     small
   />
   Laddar
-</Button>`}
-</LiveCodeBlock>
+</Button>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button>
+    <Spinner
+      dark
+      small
+    />
+    {'Laddar'}
+  </Button>
+</div>
 
 ## Riktlinjer
 
