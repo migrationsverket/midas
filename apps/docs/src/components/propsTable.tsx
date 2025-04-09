@@ -2,6 +2,7 @@ import useGlobalData from '@docusaurus/useGlobalData'
 import { Accordion, AccordionItem } from '@midas-ds/components'
 import { ComponentDoc } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
+import ReactMarkdown from 'react-markdown'
 
 export const PropTable = ({ name, defaultOpen = true }) => {
   const globalData = useGlobalData()
@@ -31,14 +32,14 @@ export const PropTable = ({ name, defaultOpen = true }) => {
     { events: {}, accessibility: {}, rest: {} },
   )
 
-  const Table = ({ propGroup }) => {
+  const Table = ({ propGroup, showDefault = true }) => {
     return (
       <table className={styles.table}>
         <thead className={styles.thead}>
           <tr>
             <th>Name</th>
             <th>Type</th>
-            <th>Default</th>
+            {showDefault && (<th>Default</th>)}
             <th>Description</th>
           </tr>
         </thead>
@@ -52,14 +53,20 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                 <td>
                   <code>{props[key].type?.name}</code>
                 </td>
+                {showDefault && (
+                  <td>
+                    {props[key].defaultValue ? (
+                      <code>{props[key].defaultValue.value}</code>
+                    ) : (
+                      '-'
+                    )}
+                  </td>
+                )}
                 <td>
-                  {props[key].defaultValue ? (
-                    <code>{props[key].defaultValue.value}</code>
-                  ) : (
-                    '-'
-                  )}
+                  <ReactMarkdown>
+                    {props[key].description}
+                  </ReactMarkdown>
                 </td>
-                <td>{props[key].description}</td>
               </tr>
             )
           })}
@@ -87,7 +94,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='events'
           title='Events'
         >
-          <Table propGroup={events} />
+          <Table propGroup={events} showDefault={false}/>
         </AccordionItem>
       )}
       {Object.getOwnPropertyNames(accessibility).length !== 0 && (
@@ -95,7 +102,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='accessibility'
           title='Tillgänglighet'
         >
-          <Table propGroup={accessibility} />
+          <Table propGroup={accessibility} showDefault={false}/>
         </AccordionItem>
       )}
     </Accordion>

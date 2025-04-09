@@ -1,6 +1,6 @@
 .accordion {
   > div {
-    --content-padding: 0;
+    --content-padding: 0.5rem 0 0.5rem 0;
   }
 }
 
@@ -14,7 +14,11 @@ td {
 }
 
 .table {
+  all: revert;
+  table-layout: auto;
   font-family: 'Inter', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 .thead {
