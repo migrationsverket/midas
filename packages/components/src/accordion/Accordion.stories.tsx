@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion, AccordionItem } from './'
 import { File } from 'lucide-react'
-import { expect } from '@storybook/test'
+import { expect, getByText, userEvent, within } from '@storybook/test'
 import { ACCORDION_TEST_ID } from './Accordion'
 import styles from './Accordion.module.css'
+import React from 'react'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
@@ -114,4 +115,44 @@ export const CustomTriggerElements: Story = {
       </AccordionItem>
     )),
   },
+}
+
+export const DynamicContent: Story = {
+  args: {},
+  render: () => (
+    <Accordion>
+      <AccordionItem title={'Hello'} >
+        <span data-testid='item-0'>Hej</span>
+        <ExpandableStuff />
+      </AccordionItem>
+      <AccordionItem title={'Goodbye'}>
+        Hej här kan vara annan text som tar plats
+      </AccordionItem>
+    </Accordion>
+  ),
+  play: async ({canvasElement}) => {
+    const canvas = within(canvasElement);
+    await userEvent.click(canvas.getByTestId('item-0'))
+    await userEvent.click(canvas.getByTestId('btn-0'))
+
+    await expect(
+      canvas.getByTestId('hidden-content'),
+    ).toBeInTheDocument()
+    await expect(
+      canvas.getByTestId('hidden-content')
+    ).toHaveTextContent('more info')
+  }
+}
+
+const ExpandableStuff = () => {
+  const [isVisible, setIsVisible] = React.useState(false)
+  return (
+    <div>
+      <button onClick={() => setIsVisible(p => !p)} data-testid={'btn-0'}>show</button>
+      Normal text on the panel
+      {isVisible ? <div style={{background: 'green', height: '10rem'}} data-testid={'hidden-content'}>
+        more info
+      </div> : null}
+    </div>
+  )
 }

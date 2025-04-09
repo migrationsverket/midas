@@ -83,17 +83,6 @@
   background-color: var(--background);
 }
 
-/* safari can't calculate correct so we skip the animation there as a compriomise */
-.panel:not(.panel0) {
-  height: 0;
-  overflow: hidden;
-  transition: height 500ms cubic-bezier(0.16, 1, 0.3, 1);
-
-  &[aria-hidden='false'] {
-    height: var(--panel-height);
-  }
-}
-
 .content {
   padding: var(--content-padding);
 }
