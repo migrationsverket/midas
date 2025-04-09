@@ -13,5 +13,10 @@ export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
      * Amount of children must match the amount of tabs
      */
     children: React.ReactNode;
+    /**
+     * @deprecated
+     * Please use `defaultSelectedKey` instead
+     */
+    defaultSelected?: string;
 }
 export declare const Tabs: React.FC<TabsProps>;
