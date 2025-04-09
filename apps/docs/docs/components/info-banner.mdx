@@ -6,7 +6,6 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 import { PropTable } from '@site/src/components/propsTable'
 import { InfoBanner, Tabs as MidasTabs } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import BrowserOnly from '@docusaurus/BrowserOnly'
 
 <ComponentHeader
   name={'info-banner'}
@@ -16,35 +15,31 @@ import BrowserOnly from '@docusaurus/BrowserOnly'
 
 Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
 
-<BrowserOnly>
-  {() => (
-    <MidasTabs
-      label={'Välj typ'}
-      tabs={['Success', 'Info', 'Important', 'Warning']}
-    >
-      <InfoBanner
-        type={'success'}
-        title={'Formuläret har skickats'}
-        message={'Allt gick bra. Du kan nu stänga fönstret.'}
-      />
-      <InfoBanner
-        type={'info'}
-        title={'Kom ihåg att fylla i din semesterplan'}
-        message={'Vi behöver din semesterplan för att kunna gå vidare.'}
-      />
-      <InfoBanner
-        type={'important'}
-        title={'Du behöver komplettera!'}
-        message={'Vi saknar din semesterplan.'}
-      />
-      <InfoBanner
-        type={'warning'}
-        title={'Formuläret kunde inte skickas!'}
-        message={'Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'}
-      />
-    </MidasTabs>
-  )}
-</BrowserOnly>
+<MidasTabs
+  label={'Välj typ'}
+  tabs={['Success', 'Info', 'Important', 'Warning']}
+>
+  <InfoBanner
+    type={'success'}
+    title={'Formuläret har skickats'}
+    message={'Allt gick bra. Du kan nu stänga fönstret.'}
+  />
+  <InfoBanner
+    type={'info'}
+    title={'Kom ihåg att fylla i din semesterplan'}
+    message={'Vi behöver din semesterplan för att kunna gå vidare.'}
+  />
+  <InfoBanner
+    type={'important'}
+    title={'Du behöver komplettera!'}
+    message={'Vi saknar din semesterplan.'}
+  />
+  <InfoBanner
+    type={'warning'}
+    title={'Formuläret kunde inte skickas!'}
+    message={'Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'}
+  />
+</MidasTabs>
 
 ## Installation
 

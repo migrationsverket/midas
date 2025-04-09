@@ -46,7 +46,10 @@ export const Tabs: React.FC<TabsProps> = ({
   className,
   ...rest
 }) => {
-  const { width: bodyWidth } = useObserveElement(document.body, true)
+  const { width: bodyWidth } = useObserveElement(
+    (typeof document !== 'undefined' && document.body) || null,
+    true,
+  )
 
   const orientation: AriaTabsProps['orientation'] =
     bodyWidth >= windowSizes.md ? 'horizontal' : 'vertical'
