@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion, AccordionItem } from './'
 import { File } from 'lucide-react'
-import { expect, getByText, userEvent, within } from '@storybook/test'
+import { expect, userEvent, within } from '@storybook/test'
 import { ACCORDION_TEST_ID } from './Accordion'
 import styles from './Accordion.module.css'
 import React from 'react'

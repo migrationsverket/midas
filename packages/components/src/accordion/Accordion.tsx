@@ -28,7 +28,9 @@ export const Accordion: React.FC<MidasAccordion> = ({
   return (
     <DisclosureGroup
       data-testid={ACCORDION_TEST_ID}
-      allowsMultipleExpanded={props.allowsMultipleExpanded || type === 'multiple'}
+      allowsMultipleExpanded={
+        props.allowsMultipleExpanded || type === 'multiple'
+      }
       className={clsx(
         styles.root,
         variant === 'contained' ? styles.contained : styles.uncontained,
