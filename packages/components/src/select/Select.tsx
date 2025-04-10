@@ -42,7 +42,7 @@ type OptionSection = {
 export type Option = OptionItem | OptionSection
 export type SelectionMode = 'single' | 'multiple'
 
-type SelectProps = {
+export type SelectProps = {
   /** Whether the element should receive focus on render. */
   autoFocus?: boolean
 
@@ -384,7 +384,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             <TagGroup
               aria-label={'Selected Items'}
               selectionBehavior={'toggle'}
-              onRemove={keys => handleRemove([...keys][0])}
+              onRemove={keys => handleRemove(Array.from(keys)[0])}
               className={styles.tagGroup}
               {...mergeProps}
             >
