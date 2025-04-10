@@ -32,7 +32,8 @@
     background-color: --button-background-primary-hover;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &[data-selected] {
     background-color: --button-background-primary-active;
     outline: none;
   }
@@ -61,7 +62,8 @@
     border-color: --border-disabled;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &[data-selected] {
     background-color: --button-background-secondary-active;
     border-color: --text-tertiary;
   }
@@ -83,7 +85,8 @@
     background-color: white;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &[data-selected] {
     background-color: --button-background-tertiary-active;
   }
 }
@@ -104,7 +107,8 @@
     cursor: not-allowed;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &[data-selected] {
     background-color: --button-background-icon-active;
   }
 }
@@ -125,7 +129,8 @@
     background-color: --button-background-disabled;
   }
 
-  &[data-pressed] {
+  &[data-pressed],
+  &[data-selected] {
     background-color: --button-background-danger-active;
     outline: none;
   }
