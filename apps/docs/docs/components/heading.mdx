@@ -5,18 +5,6 @@ title: Heading
 import { Heading } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Heading }}
-      {...props}
-    >
-      {`<Heading level={2}>Jag är en vanlig h2-rubrik</Heading>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'typography-heading'}
@@ -26,7 +14,13 @@ export const Example = props => {
 
 Rubrik med fördefinerad stil
 
-<Example hideCode />
+```tsx
+<Heading level={2}>Jag är en vanlig h2-rubrik</Heading>
+```
+
+<div className='card'>
+  <Heading level={2}>Jag är en vanlig h2-rubrik</Heading>
+</div>
 
 ## Installation
 
@@ -38,42 +32,63 @@ npm install @midas-ds/components
 import { Heading } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Nivå
 
 Använd egenskapen `level` för att justera rubrikens nivå
 
-<LiveCodeBlock
-  scope={{ Heading }}
-  {...props}
->
-  {`<Heading level={3}>Jag är en vanlig h3-rubrik</Heading>`}
-</LiveCodeBlock>
+```tsx
+<Heading level={3}>Jag är en vanlig h3-rubrik</Heading>
+```
+
+<div className='card'>
+  <Heading level={3}>Jag är en vanlig h3-rubrik</Heading>
+</div>
 
 ### Extern
 
 Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
 
-<LiveCodeBlock
-  scope={{ Heading }}
-  {...props}
+```tsx
+<Heading
+  level={2}
+  isExpressive
 >
-  {`<Heading level={2} isExpressive>Jag är en luftig h2-rubrik</Heading>`}
-</LiveCodeBlock>
+  Jag är en luftig h2-rubrik
+</Heading>
+```
+
+<div className='card'>
+  <Heading
+    level={2}
+    isExpressive
+  >
+    Jag är en luftig h2-rubrik
+  </Heading>
+</div>
 
 ### Val av semantiskt element
 
 Egenskapen `elementType` kan användas för att ändra rubrikens semantiska nivå utan att påverka utseendet.
 
-<LiveCodeBlock
-  scope={{ Heading }}
-  {...props}
+```tsx
+<Heading
+  level={1}
+  elementType='h3'
 >
-  {`<Heading level={1} elementType="h3">Jag är h3:a som ser ut som en vanlig h1:a</Heading>`}
-</LiveCodeBlock>
+  Jag är h3:a som ser ut som en vanlig h1:a
+</Heading>
+```
+
+<div className='card'>
+  <Heading
+    level={1}
+    elementType='h3'
+  >
+    Jag är h3:a som ser ut som en vanlig h1:a
+  </Heading>
+</div>
 
 ## API
 
