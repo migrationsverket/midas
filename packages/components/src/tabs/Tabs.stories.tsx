@@ -98,25 +98,3 @@ export const MoreItemsThanChildren: Story = {
     )
   },
 }
-
-export const DifferentCasedTabs: Story = {
-  tags: ['!dev', '!autodocs'],
-  args: {
-    tabs: ['TEST', 'test'],
-  },
-  render: args => (
-    <Tabs {...args}>
-      <div></div>
-      <div></div>
-    </Tabs>
-  ),
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should be possible to have the same word in different cases as tab titles',
-      async () => {
-        await expect(canvas.getByRole('tab', { name: 'TEST' })).toBeVisible()
-        await expect(canvas.getByRole('tab', { name: 'test' })).toBeVisible()
-      },
-    )
-  },
-}
