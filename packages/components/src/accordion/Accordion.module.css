@@ -31,7 +31,7 @@
   padding: 0;
   font-size: 1rem;
   font-weight: 400;
-  flex: 1 0 0%;
+  flex: 1 0 0;
   text-align: left;
 }
 
@@ -79,22 +79,24 @@
   }
 }
 
+.panel[aria-hidden='true'] {
+  height: 0;
+  transition: 0.25s ease-in-out allow-discrete;
+  overflow-y: clip;
+}
+
+.panel[aria-hidden='false'] {
+  transition: 0.25s ease-in-out allow-discrete;
+  height: auto;
+  height: calc-size(min-content, size);
+}
+
 .item {
   background-color: var(--background);
 }
 
-/* safari can't calculate correct so we skip the animation there as a compriomise */
-.panel:not(.panel0) {
-  height: 0;
-  overflow: hidden;
-  transition: height 500ms cubic-bezier(0.16, 1, 0.3, 1);
-
-  &[aria-hidden='false'] {
-    height: var(--panel-height);
-  }
-}
-
 .content {
+  height: auto;
   padding: var(--content-padding);
 }
 

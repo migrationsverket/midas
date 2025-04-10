@@ -28,22 +28,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   headingLevel = 3,
   ...props
 }) => {
-  const panelRef = React.useRef<HTMLDivElement>(null)
-  const [panelHeight, setPanelHeight] = React.useState(0)
-
   const titleIsReactNode = typeof title === 'object'
-
-  /**
-   * There might be a better way to do this.
-   * Normally this shouldn't be used without a dependency array
-   * we found no way to get around it without doing like this.
-   */
-  // eslint-disable-next-line
-  React.useLayoutEffect(() => {
-    if (panelRef.current) {
-      setPanelHeight(panelRef.current.clientHeight)
-    }
-  })
 
   return (
     <Disclosure
@@ -81,11 +66,9 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
         </Heading>
       )}
       <DisclosurePanel
-        style={{ '--panel-height': `${panelHeight}px` } as React.CSSProperties}
-        className={clsx(styles.panel, panelHeight === 0 && styles.panel0)}
+        className={clsx(styles.panel)}
       >
         <div
-          ref={panelRef}
           className={styles.content}
         >
           {children}
