@@ -47,7 +47,7 @@ export const Tabs: React.FC<TabsProps> = ({
   ...rest
 }) => {
   const { width: bodyWidth } = useObserveElement(
-    (typeof document !== 'undefined' && document.body) || null,
+    typeof document === 'undefined' ? null : document.body,
     true,
   )
 
