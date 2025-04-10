@@ -4,7 +4,6 @@ import { MultiSelectListState } from './useMultiSelectListState';
 import { OverlayTriggerProps } from '@react-types/overlays';
 import { AsyncLoadable, CollectionBase, FocusableProps, InputBase, LabelableProps, MultipleSelection, TextInputBase, Validation } from '@react-types/shared';
 import { FormValidationState } from '@react-stately/form';
-/** Added this for a better output, will see how this plays out */
 interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
     onSelectionChange?: (value: Set<Key>) => void;
 }
