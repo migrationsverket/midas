@@ -1,0 +1,8 @@
+.group {
+  display: inline-flex;
+  flex-flow: row wrap;
+
+  &[aria-orientation='vertical'] {
+    flex-flow: column wrap;
+  }
+}
