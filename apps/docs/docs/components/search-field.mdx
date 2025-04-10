@@ -6,18 +6,6 @@ description: Sökfält är ett inmatningsfält anpassat för sökning
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { SearchField } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ SearchField }}
-      {...props}
-    >
-      {`<SearchField placeholder="Sök efter frukter"/>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'SearchField'}
@@ -26,7 +14,13 @@ export const Example = props => {
 
 Inmatningsfält anpassat för sökning.
 
-<Example hideCode />
+```tsx
+<SearchField placeholder='Sök efter frukter' />
+```
+
+<div className='card'>
+  <SearchField placeholder='Sök efter frukter' />
+</div>
 
 ## Installation
 
@@ -37,8 +31,6 @@ npm install @midas-ds/components
 ```tsx
 import { SearchField } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## API
 
