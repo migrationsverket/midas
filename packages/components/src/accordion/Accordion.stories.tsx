@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Accordion, AccordionItem } from './'
 import { File } from 'lucide-react'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent } from '@storybook/test'
 import { ACCORDION_TEST_ID } from './Accordion'
 import styles from './Accordion.module.css'
 import React from 'react'
@@ -119,6 +119,7 @@ export const CustomTriggerElements: Story = {
 
 export const DynamicContent: Story = {
   args: {},
+  tags: ['!dev', '!autodocs'],
   render: () => (
     <Accordion>
       <AccordionItem title={'AccordionItem with dynamic content'}>
@@ -131,8 +132,7 @@ export const DynamicContent: Story = {
       </AccordionItem>
     </Accordion>
   ),
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement)
+  play: async ({ canvas }) => {
     await userEvent.click(
       canvas.getByRole('button', {
         name: 'AccordionItem with dynamic content',
@@ -156,7 +156,7 @@ const ExpandableStuff = () => {
       {isVisible ? (
         <div
           style={{
-            background: 'lightblue',
+            background: 'black',
             color: 'white',
             height: 'auto',
             display: 'flex',
@@ -166,7 +166,7 @@ const ExpandableStuff = () => {
           }}
           data-testid={'hidden-content'}
         >
-          🍍 Pineapples were once so rare and expensive in Europe that people
+          Pineapples were once so rare and expensive in Europe that people
           used them as a status symbol—even renting them for parties to show off
           wealth, without ever eating them!
         </div>

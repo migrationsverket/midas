@@ -81,11 +81,13 @@
 
 .item {
   background-color: var(--background);
+
   @supports (interpolate-size: allow-keywords) {
     .panel {
       height: 0;
       transition: height 0.25s ease-in;
     }
+
     &[data-expanded] > .panel {
       height: calc-size(min-content, size);
       overflow-y: clip;
