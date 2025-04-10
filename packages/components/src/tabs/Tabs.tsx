@@ -48,7 +48,7 @@ export const Tabs: React.FC<TabsProps> = ({
 }) => {
   const { width: bodyWidth } = useObserveElement(
     typeof document === 'undefined' ? null : document.body,
-    true,
+    { includePadding: true },
   )
 
   const orientation: AriaTabsProps['orientation'] =
