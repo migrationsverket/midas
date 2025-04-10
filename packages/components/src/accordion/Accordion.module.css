@@ -79,20 +79,19 @@
   }
 }
 
+.panel[aria-hidden='true'] {
+  height: 0;
+  transition: 0.25s ease-in-out allow-discrete;
+  overflow-y: clip;
+}
+.panel[aria-hidden='false'] {
+  transition: 0.25s ease-in-out allow-discrete;
+  height: auto;
+  height: calc-size(min-content, size)
+}
+
 .item {
   background-color: var(--background);
-
-  @supports (interpolate-size: allow-keywords) {
-    .panel {
-      height: 0;
-      transition: height 0.25s ease-in;
-    }
-
-    &[data-expanded] > .panel {
-      height: calc-size(min-content, size);
-      overflow-y: clip;
-    }
-  }
 }
 
 .content {
