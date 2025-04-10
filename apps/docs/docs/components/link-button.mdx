@@ -5,9 +5,7 @@ description: Komponent med samma utseende och beteende som knapp men avsedd att 
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import CodeBlock from '@theme/CodeBlock'
 import { Example } from '@site/src/components/examples/link-button/LinkButtonExamples'
-import ExampleSrc from '!!raw-loader!@site/src/components/examples/link-button/LinkButtonExamples'
 
 <ComponentHeader
   name={'LinkButton'}
@@ -30,7 +28,10 @@ Komponent med samma utseende och beteende som [Button](/components/button) men a
 npm install @midas-ds/components
 ```
 
-<CodeBlock language={'tsx'}>{ExampleSrc}</CodeBlock>
+```tsx file=../../src/components/examples/link-button/LinkButtonExamples.tsx start=start_here end=end_here
+
+```
+
 <div
   className={'card'}
   style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}

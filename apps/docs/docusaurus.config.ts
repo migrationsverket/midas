@@ -3,6 +3,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
+import remarkCodeSnippets from 'remark-code-snippets'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 
@@ -111,6 +112,7 @@ const config: Config = {
               require('@docusaurus/remark-plugin-npm2yarn'),
               { converters: ['yarn', 'pnpm'], sync: true },
             ],
+            remarkCodeSnippets,
           ],
           breadcrumbs: false,
         },
