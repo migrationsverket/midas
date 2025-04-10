@@ -6,13 +6,11 @@ import {
 } from 'react-aria-components'
 import styles from './Heading.module.css'
 
-export type ElementType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-
 export interface HeadingProps extends AriaHeadingProps {
   /**
    * Override the semantic element of the component but keep the look of the level property
    */
-  elementType?: ElementType
+  elementType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   /**
    * Use the external/expressive look
    */
