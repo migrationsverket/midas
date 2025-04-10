@@ -43,7 +43,9 @@ describe('A single Select', () => {
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     await user.keyboard('[Esc]')
-    expect(onchange).toHaveBeenCalledWith('kiwi')
+    expect(onchange).toHaveBeenCalledWith(
+      expect.objectContaining(new Set(['kiwi'])),
+    )
   })
 })
 
@@ -91,6 +93,7 @@ describe('given a required single Select', () => {
 
 describe('A multi Select', () => {
   beforeEach(() => {
+    onchange.mockReset()
     baseElement = render(
       <Select
         label={label}
@@ -115,12 +118,16 @@ describe('A multi Select', () => {
     expect(selectButton).toHaveFocus()
     await user.keyboard('[Enter]')
     await user.keyboard('[Enter]')
-    expect(onchange).toHaveBeenCalledWith(['apple'])
+    expect(onchange).toHaveBeenCalledWith(
+      expect.objectContaining(new Set(['apple'])),
+    )
     expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
     expect(screen.queryByDisplayValue('Banana')).not.toBeInTheDocument()
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
-    expect(onchange).toHaveBeenCalledWith(['apple', 'banana'])
+    expect(onchange).toHaveBeenCalledWith(
+      expect.objectContaining(new Set(['apple', 'banana'])),
+    )
     expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
     expect(screen.getByDisplayValue('Banana')).toBeInTheDocument()
   })

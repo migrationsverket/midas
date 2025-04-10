@@ -4,7 +4,7 @@ title: Select
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample } from '@site/src/components/examples/select/SelectExamples'
+import { BasicExample, ControlledExample } from '@site/src/components/examples/select/SelectExamples'
 
 <ComponentHeader
   name={'Select'}
@@ -47,6 +47,10 @@ import { Select } from '@midas-ds/components'
 
 Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
 
+## Beskrivning
+
+Midas Select är en variant av React Aria `Select` med möjlighet till flerval.
+
 ## Varianter
 
 ### Flerval
@@ -62,14 +66,11 @@ Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
   selectionMode='multiple'
   // highlight-end
   options={[
-    {
-      id: 'banan',
-      name: 'Banan',
-    },
-    {
-      id: 'äpple',
-      name: 'Äpple',
-    },
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
   ]}
 />
 ```
@@ -92,14 +93,11 @@ Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-
   isSelectableAll
   // highlight-end
   options={[
-    {
-      id: 'banan',
-      name: 'Banan',
-    },
-    {
-      id: 'äpple',
-      name: 'Äpple',
-    },
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
   ]}
 />
 ```
@@ -125,14 +123,11 @@ Egenskapen `showTags` kan användas för att visa valen som etiketter under rull
   showTags
   // highlight-end
   options={[
-    {
-      id: 'banan',
-      name: 'Banan',
-    },
-    {
-      id: 'äpple',
-      name: 'Äpple',
-    },
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
   ]}
 />
 ```
@@ -142,6 +137,72 @@ Egenskapen `showTags` kan användas för att visa valen som etiketter under rull
     selectionMode='multiple'
     showTags
   />
+</div>
+
+### Förvalda alternativ (okontrollerat)
+
+Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde till komponenten.
+
+```tsx
+<Select
+  label='Favoritfrukt'
+  description='Välj vilken du vill'
+  placeholder='Välj en frukt'
+  // highlight-start
+  selectionMode='multiple'
+  defaultSelectedKeys={['banan', 'dadel']}
+  // highlight-end
+  options={[
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]}
+/>
+```
+
+<div className='card'>
+  <BasicExample
+    selectionMode='multiple'
+    defaultSelectedKeys={['banan', 'dadel']}
+  />
+</div>
+
+### Kontrollerade val
+
+Användarens val kan kontrolleras med hjälp av attributet `selectedKeys` tillsammans med eventet `onSelectionChange`.
+Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt val, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+import type { Key } from 'react-aria-components'
+
+const [selectedKeys, setSelectedKeys] = React.useState<Key>(['banan', 'dadel'])
+
+return (
+  <Select
+    label='Favoritfrukt'
+    description='Välj vilken du vill'
+    placeholder='Välj en frukt'
+    // highlight-start
+    selectionMode='multiple'
+    selectedKeys={selectedKeys}
+    onSelectionChange={setSelectedKeys}
+    // highlight-end
+    options={[
+      { id: 'apelsin', name: 'Apelsin' },
+      { id: 'banan', name: 'Banan' },
+      { id: 'citron', name: 'Citron' },
+      { id: 'dadel', name: 'Dadel' },
+      { id: 'fikon', name: 'Fikon' },
+    ]}
+  />
+)
+```
+
+<div className='card'>
+  <ControlledExample />
 </div>
 
 ## API
