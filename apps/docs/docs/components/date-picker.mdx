@@ -7,16 +7,10 @@ import { getLocalTimeZone, today } from '@internationalized/date'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DatePicker, DateRangePicker } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 export const Example = props => {
   return (
-    <LiveCodeBlock
-      scope={{ DatePicker }}
-      {...props}
-    >
-      {`<DatePicker label="Välj ett datum" aria-label="Välj datum" />`}
-    </LiveCodeBlock>
+      <DatePicker label="Välj ett datum" aria-label="Välj datum" />
   )
 }
 
@@ -32,13 +26,7 @@ export const UnavailableDateExample = props => {
 };
 
 return (
-
-<LiveCodeBlock
-  scope={{ DatePicker, getTodayAndNextFiveDays }}
-  {...props}
->
-  {`<DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />`}
-</LiveCodeBlock>
+  <DatePicker label="Välj ett datum" aria-label="Välj datum" isDateUnavailable={getTodayAndNextFiveDays} />
 ); };
 
 <ComponentHeader
@@ -48,7 +36,7 @@ return (
 
 Inmatningsfält för att välja ett eller flera datum. Består av två komponenter `DatePicker` för att välja ett datum samt `DateRangePicker` för att välja ett spann mellan två datum.
 
-<Example hideCode />
+<Example />
 
 ## Installation
 
@@ -61,21 +49,19 @@ import { DatePicker } from '@midas-ds/components'
 // import { DateRangePicker } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+<div className={'card'}>
+  <Example />
+</div>
 
 ## Varianter
 
 ### DatePicker
 
-<LiveCodeBlock
-  scope={{ DatePicker }}
->{`<DatePicker label="Välj ett datum när du vill vara ledig" aria-label="Välj datum" />`}</LiveCodeBlock>
+<DatePicker label="Välj ett datum när du vill vara ledig" aria-label="Välj datum" />
 
 ### DateRangePicker
 
-<LiveCodeBlock
-  scope={{ DateRangePicker }}
->{`<DateRangePicker label="Ange din semesterperiod" aria-label="Välj spann av datum" />`}</LiveCodeBlock>
+<DateRangePicker label="Ange din semesterperiod" aria-label="Välj spann av datum" />
 
 ## Begränsa val
 
