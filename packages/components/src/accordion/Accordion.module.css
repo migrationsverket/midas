@@ -84,10 +84,11 @@
   transition: 0.25s ease-in-out allow-discrete;
   overflow-y: clip;
 }
+
 .panel[aria-hidden='false'] {
   transition: 0.25s ease-in-out allow-discrete;
   height: auto;
-  height: calc-size(min-content, size)
+  height: calc-size(min-content, size);
 }
 
 .item {
