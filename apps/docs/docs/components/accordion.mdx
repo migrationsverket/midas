@@ -123,15 +123,15 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
 ### Multiple
 
 En accordion har som standard bara en öppet samtidigt och stänger automatiskt andra sektioner när en ny öppnas.
-Detta kan ändras genom att sätta `type` till `multiple`.
+Detta kan ändras genom att sätta prop `allowsMultipleExpanded`.
 
 ```tsx
-<Accordion type={'multiple'}>
+<Accordion allowsMultipleExpanded>
   <AccordionItem>...</AccordionItem>
 </Accordion>
 ```
 
-<AccordionExample type={'multiple'} />
+<AccordionExample allowsMultipleExpanded />
 
 ### Uncontrolled expanded
 
