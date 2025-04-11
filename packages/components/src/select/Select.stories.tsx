@@ -282,7 +282,7 @@ export const RequiredSingle: Story = {
 }
 
 export const Controlled: Story = {
-  tags: ['!dev', '!autodocs'],
+  // tags: ['!dev', '!autodocs'],
   args: {
     ...Normal.args,
     selectionMode: 'multiple',
