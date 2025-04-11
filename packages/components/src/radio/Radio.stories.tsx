@@ -169,3 +169,10 @@ export const CustomValidation: Story = {
     )
   },
 }
+
+export const Horizontal: Story = {
+  args: {
+    ...Normal.args,
+    orientation: 'horizontal',
+  },
+}
