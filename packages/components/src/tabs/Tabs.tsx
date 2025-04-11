@@ -33,7 +33,6 @@ export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
   defaultSelected?: string
 }
 
-// Define a type for children elements that can accept an id prop
 interface TabPanelChildProps {
   id?: string
   children?: React.ReactNode
@@ -56,7 +55,6 @@ export const Tabs: React.FC<TabsProps> = ({
 
   const childrenArray = React.Children.toArray(children)
 
-  // Check if the number of children matches the number of tabs
   if (childrenArray.length !== tabs.length) {
     console.error(
       `The number of children must match the number of tabs. Children: ${childrenArray.length} Tabs: ${tabs.length}`,
@@ -64,7 +62,6 @@ export const Tabs: React.FC<TabsProps> = ({
     return null
   }
 
-  // Create a map of tab titles to their corresponding content
   const tabContentMap = childrenArray.reduce(
     (acc, child, index) => {
       if (React.isValidElement<TabPanelChildProps>(child)) {
