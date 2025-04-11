@@ -44,24 +44,22 @@ import { ComboBox } from '@midas-ds/components'
 
 ```tsx
 import React from 'react'
-```
+import { Key } from 'react-aria-components'
 
-```tsx
-const [selectedFruit, setSelectedFruit] = useState<string | null>('Kiwi')
+const [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)
+
 return (
-  <>
-    <ComboBox
-      label='Välj din favoritfrukt'
-      description='Du kan bara välja en'
-      onChange={key => setSelectedFruit(key as string)}
-    >
-      <ComboBoxItem key='Äpple'>Äpple</ComboBoxItem>
-      <ComboBoxItem key='Banan'>Banan</ComboBoxItem>
-      <ComboBoxItem key='Kiwi'>Kiwi</ComboBoxItem>
-      <ComboBoxItem key='Apelsin'>Apelsin</ComboBoxItem>
-    </ComboBox>
-    <div style={{ marginTop: '1rem' }}>selectedFruit: {selectedFruit}</div>
-  </>
+  <ComboBox
+    label='Välj din favoritfrukt'
+    description='Du kan bara välja en'
+    selectedKey={selectedFruit}
+    onSelectionChange={setSelectedFruit}
+  >
+    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
+    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
+    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
+    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+  </ComboBox>
 )
 ```
 
