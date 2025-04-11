@@ -281,6 +281,56 @@ export const RequiredSingle: Story = {
   },
 }
 
+export const Controlled: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    ...Normal.args,
+    selectionMode: 'multiple',
+    label: 'Controlled mode',
+    placeholder: 'Välj flera',
+  },
+  render: args => {
+    const options = [
+      { id: 'banan', name: 'Banan' },
+      { id: 'melon', name: 'Melon' },
+      { id: 'kiwi', name: 'Kiwi' },
+      { id: 'citron', name: 'Citron' },
+    ]
+
+    const [selectedFruit, setSelectedFruit] = useState<Selection>(new Set())
+
+    const handleSelectionChange = (keys: Selection) => {
+      if (keys === 'all') {
+        return setSelectedFruit(new Set(options.map(({ id }) => id)))
+      }
+      return setSelectedFruit(keys)
+    }
+
+    return (
+      <>
+        <Select
+          {...args}
+          selectedKeys={selectedFruit}
+          onSelectionChange={handleSelectionChange}
+          options={[
+            { id: 'banan', name: 'Banan' },
+            { id: 'melon', name: 'Melon' },
+            { id: 'kiwi', name: 'Kiwi' },
+            { id: 'citron', name: 'Citron' },
+          ]}
+          isSelectableAll
+        />
+        <pre>
+          Valda frukter:
+          {typeof selectedFruit === 'string'
+            ? selectedFruit
+            : selectedFruit && Array.from(selectedFruit).join(', ')}
+        </pre>
+      </>
+    )
+  },
+}
+
 export const DS872: Story = {
   tags: ['!dev', '!autodocs'],
   args: {
