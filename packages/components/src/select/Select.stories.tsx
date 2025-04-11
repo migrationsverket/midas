@@ -158,7 +158,7 @@ export const WithTags: Story = {
   args: {
     selectionMode: 'multiple',
     showTags: true,
-    defaultSelectedKeys: ['apple', 'kiwi'],
+    defaultSelectedKeys: new Set(['apple', 'kiwi']),
   },
   play: async ({ args, canvas, step }) => {
     await step(

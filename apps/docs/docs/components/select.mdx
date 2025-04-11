@@ -150,7 +150,7 @@ Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde til
   placeholder='Välj en frukt'
   // highlight-start
   selectionMode='multiple'
-  defaultSelectedKeys={['banan', 'dadel']}
+  defaultSelectedKeys={new Set(['banan', 'dadel'])}
   // highlight-end
   options={[
     { id: 'apelsin', name: 'Apelsin' },
@@ -165,7 +165,7 @@ Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde til
 <div className='card'>
   <BasicExample
     selectionMode='multiple'
-    defaultSelectedKeys={['banan', 'dadel']}
+    defaultSelectedKeys={new Set(['banan', 'dadel'])}
   />
 </div>
 
@@ -186,7 +186,7 @@ const options = [
   { id: 'fikon', name: 'Fikon' },
 ]
 
-const [selectedFruit, setSelectedFruit] = React.useState<Selection>()
+const [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())
 
 const handleSelectionChange = (keys: Selection) => {
   if (keys === 'all') {

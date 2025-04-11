@@ -28,7 +28,7 @@ export const ControlledExample = () => {
     { id: 'fikon', name: 'Fikon' },
   ]
 
-  const [selectedFruit, setSelectedFruit] = React.useState<Selection>()
+  const [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())
 
   const handleSelectionChange = (keys: Selection) => {
     if (keys === 'all') {
