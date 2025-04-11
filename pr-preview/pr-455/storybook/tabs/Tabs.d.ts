@@ -1,5 +1,6 @@
+import { TabsProps as AriaTabsProps } from 'react-aria-components';
 import * as React from 'react';
-export interface TabsProps {
+export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
     /**
      * An array of tab titles
      */
@@ -9,12 +10,13 @@ export interface TabsProps {
      */
     label: string;
     /**
-     * Choose another than the first tab to be selected by default. Name must match one of the tabs
-     */
-    defaultSelected?: string;
-    /**
      * Amount of children must match the amount of tabs
      */
     children: React.ReactNode;
+    /**
+     * @deprecated
+     * Please use `defaultSelectedKey` instead
+     */
+    defaultSelected?: string;
 }
 export declare const Tabs: React.FC<TabsProps>;
