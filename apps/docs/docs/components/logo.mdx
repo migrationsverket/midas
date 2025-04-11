@@ -5,17 +5,7 @@ description: Migrationsverkets officiella logotyp, den röda bron tillsammans me
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Link, Flex, FlexItem, Logo } from '@midas-ds/components'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Logo }}
-      {...props}
-    >{`<Logo />`}</LiveCodeBlock>
-  )
-}
+import { Link, Logo } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Logo'}
@@ -25,7 +15,13 @@ export const Example = props => {
 
 På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas.
 
-<Example hideCode />
+```tsx
+<Logo />
+```
+
+<div className='card'>
+  <Logo />
+</div>
 
 ## Installation
 
@@ -37,48 +33,81 @@ npm install @midas-ds/components
 import { Logo } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 Logotypen finns i fyra olika storlekar (xsmall, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern.
 
 ### X-small
 
-<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
-  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
-    <Logo size="x-small" />
-    <Logo primary={false} size="x-small" />
-  </div>`}
+```tsx
+<Logo size="x-small" />
+<Logo primary={false} size="x-small" />
+```
 
-</LiveCodeBlock>
+<div
+  className='card'
+  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
+>
+  <Logo size='x-small' />
+  <Logo
+    primary={false}
+    size='x-small'
+  />
+</div>
 
 ### Small
 
-<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
-  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
-      <Logo size="small" />
-      <Logo primary={false} size="small" />
-    </div>`}
-</LiveCodeBlock>
+```tsx
+<Logo size='small' />
+<Logo primary={false} size='small'/>
+```
+
+<div
+  className='card'
+  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
+>
+  <Logo size='small' />
+  <Logo
+    primary={false}
+    size='small'
+  />
+</div>
 
 ### Medium
 
-<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
-  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
-      <Logo size="medium" />
-      <Logo primary={false} size="medium" />
-    </div>`}
-</LiveCodeBlock>
+```tsx
+<Logo size="medium" />
+<Logo primary={false} size="medium" />
+```
+
+<div
+  className='card'
+  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
+>
+  <Logo size='medium' />
+  <Logo
+    primary={false}
+    size='medium'
+  />
+</div>
 
 ### Large
 
-<LiveCodeBlock scope={{ Logo, Flex, FlexItem }}>
-  {`<div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
-      <Logo size="large" />
-      <Logo primary={false} size="large" />
-    </div>`}
-</LiveCodeBlock>
+```tsx
+<Logo size="large" />
+<Logo primary={false} size="large" />
+```
+
+<div
+  className='card'
+  style={{ flexWrap: 'wrap', gap: '1rem', flexDirection: 'row' }}
+>
+  <Logo size='large' />
+  <Logo
+    primary={false}
+    size='large'
+  />
+</div>
 
 ## Logotyp i SVG-format
 

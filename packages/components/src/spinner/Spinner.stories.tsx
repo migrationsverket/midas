@@ -9,6 +9,11 @@ const meta: Meta<typeof Spinner> = {
   parameters: {
     layout: 'centered',
   },
+  args: {
+    small: false,
+    isOnColor: false,
+    dark: false,
+  },
 }
 export default meta
 type Story = StoryObj<typeof Spinner>
@@ -22,16 +27,11 @@ export const Small: Story = {
 }
 
 export const InButton: Story = {
-  args: { small: true, dark: true },
-  render: ({ ...args }) => {
-    return (
-      <Button>
-        <Spinner
-          dark={args.dark}
-          small={args.small}
-        />
-        Laddar
-      </Button>
-    )
-  },
+  args: { small: true, isOnColor: true },
+  render: args => (
+    <Button>
+      <Spinner {...args} />
+      Laddar
+    </Button>
+  ),
 }
