@@ -7,6 +7,7 @@ export const BasicExample: React.FC = () => (
     label='Välj din favoritfrukt'
     description='Du kan bara välja en'
   >
+    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
     <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
     <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
     <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
@@ -25,6 +26,7 @@ export const ControlledExample = () => {
         selectedKey={selectedFruit}
         onSelectionChange={setSelectedFruit}
       >
+        <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
         <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
         <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
         <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>

@@ -6,7 +6,6 @@ description: Sökbar version av Select
 import { BasicExample, ControlledExample } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ComboBox, ComboBoxItem } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Combobox'}
@@ -21,10 +20,11 @@ En ComboBox är en sökbar version av Select. Combobox används för att välja 
   label='Välj din favoritfrukt'
   description='Du kan bara välja en'
 >
-  <ComboBoxItem key='Äpple'>Äpple</ComboBoxItem>
-  <ComboBoxItem key='Banan'>Banan</ComboBoxItem>
-  <ComboBoxItem key='Kiwi'>Kiwi</ComboBoxItem>
-  <ComboBoxItem key='Apelsin'>Apelsin</ComboBoxItem>
+  <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
+  <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
+  <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
+  <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
+  <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
 </ComboBox>
 ```
 
@@ -42,6 +42,9 @@ import { ComboBox } from '@midas-ds/components'
 
 ## Kontrollerat val
 
+Använd attributet `id` och eventet `onSelectionChange` för att använda controlled value på ComboBox.
+Den valda compbox item värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
+
 ```tsx
 import React from 'react'
 import { Key } from 'react-aria-components'
@@ -55,6 +58,7 @@ return (
     selectedKey={selectedFruit}
     onSelectionChange={setSelectedFruit}
   >
+    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
     <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
     <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
     <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
