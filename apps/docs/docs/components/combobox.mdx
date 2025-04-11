@@ -3,27 +3,10 @@ title: ComboBox
 description: Sökbar version av Select
 ---
 
+import { BasicExample, ControlledExample } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { ComboBox, ComboBoxItem } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ ComboBox, ComboBoxItem }}
-      {...props}
-    >
-      {`<ComboBox
-          label="Vad är din favoritfrukt?"
-          placeholder="Välj en frukt"
-          items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-        >
-          {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-      </ComboBox>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Combobox'}
@@ -33,7 +16,19 @@ export const Example = props => {
 
 En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ.
 
-<Example hideCode />
+```tsx
+<ComboBox
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+>
+  <ComboBoxItem key='Äpple'>Äpple</ComboBoxItem>
+  <ComboBoxItem key='Banan'>Banan</ComboBoxItem>
+  <ComboBoxItem key='Kiwi'>Kiwi</ComboBoxItem>
+  <ComboBoxItem key='Apelsin'>Apelsin</ComboBoxItem>
+</ComboBox>
+```
+
+<BasicExample />
 
 ## Installation
 
@@ -45,7 +40,32 @@ npm install @midas-ds/components
 import { ComboBox } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Kontrollerat val
+
+```tsx
+import React from 'react'
+```
+
+```tsx
+const [selectedFruit, setSelectedFruit] = useState<string | null>('Kiwi')
+return (
+  <>
+    <ComboBox
+      label='Välj din favoritfrukt'
+      description='Du kan bara välja en'
+      onChange={key => setSelectedFruit(key as string)}
+    >
+      <ComboBoxItem key='Äpple'>Äpple</ComboBoxItem>
+      <ComboBoxItem key='Banan'>Banan</ComboBoxItem>
+      <ComboBoxItem key='Kiwi'>Kiwi</ComboBoxItem>
+      <ComboBoxItem key='Apelsin'>Apelsin</ComboBoxItem>
+    </ComboBox>
+    <div style={{ marginTop: '1rem' }}>selectedFruit: {selectedFruit}</div>
+  </>
+)
+```
+
+<ControlledExample />
 
 ## Riktlinjer
 
