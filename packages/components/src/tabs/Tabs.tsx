@@ -1,10 +1,19 @@
 'use client'
 
 import * as React from 'react'
-import { Tabs as AriaTabs, Tab, TabList, TabPanel } from 'react-aria-components'
+import {
+  Tabs as AriaTabs,
+  Tab,
+  TabList,
+  TabPanel,
+  type TabsProps as AriaTabsProps,
+} from 'react-aria-components'
+import clsx from 'clsx'
 import styles from './Tabs.module.css'
+import useObserveElement from '../utils/useObserveElement'
+import { windowSizes } from '../theme'
 
-export interface TabsProps {
+export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
   /**
    * An array of tab titles
    */
@@ -14,16 +23,16 @@ export interface TabsProps {
    */
   label: string
   /**
-   * Choose another than the first tab to be selected by default. Name must match one of the tabs
-   */
-  defaultSelected?: string
-  /**
    * Amount of children must match the amount of tabs
    */
   children: React.ReactNode
+  /**
+   * @deprecated
+   * Please use `defaultSelectedKey` instead
+   */
+  defaultSelected?: string
 }
 
-// Define a type for children elements that can accept an id prop
 interface TabPanelChildProps {
   id?: string
   children?: React.ReactNode
@@ -32,23 +41,31 @@ interface TabPanelChildProps {
 export const Tabs: React.FC<TabsProps> = ({
   tabs,
   label,
-  defaultSelected,
   children,
+  className,
+  ...rest
 }) => {
+  const { width: bodyWidth } = useObserveElement(
+    typeof document === 'undefined' ? null : document.body,
+    { includePadding: true },
+  )
+
+  const orientation: AriaTabsProps['orientation'] =
+    bodyWidth >= windowSizes.md ? 'horizontal' : 'vertical'
+
   const childrenArray = React.Children.toArray(children)
 
-  // Check if the number of children matches the number of tabs
   if (childrenArray.length !== tabs.length) {
-    throw new Error(
+    console.error(
       `The number of children must match the number of tabs. Children: ${childrenArray.length} Tabs: ${tabs.length}`,
     )
+    return null
   }
 
-  // Create a map of tab titles to their corresponding content
   const tabContentMap = childrenArray.reduce(
     (acc, child, index) => {
       if (React.isValidElement<TabPanelChildProps>(child)) {
-        const title = tabs[index]?.toLowerCase()
+        const title = tabs[index]
         if (title) {
           acc[title] = React.cloneElement(child, { id: title })
         }
@@ -60,9 +77,10 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <AriaTabs
-      orientation='vertical'
-      defaultSelectedKey={defaultSelected && defaultSelected.toLowerCase()}
-      className={styles.container}
+      orientation={orientation}
+      className={clsx(styles.container, className)}
+      {...rest}
+      defaultSelectedKey={rest.defaultSelected || rest.defaultSelectedKey}
     >
       <TabList
         aria-label={label}
@@ -71,7 +89,7 @@ export const Tabs: React.FC<TabsProps> = ({
         {tabs.map(tab => (
           <Tab
             key={tab}
-            id={tab.toLowerCase()}
+            id={tab}
             className={styles.listItem}
           >
             {tab}
@@ -81,10 +99,10 @@ export const Tabs: React.FC<TabsProps> = ({
       {tabs.map(tab => (
         <TabPanel
           key={tab}
-          id={tab.toLowerCase()}
+          id={tab}
           className={styles.panel}
         >
-          {tabContentMap[tab.toLowerCase()]}
+          {tabContentMap[tab]}
         </TabPanel>
       ))}
     </AriaTabs>
