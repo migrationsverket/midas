@@ -1,1 +1,0 @@
-import{f as l}from"./utils-fGMpyvF6.js";import{r as s}from"./index-BbAIUH2N.js";function i(e,r,f,t){let a=l(f),c=f==null;s.useEffect(()=>{if(c||!e.current)return;let n=e.current;return n.addEventListener(r,a,t),()=>{n.removeEventListener(r,a,t)}},[e,r,t,c,a])}export{i as $};
