@@ -1,43 +1,36 @@
 import React, { useState } from 'react'
 import { RadioGroup, Radio } from '@midas-ds/components'
 
-const fruits = ['Äpple', 'Banan', 'Kiwi', 'Apelsin']
-
 export const BasicExample: React.FC = () => (
   <RadioGroup
-    label='Välj frukt'
+    label='Välj din favoritfrukt'
     description='Du kan bara välja en'
-    defaultValue={fruits[0]}
+    defaultValue='apple'
   >
-    {fruits.slice(0, 4).map(fruit => (
-      <Radio
-        key={fruit}
-        value={fruit}
-      >
-        {fruit}
-      </Radio>
-    ))}
+    <Radio value='apple'>Äpple</Radio>
+    <Radio value='banan'>Banan</Radio>
+    <Radio value='kiwi'>Kiwi</Radio>
+    <Radio value='aplesin'>Apelsin</Radio>
   </RadioGroup>
 )
 
 export const ControlledExample = () => {
-  const [selectedFruit, setSelectedFruit] = useState(fruits[2])
+  const [selectedFruit, setSelectedFruit] = useState('banan')
 
   return (
-    <RadioGroup
-      label='Välj frukt'
-      description='Du kan bara välja en'
-      value={selectedFruit}
-      onChange={(value: string) => setSelectedFruit(value)}
-    >
-      {fruits.slice(0, 4).map(fruit => (
-        <Radio
-          key={fruit}
-          value={fruit}
-        >
-          {fruit}
-        </Radio>
-      ))}
-    </RadioGroup>
+    <>
+      <RadioGroup
+        label='Välj din favoritfrukt'
+        description='Du kan bara välja en'
+        value={selectedFruit}
+        onChange={setSelectedFruit}
+      >
+        <Radio value='apple'>Äpple</Radio>
+        <Radio value='banan'>Banan</Radio>
+        <Radio value='kiwi'>Kiwi</Radio>
+        <Radio value='aplesin'>Apelsin</Radio>
+      </RadioGroup>
+      <div style={{ marginTop: '1rem' }}>selectedFruit: {selectedFruit}</div>
+    </>
   )
 }

@@ -17,20 +17,21 @@ Inmatningsfält som används för att välja exakt ett alternativ.
 
 ```tsx
 <RadioGroup
-  label={'Välj din favoritfrukt'}
-  description={'Du kan bara välja en'}
-  defaultValue={fruits[0].value}
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+  defaultValue='apple'
 >
-  <Radio>Äpple</Radio>
-  <Radio>Banan</Radio>
-  <Radio>Kiwi</Radio>
-  <Radio>Apelsin</Radio>
+  <Radio value='apple'>Äpple</Radio>
+  <Radio value='banan'>Banan</Radio>
+  <Radio value='kiwi'>Kiwi</Radio>
+  <Radio value='aplesin'>Apelsin</Radio>
 </RadioGroup>
 ```
 
 <div className='card'>
   <BasicExample />
 </div>
+
 ## Installation
 
 ```bash npm2yarn
@@ -41,32 +42,31 @@ npm install @midas-ds/components
 import { Radio, RadioGroup } from '@midas-ds/components'
 ```
 
-### Kontrollerat val av Radioknappar
+## Kontrollerat val
 
-Om du vill kontrollera
+Använd attributet `value` och eventet `onChange` för att använda controlled value på RadioGroup.
+Den valda radioknappens värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
 
 ```tsx
 import React from 'react'
 ```
 
 ```tsx
-const [selectedFruit, setSelectedFruit] = useState(fruits[2])
+const [selectedFruit, setSelectedFruit] = useState('banan')
 
 return (
   <RadioGroup
-    label='Välj frukt'
+    label='Välj din favoritfrukt'
     description='Du kan bara välja en'
+    // highlight-start
     value={selectedFruit}
-    onChange={(value: string) => setSelectedFruit(value)}
+    onChange={setSelectedFruit}
+    // highlight-end
   >
-    {fruits.slice(0, 4).map(fruit => (
-      <Radio
-        key={fruit}
-        value={fruit}
-      >
-        {fruit}
-      </Radio>
-    ))}
+    <Radio value='apple'>Äpple</Radio>
+    <Radio value='banan'>Banan</Radio>
+    <Radio value='kiwi'>Kiwi</Radio>
+    <Radio value='aplesin'>Apelsin</Radio>
   </RadioGroup>
 )
 ```
