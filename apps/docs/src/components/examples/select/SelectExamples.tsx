@@ -20,27 +20,38 @@ export const BasicExample: React.FC<Partial<SelectProps>> = props => (
 )
 
 export const ControlledExample = () => {
-  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
-    new Set(['banan', 'dadel']),
-  )
+  const options = [
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]
 
-  console.log(selectedKeys)
+  const [selectedFruit, setSelectedFruit] = React.useState<Selection>()
+
+  const handleSelectionChange = (keys: Selection) => {
+    if (keys === 'all') {
+      return setSelectedFruit(new Set(options.map(({ id }) => id)))
+    }
+    return setSelectedFruit(keys)
+  }
 
   return (
-    <Select
-      label='Favoritfrukt'
-      description='Välj vilken du vill'
-      placeholder='Välj en frukt'
-      selectionMode='single'
-      selectedKeys={selectedKeys}
-      onSelectionChange={setSelectedKeys}
-      options={[
-        { id: 'apelsin', name: 'Apelsin' },
-        { id: 'banan', name: 'Banan' },
-        { id: 'citron', name: 'Citron' },
-        { id: 'dadel', name: 'Dadel' },
-        { id: 'fikon', name: 'Fikon' },
-      ]}
-    />
+    <>
+      <Select
+        label='Favoritfrukt'
+        description='Välj vilken du vill'
+        placeholder='Välj en frukt'
+        selectionMode='multiple'
+        selectedKeys={selectedFruit}
+        onSelectionChange={handleSelectionChange}
+        isSelectableAll
+        options={options}
+      />
+      <pre>
+        Selected fruit: {selectedFruit && Array.from(selectedFruit).join(', ')}
+      </pre>
+    </>
   )
 }

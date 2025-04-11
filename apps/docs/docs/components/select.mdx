@@ -176,9 +176,24 @@ Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt v
 
 ```tsx
 import React from 'react'
-import type { Key } from 'react-aria-components'
+import { Selection } from 'react-aria-components'
 
-const [selectedKeys, setSelectedKeys] = React.useState<Key>(['banan', 'dadel'])
+const options = [
+  { id: 'apelsin', name: 'Apelsin' },
+  { id: 'banan', name: 'Banan' },
+  { id: 'citron', name: 'Citron' },
+  { id: 'dadel', name: 'Dadel' },
+  { id: 'fikon', name: 'Fikon' },
+]
+
+const [selectedFruit, setSelectedFruit] = React.useState<Selection>()
+
+const handleSelectionChange = (keys: Selection) => {
+  if (keys === 'all') {
+    return setSelectedFruit(new Set(options.map(({ id }) => id)))
+  }
+  return setSelectedFruit(keys)
+}
 
 return (
   <Select
@@ -187,16 +202,11 @@ return (
     placeholder='Välj en frukt'
     // highlight-start
     selectionMode='multiple'
-    selectedKeys={selectedKeys}
-    onSelectionChange={setSelectedKeys}
+    selectedKeys={selectedFruit}
+    onSelectionChange={handleSelectionChanges}
+    isSelectableAll
     // highlight-end
-    options={[
-      { id: 'apelsin', name: 'Apelsin' },
-      { id: 'banan', name: 'Banan' },
-      { id: 'citron', name: 'Citron' },
-      { id: 'dadel', name: 'Dadel' },
-      { id: 'fikon', name: 'Fikon' },
-    ]}
+    options={options}
   />
 )
 ```

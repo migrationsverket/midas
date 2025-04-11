@@ -3,8 +3,8 @@ import { Select } from './Select'
 import { RunOptions } from 'axe-core'
 import { options } from './utils'
 import { expect, userEvent } from '@storybook/test'
-import React, { useState } from 'react'
-import { Selection } from 'react-stately'
+import { useState } from 'react'
+import { Selection } from 'react-aria-components'
 
 const meta: Meta<typeof Select> = {
   component: Select,
