@@ -1,6 +1,5 @@
 import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
 import { useEffect, useState } from 'react'
-import { Key } from 'react-aria'
 import {
   MultiSelectListState,
   useMultiSelectListState,
@@ -21,10 +20,6 @@ import {
   type FormValidationState,
 } from '@react-stately/form'
 
-interface ArraySelection extends Omit<MultipleSelection, 'onSelectionChange'> {
-  onSelectionChange?: (value: Set<Key>) => void
-}
-
 export interface MultiSelectProps<T>
   extends CollectionBase<T>,
     AsyncLoadable,
@@ -32,8 +27,7 @@ export interface MultiSelectProps<T>
     Validation,
     LabelableProps,
     TextInputBase,
-    ArraySelection,
-    // MultipleSelection,
+    MultipleSelection,
     FocusableProps,
     OverlayTriggerProps {
   /**
@@ -66,17 +60,7 @@ export function useMultiSelectState<T extends object>(
   const multiSelectListState = useMultiSelectListState({
     ...props,
     onSelectionChange: keys => {
-      const { onSelectionChange } = props
-
-      if (onSelectionChange != null) {
-        if (keys === 'all') {
-          // This may change back to "all" once we will implement async loading of additional
-          // items and differentiation between "select all" vs. "select visible".
-          onSelectionChange(new Set(multiSelectListState.collection.getKeys()))
-        } else {
-          onSelectionChange(keys)
-        }
-      }
+      props.onSelectionChange && props.onSelectionChange(keys)
 
       if (isSingleSelect) {
         triggerState.close()
