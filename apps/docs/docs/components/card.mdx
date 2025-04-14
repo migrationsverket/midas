@@ -3,6 +3,7 @@ title: Card
 description: En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
 ---
 
+import { BasicExample } from '@site/src/components/examples/card/CardExamples'
 import { PropTable } from '@site/src/components/propsTable'
 import { Grid, GridItem, Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -38,6 +39,51 @@ export const Example = props => {
 />
 
 Komponent som är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt samt länka till innehållet.
+
+```tsx
+<Grid fluid>
+  <GridItem
+    col={4}
+    id='fruit value'
+  >
+    <Card
+      title='Ananas'
+      content='Tropisk frukt med taggigt skal'
+      image={{
+        description: 'Tropisk frukt med taggigt skal',
+        source:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
+      }}
+      link={{ href: '#', children: 'Läs mer om denna frukt' }}
+      headingTag='h2'
+    />
+    <Card
+      title='Aprikos'
+      content='Stenfrukt med orange färg'
+      image={{
+        description: 'Stenfrukt med orange färg',
+        source:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Apricot_and_cross_section.jpg/320px-Apricot_and_cross_section.jpg',
+      }}
+      link={{ href: '#', children: 'Läs mer om denna frukt' }}
+      headingTag='h2'
+    />
+    <Card
+      title='Apelsin'
+      content='Citrusfrukt med orange skal'
+      image={{
+        description: 'Citrusfrukt med orange skal',
+        source:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Orange-Fruit-Pieces.jpg/320px-Orange-Fruit-Pieces.jpg',
+      }}
+      link={{ href: '#', children: 'Läs mer om denna frukt' }}
+      headingTag='h2'
+    />
+  </GridItem>
+</Grid>
+```
+
+<BasicExample />
 
 <Example hideCode />
 
