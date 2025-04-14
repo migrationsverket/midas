@@ -6,7 +6,7 @@ interface WrapperProps {
 }
 
 const Wrapper = ({ children }: WrapperProps) => (
-  <form>
+  <form onSubmit={e => e.preventDefault()}>
     {children}
     <button type='submit'>Submit</button>
   </form>

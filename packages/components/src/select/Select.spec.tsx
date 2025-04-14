@@ -88,6 +88,15 @@ describe('given a required single Select', () => {
 
     // JSDOM Native required validation message
     expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
+
+    await user.keyboard('[Space]')
+    await user.keyboard('[Space]')
+    await user.tab()
+    await user.keyboard('[Enter]')
+
+    expect(
+      screen.queryByText(/Constraints not satisfied/),
+    ).not.toBeInTheDocument()
   })
 })
 
@@ -152,6 +161,17 @@ describe('given a required multi Select', () => {
 
     // JSDOM Native required validation message
     expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
+
+    await user.keyboard('[Space]')
+    await user.keyboard('[Space]')
+    await user.keyboard('[Escape]')
+    await user.tab()
+    await user.tab()
+    await user.keyboard('[Enter]')
+
+    expect(
+      screen.queryByText(/Constraints not satisfied/),
+    ).not.toBeInTheDocument()
   })
 })
 
