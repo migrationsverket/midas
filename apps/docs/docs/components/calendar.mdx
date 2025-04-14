@@ -19,6 +19,11 @@ Kalender kan användas när användaren ska välja ett datum eller visualisera e
 är [DatePicker](/components/date-picker) standardvalet men kalendern kan användas när inputfältet inte
 behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte ska presenteras som en popover.
 
+```tsx
+import { Calendar } from '@midas-ds/components'
+
+<Calendar/>
+```
 <div className={'card'} style={{background: semantic.layer02}}>
   <Calendar/>
 </div>
@@ -28,15 +33,6 @@ behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte
 ```bash npm2yarn
 npm install @midas-ds/components
 ```
-
-```tsx
-import { Calendar } from '@midas-ds/components'
-
-<Calendar/>
-```
-<div className={'card'} style={{background: semantic.layer02}}>
-  <Calendar/>
-</div>
 
 ## Användning
 
@@ -65,7 +61,7 @@ export const RangeCalendarExample = () => {
         value={selected}
         onChange={setSelected}
       />
-      <pre style={{ marginTop: '1rem' }}>
+      <pre>
         Valda datum:{' '}
         {selected &&
           `${selected?.start.toString()}
