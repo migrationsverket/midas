@@ -51,6 +51,10 @@
   &[data-disabled='true'] button {
     cursor: not-allowed;
   }
+
+  @media (forced-colors: active) {
+    border: 2px solid;
+  }
 }
 
 .header {
