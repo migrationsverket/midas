@@ -98,6 +98,7 @@
     background-color: --field-01;
     border-color: --button-background-primary;
   }
+
   &[data-selected='true'] {
     color: --text-on-color;
     background-color: --button-background-primary;
