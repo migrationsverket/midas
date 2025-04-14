@@ -4,10 +4,7 @@ import React from 'react'
 export const BasicExample: React.FC = () => (
   <div className='card'>
     <Grid fluid>
-      <GridItem
-        col={4}
-        id='fruit value'
-      >
+      <GridItem col={4}>
         <Card
           title='Ananas'
           content='Tropisk frukt med taggigt skal'
@@ -19,6 +16,8 @@ export const BasicExample: React.FC = () => (
           link={{ href: '#', children: 'Läs mer om denna frukt' }}
           headingTag='h2'
         />
+      </GridItem>
+      <GridItem col={4}>
         <Card
           title='Aprikos'
           content='Stenfrukt med orange färg'
@@ -30,6 +29,8 @@ export const BasicExample: React.FC = () => (
           link={{ href: '#', children: 'Läs mer om denna frukt' }}
           headingTag='h2'
         />
+      </GridItem>
+      <GridItem col={4}>
         <Card
           title='Apelsin'
           content='Citrusfrukt med orange skal'
