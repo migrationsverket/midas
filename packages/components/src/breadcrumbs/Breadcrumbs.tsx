@@ -7,13 +7,11 @@ import { Link } from '../link'
 import styles from './Breadcrumbs.module.css'
 
 export interface BreadcrumbProps {
-  items: MidasBreadcrumb[]
-}
-
-export interface MidasBreadcrumb {
-  href: string
-  title: string
-  isDisabled?: boolean
+  items: {
+    href: string
+    title: string
+    isDisabled?: boolean
+  }[]
 }
 
 export const Breadcrumbs: React.FC<BreadcrumbProps> = ({ items }) => {
