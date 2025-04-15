@@ -99,6 +99,11 @@ export declare const transitions: {
     normal: string;
     fast: string;
 };
+export declare const windowSizes: {
+    md: number;
+    lg: number;
+    xl: number;
+};
 export declare const breakpoints: {
     sm: string;
     md: string;
