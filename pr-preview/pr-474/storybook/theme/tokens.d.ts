@@ -40,6 +40,7 @@ export declare const baseColors: {
     signalGreen20: string;
     signalGreen100: string;
     signalRed20: string;
+    signalRed80: string;
     signalRed100: string;
     signalRed160: string;
     signalRed180: string;
