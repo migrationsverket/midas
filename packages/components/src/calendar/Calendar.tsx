@@ -45,10 +45,7 @@ export function Calendar<T extends DateValue>({
           <ChevronRight />
         </Button>
       </header>
-      <CalendarGrid
-        className={styles.calendar}
-        weekdayStyle={weekdayStyle}
-      >
+      <CalendarGrid weekdayStyle={weekdayStyle}>
         {date => (
           <CalendarCell
             date={date}

@@ -11,12 +11,17 @@
     opacity: 1;
     color: --text-disabled;
   }
-}
 
-.wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &[aria-orientation='horizontal'] .wrap {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
 
 .radio {

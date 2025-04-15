@@ -169,3 +169,26 @@ export const CustomValidation: Story = {
     )
   },
 }
+
+export const Horizontal: Story = {
+  args: {
+    ...Normal.args,
+    children: (
+      <>
+        <Radio
+          key='radio-apple'
+          value='apple'
+        >
+          Äpple
+        </Radio>
+        <Radio
+          key='radio-banan'
+          value='banan'
+        >
+          Banan
+        </Radio>
+      </>
+    ),
+    orientation: 'horizontal',
+  },
+}

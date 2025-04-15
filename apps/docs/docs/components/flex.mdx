@@ -5,32 +5,7 @@ description: Grid baserat på tekniken display flex i css
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Flex, FlexItem, Card } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Flex, FlexItem, Card }}
-      {...props}
-    >
-      {`<Flex>
-          <FlexItem col={12}>
-              <Card title={'col=12'} content={'En kolumn som tar upp all bredd på en rad.'} link={{children: 'Länk', href: '#'}} />
-          </FlexItem>
-          <FlexItem>
-              <Card title={'col'} content={'En kolumn som tar upp så mycket plats den behöver.'} link={{children: 'Länk', href: '#'}} />
-          </FlexItem>
-          <FlexItem col={"auto"}>
-              <Card title={'col=auto'} content={'En kolumn som fyller ut resterande plats på raden.'} link={{children: 'Länk', href: '#'}} />
-          </FlexItem>
-          <FlexItem col={6}>
-              <Card title={'col=6'} content={'En kolumn som tar 50% av bredden, men 100% i mobilen.'} link={{children: 'Länk', href: '#'}} />
-          </FlexItem>
-      </Flex>`}
-    </LiveCodeBlock>
-  )
-}
+import { Example } from '@site/src/components/examples/flex/FlexExamples.tsx'
 
 <ComponentHeader
   name={'Flex'}
@@ -42,7 +17,24 @@ Grid baserat på tekniken `display: flex;` i css. Flex är både en container f�
 
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
 
-<Example hideCode />
+```tsx
+<Flex>
+  <FlexItem col={12}>
+    <span>col=12</span>
+  </FlexItem>
+  <FlexItem>
+    <span>not set</span>
+  </FlexItem>
+  <FlexItem col={'auto'}>
+    <span>col=auto</span>
+  </FlexItem>
+  <FlexItem col={6}>
+    <span>col=6</span>
+  </FlexItem>
+</Flex>
+```
+
+<Example />
 
 ## Installation
 
@@ -53,8 +45,6 @@ npm install @midas-ds/components
 ```tsx
 import { Flex } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## Grid
 
