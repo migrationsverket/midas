@@ -51,6 +51,10 @@
   &[data-disabled='true'] button {
     cursor: not-allowed;
   }
+
+  @media (forced-colors: active) {
+    border: 2px solid;
+  }
 }
 
 .header {
@@ -103,6 +107,10 @@
     color: --text-on-color;
     background-color: --button-background-primary;
     border-color: --button-background-primary;
+
+    @media (forced-colors: active) {
+      background-color: highlight;
+    }
   }
 
   &.today {

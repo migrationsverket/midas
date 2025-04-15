@@ -20,18 +20,24 @@ Kalender kan användas när användaren ska välja ett datum eller visualisera e
 behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte ska presenteras som en popover.
 
 ```tsx
-import { Calendar } from '@midas-ds/components'
-
-<Calendar/>
+<Calendar />
 ```
-<div className={'card'} style={{background: semantic.layer02}}>
-  <Calendar/>
+
+<div
+  className={'card'}
+  style={{ background: semantic.layer02 }}
+>
+  <Calendar />
 </div>
 
 ## Installation
 
 ```bash npm2yarn
 npm install @midas-ds/components
+```
+
+```tsx
+import { Calendar } from '@midas-ds/components'
 ```
 
 ## Användning
@@ -43,7 +49,7 @@ uncontrolled value sätts med `defaultValue`.
 
 ### RangeCalendar
 
-Samma props som [DateRangePicker](../date-picker#date-range-picker), exempel nedan med controlled value:
+Samma props som [DateRangePicker](../date-picker#daterangepicker), exempel nedan med controlled value:
 
 ```tsx
 import { RangeCalendar } from '@midas-ds/components'
@@ -70,11 +76,13 @@ export const RangeCalendarExample = () => {
     </>
   )
 }
-
 ```
 
-<div className={'card'} style={{background: semantic.layer02}}>
-  <RangeCalendarExample/>
+<div
+  className={'card'}
+  style={{ background: semantic.layer02 }}
+>
+  <RangeCalendarExample />
 </div>
 
 ## API
