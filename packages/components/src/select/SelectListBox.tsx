@@ -6,6 +6,7 @@ import type { MultiSelectState } from './useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import { Check } from 'lucide-react'
+import { Label } from '../label'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
   listBoxRef?: React.RefObject<HTMLUListElement>
@@ -55,6 +56,7 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
           />
         </div>
       )}
+
       {typeof item.rendered === 'string' ? (
         <span className='truncate block'>{item.rendered}</span>
       ) : (
@@ -79,15 +81,17 @@ const Section = <T,>({ section, state }: SectionProps<T>) => {
   return (
     <li
       {...itemProps}
-      className={''}
+      className=''
     >
       {section.rendered && (
-        <span
+        <Label
           {...headingProps}
+          variant='label-02'
+          elementType='span'
           className={styles.selectSectionHeading}
         >
           {section.rendered}
-        </span>
+        </Label>
       )}
       <ul {...groupProps}>
         {Array.from(section.childNodes).map(node => (

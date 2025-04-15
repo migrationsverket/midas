@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
-import { options } from './utils'
+import { options, optionsWithSections } from './utils'
 import { expect, userEvent } from '@storybook/test'
 import React, { useState } from 'react'
 
@@ -300,5 +300,12 @@ export const DS872: Story = {
         ).toHaveDisplayValue(['tolv'])
       },
     )
+  },
+}
+
+export const Sectioned: Story = {
+  args: {
+    ...Normal.args,
+    options: optionsWithSections,
   },
 }

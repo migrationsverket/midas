@@ -74,7 +74,7 @@ Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
   `}
 </LiveCodeBlock>
 
-#### Välj alla
+### Välj alla
 
 Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-knapp.
 
@@ -93,6 +93,30 @@ Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-
     />
   `}
 </LiveCodeBlock>
+
+## Sektioner
+
+Strukturera om alternativen i nestade sektioner genom att strukturera options på följande sätt
+
+```ts
+const options = [
+  {
+    name: 'Frukter',
+    children: [
+      { id: 'kiwi', name: 'Kiwi' },
+      { id: 'banana', name: 'Banan' },
+      { id: 'apple', name: 'Äpple' },
+    ],
+  },
+  {
+    name: 'Grönsaker',
+    children: [
+      { id: 'carrot', name: 'Morot' },
+      { id: 'broccoli', name: 'Broccoli' },
+    ],
+  },
+]
+```
 
 ## API
 

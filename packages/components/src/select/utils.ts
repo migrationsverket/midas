@@ -32,3 +32,17 @@ export const options = [
   name: fruit,
   id: fruit.toLocaleLowerCase(),
 }))
+
+export const optionsWithSections = [
+  {
+    name: 'Vegetables',
+    children: [
+      { name: 'Carrot', id: 'carrot' },
+      { name: 'Broccoli', id: 'broccoli' },
+      { name: 'Spinach', id: 'spinach' },
+      { name: 'Potato', id: 'potato' },
+      { name: 'Tomato', id: 'tomato' },
+    ],
+  },
+  { name: 'Fruits', children: options },
+]
