@@ -40,6 +40,7 @@ export const HorizontalExample = () => (
     label='Välj din favoritfrukt'
     description='Max 2 val vid horisontellt läge'
     orientation='horizontal'
+    defaultValue='apple'
   >
     <Radio value='apple'>Äpple</Radio>
     <Radio value='banan'>Banan</Radio>
