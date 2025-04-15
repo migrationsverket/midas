@@ -9,8 +9,6 @@ export const BasicExample: React.FC = () => (
   >
     <Radio value='apple'>Äpple</Radio>
     <Radio value='banan'>Banan</Radio>
-    <Radio value='kiwi'>Kiwi</Radio>
-    <Radio value='aplesin'>Apelsin</Radio>
   </RadioGroup>
 )
 
@@ -27,8 +25,6 @@ export const ControlledExample = () => {
       >
         <Radio value='apple'>Äpple</Radio>
         <Radio value='banan'>Banan</Radio>
-        <Radio value='kiwi'>Kiwi</Radio>
-        <Radio value='aplesin'>Apelsin</Radio>
       </RadioGroup>
       <div style={{ marginTop: '1rem' }}>selectedFruit: {selectedFruit}</div>
     </>
