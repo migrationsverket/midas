@@ -35,17 +35,17 @@
 @value --purple-80: #b46ab4;
 @value --purple-140: #954b95;
 @value --red-100: #b90835;
-@value --signal-blue-20: #eaf2f6;
-@value --signal-blue-140: #0066cc;
+@value --signal-blue-10: #eaf2f6;
+@value --signal-blue-100: #0066cc;
 @value --signal-green-20: #d5f2d9;
-@value --signal-green-140: #008d3c;
+@value --signal-green-100: #008d3c;
 @value --signal-red-20: #ffdfdf;
-@value --signal-red-120: #eb4e4e;
-@value --signal-red-140: #e62323;
+@value --signal-red-80: #eb4e4e;
+@value --signal-red-100: #e62323;
 @value --signal-red-160: #b31b1b;
 @value --signal-red-180: #801313;
-@value --signal-yellow-20: #fff8e1;
-@value --signal-yellow-140: #fdb813;
+@value --signal-yellow-10: #fff8e1;
+@value --signal-yellow-100: #fdb813;
 
 /* Typography */
 @value --font-family: "Inter", sans-serif;
@@ -138,7 +138,7 @@
 @value --border-medium: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
 @value --border-brand: light-dark(--blue-170, --blue-170);
-@value --border-invalid: light-dark(--signal-red-140, --signal-red-120);
+@value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
 /* Field 01 */
@@ -161,10 +161,10 @@
 @value --icon-inverse: light-dark(--white, --gray-200);
 @value --icon-on-color: light-dark(--white, --white);
 @value --icon-disabled: light-dark(--gray-50, --gray-140);
-@value --icon-success: light-dark(--signal-green-140, --signal-green-140);
-@value --icon-info: light-dark(--signal-blue-140, --signal-blue-140);
-@value --icon-warning: light-dark(--signal-red-140, --signal-red-140);
-@value --icon-important: light-dark(--signal-yellow-140, --signal-yellow-140);
+@value --icon-success: light-dark(--signal-green-100, --signal-green-100);
+@value --icon-info: light-dark(--signal-blue-100, --signal-blue-100);
+@value --icon-warning: light-dark(--signal-red-100, --signal-red-100);
+@value --icon-important: light-dark(--signal-yellow-100, --signal-yellow-100);
 
 /* Link */
 @value --link-enabled: light-dark(--blue-100, --blue-90);
@@ -173,13 +173,13 @@
 @value --link-visited: light-dark(--purple-140, --purple-80);
 
 /* Notification */
-@value --notification-border-success: light-dark(--signal-green-140, --signal-green-140);
-@value --notification-border-info: light-dark(--signal-blue-140, --signal-blue-140);
-@value --notification-border-important: light-dark(--signal-yellow-140, --signal-yellow-140);
-@value --notification-border-warning: light-dark(--signal-red-140, --signal-red-140);
+@value --notification-border-success: light-dark(--signal-green-100, --signal-green-100);
+@value --notification-border-info: light-dark(--signal-blue-100, --signal-blue-100);
+@value --notification-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
+@value --notification-border-warning: light-dark(--signal-red-100, --signal-red-100);
 @value --notification-background-success: light-dark(--signal-green-20, --layer-01);
-@value --notification-background-info: light-dark(--signal-blue-20, --layer-01);
-@value --notification-background-important: light-dark(--signal-yellow-20, --layer-01);
+@value --notification-background-info: light-dark(--signal-blue-10, --layer-01);
+@value --notification-background-important: light-dark(--signal-yellow-10, --layer-01);
 @value --notification-background-warning: light-dark(--signal-red-20, --layer-01);
 
 /* Text */
@@ -189,7 +189,7 @@
 @value --text-on-color: light-dark(--white, --white);
 @value --text-inverse: light-dark(--gray-10, --gray-200);
 @value --text-disabled: light-dark(--gray-50, --gray-140);
-@value --text-invalid: light-dark(--signal-red-140, --signal-red-120);
+@value --text-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --text-placeholder: light-dark(--gray-70, --gray-140);
 
 /* Button */
@@ -201,7 +201,7 @@
 @value --button-background-secondary-active: light-dark(--gray-30, --gray-180);
 @value --button-background-tertiary-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-tertiary-active: light-dark(--gray-30, --gray-180);
-@value --button-background-danger: light-dark(--signal-red-140, --signal-red-140);
+@value --button-background-danger: light-dark(--signal-red-100, --signal-red-100);
 @value --button-background-danger-hover: light-dark(--signal-red-160, --signal-red-160);
 @value --button-background-danger-active: light-dark(--signal-red-180, --signal-red-180);
 @value --button-background-disabled: light-dark(--gray-10, --gray-180);
