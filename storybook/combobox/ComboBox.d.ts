@@ -7,6 +7,7 @@ export interface ComboBoxProps<T extends object> extends Omit<AriaComboBoxProps<
     items?: Iterable<T>;
     children: React.ReactNode | ((item: T) => React.ReactNode);
     placeholder?: string;
+    errorPosition?: 'top' | 'bottom';
 }
-export declare function ComboBox<T extends object>({ label, description, errorMessage, children, items, className, ...props }: ComboBoxProps<T>): import("react/jsx-runtime").JSX.Element;
+export declare function ComboBox<T extends object>({ label, description, errorMessage, children, items, className, errorPosition, ...props }: ComboBoxProps<T>): import("react/jsx-runtime").JSX.Element;
 export declare function ComboBoxItem(props: ListBoxItemProps): import("react/jsx-runtime").JSX.Element;

@@ -6,5 +6,6 @@ export interface CheckboxGroupProps extends Omit<AriaCheckboxGroupProps, 'childr
     description?: string;
     showSelectAll?: boolean;
     errorMessage?: string | ((validation: ValidationResult) => string);
+    errorPosition?: 'top' | 'bottom';
 }
-export declare const CheckboxGroup: ({ label, description, errorMessage, showSelectAll, children, ...props }: CheckboxGroupProps) => import("react/jsx-runtime").JSX.Element;
+export declare const CheckboxGroup: ({ label, description, errorMessage, showSelectAll, children, errorPosition, ...props }: CheckboxGroupProps) => import("react/jsx-runtime").JSX.Element;
