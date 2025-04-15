@@ -35,7 +35,7 @@ export default meta
 
 type Story = StoryObj<typeof RadioGroup>
 
-const fruits = ['Äpple', 'Banan', 'Kiwi', 'Apelsin']
+const fruits = ['Äpple', 'Banan']
 const items = fruits.map(fruit => (
   <Radio
     key={fruit}
@@ -48,23 +48,17 @@ const items = fruits.map(fruit => (
 
 const radioItemsOneDisabled = [
   <Radio
+    key='radio-apple'
+    value='apple'
+    isDisabled={true}
+  >
+    Äpple
+  </Radio>,
+  <Radio
     key='radio-banan'
     value='banan'
   >
     Banan
-  </Radio>,
-  <Radio
-    key='radio-apelsin'
-    value='apelsin'
-    isDisabled={true}
-  >
-    Apelsin
-  </Radio>,
-  <Radio
-    key='radio-kiwi'
-    value='kiwi'
-  >
-    Kiwi
   </Radio>,
 ]
 

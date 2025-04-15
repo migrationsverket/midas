@@ -15,7 +15,7 @@ export const Example = props => {
       {...props}
     >
       {`<RadioGroup label={'Välj din favoritfrukt'} description={'Du kan bara välja en'} defaultValue={fruits[0].value}>
-        {fruits.slice(0,3).map(fruit => (
+        {fruits.slice(0,2).map(fruit => (
           <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
         )))</RadioGroup>`}
     </LiveCodeBlock>
