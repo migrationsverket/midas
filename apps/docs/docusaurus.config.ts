@@ -84,7 +84,6 @@ const config: Config = {
   },
   themes: [
     '@docusaurus/theme-mermaid',
-    '@docusaurus/theme-live-codeblock',
     [
       '@easyops-cn/docusaurus-search-local',
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
