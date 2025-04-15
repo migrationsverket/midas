@@ -3,33 +3,9 @@ title: Card
 description: En card-komponent är en modulär enhet som används för att presentera innehåll på ett strukturerat och visuellt tilltalande sätt.
 ---
 
+import { BasicExample } from '@site/src/components/examples/card/CardExamples'
 import { PropTable } from '@site/src/components/propsTable'
-import { Grid, GridItem, Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Grid, GridItem, Card }}
-      {...props}
-    >
-      {`<Grid fluid>
-        {fruits.shuffled(3).map(fruit => (
-          <GridItem col={4} key={fruit.value}>
-            <Card
-              title={fruit.name}
-              content={fruit.description}
-              image={{ source: fruit.image, description: fruit.description }}
-              link={{href: '#', children: 'Läs mer om denna frukt'}}
-              headingTag="h2"
-            />
-          </GridItem>
-        ))}
-      </Grid>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Card'}
@@ -39,7 +15,21 @@ export const Example = props => {
 
 Komponent som är en yta med plats för information och åtgärder relaterat till ett specifikt ämne. Kort används primärt för att presentera innehåll på ett visuellt tilltalande sätt samt länka till innehållet.
 
-<Example hideCode />
+```tsx
+<Card
+  title='Ananas'
+  content='Tropisk frukt med taggigt skal'
+  image={{
+    description: 'Tropisk frukt med taggigt skal',
+    source:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
+  }}
+  link={{ href: '#', children: 'Läs mer om denna frukt' }}
+  headingTag='h2'
+/>
+```
+
+<BasicExample />
 
 ## Installation
 
@@ -50,8 +40,6 @@ npm install @midas-ds/components
 ```tsx
 import { Card } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## API
 
