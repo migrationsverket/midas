@@ -42,7 +42,7 @@ type OptionSection = {
 export type Option = OptionItem | OptionSection
 export type SelectionMode = 'single' | 'multiple'
 
-type SelectProps = {
+export type SelectProps = {
   /** Whether the element should receive focus on render. */
   autoFocus?: boolean
 
@@ -159,12 +159,11 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       ref,
     )
 
-    const isActive = state.isOpen || state.selectedItems || state.selectedItem
+    const isActive = state.isOpen || state.selectedItems
     const isAllSelection = state.selectionManager.isSelectAll
     const isIndeterminateSelection =
       !isAllSelection && !state.selectionManager.isEmpty
-    const hasClearButton =
-      isClearable && (state.selectedItems || state.selectedItem)
+    const hasClearButton = isClearable && state.selectedItems
     const hasHeader = isSelectableAll
 
     const handleClear = () => state.selectionManager.clearSelection()
@@ -271,8 +270,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                   {...mergeProps}
                   className={clsx(styles.button, {
                     [styles.buttonOpen]: state.isOpen,
-                    [styles.buttonActive]:
-                      state.selectedItems || state.selectedItem,
+                    [styles.buttonActive]: state.selectedItems,
                     [styles.buttonDisabled]: isDisabled,
                   })}
                   data-invalid={
@@ -288,8 +286,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                   ) : null}
                   {state.selectionMode === 'single' ? (
                     <span>
-                      {state.selectedItem
-                        ? state.selectedItem.textValue
+                      {state.selectedItems
+                        ? state.selectedItems[0].textValue
                         : placeholder}
                     </span>
                   ) : null}
@@ -384,7 +382,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             <TagGroup
               aria-label={'Selected Items'}
               selectionBehavior={'toggle'}
-              onRemove={keys => handleRemove([...keys][0])}
+              onRemove={keys => handleRemove(Array.from(keys)[0])}
               className={styles.tagGroup}
               {...mergeProps}
             >

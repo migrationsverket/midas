@@ -4,30 +4,11 @@ description: Komponent med samma utseende och beteende som knapp men avsedd att 
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { LinkButton, Flex, FlexItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Flex, FlexItem, LinkButton }}
-      {...props}
-    >
-      {`<Flex>
-          <FlexItem col={"auto"}>
-            <LinkButton href="#">Starta tjänst</LinkButton>
-          </FlexItem>
-            <FlexItem col={"auto"}>
-            <LinkButton variant='secondary' href="#">Starta tjänst</LinkButton>
-          </FlexItem>
-            <FlexItem col={"auto"}>
-            <LinkButton variant='tertiary' href="#">Starta tjänst</LinkButton>
-          </FlexItem>
-      </Flex>`}
-    </LiveCodeBlock>
-  )
-}
+import CodeBlock from '@theme/CodeBlock'
+import { Example } from '@site/src/components/examples/link-button/LinkButtonExamples'
+/* eslint-disable-next-line import/no-webpack-loader-syntax */
+import ExampleSrc from '!!raw-loader!@site/src/components/examples/link-button/LinkButtonExamples'
 
 <ComponentHeader
   name={'LinkButton'}
@@ -37,7 +18,12 @@ export const Example = props => {
 
 Komponent med samma utseende och beteende som [Button](/components/button) men avsedd att använda som länk internt eller externt i en applikation.
 
-<Example hideCode />
+<div
+  className={'card'}
+  style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}
+>
+  <Example />
+</div>
 
 ## Installation
 
@@ -45,11 +31,13 @@ Komponent med samma utseende och beteende som [Button](/components/button) men a
 npm install @midas-ds/components
 ```
 
-```tsx
-import { LinkButton } from '@midas-ds/components'
-```
-
-<Example hideExample />
+<CodeBlock language={'tsx'}>{ExampleSrc}</CodeBlock>
+<div
+  className={'card'}
+  style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}
+>
+  <Example />
+</div>
 
 ## Riktlinjer
 

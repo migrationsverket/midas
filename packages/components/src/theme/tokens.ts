@@ -112,11 +112,17 @@ export const transitions = {
   fast: '250ms',
 }
 
+export const windowSizes = {
+  md: 768,
+  lg: 1200,
+  xl: 1440,
+}
+
 export const breakpoints = {
-  sm: '(max-width: 767px)',
-  md: '(min-width: 768px)',
-  lg: '(min-width: 1200px)',
-  xl: '(min-width: 1440px)',
+  sm: `(max-width: ${windowSizes.md - 1}px)`,
+  md: `(min-width: ${windowSizes.md}px)`,
+  lg: `(min-width: ${windowSizes.lg}px)`,
+  xl: `(min-width: ${windowSizes.xl}px)`,
   forcedColorsMode: '(forced-colors: active)',
   darkMode: '(prefers-color-scheme: dark)',
   prefersReducedMotion: '(prefers-reduced-motion: reduced)',

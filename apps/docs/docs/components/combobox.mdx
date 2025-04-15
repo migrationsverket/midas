@@ -3,27 +3,9 @@ title: ComboBox
 description: Sökbar version av Select
 ---
 
+import { BasicExample, ControlledExample } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ComboBox, ComboBoxItem } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ ComboBox, ComboBoxItem }}
-      {...props}
-    >
-      {`<ComboBox
-          label="Vad är din favoritfrukt?"
-          placeholder="Välj en frukt"
-          items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-        >
-          {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-      </ComboBox>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Combobox'}
@@ -33,7 +15,20 @@ export const Example = props => {
 
 En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ.
 
-<Example hideCode />
+```tsx
+<ComboBox
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+>
+  <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
+  <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
+  <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
+  <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
+  <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+</ComboBox>
+```
+
+<BasicExample />
 
 ## Installation
 
@@ -45,7 +40,34 @@ npm install @midas-ds/components
 import { ComboBox } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Kontrollerat val
+
+Använd attributet `id` och eventet `onSelectionChange` för att använda controlled value på ComboBox.
+Den valda combobox item värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+import { Key } from 'react-aria-components'
+
+const [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)
+
+return (
+  <ComboBox
+    label='Välj din favoritfrukt'
+    description='Du kan bara välja en'
+    selectedKey={selectedFruit}
+    onSelectionChange={setSelectedFruit}
+  >
+    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
+    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
+    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
+    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
+    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+  </ComboBox>
+)
+```
+
+<ControlledExample />
 
 ## Riktlinjer
 

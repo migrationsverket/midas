@@ -3,24 +3,33 @@ import { LoaderCircle } from 'lucide-react'
 import clsx from 'clsx'
 
 export interface SpinnerProps {
-  /** Displays a smaller when set to true
+  /** Displays a smaller spinner when set to true
    * @default false
-   * */
+   */
   small?: boolean
+  /** For use on coloured background
+   * @default false
+   */
+  isOnColor?: boolean
   /** For use on dark background
    * @default false
-   * */
+   * @deprecated please use `isOnColor` instead
+   */
   dark?: boolean
 }
 
-export const Spinner: React.FC<SpinnerProps> = ({ small, dark }) => {
+export const Spinner: React.FC<SpinnerProps> = ({
+  small,
+  isOnColor = false,
+  dark = false,
+}) => {
   return (
     <div
       className={styles.container}
-      role="status"
+      role='status'
     >
       <LoaderCircle
-        className={clsx(styles.spinner, dark && styles.dark)}
+        className={clsx(styles.spinner, (isOnColor || dark) && styles.dark)}
         size={small ? 16 : 32}
         strokeWidth={small ? 2 : 3}
         absoluteStrokeWidth

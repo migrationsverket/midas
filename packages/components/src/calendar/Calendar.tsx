@@ -10,13 +10,12 @@ import {
   Calendar as AriaCalendar,
   CalendarGrid,
   Button,
-  Heading,
 } from 'react-aria-components'
 import styles from './Calendar.module.css'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { isToday, getLocalTimeZone } from '@internationalized/date'
 import { clsx } from 'clsx'
-
+import { Heading } from '../heading'
 interface MidasCalendarProps<T extends DateValue>
   extends CalendarProps<T>,
     Pick<CalendarGridProps, 'weekdayStyle'> {
@@ -38,15 +37,15 @@ export function Calendar<T extends DateValue>({
         <Button slot='previous'>
           <ChevronLeft />
         </Button>
-        <Heading className={styles.heading} />
+        <Heading
+          level={3}
+          elementType='h2'
+        />
         <Button slot='next'>
           <ChevronRight />
         </Button>
       </header>
-      <CalendarGrid
-        className={styles.calendar}
-        weekdayStyle={weekdayStyle}
-      >
+      <CalendarGrid weekdayStyle={weekdayStyle}>
         {date => (
           <CalendarCell
             date={date}

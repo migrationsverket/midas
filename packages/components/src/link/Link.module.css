@@ -26,8 +26,8 @@
     color: --text-disabled;
   }
 
-  &[data-pressed],
-  &:active {
+  &[data-pressed]:not([data-disabled], :disabled),
+  &:active:not([data-disabled], :disabled) {
     color: --link-pressed;
   }
 
@@ -57,13 +57,13 @@
   text-decoration: none;
   font-weight: 500;
 
-  &[data-hovered]:not([data-disabled='true']),
-  &:hover:not(:disabled) {
+  &[data-hovered]:not([data-disabled], :disabled),
+  &:hover:not([data-disabled], :disabled) {
     text-decoration: underline;
   }
 
-  &[data-pressed],
-  &:active {
+  &[data-pressed]:not([data-disabled], :disabled),
+  &:active:not([data-disabled], :disabled) {
     text-decoration: underline;
   }
 }

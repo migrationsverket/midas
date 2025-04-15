@@ -47,13 +47,15 @@ import { Spinner } from '@midas-ds/components'
 
 ### Kombinerad med andra komponenter
 
-Använd varianten `small` för att kombinera med andra komponenter t.ex. `Button`, notera hur attributet `dark` används för den primära knappen.
+Använd varianten `small` för att kombinera med andra komponenter t.ex. `Button`, notera hur attributet `isOnColor` används för den primära knappen.
 
 ```tsx
 <Button>
   <Spinner
-    dark
+    // highlight-start
     small
+    isOnColor
+    // highlight-end
   />
   Laddar
 </Button>
@@ -65,8 +67,8 @@ Använd varianten `small` för att kombinera med andra komponenter t.ex. `Button
 >
   <Button>
     <Spinner
-      dark
       small
+      isOnColor
     />
     {'Laddar'}
   </Button>
