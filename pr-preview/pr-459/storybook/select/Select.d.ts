@@ -16,7 +16,7 @@ type OptionSection = {
 };
 export type Option = OptionItem | OptionSection;
 export type SelectionMode = 'single' | 'multiple';
-type SelectProps = {
+export type SelectProps = {
     /** Whether the element should receive focus on render. */
     autoFocus?: boolean;
     children: CollectionChildren<Option>;
