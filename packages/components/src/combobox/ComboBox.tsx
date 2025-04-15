@@ -13,12 +13,16 @@ import {
   ComboBox as AriaComboBox,
   ListBox,
   ListBoxItem,
+  ListBoxSection,
+  Header,
+  Collection,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
+import { Item, Section } from './types'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -91,5 +95,24 @@ export function ComboBoxItem(props: ListBoxItemProps) {
       className={styles.listBoxItem}
       {...props}
     />
+  )
+}
+
+export function ComboBoxSelection(props: Section<Item>) {
+  return (
+    <ListBoxSection id={props.name}>
+      <Header>
+        <Label
+          variant='label-02'
+          elementType='span'
+          className={styles.sectionHeading}
+        >
+          {props.name}
+        </Label>
+      </Header>
+      <Collection items={props.children}>
+        {item => <ComboBoxItem key={item.id}>{item.name}</ComboBoxItem>}
+      </Collection>
+    </ListBoxSection>
   )
 }

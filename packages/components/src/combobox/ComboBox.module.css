@@ -103,6 +103,13 @@
   overflow-y: auto;
 }
 
+.sectionHeading {
+  font-family: --font-family;
+  display: block;
+  padding: 1rem 1rem 0.5rem;
+  font-weight: 500;
+}
+
 .listBoxItem {
   margin: auto;
   padding: 1rem;

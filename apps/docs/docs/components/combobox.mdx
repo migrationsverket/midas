@@ -76,6 +76,46 @@ return (
 - Om det ska gå att välja flera eller inget alternativ är det [Checkbox](/components/checkbox) eller [Select](/components/select) som ska användas.
 - Om det är färre alternativ än fyra (4) används med fördel [Radio](/components/radio) istället.
 
+## Sektioner
+
+Strukturera om alternativen i nestade sektioner genom att strukturera options på följande sätt
+
+```ts
+const options = [
+  {
+    name: 'Grönsaker',
+    id: 123,
+    children: [
+      { name: 'Morot', id: 2 },
+      { name: 'Broccoli', id: 3 },
+      { name: 'Spenat', id: 4 },
+      { name: 'Potatis', id: 5 },
+      { name: 'Tomat', id: 6 },
+    ],
+  },
+  {
+    name: 'Frukter',
+    id: 1234,
+    children: [
+      { name: 'Äpple', id: 11 },
+      { name: 'Banan', id: 12 },
+      { name: 'Kiwi', id: 13 },
+      { name: 'Fläder', id: 14 },
+      { name: 'Nektarin', id: 15 },
+    ],
+  },
+]
+```
+
+```tsx
+<ComboBox
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+>
+  {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+</ComboBox>
+```
+
 ## API
 
 ### ComboBox
