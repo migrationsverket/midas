@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --border-strong, --text-primary, --focus, --layer-02, --border-invalid, --layer-hover-02, --layer-selected-02, --layer-selected-hover-02, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid from tokens;
+@value --font-family, --text-disabled, --border-primary, --text-primary, --focus, --layer-02, --border-invalid, --layer-hover-02, --layer-selected-02, --layer-selected-hover-02, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid from tokens;
 
 /** clear the default list styles */
 * > ul {
@@ -39,7 +39,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: --field-01;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   cursor: pointer;
 
   &:focus-visible {
@@ -123,7 +123,7 @@
   );
 
   font-family: --font-family;
-  border: 1px solid --border-strong;
+  border: 1px solid --border-primary;
   background: --layer-02;
   width: var(--select-popover-width);
 }
@@ -200,7 +200,7 @@
 }
 
 .listBoxItemFocusVisible {
-  outline: --border-strong solid 2px;
+  outline: --border-primary solid 2px;
   outline-offset: -2px;
 }
 

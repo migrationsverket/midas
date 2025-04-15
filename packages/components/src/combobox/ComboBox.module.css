@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-disabled, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-strong, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --font-family from tokens;
+@value --text-disabled, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-primary, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --font-family from tokens;
 
 .combobox {
   font-family: --font-family;
@@ -21,7 +21,7 @@
   color: --text-primary;
   height: 3rem;
   background-color: --field-01;
-  box-shadow: 0 1px 0 0 --border-strong;
+  box-shadow: 0 1px 0 0 --border-primary;
 
   &[data-hovered],
   &:has(+ [data-hovered]) {
@@ -97,7 +97,7 @@
 
 .popover {
   font-family: --font-family;
-  border: 0.063rem solid --border-strong;
+  border: 0.063rem solid --border-primary;
   width: calc(var(--trigger-width) - 0.125rem);
   background: --layer-02;
   overflow-y: auto;
