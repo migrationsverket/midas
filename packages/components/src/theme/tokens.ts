@@ -157,7 +157,7 @@ export const semantic = {
   borderPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   borderSecondary: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
-  borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue170})`,
+  borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
   borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
 
