@@ -45,6 +45,7 @@ export const baseColors = {
   signalGreen20: '#d5f2d9',
   signalGreen100: '#008d3c',
   signalRed20: '#ffdfdf',
+  signalRed80: '#eb4e4e',
   signalRed100: '#e62323',
   signalRed160: '#b31b1b',
   signalRed180: '#801313',
@@ -157,7 +158,7 @@ export const semantic = {
   borderMedium: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
   borderBrand: `light-dark(${baseColors.blue170}, ${baseColors.blue170})`,
-  borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
+  borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
 
   field01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
@@ -201,7 +202,7 @@ export const semantic = {
   textOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
   textInverse: `light-dark(${baseColors.gray10}, ${baseColors.gray200})`,
   textDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
-  textInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
+  textInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   textPlaceholder: `light-dark(${baseColors.gray70}, ${baseColors.gray140})`,
 
   buttonBackgroundPrimary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
