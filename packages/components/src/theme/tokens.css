@@ -134,10 +134,10 @@
 @value --brand-primary: light-dark(--red-100, --red-100);
 
 /* Border */
-@value --border-strong: light-dark(--gray-200, --gray-10);
-@value --border-medium: light-dark(--gray-110, --gray-90);
+@value --border-primary: light-dark(--gray-200, --gray-10);
+@value --border-secondary: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
-@value --border-brand: light-dark(--blue-170, --blue-170);
+@value --border-tertiary: light-dark(--blue-170, --blue-170);
 @value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
@@ -206,7 +206,7 @@
 @value --button-background-danger-active: light-dark(--signal-red-180, --signal-red-180);
 @value --button-background-disabled: light-dark(--gray-10, --gray-180);
 @value --button-background-skeleton: light-dark(--gray-10, --gray-180);
-@value --button-border-secondary: light-dark(--border-brand, --gray-10);
+@value --button-border-secondary: light-dark(--border-tertiary, --gray-10);
 @value --button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
 @value --button-background-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
 
