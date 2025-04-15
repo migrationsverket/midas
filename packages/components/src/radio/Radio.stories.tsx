@@ -35,7 +35,7 @@ export default meta
 
 type Story = StoryObj<typeof RadioGroup>
 
-const fruits = ['Äpple', 'Banan']
+const fruits = ['Äpple', 'Banan', 'Kiwi', 'Apelsin']
 const items = fruits.map(fruit => (
   <Radio
     key={fruit}
@@ -48,17 +48,23 @@ const items = fruits.map(fruit => (
 
 const radioItemsOneDisabled = [
   <Radio
-    key='radio-apple'
-    value='apple'
-    isDisabled={true}
-  >
-    Äpple
-  </Radio>,
-  <Radio
     key='radio-banan'
     value='banan'
   >
     Banan
+  </Radio>,
+  <Radio
+    key='radio-apelsin'
+    value='apelsin'
+    isDisabled={true}
+  >
+    Apelsin
+  </Radio>,
+  <Radio
+    key='radio-kiwi'
+    value='kiwi'
+  >
+    Kiwi
   </Radio>,
 ]
 
@@ -167,6 +173,22 @@ export const CustomValidation: Story = {
 export const Horizontal: Story = {
   args: {
     ...Normal.args,
+    children: (
+      <>
+        <Radio
+          key='radio-apple'
+          value='apple'
+        >
+          Äpple
+        </Radio>
+        <Radio
+          key='radio-banan'
+          value='banan'
+        >
+          Banan
+        </Radio>
+      </>
+    ),
     orientation: 'horizontal',
   },
 }
