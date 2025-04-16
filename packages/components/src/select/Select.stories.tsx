@@ -69,7 +69,7 @@ export const DefaultSelectedKey: Story = {
 export const DefaultSelectedKeys: Story = {
   args: {
     description: 'Kiwi and banana are pre-selected',
-    defaultSelectedKeys: new Set(['kiwi', 'banana']),
+    defaultSelectedKeys: new Set(['kiwi', 'banan']),
     selectionMode: 'multiple',
   },
   play: async ({ args, canvas, step }) => {
@@ -81,7 +81,7 @@ export const DefaultSelectedKeys: Story = {
           selector: 'span',
         })
 
-        expect(hiddenSelect).toHaveDisplayValue(['Banana', 'Kiwi'])
+        expect(hiddenSelect).toHaveDisplayValue(['Banan', 'Kiwi'])
         expect(visibleValue).toBeVisible()
       },
     )
@@ -158,7 +158,7 @@ export const WithTags: Story = {
   args: {
     selectionMode: 'multiple',
     showTags: true,
-    defaultSelectedKeys: new Set(['apple', 'kiwi']),
+    defaultSelectedKeys: new Set(['äpple', 'kiwi']),
   },
   play: async ({ args, canvas, step }) => {
     await step(
@@ -169,9 +169,9 @@ export const WithTags: Story = {
           selector: 'span',
         })
 
-        expect(hiddenSelect).toHaveDisplayValue(['Apple', 'Kiwi'])
+        expect(hiddenSelect).toHaveDisplayValue(['Äpple', 'Kiwi'])
         expect(visibleValue).toBeVisible()
-        expect(canvas.getByText('Apple', { selector: 'div' })).toBeVisible()
+        expect(canvas.getByText('Äpple', { selector: 'div' })).toBeVisible()
         expect(canvas.getByText('Kiwi', { selector: 'div' })).toBeVisible()
       },
     )
