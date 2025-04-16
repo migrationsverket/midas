@@ -37,16 +37,17 @@ export declare const theme: {
         purple80: string;
         purple140: string;
         red100: string;
-        signalBlue20: string;
-        signalBlue140: string;
+        signalBlue10: string;
+        signalBlue100: string;
         signalGreen20: string;
-        signalGreen140: string;
+        signalGreen100: string;
         signalRed20: string;
-        signalRed140: string;
+        signalRed80: string;
+        signalRed100: string;
         signalRed160: string;
         signalRed180: string;
-        signalYellow20: string;
-        signalYellow140: string;
+        signalYellow10: string;
+        signalYellow100: string;
     };
     typography: {
         fontFamily: string;
