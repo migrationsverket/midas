@@ -97,11 +97,11 @@ export const CustomTriggerElements: Story = {
         id={item}
         key={item}
         title={
-          <>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
             <File />
             <b>En öppningsbar panel ' + {item.toLocaleLowerCase()}</b>
             <p style={{ margin: 0 }}>2025-03-0{i}</p>
-          </>
+          </div>
         }
       >
         Innehåll i öppningsbarpanel {item} Lorem ipsum dolor sit amet
@@ -166,11 +166,34 @@ const ExpandableStuff = () => {
           }}
           data-testid={'hidden-content'}
         >
-          Pineapples were once so rare and expensive in Europe that people
-          used them as a status symbol—even renting them for parties to show off
+          Pineapples were once so rare and expensive in Europe that people used
+          them as a status symbol—even renting them for parties to show off
           wealth, without ever eating them!
         </div>
       ) : null}
     </div>
   )
+}
+
+export const AccordionWithStatus: Story = {
+  args: {
+    variant: 'contained',
+    children: ITEMS.map((item, i) => (
+      <AccordionItem
+        id={item}
+        key={item}
+        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
+        type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
+      >
+        Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repellendus perspiciatis officia,
+        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
+        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Impedit dolorem tempora
+        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
+        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
+        illum consequuntur?
+      </AccordionItem>
+    )),
+  },
 }

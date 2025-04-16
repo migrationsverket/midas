@@ -1,21 +1,55 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --layer-selected-01, --layer-hover-01, --normal-transition, --text-primary from tokens;
+@value --font-family, --layer-01, --layer-hover-01, --normal-transition, --text-primary, --fast-transition,  --border-medium, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --icon-success, --icon-warning, --support-background-success-hover, --support-background-warning-hover, --border-disabled, --text-disabled from tokens;
 
 .root {
   --gap: 0.75rem;
   --item-padding: 0;
   --content-padding: 0.5rem 0.5rem 0.5rem 1.85rem;
+  --border: none;
   --background: transparent;
   --background-active: transparent;
   --background-hover: transparent;
+  --heading-color: --text-primary;
 
   &.contained {
     --gap: 0.25rem;
     --item-padding: 0.875rem;
     --content-padding: 1rem;
+    --border-color: --border-medium;
+    --border: 1px solid var(--border-color);
     --background: --layer-01;
-    --background-active: --layer-selected-01;
+    --background-active: --layer-hover-01;
     --background-hover: --layer-hover-01;
+
+    .item {
+      &.success {
+        --background: --support-background-success;
+        --background-active: --support-background-success-hover;
+        --background-hover: --support-background-success-hover;
+        --icon-color: --icon-success;
+        --border-color: --support-border-success;
+      }
+
+      &.warning {
+        --background: --support-background-warning;
+        --background-active: --support-background-warning-hover;
+        --background-hover: --support-background-warning-hover;
+        --icon-color: --icon-warning;
+        --border-color: --support-border-warning;
+      }
+
+      &:has(button[data-disabled]) {
+        --border-color: --border-disabled;
+      }
+    }
+  }
+
+  &:has(button[data-disabled]) {
+    --heading-color: --text-disabled;
+
+    .triggerButton {
+      background: transparent;
+    }
   }
 
   font-family: --font-family;
@@ -26,44 +60,50 @@
   gap: var(--gap);
 }
 
-.triggerText {
-  margin: 0;
-  padding: 0;
-  font-size: 1rem;
-  font-weight: 400;
-  flex: 1 0 0;
-  text-align: left;
+.item {
+  background-color: var(--background);
+  border: var(--border);
+  border-color: var(--border-color);
 }
 
 .trigger {
-  color: --text-primary;
+  color: var(--heading-color);
   border: 0;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin: 0;
 
-  button {
-    color: --text-primary;
-    width: 100%;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    padding: var(--item-padding);
+  .triggerMainContent {
+    flex: 1 0 0;
+    text-align: left;
 
-    .icon {
+    .triggerText {
+      margin: 0;
+      padding: 0;
+      color: var(--heading-color);
+    }
+  }
+
+  .triggerButton {
+    color: var(--heading-color);
+    width: 100%;
+    padding: var(--item-padding);
+    align-items: flex-start;
+
+    .chevronIcon {
       transform: rotate(0deg);
       transition: transform --normal-transition ease;
+      padding: 0.125rem 0;
+    }
+
+    .statusIcon {
+      color: var(--icon-color);
+      padding: 0.125rem 0;
     }
 
     &[aria-expanded='true'] {
       background-color: var(--background-active);
 
-      .triggerText {
-        font-weight: 500;
-      }
-
-      .icon {
+      .chevronIcon {
         transform: rotate(-180deg);
         transition: transform --normal-transition ease;
       }
@@ -81,18 +121,14 @@
 
 .panel[aria-hidden='true'] {
   height: 0;
-  transition: 0.25s ease-in-out allow-discrete;
+  transition: --fast-transition cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
   overflow-y: clip;
 }
 
 .panel[aria-hidden='false'] {
-  transition: 0.25s ease-in-out allow-discrete;
+  transition: --fast-transition cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
   height: auto;
   height: calc-size(min-content, size);
-}
-
-.item {
-  background-color: var(--background);
 }
 
 .content {
