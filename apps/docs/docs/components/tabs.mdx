@@ -6,6 +6,7 @@ description: Fördela information över flertalet tabbar.
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Tabs as MidasTabs, Text } from '@midas-ds/components'
+import { ControlledExample } from '@site/src/components/examples/tabs/TabsExamples'
 
 <ComponentHeader
   name={'Tabs'}
@@ -76,22 +77,22 @@ Notera att längden på `tabs`-listan och antalet barnnoder måste stämma över
 ```
 
 ```tsx
-// 👎
+// 👎 skickar ett fel till konsolen och returnerar null
 <Tabs tabs={['Bär', 'Frukter', 'Stenfrukter', 'Grönsaker']}>
   <Text>Information om Bär</Text>
   <Text>Information om Frukter</Text>
 </Tabs>
 ```
 
-### Förvalt alternativ
+### Förvalt alternativ (okontrollerad)
 
-Välj vilket alternativ som ska vara förvalt med attributet `defaultSelected`, använd titeln på den tabb som ska vara förvald.
+Välj vilket alternativ som ska vara förvalt med attributet `defaultSelectedKey`, använd titeln på den flik som ska vara förvald.
 
 ```tsx
 <Tabs
   tabs={['Bär', 'Frukter']}
   // highlight-start
-  defaultSelected='Frukter'
+  defaultSelectedKey='Frukter'
   // highlight-end
 >
   <Text>Information om Bär</Text>
@@ -101,12 +102,46 @@ Välj vilket alternativ som ska vara förvalt med attributet `defaultSelected`, 
 
 <div className='card'>
   <MidasTabs
+    label='Frukt och grönt'
     tabs={['Bär', 'Frukter']}
-    defaultSelected='Frukter'
+    defaultSelectedKey='Frukter'
   >
     <Text>Information om Bär</Text>
     <Text>Information om Frukter</Text>
   </MidasTabs>
+</div>
+
+### Kontrollerat val
+
+Valet av flik kan kontrolleras med hjälp av attributet `selectedKey` tillsammans med eventet `onSelectionChange`.
+Den valda flikens titel skickas tillbaka i callbacken när användaren byter flik, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+import type { Key } from 'react-aria-components'
+```
+
+```tsx
+const tabs = ['Bär', 'Frukter']
+const [selectedTab, setSelectedTab] = React.useState<Key>(tabs[1])
+
+return (
+  <Tabs
+    label='Frukt och grönt'
+    // highlight-start
+    tabs={tabs}
+    selectedKey={selectedTab}
+    onSelectionChange={setSelectedTab}
+    // highlight-end
+  >
+    <Text>Information om Bär</Text>
+    <Text>Information om Frukter</Text>
+  </Tabs>
+)
+```
+
+<div className='card'>
+  <ControlledExample />
 </div>
 
 ## API

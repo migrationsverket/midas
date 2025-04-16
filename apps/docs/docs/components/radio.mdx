@@ -4,23 +4,8 @@ description: Radio är en typ av inmatningsfält som används för att välja et
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Radio, RadioGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ RadioGroup, Radio }}
-      {...props}
-    >
-      {`<RadioGroup label={'Välj din favoritfrukt'} description={'Du kan bara välja en'} defaultValue={fruits[0].value}>
-        {fruits.slice(0,3).map(fruit => (
-          <Radio key={fruit.value} value={fruit.value}>{fruit.name}</Radio>
-        )))</RadioGroup>`}
-    </LiveCodeBlock>
-  )
-}
+import { BasicExample, ControlledExample, HorizontalExample } from '@site/src/components/examples/radio/RadioExamples'
 
 <ComponentHeader
   name={'Radio'}
@@ -30,7 +15,20 @@ export const Example = props => {
 
 Inmatningsfält som används för att välja exakt ett alternativ.
 
-<Example hideCode />
+```tsx
+<RadioGroup
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+  defaultValue='apple'
+>
+  <Radio value='apple'>Äpple</Radio>
+  <Radio value='banan'>Banan</Radio>
+</RadioGroup>
+```
+
+<div className='card'>
+  <BasicExample />
+</div>
 
 ## Installation
 
@@ -42,7 +40,36 @@ npm install @midas-ds/components
 import { Radio, RadioGroup } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Kontrollerat val
+
+Använd attributet `value` och eventet `onChange` för att använda controlled value på RadioGroup.
+Den valda radioknappens värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+```
+
+```tsx
+const [selectedFruit, setSelectedFruit] = useState('banan')
+
+return (
+  <RadioGroup
+    label='Välj din favoritfrukt'
+    description='Du kan bara välja en'
+    // highlight-start
+    value={selectedFruit}
+    onChange={setSelectedFruit}
+    // highlight-end
+  >
+    <Radio value='apple'>Äpple</Radio>
+    <Radio value='banan'>Banan</Radio>
+  </RadioGroup>
+)
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
 
 ## Riktlinjer
 
@@ -50,6 +77,11 @@ import { Radio, RadioGroup } from '@midas-ds/components'
   skapa ett sista alternativ som du kallar "Inget av ovanstående" eller liknande.
 - Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är
   begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
+
+<div className='card'>
+  <HorizontalExample />
+</div>
+
 - Fältetiketten ska inledas med stor bokstav och inte följas av punkt.
 - Om alternativen inte utesluter varandra, använd [Checkbox](/components/checkbox).
 - Om det är fler alternativ än fem bör [Select](/components/select) användas istället.

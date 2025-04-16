@@ -4,21 +4,20 @@
   }
 }
 
-tr {
-  word-break: break-all;
-}
-
-td {
-  min-width: 6rem;
-  vertical-align: top;
-}
-
 .table {
   all: revert;
   table-layout: auto;
   font-family: 'Inter', sans-serif;
   border-collapse: collapse;
   width: 100%;
+  tr {
+    word-break: break-all;
+  }
+
+  td {
+    min-width: 6rem;
+    vertical-align: top;
+  }
 }
 
 .thead {

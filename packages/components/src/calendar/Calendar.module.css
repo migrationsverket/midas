@@ -51,6 +51,10 @@
   &[data-disabled='true'] button {
     cursor: not-allowed;
   }
+
+  @media (forced-colors: active) {
+    border: 2px solid;
+  }
 }
 
 .header {
@@ -78,11 +82,6 @@
   }
 }
 
-.heading {
-  font-size: 1rem;
-  margin: auto;
-}
-
 .day {
   border: solid 2px --field-01;
   cursor: pointer;
@@ -90,12 +89,6 @@
   &[data-hovered] {
     background-color: --field-hover-01;
     border-color: --field-hover-01;
-  }
-
-  &[data-selected='true'] {
-    color: --text-on-color;
-    background-color: --button-background-primary;
-    border-color: --button-background-primary;
   }
 
   &[data-selection-start='true'] {
@@ -108,6 +101,16 @@
     color: inherit;
     background-color: --field-01;
     border-color: --button-background-primary;
+  }
+
+  &[data-selected='true'] {
+    color: --text-on-color;
+    background-color: --button-background-primary;
+    border-color: --button-background-primary;
+
+    @media (forced-colors: active) {
+      background-color: highlight;
+    }
   }
 
   &.today {

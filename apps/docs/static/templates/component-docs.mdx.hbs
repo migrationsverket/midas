@@ -6,21 +6,17 @@ description: Kort beskrivning av {{ properName }}
 import { PropTable } from "@site/src/components/propsTable";
 import { ComponentHeader } from '@site/src/components/getComponentMetaData';
 import { {{ properName }} } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock scope={""} {...props}>
-        {`[lägg in ett litet showcase på {{ componentName }}]`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader name={'{{ properName }}'}  friendlyName="Skriv svenska namn för komponenten" />
 
 Kort beskrivning av {{ properName }}
 
-<Example hideCode />
+```tsx
+ // lägg in ett litet showcase på {{ componentName }}
+```
+<div className="card">
+  <--! Implementation av showcase -->
+</div>
 
 ## Installation
 
@@ -31,8 +27,6 @@ npm install @midas-ds/components
 ```tsx
 import { {{ properName }} } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## Riktlinjer
 

@@ -66,12 +66,7 @@ const Render = ({ ...args }) => {
           isClearable
           isSelectableAll={false}
         ></Select>
-        <Button
-          style={{ marginTop: 10 }}
-          slot={'close'}
-        >
-          Submit
-        </Button>
+        <Button slot={'close'}>Submit</Button>
       </Modal>
     </DialogTrigger>
   )
@@ -92,4 +87,3 @@ export const NotDismissable: Story = {
   },
   render: Render,
 }
-
