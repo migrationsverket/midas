@@ -266,11 +266,12 @@
   }
 }
 
-/* .selectDivider {
-} */
-
-/* .selectSectionHeading {
-} */
+.selectSectionHeading {
+  font-family: --font-family;
+  display: block;
+  padding: 1rem 1rem 0.5rem;
+  font-weight: 500;
+}
 
 .fieldError {
   color: --text-invalid;
