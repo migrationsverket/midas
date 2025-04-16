@@ -312,16 +312,14 @@
   margin: 0;
   font: inherit;
   color: currentColor;
-  width: 1em;
-  height: 1em;
   border: 1px solid --button-background-primary;
   border-radius: 0;
 }
 
 .checkbox::before {
   content: '';
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.875rem;
+  height: 0.875rem;
   transform: scale(1);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1rem 1rem white;
