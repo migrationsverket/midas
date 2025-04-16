@@ -6,6 +6,7 @@ import type { MultiSelectState } from './useMultiSelectState'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import { Check } from 'lucide-react'
+import { Checkbox } from '../checkbox'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
   listBoxRef?: React.RefObject<HTMLUListElement>
@@ -45,13 +46,14 @@ const Option = <T,>({ item, state }: OptionProps<T>) => {
       })}
     >
       {state.selectionMode === 'multiple' && (
-        <div className={styles.checkboxContainer}>
-          <input
-            className={styles.checkbox}
-            type='checkbox'
-            disabled={isDisabled}
-            checked={isSelected}
-            readOnly
+        <div
+          className={styles.checkboxContainer}
+          aria-hidden
+        >
+          <Checkbox
+            isDisabled={isDisabled}
+            isSelected={isSelected}
+            isReadOnly
           />
         </div>
       )}

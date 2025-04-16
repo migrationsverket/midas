@@ -4,7 +4,6 @@ import { mergeProps, useObjectRef } from '@react-aria/utils'
 import { Item, Section } from '@react-stately/collections'
 import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
-import { useEffect, useRef } from 'react'
 import * as React from 'react'
 import { TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
@@ -19,6 +18,7 @@ import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { Label } from '../label'
 import { Text } from '../text'
+import { Checkbox } from '../checkbox'
 
 export type OptionItem = {
   children?: never
@@ -138,7 +138,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       errorMessage,
     } = props
 
-    const refAllButton = useRef<HTMLInputElement>(null)
     const ref = useObjectRef(forwardedRef)
     const disallowEmptySelection = !isClearable
 
@@ -203,12 +202,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
         </button>
       </div>
     )
-
-    useEffect(() => {
-      if (refAllButton.current) {
-        refAllButton.current.indeterminate = isIndeterminateSelection
-      }
-    }, [isIndeterminateSelection])
 
     return (
       <>
@@ -339,14 +332,16 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                             className={styles.listBoxItem}
                             tabIndex={-1}
                           >
-                            <div className={styles.checkboxContainer}>
-                              <input
-                                className={styles.checkbox}
-                                type='checkbox'
-                                checked={isAllSelection}
-                                ref={refAllButton}
-                                readOnly
-                                tabIndex={-1}
+                            <div
+                              className={styles.checkboxContainer}
+                              aria-hidden
+                            >
+                              <Checkbox
+                                isDisabled={isDisabled}
+                                isSelected={isAllSelection}
+                                isIndeterminate={isIndeterminateSelection}
+                                isReadOnly
+                                excludeFromTabOrder
                               />
                             </div>
                             <span>{'Select All'}</span>
