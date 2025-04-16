@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --notification-border-success, --notification-background-success, --notification-border-info, --notification-background-info, --notification-border-warning, --notification-background-warning, --notification-border-important, --notification-background-important from tokens;
+@value --font-family, --text-primary, --support-border-success, --support-background-success, --support-border-info, --support-background-info, --support-border-warning, --support-background-warning, --support-border-important, --support-background-important from tokens;
 
 .infoBanner {
   font-family: --font-family;
@@ -12,23 +12,23 @@
   line-height: 1.3;
 
   &.success {
-    --border: --notification-border-success;
-    --bg: --notification-background-success;
+    --border: --support-border-success;
+    --bg: --support-background-success;
   }
 
   &.info {
-    --border: --notification-border-info;
-    --bg: --notification-background-info;
+    --border: --support-border-info;
+    --bg: --support-background-info;
   }
 
   &.important {
-    --border: --notification-border-important;
-    --bg: --notification-background-important;
+    --border: --support-border-important;
+    --bg: --support-background-important;
   }
 
   &.warning {
-    --border: --notification-border-warning;
-    --bg: --notification-background-warning;
+    --border: --support-border-warning;
+    --bg: --support-background-warning;
   }
 
   border-left: 3px solid var(--border);
