@@ -24,9 +24,7 @@ Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående
 ```
 
 <div className={'card'}>
-  <p>
-    I vår <Link href='/changelog'>Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.
-  </p>
+  I vår <Link href='/changelog'>Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.
 </div>
 
 ## Installation
@@ -43,20 +41,17 @@ import { Link } from '@midas-ds/components'
 
 ### Länk
 
-```tsx title="default"
+```tsx {3} title="default"
 <p>
-  {' '}
-  Designsystemet utvecklas ständigt, //highlight-start
+  Designsystemet utvecklas ständigt,
   <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>
-  //highlight-end Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
+  Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
 </p>
 ```
 
 <div className={'card'}>
-  <p>
-    Designsystemet utvecklas ständigt,<Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>. Vi släpper
-    kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
-  </p>
+  Designsystemet utvecklas ständigt, <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>. Vi släpper
+  kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
 </div>
 
 ### Fristående
@@ -64,23 +59,27 @@ import { Link } from '@midas-ds/components'
 Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
 
 ```tsx title="standalone"
-<p>Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar,
-nya komponenter och nya funktioner på befintliga komponenter.</p>
+<p>
+  Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.
+</p>
 <Link
-//highlight-start
+  // highlight-start
   standalone
-//highlight-end
-  href="/changelog">
-Se vad som har ändrats i senaste versionen
+  // highlight-end
+  href="/changelog"
+>
+  Se vad som har ändrats i senaste versionen
 </Link>
 ```
 
 <div className={'card'}>
+  Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya
+  funktioner på befintliga komponenter.
   <Link
     standalone
     href='/changelog'
   >
-    Se vad som har ändrats i senaste versionen
+    {'Se vad som har ändrats i senaste versionen'}
   </Link>
 </div>
 
@@ -91,17 +90,18 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
 ```tsx title="stretched"
 <div style={{ position: 'relative' }}>
   <p>
-    Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya
-    funktioner på befintliga komponenter.
+    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
+    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
+    ytan.
   </p>
   <Link
     standalone
     //highlight-start
     stretched
     //highlight-end
-    href='/changelog'
+    href='/#'
   >
-    Se vad som har ändrats i senaste versionen
+    Läs mer om designsystemets nyheter
   </Link>
 </div>
 ```
@@ -114,17 +114,15 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
       padding: '1rem',
     }}
   >
-    <p>
-      Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller
-      nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den
-      gråa ytan.
-    </p>
+    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
+    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
+    ytan.
     <Link
       standalone
       stretched
       href='#'
     >
-      Läs mer om designsystemets nyheter
+      {'Läs mer om designsystemets nyheter'}
     </Link>
   </div>
 </div>
