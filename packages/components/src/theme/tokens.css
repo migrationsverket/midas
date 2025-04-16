@@ -37,15 +37,34 @@
 @value --red-100: #b90835;
 @value --signal-blue-10: #eaf2f6;
 @value --signal-blue-100: #0066cc;
+@value --signal-green-10: #eaf9ec;
 @value --signal-green-20: #d5f2d9;
+@value --signal-green-30: #bae5c5;
+@value --signal-green-40: #a0d9b2;
+@value --signal-green-50: #85cc9e;
+@value --signal-green-60: #6bc08b;
+@value --signal-green-70: #50b377;
+@value --signal-green-80: #35a663;
+@value --signal-green-90: #1b9a50;
 @value --signal-green-100: #008d3c;
+@value --signal-green-110: #0e803c;
+@value --signal-green-120: #17723b;
+@value --signal-green-130: #186539;
+@value --signal-green-140: #1a5837;
+@value --signal-green-150: #1a5837;
+@value --signal-green-160: #183f2e;
+@value --signal-green-170: #163328;
+@value --signal-green-180: #112722;
+@value --signal-green-190: #0d1b19;
+@value --signal-green-200: #060e0e;
+@value --signal-yellow-10: #fff8e1;
+@value --signal-yellow-100: #fdb813;
 @value --signal-red-20: #ffdfdf;
+@value --signal-red-30: #fcc8c8;
 @value --signal-red-80: #eb4e4e;
 @value --signal-red-100: #e62323;
 @value --signal-red-160: #b31b1b;
 @value --signal-red-180: #801313;
-@value --signal-yellow-10: #fff8e1;
-@value --signal-yellow-100: #fdb813;
 
 /* Typography */
 @value --font-family: "Inter", sans-serif;
@@ -172,15 +191,17 @@
 @value --link-pressed: light-dark(--gray-200, --blue-60);
 @value --link-visited: light-dark(--purple-140, --purple-80);
 
-/* Notification */
-@value --notification-border-success: light-dark(--signal-green-100, --signal-green-100);
-@value --notification-border-info: light-dark(--signal-blue-100, --signal-blue-100);
-@value --notification-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
-@value --notification-border-warning: light-dark(--signal-red-100, --signal-red-100);
-@value --notification-background-success: light-dark(--signal-green-20, --layer-01);
-@value --notification-background-info: light-dark(--signal-blue-10, --layer-01);
-@value --notification-background-important: light-dark(--signal-yellow-10, --layer-01);
-@value --notification-background-warning: light-dark(--signal-red-20, --layer-01);
+/* Support */
+@value --support-border-success: light-dark(--signal-green-100, --signal-green-100);
+@value --support-border-info: light-dark(--signal-blue-100, --signal-blue-100);
+@value --support-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
+@value --support-border-warning: light-dark(--signal-red-100, --signal-red-100);
+@value --support-background-success: light-dark(--signal-green-20, --layer-01);
+@value --support-background-success-hover: light-dark(--signal-green-30, --layer-hover-01);
+@value --support-background-info: light-dark(--signal-blue-10, --layer-01);
+@value --support-background-important: light-dark(--signal-yellow-10, --layer-01);
+@value --support-background-warning: light-dark(--signal-red-20, --layer-01);
+@value --support-background-warning-hover: light-dark(--signal-red-30, --layer-hover-01);
 
 /* Text */
 @value --text-primary: light-dark(--gray-200, --gray-10);
