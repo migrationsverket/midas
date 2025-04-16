@@ -128,17 +128,17 @@ describe('A multi Select', () => {
     await user.keyboard('[Enter]')
     await user.keyboard('[Enter]')
     expect(onchange).toHaveBeenCalledWith(
-      expect.objectContaining(new Set(['apple'])),
+      expect.objectContaining(new Set(['äpple'])),
     )
-    expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
-    expect(screen.queryByDisplayValue('Banana')).not.toBeInTheDocument()
+    expect(screen.getByDisplayValue('Äpple')).toBeInTheDocument()
+    expect(screen.queryByDisplayValue('Banan')).not.toBeInTheDocument()
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     expect(onchange).toHaveBeenCalledWith(
-      expect.objectContaining(new Set(['apple', 'banana'])),
+      expect.objectContaining(new Set(['äpple', 'banan'])),
     )
-    expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
-    expect(screen.getByDisplayValue('Banana')).toBeInTheDocument()
+    expect(screen.getByDisplayValue('Äpple')).toBeInTheDocument()
+    expect(screen.getByDisplayValue('Banan')).toBeInTheDocument()
   })
 })
 
