@@ -1,6 +1,0 @@
-import{c as i}from"./createLucideIcon-8wDOqnHv.js";import{j as n}from"./jsx-runtime-DtgEGaVE.js";import{r as p}from"./index-BbAIUH2N.js";import{c as d}from"./clsx-B-dksMZM.js";/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */const y=i("Bell",[["path",{d:"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9",key:"1qo2s2"}],["path",{d:"M10.3 21a1.94 1.94 0 0 0 3.4 0",key:"qgo35s"}]]),_='"../theme/tokens.css"',l="_badge_1bxos_4",f="_hasChildren_1bxos_13",g="_badgeContainer_1bxos_22",o={tokens:_,"--font-family":'"Inter", sans-serif',"--signal-red-140":"#e62323","--text-on-color":"light-dark(#ffffff, #ffffff)",badge:l,hasChildren:f,badgeContainer:g},r=({children:e,className:a,...s})=>{const c=p.Children.count(e)>0;return n.jsx("span",{className:d(o.badge,c&&o.hasChildren,a),...s,children:e})};try{r.displayName="Badge",r.__docgenInfo={description:"",displayName:"Badge",props:{}}}catch{}const t=({children:e,className:a,...s})=>n.jsx("span",{className:d(o.badgeContainer,a),...s,children:e});try{t.displayName="BadgeContainer",t.__docgenInfo={description:"",displayName:"BadgeContainer",props:{}}}catch{}export{r as B,t as a,y as b};
