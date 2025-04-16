@@ -27,10 +27,13 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
   const [colorScheme, setColorScheme] = React.useState<Set<Key>>(defaultValue)
 
   React.useEffect(() => {
-    const body = document.querySelector<HTMLElement>(selector)
+    const targetElement = document.querySelector<HTMLElement>(selector)
 
-    if (body) {
-      body.style.setProperty('color-scheme', Array.from(colorScheme).join(' '))
+    if (targetElement) {
+      targetElement.style.setProperty(
+        'color-scheme',
+        Array.from(colorScheme).join(' '),
+      )
     } else {
       console.warn(`No element found for selector: "${selector}"`)
     }
