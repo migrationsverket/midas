@@ -164,7 +164,7 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
                 Stäng
               </Button>
             </div>
-            <div className={styles.modalBody}>
+            <div className={styles.modalBody} tabIndex={-1}>
               {title && <Heading level={2}>{title}</Heading>}
               {children}
             </div>
