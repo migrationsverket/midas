@@ -120,6 +120,54 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
   </AccordionItem>
 </Accordion>
 
+### Status
+
+AccordionItems kan ha en status för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla uppmärksamhet till att det t.ex finns fler åtgärder att utföra.
+
+```tsx {6,13}
+<Accordion variant='contained'>
+  {/* more items */}
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+    type='success'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id='sharon'
+    title='Sharon'
+    type='warning'
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+</Accordion>
+```
+
+<Accordion variant='contained'>
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+    type='success'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id='sharon'
+    title='Sharon'
+    type='warning'
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id='watermelon'
+    title='Vattenmelon'
+    type='default'
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
+
 ### Multiple
 
 En accordion har som standard bara en öppet samtidigt och stänger automatiskt andra sektioner när en ny öppnas.
