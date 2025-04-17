@@ -123,6 +123,10 @@
     border: none;
     background: --field-disabled;
   }
+
+  @media (forced-colors: active) {
+    color: activeText;
+  }
 }
 
 .checkboxGroup {
