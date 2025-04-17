@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ComboBox, ComboBoxItem } from './ComboBox'
-import { generateMockOptions } from './utils'
-import { Item } from './types'
+import { ComboBox, ComboBoxItem, ComboBoxSelection } from './ComboBox'
+import { generateMockOptions, optionsWithSections } from './utils'
+import { Item, Section } from './types'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import styles from './ComboBox.module.css'
@@ -158,4 +158,16 @@ export const CustomErrorMessage: Story = {
       },
     )
   },
+}
+
+export const Sectioned: Story = {
+  args: {
+    ...Default.args,
+    items: optionsWithSections,
+  },
+  render: args => (
+    <ComboBox {...args}>
+      {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+    </ComboBox>
+  ),
 }
