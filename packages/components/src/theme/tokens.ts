@@ -107,12 +107,6 @@ export const states = {
   focus:
     '0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',
 }
-/*
-export const states1 = {
-  focusr: `light-dark(${states.focusLight}, ${states1.focusDark})`,
-  
-}
-  */
 
 export const transitions = {
   slow: '500ms',
