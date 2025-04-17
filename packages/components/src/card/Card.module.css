@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --border-strong, --layer-02, --layer-hover-02, --layer-selected-02, --focus, --fast-transition, --text-primary, --blue-20 from tokens;
+@value --font-family, --border-primary, --layer-02, --layer-hover-02, --layer-selected-02, --focus, --fast-transition, --text-primary, --blue-20 from tokens;
 
 .card {
   position: relative;
@@ -10,7 +10,7 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 2rem 1.5rem;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   background-color: --layer-02;
   transition:
     transform --fast-transition ease-in-out,

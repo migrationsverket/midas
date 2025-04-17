@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --border-subtle, --border-brand, --focus, --breakpoint-sm from tokens;
+@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-sm from tokens;
 
 .container {
   font-family: --font-family;
@@ -19,7 +19,7 @@
   &[data-selected] {
     font-weight: 500;
     padding-bottom: calc(0.5rem - 3px);
-    border-bottom: 3px solid --border-brand;
+    border-bottom: 3px solid --border-tertiary;
   }
 
   &[data-focus-visible],
@@ -32,7 +32,7 @@
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: 3px solid --border-brand;
+      border-left: 3px solid --border-tertiary;
       padding-left: calc(1.125rem - 3px);
       border-bottom: 0;
       box-shadow: none;

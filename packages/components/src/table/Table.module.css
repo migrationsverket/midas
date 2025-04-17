@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-accent-01, --layer-01, --border-subtle, --layer-accent-hover-01, --layer-hover-01, --border-strong, --text-primary from tokens;
+@value --font-family, --layer-accent-01, --layer-01, --border-subtle, --layer-accent-hover-01, --layer-hover-01, --border-primary, --text-primary from tokens;
 
 .cell {
   background-color: --layer-01;
@@ -20,11 +20,11 @@
   }
 
   th[data-focused='true'] {
-    outline: 2px solid --border-strong;
+    outline: 2px solid --border-primary;
   }
 
   th[data-hovered='true'] {
-    outline: 2px solid --border-strong;
+    outline: 2px solid --border-primary;
   }
 
   &.striped .row:nth-child(2n) .cell {
@@ -38,7 +38,7 @@
 
 .row {
   &[data-focused='true'] {
-    outline: 2px solid --border-strong;
+    outline: 2px solid --border-primary;
   }
 
   &[data-href] {

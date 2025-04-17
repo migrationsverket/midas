@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --icon-primary, --border-strong, --border-invalid, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-brand, --button-background-primary from tokens;
+@value --font-family, --field-01, --icon-primary, --border-primary, --border-invalid, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-tertiary, --button-background-primary from tokens;
 
 .datePicker {
   font-family: --font-family;
@@ -18,7 +18,7 @@
   min-height: 3rem;
   align-items: center;
   background-color: --field-01;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   padding-left: 1rem;
   display: flex;
   justify-content: flex-start;

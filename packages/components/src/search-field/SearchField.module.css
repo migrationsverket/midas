@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-invalid, --field-01, --border-strong, --focus, --border-invalid, --icon-primary, --text-primary from tokens;
+@value --font-family, --text-invalid, --field-01, --border-primary, --focus, --border-invalid, --icon-primary, --text-primary from tokens;
 
 .fieldError {
   font-family: --font-family;
@@ -81,7 +81,7 @@
   background-color: --field-01;
   width: 100%;
   padding: 0.875rem 0 0.875rem 3rem;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
 
   &:focus-visible {
     box-shadow: --focus;

@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --border-brand from tokens;
+@value --border-tertiary from tokens;
 
 .group {
   display: inline-flex;
@@ -12,6 +12,6 @@
 
 .toggleButton {
   &[data-selected] {
-    box-shadow: inset 0 -2px 0 0 --border-brand;
+    box-shadow: inset 0 -2px 0 0 --border-tertiary;
   }
 }

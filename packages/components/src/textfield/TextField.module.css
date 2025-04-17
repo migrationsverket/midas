@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --field-disabled, --text-primary, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
+@value --focus, --field-disabled, --text-primary, --border-invalid, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
 .textField {
   display: grid;
@@ -35,7 +35,7 @@
   font-family: --font-family;
   display: flex;
   grid-area: Input;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
@@ -87,7 +87,7 @@
   font-family: --font-family;
   grid-area: Input;
   color: --text-primary;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   min-height: 48px;
   font-size: 1rem;
   padding-left: 1rem;
