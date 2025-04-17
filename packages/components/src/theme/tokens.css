@@ -38,14 +38,16 @@
 @value --signal-blue-10: #eaf2f6;
 @value --signal-blue-100: #0066cc;
 @value --signal-green-20: #d5f2d9;
+@value --signal-green-30: #bae5c5;
 @value --signal-green-100: #008d3c;
+@value --signal-yellow-10: #fff8e1;
+@value --signal-yellow-100: #fdb813;
 @value --signal-red-20: #ffdfdf;
+@value --signal-red-30: #fcc8c8;
 @value --signal-red-80: #eb4e4e;
 @value --signal-red-100: #e62323;
 @value --signal-red-160: #b31b1b;
 @value --signal-red-180: #801313;
-@value --signal-yellow-10: #fff8e1;
-@value --signal-yellow-100: #fdb813;
 
 /* Typography */
 @value --font-family: "Inter", sans-serif;
@@ -172,15 +174,17 @@
 @value --link-pressed: light-dark(--gray-200, --blue-60);
 @value --link-visited: light-dark(--purple-140, --purple-80);
 
-/* Notification */
-@value --notification-border-success: light-dark(--signal-green-100, --signal-green-100);
-@value --notification-border-info: light-dark(--signal-blue-100, --signal-blue-100);
-@value --notification-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
-@value --notification-border-warning: light-dark(--signal-red-100, --signal-red-100);
-@value --notification-background-success: light-dark(--signal-green-20, --layer-01);
-@value --notification-background-info: light-dark(--signal-blue-10, --layer-01);
-@value --notification-background-important: light-dark(--signal-yellow-10, --layer-01);
-@value --notification-background-warning: light-dark(--signal-red-20, --layer-01);
+/* Support */
+@value --support-border-success: light-dark(--signal-green-100, --signal-green-100);
+@value --support-border-info: light-dark(--signal-blue-100, --signal-blue-100);
+@value --support-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
+@value --support-border-warning: light-dark(--signal-red-100, --signal-red-100);
+@value --support-background-success: light-dark(--signal-green-20, --layer-01);
+@value --support-background-success-hover: light-dark(--signal-green-30, --layer-hover-01);
+@value --support-background-info: light-dark(--signal-blue-10, --layer-01);
+@value --support-background-important: light-dark(--signal-yellow-10, --layer-01);
+@value --support-background-warning: light-dark(--signal-red-20, --layer-01);
+@value --support-background-warning-hover: light-dark(--signal-red-30, --layer-hover-01);
 
 /* Text */
 @value --text-primary: light-dark(--gray-200, --gray-10);
