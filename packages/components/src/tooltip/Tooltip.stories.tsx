@@ -12,6 +12,9 @@ const meta: Meta<typeof Tooltip> = {
   argTypes: {
     children: { control: 'text' },
   },
+  parameters: {
+    layout: 'centered',
+  },
 }
 export default meta
 type Story = StoryObj<typeof Tooltip>
@@ -65,4 +68,22 @@ export const Open: Story = {
       },
     )
   },
+}
+
+export const Placement: Story = {
+  args: {
+    placement: 'top',
+    children: 'Spara',
+  },
+  render: args => (
+    <TooltipTrigger>
+      <Button
+        variant='tertiary'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      <Tooltip {...args} />
+    </TooltipTrigger>
+  ),
 }
