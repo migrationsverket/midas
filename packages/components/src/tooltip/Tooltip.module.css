@@ -24,26 +24,36 @@
     transform: var(--origin);
     opacity: 0;
   }
-  &[data-placement=top] {
+
+  &[data-placement='top'] {
     margin-bottom: 8px;
+
     --origin: translateY(4px);
   }
-  &[data-placement=bottom] {
+
+  &[data-placement='bottom'] {
     margin-top: 8px;
+
     --origin: translateY(-4px);
+
     .arrow svg {
       transform: rotate(180deg);
     }
   }
-  &[data-placement=right] {
+
+  &[data-placement='right'] {
     margin-left: 8px;
+
     --origin: translateX(-4px);
+
     & .arrow svg {
       transform: rotate(90deg);
     }
   }
-  &[data-placement=left] {
+
+  &[data-placement='left'] {
     margin-right: 8px;
+
     --origin: translateX(4px);
 
     & .arrow svg {
