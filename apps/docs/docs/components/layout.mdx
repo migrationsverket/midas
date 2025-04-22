@@ -5,91 +5,7 @@ description: En skalkomponent för att få en simpel sidomeny och sidhuvud.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Layout, LinkButton } from '@midas-ds/components'
-import { semantic } from '@midas-ds/components/theme'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Calendar, Gavel, House, Plus, ClipboardList } from 'lucide-react'
-
-export const AppExample = () => {
-  return (
-    <div
-      style={{
-        background: semantic.layer02,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        border: `dotted 2px ${semantic.borderSubtle}`,
-      }}
-    >
-      Din applikation
-    </div>
-  )
-}
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Layout, LinkButton, Calendar, Gavel, House, Plus, ClipboardList, AppExample }}
-      {...props}
-    >
-      {`<Layout
-        items={[{
-          items: [
-            {
-              title: 'Översikt',
-              href: '#',
-              icon: House
-            }
-          ]
-        },
-        {
-          title: 'Ansökan',
-          items: [
-            {
-              title: 'Skapa ansökan',
-              href: '#',
-              icon: Plus
-            },
-            {
-              title: 'Beslut',
-              href: '#',
-              icon: Gavel
-            }
-          ]
-        },
-        {
-          title: 'Kort och konto',
-          items: [
-            {
-              title: 'LMA-kort',
-              href: '#',
-              icon: Calendar
-            },
-            {
-              title: 'Avvikelser',
-              href: '#',
-              icon: ClipboardList
-            }
-          ]
-        }]}
-        title='Skapa ansökningar'
-        user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
-        app={{ name: 'Namn på applikationen' }}
-        headerChildren={
-          <LinkButton
-            variant='tertiary'
-            target='_blank'
-          >
-            Öppna annan tjänst
-          </LinkButton>
-        }
-      >
-          <AppExample /> 
-      </Layout>`}
-    </LiveCodeBlock>
-  )
-}
+import { BasicExample } from '@site/src/components/examples/layout/LayoutExamples'
 
 <ComponentHeader
   name={'Layout'}
@@ -99,7 +15,68 @@ export const Example = props => {
 
 En skalkomponent för att få en simpel sidomeny och sidhuvud.
 
-<Example hideCode />
+```tsx
+<Layout
+  variant='internal'
+  items={[
+    {
+      items: [
+        {
+          title: 'Översikt',
+          href: '#',
+          icon: House,
+        },
+      ],
+    },
+    {
+      title: 'Ansökan',
+      items: [
+        {
+          title: 'Skapa ansökan',
+          href: '#',
+          icon: Plus,
+        },
+        {
+          title: 'Beslut',
+          href: '#',
+          icon: Gavel,
+        },
+      ],
+    },
+    {
+      title: 'Kort och konto',
+      items: [
+        {
+          title: 'LMA-kort',
+          href: '#',
+          icon: Calendar,
+        },
+        {
+          title: 'Avvikelser',
+          href: '#',
+          icon: ClipboardList,
+          hasBadge: true,
+        },
+      ],
+    },
+  ]}
+  title='Skapa ansökningar'
+  user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+  app={{ name: 'Namn på applikationen' }}
+  headerChildren={
+    <LinkButton
+      variant='tertiary'
+      target='_blank'
+    >
+      Öppna annan tjänst
+    </LinkButton>
+  }
+>
+  {/* Din applikation */}
+</Layout>
+```
+
+<BasicExample />
 
 ## Installation
 
@@ -111,9 +88,76 @@ npm install @midas-ds/components
 import { Layout } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Extern variant
 
-### Använda separat
+Använd `variant="external"` för en förenklad version av Layout med Navbar i botten av fönstret i mobilt läge.
+
+```tsx
+<Layout
+  // highlight-start
+  variant='external'
+  // highlight-end
+  items={[
+    {
+      items: [
+        {
+          title: 'Översikt',
+          href: '#',
+          icon: House,
+        },
+      ],
+    },
+    {
+      title: 'Ansökan',
+      items: [
+        {
+          title: 'Skapa ansökan',
+          href: '#',
+          icon: Plus,
+        },
+        {
+          title: 'Beslut',
+          href: '#',
+          icon: Gavel,
+        },
+      ],
+    },
+    {
+      title: 'Kort och konto',
+      items: [
+        {
+          title: 'LMA-kort',
+          href: '#',
+          icon: Calendar,
+        },
+        {
+          title: 'Avvikelser',
+          href: '#',
+          icon: ClipboardList,
+          hasBadge: true,
+        },
+      ],
+    },
+  ]}
+  title='Skapa ansökningar'
+  user={{ name: 'Namn Namnsson', title: 'Roll eller behörighet' }}
+  app={{ name: 'Namn på applikationen' }}
+  headerChildren={
+    <LinkButton
+      variant='tertiary'
+      target='_blank'
+    >
+      Öppna annan tjänst
+    </LinkButton>
+  }
+>
+  {/* Din applikation */}
+</Layout>
+```
+
+<BasicExample variant='external' />
+
+## Separat användning
 
 Det går att importera sidomenyn samt sidhuvudet som separata komponenter om så önskas, det är dock rekommenderat att använda hela Layoutkomponenten.
 
@@ -127,4 +171,4 @@ Kommer snart
 
 ## API
 
-<PropTable name={'Layout'} />
+<PropTable name='Layout' />

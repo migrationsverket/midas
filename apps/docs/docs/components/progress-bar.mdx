@@ -5,30 +5,26 @@ title: ProgressBar
 import { ProgressBar } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ ProgressBar }}
-      {...props}
-    >
-      {`
-        <ProgressBar
-          label='Laddar...'
-          showValueLabel
-          value={30}
-        />
-      `}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader name='ProgressBar' />
 
-Progress bar med fördefinerad stil, använder `role="progressbar"` under huven
+```tsx
+<ProgressBar
+  label='Laddar...'
+  showValueLabel
+  value={30}
+/>
+```
 
-<Example hideCode />
+<div className='card'>
+  <ProgressBar
+    label='Laddar...'
+    showValueLabel
+    value={30}
+  />
+</div>
+
+Progress bar med fördefinerad stil, använder `role="progressbar"` under huven
 
 ## Installation
 
@@ -40,60 +36,73 @@ npm install @midas-ds/components
 import { ProgressBar } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Utan etiketter
 
 Utelämna `label` och `showValueLabel` för att dölja komponentens etiketter. Kom ihåg att ersätta `label` med `aria-label`.
 
-<LiveCodeBlock
-  scope={{ ProgressBar }}
-  {...props}
->
-  {`
-    <ProgressBar
-      aria-label='Laddar...'
-      value={30}
-    />
-  `}
-</LiveCodeBlock>
+```tsx
+<ProgressBar
+  // highlight-start
+  aria-label='Laddar...'
+  // highlight-end
+  value={30}
+/>
+```
+
+<div className='card'>
+  <ProgressBar
+    aria-label='Laddar...'
+    value={30}
+  />
+</div>
 
 ### Anpassad `valueLabel`
 
 Egenskapen `valueLabel` och `showValueLabel` kan användas för att ändra den högerställda etiketten.
 
-<LiveCodeBlock
-  scope={{ ProgressBar }}
-  {...props}
->
-  {`
-    <ProgressBar
-      aria-label='Dina framsteg'
-      value={2}
-      maxValue={3}
-      valueLabel='Steg 2 av 3'
-      showValueLabel
-    />
-  `}
-</LiveCodeBlock>
+```tsx
+<ProgressBar
+  aria-label='Dina framsteg'
+  value={2}
+  maxValue={3}
+  // highlight-start
+  valueLabel='Steg 2 av 3'
+  showValueLabel
+  // highlight-end
+/>
+```
+
+<div className='card'>
+  <ProgressBar
+    aria-label='Dina framsteg'
+    value={2}
+    maxValue={3}
+    valueLabel='Steg 2 av 3'
+    showValueLabel
+  />
+</div>
 
 ### Obestämdhet
 
 Egenskapen `isIndeterminate` kan användas för att indikera att ett förlopp är obestämt.
 
-<LiveCodeBlock
-  scope={{ ProgressBar }}
-  {...props}
->
-  {`
-    <ProgressBar
-      label='Väntar...'
-      isIndeterminate
-    />
-  `}
-</LiveCodeBlock>
+```tsx
+<ProgressBar
+  label='Väntar...'
+  // highlight-start
+  isIndeterminate
+  // highlight-end
+/>
+```
+
+<div className='card'>
+  <ProgressBar
+    label='Väntar...'
+    isIndeterminate
+  />
+</div>
 
 ## API
 

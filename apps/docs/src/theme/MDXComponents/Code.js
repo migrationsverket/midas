@@ -1,7 +1,6 @@
 import React from 'react'
 import CodeBlock from '@theme/CodeBlock'
 import CodeInline from '@theme/CodeInline'
-import { fruits } from '@site/src/components/examples/fruits'
 
 function shouldBeInline(props) {
   return (
@@ -9,7 +8,7 @@ function shouldBeInline(props) {
     // see https://github.com/facebook/docusaurus/pull/9704
     typeof props.children !== 'undefined' &&
     React.Children.toArray(props.children).every(
-      (el) => typeof el === 'string' && !el.includes('\n')
+      el => typeof el === 'string' && !el.includes('\n'),
     )
   )
 }

@@ -8,6 +8,9 @@ import { injectAxe, checkA11y } from 'axe-playwright'
  */
 const config: TestRunnerConfig = {
   async preVisit(page) {
+    await page.emulateMedia({
+      colorScheme: (process.env.COLOR_SCHEME as 'light' | 'dark') || null,
+    })
     await injectAxe(page)
   },
   async postVisit(page, context) {

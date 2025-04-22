@@ -5,19 +5,7 @@ description: Laddningsindikator för komponenter
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Skeleton, Link } from '@midas-ds/components'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Skeleton }}
-      {...props}
-    >
-      {`<Skeleton height='48px'/>`}
-    </LiveCodeBlock>
-  )
-}
+import { Skeleton } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Skeleton'}
@@ -27,7 +15,13 @@ export const Example = props => {
 
 Komponent som används som en platshållare för den riktiga komponenten innan sidan laddat klart
 
-<Example hideCode />
+```tsx
+<Skeleton height='48px' />
+```
+
+<div className='card'>
+  <Skeleton height='48px' />
+</div>
 
 ## Installation
 
@@ -39,31 +33,59 @@ npm install @midas-ds/components
 import { Skeleton } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Rectangular
 
 Detta är standardvarianten. Används som platshållare för text och de flesta komponenter vi har. Ange storleken i px, rem eller % med `width` och `height`. Om inget anges kommer den att fylla sin parent container.
 
-<Example />
+```tsx
+<Skeleton height='48px' />
+```
+
+<div className='card'>
+  <Skeleton height='48px' />
+</div>
 
 ### Circle
 
 Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` och sätter automatiskt höjden så att den blir rund.
 
-<LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton variant='circle' width='48px'/>`}</LiveCodeBlock>
+```tsx
+<Skeleton
+  variant='circle'
+  width='48px'
+/>
+```
+
+<div className='card'>
+  <Skeleton
+    variant='circle'
+    width='48px'
+  />
+</div>
 
 ## Animation
 
-Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga av med `animation= 'false'`.
+Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga av med `animation='false'`.
 
-<LiveCodeBlock scope={{ Skeleton }}>{`<Skeleton height='48px' animation='false'/>`}</LiveCodeBlock>
+```tsx
+<Skeleton
+  height='48px'
+  animation='false'
+/>
+```
+
+<div className='card'>
+  <Skeleton
+    height='48px'
+    animation='false'
+  />
+</div>
 
 ## Riktlinjer
 
-För val av laddningsindikator se <Link href="/design-patterns/page-loading" >{'Mönster för laddningsindikatorer'}</Link>
+För val av laddningsindikator se [Mönster för laddningsindikatorer](/design-patterns/page-loading)
 
 ## API
 

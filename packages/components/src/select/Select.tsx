@@ -6,7 +6,7 @@ import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
 import { useEffect, useRef } from 'react'
 import * as React from 'react'
-import { Label, TagList, TextField } from 'react-aria-components'
+import { TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
 import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
@@ -17,6 +17,8 @@ import { TagGroup, Tag } from '../tag'
 import { FieldError } from '../field-error'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
+import { Label } from '../label'
+import { Text } from '../text'
 
 export type OptionItem = {
   children?: never
@@ -40,7 +42,7 @@ type OptionSection = {
 export type Option = OptionItem | OptionSection
 export type SelectionMode = 'single' | 'multiple'
 
-type SelectProps = {
+export type SelectProps = {
   /** Whether the element should receive focus on render. */
   autoFocus?: boolean
 
@@ -109,10 +111,14 @@ type SelectProps = {
   isRequired?: boolean
   /** Name of the field, for uncontrolled use */
   name?: string
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
-  ({ selectionMode = 'single', ...rest }, forwardedRef) => {
+  (
+    { selectionMode = 'single', errorPosition = 'top', ...rest },
+    forwardedRef,
+  ) => {
     const props = {
       selectionMode,
       ...rest,
@@ -153,12 +159,11 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       ref,
     )
 
-    const isActive = state.isOpen || state.selectedItems || state.selectedItem
+    const isActive = state.isOpen || state.selectedItems
     const isAllSelection = state.selectionManager.isSelectAll
     const isIndeterminateSelection =
       !isAllSelection && !state.selectionManager.isEmpty
-    const hasClearButton =
-      isClearable && (state.selectedItems || state.selectedItem)
+    const hasClearButton = isClearable && state.selectedItems
     const hasHeader = isSelectableAll
 
     const handleClear = () => state.selectionManager.clearSelection()
@@ -228,6 +233,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           <div className={styles.multiSelect}>
             {label && (
               <Label
+                variant='label-02'
                 {...labelProps}
                 slot={'label'}
                 className={clsx(styles.selectLabel, {
@@ -238,29 +244,21 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {label}
               </Label>
             )}
-            {description && (
-              <span
-                className={clsx(styles.description, {
-                  [styles.descriptionDisabled]: isDisabled,
-                  [styles.descriptionInvalid]: !!errorMessage,
-                })}
-                slot={'description'}
-              >
-                {description}
-              </span>
+            {description && <Text slot={'description'}>{description}</Text>}
+            {errorPosition === 'top' && (
+              <>
+                <FieldError>{errorMessage}</FieldError>
+                {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
+                {state.displayValidation.validationErrors.length ? (
+                  <div className={styles.fieldError}>
+                    {errorMessage ||
+                      state.displayValidation.validationErrors.map(error => (
+                        <React.Fragment key={error}>{error}</React.Fragment>
+                      ))}
+                  </div>
+                ) : null}
+              </>
             )}
-            <FieldError>
-              {errorMessage}
-            </FieldError>
-            {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
-            {state.displayValidation.validationErrors.length ? (
-              <div className={styles.fieldError}>
-                {errorMessage ||
-                  state.displayValidation.validationErrors.map(error => (
-                    <React.Fragment key={error}>{error}</React.Fragment>
-                  ))}
-              </div>
-            ) : null}
             <FocusRing
               focusRingClass={styles.buttonFocused}
               autoFocus={autoFocus}
@@ -272,8 +270,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                   {...mergeProps}
                   className={clsx(styles.button, {
                     [styles.buttonOpen]: state.isOpen,
-                    [styles.buttonActive]:
-                      state.selectedItems || state.selectedItem,
+                    [styles.buttonActive]: state.selectedItems,
                     [styles.buttonDisabled]: isDisabled,
                   })}
                   data-invalid={
@@ -289,8 +286,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                   ) : null}
                   {state.selectionMode === 'single' ? (
                     <span>
-                      {state.selectedItem
-                        ? state.selectedItem.textValue
+                      {state.selectedItems
+                        ? state.selectedItems[0].textValue
                         : placeholder}
                     </span>
                   ) : null}
@@ -308,6 +305,20 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 ) : null}
               </div>
             </FocusRing>
+            {errorPosition === 'bottom' && (
+              <>
+                <FieldError>{errorMessage}</FieldError>
+                {/*TODO: this solves the required error handling but could be worked into the aria validation*/}
+                {state.displayValidation.validationErrors.length ? (
+                  <div className={styles.fieldError}>
+                    {errorMessage ||
+                      state.displayValidation.validationErrors.map(error => (
+                        <React.Fragment key={error}>{error}</React.Fragment>
+                      ))}
+                  </div>
+                ) : null}
+              </>
+            )}
             {state.isOpen && (
               <SelectPopover
                 isOpen={state.isOpen}
@@ -371,7 +382,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
             <TagGroup
               aria-label={'Selected Items'}
               selectionBehavior={'toggle'}
-              onRemove={keys => handleRemove([...keys][0])}
+              onRemove={keys => handleRemove(Array.from(keys)[0])}
+              className={styles.tagGroup}
               {...mergeProps}
             >
               <TagList items={state.selectedItems}>

@@ -1,5 +1,4 @@
-import { LinkButton, Link, Flex, FlexItem, Button } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { LinkButton, Link, Button, Text } from '@midas-ds/components'
 
 # Knappar och länkar
 
@@ -14,12 +13,13 @@ Exempel på situationer där det är lämpligt med en knapp:
 - För att initiera en sökning
 - För att öppna en modal
 
-<LiveCodeBlock
-  hideCode
-  scope={{ Button }}
+<Button
+  onPress={() => {
+    alert('Du tryckte på knappen och här är din popup')
+  }}
 >
-  {`<Button onPress={() => { alert('Du tryckte på knappen och här är din popup');}}>Visa en popup</Button>`}
-</LiveCodeBlock>
+  {'Visa en popup'}
+</Button>
 
 ## Länkar
 
@@ -33,31 +33,23 @@ Användaren ska uppfatta att en handling utförs. Exempel på situationer där d
 - Vid navigering inom en applikation
 - Som en startpunkt, t.ex. en länk från webben till en e-tjänst
 
-<LiveCodeBlock
-  hideCode
-  scope={{ LinkButton }}
->
-  {`<LinkButton href="/components/link-button">{'Till sidan för Länkknapp'}</LinkButton>`}
-</LiveCodeBlock>
+<LinkButton href='/components/link-button'>{'Till sidan för Länkknapp'}</LinkButton>
 
 ### Fristående länk
 
 Fristående länk är en variant av länk som används när en länk ligger utanför ett textstycke.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ Link }}
+<Link
+  standalone
+  href='/components/link'
 >
-  {`<Link standalone href="/components/link">{'Läs mer om länkar'}</Link>`}
-</LiveCodeBlock>
+  {'Läs mer om länkar'}
+</Link>
 
 ### Länk
 
 Länk används när länken är i ett textstycke.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ Link }}
->
-  {`<p>Designsystemet har två olika varianter av <Link href="/components/link">{'länkar'}</Link>.</p>`}
-</LiveCodeBlock>
+<Text elementType='p'>
+  Designsystemet har två olika varianter av <Link href='/components/link'>{'länkar'}</Link>.
+</Text>

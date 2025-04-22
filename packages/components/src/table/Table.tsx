@@ -30,8 +30,13 @@ import {
 import clsx from 'clsx'
 
 export interface TableProps extends AriaTableProps {
-  /** @deprecated This variant will be replaced with a new scaling api accross all components. */
+  /**
+   *  @deprecated This variant will be replaced with a new scaling api accross all components.
+   */
   narrow?: boolean
+  /**
+   * Alternating colors for rows
+   */
   striped?: boolean
 }
 

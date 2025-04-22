@@ -1,21 +1,22 @@
 ---
 title: Tooltip
-description: Kort beskrivning av Tooltip
+description: Tooltip kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Button, Tooltip, TooltipTrigger } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Save } from 'lucide-react'
+import {
+  TooltipDelay,
+  TooltipPlacement,
+  ControlledTooltip,
+  CustomTriggerTooltip,
+} from '@site/src/components/examples/tooltip/TooltipExamples'
 
 export const Example = props => {
   return (
-    <LiveCodeBlock
-      scope={{ Tooltip, TooltipTrigger, Button, Save }}
-      {...props}
-    >
-      {`<TooltipTrigger isOpen>
+    <TooltipTrigger isOpen>
       <Button
         variant='tertiary'
         aria-label='Spara'
@@ -23,8 +24,7 @@ export const Example = props => {
         <Save />
       </Button>
       <Tooltip>Spara</Tooltip>
-    </TooltipTrigger>`}
-    </LiveCodeBlock>
+    </TooltipTrigger>
   )
 }
 
@@ -35,7 +35,24 @@ export const Example = props => {
 
 Tooltip kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen.
 
-<Example hideCode />
+```tsx
+<TooltipTrigger isOpen>
+  <Button
+    variant='tertiary'
+    aria-label='Spara'
+  >
+    <Save />
+  </Button>
+  <Tooltip>Spara</Tooltip>
+</TooltipTrigger>
+```
+
+<div
+  className={'card'}
+  style={{ display: 'block' }}
+>
+  <Example />
+</div>
 
 ## Installation
 
@@ -47,11 +64,113 @@ npm install @midas-ds/components
 import { Tooltip, TooltipTrigger, Button } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Funktioner
+
+Tooltip är byggd på [React Aria Tooltip](https://react-spectrum.adobe.com/react-aria/Tooltip.html) och med det
+följer inbyggd tillgänglighet som till exempel sammankoppling mellan trigger och tooltip. För mer detaljerad
+dokumentation hänvisas till React Aria.
+
+### Delay
+
+Tooltips visas efter en kort fördröjning (via prop `delay`) när man håller muspekaren över utlösaren,
+eller omedelbart vid användning av tangentbordsfokus. Denna fördröjning kallas för "uppvärmningsperiod"
+(warmup period), och det är en global timer som delas av alla Tooltip. När ett Tooltip väl har
+visats, visas andra Tooltips omedelbart. Om användaren väntar under "nedkylningsperioden" (cooldown period)
+innan de för muspekaren över ett annat element, startar uppvärmningstimern om.
+
+```tsx
+<TooltipTrigger delay={600}>
+  <Button variant='secondary'>Hover me first</Button>
+  <Tooltip>Första Tooltip som hovras visas efter fördröjning.</Tooltip>
+</TooltipTrigger>
+<TooltipTrigger>
+  <Button variant='primary'>Hover later</Button>
+  <Tooltip>Och nästa Tooltip visas då snabbare!</Tooltip>
+</TooltipTrigger>
+```
+
+<TooltipDelay />
+
+### Placement
+
+Tooltipens placering i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
+
+```tsx
+<TooltipTrigger delay={600}>
+  <Button>
+    <ArrowLeft />
+  </Button>
+  <Tooltip placement='left'>
+  Tooltip visas till vänster om trigger-elementet
+  </Tooltip>
+</TooltipTrigger>
+<TooltipTrigger delay={600}>
+  <Button>
+  <ArrowUp />
+  </Button>
+  <Tooltip placement='top'>
+  Tooltip visas på ovansidan av trigger-elementet
+</Tooltip></TooltipTrigger>
+```
+
+<TooltipPlacement />
+
+### Controlled state
+
+```tsx
+export const ControlledTooltip = () => {
+  const [isOpen, setOpen] = React.useState(false)
+  return (
+    <>
+      <TooltipTrigger
+        isOpen={isOpen}
+        onOpenChange={setOpen}
+        delay={500}
+      >
+        <Button>Hover me</Button>
+        <Tooltip>Message</Tooltip>
+      </TooltipTrigger>
+      <pre>Tooltip {isOpen ? 'visas' : 'visas inte'}</pre>
+    </>
+  )
+}
+```
+
+<div className={'card'}>
+  <ControlledTooltip />
+</div>
+
+### Valfritt element som Trigger
+
+TooltipTrigger fungerar direkt med alla **focusable** React Aria-komponenter (t.ex. Button, Link, etc.). Anpassade trigger-element,
+såsom tredjepartskomponenter och andra DOM-element, stöds också genom att de omsluts med `<Focusable>`-komponenten.
+
+```tsx
+import { Focusable } from 'react-aria-components'
+;<TooltipTrigger>
+  <Focusable>
+    <span role='button'>Trigger</span>
+  </Focusable>
+  <Tooltip>Med hjälp av Focusable kan vilket element som helst bli en trigger!</Tooltip>
+</TooltipTrigger>
+```
+
+<div
+  className={'card'}
+  style={{ display: 'block' }}
+>
+  <CustomTriggerTooltip />
+</div>
+
+Observera att element under `<Focusable>` måste ha en ARIA-roll eller använda ett lämpligt semantiskt HTML-element
+så att skärmläsare kan läsa upp innehållet i verktygstipset. Detta gäller bara element som inte redan är _focusable_
+eller _pressable_. Se [React Aria Tooltip Custom trigger](https://react-spectrum.adobe.com/react-aria/Tooltip.html#custom-trigger)
+för referens.
 
 ## Riktlinjer
 
-- I första hand skall knappen vara tydlig nog så användaren förstår innebörden. Tooltip är till för en design där detta inte är möjligt och vi måste gömma undan informationen. Tooltip måste alltid kompletteras med en aria-label eller text som är dold visuellt men läses upp av skärmläsare.
+- I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Tooltip är till för en design där detta
+  inte är möjligt och vi måste gömma undan informationen.
 - Tooltips kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
 
 ## API
@@ -64,5 +183,5 @@ import { Tooltip, TooltipTrigger, Button } from '@midas-ds/components'
 
 <PropTable
   name={'TooltipTrigger'}
-  defaultOpen={false}
+  defaultOpen={true}
 />

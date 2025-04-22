@@ -2,7 +2,6 @@
 title: Lokalisering
 ---
 
-import { Link } from '@midas-ds/components'
 import { LocaleExample, I18nExample, ErrorMessageExample } from '@site/src/components/examples/LocalizationExamples'
 
 # Lokalisering
@@ -11,13 +10,13 @@ React Aria har en rad inbyggda funktioner som underlättar skapandet av tillgän
 och internationella användargränssnitt. Midas komponenter, som bygger på React Aria
 uppdateras automatiskt när språkmiljön ändras. Detta innebär att din applikation kan anpassa
 sig dynamiskt till olika språk utan alltför mycket manuell handpåläggning. För mer ingående dokumentation,
-se <Link href="https://react-spectrum.adobe.com/react-aria/internationalization.html" >{'React Aria Internationalization'}</Link>.
+se [React Aria Internationalization](https://react-spectrum.adobe.com/react-aria/internationalization.html).
 
 ## useLocale
 
 För att säkerställa att lokalisering fungerar bör `useLocale` användas i root av applikationen. På så sätt får
 du tillgång till browserns språkinställning. Normalt fungerar `locale` utan att hämta in den explicit men för till
-exempel SSR bör `useLocale` användas, se <Link href="https://react-spectrum.adobe.com/react-aria/internationalization.html" >{'React Aria'}</Link> för referens.
+exempel SSR bör `useLocale` användas, se [React Aria](https://react-spectrum.adobe.com/react-aria/internationalization.html) för referens.
 
 ```typescript jsx
 import {useLocale} from 'react-aria-components';
@@ -53,12 +52,8 @@ eller annan information, det sätts via browsern.
 
 ## useMessageFormatter
 
-<p>
-  För att översätta eller anpassa enskilda strängar finns
-  <Link href='https://react-spectrum.adobe.com/react-aria/useMessageFormatter.html'>{'useMessageFormatter'}</Link>.
-  Motsvarande för siffror och valutor är
-  <Link href='https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html'>{'useNumberFormatter'}</Link>.
-</p>
+För att översätta eller anpassa enskilda strängar finns [useMessageFormatter](https://react-spectrum.adobe.com/react-aria/useMessageFormatter.html).
+Motsvarande för siffror och valutor är [useNumberFormatter](https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html).
 
 ## Midas komponenter
 
@@ -67,4 +62,4 @@ och respekterar användarens inställningar i browsern. Framtida uppdateringar e
 bygger på React Arias ramverk så den allmänna rekommendationen är att använda metoder och hooks därifrån för
 att lösa eventuella lokaliseringsproblem. Buggrapport eller Feature requests kan skapas via
 
-<Link href='https://github.com/migrationsverket/midas/issues'>{'github issues'}</Link>.
+[github issues](https://github.com/migrationsverket/midas/issues).

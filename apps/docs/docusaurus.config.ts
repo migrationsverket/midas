@@ -1,8 +1,8 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
-const path = require('path')
-const fs = require('fs')
+import path from 'path'
+import fs from 'fs'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 
@@ -52,7 +52,7 @@ const config: Config = {
         src: Object.values(packageAliases),
         parserOptions: {
           // prop table gets a bit crowded if we allow everything
-          propFilter: (prop, component) => {
+          propFilter: prop => {
             if (prop.parent) {
               return !prop.parent.fileName.includes('@types/react')
             }
@@ -84,7 +84,6 @@ const config: Config = {
   },
   themes: [
     '@docusaurus/theme-mermaid',
-    '@docusaurus/theme-live-codeblock',
     [
       '@easyops-cn/docusaurus-search-local',
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
@@ -143,7 +142,8 @@ const config: Config = {
         },
         {
           href: 'https://github.com/migrationsverket/midas',
-          label: 'GitHub',
+          className: 'navbar--github-link',
+          'aria-label': 'GitHub Repository',
           position: 'right',
         },
       ],
@@ -194,7 +194,7 @@ function adjustChangelogHeadings() {
     './static/files/CHANGELOG.md',
   )
 
-  fs.readFile(changelogPath, 'utf8', (err: any, data: string) => {
+  fs.readFile(changelogPath, 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading changelog:', err)
       return

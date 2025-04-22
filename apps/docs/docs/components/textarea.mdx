@@ -5,25 +5,7 @@ description: När användaren ska fylla i längre information
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { TextArea, Link } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ TextArea }}
-      {...props}
-    >
-      {`
-        <TextArea
-          label="Kommentar"
-          description="Skriv en kommentar"
-          maxLength={50}
-        />
-      `}
-    </LiveCodeBlock>
-  )
-}
+import { TextArea } from '@midas-ds/components'
 
 <ComponentHeader
   name='Textarea'
@@ -31,9 +13,21 @@ export const Example = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1'
 />
 
-Inmatningsfält som används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används <Link href='/components/textfield'>{'TextField'}</Link>.
+Inmatningsfält som används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används [TextField](/components/textfield).
 
-<Example hideCode />
+```tsx
+<TextArea
+  label='Kommentar'
+  description='Skriv en kommentar'
+/>
+```
+
+<div className='card'>
+  <TextArea
+    label='Kommentar'
+    description='Skriv en kommentar'
+  />
+</div>
 
 ## Installation
 
@@ -44,8 +38,6 @@ npm install @midas-ds/components
 ```tsx
 import { TextArea } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## Beskrivning
 

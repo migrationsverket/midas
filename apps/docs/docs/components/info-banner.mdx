@@ -6,7 +6,6 @@ description: Information banner visar viktiga och aktuella meddelanden, som till
 import { PropTable } from '@site/src/components/propsTable'
 import { InfoBanner, Tabs as MidasTabs } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
 <ComponentHeader
   name={'info-banner'}
@@ -56,63 +55,96 @@ import { InfoBanner } from '@midas-ds/components'
 
 ### Success
 
-<LiveCodeBlock scope={{ InfoBanner }}>
-  {`<InfoBanner
-    type={'success'}
-    title={'Det gick bra!'}
-    message={'Detta är ett meddelande om att allt gick bra.'}
-  />
-`}
-</LiveCodeBlock>
+```tsx
+<InfoBanner
+  // highlight-start
+  type={'success'}
+  // highlight-end
+  title={'Det gick bra!'}
+  message={'Detta är ett meddelande om att allt gick bra.'}
+/>
+```
 
+<InfoBanner
+  type={'success'}
+  title={'Det gick bra!'}
+  message={'Detta är ett meddelande om att allt gick bra.'}
+/>
 ### Info
 
-<LiveCodeBlock scope={{ InfoBanner }}>
-  {`<InfoBanner
-    type={'info'}
-    title={'Information'}
-    message={'Detta är ett meddelande med information.'}
-  />
-`}
-</LiveCodeBlock>
+```tsx
+<InfoBanner
+  // highlight-start
+  type={'info'}
+  // highlight-end
+  title={'Information'}
+  message={'Detta är ett meddelande med information.'}
+/>
+```
+
+<InfoBanner
+  type={'info'}
+  title={'Information'}
+  message={'Detta är ett meddelande med information.'}
+/>
 
 ### Important
 
-{' '}
+```tsx
+<InfoBanner
+  // highlight-start
+  type={'important'}
+  // highlight-end
+  title={'Viktig information'}
+  message={'Detta är ett meddelande med viktig information.'}
+/>
+```
 
-<LiveCodeBlock scope={{ InfoBanner }}>
-  {`<InfoBanner
-    type={'important'}
-    title={'Viktig information'}
-    message={'Detta är ett meddelande med viktig information.'}
-  />
-`}
-</LiveCodeBlock>
+<InfoBanner
+  type={'important'}
+  title={'Viktig information'}
+  message={'Detta är ett meddelande med viktig information.'}
+/>
 
 ### Warning
 
-<LiveCodeBlock scope={{ InfoBanner }}>
-  {`<InfoBanner
-    type={'warning'}
-    title={'Varning'}
-    message={'Detta är en varning som används när något gått fel.'}
-  />
-`}
-</LiveCodeBlock>
+```tsx
+<InfoBanner
+  // highlight-start
+  type={'warning'}
+  // highlight-end
+  title={'Varning'}
+  message={'Detta är en varning som används när något gått fel.'}
+/>
+```
+
+<InfoBanner
+  type={'warning'}
+  title={'Varning'}
+  message={'Detta är en varning som används när något gått fel.'}
+/>
 
 ## Dismissable
 
 Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `dismissable`. Det bör inte användas för varningar.
 
-<LiveCodeBlock scope={{ InfoBanner }}>
-  {`<InfoBanner
-    dismissable
-    type={'success'}
-    title={'Det gick bra!'}
-    message={'Detta är ett meddelande om att allt gick bra.'}
-  />
-`}
-</LiveCodeBlock>
+```tsx
+<InfoBanner
+  // highlight-start
+  dismissable
+  // highlight-end
+  type={'success'}
+  title={'Det gick bra!'}
+  message={'Detta är ett meddelande om att allt gick bra.'}
+/>
+```
+
+<InfoBanner
+  dismissable
+  type={'success'}
+  title={'Det gick bra!'}
+  message={'Detta är ett meddelande om att allt gick bra.'}
+/>
 
 ## API
 

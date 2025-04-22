@@ -1,12 +1,11 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family,--text-placeholder,--text-invalid, --border-invalid, --focus, --field-hover-01, --border-strong, --field-01, --text-primary, --text-disabled from tokens;
+@value --font-family,--text-placeholder, --border-invalid, --focus, --field-hover-01, --border-primary, --field-01, --text-primary, --text-disabled from tokens;
 
 .dateField {
   font-family: --font-family;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.125rem;
 }
 
 .isDisabled {
@@ -19,13 +18,14 @@
 }
 
 .inputField {
+  box-sizing: border-box;
   width: 100%;
   min-height: 3rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: --field-01;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   padding: 0 1rem;
 
   &[data-focus-visible] {

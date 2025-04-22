@@ -129,7 +129,7 @@ export const ModalTrigger: React.FC<
         </MidasModal>
       )}
     </>
-  ) 
+  )
 }
 
 export { DialogTrigger }
@@ -165,14 +165,7 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
               </Button>
             </div>
             <div className={styles.modalBody}>
-              {title && (
-                <Heading
-                  level={2}
-                  className={styles.modalHeading}
-                >
-                  {title}
-                </Heading>
-              )}
+              {title && <Heading level={2}>{title}</Heading>}
               {children}
             </div>
           </AriaModal>

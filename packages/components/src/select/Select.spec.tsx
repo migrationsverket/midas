@@ -43,7 +43,9 @@ describe('A single Select', () => {
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     await user.keyboard('[Esc]')
-    expect(onchange).toHaveBeenCalledWith('kiwi')
+    expect(onchange).toHaveBeenCalledWith(
+      expect.objectContaining(new Set(['kiwi'])),
+    )
   })
 })
 
@@ -86,11 +88,21 @@ describe('given a required single Select', () => {
 
     // JSDOM Native required validation message
     expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
+
+    await user.keyboard('[Space]')
+    await user.keyboard('[Space]')
+    await user.tab()
+    await user.keyboard('[Enter]')
+
+    expect(
+      screen.queryByText(/Constraints not satisfied/),
+    ).not.toBeInTheDocument()
   })
 })
 
 describe('A multi Select', () => {
   beforeEach(() => {
+    onchange.mockReset()
     baseElement = render(
       <Select
         label={label}
@@ -115,14 +127,18 @@ describe('A multi Select', () => {
     expect(selectButton).toHaveFocus()
     await user.keyboard('[Enter]')
     await user.keyboard('[Enter]')
-    expect(onchange).toHaveBeenCalledWith(['apple'])
-    expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
-    expect(screen.queryByDisplayValue('Banana')).not.toBeInTheDocument()
+    expect(onchange).toHaveBeenCalledWith(
+      expect.objectContaining(new Set(['äpple'])),
+    )
+    expect(screen.getByDisplayValue('Äpple')).toBeInTheDocument()
+    expect(screen.queryByDisplayValue('Banan')).not.toBeInTheDocument()
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
-    expect(onchange).toHaveBeenCalledWith(['apple', 'banana'])
-    expect(screen.getByDisplayValue('Apple')).toBeInTheDocument()
-    expect(screen.getByDisplayValue('Banana')).toBeInTheDocument()
+    expect(onchange).toHaveBeenCalledWith(
+      expect.objectContaining(new Set(['äpple', 'banan'])),
+    )
+    expect(screen.getByDisplayValue('Äpple')).toBeInTheDocument()
+    expect(screen.getByDisplayValue('Banan')).toBeInTheDocument()
   })
 })
 
@@ -145,6 +161,17 @@ describe('given a required multi Select', () => {
 
     // JSDOM Native required validation message
     expect(screen.getByText(/Constraints not satisfied/)).toBeInTheDocument()
+
+    await user.keyboard('[Space]')
+    await user.keyboard('[Space]')
+    await user.keyboard('[Escape]')
+    await user.tab()
+    await user.tab()
+    await user.keyboard('[Enter]')
+
+    expect(
+      screen.queryByText(/Constraints not satisfied/),
+    ).not.toBeInTheDocument()
   })
 })
 

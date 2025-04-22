@@ -4,27 +4,10 @@ description: Knappar används när användaren vill utföra en handling t.ex. sp
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Button, ButtonGroup, Flex, FlexItem, Link } from '@midas-ds/components'
+import { Button, ButtonGroup } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Plus } from 'lucide-react'
 import { ButtonContext } from 'react-aria-components'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ ButtonGroup, Button }}
-      {...props}
-    >
-      {`<ButtonGroup aria-label="Välj knapp">
-          <Button>Primär</Button>
-          <Button variant="secondary">Sekundär</Button>
-          <Button variant='tertiary'>Tertiär</Button>
-          <Button isDisabled>Disabled</Button>
-      </ButtonGroup>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Button'}
@@ -33,7 +16,23 @@ export const Example = props => {
 
 Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
 
-<Example hideCode />
+```tsx
+<ButtonGroup aria-label='Välj knapp'>
+  <Button>Primary</Button>
+  <Button variant='secondary'>Secondary</Button>
+  <Button variant='tertiary'>Tertiary</Button>
+  <Button isDisabled>Disabled</Button>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Välj knapp'>
+    <Button>Primary</Button>
+    <Button variant='secondary'>Secondary</Button>
+    <Button variant='tertiary'>Tertiary</Button>
+    <Button isDisabled>Disabled</Button>
+  </ButtonGroup>
+</div>
 
 ## Installation
 
@@ -45,88 +44,128 @@ npm install @midas-ds/components
 import { Button } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Primär
 
 En primär knapp används för den primära eller positiva handlingen i ett flöde (OK, Skicka, Nästa). Det bör endast finnas en primärknapp per sida, sektion eller tydligt avgränsad yta.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ ButtonGroup, Button }}
->
-  {`<ButtonGroup aria-label="Välj knapp">
-    <Button>Slutför</Button>
-  </ButtonGroup>`}
-</LiveCodeBlock>
+```tsx
+<Button>Slutför</Button>
+```
+
+<div className='card'>
+  <Button>Slutför</Button>
+</div>
 
 ### Sekundär
 
 En sekundär knapp används för underordnade handlingar i ett flöde (Avbryt, Tillbaka). Används alltid tillsammans med en primär knapp.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ ButtonGroup, Button }}
->
-  {`<ButtonGroup aria-label="Välj knapp">
+```tsx
+<ButtonGroup aria-label='Välj knapp'>
+  <Button>Slutför</Button>
+  <Button variant='secondary'>Tillbaka</Button>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Välj knapp'>
     <Button>Slutför</Button>
-    <Button variant={'secondary'}>Tillbaka</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+    <Button variant='secondary'>Tillbaka</Button>
+  </ButtonGroup>
+</div>
 
 ### Tertiär
 
 Den tertiära knappen kan användas tillsammans med primär- och sekundär knapp där det finns behov av ett ytterligare val
 
-<LiveCodeBlock
-  hideCode
-  scope={{ ButtonGroup, Button }}
->
-  {`<ButtonGroup aria-label='Hantera anmälan'>
+```tsx
+<ButtonGroup aria-label='Hantera anmälan'>
   <Button>Slutför</Button>
   <Button variant='secondary'>Tillbaka</Button>
   <Button variant='tertiary'>Ta bort anmälan</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Hantera anmälan'>
+    <Button>Slutför</Button>
+    <Button variant='secondary'>Tillbaka</Button>
+    <Button variant='tertiary'>Ta bort anmälan</Button>
+  </ButtonGroup>
+</div>
 
 Om den tertiära knappen används fristående från andra knappar ska den ha en ikon. Ikonen läggs till via `icon`.
 Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 
-<LiveCodeBlock scope={{ Button, Plus }}>
-  {`<Button
-      icon={Plus}
-      variant='tertiary'
-      iconPlacement='left'
-    >
-      {'Lägg till rad'}
-    </Button>`}
-</LiveCodeBlock>
+```tsx
+<Button
+  variant='tertiary'
+  // highlight-start
+  icon={Plus}
+  iconPlacement='left'
+  // highlight-end
+>
+  Lägg till rad
+</Button>
+```
+
+<div className='card'>
+  <Button
+    icon={Plus}
+    variant='tertiary'
+    iconPlacement='left'
+  >
+    {'Lägg till rad'}
+  </Button>
+</div>
 
 ## Grupp av knappar
 
 För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.
 
-<LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj en frukt">
-    <Button>{fruits.shuffled(1).name}</Button>
-    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-    <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+```tsx
+import { ButtonGroup } from '@midas-ds/components'
+```
+
+```tsx
+<ButtonGroup aria-label='Välj en frukt'>
+  <Button>Pineapple</Button>
+  <Button variant='secondary'>Apple</Button>
+  <Button isDisabled>Orange</Button>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Välj en frukt'>
+    <Button>Pineapple</Button>
+    <Button variant='secondary'>Apple</Button>
+    <Button isDisabled>Orange</Button>
+  </ButtonGroup>
+</div>
 
 ### Label
 
-För god tillgänglighet bör du sätta en label på `ButtonGroup` för att beskriva vad knapparna gör.
+För god tillgänglighet bör du sätta en aria-label på `ButtonGroup` för att beskriva vad knapparna gör.
 
-<LiveCodeBlock scope={{ ButtonGroup, Button }}>
-  {`<ButtonGroup aria-label="Välj en frukt">
-    <Button>{fruits.shuffled(1).name}</Button>
-    <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-    <Button isDisabled>{fruits.shuffled(1).name}</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+```tsx
+// highlight-start
+<ButtonGroup aria-label='Välj en frukt'>
+  // highlight-end
+  <Button>Pear</Button>
+  <Button variant='secondary'>Apple</Button>
+  <Button isDisabled>Grape</Button>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Välj en frukt'>
+    <Button>Pear</Button>
+    <Button variant='secondary'>Apple</Button>
+    <Button isDisabled>Grape</Button>
+  </ButtonGroup>
+</div>
 
 ### Kontrollera flertalet knappar
 
@@ -136,21 +175,35 @@ För att kontrollera flertalet knappar kan `ButtonContext` användas runtom fler
 import { ButtonContext } from 'react-aria-components'
 ```
 
-<LiveCodeBlock scope={{ ButtonGroup, Button, ButtonContext }}>
-  {`<ButtonContext.Provider value={{isDisabled: true}}>
-      <ButtonGroup>
-        <Button>{fruits.shuffled(1).name}</Button>
-        <Button variant="secondary">{fruits.shuffled(1).name}</Button>
-        <Button>{fruits.shuffled(1).name}</Button>
-      </ButtonGroup>
-    </ButtonContext.Provider>`}
-</LiveCodeBlock>
+```tsx
+// highlight-start
+<ButtonContext.Provider value={{ isDisabled: true }}>
+  // highlight-end
+  <ButtonGroup>
+    <Button>Grape</Button>
+    <Button variant='secondary'>Pear</Button>
+    <Button variant='tertiary'>Banana</Button>
+  </ButtonGroup>
+  // highlight-start
+</ButtonContext.Provider>
+// highlight-end
+```
+
+<div className='card'>
+  <ButtonContext.Provider value={{ isDisabled: true }}>
+    <ButtonGroup>
+      <Button>Grape</Button>
+      <Button variant='secondary'>Pear</Button>
+      <Button variant='tertiary'>Banana</Button>
+    </ButtonGroup>
+  </ButtonContext.Provider>
+</div>
 
 ## Riktlinjer
 
 ### Val av komponent
 
-Se mönstret <Link href='/design-patterns/buttons-and-links'> {'Knappar och länkar'}</Link>
+Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 ### Generella riktlinjer
 
@@ -161,15 +214,19 @@ Se mönstret <Link href='/design-patterns/buttons-and-links'> {'Knappar och län
 
 Knappar placeras i regel i nedre vänstra hörnet. Vi sätter alltid den primära knappen till vänster.
 
-<LiveCodeBlock
-  hideCode
-  scope={{ ButtonGroup, Button }}
->
-  {`<ButtonGroup aria-label='Skicka formulär'>
+```tsx
+<ButtonGroup aria-label='Skicka formulär'>
   <Button>Skicka</Button>
   <Button variant='secondary'>Avbryt</Button>
-</ButtonGroup>`}
-</LiveCodeBlock>
+</ButtonGroup>
+```
+
+<div className='card'>
+  <ButtonGroup aria-label='Skicka formulär'>
+    <Button>Skicka</Button>
+    <Button variant='secondary'>Avbryt</Button>
+  </ButtonGroup>
+</div>
 
 ## API
 

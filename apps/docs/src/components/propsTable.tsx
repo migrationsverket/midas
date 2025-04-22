@@ -1,8 +1,8 @@
 import useGlobalData from '@docusaurus/useGlobalData'
 import { Accordion, AccordionItem } from '@midas-ds/components'
-import React from 'react'
-import { Props, ComponentDoc } from 'react-docgen-typescript'
+import { ComponentDoc } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
+import ReactMarkdown from 'react-markdown'
 
 export const PropTable = ({ name, defaultOpen = true }) => {
   const globalData = useGlobalData()
@@ -10,8 +10,8 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   const ComponentsDocs = globalData['docusaurus-plugin-react-docgen-typescript']
     .default as ComponentDoc[]
 
-  const props: Props = ComponentsDocs.find(
-    componentDoc => componentDoc.displayName === name
+  const props = ComponentsDocs.find(
+    componentDoc => componentDoc.displayName === name,
   )?.props
 
   if (!props) {
@@ -29,39 +29,41 @@ export const PropTable = ({ name, defaultOpen = true }) => {
       }
       return acc
     },
-    { events: {}, accessibility: {}, rest: {} }
+    { events: {}, accessibility: {}, rest: {} },
   )
 
-  const Table = ({ propGroup }) => {
+  const Table = ({ propGroup, showDefault = true }) => {
     return (
       <table className={styles.table}>
         <thead className={styles.thead}>
           <tr>
-            <th>Namn</th>
-            <th>Typ</th>
-            <th>Standard</th>
-            <th>Beskrivning</th>
+            <th>Name</th>
+            <th>Type</th>
+            {showDefault && <th>Default</th>}
+            <th>Description</th>
           </tr>
         </thead>
         <tbody className={styles.tbody}>
           {Object.keys(propGroup).map(key => {
             return (
               <tr key={key}>
-                <td style={{ verticalAlign: 'top' }}>
+                <td>
                   {key} {props[key].required && ' *'}
                 </td>
-                <td style={{ verticalAlign: 'top', maxWidth: '250px' }}>
+                <td>
                   <code>{props[key].type?.name}</code>
                 </td>
-                <td style={{ verticalAlign: 'top', maxWidth: '50px' }}>
-                  {props[key].defaultValue ? (
-                    <code>{props[key].defaultValue.value}</code>
-                  ) : (
-                    '-'
-                  )}
-                </td>
-                <td style={{ verticalAlign: 'top' }}>
-                  {props[key].description}
+                {showDefault && (
+                  <td>
+                    {props[key].defaultValue ? (
+                      <code>{props[key].defaultValue.value}</code>
+                    ) : (
+                      '-'
+                    )}
+                  </td>
+                )}
+                <td>
+                  <ReactMarkdown>{props[key].description}</ReactMarkdown>
                 </td>
               </tr>
             )
@@ -72,37 +74,41 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   }
 
   return (
-    <>
-      <Accordion
-        className={styles.accordion}
-        type='multiple'
-        defaultExpandedKeys={defaultOpen ? ['props'] : []}
-      >
-        {Object.getOwnPropertyNames(rest).length !== 0 && (
-          <AccordionItem
-            id='props'
-            title='Props'
-          >
-            <Table propGroup={rest} />
-          </AccordionItem>
-        )}
-        {Object.getOwnPropertyNames(events).length !== 0 && (
-          <AccordionItem
-            id='events'
-            title='Events'
-          >
-            <Table propGroup={events} />
-          </AccordionItem>
-        )}
-        {Object.getOwnPropertyNames(accessibility).length !== 0 && (
-          <AccordionItem
-            id='accessibility'
-            title='Tillgänglighet'
-          >
-            <Table propGroup={accessibility} />
-          </AccordionItem>
-        )}
-      </Accordion>
-    </>
+    <Accordion
+      className={styles.accordion}
+      type='multiple'
+      defaultExpandedKeys={defaultOpen ? ['props'] : []}
+    >
+      {Object.getOwnPropertyNames(rest).length !== 0 && (
+        <AccordionItem
+          id='props'
+          title='Props'
+        >
+          <Table propGroup={rest} />
+        </AccordionItem>
+      )}
+      {Object.getOwnPropertyNames(events).length !== 0 && (
+        <AccordionItem
+          id='events'
+          title='Events'
+        >
+          <Table
+            propGroup={events}
+            showDefault={false}
+          />
+        </AccordionItem>
+      )}
+      {Object.getOwnPropertyNames(accessibility).length !== 0 && (
+        <AccordionItem
+          id='accessibility'
+          title='Tillgänglighet'
+        >
+          <Table
+            propGroup={accessibility}
+            showDefault={false}
+          />
+        </AccordionItem>
+      )}
+    </Accordion>
   )
 }

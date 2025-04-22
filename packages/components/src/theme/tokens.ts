@@ -40,16 +40,19 @@ export const baseColors = {
   purple140: '#954b95',
   red100: '#b90835',
 
-  signalBlue20: '#eaf2f6',
-  signalBlue140: '#0066cc',
+  signalBlue10: '#eaf2f6',
+  signalBlue100: '#0066cc',
   signalGreen20: '#d5f2d9',
-  signalGreen140: '#008d3c',
+  signalGreen30: '#bae5c5',
+  signalGreen100: '#008d3c',
+  signalYellow10: '#fff8e1',
+  signalYellow100: '#fdb813',
   signalRed20: '#ffdfdf',
-  signalRed140: '#e62323',
+  signalRed30: '#fcc8c8',
+  signalRed80: '#eb4e4e',
+  signalRed100: '#e62323',
   signalRed160: '#b31b1b',
   signalRed180: '#801313',
-  signalYellow20: '#fff8e1',
-  signalYellow140: '#fdb813',
 }
 
 export const typography = {
@@ -112,20 +115,26 @@ export const transitions = {
   fast: '250ms',
 }
 
+export const windowSizes = {
+  md: 768,
+  lg: 1200,
+  xl: 1440,
+}
+
 export const breakpoints = {
-  sm: '(max-width: 767px)',
-  md: '(min-width: 768px)',
-  lg: '(min-width: 1200px)',
-  xl: '(min-width: 1440px)',
+  sm: `(max-width: ${windowSizes.md - 1}px)`,
+  md: `(min-width: ${windowSizes.md}px)`,
+  lg: `(min-width: ${windowSizes.lg}px)`,
+  xl: `(min-width: ${windowSizes.xl}px)`,
   forcedColorsMode: '(forced-colors: active)',
   darkMode: '(prefers-color-scheme: dark)',
   prefersReducedMotion: '(prefers-reduced-motion: reduced)',
 }
 
 export const semantic = {
-  background01: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
-  backgroundHover01: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
-  backgroundInverse01: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
+  background: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
+  backgroundHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
+  backgroundInverse: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
 
   layer01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   layerHover01: `light-dark(${baseColors.gray20}, ${baseColors.gray170})`,
@@ -147,14 +156,12 @@ export const semantic = {
 
   brandPrimary: `light-dark(${baseColors.red100}, ${baseColors.red100})`,
 
-  borderStrong: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
-  borderMedium: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
+  borderPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
+  borderSecondary: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
-  borderBrand: `light-dark(${baseColors.blue170}, ${baseColors.blue170})`,
-  borderInvalid: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
+  borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
+  borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
-  borderSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  borderInverse: `light-dark(${baseColors.white}, ${baseColors.gray180})`,
 
   field01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   fieldHover01: `light-dark(${baseColors.gray20}, ${baseColors.gray170})`,
@@ -171,35 +178,35 @@ export const semantic = {
   iconSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
   iconInverse: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
   iconOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
-  iconDanger: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
   iconDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
-  iconSuccess: `light-dark(${baseColors.signalGreen140}, ${baseColors.signalGreen140})`,
-  iconInfo: `light-dark(${baseColors.signalBlue140}, ${baseColors.signalBlue140})`,
-  iconWarning: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
-  iconImportant: `light-dark(${baseColors.signalYellow140}, ${baseColors.signalYellow140})`,
+  iconSuccess: `light-dark(${baseColors.signalGreen100}, ${baseColors.signalGreen100})`,
+  iconInfo: `light-dark(${baseColors.signalBlue100}, ${baseColors.signalBlue100})`,
+  iconWarning: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
+  iconImportant: `light-dark(${baseColors.signalYellow100}, ${baseColors.signalYellow100})`,
 
   linkEnabled: `light-dark(${baseColors.blue100}, ${baseColors.blue90})`,
   linkHover: `light-dark(${baseColors.blue170}, ${baseColors.blue80})`,
   linkPressed: `light-dark(${baseColors.gray200}, ${baseColors.blue60})`,
   linkVisited: `light-dark(${baseColors.purple140}, ${baseColors.purple80})`,
 
-  notificationBorderSuccess: `light-dark(${baseColors.signalGreen140}, ${baseColors.signalGreen140})`,
-  notificationBorderInfo: `light-dark(${baseColors.signalBlue140}, ${baseColors.signalBlue140})`,
-  notificationBorderImportant: `light-dark(${baseColors.signalYellow140}, ${baseColors.signalYellow140})`,
-  notificationBorderWarning: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
-  notificationBackgroundSuccess: `light-dark(${baseColors.signalGreen20}, ${baseColors.gray180})`,
-  notificationBackgroundInfo: `light-dark(${baseColors.signalBlue20}, ${baseColors.gray180})`,
-  notificationBackgroundImportant: `light-dark(${baseColors.signalYellow20}, ${baseColors.gray180})`,
-  notificationBackgroundWarning: `light-dark(${baseColors.signalRed20}, ${baseColors.gray180})`,
+  supportBorderSuccess: `light-dark(${baseColors.signalGreen100}, ${baseColors.signalGreen100})`,
+  supportBorderInfo: `light-dark(${baseColors.signalBlue100}, ${baseColors.signalBlue100})`,
+  supportBorderImportant: `light-dark(${baseColors.signalYellow100}, ${baseColors.signalYellow100})`,
+  supportBorderWarning: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
+  supportBackgroundSuccess: `light-dark(${baseColors.signalGreen20}, ${baseColors.gray180})`,
+  supportBackgroundSuccessHover: `light-dark(${baseColors.signalGreen30}, ${baseColors.gray170})`,
+  supportBackgroundInfo: `light-dark(${baseColors.signalBlue10}, ${baseColors.gray180})`,
+  supportBackgroundImportant: `light-dark(${baseColors.signalYellow10}, ${baseColors.gray180})`,
+  supportBackgroundWarning: `light-dark(${baseColors.signalRed20}, ${baseColors.gray180})`,
+  supportBackgroundWarningHover: `light-dark(${baseColors.signalRed30}, ${baseColors.gray170})`,
 
   textPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   textSecondary: `light-dark(${baseColors.gray140}, ${baseColors.gray70})`,
-  textBrand: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
+  textTertiary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
   textOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
   textInverse: `light-dark(${baseColors.gray10}, ${baseColors.gray200})`,
-  textSubtle: `light-dark(${baseColors.gray90}, ${baseColors.gray90})`,
   textDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
-  textInvalid: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
+  textInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   textPlaceholder: `light-dark(${baseColors.gray70}, ${baseColors.gray140})`,
 
   buttonBackgroundPrimary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
@@ -210,14 +217,20 @@ export const semantic = {
   buttonBackgroundSecondaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
   buttonBackgroundTertiaryHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
   buttonBackgroundTertiaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
-  buttonBackgroundDanger: `light-dark(${baseColors.signalRed140}, ${baseColors.signalRed140})`,
+  buttonBackgroundDanger: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
   buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed160}, ${baseColors.signalRed160})`,
   buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed180}, ${baseColors.signalRed180})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  buttonBackgroundGhostHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
-  buttonBackgroundGhostActive: `light-dark(${baseColors.gray30}, ${baseColors.gray190})`,
-  buttonBorderPrimary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
+  buttonBorderSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
+}
+
+export const zIndex = {
+  base: 1,
+  above: 10,
+  modal: 1000,
+  toast: 1100,
+  skipToContent: 1200,
 }

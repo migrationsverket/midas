@@ -16,6 +16,7 @@ export default {
     label: 'Etikett',
     description: 'Beskrivning',
     errorMessage: 'här gick det snett',
+    errorPosition: 'top',
   },
   argTypes: {
     isInvalid: { type: 'boolean' },
@@ -54,5 +55,12 @@ export const SelectAll: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+}
+
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
+    errorMessage: 'Du måste välja en av frukterna',
   },
 }

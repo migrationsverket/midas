@@ -4,20 +4,10 @@ description: Använd en kalender när användaren ska välja ett datum eller vis
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Calendar, Link } from '@midas-ds/components'
+import { Calendar } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Calendar }}
-      {...props}
-    >
-      {`<Calendar/>`}
-    </LiveCodeBlock>
-  )
-}
+import { RangeCalendarExample } from '@site/src/components/examples/calendar/CalendarExamples'
+import { semantic } from '../../../../packages/components/src/theme'
 
 <ComponentHeader
   name='Calendar'
@@ -26,10 +16,19 @@ export const Example = props => {
 />
 
 Kalender kan användas när användaren ska välja ett datum eller visualisera ett valt datum. Normalt sett
-är <Link href='/components/date-picker'>{'DatePicker'}</Link> standardvalet men kalendern kan användas när inputfältet inte
+är [DatePicker](/components/date-picker) standardvalet men kalendern kan användas när inputfältet inte
 behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte ska presenteras som en popover.
 
-<Example hideCode />
+```tsx
+<Calendar />
+```
+
+<div
+  className={'card'}
+  style={{ background: semantic.layer02 }}
+>
+  <Calendar />
+</div>
 
 ## Installation
 
@@ -41,7 +40,50 @@ npm install @midas-ds/components
 import { Calendar } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Användning
+
+### Calendar
+
+Kalendern accepterar samma props som [DatePicker](../date-picker) och controlled value sätts med `value` respektive `onChange`,
+uncontrolled value sätts med `defaultValue`.
+
+### RangeCalendar
+
+Samma props som [DateRangePicker](../date-picker#daterangepicker), exempel nedan med controlled value:
+
+```tsx
+import { RangeCalendar } from '@midas-ds/components'
+import { DateValue } from 'react-aria-components'
+
+export const RangeCalendarExample = () => {
+  const [selected, setSelected] = React.useState<{
+    start: DateValue
+    end: DateValue
+  } | null>(null)
+
+  return (
+    <>
+      <RangeCalendar
+        value={selected}
+        onChange={setSelected}
+      />
+      <pre>
+        Valda datum:{' '}
+        {selected &&
+          `${selected?.start.toString()}
+           till: ${selected?.end.toString()}`}
+      </pre>
+    </>
+  )
+}
+```
+
+<div
+  className={'card'}
+  style={{ background: semantic.layer02 }}
+>
+  <RangeCalendarExample />
+</div>
 
 ## API
 

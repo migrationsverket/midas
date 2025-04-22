@@ -5,19 +5,7 @@ description: Upplys användaren om att systemet/tjänsten laddar
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Spinner, Button, Link } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Spinner }}
-      {...props}
-    >
-      {`<Spinner />`}
-    </LiveCodeBlock>
-  )
-}
+import { Spinner, Button } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Spinner'}
@@ -27,7 +15,13 @@ export const Example = props => {
 
 Komponent som används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden.
 
-<Example hideCode />
+```tsx
+<Spinner />
+```
+
+<div className='card'>
+  <Spinner />
+</div>
 
 ## Installation
 
@@ -39,33 +33,52 @@ npm install @midas-ds/components
 import { Spinner } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Fristående spinner
 
-<LiveCodeBlock scope={{ Spinner }}>{`<Spinner />`}</LiveCodeBlock>
+```tsx
+<Spinner />
+```
+
+<div className='card'>
+  <Spinner />
+</div>
 
 ### Kombinerad med andra komponenter
 
-Använd varianten `small` för att kombinera med andra komponenter t.ex. Button
+Använd varianten `small` för att kombinera med andra komponenter t.ex. `Button`, notera hur attributet `isOnColor` används för den primära knappen.
 
-<LiveCodeBlock scope={{ Spinner, Button }}>
-  {`<Button>
+```tsx
+<Button>
   <Spinner
-    dark
+    // highlight-start
     small
+    isOnColor
+    // highlight-end
   />
   Laddar
-</Button>`}
-</LiveCodeBlock>
+</Button>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button>
+    <Spinner
+      small
+      isOnColor
+    />
+    {'Laddar'}
+  </Button>
+</div>
 
 ## Riktlinjer
 
 Om det väntas ta mer än 10 sekunder att ladda sidan bör det förutom en spinner finnas ett meddelande till användaren om det.
 
-För val av laddningsindikator se <Link href="/design-patterns/page-loading" >{'Mönster för laddningsindikatorer'}</Link>
+För val av laddningsindikator se [Mönster för laddningsindikatorer](/design-patterns/page-loading)
 
 ## API
 

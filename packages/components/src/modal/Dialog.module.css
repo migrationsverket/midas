@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --background-01, --text-primary from tokens;
+@value --font-family, --layer-01, --background, --text-primary, --z-index-modal from tokens;
 
 .modal {
   font-family: --font-family;
@@ -8,7 +8,7 @@
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: --background-01;
+  background-color: --background;
   color: --text-primary;
   border: none;
   padding: 0;
@@ -27,7 +27,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000000;
+  z-index: --z-index-modal;
   width: 100vw;
   background: rgba(45 0 0 / 30%);
   display: flex;
@@ -50,22 +50,15 @@
   justify-content: flex-end;
   position: sticky;
   top: 0;
-  z-index: 2;
 }
 
 .modalBody {
   position: relative;
   padding: 1rem 2rem 2rem;
   font-family: --font-family;
-}
-
-.modalHeading {
-  /** Temp solution while we are working out which heading level we should use */
-  font-family: --font-family;
-  font-weight: 600 !important;
-  line-height: 1.4 !important;
-  font-size: 1.25rem !important;
-  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 @keyframes modal-fade {

@@ -3,22 +3,10 @@ title: FileUpload
 description: Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.
 ---
 
-import { PropTable } from '@site/src/components/propsTable'
 import { FileUpload } from '@midas-ds/components'
-import CodeBlock from '@theme/CodeBlock'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ FileUpload }}
-      {...props}
-    >
-      {`<FileUpload allowsMultiple label={'Välj filer att ladda upp'} description={'Du kan välja flera filer!'}/>`}
-    </LiveCodeBlock>
-  )
-}
+import { ControlledExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { PropTable } from '@site/src/components/propsTable'
 
 <ComponentHeader
   name={'FileUpload'}
@@ -26,9 +14,21 @@ export const Example = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
 />
 
-Komponent som används när användaren behöver ladda upp filer från det egen filsystemet.
+Komponent som används när användaren behöver ladda upp filer från det egna filsystemet.
 
-<Example hideCode />
+```tsx
+<FileUpload
+  label='Välj en fil att ladda upp'
+  description='Du kan välja en fil'
+/>
+```
+
+<div className='card'>
+  <FileUpload
+    label='Välj en fil att ladda upp'
+    description='Du kan välja en fil'
+  />
+</div>
 
 ## Installation
 
@@ -40,4 +40,59 @@ npm install @midas-ds/components
 import { FileUpload } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Varianter
+
+### Välj flera filer
+
+För att tillåta användaren att ladda upp flera filer på samma gång, använd attributet `allowsMultiple`
+
+```tsx
+<FileUpload
+  allowsMultiple
+  label='Välj filer att ladda upp'
+  description='Du kan välja flera filer'
+/>
+```
+
+<div className='card'>
+  <FileUpload
+    allowsMultiple
+    label='Välj filer att ladda upp'
+    description='Du kan välja flera filer'
+  />
+</div>
+
+### Kontrollerat val av filer
+
+Om du vill kontrollera vilka filer användaren laddar upp kan du använda `useState`
+
+```tsx
+import React from 'react'
+```
+
+```tsx
+const [files, setFiles] = React.useState<string[]>([])
+
+return (
+  <FileUpload
+    allowsMultiple
+    label='Välj filer att ladda upp'
+    description='Du kan välja flera filer'
+    onSelect={e => {
+      if (e) {
+        const files = Array.from(e)
+        const filenames = files.map(file => file.name)
+        setFiles(filenames)
+      }
+    }}
+  />
+)
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
+
+## API
+
+<PropTable name='FileUpload' />

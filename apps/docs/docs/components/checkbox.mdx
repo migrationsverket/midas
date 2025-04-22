@@ -3,21 +3,10 @@ title: Checkbox
 description: Används för att låta användaren välja inget, ett eller flera alternativ.
 ---
 
+import { ControlledExample, ControlledGroupExample } from '@site/src/components/examples/checkbox/CheckboxExamples'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Checkbox, CheckboxGroup, Flex, FlexItem, Button, Link } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Checkbox }}
-      {...props}
-    >
-      {`<Checkbox>Jag godkänner villkoren</Checkbox>`}
-    </LiveCodeBlock>
-  )
-}
+import { Checkbox, CheckboxGroup } from '@midas-ds/components'
 
 <ComponentHeader
   name={'Checkbox'}
@@ -26,7 +15,13 @@ export const Example = props => {
 
 Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ.
 
-<Example hideCode />
+```tsx
+<Checkbox>Jag godkänner villkoren</Checkbox>
+```
+
+<div className='card'>
+  <Checkbox>Jag godkänner villkoren</Checkbox>
+</div>
 
 ## Installation
 
@@ -38,74 +33,170 @@ npm install @midas-ds/components
 import { Checkbox } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
-
-<LiveCodeBlock scope={{ Checkbox, Flex, FlexItem, Button }}>
-  {`<Flex fluid>
-    <FlexItem style={{alignSelf: 'center'}}>
-      <Checkbox>Jag godkänner villkoren</Checkbox>
-    </FlexItem>
-    <FlexItem col="auto" style={{display: 'flex', flexFlow: 'row wrap', gap: '0.5rem'}}>
-      <Button
-        variant='secondary'
-      >
-        Bakåt
-      </Button>
-      <Button>Fortsätt</Button>
-    </FlexItem>
-</Flex>`}
-</LiveCodeBlock>
 
 ### Ensam checkbox
 
-<LiveCodeBlock scope={{ Checkbox }}>{`<Checkbox>Jag godkänner villkoren</Checkbox>`}</LiveCodeBlock>
+```tsx
+<Checkbox>Jag godkänner villkoren</Checkbox>
+```
 
-### Flera checkboxar
+<div className='card'>
+  <Checkbox>Jag godkänner villkoren</Checkbox>
+</div>
+
+### Förvalt alternativ (okontrollerat)
+
+Använd attributet `defaultSelected` för att en checkbox ska vara förvald.
+
+```tsx
+<Checkbox defaultSelected />
+```
+
+<div className='card'>
+  <Checkbox defaultSelected />
+</div>
+
+### Kontrollerat val
+
+Använd attributet `isSelected` och eventet `onChange` för att använda controlled mode på Checkbox.
+
+```tsx
+import React from 'react'
+
+const [isSelected, setIsSelected] = React.useState(false)
+
+return (
+  <Checkbox
+    isSelected={isSelected}
+    onChange={setIsSelected}
+  >
+    Jag godkänner villkoren
+  </Checkbox>
+)
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
+
+## Varianter för flera checkboxar
 
 Använd `<CheckboxGroup>` för att gruppera flera checkboxar som hör samman.
 
-<LiveCodeBlock scope={{ Checkbox, CheckboxGroup }}>
-  {`<CheckboxGroup
-        label='Godkänner du våra villkor?'
-        description='Läs texten först'
-      >
-        <Checkbox value='1'>Jag har läst texten</Checkbox>
-        <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
-    </CheckboxGroup>
-`}
-</LiveCodeBlock>
+```tsx
+<CheckboxGroup
+  label='Godkänner du våra villkor?'
+  description='Läs texten först'
+>
+  <Checkbox value='1'>Jag har läst texten</Checkbox>
+  <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
+</CheckboxGroup>
+```
 
-## Välj alla
+<div className='card'>
+  <CheckboxGroup
+    label='Godkänner du våra villkor?'
+    description='Läs texten först'
+  >
+    <Checkbox value='1'>Jag har läst texten</Checkbox>
+    <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
+  </CheckboxGroup>
+</div>
 
-Ibland kan det vara lämligt att ge användaren möjlighet att snabbt kryssa i alla kryssrutor. Denna funktion finns inbyggt i `<CheckboxGroup>` via egenskapen `showSelectAll`. Om detta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
+### Välj alla
 
-<LiveCodeBlock scope={{ Checkbox, CheckboxGroup }}>
-  {`<CheckboxGroup
+Ibland kan det vara lämligt att ge användaren möjlighet att snabbt kryssa i alla kryssrutor.
+Denna funktion finns inbyggt i `<CheckboxGroup>` via egenskapen `showSelectAll`.
+Om detta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas.
+
+```tsx
+<CheckboxGroup
+  label={'Godkänner du våra villkor'}
+  description={'Läs texten först'}
+  // highlight-start
+  showSelectAll
+  // highlight-end
+>
+  <Checkbox value='1'>Jag har läst texten</Checkbox>
+  <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
+</CheckboxGroup>
+```
+
+<div className='card'>
+  <CheckboxGroup
     label={'Godkänner du våra villkor'}
     description={'Läs texten först'}
     showSelectAll
-    >
-      <Checkbox
-        value="1"
-        isRequired
-      >
-        Jag har läst texten
-      </Checkbox>
-      <Checkbox
-        value="2"
-        isRequired
-      >
-        Jag godkänner villkoren
-      </Checkbox>
+  >
+    <Checkbox value='1'>Jag har läst texten</Checkbox>
+    <Checkbox value='2'>Jag godkänner villkoren</Checkbox>
+
   </CheckboxGroup>
-`}
-</LiveCodeBlock>
+</div>
+
+### Förvalda alternativ (okontrollerat)
+
+Använd attributet `defaultValue` för att en eller flera kryssrutor ska vara förvalda.
+
+```tsx
+<CheckboxGroup
+  label='Favoritfrukt'
+  // highlight-start
+  defaultValue={['banan', 'melon']}
+  // highlight-end
+>
+  <Checkbox value='banan'>Banan</Checkbox>
+  <Checkbox value='melon'>Melon</Checkbox>
+  <Checkbox value='kiwi'>Kiwi</Checkbox>
+  <Checkbox value='satsumas'>Satsumas</Checkbox>
+</CheckboxGroup>
+```
+
+<div className='card'>
+  <CheckboxGroup
+    label='Favoritfrukt'
+    defaultValue={['banan', 'melon']}
+  >
+    <Checkbox value='banan'>Banan</Checkbox>
+    <Checkbox value='melon'>Melon</Checkbox>
+    <Checkbox value='kiwi'>Kiwi</Checkbox>
+    <Checkbox value='satsumas'>Satsumas</Checkbox>
+  </CheckboxGroup>
+</div>
+
+### Kontrollerat val
+
+Använd attributet `value` och eventet `onChange` för att använda controlled mode på CheckboxGroup.
+
+```tsx
+import React from 'react'
+
+const [value, setValue] = React.useState<string[]>()
+
+return (
+  <CheckboxGroup
+    label='Favoritfrukt'
+    // highlight-start
+    value={value}
+    onChange={setValue}
+    // highlight-end
+  >
+    <Checkbox value='banan'>Banan</Checkbox>
+    <Checkbox value='melon'>Melon</Checkbox>
+    <Checkbox value='kiwi'>Kiwi</Checkbox>
+    <Checkbox value='satsumas'>Satsumas</Checkbox>
+  </CheckboxGroup>
+)
+```
+
+<div className='card'>
+  <ControlledGroupExample />
+</div>
 
 ## Riktlinjer
 
-- Om det är många alternativ så bör <Link href='/components/select'>{'Select'}</Link> användas istället.
+- Om det är många alternativ så bör [Select](/components/select) användas istället.
 - Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt
 - Fältetikett ska inledas med en stor bokstav och inte följas av punkt.
 

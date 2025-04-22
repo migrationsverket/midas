@@ -21,6 +21,7 @@ export interface CheckboxGroupProps
   description?: string
   showSelectAll?: boolean
   errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const CheckboxGroup = ({
@@ -29,6 +30,7 @@ export const CheckboxGroup = ({
   errorMessage,
   showSelectAll,
   children,
+  errorPosition = 'top',
   ...props
 }: CheckboxGroupProps) => {
   const [isAllSelected, setIsAllSelected] = React.useState<
@@ -98,11 +100,12 @@ export const CheckboxGroup = ({
     >
       <Label variant='label-02'>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={styles.wrap}>
         {showSelectAll && <ToogleAll />}
         {children}
       </Group>
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
     </AriaCheckboxGroup>
   )
 }

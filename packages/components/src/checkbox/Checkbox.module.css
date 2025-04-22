@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled, --border-strong, --layer-hover-01, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid, --field-disabled, --focus from tokens;
+@value --font-family, --text-primary, --text-disabled, --border-primary, --layer-hover-01, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid, --field-disabled, --focus from tokens;
 
 .wrap {
   grid-area: Input;
@@ -12,7 +12,7 @@
   width: 1rem;
   height: 1rem;
   box-sizing: border-box;
-  border: 1px solid --border-strong;
+  border: 1px solid --border-primary;
   transition: all 200ms;
   align-items: center;
   justify-content: center;
@@ -132,19 +132,6 @@
   font-size: 1rem;
   min-width: 150px;
 
-  > label:not(:has(+ [slot='description'])) {
-    margin-bottom: 0.25rem;
-  }
-
-  > [slot='description'] {
-    margin-bottom: 0.25rem;
-  }
-
-  > [slot='errorMessage'] {
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
-  }
-
   &[data-disabled] {
     color: --text-disabled;
   }
@@ -152,7 +139,7 @@
   .checkbox {
     @media --breakpoint-sm {
       padding: 0.875rem 1rem;
-      border: 1px solid --border-strong;
+      border: 1px solid --border-primary;
       width: auto;
 
       &[data-hovered] {

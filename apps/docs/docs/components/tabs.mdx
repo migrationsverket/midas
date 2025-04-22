@@ -5,42 +5,8 @@ description: Fördela information över flertalet tabbar.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-import { Tabs as MidasTabs, Button, Text } from '@midas-ds/components'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ MidasTabs, Button, Text }}
-      {...props}
-    >
-      {`<MidasTabs
-          defaultSelected="Viktigt att veta"
-          label="Följ processen"
-          tabs={['Frukter', 'Bär', 'Fruktförband av stenfrukter'] as const}
-        >
-          <Text>
-            Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-            maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-            Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-          </Text>
-          <Text>
-            Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-            maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-            Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-          </Text>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-          maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-          Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-        </Text>
-      </MidasTabs>`}
-    </LiveCodeBlock>
-  )
-}
+import { Tabs as MidasTabs, Text } from '@midas-ds/components'
+import { ControlledExample } from '@site/src/components/examples/tabs/TabsExamples'
 
 <ComponentHeader
   name={'Tabs'}
@@ -49,7 +15,37 @@ export const Example = props => {
 
 Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren.
 
-<Example hideCode />
+```tsx
+<Tabs
+  label='Viktig information om frukter och bär'
+  tabs={['Vitaminer', 'Frysta frukter och bär', 'Frysta importerade hallon']}
+>
+  <Text>...</Text>
+  <Text>...</Text>
+  <Text>...</Text>
+</Tabs>
+```
+
+<div className='card'>
+  <MidasTabs
+    label='Viktig information om frukter och bär'
+    tabs={['Vitaminer', 'Frysta frukter och bär', 'Frysta importerade hallon']}
+  >
+    <Text>
+      Oavsett om du äter en frukt, lite bär, en näve grönsaker eller baljväxter, får du i dig många viktiga näringsämnen
+      som kroppen behöver för att må bra - fibrer, C-vitamin, folat/folsyra, vitamin K, kalium och antioxidanter, som
+      karotenoider. Eftersom olika sorters frukt och grönt innehåller olika näringsämnen är det bra att äta varierat.
+    </Text>
+    <Text>
+      För näringsvärdet spelar det mindre roll om man äter färska eller frysta frukter och grönsaker. Frysta produkter
+      håller längre och är ett smart sätt att minska matsvinnet.
+    </Text>
+    <Text>
+      Frysta importerade hallon kan vara förorenade med norovirus, som orsakar vinterkräksjukan. Det kan också finnas
+      norovirus och hepatit A-virus på andra frysta bär men det är mycket ovanligare.
+    </Text>
+  </MidasTabs>
+</div>
 
 ## Installation
 
@@ -61,7 +57,92 @@ npm install @midas-ds/components
 import { Tabs } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Beskrivning
+
+Midas `Tabs` är en komposition av React Arias `Tabs`, `TabList`, `Tab`, `TabPanel`. Se [dokumentationen för Tabs hos React Aria](https://react-spectrum.adobe.com/react-aria/Tabs.html) för en djupare förklaring.
+
+## Användning
+
+### Tabs och children
+
+Midas `Tabs` accepterar en lista av strängar (titlar) för attributet `tabs`, dessa förhåller sig i sin tur till ett antal barnnoder.
+Notera att längden på `tabs`-listan och antalet barnnoder måste stämma överens för att komponenten ska fungera.
+
+```tsx
+// 👍
+<Tabs tabs={['Bär', 'Frukter']}>
+  <Text>Information om Bär</Text>
+  <Text>Information om Frukter</Text>
+</Tabs>
+```
+
+```tsx
+// 👎 skickar ett fel till konsolen och returnerar null
+<Tabs tabs={['Bär', 'Frukter', 'Stenfrukter', 'Grönsaker']}>
+  <Text>Information om Bär</Text>
+  <Text>Information om Frukter</Text>
+</Tabs>
+```
+
+### Förvalt alternativ (okontrollerad)
+
+Välj vilket alternativ som ska vara förvalt med attributet `defaultSelectedKey`, använd titeln på den flik som ska vara förvald.
+
+```tsx
+<Tabs
+  tabs={['Bär', 'Frukter']}
+  // highlight-start
+  defaultSelectedKey='Frukter'
+  // highlight-end
+>
+  <Text>Information om Bär</Text>
+  <Text>Information om Frukter</Text>
+</Tabs>
+```
+
+<div className='card'>
+  <MidasTabs
+    label='Frukt och grönt'
+    tabs={['Bär', 'Frukter']}
+    defaultSelectedKey='Frukter'
+  >
+    <Text>Information om Bär</Text>
+    <Text>Information om Frukter</Text>
+  </MidasTabs>
+</div>
+
+### Kontrollerat val
+
+Valet av flik kan kontrolleras med hjälp av attributet `selectedKey` tillsammans med eventet `onSelectionChange`.
+Den valda flikens titel skickas tillbaka i callbacken när användaren byter flik, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+import type { Key } from 'react-aria-components'
+```
+
+```tsx
+const tabs = ['Bär', 'Frukter']
+const [selectedTab, setSelectedTab] = React.useState<Key>(tabs[1])
+
+return (
+  <Tabs
+    label='Frukt och grönt'
+    // highlight-start
+    tabs={tabs}
+    selectedKey={selectedTab}
+    onSelectionChange={setSelectedTab}
+    // highlight-end
+  >
+    <Text>Information om Bär</Text>
+    <Text>Information om Frukter</Text>
+  </Tabs>
+)
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
 
 ## API
 

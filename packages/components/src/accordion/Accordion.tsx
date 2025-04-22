@@ -10,7 +10,7 @@ export const ACCORDION_TEST_ID = 'accordion'
 interface MidasAccordion extends DisclosureGroupProps {
   /** Display either the larger contained variant or a smaller uncontained variant */
   variant?: 'uncontained' | 'contained'
-  /** Weither to allow the user to have multiple accordions open at the same time */
+  /** @deprecated Use 'allowsMultipleExpanded' instead */
   type?: 'single' | 'multiple'
 }
 
@@ -28,7 +28,9 @@ export const Accordion: React.FC<MidasAccordion> = ({
   return (
     <DisclosureGroup
       data-testid={ACCORDION_TEST_ID}
-      allowsMultipleExpanded={type === 'multiple'}
+      allowsMultipleExpanded={
+        props.allowsMultipleExpanded || type === 'multiple'
+      }
       className={clsx(
         styles.root,
         variant === 'contained' ? styles.contained : styles.uncontained,

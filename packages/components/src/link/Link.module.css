@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --link-enabled, --link-hover, --link-pressed, --link-visited, --text-disabled, --focus from tokens;
+@value --font-family, --link-enabled, --link-hover, --link-pressed, --link-visited, --text-disabled, --focus, --z-index-base from tokens;
 
 .link {
   font-family: --font-family;
@@ -26,8 +26,8 @@
     color: --text-disabled;
   }
 
-  &[data-pressed],
-  &:active {
+  &[data-pressed]:not([data-disabled], :disabled),
+  &:active:not([data-disabled], :disabled) {
     color: --link-pressed;
   }
 
@@ -57,13 +57,13 @@
   text-decoration: none;
   font-weight: 500;
 
-  &[data-hovered]:not([data-disabled='true']),
-  &:hover:not(:disabled) {
+  &[data-hovered]:not([data-disabled], :disabled),
+  &:hover:not([data-disabled], :disabled) {
     text-decoration: underline;
   }
 
-  &[data-pressed],
-  &:active {
+  &[data-pressed]:not([data-disabled], :disabled),
+  &:active:not([data-disabled], :disabled) {
     text-decoration: underline;
   }
 }
@@ -72,7 +72,7 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: 1;
+    z-index: --z-index-base;
     content: '';
   }
 }

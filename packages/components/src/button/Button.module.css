@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --button-background-primary-hover, --button-background-primary, --icon-primary, --button-background-primary-active, --button-background-secondary, --size-03, --text-on-color, --button-border-primary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-brand, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus, --button-background-icon-hover, --button-background-icon-active from tokens;
+@value --font-family, --button-background-primary-hover, --button-background-primary, --icon-primary, --button-background-primary-active, --button-background-secondary, --size-03, --text-on-color, --button-border-secondary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-tertiary, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus, --button-background-icon-hover, --button-background-icon-active from tokens;
 
 .button {
   font-family: --font-family;
@@ -45,9 +45,9 @@
 }
 
 .secondary {
-  color: --text-brand;
+  color: --text-tertiary;
   background-color: --button-background-secondary;
-  border-color: --button-border-primary;
+  border-color: --button-border-secondary;
   opacity: 1;
 
   &[data-hovered] {
@@ -56,19 +56,19 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --button-background-disabled;
     border-color: --border-disabled;
   }
 
   &[data-pressed] {
     background-color: --button-background-secondary-active;
-    border-color: --text-brand;
+    border-color: --text-tertiary;
   }
 }
 
 .tertiary {
-  color: --text-brand;
+  color: --text-tertiary;
   background-color: transparent;
   padding: 0.8125rem 0.9375rem;
   opacity: 1;
@@ -79,7 +79,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: white;
   }
 
@@ -101,7 +101,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
   }
 
   &[data-pressed] {
@@ -121,7 +121,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --button-background-disabled;
   }
 

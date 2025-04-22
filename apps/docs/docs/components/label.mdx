@@ -5,28 +5,25 @@ title: Label
 import { Label } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Label }}
-      {...props}
-    >
-      {`<Label>Jag är ett en vanlig etikett</Label>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'typography-label'}
   friendlyName={'Etikett'}
-  overrideHeadlessLink='https://github.com/adobe/react-spectrum/tree/main/packages/@react-aria/label'
+  overrideHeadlessLink='https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/Label.tsx'
 />
 
-Etikett med fördefinerad stil
+Etikett med fördefinerad stil, för användning i ett formulär.
 
-<Example hideCode />
+```tsx
+<Label>Jag är en vanlig etikett</Label>
+```
+
+<div className='card'>
+  <Label>Jag är en vanlig etikett</Label>
+</div>
+
+> Notera att samtliga formulärkomponenter som midas exporterar redan använder `Label` internt, komponenterna exponerar istället attributet `label` för textvärdet.
+> Använd denna dokumentation om du avser att själv sätta ihop ett formulärelement, eller behöver en etikett till ett annat syfte.
 
 ## Installation
 
@@ -38,31 +35,51 @@ npm install @midas-ds/components
 import { Label } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Stil
 
 Använd egenskapen `variant` för att justera etikettens utseende
 
-<LiveCodeBlock
-  scope={{ Label }}
-  {...props}
->
-  {`<Label variant="label-02">Jag är en etikett av varianten 'label-02'</Label>`}
-</LiveCodeBlock>
+```tsx
+<Label variant='label-02'>Jag är en etikett av varianten 'label-02'</Label>
+```
+
+<div className='card'>
+  <Label variant='label-02'>Jag är en etikett av varianten 'label-02'</Label>
+</div>
 
 ### Val av element
 
 Egenskapen `elementType` kan användas för att ändra etikettens DOM-element.
 
-<LiveCodeBlock
-  scope={{ Label }}
-  {...props}
->
-  {`<Label elementType="div">Jag är en div</Label>`}
-</LiveCodeBlock>
+```tsx
+<Label elementType='div'>Jag är en div</Label>
+```
+
+<div className='card'>
+  <Label elementType='div'>Jag är en div</Label>
+</div>
+
+## Användning i formulär
+
+Midas `Label` bygger på [`Label` från react-aria-components](https://github.com/adobe/react-spectrum/blob/main/packages/react-aria-components/src/Label.tsx)
+Utöver ovan nämnda attribut accepteras samtliga attribut som för HTMLelementet [`<label>` i react](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts#L3220).
+
+### Manuell koppling med `htmlFor`
+
+```tsx
+<Label htmlFor="firstname">Förnamn</Label>
+<input id="firstname" />
+```
+
+<div className='card'>
+  <Label htmlFor='firstname'>Förnamn</Label>
+  <input
+    id='firstname'
+    style={{ maxWidth: 200 }}
+  />
+</div>
 
 ## API
 

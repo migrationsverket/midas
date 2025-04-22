@@ -8,8 +8,10 @@ const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
   tags: ['autodocs'],
   args: {
-    label: 'Group label',
+    label: 'Välj frukt',
+    description: 'Valfri beskrivning',
     errorMessage: 'Du måste välja en frukt?',
+    errorPosition: 'top',
   },
   argTypes: {
     children: { table: { disable: true } },
@@ -165,5 +167,28 @@ export const CustomValidation: Story = {
         expect(canvas.getByText('Inga äpplen är tillåtna')).toBeInTheDocument()
       },
     )
+  },
+}
+
+export const Horizontal: Story = {
+  args: {
+    ...Normal.args,
+    children: (
+      <>
+        <Radio
+          key='radio-apple'
+          value='apple'
+        >
+          Äpple
+        </Radio>
+        <Radio
+          key='radio-banan'
+          value='banan'
+        >
+          Banan
+        </Radio>
+      </>
+    ),
+    orientation: 'horizontal',
   },
 }

@@ -2,7 +2,7 @@ name: 'Storybook - Build and test'
 
 on:
   pull_request:
-    branches: ['main', 'release/**']
+    branches: ['dev', 'main', 'release/**']
 
 jobs:
   test:
@@ -24,4 +24,4 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server dist/docs/storybook --port 6006 --silent" \
-            "npx wait-on tcp:127.0.0.1:6006 && npx nx run components:test-storybook:ci"
+            "npx wait-on tcp:127.0.0.1:6006 && npx nx run components:test-storybook:ci && npx nx run components:test-storybook:dark-mode:ci"

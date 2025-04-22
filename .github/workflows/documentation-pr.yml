@@ -36,9 +36,9 @@ jobs:
         if: github.event.action != 'closed'
         run: npm ci
 
-      - name: Build website
+      - name: Lint and build website
         if: github.event.action != 'closed'
-        run: npx nx run docs:build --minify=false --outputPath=dist/docs
+        run: npx nx run-many -t lint,build --projects=docs
       - name: Build storybook
         if: github.event.action != 'closed'
         run: npx nx run components:build-storybook:ci

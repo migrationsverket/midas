@@ -7,36 +7,28 @@ import { I18nProvider } from 'react-aria'
 import { PropTable } from '@site/src/components/propsTable'
 import { DateField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
+import { DateFieldControlled } from '@site/src/components/examples/date-field/DateFieldExamples'
+import { CalendarDate } from '@internationalized/date'
+export const christmas = new CalendarDate(2025, 12, 25)
 
 export const Example = props => {
   return (
-    <LiveCodeBlock
-      scope={{ DateField }}
+    <DateField
+      label='Etikett'
+      description='Beskrivning'
       {...props}
-    >
-      {`<DateField
-        label="Etikett"
-        description="Beskrivning"
-    />`}
-    </LiveCodeBlock>
+    />
   )
 }
 
 export const I18nExample = props => {
   return (
-    <LiveCodeBlock
-      scope={{ DateField, I18nProvider }}
-      {...props}
-    >
-      {`
-<I18nProvider locale={'fr-Fr'}>
-    <DateField
-        label="Välj ett datum"
-        description="vilket datum som helst"/>
-</I18nProvider>
-`}
-    </LiveCodeBlock>
+    <I18nProvider locale={'fr-Fr'}>
+      <DateField
+        label='Välj ett datum'
+        description='vilket datum som helst'
+      />
+    </I18nProvider>
   )
 }
 
@@ -46,9 +38,15 @@ export const I18nExample = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/DateField.html'
 />
 
-Datumfält används när användaren ska fylla i ett datum eller som ett fält där datum är representerat.
+Datumfält används när användaren ska fylla i ett datum eller som ett fält där datum är representerat. Datumfältet
+bygger på React Arias [DateField](https://react-spectrum.adobe.com/react-aria/DateField.html).
+In- och utdata till DateField liksom andra tidsrelaterade komponenter bygger på
+[@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) så ytterligare referens
+till hur värden ska formateras hittas där.
 
-<Example hideCode />
+<div className={'card'}>
+  <Example />
+</div>
 
 ## Installation
 
@@ -58,16 +56,110 @@ npm install @midas-ds/components
 
 ```tsx
 import { DateField } from '@midas-ds/components'
+
+;<DateField
+  label='Etikett'
+  description='Beskrivning'
+/>
 ```
 
-<Example hideExample />
+<div className={'card'}>
+  <Example />
+</div>
 
 ## Användning
+
+DateField fungerar som andra formulärskomponenter och kan integreras i vanliga HTML-forms via `name` eller kan valideras
+i andra forms via `validate` eller `isInvalid`. Se [props](#api) för samtliga egenskaper.
+
+### Lokalisering
 
 Tänk på att formatet för inmatning (exempelvis YYYY/MM/DD) beror av användarens språkinställning så referera inte till
 det i etikett eller hjälptext.
 
-<I18nExample />
+```tsx
+<I18nProvider locale={'fr-Fr'}>
+  <DateField
+    label='Välj ett datum'
+    description='vilket datum som helst'
+  />
+</I18nProvider>
+```
+
+<div className={'card'}>
+  <I18nExample />
+</div>
+
+DateField stödjer också olika kalendrar, se
+[React Aria](https://react-spectrum.adobe.com/react-aria/DateField.html#international-calendars)
+och [mdm web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar#adding_a_calendar_in_the_locale_string)
+för referens om hur du går till väga för att konvertera datum mellan olika kalendrar.
+
+```tsx
+<I18nProvider locale={'fr-Fr-u-ca-buddhist'}>
+  <Example
+    label={'Välj ett datum'}
+    description={'Calendrier bouddhiste français'}
+  />
+</I18nProvider>
+```
+
+<div className={'card'}>
+  <I18nProvider locale={'fr-Fr-u-ca-buddhist'}>
+    <Example
+      label={'Välj ett datum'}
+      description={'Calendrier bouddhiste français'}
+    />
+  </I18nProvider>
+</div>
+
+### Förvalt värde (uncontrolled)
+
+Använd `defaultValue` för att sätta ett förvalt värde (uncontrolled). `CalendarDate` är
+ett datum utan tidskomponent.
+
+```tsx
+import { CalendarDate } from '@internationalized/date'
+
+;<DateField defaultValue={new CalendarDate(2025, 12, 25)} />
+```
+
+<div className={'card'}>
+  <Example
+    defaultValue={christmas}
+    label={'Happy Kwanza'}
+    description={''}
+  />
+</div>
+
+### Controlled value
+
+Följer mönstret av andra input-fält, `onChange` och `value` ger tillgång till DateField-state.
+Använd funktioner ur [@internationlized/date](https://react-spectrum.adobe.com/internationalized/date/index.html)
+för korrekt översättning mellan olika format.
+
+```tsx
+import { DateField } from '@midas-ds/components'
+import { now, toCalendarDate, getLocalTimeZone } from '@internationalized/date'
+
+export const DateFieldControlled = () => {
+  const today = toCalendarDate(now(getLocalTimeZone()))
+  const [date, setDate] = React.useState(today)
+  return (
+    <>
+      <DateField
+        value={date}
+        onChange={setDate}
+      />
+      <pre>Du har valt datumet: {date?.toString()}</pre>
+    </>
+  )
+}
+```
+
+<div className={'card'}>
+  <DateFieldControlled />
+</div>
 
 ## API
 

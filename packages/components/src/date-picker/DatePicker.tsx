@@ -4,7 +4,6 @@ import {
   DatePickerProps,
   DateRangePickerProps,
   DateValue,
-  ValidationResult,
   Button,
   DateInput,
   DatePicker as AriaDatePicker,
@@ -13,6 +12,7 @@ import {
   Dialog,
   Group,
   Popover,
+  ValidationResult,
 } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
@@ -28,12 +28,14 @@ interface MidasDateRangePickerProps<T extends DateValue>
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const DateRangePicker = <T extends DateValue>({
   label,
   description,
   errorMessage,
+  errorPosition = 'top',
   ...props
 }: MidasDateRangePickerProps<T>) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -46,7 +48,7 @@ export const DateRangePicker = <T extends DateValue>({
     >
       <Label variant='label-02'>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={clsx(styles.inputField)}>
         <DateInput
           slot='start'
@@ -87,7 +89,7 @@ export const DateRangePicker = <T extends DateValue>({
           />
         </Button>
       </Group>
-
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       <Popover UNSTABLE_portalContainer={ref.current || undefined}>
         <Dialog className={styles.dialog}>
           <RangeCalendar />
@@ -101,12 +103,14 @@ interface MidasDatePickerProps<T extends DateValue> extends DatePickerProps<T> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 export const DatePicker = <T extends DateValue>({
   label,
   description,
   errorMessage,
+  errorPosition = 'top',
   ...props
 }: MidasDatePickerProps<T>) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -119,7 +123,7 @@ export const DatePicker = <T extends DateValue>({
     >
       <Label variant='label-02'>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={clsx(styles.inputField)}>
         <DateInput className={styles.date}>
           {segment => (
@@ -136,7 +140,7 @@ export const DatePicker = <T extends DateValue>({
           />
         </Button>
       </Group>
-
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       <Popover UNSTABLE_portalContainer={ref.current || undefined}>
         <Dialog className={styles.dialog}>
           <Calendar />

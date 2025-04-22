@@ -4,24 +4,9 @@ description: Använd ett textfält när användaren ska fylla i en rad med text.
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { TextField, Link } from '@midas-ds/components'
+import { TextField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { ControlledValue } from '@site/src/components/examples/form/TextFieldExamples'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ TextField }}
-      {...props}
-    >
-      {`<TextField
-        label="Etikett"
-        description="Beskrivning"
-    />`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name='Textfield'
@@ -29,9 +14,21 @@ export const Example = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/TextField.html'
 />
 
-Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används <Link href='/components/textarea'>{'TextArea'}</Link>.
+Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används [TextArea](/components/textarea).
 
-<Example hideCode />
+```tsx
+<TextField
+  label='Etikett'
+  description='Beskrivning'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='Etikett'
+    description='Beskrivning'
+  />
+</div>
 
 ## Installation
 
@@ -41,10 +38,6 @@ npm install @midas-ds/components
 
 ```tsx
 import { TextField } from '@midas-ds/components'
-;<TextField
-  label='Etikett'
-  description='Beskrivning'
-/>
 ```
 
 ## Beskrivning
@@ -120,7 +113,7 @@ Komponenten kan valideras med en egen funktion `validate()`.
 />
 ```
 
-Läs mer om validering i <Link href='https://react-spectrum.adobe.com/react-aria/forms.html#validation'>{'React Arias dokumentation'}</Link>.
+Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#validation).
 
 ## Varianter
 

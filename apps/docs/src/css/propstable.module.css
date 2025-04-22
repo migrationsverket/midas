@@ -1,12 +1,24 @@
 .accordion {
   > div {
-    --content-padding: 0;
+    --content-padding: 0.5rem 0 0.5rem 0;
   }
 }
 
 .table {
-  width: 100%;
+  all: revert;
+  table-layout: auto;
   font-family: 'Inter', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  tr {
+    word-break: break-all;
+  }
+
+  td {
+    min-width: 6rem;
+    vertical-align: top;
+  }
 }
 
 .thead {
@@ -15,10 +27,6 @@
 
 .tbody {
   font-size: 0.875rem;
-
-  code {
-    font-size: 0.75rem;
-  }
 }
 
 .item {

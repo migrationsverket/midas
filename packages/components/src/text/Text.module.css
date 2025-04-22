@@ -27,6 +27,7 @@
   line-height: --line-height-02;
   font-weight: 400;
   font-family: --font-family;
+  margin-bottom: 0.5rem;
 
   &:has(~ [data-disabled]) {
     color: --text-disabled;

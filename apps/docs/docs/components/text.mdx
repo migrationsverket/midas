@@ -2,21 +2,9 @@
 title: Text
 ---
 
-import { Text } from '@midas-ds/components'
+import { Text, Label } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Text }}
-      {...props}
-    >
-      {`<Text>Jag är ett vanligt span-element</Text>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'typography-text'}
@@ -24,9 +12,15 @@ export const Example = props => {
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Text.html'
 />
 
-Brödtext med fördefinerad stil
+Textelement med fördefinerad stil
 
-<Example hideCode />
+```tsx
+<Text>Jag är ett vanligt span-element som standard</Text>
+```
+
+<div className='card'>
+  <Text>Jag är ett vanligt span-element som standard</Text>
+</div>
 
 ## Installation
 
@@ -38,42 +32,79 @@ npm install @midas-ds/components
 import { Text } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Varianter
 
 ### Stil
 
 Använd egenskapen `variant` för att justera textens utseende
 
-<LiveCodeBlock
-  scope={{ Text }}
-  {...props}
->
-  {`<Text variant="body-01">Jag är ett span-element av varianten 'body-01'</Text>`}
-</LiveCodeBlock>
+```tsx
+<Text variant='body-01'>Jag är ett span-element av varianten 'body-01'</Text>
+```
+
+<div className='card'>
+  <Text variant='body-01'>Jag är ett span-element av varianten 'body-01'</Text>
+</div>
 
 ### Extern
 
 Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
 
-<LiveCodeBlock
-  scope={{ Text }}
-  {...props}
+```tsx
+<Text
+  variant='body-02'
+  isExpressive
 >
-  {`<Text variant="body-02" isExpressive>Jag är ett externt span-element</Text>`}
-</LiveCodeBlock>
+  Jag är ett externt span-element
+</Text>
+```
+
+<div className='card'>
+  <Text
+    variant='body-02'
+    isExpressive
+  >
+    Jag är ett externt span-element
+  </Text>
+</div>
 
 ### Val av element
 
 Egenskapen `elementType` kan användas för att ändra textens DOM-element.
 
-<LiveCodeBlock
-  scope={{ Text }}
-  {...props}
->
-  {`<Text elementType="em">Jag är kursiv och viktig</Text>`}
-</LiveCodeBlock>
+```tsx
+<Text elementType='em'>Jag är kursiv och viktig</Text>
+```
+
+<div className='card'>
+  <Text elementType='em'>Jag är kursiv och viktig</Text>
+</div>
+
+### Slot
+
+I Midas används `Text` internt i formulärkomponenter för att skriva ut en hjälptext `slot='description'`.
+
+```tsx
+<Label htmlFor="name" variant="label-02">Fullständigt namn</Label>
+// highlight-start
+<Text slot="description">Både för och efternamn</Text>
+// highlight-end
+<input id="name" />
+```
+
+<div className='card'>
+  <Label
+    htmlFor='name'
+    variant='label-02'
+  >
+    {'Fullständigt namn'}
+  </Label>
+  <Text slot='description'>Både för och efternamn</Text>
+  <input
+    id='name'
+    style={{ maxWidth: 200 }}
+  />
+</div>
 
 ## API
 

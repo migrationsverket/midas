@@ -22,7 +22,8 @@
     "src/**/*.stories.mdx",
     ".storybook/**/*.js",
     ".storybook/**/*.ts",
-    ".storybook/**/*.tsx"
+    ".storybook/**/*.tsx",
+    "src/utils/test.ts"
   ],
   "files": [
     "../../node_modules/@nx/react/typings/styled-jsx.d.ts",

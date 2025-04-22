@@ -3,27 +3,9 @@ title: Badge
 description: Badge används tillsammans med en ikon eller knapp för att påvisa att användaren har något oläst att ta del av.
 ---
 
-import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 import { Button, BadgeContainer, Badge } from '@midas-ds/components'
 import { Bell } from 'lucide-react'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Button, Badge, BadgeContainer, Bell }}
-      {...props}
-    >
-      {`<Button variant='tertiary' aria-label='Meddelanden'>
-        <BadgeContainer>
-          <Bell />
-          <Badge />
-        </BadgeContainer>
-      </Button>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Badge'}
@@ -33,7 +15,32 @@ export const Example = props => {
 
 Badge används tillsammans med en ikon eller knapp för att påvisa att användaren har något oläst att ta del av.
 
-<Example hideCode />
+```tsx
+<Button
+  variant='tertiary'
+  aria-label='Olästa meddelanden'
+>
+  <BadgeContainer>
+    <Bell />
+    <Badge />
+  </BadgeContainer>
+</Button>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button
+    variant='tertiary'
+    aria-label='Meddelanden'
+  >
+    <BadgeContainer>
+      <Bell />
+      <Badge />
+    </BadgeContainer>
+  </Button>
+</div>
 
 ## Installation
 
@@ -42,10 +49,8 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { Badge } from '@midas-ds/components'
+import { Badge, BadgeContainer } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## Placering
 
@@ -55,11 +60,31 @@ För att placera Badge korrekt ovanpå till exempel en ikon eller knapp kan du a
 
 Använd en label för att till exempel visa hur många meddelanden som är olästa.
 
-<LiveCodeBlock scope={{ Button, Badge, BadgeContainer, Bell }}>
-  {`<Button variant='tertiary' aria-label='Meddelanden'>
+```tsx
+<Button
+  variant='tertiary'
+  aria-label='12 olästa meddelanden'
+>
+  <BadgeContainer>
+    <Bell />
+    // highlight-start
+    <Badge>12</Badge>
+    // highlight-end
+  </BadgeContainer>
+</Button>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button
+    variant='tertiary'
+    aria-label='12 olästa meddelanden'
+  >
     <BadgeContainer>
       <Bell />
       <Badge>12</Badge>
     </BadgeContainer>
-  </Button>`}
-</LiveCodeBlock>
+  </Button>
+</div>

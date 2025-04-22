@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --layer-accent-01, --signal-green-140 from tokens;
+@value --layer-accent-01, --signal-green-100 from tokens;
 
 .progressBar {
   display: grid;
@@ -11,10 +11,12 @@
 
   .label {
     grid-area: label;
+    margin: 0;
   }
 
   .value {
     grid-area: value;
+    margin: 0;
   }
 
   .bar {
@@ -24,7 +26,7 @@
     overflow: hidden;
 
     .fill {
-      background: --signal-green-140;
+      background: --signal-green-100;
       height: 100%;
     }
   }
@@ -32,7 +34,7 @@
   &:not([aria-valuenow]) {
     .fill {
       will-change: transform;
-      background: --signal-green-140;
+      background: --signal-green-100;
       height: 100%;
       animation: 2s ease-in-out infinite indeterminate;
     }

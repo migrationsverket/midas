@@ -1,11 +1,11 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-md, --background-01, --border-subtle, --layer-01, --text-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus from tokens;
+@value --font-family, --breakpoint-sm, --breakpoint-lg, --background, --border-subtle, --layer-01, --size-01, --text-primary, --text-on-color, --line-height-02, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
   --headerHeight: 69px;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     --headerHeight: 85px;
   }
 }
@@ -24,11 +24,20 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid --border-subtle;
-  background-color: --background-01;
+  background-color: --background;
 
-  @media --breakpoint-md {
+  &.headerExternal {
+    padding: 1rem;
+
+    @media --breakpoint-lg {
+      padding: 1.25rem 1rem;
+      z-index: 3;
+    }
+  }
+
+  @media --breakpoint-lg {
     padding: 1.25rem 1rem;
-    z-index: 3;
+    z-index: calc(--z-index-base + --z-index-above);
   }
 }
 
@@ -42,7 +51,7 @@
     display: none;
   }
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     gap: 2rem;
 
     > svg {
@@ -51,39 +60,32 @@
   }
 }
 
-.headerItems,
 .logo {
   display: none;
   max-height: 40px;
 
-  @media --breakpoint-md {
-    display: block;
+  @media --breakpoint-lg {
+    display: flex;
   }
 }
 
 .headerItems {
   max-height: 40px;
-}
-
-.headerMenu {
-  display: block;
-
-  @media --breakpoint-md {
-    display: none;
-  }
+  display: flex;
+  flex-direction: row;
 }
 
 .toggleButton {
   display: block;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     display: none !important;
   }
 }
 
 .sidebar {
   font-family: --font-family;
-  background-color: --background-01;
+  background-color: --background;
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
@@ -94,10 +96,10 @@
   height: 100vh;
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
-  z-index: 2;
+  z-index: calc(--z-index-base);
   border-right: 1px solid --border-subtle;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     position: sticky;
     top: var(--headerHeight);
     align-self: start;
@@ -113,7 +115,7 @@
   width: 100%;
   min-height: 100%;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     background-color: --layer-01;
   }
 }
@@ -122,7 +124,7 @@
   background-clip: content-box;
   background-color: --layer-01;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     padding: 2rem;
   }
 }
@@ -154,7 +156,7 @@
   display: none !important;
   padding: calc(0.875rem - 1px) !important;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     display: flex !important;
   }
 }
@@ -177,7 +179,7 @@
   font-weight: 500;
   display: none;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     display: block;
   }
 }
@@ -195,7 +197,7 @@
   font-weight: 400;
   display: none;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     display: block;
   }
 }
@@ -206,7 +208,7 @@
   font-weight: 500;
   display: block;
 
-  @media --breakpoint-md {
+  @media --breakpoint-lg {
     display: none;
   }
 }
@@ -233,6 +235,7 @@
 
 .listItem {
   display: flex;
+  position: relative;
 }
 
 .listItemCollapsed {
@@ -333,12 +336,121 @@
   position: absolute;
   top: 0;
   right: 100%;
-  z-index: 1047;
+  z-index: --z-index-skip-to-content;
 
   &[data-focus-visible],
   &:focus-visible {
     right: auto;
     left: 5px;
     top: 5px;
+  }
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-family: --font-family;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid --border-subtle;
+  background-color: --background;
+}
+
+.navbarList {
+  flex: 1;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  & > li {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  @media --breakpoint-lg {
+    max-width: 600px;
+  }
+}
+
+.navbarItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  color: --text-primary;
+  text-decoration: none;
+  font-size: --size-01;
+  line-height: --line-height-02;
+  text-align: center;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+
+  &[data-hovered],
+  &[data-active] {
+    background-color: --button-background-primary;
+    color: --text-on-color;
+    cursor: pointer;
+  }
+
+  & svg {
+    flex: 0 0 auto;
+  }
+
+  @media --breakpoint-lg {
+    gap: 0.5rem;
+    flex-direction: row;
+    padding: 1rem 0.5rem;
+  }
+}
+
+.headerExternal {
+  @media --breakpoint-sm {
+    border: none;
+  }
+}
+
+.headerContentExternal {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .logoExternalContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logoExternal {
+    @media --breakpoint-lg {
+      display: none;
+    }
+  }
+
+  .logoExternalDesktop {
+    display: none;
+
+    @media --breakpoint-lg {
+      display: block;
+    }
+  }
+}
+
+.navbarWrapper {
+  @media --breakpoint-lg {
+    display: none;
   }
 }

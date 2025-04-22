@@ -1,12 +1,12 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --background-inverse-01, --text-inverse from tokens;
+@value --font-family, --background-inverse, --text-inverse from tokens;
 
 .tooltip {
   font-family: --font-family;
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   color: --text-inverse;
-  background-color: --background-inverse-01;
+  background-color: --background-inverse;
   max-width: 150px;
   outline: none;
   transform: translate3d(0, 0, 0);
@@ -16,7 +16,7 @@
 
   & .arrow svg {
     display: block;
-    fill: --background-inverse-01;
+    fill: --background-inverse;
   }
 
   &[data-entering],

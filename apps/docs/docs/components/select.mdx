@@ -2,40 +2,36 @@
 title: Select
 ---
 
-import { Select } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Select }}
-      {...props}
-    >
-      {`<Select
-        label="Vad är din favoritfrukt?"
-        placeholder="Välj en frukt"
-        description="Beskrivning"
-        selectionMode={'single'}
-        isClearable={false}
-        isSelectableAll={false}
-        showTags={false}
-        defaultSelectedKeys={['kiwi']}
-        options={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-      ></Select>`}
-    </LiveCodeBlock>
-  )
-}
+import { BasicExample, ControlledExample } from '@site/src/components/examples/select/SelectExamples'
 
 <ComponentHeader
   name={'Select'}
-  friendlyName={'Flerval, väljare, dropdown'}
+  friendlyName={'Flerval, väljare, dropdown, rullgardin'}
 />
 
 Inmatningsfält som används för att välja ett eller flera fördefinerade alternativ.
 
-<Example hideCode />
+```tsx
+<Select
+  label='Favoritfrukt'
+  description='Välj vilken du vill'
+  placeholder='Välj en frukt'
+  selectionMode='single'
+  options={[
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]}
+/>
+```
+
+<div className='card'>
+  <BasicExample />
+</div>
 
 ## Installation
 
@@ -47,11 +43,13 @@ npm install @midas-ds/components
 import { Select } from '@midas-ds/components'
 ```
 
-<Example hideExample />
-
 ## Riktlinjer
 
 Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
+
+## Beskrivning
+
+Midas Select är en variant av React Aria `Select` med möjlighet till flerval.
 
 ## Varianter
 
@@ -59,40 +57,187 @@ Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas iställ
 
 Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
 
-<LiveCodeBlock
-  scope={{ Select }}
-  {...props}
->
-  {`
-    <Select
-      label='Vilka är dina favoritfrukter?'
-      placeholder='Välj en eller flera frukter'
-      description='Beskrivning'
-      selectionMode='multiple'
-      options={fruits.map(({ value, name }) => ({ id: value, name }))}
-    />
-  `}
-</LiveCodeBlock>
+```tsx
+<Select
+  label='Favoritfrukt'
+  description='Välj vilken du vill'
+  placeholder='Välj en frukt'
+  // highlight-start
+  selectionMode='multiple'
+  // highlight-end
+  options={[
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]}
+/>
+```
 
-#### Välj alla
+<div className='card'>
+  <BasicExample selectionMode='multiple' />
+</div>
+
+### Välj alla
 
 Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-knapp.
 
-<LiveCodeBlock
-  scope={{ Select }}
-  {...props}
->
-  {`
-    <Select
-      label='Vilka är dina favoritfrukter?'
-      placeholder='Välj en eller flera frukter'
-      description='Beskrivning'
-      selectionMode='multiple'
-      options={fruits.map(({ value, name }) => ({ id: value, name }))}
-      isSelectableAll
-    />
-  `}
-</LiveCodeBlock>
+```tsx
+<Select
+  label='Favoritfrukt'
+  description='Välj vilken du vill'
+  placeholder='Välj en frukt'
+  // highlight-start
+  selectionMode='multiple'
+  isSelectableAll
+  // highlight-end
+  options={[
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]}
+/>
+```
+
+<div className='card'>
+  <BasicExample
+    selectionMode='multiple'
+    isSelectableAll
+  />
+</div>
+
+#### Visa etiketter
+
+Egenskapen `showTags` kan användas för att visa valen som etiketter under rullgardinen.
+
+```tsx
+<Select
+  label='Favoritfrukt'
+  description='Välj vilken du vill'
+  placeholder='Välj en frukt'
+  // highlight-start
+  selectionMode='multiple'
+  showTags
+  // highlight-end
+  options={[
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]}
+/>
+```
+
+<div className='card'>
+  <BasicExample
+    selectionMode='multiple'
+    showTags
+  />
+</div>
+
+### Förvalda alternativ (okontrollerat)
+
+Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde till komponenten.
+
+```tsx
+<Select
+  label='Favoritfrukt'
+  description='Välj vilken du vill'
+  placeholder='Välj en frukt'
+  // highlight-start
+  selectionMode='multiple'
+  defaultSelectedKeys={new Set(['banan', 'dadel'])}
+  // highlight-end
+  options={[
+    { id: 'apelsin', name: 'Apelsin' },
+    { id: 'banan', name: 'Banan' },
+    { id: 'citron', name: 'Citron' },
+    { id: 'dadel', name: 'Dadel' },
+    { id: 'fikon', name: 'Fikon' },
+  ]}
+/>
+```
+
+<div className='card'>
+  <BasicExample
+    selectionMode='multiple'
+    defaultSelectedKeys={new Set(['banan', 'dadel'])}
+  />
+</div>
+
+### Kontrollerade val
+
+Användarens val kan kontrolleras med hjälp av attributet `selectedKeys` tillsammans med eventet `onSelectionChange`.
+Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt val, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+import { Selection } from 'react-aria-components'
+
+const options = [
+  { id: 'apelsin', name: 'Apelsin' },
+  { id: 'banan', name: 'Banan' },
+  { id: 'citron', name: 'Citron' },
+  { id: 'dadel', name: 'Dadel' },
+  { id: 'fikon', name: 'Fikon' },
+]
+
+const [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())
+
+const handleSelectionChange = (keys: Selection) => {
+  if (keys === 'all') {
+    return setSelectedFruit(new Set(options.map(({ id }) => id)))
+  }
+  return setSelectedFruit(keys)
+}
+
+return (
+  <Select
+    label='Favoritfrukt'
+    description='Välj vilken du vill'
+    placeholder='Välj en frukt'
+    // highlight-start
+    selectionMode='multiple'
+    selectedKeys={selectedFruit}
+    onSelectionChange={handleSelectionChanges}
+    isSelectableAll
+    // highlight-end
+    options={options}
+  />
+)
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
+
+## Sektioner
+
+Strukturera om alternativen i nestade sektioner genom att strukturera options på följande sätt
+
+```ts
+const options = [
+  {
+    name: 'Frukter',
+    children: [
+      { id: 'kiwi', name: 'Kiwi' },
+      { id: 'banana', name: 'Banan' },
+      { id: 'apple', name: 'Äpple' },
+    ],
+  },
+  {
+    name: 'Grönsaker',
+    children: [
+      { id: 'carrot', name: 'Morot' },
+      { id: 'broccoli', name: 'Broccoli' },
+    ],
+  },
+]
+```
 
 ## API
 

@@ -2,8 +2,6 @@
 sidebar_label: 'Bidra'
 ---
 
-import { Link } from '@midas-ds/components'
-
 # Bidra till komponentbiblioteket
 
 Att komma igång och bidra med kod till Midas är enkelt!
@@ -15,12 +13,6 @@ Att komma igång och bidra med kod till Midas är enkelt!
 
 ```bash
 npm install
-```
-
-### Starta Dokumentationswebben
-
-```bash
-nx serve docs
 ```
 
 ### Starta Storybook
@@ -78,7 +70,7 @@ Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/
 
 ### Commit
 
-Commits görs enligt <Link href='https://www.conventionalcommits.org/en/v1.0.0/#summary'>{'conventional commits'}</Link>. Använd engelska,
+Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
 imperativ form, definiera type `feat|docs|fix|refactor|test|ci` och scope `(button|etc...)` och lägg till referenser
 till andra issues vid behov. Tänk på att även en merge (med squash) skapar en commit så lägg en extra tanke på
 vilken information som kommer med och inte kommer med. Våra commits är hela projektets historik och är indata till
@@ -106,15 +98,26 @@ select style based on input type
 
 ```
 
+Ta dig gärna tid att läsa igenom [conventional commit summary](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)
+och försök jobba enligt det flödet.
+
+:::tip
+
+- Jobbar du ensam i en feature branch och vill städa upp? Använd `git rebase -i`
+- Har du en feature branch som egentligen bara rör ett fåtal områden? Då kanske du vill vara mindre strikt
+  med commits och använda `git squash` istället
+  :::
+
 ## Bygga komponenter
 
 ### Styleguide
 
-Generellt, använd övriga komponenter som referens när nya läggs till.
+Generellt, använd övriga komponenter som referens när nya läggs till. React Aria är en bra inspiration för namngivning
+och struktur, både via deras ostylade komponentbibliotek och via sin designsystemsimplementation
+[React Spectrum](https://github.com/adobe/react-spectrum/tree/main/packages/%40react-spectrum).
 
-- Som standard, exportera en komponent per fil
-- Använd barrel-files `index.ts` för att exportera hela mappar
-- Formatera enligt <Link href='https://prettier.io/'>{'Prettier'}</Link> standard
+- Målet är små funktioner, små komponenter, clean code. Det uppmuntras att hela tiden göra inkrementella förbättringar
+- Formatera enligt [Prettier](https://prettier.io/) standard
 - Importera och använd tokens i `[component].module.css` enligt
 
 ```css title="Button.module.css"
@@ -129,83 +132,55 @@ Generellt, använd övriga komponenter som referens när nya läggs till.
 
 ### Importera headless-bibliotek
 
-Komponenter ska i första hand byggas på <Link href='https://react-spectrum.adobe.com/react-aria/getting-started.html'>{'React Aria'}</Link> i den mån det går. React Aria har ett omfattande bibliotek av
+Komponenter ska i första hand byggas på [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) i den mån det går. React Aria har ett omfattande bibliotek av
 färdiga komponenter och hooks som går att kombinera ihop för att uppnå önskat resultat. Fördelen med att följa React Arias
 konventioner är att det följer med mycket gratis i form av stöd för skärmläsare, tangentbordsnavigation och olika states.
 
 ### Skriv enhetstester
 
-Ur perspektivet att tillgänglighet är ett av designsystemets viktigaste fokusområden är det viktigt att vi regressionstestar.
-Använd <Link href='https://github.com/dequelabs/axe-core'>{'axe-core'}</Link> för att fånga upp problem innan de blir buggar. Det finns inget
-specificerat mål någon viss code coverage men ta inspiration från headless-biblioteken. Grundläggande funktion av komponenter
-bör också täckas av enhetstester.
+Ur perspektivet att tillgänglighet är ett av designsystemets viktigaste fokusområden är det viktigt att vi regressionstestar och testar
+så stor del av möjliga states av alla komponenter på enhetsnivå. MIDAS använder primärt
+[Storybook som testplattform](https://storybook.js.org/docs/writing-tests).
 
 ### Skapa stories
 
 I utgångspunkt bör alla states finnas representerade som stories i Storybook. Storybook är i första hand ett internt
-verktyg för UX och utvecklare i designsystemet men också en publikt exponerad referens för komponenterna.
+verktyg för UX och utvecklare i designsystemet men också en publikt exponerad referens med API och visuell
+representation av komponenterna.
 
 ### Dokumentation
 
 Komponenten dokumenteras på dokumentationswebben med lämpliga exempel, beskrivning och properties. Normalt plockas
-properties upp från komponenten via <Link href='https://github.com/styleguidist/react-docgen-typescript'>{'react-docgen-typescript'}</Link>
-men om det har införts nya types eller interfaces kan de behöva specificeras enligt <Link href='https://jsdoc.app/'>{'JSDoc'}</Link>.
+properties upp från komponenten via [react-docgen-typescript](https://github.com/styleguidist/react-docgen-typescript)
+men om det har införts nya types eller interfaces kan de behöva specificeras enligt [JSDoc](https://jsdoc.app/).
 
 ---
 
-## Release & publish
-
-Designsystemet använder Nx för versionshantering och release enligt <Link href='https://nx.dev/recipes/nx-release/get-started-with-nx-release'>{'nx release'}</Link>.
-När du kör `nx release --skip-publish` räknas komponentbiblioteket upp till rätt version
-och Nx gör en commit med uppdaterad changelog samt sätter en git tag med rätt versionsnummer.
-
-```bash
-nx release --skip-publish --dry-run // remove dry-run when you know it works
-```
-
-Kontrollera att allt stämmer, gör release utan `--dry-run`, skapa en release-branch och pusha till remote.
-
-```bash
-git checkout -b release/[insert version number here]
-git push -u origin release/[insert version number here] --follow-tags
-```
-
-När en ny tag `v{x.x.x}` finns på remote triggas ett workflow med publicering till NPM.
-För att slutföra release, gör en PR till main och gör en **merge** när den är godkänd. Observera
-att du _inte_ ska göra en rebase eftersom git tags då inte är kopplade till rätt commit och
-Nx kan inte längre räkna ut vilken version som är aktuell.
-
----
-
-## Arbetsflöde
+## Arbetsflöde versionshantering
 
 ```mermaid
-flowchart LR;
-    A1-->B1
-    B1-->B2
-    B2-->|GH Action|C1
-    B2-->E1
-    E1-->|GH Action|C2
-    E1-->|Triggered manually|D1
-    E1-->|Triggered on release|F1
-    subgraph "Jira"
-        A1@{ shape: procs, label: "Tickets"}
-    end
-    subgraph "GitHub"
-        subgraph "Repo"
-            B1@{ shape: procs, label: "Brancher [type/scope/desc]"}
-            B2@{ shape: procs, label: "Pull requests [pr-xxx]"}
-        end
-        subgraph "Pages"
-            C1@{ shape: div-rect, label: "/pr-preview/pr-xxx" }
-            C2@{shape: div-rect, label: "designsystem.migrationsverket.se"}
-        end
-        subgraph "Releases"
-            D1@{ shape: procs, label: "Release vX.X.X"}
-        end
-        E1["Godkänd PR"]
-    end
-    subgraph "npm"
-        F1["@midas-ds/components"]
-    end
+    gitGraph
+       commit tag: "8.7.4"
+       commit
+       branch dev
+       commit
+       commit
+       commit
+       branch feature
+       commit
+       commit
+       checkout dev
+       merge feature
+       checkout main
+       merge dev tag: "8.8.0" type: HIGHLIGHT
+       checkout dev
+       merge main
+       branch bugfix
+       commit
+       checkout dev
+       merge bugfix
+       checkout main
+       merge dev id: "trigger release" type: HIGHLIGHT tag: "8.8.1"
+       commit
+
 ```

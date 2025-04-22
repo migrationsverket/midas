@@ -7,20 +7,6 @@ import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link } from '@midas-ds/components'
 import { semantic } from '@midas-ds/components/theme'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const r = (Math.random() + 1).toString(36).substring(7)
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Link }}
-      {...props}
-    >
-      {`<p>Varannan vecka släpper vi en ny release, vilket du kan <Link href="/blog?v=${r}">läsa mer om här.</Link></p>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Link'}
@@ -29,7 +15,17 @@ export const Example = props => {
 
 Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående.
 
-<Example hideCode />
+```tsx title=Link
+<p>
+  I vår
+  <Link href='/changelog'>Changelog</Link>
+  dokumenterar vi de senaste ändringarna i komponenterna.
+</p>
+```
+
+<div className={'card'}>
+  I vår <Link href='/changelog'>Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.
+</div>
 
 ## Installation
 
@@ -37,62 +33,105 @@ Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående
 npm install @midas-ds/components
 ```
 
-```tsx
+```jsx
 import { Link } from '@midas-ds/components'
 ```
-
-<Example hideExample />
 
 ## Varianter
 
 ### Länk
 
-<LiveCodeBlock scope={{ Link }}>
-  {`<p>Designsystemet utvecklas ständigt, <Link href="/blog?v=${r}">vilket du kan läsa mer om här i vår releasefeed.</Link> Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>`}
-</LiveCodeBlock>
+```tsx {3} title="default"
+<p>
+  Designsystemet utvecklas ständigt,
+  <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>
+  Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
+</p>
+```
+
+<div className={'card'}>
+  Designsystemet utvecklas ständigt, <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>. Vi släpper
+  kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
+</div>
 
 ### Fristående
 
 Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
 
-<LiveCodeBlock scope={{ Link }}>
-  {`<>
-    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter.</p>
+```tsx title="standalone"
+<p>
+  Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.
+</p>
+<Link
+  // highlight-start
+  standalone
+  // highlight-end
+  href="/changelog"
+>
+  Se vad som har ändrats i senaste versionen
+</Link>
+```
+
+<div className={'card'}>
+  Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya
+  funktioner på befintliga komponenter.
+  <Link
+    standalone
+    href='/changelog'
+  >
+    {'Se vad som har ändrats i senaste versionen'}
+  </Link>
+</div>
+
+### Stretched
+
+Använd `stretched` för att låta hela föräldraelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
+
+```tsx title="stretched"
+<div style={{ position: 'relative' }}>
+  <p>
+    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
+    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
+    ytan.
+  </p>
+  <Link
+    standalone
+    //highlight-start
+    stretched
+    //highlight-end
+    href='/#'
+  >
+    Läs mer om designsystemets nyheter
+  </Link>
+</div>
+```
+
+<div className={'card'}>
+  <div
+    style={{
+      position: 'relative',
+      background: semantic.layer02,
+      padding: '1rem',
+    }}
+  >
+    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
+    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
+    ytan.
     <Link
-        standalone
-        href="/blog?v=${r}"
+      standalone
+      stretched
+      href='#'
     >
-        Läs mer om designsystemets nyheter
+      {'Läs mer om designsystemets nyheter'}
     </Link>
-</>`}
-</LiveCodeBlock>
-
-### "Utsträckt"
-
-Använd `stretched` för att låta hela förälderelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
-
-<LiveCodeBlock scope={{ Link, semantic }}>
-  {`<div
-      style={{
-        position: 'relative',
-        background: semantic.layer01,
-        padding: '1rem'
-      }}
-    >
-    <p>Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa ytan.</p>
-    <Link
-        standalone
-        stretched
-        href="/blog?v=${r}"
-    >
-        Läs mer om designsystemets nyheter
-    </Link>
-</div>`}
-</LiveCodeBlock>
+  </div>
+</div>
 
 ## Riktlinjer
 
-Se mönstret <Link href='/design-patterns/buttons-and-links'>{'Knappar och länkar'}</Link>
+### Val av komponent
+
+Se mönstret [Knappar och länkar](/design-patterns/buttons-and-links)
 
 ## API
 

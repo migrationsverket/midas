@@ -3,24 +3,27 @@ title: Mörkt läge
 description: Hantera mörkt i designsystemet
 ---
 
-import { Link } from '@midas-ds/components'
+import { ColorSchemeSwitch } from '@midas-ds/components'
 
 # Dark Mode / Mörkt läge
 
 Från och med version `5.0.0` finns våra komponenter både ljust och mörkt tema. Det innebär att designsystemets komponenter kan anpassa sig till användarens inställningar för mörkt läge i operativsystemet eller webbläsaren. Detta sker automatiskt om du använder vår globala stylesheet `global.css`.
 
-<Link
-  standalone
-  href='/get-started/use/#installera-inter-som-typsnitt'
->
-  {'Läs mer om hur du installerar global.css'}
-</Link>
+```tsx {1} title="App.tsx (rootfilen i din app)"
+import '@midas-ds/components/global.css'
+
+export default function App({ children }) {
+  return <main>{children}</main>
+}
+
+export default App
+```
 
 ## Kontrollera val av tema
 
 Om projektet har uppdaterat `@midas-ds/components` och använder vår globala stylesheet så följer komponenterna automatiskt användarens inställningar. Om du manuellt vill styra temat, t.ex. om ert projekt inte är redo att stödja mörkt läge, kan du stänga av mörkt läge genom att ändra färgschemat i CSS på vilken nivå som passar projektet.
 
-```css
+```css {2}
 body {
   color-scheme: light;
 }
@@ -28,10 +31,39 @@ body {
 
 Använder du inte vår globala stylesheet kan du aktivera mörkt läge genom att definera bägge färgscheman.
 
-```css
+```css {2}
 body {
   color-scheme: light dark;
 }
+```
+
+### ColorSchemeSwitch
+
+Vi erbjuder även en komponent för att låta användaren kontrollera val av tema i applikationen.
+
+```tsx
+import { ColorSchemeSwitch } from '@midas-ds/components'
+```
+
+```tsx
+<ColorSchemeSwitch />
+```
+
+<div className='card'>
+  <ColorSchemeSwitch selector='#dark-mode-target' />
+  <div id='dark-mode-target' />
+</div>
+
+ColorSchemeSwitch justerar `color-scheme` värdet på body-elementet. Du kan justera vilken selector som skall användas om color-scheme i din applikation är definerad på en annan DOM-nod. Detta kan du göra genom att skcika in en egen selector i `selector`.
+
+```tsx
+<ColorSchemeSwitch selector='main' />
+```
+
+Komponenten accepterar tre värden. `light`, 'dark', och `light dark` dvs enbart ljust läge, enbart mörkt läge eller följ systemets inställningar. Default är `light dark`. Om din app vill att ett specifikt tema är standardvalet kan du skicka in defaultvärdet direkt i `defaultValue`.
+
+```tsx
+<ColorSchemeSwitch defaultValue='dark' />
 ```
 
 ## Tokens
@@ -42,8 +74,8 @@ Du kan fortfarande använda tokens för att importera färger på egen hand. Obs
 import { semantic, baseColors } from '@midas-ds/components/theme'
 ```
 
-```tsx
-<div style={{ backgroundColor: semantic.background01 }}>
+```tsx {1,2,5}
+<div style={{ backgroundColor: semantic.background }}>
   <p style={{ color: semantic.textPrimary }}>
     En text som är mörk i ljust läge men ljus i mörkt läge på en bakgrund som gör tvärt om!
   </p>

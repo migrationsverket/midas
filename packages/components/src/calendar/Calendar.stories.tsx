@@ -1,22 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Calendar } from './Calendar'
 
-const meta: Meta<typeof Calendar> = {
+type Story = StoryObj<typeof Calendar>
+
+export default {
   component: Calendar,
   title: 'Components/Calendar',
   tags: ['autodocs'],
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
-  },
-}
-export default meta
-type Story = StoryObj<typeof Calendar>
+} as Meta<typeof Calendar>
 
-export const Primary: Story = {
-  args: {},
-}
+export const Primary: Story = {}
 
 export const Disabled: Story = {
   args: {

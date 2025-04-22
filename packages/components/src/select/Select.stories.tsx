@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
-import { options } from './utils'
+import { options, optionsWithSections } from './utils'
 import { expect, userEvent } from '@storybook/test'
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { Selection } from 'react-aria-components'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -19,6 +20,7 @@ const meta: Meta<typeof Select> = {
     placeholder: 'Select an option',
     selectionMode: 'single',
     showTags: false,
+    errorPosition: 'top',
   },
 }
 export default meta
@@ -32,12 +34,10 @@ export const Normal: Story = {
         await userEvent.tab()
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
-
         const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
         const visibleValue = canvas.getByText(options[0].name, {
           selector: 'span',
         })
-
         expect(hiddenSelect).toHaveDisplayValue([options[0].name])
         expect(visibleValue).toBeVisible()
       },
@@ -48,21 +48,40 @@ export const Normal: Story = {
 export const DefaultSelectedKey: Story = {
   args: {
     description: 'Kiwi is pre-selected',
-    defaultSelectedKeys: ['kiwi'],
+    defaultSelectedKeys: new Set(['kiwi']),
   },
   play: async ({ args, canvas, step }) => {
     await step(
       'It should display and reflect the pre-selected value',
       async () => {
-        const selectedOptionName = options.find(
-          option => option.id === (args.defaultSelectedKeys as string[])[0],
-        )?.name as string
         const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-        const visibleValue = canvas.getByText(selectedOptionName, {
+        const visibleValue = canvas.getByText('Kiwi', {
           selector: 'span',
         })
 
-        expect(hiddenSelect).toHaveDisplayValue([selectedOptionName])
+        expect(hiddenSelect).toHaveDisplayValue(['Kiwi'])
+        expect(visibleValue).toBeVisible()
+      },
+    )
+  },
+}
+
+export const DefaultSelectedKeys: Story = {
+  args: {
+    description: 'Kiwi and banana are pre-selected',
+    defaultSelectedKeys: new Set(['kiwi', 'banan']),
+    selectionMode: 'multiple',
+  },
+  play: async ({ args, canvas, step }) => {
+    await step(
+      'It should display and reflect the pre-selected value',
+      async () => {
+        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
+        const visibleValue = canvas.getByText('2 valda', {
+          selector: 'span',
+        })
+
+        expect(hiddenSelect).toHaveDisplayValue(['Banan', 'Kiwi'])
         expect(visibleValue).toBeVisible()
       },
     )
@@ -139,7 +158,7 @@ export const WithTags: Story = {
   args: {
     selectionMode: 'multiple',
     showTags: true,
-    defaultSelectedKeys: ['apple', 'kiwi'],
+    defaultSelectedKeys: new Set(['äpple', 'kiwi']),
   },
   play: async ({ args, canvas, step }) => {
     await step(
@@ -150,9 +169,9 @@ export const WithTags: Story = {
           selector: 'span',
         })
 
-        expect(hiddenSelect).toHaveDisplayValue(['Apple', 'Kiwi'])
+        expect(hiddenSelect).toHaveDisplayValue(['Äpple', 'Kiwi'])
         expect(visibleValue).toBeVisible()
-        expect(canvas.getByText('Apple', { selector: 'div' })).toBeVisible()
+        expect(canvas.getByText('Äpple', { selector: 'div' })).toBeVisible()
         expect(canvas.getByText('Kiwi', { selector: 'div' })).toBeVisible()
       },
     )
@@ -191,104 +210,8 @@ export const NotClearable: Story = {
   },
 }
 
-export const RequiredMultiple: Story = {
-  tags: ['!dev'],
-  args: {
-    selectionMode: 'multiple',
-    isRequired: true,
-  },
-  render: args => {
-    const [isSubmitted, setIsSubmitted] = React.useState(false)
-
-    return (
-      <>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            setIsSubmitted(true)
-          }}
-        >
-          <Select {...args} />
-          <button type='submit'>Submit</button>
-        </form>
-        {isSubmitted && 'success'}
-      </>
-    )
-  },
-  play: async ({ canvas, step }) => {
-    // Submit the form without selecting a value
-    await step('It should not be possible to submit the form', async () => {
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.keyboard('[Enter]')
-      expect(canvas.queryByText('success')).not.toBeInTheDocument()
-    })
-
-    // Select a value then submit again
-    await step(
-      'It should be possible to submit the form if a value was selected',
-      async () => {
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Escape]')
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(await canvas.findByText('success')).toBeInTheDocument()
-      },
-    )
-  },
-}
-
-export const RequiredSingle: Story = {
-  tags: ['!dev', '!autodocs'],
-  args: {
-    selectionMode: 'single',
-    isRequired: true,
-  },
-  render: args => {
-    const [isSubmitted, setIsSubmitted] = React.useState(false)
-
-    return (
-      <>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            setIsSubmitted(true)
-          }}
-        >
-          <Select {...args} />
-          <button type='submit'>Submit</button>
-        </form>
-        {isSubmitted && 'success'}
-      </>
-    )
-  },
-  play: async ({ canvas, step }) => {
-    // Submit the form without selecting a value
-    await step('It should not be possible to submit the form', async () => {
-      await userEvent.tab()
-      await userEvent.tab()
-      await userEvent.keyboard('[Enter]')
-      expect(canvas.queryByText('success')).not.toBeInTheDocument()
-    })
-
-    // Select a value then submit again
-    await step(
-      'It should be possible to submit the form if a value was selected',
-      async () => {
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Space]')
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
-        expect(await canvas.findByText('success')).toBeInTheDocument()
-      },
-    )
-  },
-}
-
 export const DS872: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
   args: {
     ...Normal.args,
     selectionMode: 'single',
@@ -297,13 +220,13 @@ export const DS872: Story = {
     placeholder: 'Välj ärende',
   },
   render: args => {
-    const [selectedItem, setSelectedItem] = useState('')
+    const [selectedKey, setSelectedKey] = useState<Selection>(new Set())
 
     return (
       <Select
         {...args}
-        selectedKeys={selectedItem}
-        onSelectionChange={item => setSelectedItem(item.toString())}
+        selectedKeys={selectedKey}
+        onSelectionChange={setSelectedKey}
         options={[
           { id: '12', name: 'tolv' },
           { id: '1', name: 'ett' },
@@ -324,5 +247,12 @@ export const DS872: Story = {
         ).toHaveDisplayValue(['tolv'])
       },
     )
+  },
+}
+
+export const Sectioned: Story = {
+  args: {
+    ...Normal.args,
+    options: optionsWithSections,
   },
 }

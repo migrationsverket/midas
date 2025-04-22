@@ -3,27 +3,9 @@ title: ComboBox
 description: Sökbar version av Select
 ---
 
+import { BasicExample, ControlledExample } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ComboBox, ComboBoxItem, Link } from '@midas-ds/components'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ ComboBox, ComboBoxItem }}
-      {...props}
-    >
-      {`<ComboBox
-          label="Vad är din favoritfrukt?"
-          placeholder="Välj en frukt"
-          items={fruits.map(fruit => {return {id: fruit.value, name: fruit.name}})}
-        >
-          {(item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
-      </ComboBox>`}
-    </LiveCodeBlock>
-  )
-}
 
 <ComponentHeader
   name={'Combobox'}
@@ -33,7 +15,20 @@ export const Example = props => {
 
 En ComboBox är en sökbar version av Select. Combobox används för att välja **ett** alternativ av fler än fyra (4) alternativ.
 
-<Example hideCode />
+```tsx
+<ComboBox
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+>
+  <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
+  <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
+  <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
+  <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
+  <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+</ComboBox>
+```
+
+<BasicExample />
 
 ## Installation
 
@@ -45,14 +40,81 @@ npm install @midas-ds/components
 import { ComboBox } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Kontrollerat val
+
+Använd attributet `id` och eventet `onSelectionChange` för att använda controlled value på ComboBox.
+Den valda combobox item värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
+
+```tsx
+import React from 'react'
+import { Key } from 'react-aria-components'
+
+const [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)
+
+return (
+  <ComboBox
+    label='Välj din favoritfrukt'
+    description='Du kan bara välja en'
+    selectedKey={selectedFruit}
+    onSelectionChange={setSelectedFruit}
+  >
+    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>
+    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>
+    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>
+    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>
+    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>
+  </ComboBox>
+)
+```
+
+<ControlledExample />
 
 ## Riktlinjer
 
 ### Val av komponent
 
-- Om det ska gå att välja flera eller inget alternativ är det <Link href='/components/checkbox'>{'Checkbox'}</Link> eller <Link href='/components/select'>{'Select'}</Link> som ska användas.
-- Om det är färre alternativ än fyra (4) används med fördel <Link href='/components/radio'>{'Radio'}</Link> istället.
+- Om det ska gå att välja flera eller inget alternativ är det [Checkbox](/components/checkbox) eller [Select](/components/select) som ska användas.
+- Om det är färre alternativ än fyra (4) används med fördel [Radio](/components/radio) istället.
+
+## Sektioner
+
+Strukturera om alternativen i nestade sektioner genom att strukturera options på följande sätt
+
+```ts
+const options = [
+  {
+    name: 'Grönsaker',
+    id: 123,
+    children: [
+      { name: 'Morot', id: 2 },
+      { name: 'Broccoli', id: 3 },
+      { name: 'Spenat', id: 4 },
+      { name: 'Potatis', id: 5 },
+      { name: 'Tomat', id: 6 },
+    ],
+  },
+  {
+    name: 'Frukter',
+    id: 1234,
+    children: [
+      { name: 'Äpple', id: 11 },
+      { name: 'Banan', id: 12 },
+      { name: 'Kiwi', id: 13 },
+      { name: 'Fläder', id: 14 },
+      { name: 'Nektarin', id: 15 },
+    ],
+  },
+]
+```
+
+```tsx
+<ComboBox
+  label='Välj din favoritfrukt'
+  description='Du kan bara välja en'
+>
+  {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+</ComboBox>
+```
 
 ## API
 

@@ -7,12 +7,14 @@ import styles from '../Layout.module.css'
 import { SidebarLinkProps } from '../Layout'
 import * as React from 'react'
 import { useLayoutContext } from '../context/LayoutContext'
+import { Badge, BadgeContainer } from '../../badge'
 
 export const SidebarLink: React.FC<SidebarLinkProps> = ({
   title,
   href,
   icon: IconComponent,
   active,
+  hasBadge,
 }) => {
   const { isCollapsed, setIsOpened } = useLayoutContext()
   const [isActive, setIsActive] = React.useState<boolean>(false)
@@ -34,12 +36,15 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
             styles.listLinkCollapsed,
             isActive && styles.active,
           )}
-          onPress={() => setIsOpened(false)}
+          onPress={() => setIsOpened?.(false)}
         >
-          <IconComponent
-            size={20}
-            aria-label={title}
-          />
+          <BadgeContainer>
+            <IconComponent
+              size={20}
+              aria-label={title}
+            />
+            {hasBadge && <Badge />}
+          </BadgeContainer>
         </Link>
         <Tooltip placement='right'>{title}</Tooltip>
       </TooltipTrigger>
@@ -50,9 +55,12 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
       href={href}
       aria-label={title}
       className={clsx(styles.listLink, isActive && styles.active)}
-      onPress={() => setIsOpened(false)}
+      onPress={() => setIsOpened?.(false)}
     >
-      <IconComponent size={20} />
+      <BadgeContainer>
+        <IconComponent size={20} />
+        {hasBadge && <Badge />}
+      </BadgeContainer>
       {title}
     </Link>
   )

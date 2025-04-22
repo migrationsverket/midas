@@ -11,6 +11,7 @@ import { Text } from '../text'
 import { Button } from '../button'
 import { Pen, X } from 'lucide-react'
 import { Link } from '../link'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -21,7 +22,26 @@ const meta: Meta<typeof Card> = {
 export default meta
 type Story = StoryObj<typeof Card>
 
-export const Primary: Story = {
+export const Example: Story = {
+  parameters: {
+    a11y: {
+      test: 'todo',
+    },
+  },
+  play: async ({ canvas, step }) => {
+    await step('It should be possible to focus the link', async () => {
+      const link = canvas.getByText('Läs mer om Card')
+      expect(link).not.toHaveFocus()
+
+      // focus the link
+      await userEvent.tab()
+
+      expect(link).toHaveFocus()
+    })
+  },
+}
+
+export const WithBackground: Story = {
   args: {
     children: (
       <CardContent>
@@ -44,21 +64,21 @@ export const Primary: Story = {
 
 export const Horizontal: Story = {
   args: {
-    ...Primary.args,
+    ...Example.args,
     horizontal: true,
   },
 }
 
 export const Editable: Story = {
   args: {
-    ...Primary.args,
+    ...Example.args,
     state: 'edit',
   },
 }
 
 export const Success: Story = {
   args: {
-    ...Primary.args,
+    ...Example.args,
     status: 'success',
   },
 }

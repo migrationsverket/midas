@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --background-01, --border-strong, --layer-01, --border-subtle, --notification-background-success, --notification-border-success, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
+@value --font-family, --background, --border-primary, --layer-01, --border-subtle, --support-background-success, --support-border-success, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
 
 .card {
   font-family: --font-family;
@@ -8,13 +8,13 @@
   border-bottom: 1px solid --border-subtle;
 
   &.cardEditable {
-    background-color: --background-01;
-    border: 2px solid --border-strong;
+    background-color: --background;
+    border: 2px solid --border-primary;
   }
 
   &.cardSuccess {
-    background-color: --notification-background-success;
-    border-bottom-color: --notification-border-success;
+    background-color: --support-background-success;
+    border-bottom-color: --support-border-success;
   }
 
   &.horizontal {

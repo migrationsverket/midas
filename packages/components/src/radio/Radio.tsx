@@ -6,10 +6,10 @@ import styles from './Radio.module.css'
 import {
   RadioGroup as AriaRadioGroup,
   RadioGroupProps,
-  ValidationResult,
   RadioProps,
   Radio as AriaRadio,
   Group,
+  ValidationResult,
 } from 'react-aria-components'
 import clsx from 'clsx'
 import { Label } from '../label'
@@ -24,6 +24,7 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   description?: string
   /** String to display as error message or function to handle the result and produce the error message */
   errorMessage?: string | ((validation: ValidationResult) => string)
+  errorPosition?: 'top' | 'bottom'
 }
 
 /**
@@ -35,6 +36,7 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   errorMessage,
   children,
   className,
+  errorPosition = 'top',
   ...props
 }) => {
   return (
@@ -44,8 +46,13 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
     >
       {label && <Label variant='label-02'>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
-      <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+      {errorPosition === 'top' && (
+        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+      )}
       <Group className={styles.wrap}>{children}</Group>
+      {errorPosition === 'bottom' && (
+        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+      )}
     </AriaRadioGroup>
   )
 }

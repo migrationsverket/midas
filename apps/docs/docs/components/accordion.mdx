@@ -7,34 +7,61 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 import { PropTable } from '@site/src/components/propsTable'
 import { Accordion, AccordionItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
-
-export const Example = props => {
-  return (
-    <LiveCodeBlock
-      scope={{ Accordion, AccordionItem }}
-      {...props}
-    >
-      {`<Accordion>
-        {fruits.shuffled().map(fruit => (
-          <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-              {fruit.description}
-          </AccordionItem>
-        ))}
-      </Accordion>`}
-    </LiveCodeBlock>
-  )
-}
+import { AccordionExample, AccordionExampleControlled } from '@site/src/components/examples/accordion/AccordionExamples'
 
 <ComponentHeader
   name={'Accordion'}
   friendlyName={'Dragspel'}
-  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Disclosure.html'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html'
 />
 
 Utfällbar komponent som används för att minska informationsmängden som direkt presenteras för användaren.
 
-<Example hideCode />
+```tsx
+<Accordion>
+  <AccordionItem
+    id={'mandarin'}
+    title={'Mandarin'}
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id={'sharon'}
+    title={'Sharon'}
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id={'watermelon'}
+    title={'Vattenmelon'}
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
+```
+
+<div className={'card'}>
+  <Accordion>
+    <AccordionItem
+      id={'mandarin'}
+      title={'Mandarin'}
+    >
+      Liten orange citrusfrukt
+    </AccordionItem>
+    <AccordionItem
+      id={'sharon'}
+      title={'Sharon'}
+    >
+      Persikoliknande frukt med fast kött
+    </AccordionItem>
+    <AccordionItem
+      id={'watermelon'}
+      title={'Vattenmelon'}
+    >
+      Stor frukt med rött, saftigt kött
+    </AccordionItem>
+  </Accordion>
+</div>
 
 ## Installation
 
@@ -46,7 +73,11 @@ npm install @midas-ds/components
 import { Accordion, AccordionItem } from '@midas-ds/components'
 ```
 
-<Example hideExample />
+## Beskrivning
+
+**Accordion** bygger på React Arias [DisclosureGroup](https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html)
+medan **AccordionItem** är motsvarande [Disclosure](https://react-spectrum.adobe.com/react-aria/Disclosure.html). Se
+dokumentation för respektive komponent för fler detaljer.
 
 ## Egenskaper
 
@@ -56,47 +87,173 @@ Accordion har flertalet varianter och egenskaper.
 
 En tydligare variant av layouten när det finns en tydlig gräns mellan varje sektion.
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion variant="contained">
-    {fruits.shuffled().map(fruit => (
-      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-          {fruit.description}
-      </AccordionItem>
-    ))}
-</Accordion>`}
-</LiveCodeBlock>
+```tsx
+<Accordion variant={'contained'}>
+  {/* more items */}
+  <AccordionItem
+    id={'mandarin'}
+    title={'Mandarin'}
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+</Accordion>
+```
 
-### Flera öppna samtidigt
+<Accordion variant={'contained'}>
+  <AccordionItem
+    id={'mandarin'}
+    title={'Mandarin'}
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id={'sharon'}
+    title={'Sharon'}
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id={'watermelon'}
+    title={'Vattenmelon'}
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
 
-En accordion har som standard bara en öppet samtidigt och stänger automatiskt andra sektioner när en ny öppnas. Detta kan ändras genom att sätta `type` till `multiple`.
+### Status
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion type="multiple">
-    {fruits.shuffled().map(fruit => (
-      <AccordionItem key={fruit.value} id={fruit.value} title={fruit.name}>
-          {fruit.description}
-      </AccordionItem>
-    ))}
-</Accordion>`}
-</LiveCodeBlock>
+AccordionItems kan ha en status för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla uppmärksamhet till att det t.ex finns fler åtgärder att utföra.
 
-### Öppen som standard
+```tsx {6,13}
+<Accordion variant='contained'>
+  {/* more items */}
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+    type='success'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id='sharon'
+    title='Sharon'
+    type='warning'
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+</Accordion>
+```
 
-En accordion kan ha en eller flera sektioner öppna som standard. Detta görs genom att sätta `defaultExpandedKeys` på `Accordion`. Detta är en array med nycklar för de sektioner som ska vara öppna som standard. Nycklarna bestäms med `id` på respektive `AccordionItem`.
+<Accordion variant='contained'>
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+    type='success'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id='sharon'
+    title='Sharon'
+    type='warning'
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id='watermelon'
+    title='Vattenmelon'
+    type='default'
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
 
-<LiveCodeBlock scope={{ Accordion, AccordionItem }}>
-  {`<Accordion type="multiple" defaultExpandedKeys={[2]}>
-    {fruits.shuffled().map((fruit, i) => (
-      <AccordionItem key={fruit.value} id={i} title={fruit.name}>
-          {fruit.description}
-      </AccordionItem>
-    ))}
-  </Accordion>`}
-</LiveCodeBlock>
+### Multiple
 
-## Riktlinjer
+En accordion har som standard bara en öppet samtidigt och stänger automatiskt andra sektioner när en ny öppnas.
+Detta kan ändras genom att sätta prop `allowsMultipleExpanded`.
 
-- Dragspelet är komprimerat som standard och expanderas genom att klicka på rubrikytan.
+```tsx
+<Accordion allowsMultipleExpanded>
+  <AccordionItem>...</AccordionItem>
+</Accordion>
+```
+
+<AccordionExample allowsMultipleExpanded />
+
+### Uncontrolled expanded
+
+En Accordion kan ha en eller flera sektioner öppna som förvalt värde. Detta görs genom att sätta `defaultExpandedKeys`
+på `Accordion`. Värdena i defaultExpandedKeys måste matcha `id` på de AccordionItem som du vill expandera.
+
+```tsx
+<Accordion defaultExpandedKeys={['sharon']}>
+  <AccordionItem
+    id={'mandarin'}
+    title={'Mandarin'}
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id={'sharon'}
+    title={'Sharon'}
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id={'watermelon'}
+    title={'Vattenmelon'}
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
+```
+
+<AccordionExample defaultExpandedKeys={['sharon']} />
+
+### Controlled expanded
+
+En controlled Accordion kan expanderas programmatiskt med `expandedKeys` och `onExpandedChange`.
+Värdena i `expandedKeys` måste matcha `id` på de AccordionItem-komponenter du vill expandera.
+
+```tsx
+//highlight-next-line
+const [expandedKeys, setExpandedKeys] =
+React.useState<Set<Key>>(new Set(['mandarin']))
+
+<Accordion
+//highlight-start
+  expandedKeys={expandedKeys}
+  onExpandedChange={setExpandedKeys}
+//highlight-end
+  type={'multiple'}
+>
+  <AccordionItem
+    {...props}
+    id={'mandarin'}
+    title={'Mandarin'}
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id={'sharon'}
+    title={'Sharon'}
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id={'watermelon'}
+    title={'Vattenmelon'}
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
+<pre>
+Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}
+</pre>
+```
+
+<AccordionExampleControlled type={'multiple'} />
 
 ## API
 

@@ -1,9 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --field-disabled, --text-primary, --text-invalid, --border-invalid, --border-strong, --field-01, --field-hover-01, --font-family, --text-disabled from tokens;
-
-* {
-  font-family: --font-family;
-}
+@value --focus, --field-disabled, --text-primary, --border-invalid, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
 .textField {
   display: grid;
@@ -11,18 +7,22 @@
   grid-auto-rows: 1fr 1fr;
   grid-template-columns: 1fr auto;
   grid-template-rows: min-content min-content min-content min-content;
-  gap: 0.25rem 0.5rem;
   grid-template-areas:
     'Label Count'
     'Desc Count'
     'Error Count'
-    'Input Input';
+    'Input Input'
+    'BottomError BottomError';
   height: 100%;
   width: 100%;
   align-content: flex-end;
 
-  [slot='description'] {
+  > [slot='description'] {
     grid-area: Desc;
+  }
+
+  > .bottomError {
+    grid-area: BottomError;
   }
 
   &[data-disabled] {
@@ -32,9 +32,10 @@
 
 .textArea {
   all: unset;
+  font-family: --font-family;
   display: flex;
   grid-area: Input;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
@@ -83,9 +84,10 @@
 
 .input {
   all: unset;
+  font-family: --font-family;
   grid-area: Input;
   color: --text-primary;
-  border-bottom: 1px solid --border-strong;
+  border-bottom: 1px solid --border-primary;
   min-height: 48px;
   font-size: 1rem;
   padding-left: 1rem;
@@ -131,7 +133,7 @@
   display: flex;
   align-items: center;
   top: 3px;
-  z-index: 2;
+  z-index: --z-index-base;
   left: 1rem;
   height: calc(100% - 6px);
   width: calc(100% - 2rem);
@@ -146,5 +148,5 @@
   top: 0;
   box-sizing: border-box;
   cursor: pointer;
-  z-index: 3;
+  z-index: calc(--z-index-base + --z-index-above);
 }
