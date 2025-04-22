@@ -106,7 +106,8 @@ export const spacing = {
 }
 
 export const states = {
-  focus: '0 0 0 2px white, 0 0 0 4px black',
+  focus:
+    '0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',
 }
 
 export const transitions = {
