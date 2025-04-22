@@ -2,7 +2,7 @@
 title: Text
 ---
 
-import { Text, Label } from '@midas-ds/components'
+import { Text, Label, Input } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -89,7 +89,7 @@ I Midas används `Text` internt i formulärkomponenter för att skriva ut en hj�
 // highlight-start
 <Text slot="description">Både för och efternamn</Text>
 // highlight-end
-<input id="name" />
+<Input id="name" />
 ```
 
 <div className='card'>
@@ -100,10 +100,7 @@ I Midas används `Text` internt i formulärkomponenter för att skriva ut en hj�
     {'Fullständigt namn'}
   </Label>
   <Text slot='description'>Både för och efternamn</Text>
-  <input
-    id='name'
-    style={{ maxWidth: 200 }}
-  />
+  <Input id='name' />
 </div>
 
 ## API
