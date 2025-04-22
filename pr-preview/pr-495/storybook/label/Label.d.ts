@@ -2,7 +2,7 @@ import { LabelProps as AriaLabelProps } from 'react-aria-components';
 import * as React from 'react';
 export interface LabelProps extends AriaLabelProps {
     /**
-     * @deprecated This prop is no longer used. The label is always styled for dark backgrounds.
+     * @deprecated Please use Label without variant.
      */
     variant?: 'label-02';
 }
