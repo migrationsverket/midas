@@ -24,48 +24,30 @@
     transform: var(--origin);
     opacity: 0;
   }
-}
-
-.tooltip[data-placement^='top'] {
-  margin-bottom: 8px;
-
-  --origin: translateY(4px);
-}
-
-.tooltip[data-placement^='bottom'] {
-  margin-top: 8px;
-
-  --origin: translateY(-4px);
-
-  .arrow svg {
-    transform: rotate(180deg);
+  &[data-placement=top] {
+    margin-bottom: 8px;
+    --origin: translateY(4px);
   }
-}
-
-.tooltip[data-placement^='right'] {
-  margin-left: 8px;
-
-  --origin: translateX(-4px);
-
-  & .arrow svg {
-    transform: rotate(90deg);
+  &[data-placement=bottom] {
+    margin-top: 8px;
+    --origin: translateY(-4px);
+    .arrow svg {
+      transform: rotate(180deg);
+    }
   }
-}
-
-.tooltip[data-placement^='left'] {
-  margin-right: 8px;
-
-  --origin: translateX(4px);
-
-  & .arrow svg {
-    transform: rotate(-90deg);
+  &[data-placement=right] {
+    margin-left: 8px;
+    --origin: translateX(-4px);
+    & .arrow svg {
+      transform: rotate(90deg);
+    }
   }
-}
+  &[data-placement=left] {
+    margin-right: 8px;
+    --origin: translateX(4px);
 
-.tooltip[data-placement$='start'] {
-  transform-origin: top left;
-}
-
-.tooltip[data-placement$='end'] {
-  transform-origin: top right;
+    & .arrow svg {
+      transform: rotate(-90deg);
+    }
+  }
 }
