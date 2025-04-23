@@ -1,3 +1,17 @@
+### 8.1.0
+
+#### 🚀 Features
+
+- **accordion:** accordion status ✅ / 🚨 ([#485](https://github.com/migrationsverket/midas/pull/485))
+
+#### 🩹 Fixes
+
+- **theme:** add dark mode focus ([#483](https://github.com/migrationsverket/midas/pull/483))
+- **modal:** make text in modal selectable ([#490](https://github.com/migrationsverket/midas/pull/490))
+- **accordion:** rename invalid token ([e4b13c928](https://github.com/migrationsverket/midas/commit/e4b13c928))
+- **select:** remove explicit size for indeterminate symbol ([5f805c134](https://github.com/migrationsverket/midas/commit/5f805c134))
+- **select:** change checkbox size to prevent disappearing border ([3ab520633](https://github.com/migrationsverket/midas/commit/3ab520633))
+
 ## 8.0.0
 
 #### 🚀 Features
