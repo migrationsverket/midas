@@ -1,1 +1,2 @@
-export { ComboBox, ComboBoxItem } from './ComboBox';
+export { ComboBox, ComboBoxItem, ComboBoxSelection } from './ComboBox';
+export type { Section, Item } from './types';
