@@ -1,0 +1,187 @@
+---
+sidebar_label: 'Bidra'
+---
+
+# Bidra till komponentbiblioteket
+
+Att komma igång och bidra med kod till Midas är enkelt!
+
+## Du behöver
+
+- En normalt fungerande WSL eller motsvarande setup med Node version >22.
+- [Nx](https://nx.dev) installerat globalt `npm install --global nx@latest`
+
+```bash
+npm install
+```
+
+### Starta Storybook
+
+```bash
+nx run components:storybook
+```
+
+### Starta Playground-appen (React)
+
+Kan användas för att testa komponenter i ett sammanhang utanför Storybook.
+
+```bash
+nx serve playground
+```
+
+Vi har även en remix och en next.js-app uppsatta - byt playground mot `remix|next`
+
+### Komponentbibliotek
+
+Alla komponenter ligger under `/packages/components` och exporteras som ett npm-paket [`@midas-ds/components`](https://www.npmjs.com/package/@midas-ds/components).
+
+- Kör enhetstester för komponentbiblioteket
+
+```bash
+nx test components
+```
+
+### Dokumentationswebb
+
+Dokumentationswebben ligger i `apps/docs` och är byggd med [Docusaurus](https://docusaurus.io/).
+
+- Kör dokumentationen lokalt:
+
+```bash
+nx serve docs
+```
+
+### Bygg komponentbibliotek
+
+Komponentbibliotek och appar kan byggas med:
+
+```shell
+nx build <namn>
+```
+
+och allt som byggs hamnar i `/dist`. Om du vill testa utanför monorepot går det att zippa med `npm pack` och installera i
+separat app med `npm install [sökväg]`.
+
+## Instruktioner för Git
+
+### Branch
+
+Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/`, till exempel `feature/button`.
+
+### Commit
+
+Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
+imperativ form, definiera type `feat|docs|fix|refactor|test|ci` och scope `(button|etc...)` och lägg till referenser
+till andra issues vid behov. Tänk på att även en merge (med squash) skapar en commit så lägg en extra tanke på
+vilken information som kommer med och inte kommer med. Våra commits är hela projektets historik och är indata till
+changelogs och release notes så lägg gärna en extra minut på att vara tydlig.
+
+#### Varför conventional commits?
+
+    - Generera automatisk CHANGELOG
+    - Automatiskt bestämma `semantic version`
+    - Kommunicera inom team och till andra intressenter vad förändringen gäller.
+    - Trigga byggen och andra åtgärder.
+    - Bidra till att hålla en konsekvent och strukturerad historik.
+
+#### Commit message på en rad
+
+`docs(lang): add Swedish language`
+
+#### Commit message med header och body
+
+```
+fix: prevent red color on button hover
+
+Introduce new css variable to automatically
+select style based on input type
+
+```
+
+Ta dig gärna tid att läsa igenom [conventional commit summary](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)
+och försök jobba enligt det flödet.
+
+:::tip
+
+- Jobbar du ensam i en feature branch och vill städa upp? Använd `git rebase -i`
+- Har du en feature branch som egentligen bara rör ett fåtal områden? Då kanske du vill vara mindre strikt
+  med commits och använda `git squash` istället
+  :::
+
+## Bygga komponenter
+
+### Styleguide
+
+Generellt, använd övriga komponenter som referens när nya läggs till. React Aria är en bra inspiration för namngivning
+och struktur, både via deras ostylade komponentbibliotek och via sin designsystemsimplementation
+[React Spectrum](https://github.com/adobe/react-spectrum/tree/main/packages/%40react-spectrum).
+
+- Målet är små funktioner, små komponenter, clean code. Det uppmuntras att hela tiden göra inkrementella förbättringar
+- Formatera enligt [Prettier](https://prettier.io/) standard
+- Importera och använd tokens i `[component].module.css` enligt
+
+```css title="Button.module.css"
+// highlight-start
+@value tokens: "../theme/tokens.css";
+@value --button-background-primary from tokens;
+// highlight-end
+.button {
+    background-color: --button-background-primary;
+}
+```
+
+### Importera headless-bibliotek
+
+Komponenter ska i första hand byggas på [React Aria](https://react-spectrum.adobe.com/react-aria/getting-started.html) i den mån det går. React Aria har ett omfattande bibliotek av
+färdiga komponenter och hooks som går att kombinera ihop för att uppnå önskat resultat. Fördelen med att följa React Arias
+konventioner är att det följer med mycket gratis i form av stöd för skärmläsare, tangentbordsnavigation och olika states.
+
+### Skapa stories
+
+I utgångspunkt bör alla states finnas representerade som stories i Storybook. Storybook är i första hand ett internt
+verktyg för UX och utvecklare i designsystemet men också en publikt exponerad referens med API och visuell
+representation av komponenterna.
+
+### Skriv enhetstester
+
+Ur perspektivet att tillgänglighet är ett av designsystemets viktigaste fokusområden är det viktigt att vi regressionstestar och testar
+så stor del av möjliga states av alla komponenter på enhetsnivå. MIDAS använder primärt
+[Storybook som testplattform](https://storybook.js.org/docs/writing-tests). De stories du skapat för komponenter kan du nu använda som utgångspunkt för dina tester.
+Läs mer om [hur vi förhåller oss till tester av våra komponenter](./tests).
+
+### Dokumentation
+
+Komponenten dokumenteras på dokumentationswebben med lämpliga exempel, beskrivning och properties. Normalt plockas
+properties upp från komponenten via [react-docgen-typescript](https://github.com/styleguidist/react-docgen-typescript)
+men om det har införts nya types eller interfaces kan de behöva specificeras enligt [JSDoc](https://jsdoc.app/).
+
+---
+
+## Arbetsflöde versionshantering
+
+```mermaid
+    gitGraph
+       commit tag: "8.7.4"
+       commit
+       branch dev
+       commit
+       commit
+       commit
+       branch feature
+       commit
+       commit
+       checkout dev
+       merge feature
+       checkout main
+       merge dev tag: "8.8.0" type: HIGHLIGHT
+       checkout dev
+       merge main
+       branch bugfix
+       commit
+       checkout dev
+       merge bugfix
+       checkout main
+       merge dev id: "trigger release" type: HIGHLIGHT tag: "8.8.1"
+       commit
+
+```
