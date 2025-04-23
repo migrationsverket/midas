@@ -23,7 +23,9 @@ type Story = StoryObj<typeof TextField>
 
 export const Primary: Story = {
   args: {
-    className: 'test-class',
+    inputProps: {
+      className: 'test-class',
+    },
   },
   play: async ({ canvas, step }) => {
     await step(
