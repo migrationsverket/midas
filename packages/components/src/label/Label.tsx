@@ -8,7 +8,7 @@ import styles from './Label.module.css'
 
 export interface LabelProps extends AriaLabelProps {
   /**
-   * The visual variant of the component
+   *  @deprecated Please use Label without variant for label-02, and for label-01 use Text component with slot: 'description'
    */
   variant?: 'label-01' | 'label-02'
 }
@@ -18,7 +18,7 @@ const DEFAULT_ELEMENT = 'label'
 export const Label: React.FC<LabelProps> = ({
   children,
   className,
-  variant = 'label-01',
+  variant = 'label-02',
   elementType = DEFAULT_ELEMENT,
   ...rest
 }) => {
@@ -28,7 +28,7 @@ export const Label: React.FC<LabelProps> = ({
   }
 
   const labelProps: LabelProps = {
-    className: clsx(classNames[variant], className),
+    className: clsx(styles.labelBase, classNames[variant], className),
     elementType: elementType || DEFAULT_ELEMENT,
     ...rest,
   }
