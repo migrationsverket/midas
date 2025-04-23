@@ -55,3 +55,31 @@ export const ControlledExample = () => {
     </>
   )
 }
+
+export const SectionedExample = () => {
+  return (
+    <Select
+      label='Favoritfrukt eller grönsak'
+      description='Välj vilken du vill'
+      placeholder='Välj en frukt eller grönsak'
+      selectionMode='multiple'
+      options={[
+        {
+          name: 'Frukter',
+          children: [
+            { id: 'kiwi', name: 'Kiwi' },
+            { id: 'banana', name: 'Banan' },
+            { id: 'apple', name: 'Äpple' },
+          ],
+        },
+        {
+          name: 'Grönsaker',
+          children: [
+            { id: 'carrot', name: 'Morot' },
+            { id: 'broccoli', name: 'Broccoli' },
+          ],
+        },
+      ]}
+    />
+  )
+}
