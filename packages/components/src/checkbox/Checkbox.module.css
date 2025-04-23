@@ -16,7 +16,6 @@
   transition: all 200ms;
   align-items: center;
   justify-content: center;
-  forced-color-adjust: none;
   display: flex;
 
   @media (forced-colors: active) {
@@ -41,7 +40,6 @@
   font-weight: 400;
   gap: 0.5rem;
   align-items: center;
-  forced-color-adjust: none;
   display: flex;
   width: max-content;
   cursor: pointer;
@@ -122,10 +120,6 @@
     pointer-events: none;
     border: none;
     background: --field-disabled;
-  }
-
-  @media (forced-colors: active) {
-    color: activeText;
   }
 }
 
