@@ -88,7 +88,7 @@
 
 /* Sizing */
 @value --size-00: 0;
-@value --size-05: 1px;
+@value --size-05: 0.0625rem;
 @value --size-10: 0.125rem;
 @value --size-15: 0.1875rem;
 @value --size-20: 0.25rem;
@@ -110,6 +110,11 @@
 @value --field-bottom-border-width: --size05;
 @value --field-invalid-border-width: --size-10;
 @value --field-border-radius: --size-00;
+@value --button-border-width: --size-05;
+@value --button-icon-padding: --size-70;
+@value --button-padding-x: calc(--size-110 - --button-border-width);
+@value --button-padding-y: calc(--size-70 - --button-border-width);
+@value --button-tertiary-padding-x: calc(--size-80 - --button-border-width);
 
 /* States */
 @value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
