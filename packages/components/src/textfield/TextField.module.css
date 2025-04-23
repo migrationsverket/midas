@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --field-disabled, --text-primary, --border-invalid, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
+@value --focus, --font-size-30, --line-height-30, --field-padding-y, --field-padding-x, --field-bottom-border-width, --field-invalid-border-width,--field-border-radius,--field-disabled, --text-primary, --border-invalid, --border-disabled, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
 .textField {
   display: grid;
@@ -35,7 +35,7 @@
   font-family: --font-family;
   display: flex;
   grid-area: Input;
-  border-bottom: 1px solid --border-primary;
+  border-bottom: --field-bottom-border-width solid --border-primary;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
@@ -88,12 +88,11 @@
   grid-area: Input;
   color: --text-primary;
   border-bottom: 1px solid --border-primary;
-  min-height: 48px;
-  font-size: 1rem;
-  padding-left: 1rem;
-  line-height: 1;
+  font-size: --font-size-30;
+  padding: --field-padding-y --field-padding-x;
+  line-height: --line-height-30;
   background-color: --field-01;
-  border-radius: 0;
+  border-radius: --field-border-radius;
   box-sizing: border-box;
   width: 100%;
 
@@ -116,14 +115,13 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 3px --border-invalid;
+    box-shadow: inset 0 0 0 --field-invalid-border-width --border-invalid;
   }
 
   &[data-disabled] {
     cursor: not-allowed;
     background-color: --field-disabled;
-    border: none;
-    opacity: 0.7;
+    border-bottom: --field-bottom-border-width --border-disabled;
   }
 }
 
