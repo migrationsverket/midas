@@ -76,14 +76,25 @@ export const Placement: Story = {
     children: 'Spara',
   },
   render: args => (
-    <TooltipTrigger>
+    <TooltipTrigger isOpen>
       <Button
         variant='tertiary'
         aria-label='Spara'
       >
         <Save />
       </Button>
-      <Tooltip {...args} />
+      <Tooltip
+        data-testid='tooltip-placement'
+        {...args}
+      />
     </TooltipTrigger>
   ),
+  play: async ({ step, canvasElement }) => {
+    const body = canvasElement.ownerDocument.body
+    const tooltip = within(body).getByTestId('tooltip-placement')
+
+    await step('should be placed at the top', async () => {
+      expect(tooltip).toHaveAttribute('data-placement', 'top')
+    })
+  },
 }
