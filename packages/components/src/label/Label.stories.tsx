@@ -10,6 +10,19 @@ const meta: Meta<typeof Label> = {
   tags: ['autodocs'],
 }
 
+export const LabelBase: Story = {
+  args: {
+    children: 'I am a label.',
+  },
+  play: async ({ canvas, args: { children } }) => {
+    expect(canvas.getByText(children as string)).toHaveStyle({
+      'font-size': '16px',
+      'line-height': '20px',
+      'font-weight': 500,
+    })
+  },
+}
+
 export const Label01: Story = {
   args: {
     variant: 'label-01',
