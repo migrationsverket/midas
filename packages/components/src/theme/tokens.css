@@ -110,6 +110,8 @@
 @value --field-bottom-border-width: --size05;
 @value --field-invalid-border-width: --size-10;
 @value --field-border-radius: --size-00;
+
+/* Button size semantic tokens for demo. Large size */
 @value --button-border-width: --size-05;
 @value --button-icon-padding: --size-70;
 @value --button-padding-x: calc(--size-110 - --button-border-width);
