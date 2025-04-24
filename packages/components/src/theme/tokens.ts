@@ -176,7 +176,8 @@ export const semantic = {
   fieldSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
 
   iconPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
-  iconSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
+  iconSecondary: `light-dark(${baseColors.gray140}, ${baseColors.gray70})`,
+  iconTertiary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
   iconInverse: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
   iconOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
   iconDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
