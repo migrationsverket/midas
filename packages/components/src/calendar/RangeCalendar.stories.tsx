@@ -1,21 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { RangeCalendar } from './RangeCalendar'
 
-const meta: Meta<typeof RangeCalendar> = {
+type Story = StoryObj<typeof RangeCalendar>
+
+export default {
   component: RangeCalendar,
   title: 'Components/Calendar/RangeCalendar',
   tags: ['autodocs'],
-  parameters: {
-    a11y: {
-      config: {
-        rules: [{ id: 'landmark-banner-is-top-level', enabled: false }],
-      },
-    },
-  },
-}
-export default meta
-type Story = StoryObj<typeof RangeCalendar>
+} as Meta<typeof RangeCalendar>
 
-export const Primary: Story = {
-  args: {},
+export const Primary: Story = {}
+
+export const Disabled: Story = {
+  args: {
+    isDisabled: true,
+  },
 }
