@@ -17,10 +17,10 @@ export interface CalendarContentProps {
   errorMessage?: string
 }
 
-export const CalendarContent = ({
+export const CalendarContent: React.FC<CalendarContentProps> = ({
   weekdayStyle = 'short',
   errorMessage,
-}: CalendarContentProps) => (
+}) => (
   <>
     <header className={styles.header}>
       <Button slot='previous'>
