@@ -23,7 +23,6 @@ export const DateRangePicker: React.FC<
     >
       <DatePickerContent
         ref={ref}
-        isRange
         {...rest}
       />
     </AriaDateRangePicker>

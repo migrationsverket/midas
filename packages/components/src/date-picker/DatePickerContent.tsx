@@ -2,6 +2,7 @@ import * as React from 'react'
 import {
   Button,
   DateInput,
+  DateRangePickerStateContext,
   DateSegment,
   Dialog,
   Group,
@@ -21,7 +22,6 @@ export interface DatePickerContentProps {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
-  isRange?: boolean
   isInvalid?: boolean
   isDisabled?: boolean
 }
@@ -35,70 +35,73 @@ export const DatePickerContent = React.forwardRef<
       label,
       description,
       errorMessage,
-      errorPosition,
-      isRange = false,
+      errorPosition = 'top',
       isInvalid,
       isDisabled,
     },
     ref,
-  ) => (
-    <>
-      <Label variant='label-02'>{label}</Label>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <Group className={clsx(styles.inputField)}>
-        <DateInput
-          slot='start'
-          className={styles.date}
-        >
-          {segment => (
-            <DateSegment
-              className={styles.segment}
-              segment={segment}
-            />
+  ) => {
+    const isRangePicker = !!React.useContext(DateRangePickerStateContext)
+
+    return (
+      <>
+        <Label variant='label-02'>{label}</Label>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <Group className={clsx(styles.inputField)}>
+          <DateInput
+            {...(isRangePicker && { slot: 'start' })}
+            className={styles.date}
+          >
+            {segment => (
+              <DateSegment
+                className={styles.segment}
+                segment={segment}
+              />
+            )}
+          </DateInput>
+          {isRangePicker && (
+            <>
+              <span
+                aria-hidden='true'
+                className={styles.divider}
+              >
+                -
+              </span>
+              <DateInput
+                slot='end'
+                className={styles.date}
+              >
+                {segment => (
+                  <DateSegment
+                    segment={segment}
+                    className={styles.segment}
+                  />
+                )}
+              </DateInput>
+            </>
           )}
-        </DateInput>
-        {isRange && (
-          <>
-            <span
-              aria-hidden='true'
-              className={styles.divider}
-            >
-              -
-            </span>
-            <DateInput
-              slot='end'
-              className={styles.date}
-            >
-              {segment => (
-                <DateSegment
-                  segment={segment}
-                  className={styles.segment}
-                />
-              )}
-            </DateInput>
-          </>
-        )}
-        <Button
-          className={clsx(isInvalid && styles.buttonInvalid)}
-          isDisabled={isDisabled}
+          <Button
+            className={clsx(isInvalid && styles.buttonInvalid)}
+            isDisabled={isDisabled}
+          >
+            <CalendarDays
+              size={20}
+              aria-hidden
+            />
+          </Button>
+        </Group>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        <Popover
+          UNSTABLE_portalContainer={
+            (typeof ref !== 'function' && ref?.current) || undefined
+          }
         >
-          <CalendarDays
-            size={20}
-            aria-hidden
-          />
-        </Button>
-      </Group>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <Popover
-        UNSTABLE_portalContainer={
-          (typeof ref !== 'function' && ref?.current) || undefined
-        }
-      >
-        <Dialog className={styles.dialog}>
-          {isRange ? <RangeCalendar /> : <Calendar />}
-        </Dialog>
-      </Popover>
-    </>
-  ),
+          <Dialog className={styles.dialog}>
+            {isRangePicker ? <RangeCalendar /> : <Calendar />}
+          </Dialog>
+        </Popover>
+      </>
+    )
+  },
 )
