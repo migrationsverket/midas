@@ -1,30 +1,31 @@
 'use client'
 
 import {
-  DatePickerProps,
+  DateRangePickerProps,
   DateValue,
-  DatePicker as AriaDatePicker,
+  DateRangePicker as AriaDateRangePicker,
 } from 'react-aria-components'
 import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import React from 'react'
 import { DatePickerContent, DatePickerContentProps } from './DatePickerContent'
 
-export const DatePicker: React.FC<
-  DatePickerProps<DateValue> & DatePickerContentProps
+export const DateRangePicker: React.FC<
+  DateRangePickerProps<DateValue> & DatePickerContentProps
 > = ({ className, ...rest }) => {
   const ref = React.useRef<HTMLDivElement>(null)
 
   return (
-    <AriaDatePicker
+    <AriaDateRangePicker
       className={clsx(styles.datePicker, className)}
       ref={ref}
       {...rest}
     >
       <DatePickerContent
         ref={ref}
+        isRange
         {...rest}
       />
-    </AriaDatePicker>
+    </AriaDateRangePicker>
   )
 }
