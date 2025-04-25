@@ -1,4 +1,6 @@
-import { CalendarProps, DateValue } from 'react-aria-components';
-import { CalendarContentProps } from './CalendarContent';
+import { CalendarProps as AriaCalendarProps, DateValue } from 'react-aria-components';
 import * as React from 'react';
-export declare const Calendar: React.FC<CalendarProps<DateValue> & CalendarContentProps>;
+export interface CalendarProps extends AriaCalendarProps<DateValue> {
+    errorMessage?: string;
+}
+export declare const Calendar: React.FC<CalendarProps>;

@@ -1,4 +1,6 @@
-import { RangeCalendarProps, DateValue } from 'react-aria-components';
-import { CalendarContentProps } from './CalendarContent';
+import { RangeCalendarProps as AriaRangeCalendarProps, DateValue } from 'react-aria-components';
 import * as React from 'react';
-export declare const RangeCalendar: React.FC<RangeCalendarProps<DateValue> & CalendarContentProps>;
+export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
+    errorMessage?: string;
+}
+export declare const RangeCalendar: React.FC<RangeCalendarProps>;
