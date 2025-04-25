@@ -55,11 +55,15 @@ export const Card: React.FC<MidasCard> = ({
 
 export const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
+  ...rest
 }) => {
   const { horizontal } = React.useContext(CardContext)
 
   return (
-    <div className={clsx(styles.cardContent, horizontal && styles.horizontal)}>
+    <div
+      {...rest}
+      className={clsx(styles.cardContent, horizontal && styles.horizontal)}
+    >
       {children}
     </div>
   )
@@ -86,11 +90,15 @@ export const CardTitle: React.FC<HeadingProps> = ({
 
 export const CardActions: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
+  ...rest
 }) => {
   const { horizontal } = React.useContext(CardContext)
 
   return (
-    <div className={clsx(styles.cardActions, horizontal && styles.horizontal)}>
+    <div
+      {...rest}
+      className={clsx(styles.cardActions, horizontal && styles.horizontal)}
+    >
       {children}
     </div>
   )
@@ -119,8 +127,8 @@ export const CardImage: React.FC<MidasCardImage> = ({
 }) => {
   return (
     <ImageComponent
-      className={clsx(styles.cardImage, className)}
       {...rest}
+      className={clsx(styles.cardImage, className)}
     />
   )
 }

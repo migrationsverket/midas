@@ -1,11 +1,11 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --background, --border-primary, --layer-01, --border-subtle, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
+@value --font-family, --background, --border-primary, --layer-01, --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
 
 .card {
   font-family: --font-family;
   position: relative;
   background-color: --layer-01;
-  border-bottom: 1px solid --border-subtle;
+  border-bottom: 1px solid --border-secondary;
 
   &.horizontal {
     display: flex;
