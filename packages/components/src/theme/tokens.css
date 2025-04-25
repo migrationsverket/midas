@@ -51,40 +51,40 @@
 
 /* Typography */
 @value --font-family: "Inter", sans-serif;
-@value --line-height-01: 1rem;
-@value --line-height-02: 1.125rem;
-@value --line-height-03: 1.25rem;
-@value --line-height-04: 1.375rem;
-@value --line-height-05: 1.5rem;
-@value --line-height-06: 1.75rem;
-@value --line-height-07: 2rem;
-@value --line-height-08: 2.25rem;
-@value --line-height-09: 2.5rem;
-@value --line-height-10: 2.75rem;
-@value --size-01: 0.75rem;
-@value --size-02: 0.875rem;
-@value --size-03: 1rem;
-@value --size-04: 1.125rem;
-@value --size-05: 1.25rem;
-@value --size-06: 1.5rem;
-@value --size-07: 1.75rem;
-@value --size-08: 2rem;
-@value --size-09: 2.25rem;
-@value --size-10: 2.625rem;
+@value --line-height-10: 1rem;
+@value --line-height-20: 1.125rem;
+@value --line-height-30: 1.25rem;
+@value --line-height-40: 1.375rem;
+@value --line-height-50: 1.5rem;
+@value --line-height-60: 1.75rem;
+@value --line-height-70: 2rem;
+@value --line-height-80: 2.25rem;
+@value --line-height-90: 2.5rem;
+@value --line-height-100: 2.75rem;
+@value --size-10: 0.75rem;
+@value --size-20: 0.875rem;
+@value --size-30: 1rem;
+@value --size-40: 1.125rem;
+@value --size-50: 1.25rem;
+@value --size-60: 1.5rem;
+@value --size-70: 1.75rem;
+@value --size-80: 2rem;
+@value --size-90: 2.25rem;
+@value --size-100: 2.625rem;
 
 /* Spacing */
-@value --spacing-01: 0.125rem;
-@value --spacing-02: 0.25rem;
-@value --spacing-03: 0.5rem;
-@value --spacing-04: 0.75rem;
-@value --spacing-05: 1rem;
-@value --spacing-06: 1.5rem;
-@value --spacing-07: 2rem;
-@value --spacing-08: 2.5rem;
-@value --spacing-09: 3rem;
-@value --spacing-10: 4rem;
-@value --spacing-11: 5rem;
-@value --spacing-12: 6rem;
+@value --spacing-10: 0.125rem;
+@value --spacing-20: 0.25rem;
+@value --spacing-30: 0.5rem;
+@value --spacing-40: 0.75rem;
+@value --spacing-50: 1rem;
+@value --spacing-60: 1.5rem;
+@value --spacing-70: 2rem;
+@value --spacing-80: 2.5rem;
+@value --spacing-90: 3rem;
+@value --spacing-100: 4rem;
+@value --spacing-110: 5rem;
+@value --spacing-120: 6rem;
 
 /* States */
 @value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
@@ -110,27 +110,27 @@
 @value --background-hover: light-dark(--white-hover, --gray-190);
 @value --background-inverse: light-dark(--gray-200, --gray-10);
 
-/* Layer 01 */
-@value --layer-01: light-dark(--gray-10, --gray-180);
-@value --layer-hover-01: light-dark(--gray-20, --gray-170);
-@value --layer-selected-01: light-dark(--gray-30, --gray-160);
-@value --layer-selected-hover-01: light-dark(--gray-40, --gray-150);
+/* Layer 10 */
+@value --layer-10: light-dark(--gray-10, --gray-180);
+@value --layer-hover-10: light-dark(--gray-20, --gray-170);
+@value --layer-selected-10: light-dark(--gray-30, --gray-160);
+@value --layer-selected-hover-10: light-dark(--gray-40, --gray-150);
 
-/* Layer 02 */
-@value --layer-02: light-dark(--white, --gray-160);
-@value --layer-hover-02: light-dark(--white-hover, --gray-150);
-@value --layer-selected-02: light-dark(--gray-30, --gray-140);
-@value --layer-selected-hover-02: light-dark(--gray-40, --gray-130);
+/* Layer 20 */
+@value --layer-20: light-dark(--white, --gray-160);
+@value --layer-hover-20: light-dark(--white-hover, --gray-150);
+@value --layer-selected-20: light-dark(--gray-30, --gray-140);
+@value --layer-selected-hover-20: light-dark(--gray-40, --gray-130);
 
-/* Layer Accent 01 */
-@value --layer-accent-01: light-dark(--gray-30, --gray-160);
-@value --layer-accent-hover-01: light-dark(--gray-40, --gray-150);
-@value --layer-accent-selected-01: light-dark(--gray-50, --gray-140);
+/* Layer Accent 10 */
+@value --layer-accent-10: light-dark(--gray-30, --gray-160);
+@value --layer-accent-hover-10: light-dark(--gray-40, --gray-150);
+@value --layer-accent-selected-10: light-dark(--gray-50, --gray-140);
 
-/* Layer Accent 02 */
-@value --layer-accent-02: light-dark(--gray-10, --gray-180);
-@value --layer-accent-hover-02: light-dark(--gray-20, --gray-170);
-@value --layer-accent-selected-02: light-dark(--gray-30, --gray-160);
+/* Layer Accent 20 */
+@value --layer-accent-20: light-dark(--gray-10, --gray-180);
+@value --layer-accent-hover-20: light-dark(--gray-20, --gray-170);
+@value --layer-accent-selected-20: light-dark(--gray-30, --gray-160);
 
 /* Brand */
 @value --brand-primary: light-dark(--red-100, --red-100);
@@ -143,15 +143,15 @@
 @value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
-/* Field 01 */
-@value --field-01: light-dark(--gray-10, --gray-180);
-@value --field-hover-01: light-dark(--gray-20, --gray-170);
-@value --field-active-01: light-dark(--gray-30, --gray-160);
+/* Field 10 */
+@value --field-10: light-dark(--gray-10, --gray-180);
+@value --field-hover-10: light-dark(--gray-20, --gray-170);
+@value --field-active-10: light-dark(--gray-30, --gray-160);
 
-/* Field 02 */
-@value --field-02: light-dark(--white, --gray-160);
-@value --field-hover-02: light-dark(--white-hover, --gray-150);
-@value --field-active-02: light-dark(--gray-30, --gray-140);
+/* Field 20 */
+@value --field-20: light-dark(--white, --gray-160);
+@value --field-hover-20: light-dark(--white-hover, --gray-150);
+@value --field-active-20: light-dark(--gray-30, --gray-140);
 
 /* Field */
 @value --field-disabled: light-dark(--gray-10, --gray-180);
@@ -180,12 +180,12 @@
 @value --support-border-info: light-dark(--signal-blue-100, --signal-blue-100);
 @value --support-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
 @value --support-border-warning: light-dark(--signal-red-100, --signal-red-100);
-@value --support-background-success: light-dark(--signal-green-20, --layer-01);
-@value --support-background-success-hover: light-dark(--signal-green-30, --layer-hover-01);
-@value --support-background-info: light-dark(--signal-blue-10, --layer-01);
-@value --support-background-important: light-dark(--signal-yellow-10, --layer-01);
-@value --support-background-warning: light-dark(--signal-red-20, --layer-01);
-@value --support-background-warning-hover: light-dark(--signal-red-30, --layer-hover-01);
+@value --support-background-success: light-dark(--signal-green-20, --layer-10);
+@value --support-background-success-hover: light-dark(--signal-green-30, --layer-hover-10);
+@value --support-background-info: light-dark(--signal-blue-10, --layer-10);
+@value --support-background-important: light-dark(--signal-yellow-10, --layer-10);
+@value --support-background-warning: light-dark(--signal-red-20, --layer-10);
+@value --support-background-warning-hover: light-dark(--signal-red-30, --layer-hover-10);
 
 /* Text */
 @value --text-primary: light-dark(--gray-200, --gray-10);
