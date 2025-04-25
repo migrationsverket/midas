@@ -4,6 +4,8 @@ import { Header } from './components/Header';
 import { SidebarLink } from './components/SidebarLink';
 import { Href } from '@react-types/shared';
 import { LayoutProvider } from './context/LayoutContext';
+import { Backdrop } from './components/Backdrop';
+import { Navbar } from './components/Navbar';
 import * as React from 'react';
 export interface SidebarLinkGroup {
     title?: string;
@@ -14,6 +16,7 @@ export interface SidebarLinkProps {
     href: string;
     icon: LucideIcon;
     active?: boolean;
+    hasBadge?: boolean;
     isCollapsed?: boolean;
     setIsOpened?: React.Dispatch<React.SetStateAction<boolean>>;
 }
@@ -44,11 +47,14 @@ export interface MidasLayout {
      */
     clientSideRouter?: (path: string, routerOptions: undefined) => void;
     clientSideHref?: (href: Href) => string;
+    variant: 'internal' | 'external';
 }
 export declare const Layout: React.FC<MidasLayout> & {
     Provider: typeof LayoutProvider;
     Header: typeof Header;
     Sidebar: typeof Sidebar;
     SidebarLink: typeof SidebarLink;
+    Navbar: typeof Navbar;
+    Backdrop: typeof Backdrop;
 };
 export {};

@@ -4,16 +4,12 @@ import * as React from 'react';
 export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
     /** Stack content in card vertical or horizontal */
     horizontal?: boolean;
-    /** Card status to showcase different senarios */
-    status?: 'warning' | 'error' | 'success';
-    state?: 'active' | 'edit';
     /** Card content, usually wrap with CardContent */
     children: React.ReactNode;
 }
 export interface MidasCardContext {
     horizontal?: MidasCard['horizontal'];
-    status?: MidasCard['status'];
-    state?: MidasCard['state'];
+    titleId?: string;
 }
 export interface MidasCardImage {
     /** Custom image component to be used instead of the default img tag */

@@ -37,16 +37,19 @@ export declare const theme: {
         purple80: string;
         purple140: string;
         red100: string;
-        signalBlue20: string;
-        signalBlue140: string;
+        signalBlue10: string;
+        signalBlue100: string;
         signalGreen20: string;
-        signalGreen140: string;
+        signalGreen30: string;
+        signalGreen100: string;
+        signalYellow10: string;
+        signalYellow100: string;
         signalRed20: string;
-        signalRed140: string;
+        signalRed30: string;
+        signalRed80: string;
+        signalRed100: string;
         signalRed160: string;
         signalRed180: string;
-        signalYellow20: string;
-        signalYellow140: string;
     };
     typography: {
         fontFamily: string;
@@ -101,6 +104,11 @@ export declare const theme: {
         normal: string;
         fast: string;
     };
+    windowSizes: {
+        md: number;
+        lg: number;
+        xl: number;
+    };
     breakpoints: {
         sm: string;
         md: string;
@@ -111,9 +119,9 @@ export declare const theme: {
         prefersReducedMotion: string;
     };
     semantic: {
-        background01: string;
-        backgroundHover01: string;
-        backgroundInverse01: string;
+        background: string;
+        backgroundHover: string;
+        backgroundInverse: string;
         layer01: string;
         layerHover01: string;
         layerSelected01: string;
@@ -129,14 +137,12 @@ export declare const theme: {
         layerAccentHover02: string;
         layerAccentSelected02: string;
         brandPrimary: string;
-        borderStrong: string;
-        borderMedium: string;
+        borderPrimary: string;
+        borderSecondary: string;
         borderSubtle: string;
-        borderBrand: string;
+        borderTertiary: string;
         borderInvalid: string;
         borderDisabled: string;
-        borderSkeleton: string;
-        borderInverse: string;
         field01: string;
         fieldHover01: string;
         fieldActive01: string;
@@ -149,7 +155,6 @@ export declare const theme: {
         iconSecondary: string;
         iconInverse: string;
         iconOnColor: string;
-        iconDanger: string;
         iconDisabled: string;
         iconSuccess: string;
         iconInfo: string;
@@ -159,20 +164,21 @@ export declare const theme: {
         linkHover: string;
         linkPressed: string;
         linkVisited: string;
-        notificationBorderSuccess: string;
-        notificationBorderInfo: string;
-        notificationBorderImportant: string;
-        notificationBorderWarning: string;
-        notificationBackgroundSuccess: string;
-        notificationBackgroundInfo: string;
-        notificationBackgroundImportant: string;
-        notificationBackgroundWarning: string;
+        supportBorderSuccess: string;
+        supportBorderInfo: string;
+        supportBorderImportant: string;
+        supportBorderWarning: string;
+        supportBackgroundSuccess: string;
+        supportBackgroundSuccessHover: string;
+        supportBackgroundInfo: string;
+        supportBackgroundImportant: string;
+        supportBackgroundWarning: string;
+        supportBackgroundWarningHover: string;
         textPrimary: string;
         textSecondary: string;
-        textBrand: string;
+        textTertiary: string;
         textOnColor: string;
         textInverse: string;
-        textSubtle: string;
         textDisabled: string;
         textInvalid: string;
         textPlaceholder: string;
@@ -189,9 +195,14 @@ export declare const theme: {
         buttonBackgroundDangerActive: string;
         buttonBackgroundDisabled: string;
         buttonBackgroundSkeleton: string;
-        buttonBackgroundGhostHover: string;
-        buttonBackgroundGhostActive: string;
-        buttonBorderPrimary: string;
+        buttonBorderSecondary: string;
         logoPrimary: string;
+    };
+    zIndex: {
+        base: number;
+        above: number;
+        modal: number;
+        toast: number;
+        skipToContent: number;
     };
 };

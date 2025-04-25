@@ -1,4 +1,4 @@
-import { RadioGroupProps, ValidationResult, RadioProps } from 'react-aria-components';
+import { RadioGroupProps, RadioProps, ValidationResult } from 'react-aria-components';
 import * as React from 'react';
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
     children?: React.ReactNode;
@@ -8,6 +8,7 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
     description?: string;
     /** String to display as error message or function to handle the result and produce the error message */
     errorMessage?: string | ((validation: ValidationResult) => string);
+    errorPosition?: 'top' | 'bottom';
 }
 /**
  * RadioGroup is used to group several radio items together

@@ -1,7 +1,12 @@
 import { RowProps, TableHeaderProps, ColumnProps, TableProps as AriaTableProps, CellProps, TableBody } from 'react-aria-components';
 export interface TableProps extends AriaTableProps {
-    /** @deprecated This variant will be replaced with a new scaling api accross all components. */
+    /**
+     *  @deprecated This variant will be replaced with a new scaling api accross all components.
+     */
     narrow?: boolean;
+    /**
+     * Alternating colors for rows
+     */
     striped?: boolean;
 }
 export declare const Table: ({ narrow, striped, className, ...rest }: TableProps) => import("react/jsx-runtime").JSX.Element;

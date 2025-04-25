@@ -13,5 +13,6 @@ export interface SearchFieldProps extends Omit<AriaSearchFieldProps, 'isRequired
      * A custom error message if using the isInvalid prop.
      */
     errorMessage?: string;
+    errorPosition?: 'top' | 'bottom';
 }
 export declare const SearchField: React.FC<SearchFieldProps>;

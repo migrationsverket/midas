@@ -1,3 +1,68 @@
+### 8.1.0
+
+#### 🚀 Features
+
+- **accordion:** accordion status ✅ / 🚨 ([#485](https://github.com/migrationsverket/midas/pull/485))
+
+#### 🩹 Fixes
+
+- **theme:** add dark mode focus ([#483](https://github.com/migrationsverket/midas/pull/483))
+- **modal:** make text in modal selectable ([#490](https://github.com/migrationsverket/midas/pull/490))
+- **accordion:** rename invalid token ([e4b13c928](https://github.com/migrationsverket/midas/commit/e4b13c928))
+- **select:** remove explicit size for indeterminate symbol ([5f805c134](https://github.com/migrationsverket/midas/commit/5f805c134))
+- **select:** change checkbox size to prevent disappearing border ([3ab520633](https://github.com/migrationsverket/midas/commit/3ab520633))
+
+## 8.0.0
+
+#### 🚀 Features
+
+- **spinner:** change prop `dark` to `isOnColor` ([#443](https://github.com/migrationsverket/midas/pull/443))
+- ✨ add errorPosition to form fields ([#416](https://github.com/migrationsverket/midas/pull/416))
+- **layout:** new navbar component and external variant of layout ([ad54f5955](https://github.com/migrationsverket/midas/commit/ad54f5955))
+- ✨💄 add semantic z-index tokens ([#401](https://github.com/migrationsverket/midas/pull/401))
+
+#### 🩹 Fixes
+
+- **calendar:** add high contrast styling for selected date ([a5af1cafe](https://github.com/migrationsverket/midas/commit/a5af1cafe))
+- **calendar:** sync calendars ([3e7b4fb06](https://github.com/migrationsverket/midas/commit/3e7b4fb06))
+- **calendar:** add border for high contrast mode ([7ed989df8](https://github.com/migrationsverket/midas/commit/7ed989df8))
+- **radio:** add support for horizontal orientation ([e5c9ad3eb](https://github.com/migrationsverket/midas/commit/e5c9ad3eb))
+- **link:** remove active styling in disabled state ([71c1e1400](https://github.com/migrationsverket/midas/commit/71c1e1400))
+- **heading:** set correct styles for heading and affected components ([#394](https://github.com/migrationsverket/midas/pull/394))
+- **accordion:** fix responsive content hiding when changing screen size ([#446](https://github.com/migrationsverket/midas/pull/446))
+- **button:** add cursor styling for disabled state ([1ab3f6c55](https://github.com/migrationsverket/midas/commit/1ab3f6c55))
+- **date-picker:** add missing disabled styles ([492a1b789](https://github.com/migrationsverket/midas/commit/492a1b789))
+- **combobox:** fix background color to input ([6ec2c1d3e](https://github.com/migrationsverket/midas/commit/6ec2c1d3e))
+- **theme:** replace invalid text and border colors in dark mode ([a6259f46c](https://github.com/migrationsverket/midas/commit/a6259f46c))
+
+#### Documentation Changes
+
+- **calendar:** update docs ([#469](https://github.com/migrationsverket/midas/pull/469))
+- **link-button:** remove live-code from docs ([#451](https://github.com/migrationsverket/midas/pull/451))
+- **heading:** expose ElementType ([79b85f4e4](https://github.com/migrationsverket/midas/commit/79b85f4e4))
+- **tabs:** remove generic in prop interface ([d8bcf2b92](https://github.com/migrationsverket/midas/commit/d8bcf2b92))
+- **tabs:** remove live code and update documentation ([c4b2c2e47](https://github.com/migrationsverket/midas/commit/c4b2c2e47))
+- **tooltip:** update tooltip documentation 🔧 ([#439](https://github.com/migrationsverket/midas/pull/439))
+- **label:** remove live code and update documentation ([1803a3ee1](https://github.com/migrationsverket/midas/commit/1803a3ee1))
+- **table:** add prop comment ([6089593a4](https://github.com/migrationsverket/midas/commit/6089593a4))
+- new page explaining tokens and use of color + removed and updated tokens ([c970f0eb5](https://github.com/migrationsverket/midas/commit/c970f0eb5))
+- **text:** remove union type for documentation visibility ([675b94795](https://github.com/migrationsverket/midas/commit/675b94795))
+- define error types at component level ([14dc2b8da](https://github.com/migrationsverket/midas/commit/14dc2b8da))
+- update link docs with new code and examples ([a25a2def3](https://github.com/migrationsverket/midas/commit/a25a2def3))
+- use markdown links ([f1fb5714b](https://github.com/migrationsverket/midas/commit/f1fb5714b))
+
+### 7.1.0
+
+#### 🚀 Features
+
+- ✨💄 add semantic z-index tokens ([#401](https://github.com/migrationsverket/midas/pull/401))
+
+#### 🩹 Fixes
+
+- **date-picker:** add missing disabled styles ([10b394897](https://github.com/migrationsverket/midas/commit/10b394897))
+- **combobox:** fix background color to input ([997eac80b](https://github.com/migrationsverket/midas/commit/997eac80b))
+- **theme:** replace invalid text and border colors in dark mode ([3291a9cbd](https://github.com/migrationsverket/midas/commit/3291a9cbd))
+
 ## 7.0.0
 
 This was a version bump only for components to align it with other projects, there were no code changes.

@@ -1,12 +1,22 @@
+import { TabsProps as AriaTabsProps } from 'react-aria-components';
 import * as React from 'react';
-export interface TabsProps<T extends string> {
-    /** An array of tab titles */
-    tabs: T[];
-    /** Lable for accecibility */
+export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
+    /**
+     * An array of tab titles
+     */
+    tabs: string[];
+    /**
+     * Label for accessibility
+     */
     label: string;
-    /** Choose another than the first tab to be selected by default. Name must match one of the tabs */
-    defaultSelected?: T;
-    /** Amount of children must match the amount of tabs */
+    /**
+     * Amount of children must match the amount of tabs
+     */
     children: React.ReactNode;
+    /**
+     * @deprecated
+     * Please use `defaultSelectedKey` instead
+     */
+    defaultSelected?: string;
 }
-export declare const Tabs: <T extends string>({ tabs, label, defaultSelected, children }: TabsProps<T>) => import("react/jsx-runtime").JSX.Element;
+export declare const Tabs: React.FC<TabsProps>;

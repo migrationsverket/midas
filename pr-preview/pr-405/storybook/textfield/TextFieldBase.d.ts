@@ -7,7 +7,8 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
     /** Specify description displayed below the label */
     description?: string;
     /** Custom error messages */
-    errorMessage?: string | ((validation: ValidationResult) => string) | undefined;
+    errorMessage?: string | ((validation: ValidationResult) => string);
+    errorPosition?: 'top' | 'bottom';
     /**
      * Whether to show the character counter or not
      * @default
