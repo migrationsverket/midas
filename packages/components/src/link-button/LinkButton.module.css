@@ -54,7 +54,7 @@
   border-color: --button-border-secondary;
 
   .icon {
-    color: --icon-secondary;
+    color: --icon-tertiary;
   }
 
   &[data-hovered],
