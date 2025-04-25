@@ -7,17 +7,13 @@ import { Button, ButtonProps } from 'react-aria-components'
 export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
   /** Stack content in card vertical or horizontal */
   horizontal?: boolean
-  /** Card status to showcase different senarios */
-  status?: 'warning' | 'error' | 'success'
-  state?: 'active' | 'edit'
   /** Card content, usually wrap with CardContent */
   children: React.ReactNode
 }
 
 export interface MidasCardContext {
   horizontal?: MidasCard['horizontal']
-  status?: MidasCard['status']
-  state?: MidasCard['state']
+  titleId?: string
 }
 
 export interface MidasCardImage {
@@ -29,27 +25,25 @@ export interface MidasCardImage {
 
 const CardContext = React.createContext<MidasCardContext>({
   horizontal: undefined,
-  status: undefined,
-  state: undefined,
+  titleId: undefined,
 })
 
 export const Card: React.FC<MidasCard> = ({
   horizontal,
-  status,
-  state,
   className,
   children,
   ...rest
 }) => {
+  const id = React.useId()
+  const titleId = `card-title-${id}`
+
   return (
-    <CardContext.Provider value={{ horizontal, status, state }}>
+    <CardContext.Provider value={{ horizontal, titleId }}>
       <div
         {...rest}
         className={clsx(
           styles.card,
           horizontal && styles.horizontal,
-          state === 'edit' && styles.cardEditable,
-          status === 'success' && styles.cardSuccess,
           className,
         )}
       >
@@ -75,7 +69,7 @@ export const CardTitle: React.FC<HeadingProps> = ({
   elementType = 'h2',
   children,
 }) => {
-  const { horizontal } = React.useContext(CardContext)
+  const { horizontal, titleId } = React.useContext(CardContext)
 
   return (
     <Heading
@@ -83,6 +77,7 @@ export const CardTitle: React.FC<HeadingProps> = ({
       elementType={elementType}
       isExpressive={horizontal}
       className={clsx(styles.cardTitle, horizontal && styles.horizontal)}
+      id={titleId}
     >
       {children}
     </Heading>
@@ -92,15 +87,24 @@ export const CardTitle: React.FC<HeadingProps> = ({
 export const CardActions: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   children,
 }) => {
-  return <div className={styles.cardActions}>{children}</div>
+  const { horizontal } = React.useContext(CardContext)
+
+  return (
+    <div className={clsx(styles.cardActions, horizontal && styles.horizontal)}>
+      {children}
+    </div>
+  )
 }
 
 export const CardActionArea: React.FC<
   ButtonProps & React.RefAttributes<HTMLButtonElement>
 > = ({ children, className, ...rest }) => {
+  const { titleId } = React.useContext(CardContext)
+
   return (
     <Button
       {...rest}
+      aria-labelledby={titleId}
       className={clsx(styles.cardActionArea, className)}
     >
       {children}

@@ -87,6 +87,12 @@
   --search-local-highlight-color: #25607f;
   --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
+  --ifm-card-background-color: #000;
+}
+
+.theme-code-block {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none !important;
 }
 
 .prism-code {
@@ -96,16 +102,19 @@
 
 .theme-code-block:has(~ .card) {
   margin-bottom: 0;
+  border-bottom-width: 0;
+}
+
+.theme-code-block:has(+ .theme-code-block) {
+  margin-bottom: var(--ifm-leading);
 }
 
 .card {
   padding: 1.5rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-}
-
-.theme-code-block:has(+ .theme-code-block) {
-  margin-bottom: var(--ifm-leading);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none !important;
 }
 
 .card-image {

@@ -1,21 +1,11 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --background, --border-primary, --layer-01, --border-subtle, --support-background-success, --support-border-success, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
+@value --font-family, --background, --border-primary, --layer-01, --border-subtle, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --button-background-icon-hover, --button-background-icon-active, --focus from tokens;
 
 .card {
   font-family: --font-family;
   position: relative;
   background-color: --layer-01;
   border-bottom: 1px solid --border-subtle;
-
-  &.cardEditable {
-    background-color: --background;
-    border: 2px solid --border-primary;
-  }
-
-  &.cardSuccess {
-    background-color: --support-background-success;
-    border-bottom-color: --support-border-success;
-  }
 
   &.horizontal {
     display: flex;
@@ -28,10 +18,12 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  flex-grow: 1;
 
   &.horizontal {
     padding: 1rem 1.5rem;
     flex-direction: row;
+    align-items: center;
   }
 
   .cardTitle {
@@ -47,6 +39,10 @@
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+
+  &.horizontal {
+    margin-left: auto;
+  }
 }
 
 .cardActionArea {
@@ -81,4 +77,8 @@
 .cardImage {
   max-width: 100%;
   height: auto;
+
+  &.horizontal {
+    max-width: unset;
+  }
 }

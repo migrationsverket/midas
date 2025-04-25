@@ -23,14 +23,25 @@ export default meta
 type Story = StoryObj<typeof Card>
 
 export const Example: Story = {
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
+  args: {
+    children: (
+      <CardContent>
+        <CardTitle>Dina uppgifter</CardTitle>
+        <Text>Namn: Namn Namnsson</Text>
+        <CardActions>
+          <Button
+            variant='icon'
+            icon={Pen}
+          >
+            Redigera
+          </Button>
+        </CardActions>
+      </CardContent>
+    ),
   },
   play: async ({ canvas, step }) => {
-    await step('It should be possible to focus the link', async () => {
-      const link = canvas.getByText('Läs mer om Card')
+    await step('It should be possible to focus the button', async () => {
+      const link = canvas.getByText('Redigera')
       expect(link).not.toHaveFocus()
 
       // focus the link
@@ -41,45 +52,10 @@ export const Example: Story = {
   },
 }
 
-export const WithBackground: Story = {
-  args: {
-    children: (
-      <CardContent>
-        <CardTitle>Kort</CardTitle>
-      </CardContent>
-    ),
-  },
-  // play: async ({ canvas, step }) => {
-  //   await step('It should be possible to focus the link', async () => {
-  //     const link = canvas.getByText('Läs mer om Card')
-  //     expect(link).not.toHaveFocus()
-
-  //     // focus the link
-  //     await userEvent.tab()
-
-  //     expect(link).toHaveFocus()
-  //   })
-  // },
-}
-
 export const Horizontal: Story = {
   args: {
     ...Example.args,
     horizontal: true,
-  },
-}
-
-export const Editable: Story = {
-  args: {
-    ...Example.args,
-    state: 'edit',
-  },
-}
-
-export const Success: Story = {
-  args: {
-    ...Example.args,
-    status: 'success',
   },
 }
 
@@ -112,7 +88,11 @@ export const WithPrimaryAction: Story = {
   args: {
     children: (
       <>
-        <CardActionArea onPress={() => alert('Clicked!')}>
+        <CardActionArea
+          onPress={() => {
+            return
+          }}
+        >
           <CardContent>
             <CardTitle>Dina uppgifter</CardTitle>
             <Text>Namn: Namn Namnsson</Text>
@@ -151,11 +131,22 @@ export const WithLink: Story = {
             standalone
             stretched
           >
-            Läs mer om detta här
+            Läs mer om det här
           </Link>
         </CardActions>
       </CardContent>
     ),
+  },
+  play: async ({ canvas, step }) => {
+    await step('It should be possible to focus the link', async () => {
+      const link = canvas.getByText('Läs mer om det här')
+      expect(link).not.toHaveFocus()
+
+      // focus the link
+      await userEvent.tab()
+
+      expect(link).toHaveFocus()
+    })
   },
 }
 
