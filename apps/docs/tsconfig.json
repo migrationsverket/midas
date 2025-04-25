@@ -6,7 +6,7 @@
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "lib": ["DOM"],
+    "lib": ["DOM", "dom.iterable"],
     "noEmit": true,
     "noImplicitAny": false,
     "strict": true,

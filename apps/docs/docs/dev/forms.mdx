@@ -1,0 +1,301 @@
+---
+title: Formulär
+description: Utvecklarinstruktioner för formulär
+---
+
+import { UncontrolledForm, ControlledForm, RealtimeValidation, ServerValidation } from '@site/src/components/examples/form/FormExamples'
+
+# Formulär
+
+Midas formulärskomponenter bygger på React Aria och fungerar att användas i formulär via flera olika
+alternativ. För referens och mer detaljer, se [React Aria Forms](https://react-spectrum.adobe.com/react-aria/forms.html).
+
+> Midas formulärskomponenter är en komposition av React Arias &lt;Label&gt;, &lt;FieldError&gt; och själva formulärskomponenten
+> och därmed finns stöd för tillgänglighetsverktyg som skärmläsare inbyggt utan att pussla ihop komponenterna var för sig. Så
+> länge `name` och `label` är specificerat kan man förvänta sig att komponenten normalt i de flesta formulär.
+
+Har du problem med att integrera Midas formulärskomponenter i er applikation eller har du hittat en bugg? Skapa en
+[issue](https://github.com/migrationsverket/midas/issues/new/choose) så hjälper vi dig gärna!
+
+### React Aria &lt;Form&gt;
+
+Komponenterna går att integrera normalt med **&lt;form&gt;** (native HTML) men det rekommenderas att använda
+**&lt;Form&gt;** från React Aria som är en överlagring med lite extra funktioner för validering.
+
+```tsx
+// highlight-next-line
+import { Form } from 'react-aria-components';
+import { TextField } from '@midas-ds/components';
+
+//highlight-next-line
+<Form>
+  <TextField label={'Namn'} name={'name'} />
+//highlight-next-line
+</Form>
+```
+
+## Normal användning
+
+Den enklaste varianten för att använda ett formulär är via browserns [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData). Submit är inaktiverat
+när formuläret är **invalid** precis som html-form men detta beteende kan styras via `validationBehavior`.
+Prop `name` fungerar precis som native form och är referens till fältet som avses. Om något fält är ogiltigt
+fokuseras det automatiskt vid **submit**.
+
+
+### Uncontrolled form
+
+```tsx
+export const UncontrolledForm = () => {
+  const [result, setResult] = React.useState(null)
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const data = Object.fromEntries(new FormData(e.currentTarget))
+    setResult(data)
+  }
+
+  return (
+    <>
+      <Form
+        onSubmit={handleSubmit}
+        // use 'aria' to allow submit when invalid
+        validationBehavior={'native'}
+      >
+        <TextField
+          label={'Namn'}
+          name={'name'}
+          isRequired
+        />
+        <TextField
+          label={'E-post'}
+          type={'email'}
+          name={'email'}
+          isRequired
+        />
+        <CheckboxGroup
+          label={'Spara mina uppgifter'}
+          name={'saveData'}
+          isRequired>
+          <Checkbox value={'agree'}>Jag godkänner</Checkbox>
+        </CheckboxGroup>
+        <ButtonGroup>
+          <Button type={'submit'}>Skicka</Button>
+          <Button
+            type={'reset'}
+            variant={'secondary'}
+          >
+            Rensa
+          </Button>
+        </ButtonGroup>
+      </Form>
+      <span>
+        {result && <pre>{JSON.stringify(result)}</pre>}
+      </span>
+    </>
+  )
+}
+```
+<div className={'card'}>
+  <UncontrolledForm />
+</div>
+
+### Controlled form
+
+För tillgång till formulärsdata även innan **submit**, använd **controlled** version av komponenterna
+och hantera state via `onChange` och `value`.
+
+```tsx
+export const ControlledForm = () => {
+  const [name, setName] = React.useState('')
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+  }
+  return (
+    <Form onSubmit={onSubmit}>
+      <TextField
+        name={'name'}
+        label={'Name'}
+        onChange={setName}
+        isRequired
+      />
+      <div>Ditt namn: {name}</div>
+      <Button type={'submit'}>Submit</Button>
+    </Form>
+  )
+}
+```
+<div className={'card'}>
+  <ControlledForm />
+</div>
+
+## Validering
+
+Komponenterna funkar enligt normal HTML **constraint validation** och bygger på felmeddelanden från browser,
+dessa presenteras på det språket som är valt via inställningarna. Se dokumentation om [lokalisering](/dev/localization)
+för mer information.
+
+### Realtime validation
+
+Validering görs som standard vid **blur** eller **submit**. Ibland kan det vara önskvärt att ge användaren snabbare
+feedback, till exempel för att välja ett godkänt lösenord.
+
+```tsx
+export const RealtimeValidation = () => {
+  let [password, setPassword] = React.useState('')
+  let errors = []
+  if (password.length < 8) {
+    errors.push('Lösenordet måste vara fler än 8 tecken.')
+  }
+  if ((password.match(/[A-Z]/g) ?? []).length < 2) {
+    errors.push('Lösenordet måste innehålla minst 2 versaler.')
+  }
+  if ((password.match(/[^a-z]/gi) ?? []).length < 2) {
+    errors.push('Lösenordet måste innehålla minst två symboler.')
+  }
+
+  return (
+    <>
+      <TextField
+        label={'Lösenord'}
+        style={{ whiteSpace: 'pre-line' }}
+        isInvalid={errors.length > 0}
+        value={password}
+        onChange={setPassword}
+        errorMessage={errors.join('\n')}
+        errorPosition={'bottom'}
+      />
+    </>
+  )
+}
+```
+<div className={'card'}>
+  <RealtimeValidation />
+</div>
+
+:::tip
+Felmeddelande kan presenteras under eller över formulärskomponenten via `errorPosition`. Se [mönster](/design-patterns/forms/#position-av-felmeddelande)
+för mer information.
+:::
+
+
+### Server validation
+
+Förutom att validera input på klienten bör ett normalt mönster vara att validera på serversidan också. En metod är att
+sätta prop `validationErrors` på &lt;Form&gt; och presentera felmeddelanden den vägen. Objektet ska då matcha
+`name` props på formulärsobjektet för att fungera med automatik. När inmatning ändras återställs felmeddelandet.
+
+
+```tsx
+export const ServerValidation = () => {
+  const [isWaiting, setIsWaiting] = React.useState(false)
+  // Fake server used in this example.
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+  async function callServer(data) {
+    setIsWaiting(true)
+    await delay(1000)
+    setIsWaiting(false)
+    return {
+      errors: {
+        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,
+      },
+    }
+  }
+  let [errors, setErrors] = React.useState({})
+  let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    let data = Object.fromEntries(new FormData(e.currentTarget))
+    let result = await callServer(data)
+    setErrors(result.errors)
+  }
+
+  return (
+    <Form
+      validationErrors={errors}
+      onSubmit={onSubmit}
+      className={styles.form}
+    >
+      <TextField
+        label={'Användarnamn'}
+        name='username'
+        isRequired
+      />
+      <TextField
+        label={'Lösenord'}
+        name='password'
+        type='password'
+        isRequired
+      />
+      <ButtonGroup>
+        <Button
+          type='submit'
+        >
+          {isWaiting ? (<><Spinner isOnColor small/>Skickar...</>) : 'Skicka'}
+        </Button>
+      </ButtonGroup>
+    </Form>
+  )
+}
+```
+<div className={'card'}>
+  <ServerValidation/>
+</div>
+
+> Beroende på ramverk finns en uppsjö av olika tekniker för att åstadkomma serverside validation.
+> På [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#server-validation)
+> finns information om hur det går att åstadkomma detta bland annat med **schema validation** och
+> **React Server Actions**
+
+## Tredjeparts klientformulär
+
+Det finns även olika tredjepartsbibliotek för att underlätta hantering av formulär på klienten. I princip ska det
+inte vara något hinder att använda dessa men det innebär ofta lite extra boilerplate. För till exempel
+[React Hook Form](https://www.react-hook-form.com/) går det att integrera Midas enligt exemplet nedan. Om du använder
+någon annan teknik för att rendera formulär? Midas bygger i grunden på React Aria som i sin tur renderar native element
+för en förutsägbar DOM, därmed borde det oftast vara möjligt att integrera oavsett tekniken runtomkring.
+
+I utgångspunkt rekommenderar vi att utgå från React Aria **&lt;Form&gt;** då det innebär minst boilerplate men vi
+hjälper gärna till att få Midas komponenter att fungera i den teknikstacken ni har valt att arbeta med.
+
+```tsx
+import { Controller, useForm } from 'react-hook-form';
+
+export const HookFormExample = () => {
+  let {
+    handleSubmit,
+    control,
+  } = useForm()
+  let onSubmit = data => {
+    // Call your API here...
+  }
+
+  return (
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        control={control}
+        name='name'
+        rules={{ required: 'Name is required.' }}
+        render={({
+          field: { name, value, onChange, onBlur, ref },
+          fieldState: { invalid, error },
+        }) => (
+          <TextField
+            label={'Name'}
+            name={name}
+            value={value}
+            onChange={onChange}
+            onBlur={onBlur}
+            isRequired
+            errorMessage={error?.message}
+            // Let React Hook Form handle validation instead of the browser.
+            validationBehavior='aria'
+            isInvalid={invalid}
+            // The ref is needed to focus invalid elements
+            ref={ref}
+          ></TextField>
+        )}
+      />
+      <Button type='submit'>Submit</Button>
+    </Form>
+  )
+}
+```
