@@ -5,15 +5,15 @@ import { clsx } from 'clsx'
 import styles from '../DatePicker.module.css'
 
 interface DatePickerInputFieldProps {
-  isInvalid?: boolean
-  isDisabled?: boolean
   children?: React.ReactNode
+  isDisabled?: boolean
+  isInvalid?: boolean
 }
 
 export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
-  isInvalid,
-  isDisabled,
   children,
+  isDisabled,
+  isInvalid,
 }) => (
   <Group className={clsx(styles.inputField)}>
     {children}
@@ -23,8 +23,8 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
       isDisabled={isDisabled}
     >
       <CalendarDays
-        size={20}
         aria-hidden
+        size={20}
       />
     </Button>
   </Group>

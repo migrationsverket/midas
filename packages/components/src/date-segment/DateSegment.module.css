@@ -2,13 +2,9 @@
 @value --focus, --text-disabled, --text-placeholder, --text-primary from tokens;
 
 .dateSegment {
+  color: --text-primary;
   padding: 0 0.125rem;
   text-transform: uppercase;
-  color: --text-primary;
-
-  &[data-placeholder] {
-    color: --text-placeholder;
-  }
 
   &[data-disabled] {
     color: --text-disabled;
@@ -16,12 +12,16 @@
 
   &:focus-visible,
   &[data-focus-visible] {
-    outline: none;
     box-shadow: --focus;
+    outline: none;
 
     @media (forced-colors: active) {
       outline: 1px solid;
       outline-offset: 2px;
     }
+  }
+
+  &[data-placeholder] {
+    color: --text-placeholder;
   }
 }

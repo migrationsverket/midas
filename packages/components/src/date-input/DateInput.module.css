@@ -4,11 +4,6 @@
 .dateInput {
   display: flex;
 
-  & div[data-readonly='true'] {
-    color: --text-primary;
-    padding: 0 2px;
-  }
-
   & div:focus-visible,
   & div[data-focus-visible] {
     outline: none;
@@ -18,6 +13,11 @@
       outline: 3px solid highlight;
       outline-offset: 0;
     }
+  }
+
+  & div[data-readonly='true'] {
+    color: --text-primary;
+    padding: 0 2px;
   }
 }
 

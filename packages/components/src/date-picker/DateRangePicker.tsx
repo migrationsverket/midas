@@ -1,38 +1,38 @@
 'use client'
 
+import * as React from 'react'
 import {
-  DateRangePickerProps as AriaDateRangePickerProps,
-  DateValue,
   DateRangePicker as AriaDateRangePicker,
-  ValidationResult,
+  type DateRangePickerProps as AriaDateRangePickerProps,
+  type DateValue,
+  type ValidationResult,
 } from 'react-aria-components'
 import { clsx } from 'clsx'
-import styles from './DatePicker.module.css'
-import React from 'react'
 import { DatePickerInputField } from './components/DatePickerInputField'
-import { Label } from '../label'
-import { Text } from '../text'
-import { FieldError } from '../field-error'
 import { DatePickerPopover } from './components/DatePickerPopover'
-import { RangeCalendar } from '../calendar'
 import { DateInput } from '../date-input'
-import { DateSegment } from '../date-segment'
 import { DateInputDivider } from '../date-input/DateInputDivider'
+import { DateSegment } from '../date-segment'
+import { FieldError } from '../field-error'
+import { Label } from '../label'
+import { RangeCalendar } from '../calendar'
+import { Text } from '../text'
+import styles from './DatePicker.module.css'
 
 export interface DateRangePickerProps
   extends AriaDateRangePickerProps<DateValue> {
-  label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
+  label?: string
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   className,
-  label,
   description,
   errorMessage,
   errorPosition = 'top',
+  label,
   ...rest
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)

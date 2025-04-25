@@ -1,32 +1,32 @@
 import * as React from 'react'
 import {
   DateField as AriaDateField,
-  DateFieldProps as AriaDateFieldProps,
-  DateValue,
-  ValidationResult,
+  type DateFieldProps as AriaDateFieldProps,
+  type DateValue,
+  type ValidationResult,
 } from 'react-aria-components'
-import { Text } from '../text'
-import { Label } from '../label'
-import { FieldError } from '../field-error'
-import styles from './DateField.module.css'
 import clsx from 'clsx'
 import { DateInput } from '../date-input'
 import { DateSegment } from '../date-segment'
+import { FieldError } from '../field-error'
+import { Label } from '../label'
+import { Text } from '../text'
+import styles from './DateField.module.css'
 
-interface DateFieldProps extends AriaDateFieldProps<DateValue> {
-  label?: string
+export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
+  label?: string
 }
 
 export const DateField: React.FC<DateFieldProps> = ({
-  label,
+  className,
   description,
   errorMessage,
-  className,
   errorPosition = 'top',
   isDisabled,
+  label,
   ...rest
 }) => (
   <AriaDateField
