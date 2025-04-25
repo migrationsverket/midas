@@ -1,12 +1,12 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --size-02, --line-height-02, --size-03, --line-height-03, --text-disabled from tokens;
+@value --text-primary, --font-family, --size-20, --line-height-20, --size-30, --line-height-30, --text-disabled from tokens;
 
 .labelBase {
   color: --text-primary;
   font-family: --font-family;
   margin-bottom: 0.25rem;
-  font-size: --size-03;
-  line-height: --line-height-03;
+  font-size: --size-30;
+  line-height: --line-height-30;
   font-weight: 500;
 }
 
@@ -37,13 +37,13 @@
 }
 
 .label-01 {
-  font-size: --size-02;
-  line-height: --line-height-02;
+  font-size: --size-20;
+  line-height: --line-height-20;
   font-weight: 400;
 }
 
 .label-02 {
-  font-size: --size-03;
-  line-height: --line-height-03;
+  font-size: --size-30;
+  line-height: --line-height-30;
   font-weight: 500;
 }
