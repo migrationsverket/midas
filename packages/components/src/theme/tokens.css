@@ -87,7 +87,7 @@
 @value --spacing-12: 6rem;
 
 /* States */
-@value --focus: 0 0 0 2px white, 0 0 0 4px black;
+@value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
 
 /* Transitions */
 @value --slow-transition: 500ms;

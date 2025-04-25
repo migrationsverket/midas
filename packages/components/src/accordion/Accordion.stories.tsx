@@ -5,6 +5,8 @@ import { expect, userEvent } from '@storybook/test'
 import { ACCORDION_TEST_ID } from './Accordion'
 import styles from './Accordion.module.css'
 import React from 'react'
+import { Button } from '../button'
+import { hexToRgb, lightDark } from '../utils/test'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
@@ -75,6 +77,22 @@ export const MultipleSubtle: Story = {
   },
 }
 
+export const MultipleSubtleDisabled: Story = {
+  args: {
+    ...MultipleSubtle.args,
+    isDisabled: true,
+  },
+  play: async ({ canvas, step }) => {
+    await step('it should have the disabled style', async () => {
+      await expect(canvas.getAllByRole('heading', { level: 2 })[0]).toHaveStyle(
+        {
+          color: lightDark(hexToRgb('#bfbfbf'), hexToRgb('#525252')),
+        },
+      )
+    })
+  },
+}
+
 export const MultipleBoxed: Story = {
   args: {
     ...SingleBoxed.args,
@@ -140,6 +158,29 @@ export const DynamicContent: Story = {
     )
     await userEvent.click(canvas.getByTestId('btn-0'))
     await expect(canvas.getByTestId('hidden-content')).toBeVisible()
+  },
+}
+
+export const DS1060: Story = {
+  tags: ['!dev', '!autodocs'],
+  render: () => (
+    <Accordion>
+      <AccordionItem title='Test'>
+        <Button isDisabled>Test</Button>
+      </AccordionItem>
+    </Accordion>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should not have the disabled style even if it contains disabled children',
+      async () => {
+        await expect(
+          canvas.getByRole('heading', { level: 2, name: 'Test' }),
+        ).toHaveStyle({
+          color: lightDark(hexToRgb('#171717'), hexToRgb('#f2f2f2')),
+        })
+      },
+    )
   },
 }
 

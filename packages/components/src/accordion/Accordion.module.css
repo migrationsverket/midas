@@ -34,13 +34,13 @@
         --border-color: --support-border-warning;
       }
 
-      &:has(button[data-disabled]) {
+      &[data-disabled] {
         --border-color: --border-disabled;
       }
     }
   }
 
-  &:has(button[data-disabled]) {
+  &[data-disabled] {
     --heading-color: --text-disabled;
 
     .triggerButton {

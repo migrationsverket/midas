@@ -4,7 +4,7 @@ title: Select
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample, ControlledExample } from '@site/src/components/examples/select/SelectExamples'
+import { BasicExample, ControlledExample, SectionedExample } from '@site/src/components/examples/select/SelectExamples'
 
 <ComponentHeader
   name={'Select'}
@@ -203,7 +203,7 @@ return (
     // highlight-start
     selectionMode='multiple'
     selectedKeys={selectedFruit}
-    onSelectionChange={handleSelectionChanges}
+    onSelectionChange={handleSelectionChange
     isSelectableAll
     // highlight-end
     options={options}
@@ -217,9 +217,9 @@ return (
 
 ## Sektioner
 
-Strukturera om alternativen i nestade sektioner genom att strukturera options på följande sätt
+Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:
 
-```ts
+```tsx
 const options = [
   {
     name: 'Frukter',
@@ -237,7 +237,21 @@ const options = [
     ],
   },
 ]
+
+return (
+  <Select
+    label='Favoritfrukt eller grönsak'
+    description='Välj vilken du vill'
+    placeholder='Välj en frukt eller grönsak'
+    selectionMode='multiple'
+    options={options}
+  />
+)
 ```
+
+<div className='card'>
+  <SectionedExample />
+</div>
 
 ## API
 

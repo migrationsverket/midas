@@ -11,19 +11,12 @@ import {
 
 interface MidasTooltipProps extends Omit<TooltipProps, 'children'> {
   children: React.ReactNode
-  placement?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-export function Tooltip({
-  children,
-  placement,
-  className,
-  ...props
-}: MidasTooltipProps) {
+export function Tooltip({ children, className, ...props }: MidasTooltipProps) {
   return (
     <AriaTooltip
       className={clsx(styles.tooltip, className)}
-      placement={placement}
       {...props}
     >
       <OverlayArrow className={styles.arrow}>
