@@ -14,9 +14,7 @@ export const UncontrolledForm = () => {
   const [result, setResult] = React.useState(null)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // @ts-ignore
     const data = Object.fromEntries(new FormData(e.currentTarget))
-    // @ts-ignore
     setResult(data)
   }
 
@@ -80,8 +78,8 @@ export const ControlledForm = () => {
 }
 
 export const RealtimeValidation = () => {
-  let [password, setPassword] = React.useState('')
-  let errors = []
+  const [password, setPassword] = React.useState('')
+  const errors = []
   if (password.length < 8) {
     errors.push('Lösenordet måste vara fler än 8 tecken.')
   }
@@ -93,17 +91,15 @@ export const RealtimeValidation = () => {
   }
 
   return (
-    <>
-      <TextField
-        label={'Lösenord'}
-        style={{ whiteSpace: 'pre-line' }}
-        isInvalid={errors.length > 0}
-        value={password}
-        onChange={setPassword}
-        errorMessage={errors.join('\n')}
-        errorPosition={'bottom'}
-      />
-    </>
+    <TextField
+      label={'Lösenord'}
+      style={{ whiteSpace: 'pre-line' }}
+      isInvalid={errors.length > 0}
+      value={password}
+      onChange={setPassword}
+      errorMessage={errors.join('\n')}
+      errorPosition={'bottom'}
+    />
   )
 }
 
@@ -121,13 +117,12 @@ export const ServerValidation = () => {
       },
     }
   }
-  let [errors, setErrors] = React.useState({})
-  let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const [errors, setErrors] = React.useState({})
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // @ts-ignore
-    let data = Object.fromEntries(new FormData(e.currentTarget))
-    let result = await callServer(data)
+    const data = Object.fromEntries(new FormData(e.currentTarget))
+    const result = await callServer(data)
     setErrors(result.errors)
   }
 
