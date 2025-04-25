@@ -4,6 +4,7 @@ import { Button } from '../button'
 import { Save } from 'lucide-react'
 import { expect, within } from '@storybook/test'
 import styles from './Tooltip.module.css'
+import { I18nProvider } from 'react-aria-components'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
@@ -11,6 +12,9 @@ const meta: Meta<typeof Tooltip> = {
   tags: ['autodocs'],
   argTypes: {
     children: { control: 'text' },
+  },
+  parameters: {
+    layout: 'centered',
   },
 }
 export default meta
@@ -64,5 +68,96 @@ export const Open: Story = {
         expect(tooltip).toHaveClass(styles.tooltip, className as string)
       },
     )
+  },
+}
+
+export const Placement: Story = {
+  args: {
+    placement: 'top',
+    children: 'Spara',
+  },
+  render: args => (
+    <TooltipTrigger isOpen>
+      <Button
+        variant='tertiary'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      <Tooltip
+        data-testid='tooltip-placement'
+        {...args}
+      />
+    </TooltipTrigger>
+  ),
+  play: async ({ step, canvasElement }) => {
+    const body = canvasElement.ownerDocument.body
+    const tooltip = within(body).getByTestId('tooltip-placement')
+
+    await step('should be placed at the top', async () => {
+      expect(tooltip).toHaveAttribute('data-placement', 'top')
+    })
+  },
+}
+
+export const PlacementStart: Story = {
+  args: {
+    placement: 'start',
+    children: 'Spara',
+  },
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <TooltipTrigger isOpen>
+      <Button
+        variant='tertiary'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      <Tooltip
+        data-testid='tooltip-placement'
+        {...args}
+      />
+    </TooltipTrigger>
+  ),
+  play: async ({ step, canvasElement }) => {
+    const body = canvasElement.ownerDocument.body
+    const tooltip = within(body).getByTestId('tooltip-placement')
+
+    await step('should be placed at the start (left)', async () => {
+      expect(tooltip).toHaveAttribute('data-placement', 'left')
+    })
+  },
+}
+
+export const PlacementStartRTL: Story = {
+  args: {
+    placement: 'start',
+    children: 'Spara',
+  },
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <I18nProvider locale={'ar-AR'}>
+    <TooltipTrigger isOpen>
+      <Button
+        variant='tertiary'
+        aria-label='Spara'
+      >
+        <Save />
+      </Button>
+      <Tooltip
+        data-testid='tooltip-placement'
+        {...args}
+      />
+    </TooltipTrigger>
+    </I18nProvider>
+  ),
+  play: async ({ step, canvasElement }) => {
+    const body = canvasElement.ownerDocument.body
+    const tooltip = within(body).getByTestId('tooltip-placement')
+
+    await step('should be placed at the start for RTL (right)', async () => {
+      expect(tooltip).toHaveAttribute('data-placement', 'right')
+    })
   },
 }
