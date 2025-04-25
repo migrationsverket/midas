@@ -2,8 +2,6 @@ import * as React from 'react'
 import {
   DateField as AriaDateField,
   DateFieldProps as AriaDateFieldProps,
-  DateInput,
-  DateSegment,
   DateValue,
   ValidationResult,
 } from 'react-aria-components'
@@ -12,43 +10,38 @@ import { Label } from '../label'
 import { FieldError } from '../field-error'
 import styles from './DateField.module.css'
 import clsx from 'clsx'
+import { DateInput } from '../date-input'
+import { DateSegment } from '../date-segment'
 
-interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
+interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   label?: string
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
 }
 
-export function DateField<T extends DateValue>({
+export const DateField: React.FC<DateFieldProps> = ({
   label,
   description,
   errorMessage,
   className,
   errorPosition = 'top',
-  ...props
-}: DateFieldProps<T>) {
-  return (
-    <AriaDateField
-      {...props}
-      className={clsx(
-        styles.dateField,
-        props.isDisabled && styles.isDisabled,
-        className,
-      )}
+  isDisabled,
+  ...rest
+}) => (
+  <AriaDateField
+    {...rest}
+    className={clsx(styles.dateField, className)}
+  >
+    <Label variant='label-02'>{label}</Label>
+    {description && <Text slot='description'>{description}</Text>}
+    {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+    <div
+      className={styles.inputField}
+      data-disabled={isDisabled || undefined}
     >
-      <Label variant='label-02'>{label}</Label>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <DateInput className={styles.inputField}>
-        {segment => (
-          <DateSegment
-            segment={segment}
-            className={styles.segment}
-          />
-        )}
-      </DateInput>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-    </AriaDateField>
-  )
-}
+      <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+    </div>
+    {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+  </AriaDateField>
+)

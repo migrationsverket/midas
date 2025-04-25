@@ -1,0 +1,26 @@
+@value tokens: "../theme/tokens.css";
+@value --field-hover-01, --focus, --text-primary from tokens;
+
+.dateInput {
+  display: flex;
+
+  & div[data-readonly='true'] {
+    color: --text-primary;
+    padding: 0 2px;
+  }
+
+  & div:focus-visible,
+  & div[data-focus-visible] {
+    outline: none;
+    box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 0;
+    }
+  }
+}
+
+.divider {
+  color: --text-primary;
+}

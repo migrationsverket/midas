@@ -1,20 +1,30 @@
 import * as React from 'react'
 import {
-  CalendarProps,
+  CalendarProps as AriaCalendarProps,
   DateValue,
   Calendar as AriaCalendar,
 } from 'react-aria-components'
-import styles from './Calendar.module.css'
 import { clsx } from 'clsx'
-import { CalendarContent, CalendarContentProps } from './CalendarContent'
+import { CalendarHeader } from './components/CalendarHeader'
+import { CalendarGrid } from './components/CalendarGrid'
+import { Text } from '../text'
+import styles from './Calendar.module.css'
 
-export const Calendar: React.FC<
-  CalendarProps<DateValue> & CalendarContentProps
-> = ({ className, ...rest }) => (
+export interface CalendarProps extends AriaCalendarProps<DateValue> {
+  errorMessage?: string
+}
+
+export const Calendar: React.FC<CalendarProps> = ({
+  className,
+  errorMessage,
+  ...rest
+}) => (
   <AriaCalendar
     className={clsx(styles.calendar, className)}
     {...rest}
   >
-    <CalendarContent {...rest} />
+    <CalendarHeader />
+    <CalendarGrid {...rest} />
+    {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
   </AriaCalendar>
 )
