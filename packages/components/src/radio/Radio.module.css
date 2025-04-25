@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --size-03, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-tertiary, --border-secondary, --border-subtle, --breakpoint-sm, --field-hover-02, --border-invalid from tokens;
+@value --font-family, --text-disabled, --size-30, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-secondary, --border-subtle, --breakpoint-sm, --field-hover-02, --border-invalid from tokens;
 
 .radioGroup {
   font-family: --font-family;
@@ -25,7 +25,7 @@
 }
 
 .radio {
-  font-size: --size-03;
+  font-size: --size-30;
   display: flex;
   align-items: center;
   gap: 0.5rem;
