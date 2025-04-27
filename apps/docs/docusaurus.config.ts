@@ -59,6 +59,7 @@ const config: Config = {
             return true
           },
           savePropValueAsString: true,
+          shouldExtractValuesFromUnion: true,
           shouldExtractLiteralValuesFromEnum: false,
         },
       },
@@ -115,7 +116,7 @@ const config: Config = {
         },
         pages: {},
         theme: {
-          customCss: ['./src/css/custom.css'],
+          customCss: ['./src/css/custom.css', './src/css/highlight.css'],
         },
       } satisfies Preset.Options,
     ],
