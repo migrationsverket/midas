@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --size-03, --breakpoint-sm, --button-background-primary, --button-border-secondary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-tertiary, --border-tertiary, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover from tokens;
+@value --font-family, --size-03, --breakpoint-sm, --button-background-primary, --button-border-secondary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-tertiary, --border-tertiary, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-tertiary, --button-background-icon-hover from tokens;
 
 .linkButton {
   font-family: --font-family;
@@ -54,7 +54,7 @@
   border-color: --button-border-secondary;
 
   .icon {
-    color: --icon-secondary;
+    color: --icon-tertiary;
   }
 
   &[data-hovered],
