@@ -19,6 +19,10 @@
     min-width: 6rem;
     vertical-align: top;
   }
+  thead tr th:first-child,
+  tbody tr td:first-child {
+    width: 25%;
+  }
 }
 
 .thead {
@@ -32,3 +36,5 @@
 .item {
   padding: 0;
 }
+
+

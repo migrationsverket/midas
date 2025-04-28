@@ -1,2 +1,2 @@
-export { Calendar } from './Calendar'
-export { RangeCalendar } from './RangeCalendar'
+export * from './Calendar'
+export * from './RangeCalendar'
