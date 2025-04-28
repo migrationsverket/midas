@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-sm, --breakpoint-lg, --background, --border-subtle, --layer-01, --size-01, --text-primary, --text-on-color, --line-height-02, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content from tokens;
+@value --font-family, --breakpoint-sm, --breakpoint-lg, --background, --border-subtle, --layer-01, --size-01, --text-primary, --text-on-color, --line-height-02, --button-background-primary, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content, --menu-item-background-hover, --menu-item-background-selected, --border-tertiary from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
@@ -259,7 +259,7 @@
 
   &[data-hovered],
   &:visited {
-    background-color: --button-background-tertiary-hover;
+    background-color: --menu-item-background-hover;
     color: --text-primary;
     cursor: pointer;
 
@@ -293,8 +293,9 @@
 }
 
 .active {
-  background-color: --button-background-tertiary-active;
+  background-color: --menu-item-background-selected;
   color: --text-primary;
+  border-left: 0.125rem solid --border-tertiary;
 }
 
 .linkText {
