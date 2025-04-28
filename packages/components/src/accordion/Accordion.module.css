@@ -40,6 +40,12 @@
     }
   }
 
+  &.uncontained {
+    .item:last-of-type .content {
+      padding-bottom: 0;
+    }
+  }
+
   &[data-disabled] {
     --heading-color: --text-disabled;
 
