@@ -151,6 +151,7 @@ export declare const semantic: {
     fieldSkeleton: string;
     iconPrimary: string;
     iconSecondary: string;
+    iconTertiary: string;
     iconInverse: string;
     iconOnColor: string;
     iconDisabled: string;
