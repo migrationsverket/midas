@@ -3,8 +3,6 @@ import { InputProps } from './Input';
 import * as React from 'react';
 export interface TextFieldProps extends Omit<TextFieldBaseProps, 'children'> {
     className?: InputProps['className'];
-    dir?: string;
-    dirName?: string;
     form?: string;
     list?: string;
 }
