@@ -41,7 +41,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       ref={ref}
       {...rest}
     >
-      <Label variant='label-02'>{label}</Label>
+      <Label>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField {...rest}>

@@ -33,7 +33,7 @@ export const DateField: React.FC<DateFieldProps> = ({
     {...rest}
     className={clsx(styles.dateField, className)}
   >
-    <Label variant='label-02'>{label}</Label>
+    <Label>{label}</Label>
     {description && <Text slot='description'>{description}</Text>}
     {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
     <div
