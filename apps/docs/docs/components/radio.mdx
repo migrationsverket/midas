@@ -5,7 +5,13 @@ description: Radio är en typ av inmatningsfält som används för att välja et
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample, ControlledExample, HorizontalExample } from '@site/src/components/examples/radio/RadioExamples'
+import {
+  BasicExample,
+  ControlledExample,
+  HorizontalExample,
+  DefaultValueExample,
+  NoneOfTheAboveExample,
+} from '@site/src/components/examples/radio/RadioExamples'
 import { Radio, RadioGroup } from '@midas-ds/components'
 
 <ComponentHeader
@@ -95,43 +101,20 @@ Det finns två mönster för Radioknappar:
 1. Inget alternativ är valt från början. Detta alternativ kräver att användaren tar ställning för att kunna gå vidare, vilket de flesta fall är lämpligt. Välj detta mönster om det är svårt att förutse eller olämpligt att ge ett förval.
 
 <div className='card'>
-  <RadioGroup
-    label='Välj din favoritfrukt'
-    description='Du kan bara välja en'
-  >
-    <Radio value='apple'>Äpple</Radio>
-    <Radio value='banan'>Banan</Radio>
-    <Radio value='kiwi'>Kiwi</Radio>
-    <Radio value='apelsin'>Apelsin</Radio>
-  </RadioGroup>
+  <BasicExample />
 </div>
 
 2. Ett av alternativen är valt från början. Välj detta mönster om det finns ett val som är förväntat eller önskvärt och det inte ger stora konsekvenser för användaren att inte ta ställning.
 
 <div className='card'>
-  <RadioGroup
-    label='Vill du lägga till din favoritfrukt i fruktkorgen?'
-    description='Det blir gott!'
-    defaultValue='yes'
-  >
-    <Radio value='yes'>Ja</Radio>
-    <Radio value='no'>Nej</Radio>
-  </RadioGroup>
+  <DefaultValueExample />
 </div>
 
 Om användaren behöver kunna avstå från att välja ett alternativ, är rekommendationen att skapa ett sista alternativ som kallar "Inget av givna alternativ" eller liknande.
 
 <div className='card'>
-  <RadioGroup
-    label='Välj din favoritfrukt'
-    description='Du kan bara välja en'
-  >
-    <Radio value='apple'>Äpple</Radio>
-    <Radio value='banan'>Banan</Radio>
-    <Radio value='kiwi'>Kiwi</Radio>
-    <Radio value='apelsin'>Apelsin</Radio>
-    <Radio value='none'>Inget av givna alternativ</Radio>
-  </RadioGroup>
+<NoneOfTheAboveExample />
+
 </div>
 
 ### Val av komponent
