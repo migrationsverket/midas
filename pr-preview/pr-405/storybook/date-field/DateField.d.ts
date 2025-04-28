@@ -1,9 +1,9 @@
 import { DateFieldProps as AriaDateFieldProps, DateValue, ValidationResult } from 'react-aria-components';
-interface DateFieldProps<T extends DateValue> extends AriaDateFieldProps<T> {
-    label?: string;
+import * as React from 'react';
+export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
     description?: string;
     errorMessage?: string | ((validation: ValidationResult) => string);
     errorPosition?: 'top' | 'bottom';
+    label?: string;
 }
-export declare function DateField<T extends DateValue>({ label, description, errorMessage, className, errorPosition, ...props }: DateFieldProps<T>): import("react/jsx-runtime").JSX.Element;
-export {};
+export declare const DateField: React.FC<DateFieldProps>;
