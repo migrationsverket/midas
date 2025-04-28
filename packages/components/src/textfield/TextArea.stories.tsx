@@ -20,9 +20,7 @@ type Story = StoryObj<typeof TextArea>
 
 export const Primary: Story = {
   args: {
-    inputProps: {
-      className: 'test-class',
-    },
+    className: 'test-class',
   },
   play: async ({ canvas, step }) => {
     await step(
