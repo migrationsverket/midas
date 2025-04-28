@@ -224,3 +224,7 @@
 @value --z-index-modal: 1000;
 @value --z-index-toast: 1100;
 @value --z-index-skip-to-content: 1200;
+
+/* Menu */
+@value --menu-item-background-hover: light-dark(--gray-20, --gray-190);
+@value --menu-item-background-selected: light-dark(--gray-10, --gray-180);
