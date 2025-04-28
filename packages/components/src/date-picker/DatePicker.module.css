@@ -6,10 +6,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  &[data-disabled='true'] {
-    cursor: not-allowed;
-  }
 }
 
 .inputField {
@@ -24,7 +20,7 @@
   justify-content: flex-start;
   gap: 1rem;
 
-  &[data-disabled='true'] {
+  &[data-disabled] {
     cursor: not-allowed;
     border-color: --border-disabled;
   }
@@ -34,14 +30,20 @@
     outline: none;
   }
 
-  .buttonInvalid {
-    position: relative;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    transform: translateX(-3px);
+  &[data-focus-visible] {
+    box-shadow: --focus;
   }
 
-  & button {
+  &[data-hovered]:not([data-disabled]) {
+    background-color: --field-hover-01;
+  }
+
+  &[data-invalid] {
+    border: none;
+    box-shadow: inset 0 0 0 3px --border-invalid;
+  }
+
+  .calendarButton {
     border: none;
     margin-left: auto;
     min-height: 3rem;
@@ -51,12 +53,19 @@
     background-color: --field-01;
     cursor: pointer;
 
-    &[data-disabled='true'] {
+    &[data-invalid] {
+      position: relative;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      transform: translateX(-3px);
+    }
+
+    &[data-disabled] {
       cursor: not-allowed;
       color: --icon-disabled;
     }
 
-    &[data-hovered]:not([data-disabled='true']) {
+    &[data-hovered]:not([data-disabled]) {
       background-color: --field-hover-01;
     }
 
@@ -69,68 +78,6 @@
         outline: 3px solid highlight;
         outline-offset: 2px;
       }
-    }
-  }
-
-  &[data-focus-visible] {
-    box-shadow: --focus;
-  }
-
-  &[data-hovered]:not([data-disabled='true']) {
-    background-color: --field-hover-01;
-  }
-
-  &[data-invalid] {
-    border: none;
-    box-shadow: inset 0 0 0 3px --border-invalid;
-  }
-}
-
-.date {
-  display: flex;
-
-  & div[data-readonly='true'] {
-    color: --text-primary;
-    padding: 0 2px;
-  }
-
-  & div:focus-visible,
-  & div[data-focus-visible] {
-    outline: none;
-    box-shadow: --focus;
-
-    @media (forced-colors: active) {
-      outline: 3px solid highlight;
-      outline-offset: 0;
-    }
-  }
-}
-
-.divider {
-  color: --text-primary;
-}
-
-.segment {
-  padding: 0 0.125rem;
-  text-transform: uppercase;
-  color: --text-primary;
-
-  &[data-placeholder] {
-    color: --text-placeholder;
-  }
-
-  &[data-disabled] {
-    color: --text-disabled;
-  }
-
-  &:focus-visible,
-  &[data-focus-visible] {
-    outline: none;
-    box-shadow: --focus;
-
-    @media (forced-colors: active) {
-      outline: 1px solid;
-      outline-offset: 2px;
     }
   }
 }

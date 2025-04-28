@@ -8,15 +8,6 @@
   align-items: flex-start;
 }
 
-.isDisabled {
-  color: --text-disabled;
-  cursor: not-allowed;
-
-  .inputField {
-    border: none;
-  }
-}
-
 .inputField {
   box-sizing: border-box;
   width: 100%;
@@ -28,37 +19,18 @@
   border-bottom: 1px solid --border-primary;
   padding: 0 1rem;
 
-  &[data-focus-visible] {
-    box-shadow: --focus;
+  &[data-disabled] {
+    border: none;
+    color: --text-disabled;
+    cursor: not-allowed;
   }
 
-  &[data-hovered]:not([data-disabled='true']) {
+  &:hover:not([data-disabled]) {
     background-color: --field-hover-01;
   }
 
-  &[data-invalid] {
+  &:has([data-invalid]) {
     border: none;
     box-shadow: inset 0 0 0 3px --border-invalid;
-  }
-}
-
-.segment {
-  padding: 0 0.125rem;
-  text-transform: uppercase;
-  color: --text-primary;
-
-  &[data-placeholder] {
-    color: --text-placeholder;
-  }
-
-  &:focus-visible,
-  &[data-focus-visible] {
-    outline: none;
-    box-shadow: --focus;
-
-    @media (forced-colors: active) {
-      outline: 1px solid;
-      outline-offset: 2px;
-    }
   }
 }

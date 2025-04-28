@@ -2,29 +2,30 @@
 
 import * as React from 'react'
 import {
-  DatePicker as AriaDatePicker,
-  type DatePickerProps as AriaDatePickerProps,
+  DateRangePicker as AriaDateRangePicker,
+  type DateRangePickerProps as AriaDateRangePickerProps,
   type DateValue,
   type ValidationResult,
 } from 'react-aria-components'
 import { clsx } from 'clsx'
 import { DatePickerInputField } from './DatePickerInputField'
 import { DatePickerPopover } from './DatePickerPopover'
-import { Calendar } from '../calendar'
-import { DateInput, DateSegment } from '../date-field'
+import { DateInput, DateInputDivider, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
 import { Label } from '../label'
+import { RangeCalendar } from '../calendar'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
 
-interface DatePickerProps extends AriaDatePickerProps<DateValue> {
+export interface DateRangePickerProps
+  extends AriaDateRangePickerProps<DateValue> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   label?: string
 }
 
-export const DatePicker: React.FC<DatePickerProps> = ({
+export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   className,
   description,
   errorMessage,
@@ -35,7 +36,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   const ref = React.useRef<HTMLDivElement>(null)
 
   return (
-    <AriaDatePicker
+    <AriaDateRangePicker
       className={clsx(styles.datePicker, className)}
       ref={ref}
       {...rest}
@@ -44,12 +45,18 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField {...rest}>
-        <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+        <DateInput slot='start'>
+          {segment => <DateSegment segment={segment} />}
+        </DateInput>
+        <DateInputDivider />
+        <DateInput slot='end'>
+          {segment => <DateSegment segment={segment} />}
+        </DateInput>
       </DatePickerInputField>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerPopover ref={ref}>
-        <Calendar />
+        <RangeCalendar />
       </DatePickerPopover>
-    </AriaDatePicker>
+    </AriaDateRangePicker>
   )
 }
