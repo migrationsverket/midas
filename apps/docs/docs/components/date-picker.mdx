@@ -10,10 +10,7 @@ import { DatePicker, DateRangePicker } from '@midas-ds/components'
 
 export const Example = props => {
   return (
-    <DatePicker
-      label='Välj ett datum'
-      aria-label='Välj datum'
-    />
+    <DatePicker label='Välj ett datum' aria-label='Välj datum' />
   )
 }
 
@@ -58,7 +55,9 @@ import { parseDate, CalendarDate } from '@internationalized/date'
 import { DatePicker } from '@midas-ds/components'
 
 export const DatePickerExample = () => {
-  const [value, setValue] = React.useState<CalendarDate | null>(parseDate('2026-05-29'))
+  const [value, setValue] = React.useState<CalendarDate | null>(
+    parseDate('2026-05-29'),
+  )
   return (
     <>
       <DatePicker
@@ -76,10 +75,7 @@ export const DatePickerExample = () => {
 }
 ```
 
-<div
-  className='card'
-  style={{ display: 'flex', gap: '1rem' }}
->
+<div className={'card'} style={{ display: 'flex', gap: '1rem' }}>
   <DatePickerExample />
 </div>
 
@@ -89,7 +85,7 @@ export const DatePickerExample = () => {
 <DateRangePicker label='Ange din semesterperiod' />
 ```
 
-<div className='card'>
+<div className={'card'}>
   <DateRangePicker label='Ange din semesterperiod' />
 </div>
 
@@ -99,7 +95,10 @@ Använd callback `isDateUnavailable` för att markera datum som inte valbara. An
 för att begränsa datum före dagens datum.
 
 ```tsx
-import { today, getLocalTimeZone } from '@internationalized/date'
+import { 
+  today, 
+  getLocalTimeZone,
+} from '@internationalized/date'
 
 export const UnavailableDateExample = () => {
   const now = today(getLocalTimeZone())
@@ -116,7 +115,6 @@ export const UnavailableDateExample = () => {
   )
 }
 ```
-
 <div className={'card'}>
   <UnavailableDateExample />
 </div>
