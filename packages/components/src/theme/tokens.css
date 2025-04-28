@@ -224,3 +224,7 @@
 @value --z-index-modal: 1000;
 @value --z-index-toast: 1100;
 @value --z-index-skip-to-content: 1200;
+
+/* Sizing */
+@value --size-50: 0.625rem; /* 10px */
+@value --size-70: 0.875rem; /* 14px */
