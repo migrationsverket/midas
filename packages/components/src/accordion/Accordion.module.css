@@ -42,7 +42,7 @@
 
   &.uncontained {
     .item:last-of-type .content {
-      padding-bottom: 0;
+      padding-bottom: 0.1px;
     }
   }
 
