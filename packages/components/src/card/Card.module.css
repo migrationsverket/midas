@@ -86,7 +86,7 @@
   align-items: center;
   text-decoration: none;
 
-  &[data-focused], 
+  &[data-focused],
   &:focus {
     outline: none;
     box-shadow: --focus;

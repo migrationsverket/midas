@@ -51,11 +51,7 @@ export const ActionExample: React.FC = () => (
 export const ActionAreaExample: React.FC = () => (
   <div className='card'>
     <Card style={{ maxWidth: '320px' }}>
-      <CardActionArea
-        onPress={() => {
-          return
-        }}
-      >
+      <CardActionArea onPress={() => alert('Klickat på CardActionArea')}>
         <CardContent>
           <CardTitle>Dina uppgifter</CardTitle>
           <Text>Namn: Namn Namnsson</Text>
