@@ -8,11 +8,9 @@ import {
   type ValidationResult,
 } from 'react-aria-components'
 import { clsx } from 'clsx'
-import { DatePickerInputField } from './components/DatePickerInputField'
-import { DatePickerPopover } from './components/DatePickerPopover'
-import { DateInput } from '../date-input'
-import { DateInputDivider } from '../date-input/DateInputDivider'
-import { DateSegment } from '../date-segment'
+import { DatePickerInputField } from './DatePickerInputField'
+import { DatePickerPopover } from './DatePickerPopover'
+import { DateInput, DateInputDivider, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
 import { Label } from '../label'
 import { RangeCalendar } from '../calendar'
@@ -43,7 +41,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       ref={ref}
       {...rest}
     >
-      <Label variant='label-02'>{label}</Label>
+      <Label>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField {...rest}>

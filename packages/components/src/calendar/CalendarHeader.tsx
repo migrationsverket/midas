@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from '../../button'
-import { Heading } from '../../heading'
-import styles from '../Calendar.module.css'
+import { Button } from '../button'
+import { Heading } from '../heading'
+import styles from './Calendar.module.css'
 
 export const CalendarHeader: React.FC = () => (
   <header className={styles.header}>

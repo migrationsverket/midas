@@ -6,8 +6,7 @@ import {
   type ValidationResult,
 } from 'react-aria-components'
 import clsx from 'clsx'
-import { DateInput } from '../date-input'
-import { DateSegment } from '../date-segment'
+import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
 import { Label } from '../label'
 import { Text } from '../text'

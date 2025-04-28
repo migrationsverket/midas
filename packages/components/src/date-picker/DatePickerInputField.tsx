@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Button, Group } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
-import styles from '../DatePicker.module.css'
+import styles from './DatePicker.module.css'
 
 interface DatePickerInputFieldProps {
   children?: React.ReactNode

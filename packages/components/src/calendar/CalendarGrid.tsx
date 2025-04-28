@@ -6,7 +6,7 @@ import {
 } from 'react-aria-components'
 import clsx from 'clsx'
 import { getLocalTimeZone, isToday } from '@internationalized/date'
-import styles from '../Calendar.module.css'
+import styles from './Calendar.module.css'
 
 export interface CalendarGridProps {
   weekdayStyle?: AriaCalendarGridProps['weekdayStyle']

@@ -5,8 +5,8 @@ import {
   type RangeCalendarProps as AriaRangeCalendarProps,
 } from 'react-aria-components'
 import { clsx } from 'clsx'
-import { CalendarGrid } from './components/CalendarGrid'
-import { CalendarHeader } from './components/CalendarHeader'
+import { CalendarGrid } from './CalendarGrid'
+import { CalendarHeader } from './CalendarHeader'
 import { Text } from '../text'
 import styles from './Calendar.module.css'
 
