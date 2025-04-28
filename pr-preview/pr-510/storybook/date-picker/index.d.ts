@@ -1,2 +1,2 @@
-export { DatePicker } from './DatePicker';
-export { DateRangePicker } from './DatePicker';
+export * from './DatePicker';
+export * from './DateRangePicker';

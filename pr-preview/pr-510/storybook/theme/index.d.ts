@@ -153,6 +153,7 @@ export declare const theme: {
         fieldSkeleton: string;
         iconPrimary: string;
         iconSecondary: string;
+        iconTertiary: string;
         iconInverse: string;
         iconOnColor: string;
         iconDisabled: string;
