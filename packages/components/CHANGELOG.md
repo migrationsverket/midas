@@ -1,3 +1,21 @@
+## 8.2.0
+
+### 🚀 Features
+
+- **theme:** add --icon-tertiary, new color for --icon-secondary ([f0ef381472](https://github.com/migrationsverket/midas/commit/f0ef381472))
+- **label:** deprecate prop variant and add new css class ([42e33be662](https://github.com/migrationsverket/midas/commit/42e33be662))
+- **tooltip:** allow locale agnostic tooltip placement ([#492](https://github.com/migrationsverket/midas/pull/492))
+
+### 🩹 Fixes
+
+- **accordion:** remove disabled styling if component has disabled children ([1c704b714d](https://github.com/migrationsverket/midas/commit/1c704b714d))
+- **checkbox:** set correct line-height and adjust high contrast visibility ([6ca7ea9ba9](https://github.com/migrationsverket/midas/commit/6ca7ea9ba9))
+
+### Documentation Changes
+
+- **propstable:** add support for enums in table ([#511](https://github.com/migrationsverket/midas/pull/511))
+- **modal:** change arg types in storybook ([f9588f170b](https://github.com/migrationsverket/midas/commit/f9588f170b))
+
 ## 8.1.0
 
 ### 🚀 Features
