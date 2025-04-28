@@ -5,17 +5,16 @@ export const BasicExample: React.FC = () => (
   <RadioGroup
     label='Välj din favoritfrukt'
     description='Du kan bara välja en'
-    defaultValue='apple'
   >
     <Radio value='apple'>Äpple</Radio>
     <Radio value='banan'>Banan</Radio>
     <Radio value='kiwi'>Kiwi</Radio>
-    <Radio value='aplesin'>Apelsin</Radio>
+    <Radio value='apelsin'>Apelsin</Radio>
   </RadioGroup>
 )
 
 export const ControlledExample = () => {
-  const [selectedFruit, setSelectedFruit] = useState('banan')
+  const [selectedFruit, setSelectedFruit] = useState('')
 
   return (
     <>
@@ -28,7 +27,7 @@ export const ControlledExample = () => {
         <Radio value='apple'>Äpple</Radio>
         <Radio value='banan'>Banan</Radio>
         <Radio value='kiwi'>Kiwi</Radio>
-        <Radio value='aplesin'>Apelsin</Radio>
+        <Radio value='apelsin'>Apelsin</Radio>
       </RadioGroup>
       <div style={{ marginTop: '1rem' }}>selectedFruit: {selectedFruit}</div>
     </>
