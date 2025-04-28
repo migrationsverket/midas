@@ -2,7 +2,8 @@ import clsx from 'clsx'
 import styles from './Card.module.css'
 import * as React from 'react'
 import { Heading, HeadingProps } from '../heading'
-import { Button, ButtonProps } from 'react-aria-components'
+import { Button, ButtonProps, Link } from 'react-aria-components'
+import { ArrowRight } from 'lucide-react'
 
 export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
   /** Stack content in card vertical or horizontal */
@@ -22,6 +23,14 @@ export interface MidasCardImage {
   className?: string
   [key: string]: unknown
 }
+
+interface MidasCardLink<C extends React.ElementType> {
+  children: React.ReactNode
+  as?: C
+}
+
+export type LinkProps<C extends React.ElementType> = MidasCardLink<C> &
+  Omit<React.ComponentProps<C>, keyof MidasCardLink<C>>
 
 const CardContext = React.createContext<MidasCardContext>({
   horizontal: undefined,
@@ -77,7 +86,7 @@ export const CardTitle: React.FC<HeadingProps> = ({
 
   return (
     <Heading
-      level={horizontal ? 5 : 2}
+      level={horizontal ? 5 : 3}
       elementType={elementType}
       isExpressive={horizontal}
       className={clsx(styles.cardTitle, horizontal && styles.horizontal)}
@@ -130,5 +139,26 @@ export const CardImage: React.FC<MidasCardImage> = ({
       {...rest}
       className={clsx(styles.cardImage, className)}
     />
+  )
+}
+
+export const CardLink = <C extends React.ElementType = typeof Link>({
+  children,
+  as,
+  ...rest
+}: LinkProps<C>) => {
+  const Component = as || Link
+
+  return (
+    <Component
+      {...rest}
+      className={clsx(styles.cardLink, rest.className)}
+    >
+      {children}
+      <ArrowRight
+        className={styles.cardLinkIcon}
+        size={24}
+      />
+    </Component>
   )
 }

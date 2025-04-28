@@ -4,7 +4,7 @@ description: Ett card är en modulär komponent som används för att presentera
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Grid, GridItem, Card } from '@midas-ds/components'
+import { Card } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import {
   BasicExample,
@@ -12,7 +12,6 @@ import {
   ActionAreaExample,
   LinkExample,
   ImageExample,
-  EditableExample,
   HorizontalExample,
 } from '@site/src/components/examples/card/CardExamples'
 
@@ -51,6 +50,7 @@ Kort börjar med en grundläggande komponent som endast definerar kortytan. Seda
 | `<CardActions>`    | Skapar en yta för knappar eller annat som användaren kan klicka på på kortet. |
 | `<CardImage>`      | Används för att visa media på kortet.                                         |
 | `<CardActionArea>` | Gör hela kortytan klickbar.                                                   |
+| `<CardLink>`       | Läggs runt `<CardTitle>` för att skapa en länk.                               |
 
 ```tsx
 import { Card, CardContent, CardTitle, Text } from '@midas-ds/components'
@@ -165,15 +165,10 @@ import { Card, CardTitle, Text, CardActions, Link } from '@midas-ds/components'
 return (
   <Card>
     <CardContent>
-      <CardTitle>Här är en titel</CardTitle>
+      <CardLink>
+        <CardTitle>Här är en titel</CardTitle>
+      </CardLink>
       <Text>Här är lite innehåll</Text>
-      <Link
-        standalone
-        stretched
-        href='#'
-      >
-        Läs mer om detta
-      </Link>
     </CardContent>
   </Card>
 )
@@ -195,17 +190,10 @@ return (
       alt='Ananas'
     />
     <CardContent>
-      <CardTitle>Dina uppgifter</CardTitle>
+      <CardLink href='#'>
+        <CardTitle>Dina uppgifter</CardTitle>
+      </CardLink>
       <Text>Namn: Namn Namnsson</Text>
-      <CardActions>
-        <Link
-          href='#'
-          standalone
-          stretched
-        >
-          Läs mer om detta här
-        </Link>
-      </CardActions>
     </CardContent>
   </Card>
 )

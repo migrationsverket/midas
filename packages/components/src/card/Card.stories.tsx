@@ -5,12 +5,12 @@ import {
   CardActions,
   CardContent,
   CardImage,
+  CardLink,
   CardTitle,
 } from './Card'
 import { Text } from '../text'
 import { Button } from '../button'
 import { Pen, X } from 'lucide-react'
-import { Link } from '../link'
 import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Card> = {
@@ -38,17 +38,6 @@ export const Example: Story = {
         </CardActions>
       </CardContent>
     ),
-  },
-  play: async ({ canvas, step }) => {
-    await step('It should be possible to focus the button', async () => {
-      const link = canvas.getByText('Redigera')
-      expect(link).not.toHaveFocus()
-
-      // focus the link
-      await userEvent.tab()
-
-      expect(link).toHaveFocus()
-    })
   },
 }
 
@@ -82,6 +71,18 @@ export const WithActions: Story = {
       </CardContent>
     ),
   },
+  play: async ({ canvas, step }) => {
+    await step('It should be possible to focus the button', async () => {
+      const button = canvas.getByText('Avbryt')
+      expect(button).not.toHaveFocus()
+
+      // focus the link
+      await userEvent.tab()
+      await userEvent.tab()
+
+      expect(button).toHaveFocus()
+    })
+  },
 }
 
 export const WithPrimaryAction: Story = {
@@ -92,6 +93,7 @@ export const WithPrimaryAction: Story = {
           onPress={() => {
             return
           }}
+          data-testid='card-action-area'
         >
           <CardContent>
             <CardTitle>Dina uppgifter</CardTitle>
@@ -117,29 +119,39 @@ export const WithPrimaryAction: Story = {
       </>
     ),
   },
+  play: async ({ canvas, step }) => {
+    await step(
+      'It should be possible to focus the primary action area',
+      async () => {
+        const button = canvas.getByTestId('card-action-area')
+        expect(button).not.toHaveFocus()
+
+        // focus the link
+        await userEvent.tab()
+
+        expect(button).toHaveFocus()
+      },
+    )
+  },
 }
 
 export const WithLink: Story = {
   args: {
     children: (
       <CardContent>
-        <CardTitle>Dina uppgifter</CardTitle>
+        <CardLink
+          href='#'
+          data-testid='card-link'
+        >
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>
         <Text>Namn: Namn Namnsson</Text>
-        <CardActions>
-          <Link
-            href='#'
-            standalone
-            stretched
-          >
-            Läs mer om det här
-          </Link>
-        </CardActions>
       </CardContent>
     ),
   },
   play: async ({ canvas, step }) => {
     await step('It should be possible to focus the link', async () => {
-      const link = canvas.getByText('Läs mer om det här')
+      const link = canvas.getByTestId('card-link')
       expect(link).not.toHaveFocus()
 
       // focus the link
@@ -160,17 +172,13 @@ export const WithImage: Story = {
           alt='Ananas'
         />
         <CardContent>
-          <CardTitle>Dina uppgifter</CardTitle>
+          <CardLink
+            href='#'
+            data-testid='card-link'
+          >
+            <CardTitle>Dina uppgifter</CardTitle>
+          </CardLink>
           <Text>Namn: Namn Namnsson</Text>
-          <CardActions>
-            <Link
-              href='#'
-              standalone
-              stretched
-            >
-              Läs mer om detta här
-            </Link>
-          </CardActions>
         </CardContent>
       </>
     ),
@@ -182,21 +190,17 @@ export const WithContainedImage: Story = {
     style: { maxWidth: 300 },
     children: (
       <CardContent>
-        <CardTitle>Dina uppgifter</CardTitle>
+        <CardLink
+          href='#'
+          data-testid='card-link'
+        >
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>{' '}
         <CardImage
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
           alt='Ananas'
         />
         <Text>Namn: Namn Namnsson</Text>
-        <CardActions>
-          <Link
-            href='#'
-            standalone
-            stretched
-          >
-            Läs mer om detta här
-          </Link>
-        </CardActions>
       </CardContent>
     ),
   },

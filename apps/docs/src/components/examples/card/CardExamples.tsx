@@ -5,8 +5,8 @@ import {
   CardActions,
   CardContent,
   CardImage,
+  CardLink,
   CardTitle,
-  Link,
   Text,
 } from '@midas-ds/components'
 import { Pen, X } from 'lucide-react'
@@ -86,15 +86,10 @@ export const LinkExample: React.FC = () => (
   <div className='card'>
     <Card style={{ maxWidth: '320px' }}>
       <CardContent>
-        <CardTitle>Här är en titel</CardTitle>
+        <CardLink href='#'>
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>
         <Text>Här är lite innehåll</Text>
-        <Link
-          standalone
-          stretched
-          href='#'
-        >
-          Läs mer om detta
-        </Link>
       </CardContent>
     </Card>
   </div>
@@ -108,17 +103,10 @@ export const ImageExample: React.FC = () => (
         alt='Ananas'
       />
       <CardContent>
-        <CardTitle>Dina uppgifter</CardTitle>
+        <CardLink href='#'>
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>
         <Text>Namn: Namn Namnsson</Text>
-        <CardActions>
-          <Link
-            href='#'
-            standalone
-            stretched
-          >
-            Läs mer om detta här
-          </Link>
-        </CardActions>
       </CardContent>
     </Card>
   </div>
