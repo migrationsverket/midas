@@ -161,6 +161,10 @@ export const semantic = {
   borderSecondary: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
   borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
+  /*
+   * @deprecated
+   * Please use --support-border-warning instead.
+   */
   borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
 
