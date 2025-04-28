@@ -29,7 +29,7 @@ interface MidasCardLink<C extends React.ElementType> {
   as?: C
 }
 
-export type LinkProps<C extends React.ElementType> = MidasCardLink<C> &
+export type MidasCardLinkProps<C extends React.ElementType> = MidasCardLink<C> &
   Omit<React.ComponentProps<C>, keyof MidasCardLink<C>>
 
 const CardContext = React.createContext<MidasCardContext>({
@@ -146,7 +146,7 @@ export const CardLink = <C extends React.ElementType = typeof Link>({
   children,
   as,
   ...rest
-}: LinkProps<C>) => {
+}: MidasCardLinkProps<C>) => {
   const Component = as || Link
 
   return (
