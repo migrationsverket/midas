@@ -1,8 +1,70 @@
 import useGlobalData from '@docusaurus/useGlobalData'
 import { Accordion, AccordionItem } from '@midas-ds/components'
-import { ComponentDoc } from 'react-docgen-typescript'
+import { ComponentDoc, Props } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
 import ReactMarkdown from 'react-markdown'
+import Lowlight from 'react-lowlight'
+import 'react-lowlight/common'
+import { DialogTrigger, Popover, Pressable } from 'react-aria-components'
+import { semantic } from '@midas-ds/components/theme'
+
+export const DisplayCompositeTypes = ({ props }: Props) => {
+  switch (props.type.name) {
+    case 'enum': {
+      return (
+        <DialogTrigger>
+          <Pressable>
+            <span
+              role={'button'}
+              style={{ cursor: 'pointer' }}
+            >
+              <Lowlight
+                value={props.type.raw as string}
+                inline
+                language={'typescript'}
+                markers={[]}
+              />
+            </span>
+          </Pressable>
+          <Popover
+            style={{
+              background: semantic.background,
+              padding: '0.5rem',
+              margin: '2rem',
+              border: `1px solid ${semantic.textPrimary}`,
+            }}
+            placement={'top'}
+          >
+            <span className={'hljs-code'}>
+              {props.type.value.map((r: Record<'value', string>, i: number) => {
+                return (
+                  <span key={`${r.value}${i}`}>
+                    {i === 0 ? ' ' : ' | '}
+                    <Lowlight
+                      value={r.value.replace(/"/g, "'")}
+                      inline
+                      language={'typescript'}
+                      markers={[]}
+                    />
+                  </span>
+                )
+              })}
+            </span>
+          </Popover>
+        </DialogTrigger>
+      )
+    }
+    default:
+      return (
+        <Lowlight
+          value={props.type.name}
+          inline
+          language={'typescript'}
+          markers={[]}
+        />
+      )
+  }
+}
 
 export const PropTable = ({ name, defaultOpen = true }) => {
   const globalData = useGlobalData()
@@ -39,7 +101,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           <tr>
             <th>Name</th>
             <th>Type</th>
-            {showDefault && (<th>Default</th>)}
+            {showDefault && <th>Default</th>}
             <th>Description</th>
           </tr>
         </thead>
@@ -48,24 +110,33 @@ export const PropTable = ({ name, defaultOpen = true }) => {
             return (
               <tr key={key}>
                 <td>
-                  {key} {props[key].required && ' *'}
+                  <Lowlight
+                    value={key}
+                    inline
+                    language={'typescript'}
+                    markers={[]}
+                  />
+                  {props[key].required && ' *'}
                 </td>
                 <td>
-                  <code>{props[key].type?.name}</code>
+                  <DisplayCompositeTypes props={props[key]} />
                 </td>
                 {showDefault && (
                   <td>
                     {props[key].defaultValue ? (
-                      <code>{props[key].defaultValue.value}</code>
+                      <Lowlight
+                        value={props[key].defaultValue.value}
+                        inline
+                        language={'typescript'}
+                        markers={[]}
+                      />
                     ) : (
                       '-'
                     )}
                   </td>
                 )}
                 <td>
-                  <ReactMarkdown>
-                    {props[key].description}
-                  </ReactMarkdown>
+                  <ReactMarkdown>{props[key].description}</ReactMarkdown>
                 </td>
               </tr>
             )
@@ -94,7 +165,10 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='events'
           title='Events'
         >
-          <Table propGroup={events} showDefault={false}/>
+          <Table
+            propGroup={events}
+            showDefault={false}
+          />
         </AccordionItem>
       )}
       {Object.getOwnPropertyNames(accessibility).length !== 0 && (
@@ -102,7 +176,10 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='accessibility'
           title='Tillgänglighet'
         >
-          <Table propGroup={accessibility} showDefault={false}/>
+          <Table
+            propGroup={accessibility}
+            showDefault={false}
+          />
         </AccordionItem>
       )}
     </Accordion>
