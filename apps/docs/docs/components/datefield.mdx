@@ -56,13 +56,14 @@ npm install @midas-ds/components
 
 ```tsx
 import { DateField } from '@midas-ds/components'
+
 ;<DateField
   label='Etikett'
   description='Beskrivning'
 />
 ```
 
-<div className={'card'}>
+<div className='card'>
   <Example />
 </div>
 
@@ -85,7 +86,7 @@ det i etikett eller hjälptext.
 </I18nProvider>
 ```
 
-<div className={'card'}>
+<div className='card'>
   <I18nExample />
 </div>
 
@@ -120,7 +121,7 @@ ett datum utan tidskomponent.
 ```tsx
 import { CalendarDate } from '@internationalized/date'
 
-return <DateField defaultValue={new CalendarDate(2025, 12, 25)} />
+;<DateField defaultValue={new CalendarDate(2025, 12, 25)} />
 ```
 
 <div className={'card'}>
