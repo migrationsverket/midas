@@ -1,6 +1,6 @@
-import { CalendarGridProps, CalendarProps, DateValue } from 'react-aria-components';
-interface MidasCalendarProps<T extends DateValue> extends CalendarProps<T>, Pick<CalendarGridProps, 'weekdayStyle'> {
+import { CalendarProps as AriaCalendarProps, DateValue } from 'react-aria-components';
+import * as React from 'react';
+export interface CalendarProps extends AriaCalendarProps<DateValue> {
     errorMessage?: string;
 }
-export declare function Calendar<T extends DateValue>({ errorMessage, weekdayStyle, className, ...props }: MidasCalendarProps<T>): import("react/jsx-runtime").JSX.Element;
-export {};
+export declare const Calendar: React.FC<CalendarProps>;

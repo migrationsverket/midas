@@ -2,6 +2,10 @@ import { TextFieldBaseProps } from './TextFieldBase';
 import { InputProps } from './Input';
 import * as React from 'react';
 export interface TextFieldProps extends Omit<TextFieldBaseProps, 'children'> {
-    inputProps?: InputProps;
+    className?: InputProps['className'];
+    dir?: string;
+    dirName?: string;
+    form?: string;
+    list?: string;
 }
 export declare const TextField: React.ForwardRefExoticComponent<TextFieldProps & React.RefAttributes<HTMLInputElement>>;
