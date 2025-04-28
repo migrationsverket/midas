@@ -145,7 +145,7 @@ TooltipTrigger fungerar direkt med alla **focusable** React Aria-komponenter (t.
 såsom tredjepartskomponenter och andra DOM-element, stöds också genom att de omsluts med `<Focusable>`-komponenten.
 
 ```tsx
-import { Focusable } from 'react-aria-components';
+import { Focusable } from 'react-aria-components'
 <TooltipTrigger>
   <Focusable>
     <span role='button'>Trigger</span>
@@ -156,7 +156,6 @@ import { Focusable } from 'react-aria-components';
   </Tooltip>
 </TooltipTrigger>
 ```
-
 <div className={'card'} style={{ display: 'block' }}>
   <CustomTriggerTooltip />
 </div>
@@ -168,8 +167,7 @@ för referens.
 
 ## Riktlinjer
 
-- I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Tooltip är till för en design där detta 
-inte är möjligt och vi måste gömma undan informationen.
+- I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Tooltip är till för en design där detta inte är möjligt och vi måste gömma undan informationen.
 - Tooltips kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
 
 ## API
