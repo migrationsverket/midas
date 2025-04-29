@@ -1,7 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01,--text-primary,--text-on-color,--text-disabled, --button-background-primary,--border-primary, --field-hover-01, --focus from tokens;
+@value --font-family, --layer-01, --text-primary, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus from tokens;
 
 .calendar {
+  padding: 0.5rem;
+
   * {
     background: unset;
     color: unset;
@@ -16,15 +18,18 @@
 
   th {
     font-weight: 500;
+    text-align: center;
+    padding: 0.625rem 0;
+    min-width: 2.25rem;
   }
 
-  & th,
   & .day {
     text-align: center;
-    padding: 0.75rem;
+    padding: 0.5rem 0;
+    min-width: 2.25rem;
   }
 
-  background-color: --field-01;
+  background-color: --layer-01;
   font-family: --font-family;
   display: inline-block;
   flex-direction: column;
@@ -61,13 +66,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
 
   & button {
     border: none;
     color: --text-primary;
-    background-color: --field-01;
+    padding: 0.5rem;
+    background-color: --layer-01;
     cursor: pointer;
+
+    &:hover {
+      background-color: --field-hover-01;
+    }
 
     &:focus-visible,
     &[data-focus-visible] {
@@ -83,7 +92,7 @@
 }
 
 .day {
-  border: solid 2px --field-01;
+  border: solid 2px --layer-01;
   cursor: pointer;
 
   &[data-hovered] {
@@ -99,7 +108,7 @@
 
   &[data-selection-end='true'] {
     color: inherit;
-    background-color: --field-01;
+    background-color: --layer-01;
     border-color: --button-background-primary;
   }
 
@@ -113,10 +122,13 @@
     }
   }
 
+  &[data-disabled] {
+    color: --text-disabled;
+  }
+
   &.today {
     text-decoration: underline;
     text-underline-offset: 3px;
-    font-weight: 600;
   }
 
   &[data-outside-month='true'] {
