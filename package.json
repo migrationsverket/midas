@@ -117,6 +117,7 @@
     "jest-environment-node": "^29.4.1",
     "jsdom": "~22.1.0",
     "lint-staged": "^15.4.3",
+    "mockdate": "^3.0.5",
     "next": "^14.2.22",
     "nx": "^20.5.0",
     "nx-stylelint": "^18.0.0",

@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { RangeCalendar } from './RangeCalendar'
 import { expect, userEvent } from '@storybook/test'
-import { today, getLocalTimeZone } from '@internationalized/date'
+import { parseDate, getLocalTimeZone } from '@internationalized/date'
+import MockDate from 'mockdate'
+
+const now = parseDate('2025-05-29')
 
 type Story = StoryObj<typeof RangeCalendar>
 
@@ -9,6 +12,12 @@ export default {
   component: RangeCalendar,
   title: 'Components/Calendar/RangeCalendar',
   tags: ['autodocs'],
+  async beforeEach() {
+    MockDate.set(now.toDate(getLocalTimeZone()))
+    return () => {
+      MockDate.reset()
+    }
+  },
 } as Meta<typeof RangeCalendar>
 
 export const Primary: Story = {}
@@ -25,7 +34,6 @@ export const KeyboardTest: Story = {
     await step(
       'it should be possible to select today and two days ahead with the keyboard',
       async () => {
-        const now = today(getLocalTimeZone())
         const todaysDate = now.day.toString()
         const tomorrow = now.add({ days: 1 }).day.toString()
         const dayAfterTomorrow = now.add({ days: 2 }).day.toString()
