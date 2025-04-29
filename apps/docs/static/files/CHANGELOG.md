@@ -1,3 +1,35 @@
+### 8.2.0
+
+#### 🚀 Features
+
+- **theme:** add --icon-tertiary, new color for --icon-secondary ([f0ef381472](https://github.com/migrationsverket/midas/commit/f0ef381472))
+- **label:** deprecate prop variant and add new css class ([42e33be662](https://github.com/migrationsverket/midas/commit/42e33be662))
+- **tooltip:** allow locale agnostic tooltip placement ([#492](https://github.com/migrationsverket/midas/pull/492))
+
+#### 🩹 Fixes
+
+- **accordion:** remove disabled styling if component has disabled children ([1c704b714d](https://github.com/migrationsverket/midas/commit/1c704b714d))
+- **checkbox:** set correct line-height and adjust high contrast visibility ([6ca7ea9ba9](https://github.com/migrationsverket/midas/commit/6ca7ea9ba9))
+
+#### Documentation Changes
+
+- **propstable:** add support for enums in table ([#511](https://github.com/migrationsverket/midas/pull/511))
+- **modal:** change arg types in storybook ([f9588f170b](https://github.com/migrationsverket/midas/commit/f9588f170b))
+
+### 8.1.0
+
+#### 🚀 Features
+
+- **accordion:** accordion status ✅ / 🚨 ([#485](https://github.com/migrationsverket/midas/pull/485))
+
+#### 🩹 Fixes
+
+- **theme:** add dark mode focus ([#483](https://github.com/migrationsverket/midas/pull/483))
+- **modal:** make text in modal selectable ([#490](https://github.com/migrationsverket/midas/pull/490))
+- **accordion:** rename invalid token ([e4b13c928](https://github.com/migrationsverket/midas/commit/e4b13c928))
+- **select:** remove explicit size for indeterminate symbol ([5f805c134](https://github.com/migrationsverket/midas/commit/5f805c134))
+- **select:** change checkbox size to prevent disappearing border ([3ab520633](https://github.com/migrationsverket/midas/commit/3ab520633))
+
 ## 8.0.0
 
 #### 🚀 Features

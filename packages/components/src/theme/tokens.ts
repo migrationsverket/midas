@@ -227,6 +227,9 @@ export const semantic = {
   buttonBorderSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
+
+  menuItemBackgroundHover: `light-dark(${baseColors.gray20}, ${baseColors.gray190})`,
+  menuItemBackgroundSelected: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
 }
 
 export const zIndex = {
