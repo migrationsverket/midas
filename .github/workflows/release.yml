@@ -6,6 +6,7 @@ on:
       - main
 env:
   GITHUB_TOKEN: ${{ secrets.PAT }}
+  GH_TOKEN: ${{ secrets.PAT }}
 
 jobs:
   main:
@@ -45,3 +46,7 @@ jobs:
           git config --global user.name "midas.bot"
           npx nx release --skip-publish
           git push --follow-tags
+          gh pr create --title "Merge release notes" --body ""
+          git checkout dev
+          git merge main --only-ff
+          git push
