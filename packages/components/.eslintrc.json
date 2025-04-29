@@ -1,10 +1,12 @@
 {
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*", "storybook-static"],
+  "plugins": ["midas"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
+        "midas/handle-deprecated-comments": 1,
         "jsx-a11y/no-autofocus": "off"
       }
     },
