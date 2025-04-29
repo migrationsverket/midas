@@ -296,6 +296,7 @@
   background-color: --menu-item-background-selected;
   color: --text-primary;
   border-left: 0.125rem solid --border-tertiary;
+  font-weight: 600;
 }
 
 .linkText {
