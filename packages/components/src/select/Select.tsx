@@ -263,7 +263,10 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               focusRingClass={styles.buttonFocused}
               autoFocus={autoFocus}
             >
-              <div className={styles.selectContainer}>
+              <div
+                className={styles.selectContainer}
+                data-disabled={isDisabled || undefined}
+              >
                 {/* eslint-disable-next-line jsx-a11y/role-supports-aria-props */}
                 <button
                   {...buttonProps}
