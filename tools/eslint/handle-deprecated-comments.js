@@ -26,12 +26,12 @@ module.exports = {
 
       if (currentVersion && deprecatedVersion) {
         const currentMajor = getMajor(currentVersion)
-        const foundMajor = getMajor(deprecatedVersion)
+        const deprecatedMajor = getMajor(deprecatedVersion)
 
-        if (foundMajor < currentMajor) {
+        if (deprecatedMajor < currentMajor) {
           return context.report({
             loc: comment.loc,
-            message: `You can remove this deprecated code, it has been around since version ${foundMajor}, next major version will be ${currentMajor + 1}`,
+            message: `You can remove this deprecated code, it has been around since version ${deprecatedMajor}, next major version will be ${currentMajor + 1}`,
             node: null,
           })
         }
