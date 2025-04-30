@@ -39,7 +39,7 @@ function getCachedDictionary(strings: LocalizedStrings) {
  * Handles formatting ICU Message strings to create localized strings for the current locale.
  * Automatically updates when the locale changes, and handles caching of messages for performance.
  * @param strings - A mapping of languages to strings by key.
- * @deprecated - use useLocalizedStringFormatter instead.
+ * @deprecated since v7.0.0 - use useLocalizedStringFormatter instead.
  */
 export function useMessageFormatter(strings: LocalizedStrings): FormatMessage {
   const { locale } = useLocale()

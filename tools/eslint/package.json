@@ -1,0 +1,8 @@
+{
+  "name": "eslint-plugin-midas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node handle-deprecated-comments.test.js"
+  }
+}
