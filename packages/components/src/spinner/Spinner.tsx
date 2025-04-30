@@ -13,7 +13,7 @@ export interface SpinnerProps {
   isOnColor?: boolean
   /** For use on dark background
    * @default false
-   * @deprecated please use `isOnColor` instead
+   * @deprecated since v8.0.0 please use `isOnColor` instead
    */
   dark?: boolean
 }

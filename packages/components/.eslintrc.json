@@ -6,7 +6,12 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "midas/handle-deprecated-comments": 1,
+        "midas/handle-deprecated-comments": [
+          1,
+          {
+            "version": "8.2.0"
+          }
+        ],
         "jsx-a11y/no-autofocus": "off"
       }
     },
