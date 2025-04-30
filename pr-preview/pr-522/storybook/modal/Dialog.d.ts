@@ -10,11 +10,11 @@ interface DialogProps extends AriaDialogProps {
     title?: React.ReactNode;
     children: React.ReactNode;
 }
-/** @deprecated since 6.0.0 use Modal instead.
+/** @deprecated since v6.0.0 use Modal instead.
  * See docs {@link https://designsystem.migrationsverket.se/|Midas}
  */
 export declare const Dialog: React.FC<DialogProps>;
-/** @deprecated since version 6.0.0, use DialogTrigger instead.
+/** @deprecated since v6.0.0, use DialogTrigger instead.
  * See docs {@link https://designsystem.migrationsverket.se/|Midas}
  */
 export declare const ModalTrigger: React.FC<OverlayTriggerProps & {

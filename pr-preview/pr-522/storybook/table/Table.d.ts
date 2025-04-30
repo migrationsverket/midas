@@ -1,7 +1,7 @@
 import { RowProps, TableHeaderProps, ColumnProps, TableProps as AriaTableProps, CellProps, TableBody } from 'react-aria-components';
 export interface TableProps extends AriaTableProps {
     /**
-     *  @deprecated This variant will be replaced with a new scaling api accross all components.
+     *  @deprecated since v8.0.0 This variant will be replaced with a new scaling api accross all components.
      */
     narrow?: boolean;
     /**
