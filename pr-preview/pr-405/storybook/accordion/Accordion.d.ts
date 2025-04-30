@@ -4,7 +4,7 @@ export declare const ACCORDION_TEST_ID = "accordion";
 interface MidasAccordion extends DisclosureGroupProps {
     /** Display either the larger contained variant or a smaller uncontained variant */
     variant?: 'uncontained' | 'contained';
-    /** @deprecated Use 'allowsMultipleExpanded' instead */
+    /** @deprecated since v8.0.0 Use 'allowsMultipleExpanded' instead */
     type?: 'single' | 'multiple';
 }
 /**

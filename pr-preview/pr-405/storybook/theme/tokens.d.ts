@@ -196,6 +196,8 @@ export declare const semantic: {
     buttonBackgroundSkeleton: string;
     buttonBorderSecondary: string;
     logoPrimary: string;
+    menuItemBackgroundHover: string;
+    menuItemBackgroundSelected: string;
 };
 export declare const zIndex: {
     base: number;
