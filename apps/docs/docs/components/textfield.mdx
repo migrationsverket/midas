@@ -117,6 +117,25 @@ Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adob
 
 ## Varianter
 
+### Storlek
+
+För att minska höjden på TextField, använd `size={'medium'}` som minskar padding i inputfältet.
+
+```tsx
+<TextField label={'Large'}/> // default is size={'large'}
+//highlight-next-line
+<TextField label={'Medium'} size={'medium'}/>
+```
+
+<div className={'card'}>
+  <span style={{
+    display: 'flex', gap: '1rem', flexDirection: 'row'
+  }}>
+  <TextField label={'Large'} size={'large'} defaultValue={'large textfield'}/>
+  <TextField label={'Medium'} size={'medium'} defaultValue={'medium textfield'}/>
+  </span>
+</div>
+
 Varianterna är tillägg till React Arias ursprungliga implementation.
 
 ### Character counter
