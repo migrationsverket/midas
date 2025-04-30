@@ -31,7 +31,7 @@ interface DialogProps extends AriaDialogProps {
   title?: React.ReactNode
   children: React.ReactNode
 }
-/** @deprecated since 6.0.0 use Modal instead.
+/** @deprecated since v6.0.0 use Modal instead.
  * See docs {@link https://designsystem.migrationsverket.se/|Midas}
  */
 export const Dialog: React.FC<DialogProps> = ({
@@ -92,7 +92,7 @@ const MidasModal: React.FC<MidasModalProps> = ({
     </Overlay>
   )
 }
-/** @deprecated since version 6.0.0, use DialogTrigger instead.
+/** @deprecated since v6.0.0, use DialogTrigger instead.
  * See docs {@link https://designsystem.migrationsverket.se/|Midas}
  */
 export const ModalTrigger: React.FC<
@@ -164,7 +164,10 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
                 Stäng
               </Button>
             </div>
-            <div className={styles.modalBody} tabIndex={-1}>
+            <div
+              className={styles.modalBody}
+              tabIndex={-1}
+            >
               {title && <Heading level={2}>{title}</Heading>}
               {children}
             </div>

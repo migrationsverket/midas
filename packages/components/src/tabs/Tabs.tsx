@@ -27,7 +27,7 @@ export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
    */
   children: React.ReactNode
   /**
-   * @deprecated
+   * @deprecated since v8.0.0
    * Please use `defaultSelectedKey` instead
    */
   defaultSelected?: string
