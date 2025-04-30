@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-disabled, --field-01, --field-hover-01, --layer-01, --layer-hover-01, --border-primary, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-01, --layer-selected-hover-01, --border-invalid, --font-family from tokens;
+@value --text-disabled, --field-01, --field-hover-01, --layer-01, --layer-hover-01, --border-primary, --focus, --focus-inset, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-01, --layer-selected-hover-01, --border-invalid, --font-family from tokens;
 
 .combobox {
   font-family: --font-family;
@@ -103,6 +103,10 @@
   background: --layer-01;
   overflow-y: auto;
   box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
+
+  @media (forced-colors: active) {
+    border: 1px solid --border-primary;
+  }
 }
 
 .sectionHeading {
@@ -131,6 +135,7 @@
 
   &[data-focused='true'] {
     background: --layer-hover-01;
+    box-shadow: --focus-inset;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
