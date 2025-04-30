@@ -1,10 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { RangeCalendar } from './RangeCalendar'
 import { expect, userEvent } from '@storybook/test'
-import { parseDate, getLocalTimeZone } from '@internationalized/date'
-import MockDate from 'mockdate'
-
-const now = parseDate('2025-05-29')
+import { now } from '../utils/storybook'
 
 type Story = StoryObj<typeof RangeCalendar>
 
@@ -12,12 +9,6 @@ export default {
   component: RangeCalendar,
   title: 'Components/Calendar/RangeCalendar',
   tags: ['autodocs'],
-  async beforeEach() {
-    MockDate.set(now.toDate(getLocalTimeZone()))
-    return () => {
-      MockDate.reset()
-    }
-  },
 } as Meta<typeof RangeCalendar>
 
 export const Primary: Story = {}
