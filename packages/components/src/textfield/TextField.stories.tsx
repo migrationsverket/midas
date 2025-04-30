@@ -209,7 +209,7 @@ export const MediumSizeInput: Story = {
   render: args => (
     <TextField {...args}/>
   ),
-  play: async ({ canvas, step, args: { defaultValue } }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'it should have an input field with top/bottom padding of 10px',
       async () => {
