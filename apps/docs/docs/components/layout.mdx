@@ -5,7 +5,7 @@ description: En skalkomponent för att få en simpel sidomeny och sidhuvud.
 
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample } from '@site/src/components/examples/layout/LayoutExamples'
+import { BasicExample, ExternalExample } from '@site/src/components/examples/layout/LayoutExamples'
 
 <ComponentHeader
   name='Layout'
@@ -101,24 +101,31 @@ Använd `variant="external"` för en förenklad version av Layout med Navbar i b
     {
       items: [
         {
-          title: 'Översikt',
+          title: 'Hem',
           href: '#',
           icon: House,
+          active: true,
         },
-      ],
-    },
-    {
-      title: 'Ansökan',
-      items: [
         {
-          title: 'Skapa ansökan',
+          title: 'Ansökan',
+          href: '#',
+          icon: Search,
+        },
+        {
+          title: 'Boka',
+          href: '#',
+          icon: Calendar,
+          hasBadge: true,
+        },
+        {
+          title: 'Profil',
+          href: '#',
+          icon: User,
+        },
+        {
+          title: 'Kontakt',
           href: '#',
           icon: Plus,
-        },
-        {
-          title: 'Beslut',
-          href: '#',
-          icon: Gavel,
         },
       ],
     },
@@ -155,7 +162,7 @@ Använd `variant="external"` för en förenklad version av Layout med Navbar i b
 </Layout>
 ```
 
-<BasicExample variant='external' />
+<ExternalExample />
 
 ## Separat användning
 
