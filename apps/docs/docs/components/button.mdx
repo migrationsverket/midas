@@ -10,8 +10,8 @@ import { Plus } from 'lucide-react'
 import { ButtonContext } from 'react-aria-components'
 
 <ComponentHeader
-  name={'Button'}
-  friendlyName={'Knapp'}
+  name='Button'
+  friendlyName='Knapp'
 />
 
 Komponent som används för att låta användaren utföra en handling t.ex. spara ifylld information eller öppna ett formulär.
@@ -54,7 +54,10 @@ En primär knapp används för den primära eller positiva handlingen i ett flö
 <Button>Slutför</Button>
 ```
 
-<div className='card'>
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
   <Button>Slutför</Button>
 </div>
 
@@ -111,7 +114,10 @@ Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
 </Button>
 ```
 
-<div className='card'>
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
   <Button
     icon={Plus}
     variant='tertiary'

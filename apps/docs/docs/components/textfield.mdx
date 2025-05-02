@@ -65,15 +65,17 @@ Använd `defaultValue` för att sätta ett uncontrolled value på ett TextField.
 
 ```tsx
 <TextField
-  label={'Skriv din favoritfrukt'}
-  defaultValue={'Banan'}
+  label='Skriv din favoritfrukt'
+  defaultValue='Banan'
 />
 ```
 
-<TextField
-  label={'Skriv din favoritfrukt'}
-  defaultValue={'Banan'}
-/>
+<div className='card'>
+  <TextField
+    label='Skriv din favoritfrukt'
+    defaultValue='Banan'
+  />
+</div>
 
 ### Controlled value
 
@@ -85,7 +87,7 @@ const ControlledValue = () => {
   const [text, setText] = React.useState('')
   return (
     <>
-      <TextField value={text} onChange={setText} label={'Controlled value'}/>
+      <TextField value={text} onChange={setText} label="Controlled value" />
       <Text>Text value: {text}</Text>
     </>
 )
@@ -119,20 +121,32 @@ Läs mer om validering i [React Arias dokumentation](https://react-spectrum.adob
 
 ### Storlek
 
-För att minska höjden på TextField, använd `size={'medium'}` som minskar padding i inputfältet.
+För att minska höjden på TextField, använd `size="medium"` som minskar padding i inputfältet.
 
 ```tsx
-<TextField label={'Large'}/> // default is size={'large'}
+<TextField label="Large" /> // default is size="large"
 //highlight-next-line
-<TextField label={'Medium'} size={'medium'}/>
+<TextField label="Medium" size="medium" />
 ```
 
-<div className={'card'}>
-  <span style={{
-    display: 'flex', gap: '1rem', flexDirection: 'row'
-  }}>
-  <TextField label={'Large'} size={'large'} defaultValue={'large textfield'}/>
-  <TextField label={'Medium'} size={'medium'} defaultValue={'medium textfield'}/>
+<div className='card'>
+  <span
+    style={{
+      display: 'flex',
+      gap: '1rem',
+      flexDirection: 'row',
+    }}
+  >
+    <TextField
+      label='Large'
+      size='large'
+      defaultValue='large textfield'
+    />
+    <TextField
+      label='Medium'
+      size='medium'
+      defaultValue='medium textfield'
+    />
   </span>
 </div>
 
@@ -152,32 +166,36 @@ Använd `showCounter` för att visa antalet tecken som skrivits in i fältet.
 />
 ```
 
-<TextField
-  label='Skriv in frukt'
-  description={'Max 10 tecken'}
-  maxLength={10}
-  showCounter
-/>
+<div className='card'>
+  <TextField
+    label='Skriv in frukt'
+    description='Max 10 tecken'
+    maxLength={10}
+    showCounter
+  />
+</div>
 
 ### Lösenord
 
-Använd `type={'password'}` för att aktivera en knapp för att visa/dölja inmatat värde.
+Använd `type="password"` för att aktivera en knapp för att visa/dölja inmatat värde.
 
 ```tsx
 <TextField
   label='Lösenord'
   //highlight-start
-  type={'password'}
+  type='password'
   //highlight-end
 />
 ```
 
-<TextField
-  defaultValue={'super-secret'}
-  label='Lösenord'
-  autoComplete={'off'}
-  type={'password'}
-/>
+<div className='card'>
+  <TextField
+    defaultValue='super-secret'
+    label='Lösenord'
+    autoComplete='off'
+    type='password'
+  />
+</div>
 
 ## API
 

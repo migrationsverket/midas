@@ -8,26 +8,31 @@ import { GlobalToastRegion, toastQueue, Button, Flex, FlexItem } from '@midas-ds
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
-  name={'Toast'}
-  friendlyName={'Notifiering, notiser'}
+  name='Toast'
+  friendlyName='Notifiering, notiser'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/useToast.html'
 />
 
 Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel eller andra händelser i en applikation.
 
-<GlobalToastRegion />
-<Button
-  onPress={() =>
-    toastQueue.add(
-      { type: 'success', message: 'Allt funkar som det ska!' },
-      {
-        timeout: 5000
-      }
-    )
-  }
+<div
+  className='card'
+  style={{ display: 'block' }}
 >
-  {'Tryck här för en notifiering'}
-</Button>
+  <GlobalToastRegion />
+  <Button
+    onPress={() =>
+      toastQueue.add(
+        { type: 'success', message: 'Allt funkar som det ska!' },
+        {
+          timeout: 5000,
+        },
+      )
+    }
+  >
+    {'Tryck här för en notifiering'}
+  </Button>
+</div>
 
 ## Installation
 
@@ -43,39 +48,43 @@ import { ToastProvider } from '@midas-ds/components'
 
 Toast har fyra olika varianter som matchar InfoBanner: `success`, `info`, `important` och `warning`.
 
-<Flex fluid={true}>
-  <FlexItem col={3}>
-    <Button onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}>
-      {'Success'}
-    </Button>
-  </FlexItem>
-  <FlexItem col={3}>
-    <Button
-      onPress={() =>
-        toastQueue.add(
-          { type: 'info', message: 'Här kommer ett meddelande' },
-          {
-            timeout: 5000
-          }
-        )
-      }
-    >
-      {'Info'}
-    </Button>
-  </FlexItem>
-  <FlexItem col={3}>
-    <Button onPress={() => toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })}>
-      {'Important'}
-    </Button>
-  </FlexItem>
-  <FlexItem col={3}>
-    <Button
-      onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000, priority: 1 })}
-    >
-      {'Warning'}
-    </Button>
-  </FlexItem>
-</Flex>
+<div className='card'>
+  <Flex fluid={true}>
+    <FlexItem col={3}>
+      <Button
+        onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}
+      >
+        {'Success'}
+      </Button>
+    </FlexItem>
+    <FlexItem col={3}>
+      <Button
+        onPress={() =>
+          toastQueue.add(
+            { type: 'info', message: 'Här kommer ett meddelande' },
+            {
+              timeout: 5000,
+            },
+          )
+        }
+      >
+        {'Info'}
+      </Button>
+    </FlexItem>
+    <FlexItem col={3}>
+      <Button onPress={() => toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })}>
+        {'Important'}
+      </Button>
+    </FlexItem>
+    <FlexItem col={3}>
+      <Button
+        onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000, priority: 1 })}
+      >
+        {'Warning'}
+      </Button>
+    </FlexItem>
+  </Flex>
+</div>
 
 ## Implementationer
 

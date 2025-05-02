@@ -6,7 +6,7 @@ import { Focusable } from 'react-aria-components'
 export const TooltipDelay = () => {
   return (
     <div
-      className={'card'}
+      className='card'
       style={{
         display: 'flex',
         flexDirection: 'row',
@@ -29,7 +29,7 @@ export const TooltipDelay = () => {
 export const TooltipPlacement = () => {
   return (
     <div
-      className={'card'}
+      className='card'
       style={{
         display: 'flex',
         alignItems: 'center',

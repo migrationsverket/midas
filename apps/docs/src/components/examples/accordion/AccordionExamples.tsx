@@ -2,28 +2,25 @@ import { AccordionItem, Accordion } from '@midas-ds/components'
 import React from 'react'
 import { Key } from 'react-aria-components'
 
-export const AccordionExample = (
-  props: typeof AccordionItem & typeof Accordion,
-) => {
+export const Example = (props: typeof AccordionItem & typeof Accordion) => {
   return (
-    <div className={'card'}>
+    <div className='card'>
       <Accordion {...props}>
         <AccordionItem
-          {...props}
-          id={'mandarin'}
-          title={'Mandarin'}
+          id='mandarin'
+          title='Mandarin'
         >
           Liten orange citrusfrukt
         </AccordionItem>
         <AccordionItem
-          id={'sharon'}
-          title={'Sharon'}
+          id='sharon'
+          title='Sharon'
         >
           Persikoliknande frukt med fast kött
         </AccordionItem>
         <AccordionItem
-          id={'watermelon'}
-          title={'Vattenmelon'}
+          id='watermelon'
+          title='Vattenmelon'
         >
           Stor frukt med rött, saftigt kött
         </AccordionItem>
@@ -32,13 +29,41 @@ export const AccordionExample = (
   )
 }
 
-export const AccordionExampleControlled = (props: typeof Accordion) => {
+export const StatusExample = () => (
+  <div className='card'>
+    <Accordion variant='contained'>
+      <AccordionItem
+        id='mandarin'
+        title='Mandarin'
+        type='success'
+      >
+        Liten orange citrusfrukt
+      </AccordionItem>
+      <AccordionItem
+        id='sharon'
+        title='Sharon'
+        type='warning'
+      >
+        Persikoliknande frukt med fast kött
+      </AccordionItem>
+      <AccordionItem
+        id='watermelon'
+        title='Vattenmelon'
+        type='default'
+      >
+        Stor frukt med rött, saftigt kött
+      </AccordionItem>
+    </Accordion>
+  </div>
+)
+
+export const ExampleControlled = (props: typeof Accordion) => {
   const [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(
     new Set(['mandarin']),
   )
   return (
     <div
-      className={'card'}
+      className='card'
       style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}
     >
       <Accordion
@@ -48,20 +73,20 @@ export const AccordionExampleControlled = (props: typeof Accordion) => {
       >
         <AccordionItem
           {...props}
-          id={'mandarin'}
-          title={'Mandarin'}
+          id='mandarin'
+          title='Mandarin'
         >
           Liten orange citrusfrukt
         </AccordionItem>
         <AccordionItem
-          id={'sharon'}
-          title={'Sharon'}
+          id='sharon'
+          title='Sharon'
         >
           Persikoliknande frukt med fast kött
         </AccordionItem>
         <AccordionItem
-          id={'watermelon'}
-          title={'Vattenmelon'}
+          id='watermelon'
+          title='Vattenmelon'
         >
           Stor frukt med rött, saftigt kött
         </AccordionItem>
