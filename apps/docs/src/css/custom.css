@@ -112,7 +112,8 @@
 }
 
 .card {
-  padding: 1.5rem;
+  position: relative;
+  padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -297,6 +298,11 @@ mark {
   border-radius: 0;
 }
 
+.component-header {
+  margin-bottom: 32px;
+  margin-top: -20px;
+}
+
 [class^='searchBar_'] [class^='dropdownMenu_'],
 [class^='searchBar_'] [class^='dropdownMenu_'] [class^='suggestion_'],
 [class^='searchQueryInput_'] {
@@ -340,12 +346,6 @@ mark {
 @media (max-width: 996px) {
   .navbar__items {
     gap: 1.5rem;
-  }
-}
-/* stylelint-disable-next-line media-feature-range-notation */
-@media (max-width: 996px) {
-  .navbar__items {
-    gap: 1.5rem;
 
     .navbar__toggle {
       margin: 0;
@@ -354,6 +354,10 @@ mark {
     [class^='navbarSearchContainer_'] {
       position: relative;
     }
+  }
+
+  .component-header .headerLink {
+    width: unset;
   }
 }
 
