@@ -11,10 +11,16 @@ import {
 } from '@midas-ds/components'
 
 export const UncontrolledForm = () => {
-  const [result, setResult] = React.useState(null)
+  const [result, setResult] = React.useState<Record<
+    string,
+    FormDataEntryValue
+  > | null>(null)
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const data = Object.fromEntries(new FormData(e.currentTarget))
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<
+      string,
+      FormDataEntryValue
+    >
     setResult(data)
   }
 
@@ -23,37 +29,37 @@ export const UncontrolledForm = () => {
       <Form
         onSubmit={handleSubmit}
         className={styles.form}
-        validationBehavior={'native'} // use 'aria' to allow submit when invalid
+        validationBehavior='native' // use 'aria' to allow submit when invalid
       >
         <TextField
-          label={'Namn'}
-          name={'name'}
+          label='Namn'
+          name='name'
           isRequired
         />
         <TextField
-          label={'E-post'}
-          type={'email'}
-          name={'email'}
+          label='E-post'
+          type='email'
+          name='email'
           isRequired
         />
         <CheckboxGroup
-          label={'Spara mina uppgifter'}
-          name={'saveData'}
+          label='Spara mina uppgifter'
+          name='saveData'
           isRequired
         >
-          <Checkbox value={'agree'}>Jag godkänner</Checkbox>
+          <Checkbox value='agree'>Jag godkänner</Checkbox>
         </CheckboxGroup>
         <ButtonGroup>
-          <Button type={'submit'}>Skicka</Button>
+          <Button type='submit'>Skicka</Button>
           <Button
-            type={'reset'}
-            variant={'secondary'}
+            type='reset'
+            variant='secondary'
           >
             Rensa
           </Button>
         </ButtonGroup>
       </Form>
-      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>
+      <span>{result && <pre>{JSON.stringify(result, null, 2)}</pre>}</span>
     </>
   )
 }
@@ -66,20 +72,20 @@ export const ControlledForm = () => {
   return (
     <Form onSubmit={onSubmit}>
       <TextField
-        name={'name'}
-        label={'Namn'}
+        name='name'
+        label='Namn'
         onChange={setName}
         isRequired
       />
       <div>Ditt namn: {name}</div>
-      <Button type={'submit'}>Skicka</Button>
+      <Button type='submit'>Skicka</Button>
     </Form>
   )
 }
 
 export const RealtimeValidation = () => {
   const [password, setPassword] = React.useState('')
-  const errors = []
+  const errors: string[] = []
   if (password.length < 8) {
     errors.push('Lösenordet måste vara fler än 8 tecken.')
   }
@@ -92,13 +98,13 @@ export const RealtimeValidation = () => {
 
   return (
     <TextField
-      label={'Lösenord'}
+      label='Lösenord'
       style={{ whiteSpace: 'pre-line' }}
       isInvalid={errors.length > 0}
       value={password}
       onChange={setPassword}
       errorMessage={errors.join('\n')}
-      errorPosition={'bottom'}
+      errorPosition='bottom'
     />
   )
 }
@@ -106,8 +112,11 @@ export const RealtimeValidation = () => {
 export const ServerValidation = () => {
   const [isWaiting, setIsWaiting] = React.useState(false)
   // Fake server used in this example.
-  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-  async function callServer(data) {
+  const delay = (ms: number): Promise<void> =>
+    new Promise(resolve => setTimeout(resolve, ms))
+  async function callServer(
+    data: Record<string, FormDataEntryValue>,
+  ): Promise<{ errors: Record<string, string> }> {
     setIsWaiting(true)
     await delay(1000)
     setIsWaiting(false)
@@ -117,11 +126,14 @@ export const ServerValidation = () => {
       },
     }
   }
-  const [errors, setErrors] = React.useState({})
+  const [errors, setErrors] = React.useState<Record<string, string>>({})
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    const data = Object.fromEntries(new FormData(e.currentTarget))
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<
+      string,
+      FormDataEntryValue
+    >
     const result = await callServer(data)
     setErrors(result.errors)
   }
@@ -133,12 +145,12 @@ export const ServerValidation = () => {
       className={styles.form}
     >
       <TextField
-        label={'Användarnamn'}
+        label='Användarnamn'
         name='username'
         isRequired
       />
       <TextField
-        label={'Lösenord'}
+        label='Lösenord'
         name='password'
         type='password'
         isRequired

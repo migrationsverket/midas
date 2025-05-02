@@ -6,7 +6,12 @@ import { ProgressBar } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/propsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
-<ComponentHeader name='ProgressBar' />
+<ComponentHeader
+  name='ProgressBar'
+  friendlyName='Progressindikator, progresstatus'
+/>
+
+Progress bar med fördefinerad stil, använder `role="progressbar"` under huven
 
 ```tsx
 <ProgressBar
@@ -23,8 +28,6 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
     value={30}
   />
 </div>
-
-Progress bar med fördefinerad stil, använder `role="progressbar"` under huven
 
 ## Installation
 
