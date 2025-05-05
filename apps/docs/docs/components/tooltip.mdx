@@ -29,7 +29,7 @@ export const Example = props => {
 }
 
 <ComponentHeader
-  name={'Tooltip'}
+  name='Tooltip'
   friendlyName='Hjälptext'
 />
 
@@ -48,7 +48,7 @@ Tooltip kan användas för att förklara en knapp eller annan interaktion när d
 ```
 
 <div
-  className={'card'}
+  className='card'
   style={{ display: 'block' }}
 >
   <Example />
@@ -120,6 +120,7 @@ Tooltipens placering i förhållande till dess trigger-element kan justeras med 
 ```tsx
 export const ControlledTooltip = () => {
   const [isOpen, setOpen] = React.useState(false)
+
   return (
     <>
       <TooltipTrigger
@@ -136,50 +137,55 @@ export const ControlledTooltip = () => {
 }
 ```
 
-<div className={'card'}>
+<div className='card'>
   <ControlledTooltip />
 </div>
 
 ### Valfritt element som Trigger
+
 TooltipTrigger fungerar direkt med alla **focusable** React Aria-komponenter (t.ex. Button, Link, etc.). Anpassade trigger-element,
 såsom tredjepartskomponenter och andra DOM-element, stöds också genom att de omsluts med `<Focusable>`-komponenten.
 
 ```tsx
 import { Focusable } from 'react-aria-components'
+```
+
+```tsx
 <TooltipTrigger>
   <Focusable>
     <span role='button'>Trigger</span>
   </Focusable>
-  <Tooltip>
-  Med hjälp av Focusable kan vilket
-  element som helst bli en trigger!
-  </Tooltip>
+  <Tooltip>Med hjälp av Focusable kan vilket element som helst bli en trigger!</Tooltip>
 </TooltipTrigger>
 ```
-<div className={'card'} style={{display: 'block'}}>
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
   <CustomTriggerTooltip />
 </div>
 
 Observera att element under `<Focusable>` måste ha en ARIA-roll eller använda ett lämpligt semantiskt HTML-element
-så att skärmläsare kan läsa upp innehållet i verktygstipset. Detta gäller bara element som inte redan är *focusable*
-eller *pressable*. Se [React Aria Tooltip Custom trigger](https://react-spectrum.adobe.com/react-aria/Tooltip.html#custom-trigger)
+så att skärmläsare kan läsa upp innehållet i verktygstipset. Detta gäller bara element som inte redan är _focusable_
+eller _pressable_. Se [React Aria Tooltip Custom trigger](https://react-spectrum.adobe.com/react-aria/Tooltip.html#custom-trigger)
 för referens.
 
 ## Riktlinjer
 
 - I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Tooltip är till för en design där detta
-inte är möjligt och vi måste gömma undan informationen.
+  inte är möjligt och vi måste gömma undan informationen.
 - Tooltips kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
 
 ## API
 
 ### Tooltip
 
-<PropTable name={'Tooltip'} />
+<PropTable name='Tooltip' />
 
 ### TooltipTrigger
 
 <PropTable
-  name={'TooltipTrigger'}
-  defaultOpen={true}
+  name='TooltipTrigger'
+  defaultOpen={false}
 />

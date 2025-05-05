@@ -34,46 +34,50 @@ const rows = [
 ]
 
 export const BasicExample = () => (
-  <Table aria-label='Fruit'>
-    <TableHeader>
-      <Column isRowHeader>Name</Column>
-      <Column>Description</Column>
-    </TableHeader>
-    <TableBody>
-      <Row>
-        <Cell>Banana</Cell>
-        <Cell>A yellow fruit</Cell>
-      </Row>
-      <Row>
-        <Cell>Pear</Cell>
-        <Cell>Usually green</Cell>
-      </Row>
-    </TableBody>
-  </Table>
+  <div className='card'>
+    <Table aria-label='Fruit'>
+      <TableHeader>
+        <Column isRowHeader>Name</Column>
+        <Column>Description</Column>
+      </TableHeader>
+      <TableBody>
+        <Row>
+          <Cell>Banana</Cell>
+          <Cell>A yellow fruit</Cell>
+        </Row>
+        <Row>
+          <Cell>Pear</Cell>
+          <Cell>Usually green</Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  </div>
 )
 
 export const FullExample: React.FC<TableProps> = props => (
-  <Table
-    aria-label='Fruit'
-    {...props}
-  >
-    <TableHeader columns={columns}>
-      {column => {
-        return <Column>{column.name}</Column>
-      }}
-    </TableHeader>
-    <TableBody items={rows}>
-      {item => {
-        return (
-          <Row columns={columns}>
-            {column => {
-              return <Cell>{item[column.id]}</Cell>
-            }}
-          </Row>
-        )
-      }}
-    </TableBody>
-  </Table>
+  <div className='card'>
+    <Table
+      aria-label='Fruit'
+      {...props}
+    >
+      <TableHeader columns={columns}>
+        {column => {
+          return <Column>{column.name}</Column>
+        }}
+      </TableHeader>
+      <TableBody items={rows}>
+        {item => {
+          return (
+            <Row columns={columns}>
+              {column => {
+                return <Cell>{item[column.id]}</Cell>
+              }}
+            </Row>
+          )
+        }}
+      </TableBody>
+    </Table>
+  </div>
 )
 
 export const ControlledExample: React.FC<TableProps> = props => {

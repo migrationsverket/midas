@@ -8,38 +8,40 @@ import { InfoBanner, Tabs as MidasTabs } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
-  name={'info-banner'}
-  friendlyName={'Informationsmeddelande'}
+  name='info-banner'
+  friendlyName='Informationsmeddelande'
   overrideHeadlessLink=''
 />
 
 Komponent för att visa viktiga och aktuella meddelanden om händelser eller förändringar, som till exempel systemnotiser.
 
-<MidasTabs
-  label={'Välj typ'}
-  tabs={['Success', 'Info', 'Important', 'Warning']}
->
-  <InfoBanner
-    type={'success'}
-    title={'Formuläret har skickats'}
-    message={'Allt gick bra. Du kan nu stänga fönstret.'}
-  />
-  <InfoBanner
-    type={'info'}
-    title={'Kom ihåg att fylla i din semesterplan'}
-    message={'Vi behöver din semesterplan för att kunna gå vidare.'}
-  />
-  <InfoBanner
-    type={'important'}
-    title={'Du behöver komplettera!'}
-    message={'Vi saknar din semesterplan.'}
-  />
-  <InfoBanner
-    type={'warning'}
-    title={'Formuläret kunde inte skickas!'}
-    message={'Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'}
-  />
-</MidasTabs>
+<div className='card'>
+  <MidasTabs
+    label='Välj typ'
+    tabs={['Success', 'Info', 'Important', 'Warning']}
+  >
+    <InfoBanner
+      type='success'
+      title='Formuläret har skickats'
+      message='Allt gick bra. Du kan nu stänga fönstret.'
+    />
+    <InfoBanner
+      type='info'
+      title='Kom ihåg att fylla i din semesterplan'
+      message='Vi behöver din semesterplan för att kunna gå vidare.'
+    />
+    <InfoBanner
+      type='important'
+      title='Du behöver komplettera!'
+      message='Vi saknar din semesterplan.'
+    />
+    <InfoBanner
+      type='warning'
+      title='Formuläret kunde inte skickas!'
+      message='Vi kunde inte skicka formuläret. Semesterplanen måste vara i pdf-format!'
+    />
+  </MidasTabs>
+</div>
 
 ## Installation
 
@@ -58,71 +60,80 @@ import { InfoBanner } from '@midas-ds/components'
 ```tsx
 <InfoBanner
   // highlight-start
-  type={'success'}
+  type='success'
   // highlight-end
-  title={'Det gick bra!'}
-  message={'Detta är ett meddelande om att allt gick bra.'}
+  title='Det gick bra!'
+  message='Detta är ett meddelande om att allt gick bra.'
 />
 ```
 
-<InfoBanner
-  type={'success'}
-  title={'Det gick bra!'}
-  message={'Detta är ett meddelande om att allt gick bra.'}
-/>
+<div className='card'>
+  <InfoBanner
+    type='success'
+    title='Det gick bra!'
+    message='Detta är ett meddelande om att allt gick bra.'
+  />
+</div>
+
 ### Info
 
 ```tsx
 <InfoBanner
   // highlight-start
-  type={'info'}
+  type='info'
   // highlight-end
-  title={'Information'}
-  message={'Detta är ett meddelande med information.'}
+  title='Information'
+  message='Detta är ett meddelande med information.'
 />
 ```
 
-<InfoBanner
-  type={'info'}
-  title={'Information'}
-  message={'Detta är ett meddelande med information.'}
-/>
+<div className='card'>
+  <InfoBanner
+    type='info'
+    title='Information'
+    message='Detta är ett meddelande med information.'
+  />
+</div>
 
 ### Important
 
 ```tsx
 <InfoBanner
   // highlight-start
-  type={'important'}
+  type='important'
   // highlight-end
-  title={'Viktig information'}
-  message={'Detta är ett meddelande med viktig information.'}
+  title='Viktig information'
+  message='Detta är ett meddelande med viktig information.'
 />
 ```
 
-<InfoBanner
-  type={'important'}
-  title={'Viktig information'}
-  message={'Detta är ett meddelande med viktig information.'}
-/>
+<div className='card'>
+  <InfoBanner
+    type='important'
+    title='Viktig information'
+    message='Detta är ett meddelande med viktig information.'
+  />
+</div>
 
 ### Warning
 
 ```tsx
 <InfoBanner
   // highlight-start
-  type={'warning'}
+  type='warning'
   // highlight-end
-  title={'Varning'}
-  message={'Detta är en varning som används när något gått fel.'}
+  title='Varning'
+  message='Detta är en varning som används när något gått fel.'
 />
 ```
 
-<InfoBanner
-  type={'warning'}
-  title={'Varning'}
-  message={'Detta är en varning som används när något gått fel.'}
-/>
+<div className='card'>
+  <InfoBanner
+    type='warning'
+    title='Varning'
+    message='Detta är en varning som används när något gått fel.'
+  />
+</div>
 
 ## Dismissable
 
@@ -133,19 +144,21 @@ Det går att göra det möjligt för användaren att stänga informationsmeddela
   // highlight-start
   dismissable
   // highlight-end
-  type={'success'}
-  title={'Det gick bra!'}
-  message={'Detta är ett meddelande om att allt gick bra.'}
+  type='success'
+  title='Det gick bra!'
+  message='Detta är ett meddelande om att allt gick bra.'
 />
 ```
 
-<InfoBanner
-  dismissable
-  type={'success'}
-  title={'Det gick bra!'}
-  message={'Detta är ett meddelande om att allt gick bra.'}
-/>
+<div className='card'>
+  <InfoBanner
+    dismissable
+    type='success'
+    title='Det gick bra!'
+    message='Detta är ett meddelande om att allt gick bra.'
+  />
+</div>
 
 ## API
 
-<PropTable name={'InfoBanner'} />
+<PropTable name='InfoBanner' />

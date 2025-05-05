@@ -8,7 +8,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { FormExample, ConfirmationExample } from '@site/src/components/examples/ModalExamples'
 
 <ComponentHeader
-  name={'Modal'}
+  name='Modal'
   friendlyName='Modal, Dialog, Dialogruta'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog'
 />
@@ -52,7 +52,7 @@ För att stänga modal via klick utanför modalens yta, använd `isDismissable` 
     //highlight-start
     isDismissable
     //highlight-end
-    title={'Modal Title'}
+    title='Modal Title'
   >
     /* Modal content */
   </Modal>
@@ -67,9 +67,9 @@ element kan användas för att öppna modalen. För att stänga modalen med en k
 ```tsx title='Uncontrolled Modal'
 <DialogTrigger>
   <Button>Open</Button>
-  <Modal title={'Modal Title'}>
+  <Modal title='Modal Title'>
     //highlight-start
-    <Button slot={'close'}>Close</Button>
+    <Button slot='close'>Close</Button>
     //highlight-end
   </Modal>
 </DialogTrigger>
@@ -82,13 +82,15 @@ Använd `isOpen` och `onOpenChange()` för att via state kontrollera om modalen 
 ```tsx title='Controlled Modal'
 /* imports and rest of app */
 const [open, setOpen] = React.useState<boolean>(false)
+
 /* trigger modal from anywhere */
 <Button onPress={() => setOpen(true))}>Open</Button>
+
 //highlight-start
 <DialogTrigger isOpen={open} onOpenChange={setOpen}>
 //highlight-end
   <Modal
-    title={'Modal Title'}
+    title="Modal Title"
   >
     /* Modal content */
   </Modal>
@@ -102,10 +104,10 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
 ```tsx title=AutoFocus
 <DialogTrigger>
   <Button>Open</Button>
-  <Modal title={'Modal Title'}>
-//highlight-start
-    <TextField label={'Name'} autoFocus>
-//highlight-end
+  <Modal title="Modal Title">
+    //highlight-start
+    <TextField label="Name" autoFocus>
+    //highlight-end
   </Modal>
 </DialogTrigger>
 ```

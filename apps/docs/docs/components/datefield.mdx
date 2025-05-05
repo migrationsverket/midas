@@ -9,26 +9,29 @@ import { DateField } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DateFieldControlled } from '@site/src/components/examples/date-field/DateFieldExamples'
 import { CalendarDate } from '@internationalized/date'
-export const christmas = new CalendarDate(2025, 12, 25)
 
 export const Example = props => {
   return (
-    <DateField
-      label='Etikett'
-      description='Beskrivning'
-      {...props}
-    />
+    <div className='card'>
+      <DateField
+        label='Etikett'
+        description='Beskrivning'
+        {...props}
+      />
+    </div>
   )
 }
 
 export const I18nExample = props => {
   return (
-    <I18nProvider locale={'fr-Fr'}>
-      <DateField
-        label='Välj ett datum'
-        description='vilket datum som helst'
-      />
-    </I18nProvider>
+    <div className='card'>
+      <I18nProvider locale='fr-Fr'>
+        <DateField
+          label='Välj ett datum'
+          description='vilket datum som helst'
+        />
+      </I18nProvider>
+    </div>
   )
 }
 
@@ -44,9 +47,7 @@ In- och utdata till DateField liksom andra tidsrelaterade komponenter bygger på
 [@internationalized/date](https://react-spectrum.adobe.com/internationalized/date/index.html) så ytterligare referens
 till hur värden ska formateras hittas där.
 
-<div className={'card'}>
-  <Example />
-</div>
+<Example />
 
 ## Installation
 
@@ -55,17 +56,17 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { DateField } from '@midas-ds/components';
+import { DateField } from '@midas-ds/components'
+```
 
+```tsx
 <DateField
   label='Etikett'
   description='Beskrivning'
 />
 ```
 
-<div className={'card'}>
-  <Example />
-</div>
+<Example />
 
 ## Användning
 
@@ -78,7 +79,7 @@ Tänk på att formatet för inmatning (exempelvis YYYY/MM/DD) beror av användar
 det i etikett eller hjälptext.
 
 ```tsx
-<I18nProvider locale={'fr-Fr'}>
+<I18nProvider locale='fr-Fr'>
   <DateField
     label='Välj ett datum'
     description='vilket datum som helst'
@@ -86,9 +87,7 @@ det i etikett eller hjälptext.
 </I18nProvider>
 ```
 
-<div className={'card'}>
-  <I18nExample />
-</div>
+<I18nExample />
 
 DateField stödjer också olika kalendrar, se
 [React Aria](https://react-spectrum.adobe.com/react-aria/DateField.html#international-calendars)
@@ -96,22 +95,20 @@ och [mdm web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 för referens om hur du går till väga för att konvertera datum mellan olika kalendrar.
 
 ```tsx
-<I18nProvider locale={'fr-Fr-u-ca-buddhist'}>
+<I18nProvider locale='fr-Fr-u-ca-buddhist'>
   <Example
-    label={'Välj ett datum'}
-    description={'Calendrier bouddhiste français'}
+    label='Välj ett datum'
+    description='Calendrier bouddhiste français'
   />
 </I18nProvider>
 ```
 
-<div className={'card'}>
-  <I18nProvider locale={'fr-Fr-u-ca-buddhist'}>
-    <Example
-      label={'Välj ett datum'}
-      description={'Calendrier bouddhiste français'}
-    />
-  </I18nProvider>
-</div>
+<I18nProvider locale='fr-Fr-u-ca-buddhist'>
+  <Example
+    label='Välj ett datum'
+    description='Calendrier bouddhiste français'
+  />
+</I18nProvider>
 
 ### Förvalt värde (uncontrolled)
 
@@ -120,17 +117,17 @@ ett datum utan tidskomponent.
 
 ```tsx
 import { CalendarDate } from '@internationalized/date'
+```
 
+```tsx
 <DateField defaultValue={new CalendarDate(2025, 12, 25)} />
 ```
 
-<div className={'card'}>
-  <Example
-    defaultValue={christmas}
-    label={'Happy Kwanza'}
-    description={''}
-  />
-</div>
+<Example
+  defaultValue={new CalendarDate(2025, 12, 25)}
+  label='Happy Kwanza'
+  description=''
+/>
 
 ### Controlled value
 
@@ -157,9 +154,7 @@ export const DateFieldControlled = () => {
 }
 ```
 
-<div className={'card'}>
-  <DateFieldControlled />
-</div>
+<DateFieldControlled />
 
 ## API
 
