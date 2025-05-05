@@ -20,12 +20,18 @@ export const ComponentHeader = ({
       : baseUrl(`/storybook/?path=/docs/components-${name.toLowerCase()}--docs`)
 
   return (
-    <section style={{ marginBottom: 32, marginTop: -20 }}>
+    <section className='component-header'>
       <Flex fluid={true}>
-        <FlexItem className='friendlyName'>
+        <FlexItem
+          col='auto'
+          className='friendlyName'
+        >
           <b>{friendlyName}</b>
         </FlexItem>
-        <FlexItem col='auto'>
+        <FlexItem
+          col='auto'
+          className='headerLink'
+        >
           <LinkButton
             href={storybookLink}
             variant='tertiary'
@@ -35,7 +41,10 @@ export const ComponentHeader = ({
             Storybook
           </LinkButton>
         </FlexItem>
-        <FlexItem col='auto'>
+        <FlexItem
+          col='auto'
+          className='headerLink'
+        >
           {overrideHeadlessLink !== '' && (
             <LinkButton
               href={

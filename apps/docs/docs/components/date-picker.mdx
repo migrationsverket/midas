@@ -10,13 +10,18 @@ import { DatePicker, DateRangePicker } from '@midas-ds/components'
 
 export const Example = props => {
   return (
-      <DatePicker label="Välj ett datum" aria-label="Välj datum" />
+    <div className='card'>
+      <DatePicker
+        label='Välj ett datum'
+        aria-label='Välj datum'
+      />
+    </div>
   )
 }
 
 <ComponentHeader
-  name={'DatePicker'}
-  friendlyName={'Datumväljare'}
+  name='DatePicker'
+  friendlyName='Datumväljare'
 />
 
 Inmatningsfält för att välja ett eller flera datum. Består av två komponenter `DatePicker`
@@ -35,9 +40,7 @@ import { DatePicker } from '@midas-ds/components'
 // import { DateRangePicker } from '@midas-ds/components'
 ```
 
-<div className={'card'}>
-  <Example />
-</div>
+<Example />
 
 ## Användning
 
@@ -48,16 +51,15 @@ som i sin tur består av andra komponenter som [Calendar](https://react-spectrum
 [DateField](https://react-spectrum.adobe.com/react-aria/DateField.html). För fullständig
 dokumentation och ytterligare varianter hänvisas till den dokumentationen.
 
-
 ### DatePicker
+
 ```tsx
 import { parseDate, CalendarDate } from '@internationalized/date'
 import { DatePicker } from '@midas-ds/components'
 
 export const DatePickerExample = () => {
-  const [value, setValue] = React.useState<CalendarDate | null>(
-    parseDate('2026-05-29'),
-  )
+  const [value, setValue] = React.useState<CalendarDate | null>(parseDate('2026-05-29'))
+
   return (
     <>
       <DatePicker
@@ -74,17 +76,22 @@ export const DatePickerExample = () => {
   )
 }
 ```
-<div className={'card'} style={{display: 'flex', gap: '1rem'}}>
-  <DatePickerExample/>
+
+<div
+  className='card'
+  style={{ display: 'flex', gap: '1rem' }}
+>
+  <DatePickerExample />
 </div>
 
-
 ### DateRangePicker
+
 ```tsx
-<DateRangePicker label="Ange din semesterperiod" />
+<DateRangePicker label='Ange din semesterperiod' />
 ```
-<div className={'card'}>
-  <DateRangePicker label="Ange din semesterperiod" />
+
+<div className='card'>
+  <DateRangePicker label='Ange din semesterperiod' />
 </div>
 
 ### Begränsa val
@@ -93,27 +100,26 @@ Använd callback `isDateUnavailable` för att markera datum som inte valbara. An
 för att begränsa datum före dagens datum.
 
 ```tsx
-import {
-  today,
-  getLocalTimeZone,
-} from '@internationalized/date'
+import { today, getLocalTimeZone } from '@internationalized/date'
 
 export const UnavailableDateExample = () => {
   const now = today(getLocalTimeZone())
   const isDateUnavailable = (date: DateValue) => {
     return date.compare(now.add({ weeks: 1 })) < 0
   }
+
   return (
     <DatePicker
       label='Välj ett datum'
-      description={'Fast inte förrän om en vecka'}
+      description='Fast inte förrän om en vecka'
       isDateUnavailable={isDateUnavailable}
       minValue={now}
     />
   )
 }
 ```
-<div className={'card'}>
+
+<div className='card'>
   <UnavailableDateExample />
 </div>
 

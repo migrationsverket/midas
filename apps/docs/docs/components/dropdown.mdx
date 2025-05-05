@@ -24,14 +24,19 @@ export const Example = props => {
 }
 
 <ComponentHeader
-  name={'Dropdown'}
+  name='Dropdown'
   friendlyName='Meny, menylist, kontextmeny'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/Menu.html'
 />
 
 En dropdown kan användas för att samla ihop funktioner som sällan används eller som kompletterar nuvarande funktion.
 
-<Example />
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Example />
+</div>
 
 ## Installation
 
@@ -40,8 +45,10 @@ npm install @midas-ds/components
 ```
 
 ```tsx
-import { Dropdown, DropdownItem, Button } from '@midas-ds/components';
+import { Dropdown, DropdownItem, Button } from '@midas-ds/components'
+```
 
+```tsx
 <Dropdown title='Meny'>
   <DropdownItem>
     <Button variant='tertiary'>Skriv ut</Button>
@@ -56,7 +63,7 @@ import { Dropdown, DropdownItem, Button } from '@midas-ds/components';
 ```
 
 <div
-  className={'card'}
+  className='card'
   style={{ display: 'block' }}
 >
   <Example />
@@ -75,11 +82,11 @@ Dropdown bygger på [React Aria Menu](https://react-spectrum.adobe.com/react-ari
 
 ### Dropdown
 
-<PropTable name={'Dropdown'} />
+<PropTable name='Dropdown' />
 
 ### DropdownItem
 
 <PropTable
-  name={'DropdownItem'}
+  name='DropdownItem'
   defaultOpen={false}
 />

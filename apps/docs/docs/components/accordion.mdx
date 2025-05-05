@@ -5,13 +5,12 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 ---
 
 import { PropTable } from '@site/src/components/propsTable'
-import { Accordion, AccordionItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { AccordionExample, AccordionExampleControlled } from '@site/src/components/examples/accordion/AccordionExamples'
+import { Example, ExampleControlled, StatusExample } from '@site/src/components/examples/accordion/AccordionExamples'
 
 <ComponentHeader
-  name={'Accordion'}
-  friendlyName={'Dragspel'}
+  name='Accordion'
+  friendlyName='Dragspel'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/DisclosureGroup.html'
 />
 
@@ -20,48 +19,27 @@ Utfällbar komponent som används för att minska informationsmängden som direk
 ```tsx
 <Accordion>
   <AccordionItem
-    id={'mandarin'}
-    title={'Mandarin'}
+    id='mandarin'
+    title='Mandarin'
   >
     Liten orange citrusfrukt
   </AccordionItem>
   <AccordionItem
-    id={'sharon'}
-    title={'Sharon'}
+    id='sharon'
+    title='Sharon'
   >
     Persikoliknande frukt med fast kött
   </AccordionItem>
   <AccordionItem
-    id={'watermelon'}
-    title={'Vattenmelon'}
+    id='watermelon'
+    title='Vattenmelon'
   >
     Stor frukt med rött, saftigt kött
   </AccordionItem>
 </Accordion>
 ```
 
-<div className={'card'}>
-  <Accordion>
-    <AccordionItem
-      id={'mandarin'}
-      title={'Mandarin'}
-    >
-      Liten orange citrusfrukt
-    </AccordionItem>
-    <AccordionItem
-      id={'sharon'}
-      title={'Sharon'}
-    >
-      Persikoliknande frukt med fast kött
-    </AccordionItem>
-    <AccordionItem
-      id={'watermelon'}
-      title={'Vattenmelon'}
-    >
-      Stor frukt med rött, saftigt kött
-    </AccordionItem>
-  </Accordion>
-</div>
+<Example />
 
 ## Installation
 
@@ -88,37 +66,18 @@ Accordion har flertalet varianter och egenskaper.
 En tydligare variant av layouten när det finns en tydlig gräns mellan varje sektion.
 
 ```tsx
-<Accordion variant={'contained'}>
+<Accordion variant='contained'>
   {/* more items */}
   <AccordionItem
-    id={'mandarin'}
-    title={'Mandarin'}
+    id='mandarin'
+    title='Mandarin'
   >
     Liten orange citrusfrukt
   </AccordionItem>
 </Accordion>
 ```
 
-<Accordion variant={'contained'}>
-  <AccordionItem
-    id={'mandarin'}
-    title={'Mandarin'}
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-  <AccordionItem
-    id={'sharon'}
-    title={'Sharon'}
-  >
-    Persikoliknande frukt med fast kött
-  </AccordionItem>
-  <AccordionItem
-    id={'watermelon'}
-    title={'Vattenmelon'}
-  >
-    Stor frukt med rött, saftigt kött
-  </AccordionItem>
-</Accordion>
+<Example variant='contained' />
 
 ### Status
 
@@ -144,29 +103,7 @@ AccordionItems kan ha en status för att förtydliga för användaren att hen an
 </Accordion>
 ```
 
-<Accordion variant='contained'>
-  <AccordionItem
-    id='mandarin'
-    title='Mandarin'
-    type='success'
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-  <AccordionItem
-    id='sharon'
-    title='Sharon'
-    type='warning'
-  >
-    Persikoliknande frukt med fast kött
-  </AccordionItem>
-  <AccordionItem
-    id='watermelon'
-    title='Vattenmelon'
-    type='default'
-  >
-    Stor frukt med rött, saftigt kött
-  </AccordionItem>
-</Accordion>
+<StatusExample />
 
 ### Multiple
 
@@ -179,7 +116,7 @@ Detta kan ändras genom att sätta prop `allowsMultipleExpanded`.
 </Accordion>
 ```
 
-<AccordionExample allowsMultipleExpanded />
+<Example allowsMultipleExpanded />
 
 ### Uncontrolled expanded
 
@@ -189,27 +126,27 @@ på `Accordion`. Värdena i defaultExpandedKeys måste matcha `id` på de Accord
 ```tsx
 <Accordion defaultExpandedKeys={['sharon']}>
   <AccordionItem
-    id={'mandarin'}
-    title={'Mandarin'}
+    id='mandarin'
+    title='Mandarin'
   >
     Liten orange citrusfrukt
   </AccordionItem>
   <AccordionItem
-    id={'sharon'}
-    title={'Sharon'}
+    id='sharon'
+    title='Sharon'
   >
     Persikoliknande frukt med fast kött
   </AccordionItem>
   <AccordionItem
-    id={'watermelon'}
-    title={'Vattenmelon'}
+    id='watermelon'
+    title='Vattenmelon'
   >
     Stor frukt med rött, saftigt kött
   </AccordionItem>
 </Accordion>
 ```
 
-<AccordionExample defaultExpandedKeys={['sharon']} />
+<Example defaultExpandedKeys={['sharon']} />
 
 ### Controlled expanded
 
@@ -218,52 +155,51 @@ Värdena i `expandedKeys` måste matcha `id` på de AccordionItem-komponenter du
 
 ```tsx
 //highlight-next-line
-const [expandedKeys, setExpandedKeys] =
-React.useState<Set<Key>>(new Set(['mandarin']))
+const [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(new Set(['mandarin']))
 
 <Accordion
 //highlight-start
   expandedKeys={expandedKeys}
   onExpandedChange={setExpandedKeys}
 //highlight-end
-  type={'multiple'}
+  allowsMultipleExpanded
 >
   <AccordionItem
-    {...props}
-    id={'mandarin'}
-    title={'Mandarin'}
+    id="mandarin"
+    title="Mandarin"
   >
     Liten orange citrusfrukt
   </AccordionItem>
   <AccordionItem
-    id={'sharon'}
-    title={'Sharon'}
+    id="sharon"
+    title="Sharon"
   >
     Persikoliknande frukt med fast kött
   </AccordionItem>
   <AccordionItem
-    id={'watermelon'}
-    title={'Vattenmelon'}
+    id="watermelon"
+    title="Vattenmelon"
   >
     Stor frukt med rött, saftigt kött
   </AccordionItem>
 </Accordion>
+
 <pre>
-Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}
+  Följande AccordionItems är öppna: {Array.from(expandedKeys).join(', ')}
 </pre>
 ```
 
-<AccordionExampleControlled type={'multiple'} />
+<ExampleControlled allowsMultipleExpanded />
 
 ## API
 
 ### Accordion
 
-<PropTable name={'Accordion'} />
+<PropTable name='Accordion' />
 
 ### AccordionItem
 
 <PropTable
-  name={'AccordionItem'}
+  name='AccordionItem'
   defaultOpen={false}
 />

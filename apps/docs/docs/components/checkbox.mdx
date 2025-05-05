@@ -9,8 +9,8 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Checkbox, CheckboxGroup } from '@midas-ds/components'
 
 <ComponentHeader
-  name={'Checkbox'}
-  friendlyName={'Kryssruta'}
+  name='Checkbox'
+  friendlyName='Kryssruta'
 />
 
 Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ.
@@ -112,8 +112,8 @@ Om detta används på en sida med paginerat innehåll så skall endast de kryssr
 
 ```tsx
 <CheckboxGroup
-  label={'Godkänner du våra villkor'}
-  description={'Läs texten först'}
+  label='Godkänner du våra villkor'
+  description='Läs texten först'
   // highlight-start
   showSelectAll
   // highlight-end
@@ -125,8 +125,8 @@ Om detta används på en sida med paginerat innehåll så skall endast de kryssr
 
 <div className='card'>
   <CheckboxGroup
-    label={'Godkänner du våra villkor'}
-    description={'Läs texten först'}
+    label="Godkänner du våra villkor"
+    description="Läs texten först"
     showSelectAll
   >
     <Checkbox value='1'>Jag har läst texten</Checkbox>
@@ -204,8 +204,11 @@ return (
 
 ### Checkbox
 
-<PropTable name={'Checkbox'} />
+<PropTable name='Checkbox' />
 
 ### CheckboxGroup
 
-<PropTable name={'Checkbox'} />
+<PropTable
+  name='CheckboxGroup'
+  defaultOpen={false}
+/>
