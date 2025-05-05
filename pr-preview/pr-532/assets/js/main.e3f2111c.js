@@ -13857,7 +13857,7 @@ __webpack_require__.r(__webpack_exports__);
     "localeConfigs": {}
   },
   "customFields": {
-    "currentBranch": "refs/pull/532/merge"
+    "currentBranch": "532/merge"
   },
   "plugins": [
     [
