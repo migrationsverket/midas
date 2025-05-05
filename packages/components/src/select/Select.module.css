@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --border-primary, --text-primary, --focus, --layer-02, --border-invalid, --layer-hover-02, --layer-selected-02, --layer-selected-hover-02, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid from tokens;
+@value --font-family, --text-disabled, --border-primary, --text-primary, --focus, --focus-inset, --layer-01, --border-invalid, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-invalid from tokens;
 
 /** clear the default list styles */
 * > ul {
@@ -45,6 +45,11 @@
   &:focus-visible {
     outline: none;
     box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
   }
 
   &:hover {
@@ -118,14 +123,18 @@
 
 .popover {
   --select-popover-width: max(
-    var(--select-width, var(--field-width-base)) - 2px,
+    var(--select-width, var(--field-width-base)),
     200px
   );
 
   font-family: --font-family;
-  border: 1px solid --border-primary;
-  background: --layer-02;
+  background: --layer-01;
   width: var(--select-popover-width);
+  box-shadow: 0 3px 5px 0 rgba(0 0 0 /20%);
+
+  @media (forced-colors: active) {
+    border: 1px solid --border-primary;
+  }
 }
 
 .icon {
@@ -153,7 +162,7 @@
 .listBoxItem {
   font-family: --font-family;
   padding: 0 1rem;
-  background-color: --layer-02;
+  background-color: --layer-01;
   cursor: pointer;
   color: --text-primary;
   position: relative;
@@ -168,7 +177,7 @@
   }
 
   &:hover {
-    background-color: --layer-hover-02;
+    background-color: --layer-hover-01;
     transition-delay: 60ms;
   }
 
@@ -178,10 +187,10 @@
 }
 
 .listBoxItemSelected {
-  background-color: --layer-selected-02;
+  background-color: --layer-selected-01;
 
   &:hover {
-    background-color: --layer-selected-hover-02;
+    background-color: --layer-selected-hover-01;
     transition-delay: 60ms;
   }
 
@@ -200,8 +209,8 @@
 }
 
 .listBoxItemFocusVisible {
-  outline: --border-primary solid 2px;
-  outline-offset: -2px;
+  box-shadow: --focus-inset;
+  outline: none;
 }
 
 .listBoxItemCheckmark {
@@ -263,6 +272,16 @@
     pointer-events: none;
     color: --text-disabled;
     background-color: --button-background-disabled;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: --focus;
+
+    @media (forced-colors: active) {
+      outline: 3px solid highlight;
+      outline-offset: 2px;
+    }
   }
 }
 

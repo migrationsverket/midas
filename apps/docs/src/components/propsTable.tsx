@@ -149,13 +149,14 @@ export const PropTable = ({ name, defaultOpen = true }) => {
   return (
     <Accordion
       className={styles.accordion}
-      type='multiple'
+      allowsMultipleExpanded
       defaultExpandedKeys={defaultOpen ? ['props'] : []}
     >
       {Object.getOwnPropertyNames(rest).length !== 0 && (
         <AccordionItem
           id='props'
           title='Props'
+          className={styles.accordionItem}
         >
           <Table propGroup={rest} />
         </AccordionItem>
@@ -164,6 +165,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
         <AccordionItem
           id='events'
           title='Events'
+          className={styles.accordionItem}
         >
           <Table
             propGroup={events}
@@ -175,6 +177,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
         <AccordionItem
           id='accessibility'
           title='Tillgänglighet'
+          className={styles.accordionItem}
         >
           <Table
             propGroup={accessibility}

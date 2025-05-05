@@ -21,7 +21,9 @@ export const DatePickerExample = () => {
       <DatePicker
         label='Date (controlled)'
         value={value}
-        onChange={setValue}
+        onChange={newValue =>
+          setValue(newValue ? parseDate(newValue.toString()) : null)
+        }
       />
       <pre>Du valde datum: {value?.toString()}</pre>
     </>
@@ -36,7 +38,7 @@ export const UnavailableDateExample = () => {
   return (
     <DatePicker
       label='Välj ett datum'
-      description={'Fast inte förrän om en vecka'}
+      description='Fast inte förrän om en vecka'
       isDateUnavailable={isDateUnavailable}
       minValue={now}
     />

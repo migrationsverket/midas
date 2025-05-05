@@ -11,6 +11,9 @@ import { Label } from '../label'
 import { Text } from '../text/Text'
 import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
+import { clsx } from 'clsx'
+
+export type Size = 'medium' | 'large'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
@@ -27,6 +30,10 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    * false
    */
   showCounter?: boolean
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export const TextFieldBase = React.forwardRef<
@@ -41,14 +48,17 @@ export const TextFieldBase = React.forwardRef<
     errorMessage,
     showCounter,
     errorPosition = 'top',
+    size = 'large',
   } = props
 
   return (
     <AriaTextField
       {...props}
-      className={styles.textField}
+      className={clsx(styles.textField, {
+        [styles.medium]: size === 'medium',
+      })}
     >
-      {label && <Label variant='label-02'>{label}</Label>}
+      {label && <Label>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
       {showCounter && <CharacterCounter isLonely={!description} />}
       {errorPosition === 'top' && (
