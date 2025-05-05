@@ -1,9 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --button-background-primary-hover, --button-background-primary, --icon-primary, --button-background-primary-active, --button-background-secondary, --size-30, --text-on-color, --button-border-secondary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-tertiary, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus, --button-background-icon-hover, --button-background-icon-active from tokens;
+@value --font-family, --button-background-primary-hover, --button-background-primary, --icon-primary, --button-background-primary-active, --button-background-secondary, --font-size-30, --text-on-color, --button-border-secondary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-tertiary, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus, --button-background-icon-hover, --button-background-icon-active from tokens;
 
 .button {
   font-family: --font-family;
-  font-size: --size-30;
+  font-size: --font-size-30;
   font-weight: 500;
   padding: 0.8125rem 1.9375rem;
   background-color: --button-background-primary;
