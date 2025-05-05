@@ -61,16 +61,16 @@
 @value --line-height-80: 2.25rem;
 @value --line-height-90: 2.5rem;
 @value --line-height-100: 2.75rem;
-@value --size-10: 0.75rem;
-@value --size-20: 0.875rem;
-@value --size-30: 1rem;
-@value --size-40: 1.125rem;
-@value --size-50: 1.25rem;
-@value --size-60: 1.5rem;
-@value --size-70: 1.75rem;
-@value --size-80: 2rem;
-@value --size-90: 2.25rem;
-@value --size-100: 2.625rem;
+@value --font-size-10: 0.75rem;
+@value --font-size-20: 0.875rem;
+@value --font-size-30: 1rem;
+@value --font-size-40: 1.125rem;
+@value --font-size-50: 1.25rem;
+@value --font-size-60: 1.5rem;
+@value --font-size-70: 1.75rem;
+@value --font-size-80: 2rem;
+@value --font-size-90: 2.25rem;
+@value --font-size-100: 2.625rem;
 
 /* Spacing */
 @value --spacing-10: 0.125rem;

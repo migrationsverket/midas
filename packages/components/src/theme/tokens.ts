@@ -69,16 +69,16 @@ export const typography = {
   lineHeight90: 2.5, // 40px (40/16)
   lineHeight100: 2.75, // 44px (44/16)
 
-  size10: '0.75rem', // 12px (12/16)
-  size20: '0.875rem', // 14px (14/16)
-  size30: '1rem', // 16px (16/16)
-  size40: '1.125rem', // 18px (18/16)
-  size50: '1.25rem', // 20px (20/16)
-  size60: '1.5rem', // 24px (24/16)
-  size70: '1.75rem', // 28px (28/16)
-  size80: '2rem', // 32px (32/16)
-  size90: '2.25rem', // 36px (36/16)
-  size100: '2.625rem', // 42px (40/16)
+  fontSize10: '0.75rem', // 12px (12/16)
+  fontSize20: '0.875rem', // 14px (14/16)
+  fontSize30: '1rem', // 16px (16/16)
+  fontSize40: '1.125rem', // 18px (18/16)
+  fontSize50: '1.25rem', // 20px (20/16)
+  fontSize60: '1.5rem', // 24px (24/16)
+  fontSize70: '1.75rem', // 28px (28/16)
+  fontSize80: '2rem', // 32px (32/16)
+  fontSize90: '2.25rem', // 36px (36/16)
+  fontSize100: '2.625rem', // 42px (40/16)
 
   weightThin: 100,
   weightExtraLight: 200,
