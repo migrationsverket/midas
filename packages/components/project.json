@@ -35,11 +35,6 @@
         "port": 4400,
         "configDir": "packages/components/.storybook",
         "noManagerCache": true
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true
-        }
       }
     },
     "build-storybook": {
@@ -48,12 +43,6 @@
       "options": {
         "outputDir": "dist/storybook/ui",
         "configDir": "packages/components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true,
-          "outputDir": "dist/docs/storybook"
-        }
       }
     },
     "test-storybook": {
