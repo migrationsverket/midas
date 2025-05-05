@@ -13856,6 +13856,9 @@ __webpack_require__.r(__webpack_exports__);
     "path": "i18n",
     "localeConfigs": {}
   },
+  "customFields": {
+    "currentBranch": "refs/pull/532/merge"
+  },
   "plugins": [
     [
       "docusaurus-plugin-react-docgen-typescript",
@@ -14302,7 +14305,6 @@ __webpack_require__.r(__webpack_exports__);
   "staticDirectories": [
     "static"
   ],
-  "customFields": {},
   "scripts": [],
   "headTags": [],
   "stylesheets": [],
