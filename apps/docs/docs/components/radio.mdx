@@ -83,12 +83,10 @@ return (
 
 ## Riktlinjer
 
-### Generella riktlinjer
-
 - Fältetiketten ska inledas med stor bokstav och inte följas av punkt.
 - Lägg valen i bokstavsordning om ingen annan given ordning är mer lämplig, t.ex. det mest populära valet först.
 - Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är
-  begränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
+  begränsat till två och det är ont om vertikalt utrymme så kan en horisontell orientering användas.
 
 <div className='card'>
   <HorizontalExample />
@@ -98,29 +96,27 @@ return (
 
 Det finns två mönster för Radioknappar:
 
-1. Inget alternativ är valt från början. Detta alternativ kräver att användaren tar ställning för att kunna gå vidare, vilket i de flesta fall är lämpligt. Välj detta mönster om det är svårt att förutse eller olämpligt att ge ett förval.
+1. **Inget alternativ är valt från början**. Detta alternativ kräver att användaren tar ställning för att kunna gå vidare, vilket i de flesta fall är lämpligt. Välj detta mönster om det är svårt att förutse eller olämpligt att ge ett förval.
 
 <div className='card'>
   <BasicExample />
 </div>
 
-2. Ett av alternativen är valt från början. Välj detta mönster om det finns ett val som är förväntat eller önskvärt och det inte ger stora konsekvenser för användaren att inte ta ställning.
+Om användaren behöver ha möjligthet att avstå från att välja ett de givna alternativen är rekommendationen att skapa ett sista alternativ som du kallar "Inget av givna alternativ" eller liknande.
+
+<div className='card'>
+  <NoneOfTheAboveExample />
+</div>
+
+2. **Ett av alternativen är valt från början**. Välj detta mönster om det finns ett val som är förväntat eller önskvärt och det inte ger stora konsekvenser för användaren att inte ta ställning.
 
 <div className='card'>
   <DefaultValueExample />
 </div>
 
-Om användaren behöver kunna avstå från att välja ett alternativ, är rekommendationen att skapa ett sista alternativ som kallar "Inget av givna alternativ" eller liknande.
-
-<div className='card'>
-<NoneOfTheAboveExample />
-
-</div>
-
 ### Val av komponent
 
-- Använd Radioknappar när användaren bara ska göra ett av flera val i en lista. Använd [Checkbox](/components/checkbox) om flera val ska kunna göras.
-- Om det är fler alternativ än fem (5) bör [Select](/components/select) användas istället.
+Använd Radioknappar när användaren bara ska göra **ett** av flera val i en lista. Använd [Checkbox](/components/checkbox) om flera val ska kunna göras. Om det är fler alternativ än fem bör [Select](/components/select) användas istället.
 
 ## API
 
