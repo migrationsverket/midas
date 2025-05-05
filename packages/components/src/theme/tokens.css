@@ -143,6 +143,7 @@
 
 /* 
  * @deprecated
+ * Deprecated in 8.2.0
  * Please use --support-border-warning instead.
  */
 @value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
