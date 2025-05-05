@@ -88,6 +88,7 @@
 
 /* States */
 @value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
+@value --focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
 
 /* Transitions */
 @value --slow-transition: 500ms;
@@ -224,3 +225,11 @@
 @value --z-index-modal: 1000;
 @value --z-index-toast: 1100;
 @value --z-index-skip-to-content: 1200;
+
+/* Sizing */
+@value --size-50: 0.625rem; /* 10px */
+@value --size-70: 0.875rem; /* 14px */
+
+/* Menu */
+@value --menu-item-background-hover: light-dark(--gray-20, --gray-190);
+@value --menu-item-background-selected: light-dark(--gray-10, --gray-180);

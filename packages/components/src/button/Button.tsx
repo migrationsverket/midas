@@ -24,7 +24,7 @@ export interface MidasButtonProps {
    */
   fullwidth?: boolean
   /** Choose between different button sizes */
-  /** @deprecated This variant will be replaced with a new scaling api accross all components. */
+  /** @deprecated since v4.0.0 This variant will be replaced with a new scaling api accross all components. */
   size?: 'small'
   /** Add an icon from lucide-react
    *

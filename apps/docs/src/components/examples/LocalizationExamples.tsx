@@ -74,8 +74,8 @@ function CurrentDate() {
   return (
     <DateField
       defaultValue={parseDate('2025-02-28')}
-      label={'Datumväljare'}
-      description={'Format kan styras med i18nProvider'}
+      label='Datumväljare'
+      description='Format kan styras med i18nProvider'
     ></DateField>
   )
 }
@@ -83,11 +83,9 @@ function CurrentDate() {
 export const ErrorMessageExample = () => {
   return (
     <TextField
-      label={'Skriv e-post'}
-      type={'email'}
-      description={
-        'Validering/Felmeddelanden beror av inställningarna i browser'
-      }
+      label='Skriv e-post'
+      type='email'
+      description='Validering/Felmeddelanden beror av inställningarna i browser'
     />
   )
 }

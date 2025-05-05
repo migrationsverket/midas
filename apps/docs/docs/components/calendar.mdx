@@ -7,7 +7,6 @@ import { PropTable } from '@site/src/components/propsTable'
 import { Calendar } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { RangeCalendarExample } from '@site/src/components/examples/calendar/CalendarExamples'
-import { semantic } from '../../../../packages/components/src/theme'
 
 <ComponentHeader
   name='Calendar'
@@ -24,8 +23,8 @@ behövs, inte ligger i direkt anslutning till kalendern, eller om kalendern inte
 ```
 
 <div
-  className={'card'}
-  style={{ background: semantic.layer02 }}
+  className='card'
+  style={{ display: 'block' }}
 >
   <Calendar />
 </div>
@@ -79,8 +78,8 @@ export const RangeCalendarExample = () => {
 ```
 
 <div
-  className={'card'}
-  style={{ background: semantic.layer02 }}
+  className='card'
+  style={{ display: 'block' }}
 >
   <RangeCalendarExample />
 </div>

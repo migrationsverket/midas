@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --background, --text-primary, --z-index-modal from tokens;
+@value --font-family, --layer-01, --background, --text-primary, --z-index-modal, --z-index-above from tokens;
 
 .modal {
   font-family: --font-family;
@@ -50,6 +50,7 @@
   justify-content: flex-end;
   position: sticky;
   top: 0;
+  z-index: --z-index-above;
 }
 
 .modalBody {

@@ -81,13 +81,13 @@ export const FlexItem: React.FC<FlexItemProps> = ({
 
   return (
     <div
+      {...props}
       className={clsx(
         styles.col,
         styles[colClass],
         styles[offsetClass],
-        props.className
+        props.className,
       )}
-      {...props}
     >
       {children}
     </div>

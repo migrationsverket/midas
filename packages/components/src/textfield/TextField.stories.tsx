@@ -196,3 +196,24 @@ export const ShowCounterWithDefaultValue: Story = {
     )
   },
 }
+
+export const MediumSizeInput: Story = {
+  tags: [
+    '!autodocs'
+  ],
+  args: {
+    defaultValue: 'Medium size input',
+    size: 'medium',
+    label: 'Medium size textfield'
+  },
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should have an input field with top/bottom padding of 10px',
+      async () => {
+        expect(
+          canvas.getByLabelText('Medium size textfield'),
+        ).toHaveStyle('padding-bottom: 10px; padding-top: 10px')
+      },
+    )
+  },
+}
