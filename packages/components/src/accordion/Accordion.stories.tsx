@@ -86,7 +86,7 @@ export const MultipleSubtleDisabled: Story = {
     await step('it should have the disabled style', async () => {
       await expect(canvas.getAllByRole('heading', { level: 2 })[0]).toHaveStyle(
         {
-          color: lightDark(hexToRgb('#bfbfb7'), hexToRgb('#525257')),
+          color: lightDark(hexToRgb('#bfbfbf'), hexToRgb('#525252')),
         },
       )
     })
