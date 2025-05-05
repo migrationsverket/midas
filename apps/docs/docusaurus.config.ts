@@ -8,8 +8,6 @@ const packagesDir = path.resolve(__dirname, '../../packages')
 
 const packageAliases = {}
 
-console.log(process.env)
-
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
     return
@@ -46,7 +44,7 @@ const config: Config = {
     locales: ['sv'],
   },
   customFields: {
-    currentBranch: process.env.GH_BRANCH,
+    currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(/\//g, '-'),
   },
   plugins: [
     [

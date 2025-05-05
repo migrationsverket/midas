@@ -20,7 +20,7 @@ export const ComponentHeader = ({
   const storybookLink =
     process.env.NODE_ENV === 'development'
       ? `http://localhost:4400/?path=/docs/components-${name.toLowerCase()}--docs`
-      : `https://${customFields?.currentBranch}--6810d578d5507438df0f0d22.chromatic.com/?path=/docs/components-${name.toLowerCase()}--docs`
+      : `https://${customFields?.currentChromaticBranchUrl}--6810d578d5507438df0f0d22.chromatic.com/?path=/docs/components-${name.toLowerCase()}--docs`
 
   return (
     <section style={{ marginBottom: 32, marginTop: -20 }}>
