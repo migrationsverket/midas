@@ -8,7 +8,7 @@ export interface CardProps<C extends React.ElementType = typeof Link> extends Re
     };
     /** Sets background to predetermined color
      *  @default false
-     *  @deprecated Not supported since v5.0.0
+     *  @deprecated since v5.0.0
      * */
     background?: boolean;
     /** Header as h1 for the component rendered below image if there is one */

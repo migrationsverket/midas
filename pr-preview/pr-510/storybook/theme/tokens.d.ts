@@ -61,16 +61,16 @@ export declare const typography: {
     lineHeight80: number;
     lineHeight90: number;
     lineHeight100: number;
-    size10: string;
-    size20: string;
-    size30: string;
-    size40: string;
-    size50: string;
-    size60: string;
-    size70: string;
-    size80: string;
-    size90: string;
-    size100: string;
+    fontSize10: string;
+    fontSize20: string;
+    fontSize30: string;
+    fontSize40: string;
+    fontSize50: string;
+    fontSize60: string;
+    fontSize70: string;
+    fontSize80: string;
+    fontSize90: string;
+    fontSize100: string;
     weightThin: number;
     weightExtraLight: number;
     weightLight: number;
@@ -197,6 +197,8 @@ export declare const semantic: {
     buttonBackgroundSkeleton: string;
     buttonBorderSecondary: string;
     logoPrimary: string;
+    menuItemBackgroundHover: string;
+    menuItemBackgroundSelected: string;
 };
 export declare const zIndex: {
     base: number;
