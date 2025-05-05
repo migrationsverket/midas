@@ -8,6 +8,8 @@ const packagesDir = path.resolve(__dirname, '../../packages')
 
 const packageAliases = {}
 
+console.log(process.env)
+
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
     return
