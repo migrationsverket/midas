@@ -13857,7 +13857,7 @@ __webpack_require__.r(__webpack_exports__);
     "localeConfigs": {}
   },
   "customFields": {
-    "currentBranch": "532/merge"
+    "currentChromaticBranchUrl": "refactor-storybook-build"
   },
   "plugins": [
     [
