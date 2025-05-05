@@ -198,6 +198,8 @@ export declare const theme: {
         buttonBackgroundSkeleton: string;
         buttonBorderSecondary: string;
         logoPrimary: string;
+        menuItemBackgroundHover: string;
+        menuItemBackgroundSelected: string;
     };
     zIndex: {
         base: number;
