@@ -1,11 +1,14 @@
-name: "Chromatic"
+name: 'Chromatic'
+
 permissions:
   contents: read
+
 on:
   push:
     branches-ignore:
       - 'chore/**'
       - 'docs/**'
+
 jobs:
   chromatic:
     name: Run Chromatic
