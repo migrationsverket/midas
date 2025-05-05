@@ -1,12 +1,12 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --size-20, --size-30, --line-height-20, --line-height-30, --line-height-40, --line-height-50, --text-disabled from tokens;
+@value --text-primary, --font-family, --font-size-20, --font-size-30, --line-height-20, --line-height-30, --line-height-40, --line-height-50, --text-disabled from tokens;
 
 .body-01,
 .body-02 {
   color: --text-primary;
   font-weight: 400;
   font-family: --font-family;
-  font-size: --size-30;
+  font-size: --font-size-30;
 }
 
 .body-01 {
@@ -23,7 +23,7 @@
 
 .description {
   color: --text-primary;
-  font-size: --size-20;
+  font-size: --font-size-20;
   line-height: --line-height-20;
   font-weight: 400;
   font-family: --font-family;
