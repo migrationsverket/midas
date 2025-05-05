@@ -1,26 +1,36 @@
 export const modes = {
-  'light mobile': {
+  'Light Mode': {
     backgrounds: {
       value: 'white',
     },
-    viewport: 'x-small',
   },
-  'dark mobile': {
+  'Dark Mode': {
     backgrounds: {
       value: '#121212',
     },
-    viewport: 'x-small',
   },
-  'light desktop': {
-    backgrounds: {
-      value: 'white',
-    },
-    viewport: 'x-small',
-  },
-  'dark desktop': {
-    backgrounds: {
-      value: '#121212',
-    },
-    viewport: 'xLarge',
-  },
+  //   'Light Mode - Mobile': {
+  //     backgrounds: {
+  //       value: 'white',
+  //     },
+  //     viewport: 'x-small',
+  //   },
+  //   'Dark Mode - Mobile': {
+  //     backgrounds: {
+  //       value: '#121212',
+  //     },
+  //     viewport: 'x-small',
+  //   },
+  //   'Light Mode - Desktop': {
+  //     backgrounds: {
+  //       value: 'white',
+  //     },
+  //     viewport: 'x-small',
+  //   },
+  //   'Dark Mode - Desktop': {
+  //     backgrounds: {
+  //       value: '#121212',
+  //     },
+  //     viewport: 'xLarge',
+  //   },
 }
