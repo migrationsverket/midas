@@ -7,6 +7,7 @@ import {
   getPreferredColorScheme,
 } from './custom-theme'
 import React from 'react'
+import { modes } from './modes'
 
 const preview: Preview = {
   parameters: {
@@ -37,6 +38,9 @@ const preview: Preview = {
         method: 'alphabetical',
         order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
       },
+    },
+    chromatic: {
+      modes: modes,
     },
     a11y: { test: 'error', element: '#storybook-root' },
   },
