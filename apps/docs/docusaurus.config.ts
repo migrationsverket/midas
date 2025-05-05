@@ -43,6 +43,9 @@ const config: Config = {
     defaultLocale: 'sv',
     locales: ['sv'],
   },
+  customFields: {
+    currentBranch: process.env.GH_BRANCH,
+  },
   plugins: [
     [
       'docusaurus-plugin-react-docgen-typescript',
