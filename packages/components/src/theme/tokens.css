@@ -141,6 +141,12 @@
 @value --border-secondary: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
 @value --border-tertiary: light-dark(--blue-170, --blue-100);
+
+/* 
+ * @deprecated
+ * Deprecated in 8.2.0
+ * Please use --support-border-warning instead.
+ */
 @value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
