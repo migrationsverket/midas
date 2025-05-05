@@ -5884,6 +5884,12 @@ CSS variables, meant to be overridden by final theme
 
 /* Border */
 
+/* 
+ * @deprecated
+ * Deprecated in 8.2.0
+ * Please use --support-border-warning instead.
+ */
+
 /* Field 01 */
 
 /* Field 02 */
