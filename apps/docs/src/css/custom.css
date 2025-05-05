@@ -137,6 +137,24 @@ table td {
   border: none;
 }
 
+.card-guidelines {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0;
+  margin-bottom: var(--ifm-leading);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none !important;
+  max-height: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.padding-0 {
+    padding: 0;
+  }
+}
+
 .token-table {
   table-layout: fixed;
   width: 100%;
