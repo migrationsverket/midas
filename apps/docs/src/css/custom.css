@@ -88,6 +88,7 @@
   --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
   --ifm-card-background-color: #000;
+  --ifm-code-background: #1e1e1e;
 }
 
 .theme-code-block {
@@ -102,7 +103,7 @@
   border-radius: 0;
 }
 
-.theme-code-block:has(~ .card) {
+.theme-code-block:has(+ .card) {
   margin-bottom: 0;
   border-bottom-width: 0;
 }
