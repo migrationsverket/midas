@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-02, --layer-hover-02, --border-primary, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-02, --border-invalid, --font-family from tokens;
+@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-01, --layer-hover-01, --border-primary, --focus, --focus-inset, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-01, --layer-selected-hover-01, --border-invalid, --font-family from tokens;
 
 .combobox {
   font-family: --font-family;
@@ -16,12 +16,12 @@
   width: -webkit-fill-available;
   padding-left: 1rem;
   border: none;
+  border-bottom: 1px solid --border-primary;
   border-radius: 0;
   font-size: 1rem;
   color: --text-primary;
   height: 3rem;
   background-color: --field-01;
-  box-shadow: 0 1px 0 0 --border-primary;
 
   &[data-hovered],
   &:has(+ [data-hovered]) {
@@ -32,10 +32,12 @@
     color: --text-placeholder;
   }
 
-  &[data-focus-visible],
-  &:focus-visible {
-    border: none;
+  &:focus-visible,
+  &[data-focus-visible] {
     outline: none;
+  }
+
+  &[data-focus-visible] {
     box-shadow: --focus;
 
     @media (forced-colors: active) {
@@ -98,10 +100,14 @@
 
 .popover {
   font-family: --font-family;
-  border: 0.063rem solid --border-primary;
-  width: calc(var(--trigger-width) - 0.125rem);
-  background: --layer-02;
+  width: var(--trigger-width);
+  background: --layer-01;
   overflow-y: auto;
+  box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
+
+  @media (forced-colors: active) {
+    border: 1px solid --border-primary;
+  }
 }
 
 .sectionHeading {
@@ -114,18 +120,23 @@
 .listBoxItem {
   margin: auto;
   padding: 1rem;
-  background-color: --layer-02;
+  background-color: --layer-01;
   outline: none;
   cursor: default;
   color: --text-primary;
   position: relative;
 
   &[data-selected='true'] {
-    background: --layer-selected-02;
+    background: --layer-selected-01;
+
+    &:hover {
+      background-color: --layer-selected-hover-01;
+    }
   }
 
   &[data-focused='true'] {
-    background: --layer-hover-02;
+    background: --layer-hover-01;
+    box-shadow: --focus-inset;
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
