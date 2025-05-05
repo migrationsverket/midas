@@ -16,7 +16,7 @@ permissions:
 
 env:
   PR_NUMBER: ${{ github.event.number }}
-  GH_BRANCH: ${{ github.ref }}
+  GH_BRANCH: ${{ github.ref_name }}
 
 concurrency: preview-${{ github.ref }}
 
