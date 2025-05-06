@@ -3,14 +3,20 @@ import styles from './Skeleton.module.css'
 import clsx from 'clsx'
 
 type SkeletonProps = {
-  width?: string | number
-  height?: string | number
-  variant?: 'circle' | 'rectangular'
+  width?: React.CSSProperties['width']
+  height?: React.CSSProperties['height']
+  variant?:
+    | 'circle'
+    | 'rectangle'
+    /**
+     * @deprecated since v8.2.0 - Use 'rectangle' instead. This will be removed in future versions.
+     */
+    | 'rectangular'
   animation?: 'wave' | false
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({
-  variant = 'rectangular',
+  variant = 'rectangle',
   width,
   height,
   animation = 'wave',
@@ -25,7 +31,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
       className={clsx(
         styles.skeleton,
         styles[variant],
-        animation && styles[animation],
+        animation && styles.wave,
       )}
       style={{ width, height }}
     />

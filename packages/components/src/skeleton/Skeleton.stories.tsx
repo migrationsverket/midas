@@ -10,7 +10,7 @@ const meta: Meta<typeof Skeleton> = {
   },
   argTypes: {
     variant: {
-      options: ['rectangular', 'circle'],
+      options: ['rectangular', 'circle', 'rectangle'],
       control: { type: 'radio' },
     },
     width: {
