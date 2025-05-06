@@ -1,35 +1,32 @@
-import { Link, LinkProps, RouterProvider } from '../link/Link';
+import { HeadingProps } from '../heading';
+import { ButtonProps, Link } from 'react-aria-components';
 import * as React from 'react';
-export interface CardProps<C extends React.ElementType = typeof Link> extends React.HTMLAttributes<HTMLDivElement> {
-    /** Optional image displayed at the top of card */
-    image?: {
-        source: string;
-        description: string;
-    };
-    /** Sets background to predetermined color
-     *  @default false
-     *  @deprecated since v5.0.0
-     * */
-    background?: boolean;
-    /** Header as h1 for the component rendered below image if there is one */
-    title: string;
-    /** Content as p element for the component */
-    content: string;
-    /** Props for when card element is clicked */
-    link: LinkProps<C>;
-    /** Adjust the tag to be used for the header
-     * @default 'h1'
-     */
-    headingTag?: React.ElementType;
-    /** Custom image component to be used instead of the default img tag */
-    customImageComponent?: React.ReactElement;
-    /** Custom link component to be used instead of the default a tag. For example your client side router link. */
-    customLinkComponent?: React.ElementType;
+export interface MidasCard extends React.HTMLAttributes<HTMLDivElement> {
+    /** Stack content in card vertical or horizontal */
+    horizontal?: boolean;
+    /** Card content, usually wrap with CardContent */
+    children: React.ReactNode;
 }
-/**
- * This component renders a card with optional image, title, content.
- *
- * @see {@link https://designsystem.migrationsverket.se/components/card/}
- */
-export declare const Card: React.FC<CardProps>;
-export { RouterProvider };
+export interface MidasCardContext {
+    horizontal?: MidasCard['horizontal'];
+    titleId?: string;
+}
+export interface MidasCardImage {
+    /** Custom image component to be used instead of the default img tag */
+    as?: React.ElementType;
+    className?: string;
+    [key: string]: unknown;
+}
+interface MidasCardLink<C extends React.ElementType> {
+    children: React.ReactNode;
+    as?: C;
+}
+export type MidasCardLinkProps<C extends React.ElementType> = MidasCardLink<C> & Omit<React.ComponentProps<C>, keyof MidasCardLink<C>>;
+export declare const Card: React.FC<MidasCard>;
+export declare const CardContent: React.FC<React.HTMLAttributes<HTMLDivElement>>;
+export declare const CardTitle: React.FC<HeadingProps>;
+export declare const CardActions: React.FC<React.HTMLAttributes<HTMLDivElement>>;
+export declare const CardActionArea: React.FC<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
+export declare const CardImage: React.FC<MidasCardImage>;
+export declare const CardLink: <C extends React.ElementType = (props: import('react-aria-components').LinkProps & React.RefAttributes<HTMLAnchorElement>) => React.ReactElement | null>({ children, as, ...rest }: MidasCardLinkProps<C>) => import("react/jsx-runtime").JSX.Element;
+export {};
