@@ -111,6 +111,32 @@ export const RealtimeValidation = () => {
   )
 }
 
+export const RealtimeValidationEmail = () => {
+  const [email, setEmail] = React.useState('')
+  const [error, setError] = React.useState('')
+
+  const handleBlur = () => {
+    if (!email.includes('@')) {
+      setError('E-postadressen måste innehålla ett @-tecken.')
+    } else {
+      setError('')
+    }
+  }
+
+  return (
+    <TextField
+      label='E-postadress'
+      description='Ange en epostadress som innehåller @'
+      value={email}
+      onChange={setEmail}
+      onBlur={handleBlur}
+      isInvalid={!!error}
+      errorMessage={error}
+      errorPosition='top'
+    />
+  )
+}
+
 export const ServerValidation = () => {
   const [isWaiting, setIsWaiting] = React.useState(false)
   // Fake server used in this example.
