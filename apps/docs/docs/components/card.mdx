@@ -31,7 +31,9 @@ npm install @midas-ds/components
 
 ```tsx
 import { Card } from '@midas-ds/components'
+```
 
+```tsx
 <Card>Kort</Card>
 ```
 
@@ -54,13 +56,15 @@ Kort börjar med en grundläggande komponent som endast definerar kortytan. Seda
 
 ```tsx
 import { Card, CardContent, CardTitle, Text } from '@midas-ds/components'
+```
 
-  <Card>
-    <CardContent>
-      <CardTitle>Här är en titel</CardTitle>
-      <Text>Här är lite innehåll</Text>
-    </CardContent>
-  </Card>
+```tsx
+<Card>
+  <CardContent>
+    <CardTitle>Här är en titel</CardTitle>
+    <Text>Här är lite innehåll</Text>
+  </CardContent>
+</Card>
 ```
 
 <BasicExample />
@@ -90,12 +94,48 @@ Titeln har alltid samma storlek rent grafiskt och är som standard en `<h2>` men
 
 ```tsx
 import { Card, CardContent, CardActions, CardTitle, Button, Text } from '@midas-ds/components'
+```
 
-return (
-  <Card>
+```tsx
+<Card>
+  <CardContent>
+    <CardTitle>Här är en titel</CardTitle>
+    <Text>Här är lite innehåll</Text>
+    <CardActions>
+      <Button
+        variant='icon'
+        icon={Pen}
+      >
+        Ändra
+      </Button>
+      <Button
+        variant='icon'
+        icon={X}
+      >
+        Avbryt
+      </Button>
+    </CardActions>
+  </CardContent>
+</Card>
+```
+
+<ActionExample />
+
+### Primär action
+
+Ett kort kan även ha en primär action med `<CardActionArea>` som är den mest relevanta åtgärden för kortet. Denna gör att hela ytan blir klickbar. En `<CardActionArea>` bör alltid innehålla en `<CardTitle>` för att ge en beskrivning av vad kortet innebär för skärmläsare.
+
+```tsx
+import { Card, CardTitle, Text, CardActions, Button, CardActionArea } from '@midas-ds/components'
+import { Pen, X } from 'lucide-react'
+```
+
+```tsx
+<Card>
+  <CardActionArea onPress={() => alert('Clicked!')}>
     <CardContent>
-      <CardTitle>Här är en titel</CardTitle>
-      <Text>Här är lite innehåll</Text>
+      <CardTitle>Dina uppgifter</CardTitle>
+      <Text>Namn: Namn Namnsson</Text>
       <CardActions>
         <Button
           variant='icon'
@@ -111,44 +151,8 @@ return (
         </Button>
       </CardActions>
     </CardContent>
-  </Card>
-)
-```
-
-<ActionExample />
-
-### Primär action
-
-Ett kort kan även ha en primär action med `<CardActionArea>` som är den mest relevanta åtgärden för kortet. Denna gör att hela ytan blir klickbar. En `<CardActionArea>` bör alltid innehålla en `<CardTitle>` för att ge en beskrivning av vad kortet innebär för skärmläsare.
-
-```tsx
-import { Card, CardTitle, Text, CardActions, Button, CardActionArea } from '@midas-ds/components'
-import { Pen, X } from 'lucide-react'
-
-return (
-  <Card>
-    <CardActionArea onPress={() => alert('Clicked!')}>
-      <CardContent>
-        <CardTitle>Dina uppgifter</CardTitle>
-        <Text>Namn: Namn Namnsson</Text>
-        <CardActions>
-          <Button
-            variant='icon'
-            icon={Pen}
-          >
-            Ändra
-          </Button>
-          <Button
-            variant='icon'
-            icon={X}
-          >
-            Avbryt
-          </Button>
-        </CardActions>
-      </CardContent>
-    </CardActionArea>
-  </Card>
-)
+  </CardActionArea>
+</Card>
 ```
 
 <ActionAreaExample />
@@ -159,17 +163,17 @@ Det går även bra att kombinera standalone Link med card för att få en hel kl
 
 ```tsx
 import { Card, CardTitle, Text, CardActions, Link } from '@midas-ds/components'
+```
 
-return (
-  <Card>
-    <CardContent>
-      <CardLink>
-        <CardTitle>Här är en titel</CardTitle>
-      </CardLink>
-      <Text>Här är lite innehåll</Text>
-    </CardContent>
-  </Card>
-)
+```tsx
+<Card>
+  <CardContent>
+    <CardLink>
+      <CardTitle>Här är en titel</CardTitle>
+    </CardLink>
+    <Text>Här är lite innehåll</Text>
+  </CardContent>
+</Card>
 ```
 
 <LinkExample />
@@ -180,21 +184,21 @@ return (
 
 ```tsx
 import { Card, CardImage, CardContent, CardTitle, Text } from '@midas-ds/components'
+```
 
-return (
-  <Card>
-    <CardImage
-      src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
-      alt='Ananas'
-    />
-    <CardContent>
-      <CardLink href='#'>
-        <CardTitle>Dina uppgifter</CardTitle>
-      </CardLink>
-      <Text>Namn: Namn Namnsson</Text>
-    </CardContent>
-  </Card>
-)
+```tsx
+<Card>
+  <CardImage
+    src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
+    alt='Ananas'
+  />
+  <CardContent>
+    <CardLink href='#'>
+      <CardTitle>Dina uppgifter</CardTitle>
+    </CardLink>
+    <Text>Namn: Namn Namnsson</Text>
+  </CardContent>
+</Card>
 ```
 
 <ImageExample />
