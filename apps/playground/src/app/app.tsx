@@ -4,7 +4,14 @@ import { TextField } from '@midas-ds/components'
 export function App() {
   return (
     <div className={styles.container}>
-      <div style={{ display: 'flex', alignItems: 'start', gap: '2rem', border: '1px solid salmon' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'start',
+          gap: '2rem',
+          border: '1px solid salmon',
+        }}
+      >
         <TextField
           label='Medium'
           description='size component'

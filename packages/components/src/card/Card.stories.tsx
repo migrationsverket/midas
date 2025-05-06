@@ -1,43 +1,157 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Card } from './Card'
+import {
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardImage,
+  CardLink,
+  CardTitle,
+} from './Card'
+import { Text } from '../text'
+import { Button } from '../button'
+import { Pen, X } from 'lucide-react'
 import { expect, userEvent } from '@storybook/test'
-
-const testImage = {
-  source:
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg',
-  description: 'Pineapple',
-}
 
 const meta: Meta<typeof Card> = {
   component: Card,
   title: 'Components/Card',
   tags: ['autodocs'],
-  args: {
-    title: 'Welcome to card',
-    content:
-      "Sometimes the default accessible name of an element is missing, or does not accurately describe its contents, and there is no content visible in the DOM that can be associated with the object to give it meaning. A common example is a button containing an SVG or icon font (which you shouldn't be using) without any text.",
-    image: testImage,
-    background: false,
-    link: {
-      children: 'Läs mer om Card',
-      href: '#',
-    },
-    headingTag: 'h2',
-  },
 }
 
 export default meta
 type Story = StoryObj<typeof Card>
 
 export const Example: Story = {
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
+  args: {
+    children: (
+      <CardContent>
+        <CardTitle>Dina uppgifter</CardTitle>
+        <Text>Namn: Namn Namnsson</Text>
+        <CardActions>
+          <Button
+            variant='icon'
+            icon={Pen}
+          >
+            Redigera
+          </Button>
+        </CardActions>
+      </CardContent>
+    ),
+  },
+}
+
+export const Horizontal: Story = {
+  args: {
+    ...Example.args,
+    horizontal: true,
+  },
+}
+
+export const WithActions: Story = {
+  args: {
+    children: (
+      <CardContent>
+        <CardTitle>Dina uppgifter</CardTitle>
+        <Text>Namn: Namn Namnsson</Text>
+        <CardActions>
+          <Button
+            variant='icon'
+            icon={Pen}
+          >
+            Ändra
+          </Button>
+          <Button
+            variant='icon'
+            icon={X}
+          >
+            Avbryt
+          </Button>
+        </CardActions>
+      </CardContent>
+    ),
+  },
+  play: async ({ canvas, step }) => {
+    await step('It should be possible to focus the button', async () => {
+      const button = canvas.getByText('Avbryt')
+      expect(button).not.toHaveFocus()
+
+      // focus the link
+      await userEvent.tab()
+      await userEvent.tab()
+
+      expect(button).toHaveFocus()
+    })
+  },
+}
+
+export const WithPrimaryAction: Story = {
+  args: {
+    children: (
+      <>
+        <CardActionArea
+          onPress={() => {
+            return
+          }}
+          data-testid='card-action-area'
+        >
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </CardActionArea>
+        <CardContent>
+          <CardActions>
+            <Button
+              variant='icon'
+              icon={Pen}
+            >
+              Ändra
+            </Button>
+            <Button
+              variant='icon'
+              icon={X}
+            >
+              Avbryt
+            </Button>
+          </CardActions>
+        </CardContent>
+      </>
+    ),
+  },
+  play: async ({ canvas, step }) => {
+    await step(
+      'It should be possible to focus the primary action area',
+      async () => {
+        const button = canvas.getByTestId('card-action-area')
+        expect(button).not.toHaveFocus()
+
+        // focus the link
+        await userEvent.tab()
+
+        expect(button).toHaveFocus()
+      },
+    )
+  },
+}
+
+export const WithLink: Story = {
+  args: {
+    children: (
+      <CardContent>
+        <CardLink
+          href='#'
+          data-testid='card-link'
+        >
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>
+        <Text>Namn: Namn Namnsson</Text>
+      </CardContent>
+    ),
   },
   play: async ({ canvas, step }) => {
     await step('It should be possible to focus the link', async () => {
-      const link = canvas.getByText('Läs mer om Card')
+      const link = canvas.getByTestId('card-link')
       expect(link).not.toHaveFocus()
 
       // focus the link
@@ -48,29 +162,46 @@ export const Example: Story = {
   },
 }
 
-export const WithBackground: Story = {
+export const WithImage: Story = {
   args: {
-    background: true,
-  },
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
+    style: { maxWidth: 300 },
+    children: (
+      <>
+        <CardImage
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
+          alt='Ananas'
+        />
+        <CardContent>
+          <CardLink
+            href='#'
+            data-testid='card-link'
+          >
+            <CardTitle>Dina uppgifter</CardTitle>
+          </CardLink>
+          <Text>Namn: Namn Namnsson</Text>
+        </CardContent>
+      </>
+    ),
   },
 }
 
-export const Disabled: Story = {
+export const WithContainedImage: Story = {
   args: {
-    background: true,
-    link: {
-      children: 'Läs mer om Card',
-      href: '#',
-      isDisabled: true,
-    },
-  },
-  parameters: {
-    a11y: {
-      test: 'todo',
-    },
+    style: { maxWidth: 300 },
+    children: (
+      <CardContent>
+        <CardLink
+          href='#'
+          data-testid='card-link'
+        >
+          <CardTitle>Dina uppgifter</CardTitle>
+        </CardLink>{' '}
+        <CardImage
+          src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Pineapple_and_cross_section.jpg/640px-Pineapple_and_cross_section.jpg'
+          alt='Ananas'
+        />
+        <Text>Namn: Namn Namnsson</Text>
+      </CardContent>
+    ),
   },
 }
