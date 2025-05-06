@@ -27,5 +27,6 @@ jobs:
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
+          buildCommand: npx nx run components:build-storybook:ci
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           onlyChanged: true # enables turbosnap
