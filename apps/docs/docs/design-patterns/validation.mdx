@@ -2,6 +2,8 @@
 
 import { TextField } from '@midas-ds/components'
 
+import { ErrorMessageList } from '@site/src/components/examples/form/FormExamples'
+
 Text om validering
 
 ## Felmeddelande
@@ -63,6 +65,8 @@ exempel
 Om det finns fält som har valideringsfel efter att användaren tryck på en knapp för att gå vidare eller skicka in formuläret så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan innehåller länkar till de komponenter som behöver rättas till.
 Den är uppbyggd av Infobanner och Link. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
 
-Visuellt exempel
+<div className='card'>
+  <ErrorMessageList />
+</div>
 
 Se exempelimplementation här: Länk till exempel på guider?
