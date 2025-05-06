@@ -1,0 +1,68 @@
+# Validering
+
+import { TextField } from '@midas-ds/components'
+
+Text om validering
+
+## Felmeddelande
+
+Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning. Det går även att ha felmeddelandet under fältet.
+
+```jsx
+<TextField
+  label='Skriv ditt fullständiga namn'
+  description='Både för och efternamn'
+  isRequired
+  errorMessage='Detta är ett obligatoriskt fält'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='Skriv ditt fullständiga namn'
+    description='Både för och efternamn'
+    isInvalid
+    errorMessage='Detta är ett obligatoriskt fält'
+  />
+</div>
+
+```jsx
+<TextField
+  label='Skriv ditt fullständiga namn'
+  description='Både för och efternamn'
+  // highlight-start
+  errorPosition='bottom'
+  // highlight-end
+  isRequired
+  errorMessage='Detta är ett obligatoriskt fält'
+/>
+```
+
+<div className='card'>
+  <TextField
+    label='Skriv ditt fullständiga namn'
+    description='Både för och efternamn'
+    isInvalid
+    errorPosition='bottom'
+    errorMessage='Detta är ett obligatoriskt fält'
+  />
+</div>
+
+## Validering
+
+Text om mönster för validering
+
+### Direktvalidering
+
+Fält där vi har en formateringsregel eller validerar mot en databas ska valideras direkt när användaren lämnar fältet.
+
+exempel
+
+### Felmeddelandelista
+
+Om det finns fält som har valideringsfel efter att användaren tryck på en knapp för att gå vidare eller skicka in formuläret så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan innehåller länkar till de komponenter som behöver rättas till.
+Den är uppbyggd av Infobanner och Link. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+
+Visuellt exempel
+
+Se exempelimplementation här: Länk till exempel på guider?
