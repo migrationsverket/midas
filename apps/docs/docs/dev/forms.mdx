@@ -151,8 +151,8 @@ feedback, till exempel för att välja ett godkänt lösenord.
 
 ```tsx
 export const RealtimeValidation = () => {
-  let [password, setPassword] = React.useState('')
-  let errors = []
+  const [password, setPassword] = React.useState('')
+  const errors = []
   if (password.length < 8) {
     errors.push('Lösenordet måste vara fler än 8 tecken.')
   }
@@ -209,12 +209,12 @@ export const ServerValidation = () => {
       },
     }
   }
-  let [errors, setErrors] = React.useState({})
-  let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const [errors, setErrors] = React.useState({})
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    let data = Object.fromEntries(new FormData(e.currentTarget))
-    let result = await callServer(data)
+    const data = Object.fromEntries(new FormData(e.currentTarget))
+    const result = await callServer(data)
     setErrors(result.errors)
   }
 
@@ -388,11 +388,11 @@ hjälper gärna till att få Midas komponenter att fungera i den teknikstacken n
 import { Controller, useForm } from 'react-hook-form';
 
 export const HookFormExample = () => {
-  let {
+  const {
     handleSubmit,
     control,
   } = useForm()
-  let onSubmit = data => {
+  const onSubmit = data => {
     // Call your API here...
   }
 
