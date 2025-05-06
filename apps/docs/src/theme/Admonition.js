@@ -2,7 +2,6 @@ import React from 'react'
 import { InfoBanner } from '@midas-ds/components'
 
 export default function Admonition(props) {
-  console.log(props)
   const typeMapping = {
     tip: 'success',
     note: 'info',
