@@ -7,7 +7,7 @@ describe('Sidebar', () => {
     const { baseElement } = render(
       <Layout
         items={[]}
-        title={''}
+        title=''
         children={undefined}
         headerChildren={undefined}
         user={{ name: '', title: '' }}

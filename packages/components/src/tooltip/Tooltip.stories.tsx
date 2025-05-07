@@ -137,19 +137,19 @@ export const PlacementStartRTL: Story = {
   },
   tags: ['!dev', '!autodocs'],
   render: args => (
-    <I18nProvider locale={'ar-AR'}>
-    <TooltipTrigger isOpen>
-      <Button
-        variant='tertiary'
-        aria-label='Spara'
-      >
-        <Save />
-      </Button>
-      <Tooltip
-        data-testid='tooltip-placement'
-        {...args}
-      />
-    </TooltipTrigger>
+    <I18nProvider locale='ar-AR'>
+      <TooltipTrigger isOpen>
+        <Button
+          variant='tertiary'
+          aria-label='Spara'
+        >
+          <Save />
+        </Button>
+        <Tooltip
+          data-testid='tooltip-placement'
+          {...args}
+        />
+      </TooltipTrigger>
     </I18nProvider>
   ),
   play: async ({ step, canvasElement }) => {

@@ -15,13 +15,13 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
         <DialogTrigger>
           <Pressable>
             <span
-              role={'button'}
+              role='button'
               style={{ cursor: 'pointer' }}
             >
               <Lowlight
                 value={props.type.raw as string}
                 inline
-                language={'typescript'}
+                language='typescript'
                 markers={[]}
               />
             </span>
@@ -33,9 +33,9 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
               margin: '2rem',
               border: `1px solid ${semantic.textPrimary}`,
             }}
-            placement={'top'}
+            placement='top'
           >
-            <span className={'hljs-code'}>
+            <span className='hljs-code'>
               {props.type.value.map((r: Record<'value', string>, i: number) => {
                 return (
                   <span key={`${r.value}${i}`}>
@@ -43,7 +43,7 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
                     <Lowlight
                       value={r.value.replace(/"/g, "'")}
                       inline
-                      language={'typescript'}
+                      language='typescript'
                       markers={[]}
                     />
                   </span>
@@ -59,7 +59,7 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
         <Lowlight
           value={props.type.name}
           inline
-          language={'typescript'}
+          language='typescript'
           markers={[]}
         />
       )
@@ -113,7 +113,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                   <Lowlight
                     value={key}
                     inline
-                    language={'typescript'}
+                    language='typescript'
                     markers={[]}
                   />
                   {props[key].required && ' *'}
@@ -127,7 +127,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                       <Lowlight
                         value={props[key].defaultValue.value}
                         inline
-                        language={'typescript'}
+                        language='typescript'
                         markers={[]}
                       />
                     ) : (
