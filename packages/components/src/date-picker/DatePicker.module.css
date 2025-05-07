@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --icon-primary, --border-primary, --border-invalid, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-tertiary, --button-background-primary from tokens;
+@value --font-family, --field-01, --icon-primary, --border-primary, --support-border-warning, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-tertiary, --button-background-primary from tokens;
 
 .datePicker {
   font-family: --font-family;
@@ -40,7 +40,7 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 3px --border-invalid;
+    box-shadow: inset 0 0 0 3px --support-border-warning;
   }
 
   .calendarButton {
