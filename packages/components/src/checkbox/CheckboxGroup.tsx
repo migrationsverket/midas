@@ -38,15 +38,12 @@ export const CheckboxGroup = ({
   >()
 
   const ToogleAll = () => {
-    // Get the current state of the checkbox group
     const state = React.useContext(CheckboxGroupStateContext)
 
-    // Retrieve all childern
     const childValues = React.Children.toArray(children)
       .filter(React.isValidElement)
       .map((child: React.ReactElement) => child.props.value)
 
-    // Toogle all values
     const toggleAll = () => {
       if (isAllSelected !== 'all') {
         setIsAllSelected('all')
@@ -57,7 +54,6 @@ export const CheckboxGroup = ({
       return state?.setValue([])
     }
 
-    //listen and change the select all accordingly
     React.useEffect(() => {
       const amountOfChildren = childValues.length
       const totalAmount = childValues.length + 1
@@ -98,7 +94,7 @@ export const CheckboxGroup = ({
       className={styles.checkboxGroup}
       {...props}
     >
-      <Label variant='label-02'>{label}</Label>
+      <Label>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={styles.wrap}>
