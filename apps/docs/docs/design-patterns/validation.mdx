@@ -44,7 +44,9 @@ Fält där vi har en formateringsregel eller kan validera mot en databas ska val
 ### Felmeddelandelista
 
 Om det finns fält som har valideringsfel efter att användaren tryckt på en knapp för att gå vidare eller skicka in formuläret, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en `Infobanner` som innehåller länkar till de komponenter som behöver rättas till.
-Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel. Du kan se en [exempelimplementation här](/dev/forms/#felmeddelandelista)
+Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+
+I exemplet nedan får du en felmeddelandelista om du klickar på Skicka utan att fylla i och en felmeddelandelista med andra fel om du fyller i fälten och sen klickar på Skicka
 
 <div className='card'>
   <ErrorMessageList />
