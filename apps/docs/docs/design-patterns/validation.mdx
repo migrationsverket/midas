@@ -1,6 +1,6 @@
 # Validering
 
-import { TextField, Link } from '@midas-ds/components'
+import { TextField } from '@midas-ds/components'
 
 import { ErrorMessageList, RealtimeValidationEmail } from '@site/src/components/examples/form/FormExamples'
 
@@ -31,13 +31,11 @@ Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfe
 
 ## Mönster för validering
 
-Text om mönster för validering
+Vi använder två olika mönster för validering i formulär.
 
 ### Direktvalidering
 
-Fält där vi har en formateringsregel eller validerar mot en databas ska valideras direkt när användaren lämnar fältet.
-
-I exemplet nedan får du valideringsfel direkt när du lämnar fältet om du inte skriver `@`
+Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet. I exemplet nedan får du valideringsfel direkt när du lämnar fältet om du inte skriver `@`
 
 <div className='card'>
   <RealtimeValidationEmail />
@@ -45,7 +43,7 @@ I exemplet nedan får du valideringsfel direkt när du lämnar fältet om du int
 
 ### Felmeddelandelista
 
-Om det finns fält som har valideringsfel efter att användaren tryckt på en knapp för att gå vidare eller skicka in formuläret så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är uppbyggd av `Infobanner` och `Link` och innehåller länkar till de komponenter som behöver rättas till.
+Om det finns fält som har valideringsfel efter att användaren tryckt på en knapp för att gå vidare eller skicka in formuläret, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en `Infobanner` som innehåller länkar till de komponenter som behöver rättas till.
 Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel. Du kan se en [exempelimplementation här](/dev/forms/#felmeddelandelista)
 
 <div className='card'>
