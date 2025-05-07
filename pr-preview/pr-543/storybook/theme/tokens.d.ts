@@ -142,7 +142,6 @@ export declare const semantic: {
     borderTertiary: string;
     /**
      * @deprecated Deprecated in 8.2.0. Use `supportBorderWarning` instead.
-     * @type {string}
      */
     borderInvalid: string;
     borderDisabled: string;
