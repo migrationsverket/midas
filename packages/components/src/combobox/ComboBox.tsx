@@ -53,7 +53,7 @@ export function ComboBox<T extends object>({
       ref={ref}
       {...props}
     >
-      {label && <Label variant='label-02'>{label}</Label>}
+      {label && <Label>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
@@ -103,7 +103,6 @@ export function ComboBoxSelection(props: Section<Item>) {
     <ListBoxSection id={props.name}>
       <Header>
         <Label
-          variant='label-02'
           elementType='span'
           className={styles.sectionHeading}
         >
