@@ -221,8 +221,8 @@ export const ErrorMessageList = () => {
     setIsWaiting(false)
     return {
       errors: {
-        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,
-        password: 'Lösenordet är tyvärr felaktigt, prova igen.',
+        username: `Användarnamnet ${data.username} är upptaget.`,
+        password: 'Lösenordet är tyvärr felaktigt.',
       },
     }
   }
@@ -269,7 +269,7 @@ export const ErrorMessageList = () => {
             {Object.keys(invalidFields).length !== 0 &&
               Object.entries(invalidFields).map(([field, value]) => (
                 <li key={field}>
-                  <Link href={'#' + field}>{field} är ogiltigt.</Link>
+                  <Link href={'#' + field}>Fyll i det här fältet</Link>
                 </li>
               ))}
             {Object.keys(errors).length !== 0 &&
