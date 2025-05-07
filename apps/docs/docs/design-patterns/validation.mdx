@@ -1,10 +1,10 @@
-# Validering
+# Validering i formulär
 
 import { TextField } from '@midas-ds/components'
 
 import { ErrorMessageList, RealtimeValidationEmail } from '@site/src/components/examples/form/FormExamples'
 
-Text om validering
+Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Vi har två sätt att visa fel: direkt vid fältet eller som en lista högst upp på sidan när formuläret skickas in.
 
 ## Felmeddelande
 
@@ -29,11 +29,7 @@ Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfe
   />
 </div>
 
-## Mönster för validering
-
-Vi använder två olika mönster för validering i formulär.
-
-### Direktvalidering
+## Direktvalidering
 
 Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet. I exemplet nedan får du valideringsfel direkt när du lämnar fältet om du inte skriver `@`
 
@@ -41,9 +37,9 @@ Fält där vi har en formateringsregel eller kan validera mot en databas ska val
   <RealtimeValidationEmail />
 </div>
 
-### Felmeddelandelista
+## Felmeddelandelista
 
-Om det finns fält som har valideringsfel efter att användaren tryckt på en knapp för att gå vidare eller skicka in formuläret, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en `Infobanner` som innehåller länkar till de komponenter som behöver rättas till.
+Om det finns fält som har valideringsfel efter att användaren skickat in formuläret eller gått vidare till en ny sida, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en `Infobanner` som innehåller länkar till de komponenter som behöver rättas till.
 Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
 
 I exemplet nedan får du en felmeddelandelista om du klickar på Skicka utan att fylla i och en felmeddelandelista med andra fel om du fyller i fälten och sen klickar på Skicka
