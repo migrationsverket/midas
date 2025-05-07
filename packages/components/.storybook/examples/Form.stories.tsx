@@ -45,9 +45,9 @@ export const SimpleForm: Story = {
           <Select
             label='Vilken är din favoritfrukt'
             placeholder='Välj en frukt'
-            selectionMode={'single'}
+            selectionMode='single'
             options={ITEMS.map(i => ({ id: i, name: i }))}
-          ></Select>
+          />
         </FlexItem>
 
         <FlexItem>
@@ -112,7 +112,7 @@ export const TwoColumnForm: Story = {
               label='Kön'
               description='Kan lämnas tomt'
               placeholder='Välj kön'
-              selectionMode={'single'}
+              selectionMode='single'
               options={ITEMS.map(i => ({ name: i, id: i }))}
             />
           </FlexItem>
@@ -120,10 +120,10 @@ export const TwoColumnForm: Story = {
             <TextField label='Ärendekod' />
           </FlexItem>
 
-          <FlexItem col={'auto'}>
+          <FlexItem col='auto'>
             <Button>Sök</Button>
           </FlexItem>
-          <FlexItem col={'auto'}>
+          <FlexItem col='auto'>
             <Button variant='secondary'>Rensa</Button>
           </FlexItem>
         </Flex>
