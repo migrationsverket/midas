@@ -21,7 +21,7 @@ concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
-    name: Build Docusaurus and Storybook and deploy PR preview
+    name: Build Docusaurus and deploy PR preview
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
