@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9636],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2038],{
 
-/***/ 56131:
+/***/ 82285:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,43 +13,30 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_dev_localization_mdx_e78_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_design_patterns_forms_mdx_a8b_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-dev-localization-mdx-e78.json
-const site_docs_dev_localization_mdx_e78_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"dev/localization","title":"Lokalisering","description":"React Aria har en rad inbyggda funktioner som underlättar skapandet av tillgängliga","source":"@site/docs/dev/localization.mdx","sourceDirName":"dev","slug":"/dev/localization","permalink":"/pr-preview/pr-532/dev/localization","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Lokalisering","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-forms-mdx-a8b.json
+const site_docs_design_patterns_forms_mdx_a8b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/forms","title":"Formulär","description":"Obligatorisk vs valfri","source":"@site/docs/design-patterns/forms.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/forms","permalink":"/pr-preview/pr-532/design-patterns/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/context.mjs + 2 modules
-var context = __webpack_require__(39892);
-// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/string.mjs
-var string = __webpack_require__(77282);
-// EXTERNAL MODULE: ./packages/components/src/table/Table.tsx + 1 modules
-var Table = __webpack_require__(7465);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
-var dist_Table = __webpack_require__(43444);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(35518);
-// EXTERNAL MODULE: ./packages/components/src/date-field/DateField.tsx + 1 modules
-var DateField = __webpack_require__(78785);
+// EXTERNAL MODULE: ./packages/components/src/flex/Flex.tsx
+var Flex = __webpack_require__(39996);
+// EXTERNAL MODULE: ./packages/components/src/flex/FlexItem.tsx
+var FlexItem = __webpack_require__(52981);
 // EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 4 modules
 var TextField = __webpack_require__(350);
-;// ./apps/docs/src/components/examples/LocalizationExamples.tsx
-var LocaleExample=function LocaleExample(){var _useLocale=(0,context/* useLocale */.Y)(),locale=_useLocale.locale,direction=_useLocale.direction;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{lang:locale,dir:direction,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Table */.XI,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* TableHeader */.A0,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{isRowHeader:true,children:"Nuvarande spr\xE5k"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{children:"Nuvarande textriktning"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* TableBody */.BF,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Row */.fI,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:locale}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:direction})]})})]})});};var I18nExample=function I18nExample(){var _React$useState=react.useState('fr-Fr'),locale=_React$useState[0],setLocale=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',gap:'1rem',marginBottom:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return setLocale('fr-Fr');},variant:locale==='fr-Fr'?'primary':'secondary',children:"Fran\xE7ais"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return setLocale('sv-Sv');},variant:locale==='sv-Sv'?'primary':'secondary',children:"Svenska"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return setLocale('en-En');},variant:locale==='en-En'?'primary':'secondary',children:"English"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{lang:locale,children:/*#__PURE__*/(0,jsx_runtime.jsx)(context/* I18nProvider */.C,{locale:locale,children:/*#__PURE__*/(0,jsx_runtime.jsx)(CurrentDate,{})})})]});};function CurrentDate(){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateField */.v,{defaultValue:(0,string/* parseDate */._U)('2025-02-28'),label:"Datumv\xE4ljare",description:"Format kan styras med i18nProvider"});}var ErrorMessageExample=function ErrorMessageExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Skriv e-post",type:"email",description:"Validering/Felmeddelanden beror av inst\xE4llningarna i browser"});};
-;// ./apps/docs/docs/dev/localization.mdx
+;// ./apps/docs/docs/design-patterns/forms.mdx
 
 
 const frontMatter = {
-	title: 'Lokalisering',
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = 'Lokalisering';
+const contentTitle = 'Formulär';
 
 const assets = {
 
@@ -59,29 +46,36 @@ const assets = {
 
 
 const toc = [{
-  "value": "useLocale",
-  "id": "uselocale",
+  "value": "Obligatorisk vs valfri",
+  "id": "obligatorisk-vs-valfri",
   "level": 2
 }, {
-  "value": "I18nProvider",
-  "id": "i18nprovider",
+  "value": "Undantag 1: Valfria fält är fler än de obligatoriska",
+  "id": "undantag-1-valfria-fält-är-fler-än-de-obligatoriska",
+  "level": 3
+}, {
+  "value": "Undantag 2: Valfria fält och obligatoriska fält är (ungefär) lika många",
+  "id": "undantag-2-valfria-fält-och-obligatoriska-fält-är-ungefär-lika-många",
+  "level": 3
+}, {
+  "value": "Position av felmeddelande",
+  "id": "position-av-felmeddelande",
   "level": 2
 }, {
-  "value": "useMessageFormatter",
-  "id": "usemessageformatter",
-  "level": 2
+  "value": "Standard",
+  "id": "standard",
+  "level": 3
 }, {
-  "value": "Midas komponenter",
-  "id": "midas-komponenter",
-  "level": 2
+  "value": "Felmeddelande under element",
+  "id": "felmeddelande-under-element",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
     code: "code",
-    em: "em",
     h1: "h1",
     h2: "h2",
+    h3: "h3",
     header: "header",
     p: "p",
     pre: "pre",
@@ -91,70 +85,94 @@ function _createMdxContent(props) {
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "lokalisering",
-        children: "Lokalisering"
+        id: "formulär",
+        children: "Formulär"
       })
+    }), "\n", "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "obligatorisk-vs-valfri",
+      children: "Obligatorisk vs valfri"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["React Aria har en rad inbyggda funktioner som underlättar skapandet av tillgängliga\noch internationella användargränssnitt. Midas komponenter, som bygger på React Aria\nuppdateras automatiskt när språkmiljön ändras. Detta innebär att din applikation kan anpassa\nsig dynamiskt till olika språk utan alltför mycket manuell handpåläggning. För mer ingående dokumentation,\nse ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/internationalization.html",
-        children: "React Aria Internationalization"
+      children: ["Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.\nFöljer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "”(valfritt)”"
       }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "uselocale",
-      children: "useLocale"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att säkerställa att lokalisering fungerar bör ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "useLocale"
-      }), " användas i root av applikationen. På så sätt får\ndu tillgång till browserns språkinställning. Normalt fungerar ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "locale"
-      }), " utan att hämta in den explicit men för till\nexempel SSR bör ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "useLocale"
-      }), " användas, se ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/internationalization.html",
-        children: "React Aria"
-      }), " för referens."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-typescript",
-        metastring: "jsx",
-        children: "import {useLocale} from 'react-aria-components';\nfunction YourApp() {\n  let {locale, direction} = useLocale();\n\n  return (\n    <div lang={locale} dir={direction}>\n      {/* your app here */}\n    </div>\n  );\n}\n\n"
+        className: "language-jsx",
+        children: "<TextField\n  label=\"Fullständigt namn\"\n  description=\"För och efternamn\"\n  isRequired\n  errorMessage=\"Detta är ett obligatoriskt fält\"\n/>\n<TextField\n  label=\"Favoritfrukter (Valfritt)\"\n  description=\"Kan lämnas tomt\"\n/>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)(LocaleExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "i18nprovider",
-      children: "I18nProvider"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om det finns behov av att skriva över användarens inställningar går det att använda ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "I18nProvider"
-      }), " från React Aria.\nVia I18nProvider går det att styra beteendet för datum och tidsrelaterade komponenter men ", (0,jsx_runtime.jsx)(_components.em, {
-        children: "inte"
-      }), " ta kontroll över felmeddelanden\neller annan information, det sätts via browsern."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-typescript",
-        metastring: "jsx",
-        children: "<I18nProvider locale={locale}>\n  <DateField/>\n</I18nProvider>\n"
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(Flex/* Flex */.s, {
+        children: [(0,jsx_runtime.jsx)(FlexItem/* FlexItem */.Z, {
+          col: "6",
+          children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+            label: "Fullständigt namn",
+            description: "För och efternamn",
+            isRequired: true,
+            errorMessage: "Detta är ett obligatoriskt fält"
+          })
+        }), (0,jsx_runtime.jsx)(FlexItem/* FlexItem */.Z, {
+          col: "6",
+          children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+            label: "Favoritfrukter (Valfritt)",
+            description: "Kan lämnas tomt"
+          })
+        })]
       })
-    }), "\n", (0,jsx_runtime.jsx)(I18nExample, {}), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsx)(ErrorMessageExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "usemessageformatter",
-      children: "useMessageFormatter"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att översätta eller anpassa enskilda strängar finns ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/useMessageFormatter.html",
-        children: "useMessageFormatter"
-      }), ".\nMotsvarande för siffror och valutor är ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html",
-        children: "useNumberFormatter"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "midas-komponenter",
-      children: "Midas komponenter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "undantag-1-valfria-fält-är-fler-än-de-obligatoriska",
+      children: "Undantag 1: Valfria fält är fler än de obligatoriska"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Officiellt har Midas inte fullt stöd för flera språk men i utgångsläget fungerar de flesta komponenter\noch respekterar användarens inställningar i browsern. Framtida uppdateringar eller nya komponenter\nbygger på React Arias ramverk så den allmänna rekommendationen är att använda metoder och hooks därifrån för\natt lösa eventuella lokaliseringsproblem. Buggrapport eller Feature requests kan skapas via"
+      children: "Markera obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält markeras med en asterisk."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "undantag-2-valfria-fält-och-obligatoriska-fält-är-ungefär-lika-många",
+      children: "Undantag 2: Valfria fält och obligatoriska fält är (ungefär) lika många"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Markera valfria fält med ”(valfritt)” och obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält\nmarkeras med en asterisk."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "position-av-felmeddelande",
+      children: "Position av felmeddelande"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "standard",
+      children: "Standard"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Som standard visas eventuella felmeddelanden ovanför våra formulärelement."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-jsx",
+        children: "<TextField\n  label='Skriv ditt fullständiga namn'\n  description='Både för och efternamn'\n  isRequired\n  errorMessage='Detta är ett obligatoriskt fält'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        label: "Skriv ditt fullständiga namn",
+        description: "Både för och efternamn",
+        isInvalid: true,
+        errorMessage: "Detta är ett obligatoriskt fält"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "felmeddelande-under-element",
+      children: "Felmeddelande under element"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: [(0,jsx_runtime.jsx)(_components.a, {
-        href: "https://github.com/migrationsverket/midas/issues",
-        children: "github issues"
-      }), "."]
+      children: ["För att visa felmeddelanden under elementet använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "errorPosition"
+      }), " med värdet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "bottom"
+      }), ", attributet accepteras av samtliga formulärkomponenter."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-jsx",
+        children: "<TextField\n  label='Skriv ditt fullständiga namn'\n  description='Både för och efternamn'\n  // highlight-start\n  errorPosition='bottom'\n  // highlight-end\n  isRequired\n  errorMessage='Detta är ett obligatoriskt fält'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        label: "Skriv ditt fullständiga namn",
+        description: "Både för och efternamn",
+        isInvalid: true,
+        errorPosition: "bottom",
+        errorMessage: "Detta är ett obligatoriskt fält"
+      })
     })]
   });
 }
@@ -172,101 +190,6 @@ function MDXContent(props = {}) {
 }
 
 
-
-/***/ }),
-
-/***/ 93284:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   S: () => (/* binding */ Checkbox)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(98587);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2581);
-/* harmony import */ var _Checkbox_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(76578);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
-'use client';var _excluded=["children"];var Checkbox=function Checkbox(_ref){var _children=_ref.children,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_3__/* .Checkbox */ .Sc,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Checkbox_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.checkbox,props.className)},props,{children:function children(_ref2){var isIndeterminate=_ref2.isIndeterminate;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div",{className:_Checkbox_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.checkboxInner,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:isIndeterminate?/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),_children]});}}));};
-
-/***/ }),
-
-/***/ 78785:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  v: () => (/* binding */ DateField)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
-var dist_DateField = __webpack_require__(68407);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/date-field/DateInput.tsx
-var DateInput = __webpack_require__(51739);
-// EXTERNAL MODULE: ./packages/components/src/date-field/DateSegment.tsx + 1 modules
-var DateSegment = __webpack_require__(92291);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(80554);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
-var Label = __webpack_require__(20143);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(93361);
-;// ./packages/components/src/date-field/DateField.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const DateField_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-placeholder":"light-dark(#a6a6a6, #525252)","--border-invalid":"light-dark(#e62323, #eb4e4e)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","dateField":"dateField_w_5V","inputField":"inputField_RpLn"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/date-field/DateField.tsx
-var _excluded=["className","description","errorMessage","errorPosition","isDisabled","label"];var DateField=function DateField(_ref){var className=_ref.className,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,isDisabled=_ref.isDisabled,label=_ref.label,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_DateField/* DateField */.vM,Object.assign({},rest,{className:(0,clsx/* default */.A)(DateField_module.dateField,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:DateField_module.inputField,"data-disabled":isDisabled||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(DateInput/* DateInput */.J,{children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateSegment/* DateSegment */.E,{segment:segment});}})}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage})]}));};
-
-/***/ }),
-
-/***/ 51739:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ DateInput)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68407);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
-/* harmony import */ var _DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(66603);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["className"];var DateInput=function DateInput(_ref){var className=_ref.className,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DateInput */ .J3,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dateInput,className)},rest));};
-
-/***/ }),
-
-/***/ 92291:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  E: () => (/* binding */ DateSegment)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
-var DateField = __webpack_require__(68407);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-;// ./packages/components/src/date-field/DateSegment.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const DateSegment_module = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","dateSegment":"dateSegment_nh76"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/date-field/DateSegment.tsx
-var _excluded=["className"];var DateSegment=function DateSegment(_ref){var className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,Object.assign({className:(0,clsx/* default */.A)(DateSegment_module.dateSegment,className)},rest));};
 
 /***/ }),
 
@@ -314,56 +237,11 @@ var clsx = __webpack_require__(34164);
 var dist_Label = __webpack_require__(21704);
 ;// ./packages/components/src/label/Label.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--size-02":"0.875rem","--line-height-02":"1.125rem","--size-03":"1rem","--line-height-03":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo","label-01":"label-01_rWfb","label-02":"label-02_LZ3P"});
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--line-height-20":"1.125rem","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo","label-01":"label-01_rWfb","label-02":"label-02_LZ3P"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/Label.tsx
 var _excluded=["children","className","variant","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'label-02':_ref$variant,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'label-01':Label_module['label-01'],'label-02':Label_module['label-02']};var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
-
-/***/ }),
-
-/***/ 7465:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  fh: () => (/* binding */ Cell),
-  VP: () => (/* binding */ Column),
-  fI: () => (/* binding */ Row),
-  XI: () => (/* binding */ Table),
-  A0: () => (/* binding */ TableHeader)
-});
-
-// UNUSED EXPORTS: TableBody
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
-var objectDestructuringEmpty = __webpack_require__(20454);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/components/src/table/Table.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Table_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--layer-accent-01":"light-dark(#d9d9d9, #383838)","--layer-01":"light-dark(#f2f2f2, #262626)","--border-subtle":"light-dark(#bfbfbf, #383838)","--layer-accent-hover-01":"light-dark(#cccccc, #474747)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--border-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","cell":"cell_BlIu","table":"table_nvoM","narrow":"narrow_Jh7A","striped":"striped_wp0e","row":"row_o3yW","tableHeader":"tableHeader_BmsY","column":"column_NPIT"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
-var dist_Table = __webpack_require__(43444);
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
-var Button = __webpack_require__(65014);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx
-var Checkbox = __webpack_require__(93284);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/grip-vertical.js
-var grip_vertical = __webpack_require__(21436);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-up-wide-narrow.js
-var arrow_up_wide_narrow = __webpack_require__(4804);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-narrow-wide.js
-var arrow_down_narrow_wide = __webpack_require__(85785);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/table/Table.tsx
-'use client';var _excluded=["narrow","striped","className"],_excluded2=["id","columns","children"],_excluded3=["children"];var Table=function Table(_ref){var narrow=_ref.narrow,striped=_ref.striped,className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames=(0,clsx/* default */.A)(Table_module.table,narrow&&Table_module.narrow,striped&&Table_module.striped,className);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Table */.XI,Object.assign({className:classNames},rest));};var TableHeader=function TableHeader(_ref2){var columns=_ref2.columns,children=_ref2.children;var _useTableOptions=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions.selectionBehavior,selectionMode=_useTableOptions.selectionMode,allowsDragging=_useTableOptions.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableHeader */.A0,{className:Table_module.tableHeader,children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{width:50,children:selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]});};var Row=function Row(_ref3){var id=_ref3.id,columns=_ref3.columns,children=_ref3.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded2);var _useTableOptions2=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions2.selectionBehavior,allowsDragging=_useTableOptions2.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* Row */.fI,Object.assign({id:id,className:(0,clsx/* default */.A)(Table_module.row)},rest,{children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"drag",children:/*#__PURE__*/(0,jsx_runtime.jsx)(grip_vertical/* default */.A,{size:20})})}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]}));};var Column=function Column(_ref4){var _children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Column */.VP,Object.assign({className:Table_module.column},rest,{children:function children(_ref5){var allowsSorting=_ref5.allowsSorting,sortDirection=_ref5.sortDirection;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[_children,allowsSorting&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",className:"sort-indicator",children:sortDirection==='ascending'?/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_wide_narrow/* default */.A,{size:20}):/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_narrow_wide/* default */.A,{size:20})})]});}}));};var Cell=function Cell(_ref6){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref6),_ref6));return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Cell */.fh,Object.assign({className:Table_module.cell},rest));};
 
 /***/ }),
 
@@ -386,7 +264,7 @@ var clsx = __webpack_require__(34164);
 var dist_Text = __webpack_require__(27279);
 ;// ./packages/components/src/text/Text.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--size-02":"0.875rem","--size-03":"1rem","--line-height-02":"1.125rem","--line-height-03":"1.25rem","--line-height-04":"1.375rem","--line-height-05":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/text/Text.tsx
@@ -454,7 +332,7 @@ var PasswordField=function PasswordField(_ref){var value=_ref.value;var _React$u
 ;// ./packages/components/src/textfield/Input.tsx
 var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];ref=_useContextProps[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module/* default */.A.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,props.className)})),props.type==='password'&&/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,Object.assign({},props))]});});
 ;// ./packages/components/src/textfield/TextField.tsx
-'use client';var _excluded=["className"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:className,ref:ref})}));});
+'use client';var _excluded=["className","form","list"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,list=_ref.list,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:(0,clsx/* default */.A)(className),form:form,list:list,ref:ref})}));});
 
 /***/ }),
 
@@ -485,7 +363,7 @@ var FieldError = __webpack_require__(80554);
 var Input = __webpack_require__(79950);
 ;// ./packages/components/src/character-counter/CharacterCounter.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const CharacterCounter_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--line-height-02":"1.125rem","--size-02":"0.875rem","--text-invalid":"light-dark(#e62323, #eb4e4e)","--text-primary":"light-dark(#171717, #f2f2f2)","characterCounter":"characterCounter_Rd9H"});
+/* harmony default export */ const CharacterCounter_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--line-height-20":"1.125rem","--font-size-20":"0.875rem","--text-invalid":"light-dark(#e62323, #eb4e4e)","--text-primary":"light-dark(#171717, #f2f2f2)","characterCounter":"characterCounter_Rd9H"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/character-counter/CharacterCounter.tsx
@@ -494,28 +372,6 @@ var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _valu
 var clsx = __webpack_require__(34164);
 ;// ./packages/components/src/textfield/TextFieldBase.tsx
 var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:props.children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
-
-/***/ }),
-
-/***/ 76578:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--border-primary":"light-dark(#171717, #f2f2f2)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--border-disabled":"light-dark(#bfbfbf, #525252)","--breakpoint-sm":"(max-width: 767px)","--border-invalid":"light-dark(#e62323, #eb4e4e)","--icon-on-color":"light-dark(#ffffff, #ffffff)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--field-disabled":"light-dark(#f2f2f2, #262626)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--line-height-03":"1.25rem","wrap":"wrap_YzPY","checkboxInner":"checkboxInner_Nam1","checkbox":"checkbox_J2GB","checkboxGroup":"checkboxGroup_iAq9"});
-
-/***/ }),
-
-/***/ 66603:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--field-hover-01":"light-dark(#e6e6e6, #333333)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-primary":"light-dark(#171717, #f2f2f2)","dateInput":"dateInput_Y5ix","divider":"divider_BL_i"});
 
 /***/ }),
 
@@ -665,6 +521,82 @@ function $2d73ec29415bd339$export$712718f7aec83d5(props, ref) {
 
 
 //# sourceMappingURL=useTextField.module.js.map
+
+
+/***/ }),
+
+/***/ 79950:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ $3985021b0ad6602f$export$37fb8590cf2c088c),
+/* harmony export */   p: () => (/* binding */ $3985021b0ad6602f$export$f5b8910cec6cf069)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5933);
+/* harmony import */ var _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75127);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+const $3985021b0ad6602f$export$37fb8590cf2c088c = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+let $3985021b0ad6602f$var$filterHoverProps = (props)=>{
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    return otherProps;
+};
+const $3985021b0ad6602f$export$f5b8910cec6cf069 = /*#__PURE__*/ (0, _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__/* .createHideableComponent */ .U7)(function Input(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useContextProps */ .JT)(props, ref, $3985021b0ad6602f$export$37fb8590cf2c088c);
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useHover */ .M)(props);
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .useFocusRing */ .o)({
+        isTextInput: true,
+        autoFocus: props.autoFocus
+    });
+    let isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocused: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: props.disabled || false,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Input'
+    });
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("input", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_5__/* .mergeProps */ .v)($3985021b0ad6602f$var$filterHoverProps(props), focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        "data-focused": isFocused || undefined,
+        "data-disabled": props.disabled || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-invalid": isInvalid || undefined
+    });
+});
+
+
+
+//# sourceMappingURL=Input.module.js.map
 
 
 /***/ }),

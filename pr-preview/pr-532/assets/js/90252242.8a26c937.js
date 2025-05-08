@@ -410,7 +410,7 @@ var clsx = __webpack_require__(34164);
 var dist_Label = __webpack_require__(21704);
 ;// ./packages/components/src/label/Label.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--size-02":"0.875rem","--line-height-02":"1.125rem","--size-03":"1rem","--line-height-03":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo","label-01":"label-01_rWfb","label-02":"label-02_LZ3P"});
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--line-height-20":"1.125rem","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo","label-01":"label-01_rWfb","label-02":"label-02_LZ3P"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/Label.tsx
@@ -434,7 +434,7 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var react = __webpack_require__(96540);
 ;// ./packages/components/src/radio/Radio.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--size-03":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-sm":"(max-width: 767px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--border-invalid":"light-dark(#e62323, #eb4e4e)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
+/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--font-size-30":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-secondary":"light-dark(#525252, #a6a6a6)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-sm":"(max-width: 767px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--border-invalid":"light-dark(#e62323, #eb4e4e)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
 var dist_RadioGroup = __webpack_require__(96325);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
@@ -477,7 +477,7 @@ var clsx = __webpack_require__(34164);
 var dist_Text = __webpack_require__(27279);
 ;// ./packages/components/src/text/Text.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--size-02":"0.875rem","--size-03":"1rem","--line-height-02":"1.125rem","--line-height-03":"1.25rem","--line-height-04":"1.375rem","--line-height-05":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/text/Text.tsx
@@ -545,7 +545,7 @@ var PasswordField=function PasswordField(_ref){var value=_ref.value;var _React$u
 ;// ./packages/components/src/textfield/Input.tsx
 var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];ref=_useContextProps[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module/* default */.A.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,props.className)})),props.type==='password'&&/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,Object.assign({},props))]});});
 ;// ./packages/components/src/textfield/TextField.tsx
-'use client';var _excluded=["className"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:className,ref:ref})}));});
+'use client';var _excluded=["className","form","list"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,list=_ref.list,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:(0,clsx/* default */.A)(className),form:form,list:list,ref:ref})}));});
 
 /***/ }),
 
@@ -576,7 +576,7 @@ var FieldError = __webpack_require__(80554);
 var Input = __webpack_require__(79950);
 ;// ./packages/components/src/character-counter/CharacterCounter.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const CharacterCounter_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--line-height-02":"1.125rem","--size-02":"0.875rem","--text-invalid":"light-dark(#e62323, #eb4e4e)","--text-primary":"light-dark(#171717, #f2f2f2)","characterCounter":"characterCounter_Rd9H"});
+/* harmony default export */ const CharacterCounter_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--line-height-20":"1.125rem","--font-size-20":"0.875rem","--text-invalid":"light-dark(#e62323, #eb4e4e)","--text-primary":"light-dark(#171717, #f2f2f2)","characterCounter":"characterCounter_Rd9H"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/character-counter/CharacterCounter.tsx

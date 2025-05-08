@@ -37,8 +37,8 @@ const contentTitle = (/* unused pure expression or super */ null && (undefined))
 
 
 const toc = [{
-  "value": "8.2.0",
-  "id": "820",
+  "value": "8.3.0",
+  "id": "830",
   "level": 3
 }, {
   "value": "🚀 Features",
@@ -53,8 +53,8 @@ const toc = [{
   "id": "documentation-changes",
   "level": 4
 }, {
-  "value": "8.1.0",
-  "id": "810",
+  "value": "8.2.0",
+  "id": "820",
   "level": 3
 }, {
   "value": "🚀 Features",
@@ -65,9 +65,13 @@ const toc = [{
   "id": "-fixes-1",
   "level": 4
 }, {
-  "value": "8.0.0",
-  "id": "800",
-  "level": 2
+  "value": "Documentation Changes",
+  "id": "documentation-changes-1",
+  "level": 4
+}, {
+  "value": "8.1.0",
+  "id": "810",
+  "level": 3
 }, {
   "value": "🚀 Features",
   "id": "-features-2",
@@ -77,13 +81,9 @@ const toc = [{
   "id": "-fixes-2",
   "level": 4
 }, {
-  "value": "Documentation Changes",
-  "id": "documentation-changes-1",
-  "level": 4
-}, {
-  "value": "7.1.0",
-  "id": "710",
-  "level": 3
+  "value": "8.0.0",
+  "id": "800",
+  "level": 2
 }, {
   "value": "🚀 Features",
   "id": "-features-3",
@@ -91,6 +91,22 @@ const toc = [{
 }, {
   "value": "🩹 Fixes",
   "id": "-fixes-3",
+  "level": 4
+}, {
+  "value": "Documentation Changes",
+  "id": "documentation-changes-2",
+  "level": 4
+}, {
+  "value": "7.1.0",
+  "id": "710",
+  "level": 3
+}, {
+  "value": "🚀 Features",
+  "id": "-features-4",
+  "level": 4
+}, {
+  "value": "🩹 Fixes",
+  "id": "-fixes-4",
   "level": 4
 }, {
   "value": "7.0.0",
@@ -102,18 +118,6 @@ const toc = [{
   "level": 3
 }, {
   "value": "🚀 Features",
-  "id": "-features-4",
-  "level": 4
-}, {
-  "value": "🩹 Fixes",
-  "id": "-fixes-4",
-  "level": 4
-}, {
-  "value": "6.1.0",
-  "id": "610",
-  "level": 3
-}, {
-  "value": "🚀 Features",
   "id": "-features-5",
   "level": 4
 }, {
@@ -121,12 +125,24 @@ const toc = [{
   "id": "-fixes-5",
   "level": 4
 }, {
+  "value": "6.1.0",
+  "id": "610",
+  "level": 3
+}, {
+  "value": "🚀 Features",
+  "id": "-features-6",
+  "level": 4
+}, {
+  "value": "🩹 Fixes",
+  "id": "-fixes-6",
+  "level": 4
+}, {
   "value": "6.0.1",
   "id": "601",
   "level": 3
 }, {
   "value": "🩹 Fixes",
-  "id": "-fixes-6",
+  "id": "-fixes-7",
   "level": 4
 }, {
   "value": "6.0.0",
@@ -134,11 +150,11 @@ const toc = [{
   "level": 2
 }, {
   "value": "🚀 Features",
-  "id": "-features-6",
+  "id": "-features-7",
   "level": 4
 }, {
   "value": "🩹 Fixes",
-  "id": "-fixes-7",
+  "id": "-fixes-8",
   "level": 4
 }, {
   "value": "⚠️ Breaking Changes",
@@ -150,22 +166,6 @@ const toc = [{
   "level": 3
 }, {
   "value": "🩹 Fixes",
-  "id": "-fixes-8",
-  "level": 4
-}, {
-  "value": "Documentation Changes",
-  "id": "documentation-changes-2",
-  "level": 4
-}, {
-  "value": "5.0.0 (2025-03-17)",
-  "id": "500-2025-03-17",
-  "level": 2
-}, {
-  "value": "🚀 Features",
-  "id": "-features-7",
-  "level": 4
-}, {
-  "value": "🩹 Fixes",
   "id": "-fixes-9",
   "level": 4
 }, {
@@ -173,12 +173,8 @@ const toc = [{
   "id": "documentation-changes-3",
   "level": 4
 }, {
-  "value": "⚠️ Breaking Changes",
-  "id": "️-breaking-changes-1",
-  "level": 4
-}, {
-  "value": "4.0.0 (2025-03-10)",
-  "id": "400-2025-03-10",
+  "value": "5.0.0 (2025-03-17)",
+  "id": "500-2025-03-17",
   "level": 2
 }, {
   "value": "🚀 Features",
@@ -194,12 +190,12 @@ const toc = [{
   "level": 4
 }, {
   "value": "⚠️ Breaking Changes",
-  "id": "️-breaking-changes-2",
+  "id": "️-breaking-changes-1",
   "level": 4
 }, {
-  "value": "3.1.0 (2025-03-06)",
-  "id": "310-2025-03-06",
-  "level": 3
+  "value": "4.0.0 (2025-03-10)",
+  "id": "400-2025-03-10",
+  "level": 2
 }, {
   "value": "🚀 Features",
   "id": "-features-9",
@@ -213,9 +209,13 @@ const toc = [{
   "id": "documentation-changes-5",
   "level": 4
 }, {
-  "value": "3.0.0 (2025-02-28)",
-  "id": "300-2025-02-28",
-  "level": 2
+  "value": "⚠️ Breaking Changes",
+  "id": "️-breaking-changes-2",
+  "level": 4
+}, {
+  "value": "3.1.0 (2025-03-06)",
+  "id": "310-2025-03-06",
+  "level": 3
 }, {
   "value": "🚀 Features",
   "id": "-features-10",
@@ -229,13 +229,13 @@ const toc = [{
   "id": "documentation-changes-6",
   "level": 4
 }, {
-  "value": "⚠️ Breaking Changes",
-  "id": "️-breaking-changes-3",
-  "level": 4
+  "value": "3.0.0 (2025-02-28)",
+  "id": "300-2025-02-28",
+  "level": 2
 }, {
-  "value": "2.0.1 (2025-02-27)",
-  "id": "201-2025-02-27",
-  "level": 3
+  "value": "🚀 Features",
+  "id": "-features-11",
+  "level": 4
 }, {
   "value": "🩹 Fixes",
   "id": "-fixes-13",
@@ -245,13 +245,13 @@ const toc = [{
   "id": "documentation-changes-7",
   "level": 4
 }, {
-  "value": "2.0.0 (2025-02-25)",
-  "id": "200-2025-02-25",
-  "level": 2
-}, {
-  "value": "🚀 Features",
-  "id": "-features-11",
+  "value": "⚠️ Breaking Changes",
+  "id": "️-breaking-changes-3",
   "level": 4
+}, {
+  "value": "2.0.1 (2025-02-27)",
+  "id": "201-2025-02-27",
+  "level": 3
 }, {
   "value": "🩹 Fixes",
   "id": "-fixes-14",
@@ -259,6 +259,22 @@ const toc = [{
 }, {
   "value": "Documentation Changes",
   "id": "documentation-changes-8",
+  "level": 4
+}, {
+  "value": "2.0.0 (2025-02-25)",
+  "id": "200-2025-02-25",
+  "level": 2
+}, {
+  "value": "🚀 Features",
+  "id": "-features-12",
+  "level": 4
+}, {
+  "value": "🩹 Fixes",
+  "id": "-fixes-15",
+  "level": 4
+}, {
+  "value": "Documentation Changes",
+  "id": "documentation-changes-9",
   "level": 4
 }, {
   "value": "⚠️ Breaking Changes",
@@ -270,18 +286,6 @@ const toc = [{
   "level": 3
 }, {
   "value": "🚀 Features",
-  "id": "-features-12",
-  "level": 4
-}, {
-  "value": "🩹 Fixes",
-  "id": "-fixes-15",
-  "level": 4
-}, {
-  "value": "1.2.0 (2025-02-11)",
-  "id": "120-2025-02-11",
-  "level": 3
-}, {
-  "value": "🚀 Features",
   "id": "-features-13",
   "level": 4
 }, {
@@ -289,12 +293,24 @@ const toc = [{
   "id": "-fixes-16",
   "level": 4
 }, {
+  "value": "1.2.0 (2025-02-11)",
+  "id": "120-2025-02-11",
+  "level": 3
+}, {
+  "value": "🚀 Features",
+  "id": "-features-14",
+  "level": 4
+}, {
+  "value": "🩹 Fixes",
+  "id": "-fixes-17",
+  "level": 4
+}, {
   "value": "1.1.0 (2025-01-31)",
   "id": "110-2025-01-31",
   "level": 3
 }, {
   "value": "🚀 Features",
-  "id": "-features-14",
+  "id": "-features-15",
   "level": 4
 }, {
   "value": "1.0.2 (2025-01-27)",
@@ -302,11 +318,11 @@ const toc = [{
   "level": 3
 }, {
   "value": "🚀 Features",
-  "id": "-features-15",
+  "id": "-features-16",
   "level": 4
 }, {
   "value": "🩹 Fixes",
-  "id": "-fixes-17",
+  "id": "-fixes-18",
   "level": 4
 }, {
   "value": "⚠️ Breaking Changes",
@@ -318,11 +334,11 @@ const toc = [{
   "level": 3
 }, {
   "value": "🚀 Features",
-  "id": "-features-16",
+  "id": "-features-17",
   "level": 4
 }, {
   "value": "🩹 Fixes",
-  "id": "-fixes-18",
+  "id": "-fixes-19",
   "level": 4
 }, {
   "value": "⚠️ Breaking Changes",
@@ -350,10 +366,121 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(_components.h3, {
+      id: "830",
+      children: "8.3.0"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "-features",
+      children: "🚀 Features"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "theme:"
+        }), " use ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "--support-border-warning"
+        }), " instead of ", (0,jsx_runtime.jsx)(_components.code, {
+          children: "--border-invalid"
+        }), " (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/pull/518",
+          children: "#518"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "textfield:"
+        }), " add medium size variant (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/pull/520",
+          children: "#520"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "layout:"
+        }), " change font weight for active menu item (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/57e2485234",
+          children: "57e2485234"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "layout:"
+        }), " change background color for menu item (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/d9ffc16bb6",
+          children: "d9ffc16bb6"
+        }), ")"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "-fixes",
+      children: "🩹 Fixes"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "modal:"
+        }), " adjust modal header when content is scollable (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/pull/527",
+          children: "#527"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "combobox:"
+        }), " add disabled color to the icon in disabled state (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/9cd5657149",
+          children: "9cd5657149"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "select:"
+        }), " add disabled styling to description (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/4cabb0c8ae",
+          children: "4cabb0c8ae"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "select:"
+        }), " change invalid border from 3px to 2 px (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/834f1f8fdc",
+          children: "834f1f8fdc"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "accordion:"
+        }), " add a minimal padding to allow items with margin-bottom (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/e0b2d8058b",
+          children: "e0b2d8058b"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "accordion:"
+        }), " remove padding bottom for last uncontained accordionitem (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/463a7fa29e",
+          children: "463a7fa29e"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "textfield:"
+        }), " remove opacity from disabled (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/0332d83cb6",
+          children: "0332d83cb6"
+        }), ")"]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "textfield:"
+        }), " add border bottom in disabled and change ivalid border to 2px (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/commit/2bcd1d5beb",
+          children: "2bcd1d5beb"
+        }), ")"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "documentation-changes",
+      children: "Documentation Changes"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["improvements to preview 💅 🔍 ✨ (", (0,jsx_runtime.jsx)(_components.a, {
+          href: "https://github.com/migrationsverket/midas/pull/530",
+          children: "#530"
+        }), ")"]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "820",
       children: "8.2.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features",
+      id: "-features-1",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -379,7 +506,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes",
+      id: "-fixes-1",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -398,7 +525,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes",
+      id: "documentation-changes-1",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -420,7 +547,7 @@ function _createMdxContent(props) {
       id: "810",
       children: "8.1.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-1",
+      id: "-features-2",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -432,7 +559,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-1",
+      id: "-fixes-2",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -475,7 +602,7 @@ function _createMdxContent(props) {
       id: "800",
       children: "8.0.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-2",
+      id: "-features-3",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -508,7 +635,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-2",
+      id: "-fixes-3",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -590,7 +717,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-1",
+      id: "documentation-changes-2",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -681,7 +808,7 @@ function _createMdxContent(props) {
       id: "710",
       children: "7.1.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-3",
+      id: "-features-4",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -691,7 +818,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-3",
+      id: "-fixes-4",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -725,7 +852,7 @@ function _createMdxContent(props) {
       id: "620",
       children: "6.2.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-4",
+      id: "-features-5",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -734,7 +861,7 @@ function _createMdxContent(props) {
         }), " 🆕 new component - badge to indicate user of unread items"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-4",
+      id: "-fixes-5",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -770,7 +897,7 @@ function _createMdxContent(props) {
       id: "610",
       children: "6.1.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-5",
+      id: "-features-6",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -782,7 +909,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-5",
+      id: "-fixes-6",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -804,7 +931,7 @@ function _createMdxContent(props) {
       id: "601",
       children: "6.0.1"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-6",
+      id: "-fixes-7",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -816,7 +943,7 @@ function _createMdxContent(props) {
       id: "600",
       children: "6.0.0"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-6",
+      id: "-features-7",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -857,7 +984,7 @@ function _createMdxContent(props) {
         }), " for disabled elements"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-7",
+      id: "-fixes-8",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -898,7 +1025,7 @@ function _createMdxContent(props) {
       id: "501",
       children: "5.0.1"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-8",
+      id: "-fixes-9",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -935,7 +1062,7 @@ function _createMdxContent(props) {
         }), " add temporary implementation of useToastState"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-2",
+      id: "documentation-changes-3",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
@@ -945,14 +1072,14 @@ function _createMdxContent(props) {
       id: "500-2025-03-17",
       children: "5.0.0 (2025-03-17)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-7",
+      id: "-features-8",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "⚠️ support for dark mode across all components"
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-9",
+      id: "-fixes-10",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -997,7 +1124,7 @@ function _createMdxContent(props) {
         }), " deprecate narrow version"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-3",
+      id: "documentation-changes-4",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
@@ -1038,14 +1165,14 @@ function _createMdxContent(props) {
       id: "400-2025-03-10",
       children: "4.0.0 (2025-03-10)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-8",
+      id: "-features-9",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
         children: "⚠️ updated select, multi-select and modal components"
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-10",
+      id: "-fixes-11",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1058,7 +1185,7 @@ function _createMdxContent(props) {
         }), " change cursor to pointer"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-4",
+      id: "documentation-changes-5",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1087,7 +1214,7 @@ function _createMdxContent(props) {
       id: "310-2025-03-06",
       children: "3.1.0 (2025-03-06)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-9",
+      id: "-features-10",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1099,7 +1226,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-11",
+      id: "-fixes-12",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1148,7 +1275,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-5",
+      id: "documentation-changes-6",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1173,7 +1300,7 @@ function _createMdxContent(props) {
       id: "300-2025-02-28",
       children: "3.0.0 (2025-02-28)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-10",
+      id: "-features-11",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1185,7 +1312,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-12",
+      id: "-fixes-13",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1246,7 +1373,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-6",
+      id: "documentation-changes-7",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1274,7 +1401,7 @@ function _createMdxContent(props) {
       id: "201-2025-02-27",
       children: "2.0.1 (2025-02-27)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-13",
+      id: "-fixes-14",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1307,7 +1434,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-7",
+      id: "documentation-changes-8",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1320,7 +1447,7 @@ function _createMdxContent(props) {
       id: "200-2025-02-25",
       children: "2.0.0 (2025-02-25)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-11",
+      id: "-features-12",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1353,7 +1480,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-14",
+      id: "-fixes-15",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1519,7 +1646,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "documentation-changes-8",
+      id: "documentation-changes-9",
       children: "Documentation Changes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1576,7 +1703,7 @@ function _createMdxContent(props) {
       id: "130-2025-02-19",
       children: "1.3.0 (2025-02-19)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-12",
+      id: "-features-13",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1595,7 +1722,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-15",
+      id: "-fixes-16",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1694,7 +1821,7 @@ function _createMdxContent(props) {
       id: "120-2025-02-11",
       children: "1.2.0 (2025-02-11)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-13",
+      id: "-features-14",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1713,7 +1840,7 @@ function _createMdxContent(props) {
         }), ")"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-16",
+      id: "-fixes-17",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1747,7 +1874,7 @@ function _createMdxContent(props) {
       id: "110-2025-01-31",
       children: "1.1.0 (2025-01-31)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-14",
+      id: "-features-15",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1759,7 +1886,7 @@ function _createMdxContent(props) {
       id: "102-2025-01-27",
       children: "1.0.2 (2025-01-27)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-15",
+      id: "-features-16",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -1952,7 +2079,7 @@ function _createMdxContent(props) {
         }), " export new components"]
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {}), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-17",
+      id: "-fixes-18",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -2575,7 +2702,7 @@ function _createMdxContent(props) {
       id: "101-2025-01-27",
       children: "1.0.1 (2025-01-27)"
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-features-16",
+      id: "-features-17",
       children: "🚀 Features"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
@@ -2768,7 +2895,7 @@ function _createMdxContent(props) {
         }), " export new components"]
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
-      id: "-fixes-18",
+      id: "-fixes-19",
       children: "🩹 Fixes"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {

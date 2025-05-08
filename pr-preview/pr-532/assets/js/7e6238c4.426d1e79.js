@@ -36,7 +36,7 @@ var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./packages/components/src/radio/Radio.tsx + 1 modules
 var Radio = __webpack_require__(80408);
 ;// ./apps/docs/src/components/examples/radio/RadioExamples.tsx
-var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",defaultValue:"apple",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"aplesin",children:"Apelsin"})]});};var ControlledExample=function ControlledExample(){var _useState=(0,react.useState)('banan'),selectedFruit=_useState[0],setSelectedFruit=_useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",value:selectedFruit,onChange:setSelectedFruit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"aplesin",children:"Apelsin"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{marginTop:'1rem'},children:["selectedFruit: ",selectedFruit]})]});};var HorizontalExample=function HorizontalExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Max 2 val vid horisontellt l\xE4ge",orientation:"horizontal",defaultValue:"apple",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"})]});};
+var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apelsin",children:"Apelsin"})]});};var ControlledExample=function ControlledExample(){var _useState=(0,react.useState)(''),selectedFruit=_useState[0],setSelectedFruit=_useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",value:selectedFruit,onChange:setSelectedFruit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apelsin",children:"Apelsin"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{marginTop:'1rem'},children:["selectedFruit: ",selectedFruit]})]});};var HorizontalExample=function HorizontalExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Max 2 val vid horisontellt l\xE4ge",orientation:"horizontal",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"})]});};var DefaultValueExample=function DefaultValueExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"Vill du l\xE4gga till din favoritfrukt i fruktkorgen?",description:"Det blir gott!",defaultValue:"yes",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"yes",children:"Ja"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"no",children:"Nej"})]});};var NoneOfTheAboveExample=function NoneOfTheAboveExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apelsin",children:"Apelsin"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"none",children:"Inget av givna alternativ"})]});};
 ;// ./apps/docs/docs/components/radio.mdx
 
 
@@ -72,6 +72,14 @@ const toc = [{
   "id": "riktlinjer",
   "level": 2
 }, {
+  "value": "Mönster",
+  "id": "mönster",
+  "level": 3
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
+  "level": 3
+}, {
   "value": "API",
   "id": "api",
   "level": 2
@@ -91,8 +99,10 @@ function _createMdxContent(props) {
     h2: "h2",
     h3: "h3",
     li: "li",
+    ol: "ol",
     p: "p",
     pre: "pre",
+    strong: "strong",
     ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
@@ -107,7 +117,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<RadioGroup\n  label='Välj din favoritfrukt'\n  description='Du kan bara välja en'\n  defaultValue='apple'\n>\n  <Radio value='apple'>Äpple</Radio>\n  <Radio value='banan'>Banan</Radio>\n</RadioGroup>\n"
+        children: "<RadioGroup\n  label='Välj din favoritfrukt'\n  description='Du kan bara välja en'\n>\n  <Radio value='apple'>Äpple</Radio>\n  <Radio value='banan'>Banan</Radio>\n  <Radio value='kiwi'>Kiwi</Radio>\n  <Radio value='apelsin'>Apelsin</Radio>\n</RadioGroup>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
@@ -166,7 +176,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "const [selectedFruit, setSelectedFruit] = useState('banan')\n\nreturn (\n  <RadioGroup\n    label='Välj din favoritfrukt'\n    description='Du kan bara välja en'\n    // highlight-start\n    value={selectedFruit}\n    onChange={setSelectedFruit}\n    // highlight-end\n  >\n    <Radio value='apple'>Äpple</Radio>\n    <Radio value='banan'>Banan</Radio>\n  </RadioGroup>\n)\n"
+        children: "const [selectedFruit, setSelectedFruit] = useState('')\n\nreturn (\n  <RadioGroup\n    label='Välj din favoritfrukt'\n    description='Du kan bara välja en'\n    // highlight-start\n    value={selectedFruit}\n    onChange={setSelectedFruit}\n    // highlight-end\n  >\n    <Radio value='apple'>Äpple</Radio>\n    <Radio value='banan'>Banan</Radio>\n    <Radio value='kiwi'>Kiwi</Radio>\n    <Radio value='apelsin'>Apelsin</Radio>\n  </RadioGroup>\n)\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
@@ -176,25 +186,57 @@ function _createMdxContent(props) {
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är\nbegränsat till två (2) och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
+        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Lägg valen i bokstavsordning om ingen annan given ordning är mer lämplig, t.ex. det mest populära valet först."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är\nbegränsat till två och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
       }), "\n"]
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
       children: (0,jsx_runtime.jsx)(HorizontalExample, {})
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om alternativen inte utesluter varandra, använd ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/checkbox",
-          children: "Checkbox"
-        }), "."]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/select",
-          children: "Select"
-        }), " användas istället."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "mönster",
+      children: "Mönster"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Det finns två mönster för Radioknappar:"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "Inget alternativ är valt från början"
+        }), ". Detta alternativ kräver att användaren tar ställning för att kunna gå vidare, vilket i de flesta fall är lämpligt. Välj detta mönster om det är svårt att förutse eller olämpligt att ge ett förval."]
       }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(BasicExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Om användaren behöver ha möjligthet att avstå från att välja ett de givna alternativen är rekommendationen att skapa ett sista alternativ som du kallar \"Inget av givna alternativ\" eller liknande."
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(NoneOfTheAboveExample, {})
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
+      start: "2",
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: [(0,jsx_runtime.jsx)(_components.strong, {
+          children: "Ett av alternativen är valt från början"
+        }), ". Välj detta mönster om det finns ett val som är förväntat eller önskvärt och det inte ger stora konsekvenser för användaren att inte ta ställning."]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(DefaultValueExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd Radioknappar när användaren bara ska göra ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "ett"
+      }), " av flera val i en lista. Använd ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/checkbox",
+        children: "Checkbox"
+      }), " om flera val ska kunna göras. Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/select",
+        children: "Select"
+      }), " användas istället."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
@@ -272,7 +314,7 @@ var clsx = __webpack_require__(34164);
 var dist_Label = __webpack_require__(21704);
 ;// ./packages/components/src/label/Label.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--size-02":"0.875rem","--line-height-02":"1.125rem","--size-03":"1rem","--line-height-03":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo","label-01":"label-01_rWfb","label-02":"label-02_LZ3P"});
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--line-height-20":"1.125rem","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo","label-01":"label-01_rWfb","label-02":"label-02_LZ3P"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/Label.tsx
@@ -296,7 +338,7 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var react = __webpack_require__(96540);
 ;// ./packages/components/src/radio/Radio.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--size-03":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-sm":"(max-width: 767px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--border-invalid":"light-dark(#e62323, #eb4e4e)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
+/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--font-size-30":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-secondary":"light-dark(#525252, #a6a6a6)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-sm":"(max-width: 767px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--border-invalid":"light-dark(#e62323, #eb4e4e)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
 var dist_RadioGroup = __webpack_require__(96325);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
@@ -339,7 +381,7 @@ var clsx = __webpack_require__(34164);
 var dist_Text = __webpack_require__(27279);
 ;// ./packages/components/src/text/Text.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--size-02":"0.875rem","--size-03":"1rem","--line-height-02":"1.125rem","--line-height-03":"1.25rem","--line-height-04":"1.375rem","--line-height-05":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/text/Text.tsx
