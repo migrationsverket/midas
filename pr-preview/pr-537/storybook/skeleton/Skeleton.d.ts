@@ -11,6 +11,9 @@ type SkeletonProps = {
      * @deprecated since v8.4.0 - Use 'isAnimated' instead. This will be removed in future versions.
      */
     animation?: 'wave' | false;
+    /**
+     * @default true
+     */
     isAnimated?: boolean;
 };
 export declare const Skeleton: React.FC<SkeletonProps>;
