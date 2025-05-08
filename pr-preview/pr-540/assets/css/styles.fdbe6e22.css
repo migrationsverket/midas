@@ -9969,7 +9969,7 @@ CSS variables, meant to be overridden by final theme
 }
 
 .text_FCS8 {
-  line-height: undefined;
+  line-height: 1.375rem;
   white-space: pre-line;
   margin: 0;
 }
