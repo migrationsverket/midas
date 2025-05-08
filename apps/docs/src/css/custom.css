@@ -426,7 +426,6 @@ table {
 /* Green header */
 .table-header-green {
   background-color: #d5f2d9; /* signal-green-20 */
-  color: #008d3c; /* signal-green-100 */
   padding: 10px;
   text-align: left;
 }
@@ -434,7 +433,6 @@ table {
 /* Red header */
 .table-header-red {
   background-color: #ffdfdf; /* signal-red-20 */
-  color: #e62323; /* signal-red-100 */
   padding: 10px;
   text-align: left;
 }
