@@ -3,11 +3,13 @@ export const modes = {
     backgrounds: {
       value: 'white',
     },
+    colorScheme: 'light',
   },
   'Dark Mode': {
     backgrounds: {
       value: '#121212',
     },
+    colorScheme: 'dark',
   },
   //   'Light Mode - Mobile': {
   //     backgrounds: {
