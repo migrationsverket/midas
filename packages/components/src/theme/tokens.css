@@ -1,3 +1,5 @@
+/* ---- Reference Values ---- */
+
 /* Base Colors */
 @value --black: #000000;
 @value --white: #ffffff;
@@ -51,44 +53,51 @@
 
 /* Typography */
 @value --font-family: "Inter", sans-serif;
-@value --line-height-01: 1rem;
-@value --line-height-02: 1.125rem;
-@value --line-height-03: 1.25rem;
-@value --line-height-04: 1.375rem;
-@value --line-height-05: 1.5rem;
-@value --line-height-06: 1.75rem;
-@value --line-height-07: 2rem;
-@value --line-height-08: 2.25rem;
-@value --line-height-09: 2.5rem;
-@value --line-height-10: 2.75rem;
-@value --size-01: 0.75rem;
-@value --size-02: 0.875rem;
-@value --size-03: 1rem;
-@value --size-04: 1.125rem;
-@value --size-05: 1.25rem;
-@value --size-06: 1.5rem;
-@value --size-07: 1.75rem;
-@value --size-08: 2rem;
-@value --size-09: 2.25rem;
-@value --size-10: 2.625rem;
+@value --line-height-10: 1rem;
+@value --line-height-20: 1.125rem;
+@value --line-height-30: 1.25rem;
+@value --line-height-40: 1.375rem;
+@value --line-height-50: 1.5rem;
+@value --line-height-60: 1.75rem;
+@value --line-height-70: 2rem;
+@value --line-height-80: 2.25rem;
+@value --line-height-90: 2.5rem;
+@value --line-height-100: 2.75rem;
+@value --font-size-10: 0.75rem;
+@value --font-size-20: 0.875rem;
+@value --font-size-30: 1rem;
+@value --font-size-40: 1.125rem;
+@value --font-size-50: 1.25rem;
+@value --font-size-60: 1.5rem;
+@value --font-size-70: 1.75rem;
+@value --font-size-80: 2rem;
+@value --font-size-90: 2.25rem;
+@value --font-size-100: 2.625rem;
 
 /* Spacing */
-@value --spacing-01: 0.125rem;
-@value --spacing-02: 0.25rem;
-@value --spacing-03: 0.5rem;
-@value --spacing-04: 0.75rem;
-@value --spacing-05: 1rem;
-@value --spacing-06: 1.5rem;
-@value --spacing-07: 2rem;
-@value --spacing-08: 2.5rem;
-@value --spacing-09: 3rem;
-@value --spacing-10: 4rem;
-@value --spacing-11: 5rem;
-@value --spacing-12: 6rem;
+@value --spacing-10: 0.125rem;
+@value --spacing-20: 0.25rem;
+@value --spacing-30: 0.5rem;
+@value --spacing-40: 0.75rem;
+@value --spacing-50: 1rem;
+@value --spacing-60: 1.5rem;
+@value --spacing-70: 2rem;
+@value --spacing-80: 2.5rem;
+@value --spacing-90: 3rem;
+@value --spacing-100: 4rem;
+@value --spacing-110: 5rem;
+@value --spacing-120: 6rem;
 
-/* States */
-@value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-@value --focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
+/* z-index */
+@value --z-index-base: 1;
+@value --z-index-above: 10;
+@value --z-index-modal: 1000;
+@value --z-index-toast: 1100;
+@value --z-index-skip-to-content: 1200;
+
+/* Sizing */
+@value --size-50: 0.625rem; /* 10px */
+@value --size-70: 0.875rem; /* 14px */
 
 /* Transitions */
 @value --slow-transition: 500ms;
@@ -104,7 +113,7 @@
 @value --dark-mode: (prefers-color-scheme: dark);
 @value --prefers-reduced-motion: (prefers-reduced-motion: reduced);
 
-/* -- Semantic -- */
+/* ---- Semantic values ---- */
 
 /* Background */
 @value --background: light-dark(--white, --gray-200);
@@ -141,13 +150,6 @@
 @value --border-secondary: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
 @value --border-tertiary: light-dark(--blue-170, --blue-100);
-
-/* 
- * @deprecated
- * Deprecated in 8.2.0
- * Please use --support-border-warning instead.
- */
-@value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
 /* Field 01 */
@@ -201,7 +203,7 @@
 @value --text-on-color: light-dark(--white, --white);
 @value --text-inverse: light-dark(--gray-10, --gray-200);
 @value --text-disabled: light-dark(--gray-50, --gray-140);
-@value --text-invalid: light-dark(--signal-red-100, --signal-red-80);
+@value --text-warning: light-dark(--signal-red-100, --signal-red-80);
 @value --text-placeholder: light-dark(--gray-70, --gray-140);
 
 /* Button */
@@ -225,16 +227,9 @@
 /* Logo */
 @value --logo-primary: light-dark(--red-100, --white);
 
-/* z-index */
-@value --z-index-base: 1;
-@value --z-index-above: 10;
-@value --z-index-modal: 1000;
-@value --z-index-toast: 1100;
-@value --z-index-skip-to-content: 1200;
-
-/* Sizing */
-@value --size-50: 0.625rem; /* 10px */
-@value --size-70: 0.875rem; /* 14px */
+/* States */
+@value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
+@value --focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
 
 /* Menu */
 @value --menu-item-background-hover: light-dark(--gray-20, --gray-190);

@@ -44,8 +44,8 @@ export const GridItem: React.FC<GridItemProps> = ({
 
   return (
     <div
-      className={clsx(styles.col, styles[colClass], rest.className)}
       {...rest}
+      className={clsx(styles.col, styles[colClass], rest.className)}
     >
       {children}
     </div>

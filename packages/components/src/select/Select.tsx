@@ -233,9 +233,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           <div className={styles.multiSelect}>
             {label && (
               <Label
-                variant='label-02'
                 {...labelProps}
-                slot={'label'}
+                slot='label'
                 className={clsx(styles.selectLabel, {
                   [styles.selectLabelActive]: isActive,
                   [styles.selectLabelDisabled]: isDisabled,
@@ -244,7 +243,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 {label}
               </Label>
             )}
-            {description && <Text slot={'description'}>{description}</Text>}
+            {description && <Text slot='description'>{description}</Text>}
             {errorPosition === 'top' && (
               <>
                 <FieldError>{errorMessage}</FieldError>
@@ -352,7 +351,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                                 tabIndex={-1}
                               />
                             </div>
-                            <span>{'Select All'}</span>
+                            <span>Select All</span>
                           </div>
                         </button>
                       </FocusRing>
@@ -371,7 +370,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                     {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}
                     <button
                       type='button'
-                      className={''}
+                      className=''
                       onClick={handleClear}
                     >
                       Clear
@@ -383,8 +382,8 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           </div>
           {showTags && state.selectedItems !== null && (
             <TagGroup
-              aria-label={'Selected Items'}
-              selectionBehavior={'toggle'}
+              aria-label='Selected Items'
+              selectionBehavior='toggle'
               onRemove={keys => handleRemove(Array.from(keys)[0])}
               className={styles.tagGroup}
               {...mergeProps}

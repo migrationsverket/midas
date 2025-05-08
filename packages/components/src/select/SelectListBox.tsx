@@ -86,7 +86,6 @@ const Section = <T,>({ section, state }: SectionProps<T>) => {
       {section.rendered && (
         <Label
           {...headingProps}
-          variant='label-02'
           elementType='span'
           className={styles.selectSectionHeading}
         >

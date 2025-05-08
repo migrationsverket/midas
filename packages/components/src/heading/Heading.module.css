@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --size-03, --size-04, --size-05, --size-06, --size-07, --size-09, --line-height-04, --line-height-05, --line-height-06, --line-height-07, --line-height-08, --line-height-09, --line-height-10 from tokens;
+@value --font-family, --text-primary, --font-size-30, --font-size-40, --font-size-50, --font-size-90, --line-height-50, --line-height-60, --line-height-70 from tokens;
 
 .h1,
 .h2,
@@ -10,18 +10,18 @@
   font-family: --font-family;
   color: --text-primary;
   font-weight: 400;
-  font-size: --size-03;
-  line-height: --line-height-05;
+  font-size: --font-size-30;
+  line-height: --line-height-50;
   margin-block: 0;
 }
 
 .h1 {
   /* 1.625 finns ej, hamnar mellan 06 och 07 */
   font-size: 1.625rem;
-  line-height: --line-height-07;
+  line-height: --line-height-70;
 
   &[data-expressive] {
-    font-size: --size-09;
+    font-size: --font-size-90;
 
     /* 3 finns ej, större än 10 */
     line-height: 3rem;
@@ -29,8 +29,8 @@
 }
 
 .h2 {
-  font-size: --size-05;
-  line-height: --line-height-06;
+  font-size: --font-size-50;
+  line-height: --line-height-60;
 
   &[data-expressive] {
     font-weight: 500;
@@ -43,19 +43,19 @@
 
 .h3 {
   font-weight: 600;
-  font-size: --size-03;
-  line-height: --line-height-05;
+  font-size: --font-size-30;
+  line-height: --line-height-50;
 
   &[data-expressive] {
-    font-size: --size-05;
-    line-height: --line-height-06;
+    font-size: --font-size-50;
+    line-height: --line-height-60;
   }
 }
 
 .h4 {
   &[data-expressive] {
     font-weight: 600;
-    font-size: --size-04;
+    font-size: --font-size-40;
 
     /* 1.625 finns ej, mellan 6 och 7 */
     line-height: 1.625rem;
@@ -65,7 +65,7 @@
 .h5 {
   &[data-expressive] {
     font-weight: 600;
-    font-size: --size-03;
-    line-height: --line-height-05;
+    font-size: --font-size-30;
+    line-height: --line-height-50;
   }
 }

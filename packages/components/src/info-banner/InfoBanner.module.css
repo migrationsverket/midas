@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --line-height-04, --support-border-success, --support-background-success, --support-border-info, --support-background-info, --support-border-warning, --support-background-warning, --support-border-important, --support-background-important from tokens;
+@value --font-family, --text-primary, --line-height-40, --support-border-success, --support-background-success, --support-border-info, --support-background-info, --support-border-warning, --support-background-warning, --support-border-important, --support-background-important from tokens;
 
 .infoBanner {
   font-family: --font-family;
@@ -47,7 +47,7 @@
 }
 
 .text {
-  line-height: --line-height-04;
+  line-height: --line-height-40;
   white-space: pre-line;
   margin: 0;
 }
