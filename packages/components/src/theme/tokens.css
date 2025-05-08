@@ -1,3 +1,5 @@
+/* ---- Reference Values ---- */
+
 /* Base Colors */
 @value --black: #000000;
 @value --white: #ffffff;
@@ -86,9 +88,16 @@
 @value --spacing-110: 5rem;
 @value --spacing-120: 6rem;
 
-/* States */
-@value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-@value --focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
+/* z-index */
+@value --z-index-base: 1;
+@value --z-index-above: 10;
+@value --z-index-modal: 1000;
+@value --z-index-toast: 1100;
+@value --z-index-skip-to-content: 1200;
+
+/* Sizing */
+@value --size-50: 0.625rem; /* 10px */
+@value --size-70: 0.875rem; /* 14px */
 
 /* Transitions */
 @value --slow-transition: 500ms;
@@ -104,7 +113,7 @@
 @value --dark-mode: (prefers-color-scheme: dark);
 @value --prefers-reduced-motion: (prefers-reduced-motion: reduced);
 
-/* -- Semantic -- */
+/* ---- Semantic values ---- */
 
 /* Background */
 @value --background: light-dark(--white, --gray-200);
@@ -141,13 +150,6 @@
 @value --border-secondary: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
 @value --border-tertiary: light-dark(--blue-170, --blue-100);
-
-/* 
- * @deprecated
- * Deprecated in 8.2.0
- * Please use --support-border-warning instead.
- */
-@value --border-invalid: light-dark(--signal-red-100, --signal-red-80);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
 /* Field 01 */
@@ -201,7 +203,7 @@
 @value --text-on-color: light-dark(--white, --white);
 @value --text-inverse: light-dark(--gray-10, --gray-200);
 @value --text-disabled: light-dark(--gray-50, --gray-140);
-@value --text-invalid: light-dark(--signal-red-100, --signal-red-80);
+@value --text-warning: light-dark(--signal-red-100, --signal-red-80);
 @value --text-placeholder: light-dark(--gray-70, --gray-140);
 
 /* Button */
@@ -225,16 +227,9 @@
 /* Logo */
 @value --logo-primary: light-dark(--red-100, --white);
 
-/* z-index */
-@value --z-index-base: 1;
-@value --z-index-above: 10;
-@value --z-index-modal: 1000;
-@value --z-index-toast: 1100;
-@value --z-index-skip-to-content: 1200;
-
-/* Sizing */
-@value --size-50: 0.625rem; /* 10px */
-@value --size-70: 0.875rem; /* 14px */
+/* States */
+@value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
+@value --focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
 
 /* Menu */
 @value --menu-item-background-hover: light-dark(--gray-20, --gray-190);
