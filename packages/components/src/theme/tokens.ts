@@ -58,26 +58,27 @@ export const baseColors = {
 export const typography = {
   fontFamily: '"Inter", sans-serif',
 
-  lineHeight01: 1, // 16px
-  lineHeight02: 1.125, // 18px (18/16)
-  lineHeight03: 1.25, // 20px (20/16)
-  lineHeight04: 1.375, // 22px (22/16)
-  lineHeight05: 1.5, // 24px (24/16)
-  lineHeight06: 1.75, // 28px (28/16)
-  lineHeight07: 2, // 32px (32/16)
-  lineHeight08: 2.25, // 36px (36/16)
-  lineHeight09: 2.5, // 40px (40/16)
+  lineHeight10: 1, // 16px
+  lineHeight20: 1.125, // 18px (18/16)
+  lineHeight30: 1.25, // 20px (20/16)
+  lineHeight40: 1.375, // 22px (22/16)
+  lineHeight50: 1.5, // 24px (24/16)
+  lineHeight60: 1.75, // 28px (28/16)
+  lineHeight70: 2, // 32px (32/16)
+  lineHeight80: 2.25, // 36px (36/16)
+  lineHeight90: 2.5, // 40px (40/16)
+  lineHeight100: 2.75, // 44px (44/16)
 
-  size01: '0.75rem', // 12px (12/16)
-  size02: '0.875rem', // 14px (14/16)
-  size03: '1rem', // 16px (16/16)
-  size04: '1.125rem', // 18px (18/16)
-  size05: '1.25rem', // 20px (20/16)
-  size06: '1.5rem', // 24px (24/16)
-  size07: '1.75rem', // 28px (28/16)
-  size08: '2rem', // 32px (32/16)
-  size09: '2.25rem', // 36px (36/16)
-  size10: '2.625rem', // 42px (40/16)
+  fontSize10: '0.75rem', // 12px (12/16)
+  fontSize20: '0.875rem', // 14px (14/16)
+  fontSize30: '1rem', // 16px (16/16)
+  fontSize40: '1.125rem', // 18px (18/16)
+  fontSize50: '1.25rem', // 20px (20/16)
+  fontSize60: '1.5rem', // 24px (24/16)
+  fontSize70: '1.75rem', // 28px (28/16)
+  fontSize80: '2rem', // 32px (32/16)
+  fontSize90: '2.25rem', // 36px (36/16)
+  fontSize100: '2.625rem', // 42px (40/16)
 
   weightThin: 100,
   weightExtraLight: 200,
@@ -91,18 +92,18 @@ export const typography = {
 }
 
 export const spacing = {
-  '01': '0.125rem', // 2px
-  '02': '0.25rem', // 4px
-  '03': '0.5rem', // 8px
-  '04': '0.75rem', // 12px
-  '05': '1rem', // 16px
-  '06': '1.5rem', // 24px
-  '07': '2rem', // 32px
-  '08': '2.5rem', // 40px
-  '09': '3rem', // 48px
-  '10': '4rem', // 64px
-  '11': '5rem', // 80px
-  '12': '6rem', // 96px
+  '10': '0.125rem', // 2px
+  '20': '0.25rem', // 4px
+  '30': '0.5rem', // 8px
+  '40': '0.75rem', // 12px
+  '50': '1rem', // 16px
+  '60': '1.5rem', // 24px
+  '70': '2rem', // 32px
+  '80': '2.5rem', // 40px
+  '90': '3rem', // 48px
+  '100': '4rem', // 64px
+  '110': '5rem', // 80px
+  '120': '6rem', // 96px
 }
 
 export const states = {
@@ -161,6 +162,11 @@ export const semantic = {
   borderSecondary: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
   borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
+  /*
+   * @deprecated
+   * Deprecated in 8.2.0
+   * Please use --support-border-warning instead.
+   */
   borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
 

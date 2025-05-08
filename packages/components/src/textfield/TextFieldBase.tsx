@@ -4,7 +4,7 @@ import {
   useContextProps,
   TextField as AriaTextField,
   TextFieldProps,
-  ValidationResult
+  ValidationResult,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Label } from '../label'
