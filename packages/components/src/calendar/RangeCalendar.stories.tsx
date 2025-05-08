@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { RangeCalendar } from './RangeCalendar'
 import { expect, userEvent } from '@storybook/test'
-import { now } from '../utils/storybook'
+import { mockedNow } from '../utils/storybook'
 
 type Story = StoryObj<typeof RangeCalendar>
 
@@ -25,9 +25,9 @@ export const KeyboardTest: Story = {
     await step(
       'it should be possible to select today and two days ahead with the keyboard',
       async () => {
-        const todaysDate = now.day.toString()
-        const tomorrow = now.add({ days: 1 }).day.toString()
-        const dayAfterTomorrow = now.add({ days: 2 }).day.toString()
+        const todaysDate = mockedNow.day.toString()
+        const tomorrow = mockedNow.add({ days: 1 }).day.toString()
+        const dayAfterTomorrow = mockedNow.add({ days: 2 }).day.toString()
 
         await userEvent.tab()
         await userEvent.tab()

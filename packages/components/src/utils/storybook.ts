@@ -32,4 +32,4 @@ export const options = [
   'Passionfruit',
 ].map(fruit => ({ name: fruit, id: fruit.toLocaleLowerCase() }))
 
-export const now = parseDate('2025-05-29')
+export const mockedNow = parseDate('2025-05-29')

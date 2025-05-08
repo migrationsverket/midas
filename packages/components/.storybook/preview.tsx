@@ -9,11 +9,11 @@ import {
 import React from 'react'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
-import { now } from '../src/utils/storybook'
+import { mockedNow } from '../src/utils/storybook'
 
 const preview: Preview = {
   async beforeEach() {
-    MockDate.set(now.toDate(getLocalTimeZone()))
+    MockDate.set(mockedNow.toDate(getLocalTimeZone()))
     return () => {
       MockDate.reset()
     }
