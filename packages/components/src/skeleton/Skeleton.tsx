@@ -17,6 +17,9 @@ type SkeletonProps = {
    * @deprecated since v8.4.0 - Use 'isAnimated' instead. This will be removed in future versions.
    */
   animation?: 'wave' | false
+  /**
+   * @default true
+   */
   isAnimated?: boolean
 }
 
@@ -25,20 +28,25 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   width,
   height,
   animation = 'wave',
-  isAnimated = true,
+  isAnimated,
 }) => {
   if (variant === 'circle' && height !== undefined) {
     console.warn(
       'Height is not allowed when using circle, control size with width',
     )
   }
+  if (variant === 'rectangular') {
+    console.warn(
+      'Rectangular will be deprecated since v8.4.0 - Use Rectangle instead. This will be removed in future versions',
+    )
+  }
+
   return (
     <div
       className={clsx(
         styles.skeleton,
         styles[variant],
-        animation && styles[animation],
-        isAnimated && styles.wave,
+        (isAnimated ?? animation === 'wave') && styles.wave,
       )}
       style={{ width, height }}
     />

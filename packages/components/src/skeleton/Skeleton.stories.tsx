@@ -20,9 +20,14 @@ const meta: Meta<typeof Skeleton> = {
       type: 'string',
     },
     animation: {
+      options: ['wave', false],
+      control: { type: 'radio' },
+      defaultValue: 'wave',
+    },
+    isAnimated: {
       options: [true, false],
       control: { type: 'radio' },
-      defaultValue: false,
+      defaultValue: true,
     },
   },
 }
@@ -56,6 +61,19 @@ export const NoAnimation: Story = {
   args: {
     ...Rectangle.args,
     animation: false,
+    isAnimated: false,
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<Skeleton 
+  height="40px" 
+  isAnimated={false} 
+  variant="rectangle" 
+  width="100px"
+/>`,
+      },
+    },
   },
 }
 
