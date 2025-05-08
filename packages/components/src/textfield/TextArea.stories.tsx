@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { TextArea } from './TextArea'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
-import { TextField } from '../textfield'
 import styles from './TextField.module.css'
 
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
@@ -15,7 +14,7 @@ export default {
     description: 'Description',
     errorPosition: 'top',
   },
-} as Meta<typeof TextField>
+} as Meta<typeof TextArea>
 
 type Story = StoryObj<typeof TextArea>
 
