@@ -28,7 +28,8 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   width,
   height,
   animation = 'wave',
-  isAnimated,
+  isAnimated = true,
+  ...rest
 }) => {
   if (variant === 'circle' && height !== undefined) {
     console.warn(
@@ -43,10 +44,11 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 
   return (
     <div
+      {...rest}
       className={clsx(
         styles.skeleton,
         styles[variant],
-        (isAnimated ?? animation === 'wave') && styles.wave,
+        isAnimated && animation && styles.wave,
       )}
       style={{ width, height }}
     />
