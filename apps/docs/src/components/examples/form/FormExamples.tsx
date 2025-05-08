@@ -8,6 +8,8 @@ import {
   CheckboxGroup,
   Checkbox,
   Spinner,
+  InfoBanner,
+  Link,
 } from '@midas-ds/components'
 
 export const UncontrolledForm = () => {
@@ -150,6 +152,117 @@ export const ServerValidation = () => {
         isRequired
       />
       <TextField
+        label='Lösenord'
+        name='password'
+        type='password'
+        isRequired
+      />
+      <ButtonGroup>
+        <Button type='submit'>
+          {isWaiting ? (
+            <>
+              <Spinner
+                isOnColor
+                small
+              />
+              Skickar...
+            </>
+          ) : (
+            'Skicka'
+          )}
+        </Button>
+      </ButtonGroup>
+    </Form>
+  )
+}
+
+export const ErrorMessageList = () => {
+  const [isWaiting, setIsWaiting] = React.useState(false)
+  const [errors, setErrors] = React.useState<Record<string, string>>({})
+  const [invalidFields, setInvalidFields] = React.useState<
+    Record<string, FormDataEntryValue>
+  >({})
+
+  // Fake server used in this example.
+  const delay = (ms: number): Promise<void> =>
+    new Promise(resolve => setTimeout(resolve, ms))
+
+  async function callServer(
+    data: Record<string, FormDataEntryValue>,
+  ): Promise<{ errors: Record<string, string> }> {
+    setIsWaiting(true)
+    await delay(1000)
+    setIsWaiting(false)
+    return {
+      errors: {
+        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,
+        password: 'Lösenordet är tyvärr felaktigt, prova igen.',
+      },
+    }
+  }
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setInvalidFields({})
+
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<
+      string,
+      FormDataEntryValue
+    >
+    const result = await callServer(data)
+    setErrors(result.errors)
+  }
+
+  const onInvalid = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setErrors({})
+
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<
+      string,
+      FormDataEntryValue
+    >
+
+    setInvalidFields(data)
+  }
+
+  return (
+    <Form
+      validationErrors={errors}
+      onSubmit={onSubmit}
+      className={styles.form}
+      onInvalid={onInvalid}
+    >
+      {(Object.keys(invalidFields).length !== 0 ||
+        Object.keys(errors).length !== 0) && (
+        <InfoBanner
+          type='warning'
+          role='alert'
+          title='Kontrollera följande fält'
+        >
+          <ul>
+            {Object.keys(invalidFields).length !== 0 &&
+              Object.entries(invalidFields).map(([field, value]) => (
+                <li key={field}>
+                  <Link href={'#' + field}>{field} är ogiltigt.</Link>
+                </li>
+              ))}
+            {Object.keys(errors).length !== 0 &&
+              Object.entries(errors).map(([field, message]) => (
+                <li key={field}>
+                  <Link href={'#' + field}>{message}</Link>
+                </li>
+              ))}
+          </ul>
+        </InfoBanner>
+      )}
+      <TextField
+        id='username'
+        label='Användarnamn'
+        name='username'
+        isRequired
+      />
+      <TextField
+        id='password'
         label='Lösenord'
         name='password'
         type='password'
