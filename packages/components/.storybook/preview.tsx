@@ -8,8 +8,17 @@ import {
 } from './custom-theme'
 import React from 'react'
 import { modes } from './modes'
+import MockDate from 'mockdate'
+import { getLocalTimeZone } from '@internationalized/date'
+import { mockedNow } from '../src/utils/storybook'
 
 const preview: Preview = {
+  async beforeEach() {
+    MockDate.set(mockedNow.toDate(getLocalTimeZone()))
+    return () => {
+      MockDate.reset()
+    }
+  },
   parameters: {
     backgrounds: {
       default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
