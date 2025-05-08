@@ -7,6 +7,7 @@ import {
   getPreferredColorScheme,
 } from './custom-theme'
 import React from 'react'
+import { modes } from './modes'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
@@ -46,6 +47,9 @@ const preview: Preview = {
         method: 'alphabetical',
         order: ['Components', ['Intro', '*'], '*', 'Examples', ['Intro', '*']],
       },
+    },
+    chromatic: {
+      modes: modes,
     },
     a11y: { test: 'error', element: '#storybook-root' },
   },
