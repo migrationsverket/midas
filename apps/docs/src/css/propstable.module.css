@@ -57,3 +57,69 @@
     }
   }
 }
+
+.popover {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  padding: 0.5rem;
+  transition:
+    transform 200ms,
+    opacity 200ms;
+
+  .arrow svg {
+    display: block;
+    fill: var(--background);
+    stroke: var(--border);
+    stroke-width: 1px;
+  }
+
+  &[data-entering],
+  &[data-exiting] {
+    transform: var(--origin);
+    opacity: 0;
+  }
+
+  &[data-placement='top'] {
+    --origin: translateY(8px);
+
+    &:has(.arrow) {
+      margin-bottom: 6px;
+    }
+  }
+
+  &[data-placement='bottom'] {
+    --origin: translateY(-8px);
+
+    &:has(.arrow) {
+      margin-top: 6px;
+    }
+
+    .arrow svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &[data-placement='right'] {
+    --origin: translateX(-8px);
+
+    &:has(.arrow) {
+      margin-left: 6px;
+    }
+
+    .arrow svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &[data-placement='left'] {
+    --origin: translateX(8px);
+
+    &:has(.arrow) {
+      margin-right: 6px;
+    }
+
+    .arrow svg {
+      transform: rotate(-90deg);
+    }
+  }
+}
