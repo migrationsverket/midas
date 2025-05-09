@@ -4,7 +4,7 @@ description: MultiSelect är en typ av inmatningsfält som tillåter användaren
 ---
 
 import { MultiSelect } from '@midas-ds/components'
-import { PropTable } from '@site/src/components/propsTable'
+import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import LiveCodeBlock from '@site/src/components/CodeBlock/CodeBlock'
 
