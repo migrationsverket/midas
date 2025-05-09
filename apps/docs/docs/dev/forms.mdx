@@ -3,7 +3,13 @@ title: Formulär
 description: Utvecklarinstruktioner för formulär
 ---
 
-import { UncontrolledForm, ControlledForm, RealtimeValidation, ServerValidation } from '@site/src/components/examples/form/FormExamples'
+import {
+  UncontrolledForm,
+  ControlledForm,
+  RealtimeValidation,
+  ServerValidation,
+  ErrorMessageList,
+} from '@site/src/components/examples/form/FormExamples'
 
 # Formulär
 
@@ -24,13 +30,18 @@ Komponenterna går att integrera normalt med **&lt;form&gt;** (native HTML) men 
 
 ```tsx
 // highlight-next-line
-import { Form } from 'react-aria-components';
-import { TextField } from '@midas-ds/components';
+import { Form } from 'react-aria-components'
+import { TextField } from '@midas-ds/components'
+```
 
+```tsx
 //highlight-next-line
 <Form>
-  <TextField label={'Namn'} name={'name'} />
-//highlight-next-line
+  <TextField
+    label='Namn'
+    name='name'
+  />
+  //highlight-next-line
 </Form>
 ```
 
@@ -40,7 +51,6 @@ Den enklaste varianten för att använda ett formulär är via browserns [FormDa
 när formuläret är **invalid** precis som html-form men detta beteende kan styras via `validationBehavior`.
 Prop `name` fungerar precis som native form och är referens till fältet som avses. Om något fält är ogiltigt
 fokuseras det automatiskt vid **submit**.
-
 
 ### Uncontrolled form
 
@@ -58,43 +68,43 @@ export const UncontrolledForm = () => {
       <Form
         onSubmit={handleSubmit}
         // use 'aria' to allow submit when invalid
-        validationBehavior={'native'}
+        validationBehavior='native'
       >
         <TextField
-          label={'Namn'}
-          name={'name'}
+          label='Namn'
+          name='name'
           isRequired
         />
         <TextField
-          label={'E-post'}
-          type={'email'}
-          name={'email'}
+          label='E-post'
+          type='email'
+          name='email'
           isRequired
         />
         <CheckboxGroup
-          label={'Spara mina uppgifter'}
-          name={'saveData'}
-          isRequired>
-          <Checkbox value={'agree'}>Jag godkänner</Checkbox>
+          label='Spara mina uppgifter'
+          name='saveData'
+          isRequired
+        >
+          <Checkbox value='agree'>Jag godkänner</Checkbox>
         </CheckboxGroup>
         <ButtonGroup>
-          <Button type={'submit'}>Skicka</Button>
+          <Button type='submit'>Skicka</Button>
           <Button
-            type={'reset'}
-            variant={'secondary'}
+            type='reset'
+            variant='secondary'
           >
             Rensa
           </Button>
         </ButtonGroup>
       </Form>
-      <span>
-        {result && <pre>{JSON.stringify(result)}</pre>}
-      </span>
+      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>
     </>
   )
 }
 ```
-<div className={'card'}>
+
+<div className='card'>
   <UncontrolledForm />
 </div>
 
@@ -112,18 +122,19 @@ export const ControlledForm = () => {
   return (
     <Form onSubmit={onSubmit}>
       <TextField
-        name={'name'}
-        label={'Name'}
+        name='name'
+        label='Name'
         onChange={setName}
         isRequired
       />
       <div>Ditt namn: {name}</div>
-      <Button type={'submit'}>Submit</Button>
+      <Button type='submit'>Submit</Button>
     </Form>
   )
 }
 ```
-<div className={'card'}>
+
+<div className='card'>
   <ControlledForm />
 </div>
 
@@ -155,19 +166,20 @@ export const RealtimeValidation = () => {
   return (
     <>
       <TextField
-        label={'Lösenord'}
+        label='Lösenord'
         style={{ whiteSpace: 'pre-line' }}
         isInvalid={errors.length > 0}
         value={password}
         onChange={setPassword}
         errorMessage={errors.join('\n')}
-        errorPosition={'bottom'}
+        errorPosition='bottom'
       />
     </>
   )
 }
 ```
-<div className={'card'}>
+
+<div className='card'>
   <RealtimeValidation />
 </div>
 
@@ -176,13 +188,11 @@ Felmeddelande kan presenteras under eller över formulärskomponenten via `error
 för mer information.
 :::
 
-
 ### Server validation
 
 Förutom att validera input på klienten bör ett normalt mönster vara att validera på serversidan också. En metod är att
 sätta prop `validationErrors` på &lt;Form&gt; och presentera felmeddelanden den vägen. Objektet ska då matcha
 `name` props på formulärsobjektet för att fungera med automatik. När inmatning ändras återställs felmeddelandet.
-
 
 ```tsx
 export const ServerValidation = () => {
@@ -215,35 +225,153 @@ export const ServerValidation = () => {
       className={styles.form}
     >
       <TextField
-        label={'Användarnamn'}
+        label='Användarnamn'
         name='username'
         isRequired
       />
       <TextField
-        label={'Lösenord'}
+        label='Lösenord'
         name='password'
         type='password'
         isRequired
       />
       <ButtonGroup>
-        <Button
-          type='submit'
-        >
-          {isWaiting ? (<><Spinner isOnColor small/>Skickar...</>) : 'Skicka'}
+        <Button type='submit'>
+          {isWaiting ? (
+            <>
+              <Spinner
+                isOnColor
+                small
+              />
+              Skickar...
+            </>
+          ) : (
+            'Skicka'
+          )}
         </Button>
       </ButtonGroup>
     </Form>
   )
 }
 ```
-<div className={'card'}>
-  <ServerValidation/>
+
+<div className='card'>
+  <ServerValidation />
 </div>
 
 > Beroende på ramverk finns en uppsjö av olika tekniker för att åstadkomma serverside validation.
 > På [React Arias dokumentation](https://react-spectrum.adobe.com/react-aria/forms.html#server-validation)
 > finns information om hur det går att åstadkomma detta bland annat med **schema validation** och
 > **React Server Actions**
+
+### Felmeddelandelista
+
+Om ett formulär valideras och har ogiltigta fält skall dessa presenteras i en översiktslista för att summera vad användaren behöver rätta till. För detta används en kombination av komponenterna `InfoBanner` och `Link`.
+
+```tsx
+export const ErrorMessageList = () => {
+  const [isWaiting, setIsWaiting] = React.useState(false)
+  const [errors, setErrors] = React.useState<Record<string, string>>({})
+  const [invalidFields, setInvalidFields] = React.useState<Record<string, FormDataEntryValue>>({})
+
+  // Fake server used in this example.
+  const delay = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms))
+
+  async function callServer(data: Record<string, FormDataEntryValue>): Promise<{ errors: Record<string, string> }> {
+    setIsWaiting(true)
+    await delay(1000)
+    setIsWaiting(false)
+    return {
+      errors: {
+        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,
+        password: 'Lösenordet är tyvärr felaktigt, prova igen.',
+      },
+    }
+  }
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setInvalidFields({})
+
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, FormDataEntryValue>
+    const result = await callServer(data)
+    setErrors(result.errors)
+  }
+
+  const onInvalid = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setErrors({})
+
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, FormDataEntryValue>
+
+    setInvalidFields(data)
+  }
+
+  return (
+    <Form
+      validationErrors={errors}
+      onSubmit={onSubmit}
+      className={styles.form}
+      onInvalid={onInvalid}
+    >
+      {(Object.keys(invalidFields).length !== 0 || Object.keys(errors).length !== 0) && (
+        <InfoBanner
+          type='warning'
+          role='alert'
+          title='Kontrollera följande fält'
+        >
+          <ul>
+            {Object.keys(invalidFields).length !== 0 &&
+              Object.entries(invalidFields).map(([field, value]) => (
+                <li key={field}>
+                  <Link href={'#' + field}>{field} är ogiltigt.</Link>
+                </li>
+              ))}
+            {Object.keys(errors).length !== 0 &&
+              Object.entries(errors).map(([field, message]) => (
+                <li key={field}>
+                  <Link href={'#' + field}>{message}</Link>
+                </li>
+              ))}
+          </ul>
+        </InfoBanner>
+      )}
+      <TextField
+        id='username'
+        label='Användarnamn'
+        name='username'
+        isRequired
+      />
+      <TextField
+        id='password'
+        label='Lösenord'
+        name='password'
+        type='password'
+        isRequired
+      />
+      <ButtonGroup>
+        <Button type='submit'>
+          {isWaiting ? (
+            <>
+              <Spinner
+                isOnColor
+                small
+              />
+              Skickar...
+            </>
+          ) : (
+            'Skicka'
+          )}
+        </Button>
+      </ButtonGroup>
+    </Form>
+  )
+}
+```
+
+<div className='card'>
+  <ErrorMessageList />
+</div>
 
 ## Tredjeparts klientformulär
 
@@ -279,7 +407,7 @@ export const HookFormExample = () => {
           fieldState: { invalid, error },
         }) => (
           <TextField
-            label={'Name'}
+            label=Name"
             name={name}
             value={value}
             onChange={onChange}
