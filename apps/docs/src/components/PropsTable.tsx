@@ -59,7 +59,7 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
         <Lowlight
           value={props.type.name}
           inline
-          language={'typescript'}
+          language='typescript'
           markers={[]}
         />
       )
