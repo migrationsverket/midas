@@ -1,3 +1,4 @@
+import { Info } from 'lucide-react'
 import {
   Accordion,
   AccordionItem,
@@ -25,6 +26,7 @@ import {
   Tooltip,
   Dropdown,
   DropdownItem,
+  InfoBanner,
 } from '@midas-ds/components'
 
 import { theme } from '@midas-ds/components/theme'
@@ -57,4 +59,5 @@ export {
   Tooltip,
   Dropdown,
   DropdownItem,
+  InfoBanner,
 }
