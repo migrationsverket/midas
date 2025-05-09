@@ -4,40 +4,56 @@
   }
 }
 
-.table {
-  all: revert;
-  table-layout: auto;
-  font-family: 'Inter', sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-
+.propsGridTable {
+  table,
+  tbody,
+  thead,
   tr {
-    word-break: break-all;
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    text-align: left;
+    font-size: 0.875rem;
   }
 
-  td {
-    min-width: 6rem;
-    vertical-align: top;
+  table {
+    grid-template-columns: 2fr 2fr 1fr 3fr;
+
+    @media (width < 996px) {
+      grid-template-columns: subgrid;
+    }
   }
 
-  thead tr th:first-child,
-  tbody tr td:first-child {
-    width: 25%;
+  thead {
+    tr {
+      border-bottom: var(--ifm-table-border-width) solid
+        var(--ifm-table-border-color);
+    }
+
+    @media (width < 996px) {
+      display: none;
+    }
   }
-}
 
-.thead {
-  text-align: left;
-}
+  tbody {
+    @media (width > 996px) {
+      tr:first-of-type {
+        border-top: none;
+      }
+    }
 
-.tbody {
-  font-size: 0.875rem;
-}
+    @media (width < 996px) {
+      td:not(:last-of-type) {
+        display: flex;
+      }
 
-.item {
-  padding: 0;
-}
-
-.accordionItem div[role='group'] {
-  overflow-x: auto;
+      td[data-title]::before {
+        content: attr(data-title);
+        display: inline-block;
+        font-weight: 500;
+        padding-right: 1rem;
+        min-width: 65px;
+      }
+    }
+  }
 }
