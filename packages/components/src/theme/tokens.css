@@ -44,12 +44,26 @@
 @value --signal-green-100: #008d3c;
 @value --signal-yellow-10: #fff8e1;
 @value --signal-yellow-100: #fdb813;
+@value --signal-red-10: #ffefef;
 @value --signal-red-20: #ffdfdf;
 @value --signal-red-30: #fcc8c8;
+@value --signal-red-40: #f9b0b0;
+@value --signal-red-50: #f69999;
+@value --signal-red-60: #f38181;
+@value --signal-red-70: #ef6a6a;
 @value --signal-red-80: #eb4e4e;
+@value --signal-red-90: #e93b3b;
 @value --signal-red-100: #e62323;
-@value --signal-red-160: #b31b1b;
-@value --signal-red-180: #801313;
+@value --signal-red-110: #d12020;
+@value --signal-red-120: #bc1d1d;
+@value --signal-red-130: #a71919;
+@value --signal-red-140: #921616;
+@value --signal-red-150: #7d1313;
+@value --signal-red-160: #691010;
+@value --signal-red-170: #540d0d;
+@value --signal-red-180: #3f0a0a;
+@value --signal-red-190: #2a0606;
+@value --signal-red-200: #150303;
 
 /* Typography */
 @value --font-family: "Inter", sans-serif;
@@ -216,8 +230,8 @@
 @value --button-background-tertiary-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-tertiary-active: light-dark(--gray-30, --gray-180);
 @value --button-background-danger: light-dark(--signal-red-100, --signal-red-100);
-@value --button-background-danger-hover: light-dark(--signal-red-160, --signal-red-160);
-@value --button-background-danger-active: light-dark(--signal-red-180, --signal-red-180);
+@value --button-background-danger-hover: light-dark(--signal-red-120, --signal-red-120);
+@value --button-background-danger-active: light-dark(--signal-red-150, --signal-red-150);
 @value --button-background-disabled: light-dark(--gray-10, --gray-180);
 @value --button-background-skeleton: light-dark(--gray-10, --gray-180);
 @value --button-border-secondary: light-dark(--border-tertiary, --gray-10);
