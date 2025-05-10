@@ -25,7 +25,7 @@ export const Example = () => {
           <span style={{ fontFamily: 'Fira Code' }}>not set</span>
         </FlexItem>
         <FlexItem
-          col={'auto'}
+          col='auto'
           style={{
             background: semantic.iconSuccess,
             height: '6rem',

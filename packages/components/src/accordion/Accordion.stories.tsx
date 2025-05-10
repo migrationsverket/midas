@@ -140,12 +140,12 @@ export const DynamicContent: Story = {
   tags: ['!dev', '!autodocs'],
   render: () => (
     <Accordion>
-      <AccordionItem title={'AccordionItem with dynamic content'}>
+      <AccordionItem title='AccordionItem with dynamic content'>
         Knowledge is knowing a tomato is a fruit; wisdom is not putting it in a
         fruit salad.
         <ExpandableStuff />
       </AccordionItem>
-      <AccordionItem title={'Another AccordionItem'}>
+      <AccordionItem title='Another AccordionItem'>
         More text about another subject...
       </AccordionItem>
     </Accordion>
@@ -190,7 +190,7 @@ const ExpandableStuff = () => {
     <div>
       <button
         onClick={() => setIsVisible(p => !p)}
-        data-testid={'btn-0'}
+        data-testid='btn-0'
       >
         {isVisible ? 'hide' : 'show'}
       </button>
@@ -205,7 +205,7 @@ const ExpandableStuff = () => {
             justifyContent: 'center',
             padding: '2rem',
           }}
-          data-testid={'hidden-content'}
+          data-testid='hidden-content'
         >
           Pineapples were once so rare and expensive in Europe that people used
           them as a status symbol—even renting them for parties to show off

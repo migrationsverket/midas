@@ -76,7 +76,7 @@ function CurrentDate() {
       defaultValue={parseDate('2025-02-28')}
       label='Datumväljare'
       description='Format kan styras med i18nProvider'
-    ></DateField>
+    />
   )
 }
 

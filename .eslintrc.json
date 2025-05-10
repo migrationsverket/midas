@@ -27,6 +27,20 @@
               }
             ]
           }
+        ],
+        "react/jsx-curly-brace-presence": [
+          "warn",
+          {
+            "props": "never",
+            "children": "ignore"
+          }
+        ],
+        "react/self-closing-comp": [
+          "warn",
+          {
+            "component": true,
+            "html": false
+          }
         ]
       }
     },

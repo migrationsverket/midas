@@ -11,7 +11,7 @@ describe('Tag', () => {
     render(
       <TagGroup aria-label={label}>
         <Tag
-          textValue={'value'}
+          textValue='value'
           data-testid={testID}
           className={testClass}
         >

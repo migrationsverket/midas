@@ -27,52 +27,50 @@ export const Primary = {
     <Grid fluid={args.fluid}>
       <GridItem col={3}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i tre kolumner'}
+          title='Ett kort'
+          content='Som är i tre kolumner'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>
       <GridItem col={3}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i tre kolumner'}
+          title='Ett kort'
+          content='Som är i tre kolumner'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>
       <GridItem col={6}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i sex kolumner'}
+          title='Ett kort'
+          content='Som är i sex kolumner'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>
       <GridItem col={4}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i fyra kolumner'}
+          title='Ett kort'
+          content='Som är i fyra kolumner'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>
       <GridItem col={4}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i fyra kolumner'}
+          title='Ett kort'
+          content='Som är i fyra kolumner'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>
       <GridItem col={4}>
         <Card
-          title={'Ett kort'}
-          content={
-            'Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
-          }
+          title='Ett kort'
+          content='Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>
       <GridItem col={10}>
         <Card
-          title={'Ett kort'}
-          content={'Som är utan kolumner'}
+          title='Ett kort'
+          content='Som är utan kolumner'
           link={{ children: 'Länk', href: '#' }}
         />
       </GridItem>

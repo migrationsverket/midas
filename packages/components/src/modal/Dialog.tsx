@@ -156,7 +156,7 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
           >
             <div className={styles.modalHeader}>
               <Button
-                slot={'close'}
+                slot='close'
                 variant='tertiary'
                 icon={X}
                 iconPlacement='right'

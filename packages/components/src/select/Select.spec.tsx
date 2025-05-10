@@ -19,7 +19,7 @@ describe('A single Select', () => {
     baseElement = render(
       <Select
         label={label}
-        selectionMode={'single'}
+        selectionMode='single'
         options={options}
         onSelectionChange={onchange}
       />,
@@ -54,7 +54,7 @@ describe('An empty single Select', () => {
     render(
       <Select
         label={label}
-        selectionMode={'single'}
+        selectionMode='single'
         options={[]}
       />,
     )
@@ -106,7 +106,7 @@ describe('A multi Select', () => {
     baseElement = render(
       <Select
         label={label}
-        selectionMode={'multiple'}
+        selectionMode='multiple'
         options={options}
         onSelectionChange={onchange}
       />,
@@ -180,10 +180,10 @@ describe('given an invalid select', () => {
     baseElement = render(
       <Select
         label={label}
-        selectionMode={'single'}
+        selectionMode='single'
         options={options}
         isInvalid={true}
-        errorMessage={'error'}
+        errorMessage='error'
       />,
     )
   })
