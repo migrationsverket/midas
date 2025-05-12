@@ -5,8 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "commit": "git-cz",
-    "build-storybook": "npx nx run components:build-storybook"
+    "commit": "git-cz"
   },
   "private": false,
   "dependencies": {

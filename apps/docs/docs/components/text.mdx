@@ -3,7 +3,7 @@ title: Text
 ---
 
 import { Text, Label } from '@midas-ds/components'
-import { PropTable } from '@site/src/components/propsTable'
+import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -85,7 +85,7 @@ Egenskapen `elementType` kan användas för att ändra textens DOM-element.
 I Midas används `Text` internt i formulärkomponenter för att skriva ut en hjälptext `slot='description'`.
 
 ```tsx
-<Label htmlFor="name" variant="label-02">Fullständigt namn</Label>
+<Label htmlFor="name">Fullständigt namn</Label>
 // highlight-start
 <Text slot="description">Både för och efternamn</Text>
 // highlight-end
@@ -93,12 +93,7 @@ I Midas används `Text` internt i formulärkomponenter för att skriva ut en hj�
 ```
 
 <div className='card'>
-  <Label
-    htmlFor='name'
-    variant='label-02'
-  >
-    {'Fullständigt namn'}
-  </Label>
+  <Label htmlFor='name'>Fullständigt namn</Label>
   <Text slot='description'>Både för och efternamn</Text>
   <input
     id='name'

@@ -44,7 +44,7 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
       {...props}
       className={clsx(styles.radioGroup, className)}
     >
-      {label && <Label variant='label-02'>{label}</Label>}
+      {label && <Label>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>

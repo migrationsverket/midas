@@ -47,12 +47,26 @@ export const baseColors = {
   signalGreen100: '#008d3c',
   signalYellow10: '#fff8e1',
   signalYellow100: '#fdb813',
+  signalRed10: '#ffefef',
   signalRed20: '#ffdfdf',
   signalRed30: '#fcc8c8',
+  signalRed40: '#f9b0b0',
+  signalRed50: '#f69999',
+  signalRed60: '#f38181',
+  signalRed70: '#ef6a6a',
   signalRed80: '#eb4e4e',
+  signalRed90: '#e93b3b',
   signalRed100: '#e62323',
-  signalRed160: '#b31b1b',
-  signalRed180: '#801313',
+  signalRed110: '#d12020',
+  signalRed120: '#bc1d1d',
+  signalRed130: '#a71919',
+  signalRed140: '#921616',
+  signalRed150: '#7d1313',
+  signalRed160: '#691010',
+  signalRed170: '#540d0d',
+  signalRed180: '#3f0a0a',
+  signalRed190: '#2a0606',
+  signalRed200: '#150303',
 }
 
 export const typography = {
@@ -162,10 +176,9 @@ export const semantic = {
   borderSecondary: `light-dark(${baseColors.gray110}, ${baseColors.gray90})`,
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
   borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
-  /*
-   * @deprecated
-   * Deprecated in 8.2.0
-   * Please use --support-border-warning instead.
+
+  /**
+   * @deprecated Deprecated in 8.2.0. Use `supportBorderWarning` instead.
    */
   borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
@@ -214,7 +227,11 @@ export const semantic = {
   textOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
   textInverse: `light-dark(${baseColors.gray10}, ${baseColors.gray200})`,
   textDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
+  /**
+   * @deprecated Deprecated in 8.4.0 - Please use textWarning instead.
+   */
   textInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
+  textWarning: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   textPlaceholder: `light-dark(${baseColors.gray70}, ${baseColors.gray140})`,
 
   buttonBackgroundPrimary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
@@ -226,8 +243,8 @@ export const semantic = {
   buttonBackgroundTertiaryHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
   buttonBackgroundTertiaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
   buttonBackgroundDanger: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
-  buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed160}, ${baseColors.signalRed160})`,
-  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed180}, ${baseColors.signalRed180})`,
+  buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed120})`,
+  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed150})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBorderSecondary: `light-dark(${baseColors.blue170}, ${baseColors.gray10})`,

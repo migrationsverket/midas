@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --font-size-30, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-secondary, --border-subtle, --breakpoint-sm, --field-hover-02, --border-invalid, --icon-tertiary from tokens;
+@value --font-family, --text-disabled, --font-size-30, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-secondary, --border-subtle, --breakpoint-sm, --field-hover-02, --support-border-warning, --icon-tertiary from tokens;
 
 .radioGroup {
   font-family: --font-family;
@@ -92,7 +92,7 @@
 
   &[data-invalid] {
     &::before {
-      border: 0.125rem solid --border-invalid;
+      border: 0.125rem solid --support-border-warning;
     }
   }
 
@@ -106,7 +106,7 @@
     }
 
     &[data-invalid] {
-      border: 2px solid --border-invalid;
+      border: 2px solid --support-border-warning;
     }
 
     &[data-disabled] {

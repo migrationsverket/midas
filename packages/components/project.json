@@ -51,8 +51,7 @@
       },
       "configurations": {
         "ci": {
-          "quiet": true,
-          "outputDir": "dist/docs/storybook"
+          "quiet": true
         }
       }
     },
@@ -66,7 +65,7 @@
           "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
         },
         "remote": {
-          "command": "test-storybook -c packages/components/.storybook --url=https://designsystem.migrationsverket.se/storybook"
+          "command": "test-storybook -c packages/components/.storybook --url=https://main--6810d578d5507438df0f0d22.chromatic.com"
         },
         "all-browsers": {
           "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
@@ -86,7 +85,7 @@
           "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
         },
         "remote": {
-          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=https://designsystem.migrationsverket.se/storybook"
+          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=https://main--6810d578d5507438df0f0d22.chromatic.com"
         },
         "all-browsers": {
           "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"

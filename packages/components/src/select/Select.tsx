@@ -233,7 +233,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           <div className={styles.multiSelect}>
             {label && (
               <Label
-                variant='label-02'
                 {...labelProps}
                 slot='label'
                 className={clsx(styles.selectLabel, {
@@ -352,7 +351,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                                 tabIndex={-1}
                               />
                             </div>
-                            <span>{'Select All'}</span>
+                            <span>Select All</span>
                           </div>
                         </button>
                       </FocusRing>

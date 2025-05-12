@@ -1,12 +1,18 @@
 import useGlobalData from '@docusaurus/useGlobalData'
 import { Accordion, AccordionItem } from '@midas-ds/components'
+import { semantic } from '@midas-ds/components/theme'
 import { ComponentDoc, Props } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
 import ReactMarkdown from 'react-markdown'
 import Lowlight from 'react-lowlight'
 import 'react-lowlight/common'
-import { DialogTrigger, Popover, Pressable } from 'react-aria-components'
-import { semantic } from '@midas-ds/components/theme'
+import {
+  Dialog,
+  DialogTrigger,
+  OverlayArrow,
+  Popover,
+  Pressable,
+} from 'react-aria-components'
 
 export const DisplayCompositeTypes = ({ props }: Props) => {
   switch (props.type.name) {
@@ -27,29 +33,42 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
             </span>
           </Pressable>
           <Popover
-            style={{
-              background: semantic.background,
-              padding: '0.5rem',
-              margin: '2rem',
-              border: `1px solid ${semantic.textPrimary}`,
-            }}
-            placement='top'
+            style={
+              {
+                '--background': semantic.background,
+                '--border': semantic.borderPrimary,
+              } as React.CSSProperties
+            }
+            className={styles.popover}
           >
-            <span className='hljs-code'>
-              {props.type.value.map((r: Record<'value', string>, i: number) => {
-                return (
-                  <span key={`${r.value}${i}`}>
-                    {i === 0 ? ' ' : ' | '}
-                    <Lowlight
-                      value={r.value.replace(/"/g, "'")}
-                      inline
-                      language='typescript'
-                      markers={[]}
-                    />
-                  </span>
-                )
-              })}
-            </span>
+            <OverlayArrow className={styles.arrow}>
+              <svg
+                width={12}
+                height={12}
+                viewBox='0 0 12 12'
+              >
+                <path d='M0 0 L6 6 L12 0' />
+              </svg>
+            </OverlayArrow>
+            <Dialog>
+              <span className='hljs-code'>
+                {props.type.value.map(
+                  (r: Record<'value', string>, i: number) => {
+                    return (
+                      <span key={`${r.value}${i}`}>
+                        {i === 0 ? ' ' : ' | '}
+                        <Lowlight
+                          value={r.value.replace(/"/g, "'")}
+                          inline
+                          language='typescript'
+                          markers={[]}
+                        />
+                      </span>
+                    )
+                  },
+                )}
+              </span>
+            </Dialog>
           </Popover>
         </DialogTrigger>
       )
@@ -94,22 +113,22 @@ export const PropTable = ({ name, defaultOpen = true }) => {
     { events: {}, accessibility: {}, rest: {} },
   )
 
-  const Table = ({ propGroup, showDefault = true }) => {
+  const Grid = ({ propGroup, showDefault = true }) => {
     return (
-      <table className={styles.table}>
-        <thead className={styles.thead}>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            {showDefault && <th>Default</th>}
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody className={styles.tbody}>
-          {Object.keys(propGroup).map(key => {
-            return (
+      <div className={styles.propsGridTable}>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>{showDefault && 'Default'}</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(propGroup).map(key => (
               <tr key={key}>
-                <td>
+                <td data-title='Name'>
                   <Lowlight
                     value={key}
                     inline
@@ -118,11 +137,11 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                   />
                   {props[key].required && ' *'}
                 </td>
-                <td>
+                <td data-title='Type'>
                   <DisplayCompositeTypes props={props[key]} />
                 </td>
-                {showDefault && (
-                  <td>
+                {showDefault ? (
+                  <td data-title='Default'>
                     {props[key].defaultValue ? (
                       <Lowlight
                         value={props[key].defaultValue.value}
@@ -134,15 +153,17 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                       '-'
                     )}
                   </td>
+                ) : (
+                  <td />
                 )}
-                <td>
+                <td data-title='Description'>
                   <ReactMarkdown>{props[key].description}</ReactMarkdown>
                 </td>
               </tr>
-            )
-          })}
-        </tbody>
-      </table>
+            ))}
+          </tbody>
+        </table>
+      </div>
     )
   }
 
@@ -158,7 +179,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           title='Props'
           className={styles.accordionItem}
         >
-          <Table propGroup={rest} />
+          <Grid propGroup={rest} />
         </AccordionItem>
       )}
       {Object.getOwnPropertyNames(events).length !== 0 && (
@@ -167,7 +188,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           title='Events'
           className={styles.accordionItem}
         >
-          <Table
+          <Grid
             propGroup={events}
             showDefault={false}
           />
@@ -179,7 +200,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           title='Tillgänglighet'
           className={styles.accordionItem}
         >
-          <Table
+          <Grid
             propGroup={accessibility}
             showDefault={false}
           />

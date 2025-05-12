@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family,--text-placeholder, --border-invalid, --focus, --field-hover-01, --border-primary, --field-01, --text-primary, --text-disabled from tokens;
+@value --font-family,--text-placeholder, --support-border-warning, --focus, --field-hover-01, --border-primary, --field-01, --text-primary, --text-disabled from tokens;
 
 .dateField {
   font-family: --font-family;
@@ -31,6 +31,6 @@
 
   &:has([data-invalid]) {
     border: none;
-    box-shadow: inset 0 0 0 3px --border-invalid;
+    box-shadow: inset 0 0 0 3px --support-border-warning;
   }
 }
