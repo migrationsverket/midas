@@ -29,38 +29,36 @@ export const Primary = {
     <Flex fluid={args.fluid}>
       <FlexItem col={3}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
       <FlexItem col={6}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
       <FlexItem col={3}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
       <FlexItem col={4}>
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
       <FlexItem col={4}>
         <Card
-          title={'Ett kort'}
-          content={
-            'Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
-          }
+          title='Ett kort'
+          content='Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
@@ -69,22 +67,22 @@ export const Primary = {
         offset={1}
       >
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
-      <FlexItem col={'auto'}>
+      <FlexItem col='auto'>
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
       <FlexItem>
         <Card
-          title={'Ett kort'}
-          content={'Som är i ett grid'}
+          title='Ett kort'
+          content='Som är i ett grid'
           link={{ children: 'Länk', href: '#' }}
         />
       </FlexItem>
