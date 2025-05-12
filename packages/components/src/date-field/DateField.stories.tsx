@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { DateField } from './DateField'
 import { CalendarDate } from '@internationalized/date'
 
-const meta: Meta<typeof DateField> = {
+type Story = StoryObj<typeof DateField>
+
+export default {
   component: DateField,
   title: 'Components/DateField',
   tags: ['autodocs'],
@@ -25,29 +27,29 @@ const meta: Meta<typeof DateField> = {
   },
   args: {
     errorPosition: 'top',
-  },
-}
-export default meta
-type Story = StoryObj<typeof DateField>
-
-/** Don't put format in description, it changes with browser language settings! */
-export const Default: Story = {
-  args: {
     label: 'Välj ett datum',
     description: 'Vilket som helst',
+  },
+} as Meta<typeof DateField>
+
+/** Don't put format in description, it changes with browser language settings! */
+export const Default: Story = {}
+
+export const MediumSize: Story = {
+  args: {
+    size: 'medium',
   },
 }
 
 export const Invalid: Story = {
   args: {
-    ...Default.args,
     isInvalid: true,
     errorMessage: 'Date must be tjugonionde maj',
   },
 }
+
 export const Disabled: Story = {
   args: {
-    ...Default.args,
     isDisabled: true,
   },
 }
@@ -55,7 +57,6 @@ export const Disabled: Story = {
 /** When using uncontrolled value */
 export const WithDefaultValue: Story = {
   args: {
-    ...Default.args,
     defaultValue: new CalendarDate(1995, 5, 29),
   },
 }

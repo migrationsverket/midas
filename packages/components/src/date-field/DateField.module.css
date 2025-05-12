@@ -11,13 +11,17 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  min-height: 3rem;
+  height: 3rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: --field-01;
   border-bottom: 1px solid --border-primary;
   padding: 0 1rem;
+
+  &.medium {
+    height: 2.5rem;
+  }
 
   &[data-disabled] {
     border: none;
