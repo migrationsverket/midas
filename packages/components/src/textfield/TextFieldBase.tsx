@@ -12,10 +12,11 @@ import { Text } from '../text/Text'
 import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 import { clsx } from 'clsx'
+import { RezisableComponent } from '../common/types'
 
-export type Size = 'medium' | 'large'
-
-export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
+export interface TextFieldBaseProps
+  extends RezisableComponent,
+    Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
   /** Specify label displayed above the TextField*/
   label?: string
@@ -30,10 +31,6 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    * false
    */
   showCounter?: boolean
-  /** Component size (large: height 48px, medium: height 40px)
-   *  @default 'large'
-   * */
-  size?: Size
 }
 
 export const TextFieldBase = React.forwardRef<
