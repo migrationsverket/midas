@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --size-50, --size-70, --border-disabled, --field-disabled, --text-primary, --border-invalid, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
+@value --focus, --size-50, --size-70, --border-disabled, --field-disabled, --text-primary, --support-border-warning, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
 
 .textField {
   display: grid;
@@ -66,7 +66,7 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 2px --border-invalid;
+    box-shadow: inset 0 0 0 2px --support-border-warning;
   }
 
   &[data-disabled] {
@@ -124,7 +124,7 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 2px --border-invalid;
+    box-shadow: inset 0 0 0 2px --support-border-warning;
   }
 
   &[data-disabled] {

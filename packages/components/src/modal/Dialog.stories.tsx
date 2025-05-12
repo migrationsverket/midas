@@ -23,15 +23,15 @@ export default {
       >
         <Select
           autoFocus
-          placeholder={'Select...'}
+          placeholder='Select...'
           defaultSelectedKeys={['kiwi']}
-          label={'Select fruits'}
-          selectionMode={'multiple'}
+          label='Select fruits'
+          selectionMode='multiple'
           options={options}
           isClearable
           isSelectableAll={false}
         />
-        <Button slot={'close'}>Submit</Button>
+        <Button slot='close'>Submit</Button>
       </Modal>
     </DialogTrigger>
   ),
@@ -162,7 +162,7 @@ export const Scrollable: Story = {
           fugit? Ratione adipisci dolor saepe nam fugit provident asperiores
           voluptas! Molestiae, cumque.
         </Text>
-        <Button slot={'close'}>Submit</Button>
+        <Button slot='close'>Submit</Button>
       </Modal>
     </DialogTrigger>
   ),

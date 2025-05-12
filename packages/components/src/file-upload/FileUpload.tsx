@@ -72,7 +72,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
 
   return (
     <div className={styles.container}>
-      {label && <Label variant='label-02'>{label}</Label>}
+      {label && <Label>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
       <AriaFileTrigger
         allowsMultiple={allowsMultiple}

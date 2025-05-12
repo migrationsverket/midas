@@ -1,9 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-invalid, --field-01, --border-primary, --focus, --border-invalid, --icon-primary, --text-primary from tokens;
+@value --font-family, --text-warning, --field-01, --border-primary, --focus, --support-border-warning, --icon-primary, --text-primary from tokens;
 
 .fieldError {
   font-family: --font-family;
-  color: --text-invalid;
+  color: --text-warning;
   grid-area: Error;
   font-size: 0.875rem;
   display: flex;
@@ -18,7 +18,7 @@
 
   &::before {
     content: '';
-    background-color: --text-invalid;
+    background-color: --text-warning;
     display: block;
     width: 1rem;
     height: 1rem;
@@ -93,7 +93,7 @@
   }
 
   &[aria-invalid='true'] {
-    border: 2px solid --border-invalid;
+    border: 2px solid --support-border-warning;
   }
 
   &[data-disabled] {

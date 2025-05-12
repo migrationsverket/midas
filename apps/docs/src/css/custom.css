@@ -435,4 +435,8 @@ table {
   background-color: #ffdfdf; /* signal-red-20 */
   padding: 10px;
   text-align: left;
+
+  .no-margin-children p {
+    margin-bottom: 0;
+  }
 }

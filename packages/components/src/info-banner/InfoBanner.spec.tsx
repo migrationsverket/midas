@@ -6,10 +6,10 @@ describe('InfoBanner', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
       <InfoBanner
-        type={'info'}
-        title={'Title'}
-        message={'Message'}
-      />
+        type='info'
+        title='Title'
+        message='Message'
+      />,
     )
     expect(baseElement).toBeTruthy()
   })

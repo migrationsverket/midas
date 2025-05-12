@@ -28,8 +28,8 @@ export const Grid: React.FC<GridProps> = ({
 }) => {
   return (
     <div
-      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
       {...rest}
+      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
     >
       <div className={styles.grid}>{children}</div>
     </div>

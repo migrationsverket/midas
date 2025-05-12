@@ -1,3 +1,15 @@
+# 9.0.0
+
+### 🩹 Fixes
+
+- **info-banner:** add correct line-height ([#540](https://github.com/migrationsverket/midas/pull/540))
+- **grid:** prevent midas classnames to get overwritten ([#541](https://github.com/migrationsverket/midas/pull/541))
+- **textfield:** merge textfield and input/textarea native dom props ([#499](https://github.com/migrationsverket/midas/pull/499))
+
+### Documentation Changes
+
+- **toast:** fix local example in storybook ([#542](https://github.com/migrationsverket/midas/pull/542))
+
 ## 8.3.0
 
 ### 🚀 Features

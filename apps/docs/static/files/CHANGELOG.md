@@ -1,3 +1,39 @@
+## 9.0.0
+
+#### 🩹 Fixes
+
+- **info-banner:** add correct line-height ([#540](https://github.com/migrationsverket/midas/pull/540))
+- **grid:** prevent midas classnames to get overwritten ([#541](https://github.com/migrationsverket/midas/pull/541))
+- **textfield:** merge textfield and input/textarea native dom props ([#499](https://github.com/migrationsverket/midas/pull/499))
+
+#### Documentation Changes
+
+- **toast:** fix local example in storybook ([#542](https://github.com/migrationsverket/midas/pull/542))
+
+### 8.3.0
+
+#### 🚀 Features
+
+- **theme:** use `--support-border-warning` instead of `--border-invalid` ([#518](https://github.com/migrationsverket/midas/pull/518))
+- **textfield:** add medium size variant ([#520](https://github.com/migrationsverket/midas/pull/520))
+- **layout:** change font weight for active menu item ([57e2485234](https://github.com/migrationsverket/midas/commit/57e2485234))
+- **layout:** change background color for menu item ([d9ffc16bb6](https://github.com/migrationsverket/midas/commit/d9ffc16bb6))
+
+#### 🩹 Fixes
+
+- **modal:** adjust modal header when content is scollable ([#527](https://github.com/migrationsverket/midas/pull/527))
+- **combobox:** add disabled color to the icon in disabled state ([9cd5657149](https://github.com/migrationsverket/midas/commit/9cd5657149))
+- **select:** add disabled styling to description ([4cabb0c8ae](https://github.com/migrationsverket/midas/commit/4cabb0c8ae))
+- **select:** change invalid border from 3px to 2 px ([834f1f8fdc](https://github.com/migrationsverket/midas/commit/834f1f8fdc))
+- **accordion:** add a minimal padding to allow items with margin-bottom ([e0b2d8058b](https://github.com/migrationsverket/midas/commit/e0b2d8058b))
+- **accordion:** remove padding bottom for last uncontained accordionitem ([463a7fa29e](https://github.com/migrationsverket/midas/commit/463a7fa29e))
+- **textfield:** remove opacity from disabled ([0332d83cb6](https://github.com/migrationsverket/midas/commit/0332d83cb6))
+- **textfield:** add border bottom in disabled and change ivalid border to 2px ([2bcd1d5beb](https://github.com/migrationsverket/midas/commit/2bcd1d5beb))
+
+#### Documentation Changes
+
+- improvements to preview 💅 🔍 ✨ ([#530](https://github.com/migrationsverket/midas/pull/530))
+
 ### 8.2.0
 
 #### 🚀 Features
