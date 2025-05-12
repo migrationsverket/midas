@@ -6831,7 +6831,7 @@ CSS variables, meant to be overridden by final theme
 
 .root_dwc1.contained_snuo {
     --gap: 0.25rem;
-    --item-padding: 0.875rem;
+    --item-padding: 0.75rem;
     --content-padding: 1rem;
     --border-color: light-dark(#737373, #8c8c8c);
     --border: 1px solid var(--border-color);
@@ -6906,7 +6906,7 @@ CSS variables, meant to be overridden by final theme
 .trigger_H4x6 .triggerButton_v7ly {
     color: var(--heading-color);
     width: 100%;
-    padding: 0.75rem;
+    padding: var(--item-padding);
     align-items: flex-start;
   }
 
