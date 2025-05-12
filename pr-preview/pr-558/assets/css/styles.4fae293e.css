@@ -7270,7 +7270,7 @@ CSS variables, meant to be overridden by final theme
 .inputField_RpLn {
   box-sizing: border-box;
   width: 100%;
-  height: 3rem;
+  min-height: 3rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -7280,7 +7280,7 @@ CSS variables, meant to be overridden by final theme
 }
 
 .inputField_RpLn.medium_OzpD {
-    height: 2.5rem;
+    min-height: 2.5rem;
   }
 
 .inputField_RpLn[data-disabled] {
