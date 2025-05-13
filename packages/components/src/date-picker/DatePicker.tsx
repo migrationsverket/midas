@@ -16,12 +16,17 @@ import { FieldError } from '../field-error'
 import { Label } from '../label'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
+import { Size } from '../common/types'
 
 interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   label?: string
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({

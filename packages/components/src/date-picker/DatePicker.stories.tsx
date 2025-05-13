@@ -32,7 +32,42 @@ const meta: Meta<typeof DatePicker> = {
 export default meta
 type Story = StoryObj<typeof DatePicker>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  play: async ({ step, canvas }) => {
+    await step('it should be large per default', async () => {
+      await expect(canvas.getByRole('group')).toHaveStyle({
+        height: '48px',
+      })
+    })
+  },
+}
+
+export const MediumSize: Story = {
+  args: {
+    size: 'medium',
+  },
+  play: async ({ step, canvas }) => {
+    await step('it should be medium sized', async () => {
+      await expect(canvas.getByRole('group')).toHaveStyle({
+        height: '40px',
+      })
+    })
+  },
+}
+
+export const MediumSizeInvalid: Story = {
+  args: {
+    size: 'medium',
+    isInvalid: true,
+  },
+}
+
+export const MediumSizeDisabled: Story = {
+  args: {
+    size: 'medium',
+    isDisabled: true,
+  },
+}
 
 export const WithTime: Story = {
   args: {
