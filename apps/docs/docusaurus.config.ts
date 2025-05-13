@@ -44,7 +44,12 @@ const config: Config = {
     locales: ['sv'],
   },
   customFields: {
-    currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(/\//g, '-'),
+    currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(
+      /-{2,}/g,
+      '-',
+    )
+      .replace(/[/_]/g, '-')
+      .slice(0, 37),
   },
   plugins: [
     [
