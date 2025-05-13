@@ -407,6 +407,10 @@ html[data-theme='dark'] .navbar--github-link::before {
     no-repeat;
 }
 
+.no-margin-children p {
+  margin-bottom: 0;
+}
+
 /* ---- Table for language page --- */
 
 .table-cell-green {
@@ -435,8 +439,4 @@ table {
   background-color: #ffdfdf; /* signal-red-20 */
   padding: 10px;
   text-align: left;
-
-  .no-margin-children p {
-    margin-bottom: 0;
-  }
 }
