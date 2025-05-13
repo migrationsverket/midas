@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4146],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2494],{
 
-/***/ 65114:
+/***/ 83287:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,28 +13,26 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_dev_forms_mdx_ac3_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_design_patterns_validation_mdx_f40_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-dev-forms-mdx-ac3.json
-const site_docs_dev_forms_mdx_ac3_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"dev/forms","title":"Formulär","description":"Utvecklarinstruktioner för formulär","source":"@site/docs/dev/forms.mdx","sourceDirName":"dev","slug":"/dev/forms","permalink":"/pr-preview/pr-536/dev/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Formulär","description":"Utvecklarinstruktioner för formulär","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-validation-mdx-f40.json
+const site_docs_design_patterns_validation_mdx_f40_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/validation","title":"Validering i formulär","description":"Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Vi har två sätt att visa fel: direkt vid fältet eller som en lista högst upp på sidan när formuläret skickas in.","source":"@site/docs/design-patterns/validation.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/validation","permalink":"/pr-preview/pr-536/design-patterns/validation","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
 // EXTERNAL MODULE: ./apps/docs/src/components/examples/form/FormExamples.tsx + 1 modules
 var FormExamples = __webpack_require__(12225);
-;// ./apps/docs/docs/dev/forms.mdx
+;// ./apps/docs/docs/design-patterns/validation.mdx
 
 
 const frontMatter = {
-	title: 'Formulär',
-	description: 'Utvecklarinstruktioner för formulär',
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = 'Formulär';
+const contentTitle = 'Validering i formulär';
 
 const assets = {
 
@@ -43,249 +41,55 @@ const assets = {
 
 
 
+
 const toc = [{
-  "value": "React Aria &lt;Form&gt;",
-  "id": "react-aria-form",
-  "level": 3
-}, {
-  "value": "Normal användning",
-  "id": "normal-användning",
+  "value": "Felmeddelande",
+  "id": "felmeddelande",
   "level": 2
 }, {
-  "value": "Uncontrolled form",
-  "id": "uncontrolled-form",
-  "level": 3
-}, {
-  "value": "Controlled form",
-  "id": "controlled-form",
-  "level": 3
-}, {
-  "value": "Validering",
-  "id": "validering",
+  "value": "Direktvalidering",
+  "id": "direktvalidering",
   "level": 2
-}, {
-  "value": "Realtime validation",
-  "id": "realtime-validation",
-  "level": 3
-}, {
-  "value": "Server validation",
-  "id": "server-validation",
-  "level": 3
 }, {
   "value": "Felmeddelandelista",
   "id": "felmeddelandelista",
-  "level": 3
-}, {
-  "value": "Tredjeparts klientformulär",
-  "id": "tredjeparts-klientformulär",
   "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
-    a: "a",
-    admonition: "admonition",
-    blockquote: "blockquote",
     code: "code",
     h1: "h1",
     h2: "h2",
-    h3: "h3",
     header: "header",
     p: "p",
-    pre: "pre",
-    strong: "strong",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(_components.header, {
       children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "formulär",
-        children: "Formulär"
+        id: "validering-i-formulär",
+        children: "Validering i formulär"
       })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Midas formulärskomponenter bygger på React Aria och fungerar att användas i formulär via flera olika\nalternativ. För referens och mer detaljer, se ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/forms.html",
-        children: "React Aria Forms"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.blockquote, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Midas formulärskomponenter är en komposition av React Arias <Label>, <FieldError> och själva formulärskomponenten\noch därmed finns stöd för tillgänglighetsverktyg som skärmläsare inbyggt utan att pussla ihop komponenterna var för sig. Så\nlänge ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "name"
-        }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "label"
-        }), " är specificerat kan man förvänta sig att komponenten normalt i de flesta formulär."]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Har du problem med att integrera Midas formulärskomponenter i er applikation eller har du hittat en bugg? Skapa en\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://github.com/migrationsverket/midas/issues/new/choose",
-        children: "issue"
-      }), " så hjälper vi dig gärna!"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "react-aria-form",
-      children: "React Aria <Form>"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Komponenterna går att integrera normalt med ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "<form>"
-      }), " (native HTML) men det rekommenderas att använda\n", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "<Form>"
-      }), " från React Aria som är en överlagring med lite extra funktioner för validering."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "// highlight-next-line\nimport { Form } from 'react-aria-components'\nimport { TextField } from '@midas-ds/components'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "//highlight-next-line\n<Form>\n  <TextField\n    label='Namn'\n    name='name'\n  />\n  //highlight-next-line\n</Form>\n"
-      })
+    }), "\n", "\n", "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Vi har två sätt att visa fel: direkt vid fältet eller som en lista högst upp på sidan när formuläret skickas in."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "normal-användning",
-      children: "Normal användning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Den enklaste varianten för att använda ett formulär är via browserns ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://developer.mozilla.org/en-US/docs/Web/API/FormData",
-        children: "FormData API"
-      }), ". Submit är inaktiverat\nnär formuläret är ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "invalid"
-      }), " precis som html-form men detta beteende kan styras via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationBehavior"
-      }), ".\nProp ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "name"
-      }), " fungerar precis som native form och är referens till fältet som avses. Om något fält är ogiltigt\nfokuseras det automatiskt vid ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "submit"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "uncontrolled-form",
-      children: "Uncontrolled form"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const UncontrolledForm = () => {\n  const [result, setResult] = React.useState(null)\n  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const data = Object.fromEntries(new FormData(e.currentTarget))\n    setResult(data)\n  }\n\n  return (\n    <>\n      <Form\n        onSubmit={handleSubmit}\n        // use 'aria' to allow submit when invalid\n        validationBehavior='native'\n      >\n        <TextField\n          label='Namn'\n          name='name'\n          isRequired\n        />\n        <TextField\n          label='E-post'\n          type='email'\n          name='email'\n          isRequired\n        />\n        <CheckboxGroup\n          label='Spara mina uppgifter'\n          name='saveData'\n          isRequired\n        >\n          <Checkbox value='agree'>Jag godkänner</Checkbox>\n        </CheckboxGroup>\n        <ButtonGroup>\n          <Button type='submit'>Skicka</Button>\n          <Button\n            type='reset'\n            variant='secondary'\n          >\n            Rensa\n          </Button>\n        </ButtonGroup>\n      </Form>\n      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>\n    </>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(FormExamples/* UncontrolledForm */.gQ, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "controlled-form",
-      children: "Controlled form"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För tillgång till formulärsdata även innan ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "submit"
-      }), ", använd ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "controlled"
-      }), " version av komponenterna\noch hantera state via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onChange"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "value"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const ControlledForm = () => {\n  const [name, setName] = React.useState('')\n  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n  }\n  return (\n    <Form onSubmit={onSubmit}>\n      <TextField\n        name='name'\n        label='Name'\n        onChange={setName}\n        isRequired\n      />\n      <div>Ditt namn: {name}</div>\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(FormExamples/* ControlledForm */.np, {})
+      id: "felmeddelande",
+      children: "Felmeddelande"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning."
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Komponenterna funkar enligt normal HTML ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "constraint validation"
-      }), " och bygger på felmeddelanden från browser,\ndessa presenteras på det språket som är valt via inställningarna. Se dokumentation om ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/dev/localization",
-        children: "lokalisering"
-      }), "\nför mer information."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "realtime-validation",
-      children: "Realtime validation"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Validering görs som standard vid ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "blur"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "submit"
-      }), ". Ibland kan det vara önskvärt att ge användaren snabbare\nfeedback, till exempel för att välja ett godkänt lösenord."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const RealtimeValidation = () => {\n  let [password, setPassword] = React.useState('')\n  let errors = []\n  if (password.length < 8) {\n    errors.push('Lösenordet måste vara fler än 8 tecken.')\n  }\n  if ((password.match(/[A-Z]/g) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst 2 versaler.')\n  }\n  if ((password.match(/[^a-z]/gi) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst två symboler.')\n  }\n\n  return (\n    <>\n      <TextField\n        label='Lösenord'\n        style={{ whiteSpace: 'pre-line' }}\n        isInvalid={errors.length > 0}\n        value={password}\n        onChange={setPassword}\n        errorMessage={errors.join('\\n')}\n        errorPosition='bottom'\n      />\n    </>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(FormExamples/* RealtimeValidation */.Lm, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
-      type: "tip",
-      children: (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Felmeddelande kan presenteras under eller över formulärskomponenten via ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "errorPosition"
-        }), ". Se ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/design-patterns/forms/#position-av-felmeddelande",
-          children: "mönster"
-        }), "\nför mer information."]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "server-validation",
-      children: "Server validation"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Förutom att validera input på klienten bör ett normalt mönster vara att validera på serversidan också. En metod är att\nsätta prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationErrors"
-      }), " på <Form> och presentera felmeddelanden den vägen. Objektet ska då matcha\n", (0,jsx_runtime.jsx)(_components.code, {
-        children: "name"
-      }), " props på formulärsobjektet för att fungera med automatik. När inmatning ändras återställs felmeddelandet."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const ServerValidation = () => {\n  const [isWaiting, setIsWaiting] = React.useState(false)\n  // Fake server used in this example.\n  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))\n  async function callServer(data) {\n    setIsWaiting(true)\n    await delay(1000)\n    setIsWaiting(false)\n    return {\n      errors: {\n        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,\n      },\n    }\n  }\n  let [errors, setErrors] = React.useState({})\n  let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n\n    let data = Object.fromEntries(new FormData(e.currentTarget))\n    let result = await callServer(data)\n    setErrors(result.errors)\n  }\n\n  return (\n    <Form\n      validationErrors={errors}\n      onSubmit={onSubmit}\n      className={styles.form}\n    >\n      <TextField\n        label='Användarnamn'\n        name='username'\n        isRequired\n      />\n      <TextField\n        label='Lösenord'\n        name='password'\n        type='password'\n        isRequired\n      />\n      <ButtonGroup>\n        <Button type='submit'>\n          {isWaiting ? (\n            <>\n              <Spinner\n                isOnColor\n                small\n              />\n              Skickar...\n            </>\n          ) : (\n            'Skicka'\n          )}\n        </Button>\n      </ButtonGroup>\n    </Form>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(FormExamples/* ServerValidation */.PN, {})
-    }), "\n", (0,jsx_runtime.jsxs)(_components.blockquote, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Beroende på ramverk finns en uppsjö av olika tekniker för att åstadkomma serverside validation.\nPå ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "https://react-spectrum.adobe.com/react-aria/forms.html#server-validation",
-          children: "React Arias dokumentation"
-        }), "\nfinns information om hur det går att åstadkomma detta bland annat med ", (0,jsx_runtime.jsx)(_components.strong, {
-          children: "schema validation"
-        }), " och\n", (0,jsx_runtime.jsx)(_components.strong, {
-          children: "React Server Actions"
-        })]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "direktvalidering",
+      children: "Direktvalidering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "felmeddelandelista",
       children: "Felmeddelandelista"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om ett formulär valideras och har ogiltigta fält skall dessa presenteras i en översiktslista för att summera vad användaren behöver rätta till. För detta används en kombination av komponenterna ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "InfoBanner"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "Link"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const ErrorMessageList = () => {\n  const [isWaiting, setIsWaiting] = React.useState(false)\n  const [errors, setErrors] = React.useState<Record<string, string>>({})\n  const [invalidFields, setInvalidFields] = React.useState<Record<string, FormDataEntryValue>>({})\n\n  // Fake server used in this example.\n  const delay = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms))\n\n  async function callServer(data: Record<string, FormDataEntryValue>): Promise<{ errors: Record<string, string> }> {\n    setIsWaiting(true)\n    await delay(1000)\n    setIsWaiting(false)\n    return {\n      errors: {\n        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,\n        password: 'Lösenordet är tyvärr felaktigt, prova igen.',\n      },\n    }\n  }\n\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    setInvalidFields({})\n\n    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, FormDataEntryValue>\n    const result = await callServer(data)\n    setErrors(result.errors)\n  }\n\n  const onInvalid = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    setErrors({})\n\n    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, FormDataEntryValue>\n\n    setInvalidFields(data)\n  }\n\n  return (\n    <Form\n      validationErrors={errors}\n      onSubmit={onSubmit}\n      className={styles.form}\n      onInvalid={onInvalid}\n    >\n      {(Object.keys(invalidFields).length !== 0 || Object.keys(errors).length !== 0) && (\n        <InfoBanner\n          type='warning'\n          role='alert'\n          title='Kontrollera följande fält'\n        >\n          <ul>\n            {Object.keys(invalidFields).length !== 0 &&\n              Object.entries(invalidFields).map(([field, value]) => (\n                <li key={field}>\n                  <Link href={'#' + field}>{field} är ogiltigt.</Link>\n                </li>\n              ))}\n            {Object.keys(errors).length !== 0 &&\n              Object.entries(errors).map(([field, message]) => (\n                <li key={field}>\n                  <Link href={'#' + field}>{message}</Link>\n                </li>\n              ))}\n          </ul>\n        </InfoBanner>\n      )}\n      <TextField\n        id='username'\n        label='Användarnamn'\n        name='username'\n        isRequired\n      />\n      <TextField\n        id='password'\n        label='Lösenord'\n        name='password'\n        type='password'\n        isRequired\n      />\n      <ButtonGroup>\n        <Button type='submit'>\n          {isWaiting ? (\n            <>\n              <Spinner\n                isOnColor\n                small\n              />\n              Skickar...\n            </>\n          ) : (\n            'Skicka'\n          )}\n        </Button>\n      </ButtonGroup>\n    </Form>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(FormExamples/* ErrorMessageList */.q4, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tredjeparts-klientformulär",
-      children: "Tredjeparts klientformulär"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Det finns även olika tredjepartsbibliotek för att underlätta hantering av formulär på klienten. I princip ska det\ninte vara något hinder att använda dessa men det innebär ofta lite extra boilerplate. För till exempel\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://www.react-hook-form.com/",
-        children: "React Hook Form"
-      }), " går det att integrera Midas enligt exemplet nedan. Om du använder\nnågon annan teknik för att rendera formulär? Midas bygger i grunden på React Aria som i sin tur renderar native element\nför en förutsägbar DOM, därmed borde det oftast vara möjligt att integrera oavsett tekniken runtomkring."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["I utgångspunkt rekommenderar vi att utgå från React Aria ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "<Form>"
-      }), " då det innebär minst boilerplate men vi\nhjälper gärna till att få Midas komponenter att fungera i den teknikstacken ni har valt att arbeta med."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Controller, useForm } from 'react-hook-form';\n\nexport const HookFormExample = () => {\n  let {\n    handleSubmit,\n    control,\n  } = useForm()\n  let onSubmit = data => {\n    // Call your API here...\n  }\n\n  return (\n    <Form onSubmit={handleSubmit(onSubmit)}>\n      <Controller\n        control={control}\n        name='name'\n        rules={{ required: 'Name is required.' }}\n        render={({\n          field: { name, value, onChange, onBlur, ref },\n          fieldState: { invalid, error },\n        }) => (\n          <TextField\n            label=Name\"\n            name={name}\n            value={value}\n            onChange={onChange}\n            onBlur={onBlur}\n            isRequired\n            errorMessage={error?.message}\n            // Let React Hook Form handle validation instead of the browser.\n            validationBehavior='aria'\n            isInvalid={invalid}\n            // The ref is needed to focus invalid elements\n            ref={ref}\n          ></TextField>\n        )}\n      />\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
-      })
+      children: ["Om det finns fält som har valideringsfel efter att användaren skickat in formuläret eller gått vidare till en ny sida, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Infobanner"
+      }), " som innehåller länkar till de komponenter som behöver rättas till.\nLänkarnas text ska vara felmeddelandet från komponeterna med valideringsfel."]
     })]
   });
 }
@@ -315,10 +119,11 @@ __webpack_require__.d(__webpack_exports__, {
   np: () => (/* binding */ ControlledForm),
   q4: () => (/* binding */ ErrorMessageList),
   Lm: () => (/* binding */ RealtimeValidation),
-  RI: () => (/* binding */ RealtimeValidationEmail),
   PN: () => (/* binding */ ServerValidation),
   gQ: () => (/* binding */ UncontrolledForm)
 });
+
+// UNUSED EXPORTS: RealtimeValidationEmail
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regeneratorRuntime.js
 var regeneratorRuntime = __webpack_require__(90675);
@@ -332,7 +137,7 @@ var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Form.mjs
 var Form = __webpack_require__(23128);
 // EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 4 modules
-var TextField = __webpack_require__(350);
+var textfield_TextField = __webpack_require__(350);
 // EXTERNAL MODULE: ./packages/components/src/checkbox/CheckboxGroup.tsx
 var CheckboxGroup = __webpack_require__(74183);
 // EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx
@@ -351,9 +156,9 @@ var Link = __webpack_require__(78815);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/examples/form/FormExamples.tsx
 var UncontrolledForm=function UncontrolledForm(){var _React$useState=react.useState(null),result=_React$useState[0],setResult=_React$useState[1];var handleSubmit=function handleSubmit(e){e.preventDefault();var data=Object.fromEntries(new FormData(e.currentTarget));setResult(data);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{onSubmit:handleSubmit,className:FormExamples_module.form,validationBehavior:"native"// use 'aria' to allow submit when invalid
-,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Namn",name:"name",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"E-post",type:"email",name:"email",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroup/* CheckboxGroup */.$,{label:"Spara mina uppgifter",name:"saveData",isRequired:true,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"agree",children:"Jag godk\xE4nner"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"reset",variant:"secondary",children:"Rensa"})]})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:result&&/*#__PURE__*/(0,jsx_runtime.jsx)("pre",{children:JSON.stringify(result,null,2)})})]});};var ControlledForm=function ControlledForm(){var _React$useState2=react.useState(''),name=_React$useState2[0],setName=_React$useState2[1];var onSubmit=function onSubmit(e){e.preventDefault();};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{onSubmit:onSubmit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{name:"name",label:"Namn",onChange:setName,isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:["Ditt namn: ",name]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:"Skicka"})]});};var RealtimeValidation=function RealtimeValidation(){var _password$match,_password$match2;var _React$useState3=react.useState(''),password=_React$useState3[0],setPassword=_React$useState3[1];var errors=[];if(password.length<8){errors.push('Lösenordet måste vara fler än 8 tecken.');}if(((_password$match=password.match(/[A-Z]/g))!=null?_password$match:[]).length<2){errors.push('Lösenordet måste innehålla minst 2 versaler.');}if(((_password$match2=password.match(/[^a-z]/gi))!=null?_password$match2:[]).length<2){errors.push('Lösenordet måste innehålla minst två symboler.');}return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"L\xF6senord",style:{whiteSpace:'pre-line'},isInvalid:errors.length>0,value:password,onChange:setPassword,errorMessage:errors.join('\n'),errorPosition:"bottom"});};var RealtimeValidationEmail=function RealtimeValidationEmail(){var _React$useState4=react.useState(''),email=_React$useState4[0],setEmail=_React$useState4[1];var _React$useState5=react.useState(''),error=_React$useState5[0],setError=_React$useState5[1];var handleBlur=function handleBlur(){if(!email.includes('@')){setError('E-postadressen måste innehålla ett @-tecken.');}else{setError('');}};return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"E-postadress",description:"Ange en epostadress som inneh\xE5ller @",value:email,onChange:setEmail,onBlur:handleBlur,isInvalid:!!error,errorMessage:error,errorPosition:"top"});};var ServerValidation=function ServerValidation(){var _React$useState6=react.useState(false),isWaiting=_React$useState6[0],setIsWaiting=_React$useState6[1];// Fake server used in this example.
-var delay=function delay(ms){return new Promise(function(resolve){return setTimeout(resolve,ms);});};function callServer(_x){return _callServer.apply(this,arguments);}function _callServer(){_callServer=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee2(data){return (0,regeneratorRuntime/* default */.A)().wrap(function _callee2$(_context2){while(1)switch(_context2.prev=_context2.next){case 0:setIsWaiting(true);_context2.next=3;return delay(1000);case 3:setIsWaiting(false);return _context2.abrupt("return",{errors:{username:"Tyv\xE4rr, anv\xE4ndarnamnet "+data.username+" \xE4r upptaget."}});case 5:case"end":return _context2.stop();}},_callee2);}));return _callServer.apply(this,arguments);}var _React$useState7=react.useState({}),errors=_React$useState7[0],setErrors=_React$useState7[1];var onSubmit=/*#__PURE__*/function(){var _ref=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee(e){var data,result;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee$(_context){while(1)switch(_context.prev=_context.next){case 0:e.preventDefault();data=Object.fromEntries(new FormData(e.currentTarget));_context.next=4;return callServer(data);case 4:result=_context.sent;setErrors(result.errors);case 6:case"end":return _context.stop();}},_callee);}));return function onSubmit(_x2){return _ref.apply(this,arguments);};}();return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{validationErrors:errors,onSubmit:onSubmit,className:FormExamples_module.form,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Anv\xE4ndarnamn",name:"username",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"L\xF6senord",name:"password",type:"password",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(ButtonGroup/* ButtonGroup */.e,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:isWaiting?/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Spinner/* Spinner */.y,{isOnColor:true,small:true}),"Skickar..."]}):'Skicka'})})]});};var ErrorMessageList=function ErrorMessageList(){var _React$useState8=react.useState(false),isWaiting=_React$useState8[0],setIsWaiting=_React$useState8[1];var _React$useState9=react.useState({}),errors=_React$useState9[0],setErrors=_React$useState9[1];var _React$useState10=react.useState({}),invalidFields=_React$useState10[0],setInvalidFields=_React$useState10[1];// Fake server used in this example.
-var delay=function delay(ms){return new Promise(function(resolve){return setTimeout(resolve,ms);});};function callServer(_x3){return _callServer2.apply(this,arguments);}function _callServer2(){_callServer2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee4(data){return (0,regeneratorRuntime/* default */.A)().wrap(function _callee4$(_context4){while(1)switch(_context4.prev=_context4.next){case 0:setIsWaiting(true);_context4.next=3;return delay(1000);case 3:setIsWaiting(false);return _context4.abrupt("return",{errors:{username:"Anv\xE4ndarnamnet "+data.username+" \xE4r upptaget.",password:'Lösenordet är tyvärr felaktigt.'}});case 5:case"end":return _context4.stop();}},_callee4);}));return _callServer2.apply(this,arguments);}var onSubmit=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee3(e){var data,result;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee3$(_context3){while(1)switch(_context3.prev=_context3.next){case 0:e.preventDefault();setInvalidFields({});data=Object.fromEntries(new FormData(e.currentTarget));_context3.next=5;return callServer(data);case 5:result=_context3.sent;setErrors(result.errors);case 7:case"end":return _context3.stop();}},_callee3);}));return function onSubmit(_x4){return _ref2.apply(this,arguments);};}();var onInvalid=function onInvalid(e){e.preventDefault();setErrors({});var data=Object.fromEntries(new FormData(e.currentTarget));setInvalidFields(data);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{validationErrors:errors,onSubmit:onSubmit,className:FormExamples_module.form,onInvalid:onInvalid,children:[(Object.keys(invalidFields).length!==0||Object.keys(errors).length!==0)&&/*#__PURE__*/(0,jsx_runtime.jsx)(InfoBanner/* InfoBanner */.z,{type:"warning",role:"alert",title:"Kontrollera f\xF6ljande f\xE4lt",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("ul",{children:[Object.keys(invalidFields).length!==0&&Object.entries(invalidFields).map(function(_ref3){var field=_ref3[0],value=_ref3[1];return/*#__PURE__*/(0,jsx_runtime.jsx)("li",{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,{href:'#'+field,children:"Fyll i det h\xE4r f\xE4ltet"})},field);}),Object.keys(errors).length!==0&&Object.entries(errors).map(function(_ref4){var field=_ref4[0],message=_ref4[1];return/*#__PURE__*/(0,jsx_runtime.jsx)("li",{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,{href:'#'+field,children:message})},field);})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{id:"username",label:"Anv\xE4ndarnamn",name:"username",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{id:"password",label:"L\xF6senord",name:"password",type:"password",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(ButtonGroup/* ButtonGroup */.e,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:isWaiting?/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Spinner/* Spinner */.y,{isOnColor:true,small:true}),"Skickar..."]}):'Skicka'})})]});};
+,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{label:"Namn",name:"name",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{label:"E-post",type:"email",name:"email",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroup/* CheckboxGroup */.$,{label:"Spara mina uppgifter",name:"saveData",isRequired:true,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"agree",children:"Jag godk\xE4nner"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"reset",variant:"secondary",children:"Rensa"})]})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:result&&/*#__PURE__*/(0,jsx_runtime.jsx)("pre",{children:JSON.stringify(result,null,2)})})]});};var ControlledForm=function ControlledForm(){var _React$useState2=react.useState(''),name=_React$useState2[0],setName=_React$useState2[1];var onSubmit=function onSubmit(e){e.preventDefault();};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{onSubmit:onSubmit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{name:"name",label:"Namn",onChange:setName,isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:["Ditt namn: ",name]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:"Skicka"})]});};var RealtimeValidation=function RealtimeValidation(){var _password$match,_password$match2;var _React$useState3=react.useState(''),password=_React$useState3[0],setPassword=_React$useState3[1];var errors=[];if(password.length<8){errors.push('Lösenordet måste vara fler än 8 tecken.');}if(((_password$match=password.match(/[A-Z]/g))!=null?_password$match:[]).length<2){errors.push('Lösenordet måste innehålla minst 2 versaler.');}if(((_password$match2=password.match(/[^a-z]/gi))!=null?_password$match2:[]).length<2){errors.push('Lösenordet måste innehålla minst två symboler.');}return/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{label:"L\xF6senord",style:{whiteSpace:'pre-line'},isInvalid:errors.length>0,value:password,onChange:setPassword,errorMessage:errors.join('\n'),errorPosition:"bottom"});};var RealtimeValidationEmail=function RealtimeValidationEmail(){var _React$useState4=React.useState(''),email=_React$useState4[0],setEmail=_React$useState4[1];var _React$useState5=React.useState(''),error=_React$useState5[0],setError=_React$useState5[1];var handleBlur=function handleBlur(){if(!email.includes('@')){setError('E-postadressen måste innehålla ett @-tecken.');}else{setError('');}};return/*#__PURE__*/_jsx(TextField,{label:"E-postadress",description:"Ange en epostadress som inneh\xE5ller @",value:email,onChange:setEmail,onBlur:handleBlur,isInvalid:!!error,errorMessage:error,errorPosition:"top"});};var ServerValidation=function ServerValidation(){var _React$useState6=react.useState(false),isWaiting=_React$useState6[0],setIsWaiting=_React$useState6[1];// Fake server used in this example.
+var delay=function delay(ms){return new Promise(function(resolve){return setTimeout(resolve,ms);});};function callServer(_x){return _callServer.apply(this,arguments);}function _callServer(){_callServer=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee2(data){return (0,regeneratorRuntime/* default */.A)().wrap(function _callee2$(_context2){while(1)switch(_context2.prev=_context2.next){case 0:setIsWaiting(true);_context2.next=3;return delay(1000);case 3:setIsWaiting(false);return _context2.abrupt("return",{errors:{username:"Tyv\xE4rr, anv\xE4ndarnamnet "+data.username+" \xE4r upptaget."}});case 5:case"end":return _context2.stop();}},_callee2);}));return _callServer.apply(this,arguments);}var _React$useState7=react.useState({}),errors=_React$useState7[0],setErrors=_React$useState7[1];var onSubmit=/*#__PURE__*/function(){var _ref=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee(e){var data,result;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee$(_context){while(1)switch(_context.prev=_context.next){case 0:e.preventDefault();data=Object.fromEntries(new FormData(e.currentTarget));_context.next=4;return callServer(data);case 4:result=_context.sent;setErrors(result.errors);case 6:case"end":return _context.stop();}},_callee);}));return function onSubmit(_x2){return _ref.apply(this,arguments);};}();return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{validationErrors:errors,onSubmit:onSubmit,className:FormExamples_module.form,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{label:"Anv\xE4ndarnamn",name:"username",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{label:"L\xF6senord",name:"password",type:"password",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(ButtonGroup/* ButtonGroup */.e,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:isWaiting?/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Spinner/* Spinner */.y,{isOnColor:true,small:true}),"Skickar..."]}):'Skicka'})})]});};var ErrorMessageList=function ErrorMessageList(){var _React$useState8=react.useState(false),isWaiting=_React$useState8[0],setIsWaiting=_React$useState8[1];var _React$useState9=react.useState({}),errors=_React$useState9[0],setErrors=_React$useState9[1];var _React$useState10=react.useState({}),invalidFields=_React$useState10[0],setInvalidFields=_React$useState10[1];// Fake server used in this example.
+var delay=function delay(ms){return new Promise(function(resolve){return setTimeout(resolve,ms);});};function callServer(_x3){return _callServer2.apply(this,arguments);}function _callServer2(){_callServer2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee4(data){return (0,regeneratorRuntime/* default */.A)().wrap(function _callee4$(_context4){while(1)switch(_context4.prev=_context4.next){case 0:setIsWaiting(true);_context4.next=3;return delay(1000);case 3:setIsWaiting(false);return _context4.abrupt("return",{errors:{username:"Anv\xE4ndarnamnet "+data.username+" \xE4r upptaget.",password:'Lösenordet är tyvärr felaktigt.'}});case 5:case"end":return _context4.stop();}},_callee4);}));return _callServer2.apply(this,arguments);}var onSubmit=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regeneratorRuntime/* default */.A)().mark(function _callee3(e){var data,result;return (0,regeneratorRuntime/* default */.A)().wrap(function _callee3$(_context3){while(1)switch(_context3.prev=_context3.next){case 0:e.preventDefault();setInvalidFields({});data=Object.fromEntries(new FormData(e.currentTarget));_context3.next=5;return callServer(data);case 5:result=_context3.sent;setErrors(result.errors);case 7:case"end":return _context3.stop();}},_callee3);}));return function onSubmit(_x4){return _ref2.apply(this,arguments);};}();var onInvalid=function onInvalid(e){e.preventDefault();setErrors({});var data=Object.fromEntries(new FormData(e.currentTarget));setInvalidFields(data);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{validationErrors:errors,onSubmit:onSubmit,className:FormExamples_module.form,onInvalid:onInvalid,children:[(Object.keys(invalidFields).length!==0||Object.keys(errors).length!==0)&&/*#__PURE__*/(0,jsx_runtime.jsx)(InfoBanner/* InfoBanner */.z,{type:"warning",role:"alert",title:"Kontrollera f\xF6ljande f\xE4lt",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("ul",{children:[Object.keys(invalidFields).length!==0&&Object.entries(invalidFields).map(function(_ref3){var field=_ref3[0],value=_ref3[1];return/*#__PURE__*/(0,jsx_runtime.jsx)("li",{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,{href:'#'+field,children:"Fyll i det h\xE4r f\xE4ltet"})},field);}),Object.keys(errors).length!==0&&Object.entries(errors).map(function(_ref4){var field=_ref4[0],message=_ref4[1];return/*#__PURE__*/(0,jsx_runtime.jsx)("li",{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,{href:'#'+field,children:message})},field);})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{id:"username",label:"Anv\xE4ndarnamn",name:"username",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(textfield_TextField/* TextField */.A,{id:"password",label:"L\xF6senord",name:"password",type:"password",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(ButtonGroup/* ButtonGroup */.e,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:isWaiting?/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Spinner/* Spinner */.y,{isOnColor:true,small:true}),"Skickar..."]}):'Skicka'})})]});};
 
 /***/ }),
 
@@ -715,7 +520,7 @@ var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;v
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--size-50":"0.625rem","--size-70":"0.875rem","--border-disabled":"light-dark(#bfbfbf, #525252)","--field-disabled":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--support-border-warning":"light-dark(#e62323, #e62323)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--z-index-base":"1","--z-index-above":"10","textField":"textField_IarX","bottomError":"bottomError_XU77","textArea":"textArea_M6yF","wrap":"wrap_ljmz","medium":"medium_jalb","input":"input_g6A6","passwordText":"passwordText_gBIs","passwordButton":"passwordButton_kacG"});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--border-disabled":"light-dark(#bfbfbf, #525252)","--field-disabled":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--support-border-warning":"light-dark(#e62323, #e62323)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--z-index-base":"1","--z-index-above":"10","--size-130":"2.5rem","--size-150":"3rem","textField":"textField_IarX","bottomError":"bottomError_XU77","textArea":"textArea_M6yF","wrap":"wrap_ljmz","medium":"medium_jalb","input":"input_g6A6","passwordText":"passwordText_gBIs","passwordButton":"passwordButton_kacG"});
 
 /***/ })
 

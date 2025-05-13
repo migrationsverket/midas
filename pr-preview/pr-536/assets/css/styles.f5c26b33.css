@@ -3637,6 +3637,24 @@ table td {
   border: none;
 }
 
+.card-guidelines {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0;
+  margin-bottom: var(--ifm-leading);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none !important;
+  max-height: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-guidelines.padding-0 {
+    padding: 0;
+  }
+
 .token-table {
   table-layout: fixed;
   width: 100%;
@@ -3894,6 +3912,36 @@ html[data-theme='dark'] .navbar--github-link::before {
 
 .no-margin-children p {
   margin-bottom: 0;
+}
+
+/* ---- Table for language page --- */
+
+.table-cell-green {
+  background-color: #d5f2d9; /* signal-green-20 */
+  padding: 8px;
+}
+
+.table-cell-red {
+  background-color: #ffdfdf; /* signal-red-20 */
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* Green header */
+.table-header-green {
+  background-color: #d5f2d9; /* signal-green-20 */
+  padding: 10px;
+  text-align: left;
+}
+
+/* Red header */
+.table-header-red {
+  background-color: #ffdfdf; /* signal-red-20 */
+  padding: 10px;
+  text-align: left;
 }
 
 code.lowlight {
@@ -5408,7 +5456,7 @@ Hide color mode toggle in small viewports
 
 /* z-index */
 
-/* Sizing */ /* 10px */ /* 14px */
+/* Sizing */ /* 0px */ /* 1px */ /* 2px */ /* 3px */ /* 4px */ /* 6px */ /* 8px */ /* 10px */ /* 12px */ /* 14px */ /* 15px */ /* 16px */ /* 20px */ /* 24px */ /* 28px */ /* 32px */ /* 40px */ /* 44px */ /* 48px */
 
 /* Transitions */
 
@@ -7214,6 +7262,10 @@ CSS variables, meant to be overridden by final theme
   padding: 0 1rem;
 }
 
+.inputField_RpLn.medium_OzpD {
+    min-height: 2.5rem;
+  }
+
 .inputField_RpLn[data-disabled] {
     border: none;
     color: light-dark(#bfbfbf, #525252);
@@ -7462,8 +7514,7 @@ CSS variables, meant to be overridden by final theme
 }
 
 .medium_jalb .input_g6A6 {
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
+    min-height: 2.5rem;
   }
 
 .input_g6A6 {
@@ -7473,14 +7524,13 @@ CSS variables, meant to be overridden by final theme
   color: light-dark(#171717, #f2f2f2);
   border-bottom: 1px solid light-dark(#171717, #f2f2f2);
   font-size: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem;
   line-height: 1;
   background-color: light-dark(#f2f2f2, #262626);
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
+  min-height: 3rem;
 }
 
 .input_g6A6[data-hovered] {

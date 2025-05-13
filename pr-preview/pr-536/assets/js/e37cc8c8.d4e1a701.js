@@ -24,7 +24,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-basics-tokens-mdx-e37.json
-const site_docs_basics_tokens_mdx_e37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/tokens","title":"Färger","description":"Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.","source":"@site/docs/basics/tokens.mdx","sourceDirName":"basics","slug":"/basics/tokens","permalink":"/pr-preview/pr-536/basics/tokens","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"id":"tokens","title":"Färger","sidebar_label":"Färger","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_basics_tokens_mdx_e37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/tokens","title":"Färger","description":"Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.","source":"@site/docs/basics/tokens.mdx","sourceDirName":"basics","slug":"/basics/tokens","permalink":"/pr-preview/pr-536/basics/tokens","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"id":"tokens","title":"Färger","sidebar_label":"Färger","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -44,6 +44,7 @@ const frontMatter = {
 	id: 'tokens',
 	title: 'Färger',
 	sidebar_label: 'Färger',
+	sidebar_position: 2,
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -705,29 +706,35 @@ function _createMdxContent(props) {
       children: "Notifikationer"
     }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
       children: [(0,jsx_runtime.jsx)(Token, {
-        token: "notificationBorderSuccess",
+        token: "supportBorderSuccess",
         desc: "Kantlinje för success-notifikationer"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBorderInfo",
+        token: "supportBorderInfo",
         desc: "Kantlinje för notifikationer med information"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBorderImportant",
+        token: "supportBorderImportant",
         desc: "Kantlinje för notifikationer med viktig information"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBorderWarning",
+        token: "supportBorderWarning",
         desc: "Kantlinje för notifikationer med varningar"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBackgroundSuccess",
+        token: "supportBackgroundSuccess",
         desc: "Bakgrund för success-notifikationer"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBackgroundInfo",
+        token: "supportBackgroundSuccessHover",
+        desc: "Hoverbakgrund för success-notifikationer"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundInfo",
         desc: "Bakgrund för notifikationer med information"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBackgroundImportant",
+        token: "supportBackgroundImportant",
         desc: "Bakgrund för notifikationer med viktig information"
       }), (0,jsx_runtime.jsx)(Token, {
-        token: "notificationBackgroundWarning",
+        token: "supportBackgroundWarning",
         desc: "Bakgrund för notifikationer med varningar"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundWarningHover",
+        desc: "Hoverbakgrund för notifikationer med varningar"
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "text",
