@@ -10,40 +10,11 @@ Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är 
 
 Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
 
-<div className='card'>
-  <TextField
-    label='Skriv ditt fullständiga namn'
-    description='Både för och efternamn'
-    isInvalid
-    errorMessage='Du måste fylla i fältet'
-  />
-</div>
-
-<div className='card'>
-  <TextField
-    label='Skriv ditt fullständiga namn'
-    description='Både för och efternamn'
-    isInvalid
-    errorPosition='bottom'
-    errorMessage='Du måste fylla i fältet'
-  />
-</div>
-
 ## Direktvalidering
 
-Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet. I exemplet nedan får du valideringsfel direkt när du lämnar fältet om du inte skriver `@`
-
-<div className='card'>
-  <RealtimeValidationEmail />
-</div>
+Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet.
 
 ## Felmeddelandelista
 
 Om det finns fält som har valideringsfel efter att användaren skickat in formuläret eller gått vidare till en ny sida, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en `Infobanner` som innehåller länkar till de komponenter som behöver rättas till.
 Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
-
-I exemplet nedan får du en felmeddelandelista om du klickar på Skicka utan att fylla i och en felmeddelandelista med andra fel om du fyller i fälten och sen klickar på Skicka
-
-<div className='card'>
-  <ErrorMessageList />
-</div>
