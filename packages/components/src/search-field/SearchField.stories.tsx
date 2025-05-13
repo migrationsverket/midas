@@ -45,6 +45,34 @@ export const Primary: Story = {
         expect(onSubmit).toHaveBeenCalledWith('hello')
       },
     )
+
+    await step('it should be large per default', async () => {
+      await expect(canvas.getByRole('searchbox')).toHaveStyle({
+        height: '48px',
+      })
+      await expect(
+        canvas.getByRole('button', { name: buttonText }),
+      ).toHaveStyle({
+        height: '48px',
+      })
+    })
+  },
+}
+
+export const MediumSize: Story = {
+  args: {
+    placeholder: 'Sök efter en person',
+    size: 'medium',
+  },
+  play: async ({ canvas, step }) => {
+    await step('it should be medium sized', async () => {
+      await expect(canvas.getByRole('searchbox')).toHaveStyle({
+        height: '40px',
+      })
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: '40px',
+      })
+    })
   },
 }
 

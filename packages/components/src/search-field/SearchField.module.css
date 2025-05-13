@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-warning, --field-01, --border-primary, --focus, --support-border-warning, --icon-primary, --text-primary from tokens;
+@value --font-family, --text-warning, --field-01, --border-primary, --focus, --support-border-warning, --icon-primary, --text-primary, --size-50, --size-70, --size-110, --size-130, --size-150 from tokens;
 
 .fieldError {
   font-family: --font-family;
@@ -48,8 +48,12 @@
 .inputContainer {
   display: flex;
   position: relative;
-  min-height: 3rem;
+  height: --size-150;
   width: 100%;
+
+  &.medium {
+    height: --size-130;
+  }
 }
 
 .icon {
@@ -71,6 +75,11 @@
   top: 50%;
   transform: translateY(-50%);
   background-color: transparent;
+
+  &.medium {
+    height: --size-130;
+    padding: 0.625rem 0.875rem;
+  }
 }
 
 .input {
@@ -80,8 +89,14 @@
   appearance: none;
   background-color: --field-01;
   width: 100%;
-  padding: 0.875rem 0 0.875rem 3rem;
+  height: --size-150;
+  padding: --size-70 0 --size-70 --size-150;
   border-bottom: 1px solid --border-primary;
+
+  &.medium {
+    height: --size-130;
+    padding: --size-50 0 --size-50 --size-150;
+  }
 
   &:focus-visible {
     box-shadow: --focus;
@@ -106,5 +121,15 @@
   &::-webkit-search-results-decoration {
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-appearance: none;
+  }
+}
+
+.button {
+  line-height: 1;
+  padding: --size-70 --size-110;
+
+  &.medium {
+    height: --size-130;
+    padding: --size-50 --size-110;
   }
 }
