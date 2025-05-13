@@ -10,6 +10,7 @@ import * as React from 'react'
 import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
+import { Size } from '../common/types'
 
 export interface SearchFieldProps
   extends Omit<AriaSearchFieldProps, 'isRequired'> {
@@ -26,6 +27,10 @@ export interface SearchFieldProps
    */
   errorMessage?: string
   errorPosition?: 'top' | 'bottom'
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 function isValidationError(
@@ -36,6 +41,7 @@ function isValidationError(
 
 export const SearchField: React.FC<SearchFieldProps> = ({
   errorPosition = 'top',
+  size = 'large',
   ...props
 }) => {
   const { value, setValue } = useSearchFieldState(props)
@@ -99,7 +105,11 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         className={styles.container}
         data-disabled={inputProps.disabled}
       >
-        <div className={styles.inputContainer}>
+        <div
+          className={clsx(styles.inputContainer, {
+            [styles.medium]: size === 'medium',
+          })}
+        >
           <Search
             size={20}
             className={styles.icon}
@@ -111,6 +121,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
               TextFieldStyles.input,
               styles.input,
               inputProps.className,
+              { [styles.medium]: size === 'medium' },
             )}
             ref={ref}
             onChange={handleChange}
@@ -124,7 +135,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
             <Button
               variant='icon'
               size='small'
-              className={styles.clear}
+              className={clsx(styles.clear, {
+                [styles.medium]: size === 'medium',
+              })}
               onPress={handleClear}
               {...clearButtonProps}
             >
@@ -136,6 +149,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           )}
         </div>
         <Button
+          className={clsx(styles.button, {
+            [styles.medium]: size === 'medium',
+          })}
           isDisabled={props.isDisabled}
           excludeFromTabOrder
           onPress={handleSubmit}
