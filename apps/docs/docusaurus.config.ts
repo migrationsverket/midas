@@ -3,6 +3,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
+import { getBranchUrl } from './src/utils/chromatic'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 
@@ -44,12 +45,7 @@ const config: Config = {
     locales: ['sv'],
   },
   customFields: {
-    currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(
-      /-{2,}/g,
-      '-',
-    )
-      .replace(/[/_]/g, '-')
-      .slice(0, 37),
+    currentChromaticBranchUrl: getBranchUrl(process.env.GITHUB_HEAD_REF),
   },
   plugins: [
     [
