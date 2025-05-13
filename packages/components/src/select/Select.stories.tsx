@@ -34,11 +34,6 @@ export const Normal: Story = {
         await userEvent.tab()
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
-        await step('it should be large sized', async () => {
-          await expect(canvas.getByRole('button')).toHaveStyle({
-            height: '48px',
-          })
-        })
         const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
         const visibleValue = canvas.getByText(options[0].name, {
           selector: 'span',
@@ -47,6 +42,11 @@ export const Normal: Story = {
         expect(visibleValue).toBeVisible()
       },
     )
+    await step('it should be large sized', async () => {
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: '48px',
+      })
+    })
   },
 }
 
@@ -61,11 +61,7 @@ export const MediumSize: Story = {
         await userEvent.tab()
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
-        await step('it should be medium sized', async () => {
-          await expect(canvas.getByRole('button')).toHaveStyle({
-            height: '40px',
-          })
-        })
+
         const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
         const visibleValue = canvas.getByText(options[0].name, {
           selector: 'span',
@@ -74,6 +70,11 @@ export const MediumSize: Story = {
         expect(visibleValue).toBeVisible()
       },
     )
+    await step('it should be medium sized', async () => {
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: '40px',
+      })
+    })
   },
 }
 
