@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DateField } from './DateField'
 import { CalendarDate } from '@internationalized/date'
+import { expect } from '@storybook/test'
 
 type Story = StoryObj<typeof DateField>
 
@@ -33,11 +34,26 @@ export default {
 } as Meta<typeof DateField>
 
 /** Don't put format in description, it changes with browser language settings! */
-export const Default: Story = {}
+export const Default: Story = {
+  play: async ({ step, canvas }) => {
+    await step('it should be large per default', async () => {
+      await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
+        height: '48px',
+      })
+    })
+  },
+}
 
 export const MediumSize: Story = {
   args: {
     size: 'medium',
+  },
+  play: async ({ step, canvas }) => {
+    await step('it should be medium sized', async () => {
+      await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
+        height: '40px',
+      })
+    })
   },
 }
 

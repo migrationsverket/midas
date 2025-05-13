@@ -46,6 +46,7 @@ export const DateField: React.FC<DateFieldProps> = ({
         [styles.medium]: size === 'medium',
       })}
       data-disabled={isDisabled || undefined}
+      data-testid='date-field_input-field'
     >
       <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
     </div>
