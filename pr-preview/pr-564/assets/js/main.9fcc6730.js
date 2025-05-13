@@ -13857,7 +13857,7 @@ __webpack_require__.r(__webpack_exports__);
     "localeConfigs": {}
   },
   "customFields": {
-    "currentChromaticBranchUrl": "bugfix-DS-1123-chromatic"
+    "currentChromaticBranchUrl": "bugfix-ds-1123-chromatic"
   },
   "plugins": [
     [
