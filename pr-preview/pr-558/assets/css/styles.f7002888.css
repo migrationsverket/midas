@@ -5408,7 +5408,7 @@ Hide color mode toggle in small viewports
 
 /* z-index */
 
-/* Sizing */ /* 10px */ /* 14px */
+/* Sizing */ /* 0px */ /* 1px */ /* 2px */ /* 3px */ /* 4px */ /* 6px */ /* 8px */ /* 10px */ /* 12px */ /* 14px */ /* 15px */ /* 16px */ /* 20px */ /* 24px */ /* 28px */ /* 32px */ /* 40px */ /* 44px */ /* 48px */
 
 /* Transitions */
 
@@ -7466,8 +7466,7 @@ CSS variables, meant to be overridden by final theme
 }
 
 .medium_jalb .input_g6A6 {
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
+    min-height: 2.5rem;
   }
 
 .input_g6A6 {
@@ -7477,14 +7476,13 @@ CSS variables, meant to be overridden by final theme
   color: light-dark(#171717, #f2f2f2);
   border-bottom: 1px solid light-dark(#171717, #f2f2f2);
   font-size: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem;
   line-height: 1;
   background-color: light-dark(#f2f2f2, #262626);
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  padding-top: 0.875rem;
-  padding-bottom: 0.875rem;
+  min-height: 3rem;
 }
 
 .input_g6A6[data-hovered] {
