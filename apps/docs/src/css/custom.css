@@ -137,6 +137,24 @@ table td {
   border: none;
 }
 
+.card-guidelines {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0;
+  margin-bottom: var(--ifm-leading);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: none !important;
+  max-height: 600px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &.padding-0 {
+    padding: 0;
+  }
+}
+
 .token-table {
   table-layout: fixed;
   width: 100%;
@@ -391,4 +409,34 @@ html[data-theme='dark'] .navbar--github-link::before {
 
 .no-margin-children p {
   margin-bottom: 0;
+}
+
+/* ---- Table for language page --- */
+
+.table-cell-green {
+  background-color: #d5f2d9; /* signal-green-20 */
+  padding: 8px;
+}
+
+.table-cell-red {
+  background-color: #ffdfdf; /* signal-red-20 */
+  padding: 8px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* Green header */
+.table-header-green {
+  background-color: #d5f2d9; /* signal-green-20 */
+  padding: 10px;
+  text-align: left;
+}
+
+/* Red header */
+.table-header-red {
+  background-color: #ffdfdf; /* signal-red-20 */
+  padding: 10px;
+  text-align: left;
 }
