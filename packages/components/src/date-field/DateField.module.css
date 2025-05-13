@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family,--text-placeholder, --support-border-warning, --focus, --field-hover-01, --border-primary, --field-01, --text-primary, --text-disabled from tokens;
+@value --font-family,--text-placeholder, --support-border-warning, --focus, --field-hover-01, --border-primary, --field-01, --text-primary, --text-disabled, --size-130, --size-150 from tokens;
 
 .dateField {
   font-family: --font-family;
@@ -11,7 +11,7 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  min-height: 3rem;
+  min-height: --size-150;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -20,7 +20,7 @@
   padding: 0 1rem;
 
   &.medium {
-    min-height: 2.5rem;
+    min-height: --size-130;
   }
 
   &[data-disabled] {

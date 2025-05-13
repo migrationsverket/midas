@@ -110,8 +110,25 @@
 @value --z-index-skip-to-content: 1200;
 
 /* Sizing */
+@value --size-00: 0; /* 0px */
+@value --size-05: 0.063rem; /* 1px */
+@value --size-10: 0.125rem; /* 2px */
+@value --size-15: 0.188rem; /* 3px */
+@value --size-20: 0.25rem; /* 4px */
+@value --size-30: 0.375rem; /* 6px */
+@value --size-40: 0.5rem; /* 8px */
 @value --size-50: 0.625rem; /* 10px */
+@value --size-60: 0.75rem; /* 12px */
 @value --size-70: 0.875rem; /* 14px */
+@value --size-75: 0.938rem; /* 15px */
+@value --size-80: 1rem; /* 16px */
+@value --size-90: 1.25rem; /* 20px */
+@value --size-100: 1.5rem; /* 24px */
+@value --size-110: 1.75rem; /* 28px */
+@value --size-120: 2rem; /* 32px */
+@value --size-130: 2.5rem; /* 40px */
+@value --size-140: 2.75rem; /* 44px */
+@value --size-150: 3rem; /* 48px */
 
 /* Transitions */
 @value --slow-transition: 500ms;
