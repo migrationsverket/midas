@@ -1,4 +1,4 @@
-# 9.0.0
+# 9.0.0 (2025-05-05)
 
 ### 🩹 Fixes
 
@@ -9,8 +9,8 @@
 ### Documentation Changes
 
 - **toast:** fix local example in storybook ([#542](https://github.com/migrationsverket/midas/pull/542))
-
-## 8.3.0
+ 
+## 8.3.0 (2025-05-03)
 
 ### 🚀 Features
 
@@ -34,7 +34,7 @@
 
 - improvements to preview 💅 🔍 ✨ ([#530](https://github.com/migrationsverket/midas/pull/530))
 
-## 8.2.0
+## 8.2.0 (2025-05-01)
 
 ### 🚀 Features
 
@@ -52,7 +52,7 @@
 - **propstable:** add support for enums in table ([#511](https://github.com/migrationsverket/midas/pull/511))
 - **modal:** change arg types in storybook ([f9588f170b](https://github.com/migrationsverket/midas/commit/f9588f170b))
 
-## 8.1.0
+## 8.1.0 (2025-05-02)
 
 ### 🚀 Features
 
@@ -66,7 +66,7 @@
 - **select:** remove explicit size for indeterminate symbol ([5f805c134](https://github.com/migrationsverket/midas/commit/5f805c134))
 - **select:** change checkbox size to prevent disappearing border ([3ab520633](https://github.com/migrationsverket/midas/commit/3ab520633))
 
-# 8.0.0
+# 8.0.0 (2025-05-01)
 
 ### 🚀 Features
 
@@ -105,7 +105,7 @@
 - update link docs with new code and examples ([a25a2def3](https://github.com/migrationsverket/midas/commit/a25a2def3))
 - use markdown links ([f1fb5714b](https://github.com/migrationsverket/midas/commit/f1fb5714b))
 
-## 7.1.0
+## 7.1.0 (2025-05-01)
 
 ### 🚀 Features
 
@@ -117,11 +117,11 @@
 - **combobox:** fix background color to input ([997eac80b](https://github.com/migrationsverket/midas/commit/997eac80b))
 - **theme:** replace invalid text and border colors in dark mode ([3291a9cbd](https://github.com/migrationsverket/midas/commit/3291a9cbd))
 
-# 7.0.0
+# 7.0.0 (2025-05-01)
 
 This was a version bump only for components to align it with other projects, there were no code changes.
 
-## 6.2.0
+## 6.2.0 (2025-05-01)
 
 ### 🚀 Features
 
@@ -137,7 +137,7 @@ This was a version bump only for components to align it with other projects, the
 - **theme:** change the token value to icon secondary
 - **link-button:** fix secondary border and icon color in dark mode
 
-## 6.1.0
+## 6.1.0 (2025-05-01)
 
 ### 🚀 Features
 
@@ -148,13 +148,13 @@ This was a version bump only for components to align it with other projects, the
 - **textfield:** fix token on input value ([e79f935e3](https://github.com/migrationsverket/midas/commit/e79f935e3))
 - **link-button:** add pseudo-classes in CSS link-button ([#385](https://github.com/migrationsverket/midas/pull/385))
 
-## 6.0.1
+## 6.0.1 (2025-05-01)
 
 ### 🩹 Fixes
 
 - **select:** 🐛 Selected values doesn't match selected IDs
 
-# 6.0.0
+# 6.0.0 (2025-05-01)
 
 ### 🚀 Features
 
@@ -181,7 +181,7 @@ This was a version bump only for components to align it with other projects, the
 
 - **modal:** Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.
 
-## 5.0.1
+## 5.0.1 (2025-03-25)
 
 ### 🩹 Fixes
 

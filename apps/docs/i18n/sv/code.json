@@ -22,5 +22,11 @@
   },
   "theme.SearchPage.searchContext.everywhere": {
     "message": "Överallt"
+  },
+  "changelog.backLink": {
+    "message": "<- Tillbaka till index"
+  },
+  "changelog.description": {
+    "message": "Prenumerera på våra {rssLink} för att få information om nya releaser!"
   }
 }

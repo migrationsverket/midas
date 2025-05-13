@@ -6,18 +6,18 @@
         "test": {
           "semverBump": "none",
           "changelog": {
-            "hidden": true
+            "title": "\uD83E\uDDEA Tests updated"
           }
         },
         "docs": {
           "semverBump": "none",
           "changelog": {
-            "title": "Documentation Changes"
+            "title": "\uD83D\uDCD6 Documentation changes"
           }
         },
         "chore": {
           "changelog": {
-            "hidden": true
+            "title": "\uD83D\uDD27 Maintenance"
           }
         }
       }
@@ -27,13 +27,13 @@
       "workspaceChangelog": {
         "renderOptions": {
           "authors": false,
-          "versionTitleDate": false
+          "versionTitleDate": true
         }
       },
       "projectChangelogs": {
         "renderOptions": {
           "authors": false,
-          "versionTitleDate": false
+          "versionTitleDate": true
         }
       },
       "automaticFromRef": true

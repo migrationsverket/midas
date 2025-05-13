@@ -88,11 +88,11 @@
   --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
   --ifm-card-background-color: #000;
-  --ifm-code-background: #1e1e1e;
+  --ifm-code-background: #313131;
 }
 
 .theme-code-block {
-  border: 1px solid var(--ifm-color-emphasis-200);
+/*  border: 1px solid var(--ifm-color-emphasis-200);*/
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -117,7 +117,7 @@
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-  border: 1px solid var(--ifm-color-emphasis-200);
+/*  border: 1px solid var(--ifm-color-emphasis-200);*/
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -230,8 +230,11 @@ p a {
   }
 }
 
-[class*='cardContainer'],
 .pagination-nav__link {
+  border-radius: 0;
+}
+
+[class*='cardContainer'] {
   box-shadow: none !important;
   border: none !important;
   border-radius: 0 !important;

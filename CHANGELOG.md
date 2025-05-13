@@ -1,4 +1,4 @@
-# 9.0.0
+# 9.0.0 (2025-05-08)
 
 ### 🩹 Fixes
 
@@ -10,7 +10,7 @@
 
 - **toast:** fix local example in storybook ([#542](https://github.com/migrationsverket/midas/pull/542))
 
-## 8.3.0
+## 8.3.0 (2025-05-07)
 
 ### 🚀 Features
 
@@ -35,7 +35,7 @@
 - improvements to preview 💅 🔍 ✨ ([#530](https://github.com/migrationsverket/midas/pull/530))
 - **radio:** update Radio button guidelines ([6c5038fff1](https://github.com/migrationsverket/midas/commit/6c5038fff1))
 
-## 8.2.0
+## 8.2.0 (2025-04-28)
 
 ### 🚀 Features
 
@@ -58,7 +58,7 @@
 - **propstable:** add support for enums in table ([#511](https://github.com/migrationsverket/midas/pull/511))
 - **radio:** remove radio button guideline ([d314a1d2cb](https://github.com/migrationsverket/midas/commit/d314a1d2cb))
 
-## 8.1.0
+## 8.1.0 (2025-04-23)
 
 ### 🚀 Features
 
@@ -77,7 +77,7 @@
 - clarify use of global.css and disable switch functionality ([#489](https://github.com/migrationsverket/midas/pull/489))
 - **link:** remove invalid dom nesting ([38a742db5](https://github.com/migrationsverket/midas/commit/38a742db5))
 
-# 8.0.0
+# 8.0.0 (2025-04-15)
 
 ### 🚀 Features
 
@@ -160,7 +160,7 @@
 - **textfield:** remove live code example ([13f59adc6](https://github.com/migrationsverket/midas/commit/13f59adc6))
 - **tooltip:** update tooltip documentation 🔧 ([#439](https://github.com/migrationsverket/midas/pull/439))
 
-## 7.1.0
+## 7.1.0 (2025-04-04)
 
 ### 🚀 Features
 
@@ -177,7 +177,7 @@
 - **link:** fix broken url address ([#403](https://github.com/migrationsverket/midas/pull/403))
 - **modal:** 📝 add examples with form elements ([#399](https://github.com/migrationsverket/midas/pull/399))
 
-# 7.0.0
+# 7.0.0 (2025-04-02)
 
 ### Documentation Changes
 
@@ -185,7 +185,7 @@
 - remove april fools ([#381](https://github.com/migrationsverket/midas/pull/381))
 - ♿️💄ensure that markdown links use midas styling ([b79ce1b36](https://github.com/migrationsverket/midas/commit/b79ce1b36))
 
-## 6.2.0
+## 6.2.0 (2025-04-01)
 
 ### 🚀 Features
 
@@ -217,7 +217,7 @@
 - **docs:** add clarification on when to use which loader
 - **docs:** add new UI-kit
 
-## 6.1.0
+## 6.1.0 (2025-03-28)
 
 ### 🚀 Features
 
@@ -229,13 +229,13 @@
 - **textfield:** fix token on input value ([e79f935e3](https://github.com/migrationsverket/midas/commit/e79f935e3))
 - **textfield:** fix token on input value ([#388](https://github.com/migrationsverket/midas/pull/388))
 
-## 6.0.1
+## 6.0.1 (2025-03-24)
 
 ### 🩹 Fixes
 
 - **select:** 🐛 Selected values doesn't match selected IDs
 
-# 6.0.0
+# 6.0.0 (2025-03-24)
 
 ### 🚀 Features
 
@@ -269,7 +269,7 @@
 
 - **modal:** Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.
 
-## 5.0.1
+## 5.0.1 (2025-03-20)
 
 ### 🩹 Fixes
 
@@ -945,9 +945,3 @@
 - ⚠️ **button:** new build
 - ⚠️ **breadcrumbs:** new build
 - ⚠️ **accordion:** new build
-
-# Changelog
-
-All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
-
----

@@ -5,8 +5,9 @@ import path from 'path'
 import fs from 'fs'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
-
+const defaultLocale = 'sv'
 const packageAliases = {}
+const version = require(`${packagesDir}/components/package.json`).version
 
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
@@ -40,11 +41,12 @@ const config: Config = {
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
   i18n: {
-    defaultLocale: 'sv',
+    defaultLocale: defaultLocale,
     locales: ['sv'],
   },
   customFields: {
     currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(/\//g, '-'),
+    midasVersion: version
   },
   plugins: [
     [
@@ -71,6 +73,30 @@ const config: Config = {
       'docusaurus-plugin-module-alias',
       {
         alias: packageAliases,
+      },
+    ],
+    [
+      './src/plugins/changelog/index.ts',
+      {
+        blogTitle: 'Midas changelog',
+        blogDescription:
+          'Håll dig uppdaterad med allt som händer i varje release',
+        blogSidebarCount: 'ALL',
+        blogSidebarTitle: 'Changelog',
+        routeBasePath: '/changelog',
+        showReadingTime: false,
+        postsPerPage: 20,
+        archiveBasePath: null,
+        authorsMapPath: 'authors.json',
+        feedOptions: {
+          type: 'all',
+          title: 'Midas changelog',
+          description:
+            'Håll dig uppdaterad med allt som händer i varje release',
+          copyright: `${new Date().getFullYear()} Migrationsverket`,
+          language: defaultLocale,
+        },
+        onInlineAuthors: 'warn',
       },
     ],
   ],
@@ -121,6 +147,11 @@ const config: Config = {
         theme: {
           customCss: ['./src/css/custom.css', './src/css/highlight.css'],
         },
+        blog: {
+          path: 'blog',
+          blogSidebarTitle: 'Midas versioner',
+          blogSidebarCount: 'ALL',
+        }
       } satisfies Preset.Options,
     ],
   ],
@@ -141,8 +172,9 @@ const config: Config = {
           label: 'Dokumentation',
         },
         {
-          to: '/changelog',
-          label: 'Changelog',
+          to: `/blog/releases/${version}`,
+          label: `Version ${version}`,
+          position: 'right'
         },
         {
           href: 'https://github.com/migrationsverket/midas',
@@ -154,6 +186,16 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          items: [
+            {
+              label: 'Changelog',
+              to: '/changelog'
+            }
+          ]
+        }
+      ]
     },
     colorMode: {
       defaultMode: 'light',
@@ -161,7 +203,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     prism: {
-      additionalLanguages: ['bash', 'git', 'css'],
+      additionalLanguages: ['bash', 'git', 'css', 'diff'],
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },
@@ -187,36 +229,3 @@ const config: Config = {
 }
 
 export default config
-
-function adjustChangelogHeadings() {
-  const changelogPath = path.resolve(
-    __dirname,
-    '../../packages/components/CHANGELOG.md',
-  )
-  const staticChangelogPath = path.resolve(
-    __dirname,
-    './static/files/CHANGELOG.md',
-  )
-
-  fs.readFile(changelogPath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading changelog:', err)
-      return
-    }
-
-    const adjustedData = data.replace(
-      /^(#{1,5}) /gm,
-      (match, p1) => `${'#'.repeat(p1.length + 1)} `,
-    )
-
-    fs.writeFile(staticChangelogPath, adjustedData, 'utf8', err => {
-      if (err) {
-        console.error('Error writing adjusted changelog:', err)
-      } else {
-        console.log('Adjusted changelog saved to static folder.')
-      }
-    })
-  })
-}
-
-adjustChangelogHeadings()
