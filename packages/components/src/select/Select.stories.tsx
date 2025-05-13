@@ -45,6 +45,12 @@ export const Normal: Story = {
   },
 }
 
+export const MediumSize: Story = {
+  args: {
+    size: 'medium',
+  },
+}
+
 export const DefaultSelectedKey: Story = {
   args: {
     description: 'Kiwi is pre-selected',
