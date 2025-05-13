@@ -11,15 +11,17 @@ import { FieldError } from '../field-error'
 import { Label } from '../label'
 import { Text } from '../text'
 import styles from './DateField.module.css'
-import { RezisableComponent } from '../common/types'
+import { Size } from '../common/types'
 
-export interface DateFieldProps
-  extends RezisableComponent,
-    AriaDateFieldProps<DateValue> {
+export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   label?: string
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export const DateField: React.FC<DateFieldProps> = ({
