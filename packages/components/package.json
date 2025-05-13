@@ -27,7 +27,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/migrationsverket/midas"
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/components"
   },
   "peerDependencies": {
     "react": "^18.3.1 || ^19.0.0",
