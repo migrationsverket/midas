@@ -12,6 +12,7 @@ const meta: Meta<typeof ComboBox> = {
   tags: ['autodocs'],
   args: {
     label: 'Etikett',
+    placeholder: 'Placeholder',
     description: 'Beskrivning',
     errorMessage: 'Fel!',
     errorPosition: 'top',
@@ -20,6 +21,12 @@ const meta: Meta<typeof ComboBox> = {
     placeholder: { control: 'text' },
   },
   parameters: {},
+  render: args => (
+    <ComboBox {...args}>
+      <ComboBoxItem>Apple</ComboBoxItem>
+      <ComboBoxItem>Lemon</ComboBoxItem>
+    </ComboBox>
+  ),
 }
 
 export default meta
@@ -45,6 +52,15 @@ export const Default: Story = {
     </ComboBox>
   ),
   play: async ({ canvas, step }) => {
+    await step('it should be large per default', async () => {
+      await expect(canvas.getByRole('combobox')).toHaveStyle({
+        height: '48px',
+      })
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: '48px',
+      })
+    })
+
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
@@ -55,27 +71,39 @@ export const Default: Story = {
   },
 }
 
+export const MediumSize: Story = {
+  args: {
+    size: 'medium',
+  },
+  play: async ({ canvas, step }) => {
+    await step('it should be medium sized', async () => {
+      await expect(canvas.getByRole('combobox')).toHaveStyle({
+        height: '40px',
+      })
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: '40px',
+      })
+    })
+  },
+}
+
 export const Invalid: Story = {
   args: {
     isInvalid: true,
   },
-  render: args => (
-    <ComboBox {...args}>
-      <ComboBoxItem>Apple</ComboBoxItem>
-      <ComboBoxItem>Lemon</ComboBoxItem>
-    </ComboBox>
-  ),
+}
+
+export const MediumSizeInvalid: Story = {
+  args: {
+    size: 'medium',
+    isInvalid: true,
+  },
 }
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
   },
-  render: args => (
-    <ComboBox {...args}>
-      <ComboBoxItem>Hej</ComboBoxItem>
-    </ComboBox>
-  ),
   parameters: {
     a11y: {
       element: 'body',

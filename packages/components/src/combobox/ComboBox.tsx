@@ -23,6 +23,7 @@ import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { Item, Section } from './types'
+import { Size } from '../common/types'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -33,6 +34,10 @@ export interface ComboBoxProps<T extends object>
   children: React.ReactNode | ((item: T) => React.ReactNode)
   placeholder?: string
   errorPosition?: 'top' | 'bottom'
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export function ComboBox<T extends object>({
@@ -43,6 +48,7 @@ export function ComboBox<T extends object>({
   items,
   className,
   errorPosition = 'top',
+  size = 'large',
   ...props
 }: ComboBoxProps<T>) {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -59,9 +65,15 @@ export function ComboBox<T extends object>({
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
       <div className={styles.wrap}>
-        <Input className={styles.input} />
+        <Input
+          className={clsx(styles.inputField, {
+            [styles.medium]: size === 'medium',
+          })}
+        />
         <Button
-          className={styles.button}
+          className={clsx(styles.button, {
+            [styles.medium]: size === 'medium',
+          })}
           aria-label='Visa lista'
         >
           <div
