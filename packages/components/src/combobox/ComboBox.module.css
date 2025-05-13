@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-01, --layer-hover-01, --border-primary, --focus, --focus-inset, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-01, --layer-selected-hover-01, --border-invalid, --font-family from tokens;
+@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-01, --layer-hover-01, --border-primary, --focus, --focus-inset, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-01, --layer-selected-hover-01, --support-border-warning, --font-family from tokens;
 
 .combobox {
   font-family: --font-family;
@@ -7,7 +7,7 @@
   flex-direction: column;
 
   &[data-invalid] .input {
-    border: 0.125rem solid --border-invalid;
+    border: 0.125rem solid --support-border-warning;
     box-shadow: none;
   }
 }

@@ -1,3 +1,5 @@
+import { parseDate } from '@internationalized/date'
+
 export const options = [
   'Apple',
   'Banana',
@@ -29,3 +31,5 @@ export const options = [
   'Starfruit',
   'Passionfruit',
 ].map(fruit => ({ name: fruit, id: fruit.toLocaleLowerCase() }))
+
+export const mockedNow = parseDate('2025-05-29')

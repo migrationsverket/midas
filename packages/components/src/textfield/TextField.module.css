@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --focus, --size-50, --size-70, --border-disabled, --field-disabled, --text-primary, --border-invalid, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above from tokens;
+@value --focus, --border-disabled, --field-disabled, --text-primary, --support-border-warning, --border-primary, --field-01, --field-hover-01, --font-family, --text-disabled, --z-index-base, --z-index-above, --size-130, --size-150 from tokens;
 
 .textField {
   display: grid;
@@ -66,7 +66,7 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 2px --border-invalid;
+    box-shadow: inset 0 0 0 2px --support-border-warning;
   }
 
   &[data-disabled] {
@@ -84,8 +84,7 @@
 
 .medium {
   .input {
-    padding-top: --size-50;
-    padding-bottom: --size-50;
+    min-height: --size-130;
   }
 }
 
@@ -96,14 +95,13 @@
   color: --text-primary;
   border-bottom: 1px solid --border-primary;
   font-size: 1rem;
-  padding-left: 1rem;
+  padding: 0 1rem;
   line-height: 1;
   background-color: --field-01;
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
-  padding-top: --size-70;
-  padding-bottom: --size-70;
+  min-height: --size-150;
 
   &[data-hovered] {
     background-color: --field-hover-01;
@@ -124,7 +122,7 @@
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 2px --border-invalid;
+    box-shadow: inset 0 0 0 2px --support-border-warning;
   }
 
   &[data-disabled] {

@@ -29,7 +29,7 @@ const iconMap = {
   success: CircleCheck,
   info: Info,
   important: AlertCircle,
-  warning: AlertTriangle
+  warning: AlertTriangle,
 }
 /**
  * Displays a static message as an inline banner
@@ -48,8 +48,8 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   if (show)
     return (
       <div
-        className={clsx(styles.infoBanner, styles[type], rest.className)}
         {...rest}
+        className={clsx(styles.infoBanner, styles[type], rest.className)}
       >
         <Icon
           size={20}

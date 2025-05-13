@@ -53,22 +53,24 @@ export const Local: Story = {
     message: 'Inloggningen lyckades',
   },
   render: args => (
-    <ToastProvider>
-      {state => (
-        <Button
-          onPress={() =>
-            state.add(
-              {
-                type: args.type,
-                message: args.message,
-              },
-              { timeout: 5000 },
-            )
-          }
-        >
-          Visa en {args.type}-toast
-        </Button>
-      )}
-    </ToastProvider>
+    <div style={{ height: 200 }}>
+      <ToastProvider>
+        {state => (
+          <Button
+            onPress={() =>
+              state.add(
+                {
+                  type: args.type,
+                  message: args.message,
+                },
+                { timeout: 5000 },
+              )
+            }
+          >
+            Visa en {args.type}-toast
+          </Button>
+        )}
+      </ToastProvider>
+    </div>
   ),
 }

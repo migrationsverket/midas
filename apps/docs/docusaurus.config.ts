@@ -43,6 +43,9 @@ const config: Config = {
     defaultLocale: 'sv',
     locales: ['sv'],
   },
+  customFields: {
+    currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(/\//g, '-'),
+  },
   plugins: [
     [
       'docusaurus-plugin-react-docgen-typescript',

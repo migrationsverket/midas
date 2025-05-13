@@ -2,6 +2,7 @@
 id: tokens
 title: Färger
 sidebar_label: Färger
+sidebar_position: 2
 ---
 
 import { Flex, FlexItem, Text } from '@midas-ds/components'
@@ -155,10 +156,6 @@ I ljust läge växlar färgerna mellan vitt och grått för varje lager medan va
     desc='Primärblå kantlinje'
   />
   <Token
-    token='borderInvalid'
-    desc='Kantlinje för invalid state'
-  />
-  <Token
     token='borderDisabled'
     desc='Kantlinke för disabled state'
   />
@@ -267,36 +264,44 @@ I ljust läge växlar färgerna mellan vitt och grått för varje lager medan va
 
 <TokenGroup>
   <Token
-    token='notificationBorderSuccess'
+    token='supportBorderSuccess'
     desc='Kantlinje för success-notifikationer'
   />
   <Token
-    token='notificationBorderInfo'
+    token='supportBorderInfo'
     desc='Kantlinje för notifikationer med information'
   />
   <Token
-    token='notificationBorderImportant'
+    token='supportBorderImportant'
     desc='Kantlinje för notifikationer med viktig information'
   />
   <Token
-    token='notificationBorderWarning'
+    token='supportBorderWarning'
     desc='Kantlinje för notifikationer med varningar'
   />
   <Token
-    token='notificationBackgroundSuccess'
+    token='supportBackgroundSuccess'
     desc='Bakgrund för success-notifikationer'
   />
   <Token
-    token='notificationBackgroundInfo'
+    token='supportBackgroundSuccessHover'
+    desc='Hoverbakgrund för success-notifikationer'
+  />
+  <Token
+    token='supportBackgroundInfo'
     desc='Bakgrund för notifikationer med information'
   />
   <Token
-    token='notificationBackgroundImportant'
+    token='supportBackgroundImportant'
     desc='Bakgrund för notifikationer med viktig information'
   />
   <Token
-    token='notificationBackgroundWarning'
+    token='supportBackgroundWarning'
     desc='Bakgrund för notifikationer med varningar'
+  />
+  <Token
+    token='supportBackgroundWarningHover'
+    desc='Hoverbakgrund för notifikationer med varningar'
   />
 </TokenGroup>
 
@@ -328,7 +333,7 @@ I ljust läge växlar färgerna mellan vitt och grått för varje lager medan va
     desc='Textfärg för disabled state'
   />
   <Token
-    token='textInvalid'
+    token='textWarning'
     desc='Textfärg för felmeddelanden'
   />
   <Token

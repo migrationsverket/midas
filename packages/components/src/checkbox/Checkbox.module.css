@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled, --border-primary, --layer-hover-01, --border-disabled, --breakpoint-sm, --border-invalid, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --border-invalid, --field-disabled, --focus, --line-height-03 from tokens;
+@value --font-family, --text-primary, --text-disabled, --border-primary, --border-disabled, --breakpoint-sm, --support-border-warning, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --field-disabled, --focus, --line-height-30 from tokens;
 
 .wrap {
   grid-area: Input;
@@ -44,7 +44,7 @@
   width: max-content;
   cursor: pointer;
   color: --text-primary;
-  line-height: --line-height-03;
+  line-height: --line-height-30;
 
   &[data-hovered] div {
     border-color: --button-background-primary-hover;
@@ -67,7 +67,7 @@
   }
 
   &[data-invalid] div {
-    border: 2px solid --border-invalid;
+    border: 2px solid --support-border-warning;
   }
 
   &[data-disabled] div {
@@ -99,11 +99,11 @@
 
   &[data-invalid]:hover div {
     opacity: 0.5;
-    border-color: --border-invalid;
+    border-color: --support-border-warning;
   }
 
   &[data-invalid][data-pressed] div {
-    border-color: --border-invalid;
+    border-color: --support-border-warning;
   }
 
   &[data-disabled] {
@@ -146,7 +146,7 @@
       }
 
       &[data-invalid] {
-        border: 2px solid --border-invalid;
+        border: 2px solid --support-border-warning;
       }
 
       &[data-disabled] {

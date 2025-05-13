@@ -12,8 +12,7 @@ import { Text } from '../text/Text'
 import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 import { clsx } from 'clsx'
-
-export type Size = 'medium' | 'large'
+import { Size } from '../common/types'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
