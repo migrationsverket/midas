@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --border-primary, --text-primary, --focus, --focus-inset, --layer-01, --support-border-warning, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-warning from tokens;
+@value --font-family, --text-disabled, --border-primary, --text-primary, --focus, --focus-inset, --layer-01, --support-border-warning, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-warning, --size-130, --size-150, --size-70 from tokens;
 
 /** clear the default list styles */
 * > ul {
@@ -34,13 +34,17 @@
   color: --text-primary;
   display: flex;
   justify-content: flex-end;
-  height: 3rem;
+  min-height: --size-150;
   align-items: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: --size-70;
+  padding-right: --size-70;
   background-color: --field-01;
   border-bottom: 1px solid --border-primary;
   cursor: pointer;
+
+  &.medium {
+    min-height: 2.5rem;
+  }
 
   &:focus-visible {
     outline: none;

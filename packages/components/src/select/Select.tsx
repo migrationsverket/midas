@@ -19,6 +19,7 @@ import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { Label } from '../label'
 import { Text } from '../text'
+import { Size } from '../common/types'
 
 export type OptionItem = {
   children?: never
@@ -112,11 +113,20 @@ export type SelectProps = {
   /** Name of the field, for uncontrolled use */
   name?: string
   errorPosition?: 'top' | 'bottom'
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
   (
-    { selectionMode = 'single', errorPosition = 'top', ...rest },
+    {
+      selectionMode = 'single',
+      errorPosition = 'top',
+      size = 'large',
+      ...rest
+    },
     forwardedRef,
   ) => {
     const props = {
@@ -274,6 +284,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                     [styles.buttonOpen]: state.isOpen,
                     [styles.buttonActive]: state.selectedItems,
                     [styles.buttonDisabled]: isDisabled,
+                    [styles.medium]: size === 'medium',
                   })}
                   data-invalid={
                     state.displayValidation.validationErrors.length > 0 ||
