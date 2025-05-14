@@ -9,6 +9,16 @@ Medium size components
 
 ## Migrera från x.x.x till 10.0.0
 
+### Accordion
+
+Accordion har inte längre stöd för prop `type` för att ha flera AccordionItems öppna samtidigt. Använd
+`allowsMultipleExpanded` istället
+
+```diff
+- <Accordion type='multiple'>/* items */</Accordion>
++ <Accordion allowsMultipleExpanded>/* items */</Accordion>
+```
+
 ### Button
 
 Button har inte längre stöd för `size='small'`. Däremot introduceras storleken `medium` och det går att välja
