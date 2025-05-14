@@ -68,7 +68,7 @@ export const Button: React.FC<MidasButton> = ({
   iconSize,
   ...rest
 }) => {
-  const effectiveIconSize = size === 'medium' ? 14 : iconSize || 20
+  const effectiveIconSize = size === 'small' ? 14 : iconSize || 20
 
   return (
     <AriaButton
