@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { Plus, X } from 'lucide-react'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -36,11 +37,19 @@ const meta: Meta<typeof Button> = {
 export default meta
 type Story = StoryObj<typeof Button>
 
-export const Primary = {
+export const Primary: Story = {
   args: {
     children: 'Button',
   },
   parameters: {},
+  play: async ({ canvas }) => {
+    const button = canvas.getByRole('button')
+    await userEvent.click(button)
+    expect(button).toBeEnabled()
+    button.focus()
+    await userEvent.keyboard('{Enter}')
+    expect(button).toHaveFocus()
+  },
 }
 
 export const Secondary: Story = {
