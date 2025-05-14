@@ -6034,12 +6034,13 @@ Hide color mode toggle in small viewports
   flex-direction: column;
 }
 
-.combobox_kSJb[data-invalid] .input_Ttd0 {
+.combobox_kSJb[data-invalid] .inputField_oWSg {
     border: 0.125rem solid light-dark(#e62323, #e62323);
     box-shadow: none;
   }
 
-.input_Ttd0 {
+.inputField_oWSg {
+  box-sizing: border-box;
   width: -webkit-fill-available;
   padding-left: 1rem;
   border: none;
@@ -6051,35 +6052,39 @@ Hide color mode toggle in small viewports
   background-color: light-dark(#f2f2f2, #262626);
 }
 
-.input_Ttd0[data-hovered],.input_Ttd0:has( + [data-hovered]) {
+.inputField_oWSg.medium_ptka {
+    height: 2.5rem;
+  }
+
+.inputField_oWSg[data-hovered],.inputField_oWSg:has( + [data-hovered]) {
     background-color: light-dark(#e6e6e6, #333333);
   }
 
-.input_Ttd0::-moz-placeholder {
+.inputField_oWSg::-moz-placeholder {
     color: light-dark(#a6a6a6, #525252);
   }
 
-.input_Ttd0::placeholder {
+.inputField_oWSg::placeholder {
     color: light-dark(#a6a6a6, #525252);
   }
 
-.input_Ttd0:focus-visible,.input_Ttd0[data-focus-visible] {
+.inputField_oWSg:focus-visible,.inputField_oWSg[data-focus-visible] {
     outline: none;
   }
 
-.input_Ttd0[data-focus-visible] {
+.inputField_oWSg[data-focus-visible] {
     box-shadow: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
   }
 
 @media (forced-colors: active) {
 
-.input_Ttd0[data-focus-visible] {
+.inputField_oWSg[data-focus-visible] {
       outline: 3px solid highlight;
       outline-offset: 2px;
   }
     }
 
-.input_Ttd0[data-disabled] {
+.inputField_oWSg[data-disabled] {
     background: light-dark(#f2f2f2, #262626);
     box-shadow: none;
     border-bottom: 0.063rem solid light-dark(#bfbfbf, #525252);
@@ -6101,15 +6106,20 @@ Hide color mode toggle in small viewports
   display: flex;
   align-items: center;
   border: none;
-  padding: 1rem;
+  padding: 0.875rem;
   color: light-dark(#171717, #f2f2f2);
   background-color: transparent;
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
+  height: 3rem;
   transition: transform 0.3s ease;
 }
+
+.button_yH32.medium_ptka {
+    height: 2.5rem;
+    padding: 0.625rem 0.875rem;
+  }
 
 .button_yH32[aria-expanded='true'] {
     transform: rotate(180deg);
@@ -9429,9 +9439,13 @@ CSS variables, meant to be overridden by final theme
 .inputContainer_hVqH {
   display: flex;
   position: relative;
-  min-height: 3rem;
+  height: 3rem;
   width: 100%;
 }
+
+.inputContainer_hVqH.medium_sM7f {
+    height: 2.5rem;
+  }
 
 .icon_KMPT {
   color: light-dark(#171717, #f2f2f2);
@@ -9454,6 +9468,11 @@ CSS variables, meant to be overridden by final theme
   background-color: transparent;
 }
 
+.clear_cC1p.medium_sM7f {
+    height: 2.5rem;
+    padding: 0.625rem 0.875rem;
+  }
+
 .input_Z0RI {
   all: unset;
   box-sizing: border-box;
@@ -9463,9 +9482,15 @@ CSS variables, meant to be overridden by final theme
           appearance: none;
   background-color: light-dark(#f2f2f2, #262626);
   width: 100%;
+  height: 3rem;
   padding: 0.875rem 0 0.875rem 3rem;
   border-bottom: 1px solid light-dark(#171717, #f2f2f2);
 }
+
+.input_Z0RI.medium_sM7f {
+    height: 2.5rem;
+    padding: 0.625rem 0 0.625rem 3rem;
+  }
 
 .input_Z0RI:focus-visible {
     box-shadow: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
@@ -9490,6 +9515,16 @@ CSS variables, meant to be overridden by final theme
 .input_Z0RI::-webkit-search-decoration,.input_Z0RI::-webkit-search-cancel-button,.input_Z0RI::-webkit-search-results-button,.input_Z0RI::-webkit-search-results-decoration {
     /* stylelint-disable-next-line property-no-vendor-prefix */
     -webkit-appearance: none;
+  }
+
+.button_MzYY {
+  line-height: 1;
+  padding: 0.875rem 1.75rem;
+}
+
+.button_MzYY.medium_sM7f {
+    height: 2.5rem;
+    padding: 0.625rem 1.75rem;
   }
 
 /**
