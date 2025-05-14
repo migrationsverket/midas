@@ -35,7 +35,7 @@ import { Skeleton } from '@midas-ds/components'
 
 ## Varianter
 
-### Rectangular
+### Rectangle
 
 Detta är standardvarianten. Används som platshållare för text och de flesta komponenter vi har. Ange storleken i px, rem eller % med `width` och `height`. Om inget anges kommer den att fylla sin parent container.
 
@@ -67,19 +67,19 @@ Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` o
 
 ## Animation
 
-Skeleton har som standard en animationen `wave` aktiverad. Den går att stänga av med `animation='false'`.
+Skeleton är animerad som standard. Det går att stänga av med `isAnimated={false}`.
 
 ```tsx
 <Skeleton
   height='48px'
-  animation='false'
+  isAnimated
 />
 ```
 
 <div className='card'>
   <Skeleton
     height='48px'
-    animation='false'
+    isAnimated
   />
 </div>
 
