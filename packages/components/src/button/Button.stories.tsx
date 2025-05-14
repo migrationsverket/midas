@@ -13,24 +13,9 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     children: { type: 'string' },
-    variant: {
-      options: ['primary', 'secondary', 'tertiary', 'danger', 'icon'],
-      control: { type: 'radio' },
-      defaultValue: 'primary',
-    },
-    size: {
-      options: ['large', 'medium', 'small'],
-      control: { type: 'radio' },
-      defaultValue: 'large',
-    },
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' },
-    },
-    iconPlacement: {
-      options: ['right', 'left'],
-      control: { type: 'radio' },
-      defaultValue: 'left',
     },
   },
 }
@@ -91,13 +76,6 @@ export const MediumSize = {
   args: {
     children: 'Button',
     size: 'medium',
-  },
-}
-
-export const SmallPrimary = {
-  args: {
-    children: 'Button',
-    size: 'small',
   },
 }
 
