@@ -1,0 +1,31 @@
+---
+title: Release 8.0.0
+date: 2025-04-15
+---
+
+## Migrera från 7.x.x till 8.0.0
+
+Värdet i callbacken `onSelectionChange` för komponenten `Select` har ändrats.
+Numera skickas valda nycklar med en `Selection` type (`"all" | Set<string | number>`) när användaren justerar sitt val.
+
+```diff
+-   onSelectionChange?: ((value: Selection | Key | Key[]) => void) | undefined
++   onSelectionChange?: ((keys: Selection) => void) | undefined
+```
+
+Detta innebär att du behöver hantera om användaren klickar på "Välj alla" manuellt:
+
+```tsx
+const handleSelectionChange = (keys: Selection) => {
+  if (keys === 'all') {
+    return setSelection(new Set(options.map(({ id }) => id)))
+  }
+  return setSelection(keys)
+}
+```
+
+För mer information, läs [instruktioner för `Select` och kontrollerade val](/components/select/#kontrollerade-val)
+
+Kolla [changelog](/changelog/8.0.0)
+
+{/* truncate */}
