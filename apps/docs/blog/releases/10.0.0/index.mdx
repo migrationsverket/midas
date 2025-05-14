@@ -31,6 +31,17 @@ mellan `'large'` och `'medium'`, där medium är default.
 
 ```
 
+### Modal, DialogTrigger
+
+Varianten med ModalTrigger och Dialog är nu utfasad och istället ska DialogTrigger och Modal användas. En aning
+förvirrande men principen är liknande och den uppdaterade versionen innehåller många förbättringar.
+Se dokumentationen för [modal](/components/modal) för hur DialogTrigger används.
+
+```diff
+- import {Dialog, ModalTrigger} from '@midas-ds/components' // no longer works
++ import {DialogTrigger, Modal} from '@midas-ds/components'
+```
+
 Kolla [changelog](/changelog/10.0.0)
 
 {/* truncate */}
