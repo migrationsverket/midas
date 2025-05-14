@@ -47,8 +47,18 @@ Från och med 10.0.0 går det inte längre att använda prop `dark`, använd `ì
 
 ```diff
 - <Spinner dark/>
-- <Spinner isOnColor/>
++ <Spinner isOnColor/>
 ```
+
+### Tabs
+
+Använd `defaultSelectedKey` istället för `defaultSelectedKey`.
+
+```diff
+- <Tabs defaultSelected={1}> /* tab content */ </Tabs>
++ <Tabs defaultSelectedKey={1}> /* tab content */ </Tabs>
+```
+
 
 Kolla [changelog](/changelog/10.0.0)
 
