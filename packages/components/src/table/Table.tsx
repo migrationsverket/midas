@@ -31,19 +31,14 @@ import clsx from 'clsx'
 
 export interface TableProps extends AriaTableProps {
   /**
-   *  @deprecated since v8.0.0 This variant will be replaced with a new scaling api accross all components.
-   */
-  narrow?: boolean
-  /**
    * Alternating colors for rows
    */
   striped?: boolean
 }
 
-export const Table = ({ narrow, striped, className, ...rest }: TableProps) => {
+export const Table = ({ striped, className, ...rest }: TableProps) => {
   const classNames = clsx(
     styles.table,
-    narrow && styles.narrow,
     striped && styles.striped,
     className,
   )
