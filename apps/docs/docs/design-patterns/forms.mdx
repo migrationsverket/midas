@@ -1,24 +1,46 @@
 # Formulär
 
 import { Flex, FlexItem, TextField } from '@midas-ds/components'
+import { useColorMode } from '@docusaurus/theme-common'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+
+## Generella riktlinjer
+
+Huvudsyftet med ett frågeformulär är att samla in den information vi behöver från användaren. Vi måste därför utforma formulären så att användarna har möjlighet att besvara frågorna på rätt sätt.
+
+### Håll nere antalet distraktioner
+
+- Validera bara enligt våra valideringsprinciper
+- Undvik distraktioner, t.ex. grafik eller information, som inte har med frågan att göra.
+- Markera inte frågor som är obligatoriska förutsatt att större delen av frågorna är obligatoriska (se Obligatorisk vs valfri nedan).
+
+### Ställ bara frågor vi måste ha svar på
+
+- Be bara om information vi behöver för att ta ett korrekt och rättvist beslut.
+- Ställ inte samma fråga flera gånger.
+- Ställ inte frågor vi redan har svar på eller som vi kan få svar på från andra källor.
+- Förklara varför vi ställer specifika frågor.
+
+### Struktur
+
+- Gruppera frågor som är relaterade till varandra, antingen på samma sida eller över flera sidor.
+- Placera inmatningsfält i en vertikal kolumn.
+- Använd en logisk struktur för vilken ordning frågorna ställs.
+- Använd logisk struktur hur information som användaren ska lämna skrivs in. Följ konventioner för exempelvis personnummer/datum/kreditkortsuppgifter.
+- Undvik platshållare i inmatningsfält. Instruktioner för vad som ska skrivas in ska framgå av frågan som ställs, informationstext eller etiketten.
+- Beskriv format eller andra inmatningsinstruktioner om det behövs.
+- Välj längd på och typ av inmatningsfält baserat på informationen användaren förväntas skriva in.
+- Undvik funktionalitet som tömmer ett formulär eller en formulärsida.
+
+<div className='card-do-dont'>
+  <RelatedQuestions />
+  <UnrelatedQuestions />
+</div>
 
 ## Obligatorisk vs valfri
 
 Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.
 Följer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten `”(valfritt)”`.
-
-```jsx
-<TextField
-  label="Fullständigt namn"
-  description="För och efternamn"
-  isRequired
-  errorMessage="Detta är ett obligatoriskt fält"
-/>
-<TextField
-  label="Favoritfrukter (Valfritt)"
-  description="Kan lämnas tomt"
-/>
-```
 
 <div className='card'>
   <Flex>
@@ -39,61 +61,28 @@ Följer vi den regeln faller det sig naturligt att de flesta fält i ett formul�
   </Flex>
 </div>
 
-### Undantag 1: Valfria fält är fler än de obligatoriska
+export function RelatedQuestions() {
+  const { colorMode } = useColorMode(); // 'light' or 'dark'
+  const imgSrc = useBaseUrl('/img/formexamples/relatedQuestionsLight.svg')
+  const imgSrcDark = useBaseUrl('/img/formexamples/relatedQuestionsDark.svg')
 
-Markera obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält markeras med en asterisk.
+return (
 
-### Undantag 2: Valfria fält och obligatoriska fält är (ungefär) lika många
-
-Markera valfria fält med ”(valfritt)” och obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält
-markeras med en asterisk.
-
-## Position av felmeddelande
-
-### Standard
-
-Som standard visas eventuella felmeddelanden ovanför våra formulärelement.
-
-```jsx
-<TextField
-  label='Skriv ditt fullständiga namn'
-  description='Både för och efternamn'
-  isRequired
-  errorMessage='Detta är ett obligatoriskt fält'
+<img
+  src={colorMode === 'light' ? imgSrc : imgSrcDark}
+  alt='Relaterade frågor på samma sida'
 />
-```
+); }
 
-<div className='card'>
-  <TextField
-    label='Skriv ditt fullständiga namn'
-    description='Både för och efternamn'
-    isInvalid
-    errorMessage='Detta är ett obligatoriskt fält'
-  />
-</div>
+export function UnrelatedQuestions() {
+  const { colorMode } = useColorMode(); // 'light' or 'dark'
+  const imgSrc = useBaseUrl('/img/formexamples/unrelatedQuestionsLight.svg')
+  const imgSrcDark = useBaseUrl('/img/formexamples/unrelatedQuestionsDark.svg')
 
-### Felmeddelande under element
+return (
 
-För att visa felmeddelanden under elementet använd attributet `errorPosition` med värdet `bottom`, attributet accepteras av samtliga formulärkomponenter.
-
-```jsx
-<TextField
-  label='Skriv ditt fullständiga namn'
-  description='Både för och efternamn'
-  // highlight-start
-  errorPosition='bottom'
-  // highlight-end
-  isRequired
-  errorMessage='Detta är ett obligatoriskt fält'
+<img
+  src={colorMode === 'light' ? imgSrc : imgSrcDark}
+  alt='Orelaterade frågor på samma sida'
 />
-```
-
-<div className='card'>
-  <TextField
-    label='Skriv ditt fullständiga namn'
-    description='Både för och efternamn'
-    isInvalid
-    errorPosition='bottom'
-    errorMessage='Detta är ett obligatoriskt fält'
-  />
-</div>
+); }
