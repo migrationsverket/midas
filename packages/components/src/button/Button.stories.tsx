@@ -17,7 +17,7 @@ const meta: Meta<typeof Button> = {
       defaultValue: 'primary',
     },
     size: {
-      options: ['large', 'medium'],
+      options: ['large', 'medium', 'small'],
       control: { type: 'radio' },
       defaultValue: 'large',
     },
@@ -75,6 +75,14 @@ export const MediumSize = {
   args: {
     children: 'Button',
     size: 'medium',
+  },
+  parameters: {},
+}
+
+export const SmallPrimary = {
+  args: {
+    children: 'Button',
+    size: 'small',
   },
   parameters: {},
 }

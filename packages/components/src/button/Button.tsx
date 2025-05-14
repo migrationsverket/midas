@@ -26,8 +26,9 @@ export interface MidasButtonProps {
   fullwidth?: boolean
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'
-   **/
-  size?: Size
+   **/ /** Choose between different button sizes */
+  /** @deprecated since v4.0.0 This variant "small" will be replaced with a new scaling api accross all components. */
+  size?: 'small' | Size
   /** Add an icon from lucide-react
    *
    * @see {@link https://lucide.dev/icons/}
@@ -80,6 +81,7 @@ export const Button: React.FC<MidasButton> = ({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'medium' && styles.medium,
+        size === 'small' && styles.small,
         iconPlacement === 'right' && styles.iconRight,
         className,
       )}
