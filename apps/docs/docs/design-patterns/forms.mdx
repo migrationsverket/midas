@@ -31,6 +31,11 @@ Huvudsyftet med ett frågeformulär är att samla in den information vi behöver
 - Välj längd på och typ av inmatningsfält baserat på informationen användaren förväntas skriva in.
 - Undvik funktionalitet som tömmer ett formulär eller en formulärsida.
 
+<div className='card'>
+  <RelatedQuestions />
+  <UnrelatedQuestions />
+</div>
+
 ## Obligatorisk vs valfri
 
 Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.
@@ -54,3 +59,31 @@ Följer vi den regeln faller det sig naturligt att de flesta fält i ett formul�
     </FlexItem>
   </Flex>
 </div>
+
+export function RelatedQuestions() {
+  const { colorMode } = useColorMode(); // 'light' or 'dark'
+
+return (
+
+<img
+  src={
+    colorMode === 'light' ? '/img/formexamples/relatedQuestionsLight.svg' : '/img/formexamples/relatedQuestionsDark.svg'
+  }
+  alt='relaterade fråga på samma sida'
+/>
+); }
+
+export function UnrelatedQuestions() {
+  const { colorMode } = useColorMode(); // 'light' or 'dark'
+
+return (
+
+<img
+  src={
+    colorMode === 'light'
+      ? '/img/formexamples/unrelatedQuestionsLight.svg'
+      : '/img/formexamples/unrelatedQuestionsDark.svg'
+  }
+  alt='orelaterade frågor på samma sida'
+/>
+); }
