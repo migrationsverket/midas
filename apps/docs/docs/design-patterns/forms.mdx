@@ -1,6 +1,7 @@
 # Formulär
 
 import { Flex, FlexItem, TextField } from '@midas-ds/components'
+import { useColorMode } from '@docusaurus/theme-common'
 
 ## Generella riktlinjer
 
@@ -21,7 +22,15 @@ Huvudsyftet med ett frågeformulär är att samla in den information vi behöver
 
 ### Struktur
 
-- Gruppera relaterade frågor. Antingen på samma sida eller över flera sidor.
+#### Gruppera relaterade frågor
+
+Gruppera frågor som är relaterade till varandra, antingen på samma sida eller över flera sidor.
+
+<div className='card-do-dont'>
+  <RelatedQuestions />
+  <UnrelatedQuestions />
+</div>
+
 - Placera inmatningsfält i en vertikal kolumn.
 - Använd en logisk struktur för vilken ordning frågorna ställs.
 - Använd logisk struktur hur information som användaren ska lämna skrivs in. Följ konventioner för exempelvis personnummer/datum/kreditkortsuppgifter.
@@ -53,3 +62,33 @@ Följer vi den regeln faller det sig naturligt att de flesta fält i ett formul�
     </FlexItem>
   </Flex>
 </div>
+
+export function RelatedQuestions() {
+  const { colorMode } = useColorMode(); // 'light' or 'dark'
+
+return (
+
+<img
+  src={
+    colorMode === 'light'
+      ? '/img/Form_examples/relatedQuestionsLight.svg'
+      : '/img/Form_examples/relatedQuestionsDark.svg'
+  }
+  alt='relaterad fråga'
+/>
+); }
+
+export function UnrelatedQuestions() {
+  const { colorMode } = useColorMode(); // 'light' or 'dark'
+
+return (
+
+<img
+  src={
+    colorMode === 'light'
+      ? '/img/Form_examples/unrelatedQuestionsLight.svg'
+      : '/img/Form_examples/unrelatedQuestionsDark.svg'
+  }
+  alt='relaterad fråga'
+/>
+); }
