@@ -177,10 +177,6 @@ export const semantic = {
   borderSubtle: `light-dark(${baseColors.gray50}, ${baseColors.gray160})`,
   borderTertiary: `light-dark(${baseColors.blue170}, ${baseColors.blue100})`,
 
-  /**
-   * @deprecated Deprecated in 8.2.0. Use `supportBorderWarning` instead.
-   */
-  borderInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   borderDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
 
   field01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
@@ -227,10 +223,6 @@ export const semantic = {
   textOnColor: `light-dark(${baseColors.white}, ${baseColors.white})`,
   textInverse: `light-dark(${baseColors.gray10}, ${baseColors.gray200})`,
   textDisabled: `light-dark(${baseColors.gray50}, ${baseColors.gray140})`,
-  /**
-   * @deprecated Deprecated in 8.4.0 - Please use textWarning instead.
-   */
-  textInvalid: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   textWarning: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
   textPlaceholder: `light-dark(${baseColors.gray70}, ${baseColors.gray140})`,
 
