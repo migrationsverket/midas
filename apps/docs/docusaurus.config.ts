@@ -3,6 +3,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
+import { getBranchUrl } from './src/utils/chromatic'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 const defaultLocale = 'sv'
@@ -42,11 +43,11 @@ const config: Config = {
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
   i18n: {
-    defaultLocale: defaultLocale,
+    defaultLocale: 'sv',
     locales: ['sv'],
   },
   customFields: {
-    currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(/\//g, '-'),
+    currentChromaticBranchUrl: getBranchUrl(process.env.GITHUB_HEAD_REF),
     midasVersion: version,
   },
   plugins: [
@@ -204,7 +205,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     prism: {
-      additionalLanguages: ['bash', 'git', 'css', 'diff'],
+      additionalLanguages: ['bash', 'git', 'css'],
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },

@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DateField } from './DateField'
 import { CalendarDate } from '@internationalized/date'
+import { expect } from '@storybook/test'
 
-const meta: Meta<typeof DateField> = {
+type Story = StoryObj<typeof DateField>
+
+export default {
   component: DateField,
   title: 'Components/DateField',
   tags: ['autodocs'],
@@ -25,29 +28,44 @@ const meta: Meta<typeof DateField> = {
   },
   args: {
     errorPosition: 'top',
+    label: 'Välj ett datum',
+    description: 'Vilket som helst',
   },
-}
-export default meta
-type Story = StoryObj<typeof DateField>
+} as Meta<typeof DateField>
 
 /** Don't put format in description, it changes with browser language settings! */
 export const Default: Story = {
+  play: async ({ step, canvas }) => {
+    await step('it should be large per default', async () => {
+      await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
+        height: '48px',
+      })
+    })
+  },
+}
+
+export const MediumSize: Story = {
   args: {
-    label: 'Välj ett datum',
-    description: 'Vilket som helst',
+    size: 'medium',
+  },
+  play: async ({ step, canvas }) => {
+    await step('it should be medium sized', async () => {
+      await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
+        height: '40px',
+      })
+    })
   },
 }
 
 export const Invalid: Story = {
   args: {
-    ...Default.args,
     isInvalid: true,
     errorMessage: 'Date must be tjugonionde maj',
   },
 }
+
 export const Disabled: Story = {
   args: {
-    ...Default.args,
     isDisabled: true,
   },
 }
@@ -55,7 +73,6 @@ export const Disabled: Story = {
 /** When using uncontrolled value */
 export const WithDefaultValue: Story = {
   args: {
-    ...Default.args,
     defaultValue: new CalendarDate(1995, 5, 29),
   },
 }

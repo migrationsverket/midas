@@ -11,12 +11,17 @@ import { FieldError } from '../field-error'
 import { Label } from '../label'
 import { Text } from '../text'
 import styles from './DateField.module.css'
+import { Size } from '../common/types'
 
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   label?: string
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export const DateField: React.FC<DateFieldProps> = ({
@@ -26,6 +31,7 @@ export const DateField: React.FC<DateFieldProps> = ({
   errorPosition = 'top',
   isDisabled,
   label,
+  size = 'large',
   ...rest
 }) => (
   <AriaDateField
@@ -36,8 +42,11 @@ export const DateField: React.FC<DateFieldProps> = ({
     {description && <Text slot='description'>{description}</Text>}
     {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
     <div
-      className={styles.inputField}
+      className={clsx(styles.inputField, {
+        [styles.medium]: size === 'medium',
+      })}
       data-disabled={isDisabled || undefined}
+      data-testid='date-field_input-field'
     >
       <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
     </div>

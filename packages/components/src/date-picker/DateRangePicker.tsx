@@ -16,6 +16,7 @@ import { Label } from '../label'
 import { RangeCalendar } from '../calendar'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
+import { Size } from '../common/types'
 
 export interface DateRangePickerProps
   extends AriaDateRangePickerProps<DateValue> {
@@ -23,6 +24,10 @@ export interface DateRangePickerProps
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   label?: string
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   * */
+  size?: Size
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({

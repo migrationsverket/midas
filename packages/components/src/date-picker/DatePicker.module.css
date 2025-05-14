@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --icon-primary, --border-primary, --support-border-warning, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-tertiary, --button-background-primary from tokens;
+@value --font-family, --field-01, --icon-primary, --border-primary, --support-border-warning, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-tertiary, --button-background-primary, --size-30, --size-130, --size-150 from tokens;
 
 .datePicker {
   font-family: --font-family;
@@ -11,7 +11,7 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  min-height: 3rem;
+  height: --size-150;
   align-items: center;
   background-color: --field-01;
   border-bottom: 1px solid --border-primary;
@@ -19,6 +19,10 @@
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+
+  &.medium {
+    height: --size-130;
+  }
 
   &[data-disabled] {
     cursor: not-allowed;
@@ -46,23 +50,32 @@
   .calendarButton {
     border: none;
     margin-left: auto;
-    min-height: 3rem;
+    height: --size-150;
     padding-right: 1rem;
     padding-left: 1rem;
     color: --icon-primary;
     background-color: --field-01;
     cursor: pointer;
+    border-bottom: 1px solid --border-primary;
+
+    &.medium {
+      height: --size-130;
+
+      &[data-invalid] {
+        height: calc(--size-130 - --size-30);
+      }
+    }
 
     &[data-invalid] {
-      position: relative;
-      margin-top: 3px;
-      margin-bottom: 3px;
-      transform: translateX(-3px);
+      border: none;
+      height: calc(--size-150 - --size-30);
+      margin-right: 3px;
     }
 
     &[data-disabled] {
       cursor: not-allowed;
       color: --icon-disabled;
+      border-color: --border-disabled;
     }
 
     &[data-hovered]:not([data-disabled]) {

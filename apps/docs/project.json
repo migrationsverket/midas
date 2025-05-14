@@ -30,6 +30,12 @@
       "options": {
         "lintFilePatterns": ["apps/docs/**/*.{ts,tsx,js,jsx,mdx}"]
       }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "options": {
+        "jestConfig": "apps/docs/jest.config.js"
+      }
     }
   },
   "tags": ["docs", "apps"]
