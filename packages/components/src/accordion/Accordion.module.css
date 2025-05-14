@@ -12,7 +12,7 @@
 
   &.contained {
     --gap: 0.25rem;
-    --item-padding: 0.875rem;
+    --item-padding: 0.75rem;
     --content-padding: 1rem;
     --border-color: --border-secondary;
     --border: 1px solid var(--border-color);
