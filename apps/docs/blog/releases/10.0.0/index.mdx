@@ -41,6 +41,14 @@ Se dokumentationen för [modal](/components/modal) för hur DialogTrigger använ
 - import {Dialog, ModalTrigger} from '@midas-ds/components' // no longer works
 + import {DialogTrigger, Modal} from '@midas-ds/components'
 ```
+### Spinner
+
+Från och med 10.0.0 går det inte längre att använda prop `dark`, använd `ìsOnColor` istället.
+
+```diff
+- <Spinner dark/>
+- <Spinner isOnColor/>
+```
 
 Kolla [changelog](/changelog/10.0.0)
 
