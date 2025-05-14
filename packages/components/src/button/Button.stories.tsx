@@ -9,6 +9,7 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   args: {
     variant: 'primary',
+    children: 'Button',
   },
   argTypes: {
     children: { type: 'string' },
@@ -41,21 +42,19 @@ export const Primary: Story = {
   args: {
     children: 'Button',
   },
-  parameters: {},
+
   play: async ({ canvas }) => {
     const button = canvas.getByRole('button')
     await userEvent.click(button)
-    expect(button).toBeEnabled()
+    await expect(button).toBeEnabled()
     button.focus()
     await userEvent.keyboard('{Enter}')
-    expect(button).toHaveFocus()
+    await expect(button).toHaveFocus()
   },
 }
 
 export const Secondary: Story = {
-  ...Primary,
   args: {
-    ...Primary.args,
     variant: 'secondary',
   },
 }
@@ -72,21 +71,19 @@ export const PrimaryDisabled: Story = {
   play: async ({ canvas }) => {
     const button = canvas.getByRole('button')
     await userEvent.click(button)
-    expect(button).toBeDisabled()
+    await expect(button).toBeDisabled()
   },
 }
 
 export const SecondaryDisabled: Story = {
-  ...Primary,
   args: {
-    ...Primary.args,
     variant: 'secondary',
     isDisabled: true,
   },
   play: async ({ canvas }) => {
     const button = canvas.getByRole('button')
     await userEvent.click(button)
-    expect(button).toBeDisabled()
+    await expect(button).toBeDisabled()
   },
 }
 
@@ -95,7 +92,6 @@ export const MediumSize = {
     children: 'Button',
     size: 'medium',
   },
-  parameters: {},
 }
 
 export const SmallPrimary = {
@@ -103,7 +99,6 @@ export const SmallPrimary = {
     children: 'Button',
     size: 'small',
   },
-  parameters: {},
 }
 
 export const PrimaryFullwidth = {
@@ -111,7 +106,6 @@ export const PrimaryFullwidth = {
     children: 'Button',
     fullwidth: true,
   },
-  parameters: {},
 }
 
 export const Icon = {
