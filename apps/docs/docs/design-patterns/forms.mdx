@@ -2,6 +2,7 @@
 
 import { Flex, FlexItem, TextField } from '@midas-ds/components'
 import { useColorMode } from '@docusaurus/theme-common'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 ## Generella riktlinjer
 
@@ -31,7 +32,7 @@ Huvudsyftet med ett frågeformulär är att samla in den information vi behöver
 - Välj längd på och typ av inmatningsfält baserat på informationen användaren förväntas skriva in.
 - Undvik funktionalitet som tömmer ett formulär eller en formulärsida.
 
-<div className='card'>
+<div className='card-do-dont'>
   <RelatedQuestions />
   <UnrelatedQuestions />
 </div>
@@ -62,28 +63,26 @@ Följer vi den regeln faller det sig naturligt att de flesta fält i ett formul�
 
 export function RelatedQuestions() {
   const { colorMode } = useColorMode(); // 'light' or 'dark'
+  const imgSrc = useBaseUrl('/img/formexamples/relatedQuestionsLight.svg')
+  const imgSrcDark = useBaseUrl('/img/formexamples/relatedQuestionsDark.svg')
 
 return (
 
 <img
-  src={
-    colorMode === 'light' ? '/img/formexamples/relatedQuestionsLight.svg' : '/img/formexamples/relatedQuestionsDark.svg'
-  }
-  alt='relaterade fråga på samma sida'
+  src={colorMode === 'light' ? imgSrc : imgSrcDark}
+  alt='Relaterade frågor på samma sida'
 />
 ); }
 
 export function UnrelatedQuestions() {
   const { colorMode } = useColorMode(); // 'light' or 'dark'
+  const imgSrc = useBaseUrl('/img/formexamples/unrelatedQuestionsLight.svg')
+  const imgSrcDark = useBaseUrl('/img/formexamples/unrelatedQuestionsDark.svg')
 
 return (
 
 <img
-  src={
-    colorMode === 'light'
-      ? '/img/formexamples/unrelatedQuestionsLight.svg'
-      : '/img/formexamples/unrelatedQuestionsDark.svg'
-  }
-  alt='orelaterade frågor på samma sida'
+  src={colorMode === 'light' ? imgSrc : imgSrcDark}
+  alt='Orelaterade frågor på samma sida'
 />
 ); }
