@@ -74,6 +74,15 @@ Tokens `borderInvalid` ersätts med `supportBorderWarning` och `textInvalid` ers
 
 ```
 
+### useMessageFormatter
+
+`useMessageFormatter` försvinner till förmån för `useLocalizedStringFormatter` eftersom den är deprecated hos React Aria.
+
+```diff
+- useMessageFormatter()
++ useLocalizedStringFormatter()
+```
+
 Kolla [changelog](/changelog/10.0.0)
 
 {/* truncate */}
