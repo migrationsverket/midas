@@ -7,6 +7,7 @@ import fs from 'fs'
 const packagesDir = path.resolve(__dirname, '../../packages')
 const defaultLocale = 'sv'
 const packageAliases = {}
+// eslint-disable-next-line
 const version = require(`${packagesDir}/components/package.json`).version
 
 fs.readdirSync(packagesDir).forEach(dir => {
@@ -46,7 +47,7 @@ const config: Config = {
   },
   customFields: {
     currentChromaticBranchUrl: process.env.GITHUB_HEAD_REF?.replace(/\//g, '-'),
-    midasVersion: version
+    midasVersion: version,
   },
   plugins: [
     [
@@ -151,7 +152,7 @@ const config: Config = {
           path: 'blog',
           blogSidebarTitle: 'Midas versioner',
           blogSidebarCount: 'ALL',
-        }
+        },
       } satisfies Preset.Options,
     ],
   ],
@@ -174,7 +175,7 @@ const config: Config = {
         {
           to: `/blog/releases/${version}`,
           label: `Version ${version}`,
-          position: 'right'
+          position: 'right',
         },
         {
           href: 'https://github.com/migrationsverket/midas',
@@ -191,11 +192,11 @@ const config: Config = {
           items: [
             {
               label: 'Changelog',
-              to: '/changelog'
-            }
-          ]
-        }
-      ]
+              to: '/changelog',
+            },
+          ],
+        },
+      ],
     },
     colorMode: {
       defaultMode: 'light',
