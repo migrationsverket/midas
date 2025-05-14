@@ -33,9 +33,12 @@ export interface MidasButtonProps {
    * @see {@link https://lucide.dev/icons/|Lucide}
    */
   icon?: LucideIcon
-  /** Adjust icon size */
+  /**
+   * Adjust icon size
+   *  @default 20
+   * */
   iconSize?: number
-  /** Display your icon on the left och right side of the button text */
+  /** Display the icon on the left or right side of the button text */
   iconPlacement?: 'left' | 'right'
   children?:
     | React.ReactNode
@@ -84,7 +87,7 @@ export const Button: React.FC<MidasButton> = ({
       {...rest}
     >
       <>
-        {IconComponent && <IconComponent aria-hidden />}
+        {IconComponent && <IconComponent aria-hidden size={iconSize ?? 20} />}
         {rest.children}
       </>
     </AriaButton>
