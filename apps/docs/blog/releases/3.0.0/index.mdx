@@ -1,0 +1,20 @@
+---
+title: Release 3.0.0
+date: 2025-02-28
+---
+
+## Migrera från 2.x.x till 3.0.0
+
+### SearchField
+
+`SearchField` stödjer inte längre `isRequired`. Beteendet kan efterliknas med hjälp av `validate`
+
+```tsx
+<SearchField validate={v => !!v.length || 'Var god ange åtminstone ett tecken' />
+```
+
+Se mer information om [hur du använder SearchField](/components/search-field)
+
+Kolla [changelog](/changelog/3.0.0)
+
+{/* truncate */}
