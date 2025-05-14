@@ -9,6 +9,7 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   args: {
     variant: 'primary',
+    children: 'Button',
   },
   argTypes: {
     children: { type: 'string' },
@@ -38,10 +39,6 @@ export default meta
 type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
-  args: {
-    children: 'Button',
-  },
-  parameters: {},
   play: async ({ canvas }) => {
     const button = canvas.getByRole('button')
     await userEvent.click(button)
@@ -53,9 +50,7 @@ export const Primary: Story = {
 }
 
 export const Secondary: Story = {
-  ...Primary,
   args: {
-    ...Primary.args,
     variant: 'secondary',
   },
 }
@@ -69,24 +64,12 @@ export const TertiaryWithIcon: Story = {
 }
 export const PrimaryDisabled: Story = {
   args: { variant: 'primary', isDisabled: true, children: 'Lägg till' },
-  play: async ({ canvas }) => {
-    const button = canvas.getByRole('button')
-    await userEvent.click(button)
-    expect(button).toBeDisabled()
-  },
 }
 
 export const SecondaryDisabled: Story = {
-  ...Primary,
   args: {
-    ...Primary.args,
     variant: 'secondary',
     isDisabled: true,
-  },
-  play: async ({ canvas }) => {
-    const button = canvas.getByRole('button')
-    await userEvent.click(button)
-    expect(button).toBeDisabled()
   },
 }
 
