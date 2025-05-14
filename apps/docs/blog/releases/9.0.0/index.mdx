@@ -3,21 +3,71 @@ title: Release 9.0.0
 date: 2025-05-08
 ---
 
-This was fun
+## Migrera från 8.x.x till 9.0.0
 
+Strukturen på tokens för `lineHeight` och `size` under `typography` har ändrats.
+Importerar du dessa värden behöver du justera din kod enligt:
 
-## Migrations
+### lineHeight
 
-Do this and that
+```tsx
+import { typography } from '@midas-ds/components/theme'
+```
+
+```diff
+-   typography.lineHeight01
++   typography.lineHeight10
+-   typography.lineHeight02
++   typography.lineHeight20
+-   typography.lineHeight03
++   typography.lineHeight30
+-   typography.lineHeight04
++   typography.lineHeight40
+-   typography.lineHeight05
++   typography.lineHeight50
+-   typography.lineHeight06
++   typography.lineHeight60
+-   typography.lineHeight07
++   typography.lineHeight70
+-   typography.lineHeight08
++   typography.lineHeight80
+-   typography.lineHeight09
++   typography.lineHeight90
+-   typography.lineHeight10
++   typography.lineHeight100
+```
+
+### size
+
+```tsx
+import { typography } from '@midas-ds/components/theme'
+```
 
 ```diff
 
--   button: "banan"
-+   button: "apelsin",
+-   typography.size01
++   typography.fontSize10
+-   typography.size02
++   typography.fontSize20
+-   typography.size03
++   typography.fontSize30
+-   typography.size04
++   typography.fontSize40
+-   typography.size05
++   typography.fontSize50
+-   typography.size06
++   typography.fontSize60
+-   typography.size07
++   typography.fontSize70
+-   typography.size08
++   typography.fontSize80
+-   typography.size09
++   typography.fontSize90
+-   typography.size10
++   typography.fontSize100
 
 ```
 
 Kolla [changelog](/changelog/9.0.0)
-
 
 {/* truncate */}
