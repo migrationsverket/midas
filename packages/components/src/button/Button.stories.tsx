@@ -69,6 +69,11 @@ export const TertiaryWithIcon: Story = {
 }
 export const PrimaryDisabled: Story = {
   args: { variant: 'primary', isDisabled: true, children: 'Lägg till' },
+  play: async ({ canvas }) => {
+    const button = canvas.getByRole('button')
+    await userEvent.click(button)
+    expect(button).toBeDisabled()
+  },
 }
 
 export const SecondaryDisabled: Story = {
@@ -77,6 +82,11 @@ export const SecondaryDisabled: Story = {
     ...Primary.args,
     variant: 'secondary',
     isDisabled: true,
+  },
+  play: async ({ canvas }) => {
+    const button = canvas.getByRole('button')
+    await userEvent.click(button)
+    expect(button).toBeDisabled()
   },
 }
 
