@@ -7182,7 +7182,6 @@ CSS variables, meant to be overridden by final theme
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 3rem;
 }
 
 .button_RcXK[data-focus-visible],.button_RcXK:focus-visible {
