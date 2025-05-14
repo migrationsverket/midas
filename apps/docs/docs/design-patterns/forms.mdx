@@ -1,6 +1,37 @@
 # Formulär
 
 import { Flex, FlexItem, TextField } from '@midas-ds/components'
+import { useColorMode } from '@docusaurus/theme-common'
+
+## Generella riktlinjer
+
+Huvudsyftet med ett frågeformulär är att samla in den information vi behöver från användaren. Vi måste därför utforma formulären så att användarna har möjlighet att besvara frågorna på rätt sätt.
+
+### Håll nere antalet distraktioner
+
+- Validera bara enligt våra [valideringsprinciper](../validation)
+- Undvik distraktioner, t.ex. grafik eller information, som inte har med frågan att göra.
+- Markera inte frågor som är obligatoriska förutsatt att större delen av frågorna är obligatoriska (se Obligatorisk vs valfri nedan).
+
+### Ställ bara frågor vi måste ha svar på
+
+- Be bara om information vi behöver för att ta ett korrekt och rättvist beslut.
+- Ställ inte samma fråga flera gånger.
+- Ställ inte frågor vi redan har svar på eller som vi kan få svar på från andra källor.
+- Förklara varför vi ställer specifika frågor.
+
+### Struktur
+
+#### Gruppera relaterade frågor
+
+- Gruppera frågor som är relaterade till varandra, antingen på samma sida eller över flera sidor.
+- Placera inmatningsfält i en vertikal kolumn.
+- Använd en logisk struktur för vilken ordning frågorna ställs.
+- Använd logisk struktur hur information som användaren ska lämna skrivs in. Följ konventioner för exempelvis personnummer/datum/kreditkortsuppgifter.
+- Undvik platshållare i inmatningsfält. Instruktioner för vad som ska skrivas in ska framgå av frågan som ställs, informationstext eller etiketten.
+- Beskriv format eller andra inmatningsinstruktioner om det behövs.
+- Välj längd på och typ av inmatningsfält baserat på informationen användaren förväntas skriva in.
+- Undvik funktionalitet som tömmer ett formulär eller en formulärsida.
 
 ## Obligatorisk vs valfri
 
