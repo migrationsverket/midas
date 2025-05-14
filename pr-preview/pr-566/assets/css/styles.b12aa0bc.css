@@ -7302,6 +7302,12 @@ CSS variables, meant to be overridden by final theme
   padding: 10px 14px;
 }
 
+.small_smbj {
+  min-height: 1.5rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+
 @media (forced-colors: active) {
   .primary_JNNk {
     border-width: 2px;
