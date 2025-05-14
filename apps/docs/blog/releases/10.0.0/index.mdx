@@ -1,0 +1,26 @@
+---
+title: Release 10.0.0
+date: 2025-05-15
+---
+
+## Nya funktioner
+
+Medium size components
+
+## Migrera från x.x.x till 10.0.0
+
+### Button
+
+Button har inte längre stöd för `size='small'`. Däremot introduceras storleken `medium` och det går att välja
+mellan `'large'` och `'medium'`, där medium är default.
+
+```jsx diff
+//highlight-next-line
+-   <Button size='small'></Button> // this is no longer valid
++   <Button size='medium'></Button>
+
+```
+
+Kolla [changelog](/changelog/10.0.0)
+
+{/* truncate */}
