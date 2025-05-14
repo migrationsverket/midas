@@ -144,12 +144,6 @@
   padding: --size-50 --size-70;
 }
 
-.small {
-  min-height: 1.5rem;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-}
-
 @media (forced-colors: active) {
   .primary {
     border-width: 2px;
