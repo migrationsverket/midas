@@ -38,19 +38,6 @@ Huvudsyftet med ett frågeformulär är att samla in den information vi behöver
 Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.
 Följer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten `”(valfritt)”`.
 
-```jsx
-<TextField
-  label="Fullständigt namn"
-  description="För och efternamn"
-  isRequired
-  errorMessage="Detta är ett obligatoriskt fält"
-/>
-<TextField
-  label="Favoritfrukter (Valfritt)"
-  description="Kan lämnas tomt"
-/>
-```
-
 <div className='card'>
   <Flex>
     <FlexItem col='6'>
