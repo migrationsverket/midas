@@ -73,7 +73,7 @@ export const SingleBoxed: Story = {
 export const MultipleSubtle: Story = {
   args: {
     ...SingleSubtle.args,
-    type: 'multiple',
+    allowsMultipleExpanded: true,
   },
 }
 
@@ -96,7 +96,7 @@ export const MultipleSubtleDisabled: Story = {
 export const MultipleBoxed: Story = {
   args: {
     ...SingleBoxed.args,
-    type: 'multiple',
+    allowsMultipleExpanded: true,
   },
 }
 
