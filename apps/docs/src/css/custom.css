@@ -92,7 +92,7 @@
 }
 
 .theme-code-block {
-/*  border: 1px solid var(--ifm-color-emphasis-200);*/
+  /*  border: 1px solid var(--ifm-color-emphasis-200); */
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -117,7 +117,8 @@
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-/*  border: 1px solid var(--ifm-color-emphasis-200);*/
+
+  /*  border: 1px solid var(--ifm-color-emphasis-200); */
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -142,12 +143,31 @@ table td {
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-  border: 1px solid var(--ifm-color-emphasis-200);
+
+  /*  border: 1px solid var(--ifm-color-emphasis-200); */
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+
+  &.padding-0 {
+    padding: 0;
+  }
+}
+
+.card-do-dont {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0;
+  margin-bottom: var(--ifm-leading);
+
+  /*  border: 1px solid var(--ifm-color-emphasis-200); */
+  box-shadow: none !important;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: row wrap;
   gap: 8px;
 
   &.padding-0 {
