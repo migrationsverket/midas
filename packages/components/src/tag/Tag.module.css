@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary from tokens;
+@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active from tokens;
 
 .button {
   color: --icon-primary;
@@ -14,6 +14,20 @@
   &[data-pressed] {
     background-color: --field-active-01;
   }
+
+  &.success[data-hovered],
+  .warning[data-hovered],
+  .info[data-hovered],
+  .important[data-hovered] {
+    background-color: --button-background-icon-hover;
+  }
+
+  &.success[data-pressed],
+  .warning[data-pressed],
+  .info[data-pressed],
+  .important[data-pressed] {
+    background-color: --button-background-icon-active;
+  }
 }
 
 .tag {
@@ -24,6 +38,22 @@
   background-color: --field-01;
   font-size: 0.875rem;
   font-family: --font-family;
+
+  &.success {
+    background-color: --support-background-success;
+  }
+
+  &.info {
+    background-color: --support-background-info;
+  }
+
+  &.important {
+    background-color: --support-background-important;
+  }
+
+  &.warning {
+    background-color: --support-background-warning;
+  }
 
   &[data-disabled] {
     color: --text-disabled;
