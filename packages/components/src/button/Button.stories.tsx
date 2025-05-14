@@ -17,9 +17,9 @@ const meta: Meta<typeof Button> = {
       defaultValue: 'primary',
     },
     size: {
-      options: ['small', 'default (null)'],
+      options: ['large', 'medium'],
       control: { type: 'radio' },
-      defaultValue: null,
+      defaultValue: 'large',
     },
     isDisabled: {
       options: [true, false],
@@ -71,10 +71,10 @@ export const SecondaryDisabled: Story = {
   },
 }
 
-export const SmallPrimary = {
+export const MediumSize = {
   args: {
     children: 'Button',
-    size: 'small',
+    size: 'medium',
   },
   parameters: {},
 }

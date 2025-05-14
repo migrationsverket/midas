@@ -9,6 +9,7 @@ import {
 } from 'react-aria-components'
 import clsx from 'clsx'
 import { LucideIcon } from 'lucide-react'
+import { Size } from '../common/types'
 
 export interface MidasButtonProps {
   /**
@@ -23,9 +24,10 @@ export interface MidasButtonProps {
    * @default false
    */
   fullwidth?: boolean
-  /** Choose between different button sizes */
-  /** @deprecated since v4.0.0 This variant will be replaced with a new scaling api accross all components. */
-  size?: 'small'
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   **/
+  size?: Size
   /** Add an icon from lucide-react
    *
    * @see {@link https://lucide.dev/icons/}
@@ -60,12 +62,12 @@ export const Button: React.FC<MidasButton> = ({
   fullwidth,
   className,
   iconPlacement,
-  size,
+  size = 'large',
   icon: IconComponent,
   iconSize,
   ...rest
 }) => {
-  const effectiveIconSize = size === 'small' ? 14 : iconSize || 20
+  const effectiveIconSize = size === 'medium' ? 14 : iconSize || 20
 
   return (
     <AriaButton
@@ -77,7 +79,7 @@ export const Button: React.FC<MidasButton> = ({
         variant === 'danger' && styles.danger,
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
-        size === 'small' && styles.small,
+        size === 'medium' && styles.medium,
         iconPlacement === 'right' && styles.iconRight,
         className,
       )}
