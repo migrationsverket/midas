@@ -46,6 +46,13 @@ export const Default: Story = {
   },
 }
 
+export const Status: Story = {
+  args: {
+    type: 'success',
+  },
+  render: Default.render,
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
