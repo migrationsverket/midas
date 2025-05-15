@@ -11,6 +11,7 @@ const allowedPrefixes = [
   'chore/',
   'hotfix/',
   'main',
+  'HEAD',
 ]
 
 try {
