@@ -43,7 +43,7 @@ export const Tag: React.FC<TagProps> = ({
       {dismissable && (
         <Button
           variant='icon'
-          size='small'
+          size='medium'
           className={styles.button}
           slot='remove'
         >
