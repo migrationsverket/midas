@@ -61,7 +61,6 @@
   }
 
   &[data-disabled='true'],
-  &[data-disabled='true'] .day,
   &[data-disabled='true'] button {
     cursor: not-allowed;
   }
@@ -133,6 +132,7 @@
 
   &[data-disabled] {
     color: --text-disabled;
+    cursor: not-allowed;
   }
 
   &.today {
