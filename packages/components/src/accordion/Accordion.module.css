@@ -90,6 +90,7 @@
     width: 100%;
     padding: var(--item-padding);
     align-items: flex-start;
+    min-height: unset;
 
     .chevronIcon {
       transform: rotate(0deg);
