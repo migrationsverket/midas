@@ -6810,6 +6810,10 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
   border-spacing: 0;
 }
 
+.table_nvoM.narrow_Jh7A th,.table_nvoM.narrow_Jh7A td {
+      padding: 0.2rem 1rem;
+    }
+
 .table_nvoM th[data-focused='true'] {
     outline: 2px solid light-dark(#171717, #f2f2f2);
   }

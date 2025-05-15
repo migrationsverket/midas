@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[389],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6920],{
 
-/***/ 22954:
+/***/ 57982:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -30,7 +30,6 @@ const assets = {
 "authorsImageUrls": [],
 };
 
-/*truncate*/
 
 
 const toc = [{
@@ -38,8 +37,8 @@ const toc = [{
   "id": "nya-funktioner",
   "level": 2
 }, {
-  "value": "Migrera från x.x.x till 10.0.0",
-  "id": "migrera-från-xxx-till-1000",
+  "value": "Migrera från 9.x.x till 10.0.0",
+  "id": "migrera-från-9xx-till-1000",
   "level": 2
 }, {
   "value": "Accordion",
@@ -60,10 +59,6 @@ const toc = [{
 }, {
   "value": "Tabs",
   "id": "tabs",
-  "level": 3
-}, {
-  "value": "Table",
-  "id": "table",
   "level": 3
 }, {
   "value": "Tokens",
@@ -100,8 +95,8 @@ function _createMdxContent(props) {
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.p, {
       children: "Medium size components"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
-      id: "migrera-från-xxx-till-1000",
-      children: "Migrera från x.x.x till 10.0.0"
+      id: "migrera-från-9xx-till-1000",
+      children: "Migrera från 9.x.x till 10.0.0"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
       id: "accordion",
       children: "Accordion"
@@ -128,7 +123,7 @@ function _createMdxContent(props) {
         children: "'large'"
       }), " och ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         children: "'medium'"
-      }), ", där medium är default."]
+      }), ", där large är default."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-diff",
@@ -168,20 +163,13 @@ function _createMdxContent(props) {
       children: ["Använd ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         children: "defaultSelectedKey"
       }), " istället för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "defaultSelectedKey"
+        children: "defaultSelected"
       }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-diff",
         children: "- <Tabs defaultSelected={1}> /* tab content */ </Tabs>\n+ <Tabs defaultSelectedKey={1}> /* tab content */ </Tabs>\n"
       })
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
-      id: "table",
-      children: "Table"
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
-      children: ["Prop ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
-        children: "narrow"
-      }), " försvinner. Ny variant för desktopanpassad storlek kommer i senare release."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
       id: "tokens",
       children: "Tokens"
@@ -257,7 +245,7 @@ function _createMdxContent(props) {
         href: "/changelog",
         children: "changelog"
       })]
-    }), "\n"]
+    })]
   });
 }
 function MDXContent(props = {}) {
@@ -280,7 +268,7 @@ function MDXContent(props = {}) {
 /***/ 55075:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-571/blog/releases/10.0.0","source":"@site/blog/releases/10.0.0/index.mdx","title":"Release 10.0.0","description":"Nya funktioner","date":"2025-05-15T00:00:00.000Z","tags":[],"readingTime":1.67,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.0.0","date":"2025-05-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 9.0.0","permalink":"/pr-preview/pr-571/blog/releases/9.0.0"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-571/blog/releases/10.0.0","source":"@site/blog/releases/10.0.0/index.mdx","title":"Release 10.0.0","description":"Nya funktioner","date":"2025-05-15T00:00:00.000Z","tags":[],"readingTime":1.6,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.0.0","date":"2025-05-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 9.0.0","permalink":"/pr-preview/pr-571/blog/releases/9.0.0"}}');
 
 /***/ })
 
