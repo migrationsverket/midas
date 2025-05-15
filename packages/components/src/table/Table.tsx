@@ -31,7 +31,7 @@ import clsx from 'clsx'
 
 export interface TableProps extends AriaTableProps {
   /**
-   *  @deprecated since v8.0.0 This variant will be replaced with a new scaling api accross all components.
+   *  A more compact version of the table
    */
   narrow?: boolean
   /**
