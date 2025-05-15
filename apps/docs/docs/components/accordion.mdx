@@ -88,7 +88,7 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
 
 AccordionItems kan ha en status för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla uppmärksamhet till att det t.ex finns fler åtgärder att utföra.
 
-```tsx {6,13}
+```tsx {6,13,20}
 <Accordion variant='contained'>
   {/* more items */}
   <AccordionItem
@@ -104,6 +104,13 @@ AccordionItems kan ha en status för att förtydliga för användaren att hen an
     type='warning'
   >
     Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id='watermelon'
+    title='Vattenmelon'
+    type='default'
+  >
+    Stor frukt med rött, saftigt kött
   </AccordionItem>
 </Accordion>
 ```
