@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --font-size-20, --line-height-20, --font-size-30, --line-height-30, --text-disabled from tokens;
+@value --text-primary, --font-family, --font-size-30, --line-height-30, --text-disabled from tokens;
 
 .labelBase {
   color: --text-primary;
@@ -18,32 +18,6 @@
   color: --text-disabled;
 }
 
-.label-01,
-.label-02 {
-  color: --text-primary;
-  font-family: --font-family;
-  margin-bottom: 0.25rem;
-
-  &:has(~ [data-disabled]) {
-    color: --text-disabled;
-  }
-}
-
 [data-disabled] {
-  > .label-01,
-  > .label-02 {
-    color: --text-disabled;
-  }
-}
-
-.label-01 {
-  font-size: --font-size-20;
-  line-height: --line-height-20;
-  font-weight: 400;
-}
-
-.label-02 {
-  font-size: --font-size-30;
-  line-height: --line-height-30;
-  font-weight: 500;
+  color: --text-disabled;
 }
