@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active from tokens;
+@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active, --border-primary, --support-border-success, --support-border-info, --support-border-important, --support-border-warning, --text-primary from tokens;
 
 .button {
   color: --icon-primary;
@@ -38,21 +38,27 @@
   background-color: --field-01;
   font-size: 0.875rem;
   font-family: --font-family;
+  border: 1px solid --border-primary;
+  color: --text-primary;
 
   &.success {
     background-color: --support-background-success;
+    border: 1px solid --support-border-success;
   }
 
   &.info {
     background-color: --support-background-info;
+    border: 1px solid --support-border-info;
   }
 
   &.important {
     background-color: --support-background-important;
+    border: 1px solid --support-border-important;
   }
 
   &.warning {
     background-color: --support-background-warning;
+    border: 1px solid --support-border-warning;
   }
 
   &[data-disabled] {
