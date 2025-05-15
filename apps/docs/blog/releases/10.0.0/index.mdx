@@ -7,7 +7,7 @@ date: 2025-05-15
 
 Medium size components
 
-## Migrera från x.x.x till 10.0.0
+## Migrera från 9.x.x till 10.0.0
 
 ### Accordion
 
@@ -22,7 +22,7 @@ Accordion har inte längre stöd för prop `type` för att ha flera AccordionIte
 ### Button
 
 Button har inte längre stöd för `size='small'`. Däremot introduceras storleken `medium` och det går att välja
-mellan `'large'` och `'medium'`, där medium är default.
+mellan `'large'` och `'medium'`, där large är default.
 
 ```diff
 //highlight-next-line
@@ -52,15 +52,12 @@ Från och med 10.0.0 går det inte längre att använda prop `dark`, använd `ì
 
 ### Tabs
 
-Använd `defaultSelectedKey` istället för `defaultSelectedKey`.
+Använd `defaultSelectedKey` istället för `defaultSelected`.
 
 ```diff
 - <Tabs defaultSelected={1}> /* tab content */ </Tabs>
 + <Tabs defaultSelectedKey={1}> /* tab content */ </Tabs>
 ```
-### Table
-
-Prop `narrow` försvinner. Ny variant för desktopanpassad storlek kommer i senare release.
 
 ### Tokens
 
