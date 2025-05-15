@@ -24,7 +24,7 @@ Accordion har inte längre stöd för prop `type` för att ha flera AccordionIte
 Button har inte längre stöd för `size='small'`. Däremot introduceras storleken `medium` och det går att välja
 mellan `'large'` och `'medium'`, där medium är default.
 
-```jsx diff
+```diff
 //highlight-next-line
 -   <Button size='small'></Button> // this is no longer valid
 +   <Button size='medium'></Button>
@@ -91,6 +91,16 @@ Default är numera `label-02` och för att uppnå variant `label-01`, använd ko
 ```diff
 - <Label variant='label-01'>Label</Label>
 + <Text slot='description'>Label</Label>
+```
+
+### Skeleton
+
+Namnfix på prop `rectangular` som numera heter `rectangle` för en mer konsekvent semantik. Animering är numera endast en
+boolean, `isAnimated=true|false`.
+
+```diff
+- <Skeleton variant='rectangular' animation='wave'/>
++ <Skeleton variant='rectangle' isAnimated />
 ```
 
 Kolla [changelog](/changelog/10.0.0)
