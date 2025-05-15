@@ -10379,11 +10379,11 @@ CSS variables, meant to be overridden by final theme
     background-color: light-dark(#d9d9d9, #383838);
   }
 
-.button_Loby.success_GxEq[data-hovered],.button_Loby .warning_MXCT[data-hovered],.button_Loby .info_xrqn[data-hovered],.button_Loby .important_QbWH[data-hovered] {
+.button_Loby.success_GxEq[data-hovered],.button_Loby.warning_MXCT[data-hovered],.button_Loby.info_xrqn[data-hovered],.button_Loby.important_QbWH[data-hovered] {
     background-color: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
   }
 
-.button_Loby.success_GxEq[data-pressed],.button_Loby .warning_MXCT[data-pressed],.button_Loby .info_xrqn[data-pressed],.button_Loby .important_QbWH[data-pressed] {
+.button_Loby.success_GxEq[data-pressed],.button_Loby.warning_MXCT[data-pressed],.button_Loby.info_xrqn[data-pressed],.button_Loby.important_QbWH[data-pressed] {
     background-color: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
   }
 
