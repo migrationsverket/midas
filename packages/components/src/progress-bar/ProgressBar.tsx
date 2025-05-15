@@ -1,10 +1,11 @@
 import * as React from 'react'
 import {
+  LabelProps,
   ProgressBar as AriaProgressBar,
-  ProgressBarProps as AriaProgressBarProps,
+  ProgressBarProps as AriaProgressBarProps
 } from 'react-aria-components'
 import styles from './ProgressBar.module.css'
-import { Label, LabelProps } from '../label'
+import { Label } from '../label'
 import clsx from 'clsx'
 
 interface ProgressBarProps extends AriaProgressBarProps {
