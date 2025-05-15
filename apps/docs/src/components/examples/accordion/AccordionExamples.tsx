@@ -57,6 +57,37 @@ export const StatusExample = () => (
   </div>
 )
 
+export const StatusWithWhiteExample = () => (
+  <div className='card'>
+    <Accordion variant='contained'>
+      <AccordionItem
+        id='mandarin'
+        title='Mandarin'
+        type='success'
+        hasWhiteBackground={true}
+      >
+        Liten orange citrusfrukt
+      </AccordionItem>
+      <AccordionItem
+        id='sharon'
+        title='Sharon'
+        type='warning'
+        hasWhiteBackground={true}
+      >
+        Persikoliknande frukt med fast kött
+      </AccordionItem>
+      <AccordionItem
+        id='watermelon'
+        title='Vattenmelon'
+        type='default'
+        hasWhiteBackground={true}
+      >
+        Stor frukt med rött, saftigt kött
+      </AccordionItem>
+    </Accordion>
+  </div>
+)
+
 export const ExampleControlled = (props: typeof Accordion) => {
   const [expandedKeys, setExpandedKeys] = React.useState<Set<Key>>(
     new Set(['mandarin']),

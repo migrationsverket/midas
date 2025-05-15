@@ -6,7 +6,12 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Example, ExampleControlled, StatusExample } from '@site/src/components/examples/accordion/AccordionExamples'
+import {
+  Example,
+  ExampleControlled,
+  StatusExample,
+  StatusWithWhiteExample,
+} from '@site/src/components/examples/accordion/AccordionExamples'
 
 <ComponentHeader
   name='Accordion'
@@ -104,6 +109,42 @@ AccordionItems kan ha en status för att förtydliga för användaren att hen an
 ```
 
 <StatusExample />
+
+### Status med vit bakgrund
+
+AcordionItems kan ha en status med vit bakgrund på content. Detta görs genom att sätta `hasWhiteBackground={true}`.
+
+```tsx {7,15,23}
+<Accordion variant='contained'>
+  {/* more items */}
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+    type='success'
+    hasWhiteBackground={true}
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+  <AccordionItem
+    id='sharon'
+    title='Sharon'
+    type='warning'
+    hasWhiteBackground={true}
+  >
+    Persikoliknande frukt med fast kött
+  </AccordionItem>
+  <AccordionItem
+    id='watermelon'
+    title='Vattenmelon'
+    type='default'
+    hasWhiteBackground={true}
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+</Accordion>
+```
+
+<StatusWithWhiteExample />
 
 ### Multiple
 
