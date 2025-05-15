@@ -132,16 +132,19 @@ export const External: Story = {
           variant='icon'
           icon={Bell}
           aria-label='Notiser'
+          size='medium'
         />
         <Button
           variant='icon'
           icon={Languages}
           aria-label='Byt språk'
+          size='medium'
         />
         <Button
           variant='icon'
           icon={LogOut}
           aria-label='Logga ut'
+          size='medium'
         />
       </>
     ),

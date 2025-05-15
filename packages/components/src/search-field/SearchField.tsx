@@ -149,9 +149,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           )}
         </div>
         <Button
-          className={clsx(styles.button, {
-            [styles.medium]: size === 'medium',
-          })}
+          size={size}
           isDisabled={props.isDisabled}
           excludeFromTabOrder
           onPress={handleSubmit}
