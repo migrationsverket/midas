@@ -6,14 +6,20 @@ import styles from './Calendar.module.css'
 
 export const CalendarHeader: React.FC = () => (
   <header className={styles.header}>
-    <Button slot='previous'>
+    <Button
+      slot='previous'
+      size='medium'
+    >
       <ChevronLeft />
     </Button>
     <Heading
       level={3}
       elementType='h2'
     />
-    <Button slot='next'>
+    <Button
+      slot='next'
+      size='medium'
+    >
       <ChevronRight />
     </Button>
   </header>
