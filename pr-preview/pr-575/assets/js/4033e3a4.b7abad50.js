@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9196],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6238],{
 
-/***/ 19867:
+/***/ 21097:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_textarea_mdx_846_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_textfield_mdx_403_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textarea-mdx-846.json
-const site_docs_components_textarea_mdx_846_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textarea","title":"TextArea","description":"När användaren ska fylla i längre information","source":"@site/docs/components/textarea.mdx","sourceDirName":"components","slug":"/components/textarea","permalink":"/pr-preview/pr-575/components/textarea","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextArea","description":"När användaren ska fylla i längre information","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-textfield-mdx-403.json
+const site_docs_components_textfield_mdx_403_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/textfield","title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","source":"@site/docs/components/textfield.mdx","sourceDirName":"components","slug":"/components/textfield","permalink":"/pr-preview/pr-575/components/textfield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"TextField","description":"Använd ett textfält när användaren ska fylla i en rad med text.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,16 +29,22 @@ var Tabs = __webpack_require__(65537);
 var TabItem = __webpack_require__(79329);
 // EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 1 modules
 var PropsTable = __webpack_require__(36382);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 4 modules
+var TextField = __webpack_require__(350);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(32980);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextArea.tsx
-var TextArea = __webpack_require__(76369);
-;// ./apps/docs/docs/components/textarea.mdx
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(93361);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./apps/docs/src/components/examples/form/TextFieldExamples.tsx
+function ControlledValue(){var _React$useState=react.useState(''),text=_React$useState[0],setText=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:"card",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{value:text,onChange:setText,label:"Controlled value"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Text/* Text */.E,{children:["Text value: ",text]})]});}
+;// ./apps/docs/docs/components/textfield.mdx
 
 
 const frontMatter = {
-	title: 'TextArea',
-	description: 'När användaren ska fylla i längre information',
+	title: 'TextField',
+	description: 'Använd ett textfält när användaren ska fylla i en rad med text.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -47,6 +53,7 @@ const contentTitle = undefined;
 const assets = {
 
 };
+
 
 
 
@@ -64,40 +71,84 @@ const toc = [{
   "id": "beskrivning",
   "level": 2
 }, {
+  "value": "Användning i formulär",
+  "id": "användning-i-formulär",
+  "level": 2
+}, {
+  "value": "Uncontrolled value",
+  "id": "uncontrolled-value",
+  "level": 3
+}, {
+  "value": "Controlled value",
+  "id": "controlled-value",
+  "level": 3
+}, {
+  "value": "Inbyggd validering",
+  "id": "inbyggd-validering",
+  "level": 3
+}, {
+  "value": "Egen validering",
+  "id": "egen-validering",
+  "level": 3
+}, {
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Storlek",
+  "id": "storlek",
+  "level": 3
+}, {
+  "value": "Character counter",
+  "id": "character-counter",
+  "level": 3
+}, {
+  "value": "Lösenord",
+  "id": "lösenord",
+  "level": 3
+}, {
   "value": "API",
   "id": "api",
   "level": 2
+}, {
+  "value": "TextField",
+  "id": "textfield",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
     h2: "h2",
+    h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    strong: "strong",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Textarea",
-      friendlyName: "Textfält, fritext",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html#textarea-1"
+      name: "Textfield",
+      friendlyName: "Inmatningsfält, textfält, nummerfält, lösenordsfält",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/TextField.html"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Inmatningsfält som används när användaren behöver fylla i längre information t.ex. en beskrivning, kommentar eller fritext. För kortare, striktare inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components/textfield",
-        children: "TextField"
+      children: ["Inmatningsfält när användaren ska fylla i kortare information, tex namn, personnummer eller epostadress. För längre inmatning används ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/textarea",
+        children: "TextArea"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<TextArea\n  label='Kommentar'\n  description='Skriv en kommentar'\n/>\n"
+        children: "<TextField\n  label='Etikett'\n  description='Beskrivning'\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
-      children: (0,jsx_runtime.jsx)(TextArea/* TextArea */.f, {
-        label: "Kommentar",
-        description: "Skriv en kommentar"
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        label: "Etikett",
+        description: "Beskrivning"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
@@ -134,39 +185,209 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { TextArea } from '@midas-ds/components'\n"
+        children: "import { TextField } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "beskrivning",
       children: "Beskrivning"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["TextArea är en komposition av ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<TextField>"
-      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<TextArea>"
+      children: ["TextField är en komposition av ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Input>"
       }), ", ", (0,jsx_runtime.jsx)(_components.code, {
         children: "<Label>"
       }), ", ", (0,jsx_runtime.jsx)(_components.code, {
         children: "<FieldError>"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+      }), " samt ", (0,jsx_runtime.jsx)(_components.code, {
         children: "<Text>"
-      }), " som alla är React Aria-komponenter."]
+      }), " som alla är React Aria komponenter.\nBeskrivning av hur de hänger ihop finns på React Arias ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/TextField.html#anatomy",
+        children: "dokumentation för TextField"
+      }), ".\nElementen renderas som vanliga html ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<label>"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<input>"
+      }), " med fördelen att tillgänglighet avseende korrekt ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<label>"
+      }), " är inbyggt\nsamt att validering fungerar både med native HTML eller med realtime/serverside validering. ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "MIDAS TextField"
+      }), " erbjuder därmed via\nReact Arias komponenter:"]
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Standard HTML-element renderade enligt MIDAS utseende"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Tillgänglighet via semantiskt sammankopplade labels och description"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Inbyggd formulärsvalidering för native HTML samt validering via andra bibliotek"
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "användning-i-formulär",
+      children: "Användning i formulär"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Med undantag för ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "type"
-      }), "-attributet erbjuder ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "TextArea"
-      }), " samma API som ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "TextField"
-      }), ", vänligen använd ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "../textfield",
-        children: "dokumentationen för TextField"
-      }), " för mer information."]
+      children: ["React Aria stöder native HTML-formulär via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "name"
+      }), " prop och eftersom TextField komponenten i grunden rymmer en standard ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<input>"
+      }), " fungerar\ndet som vanligt. Komponenten går också bra att använda i andra bibliotek för formulär. Se ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/forms.html",
+        children: "React Arias dokumentation för\nformulär"
+      }), " för detaljer om hur den kan integreras i till exempel\nReact Hook Form eller server-side validation."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "uncontrolled-value",
+      children: "Uncontrolled value"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "defaultValue"
+      }), " för att sätta ett uncontrolled value på ett TextField."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n  label='Skriv din favoritfrukt'\n  defaultValue='Banan'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        label: "Skriv din favoritfrukt",
+        defaultValue: "Banan"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "controlled-value",
+      children: "Controlled value"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "value"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onChange"
+      }), " för att använda controlled value på TextField/Input. Använd prop ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isInvalid"
+      }), " för att\nkontrollera fältets validering via state."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "title=\"ControlledValue.tsx\"",
+        children: "const ControlledValue = () => {\n  const [text, setText] = React.useState('')\n  return (\n    <>\n      <TextField value={text} onChange={setText} label=\"Controlled value\" />\n      <Text>Text value: {text}</Text>\n    </>\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(ControlledValue, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "inbyggd-validering",
+      children: "Inbyggd validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["TextField kan valideras precis som en standard ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<input>"
+      }), " via ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "HTML constraint validation"
+      }), " genom att sätta exempelvis\n", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type=\"email\""
+      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isRequired"
+      }), ", ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "minLength"
+      }), " etc, eller ett eget ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "pattern"
+      }), " för godtycklig regular expression. Felmeddelanden\nrenderas automatiskt på valt språk i browsern. Se ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "#api",
+        children: "API"
+      }), " för möjliga varianter."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "egen-validering",
+      children: "Egen validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Komponenten kan valideras med en egen funktion ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validate()"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n  label='Skriv in frukt'\n  isRequired\n  //highlight-start\n  validate={value => (value === 'frukt' ? true : 'Du måste skriva \"frukt\"')}\n  //highlight-end\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om validering i ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/forms.html#validation",
+        children: "React Arias dokumentation"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "storlek",
+      children: "Storlek"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För att minska höjden på TextField, använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "size=\"medium\""
+      }), " som minskar padding i inputfältet."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField label=\"Large\" /> // default is size=\"large\"\n//highlight-next-line\n<TextField label=\"Medium\" size=\"medium\" />\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)("span", {
+        style: {
+          display: 'flex',
+          gap: '1rem',
+          flexDirection: 'row'
+        },
+        children: [(0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+          label: "Large",
+          size: "large",
+          defaultValue: "large textfield"
+        }), (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+          label: "Medium",
+          size: "medium",
+          defaultValue: "medium textfield"
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Varianterna är tillägg till React Arias ursprungliga implementation."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "character-counter",
+      children: "Character counter"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "showCounter"
+      }), " för att visa antalet tecken som skrivits in i fältet."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n  label='Skriv in frukt'\n  maxLength={10}\n  //highlight-start\n  showCounter\n  //highlight-end\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        label: "Skriv in frukt",
+        description: "Max 10 tecken",
+        maxLength: 10,
+        showCounter: true
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "lösenord",
+      children: "Lösenord"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "type=\"password\""
+      }), " för att aktivera en knapp för att visa/dölja inmatat värde."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TextField\n  label='Lösenord'\n  //highlight-start\n  type='password'\n  //highlight-end\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        defaultValue: "super-secret",
+        label: "Lösenord",
+        autoComplete: "off",
+        type: "password"
+      })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "textfield",
+      children: "TextField"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "TextArea"
+      name: "TextField"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {})
     })]
   });
 }
@@ -418,20 +639,67 @@ var _excluded=["children","className","variant","isExpressive","elementType"];va
 
 /***/ }),
 
-/***/ 76369:
+/***/ 350:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   f: () => (/* binding */ TextArea)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _TextFieldBase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5619);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(43660);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(34164);
-/* harmony import */ var _TextField_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53502);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-'use client';var _excluded=["className","form","rows","wrap"];var TextArea=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,rows=_ref.rows,wrap=_ref.wrap,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_TextFieldBase__WEBPACK_IMPORTED_MODULE_4__/* .TextFieldBase */ .J,Object.assign({},rest,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .TextArea */ .f,{className:(0,clsx__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A)(_TextField_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.textArea,className),form:form,ref:ref,rows:rows,wrap:wrap})}));});
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  A: () => (/* binding */ TextField)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextFieldBase.tsx + 2 modules
+var TextFieldBase = __webpack_require__(5619);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
+var TextField_module = __webpack_require__(53502);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./node_modules/@internationalized/string/dist/LocalizedStringDictionary.mjs
+var LocalizedStringDictionary = __webpack_require__(92122);
+// EXTERNAL MODULE: ./node_modules/@internationalized/string/dist/LocalizedStringFormatter.mjs
+var LocalizedStringFormatter = __webpack_require__(57612);
+// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/context.mjs + 2 modules
+var context = __webpack_require__(39892);
+;// ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */var cache=new WeakMap();function getCachedDictionary(strings){var dictionary=cache.get(strings);if(!dictionary){dictionary=new LocalizedStringDictionary/* LocalizedStringDictionary */.B(strings,'sv-SE');cache.set(strings,dictionary);}return dictionary;}/**
+ * Returns a cached LocalizedStringDictionary for the given strings.
+ */function useLocalizedStringDictionary(strings,packageName){return packageName&&LocalizedStringDictionary/* LocalizedStringDictionary */.B.getGlobalDictionaryForPackage(packageName)||getCachedDictionary(strings);}/**
+ * Provides localized string formatting for the current locale. Supports interpolating variables,
+ * selecting the correct pluralization, and formatting numbers. Automatically updates when the locale changes.
+ * @param strings - A mapping of languages to localized strings by key.
+ */function useLocalizedStringFormatter(strings,packageName){var _useLocale=(0,context/* useLocale */.Y)(),locale=_useLocale.locale;var dictionary=useLocalizedStringDictionary(strings,packageName);return (0,react.useMemo)(function(){return new LocalizedStringFormatter/* LocalizedStringFormatter */.J(locale,dictionary);},[dictionary,locale]);}
+;// ./packages/components/src/textfield/intl/translations.json
+const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en":{"hide":"Hide","show":"Show"},"sv":{"hide":"Dölj","show":"Visa"},"es":{"hide":"Ocultar","show":"Mostrar"},"fr":{"hide":"Cacher","show":"Afficher"},"de":{"hide":"Verstecken","show":"Anzeigen"},"ja":{"hide":"隠す","show":"表示"},"zh":{"hide":"隐藏","show":"显示"},"ar":{"hide":"إخفاء","show":"إظهار"},"ru":{"hide":"Скрыть","show":"Показать"},"pt":{"hide":"Ocultar","show":"Mostrar"},"it":{"hide":"Nascondi","show":"Mostra"},"ko":{"hide":"숨기기","show":"보여주기"},"hi":{"hide":"छुपाएँ","show":"दिखाएँ"},"nl":{"hide":"Verbergen","show":"Tonen"},"pl":{"hide":"Ukryj","show":"Pokaż"},"tr":{"hide":"Gizle","show":"Göster"},"vi":{"hide":"Ẩn","show":"Hiện"},"th":{"hide":"ซ่อน","show":"แสดง"},"id":{"hide":"Sembunyikan","show":"Tampilkan"},"ms":{"hide":"Sembunyikan","show":"Tunjukkan"}}');
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(93361);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(35518);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/textfield/PasswordField.tsx
+var PasswordField=function PasswordField(_ref){var value=_ref.value;var _React$useState=react.useState(false),showPassword=_React$useState[0],setShowPassword=_React$useState[1];var handlePress=function handlePress(){return setShowPassword(function(previousValue){return!previousValue;});};var stringFormatter=useLocalizedStringFormatter(translations_namespaceObject);return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module/* default */.A.passwordText,children:value}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"tertiary",onPress:handlePress,className:TextField_module/* default */.A.passwordButton,children:showPassword?stringFormatter.format('hide'):stringFormatter.format('show')})]});};
+;// ./packages/components/src/textfield/Input.tsx
+var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];ref=_useContextProps[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module/* default */.A.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,props.className)})),props.type==='password'&&/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,Object.assign({},props))]});});
+;// ./packages/components/src/textfield/TextField.tsx
+'use client';var _excluded=["className","form","list"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,list=_ref.list,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:(0,clsx/* default */.A)(className),form:form,list:list,ref:ref})}));});
 
 /***/ }),
 
@@ -469,10 +737,8 @@ var jsx_runtime = __webpack_require__(74848);
 var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/theme/MidasThemeProvider.tsx
-var MidasThemeProvider = __webpack_require__(30933);
 ;// ./packages/components/src/textfield/TextFieldBase.tsx
-var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition;var _useTheme=(0,MidasThemeProvider/* useTheme */.D)(props),size=_useTheme.size;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:props.children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
+var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:props.children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
 
 /***/ }),
 

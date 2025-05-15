@@ -10,17 +10,16 @@
 /* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 /* harmony import */ var _Button_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(79728);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(65014);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(34164);
-/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(30933);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(65014);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-'use client';var _excluded=["variant","fullwidth","className","iconPlacement","icon","iconSize"];/**
+'use client';var _excluded=["variant","fullwidth","className","iconPlacement","size","icon","iconSize"];/**
  * Button to perform various actions.
  *
  * @interface MidasButton
  *
  * @see {@link https://designsystem.migrationsverket.se/components/button}
- */var Button=function Button(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'primary':_ref$variant,fullwidth=_ref.fullwidth,className=_ref.className,iconPlacement=_ref.iconPlacement,IconComponent=_ref.icon,iconSize=_ref.iconSize,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var _useTheme=(0,_theme__WEBPACK_IMPORTED_MODULE_4__/* .useTheme */ .D)(rest),size=_useTheme.size;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Button */ .$,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A)(_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.button,variant==='primary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.primary,variant==='secondary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.secondary,variant==='tertiary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.tertiary,variant==='danger'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.danger,variant==='icon'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconBtn,fullwidth&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fullwidth,size==='medium'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.medium,iconPlacement==='right'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconRight,className)},rest,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[IconComponent&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(IconComponent,{"aria-hidden":true,size:iconSize!=null?iconSize:20}),rest.children]})}));};
+ */var Button=function Button(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'primary':_ref$variant,fullwidth=_ref.fullwidth,className=_ref.className,iconPlacement=_ref.iconPlacement,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,IconComponent=_ref.icon,iconSize=_ref.iconSize,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .Button */ .$,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.button,variant==='primary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.primary,variant==='secondary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.secondary,variant==='tertiary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.tertiary,variant==='danger'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.danger,variant==='icon'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconBtn,fullwidth&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fullwidth,size==='medium'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.medium,iconPlacement==='right'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconRight,className)},rest,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[IconComponent&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(IconComponent,{"aria-hidden":true,size:iconSize!=null?iconSize:20}),rest.children]})}));};
 
 /***/ }),
 
@@ -97,21 +96,6 @@ var jsx_runtime = __webpack_require__(74848);
 'use client';var _excluded=["children","variant","fullwidth","icon","iconPlacement","className","as"];/**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */var LinkButton=function LinkButton(_ref){var children=_ref.children,variant=_ref.variant,fullwidth=_ref.fullwidth,IconComponent=_ref.icon,iconPlacement=_ref.iconPlacement,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||Link/* Link */.N;var Icon=function Icon(){if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:LinkButton_module.icon});if(rest.target==='_blank')return/*#__PURE__*/(0,jsx_runtime.jsx)(SquareArrowOutUpRight,{size:20,className:LinkButton_module.icon});if(iconPlacement==='left')return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_left/* default */.A,{size:20,className:LinkButton_module.icon});return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon});};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Component,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,variant==='primary'&&LinkButton_module.primary,variant==='secondary'&&LinkButton_module.secondary,variant==='tertiary'&&LinkButton_module.tertiary,variant==='danger'&&LinkButton_module.danger,variant==='icon'&&LinkButton_module.iconBtn,fullwidth&&LinkButton_module.fullwidth,iconPlacement==='left'&&LinkButton_module.iconLeft,className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{})]}));};
-
-/***/ }),
-
-/***/ 30933:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   D: () => (/* binding */ useTheme),
-/* harmony export */   z: () => (/* binding */ MidasThemeProvider)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-var ThemeContext=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext({size:undefined});var MidasThemeProvider=ThemeContext.Provider;/**
- * Merge local props with the ones provided via context by a parent component.
- * The local props always take precedence over the context values.
- */var useTheme=function useTheme(localProps){var contextProps=react__WEBPACK_IMPORTED_MODULE_0__.useContext(ThemeContext);return{size:localProps.size||contextProps.size||'large'};};
 
 /***/ }),
 
@@ -475,155 +459,6 @@ function $488c6ddbf4ef74c2$export$711b50b3c525e0f2(numberFormat, signDisplay, nu
 
 
 //# sourceMappingURL=NumberFormatter.module.js.map
-
-
-/***/ }),
-
-/***/ 92122:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   B: () => (/* binding */ $5b160d28a433310d$export$c17fa47878dc55b6)
-/* harmony export */ });
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ const $5b160d28a433310d$var$localeSymbol = Symbol.for('react-aria.i18n.locale');
-const $5b160d28a433310d$var$stringsSymbol = Symbol.for('react-aria.i18n.strings');
-let $5b160d28a433310d$var$cachedGlobalStrings = undefined;
-class $5b160d28a433310d$export$c17fa47878dc55b6 {
-    /** Returns a localized string for the given key and locale. */ getStringForLocale(key, locale) {
-        let strings = this.getStringsForLocale(locale);
-        let string = strings[key];
-        if (!string) throw new Error(`Could not find intl message ${key} in ${locale} locale`);
-        return string;
-    }
-    /** Returns all localized strings for the given locale. */ getStringsForLocale(locale) {
-        let strings = this.strings[locale];
-        if (!strings) {
-            strings = $5b160d28a433310d$var$getStringsForLocale(locale, this.strings, this.defaultLocale);
-            this.strings[locale] = strings;
-        }
-        return strings;
-    }
-    static getGlobalDictionaryForPackage(packageName) {
-        if (typeof window === 'undefined') return null;
-        let locale = window[$5b160d28a433310d$var$localeSymbol];
-        if ($5b160d28a433310d$var$cachedGlobalStrings === undefined) {
-            let globalStrings = window[$5b160d28a433310d$var$stringsSymbol];
-            if (!globalStrings) return null;
-            $5b160d28a433310d$var$cachedGlobalStrings = {};
-            for(let pkg in globalStrings)$5b160d28a433310d$var$cachedGlobalStrings[pkg] = new $5b160d28a433310d$export$c17fa47878dc55b6({
-                [locale]: globalStrings[pkg]
-            }, locale);
-        }
-        let dictionary = $5b160d28a433310d$var$cachedGlobalStrings === null || $5b160d28a433310d$var$cachedGlobalStrings === void 0 ? void 0 : $5b160d28a433310d$var$cachedGlobalStrings[packageName];
-        if (!dictionary) throw new Error(`Strings for package "${packageName}" were not included by LocalizedStringProvider. Please add it to the list passed to createLocalizedStringDictionary.`);
-        return dictionary;
-    }
-    constructor(messages, defaultLocale = 'en-US'){
-        // Clone messages so we don't modify the original object.
-        // Filter out entries with falsy values which may have been caused by applying optimize-locales-plugin.
-        this.strings = Object.fromEntries(Object.entries(messages).filter(([, v])=>v));
-        this.defaultLocale = defaultLocale;
-    }
-}
-function $5b160d28a433310d$var$getStringsForLocale(locale, strings, defaultLocale = 'en-US') {
-    // If there is an exact match, use it.
-    if (strings[locale]) return strings[locale];
-    // Attempt to find the closest match by language.
-    // For example, if the locale is fr-CA (French Canadian), but there is only
-    // an fr-FR (France) set of strings, use that.
-    // This could be replaced with Intl.LocaleMatcher once it is supported.
-    // https://github.com/tc39/proposal-intl-localematcher
-    let language = $5b160d28a433310d$var$getLanguage(locale);
-    if (strings[language]) return strings[language];
-    for(let key in strings){
-        if (key.startsWith(language + '-')) return strings[key];
-    }
-    // Nothing close, use english.
-    return strings[defaultLocale];
-}
-function $5b160d28a433310d$var$getLanguage(locale) {
-    // @ts-ignore
-    if (Intl.Locale) // @ts-ignore
-    return new Intl.Locale(locale).language;
-    return locale.split('-')[0];
-}
-
-
-
-//# sourceMappingURL=LocalizedStringDictionary.module.js.map
-
-
-/***/ }),
-
-/***/ 57612:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ $6db58dc88e78b024$export$2f817fcdc4b89ae0)
-/* harmony export */ });
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ const $6db58dc88e78b024$var$pluralRulesCache = new Map();
-const $6db58dc88e78b024$var$numberFormatCache = new Map();
-class $6db58dc88e78b024$export$2f817fcdc4b89ae0 {
-    /** Formats a localized string for the given key with the provided variables. */ format(key, variables) {
-        let message = this.strings.getStringForLocale(key, this.locale);
-        return typeof message === 'function' ? message(variables, this) : message;
-    }
-    plural(count, options, type = 'cardinal') {
-        let opt = options['=' + count];
-        if (opt) return typeof opt === 'function' ? opt() : opt;
-        let key = this.locale + ':' + type;
-        let pluralRules = $6db58dc88e78b024$var$pluralRulesCache.get(key);
-        if (!pluralRules) {
-            pluralRules = new Intl.PluralRules(this.locale, {
-                type: type
-            });
-            $6db58dc88e78b024$var$pluralRulesCache.set(key, pluralRules);
-        }
-        let selected = pluralRules.select(count);
-        opt = options[selected] || options.other;
-        return typeof opt === 'function' ? opt() : opt;
-    }
-    number(value) {
-        let numberFormat = $6db58dc88e78b024$var$numberFormatCache.get(this.locale);
-        if (!numberFormat) {
-            numberFormat = new Intl.NumberFormat(this.locale);
-            $6db58dc88e78b024$var$numberFormatCache.set(this.locale, numberFormat);
-        }
-        return numberFormat.format(value);
-    }
-    select(options, value) {
-        let opt = options[value] || options.other;
-        return typeof opt === 'function' ? opt() : opt;
-    }
-    constructor(locale, strings){
-        this.locale = locale;
-        this.strings = strings;
-    }
-}
-
-
-
-//# sourceMappingURL=LocalizedStringFormatter.module.js.map
 
 
 /***/ }),
