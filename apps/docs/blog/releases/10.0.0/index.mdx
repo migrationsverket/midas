@@ -83,6 +83,16 @@ Tokens `borderInvalid` ersätts med `supportBorderWarning` och `textInvalid` ers
 + useLocalizedStringFormatter()
 ```
 
+### Label
+
+Label variant försvinner i version 10.0.0, det går alltså inte längre att använda `variant='label-01'` eller `label-02`.
+Default är numera `label-02` och för att uppnå variant `label-01`, använd komponent `Text` med `slot='description'`.
+
+```diff
+- <Label variant='label-01'>Label</Label>
++ <Text slot='description'>Label</Label>
+```
+
 Kolla [changelog](/changelog/10.0.0)
 
 {/* truncate */}
