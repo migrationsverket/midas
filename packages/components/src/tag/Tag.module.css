@@ -16,16 +16,16 @@
   }
 
   &.success[data-hovered],
-  .warning[data-hovered],
-  .info[data-hovered],
-  .important[data-hovered] {
+  &.warning[data-hovered],
+  &.info[data-hovered],
+  &.important[data-hovered] {
     background-color: --button-background-icon-hover;
   }
 
   &.success[data-pressed],
-  .warning[data-pressed],
-  .info[data-pressed],
-  .important[data-pressed] {
+  &.warning[data-pressed],
+  &.info[data-pressed],
+  &.important[data-pressed] {
     background-color: --button-background-icon-active;
   }
 }
