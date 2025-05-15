@@ -134,7 +134,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           {value.length > 0 && (
             <Button
               variant='icon'
-              size='small'
+              size='medium'
               className={clsx(styles.clear, {
                 [styles.medium]: size === 'medium',
               })}
