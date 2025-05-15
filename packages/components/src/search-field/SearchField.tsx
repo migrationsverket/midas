@@ -11,6 +11,7 @@ import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 export interface SearchFieldProps
   extends Omit<AriaSearchFieldProps, 'isRequired'> {
@@ -41,9 +42,10 @@ function isValidationError(
 
 export const SearchField: React.FC<SearchFieldProps> = ({
   errorPosition = 'top',
-  size = 'large',
   ...props
 }) => {
+  const { size } = useTheme(props)
+
   const { value, setValue } = useSearchFieldState(props)
 
   const ref = React.useRef<HTMLInputElement>(null)
@@ -134,7 +136,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           {value.length > 0 && (
             <Button
               variant='icon'
-              size='medium'
+              size={size}
               className={clsx(styles.clear, {
                 [styles.medium]: size === 'medium',
               })}
@@ -149,9 +151,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           )}
         </div>
         <Button
-          className={clsx(styles.button, {
-            [styles.medium]: size === 'medium',
-          })}
+          size={size}
           isDisabled={props.isDisabled}
           excludeFromTabOrder
           onPress={handleSubmit}

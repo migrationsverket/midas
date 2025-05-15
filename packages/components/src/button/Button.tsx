@@ -10,6 +10,7 @@ import {
 import clsx from 'clsx'
 import { LucideIcon } from 'lucide-react'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 export interface MidasButtonProps {
   /**
@@ -65,11 +66,12 @@ export const Button: React.FC<MidasButton> = ({
   fullwidth,
   className,
   iconPlacement,
-  size = 'large',
   icon: IconComponent,
   iconSize,
   ...rest
 }) => {
+  const { size } = useTheme(rest)
+
   return (
     <AriaButton
       className={clsx(
@@ -87,7 +89,12 @@ export const Button: React.FC<MidasButton> = ({
       {...rest}
     >
       <>
-        {IconComponent && <IconComponent aria-hidden size={iconSize ?? 20} />}
+        {IconComponent && (
+          <IconComponent
+            aria-hidden
+            size={iconSize ?? 20}
+          />
+        )}
         {rest.children}
       </>
     </AriaButton>

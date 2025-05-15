@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker'
 import { expect, userEvent } from '@storybook/test'
+import { MidasThemeProvider } from '../theme'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -146,5 +147,42 @@ export const CustomValiation: Story = {
       await userEvent.tab()
       expect(canvas.getByText('Var god välj ett annat år')).toBeInTheDocument()
     })
+  },
+}
+
+export const ThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <DatePicker {...args} />
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be medium size, as defined by the context',
+      async () => {
+        await expect(canvas.getByRole('group')).toHaveStyle({
+          height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const OverrideThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    size: 'large',
+  },
+  render: ThemeProvider.render,
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be large and override the context, as defined by the component',
+      async () => {
+        await expect(canvas.getByRole('group')).toHaveStyle({
+          height: '48px',
+        })
+      },
+    )
   },
 }

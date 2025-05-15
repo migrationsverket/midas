@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@midas-ds/*": ["packages/*/src/index.ts"],
+      "@midas-ds/components/theme": ["packages/components/src/theme/index.ts"],
       "@midas-ds/dependencies": ["tools/dependencies/src/index.ts"]
     }
   },

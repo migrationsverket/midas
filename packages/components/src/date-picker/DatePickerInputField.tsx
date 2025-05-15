@@ -4,6 +4,7 @@ import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 interface DatePickerInputFieldProps {
   children?: React.ReactNode
@@ -16,25 +17,29 @@ export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   children,
   isDisabled,
   isInvalid,
-  size = 'large',
-}) => (
-  <Group
-    className={clsx(styles.inputField, {
-      [styles.medium]: size === 'medium',
-    })}
-  >
-    {children}
-    <Button
-      className={clsx(styles.calendarButton, {
+  ...rest
+}) => {
+  const { size } = useTheme(rest)
+
+  return (
+    <Group
+      className={clsx(styles.inputField, {
         [styles.medium]: size === 'medium',
       })}
-      data-invalid={isInvalid || undefined}
-      isDisabled={isDisabled}
     >
-      <CalendarDays
-        aria-hidden
-        size={20}
-      />
-    </Button>
-  </Group>
-)
+      {children}
+      <Button
+        className={clsx(styles.calendarButton, {
+          [styles.medium]: size === 'medium',
+        })}
+        data-invalid={isInvalid || undefined}
+        isDisabled={isDisabled}
+      >
+        <CalendarDays
+          aria-hidden
+          size={20}
+        />
+      </Button>
+    </Group>
+  )
+}

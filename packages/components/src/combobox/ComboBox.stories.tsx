@@ -5,6 +5,7 @@ import { Item, Section } from './types'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import styles from './ComboBox.module.css'
+import { MidasThemeProvider } from '../theme'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -198,4 +199,63 @@ export const Sectioned: Story = {
       {(section: Section<Item>) => <ComboBoxSelection {...section} />}
     </ComboBox>
   ),
+}
+
+export const ThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    ...Default.args,
+  },
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <ComboBox
+        data-testid='test'
+        items={options}
+        {...args}
+      >
+        {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      </ComboBox>
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be medium size, as defined by the context',
+      async () => {
+        await expect(canvas.getByRole('combobox')).toHaveStyle({
+          height: '40px',
+        })
+        await expect(canvas.getByRole('button')).toHaveStyle({
+          height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const OverrideThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    ...Default.args,
+    size: 'large',
+  },
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <ComboBox {...args}>
+        {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+      </ComboBox>
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be large and override the context, as defined by the component',
+      async () => {
+        await expect(canvas.getByRole('combobox')).toHaveStyle({
+          height: '48px',
+        })
+        await expect(canvas.getByRole('button')).toHaveStyle({
+          height: '48px',
+        })
+      },
+    )
+  },
 }

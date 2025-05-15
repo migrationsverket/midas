@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { SearchField } from './SearchField'
 import { expect, fn, userEvent } from '@storybook/test'
+import { MidasThemeProvider } from '../theme'
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,
@@ -120,5 +121,56 @@ export const Disabled: Story = {
   args: {
     placeholder: 'Sök efter dokument',
     isDisabled: true,
+  },
+}
+
+export const ThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    placeholder: 'Sök efter dokument',
+  },
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <SearchField {...args} />
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step, args: { buttonText } }) => {
+    await step(
+      'it should be medium size, as defined by the context',
+      async () => {
+        await expect(canvas.getByRole('searchbox')).toHaveStyle({
+          height: '40px',
+        })
+        await expect(
+          canvas.getByRole('button', { name: buttonText }),
+        ).toHaveStyle({
+          height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const OverrideThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    size: 'large',
+    placeholder: 'Sök efter dokument',
+  },
+  render: ThemeProvider.render,
+  play: async ({ canvas, step, args: { buttonText } }) => {
+    await step(
+      'it should be large and override the context, as defined by the component',
+      async () => {
+        await expect(canvas.getByRole('searchbox')).toHaveStyle({
+          height: '48px',
+        })
+        await expect(
+          canvas.getByRole('button', { name: buttonText }),
+        ).toHaveStyle({
+          height: '48px',
+        })
+      },
+    )
   },
 }

@@ -5,6 +5,7 @@ import { options, optionsWithSections } from './utils'
 import { expect, userEvent } from '@storybook/test'
 import { useState } from 'react'
 import { Selection } from 'react-aria-components'
+import { MidasThemeProvider } from '../theme'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -287,5 +288,42 @@ export const Sectioned: Story = {
   args: {
     ...Normal.args,
     options: optionsWithSections,
+  },
+}
+
+export const ThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <Select {...args} />
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be medium size, as defined by the context',
+      async () => {
+        await expect(canvas.getByRole('button')).toHaveStyle({
+          height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const OverrideThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    size: 'large',
+  },
+  render: ThemeProvider.render,
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be large and override the context, as defined by the component',
+      async () => {
+        await expect(canvas.getByRole('button')).toHaveStyle({
+          height: '48px',
+        })
+      },
+    )
   },
 }

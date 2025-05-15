@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DateField } from './DateField'
+import { MidasThemeProvider } from '../theme'
 import { CalendarDate } from '@internationalized/date'
 import { expect } from '@storybook/test'
 
@@ -74,5 +75,42 @@ export const Disabled: Story = {
 export const WithDefaultValue: Story = {
   args: {
     defaultValue: new CalendarDate(1995, 5, 29),
+  },
+}
+
+export const ThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <DateField {...args} />
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be medium size, as defined by the context',
+      async () => {
+        await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
+          height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const OverrideThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    size: 'large',
+  },
+  render: ThemeProvider.render,
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should be large and override the context, as defined by the component',
+      async () => {
+        await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
+          height: '48px',
+        })
+      },
+    )
   },
 }

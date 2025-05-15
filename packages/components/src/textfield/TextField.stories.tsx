@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import { TextField } from '../textfield'
+import { MidasThemeProvider } from '../theme'
 
 export default {
   title: 'Components/TextField',
@@ -198,7 +199,7 @@ export const ShowCounterWithDefaultValue: Story = {
 }
 
 export const MediumSizeInput: Story = {
-  tags: ['!autodocs'],
+  tags: ['!dev', '!autodocs'],
   args: {
     defaultValue: 'Medium size input',
     size: 'medium',
@@ -210,6 +211,43 @@ export const MediumSizeInput: Story = {
       async () => {
         await expect(canvas.getByLabelText(label as string)).toHaveStyle({
           height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const ThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  render: args => (
+    <MidasThemeProvider value={{ size: 'medium' }}>
+      <TextField {...args} />
+    </MidasThemeProvider>
+  ),
+  play: async ({ canvas, step, args: { label } }) => {
+    await step(
+      'it should be medium size, as defined by the context',
+      async () => {
+        await expect(canvas.getByLabelText(label as string)).toHaveStyle({
+          height: '40px',
+        })
+      },
+    )
+  },
+}
+
+export const OverrideThemeProvider: Story = {
+  tags: ['!dev', '!autodocs'],
+  args: {
+    size: 'large',
+  },
+  render: ThemeProvider.render,
+  play: async ({ canvas, step, args: { label } }) => {
+    await step(
+      'it should be large and override the context, as defined by the component',
+      async () => {
+        await expect(canvas.getByLabelText(label as string)).toHaveStyle({
+          height: '48px',
         })
       },
     )

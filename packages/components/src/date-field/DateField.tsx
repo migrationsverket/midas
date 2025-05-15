@@ -12,6 +12,7 @@ import { Label } from '../label'
 import { Text } from '../text'
 import styles from './DateField.module.css'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string
@@ -31,25 +32,28 @@ export const DateField: React.FC<DateFieldProps> = ({
   errorPosition = 'top',
   isDisabled,
   label,
-  size = 'large',
   ...rest
-}) => (
-  <AriaDateField
-    {...rest}
-    className={clsx(styles.dateField, className)}
-  >
-    <Label>{label}</Label>
-    {description && <Text slot='description'>{description}</Text>}
-    {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-    <div
-      className={clsx(styles.inputField, {
-        [styles.medium]: size === 'medium',
-      })}
-      data-disabled={isDisabled || undefined}
-      data-testid='date-field_input-field'
+}) => {
+  const { size } = useTheme(rest)
+
+  return (
+    <AriaDateField
+      {...rest}
+      className={clsx(styles.dateField, className)}
     >
-      <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
-    </div>
-    {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-  </AriaDateField>
-)
+      <Label>{label}</Label>
+      {description && <Text slot='description'>{description}</Text>}
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+      <div
+        className={clsx(styles.inputField, {
+          [styles.medium]: size === 'medium',
+        })}
+        data-disabled={isDisabled || undefined}
+        data-testid='date-field_input-field'
+      >
+        <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
+      </div>
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+    </AriaDateField>
+  )
+}

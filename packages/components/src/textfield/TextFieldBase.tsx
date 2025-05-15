@@ -13,6 +13,7 @@ import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 import { clsx } from 'clsx'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
@@ -47,8 +48,9 @@ export const TextFieldBase = React.forwardRef<
     errorMessage,
     showCounter,
     errorPosition = 'top',
-    size = 'large',
   } = props
+
+  const { size } = useTheme(props)
 
   return (
     <AriaTextField

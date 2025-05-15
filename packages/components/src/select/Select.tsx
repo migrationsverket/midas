@@ -20,6 +20,7 @@ import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { Label } from '../label'
 import { Text } from '../text'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 export type OptionItem = {
   children?: never
@@ -121,18 +122,15 @@ export type SelectProps = {
 
 export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
   (
-    {
-      selectionMode = 'single',
-      errorPosition = 'top',
-      size = 'large',
-      ...rest
-    },
+    { selectionMode = 'single', errorPosition = 'top', ...rest },
     forwardedRef,
   ) => {
     const props = {
       selectionMode,
       ...rest,
     }
+
+    const { size } = useTheme(rest)
 
     const {
       autoFocus,

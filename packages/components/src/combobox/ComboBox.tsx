@@ -24,6 +24,7 @@ import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { Item, Section } from './types'
 import { Size } from '../common/types'
+import { useTheme } from '../theme'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -48,9 +49,9 @@ export function ComboBox<T extends object>({
   items,
   className,
   errorPosition = 'top',
-  size = 'large',
   ...props
 }: ComboBoxProps<T>) {
+  const { size } = useTheme(props)
   const ref = React.useRef<HTMLDivElement>(null)
 
   return (

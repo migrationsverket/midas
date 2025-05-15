@@ -1,0 +1,65 @@
+---
+id: global
+title: Globala inställningar
+---
+
+import { TextField } from '@midas-ds/components'
+import { MidasThemeProvider } from '@midas-ds/components/theme'
+
+## MidasThemeProvider
+
+Sedan `v10.0.0` erbjuder Midas ett kompakt läge för fomulärkomponenterna `ComboBox` `DateField`, `DatePicker`, `Searchfield`, `Select` och `TextField`.
+
+I samband med kompakt läge lanserar vi `MidasThemeProvider` för globala inställningar så du slipper upprepa dig i din kod.
+I nuläget kan du endast justera `size` för ovan nämnda komponenter.
+
+```tsx
+import { MidasThemeProvider } from '@midas-ds/components/theme'
+import { TextField } from '@midas-ds/components'
+```
+
+```tsx
+<MidasThemeProvider value={{ size: 'medium' }}>
+  <TextField label='Förnamn' />
+  <TextField label='Efternamn' />
+</MidasThemeProvider>
+```
+
+<div
+  className='card'
+  style={{ gap: '1rem' }}
+>
+  <MidasThemeProvider value={{ size: 'medium' }}>
+    <TextField label='Förnamn' />
+    <TextField label='Efternamn' />
+  </MidasThemeProvider>
+</div>
+
+### Kör över globala inställningar
+
+I vissa fall kanske du vill köra över globala inställningar, använd då lokala attribut
+
+```tsx
+<MidasThemeProvider value={{ size: 'medium' }}>
+  <TextField
+    label='Förnamn'
+    // highlight-start
+    size='large'
+    // highlight-end
+  />
+  <TextField label='Efternamn' />
+</MidasThemeProvider>
+```
+
+<div
+  className='card'
+  style={{ gap: '1rem' }}
+>
+  <MidasThemeProvider value={{ size: 'medium' }}>
+    <TextField
+      label='Förnamn'
+      size='large'
+    />
+    <TextField label='Efternamn' />
+  </MidasThemeProvider>
+</div>
