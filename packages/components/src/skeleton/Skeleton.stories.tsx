@@ -10,25 +10,9 @@ const meta: Meta<typeof Skeleton> = {
     variant: 'rectangle',
   },
   argTypes: {
-    variant: {
-      options: ['circle', 'rectangle', 'rectangular'],
-      control: { type: 'radio' },
-    },
-    width: {
-      type: 'string',
-    },
-    height: {
-      type: 'string',
-    },
-    animation: {
-      options: ['wave', false],
-      control: { type: 'radio' },
-      defaultValue: 'wave',
-    },
     isAnimated: {
       options: [true, false],
       control: { type: 'radio' },
-      defaultValue: true,
     },
   },
 }
@@ -70,14 +54,6 @@ export const Circle: Story = {
   },
 }
 
-export const Rectangular: Story = {
-  args: {
-    variant: 'rectangular',
-    width: '100px',
-    height: '40px',
-  },
-}
-
 export const NoAnimation: Story = {
   args: {
     ...Rectangle.args,
@@ -86,10 +62,10 @@ export const NoAnimation: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Skeleton 
-  height="40px" 
-  isAnimated={false} 
-  variant="rectangle" 
+        code: `<Skeleton
+  height="40px"
+  isAnimated={false}
+  variant="rectangle"
   width="100px"
 />`,
       },
@@ -121,12 +97,5 @@ export const Animation: Story = {
   play: async ({ canvas }) => {
     const skeleton = canvas.getByTestId('skeleton')
     await expect(skeleton).toHaveClass(styles.wave)
-  },
-}
-
-export const Wave: Story = {
-  args: {
-    ...Rectangle.args,
-    animation: 'wave',
   },
 }
