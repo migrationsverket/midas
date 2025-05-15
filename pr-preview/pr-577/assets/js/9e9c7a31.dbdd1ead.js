@@ -212,8 +212,8 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        metastring: "{6,13}",
-        children: "<Accordion variant='contained'>\n  {/* more items */}\n  <AccordionItem\n    id='mandarin'\n    title='Mandarin'\n    type='success'\n  >\n    Liten orange citrusfrukt\n  </AccordionItem>\n  <AccordionItem\n    id='sharon'\n    title='Sharon'\n    type='warning'\n  >\n    Persikoliknande frukt med fast kött\n  </AccordionItem>\n</Accordion>\n"
+        metastring: "{6,13,20}",
+        children: "<Accordion variant='contained'>\n  {/* more items */}\n  <AccordionItem\n    id='mandarin'\n    title='Mandarin'\n    type='success'\n  >\n    Liten orange citrusfrukt\n  </AccordionItem>\n  <AccordionItem\n    id='sharon'\n    title='Sharon'\n    type='warning'\n  >\n    Persikoliknande frukt med fast kött\n  </AccordionItem>\n  <AccordionItem\n    id='watermelon'\n    title='Vattenmelon'\n    type='default'\n  >\n    Stor frukt med rött, saftigt kött\n  </AccordionItem>\n</Accordion>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(StatusExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "status-med-vit-bakgrund",
