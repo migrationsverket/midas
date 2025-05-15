@@ -117,7 +117,7 @@ const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
           <span>{file.name}</span>
           <Button
             variant='icon'
-            size='small'
+            size='medium'
             onPress={() => handleRemove(index)}
           >
             <X
