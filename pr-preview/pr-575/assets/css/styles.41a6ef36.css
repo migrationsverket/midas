@@ -7171,6 +7171,8 @@ CSS variables, meant to be overridden by final theme
     width: 100%;
     padding: var(--item-padding);
     align-items: flex-start;
+    min-height: 0;
+    min-height: initial;
   }
 
 .trigger_H4x6 .triggerButton_v7ly .chevronIcon_mkt7 {
