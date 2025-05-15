@@ -13,6 +13,7 @@ import {
   Popover,
   Pressable,
 } from 'react-aria-components'
+import {jsdocLinkToMarkdown} from '@site/src/utils/jsdocLinkToMarkdown'
 
 export const DisplayCompositeTypes = ({ props }: Props) => {
   switch (props.type.name) {
@@ -157,7 +158,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                   <td />
                 )}
                 <td data-title='Description'>
-                  <ReactMarkdown>{props[key].description}</ReactMarkdown>
+                  <ReactMarkdown>{jsdocLinkToMarkdown(props[key].description)}</ReactMarkdown>
                 </td>
               </tr>
             ))}
