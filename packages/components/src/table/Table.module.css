@@ -12,6 +12,13 @@
   font-family: --font-family;
   border-spacing: 0;
 
+  &.narrow {
+    th,
+    td {
+      padding: 0.2rem 1rem;
+    }
+  }
+
   th[data-focused='true'] {
     outline: 2px solid --border-primary;
   }
