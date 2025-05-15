@@ -205,7 +205,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     prism: {
-      additionalLanguages: ['bash', 'git', 'css'],
+      additionalLanguages: ['bash', 'git', 'css', 'diff'],
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },
