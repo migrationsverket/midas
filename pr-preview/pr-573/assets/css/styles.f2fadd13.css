@@ -3592,7 +3592,6 @@ html[data-theme='dark'] {
 }
 
 .theme-code-block {
-  /*  border: 1px solid var(--ifm-color-emphasis-200); */
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -3617,8 +3616,6 @@ html[data-theme='dark'] {
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-
-  /*  border: 1px solid var(--ifm-color-emphasis-200); */
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -3643,8 +3640,6 @@ table td {
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-
-  /* border: 1px solid var(--ifm-color-emphasis-200); */
   box-shadow: none !important;
   display: flex;
   flex-direction: column;
