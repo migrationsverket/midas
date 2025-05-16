@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styles from './Tag.module.css'
 import {
   Tag as AriaTag,
@@ -18,6 +18,7 @@ export interface TagGroupProp extends AriaTagGroupProps {
 export interface TagProps extends AriaTagProps {
   children: React.ReactNode
   dismissable?: boolean
+  type?: 'default' | 'success' | 'info' | 'important' | 'warning'
 }
 
 export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
@@ -32,11 +33,20 @@ export const Tag: React.FC<TagProps> = ({
   children,
   dismissable,
   className,
+  type = 'default',
   ...props
 }) => {
   return (
     <AriaTag
-      className={clsx(styles.tag, dismissable && styles.dismissable, className)}
+      className={clsx(
+        styles.tag,
+        dismissable && styles.dismissable,
+        type === 'success' && styles.success,
+        type === 'info' && styles.info,
+        type === 'important' && styles.important,
+        type === 'warning' && styles.warning,
+        className,
+      )}
       {...props}
     >
       <div className={styles.tagText}>{children}</div>
