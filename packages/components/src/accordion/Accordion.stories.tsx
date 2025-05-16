@@ -229,6 +229,68 @@ const ExpandableStuff = () => {
 }
 
 export const AccordionWithStatus: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<Accordion variant="contained">
+  <AccordionItem
+    id="Ett"
+    title="En öppningsbar panel ett"
+    hasBackground={false}
+  >
+    Innehåll i öppningsbar panel Ett Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
+  </AccordionItem>
+  <AccordionItem
+    id="Två"
+    title="En öppningsbar panel två"
+    hasBackground={false}
+  >
+    Innehåll i öppningsbar panel Två Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
+  </AccordionItem>
+  <AccordionItem
+    id="Tre"
+    title="En öppningsbar panel tre"
+    type="success"
+    hasBackground={false}
+  >
+    Innehåll i öppningsbar panel Tre Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
+  </AccordionItem>
+  <AccordionItem
+    id="Fyra"
+    title="En öppningsbar panel fyra"
+    type="warning"
+    hasBackground={false}
+  >
+    Innehåll i öppningsbar panel Fyra Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
+  </AccordionItem>
+</Accordion>`,
+      },
+    },
+  },
+  args: {
+    variant: 'contained',
+    children: ITEMS.map((item, i) => (
+      <AccordionItem
+        id={item}
+        key={item}
+        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
+        type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
+        hasBackground={false}
+      >
+        Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Repellendus perspiciatis officia,
+        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
+        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
+        sit amet consectetur adipisicing elit. Impedit dolorem tempora
+        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
+        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
+        illum consequuntur?
+      </AccordionItem>
+    )),
+  },
+}
+
+export const AccordionHasBackground: Story = {
   args: {
     variant: 'contained',
     children: ITEMS.map((item, i) => (
