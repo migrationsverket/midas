@@ -117,9 +117,9 @@ AccordionItems kan ha en status för att förtydliga för användaren att hen an
 
 <StatusExample />
 
-### Med vit bakgrund
+### Med bakgrund
 
-AcordionItems kan ha vit bakgrund på content. Detta görs genom att sätta `hasBackground={true}`.
+`AcordionItem` kan ha bakgrund på content. Detta görs genom att sätta `hasBackground`.
 
 ```tsx {7,15,23}
 <Accordion variant='contained'>
@@ -128,7 +128,7 @@ AcordionItems kan ha vit bakgrund på content. Detta görs genom att sätta `has
     id='mandarin'
     title='Mandarin'
     type='success'
-    hasBackground={true}
+    hasBackground
   >
     Liten orange citrusfrukt
   </AccordionItem>
@@ -136,7 +136,7 @@ AcordionItems kan ha vit bakgrund på content. Detta görs genom att sätta `has
     id='sharon'
     title='Sharon'
     type='warning'
-    hasBackground={true}
+    hasBackground
   >
     Persikoliknande frukt med fast kött
   </AccordionItem>
@@ -144,7 +144,7 @@ AcordionItems kan ha vit bakgrund på content. Detta görs genom att sätta `has
     id='watermelon'
     title='Vattenmelon'
     type='default'
-    hasBackground={true}
+    hasBackground
   >
     Stor frukt med rött, saftigt kött
   </AccordionItem>
