@@ -71,6 +71,9 @@ export const SingleBoxed: Story = {
 }
 
 export const MultipleSubtle: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     ...SingleSubtle.args,
     allowsMultipleExpanded: true,
@@ -94,6 +97,9 @@ export const MultipleSubtleDisabled: Story = {
 }
 
 export const MultipleBoxed: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     ...SingleBoxed.args,
     allowsMultipleExpanded: true,
@@ -138,6 +144,9 @@ export const CustomTriggerElements: Story = {
 export const DynamicContent: Story = {
   args: {},
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   render: () => (
     <Accordion>
       <AccordionItem title='AccordionItem with dynamic content'>
@@ -163,6 +172,9 @@ export const DynamicContent: Story = {
 
 export const DS1060: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   render: () => (
     <Accordion>
       <AccordionItem title='Test'>

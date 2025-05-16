@@ -245,6 +245,9 @@ export const NotClearable: Story = {
 
 export const DS872: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     ...Normal.args,
     selectionMode: 'single',

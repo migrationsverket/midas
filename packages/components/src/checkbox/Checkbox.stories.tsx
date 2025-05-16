@@ -64,7 +64,10 @@ export const Required: Story = {
     isRequired: true,
     'aria-label': 'test',
   },
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   render: ({ ...args }) => {
     return (
       <form>

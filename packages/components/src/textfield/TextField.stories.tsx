@@ -70,6 +70,9 @@ export const Invalid: Story = {
 
 export const Required: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     isRequired: true,
   },
@@ -94,6 +97,9 @@ export const Required: Story = {
 
 export const CustomValidation: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Label',
     validate: (value: string) =>
@@ -181,6 +187,9 @@ export const MaxLengthAndShowCounter: Story = {
 
 export const ShowCounterWithDefaultValue: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     defaultValue: 'HEJ',
     showCounter: true,

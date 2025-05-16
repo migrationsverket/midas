@@ -26,6 +26,9 @@ export const DropZone: Story = {
 
 export const CustomSelectHandler: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     // @ts-expect-error dont recognize this property
     'data-testid': 'test',

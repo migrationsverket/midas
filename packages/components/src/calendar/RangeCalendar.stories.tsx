@@ -21,6 +21,9 @@ export const Disabled: Story = {
 
 export const KeyboardTest: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   play: async ({ canvas, step }) => {
     await step(
       'it should be possible to select today and two days ahead with the keyboard',
