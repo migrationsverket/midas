@@ -5,23 +5,25 @@ description: Laddningsindikator för komponenter
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Tag, TagGroup } from '@midas-ds/components'
+import { Tag, TagGroup, Card, CardContent, CardTitle, Text, CardActions, Button } from '@midas-ds/components'
 
 <ComponentHeader
   name='Tag'
-  friendlyName='Tag'
+  friendlyName='Tagg, chip, statusindikator '
   overrideHeadlessLink=''
 />
 
+Komponent för att visa beskrivande etiketter som kan användas för att kategorisera information.
+
 ```tsx
 <TagGroup>
-  <Tag>Default</Tag>
+  <Tag>Tag med information</Tag>
 </TagGroup>
 ```
 
 <div className='card'>
   <TagGroup aria-label='Taggar'>
-    <Tag>Default</Tag>
+    <Tag>Tag med information</Tag>
   </TagGroup>
 </div>
 
@@ -35,7 +37,43 @@ npm install @midas-ds/components
 import { Tag, TagGroup } from '@midas-ds/components'
 ```
 
+## Användning
+
+Tag används som en del av [Select](../select#flerval) om `showTags` är aktiverat men kan också användas fristående eller inuti andra komponenter.
+
+```tsx
+<Card horizontal>
+  <CardContent>
+    <CardTitle>Köp frukt</CardTitle>
+    <Text>Vi behöver köpa frukt till fika</Text>
+    <TagGroup>
+      <Tag type='info'>Inte påbörjat</Tag>
+    </TagGroup>
+  </CardContent>
+  <CardActions>
+    <Button variant='tertiary'>Utför uppgift</Button>
+  </CardActions>
+</Card>
+```
+
+<div className='card'>
+  <Card horizontal>
+    <CardContent>
+      <CardTitle>Köp frukt</CardTitle>
+      <Text>Vi behöver köpa frukt till fika</Text>
+      <TagGroup>
+        <Tag type='info'>Inte påbörjat</Tag>
+      </TagGroup>
+    </CardContent>
+    <CardActions>
+      <Button variant='tertiary'>Utför uppgift</Button>
+    </CardActions>
+  </Card>
+</div>
+
 ## Varianter
+
+Tag finns i fem varianter.
 
 ```tsx
 <TagGroup>
