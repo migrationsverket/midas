@@ -133,7 +133,7 @@
   padding: var(--content-padding);
 }
 
-.hasWhiteBackground {
+.hasBackground {
   background-color: --layer-02;
 }
 

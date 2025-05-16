@@ -251,7 +251,7 @@ export const AccordionWithStatus: Story = {
   },
 }
 
-export const AccordionWithStatusHasWhiteBackground: Story = {
+export const AccordionHasBackground: Story = {
   args: {
     variant: 'contained',
     children: ITEMS.map((item, i) => (
@@ -260,7 +260,7 @@ export const AccordionWithStatusHasWhiteBackground: Story = {
         key={item}
         title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
         type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
-        hasWhiteBackground={true}
+        hasBackground={true}
       >
         Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
         consectetur adipisicing elit. Repellendus perspiciatis officia,

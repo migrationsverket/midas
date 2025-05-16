@@ -21,10 +21,10 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   /** Display an accordion item in different status states */
   type?: 'default' | 'success' | 'warning'
   /**
-   * To not use white background in types
+   * To use white background in types
    * @default false
    **/
-  hasWhiteBackground?: boolean
+  hasBackground?: boolean
 }
 
 export const AccordionItem: React.FC<MidasAccordionItem> = ({
@@ -33,7 +33,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   className,
   headingLevel = 'h2',
   type,
-  hasWhiteBackground = false,
+  hasBackground = false,
   ...props
 }) => {
   const titleIsReactNode = typeof title === 'object'
@@ -92,7 +92,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
         <div
           className={clsx(
             styles.content,
-            hasWhiteBackground && styles.hasWhiteBackground,
+            hasBackground && styles.hasBackground,
           )}
         >
           {children}
