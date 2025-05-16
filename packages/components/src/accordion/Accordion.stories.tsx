@@ -260,7 +260,7 @@ export const AccordionHasBackground: Story = {
         key={item}
         title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
         type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
-        hasBackground={true}
+        hasBackground
       >
         Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
         consectetur adipisicing elit. Repellendus perspiciatis officia,

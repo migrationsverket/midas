@@ -33,7 +33,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   className,
   headingLevel = 'h2',
   type,
-  hasBackground = true,
+  hasBackground,
   ...props
 }) => {
   const titleIsReactNode = typeof title === 'object'
