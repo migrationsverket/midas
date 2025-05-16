@@ -8,11 +8,11 @@
   border-radius: 1.5rem;
 
   &[data-hovered] {
-    background-color: --field-hover-01;
+    background-color: --button-background-icon-hover;
   }
 
   &[data-pressed] {
-    background-color: --field-active-01;
+    background-color: --button-background-icon-active;
   }
 
   &.success[data-hovered],
