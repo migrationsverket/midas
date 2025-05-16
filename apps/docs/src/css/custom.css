@@ -405,8 +405,12 @@ html[data-theme='dark'] .navbar--github-link::before {
     no-repeat;
 }
 
-.no-margin-children p {
-  margin-bottom: 0;
+.no-margin-children {
+  margin-bottom: 1rem;
+  p {
+    margin-bottom: 0;
+    white-space: wrap;
+  }
 }
 
 /* ---- Table for language page --- */

@@ -73,8 +73,10 @@ Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/
 Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
 imperativ form, definiera type `feat|docs|fix|refactor|test|ci` och scope `(button|etc...)` och lägg till referenser
 till andra issues vid behov. Tänk på att även en merge (med squash) skapar en commit så lägg en extra tanke på
-vilken information som kommer med och inte kommer med. Våra commits är hela projektets historik och är indata till
-changelogs och release notes så lägg gärna en extra minut på att vara tydlig.
+vilken information som kommer med och inte kommer med.
+
+> Våra commits är hela projektets historik och är indata till
+> changelogs och release notes så lägg gärna en extra minut på att vara tydlig.
 
 #### Varför conventional commits?
 
@@ -97,13 +99,18 @@ Introduce new css variable to automatically
 select style based on input type
 
 ```
+###
 
 Ta dig gärna tid att läsa igenom [conventional commit summary](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)
 och försök jobba enligt det flödet.
 
-> - Jobbar du ensam i en feature branch och vill städa upp? Använd `git rebase -i`
-> - Har du en feature branch som egentligen bara rör ett fåtal områden? Då kanske du vill vara mindre strikt
->   med commits och använda `git squash` istället
+:::tip
+Innan du skapar en PR, gå igenom så att du har commits som representerar vad du har gjort.
+Jobbar du ensam i en feature branch och har skapat många commits? Använd `git rebase -i`,
+då kan du välja vilka commits som ska vara med och vilka som kan slås samman.
+:::
+
+Instruktioner för hur du använder `git rebase` finns [här](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
 
 ## Bygga komponenter
 

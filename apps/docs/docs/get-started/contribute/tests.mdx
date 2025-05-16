@@ -65,15 +65,15 @@ Använd `userEvent` från `@storybook/test` när du simulerar din användare.
 Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent,
 dessa testas även av Storybook test runner i samtliga play tester, se `packages/components/.storybook/test-runner.ts`.
 
-Automatiserade tillgänglighetstester fångar upp en stor del av brister jämtemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
+Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
 
 :::note
 Med hjälp av tangentbords-interaktion i dina interaktionstester testar du att din komponent kan användas med enbart tangentbordet. Du kan också välja att använda queries för att säkerställa att du använder DOM-element som säger något åt en skärmläsare, `getByRole`, `getByLabelText` osv.
 :::
 
-#### Bugrättning med TDD
+#### Buggrättning med TDD
 
-Om du rättar en bug erbjuds du ett unikt tillfälle att skriva ett test som återskapar din bug, förhoppningsvis kommer vi då inte att återinföra bugen.
+Om du rättar en bugg erbjuds du ett unikt tillfälle att skriva ett test som återskapar din bug, förhoppningsvis kommer vi då inte att återinföra buggen.
 
 Börja med att sätta upp berörd komponent i en separat story, skriv sedan ett test som återskapar din bug, ditt mål är att få ett test som "failar".
 
@@ -109,7 +109,7 @@ För närvarande utför vi inga visuella tester där screenshots används för a
 ##### toHaveStyle
 
 `expect` från `@storybook/test` erbjuder dig att skriva förväntningar på hur en komponent ser ut med hjälp av `toHaveStyle`-metoden.
-Då [metoden inte är helt pålitlig](https://github.com/testing-library/jest-dom/issues/350) bör den användas som en sista utväg tillsammans med `lightDark`-utilityn från `packages/components/src/utils/test.ts`.
+Då [metoden inte är helt pålitlig](https://github.com/testing-library/jest-dom/issues/350) bör den användas som en sista utväg tillsammans med `lightDark`-utility från `packages/components/src/utils/test.ts`.
 
 ## Enhetstester
 
