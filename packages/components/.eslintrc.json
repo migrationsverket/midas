@@ -2,6 +2,47 @@
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*", "storybook-static"],
   "plugins": ["midas"],
+  "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "JSXElement[openingElement.name.name='Button']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <Button>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='ComboBox']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <ComboBox>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='DateField']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <DateField>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='DatePicker']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <DatePicker>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='DatePickerInputField']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <DatePickerInputField>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='DateRangePicker']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <DateRangePicker>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='SearchField']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <SearchField>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='Select']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <Select>, since it can be modified by a ThemeProvider."
+      },
+      {
+        "selector": "JSXElement[openingElement.name.name='TextFieldBase']:not(:has(JSXAttribute[name.name='size']))",
+        "message": "You must pass `size` when creating a <TextFieldBase>, since it can be modified by a ThemeProvider."
+      }
+    ]
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
