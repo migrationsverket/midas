@@ -190,7 +190,7 @@ function _createMdxContent(props) {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Tag finns i fem varianter: standardtag i grått samt de fyra signalfärgerna."
+      children: "Tag finns i fem varianter."
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
