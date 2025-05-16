@@ -6,12 +6,7 @@ description: Dragspelskomponenten låter användare visa och dölja delar av rel
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import {
-  Example,
-  ExampleControlled,
-  StatusExample,
-  StatusWithWhiteExample,
-} from '@site/src/components/examples/accordion/AccordionExamples'
+import { Example, ExampleControlled, StatusExample } from '@site/src/components/examples/accordion/AccordionExamples'
 
 <ComponentHeader
   name='Accordion'
@@ -84,11 +79,12 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
 
 <Example variant='contained' />
 
-### Status
+### Varianter med bakgrund
 
 AccordionItems kan ha en status för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla uppmärksamhet till att det t.ex finns fler åtgärder att utföra.
+`AcordionItem` har bakgrund på innehållet som standard. Man kan ta bort den genom att sätta `hasBackground={false}`.
 
-```tsx {6,13,20}
+```tsx {6,13,20,28}
 <Accordion variant='contained'>
   {/* more items */}
   <AccordionItem
@@ -109,6 +105,14 @@ AccordionItems kan ha en status för att förtydliga för användaren att hen an
     id='watermelon'
     title='Vattenmelon'
     type='default'
+  >
+    Stor frukt med rött, saftigt kött
+  </AccordionItem>
+  <AccordionItem
+    id='watermelon'
+    title='Vattenmelon'
+    type='success'
+    hasBackground={false}
   >
     Stor frukt med rött, saftigt kött
   </AccordionItem>
@@ -116,42 +120,6 @@ AccordionItems kan ha en status för att förtydliga för användaren att hen an
 ```
 
 <StatusExample />
-
-### Med bakgrund
-
-`AcordionItem` kan ha bakgrund på content. Detta görs genom att sätta `hasBackground`.
-
-```tsx {7,15,23}
-<Accordion variant='contained'>
-  {/* more items */}
-  <AccordionItem
-    id='mandarin'
-    title='Mandarin'
-    type='success'
-    hasBackground
-  >
-    Liten orange citrusfrukt
-  </AccordionItem>
-  <AccordionItem
-    id='sharon'
-    title='Sharon'
-    type='warning'
-    hasBackground
-  >
-    Persikoliknande frukt med fast kött
-  </AccordionItem>
-  <AccordionItem
-    id='watermelon'
-    title='Vattenmelon'
-    type='default'
-    hasBackground
-  >
-    Stor frukt med rött, saftigt kött
-  </AccordionItem>
-</Accordion>
-```
-
-<StatusWithWhiteExample />
 
 ### Multiple
 

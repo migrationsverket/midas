@@ -53,34 +53,11 @@ export const StatusExample = () => (
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>
-    </Accordion>
-  </div>
-)
-
-export const StatusWithWhiteExample = () => (
-  <div className='card'>
-    <Accordion variant='contained'>
-      <AccordionItem
-        id='mandarin'
-        title='Mandarin'
-        type='success'
-        hasBackground
-      >
-        Liten orange citrusfrukt
-      </AccordionItem>
-      <AccordionItem
-        id='sharon'
-        title='Sharon'
-        type='warning'
-        hasBackground
-      >
-        Persikoliknande frukt med fast kött
-      </AccordionItem>
       <AccordionItem
         id='watermelon'
         title='Vattenmelon'
-        type='default'
-        hasBackground
+        type='success'
+        hasBackground={false}
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>
