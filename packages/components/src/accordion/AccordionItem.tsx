@@ -21,8 +21,8 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   /** Display an accordion item in different status states */
   type?: 'default' | 'success' | 'warning'
   /**
-   * To use white background in types
-   * @default false
+   * To use background in types
+   * @default true
    **/
   hasBackground?: boolean
 }
@@ -33,7 +33,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   className,
   headingLevel = 'h2',
   type,
-  hasBackground = false,
+  hasBackground = true,
   ...props
 }) => {
   const titleIsReactNode = typeof title === 'object'
