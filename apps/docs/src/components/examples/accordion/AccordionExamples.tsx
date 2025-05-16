@@ -64,7 +64,7 @@ export const StatusWithWhiteExample = () => (
         id='mandarin'
         title='Mandarin'
         type='success'
-        hasWhiteBackground={true}
+        hasBackground={true}
       >
         Liten orange citrusfrukt
       </AccordionItem>
@@ -72,7 +72,7 @@ export const StatusWithWhiteExample = () => (
         id='sharon'
         title='Sharon'
         type='warning'
-        hasWhiteBackground={true}
+        hasBackground={true}
       >
         Persikoliknande frukt med fast kött
       </AccordionItem>
@@ -80,7 +80,7 @@ export const StatusWithWhiteExample = () => (
         id='watermelon'
         title='Vattenmelon'
         type='default'
-        hasWhiteBackground={true}
+        hasBackground={true}
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>
