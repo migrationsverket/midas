@@ -1,0 +1,78 @@
+---
+title: Tag
+description: Laddningsindikator för komponenter
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Tag, TagGroup } from '@midas-ds/components'
+
+<ComponentHeader
+  name='Tag'
+  friendlyName='Tag'
+  overrideHeadlessLink=''
+/>
+
+```tsx
+<TagGroup>
+  <Tag>Default</Tag>
+</TagGroup>
+```
+
+<div className='card'>
+  <TagGroup aria-label='Taggar'>
+    <Tag>Default</Tag>
+  </TagGroup>
+</div>
+
+## Installation
+
+```bash npm2yarn
+npm install @midas-ds/components
+```
+
+```tsx
+import { Tag, TagGroup } from '@midas-ds/components'
+```
+
+## Varianter
+
+```tsx
+<TagGroup>
+  <Tag>Default</Tag>
+  <Tag type='success'>Success</Tag>
+  <Tag type='info'>Info</Tag>
+  <Tag type='important'>Important</Tag>
+  <Tag type='warning'>Warning</Tag>
+</TagGroup>
+```
+
+<div className='card'>
+  <TagGroup aria-label='Taggar'>
+    <Tag>Default</Tag>
+    <Tag type='success'>Success</Tag>
+    <Tag type='info'>Info</Tag>
+    <Tag type='important'>Important</Tag>
+    <Tag type='warning'>Warning</Tag>
+  </TagGroup>
+</div>
+
+## Dismissable
+
+Det går att göra det möjligt för användaren att stänga tag via `dismissable`.
+
+```tsx
+<TagGroup>
+  <Tag dismissable>Default</Tag>
+</TagGroup>
+```
+
+<div className='card'>
+  <TagGroup aria-label='Taggar'>
+    <Tag dismissable>Default</Tag>
+  </TagGroup>
+</div>
+
+## API
+
+<PropTable name='Tag' />
