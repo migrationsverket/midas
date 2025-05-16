@@ -6,6 +6,7 @@
   min-height: unset;
   padding: 0.375rem !important;
   border-radius: 1.5rem;
+  border: unset;
 
   &[data-hovered] {
     background-color: --button-background-icon-hover;
