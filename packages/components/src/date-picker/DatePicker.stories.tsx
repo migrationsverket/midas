@@ -96,6 +96,9 @@ export const Required: Story = {
     errorMessage: 'Var god ange ett datum',
   },
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   render: args => (
     <form>
       <DatePicker {...args} />
@@ -125,6 +128,9 @@ export const CustomValiation: Story = {
       year === new Date().getFullYear() ? 'Var god välj ett annat år' : true,
   },
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   render: args => (
     <form>
       <DatePicker {...args} />

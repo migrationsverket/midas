@@ -44,6 +44,9 @@ export const Invalid: Story = {
 
 export const Required: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     isRequired: true,
     errorMessage: 'Var god ange en text',
@@ -69,6 +72,9 @@ export const Required: Story = {
 
 export const CustomValidation: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Label',
     validate: (value: string) =>
@@ -96,6 +102,9 @@ export const CustomValidation: Story = {
 
 export const MaxLength: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     maxLength: 50,
   },
@@ -165,6 +174,9 @@ export const MaxLengthAndShowCounter: Story = {
 
 export const ShowCounterWithDefaultValue: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     defaultValue: 'HEJ',
     showCounter: true,

@@ -28,6 +28,9 @@ export const Primary: Story = {}
 
 export const KeyboardTest: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   play: async ({ canvas, step }) => {
     await step(
       'it should be possible to select tomorrow with the keyboard',
@@ -49,6 +52,9 @@ export const KeyboardTest: Story = {
 
 export const DS1141: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     minValue: mockedNow,
   },

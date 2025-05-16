@@ -40,6 +40,9 @@ export const Primary: Story = {}
 
 export const DefaultSelectedKey: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     defaultSelectedKey: 'Ansök',
   },
@@ -52,6 +55,9 @@ export const DefaultSelectedKey: Story = {
 
 export const SelectedKeyAndOnSelectionChange: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   render: args => {
     const [selectedKey, setSelectedKey] = React.useState<Key>('Processen')
     return (
@@ -78,6 +84,9 @@ export const SelectedKeyAndOnSelectionChange: Story = {
 
 export const MoreItemsThanChildren: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     tabs: ['1', '2'],
   },

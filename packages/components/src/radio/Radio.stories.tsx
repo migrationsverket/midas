@@ -111,7 +111,10 @@ export const Invalid: Story = {
 }
 
 export const Required: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',
@@ -141,7 +144,10 @@ export const Required: Story = {
 }
 
 export const CustomValidation: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',
