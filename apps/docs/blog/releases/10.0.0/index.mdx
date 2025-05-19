@@ -5,14 +5,34 @@ date: 2025-05-15
 
 ## Nya funktioner
 
-Medium size components
+I och med version 10.0 introducerar vi en ny storlek på en rad komponenter, `medium`. Komponenter som berörs och
+numera kan användas i både `size='large'` och `size='medium'` är:
+
+- [Button](/components/button)
+- [TextField](/components/textfield)
+- [SearchField](/components/search-field)
+- [ComboBox](/components/combobox)
+- [DatePicker](/components/date-picker)
+- [DateField](/components/datefield)
+- [Select](/components/select)
+
+Default size är `'large'` i samtliga fall. `large` innebär att inputfältet är 48px högt medan `medium` är 40px, för
+ett mer kompakt utseende.
 
 ## Migrera från 9.x.x till 10.0.0
+
+En del funktioner har varit deprecated sen 8.x.x eller tidigare och därför tar Midas tillfället i akt att rensa
+ut gammal kod och överflödiga props/funktioner.
+
+:::info
+Kontrollera gärna koden innan uppgradering till version 10.x.x för att säkerställa att ni inte använder
+någon funktion eller komponent som numera inte fungerar som väntat.
+:::
 
 ### Accordion
 
 Accordion har inte längre stöd för prop `type` för att ha flera AccordionItems öppna samtidigt. Använd
-`allowsMultipleExpanded` istället
+`allowsMultipleExpanded` istället.
 
 ```diff
 - <Accordion type='multiple'>/* items */</Accordion>
