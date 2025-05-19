@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[389],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6920],{
 
-/***/ 22954:
+/***/ 57982:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -30,7 +30,6 @@ const assets = {
 "authorsImageUrls": [],
 };
 
-/*truncate*/
 
 
 const toc = [{
@@ -202,11 +201,15 @@ function _createMdxContent(props) {
         children: "#143C50"
       }), ") byter namn till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         children: "blue150"
-      })]
+      }), ", ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "purple140"
+      }), "\nbyter namn till ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
+        children: "purple110"
+      }), "."]
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.pre, {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
         className: "language-diff",
-        children: "- blue140\n+ blue130\n- blue170\n- blue150\n"
+        children: "- blue140\n+ blue130\n- blue170\n+ blue150\n- purple140\n+ purple110\n"
       })
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
       id: "usemessageformatter",
@@ -265,7 +268,7 @@ function _createMdxContent(props) {
         href: "/changelog",
         children: "changelog"
       })]
-    }), "\n"]
+    })]
   });
 }
 function MDXContent(props = {}) {
@@ -288,7 +291,7 @@ function MDXContent(props = {}) {
 /***/ 55075:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-586/blog/releases/10.0.0","source":"@site/blog/releases/10.0.0/index.mdx","title":"Release 10.0.0","description":"Nya funktioner","date":"2025-05-15T00:00:00.000Z","tags":[],"readingTime":1.72,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.0.0","date":"2025-05-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 9.0.0","permalink":"/pr-preview/pr-586/blog/releases/9.0.0"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-586/blog/releases/10.0.0","source":"@site/blog/releases/10.0.0/index.mdx","title":"Release 10.0.0","description":"Nya funktioner","date":"2025-05-15T00:00:00.000Z","tags":[],"readingTime":1.765,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.0.0","date":"2025-05-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 9.0.0","permalink":"/pr-preview/pr-586/blog/releases/9.0.0"}}');
 
 /***/ })
 
