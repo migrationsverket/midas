@@ -10327,8 +10327,8 @@ CSS variables, meant to be overridden by final theme
 
 .button_Loby {
   color: light-dark(#171717, #f2f2f2);
-  min-height: 0;
-  min-height: initial;
+  min-height: 0 !important;
+  min-height: initial !important;
   padding: 0.375rem !important;
   border-radius: 1.5rem;
   border: medium none currentcolor;
@@ -10386,6 +10386,8 @@ CSS variables, meant to be overridden by final theme
 .tag_WAeO[data-disabled] {
     color: light-dark(#bfbfbf, #525252);
     cursor: not-allowed;
+    border-color: light-dark(#bfbfbf, #525252);
+    background-color: light-dark(#f2f2f2, #262626);
   }
 
 .tag_WAeO[data-focused],.tag_WAeO[data-focus-visible] {
