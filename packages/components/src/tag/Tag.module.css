@@ -1,9 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active, --border-primary, --support-border-success, --support-border-info, --support-border-important, --support-border-warning, --text-primary from tokens;
+@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active, --border-primary, --support-border-success, --support-border-info, --support-border-important, --support-border-warning, --text-primary, --border-disabled from tokens;
 
 .button {
   color: --icon-primary;
-  min-height: unset;
+  min-height: unset !important;
   padding: 0.375rem !important;
   border-radius: 1.5rem;
   border: unset;
@@ -65,6 +65,8 @@
   &[data-disabled] {
     color: --text-disabled;
     cursor: not-allowed;
+    border-color: --border-disabled;
+    background-color: --field-01;
   }
 
   &[data-focused],
