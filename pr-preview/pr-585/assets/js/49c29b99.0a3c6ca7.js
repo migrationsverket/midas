@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[862],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4786],{
 
-/***/ 33001:
+/***/ 56695:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -30,6 +30,7 @@ const assets = {
 "authorsImageUrls": [],
 };
 
+/*truncate*/
 
 
 const toc = [{
@@ -62,7 +63,7 @@ function _createMdxContent(props) {
       children: (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
         children: ["I version 8.3.0 introducerar vi breaking changes för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.code, {
           children: "Card"
-        }), " som var tänka för version 9. Vänligen läs migrationsguiden för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        }), " som var tänkta för version 9. Vänligen läs release notes för ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
           href: "/blog/releases/9.0.0",
           children: "version 9"
         }), " för mer information."]
@@ -104,7 +105,7 @@ function _createMdxContent(props) {
         href: "/changelog/8.0.0",
         children: "changelog"
       })]
-    })]
+    }), "\n"]
   });
 }
 function MDXContent(props = {}) {
@@ -127,7 +128,7 @@ function MDXContent(props = {}) {
 /***/ 63312:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-585/blog/releases/8.0.0","source":"@site/blog/releases/8.0.0/index.mdx","title":"Release 8.0.0","description":"Migrera från 7.x.x till 8.0.0","date":"2025-04-15T00:00:00.000Z","tags":[],"readingTime":0.68,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 8.0.0","date":"2025-04-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 9.0.0","permalink":"/pr-preview/pr-585/blog/releases/9.0.0"},"nextItem":{"title":"Release 7.0.0","permalink":"/pr-preview/pr-585/blog/releases/7.0.0"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/pr-preview/pr-585/blog/releases/8.0.0","source":"@site/blog/releases/8.0.0/index.mdx","title":"Release 8.0.0","description":"Migrera från 7.x.x till 8.0.0","date":"2025-04-15T00:00:00.000Z","tags":[],"readingTime":0.685,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 8.0.0","date":"2025-04-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 9.0.0","permalink":"/pr-preview/pr-585/blog/releases/9.0.0"},"nextItem":{"title":"Release 7.0.0","permalink":"/pr-preview/pr-585/blog/releases/7.0.0"}}');
 
 /***/ })
 
