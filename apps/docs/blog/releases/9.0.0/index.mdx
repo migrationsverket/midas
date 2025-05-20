@@ -5,10 +5,19 @@ date: 2025-05-08
 
 ## Migrera från 8.x.x till 9.0.0
 
+### Card
+
+I version 8.3.0 introducerade vi ett nytt och mera modulärt API för `Card`.
+Komponenten som tidigare accepterade samtliga props är numera en kortyta som måste kompletteras med ett urval från komponenterna `CardContent`, `CardTitle`, `CardActions`, `CardImage`, `CardActionArea` och `CardLink`.
+
+För mer information läs [hur du använder Card](/components/card).
+
+### Tokens
+
 Strukturen på tokens för `lineHeight` och `size` under `typography` har ändrats.
 Importerar du dessa värden behöver du justera din kod enligt:
 
-### lineHeight
+#### lineHeight
 
 ```tsx
 import { typography } from '@midas-ds/components/theme'
@@ -37,7 +46,7 @@ import { typography } from '@midas-ds/components/theme'
 +   typography.lineHeight100
 ```
 
-### size
+#### size
 
 ```tsx
 import { typography } from '@midas-ds/components/theme'
