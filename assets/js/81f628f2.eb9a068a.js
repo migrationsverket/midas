@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6391],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2356],{
 
-/***/ 52100:
+/***/ 83522:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,10 +10,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_changelog_plugin_default_site_changelog_source_9_0_0_md_ccc_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_changelog_plugin_default_site_changelog_source_10_0_0_md_7cc_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_changelog_plugin_default_site_changelog_source_9_0_0_md_ccc_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12609);
+/* harmony import */ var _site_docusaurus_changelog_plugin_default_site_changelog_source_10_0_0_md_7cc_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(51951);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28453);
 
@@ -22,11 +22,11 @@ const frontMatter = {
 	mdx: {
 		format: 'md'
 	},
-	date: '2025-05-08T20:00',
+	date: '2025-05-20T20:00',
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = '9.0.0';
+const contentTitle = '10.0.0';
 
 const assets = {
 "authorsImageUrls": [],
@@ -55,10 +55,10 @@ function MDXContent(props = {}) {
 
 /***/ }),
 
-/***/ 12609:
+/***/ 51951:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/9.0.0","source":"@site/changelog/source/9.0.0.md","title":"9.0.0","description":"🩹 Fixes","date":"2025-05-08T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-08T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"8.3.0","permalink":"/changelog/8.3.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.0.0","source":"@site/changelog/source/10.0.0.md","title":"10.0.0","description":"🚀 Features","date":"2025-05-20T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-20T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"9.0.0","permalink":"/changelog/9.0.0"},"listPageLink":"/changelog/"}');
 
 /***/ })
 

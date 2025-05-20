@@ -58,7 +58,7 @@ function MDXContent(props = {}) {
 /***/ 85564:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/1.2.0","source":"@site/changelog/source/1.2.0.md","title":"1.2.0","description":"- components: new api and style for accordion (efab0a198)","date":"2025-02-11T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-11T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"1.3.0","permalink":"/changelog/1.3.0"},"nextItem":{"title":"1.1.0","permalink":"/changelog/1.1.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/1.2.0","source":"@site/changelog/source/1.2.0.md","title":"1.2.0","description":"- components: new api and style for accordion (efab0a198)","date":"2025-02-11T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-11T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"1.3.0","permalink":"/changelog/1.3.0"},"nextItem":{"title":"1.1.0","permalink":"/changelog/1.1.0"},"listPageLink":"/changelog/page/2"}');
 
 /***/ })
 
