@@ -1,3 +1,80 @@
+# 10.0.0 (2025-05-20)
+
+### 🚀 Features
+
+- **tokens:** add new tokens `blue50` and `blue70`, update link colors ([d814a4c961](https://github.com/migrationsverket/midas/commit/d814a4c961))
+- ⚠️ **tokens:** rename tokens `blue140` & `blue170` and add new tokens `blue110`, `blue120`, rename `purple140` to `purple110` ([b79d586d53](https://github.com/migrationsverket/midas/commit/b79d586d53))
+- **table:** remove deprecation of prop `narrow` and update documentation ([4cbbb8efd9](https://github.com/migrationsverket/midas/commit/4cbbb8efd9))
+- **tag:** use button size medium instead of small ([731df78796](https://github.com/migrationsverket/midas/commit/731df78796))
+- **search-field:** use button size medium instead of small ([a5f6020bbd](https://github.com/migrationsverket/midas/commit/a5f6020bbd))
+- **progress-bar:** use button size medium instead of small ([24dad8eb80](https://github.com/migrationsverket/midas/commit/24dad8eb80))
+- **file-upload:** use button size medium instead of small ([c4351ff469](https://github.com/migrationsverket/midas/commit/c4351ff469))
+- ⚠️ **skeleton:** remove deprecated props ([cf5b52095c](https://github.com/migrationsverket/midas/commit/cf5b52095c))
+- ⚠️ **label:** remove deprecated variants ([36c893a748](https://github.com/migrationsverket/midas/commit/36c893a748))
+- ⚠️ **theme:** remove deprecated tokens `borderInvalid` and `textInvalid` ([d2f1620dc4](https://github.com/migrationsverket/midas/commit/d2f1620dc4))
+- ⚠️ **table:** remove deprecated prop `narrow` from table ([2b61d27b75](https://github.com/migrationsverket/midas/commit/2b61d27b75))
+- ⚠️ **tabs:** remove deprecated prop `defaultSelected` ([5271e93984](https://github.com/migrationsverket/midas/commit/5271e93984))
+- ⚠️ **spinner:** remove deprecated prop `dark` ([309da278c9](https://github.com/migrationsverket/midas/commit/309da278c9))
+- ⚠️ **modal:** remove deprecated `ModalTrigger` and `Dialog` ([9789773886](https://github.com/migrationsverket/midas/commit/9789773886))
+- ⚠️ **accordion:** remove deprecated prop `type='multiple'`, use `allowsMultipleExpanded` instead ([8c82cbd681](https://github.com/migrationsverket/midas/commit/8c82cbd681))
+- ⚠️ **button:** remove small size variant from button ([06430f2df2](https://github.com/migrationsverket/midas/commit/06430f2df2))
+- **skeleton:** allow for more semantically correct props ([703237ec04](https://github.com/migrationsverket/midas/commit/703237ec04))
+- **button:** add back the small variant ([2112557050](https://github.com/migrationsverket/midas/commit/2112557050))
+- **button:** add size property, a story and style ([946bd9aa7d](https://github.com/migrationsverket/midas/commit/946bd9aa7d))
+- **search-field:** add size prop ([4dab7eea96](https://github.com/migrationsverket/midas/commit/4dab7eea96))
+- **combobox:** add size prop ([e64826ab11](https://github.com/migrationsverket/midas/commit/e64826ab11))
+- **date-picker:** add size prop ([c1e1a04444](https://github.com/migrationsverket/midas/commit/c1e1a04444))
+- **select:** add size property ([b1519f00cd](https://github.com/migrationsverket/midas/commit/b1519f00cd))
+- **date-field:** ✨ medium size ([#558](https://github.com/migrationsverket/midas/pull/558))
+- **theme:** add full scale of signal-red tokens ([abdca1e267](https://github.com/migrationsverket/midas/commit/abdca1e267))
+
+### 🩹 Fixes
+
+- **select:** increase the margin top to give more space between tag group and select ([5514f642b0](https://github.com/migrationsverket/midas/commit/5514f642b0))
+- **calendar:** add cursor: not-allowed on disabled dates ([6592b4fb15](https://github.com/migrationsverket/midas/commit/6592b4fb15))
+- **accordion:** set correct height on uncontained variant ([#557](https://github.com/migrationsverket/midas/pull/557))
+
+### 📖 Documentation changes
+
+- **layout:** update docs on clientSideHref prop ([6f1e0807ad](https://github.com/migrationsverket/midas/commit/6f1e0807ad))
+- add untracked changelog files and update tsconfig ([9527e80ac0](https://github.com/migrationsverket/midas/commit/9527e80ac0))
+- **changelog:** add docusaurus style changelog and release notes ([cba214be09](https://github.com/migrationsverket/midas/commit/cba214be09))
+
+### 🔧 Maintenance
+
+- **deps:** bump undici in the npm_and_yarn group across 1 directory ([63e9f61a23](https://github.com/migrationsverket/midas/commit/63e9f61a23))
+- **deps:** bump vite in the npm_and_yarn group across 1 directory ([193b8d80b5](https://github.com/migrationsverket/midas/commit/193b8d80b5))
+- disable snapshots for duplicate states ([52197ad135](https://github.com/migrationsverket/midas/commit/52197ad135))
+- use medium sized buttons ([7d55406881](https://github.com/migrationsverket/midas/commit/7d55406881))
+- ⚠️ **useMessageFormatter:** remove `useMessageFormatter` since deprecation ([01d94a8d75](https://github.com/migrationsverket/midas/commit/01d94a8d75))
+- **button:** fix code documentation ([28974126de](https://github.com/migrationsverket/midas/commit/28974126de))
+- add npm provenance flag ([039f1daa0d](https://github.com/migrationsverket/midas/commit/039f1daa0d))
+- add new eslint rules ([#545](https://github.com/migrationsverket/midas/pull/545))
+- update version in eslint config ([93edc05f7c](https://github.com/migrationsverket/midas/commit/93edc05f7c))
+
+### 🧪 Tests updated
+
+- **button:** add await to expect tests ([6a72c8d05b](https://github.com/migrationsverket/midas/commit/6a72c8d05b))
+- **button:** add a test to stories ([0348794fc7](https://github.com/migrationsverket/midas/commit/0348794fc7))
+- **button:** add a test in primary story ([53f4fe042e](https://github.com/migrationsverket/midas/commit/53f4fe042e))
+- **docs:** add test baseline and chromatic tests ([57d6255477](https://github.com/migrationsverket/midas/commit/57d6255477))
+- **select:** fix the test ([f41535787b](https://github.com/migrationsverket/midas/commit/f41535787b))
+- **select:** add test to check the size ([2c692d9ea0](https://github.com/migrationsverket/midas/commit/2c692d9ea0))
+
+### ⚠️ Breaking Changes
+
+- ⚠️ **tokens:** rename tokens `blue140` & `blue170` and add new tokens `blue110`, `blue120`, rename `purple140` to `purple110` ([b79d586d53](https://github.com/migrationsverket/midas/commit/b79d586d53))
+- **skeleton:** variant `rectangular` is no longer available, use `rectangle` instead. Animation is now a boolean and the prop to use is `isAnimated`
+- **label:** label variants are no longer available, use component `Text` instead
+- **useMessageFormatter:** Adobe has deprecated this hook in favour of `useLocalizedStringFormatter`. Use that instead!
+- **theme:** use `supportBorderWarning` and `textWarning` instead
+- **table:** prop `narrow` is no longer available
+- **tabs:** `defaultSelected` no longer works, use `defaultSelectedKey` instead
+- **spinner:** prop `dark` no longer works, use `isOnColor` instead
+- **modal:** `ModalTrigger` and `Dialog` no longer works, use `DialogTrigger` and `Modal` instead
+- **accordion:** API now conforms to React Aria standard. Same behavior is accomplished using `allowsMultipleExpanded`
+- **button:** `size='small'` no longer has any effect on button size. Allowed sizes are `'medium' | 'large'`
+
 # 9.0.0 (2025-05-05)
 
 ### 🩹 Fixes
@@ -9,7 +86,7 @@
 ### Documentation Changes
 
 - **toast:** fix local example in storybook ([#542](https://github.com/migrationsverket/midas/pull/542))
- 
+
 ## 8.3.0 (2025-05-03)
 
 ### 🚀 Features
