@@ -54,9 +54,14 @@ export interface MidasLayout {
   app: App
   /** Provide the layout with your router for client side navigation
    *
-   * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/}
+   * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
    */
   clientSideRouter?: (path: string, routerOptions: undefined) => void
+  /**
+   * Converts a router-specific href to a native HTML href, e.g. prepending a base path.
+   * Use this if you're using React Router's `basename` option.
+   * @see {@link https://reactrouter.com/en/main/hooks/use-href/|useHref}
+   */
   clientSideHref?: (href: Href) => string
   variant: 'internal' | 'external'
 }
