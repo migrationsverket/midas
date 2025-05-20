@@ -29,7 +29,9 @@ export const baseColors = {
   blue10: '#eaf2f6',
   blue20: '#d5e5ed',
   blue40: '#abcbdb',
+  blue50: '#94BCD1',
   blue60: '#82b0c9',
+  blue70: '#6CA3C0',
   blue80: '#5897b8',
   blue90: '#4289ad',
   blue100: '#2e7ca5',
@@ -203,9 +205,9 @@ export const semantic = {
   iconWarning: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
   iconImportant: `light-dark(${baseColors.signalYellow100}, ${baseColors.signalYellow100})`,
 
-  linkEnabled: `light-dark(${baseColors.blue100}, ${baseColors.blue90})`,
-  linkHover: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
-  linkPressed: `light-dark(${baseColors.gray200}, ${baseColors.blue60})`,
+  linkEnabled: `light-dark(${baseColors.blue120}, ${baseColors.blue70})`,
+  linkHover: `light-dark(${baseColors.blue150}, ${baseColors.blue50})`,
+  linkPressed: `light-dark(${baseColors.gray200}, ${baseColors.blue40})`,
   linkVisited: `light-dark(${baseColors.purple110}, ${baseColors.purple80})`,
 
   supportBorderSuccess: `light-dark(${baseColors.signalGreen100}, ${baseColors.signalGreen100})`,
