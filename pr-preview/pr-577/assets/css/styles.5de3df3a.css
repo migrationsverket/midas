@@ -8160,6 +8160,178 @@ CSS variables, meant to be overridden by final theme
   }
 }
 
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.tags_jXut {
+  display: inline;
+}
+
+.tag_QGVx {
+  margin: 0 0.4rem 0.5rem 0;
+  display: inline-block;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.iconEdit_Z9Sw {
+  margin-right: 0.3em;
+  vertical-align: sub;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.lastUpdated_JAkA {
+  font-size: smaller;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+@media (min-width: 997px) {
+  .lastUpdated_JAkA {
+    text-align: right;
+  }
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.tocCollapsibleButton_TO0P {
+  font-size: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  width: 100%;
+}
+
+.tocCollapsibleButton_TO0P::after {
+  content: '';
+  background: var(--ifm-menu-link-sublist-icon) 50% 50% / 2rem 2rem no-repeat;
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  height: 1.25rem;
+  width: 1.25rem;
+  transform: rotate(180deg);
+  transition: transform var(--ifm-transition-fast);
+}
+
+.tocCollapsibleButtonExpanded_MG3E::after {
+  transform: none;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.tocCollapsible_ETCw {
+  background-color: var(--ifm-menu-color-background-active);
+  border-radius: var(--ifm-global-radius);
+  margin: 1rem 0;
+}
+
+.tocCollapsibleContent_vkbj > ul {
+  border-left: none;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0.2rem 0;
+  font-size: 15px;
+}
+
+.tocCollapsibleContent_vkbj ul li {
+  margin: 0.4rem 0.8rem;
+}
+
+.tocCollapsibleContent_vkbj a {
+  display: block;
+}
+
+.tocCollapsibleExpanded_sAul {
+  transform: none;
+}
+
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@media (min-width: 997px) {
+  /* Prevent hydration FOUC, as the mobile TOC needs to be server-rendered */
+  .tocMobile_ITEo {
+    display: none;
+  }
+}
+
+@media print {
+  .tocMobile_ITEo {
+    display: none;
+  }
+}
+
+.container_ytPE {
+  display: inline-flex;
+}
+
+.spinner_eR4D {
+  color: light-dark(#171717, #f2f2f2);
+  animation: rotating_m95R 1s linear infinite;
+  stroke-linecap: square;
+}
+
+@media (prefers-reduced-motion) {
+
+.spinner_eR4D {
+    animation-duration: 2s;
+}
+  }
+
+.dark_YbwO {
+  color: light-dark(#ffffff, #ffffff);
+}
+
+.vsHidden_wdPf {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  position: absolute !important;
+}
+
+@keyframes rotating_m95R {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .body-01_whJM,
 .body-02_Xi1v {
   color: light-dark(#171717, #f2f2f2);
@@ -8697,178 +8869,6 @@ CSS variables, meant to be overridden by final theme
 
   .offset-11_cqgv {
     grid-column: 12 / span 1;
-  }
-}
-
-.container_ytPE {
-  display: inline-flex;
-}
-
-.spinner_eR4D {
-  color: light-dark(#171717, #f2f2f2);
-  animation: rotating_m95R 1s linear infinite;
-  stroke-linecap: square;
-}
-
-@media (prefers-reduced-motion) {
-
-.spinner_eR4D {
-    animation-duration: 2s;
-}
-  }
-
-.dark_YbwO {
-  color: light-dark(#ffffff, #ffffff);
-}
-
-.vsHidden_wdPf {
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  margin: -1px !important;
-  overflow: hidden !important;
-  clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
-  border: 0 !important;
-  position: absolute !important;
-}
-
-@keyframes rotating_m95R {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.tags_jXut {
-  display: inline;
-}
-
-.tag_QGVx {
-  margin: 0 0.4rem 0.5rem 0;
-  display: inline-block;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.iconEdit_Z9Sw {
-  margin-right: 0.3em;
-  vertical-align: sub;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.lastUpdated_JAkA {
-  font-size: smaller;
-  font-style: italic;
-  margin-top: 0.2rem;
-}
-
-@media (min-width: 997px) {
-  .lastUpdated_JAkA {
-    text-align: right;
-  }
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.tocCollapsibleButton_TO0P {
-  font-size: inherit;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.4rem 0.8rem;
-  width: 100%;
-}
-
-.tocCollapsibleButton_TO0P::after {
-  content: '';
-  background: var(--ifm-menu-link-sublist-icon) 50% 50% / 2rem 2rem no-repeat;
-  filter: var(--ifm-menu-link-sublist-icon-filter);
-  height: 1.25rem;
-  width: 1.25rem;
-  transform: rotate(180deg);
-  transition: transform var(--ifm-transition-fast);
-}
-
-.tocCollapsibleButtonExpanded_MG3E::after {
-  transform: none;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-.tocCollapsible_ETCw {
-  background-color: var(--ifm-menu-color-background-active);
-  border-radius: var(--ifm-global-radius);
-  margin: 1rem 0;
-}
-
-.tocCollapsibleContent_vkbj > ul {
-  border-left: none;
-  border-top: 1px solid var(--ifm-color-emphasis-300);
-  padding: 0.2rem 0;
-  font-size: 15px;
-}
-
-.tocCollapsibleContent_vkbj ul li {
-  margin: 0.4rem 0.8rem;
-}
-
-.tocCollapsibleContent_vkbj a {
-  display: block;
-}
-
-.tocCollapsibleExpanded_sAul {
-  transform: none;
-}
-
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-@media (min-width: 997px) {
-  /* Prevent hydration FOUC, as the mobile TOC needs to be server-rendered */
-  .tocMobile_ITEo {
-    display: none;
-  }
-}
-
-@media print {
-  .tocMobile_ITEo {
-    display: none;
   }
 }
 
@@ -10331,18 +10331,28 @@ CSS variables, meant to be overridden by final theme
 
 .button_Loby {
   color: light-dark(#171717, #f2f2f2);
-  min-height: 0;
-  min-height: initial;
+  min-height: 0 !important;
+  min-height: initial !important;
   padding: 0.375rem !important;
   border-radius: 1.5rem;
+  border: medium none currentcolor;
+  border: initial;
 }
 
 .button_Loby[data-hovered] {
-    background-color: light-dark(#e6e6e6, #333333);
+    background-color: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
   }
 
 .button_Loby[data-pressed] {
-    background-color: light-dark(#d9d9d9, #383838);
+    background-color: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
+  }
+
+.button_Loby.success_GxEq[data-hovered],.button_Loby.warning_MXCT[data-hovered],.button_Loby.info_xrqn[data-hovered],.button_Loby.important_QbWH[data-hovered] {
+    background-color: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
+  }
+
+.button_Loby.success_GxEq[data-pressed],.button_Loby.warning_MXCT[data-pressed],.button_Loby.info_xrqn[data-pressed],.button_Loby.important_QbWH[data-pressed] {
+    background-color: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
   }
 
 .tag_WAeO {
@@ -10353,11 +10363,35 @@ CSS variables, meant to be overridden by final theme
   background-color: light-dark(#f2f2f2, #262626);
   font-size: 0.875rem;
   font-family: "Inter", sans-serif;
+  border: 1px solid light-dark(#171717, #f2f2f2);
+  color: light-dark(#171717, #f2f2f2);
 }
+
+.tag_WAeO.success_GxEq {
+    background-color: light-dark(#d5f2d9, light-dark(#f2f2f2, #262626));
+    border: 1px solid light-dark(#008d3c, #008d3c);
+  }
+
+.tag_WAeO.info_xrqn {
+    background-color: light-dark(#eaf2f6, light-dark(#f2f2f2, #262626));
+    border: 1px solid light-dark(#0066cc, #0066cc);
+  }
+
+.tag_WAeO.important_QbWH {
+    background-color: light-dark(#fff8e1, light-dark(#f2f2f2, #262626));
+    border: 1px solid light-dark(#fdb813, #fdb813);
+  }
+
+.tag_WAeO.warning_MXCT {
+    background-color: light-dark(#ffdfdf, light-dark(#f2f2f2, #262626));
+    border: 1px solid light-dark(#e62323, #e62323);
+  }
 
 .tag_WAeO[data-disabled] {
     color: light-dark(#bfbfbf, #525252);
     cursor: not-allowed;
+    border-color: light-dark(#bfbfbf, #525252);
+    background-color: light-dark(#f2f2f2, #262626);
   }
 
 .tag_WAeO[data-focused],.tag_WAeO[data-focus-visible] {

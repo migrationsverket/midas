@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9758],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6946],{
 
-/***/ 56304:
+/***/ 6527:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_search_field_mdx_8ac_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_tag_mdx_e49_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-search-field-mdx-8ac.json
-const site_docs_components_search_field_mdx_8ac_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/search-field","title":"SearchField","description":"Sökfält är ett inmatningsfält anpassat för sökning","source":"@site/docs/components/search-field.mdx","sourceDirName":"components","slug":"/components/search-field","permalink":"/pr-preview/pr-577/components/search-field","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"SearchField","description":"Sökfält är ett inmatningsfält anpassat för sökning","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-tag-mdx-e49.json
+const site_docs_components_tag_mdx_e49_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/tag","title":"Tag","description":"Statusindikator","source":"@site/docs/components/tag.mdx","sourceDirName":"components","slug":"/components/tag","permalink":"/pr-preview/pr-577/components/tag","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Tag","description":"Statusindikator","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -31,14 +31,20 @@ var TabItem = __webpack_require__(79329);
 var PropsTable = __webpack_require__(53797);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(32980);
-// EXTERNAL MODULE: ./packages/components/src/search-field/SearchField.tsx + 1 modules
-var SearchField = __webpack_require__(97100);
-;// ./apps/docs/docs/components/search-field.mdx
+// EXTERNAL MODULE: ./packages/components/src/tag/Tag.tsx + 1 modules
+var Tag = __webpack_require__(20380);
+// EXTERNAL MODULE: ./packages/components/src/card/Card.tsx + 1 modules
+var Card = __webpack_require__(26333);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(93361);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(35518);
+;// ./apps/docs/docs/components/tag.mdx
 
 
 const frontMatter = {
-	title: 'SearchField',
-	description: 'Sökfält är ett inmatningsfält anpassat för sökning',
+	title: 'Tag',
+	description: 'Statusindikator',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -60,12 +66,25 @@ const toc = [{
   "id": "installation",
   "level": 2
 }, {
+  "value": "Användning",
+  "id": "användning",
+  "level": 2
+}, {
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Dismissable",
+  "id": "dismissable",
+  "level": 2
+}, {
   "value": "API",
   "id": "api",
   "level": 2
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     p: "p",
@@ -75,19 +94,23 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "SearchField",
-      friendlyName: "Sökfält"
+      name: "Tag",
+      friendlyName: "Tagg, chip, statusindikator ",
+      overrideHeadlessLink: ""
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält anpassat för sökning."
+      children: "Komponent för att visa beskrivande etiketter som kan användas för att kategorisera information."
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<SearchField placeholder='Sök efter frukter' />\n"
+        children: "<TagGroup>\n  <Tag>Tag med information</Tag>\n</TagGroup>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
-      children: (0,jsx_runtime.jsx)(SearchField/* SearchField */.L, {
-        placeholder: "Sök efter frukter"
+      children: (0,jsx_runtime.jsx)(Tag/* TagGroup */.C, {
+        "aria-label": "Taggar",
+        children: (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          children: "Tag med information"
+        })
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
@@ -124,13 +147,101 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { SearchField } from '@midas-ds/components'\n"
+        children: "import { Tag, TagGroup } from '@midas-ds/components'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "användning",
+      children: "Användning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Tag används som en del av ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "../select#flerval",
+        children: "Select"
+      }), " om ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "showTags"
+      }), " är aktiverat men kan också användas fristående eller inuti andra komponenter."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Card horizontal>\n  <CardContent>\n    <CardTitle>Köp frukt</CardTitle>\n    <Text>Vi behöver köpa frukt till fika</Text>\n    <TagGroup>\n      <Tag type='info'>Inte påbörjat</Tag>\n    </TagGroup>\n  </CardContent>\n  <CardActions>\n    <Button variant='tertiary'>Utför uppgift</Button>\n  </CardActions>\n</Card>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(Card/* Card */.Zp, {
+        horizontal: true,
+        children: [(0,jsx_runtime.jsxs)(Card/* CardContent */.Wu, {
+          children: [(0,jsx_runtime.jsx)(Card/* CardTitle */.ZB, {
+            children: "Köp frukt"
+          }), (0,jsx_runtime.jsx)(Text/* Text */.E, {
+            children: "Vi behöver köpa frukt till fika"
+          }), (0,jsx_runtime.jsx)(Tag/* TagGroup */.C, {
+            children: (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+              type: "info",
+              children: "Inte påbörjat"
+            })
+          })]
+        }), (0,jsx_runtime.jsx)(Card/* CardActions */.w, {
+          children: (0,jsx_runtime.jsx)(Button/* Button */.$, {
+            variant: "tertiary",
+            children: "Utför uppgift"
+          })
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Tag finns i fem varianter."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TagGroup>\n  <Tag>Default</Tag>\n  <Tag type='success'>Success</Tag>\n  <Tag type='info'>Info</Tag>\n  <Tag type='important'>Important</Tag>\n  <Tag type='warning'>Warning</Tag>\n</TagGroup>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(Tag/* TagGroup */.C, {
+        "aria-label": "Taggar",
+        children: [(0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          children: "Default"
+        }), (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          type: "success",
+          children: "Success"
+        }), (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          type: "info",
+          children: "Info"
+        }), (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          type: "important",
+          children: "Important"
+        }), (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          type: "warning",
+          children: "Warning"
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "dismissable",
+      children: "Dismissable"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Det går att göra det möjligt för användaren att stänga tag via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "dismissable"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<TagGroup>\n  <Tag dismissable>Default</Tag>\n</TagGroup>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(Tag/* TagGroup */.C, {
+        "aria-label": "Taggar",
+        children: (0,jsx_runtime.jsx)(Tag/* Tag */.v, {
+          dismissable: true,
+          children: "Default"
+        })
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "SearchField"
+      name: "Tag"
     })]
   });
 }
@@ -254,6 +365,45 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 
 /***/ }),
 
+/***/ 26333:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Zp: () => (/* binding */ Card),
+  s$: () => (/* binding */ CardActionArea),
+  w: () => (/* binding */ CardActions),
+  Wu: () => (/* binding */ CardContent),
+  MH: () => (/* binding */ CardImage),
+  hB: () => (/* binding */ CardLink),
+  ZB: () => (/* binding */ CardTitle)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/components/src/card/Card.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Card_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--background":"light-dark(#ffffff, #171717)","--border-primary":"light-dark(#171717, #f2f2f2)","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--border-secondary":"light-dark(#737373, #8c8c8c)","--support-background-success":"light-dark(#d5f2d9, light-dark(#f2f2f2, #262626))","--support-border-success":"light-dark(#008d3c, #008d3c)","--support-background-warning":"light-dark(#ffdfdf, light-dark(#f2f2f2, #262626))","--support-border-warning":"light-dark(#e62323, #e62323)","--button-background-icon-hover":"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))","--button-background-icon-active":"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--z-index-base":"1","--icon-primary":"light-dark(#171717, #f2f2f2)","card":"card_Ssoo","horizontal":"horizontal_p4Mn","cardLink":"cardLink_gsBo","cardContent":"cardContent_JE5V","cardActions":"cardActions_HxzH","cardActionArea":"cardActionArea_re2y","cardImage":"cardImage_BIZa","cardLinkIcon":"cardLinkIcon_av9l"});
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/components/src/heading/Heading.tsx + 1 modules
+var Heading = __webpack_require__(55402);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
+var Button = __webpack_require__(65014);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
+var Link = __webpack_require__(73099);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
+var arrow_right = __webpack_require__(48635);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/card/Card.tsx
+var _excluded=["horizontal","className","children"],_excluded2=["children"],_excluded3=["children"],_excluded4=["children","className"],_excluded5=["as","className"],_excluded6=["children","as"];var CardContext=/*#__PURE__*/react.createContext({horizontal:undefined,titleId:undefined});var Card=function Card(_ref){var horizontal=_ref.horizontal,className=_ref.className,children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var id=react.useId();var titleId="card-title-"+id;return/*#__PURE__*/(0,jsx_runtime.jsx)(CardContext.Provider,{value:{horizontal:horizontal,titleId:titleId},children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},rest,{className:(0,clsx/* default */.A)(Card_module.card,horizontal&&Card_module.horizontal,className),children:children}))});};var CardContent=function CardContent(_ref2){var children=_ref2.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);var _React$useContext=react.useContext(CardContext),horizontal=_React$useContext.horizontal;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},rest,{className:(0,clsx/* default */.A)(Card_module.cardContent,horizontal&&Card_module.horizontal),children:children}));};var CardTitle=function CardTitle(_ref3){var _ref3$elementType=_ref3.elementType,elementType=_ref3$elementType===void 0?'h2':_ref3$elementType,children=_ref3.children;var _React$useContext2=react.useContext(CardContext),horizontal=_React$useContext2.horizontal,titleId=_React$useContext2.titleId;return/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* Heading */.D,{level:horizontal?5:3,elementType:elementType,isExpressive:horizontal,className:(0,clsx/* default */.A)(Card_module.cardTitle,horizontal&&Card_module.horizontal),id:titleId,children:children});};var CardActions=function CardActions(_ref4){var children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);var _React$useContext3=react.useContext(CardContext),horizontal=_React$useContext3.horizontal;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},rest,{className:(0,clsx/* default */.A)(Card_module.cardActions,horizontal&&Card_module.horizontal),children:children}));};var CardActionArea=function CardActionArea(_ref5){var children=_ref5.children,className=_ref5.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref5,_excluded4);var _React$useContext4=react.useContext(CardContext),titleId=_React$useContext4.titleId;return/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,Object.assign({},rest,{"aria-labelledby":titleId,className:(0,clsx/* default */.A)(Card_module.cardActionArea,className),children:children}));};var CardImage=function CardImage(_ref6){var _ref6$as=_ref6.as,ImageComponent=_ref6$as===void 0?'img':_ref6$as,className=_ref6.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref6,_excluded5);return/*#__PURE__*/(0,jsx_runtime.jsx)(ImageComponent,Object.assign({},rest,{className:(0,clsx/* default */.A)(Card_module.cardImage,className)}));};var CardLink=function CardLink(_ref7){var children=_ref7.children,as=_ref7.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref7,_excluded6);var Component=as||Link/* Link */.N;return/*#__PURE__*/(0,jsx_runtime.jsxs)(Component,Object.assign({},rest,{className:(0,clsx/* default */.A)(Card_module.cardLink,rest.className),children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{className:Card_module.cardLinkIcon,size:24})]}));};
+
+/***/ }),
+
 /***/ 39996:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -362,40 +512,62 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 97100:
+/***/ 20380:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  L: () => (/* binding */ SearchField)
+  v: () => (/* binding */ Tag),
+  C: () => (/* binding */ TagGroup)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
-var search = __webpack_require__(98445);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
-var TextField_module = __webpack_require__(53502);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(35518);
-;// ./packages/components/src/search-field/SearchField.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const SearchField_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-warning":"light-dark(#e62323, #eb4e4e)","--field-01":"light-dark(#f2f2f2, #262626)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--size-50":"0.625rem","--size-70":"0.875rem","--size-110":"1.75rem","--size-130":"2.5rem","--size-150":"3rem","fieldError":"fieldError_ivkE","container":"container_o5YK","inputContainer":"inputContainer_hVqH","medium":"medium_sM7f","icon":"icon_KMPT","clear":"clear_cC1p","input":"input_Z0RI"});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-stately/searchfield/dist/useSearchFieldState.mjs
-var useSearchFieldState = __webpack_require__(7633);
-// EXTERNAL MODULE: ./node_modules/@react-aria/searchfield/dist/useSearchField.mjs + 35 modules
-var useSearchField = __webpack_require__(46243);
+;// ./packages/components/src/tag/Tag.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Tag_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--field-01":"light-dark(#f2f2f2, #262626)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-active-01":"light-dark(#d9d9d9, #383838)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--icon-primary":"light-dark(#171717, #f2f2f2)","--support-background-success":"light-dark(#d5f2d9, light-dark(#f2f2f2, #262626))","--support-background-info":"light-dark(#eaf2f6, light-dark(#f2f2f2, #262626))","--support-background-important":"light-dark(#fff8e1, light-dark(#f2f2f2, #262626))","--support-background-warning":"light-dark(#ffdfdf, light-dark(#f2f2f2, #262626))","--button-background-icon-hover":"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))","--button-background-icon-active":"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))","--border-primary":"light-dark(#171717, #f2f2f2)","--support-border-success":"light-dark(#008d3c, #008d3c)","--support-border-info":"light-dark(#0066cc, #0066cc)","--support-border-important":"light-dark(#fdb813, #fdb813)","--support-border-warning":"light-dark(#e62323, #e62323)","--text-primary":"light-dark(#171717, #f2f2f2)","--border-disabled":"light-dark(#bfbfbf, #525252)","button":"button_Loby","success":"success_GxEq","warning":"warning_MXCT","info":"info_xrqn","important":"important_QbWH","tag":"tag_WAeO","dismissable":"dismissable_Tfml","tagText":"tagText_f_lx","tagList":"tagList_sxPC"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 40 modules
+var dist_TagGroup = __webpack_require__(99628);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(35518);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/search-field/SearchField.tsx
-'use client';var _excluded=["errorPosition","size"];function isValidationError(error){return!!(error!=null&&error.length);}var SearchField=function SearchField(_ref){var _props$errorMessage,_clsx,_clsx2,_clsx3,_props$errorMessage2;var _ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _useSearchFieldState=(0,useSearchFieldState/* useSearchFieldState */.V)(props),value=_useSearchFieldState.value,setValue=_useSearchFieldState.setValue;var ref=react.useRef(null);var _useSearchField=(0,useSearchField/* useSearchField */.Q)(Object.assign({},props,{label:props.placeholder,validationBehavior:'native'}),{value:value,setValue:setValue},ref),inputProps=_useSearchField.inputProps,errorMessageProps=_useSearchField.errorMessageProps,isInvalid=_useSearchField.isInvalid,validationErrors=_useSearchField.validationErrors,clearButtonProps=_useSearchField.clearButtonProps;var handleChange=function handleChange(_ref2){var target=_ref2.target;return setValue(target.value);};var handleClear=function handleClear(){return setValue('');};var handleSubmit=function handleSubmit(){var reFocus=props.validate&&isValidationError(props.validate(value))||isInvalid||!value;if(reFocus){var _ref$current;(_ref$current=ref.current)==null||_ref$current.focus();return;}if(props.onSubmit){props.onSubmit(value);}};var handleKeyDown=function handleKeyDown(_ref3){var key=_ref3.key;if(key==='Enter'){handleSubmit();}};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:[isInvalid&&errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},errorMessageProps,{className:SearchField_module.fieldError,children:(_props$errorMessage=props.errorMessage)!=null?_props$errorMessage:validationErrors.join(' ')})),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:SearchField_module.container,"data-disabled":inputProps.disabled,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:(0,clsx/* default */.A)(SearchField_module.inputContainer,(_clsx={},_clsx[SearchField_module.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(search/* default */.A,{size:20,className:SearchField_module.icon}),/*#__PURE__*/(0,jsx_runtime.jsx)("input",Object.assign({},inputProps,inputProps.disabled&&{'data-disabled':true},{className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,SearchField_module.input,inputProps.className,(_clsx2={},_clsx2[SearchField_module.medium]=size==='medium',_clsx2)),ref:ref,onChange:handleChange,value:value,"aria-invalid":isInvalid,onKeyDown:handleKeyDown,"aria-label":props.placeholder,"aria-labelledby":""})),value.length>0&&/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,Object.assign({variant:"icon",size:"medium",className:(0,clsx/* default */.A)(SearchField_module.clear,(_clsx3={},_clsx3[SearchField_module.medium]=size==='medium',_clsx3)),onPress:handleClear},clearButtonProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})}))]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{size:size,isDisabled:props.isDisabled,excludeFromTabOrder:true,onPress:handleSubmit,type:"button",children:props.buttonText?props.buttonText:'Sök'})]}),isInvalid&&errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},errorMessageProps,{className:SearchField_module.fieldError,children:(_props$errorMessage2=props.errorMessage)!=null?_props$errorMessage2:validationErrors.join(' ')}))]});};
+;// ./packages/components/src/tag/Tag.tsx
+var _excluded=["children"],_excluded2=["children","dismissable","className","type"];var TagGroup=function TagGroup(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagGroup */.CR,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{className:Tag_module.tagList,children:children})}));};var Tag=function Tag(_ref2){var children=_ref2.children,dismissable=_ref2.dismissable,className=_ref2.className,_ref2$type=_ref2.type,type=_ref2$type===void 0?'default':_ref2$type,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_TagGroup/* Tag */.vw,Object.assign({className:(0,clsx/* default */.A)(Tag_module.tag,dismissable&&Tag_module.dismissable,type==='success'&&Tag_module.success,type==='info'&&Tag_module.info,type==='important'&&Tag_module.important,type==='warning'&&Tag_module.warning,className)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Tag_module.tagText,children:children}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Tag_module.button,slot:"remove",children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})]}));};
+
+/***/ }),
+
+/***/ 93361:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  E: () => (/* binding */ Text)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var dist_Text = __webpack_require__(27279);
+;// ./packages/components/src/text/Text.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/text/Text.tsx
+var _excluded=["children","className","variant","isExpressive","elementType"];var DEFAULT_ELEMENT='span';var Text=function Text(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'body-02':_ref$variant,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'body-01':Text_module['body-01'],'body-02':Text_module['body-02']};var textProps=Object.assign({className:(0,clsx/* default */.A)(rest.slot==='description'?Text_module.description:classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},isExpressive&&{'data-expressive':true},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Text/* Text */.E,Object.assign({},textProps,{children:children}));};
 
 /***/ }),
 
@@ -450,6 +622,33 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
+/***/ 48635:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ArrowRight)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ArrowRight", [
+  ["path", { d: "M5 12h14", key: "1ays0h" }],
+  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
+]);
+
+
+//# sourceMappingURL=arrow-right.js.map
+
+
+/***/ }),
+
 /***/ 43538:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -472,14 +671,69 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
-/***/ 53502:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 85441:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   M: () => (/* binding */ $2baaea4c71418dea$export$294aa081a6c6f55d)
 /* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--border-disabled":"light-dark(#bfbfbf, #525252)","--field-disabled":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--support-border-warning":"light-dark(#e62323, #e62323)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--z-index-base":"1","--z-index-above":"10","--size-130":"2.5rem","--size-150":"3rem","textField":"textField_IarX","bottomError":"bottomError_XU77","textArea":"textArea_M6yF","wrap":"wrap_ljmz","medium":"medium_jalb","input":"input_g6A6","passwordText":"passwordText_gBIs","passwordButton":"passwordButton_kacG"});
+/* harmony import */ var _useLabel_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64887);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(84137);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32217);
+
+
+
+/*
+ * Copyright 2021 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+function $2baaea4c71418dea$export$294aa081a6c6f55d(props) {
+    let { description: description, errorMessage: errorMessage, isInvalid: isInvalid, validationState: validationState } = props;
+    let { labelProps: labelProps, fieldProps: fieldProps } = (0, _useLabel_mjs__WEBPACK_IMPORTED_MODULE_0__/* .useLabel */ .M)(props);
+    let descriptionId = (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_1__/* .useSlotId */ .X1)([
+        Boolean(description),
+        Boolean(errorMessage),
+        isInvalid,
+        validationState
+    ]);
+    let errorMessageId = (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_1__/* .useSlotId */ .X1)([
+        Boolean(description),
+        Boolean(errorMessage),
+        isInvalid,
+        validationState
+    ]);
+    fieldProps = (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeProps */ .v)(fieldProps, {
+        'aria-describedby': [
+            descriptionId,
+            // Use aria-describedby for error message because aria-errormessage is unsupported using VoiceOver or NVDA. See https://github.com/adobe/react-spectrum/issues/1346#issuecomment-740136268
+            errorMessageId,
+            props['aria-describedby']
+        ].filter(Boolean).join(' ') || undefined
+    });
+    return {
+        labelProps: labelProps,
+        fieldProps: fieldProps,
+        descriptionProps: {
+            id: descriptionId
+        },
+        errorMessageProps: {
+            id: errorMessageId
+        }
+    };
+}
+
+
+
+//# sourceMappingURL=useField.module.js.map
+
 
 /***/ })
 
