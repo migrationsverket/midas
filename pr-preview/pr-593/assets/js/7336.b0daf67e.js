@@ -19,8 +19,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/reactUtils.js + 5 modules
-var reactUtils = __webpack_require__(102);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/reactUtils.js + 3 modules
+var reactUtils = __webpack_require__(56836);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useRouteContext.js
 var useRouteContext = __webpack_require__(69062);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js

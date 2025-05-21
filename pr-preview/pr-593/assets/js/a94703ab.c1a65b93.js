@@ -89,8 +89,8 @@ var announcementBar = __webpack_require__(23380);
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/plugin-content-docs/lib/client/docSidebarItemsExpandedState.js
 var docSidebarItemsExpandedState = __webpack_require__(7699);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/reactUtils.js + 5 modules
-var reactUtils = __webpack_require__(102);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/reactUtils.js + 3 modules
+var reactUtils = __webpack_require__(56836);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/components/Collapsible/index.js
 var Collapsible = __webpack_require__(33535);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/routesUtils.js

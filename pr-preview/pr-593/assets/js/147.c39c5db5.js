@@ -130,7 +130,7 @@ __webpack_require__(86121)((_home_runner_work_midas_midas_node_modules_lunr_lunr
 /******/ 		// This function allow to reference async chunks and sibling chunks for the entrypoint
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "assets/js/" + chunkId + "." + "ce5b1f29" + ".js";
+/******/ 			return "assets/js/" + chunkId + "." + "009e9eb9" + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	

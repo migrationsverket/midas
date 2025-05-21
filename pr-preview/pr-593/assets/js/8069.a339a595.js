@@ -104,8 +104,8 @@ var _excluded=["as"];/**
 // the children is not a simple string, we just return a styled block without
 // actually highlighting.
 function CodeBlockJSX(_ref){var children=_ref.children,className=_ref.className;return/*#__PURE__*/(0,jsx_runtime.jsx)(CodeBlockContainer,{as:"pre",tabIndex:0,className:(0,clsx/* default */.A)(Content_styles_module.codeBlockStandalone,'thin-scrollbar',className),children:/*#__PURE__*/(0,jsx_runtime.jsx)("code",{className:Content_styles_module.codeBlockLines,children:children})});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/reactUtils.js + 5 modules
-var reactUtils = __webpack_require__(102);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/reactUtils.js + 3 modules
+var reactUtils = __webpack_require__(56836);
 ;// ./node_modules/@docusaurus/theme-common/lib/hooks/useMutationObserver.js
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
