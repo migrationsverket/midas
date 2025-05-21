@@ -23,6 +23,7 @@ export interface InfoBannerProps
    *  Specify if the InfoBanner should have a dismiss button in the top right corner
    */
   dismissable?: boolean
+  role?: React.AriaRole
 }
 
 const iconMap = {
@@ -31,6 +32,7 @@ const iconMap = {
   important: AlertCircle,
   warning: AlertTriangle,
 }
+
 /**
  * Displays a static message as an inline banner
  */
@@ -40,6 +42,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   type,
   children,
   dismissable = false,
+  role = 'alert',
   ...rest
 }) => {
   const Icon = iconMap[type]
@@ -49,6 +52,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
     return (
       <div
         {...rest}
+        role={role}
         className={clsx(styles.infoBanner, styles[type], rest.className)}
       >
         <Icon
