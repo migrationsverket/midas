@@ -19,6 +19,18 @@
           "changelog": {
             "title": "\uD83D\uDD27 Maintenance"
           }
+        },
+        "refactor": {},
+        "perf": {
+          "changelog": {
+            "title": "\uD83C\uDFC7 Performance improvements"
+          }
+        },
+        "style": {
+          "title": "✏\uFE0F Code style changes"
+        },
+        "revert": {
+          "title": "\uD83D\uDD19 Rollback changes"
         }
       }
     },
