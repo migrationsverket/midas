@@ -24,7 +24,7 @@ import { Checkbox } from '../checkbox'
 export type OptionItem = {
   children?: never
 
-  id: string
+  id: Key
 
   name: string | React.ReactNode
 
