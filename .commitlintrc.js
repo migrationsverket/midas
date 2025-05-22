@@ -15,6 +15,7 @@ async function getConfig() {
     .map(dirent => dirent.name)
 
   return {
+    extends: ['@commitlint/config-conventional'],
     rules: {
       'scope-enum': async ctx => [
         2,
