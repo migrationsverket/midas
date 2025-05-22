@@ -137,12 +137,12 @@ import { InfoBanner } from '@midas-ds/components'
 
 ## Stängbar
 
-Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `dismissable`. Det bör inte användas för varningar.
+Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `isDismissable`. Det bör inte användas för varningar.
 
 ```tsx
 <InfoBanner
   // highlight-start
-  dismissable
+  isDismissable
   // highlight-end
   type='success'
   title='Det gick bra!'
@@ -152,7 +152,7 @@ Det går att göra det möjligt för användaren att stänga informationsmeddela
 
 <div className='card'>
   <InfoBanner
-    dismissable
+    isDismissable
     type='success'
     title='Det gick bra!'
     message='Detta är ett meddelande om att allt gick bra.'
