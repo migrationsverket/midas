@@ -1,13 +1,14 @@
-export const modes = {
+// ** modes we should run on ALL stories
+export const globalModes = {
   'Light Mode': {
-    backgrounds: {
-      value: 'white',
+    scheme: {
+      value: 'light',
     },
     colorScheme: 'light',
   },
   'Dark Mode': {
-    backgrounds: {
-      value: '#121212',
+    scheme: {
+      value: 'dark',
     },
     colorScheme: 'dark',
   },
@@ -35,4 +36,17 @@ export const modes = {
   //     },
   //     viewport: 'xLarge',
   //   },
+}
+
+export const sizeModes = {
+  Large: {
+    size: {
+      value: 'large',
+    },
+  },
+  Medium: {
+    size: {
+      value: 'medium',
+    },
+  },
 }

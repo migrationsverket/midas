@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker'
 import { expect, userEvent } from '@storybook/test'
+import { sizeModes } from '../../.storybook/modes'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -27,45 +28,29 @@ const meta: Meta<typeof DatePicker> = {
         rules: { 'color-contrast': { enabled: false } },
       },
     },
+    chromatic: {
+      modes: sizeModes,
+    },
+  },
+  render: (args, { globals: { size } }) => {
+    return (
+      <DatePicker
+        {...args}
+        size={size}
+      />
+    )
   },
 }
 export default meta
 type Story = StoryObj<typeof DatePicker>
 
 export const Primary: Story = {
-  play: async ({ step, canvas }) => {
-    await step('it should be large per default', async () => {
+  play: async ({ step, canvas, globals: { size } }) => {
+    await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('group')).toHaveStyle({
-        height: '48px',
+        height: size === 'large' ? '48px' : '40px',
       })
     })
-  },
-}
-
-export const MediumSize: Story = {
-  args: {
-    size: 'medium',
-  },
-  play: async ({ step, canvas }) => {
-    await step('it should be medium sized', async () => {
-      await expect(canvas.getByRole('group')).toHaveStyle({
-        height: '40px',
-      })
-    })
-  },
-}
-
-export const MediumSizeInvalid: Story = {
-  args: {
-    size: 'medium',
-    isInvalid: true,
-  },
-}
-
-export const MediumSizeDisabled: Story = {
-  args: {
-    size: 'medium',
-    isDisabled: true,
   },
 }
 
