@@ -4,7 +4,6 @@ import { mergeProps, useObjectRef } from '@react-aria/utils'
 import { Item, Section } from '@react-stately/collections'
 import { CollectionChildren, Key } from '@react-types/shared'
 import clsx from 'clsx'
-import { useEffect, useRef } from 'react'
 import * as React from 'react'
 import { TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
@@ -20,6 +19,7 @@ import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { Label } from '../label'
 import { Text } from '../text'
 import { Size } from '../common/types'
+import { Checkbox } from '../checkbox'
 
 export type OptionItem = {
   children?: never
@@ -148,7 +148,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       errorMessage,
     } = props
 
-    const refAllButton = useRef<HTMLInputElement>(null)
     const ref = useObjectRef(forwardedRef)
     const disallowEmptySelection = !isClearable
 
@@ -214,12 +213,6 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       </div>
     )
 
-    useEffect(() => {
-      if (refAllButton.current) {
-        refAllButton.current.indeterminate = isIndeterminateSelection
-      }
-    }, [isIndeterminateSelection])
-
     return (
       <>
         <HiddenMultiSelect
@@ -232,6 +225,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
         />
         <TextField
           {...props}
+          aria-label={label || 'placeholder'}
           className={clsx(
             [styles.multiSelect],
             {
@@ -346,24 +340,20 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                         <button
                           type='button'
                           onClick={handleSelectAll}
-                          className={styles.selectAllButton}
+                          className={clsx(
+                            styles.listBoxItem,
+                            styles.selectAllButton,
+                          )}
                         >
-                          <div
-                            className={styles.listBoxItem}
-                            tabIndex={-1}
-                          >
-                            <div className={styles.checkboxContainer}>
-                              <input
-                                className={styles.checkbox}
-                                type='checkbox'
-                                checked={isAllSelection}
-                                ref={refAllButton}
-                                readOnly
-                                tabIndex={-1}
-                              />
-                            </div>
-                            <span>Select All</span>
+                          <div className={styles.checkboxContainer}>
+                            <Checkbox
+                              isSelected={isAllSelection}
+                              isIndeterminate={isIndeterminateSelection}
+                              isReadOnly
+                              excludeFromTabOrder
+                            />
                           </div>
+                          <span>Select All</span>
                         </button>
                       </FocusRing>
                     )}
