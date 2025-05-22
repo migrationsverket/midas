@@ -9,6 +9,7 @@
   },
   "private": false,
   "dependencies": {
+    "@docusaurus/babel": "^3.7.0",
     "@docusaurus/eslint-plugin": "^3.7.0",
     "@nx/eslint-plugin": "^20.5.0",
     "@nx/remix": "20.5.0",
