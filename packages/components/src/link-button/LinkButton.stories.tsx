@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { LinkButton } from './LinkButton'
 import { X } from 'lucide-react'
+import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof LinkButton> = {
   component: LinkButton,
@@ -61,6 +62,13 @@ export const Disabled: Story = {
   args: {
     ...Primary.args,
     isDisabled: true,
+  },
+  play: async ({ canvas, step }) => {
+    await step('It should have cursor not allowed when disabled', async () => {
+      const linkButton = canvas.getByRole('link')
+      await userEvent.hover(linkButton)
+      await expect(linkButton).toHaveStyle({ cursor: 'not-allowed' })
+    })
   },
 }
 
