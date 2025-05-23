@@ -17,8 +17,8 @@
   gap: 0.5rem;
   text-decoration: none;
 
-  &[data-hovered],
-  &:hover {
+  &[data-hovered]:not(:disabled, [data-disabled]),
+  &:hover:not(:disabled, [data-disabled]) {
     text-decoration: none;
     background-color: --button-background-primary-hover;
     color: --text-on-color;
@@ -43,7 +43,7 @@
   &[data-disabled],
   &:disabled {
     color: --text-disabled;
-    pointer-events: none;
+    cursor: not-allowed;
     background-color: --button-background-disabled;
   }
 }
@@ -57,8 +57,8 @@
     color: --icon-tertiary;
   }
 
-  &[data-hovered],
-  &:hover {
+  &[data-hovered]:not(:disabled, [data-disabled]),
+  &:hover:not(:disabled, [data-disabled]) {
     color: --text-tertiary;
     background-color: --button-background-secondary-hover;
   }
@@ -66,6 +66,10 @@
   &[data-disabled],
   &:disabled {
     border-color: --border-disabled;
+
+    .icon {
+      color: --text-disabled;
+    }
   }
 
   &[data-pressed],
@@ -79,8 +83,8 @@
   background-color: transparent;
   opacity: 1;
 
-  &[data-hovered],
-  &:hover {
+  &[data-hovered]:not(:disabled, [data-disabled]),
+  &:hover:not(:disabled, [data-disabled]) {
     color: --text-tertiary;
     background-color: --button-background-tertiary-hover;
   }
@@ -96,8 +100,8 @@
   background-color: --button-background-danger;
   opacity: 1;
 
-  &[data-hovered],
-  &:hover {
+  &[data-hovered]:not(:disabled, [data-disabled]),
+  &:hover:not(:disabled, [data-disabled]) {
     background-color: --button-background-danger-hover;
   }
 
@@ -115,15 +119,14 @@
   display: flex;
   align-items: center;
 
-  &[data-hovered],
-  &:hover {
+  &[data-hovered]:not(:disabled, [data-disabled]),
+  &:hover:not(:disabled, [data-disabled]) {
     background-color: --button-background-icon-hover;
   }
 
   &[data-disabled],
   &:disabled {
     color: --text-disabled;
-    pointer-events: none;
   }
 
   &[data-pressed],
