@@ -6,6 +6,9 @@ import styles from './Radio.module.css'
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/Radio',
   component: RadioGroup,
+  subcomponents: {
+    Radio: Radio as React.ComponentType<unknown>,
+  },
   tags: ['autodocs'],
   args: {
     label: 'Välj frukt',

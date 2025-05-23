@@ -5,6 +5,9 @@ import { userEvent, expect } from '@storybook/test'
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
+  subcomponents: {
+    DropdownItem: DropdownItem as React.ComponentType<unknown>,
+  },
   title: 'Components/Dropdown',
   args: {
     title: 'Meny',
