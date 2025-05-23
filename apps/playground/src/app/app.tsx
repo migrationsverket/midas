@@ -1,29 +1,35 @@
 import styles from './app.module.css'
-import { TextField } from '@midas-ds/components'
+import { Calendar1, Calendar } from '@midas-ds/components'
+import { CalendarDate } from '@internationalized/date'
+import React from 'react'
 
 export function App() {
+  const [focusedDate, setFocusedDate] = React.useState<CalendarDate>(
+    () => new CalendarDate(2025, 5, 1), // Start with May 2025
+  )
+  const [selectedDate, setSelectedDate] = React.useState<CalendarDate | null>(
+    null,
+  )
   return (
     <div className={styles.container}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'start',
-          gap: '2rem',
-          border: '1px solid salmon',
-        }}
-      >
-        <TextField
-          label='Medium'
-          description='size component'
-          size={'medium'}
-          defaultValue={'this is medium'}
+      <div style={{ flexDirection: 'column', alignItems: 'start', gap: 20 }}>
+        <Calendar />
+      </div>
+
+      <div>
+        <Calendar1
+          focusedValue={focusedDate}
+          onFocusChange={setFocusedDate}
+          value={selectedDate ?? undefined}
+          onChange={date => {
+            setSelectedDate(date as CalendarDate)
+          }}
         />
-        <TextField
-          size={'large'}
-          label='Large'
-          defaultValue={'this is large'}
-          description='size component'
-        />
+        <p style={{ marginTop: 20 }}>
+          {selectedDate
+            ? `Chosen Date: ${selectedDate.day}.${selectedDate.month}.${selectedDate.year}`
+            : 'No date selected'}
+        </p>
       </div>
     </div>
   )
