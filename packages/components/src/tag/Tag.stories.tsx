@@ -9,6 +9,9 @@ const testID = 'test'
 
 export default {
   component: Tag,
+  subcomponents: {
+    TagGroup: TagGroup as React.ComponentType<unknown>,
+  },
   title: 'Components/Tag',
   tags: ['autodocs'],
   args: {

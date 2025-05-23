@@ -9,6 +9,9 @@ type Story = StoryObj<typeof Modal>
 
 export default {
   component: Modal,
+  subcomponents: {
+    DialogTrigger: DialogTrigger as React.ComponentType<unknown>,
+  },
   title: 'Components/Modal',
   tags: ['autodocs'],
   parameters: {

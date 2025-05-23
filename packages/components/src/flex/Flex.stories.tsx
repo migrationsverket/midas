@@ -1,10 +1,14 @@
 import type { Meta } from '@storybook/react'
-import { Card } from '../card'
+import { Card, CardContent, CardTitle } from '../card'
 import { Flex } from './Flex'
 import { FlexItem } from './FlexItem'
+import { Text } from '../text'
 
 const meta: Meta<typeof Flex> = {
   component: Flex,
+  subcomponents: {
+    FlexItem: FlexItem as React.ComponentType<unknown>,
+  },
   title: 'Components/Flex',
   tags: ['autodocs'],
   parameters: {
@@ -28,63 +32,71 @@ export const Primary = {
   render: ({ ...args }) => (
     <Flex fluid={args.fluid}>
       <FlexItem col={3}>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem col={6}>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem col={3}>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem col={4}>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem col={4}>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem
         col={3}
         offset={1}
       >
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem col='auto'>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
       <FlexItem>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </FlexItem>
     </Flex>
   ),

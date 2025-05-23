@@ -6,6 +6,13 @@ import { lightDark } from '../utils/test'
 
 const meta: Meta<typeof Table> = {
   component: Table,
+  subcomponents: {
+    TableHeader: TableHeader as React.ComponentType<unknown>,
+    Column: Column as React.ComponentType<unknown>,
+    TableBody: TableBody as React.ComponentType<unknown>,
+    Row: Row as React.ComponentType<unknown>,
+    Cell: Cell as React.ComponentType<unknown>,
+  },
   title: 'Components/Table',
   tags: ['autodocs'],
   args: {

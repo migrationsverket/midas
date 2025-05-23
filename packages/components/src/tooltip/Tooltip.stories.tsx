@@ -8,6 +8,9 @@ import { I18nProvider } from 'react-aria-components'
 
 const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
+  subcomponents: {
+    TooltipTrigger: TooltipTrigger as React.ComponentType<unknown>,
+  },
   title: 'Components/Tooltip',
   tags: ['autodocs'],
   argTypes: {

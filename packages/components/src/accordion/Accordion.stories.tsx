@@ -12,6 +12,9 @@ const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
 const meta: Meta<typeof Accordion> = {
   component: Accordion,
+  subcomponents: {
+    AccordionItem: AccordionItem as React.ComponentType<unknown>,
+  },
   title: 'Components/Accordion',
   tags: ['autodocs'],
   args: {},

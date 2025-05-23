@@ -15,6 +15,14 @@ import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof Card> = {
   component: Card,
+  subcomponents: {
+    CardContent: CardContent as React.ComponentType<unknown>,
+    CardImage: CardImage as React.ComponentType<unknown>,
+    CardActionArea: CardActionArea as React.ComponentType<unknown>,
+    CardActions: CardActions as React.ComponentType<unknown>,
+    CardLink: CardLink as React.ComponentType<unknown>,
+    CardTitle: CardTitle as React.ComponentType<unknown>,
+  },
   title: 'Components/Card',
   tags: ['autodocs'],
 }
