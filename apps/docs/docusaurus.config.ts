@@ -9,7 +9,11 @@ const packagesDir = path.resolve(__dirname, '../../packages')
 const defaultLocale = 'sv'
 const packageAliases = {}
 // eslint-disable-next-line
-const version = require(`${packagesDir}/components/package.json`).version
+const version: string = require(
+  `${packagesDir}/components/package.json`,
+).version
+const semver = version.match(new RegExp(/\d{1,3}\.\d{1,3}\.\d{1,3}/))
+const latestMajor = semver && parseInt(semver[0], 10)
 
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
@@ -174,7 +178,7 @@ const config: Config = {
           label: 'Dokumentation',
         },
         {
-          to: `/blog/releases/${version}`,
+          to: `/blog/releases/${latestMajor}.0.0`,
           label: `Version ${version}`,
           position: 'right',
         },
