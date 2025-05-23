@@ -88,11 +88,11 @@ export const MultipleSubtleDisabled: Story = {
     ...MultipleSubtle.args,
     isDisabled: true,
   },
-  play: async ({ canvas, step }) => {
+  play: async ({ canvas, step, globals: { scheme } }) => {
     await step('it should have the disabled style', async () => {
       await expect(canvas.getAllByRole('heading', { level: 2 })[0]).toHaveStyle(
         {
-          color: lightDark(hexToRgb('#bfbfbf'), hexToRgb('#525252')),
+          color: lightDark(hexToRgb('#bfbfbf'), hexToRgb('#525252'), scheme),
         },
       )
     })
@@ -185,14 +185,14 @@ export const DS1060: Story = {
       </AccordionItem>
     </Accordion>
   ),
-  play: async ({ canvas, step }) => {
+  play: async ({ canvas, step, globals: { scheme } }) => {
     await step(
       'it should not have the disabled style even if it contains disabled children',
       async () => {
         await expect(
           canvas.getByRole('heading', { level: 2, name: 'Test' }),
         ).toHaveStyle({
-          color: lightDark(hexToRgb('#171717'), hexToRgb('#f2f2f2')),
+          color: lightDark(hexToRgb('#171717'), hexToRgb('#f2f2f2'), scheme),
         })
       },
     )
