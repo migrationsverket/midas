@@ -25,6 +25,7 @@ async function getConfig() {
           ...componentFolders,
           'release',
           'project',
+          'deps',
         ],
       ],
       'body-leading-blank': [1, 'always'],
