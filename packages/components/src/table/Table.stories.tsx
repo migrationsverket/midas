@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import { expect, userEvent } from '@storybook/test'
 import styles from './Table.module.css'
-import { lightDark } from '../utils/test'
+import { hexToRgb, lightDark } from '../utils/test'
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -71,7 +71,7 @@ export const Striped: Story = {
     striped: true,
     className: 'my-class',
   },
-  play: async ({ canvas, step, args }) => {
+  play: async ({ canvas, step, args, globals: { scheme } }) => {
     const table = canvas.getByLabelText(args['aria-label'] as string)
 
     await step('Class names should be appended', async () => {
@@ -81,8 +81,12 @@ export const Striped: Story = {
     await step('The rows should change background color on hover', async () => {
       const anOddRow = await canvas.findByText(rows[2].name)
       await userEvent.hover(anOddRow)
-      expect(anOddRow).toHaveStyle({
-        backgroundColor: lightDark('rgb(230, 230, 230)', 'rgb(51, 51, 51)'),
+      await expect(anOddRow).toHaveStyle({
+        backgroundColor: lightDark(
+          hexToRgb('#e6e6e6'),
+          hexToRgb('#333333'),
+          scheme,
+        ),
       })
     })
   },

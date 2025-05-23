@@ -89,24 +89,14 @@ const preview: Preview = {
       const RootTag: React.ElementType =
         context?.parameters?.rootElement || 'main'
 
-      const [colorMode, setColorMode] = React.useState<'light' | 'dark'>(
-        getPreferredColorScheme(),
-      )
+      const story = document.querySelector<HTMLElement>('body')
 
-      React.useEffect(() => {
-        const userSelectedScheme: 'light' | 'dark' = context.globals.scheme
-        setColorMode(userSelectedScheme)
-      }, [context.globals.scheme])
-
-      React.useEffect(() => {
-        const story = document.querySelector<HTMLElement>('body')
-        if (story) story.style.colorScheme = colorMode
-      }, [colorMode])
+      if (story) story.style.colorScheme = context.globals.scheme
 
       return (
         <RootTag
           style={{
-            colorScheme: colorMode,
+            colorScheme: context.globals.scheme,
             backgroundColor: context.globals.backgrounds?.value,
           }}
         >
