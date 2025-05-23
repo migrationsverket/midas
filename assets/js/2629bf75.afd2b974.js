@@ -352,7 +352,7 @@ function MDXContent(props = {}) {
 /***/ 55075:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/releases/10.0.0","source":"@site/blog/releases/10.0.0/index.mdx","title":"Release 10.0.0","description":"Nya funktioner","date":"2025-05-15T00:00:00.000Z","tags":[],"readingTime":2.335,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.0.0","date":"2025-05-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 9.0.0","permalink":"/blog/releases/9.0.0"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/blog/releases/10.0.0","source":"@site/blog/releases/10.0.0/index.mdx","title":"Release 10.0.0","description":"Nya funktioner","date":"2025-05-15T00:00:00.000Z","tags":[],"readingTime":2.335,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.0.0","date":"2025-05-15T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 10.1.0","permalink":"/blog/releases/10.1.0"},"nextItem":{"title":"Release 9.0.0","permalink":"/blog/releases/9.0.0"}}');
 
 /***/ })
 

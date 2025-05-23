@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/blog/</id>
     <title>Migrationsverkets designsystem Blog</title>
-    <updated>2025-05-15T00:00:00.000Z</updated>
+    <updated>2025-05-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/blog/"/>
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
     <icon>https://designsystem.migrationsverket.se/img/favicon.ico?v=3</icon>
+    <entry>
+        <title type="html"><![CDATA[Release 10.1.0]]></title>
+        <id>https://designsystem.migrationsverket.se/blog/releases/10.1.0/</id>
+        <link href="https://designsystem.migrationsverket.se/blog/releases/10.1.0/"/>
+        <updated>2025-05-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Nya funktioner ✨]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="nya-funktioner-">Nya funktioner ✨<a href="https://designsystem.migrationsverket.se/blog/releases/10.1.0/#nya-funktioner-" class="hash-link" aria-label="Direktlänk till Nya funktioner ✨" title="Direktlänk till Nya funktioner ✨">​</a></h2>
+<ul>
+<li><strong>Accordion</strong> har en ny prop <code scope="[object Object]">hasBackground</code></li>
+<li><strong>Select</strong> använder <code scope="[object Object]">Virtualizer</code> för förbättrad prestanda när det finns många val. Select tillåter numera
+att <code scope="[object Object]">id</code> är <code scope="[object Object]">Key</code> alltså <code scope="[object Object]">string | number</code>. Delvis ny style eftersom select nu använder checkbox från Midas.</li>
+<li><strong>Tag</strong> exporteras som en separat komponent</li>
+</ul>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="fixar-">Fixar 💉<a href="https://designsystem.migrationsverket.se/blog/releases/10.1.0/#fixar-" class="hash-link" aria-label="Direktlänk till Fixar 💉" title="Direktlänk till Fixar 💉">​</a></h2>
+<ul>
+<li><strong>RadioGroup</strong> tillåter nu bara klick på label, inte utanför.</li>
+<li><strong>Skeleton</strong> tillåter att <code scope="[object Object]">className</code> skrivs över.</li>
+<li><strong>LinkButton</strong> har nu korrekt styles för <code scope="[object Object]">isDisabled</code>.</li>
+</ul>
+<p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.1.0/">changelog</a>.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.0.0]]></title>
         <id>https://designsystem.migrationsverket.se/blog/releases/10.0.0/</id>
