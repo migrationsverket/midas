@@ -17,14 +17,14 @@ const allowedPrefixes = [
 try {
   const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim()
 
-  const isPrefixValid = allowedPrefixes.some((prefix) =>
-    branch.startsWith(prefix)
+  const isPrefixValid = allowedPrefixes.some(prefix =>
+    branch.startsWith(prefix),
   )
 
   if (!isPrefixValid) {
     console.error(`Invalid branch name: ${branch}`)
     console.error(
-      `Branch name must start with one of the following prefixes: ${allowedPrefixes.filter((prefix) => prefix !== 'main').join(', ')}`
+      `Branch name must start with one of the following prefixes: ${allowedPrefixes.filter(prefix => prefix !== 'main').join(', ')}`,
     )
     process.exit(1)
   }

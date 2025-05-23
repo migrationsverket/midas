@@ -20,6 +20,8 @@ export const customDarkTheme = create({
   colorPrimary: '#eaf2f6',
   colorSecondary: '#143c50',
   appBorderRadius: 0,
+  barTextColor: 'rgb(201, 205, 207)',
+  barSelectedColor: 'rgb(201, 205, 207)',
 })
 
 export const getPreferredColorScheme = () => {

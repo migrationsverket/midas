@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { SearchField } from './SearchField'
 import { expect, fn, userEvent } from '@storybook/test'
+import { sizeModes } from '../../.storybook/modes'
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,
@@ -8,10 +9,21 @@ const meta: Meta<typeof SearchField> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    chromatic: {
+      modes: sizeModes,
+    },
   },
   args: {
     buttonText: 'Sök',
     errorPosition: 'top',
+  },
+  render: (args, { globals: { size } }) => {
+    return (
+      <SearchField
+        {...args}
+        size={size}
+      />
+    )
   },
 }
 export default meta
@@ -23,7 +35,12 @@ export const Primary: Story = {
     onChange: fn(),
     onSubmit: fn(),
   },
-  play: async ({ canvas, step, args: { onChange, onSubmit, buttonText } }) => {
+  play: async ({
+    canvas,
+    step,
+    globals: { size },
+    args: { onChange, onSubmit, buttonText },
+  }) => {
     await step(
       'it should be possible to submit a search string using only the keyboard',
       async () => {
@@ -46,31 +63,14 @@ export const Primary: Story = {
       },
     )
 
-    await step('it should be large per default', async () => {
+    await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('searchbox')).toHaveStyle({
-        height: '48px',
+        height: size === 'large' ? '48px' : '40px',
       })
       await expect(
         canvas.getByRole('button', { name: buttonText }),
       ).toHaveStyle({
-        height: '48px',
-      })
-    })
-  },
-}
-
-export const MediumSize: Story = {
-  args: {
-    placeholder: 'Sök efter en person',
-    size: 'medium',
-  },
-  play: async ({ canvas, step }) => {
-    await step('it should be medium sized', async () => {
-      await expect(canvas.getByRole('searchbox')).toHaveStyle({
-        height: '40px',
-      })
-      await expect(canvas.getByRole('button')).toHaveStyle({
-        height: '40px',
+        height: size === 'large' ? '48px' : '40px',
       })
     })
   },
