@@ -1,15 +1,11 @@
 // ** modes we should run on ALL stories
 export const globalModes = {
   'Light Mode': {
-    scheme: {
-      value: 'light',
-    },
+    scheme: 'light',
     colorScheme: 'light',
   },
   'Dark Mode': {
-    scheme: {
-      value: 'dark',
-    },
+    scheme: 'dark',
     colorScheme: 'dark',
   },
   //   'Light Mode - Mobile': {
@@ -40,13 +36,9 @@ export const globalModes = {
 
 export const sizeModes = {
   Large: {
-    size: {
-      value: 'large',
-    },
+    size: 'large',
   },
   Medium: {
-    size: {
-      value: 'medium',
-    },
+    size: 'medium',
   },
 }
