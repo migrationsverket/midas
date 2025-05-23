@@ -132,6 +132,7 @@
     "react-docgen-typescript": "^2.2.2",
     "react-router": "^7.0.2",
     "rollup-preserve-directives": "^1.1.2",
+    "semver": "^7.7.2",
     "storybook": "^8.6.0",
     "stylelint": "^16.10.0",
     "stylelint-config-css-modules": "^4.4.0",
