@@ -1,0 +1,16 @@
+# Validering i formulär
+
+Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Vi har två sätt att visa fel: direkt vid fältet eller som en lista högst upp på sidan när formuläret skickas in.
+
+## Felmeddelande
+
+Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
+
+## Direktvalidering
+
+Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet.
+
+## Felmeddelandelista
+
+Om det finns fält som har valideringsfel efter att användaren skickat in formuläret eller gått vidare till en ny sida, så ska dessa sammanfattas i en felmeddelandelista som visas högst upp på sidan. Felmeddelandelistan är en `Infobanner` som innehåller länkar till de komponenter som behöver rättas till.
+Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
