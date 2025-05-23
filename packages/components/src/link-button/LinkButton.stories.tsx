@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { LinkButton } from './LinkButton'
-import { X } from 'lucide-react'
 import { expect, userEvent } from '@storybook/test'
 
 const meta: Meta<typeof LinkButton> = {
@@ -83,13 +82,5 @@ export const Danger: Story = {
   args: {
     children: 'Radera',
     variant: 'danger',
-  },
-}
-
-export const Icon: Story = {
-  args: {
-    variant: 'icon',
-    icon: X,
-    'aria-label': 'Close',
   },
 }
