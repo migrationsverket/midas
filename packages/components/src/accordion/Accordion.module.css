@@ -1,13 +1,13 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --layer-hover-01, --normal-transition, --text-primary, --fast-transition,  --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --icon-success, --icon-warning, --support-background-success-hover, --support-background-warning-hover, --border-disabled, --text-disabled from tokens;
+@value --font-family, --layer-01, --layer-hover-01, --normal-transition, --text-primary, --fast-transition,  --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --icon-success, --icon-warning, --support-background-success-hover, --support-background-warning-hover, --border-disabled, --text-disabled, --layer-02, --background from tokens;
 
 .root {
   --gap: 0.75rem;
   --item-padding: 0;
   --content-padding: 0.5rem 0.5rem 0.5rem 1.85rem;
   --border: none;
-  --background: transparent;
-  --background-hover: transparent;
+  --accordion-background: transparent;
+  --accordion-background-hover: transparent;
   --heading-color: --text-primary;
 
   &.contained {
@@ -16,20 +16,20 @@
     --content-padding: 1rem;
     --border-color: --border-secondary;
     --border: 1px solid var(--border-color);
-    --background: --layer-01;
-    --background-hover: --layer-hover-01;
+    --accordion-background: --layer-01;
+    --accordion-background-hover: --layer-hover-01;
 
     .item {
       &.success {
-        --background: --support-background-success;
-        --background-hover: --support-background-success-hover;
+        --accordion-background: --support-background-success;
+        --accordion-background-hover: --support-background-success-hover;
         --icon-color: --icon-success;
         --border-color: --support-border-success;
       }
 
       &.warning {
-        --background: --support-background-warning;
-        --background-hover: --support-background-warning-hover;
+        --accordion-background: --support-background-warning;
+        --accordion-background-hover: --support-background-warning-hover;
         --icon-color: --icon-warning;
         --border-color: --support-border-warning;
       }
@@ -63,7 +63,7 @@
 }
 
 .item {
-  background-color: var(--background);
+  background-color: var(--accordion-background);
   border: var(--border);
   border-color: var(--border-color);
 }
@@ -111,7 +111,7 @@
     }
 
     &[data-hovered] {
-      background-color: var(--background-hover);
+      background-color: var(--accordion-background-hover);
     }
   }
 }
@@ -131,6 +131,10 @@
 .content {
   height: auto;
   padding: var(--content-padding);
+}
+
+.hasBackground {
+  background-color: --background;
 }
 
 .header {

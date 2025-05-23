@@ -15,6 +15,10 @@ ruleTester.run('handle-deprecated-comments', rule, {
     {
       code: '// any comment',
     },
+    {
+      options: [{ version: '9.0.0' }],
+      code: '// @deprecated since v10.0.0',
+    },
   ],
   invalid: [
     {

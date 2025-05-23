@@ -3,7 +3,11 @@ import { Tag, TagGroup } from './Tag'
 import { expect } from '@storybook/test'
 import styles from './Tag.module.css'
 
-const meta: Meta<typeof Tag> = {
+type Story = StoryObj<typeof Tag>
+
+const testID = 'test'
+
+export default {
   component: Tag,
   title: 'Components/Tag',
   tags: ['autodocs'],
@@ -12,15 +16,6 @@ const meta: Meta<typeof Tag> = {
     dismissable: true,
     className: 'test-class',
   },
-}
-
-const testID = 'test'
-
-export default meta
-
-type Story = StoryObj<typeof Tag>
-
-export const Default: Story = {
   render: args => {
     return (
       <TagGroup aria-label='Taggar'>
@@ -33,6 +28,9 @@ export const Default: Story = {
       </TagGroup>
     )
   },
+} as Meta<typeof Tag>
+
+export const Default: Story = {
   play: async ({ canvas, step, args: { className } }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
@@ -46,9 +44,14 @@ export const Default: Story = {
   },
 }
 
+export const Status: Story = {
+  args: {
+    type: 'success',
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
   },
-  render: Default.render,
 }

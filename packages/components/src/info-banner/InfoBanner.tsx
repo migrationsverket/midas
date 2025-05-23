@@ -21,8 +21,13 @@ export interface InfoBannerProps
   children?: React.ReactNode
   /**
    *  Specify if the InfoBanner should have a dismiss button in the top right corner
+   *  @deprecated since 10.0.1. Please use `isDismissable` instead
    */
   dismissable?: boolean
+  /**
+   *  Specify if the InfoBanner should have a dismiss button in the top right corner
+   */
+  isDismissable?: boolean
 }
 
 const iconMap = {
@@ -31,6 +36,7 @@ const iconMap = {
   important: AlertCircle,
   warning: AlertTriangle,
 }
+
 /**
  * Displays a static message as an inline banner
  */
@@ -40,6 +46,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   type,
   children,
   dismissable = false,
+  isDismissable = false,
   ...rest
 }) => {
   const Icon = iconMap[type]
@@ -63,7 +70,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
             {children}
           </div>
         </div>
-        {dismissable && (
+        {(dismissable || isDismissable) && (
           <div className={styles.dismissable}>
             <Button
               variant='icon'
