@@ -188,7 +188,7 @@ function MDXContent(props = {}) {
 /***/ 80527:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/1.3.0","source":"@site/changelog/source/1.3.0.md","title":"1.3.0","description":"- accordion: support react nodes in title (#259)","date":"2025-02-19T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-19T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"2.0.0","permalink":"/changelog/2.0.0"},"nextItem":{"title":"1.2.0","permalink":"/changelog/1.2.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/1.3.0","source":"@site/changelog/source/1.3.0.md","title":"1.3.0","description":"- accordion: support react nodes in title (#259)","date":"2025-02-19T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-19T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"2.0.0","permalink":"/changelog/2.0.0"},"nextItem":{"title":"1.2.0","permalink":"/changelog/1.2.0"},"listPageLink":"/changelog/page/2"}');
 
 /***/ })
 

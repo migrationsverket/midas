@@ -58,7 +58,7 @@ function MDXContent(props = {}) {
 /***/ 51951:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.0.0","source":"@site/changelog/source/10.0.0.md","title":"10.0.0","description":"🚀 Features","date":"2025-05-20T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-20T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"9.0.0","permalink":"/changelog/9.0.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.0.0","source":"@site/changelog/source/10.0.0.md","title":"10.0.0","description":"🚀 Features","date":"2025-05-20T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-20T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"10.1.0","permalink":"/changelog/10.1.0"},"nextItem":{"title":"9.0.0","permalink":"/changelog/9.0.0"},"listPageLink":"/changelog/"}');
 
 /***/ })
 
