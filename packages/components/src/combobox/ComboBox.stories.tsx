@@ -6,6 +6,7 @@ import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import styles from './ComboBox.module.css'
 import { sizeModes } from '../../.storybook/modes'
+import React from 'react'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -206,4 +207,41 @@ export const Sectioned: Story = {
       {(section: Section<Item>) => <ComboBoxSelection {...section} />}
     </ComboBox>
   ),
+}
+
+export const PerformanceTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: (args, { globals: { size } }) => {
+    const [numberOfItems, setNumberOfItems] = React.useState(25)
+
+    const items = [...Array(numberOfItems).keys()].map(n => ({
+      name: n.toString(),
+      id: n,
+    }))
+
+    return (
+      <>
+        <label>
+          Adjust load
+          <input
+            type='number'
+            step={25}
+            value={numberOfItems}
+            onChange={e => setNumberOfItems(parseInt(e.target.value))}
+          />
+        </label>
+        <ComboBox
+          {...args}
+          size={size}
+        >
+          {items.map(({ name, id }) => (
+            <ComboBoxItem key={id}>{name}</ComboBoxItem>
+          ))}
+        </ComboBox>
+      </>
+    )
+  },
 }

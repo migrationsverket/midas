@@ -127,6 +127,23 @@
   font-weight: 500;
 }
 
+/**
+ * 1. Represents max ~5 options in the list.
+ */
+.listBox {
+  max-height: 295px; /* 1 */
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+
+  > div {
+    /* react aria fiddles with pointer events during scroll
+     * after a few scrolls the value sticks to "none" in our storybook
+     */
+    pointer-events: auto !important;
+  }
+}
+
 .listBoxItem {
   margin: auto;
   padding: 1rem;
