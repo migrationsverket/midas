@@ -15,7 +15,7 @@ import {
   Virtualizer,
 } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
-import { SectionedListLayout } from './SectionedListLayout'
+import { SectionedListLayout } from '../common/SectionedListLayout'
 
 interface ListBoxProps<T> extends AriaListBoxOptions<T> {
   state: MultiSelectState<T>

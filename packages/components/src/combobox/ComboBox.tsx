@@ -16,6 +16,7 @@ import {
   ListBoxSection,
   Header,
   Collection,
+  Virtualizer,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
@@ -24,6 +25,7 @@ import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { Item, Section } from './types'
 import { Size } from '../common/types'
+import { SectionedListLayout } from '../common/SectionedListLayout'
 
 export interface ComboBoxProps<T extends object>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -95,7 +97,19 @@ export function ComboBox<T extends object>({
         offset={0}
         UNSTABLE_portalContainer={ref.current || undefined}
       >
-        <ListBox items={items}>{children}</ListBox>
+        <Virtualizer
+          layout={SectionedListLayout}
+          layoutOptions={{
+            headingHeight: 44,
+          }}
+        >
+          <ListBox
+            className={styles.listBox}
+            items={items}
+          >
+            {children}
+          </ListBox>
+        </Virtualizer>
       </Popover>
     </AriaComboBox>
   )
