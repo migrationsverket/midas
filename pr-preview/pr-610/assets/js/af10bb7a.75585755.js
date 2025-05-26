@@ -437,6 +437,34 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 
 /***/ }),
 
+/***/ 78653:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   T: () => (/* binding */ SectionedListLayout)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31013);
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77387);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12939);
+var SectionedListLayout=/*#__PURE__*/function(_ListLayout){function SectionedListLayout(){return (0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(this,SectionedListLayout,arguments);}(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(SectionedListLayout,_ListLayout);var _proto=SectionedListLayout.prototype;/**
+   * When using the ListLayout our scroll container height is not calculated properly when the content is partially sectioned.
+   * ```ts
+   * const partiallySectionedContent = [
+   *  {
+   *    name: 'fruit section',
+   *    children: [{ id: 'kiwi', name: 'Kiwi' }]
+   *  },
+   *  // berries have no section, because it's optional
+   *  { id: 'lingonberries', name: 'Lingonberries' }
+   * ];
+   * ```
+   * If we load the layout info for each key in the collection the calculation is correct.
+   *
+   * This might not be optional for performance, FYI
+   */_proto.getContentSize=function getContentSize(){var _this$virtualizer,_this=this;var keys=this==null||(_this$virtualizer=this.virtualizer)==null?void 0:_this$virtualizer.collection.getKeys();Array.from(keys||[]).forEach(function(key){_this.getLayoutInfo(key);});return this.contentSize;};return SectionedListLayout;}(react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .ListLayout */ .$);
+
+/***/ }),
+
 /***/ 80554:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -597,34 +625,6 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 39460:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   T: () => (/* binding */ SectionedListLayout)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31013);
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77387);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12939);
-var SectionedListLayout=/*#__PURE__*/function(_ListLayout){function SectionedListLayout(){return (0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(this,SectionedListLayout,arguments);}(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(SectionedListLayout,_ListLayout);var _proto=SectionedListLayout.prototype;/**
-   * When using the ListLayout our scroll container height is not calculated properly when the content is partially sectioned.
-   * ```ts
-   * const partiallySectionedContent = [
-   *  {
-   *    name: 'fruit section',
-   *    children: [{ id: 'kiwi', name: 'Kiwi' }]
-   *  },
-   *  // berries have no section, because it's optional
-   *  { id: 'lingonberries', name: 'Lingonberries' }
-   * ];
-   * ```
-   * If we load the layout info for each key in the collection the calculation is correct.
-   *
-   * This might not be optional for performance, FYI
-   */_proto.getContentSize=function getContentSize(){var _this$virtualizer,_this=this;var keys=this==null||(_this$virtualizer=this.virtualizer)==null?void 0:_this$virtualizer.collection.getKeys();Array.from(keys||[]).forEach(function(key){_this.getLayoutInfo(key);});return this.contentSize;};return SectionedListLayout;}(react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .ListLayout */ .$);
-
-/***/ }),
-
 /***/ 25514:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -675,8 +675,8 @@ var CollectionBuilder = __webpack_require__(41177);
 var Virtualizer = __webpack_require__(424);
 // EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx
 var Checkbox = __webpack_require__(93284);
-// EXTERNAL MODULE: ./packages/components/src/select/SectionedListLayout.ts
-var SectionedListLayout = __webpack_require__(39460);
+// EXTERNAL MODULE: ./packages/components/src/common/SectionedListLayout.ts
+var SectionedListLayout = __webpack_require__(78653);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/select/SelectListBox.tsx

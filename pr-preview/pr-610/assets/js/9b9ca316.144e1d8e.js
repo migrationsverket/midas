@@ -60,8 +60,8 @@ var Label = __webpack_require__(20143);
 var Text = __webpack_require__(93361);
 // EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
 var FieldError = __webpack_require__(80554);
-// EXTERNAL MODULE: ./packages/components/src/select/SectionedListLayout.ts
-var SectionedListLayout = __webpack_require__(39460);
+// EXTERNAL MODULE: ./packages/components/src/common/SectionedListLayout.ts
+var SectionedListLayout = __webpack_require__(78653);
 ;// ./packages/components/src/combobox/ComboBox.tsx
 'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var ref=react.useRef(null);return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className),ref:ref},props,{children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx))}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:ComboBox_module.popover,offset:0,UNSTABLE_portalContainer:ref.current||undefined,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Virtualizer/* Virtualizer */.Y,{layout:SectionedListLayout/* SectionedListLayout */.T,layoutOptions:{headingHeight:44},children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.qF,{className:ComboBox_module.listBox,items:items,children:children})})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBoxItem */.nh,Object.assign({className:ComboBox_module.listBoxItem},props));}function ComboBoxSelection(props){return/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBox/* ListBoxSection */.rd,{id:props.name,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Header/* Header */.Y,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{elementType:"span",className:ComboBox_module.sectionHeading,children:props.name})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:props.children,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{children:item.name},item.id);}})]});}
 ;// ./apps/docs/src/components/examples/combobox/ComboboxExamples.tsx
@@ -381,6 +381,34 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 
 /***/ }),
 
+/***/ 78653:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   T: () => (/* binding */ SectionedListLayout)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31013);
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77387);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12939);
+var SectionedListLayout=/*#__PURE__*/function(_ListLayout){function SectionedListLayout(){return (0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(this,SectionedListLayout,arguments);}(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(SectionedListLayout,_ListLayout);var _proto=SectionedListLayout.prototype;/**
+   * When using the ListLayout our scroll container height is not calculated properly when the content is partially sectioned.
+   * ```ts
+   * const partiallySectionedContent = [
+   *  {
+   *    name: 'fruit section',
+   *    children: [{ id: 'kiwi', name: 'Kiwi' }]
+   *  },
+   *  // berries have no section, because it's optional
+   *  { id: 'lingonberries', name: 'Lingonberries' }
+   * ];
+   * ```
+   * If we load the layout info for each key in the collection the calculation is correct.
+   *
+   * This might not be optional for performance, FYI
+   */_proto.getContentSize=function getContentSize(){var _this$virtualizer,_this=this;var keys=this==null||(_this$virtualizer=this.virtualizer)==null?void 0:_this$virtualizer.collection.getKeys();Array.from(keys||[]).forEach(function(key){_this.getLayoutInfo(key);});return this.contentSize;};return SectionedListLayout;}(react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .ListLayout */ .$);
+
+/***/ }),
+
 /***/ 80554:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -538,34 +566,6 @@ var jsx_runtime = __webpack_require__(74848);
 'use client';var _excluded=["children","variant","fullwidth","icon","iconPlacement","className","as"];/**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */var LinkButton=function LinkButton(_ref){var children=_ref.children,variant=_ref.variant,fullwidth=_ref.fullwidth,IconComponent=_ref.icon,iconPlacement=_ref.iconPlacement,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||Link/* Link */.N;var Icon=function Icon(){if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:LinkButton_module.icon});if(rest.target==='_blank')return/*#__PURE__*/(0,jsx_runtime.jsx)(square_arrow_out_up_right/* default */.A,{size:20,className:LinkButton_module.icon});if(iconPlacement==='left')return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_left/* default */.A,{size:20,className:LinkButton_module.icon});return/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_right/* default */.A,{size:20,className:LinkButton_module.icon});};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Component,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,variant==='primary'&&LinkButton_module.primary,variant==='secondary'&&LinkButton_module.secondary,variant==='tertiary'&&LinkButton_module.tertiary,variant==='danger'&&LinkButton_module.danger,variant==='icon'&&LinkButton_module.iconBtn,fullwidth&&LinkButton_module.fullwidth,iconPlacement==='left'&&LinkButton_module.iconLeft,className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{})]}));};
-
-/***/ }),
-
-/***/ 39460:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   T: () => (/* binding */ SectionedListLayout)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31013);
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77387);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12939);
-var SectionedListLayout=/*#__PURE__*/function(_ListLayout){function SectionedListLayout(){return (0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_callSuper_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(this,SectionedListLayout,arguments);}(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_inheritsLoose_js__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A)(SectionedListLayout,_ListLayout);var _proto=SectionedListLayout.prototype;/**
-   * When using the ListLayout our scroll container height is not calculated properly when the content is partially sectioned.
-   * ```ts
-   * const partiallySectionedContent = [
-   *  {
-   *    name: 'fruit section',
-   *    children: [{ id: 'kiwi', name: 'Kiwi' }]
-   *  },
-   *  // berries have no section, because it's optional
-   *  { id: 'lingonberries', name: 'Lingonberries' }
-   * ];
-   * ```
-   * If we load the layout info for each key in the collection the calculation is correct.
-   *
-   * This might not be optional for performance, FYI
-   */_proto.getContentSize=function getContentSize(){var _this$virtualizer,_this=this;var keys=this==null||(_this$virtualizer=this.virtualizer)==null?void 0:_this$virtualizer.collection.getKeys();Array.from(keys||[]).forEach(function(key){_this.getLayoutInfo(key);});return this.contentSize;};return SectionedListLayout;}(react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .ListLayout */ .$);
 
 /***/ }),
 
