@@ -24,6 +24,14 @@ const meta: Meta<typeof LinkButton> = {
       defaultValue: 'left',
     },
   },
+  render: (args, { globals: { size } }) => {
+    return (
+      <LinkButton
+        {...args}
+        size={size}
+      />
+    )
+  },
 }
 export default meta
 type Story = StoryObj<typeof LinkButton>
