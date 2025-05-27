@@ -93,6 +93,7 @@
 
 .theme-code-block {
   box-shadow: none !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
   max-height: 600px;
   overflow-y: auto;
 }
@@ -117,6 +118,7 @@
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
   box-shadow: none !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
   max-height: 600px;
   overflow-y: auto;
 
@@ -407,6 +409,7 @@ html[data-theme='dark'] .navbar--github-link::before {
 
 .no-margin-children {
   margin-bottom: 1rem;
+
   p {
     margin-bottom: 0;
     white-space: wrap;
