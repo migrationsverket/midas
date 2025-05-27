@@ -20,8 +20,8 @@ interface MidasLinkProps<C extends React.ElementType> {
   /** Optional icon, placed to the left of the link */
   icon?: LucideIcon
   className?: string
-  /** Repace base component with any Client Side Routing link instead.
-   * @link https://designsystem.migrationsverket.se/dev/client-side-routing/
+  /** Replace base component with any Client Side Routing link instead.
+   * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
    */
   as?: C
 }
