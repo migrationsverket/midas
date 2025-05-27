@@ -157,8 +157,8 @@ export function Toast<T extends MidasToast>({
       style={{ viewTransitionName: props.toast.key }}
     >
       <div
-        className={styles.toastContent}
         {...contentProps}
+        className={clsx(styles.toastContent, contentProps.className)}
       >
         <Icon
           className={styles.icon}

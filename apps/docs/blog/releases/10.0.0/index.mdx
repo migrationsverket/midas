@@ -1,0 +1,137 @@
+---
+title: Release 10.0.0
+date: 2025-05-15
+---
+
+## Nya funktioner
+
+I och med version 10.0 introducerar vi en ny storlek på en rad komponenter, `medium`. Komponenter som berörs och
+numera kan användas i både `size='large'` och `size='medium'` är:
+
+- [Button](/components/button)
+- [TextField](/components/textfield)
+- [SearchField](/components/search-field)
+- [ComboBox](/components/combobox)
+- [DatePicker](/components/date-picker)
+- [DateField](/components/datefield)
+- [Select](/components/select)
+
+Default size är `'large'` i samtliga fall. `large` innebär att inputfältet är 48px högt medan `medium` är 40px, för
+ett mer kompakt utseende.
+
+## Migrera från 9.x.x till 10.0.0
+
+En del funktioner har varit deprecated sen 8.x.x eller tidigare och därför tar Midas tillfället i akt att rensa
+ut gammal kod och överflödiga props/funktioner.
+
+:::info
+Kontrollera gärna koden innan uppgradering till version 10.x.x för att säkerställa att ni inte använder
+någon funktion eller komponent som numera inte fungerar som väntat.
+:::
+
+### Accordion
+
+Accordion har inte längre stöd för prop `type` för att ha flera AccordionItems öppna samtidigt. Använd
+`allowsMultipleExpanded` istället.
+
+```diff
+- <Accordion type='multiple'>/* items */</Accordion>
++ <Accordion allowsMultipleExpanded>/* items */</Accordion>
+```
+
+### Button
+
+Button har inte längre stöd för `size='small'`. Däremot introduceras storleken `medium` och det går att välja
+mellan `'large'` och `'medium'`, där large är default.
+
+```diff
+//highlight-next-line
+-   <Button size='small'></Button> // this is no longer valid
++   <Button size='medium'></Button>
+
+```
+
+### Modal, DialogTrigger
+
+Varianten med ModalTrigger och Dialog är nu utfasad och istället ska DialogTrigger och Modal användas. En aning
+förvirrande men principen är liknande och den uppdaterade versionen innehåller många förbättringar.
+Se dokumentationen för [modal](/components/modal) för hur DialogTrigger används.
+
+```diff
+- import {Dialog, ModalTrigger} from '@midas-ds/components' // no longer works
++ import {DialogTrigger, Modal} from '@midas-ds/components'
+```
+### Spinner
+
+Från och med 10.0.0 går det inte längre att använda prop `dark`, använd `ìsOnColor` istället.
+
+```diff
+- <Spinner dark/>
++ <Spinner isOnColor/>
+```
+
+### Tabs
+
+Använd `defaultSelectedKey` istället för `defaultSelected`.
+
+```diff
+- <Tabs defaultSelected={1}> /* tab content */ </Tabs>
++ <Tabs defaultSelectedKey={1}> /* tab content */ </Tabs>
+```
+
+### Tokens
+
+Tokens `borderInvalid` ersätts med `supportBorderWarning` och `textInvalid` ersätts med `textWarning`.
+
+```diff
+- semantic.borderInvalid
++ semantic.supportBorderWarning
+- semantic.textInvalid
++ semantic.textWarning
+
+```
+
+Tokens `blue140` (`#25607F`) byter namn till `blue130` samt `blue170` (`#143C50`) byter namn till `blue150`, `purple140`
+byter namn till `purple110`.
+
+```diff
+- blue140
++ blue130
+- blue170
++ blue150
+- purple140
++ purple110
+```
+
+### useMessageFormatter
+
+`useMessageFormatter` försvinner till förmån för `useLocalizedStringFormatter` eftersom den är deprecated hos React Aria.
+
+```diff
+- useMessageFormatter()
++ useLocalizedStringFormatter()
+```
+
+### Label
+
+Label variant försvinner i version 10.0.0, det går alltså inte längre att använda `variant='label-01'` eller `label-02`.
+Default är numera `label-02` och för att uppnå variant `label-01`, använd komponent `Text` med `slot='description'`.
+
+```diff
+- <Label variant='label-01'>Label</Label>
++ <Text slot='description'>Label</Label>
+```
+
+### Skeleton
+
+Namnfix på prop `rectangular` som numera heter `rectangle` för en mer konsekvent semantik. Animering är numera endast en
+boolean, `isAnimated=true|false`.
+
+```diff
+- <Skeleton variant='rectangular' animation='wave'/>
++ <Skeleton variant='rectangle' isAnimated />
+```
+
+Se alla förändringar i detalj på [changelog](/changelog)
+
+{/* truncate */}

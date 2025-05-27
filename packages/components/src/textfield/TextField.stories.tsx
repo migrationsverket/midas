@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import { TextField } from '../textfield'
+import { sizeModes } from '../../.storybook/modes'
 
 export default {
   title: 'Components/TextField',
@@ -17,6 +18,19 @@ export default {
     description: 'Description',
     errorPosition: 'top',
   },
+  parameters: {
+    chromatic: {
+      modes: sizeModes,
+    },
+  },
+  render: (args, { globals: { size } }) => {
+    return (
+      <TextField
+        {...args}
+        size={size}
+      />
+    )
+  },
 } as Meta<typeof TextField>
 
 type Story = StoryObj<typeof TextField>
@@ -25,13 +39,18 @@ export const Primary: Story = {
   args: {
     className: 'test-class',
   },
-  play: async ({ canvas, step }) => {
+  play: async ({ canvas, step, args: { label }, globals: { size } }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
         expect(canvas.getByRole('textbox').classList.length).toBe(2)
       },
     )
+    await step('it should change size according to size prop', async () => {
+      await expect(canvas.getByLabelText(label as string)).toHaveStyle({
+        height: size === 'large' ? '48px' : '40px',
+      })
+    })
   },
 }
 
@@ -70,6 +89,9 @@ export const Invalid: Story = {
 
 export const Required: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     isRequired: true,
   },
@@ -94,6 +116,9 @@ export const Required: Story = {
 
 export const CustomValidation: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Label',
     validate: (value: string) =>
@@ -181,6 +206,9 @@ export const MaxLengthAndShowCounter: Story = {
 
 export const ShowCounterWithDefaultValue: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     defaultValue: 'HEJ',
     showCounter: true,
@@ -192,25 +220,6 @@ export const ShowCounterWithDefaultValue: Story = {
         expect(
           canvas.getByText((defaultValue as string).length),
         ).toBeInTheDocument()
-      },
-    )
-  },
-}
-
-export const MediumSizeInput: Story = {
-  tags: ['!autodocs'],
-  args: {
-    defaultValue: 'Medium size input',
-    size: 'medium',
-    label: 'Medium size textfield',
-  },
-  play: async ({ canvas, step, args: { label } }) => {
-    await step(
-      'it should have an input field with the height of 40px',
-      async () => {
-        await expect(canvas.getByLabelText(label as string)).toHaveStyle({
-          height: '40px',
-        })
       },
     )
   },

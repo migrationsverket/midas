@@ -4,12 +4,18 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
 import { getBranchUrl } from './src/utils/chromatic'
+import semver from 'semver';
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 const defaultLocale = 'sv'
 const packageAliases = {}
 // eslint-disable-next-line
-const version = require(`${packagesDir}/components/package.json`).version
+const version: string = require(
+  `${packagesDir}/components/package.json`,
+).version
+
+const latestMajor = semver.major(version)
+const latestMinor = semver.minor(version)
 
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
@@ -174,7 +180,7 @@ const config: Config = {
           label: 'Dokumentation',
         },
         {
-          to: `/blog/releases/${version}`,
+          to: `/blog/releases/${latestMajor}.${latestMinor}.0`,
           label: `Version ${version}`,
           position: 'right',
         },
@@ -205,7 +211,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     prism: {
-      additionalLanguages: ['bash', 'git', 'css'],
+      additionalLanguages: ['bash', 'git', 'css', 'diff'],
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },

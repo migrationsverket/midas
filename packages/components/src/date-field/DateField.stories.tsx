@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { DateField } from './DateField'
 import { CalendarDate } from '@internationalized/date'
 import { expect } from '@storybook/test'
+import { sizeModes } from '../../.storybook/modes'
 
 type Story = StoryObj<typeof DateField>
 
@@ -25,33 +26,31 @@ export default {
         rules: { 'color-contrast': { enabled: false } },
       },
     },
+    chromatic: {
+      modes: sizeModes,
+    },
   },
   args: {
     errorPosition: 'top',
     label: 'Välj ett datum',
     description: 'Vilket som helst',
   },
+  render: (args, { globals: { size } }) => {
+    return (
+      <DateField
+        {...args}
+        size={size}
+      />
+    )
+  },
 } as Meta<typeof DateField>
 
 /** Don't put format in description, it changes with browser language settings! */
 export const Default: Story = {
-  play: async ({ step, canvas }) => {
-    await step('it should be large per default', async () => {
+  play: async ({ step, canvas, globals: { size } }) => {
+    await step('it should change size according to size prop', async () => {
       await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
-        height: '48px',
-      })
-    })
-  },
-}
-
-export const MediumSize: Story = {
-  args: {
-    size: 'medium',
-  },
-  play: async ({ step, canvas }) => {
-    await step('it should be medium sized', async () => {
-      await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
-        height: '40px',
+        height: size === 'large' ? '48px' : '40px',
       })
     })
   },

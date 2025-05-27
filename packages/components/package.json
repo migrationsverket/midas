@@ -14,7 +14,7 @@
   "description": "Midas Components",
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
-  "version": "9.0.0",
+  "version": "10.1.0",
   "main": "./index.cjs",
   "module": "./index.js",
   "types": "./index.d.ts",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "react-aria": "^3.38.1",
-    "react-aria-components": "^1.7.1",
+    "react-aria-components": "^1.9.0",
     "react-stately": "^3.36.1"
   }
 }

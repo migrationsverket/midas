@@ -1,10 +1,14 @@
 import type { Meta } from '@storybook/react'
 import { Grid } from './Grid'
-import { Card } from '../card'
+import { Card, CardContent, CardTitle } from '../card'
 import { GridItem } from './GridItem'
+import { Text } from '../text'
 
 const meta: Meta<typeof Grid> = {
   component: Grid,
+  subcomponents: {
+    GridItem: GridItem as React.ComponentType<unknown>,
+  },
   title: 'Components/Grid',
   tags: ['autodocs'],
   parameters: {
@@ -26,53 +30,60 @@ export const Primary = {
   render: ({ ...args }) => (
     <Grid fluid={args.fluid}>
       <GridItem col={3}>
-        <Card
-          title='Ett kort'
-          content='Som är i tre kolumner'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
       <GridItem col={3}>
-        <Card
-          title='Ett kort'
-          content='Som är i tre kolumner'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
       <GridItem col={6}>
-        <Card
-          title='Ett kort'
-          content='Som är i sex kolumner'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
       <GridItem col={4}>
-        <Card
-          title='Ett kort'
-          content='Som är i fyra kolumner'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
       <GridItem col={4}>
-        <Card
-          title='Ett kort'
-          content='Som är i fyra kolumner'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
       <GridItem col={4}>
-        <Card
-          title='Ett kort'
-          content='Som är i ett grid men just detta kort har väldigt mycket text för att illustrera att de andra också växer på höjden.'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
       <GridItem col={10}>
-        <Card
-          title='Ett kort'
-          content='Som är utan kolumner'
-          link={{ children: 'Länk', href: '#' }}
-        />
+        <Card>
+          <CardContent>
+            <CardTitle>Dina uppgifter</CardTitle>
+            <Text>Namn: Namn Namnsson</Text>
+          </CardContent>
+        </Card>
       </GridItem>
     </Grid>
   ),

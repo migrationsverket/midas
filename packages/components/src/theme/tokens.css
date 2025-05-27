@@ -28,14 +28,18 @@
 @value --blue-10: #eaf2f6;
 @value --blue-20: #d5e5ed;
 @value --blue-40: #abcbdb;
+@value --blue-50: #94BCD1;
 @value --blue-60: #82b0c9;
+@value --blue-70:#6CA3C0;
 @value --blue-80: #5897b8;
 @value --blue-90: #4289ad;
 @value --blue-100: #2e7ca5;
-@value --blue-140: #25607f;
-@value --blue-170: #143c50;
+@value --blue-110: #2C7399;
+@value --blue-120:  #29698C;
+@value --blue-130: #25607f;
+@value --blue-150: #143c50;
 @value --purple-80: #b46ab4;
-@value --purple-140: #954b95;
+@value --purple-110: #954b95;
 @value --red-100: #b90835;
 @value --signal-blue-10: #eaf2f6;
 @value --signal-blue-100: #0066cc;
@@ -180,7 +184,7 @@
 @value --border-primary: light-dark(--gray-200, --gray-10);
 @value --border-secondary: light-dark(--gray-110, --gray-90);
 @value --border-subtle: light-dark(--gray-50, --gray-160);
-@value --border-tertiary: light-dark(--blue-170, --blue-100);
+@value --border-tertiary: light-dark(--blue-150, --blue-100);
 @value --border-disabled: light-dark(--gray-50, --gray-140);
 
 /* Field 01 */
@@ -200,7 +204,7 @@
 /* Icon */
 @value --icon-primary: light-dark(--gray-200, --gray-10);
 @value --icon-secondary: light-dark(--gray-140, --gray-70);
-@value --icon-tertiary: light-dark(--blue-170, --gray-10);
+@value --icon-tertiary: light-dark(--blue-150, --gray-10);
 @value --icon-inverse: light-dark(--white, --gray-200);
 @value --icon-on-color: light-dark(--white, --white);
 @value --icon-disabled: light-dark(--gray-50, --gray-140);
@@ -210,10 +214,10 @@
 @value --icon-important: light-dark(--signal-yellow-100, --signal-yellow-100);
 
 /* Link */
-@value --link-enabled: light-dark(--blue-100, --blue-90);
-@value --link-hover: light-dark(--blue-170, --blue-80);
-@value --link-pressed: light-dark(--gray-200, --blue-60);
-@value --link-visited: light-dark(--purple-140, --purple-80);
+@value --link-enabled: light-dark(--blue-120, --blue-70);
+@value --link-hover: light-dark(--blue-150, --blue-50);
+@value --link-pressed: light-dark(--gray-200, --blue-40);
+@value --link-visited: light-dark(--purple-110, --purple-80);
 
 /* Support */
 @value --support-border-success: light-dark(--signal-green-100, --signal-green-100);
@@ -230,7 +234,7 @@
 /* Text */
 @value --text-primary: light-dark(--gray-200, --gray-10);
 @value --text-secondary: light-dark(--gray-140, --gray-70);
-@value --text-tertiary: light-dark(--blue-170, --gray-10);
+@value --text-tertiary: light-dark(--blue-150, --gray-10);
 @value --text-on-color: light-dark(--white, --white);
 @value --text-inverse: light-dark(--gray-10, --gray-200);
 @value --text-disabled: light-dark(--gray-50, --gray-140);
@@ -238,9 +242,9 @@
 @value --text-placeholder: light-dark(--gray-70, --gray-140);
 
 /* Button */
-@value --button-background-primary: light-dark(--blue-170, --blue-100);
-@value --button-background-primary-hover: light-dark(--blue-140, --blue-140);
-@value --button-background-primary-active: light-dark(--blue-100, --blue-170);
+@value --button-background-primary: light-dark(--blue-150, --blue-100);
+@value --button-background-primary-hover: light-dark(--blue-130, --blue-140);
+@value --button-background-primary-active: light-dark(--blue-100, --blue-150);
 @value --button-background-secondary: light-dark(--white, --gray-200);
 @value --button-background-secondary-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-secondary-active: light-dark(--gray-30, --gray-180);

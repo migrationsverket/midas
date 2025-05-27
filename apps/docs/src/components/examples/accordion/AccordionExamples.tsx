@@ -53,6 +53,14 @@ export const StatusExample = () => (
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>
+      <AccordionItem
+        id='yellowmelon'
+        title='Honungsmelon'
+        type='success'
+        hasBackground={false}
+      >
+        Stor frukt med rött, saftigt kött
+      </AccordionItem>
     </Accordion>
   </div>
 )

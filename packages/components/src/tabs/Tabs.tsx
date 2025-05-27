@@ -26,11 +26,6 @@ export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
    * Amount of children must match the amount of tabs
    */
   children: React.ReactNode
-  /**
-   * @deprecated since v8.0.0
-   * Please use `defaultSelectedKey` instead
-   */
-  defaultSelected?: string
 }
 
 interface TabPanelChildProps {
@@ -80,7 +75,6 @@ export const Tabs: React.FC<TabsProps> = ({
       orientation={orientation}
       className={clsx(styles.container, className)}
       {...rest}
-      defaultSelectedKey={rest.defaultSelected || rest.defaultSelectedKey}
     >
       <TabList
         aria-label={label}

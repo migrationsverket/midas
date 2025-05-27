@@ -7,7 +7,7 @@ import {
   DisclosureProps,
 } from 'react-aria-components'
 import { Button } from '../button'
-import { AlertCircle, Check, ChevronDown } from 'lucide-react'
+import { Check, ChevronDown, AlertTriangle } from 'lucide-react'
 import clsx from 'clsx'
 import styles from './Accordion.module.css'
 import { Heading, HeadingProps } from '../heading'
@@ -20,6 +20,11 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   headingLevel?: HeadingProps['elementType']
   /** Display an accordion item in different status states */
   type?: 'default' | 'success' | 'warning'
+  /**
+   * Adds a background element to the content, set to false for a transparent look
+   * @default true
+   **/
+  hasBackground?: boolean
 }
 
 export const AccordionItem: React.FC<MidasAccordionItem> = ({
@@ -28,13 +33,14 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   className,
   headingLevel = 'h2',
   type,
+  hasBackground = true,
   ...props
 }) => {
   const titleIsReactNode = typeof title === 'object'
 
   const iconMap = {
     success: Check,
-    warning: AlertCircle,
+    warning: AlertTriangle,
     default: null,
   }
 
@@ -83,7 +89,14 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
         </Button>
       </div>
       <DisclosurePanel className={styles.panel}>
-        <div className={styles.content}>{children}</div>
+        <div
+          className={clsx(
+            styles.content,
+            hasBackground && styles.hasBackground,
+          )}
+        >
+          {children}
+        </div>
       </DisclosurePanel>
     </Disclosure>
   )

@@ -5,6 +5,8 @@ import { Item, Section } from './types'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import styles from './ComboBox.module.css'
+import { sizeModes } from '../../.storybook/modes'
+import React from 'react'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -20,9 +22,16 @@ const meta: Meta<typeof ComboBox> = {
   argTypes: {
     placeholder: { control: 'text' },
   },
-  parameters: {},
-  render: args => (
-    <ComboBox {...args}>
+  parameters: {
+    chromatic: {
+      modes: sizeModes,
+    },
+  },
+  render: (args, { globals: { size } }) => (
+    <ComboBox
+      {...args}
+      size={size}
+    >
       <ComboBoxItem>Apple</ComboBoxItem>
       <ComboBoxItem>Lemon</ComboBoxItem>
     </ComboBox>
@@ -42,22 +51,23 @@ export const Default: Story = {
     description: 'Description',
     className: 'test',
   },
-  render: args => (
+  render: (args, { globals: { size } }) => (
     <ComboBox
       data-testid='test'
       items={options}
       {...args}
+      size={size}
     >
       {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
-  play: async ({ canvas, step }) => {
-    await step('it should be large per default', async () => {
+  play: async ({ canvas, step, globals: { size } }) => {
+    await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('combobox')).toHaveStyle({
-        height: '48px',
+        height: size === 'large' ? '48px' : '40px',
       })
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: '48px',
+        height: size === 'large' ? '48px' : '40px',
       })
     })
 
@@ -68,22 +78,6 @@ export const Default: Story = {
         expect(comboBox).toHaveClass(styles.combobox, 'test')
       },
     )
-  },
-}
-
-export const MediumSize: Story = {
-  args: {
-    size: 'medium',
-  },
-  play: async ({ canvas, step }) => {
-    await step('it should be medium sized', async () => {
-      await expect(canvas.getByRole('combobox')).toHaveStyle({
-        height: '40px',
-      })
-      await expect(canvas.getByRole('button')).toHaveStyle({
-        height: '40px',
-      })
-    })
   },
 }
 
@@ -130,10 +124,16 @@ export const Required: Story = {
     'aria-label': 'test',
     isRequired: true,
   },
-  tags: ['!dev'],
-  render: args => (
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: (args, { globals: { size } }) => (
     <form>
-      <ComboBox {...args}>
+      <ComboBox
+        {...args}
+        size={size}
+      >
         <ComboBoxItem>Hej</ComboBoxItem>
       </ComboBox>
       <button type='submit'>Submit</button>
@@ -162,10 +162,16 @@ export const CustomErrorMessage: Story = {
     isRequired: true,
     errorMessage: 'Custom error message',
   },
-  tags: ['!dev'],
-  render: args => (
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: (args, { globals: { size } }) => (
     <form>
-      <ComboBox {...args}>
+      <ComboBox
+        {...args}
+        size={size}
+      >
         <ComboBoxItem>Hej</ComboBoxItem>
       </ComboBox>
       <button type='submit'>Submit</button>
@@ -193,9 +199,49 @@ export const Sectioned: Story = {
     ...Default.args,
     items: optionsWithSections,
   },
-  render: args => (
-    <ComboBox {...args}>
+  render: (args, { globals: { size } }) => (
+    <ComboBox
+      {...args}
+      size={size}
+    >
       {(section: Section<Item>) => <ComboBoxSelection {...section} />}
     </ComboBox>
   ),
+}
+
+export const PerformanceTest: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: (args, { globals: { size } }) => {
+    const [numberOfItems, setNumberOfItems] = React.useState(25)
+
+    const items = [...Array(numberOfItems).keys()].map(n => ({
+      name: n.toString(),
+      id: n,
+    }))
+
+    return (
+      <>
+        <label>
+          Adjust load
+          <input
+            type='number'
+            step={25}
+            value={numberOfItems}
+            onChange={e => setNumberOfItems(parseInt(e.target.value))}
+          />
+        </label>
+        <ComboBox
+          {...args}
+          size={size}
+        >
+          {items.map(({ name, id }) => (
+            <ComboBoxItem key={id}>{name}</ComboBoxItem>
+          ))}
+        </ComboBox>
+      </>
+    )
+  },
 }

@@ -135,14 +135,14 @@ import { InfoBanner } from '@midas-ds/components'
   />
 </div>
 
-## Dismissable
+## Stängbar
 
-Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `dismissable`. Det bör inte användas för varningar.
+Det går att göra det möjligt för användaren att stänga informationsmeddelandet via `isDismissable`. Det bör inte användas för varningar.
 
 ```tsx
 <InfoBanner
   // highlight-start
-  dismissable
+  isDismissable
   // highlight-end
   type='success'
   title='Det gick bra!'
@@ -152,12 +152,26 @@ Det går att göra det möjligt för användaren att stänga informationsmeddela
 
 <div className='card'>
   <InfoBanner
-    dismissable
+    isDismissable
     type='success'
     title='Det gick bra!'
     message='Detta är ett meddelande om att allt gick bra.'
   />
 </div>
+
+## Dynamiskt
+
+InfoBanner är utformad för att vara ett statiskt meddelande som visuellt drar till sig uppmärksamhet. Om du planerar att använda InfoBanner som ett meddelande som kommer fram när användaren gör något rekommenderas komponenten [Toast](../toast) istället.
+Om du ändå vill använda InfoBanner som ett dynamiskt meddelande behöver `role="alert"` adderas för att skärmläsare ska uppfatta meddelandet som en notis till användaren.
+
+```tsx {2}
+<InfoBanner
+  role='alert'
+  type='success'
+  title='Det gick bra!'
+  message='Detta är ett meddelande om att allt gick bra.'
+/>
+```
 
 ## API
 

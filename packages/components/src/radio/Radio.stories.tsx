@@ -6,6 +6,9 @@ import styles from './Radio.module.css'
 const meta: Meta<typeof RadioGroup> = {
   title: 'Components/Radio',
   component: RadioGroup,
+  subcomponents: {
+    Radio: Radio as React.ComponentType<unknown>,
+  },
   tags: ['autodocs'],
   args: {
     label: 'Välj frukt',
@@ -111,7 +114,10 @@ export const Invalid: Story = {
 }
 
 export const Required: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',
@@ -141,7 +147,10 @@ export const Required: Story = {
 }
 
 export const CustomValidation: Story = {
-  tags: ['!dev'],
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',

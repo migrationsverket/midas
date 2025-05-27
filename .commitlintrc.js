@@ -15,6 +15,7 @@ async function getConfig() {
     .map(dirent => dirent.name)
 
   return {
+    extends: ['@commitlint/config-conventional'],
     rules: {
       'scope-enum': async ctx => [
         2,
@@ -24,6 +25,7 @@ async function getConfig() {
           ...componentFolders,
           'release',
           'project',
+          'deps',
         ],
       ],
       'body-leading-blank': [1, 'always'],

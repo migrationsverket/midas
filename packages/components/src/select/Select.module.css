@@ -11,7 +11,8 @@
 .selectAllButton {
   all: unset;
   width: 100%;
-  margin-bottom: 2px;
+  box-sizing: border-box;
+  margin-bottom: 2px !important;
 }
 
 .selectLabel {
@@ -118,7 +119,7 @@
 }
 
 .tagGroup {
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 /* .multiSelectOpen {
@@ -161,6 +162,13 @@
   overflow-y: auto;
   padding: 0;
   margin: 0;
+
+  > div {
+    /* react aria fiddles with pointer events during scroll
+     * after a few scrolls the value sticks to "none" in our storybook
+     */
+    pointer-events: auto !important;
+  }
 }
 
 .listBoxItem {
@@ -212,7 +220,8 @@
   outline: none;
 }
 
-.listBoxItemFocusVisible {
+.listBoxItemFocusVisible,
+.listItemfocusRing {
   box-shadow: --focus-inset;
   outline: none;
 }
@@ -323,46 +332,7 @@
 .checkboxContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 1rem 0.5rem 1rem 0;
-}
-
-/* checkbox stuff */
-.checkbox {
-  /* -webkit-appearance: none; */
-  appearance: none;
-  background-color: --button-background-primary;
-  display: grid;
-  margin: 0;
-  font: inherit;
-  color: currentColor;
-  border: 1px solid --button-background-primary;
-  border-radius: 0;
-}
-
-.checkbox::before {
-  content: '';
-  width: 0.875rem;
-  height: 0.875rem;
-  transform: scale(1);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1rem 1rem white;
-  background-color: CanvasText;
-  cursor: pointer;
-}
-
-.checkbox:checked::before {
-  transform: scale(1);
-  mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
-  mask-size: 0.9rem 0.9rem;
-}
-
-.checkbox:indeterminate::before {
-  mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1pbnVzIj48cGF0aCBkPSJNNSAxMmgxNCIvPjwvc3ZnPg==');
-  mask-repeat: no-repeat;
-  mask-clip: border-box;
-  transform: scale(1);
-  mask-size: 0.9rem 0.9rem;
+  padding-right: 0.5rem;
 }
 
 @media (forced-colors: active) {

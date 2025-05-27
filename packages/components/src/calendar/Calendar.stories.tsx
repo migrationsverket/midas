@@ -2,8 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Calendar } from './Calendar'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent, within } from '@storybook/test'
 import { today, getLocalTimeZone } from '@internationalized/date'
+import { mockedNow } from '../utils/storybook'
 
 type Story = StoryObj<typeof Calendar>
 
@@ -27,6 +28,9 @@ export const Primary: Story = {}
 
 export const KeyboardTest: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   play: async ({ canvas, step }) => {
     await step(
       'it should be possible to select tomorrow with the keyboard',
@@ -41,6 +45,31 @@ export const KeyboardTest: Story = {
             name: today(getLocalTimeZone()).add({ days: 1 }).day.toString(),
           }),
         ).toHaveAttribute('aria-selected', 'true')
+      },
+    )
+  },
+}
+
+export const DS1141: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    minValue: mockedNow,
+  },
+  play: async ({ canvas, step }) => {
+    await step(
+      'it should show a "not-allowed" cursor when hovering disabled dates',
+      async () => {
+        const yesterdayButton = within(
+          canvas.getByRole('gridcell', {
+            name: `${mockedNow.day - 1}`,
+          }),
+        ).getByRole('button')
+
+        await userEvent.hover(yesterdayButton)
+        await expect(yesterdayButton).toHaveStyle({ cursor: 'not-allowed' })
       },
     )
   },

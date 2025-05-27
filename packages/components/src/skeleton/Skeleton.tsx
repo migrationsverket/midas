@@ -7,21 +7,20 @@ export interface SkeletonProps
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
-  width?: React.CSSProperties['width']
-  height?: React.CSSProperties['height']
-  variant?:
-    | 'circle'
-    | 'rectangle'
-    /**
-     * @deprecated after v9.0.0 - Use 'rectangle' instead. This will be removed in future versions.
-     */
-    | 'rectangular'
-
   /**
-   * @deprecated after v9.0.0 - Use 'isAnimated' instead. This will be removed in future versions.
+   * Use valid CSS [length](https://developer.mozilla.org/en-US/docs/Web/CSS/length) units
    */
-  animation?: 'wave' | false
+  width?: React.CSSProperties['width']
   /**
+   * Use valid CSS [length](https://developer.mozilla.org/en-US/docs/Web/CSS/length) units
+   */
+  height?: React.CSSProperties['height']
+  /**
+   * Circular or rectangular Skeleton component. When using circle, only `width` is allowed to control size.
+   */
+  variant?: 'circle' | 'rectangle'
+  /**
+   * Displays the skeleton component with a wave animation
    * @default true
    */
   isAnimated?: boolean
@@ -31,8 +30,9 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   variant = 'rectangle',
   width,
   height,
-  animation = 'wave',
   isAnimated = true,
+  className,
+  style,
   ...rest
 }) => {
   if (variant === 'circle' && height !== undefined) {
@@ -40,21 +40,17 @@ export const Skeleton: React.FC<SkeletonProps> = ({
       'Height is not allowed when using circle, control size with width',
     )
   }
-  if (variant === 'rectangular') {
-    console.warn(
-      'Rectangular will be deprecated since v8.4.0 - Use Rectangle instead. This will be removed in future versions',
-    )
-  }
 
   return (
     <div
-      {...rest}
       className={clsx(
         styles.skeleton,
         styles[variant],
-        isAnimated && animation && styles.wave,
+        isAnimated && styles.wave,
+        className,
       )}
-      style={{ width, height }}
+      style={{ width, height, ...style }}
+      {...rest}
     />
   )
 }

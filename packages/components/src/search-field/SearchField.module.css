@@ -123,13 +123,3 @@
     -webkit-appearance: none;
   }
 }
-
-.button {
-  line-height: 1;
-  padding: --size-70 --size-110;
-
-  &.medium {
-    height: --size-130;
-    padding: --size-50 --size-110;
-  }
-}

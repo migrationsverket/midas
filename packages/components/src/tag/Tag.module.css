@@ -1,18 +1,33 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary from tokens;
+@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active, --border-primary, --support-border-success, --support-border-info, --support-border-important, --support-border-warning, --text-primary, --border-disabled from tokens;
 
 .button {
   color: --icon-primary;
-  min-height: unset;
+  min-height: unset !important;
   padding: 0.375rem !important;
   border-radius: 1.5rem;
+  border: unset;
 
   &[data-hovered] {
-    background-color: --field-hover-01;
+    background-color: --button-background-icon-hover;
   }
 
   &[data-pressed] {
-    background-color: --field-active-01;
+    background-color: --button-background-icon-active;
+  }
+
+  &.success[data-hovered],
+  &.warning[data-hovered],
+  &.info[data-hovered],
+  &.important[data-hovered] {
+    background-color: --button-background-icon-hover;
+  }
+
+  &.success[data-pressed],
+  &.warning[data-pressed],
+  &.info[data-pressed],
+  &.important[data-pressed] {
+    background-color: --button-background-icon-active;
   }
 }
 
@@ -24,10 +39,34 @@
   background-color: --field-01;
   font-size: 0.875rem;
   font-family: --font-family;
+  border: 1px solid --border-primary;
+  color: --text-primary;
+
+  &.success {
+    background-color: --support-background-success;
+    border: 1px solid --support-border-success;
+  }
+
+  &.info {
+    background-color: --support-background-info;
+    border: 1px solid --support-border-info;
+  }
+
+  &.important {
+    background-color: --support-background-important;
+    border: 1px solid --support-border-important;
+  }
+
+  &.warning {
+    background-color: --support-background-warning;
+    border: 1px solid --support-border-warning;
+  }
 
   &[data-disabled] {
     color: --text-disabled;
     cursor: not-allowed;
+    border-color: --border-disabled;
+    background-color: --field-01;
   }
 
   &[data-focused],

@@ -12,7 +12,6 @@ const meta: Meta<typeof Spinner> = {
   args: {
     small: false,
     isOnColor: false,
-    dark: false,
   },
 }
 export default meta

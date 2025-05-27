@@ -4,13 +4,27 @@ module.exports = {
     docs: {
       description: 'A hint that the source code exports deprecated features',
     },
+    schema: {
+      type: 'array',
+      minItems: 0,
+      maxItems: 1,
+      items: [
+        {
+          type: 'object',
+          properties: {
+            version: { type: 'string' },
+          },
+          additionalProperties: false,
+        },
+      ],
+    },
   },
   create(context) {
     const version = context?.options?.[0]?.version
 
-    const getSemver = str => str.match(new RegExp(/\d\.\d\.\d/))
+    const getSemver = str => str.match(new RegExp(/\d{1,3}\.\d{1,3}\.\d{1,3}/))
 
-    const getMajor = matchArray => parseInt(matchArray[0][0], 10)
+    const getMajor = matchArray => parseInt(matchArray[0], 10)
 
     const processComment = comment => {
       if (

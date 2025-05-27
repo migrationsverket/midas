@@ -7,10 +7,11 @@ import {
   getPreferredColorScheme,
 } from './custom-theme'
 import React from 'react'
-import { modes } from './modes'
+import { globalModes } from './modes'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
+import { semantic } from '../src/theme'
 
 const preview: Preview = {
   async beforeEach() {
@@ -21,10 +22,11 @@ const preview: Preview = {
   },
   parameters: {
     backgrounds: {
-      default: getPreferredColorScheme() === 'dark' ? 'Dark' : 'Light',
+      default: 'Background',
       values: [
-        { name: 'Light', value: 'white' },
-        { name: 'Dark', value: '#121212' },
+        { name: 'Background', value: semantic.background },
+        { name: 'Layer 01', value: semantic.layer01 },
+        { name: 'Layer 02', value: semantic.layer02 },
       ],
     },
     controls: {
@@ -49,48 +51,53 @@ const preview: Preview = {
       },
     },
     chromatic: {
-      modes: modes,
+      modes: globalModes,
     },
     a11y: { test: 'error', element: '#storybook-root' },
+  },
+  globalTypes: {
+    scheme: {
+      toolbar: {
+        title: 'Color Scheme',
+        icon: 'paintbrush',
+        items: [
+          { value: 'light', title: 'Light', icon: 'sun' },
+          { value: 'dark', title: 'Dark', icon: 'moon' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+    size: {
+      description: 'Global size for components',
+      toolbar: {
+        title: 'Size',
+        icon: 'expand',
+        items: [
+          { value: 'medium', title: 'Medium' },
+          { value: 'large', title: 'Large' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: {
+    size: 'large',
+    scheme: getPreferredColorScheme(),
   },
   decorators: [
     (Story, context) => {
       const RootTag: React.ElementType =
         context?.parameters?.rootElement || 'main'
 
-      const [colorMode, setColorMode] = React.useState<'light' | 'dark'>(
-        getPreferredColorScheme(),
-      )
+      const story = document.querySelector<HTMLElement>('body')
 
-      React.useEffect(() => {
-        const userSelectedBackground:
-          | 'white'
-          | '#121212'
-          | 'transparent'
-          | undefined = context.globals.backgrounds?.value
-
-        if (
-          userSelectedBackground === 'white' ||
-          userSelectedBackground === '#121212'
-        ) {
-          return setColorMode(
-            userSelectedBackground === 'white' ? 'light' : 'dark',
-          )
-        }
-
-        return setColorMode(getPreferredColorScheme())
-      }, [context.globals.backgrounds])
-
-      React.useEffect(() => {
-        const popover = document.querySelector<HTMLElement>('body')
-        if (popover) popover.style.colorScheme = colorMode
-      }, [colorMode])
+      if (story) story.style.colorScheme = context.globals.scheme
 
       return (
         <RootTag
           style={{
-            colorScheme: colorMode,
-            backgroundColor: colorMode === 'light' ? 'white' : '#121212',
+            colorScheme: context.globals.scheme,
+            backgroundColor: context.globals.backgrounds?.value,
           }}
         >
           <Story />

@@ -10,8 +10,6 @@ export const ACCORDION_TEST_ID = 'accordion'
 interface MidasAccordion extends DisclosureGroupProps {
   /** Display either the larger contained variant or a smaller uncontained variant */
   variant?: 'uncontained' | 'contained'
-  /** @deprecated since v8.0.0 Use 'allowsMultipleExpanded' instead */
-  type?: 'single' | 'multiple'
 }
 
 /**
@@ -20,7 +18,6 @@ interface MidasAccordion extends DisclosureGroupProps {
 
 export const Accordion: React.FC<MidasAccordion> = ({
   variant = 'uncontained',
-  type = 'single',
   children,
   className,
   ...props
@@ -28,9 +25,6 @@ export const Accordion: React.FC<MidasAccordion> = ({
   return (
     <DisclosureGroup
       data-testid={ACCORDION_TEST_ID}
-      allowsMultipleExpanded={
-        props.allowsMultipleExpanded || type === 'multiple'
-      }
       className={clsx(
         styles.root,
         variant === 'contained' ? styles.contained : styles.uncontained,

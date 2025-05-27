@@ -26,17 +26,19 @@ export interface MidasButtonProps {
   fullwidth?: boolean
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'
-   **/ /** Choose between different button sizes */
-  /** @deprecated since v4.0.0 This variant "small" will be replaced with a new scaling api accross all components. */
-  size?: 'small' | Size
+   **/
+  size?: Size
   /** Add an icon from lucide-react
    *
-   * @see {@link https://lucide.dev/icons/}
+   * @see {@link https://lucide.dev/icons/|Lucide}
    */
   icon?: LucideIcon
-  /** Adjust icon size */
+  /**
+   * Adjust icon size
+   *  @default 20
+   * */
   iconSize?: number
-  /** Display your icon on the left och right side of the button text */
+  /** Display the icon on the left or right side of the button text */
   iconPlacement?: 'left' | 'right'
   children?:
     | React.ReactNode
@@ -68,8 +70,6 @@ export const Button: React.FC<MidasButton> = ({
   iconSize,
   ...rest
 }) => {
-  const effectiveIconSize = size === 'small' ? 14 : iconSize || 20
-
   return (
     <AriaButton
       className={clsx(
@@ -81,19 +81,13 @@ export const Button: React.FC<MidasButton> = ({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         size === 'medium' && styles.medium,
-        size === 'small' && styles.small,
         iconPlacement === 'right' && styles.iconRight,
         className,
       )}
       {...rest}
     >
       <>
-        {IconComponent && (
-          <IconComponent
-            aria-hidden
-            size={effectiveIconSize}
-          />
-        )}
+        {IconComponent && <IconComponent aria-hidden size={iconSize ?? 20} />}
         {rest.children}
       </>
     </AriaButton>

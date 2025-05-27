@@ -92,7 +92,6 @@
 }
 
 .theme-code-block {
-/*  border: 1px solid var(--ifm-color-emphasis-200);*/
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -117,7 +116,6 @@
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-/*  border: 1px solid var(--ifm-color-emphasis-200);*/
   box-shadow: none !important;
   max-height: 600px;
   overflow-y: auto;
@@ -142,10 +140,7 @@ table td {
   padding: 1rem;
   border-radius: 0;
   margin-bottom: var(--ifm-leading);
-  border: 1px solid var(--ifm-color-emphasis-200);
   box-shadow: none !important;
-  max-height: 600px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -410,8 +405,12 @@ html[data-theme='dark'] .navbar--github-link::before {
     no-repeat;
 }
 
-.no-margin-children p {
-  margin-bottom: 0;
+.no-margin-children {
+  margin-bottom: 1rem;
+  p {
+    margin-bottom: 0;
+    white-space: wrap;
+  }
 }
 
 /* ---- Table for language page --- */

@@ -2,9 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from './utils'
-import { expect, userEvent } from '@storybook/test'
+import { expect, fn, spyOn, userEvent } from '@storybook/test'
 import { useState } from 'react'
 import { Selection } from 'react-aria-components'
+import { sizeModes } from '../../.storybook/modes'
+
+const onChange = fn()
+const onSubmit = fn()
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -21,13 +25,27 @@ const meta: Meta<typeof Select> = {
     selectionMode: 'single',
     showTags: false,
     errorPosition: 'top',
+    onSelectionChange: onChange,
+  },
+  parameters: {
+    chromatic: {
+      modes: sizeModes,
+    },
+  },
+  render: (args, { globals: { size } }) => {
+    return (
+      <Select
+        {...args}
+        size={size}
+      />
+    )
   },
 }
 export default meta
 type Story = StoryObj<typeof Select>
 
 export const Normal: Story = {
-  play: async ({ args, canvas, step }) => {
+  play: async ({ args, canvas, step, globals: { size } }) => {
     await step(
       'It should be possible to select an item using the keyboard',
       async () => {
@@ -38,41 +56,13 @@ export const Normal: Story = {
         const visibleValue = canvas.getByText(options[0].name, {
           selector: 'span',
         })
-        expect(hiddenSelect).toHaveDisplayValue([options[0].name])
-        expect(visibleValue).toBeVisible()
+        await expect(hiddenSelect).toHaveDisplayValue([options[0].name])
+        await expect(visibleValue).toBeVisible()
       },
     )
-    await step('it should be large sized', async () => {
+    await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: '48px',
-      })
-    })
-  },
-}
-
-export const MediumSize: Story = {
-  args: {
-    size: 'medium',
-  },
-  play: async ({ args, canvas, step }) => {
-    await step(
-      'It should be possible to select an item using the keyboard',
-      async () => {
-        await userEvent.tab()
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Space]')
-
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-        const visibleValue = canvas.getByText(options[0].name, {
-          selector: 'span',
-        })
-        expect(hiddenSelect).toHaveDisplayValue([options[0].name])
-        expect(visibleValue).toBeVisible()
-      },
-    )
-    await step('it should be medium sized', async () => {
-      await expect(canvas.getByRole('button')).toHaveStyle({
-        height: '40px',
+        height: size === 'large' ? '48px' : '40px',
       })
     })
   },
@@ -245,6 +235,9 @@ export const NotClearable: Story = {
 
 export const DS872: Story = {
   tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
     ...Normal.args,
     selectionMode: 'single',
@@ -287,5 +280,101 @@ export const Sectioned: Story = {
   args: {
     ...Normal.args,
     options: optionsWithSections,
+  },
+  play: async ({ step }) => {
+    const warn = spyOn(console, 'warn').mockImplementation(fn())
+
+    await step(
+      'It should not warn about missing aria labels when toggling the select open state',
+      async () => {
+        await userEvent.tab()
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+
+        await expect(warn).toHaveBeenCalledTimes(0)
+      },
+    )
+  },
+}
+
+export const RequiredSingleSelect: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    selectionMode: 'single',
+    isRequired: true,
+  },
+  render: args => (
+    <form
+      onSubmit={e => {
+        e.preventDefault()
+        onSubmit()
+      }}
+    >
+      <Select {...args} />
+      <button type='submit'>submit</button>
+    </form>
+  ),
+  play: async ({ step }) => {
+    await step(
+      'It should give a validation error if the user submitted without selecting an option',
+      async () => {
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        await expect(onSubmit).not.toHaveBeenCalled()
+      },
+    )
+  },
+}
+
+export const RequiredMultiSelect: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  ...RequiredSingleSelect,
+  args: {
+    ...RequiredSingleSelect.args,
+    selectionMode: 'multiple',
+  },
+}
+
+export const MultiSelectTests: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    selectionMode: 'multiple',
+  },
+  play: async ({ canvas, step, args: { label } }) => {
+    await step(
+      'It should be possible to deselect all items to empty the selection',
+      async () => {
+        await userEvent.tab()
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Escape]')
+        await expect(
+          canvas.getByLabelText(`${label as string}-hidden`),
+        ).toHaveDisplayValue([])
+      },
+    )
+    await step(
+      'It should be possible to press escape to exit the select without clearing the selections made',
+      async () => {
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[ArrowDown]')
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Escape]')
+        await expect(
+          canvas.getByLabelText(`${label as string}-hidden`),
+        ).not.toHaveDisplayValue([])
+      },
+    )
   },
 }

@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Skeleton } from './Skeleton'
 import { expect } from '@storybook/test'
 import styles from './Skeleton.module.css'
-const meta: Meta<typeof Skeleton> = {
+
+type Story = StoryObj<typeof Skeleton>
+
+export default {
   component: Skeleton,
   title: 'Components/Skeleton',
   tags: ['autodocs'],
@@ -10,36 +13,10 @@ const meta: Meta<typeof Skeleton> = {
     variant: 'rectangle',
   },
   argTypes: {
-    variant: {
-      options: ['circle', 'rectangle', 'rectangular'],
-      control: { type: 'radio' },
-    },
-    width: {
-      type: 'string',
-    },
-    height: {
-      type: 'string',
-    },
-    animation: {
-      options: ['wave', false],
-      control: { type: 'radio' },
-      defaultValue: 'wave',
-    },
     isAnimated: {
       options: [true, false],
       control: { type: 'radio' },
-      defaultValue: true,
     },
-  },
-}
-export default meta
-type Story = StoryObj<typeof Skeleton>
-
-export const Rectangle: Story = {
-  args: {
-    variant: 'rectangle',
-    width: '100px',
-    height: '40px',
   },
   render: args => (
     <Skeleton
@@ -47,6 +24,13 @@ export const Rectangle: Story = {
       data-testid='skeleton'
     />
   ),
+} as Meta<typeof Skeleton>
+
+export const Rectangle: Story = {
+  args: {
+    width: '100px',
+    height: '40px',
+  },
   play: async ({ canvas }) => {
     const skeleton = canvas.getByTestId('skeleton')
     await expect(skeleton).toHaveClass(styles.wave, styles.skeleton)
@@ -58,23 +42,9 @@ export const Circle: Story = {
     variant: 'circle',
     width: '50px',
   },
-  render: args => (
-    <Skeleton
-      {...args}
-      data-testid='skeleton'
-    />
-  ),
   play: async ({ canvas }) => {
     const skeleton = canvas.getByTestId('skeleton')
     await expect(skeleton).toHaveClass(styles.wave, styles.circle)
-  },
-}
-
-export const Rectangular: Story = {
-  args: {
-    variant: 'rectangular',
-    width: '100px',
-    height: '40px',
   },
 }
 
@@ -86,21 +56,15 @@ export const NoAnimation: Story = {
   parameters: {
     docs: {
       source: {
-        code: `<Skeleton 
-  height="40px" 
-  isAnimated={false} 
-  variant="rectangle" 
+        code: `<Skeleton
+  height="40px"
+  isAnimated={false}
+  variant="rectangle"
   width="100px"
 />`,
       },
     },
   },
-  render: args => (
-    <Skeleton
-      {...args}
-      data-testid='skeleton'
-    />
-  ),
   play: async ({ canvas }) => {
     const skeleton = canvas.getByTestId('skeleton')
     await expect(skeleton).not.toHaveClass(styles.wave)
@@ -112,21 +76,37 @@ export const Animation: Story = {
     ...Rectangle.args,
     isAnimated: true,
   },
-  render: args => (
-    <Skeleton
-      {...args}
-      data-testid='skeleton'
-    />
-  ),
   play: async ({ canvas }) => {
     const skeleton = canvas.getByTestId('skeleton')
     await expect(skeleton).toHaveClass(styles.wave)
   },
 }
 
-export const Wave: Story = {
+export const DS1191: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
-    ...Rectangle.args,
-    animation: 'wave',
+    width: '100px',
+    height: '40px',
+    className: 'derp',
+    style: {
+      verticalAlign: 'bottom',
+    },
+  },
+  play: async ({ canvas, step }) => {
+    await step(
+      'It should merge provided className and style props',
+      async () => {
+        const skeleton = canvas.getByTestId('skeleton')
+        await expect(skeleton).toHaveClass(styles.wave, styles.skeleton, 'derp')
+        await expect(skeleton).toHaveStyle({
+          width: '100px',
+          height: '40px',
+          verticalAlign: 'bottom',
+        })
+      },
+    )
   },
 }

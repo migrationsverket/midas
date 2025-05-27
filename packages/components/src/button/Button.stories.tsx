@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { Plus, X } from 'lucide-react'
 import { expect, userEvent } from '@storybook/test'
+import { sizeModes } from '../../.storybook/modes'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -13,24 +14,22 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     children: { type: 'string' },
-    variant: {
-      options: ['primary', 'secondary', 'tertiary', 'danger', 'icon'],
-      control: { type: 'radio' },
-      defaultValue: 'primary',
-    },
-    size: {
-      options: ['large', 'medium', 'small'],
-      control: { type: 'radio' },
-      defaultValue: 'large',
-    },
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' },
     },
-    iconPlacement: {
-      options: ['right', 'left'],
-      control: { type: 'radio' },
-      defaultValue: 'left',
+  },
+  render: (args, { globals: { size } }) => {
+    return (
+      <Button
+        {...args}
+        size={size}
+      />
+    )
+  },
+  parameters: {
+    chromatic: {
+      modes: sizeModes,
     },
   },
 }
@@ -84,20 +83,6 @@ export const SecondaryDisabled: Story = {
     const button = canvas.getByRole('button')
     await userEvent.click(button)
     await expect(button).toBeDisabled()
-  },
-}
-
-export const MediumSize = {
-  args: {
-    children: 'Button',
-    size: 'medium',
-  },
-}
-
-export const SmallPrimary = {
-  args: {
-    children: 'Button',
-    size: 'small',
   },
 }
 
