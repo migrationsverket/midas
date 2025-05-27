@@ -40,6 +40,15 @@ export const Primary: Story = {
   args: {
     children: 'Till E-tjänst',
     href: '#',
+    'data-testid': 'link-button',
+    className: 'test-class',
+  },
+  play: async ({ canvas, step, globals: { size } }) => {
+    await step('it should change size according to size prop', async () => {
+      await expect(
+        canvas.getByTestId('link-button').getBoundingClientRect().height,
+      ).toBe(size === 'large' ? 48 : 40)
+    })
   },
 }
 
