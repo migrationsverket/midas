@@ -8,13 +8,6 @@
   margin-bottom: 0;
 }
 
-.selectAllButton {
-  all: unset;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 2px !important;
-}
-
 .selectLabel {
   grid-area: Label;
   font-weight: 500;
@@ -152,34 +145,6 @@
   svg {
     transition: transform 0.3s ease;
   }
-}
-
-.listBoxItem {
-  font-family: --font-family;
-  padding: 1rem;
-  line-height: 1;
-  background-color: --layer-01;
-  cursor: pointer;
-  color: --text-primary;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0;
-  transition: background-color 60ms;
-
-  &:hover {
-    background-color: --layer-hover-01;
-    transition-delay: 60ms;
-  }
-
-  &[data-disabled='true'] {
-    color: --text-disabled;
-  }
-}
-
-.listItemfocusRing {
-  box-shadow: --focus-inset;
-  outline: none;
 }
 
 .listBoxItemCheckmark {

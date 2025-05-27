@@ -19,7 +19,7 @@ import { Label } from '../label'
 import { Text } from '../text'
 import { Size } from '../common/types'
 import { Checkbox } from '../checkbox'
-import { ListBoxPopover } from '../list-box'
+import { ListBoxButton, ListBoxPopover } from '../list-box'
 
 export type OptionItem = {
   children?: never
@@ -341,26 +341,17 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
               {hasHeader && (
                 <>
                   {isSelectableAll && (
-                    <FocusRing focusRingClass={styles.listItemfocusRing}>
-                      <button
-                        type='button'
-                        onClick={handleSelectAll}
-                        className={clsx(
-                          styles.listBoxItem,
-                          styles.selectAllButton,
-                        )}
-                      >
-                        <div className={styles.checkboxContainer}>
-                          <Checkbox
-                            isSelected={isAllSelection}
-                            isIndeterminate={isIndeterminateSelection}
-                            isReadOnly
-                            excludeFromTabOrder
-                          />
-                        </div>
-                        <span>Select All</span>
-                      </button>
-                    </FocusRing>
+                    <ListBoxButton onClick={handleSelectAll}>
+                      <div className={styles.checkboxContainer}>
+                        <Checkbox
+                          isSelected={isAllSelection}
+                          isIndeterminate={isIndeterminateSelection}
+                          isReadOnly
+                          excludeFromTabOrder
+                        />
+                      </div>
+                      <span>Select All</span>
+                    </ListBoxButton>
                   )}
                   <div className='selectDivider' />
                 </>

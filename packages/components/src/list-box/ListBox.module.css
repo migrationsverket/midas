@@ -35,6 +35,18 @@
   font-weight: 500;
 }
 
+.listBoxItemFocusRing {
+  box-shadow: --focus-inset;
+  outline: none;
+}
+
+.listBoxButton {
+  all: unset;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2px !important;
+}
+
 .listBoxItem {
   background-color: --layer-01;
   color: --text-primary;
