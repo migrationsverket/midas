@@ -5,7 +5,7 @@ description: Komponent som skapar en länk
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Link } from '@midas-ds/components'
+import { Link, Text } from '@midas-ds/components'
 import { semantic } from '@midas-ds/components/theme'
 
 <ComponentHeader
@@ -16,15 +16,15 @@ import { semantic } from '@midas-ds/components/theme'
 Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående.
 
 ```tsx title=Link
-<p>
-  I vår
-  <Link href='/changelog'>Changelog</Link>
-  dokumenterar vi de senaste ändringarna i komponenterna.
-</p>
+<Text>
+  En text med en <Link href='#'>länk</Link> i ett textstycke.
+</Text>
 ```
 
 <div className='card'>
-  I vår <Link href='/changelog'>Changelog</Link> dokumenterar vi de senaste ändringarna i komponenterna.
+  <Text>
+    En text med en <Link href='#'>länk</Link> i ett textstycke.
+  </Text>
 </div>
 
 ## Installation
@@ -41,67 +41,56 @@ import { Link } from '@midas-ds/components'
 
 ### Länk
 
-```tsx {3} title="default"
-<p>
-  Designsystemet utvecklas ständigt,
-  <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>
-  Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
-</p>
+```tsx {2}
+<Text>
+  En text med en <Link href='#länk'>länk</Link> i ett textstycke.
+</Text>
 ```
 
 <div className='card'>
-  Designsystemet utvecklas ständigt, <Link href='/changelog'>vilket du kan kan se i vår Changelog</Link>. Vi släpper
-  kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner.
+  <Text>
+    En text med en <Link href='#länk'>länk</Link> i ett textstycke.
+  </Text>
 </div>
 
 ### Fristående
 
 Använd `standalone` för att använda komponenten som en fristående länk under t.ex ett textblock.
 
-```tsx title="standalone"
-<p>
-  Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya funktioner på befintliga komponenter.
-</p>
+```tsx {3}
+<Text>Text</Text>
 <Link
-  // highlight-start
   standalone
-  // highlight-end
-  href="/changelog"
+  href="#fristående"
 >
-  Se vad som har ändrats i senaste versionen
+  En länk som är fristående från text
 </Link>
 ```
 
 <div className='card'>
-  Designsystemet utvecklas ständigt. Vi släpper kontinuerligt nya versioner med buggfixar, nya komponenter och nya
-  funktioner på befintliga komponenter.
+  För att visa en länk som en fristående komponent, använd propertyn <code>standalone</code>. Detta kan vara användbart
+  när du vill att länken ska stå ut från omgivande text eller när du vill placera den på en egen rad.
   <Link
     standalone
-    href='/changelog'
+    href='#fristående'
   >
-    {'Se vad som har ändrats i senaste versionen'}
+    {'En länk som är fristående från text'}
   </Link>
 </div>
 
 ### Stretched
 
-Använd `stretched` för att låta hela föräldraelementet vara klickbart till länken. Föräldern måste ha `position: relative;` för att länkens klickyta inte ska gå för långt.
+Använd `stretched` för att låta hela föräldraelementet vara klickbart till länken. Den klickbara ytan placeras med `position: absolute` och sträcker sig över hela föräldraelementet. Placera därför `position: relative` på relevant element för att inte den klickbara ytan ska sträckas för långt.
 
-```tsx title="stretched"
+```tsx {1,5,10}
 <div style={{ position: 'relative' }}>
-  <p>
-    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
-    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
-    ytan.
-  </p>
+  <p>Text</p>
   <Link
     standalone
-    //highlight-start
     stretched
-    //highlight-end
-    href='/#'
+    href='#stretched'
   >
-    Läs mer om designsystemets nyheter
+    En länk som sträcker sig över hela ytan
   </Link>
 </div>
 ```
@@ -114,18 +103,21 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
       padding: '1rem',
     }}
   >
-    Designsystemet utvecklas ständigt. Varannan vecka kommer det ett nytt släpp med buggfixar, nya komponenter eller nya
-    funktioner på befintliga komponenter. Om du håller muspekaren här så kan du klicka på länken över hela den gråa
-    ytan.
+    En länk kan sträcka sig över en hel yta genom propertyn <code>stretched</code>. Detta kan vara användbart när du
+    vill att hela ytan ska vara klickbar, till exempel i en kort eller en panel.
     <Link
       standalone
       stretched
-      href='#'
+      href='#stretched'
     >
-      {'Läs mer om designsystemets nyheter'}
+      {'En länk som sträcker sig över hela ytan'}
     </Link>
   </div>
 </div>
+
+## Client Side Routing
+
+Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/client-side-routing).
 
 ## Riktlinjer
 
