@@ -4,11 +4,168 @@
         <title>Midas changelog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/</link>
         <description>Håll dig uppdaterad med allt som händer i varje release</description>
-        <lastBuildDate>Thu, 08 May 2025 20:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 May 2025 20:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
         <copyright>2025 Migrationsverket</copyright>
+        <item>
+            <title><![CDATA[10.1.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/</guid>
+            <pubDate>Fri, 23 May 2025 20:00:00 GMT</pubDate>
+            <description><![CDATA[🚀 Features]]></description>
+            <content:encoded><![CDATA[<h1></h1>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h3>
+<ul>
+<li><strong>accordion:</strong> add new variant <code scope="[object Object]">hasBackground</code> (<a href="https://github.com/migrationsverket/midas/commit/1022bcc58a" target="_blank" rel="noopener noreferrer">1022bcc58a</a>)</li>
+<li><strong>accordion:</strong> add variant <code scope="[object Object]">hasBackground</code> (<a href="https://github.com/migrationsverket/midas/commit/2b429a73b3" target="_blank" rel="noopener noreferrer">2b429a73b3</a>)</li>
+<li><strong>select:</strong> use midas checkbox (<a href="https://github.com/migrationsverket/midas/commit/94c2cdb61d" target="_blank" rel="noopener noreferrer">94c2cdb61d</a>)</li>
+<li><strong>select:</strong> allow for option id to be string or number (<a href="https://github.com/migrationsverket/midas/commit/b9f31bac6b" target="_blank" rel="noopener noreferrer">b9f31bac6b</a>)</li>
+<li><strong>tag:</strong> add new prop (<a href="https://github.com/migrationsverket/midas/commit/82a0998769" target="_blank" rel="noopener noreferrer">82a0998769</a>)</li>
+<li><strong>tag:</strong> add dark mode style (<a href="https://github.com/migrationsverket/midas/commit/408be2acb7" target="_blank" rel="noopener noreferrer">408be2acb7</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h3>
+<ul>
+<li><strong>link-button:</strong> add disabled styling (<a href="https://github.com/migrationsverket/midas/commit/143f708127" target="_blank" rel="noopener noreferrer">143f708127</a>)</li>
+<li><strong>radio:</strong> remove interactions with radiogroup items outside the label and button (<a href="https://github.com/migrationsverket/midas/commit/0b9f197971" target="_blank" rel="noopener noreferrer">0b9f197971</a>)</li>
+<li><strong>select:</strong> virtualize the scroll box (<a href="https://github.com/migrationsverket/midas/commit/523b138e17" target="_blank" rel="noopener noreferrer">523b138e17</a>)</li>
+<li><strong>skeleton:</strong> dont overwrite className and style props (<a href="https://github.com/migrationsverket/midas/commit/155a8ff437" target="_blank" rel="noopener noreferrer">155a8ff437</a>)</li>
+<li><strong>tag:</strong> fix the missing nesting selector (<a href="https://github.com/migrationsverket/midas/commit/87ac33ab1c" target="_blank" rel="noopener noreferrer">87ac33ab1c</a>)</li>
+<li><strong>tag:</strong> change token on button hover and pressed (<a href="https://github.com/migrationsverket/midas/commit/0f2ff1c422" target="_blank" rel="noopener noreferrer">0f2ff1c422</a>)</li>
+<li><strong>tag:</strong> unset border to make button the right width/height (<a href="https://github.com/migrationsverket/midas/commit/769cfa8ec5" target="_blank" rel="noopener noreferrer">769cfa8ec5</a>)</li>
+<li><strong>tag:</strong> fix the hover and fix the disabled style (<a href="https://github.com/migrationsverket/midas/commit/3a21642715" target="_blank" rel="noopener noreferrer">3a21642715</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-refactors">💅 Refactors<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/#-refactors" class="hash-link" aria-label="Direktlänk till 💅 Refactors" title="Direktlänk till 💅 Refactors">​</a></h3>
+<ul>
+<li><strong>tag:</strong> move render function to meta data (<a href="https://github.com/migrationsverket/midas/commit/48d9f9b126" target="_blank" rel="noopener noreferrer">48d9f9b126</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h3>
+<ul>
+<li>add usage example (<a href="https://github.com/migrationsverket/midas/commit/c25a9cafc5" target="_blank" rel="noopener noreferrer">c25a9cafc5</a>)</li>
+<li>control size globally in storybook + new dark mode control (<a href="https://github.com/migrationsverket/midas/pull/596" target="_blank" rel="noopener noreferrer">#596</a>)</li>
+<li><strong>tag:</strong> add new tag page (<a href="https://github.com/migrationsverket/midas/commit/f3f7506d18" target="_blank" rel="noopener noreferrer">f3f7506d18</a>)</li>
+<li><strong>tag:</strong> fix description text (<a href="https://github.com/migrationsverket/midas/commit/979a879bb3" target="_blank" rel="noopener noreferrer">979a879bb3</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.1.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h3>
+<ul>
+<li>change react import statement (<a href="https://github.com/migrationsverket/midas/commit/efe3c867f0" target="_blank" rel="noopener noreferrer">efe3c867f0</a>)</li>
+<li>update eslint rule to handle major versions &gt; 9 (<a href="https://github.com/migrationsverket/midas/commit/ba85178773" target="_blank" rel="noopener noreferrer">ba85178773</a>)</li>
+<li>extend commitlint conventional commits config (<a href="https://github.com/migrationsverket/midas/commit/4daa47926d" target="_blank" rel="noopener noreferrer">4daa47926d</a>)</li>
+<li><strong>changelog:</strong> group and display more commit types in changelog (<a href="https://github.com/migrationsverket/midas/commit/d86d18ae94" target="_blank" rel="noopener noreferrer">d86d18ae94</a>)</li>
+<li><strong>deps:</strong> update RAC (<a href="https://github.com/migrationsverket/midas/commit/20da285b9e" target="_blank" rel="noopener noreferrer">20da285b9e</a>)</li>
+</ul>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[10.0.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/</guid>
+            <pubDate>Tue, 20 May 2025 20:00:00 GMT</pubDate>
+            <description><![CDATA[🚀 Features]]></description>
+            <content:encoded><![CDATA[<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h3>
+<ul>
+<li>⚠️ <strong>accordion:</strong> remove deprecated prop <code scope="[object Object]">type='multiple'</code>, use <code scope="[object Object]">allowsMultipleExpanded</code> instead (<a href="https://github.com/migrationsverket/midas/commit/8c82cbd681" target="_blank" rel="noopener noreferrer">8c82cbd681</a>)</li>
+<li><strong>button:</strong> add size property, a story and style (<a href="https://github.com/migrationsverket/midas/commit/946bd9aa7d" target="_blank" rel="noopener noreferrer">946bd9aa7d</a>)</li>
+<li><strong>button:</strong> add back the small variant (<a href="https://github.com/migrationsverket/midas/commit/2112557050" target="_blank" rel="noopener noreferrer">2112557050</a>)</li>
+<li>⚠️ <strong>button:</strong> remove small size variant from button (<a href="https://github.com/migrationsverket/midas/commit/06430f2df2" target="_blank" rel="noopener noreferrer">06430f2df2</a>)</li>
+<li><strong>combobox:</strong> add size prop (<a href="https://github.com/migrationsverket/midas/commit/e64826ab11" target="_blank" rel="noopener noreferrer">e64826ab11</a>)</li>
+<li><strong>date-field:</strong> ✨ medium size (<a href="https://github.com/migrationsverket/midas/pull/558" target="_blank" rel="noopener noreferrer">#558</a>)</li>
+<li><strong>date-picker:</strong> add size prop (<a href="https://github.com/migrationsverket/midas/commit/c1e1a04444" target="_blank" rel="noopener noreferrer">c1e1a04444</a>)</li>
+<li><strong>file-upload:</strong> use button size medium instead of small (<a href="https://github.com/migrationsverket/midas/commit/c4351ff469" target="_blank" rel="noopener noreferrer">c4351ff469</a>)</li>
+<li>⚠️ <strong>label:</strong> remove deprecated variants (<a href="https://github.com/migrationsverket/midas/commit/36c893a748" target="_blank" rel="noopener noreferrer">36c893a748</a>)</li>
+<li>⚠️ <strong>modal:</strong> remove deprecated <code scope="[object Object]">ModalTrigger</code> and <code scope="[object Object]">Dialog</code> (<a href="https://github.com/migrationsverket/midas/commit/9789773886" target="_blank" rel="noopener noreferrer">9789773886</a>)</li>
+<li><strong>progress-bar:</strong> use button size medium instead of small (<a href="https://github.com/migrationsverket/midas/commit/24dad8eb80" target="_blank" rel="noopener noreferrer">24dad8eb80</a>)</li>
+<li><strong>search-field:</strong> add size prop (<a href="https://github.com/migrationsverket/midas/commit/4dab7eea96" target="_blank" rel="noopener noreferrer">4dab7eea96</a>)</li>
+<li><strong>search-field:</strong> use button size medium instead of small (<a href="https://github.com/migrationsverket/midas/commit/a5f6020bbd" target="_blank" rel="noopener noreferrer">a5f6020bbd</a>)</li>
+<li><strong>select:</strong> add size property (<a href="https://github.com/migrationsverket/midas/commit/b1519f00cd" target="_blank" rel="noopener noreferrer">b1519f00cd</a>)</li>
+<li><strong>select:</strong> add medium size variant (<a href="https://github.com/migrationsverket/midas/commit/f66c23929e" target="_blank" rel="noopener noreferrer">f66c23929e</a>)</li>
+<li><strong>skeleton:</strong> allow for more semantically correct props (<a href="https://github.com/migrationsverket/midas/commit/703237ec04" target="_blank" rel="noopener noreferrer">703237ec04</a>)</li>
+<li>⚠️ <strong>skeleton:</strong> remove deprecated props (<a href="https://github.com/migrationsverket/midas/commit/cf5b52095c" target="_blank" rel="noopener noreferrer">cf5b52095c</a>)</li>
+<li>⚠️ <strong>spinner:</strong> remove deprecated prop <code scope="[object Object]">dark</code> (<a href="https://github.com/migrationsverket/midas/commit/309da278c9" target="_blank" rel="noopener noreferrer">309da278c9</a>)</li>
+<li>⚠️ <strong>table:</strong> remove deprecated prop <code scope="[object Object]">narrow</code> from table (<a href="https://github.com/migrationsverket/midas/commit/2b61d27b75" target="_blank" rel="noopener noreferrer">2b61d27b75</a>)</li>
+<li><strong>table:</strong> remove deprecation of prop <code scope="[object Object]">narrow</code> and update documentation (<a href="https://github.com/migrationsverket/midas/commit/4cbbb8efd9" target="_blank" rel="noopener noreferrer">4cbbb8efd9</a>)</li>
+<li>⚠️ <strong>tabs:</strong> remove deprecated prop <code scope="[object Object]">defaultSelected</code> (<a href="https://github.com/migrationsverket/midas/commit/5271e93984" target="_blank" rel="noopener noreferrer">5271e93984</a>)</li>
+<li><strong>tag:</strong> use button size medium instead of small (<a href="https://github.com/migrationsverket/midas/commit/731df78796" target="_blank" rel="noopener noreferrer">731df78796</a>)</li>
+<li><strong>theme:</strong> add full scale of signal-red tokens (<a href="https://github.com/migrationsverket/midas/commit/abdca1e267" target="_blank" rel="noopener noreferrer">abdca1e267</a>)</li>
+<li>⚠️ <strong>theme:</strong> remove deprecated tokens <code scope="[object Object]">borderInvalid</code> and <code scope="[object Object]">textInvalid</code> (<a href="https://github.com/migrationsverket/midas/commit/d2f1620dc4" target="_blank" rel="noopener noreferrer">d2f1620dc4</a>)</li>
+<li>⚠️ <strong>tokens:</strong> rename tokens <code scope="[object Object]">blue140</code> &amp; <code scope="[object Object]">blue170</code> and add new tokens <code scope="[object Object]">blue110</code>, <code scope="[object Object]">blue120</code>, rename <code scope="[object Object]">purple140</code> to <code scope="[object Object]">purple110</code> (<a href="https://github.com/migrationsverket/midas/commit/b79d586d53" target="_blank" rel="noopener noreferrer">b79d586d53</a>)</li>
+<li><strong>tokens:</strong> add new tokens <code scope="[object Object]">blue50</code> and <code scope="[object Object]">blue70</code>, update link colors (<a href="https://github.com/migrationsverket/midas/commit/d814a4c961" target="_blank" rel="noopener noreferrer">d814a4c961</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h3>
+<ul>
+<li>replace unsupported characters in chromatic permalink (<a href="https://github.com/migrationsverket/midas/commit/d653d10e69" target="_blank" rel="noopener noreferrer">d653d10e69</a>)</li>
+<li><strong>accordion:</strong> set correct height on uncontained variant (<a href="https://github.com/migrationsverket/midas/pull/557" target="_blank" rel="noopener noreferrer">#557</a>)</li>
+<li><strong>calendar:</strong> add cursor: not-allowed on disabled dates (<a href="https://github.com/migrationsverket/midas/commit/6592b4fb15" target="_blank" rel="noopener noreferrer">6592b4fb15</a>)</li>
+<li><strong>select:</strong> increase the margin top to give more space between tag group and select (<a href="https://github.com/migrationsverket/midas/commit/5514f642b0" target="_blank" rel="noopener noreferrer">5514f642b0</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h3>
+<ul>
+<li>truly responsive propstable (<a href="https://github.com/migrationsverket/midas/pull/554" target="_blank" rel="noopener noreferrer">#554</a>)</li>
+<li>swizzle admonitions (<a href="https://github.com/migrationsverket/midas/pull/538" target="_blank" rel="noopener noreferrer">#538</a>)</li>
+<li>add language page (<a href="https://github.com/migrationsverket/midas/commit/60497665a3" target="_blank" rel="noopener noreferrer">60497665a3</a>)</li>
+<li>add untracked changelog files and update tsconfig (<a href="https://github.com/migrationsverket/midas/commit/9527e80ac0" target="_blank" rel="noopener noreferrer">9527e80ac0</a>)</li>
+<li>add migration guide from 8 to 9 (<a href="https://github.com/migrationsverket/midas/commit/777e92b2f0" target="_blank" rel="noopener noreferrer">777e92b2f0</a>)</li>
+<li>add Ui-kit for Adobe XD (version 22) (<a href="https://github.com/migrationsverket/midas/commit/8a28a6012f" target="_blank" rel="noopener noreferrer">8a28a6012f</a>)</li>
+<li>add migration guides (<a href="https://github.com/migrationsverket/midas/commit/c523716e06" target="_blank" rel="noopener noreferrer">c523716e06</a>)</li>
+<li>fix various typos + minor fixes to wording and styling of docs ✏️ (<a href="https://github.com/migrationsverket/midas/commit/3eb230305f" target="_blank" rel="noopener noreferrer">3eb230305f</a>)</li>
+<li>render jsdoc links as markdown in component api description field (<a href="https://github.com/migrationsverket/midas/commit/c2699b66a1" target="_blank" rel="noopener noreferrer">c2699b66a1</a>)</li>
+<li>add migration guide for v8.3.0 (<a href="https://github.com/migrationsverket/midas/pull/585" target="_blank" rel="noopener noreferrer">#585</a>)</li>
+<li><strong>changelog:</strong> add docusaurus style changelog and release notes (<a href="https://github.com/migrationsverket/midas/commit/cba214be09" target="_blank" rel="noopener noreferrer">cba214be09</a>)</li>
+<li><strong>layout:</strong> update docs on clientSideHref prop (<a href="https://github.com/migrationsverket/midas/commit/6f1e0807ad" target="_blank" rel="noopener noreferrer">6f1e0807ad</a>)</li>
+<li><strong>release:</strong> update release notes for 10.0.0 with migrations for button (<a href="https://github.com/migrationsverket/midas/commit/44a6347896" target="_blank" rel="noopener noreferrer">44a6347896</a>)</li>
+<li><strong>release:</strong> update release notes for 10.0.0 with migrations for accordion (<a href="https://github.com/migrationsverket/midas/commit/ac9007c8d1" target="_blank" rel="noopener noreferrer">ac9007c8d1</a>)</li>
+<li><strong>release:</strong> update release notes for migrations of modals (<a href="https://github.com/migrationsverket/midas/commit/748bbcb298" target="_blank" rel="noopener noreferrer">748bbcb298</a>)</li>
+<li><strong>release:</strong> add migrations for deprecated prop for spinner (<a href="https://github.com/migrationsverket/midas/commit/e042b919ed" target="_blank" rel="noopener noreferrer">e042b919ed</a>)</li>
+<li><strong>release:</strong> update release notes for deprecated props for <code scope="[object Object]">Tabs</code> (<a href="https://github.com/migrationsverket/midas/commit/d83ad7cb6c" target="_blank" rel="noopener noreferrer">d83ad7cb6c</a>)</li>
+<li><strong>release:</strong> update release notes for <code scope="[object Object]">&lt;Table&gt;</code> (<a href="https://github.com/migrationsverket/midas/commit/823dc5526c" target="_blank" rel="noopener noreferrer">823dc5526c</a>)</li>
+<li><strong>release:</strong> update release notes for token removal (<a href="https://github.com/migrationsverket/midas/commit/2f9b8314c5" target="_blank" rel="noopener noreferrer">2f9b8314c5</a>)</li>
+<li><strong>release:</strong> migration information for removal of <code scope="[object Object]">useMessageStringFormatter</code> (<a href="https://github.com/migrationsverket/midas/commit/0f18dd9824" target="_blank" rel="noopener noreferrer">0f18dd9824</a>)</li>
+<li><strong>release:</strong> add migration info for <code scope="[object Object]">Label</code> (<a href="https://github.com/migrationsverket/midas/commit/b0f79ef73b" target="_blank" rel="noopener noreferrer">b0f79ef73b</a>)</li>
+<li><strong>release:</strong> add migration info for skeleton component (<a href="https://github.com/migrationsverket/midas/commit/afeab9f602" target="_blank" rel="noopener noreferrer">afeab9f602</a>)</li>
+<li><strong>release:</strong> link to changelog instead of specific version to avoid broken links while developing (<a href="https://github.com/migrationsverket/midas/commit/ada5d715b3" target="_blank" rel="noopener noreferrer">ada5d715b3</a>)</li>
+<li><strong>release:</strong> remove reference to table and fix minor issues (<a href="https://github.com/migrationsverket/midas/commit/810321bbf3" target="_blank" rel="noopener noreferrer">810321bbf3</a>)</li>
+<li><strong>release:</strong> update release notes with info on medium size components (<a href="https://github.com/migrationsverket/midas/commit/d6e70a99b5" target="_blank" rel="noopener noreferrer">d6e70a99b5</a>)</li>
+<li><strong>release:</strong> update release notes with tokens breaking changes (<a href="https://github.com/migrationsverket/midas/commit/a45ef9cbf6" target="_blank" rel="noopener noreferrer">a45ef9cbf6</a>)</li>
+<li><strong>release:</strong> update release notes with breaking changes <code scope="[object Object]">purple140</code> -&gt; <code scope="[object Object]">purple110</code> (<a href="https://github.com/migrationsverket/midas/commit/22f685ae97" target="_blank" rel="noopener noreferrer">22f685ae97</a>)</li>
+<li><strong>tokens:</strong> fix typo (<a href="https://github.com/migrationsverket/midas/commit/d55e6f224b" target="_blank" rel="noopener noreferrer">d55e6f224b</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h3>
+<ul>
+<li>update version in eslint config (<a href="https://github.com/migrationsverket/midas/commit/93edc05f7c" target="_blank" rel="noopener noreferrer">93edc05f7c</a>)</li>
+<li>add new eslint rules (<a href="https://github.com/migrationsverket/midas/pull/545" target="_blank" rel="noopener noreferrer">#545</a>)</li>
+<li>add npm provenance flag (<a href="https://github.com/migrationsverket/midas/commit/039f1daa0d" target="_blank" rel="noopener noreferrer">039f1daa0d</a>)</li>
+<li>remove max height from card-guidelines (<a href="https://github.com/migrationsverket/midas/commit/02a65e19bf" target="_blank" rel="noopener noreferrer">02a65e19bf</a>)</li>
+<li>use medium sized buttons (<a href="https://github.com/migrationsverket/midas/commit/7d55406881" target="_blank" rel="noopener noreferrer">7d55406881</a>)</li>
+<li>disable snapshots for duplicate states (<a href="https://github.com/migrationsverket/midas/commit/52197ad135" target="_blank" rel="noopener noreferrer">52197ad135</a>)</li>
+<li><strong>button:</strong> fix code documentation (<a href="https://github.com/migrationsverket/midas/commit/28974126de" target="_blank" rel="noopener noreferrer">28974126de</a>)</li>
+<li><strong>deps:</strong> bump vite in the npm_and_yarn group across 1 directory (<a href="https://github.com/migrationsverket/midas/commit/193b8d80b5" target="_blank" rel="noopener noreferrer">193b8d80b5</a>)</li>
+<li><strong>deps:</strong> bump undici in the npm_and_yarn group across 1 directory (<a href="https://github.com/migrationsverket/midas/commit/63e9f61a23" target="_blank" rel="noopener noreferrer">63e9f61a23</a>)</li>
+<li>⚠️ <strong>useMessageFormatter:</strong> remove <code scope="[object Object]">useMessageFormatter</code> since deprecation (<a href="https://github.com/migrationsverket/midas/commit/01d94a8d75" target="_blank" rel="noopener noreferrer">01d94a8d75</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-tests-updated">🧪 Tests updated<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/#-tests-updated" class="hash-link" aria-label="Direktlänk till 🧪 Tests updated" title="Direktlänk till 🧪 Tests updated">​</a></h3>
+<ul>
+<li><strong>button:</strong> add a test in primary story (<a href="https://github.com/migrationsverket/midas/commit/53f4fe042e" target="_blank" rel="noopener noreferrer">53f4fe042e</a>)</li>
+<li><strong>button:</strong> add a test to stories (<a href="https://github.com/migrationsverket/midas/commit/0348794fc7" target="_blank" rel="noopener noreferrer">0348794fc7</a>)</li>
+<li><strong>button:</strong> add await to expect tests (<a href="https://github.com/migrationsverket/midas/commit/6a72c8d05b" target="_blank" rel="noopener noreferrer">6a72c8d05b</a>)</li>
+<li><strong>docs:</strong> add test baseline and chromatic tests (<a href="https://github.com/migrationsverket/midas/commit/57d6255477" target="_blank" rel="noopener noreferrer">57d6255477</a>)</li>
+<li><strong>select:</strong> add test to check the size (<a href="https://github.com/migrationsverket/midas/commit/2c692d9ea0" target="_blank" rel="noopener noreferrer">2c692d9ea0</a>)</li>
+<li><strong>select:</strong> fix the test (<a href="https://github.com/migrationsverket/midas/commit/f41535787b" target="_blank" rel="noopener noreferrer">f41535787b</a>)</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/10.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h3>
+<ul>
+<li>⚠️ <strong>tokens:</strong> rename tokens <code scope="[object Object]">blue140</code> &amp; <code scope="[object Object]">blue170</code> and add new tokens <code scope="[object Object]">blue110</code>, <code scope="[object Object]">blue120</code>, rename <code scope="[object Object]">purple140</code> to <code scope="[object Object]">purple110</code> (<a href="https://github.com/migrationsverket/midas/commit/b79d586d53" target="_blank" rel="noopener noreferrer">b79d586d53</a>)</li>
+<li><strong>skeleton:</strong> variant <code scope="[object Object]">rectangular</code> is no longer available, use <code scope="[object Object]">rectangle</code> instead. Animation is now a boolean and the prop to use is <code scope="[object Object]">isAnimated</code></li>
+<li><strong>label:</strong> label variants are no longer available, use component <code scope="[object Object]">Text</code> instead</li>
+<li><strong>useMessageFormatter:</strong> Adobe has deprecated this hook in favour of <code scope="[object Object]">useLocalizedStringFormatter</code>. Use that instead!</li>
+<li><strong>theme:</strong> use <code scope="[object Object]">supportBorderWarning</code> and <code scope="[object Object]">textWarning</code> instead</li>
+<li><strong>table:</strong> prop <code scope="[object Object]">narrow</code> is no longer available</li>
+<li><strong>tabs:</strong> <code scope="[object Object]">defaultSelected</code> no longer works, use <code scope="[object Object]">defaultSelectedKey</code> instead</li>
+<li><strong>spinner:</strong> prop <code scope="[object Object]">dark</code> no longer works, use <code scope="[object Object]">isOnColor</code> instead</li>
+<li><strong>modal:</strong> <code scope="[object Object]">ModalTrigger</code> and <code scope="[object Object]">Dialog</code> no longer works, use <code scope="[object Object]">DialogTrigger</code> and <code scope="[object Object]">Modal</code> instead</li>
+<li><strong>accordion:</strong> API now conforms to React Aria standard. Same behavior is accomplished using <code scope="[object Object]">allowsMultipleExpanded</code></li>
+<li><strong>button:</strong> <code scope="[object Object]">size='small'</code> no longer has any effect on button size. Allowed sizes are <code scope="[object Object]">'medium' | 'large'</code></li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[9.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/9.0.0/</link>
@@ -556,53 +713,6 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/2.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h3>
 <ul>
 <li><strong>textarea:</strong> TextArea propert maxCharacters is renamed to maxLength</li>
-</ul>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[1.3.0]]></title>
-            <link>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/1.3.0/</link>
-            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/1.3.0/</guid>
-            <pubDate>Wed, 19 Feb 2025 20:00:00 GMT</pubDate>
-            <description><![CDATA[- accordion: support react nodes in title (#259)]]></description>
-            <content:encoded><![CDATA[<h2></h2>
-<ul>
-<li><strong>accordion:</strong> support react nodes in title (<a href="https://github.com/migrationsverket/midas/pull/259" target="_blank" rel="noopener noreferrer">#259</a>)</li>
-<li><strong>text-field:</strong> add dossier number validation (<a href="https://github.com/migrationsverket/midas/pull/261" target="_blank" rel="noopener noreferrer">#261</a>)</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/1.3.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h3>
-<ul>
-<li><strong>accordion:</strong> support any elements in title (<a href="https://github.com/migrationsverket/midas/commit/1129fd742" target="_blank" rel="noopener noreferrer">1129fd742</a>)</li>
-<li><strong>card:</strong> add React.useId to generate unique id (<a href="https://github.com/migrationsverket/midas/commit/160319d03" target="_blank" rel="noopener noreferrer">160319d03</a>)</li>
-<li><strong>card:</strong> fix to read title and content (<a href="https://github.com/migrationsverket/midas/commit/dd8d07c72" target="_blank" rel="noopener noreferrer">dd8d07c72</a>)</li>
-<li><strong>card:</strong> remove the id content from p tag (<a href="https://github.com/migrationsverket/midas/commit/54e4fe9cd" target="_blank" rel="noopener noreferrer">54e4fe9cd</a>)</li>
-<li><strong>docs:</strong> update theme imports (<a href="https://github.com/migrationsverket/midas/commit/5cbd797f4" target="_blank" rel="noopener noreferrer">5cbd797f4</a>)</li>
-<li><strong>table:</strong> show hover background color for striped table (<a href="https://github.com/migrationsverket/midas/commit/a6b4f35d5" target="_blank" rel="noopener noreferrer">a6b4f35d5</a>)</li>
-<li><strong>table:</strong> striped table hover effect and unused props (<a href="https://github.com/migrationsverket/midas/pull/250" target="_blank" rel="noopener noreferrer">#250</a>)</li>
-<li><strong>table:</strong> add pointer if row has a link (<a href="https://github.com/migrationsverket/midas/pull/262" target="_blank" rel="noopener noreferrer">#262</a>)</li>
-<li><strong>table:</strong> preserve classNames when using props.className (<a href="https://github.com/migrationsverket/midas/commit/d7a9142cd" target="_blank" rel="noopener noreferrer">d7a9142cd</a>)</li>
-<li><strong>text-field:</strong> add dossier number validation (<a href="https://github.com/migrationsverket/midas/commit/b3027b5b9" target="_blank" rel="noopener noreferrer">b3027b5b9</a>)</li>
-<li><strong>text-field:</strong> +/- divider should be optional (<a href="https://github.com/migrationsverket/midas/commit/b1393263a" target="_blank" rel="noopener noreferrer">b1393263a</a>)</li>
-<li><strong>theme:</strong> point to theme types (<a href="https://github.com/migrationsverket/midas/pull/248" target="_blank" rel="noopener noreferrer">#248</a>)</li>
-<li><strong>theme:</strong> reorder theme export (<a href="https://github.com/migrationsverket/midas/pull/265" target="_blank" rel="noopener noreferrer">#265</a>)</li>
-</ul>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[1.2.0]]></title>
-            <link>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/1.2.0/</link>
-            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/1.2.0/</guid>
-            <pubDate>Tue, 11 Feb 2025 20:00:00 GMT</pubDate>
-            <description><![CDATA[- components: new api and style for accordion (efab0a198)]]></description>
-            <content:encoded><![CDATA[<h2></h2>
-<ul>
-<li><strong>components:</strong> new api and style for accordion (<a href="https://github.com/migrationsverket/midas/commit/efab0a198" target="_blank" rel="noopener noreferrer">efab0a198</a>)</li>
-<li><strong>components:</strong> add nvm config (<a href="https://github.com/migrationsverket/midas/commit/7cbbce66e" target="_blank" rel="noopener noreferrer">7cbbce66e</a>)</li>
-</ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-574/changelog/1.2.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h3>
-<ul>
-<li>import/export text-field css directly from css module (<a href="https://github.com/migrationsverket/midas/pull/212" target="_blank" rel="noopener noreferrer">#212</a>)</li>
-<li><strong>components:</strong> fix text when titles are longer than one row (<a href="https://github.com/migrationsverket/midas/commit/28b06cd31" target="_blank" rel="noopener noreferrer">28b06cd31</a>)</li>
-<li><strong>info-banner:</strong> fix icon to be in same line with text in docs and story (<a href="https://github.com/migrationsverket/midas/commit/f37b798c3" target="_blank" rel="noopener noreferrer">f37b798c3</a>)</li>
-<li><strong>theme:</strong> create separate theme export (<a href="https://github.com/migrationsverket/midas/commit/a6c95a23c" target="_blank" rel="noopener noreferrer">a6c95a23c</a>)</li>
 </ul>]]></content:encoded>
         </item>
     </channel>
