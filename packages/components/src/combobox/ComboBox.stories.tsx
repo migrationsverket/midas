@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ComboBox, ComboBoxItem, ComboBoxSelection } from './ComboBox'
+import { ComboBox, ComboBoxItem, ComboBoxSection } from './ComboBox'
 import { generateMockOptions, optionsWithSections } from './utils'
 import { Item, Section } from './types'
 import { RunOptions } from 'axe-core'
@@ -204,7 +204,7 @@ export const Sectioned: Story = {
       {...args}
       size={size}
     >
-      {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+      {(section: Section<Item>) => <ComboBoxSection {...section} />}
     </ComboBox>
   ),
 }

@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import * as React from 'react'
 import { TagList, TextField } from 'react-aria-components'
 import { SelectListBox } from './SelectListBox'
-import { SelectPopover } from './SelectPopover'
 import { useMultiSelect } from './useMultiSelect'
 import { useMultiSelectState, MultiSelectState } from './useMultiSelectState'
 import styles from './Select.module.css'
@@ -20,6 +19,7 @@ import { Label } from '../label'
 import { Text } from '../text'
 import { Size } from '../common/types'
 import { Checkbox } from '../checkbox'
+import { ListBoxPopover } from '../list-box'
 
 export type OptionItem = {
   children?: never
@@ -180,7 +180,9 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const handleRemove = (key: Key) =>
       state.selectionManager.toggleSelection(key)
 
-    const { width: buttonWidth } = useObserveElement(ref.current)
+    const { width: buttonWidth } = useObserveElement(ref.current, {
+      includePadding: true,
+    })
 
     const formatItems = (
       items: NonNullable<MultiSelectState<Option>['selectedItems']>,
@@ -192,7 +194,7 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
       >
         <span
           className={styles.truncate}
-          style={{ maxWidth: buttonWidth - 64 }}
+          style={{ maxWidth: buttonWidth - 92 }}
         >
           {items.length > 1 ? `${items.length} valda` : items[0].textValue}
         </span>
@@ -326,60 +328,62 @@ export const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
                 ) : null}
               </>
             )}
-            {state.isOpen && (
-              <SelectPopover
-                isOpen={state.isOpen}
-                onClose={state.close}
-                className={styles.popover}
-                triggerRef={ref}
-              >
-                {hasHeader && (
-                  <>
-                    {isSelectableAll && (
-                      <FocusRing focusRingClass={styles.listItemfocusRing}>
-                        <button
-                          type='button'
-                          onClick={handleSelectAll}
-                          className={clsx(
-                            styles.listBoxItem,
-                            styles.selectAllButton,
-                          )}
-                        >
-                          <div className={styles.checkboxContainer}>
-                            <Checkbox
-                              isSelected={isAllSelection}
-                              isIndeterminate={isIndeterminateSelection}
-                              isReadOnly
-                              excludeFromTabOrder
-                            />
-                          </div>
-                          <span>Select All</span>
-                        </button>
-                      </FocusRing>
-                    )}
-                    <div className='selectDivider' />
-                  </>
-                )}
-                <SelectListBox
-                  {...menuProps}
-                  state={state}
-                />
-                {/** Bottom clear button disabled for now, work in progress */}
-                {hasClearButton && false && (
-                  <>
-                    <div className='selectDivider' />
-                    {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}
-                    <button
-                      type='button'
-                      className=''
-                      onClick={handleClear}
-                    >
-                      Clear
-                    </button>
-                  </>
-                )}
-              </SelectPopover>
-            )}
+            <ListBoxPopover
+              isOpen={state.isOpen}
+              onOpenChange={isOpen => {
+                if (!isOpen) {
+                  state.close()
+                }
+              }}
+              triggerRef={ref}
+              style={{ width: buttonWidth }}
+            >
+              {hasHeader && (
+                <>
+                  {isSelectableAll && (
+                    <FocusRing focusRingClass={styles.listItemfocusRing}>
+                      <button
+                        type='button'
+                        onClick={handleSelectAll}
+                        className={clsx(
+                          styles.listBoxItem,
+                          styles.selectAllButton,
+                        )}
+                      >
+                        <div className={styles.checkboxContainer}>
+                          <Checkbox
+                            isSelected={isAllSelection}
+                            isIndeterminate={isIndeterminateSelection}
+                            isReadOnly
+                            excludeFromTabOrder
+                          />
+                        </div>
+                        <span>Select All</span>
+                      </button>
+                    </FocusRing>
+                  )}
+                  <div className='selectDivider' />
+                </>
+              )}
+              <SelectListBox
+                {...menuProps}
+                state={state}
+              />
+              {/** Bottom clear button disabled for now, work in progress */}
+              {hasClearButton && false && (
+                <>
+                  <div className='selectDivider' />
+                  {/* TODO: Focus is not restored back to the list once button unmounts, see https://github.com/adobe/react-spectrum/issues/2415 */}
+                  <button
+                    type='button'
+                    className=''
+                    onClick={handleClear}
+                  >
+                    Clear
+                  </button>
+                </>
+              )}
+            </ListBoxPopover>
           </div>
           {showTags && state.selectedItems !== null && (
             <TagGroup

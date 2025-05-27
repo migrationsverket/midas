@@ -1,52 +1,30 @@
-import clsx from 'clsx'
 import * as React from 'react'
 import styles from './Select.module.css'
 import type { MultiSelectState } from './useMultiSelectState'
 import { type AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
 import { Check } from 'lucide-react'
-import { Label } from '../label'
-import {
-  Collection,
-  Header,
-  ListBox,
-  ListBoxItem,
-  ListBoxSection,
-  Virtualizer,
-} from 'react-aria-components'
+import { Collection, ListBoxItemProps } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
-import { SectionedListLayout } from '../common/SectionedListLayout'
+import { ListBox, ListBoxItem, ListBoxSection } from '../list-box'
 
-interface ListBoxProps<T> extends AriaListBoxOptions<T> {
+interface ListBoxProps<T extends object> extends AriaListBoxOptions<T> {
   state: MultiSelectState<T>
 }
 
-type SectionProps<T> = {
+interface SectionProps<T extends object> {
   section: Node<T>
   state: MultiSelectState<T>
 }
 
-type OptionProps<T> = {
-  item: Node<T>
-  state: MultiSelectState<T>
-}
-
-const Option = <T,>({ item, state }: OptionProps<T>) => (
-  <ListBoxItem
-    id={item.key}
-    className={({ isDisabled, isFocused, isFocusVisible, isSelected }) =>
-      clsx(styles.listBoxItem, {
-        [styles.listBoxItemDisabled]: isDisabled,
-        [styles.listBoxItemFocused]: isFocused,
-        [styles.listBoxItemFocusVisible]: isFocusVisible,
-        [styles.listBoxItemSelected]: isSelected,
-      })
-    }
-    textValue={item.textValue}
-  >
-    {({ isDisabled, isSelected }) => (
+const Option = <T extends object>({
+  children,
+  ...rest
+}: ListBoxItemProps<T>) => (
+  <ListBoxItem {...rest}>
+    {({ isDisabled, isSelected, selectionMode }) => (
       <>
-        {state.selectionMode === 'multiple' && (
+        {selectionMode === 'multiple' ? (
           <div className={styles.checkboxContainer}>
             <Checkbox
               isDisabled={isDisabled}
@@ -54,14 +32,9 @@ const Option = <T,>({ item, state }: OptionProps<T>) => (
               isReadOnly
             />
           </div>
-        )}
-
-        {typeof item.rendered === 'string' ? (
-          <span className='truncate block'>{item.rendered}</span>
-        ) : (
-          item.rendered
-        )}
-        {isSelected && state.selectionMode === 'single' ? (
+        ) : null}
+        {children}
+        {isSelected && selectionMode === 'single' ? (
           <Check
             size={20}
             className={styles.listBoxItemCheckmark}
@@ -72,64 +45,54 @@ const Option = <T,>({ item, state }: OptionProps<T>) => (
   </ListBoxItem>
 )
 
-const Section = <T,>({ section, state }: SectionProps<T>) => (
-  <ListBoxSection id={section.key}>
-    {section.rendered ? (
-      <Header>
-        <Label
-          elementType='span'
-          className={styles.selectSectionHeading}
-        >
-          {section.rendered}
-        </Label>
-      </Header>
-    ) : null}
+const Section = <T extends object>({ section, state }: SectionProps<T>) => (
+  <ListBoxSection
+    {...section}
+    value={section.value || undefined}
+    name={section.rendered}
+  >
     {state.collection.getChildren ? (
       <Collection items={state.collection?.getChildren(section.key)}>
         {item => (
           <Option
+            {...item}
             key={item.key}
-            item={item}
-            state={state}
-          />
+            value={item.value || undefined}
+          >
+            {item.rendered}
+          </Option>
         )}
       </Collection>
     ) : null}
   </ListBoxSection>
 )
 
-export const SelectListBox = <T,>({ state, ...rest }: ListBoxProps<T>) => {
-  return (
-    <Virtualizer
-      layout={SectionedListLayout}
-      layoutOptions={{
-        headingHeight: 44,
-      }}
-    >
-      <ListBox
-        {...rest}
-        {...state}
-        escapeKeyBehavior='none'
-        onSelectionChange={state.setSelectedKeys}
-        className={styles.listBox}
-        items={state.collection}
-      >
-        {item =>
-          item.type === 'section' ? (
-            <Section
-              key={item.key}
-              section={item}
-              state={state}
-            />
-          ) : (
-            <Option
-              key={item.key}
-              item={item}
-              state={state}
-            />
-          )
-        }
-      </ListBox>
-    </Virtualizer>
-  )
-}
+export const SelectListBox = <T extends object>({
+  state,
+  ...rest
+}: ListBoxProps<T>) => (
+  <ListBox
+    {...rest}
+    {...state}
+    escapeKeyBehavior='none'
+    onSelectionChange={state.setSelectedKeys}
+    items={state.collection}
+  >
+    {item =>
+      item.type === 'section' ? (
+        <Section
+          section={item}
+          state={state}
+        />
+      ) : (
+        <Option
+          {...item}
+          key={item.key}
+          value={item.value || undefined}
+        >
+          {item.rendered}
+        </Option>
+      )
+    }
+  </ListBox>
+)

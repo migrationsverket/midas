@@ -1,7 +1,7 @@
 import {
   ComboBox,
   ComboBoxItem,
-  ComboBoxSelection,
+  ComboBoxSection,
   Item,
   Section,
 } from '@midas-ds/components'
@@ -74,7 +74,7 @@ export const SectionedExample = () => {
         },
       ]}
     >
-      {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+      {(section: Section<Item>) => <ComboBoxSection {...section} />}
     </ComboBox>
   )
 }

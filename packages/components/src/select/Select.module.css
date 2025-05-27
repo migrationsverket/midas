@@ -154,26 +154,10 @@
   }
 }
 
-/**
- * 1. Represents max ~5 options in the list.
- */
-.listBox {
-  max-height: 295px; /* 1 */
-  overflow-y: auto;
-  padding: 0;
-  margin: 0;
-
-  > div {
-    /* react aria fiddles with pointer events during scroll
-     * after a few scrolls the value sticks to "none" in our storybook
-     */
-    pointer-events: auto !important;
-  }
-}
-
 .listBoxItem {
   font-family: --font-family;
-  padding: 0 1rem;
+  padding: 1rem;
+  line-height: 1;
   background-color: --layer-01;
   cursor: pointer;
   color: --text-primary;
@@ -182,11 +166,6 @@
   flex-direction: row;
   margin-bottom: 0;
   transition: background-color 60ms;
-
-  span {
-    padding: 1rem 0;
-    line-height: 1;
-  }
 
   &:hover {
     background-color: --layer-hover-01;
@@ -198,29 +177,6 @@
   }
 }
 
-.listBoxItemSelected {
-  background-color: --layer-selected-01;
-
-  &:hover {
-    background-color: --layer-selected-hover-01;
-    transition-delay: 60ms;
-  }
-
-  &.listBoxItemDisabled {
-    color: --text-disabled;
-  }
-}
-
-.listBoxItemDisabled {
-  color: --text-disabled;
-  cursor: not-allowed;
-}
-
-.listBoxItemFocused {
-  outline: none;
-}
-
-.listBoxItemFocusVisible,
 .listItemfocusRing {
   box-shadow: --focus-inset;
   outline: none;
@@ -298,13 +254,6 @@
   }
 }
 
-.selectSectionHeading {
-  font-family: --font-family;
-  display: block;
-  padding: 1rem 1rem 0.5rem;
-  font-weight: 500;
-}
-
 .fieldError {
   color: --text-warning;
   grid-area: Error;
@@ -338,10 +287,6 @@
 @media (forced-colors: active) {
   [data-invalid] .button {
     border: 5px solid Highlight !important;
-  }
-
-  .listBoxItemFocused {
-    border: 1px ButtonBorder solid;
   }
 
   .selectValueTag {

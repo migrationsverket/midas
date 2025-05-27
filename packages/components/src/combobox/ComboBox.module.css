@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-01, --layer-hover-01, --border-primary, --focus, --focus-inset, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-01, --layer-selected-hover-01, --support-border-warning, --font-family, --size-50, --size-70, --size-130, --size-150 from tokens;
+@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-01, --border-primary, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-hover-01, --support-border-warning, --font-family, --size-50, --size-70, --size-130, --size-150 from tokens;
 
 .combobox {
   font-family: --font-family;
@@ -106,68 +106,4 @@
   display: flex;
   align-items: center;
   transition: transform 0.3s ease;
-}
-
-.popover {
-  font-family: --font-family;
-  width: var(--trigger-width);
-  background: --layer-01;
-  overflow-y: auto;
-  box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
-
-  @media (forced-colors: active) {
-    border: 1px solid --border-primary;
-  }
-}
-
-.sectionHeading {
-  font-family: --font-family;
-  display: block;
-  padding: 1rem 1rem 0.5rem;
-  font-weight: 500;
-}
-
-/**
- * 1. Represents max ~5 options in the list.
- */
-.listBox {
-  max-height: 295px; /* 1 */
-  overflow-y: auto;
-  padding: 0;
-  margin: 0;
-
-  > div {
-    /* react aria fiddles with pointer events during scroll
-     * after a few scrolls the value sticks to "none" in our storybook
-     */
-    pointer-events: auto !important;
-  }
-}
-
-.listBoxItem {
-  margin: auto;
-  padding: 1rem;
-  background-color: --layer-01;
-  outline: none;
-  cursor: default;
-  color: --text-primary;
-  position: relative;
-
-  &[data-selected='true'] {
-    background: --layer-selected-01;
-
-    &:hover {
-      background-color: --layer-selected-hover-01;
-    }
-  }
-
-  &[data-focused='true'] {
-    background: --layer-hover-01;
-    box-shadow: --focus-inset;
-
-    @media (forced-colors: active) {
-      outline: 3px solid highlight;
-      outline-offset: -2px;
-    }
-  }
 }
