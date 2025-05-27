@@ -69,6 +69,10 @@ const toc = [{
   "id": "installation",
   "level": 2
 }, {
+  "value": "Client Side Routing",
+  "id": "client-side-routing",
+  "level": 2
+}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
@@ -133,6 +137,14 @@ function _createMdxContent(props) {
       language: "tsx",
       children: LinkButtonExamples
     }), "\n", (0,jsx_runtime.jsx)(Example, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "client-side-routing",
+      children: "Client Side Routing"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om hur du kan använda komponenten med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/dev/client-side-routing",
+        children: "Client Side Routing"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
