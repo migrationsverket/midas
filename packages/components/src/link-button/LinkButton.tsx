@@ -8,16 +8,35 @@ import {
   ChevronLeft,
   ChevronRight,
   LucideIcon,
-  SquareArrowOutUpRight
+  SquareArrowOutUpRight,
 } from 'lucide-react'
 
 interface MidasLinkProps<C extends React.ElementType> {
   children: React.ReactNode
+  /**
+   * Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label
+   *
+   * @default 'primary'
+   * */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
+  /**
+   * Adds width: 100%; for the button to span entire width of parent
+   *
+   * @default false
+   */
   fullwidth?: boolean
+  /** Display the icon on the left or right side of the button text */
+
   iconPlacement?: 'left' | 'right'
+  /** Add an icon from lucide-react
+   *
+   * @see {@link https://lucide.dev/icons/|Lucide}
+   */
   icon?: LucideIcon /**Optional icon prop */
   className?: string
+  /** Repace base component with any Client Side Routing link instead.
+   * @link https://designsystem.migrationsverket.se/dev/client-side-routing/
+   */
   as?: C
 }
 
@@ -81,7 +100,7 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
         variant === 'icon' && styles.iconBtn,
         fullwidth && styles.fullwidth,
         iconPlacement === 'left' && styles.iconLeft,
-        className
+        className,
       )}
       {...rest}
     >

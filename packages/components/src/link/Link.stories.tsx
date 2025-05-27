@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Link } from './Link'
-import { ArrowRight } from 'lucide-react'
+import { LaughIcon } from 'lucide-react'
 
 const meta: Meta<typeof Link> = {
   component: Link,
@@ -24,14 +24,30 @@ const r = (Math.random() + 1).toString(36).substring(7)
 export const Primary: Story = {
   args: {
     children: 'Länk',
-    icon: ArrowRight,
     href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
   },
 }
+
 export const PrimaryDisabled: Story = {
   args: {
     ...Primary.args,
     isDisabled: true,
+  },
+}
+
+export const ExternalLink: Story = {
+  args: {
+    ...Primary.args,
+    href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
+    target: '_blank',
+  },
+}
+
+export const DownloadLink: Story = {
+  args: {
+    ...Primary.args,
+    href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
+    download: true,
   },
 }
 
@@ -47,5 +63,28 @@ export const StandaloneDisabled: Story = {
   args: {
     ...Standalone.args,
     isDisabled: true,
+  },
+}
+
+export const ExternalLinkStandalone: Story = {
+  args: {
+    ...Standalone.args,
+    href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
+    target: '_blank',
+  },
+}
+
+export const DownloadLinkStandalone: Story = {
+  args: {
+    ...Standalone.args,
+    href: 'https://designsystem.migrationsverket.se/components/link/?v=' + r, // force not visible state
+    download: true,
+  },
+}
+
+export const CustomIcon: Story = {
+  args: {
+    ...Standalone.args,
+    icon: LaughIcon,
   },
 }

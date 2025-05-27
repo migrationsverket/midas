@@ -115,6 +115,50 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
   </div>
 </div>
 
+### Ny flik
+
+Om länken går till en annan URL än där besökaren för tillfället befinner sig bör länken öppnas i en ny flik. Detta görs genom att sätta `target='_blank'` på länken, detta förtydligas automatiskt i komponenten med en ikon.
+
+```tsx {3}
+<Link
+  href='#länk'
+  target='_blank'
+>
+  En länk till en annan URL
+</Link>
+```
+
+<div className='card'>
+  <Link
+    href='#länk'
+    target='_blank'
+  >
+    {'En länk till en annan URL'}
+  </Link>
+</div>
+
+### Nedladdning
+
+Även vid nedladdning förtydligas detta med en ikon. Detta görs genom att sätta `download` på länken.
+
+```tsx {3}
+<Link
+  href='#nedladdning'
+  download
+>
+  Ladda ned senaste rapporten
+</Link>
+```
+
+<div className='card'>
+  <Link
+    href='#nedladdning'
+    download
+  >
+    {'Ladda ned senaste rapporten'}
+  </Link>
+</div>
+
 ## Client Side Routing
 
 Läs mer om hur du kan använda komponenten med [Client Side Routing](/dev/client-side-routing).

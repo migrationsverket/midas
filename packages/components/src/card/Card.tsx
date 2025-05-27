@@ -26,6 +26,9 @@ export interface MidasCardImage {
 
 interface MidasCardLink<C extends React.ElementType> {
   children: React.ReactNode
+  /** Repace base component with any Client Side Routing link instead.
+   * @link https://designsystem.migrationsverket.se/dev/client-side-routing/
+   */
   as?: C
 }
 
