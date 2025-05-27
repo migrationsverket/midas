@@ -31,7 +31,7 @@ var TabItem = __webpack_require__(79329);
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 ;// ./packages/components/src/combobox/ComboBox.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const ComboBox_module = ({"tokens":"\"../theme/tokens.css\"","--icon-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--layer-01":"light-dark(#f2f2f2, #262626)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-disabled":"light-dark(#f2f2f2, #262626)","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--icon-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--font-family":"\"Inter\", sans-serif","--size-50":"0.625rem","--size-70":"0.875rem","--size-130":"2.5rem","--size-150":"3rem","combobox":"combobox_kSJb","inputField":"inputField_oWSg","medium":"medium_ptka","text":"text_ngKo","wrap":"wrap_JKDx","button":"button_yH32","icon":"icon_C34F","popover":"popover_OCYC"});
+/* harmony default export */ const ComboBox_module = ({"tokens":"\"../theme/tokens.css\"","--icon-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--layer-01":"light-dark(#f2f2f2, #262626)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-disabled":"light-dark(#f2f2f2, #262626)","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--icon-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--font-family":"\"Inter\", sans-serif","--size-50":"0.625rem","--size-70":"0.875rem","--size-130":"2.5rem","--size-150":"3rem","combobox":"combobox_kSJb","inputField":"inputField_oWSg","medium":"medium_ptka","text":"text_ngKo","wrap":"wrap_JKDx","button":"button_yH32","icon":"icon_C34F"});
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ComboBox.mjs + 37 modules
@@ -40,8 +40,6 @@ var ComboBox = __webpack_require__(20050);
 var Input = __webpack_require__(79950);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
 var Button = __webpack_require__(65014);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Popover.mjs + 1 modules
-var Popover = __webpack_require__(21416);
 // EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
 var CollectionBuilder = __webpack_require__(41177);
 // EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
@@ -54,6 +52,8 @@ var Label = __webpack_require__(20143);
 var Text = __webpack_require__(93361);
 // EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
 var FieldError = __webpack_require__(80554);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
+var ListBoxPopover = __webpack_require__(42468);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.tsx + 1 modules
 var ListBox = __webpack_require__(41075);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxItem.tsx
@@ -61,7 +61,7 @@ var ListBoxItem = __webpack_require__(99498);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
 var ListBoxSection = __webpack_require__(59074);
 ;// ./packages/components/src/combobox/ComboBox.tsx
-'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className)},props,{children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx))}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{className:ComboBox_module.popover,offset:0,children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},props));}/**
+'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className)},props,{children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx))}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxPopover/* ListBoxPopover */.f,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},props));}/**
  * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
  */function ComboBoxSelection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:props.children,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{children:item.name},item.id);}})}));}function ComboBoxSection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSelection,Object.assign({},props));}
 ;// ./apps/docs/src/components/examples/combobox/ComboboxExamples.tsx
@@ -606,6 +606,22 @@ var _excluded=["children","className"];var ListBoxItem=function ListBoxItem(_ref
 
 /***/ }),
 
+/***/ 42468:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   f: () => (/* binding */ ListBoxPopover)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(21416);
+/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93587);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["className","children"];var ListBoxPopover=function ListBoxPopover(_ref){var className=_ref.className,children=_ref.children,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .Popover */ .A,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(className,_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxPopover),offset:0},rest,{children:children}));};
+
+/***/ }),
+
 /***/ 59074:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -730,7 +746,7 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 /* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--focus-inset":"inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--layer-selected-01":"light-dark(#d9d9d9, #383838)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--size-40":"0.5rem","--size-80":"1rem","--size-150":"3rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","listBox":"listBox_l3jg","listBoxSectionHeading":"listBoxSectionHeading_R5mH","listBoxItem":"listBoxItem_eA9_"});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--border-primary":"light-dark(#171717, #f2f2f2)","--focus-inset":"inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--layer-selected-01":"light-dark(#d9d9d9, #383838)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--size-40":"0.5rem","--size-80":"1rem","--size-150":"3rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","listBox":"listBox_l3jg","listBoxPopover":"listBoxPopover_OG2Y","listBoxSectionHeading":"listBoxSectionHeading_R5mH","listBoxItem":"listBoxItem_eA9_"});
 
 /***/ })
 

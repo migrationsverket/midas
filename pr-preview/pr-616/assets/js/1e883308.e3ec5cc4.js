@@ -654,8 +654,8 @@ var clsx = __webpack_require__(34164);
 /* harmony default export */ const Tooltip_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--background-inverse":"light-dark(#171717, #f2f2f2)","--text-inverse":"light-dark(#f2f2f2, #171717)","tooltip":"tooltip_L2zx","arrow":"arrow_bl7N"});
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Tooltip.mjs + 3 modules
-var Tooltip = __webpack_require__(39013);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Tooltip.mjs + 4 modules
+var Tooltip = __webpack_require__(9741);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/OverlayArrow.mjs
 var OverlayArrow = __webpack_require__(45745);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js

@@ -6696,21 +6696,6 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
   transition: transform 0.3s ease;
 }
 
-.popover_OCYC {
-  font-family: "Inter", sans-serif;
-  width: var(--trigger-width);
-  background: light-dark(#f2f2f2, #262626);
-  overflow-y: auto;
-  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
-}
-
-@media (forced-colors: active) {
-
-.popover_OCYC {
-    border: 1px solid light-dark(#171717, #f2f2f2);
-}
-  }
-
 @keyframes wave_h9Fk {
   0% {
     transform: translateX(-100%);
@@ -10209,6 +10194,21 @@ CSS variables, meant to be overridden by final theme
      * after a few scrolls the value sticks to "none" in our storybook
      */
     pointer-events: auto !important;
+  }
+
+.listBoxPopover_OG2Y {
+  font-family: "Inter", sans-serif;
+  width: var(--trigger-width);
+  background: light-dark(#f2f2f2, #262626);
+  overflow-y: auto;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (forced-colors: active) {
+
+.listBoxPopover_OG2Y {
+    border: 1px solid light-dark(#171717, #f2f2f2);
+}
   }
 
 .listBoxSectionHeading_R5mH {
