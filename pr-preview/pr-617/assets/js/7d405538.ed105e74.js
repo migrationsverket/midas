@@ -261,9 +261,9 @@ function _createMdxContent(props) {
       id: "ny-flik",
       children: "Ny flik"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om länken går till en annan URL än där besökaren för tillfället befinner sig bör länken öppnas i en ny flik. Detta görs genom att sätta ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Om en länk är satt till att öppnas i en ny flik förtydligas detta med en ikon. Detta görs genom att sätta ", (0,jsx_runtime.jsx)(_components.code, {
         children: "target='_blank'"
-      }), " på länken, detta förtydligas automatiskt i komponenten med en ikon."]
+      }), " på länken."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
