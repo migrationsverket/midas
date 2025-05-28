@@ -3587,7 +3587,7 @@ html[data-theme='dark'] {
 
 .theme-code-block {
   box-shadow: none !important;
-  border: 1px solid var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-200);
   max-height: 600px;
   overflow-y: auto;
 }
@@ -3620,7 +3620,7 @@ html[data-theme='dark'] {
   border-radius: 2px;
   margin-bottom: var(--ifm-leading);
   box-shadow: none !important;
-  border: 1px solid var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-200);
   max-height: 600px;
   overflow-y: auto;
 }
@@ -3645,7 +3645,7 @@ table td {
   border-radius: 2px;
   margin-bottom: var(--ifm-leading);
   box-shadow: none !important;
-  border: 1px solid var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-200);
   display: flex;
   flex-direction: column;
   gap: 8px;
