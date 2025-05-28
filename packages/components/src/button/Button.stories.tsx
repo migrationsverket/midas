@@ -40,15 +40,22 @@ type Story = StoryObj<typeof Button>
 export const Primary: Story = {
   args: {
     children: 'Button',
+    className: 'test-class',
   },
-
-  play: async ({ canvas }) => {
-    const button = canvas.getByRole('button')
-    await userEvent.click(button)
-    await expect(button).toBeEnabled()
-    button.focus()
-    await userEvent.keyboard('{Enter}')
-    await expect(button).toHaveFocus()
+  play: async ({ canvas, step, globals: { size } }) => {
+    await step('it should have focus when clicked', async () => {
+      const button = canvas.getByRole('button')
+      await userEvent.click(button)
+      await expect(button).toBeEnabled()
+      button.focus()
+      await userEvent.keyboard('{Enter}')
+      await expect(button).toHaveFocus()
+    })
+    await step('it should change size according to size prop', async () => {
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: size === 'large' ? '48px' : '40px',
+      })
+    })
   },
 }
 
