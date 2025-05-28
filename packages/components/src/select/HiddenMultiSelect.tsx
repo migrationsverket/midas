@@ -112,7 +112,8 @@ export function useHiddenMultiSelect<T>(
  * form autofill, mobile form navigation, and native form submission.
  */
 export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
-  const { state, triggerRef, label, name, isDisabled } = props
+  const { state, triggerRef, name, isDisabled } = props
+  const label = `${props.label}-hidden`
   const selectRef = useRef(null)
   const { containerProps, selectProps } = useHiddenMultiSelect(
     { ...props, selectRef },
