@@ -35,16 +35,16 @@
   font-weight: 500;
 }
 
-.listBoxItemFocusRing {
-  box-shadow: --focus-inset;
-  outline: none;
-}
-
 .listBoxButton {
   all: unset;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 2px !important;
+
+  &:focus-visible {
+    box-shadow: --focus-inset;
+    outline: none;
+  }
 }
 
 .listBoxItem {

@@ -30,6 +30,7 @@ const Option = <T extends object>({
               isDisabled={isDisabled}
               isSelected={isSelected}
               isReadOnly
+              excludeFromTabOrder
             />
           </div>
         ) : null}
