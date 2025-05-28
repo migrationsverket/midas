@@ -39,7 +39,7 @@
   --ifm-menu-color-active: var(--ifm-navbar-link-active-color);
   --ifm-code-font-size: 85%;
   --ifm-font-family-monospace: 'Fira Code', monospace;
-  --ifm-code-border-radius: 0;
+  --ifm-code-border-radius: 2px;
   --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
   --ifm-font-family-base: 'Inter', sans-serif;
   --ifm-font-size-base: 1rem;
@@ -55,13 +55,7 @@
   --search-local-highlight-color: #25607f;
   --ifm-link-color: #2e7ca5;
   --ifm-link-hover-color: #143c50;
-}
-
-.docs-card {
-  padding: var(--ifm-pre-padding);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  box-shadow: var(--ifm-global-shadow-lw);
-  margin-bottom: 1rem;
+  --ifm-code-background: #fafafa;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -88,11 +82,12 @@
   --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
   --ifm-card-background-color: #000;
-  --ifm-code-background: #313131;
+  --ifm-code-background: var(--ifm-background-color);
 }
 
 .theme-code-block {
   box-shadow: none !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
   max-height: 600px;
   overflow-y: auto;
 }
@@ -105,6 +100,13 @@
 .theme-code-block:has(+ .card) {
   margin-bottom: 0;
   border-bottom-width: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.theme-code-block + .card {
+  border-radius: 0 0 2px 2px;
+  border-top-width: 0;
 }
 
 .theme-code-block:has(+ .theme-code-block) {
@@ -113,10 +115,11 @@
 
 .card {
   position: relative;
-  padding: 1rem;
-  border-radius: 0;
+  padding: 2rem 3rem;
+  border-radius: 2px;
   margin-bottom: var(--ifm-leading);
   box-shadow: none !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
   max-height: 600px;
   overflow-y: auto;
 
@@ -138,9 +141,10 @@ table td {
 .card-guidelines {
   position: relative;
   padding: 1rem;
-  border-radius: 0;
+  border-radius: 2px;
   margin-bottom: var(--ifm-leading);
   box-shadow: none !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -407,6 +411,7 @@ html[data-theme='dark'] .navbar--github-link::before {
 
 .no-margin-children {
   margin-bottom: 1rem;
+
   p {
     margin-bottom: 0;
     white-space: wrap;

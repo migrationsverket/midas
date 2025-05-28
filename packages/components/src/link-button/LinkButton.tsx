@@ -8,8 +8,10 @@ import {
   ChevronLeft,
   ChevronRight,
   LucideIcon,
+  LucideProps,
   SquareArrowOutUpRight,
 } from 'lucide-react'
+import { Size } from '../common/types'
 
 interface MidasLinkProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -38,6 +40,10 @@ interface MidasLinkProps<C extends React.ElementType> {
    * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
    */
   as?: C
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   **/
+  size?: Size
 }
 
 export type LinkButtonProps<C extends React.ElementType> = MidasLinkProps<C> &
@@ -54,40 +60,17 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
   iconPlacement,
   className,
   as,
+  size = 'large',
   ...rest
 }: LinkButtonProps<C>) => {
   const Component = as || AriaLink
 
-  const Icon = () => {
-    if (IconComponent)
-      return (
-        <IconComponent
-          size={20}
-          className={styles.icon}
-        />
-      )
+  const Icon = ({ ...rest }: LucideProps) => {
+    if (IconComponent) return <IconComponent {...rest} />
+    if (rest.target === '_blank') return <SquareArrowOutUpRight {...rest} />
+    if (iconPlacement === 'left') return <ChevronLeft {...rest} />
 
-    if (rest.target === '_blank')
-      return (
-        <SquareArrowOutUpRight
-          size={20}
-          className={styles.icon}
-        />
-      )
-    if (iconPlacement === 'left')
-      return (
-        <ChevronLeft
-          size={20}
-          className={styles.icon}
-        />
-      )
-
-    return (
-      <ChevronRight
-        size={20}
-        className={styles.icon}
-      />
-    )
+    return <ChevronRight {...rest} />
   }
   return (
     <Component
@@ -98,6 +81,7 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
         variant === 'tertiary' && styles.tertiary,
         variant === 'danger' && styles.danger,
         variant === 'icon' && styles.iconBtn,
+        size === 'medium' && styles.medium,
         fullwidth && styles.fullwidth,
         iconPlacement === 'left' && styles.iconLeft,
         className,
@@ -105,7 +89,10 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
       {...rest}
     >
       {children}
-      <Icon />
+      <Icon
+        size={20}
+        className={styles.icon}
+      />
     </Component>
   )
 }
