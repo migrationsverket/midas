@@ -61,7 +61,7 @@ const assets = {
 const TokenGroup = ({children}) => {
   return (0,jsx_runtime.jsx)(Flex/* Flex */.s, {
     fluid: true,
-    className: "docs-card",
+    className: "card-guidelines",
     children: children
   });
 };
@@ -165,7 +165,7 @@ const ColorSpectrum = () => {
 };
 const SemanticTokens = () => {
   return (0,jsx_runtime.jsxs)(Flex/* Flex */.s, {
-    className: "docs-card",
+    className: "card-guidelines",
     children: [(0,jsx_runtime.jsxs)(FlexItem/* FlexItem */.Z, {
       col: 12,
       children: [(0,jsx_runtime.jsx)(Text/* Text */.E, {
@@ -199,7 +199,7 @@ const SemanticTokens = () => {
 const Layers = () => {
   return (0,jsx_runtime.jsxs)(Flex/* Flex */.s, {
     fluid: true,
-    className: "docs-card",
+    className: "card-guidelines",
     children: [(0,jsx_runtime.jsx)(FlexItem/* FlexItem */.Z, {
       col: 6,
       style: {
@@ -270,7 +270,7 @@ const Layers = () => {
 };
 const TokenNaming = () => {
   return (0,jsx_runtime.jsx)("div", {
-    className: "docs-card",
+    className: "card-guidelines",
     children: (0,jsx_runtime.jsxs)("svg", {
       width: "100%",
       height: "100%",

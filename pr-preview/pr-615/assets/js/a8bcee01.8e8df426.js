@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-forms-mdx-a8b.json
-const site_docs_design_patterns_forms_mdx_a8b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/forms","title":"Formulär","description":"Obligatorisk vs valfri","source":"@site/docs/design-patterns/forms.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/forms","permalink":"/pr-preview/pr-615/design-patterns/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_design_patterns_forms_mdx_a8b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/forms","title":"Formulär","description":"Generella riktlinjer","source":"@site/docs/design-patterns/forms.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/forms","permalink":"/pr-preview/pr-615/design-patterns/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -46,29 +46,25 @@ const assets = {
 
 
 const toc = [{
+  "value": "Generella riktlinjer",
+  "id": "generella-riktlinjer",
+  "level": 2
+}, {
+  "value": "Håll nere antalet distraktioner",
+  "id": "håll-nere-antalet-distraktioner",
+  "level": 3
+}, {
+  "value": "Ställ bara frågor vi måste ha svar på",
+  "id": "ställ-bara-frågor-vi-måste-ha-svar-på",
+  "level": 3
+}, {
+  "value": "Struktur",
+  "id": "struktur",
+  "level": 3
+}, {
   "value": "Obligatorisk vs valfri",
   "id": "obligatorisk-vs-valfri",
   "level": 2
-}, {
-  "value": "Undantag 1: Valfria fält är fler än de obligatoriska",
-  "id": "undantag-1-valfria-fält-är-fler-än-de-obligatoriska",
-  "level": 3
-}, {
-  "value": "Undantag 2: Valfria fält och obligatoriska fält är (ungefär) lika många",
-  "id": "undantag-2-valfria-fält-och-obligatoriska-fält-är-ungefär-lika-många",
-  "level": 3
-}, {
-  "value": "Position av felmeddelande",
-  "id": "position-av-felmeddelande",
-  "level": 2
-}, {
-  "value": "Standard",
-  "id": "standard",
-  "level": 3
-}, {
-  "value": "Felmeddelande under element",
-  "id": "felmeddelande-under-element",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -77,8 +73,9 @@ function _createMdxContent(props) {
     h2: "h2",
     h3: "h3",
     header: "header",
+    li: "li",
     p: "p",
-    pre: "pre",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
@@ -89,17 +86,62 @@ function _createMdxContent(props) {
         children: "Formulär"
       })
     }), "\n", "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "generella-riktlinjer",
+      children: "Generella riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Huvudsyftet med ett frågeformulär är att samla in den information vi behöver från användaren. Vi måste därför utforma formulären så att användarna har möjlighet att besvara frågorna på rätt sätt."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "håll-nere-antalet-distraktioner",
+      children: "Håll nere antalet distraktioner"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Validera bara enligt våra valideringsprinciper"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Undvik distraktioner, t.ex. grafik eller information, som inte har med frågan att göra."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Markera inte frågor som är obligatoriska förutsatt att större delen av frågorna är obligatoriska (se Obligatorisk vs valfri nedan)."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "ställ-bara-frågor-vi-måste-ha-svar-på",
+      children: "Ställ bara frågor vi måste ha svar på"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Be bara om information vi behöver för att ta ett korrekt och rättvist beslut."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Ställ inte samma fråga flera gånger."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Ställ inte frågor vi redan har svar på eller som vi kan få svar på från andra källor."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Förklara varför vi ställer specifika frågor."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "struktur",
+      children: "Struktur"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Gruppera frågor som är relaterade till varandra, antingen på samma sida eller över flera sidor."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Placera inmatningsfält i en vertikal kolumn."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Använd en logisk struktur för vilken ordning frågorna ställs."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Använd logisk struktur hur information som användaren ska lämna skrivs in. Följ konventioner för exempelvis personnummer/datum/kreditkortsuppgifter."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Undvik platshållare i inmatningsfält. Instruktioner för vad som ska skrivas in ska framgå av frågan som ställs, informationstext eller etiketten."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Beskriv format eller andra inmatningsinstruktioner om det behövs."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Välj längd på och typ av inmatningsfält baserat på informationen användaren förväntas skriva in."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Undvik funktionalitet som tömmer ett formulär eller en formulärsida."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "obligatorisk-vs-valfri",
       children: "Obligatorisk vs valfri"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.\nFöljer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten ", (0,jsx_runtime.jsx)(_components.code, {
         children: "”(valfritt)”"
       }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-jsx",
-        children: "<TextField\n  label=\"Fullständigt namn\"\n  description=\"För och efternamn\"\n  isRequired\n  errorMessage=\"Detta är ett obligatoriskt fält\"\n/>\n<TextField\n  label=\"Favoritfrukter (Valfritt)\"\n  description=\"Kan lämnas tomt\"\n/>\n"
-      })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
       children: (0,jsx_runtime.jsxs)(Flex/* Flex */.s, {
@@ -118,60 +160,6 @@ function _createMdxContent(props) {
             description: "Kan lämnas tomt"
           })
         })]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "undantag-1-valfria-fält-är-fler-än-de-obligatoriska",
-      children: "Undantag 1: Valfria fält är fler än de obligatoriska"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Markera obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält markeras med en asterisk."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "undantag-2-valfria-fält-och-obligatoriska-fält-är-ungefär-lika-många",
-      children: "Undantag 2: Valfria fält och obligatoriska fält är (ungefär) lika många"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Markera valfria fält med ”(valfritt)” och obligatoriska fält med svart asterisk och informera över formuläret att obligatoriska fält\nmarkeras med en asterisk."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "position-av-felmeddelande",
-      children: "Position av felmeddelande"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "standard",
-      children: "Standard"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Som standard visas eventuella felmeddelanden ovanför våra formulärelement."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-jsx",
-        children: "<TextField\n  label='Skriv ditt fullständiga namn'\n  description='Både för och efternamn'\n  isRequired\n  errorMessage='Detta är ett obligatoriskt fält'\n/>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
-        label: "Skriv ditt fullständiga namn",
-        description: "Både för och efternamn",
-        isInvalid: true,
-        errorMessage: "Detta är ett obligatoriskt fält"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "felmeddelande-under-element",
-      children: "Felmeddelande under element"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att visa felmeddelanden under elementet använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "errorPosition"
-      }), " med värdet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "bottom"
-      }), ", attributet accepteras av samtliga formulärkomponenter."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-jsx",
-        children: "<TextField\n  label='Skriv ditt fullständiga namn'\n  description='Både för och efternamn'\n  // highlight-start\n  errorPosition='bottom'\n  // highlight-end\n  isRequired\n  errorMessage='Detta är ett obligatoriskt fält'\n/>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
-        label: "Skriv ditt fullständiga namn",
-        description: "Både för och efternamn",
-        isInvalid: true,
-        errorPosition: "bottom",
-        errorMessage: "Detta är ett obligatoriskt fält"
       })
     })]
   });
