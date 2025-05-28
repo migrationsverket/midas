@@ -243,7 +243,7 @@
 
 /* Button */
 @value --button-background-primary: light-dark(--blue-150, --blue-100);
-@value --button-background-primary-hover: light-dark(--blue-130, --blue-140);
+@value --button-background-primary-hover: light-dark(--blue-130, --blue-130);
 @value --button-background-primary-active: light-dark(--blue-100, --blue-150);
 @value --button-background-secondary: light-dark(--white, --gray-200);
 @value --button-background-secondary-hover: light-dark(--white-hover, --gray-190);
