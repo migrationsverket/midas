@@ -50,13 +50,12 @@
   .calendarButton {
     border: none;
     margin-left: auto;
-    height: --size-150;
+    height: calc(--size-150 - 1px);
     padding-right: 1rem;
     padding-left: 1rem;
     color: --icon-primary;
     background-color: --field-01;
     cursor: pointer;
-    border-bottom: 1px solid --border-primary;
 
     &.medium {
       height: --size-130;
