@@ -1,29 +1,9 @@
-import { ListState, useListState } from '@react-stately/list'
-import {
-  Key,
-  CollectionBase,
-  MultipleSelection,
-  Node,
-} from '@react-types/shared'
-export interface MultiSelectListProps<T>
-  extends CollectionBase<T>,
-    MultipleSelection {}
+import { useListState } from '@react-stately/list'
+import type { Key, Node } from '@react-types/shared'
+import type { MultiSelectListProps, MultiSelectListState } from './types'
+import { ListBoxOption } from '../list-box'
 
-export interface MultiSelectListState<T> extends ListState<T> {
-  /** The keys for the currently selected items. */
-  selectedKeys: Set<Key>
-
-  /** Sets the selected keys. */
-  setSelectedKeys(keys: Iterable<Key>): void
-
-  /** The value of the currently selected items. */
-  selectedItems: Node<T>[] | null
-
-  /** The type of selection. */
-  selectionMode: MultipleSelection['selectionMode']
-}
-
-export function useMultiSelectListState<T extends object>(
+export function useMultiSelectListState<T extends ListBoxOption>(
   props: MultiSelectListProps<T>,
 ): MultiSelectListState<T> {
   const {
@@ -47,12 +27,10 @@ export function useMultiSelectListState<T extends object>(
 
             return item
           })
-          // Remove undefined values when some keys are not present in the collection
           .filter(Boolean) as Node<T>[])
       : null
 
   if (missingKeys.length) {
-    // eslint-disable-next-line no-console
     console.warn(
       `Select: Keys "${missingKeys.join(
         ', ',

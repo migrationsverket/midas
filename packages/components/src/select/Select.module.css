@@ -18,12 +18,12 @@
   }
 }
 
-.button {
+.trigger {
   align-items: center;
   background-color: --field-01;
+  border: none;
   border-bottom: 1px solid --border-primary;
   border-radius: 0;
-  border: none;
   color: --text-primary;
   display: flex;
   font-size: --font-size-30;
@@ -95,7 +95,7 @@
   align-self: center;
 }
 
-.buttonContainer {
+.triggerContainer {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -173,7 +173,7 @@
 }
 
 @media (forced-colors: active) {
-  [data-invalid] .button {
+  [data-invalid] .trigger {
     border: 5px solid Highlight !important;
   }
 
@@ -181,7 +181,7 @@
     border: ButtonBorder solid;
   }
 
-  .button,
+  .trigger,
   .clearButton {
     border: Highlight 1px solid;
   }

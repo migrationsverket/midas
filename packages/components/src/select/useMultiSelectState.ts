@@ -1,55 +1,12 @@
-import { MenuTriggerState, useMenuTriggerState } from '@react-stately/menu'
-import { useEffect, useState } from 'react'
-import {
-  MultiSelectListState,
-  useMultiSelectListState,
-} from './useMultiSelectListState'
-import type { OverlayTriggerProps } from '@react-types/overlays'
-import type {
-  AsyncLoadable,
-  CollectionBase,
-  FocusableProps,
-  InputBase,
-  LabelableProps,
-  MultipleSelection,
-  TextInputBase,
-  Validation,
-} from '@react-types/shared'
-import {
-  useFormValidationState,
-  type FormValidationState,
-} from '@react-stately/form'
+import { useCallback, useEffect, useState } from 'react'
+import { useMenuTriggerState } from '@react-stately/menu'
+import { useFormValidationState } from '@react-stately/form'
+import { useMultiSelectListState } from './useMultiSelectListState'
+import type { MultiSelectState, MultiSelectStateProps } from './types'
+import { ListBoxOption } from '../list-box'
 
-export interface MultiSelectProps<T>
-  extends CollectionBase<T>,
-    AsyncLoadable,
-    Omit<InputBase, 'isReadOnly'>,
-    Validation,
-    LabelableProps,
-    TextInputBase,
-    MultipleSelection,
-    FocusableProps,
-    OverlayTriggerProps {
-  /**
-   * Whether the menu should automatically flip direction when space is limited.
-   * @default true
-   */
-  shouldFlip?: boolean
-}
-
-export interface MultiSelectState<T>
-  extends MultiSelectListState<T>,
-    MenuTriggerState,
-    FormValidationState {
-  /** Whether the select is currently focused. */
-  isFocused: boolean
-
-  /** Sets whether the select is focused. */
-  setFocused(isFocused: boolean): void
-}
-
-export function useMultiSelectState<T extends object>(
-  props: MultiSelectProps<T>,
+export function useMultiSelectState<T extends ListBoxOption>(
+  props: MultiSelectStateProps<T>,
 ): MultiSelectState<T> {
   const [isFocused, setFocused] = useState(false)
 
@@ -77,13 +34,16 @@ export function useMultiSelectState<T extends object>(
   const isCollectionEmpty = multiSelectListState.collection.size === 0
   const isAnyKeySelected = !!multiSelectListState.selectedKeys.size
 
-  // Reset validation for single selects when the selected key changes.
+  const resetValidation = useCallback(() => {
+    validationState.resetValidation()
+    validationState.commitValidation()
+  }, [validationState])
+
   useEffect(() => {
     if (isSingleSelect && isAnyKeySelected) {
-      validationState.resetValidation()
-      validationState.commitValidation()
+      resetValidation()
     }
-  }, [isAnyKeySelected, isSingleSelect, validationState])
+  }, [isAnyKeySelected, isSingleSelect, resetValidation])
 
   return {
     ...multiSelectListState,
@@ -91,12 +51,10 @@ export function useMultiSelectState<T extends object>(
     close() {
       triggerState.close()
       if (isAnyKeySelected) {
-        validationState.resetValidation()
-        validationState.commitValidation()
+        resetValidation()
       }
     },
     open() {
-      // Don't open if the collection is empty.
       if (!isCollectionEmpty) {
         triggerState.open()
       }

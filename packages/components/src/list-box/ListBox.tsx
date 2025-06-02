@@ -5,9 +5,11 @@ import {
 } from 'react-aria-components'
 import clsx from 'clsx'
 import { SectionedListLayout } from './SectionedListLayout'
+import { ListBoxOption } from './types'
+import type { Node } from '@react-types/shared'
 import styles from './ListBox.module.css'
 
-export const ListBox = <T extends object>({
+export const ListBox = <T extends ListBoxOption | Node<ListBoxOption>>({
   className,
   children,
   ...rest
