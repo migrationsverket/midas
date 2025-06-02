@@ -17,6 +17,10 @@ export type ListBoxItemElement = {
 export type ListBoxSectionElement = {
   children: ListBoxItemElement[]
   name: string
+  /**
+   * Additional properties for backwards compatibility.
+   */
+  [prop: string]: unknown
 }
 
 export type ListBoxOption = ListBoxItemElement | ListBoxSectionElement

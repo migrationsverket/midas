@@ -120,7 +120,12 @@ return (
     description='Du kan bara välja en'
     items={options}
   >
-    {section => <ComboBoxSection {...section} />}
+    {section => (
+      <ComboBoxSection
+        {...section}
+        id={section.name}
+      />
+    )}
   </ComboBox>
 )
 ```
