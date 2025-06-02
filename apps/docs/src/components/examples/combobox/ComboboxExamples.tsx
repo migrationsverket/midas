@@ -66,7 +66,12 @@ export const SectionedExample = () => {
         },
       ]}
     >
-      {section => <ComboBoxSection {...section} />}
+      {section => (
+        <ComboBoxSection
+          {...section}
+          id={section.name}
+        />
+      )}
     </ComboBox>
   )
 }

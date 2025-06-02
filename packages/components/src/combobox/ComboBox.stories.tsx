@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ComboBox, ComboBoxItem, ComboBoxSection } from './ComboBox'
 import { generateMockOptions, optionsWithSections } from './utils'
-import { Item, Section } from './types'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import styles from './ComboBox.module.css'
 import { sizeModes } from '../../.storybook/modes'
 import React from 'react'
+import type { ListBoxSectionElement } from '../list-box'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -40,7 +40,7 @@ const meta: Meta<typeof ComboBox> = {
 
 export default meta
 
-type Story = StoryObj<typeof ComboBox<Item>>
+type Story = StoryObj<typeof ComboBox>
 
 const options = generateMockOptions(30)
 
@@ -58,7 +58,7 @@ export const Default: Story = {
       {...args}
       size={size}
     >
-      {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      {item => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
   play: async ({ canvas, step, globals: { size } }) => {
@@ -194,9 +194,13 @@ export const CustomErrorMessage: Story = {
   },
 }
 
-export const Sectioned: Story = {
+// The generic type is infered from the items prop in real life
+export const Sectioned: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
   args: {
-    ...Default.args,
+    placeholder: 'Välj eller sök frukt',
+    label: 'Välj en frukt',
+    description: 'Description',
+    className: 'test',
     items: optionsWithSections,
   },
   render: (args, { globals: { size } }) => (
@@ -204,7 +208,12 @@ export const Sectioned: Story = {
       {...args}
       size={size}
     >
-      {(section: Section<Item>) => <ComboBoxSection {...section} />}
+      {section => (
+        <ComboBoxSection
+          {...section}
+          id={section.name}
+        />
+      )}
     </ComboBox>
   ),
 }
