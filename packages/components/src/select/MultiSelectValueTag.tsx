@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { X } from 'lucide-react'
-import { MultiSelectState } from './useMultiSelectState'
-import type { Option, SelectProps } from './Select'
+import type { MultiSelectState, SelectProps } from './types'
 import styles from './Select.module.css'
+import { ListBoxOption } from '../list-box'
 
 interface MultiSelectValueTagProps extends SelectProps {
-  state: MultiSelectState<Option>
+  state: MultiSelectState<ListBoxOption>
   parentWidth: number
   onClear: () => void
   triggerRef: React.MutableRefObject<HTMLButtonElement | null>

@@ -2,44 +2,22 @@ import { useCollator } from 'react-aria'
 import { Key } from '@react-types/shared'
 import { setInteractionModality } from '@react-aria/interactions'
 import { useField } from 'react-aria'
-import { AriaListBoxOptions } from 'react-aria'
 import { useMenuTrigger } from '@react-aria/menu'
 import { ListKeyboardDelegate, useTypeSelect } from '@react-aria/selection'
 import { chain, filterDOMProps, mergeProps, useId } from '@react-aria/utils'
-import { FocusEvent, HTMLAttributes, RefObject, useMemo } from 'react'
-
+import { FocusEvent, RefObject, useMemo } from 'react'
 import type {
-  MultiSelectProps as MultiSelectStateProps,
+  MultiSelectDOMProps,
+  MultiSelectProps,
   MultiSelectState,
-} from './useMultiSelectState'
-import type { AriaButtonProps } from '@react-types/button'
-import type { AriaSelectProps } from '@react-types/select'
+} from './types'
+import { ListBoxOption } from '../list-box'
 
-type MultiSelectProps<T> = Omit<AriaSelectProps<T>, 'onSelectionChange'> & {
-  disallowEmptySelection?: boolean
-
-  onSelectionChange?: MultiSelectStateProps<T>['onSelectionChange']
-}
-
-interface MultiSelectAria<T> {
-  /** Props for the label element. */
-  labelProps: HTMLAttributes<HTMLElement>
-
-  /** Props for the popup trigger element. */
-  triggerProps: AriaButtonProps
-
-  /** Props for the element representing the selected value. */
-  valueProps: HTMLAttributes<HTMLElement>
-
-  /** Props for the popup. */
-  menuProps: AriaListBoxOptions<T>
-}
-
-export function useMultiSelect<T>(
+export function useMultiSelect<T extends ListBoxOption>(
   props: MultiSelectProps<T>,
   state: MultiSelectState<T>,
   ref: RefObject<HTMLElement>,
-): MultiSelectAria<T> {
+): MultiSelectDOMProps<T> {
   const { disallowEmptySelection, isDisabled } = props
 
   const collator = useCollator({ usage: 'search', sensitivity: 'base' })

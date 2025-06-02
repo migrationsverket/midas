@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { FieldErrorContext } from 'react-aria-components'
 import { FieldError } from '../field-error'
-import { Option, SelectProps } from './Select'
-import { MultiSelectState } from './useMultiSelectState'
+import { ListBoxOption } from '../list-box'
+import type { MultiSelectState, SelectProps } from './types'
 
 interface SelectFieldErrorProps extends SelectProps {
-  state: MultiSelectState<Option>
+  state: MultiSelectState<ListBoxOption>
 }
 
 export const SelectFieldError: React.FC<SelectFieldErrorProps> = ({

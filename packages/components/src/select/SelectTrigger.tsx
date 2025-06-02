@@ -2,14 +2,14 @@ import React from 'react'
 import { AriaButtonProps, useButton } from 'react-aria'
 import clsx from 'clsx'
 import { ChevronDown } from 'lucide-react'
-import { Option, SelectProps } from './Select'
-import { MultiSelectState } from './useMultiSelectState'
+import type { SelectProps, MultiSelectState } from './types'
+import type { ListBoxOption } from '../list-box'
 import styles from './Select.module.css'
 
 interface SelectTriggerProps
   extends Omit<SelectProps, 'children'>,
     AriaButtonProps<'button'> {
-  state: MultiSelectState<Option>
+  state: MultiSelectState<ListBoxOption>
   triggerRef: React.MutableRefObject<HTMLButtonElement | null>
 }
 
@@ -36,13 +36,13 @@ export const SelectTrigger: React.FC<SelectTriggerProps> = ({
 
   return (
     <div
-      className={styles.buttonContainer}
+      className={styles.triggerContainer}
       data-disabled={isDisabled || undefined}
     >
       <button
         {...buttonProps}
         autoFocus={autoFocus}
-        className={clsx(styles.button, {
+        className={clsx(styles.trigger, {
           [styles.medium]: size === 'medium',
         })}
         data-disabled={isDisabled || undefined}
