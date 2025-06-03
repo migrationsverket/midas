@@ -9154,7 +9154,7 @@ CSS variables, meant to be overridden by final theme
 .inputField_luYV .calendarButton_dIzR {
     border: none;
     margin-left: auto;
-    height: calc(3rem - 1px);
+    height: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
     color: light-dark(#171717, #f2f2f2);
