@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4203],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5095],{
 
-/***/ 47535:
+/***/ 26645:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_logo_mdx_b9b_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_combobox_mdx_9b9_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-logo-mdx-b9b.json
-const site_docs_components_logo_mdx_b9b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/logo","title":"Logo","description":"Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet","source":"@site/docs/components/logo.mdx","sourceDirName":"components","slug":"/components/logo","permalink":"/pr-preview/pr-617/components/logo","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Logo","description":"Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-combobox-mdx-9b9.json
+const site_docs_components_combobox_mdx_9b9_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/combobox","title":"ComboBox","description":"Sökbar version av Select","source":"@site/docs/components/combobox.mdx","sourceDirName":"components","slug":"/components/combobox","permalink":"/pr-preview/pr-617/components/combobox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"ComboBox","description":"Sökbar version av Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -27,20 +27,55 @@ var lib = __webpack_require__(28453);
 var Tabs = __webpack_require__(65537);
 // EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TabItem/index.js + 1 modules
 var TabItem = __webpack_require__(79329);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/components/src/combobox/ComboBox.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const ComboBox_module = ({"tokens":"\"../theme/tokens.css\"","--icon-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--layer-01":"light-dark(#f2f2f2, #262626)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-disabled":"light-dark(#f2f2f2, #262626)","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--icon-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--font-family":"\"Inter\", sans-serif","--size-50":"0.625rem","--size-70":"0.875rem","--size-130":"2.5rem","--size-150":"3rem","combobox":"combobox_kSJb","inputField":"inputField_oWSg","medium":"medium_ptka","text":"text_ngKo","wrap":"wrap_JKDx","button":"button_yH32","icon":"icon_C34F"});
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ComboBox.mjs + 37 modules
+var ComboBox = __webpack_require__(20050);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
+var Button = __webpack_require__(65014);
+// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
+var CollectionBuilder = __webpack_require__(41177);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
+var chevron_down = __webpack_require__(75107);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(20143);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(93361);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(80554);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
+var ListBoxPopover = __webpack_require__(42468);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.tsx + 1 modules
+var ListBox = __webpack_require__(41075);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxItem.tsx
+var ListBoxItem = __webpack_require__(99498);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
+var ListBoxSection = __webpack_require__(59074);
+;// ./packages/components/src/combobox/ComboBox.tsx
+'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className)},props,{children:[label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx))}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxPopover/* ListBoxPopover */.f,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},props));}/**
+ * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
+ */function ComboBoxSelection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:props.children,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{children:item.name},item.id);}})}));}function ComboBoxSection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSelection,Object.assign({},props));}
+;// ./apps/docs/src/components/examples/combobox/ComboboxExamples.tsx
+var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Lime",children:"Lime"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"\xC4pple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Apelsin",children:"Apelsin"})]});};var ControlledExample=function ControlledExample(){var _React$useState=react.useState(null),selectedFruit=_React$useState[0],setSelectedFruit=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",selectedKey:selectedFruit,onSelectionChange:setSelectedFruit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Lime",children:"Lime"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"\xC4pple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Apelsin",children:"Apelsin"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{style:{marginTop:'1rem'},children:["Vald frukt: ",selectedFruit]})]});};var SectionedExample=function SectionedExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt eller gr\xF6nsak",description:"Du kan bara v\xE4lja en",items:[{name:'Grönsaker',id:123,children:[{name:'Morot',id:2},{name:'Broccoli',id:3},{name:'Spenat',id:4},{name:'Potatis',id:5},{name:'Tomat',id:6}]},{name:'Frukter',id:1234,children:[{name:'Äpple',id:11},{name:'Banan',id:12},{name:'Kiwi',id:13},{name:'Fläder',id:14},{name:'Nektarin',id:15}]}],children:function children(section){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSection,Object.assign({},section));}});};
 // EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
 var PropsTable = __webpack_require__(53797);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(32980);
-// EXTERNAL MODULE: ./packages/components/src/logo/Logo.tsx + 1 modules
-var Logo = __webpack_require__(17911);
-// EXTERNAL MODULE: ./packages/components/src/link/Link.tsx + 1 modules
-var Link = __webpack_require__(78815);
-;// ./apps/docs/docs/components/logo.mdx
+;// ./apps/docs/docs/components/combobox.mdx
 
 
 const frontMatter = {
-	title: 'Logo',
-	description: 'Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet',
+	title: 'ComboBox',
+	description: 'Sökbar version av Select',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -62,59 +97,65 @@ const toc = [{
   "id": "installation",
   "level": 2
 }, {
-  "value": "Varianter",
-  "id": "varianter",
+  "value": "Kontrollerat val",
+  "id": "kontrollerat-val",
   "level": 2
 }, {
-  "value": "X-small",
-  "id": "x-small",
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
   "level": 3
 }, {
-  "value": "Small",
-  "id": "small",
-  "level": 3
-}, {
-  "value": "Medium",
-  "id": "medium",
-  "level": 3
-}, {
-  "value": "Large",
-  "id": "large",
-  "level": 3
-}, {
-  "value": "Logotyp i SVG-format",
-  "id": "logotyp-i-svg-format",
+  "value": "Sektioner",
+  "id": "sektioner",
   "level": 2
 }, {
   "value": "API",
   "id": "api",
   "level": 2
+}, {
+  "value": "ComboBox",
+  "id": "combobox",
+  "level": 3
+}, {
+  "value": "ComboBoxItem",
+  "id": "comboboxitem",
+  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
+    li: "li",
     p: "p",
     pre: "pre",
+    strong: "strong",
+    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Logo",
-      friendlyName: "Logotyp",
-      overrideHeadlessLink: ""
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "På webbsida och e-tjänster ska Migrationsverkets officiella logotyp, den röda bron tillsammans med namnet, finnas."
+      name: "Combobox",
+      friendlyName: "Flerval med sök, väljare med sök, dropdown med sök",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/ComboBox.html"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["En ComboBox är en sökbar version av Select. Combobox används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
+        children: "ett"
+      }), " alternativ av fler än fyra (4) alternativ."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Logo />\n"
+        children: "<ComboBox\n  label='Välj din favoritfrukt'\n  description='Du kan bara välja en'\n>\n  <ComboBoxItem id='Lime'>Lime</ComboBoxItem>\n  <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>\n  <ComboBoxItem id='Banan'>Banan</ComboBoxItem>\n  <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>\n  <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>\n</ComboBox>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
-      children: (0,jsx_runtime.jsx)(Logo/* Logo */.g, {})
+      children: (0,jsx_runtime.jsx)(BasicExample, {})
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
       children: "Installation"
@@ -150,114 +191,73 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Logo } from '@midas-ds/components'\n"
+        children: "import { ComboBox } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Logotypen finns i fyra olika storlekar (x-small, small, medium och large) samt med eller utan bakgrund. X-small skiljer sig från de andra då det endast är ett M. Den används när skärmstorleken är mindre än 380px för spara plats i headern."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "x-small",
-      children: "X-small"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<Logo size=\"x-small\" />\n<Logo primary={false} size=\"x-small\" />\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      className: "card",
-      style: {
-        flexWrap: 'wrap',
-        gap: '1rem',
-        flexDirection: 'row'
-      },
-      children: [(0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        size: "x-small"
-      }), (0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        primary: false,
-        size: "x-small"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "small",
-      children: "Small"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<Logo size='small' />\n<Logo primary={false} size='small'/>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      className: "card",
-      style: {
-        flexWrap: 'wrap',
-        gap: '1rem',
-        flexDirection: 'row'
-      },
-      children: [(0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        size: "small"
-      }), (0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        primary: false,
-        size: "small"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "medium",
-      children: "Medium"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<Logo size=\"medium\" />\n<Logo primary={false} size=\"medium\" />\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      className: "card",
-      style: {
-        flexWrap: 'wrap',
-        gap: '1rem',
-        flexDirection: 'row'
-      },
-      children: [(0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        size: "medium"
-      }), (0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        primary: false,
-        size: "medium"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "large",
-      children: "Large"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<Logo size=\"large\" />\n<Logo primary={false} size=\"large\" />\n"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)("div", {
-      className: "card",
-      style: {
-        flexWrap: 'wrap',
-        gap: '1rem',
-        flexDirection: 'row'
-      },
-      children: [(0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        size: "large"
-      }), (0,jsx_runtime.jsx)(Logo/* Logo */.g, {
-        primary: false,
-        size: "large"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "logotyp-i-svg-format",
-      children: "Logotyp i SVG-format"
+      id: "kontrollerat-val",
+      children: "Kontrollerat val"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För de fall där komponenten inte kan användas tillhandahåller vi även logotypen som SVG. I paketet finns två SVG-filer, en med logotypen och en med bara M", ":et", " för små skärmar."]
-    }), "\n", (0,jsx_runtime.jsx)(Link/* Link */.N, {
-      target: "_blank",
-      href: (__webpack_require__(27515)/* ["default"] */ .A),
-      download: true,
-      children: (0,jsx_runtime.jsx)(_components.p, {
-        children: "Ladda ner logotypen som SVG (komprimerad fil)"
+      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "id"
+      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onSelectionChange"
+      }), " för att använda controlled value på ComboBox.\nDen valda ComboBoxItems värde skickas till callbacken, så kan du använda det för att uppdatera ditt state."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import React from 'react'\nimport { Key } from 'react-aria-components'\n\nconst [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)\n\nreturn (\n  <ComboBox\n    label='Välj din favoritfrukt eller grönsak'\n    description='Du kan bara välja en'\n    selectedKey={selectedFruit}\n    onSelectionChange={setSelectedFruit}\n  >\n    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>\n    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>\n    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>\n    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>\n    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>\n  </ComboBox>\n)\n"
       })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(ControlledExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om det ska gå att välja flera eller inga alternativ är det ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/checkbox",
+          children: "Checkbox"
+        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/select",
+          children: "Select"
+        }), " som ska användas."]
+      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om det är färre alternativ än fyra (4) används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/radio",
+          children: "Radio"
+        }), " istället."]
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "sektioner",
+      children: "Sektioner"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { ComboBoxSection } from '@midas-ds/components'\n\nconst options = [\n  {\n    name: 'Grönsaker',\n    id: 123,\n    children: [\n      { name: 'Morot', id: 2 },\n      { name: 'Broccoli', id: 3 },\n      { name: 'Spenat', id: 4 },\n      { name: 'Potatis', id: 5 },\n      { name: 'Tomat', id: 6 },\n    ],\n  },\n  {\n    name: 'Frukter',\n    id: 1234,\n    children: [\n      { name: 'Äpple', id: 11 },\n      { name: 'Banan', id: 12 },\n      { name: 'Kiwi', id: 13 },\n      { name: 'Fläder', id: 14 },\n      { name: 'Nektarin', id: 15 },\n    ],\n  },\n]\n\nreturn (\n  <ComboBox\n    label='Välj din favoritfrukt eller grönsak'\n    description='Du kan bara välja en'\n    items={options}\n  >\n    {(section: Section<Item>) => <ComboBoxSection {...section} />}\n  </ComboBox>\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(SectionedExample, {})
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "combobox",
+      children: "ComboBox"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "Logo"
+      name: "ComboBox"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "comboboxitem",
+      children: "ComboBoxItem"
+    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
+      name: "ComboBoxItem",
+      defaultOpen: false
     })]
   });
 }
@@ -381,6 +381,31 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 
 /***/ }),
 
+/***/ 80554:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  b: () => (/* binding */ FieldError_FieldError)
+});
+
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/components/src/field-error/FieldError.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const FieldError_module = ({"tokens":"\"../theme/tokens.css\"","--text-warning":"light-dark(#e62323, #eb4e4e)","--font-family":"\"Inter\", sans-serif","fieldError":"fieldError_K9VX"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/field-error/FieldError.tsx
+var FieldError_FieldError=/*#__PURE__*/react.forwardRef(function(props,ref){var validation=react.useContext(FieldError/* FieldErrorContext */.C);if(!(validation!=null&&validation.isInvalid))return null;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(FieldError_module.fieldError,props.className)}));});
+
+/***/ }),
+
 /***/ 39996:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -452,6 +477,33 @@ var _excluded=["children","className","isExpressive","level","elementType"];var 
 
 /***/ }),
 
+/***/ 20143:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+
+/***/ }),
+
 /***/ 45438:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -491,48 +543,111 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 78815:
+/***/ 41075:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  N: () => (/* binding */ Link)
+  q: () => (/* binding */ ListBox)
 });
 
-// UNUSED EXPORTS: RouterProvider
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
-var objectDestructuringEmpty = __webpack_require__(20454);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/components/src/link/Link.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Link_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--link-enabled":"light-dark(#29698C, #6CA3C0)","--link-hover":"light-dark(#143c50, #94BCD1)","--link-pressed":"light-dark(#171717, #abcbdb)","--link-visited":"light-dark(#954b95, #b46ab4)","--text-disabled":"light-dark(#bfbfbf, #525252)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--z-index-base":"1","link":"link_RCbb","icon":"icon_Bxuv","standalone":"standalone_Cg9F","stretched":"stretched_pvQw"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var dist_Link = __webpack_require__(73099);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Virtualizer.mjs + 9 modules
+var Virtualizer = __webpack_require__(424);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ListBox.mjs + 3 modules
+var dist_ListBox = __webpack_require__(79255);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-to-line.js
-var arrow_down_to_line = __webpack_require__(69750);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/square-arrow-out-up-right.js
-var square_arrow_out_up_right = __webpack_require__(8866);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
-var arrow_right = __webpack_require__(48635);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/callSuper.js + 2 modules
+var callSuper = __webpack_require__(31013);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
+var inheritsLoose = __webpack_require__(77387);
+// EXTERNAL MODULE: ./node_modules/@react-stately/layout/dist/ListLayout.mjs + 2 modules
+var ListLayout = __webpack_require__(12939);
+;// ./packages/components/src/list-box/SectionedListLayout.ts
+var SectionedListLayout=/*#__PURE__*/function(_ListLayout){function SectionedListLayout(){return (0,callSuper/* default */.A)(this,SectionedListLayout,arguments);}(0,inheritsLoose/* default */.A)(SectionedListLayout,_ListLayout);var _proto=SectionedListLayout.prototype;/**
+   * When using the ListLayout our scroll container height is not calculated properly when the content is partially sectioned.
+   * ```ts
+   * const partiallySectionedContent = [
+   *  {
+   *    name: 'fruit section',
+   *    children: [{ id: 'kiwi', name: 'Kiwi' }]
+   *  },
+   *  // berries have no section, because it's optional
+   *  { id: 'lingonberries', name: 'Lingonberries' }
+   * ];
+   * ```
+   * If we load the layout info for each key in the collection the calculation is correct.
+   *
+   * This might not be optional for performance, FYI
+   */_proto.getContentSize=function getContentSize(){var _this$virtualizer,_this=this;var keys=this==null||(_this$virtualizer=this.virtualizer)==null?void 0:_this$virtualizer.collection.getKeys();Array.from(keys||[]).forEach(function(key){_this.getLayoutInfo(key);});return this.contentSize;};return SectionedListLayout;}(ListLayout/* ListLayout */.$);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.module.css
+var ListBox_module = __webpack_require__(93587);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/link/Link.tsx
-'use client';var _excluded=["children","standalone","target","stretched","download","icon","className","as"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,target=_ref.target,stretched=_ref.stretched,download=_ref.download,IconComponent=_ref.icon,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||dist_Link/* Link */.N;var Icon=function Icon(_ref2){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref2),_ref2));if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,Object.assign({},rest));if(download)return/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_to_line/* default */.A,Object.assign({},rest));if(target==='_blank')return/*#__PURE__*/(0,jsx_runtime.jsx)(square_arrow_out_up_right/* default */.A,Object.assign({},rest));if(standalone)return/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,Object.assign({},rest));return null;};return/*#__PURE__*/(0,jsx_runtime.jsx)(Component,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,className:Link_module.icon})]})}));};
+;// ./packages/components/src/list-box/ListBox.tsx
+var _excluded=["className","children"];var ListBox=function ListBox(_ref){var className=_ref.className,children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Virtualizer/* Virtualizer */.Y,{layout:SectionedListLayout,layoutOptions:{headingHeight:44},children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_ListBox/* ListBox */.qF,Object.assign({className:(0,clsx/* default */.A)(ListBox_module/* default */.A.listBox,className)},rest,{children:children}))});};
 
 /***/ }),
 
-/***/ 17911:
+/***/ 99498:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   n: () => (/* binding */ ListBoxItem)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(79255);
+/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93587);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["children","className"];var ListBoxItem=function ListBoxItem(_ref){var children=_ref.children,className=_ref.className,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .ListBoxItem */ .nh,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxItem,className)},rest,{children:children}));};
+
+/***/ }),
+
+/***/ 42468:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   f: () => (/* binding */ ListBoxPopover)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(21416);
+/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93587);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["className","children"];var ListBoxPopover=function ListBoxPopover(_ref){var className=_ref.className,children=_ref.children,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .Popover */ .A,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(className,_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxPopover),offset:0},rest,{children:children}));};
+
+/***/ }),
+
+/***/ 59074:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   r: () => (/* binding */ ListBoxSection)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(79255);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(83181);
+/* harmony import */ var _label__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(20143);
+/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93587);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["children","name"];var ListBoxSection=function ListBoxSection(_ref){var children=_ref.children,name=_ref.name,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .ListBoxSection */ .rd,Object.assign({},rest,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Header */ .Y,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_label__WEBPACK_IMPORTED_MODULE_6__/* .Label */ .J,{elementType:"span",className:_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxSectionHeading,children:name})}),children]}));};
+
+/***/ }),
+
+/***/ 93361:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  g: () => (/* binding */ Logo)
+  E: () => (/* binding */ Text)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
@@ -541,13 +656,15 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var react = __webpack_require__(96540);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-;// ./packages/components/src/logo/Logo.module.css
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var dist_Text = __webpack_require__(27279);
+;// ./packages/components/src/text/Text.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Logo_module = ({"tokens":"\"../theme/tokens.css\"","--logo-primary":"light-dark(#b90835, #ffffff)","--background-inverse":"light-dark(#171717, #f2f2f2)","container":"container_U3H4","noPadding":"noPadding__BF5","logo":"logo_GI7z","primary":"primary_TCiF","dark":"dark_F_Ks","xSmall":"xSmall_IZ4K","small":"small_KAZl","large":"large_iAB3"});
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/logo/Logo.tsx
-var _excluded=["primary","size","padding","className"];var Logo=function Logo(_ref){var _ref$primary=_ref.primary,primary=_ref$primary===void 0?true:_ref$primary,_ref$size=_ref.size,size=_ref$size===void 0?'medium':_ref$size,_ref$padding=_ref.padding,padding=_ref$padding===void 0?true:_ref$padding,className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames=(0,clsx/* default */.A)(Logo_module.logo,primary?Logo_module.primary:Logo_module.dark,size==='x-small'&&Logo_module.xSmall,size==='medium'&&Logo_module.medium,size==='large'&&Logo_module.large,size==='small'&&Logo_module.small);var SVG=function SVG(){if(size==='x-small')return/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 100 92",className:classNames,role:"img","aria-hidden":"false",focusable:"false","aria-label":"Migrationsverkets logotyp",children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M99.99,91.69c-1.84-1.11-4.05-4.55-4.05-9.46V9.15c0-4.79,1.96-7.25,3.81-8.85h-14.75l-33.91,65.47L12.41.3H0c1.6,1.59,3.93,3.07,3.93,8.23v75.55c0,3.56-2.21,6.51-3.81,7.61h16.34c-1.72-1.22-3.93-4.18-3.93-7.98V25.97l36.24,61.42,33.04-63.26v58.96c0,5.53-2.21,7.61-3.81,8.6h21.99Z"})});return/*#__PURE__*/(0,jsx_runtime.jsxs)("svg",{role:"img",xmlns:"http://www.w3.org/2000/svg",viewBox:"0 0 112 40",className:classNames,"aria-hidden":"false",focusable:"false","aria-label":"Migrationsverkets logotyp",children:[/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M97.78,21.61c-7.48-9.73-20.06-16.03-34.32-16.03-13.07,0-24.86,5.27-32.46,13.65,6.56-5.83,15.64-9.44,25.66-9.44,11.37,0,21.52,4.56,28.18,11.83h12.94Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M90.45,12.58C70.67-1.51,41.26,2.77,27.49,21.61h-12.23C30.56-2.89,68.29-7.47,90.45,12.58h0Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M11.89,37.13c-.22-.13-.48-.53-.48-1.11v-8.58c0-.56.23-.85.45-1.04h-1.73l-3.98,7.69-4.54-7.69H.15c.19.19.46.36.46.97v8.87c0,.42-.26.76-.45.89h1.92c-.2-.14-.46-.49-.46-.94v-6.78l4.25,7.21,3.88-7.43v6.92c0,.65-.26.89-.45,1.01h2.58Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M15.81,26.86c0-.45-.36-.81-.81-.81s-.81.36-.81.81.36.81.81.81.81-.36.81-.81h0ZM16.22,37.13c-.3-.23-.45-.5-.45-1.07v-6.4h-1.98c.37.19.49.58.49,1.17v5.23c0,.48-.09.79-.46,1.07h2.39Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M24.52,30.97c-.04-.33-.17-.68-.37-.95h-1.36c-.29-.26-.87-.58-1.96-.58-1.53,0-2.8.92-2.8,2.58,0,1.02.52,1.86,1.31,2.26-.43.37-1.38.98-1.38,1.61,0,.71.79.99,1.38,1.1-.88.26-1.67.82-1.67,1.59,0,1.14,1.73,1.41,2.64,1.41,1.54,0,3.91-.78,3.91-2.64,0-1.21-1.23-1.49-2.22-1.5-2.42-.06-2.51-.2-2.51-.56,0-.2.42-.68.55-.81.23.03.48.06.71.06,1.76,0,2.93-.94,2.93-2.7,0-.48-.14-.91-.29-1.11.12-.04.25-.04.37-.04.27,0,.55.12.76.27h0ZM22.27,32.21c0,.79-.37,1.61-1.36,1.61-1.07,0-1.47-1.21-1.47-2.09,0-.95.5-1.57,1.31-1.57,1.2,0,1.51,1.25,1.51,2.05h0ZM22.89,37.92c0,.76-.82,1.31-1.93,1.31-.59,0-1.7-.3-1.69-1.15,0-.45.26-.74.59-.99l1.96.04c.5.01,1.07.1,1.07.79h0Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M30.11,31.22l-.23-1.63c-.2-.1-.43-.14-.65-.14-.85,0-1.46.68-1.79,1.37v-1.15h-1.96c.45.27.48.76.48,1.14v5.19c0,.58-.1.89-.45,1.14h2.35c-.36-.29-.42-.63-.42-1.12v-4.27c.22-.58.78-1.04,1.43-1.04.46,0,.97.26,1.24.52h0Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M36.87,37.13c-.37-.33-.43-.59-.43-1.25v-3.89c0-2.21-1.43-2.55-2.8-2.55-.61,0-1.67.22-2.03.42-.2.4-.3,1.24-.4,1.67.46-.56,1.27-1.37,2.39-1.37,1.18,0,1.36.82,1.36,1.7v.39l-2.21.76c-1.04.36-1.87,1.08-1.87,2.26,0,1.31.88,2.08,2.15,2.08.87,0,1.46-.43,1.93-.94v.72h1.92ZM34.95,35.62c-.26.32-.74.85-1.37.85-.75,0-1.18-.79-1.18-1.54,0-.71.35-1.15.89-1.37l1.66-.63v2.7h0Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M42.58,36.15c-.29.27-.71.46-1.11.46-.87,0-1.07-.98-1.07-1.66v-4.51h.85c.43,0,.94.13,1.33.35l-.17-1.12h-2v-1.76c-.68.95-1.54,1.96-2.58,2.54h1.1v4.43c0,1.43.32,2.47,1.95,2.47.48,0,.98-.1,1.38-.36.14-.25.25-.55.33-.82h0Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M45.63,26.86c0-.45-.36-.81-.81-.81s-.81.36-.81.81.36.81.81.81.81-.36.81-.81h0ZM46.04,37.13c-.3-.23-.45-.5-.45-1.07v-6.4h-1.98c.37.19.49.58.49,1.17v5.23c0,.48-.09.79-.46,1.07h2.39Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M54.96,33.37c0-2.06-1.3-3.95-3.5-3.95s-3.84,1.76-3.84,4.01c0,2.06,1.28,3.95,3.49,3.95s3.85-1.76,3.85-4.01h0ZM53.43,34.04c0,1.27-.52,2.57-1.86,2.57-1.79,0-2.42-2.44-2.42-3.86,0-1.21.48-2.57,1.87-2.57,1.79,0,2.41,2.44,2.41,3.86h0Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M63.37,37.13c-.27-.22-.45-.42-.45-1.11v-3.94c0-1.63-.39-2.64-2.18-2.64-1.01,0-1.79.56-2.38,1.12v-.91h-1.98c.3.17.49.46.49,1.05v5.33c0,.59-.14.88-.48,1.08h2.39c-.23-.23-.43-.37-.43-1.17v-4.4c.32-.45,1.07-1.24,1.85-1.24,1.01,0,1.23,1.01,1.23,1.8v3.95c0,.74-.26.87-.46,1.05h2.39Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M69.79,35.2c0-2.21-3.42-2.71-3.42-4.07,0-.75.71-.98,1.34-.98s1.33.29,1.74.81l-.07-1.18c-.46-.17-1.11-.35-1.69-.35-1.44,0-2.68.63-2.68,1.89,0,2.36,3.46,2.68,3.46,4.25,0,.79-.62,1.05-1.31,1.05-1.01,0-1.86-.46-2.52-1.21v.1c0,.4-.03.99.3,1.27.53.43,1.53.56,2.18.56,1.36,0,2.67-.62,2.67-2.15h0Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M77.98,29.66h-1.43c.13.1.11.56-.19,1.33l-1.86,4.72-1.87-4.7c-.26-.65-.32-1.15-.16-1.34h-2.06c.19.1.49.85.82,1.67l2.31,5.8h1.31l2.35-5.97c.32-.81.56-1.36.78-1.5h0Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M84.91,33.54v-.23c0-1.92-.62-3.88-2.88-3.88s-3.56,2.02-3.56,4.11,1.41,3.81,3.58,3.81c.78,0,1.62-.17,2.13-.45.32-.35.49-.79.59-1.27-.69.5-1.41.84-2.31.84-1.49,0-2.35-1.57-2.38-2.88l4.83-.04h0ZM83.34,32.88c-1.1.09-2.16.1-3.27.1.01-.78.29-2.83,1.7-2.83,1.33,0,1.57,1.72,1.57,2.73h0Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M90.95,31.22l-.23-1.63c-.2-.1-.43-.14-.65-.14-.85,0-1.46.68-1.79,1.37v-1.15h-1.96c.45.27.48.76.48,1.14v5.19c0,.58-.1.89-.45,1.14h2.35c-.36-.29-.42-.63-.42-1.12v-4.27c.22-.58.78-1.04,1.43-1.04.46,0,.97.26,1.24.52h0Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M99.79,37.16c-2.26-.37-2.49-4.04-4.7-4.04l2.62-2.8c.22-.23.5-.48.75-.66h-1.77c.14.14.13.39-.13.66l-2.65,2.83v-7.07h-1.98c.33.2.49.56.49,1.01v9.01c0,.58-.22.81-.46,1.02h2.35c-.26-.25-.4-.49-.4-1.02v-2.57c.27,0,.62.13.82.26,1.28.82,1.95,3.11,2.67,3.45.14.07.94.1,1.14.1.45,0,.84-.03,1.25-.19h0Z"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M106.3,33.54v-.23c0-1.92-.62-3.88-2.88-3.88s-3.56,2.02-3.56,4.11,1.41,3.81,3.58,3.81c.78,0,1.62-.17,2.13-.45.32-.35.49-.79.59-1.27-.69.5-1.41.84-2.31.84-1.49,0-2.35-1.57-2.38-2.88l4.83-.04h0ZM104.73,32.88c-1.1.09-2.16.1-3.27.1.01-.78.29-2.83,1.7-2.83,1.33,0,1.57,1.72,1.57,2.73h0Z",fillRule:"evenodd"}),/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M111.85,36.15c-.29.27-.71.46-1.11.46-.86,0-1.07-.98-1.07-1.66v-4.51h.85c.43,0,.94.13,1.33.35l-.17-1.12h-2v-1.76c-.68.95-1.54,1.96-2.58,2.54h1.1v4.43c0,1.43.32,2.47,1.95,2.47.48,0,.98-.1,1.38-.36.14-.25.25-.55.33-.82h0Z"})]});};return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({className:(0,clsx/* default */.A)(Logo_module.container,padding===false&&Logo_module.noPadding,className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(SVG,{})}));};
+;// ./packages/components/src/text/Text.tsx
+var _excluded=["children","className","variant","isExpressive","elementType"];var DEFAULT_ELEMENT='span';var Text=function Text(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'body-02':_ref$variant,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'body-01':Text_module['body-01'],'body-02':Text_module['body-02']};var textProps=Object.assign({className:(0,clsx/* default */.A)(rest.slot==='description'?Text_module.description:classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},isExpressive&&{'data-expressive':true},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Text/* Text */.E,Object.assign({},textProps,{children:children}));};
 
 /***/ }),
 
@@ -602,71 +719,6 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
-/***/ 27515:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "assets/files/Mig_logo_SVG-41d3c41ca214b86c335979fa5b00860b.zip");
-
-/***/ }),
-
-/***/ 69750:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ ArrowDownToLine)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const ArrowDownToLine = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ArrowDownToLine", [
-  ["path", { d: "M12 17V3", key: "1cwfxf" }],
-  ["path", { d: "m6 11 6 6 6-6", key: "12ii2o" }],
-  ["path", { d: "M19 21H5", key: "150jfl" }]
-]);
-
-
-//# sourceMappingURL=arrow-down-to-line.js.map
-
-
-/***/ }),
-
-/***/ 48635:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ ArrowRight)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ArrowRight", [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
-]);
-
-
-//# sourceMappingURL=arrow-right.js.map
-
-
-/***/ }),
-
 /***/ 43538:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -686,6 +738,17 @@ const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-md":"(min-width: 768px)","--breakpoint-lg":"(min-width: 1200px)","--breakpoint-xl":"(min-width: 1440px)","container":"container_M2rG","flex":"flex_UojW","fluid":"fluid_lF5E","col":"col_Taxb","col-1":"col-1_z0bQ","col-2":"col-2_HAuY","col-3":"col-3_oSCH","col-4":"col-4_eIG4","col-5":"col-5_JlYB","col-6":"col-6_dZDY","col-7":"col-7_UoF_","col-8":"col-8_zyia","col-9":"col-9_H77l","col-10":"col-10_zbp5","col-11":"col-11_N7LS","col-12":"col-12_HChu","col-auto":"col-auto_JGok","offset-1":"offset-1_e_Jy","offset-2":"offset-2_p5mN","offset-3":"offset-3_Dz4V","offset-4":"offset-4_Uwlu","offset-5":"offset-5_DYvi","offset-6":"offset-6_pWn0","offset-7":"offset-7_iSDK","offset-8":"offset-8_RIDq","offset-9":"offset-9_Unq7","offset-10":"offset-10_OUtT","offset-11":"offset-11_ySZ3"});
+
+/***/ }),
+
+/***/ 93587:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--border-primary":"light-dark(#171717, #f2f2f2)","--focus-inset":"inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--layer-selected-01":"light-dark(#d9d9d9, #383838)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--size-40":"0.5rem","--size-80":"1rem","--size-150":"3rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","listBox":"listBox_l3jg","listBoxPopover":"listBoxPopover_OG2Y","listBoxSectionHeading":"listBoxSectionHeading_R5mH","listBoxItemFocusRing":"listBoxItemFocusRing_jpj1","listBoxButton":"listBoxButton_LfGK","listBoxItem":"listBoxItem_eA9_"});
 
 /***/ })
 

@@ -1,23 +1,59 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7128],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[1906],{
 
-/***/ 91753:
+/***/ 69168:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ LayoutExample)
-/* harmony export */ });
-/* harmony import */ var _midas_ds_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62733);
-/* harmony import */ var _midas_ds_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(45438);
-/* harmony import */ var _midas_ds_components_theme__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(66995);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(91805);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80697);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(53438);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32307);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(89608);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74848);
-function LayoutExample(){return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_1__/* .Layout */ .P,{variant:"internal",items:[{items:[{title:'Översikt',href:'#',icon:lucide_react__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A}]},{title:'Ansökan',items:[{title:'Skapa ansökan',href:'#',icon:lucide_react__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A},{title:'Beslut',href:'#',icon:lucide_react__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A}]},{title:'Kort och konto',items:[{title:'LMA-kort',href:'#',icon:lucide_react__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A},{title:'Avvikelser',href:'#',icon:lucide_react__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A,hasBadge:true}]}],title:"Skapa ans\xF6kningar",user:{name:'Namn Namnsson',title:'Roll eller behörighet'},app:{name:'Namn på applikationen'},headerChildren:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_7__/* .LinkButton */ .z,{variant:"tertiary",target:"_blank",children:"\xD6ppna annan tj\xE4nst"}),children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div",{style:{background:_midas_ds_components_theme__WEBPACK_IMPORTED_MODULE_8__.semantic.layer02,display:'flex',justifyContent:'center',alignItems:'center',height:'100vh',border:"dotted 2px "+_midas_ds_components_theme__WEBPACK_IMPORTED_MODULE_8__.semantic.borderSubtle,color:_midas_ds_components_theme__WEBPACK_IMPORTED_MODULE_8__.semantic.textPrimary},children:"Din applikation"})});}
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ LayoutExample)
+});
+
+// EXTERNAL MODULE: ./packages/components/src/layout/Layout.tsx + 11 modules
+var Layout = __webpack_require__(62733);
+// EXTERNAL MODULE: ./packages/components/src/link-button/LinkButton.tsx + 1 modules
+var LinkButton = __webpack_require__(45438);
+// EXTERNAL MODULE: ./packages/components/src/theme/tokens.ts
+var tokens = __webpack_require__(66995);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/house.js
+var house = __webpack_require__(91805);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/search.js
+var search = __webpack_require__(98445);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/calendar.js
+var calendar = __webpack_require__(32307);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/createLucideIcon.js + 3 modules
+var createLucideIcon = __webpack_require__(84722);
+;// ./node_modules/lucide-react/dist/esm/icons/user.js
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const User = (0,createLucideIcon/* default */.A)("User", [
+  ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
+  ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
+]);
+
+
+//# sourceMappingURL=user.js.map
+
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/plus.js
+var plus = __webpack_require__(80697);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/gavel.js
+var gavel = __webpack_require__(53438);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/clipboard-list.js
+var clipboard_list = __webpack_require__(89608);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./apps/docs/src/pages/layout-examples/layout-external.tsx
+function LayoutExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(Layout/* Layout */.P,{variant:"external",items:[{items:[{title:'Hem',href:'#',icon:house/* default */.A,active:true},{title:'Ansökan',href:'#',icon:search/* default */.A},{title:'Boka',href:'#',icon:calendar/* default */.A,hasBadge:true},{title:'Profil',href:'#',icon:User},{title:'Kontakt',href:'#',icon:plus/* default */.A}]},{title:'Ansökan',items:[{title:'Skapa ansökan',href:'#',icon:plus/* default */.A},{title:'Beslut',href:'#',icon:gavel/* default */.A}]},{title:'Kort och konto',items:[{title:'LMA-kort',href:'#',icon:calendar/* default */.A},{title:'Avvikelser',href:'#',icon:clipboard_list/* default */.A,hasBadge:true}]}],title:"Skapa ans\xF6kningar",user:{name:'Namn Namnsson',title:'Roll eller behörighet'},app:{name:'Namn på applikationen'},headerChildren:/*#__PURE__*/(0,jsx_runtime.jsx)(LinkButton/* LinkButton */.z,{variant:"tertiary",target:"_blank",children:"\xD6ppna annan tj\xE4nst"}),children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{style:{background:tokens.semantic.layer02,display:'flex',justifyContent:'center',alignItems:'center',height:'100vh',border:"dotted 2px "+tokens.semantic.borderSubtle,color:tokens.semantic.textPrimary},children:"Din applikation"})});}
 
 /***/ }),
 
@@ -320,8 +356,8 @@ var clsx = __webpack_require__(34164);
 /* harmony default export */ const Tooltip_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--background-inverse":"light-dark(#171717, #f2f2f2)","--text-inverse":"light-dark(#f2f2f2, #171717)","tooltip":"tooltip_L2zx","arrow":"arrow_bl7N"});
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Tooltip.mjs + 3 modules
-var Tooltip = __webpack_require__(39013);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Tooltip.mjs + 4 modules
+var Tooltip = __webpack_require__(9741);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/OverlayArrow.mjs
 var OverlayArrow = __webpack_require__(45745);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
@@ -483,6 +519,33 @@ const Plus = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] 
 
 
 //# sourceMappingURL=plus.js.map
+
+
+/***/ }),
+
+/***/ 98445:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Search)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Search = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Search", [
+  ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
+  ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
+]);
+
+
+//# sourceMappingURL=search.js.map
 
 
 /***/ }),
