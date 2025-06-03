@@ -1,18 +1,18 @@
 import { render } from '@testing-library/react'
 
-import { Tabs } from './Tabs'
+import { Tabs, TabsProps } from './Tabs'
 import { Button } from '../button'
 
 describe('Tabs', () => {
   it('should render successfully', () => {
     const args = {
-      defaultSelected: 'Viktigt att veta',
+      defaultSelectedKey: 'Viktigt att veta',
       label: 'Följ processen',
       tabs: ['Processen', 'Viktigt att veta', 'Ansök'],
-    }
+    } satisfies Partial<TabsProps>
     const { baseElement } = render(
       <Tabs
-        defaultSelected={args.defaultSelected}
+        defaultSelectedKey={args.defaultSelectedKey}
         label={args.label}
         tabs={args.tabs}
       >
@@ -31,7 +31,7 @@ describe('Tabs', () => {
         <div>
           Ansök här: <Button>Ansök</Button>
         </div>
-      </Tabs>
+      </Tabs>,
     )
     expect(baseElement).toBeTruthy()
   })
