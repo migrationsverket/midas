@@ -67,7 +67,7 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
       <>
         {children}
         <Icon
-          size={20}
+          size={16}
           className={styles.icon}
         />
       </>
