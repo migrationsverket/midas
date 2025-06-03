@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6253],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6505],{
 
-/***/ 63976:
+/***/ 22622:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_breadcrumbs_mdx_aca_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_link_mdx_7d4_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-breadcrumbs-mdx-aca.json
-const site_docs_components_breadcrumbs_mdx_aca_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/breadcrumbs","title":"Breadcrumbs","description":"Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.","source":"@site/docs/components/breadcrumbs.mdx","sourceDirName":"components","slug":"/components/breadcrumbs","permalink":"/pr-preview/pr-625/components/breadcrumbs","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Breadcrumbs","description":"Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-link-mdx-7d4.json
+const site_docs_components_link_mdx_7d4_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/link","title":"Link","description":"Komponent som skapar en länk","source":"@site/docs/components/link.mdx","sourceDirName":"components","slug":"/components/link","permalink":"/pr-preview/pr-625/components/link","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Link","description":"Komponent som skapar en länk","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,16 +29,20 @@ var Tabs = __webpack_require__(11470);
 var TabItem = __webpack_require__(19365);
 // EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
 var PropsTable = __webpack_require__(68713);
-// EXTERNAL MODULE: ./packages/components/src/breadcrumbs/Breadcrumbs.tsx + 1 modules
-var Breadcrumbs = __webpack_require__(70847);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/docs/components/breadcrumbs.mdx
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/link/Link.tsx + 1 modules
+var Link = __webpack_require__(25441);
+// EXTERNAL MODULE: ./packages/components/src/theme/tokens.ts
+var tokens = __webpack_require__(46090);
+;// ./apps/docs/docs/components/link.mdx
 
 
 const frontMatter = {
-	title: 'Breadcrumbs',
-	description: 'Brödsmulor används för att visa användaren vart hen är i ett djupt navigationsträd.',
+	title: 'Link',
+	description: 'Komponent som skapar en länk',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -47,6 +51,7 @@ const contentTitle = undefined;
 const assets = {
 
 };
+
 
 
 
@@ -64,8 +69,36 @@ const toc = [{
   "id": "varianter",
   "level": 2
 }, {
-  "value": "Förbjudna val",
-  "id": "förbjudna-val",
+  "value": "Länk",
+  "id": "länk",
+  "level": 3
+}, {
+  "value": "Fristående",
+  "id": "fristående",
+  "level": 3
+}, {
+  "value": "Stretched",
+  "id": "stretched",
+  "level": 3
+}, {
+  "value": "Ny flik",
+  "id": "ny-flik",
+  "level": 3
+}, {
+  "value": "Nedladdning",
+  "id": "nedladdning",
+  "level": 3
+}, {
+  "value": "Client Side Routing",
+  "id": "client-side-routing",
+  "level": 2
+}, {
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "Val av komponent",
+  "id": "val-av-komponent",
   "level": 3
 }, {
   "value": "API",
@@ -74,6 +107,7 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     h3: "h3",
@@ -84,29 +118,25 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Breadcrumbs",
-      friendlyName: "Brödsmulor",
-      overrideHeadlessLink: ""
+      name: "Link",
+      friendlyName: "Länk"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponent som används för att visa användaren var den är i ett djupt navigationsträd."
+      children: "Komponenten Link skapar en länk som kan vara i ett textstycke eller fristående."
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Breadcrumbs\n  items={[\n    { href: '/', title: 'Start' },\n    { href: '/du-vill-forlanga', title: 'Du vill förlänga' },\n    { href: '/du-vill-forlanga/studera', title: 'Studera' },\n  ]}\n/>\n"
+        metastring: "title=Link",
+        children: "<Text>\n  En text med en <Link href='#'>länk</Link> i ett textstycke.\n</Text>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
-      children: (0,jsx_runtime.jsx)(Breadcrumbs/* Breadcrumbs */.B, {
-        items: [{
-          href: '#',
-          title: 'Start'
-        }, {
-          href: '#',
-          title: 'Du vill förlänga'
-        }, {
-          href: '#',
-          title: 'Studera'
-        }]
+      children: (0,jsx_runtime.jsx)(Text/* Text */.E, {
+        children: (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["En text med en ", (0,jsx_runtime.jsx)(Link/* Link */.N, {
+            href: "#",
+            children: "länk"
+          }), " i ett textstycke."]
+        })
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installation",
@@ -142,44 +172,155 @@ function _createMdxContent(props) {
       })]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Breadcrumbs } from '@midas-ds/components'\n"
+        className: "language-jsx",
+        children: "import { Link } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "förbjudna-val",
-      children: "Förbjudna val"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isDisabled"
-      }), " om du vill förbjuda vissa val"]
+      id: "länk",
+      children: "Länk"
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Breadcrumbs\n  items={[\n    { href: '/', title: 'Start' },\n    { href: '/du-vill-forlanga', title: 'Du vill förlänga', isDisabled: true },\n    { href: '/du-vill-forlanga/studera', title: 'Studera' },\n  ]}\n/>\n"
+        metastring: "{2}",
+        children: "<Text>\n  En text med en <Link href='#länk'>länk</Link> i ett textstycke.\n</Text>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
-      children: (0,jsx_runtime.jsx)(Breadcrumbs/* Breadcrumbs */.B, {
-        items: [{
-          href: '#',
-          title: 'Start'
-        }, {
-          href: '#',
-          title: 'Du vill förlänga',
-          isDisabled: true
-        }, {
-          href: '#',
-          title: 'Studera'
-        }]
+      children: (0,jsx_runtime.jsx)(Text/* Text */.E, {
+        children: (0,jsx_runtime.jsxs)(_components.p, {
+          children: ["En text med en ", (0,jsx_runtime.jsx)(Link/* Link */.N, {
+            href: "#länk",
+            children: "länk"
+          }), " i ett textstycke."]
+        })
       })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "fristående",
+      children: "Fristående"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "standalone"
+      }), " för att använda komponenten som en fristående länk under t.ex ett textblock."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{3}",
+        children: "<Text>Text</Text>\n<Link\n  standalone\n  href=\"#fristående\"\n>\n  En länk som är fristående från text\n</Link>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)("div", {
+      className: "card",
+      children: [(0,jsx_runtime.jsxs)(_components.p, {
+        children: ["För att visa en länk som en fristående komponent, använd propertyn ", (0,jsx_runtime.jsx)("code", {
+          children: "standalone"
+        }), ". Detta kan vara användbart\nnär du vill att länken ska stå ut från omgivande text eller när du vill placera den på en egen rad."]
+      }), (0,jsx_runtime.jsx)(Link/* Link */.N, {
+        standalone: true,
+        href: "#fristående",
+        children: 'En länk som är fristående från text'
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "stretched",
+      children: "Stretched"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "stretched"
+      }), " för att låta hela föräldraelementet vara klickbart till länken. Den klickbara ytan placeras med ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "position: absolute"
+      }), " och sträcker sig över hela föräldraelementet. Placera därför ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "position: relative"
+      }), " på relevant element för att inte den klickbara ytan ska sträckas för långt."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{1,5,10}",
+        children: "<div style={{ position: 'relative' }}>\n  <p>Text</p>\n  <Link\n    standalone\n    stretched\n    href='#stretched'\n  >\n    En länk som sträcker sig över hela ytan\n  </Link>\n</div>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)("div", {
+        style: {
+          position: 'relative',
+          background: tokens.semantic.layer01,
+          padding: '1rem'
+        },
+        children: [(0,jsx_runtime.jsxs)(_components.p, {
+          children: ["En länk kan sträcka sig över en hel yta genom propertyn ", (0,jsx_runtime.jsx)("code", {
+            children: "stretched"
+          }), ". Detta kan vara användbart när du\nvill att hela ytan ska vara klickbar, till exempel i en kort eller en panel."]
+        }), (0,jsx_runtime.jsx)(Link/* Link */.N, {
+          standalone: true,
+          stretched: true,
+          href: "#stretched",
+          children: 'En länk som sträcker sig över hela ytan'
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "ny-flik",
+      children: "Ny flik"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om en länk är satt till att öppnas i en ny flik förtydligas detta med en ikon. Detta görs genom att sätta ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "target='_blank'"
+      }), " på länken."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{3}",
+        children: "<Link\n  href='#länk'\n  target='_blank'\n>\n  En länk till en annan URL\n</Link>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(Link/* Link */.N, {
+        href: "#länk",
+        target: "_blank",
+        children: 'En länk till en annan URL'
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "nedladdning",
+      children: "Nedladdning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Även vid nedladdning förtydligas detta med en ikon. Detta görs genom att sätta ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "download"
+      }), " på länken."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{3}",
+        children: "<Link\n  href='#nedladdning'\n  download\n>\n  Ladda ned senaste rapporten\n</Link>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(Link/* Link */.N, {
+        href: "#nedladdning",
+        download: true,
+        children: 'Ladda ned senaste rapporten'
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "client-side-routing",
+      children: "Client Side Routing"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Läs mer om hur du kan använda komponenten med ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/dev/client-side-routing",
+        children: "Client Side Routing"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "val-av-komponent",
+      children: "Val av komponent"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Se mönstret ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/design-patterns/buttons-and-links",
+        children: "Knappar och länkar"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "Breadcrumbs"
+      name: "Link"
     })]
   });
 }
@@ -300,29 +441,6 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 /* harmony import */ var _heading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(93683);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
 'use client';var _excluded=["title","children","className","headingLevel","type","hasBackground"];var AccordionItem=function AccordionItem(_ref){var title=_ref.title,children=_ref.children,className=_ref.className,_ref$headingLevel=_ref.headingLevel,headingLevel=_ref$headingLevel===void 0?'h2':_ref$headingLevel,type=_ref.type,_ref$hasBackground=_ref.hasBackground,hasBackground=_ref$hasBackground===void 0?true:_ref$hasBackground,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var titleIsReactNode=typeof title==='object';var iconMap={success:lucide_react__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A,warning:lucide_react__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A,"default":null};var Icon=iconMap[type||'default'];var renderedIcon=Icon?/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(Icon,{size:20,className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.statusIcon}):null;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_aria_components__WEBPACK_IMPORTED_MODULE_6__/* .Disclosure */ .EN,Object.assign({},props,{className:(0,clsx__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A)(_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.item,type==='success'&&_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.success,type==='warning'&&_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.warning,className),children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.trigger,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_button__WEBPACK_IMPORTED_MODULE_8__/* .Button */ .$,{className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.triggerButton,slot:"trigger",variant:"icon",children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(lucide_react__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .A,{size:20,className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.chevronIcon}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.triggerMainContent,children:titleIsReactNode?title:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_heading__WEBPACK_IMPORTED_MODULE_10__/* .Heading */ .D,{level:3,elementType:headingLevel,className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.triggerText,children:title})}),renderedIcon]})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_6__/* .DisclosurePanel */ .kS,{className:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.panel,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:(0,clsx__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .A)(_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.content,hasBackground&&_Accordion_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.hasBackground),children:children})})]}));};
-
-/***/ }),
-
-/***/ 70847:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  B: () => (/* binding */ Breadcrumbs)
-});
-
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Breadcrumbs.mjs + 36 modules
-var dist_Breadcrumbs = __webpack_require__(57214);
-// EXTERNAL MODULE: ./packages/components/src/link/Link.tsx + 1 modules
-var Link = __webpack_require__(25441);
-;// ./packages/components/src/breadcrumbs/Breadcrumbs.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Breadcrumbs_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","container":"container_QqG_"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/breadcrumbs/Breadcrumbs.tsx
-var Breadcrumbs=function Breadcrumbs(_ref){var items=_ref.items;return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumbs */.BI,{className:Breadcrumbs_module.container,children:items.map(function(item,index){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Breadcrumbs/* Breadcrumb */.Qp,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* Link */.N,{href:item.href,isDisabled:item.isDisabled,children:item.title})},item.title.toLocaleLowerCase()+index);})});};
 
 /***/ }),
 
@@ -447,6 +565,8 @@ __webpack_require__.d(__webpack_exports__, {
 
 // UNUSED EXPORTS: RouterProvider
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
+var objectDestructuringEmpty = __webpack_require__(20454);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
 ;// ./packages/components/src/link/Link.module.css
@@ -456,12 +576,43 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var dist_Link = __webpack_require__(73099);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-to-line.js
+var arrow_down_to_line = __webpack_require__(69750);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/square-arrow-out-up-right.js
+var square_arrow_out_up_right = __webpack_require__(8866);
 // EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-right.js
 var arrow_right = __webpack_require__(48635);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/link/Link.tsx
-'use client';var _excluded=["children","standalone","stretched","icon","className","as"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,stretched=_ref.stretched,IconComponent=_ref.icon,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||dist_Link/* Link */.N;return/*#__PURE__*/(0,jsx_runtime.jsx)(Component,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,!standalone&&IconComponent&&/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,{size:20,className:Link_module.icon}),standalone&&/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,{size:20,className:Link_module.icon})]})}));};
+'use client';var _excluded=["children","standalone","target","stretched","download","icon","className","as"];var Link=function Link(_ref){var children=_ref.children,standalone=_ref.standalone,target=_ref.target,stretched=_ref.stretched,download=_ref.download,IconComponent=_ref.icon,className=_ref.className,as=_ref.as,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||dist_Link/* Link */.N;var Icon=function Icon(_ref2){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref2),_ref2));if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,Object.assign({},rest));if(download)return/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_to_line/* default */.A,Object.assign({},rest));if(target==='_blank')return/*#__PURE__*/(0,jsx_runtime.jsx)(square_arrow_out_up_right/* default */.A,Object.assign({},rest));if(standalone)return/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,Object.assign({},rest));return null;};return/*#__PURE__*/(0,jsx_runtime.jsx)(Component,Object.assign({className:(0,clsx/* default */.A)(Link_module.link,standalone&&Link_module.standalone,stretched&&Link_module.stretched,className)},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:16,className:Link_module.icon})]})}));};
+
+/***/ }),
+
+/***/ 19615:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  E: () => (/* binding */ Text)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var dist_Text = __webpack_require__(27279);
+;// ./packages/components/src/text/Text.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/text/Text.tsx
+var _excluded=["children","className","variant","isExpressive","elementType"];var DEFAULT_ELEMENT='span';var Text=function Text(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'body-02':_ref$variant,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'body-01':Text_module['body-01'],'body-02':Text_module['body-02']};var textProps=Object.assign({className:(0,clsx/* default */.A)(rest.slot==='description'?Text_module.description:classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},isExpressive&&{'data-expressive':true},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Text/* Text */.E,Object.assign({},textProps,{children:children}));};
 
 /***/ }),
 
@@ -516,6 +667,34 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
+/***/ 69750:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ ArrowDownToLine)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ArrowDownToLine = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("ArrowDownToLine", [
+  ["path", { d: "M12 17V3", key: "1cwfxf" }],
+  ["path", { d: "m6 11 6 6 6-6", key: "12ii2o" }],
+  ["path", { d: "M19 21H5", key: "150jfl" }]
+]);
+
+
+//# sourceMappingURL=arrow-down-to-line.js.map
+
+
+/***/ }),
+
 /***/ 48635:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -562,607 +741,6 @@ const ArrowRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["defa
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-md":"(min-width: 768px)","--breakpoint-lg":"(min-width: 1200px)","--breakpoint-xl":"(min-width: 1440px)","container":"container_M2rG","flex":"flex_UojW","fluid":"fluid_lF5E","col":"col_Taxb","col-1":"col-1_z0bQ","col-2":"col-2_HAuY","col-3":"col-3_oSCH","col-4":"col-4_eIG4","col-5":"col-5_JlYB","col-6":"col-6_dZDY","col-7":"col-7_UoF_","col-8":"col-8_zyia","col-9":"col-9_H77l","col-10":"col-10_zbp5","col-11":"col-11_N7LS","col-12":"col-12_HChu","col-auto":"col-auto_JGok","offset-1":"offset-1_e_Jy","offset-2":"offset-2_p5mN","offset-3":"offset-3_Dz4V","offset-4":"offset-4_Uwlu","offset-5":"offset-5_DYvi","offset-6":"offset-6_pWn0","offset-7":"offset-7_iSDK","offset-8":"offset-8_RIDq","offset-9":"offset-9_Unq7","offset-10":"offset-10_OUtT","offset-11":"offset-11_ySZ3"});
-
-/***/ }),
-
-/***/ 57214:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Qp: () => (/* binding */ $778035c5624f61e7$export$dabcc1ec9dd9d1cc),
-  BI: () => (/* binding */ $778035c5624f61e7$export$2dc68d50d56fbbd)
-});
-
-// UNUSED EXPORTS: BreadcrumbsContext
-
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Collection.mjs
-var Collection = __webpack_require__(64606);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Link.mjs + 1 modules
-var Link = __webpack_require__(73099);
-;// ./node_modules/@react-aria/breadcrumbs/dist/ar-AE.mjs
-var $b91590b2dc47de39$exports = {};
-$b91590b2dc47de39$exports = {
-    "breadcrumbs": `\u{639}\u{646}\u{627}\u{635}\u{631} \u{627}\u{644}\u{648}\u{627}\u{62C}\u{647}\u{629}`
-};
-
-
-
-//# sourceMappingURL=ar-AE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/bg-BG.mjs
-var $55b0693b2cf3fe91$exports = {};
-$55b0693b2cf3fe91$exports = {
-    "breadcrumbs": `\u{422}\u{440}\u{43E}\u{445}\u{438} \u{445}\u{43B}\u{44F}\u{431}`
-};
-
-
-
-//# sourceMappingURL=bg-BG.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/cs-CZ.mjs
-var $6ec1ed7729e948cc$exports = {};
-$6ec1ed7729e948cc$exports = {
-    "breadcrumbs": `Popis cesty`
-};
-
-
-
-//# sourceMappingURL=cs-CZ.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/da-DK.mjs
-var $5a41bb2baa6861e4$exports = {};
-$5a41bb2baa6861e4$exports = {
-    "breadcrumbs": `Br\xf8dkrummer`
-};
-
-
-
-//# sourceMappingURL=da-DK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/de-DE.mjs
-var $f28bbea439e87eca$exports = {};
-$f28bbea439e87eca$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=de-DE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/el-GR.mjs
-var $b3eca51cb720961a$exports = {};
-$b3eca51cb720961a$exports = {
-    "breadcrumbs": `\u{3A0}\u{3BB}\u{3BF}\u{3B7}\u{3B3}\u{3AE}\u{3C3}\u{3B5}\u{3B9}\u{3C2} breadcrumb`
-};
-
-
-
-//# sourceMappingURL=el-GR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/en-US.mjs
-var $0b39b205118db415$exports = {};
-$0b39b205118db415$exports = {
-    "breadcrumbs": `Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=en-US.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/es-ES.mjs
-var $f467c0ee7bfb0950$exports = {};
-$f467c0ee7bfb0950$exports = {
-    "breadcrumbs": `Migas de pan`
-};
-
-
-
-//# sourceMappingURL=es-ES.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/et-EE.mjs
-var $ab711d2ffb4cdf3d$exports = {};
-$ab711d2ffb4cdf3d$exports = {
-    "breadcrumbs": `Lingiread`
-};
-
-
-
-//# sourceMappingURL=et-EE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fi-FI.mjs
-var $b63105d663e6f9d5$exports = {};
-$b63105d663e6f9d5$exports = {
-    "breadcrumbs": `Navigointilinkit`
-};
-
-
-
-//# sourceMappingURL=fi-FI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/fr-FR.mjs
-var $9d2ed7be7fcdc2a1$exports = {};
-$9d2ed7be7fcdc2a1$exports = {
-    "breadcrumbs": `Chemin de navigation`
-};
-
-
-
-//# sourceMappingURL=fr-FR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/he-IL.mjs
-var $c5704294d85c7b5d$exports = {};
-$c5704294d85c7b5d$exports = {
-    "breadcrumbs": `\u{5E9}\u{5D1}\u{5D9}\u{5DC}\u{5D9} \u{5E0}\u{5D9}\u{5D5}\u{5D5}\u{5D8}`
-};
-
-
-
-//# sourceMappingURL=he-IL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hr-HR.mjs
-var $20c975671d6bbc63$exports = {};
-$20c975671d6bbc63$exports = {
-    "breadcrumbs": `Navigacijski putovi`
-};
-
-
-
-//# sourceMappingURL=hr-HR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/hu-HU.mjs
-var $2569ca3917233115$exports = {};
-$2569ca3917233115$exports = {
-    "breadcrumbs": `Morzsamen\xfc`
-};
-
-
-
-//# sourceMappingURL=hu-HU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/it-IT.mjs
-var $caa152f7f8e96c85$exports = {};
-$caa152f7f8e96c85$exports = {
-    "breadcrumbs": `Breadcrumb`
-};
-
-
-
-//# sourceMappingURL=it-IT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ja-JP.mjs
-var $cbc6af0cc98fad10$exports = {};
-$cbc6af0cc98fad10$exports = {
-    "breadcrumbs": `\u{30D1}\u{30F3}\u{304F}\u{305A}\u{30EA}\u{30B9}\u{30C8}`
-};
-
-
-
-//# sourceMappingURL=ja-JP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ko-KR.mjs
-var $ad9be5d332b4d607$exports = {};
-$ad9be5d332b4d607$exports = {
-    "breadcrumbs": `\u{D0D0}\u{C0C9} \u{D45C}\u{C2DC}`
-};
-
-
-
-//# sourceMappingURL=ko-KR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lt-LT.mjs
-var $659de19a00ff9617$exports = {};
-$659de19a00ff9617$exports = {
-    "breadcrumbs": `Nar\u{161}ymo kelias`
-};
-
-
-
-//# sourceMappingURL=lt-LT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/lv-LV.mjs
-var $173e9fb4d14fe309$exports = {};
-$173e9fb4d14fe309$exports = {
-    "breadcrumbs": `Atpaka\u{13C}ce\u{13C}i`
-};
-
-
-
-//# sourceMappingURL=lv-LV.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nb-NO.mjs
-var $d8e2640a066567a9$exports = {};
-$d8e2640a066567a9$exports = {
-    "breadcrumbs": `Navigasjonsstier`
-};
-
-
-
-//# sourceMappingURL=nb-NO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/nl-NL.mjs
-var $d71fd764236c0d12$exports = {};
-$d71fd764236c0d12$exports = {
-    "breadcrumbs": `Broodkruimels`
-};
-
-
-
-//# sourceMappingURL=nl-NL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pl-PL.mjs
-var $f4ad3faf9f4aaec6$exports = {};
-$f4ad3faf9f4aaec6$exports = {
-    "breadcrumbs": `Struktura nawigacyjna`
-};
-
-
-
-//# sourceMappingURL=pl-PL.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-BR.mjs
-var $9703be9d55d8e9c2$exports = {};
-$9703be9d55d8e9c2$exports = {
-    "breadcrumbs": `Caminho detalhado`
-};
-
-
-
-//# sourceMappingURL=pt-BR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/pt-PT.mjs
-var $7e23baec8a14f309$exports = {};
-$7e23baec8a14f309$exports = {
-    "breadcrumbs": `Categorias`
-};
-
-
-
-//# sourceMappingURL=pt-PT.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ro-RO.mjs
-var $568f95594049d56e$exports = {};
-$568f95594049d56e$exports = {
-    "breadcrumbs": `Miez de p\xe2ine`
-};
-
-
-
-//# sourceMappingURL=ro-RO.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/ru-RU.mjs
-var $625df06cecc70764$exports = {};
-$625df06cecc70764$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{438}\u{433}\u{430}\u{446}\u{438}\u{44F}`
-};
-
-
-
-//# sourceMappingURL=ru-RU.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sk-SK.mjs
-var $b5a67525f3a2f594$exports = {};
-$b5a67525f3a2f594$exports = {
-    "breadcrumbs": `Naviga\u{10D}n\xe9 prvky Breadcrumbs`
-};
-
-
-
-//# sourceMappingURL=sk-SK.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sl-SI.mjs
-var $16125922964febca$exports = {};
-$16125922964febca$exports = {
-    "breadcrumbs": `Drobtine`
-};
-
-
-
-//# sourceMappingURL=sl-SI.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sr-SP.mjs
-var $de104bf355206bcf$exports = {};
-$de104bf355206bcf$exports = {
-    "breadcrumbs": `Putanje navigacije`
-};
-
-
-
-//# sourceMappingURL=sr-SP.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/sv-SE.mjs
-var $d5ab76bcbadc9c07$exports = {};
-$d5ab76bcbadc9c07$exports = {
-    "breadcrumbs": `S\xf6kv\xe4gar`
-};
-
-
-
-//# sourceMappingURL=sv-SE.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/tr-TR.mjs
-var $a6a1af5968159b55$exports = {};
-$a6a1af5968159b55$exports = {
-    "breadcrumbs": `\u{130}\xe7erik haritalar\u{131}`
-};
-
-
-
-//# sourceMappingURL=tr-TR.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/uk-UA.mjs
-var $5204a30f0d17ffec$exports = {};
-$5204a30f0d17ffec$exports = {
-    "breadcrumbs": `\u{41D}\u{430}\u{432}\u{456}\u{433}\u{430}\u{446}\u{456}\u{439}\u{43D}\u{430} \u{441}\u{442}\u{435}\u{436}\u{43A}\u{430}`
-};
-
-
-
-//# sourceMappingURL=uk-UA.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-CN.mjs
-var $8d15e736e12d3dfd$exports = {};
-$8d15e736e12d3dfd$exports = {
-    "breadcrumbs": `\u{5BFC}\u{822A}\u{680F}`
-};
-
-
-
-//# sourceMappingURL=zh-CN.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/zh-TW.mjs
-var $f8c49dd804b75140$exports = {};
-$f8c49dd804b75140$exports = {
-    "breadcrumbs": `\u{5C0E}\u{89BD}\u{5217}`
-};
-
-
-
-//# sourceMappingURL=zh-TW.module.js.map
-
-;// ./node_modules/@react-aria/breadcrumbs/dist/intlStrings.mjs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var $8229b34715874f89$exports = {};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$8229b34715874f89$exports = {
-    "ar-AE": $b91590b2dc47de39$exports,
-    "bg-BG": $55b0693b2cf3fe91$exports,
-    "cs-CZ": $6ec1ed7729e948cc$exports,
-    "da-DK": $5a41bb2baa6861e4$exports,
-    "de-DE": $f28bbea439e87eca$exports,
-    "el-GR": $b3eca51cb720961a$exports,
-    "en-US": $0b39b205118db415$exports,
-    "es-ES": $f467c0ee7bfb0950$exports,
-    "et-EE": $ab711d2ffb4cdf3d$exports,
-    "fi-FI": $b63105d663e6f9d5$exports,
-    "fr-FR": $9d2ed7be7fcdc2a1$exports,
-    "he-IL": $c5704294d85c7b5d$exports,
-    "hr-HR": $20c975671d6bbc63$exports,
-    "hu-HU": $2569ca3917233115$exports,
-    "it-IT": $caa152f7f8e96c85$exports,
-    "ja-JP": $cbc6af0cc98fad10$exports,
-    "ko-KR": $ad9be5d332b4d607$exports,
-    "lt-LT": $659de19a00ff9617$exports,
-    "lv-LV": $173e9fb4d14fe309$exports,
-    "nb-NO": $d8e2640a066567a9$exports,
-    "nl-NL": $d71fd764236c0d12$exports,
-    "pl-PL": $f4ad3faf9f4aaec6$exports,
-    "pt-BR": $9703be9d55d8e9c2$exports,
-    "pt-PT": $7e23baec8a14f309$exports,
-    "ro-RO": $568f95594049d56e$exports,
-    "ru-RU": $625df06cecc70764$exports,
-    "sk-SK": $b5a67525f3a2f594$exports,
-    "sl-SI": $16125922964febca$exports,
-    "sr-SP": $de104bf355206bcf$exports,
-    "sv-SE": $d5ab76bcbadc9c07$exports,
-    "tr-TR": $a6a1af5968159b55$exports,
-    "uk-UA": $5204a30f0d17ffec$exports,
-    "zh-CN": $8d15e736e12d3dfd$exports,
-    "zh-TW": $f8c49dd804b75140$exports
-};
-
-
-
-//# sourceMappingURL=intlStrings.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/filterDOMProps.mjs
-var filterDOMProps = __webpack_require__(5987);
-// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/useLocalizedStringFormatter.mjs
-var useLocalizedStringFormatter = __webpack_require__(29571);
-;// ./node_modules/@react-aria/breadcrumbs/dist/useBreadcrumbs.mjs
-
-
-
-
-
-function $parcel$interopDefault(a) {
-  return a && a.__esModule ? a.default : a;
-}
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-function $848231d7a2b3998e$export$8cefe241bd876ca0(props) {
-    let { 'aria-label': ariaLabel, ...otherProps } = props;
-    let strings = (0, useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)((0, ($parcel$interopDefault($8229b34715874f89$exports))), '@react-aria/breadcrumbs');
-    return {
-        navProps: {
-            ...(0, filterDOMProps/* filterDOMProps */.$)(otherProps, {
-                labelable: true
-            }),
-            'aria-label': ariaLabel || strings.format('breadcrumbs')
-        }
-    };
-}
-
-
-
-//# sourceMappingURL=useBreadcrumbs.module.js.map
-
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./node_modules/react-aria-components/dist/Breadcrumbs.mjs
-
-
-
-
-
-
-
-
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-
-
-
-
-const $778035c5624f61e7$export$65596d3621b0a4a0 = /*#__PURE__*/ (0, react.createContext)(null);
-const $778035c5624f61e7$export$2dc68d50d56fbbd = /*#__PURE__*/ (0, react.forwardRef)(function Breadcrumbs(props, ref) {
-    [props, ref] = (0, utils/* useContextProps */.JT)(props, ref, $778035c5624f61e7$export$65596d3621b0a4a0);
-    let { CollectionRoot: CollectionRoot } = (0, react.useContext)((0, Collection/* CollectionRendererContext */.zL));
-    let { navProps: navProps } = (0, $848231d7a2b3998e$export$8cefe241bd876ca0)(props);
-    return /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* CollectionBuilder */.GQ), {
-        content: /*#__PURE__*/ (0, react).createElement((0, CollectionBuilder/* Collection */.pM), props)
-    }, (collection)=>{
-        var _props_className;
-        return /*#__PURE__*/ (0, react).createElement("ol", {
-            ref: ref,
-            ...navProps,
-            slot: props.slot || undefined,
-            style: props.style,
-            className: (_props_className = props.className) !== null && _props_className !== void 0 ? _props_className : 'react-aria-Breadcrumbs'
-        }, /*#__PURE__*/ (0, react).createElement($778035c5624f61e7$export$65596d3621b0a4a0.Provider, {
-            value: props
-        }, /*#__PURE__*/ (0, react).createElement(CollectionRoot, {
-            collection: collection
-        })));
-    });
-});
-const $778035c5624f61e7$export$dabcc1ec9dd9d1cc = /*#__PURE__*/ (0, CollectionBuilder/* createLeafComponent */.KU)('item', function Breadcrumb(props, ref, node) {
-    // Recreating useBreadcrumbItem because we want to use composition instead of having the link builtin.
-    let isCurrent = node.nextKey == null;
-    let { isDisabled: isDisabled, onAction: onAction } = (0, utils/* useSlottedContext */.CC)($778035c5624f61e7$export$65596d3621b0a4a0);
-    let linkProps = {
-        'aria-current': isCurrent ? 'page' : null,
-        isDisabled: isDisabled || isCurrent,
-        onPress: ()=>onAction === null || onAction === void 0 ? void 0 : onAction(node.key)
-    };
-    let renderProps = (0, utils/* useRenderProps */.Sl)({
-        ...node.props,
-        children: node.rendered,
-        values: {
-            isDisabled: isDisabled || isCurrent,
-            isCurrent: isCurrent
-        },
-        defaultClassName: 'react-aria-Breadcrumb'
-    });
-    return /*#__PURE__*/ (0, react).createElement("li", {
-        ...(0, filterDOMProps/* filterDOMProps */.$)(props),
-        ...renderProps,
-        ref: ref,
-        "data-disabled": isDisabled || isCurrent || undefined,
-        "data-current": isCurrent || undefined
-    }, /*#__PURE__*/ (0, react).createElement((0, Link/* LinkContext */.s).Provider, {
-        value: linkProps
-    }, renderProps.children));
-});
-
-
-
-//# sourceMappingURL=Breadcrumbs.module.js.map
-
 
 /***/ })
 

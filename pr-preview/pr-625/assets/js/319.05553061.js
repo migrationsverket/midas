@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4431],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[319],{
 
 /***/ 60250:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -49,47 +49,6 @@ const ChevronRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 
 //# sourceMappingURL=chevron-right.js.map
-
-
-/***/ }),
-
-/***/ 8866:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ SquareArrowOutUpRight)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const SquareArrowOutUpRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("SquareArrowOutUpRight", [
-  ["path", { d: "M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6", key: "y09zxi" }],
-  ["path", { d: "m21 3-9 9", key: "mpx6sq" }],
-  ["path", { d: "M15 3h6v6", key: "1q9fwt" }]
-]);
-
-
-//# sourceMappingURL=square-arrow-out-up-right.js.map
-
-
-/***/ }),
-
-/***/ 20454:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ _objectDestructuringEmpty)
-/* harmony export */ });
-function _objectDestructuringEmpty(t) {
-  if (null == t) throw new TypeError("Cannot destructure " + t);
-}
 
 
 /***/ }),
