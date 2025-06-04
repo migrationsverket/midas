@@ -121,6 +121,16 @@
         "lintFilePatterns": ["packages/components/**/*.css"],
         "formatter": "unix"
       }
+    },
+    "compile": {
+      "executor": "@nx/js:tsc",
+      "options": {
+        "main": "packages/components/src/index.ts",
+        "outputPath": "dist/tsc",
+        "tsConfig": "packages/components/tsconfig.lib.json",
+        "watch": true,
+        "generatePackageJson": false
+      }
     }
   }
 }
