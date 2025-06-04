@@ -63,6 +63,7 @@
   &[data-disabled='true'],
   &[data-disabled='true'] button {
     cursor: not-allowed;
+    color: --text-disabled;
   }
 
   @media (forced-colors: active) {
@@ -82,7 +83,7 @@
     background-color: --layer-01;
     cursor: pointer;
 
-    &:hover {
+    &:hover:not([data-disabled]) {
       background-color: --field-hover-01;
     }
 
@@ -96,6 +97,10 @@
         outline-offset: 2px;
       }
     }
+  }
+
+  [data-disabled] {
+    color: --text-disabled;
   }
 }
 

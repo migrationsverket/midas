@@ -23,7 +23,7 @@ export const Calendar: React.FC<CalendarProps> = ({
     className={clsx(styles.calendar, className)}
     {...rest}
   >
-    <CalendarHeader />
+    <CalendarHeader isDisabled={rest.isDisabled} />
     <CalendarGrid {...rest} />
     {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
   </AriaCalendar>
