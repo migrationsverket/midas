@@ -9,14 +9,6 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     layout: 'centered',
   },
-  args: {
-    isInvalid: false,
-    isSelected: false,
-    isIndeterminate: false,
-    isDisabled: false,
-    isRequired: false,
-    isReadOnly: false,
-  },
   argTypes: {
     isInvalid: { type: 'boolean' },
     isSelected: { type: 'boolean' },
@@ -64,7 +56,7 @@ export const Required: Story = {
     isRequired: true,
     'aria-label': 'test',
   },
-  tags: ['!dev', '!autodocs'],
+  // tags: ['!dev', '!autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -85,10 +77,9 @@ export const Required: Story = {
     await step(
       'It should be (aria) invalid if the user submitted without checking the box',
       async () => {
-        const checkbox = canvas.getByLabelText('test')
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
+        const checkbox = canvas.getByLabelText('Unsubscribe')
+        await userEvent.click(checkbox)
+        await userEvent.click(checkbox)
         expect(checkbox).toBeInvalid()
       },
     )
