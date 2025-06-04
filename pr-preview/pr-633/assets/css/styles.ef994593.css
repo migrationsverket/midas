@@ -9020,7 +9020,7 @@ CSS variables, meant to be overridden by final theme
       }
 
 .header_VHXU [data-disabled] {
-    color: red;
+    color: light-dark(#bfbfbf, #525252);
   }
 
 .day_OZ3K {
