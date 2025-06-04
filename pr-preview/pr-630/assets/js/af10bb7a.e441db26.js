@@ -33,8 +33,8 @@ var PropsTable = __webpack_require__(53797);
 var getComponentMetaData = __webpack_require__(32980);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/select/Select.tsx + 10 modules
-var Select = __webpack_require__(3924);
+// EXTERNAL MODULE: ./packages/components/src/select/Select.tsx + 11 modules
+var Select = __webpack_require__(32783);
 ;// ./apps/docs/src/components/examples/select/SelectExamples.tsx
 var BasicExample=function BasicExample(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* Select */.l,Object.assign({label:"Favoritfrukt",description:"V\xE4lj vilken du vill",placeholder:"V\xE4lj en frukt",selectionMode:"single",options:[{id:'apelsin',name:'Apelsin'},{id:'banan',name:'Banan'},{id:'citron',name:'Citron'},{id:'dadel',name:'Dadel'},{id:'fikon',name:'Fikon'}]},props));};var ControlledExample=function ControlledExample(){var options=[{id:'apelsin',name:'Apelsin'},{id:'banan',name:'Banan'},{id:'citron',name:'Citron'},{id:'dadel',name:'Dadel'},{id:'fikon',name:'Fikon'}];var _React$useState=react.useState(new Set()),selectedFruit=_React$useState[0],setSelectedFruit=_React$useState[1];var handleSelectionChange=function handleSelectionChange(keys){if(keys==='all'){return setSelectedFruit(new Set(options.map(function(_ref){var id=_ref.id;return id;})));}return setSelectedFruit(keys);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* Select */.l,{label:"Favoritfrukt",description:"V\xE4lj vilken du vill",placeholder:"V\xE4lj en frukt",selectionMode:"multiple",selectedKeys:selectedFruit,onSelectionChange:handleSelectionChange,isSelectableAll:true,options:options}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Selected fruit: ",selectedFruit&&Array.from(selectedFruit).join(', ')]})]});};var SectionedExample=function SectionedExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* Select */.l,{label:"Favoritfrukt eller gr\xF6nsak",description:"V\xE4lj vilken du vill",placeholder:"V\xE4lj en frukt eller gr\xF6nsak",selectionMode:"multiple",options:[{name:'Frukter',children:[{id:'kiwi',name:'Kiwi'},{id:'banana',name:'Banan'},{id:'apple',name:'Äpple'}]},{name:'Grönsaker',children:[{id:'carrot',name:'Morot'},{id:'broccoli',name:'Broccoli'}]}]});};
 ;// ./apps/docs/docs/components/select.mdx
@@ -697,7 +697,7 @@ var _excluded=["children","name"];var ListBoxSection=function ListBoxSection(_re
 
 /***/ }),
 
-/***/ 3924:
+/***/ 32783:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
@@ -732,6 +732,12 @@ var Checkbox = __webpack_require__(93284);
 var ListBoxItem = __webpack_require__(99498);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
 var ListBoxSection = __webpack_require__(59074);
+;// ./packages/components/src/list-box/utils.ts
+/**
+ * Find out if a `Selection` (`"all" | Set<Key>`) is `Set<Key>`
+ */var isASetOfKeys=function isASetOfKeys(keys){return keys!=='all';};/**
+ * Find out if a selection is an empty Set
+ */var isSelectionEmpty=function isSelectionEmpty(keys){return isASetOfKeys(keys)&&keys.size===0;};
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.tsx + 1 modules
 var ListBox = __webpack_require__(41075);
 ;// ./packages/components/src/select/Select.module.css
@@ -740,7 +746,7 @@ var ListBox = __webpack_require__(41075);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/select/SelectListBox.tsx
-var _excluded=["state"];var Option=function Option(_ref){var item=_ref.item;return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},item.value,{textValue:item.textValue,children:function children(_ref2){var isDisabled=_ref2.isDisabled,isSelected=_ref2.isSelected,selectionMode=_ref2.selectionMode;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[selectionMode==='multiple'?/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isDisabled:isDisabled,isSelected:isSelected,isReadOnly:true,excludeFromTabOrder:true})}):null,item.rendered,isSelected&&selectionMode==='single'?/*#__PURE__*/(0,jsx_runtime.jsx)(check/* default */.A,{size:20,className:Select_module.listBoxItemCheckmark}):null]});}}));};var SelectListBox_Section=function Section(_ref3){var section=_ref3.section,state=_ref3.state;return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},section.value,{children:state.collection.getChildren?/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:state.collection.getChildren(section.key),children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item});}}):null}));};var SelectListBox=function SelectListBox(_ref4){var state=_ref4.state,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded);var handleSelectionChange=function handleSelectionChange(keys){if(state.selectionMode==='single'&&typeof keys!=='string'&&keys.size===0&&!rest.isClearable){state.setSelectedKeys(state.selectedKeys);state.close();}else{state.setSelectedKeys(keys);}};return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,Object.assign({},rest,state,{escapeKeyBehavior:"none",onSelectionChange:handleSelectionChange,items:state.collection,children:function children(item){return item.type==='section'?/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox_Section,{state:state,section:item}):/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item});}}));};
+var _excluded=["state","isClearable"];var Option=function Option(_ref){var item=_ref.item;return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},item.value,{textValue:item.textValue,children:function children(_ref2){var isDisabled=_ref2.isDisabled,isSelected=_ref2.isSelected,selectionMode=_ref2.selectionMode;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[selectionMode==='multiple'?/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isDisabled:isDisabled,isSelected:isSelected,isReadOnly:true,excludeFromTabOrder:true})}):null,item.rendered,isSelected&&selectionMode==='single'?/*#__PURE__*/(0,jsx_runtime.jsx)(check/* default */.A,{size:20,className:Select_module.listBoxItemCheckmark}):null]});}}));};var SelectListBox_Section=function Section(_ref3){var section=_ref3.section,state=_ref3.state;return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},section.value,{children:state.collection.getChildren?/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:state.collection.getChildren(section.key),children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item});}}):null}));};var SelectListBox=function SelectListBox(_ref4){var state=_ref4.state,isClearable=_ref4.isClearable,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded);var handleSelectionChange=function handleSelectionChange(currentSelection){var previousSelection=state.selectedKeys;if(state.selectionMode==='single'&&isSelectionEmpty(currentSelection)&&!isClearable){state.setSelectedKeys(previousSelection);return state.close();}return state.setSelectedKeys(currentSelection);};return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,Object.assign({},rest,state,{escapeKeyBehavior:"none",onSelectionChange:handleSelectionChange,items:state.collection,children:function children(item){return item.type==='section'?/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox_Section,{state:state,section:item}):/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item});}}));};
 // EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/useCollator.mjs
 var useCollator = __webpack_require__(82627);
 // EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/useFocusVisible.mjs
