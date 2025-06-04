@@ -8992,7 +8992,7 @@ CSS variables, meant to be overridden by final theme
     cursor: pointer;
   }
 
-.header_VHXU button:hover {
+.header_VHXU button:hover:not([data-disabled]) {
       background-color: light-dark(#e6e6e6, #333333);
     }
 
