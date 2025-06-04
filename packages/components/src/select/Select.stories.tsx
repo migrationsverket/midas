@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from './utils'
-import { expect, fn, spyOn, userEvent } from '@storybook/test'
+import { expect, fn, spyOn, userEvent, within } from '@storybook/test'
 import { useState } from 'react'
 import { Selection } from 'react-aria-components'
 import { sizeModes } from '../../.storybook/modes'
@@ -45,14 +45,15 @@ export default meta
 type Story = StoryObj<typeof Select>
 
 export const Normal: Story = {
-  play: async ({ args, canvas, step, globals: { size } }) => {
+  play: async ({ args, canvas, canvasElement, step, globals: { size } }) => {
+    const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
+
     await step(
       'It should be possible to select an item using the keyboard',
       async () => {
         await userEvent.tab()
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
         const visibleValue = canvas.getByText(options[0].name, {
           selector: 'span',
         })
@@ -60,11 +61,29 @@ export const Normal: Story = {
         await expect(visibleValue).toBeVisible()
       },
     )
+
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
         height: size === 'large' ? '48px' : '40px',
       })
     })
+
+    await step(
+      'It should close the list box and empty the selection if the previous value is selected again',
+      async () => {
+        // open
+        await userEvent.keyboard('[Space]')
+        // select the first item again
+        await userEvent.keyboard('[Space]')
+
+        // Listbox is outside of #storybook-root element
+        const body = canvasElement.ownerDocument.body
+        const listbox = within(body).queryByRole('listbox')
+
+        await expect(listbox).not.toBeInTheDocument()
+        await expect(hiddenSelect).toHaveDisplayValue([])
+      },
+    )
   },
 }
 
@@ -225,8 +244,38 @@ export const SelectAllEnabled: Story = {
   },
 }
 
-/** As default all options are clearable. `isClearable={false}` Experimental feature  */
-export const NotClearable: Story = {
+export const SingleNotClearable: Story = {
+  args: {
+    isClearable: false,
+  },
+  play: async ({ canvas, args, canvasElement, step }) => {
+    await step(
+      'It should close the list box and preserve the value if the previous value is selected again',
+      async () => {
+        await userEvent.tab()
+        // open
+        await userEvent.keyboard('[Space]')
+        // select the first item
+        await userEvent.keyboard('[Space]')
+        // open again
+        await userEvent.keyboard('[Space]')
+        // select the first item again
+        await userEvent.keyboard('[Space]')
+
+        // Listbox is outside of #storybook-root element
+        const body = canvasElement.ownerDocument.body
+        const listbox = within(body).queryByRole('listbox')
+
+        await expect(listbox).not.toBeInTheDocument()
+        await expect(
+          canvas.getByLabelText(`${args.label}-hidden`),
+        ).not.toHaveDisplayValue([])
+      },
+    )
+  },
+}
+
+export const MultipleNotClearable: Story = {
   args: {
     selectionMode: 'multiple',
     isClearable: false,

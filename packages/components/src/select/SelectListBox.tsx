@@ -6,17 +6,19 @@ import {
   ListBox,
   ListBoxItem,
   ListBoxSection,
+  isSelectionEmpty,
   type ListBoxItemElement,
   type ListBoxOption,
   type ListBoxSectionElement,
 } from '../list-box'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
-import type { Node } from '@react-types/shared'
-import type { MultiSelectState } from './types'
+import type { Node, Selection } from '@react-types/shared'
+import type { MultiSelectState, SelectProps } from './types'
 import styles from './Select.module.css'
 
 interface ListBoxProps<T extends ListBoxOption> extends AriaListBoxOptions<T> {
   state: MultiSelectState<T>
+  isClearable: SelectProps['isClearable']
 }
 
 interface SectionProps {
@@ -69,24 +71,42 @@ const Section = ({ section, state }: SectionProps) => (
 
 export const SelectListBox = <T extends ListBoxOption>({
   state,
+  isClearable,
   ...rest
-}: ListBoxProps<T>) => (
-  <ListBox
-    {...rest}
-    {...state}
-    escapeKeyBehavior='none'
-    onSelectionChange={state.setSelectedKeys}
-    items={state.collection}
-  >
-    {item =>
-      item.type === 'section' ? (
-        <Section
-          state={state}
-          section={item as Node<ListBoxSectionElement>}
-        />
-      ) : (
-        <Option item={item as Node<ListBoxItemElement>} />
-      )
+}: ListBoxProps<T>) => {
+  const handleSelectionChange = (currentSelection: Selection) => {
+    const previousSelection = state.selectedKeys
+
+    if (
+      state.selectionMode === 'single' &&
+      isSelectionEmpty(currentSelection) &&
+      !isClearable
+    ) {
+      state.setSelectedKeys(previousSelection)
+      return state.close()
     }
-  </ListBox>
-)
+
+    return state.setSelectedKeys(currentSelection)
+  }
+
+  return (
+    <ListBox
+      {...rest}
+      {...state}
+      escapeKeyBehavior='none'
+      onSelectionChange={handleSelectionChange}
+      items={state.collection}
+    >
+      {item =>
+        item.type === 'section' ? (
+          <Section
+            state={state}
+            section={item as Node<ListBoxSectionElement>}
+          />
+        ) : (
+          <Option item={item as Node<ListBoxItemElement>} />
+        )
+      }
+    </ListBox>
+  )
+}

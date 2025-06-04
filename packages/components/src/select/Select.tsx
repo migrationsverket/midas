@@ -24,7 +24,8 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     const props: SelectProps = {
       selectionMode: 'single',
       errorPosition: 'top',
-      disallowEmptySelection: !isClearable,
+      disallowEmptySelection:
+        rest.selectionMode === 'multiple' ? !isClearable : false,
       isClearable,
       size: 'large',
       ...rest,
@@ -128,6 +129,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           <SelectListBox
             {...menuProps}
             state={state}
+            isClearable={isClearable}
           />
         </ListBoxPopover>
         {props.showTags && !!state.selectedItems && (
