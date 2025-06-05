@@ -1,49 +1,55 @@
+import * as React from 'react'
 import {
-  AriaCheckboxProps,
-  useCheckboxGroupItem,
+  type AriaCheckboxProps,
+  mergeProps,
   useCheckbox,
-} from 'react-aria'
-import React, { ForwardedRef, forwardRef, useContext } from 'react'
-import { CheckboxGroupContext } from './context.ts'
-import { useToggleState } from '@react-stately/toggle'
-import {
+  useCheckboxGroupItem,
   useFocusRing,
   useHover,
-  mergeProps,
   usePress,
   VisuallyHidden,
 } from 'react-aria'
-import styles from './Checkbox.module.css'
-import { clsx } from 'clsx'
 import {
   CheckboxContext,
   FormContext,
-  SlotProps, useContextProps,
-  useSlottedContext
+  type SlotProps,
+  useContextProps,
+  useSlottedContext,
 } from 'react-aria-components'
+import { useToggleState } from '@react-stately/toggle'
+import { clsx } from 'clsx'
+import { CheckboxGroupContext } from './context'
+import styles from './Checkbox.module.css'
 
-export const Checkbox = /*#__PURE__*/ (forwardRef as typeof forwardRef)(
-  function Checkbox(
-    props: AriaCheckboxProps & SlotProps,
-    ref: ForwardedRef<HTMLLabelElement>,
-  ) {
-    [props, ref] = useContextProps(props, ref, CheckboxContext);
+export type CheckboxProps = AriaCheckboxProps & SlotProps
+
+export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
+  (props, ref) => {
+    ;[props, ref] = useContextProps(props, ref, CheckboxContext)
+
     const originalProps = props
-    const { validationBehavior: formValidationBehavior } =
-      useSlottedContext(FormContext) || {}
+
+    const formProps = useSlottedContext(FormContext)
+
     const validationBehavior =
-      props.validationBehavior ?? formValidationBehavior ?? 'native'
-    const groupState = useContext(CheckboxGroupContext)
-    const { children } = props
+      props.validationBehavior ?? formProps?.validationBehavior ?? 'native'
+
+    const groupState = React.useContext(CheckboxGroupContext)
 
     const inputRef = React.useRef<HTMLInputElement>(null)
 
-    const { hoverProps, isHovered } = useHover({ ...props })
-    const { pressProps } = usePress({ ...props })
+    const { hoverProps, isHovered } = useHover(props)
+
+    const {
+      isIndeterminate = false,
+      // eslint-disable-next-line
+      isSelected: _isSelected,
+      ...rest
+    } = props
+
+    const { pressProps } = usePress(rest)
 
     const { isFocused, isFocusVisible, focusProps } = useFocusRing()
-
-    const { isIndeterminate = false } = props
 
     const {
       inputProps,
@@ -57,9 +63,8 @@ export const Checkbox = /*#__PURE__*/ (forwardRef as typeof forwardRef)(
       ? useCheckboxGroupItem(
           {
             ...props,
-            // Value is optional for standalone checkboxes, but required for CheckboxGroup items;
+            // @ts-expect-error Value is optional for standalone checkboxes, but required for CheckboxGroup items;
             // it's passed explicitly here to avoid typescript error (requires ignore).
-            // @ts-ignore
             value: props.value,
             children:
               typeof props.children === 'function' ? true : props.children,
@@ -79,51 +84,49 @@ export const Checkbox = /*#__PURE__*/ (forwardRef as typeof forwardRef)(
         )
 
     return (
-      <>
-        <label
-          ref={ref}
-          {...mergeProps(hoverProps, pressProps, labelProps)}
-          slot={props.slot || undefined}
-          className={styles.checkbox}
-          data-hovered={isHovered || undefined}
-          data-selected={isSelected || undefined}
-          data-indeterminate={props.isIndeterminate || undefined}
-          data-pressed={isPressed || undefined}
-          data-disabled={isDisabled || undefined}
-          data-readonly={isReadOnly || undefined}
-          data-invalid={isInvalid || undefined}
-          data-focused={isFocused || undefined}
-          data-focus-visible={isFocusVisible || undefined}
-          data-required={props.isRequired || undefined}
-        >
-          <div className={clsx(styles.checkboxInner)}>
-            <svg
-              width={16}
-              height={16}
-              viewBox='0 0 18 18'
-              aria-hidden='true'
-            >
-              {isIndeterminate ? (
-                <rect
-                  x={4}
-                  y={8}
-                  width={10}
-                  height={2}
-                />
-              ) : (
-                <polyline points='3,9 7,13 15,4' />
-              )}
-            </svg>
-          </div>
-          <VisuallyHidden>
-            <input
-              {...mergeProps(inputProps, focusProps)}
-              ref={inputRef}
-            />
-          </VisuallyHidden>
-          {children}
-        </label>
-      </>
+      <label
+        ref={ref}
+        {...mergeProps(hoverProps, pressProps, labelProps)}
+        slot={props.slot || undefined}
+        className={styles.checkbox}
+        data-hovered={isHovered || undefined}
+        data-selected={isSelected || undefined}
+        data-indeterminate={props.isIndeterminate || undefined}
+        data-pressed={isPressed || undefined}
+        data-disabled={isDisabled || undefined}
+        data-readonly={isReadOnly || undefined}
+        data-invalid={isInvalid || undefined}
+        data-focused={isFocused || undefined}
+        data-focus-visible={isFocusVisible || undefined}
+        data-required={props.isRequired || undefined}
+      >
+        <div className={clsx(styles.checkboxInner)}>
+          <svg
+            width={16}
+            height={16}
+            viewBox='0 0 18 18'
+            aria-hidden='true'
+          >
+            {isIndeterminate ? (
+              <rect
+                x={4}
+                y={8}
+                width={10}
+                height={2}
+              />
+            ) : (
+              <polyline points='3,9 7,13 15,4' />
+            )}
+          </svg>
+        </div>
+        <VisuallyHidden>
+          <input
+            {...mergeProps(inputProps, focusProps)}
+            ref={inputRef}
+          />
+        </VisuallyHidden>
+        {props.children}
+      </label>
     )
   },
 )
