@@ -8926,6 +8926,11 @@ CSS variables, meant to be overridden by final theme
     transform-origin: center left;
   }
 
+.container_UZyi {
+  display: inline-flex;
+  flex-direction: column;
+}
+
 .calendar_Zofv {
   padding: 0.5rem;
 }
@@ -8999,6 +9004,10 @@ CSS variables, meant to be overridden by final theme
     color: light-dark(#bfbfbf, #525252);
   }
 
+.calendar_Zofv[data-invalid] {
+    border: 2px solid red;
+  }
+
 @media (forced-colors: active) {
 
 .calendar_Zofv {
@@ -9056,7 +9065,7 @@ CSS variables, meant to be overridden by final theme
   cursor: pointer;
 }
 
-.day_OZ3K[data-hovered] {
+.day_OZ3K[data-hovered]:not([data-unavailable]):not([data-disabled]) {
     background-color: light-dark(#e6e6e6, #333333);
     border-color: light-dark(#e6e6e6, #333333);
   }
@@ -9086,7 +9095,7 @@ CSS variables, meant to be overridden by final theme
   }
     }
 
-.day_OZ3K[data-disabled] {
+.day_OZ3K[data-disabled],.day_OZ3K[data-unavailable] {
     color: light-dark(#bfbfbf, #525252);
     cursor: not-allowed;
   }
