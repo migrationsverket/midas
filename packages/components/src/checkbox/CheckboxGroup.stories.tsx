@@ -56,17 +56,17 @@ export const SelectAll: Story = {
 export const SelectAllInteraction: Story = {
   args: {
     showSelectAll: true,
-    selectAllLabel: 'SELECT ALL'
+    selectAllLabel: 'SELECT ALL',
   },
   // tags: ['!dev', '!autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  render: ({...args}) => {
+  render: ({ ...args }) => {
     return (
       <CheckboxGroup {...args}>
-        <Checkbox value={'banana'}>Banana</Checkbox>
-        <Checkbox value={'apple'}>Apple</Checkbox>
+        <Checkbox value='banana'>Banana</Checkbox>
+        <Checkbox value='apple'>Apple</Checkbox>
         <div>I'm not a checkbox</div>
       </CheckboxGroup>
     )
@@ -81,15 +81,19 @@ export const SelectAllInteraction: Story = {
         await userEvent.keyboard('[Enter]')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
-        await expect(selectAllCheckbox).toHaveAttribute('data-selected','true')
+        await expect(selectAllCheckbox).toHaveAttribute('data-selected', 'true')
       },
     )
-    await step('It should show select all as indeterminate when 0 > check < max is selected',
+    await step(
+      'It should show select all as indeterminate when 0 > check < max is selected',
       async () => {
         const banana = canvas.getByLabelText('Banana')
         await userEvent.click(banana)
-        await expect(selectAllCheckbox).toHaveAttribute('data-indeterminate','true')
-      }
+        await expect(selectAllCheckbox).toHaveAttribute(
+          'data-indeterminate',
+          'true',
+        )
+      },
     )
   },
 }
@@ -109,10 +113,12 @@ export const Invalid: Story = {
     errorMessage: 'Du måste välja en av frukterna',
   },
   play: async ({ canvas, step }) => {
-    await step('It should display correct error message when invalid', async () => {
-      const checkboxGroup = canvas.getByLabelText('Invalid (by required)')
-      await expect(checkboxGroup).toBeVisible()
-    })
-  }
+    await step(
+      'It should display correct error message when invalid',
+      async () => {
+        const checkboxGroup = canvas.getByLabelText('Invalid (by required)')
+        await expect(checkboxGroup).toBeVisible()
+      },
+    )
+  },
 }
-
