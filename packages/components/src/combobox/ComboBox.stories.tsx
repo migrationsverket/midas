@@ -194,6 +194,55 @@ export const CustomErrorMessage: Story = {
   },
 }
 
+export const DS1207: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    placeholder: 'Välj eller sök frukt',
+    label: 'Välj en frukt',
+    description: 'Description',
+    className: 'test',
+    items: optionsWithSections,
+  },
+  render: (args, { globals: { size } }) => (
+    <ComboBox
+      {...args}
+      size={size}
+    >
+      {section => (
+        <ComboBoxSection
+          {...section}
+          id={section.name}
+        />
+      )}
+    </ComboBox>
+  ),
+  play: async ({ canvas, step, args }) => {
+    await step(
+      'The label should preserve its id when opening and closing the list box',
+      async () => {
+        await expect(
+          canvas.getByRole('combobox', {
+            name: args.label as string,
+          }),
+        ).toBeInTheDocument()
+
+        await userEvent.tab()
+        await userEvent.keyboard('[ArrowDown]')
+        await userEvent.keyboard('[Escape]')
+
+        await expect(
+          canvas.getByRole('combobox', {
+            name: args.label as string,
+          }),
+        ).toBeInTheDocument()
+      },
+    )
+  },
+}
+
 // The generic type is infered from the items prop in real life
 export const Sectioned: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
   args: {

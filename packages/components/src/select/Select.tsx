@@ -47,7 +47,6 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
     return (
       <TextField
         {...props}
-        aria-label={props.label || 'placeholder'}
         className={clsx(styles.wrapper, props.className)}
       >
         <HiddenMultiSelect
