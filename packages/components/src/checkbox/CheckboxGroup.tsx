@@ -1,80 +1,71 @@
+import * as React from 'react'
 import { AriaCheckboxGroupProps, useCheckboxGroup } from 'react-aria'
-import React from 'react'
 import { useCheckboxGroupState } from 'react-stately'
+import { FieldErrorContext } from 'react-aria-components'
+import { FieldError } from '../field-error'
+import { Label } from '../label'
+import { Text } from '../text'
+import { useLocalizedStringFormatter } from '../utils/intl'
 import { useSelectAll } from './useSelectAll'
-import { FieldError, Label, Text } from '@midas-ds/components'
 import { Checkbox } from './Checkbox'
 import { CheckboxGroupContext } from './context'
-import styles from './Checkbox.module.css'
-import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import styles from './Checkbox.module.css'
 
-export function CheckboxGroup(
-  props: AriaCheckboxGroupProps & {
-    children: React.ReactNode
-    showSelectAll?: boolean
-    selectAllLabel?: string
-  },
-) {
-  const { children, label, description, showSelectAll, selectAllLabel, errorMessage } = props
+export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
+  children: React.ReactNode
+  showSelectAll?: boolean
+  selectAllLabel?: string
+}
+
+export function CheckboxGroup(props: CheckboxGroupProps) {
   const state = useCheckboxGroupState(props)
-  const {
-    groupProps,
-    labelProps,
-    descriptionProps,
-    errorMessageProps,
-    isInvalid,
-    validationErrors,
-  } = useCheckboxGroup(props, state)
+
+  const stringFormatter = useLocalizedStringFormatter(messages)
+
+  const { groupProps, labelProps, descriptionProps } = useCheckboxGroup(
+    props,
+    state,
+  )
 
   const { allSelected, someSelected, checkboxValues } = useSelectAll(
-    children,
+    props.children,
     state,
   )
 
   const handleChange = (checked: boolean) => {
-    if (!checked) return state.setValue([])
-    return state.setValue([...checkboxValues])
+    state.setValue(checked ? checkboxValues : [])
   }
-
-  const stringFormatter = useLocalizedStringFormatter(messages)
 
   return (
     <div
       {...groupProps}
       className={styles.checkboxGroup}
     >
-      <Label {...labelProps}>{label}</Label>
-      {description && (
+      <Label {...labelProps}>{props.label}</Label>
+      {props.description && (
         <Text
-          slot={'description'}
+          slot='description'
           {...descriptionProps}
         >
-          {description}
+          {props.description}
         </Text>
       )}
-      {showSelectAll ? (
+      {props.showSelectAll && (
         <Checkbox
           isSelected={allSelected}
           isIndeterminate={someSelected}
           onChange={handleChange}
         >
-          {!!selectAllLabel ? selectAllLabel : stringFormatter.format('selectAll')}
+          {props.selectAllLabel || stringFormatter.format('selectAll')}
         </Checkbox>
-      ) : (
-        <></>
       )}
       <CheckboxGroupContext.Provider value={state}>
-        {children}
+        {props.children}
       </CheckboxGroupContext.Provider>
-      {isInvalid && (
-        <div
-          {...errorMessageProps}
-          style={{ color: 'red', fontSize: 12 }}
-        >
-          {validationErrors.join(' ')}
-        </div>
-      )}
+      <FieldErrorContext.Provider value={state.displayValidation}>
+        <FieldError>{props.errorMessage}</FieldError>
+      </FieldErrorContext.Provider>
     </div>
   )
 }
