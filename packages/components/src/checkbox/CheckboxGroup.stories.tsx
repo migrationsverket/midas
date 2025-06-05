@@ -122,3 +122,7 @@ export const Invalid: Story = {
     )
   },
 }
+
+export const Required: Story = {
+  args: { isRequired: true },
+}
