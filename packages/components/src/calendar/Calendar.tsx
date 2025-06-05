@@ -19,12 +19,22 @@ export const Calendar: React.FC<CalendarProps> = ({
   errorMessage,
   ...rest
 }) => (
-  <AriaCalendar
-    className={clsx(styles.calendar, className)}
-    {...rest}
-  >
-    <CalendarHeader isDisabled={rest.isDisabled} />
-    <CalendarGrid {...rest} />
-    {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
-  </AriaCalendar>
+  <div className={styles.container}>
+    <AriaCalendar
+      className={clsx(styles.calendar, className)}
+      {...rest}
+    >
+      <CalendarHeader {...rest} />
+      <CalendarGrid {...rest} />
+    </AriaCalendar>
+
+    {rest.isInvalid === true && (
+      <Text
+        className={styles.fieldError}
+        slot='errorMessage'
+      >
+        {errorMessage}
+      </Text>
+    )}
+  </div>
 )

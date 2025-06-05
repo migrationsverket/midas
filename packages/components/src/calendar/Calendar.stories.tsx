@@ -3,7 +3,7 @@ import { Calendar } from './Calendar'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
 import { expect, userEvent, within } from '@storybook/test'
-import { today, getLocalTimeZone } from '@internationalized/date'
+import { today, getLocalTimeZone, isWeekend } from '@internationalized/date'
 import { mockedNow } from '../utils/storybook'
 
 type Story = StoryObj<typeof Calendar>
@@ -78,5 +78,18 @@ export const DS1141: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+}
+
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
+    errorMessage: 'Något gick fel',
+  },
+}
+
+export const UnavailableWeekends: Story = {
+  args: {
+    isDateUnavailable: date => isWeekend(date, 'sv-SE'),
   },
 }
