@@ -1,14 +1,13 @@
 import * as React from 'react'
 import { AriaCheckboxGroupProps, useCheckboxGroup } from 'react-aria'
 import { useCheckboxGroupState } from 'react-stately'
-import { FieldErrorContext } from 'react-aria-components'
-import { FieldError } from '../field-error'
 import { Label } from '../label'
 import { Text } from '../text'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { useSelectAll } from './useSelectAll'
 import { Checkbox } from './Checkbox'
 import { CheckboxGroupContext } from './context'
+import { CheckboxGroupFieldError } from './CheckboxGroupFieldError'
 import messages from './intl/translations.json'
 import styles from './Checkbox.module.css'
 
@@ -16,6 +15,7 @@ export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
   children: React.ReactNode
   showSelectAll?: boolean
   selectAllLabel?: string
+  errorPosition?: 'top' | 'bottom'
 }
 
 export function CheckboxGroup(props: CheckboxGroupProps) {
@@ -51,6 +51,12 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
           {props.description}
         </Text>
       )}
+      {props.errorPosition === 'top' && (
+        <CheckboxGroupFieldError
+          {...props}
+          state={state}
+        />
+      )}
       {props.showSelectAll && (
         <Checkbox
           isSelected={allSelected}
@@ -63,9 +69,12 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
       <CheckboxGroupContext.Provider value={state}>
         {props.children}
       </CheckboxGroupContext.Provider>
-      <FieldErrorContext.Provider value={state.displayValidation}>
-        <FieldError>{props.errorMessage}</FieldError>
-      </FieldErrorContext.Provider>
+      {props.errorPosition === 'bottom' && (
+        <CheckboxGroupFieldError
+          {...props}
+          state={state}
+        />
+      )}
     </div>
   )
 }

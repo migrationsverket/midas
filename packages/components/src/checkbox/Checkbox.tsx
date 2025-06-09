@@ -26,7 +26,10 @@ export const Checkbox = React.forwardRef<HTMLLabelElement, CheckboxProps>(
 
     const hoverResult = useHover(props)
 
-    const pressResult = usePress(props)
+    const pressResult = usePress({
+      ref,
+      isDisabled: props.isDisabled,
+    })
 
     const focusRingAria = useFocusRing()
 

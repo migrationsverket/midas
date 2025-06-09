@@ -1,62 +1,59 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Checkbox } from './Checkbox'
 import { expect, userEvent } from '@storybook/test'
+import { Checkbox } from './Checkbox'
 
-const meta: Meta<typeof Checkbox> = {
+type Story = StoryObj<typeof Checkbox>
+
+export default {
   component: Checkbox,
   title: 'Components/Checkbox',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
-  argTypes: {
-    isInvalid: { type: 'boolean' },
-    isSelected: { type: 'boolean' },
-    isIndeterminate: { type: 'boolean' },
-    isDisabled: { type: 'boolean' },
-    isRequired: { type: 'boolean' },
-    isReadOnly: { type: 'boolean' },
+  args: {
+    isDisabled: false,
+    isIndeterminate: false,
+    isInvalid: false,
+    isReadOnly: false,
+    isRequired: false,
+    isSelected: false,
+    value: 'unsubscribe',
+    children: 'Unsubscribe',
   },
-}
+} satisfies Meta<typeof Checkbox>
 
-export default meta
-type Story = StoryObj<typeof Checkbox>
-
-export const Example: Story = {
-  render: ({ ...args }) => {
-    return (
-      <Checkbox
-        value='unsubscribe'
-        {...args}
-      >
-        Unsubscribe
-      </Checkbox>
-    )
-  },
-}
+export const Example: Story = {}
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
   },
-  render: ({ ...args }) => {
-    return (
-      <Checkbox
-        value='unsubscribe'
-        {...args}
-      >
-        Unsubscribe
-      </Checkbox>
-    )
+}
+
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
+  },
+}
+
+export const Indeterminate: Story = {
+  args: {
+    isIndeterminate: true,
+  },
+}
+
+export const Selected: Story = {
+  args: {
+    isSelected: true,
   },
 }
 
 export const Required: Story = {
   args: {
     isRequired: true,
-    'aria-label': 'test',
   },
-  // tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
