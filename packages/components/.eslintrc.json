@@ -9,7 +9,7 @@
         "midas/handle-deprecated-comments": [
           1,
           {
-            "version": "10.0.0"
+            "version": "10.1.1"
           }
         ],
         "jsx-a11y/no-autofocus": "off"
