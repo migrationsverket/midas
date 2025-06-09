@@ -13,7 +13,7 @@ import {
   Popover,
   Pressable,
 } from 'react-aria-components'
-import {jsdocLinkToMarkdown} from '@site/src/utils/jsdocLinkToMarkdown'
+import { jsdocLinkToMarkdown } from '../utils/jsdocLinkToMarkdown'
 
 export const DisplayCompositeTypes = ({ props }: Props) => {
   switch (props.type.name) {
@@ -158,7 +158,9 @@ export const PropTable = ({ name, defaultOpen = true }) => {
                   <td />
                 )}
                 <td data-title='Description'>
-                  <ReactMarkdown>{jsdocLinkToMarkdown(props[key].description)}</ReactMarkdown>
+                  <ReactMarkdown>
+                    {jsdocLinkToMarkdown(props[key].description)}
+                  </ReactMarkdown>
                 </td>
               </tr>
             ))}
@@ -179,6 +181,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='props'
           title='Props'
           className={styles.accordionItem}
+          hasBackground={false}
         >
           <Grid propGroup={rest} />
         </AccordionItem>
@@ -188,6 +191,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='events'
           title='Events'
           className={styles.accordionItem}
+          hasBackground={false}
         >
           <Grid
             propGroup={events}
@@ -200,6 +204,7 @@ export const PropTable = ({ name, defaultOpen = true }) => {
           id='accessibility'
           title='Tillgänglighet'
           className={styles.accordionItem}
+          hasBackground={false}
         >
           <Grid
             propGroup={accessibility}

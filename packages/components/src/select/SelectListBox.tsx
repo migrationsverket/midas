@@ -1,27 +1,38 @@
 import * as React from 'react'
-import styles from './Select.module.css'
-import type { MultiSelectState } from './useMultiSelectState'
-import { type AriaListBoxOptions } from '@react-aria/listbox'
-import type { Node } from '@react-types/shared'
 import { Check } from 'lucide-react'
-import { Collection, ListBoxItemProps } from 'react-aria-components'
+import { Collection } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
-import { ListBox, ListBoxItem, ListBoxSection } from '../list-box'
+import {
+  ListBox,
+  ListBoxItem,
+  ListBoxSection,
+  type ListBoxItemElement,
+  type ListBoxOption,
+  type ListBoxSectionElement,
+} from '../list-box'
+import type { AriaListBoxOptions } from '@react-aria/listbox'
+import type { Node } from '@react-types/shared'
+import type { MultiSelectState } from './types'
+import styles from './Select.module.css'
 
-interface ListBoxProps<T extends object> extends AriaListBoxOptions<T> {
+interface ListBoxProps<T extends ListBoxOption> extends AriaListBoxOptions<T> {
   state: MultiSelectState<T>
 }
 
-interface SectionProps<T extends object> {
-  section: Node<T>
-  state: MultiSelectState<T>
+interface SectionProps {
+  section: Node<ListBoxSectionElement>
+  state: MultiSelectState<ListBoxOption>
 }
 
-const Option = <T extends object>({
-  children,
-  ...rest
-}: ListBoxItemProps<T>) => (
-  <ListBoxItem {...rest}>
+interface OptionProps {
+  item: Node<ListBoxItemElement>
+}
+
+const Option = ({ item }: OptionProps) => (
+  <ListBoxItem
+    {...item.value}
+    textValue={item.textValue}
+  >
     {({ isDisabled, isSelected, selectionMode }) => (
       <>
         {selectionMode === 'multiple' ? (
@@ -30,10 +41,11 @@ const Option = <T extends object>({
               isDisabled={isDisabled}
               isSelected={isSelected}
               isReadOnly
+              excludeFromTabOrder
             />
           </div>
         ) : null}
-        {children}
+        {item.rendered}
         {isSelected && selectionMode === 'single' ? (
           <Check
             size={20}
@@ -45,29 +57,17 @@ const Option = <T extends object>({
   </ListBoxItem>
 )
 
-const Section = <T extends object>({ section, state }: SectionProps<T>) => (
-  <ListBoxSection
-    {...section}
-    value={section.value || undefined}
-    name={section.rendered}
-  >
+const Section = ({ section, state }: SectionProps) => (
+  <ListBoxSection {...(section.value as ListBoxSectionElement)}>
     {state.collection.getChildren ? (
-      <Collection items={state.collection?.getChildren(section.key)}>
-        {item => (
-          <Option
-            {...item}
-            key={item.key}
-            value={item.value || undefined}
-          >
-            {item.rendered}
-          </Option>
-        )}
+      <Collection items={state.collection.getChildren(section.key)}>
+        {item => <Option item={item as Node<ListBoxItemElement>} />}
       </Collection>
     ) : null}
   </ListBoxSection>
 )
 
-export const SelectListBox = <T extends object>({
+export const SelectListBox = <T extends ListBoxOption>({
   state,
   ...rest
 }: ListBoxProps<T>) => (
@@ -81,17 +81,11 @@ export const SelectListBox = <T extends object>({
     {item =>
       item.type === 'section' ? (
         <Section
-          section={item}
           state={state}
+          section={item as Node<ListBoxSectionElement>}
         />
       ) : (
-        <Option
-          {...item}
-          key={item.key}
-          value={item.value || undefined}
-        >
-          {item.rendered}
-        </Option>
+        <Option item={item as Node<ListBoxItemElement>} />
       )
     }
   </ListBox>

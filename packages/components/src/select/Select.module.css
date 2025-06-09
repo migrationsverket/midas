@@ -1,43 +1,39 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --border-primary, --text-primary, --focus, --focus-inset, --layer-01, --support-border-warning, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-warning, --size-130, --size-150, --size-70 from tokens;
+@value --font-family, --font-size-30, --text-disabled, --border-primary, --text-primary, --focus, --focus-inset, --layer-01, --support-border-warning, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --text-on-color, --button-background-primary, --button-background-primary-hover, --field-disabled, --border-disabled, --field-01, --field-hover-01, --button-background-disabled, --text-warning, --size-40, --size-70, --size-130, --size-150 from tokens;
 
-/** clear the default list styles */
 * > ul {
-  padding: 0;
-  margin-top: 0;
   margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
-.selectLabel {
-  grid-area: Label;
-  font-weight: 500;
-}
-
-/* .selectLabelActive {
-  } */
-
-.selectLabelDisabled {
-  color: --text-disabled;
-}
-
-.button {
-  grid-area: Input;
-  border: none;
-  border-radius: 0;
-  font-size: 1rem;
+.wrapper {
   color: --text-primary;
   display: flex;
+  flex-direction: column;
+  font-family: --font-family;
+
+  &[data-disabled] {
+    color: --text-disabled;
+  }
+}
+
+.trigger {
+  align-items: center;
+  background-color: --field-01;
+  border: none;
+  border-bottom: 1px solid --border-primary;
+  border-radius: 0;
+  color: --text-primary;
+  display: flex;
+  font-size: --font-size-30;
   justify-content: flex-end;
   min-height: --size-150;
-  align-items: center;
   padding-left: --size-70;
   padding-right: --size-70;
-  background-color: --field-01;
-  border-bottom: 1px solid --border-primary;
-  cursor: pointer;
 
   &.medium {
-    min-height: 2.5rem;
+    min-height: --size-130;
   }
 
   &:focus-visible {
@@ -52,16 +48,17 @@
 
   &:hover {
     background-color: --field-hover-01;
+    cursor: pointer;
   }
 
-  &:disabled {
+  &[data-disabled] {
     cursor: not-allowed;
     background: --field-disabled;
     color: --text-disabled;
     border-color: --border-disabled;
   }
 
-  &[data-invalid='true'] {
+  &[data-invalid]:not(:focus-visible) {
     border: none;
     box-shadow: inset 0 0 0 2px --support-border-warning;
 
@@ -69,70 +66,16 @@
       border: 5px solid Highlight !important;
     }
   }
-}
 
-.buttonOpen {
-  .icon svg {
-    transform: rotate(180deg);
-  }
-}
-
-.buttonDisabled {
-  background-color: --field-disabled;
-  color: --text-disabled;
-  border-color: --border-disabled;
-}
-
-/* .buttonActive {
-} */
-
-.multiSelect {
-  font-family: --font-family;
-  display: flex;
-  flex-direction: column;
-  color: --text-primary;
-
-  > .fieldError {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-
-  .selectContainer + .fieldError {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  &[data-disabled] {
-    color: --text-disabled;
-  }
-
-  &[data-invalid] .button {
-    box-shadow: inset 0 0 0 2px --support-border-warning;
+  &[data-open] {
+    .icon svg {
+      transform: rotate(180deg);
+    }
   }
 }
 
 .tagGroup {
-  margin-top: 0.5rem;
-}
-
-/* .multiSelectOpen {
-  // TODO: some styles here with the border?
-} */
-
-.popover {
-  --select-popover-width: max(
-    var(--select-width, var(--field-width-base)),
-    200px
-  );
-
-  font-family: --font-family;
-  background: --layer-01;
-  width: var(--select-popover-width);
-  box-shadow: 0 3px 5px 0 rgba(0 0 0 /20%);
-
-  @media (forced-colors: active) {
-    border: 1px solid --border-primary;
-  }
+  margin-top: --size-40;
 }
 
 .icon {
@@ -152,7 +95,7 @@
   align-self: center;
 }
 
-.selectContainer {
+.triggerContainer {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -168,18 +111,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 0.5rem;
+  padding: 0 0.5rem;
   position: absolute;
   top: 50%;
   left: 0.5rem;
   transform: translateY(-50%);
-}
 
-.selectValueTagDisabled {
-  pointer-events: none;
-  background-color: --field-disabled;
-  color: --text-disabled;
-  border-color: --border-disabled;
+  &:has(.clearButton) {
+    padding-right: 0;
+  }
+
+  &[data-disabled] {
+    pointer-events: none;
+    background-color: --field-disabled;
+    color: --text-disabled;
+    border-color: --border-disabled;
+  }
 }
 
 .truncate {
@@ -219,30 +166,6 @@
   }
 }
 
-.fieldError {
-  color: --text-warning;
-  grid-area: Error;
-  font-size: 0.875rem;
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  margin: 0.25rem 0;
-  line-height: 1.28;
-
-  &::before {
-    content: '';
-    background-color: --text-warning;
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtdHJpYW5nbGUtYWxlcnQiPjxwYXRoIGQ9Im0yMS43MyAxOC04LTE0YTIgMiAwIDAgMC0zLjQ4IDBsLTggMTRBMiAyIDAgMCAwIDQgMjFoMTZhMiAyIDAgMCAwIDEuNzMtMyIvPjxwYXRoIGQ9Ik0xMiA5djQiLz48cGF0aCBkPSJNMTIgMTdoLjAxIi8+PC9zdmc+');
-    mask-size: 1rem 1rem;
-    flex: 0 0 auto;
-    align-self: flex-start;
-    margin: 2px;
-  }
-}
-
 .checkboxContainer {
   display: flex;
   align-items: center;
@@ -250,7 +173,7 @@
 }
 
 @media (forced-colors: active) {
-  [data-invalid] .button {
+  [data-invalid] .trigger {
     border: 5px solid Highlight !important;
   }
 
@@ -258,16 +181,8 @@
     border: ButtonBorder solid;
   }
 
-  .button,
+  .trigger,
   .clearButton {
     border: Highlight 1px solid;
-  }
-
-  .fieldError {
-    color: Highlight;
-
-    &::before {
-      background-color: Highlight;
-    }
   }
 }

@@ -1,10 +1,4 @@
-import {
-  ComboBox,
-  ComboBoxItem,
-  ComboBoxSection,
-  Item,
-  Section,
-} from '@midas-ds/components'
+import { ComboBox, ComboBoxItem, ComboBoxSection } from '@midas-ds/components'
 import React from 'react'
 import { Key } from 'react-aria-components'
 
@@ -52,7 +46,6 @@ export const SectionedExample = () => {
       items={[
         {
           name: 'Grönsaker',
-          id: 123,
           children: [
             { name: 'Morot', id: 2 },
             { name: 'Broccoli', id: 3 },
@@ -63,7 +56,6 @@ export const SectionedExample = () => {
         },
         {
           name: 'Frukter',
-          id: 1234,
           children: [
             { name: 'Äpple', id: 11 },
             { name: 'Banan', id: 12 },
@@ -74,7 +66,12 @@ export const SectionedExample = () => {
         },
       ]}
     >
-      {(section: Section<Item>) => <ComboBoxSection {...section} />}
+      {section => (
+        <ComboBoxSection
+          {...section}
+          id={section.name}
+        />
+      )}
     </ComboBox>
   )
 }

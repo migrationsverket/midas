@@ -17,16 +17,18 @@ import clsx from 'clsx'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
-import { Item, Section } from './types'
 import { Size } from '../common/types'
 import {
   ListBox,
   ListBoxItem,
   ListBoxSection,
   ListBoxPopover,
+  type ListBoxOption,
+  type ListBoxItemElement,
+  type ListBoxSectionElement,
 } from '../list-box'
 
-export interface ComboBoxProps<T extends object>
+export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
   label?: string
   description?: string
@@ -41,7 +43,7 @@ export interface ComboBoxProps<T extends object>
   size?: Size
 }
 
-export function ComboBox<T extends object>({
+export function ComboBox<T extends ListBoxOption>({
   label,
   description,
   errorMessage,
@@ -95,14 +97,16 @@ export function ComboBox<T extends object>({
   )
 }
 
-export function ComboBoxItem(props: ListBoxItemProps) {
+export function ComboBoxItem<T extends ListBoxItemElement>(
+  props: ListBoxItemProps<T>,
+) {
   return <ListBoxItem {...props} />
 }
 
 /**
  * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
  */
-export function ComboBoxSelection(props: Section<Item>) {
+export function ComboBoxSelection<T extends ListBoxSectionElement>(props: T) {
   return (
     <ListBoxSection {...props}>
       <Collection items={props.children}>
@@ -112,6 +116,6 @@ export function ComboBoxSelection(props: Section<Item>) {
   )
 }
 
-export function ComboBoxSection(props: Section<Item>) {
+export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
   return <ComboBoxSelection {...props} />
 }
