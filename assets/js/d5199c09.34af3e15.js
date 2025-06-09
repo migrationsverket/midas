@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[229],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[7721],{
 
-/***/ 42275:
+/***/ 53590:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,10 +10,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_changelog_plugin_default_site_changelog_source_10_1_0_md_cda_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_changelog_plugin_default_site_changelog_source_10_1_1_md_85c_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_changelog_plugin_default_site_changelog_source_10_1_0_md_cda_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22659);
+/* harmony import */ var _site_docusaurus_changelog_plugin_default_site_changelog_source_10_1_1_md_85c_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15780);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28453);
 
@@ -22,11 +22,11 @@ const frontMatter = {
 	mdx: {
 		format: 'md'
 	},
-	date: '2025-05-23T20:00',
+	date: '2025-06-09T20:00',
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = '10.1.0';
+const contentTitle = '10.1.1';
 
 const assets = {
 "authorsImageUrls": [],
@@ -55,10 +55,10 @@ function MDXContent(props = {}) {
 
 /***/ }),
 
-/***/ 22659:
+/***/ 15780:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.0","source":"@site/changelog/source/10.1.0.md","title":"10.1.0","description":"🚀 Features","date":"2025-05-23T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-23T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"10.0.0","permalink":"/changelog/10.0.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.1","source":"@site/changelog/source/10.1.1.md","title":"10.1.1","description":"🩹 Fixes","date":"2025-06-09T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-06-09T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"10.1.0","permalink":"/changelog/10.1.0"},"listPageLink":"/changelog/"}');
 
 /***/ })
 

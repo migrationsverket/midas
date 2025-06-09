@@ -35,10 +35,6 @@ const assets = {
 
 
 const toc = [{
-  "value": "🚀 Features",
-  "id": "-features",
-  "level": 3
-}, {
   "value": "🩹 Fixes",
   "id": "-fixes",
   "level": 3
@@ -59,7 +55,7 @@ function _createMdxContent(props) {
   const _components = {
     a: "a",
     code: "code",
-    h1: "h1",
+    h2: "h2",
     h3: "h3",
     li: "li",
     strong: "strong",
@@ -68,11 +64,8 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h1, {
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
       id: ""
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
-      id: "-features",
-      children: "🚀 Features"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
       children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
         children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.strong, {
@@ -280,7 +273,7 @@ function MDXContent(props = {}) {
 /***/ 22659:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.0","source":"@site/changelog/source/10.1.0.md","title":"10.1.0","description":"🚀 Features","date":"2025-05-23T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-23T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"10.0.0","permalink":"/changelog/10.0.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.0","source":"@site/changelog/source/10.1.0.md","title":"10.1.0","description":"- accordion: add new variant hasBackground (1022bcc58a)","date":"2025-05-23T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-05-23T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"10.1.1","permalink":"/changelog/10.1.1"},"nextItem":{"title":"10.0.0","permalink":"/changelog/10.0.0"},"listPageLink":"/changelog/"}');
 
 /***/ })
 
