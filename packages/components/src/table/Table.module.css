@@ -1,21 +1,32 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-accent-01, --layer-01, --border-subtle, --layer-accent-hover-01, --layer-hover-01, --border-primary, --text-primary from tokens;
+@value --border-primary, --border-subtle, --font-family, --layer-01, --layer-accent-01, --layer-accent-hover-01, --layer-hover-01, --size-60, --size-80, --size-130, --size-150, --text-primary from tokens;
 
 .cell {
   background-color: --layer-01;
   border-top: 1px --border-subtle solid;
-  padding: 1rem;
+  padding: calc(--size-80 - 1px) --size-80 --size-80;
   color: --text-primary;
 }
 
 .table {
   font-family: --font-family;
   border-spacing: 0;
+  line-height: 1;
 
   &.narrow {
     th,
     td {
       padding: 0.2rem 1rem;
+    }
+  }
+
+  &.medium {
+    .cell {
+      padding: calc(--size-60 - 1px) --size-80 --size-60;
+    }
+
+    .column {
+      padding: --size-60 --size-80;
     }
   }
 
