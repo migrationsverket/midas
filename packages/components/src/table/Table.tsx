@@ -47,9 +47,9 @@ export interface TableProps extends AriaTableProps {
 }
 
 export const Table = ({
-  narrow,
+  narrow = false,
   size = 'large',
-  striped,
+  striped = false,
   className,
   ...rest
 }: TableProps) => (
