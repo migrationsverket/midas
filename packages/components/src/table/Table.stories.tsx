@@ -78,16 +78,20 @@ export default {
 export const Primary: Story = {
   play: async ({ canvas, step, globals: { size } }) => {
     await step(
-      'columns should change size according to size prop',
+      'table headers should change size according to size prop',
       async () => {
-        canvas.getAllByRole('columnheader').forEach(async column => {
+        const tableHeaders = await canvas.findAllByRole('columnheader')
+
+        tableHeaders.forEach(async column => {
           const { height } = column.getBoundingClientRect()
           await expect(height).toBe(size === 'large' ? 48 : 40)
         })
       },
     )
     await step('cells should change size according to size prop', async () => {
-      canvas.getAllByRole('gridcell').forEach(async cell => {
+      const cells = await canvas.findAllByRole('gridcell')
+
+      cells.forEach(async cell => {
         const { height } = cell.getBoundingClientRect()
         await expect(height).toBe(size === 'large' ? 48 : 40)
       })
