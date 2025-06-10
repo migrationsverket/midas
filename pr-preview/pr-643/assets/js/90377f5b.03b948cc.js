@@ -38,7 +38,7 @@ var Table = __webpack_require__(99982);
 // EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
 var dist_Table = __webpack_require__(43444);
 ;// ./apps/docs/src/components/examples/table/TableExamples.tsx
-var columns=[{name:'Namn',id:'name'},{name:'Beskrivning',id:'description',width:'max-content'}];var rows=[{id:'apple',name:'Apple',description:'Pink lady is a good one'},{id:'banana',name:'Banana',description:'A yellow fruit'},{id:'pear',name:'Pear',description:'Usually green'}];var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Table */.XI,{"aria-label":"Fruit",children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* TableHeader */.A0,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{isRowHeader:true,children:"Name"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{children:"Description"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableBody */.BF,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Row */.fI,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"Banana"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"A yellow fruit"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Row */.fI,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"Pear"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"Usually green"})]})]})]})});};var FullExample=function FullExample(props){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Table */.XI,Object.assign({"aria-label":"Fruit"},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* TableHeader */.A0,{columns:columns,children:function children(column){return/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{children:column.name});}}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* TableBody */.BF,{items:rows,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Row */.fI,{columns:columns,children:function children(column){return/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:item[column.id]});}});}})]}))});};var ControlledExample=function ControlledExample(props){var _React$useState=react.useState(new Set(['apple'])),selectedKeys=_React$useState[0],setSelectedKeys=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(FullExample,Object.assign({selectedKeys:selectedKeys,onSelectionChange:setSelectedKeys,selectionMode:"multiple"},props)),"Valda rader: ",Array.from(selectedKeys).join(', ')]});};
+var columns=[{name:'Namn',id:'name',isRowHeader:true},{name:'Beskrivning',id:'description',width:'max-content'}];var rows=[{id:'apple',name:'Apple',description:'Pink lady is a good one'},{id:'banana',name:'Banana',description:'A yellow fruit'},{id:'pear',name:'Pear',description:'Usually green'}];var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Table */.XI,{"aria-label":"Fruit",children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* TableHeader */.A0,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{isRowHeader:true,children:"Name"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{children:"Description"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableBody */.BF,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Row */.fI,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"Banana"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"A yellow fruit"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Row */.fI,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"Pear"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:"Usually green"})]})]})]})});};var FullExample=function FullExample(props){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Table */.XI,Object.assign({"aria-label":"Fruit"},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* TableHeader */.A0,{columns:columns,children:function children(column){return/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{isRowHeader:column.isRowHeader,children:column.name});}}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* TableBody */.BF,{items:rows,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Row */.fI,{columns:columns,children:function children(column){return/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:item[column.id]});}});}})]}))});};var ControlledExample=function ControlledExample(props){var _React$useState=react.useState(new Set(['apple'])),selectedKeys=_React$useState[0],setSelectedKeys=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(FullExample,Object.assign({selectedKeys:selectedKeys,onSelectionChange:setSelectedKeys,selectionMode:"multiple"},props)),"Valda rader: ",Array.from(selectedKeys).join(', ')]});};
 ;// ./apps/docs/docs/components/table.mdx
 
 
@@ -194,7 +194,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "const columns = [\n  { name: 'Namn', id: 'name' },\n  { name: 'Beskrivning', id: 'description', width: 'max-content' },\n]\n\nconst rows = [\n  {\n    id: 'apple',\n    name: 'Apple',\n    description: 'Pink lady is a good one',\n  },\n  {\n    id: 'banana',\n    name: 'Banana',\n    description: 'A yellow fruit',\n  },\n  {\n    id: 'pear',\n    name: 'Pear',\n    description: 'Usually green',\n  },\n]\n"
+        children: "const columns = [\n  { name: 'Namn', id: 'name', isRowHeader: true },\n  { name: 'Beskrivning', id: 'description', width: 'max-content' },\n]\n\nconst rows = [\n  {\n    id: 'apple',\n    name: 'Apple',\n    description: 'Pink lady is a good one',\n  },\n  {\n    id: 'banana',\n    name: 'Banana',\n    description: 'A yellow fruit',\n  },\n  {\n    id: 'pear',\n    name: 'Pear',\n    description: 'Usually green',\n  },\n]\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "standardtabell",
@@ -202,22 +202,22 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Table aria-label='Fruit'>\n  <TableHeader columns={columns}>\n    {column => {\n      return <Column>{column.name}</Column>\n    }}\n  </TableHeader>\n  <TableBody items={rows}>\n    {item => {\n      return (\n        <Row columns={columns}>\n          {column => {\n            return <Cell>{item[column.id]}</Cell>\n          }}\n        </Row>\n      )\n    }}\n  </TableBody>\n</Table>\n"
+        children: "<Table aria-label='Fruit'>\n  <TableHeader columns={columns}>\n    {column => {\n      return <Column isRowHeader={column.isRowHeader}>{column.name}</Column>\n    }}\n  </TableHeader>\n  <TableBody items={rows}>\n    {item => {\n      return (\n        <Row columns={columns}>\n          {column => {\n            return <Cell>{item[column.id]}</Cell>\n          }}\n        </Row>\n      )\n    }}\n  </TableBody>\n</Table>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(FullExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "kompakt-tabell",
       children: "Kompakt tabell"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "narrow"
+        children: "size='medium'"
       }), " om du vill ha en kompaktare tabell."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Table\n  aria-label='Fruit'\n  // highlight-start\n  narrow\n  // highlight-end\n>\n  ...\n</Table>\n"
+        children: "<Table\n  aria-label='Fruit'\n  // highlight-start\n  size='medium'\n  // highlight-end\n>\n  ...\n</Table>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(FullExample, {
-      narrow: true
+      size: "medium"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "valbara-rader",
       children: "Valbara rader"

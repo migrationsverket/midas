@@ -3629,6 +3629,15 @@ html[data-theme='dark'] {
     padding: 0;
   }
 
+.card table {
+    border-collapse: inherit;
+  }
+
+.card table thead tr {
+        border: medium none currentcolor;
+        border: initial;
+      }
+
 .card-image {
   text-align: center;
   padding: 24px;
