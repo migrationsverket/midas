@@ -268,7 +268,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
         children: "striped"
-      }), " om du vill att raderna ska alternera mellan vit och grå."]
+      }), " om du vill att raderna ska vara olika."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
