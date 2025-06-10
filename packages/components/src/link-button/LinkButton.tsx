@@ -5,8 +5,8 @@ import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import styles from './LinkButton.module.css'
 import clsx from 'clsx'
 import {
-  ChevronLeft,
-  ChevronRight,
+  ArrowLeft,
+  ArrowRight,
   LucideIcon,
   LucideProps,
   SquareArrowOutUpRight,
@@ -68,9 +68,9 @@ export const LinkButton = <C extends React.ElementType = typeof AriaLink>({
   const Icon = ({ ...rest }: LucideProps) => {
     if (IconComponent) return <IconComponent {...rest} />
     if (rest.target === '_blank') return <SquareArrowOutUpRight {...rest} />
-    if (iconPlacement === 'left') return <ChevronLeft {...rest} />
+    if (iconPlacement === 'left') return <ArrowLeft {...rest} />
 
-    return <ChevronRight {...rest} />
+    return <ArrowRight {...rest} />
   }
   return (
     <Component
