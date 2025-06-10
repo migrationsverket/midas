@@ -1,73 +1,85 @@
 @value tokens: "../theme/tokens.css";
-@value --border-primary, --border-subtle, --font-family, --layer-01, --layer-accent-01, --layer-accent-hover-01, --layer-hover-01, --size-60, --size-80, --size-130, --size-150, --text-primary from tokens;
-
-.cell {
-  background-color: --layer-01;
-  border-top: 1px --border-subtle solid;
-  padding: calc(--size-80 - 1px) --size-80 --size-80;
-  color: --text-primary;
-}
+@value --border-primary, --border-subtle, --font-family, --font-size-10, --font-size-20, --layer-01, --layer-accent-01, --layer-accent-hover-01, --layer-hover-01, --line-height-10, --line-height-20, --size-10, --size-20, --size-60, --size-75, --size-80, --size-130, --size-150, --text-primary from tokens;
 
 .table {
-  font-family: --font-family;
   border-spacing: 0;
-  line-height: 1;
+  font-family: --font-family;
+  font-size: --font-size-20;
+  line-height: --line-height-20;
+
+  .tableHeader {
+    background-color: --layer-accent-01;
+    color: --text-primary;
+
+    .column {
+      font-weight: 500;
+      padding: --size-75 --size-80;
+      text-align: left;
+
+      &[data-focused],
+      &[data-hovered] {
+        outline: --size-10 solid --border-primary;
+      }
+    }
+  }
+
+  .row {
+    &[data-focused] {
+      outline: --size-10 solid --border-primary;
+    }
+
+    &[data-href] {
+      cursor: pointer;
+    }
+
+    &[data-hovered] .cell {
+      background-color: --layer-hover-01;
+    }
+
+    .cell {
+      background-color: --layer-01;
+      border-top: 1px --border-subtle solid;
+      color: --text-primary;
+      padding: calc(--size-75 - 1px) --size-80 --size-75;
+    }
+  }
 
   &.narrow {
-    th,
-    td {
-      padding: 0.2rem 1rem;
+    font-size: --font-size-10;
+    line-height: --line-height-10;
+
+    .column {
+      padding: --size-20 --size-80;
+    }
+
+    .cell {
+      padding: calc(--size-20 - 1px) --size-80 --size-20;
     }
   }
 
   &.medium {
-    .cell {
-      padding: calc(--size-60 - 1px) --size-80 --size-60;
-    }
-
     .column {
-      padding: --size-60 --size-80;
+      padding: calc(--size-60 - 1px) --size-80;
+    }
+
+    .cell {
+      padding: calc(--size-60 - 2px) --size-80 calc(--size-60 - 1px);
     }
   }
 
-  th[data-focused='true'] {
-    outline: 2px solid --border-primary;
+  &.striped {
+    .row {
+      &:nth-child(even) {
+        .cell {
+          background-color: --layer-accent-01;
+        }
+
+        &[data-hovered] {
+          .cell {
+            background-color: --layer-accent-hover-01;
+          }
+        }
+      }
+    }
   }
-
-  th[data-hovered='true'] {
-    outline: 2px solid --border-primary;
-  }
-
-  &.striped .row:nth-child(2n) .cell {
-    background-color: --layer-accent-01;
-  }
-
-  &.striped .row:nth-child(2n):hover .cell {
-    background-color: --layer-accent-hover-01;
-  }
-}
-
-.row {
-  &[data-focused='true'] {
-    outline: 2px solid --border-primary;
-  }
-
-  &[data-href] {
-    cursor: pointer;
-  }
-
-  &[data-hovered='true'] td {
-    background-color: --layer-hover-01;
-  }
-}
-
-.tableHeader {
-  background-color: --layer-accent-01;
-  color: --text-primary;
-}
-
-.column {
-  padding: 1rem;
-  text-align: left;
-  font-weight: 500;
 }
