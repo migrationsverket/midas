@@ -11,6 +11,7 @@ import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
+import { FieldError } from '../field-error'
 
 export interface SearchFieldProps
   extends Omit<AriaSearchFieldProps, 'isRequired'> {
@@ -48,21 +49,16 @@ export const SearchField: React.FC<SearchFieldProps> = ({
 
   const ref = React.useRef<HTMLInputElement>(null)
 
-  const {
-    inputProps,
-    errorMessageProps,
-    isInvalid,
-    validationErrors,
-    clearButtonProps,
-  } = useSearchField(
-    {
-      ...props,
-      label: props.placeholder,
-      validationBehavior: 'native',
-    },
-    { value, setValue },
-    ref,
-  )
+  const { inputProps, isInvalid, validationErrors, clearButtonProps } =
+    useSearchField(
+      {
+        ...props,
+        label: props.placeholder,
+        validationBehavior: 'native',
+      },
+      { value, setValue },
+      ref,
+    )
 
   const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) =>
     setValue(target.value)
@@ -93,13 +89,10 @@ export const SearchField: React.FC<SearchFieldProps> = ({
 
   return (
     <div>
-      {isInvalid && errorPosition === 'top' && (
-        <div
-          {...errorMessageProps}
-          className={styles.fieldError}
-        >
+      {errorPosition === 'top' && (
+        <FieldError isInvalid={isInvalid}>
           {props.errorMessage ?? validationErrors.join(' ')}
-        </div>
+        </FieldError>
       )}
       <div
         className={styles.container}
@@ -158,13 +151,10 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           {props.buttonText ? props.buttonText : 'Sök'}
         </Button>
       </div>
-      {isInvalid && errorPosition === 'bottom' && (
-        <div
-          {...errorMessageProps}
-          className={styles.fieldError}
-        >
+      {errorPosition === 'bottom' && (
+        <FieldError isInvalid={isInvalid}>
           {props.errorMessage ?? validationErrors.join(' ')}
-        </div>
+        </FieldError>
       )}
     </div>
   )
