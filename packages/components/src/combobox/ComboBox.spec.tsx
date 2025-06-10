@@ -3,7 +3,6 @@ import { axe } from 'jest-axe'
 import user from '../../tests/utils/user'
 import { ComboBox, ComboBoxItem } from './ComboBox'
 import { generateMockOptions } from './utils'
-import { Item } from './types'
 import { renderWithForm } from '../../tests/utils/browser'
 
 const label = 'basic combobox'
@@ -20,7 +19,7 @@ describe('given a default ComboBox', () => {
         data-testid={testID}
         className={testClass}
       >
-        {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
+        {({ name }) => <ComboBoxItem>{name}</ComboBoxItem>}
       </ComboBox>,
     )
   })
@@ -42,7 +41,7 @@ describe('given a required ComboBox', () => {
         aria-label={label}
         isRequired
       >
-        {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
+        {({ name }) => <ComboBoxItem>{name}</ComboBoxItem>}
       </ComboBox>,
     )
   })
@@ -68,7 +67,7 @@ describe('given a required ComboBox with a custom error message', () => {
         isRequired
         errorMessage={errorMessage}
       >
-        {({ name }: Item) => <ComboBoxItem>{name}</ComboBoxItem>}
+        {({ name }) => <ComboBoxItem>{name}</ComboBoxItem>}
       </ComboBox>,
     )
   })
