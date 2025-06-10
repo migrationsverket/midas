@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { expect, userEvent, within } from '@storybook/test'
 import { today, getLocalTimeZone, isWeekend } from '@internationalized/date'
 import { mockedNow } from '../utils/storybook'
+import { RunOptions } from 'axe-core'
 
 type Story = StoryObj<typeof Calendar>
 
@@ -78,6 +79,25 @@ export const DS1141: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+  parameters: {
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
   },
 }
 
