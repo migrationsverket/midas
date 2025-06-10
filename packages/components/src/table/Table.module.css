@@ -57,7 +57,7 @@
     }
   }
 
-  &.medium {
+  &.medium:not(.narrow) {
     .column {
       padding: calc(--size-60 - 1px) --size-80;
     }

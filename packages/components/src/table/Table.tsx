@@ -36,7 +36,7 @@ export interface TableProps extends AriaTableProps {
    *  @deprecated since v10.1.1, please use the `size` prop instead.
    */
   narrow?: boolean
-  /** Row and column height (large: 48px, medium: 40px)
+  /** Row height (large: 48px, medium: 40px)
    *  @default 'large'
    * */
   size?: Size
@@ -48,26 +48,20 @@ export interface TableProps extends AriaTableProps {
 
 export const Table = ({
   narrow,
-  size,
+  size = 'large',
   striped,
   className,
   ...rest
-}: TableProps) => {
-  const classNames = clsx(
-    styles.table,
-    narrow && styles.narrow,
-    size === 'medium' && styles.medium,
-    striped && styles.striped,
-    className,
-  )
-
-  return (
-    <AriaTable
-      className={classNames}
-      {...rest}
-    />
-  )
-}
+}: TableProps) => (
+  <AriaTable
+    className={clsx(styles.table, className, {
+      [styles.narrow]: narrow,
+      [styles.medium]: size === 'medium',
+      [styles.striped]: striped,
+    })}
+    {...rest}
+  />
+)
 
 export const TableHeader = <T extends object>({
   columns,
