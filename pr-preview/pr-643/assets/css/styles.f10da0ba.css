@@ -6829,11 +6829,11 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
       padding: calc(0.25rem - 1px) 1rem 0.25rem;
     }
 
-.table_nvoM.medium_q_Iz .column_NPIT {
+.table_nvoM.medium_q_Iz:not(.narrow_Jh7A) .column_NPIT {
       padding: calc(0.75rem - 1px) 1rem;
     }
 
-.table_nvoM.medium_q_Iz .cell_BlIu {
+.table_nvoM.medium_q_Iz:not(.narrow_Jh7A) .cell_BlIu {
       padding: calc(0.75rem - 2px) 1rem calc(0.75rem - 1px);
     }
 
