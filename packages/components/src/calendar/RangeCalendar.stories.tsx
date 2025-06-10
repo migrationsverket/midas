@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { RangeCalendar } from './RangeCalendar'
 import { expect, userEvent } from '@storybook/test'
 import { mockedNow } from '../utils/storybook'
+import { RunOptions } from 'axe-core'
 
 type Story = StoryObj<typeof RangeCalendar>
 
@@ -16,6 +17,25 @@ export const Primary: Story = {}
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+  parameters: {
+    a11y: {
+      element: 'body',
+      config: {
+        rules: [
+          {
+            // Dont check for color contrast on disabled elements
+            id: 'color-contrast',
+            enabled: false,
+          },
+        ],
+      },
+      options: {
+        rules: {
+          'color-contrast': { enabled: false },
+        },
+      } satisfies RunOptions,
+    },
   },
 }
 
