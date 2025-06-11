@@ -3,7 +3,13 @@
 import styles from './Link.module.css'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import clsx from 'clsx'
-import { ArrowRight, type LucideIcon } from 'lucide-react'
+import {
+  ArrowDownToLine,
+  ArrowRight,
+  LucideProps,
+  SquareArrowOutUpRight,
+  type LucideIcon,
+} from 'lucide-react'
 
 interface MidasLinkProps<C extends React.ElementType> {
   children: React.ReactNode
@@ -14,6 +20,9 @@ interface MidasLinkProps<C extends React.ElementType> {
   /** Optional icon, placed to the left of the link */
   icon?: LucideIcon
   className?: string
+  /** Replace base component with any Client Side Routing link instead.
+   * @see {@link https://designsystem.migrationsverket.se/dev/client-side-routing/|Client side routing}
+   */
   as?: C
 }
 
@@ -23,13 +32,27 @@ export type LinkProps<C extends React.ElementType> = MidasLinkProps<C> &
 export const Link = <C extends React.ElementType = typeof AriaLink>({
   children,
   standalone,
+  target,
   stretched,
+  download,
   icon: IconComponent,
   className,
   as,
   ...rest
 }: LinkProps<C>) => {
   const Component = as || AriaLink
+
+  const Icon = ({ ...rest }: LucideProps) => {
+    if (IconComponent) return <IconComponent {...rest} />
+
+    if (download) return <ArrowDownToLine {...rest} />
+
+    if (target === '_blank') return <SquareArrowOutUpRight {...rest} />
+
+    if (standalone) return <ArrowRight {...rest} />
+
+    return null
+  }
 
   return (
     <Component
@@ -43,18 +66,10 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
     >
       <>
         {children}
-        {!standalone && IconComponent && (
-          <IconComponent
-            size={20}
-            className={styles.icon}
-          />
-        )}
-        {standalone && (
-          <ArrowRight
-            size={20}
-            className={styles.icon}
-          />
-        )}
+        <Icon
+          size={16}
+          className={styles.icon}
+        />
       </>
     </Component>
   )

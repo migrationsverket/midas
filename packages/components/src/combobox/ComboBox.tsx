@@ -9,25 +9,26 @@ import type {
 import {
   Button,
   Input,
-  Popover,
   ComboBox as AriaComboBox,
-  ListBox,
-  ListBoxItem,
-  ListBoxSection,
-  Header,
   Collection,
-  Virtualizer,
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
-import { Item, Section } from './types'
 import { Size } from '../common/types'
-import { SectionedListLayout } from '../common/SectionedListLayout'
+import {
+  ListBox,
+  ListBoxItem,
+  ListBoxSection,
+  ListBoxPopover,
+  type ListBoxOption,
+  type ListBoxItemElement,
+  type ListBoxSectionElement,
+} from '../list-box'
 
-export interface ComboBoxProps<T extends object>
+export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
   label?: string
   description?: string
@@ -42,7 +43,7 @@ export interface ComboBoxProps<T extends object>
   size?: Size
 }
 
-export function ComboBox<T extends object>({
+export function ComboBox<T extends ListBoxOption>({
   label,
   description,
   errorMessage,
@@ -53,12 +54,9 @@ export function ComboBox<T extends object>({
   size = 'large',
   ...props
 }: ComboBoxProps<T>) {
-  const ref = React.useRef<HTMLDivElement>(null)
-
   return (
     <AriaComboBox
       className={clsx(styles.combobox, className)}
-      ref={ref}
       {...props}
     >
       {label && <Label>{label}</Label>}
@@ -92,52 +90,32 @@ export function ComboBox<T extends object>({
       {errorPosition === 'bottom' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
-      <Popover
-        className={styles.popover}
-        offset={0}
-        UNSTABLE_portalContainer={ref.current || undefined}
-      >
-        <Virtualizer
-          layout={SectionedListLayout}
-          layoutOptions={{
-            headingHeight: 44,
-          }}
-        >
-          <ListBox
-            className={styles.listBox}
-            items={items}
-          >
-            {children}
-          </ListBox>
-        </Virtualizer>
-      </Popover>
+      <ListBoxPopover>
+        <ListBox items={items}>{children}</ListBox>
+      </ListBoxPopover>
     </AriaComboBox>
   )
 }
 
-export function ComboBoxItem(props: ListBoxItemProps) {
-  return (
-    <ListBoxItem
-      className={styles.listBoxItem}
-      {...props}
-    />
-  )
+export function ComboBoxItem<T extends ListBoxItemElement>(
+  props: ListBoxItemProps<T>,
+) {
+  return <ListBoxItem {...props} />
 }
 
-export function ComboBoxSelection(props: Section<Item>) {
+/**
+ * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
+ */
+export function ComboBoxSelection<T extends ListBoxSectionElement>(props: T) {
   return (
-    <ListBoxSection id={props.name}>
-      <Header>
-        <Label
-          elementType='span'
-          className={styles.sectionHeading}
-        >
-          {props.name}
-        </Label>
-      </Header>
+    <ListBoxSection {...props}>
       <Collection items={props.children}>
         {item => <ComboBoxItem key={item.id}>{item.name}</ComboBoxItem>}
       </Collection>
     </ListBoxSection>
   )
+}
+
+export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
+  return <ComboBoxSelection {...props} />
 }

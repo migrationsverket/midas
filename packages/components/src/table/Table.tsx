@@ -28,33 +28,40 @@ import {
   GripVertical,
 } from 'lucide-react'
 import clsx from 'clsx'
+import { Size } from '../common/types'
 
 export interface TableProps extends AriaTableProps {
   /**
    *  A more compact version of the table
+   *  @deprecated since v10.1.1, please use the `size` prop instead.
    */
   narrow?: boolean
+  /** Row height (large: 48px, medium: 40px)
+   *  @default 'large'
+   * */
+  size?: Size
   /**
    * Alternating colors for rows
    */
   striped?: boolean
 }
 
-export const Table = ({ narrow, striped, className, ...rest }: TableProps) => {
-  const classNames = clsx(
-    styles.table,
-    narrow && styles.narrow,
-    striped && styles.striped,
-    className,
-  )
-
-  return (
-    <AriaTable
-      className={classNames}
-      {...rest}
-    />
-  )
-}
+export const Table = ({
+  narrow = false,
+  size = 'large',
+  striped = false,
+  className,
+  ...rest
+}: TableProps) => (
+  <AriaTable
+    className={clsx(styles.table, className, {
+      [styles.narrow]: narrow,
+      [styles.medium]: size === 'medium',
+      [styles.striped]: striped,
+    })}
+    {...rest}
+  />
+)
 
 export const TableHeader = <T extends object>({
   columns,

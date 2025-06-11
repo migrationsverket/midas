@@ -23,7 +23,7 @@ export const RangeCalendar: React.FC<RangeCalendarProps> = ({
     className={clsx(styles.calendar, className)}
     {...rest}
   >
-    <CalendarHeader />
+    <CalendarHeader isDisabled={rest.isDisabled} />
     <CalendarGrid {...rest} />
     {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
   </AriaRangeCalendar>

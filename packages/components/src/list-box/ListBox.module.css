@@ -1,0 +1,93 @@
+@value tokens: "../theme/tokens.css";
+@value --border-primary, --focus-inset, --font-family, --layer-01, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --size-40, --size-80, --size-150, --text-disabled, --text-primary from tokens;
+
+/**
+ * 1. Represents max ~5 options in the list.
+ */
+.listBox {
+  max-height: 295px; /* 1 */
+  overflow-y: auto;
+
+  > div {
+    /* react aria fiddles with pointer events during scroll
+     * after a few scrolls the value sticks to "none" in our storybook
+     */
+    pointer-events: auto !important;
+  }
+}
+
+.listBoxPopover {
+  font-family: --font-family;
+  width: var(--trigger-width);
+  background: --layer-01;
+  overflow-y: auto;
+  box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
+
+  @media (forced-colors: active) {
+    border: 1px solid --border-primary;
+  }
+}
+
+.listBoxSectionHeading {
+  font-family: --font-family;
+  display: block;
+  padding: --size-80 --size-80 --size-40;
+  font-weight: 500;
+}
+
+.listBoxButton {
+  all: unset;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 2px !important;
+
+  &:focus-visible {
+    box-shadow: --focus-inset;
+    outline: none;
+  }
+}
+
+.listBoxItem {
+  background-color: --layer-01;
+  color: --text-primary;
+  display: flex;
+  font-family: --font-family;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: --size-80;
+  transition: background-color 60ms;
+
+  &:hover:not([data-disabled]) {
+    background-color: --layer-hover-01;
+    cursor: pointer;
+    transition-delay: 60ms;
+  }
+
+  &[data-disabled] {
+    color: --text-disabled;
+    cursor: not-allowed;
+  }
+
+  &[data-selected] {
+    background-color: --layer-selected-01;
+
+    &:hover:not([data-disabled]) {
+      background-color: --layer-selected-hover-01;
+      transition-delay: 60ms;
+    }
+  }
+
+  &[data-focused] {
+    outline: none;
+    box-shadow: none;
+
+    @media (forced-colors: active) {
+      border: 1px ButtonBorder solid;
+    }
+  }
+
+  &[data-focus-visible] {
+    box-shadow: --focus-inset;
+    outline: none;
+  }
+}

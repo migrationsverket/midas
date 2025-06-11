@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ComboBox, ComboBoxItem, ComboBoxSelection } from './ComboBox'
+import { ComboBox, ComboBoxItem, ComboBoxSection } from './ComboBox'
 import { generateMockOptions, optionsWithSections } from './utils'
-import { Item, Section } from './types'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from '@storybook/test'
 import styles from './ComboBox.module.css'
 import { sizeModes } from '../../.storybook/modes'
 import React from 'react'
+import type { ListBoxSectionElement } from '../list-box'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -40,7 +40,7 @@ const meta: Meta<typeof ComboBox> = {
 
 export default meta
 
-type Story = StoryObj<typeof ComboBox<Item>>
+type Story = StoryObj<typeof ComboBox>
 
 const options = generateMockOptions(30)
 
@@ -58,7 +58,7 @@ export const Default: Story = {
       {...args}
       size={size}
     >
-      {(item: Item) => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      {item => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
   play: async ({ canvas, step, globals: { size } }) => {
@@ -194,9 +194,16 @@ export const CustomErrorMessage: Story = {
   },
 }
 
-export const Sectioned: Story = {
+export const DS1207: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
   args: {
-    ...Default.args,
+    placeholder: 'Välj eller sök frukt',
+    label: 'Välj en frukt',
+    description: 'Description',
+    className: 'test',
     items: optionsWithSections,
   },
   render: (args, { globals: { size } }) => (
@@ -204,7 +211,58 @@ export const Sectioned: Story = {
       {...args}
       size={size}
     >
-      {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+      {section => (
+        <ComboBoxSection
+          {...section}
+          id={section.name}
+        />
+      )}
+    </ComboBox>
+  ),
+  play: async ({ canvas, step, args }) => {
+    await step(
+      'The label should preserve its id when opening and closing the list box',
+      async () => {
+        await expect(
+          canvas.getByRole('combobox', {
+            name: args.label as string,
+          }),
+        ).toBeInTheDocument()
+
+        await userEvent.tab()
+        await userEvent.keyboard('[ArrowDown]')
+        await userEvent.keyboard('[Escape]')
+
+        await expect(
+          canvas.getByRole('combobox', {
+            name: args.label as string,
+          }),
+        ).toBeInTheDocument()
+      },
+    )
+  },
+}
+
+// The generic type is infered from the items prop in real life
+export const Sectioned: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
+  args: {
+    placeholder: 'Välj eller sök frukt',
+    label: 'Välj en frukt',
+    description: 'Description',
+    className: 'test',
+    items: optionsWithSections,
+  },
+  render: (args, { globals: { size } }) => (
+    <ComboBox
+      {...args}
+      size={size}
+    >
+      {section => (
+        <ComboBoxSection
+          {...section}
+          id={section.name}
+        />
+      )}
     </ComboBox>
   ),
 }

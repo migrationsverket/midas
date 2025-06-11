@@ -89,12 +89,11 @@ return (
 Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:
 
 ```tsx
-import { ComboBoxSelection } from '@midas-ds/components'
+import { ComboBoxSection } from '@midas-ds/components'
 
 const options = [
   {
     name: 'Grönsaker',
-    id: 123,
     children: [
       { name: 'Morot', id: 2 },
       { name: 'Broccoli', id: 3 },
@@ -105,7 +104,6 @@ const options = [
   },
   {
     name: 'Frukter',
-    id: 1234,
     children: [
       { name: 'Äpple', id: 11 },
       { name: 'Banan', id: 12 },
@@ -122,7 +120,12 @@ return (
     description='Du kan bara välja en'
     items={options}
   >
-    {(section: Section<Item>) => <ComboBoxSelection {...section} />}
+    {section => (
+      <ComboBoxSection
+        {...section}
+        id={section.name}
+      />
+    )}
   </ComboBox>
 )
 ```

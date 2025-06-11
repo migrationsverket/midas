@@ -17,7 +17,6 @@ describe('given a single Accordion', () => {
       render(
         <AccordionTest
           variant='uncontained'
-          type='single'
           data-testid={testID}
           className={testClass}
         />,
@@ -146,12 +145,7 @@ describe('given a multiple Accordion', () => {
   let rendered: RenderResult
 
   beforeEach(() => {
-    rendered = render(
-      <AccordionTest
-        variant='uncontained'
-        type='multiple'
-      />,
-    )
+    rendered = render(<AccordionTest variant='uncontained' />)
   })
 
   it('should have no accessibility violations in default state', async () => {

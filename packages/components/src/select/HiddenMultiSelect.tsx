@@ -3,7 +3,8 @@ import React, { ReactNode, useRef } from 'react'
 import { useFormReset } from '@react-aria/utils'
 import { useFormValidation } from '@react-aria/form'
 import { useVisuallyHidden } from '@react-aria/visually-hidden'
-import { MultiSelectState } from './useMultiSelectState'
+import type { MultiSelectState } from './types'
+import { ListBoxOption } from '../list-box'
 
 export interface AriaHiddenMultiSelectProps {
   /**
@@ -24,7 +25,8 @@ export interface AriaHiddenMultiSelectProps {
   isRequired?: boolean
 }
 
-export interface HiddenMultiSelectProps<T> extends AriaHiddenMultiSelectProps {
+export interface HiddenMultiSelectProps<T extends ListBoxOption>
+  extends AriaHiddenMultiSelectProps {
   /** State for the select. */
   state: MultiSelectState<T>
 
@@ -53,7 +55,7 @@ interface HiddenMultiSelectAria {
  * can be used in combination with `useSelect` to support browser form autofill, mobile form
  * navigation, and native HTML form submission.
  */
-export function useHiddenMultiSelect<T>(
+export function useHiddenMultiSelect<T extends ListBoxOption>(
   {
     autoComplete,
     name,
@@ -111,8 +113,11 @@ export function useHiddenMultiSelect<T>(
  * Renders a hidden native `<select>` element, which can be used to support browser
  * form autofill, mobile form navigation, and native form submission.
  */
-export function HiddenMultiSelect<T>(props: HiddenMultiSelectProps<T>) {
-  const { state, triggerRef, label, name, isDisabled } = props
+export function HiddenMultiSelect<T extends ListBoxOption>(
+  props: HiddenMultiSelectProps<T>,
+) {
+  const { state, triggerRef, name, isDisabled } = props
+  const label = `${props.label}-hidden`
   const selectRef = useRef(null)
   const { containerProps, selectProps } = useHiddenMultiSelect(
     { ...props, selectRef },

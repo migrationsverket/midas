@@ -11,7 +11,7 @@ import {
 } from '@midas-ds/components'
 
 const columns = [
-  { name: 'Namn', id: 'name' },
+  { name: 'Namn', id: 'name', isRowHeader: true },
   { name: 'Beskrivning', id: 'description', width: 'max-content' },
 ]
 
@@ -62,7 +62,7 @@ export const FullExample: React.FC<TableProps> = props => (
     >
       <TableHeader columns={columns}>
         {column => {
-          return <Column>{column.name}</Column>
+          return <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
         }}
       </TableHeader>
       <TableBody items={rows}>

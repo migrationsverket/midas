@@ -10,7 +10,6 @@ describe('given a default Logo', () => {
     render(
       <Logo
         primary
-        background
         data-testid={testID}
         className={testClass}
       />,

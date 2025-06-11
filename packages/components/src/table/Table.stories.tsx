@@ -1,25 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import { expect, userEvent } from '@storybook/test'
-import styles from './Table.module.css'
 import { hexToRgb, lightDark } from '../utils/test'
+import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
+import styles from './Table.module.css'
+import { sizeModes } from '../../.storybook/modes'
 
-const meta: Meta<typeof Table> = {
-  component: Table,
-  subcomponents: {
-    TableHeader: TableHeader as React.ComponentType<unknown>,
-    Column: Column as React.ComponentType<unknown>,
-    TableBody: TableBody as React.ComponentType<unknown>,
-    Row: Row as React.ComponentType<unknown>,
-    Cell: Cell as React.ComponentType<unknown>,
-  },
-  title: 'Components/Table',
-  tags: ['autodocs'],
-  args: {
-    'aria-label': 'Files',
-  },
-}
-export default meta
 type Story = StoryObj<typeof Table>
 
 interface Column {
@@ -48,12 +33,36 @@ const rows = [
   { id: 4, name: 'log.txt', date: '1/18/2016', type: 'Text Document' },
 ] satisfies Row[]
 
-export const Primary: Story = {
-  render: ({ ...args }) => {
+export default {
+  component: Table,
+  subcomponents: {
+    TableHeader: TableHeader as React.ComponentType<unknown>,
+    Column: Column as React.ComponentType<unknown>,
+    TableBody: TableBody as React.ComponentType<unknown>,
+    Row: Row as React.ComponentType<unknown>,
+    Cell: Cell as React.ComponentType<unknown>,
+  },
+  title: 'Components/Table',
+  tags: ['autodocs'],
+  args: {
+    'aria-label': 'Files',
+    selectionMode: 'multiple',
+  },
+  argTypes: {
+    size: {
+      control: false,
+    },
+  },
+  parameters: {
+    chromatic: {
+      modes: sizeModes,
+    },
+  },
+  render: (args, { globals: { size } }) => {
     return (
       <Table
-        selectionMode='multiple'
         {...args}
+        size={size}
       >
         <TableHeader columns={columns}>
           {column => (
@@ -70,10 +79,33 @@ export const Primary: Story = {
       </Table>
     )
   },
+} satisfies Meta<typeof Table>
+
+export const Primary: Story = {
+  play: async ({ canvas, step, globals: { size } }) => {
+    await step(
+      'table headers should change size according to size prop',
+      async () => {
+        const tableHeaders = await canvas.findAllByRole('columnheader')
+
+        tableHeaders.forEach(async column => {
+          const { height } = column.getBoundingClientRect()
+          await expect(height).toBe(size === 'large' ? 48 : 40)
+        })
+      },
+    )
+    await step('cells should change size according to size prop', async () => {
+      const cells = await canvas.findAllByRole('gridcell')
+
+      cells.forEach(async cell => {
+        const { height } = cell.getBoundingClientRect()
+        await expect(height).toBe(size === 'large' ? 48 : 40)
+      })
+    })
+  },
 }
 
 export const Striped: Story = {
-  ...Primary,
   args: {
     striped: true,
     className: 'my-class',
@@ -82,7 +114,7 @@ export const Striped: Story = {
     const table = canvas.getByLabelText(args['aria-label'] as string)
 
     await step('Class names should be appended', async () => {
-      expect(table).toHaveClass(styles.table, 'my-class')
+      await expect(table).toHaveClass(styles.table, args.className as string)
     })
 
     await step('The rows should change background color on hover', async () => {
