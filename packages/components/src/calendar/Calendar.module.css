@@ -147,6 +147,7 @@
   &[data-hovered]:not([data-unavailable], [data-disabled]) {
     background-color: --field-hover-01;
     border-color: --field-hover-01;
+    color: --text-primary;
   }
 
   &[data-selection-start='true'] {
