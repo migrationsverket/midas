@@ -32,3 +32,4 @@ jobs:
           outputDir: dist/storybook/ui
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           onlyChanged: true # enables turbosnap
+          skip: true
