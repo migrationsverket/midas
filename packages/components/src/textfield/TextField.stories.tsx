@@ -224,3 +224,40 @@ export const ShowCounterWithDefaultValue: Story = {
     )
   },
 }
+
+export const DS1243: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: (args, { globals: { size } }) => (
+    <div
+      style={{ height: 500 }}
+      data-testid='wrapper'
+    >
+      <TextField
+        {...args}
+        label={undefined}
+        description={undefined}
+        aria-label='test'
+        size={size}
+      />
+      <div style={{ height: 100 }}>Dummy content</div>
+    </div>
+  ),
+  play: async ({ step, canvas }) => {
+    await step(
+      'it should not require more height than neccessary',
+      async () => {
+        const textField = canvas.getByTestId('wrapper')
+          .childNodes[0] as HTMLElement
+        const input = canvas.getByRole('textbox')
+
+        const { height: textFieldHeight } = textField.getBoundingClientRect()
+        const { height: inputHeight } = input.getBoundingClientRect()
+
+        await expect(textFieldHeight).toEqual(inputHeight)
+      },
+    )
+  },
+}
