@@ -1,10 +1,29 @@
+import { Flex, FlexItem, TextField } from '@midas-ds/components'
+
 # Validering i formulär
 
-Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Vi har två sätt att visa fel: direkt vid fältet eller som en lista högst upp på sidan när formuläret skickas in.
+Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
 
-## Felmeddelande
-
-Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
+<div className='card'>
+  <Flex>
+    <FlexItem>
+      <TextField
+        label='Ange förnamn'
+        errorMessage={'Du måste ange ett förnamn'}
+        isInvalid='true'
+        errorPosition='top'
+      />
+    </FlexItem>
+    <FlexItem>
+      <TextField
+        label='Ange förnamn'
+        errorMessage={'Du måste ange ett förnamn'}
+        isInvalid='true'
+        errorPosition='bottom'
+      />
+    </FlexItem>
+  </Flex>
+</div>
 
 ## Direktvalidering
 
