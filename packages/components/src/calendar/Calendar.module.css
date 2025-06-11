@@ -147,7 +147,7 @@
   &[data-hovered]:not(
       [data-unavailable],
       [data-disabled],
-      [data-selected='true']
+      [data-selected]
     ) {
     background-color: --field-hover-01;
     border-color: --field-hover-01;
