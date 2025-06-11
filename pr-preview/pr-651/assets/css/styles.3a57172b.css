@@ -9119,7 +9119,7 @@ CSS variables, meant to be overridden by final theme
   cursor: pointer;
 }
 
-.day_OZ3K[data-hovered]:not([data-unavailable]):not([data-disabled]):not([data-selected='true']) {
+.day_OZ3K[data-hovered]:not([data-unavailable]):not([data-disabled]):not([data-selected]) {
     background-color: light-dark(#e6e6e6, #333333);
     border-color: light-dark(#e6e6e6, #333333);
   }
