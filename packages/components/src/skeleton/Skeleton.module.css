@@ -49,3 +49,7 @@
     animation: none;
   }
 }
+
+.skeleton.conflict {
+  background: #d9d9d9;
+}
