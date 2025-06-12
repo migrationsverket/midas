@@ -126,6 +126,16 @@
   &.padding-0 {
     padding: 0;
   }
+
+  table {
+    border-collapse: unset;
+
+    thead {
+      tr {
+        border: unset;
+      }
+    }
+  }
 }
 
 .card-image {

@@ -1,3 +1,36 @@
+## 10.1.1 (2025-06-09)
+
+### 🩹 Fixes
+
+- **combobox:** remove label element in ListBoxSection ([#631](https://github.com/migrationsverket/midas/pull/631))
+- **link:** better icon logic on links, support for external and download ([#617](https://github.com/migrationsverket/midas/pull/617))
+- **date-picker:** fix height issue with button in field ([#623](https://github.com/migrationsverket/midas/pull/623))
+- **link-button:** add support for medium size ([#618](https://github.com/migrationsverket/midas/pull/618))
+- replace invalid token --blue-140 ([#620](https://github.com/migrationsverket/midas/pull/620))
+- **combobox:** virtualize the listbox ([14745432fc](https://github.com/migrationsverket/midas/commit/14745432fc))
+
+### 💅 Refactors
+
+- **combobox:** add explicit id prop to sections ([57b0df3264](https://github.com/migrationsverket/midas/commit/57b0df3264))
+- **select:** merge select and combobox list item types ([ed6bbf4d50](https://github.com/migrationsverket/midas/commit/ed6bbf4d50))
+- **select:** separate code ([01926124ee](https://github.com/migrationsverket/midas/commit/01926124ee))
+- **select:** move list item class to list box ([a3a3a6f2e1](https://github.com/migrationsverket/midas/commit/a3a3a6f2e1))
+- **combobox:** extract shared listbox components ([bfe30e237e](https://github.com/migrationsverket/midas/commit/bfe30e237e))
+
+### 📖 Documentation changes
+
+- remove broken anchor ([e2dd1e0766](https://github.com/migrationsverket/midas/commit/e2dd1e0766))
+- **release-notes:** add release notes for 10.1.0 ([a912e097bc](https://github.com/migrationsverket/midas/commit/a912e097bc))
+
+### 🔧 Maintenance
+
+- **docs:** update docusaurus ([64d69a5239](https://github.com/migrationsverket/midas/commit/64d69a5239))
+- update test files with changed props ([fd165fa775](https://github.com/migrationsverket/midas/commit/fd165fa775))
+- **deps-dev:** bump next in the npm_and_yarn group across 1 directory ([2b6d2af5e7](https://github.com/migrationsverket/midas/commit/2b6d2af5e7))
+- **deps:** bump tar-fs in the npm_and_yarn group across 1 directory ([f3b185c8e6](https://github.com/migrationsverket/midas/commit/f3b185c8e6))
+- test chromatic build ([8613c3cded](https://github.com/migrationsverket/midas/commit/8613c3cded))
+- **link-button:** remove the story icon from the storybook ([251945d26f](https://github.com/migrationsverket/midas/commit/251945d26f))
+
 ## 10.1.0 (2025-05-23)
 
 ### 🚀 Features

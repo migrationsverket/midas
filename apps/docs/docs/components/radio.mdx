@@ -52,12 +52,17 @@ import { Radio, RadioGroup } from '@midas-ds/components'
 Använd attributet `value` och eventet `onChange` för att använda controlled value på RadioGroup.
 Den valda radioknappens värde skickas till callbacken, så kan du använda det för att uppdatera ditt state.
 
+:::warning
+Notera att ett tomt val representeras av `null` eller `undefined` och inte en tom sträng.
+:::
+
 ```tsx
 import React from 'react'
 ```
 
 ```tsx
-const [selectedFruit, setSelectedFruit] = useState('')
+// highlight-next-line
+const [selectedFruit, setSelectedFruit] = useState<string | null>(null)
 
 return (
   <RadioGroup
