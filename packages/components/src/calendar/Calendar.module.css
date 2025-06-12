@@ -117,7 +117,7 @@
   border: solid 2px --layer-01;
   cursor: pointer;
 
-  &[data-hovered]:not([data-unavailable], [data-disabled]) {
+  &[data-hovered]:not([data-unavailable], [data-disabled], [data-selected]) {
     background-color: --field-hover-01;
     border-color: --field-hover-01;
   }
