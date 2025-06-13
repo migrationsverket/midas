@@ -1,38 +1,36 @@
 ---
-title: Använda Midas
-sidebar_label: Använda
-sidebar_position: 1
+title: Installera och använda
+sidebar_label: Installera
+sidebar_position: 2
 ---
 
-import { Link, LinkButton, Flex, FlexItem } from '@midas-ds/components'
+import { Link, LinkButton, ButtonGroup, Button } from '@midas-ds/components'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
-## Designer
-
+:::info[För designers]
 För dig som designar gränssnitt finns UI-kit till Figma och Adobe XD. De innehåller färdiga designkomponenter och layoutmallar som följer Migrationsverkets digitala stil och grafiska profil.
 
-<Flex>
-  <FlexItem>
-    <LinkButton
-      target='\_blank'
-      href='https://www.figma.com/design/Zc41jDwx13L2bVECCQlsfN/MIDAS-UI-Kit?m=auto&node-id=0-1&t=ZgUPPphkbF15QIWU-1'
-    >
-      {'UI-kit i Figma'}
-    </LinkButton>
-  </FlexItem>
-  <FlexItem>
-    <Link
-      target='\_blank'
-      href={require('/files/MIDAS_UIkit_24.zip').default}
-      download
-    >
-      {'Ladda ner UI-kit till Adobe XD (version 24)'}
-    </Link>
-  </FlexItem>
-</Flex>
+<br />
+<ButtonGroup>
+  <LinkButton
+    target='\_blank'
+    href='https://www.figma.com/design/Zc41jDwx13L2bVECCQlsfN/MIDAS-UI-Kit?m=auto&node-id=0-1&t=ZgUPPphkbF15QIWU-1'
+  >
+    {'UI-kit i Figma'}
+  </LinkButton>
+  <Link
+    target='\_blank'
+    href={require('/files/MIDAS_UIkit_24.zip').default}
+    download
+  >
+    {'Ladda ner UI-kit till Adobe XD (version 24)'}
+  </Link>
+</ButtonGroup>
+:::
 
-## Utvecklare
+## Installera
 
-Installera komponentbiblioteket:
+Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn. Alla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket.
 
 ```bash npm2yarn
 npm install @midas-ds/components
@@ -42,18 +40,22 @@ npm install @midas-ds/components
 
 Generellt, importera och använd direkt:
 
-```tsx
-import { Component } from '@midas-ds/components';
-...
-<Component/>
+```tsx {1,6}
+import { Button } from '@midas-ds/components'
+
+export default function App({ children }) {
+  return (
+    <main>
+      <Button variant='primary'>Klicka här</Button>
+      {children}
+    </main>
+  )
+}
+
+export default App
 ```
 
-För specifika instruktioner, se respektive komponent.
-
-### Uppgradera från tidigare version
-
-Senaste ändringar och eventuella instruktioner för migrering hittas på [release notes](/blog). Det finns också en
-mer detaljerad [changelog](/changelog) för varje release.
+För specifika instruktioner, se respektive komponent på våra [komponentsidor](/components/accordion) eller utforska komponenterna mer i vår Storybook.
 
 ### Installera Inter som typsnitt
 
@@ -61,9 +63,15 @@ Detta är ett rekommenderat sätt att installera vårt typsnitt Inter.
 
 ```tsx {1} title="App.tsx (rootfilen i din app)"
 import '@midas-ds/components/global.css'
+import { Button } from '@midas-ds/components'
 
 export default function App({ children }) {
-  return <main>{children}</main>
+  return (
+    <main>
+      <Button variant='primary'>Klicka här</Button>
+      {children}
+    </main>
+  )
 }
 
 export default App
@@ -73,7 +81,19 @@ Det går självklart att använda andra metoder så länge vikterna 400, 500 och
 
 Mer info finns på [GitHub](https://github.com/migrationsverket/midas) samt under [guider](/dev/common-issues)
 
+## Dependencies
+
+Midas bygger på flertalet beroenden som kan vara bra att känna till. Förutom att vara ett komponentbibliotek baserat på React, så innehåller Midas även verktyg och bibliotek som underlättar utveckling och säkerställer tillgänglighet.
+
+- [React Aria](https://react-spectrum.adobe.com/react-aria/) - Alla komponenter med några få undantag baseras på React Arias bibliotek för att säkerställa tillgänglighet och användarvänlighet. Använder du en komponent från Midas kan det även vara värt att läsa React Arias motsvarande dokumentation. Dessa finns länkade på komponentsidan.
+- [Lucide Icons](https://lucide.dev/) - Midas använder Lucide Icons för att tillhandahålla ikoner i komponenter.
+
 ## Rapportera buggar eller förslag till nya features
 
 Hittat en bugg eller förbättringsmöjlighet? Det går utmärkt att skapa ärenden via [github issues](https://github.com/migrationsverket/midas/issues).
 Det går naturligtvis också bra att kontakta MIDAS-teamet via alla de normala kontaktvägarna. Alla synpunkter är välkomna!
+
+## Uppgradera från tidigare version
+
+Senaste ändringar och eventuella instruktioner för migrering hittas på [release notes](/blog). Det finns också en
+mer detaljerad [changelog](/changelog) för varje release.

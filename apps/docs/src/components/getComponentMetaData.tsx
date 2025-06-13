@@ -1,7 +1,6 @@
 import { Flex, FlexItem, LinkButton } from '@midas-ds/components'
 import { BookMarked, BookText } from 'lucide-react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-const CHROMATIC_APP_ID = '6810d578d5507438df0f0d22' // move
 
 export const ComponentHeader = ({
   name,
@@ -23,8 +22,8 @@ export const ComponentHeader = ({
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4400'
       : customFields?.currentChromaticBranchUrl
-        ? `https://${customFields?.currentChromaticBranchUrl}--${CHROMATIC_APP_ID}.chromatic.com`
-        : `https://main--${CHROMATIC_APP_ID}.chromatic.com`
+        ? `https://${customFields?.currentChromaticBranchUrl}--${customFields.chromaticAppId}.chromatic.com`
+        : `https://main--${customFields?.chromaticAppId}.chromatic.com`
 
   const storybookLink = `${storybookHost}/${componentPath}`
 

@@ -1,10 +1,10 @@
 ---
-sidebar_label: 'Bidra'
+sidebar_label: 'Utveckling'
 ---
 
 # Bidra till komponentbiblioteket
 
-Att komma igång och bidra med kod till Midas är enkelt!
+Att komma igång och bidra med kod till Midas är enkelt
 
 ## Du behöver
 
@@ -35,7 +35,9 @@ Vi har även en remix och en next.js-app uppsatta - byt playground mot `remix|ne
 
 Alla komponenter ligger under `/packages/components` och exporteras som ett npm-paket [`@midas-ds/components`](https://www.npmjs.com/package/@midas-ds/components).
 
-- Kör enhetstester för komponentbiblioteket
+### Tester
+
+- Kör enhetstester för komponentbiblioteket, mer info finns på [sidan om tester](../tests)
 
 ```bash
 nx test components
@@ -97,14 +99,14 @@ fix: prevent red color on button hover
 
 Introduce new css variable to automatically
 select style based on input type
-
 ```
+
 ###
 
 Ta dig gärna tid att läsa igenom [conventional commit summary](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#summary)
 och försök jobba enligt det flödet.
 
-:::tip
+:::info
 Innan du skapar en PR, gå igenom så att du har commits som representerar vad du har gjort.
 Jobbar du ensam i en feature branch och har skapat många commits? Använd `git rebase -i`,
 då kan du välja vilka commits som ska vara med och vilka som kan slås samman.
@@ -129,6 +131,7 @@ och struktur, både via deras ostylade komponentbibliotek och via sin designsyst
 @value tokens: "../theme/tokens.css";
 @value --button-background-primary from tokens;
 // highlight-end
+
 .button {
     background-color: --button-background-primary;
 }
