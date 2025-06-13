@@ -80,7 +80,11 @@ const Token = ({token, desc}) => {
     children: (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
       fluid: true,
       children: [(0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
-        size: 3,
+        size: {
+          xs: 12,
+          sm: 12,
+          md: 3
+        },
         children: (0,jsx_runtime.jsx)("small", {
           style: {
             wordBreak: 'break-all'
@@ -88,12 +92,20 @@ const Token = ({token, desc}) => {
           children: token
         })
       }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
-        size: 3,
+        size: {
+          xs: 12,
+          sm: 12,
+          md: 3
+        },
         children: (0,jsx_runtime.jsx)("small", {
           children: desc
         })
       }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
-        size: 6,
+        size: {
+          xs: 12,
+          sm: 12,
+          md: 6
+        },
         style: {
           alignItems: 'flex-end'
         },
