@@ -247,7 +247,7 @@ function _createMdxContent(props) {
         children: "Eftersom vi är på väg att införa Figma så är allt skrivet utifrån hur vårt UI-kit i Figma är uppbyggt."
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "För designers finns UI-kit till Figma och Adobe XD. Våra UI-kit innehåller komponenter och mönster som vi använder för att designa våra produkter och tjänster. Komponenterna i våra UI-kit är en spegling av hur komponenterna ser ut i komponentbiblioteket och vi använder så ofta som möjligt samma namn på variants som props i komponenterna. Om du vill testa hur komponenterna beter sig i olika situationer kan du göra det på Storybook"
+      children: "För designers finns UI-kit till Figma och Adobe XD. Våra UI-kit innehåller komponenter och mönster som vi använder för att designa våra produkter och tjänster. Komponenterna i våra UI-kit är en spegling av hur komponenterna ser ut i komponentbiblioteket och vi använder så ofta som möjligt samma namn på variants som props i komponenterna. Om du vill testa hur komponenterna beter sig i olika situationer kan du göra det på Storybook, det finns en länk dit på varje komponentsida."
     }), "\n", (0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e, {
       children: [(0,jsx_runtime.jsx)(LinkButton/* LinkButton */.z, {
         target: "\\_blank",
