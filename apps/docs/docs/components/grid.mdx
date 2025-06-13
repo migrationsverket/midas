@@ -15,7 +15,7 @@ import {
 } from '@site/src/components/examples/grid/GridExamples.tsx'
 
 <ComponentHeader
-  name='Flex'
+  name='Grid'
   friendlyName='Rutnät'
   overrideHeadlessLink=''
 />
@@ -55,7 +55,7 @@ Använd `size` på `<GridItem>` för att ange hur många kolumner varje element 
 
 De responsiva brytpunkterna är `xs`, `sm`, `md`, `lg` och `xl`.
 
-- `xs`: under 479 px
+- `xs`: under 480px
 - `sm`: 480 px - 767 px
 - `md`: 768 px - 1023 px
 - `lg`: 1024 px - 1279 px
@@ -186,14 +186,14 @@ Grids skalas enligt följande specifikation.
 
 ## Riktlinjer
 
-### När ska du använda Flex ?
+### När ska du använda Grid?
 
-Flex används för att strukturera upp en sida och placera olika saker i kolumner. Med flexkomponenten får du med dig ovan
+Grid används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan
 justeringar för responsivitet samt mellanrum mellan kolumner.
 
-### Så här använder du Flex
+### Så här använder du Grid
 
-Använd `<Grid></Grid>` som komponent och justera direkt underliggande komponenter med inställningar i Flex. Justera med barnkomponenten
+Använd `<Grid></Grid>` som komponent och justera direkt underliggande komponenter med inställningar i Grid. Justera med barnkomponenten
 `<GridItem size="antal-kolumner"></GridItem>`.
 
 ## API

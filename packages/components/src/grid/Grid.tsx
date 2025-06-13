@@ -24,7 +24,7 @@ export interface GridProps
  * Use GridItem to manage each column.
  * GridItem accepts values of 1 through 12 and auto.
  *
- * @see {@link: https://migrationsverket.se/components/flex}
+ * @see {@link: https://migrationsverket.se/components/grid}
  */
 
 export const Grid: React.FC<GridProps> = ({
