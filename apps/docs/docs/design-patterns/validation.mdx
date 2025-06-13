@@ -27,7 +27,17 @@ Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är 
 
 ## Direktvalidering
 
-Fält där vi har en formateringsregel eller kan validera mot en databas ska valideras när användaren lämnar fältet.
+Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsregel eller kan validera mot en databas, ska valideras när användaren lämnar fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
+
+<div className='card'>
+  <TextField
+    type='email'
+    label='Ange din epostadress'
+    description='Epostadressen måste innehålla @ och domän (t.ex. example@example.com)'
+    errorMessage={'Du måste ha @ och domän med i din epostadress'}
+    errorPosition='top'
+  />
+</div>
 
 ## Felmeddelandelista
 
