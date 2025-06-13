@@ -1,4 +1,4 @@
-import { Flex, FlexItem, LinkButton } from '@midas-ds/components'
+import { Grid, GridItem, LinkButton } from '@midas-ds/components'
 import { BookMarked, BookText } from 'lucide-react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 const CHROMATIC_APP_ID = '6810d578d5507438df0f0d22' // move
@@ -30,15 +30,15 @@ export const ComponentHeader = ({
 
   return (
     <section className='component-header'>
-      <Flex fluid={true}>
-        <FlexItem
-          col='auto'
+      <Grid fluid={true}>
+        <GridItem
+          size='auto'
           className='friendlyName'
         >
           <b>{friendlyName}</b>
-        </FlexItem>
-        <FlexItem
-          col='auto'
+        </GridItem>
+        <GridItem
+          size='auto'
           className='headerLink'
         >
           <LinkButton
@@ -49,9 +49,9 @@ export const ComponentHeader = ({
           >
             Storybook
           </LinkButton>
-        </FlexItem>
-        <FlexItem
-          col='auto'
+        </GridItem>
+        <GridItem
+          size='auto'
           className='headerLink'
         >
           {overrideHeadlessLink !== '' && (
@@ -71,8 +71,8 @@ export const ComponentHeader = ({
                 : 'React Aria'}
             </LinkButton>
           )}
-        </FlexItem>
-      </Flex>
+        </GridItem>
+      </Grid>
     </section>
   )
 }

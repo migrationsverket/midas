@@ -2,8 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Form as AriaForm } from 'react-aria-components'
 import {
   TextField,
-  Flex,
-  FlexItem,
+  Grid,
+  GridItem,
   Checkbox,
   CheckboxGroup,
   Radio,
@@ -28,32 +28,32 @@ export const SimpleForm: Story = {
     const ITEMS = ['Banan', 'Apple', 'Mango']
 
     return (
-      <Flex>
-        <FlexItem col={12}>
+      <Grid>
+        <GridItem size={12}>
           <TextField
             label='Ange ditt fullständiga namn'
             description='Glöm inte dina eventuella mellannamn!'
           />
-        </FlexItem>
-        <FlexItem col={12}>
+        </GridItem>
+        <GridItem size={12}>
           <TextField
             label='Personnummmer'
             description='Anges på formen ÅÅMMDD-XXXX'
           />
-        </FlexItem>
-        <FlexItem col={12}>
+        </GridItem>
+        <GridItem size={12}>
           <Select
             label='Vilken är din favoritfrukt'
             placeholder='Välj en frukt'
             selectionMode='single'
             options={ITEMS.map(i => ({ id: i, name: i }))}
           />
-        </FlexItem>
+        </GridItem>
 
-        <FlexItem>
+        <GridItem>
           <Button>Skicka</Button>
-        </FlexItem>
-      </Flex>
+        </GridItem>
+      </Grid>
     )
   },
 }
@@ -66,8 +66,8 @@ export const TwoColumnForm: Story = {
 
     return (
       <div>
-        <Flex>
-          <FlexItem col={6}>
+        <Grid>
+          <GridItem size={6}>
             <RadioGroup
               label='Anledning'
               description='Ange anledning till att du söker i databasen'
@@ -81,8 +81,8 @@ export const TwoColumnForm: Story = {
                 </Radio>
               ))}
             </RadioGroup>
-          </FlexItem>
-          <FlexItem col={6}>
+          </GridItem>
+          <GridItem size={6}>
             <CheckboxGroup
               label='Databas'
               description='Välj databas att söka i'
@@ -96,18 +96,18 @@ export const TwoColumnForm: Story = {
                 </Checkbox>
               ))}
             </CheckboxGroup>
-          </FlexItem>
-          <FlexItem col={6}>
+          </GridItem>
+          <GridItem size={6}>
             <TextField
               label='Namn'
               description=''
             />
-          </FlexItem>
-          <FlexItem col={6}>
+          </GridItem>
+          <GridItem size={6}>
             <TextField label='Personnummer' />
-          </FlexItem>
+          </GridItem>
 
-          <FlexItem col={6}>
+          <GridItem size={6}>
             <Select
               label='Kön'
               description='Kan lämnas tomt'
@@ -115,18 +115,18 @@ export const TwoColumnForm: Story = {
               selectionMode='single'
               options={ITEMS.map(i => ({ name: i, id: i }))}
             />
-          </FlexItem>
-          <FlexItem col={6}>
+          </GridItem>
+          <GridItem size={6}>
             <TextField label='Ärendekod' />
-          </FlexItem>
+          </GridItem>
 
-          <FlexItem col='auto'>
+          <GridItem size='auto'>
             <Button>Sök</Button>
-          </FlexItem>
-          <FlexItem col='auto'>
+          </GridItem>
+          <GridItem size='auto'>
             <Button variant='secondary'>Rensa</Button>
-          </FlexItem>
-        </Flex>
+          </GridItem>
+        </Grid>
       </div>
     )
   },

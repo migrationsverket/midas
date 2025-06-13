@@ -9,14 +9,14 @@ export const customViewports = {
   'x-small': {
     name: 'X-small',
     styles: {
-      width: '440px',
+      width: '479px',
       height: '100%',
     },
   },
   small: {
     name: 'Small',
     styles: {
-      width: '767px',
+      width: '480px',
       height: '100%',
     },
   },
@@ -30,14 +30,14 @@ export const customViewports = {
   large: {
     name: 'Large',
     styles: {
-      width: '1200px',
+      width: '1024px',
       height: '100%',
     },
   },
   xLarge: {
     name: 'X-Large',
     styles: {
-      width: '1440px',
+      width: '1280px',
       height: '100%',
     },
   },
