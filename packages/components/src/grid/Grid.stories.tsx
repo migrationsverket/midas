@@ -58,65 +58,6 @@ export const Primary = {
           description='Skriv ett litet meddelande'
         />
       </GridItem>
-      {/* <GridItem size={6}>
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem>
-      <GridItem size={3}>
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem>
-      <GridItem size={4}>
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem>
-      <GridItem size={4}>
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem>
-      <GridItem
-        size={3}
-        offset={1}
-      >
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem>
-      <GridItem size='auto'>
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem>
-      <GridItem>
-        <Card>
-          <CardContent>
-            <CardTitle>Dina uppgifter</CardTitle>
-            <Text>Namn: Namn Namnsson</Text>
-          </CardContent>
-        </Card>
-      </GridItem> */}
     </Grid>
   ),
 }
