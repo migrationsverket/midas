@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --breakpoint-sm from tokens;
+@value --breakpoint-xs from tokens;
 
 .buttonGroup {
   display: flex;
@@ -7,7 +7,7 @@
   gap: 0.5rem;
 }
 
-@media --breakpoint-sm {
+@media --breakpoint-xs {
   .buttonGroup > * {
     width: 100%;
   }

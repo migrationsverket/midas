@@ -2,36 +2,56 @@ import * as React from 'react'
 import styles from './Grid.module.css'
 import clsx from 'clsx'
 
-interface GridProps
+export interface GridProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
   > {
   children: React.ReactNode
-  /** Removes outer margins for nested use. First Flex on a page should have outer margins. */
+  /** Removes outer margins for nested use. First Grid on a page should have outer margins.
+   * @deprecated since v10.2.0 Use `isContained` prop instead.
+   */
   fluid?: boolean
+  isContained?: boolean
+  removeMargins?: boolean
 }
 
 /**
- * Grid based on display: grid;
+ * Grid based on display: flex;
  * Calculates breakpoints and distributes columns according to MV specifications
  *
  * ### Children
  * Use GridItem to manage each column.
  * GridItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/grid}
  */
 
 export const Grid: React.FC<GridProps> = ({
   children,
   fluid = false,
+  isContained,
+  removeMargins = false,
   ...rest
 }) => {
   return (
     <div
       {...rest}
-      className={clsx(styles.container, fluid && styles.fluid, rest.className)}
+      className={clsx(
+        styles.container,
+        fluid && styles.fluid,
+        isContained && styles.contained,
+        removeMargins && styles.removeMargins,
+        rest.className,
+      )}
     >
-      <div className={styles.grid}>{children}</div>
+      <div className={styles.flex}>{children}</div>
     </div>
   )
 }
+
+/**
+ * @deprecated since v10.2.0 Use `Grid` instead.
+ */
+
+export const Flex = Grid
