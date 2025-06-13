@@ -83,8 +83,6 @@ return null;}return/*#__PURE__*/(0,react.cloneElement)(selectedTabItem,{classNam
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */function TabItem(_ref){var children=_ref.children,hidden=_ref.hidden,className=_ref.className;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{role:"tabpanel",className:(0,clsx/* default */.A)(TabItem_styles_module.tabItem,className),hidden:hidden,children:children});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useDocusaurusContext.js
-var useDocusaurusContext = __webpack_require__(44586);
 ;// ./apps/docs/docs/get-started/use.mdx
 
 
@@ -100,8 +98,6 @@ const contentTitle = undefined;
 const assets = {
 
 };
-
-
 
 
 
