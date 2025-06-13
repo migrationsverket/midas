@@ -18,6 +18,10 @@ Grid baserat på tekniken `display: flex;` i css. Flex är både en container f�
 Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
 
 ```tsx
+import { Flex } from '@midas-ds/components'
+```
+
+```tsx
 <Flex>
   <FlexItem col={12}>
     <span>col=12</span>
@@ -36,22 +40,12 @@ Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är 
 
 <Example />
 
-## Installation
-
-```bash npm2yarn
-npm install @midas-ds/components
-```
-
-```tsx
-import { Flex } from '@midas-ds/components'
-```
-
 ## Grid
 
 Grids skalas enligt följande specifikation.
 
 | Skärmstorlek      | Yttre marginaler | Underliggande element | Kolumner | Inre marginaler |
-|-------------------|------------------|-----------------------|----------|-----------------|
+| ----------------- | ---------------- | --------------------- | -------- | --------------- |
 | 0 - 767 px        | 16 px            | Skalas                | 1        | 16 px           |
 | 768 px - 1199 px  | 32 px            | Skalas                | 12       | 16 px           |
 | 1200 px - 1440 px | 32 px            | Skalas                | 12       | 24 px           |
