@@ -80,8 +80,11 @@
     padding: 0.188rem;
     border-width: 0.1rem;
     background: --icon-tertiary 50% 50% no-repeat content-box;
+  }
 
-    @media (forced-colors: active) {
+  /* Nesting this selector in the one above causes syntax errors during minification */
+  @media (forced-colors: active) {
+    &[data-selected]::before {
       background: ButtonText;
     }
   }
