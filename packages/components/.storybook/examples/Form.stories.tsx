@@ -67,7 +67,7 @@ export const TwoColumnForm: Story = {
     return (
       <div>
         <Grid>
-          <GridItem size={6}>
+          <GridItem size={{ xs: 12, sm: 6 }}>
             <RadioGroup
               label='Anledning'
               description='Ange anledning till att du söker i databasen'
@@ -82,7 +82,7 @@ export const TwoColumnForm: Story = {
               ))}
             </RadioGroup>
           </GridItem>
-          <GridItem size={6}>
+          <GridItem size={{ xs: 12, sm: 6 }}>
             <CheckboxGroup
               label='Databas'
               description='Välj databas att söka i'
@@ -97,17 +97,17 @@ export const TwoColumnForm: Story = {
               ))}
             </CheckboxGroup>
           </GridItem>
-          <GridItem size={6}>
+          <GridItem size={{ xs: 12, sm: 6 }}>
             <TextField
               label='Namn'
               description=''
             />
           </GridItem>
-          <GridItem size={6}>
+          <GridItem size={{ xs: 12, sm: 6 }}>
             <TextField label='Personnummer' />
           </GridItem>
 
-          <GridItem size={6}>
+          <GridItem size={{ xs: 12, sm: 6 }}>
             <Select
               label='Kön'
               description='Kan lämnas tomt'
@@ -116,7 +116,7 @@ export const TwoColumnForm: Story = {
               options={ITEMS.map(i => ({ name: i, id: i }))}
             />
           </GridItem>
-          <GridItem size={6}>
+          <GridItem size={{ xs: 12, sm: 6 }}>
             <TextField label='Ärendekod' />
           </GridItem>
 

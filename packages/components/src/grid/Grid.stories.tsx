@@ -30,7 +30,7 @@ export const Primary = {
           description='Skriv ett litet meddelande'
         />
       </GridItem>
-      <GridItem size={{ sm: 6, md: 6 }}>
+      <GridItem size={{ xs: 12, sm: 6, md: 6 }}>
         <Card>
           <CardContent>
             <CardTitle>Dina uppgifter</CardTitle>
@@ -38,7 +38,7 @@ export const Primary = {
           </CardContent>
         </Card>
       </GridItem>
-      <GridItem size={{ sm: 6, md: 12, lg: 6, xl: 12 }}>
+      <GridItem size={{ xs: 12, sm: 6, md: 12, lg: 6, xl: 12 }}>
         <Card>
           <CardContent>
             <CardTitle>Dina uppgifter</CardTitle>
@@ -46,13 +46,13 @@ export const Primary = {
           </CardContent>
         </Card>
       </GridItem>
-      <GridItem size={{ sm: 5, md: 6 }}>
+      <GridItem size={{ xs: 12, sm: 5, md: 6 }}>
         <TextField
           label='Ditt meddelande'
           description='Skriv ett litet meddelande'
         />
       </GridItem>
-      <GridItem size={{ sm: 5, md: 6 }}>
+      <GridItem size={{ xs: 12, sm: 5, md: 6 }}>
         <TextField
           label='Ditt meddelande'
           description='Skriv ett litet meddelande'
