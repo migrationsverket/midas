@@ -41,11 +41,11 @@
     },
     "./theme": {
       "types": "./theme/index.d.ts",
-      "import": "./theme.js",
-      "require": "./theme.cjs"
+      "import": "./theme/index.js",
+      "require": "./theme/index.cjs"
     },
     "./global.css": {
-      "import": "./global.css"
+      "import": "./assets/global.css"
     }
   },
   "dependencies": {
