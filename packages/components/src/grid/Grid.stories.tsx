@@ -7,33 +7,14 @@ import { TextField } from '../textfield'
 
 const meta: Meta<typeof Grid> = {
   component: Grid,
-  subcomponents: {
-    GridItem: GridItem as React.ComponentType<unknown>,
-  },
+  subcomponents: { GridItem: GridItem as React.ComponentType<unknown> },
   title: 'Components/Grid',
   tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-    a11y: {
-      test: 'todo',
-    },
-  },
+  parameters: { layout: 'fullscreen', a11y: { test: 'todo' } },
   argTypes: {
-    fluid: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    isContained: {
-      control: {
-        type: 'boolean',
-      },
-    },
-    hasMargins: {
-      control: {
-        type: 'boolean',
-      },
-    },
+    fluid: { control: { type: 'boolean' } },
+    isContained: { control: { type: 'boolean' } },
+    removeMargins: { control: { type: 'boolean' } },
   },
 }
 

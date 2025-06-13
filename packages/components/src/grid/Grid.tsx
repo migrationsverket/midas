@@ -13,7 +13,7 @@ export interface GridProps
    */
   fluid?: boolean
   isContained?: boolean
-  hasMargins?: boolean
+  removeMargins?: boolean
 }
 
 /**
@@ -31,7 +31,7 @@ export const Grid: React.FC<GridProps> = ({
   children,
   fluid = false,
   isContained,
-  hasMargins,
+  removeMargins = false,
   ...rest
 }) => {
   return (
@@ -41,7 +41,7 @@ export const Grid: React.FC<GridProps> = ({
         styles.container,
         fluid && styles.fluid,
         isContained && styles.contained,
-        hasMargins === false && styles.noMargins,
+        removeMargins && styles.removeMargins,
         rest.className,
       )}
     >

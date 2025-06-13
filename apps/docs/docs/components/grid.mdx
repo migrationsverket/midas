@@ -161,10 +161,10 @@ Med `contained` kan du ställa in att rutnätet ska ha en maxbredd och centrerat
 
 ### Marginaler
 
-Flex har inbyggda marginaler som anpassar sig efter skärmstorlek. Marginalerna är inställda på att ge en bra balans mellan innehåll och utrymme runtom. Dessa yttre marginaler går att stänga av med `noMargins` om du vill ha ett rutnät utan marginaler.
+Flex har inbyggda marginaler som anpassar sig efter skärmstorlek. Marginalerna är inställda på att ge en bra balans mellan innehåll och utrymme runtom. Dessa yttre marginaler går att stänga av med `removeMargins` om du vill ha ett rutnät utan marginaler.
 
 ```tsx {1}
-<Grid hasMargins={false}>
+<Grid removeMargins={true}>
   <GridItem size={6}>size=6</GridItem>
   <GridItem size='auto'>size=auto</GridItem>
   <GridItem size='grow'>size=grow</GridItem>
