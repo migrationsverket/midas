@@ -14,7 +14,7 @@ export const BasicExample: React.FC = () => (
 )
 
 export const ControlledExample = () => {
-  const [selectedFruit, setSelectedFruit] = useState('')
+  const [selectedFruit, setSelectedFruit] = useState<string | null>(null)
 
   return (
     <>

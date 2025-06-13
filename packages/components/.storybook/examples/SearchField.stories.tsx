@@ -20,10 +20,14 @@ export default meta
 type Story = StoryObj<typeof SearchField>
 
 type DataRow = { id: number; fruit: string; description: string }
+
+type ColumnId = {
+  [key in keyof DataRow]: key
+}[keyof DataRow]
+
 type ColumnType = {
   name: string
-  id: string
-
+  id: ColumnId
   isRowHeader?: boolean
 }
 
