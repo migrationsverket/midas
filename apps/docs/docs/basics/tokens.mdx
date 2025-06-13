@@ -438,13 +438,13 @@ export const Token = ({token, desc}) => {
     return (
         <GridItem size={12} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)', paddingBottom: '1rem' }}>
             <Grid fluid>
-                <GridItem size={3}>
+                <GridItem size={{xs: 12, sm: 12, md: 3}}>
                     <small style={{wordBreak: 'break-all'}}>{token}</small>
                 </GridItem>
-                <GridItem size={3}>
+                <GridItem size={{xs: 12, sm: 12, md: 3}}>
                     <small>{desc}</small>
                 </GridItem>
-                <GridItem size={6} style={{alignItems: 'flex-end'}}>
+                <GridItem size={{xs: 12, sm: 12, md: 6}} style={{alignItems: 'flex-end'}}>
                     <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem' }}>
                         <div style={{display: 'flex', flexDirection: 'column'}}>
                             <small>Ljust: #{tokenValue.match(/light-dark\(#(.*?),/)[1]}</small>
