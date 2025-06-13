@@ -12,7 +12,7 @@
 .text {
   margin: 2rem 20% 25% var(--ifm-navbar-padding-horizontal);
 
-  @media (max-width: 996px) {
+  @media (width <= 996px) {
     margin: 2rem var(--ifm-navbar-padding-horizontal);
   }
 }
@@ -33,9 +33,8 @@
   min-height: 80vh;
   margin: 1rem 0;
 
-  @media (max-width: 998px) {
+  @media (width <= 998px) {
     width: 100%;
     min-height: 20vh;
-    margin: 0 1rem;
   }
 }

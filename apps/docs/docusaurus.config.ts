@@ -49,13 +49,11 @@ const config: Config = {
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
-  i18n: {
-    defaultLocale: 'sv',
-    locales: ['sv'],
-  },
+  i18n: { defaultLocale: 'sv', locales: ['sv'] },
   customFields: {
     currentChromaticBranchUrl: getBranchUrl(process.env.GITHUB_HEAD_REF),
     midasVersion: version,
+    chromaticAppId: '6810d578d5507438df0f0d22',
   },
   plugins: [
     [
@@ -78,12 +76,7 @@ const config: Config = {
         },
       },
     ],
-    [
-      'docusaurus-plugin-module-alias',
-      {
-        alias: packageAliases,
-      },
-    ],
+    ['docusaurus-plugin-module-alias', { alias: packageAliases }],
     [
       './src/plugins/changelog/index.ts',
       {
@@ -158,7 +151,7 @@ const config: Config = {
         },
         blog: {
           path: 'blog',
-          blogSidebarTitle: 'Midas versioner',
+          blogSidebarTitle: 'Versioner',
           blogSidebarCount: 'ALL',
         },
       } satisfies Preset.Options,
@@ -175,15 +168,15 @@ const config: Config = {
         width: 'auto',
       },
       items: [
-        {
-          type: 'doc',
-          docId: 'get-started/use',
-          label: 'Dokumentation',
-        },
+        { type: 'doc', docId: 'get-started/use', label: 'Dokumentation' },
         {
           to: `/blog/releases/${latestMajor}.${latestMinor}.${latestPatch}`,
-          label: `Version ${version}`,
+          label: 'Changelog',
+        },
+        {
+          type: 'html',
           position: 'right',
+          value: `<code>Version ${version}</code>`,
         },
         {
           href: 'https://github.com/migrationsverket/midas',
@@ -195,16 +188,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          items: [
-            {
-              label: 'Changelog',
-              to: '/changelog',
-            },
-          ],
-        },
-      ],
+      links: [{ items: [{ label: 'Changelog', to: '/changelog' }] }],
     },
     colorMode: {
       defaultMode: 'light',
@@ -216,18 +200,9 @@ const config: Config = {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },
-    mermaid: {
-      options: {
-        flowchart: {
-          curve: 'linear',
-        },
-      },
-    },
+    mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [
-      {
-        name: 'theme-color',
-        content: '#ffffff',
-      },
+      { name: 'theme-color', content: '#ffffff' },
       {
         name: 'theme-color',
         content: '#242526',

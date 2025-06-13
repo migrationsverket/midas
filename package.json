@@ -22,7 +22,6 @@
     "@vitejs/plugin-react": "^4.3.2",
     "clsx": "^2.1.1",
     "eslint": "8.57.0",
-    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-mdx": "^3.3.1",

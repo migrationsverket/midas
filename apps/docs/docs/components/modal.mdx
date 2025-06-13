@@ -18,17 +18,13 @@ aktivt svar från användaren.
 
 <FormExample />
 
-## Installation och användning
-
-```bash npm2yarn
-npm install @midas-ds/components
-```
+## Användning
 
 ```tsx
 import { DialogTrigger, Modal } from '@midas-ds/components'
 ```
 
-```tsx title='Exempelkod'
+```tsx
 <DialogTrigger>
   <Button>Öppna modal</Button>
   <Modal title='Rubrik'>Innehåll i modal</Modal>
@@ -45,7 +41,7 @@ För att undvika oönskade fel kan en modal användas för att bekräfta en hand
 
 För att stänga modal via klick utanför modalens yta, använd `isDismissable` på modalen.
 
-```tsx title='Dismissable'
+```tsx
 <DialogTrigger>
   <Button>Open</Button>
   <Modal
@@ -64,7 +60,7 @@ För att stänga modal via klick utanför modalens yta, använd `isDismissable` 
 Alla varianter av `<Button>` samt alla övriga [pressable](https://react-spectrum.adobe.com/react-aria/Dialog.html#custom-trigger)
 element kan användas för att öppna modalen. För att stänga modalen med en knapp innanför modalen, använd `slot={'close'}`.
 
-```tsx title='Uncontrolled Modal'
+```tsx
 <DialogTrigger>
   <Button>Open</Button>
   <Modal title='Modal Title'>
@@ -79,7 +75,7 @@ element kan användas för att öppna modalen. För att stänga modalen med en k
 
 Använd `isOpen` och `onOpenChange()` för att via state kontrollera om modalen är öppen eller stängd.
 
-```tsx title='Controlled Modal'
+```tsx
 /* imports and rest of app */
 const [open, setOpen] = React.useState<boolean>(false)
 
@@ -101,7 +97,7 @@ const [open, setOpen] = React.useState<boolean>(false)
 
 Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas.
 
-```tsx title=AutoFocus
+```tsx
 <DialogTrigger>
   <Button>Open</Button>
   <Modal title="Modal Title">
