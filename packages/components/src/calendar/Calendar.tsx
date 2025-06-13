@@ -7,7 +7,7 @@ import {
 import { clsx } from 'clsx'
 import { CalendarGrid } from './CalendarGrid'
 import { CalendarHeader } from './CalendarHeader'
-import { Text } from '../text'
+import { FieldError } from '../field-error'
 import styles from './Calendar.module.css'
 
 export interface CalendarProps extends AriaCalendarProps<DateValue> {
@@ -19,12 +19,15 @@ export const Calendar: React.FC<CalendarProps> = ({
   errorMessage,
   ...rest
 }) => (
-  <AriaCalendar
-    className={clsx(styles.calendar, className)}
-    {...rest}
-  >
-    <CalendarHeader />
-    <CalendarGrid {...rest} />
-    {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
-  </AriaCalendar>
+  <div className={styles.container}>
+    <AriaCalendar
+      className={clsx(styles.calendar, className)}
+      {...rest}
+    >
+      <CalendarHeader {...rest} />
+      <CalendarGrid {...rest} />
+    </AriaCalendar>
+
+    <FieldError isInvalid={rest.isInvalid}>{errorMessage}</FieldError>
+  </div>
 )

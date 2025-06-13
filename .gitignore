@@ -166,6 +166,7 @@ build
 
 # Nx
 .nx
+tmp
 
 # Editors
 .idea

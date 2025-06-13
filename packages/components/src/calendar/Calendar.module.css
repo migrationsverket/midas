@@ -1,5 +1,10 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --text-primary, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus from tokens;
+@value --font-family, --layer-01, --text-primary, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus, --text-warning, --support-border-warning from tokens;
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+}
 
 .calendar {
   padding: 0.5rem;
@@ -63,6 +68,11 @@
   &[data-disabled='true'],
   &[data-disabled='true'] button {
     cursor: not-allowed;
+    color: --text-disabled;
+  }
+
+  &[data-invalid] {
+    border: 2px solid --support-border-warning;
   }
 
   @media (forced-colors: active) {
@@ -82,7 +92,7 @@
     background-color: --layer-01;
     cursor: pointer;
 
-    &:hover {
+    &:hover:not([data-disabled]) {
       background-color: --field-hover-01;
     }
 
@@ -97,13 +107,17 @@
       }
     }
   }
+
+  [data-disabled] {
+    color: --text-disabled;
+  }
 }
 
 .day {
   border: solid 2px --layer-01;
   cursor: pointer;
 
-  &[data-hovered] {
+  &[data-hovered]:not([data-unavailable], [data-disabled], [data-selected]) {
     background-color: --field-hover-01;
     border-color: --field-hover-01;
   }
@@ -130,7 +144,8 @@
     }
   }
 
-  &[data-disabled] {
+  &[data-disabled],
+  &[data-unavailable] {
     color: --text-disabled;
     cursor: not-allowed;
   }

@@ -53,7 +53,7 @@ Börja med att sätta upp dina kolumner. Nycklarna på raderna ska sedan referer
 
 ```tsx
 const columns = [
-  { name: 'Namn', id: 'name' },
+  { name: 'Namn', id: 'name', isRowHeader: true },
   { name: 'Beskrivning', id: 'description', width: 'max-content' },
 ]
 
@@ -82,7 +82,7 @@ const rows = [
 <Table aria-label='Fruit'>
   <TableHeader columns={columns}>
     {column => {
-      return <Column>{column.name}</Column>
+      return <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
     }}
   </TableHeader>
   <TableBody items={rows}>
@@ -103,20 +103,20 @@ const rows = [
 
 ### Kompakt tabell
 
-Använd `narrow` om du vill ha en kompaktare tabell.
+Använd `size='medium'` om du vill ha en kompaktare tabell.
 
 ```tsx
 <Table
   aria-label='Fruit'
   // highlight-start
-  narrow
+  size='medium'
   // highlight-end
 >
   ...
 </Table>
 ```
 
-<FullExample narrow />
+<FullExample size='medium' />
 
 ### Valbara rader
 
@@ -176,7 +176,7 @@ const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set(['appl
 
 ### Randiga rader
 
-Använd `striped` om du vill att raderna ska alternera mellan vit och grå.
+Använd `striped` om du vill att raderna ska vara olika.
 
 ```tsx
 <Table
