@@ -1,6 +1,6 @@
 # Formulär
 
-import { Flex, FlexItem, TextField } from '@midas-ds/components'
+import { Grid, GridItem, TextField } from '@midas-ds/components'
 
 ## Generella riktlinjer
 
@@ -36,20 +36,20 @@ Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga f�
 Följer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten `”(valfritt)”`.
 
 <div className='card'>
-  <Flex>
-    <FlexItem col='6'>
+  <Grid>
+    <GridItem size='6'>
       <TextField
         label='Fullständigt namn'
         description='För och efternamn'
         isRequired
         errorMessage='Detta är ett obligatoriskt fält'
       />
-    </FlexItem>
-    <FlexItem col='6'>
+    </GridItem>
+    <GridItem size='6'>
       <TextField
         label='Favoritfrukter (Valfritt)'
         description='Kan lämnas tomt'
       />
-    </FlexItem>
-  </Flex>
+    </GridItem>
+  </Grid>
 </div>

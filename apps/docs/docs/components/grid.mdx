@@ -1,11 +1,18 @@
 ---
 title: Grid
-description: Grid baserat på tekniken display grid i css
+description: Grid baserat på tekniken display flex i css
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Example } from '@site/src/components/examples/grid/GridExamples'
+import {
+  SimpleExample,
+  ResponsiveExample,
+  AutoExample,
+  GrowExample,
+  OffsetExample,
+  ResponsiveOffsetExample,
+} from '@site/src/components/examples/grid/GridExamples.tsx'
 
 <ComponentHeader
   name='Grid'
@@ -13,11 +20,9 @@ import { Example } from '@site/src/components/examples/grid/GridExamples'
   overrideHeadlessLink=''
 />
 
-Grid baserat på tekniken `display: grid;` i css. Grid är både en container för maxbredd och ett underliggande grid med marginaler och tomrum mellan underliggande element.
+Grid och GridItem är komponenter som bygger på CSS Flexbox för att skapa responsiva rutnätslayouter men i ett förbestämt rutnät.
 
-Komponenterna Grid och Flex har samma innebörd, använd den vars teknik du är mest bekväm med. För komplexa grid kan Grid vara enklare att hantera.
-
-<Example />
+<SimpleExample />
 
 ## Installation
 
@@ -29,52 +34,155 @@ npm install @midas-ds/components
 import { Grid, GridItem } from '@midas-ds/components'
 ```
 
+## GridItem / kolumner
+
+### Statiskt
+
+Använd `size` på `<GridItem>` för att ange hur många kolumner varje element ska ta upp. Rutnätet är indelat i 12 kolumner, så `size={6}` betyder att elementet tar upp hälften av bredden (6 av 12 kolumner).
+
 ```tsx
 <Grid>
-  <GridItem col={12}>
-    <span>col=12</span>
-  </GridItem>
-  <GridItem col={3}>
-    <span>col=3</span>
-  </GridItem>
-  <GridItem col={4}>
-    <span>col=4</span>
-  </GridItem>
-  <GridItem col={5}>
-    <span>col=5</span>
-  </GridItem>
-  <GridItem col={4}>
-    <span>col=4</span>
-  </GridItem>
-  <GridItem col={4}>
-    <span>col=4</span>
-  </GridItem>
-  <GridItem col={4}>
-    <span>col=4</span>
+  <GridItem size={8}>size=8</GridItem>
+  <GridItem size={4}>size=4</GridItem>
+  <GridItem size={4}>size=4</GridItem>
+  <GridItem size={8}>size=8</GridItem>
+</Grid>
+```
+
+<SimpleExample />
+
+### Responsivt
+
+De responsiva brytpunkterna är `xs`, `sm`, `md`, `lg` och `xl`.
+
+- `xs`: under 480px
+- `sm`: 480 px - 767 px
+- `md`: 768 px - 1023 px
+- `lg`: 1024 px - 1279 px
+- `xl`: över 1280 px
+
+Exemplet nedan är som exemplet ovan fast responsivt i mindre storlekar. Kolumnerna blir hälften så breda på mindre skärmar och tar upp hela bredden på små skärmar.
+
+```tsx
+<Grid>
+  <GridItem size={{ xs: 12, sm: 6, md: 8 }}>xs: 12, sm: 6, md: 8</GridItem>
+  <GridItem size={{ xs: 12, sm: 6, md: 4 }}>xs: 12, sm: 6, md: 4</GridItem>
+  <GridItem size={{ xs: 12, sm: 6, md: 4 }}>xs: 12, sm: 6, md: 4</GridItem>
+  <GridItem size={{ xs: 12, sm: 6, md: 8 }}>xs: 12, sm: 6, md: 8</GridItem>
+</Grid>
+```
+
+<ResponsiveExample />
+
+Även om lg och xl inte är definerade i dessa exempel så fortsätter md-inställningen att gälla för storlekarna över den. Arbeta alltid från minsta till största skärmstorlek för ett enklare arbetsflöde med kolumner.
+
+#### Alias
+
+`quarter`, `third`, `half`, `full` är aliaser för `size={3}`, `size={4}`, `size={6}` och `size={12}`. Dessa kan användas för att göra koden mer läsbar.
+
+### Automatiska kolumner
+
+I exemplet ovan används `size` för att ange hur många kolumner varje element ska ta upp. Size kan anges andra värden än nummer, till exempel `auto` för att en kolumn ska ta upp exakt så mycket plats som innehållet i den behöver.
+
+```tsx {3}
+<Grid>
+  <GridItem size={8}>size=8</GridItem>
+  <GridItem size='auto'>size=auto</GridItem>
+  <GridItem size={{ xs: 12, sm: 6, md: 4 }}>size=4</GridItem>
+  <GridItem size={{ xs: 12, sm: 6, md: 'auto' }}>xs: 12, sm: 6, md: auto</GridItem>
+</Grid>
+```
+
+<AutoExample />
+
+### Växande kolumner
+
+Kolumner kan även ställas in till att ta upp all tillgänglig yta på en rad.
+
+```tsx {4}
+<Grid>
+  <GridItem size={6}>size=6</GridItem>
+  <GridItem size='auto'>size=auto</GridItem>
+  <GridItem size='grow'>size=grow</GridItem>
+</Grid>
+```
+
+<GrowExample />
+
+### Offset
+
+För att skapa mellanrum mellan kolumner kan du använda `offset` på `<GridItem>`. Detta skapar ett tomrum innan elementet, vilket kan vara användbart för att justera layouten. Här är ett exempel där vi har ett element som tar upp 6 kolumner och ett annat som tar upp 3 kolumner med en offset på 3 kolumner och därmed har vi fyllt upp alla tolv kolumner.
+
+```tsx {5}
+<Grid>
+  <GridItem size={6}>size=6</GridItem>
+  <GridItem
+    size={3}
+    offset={3}
+  >
+    size=3, offset=3
   </GridItem>
 </Grid>
 ```
 
-## Grid
+<OffsetExample />
+
+Precis som size så kan offset även anges som ett objekt med responsiva brytpunkter. Detta gör att på mindre skärmar kommer andra kolumnen bryta till en ny rad eftersom vi överstiger tolv kolumner. Med 9 + 3 kommer elementet ligga mot högerkant av skärmen i mindre skärmar.
+
+```tsx {5}
+<Grid>
+  <GridItem size={6}>size=6</GridItem>
+  <GridItem
+    size={3}
+    offset={{ xs: 9, md: 3 }}
+  >
+    size=3, offset=xs: 9, md: 3
+  </GridItem>
+</Grid>
+```
+
+<ResponsiveOffsetExample />
+
+## Grid / container
+
+Föräldraelementet `<Grid>` är en container för rutnätet och bestämmer hur elementen under ska justeras.
+
+### Contained
+
+Med `contained` kan du ställa in att rutnätet ska ha en maxbredd och centrerat innehåll på större skärmar. Detta är användbart för att skapa en responsiv layout som inte sträcker sig över hela skärmens bredd.
+
+```tsx {1}
+<Grid contained>
+  <GridItem size={6}>size=6</GridItem>
+  <GridItem size='auto'>size=auto</GridItem>
+  <GridItem size='grow'>size=grow</GridItem>
+</Grid>
+```
+
+### Marginaler
+
+Flex har inbyggda marginaler som anpassar sig efter skärmstorlek. Marginalerna är inställda på att ge en bra balans mellan innehåll och utrymme runtom. Dessa yttre marginaler går att stänga av med `removeMargins` om du vill ha ett rutnät utan marginaler.
+
+```tsx {1}
+<Grid removeMargins={true}>
+  <GridItem size={6}>size=6</GridItem>
+  <GridItem size='auto'>size=auto</GridItem>
+  <GridItem size='grow'>size=grow</GridItem>
+</Grid>
+```
+
+## Brytpunkter
 
 Grids skalas enligt följande specifikation.
 
-| Skärmstorlek      | Yttre marginaler | Underliggande element | Kolumner | Inre marginaler |
-|-------------------|------------------|-----------------------|----------|-----------------|
-| 0 - 767 px        | 16 px            | Skalas                | 1        | 16 px           |
-| 768 px - 1199 px  | 32 px            | Skalas                | 12       | 16 px           |
-| 1200 px - 1440 px | 32 px            | Skalas                | 12       | 24 px           |
-| > 1440 px         | Skalas           | 1368 px               | 12       | 24 px           |
-
-## Riktlinjer
-
-### När ska du använda Grid ?
-
-Grid används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan justeringar för responsivitet samt mellanrum mellan kolumner.
-
-### Så här använder du Grid
-
-Använd `<Grid></Grid>` som komponent och justera direkt underliggande komponenter med inställningar i Grid. Justera med barnkomponenten `<GridItem col="antal-kolumner"></GridItem>`.
+| Namn | Skärmstorlek      | Yttre marginaler | Underliggande element | Kolumner | Inre marginaler | Contained |
+| :--- | :---------------- | :--------------- | :-------------------- | :------- | :-------------- | :-------- |
+| `xs` | 0 - 479 px        | 16 px            | Skalas                | 12       | 16 px           |           |
+| `sm` | 480 px - 767 px   | 16 px            | Skalas                | 12       | 16 px           |           |
+| `md` | 768 px - 1023 px  | 16 px            | Skalas                | 12       | 16 px           |           |
+| `lg` | 1024 px - 1279 px | 32 px            | Skalas                | 12       | 16 px           |           |
+| `xl` | över 1280 px      | 32 px            | Skalas                | 12       | 24 px           | Nej       |
+| `xl` | över 1280 px      | Skalas           | 1368 px               | 12       | 24 px           | Ja        |
 
 ## API
 
@@ -88,3 +196,4 @@ Använd `<Grid></Grid>` som komponent och justera direkt underliggande komponent
   name='GridItem'
   defaultOpen={false}
 />
+```

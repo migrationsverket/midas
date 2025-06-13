@@ -140,10 +140,11 @@
 @value --fast-transition: 250ms;
 
 /* Breakpoints */
-@value --breakpoint-sm: (max-width: 767px);
+@value --breakpoint-xs: (max-width: 479px);
+@value --breakpoint-sm: (min-width: 480px);
 @value --breakpoint-md: (min-width: 768px);
-@value --breakpoint-lg: (min-width: 1200px);
-@value --breakpoint-xl: (min-width: 1440px);
+@value --breakpoint-lg: (min-width: 1024px);
+@value --breakpoint-xl: (min-width: 1280px);
 @value --forced-colors-mode: (forced-colors: active);
 @value --dark-mode: (prefers-color-scheme: dark);
 @value --prefers-reduced-motion: (prefers-reduced-motion: reduced);

@@ -136,13 +136,15 @@ export const transitions = {
 }
 
 export const windowSizes = {
+  sm: 480,
   md: 768,
-  lg: 1200,
-  xl: 1440,
+  lg: 1024,
+  xl: 1280,
 }
 
 export const breakpoints = {
-  sm: `(max-width: ${windowSizes.md - 1}px)`,
+  xs: `(max-width: ${windowSizes.sm - 1}px)`,
+  sm: `(min-width: ${windowSizes.sm}px)`,
   md: `(min-width: ${windowSizes.md}px)`,
   lg: `(min-width: ${windowSizes.lg}px)`,
   xl: `(min-width: ${windowSizes.xl}px)`,

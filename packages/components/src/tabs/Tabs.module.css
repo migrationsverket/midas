@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-sm from tokens;
+@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs from tokens;
 
 .container {
   font-family: --font-family;
@@ -28,7 +28,7 @@
     box-shadow: --focus;
   }
 
-  @media --breakpoint-sm {
+  @media --breakpoint-xs {
     flex: 0 0 100%;
 
     &[data-selected] {
