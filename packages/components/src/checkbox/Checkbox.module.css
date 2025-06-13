@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled, --border-primary, --border-disabled, --breakpoint-sm, --support-border-warning, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --field-disabled, --focus, --line-height-30 from tokens;
+@value --font-family, --text-primary, --text-disabled, --border-primary, --border-disabled, --breakpoint-xs, --support-border-warning, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --field-disabled, --focus, --line-height-30 from tokens;
 
 .wrap {
   grid-area: Input;
@@ -136,7 +136,7 @@
   }
 
   .checkbox {
-    @media --breakpoint-sm {
+    @media --breakpoint-xs {
       padding: 0.875rem 1rem;
       border: 1px solid --border-primary;
       width: auto;
