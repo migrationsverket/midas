@@ -110,18 +110,6 @@ const toc = [{
   "id": "brytpunkter",
   "level": 2
 }, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "När ska du använda Grid?",
-  "id": "när-ska-du-använda-grid",
-  "level": 3
-}, {
-  "value": "Så här använder du Grid",
-  "id": "så-här-använder-du-grid",
-  "level": 3
-}, {
   "value": "API",
   "id": "api",
   "level": 2
@@ -643,23 +631,6 @@ function _createMdxContent(props) {
           })]
         })]
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "när-ska-du-använda-grid",
-      children: "När ska du använda Grid?"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Grid används för att strukturera upp en sida och placera olika saker i kolumner. Med gridkomponenten får du med dig ovan\njusteringar för responsivitet samt mellanrum mellan kolumner."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "så-här-använder-du-grid",
-      children: "Så här använder du Grid"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Grid></Grid>"
-      }), " som komponent och justera direkt underliggande komponenter med inställningar i Grid. Justera med barnkomponenten\n", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<GridItem size=\"antal-kolumner\"></GridItem>"
-      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
