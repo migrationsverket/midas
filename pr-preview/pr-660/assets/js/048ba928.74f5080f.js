@@ -249,6 +249,9 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "För designers finns UI-kit till Figma och Adobe XD. Våra UI-kit innehåller komponenter och mönster som vi använder för att designa våra produkter och tjänster. Komponenterna i våra UI-kit är en spegling av hur komponenterna ser ut i komponentbiblioteket och vi använder så ofta som möjligt samma namn på variants som props i komponenterna. Om du vill testa hur komponenterna beter sig i olika situationer kan du göra det på Storybook, det finns en länk dit på varje komponentsida."
     }), "\n", (0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e, {
+      style: {
+        marginBottom: '1.25rem'
+      },
       children: [(0,jsx_runtime.jsx)(LinkButton/* LinkButton */.z, {
         target: "\\_blank",
         href: "https://www.figma.com/design/Zc41jDwx13L2bVECCQlsfN/MIDAS-UI-Kit?m=auto&node-id=0-1&t=ZgUPPphkbF15QIWU-1",
@@ -259,13 +262,13 @@ function _createMdxContent(props) {
         download: true,
         children: 'Ladda ner UI-kit till Adobe XD (version 24)'
       })]
-    }), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsx)(_components.p, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Försök att undvika att skapa egna komponenter för att lösa designproblem. Börja istället med att fundera på om det går\natt lösa genom att kombinera ihop befintliga komponenter. Men om du har ett designproblem som kräver en unik lösning som\ninte behövs någon annanstans så kan det vara lämpligt att skapa en ny komponent."
     }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
       title: "Personuppgifter i skisser och prototyper",
       type: "warning",
       children: (0,jsx_runtime.jsx)(_components.p, {
-        children: "Vi får inte lagra några personuppgifter, tex namn eller personnummer i våra skisser. Vi använd därför alltid fiktiv data om vi behöver visa personuppgifter"
+        children: "Vi får inte lagra några personuppgifter, tex namn eller personnummer i våra skisser. Vi använder därför alltid fiktiv data om vi behöver visa personuppgifter"
       })
     })]
   });
