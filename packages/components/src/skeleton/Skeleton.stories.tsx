@@ -88,7 +88,7 @@ export const IsOnLayer01: Story = {
     isOnLayer01: true,
   },
   render: args => (
-    <div className={styles.layer01Backgorund}>
+    <div style={{ backgroundColor: '#f2f2f2', padding: '1rem' }}>
       <Skeleton
         {...args}
         data-testid='skeleton'
