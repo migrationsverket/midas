@@ -9322,12 +9322,13 @@ CSS variables, meant to be overridden by final theme
     background: light-dark(#143c50, #f2f2f2) 50% 50% no-repeat content-box;
   }
 
-@media (forced-colors: active) {
+/* Nesting this selector in the one above causes syntax errors during minification */
 
-.radio_U9gG[data-selected]::before {
+@media (forced-colors: active) {
+    .radio_U9gG[data-selected]::before {
       background: ButtonText;
-  }
     }
+  }
 
 .radio_U9gG[data-selected][data-pressed]::before {
     border-color: light-dark(#bfbfbf, #383838);

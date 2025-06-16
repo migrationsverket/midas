@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-use-mdx-f81.json
-const site_docs_get_started_use_mdx_f81_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/use","title":"Utveckla med Midas","description":"Installera","source":"@site/docs/get-started/use.mdx","sourceDirName":"get-started","slug":"/get-started/use","permalink":"/pr-preview/pr-660/get-started/use","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Utveckla med Midas","sidebar_label":"För Utvecklare","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_get_started_use_mdx_f81_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/use","title":"Utveckla med Midas","description":"Installera","source":"@site/docs/get-started/use.mdx","sourceDirName":"get-started","slug":"/get-started/use","permalink":"/pr-preview/pr-660/get-started/use","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Utveckla med Midas","sidebar_label":"För utvecklare","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -88,7 +88,7 @@ return null;}return/*#__PURE__*/(0,react.cloneElement)(selectedTabItem,{classNam
 
 const frontMatter = {
 	title: 'Utveckla med Midas',
-	sidebar_label: 'För Utvecklare',
+	sidebar_label: 'För utvecklare',
 	sidebar_position: 2,
 	pagination_prev: null,
 	pagination_next: null

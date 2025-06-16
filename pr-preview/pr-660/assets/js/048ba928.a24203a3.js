@@ -201,7 +201,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-designer-mdx-048.json
-const site_docs_get_started_designer_mdx_048_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/designer","title":"Designa med Midas","description":"Eftersom vi är på väg att införa Figma så är allt skrivet utifrån hur vårt UI-kit i Figma är uppbyggt.","source":"@site/docs/get-started/designer.mdx","sourceDirName":"get-started","slug":"/get-started/designer","permalink":"/pr-preview/pr-660/get-started/designer","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Designa med Midas","sidebar_label":"För Designers","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_get_started_designer_mdx_048_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/designer","title":"Designa med Midas","description":"Eftersom vi är på väg att införa Figma så är allt skrivet utifrån hur vårt UI-kit i Figma är uppbyggt.","source":"@site/docs/get-started/designer.mdx","sourceDirName":"get-started","slug":"/get-started/designer","permalink":"/pr-preview/pr-660/get-started/designer","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Designa med Midas","sidebar_label":"För designers","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -217,7 +217,7 @@ var Link = __webpack_require__(25441);
 
 const frontMatter = {
 	title: 'Designa med Midas',
-	sidebar_label: 'För Designers',
+	sidebar_label: 'För designers',
 	sidebar_position: 2,
 	pagination_prev: null,
 	pagination_next: null
