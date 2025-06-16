@@ -215,13 +215,13 @@ function _createMdxContent(props) {
       id: "att-använda-en-annan-bakgrundsfärg",
       children: "Att använda en annan bakgrundsfärg"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om Skeleton komponenten lägger på en bakgrundsfärg (", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Om Skeletonkomponenten ligger på en bakgrundsfärg (", (0,jsx_runtime.jsx)(_components.code, {
         children: "#f2f2f2"
       }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
         children: "layer01"
-      }), "), bör den använda propen ", (0,jsx_runtime.jsx)(_components.code, {
+      }), "), behöver den använda propen ", (0,jsx_runtime.jsx)(_components.code, {
         children: "isOnLayer01"
-      }), " så att Skeleton blir synlig."]
+      }), " för att synas."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
