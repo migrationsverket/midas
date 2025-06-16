@@ -31,13 +31,23 @@ fs.readdirSync(packagesDir).forEach(dir => {
   }
 })
 
+const getBaseUrl = (): string => {
+  if (process.env.GITHUB_REF_NAME === 'dev') {
+    return `/dev-docs/`
+  }
+
+  if (process.env.PR_NUMBER) {
+    return `/pr-preview/pr-${process.env.PR_NUMBER}/`
+  }
+
+  return '/'
+}
+
 const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
-  baseUrl: process.env.PR_NUMBER
-    ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
-    : '/',
+  baseUrl: getBaseUrl(),
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico?v=3',
