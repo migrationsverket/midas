@@ -1,2 +1,2 @@
-export {Grid} from './Grid'
-export {GridItem} from './GridItem'
+export { Grid, Flex } from './Grid'
+export { GridItem, FlexItem } from './GridItem'
