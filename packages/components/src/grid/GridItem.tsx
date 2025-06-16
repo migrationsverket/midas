@@ -91,3 +91,9 @@ const getOffsetClasses = (offset?: GridItemProps['offset']): string[] => {
   }
   return [`offset-${offset}`]
 }
+
+/**
+ * @deprecated since v10.2.0 Use `GridItem` instead.
+ */
+
+export const FlexItem = GridItem

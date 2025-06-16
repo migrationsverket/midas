@@ -49,3 +49,9 @@ export const Grid: React.FC<GridProps> = ({
     </div>
   )
 }
+
+/**
+ * @deprecated since v10.2.0 Use `Grid` instead.
+ */
+
+export const Flex = Grid

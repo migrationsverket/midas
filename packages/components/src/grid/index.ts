@@ -1,8 +1,2 @@
-export { Grid } from './Grid'
-export { GridItem } from './GridItem'
-
-/**
- * @deprecated Use `Grid` and `GridItem` instead.
- */
-export { Grid as Flex } from './Grid'
-export { GridItem as FlexItem } from './GridItem'
+export { Grid, Flex } from './Grid'
+export { GridItem, FlexItem } from './GridItem'
