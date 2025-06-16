@@ -75,7 +75,7 @@ Skeleton är animerad som standard. Det går att stänga av med `isAnimated={fal
 <Skeleton
   height='48px'
   // highlight-start
-  isAnimated
+  isAnimated={false}
   // highlight-end
 />
 ```
@@ -83,16 +83,17 @@ Skeleton är animerad som standard. Det går att stänga av med `isAnimated={fal
 <div className='card'>
   <Skeleton
     height='48px'
-    isAnimated
+    isAnimated={false}
   />
 </div>
 
 ## Att använda en annan bakgrundsfärg
 
-Om Skeletonkomponenten ligger på en bakgrundsfärg (`#f2f2f2` eller `layer01`), behöver den använda propen `isOnLayer01` för att synas.
+Om Skeletonkomponenten ligger på en bakgrundsfärg `light-dark(#f2f2f2,#262626)` eller `layer01`, behöver den använda propen `isOnLayer01` för att synas.
 
 ```tsx
 <Skeleton
+  height='48px'
   // highlight-start
   isOnLayer01
   // highlight-end

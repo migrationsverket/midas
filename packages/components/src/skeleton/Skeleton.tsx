@@ -24,6 +24,10 @@ export interface SkeletonProps
    * @default true
    */
   isAnimated?: boolean
+  /**
+   * If skeleton is on a layer01 background light-dark( #f2f2f2, #262626)
+   * @default false
+   */
   isOnLayer01?: boolean
 }
 
