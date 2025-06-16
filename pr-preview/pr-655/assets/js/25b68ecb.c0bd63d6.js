@@ -33,6 +33,8 @@ var PropsTable = __webpack_require__(68713);
 var getComponentMetaData = __webpack_require__(13225);
 // EXTERNAL MODULE: ./packages/components/src/skeleton/Skeleton.tsx + 1 modules
 var Skeleton = __webpack_require__(58857);
+// EXTERNAL MODULE: ./packages/components/src/theme/tokens.ts
+var tokens = __webpack_require__(46090);
 ;// ./apps/docs/docs/components/skeleton.mdx
 
 
@@ -47,6 +49,7 @@ const contentTitle = undefined;
 const assets = {
 
 };
+
 
 
 
@@ -215,10 +218,10 @@ function _createMdxContent(props) {
       id: "att-använda-en-annan-bakgrundsfärg",
       children: "Att använda en annan bakgrundsfärg"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Om Skeletonkomponenten ligger på en bakgrundsfärg ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "light-dark(#f2f2f2,#262626)"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
+      children: ["Om Skeletonkomponenten ligger på bakgrundsfärgen ", (0,jsx_runtime.jsx)(_components.code, {
         children: "layer01"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "light-dark(#f2f2f2, #262626)"
       }), ", behöver den använda propen ", (0,jsx_runtime.jsx)(_components.code, {
         children: "isOnLayer01"
       }), " för att synas."]
@@ -230,7 +233,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
       style: {
-        backgroundColor: '#f2f2f2',
+        backgroundColor: tokens.semantic.layer01,
         padding: '1rem'
       },
       children: (0,jsx_runtime.jsx)(Skeleton/* Skeleton */.E, {
