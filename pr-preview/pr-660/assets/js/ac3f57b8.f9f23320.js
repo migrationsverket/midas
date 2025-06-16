@@ -218,7 +218,14 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "// highlight-next-line\nimport { Form } from 'react-aria-components'\nimport { TextField } from '@midas-ds/components'\n\n//highlight-next-line\n;<Form>\n  <TextField\n    label={'Namn'}\n    name={'name'}\n  />\n  //highlight-next-line\n</Form>\n"
+        metastring: "{1}",
+        children: "import { Form } from 'react-aria-components'\nimport { TextField } from '@midas-ds/components'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        metastring: "{1,6}",
+        children: "<Form>\n  <TextField\n    label='Namn'\n    name='name'\n  />\n</Form>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "normal-användning",
@@ -242,10 +249,10 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "export const UncontrolledForm = () => {\n  const [result, setResult] = React.useState(null)\n  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const data = Object.fromEntries(new FormData(e.currentTarget))\n    setResult(data)\n  }\n\n  return (\n    <>\n      <Form\n        onSubmit={handleSubmit}\n        // use 'aria' to allow submit when invalid\n        validationBehavior={'native'}\n      >\n        <TextField\n          label={'Namn'}\n          name={'name'}\n          isRequired\n        />\n        <TextField\n          label={'E-post'}\n          type={'email'}\n          name={'email'}\n          isRequired\n        />\n        <CheckboxGroup\n          label={'Spara mina uppgifter'}\n          name={'saveData'}\n          isRequired\n        >\n          <Checkbox value={'agree'}>Jag godkänner</Checkbox>\n        </CheckboxGroup>\n        <ButtonGroup>\n          <Button type={'submit'}>Skicka</Button>\n          <Button\n            type={'reset'}\n            variant={'secondary'}\n          >\n            Rensa\n          </Button>\n        </ButtonGroup>\n      </Form>\n      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>\n    </>\n  )\n}\n"
+        children: "export const UncontrolledForm = () => {\n  const [result, setResult] = React.useState(null)\n\n  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const data = Object.fromEntries(new FormData(e.currentTarget))\n    setResult(data)\n  }\n\n  return (\n    <>\n      <Form\n        onSubmit={handleSubmit}\n        // use 'aria' to allow submit when invalid\n        validationBehavior='native'\n      >\n        <TextField\n          label='Namn'\n          name='name'\n          isRequired\n        />\n        <TextField\n          label='E-post'\n          type='email'\n          name='email'\n          isRequired\n        />\n        <CheckboxGroup\n          label='Spara mina uppgifter'\n          name='saveData'\n          isRequired\n        >\n          <Checkbox value='agree'>Jag godkänner</Checkbox>\n        </CheckboxGroup>\n        <ButtonGroup>\n          <Button type='submit'>Skicka</Button>\n          <Button\n            type='reset'\n            variant='secondary'\n          >\n            Rensa\n          </Button>\n        </ButtonGroup>\n      </Form>\n      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>\n    </>\n  )\n}\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: 'card',
+      className: "card",
       children: (0,jsx_runtime.jsx)(UncontrolledForm, {})
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "controlled-form",
@@ -263,10 +270,10 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "export const ControlledForm = () => {\n  const [name, setName] = React.useState('')\n  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n  }\n  return (\n    <Form onSubmit={onSubmit}>\n      <TextField\n        name={'name'}\n        label={'Name'}\n        onChange={setName}\n        isRequired\n      />\n      <div>Ditt namn: {name}</div>\n      <Button type={'submit'}>Submit</Button>\n    </Form>\n  )\n}\n"
+        children: "export const ControlledForm = () => {\n  const [name, setName] = React.useState('')\n  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n  }\n\n  return (\n    <Form onSubmit={onSubmit}>\n      <TextField\n        name='name'\n        label='Name'\n        onChange={setName}\n        isRequired\n      />\n      <div>Ditt namn: {name}</div>\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: 'card',
+      className: "card",
       children: (0,jsx_runtime.jsx)(ControlledForm, {})
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "validering",
@@ -290,10 +297,10 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "export const RealtimeValidation = () => {\n  let [password, setPassword] = React.useState('')\n  let errors = []\n  if (password.length < 8) {\n    errors.push('Lösenordet måste vara fler än 8 tecken.')\n  }\n  if ((password.match(/[A-Z]/g) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst 2 versaler.')\n  }\n  if ((password.match(/[^a-z]/gi) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst två symboler.')\n  }\n\n  return (\n    <>\n      <TextField\n        label={'Lösenord'}\n        style={{ whiteSpace: 'pre-line' }}\n        isInvalid={errors.length > 0}\n        value={password}\n        onChange={setPassword}\n        errorMessage={errors.join('\\n')}\n        errorPosition={'bottom'}\n      />\n    </>\n  )\n}\n"
+        children: "export const RealtimeValidation = () => {\n  const [password, setPassword] = React.useState('')\n  let errors = []\n  if (password.length < 8) {\n    errors.push('Lösenordet måste vara fler än 8 tecken.')\n  }\n  if ((password.match(/[A-Z]/g) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst 2 versaler.')\n  }\n  if ((password.match(/[^a-z]/gi) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst två symboler.')\n  }\n\n  return (\n    <>\n      <TextField\n        label='Lösenord'\n        style={{ whiteSpace: 'pre-line' }}\n        isInvalid={errors.length > 0}\n        value={password}\n        onChange={setPassword}\n        errorMessage={errors.join('\\n')}\n        errorPosition='bottom'\n      />\n    </>\n  )\n}\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: 'card',
+      className: "card",
       children: (0,jsx_runtime.jsx)(RealtimeValidation, {})
     }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
       type: "info",
@@ -314,10 +321,10 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "export const ServerValidation = () => {\n  const [isWaiting, setIsWaiting] = React.useState(false)\n  // Fake server used in this example.\n  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))\n  async function callServer(data) {\n    setIsWaiting(true)\n    await delay(1000)\n    setIsWaiting(false)\n    return { errors: { username: `Tyvärr, användarnamnet ${data.username} är upptaget.` } }\n  }\n  let [errors, setErrors] = React.useState({})\n  let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n\n    let data = Object.fromEntries(new FormData(e.currentTarget))\n    let result = await callServer(data)\n    setErrors(result.errors)\n  }\n\n  return (\n    <Form\n      validationErrors={errors}\n      onSubmit={onSubmit}\n      className={styles.form}\n    >\n      <TextField\n        label={'Användarnamn'}\n        name='username'\n        isRequired\n      />\n      <TextField\n        label={'Lösenord'}\n        name='password'\n        type='password'\n        isRequired\n      />\n      <ButtonGroup>\n        <Button type='submit'>\n          {isWaiting ? (\n            <>\n              <Spinner\n                isOnColor\n                small\n              />\n              Skickar...\n            </>\n          ) : (\n            'Skicka'\n          )}\n        </Button>\n      </ButtonGroup>\n    </Form>\n  )\n}\n"
+        children: "export const ServerValidation = () => {\n  const [isWaiting, setIsWaiting] = React.useState(false)\n  // Fake server used in this example.\n  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))\n\n  async function callServer(data) {\n    setIsWaiting(true)\n    await delay(1000)\n    setIsWaiting(false)\n    return { errors: { username: `Tyvärr, användarnamnet ${data.username} är upptaget.` } }\n  }\n\n  const [errors, setErrors] = React.useState({})\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n\n    let data = Object.fromEntries(new FormData(e.currentTarget))\n    let result = await callServer(data)\n    setErrors(result.errors)\n  }\n\n  return (\n    <Form\n      validationErrors={errors}\n      onSubmit={onSubmit}\n      className={styles.form}\n    >\n      <TextField\n        label='Användarnamn'\n        name='username'\n        isRequired\n      />\n      <TextField\n        label='Lösenord'\n        name='password'\n        type='password'\n        isRequired\n      />\n      <ButtonGroup>\n        <Button type='submit'>\n          {isWaiting ? (\n            <>\n              <Spinner\n                isOnColor\n                small\n              />\n              Skickar...\n            </>\n          ) : (\n            'Skicka'\n          )}\n        </Button>\n      </ButtonGroup>\n    </Form>\n  )\n}\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: 'card',
+      className: "card",
       children: (0,jsx_runtime.jsx)(ServerValidation, {})
     }), "\n", (0,jsx_runtime.jsxs)(_components.blockquote, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
@@ -345,7 +352,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Controller, useForm } from 'react-hook-form'\n\nexport const HookFormExample = () => {\n  let { handleSubmit, control } = useForm()\n  let onSubmit = data => {\n    // Call your API here...\n  }\n\n  return (\n    <Form onSubmit={handleSubmit(onSubmit)}>\n      <Controller\n        control={control}\n        name='name'\n        rules={{ required: 'Name is required.' }}\n        render={({ field: { name, value, onChange, onBlur, ref }, fieldState: { invalid, error } }) => (\n          <TextField\n            label={'Name'}\n            name={name}\n            value={value}\n            onChange={onChange}\n            onBlur={onBlur}\n            isRequired\n            errorMessage={error?.message}\n            // Let React Hook Form handle validation instead of the browser.\n            validationBehavior='aria'\n            isInvalid={invalid}\n            // The ref is needed to focus invalid elements\n            ref={ref}\n          ></TextField>\n        )}\n      />\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
+        children: "import { Controller, useForm } from 'react-hook-form'\n\nexport const HookFormExample = () => {\n  const { handleSubmit, control } = useForm()\n  const onSubmit = data => {\n    // Call your API here...\n  }\n\n  return (\n    <Form onSubmit={handleSubmit(onSubmit)}>\n      <Controller\n        control={control}\n        name='name'\n        rules={{ required: 'Name is required.' }}\n        render={({ field: { name, value, onChange, onBlur, ref }, fieldState: { invalid, error } }) => (\n          <TextField\n            label='Name'\n            name={name}\n            value={value}\n            onChange={onChange}\n            onBlur={onBlur}\n            isRequired\n            errorMessage={error?.message}\n            // Let React Hook Form handle validation instead of the browser.\n            validationBehavior='aria'\n            isInvalid={invalid}\n            // The ref is needed to focus invalid elements\n            ref={ref}\n          />\n        )}\n      />\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
       })
     })]
   });
