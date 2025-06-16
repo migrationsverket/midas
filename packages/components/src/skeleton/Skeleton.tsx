@@ -24,6 +24,7 @@ export interface SkeletonProps
    * @default true
    */
   isAnimated?: boolean
+  isOnLayer01?: boolean
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({
@@ -33,6 +34,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   isAnimated = true,
   className,
   style,
+  isOnLayer01,
   ...rest
 }) => {
   if (variant === 'circle' && height !== undefined) {
@@ -40,40 +42,14 @@ export const Skeleton: React.FC<SkeletonProps> = ({
       'Height is not allowed when using circle, control size with width',
     )
   }
-  const ref = React.useRef<HTMLDivElement>(null)
-  const [isConflict, setIsConflict] = React.useState(false)
-
-  React.useEffect(() => {
-    const node = ref.current
-    function getVisibleBackground(element: HTMLElement | null): string | null {
-      while (element) {
-        const bg = getComputedStyle(element).backgroundColor
-
-        if (bg !== 'transparent' && bg !== 'rgba(0, 0, 0, 0)') {
-          return bg
-        }
-        element = element.parentElement
-      }
-      return null
-    }
-
-    if (node) {
-      const visibleBg = getVisibleBackground(node.parentElement)
-
-      if (visibleBg === 'rgb(242, 242, 242)') {
-        setIsConflict(true)
-      }
-    }
-  }, [])
 
   return (
     <div
-      ref={ref}
       className={clsx(
         styles.skeleton,
         styles[variant],
         isAnimated && styles.wave,
-        isConflict && styles.conflict,
+        isOnLayer01 && styles.onLayer01,
         className,
       )}
       style={{ width, height, ...style }}

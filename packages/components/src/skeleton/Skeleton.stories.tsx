@@ -82,6 +82,24 @@ export const Animation: Story = {
   },
 }
 
+export const IsOnLayer01: Story = {
+  args: {
+    ...Rectangle.args,
+    isOnLayer01: true,
+  },
+  render: args => (
+    <div className={styles.layer01Backgorund}>
+      <Skeleton
+        {...args}
+        data-testid='skeleton'
+      />
+    </div>
+  ),
+  play: async ({ canvas }) => {
+    const skeleton = canvas.getByTestId('skeleton')
+    await expect(skeleton).toHaveClass(styles.wave, styles.onLayer01)
+  },
+}
 export const DS1191: Story = {
   tags: ['!dev', '!autodocs'],
   parameters: {

@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --field-skeleton, --background-inverse from tokens;
+@value --field-skeleton-01, --background-inverse, --field-skeleton-02, --layer-01 from tokens;
 
 @keyframes wave {
   0% {
@@ -12,7 +12,7 @@
 }
 
 .skeleton {
-  background: --field-skeleton;
+  background: --field-skeleton-01;
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -50,6 +50,11 @@
   }
 }
 
-.skeleton.conflict {
-  background: #d9d9d9;
+.onLayer01 {
+  background-color: --field-skeleton-02;
+}
+
+.layer01Backgorund {
+  background-color: --layer-01;
+  padding: 1rem;
 }
