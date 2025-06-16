@@ -53,7 +53,9 @@ Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` o
 
 ```tsx
 <Skeleton
+  // highlight-start
   variant='circle'
+  // highlight-end
   width='48px'
 />
 ```
@@ -72,7 +74,9 @@ Skeleton är animerad som standard. Det går att stänga av med `isAnimated={fal
 ```tsx
 <Skeleton
   height='48px'
+  // highlight-start
   isAnimated
+  // highlight-end
 />
 ```
 
@@ -80,6 +84,28 @@ Skeleton är animerad som standard. Det går att stänga av med `isAnimated={fal
   <Skeleton
     height='48px'
     isAnimated
+  />
+</div>
+
+## Att använda en annan bakgrundsfärg
+
+Om Skeleton komponenten lägger på en bakgrundsfärg (`#f2f2f2` eller `layer01`), bör den använda propen `isOnLayer01` så att Skeleton blir synlig.
+
+```tsx
+<Skeleton
+  // highlight-start
+  isOnLayer01
+  // highlight-end
+/>
+```
+
+<div
+  className='card'
+  style={{ backgroundColor: '#f2f2f2', padding: '1rem' }}
+>
+  <Skeleton
+    height='48px'
+    isOnLayer01
   />
 </div>
 
