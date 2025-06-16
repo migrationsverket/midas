@@ -88,6 +88,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
+        metastring: "{1,2,5,8}",
         children: "import { Link, RouterProvider } from '@midas-ds/components'\nimport { useNavigate, useHref } from 'react-router';\n...\nexport default function App() {\n  const navigate = useNavigate();\n\n  return (\n      <RouterProvider navigate={navigate} useHref={useHref}>\n          <Link href=\"/\">Startsida</Link>\n          <Link href=\"/om\">Om oss</Link>\n          <Link href=\"/kontakta-oss\">Kontakta oss</Link>\n      </RouterProvider>\n  );\n}\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {

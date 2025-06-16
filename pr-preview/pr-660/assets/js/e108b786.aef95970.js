@@ -324,7 +324,7 @@ function _createMdxContent(props) {
       children: "Generella designprinciper"
     }), "\n", (0,jsx_runtime.jsxs)(Accordion/* Accordion */.n, {
       variant: "contained",
-      type: "multiple",
+      allowsMultipleExpanded: true,
       children: [(0,jsx_runtime.jsx)(AccordionItem/* AccordionItem */.A, {
         id: "1",
         title: "Utgå från målgruppens behov",
@@ -373,7 +373,7 @@ function _createMdxContent(props) {
       children: "Designprinciper för extern webbplats"
     }), "\n", (0,jsx_runtime.jsxs)(Accordion/* Accordion */.n, {
       variant: "contained",
-      type: 'multiple',
+      allowsMultipleExpanded: true,
       children: [(0,jsx_runtime.jsx)(AccordionItem/* AccordionItem */.A, {
         id: "8",
         title: "De sökande först",

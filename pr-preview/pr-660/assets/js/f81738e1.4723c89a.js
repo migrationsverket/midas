@@ -118,7 +118,7 @@ const toc = [{
 }, {
   "value": "Dependencies",
   "id": "dependencies",
-  "level": 2
+  "level": 3
 }, {
   "value": "Rapportera buggar eller förslag till nya features",
   "id": "rapportera-buggar-eller-förslag-till-nya-features",
@@ -213,7 +213,7 @@ function _createMdxContent(props) {
         href: "/dev/common-issues",
         children: "guider"
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
       id: "dependencies",
       children: "Dependencies"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {

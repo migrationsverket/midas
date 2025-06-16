@@ -18,7 +18,7 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-about-mdx-c0f.json
-const site_docs_get_started_about_mdx_c0f_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/about","title":"Om Midas","description":"Midas är Migrationsverkets designsystem. Designsystemet består av två delar: verktygslådan som samlar verktyg, processer och riktlinjer på ett ställe och människorna som samarbetar kring designsystemet med målet att tillsammans ta fram så bra produkter och tjänster för våra användare som möjligt.","source":"@site/docs/get-started/about.mdx","sourceDirName":"get-started","slug":"/get-started/about","permalink":"/pr-preview/pr-660/get-started/about","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":4,"frontMatter":{"title":"Om Midas","sidebar_label":"Om","sidebar_position":4,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+const site_docs_get_started_about_mdx_c0f_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/about","title":"Om Midas","description":"Midas är Migrationsverkets designsystem. Designsystemet består av två delar: verktygslådan som samlar verktyg, processer och riktlinjer på ett ställe och människorna som samarbetar kring designsystemet med målet att tillsammans ta fram så bra produkter och tjänster för våra användare som möjligt.","source":"@site/docs/get-started/about.mdx","sourceDirName":"get-started","slug":"/get-started/about","permalink":"/pr-preview/pr-660/get-started/about","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":1,"frontMatter":{"title":"Om Midas","sidebar_label":"Om","sidebar_position":1,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -29,7 +29,7 @@ var lib = __webpack_require__(28453);
 const frontMatter = {
 	title: 'Om Midas',
 	sidebar_label: 'Om',
-	sidebar_position: 4,
+	sidebar_position: 1,
 	pagination_prev: null,
 	pagination_next: null
 };

@@ -857,8 +857,8 @@ const toc = [{
   "id": "usemessageformatter",
   "level": 2
 }, {
-  "value": "Midas komponenter",
-  "id": "midas-komponenter",
+  "value": "Midaskomponenter",
+  "id": "midaskomponenter",
   "level": 2
 }];
 function _createMdxContent(props) {
@@ -901,9 +901,8 @@ function _createMdxContent(props) {
       }), " för referens."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-typescript",
-        metastring: "jsx",
-        children: "import {useLocale} from 'react-aria-components';\nfunction YourApp() {\n  let {locale, direction} = useLocale();\n\n  return (\n    <div lang={locale} dir={direction}>\n      {/* your app here */}\n    </div>\n  );\n}\n\n"
+        className: "language-tsx",
+        children: "import { useLocale } from 'react-aria-components'\n\nexport default function App() {\n  const { locale, direction } = useLocale()\n\n  return (\n    <div\n      lang={locale}\n      dir={direction}\n    >\n      {/* your app here */}\n    </div>\n  )\n}\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(LocaleExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "i18nprovider",
@@ -916,9 +915,8 @@ function _createMdxContent(props) {
       }), " ta kontroll över felmeddelanden\neller annan information, det sätts via browsern."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-typescript",
-        metastring: "jsx",
-        children: "<I18nProvider locale={locale}>\n  <DateField/>\n</I18nProvider>\n"
+        className: "language-tsx",
+        children: "<I18nProvider locale={locale}>\n  <DateField />\n</I18nProvider>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(I18nExample, {}), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsx)(ErrorMessageExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "usemessageformatter",
@@ -932,14 +930,14 @@ function _createMdxContent(props) {
         children: "useNumberFormatter"
       }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "midas-komponenter",
-      children: "Midas komponenter"
+      id: "midaskomponenter",
+      children: "Midaskomponenter"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
       children: "Officiellt har Midas inte fullt stöd för flera språk men i utgångsläget fungerar de flesta komponenter\noch respekterar användarens inställningar i browsern. Framtida uppdateringar eller nya komponenter\nbygger på React Arias ramverk så den allmänna rekommendationen är att använda metoder och hooks därifrån för\natt lösa eventuella lokaliseringsproblem. Buggrapport eller Feature requests kan skapas via"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: [(0,jsx_runtime.jsx)(_components.a, {
         href: "https://github.com/migrationsverket/midas/issues",
-        children: "github issues"
+        children: "GitHub Issues"
       }), "."]
     })]
   });

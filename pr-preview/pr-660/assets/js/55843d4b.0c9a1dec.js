@@ -740,52 +740,52 @@ function _createMdxContent(props) {
       children: [(0,jsx_runtime.jsx)("thead", {
         children: (0,jsx_runtime.jsxs)("tr", {
           children: [(0,jsx_runtime.jsx)("th", {
-            class: "table-header-green",
+            className: "table-header-green",
             children: "Skriv"
           }), (0,jsx_runtime.jsx)("th", {
-            class: "table-header-red",
+            className: "table-header-red",
             children: "Skriv inte"
           })]
         })
       }), (0,jsx_runtime.jsxs)("tbody", {
         children: [(0,jsx_runtime.jsxs)("tr", {
           children: [(0,jsx_runtime.jsx)("td", {
-            class: "table-cell-green",
+            className: "table-cell-green",
             children: "få"
           }), (0,jsx_runtime.jsx)("td", {
-            class: "table-cell-red",
+            className: "table-cell-red",
             children: "erhålla/beviljas"
           })]
         }), (0,jsx_runtime.jsxs)("tr", {
           children: [(0,jsx_runtime.jsx)("td", {
-            class: "table-cell-green",
+            className: "table-cell-green",
             children: "lämna in/skicka in"
           }), (0,jsx_runtime.jsx)("td", {
-            class: "table-cell-red",
+            className: "table-cell-red",
             children: "inkomma med"
           })]
         }), (0,jsx_runtime.jsxs)("tr", {
           children: [(0,jsx_runtime.jsx)("td", {
-            class: "table-cell-green",
+            className: "table-cell-green",
             children: "om, på, till, för"
           }), (0,jsx_runtime.jsx)("td", {
-            class: "table-cell-red",
+            className: "table-cell-red",
             children: "avseende/beträffande"
           })]
         }), (0,jsx_runtime.jsxs)("tr", {
           children: [(0,jsx_runtime.jsx)("td", {
-            class: "table-cell-green",
+            className: "table-cell-green",
             children: "ska"
           }), (0,jsx_runtime.jsx)("td", {
-            class: "table-cell-red",
+            className: "table-cell-red",
             children: "skall"
           })]
         }), (0,jsx_runtime.jsxs)("tr", {
           children: [(0,jsx_runtime.jsx)("td", {
-            class: "table-cell-green",
+            className: "table-cell-green",
             children: "finnas"
           }), (0,jsx_runtime.jsx)("td", {
-            class: "table-cell-red",
+            className: "table-cell-red",
             children: "föreligga"
           })]
         })]
