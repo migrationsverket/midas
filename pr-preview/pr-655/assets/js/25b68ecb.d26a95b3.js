@@ -76,6 +76,10 @@ const toc = [{
   "id": "animation",
   "level": 2
 }, {
+  "value": "Att använda en annan bakgrundsfärg",
+  "id": "att-använda-en-annan-bakgrundsfärg",
+  "level": 2
+}, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
@@ -181,7 +185,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Skeleton\n  variant='circle'\n  width='48px'\n/>\n"
+        children: "<Skeleton\n  // highlight-start\n  variant='circle'\n  // highlight-end\n  width='48px'\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
@@ -199,13 +203,39 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Skeleton\n  height='48px'\n  isAnimated\n/>\n"
+        children: "<Skeleton\n  height='48px'\n  // highlight-start\n  isAnimated\n  // highlight-end\n/>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
       children: (0,jsx_runtime.jsx)(Skeleton/* Skeleton */.E, {
         height: "48px",
         isAnimated: true
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "att-använda-en-annan-bakgrundsfärg",
+      children: "Att använda en annan bakgrundsfärg"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om Skeleton komponenten lägger på en bakgrundsfärg (", (0,jsx_runtime.jsx)(_components.code, {
+        children: "#f2f2f2"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "layer01"
+      }), "), bör den använda propen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isOnLayer01"
+      }), " så att Skeleton blir synlig."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Skeleton\n  // highlight-start\n  isOnLayer01\n  // highlight-end\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      style: {
+        backgroundColor: '#f2f2f2',
+        padding: '1rem'
+      },
+      children: (0,jsx_runtime.jsx)(Skeleton/* Skeleton */.E, {
+        height: "48px",
+        isOnLayer01: true
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
@@ -490,7 +520,7 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var react = __webpack_require__(96540);
 ;// ./packages/components/src/skeleton/Skeleton.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Skeleton_module = ({"tokens":"\"../theme/tokens.css\"","--field-skeleton-01":"light-dark(#f2f2f2, #262626)","--background-inverse":"light-dark(#171717, #f2f2f2)","--field-skeleton-02":"light-dark(#d9d9d9, #383838)","--layer-01":"light-dark(#f2f2f2, #262626)","skeleton":"skeleton_r1UF","circle":"circle_V2WO","wave":"wave_h9Fk","onLayer01":"onLayer01_cFCw","layer01Backgorund":"layer01Backgorund_pYMH"});
+/* harmony default export */ const Skeleton_module = ({"tokens":"\"../theme/tokens.css\"","--field-skeleton-01":"light-dark(#f2f2f2, #262626)","--background-inverse":"light-dark(#171717, #f2f2f2)","--field-skeleton-02":"light-dark(#d9d9d9, #383838)","--layer-01":"light-dark(#f2f2f2, #262626)","skeleton":"skeleton_r1UF","circle":"circle_V2WO","wave":"wave_h9Fk","onLayer01":"onLayer01_cFCw"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js

@@ -6788,11 +6788,6 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
   background-color: light-dark(#d9d9d9, #383838);
 }
 
-.layer01Backgorund_pYMH {
-  background-color: light-dark(#f2f2f2, #262626);
-  padding: 1rem;
-}
-
 .table_nvoM {
   border-spacing: 0;
   font-family: "Inter", sans-serif;
