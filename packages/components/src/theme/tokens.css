@@ -201,6 +201,8 @@
 /* Field */
 @value --field-disabled: light-dark(--gray-10, --gray-180);
 @value --field-skeleton: light-dark(--gray-10, --gray-180);
+@value --field-skeleton-01: light-dark(--gray-10, --gray-180);
+@value --field-skeleton-02: light-dark(--gray-30, --gray-160);
 
 /* Icon */
 @value --icon-primary: light-dark(--gray-200, --gray-10);
@@ -255,7 +257,8 @@
 @value --button-background-danger-hover: light-dark(--signal-red-120, --signal-red-120);
 @value --button-background-danger-active: light-dark(--signal-red-150, --signal-red-150);
 @value --button-background-disabled: light-dark(--gray-10, --gray-180);
-@value --button-background-skeleton: light-dark(--gray-10, --gray-180);
+@value --button-background-skeleton-01: light-dark(--gray-10, --gray-180);
+@value --button-background-skeleton-02: light-dark(--gray-30, --gray-160);
 @value --button-border-secondary: light-dark(--border-tertiary, --gray-10);
 @value --button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
 @value --button-background-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));

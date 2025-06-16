@@ -6,6 +6,7 @@ description: Laddningsindikator för komponenter
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Skeleton } from '@midas-ds/components'
+import { semantic } from '@midas-ds/components/theme'
 
 <ComponentHeader
   name='Skeleton'
@@ -53,7 +54,9 @@ Används för cirkulära komponenter, tex avatar. Circle behöver bara `width` o
 
 ```tsx
 <Skeleton
+  // highlight-start
   variant='circle'
+  // highlight-end
   width='48px'
 />
 ```
@@ -72,14 +75,39 @@ Skeleton är animerad som standard. Det går att stänga av med `isAnimated={fal
 ```tsx
 <Skeleton
   height='48px'
-  isAnimated
+  // highlight-start
+  isAnimated={false}
+  // highlight-end
 />
 ```
 
 <div className='card'>
   <Skeleton
     height='48px'
-    isAnimated
+    isAnimated={false}
+  />
+</div>
+
+## Att använda en annan bakgrundsfärg
+
+Om Skeletonkomponenten ligger på bakgrundsfärgen `layer01` eller `light-dark(#f2f2f2, #262626)`, behöver den använda propen `isOnLayer01` för att synas.
+
+```tsx
+<Skeleton
+  height='48px'
+  // highlight-start
+  isOnLayer01
+  // highlight-end
+/>
+```
+
+<div
+  className='card'
+  style={{ backgroundColor: semantic.layer01, padding: '1rem' }}
+>
+  <Skeleton
+    height='48px'
+    isOnLayer01
   />
 </div>
 
