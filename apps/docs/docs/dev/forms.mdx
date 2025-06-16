@@ -27,18 +27,17 @@ Har du problem med att integrera Midas formulärskomponenter i er applikation el
 Komponenterna går att integrera normalt med **&lt;form&gt;** (native HTML) men det rekommenderas att använda
 **&lt;Form&gt;** från React Aria som är en överlagring med lite extra funktioner för validering.
 
-```tsx
-// highlight-next-line
+```tsx {1}
 import { Form } from 'react-aria-components'
 import { TextField } from '@midas-ds/components'
+```
 
-//highlight-next-line
-;<Form>
+```tsx {1,6}
+<Form>
   <TextField
-    label={'Namn'}
-    name={'name'}
+    label='Namn'
+    name='name'
   />
-  //highlight-next-line
 </Form>
 ```
 
@@ -54,6 +53,7 @@ fokuseras det automatiskt vid **submit**.
 ```tsx
 export const UncontrolledForm = () => {
   const [result, setResult] = React.useState(null)
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget))
@@ -65,31 +65,31 @@ export const UncontrolledForm = () => {
       <Form
         onSubmit={handleSubmit}
         // use 'aria' to allow submit when invalid
-        validationBehavior={'native'}
+        validationBehavior='native'
       >
         <TextField
-          label={'Namn'}
-          name={'name'}
+          label='Namn'
+          name='name'
           isRequired
         />
         <TextField
-          label={'E-post'}
-          type={'email'}
-          name={'email'}
+          label='E-post'
+          type='email'
+          name='email'
           isRequired
         />
         <CheckboxGroup
-          label={'Spara mina uppgifter'}
-          name={'saveData'}
+          label='Spara mina uppgifter'
+          name='saveData'
           isRequired
         >
-          <Checkbox value={'agree'}>Jag godkänner</Checkbox>
+          <Checkbox value='agree'>Jag godkänner</Checkbox>
         </CheckboxGroup>
         <ButtonGroup>
-          <Button type={'submit'}>Skicka</Button>
+          <Button type='submit'>Skicka</Button>
           <Button
-            type={'reset'}
-            variant={'secondary'}
+            type='reset'
+            variant='secondary'
           >
             Rensa
           </Button>
@@ -101,7 +101,7 @@ export const UncontrolledForm = () => {
 }
 ```
 
-<div className={'card'}>
+<div className='card'>
   <UncontrolledForm />
 </div>
 
@@ -116,22 +116,23 @@ export const ControlledForm = () => {
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
   }
+
   return (
     <Form onSubmit={onSubmit}>
       <TextField
-        name={'name'}
-        label={'Name'}
+        name='name'
+        label='Name'
         onChange={setName}
         isRequired
       />
       <div>Ditt namn: {name}</div>
-      <Button type={'submit'}>Submit</Button>
+      <Button type='submit'>Submit</Button>
     </Form>
   )
 }
 ```
 
-<div className={'card'}>
+<div className='card'>
   <ControlledForm />
 </div>
 
@@ -148,7 +149,7 @@ feedback, till exempel för att välja ett godkänt lösenord.
 
 ```tsx
 export const RealtimeValidation = () => {
-  let [password, setPassword] = React.useState('')
+  const [password, setPassword] = React.useState('')
   let errors = []
   if (password.length < 8) {
     errors.push('Lösenordet måste vara fler än 8 tecken.')
@@ -163,20 +164,20 @@ export const RealtimeValidation = () => {
   return (
     <>
       <TextField
-        label={'Lösenord'}
+        label='Lösenord'
         style={{ whiteSpace: 'pre-line' }}
         isInvalid={errors.length > 0}
         value={password}
         onChange={setPassword}
         errorMessage={errors.join('\n')}
-        errorPosition={'bottom'}
+        errorPosition='bottom'
       />
     </>
   )
 }
 ```
 
-<div className={'card'}>
+<div className='card'>
   <RealtimeValidation />
 </div>
 
@@ -195,14 +196,16 @@ export const ServerValidation = () => {
   const [isWaiting, setIsWaiting] = React.useState(false)
   // Fake server used in this example.
   const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
   async function callServer(data) {
     setIsWaiting(true)
     await delay(1000)
     setIsWaiting(false)
     return { errors: { username: `Tyvärr, användarnamnet ${data.username} är upptaget.` } }
   }
-  let [errors, setErrors] = React.useState({})
-  let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
+  const [errors, setErrors] = React.useState({})
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     let data = Object.fromEntries(new FormData(e.currentTarget))
@@ -217,12 +220,12 @@ export const ServerValidation = () => {
       className={styles.form}
     >
       <TextField
-        label={'Användarnamn'}
+        label='Användarnamn'
         name='username'
         isRequired
       />
       <TextField
-        label={'Lösenord'}
+        label='Lösenord'
         name='password'
         type='password'
         isRequired
@@ -247,7 +250,7 @@ export const ServerValidation = () => {
 }
 ```
 
-<div className={'card'}>
+<div className='card'>
   <ServerValidation />
 </div>
 
@@ -271,8 +274,8 @@ hjälper gärna till att få Midas komponenter att fungera i den teknikstacken n
 import { Controller, useForm } from 'react-hook-form'
 
 export const HookFormExample = () => {
-  let { handleSubmit, control } = useForm()
-  let onSubmit = data => {
+  const { handleSubmit, control } = useForm()
+  const onSubmit = data => {
     // Call your API here...
   }
 
@@ -284,7 +287,7 @@ export const HookFormExample = () => {
         rules={{ required: 'Name is required.' }}
         render={({ field: { name, value, onChange, onBlur, ref }, fieldState: { invalid, error } }) => (
           <TextField
-            label={'Name'}
+            label='Name'
             name={name}
             value={value}
             onChange={onChange}
@@ -296,7 +299,7 @@ export const HookFormExample = () => {
             isInvalid={invalid}
             // The ref is needed to focus invalid elements
             ref={ref}
-          ></TextField>
+          />
         )}
       />
       <Button type='submit'>Submit</Button>
