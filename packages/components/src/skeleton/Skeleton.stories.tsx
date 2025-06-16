@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Skeleton } from './Skeleton'
 import { expect } from '@storybook/test'
 import styles from './Skeleton.module.css'
+import { semantic } from '../theme'
 
 type Story = StoryObj<typeof Skeleton>
 
@@ -82,6 +83,24 @@ export const Animation: Story = {
   },
 }
 
+export const IsOnLayer01: Story = {
+  args: {
+    ...Rectangle.args,
+    isOnLayer01: true,
+  },
+  render: args => (
+    <div style={{ backgroundColor: semantic.layer01, padding: '1rem' }}>
+      <Skeleton
+        {...args}
+        data-testid='skeleton'
+      />
+    </div>
+  ),
+  play: async ({ canvas }) => {
+    const skeleton = canvas.getByTestId('skeleton')
+    await expect(skeleton).toHaveClass(styles.wave, styles.onLayer01)
+  },
+}
 export const DS1191: Story = {
   tags: ['!dev', '!autodocs'],
   parameters: {

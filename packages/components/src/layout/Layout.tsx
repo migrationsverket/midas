@@ -2,7 +2,7 @@
 
 import styles from './Layout.module.css'
 import { LucideIcon } from 'lucide-react'
-import { FlexItem } from '../flex'
+import { GridItem } from '../grid'
 import * as React from 'react'
 import { Sidebar } from './components/Sidebar'
 import { Header } from './components/Header'
@@ -106,11 +106,11 @@ export const Layout: React.FC<MidasLayout> & {
           <Layout.Header />
           <div className={styles.mainContent}>
             <Layout.Sidebar />
-            <FlexItem>
+            <GridItem>
               <main className={styles.main}>
                 <div className={styles.app}>{children}</div>
               </main>
-            </FlexItem>
+            </GridItem>
             <Layout.Backdrop />
           </div>
           <div className={styles.navbarWrapper}>
@@ -140,11 +140,11 @@ export const Layout: React.FC<MidasLayout> & {
         <Layout.Header />
         <div className={styles.mainContent}>
           <Layout.Sidebar />
-          <FlexItem>
+          <GridItem>
             <main className={styles.main}>
               <div className={styles.app}>{children}</div>
             </main>
-          </FlexItem>
+          </GridItem>
           <Layout.Backdrop />
         </div>
       </div>

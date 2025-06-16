@@ -4,7 +4,7 @@ description: Toasts visar korta, tillfälliga meddelanden om åtgärder, fel ell
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
-import { GlobalToastRegion, toastQueue, Button, Flex, FlexItem } from '@midas-ds/components'
+import { GlobalToastRegion, toastQueue, Button, Grid, GridItem } from '@midas-ds/components'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
 <ComponentHeader
@@ -39,15 +39,15 @@ Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel el
 Toast har fyra olika varianter som matchar InfoBanner: `success`, `info`, `important` och `warning`.
 
 <div className='card'>
-  <Flex fluid={true}>
-    <FlexItem col={3}>
+  <Grid fluid={true}>
+    <GridItem size={3}>
       <Button
         onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}
       >
         {'Success'}
       </Button>
-    </FlexItem>
-    <FlexItem col={3}>
+    </GridItem>
+    <GridItem size={3}>
       <Button
         onPress={() =>
           toastQueue.add(
@@ -60,20 +60,20 @@ Toast har fyra olika varianter som matchar InfoBanner: `success`, `info`, `impor
       >
         {'Info'}
       </Button>
-    </FlexItem>
-    <FlexItem col={3}>
+    </GridItem>
+    <GridItem size={3}>
       <Button onPress={() => toastQueue.add({ message: 'Viktigt meddelande', type: 'important' }, { timeout: 5000 })}>
         {'Important'}
       </Button>
-    </FlexItem>
-    <FlexItem col={3}>
+    </GridItem>
+    <GridItem size={3}>
       <Button
         onPress={() => toastQueue.add({ message: 'Farlig varning!', type: 'warning' }, { timeout: 5000, priority: 1 })}
       >
         {'Warning'}
       </Button>
-    </FlexItem>
-  </Flex>
+    </GridItem>
+  </Grid>
 </div>
 
 ## Implementationer
