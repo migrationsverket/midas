@@ -1,6 +1,6 @@
-import { getBranchUrl } from './chromatic'
+import { getChromaticBranchName } from './chromatic'
 
-test('getBranchUrl', () => {
+test('getChromaticBranchName', () => {
   const testCases = [
     ['feature/fix-bug', 'feature-fix-bug'],
     ['feature----fix-bug', 'feature-fix-bug'],
@@ -13,6 +13,6 @@ test('getBranchUrl', () => {
   ]
 
   testCases.forEach(([input, expected]) => {
-    expect(getBranchUrl(input)).toBe(expected)
+    expect(getChromaticBranchName(input)).toBe(expected)
   })
 })

@@ -3,7 +3,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
-import { getBranchUrl } from './src/utils/chromatic'
+import { getChromaticBranchName } from './src/utils/chromatic'
 import semver from 'semver'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
@@ -36,13 +36,35 @@ fs.readdirSync(packagesDir).forEach(dir => {
   }
 })
 
+const getBaseUrl = (): string => {
+  if (process.env.GITHUB_REF_NAME === 'dev') {
+    return `/dev-docs/`
+  }
+
+  if (process.env.PR_NUMBER) {
+    return `/pr-preview/pr-${process.env.PR_NUMBER}/`
+  }
+
+  return '/'
+}
+
+const getCurrentBranchName = (): string => {
+  if (process.env.GITHUB_REF_NAME === 'dev') {
+    return 'dev'
+  }
+
+  if (process.env.GITHUB_HEAD_REF) {
+    return getChromaticBranchName(process.env.GITHUB_HEAD_REF)
+  }
+
+  return 'main'
+}
+
 const config: Config = {
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
-  baseUrl: process.env.PR_NUMBER
-    ? `/pr-preview/pr-${process.env.PR_NUMBER}/`
-    : '/',
+  baseUrl: getBaseUrl(),
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico?v=3',
@@ -54,7 +76,10 @@ const config: Config = {
     locales: ['sv'],
   },
   customFields: {
-    currentChromaticBranchUrl: getBranchUrl(process.env.GITHUB_HEAD_REF),
+    storybookHost:
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:4400'
+        : `https://${getCurrentBranchName()}--6810d578d5507438df0f0d22.chromatic.com`,
     midasVersion: version,
   },
   plugins: [
