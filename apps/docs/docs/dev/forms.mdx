@@ -3,7 +3,12 @@ title: Formulär
 description: Utvecklarinstruktioner för formulär
 ---
 
-import { UncontrolledForm, ControlledForm, RealtimeValidation, ServerValidation } from '@site/src/components/examples/form/FormExamples'
+import {
+  UncontrolledForm,
+  ControlledForm,
+  RealtimeValidation,
+  ServerValidation,
+} from '@site/src/components/examples/form/FormExamples'
 
 # Formulär
 
@@ -24,13 +29,16 @@ Komponenterna går att integrera normalt med **&lt;form&gt;** (native HTML) men 
 
 ```tsx
 // highlight-next-line
-import { Form } from 'react-aria-components';
-import { TextField } from '@midas-ds/components';
+import { Form } from 'react-aria-components'
+import { TextField } from '@midas-ds/components'
 
 //highlight-next-line
-<Form>
-  <TextField label={'Namn'} name={'name'} />
-//highlight-next-line
+;<Form>
+  <TextField
+    label={'Namn'}
+    name={'name'}
+  />
+  //highlight-next-line
 </Form>
 ```
 
@@ -40,7 +48,6 @@ Den enklaste varianten för att använda ett formulär är via browserns [FormDa
 när formuläret är **invalid** precis som html-form men detta beteende kan styras via `validationBehavior`.
 Prop `name` fungerar precis som native form och är referens till fältet som avses. Om något fält är ogiltigt
 fokuseras det automatiskt vid **submit**.
-
 
 ### Uncontrolled form
 
@@ -74,7 +81,8 @@ export const UncontrolledForm = () => {
         <CheckboxGroup
           label={'Spara mina uppgifter'}
           name={'saveData'}
-          isRequired>
+          isRequired
+        >
           <Checkbox value={'agree'}>Jag godkänner</Checkbox>
         </CheckboxGroup>
         <ButtonGroup>
@@ -87,13 +95,12 @@ export const UncontrolledForm = () => {
           </Button>
         </ButtonGroup>
       </Form>
-      <span>
-        {result && <pre>{JSON.stringify(result)}</pre>}
-      </span>
+      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>
     </>
   )
 }
 ```
+
 <div className={'card'}>
   <UncontrolledForm />
 </div>
@@ -123,6 +130,7 @@ export const ControlledForm = () => {
   )
 }
 ```
+
 <div className={'card'}>
   <ControlledForm />
 </div>
@@ -167,21 +175,20 @@ export const RealtimeValidation = () => {
   )
 }
 ```
+
 <div className={'card'}>
   <RealtimeValidation />
 </div>
 
-:::tip
+:::info
 Felmeddelande kan presenteras under eller över formulärskomponenten via `errorPosition`.
 :::
-
 
 ### Server validation
 
 Förutom att validera input på klienten bör ett normalt mönster vara att validera på serversidan också. En metod är att
 sätta prop `validationErrors` på &lt;Form&gt; och presentera felmeddelanden den vägen. Objektet ska då matcha
 `name` props på formulärsobjektet för att fungera med automatik. När inmatning ändras återställs felmeddelandet.
-
 
 ```tsx
 export const ServerValidation = () => {
@@ -192,11 +199,7 @@ export const ServerValidation = () => {
     setIsWaiting(true)
     await delay(1000)
     setIsWaiting(false)
-    return {
-      errors: {
-        username: `Tyvärr, användarnamnet ${data.username} är upptaget.`,
-      },
-    }
+    return { errors: { username: `Tyvärr, användarnamnet ${data.username} är upptaget.` } }
   }
   let [errors, setErrors] = React.useState({})
   let onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -225,18 +228,27 @@ export const ServerValidation = () => {
         isRequired
       />
       <ButtonGroup>
-        <Button
-          type='submit'
-        >
-          {isWaiting ? (<><Spinner isOnColor small/>Skickar...</>) : 'Skicka'}
+        <Button type='submit'>
+          {isWaiting ? (
+            <>
+              <Spinner
+                isOnColor
+                small
+              />
+              Skickar...
+            </>
+          ) : (
+            'Skicka'
+          )}
         </Button>
       </ButtonGroup>
     </Form>
   )
 }
 ```
+
 <div className={'card'}>
-  <ServerValidation/>
+  <ServerValidation />
 </div>
 
 > Beroende på ramverk finns en uppsjö av olika tekniker för att åstadkomma serverside validation.
@@ -256,13 +268,10 @@ I utgångspunkt rekommenderar vi att utgå från React Aria **&lt;Form&gt;** då
 hjälper gärna till att få Midas komponenter att fungera i den teknikstacken ni har valt att arbeta med.
 
 ```tsx
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form'
 
 export const HookFormExample = () => {
-  let {
-    handleSubmit,
-    control,
-  } = useForm()
+  let { handleSubmit, control } = useForm()
   let onSubmit = data => {
     // Call your API here...
   }
@@ -273,10 +282,7 @@ export const HookFormExample = () => {
         control={control}
         name='name'
         rules={{ required: 'Name is required.' }}
-        render={({
-          field: { name, value, onChange, onBlur, ref },
-          fieldState: { invalid, error },
-        }) => (
+        render={({ field: { name, value, onChange, onBlur, ref }, fieldState: { invalid, error } }) => (
           <TextField
             label={'Name'}
             name={name}

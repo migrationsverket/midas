@@ -24,6 +24,7 @@ fs.readdirSync(packagesDir).forEach(dir => {
   }
 
   const packagePath = path.resolve(packagesDir, dir)
+
   if (fs.statSync(packagePath).isDirectory()) {
     packageAliases[`@midas-ds/${dir}/theme`] = path.resolve(
       packagePath,
@@ -186,10 +187,7 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [{ items: [{ label: 'Changelog', to: '/changelog' }] }],
-    },
+    footer: { style: 'dark' },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
