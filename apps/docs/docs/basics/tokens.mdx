@@ -7,6 +7,7 @@ sidebar_position: 2
 
 import { Grid, GridItem, Text } from '@midas-ds/components'
 import { baseColors, semantic } from '@midas-ds/components/theme'
+import CodeBlock from '@theme/CodeBlock'
 
 Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.
 
@@ -439,7 +440,7 @@ export const Token = ({token, desc}) => {
         <GridItem size={12} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)', paddingBottom: '1rem' }}>
             <Grid fluid>
                 <GridItem size={{xs: 12, sm: 12, md: 3}}>
-                    <small style={{wordBreak: 'break-all'}}>{token}</small>
+                    <CodeBlock className="margin-0">{token}</CodeBlock>
                 </GridItem>
                 <GridItem size={{xs: 12, sm: 12, md: 3}}>
                     <small>{desc}</small>
