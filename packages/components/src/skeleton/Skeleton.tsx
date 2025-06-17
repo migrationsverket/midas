@@ -24,6 +24,11 @@ export interface SkeletonProps
    * @default true
    */
   isAnimated?: boolean
+  /**
+   * If skeleton is on a layer01 background light-dark( #f2f2f2, #262626)
+   * @default false
+   */
+  isOnLayer01?: boolean
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({
@@ -33,6 +38,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   isAnimated = true,
   className,
   style,
+  isOnLayer01,
   ...rest
 }) => {
   if (variant === 'circle' && height !== undefined) {
@@ -47,6 +53,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
         styles.skeleton,
         styles[variant],
         isAnimated && styles.wave,
+        isOnLayer01 && styles.onLayer01,
         className,
       )}
       style={{ width, height, ...style }}

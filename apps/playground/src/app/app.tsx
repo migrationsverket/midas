@@ -1,5 +1,5 @@
 import styles from './app.module.css'
-import { TextField } from '@midas-ds/components'
+import { Skeleton, TextField } from '@midas-ds/components'
 
 export function App() {
   return (
@@ -15,15 +15,19 @@ export function App() {
         <TextField
           label='Medium'
           description='size component'
-          size={'medium'}
-          defaultValue={'this is medium'}
+          size='medium'
+          defaultValue='this is medium'
         />
         <TextField
-          size={'large'}
+          size='large'
           label='Large'
-          defaultValue={'this is large'}
+          defaultValue='this is large'
           description='size component'
         />
+      </div>
+
+      <div style={{ backgroundColor: '#f2f2f2', padding: '1rem' }}>
+        <Skeleton isOnLayer01 />
       </div>
     </div>
   )

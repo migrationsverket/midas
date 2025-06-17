@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --font-size-30, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-secondary, --border-subtle, --breakpoint-sm, --field-hover-02, --support-border-warning, --icon-tertiary from tokens;
+@value --font-family, --text-disabled, --font-size-30, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-secondary, --border-subtle, --breakpoint-xs, --field-hover-02, --support-border-warning, --icon-tertiary from tokens;
 
 .radioGroup {
   font-family: --font-family;
@@ -80,8 +80,11 @@
     padding: 0.188rem;
     border-width: 0.1rem;
     background: --icon-tertiary 50% 50% no-repeat content-box;
+  }
 
-    @media (forced-colors: active) {
+  /* Nesting this selector in the one above causes syntax errors during minification */
+  @media (forced-colors: active) {
+    &[data-selected]::before {
       background: ButtonText;
     }
   }
@@ -97,7 +100,7 @@
     }
   }
 
-  @media --breakpoint-sm {
+  @media --breakpoint-xs {
     padding: 0.875rem 1rem;
     border: 1px solid --border-primary;
     width: auto;
