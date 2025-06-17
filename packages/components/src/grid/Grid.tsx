@@ -12,7 +12,9 @@ export interface GridProps
    * @deprecated since v10.2.0 Use `isContained` prop instead.
    */
   fluid?: boolean
+  /** A contained grid has a max-width and centered positioning on large screens. */
   isContained?: boolean
+  /** Removes outer margins. */
   removeMargins?: boolean
 }
 
@@ -30,7 +32,7 @@ export interface GridProps
 export const Grid: React.FC<GridProps> = ({
   children,
   fluid = false,
-  isContained,
+  isContained = false,
   removeMargins = false,
   ...rest
 }) => {
