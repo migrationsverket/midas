@@ -252,8 +252,6 @@ export const semantic = {
    *  @deprecated since v10.2.0, please use the `Skeleton01` instead.
    */
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  buttonBackgroundSkeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  buttonBackgroundSkeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
   buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
