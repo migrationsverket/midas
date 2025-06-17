@@ -6754,7 +6754,7 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
 }
 
 .skeleton_r1UF {
-  background: light-dark(#f2f2f2, #262626);
+  background: undefined;
   display: inline-block;
   position: relative;
   overflow: hidden;
