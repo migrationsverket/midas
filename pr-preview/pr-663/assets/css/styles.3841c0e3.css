@@ -6754,7 +6754,7 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
 }
 
 .skeleton_r1UF {
-  background: undefined;
+  background: light-dark(#f2f2f2, #262626);
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -6793,7 +6793,7 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
 }
 
 .onLayer01_cFCw {
-  background-color: undefined;
+  background-color: light-dark(#d9d9d9, #383838);
 }
 
 .table_nvoM {

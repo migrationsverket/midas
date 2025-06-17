@@ -143,7 +143,7 @@ var objectWithoutPropertiesLoose = __webpack_require__(98587);
 var react = __webpack_require__(96540);
 ;// ./packages/components/src/skeleton/Skeleton.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Skeleton_module = ({"tokens":"\"../theme/tokens.css\"","skeleton-01":"undefined","skeleton-02":"undefined","--layer-01":"light-dark(#f2f2f2, #262626)","--background-inverse":"light-dark(#171717, #f2f2f2)","skeleton":"skeleton_r1UF","circle":"circle_V2WO","wave":"wave_h9Fk","onLayer01":"onLayer01_cFCw"});
+/* harmony default export */ const Skeleton_module = ({"tokens":"\"../theme/tokens.css\"","--skeleton-01":"light-dark(#f2f2f2, #262626)","--skeleton-02":"light-dark(#d9d9d9, #383838)","--layer-01":"light-dark(#f2f2f2, #262626)","--background-inverse":"light-dark(#171717, #f2f2f2)","skeleton":"skeleton_r1UF","circle":"circle_V2WO","wave":"wave_h9Fk","onLayer01":"onLayer01_cFCw"});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
