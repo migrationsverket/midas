@@ -193,11 +193,11 @@ export const semantic = {
 
   fieldDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   /**
-   *  @deprecated since v10.2.0, please use the `fieldSkeleton01` instead.
+   *  @deprecated since v10.2.0, please use the `Skeleton01` instead.
    */
   fieldSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  fieldSkeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  fieldSkeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
+  Skeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
+  Skeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
   iconPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
   iconSecondary: `light-dark(${baseColors.gray140}, ${baseColors.gray70})`,
   iconTertiary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
@@ -247,11 +247,9 @@ export const semantic = {
   buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed150})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   /**
-   *  @deprecated since v10.2.0, please use the `buttonBackgroundSkeleton01` instead.
+   *  @deprecated since v10.2.0, please use the `Skeleton01` instead.
    */
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  buttonBackgroundSkeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  buttonBackgroundSkeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
   buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
