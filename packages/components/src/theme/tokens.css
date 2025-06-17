@@ -271,4 +271,4 @@
 
 /* Skeleton */
 @value skeleton-01: light-dark(--gray-10, --gray-180);
-@value skeleton-02: light-dark(--gray-30, --gray-160);
+@value --skeleton-02: light-dark(--gray-30, --gray-160);
