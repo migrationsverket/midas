@@ -173,6 +173,8 @@ var GridItem = __webpack_require__(93574);
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/theme/tokens.ts
 var tokens = __webpack_require__(46090);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/index.js + 27 modules
+var CodeBlock = __webpack_require__(73748);
 ;// ./apps/docs/docs/basics/tokens.mdx
 
 
@@ -189,6 +191,7 @@ const contentTitle = undefined;
 const assets = {
 
 };
+
 
 
 
@@ -221,10 +224,8 @@ const Token = ({token, desc}) => {
           sm: 12,
           md: 3
         },
-        children: (0,jsx_runtime.jsx)("small", {
-          style: {
-            wordBreak: 'break-all'
-          },
+        children: (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+          className: "margin-0",
           children: token
         })
       }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
