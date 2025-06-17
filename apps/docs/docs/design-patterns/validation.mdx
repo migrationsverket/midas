@@ -1,4 +1,4 @@
-import { Flex, FlexItem, TextField } from '@midas-ds/components'
+import { Grid, GridItem, TextField } from '@midas-ds/components'
 
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import ThemedImage from '@theme/ThemedImage'
@@ -8,24 +8,24 @@ import ThemedImage from '@theme/ThemedImage'
 Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
 
 <div className='card'>
-  <Flex>
-    <FlexItem col={6}>
+  <Grid>
+    <GridItem size={6}>
       <TextField
         label='Ange förnamn'
         errorMessage={'Du måste ange ett förnamn'}
         isInvalid='true'
         errorPosition='top'
       />
-    </FlexItem>
-    <FlexItem col={6}>
+    </GridItem>
+    <GridItem size={6}>
       <TextField
         label='Ange förnamn'
         errorMessage={'Du måste ange ett förnamn'}
         isInvalid='true'
         errorPosition='bottom'
       />
-    </FlexItem>
-  </Flex>
+    </GridItem>
+  </Grid>
 </div>
 
 ## Direktvalidering
