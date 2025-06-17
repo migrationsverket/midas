@@ -93,17 +93,17 @@ function _createMdxContent(props) {
       children: "Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning."
     }), "\n", (0,jsx_runtime.jsx)("div", {
       className: "card",
-      children: (0,jsx_runtime.jsxs)(Grid/* Flex */.s, {
-        children: [(0,jsx_runtime.jsx)(GridItem/* FlexItem */.Z, {
-          col: 6,
+      children: (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
+        children: [(0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+          size: 6,
           children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
             label: "Ange förnamn",
             errorMessage: 'Du måste ange ett förnamn',
             isInvalid: "true",
             errorPosition: "top"
           })
-        }), (0,jsx_runtime.jsx)(GridItem/* FlexItem */.Z, {
-          col: 6,
+        }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+          size: 6,
           children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
             label: "Ange förnamn",
             errorMessage: 'Du måste ange ett förnamn',
