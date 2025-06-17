@@ -6793,7 +6793,7 @@ the background in custom CSS file due bug https://github.com/facebook/docusaurus
 }
 
 .onLayer01_cFCw {
-  background-color: light-dark(#d9d9d9, #383838);
+  background-color: undefined;
 }
 
 .table_nvoM {
