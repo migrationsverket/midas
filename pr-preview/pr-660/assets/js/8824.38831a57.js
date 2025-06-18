@@ -13,7 +13,7 @@
 /* unused harmony export searchResultLimits */
 /* harmony import */ var _home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(58291);
 /* harmony import */ var _home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0__);
-__webpack_require__(86121)((_home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0___default()));__webpack_require__(73074)((_home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0___default()));var removeDefaultStopWordFilter=false;var language=["sv"];var searchIndexUrl="search-index{dir}.json?_=af0110e6";var searchResultLimits=8;
+__webpack_require__(86121)((_home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0___default()));__webpack_require__(73074)((_home_runner_work_midas_midas_node_modules_lunr_lunr_js__WEBPACK_IMPORTED_MODULE_0___default()));var removeDefaultStopWordFilter=false;var language=["sv"];var searchIndexUrl="search-index{dir}.json?_=bce61dc1";var searchResultLimits=8;
 
 /***/ })
 

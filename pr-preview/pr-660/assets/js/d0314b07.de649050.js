@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5990],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5750],{
 
-/***/ 59263:
+/***/ 50003:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_get_started_use_mdx_f81_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_get_started_install_mdx_d03_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-use-mdx-f81.json
-const site_docs_get_started_use_mdx_f81_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/use","title":"Utveckla med Midas","description":"Installera","source":"@site/docs/get-started/use.mdx","sourceDirName":"get-started","slug":"/get-started/use","permalink":"/pr-preview/pr-660/get-started/use","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Utveckla med Midas","sidebar_label":"Installera","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-get-started-install-mdx-d03.json
+const site_docs_get_started_install_mdx_d03_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"get-started/install","title":"Installera Midas","description":"Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn. Alla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket.","source":"@site/docs/get-started/install.mdx","sourceDirName":"get-started","slug":"/get-started/install","permalink":"/pr-preview/pr-660/get-started/install","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"title":"Installera Midas","sidebar_label":"Installera","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
@@ -83,11 +83,11 @@ return null;}return/*#__PURE__*/(0,react.cloneElement)(selectedTabItem,{classNam
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */function TabItem(_ref){var children=_ref.children,hidden=_ref.hidden,className=_ref.className;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{role:"tabpanel",className:(0,clsx/* default */.A)(TabItem_styles_module.tabItem,className),hidden:hidden,children:children});}
-;// ./apps/docs/docs/get-started/use.mdx
+;// ./apps/docs/docs/get-started/install.mdx
 
 
 const frontMatter = {
-	title: 'Utveckla med Midas',
+	title: 'Installera Midas',
 	sidebar_label: 'Installera',
 	sidebar_position: 2,
 	pagination_prev: null,
@@ -104,21 +104,17 @@ const assets = {
 
 
 const toc = [{
-  "value": "Installera",
-  "id": "installera",
-  "level": 2
-}, {
   "value": "Importera och använd komponent",
   "id": "importera-och-använd-komponent",
-  "level": 3
+  "level": 2
 }, {
   "value": "Installera Inter som typsnitt",
   "id": "installera-inter-som-typsnitt",
-  "level": 3
+  "level": 2
 }, {
   "value": "Dependencies",
   "id": "dependencies",
-  "level": 3
+  "level": 2
 }, {
   "value": "Rapportera buggar eller förslag till nya features",
   "id": "rapportera-buggar-eller-förslag-till-nya-features",
@@ -133,7 +129,6 @@ function _createMdxContent(props) {
     a: "a",
     code: "code",
     h2: "h2",
-    h3: "h3",
     li: "li",
     p: "p",
     pre: "pre",
@@ -142,10 +137,7 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.h2, {
-      id: "installera",
-      children: "Installera"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+    children: [(0,jsx_runtime.jsx)(_components.p, {
       children: "Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn. Alla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket."
     }), "\n", (0,jsx_runtime.jsxs)(Tabs, {
       groupId: "npm2yarn",
@@ -176,7 +168,7 @@ function _createMdxContent(props) {
           })
         })
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "importera-och-använd-komponent",
       children: "Importera och använd komponent"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -192,7 +184,7 @@ function _createMdxContent(props) {
         href: "/components/accordion",
         children: "komponentsidor"
       }), " eller utforska komponenterna mer i vår Storybook."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "installera-inter-som-typsnitt",
       children: "Installera Inter som typsnitt"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
@@ -213,7 +205,7 @@ function _createMdxContent(props) {
         href: "/dev/common-issues",
         children: "guider"
       })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "dependencies",
       children: "Dependencies"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
