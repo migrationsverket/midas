@@ -1,3 +1,51 @@
+## 10.2.0 (2025-06-18)
+
+### 🚀 Features
+
+- **theme:** new color tokens for skeleton ([#663](https://github.com/migrationsverket/midas/pull/663))
+- **skeleton:** add prop for use on layer01 backgrounds ([#655](https://github.com/migrationsverket/midas/pull/655))
+- **grid:** new grid v2 📏 ([#656](https://github.com/migrationsverket/midas/pull/656))
+- **table:** add size prop ([6f3cc36071](https://github.com/migrationsverket/midas/commit/6f3cc36071))
+- **calendar:** extend calendar with state for disabled ([#635](https://github.com/migrationsverket/midas/pull/635))
+
+### 🩹 Fixes
+
+- css syntax errors for media queries ([d4935c1e57](https://github.com/migrationsverket/midas/commit/d4935c1e57))
+- **calendar:** change text color for day button on hover ([#651](https://github.com/migrationsverket/midas/pull/651))
+- **textfield:** remove `height:100%` on wrapper ([dccd5bdd09](https://github.com/migrationsverket/midas/commit/dccd5bdd09))
+
+### 💅 Refactors
+
+- **field-error:** make component usable without context ([9ce07e9444](https://github.com/migrationsverket/midas/commit/9ce07e9444))
+
+### 📖 Documentation changes
+
+- grid improvements ([5b0db59cd0](https://github.com/migrationsverket/midas/commit/5b0db59cd0))
+- new get started pages ([fc4eb7851c](https://github.com/migrationsverket/midas/commit/fc4eb7851c))
+- **table:** update docs on medium size ([c70a1ff4df](https://github.com/migrationsverket/midas/commit/c70a1ff4df))
+- add release notes for 10.1.1 ([154ab05ae6](https://github.com/migrationsverket/midas/commit/154ab05ae6))
+
+### 🔧 Maintenance
+
+- chunk bundle with rollup ([80e3b0c949](https://github.com/migrationsverket/midas/commit/80e3b0c949))
+- format css ([9c9e48254f](https://github.com/migrationsverket/midas/commit/9c9e48254f))
+- **components:** add command to watch for typescript errors ([aeebaffc55](https://github.com/migrationsverket/midas/commit/aeebaffc55))
+- **search-field:** add column id type to story ([12a8b9af66](https://github.com/migrationsverket/midas/commit/12a8b9af66))
+- **deps-dev:** bump brace-expansion ([4cdfd0e167](https://github.com/migrationsverket/midas/commit/4cdfd0e167))
+- run storybook tests in pipeline temporary ([730680d696](https://github.com/migrationsverket/midas/commit/730680d696))
+
+### 🧪 Tests updated
+
+- **table:** add chromatic modes ([7081f8adac](https://github.com/migrationsverket/midas/commit/7081f8adac))
+- **table:** await queries ([7e18645ead](https://github.com/migrationsverket/midas/commit/7e18645ead))
+- **table:** test medium size prop ([073b317cc8](https://github.com/migrationsverket/midas/commit/073b317cc8))
+- **calendar:** bypass a11y tests on disabled stories ([d1ce956cb5](https://github.com/migrationsverket/midas/commit/d1ce956cb5))
+
+### 🎨 Styles
+
+- **link-button:** change chevron icon to arrow icon ([#647](https://github.com/migrationsverket/midas/pull/647))
+- **table:** adjust paddings and heights ([b84828bfd7](https://github.com/migrationsverket/midas/commit/b84828bfd7))
+
 ## 10.1.1 (2025-06-09)
 
 ### 🩹 Fixes
