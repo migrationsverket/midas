@@ -1,0 +1,33 @@
+---
+title: Release 10.2.0
+date: 2025-06-18
+---
+
+## Nya funktioner ✨
+
+- **Skeleton:** har en ny prop `isOnLayer01` för användning på alternativ bakgrund.
+  - Vi påbörjar utfasning av tokens `fieldSkeleton` och `buttonBackgroundSkeleton`, vad god använd `skeleton01` istället.
+- **Grid:** Grid har ett nytt API med bland annat responsiva brytpunkter, läs mer under [dokumentation för Grid](/components/grid).
+  - Vi påbörjar utfasning av `fluid`, vad god använd `isContained` istället.
+  - Vi påbörjar utfasning av `Flex`, vad god använd `Grid` istället.
+  - Vi påbörjar utfasning av `col` propen för `GridItem`, vad god använd `size` istället.
+  - Vi påbörjar utfasning av `FlexItem`, vad god använd `GridItem` istället.
+- **Table:** har en ny prop `size`
+  - Vi påbörjar utfasning av `narrow`, vad god använd `size` istället.
+- **Calendar:** har nu stöd för disabled state
+- **bundle:** Vi delar nu upp vår bundle i mindre "chunks" för att reducera storleken på appar som använder enstaka Midaskomponenter.
+
+## Fixar 💉
+
+- **Radio, Calendar** Vi hanterar nu css syntax errors for media queries
+- **Calendar** Felaktig färg för dag-knapp åtgärdad
+- **TextField:** Radera `height:100%`
+
+## Kosmetika 🎨
+
+- **LinkButton:** Byter ut Chevron-ikon till Arrow-ikon
+- **Table:** Uppdaterar marginaler och utfyllnad
+
+{/* truncate */}
+
+Se alla förändringar i detalj på [changelog](/changelog/10.2.0).
