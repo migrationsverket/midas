@@ -1,0 +1,64 @@
+import { Grid, GridItem, TextField } from '@midas-ds/components'
+
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import ThemedImage from '@theme/ThemedImage'
+
+# Validering i formulär
+
+Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.
+
+<div className='card'>
+  <Grid>
+    <GridItem size={6}>
+      <TextField
+        label='Ange förnamn'
+        errorMessage={'Du måste ange ett förnamn'}
+        isInvalid='true'
+        errorPosition='top'
+      />
+    </GridItem>
+    <GridItem size={6}>
+      <TextField
+        label='Ange förnamn'
+        errorMessage={'Du måste ange ett förnamn'}
+        isInvalid='true'
+        errorPosition='bottom'
+      />
+    </GridItem>
+  </Grid>
+</div>
+
+## Direktvalidering
+
+Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsregel eller kan validera mot en databas, ska valideras när användaren lämnar fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
+
+<div className='card'>
+  <TextField
+    type='email'
+    label='Ange din epostadress'
+    description='Epostadressen måste innehålla @ och domän (t.ex. example@example.com)'
+    errorMessage={'Du måste ha @ och domän med i din epostadress'}
+    errorPosition='top'
+  />
+</div>
+
+## Post submit-validering
+
+Om det finns obligatoriska fält användaren inte fyllt i eller fält med valideringsfel efter att användaren skickat in formuläret, så ska dessa sammanfattas i en `Felmeddelandelista` som visas högst upp på sidan. Felmeddelandelistan är inte någon egen komponent. Den består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+
+<ErrorMessageList />
+
+export function ErrorMessageList() {
+  const lightSrc = useBaseUrl('/img/error-message-list-light.svg');
+  const darkSrc = useBaseUrl('/img/error-message-list-dark.svg');
+
+return (
+
+<ThemedImage
+  alt='Felmeddelandelista'
+  sources={{
+    light: lightSrc,
+    dark: darkSrc,
+  }}
+/>
+); }
