@@ -4,7 +4,6 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
 import { getBranchUrl } from './src/utils/chromatic'
-import semver from 'semver'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 const defaultLocale = 'sv'
@@ -13,10 +12,6 @@ const packageAliases = {}
 const version: string = require(
   `${packagesDir}/components/package.json`,
 ).version
-
-const latestMajor = semver.major(version)
-const latestMinor = semver.minor(version)
-const latestPatch = semver.patch(version)
 
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
@@ -151,9 +146,10 @@ const config: Config = {
           customCss: ['./src/css/custom.css', './src/css/highlight.css'],
         },
         blog: {
-          path: 'blog',
-          blogSidebarTitle: 'Versioner',
+          path: 'blog/release-notes',
+          blogSidebarTitle: 'Release notes',
           blogSidebarCount: 'ALL',
+          routeBasePath: '/release-notes',
         },
       } satisfies Preset.Options,
     ],
@@ -171,7 +167,7 @@ const config: Config = {
       items: [
         { type: 'doc', docId: 'get-started/install', label: 'Dokumentation' },
         {
-          to: `/blog/releases/${latestMajor}.${latestMinor}.${latestPatch}`,
+          to: `/release-notes`,
           label: 'Release notes',
         },
         {
