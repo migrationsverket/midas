@@ -1,6 +1,6 @@
 'use client'
 import styles from './ComboBox.module.css'
-import React from 'react'
+import React, { useRef } from 'react'
 import type {
   ComboBoxProps as AriaComboBoxProps,
   ListBoxItemProps,
@@ -54,10 +54,20 @@ export function ComboBox<T extends ListBoxOption>({
   size = 'large',
   ...props
 }: ComboBoxProps<T>) {
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const handleOpenChange = (isOpen: boolean) => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.select()
+    }
+
+    props.onOpenChange?.(isOpen)
+  }
   return (
     <AriaComboBox
-      className={clsx(styles.combobox, className)}
       {...props}
+      onOpenChange={handleOpenChange}
+      className={clsx(styles.combobox, className)}
     >
       {label && <Label>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
@@ -66,6 +76,7 @@ export function ComboBox<T extends ListBoxOption>({
       )}
       <div className={styles.wrap}>
         <Input
+          ref={inputRef}
           className={clsx(styles.inputField, {
             [styles.medium]: size === 'medium',
           })}
