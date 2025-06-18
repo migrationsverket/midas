@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ComboBox, ComboBoxItem, ComboBoxSection } from './ComboBox'
 import { generateMockOptions, optionsWithSections } from './utils'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent, within } from '@storybook/test'
 import styles from './ComboBox.module.css'
 import { sizeModes } from '../../.storybook/modes'
 import React from 'react'
@@ -84,6 +84,32 @@ export const Default: Story = {
 export const Invalid: Story = {
   args: {
     isInvalid: true,
+  },
+}
+
+export const DS1253: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  play: async ({
+    canvas,
+    canvasElement: {
+      ownerDocument: { body },
+    },
+    step,
+  }) => {
+    await step(
+      'it should select the text when clicking in a combobox with a selected value',
+      async () => {
+        const comboBox = canvas.getByRole('combobox')
+        await userEvent.click(comboBox)
+        await userEvent.keyboard('Apple')
+        await userEvent.click(within(body).getByText('Apple'))
+        await userEvent.click(comboBox)
+        await expect(window?.getSelection()?.toString()).toBe('Apple')
+      },
+    )
   },
 }
 
