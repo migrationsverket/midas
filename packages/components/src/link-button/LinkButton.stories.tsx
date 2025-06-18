@@ -91,12 +91,14 @@ export const Disabled: Story = {
 export const AppLink: Story = {
   args: {
     children: 'Till E-tjänst',
+    'data-testid': 'link-button',
     onPress: () => alert('navigation fn'),
   },
 }
 
 export const Danger: Story = {
   args: {
+    'data-testid': 'link-button',
     children: 'Radera',
     variant: 'danger',
   },
