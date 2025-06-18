@@ -4,7 +4,6 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
 import { getBranchUrl } from './src/utils/chromatic'
-import semver from 'semver'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 const defaultLocale = 'sv'
@@ -14,16 +13,13 @@ const version: string = require(
   `${packagesDir}/components/package.json`,
 ).version
 
-const latestMajor = semver.major(version)
-const latestMinor = semver.minor(version)
-const latestPatch = semver.patch(version)
-
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
     return
   }
 
   const packagePath = path.resolve(packagesDir, dir)
+
   if (fs.statSync(packagePath).isDirectory()) {
     packageAliases[`@midas-ds/${dir}/theme`] = path.resolve(
       packagePath,
@@ -49,13 +45,11 @@ const config: Config = {
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
   trailingSlash: true,
-  i18n: {
-    defaultLocale: 'sv',
-    locales: ['sv'],
-  },
+  i18n: { defaultLocale: 'sv', locales: ['sv'] },
   customFields: {
     currentChromaticBranchUrl: getBranchUrl(process.env.GITHUB_HEAD_REF),
     midasVersion: version,
+    chromaticAppId: '6810d578d5507438df0f0d22',
   },
   plugins: [
     [
@@ -78,12 +72,7 @@ const config: Config = {
         },
       },
     ],
-    [
-      'docusaurus-plugin-module-alias',
-      {
-        alias: packageAliases,
-      },
-    ],
+    ['docusaurus-plugin-module-alias', { alias: packageAliases }],
     [
       './src/plugins/changelog/index.ts',
       {
@@ -157,9 +146,10 @@ const config: Config = {
           customCss: ['./src/css/custom.css', './src/css/highlight.css'],
         },
         blog: {
-          path: 'blog',
-          blogSidebarTitle: 'Midas versioner',
+          path: 'blog/release-notes',
+          blogSidebarTitle: 'Release notes',
           blogSidebarCount: 'ALL',
+          routeBasePath: '/release-notes',
         },
       } satisfies Preset.Options,
     ],
@@ -175,15 +165,15 @@ const config: Config = {
         width: 'auto',
       },
       items: [
+        { type: 'doc', docId: 'get-started/install', label: 'Dokumentation' },
         {
-          type: 'doc',
-          docId: 'get-started/use',
-          label: 'Dokumentation',
+          to: `/release-notes`,
+          label: 'Release notes',
         },
         {
-          to: `/blog/releases/${latestMajor}.${latestMinor}.${latestPatch}`,
-          label: `Version ${version}`,
+          type: 'html',
           position: 'right',
+          value: `<code>Version ${version}</code>`,
         },
         {
           href: 'https://github.com/migrationsverket/midas',
@@ -193,19 +183,7 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          items: [
-            {
-              label: 'Changelog',
-              to: '/changelog',
-            },
-          ],
-        },
-      ],
-    },
+    footer: { style: 'dark' },
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
@@ -216,18 +194,9 @@ const config: Config = {
       theme: prismThemes.vsLight,
       darkTheme: prismThemes.vsDark,
     },
-    mermaid: {
-      options: {
-        flowchart: {
-          curve: 'linear',
-        },
-      },
-    },
+    mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [
-      {
-        name: 'theme-color',
-        content: '#ffffff',
-      },
+      { name: 'theme-color', content: '#ffffff' },
       {
         name: 'theme-color',
         content: '#242526',

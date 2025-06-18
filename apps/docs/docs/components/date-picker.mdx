@@ -24,20 +24,14 @@ export const Example = props => {
   friendlyName='Datumväljare'
 />
 
-Inmatningsfält för att välja ett eller flera datum. Består av två komponenter `DatePicker`
-för att välja ett datum samt `DateRangePicker` för att välja ett spann mellan två datum.
-
-<Example />
-
-## Installation
-
-```bash npm2yarn
-npm install @midas-ds/components
-```
+Inmatningsfält för att välja ett eller flera datum. Välj `DatePicker` för att val av enstaka datum och `DateRangePicker` för att välja ett spann mellan två datum.
 
 ```tsx
 import { DatePicker } from '@midas-ds/components'
-// import { DateRangePicker } from '@midas-ds/components'
+```
+
+```tsx
+<DatePicker label='Välj ett datum' />
 ```
 
 <Example />

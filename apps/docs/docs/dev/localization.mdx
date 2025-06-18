@@ -18,18 +18,21 @@ För att säkerställa att lokalisering fungerar bör `useLocale` användas i ro
 du tillgång till browserns språkinställning. Normalt fungerar `locale` utan att hämta in den explicit men för till
 exempel SSR bör `useLocale` användas, se [React Aria](https://react-spectrum.adobe.com/react-aria/internationalization.html) för referens.
 
-```typescript jsx
-import {useLocale} from 'react-aria-components';
-function YourApp() {
-  let {locale, direction} = useLocale();
+```tsx
+import { useLocale } from 'react-aria-components'
+
+export default function App() {
+  const { locale, direction } = useLocale()
 
   return (
-    <div lang={locale} dir={direction}>
+    <div
+      lang={locale}
+      dir={direction}
+    >
       {/* your app here */}
     </div>
-  );
+  )
 }
-
 ```
 
 <LocaleExample />
@@ -40,9 +43,9 @@ Om det finns behov av att skriva över användarens inställningar går det att 
 Via I18nProvider går det att styra beteendet för datum och tidsrelaterade komponenter men _inte_ ta kontroll över felmeddelanden
 eller annan information, det sätts via browsern.
 
-```typescript jsx
+```tsx
 <I18nProvider locale={locale}>
-  <DateField/>
+  <DateField />
 </I18nProvider>
 ```
 
@@ -55,11 +58,11 @@ eller annan information, det sätts via browsern.
 För att översätta eller anpassa enskilda strängar finns [useLocalizedStringFormatter](https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/i18n/src/useLocalizedStringFormatter.ts).
 Motsvarande för siffror och valutor är [useNumberFormatter](https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html).
 
-## Midas komponenter
+## Midaskomponenter
 
 Officiellt har Midas inte fullt stöd för flera språk men i utgångsläget fungerar de flesta komponenter
 och respekterar användarens inställningar i browsern. Framtida uppdateringar eller nya komponenter
 bygger på React Arias ramverk så den allmänna rekommendationen är att använda metoder och hooks därifrån för
 att lösa eventuella lokaliseringsproblem. Buggrapport eller Feature requests kan skapas via
 
-[github issues](https://github.com/migrationsverket/midas/issues).
+[GitHub Issues](https://github.com/migrationsverket/midas/issues).

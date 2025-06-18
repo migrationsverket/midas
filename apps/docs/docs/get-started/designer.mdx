@@ -1,0 +1,38 @@
+---
+title: Designa med Midas
+sidebar_label: Designresurser
+sidebar_position: 4
+---
+
+import { Link, LinkButton, ButtonGroup } from '@midas-ds/components'
+
+:::info
+Eftersom vi är på väg att införa Figma så är allt skrivet utifrån hur vårt UI-kit i Figma är uppbyggt.
+:::
+
+För designers finns UI-kit till Figma och Adobe XD. Våra UI-kit innehåller komponenter och mönster som vi använder för att designa våra produkter och tjänster. Komponenterna i våra UI-kit är en spegling av hur komponenterna ser ut i komponentbiblioteket och vi använder så ofta som möjligt samma namn på variants som props i komponenterna. Om du vill testa hur komponenterna beter sig i olika situationer kan du göra det på Storybook, det finns en länk dit på varje komponentsida.
+
+<ButtonGroup style={{ marginBottom: '1.25rem' }}>
+  <LinkButton
+    target='\_blank'
+    href='https://www.figma.com/design/Zc41jDwx13L2bVECCQlsfN/MIDAS-UI-Kit?m=auto&node-id=0-1&t=ZgUPPphkbF15QIWU-1'
+  >
+    {'UI-kit i Figma'}
+  </LinkButton>
+  <Link
+    target='\_blank'
+    href={require('/files/MIDAS_UIkit_24.zip').default}
+    download
+    standalone
+  >
+    {'Ladda ner UI-kit till Adobe XD (version 24)'}
+  </Link>
+</ButtonGroup>
+
+Försök att undvika att skapa egna komponenter för att lösa designproblem. Börja istället med att fundera på om det går
+att lösa genom att kombinera ihop befintliga komponenter. Men om du har ett designproblem som kräver en unik lösning som
+inte behövs någon annanstans så kan det vara lämpligt att skapa en ny komponent.
+
+:::warning[Personuppgifter i skisser och prototyper]
+Vi får inte lagra några personuppgifter, tex namn eller personnummer i våra skisser. Vi använder därför alltid fiktiv data om vi behöver visa personuppgifter
+:::

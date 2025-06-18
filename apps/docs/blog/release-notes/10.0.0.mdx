@@ -19,6 +19,8 @@ numera kan användas i både `size='large'` och `size='medium'` är:
 Default size är `'large'` i samtliga fall. `large` innebär att inputfältet är 48px högt medan `medium` är 40px, för
 ett mer kompakt utseende.
 
+{/* truncate */}
+
 ## Migrera från 9.x.x till 10.0.0
 
 En del funktioner har varit deprecated sen 8.x.x eller tidigare och därför tar Midas tillfället i akt att rensa
@@ -61,6 +63,7 @@ Se dokumentationen för [modal](/components/modal) för hur DialogTrigger använ
 - import {Dialog, ModalTrigger} from '@midas-ds/components' // no longer works
 + import {DialogTrigger, Modal} from '@midas-ds/components'
 ```
+
 ### Spinner
 
 Från och med 10.0.0 går det inte längre att använda prop `dark`, använd `ìsOnColor` istället.
@@ -132,6 +135,4 @@ boolean, `isAnimated=true|false`.
 + <Skeleton variant='rectangle' isAnimated />
 ```
 
-Se alla förändringar i detalj på [changelog](/changelog)
-
-{/* truncate */}
+Se alla förändringar i detalj på [changelog](/changelog/10.0.0)

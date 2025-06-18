@@ -14,7 +14,7 @@ Ofta vill man dock använda sig av olika ramverks möjligheter till att navigera
 
 Från vardera komponent som exponerar en länk kan man även importera en `RouterProvider`. Denna accepterar navigatorn från ditt ramverk. Följande exempel är för komponenten `<Link />` och ramverket React Router men fungerar likadant med respektive komponent samt ramverk.
 
-```tsx
+```tsx {1,2,5,8}
 import { Link, RouterProvider } from '@midas-ds/components'
 import { useNavigate, useHref } from 'react-router';
 ...
