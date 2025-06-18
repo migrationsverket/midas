@@ -169,10 +169,10 @@ const config: Config = {
         width: 'auto',
       },
       items: [
-        { type: 'doc', docId: 'get-started/use', label: 'Dokumentation' },
+        { type: 'doc', docId: 'get-started/install', label: 'Dokumentation' },
         {
           to: `/blog/releases/${latestMajor}.${latestMinor}.${latestPatch}`,
-          label: 'Changelog',
+          label: 'Release notes',
         },
         {
           type: 'html',
