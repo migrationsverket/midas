@@ -4,7 +4,7 @@
 /***/ 15780:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.1","source":"@site/changelog/source/10.1.1.md","title":"10.1.1","description":"🩹 Fixes","date":"2025-06-09T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-06-09T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"10.1.0","permalink":"/changelog/10.1.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.1","source":"@site/changelog/source/10.1.1.md","title":"10.1.1","description":"- replace invalid token --blue-140 (#620)","date":"2025-06-09T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-06-09T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"10.2.0","permalink":"/changelog/10.2.0"},"nextItem":{"title":"10.1.0","permalink":"/changelog/10.1.0"},"listPageLink":"/changelog/"}');
 
 /***/ }),
 
@@ -42,10 +42,6 @@ const assets = {
 
 
 const toc = [{
-  "value": "🩹 Fixes",
-  "id": "-fixes",
-  "level": 3
-}, {
   "value": "💅 Refactors",
   "id": "-refactors",
   "level": 3
@@ -61,7 +57,7 @@ const toc = [{
 function _createMdxContent(props) {
   const _components = {
     a: "a",
-    h1: "h1",
+    h2: "h2",
     h3: "h3",
     li: "li",
     strong: "strong",
@@ -70,11 +66,8 @@ function _createMdxContent(props) {
     ...props.components
   };
   return (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h1, {
+    children: [(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h2, {
       id: ""
-    }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.h3, {
-      id: "-fixes",
-      children: "🩹 Fixes"
     }), "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.ul, {
       children: ["\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.li, {
         children: ["replace invalid token --blue-140 (", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {

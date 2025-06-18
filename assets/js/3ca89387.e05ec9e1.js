@@ -4,7 +4,7 @@
 /***/ 42357:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/2.0.1","source":"@site/changelog/source/2.0.1.md","title":"2.0.1","description":"- radio: fix hover on mobile, remove 100% height on RadioGroup (#286)","date":"2025-02-27T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-27T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"3.0.0","permalink":"/changelog/3.0.0"},"nextItem":{"title":"2.0.0","permalink":"/changelog/2.0.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/2.0.1","source":"@site/changelog/source/2.0.1.md","title":"2.0.1","description":"- radio: fix hover on mobile, remove 100% height on RadioGroup (#286)","date":"2025-02-27T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-27T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"3.0.0","permalink":"/changelog/3.0.0"},"nextItem":{"title":"2.0.0","permalink":"/changelog/2.0.0"},"listPageLink":"/changelog/page/2"}');
 
 /***/ }),
 

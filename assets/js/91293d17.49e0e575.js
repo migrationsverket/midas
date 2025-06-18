@@ -1,7 +1,14 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3149],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2571],{
 
-/***/ 40370:
+/***/ 38105:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.2.0","source":"@site/changelog/source/10.2.0.md","title":"10.2.0","description":"🚀 Features","date":"2025-06-18T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-06-18T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"10.1.1","permalink":"/changelog/10.1.1"},"listPageLink":"/changelog/"}');
+
+/***/ }),
+
+/***/ 73356:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -10,10 +17,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   contentTitle: () => (/* binding */ contentTitle),
 /* harmony export */   "default": () => (/* binding */ MDXContent),
 /* harmony export */   frontMatter: () => (/* binding */ frontMatter),
-/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_changelog_plugin_default_site_changelog_source_2_0_1_md_3ca_json__WEBPACK_IMPORTED_MODULE_0__),
+/* harmony export */   metadata: () => (/* reexport default export from named module */ _site_docusaurus_changelog_plugin_default_site_changelog_source_10_2_0_md_daf_json__WEBPACK_IMPORTED_MODULE_0__),
 /* harmony export */   toc: () => (/* binding */ toc)
 /* harmony export */ });
-/* harmony import */ var _site_docusaurus_changelog_plugin_default_site_changelog_source_2_0_1_md_3ca_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42357);
+/* harmony import */ var _site_docusaurus_changelog_plugin_default_site_changelog_source_10_2_0_md_daf_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(38105);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(28453);
 
@@ -22,11 +29,11 @@ const frontMatter = {
 	mdx: {
 		format: 'md'
 	},
-	date: '2025-02-27T20:00',
+	date: '2025-06-18T20:00',
 	pagination_prev: null,
 	pagination_next: null
 };
-const contentTitle = '2.0.1';
+const contentTitle = '10.2.0';
 
 const assets = {
 "authorsImageUrls": [],
@@ -52,13 +59,6 @@ function MDXContent(props = {}) {
 }
 
 
-
-/***/ }),
-
-/***/ 42357:
-/***/ ((module) => {
-
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/2.0.1","source":"@site/changelog/source/2.0.1.md","title":"2.0.1","description":"- radio: fix hover on mobile, remove 100% height on RadioGroup (#286)","date":"2025-02-27T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-02-27T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"3.0.0","permalink":"/changelog/3.0.0"},"nextItem":{"title":"2.0.0","permalink":"/changelog/2.0.0"},"listPageLink":"/changelog/"}');
 
 /***/ })
 

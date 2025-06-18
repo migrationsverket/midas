@@ -4,7 +4,7 @@
 /***/ 15780:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.1","source":"@site/changelog/source/10.1.1.md","title":"10.1.1","description":"🩹 Fixes","date":"2025-06-09T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-06-09T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"10.1.0","permalink":"/changelog/10.1.0"},"listPageLink":"/changelog/"}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/changelog/10.1.1","source":"@site/changelog/source/10.1.1.md","title":"10.1.1","description":"- replace invalid token --blue-140 (#620)","date":"2025-06-09T20:00:00.000Z","tags":[],"hasTruncateMarker":true,"authors":[],"frontMatter":{"mdx":{"format":"md"},"date":"2025-06-09T20:00","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"10.2.0","permalink":"/changelog/10.2.0"},"nextItem":{"title":"10.1.0","permalink":"/changelog/10.1.0"},"listPageLink":"/changelog/"}');
 
 /***/ }),
 
