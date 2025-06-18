@@ -2,12 +2,15 @@
 @value --font-family, --font-size-30, --breakpoint-xs, --button-background-primary, --button-border-secondary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-tertiary, --border-tertiary, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover, --icon-tertiary, --size-50, --size-70, --size-80 from tokens;
 
 .linkButton {
+  --border-width: 1px;
+
   font-family: --font-family;
   font-size: --font-size-30;
   font-weight: 500;
-  padding: calc(--size-70 - 1px) calc(--size-80 - 1px);
+  padding: calc(--size-70 - var(--border-width))
+    calc(--size-80 - var(--border-width));
   background-color: --button-background-primary;
-  border: solid 1px transparent;
+  border: solid var(--border-width) transparent;
   color: --text-on-color;
   cursor: pointer;
   outline: none;
@@ -115,7 +118,7 @@
 
 .iconBtn {
   background-color: transparent;
-  padding: 0.875rem;
+  padding: calc(--size-70 - var(--border-width));
   color: --text-tertiary;
   display: flex;
   align-items: center;
@@ -134,6 +137,10 @@
   &:active {
     background-color: --button-background-tertiary-active;
   }
+
+  &.medium {
+    padding: calc(--size-50 - var(--border-width));
+  }
 }
 
 .iconLeft {
@@ -145,7 +152,8 @@
 }
 
 .medium {
-  padding: calc(--size-50 - 1px) --size-70;
+  padding: calc(--size-50 - var(--border-width))
+    calc(--size-80 - var(--border-width));
 }
 
 @media --breakpoint-xs {
