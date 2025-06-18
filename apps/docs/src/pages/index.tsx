@@ -36,7 +36,7 @@ export default function Startpage() {
               <ButtonGroup aria-label='Länkar'>
                 <LinkButton
                   as={Link}
-                  to='/get-started/use'
+                  to='/get-started/install'
                 >
                   Kom igång
                 </LinkButton>
