@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3910],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4465],{
 
-/***/ 16486:
+/***/ 47058:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -30,6 +30,7 @@ const assets = {
 "authorsImageUrls": [],
 };
 
+/*truncate*/
 
 
 const toc = [{
@@ -39,9 +40,11 @@ const toc = [{
 }];
 function _createMdxContent(props) {
   const _components = {
+    a: "a",
     code: "code",
     h2: "h2",
     li: "li",
+    p: "p",
     ul: "ul",
     ...(0,_mdx_js_react__WEBPACK_IMPORTED_MODULE_2__/* .useMDXComponents */ .R)(),
     ...props.components
@@ -84,6 +87,11 @@ function _createMdxContent(props) {
           children: "size=\"medium\""
         }), "."]
       }), "\n"]
+    }), "\n", "\n", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_components.p, {
+      children: ["Se alla förändringar i detalj på ", (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_components.a, {
+        href: "/changelog/10.1.1",
+        children: "changelog"
+      }), "."]
     })]
   });
 }
@@ -107,7 +115,7 @@ function MDXContent(props = {}) {
 /***/ 58979:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/release-notes/10.1.1","source":"@site/blog/release-notes/10.1.1.mdx","title":"Release 10.1.1","description":"Fixar 💉","date":"2025-06-09T00:00:00.000Z","tags":[],"readingTime":0.32,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.1.1","date":"2025-06-09T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"nextItem":{"title":"Release 10.1.0","permalink":"/release-notes/10.1.0"}}');
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/release-notes/10.1.1","source":"@site/blog/release-notes/10.1.1.mdx","title":"Release 10.1.1","description":"Fixar 💉","date":"2025-06-09T00:00:00.000Z","tags":[],"readingTime":0.32,"hasTruncateMarker":true,"authors":[],"frontMatter":{"title":"Release 10.1.1","date":"2025-06-09T00:00:00.000Z","pagination_prev":null,"pagination_next":null},"unlisted":false,"prevItem":{"title":"Release 10.2.0","permalink":"/release-notes/10.2.0"},"nextItem":{"title":"Release 10.1.0","permalink":"/release-notes/10.1.0"}}');
 
 /***/ })
 
