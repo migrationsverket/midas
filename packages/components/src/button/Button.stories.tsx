@@ -32,16 +32,6 @@ const meta: Meta<typeof Button> = {
       modes: sizeModes,
     },
   },
-}
-
-export default meta
-type Story = StoryObj<typeof Button>
-
-export const Primary: Story = {
-  args: {
-    children: 'Button',
-    className: 'test-class',
-  },
   play: async ({ canvas, step, globals: { size } }) => {
     await step('it should have focus when clicked', async () => {
       const button = canvas.getByRole('button')
@@ -56,6 +46,16 @@ export const Primary: Story = {
         height: size === 'large' ? '48px' : '40px',
       })
     })
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof Button>
+
+export const Primary: Story = {
+  args: {
+    children: 'Button',
+    className: 'test-class',
   },
 }
 
