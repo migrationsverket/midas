@@ -32,6 +32,13 @@ const meta: Meta<typeof LinkButton> = {
       />
     )
   },
+  play: async ({ canvas, step, globals: { size } }) => {
+    await step('it should change size according to size prop', async () => {
+      await expect(
+        canvas.getByTestId('link-button').getBoundingClientRect().height,
+      ).toBe(size === 'large' ? 48 : 40)
+    })
+  },
 }
 export default meta
 type Story = StoryObj<typeof LinkButton>
@@ -42,13 +49,6 @@ export const Primary: Story = {
     href: '#',
     'data-testid': 'link-button',
     className: 'test-class',
-  },
-  play: async ({ canvas, step, globals: { size } }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(
-        canvas.getByTestId('link-button').getBoundingClientRect().height,
-      ).toBe(size === 'large' ? 48 : 40)
-    })
   },
 }
 
@@ -91,12 +91,14 @@ export const Disabled: Story = {
 export const AppLink: Story = {
   args: {
     children: 'Till E-tjänst',
+    'data-testid': 'link-button',
     onPress: () => alert('navigation fn'),
   },
 }
 
 export const Danger: Story = {
   args: {
+    'data-testid': 'link-button',
     children: 'Radera',
     variant: 'danger',
   },
