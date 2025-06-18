@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6707],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[6707,9088],{
 
 /***/ 8356:
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
