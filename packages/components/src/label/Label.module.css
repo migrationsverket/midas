@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --font-size-30, --line-height-30, --text-disabled from tokens;
+@value --text-primary, --font-family, --font-size-30, --line-height-30, --text-disabled, --support-border-info from tokens;
 
 .labelBase {
   color: --text-primary;
@@ -8,6 +8,9 @@
   font-size: --font-size-30;
   line-height: --line-height-30;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .labelBase:has(~ [data-disabled]) {
@@ -20,4 +23,12 @@
 
 [data-disabled] {
   color: --text-disabled;
+}
+
+.labelPopoverTrigger {
+  padding: 0 !important;
+
+  svg {
+    stroke: --support-border-info;
+  }
 }

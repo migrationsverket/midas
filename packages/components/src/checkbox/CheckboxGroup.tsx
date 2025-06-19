@@ -22,6 +22,8 @@ export interface CheckboxGroupProps
   showSelectAll?: boolean
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popoverContent?: React.ReactNode
 }
 
 export const CheckboxGroup = ({
@@ -31,6 +33,7 @@ export const CheckboxGroup = ({
   showSelectAll,
   children,
   errorPosition = 'top',
+  popoverContent,
   ...props
 }: CheckboxGroupProps) => {
   const [isAllSelected, setIsAllSelected] = React.useState<
@@ -94,7 +97,7 @@ export const CheckboxGroup = ({
       className={styles.checkboxGroup}
       {...props}
     >
-      <Label>{label}</Label>
+      <Label popoverContent={popoverContent}>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={styles.wrap}>

@@ -25,6 +25,8 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   /** String to display as error message or function to handle the result and produce the error message */
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popoverContent?: React.ReactNode
 }
 
 /**
@@ -37,6 +39,7 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   children,
   className,
   errorPosition = 'top',
+  popoverContent,
   ...props
 }) => {
   return (
@@ -44,7 +47,7 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
       {...props}
       className={clsx(styles.radioGroup, className)}
     >
-      {label && <Label>{label}</Label>}
+      {label && <Label popoverContent={popoverContent}>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>

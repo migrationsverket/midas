@@ -27,6 +27,8 @@ interface DatePickerProps extends AriaDatePickerProps<DateValue> {
    *  @default 'large'
    * */
   size?: Size
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popoverContent?: React.ReactNode
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({
@@ -35,6 +37,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   errorMessage,
   errorPosition = 'top',
   label,
+  popoverContent,
   ...rest
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -45,7 +48,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
       ref={ref}
       {...rest}
     >
-      <Label>{label}</Label>
+      <Label popoverContent={popoverContent}>{label}</Label>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField {...rest}>
