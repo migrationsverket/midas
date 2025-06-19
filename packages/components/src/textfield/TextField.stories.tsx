@@ -261,3 +261,11 @@ export const DS1243: Story = {
     )
   },
 }
+
+export const WithHelpPopover: Story = {
+  args: {
+    ...Primary.args,
+    popoverContent:
+      'An assistive text that helps the user understand the field better.',
+  },
+}

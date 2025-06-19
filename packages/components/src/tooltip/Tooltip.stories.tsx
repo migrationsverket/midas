@@ -20,6 +20,7 @@ const meta: Meta<typeof Tooltip> = {
     layout: 'centered',
   },
 }
+
 export default meta
 type Story = StoryObj<typeof Tooltip>
 
@@ -30,7 +31,7 @@ export const Primary: Story = {
   render: args => (
     <TooltipTrigger>
       <Button
-        variant='tertiary'
+        variant='icon'
         aria-label='Spara'
       >
         <Save />
@@ -47,7 +48,7 @@ export const Open: Story = {
   render: args => (
     <TooltipTrigger isOpen>
       <Button
-        variant='tertiary'
+        variant='icon'
         aria-label='Spara'
       >
         <Save />
@@ -82,7 +83,7 @@ export const Placement: Story = {
   render: args => (
     <TooltipTrigger isOpen>
       <Button
-        variant='tertiary'
+        variant='icon'
         aria-label='Spara'
       >
         <Save />
@@ -112,7 +113,7 @@ export const PlacementStart: Story = {
   render: args => (
     <TooltipTrigger isOpen>
       <Button
-        variant='tertiary'
+        variant='icon'
         aria-label='Spara'
       >
         <Save />
@@ -143,7 +144,7 @@ export const PlacementStartRTL: Story = {
     <I18nProvider locale='ar-AR'>
       <TooltipTrigger isOpen>
         <Button
-          variant='tertiary'
+          variant='icon'
           aria-label='Spara'
         >
           <Save />

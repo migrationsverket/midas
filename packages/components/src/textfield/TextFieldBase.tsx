@@ -33,6 +33,8 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    *  @default 'large'
    * */
   size?: Size
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popoverContent?: React.ReactNode
 }
 
 export const TextFieldBase = React.forwardRef<
@@ -48,6 +50,7 @@ export const TextFieldBase = React.forwardRef<
     showCounter,
     errorPosition = 'top',
     size = 'large',
+    popoverContent,
   } = props
 
   return (
@@ -57,7 +60,7 @@ export const TextFieldBase = React.forwardRef<
         [styles.medium]: size === 'medium',
       })}
     >
-      {label && <Label>{label}</Label>}
+      {label && <Label popoverContent={popoverContent}>{label}</Label>}
       {description && <Text slot='description'>{description}</Text>}
       {showCounter && <CharacterCounter isLonely={!description} />}
       {errorPosition === 'top' && (

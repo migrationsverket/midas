@@ -19,14 +19,20 @@ import { SelectFieldError } from './SelectFieldError'
 import styles from './Select.module.css'
 import type { SelectContainerProps, SelectProps } from './types'
 
-const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
-  ({ isClearable = true, ...rest }, ref) => {
-    const props: SelectProps = {
+interface MidasSelectProps extends SelectProps {
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popoverContent?: React.ReactNode
+}
+
+const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
+  ({ isClearable = true, popoverContent, ...rest }, ref) => {
+    const props: MidasSelectProps = {
       selectionMode: 'single',
       errorPosition: 'top',
       disallowEmptySelection: !isClearable,
       isClearable,
       size: 'large',
+      popoverContent,
       ...rest,
     }
 
@@ -57,6 +63,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
         {props.label && (
           <Label
             {...labelProps}
+            popoverContent={props.popoverContent}
             data-disabled={props.isDisabled || undefined}
           >
             {props.label}
