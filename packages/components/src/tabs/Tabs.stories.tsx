@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Tabs } from './Tabs'
 import { Button } from '../button'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent, within } from '@storybook/test'
 import { Key } from 'react-aria-components'
 import React from 'react'
 
@@ -37,6 +37,20 @@ export default {
 } as Meta<typeof Tabs>
 
 export const Primary: Story = {}
+
+export const ClosableTab: Story = {
+  args: {
+    isDissmissable: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    const closeButtons = await canvas.findAllByRole('button')
+    const firstCloseBtn = closeButtons[3]
+
+    await userEvent.click(firstCloseBtn)
+  },
+}
 
 export const DefaultSelectedKey: Story = {
   tags: ['!dev', '!autodocs'],

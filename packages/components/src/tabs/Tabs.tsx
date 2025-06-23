@@ -12,6 +12,9 @@ import clsx from 'clsx'
 import styles from './Tabs.module.css'
 import useObserveElement from '../utils/useObserveElement'
 import { windowSizes } from '../theme'
+import { useEffect, useState } from 'react'
+import { X } from 'lucide-react'
+import { Button } from '../button'
 
 export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
   /**
@@ -26,6 +29,12 @@ export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
    * Amount of children must match the amount of tabs
    */
   children: React.ReactNode
+  isDissmissable?: true
+}
+
+interface TabPanelChildProps {
+  id?: string
+  children?: React.ReactNode
 }
 
 interface TabPanelChildProps {
@@ -38,6 +47,7 @@ export const Tabs: React.FC<TabsProps> = ({
   label,
   children,
   className,
+  isDissmissable,
   ...rest
 }) => {
   const { width: bodyWidth } = useObserveElement(
@@ -50,17 +60,41 @@ export const Tabs: React.FC<TabsProps> = ({
 
   const childrenArray = React.Children.toArray(children)
 
-  if (childrenArray.length !== tabs.length) {
+  const [localTabs, setLocalTabs] = useState(tabs)
+  const [localChildren, setLocalChildren] = useState(childrenArray)
+
+  useEffect(() => {
+    setLocalTabs(tabs)
+    setLocalChildren(childrenArray)
+  }, [tabs, children, childrenArray])
+
+  if (localChildren.length !== localTabs.length) {
     console.error(
-      `The number of children must match the number of tabs. Children: ${childrenArray.length} Tabs: ${tabs.length}`,
+      `The number of children must match the number of tabs. Children: ${localChildren.length} Tabs: ${localTabs.length}`,
     )
     return null
   }
 
-  const tabContentMap = childrenArray.reduce(
+  const handleCloseTab = (tabToRemove: string) => {
+    if (localTabs.length <= 1) return
+
+    const index = localTabs.indexOf(tabToRemove)
+    if (index === -1) return
+
+    const newTabs = [...localTabs]
+    newTabs.splice(index, 1)
+
+    const newChildren = [...localChildren]
+    newChildren.splice(index, 1)
+
+    setLocalTabs(newTabs)
+    setLocalChildren(newChildren)
+  }
+
+  const tabContentMap = localChildren.reduce(
     (acc, child, index) => {
       if (React.isValidElement<TabPanelChildProps>(child)) {
-        const title = tabs[index]
+        const title = localTabs[index]
         if (title) {
           acc[title] = React.cloneElement(child, { id: title })
         }
@@ -80,17 +114,31 @@ export const Tabs: React.FC<TabsProps> = ({
         aria-label={label}
         className={styles.list}
       >
-        {tabs.map(tab => (
+        {localTabs.map(tab => (
           <Tab
             key={tab}
             id={tab}
-            className={styles.listItem}
+            className={clsx(
+              styles.listItem,
+              isDissmissable && styles.isDissmissableTab,
+              localTabs.length === 1 && styles.lastTab,
+            )}
           >
-            {tab}
+            <span>{tab}</span>
+            {isDissmissable && localTabs.length > 1 && (
+              <Button
+                className={styles.btn}
+                variant='icon'
+                icon={X}
+                size='medium'
+                iconPlacement='right'
+                onPress={() => handleCloseTab(tab)}
+              />
+            )}
           </Tab>
         ))}
       </TabList>
-      {tabs.map(tab => (
+      {localTabs.map(tab => (
         <TabPanel
           key={tab}
           id={tab}

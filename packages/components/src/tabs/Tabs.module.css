@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs from tokens;
+@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs, --border-secondary, --size-10 from tokens;
 
 .container {
   font-family: --font-family;
@@ -15,11 +15,24 @@
   padding: 0.5rem 1.25rem;
   cursor: pointer;
   color: --text-primary;
+  border-bottom: --size-10 solid --border-subtle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
 
   &[data-selected] {
     font-weight: 500;
     padding-bottom: calc(0.5rem - 3px);
-    border-bottom: 3px solid --border-tertiary;
+    border-color: --border-tertiary;
+
+    &[data-hovered] {
+      border-color: --border-tertiary;
+    }
+  }
+
+  &[data-hovered] {
+    border-color: --border-secondary;
   }
 
   &[data-focus-visible],
@@ -28,11 +41,27 @@
     box-shadow: --focus;
   }
 
+  &.isDissmissableTab {
+    padding: 0 0 0 1rem;
+
+    & [data-selected] {
+      border-color: --border-tertiary;
+
+      & [data-hovered] {
+        border-color: --border-tertiary;
+      }
+    }
+
+    .btn:hover,
+    .btn[data-hovered] {
+      background-color: transparent;
+    }
+  }
+
   @media --breakpoint-xs {
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: 3px solid --border-tertiary;
       padding-left: calc(1.125rem - 3px);
       border-bottom: 0;
       box-shadow: none;
@@ -47,5 +76,43 @@
   &:focus-visible {
     outline: none;
     box-shadow: --focus;
+  }
+}
+
+.listItem.lastTab {
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  color: --text-primary;
+  border-bottom: --size-10 solid --border-subtle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  &[data-selected] {
+    font-weight: 500;
+    padding-bottom: calc(0.5rem - 3px);
+    border-bottom: --size-10 solid --border-tertiary;
+  }
+
+  &[data-hovered] {
+    border-color: --border-secondary;
+  }
+
+  &[data-focus-visible],
+  &:focus-visible {
+    outline: none;
+    box-shadow: --focus;
+  }
+
+  @media --breakpoint-xs {
+    flex: 0 0 100%;
+
+    &[data-selected] {
+      padding-left: calc(1.125rem - 3px);
+      padding-right: 1rem;
+      border-bottom: 0;
+      box-shadow: none;
+    }
   }
 }
