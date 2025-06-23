@@ -91,7 +91,10 @@ const preview: Preview = {
 
       const story = document.querySelector<HTMLElement>('body')
 
-      if (story) story.style.colorScheme = context.globals.scheme
+      if (story) {
+        story.style.colorScheme = context.globals.scheme
+        story.style.transition = 'none'
+      }
 
       return (
         <RootTag
