@@ -32,9 +32,9 @@ export default {
   tags: ['autodocs'],
 } satisfies Meta<typeof CheckboxGroup>
 
-export const Primary: Story = {}
+export const Example: Story = {}
 
-export const SelectAll: Story = {
+export const ShowSelectAll: Story = {
   args: {
     showSelectAll: true,
   },

@@ -17,7 +17,6 @@ export default {
     isInvalid: false,
     isReadOnly: false,
     isRequired: false,
-    isSelected: false,
     value: 'unsubscribe',
     children: 'Unsubscribe',
   },
