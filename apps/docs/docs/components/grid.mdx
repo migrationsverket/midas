@@ -168,7 +168,7 @@ Flex har inbyggda marginaler som anpassar sig efter skärmstorlek. Marginalerna 
 
 <NoMarginExample />
 
-## Nästad användning
+## Nästlad användning
 
 Rutnät kan även användas inuti andra rutnät. Detta kan vara användbart för att skapa komplexa layouter där du vill ha flera nivåer av kolumner.
 
@@ -176,11 +176,11 @@ Rutnät kan även användas inuti andra rutnät. Detta kan vara användbart för
 <Grid>
   <GridItem size={6}>
     <Grid removeMargins={true}>
-      <GridItem size={6}>Nästad 1</GridItem>
-      <GridItem size={6}>Nästad 2</GridItem>
+      <GridItem size={6}>Nästlad 1</GridItem>
+      <GridItem size={6}>Nästlad 2</GridItem>
     </Grid>
   </GridItem>
-  <GridItem size={6}>Huvud 2</GridItem>
+  <GridItem size={6}>size=6</GridItem>
 </Grid>
 ```
 
@@ -194,8 +194,8 @@ Grids skalas enligt följande specifikation.
 | :--- | :---------------- | :--------------- | :-------------------- | :------- | :-------------- | :-------- |
 | `xs` | 0 - 479 px        | 16 px            | Skalas                | 12       | 16 px           |           |
 | `sm` | 480 px - 767 px   | 16 px            | Skalas                | 12       | 16 px           |           |
-| `md` | 768 px - 1023 px  | 16 px            | Skalas                | 12       | 16 px           |           |
-| `lg` | 1024 px - 1279 px | 32 px            | Skalas                | 12       | 16 px           |           |
+| `md` | 768 px - 1023 px  | 32 px            | Skalas                | 12       | 16 px           |           |
+| `lg` | 1024 px - 1279 px | 32 px            | Skalas                | 12       | 24 px           |           |
 | `xl` | över 1280 px      | 32 px            | Skalas                | 12       | 24 px           | Nej       |
 | `xl` | över 1280 px      | Skalas           | 1368 px               | 12       | 24 px           | Ja        |
 
