@@ -215,13 +215,13 @@ export const NestedExample = () => {
               style={{ background: semantic.layer01, padding: '1rem' }}
               size={6}
             >
-              Nästad 1
+              Nästlad 1 - size=6
             </GridItem>
             <GridItem
               style={{ background: semantic.layer01, padding: '1rem' }}
               size={6}
             >
-              Nästad 2
+              Nästlad 2 - size=6
             </GridItem>
           </Grid>
         </GridItem>
@@ -229,7 +229,7 @@ export const NestedExample = () => {
           style={{ background: semantic.layer01, padding: '1rem' }}
           size={6}
         >
-          Huvud 2
+          size=6
         </GridItem>
       </Grid>
     </div>
