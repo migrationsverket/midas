@@ -42,6 +42,7 @@ const Option = ({ item }: OptionProps) => (
               isSelected={isSelected}
               isReadOnly
               excludeFromTabOrder
+              aria-label={item.textValue}
             />
           </div>
         ) : null}

@@ -1,107 +1,80 @@
-'use client'
-
-import React from 'react'
-import {
-  CheckboxGroup as AriaCheckboxGroup,
-  CheckboxGroupProps as AriaCheckboxGroupProps,
-  CheckboxGroupStateContext,
-  Group,
-  ValidationResult,
-} from 'react-aria-components'
-import styles from './Checkbox.module.css'
-import { Checkbox } from './Checkbox'
+import * as React from 'react'
+import { AriaCheckboxGroupProps, useCheckboxGroup } from 'react-aria'
+import { useCheckboxGroupState } from 'react-stately'
 import { Label } from '../label'
 import { Text } from '../text'
-import { FieldError } from '../field-error'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import { useSelectAll } from './useSelectAll'
+import { Checkbox } from './Checkbox'
+import { CheckboxGroupContext } from './context'
+import { CheckboxGroupFieldError } from './CheckboxGroupFieldError'
+import messages from './intl/translations.json'
+import styles from './Checkbox.module.css'
 
-export interface CheckboxGroupProps
-  extends Omit<AriaCheckboxGroupProps, 'children'> {
-  children?: React.ReactNode
-  label?: string
-  description?: string
+export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
+  children: React.ReactNode
   showSelectAll?: boolean
-  errorMessage?: string | ((validation: ValidationResult) => string)
+  selectAllLabel?: string
   errorPosition?: 'top' | 'bottom'
 }
 
-export const CheckboxGroup = ({
-  label,
-  description,
-  errorMessage,
-  showSelectAll,
-  children,
-  errorPosition = 'top',
-  ...props
-}: CheckboxGroupProps) => {
-  const [isAllSelected, setIsAllSelected] = React.useState<
-    'all' | 'some' | 'none'
-  >()
+export function CheckboxGroup(props: CheckboxGroupProps) {
+  const state = useCheckboxGroupState(props)
 
-  const ToogleAll = () => {
-    const state = React.useContext(CheckboxGroupStateContext)
+  const stringFormatter = useLocalizedStringFormatter(messages)
 
-    const childValues = React.Children.toArray(children)
-      .filter(React.isValidElement)
-      .map((child: React.ReactElement) => child.props.value)
+  const { groupProps, labelProps, descriptionProps } = useCheckboxGroup(
+    props,
+    state,
+  )
 
-    const toggleAll = () => {
-      if (isAllSelected !== 'all') {
-        setIsAllSelected('all')
-        return state?.setValue(['toggleAll', ...childValues])
-      }
+  const { allSelected, someSelected, checkboxValues } = useSelectAll(
+    props.children,
+    state,
+  )
 
-      setIsAllSelected('none')
-      return state?.setValue([])
-    }
-
-    React.useEffect(() => {
-      const amountOfChildren = childValues.length
-      const totalAmount = childValues.length + 1
-      const currentAmount = state?.value?.length || 0
-
-      if (currentAmount === 0) setIsAllSelected('none')
-
-      if (currentAmount > 0 && currentAmount < amountOfChildren)
-        setIsAllSelected('some')
-
-      if (currentAmount !== totalAmount) state?.removeValue('toggleAll')
-
-      if (
-        currentAmount === amountOfChildren &&
-        !state?.value?.includes('toggleAll')
-      ) {
-        state?.addValue('toggleAll')
-        setIsAllSelected('all')
-      }
-
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [childValues.length, state?.value])
-
-    return (
-      <Checkbox
-        value='toggleAll'
-        isSelected={isAllSelected === 'all'}
-        isIndeterminate={isAllSelected === 'some'}
-        onChange={() => toggleAll()}
-      >
-        Välj alla
-      </Checkbox>
-    )
+  const handleChange = (checked: boolean) => {
+    state.setValue(checked ? checkboxValues : [])
   }
 
   return (
-    <AriaCheckboxGroup
+    <div
+      {...groupProps}
       className={styles.checkboxGroup}
-      {...props}
     >
-      <Label>{label}</Label>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <Group className={styles.wrap}>
-        {showSelectAll && <ToogleAll />}
-        {children}
-      </Group>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-    </AriaCheckboxGroup>
+      <Label {...labelProps}>{props.label}</Label>
+      {props.description && (
+        <Text
+          slot='description'
+          {...descriptionProps}
+        >
+          {props.description}
+        </Text>
+      )}
+      {props.errorPosition === 'top' && (
+        <CheckboxGroupFieldError
+          {...props}
+          state={state}
+        />
+      )}
+      {props.showSelectAll && (
+        <Checkbox
+          isSelected={allSelected}
+          isIndeterminate={someSelected}
+          onChange={handleChange}
+        >
+          {props.selectAllLabel || stringFormatter.format('selectAll')}
+        </Checkbox>
+      )}
+      <CheckboxGroupContext.Provider value={state}>
+        {props.children}
+      </CheckboxGroupContext.Provider>
+      {props.errorPosition === 'bottom' && (
+        <CheckboxGroupFieldError
+          {...props}
+          state={state}
+        />
+      )}
+    </div>
   )
 }
