@@ -31,4 +31,4 @@ jobs:
           buildCommand: npx nx run components:build-storybook:ci
           outputDir: dist/storybook/ui
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          onlyChanged: true # enables turbosnap
+          onlyStoryNames: '**/*/kitchenSink'
