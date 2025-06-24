@@ -10,7 +10,7 @@ const meta: Meta<typeof Grid> = {
   subcomponents: { GridItem: GridItem as React.ComponentType<unknown> },
   title: 'Components/Grid',
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen', a11y: { test: 'todo' } },
+  parameters: { layout: 'fullscreen' },
   argTypes: {
     fluid: { control: { type: 'boolean' } },
     isContained: { control: { type: 'boolean' } },
