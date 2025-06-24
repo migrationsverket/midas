@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Label.module.css'
+import styles from './LabelWrapper.module.css'
 import { InfoPopover, InfoPopoverProps } from './InfoPopover'
 
 export const LabelWrapper: React.FC<{

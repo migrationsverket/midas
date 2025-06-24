@@ -2,7 +2,7 @@ import React from 'react'
 import { Popover, PopoverTrigger } from '../popover'
 import { Button } from '../button'
 import { Info } from 'lucide-react'
-import styles from './Label.module.css'
+import styles from './LabelWrapper.module.css'
 
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
 export interface InfoPopoverProps {
