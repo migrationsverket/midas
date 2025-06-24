@@ -5,7 +5,7 @@ sidebar_label: 'Tester'
 # Tester
 
 Automatiska tester i Midas utgörs främst av _komponenttester_. Komponenttester testar interaktionen av renderade komponenter i en riktig eller emulerad webbläsare.
-I de riktiga webbläsarna utförs automatiserade _tillgänglighetstester_ och på sikt även _visuella tester_.
+I de riktiga webbläsarna utförs automatiserade _tillgänglighetstester_, _snapshottester_ körs i Chromatic.
 
 Vi har också möjlighet att skriva _enhetstester_ som testar delar ur JavaScript-moduler.
 
@@ -102,10 +102,6 @@ export const DS123: Story = {
 
 Nu kan du åtgärda din bug, när du är klar bör ditt test passera.
 
-#### Visuella tester
-
-För närvarande utför vi inga visuella tester där screenshots används för att jämföra komponenters utseende.
-
 ##### toHaveStyle
 
 `expect` från `@storybook/test` erbjuder dig att skriva förväntningar på hur en komponent ser ut med hjälp av `toHaveStyle`-metoden.
@@ -172,4 +168,37 @@ describe('given a default Button', () => {
     expect(button).toBeVisible()
   })
 })
+```
+
+## Snapshottester
+
+Vi använder [Chromatic](https://chromatic.com) för att köra snapshottester som jämför visuella ändringar i komponenter.
+Chromatic utgår från vår Storybook och tar snapshots på samtliga stories.
+
+### Trigga chromatic via commit
+
+Per default körs bara snapshottester på push till `dev` och `main`, vill du köra snapshottester i din feature branch PR behöver du baka in meddelandet `[run-chromatic]` i ditt commit meddelande (workflowet triggas även om meddelandet finns i bodyn):
+
+```bash
+git commit -m "feat(button): change padding [run-chromatic]"
+```
+
+Se till att köra snapshottester som ett sista steg om du jobbar med en feature eller fix.
+
+### Hoppa över stories
+
+För att reducera antalet snapshots bör vi bara ta en snap per tillstånd i en komponent, vänligen använd följande kod om du vill att chromatic ska hoppa över din story:
+
+```tsx
+export const PrimaryWithAnotherLabel: Story = {
+  args: {
+    label: 'Just another label',
+  },
+  parameters: {
+    chromatic: {
+      disableSnapshot: true,
+    },
+  },
+  // ...
+}
 ```
