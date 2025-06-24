@@ -254,12 +254,12 @@ var DateInput = __webpack_require__(79980);
 var DateSegment = __webpack_require__(18980);
 // EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
 var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
+var LabelWrapper = __webpack_require__(82684);
 // EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
 var Label = __webpack_require__(63181);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
 ;// ./packages/components/src/date-picker/DatePicker.tsx
 'use client';var _excluded=["className","description","errorMessage","errorPosition","label","popover"];var DatePicker=function DatePicker(_ref){var className=_ref.className,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,label=_ref.label,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var ref=react.useRef(null);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_DatePicker/* DatePicker */.lr,Object.assign({className:(0,clsx/* clsx */.$)(DatePicker_module.datePicker,className),ref:ref},rest,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(DatePickerInputField,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(DateInput/* DateInput */.J,{children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateSegment/* DateSegment */.E,{segment:segment});}})})),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(DatePickerPopover,{ref:ref,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Calendar/* Calendar */.V,{})})]}));};
 ;// ./apps/docs/src/components/examples/date-picker/DatePickerExamples.tsx

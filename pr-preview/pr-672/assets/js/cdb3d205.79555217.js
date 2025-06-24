@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5521],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5320],{
 
 /***/ 13225:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -15,75 +15,6 @@
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44586);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyName=_ref.friendlyName,overrideHeadlessLink=_ref.overrideHeadlessLink,overrideHeadlessLinkTitle=_ref.overrideHeadlessLinkTitle;var _useDocusaurusContext=(0,_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(),customFields=_useDocusaurusContext.siteConfig.customFields;var componentPath="?path=/docs/components-"+name.toLowerCase()+"--docs";var storybookHost= false?0:customFields!=null&&customFields.currentChromaticBranchUrl?"https://"+(customFields==null?void 0:customFields.currentChromaticBranchUrl)+"--"+customFields.chromaticAppId+".chromatic.com":"https://main--"+(customFields==null?void 0:customFields.chromaticAppId)+".chromatic.com";var storybookLink=storybookHost+"/"+componentPath;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section",{className:"component-header",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_2__/* .Grid */ .x,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"friendlyName",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:storybookLink,variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A,iconPlacement:"left",children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A,iconPlacement:"left",children:overrideHeadlessLinkTitle?overrideHeadlessLinkTitle:'React Aria'})})]})});};
-
-/***/ }),
-
-/***/ 13332:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  A: () => (/* binding */ TextField)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextFieldBase.tsx + 2 modules
-var TextFieldBase = __webpack_require__(39107);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
-var TextField_module = __webpack_require__(73413);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
-var useLocalizedStringFormatter = __webpack_require__(88413);
-;// ./packages/components/src/textfield/intl/translations.json
-const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en":{"hide":"Hide","show":"Show"},"sv":{"hide":"Dölj","show":"Visa"},"es":{"hide":"Ocultar","show":"Mostrar"},"fr":{"hide":"Cacher","show":"Afficher"},"de":{"hide":"Verstecken","show":"Anzeigen"},"ja":{"hide":"隠す","show":"表示"},"zh":{"hide":"隐藏","show":"显示"},"ar":{"hide":"إخفاء","show":"إظهار"},"ru":{"hide":"Скрыть","show":"Показать"},"pt":{"hide":"Ocultar","show":"Mostrar"},"it":{"hide":"Nascondi","show":"Mostra"},"ko":{"hide":"숨기기","show":"보여주기"},"hi":{"hide":"छुपाएँ","show":"दिखाएँ"},"nl":{"hide":"Verbergen","show":"Tonen"},"pl":{"hide":"Ukryj","show":"Pokaż"},"tr":{"hide":"Gizle","show":"Göster"},"vi":{"hide":"Ẩn","show":"Hiện"},"th":{"hide":"ซ่อน","show":"แสดง"},"id":{"hide":"Sembunyikan","show":"Tampilkan"},"ms":{"hide":"Sembunyikan","show":"Tunjukkan"}}');
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/textfield/PasswordField.tsx
-var PasswordField=function PasswordField(_ref){var value=_ref.value;var _React$useState=react.useState(false),showPassword=_React$useState[0],setShowPassword=_React$useState[1];var handlePress=function handlePress(){return setShowPassword(function(previousValue){return!previousValue;});};var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module/* default */.A.passwordText,children:value}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"tertiary",onPress:handlePress,className:TextField_module/* default */.A.passwordButton,children:showPassword?stringFormatter.format('hide'):stringFormatter.format('show')})]});};
-;// ./packages/components/src/textfield/Input.tsx
-var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];ref=_useContextProps[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module/* default */.A.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,props.className)})),props.type==='password'&&/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,Object.assign({},props))]});});
-;// ./packages/components/src/textfield/TextField.tsx
-'use client';var _excluded=["className","form","list"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,list=_ref.list,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:(0,clsx/* default */.A)(className),form:form,list:list,ref:ref})}));});
-
-/***/ }),
-
-/***/ 19060:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  b: () => (/* binding */ FieldError_FieldError)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-;// ./packages/components/src/field-error/FieldError.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const FieldError_module = ({"tokens":"\"../theme/tokens.css\"","--text-warning":"light-dark(#e62323, #eb4e4e)","--font-family":"\"Inter\", sans-serif","fieldError":"fieldError_K9VX"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/field-error/FieldError.tsx
-var FieldError_FieldError=/*#__PURE__*/react.forwardRef(function(props,ref){var children=props.children,isInvalid=props.isInvalid;var className=(0,clsx/* default */.A)(FieldError_module.fieldError,props.className);var context=react.useContext(FieldError/* FieldErrorContext */.C);if(!context&&isInvalid&&typeof children!=='function'){return/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{className:className,children:children});}if(!(context!=null&&context.isInvalid))return null;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,Object.assign({},props,{ref:ref,className:className}));});
 
 /***/ }),
 
@@ -167,296 +98,6 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 
 /***/ }),
 
-/***/ 36385:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  assets: () => (/* binding */ assets),
-  contentTitle: () => (/* binding */ contentTitle),
-  "default": () => (/* binding */ MDXContent),
-  frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_modal_mdx_902_namespaceObject),
-  toc: () => (/* binding */ toc)
-});
-
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-modal-mdx-902.json
-const site_docs_components_modal_mdx_902_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/modal","title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","source":"@site/docs/components/modal.mdx","sourceDirName":"components","slug":"/components/modal","permalink":"/pr-preview/pr-672/components/modal","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
-var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
-var PropsTable = __webpack_require__(68713);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
-var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 1 modules
-var Dialog = __webpack_require__(86484);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Modal.mjs + 2 modules
-var dist_Modal = __webpack_require__(4477);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./packages/components/src/modal/Dialog.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Dialog_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--background":"light-dark(#ffffff, #171717)","--text-primary":"light-dark(#171717, #f2f2f2)","--z-index-modal":"1000","--z-index-above":"10","modal":"modal_yuES","modal-zoom":"modal-zoom_PdC_","overlay":"overlay_eZeP","modal-fade":"modal-fade_Dc6w","modalHeader":"modalHeader_B1eE","modalBody":"modalBody_FPgg"});
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
-var x = __webpack_require__(48697);
-// EXTERNAL MODULE: ./node_modules/@react-aria/focus/dist/FocusScope.mjs + 2 modules
-var FocusScope = __webpack_require__(13560);
-// EXTERNAL MODULE: ./packages/components/src/heading/Heading.tsx + 1 modules
-var Heading = __webpack_require__(93683);
-;// ./packages/components/src/modal/Dialog.tsx
-var _excluded=["children","title"];var Modal=function Modal(_ref){var children=_ref.children,title=_ref.title,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Dialog/* Dialog */.lG,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Modal/* ModalOverlay */.mH,Object.assign({},props,{className:Dialog_module.overlay,children:/*#__PURE__*/(0,jsx_runtime.jsx)(FocusScope/* FocusScope */.n1,{contain:true,autoFocus:true,restoreFocus:true,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Modal/* Modal */.aF,Object.assign({},props,{className:Dialog_module.modal,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Dialog_module.modalHeader,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"tertiary",icon:x/* default */.A,iconPlacement:"right",children:"St\xE4ng"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Dialog_module.modalBody,tabIndex:-1,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* Heading */.D,{level:2,children:title}),children]})]}))})}))}));};
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/button/ButtonGroup.tsx + 1 modules
-var ButtonGroup = __webpack_require__(49764);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
-var TextField = __webpack_require__(13332);
-// EXTERNAL MODULE: ./packages/components/src/radio/Radio.tsx + 1 modules
-var Radio = __webpack_require__(49936);
-;// ./apps/docs/src/components/examples/ModalExamples.tsx
-var ConfirmationExample=function ConfirmationExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Ta bort Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Modal,{title:"Ta bort saker ur fruktkorgen",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{elementType:"p",children:"\xC4r du s\xE4ker att du vill plocka bort \"Kiwi\" fr\xE5n fruktkorgen?"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"danger",slot:"close",children:"Ja, ta bort"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{autoFocus:true,slot:"close",variant:"secondary",children:"Nej, ha kvar"})]})]})]})});};var FormExample=function FormExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"G\xF6r din egen fruktkorg"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal,{title:"G\xF6r din egen fruktkorg",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',flexDirection:'column',gap:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{autoFocus:true,label:"Namnge din fruktkorg",description:"Skriv valfritt namn"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{defaultValue:"ja",label:"Vill du ha fruktkorgen hemskickad till din hemadress?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"ja",children:"Ja"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"nej",children:"Nej"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"secondary",children:"Avbryt"})]})]})})]})});};
-;// ./apps/docs/docs/components/modal.mdx
-
-
-const frontMatter = {
-	title: 'Modal',
-	description: 'Modal som lägger sig över allt annat innehåll.',
-	pagination_prev: null,
-	pagination_next: null
-};
-const contentTitle = undefined;
-
-const assets = {
-
-};
-
-
-
-
-
-
-const toc = [{
-  "value": "Användning",
-  "id": "användning",
-  "level": 2
-}, {
-  "value": "Bekräftelsemodal",
-  "id": "bekräftelsemodal",
-  "level": 3
-}, {
-  "value": "Varianter",
-  "id": "varianter",
-  "level": 2
-}, {
-  "value": "Uncontrolled",
-  "id": "uncontrolled",
-  "level": 3
-}, {
-  "value": "Controlled",
-  "id": "controlled",
-  "level": 3
-}, {
-  "value": "Avancerat innehåll",
-  "id": "avancerat-innehåll",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Användning",
-  "id": "användning-1",
-  "level": 3
-}, {
-  "value": "Knapparnas placering och ordning",
-  "id": "knapparnas-placering-och-ordning",
-  "level": 3
-}, {
-  "value": "API",
-  "id": "api",
-  "level": 2
-}, {
-  "value": "DialogTrigger",
-  "id": "dialogtrigger",
-  "level": 3
-}, {
-  "value": "Modal",
-  "id": "modal",
-  "level": 3
-}];
-function _createMdxContent(props) {
-  const _components = {
-    a: "a",
-    code: "code",
-    h2: "h2",
-    h3: "h3",
-    li: "li",
-    p: "p",
-    pre: "pre",
-    ul: "ul",
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Modal",
-      friendlyName: "Modal, Dialog, Dialogruta",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar åtkomst till det underliggande\nlagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det krävs ett\naktivt svar från användaren."
-    }), "\n", (0,jsx_runtime.jsx)(FormExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "användning",
-      children: "Användning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { DialogTrigger, Modal } from '@midas-ds/components'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Öppna modal</Button>\n  <Modal title='Rubrik'>Innehåll i modal</Modal>\n</DialogTrigger>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "bekräftelsemodal",
-      children: "Bekräftelsemodal"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "För att undvika oönskade fel kan en modal användas för att bekräfta en handling som har konsekvenser för användaren."
-    }), "\n", (0,jsx_runtime.jsx)(ConfirmationExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter",
-      children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För att stänga modal via klick utanför modalens yta, använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isDismissable"
-      }), " på modalen."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    //highlight-start\n    isDismissable\n    //highlight-end\n    title='Modal Title'\n  >\n    /* Modal content */\n  </Modal>\n</DialogTrigger>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "uncontrolled",
-      children: "Uncontrolled"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Alla varianter av ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<Button>"
-      }), " samt alla övriga ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/Dialog.html#custom-trigger",
-        children: "pressable"
-      }), "\nelement kan användas för att öppna modalen. För att stänga modalen med en knapp innanför modalen, använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "slot={'close'}"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title='Modal Title'>\n    //highlight-start\n    <Button slot='close'>Close</Button>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "controlled",
-      children: "Controlled"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isOpen"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onOpenChange()"
-      }), " för att via state kontrollera om modalen är öppen eller stängd."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "/* imports and rest of app */\nconst [open, setOpen] = React.useState<boolean>(false)\n\n/* trigger modal from anywhere */\n<Button onPress={() => setOpen(true))}>Open</Button>\n\n//highlight-start\n<DialogTrigger isOpen={open} onOpenChange={setOpen}>\n//highlight-end\n  <Modal\n    title=\"Modal Title\"\n  >\n    /* Modal content */\n  </Modal>\n</DialogTrigger>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "avancerat-innehåll",
-      children: "Avancerat innehåll"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title=\"Modal Title\">\n    //highlight-start\n    <TextField label=\"Name\" autoFocus>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "användning-1",
-      children: "Användning"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använd modaler sparsamt och endast när det är nödvändigt då de skapar avbrott i användarens flöde."
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Använd modal för:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Enklare formulär"
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Undvik att använda modal för:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Varningar. Använd istället ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/toast",
-          children: "Toast"
-        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/info-banner",
-          children: "InfoBanner"
-        })]
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Långa formulär"
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "knapparnas-placering-och-ordning",
-      children: "Knapparnas placering och ordning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components/button",
-        children: "Knappar"
-      })]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "api",
-      children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "dialogtrigger",
-      children: "DialogTrigger"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "DialogTrigger"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "modal",
-      children: "Modal"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "Modal"
-    })]
-  });
-}
-function MDXContent(props = {}) {
-  const {wrapper: MDXLayout} = {
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
-    ...props,
-    children: (0,jsx_runtime.jsx)(_createMdxContent, {
-      ...props
-    })
-  }) : _createMdxContent(props);
-}
-
-
-
-/***/ }),
-
 /***/ 38739:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -465,47 +106,6 @@ function MDXContent(props = {}) {
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","--breakpoint-sm":"(min-width: 480px)","--breakpoint-md":"(min-width: 768px)","--breakpoint-lg":"(min-width: 1024px)","--breakpoint-xl":"(min-width: 1280px)","container":"container_uCKZ","removeMargins":"removeMargins_rQ9U","contained":"contained_R9lB","flex":"flex_LQ20","fluid":"fluid_Y1tE","col":"col_tmG6","col-1":"col-1_OVvW","col-2":"col-2_XfVI","col-3":"col-3_KxqE","col-quarter":"col-quarter_eUut","col-4":"col-4_Ovxr","col-third":"col-third_FUaF","col-5":"col-5_uIyd","col-6":"col-6_i8WR","col-half":"col-half_GzSn","col-7":"col-7_devX","col-8":"col-8_tlAZ","col-9":"col-9_Nbjm","col-10":"col-10_rwyP","col-11":"col-11_ShOw","col-12":"col-12_eQeJ","col-full":"col-full_K_XT","col-auto":"col-auto_nMhH","col-grow":"col-grow_TBON","col-xs-1":"col-xs-1_Bg_O","col-xs-2":"col-xs-2_UhmL","col-xs-3":"col-xs-3_mEvh","col-xs-quarter":"col-xs-quarter_mtoI","col-xs-4":"col-xs-4_Uv5i","col-xs-third":"col-xs-third_AHrM","col-xs-5":"col-xs-5_Gdnm","col-xs-6":"col-xs-6_z366","col-xs-half":"col-xs-half_vH6m","col-xs-7":"col-xs-7_HNwO","col-xs-8":"col-xs-8_Vwih","col-xs-9":"col-xs-9_vfTc","col-xs-10":"col-xs-10_wJWt","col-xs-11":"col-xs-11_KTEA","col-xs-12":"col-xs-12_TaE_","col-xs-full":"col-xs-full_enWi","col-xs-auto":"col-xs-auto_G2jj","col-xs-grow":"col-xs-grow_kY1W","col-sm-1":"col-sm-1_YvIs","col-sm-2":"col-sm-2_NSCq","col-sm-3":"col-sm-3_cJ0H","col-sm-quarter":"col-sm-quarter_WWBJ","col-sm-4":"col-sm-4_dtZx","col-sm-third":"col-sm-third_g3dG","col-sm-5":"col-sm-5_C87q","col-sm-6":"col-sm-6_SkMd","col-sm-half":"col-sm-half_QX4f","col-sm-7":"col-sm-7_wa6s","col-sm-8":"col-sm-8_zH5I","col-sm-9":"col-sm-9_ym4Z","col-sm-10":"col-sm-10_jE4j","col-sm-11":"col-sm-11_Va2g","col-sm-12":"col-sm-12_BgjD","col-sm-full":"col-sm-full_Nb6O","col-sm-auto":"col-sm-auto_Qj4m","col-sm-grow":"col-sm-grow_mAH5","col-md-1":"col-md-1_Zeqd","col-md-2":"col-md-2_DR6K","col-md-3":"col-md-3_OZK7","col-md-quarter":"col-md-quarter_AmxM","col-md-4":"col-md-4_NxEu","col-md-third":"col-md-third_J4Ja","col-md-5":"col-md-5_cBkY","col-md-6":"col-md-6_it5t","col-md-half":"col-md-half_aEv_","col-md-7":"col-md-7__sAT","col-md-8":"col-md-8_WfW7","col-md-9":"col-md-9_orzQ","col-md-10":"col-md-10_wh5t","col-md-11":"col-md-11_Wsgq","col-md-12":"col-md-12_gZQg","col-md-full":"col-md-full_Ow4Z","col-md-auto":"col-md-auto_e67j","col-md-grow":"col-md-grow_quHq","col-lg-1":"col-lg-1_e1au","col-lg-2":"col-lg-2_fUsj","col-lg-3":"col-lg-3_EhhM","col-lg-quarter":"col-lg-quarter_SI9I","col-lg-4":"col-lg-4_VuKz","col-lg-third":"col-lg-third_Lf2A","col-lg-5":"col-lg-5_TF5r","col-lg-6":"col-lg-6_E93v","col-lg-half":"col-lg-half_ZdoE","col-lg-7":"col-lg-7_L5CO","col-lg-8":"col-lg-8_ZBHN","col-lg-9":"col-lg-9_TbUu","col-lg-10":"col-lg-10_Tsqu","col-lg-11":"col-lg-11_Eg8x","col-lg-12":"col-lg-12_eNvi","col-lg-full":"col-lg-full_SaRE","col-lg-auto":"col-lg-auto_fNRO","col-lg-grow":"col-lg-grow_XTrt","col-xl-1":"col-xl-1_BRna","col-xl-2":"col-xl-2_eGSK","col-xl-3":"col-xl-3_RrW2","col-xl-quarter":"col-xl-quarter_V_Yw","col-xl-4":"col-xl-4_R4AZ","col-xl-third":"col-xl-third_W3hT","col-xl-5":"col-xl-5_k7Gx","col-xl-6":"col-xl-6_xZyb","col-xl-half":"col-xl-half_V9xE","col-xl-7":"col-xl-7_lJfg","col-xl-8":"col-xl-8_zErQ","col-xl-9":"col-xl-9_oYwQ","col-xl-10":"col-xl-10_cLTa","col-xl-11":"col-xl-11_xqWK","col-xl-12":"col-xl-12_Vrsf","col-xl-full":"col-xl-full_vVSm","col-xl-auto":"col-xl-auto_YBap","col-xl-grow":"col-xl-grow_YMBn","offset-1":"offset-1_ZQkJ","offset-2":"offset-2_Reek","offset-3":"offset-3_SDkl","offset-quarter":"offset-quarter_ho5e","offset-4":"offset-4_L0XB","offset-third":"offset-third_dE8e","offset-5":"offset-5_Mz95","offset-6":"offset-6_Zp68","offset-half":"offset-half_nGtc","offset-7":"offset-7_ZApX","offset-8":"offset-8_UZTZ","offset-9":"offset-9_FiKS","offset-10":"offset-10_hN9R","offset-11":"offset-11_cqgv","offset-auto":"offset-auto_ZBrI","offset-xs-1":"offset-xs-1__ZrT","offset-xs-2":"offset-xs-2_WySR","offset-xs-3":"offset-xs-3_u9Tb","offset-xs-quarter":"offset-xs-quarter_Pd1o","offset-xs-4":"offset-xs-4_Bibg","offset-xs-third":"offset-xs-third_CeeW","offset-xs-5":"offset-xs-5_OgED","offset-xs-6":"offset-xs-6_ihSu","offset-xs-half":"offset-xs-half_Vrdz","offset-xs-7":"offset-xs-7_TtZQ","offset-xs-8":"offset-xs-8_Ftc2","offset-xs-9":"offset-xs-9_HptZ","offset-xs-10":"offset-xs-10_umjb","offset-xs-11":"offset-xs-11_Suix","offset-xs-auto":"offset-xs-auto_fxe8","offset-sm-1":"offset-sm-1_knSM","offset-sm-2":"offset-sm-2_zWxo","offset-sm-3":"offset-sm-3_oqp6","offset-sm-quarter":"offset-sm-quarter_Nav1","offset-sm-4":"offset-sm-4_EvUX","offset-sm-third":"offset-sm-third_tGgh","offset-sm-5":"offset-sm-5_raNi","offset-sm-6":"offset-sm-6_KTA8","offset-sm-half":"offset-sm-half_ab81","offset-sm-7":"offset-sm-7_duQl","offset-sm-8":"offset-sm-8_uRxp","offset-sm-9":"offset-sm-9_AqYl","offset-sm-10":"offset-sm-10_Wt6J","offset-sm-11":"offset-sm-11_yAYq","offset-sm-auto":"offset-sm-auto_FAp6","offset-md-1":"offset-md-1_OpgB","offset-md-2":"offset-md-2_U24n","offset-md-3":"offset-md-3_YxnQ","offset-md-quarter":"offset-md-quarter_y53T","offset-md-4":"offset-md-4_ZaOC","offset-md-third":"offset-md-third_HZWP","offset-md-5":"offset-md-5_KVFL","offset-md-6":"offset-md-6_bZvL","offset-md-half":"offset-md-half_yilA","offset-md-7":"offset-md-7_fs04","offset-md-8":"offset-md-8_QmYF","offset-md-9":"offset-md-9_QoVc","offset-md-10":"offset-md-10_OrE0","offset-md-11":"offset-md-11_reKz","offset-md-auto":"offset-md-auto_ETdh","offset-lg-1":"offset-lg-1_zi3j","offset-lg-2":"offset-lg-2_YgjU","offset-lg-3":"offset-lg-3_CHdw","offset-lg-quarter":"offset-lg-quarter_Chor","offset-lg-4":"offset-lg-4_NOCF","offset-lg-third":"offset-lg-third_LTbL","offset-lg-5":"offset-lg-5_dGzM","offset-lg-6":"offset-lg-6_kXXi","offset-lg-half":"offset-lg-half_vFHN","offset-lg-7":"offset-lg-7_jIth","offset-lg-8":"offset-lg-8_T0Jx","offset-lg-9":"offset-lg-9_mYmL","offset-lg-10":"offset-lg-10_clJ6","offset-lg-11":"offset-lg-11_zFW2","offset-lg-auto":"offset-lg-auto_W3q4","offset-xl-1":"offset-xl-1_pRWH","offset-xl-2":"offset-xl-2_FX3q","offset-xl-3":"offset-xl-3_P8xx","offset-xl-quarter":"offset-xl-quarter_RLTy","offset-xl-4":"offset-xl-4_n7Vy","offset-xl-third":"offset-xl-third_w0fc","offset-xl-5":"offset-xl-5_vC_8","offset-xl-6":"offset-xl-6_BvQ2","offset-xl-half":"offset-xl-half_HQ16","offset-xl-7":"offset-xl-7_m1bv","offset-xl-8":"offset-xl-8_FJ1u","offset-xl-9":"offset-xl-9_oAbC","offset-xl-10":"offset-xl-10_wwaH","offset-xl-11":"offset-xl-11_HpDF","offset-xl-auto":"offset-xl-auto_Dv5P"});
-
-/***/ }),
-
-/***/ 39107:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  J: () => (/* binding */ TextFieldBase)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
-var TextField = __webpack_require__(32945);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
-var TextField_module = __webpack_require__(73413);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-;// ./packages/components/src/character-counter/CharacterCounter.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const CharacterCounter_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--line-height-20":"1.125rem","--font-size-20":"0.875rem","--text-warning":"light-dark(#e62323, #eb4e4e)","--text-primary":"light-dark(#171717, #f2f2f2)","characterCounter":"characterCounter_Rd9H"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/character-counter/CharacterCounter.tsx
-var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
-;// ./packages/components/src/textfield/TextFieldBase.tsx
-var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size,popover=_props.popover,children=_props.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
 
 /***/ }),
 
@@ -586,76 +186,72 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
-/***/ 49764:
+/***/ 48697:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  e: () => (/* binding */ ButtonGroup)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-;// ./packages/components/src/button/ButtonGroup.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const ButtonGroup_module = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","buttonGroup":"buttonGroup_mVqm"});
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/button/ButtonGroup.tsx
-var _excluded=["children","className","aria-label"];/**
- * Group several buttons together.
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ X)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
  *
- * @interface React.HTMLAttributes<HTMLDivElement>
- *
- * @see {@link https://designsystem.migrationsverket.se/components/button}
- */var ButtonGroup=function ButtonGroup(_ref){var children=_ref.children,className=_ref.className,ariaLabel=_ref['aria-label'],rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({role:"group","aria-label":ariaLabel,className:(0,clsx/* default */.A)(ButtonGroup_module.buttonGroup,className)},rest,{children:children}));};
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+]);
+
+
+//# sourceMappingURL=x.js.map
+
 
 /***/ }),
 
-/***/ 49936:
+/***/ 51729:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  s: () => (/* binding */ Radio),
-  z: () => (/* binding */ RadioGroup)
+  e: () => (/* binding */ FileUpload)
 });
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regenerator.js
+var regenerator = __webpack_require__(22007);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(10467);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DropZone.mjs + 76 modules
+var DropZone = __webpack_require__(95151);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FileTrigger.mjs
+var FileTrigger = __webpack_require__(77064);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-;// ./packages/components/src/radio/Radio.module.css
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+;// ./packages/components/src/file-upload/FileUpload.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--font-size-30":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-secondary":"light-dark(#525252, #a6a6a6)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-xs":"(max-width: 479px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
-var dist_RadioGroup = __webpack_require__(96325);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
-var Group = __webpack_require__(63899);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
+/* harmony default export */ const FileUpload_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--field-01":"light-dark(#f2f2f2, #262626)","--background":"light-dark(#ffffff, #171717)","--background-hover":"light-dark(#e6e6e6, #212121)","--border-subtle":"light-dark(#bfbfbf, #383838)","--text-disabled":"light-dark(#bfbfbf, #525252)","box":"box_kaz6","list":"list_tzm4","container":"container_tPtu","label":"label_Rz6y","text":"text_R2tR","dropzone":"dropzone_bGZ8","input":"input_XAxQ"});
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
+var LabelWrapper = __webpack_require__(82684);
 // EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
 var Label = __webpack_require__(63181);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/radio/Radio.tsx
-'use client';var _excluded=["label","description","errorMessage","children","className","errorPosition","popover"];/**
- * RadioGroup is used to group several radio items together
- */var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,popover=_ref.popover,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:(0,clsx/* default */.A)(Radio_module.radioGroup,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage})]}));};/**
- * Radio item
- * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
+;// ./packages/components/src/file-upload/FileUpload.tsx
+'use client';var _excluded=["allowsMultiple","label","description","dropzone","popover"];var FileUpload=function FileUpload(_ref){var allowsMultiple=_ref.allowsMultiple,label=_ref.label,description=_ref.description,dropzone=_ref.dropzone,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(null),files=_React$useState[0],setFiles=_React$useState[1];var handleUpload=function handleUpload(files){setFiles(files!==null?Array.from(files):[]);// TODO: actually handle files?
+};var handleDrop=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regenerator/* default */.A)().m(function _callee(e){var filePromises,resolvedFiles;return (0,regenerator/* default */.A)().w(function(_context){while(1)switch(_context.n){case 0:filePromises=e.items.filter(function(file){return file.kind==='file';}).map(function(file){return file.getFile();});_context.n=1;return Promise.all(filePromises);case 1:resolvedFiles=_context.v;setFiles(resolvedFiles);case 2:return _context.a(2);}},_callee);}));return function handleDrop(_x){return _ref2.apply(this,arguments);};}();if(dropzone)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DropZone/* DropZone */.w,{onDrop:handleDrop,className:FileUpload_module.dropzone,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",style:{display:'block'},children:"Dra och sl\xE4pp en fil inuti det streckade omr\xE5det"})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FileTrigger/* FileTrigger */.F,Object.assign({allowsMultiple:allowsMultiple,onSelect:function onSelect(files){return handleUpload(files);}},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"secondary","aria-labelledby":"fileUpload",className:FileUpload_module.input,children:allowsMultiple?'Välj filer':'Välj fil'})})),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});};var FileList=function FileList(_ref3){var files=_ref3.files,setFiles=_ref3.setFiles;var handleRemove=function handleRemove(index){setFiles(files==null?void 0:files.filter(function(f,i){return i!==index;}));};return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",{className:FileUpload_module.list,children:files.map(function(file,index){return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",{className:FileUpload_module.box,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:file.name}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",onPress:function onPress(){return handleRemove(index);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]},index);})});};
 
 /***/ }),
 
@@ -720,6 +316,176 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
+/***/ 59401:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_components_fileupload_mdx_cdb_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-fileupload-mdx-cdb.json
+const site_docs_components_fileupload_mdx_cdb_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/fileupload","title":"FileUpload","description":"Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.","source":"@site/docs/components/fileupload.mdx","sourceDirName":"components","slug":"/components/fileupload","permalink":"/pr-preview/pr-672/components/fileupload","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"FileUpload","description":"Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./packages/components/src/file-upload/FileUpload.tsx + 1 modules
+var FileUpload = __webpack_require__(51729);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
+var getComponentMetaData = __webpack_require__(13225);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./apps/docs/src/components/examples/file-upload/FileUploadExamples.tsx
+var ControlledExample=function ControlledExample(){var _React$useState=react.useState([]),files=_React$useState[0],setFiles=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(FileUpload/* FileUpload */.e,{allowsMultiple:true,label:"V\xE4lj filer att ladda upp",description:"Du kan v\xE4lja flera filer",onSelect:function onSelect(e){if(e){var _files=Array.from(e);var filenames=_files.map(function(file){return file.name;});setFiles(filenames);}}}),"Valda filer: ",files.join(', ')]});};
+// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
+var PropsTable = __webpack_require__(68713);
+;// ./apps/docs/docs/components/fileupload.mdx
+
+
+const frontMatter = {
+	title: 'FileUpload',
+	description: 'Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.',
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = undefined;
+
+const assets = {
+
+};
+
+
+
+
+
+
+
+const toc = [{
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Välj flera filer",
+  "id": "välj-flera-filer",
+  "level": 3
+}, {
+  "value": "Kontrollerat val av filer",
+  "id": "kontrollerat-val-av-filer",
+  "level": 3
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
+}];
+function _createMdxContent(props) {
+  const _components = {
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    p: "p",
+    pre: "pre",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
+      name: "FileUpload",
+      friendlyName: "Filuppladdning, filväljare",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/FileTrigger.html"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponent som används när användaren behöver ladda upp filer från det egna filsystemet."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { FileUpload } from '@midas-ds/components'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<FileUpload\n  label='Välj en fil att ladda upp'\n  description='Du kan välja en fil'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(FileUpload/* FileUpload */.e, {
+        label: "Välj en fil att ladda upp",
+        description: "Du kan välja en fil"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "välj-flera-filer",
+      children: "Välj flera filer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För att tillåta användaren att ladda upp flera filer på samma gång, använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "allowsMultiple"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<FileUpload\n  allowsMultiple\n  label='Välj filer att ladda upp'\n  description='Du kan välja flera filer'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(FileUpload/* FileUpload */.e, {
+        allowsMultiple: true,
+        label: "Välj filer att ladda upp",
+        description: "Du kan välja flera filer"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "kontrollerat-val-av-filer",
+      children: "Kontrollerat val av filer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om du vill kontrollera vilka filer användaren laddar upp kan du använda ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "useState"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import React from 'react'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "const [files, setFiles] = React.useState<string[]>([])\n\nreturn (\n  <FileUpload\n    allowsMultiple\n    label='Välj filer att ladda upp'\n    description='Du kan välja flera filer'\n    onSelect={e => {\n      if (e) {\n        const files = Array.from(e)\n        const filenames = files.map(file => file.name)\n        setFiles(filenames)\n      }\n    }}\n  />\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(ControlledExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
+      name: "FileUpload"
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
+
+/***/ }),
+
 /***/ 63181:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -781,17 +547,6 @@ var DisplayCompositeTypes=function DisplayCompositeTypes(_ref){var props=_ref.pr
 
 /***/ }),
 
-/***/ 73413:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--border-disabled":"light-dark(#bfbfbf, #525252)","--field-disabled":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--support-border-warning":"light-dark(#e62323, #e62323)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--z-index-base":"1","--z-index-above":"10","--size-130":"2.5rem","--size-150":"3rem","textField":"textField_IarX","bottomError":"bottomError_XU77","textArea":"textArea_M6yF","wrap":"wrap_ljmz","medium":"medium_jalb","input":"input_g6A6","passwordText":"passwordText_gBIs","passwordButton":"passwordButton_kacG"});
-
-/***/ }),
-
 /***/ 74351:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -838,6 +593,82 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
 
 /***/ }),
 
+/***/ 79950:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ $3985021b0ad6602f$export$37fb8590cf2c088c),
+/* harmony export */   p: () => (/* binding */ $3985021b0ad6602f$export$f5b8910cec6cf069)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5933);
+/* harmony import */ var _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75127);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+const $3985021b0ad6602f$export$37fb8590cf2c088c = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+let $3985021b0ad6602f$var$filterHoverProps = (props)=>{
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    return otherProps;
+};
+const $3985021b0ad6602f$export$f5b8910cec6cf069 = /*#__PURE__*/ (0, _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__/* .createHideableComponent */ .U7)(function Input(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useContextProps */ .JT)(props, ref, $3985021b0ad6602f$export$37fb8590cf2c088c);
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useHover */ .M)(props);
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .useFocusRing */ .o)({
+        isTextInput: true,
+        autoFocus: props.autoFocus
+    });
+    let isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocused: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: props.disabled || false,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Input'
+    });
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("input", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_5__/* .mergeProps */ .v)($3985021b0ad6602f$var$filterHoverProps(props), focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        "data-focused": isFocused || undefined,
+        "data-disabled": props.disabled || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-invalid": isInvalid || undefined
+    });
+});
+
+
+
+//# sourceMappingURL=Input.module.js.map
+
+
+/***/ }),
+
 /***/ 82684:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -874,37 +705,6 @@ var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--icon-primary":"light-dark(#171717, #f2f2f2)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-secondary":"light-dark(#ffffff, #171717)","--font-size-30":"1rem","--text-on-color":"light-dark(#ffffff, #ffffff)","--button-border-secondary":"light-dark(light-dark(#143c50, #2e7ca5), #f2f2f2)","--button-background-secondary-hover":"light-dark(#e6e6e6, #212121)","--button-background-disabled":"light-dark(#f2f2f2, #262626)","--white":"#ffffff","--border-disabled":"light-dark(#bfbfbf, #525252)","--button-background-secondary-active":"light-dark(#d9d9d9, #262626)","--button-background-tertiary-hover":"light-dark(#e6e6e6, #212121)","--button-background-tertiary-active":"light-dark(#d9d9d9, #262626)","--text-tertiary":"light-dark(#143c50, #f2f2f2)","--button-background-danger":"light-dark(#e62323, #e62323)","--button-background-danger-hover":"light-dark(#bc1d1d, #bc1d1d)","--text-disabled":"light-dark(#bfbfbf, #525252)","--button-background-danger-active":"light-dark(#7d1313, #7d1313)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--button-background-icon-hover":"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))","--button-background-icon-active":"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))","--size-50":"0.625rem","--size-70":"0.875rem","--size-80":"1rem","--size-120":"2rem","--size-130":"2.5rem","--size-150":"3rem","--line-height-30":"1.25rem","button":"button_RcXK","secondary":"secondary_h5I_","tertiary":"tertiary_xq7E","iconBtn":"iconBtn__8qK","medium":"medium_uqO9","danger":"danger_iFp6","iconRight":"iconRight_iW1e","fullwidth":"fullwidth_WWNT","primary":"primary_JNNk"});
-
-/***/ }),
-
-/***/ 88413:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   o: () => (/* binding */ useLocalizedStringFormatter)
-/* harmony export */ });
-/* unused harmony export useLocalizedStringDictionary */
-/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92122);
-/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57612);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39892);
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */var cache=new WeakMap();function getCachedDictionary(strings){var dictionary=cache.get(strings);if(!dictionary){dictionary=new _internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B(strings,'sv-SE');cache.set(strings,dictionary);}return dictionary;}/**
- * Returns a cached LocalizedStringDictionary for the given strings.
- */function useLocalizedStringDictionary(strings,packageName){return packageName&&_internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B.getGlobalDictionaryForPackage(packageName)||getCachedDictionary(strings);}/**
- * Provides localized string formatting for the current locale. Supports interpolating variables,
- * selecting the correct pluralization, and formatting numbers. Automatically updates when the locale changes.
- * @param strings - A mapping of languages to localized strings by key.
- */function useLocalizedStringFormatter(strings,packageName){var _useLocale=(0,react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .useLocale */ .Y)(),locale=_useLocale.locale;var dictionary=useLocalizedStringDictionary(strings,packageName);return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function(){return new _internationalized_string__WEBPACK_IMPORTED_MODULE_3__/* .LocalizedStringFormatter */ .J(locale,dictionary);},[dictionary,locale]);}
 
 /***/ }),
 
@@ -955,6 +755,34 @@ var dist_Heading = __webpack_require__(57936);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/heading/Heading.tsx
 var _excluded=["children","className","isExpressive","level","elementType"];var Heading=function Heading(_ref){var children=_ref.children,className=_ref.className,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$level=_ref.level,level=_ref$level===void 0?3:_ref$level,elementType=_ref.elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var semanticLevel=elementType&&parseInt(elementType.split('h')[1]);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Heading/* Heading */.D,Object.assign({level:semanticLevel||level,className:(0,clsx/* default */.A)([Heading_module.h1,Heading_module.h2,Heading_module.h3,Heading_module.h4,Heading_module.h5,Heading_module.h6][level-1],className)},isExpressive&&{'data-expressive':true},rest,{children:children}));};
+
+/***/ }),
+
+/***/ 97213:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Info)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Info = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Info", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
+]);
+
+
+//# sourceMappingURL=info.js.map
+
 
 /***/ })
 

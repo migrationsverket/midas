@@ -314,6 +314,8 @@ var CollectionBuilder = __webpack_require__(41177);
 var chevron_down = __webpack_require__(75107);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
+var LabelWrapper = __webpack_require__(82684);
 // EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
 var Label = __webpack_require__(63181);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
@@ -328,8 +330,6 @@ var ListBox = __webpack_require__(22247);
 var ListBoxItem = __webpack_require__(98437);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
 var ListBoxSection = __webpack_require__(73807);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
 ;// ./packages/components/src/combobox/ComboBox.tsx
 'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size","popover"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,popover=_ref.popover,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var inputRef=react.useRef(null);var handleMouseUp=function handleMouseUp(event){if(event.currentTarget.value){var _inputRef$current;(_inputRef$current=inputRef.current)==null||_inputRef$current.select();}};return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx)),onMouseUp:handleMouseUp,ref:inputRef}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxPopover/* ListBoxPopover */.f,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},props));}/**
  * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
