@@ -19,7 +19,7 @@ export const BasicExample: React.FC<Partial<SelectProps>> = props => (
   />
 )
 
-export const ControlledExample = () => {
+export const ControlledExample: React.FC<Partial<SelectProps>> = props => {
   const options = [
     { id: 'apelsin', name: 'Apelsin' },
     { id: 'banan', name: 'Banan' },
@@ -40,17 +40,23 @@ export const ControlledExample = () => {
   return (
     <>
       <Select
+        {...props}
         label='Favoritfrukt'
         description='Välj vilken du vill'
         placeholder='Välj en frukt'
-        selectionMode='multiple'
         selectedKeys={selectedFruit}
         onSelectionChange={handleSelectionChange}
-        isSelectableAll
         options={options}
       />
       <pre>
-        Selected fruit: {selectedFruit && Array.from(selectedFruit).join(', ')}
+        {props.selectionMode === 'multiple' ? (
+          <>
+            Selected fruit:{' '}
+            {selectedFruit && Array.from(selectedFruit).join(', ')}
+          </>
+        ) : (
+          <>Selected fruit: {selectedFruit}</>
+        )}
       </pre>
     </>
   )
