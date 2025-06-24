@@ -45,9 +45,51 @@ Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas iställ
 
 Midas Select är en variant av React Aria `Select` med möjlighet till flerval.
 
-## Varianter
+## Enkelval
 
-### Flerval
+Standardvärdet för `selectionMode` är `single`, om du inte anger `selectionMode` kan användaren bara välja ett värde.
+
+### Kontrollerat val
+
+Användarens val kan kontrolleras med hjälp av attributet `selectedKeys` tillsammans med eventet `onSelectionChange`.
+Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt val, så kan du använda det för att uppdatera ditt state.
+
+För att komponenten också stödjer flerval benämns `selectedKeys` i plural och värdet för `id` kommer tillbaka som en `Selection`.
+Eftersom att vi vet att alternativet "all" inte kommer ges så kan vi skicka `setSelectedFruit` direkt till `onSelectionChange` till skillnad från exemplet för [flerval](#kontrollerade-val).
+
+```tsx
+import React from 'react'
+import { Selection } from 'react-aria-components'
+
+const options = [
+  { id: 'apelsin', name: 'Apelsin' },
+  { id: 'banan', name: 'Banan' },
+  { id: 'citron', name: 'Citron' },
+  { id: 'dadel', name: 'Dadel' },
+  { id: 'fikon', name: 'Fikon' },
+]
+
+const [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())
+
+return (
+  <Select
+    label='Favoritfrukt'
+    description='Välj vilken du vill'
+    placeholder='Välj en frukt'
+    options={options}
+    // highlight-start
+    selectedKeys={selectedFruit}
+    onSelectionChange={setSelectedFruit}
+    // highlight-end
+  />
+)
+```
+
+<div className='card'>
+  <ControlledExample />
+</div>
+
+## Flerval
 
 Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
 
@@ -165,8 +207,11 @@ Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde til
 
 ### Kontrollerade val
 
-Användarens val kan kontrolleras med hjälp av attributet `selectedKeys` tillsammans med eventet `onSelectionChange`.
-Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt val, så kan du använda det för att uppdatera ditt state.
+Se [kontrollerat val vid enkelval](#kontrollerat-val) för en beskrivning av typerna för `selectedKeys` och `onSelectionChange`.
+
+:::note
+Notera den manuella hantering som görs om användaren klickar på "Välj alla"
+:::
 
 ```tsx
 import React from 'react'
@@ -197,7 +242,7 @@ return (
     // highlight-start
     selectionMode='multiple'
     selectedKeys={selectedFruit}
-    onSelectionChange={handleSelectionChange
+    onSelectionChange={handleSelectionChange}
     isSelectableAll
     // highlight-end
     options={options}
@@ -206,7 +251,10 @@ return (
 ```
 
 <div className='card'>
-  <ControlledExample />
+  <ControlledExample
+    selectionMode='multiple'
+    isSelectableAll
+  />
 </div>
 
 ## Sektioner
