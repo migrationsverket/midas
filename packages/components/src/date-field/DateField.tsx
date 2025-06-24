@@ -8,10 +8,11 @@ import {
 import clsx from 'clsx'
 import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
-import { InfoPopoverProps, Label, LabelWrapper } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import styles from './DateField.module.css'
 import { Size } from '../common/types'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string

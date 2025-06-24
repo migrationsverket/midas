@@ -13,10 +13,11 @@ import { DatePickerPopover } from './DatePickerPopover'
 import { Calendar } from '../calendar'
 import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
-import { InfoPopoverProps, Label, LabelWrapper } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   description?: string

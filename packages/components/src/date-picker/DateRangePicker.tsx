@@ -12,11 +12,12 @@ import { DatePickerInputField } from './DatePickerInputField'
 import { DatePickerPopover } from './DatePickerPopover'
 import { DateInput, DateInputDivider, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
-import { InfoPopoverProps, Label, LabelWrapper } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { RangeCalendar } from '../calendar'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface DateRangePickerProps
   extends AriaDateRangePickerProps<DateValue> {
