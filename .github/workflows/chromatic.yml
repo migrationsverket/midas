@@ -3,17 +3,12 @@ name: 'Chromatic'
 permissions:
   contents: read
 
-on:
-  push:
-    branches-ignore:
-      - 'chore/**'
-      - 'docs/**'
-      - 'dependabot/**'
+on: push
 
 jobs:
   chromatic:
     if: contains(github.event.head_commit.message, '[run-chromatic]') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
-    name: Run Chromatic
+    name: Chromatic
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
