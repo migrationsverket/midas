@@ -69,7 +69,7 @@ export const TextFieldBase = React.forwardRef<
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
-      <div className={styles.wrap}>{children}</div>
+      {children}
       {errorPosition === 'bottom' && (
         <FieldError
           data-testid='fieldError'
