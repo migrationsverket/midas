@@ -279,7 +279,7 @@ function _createMdxContent(props) {
     }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
       type: "note",
       children: (0,jsx_runtime.jsx)(_components.p, {
-        children: "Notera den manuella hantering som görs om använder klickar på \"Välj alla\""
+        children: "Notera den manuella hantering som görs om användaren klickar på \"Välj alla\""
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
