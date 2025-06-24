@@ -58,6 +58,14 @@ export function ComboBox<T extends ListBoxOption>({
   popover,
   ...props
 }: ComboBoxProps<T>) {
+  const inputRef = React.useRef<HTMLInputElement>(null)
+
+  const handleMouseUp: React.MouseEventHandler<HTMLInputElement> = event => {
+    if (event.currentTarget.value) {
+      inputRef.current?.select()
+    }
+  }
+
   return (
     <AriaComboBox
       className={clsx(styles.combobox, className)}
@@ -75,6 +83,8 @@ export function ComboBox<T extends ListBoxOption>({
           className={clsx(styles.inputField, {
             [styles.medium]: size === 'medium',
           })}
+          onMouseUp={handleMouseUp}
+          ref={inputRef}
         />
         <Button
           className={clsx(styles.button, {

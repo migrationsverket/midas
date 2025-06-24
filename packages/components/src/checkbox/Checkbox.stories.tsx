@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Checkbox } from './Checkbox'
 import { expect, userEvent } from '@storybook/test'
+import { Checkbox } from './Checkbox'
 
-const meta: Meta<typeof Checkbox> = {
+type Story = StoryObj<typeof Checkbox>
+
+export default {
   component: Checkbox,
   title: 'Components/Checkbox',
   tags: ['autodocs'],
@@ -10,59 +12,45 @@ const meta: Meta<typeof Checkbox> = {
     layout: 'centered',
   },
   args: {
-    isInvalid: false,
-    isSelected: false,
-    isIndeterminate: false,
     isDisabled: false,
-    isRequired: false,
+    isIndeterminate: false,
+    isInvalid: false,
     isReadOnly: false,
+    isRequired: false,
+    value: 'unsubscribe',
+    children: 'Unsubscribe',
   },
-  argTypes: {
-    isInvalid: { type: 'boolean' },
-    isSelected: { type: 'boolean' },
-    isIndeterminate: { type: 'boolean' },
-    isDisabled: { type: 'boolean' },
-    isRequired: { type: 'boolean' },
-    isReadOnly: { type: 'boolean' },
-  },
-}
+} satisfies Meta<typeof Checkbox>
 
-export default meta
-type Story = StoryObj<typeof Checkbox>
-
-export const Example: Story = {
-  render: ({ ...args }) => {
-    return (
-      <Checkbox
-        value='unsubscribe'
-        {...args}
-      >
-        Unsubscribe
-      </Checkbox>
-    )
-  },
-}
+export const Example: Story = {}
 
 export const Disabled: Story = {
   args: {
     isDisabled: true,
   },
-  render: ({ ...args }) => {
-    return (
-      <Checkbox
-        value='unsubscribe'
-        {...args}
-      >
-        Unsubscribe
-      </Checkbox>
-    )
+}
+
+export const Invalid: Story = {
+  args: {
+    isInvalid: true,
+  },
+}
+
+export const Indeterminate: Story = {
+  args: {
+    isIndeterminate: true,
+  },
+}
+
+export const Selected: Story = {
+  args: {
+    isSelected: true,
   },
 }
 
 export const Required: Story = {
   args: {
     isRequired: true,
-    'aria-label': 'test',
   },
   tags: ['!dev', '!autodocs'],
   parameters: {
@@ -85,10 +73,9 @@ export const Required: Story = {
     await step(
       'It should be (aria) invalid if the user submitted without checking the box',
       async () => {
-        const checkbox = canvas.getByLabelText('test')
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Enter]')
+        const checkbox = canvas.getByLabelText('Unsubscribe')
+        await userEvent.click(checkbox)
+        await userEvent.click(checkbox)
         expect(checkbox).toBeInvalid()
       },
     )
