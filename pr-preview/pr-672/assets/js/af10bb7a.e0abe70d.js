@@ -1,5 +1,281 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5095],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[153],{
+
+/***/ 1314:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_components_select_mdx_af1_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-select-mdx-af1.json
+const site_docs_components_select_mdx_af1_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/select","title":"Select","description":"<ComponentHeader","source":"@site/docs/components/select.mdx","sourceDirName":"components","slug":"/components/select","permalink":"/pr-preview/pr-672/components/select","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
+var PropsTable = __webpack_require__(68713);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
+var getComponentMetaData = __webpack_require__(13225);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/components/src/select/Select.tsx + 10 modules
+var Select = __webpack_require__(32340);
+;// ./apps/docs/src/components/examples/select/SelectExamples.tsx
+var BasicExample=function BasicExample(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* Select */.l,Object.assign({label:"Favoritfrukt",description:"V\xE4lj vilken du vill",placeholder:"V\xE4lj en frukt",selectionMode:"single",options:[{id:'apelsin',name:'Apelsin'},{id:'banan',name:'Banan'},{id:'citron',name:'Citron'},{id:'dadel',name:'Dadel'},{id:'fikon',name:'Fikon'}]},props));};var ControlledExample=function ControlledExample(){var options=[{id:'apelsin',name:'Apelsin'},{id:'banan',name:'Banan'},{id:'citron',name:'Citron'},{id:'dadel',name:'Dadel'},{id:'fikon',name:'Fikon'}];var _React$useState=react.useState(new Set()),selectedFruit=_React$useState[0],setSelectedFruit=_React$useState[1];var handleSelectionChange=function handleSelectionChange(keys){if(keys==='all'){return setSelectedFruit(new Set(options.map(function(_ref){var id=_ref.id;return id;})));}return setSelectedFruit(keys);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* Select */.l,{label:"Favoritfrukt",description:"V\xE4lj vilken du vill",placeholder:"V\xE4lj en frukt",selectionMode:"multiple",selectedKeys:selectedFruit,onSelectionChange:handleSelectionChange,isSelectableAll:true,options:options}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Selected fruit: ",selectedFruit&&Array.from(selectedFruit).join(', ')]})]});};var SectionedExample=function SectionedExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(Select/* Select */.l,{label:"Favoritfrukt eller gr\xF6nsak",description:"V\xE4lj vilken du vill",placeholder:"V\xE4lj en frukt eller gr\xF6nsak",selectionMode:"multiple",options:[{name:'Frukter',children:[{id:'kiwi',name:'Kiwi'},{id:'banana',name:'Banan'},{id:'apple',name:'Äpple'}]},{name:'Grönsaker',children:[{id:'carrot',name:'Morot'},{id:'broccoli',name:'Broccoli'}]}]});};
+;// ./apps/docs/docs/components/select.mdx
+
+
+const frontMatter = {
+	title: 'Select',
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = undefined;
+
+const assets = {
+
+};
+
+
+
+
+
+
+const toc = [{
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "Beskrivning",
+  "id": "beskrivning",
+  "level": 2
+}, {
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Flerval",
+  "id": "flerval",
+  "level": 3
+}, {
+  "value": "Välj alla",
+  "id": "välj-alla",
+  "level": 3
+}, {
+  "value": "Visa etiketter",
+  "id": "visa-etiketter",
+  "level": 4
+}, {
+  "value": "Förvalda alternativ (okontrollerat)",
+  "id": "förvalda-alternativ-okontrollerat",
+  "level": 3
+}, {
+  "value": "Kontrollerade val",
+  "id": "kontrollerade-val",
+  "level": 3
+}, {
+  "value": "Sektioner",
+  "id": "sektioner",
+  "level": 2
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
+}, {
+  "value": "Select",
+  "id": "select",
+  "level": 3
+}];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    h4: "h4",
+    p: "p",
+    pre: "pre",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
+      name: "Select",
+      friendlyName: "Flerval, väljare, dropdown, rullgardin"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Inmatningsfält som används för att välja ett eller flera fördefinierade alternativ."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { Select } from '@midas-ds/components'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Select\n  label='Favoritfrukt'\n  description='Välj vilken du vill'\n  placeholder='Välj en frukt'\n  selectionMode='single'\n  options={[\n    { id: 'apelsin', name: 'Apelsin' },\n    { id: 'banan', name: 'Banan' },\n    { id: 'citron', name: 'Citron' },\n    { id: 'dadel', name: 'Dadel' },\n    { id: 'fikon', name: 'Fikon' },\n  ]}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(BasicExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om det är färre alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/pr-preview/pr-672/components/radio",
+        children: "Radio"
+      }), " användas istället."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "beskrivning",
+      children: "Beskrivning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Midas Select är en variant av React Aria ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Select"
+      }), " med möjlighet till flerval."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "flerval",
+      children: "Flerval"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "selectionMode=\"multiple\""
+      }), " för att slå på flervalsläget."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Select\n  label='Favoritfrukt'\n  description='Välj vilken du vill'\n  placeholder='Välj en frukt'\n  // highlight-start\n  selectionMode='multiple'\n  // highlight-end\n  options={[\n    { id: 'apelsin', name: 'Apelsin' },\n    { id: 'banan', name: 'Banan' },\n    { id: 'citron', name: 'Citron' },\n    { id: 'dadel', name: 'Dadel' },\n    { id: 'fikon', name: 'Fikon' },\n  ]}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(BasicExample, {
+        selectionMode: "multiple"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "välj-alla",
+      children: "Välj alla"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isSelectableAll"
+      }), " kan användas för att lägga till en \"Välj alla\"-knapp."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Select\n  label='Favoritfrukt'\n  description='Välj vilken du vill'\n  placeholder='Välj en frukt'\n  // highlight-start\n  selectionMode='multiple'\n  isSelectableAll\n  // highlight-end\n  options={[\n    { id: 'apelsin', name: 'Apelsin' },\n    { id: 'banan', name: 'Banan' },\n    { id: 'citron', name: 'Citron' },\n    { id: 'dadel', name: 'Dadel' },\n    { id: 'fikon', name: 'Fikon' },\n  ]}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(BasicExample, {
+        selectionMode: "multiple",
+        isSelectableAll: true
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h4, {
+      id: "visa-etiketter",
+      children: "Visa etiketter"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "showTags"
+      }), " kan användas för att visa valen som etiketter under rullgardinen."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Select\n  label='Favoritfrukt'\n  description='Välj vilken du vill'\n  placeholder='Välj en frukt'\n  // highlight-start\n  selectionMode='multiple'\n  showTags\n  // highlight-end\n  options={[\n    { id: 'apelsin', name: 'Apelsin' },\n    { id: 'banan', name: 'Banan' },\n    { id: 'citron', name: 'Citron' },\n    { id: 'dadel', name: 'Dadel' },\n    { id: 'fikon', name: 'Fikon' },\n  ]}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(BasicExample, {
+        selectionMode: "multiple",
+        showTags: true
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "förvalda-alternativ-okontrollerat",
+      children: "Förvalda alternativ (okontrollerat)"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "defaultSelectedKeys"
+      }), " för att sätta ett initialt värde till komponenten."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Select\n  label='Favoritfrukt'\n  description='Välj vilken du vill'\n  placeholder='Välj en frukt'\n  // highlight-start\n  selectionMode='multiple'\n  defaultSelectedKeys={new Set(['banan', 'dadel'])}\n  // highlight-end\n  options={[\n    { id: 'apelsin', name: 'Apelsin' },\n    { id: 'banan', name: 'Banan' },\n    { id: 'citron', name: 'Citron' },\n    { id: 'dadel', name: 'Dadel' },\n    { id: 'fikon', name: 'Fikon' },\n  ]}\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(BasicExample, {
+        selectionMode: "multiple",
+        defaultSelectedKeys: new Set(['banan', 'dadel'])
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "kontrollerade-val",
+      children: "Kontrollerade val"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Användarens val kan kontrolleras med hjälp av attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "selectedKeys"
+      }), " tillsammans med eventet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onSelectionChange"
+      }), ".\nVärdet för ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "id"
+      }), " skickas tillbaka i callbacken när användaren justerar sitt val, så kan du använda det för att uppdatera ditt state."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import React from 'react'\nimport { Selection } from 'react-aria-components'\n\nconst options = [\n  { id: 'apelsin', name: 'Apelsin' },\n  { id: 'banan', name: 'Banan' },\n  { id: 'citron', name: 'Citron' },\n  { id: 'dadel', name: 'Dadel' },\n  { id: 'fikon', name: 'Fikon' },\n]\n\nconst [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())\n\nconst handleSelectionChange = (keys: Selection) => {\n  if (keys === 'all') {\n    return setSelectedFruit(new Set(options.map(({ id }) => id)))\n  }\n  return setSelectedFruit(keys)\n}\n\nreturn (\n  <Select\n    label='Favoritfrukt'\n    description='Välj vilken du vill'\n    placeholder='Välj en frukt'\n    // highlight-start\n    selectionMode='multiple'\n    selectedKeys={selectedFruit}\n    onSelectionChange={handleSelectionChange\n    isSelectableAll\n    // highlight-end\n    options={options}\n  />\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(ControlledExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "sektioner",
+      children: "Sektioner"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "const options = [\n  {\n    name: 'Frukter',\n    children: [\n      { id: 'kiwi', name: 'Kiwi' },\n      { id: 'banana', name: 'Banan' },\n      { id: 'apple', name: 'Äpple' },\n    ],\n  },\n  {\n    name: 'Grönsaker',\n    children: [\n      { id: 'carrot', name: 'Morot' },\n      { id: 'broccoli', name: 'Broccoli' },\n    ],\n  },\n]\n\nreturn (\n  <Select\n    label='Favoritfrukt eller grönsak'\n    description='Välj vilken du vill'\n    placeholder='Välj en frukt eller grönsak'\n    selectionMode='multiple'\n    options={options}\n  />\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(SectionedExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "select",
+      children: "Select"
+    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
+      name: "Select"
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
+
+/***/ }),
 
 /***/ 6974:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -9,6 +285,58 @@
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--border-primary":"light-dark(#171717, #f2f2f2)","--focus-inset":"inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--layer-selected-01":"light-dark(#d9d9d9, #383838)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--size-40":"0.5rem","--size-80":"1rem","--size-150":"3rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","listBox":"listBox_l3jg","listBoxPopover":"listBoxPopover_OG2Y","listBoxSectionHeading":"listBoxSectionHeading_R5mH","listBoxButton":"listBoxButton_LfGK","listBoxItem":"listBoxItem_eA9_"});
+
+/***/ }),
+
+/***/ 8807:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  S: () => (/* binding */ Checkbox)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/useHover.mjs
+var useHover = __webpack_require__(16638);
+// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/usePress.mjs + 6 modules
+var usePress = __webpack_require__(35044);
+// EXTERNAL MODULE: ./node_modules/@react-aria/focus/dist/useFocusRing.mjs
+var useFocusRing = __webpack_require__(16133);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RSPContexts.mjs
+var RSPContexts = __webpack_require__(32373);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Form.mjs
+var Form = __webpack_require__(23128);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/context.ts
+var context = __webpack_require__(20011);
+// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckboxGroupItem.mjs
+var useCheckboxGroupItem = __webpack_require__(26493);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/mergeProps.mjs
+var mergeProps = __webpack_require__(32217);
+// EXTERNAL MODULE: ./node_modules/@react-aria/visually-hidden/dist/VisuallyHidden.mjs
+var VisuallyHidden = __webpack_require__(87979);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
+var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/checkbox/CheckboxInner.tsx
+var CheckboxInner=/*#__PURE__*/react.forwardRef(function(props,ref){var _props$hoverResult=props.hoverResult,hoverProps=_props$hoverResult.hoverProps,isHovered=_props$hoverResult.isHovered;var _props$pressResult=props.pressResult,pressProps=_props$pressResult.pressProps,isPressed=_props$pressResult.isPressed;var _props$focusRingAria=props.focusRingAria,isFocused=_props$focusRingAria.isFocused,isFocusVisible=_props$focusRingAria.isFocusVisible,focusProps=_props$focusRingAria.focusProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)("label",Object.assign({ref:ref},(0,mergeProps/* mergeProps */.v)(hoverProps,pressProps,props.labelProps),{slot:props.slot||undefined,className:Checkbox_module/* default */.A.checkbox,"data-hovered":isHovered||undefined,"data-selected":props.isSelected||undefined,"data-indeterminate":props.isIndeterminate||undefined,"data-pressed":isPressed||undefined,"data-disabled":props.isDisabled||undefined,"data-readonly":props.isReadOnly||undefined,"data-invalid":props.isInvalid||undefined,"data-focused":isFocused||undefined,"data-focus-visible":isFocusVisible||undefined,"data-required":props.isRequired||undefined,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* clsx */.$)(Checkbox_module/* default */.A.checkboxInner),children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:props.isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),/*#__PURE__*/(0,jsx_runtime.jsx)(VisuallyHidden/* VisuallyHidden */.s,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("input",Object.assign({},(0,mergeProps/* mergeProps */.v)(props.inputProps,focusProps),{ref:props.inputRef}))}),props.children]}));});
+;// ./packages/components/src/checkbox/CheckboxGroupItem.tsx
+var CheckBoxGroupItem=/*#__PURE__*/react.forwardRef(function(props,ref){var checkboxGroupItem=(0,useCheckboxGroupItem/* useCheckboxGroupItem */.B)(Object.assign({},props,{value:props.value||''}),props.state,props.inputRef);return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxInner,Object.assign({},props,checkboxGroupItem,{ref:ref}));});
+// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckbox.mjs + 1 modules
+var useCheckbox = __webpack_require__(58044);
+// EXTERNAL MODULE: ./node_modules/@react-stately/toggle/dist/useToggleState.mjs
+var useToggleState = __webpack_require__(51623);
+;// ./packages/components/src/checkbox/SingleCheckbox.tsx
+var SingleCheckbox=/*#__PURE__*/react.forwardRef(function(props,ref){var item=(0,useCheckbox/* useCheckbox */.v)(props,(0,useToggleState/* useToggleState */.H)(props),props.inputRef);return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxInner,Object.assign({},props,item,{ref:ref}));});
+;// ./packages/components/src/checkbox/Checkbox.tsx
+var Checkbox=/*#__PURE__*/react.forwardRef(function(props,ref){var _ref,_props$validationBeha;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,RSPContexts/* CheckboxContext */.BP);props=_useContextProps[0];ref=_useContextProps[1];var formProps=(0,utils/* useSlottedContext */.CC)(Form/* FormContext */.c);var validationBehavior=(_ref=(_props$validationBeha=props.validationBehavior)!=null?_props$validationBeha:formProps==null?void 0:formProps.validationBehavior)!=null?_ref:'native';var state=react.useContext(context/* CheckboxGroupContext */.I);var inputRef=react.useRef(null);var hoverResult=(0,useHover/* useHover */.M)(props);var pressResult=(0,usePress/* usePress */.d)({ref:ref,isDisabled:props.isDisabled});var focusRingAria=(0,useFocusRing/* useFocusRing */.o)();if(state){return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckBoxGroupItem,Object.assign({},props,{state:state,inputRef:inputRef,hoverResult:hoverResult,pressResult:pressResult,focusRingAria:focusRingAria,validationBehavior:validationBehavior}));}return/*#__PURE__*/(0,jsx_runtime.jsx)(SingleCheckbox,Object.assign({},props,{inputRef:inputRef,hoverResult:hoverResult,pressResult:pressResult,focusRingAria:focusRingAria,validationBehavior:validationBehavior}));});
 
 /***/ }),
 
@@ -26,6 +354,17 @@
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44586);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyName=_ref.friendlyName,overrideHeadlessLink=_ref.overrideHeadlessLink,overrideHeadlessLinkTitle=_ref.overrideHeadlessLinkTitle;var _useDocusaurusContext=(0,_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(),customFields=_useDocusaurusContext.siteConfig.customFields;var componentPath="?path=/docs/components-"+name.toLowerCase()+"--docs";var storybookHost= false?0:customFields!=null&&customFields.currentChromaticBranchUrl?"https://"+(customFields==null?void 0:customFields.currentChromaticBranchUrl)+"--"+customFields.chromaticAppId+".chromatic.com":"https://main--"+(customFields==null?void 0:customFields.chromaticAppId)+".chromatic.com";var storybookLink=storybookHost+"/"+componentPath;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section",{className:"component-header",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_2__/* .Grid */ .x,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"friendlyName",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:storybookLink,variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A,iconPlacement:"left",children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A,iconPlacement:"left",children:overrideHeadlessLinkTitle?overrideHeadlessLinkTitle:'React Aria'})})]})});};
+
+/***/ }),
+
+/***/ 16025:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--border-primary":"light-dark(#171717, #f2f2f2)","--border-disabled":"light-dark(#bfbfbf, #525252)","--breakpoint-xs":"(max-width: 479px)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-on-color":"light-dark(#ffffff, #ffffff)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--field-disabled":"light-dark(#f2f2f2, #262626)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--line-height-30":"1.25rem","wrap":"wrap_YzPY","checkboxInner":"checkboxInner_Nam1","checkbox":"checkbox_J2GB","checkboxGroup":"checkboxGroup_iAq9"});
 
 /***/ }),
 
@@ -80,6 +419,17 @@ var dist_Text = __webpack_require__(27279);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/text/Text.tsx
 var _excluded=["children","className","variant","isExpressive","elementType"];var DEFAULT_ELEMENT='span';var Text=function Text(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'body-02':_ref$variant,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'body-01':Text_module['body-01'],'body-02':Text_module['body-02']};var textProps=Object.assign({className:(0,clsx/* default */.A)(rest.slot==='description'?Text_module.description:classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},isExpressive&&{'data-expressive':true},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Text/* Text */.E,Object.assign({},textProps,{children:children}));};
+
+/***/ }),
+
+/***/ 20011:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   I: () => (/* binding */ CheckboxGroupContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+var CheckboxGroupContext=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
 
 /***/ }),
 
@@ -138,8 +488,11 @@ var _excluded=["className","children"];var ListBox=function ListBox(_ref){var cl
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
+  cR: () => (/* binding */ LabelWrapper),
+  d$: () => (/* binding */ LabelWrapperContext)
 });
+
+// UNUSED EXPORTS: useLabelWrapperContext
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
@@ -155,9 +508,9 @@ var info = __webpack_require__(97213);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];var ctx=react.useContext(LabelWrapperContext);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,id:ctx==null?void 0:ctx.popoverId,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
 ;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+var LabelWrapperContext=/*#__PURE__*/react.createContext(undefined);var useLabelWrapperContext=function useLabelWrapperContext(){return React.useContext(LabelWrapperContext);};var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;var popoverId=react.useId();if(popover)return/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapperContext.Provider,{value:{popoverId:popoverId},children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]})});return children;};
 
 /***/ }),
 
@@ -214,6 +567,151 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 
 /***/ }),
 
+/***/ 32340:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  l: () => (/* binding */ Select)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/useObjectRef.mjs
+var useObjectRef = __webpack_require__(83908);
+// EXTERNAL MODULE: ./node_modules/@react-stately/collections/dist/Section.mjs
+var Section = __webpack_require__(72487);
+// EXTERNAL MODULE: ./node_modules/@react-stately/collections/dist/Item.mjs
+var Item = __webpack_require__(48639);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 40 modules
+var TagGroup = __webpack_require__(99628);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/check.js
+var check = __webpack_require__(45773);
+// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
+var CollectionBuilder = __webpack_require__(41177);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
+var Checkbox = __webpack_require__(8807);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxItem.tsx
+var ListBoxItem = __webpack_require__(98437);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
+var ListBoxSection = __webpack_require__(73807);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.tsx + 1 modules
+var ListBox = __webpack_require__(22247);
+;// ./packages/components/src/select/Select.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Select_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--border-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--focus-inset":"inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)","--layer-01":"light-dark(#f2f2f2, #262626)","--support-border-warning":"light-dark(#e62323, #e62323)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--layer-selected-01":"light-dark(#d9d9d9, #383838)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--text-on-color":"light-dark(#ffffff, #ffffff)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--field-disabled":"light-dark(#f2f2f2, #262626)","--border-disabled":"light-dark(#bfbfbf, #525252)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--button-background-disabled":"light-dark(#f2f2f2, #262626)","--text-warning":"light-dark(#e62323, #eb4e4e)","--size-40":"0.5rem","--size-70":"0.875rem","--size-130":"2.5rem","--size-150":"3rem","wrapper":"wrapper_VDHP","trigger":"trigger_YoQG","medium":"medium_IF05","icon":"icon_roiA","tagGroup":"tagGroup_t6GX","listBoxItemCheckmark":"listBoxItemCheckmark_Dz5t","triggerContainer":"triggerContainer_JBm2","selectValueTag":"selectValueTag_Bx1C","clearButton":"clearButton_p8du","truncate":"truncate_J6cE","checkboxContainer":"checkboxContainer_u2A7"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/select/SelectListBox.tsx
+var _excluded=["state"];var Option=function Option(_ref){var item=_ref.item;return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},item.value,{textValue:item.textValue,children:function children(_ref2){var isDisabled=_ref2.isDisabled,isSelected=_ref2.isSelected,selectionMode=_ref2.selectionMode;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[selectionMode==='multiple'?/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isDisabled:isDisabled,isSelected:isSelected,isReadOnly:true,excludeFromTabOrder:true,"aria-label":item.textValue})}):null,item.rendered,isSelected&&selectionMode==='single'?/*#__PURE__*/(0,jsx_runtime.jsx)(check/* default */.A,{size:20,className:Select_module.listBoxItemCheckmark}):null]});}}));};var SelectListBox_Section=function Section(_ref3){var section=_ref3.section,state=_ref3.state;return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},section.value,{children:state.collection.getChildren?/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:state.collection.getChildren(section.key),children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item});}}):null}));};var SelectListBox=function SelectListBox(_ref4){var state=_ref4.state,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,Object.assign({},rest,state,{escapeKeyBehavior:"none",onSelectionChange:state.setSelectedKeys,items:state.collection,children:function children(item){return item.type==='section'?/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox_Section,{state:state,section:item}):/*#__PURE__*/(0,jsx_runtime.jsx)(Option,{item:item});}}));};
+// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/useCollator.mjs
+var useCollator = __webpack_require__(82627);
+// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/useFocusVisible.mjs
+var useFocusVisible = __webpack_require__(95562);
+// EXTERNAL MODULE: ./node_modules/@react-aria/label/dist/useField.mjs
+var useField = __webpack_require__(85441);
+// EXTERNAL MODULE: ./node_modules/@react-aria/menu/dist/useMenuTrigger.mjs + 35 modules
+var useMenuTrigger = __webpack_require__(25263);
+// EXTERNAL MODULE: ./node_modules/@react-aria/selection/dist/ListKeyboardDelegate.mjs
+var ListKeyboardDelegate = __webpack_require__(96584);
+// EXTERNAL MODULE: ./node_modules/@react-aria/selection/dist/useTypeSelect.mjs
+var useTypeSelect = __webpack_require__(18399);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/filterDOMProps.mjs
+var filterDOMProps = __webpack_require__(5987);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/mergeProps.mjs
+var mergeProps = __webpack_require__(32217);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/useId.mjs + 1 modules
+var useId = __webpack_require__(84137);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/chain.mjs
+var chain = __webpack_require__(72166);
+;// ./packages/components/src/select/useMultiSelect.ts
+function useMultiSelect(props,state,ref){var disallowEmptySelection=props.disallowEmptySelection,isDisabled=props.isDisabled;var collator=(0,useCollator/* useCollator */.Q)({usage:'search',sensitivity:'base'});var delegate=(0,react.useMemo)(function(){return new ListKeyboardDelegate/* ListKeyboardDelegate */.n(state.collection,state.disabledKeys,null,collator);},[state.collection,state.disabledKeys,collator]);var _useMenuTrigger=(0,useMenuTrigger/* useMenuTrigger */.V)({isDisabled:isDisabled,type:'listbox'},state,ref),menuTriggerProps=_useMenuTrigger.menuTriggerProps,menuProps=_useMenuTrigger.menuProps;var triggerOnKeyDown=function triggerOnKeyDown(e){var selectedKeys=state.selectedKeys,selectionMode=state.selectionMode;var firstKey=selectedKeys.values().next().value;// Select items when trigger has focus - imitating default `<select>` behaviour.
+// In multi selection mode it does not make sense.
+if(selectionMode==='single'){switch(e.key){case'ArrowLeft':{// prevent scrolling containers
+e.preventDefault();var key=selectedKeys.size>0?delegate.getKeyAbove(firstKey):delegate.getFirstKey();if(key){state.setSelectedKeys([key]);}break;}case'ArrowRight':{// prevent scrolling containers
+e.preventDefault();var _key=selectedKeys.size>0?delegate.getKeyBelow(firstKey):delegate.getFirstKey();if(_key){state.setSelectedKeys([_key]);}break;}// no default
+}}};// Typeahead functionality - imitating default `<select>` behaviour.
+var _useTypeSelect=(0,useTypeSelect/* useTypeSelect */.I)({keyboardDelegate:delegate,selectionManager:state.selectionManager,onTypeSelect:function onTypeSelect(key){state.setSelectedKeys([key]);}}),typeSelectProps=_useTypeSelect.typeSelectProps;var _useField=(0,useField/* useField */.M)(Object.assign({},props,{labelElementType:'span'})),labelProps=_useField.labelProps,fieldProps=_useField.fieldProps;typeSelectProps.onKeyDown=typeSelectProps.onKeyDownCapture;delete typeSelectProps.onKeyDownCapture;var domProps=(0,filterDOMProps/* filterDOMProps */.$)(props,{labelable:true});var triggerProps=(0,mergeProps/* mergeProps */.v)(typeSelectProps,menuTriggerProps,fieldProps);var valueId=(0,useId/* useId */.Bi)();return{labelProps:Object.assign({},labelProps,{onClick:function onClick(){if(!props.isDisabled){var _ref$current;(_ref$current=ref.current)==null||_ref$current.focus();// Show the focus ring so the user knows where focus went
+(0,useFocusVisible/* setInteractionModality */.Cl)('keyboard');}}}),triggerProps:(0,mergeProps/* mergeProps */.v)(domProps,Object.assign({},triggerProps,{onKeyDown:(0,chain/* chain */.c)(triggerProps.onKeyDown,triggerOnKeyDown,props.onKeyDown),onKeyUp:props.onKeyUp,'aria-labelledby':[triggerProps['aria-labelledby'],triggerProps['aria-label']&&!triggerProps['aria-labelledby']?triggerProps.id:null,valueId].filter(Boolean).join(' '),onFocus:function onFocus(e){if(state.isFocused){return;}if(props.onFocus){props.onFocus(e);}state.setFocused(true);},onBlur:function onBlur(e){if(state.isOpen){return;}if(props.onBlur){props.onBlur(e);}state.setFocused(false);}})),valueProps:{id:valueId},menuProps:Object.assign({},menuProps,{disallowEmptySelection:disallowEmptySelection,autoFocus:state.focusStrategy||true,shouldSelectOnPressUp:true,shouldFocusOnHover:true,onBlur:function onBlur(e){if(e.currentTarget.contains(e.relatedTarget)){return;}if(props.onBlur){props.onBlur(e);}state.setFocused(false);},'aria-labelledby':[fieldProps['aria-labelledby'],triggerProps['aria-label']&&!fieldProps['aria-labelledby']?triggerProps.id:null].filter(Boolean).join(' ')})};}
+// EXTERNAL MODULE: ./node_modules/@react-stately/menu/dist/useMenuTriggerState.mjs
+var useMenuTriggerState = __webpack_require__(55745);
+// EXTERNAL MODULE: ./node_modules/@react-stately/form/dist/useFormValidationState.mjs
+var useFormValidationState = __webpack_require__(71144);
+// EXTERNAL MODULE: ./node_modules/@react-stately/list/dist/useListState.mjs
+var useListState = __webpack_require__(46655);
+;// ./packages/components/src/select/useMultiSelectListState.ts
+function useMultiSelectListState(props){var _useListState=(0,useListState/* useListState */.p)(props),collection=_useListState.collection,disabledKeys=_useListState.disabledKeys,selectionManager=_useListState.selectionManager,_useListState$selecti=_useListState.selectionManager,setSelectedKeys=_useListState$selecti.setSelectedKeys,selectedKeys=_useListState$selecti.selectedKeys,selectionMode=_useListState$selecti.selectionMode;var missingKeys=[];var selectedItems=selectedKeys.size!==0?Array.from(selectedKeys).map(function(key){var item=collection.getItem(key);if(!item){missingKeys.push(key);}return item;}).filter(Boolean):null;if(missingKeys.length){console.warn("Select: Keys \""+missingKeys.join(', ')+"\" passed to \"selectedKeys\" are not present in the collection.");}return{collection:collection,disabledKeys:disabledKeys,selectionManager:selectionManager,selectionMode:selectionMode,selectedKeys:selectedKeys,setSelectedKeys:setSelectedKeys.bind(selectionManager),selectedItems:selectedItems};}
+;// ./packages/components/src/select/useMultiSelectState.ts
+function useMultiSelectState(props){var _useState=(0,react.useState)(false),isFocused=_useState[0],setFocused=_useState[1];var triggerState=(0,useMenuTriggerState/* useMenuTriggerState */.I)(props);var isSingleSelect=props.selectionMode==='single';var multiSelectListState=useMultiSelectListState(Object.assign({},props,{onSelectionChange:function onSelectionChange(keys){props.onSelectionChange&&props.onSelectionChange(keys);if(isSingleSelect){triggerState.close();}}}));var validationState=(0,useFormValidationState/* useFormValidationState */.KZ)(Object.assign({},props,{validationBehavior:'native',value:multiSelectListState.selectedKeys}));var isCollectionEmpty=multiSelectListState.collection.size===0;var isAnyKeySelected=!!multiSelectListState.selectedKeys.size;var resetValidation=(0,react.useCallback)(function(){validationState.resetValidation();validationState.commitValidation();},[validationState]);(0,react.useEffect)(function(){if(isSingleSelect&&isAnyKeySelected){resetValidation();}},[isAnyKeySelected,isSingleSelect,resetValidation]);return Object.assign({},multiSelectListState,triggerState,{close:function close(){triggerState.close();if(isAnyKeySelected){resetValidation();}},open:function open(){if(!isCollectionEmpty){triggerState.open();}},toggle:function toggle(focusStrategy){if(!isCollectionEmpty){triggerState.toggle(focusStrategy);}},isFocused:isFocused,setFocused:setFocused},validationState);}
+// EXTERNAL MODULE: ./packages/components/src/tag/Tag.tsx + 1 modules
+var Tag = __webpack_require__(74658);
+// EXTERNAL MODULE: ./packages/components/src/utils/useObserveElement.tsx
+var useObserveElement = __webpack_require__(67603);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/useFormReset.mjs
+var useFormReset = __webpack_require__(8343);
+// EXTERNAL MODULE: ./node_modules/@react-aria/form/dist/useFormValidation.mjs
+var useFormValidation = __webpack_require__(48868);
+// EXTERNAL MODULE: ./node_modules/@react-aria/visually-hidden/dist/VisuallyHidden.mjs
+var VisuallyHidden = __webpack_require__(87979);
+;// ./packages/components/src/select/HiddenMultiSelect.tsx
+/**
+ * Provides the behavior and accessibility implementation for a hidden `<select>` element, which
+ * can be used in combination with `useSelect` to support browser form autofill, mobile form
+ * navigation, and native HTML form submission.
+ */function useHiddenMultiSelect(_ref,state,triggerRef){var autoComplete=_ref.autoComplete,name=_ref.name,isDisabled=_ref.isDisabled,isRequired=_ref.isRequired,selectRef=_ref.selectRef;var _useVisuallyHidden=(0,VisuallyHidden/* useVisuallyHidden */.B)(),visuallyHiddenProps=_useVisuallyHidden.visuallyHiddenProps;(0,useFormReset/* useFormReset */.F)(selectRef,state.selectedKeys,state.setSelectedKeys);(0,useFormValidation/* useFormValidation */.X)({validationBehavior:'native',focus:function focus(){var _triggerRef$current;return(_triggerRef$current=triggerRef.current)==null?void 0:_triggerRef$current.focus();}},state,selectRef);// In Safari, the <select> cannot have `display: none` or `hidden` for autofill to work.
+// In Firefox, there must be a <label> to identify the <select> whereas other browsers
+// seem to identify it just by surrounding text.
+// The solution is to use <VisuallyHidden> to hide the elements, which clips the elements to a
+// 1px rectangle. In addition, we hide from screen readers with aria-hidden, and make the <select>
+// non tabbable with tabIndex={-1}.
+return{containerProps:Object.assign({},visuallyHiddenProps,{'aria-hidden':true,// @ts-expect-error - data-a11y-ignore is not a standard attribute
+'data-react-aria-prevent-focus':true,'data-a11y-ignore':'aria-hidden-focus'}),inputProps:{style:{display:'none'}},selectProps:{tabIndex:-1,autoComplete:autoComplete,disabled:isDisabled,required:isRequired,name:name,value:Array.from(state.selectedKeys).map(function(key){return key.toString();}),onChange:function onChange(e){return state.setSelectedKeys(e.target.value);},multiple:true}};}/**
+ * Renders a hidden native `<select>` element, which can be used to support browser
+ * form autofill, mobile form navigation, and native form submission.
+ */function HiddenMultiSelect(props){var state=props.state,triggerRef=props.triggerRef,name=props.name,isDisabled=props.isDisabled;var label=props.label+"-hidden";var selectRef=(0,react.useRef)(null);var _useHiddenMultiSelect=useHiddenMultiSelect(Object.assign({},props,{selectRef:selectRef}),state,triggerRef),containerProps=_useHiddenMultiSelect.containerProps,selectProps=_useHiddenMultiSelect.selectProps;// If used in a <form>, use a hidden input so the value can be submitted to a server.
+// If the collection isn't too big, use a hidden <select> element for this so that browser
+// autofill will work. Otherwise, use an <input type="hidden">.
+if(state.collection.size<=300){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},containerProps,{"data-testid":"hidden-select-container",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("label",{children:[label,/*#__PURE__*/(0,jsx_runtime.jsxs)("select",Object.assign({},selectProps,{ref:selectRef,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("option",{}),[].concat(state.collection.getKeys()).map(function(key){var item=state.collection.getItem(key);if(item&&item.type==='item'){return/*#__PURE__*/(0,jsx_runtime.jsx)("option",{value:item.key,children:item.textValue},item.key);}return null;})]}))]})}));}else if(name){var _Array$from$map;return/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"hidden",autoComplete:selectProps.autoComplete,name:name,disabled:isDisabled,value:(_Array$from$map=Array.from(state.selectedKeys).map(function(key){return key.toString();}))!=null?_Array$from$map:['']});}return null;}
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
+var ListBoxPopover = __webpack_require__(48001);
+// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.module.css
+var ListBox_module = __webpack_require__(6974);
+;// ./packages/components/src/list-box/ListBoxButton.tsx
+var ListBoxButton_excluded=["className","children"];var ListBoxButton=function ListBoxButton(_ref){var className=_ref.className,children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,ListBoxButton_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("button",Object.assign({type:"button",className:(0,clsx/* default */.A)(ListBox_module/* default */.A.listBoxItem,ListBox_module/* default */.A.listBoxButton,className)},rest,{children:children}));};
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+;// ./packages/components/src/select/MultiSelectValueTag.tsx
+var MultiSelectValueTag=function MultiSelectValueTag(_ref){var items=_ref.state.selectedItems,isDisabled=_ref.isDisabled,parentWidth=_ref.parentWidth,onClear=_ref.onClear,triggerRef=_ref.triggerRef,isClearable=_ref.isClearable;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Select_module.selectValueTag,"data-disabled":isDisabled||undefined,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:Select_module.truncate,style:{maxWidth:parentWidth-92},children:items!=null&&items.length&&items.length>1?items.length+" valda":items==null?void 0:items[0].textValue}),isClearable&&/*#__PURE__*/(0,jsx_runtime.jsx)("button",{disabled:isDisabled,"aria-label":"Rensa alla",className:Select_module.clearButton,onClick:function onClick(){var _triggerRef$current;onClear();triggerRef==null||(_triggerRef$current=triggerRef.current)==null||_triggerRef$current.focus();},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{width:20,height:20})})]});};
+// EXTERNAL MODULE: ./node_modules/@react-aria/button/dist/useButton.mjs
+var useButton = __webpack_require__(69229);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
+var chevron_down = __webpack_require__(75107);
+;// ./packages/components/src/select/SelectTrigger.tsx
+var SelectTrigger_excluded=["autoFocus","excludeFromTabOrder","isDisabled","size","isOpen","isInvalid","selectionMode","state","placeholder","children","triggerRef"];var SelectTrigger=function SelectTrigger(_ref){var _clsx;var autoFocus=_ref.autoFocus,excludeFromTabOrder=_ref.excludeFromTabOrder,isDisabled=_ref.isDisabled,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,isOpen=_ref.isOpen,isInvalid=_ref.isInvalid,selectionMode=_ref.selectionMode,selectedItems=_ref.state.selectedItems,placeholder=_ref.placeholder,children=_ref.children,triggerRef=_ref.triggerRef,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,SelectTrigger_excluded);var _useButton=(0,useButton/* useButton */.s)(Object.assign({autoFocus:autoFocus,excludeFromTabOrder:excludeFromTabOrder,isDisabled:isDisabled},rest),triggerRef),buttonProps=_useButton.buttonProps;var isMultiSelect=selectionMode==='multiple';return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Select_module.triggerContainer,"data-disabled":isDisabled||undefined,children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("button",Object.assign({},buttonProps,{autoFocus:autoFocus,className:(0,clsx/* default */.A)(Select_module.trigger,(_clsx={},_clsx[Select_module.medium]=size==='medium',_clsx)),"data-disabled":isDisabled||undefined,"data-invalid":isInvalid||undefined,"data-open":isOpen||undefined,ref:triggerRef,type:"button",children:[isMultiSelect&&!selectedItems?/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:placeholder}):null,!isMultiSelect?/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:selectedItems?selectedItems[0].textValue:placeholder}):null,/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20})})]})),children]});};
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var field_error_FieldError = __webpack_require__(19060);
+;// ./packages/components/src/select/SelectFieldError.tsx
+var SelectFieldError=function SelectFieldError(_ref){var state=_ref.state,errorMessage=_ref.errorMessage;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldErrorContext */.C.Provider,{value:Object.assign({},state.displayValidation),children:/*#__PURE__*/(0,jsx_runtime.jsx)(field_error_FieldError/* FieldError */.b,{children:errorMessage})});};
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
+;// ./packages/components/src/select/Select.tsx
+var Select_excluded=["isClearable","popover"],_excluded2=["options"];var SelectComponent=/*#__PURE__*/react.forwardRef(function(_ref,ref){var _ref$isClearable=_ref.isClearable,isClearable=_ref$isClearable===void 0?true:_ref$isClearable,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,Select_excluded);var props=Object.assign({selectionMode:'single',errorPosition:'top',disallowEmptySelection:!isClearable,isClearable:isClearable,size:'large',popover:popover},rest);var triggerRef=(0,useObjectRef/* useObjectRef */.U)(ref);var state=useMultiSelectState(props);var _useMultiSelect=useMultiSelect(props,state,triggerRef),labelProps=_useMultiSelect.labelProps,triggerProps=_useMultiSelect.triggerProps,valueProps=_useMultiSelect.valueProps,menuProps=_useMultiSelect.menuProps;var _useObserveElement=(0,useObserveElement/* default */.A)(triggerRef.current,{includePadding:true}),triggerWidth=_useObserveElement.width;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* default */.A)(Select_module.wrapper,props.className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(HiddenMultiSelect,Object.assign({},props,{state:state,triggerRef:triggerRef})),/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.cR,{popover:popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{"data-disabled":props.isDisabled||undefined,children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:props.description}),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectFieldError,Object.assign({},props,{state:state})),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectTrigger,Object.assign({},props,triggerProps,{isInvalid:state.displayValidation.isInvalid,triggerRef:triggerRef,state:state,children:props.selectionMode==='multiple'&&state.selectedItems?/*#__PURE__*/(0,jsx_runtime.jsx)("span",Object.assign({},valueProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(MultiSelectValueTag,Object.assign({},props,{state:state,parentWidth:triggerWidth,onClear:function onClear(){return state.selectionManager.clearSelection();},triggerRef:triggerRef}))})):null})),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectFieldError,Object.assign({},props,{state:state})),/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBoxPopover/* ListBoxPopover */.f,{isOpen:state.isOpen,onOpenChange:function onOpenChange(isOpen){if(!isOpen){state.close();}},triggerRef:triggerRef,style:{width:triggerWidth},children:[props.isSelectableAll&&/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBoxButton,{onClick:function onClick(){return state.selectionManager.toggleSelectAll();},children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:state.selectionManager.isSelectAll,isIndeterminate:!state.selectionManager.isSelectAll&&!state.selectionManager.isEmpty,isReadOnly:true,excludeFromTabOrder:true})}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:"Select All"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox,Object.assign({},menuProps,{state:state}))]}),props.showTags&&!!state.selectedItems&&/*#__PURE__*/(0,jsx_runtime.jsx)(Tag/* TagGroup */.C,{"aria-label":"Selected Items",selectionBehavior:"toggle",onRemove:function onRemove(keys){return state.selectionManager.toggleSelection(Array.from(keys)[0]);},className:Select_module.tagGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup/* TagList */.LY,{items:state.selectedItems,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag/* Tag */.v,{textValue:item.textValue,id:item.key,dismissable:true,isDisabled:props.isDisabled,children:item.textValue},item.key);}})})]}));});var Select=/*#__PURE__*/react.forwardRef(function(_ref2,ref){var options=_ref2.options,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsx)(SelectComponent,Object.assign({},props,{items:options,ref:ref,children:function children(section){return section.children?/*#__PURE__*/(0,jsx_runtime.jsx)(Section/* Section */.w,{items:section.children,title:section.name,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:item.textValue,children:item.name});}},section.name):/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:section.textValue,children:section.name});}}));});Select.displayName='Select';
+
+/***/ }),
+
 /***/ 34704:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -234,10 +732,12 @@ var dist_Label = __webpack_require__(21704);
 ;// ./packages/components/src/label/Label.module.css
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/Label.tsx
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);var ctx=react.useContext(LabelWrapper/* LabelWrapperContext */.d$);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{"aria-describedby":ctx==null?void 0:ctx.popoverId,children:children}));};
 
 /***/ }),
 
@@ -318,243 +818,6 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
-/***/ 47691:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  assets: () => (/* binding */ assets),
-  contentTitle: () => (/* binding */ contentTitle),
-  "default": () => (/* binding */ MDXContent),
-  frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_combobox_mdx_9b9_namespaceObject),
-  toc: () => (/* binding */ toc)
-});
-
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-combobox-mdx-9b9.json
-const site_docs_components_combobox_mdx_9b9_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/combobox","title":"ComboBox","description":"Sökbar version av Select","source":"@site/docs/components/combobox.mdx","sourceDirName":"components","slug":"/components/combobox","permalink":"/pr-preview/pr-672/components/combobox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"ComboBox","description":"Sökbar version av Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
-var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/components/src/combobox/ComboBox.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const ComboBox_module = ({"tokens":"\"../theme/tokens.css\"","--icon-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--layer-01":"light-dark(#f2f2f2, #262626)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-disabled":"light-dark(#f2f2f2, #262626)","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--icon-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--font-family":"\"Inter\", sans-serif","--size-50":"0.625rem","--size-70":"0.875rem","--size-130":"2.5rem","--size-150":"3rem","combobox":"combobox_kSJb","inputField":"inputField_oWSg","medium":"medium_ptka","text":"text_ngKo","wrap":"wrap_JKDx","button":"button_yH32","icon":"icon_C34F"});
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ComboBox.mjs + 37 modules
-var ComboBox = __webpack_require__(20050);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
-var Button = __webpack_require__(65014);
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
-var chevron_down = __webpack_require__(75107);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
-var Label = __webpack_require__(34704);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
-var ListBoxPopover = __webpack_require__(48001);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.tsx + 1 modules
-var ListBox = __webpack_require__(22247);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxItem.tsx
-var ListBoxItem = __webpack_require__(98437);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
-var ListBoxSection = __webpack_require__(73807);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
-var LabelWrapper = __webpack_require__(28637);
-;// ./packages/components/src/combobox/ComboBox.tsx
-'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size","popover"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,popover=_ref.popover,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var inputRef=react.useRef(null);var handleMouseUp=function handleMouseUp(event){if(event.currentTarget.value){var _inputRef$current;(_inputRef$current=inputRef.current)==null||_inputRef$current.select();}};return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx)),onMouseUp:handleMouseUp,ref:inputRef}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxPopover/* ListBoxPopover */.f,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},props));}/**
- * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
- */function ComboBoxSelection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:props.children,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{children:item.name},item.id);}})}));}function ComboBoxSection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSelection,Object.assign({},props));}
-;// ./apps/docs/src/components/examples/combobox/ComboboxExamples.tsx
-var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Lime",children:"Lime"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"\xC4pple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Apelsin",children:"Apelsin"})]});};var ControlledExample=function ControlledExample(){var _React$useState=react.useState(null),selectedFruit=_React$useState[0],setSelectedFruit=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",selectedKey:selectedFruit,onSelectionChange:setSelectedFruit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Lime",children:"Lime"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"\xC4pple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Apelsin",children:"Apelsin"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{style:{marginTop:'1rem'},children:["Vald frukt: ",selectedFruit]})]});};var SectionedExample=function SectionedExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt eller gr\xF6nsak",description:"Du kan bara v\xE4lja en",items:[{name:'Grönsaker',children:[{name:'Morot',id:2},{name:'Broccoli',id:3},{name:'Spenat',id:4},{name:'Potatis',id:5},{name:'Tomat',id:6}]},{name:'Frukter',children:[{name:'Äpple',id:11},{name:'Banan',id:12},{name:'Kiwi',id:13},{name:'Fläder',id:14},{name:'Nektarin',id:15}]}],children:function children(section){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSection,Object.assign({},section,{id:section.name}));}});};
-// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
-var PropsTable = __webpack_require__(68713);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
-var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/docs/components/combobox.mdx
-
-
-const frontMatter = {
-	title: 'ComboBox',
-	description: 'Sökbar version av Select',
-	pagination_prev: null,
-	pagination_next: null
-};
-const contentTitle = undefined;
-
-const assets = {
-
-};
-
-
-
-
-
-
-const toc = [{
-  "value": "Kontrollerat val",
-  "id": "kontrollerat-val",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
-}, {
-  "value": "Sektioner",
-  "id": "sektioner",
-  "level": 2
-}, {
-  "value": "API",
-  "id": "api",
-  "level": 2
-}, {
-  "value": "ComboBox",
-  "id": "combobox",
-  "level": 3
-}, {
-  "value": "ComboBoxItem",
-  "id": "comboboxitem",
-  "level": 3
-}];
-function _createMdxContent(props) {
-  const _components = {
-    a: "a",
-    code: "code",
-    h2: "h2",
-    h3: "h3",
-    li: "li",
-    p: "p",
-    pre: "pre",
-    strong: "strong",
-    ul: "ul",
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Combobox",
-      friendlyName: "Flerval med sök, väljare med sök, dropdown med sök",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/ComboBox.html"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En ComboBox är en sökbar version av Select. Combobox används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett"
-      }), " alternativ av fler än fyra (4) alternativ."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { ComboBox, ComboBoxItem } from '@midas-ds/components'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<ComboBox\n  label='Välj din favoritfrukt'\n  description='Du kan bara välja en'\n>\n  <ComboBoxItem id='Lime'>Lime</ComboBoxItem>\n  <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>\n  <ComboBoxItem id='Banan'>Banan</ComboBoxItem>\n  <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>\n  <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>\n</ComboBox>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(BasicExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "kontrollerat-val",
-      children: "Kontrollerat val"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "id"
-      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onSelectionChange"
-      }), " för att använda controlled value på ComboBox.\nDen valda ComboBoxItems värde skickas till callbacken, så kan du använda det för att uppdatera ditt state."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import React from 'react'\nimport { Key } from 'react-aria-components'\n\nconst [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)\n\nreturn (\n  <ComboBox\n    label='Välj din favoritfrukt eller grönsak'\n    description='Du kan bara välja en'\n    selectedKey={selectedFruit}\n    onSelectionChange={setSelectedFruit}\n  >\n    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>\n    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>\n    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>\n    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>\n    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>\n  </ComboBox>\n)\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ControlledExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det ska gå att välja flera eller inga alternativ är det ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/checkbox",
-          children: "Checkbox"
-        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/select",
-          children: "Select"
-        }), " som ska användas."]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det är färre alternativ än fyra (4) används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/radio",
-          children: "Radio"
-        }), " istället."]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sektioner",
-      children: "Sektioner"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { ComboBoxSection } from '@midas-ds/components'\n\nconst options = [\n  {\n    name: 'Grönsaker',\n    children: [\n      { name: 'Morot', id: 2 },\n      { name: 'Broccoli', id: 3 },\n      { name: 'Spenat', id: 4 },\n      { name: 'Potatis', id: 5 },\n      { name: 'Tomat', id: 6 },\n    ],\n  },\n  {\n    name: 'Frukter',\n    children: [\n      { name: 'Äpple', id: 11 },\n      { name: 'Banan', id: 12 },\n      { name: 'Kiwi', id: 13 },\n      { name: 'Fläder', id: 14 },\n      { name: 'Nektarin', id: 15 },\n    ],\n  },\n]\n\nreturn (\n  <ComboBox\n    label='Välj din favoritfrukt eller grönsak'\n    description='Du kan bara välja en'\n    items={options}\n  >\n    {section => (\n      <ComboBoxSection\n        {...section}\n        id={section.name}\n      />\n    )}\n  </ComboBox>\n)\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(SectionedExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "api",
-      children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "combobox",
-      children: "ComboBox"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "ComboBox"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "comboboxitem",
-      children: "ComboBoxItem"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "ComboBoxItem",
-      defaultOpen: false
-    })]
-  });
-}
-function MDXContent(props = {}) {
-  const {wrapper: MDXLayout} = {
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
-    ...props,
-    children: (0,jsx_runtime.jsx)(_createMdxContent, {
-      ...props
-    })
-  }) : _createMdxContent(props);
-}
-
-
-
-/***/ }),
-
 /***/ 48001:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -629,6 +892,19 @@ var jsx_runtime = __webpack_require__(74848);
 'use client';var _excluded=["children","variant","fullwidth","icon","iconPlacement","className","as","size"];/**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */var LinkButton=function LinkButton(_ref){var children=_ref.children,variant=_ref.variant,fullwidth=_ref.fullwidth,IconComponent=_ref.icon,iconPlacement=_ref.iconPlacement,className=_ref.className,as=_ref.as,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var Component=as||Link/* Link */.N;var Icon=function Icon(_ref2){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref2),_ref2));if(IconComponent)return/*#__PURE__*/(0,jsx_runtime.jsx)(IconComponent,Object.assign({},rest));if(rest.target==='_blank')return/*#__PURE__*/(0,jsx_runtime.jsx)(square_arrow_out_up_right/* default */.A,Object.assign({},rest));if(iconPlacement==='left')return/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_left/* default */.A,Object.assign({},rest));return/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_right/* default */.A,Object.assign({},rest));};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Component,Object.assign({className:(0,clsx/* default */.A)(LinkButton_module.linkButton,variant==='primary'&&LinkButton_module.primary,variant==='secondary'&&LinkButton_module.secondary,variant==='tertiary'&&LinkButton_module.tertiary,variant==='danger'&&LinkButton_module.danger,variant==='icon'&&LinkButton_module.iconBtn,size==='medium'&&LinkButton_module.medium,fullwidth&&LinkButton_module.fullwidth,iconPlacement==='left'&&LinkButton_module.iconLeft,className)},rest,{children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(Icon,{size:20,className:LinkButton_module.icon})]}));};
+
+/***/ }),
+
+/***/ 67603:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ useObserveElement)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/**
+ * Observe an elements size change on resize
+ */function useObserveElement(element,options){if(options===void 0){options={};}var _useState=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({width:0,height:0}),size=_useState[0],setSize=_useState[1];var delay=options.delay===undefined?500:options.delay;var includePadding=!!options.includePadding;(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function(){if(!element)return;var resizeObserver=new ResizeObserver(debounce(function(_ref){var entry=_ref[0];var _ref2=includePadding?entry.borderBoxSize[0]:entry.contentBoxSize[0],inlineSize=_ref2.inlineSize,blockSize=_ref2.blockSize;setSize({width:inlineSize,height:blockSize});},delay));resizeObserver.observe(element);return function(){resizeObserver.disconnect();};},[delay,element,includePadding]);return size;}function debounce(callback,delay){var timeout;return function(entries,observer){clearTimeout(timeout);timeout=setTimeout(function(){callback(entries,observer);},delay);};}
 
 /***/ }),
 
@@ -717,6 +993,38 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
  */var Grid=function Grid(_ref){var children=_ref.children,_ref$fluid=_ref.fluid,fluid=_ref$fluid===void 0?false:_ref$fluid,_ref$isContained=_ref.isContained,isContained=_ref$isContained===void 0?false:_ref$isContained,_ref$removeMargins=_ref.removeMargins,removeMargins=_ref$removeMargins===void 0?false:_ref$removeMargins,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",Object.assign({},rest,{className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.container,fluid&&_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fluid,isContained&&_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.contained,removeMargins&&_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.removeMargins,rest.className),children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.flex,children:children})}));};/**
  * @deprecated since v10.2.0 Use `Grid` instead.
  */var Flex=Grid;
+
+/***/ }),
+
+/***/ 74658:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  v: () => (/* binding */ Tag),
+  C: () => (/* binding */ TagGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/tag/Tag.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Tag_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--field-01":"light-dark(#f2f2f2, #262626)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-active-01":"light-dark(#d9d9d9, #383838)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--icon-primary":"light-dark(#171717, #f2f2f2)","--support-background-success":"light-dark(#d5f2d9, light-dark(#f2f2f2, #262626))","--support-background-info":"light-dark(#eaf2f6, light-dark(#f2f2f2, #262626))","--support-background-important":"light-dark(#fff8e1, light-dark(#f2f2f2, #262626))","--support-background-warning":"light-dark(#ffdfdf, light-dark(#f2f2f2, #262626))","--button-background-icon-hover":"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))","--button-background-icon-active":"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))","--border-primary":"light-dark(#171717, #f2f2f2)","--support-border-success":"light-dark(#008d3c, #008d3c)","--support-border-info":"light-dark(#0066cc, #0066cc)","--support-border-important":"light-dark(#fdb813, #fdb813)","--support-border-warning":"light-dark(#e62323, #e62323)","--text-primary":"light-dark(#171717, #f2f2f2)","--border-disabled":"light-dark(#bfbfbf, #525252)","button":"button_Loby","success":"success_GxEq","warning":"warning_MXCT","info":"info_xrqn","important":"important_QbWH","tag":"tag_WAeO","dismissable":"dismissable_Tfml","tagText":"tagText_f_lx","tagList":"tagList_sxPC"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TagGroup.mjs + 40 modules
+var dist_TagGroup = __webpack_require__(99628);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/tag/Tag.tsx
+var _excluded=["children"],_excluded2=["children","dismissable","className","type"];var TagGroup=function TagGroup(_ref){var children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagGroup */.CR,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_TagGroup/* TagList */.LY,{className:Tag_module.tagList,children:children})}));};var Tag=function Tag(_ref2){var children=_ref2.children,dismissable=_ref2.dismissable,className=_ref2.className,_ref2$type=_ref2.type,type=_ref2$type===void 0?'default':_ref2$type,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_TagGroup/* Tag */.vw,Object.assign({className:(0,clsx/* default */.A)(Tag_module.tag,dismissable&&Tag_module.dismissable,type==='success'&&Tag_module.success,type==='info'&&Tag_module.info,type==='important'&&Tag_module.important,type==='warning'&&Tag_module.warning,className)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Tag_module.tagText,children:children}),dismissable&&/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Tag_module.button,slot:"remove",children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20})})]}));};
 
 /***/ }),
 

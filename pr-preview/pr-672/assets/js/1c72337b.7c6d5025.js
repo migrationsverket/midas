@@ -1,5 +1,57 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3697],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5605],{
+
+/***/ 8807:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  S: () => (/* binding */ Checkbox)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/useHover.mjs
+var useHover = __webpack_require__(16638);
+// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/usePress.mjs + 6 modules
+var usePress = __webpack_require__(35044);
+// EXTERNAL MODULE: ./node_modules/@react-aria/focus/dist/useFocusRing.mjs
+var useFocusRing = __webpack_require__(16133);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RSPContexts.mjs
+var RSPContexts = __webpack_require__(32373);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Form.mjs
+var Form = __webpack_require__(23128);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/context.ts
+var context = __webpack_require__(20011);
+// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckboxGroupItem.mjs
+var useCheckboxGroupItem = __webpack_require__(26493);
+// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/mergeProps.mjs
+var mergeProps = __webpack_require__(32217);
+// EXTERNAL MODULE: ./node_modules/@react-aria/visually-hidden/dist/VisuallyHidden.mjs
+var VisuallyHidden = __webpack_require__(87979);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
+var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/checkbox/CheckboxInner.tsx
+var CheckboxInner=/*#__PURE__*/react.forwardRef(function(props,ref){var _props$hoverResult=props.hoverResult,hoverProps=_props$hoverResult.hoverProps,isHovered=_props$hoverResult.isHovered;var _props$pressResult=props.pressResult,pressProps=_props$pressResult.pressProps,isPressed=_props$pressResult.isPressed;var _props$focusRingAria=props.focusRingAria,isFocused=_props$focusRingAria.isFocused,isFocusVisible=_props$focusRingAria.isFocusVisible,focusProps=_props$focusRingAria.focusProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)("label",Object.assign({ref:ref},(0,mergeProps/* mergeProps */.v)(hoverProps,pressProps,props.labelProps),{slot:props.slot||undefined,className:Checkbox_module/* default */.A.checkbox,"data-hovered":isHovered||undefined,"data-selected":props.isSelected||undefined,"data-indeterminate":props.isIndeterminate||undefined,"data-pressed":isPressed||undefined,"data-disabled":props.isDisabled||undefined,"data-readonly":props.isReadOnly||undefined,"data-invalid":props.isInvalid||undefined,"data-focused":isFocused||undefined,"data-focus-visible":isFocusVisible||undefined,"data-required":props.isRequired||undefined,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* clsx */.$)(Checkbox_module/* default */.A.checkboxInner),children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:props.isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),/*#__PURE__*/(0,jsx_runtime.jsx)(VisuallyHidden/* VisuallyHidden */.s,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("input",Object.assign({},(0,mergeProps/* mergeProps */.v)(props.inputProps,focusProps),{ref:props.inputRef}))}),props.children]}));});
+;// ./packages/components/src/checkbox/CheckboxGroupItem.tsx
+var CheckBoxGroupItem=/*#__PURE__*/react.forwardRef(function(props,ref){var checkboxGroupItem=(0,useCheckboxGroupItem/* useCheckboxGroupItem */.B)(Object.assign({},props,{value:props.value||''}),props.state,props.inputRef);return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxInner,Object.assign({},props,checkboxGroupItem,{ref:ref}));});
+// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckbox.mjs + 1 modules
+var useCheckbox = __webpack_require__(58044);
+// EXTERNAL MODULE: ./node_modules/@react-stately/toggle/dist/useToggleState.mjs
+var useToggleState = __webpack_require__(51623);
+;// ./packages/components/src/checkbox/SingleCheckbox.tsx
+var SingleCheckbox=/*#__PURE__*/react.forwardRef(function(props,ref){var item=(0,useCheckbox/* useCheckbox */.v)(props,(0,useToggleState/* useToggleState */.H)(props),props.inputRef);return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxInner,Object.assign({},props,item,{ref:ref}));});
+;// ./packages/components/src/checkbox/Checkbox.tsx
+var Checkbox=/*#__PURE__*/react.forwardRef(function(props,ref){var _ref,_props$validationBeha;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,RSPContexts/* CheckboxContext */.BP);props=_useContextProps[0];ref=_useContextProps[1];var formProps=(0,utils/* useSlottedContext */.CC)(Form/* FormContext */.c);var validationBehavior=(_ref=(_props$validationBeha=props.validationBehavior)!=null?_props$validationBeha:formProps==null?void 0:formProps.validationBehavior)!=null?_ref:'native';var state=react.useContext(context/* CheckboxGroupContext */.I);var inputRef=react.useRef(null);var hoverResult=(0,useHover/* useHover */.M)(props);var pressResult=(0,usePress/* usePress */.d)({ref:ref,isDisabled:props.isDisabled});var focusRingAria=(0,useFocusRing/* useFocusRing */.o)();if(state){return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckBoxGroupItem,Object.assign({},props,{state:state,inputRef:inputRef,hoverResult:hoverResult,pressResult:pressResult,focusRingAria:focusRingAria,validationBehavior:validationBehavior}));}return/*#__PURE__*/(0,jsx_runtime.jsx)(SingleCheckbox,Object.assign({},props,{inputRef:inputRef,hoverResult:hoverResult,pressResult:pressResult,focusRingAria:focusRingAria,validationBehavior:validationBehavior}));});
+
+/***/ }),
 
 /***/ 13225:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -18,30 +70,14 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 
 /***/ }),
 
-/***/ 18980:
+/***/ 16025:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  E: () => (/* binding */ DateSegment)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
-var DateField = __webpack_require__(68407);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-;// ./packages/components/src/date-field/DateSegment.module.css
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const DateSegment_module = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","dateSegment":"dateSegment_nh76"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/date-field/DateSegment.tsx
-var _excluded=["className"];var DateSegment=function DateSegment(_ref){var className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,Object.assign({className:(0,clsx/* default */.A)(DateSegment_module.dateSegment,className)},rest));};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--border-primary":"light-dark(#171717, #f2f2f2)","--border-disabled":"light-dark(#bfbfbf, #525252)","--breakpoint-xs":"(max-width: 479px)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-on-color":"light-dark(#ffffff, #ffffff)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--field-disabled":"light-dark(#f2f2f2, #262626)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--line-height-30":"1.25rem","wrap":"wrap_YzPY","checkboxInner":"checkboxInner_Nam1","checkbox":"checkbox_J2GB","checkboxGroup":"checkboxGroup_iAq9"});
 
 /***/ }),
 
@@ -99,14 +135,28 @@ var _excluded=["children","className","variant","isExpressive","elementType"];va
 
 /***/ }),
 
+/***/ 20011:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   I: () => (/* binding */ CheckboxGroupContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+var CheckboxGroupContext=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+
+/***/ }),
+
 /***/ 28637:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
+  cR: () => (/* binding */ LabelWrapper),
+  d$: () => (/* binding */ LabelWrapperContext)
 });
+
+// UNUSED EXPORTS: useLabelWrapperContext
 
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
@@ -122,9 +172,9 @@ var info = __webpack_require__(97213);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];var ctx=react.useContext(LabelWrapperContext);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,id:ctx==null?void 0:ctx.popoverId,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
 ;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+var LabelWrapperContext=/*#__PURE__*/react.createContext(undefined);var useLabelWrapperContext=function useLabelWrapperContext(){return React.useContext(LabelWrapperContext);};var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;var popoverId=react.useId();if(popover)return/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapperContext.Provider,{value:{popoverId:popoverId},children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]})});return children;};
 
 /***/ }),
 
@@ -201,10 +251,12 @@ var dist_Label = __webpack_require__(21704);
 ;// ./packages/components/src/label/Label.module.css
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/label/Label.tsx
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);var ctx=react.useContext(LabelWrapper/* LabelWrapperContext */.d$);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{"aria-describedby":ctx==null?void 0:ctx.popoverId,children:children}));};
 
 /***/ }),
 
@@ -219,14 +271,340 @@ var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label'
 
 /***/ }),
 
-/***/ 41390:
+/***/ 41199:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--field-hover-01":"light-dark(#e6e6e6, #333333)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-primary":"light-dark(#171717, #f2f2f2)","dateInput":"dateInput_Y5ix","divider":"divider_BL_i"});
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_components_checkbox_mdx_1c7_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-checkbox-mdx-1c7.json
+const site_docs_components_checkbox_mdx_1c7_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/checkbox","title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","source":"@site/docs/components/checkbox.mdx","sourceDirName":"components","slug":"/components/checkbox","permalink":"/pr-preview/pr-672/components/checkbox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
+var Checkbox = __webpack_require__(8807);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/CheckboxGroup.tsx + 3 modules
+var CheckboxGroup = __webpack_require__(75394);
+;// ./apps/docs/src/components/examples/checkbox/CheckboxExamples.tsx
+var ControlledExample=function ControlledExample(){var _React$useState=react.useState(false),isSelected=_React$useState[0],setIsSelected=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:isSelected,onChange:setIsSelected,children:"Jag godk\xE4nner villkoren"}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Du har",isSelected?'':' inte'," godk\xE4nt villkoren"]})]});};var ControlledGroupExample=function ControlledGroupExample(){var _React$useState2=react.useState(),value=_React$useState2[0],setValue=_React$useState2[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$,{label:"Favoritfrukt",value:value,onChange:setValue,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"melon",children:"Melon"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"satsumas",children:"Satsumas"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Valda alternativ: ",value==null?void 0:value.join(', ')]})]});};
+// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
+var PropsTable = __webpack_require__(68713);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
+var getComponentMetaData = __webpack_require__(13225);
+;// ./apps/docs/docs/components/checkbox.mdx
+
+
+const frontMatter = {
+	title: 'Checkbox',
+	description: 'Används för att låta användaren välja inget, ett eller flera alternativ.',
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = undefined;
+
+const assets = {
+
+};
+
+
+
+
+
+
+
+const toc = [{
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Ensam checkbox",
+  "id": "ensam-checkbox",
+  "level": 3
+}, {
+  "value": "Förvalt alternativ (okontrollerat)",
+  "id": "förvalt-alternativ-okontrollerat",
+  "level": 3
+}, {
+  "value": "Kontrollerat val",
+  "id": "kontrollerat-val",
+  "level": 3
+}, {
+  "value": "Varianter för flera checkboxar",
+  "id": "varianter-för-flera-checkboxar",
+  "level": 2
+}, {
+  "value": "Välj alla",
+  "id": "välj-alla",
+  "level": 3
+}, {
+  "value": "Förvalda alternativ (okontrollerat)",
+  "id": "förvalda-alternativ-okontrollerat",
+  "level": 3
+}, {
+  "value": "Kontrollerat val",
+  "id": "kontrollerat-val-1",
+  "level": 3
+}, {
+  "value": "Riktlinjer",
+  "id": "riktlinjer",
+  "level": 2
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
+}, {
+  "value": "Checkbox",
+  "id": "checkbox",
+  "level": 3
+}, {
+  "value": "CheckboxGroup",
+  "id": "checkboxgroup",
+  "level": 3
+}];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    li: "li",
+    p: "p",
+    pre: "pre",
+    ul: "ul",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
+      name: "Checkbox",
+      friendlyName: "Kryssruta"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { Checkbox } from '@midas-ds/components'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Checkbox>Jag godkänner villkoren</Checkbox>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+        children: "Jag godkänner villkoren"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "ensam-checkbox",
+      children: "Ensam checkbox"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Checkbox>Jag godkänner villkoren</Checkbox>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+        children: "Jag godkänner villkoren"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "förvalt-alternativ-okontrollerat",
+      children: "Förvalt alternativ (okontrollerat)"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "defaultSelected"
+      }), " för att en checkbox ska vara förvald."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<Checkbox defaultSelected />\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+        defaultSelected: true
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "kontrollerat-val",
+      children: "Kontrollerat val"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isSelected"
+      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onChange"
+      }), " för att använda controlled mode på Checkbox."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import React from 'react'\n\nconst [isSelected, setIsSelected] = React.useState(false)\n\nreturn (\n  <Checkbox\n    isSelected={isSelected}\n    onChange={setIsSelected}\n  >\n    Jag godkänner villkoren\n  </Checkbox>\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(ControlledExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter-för-flera-checkboxar",
+      children: "Varianter för flera checkboxar"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<CheckboxGroup>"
+      }), " för att gruppera flera checkboxar som hör samman."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<CheckboxGroup\n  label='Godkänner du våra villkor?'\n  description='Läs texten först'\n>\n  <Checkbox value='1'>Jag har läst texten</Checkbox>\n  <Checkbox value='2'>Jag godkänner villkoren</Checkbox>\n</CheckboxGroup>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$, {
+        label: "Godkänner du våra villkor?",
+        description: "Läs texten först",
+        children: [(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "1",
+          children: "Jag har läst texten"
+        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "2",
+          children: "Jag godkänner villkoren"
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "välj-alla",
+      children: "Välj alla"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Ibland kan det vara lämpligt att ge användaren möjlighet att snabbt kryssa i alla kryssrutor.\nDenna funktion finns inbyggt i ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<CheckboxGroup>"
+      }), " via egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "showSelectAll"
+      }), ".\nOm detta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<CheckboxGroup\n  label='Godkänner du våra villkor'\n  description='Läs texten först'\n  // highlight-start\n  showSelectAll\n  // highlight-end\n>\n  <Checkbox value='1'>Jag har läst texten</Checkbox>\n  <Checkbox value='2'>Jag godkänner villkoren</Checkbox>\n</CheckboxGroup>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$, {
+        label: "Godkänner du våra villkor",
+        description: "Läs texten först",
+        showSelectAll: true,
+        children: [(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "1",
+          children: "Jag har läst texten"
+        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "2",
+          children: "Jag godkänner villkoren"
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "förvalda-alternativ-okontrollerat",
+      children: "Förvalda alternativ (okontrollerat)"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "defaultValue"
+      }), " för att en eller flera kryssrutor ska vara förvalda."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<CheckboxGroup\n  label='Favoritfrukt'\n  // highlight-start\n  defaultValue={['banan', 'melon']}\n  // highlight-end\n>\n  <Checkbox value='banan'>Banan</Checkbox>\n  <Checkbox value='melon'>Melon</Checkbox>\n  <Checkbox value='kiwi'>Kiwi</Checkbox>\n  <Checkbox value='satsumas'>Satsumas</Checkbox>\n</CheckboxGroup>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$, {
+        label: "Favoritfrukt",
+        defaultValue: ['banan', 'melon'],
+        children: [(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "banan",
+          children: "Banan"
+        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "melon",
+          children: "Melon"
+        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "kiwi",
+          children: "Kiwi"
+        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
+          value: "satsumas",
+          children: "Satsumas"
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "kontrollerat-val-1",
+      children: "Kontrollerat val"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "value"
+      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onChange"
+      }), " för att använda controlled mode på CheckboxGroup."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import React from 'react'\n\nconst [value, setValue] = React.useState<string[]>()\n\nreturn (\n  <CheckboxGroup\n    label='Favoritfrukt'\n    // highlight-start\n    value={value}\n    onChange={setValue}\n    // highlight-end\n  >\n    <Checkbox value='banan'>Banan</Checkbox>\n    <Checkbox value='melon'>Melon</Checkbox>\n    <Checkbox value='kiwi'>Kiwi</Checkbox>\n    <Checkbox value='satsumas'>Satsumas</Checkbox>\n  </CheckboxGroup>\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(ControlledGroupExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "riktlinjer",
+      children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
+        children: ["Om det är många alternativ så bör ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/select",
+          children: "Select"
+        }), " användas istället."]
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt"
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Fältetikett ska inledas med en stor bokstav och inte följas av punkt."
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "checkbox",
+      children: "Checkbox"
+    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
+      name: "Checkbox"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "checkboxgroup",
+      children: "CheckboxGroup"
+    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
+      name: "CheckboxGroup",
+      defaultOpen: false
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
 
 /***/ }),
 
@@ -293,297 +671,6 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
    */fieldSkeleton:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",skeleton01:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",skeleton02:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",iconPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",iconSecondary:"light-dark("+baseColors.gray140+", "+baseColors.gray70+")",iconTertiary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",iconInverse:"light-dark("+baseColors.white+", "+baseColors.gray200+")",iconOnColor:"light-dark("+baseColors.white+", "+baseColors.white+")",iconDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",iconSuccess:"light-dark("+baseColors.signalGreen100+", "+baseColors.signalGreen100+")",iconInfo:"light-dark("+baseColors.signalBlue100+", "+baseColors.signalBlue100+")",iconWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",iconImportant:"light-dark("+baseColors.signalYellow100+", "+baseColors.signalYellow100+")",linkEnabled:"light-dark("+baseColors.blue120+", "+baseColors.blue70+")",linkHover:"light-dark("+baseColors.blue150+", "+baseColors.blue50+")",linkPressed:"light-dark("+baseColors.gray200+", "+baseColors.blue40+")",linkVisited:"light-dark("+baseColors.purple110+", "+baseColors.purple80+")",supportBorderSuccess:"light-dark("+baseColors.signalGreen100+", "+baseColors.signalGreen100+")",supportBorderInfo:"light-dark("+baseColors.signalBlue100+", "+baseColors.signalBlue100+")",supportBorderImportant:"light-dark("+baseColors.signalYellow100+", "+baseColors.signalYellow100+")",supportBorderWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",supportBackgroundSuccess:"light-dark("+baseColors.signalGreen20+", "+baseColors.gray180+")",supportBackgroundSuccessHover:"light-dark("+baseColors.signalGreen30+", "+baseColors.gray170+")",supportBackgroundInfo:"light-dark("+baseColors.signalBlue10+", "+baseColors.gray180+")",supportBackgroundImportant:"light-dark("+baseColors.signalYellow10+", "+baseColors.gray180+")",supportBackgroundWarning:"light-dark("+baseColors.signalRed20+", "+baseColors.gray180+")",supportBackgroundWarningHover:"light-dark("+baseColors.signalRed30+", "+baseColors.gray170+")",textPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",textSecondary:"light-dark("+baseColors.gray140+", "+baseColors.gray70+")",textTertiary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",textOnColor:"light-dark("+baseColors.white+", "+baseColors.white+")",textInverse:"light-dark("+baseColors.gray10+", "+baseColors.gray200+")",textDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",textWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed80+")",textPlaceholder:"light-dark("+baseColors.gray70+", "+baseColors.gray140+")",buttonBackgroundPrimary:"light-dark("+baseColors.blue150+", "+baseColors.blue100+")",buttonBackgroundPrimaryHover:"light-dark("+baseColors.blue130+", "+baseColors.blue130+")",buttonBackgroundPrimaryActive:"light-dark("+baseColors.blue100+", "+baseColors.blue150+")",buttonBackgroundSecondary:"light-dark("+baseColors.white+", "+baseColors.gray200+")",buttonBackgroundSecondaryHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",buttonBackgroundSecondaryActive:"light-dark("+baseColors.gray30+", "+baseColors.gray180+")",buttonBackgroundTertiaryHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",buttonBackgroundTertiaryActive:"light-dark("+baseColors.gray30+", "+baseColors.gray180+")",buttonBackgroundDanger:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",buttonBackgroundDangerHover:"light-dark("+baseColors.signalRed120+", "+baseColors.signalRed120+")",buttonBackgroundDangerActive:"light-dark("+baseColors.signalRed150+", "+baseColors.signalRed150+")",buttonBackgroundDisabled:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",/**
    *  @deprecated since v10.2.0, please use the `skeleton01` instead.
    */buttonBackgroundSkeleton:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",buttonBorderSecondary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",logoPrimary:"light-dark("+baseColors.red100+", "+baseColors.white+")",menuItemBackgroundHover:"light-dark("+baseColors.gray20+", "+baseColors.gray190+")",menuItemBackgroundSelected:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")"};var zIndex={base:1,above:10,modal:1000,toast:1100,skipToContent:1200};
-
-/***/ }),
-
-/***/ 48292:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  v: () => (/* binding */ DateField)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
-var dist_DateField = __webpack_require__(68407);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/date-field/DateInput.tsx
-var DateInput = __webpack_require__(79980);
-// EXTERNAL MODULE: ./packages/components/src/date-field/DateSegment.tsx + 1 modules
-var DateSegment = __webpack_require__(18980);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
-var Label = __webpack_require__(34704);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-;// ./packages/components/src/date-field/DateField.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const DateField_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-placeholder":"light-dark(#a6a6a6, #525252)","--support-border-warning":"light-dark(#e62323, #e62323)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--size-130":"2.5rem","--size-150":"3rem","dateField":"dateField_w_5V","inputField":"inputField_RpLn","medium":"medium_OzpD"});
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
-var LabelWrapper = __webpack_require__(28637);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/date-field/DateField.tsx
-var _excluded=["className","description","errorMessage","errorPosition","isDisabled","label","size","popover"];var DateField=function DateField(_ref){var _clsx;var className=_ref.className,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,isDisabled=_ref.isDisabled,label=_ref.label,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_DateField/* DateField */.vM,Object.assign({},rest,{className:(0,clsx/* default */.A)(DateField_module.dateField,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(DateField_module.inputField,(_clsx={},_clsx[DateField_module.medium]=size==='medium',_clsx)),"data-disabled":isDisabled||undefined,"data-testid":"date-field_input-field",children:/*#__PURE__*/(0,jsx_runtime.jsx)(DateInput/* DateInput */.J,{children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateSegment/* DateSegment */.E,{segment:segment});}})}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage})]}));};
-
-/***/ }),
-
-/***/ 53606:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Example: () => (/* binding */ Example),
-  I18nExample: () => (/* binding */ I18nExample),
-  assets: () => (/* binding */ assets),
-  contentTitle: () => (/* binding */ contentTitle),
-  "default": () => (/* binding */ MDXContent),
-  frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_datefield_mdx_775_namespaceObject),
-  toc: () => (/* binding */ toc)
-});
-
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-datefield-mdx-775.json
-const site_docs_components_datefield_mdx_775_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/datefield","title":"DateField","description":"Använd ett datumfält när användaren ska fylla i ett datum.","source":"@site/docs/components/datefield.mdx","sourceDirName":"components","slug":"/components/datefield","permalink":"/pr-preview/pr-672/components/datefield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"DateField","description":"Använd ett datumfält när användaren ska fylla i ett datum.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
-var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/context.mjs + 2 modules
-var context = __webpack_require__(39892);
-// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
-var PropsTable = __webpack_require__(68713);
-// EXTERNAL MODULE: ./packages/components/src/date-field/DateField.tsx + 1 modules
-var DateField = __webpack_require__(48292);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
-var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/conversion.mjs
-var conversion = __webpack_require__(40277);
-// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/queries.mjs + 1 modules
-var queries = __webpack_require__(97819);
-;// ./apps/docs/src/components/examples/date-field/DateFieldExamples.tsx
-var DateFieldControlled=function DateFieldControlled(){var today=(0,conversion/* toCalendarDate */.gw)((0,queries/* now */.tB)((0,queries/* getLocalTimeZone */.Xj)()));var _React$useState=react.useState(today),date=_React$useState[0],setDate=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:"card",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateField */.v,{value:date,onChange:function onChange(value){return value&&setDate(value);}}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Du har valt datumet: ",date==null?void 0:date.toString()]})]});};
-// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/CalendarDate.mjs
-var CalendarDate = __webpack_require__(99451);
-;// ./apps/docs/docs/components/datefield.mdx
-
-
-const frontMatter = {
-	title: 'DateField',
-	description: 'Använd ett datumfält när användaren ska fylla i ett datum.',
-	pagination_prev: null,
-	pagination_next: null
-};
-const contentTitle = undefined;
-
-const assets = {
-
-};
-
-
-
-
-
-
-
-
-
-const Example = props => {
-  return (0,jsx_runtime.jsx)("div", {
-    className: "card",
-    children: (0,jsx_runtime.jsx)(DateField/* DateField */.v, {
-      label: "Etikett",
-      description: "Beskrivning",
-      ...props
-    })
-  });
-};
-const I18nExample = props => {
-  return (0,jsx_runtime.jsx)("div", {
-    className: "card",
-    children: (0,jsx_runtime.jsx)(context/* I18nProvider */.C, {
-      locale: "fr-Fr",
-      children: (0,jsx_runtime.jsx)(DateField/* DateField */.v, {
-        label: "Välj ett datum",
-        description: "vilket datum som helst"
-      })
-    })
-  });
-};
-const toc = [{
-  "value": "Användning",
-  "id": "användning",
-  "level": 2
-}, {
-  "value": "Lokalisering",
-  "id": "lokalisering",
-  "level": 3
-}, {
-  "value": "Förvalt värde (uncontrolled)",
-  "id": "förvalt-värde-uncontrolled",
-  "level": 3
-}, {
-  "value": "Controlled value",
-  "id": "controlled-value",
-  "level": 3
-}, {
-  "value": "API",
-  "id": "api",
-  "level": 2
-}];
-function _createMdxContent(props) {
-  const _components = {
-    a: "a",
-    code: "code",
-    h2: "h2",
-    h3: "h3",
-    p: "p",
-    pre: "pre",
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Datefield",
-      friendlyName: "Datumfält",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/DateField.html"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Datumfält används när användaren ska fylla i ett datum eller som ett fält där datum är representerat. Datumfältet\nbygger på React Arias ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/DateField.html",
-        children: "DateField"
-      }), ".\nIn- och utdata till DateField liksom andra tidsrelaterade komponenter bygger på\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/internationalized/date/index.html",
-        children: "@internationalized/date"
-      }), " så ytterligare referens\ntill hur värden ska formateras hittas där."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { DateField } from '@midas-ds/components'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DateField\n  label='Etikett'\n  description='Beskrivning'\n/>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(Example, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "användning",
-      children: "Användning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["DateField fungerar som andra formulärskomponenter och kan integreras i vanliga HTML-forms via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "name"
-      }), " eller kan valideras\ni andra forms via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validate"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isInvalid"
-      }), ". Se ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "#api",
-        children: "props"
-      }), " för samtliga egenskaper."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "lokalisering",
-      children: "Lokalisering"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Tänk på att formatet för inmatning (exempelvis YYYY/MM/DD) beror av användarens språkinställning så referera inte till\ndet i etikett eller hjälptext."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<I18nProvider locale='fr-Fr'>\n  <DateField\n    label='Välj ett datum'\n    description='vilket datum som helst'\n  />\n</I18nProvider>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(I18nExample, {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["DateField stödjer också olika kalendrar, se\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/DateField.html#international-calendars",
-        children: "React Aria"
-      }), "\noch ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar#adding_a_calendar_in_the_locale_string",
-        children: "mdm web docs"
-      }), "\nför referens om hur du går till väga för att konvertera datum mellan olika kalendrar."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<I18nProvider locale='fr-Fr-u-ca-buddhist'>\n  <Example\n    label='Välj ett datum'\n    description='Calendrier bouddhiste français'\n  />\n</I18nProvider>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(context/* I18nProvider */.C, {
-      locale: "fr-Fr-u-ca-buddhist",
-      children: (0,jsx_runtime.jsx)(Example, {
-        label: "Välj ett datum",
-        description: "Calendrier bouddhiste français"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "förvalt-värde-uncontrolled",
-      children: "Förvalt värde (uncontrolled)"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "defaultValue"
-      }), " för att sätta ett förvalt värde (uncontrolled). ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "CalendarDate"
-      }), " är\nett datum utan tidskomponent."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { CalendarDate } from '@internationalized/date'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<DateField defaultValue={new CalendarDate(2025, 12, 25)} />\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(Example, {
-      defaultValue: new CalendarDate/* CalendarDate */.ng(2025, 12, 25),
-      label: "Happy Kwanza",
-      description: ""
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "controlled-value",
-      children: "Controlled value"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Följer mönstret av andra input-fält, ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onChange"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "value"
-      }), " ger tillgång till DateField-state.\nAnvänd funktioner ur ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/internationalized/date/index.html",
-        children: "@internationlized/date"
-      }), "\nför korrekt översättning mellan olika format."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { DateField } from '@midas-ds/components'\nimport { now, toCalendarDate, getLocalTimeZone } from '@internationalized/date'\n\nexport const DateFieldControlled = () => {\n  const today = toCalendarDate(now(getLocalTimeZone()))\n  const [date, setDate] = React.useState(today)\n  return (\n    <>\n      <DateField\n        value={date}\n        onChange={setDate}\n      />\n      <pre>Du har valt datumet: {date?.toString()}</pre>\n    </>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(DateFieldControlled, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "api",
-      children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "DateField"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {})
-    })]
-  });
-}
-function MDXContent(props = {}) {
-  const {wrapper: MDXLayout} = {
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
-    ...props,
-    children: (0,jsx_runtime.jsx)(_createMdxContent, {
-      ...props
-    })
-  }) : _createMdxContent(props);
-}
-
-
 
 /***/ }),
 
@@ -720,6 +807,52 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
 
 /***/ }),
 
+/***/ 75394:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  $: () => (/* binding */ CheckboxGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckboxGroup.mjs
+var useCheckboxGroup = __webpack_require__(91936);
+// EXTERNAL MODULE: ./node_modules/@react-stately/checkbox/dist/useCheckboxGroupState.mjs
+var useCheckboxGroupState = __webpack_require__(34650);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
+var useLocalizedStringFormatter = __webpack_require__(88413);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
+var Checkbox = __webpack_require__(8807);
+;// ./packages/components/src/checkbox/useSelectAll.ts
+var useSelectAll=function useSelectAll(children,_ref){var selectedItems=_ref.value;var checkboxes=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child)&&child.type===Checkbox/* Checkbox */.S;});var numberOfCheckboxes=react.Children.count(checkboxes);var checkboxValues=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child);}).filter(function(child){return!!child&&child.type===Checkbox/* Checkbox */.S;}).map(function(child){return child.props.value;});var noneSelected=selectedItems.length===0;var allSelected=selectedItems.length===numberOfCheckboxes;var someSelected=!noneSelected&&!allSelected;return{allSelected:allSelected,someSelected:someSelected,checkboxValues:checkboxValues};};
+// EXTERNAL MODULE: ./packages/components/src/checkbox/context.ts
+var context = __webpack_require__(20011);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
+var FieldError = __webpack_require__(44300);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var field_error_FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/checkbox/CheckboxGroupFieldError.tsx
+var CheckboxGroupFieldError=function CheckboxGroupFieldError(_ref){var state=_ref.state,errorMessage=_ref.errorMessage;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldErrorContext */.C.Provider,{value:state.displayValidation,children:/*#__PURE__*/(0,jsx_runtime.jsx)(field_error_FieldError/* FieldError */.b,{children:errorMessage})});};
+;// ./packages/components/src/checkbox/intl/translations.json
+const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en-US":{"selectAll":"Select all"},"en-GB":{"selectAll":"Select all"},"es-ES":{"selectAll":"Seleccionar todos"},"es-MX":{"selectAll":"Seleccionar todos"},"fr-FR":{"selectAll":"Tout sélectionner"},"fr-CA":{"selectAll":"Tout sélectionner"},"de-DE":{"selectAll":"Alle auswählen"},"it-IT":{"selectAll":"Seleziona tutti"},"pt-PT":{"selectAll":"Selecionar todos"},"pt-BR":{"selectAll":"Selecionar todos"},"ru-RU":{"selectAll":"Выбрать все"},"zh-CN":{"selectAll":"全选"},"zh-TW":{"selectAll":"全選"},"ja-JP":{"selectAll":"すべて選択"},"ko-KR":{"selectAll":"전체 선택"},"ar-SA":{"selectAll":"تحديد الكل"},"hi-IN":{"selectAll":"सभी चुनें"},"tr-TR":{"selectAll":"Tümünü seç"},"nl-NL":{"selectAll":"Alles selecteren"},"sv-SE":{"selectAll":"Välj alla"},"fi-FI":{"selectAll":"Valitse kaikki"},"no-NO":{"selectAll":"Velg alle"},"da-DK":{"selectAll":"Vælg alle"},"pl-PL":{"selectAll":"Zaznacz wszystkie"},"cs-CZ":{"selectAll":"Vybrat vše"},"he-IL":{"selectAll":"בחר הכול"},"th-TH":{"selectAll":"เลือกทั้งหมด"},"vi-VN":{"selectAll":"Chọn tất cả"},"id-ID":{"selectAll":"Pilih semua"},"uk-UA":{"selectAll":"Вибрати все"}}');
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
+var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
+;// ./packages/components/src/checkbox/CheckboxGroup.tsx
+function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGroupState */.h)(props);var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);var _useCheckboxGroup=(0,useCheckboxGroup/* useCheckboxGroup */.M)(props,state),groupProps=_useCheckboxGroup.groupProps,labelProps=_useCheckboxGroup.labelProps,descriptionProps=_useCheckboxGroup.descriptionProps;var _useSelectAll=useSelectAll(props.children,state),allSelected=_useSelectAll.allSelected,someSelected=_useSelectAll.someSelected,checkboxValues=_useSelectAll.checkboxValues;var handleChange=function handleChange(checked){state.setValue(checked?checkboxValues:[]);};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},groupProps,{className:Checkbox_module/* default */.A.checkboxGroup,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.cR,{popover:props.popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,Object.assign({slot:"description"},descriptionProps,{children:props.description})),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state})),props.showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:allSelected,isIndeterminate:someSelected,onChange:handleChange,children:props.selectAllLabel||stringFormatter.format('selectAll')}),/*#__PURE__*/(0,jsx_runtime.jsx)(context/* CheckboxGroupContext */.I.Provider,{value:state,children:props.children}),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state}))]}));}
+
+/***/ }),
+
 /***/ 78033:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -739,22 +872,6 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
 
 /***/ }),
 
-/***/ 79980:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ DateInput)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68407);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
-/* harmony import */ var _DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41390);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["className"];var DateInput=function DateInput(_ref){var className=_ref.className,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DateInput */ .J3,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dateInput,className)},rest));};
-
-/***/ }),
-
 /***/ 86707:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -763,6 +880,37 @@ var _excluded=["className"];var DateInput=function DateInput(_ref){var className
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--icon-primary":"light-dark(#171717, #f2f2f2)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-secondary":"light-dark(#ffffff, #171717)","--font-size-30":"1rem","--text-on-color":"light-dark(#ffffff, #ffffff)","--button-border-secondary":"light-dark(light-dark(#143c50, #2e7ca5), #f2f2f2)","--button-background-secondary-hover":"light-dark(#e6e6e6, #212121)","--button-background-disabled":"light-dark(#f2f2f2, #262626)","--white":"#ffffff","--border-disabled":"light-dark(#bfbfbf, #525252)","--button-background-secondary-active":"light-dark(#d9d9d9, #262626)","--button-background-tertiary-hover":"light-dark(#e6e6e6, #212121)","--button-background-tertiary-active":"light-dark(#d9d9d9, #262626)","--text-tertiary":"light-dark(#143c50, #f2f2f2)","--button-background-danger":"light-dark(#e62323, #e62323)","--button-background-danger-hover":"light-dark(#bc1d1d, #bc1d1d)","--text-disabled":"light-dark(#bfbfbf, #525252)","--button-background-danger-active":"light-dark(#7d1313, #7d1313)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--button-background-icon-hover":"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))","--button-background-icon-active":"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))","--size-50":"0.625rem","--size-70":"0.875rem","--size-80":"1rem","--size-120":"2rem","--size-130":"2.5rem","--size-150":"3rem","--line-height-30":"1.25rem","button":"button_RcXK","secondary":"secondary_h5I_","tertiary":"tertiary_xq7E","iconBtn":"iconBtn__8qK","medium":"medium_uqO9","danger":"danger_iFp6","iconRight":"iconRight_iW1e","fullwidth":"fullwidth_WWNT","primary":"primary_JNNk"});
+
+/***/ }),
+
+/***/ 88413:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   o: () => (/* binding */ useLocalizedStringFormatter)
+/* harmony export */ });
+/* unused harmony export useLocalizedStringDictionary */
+/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92122);
+/* harmony import */ var _internationalized_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57612);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39892);
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */var cache=new WeakMap();function getCachedDictionary(strings){var dictionary=cache.get(strings);if(!dictionary){dictionary=new _internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B(strings,'sv-SE');cache.set(strings,dictionary);}return dictionary;}/**
+ * Returns a cached LocalizedStringDictionary for the given strings.
+ */function useLocalizedStringDictionary(strings,packageName){return packageName&&_internationalized_string__WEBPACK_IMPORTED_MODULE_1__/* .LocalizedStringDictionary */ .B.getGlobalDictionaryForPackage(packageName)||getCachedDictionary(strings);}/**
+ * Provides localized string formatting for the current locale. Supports interpolating variables,
+ * selecting the correct pluralization, and formatting numbers. Automatically updates when the locale changes.
+ * @param strings - A mapping of languages to localized strings by key.
+ */function useLocalizedStringFormatter(strings,packageName){var _useLocale=(0,react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .useLocale */ .Y)(),locale=_useLocale.locale;var dictionary=useLocalizedStringDictionary(strings,packageName);return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function(){return new _internationalized_string__WEBPACK_IMPORTED_MODULE_3__/* .LocalizedStringFormatter */ .J(locale,dictionary);},[dictionary,locale]);}
 
 /***/ }),
 
