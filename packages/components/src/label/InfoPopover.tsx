@@ -3,6 +3,7 @@ import { Popover, PopoverTrigger } from '../popover'
 import { Button } from '../button'
 import { Info } from 'lucide-react'
 import styles from './LabelWrapper.module.css'
+import { LabelWrapperContext } from './LabelWrapper'
 
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
 export interface InfoPopoverProps {
@@ -17,6 +18,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
   'aria-label': ariaLabel = 'Mer information',
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
+  const ctx = React.useContext(LabelWrapperContext)
 
   return (
     <PopoverTrigger
@@ -28,6 +30,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
         size='medium'
         className={styles.labelPopoverTrigger}
         aria-label={ariaLabel}
+        id={ctx?.popoverId}
       >
         <Info size={20} />
       </Button>
