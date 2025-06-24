@@ -9,8 +9,6 @@ export const ControlledExample = () => {
   return (
     <>
       <Tabs
-        label='Frukt och grönt'
-        tabs={tabs}
         selectedKey={selectedTab}
         onSelectionChange={setSelectedTab}
       >

@@ -1,5 +1,5 @@
 import styles from './app.module.css'
-import { Skeleton, TextField } from '@midas-ds/components'
+import { Tab, Tabs, TabPanel, TextField, TabList } from '@midas-ds/components'
 
 export function App() {
   return (
@@ -27,7 +27,18 @@ export function App() {
       </div>
 
       <div style={{ backgroundColor: '#f2f2f2', padding: '1rem' }}>
-        <Skeleton isOnLayer01 />
+        <Tabs defaultSelectedKey='tab1'>
+          <TabList>
+            <Tab id='tab1'>Tab 1</Tab>
+            <Tab id='tab2'>Tab 2</Tab>
+          </TabList>
+          <TabPanel id='tab1'>
+            <p>This is content for Tab 1.</p>
+          </TabPanel>
+          <TabPanel id='tab2'>
+            <p>This is content for Tab 2.</p>
+          </TabPanel>
+        </Tabs>
       </div>
     </div>
   )
