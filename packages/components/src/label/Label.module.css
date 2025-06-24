@@ -8,9 +8,6 @@
   font-size: --font-size-30;
   line-height: --line-height-30;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
 }
 
 .labelBase:has(~ [data-disabled]) {
@@ -25,8 +22,15 @@
   color: --text-disabled;
 }
 
+.labelPopover {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .labelPopoverTrigger {
   padding: 0 !important;
+  margin-bottom: 0.125rem;
 
   svg {
     stroke: --support-border-info;

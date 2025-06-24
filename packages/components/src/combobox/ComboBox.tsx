@@ -27,6 +27,8 @@ import {
   type ListBoxItemElement,
   type ListBoxSectionElement,
 } from '../list-box'
+import { InfoPopoverProps } from '../label/InfoPopover'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -41,8 +43,7 @@ export interface ComboBoxProps<T extends ListBoxOption>
    *  @default 'large'
    * */
   size?: Size
-  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover: InfoPopoverProps
 }
 
 export function ComboBox<T extends ListBoxOption>({
@@ -54,7 +55,7 @@ export function ComboBox<T extends ListBoxOption>({
   className,
   errorPosition = 'top',
   size = 'large',
-  popoverContent,
+  popover,
   ...props
 }: ComboBoxProps<T>) {
   return (
@@ -62,7 +63,9 @@ export function ComboBox<T extends ListBoxOption>({
       className={clsx(styles.combobox, className)}
       {...props}
     >
-      {label && <Label popoverContent={popoverContent}>{label}</Label>}
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>

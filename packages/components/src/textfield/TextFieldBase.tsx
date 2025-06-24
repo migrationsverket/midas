@@ -7,12 +7,14 @@ import {
   ValidationResult,
 } from 'react-aria-components'
 import styles from './TextField.module.css'
-import { Label } from '../label'
 import { Text } from '../text/Text'
 import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 import { clsx } from 'clsx'
 import { Size } from '../common/types'
+import { LabelWrapper } from '../label/LabelWrapper'
+import { InfoPopoverProps } from '../label/InfoPopover'
+import { Label } from '../label'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
@@ -33,8 +35,7 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    *  @default 'large'
    * */
   size?: Size
-  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 export const TextFieldBase = React.forwardRef<
@@ -50,7 +51,8 @@ export const TextFieldBase = React.forwardRef<
     showCounter,
     errorPosition = 'top',
     size = 'large',
-    popoverContent,
+    popover,
+    children,
   } = props
 
   return (
@@ -60,13 +62,15 @@ export const TextFieldBase = React.forwardRef<
         [styles.medium]: size === 'medium',
       })}
     >
-      {label && <Label popoverContent={popoverContent}>{label}</Label>}
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {showCounter && <CharacterCounter isLonely={!description} />}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
-      <div className={styles.wrap}>{props.children}</div>
+      <div className={styles.wrap}>{children}</div>
       {errorPosition === 'bottom' && (
         <FieldError
           data-testid='fieldError'

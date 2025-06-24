@@ -12,6 +12,8 @@ import { Button } from '../button'
 import { DropEvent } from 'react-aria'
 import { Label } from '../label'
 import { Text } from '../text'
+import { LabelWrapper } from '../label/LabelWrapper'
+import { InfoPopoverProps } from '../label/InfoPopover'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -21,7 +23,7 @@ export interface FileTriggerProps extends AriaFileTriggerProps {
   /**  Use DropZone version */
   dropzone?: boolean
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 type FileState = File[] | null | undefined
@@ -31,7 +33,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   label,
   description,
   dropzone,
-  popoverContent,
+  popover,
   ...rest
 }) => {
   const [files, setFiles] = React.useState<FileState>(null)
@@ -75,7 +77,9 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
 
   return (
     <div className={styles.container}>
-      {label && <Label popoverContent={popoverContent}>{label}</Label>}
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       <AriaFileTrigger
         allowsMultiple={allowsMultiple}

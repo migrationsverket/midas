@@ -15,6 +15,8 @@ import clsx from 'clsx'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
+import { LabelWrapper } from '../label/LabelWrapper'
+import { InfoPopoverProps } from '../label/InfoPopover'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
@@ -26,7 +28,7 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 /**
@@ -39,7 +41,7 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   children,
   className,
   errorPosition = 'top',
-  popoverContent,
+  popover,
   ...props
 }) => {
   return (
@@ -47,7 +49,9 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
       {...props}
       className={clsx(styles.radioGroup, className)}
     >
-      {label && <Label popoverContent={popoverContent}>{label}</Label>}
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>

@@ -12,6 +12,8 @@ import { Label } from '../label'
 import { Text } from '../text'
 import styles from './DateField.module.css'
 import { Size } from '../common/types'
+import { InfoPopoverProps } from '../label/InfoPopover'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
   description?: string
@@ -23,7 +25,7 @@ export interface DateFieldProps extends AriaDateFieldProps<DateValue> {
    * */
   size?: Size
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 export const DateField: React.FC<DateFieldProps> = ({
@@ -34,14 +36,16 @@ export const DateField: React.FC<DateFieldProps> = ({
   isDisabled,
   label,
   size = 'large',
-  popoverContent,
+  popover,
   ...rest
 }) => (
   <AriaDateField
     {...rest}
     className={clsx(styles.dateField, className)}
   >
-    <Label popoverContent={popoverContent}>{label}</Label>
+    <LabelWrapper popover={popover}>
+      {label && <Label>{label}</Label>}
+    </LabelWrapper>
     {description && <Text slot='description'>{description}</Text>}
     {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
     <div

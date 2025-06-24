@@ -18,21 +18,23 @@ import { SelectTrigger } from './SelectTrigger'
 import { SelectFieldError } from './SelectFieldError'
 import styles from './Select.module.css'
 import type { SelectContainerProps, SelectProps } from './types'
+import { LabelWrapper } from '../label/LabelWrapper'
+import { InfoPopoverProps } from '../label/InfoPopover'
 
 interface MidasSelectProps extends SelectProps {
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
-  ({ isClearable = true, popoverContent, ...rest }, ref) => {
+  ({ isClearable = true, popover, ...rest }, ref) => {
     const props: MidasSelectProps = {
       selectionMode: 'single',
       errorPosition: 'top',
       disallowEmptySelection: !isClearable,
       isClearable,
       size: 'large',
-      popoverContent,
+      popover,
       ...rest,
     }
 
@@ -60,15 +62,16 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
           state={state}
           triggerRef={triggerRef}
         />
-        {props.label && (
-          <Label
-            {...labelProps}
-            popoverContent={props.popoverContent}
-            data-disabled={props.isDisabled || undefined}
-          >
-            {props.label}
-          </Label>
-        )}
+        <LabelWrapper popover={popover}>
+          {props.label && (
+            <Label
+              {...labelProps}
+              data-disabled={props.isDisabled || undefined}
+            >
+              {props.label}
+            </Label>
+          )}
+        </LabelWrapper>
         {props.description && (
           <Text slot='description'>{props.description}</Text>
         )}

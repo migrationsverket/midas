@@ -13,6 +13,8 @@ import { Checkbox } from './Checkbox'
 import { Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
+import { InfoPopoverProps } from '../label/InfoPopover'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface CheckboxGroupProps
   extends Omit<AriaCheckboxGroupProps, 'children'> {
@@ -23,7 +25,7 @@ export interface CheckboxGroupProps
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 export const CheckboxGroup = ({
@@ -33,7 +35,7 @@ export const CheckboxGroup = ({
   showSelectAll,
   children,
   errorPosition = 'top',
-  popoverContent,
+  popover,
   ...props
 }: CheckboxGroupProps) => {
   const [isAllSelected, setIsAllSelected] = React.useState<
@@ -97,7 +99,9 @@ export const CheckboxGroup = ({
       className={styles.checkboxGroup}
       {...props}
     >
-      <Label popoverContent={popoverContent}>{label}</Label>
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <Group className={styles.wrap}>

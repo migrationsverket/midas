@@ -17,6 +17,8 @@ import { RangeCalendar } from '../calendar'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
+import { LabelWrapper } from '../label/LabelWrapper'
+import { InfoPopoverProps } from '../label/InfoPopover'
 
 export interface DateRangePickerProps
   extends AriaDateRangePickerProps<DateValue> {
@@ -29,7 +31,7 @@ export interface DateRangePickerProps
    * */
   size?: Size
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popoverContent?: React.ReactNode
+  popover?: InfoPopoverProps
 }
 
 export const DateRangePicker: React.FC<DateRangePickerProps> = ({
@@ -38,7 +40,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   errorMessage,
   errorPosition = 'top',
   label,
-  popoverContent,
+  popover,
   ...rest
 }) => {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -49,7 +51,9 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
       ref={ref}
       {...rest}
     >
-      <Label popoverContent={popoverContent}>{label}</Label>
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <DatePickerInputField {...rest}>

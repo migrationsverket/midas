@@ -4,8 +4,17 @@ import { Button } from '../button'
 import { Info } from 'lucide-react'
 import styles from './Label.module.css'
 
-export const LabelPopover: React.FC<{ children: React.ReactNode }> = ({
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
+export interface InfoPopoverProps {
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  children: React.ReactNode
+  /** An aria-label for the info icon button trigger */
+  'aria-label'?: string
+}
+
+export const InfoPopover: React.FC<InfoPopoverProps> = ({
   children,
+  'aria-label': ariaLabel = 'Mer information',
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
@@ -18,6 +27,7 @@ export const LabelPopover: React.FC<{ children: React.ReactNode }> = ({
         variant='icon'
         size='medium'
         className={styles.labelPopoverTrigger}
+        aria-label={ariaLabel}
       >
         <Info size={20} />
       </Button>
