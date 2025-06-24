@@ -1,31 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4146],{
-
-/***/ 8723:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ LoaderCircle)
-/* harmony export */ });
-/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
-/**
- * @license lucide-react v0.453.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-
-
-
-const LoaderCircle = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("LoaderCircle", [
-  ["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]
-]);
-
-
-//# sourceMappingURL=loader-circle.js.map
-
-
-/***/ }),
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9636],{
 
 /***/ 8807:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -132,6 +106,33 @@ var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useConte
 
 /***/ }),
 
+/***/ 18980:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  E: () => (/* binding */ DateSegment)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
+var DateField = __webpack_require__(68407);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/components/src/date-field/DateSegment.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const DateSegment_module = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","dateSegment":"dateSegment_nh76"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/date-field/DateSegment.tsx
+var _excluded=["className"];var DateSegment=function DateSegment(_ref){var className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,Object.assign({className:(0,clsx/* default */.A)(DateSegment_module.dateSegment,className)},rest));};
+
+/***/ }),
+
 /***/ 19060:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -197,6 +198,48 @@ var CheckboxGroupContext=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createC
 
 /***/ }),
 
+/***/ 20454:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ _objectDestructuringEmpty)
+/* harmony export */ });
+function _objectDestructuringEmpty(t) {
+  if (null == t) throw new TypeError("Cannot destructure " + t);
+}
+
+
+/***/ }),
+
+/***/ 28637:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  c: () => (/* binding */ LabelWrapper)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+
+/***/ }),
+
 /***/ 28777:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -226,314 +269,6 @@ var Dialog = __webpack_require__(86484);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/popover/Popover.tsx
 var _excluded=["children","className","offset"],_excluded2=["children"];function Popover_Popover(_ref){var children=_ref.children,className=_ref.className,_ref$offset=_ref.offset,offset=_ref$offset===void 0?4:_ref$offset,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* Popover */.A,Object.assign({},props,{offset:offset,className:(0,clsx/* default */.A)(Popover_module.popover,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(OverlayArrow/* OverlayArrow */.k,{className:Popover_module.arrow,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:8,height:8,viewBox:"0 0 8 8",children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M0 0 L4 4 L8 0"})})}),children]}));}function PopoverTrigger(_ref2){var children=_ref2.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsx)(Dialog/* DialogTrigger */.zM,Object.assign({},props,{children:children}));}
-
-/***/ }),
-
-/***/ 30515:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  assets: () => (/* binding */ assets),
-  contentTitle: () => (/* binding */ contentTitle),
-  "default": () => (/* binding */ MDXContent),
-  frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_dev_forms_mdx_ac3_namespaceObject),
-  toc: () => (/* binding */ toc)
-});
-
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-dev-forms-mdx-ac3.json
-const site_docs_dev_forms_mdx_ac3_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"dev/forms","title":"Formulär","description":"Utvecklarinstruktioner för formulär","source":"@site/docs/dev/forms.mdx","sourceDirName":"dev","slug":"/dev/forms","permalink":"/pr-preview/pr-672/dev/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Formulär","description":"Utvecklarinstruktioner för formulär","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
-var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regenerator.js
-var regenerator = __webpack_require__(22007);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(10467);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-;// ./apps/docs/src/components/examples/form/FormExamples.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const FormExamples_module = ({"form":"form_Z3dD"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Form.mjs
-var Form = __webpack_require__(23128);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
-var TextField = __webpack_require__(13332);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/CheckboxGroup.tsx + 3 modules
-var CheckboxGroup = __webpack_require__(75394);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
-var Checkbox = __webpack_require__(8807);
-// EXTERNAL MODULE: ./packages/components/src/button/ButtonGroup.tsx + 1 modules
-var ButtonGroup = __webpack_require__(49764);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./packages/components/src/spinner/Spinner.tsx + 1 modules
-var Spinner = __webpack_require__(69336);
-;// ./apps/docs/src/components/examples/form/FormExamples.tsx
-var UncontrolledForm=function UncontrolledForm(){var _React$useState=react.useState(null),result=_React$useState[0],setResult=_React$useState[1];var handleSubmit=function handleSubmit(e){e.preventDefault();var data=Object.fromEntries(new FormData(e.currentTarget));setResult(data);};return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{onSubmit:handleSubmit,className:FormExamples_module.form,validationBehavior:"native"// use 'aria' to allow submit when invalid
-,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Namn",name:"name",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"E-post",type:"email",name:"email",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroup/* CheckboxGroup */.$,{label:"Spara mina uppgifter",name:"saveData",isRequired:true,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"agree",children:"Jag godk\xE4nner"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"reset",variant:"secondary",children:"Rensa"})]})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:result&&/*#__PURE__*/(0,jsx_runtime.jsx)("pre",{children:JSON.stringify(result,null,2)})})]});};var ControlledForm=function ControlledForm(){var _React$useState2=react.useState(''),name=_React$useState2[0],setName=_React$useState2[1];var onSubmit=function onSubmit(e){e.preventDefault();};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{onSubmit:onSubmit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{name:"name",label:"Namn",onChange:setName,isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{children:["Ditt namn: ",name]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:"Skicka"})]});};var RealtimeValidation=function RealtimeValidation(){var _password$match,_password$match2;var _React$useState3=react.useState(''),password=_React$useState3[0],setPassword=_React$useState3[1];var errors=[];if(password.length<8){errors.push('Lösenordet måste vara fler än 8 tecken.');}if(((_password$match=password.match(/[A-Z]/g))!=null?_password$match:[]).length<2){errors.push('Lösenordet måste innehålla minst 2 versaler.');}if(((_password$match2=password.match(/[^a-z]/gi))!=null?_password$match2:[]).length<2){errors.push('Lösenordet måste innehålla minst två symboler.');}return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"L\xF6senord",style:{whiteSpace:'pre-line'},isInvalid:errors.length>0,value:password,onChange:setPassword,errorMessage:errors.join('\n'),errorPosition:"bottom"});};var ServerValidation=function ServerValidation(){var _React$useState4=react.useState(false),isWaiting=_React$useState4[0],setIsWaiting=_React$useState4[1];// Fake server used in this example.
-var delay=function delay(ms){return new Promise(function(resolve){return setTimeout(resolve,ms);});};function callServer(_x){return _callServer.apply(this,arguments);}function _callServer(){_callServer=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regenerator/* default */.A)().m(function _callee2(data){return (0,regenerator/* default */.A)().w(function(_context2){while(1)switch(_context2.n){case 0:setIsWaiting(true);_context2.n=1;return delay(1000);case 1:setIsWaiting(false);return _context2.a(2,{errors:{username:"Tyv\xE4rr, anv\xE4ndarnamnet "+data.username+" \xE4r upptaget."}});}},_callee2);}));return _callServer.apply(this,arguments);}var _React$useState5=react.useState({}),errors=_React$useState5[0],setErrors=_React$useState5[1];var onSubmit=/*#__PURE__*/function(){var _ref=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regenerator/* default */.A)().m(function _callee(e){var data,result;return (0,regenerator/* default */.A)().w(function(_context){while(1)switch(_context.n){case 0:e.preventDefault();data=Object.fromEntries(new FormData(e.currentTarget));_context.n=1;return callServer(data);case 1:result=_context.v;setErrors(result.errors);case 2:return _context.a(2);}},_callee);}));return function onSubmit(_x2){return _ref.apply(this,arguments);};}();return/*#__PURE__*/(0,jsx_runtime.jsxs)(Form/* Form */.l,{validationErrors:errors,onSubmit:onSubmit,className:FormExamples_module.form,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Anv\xE4ndarnamn",name:"username",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"L\xF6senord",name:"password",type:"password",isRequired:true}),/*#__PURE__*/(0,jsx_runtime.jsx)(ButtonGroup/* ButtonGroup */.e,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{type:"submit",children:isWaiting?/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Spinner/* Spinner */.y,{isOnColor:true,small:true}),"Skickar..."]}):'Skicka'})})]});};
-;// ./apps/docs/docs/dev/forms.mdx
-
-
-const frontMatter = {
-	title: 'Formulär',
-	description: 'Utvecklarinstruktioner för formulär',
-	pagination_prev: null,
-	pagination_next: null
-};
-const contentTitle = 'Formulär';
-
-const assets = {
-
-};
-
-
-
-
-const toc = [{
-  "value": "React Aria &lt;Form&gt;",
-  "id": "react-aria-form",
-  "level": 3
-}, {
-  "value": "Normal användning",
-  "id": "normal-användning",
-  "level": 2
-}, {
-  "value": "Uncontrolled form",
-  "id": "uncontrolled-form",
-  "level": 3
-}, {
-  "value": "Controlled form",
-  "id": "controlled-form",
-  "level": 3
-}, {
-  "value": "Validering",
-  "id": "validering",
-  "level": 2
-}, {
-  "value": "Realtime validation",
-  "id": "realtime-validation",
-  "level": 3
-}, {
-  "value": "Server validation",
-  "id": "server-validation",
-  "level": 3
-}, {
-  "value": "Tredjeparts klientformulär",
-  "id": "tredjeparts-klientformulär",
-  "level": 2
-}];
-function _createMdxContent(props) {
-  const _components = {
-    a: "a",
-    admonition: "admonition",
-    blockquote: "blockquote",
-    code: "code",
-    h1: "h1",
-    h2: "h2",
-    h3: "h3",
-    header: "header",
-    p: "p",
-    pre: "pre",
-    strong: "strong",
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.header, {
-      children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "formulär",
-        children: "Formulär"
-      })
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Midas formulärskomponenter bygger på React Aria och fungerar att användas i formulär via flera olika\nalternativ. För referens och mer detaljer, se ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://react-spectrum.adobe.com/react-aria/forms.html",
-        children: "React Aria Forms"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.blockquote, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Midas formulärskomponenter är en komposition av React Arias <Label>, <FieldError> och själva formulärskomponenten\noch därmed finns stöd för tillgänglighetsverktyg som skärmläsare inbyggt utan att pussla ihop komponenterna var för sig. Så\nlänge ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "name"
-        }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "label"
-        }), " är specificerat kan man förvänta sig att komponenten normalt i de flesta formulär."]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Har du problem med att integrera Midas formulärskomponenter i er applikation eller har du hittat en bugg? Skapa en\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://github.com/migrationsverket/midas/issues/new/choose",
-        children: "issue"
-      }), " så hjälper vi dig gärna!"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "react-aria-form",
-      children: "React Aria <Form>"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Komponenterna går att integrera normalt med ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "<form>"
-      }), " (native HTML) men det rekommenderas att använda\n", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "<Form>"
-      }), " från React Aria som är en överlagring med lite extra funktioner för validering."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "{1}",
-        children: "import { Form } from 'react-aria-components'\nimport { TextField } from '@midas-ds/components'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        metastring: "{1,6}",
-        children: "<Form>\n  <TextField\n    label='Namn'\n    name='name'\n  />\n</Form>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "normal-användning",
-      children: "Normal användning"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Den enklaste varianten för att använda ett formulär är via browserns ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://developer.mozilla.org/en-US/docs/Web/API/FormData",
-        children: "FormData API"
-      }), ". Submit är inaktiverat\nnär formuläret är ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "invalid"
-      }), " precis som html-form men detta beteende kan styras via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationBehavior"
-      }), ".\nProp ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "name"
-      }), " fungerar precis som native form och är referens till fältet som avses. Om något fält är ogiltigt\nfokuseras det automatiskt vid ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "submit"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "uncontrolled-form",
-      children: "Uncontrolled form"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const UncontrolledForm = () => {\n  const [result, setResult] = React.useState(null)\n\n  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n    const data = Object.fromEntries(new FormData(e.currentTarget))\n    setResult(data)\n  }\n\n  return (\n    <>\n      <Form\n        onSubmit={handleSubmit}\n        // use 'aria' to allow submit when invalid\n        validationBehavior='native'\n      >\n        <TextField\n          label='Namn'\n          name='name'\n          isRequired\n        />\n        <TextField\n          label='E-post'\n          type='email'\n          name='email'\n          isRequired\n        />\n        <CheckboxGroup\n          label='Spara mina uppgifter'\n          name='saveData'\n          isRequired\n        >\n          <Checkbox value='agree'>Jag godkänner</Checkbox>\n        </CheckboxGroup>\n        <ButtonGroup>\n          <Button type='submit'>Skicka</Button>\n          <Button\n            type='reset'\n            variant='secondary'\n          >\n            Rensa\n          </Button>\n        </ButtonGroup>\n      </Form>\n      <span>{result && <pre>{JSON.stringify(result)}</pre>}</span>\n    </>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(UncontrolledForm, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "controlled-form",
-      children: "Controlled form"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["För tillgång till formulärsdata även innan ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "submit"
-      }), ", använd ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "controlled"
-      }), " version av komponenterna\noch hantera state via ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onChange"
-      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "value"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const ControlledForm = () => {\n  const [name, setName] = React.useState('')\n  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n  }\n\n  return (\n    <Form onSubmit={onSubmit}>\n      <TextField\n        name='name'\n        label='Name'\n        onChange={setName}\n        isRequired\n      />\n      <div>Ditt namn: {name}</div>\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ControlledForm, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "validering",
-      children: "Validering"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Komponenterna funkar enligt normal HTML ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "constraint validation"
-      }), " och bygger på felmeddelanden från browser,\ndessa presenteras på det språket som är valt via inställningarna. Se dokumentation om ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/dev/localization",
-        children: "lokalisering"
-      }), "\nför mer information."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "realtime-validation",
-      children: "Realtime validation"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Validering görs som standard vid ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "blur"
-      }), " eller ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "submit"
-      }), ". Ibland kan det vara önskvärt att ge användaren snabbare\nfeedback, till exempel för att välja ett godkänt lösenord."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const RealtimeValidation = () => {\n  const [password, setPassword] = React.useState('')\n  let errors = []\n  if (password.length < 8) {\n    errors.push('Lösenordet måste vara fler än 8 tecken.')\n  }\n  if ((password.match(/[A-Z]/g) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst 2 versaler.')\n  }\n  if ((password.match(/[^a-z]/gi) ?? []).length < 2) {\n    errors.push('Lösenordet måste innehålla minst två symboler.')\n  }\n\n  return (\n    <>\n      <TextField\n        label='Lösenord'\n        style={{ whiteSpace: 'pre-line' }}\n        isInvalid={errors.length > 0}\n        value={password}\n        onChange={setPassword}\n        errorMessage={errors.join('\\n')}\n        errorPosition='bottom'\n      />\n    </>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(RealtimeValidation, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
-      type: "info",
-      children: (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Felmeddelande kan presenteras under eller över formulärskomponenten via ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "errorPosition"
-        }), "."]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "server-validation",
-      children: "Server validation"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Förutom att validera input på klienten bör ett normalt mönster vara att validera på serversidan också. En metod är att\nsätta prop ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "validationErrors"
-      }), " på <Form> och presentera felmeddelanden den vägen. Objektet ska då matcha\n", (0,jsx_runtime.jsx)(_components.code, {
-        children: "name"
-      }), " props på formulärsobjektet för att fungera med automatik. När inmatning ändras återställs felmeddelandet."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "export const ServerValidation = () => {\n  const [isWaiting, setIsWaiting] = React.useState(false)\n  // Fake server used in this example.\n  const delay = ms => new Promise(resolve => setTimeout(resolve, ms))\n\n  async function callServer(data) {\n    setIsWaiting(true)\n    await delay(1000)\n    setIsWaiting(false)\n    return { errors: { username: `Tyvärr, användarnamnet ${data.username} är upptaget.` } }\n  }\n\n  const [errors, setErrors] = React.useState({})\n  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {\n    e.preventDefault()\n\n    let data = Object.fromEntries(new FormData(e.currentTarget))\n    let result = await callServer(data)\n    setErrors(result.errors)\n  }\n\n  return (\n    <Form\n      validationErrors={errors}\n      onSubmit={onSubmit}\n      className={styles.form}\n    >\n      <TextField\n        label='Användarnamn'\n        name='username'\n        isRequired\n      />\n      <TextField\n        label='Lösenord'\n        name='password'\n        type='password'\n        isRequired\n      />\n      <ButtonGroup>\n        <Button type='submit'>\n          {isWaiting ? (\n            <>\n              <Spinner\n                isOnColor\n                small\n              />\n              Skickar...\n            </>\n          ) : (\n            'Skicka'\n          )}\n        </Button>\n      </ButtonGroup>\n    </Form>\n  )\n}\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ServerValidation, {})
-    }), "\n", (0,jsx_runtime.jsxs)(_components.blockquote, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Beroende på ramverk finns en uppsjö av olika tekniker för att åstadkomma serverside validation.\nPå ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "https://react-spectrum.adobe.com/react-aria/forms.html#server-validation",
-          children: "React Arias dokumentation"
-        }), "\nfinns information om hur det går att åstadkomma detta bland annat med ", (0,jsx_runtime.jsx)(_components.strong, {
-          children: "schema validation"
-        }), " och\n", (0,jsx_runtime.jsx)(_components.strong, {
-          children: "React Server Actions"
-        })]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "tredjeparts-klientformulär",
-      children: "Tredjeparts klientformulär"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Det finns även olika tredjepartsbibliotek för att underlätta hantering av formulär på klienten. I princip ska det\ninte vara något hinder att använda dessa men det innebär ofta lite extra boilerplate. För till exempel\n", (0,jsx_runtime.jsx)(_components.a, {
-        href: "https://www.react-hook-form.com/",
-        children: "React Hook Form"
-      }), " går det att integrera Midas enligt exemplet nedan. Om du använder\nnågon annan teknik för att rendera formulär? Midas bygger i grunden på React Aria som i sin tur renderar native element\nför en förutsägbar DOM, därmed borde det oftast vara möjligt att integrera oavsett tekniken runtomkring."]
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["I utgångspunkt rekommenderar vi att utgå från React Aria ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "<Form>"
-      }), " då det innebär minst boilerplate men vi\nhjälper gärna till att få Midas komponenter att fungera i den teknikstacken ni har valt att arbeta med."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Controller, useForm } from 'react-hook-form'\n\nexport const HookFormExample = () => {\n  const { handleSubmit, control } = useForm()\n  const onSubmit = data => {\n    // Call your API here...\n  }\n\n  return (\n    <Form onSubmit={handleSubmit(onSubmit)}>\n      <Controller\n        control={control}\n        name='name'\n        rules={{ required: 'Name is required.' }}\n        render={({ field: { name, value, onChange, onBlur, ref }, fieldState: { invalid, error } }) => (\n          <TextField\n            label='Name'\n            name={name}\n            value={value}\n            onChange={onChange}\n            onBlur={onBlur}\n            isRequired\n            errorMessage={error?.message}\n            // Let React Hook Form handle validation instead of the browser.\n            validationBehavior='aria'\n            isInvalid={invalid}\n            // The ref is needed to focus invalid elements\n            ref={ref}\n          />\n        )}\n      />\n      <Button type='submit'>Submit</Button>\n    </Form>\n  )\n}\n"
-      })
-    })]
-  });
-}
-function MDXContent(props = {}) {
-  const {wrapper: MDXLayout} = {
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
-    ...props,
-    children: (0,jsx_runtime.jsx)(_createMdxContent, {
-      ...props
-    })
-  }) : _createMdxContent(props);
-}
-
-
 
 /***/ }),
 
@@ -681,6 +416,33 @@ const $bcdf0525bf22703d$export$2c73285ae9390cec = /*#__PURE__*/ (0, _react_aria_
 
 /***/ }),
 
+/***/ 34704:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+
+/***/ }),
+
 /***/ 39107:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -713,12 +475,23 @@ var jsx_runtime = __webpack_require__(74848);
 var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/textfield/TextFieldBase.tsx
 var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size,popover=_props.popover,children=_props.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
+
+/***/ }),
+
+/***/ 41390:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--field-hover-01":"light-dark(#e6e6e6, #333333)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-primary":"light-dark(#171717, #f2f2f2)","dateInput":"dateInput_Y5ix","divider":"divider_BL_i"});
 
 /***/ }),
 
@@ -785,45 +558,42 @@ const $216918bed6669f72$export$f5c9f3c2c4054eec = /*#__PURE__*/ (0, react__WEBPA
 
 /***/ }),
 
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
-
-/***/ }),
-
-/***/ 49764:
+/***/ 48292:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  e: () => (/* binding */ ButtonGroup)
+  v: () => (/* binding */ DateField)
 });
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-;// ./packages/components/src/button/ButtonGroup.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const ButtonGroup_module = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","buttonGroup":"buttonGroup_mVqm"});
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
+var dist_DateField = __webpack_require__(68407);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/date-field/DateInput.tsx
+var DateInput = __webpack_require__(79980);
+// EXTERNAL MODULE: ./packages/components/src/date-field/DateSegment.tsx + 1 modules
+var DateSegment = __webpack_require__(18980);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+;// ./packages/components/src/date-field/DateField.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const DateField_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-placeholder":"light-dark(#a6a6a6, #525252)","--support-border-warning":"light-dark(#e62323, #e62323)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--size-130":"2.5rem","--size-150":"3rem","dateField":"dateField_w_5V","inputField":"inputField_RpLn","medium":"medium_OzpD"});
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/button/ButtonGroup.tsx
-var _excluded=["children","className","aria-label"];/**
- * Group several buttons together.
- *
- * @interface React.HTMLAttributes<HTMLDivElement>
- *
- * @see {@link https://designsystem.migrationsverket.se/components/button}
- */var ButtonGroup=function ButtonGroup(_ref){var children=_ref.children,className=_ref.className,ariaLabel=_ref['aria-label'],rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({role:"group","aria-label":ariaLabel,className:(0,clsx/* default */.A)(ButtonGroup_module.buttonGroup,className)},rest,{children:children}));};
+;// ./packages/components/src/date-field/DateField.tsx
+var _excluded=["className","description","errorMessage","errorPosition","isDisabled","label","size","popover"];var DateField=function DateField(_ref){var _clsx;var className=_ref.className,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,isDisabled=_ref.isDisabled,label=_ref.label,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_DateField/* DateField */.vM,Object.assign({},rest,{className:(0,clsx/* default */.A)(DateField_module.dateField,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(DateField_module.inputField,(_clsx={},_clsx[DateField_module.medium]=size==='medium',_clsx)),"data-disabled":isDisabled||undefined,"data-testid":"date-field_input-field",children:/*#__PURE__*/(0,jsx_runtime.jsx)(DateInput/* DateInput */.J,{children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateSegment/* DateSegment */.E,{segment:segment});}})}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage})]}));};
 
 /***/ }),
 
@@ -849,45 +619,6 @@ var _excluded=["children","className","aria-label"];/**
 
 /***/ }),
 
-/***/ 63181:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
-
-/***/ }),
-
-/***/ 69336:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  y: () => (/* binding */ Spinner)
-});
-
-;// ./packages/components/src/spinner/Spinner.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const Spinner_module = ({"tokens":"\"../theme/tokens.css\"","--icon-primary":"light-dark(#171717, #f2f2f2)","--icon-on-color":"light-dark(#ffffff, #ffffff)","container":"container_ytPE","spinner":"spinner_eR4D","rotating":"rotating_m95R","dark":"dark_YbwO","vsHidden":"vsHidden_wdPf"});
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/loader-circle.js
-var loader_circle = __webpack_require__(8723);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/spinner/Spinner.tsx
-var Spinner=function Spinner(_ref){var small=_ref.small,_ref$isOnColor=_ref.isOnColor,isOnColor=_ref$isOnColor===void 0?false:_ref$isOnColor;return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Spinner_module.container,role:"status",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(loader_circle/* default */.A,{className:(0,clsx/* default */.A)(Spinner_module.spinner,isOnColor&&Spinner_module.dark),size:small?16:32,strokeWidth:small?2:3,absoluteStrokeWidth:true}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:Spinner_module.vsHidden,children:"Laddar, v\xE4nligen v\xE4nta."})]});};
-
-/***/ }),
-
 /***/ 73413:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -899,153 +630,19 @@ var Spinner=function Spinner(_ref){var small=_ref.small,_ref$isOnColor=_ref.isOn
 
 /***/ }),
 
-/***/ 75394:
+/***/ 79980:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  $: () => (/* binding */ CheckboxGroup)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckboxGroup.mjs
-var useCheckboxGroup = __webpack_require__(91936);
-// EXTERNAL MODULE: ./node_modules/@react-stately/checkbox/dist/useCheckboxGroupState.mjs
-var useCheckboxGroupState = __webpack_require__(34650);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
-var useLocalizedStringFormatter = __webpack_require__(88413);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
-var Checkbox = __webpack_require__(8807);
-;// ./packages/components/src/checkbox/useSelectAll.ts
-var useSelectAll=function useSelectAll(children,_ref){var selectedItems=_ref.value;var checkboxes=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child)&&child.type===Checkbox/* Checkbox */.S;});var numberOfCheckboxes=react.Children.count(checkboxes);var checkboxValues=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child);}).filter(function(child){return!!child&&child.type===Checkbox/* Checkbox */.S;}).map(function(child){return child.props.value;});var noneSelected=selectedItems.length===0;var allSelected=selectedItems.length===numberOfCheckboxes;var someSelected=!noneSelected&&!allSelected;return{allSelected:allSelected,someSelected:someSelected,checkboxValues:checkboxValues};};
-// EXTERNAL MODULE: ./packages/components/src/checkbox/context.ts
-var context = __webpack_require__(20011);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var field_error_FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/checkbox/CheckboxGroupFieldError.tsx
-var CheckboxGroupFieldError=function CheckboxGroupFieldError(_ref){var state=_ref.state,errorMessage=_ref.errorMessage;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldErrorContext */.C.Provider,{value:state.displayValidation,children:/*#__PURE__*/(0,jsx_runtime.jsx)(field_error_FieldError/* FieldError */.b,{children:errorMessage})});};
-;// ./packages/components/src/checkbox/intl/translations.json
-const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en-US":{"selectAll":"Select all"},"en-GB":{"selectAll":"Select all"},"es-ES":{"selectAll":"Seleccionar todos"},"es-MX":{"selectAll":"Seleccionar todos"},"fr-FR":{"selectAll":"Tout sélectionner"},"fr-CA":{"selectAll":"Tout sélectionner"},"de-DE":{"selectAll":"Alle auswählen"},"it-IT":{"selectAll":"Seleziona tutti"},"pt-PT":{"selectAll":"Selecionar todos"},"pt-BR":{"selectAll":"Selecionar todos"},"ru-RU":{"selectAll":"Выбрать все"},"zh-CN":{"selectAll":"全选"},"zh-TW":{"selectAll":"全選"},"ja-JP":{"selectAll":"すべて選択"},"ko-KR":{"selectAll":"전체 선택"},"ar-SA":{"selectAll":"تحديد الكل"},"hi-IN":{"selectAll":"सभी चुनें"},"tr-TR":{"selectAll":"Tümünü seç"},"nl-NL":{"selectAll":"Alles selecteren"},"sv-SE":{"selectAll":"Välj alla"},"fi-FI":{"selectAll":"Valitse kaikki"},"no-NO":{"selectAll":"Velg alle"},"da-DK":{"selectAll":"Vælg alle"},"pl-PL":{"selectAll":"Zaznacz wszystkie"},"cs-CZ":{"selectAll":"Vybrat vše"},"he-IL":{"selectAll":"בחר הכול"},"th-TH":{"selectAll":"เลือกทั้งหมด"},"vi-VN":{"selectAll":"Chọn tất cả"},"id-ID":{"selectAll":"Pilih semua"},"uk-UA":{"selectAll":"Вибрати все"}}');
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
-var Checkbox_module = __webpack_require__(16025);
-;// ./packages/components/src/checkbox/CheckboxGroup.tsx
-function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGroupState */.h)(props);var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);var _useCheckboxGroup=(0,useCheckboxGroup/* useCheckboxGroup */.M)(props,state),groupProps=_useCheckboxGroup.groupProps,labelProps=_useCheckboxGroup.labelProps,descriptionProps=_useCheckboxGroup.descriptionProps;var _useSelectAll=useSelectAll(props.children,state),allSelected=_useSelectAll.allSelected,someSelected=_useSelectAll.someSelected,checkboxValues=_useSelectAll.checkboxValues;var handleChange=function handleChange(checked){state.setValue(checked?checkboxValues:[]);};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},groupProps,{className:Checkbox_module/* default */.A.checkboxGroup,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:props.popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,Object.assign({slot:"description"},descriptionProps,{children:props.description})),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state})),props.showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:allSelected,isIndeterminate:someSelected,onChange:handleChange,children:props.selectAllLabel||stringFormatter.format('selectAll')}),/*#__PURE__*/(0,jsx_runtime.jsx)(context/* CheckboxGroupContext */.I.Provider,{value:state,children:props.children}),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state}))]}));}
-
-/***/ }),
-
-/***/ 79950:
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   E: () => (/* binding */ $3985021b0ad6602f$export$37fb8590cf2c088c),
-/* harmony export */   p: () => (/* binding */ $3985021b0ad6602f$export$f5b8910cec6cf069)
+/* harmony export */   J: () => (/* binding */ DateInput)
 /* harmony export */ });
-/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5933);
-/* harmony import */ var _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75127);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16638);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16133);
-/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32217);
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-
-
-
-
-
-/*
- * Copyright 2022 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */ 
-
-
-
-const $3985021b0ad6602f$export$37fb8590cf2c088c = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
-let $3985021b0ad6602f$var$filterHoverProps = (props)=>{
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let { onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
-    return otherProps;
-};
-const $3985021b0ad6602f$export$f5b8910cec6cf069 = /*#__PURE__*/ (0, _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__/* .createHideableComponent */ .U7)(function Input(props, ref) {
-    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useContextProps */ .JT)(props, ref, $3985021b0ad6602f$export$37fb8590cf2c088c);
-    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useHover */ .M)(props);
-    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .useFocusRing */ .o)({
-        isTextInput: true,
-        autoFocus: props.autoFocus
-    });
-    let isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
-    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useRenderProps */ .Sl)({
-        ...props,
-        values: {
-            isHovered: isHovered,
-            isFocused: isFocused,
-            isFocusVisible: isFocusVisible,
-            isDisabled: props.disabled || false,
-            isInvalid: isInvalid
-        },
-        defaultClassName: 'react-aria-Input'
-    });
-    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("input", {
-        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_5__/* .mergeProps */ .v)($3985021b0ad6602f$var$filterHoverProps(props), focusProps, hoverProps),
-        ...renderProps,
-        ref: ref,
-        "data-focused": isFocused || undefined,
-        "data-disabled": props.disabled || undefined,
-        "data-hovered": isHovered || undefined,
-        "data-focus-visible": isFocusVisible || undefined,
-        "data-invalid": isInvalid || undefined
-    });
-});
-
-
-
-//# sourceMappingURL=Input.module.js.map
-
-
-/***/ }),
-
-/***/ 82684:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68407);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
+/* harmony import */ var _DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41390);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["className"];var DateInput=function DateInput(_ref){var className=_ref.className,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DateInput */ .J3,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dateInput,className)},rest));};
 
 /***/ }),
 
@@ -1088,6 +685,223 @@ var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=
  * selecting the correct pluralization, and formatting numbers. Automatically updates when the locale changes.
  * @param strings - A mapping of languages to localized strings by key.
  */function useLocalizedStringFormatter(strings,packageName){var _useLocale=(0,react_aria_components__WEBPACK_IMPORTED_MODULE_2__/* .useLocale */ .Y)(),locale=_useLocale.locale;var dictionary=useLocalizedStringDictionary(strings,packageName);return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function(){return new _internationalized_string__WEBPACK_IMPORTED_MODULE_3__/* .LocalizedStringFormatter */ .J(locale,dictionary);},[dictionary,locale]);}
+
+/***/ }),
+
+/***/ 90706:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_dev_localization_mdx_e78_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-dev-localization-mdx-e78.json
+const site_docs_dev_localization_mdx_e78_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"dev/localization","title":"Lokalisering","description":"React Aria har en rad inbyggda funktioner som underlättar skapandet av tillgängliga","source":"@site/docs/dev/localization.mdx","sourceDirName":"dev","slug":"/dev/localization","permalink":"/pr-preview/pr-672/dev/localization","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Lokalisering","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/context.mjs + 2 modules
+var context = __webpack_require__(39892);
+// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/string.mjs
+var string = __webpack_require__(77282);
+// EXTERNAL MODULE: ./packages/components/src/table/Table.tsx + 1 modules
+var Table = __webpack_require__(99982);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
+var dist_Table = __webpack_require__(43444);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./packages/components/src/date-field/DateField.tsx + 1 modules
+var DateField = __webpack_require__(48292);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
+var TextField = __webpack_require__(13332);
+;// ./apps/docs/src/components/examples/LocalizationExamples.tsx
+var LocaleExample=function LocaleExample(){var _useLocale=(0,context/* useLocale */.Y)(),locale=_useLocale.locale,direction=_useLocale.direction;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{lang:locale,dir:direction,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Table */.XI,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* TableHeader */.A0,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{isRowHeader:true,children:"Nuvarande spr\xE5k"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Column */.VP,{children:"Nuvarande textriktning"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* TableBody */.BF,{children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Table/* Row */.fI,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:locale}),/*#__PURE__*/(0,jsx_runtime.jsx)(Table/* Cell */.fh,{children:direction})]})})]})});};var I18nExample=function I18nExample(){var _React$useState=react.useState('fr-Fr'),locale=_React$useState[0],setLocale=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',gap:'1rem',marginBottom:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return setLocale('fr-Fr');},variant:locale==='fr-Fr'?'primary':'secondary',children:"Fran\xE7ais"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return setLocale('sv-Sv');},variant:locale==='sv-Sv'?'primary':'secondary',children:"Svenska"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{onPress:function onPress(){return setLocale('en-En');},variant:locale==='en-En'?'primary':'secondary',children:"English"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{lang:locale,children:/*#__PURE__*/(0,jsx_runtime.jsx)(context/* I18nProvider */.C,{locale:locale,children:/*#__PURE__*/(0,jsx_runtime.jsx)(CurrentDate,{})})})]});};function CurrentDate(){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateField */.v,{defaultValue:(0,string/* parseDate */._U)('2025-02-28'),label:"Datumv\xE4ljare",description:"Format kan styras med i18nProvider"});}var ErrorMessageExample=function ErrorMessageExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{label:"Skriv e-post",type:"email",description:"Validering/Felmeddelanden beror av inst\xE4llningarna i browser"});};
+;// ./apps/docs/docs/dev/localization.mdx
+
+
+const frontMatter = {
+	title: 'Lokalisering',
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = 'Lokalisering';
+
+const assets = {
+
+};
+
+
+
+
+const toc = [{
+  "value": "useLocale",
+  "id": "uselocale",
+  "level": 2
+}, {
+  "value": "I18nProvider",
+  "id": "i18nprovider",
+  "level": 2
+}, {
+  "value": "useMessageFormatter",
+  "id": "usemessageformatter",
+  "level": 2
+}, {
+  "value": "Midaskomponenter",
+  "id": "midaskomponenter",
+  "level": 2
+}];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    code: "code",
+    em: "em",
+    h1: "h1",
+    h2: "h2",
+    header: "header",
+    p: "p",
+    pre: "pre",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(_components.header, {
+      children: (0,jsx_runtime.jsx)(_components.h1, {
+        id: "lokalisering",
+        children: "Lokalisering"
+      })
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["React Aria har en rad inbyggda funktioner som underlättar skapandet av tillgängliga\noch internationella användargränssnitt. Midas komponenter, som bygger på React Aria\nuppdateras automatiskt när språkmiljön ändras. Detta innebär att din applikation kan anpassa\nsig dynamiskt till olika språk utan alltför mycket manuell handpåläggning. För mer ingående dokumentation,\nse ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/internationalization.html",
+        children: "React Aria Internationalization"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "uselocale",
+      children: "useLocale"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För att säkerställa att lokalisering fungerar bör ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "useLocale"
+      }), " användas i root av applikationen. På så sätt får\ndu tillgång till browserns språkinställning. Normalt fungerar ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "locale"
+      }), " utan att hämta in den explicit men för till\nexempel SSR bör ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "useLocale"
+      }), " användas, se ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/internationalization.html",
+        children: "React Aria"
+      }), " för referens."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { useLocale } from 'react-aria-components'\n\nexport default function App() {\n  const { locale, direction } = useLocale()\n\n  return (\n    <div\n      lang={locale}\n      dir={direction}\n    >\n      {/* your app here */}\n    </div>\n  )\n}\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(LocaleExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "i18nprovider",
+      children: "I18nProvider"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om det finns behov av att skriva över användarens inställningar går det att använda ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "I18nProvider"
+      }), " från React Aria.\nVia I18nProvider går det att styra beteendet för datum och tidsrelaterade komponenter men ", (0,jsx_runtime.jsx)(_components.em, {
+        children: "inte"
+      }), " ta kontroll över felmeddelanden\neller annan information, det sätts via browsern."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<I18nProvider locale={locale}>\n  <DateField />\n</I18nProvider>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(I18nExample, {}), "\n", (0,jsx_runtime.jsx)("br", {}), "\n", (0,jsx_runtime.jsx)(ErrorMessageExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "usemessageformatter",
+      children: "useMessageFormatter"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För att översätta eller anpassa enskilda strängar finns ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/i18n/src/useLocalizedStringFormatter.ts",
+        children: "useLocalizedStringFormatter"
+      }), ".\nMotsvarande för siffror och valutor är ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html",
+        children: "useNumberFormatter"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "midaskomponenter",
+      children: "Midaskomponenter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Officiellt har Midas inte fullt stöd för flera språk men i utgångsläget fungerar de flesta komponenter\noch respekterar användarens inställningar i browsern. Framtida uppdateringar eller nya komponenter\nbygger på React Arias ramverk så den allmänna rekommendationen är att använda metoder och hooks därifrån för\natt lösa eventuella lokaliseringsproblem. Buggrapport eller Feature requests kan skapas via"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: [(0,jsx_runtime.jsx)(_components.a, {
+        href: "https://github.com/migrationsverket/midas/issues",
+        children: "GitHub Issues"
+      }), "."]
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
+
+/***/ }),
+
+/***/ 99982:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  fh: () => (/* binding */ Cell),
+  VP: () => (/* binding */ Column),
+  fI: () => (/* binding */ Row),
+  XI: () => (/* binding */ Table),
+  A0: () => (/* binding */ TableHeader)
+});
+
+// UNUSED EXPORTS: TableBody
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectDestructuringEmpty.js
+var objectDestructuringEmpty = __webpack_require__(20454);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+;// ./packages/components/src/table/Table.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Table_module = ({"tokens":"\"../theme/tokens.css\"","--border-primary":"light-dark(#171717, #f2f2f2)","--border-subtle":"light-dark(#bfbfbf, #383838)","--font-family":"\"Inter\", sans-serif","--font-size-10":"0.75rem","--font-size-20":"0.875rem","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-accent-01":"light-dark(#d9d9d9, #383838)","--layer-accent-hover-01":"light-dark(#cccccc, #474747)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--line-height-10":"1rem","--line-height-20":"1.125rem","--size-10":"0.125rem","--size-20":"0.25rem","--size-60":"0.75rem","--size-75":"0.938rem","--size-80":"1rem","--size-130":"2.5rem","--size-150":"3rem","--text-primary":"light-dark(#171717, #f2f2f2)","table":"table_nvoM","tableHeader":"tableHeader_BmsY","column":"column_NPIT","row":"row_o3yW","cell":"cell_BlIu","narrow":"narrow_Jh7A","medium":"medium_q_Iz","striped":"striped_wp0e"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Table.mjs + 55 modules
+var dist_Table = __webpack_require__(43444);
+// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
+var CollectionBuilder = __webpack_require__(41177);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
+var Button = __webpack_require__(65014);
+// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
+var Checkbox = __webpack_require__(8807);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/grip-vertical.js
+var grip_vertical = __webpack_require__(21436);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-up-wide-narrow.js
+var arrow_up_wide_narrow = __webpack_require__(4804);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/arrow-down-narrow-wide.js
+var arrow_down_narrow_wide = __webpack_require__(85785);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/table/Table.tsx
+'use client';var _excluded=["narrow","size","striped","className"],_excluded2=["id","columns","children"],_excluded3=["children"];var Table=function Table(_ref){var _clsx;var _ref$narrow=_ref.narrow,narrow=_ref$narrow===void 0?false:_ref$narrow,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,_ref$striped=_ref.striped,striped=_ref$striped===void 0?false:_ref$striped,className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Table */.XI,Object.assign({className:(0,clsx/* default */.A)(Table_module.table,className,(_clsx={},_clsx[Table_module.narrow]=narrow,_clsx[Table_module.medium]=size==='medium',_clsx[Table_module.striped]=striped,_clsx))},rest));};var TableHeader=function TableHeader(_ref2){var columns=_ref2.columns,children=_ref2.children;var _useTableOptions=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions.selectionBehavior,selectionMode=_useTableOptions.selectionMode,allowsDragging=_useTableOptions.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* TableHeader */.A0,{className:Table_module.tableHeader,children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Column,{width:50,children:selectionMode==='multiple'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]});};var Row=function Row(_ref3){var id=_ref3.id,columns=_ref3.columns,children=_ref3.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref3,_excluded2);var _useTableOptions2=(0,dist_Table/* useTableOptions */.mz)(),selectionBehavior=_useTableOptions2.selectionBehavior,allowsDragging=_useTableOptions2.allowsDragging;return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Table/* Row */.fI,Object.assign({id:id,className:(0,clsx/* default */.A)(Table_module.row)},rest,{children:[allowsDragging&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"drag",children:/*#__PURE__*/(0,jsx_runtime.jsx)(grip_vertical/* default */.A,{size:20})})}),selectionBehavior==='toggle'&&/*#__PURE__*/(0,jsx_runtime.jsx)(Cell,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{slot:"selection"})}),/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:columns,children:children})]}));};var Column=function Column(_ref4){var _children=_ref4.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref4,_excluded3);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Column */.VP,Object.assign({className:Table_module.column},rest,{children:function children(_ref5){var allowsSorting=_ref5.allowsSorting,sortDirection=_ref5.sortDirection;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[_children,allowsSorting&&/*#__PURE__*/(0,jsx_runtime.jsx)("span",{"aria-hidden":"true",className:"sort-indicator",children:sortDirection==='ascending'?/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_wide_narrow/* default */.A,{size:20}):/*#__PURE__*/(0,jsx_runtime.jsx)(arrow_down_narrow_wide/* default */.A,{size:20})})]});}}));};var Cell=function Cell(_ref6){var rest=Object.assign({},((0,objectDestructuringEmpty/* default */.A)(_ref6),_ref6));return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Table/* Cell */.fh,Object.assign({className:Table_module.cell},rest));};
 
 /***/ })
 

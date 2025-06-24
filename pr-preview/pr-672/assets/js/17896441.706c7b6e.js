@@ -349,6 +349,35 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
+/***/ 28637:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  c: () => (/* binding */ LabelWrapper)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+
+/***/ }),
+
 /***/ 28777:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -514,10 +543,8 @@ return{containerProps:Object.assign({},visuallyHiddenProps,{'aria-hidden':true,/
 // If the collection isn't too big, use a hidden <select> element for this so that browser
 // autofill will work. Otherwise, use an <input type="hidden">.
 if(state.collection.size<=300){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},containerProps,{"data-testid":"hidden-select-container",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("label",{children:[label,/*#__PURE__*/(0,jsx_runtime.jsxs)("select",Object.assign({},selectProps,{ref:selectRef,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("option",{}),[].concat(state.collection.getKeys()).map(function(key){var item=state.collection.getItem(key);if(item&&item.type==='item'){return/*#__PURE__*/(0,jsx_runtime.jsx)("option",{value:item.key,children:item.textValue},item.key);}return null;})]}))]})}));}else if(name){var _Array$from$map;return/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"hidden",autoComplete:selectProps.autoComplete,name:name,disabled:isDisabled,value:(_Array$from$map=Array.from(state.selectedKeys).map(function(key){return key.toString();}))!=null?_Array$from$map:['']});}return null;}
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
@@ -542,8 +569,37 @@ var FieldError = __webpack_require__(44300);
 var field_error_FieldError = __webpack_require__(19060);
 ;// ./packages/components/src/select/SelectFieldError.tsx
 var SelectFieldError=function SelectFieldError(_ref){var state=_ref.state,errorMessage=_ref.errorMessage;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldErrorContext */.C.Provider,{value:Object.assign({},state.displayValidation),children:/*#__PURE__*/(0,jsx_runtime.jsx)(field_error_FieldError/* FieldError */.b,{children:errorMessage})});};
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/select/Select.tsx
 var Select_excluded=["isClearable","popover"],_excluded2=["options"];var SelectComponent=/*#__PURE__*/react.forwardRef(function(_ref,ref){var _ref$isClearable=_ref.isClearable,isClearable=_ref$isClearable===void 0?true:_ref$isClearable,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,Select_excluded);var props=Object.assign({selectionMode:'single',errorPosition:'top',disallowEmptySelection:!isClearable,isClearable:isClearable,size:'large',popover:popover},rest);var triggerRef=(0,useObjectRef/* useObjectRef */.U)(ref);var state=useMultiSelectState(props);var _useMultiSelect=useMultiSelect(props,state,triggerRef),labelProps=_useMultiSelect.labelProps,triggerProps=_useMultiSelect.triggerProps,valueProps=_useMultiSelect.valueProps,menuProps=_useMultiSelect.menuProps;var _useObserveElement=(0,useObserveElement/* default */.A)(triggerRef.current,{includePadding:true}),triggerWidth=_useObserveElement.width;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* default */.A)(Select_module.wrapper,props.className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(HiddenMultiSelect,Object.assign({},props,{state:state,triggerRef:triggerRef})),/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{"data-disabled":props.isDisabled||undefined,children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:props.description}),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectFieldError,Object.assign({},props,{state:state})),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectTrigger,Object.assign({},props,triggerProps,{isInvalid:state.displayValidation.isInvalid,triggerRef:triggerRef,state:state,children:props.selectionMode==='multiple'&&state.selectedItems?/*#__PURE__*/(0,jsx_runtime.jsx)("span",Object.assign({},valueProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(MultiSelectValueTag,Object.assign({},props,{state:state,parentWidth:triggerWidth,onClear:function onClear(){return state.selectionManager.clearSelection();},triggerRef:triggerRef}))})):null})),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectFieldError,Object.assign({},props,{state:state})),/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBoxPopover/* ListBoxPopover */.f,{isOpen:state.isOpen,onOpenChange:function onOpenChange(isOpen){if(!isOpen){state.close();}},triggerRef:triggerRef,style:{width:triggerWidth},children:[props.isSelectableAll&&/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBoxButton,{onClick:function onClick(){return state.selectionManager.toggleSelectAll();},children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:state.selectionManager.isSelectAll,isIndeterminate:!state.selectionManager.isSelectAll&&!state.selectionManager.isEmpty,isReadOnly:true,excludeFromTabOrder:true})}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:"Select All"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox,Object.assign({},menuProps,{state:state}))]}),props.showTags&&!!state.selectedItems&&/*#__PURE__*/(0,jsx_runtime.jsx)(Tag/* TagGroup */.C,{"aria-label":"Selected Items",selectionBehavior:"toggle",onRemove:function onRemove(keys){return state.selectionManager.toggleSelection(Array.from(keys)[0]);},className:Select_module.tagGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup/* TagList */.LY,{items:state.selectedItems,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag/* Tag */.v,{textValue:item.textValue,id:item.key,dismissable:true,isDisabled:props.isDisabled,children:item.textValue},item.key);}})})]}));});var Select=/*#__PURE__*/react.forwardRef(function(_ref2,ref){var options=_ref2.options,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsx)(SelectComponent,Object.assign({},props,{items:options,ref:ref,children:function children(section){return section.children?/*#__PURE__*/(0,jsx_runtime.jsx)(Section/* Section */.w,{items:section.children,title:section.name,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:item.textValue,children:item.name});}},section.name):/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:section.textValue,children:section.name});}}));});Select.displayName='Select';
+
+/***/ }),
+
+/***/ 34704:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
 
 /***/ }),
 
@@ -590,10 +646,10 @@ var jsx_runtime = __webpack_require__(74848);
 var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/textfield/TextFieldBase.tsx
 var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size,popover=_props.popover,children=_props.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
 
@@ -639,17 +695,6 @@ var clsx = __webpack_require__(34164);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/dropdown/Dropdown.tsx
 var _excluded=["label","title","children"];function Dropdown(_ref){var label=_ref.label,title=_ref.title,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Menu/* MenuTrigger */.cQ,Object.assign({},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{"aria-label":label||props['aria-label'],variant:"icon",children:[title,/*#__PURE__*/(0,jsx_runtime.jsx)(ellipsis_vertical/* default */.A,{size:20,"aria-hidden":true})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Menu/* Menu */.W1,Object.assign({},props,{className:Dropdown_module.dropDownMenu,children:children}))})]}));}function DropdownItem(props){var textValue=props.textValue||(typeof props.children==='string'?props.children:undefined);return/*#__PURE__*/(0,jsx_runtime.jsx)(Menu/* MenuItem */.Dr,Object.assign({},props,{textValue:textValue,className:function className(_ref2){var isFocused=_ref2.isFocused,isOpen=_ref2.isOpen;return (0,clsx/* default */.A)(Dropdown_module.menuItem,props.className,isFocused&&'focused',isOpen&&'open');},children:function children(_ref3){var hasSubmenu=_ref3.hasSubmenu;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[props.children,hasSubmenu&&/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{className:"chevron",viewBox:"0 0 24 24",children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"m9 18 6-6-6-6"})})]});}}));}
-
-/***/ }),
-
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
 
 /***/ }),
 
@@ -747,14 +792,14 @@ var dist_RadioGroup = __webpack_require__(96325);
 var Group = __webpack_require__(63899);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
 var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/radio/Radio.tsx
@@ -794,12 +839,12 @@ var x = __webpack_require__(48697);
 /* harmony default export */ const FileUpload_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--field-01":"light-dark(#f2f2f2, #262626)","--background":"light-dark(#ffffff, #171717)","--background-hover":"light-dark(#e6e6e6, #212121)","--border-subtle":"light-dark(#bfbfbf, #383838)","--text-disabled":"light-dark(#bfbfbf, #525252)","box":"box_kaz6","list":"list_tzm4","container":"container_tPtu","label":"label_Rz6y","text":"text_R2tR","dropzone":"dropzone_bGZ8","input":"input_XAxQ"});
 // EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
 var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/file-upload/FileUpload.tsx
@@ -1068,22 +1113,6 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 63181:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
-
-/***/ }),
-
 /***/ 67603:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1261,10 +1290,8 @@ var react = __webpack_require__(96540);
 var useCheckboxGroup = __webpack_require__(91936);
 // EXTERNAL MODULE: ./node_modules/@react-stately/checkbox/dist/useCheckboxGroupState.mjs
 var useCheckboxGroupState = __webpack_require__(34650);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
@@ -1287,6 +1314,8 @@ var CheckboxGroupFieldError=function CheckboxGroupFieldError(_ref){var state=_re
 const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en-US":{"selectAll":"Select all"},"en-GB":{"selectAll":"Select all"},"es-ES":{"selectAll":"Seleccionar todos"},"es-MX":{"selectAll":"Seleccionar todos"},"fr-FR":{"selectAll":"Tout sélectionner"},"fr-CA":{"selectAll":"Tout sélectionner"},"de-DE":{"selectAll":"Alle auswählen"},"it-IT":{"selectAll":"Seleziona tutti"},"pt-PT":{"selectAll":"Selecionar todos"},"pt-BR":{"selectAll":"Selecionar todos"},"ru-RU":{"selectAll":"Выбрать все"},"zh-CN":{"selectAll":"全选"},"zh-TW":{"selectAll":"全選"},"ja-JP":{"selectAll":"すべて選択"},"ko-KR":{"selectAll":"전체 선택"},"ar-SA":{"selectAll":"تحديد الكل"},"hi-IN":{"selectAll":"सभी चुनें"},"tr-TR":{"selectAll":"Tümünü seç"},"nl-NL":{"selectAll":"Alles selecteren"},"sv-SE":{"selectAll":"Välj alla"},"fi-FI":{"selectAll":"Valitse kaikki"},"no-NO":{"selectAll":"Velg alle"},"da-DK":{"selectAll":"Vælg alle"},"pl-PL":{"selectAll":"Zaznacz wszystkie"},"cs-CZ":{"selectAll":"Vybrat vše"},"he-IL":{"selectAll":"בחר הכול"},"th-TH":{"selectAll":"เลือกทั้งหมด"},"vi-VN":{"selectAll":"Chọn tất cả"},"id-ID":{"selectAll":"Pilih semua"},"uk-UA":{"selectAll":"Вибрати все"}}');
 // EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
 var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/checkbox/CheckboxGroup.tsx
 function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGroupState */.h)(props);var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);var _useCheckboxGroup=(0,useCheckboxGroup/* useCheckboxGroup */.M)(props,state),groupProps=_useCheckboxGroup.groupProps,labelProps=_useCheckboxGroup.labelProps,descriptionProps=_useCheckboxGroup.descriptionProps;var _useSelectAll=useSelectAll(props.children,state),allSelected=_useSelectAll.allSelected,someSelected=_useSelectAll.someSelected,checkboxValues=_useSelectAll.checkboxValues;var handleChange=function handleChange(checked){state.setValue(checked?checkboxValues:[]);};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},groupProps,{className:Checkbox_module/* default */.A.checkboxGroup,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:props.popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,Object.assign({slot:"description"},descriptionProps,{children:props.description})),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state})),props.showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:allSelected,isIndeterminate:someSelected,onChange:handleChange,children:props.selectAllLabel||stringFormatter.format('selectAll')}),/*#__PURE__*/(0,jsx_runtime.jsx)(context/* CheckboxGroupContext */.I.Provider,{value:state,children:props.children}),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state}))]}));}
 
@@ -1308,34 +1337,6 @@ function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGr
 'use client';var _excluded=["variant","children","className"];var ACCORDION_TEST_ID='accordion';/**
  * Accordions are used primarily to reduce the direct amount of information on a page and to sort it clearly.
  */var Accordion=function Accordion(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'uncontained':_ref$variant,children=_ref.children,className=_ref.className,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DisclosureGroup */ .Tw,Object.assign({"data-testid":ACCORDION_TEST_ID,className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.root,variant==='contained'?_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.contained:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.uncontained,className)},props,{children:children}));};
-
-/***/ }),
-
-/***/ 82684:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 

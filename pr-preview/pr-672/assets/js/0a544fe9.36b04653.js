@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3249,6295,8401],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2989,3249,8401],{
 
 /***/ 6974:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -103,65 +103,6 @@ var PasswordField=function PasswordField(_ref){var value=_ref.value;var _React$u
 var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];ref=_useContextProps[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module/* default */.A.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,props.className)})),props.type==='password'&&/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,Object.assign({},props))]});});
 ;// ./packages/components/src/textfield/TextField.tsx
 'use client';var _excluded=["className","form","list"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,list=_ref.list,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:(0,clsx/* default */.A)(className),form:form,list:list,ref:ref})}));});
-
-/***/ }),
-
-/***/ 15336:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ ChangelogPage)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
-var Translate = __webpack_require__(21312);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
-var Link = __webpack_require__(28774);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/metadataUtils.js
-var metadataUtils = __webpack_require__(45500);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
-var ThemeClassNames = __webpack_require__(17559);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/plugin-content-blog/lib/client/index.js + 3 modules
-var client = __webpack_require__(44096);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostPage/Metadata/index.js
-var Metadata = __webpack_require__(66377);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogLayout/index.js + 6 modules
-var BlogLayout = __webpack_require__(28027);
-// EXTERNAL MODULE: ./apps/docs/src/plugins/changelog/theme/ChangelogItem/index.tsx + 8 modules
-var ChangelogItem = __webpack_require__(16388);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/PaginatorNavLink/index.js
-var PaginatorNavLink = __webpack_require__(39022);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./apps/docs/src/plugins/changelog/theme/ChangelogPaginator/index.tsx
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */// Changed the text labels.
-function ChangelogPaginator(props){var nextItem=props.nextItem,prevItem=props.prevItem;return/*#__PURE__*/(0,jsx_runtime.jsxs)("nav",{className:"pagination-nav docusaurus-mt-lg","aria-label":(0,Translate/* translate */.T)({id:'theme.changelog.post.paginator.navAriaLabel',message:'Changelog item navigation',description:'The ARIA label for the changelog pagination'}),children:[prevItem&&/*#__PURE__*/(0,jsx_runtime.jsx)(PaginatorNavLink/* default */.A,Object.assign({},prevItem,{subLabel:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"theme.changelog.post.paginator.newerRelease",description:"The changelog button label to navigate to the newer release",children:"Newer release"})})),nextItem&&/*#__PURE__*/(0,jsx_runtime.jsx)(PaginatorNavLink/* default */.A,Object.assign({},nextItem,{subLabel:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"theme.changelog.post.paginator.olderRelease",description:"The changelog button label to navigate to the older release",children:"Older release"}),isNext:true}))]});}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TOC/index.js + 1 modules
-var TOC = __webpack_require__(67763);
-;// ./apps/docs/src/plugins/changelog/theme/ChangelogPage/index.tsx
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BackToIndexLink(){var _useBlogPost=(0,client/* useBlogPost */.e7)(),metadata=_useBlogPost.metadata;// @ts-expect-error: we injected this
-var listPageLink=metadata.listPageLink;return/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* default */.A,{to:listPageLink,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"changelog.backLink",children:"\u2190 Back to index page"})});}function ChangelogPageContent(_ref){var sidebar=_ref.sidebar,children=_ref.children;var _useBlogPost2=(0,client/* useBlogPost */.e7)(),metadata=_useBlogPost2.metadata,toc=_useBlogPost2.toc;var nextItem=metadata.nextItem,prevItem=metadata.prevItem,frontMatter=metadata.frontMatter;var hideTableOfContents=frontMatter.hide_table_of_contents,tocMinHeadingLevel=frontMatter.toc_min_heading_level,tocMaxHeadingLevel=frontMatter.toc_max_heading_level;return/*#__PURE__*/(0,jsx_runtime.jsxs)(BlogLayout/* default */.A,{sidebar:sidebar,toc:!hideTableOfContents&&toc.length>0?/*#__PURE__*/(0,jsx_runtime.jsx)(TOC/* default */.A,{toc:toc,minHeadingLevel:tocMinHeadingLevel,maxHeadingLevel:tocMaxHeadingLevel}):undefined,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(BackToIndexLink,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogItem/* default */.A,{children:children}),(nextItem||prevItem)&&/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogPaginator,{nextItem:nextItem,prevItem:prevItem})]});}// This page doesn't change anything. It's just swapping BlogPostItem with our
-// own ChangelogItem. We don't want to apply the swizzled item to the actual
-// blog.
-function ChangelogPage(props){var ChangelogContent=props.content;return/*#__PURE__*/(0,jsx_runtime.jsx)(client/* BlogPostProvider */["in"],{content:props.content,isBlogPostPage:true,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(metadataUtils/* HtmlClassNameProvider */.e3,{className:(0,clsx/* default */.A)(ThemeClassNames/* ThemeClassNames */.G.wrapper.blogPages,ThemeClassNames/* ThemeClassNames */.G.page.blogPostPage),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Metadata/* default */.A,{}),/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogPageContent,{sidebar:props.sidebar,children:/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogContent,{})})]})});}
 
 /***/ }),
 
@@ -492,6 +433,35 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
+/***/ 28637:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  c: () => (/* binding */ LabelWrapper)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+
+/***/ }),
+
 /***/ 28777:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -657,10 +627,8 @@ return{containerProps:Object.assign({},visuallyHiddenProps,{'aria-hidden':true,/
 // If the collection isn't too big, use a hidden <select> element for this so that browser
 // autofill will work. Otherwise, use an <input type="hidden">.
 if(state.collection.size<=300){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({},containerProps,{"data-testid":"hidden-select-container",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("label",{children:[label,/*#__PURE__*/(0,jsx_runtime.jsxs)("select",Object.assign({},selectProps,{ref:selectRef,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("option",{}),[].concat(state.collection.getKeys()).map(function(key){var item=state.collection.getItem(key);if(item&&item.type==='item'){return/*#__PURE__*/(0,jsx_runtime.jsx)("option",{value:item.key,children:item.textValue},item.key);}return null;})]}))]})}));}else if(name){var _Array$from$map;return/*#__PURE__*/(0,jsx_runtime.jsx)("input",{type:"hidden",autoComplete:selectProps.autoComplete,name:name,disabled:isDisabled,value:(_Array$from$map=Array.from(state.selectedKeys).map(function(key){return key.toString();}))!=null?_Array$from$map:['']});}return null;}
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
@@ -685,8 +653,56 @@ var FieldError = __webpack_require__(44300);
 var field_error_FieldError = __webpack_require__(19060);
 ;// ./packages/components/src/select/SelectFieldError.tsx
 var SelectFieldError=function SelectFieldError(_ref){var state=_ref.state,errorMessage=_ref.errorMessage;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldErrorContext */.C.Provider,{value:Object.assign({},state.displayValidation),children:/*#__PURE__*/(0,jsx_runtime.jsx)(field_error_FieldError/* FieldError */.b,{children:errorMessage})});};
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/select/Select.tsx
 var Select_excluded=["isClearable","popover"],_excluded2=["options"];var SelectComponent=/*#__PURE__*/react.forwardRef(function(_ref,ref){var _ref$isClearable=_ref.isClearable,isClearable=_ref$isClearable===void 0?true:_ref$isClearable,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,Select_excluded);var props=Object.assign({selectionMode:'single',errorPosition:'top',disallowEmptySelection:!isClearable,isClearable:isClearable,size:'large',popover:popover},rest);var triggerRef=(0,useObjectRef/* useObjectRef */.U)(ref);var state=useMultiSelectState(props);var _useMultiSelect=useMultiSelect(props,state,triggerRef),labelProps=_useMultiSelect.labelProps,triggerProps=_useMultiSelect.triggerProps,valueProps=_useMultiSelect.valueProps,menuProps=_useMultiSelect.menuProps;var _useObserveElement=(0,useObserveElement/* default */.A)(triggerRef.current,{includePadding:true}),triggerWidth=_useObserveElement.width;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* default */.A)(Select_module.wrapper,props.className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(HiddenMultiSelect,Object.assign({},props,{state:state,triggerRef:triggerRef})),/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{"data-disabled":props.isDisabled||undefined,children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:props.description}),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectFieldError,Object.assign({},props,{state:state})),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectTrigger,Object.assign({},props,triggerProps,{isInvalid:state.displayValidation.isInvalid,triggerRef:triggerRef,state:state,children:props.selectionMode==='multiple'&&state.selectedItems?/*#__PURE__*/(0,jsx_runtime.jsx)("span",Object.assign({},valueProps,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(MultiSelectValueTag,Object.assign({},props,{state:state,parentWidth:triggerWidth,onClear:function onClear(){return state.selectionManager.clearSelection();},triggerRef:triggerRef}))})):null})),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(SelectFieldError,Object.assign({},props,{state:state})),/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBoxPopover/* ListBoxPopover */.f,{isOpen:state.isOpen,onOpenChange:function onOpenChange(isOpen){if(!isOpen){state.close();}},triggerRef:triggerRef,style:{width:triggerWidth},children:[props.isSelectableAll&&/*#__PURE__*/(0,jsx_runtime.jsxs)(ListBoxButton,{onClick:function onClick(){return state.selectionManager.toggleSelectAll();},children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Select_module.checkboxContainer,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:state.selectionManager.isSelectAll,isIndeterminate:!state.selectionManager.isSelectAll&&!state.selectionManager.isEmpty,isReadOnly:true,excludeFromTabOrder:true})}),/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:"Select All"})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(SelectListBox,Object.assign({},menuProps,{state:state}))]}),props.showTags&&!!state.selectedItems&&/*#__PURE__*/(0,jsx_runtime.jsx)(Tag/* TagGroup */.C,{"aria-label":"Selected Items",selectionBehavior:"toggle",onRemove:function onRemove(keys){return state.selectionManager.toggleSelection(Array.from(keys)[0]);},className:Select_module.tagGroup,children:/*#__PURE__*/(0,jsx_runtime.jsx)(TagGroup/* TagList */.LY,{items:state.selectedItems,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Tag/* Tag */.v,{textValue:item.textValue,id:item.key,dismissable:true,isDisabled:props.isDisabled,children:item.textValue},item.key);}})})]}));});var Select=/*#__PURE__*/react.forwardRef(function(_ref2,ref){var options=_ref2.options,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref2,_excluded2);return/*#__PURE__*/(0,jsx_runtime.jsx)(SelectComponent,Object.assign({},props,{items:options,ref:ref,children:function children(section){return section.children?/*#__PURE__*/(0,jsx_runtime.jsx)(Section/* Section */.w,{items:section.children,title:section.name,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:item.textValue,children:item.name});}},section.name):/*#__PURE__*/(0,jsx_runtime.jsx)(Item/* Item */.q,{textValue:section.textValue,children:section.name});}}));});Select.displayName='Select';
+
+/***/ }),
+
+/***/ 33892:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ BlogPostItems)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _docusaurus_plugin_content_blog_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44096);
+/* harmony import */ var _theme_BlogPostItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(72818);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function BlogPostItems(_ref){var items=_ref.items,_ref$component=_ref.component,BlogPostItemComponent=_ref$component===void 0?_theme_BlogPostItem__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A:_ref$component;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment,{children:items.map(function(_ref2){var BlogPostContent=_ref2.content;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_plugin_content_blog_client__WEBPACK_IMPORTED_MODULE_1__/* .BlogPostProvider */ ["in"],{content:BlogPostContent,children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(BlogPostItemComponent,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(BlogPostContent,{})})},BlogPostContent.metadata.permalink);})});}
+
+/***/ }),
+
+/***/ 34704:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
 
 /***/ }),
 
@@ -733,10 +749,10 @@ var jsx_runtime = __webpack_require__(74848);
 var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/textfield/TextFieldBase.tsx
 var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size,popover=_props.popover,children=_props.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
 
@@ -782,17 +798,6 @@ var clsx = __webpack_require__(34164);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/dropdown/Dropdown.tsx
 var _excluded=["label","title","children"];function Dropdown(_ref){var label=_ref.label,title=_ref.title,children=_ref.children,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(Menu/* MenuTrigger */.cQ,Object.assign({},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Button/* Button */.$,{"aria-label":label||props['aria-label'],variant:"icon",children:[title,/*#__PURE__*/(0,jsx_runtime.jsx)(ellipsis_vertical/* default */.A,{size:20,"aria-hidden":true})]}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Menu/* Menu */.W1,Object.assign({},props,{className:Dropdown_module.dropDownMenu,children:children}))})]}));}function DropdownItem(props){var textValue=props.textValue||(typeof props.children==='string'?props.children:undefined);return/*#__PURE__*/(0,jsx_runtime.jsx)(Menu/* MenuItem */.Dr,Object.assign({},props,{textValue:textValue,className:function className(_ref2){var isFocused=_ref2.isFocused,isOpen=_ref2.isOpen;return (0,clsx/* default */.A)(Dropdown_module.menuItem,props.className,isFocused&&'focused',isOpen&&'open');},children:function children(_ref3){var hasSubmenu=_ref3.hasSubmenu;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[props.children,hasSubmenu&&/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{className:"chevron",viewBox:"0 0 24 24",children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"m9 18 6-6-6-6"})})]});}}));}
-
-/***/ }),
-
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
 
 /***/ }),
 
@@ -851,6 +856,25 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
+/***/ 47713:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ BlogListPaginator)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21312);
+/* harmony import */ var _theme_PaginatorNavLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39022);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(74848);
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function BlogListPaginator(props){var metadata=props.metadata;var previousPage=metadata.previousPage,nextPage=metadata.nextPage;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("nav",{className:"pagination-nav","aria-label":(0,_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* .translate */ .T)({id:'theme.blog.paginator.navAriaLabel',message:'Blog list page navigation',description:'The ARIA label for the blog pagination'}),children:[previousPage&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_theme_PaginatorNavLink__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A,{permalink:previousPage,title:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{id:"theme.blog.paginator.newerEntries",description:"The label used to navigate to the newer blog posts page (previous page)",children:"Newer entries"})}),nextPage&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_theme_PaginatorNavLink__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .A,{permalink:nextPage,title:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_docusaurus_Translate__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A,{id:"theme.blog.paginator.olderEntries",description:"The label used to navigate to the older blog posts page (next page)",children:"Older entries"}),isNext:true})]});}
+
+/***/ }),
+
 /***/ 48001:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -890,14 +914,14 @@ var dist_RadioGroup = __webpack_require__(96325);
 var Group = __webpack_require__(63899);
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
 var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/radio/Radio.tsx
@@ -937,12 +961,12 @@ var x = __webpack_require__(48697);
 /* harmony default export */ const FileUpload_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--field-01":"light-dark(#f2f2f2, #262626)","--background":"light-dark(#ffffff, #171717)","--background-hover":"light-dark(#e6e6e6, #212121)","--border-subtle":"light-dark(#bfbfbf, #383838)","--text-disabled":"light-dark(#bfbfbf, #525252)","box":"box_kaz6","list":"list_tzm4","container":"container_tPtu","label":"label_Rz6y","text":"text_R2tR","dropzone":"dropzone_bGZ8","input":"input_XAxQ"});
 // EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
 var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/file-upload/FileUpload.tsx
@@ -1211,146 +1235,6 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 63181:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
-
-/***/ }),
-
-/***/ 65195:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  A: () => (/* binding */ TOCItems)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/useThemeConfig.js
-var useThemeConfig = __webpack_require__(6342);
-;// ./node_modules/@docusaurus/theme-common/lib/utils/tocUtils.js
-var _excluded=["parentIndex"];/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function treeifyTOC(flatTOC){var headings=flatTOC.map(function(heading){return Object.assign({},heading,{parentIndex:-1,children:[]});});// Keep track of which previous index would be the current heading's direct
-// parent. Each entry <i> is the last index of the `headings` array at heading
-// level <i>. We will modify these indices as we iterate through all headings.
-// e.g. if an ### H3 was last seen at index 2, then prevIndexForLevel[3] === 2
-// indices 0 and 1 will remain unused.
-var prevIndexForLevel=Array(7).fill(-1);headings.forEach(function(curr,currIndex){// Take the last seen index for each ancestor level. the highest index will
-// be the direct ancestor of the current heading.
-var ancestorLevelIndexes=prevIndexForLevel.slice(2,curr.level);curr.parentIndex=Math.max.apply(Math,ancestorLevelIndexes);// Mark that curr.level was last seen at the current index.
-prevIndexForLevel[curr.level]=currIndex;});var rootNodes=[];// For a given parentIndex, add each Node into that parent's `children` array
-headings.forEach(function(heading){var parentIndex=heading.parentIndex,rest=(0,objectWithoutPropertiesLoose/* default */.A)(heading,_excluded);if(parentIndex>=0){headings[parentIndex].children.push(rest);}else{rootNodes.push(rest);}});return rootNodes;}/**
- * Takes a flat TOC list (from the MDX loader) and treeifies it into what the
- * TOC components expect. Memoized for performance.
- */function useTreeifiedTOC(toc){return useMemo(function(){return treeifyTOC(toc);},[toc]);}function filterTOC(_ref){var toc=_ref.toc,minHeadingLevel=_ref.minHeadingLevel,maxHeadingLevel=_ref.maxHeadingLevel;function isValid(item){return item.level>=minHeadingLevel&&item.level<=maxHeadingLevel;}return toc.flatMap(function(item){var filteredChildren=filterTOC({toc:item.children,minHeadingLevel:minHeadingLevel,maxHeadingLevel:maxHeadingLevel});if(isValid(item)){return[Object.assign({},item,{children:filteredChildren})];}return filteredChildren;});}/**
- * Takes a flat TOC list (from the MDX loader) and treeifies it into what the
- * TOC components expect, applying the `minHeadingLevel` and `maxHeadingLevel`.
- * Memoized for performance.
- *
- * **Important**: this is not the same as `useTreeifiedTOC(toc.filter(...))`,
- * because we have to filter the TOC after it has been treeified. This is mostly
- * to ensure that weird TOC structures preserve their semantics. For example, an
- * h3-h2-h4 sequence should not be treeified as an "h3 > h4" hierarchy with
- * min=3, max=4, but should rather be "[h3, h4]" (since the h2 heading has split
- * the two headings and they are not parent-children)
- */function useFilteredAndTreeifiedTOC(_ref2){var toc=_ref2.toc,minHeadingLevel=_ref2.minHeadingLevel,maxHeadingLevel=_ref2.maxHeadingLevel;return (0,react.useMemo)(function(){return filterTOC({toc:treeifyTOC(toc),minHeadingLevel:minHeadingLevel,maxHeadingLevel:maxHeadingLevel});},[toc,minHeadingLevel,maxHeadingLevel]);}
-;// ./node_modules/@docusaurus/theme-common/lib/hooks/useTOCHighlight.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */// TODO make the hardcoded theme-classic classnames configurable (or add them
-// to ThemeClassNames?)
-/**
- * If the anchor has no height and is just a "marker" in the DOM; we'll use the
- * parent (normally the link text) rect boundaries instead
- */function getVisibleBoundingClientRect(element){var rect=element.getBoundingClientRect();var hasNoHeight=rect.top===rect.bottom;if(hasNoHeight){return getVisibleBoundingClientRect(element.parentNode);}return rect;}/**
- * Considering we divide viewport into 2 zones of each 50vh, this returns true
- * if an element is in the first zone (i.e., appear in viewport, near the top)
- */function isInViewportTopHalf(boundingRect){return boundingRect.top>0&&boundingRect.bottom<window.innerHeight/2;}function getAnchors(_ref){var minHeadingLevel=_ref.minHeadingLevel,maxHeadingLevel=_ref.maxHeadingLevel;var selectors=[];for(var i=minHeadingLevel;i<=maxHeadingLevel;i+=1){selectors.push("h"+i+".anchor");}return Array.from(document.querySelectorAll(selectors.join()));}function getActiveAnchor(anchors,_ref2){var _anchors2;var anchorTopOffset=_ref2.anchorTopOffset;// Naming is hard: The "nextVisibleAnchor" is the first anchor that appear
-// under the viewport top boundary. It does not mean this anchor is visible
-// yet, but if user continues scrolling down, it will be the first to become
-// visible
-var nextVisibleAnchor=anchors.find(function(anchor){var boundingRect=getVisibleBoundingClientRect(anchor);return boundingRect.top>=anchorTopOffset;});if(nextVisibleAnchor){var _anchors;var boundingRect=getVisibleBoundingClientRect(nextVisibleAnchor);// If anchor is in the top half of the viewport: it is the one we consider
-// "active" (unless it's too close to the top and and soon to be scrolled
-// outside viewport)
-if(isInViewportTopHalf(boundingRect)){return nextVisibleAnchor;}// If anchor is in the bottom half of the viewport, or under the viewport,
-// we consider the active anchor is the previous one. This is because the
-// main text appearing in the user screen mostly belong to the previous
-// anchor. Returns null for the first anchor, see
-// https://github.com/facebook/docusaurus/issues/5318
-return(_anchors=anchors[anchors.indexOf(nextVisibleAnchor)-1])!=null?_anchors:null;}// No anchor under viewport top (i.e. we are at the bottom of the page),
-// highlight the last anchor found
-return(_anchors2=anchors[anchors.length-1])!=null?_anchors2:null;}function getLinkAnchorValue(link){return decodeURIComponent(link.href.substring(link.href.indexOf('#')+1));}function getLinks(linkClassName){return Array.from(document.getElementsByClassName(linkClassName));}function getNavbarHeight(){// Not ideal to obtain actual height this way
-// Using TS ! (not ?) because otherwise a bad selector would be un-noticed
-return document.querySelector('.navbar').clientHeight;}function useAnchorTopOffsetRef(){var anchorTopOffsetRef=(0,react.useRef)(0);var _useThemeConfig=(0,useThemeConfig/* useThemeConfig */.p)(),hideOnScroll=_useThemeConfig.navbar.hideOnScroll;(0,react.useEffect)(function(){anchorTopOffsetRef.current=hideOnScroll?0:getNavbarHeight();},[hideOnScroll]);return anchorTopOffsetRef;}/**
- * Side-effect that applies the active class name to the TOC heading that the
- * user is currently viewing. Disabled when `config` is undefined.
- */function useTOCHighlight(config){var lastActiveLinkRef=(0,react.useRef)(undefined);var anchorTopOffsetRef=useAnchorTopOffsetRef();(0,react.useEffect)(function(){if(!config){// No-op, highlighting is disabled
-return function(){};}var linkClassName=config.linkClassName,linkActiveClassName=config.linkActiveClassName,minHeadingLevel=config.minHeadingLevel,maxHeadingLevel=config.maxHeadingLevel;function updateLinkActiveClass(link,active){if(active){if(lastActiveLinkRef.current&&lastActiveLinkRef.current!==link){lastActiveLinkRef.current.classList.remove(linkActiveClassName);}link.classList.add(linkActiveClassName);lastActiveLinkRef.current=link;// link.scrollIntoView({block: 'nearest'});
-}else{link.classList.remove(linkActiveClassName);}}function updateActiveLink(){var links=getLinks(linkClassName);var anchors=getAnchors({minHeadingLevel:minHeadingLevel,maxHeadingLevel:maxHeadingLevel});var activeAnchor=getActiveAnchor(anchors,{anchorTopOffset:anchorTopOffsetRef.current});var activeLink=links.find(function(link){return activeAnchor&&activeAnchor.id===getLinkAnchorValue(link);});links.forEach(function(link){updateLinkActiveClass(link,link===activeLink);});}document.addEventListener('scroll',updateActiveLink);document.addEventListener('resize',updateActiveLink);updateActiveLink();return function(){document.removeEventListener('scroll',updateActiveLink);document.removeEventListener('resize',updateActiveLink);};},[config,anchorTopOffsetRef]);}
-// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
-var Link = __webpack_require__(28774);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/TOCItems/Tree.js
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */// Recursive component rendering the toc tree
-function TOCItemTree(_ref){var toc=_ref.toc,className=_ref.className,linkClassName=_ref.linkClassName,isChild=_ref.isChild;if(!toc.length){return null;}return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",{className:isChild?undefined:className,children:toc.map(function(heading){return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Link/* default */.A,{to:"#"+heading.id,className:linkClassName!=null?linkClassName:undefined// Developer provided the HTML, so assume it's safe.
-,dangerouslySetInnerHTML:{__html:heading.value}}),/*#__PURE__*/(0,jsx_runtime.jsx)(TOCItemTree,{isChild:true,toc:heading.children,className:className,linkClassName:linkClassName})]},heading.id);})});}// Memo only the tree root is enough
-/* harmony default export */ const Tree = (/*#__PURE__*/react.memo(TOCItemTree));
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/TOCItems/index.js
-var TOCItems_excluded=["toc","className","linkClassName","linkActiveClassName","minHeadingLevel","maxHeadingLevel"];/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function TOCItems(_ref){var toc=_ref.toc,_ref$className=_ref.className,className=_ref$className===void 0?'table-of-contents table-of-contents__left-border':_ref$className,_ref$linkClassName=_ref.linkClassName,linkClassName=_ref$linkClassName===void 0?'table-of-contents__link':_ref$linkClassName,_ref$linkActiveClassN=_ref.linkActiveClassName,linkActiveClassName=_ref$linkActiveClassN===void 0?undefined:_ref$linkActiveClassN,minHeadingLevelOption=_ref.minHeadingLevel,maxHeadingLevelOption=_ref.maxHeadingLevel,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,TOCItems_excluded);var themeConfig=(0,useThemeConfig/* useThemeConfig */.p)();var minHeadingLevel=minHeadingLevelOption!=null?minHeadingLevelOption:themeConfig.tableOfContents.minHeadingLevel;var maxHeadingLevel=maxHeadingLevelOption!=null?maxHeadingLevelOption:themeConfig.tableOfContents.maxHeadingLevel;var tocTree=useFilteredAndTreeifiedTOC({toc:toc,minHeadingLevel:minHeadingLevel,maxHeadingLevel:maxHeadingLevel});var tocHighlightConfig=(0,react.useMemo)(function(){if(linkClassName&&linkActiveClassName){return{linkClassName:linkClassName,linkActiveClassName:linkActiveClassName,minHeadingLevel:minHeadingLevel,maxHeadingLevel:maxHeadingLevel};}return undefined;},[linkClassName,linkActiveClassName,minHeadingLevel,maxHeadingLevel]);useTOCHighlight(tocHighlightConfig);return/*#__PURE__*/(0,jsx_runtime.jsx)(Tree,Object.assign({toc:tocTree,className:className,linkClassName:linkClassName},props));}
-
-/***/ }),
-
-/***/ 66377:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (/* binding */ BlogPostPageMetadata)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var _docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45500);
-/* harmony import */ var _docusaurus_plugin_content_blog_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44096);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */function BlogPostPageMetadata(){var _assets$image,_frontMatter$title_me;var _useBlogPost=(0,_docusaurus_plugin_content_blog_client__WEBPACK_IMPORTED_MODULE_1__/* .useBlogPost */ .e7)(),assets=_useBlogPost.assets,metadata=_useBlogPost.metadata;var title=metadata.title,description=metadata.description,date=metadata.date,tags=metadata.tags,authors=metadata.authors,frontMatter=metadata.frontMatter;var keywords=frontMatter.keywords;var image=(_assets$image=assets.image)!=null?_assets$image:frontMatter.image;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_docusaurus_theme_common__WEBPACK_IMPORTED_MODULE_3__/* .PageMetadata */ .be,{title:(_frontMatter$title_me=frontMatter.title_meta)!=null?_frontMatter$title_me:title,description:description,keywords:keywords,image:image,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta",{property:"og:type",content:"article"}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta",{property:"article:published_time",content:date}),authors.some(function(author){return author.url;})&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta",{property:"article:author",content:authors.map(function(author){return author.url;}).filter(Boolean).join(',')}),tags.length>0&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("meta",{property:"article:tag",content:tags.map(function(tag){return tag.label;}).join(',')})]});}
-
-/***/ }),
-
 /***/ 67603:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1361,40 +1245,6 @@ var TOCItems_excluded=["toc","className","linkClassName","linkActiveClassName","
 /**
  * Observe an elements size change on resize
  */function useObserveElement(element,options){if(options===void 0){options={};}var _useState=(0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({width:0,height:0}),size=_useState[0],setSize=_useState[1];var delay=options.delay===undefined?500:options.delay;var includePadding=!!options.includePadding;(0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function(){if(!element)return;var resizeObserver=new ResizeObserver(debounce(function(_ref){var entry=_ref[0];var _ref2=includePadding?entry.borderBoxSize[0]:entry.contentBoxSize[0],inlineSize=_ref2.inlineSize,blockSize=_ref2.blockSize;setSize({width:inlineSize,height:blockSize});},delay));resizeObserver.observe(element);return function(){resizeObserver.disconnect();};},[delay,element,includePadding]);return size;}function debounce(callback,delay){var timeout;return function(entries,observer){clearTimeout(timeout);timeout=setTimeout(function(){callback(entries,observer);},delay);};}
-
-/***/ }),
-
-/***/ 67763:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  A: () => (/* binding */ TOC)
-});
-
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/TOCItems/index.js + 3 modules
-var TOCItems = __webpack_require__(65195);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/TOC/styles.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const styles_module = ({"tableOfContents":"tableOfContents_bqdL","docItemContainer":"docItemContainer_F8PC"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./node_modules/@docusaurus/theme-classic/lib/theme/TOC/index.js
-var _excluded=["className"];/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */// Using a custom className
-// This prevents TOCInline/TOCCollapsible getting highlighted by mistake
-var LINK_CLASS_NAME='table-of-contents__link toc-highlight';var LINK_ACTIVE_CLASS_NAME='table-of-contents__link--active';function TOC(_ref){var className=_ref.className,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(styles_module.tableOfContents,'thin-scrollbar',className),children:/*#__PURE__*/(0,jsx_runtime.jsx)(TOCItems/* default */.A,Object.assign({},props,{linkClassName:LINK_CLASS_NAME,linkActiveClassName:LINK_ACTIVE_CLASS_NAME}))});}
 
 /***/ }),
 
@@ -1562,10 +1412,8 @@ var react = __webpack_require__(96540);
 var useCheckboxGroup = __webpack_require__(91936);
 // EXTERNAL MODULE: ./node_modules/@react-stately/checkbox/dist/useCheckboxGroupState.mjs
 var useCheckboxGroupState = __webpack_require__(34650);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
 // EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
@@ -1588,6 +1436,8 @@ var CheckboxGroupFieldError=function CheckboxGroupFieldError(_ref){var state=_re
 const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en-US":{"selectAll":"Select all"},"en-GB":{"selectAll":"Select all"},"es-ES":{"selectAll":"Seleccionar todos"},"es-MX":{"selectAll":"Seleccionar todos"},"fr-FR":{"selectAll":"Tout sélectionner"},"fr-CA":{"selectAll":"Tout sélectionner"},"de-DE":{"selectAll":"Alle auswählen"},"it-IT":{"selectAll":"Seleziona tutti"},"pt-PT":{"selectAll":"Selecionar todos"},"pt-BR":{"selectAll":"Selecionar todos"},"ru-RU":{"selectAll":"Выбрать все"},"zh-CN":{"selectAll":"全选"},"zh-TW":{"selectAll":"全選"},"ja-JP":{"selectAll":"すべて選択"},"ko-KR":{"selectAll":"전체 선택"},"ar-SA":{"selectAll":"تحديد الكل"},"hi-IN":{"selectAll":"सभी चुनें"},"tr-TR":{"selectAll":"Tümünü seç"},"nl-NL":{"selectAll":"Alles selecteren"},"sv-SE":{"selectAll":"Välj alla"},"fi-FI":{"selectAll":"Valitse kaikki"},"no-NO":{"selectAll":"Velg alle"},"da-DK":{"selectAll":"Vælg alle"},"pl-PL":{"selectAll":"Zaznacz wszystkie"},"cs-CZ":{"selectAll":"Vybrat vše"},"he-IL":{"selectAll":"בחר הכול"},"th-TH":{"selectAll":"เลือกทั้งหมด"},"vi-VN":{"selectAll":"Chọn tất cả"},"id-ID":{"selectAll":"Pilih semua"},"uk-UA":{"selectAll":"Вибрати все"}}');
 // EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
 var Checkbox_module = __webpack_require__(16025);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/checkbox/CheckboxGroup.tsx
 function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGroupState */.h)(props);var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);var _useCheckboxGroup=(0,useCheckboxGroup/* useCheckboxGroup */.M)(props,state),groupProps=_useCheckboxGroup.groupProps,labelProps=_useCheckboxGroup.labelProps,descriptionProps=_useCheckboxGroup.descriptionProps;var _useSelectAll=useSelectAll(props.children,state),allSelected=_useSelectAll.allSelected,someSelected=_useSelectAll.someSelected,checkboxValues=_useSelectAll.checkboxValues;var handleChange=function handleChange(checked){state.setValue(checked?checkboxValues:[]);};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},groupProps,{className:Checkbox_module/* default */.A.checkboxGroup,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:props.popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,Object.assign({slot:"description"},descriptionProps,{children:props.description})),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state})),props.showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:allSelected,isIndeterminate:someSelected,onChange:handleChange,children:props.selectAllLabel||stringFormatter.format('selectAll')}),/*#__PURE__*/(0,jsx_runtime.jsx)(context/* CheckboxGroupContext */.I.Provider,{value:state,children:props.children}),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state}))]}));}
 
@@ -1609,34 +1459,6 @@ function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGr
 'use client';var _excluded=["variant","children","className"];var ACCORDION_TEST_ID='accordion';/**
  * Accordions are used primarily to reduce the direct amount of information on a page and to sort it clearly.
  */var Accordion=function Accordion(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'uncontained':_ref$variant,children=_ref.children,className=_ref.className,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DisclosureGroup */ .Tw,Object.assign({"data-testid":ACCORDION_TEST_ID,className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.root,variant==='contained'?_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.contained:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.uncontained,className)},props,{children:children}));};
-
-/***/ }),
-
-/***/ 82684:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 
@@ -1687,6 +1509,63 @@ var _excluded=["horizontal","className","children"],_excluded2=["children"],_exc
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--icon-primary":"light-dark(#171717, #f2f2f2)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-secondary":"light-dark(#ffffff, #171717)","--font-size-30":"1rem","--text-on-color":"light-dark(#ffffff, #ffffff)","--button-border-secondary":"light-dark(light-dark(#143c50, #2e7ca5), #f2f2f2)","--button-background-secondary-hover":"light-dark(#e6e6e6, #212121)","--button-background-disabled":"light-dark(#f2f2f2, #262626)","--white":"#ffffff","--border-disabled":"light-dark(#bfbfbf, #525252)","--button-background-secondary-active":"light-dark(#d9d9d9, #262626)","--button-background-tertiary-hover":"light-dark(#e6e6e6, #212121)","--button-background-tertiary-active":"light-dark(#d9d9d9, #262626)","--text-tertiary":"light-dark(#143c50, #f2f2f2)","--button-background-danger":"light-dark(#e62323, #e62323)","--button-background-danger-hover":"light-dark(#bc1d1d, #bc1d1d)","--text-disabled":"light-dark(#bfbfbf, #525252)","--button-background-danger-active":"light-dark(#7d1313, #7d1313)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--button-background-icon-hover":"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))","--button-background-icon-active":"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))","--size-50":"0.625rem","--size-70":"0.875rem","--size-80":"1rem","--size-120":"2rem","--size-130":"2.5rem","--size-150":"3rem","--line-height-30":"1.25rem","button":"button_RcXK","secondary":"secondary_h5I_","tertiary":"tertiary_xq7E","iconBtn":"iconBtn__8qK","medium":"medium_uqO9","danger":"danger_iFp6","iconRight":"iconRight_iW1e","fullwidth":"fullwidth_WWNT","primary":"primary_JNNk"});
+
+/***/ }),
+
+/***/ 88205:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ ChangelogList)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/metadataUtils.js
+var metadataUtils = __webpack_require__(45500);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-common/lib/utils/ThemeClassNames.js
+var ThemeClassNames = __webpack_require__(17559);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogLayout/index.js + 6 modules
+var BlogLayout = __webpack_require__(28027);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogListPaginator/index.js
+var BlogListPaginator = __webpack_require__(47713);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/BlogPostItems/index.js
+var BlogPostItems = __webpack_require__(33892);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/SearchMetadata/index.js
+var SearchMetadata = __webpack_require__(41463);
+// EXTERNAL MODULE: ./apps/docs/src/plugins/changelog/theme/ChangelogItem/index.tsx + 8 modules
+var ChangelogItem = __webpack_require__(16388);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Translate.js + 1 modules
+var Translate = __webpack_require__(21312);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/Link.js
+var Link = __webpack_require__(28774);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/Heading/index.js + 1 modules
+var Heading = __webpack_require__(51107);
+;// ./apps/docs/src/plugins/changelog/theme/ChangelogList/Header/styles.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const styles_module = ({"rss":"rss_ox3n","x":"x_UvX4"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./apps/docs/src/plugins/changelog/theme/ChangelogList/Header/index.tsx
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function RssLink(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Link/* default */.A,{href:"pathname:///changelog/rss.xml",className:styles_module.rss,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("b",{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"changelog.description.rssLink",children:"RSS feeds"})}),/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{style:{fill:'#f26522',position:'relative',left:4,top:1,marginRight:8},xmlns:"http://www.w3.org/2000/svg",width:"16",height:"16",viewBox:"0 0 24 24",children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"})})]});}function ChangelogListHeader(_ref){var blogTitle=_ref.blogTitle;return/*#__PURE__*/(0,jsx_runtime.jsxs)("header",{className:"margin-bottom--lg",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* default */.A,{as:"h1",style:{fontSize:'3rem'},children:blogTitle}),/*#__PURE__*/(0,jsx_runtime.jsx)("p",{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Translate/* default */.A,{id:"changelog.description",values:{rssLink:/*#__PURE__*/(0,jsx_runtime.jsx)(RssLink,{})},children:'Subscribe through {rssLink} to stay up-to-date with new releases!'})})]});}
+;// ./apps/docs/src/plugins/changelog/theme/ChangelogList/index.tsx
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */function ChangelogListMetadata(props){var metadata=props.metadata;var blogTitle=metadata.blogTitle,blogDescription=metadata.blogDescription;return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(metadataUtils/* PageMetadata */.be,{title:blogTitle,description:blogDescription}),/*#__PURE__*/(0,jsx_runtime.jsx)(SearchMetadata/* default */.A,{tag:"blog_posts_list"})]});}function ChangelogListContent(props){var metadata=props.metadata,items=props.items,sidebar=props.sidebar;var blogTitle=metadata.blogTitle;return/*#__PURE__*/(0,jsx_runtime.jsxs)(BlogLayout/* default */.A,{sidebar:sidebar,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogListHeader,{blogTitle:blogTitle}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogPostItems/* default */.A,{items:items,component:ChangelogItem/* default */.A}),/*#__PURE__*/(0,jsx_runtime.jsx)(BlogListPaginator/* default */.A,{metadata:metadata})]});}function ChangelogList(props){return/*#__PURE__*/(0,jsx_runtime.jsxs)(metadataUtils/* HtmlClassNameProvider */.e3,{className:(0,clsx/* default */.A)(ThemeClassNames/* ThemeClassNames */.G.wrapper.blogPages,ThemeClassNames/* ThemeClassNames */.G.page.blogListPage),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogListMetadata,Object.assign({},props)),/*#__PURE__*/(0,jsx_runtime.jsx)(ChangelogListContent,Object.assign({},props))]});}
 
 /***/ }),
 

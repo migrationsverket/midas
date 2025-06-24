@@ -1,57 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5605],{
-
-/***/ 8807:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  S: () => (/* binding */ Checkbox)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/useHover.mjs
-var useHover = __webpack_require__(16638);
-// EXTERNAL MODULE: ./node_modules/@react-aria/interactions/dist/usePress.mjs + 6 modules
-var usePress = __webpack_require__(35044);
-// EXTERNAL MODULE: ./node_modules/@react-aria/focus/dist/useFocusRing.mjs
-var useFocusRing = __webpack_require__(16133);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
-var utils = __webpack_require__(5933);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RSPContexts.mjs
-var RSPContexts = __webpack_require__(32373);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Form.mjs
-var Form = __webpack_require__(23128);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/context.ts
-var context = __webpack_require__(20011);
-// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckboxGroupItem.mjs
-var useCheckboxGroupItem = __webpack_require__(26493);
-// EXTERNAL MODULE: ./node_modules/@react-aria/utils/dist/mergeProps.mjs
-var mergeProps = __webpack_require__(32217);
-// EXTERNAL MODULE: ./node_modules/@react-aria/visually-hidden/dist/VisuallyHidden.mjs
-var VisuallyHidden = __webpack_require__(87979);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
-var Checkbox_module = __webpack_require__(16025);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/checkbox/CheckboxInner.tsx
-var CheckboxInner=/*#__PURE__*/react.forwardRef(function(props,ref){var _props$hoverResult=props.hoverResult,hoverProps=_props$hoverResult.hoverProps,isHovered=_props$hoverResult.isHovered;var _props$pressResult=props.pressResult,pressProps=_props$pressResult.pressProps,isPressed=_props$pressResult.isPressed;var _props$focusRingAria=props.focusRingAria,isFocused=_props$focusRingAria.isFocused,isFocusVisible=_props$focusRingAria.isFocusVisible,focusProps=_props$focusRingAria.focusProps;return/*#__PURE__*/(0,jsx_runtime.jsxs)("label",Object.assign({ref:ref},(0,mergeProps/* mergeProps */.v)(hoverProps,pressProps,props.labelProps),{slot:props.slot||undefined,className:Checkbox_module/* default */.A.checkbox,"data-hovered":isHovered||undefined,"data-selected":props.isSelected||undefined,"data-indeterminate":props.isIndeterminate||undefined,"data-pressed":isPressed||undefined,"data-disabled":props.isDisabled||undefined,"data-readonly":props.isReadOnly||undefined,"data-invalid":props.isInvalid||undefined,"data-focused":isFocused||undefined,"data-focus-visible":isFocusVisible||undefined,"data-required":props.isRequired||undefined,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* clsx */.$)(Checkbox_module/* default */.A.checkboxInner),children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:16,height:16,viewBox:"0 0 18 18","aria-hidden":"true",children:props.isIndeterminate?/*#__PURE__*/(0,jsx_runtime.jsx)("rect",{x:4,y:8,width:10,height:2}):/*#__PURE__*/(0,jsx_runtime.jsx)("polyline",{points:"3,9 7,13 15,4"})})}),/*#__PURE__*/(0,jsx_runtime.jsx)(VisuallyHidden/* VisuallyHidden */.s,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("input",Object.assign({},(0,mergeProps/* mergeProps */.v)(props.inputProps,focusProps),{ref:props.inputRef}))}),props.children]}));});
-;// ./packages/components/src/checkbox/CheckboxGroupItem.tsx
-var CheckBoxGroupItem=/*#__PURE__*/react.forwardRef(function(props,ref){var checkboxGroupItem=(0,useCheckboxGroupItem/* useCheckboxGroupItem */.B)(Object.assign({},props,{value:props.value||''}),props.state,props.inputRef);return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxInner,Object.assign({},props,checkboxGroupItem,{ref:ref}));});
-// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckbox.mjs + 1 modules
-var useCheckbox = __webpack_require__(58044);
-// EXTERNAL MODULE: ./node_modules/@react-stately/toggle/dist/useToggleState.mjs
-var useToggleState = __webpack_require__(51623);
-;// ./packages/components/src/checkbox/SingleCheckbox.tsx
-var SingleCheckbox=/*#__PURE__*/react.forwardRef(function(props,ref){var item=(0,useCheckbox/* useCheckbox */.v)(props,(0,useToggleState/* useToggleState */.H)(props),props.inputRef);return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxInner,Object.assign({},props,item,{ref:ref}));});
-;// ./packages/components/src/checkbox/Checkbox.tsx
-var Checkbox=/*#__PURE__*/react.forwardRef(function(props,ref){var _ref,_props$validationBeha;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,RSPContexts/* CheckboxContext */.BP);props=_useContextProps[0];ref=_useContextProps[1];var formProps=(0,utils/* useSlottedContext */.CC)(Form/* FormContext */.c);var validationBehavior=(_ref=(_props$validationBeha=props.validationBehavior)!=null?_props$validationBeha:formProps==null?void 0:formProps.validationBehavior)!=null?_ref:'native';var state=react.useContext(context/* CheckboxGroupContext */.I);var inputRef=react.useRef(null);var hoverResult=(0,useHover/* useHover */.M)(props);var pressResult=(0,usePress/* usePress */.d)({ref:ref,isDisabled:props.isDisabled});var focusRingAria=(0,useFocusRing/* useFocusRing */.o)();if(state){return/*#__PURE__*/(0,jsx_runtime.jsx)(CheckBoxGroupItem,Object.assign({},props,{state:state,inputRef:inputRef,hoverResult:hoverResult,pressResult:pressResult,focusRingAria:focusRingAria,validationBehavior:validationBehavior}));}return/*#__PURE__*/(0,jsx_runtime.jsx)(SingleCheckbox,Object.assign({},props,{inputRef:inputRef,hoverResult:hoverResult,pressResult:pressResult,focusRingAria:focusRingAria,validationBehavior:validationBehavior}));});
-
-/***/ }),
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5521],{
 
 /***/ 13225:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -70,14 +18,45 @@ var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyNa
 
 /***/ }),
 
-/***/ 16025:
+/***/ 13332:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--border-primary":"light-dark(#171717, #f2f2f2)","--border-disabled":"light-dark(#bfbfbf, #525252)","--breakpoint-xs":"(max-width: 479px)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-on-color":"light-dark(#ffffff, #ffffff)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--button-background-primary":"light-dark(#143c50, #2e7ca5)","--button-background-primary-active":"light-dark(#2e7ca5, #143c50)","--button-background-primary-hover":"light-dark(#25607f, #25607f)","--field-disabled":"light-dark(#f2f2f2, #262626)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--line-height-30":"1.25rem","wrap":"wrap_YzPY","checkboxInner":"checkboxInner_Nam1","checkbox":"checkbox_J2GB","checkboxGroup":"checkboxGroup_iAq9"});
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  A: () => (/* binding */ TextField)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextFieldBase.tsx + 2 modules
+var TextFieldBase = __webpack_require__(39107);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
+var TextField_module = __webpack_require__(73413);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
+var useLocalizedStringFormatter = __webpack_require__(88413);
+;// ./packages/components/src/textfield/intl/translations.json
+const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en":{"hide":"Hide","show":"Show"},"sv":{"hide":"Dölj","show":"Visa"},"es":{"hide":"Ocultar","show":"Mostrar"},"fr":{"hide":"Cacher","show":"Afficher"},"de":{"hide":"Verstecken","show":"Anzeigen"},"ja":{"hide":"隠す","show":"表示"},"zh":{"hide":"隐藏","show":"显示"},"ar":{"hide":"إخفاء","show":"إظهار"},"ru":{"hide":"Скрыть","show":"Показать"},"pt":{"hide":"Ocultar","show":"Mostrar"},"it":{"hide":"Nascondi","show":"Mostra"},"ko":{"hide":"숨기기","show":"보여주기"},"hi":{"hide":"छुपाएँ","show":"दिखाएँ"},"nl":{"hide":"Verbergen","show":"Tonen"},"pl":{"hide":"Ukryj","show":"Pokaż"},"tr":{"hide":"Gizle","show":"Göster"},"vi":{"hide":"Ẩn","show":"Hiện"},"th":{"hide":"ซ่อน","show":"แสดง"},"id":{"hide":"Sembunyikan","show":"Tampilkan"},"ms":{"hide":"Sembunyikan","show":"Tunjukkan"}}');
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/textfield/PasswordField.tsx
+var PasswordField=function PasswordField(_ref){var value=_ref.value;var _React$useState=react.useState(false),showPassword=_React$useState[0],setShowPassword=_React$useState[1];var handlePress=function handlePress(){return setShowPassword(function(previousValue){return!previousValue;});};var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[showPassword&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",className:TextField_module/* default */.A.passwordText,children:value}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"tertiary",onPress:handlePress,className:TextField_module/* default */.A.passwordButton,children:showPassword?stringFormatter.format('hide'):stringFormatter.format('show')})]});};
+;// ./packages/components/src/textfield/Input.tsx
+var Input_Input=/*#__PURE__*/react.forwardRef(function(props,ref){;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];ref=_useContextProps[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:TextField_module/* default */.A.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,Object.assign({},props,{ref:ref,className:(0,clsx/* default */.A)(TextField_module/* default */.A.input,props.className)})),props.type==='password'&&/*#__PURE__*/(0,jsx_runtime.jsx)(PasswordField,Object.assign({},props))]});});
+;// ./packages/components/src/textfield/TextField.tsx
+'use client';var _excluded=["className","form","list"];var TextField=/*#__PURE__*/react.forwardRef(function(_ref,ref){var className=_ref.className,form=_ref.form,list=_ref.list,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(TextFieldBase/* TextFieldBase */.J,Object.assign({},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Input_Input,{className:(0,clsx/* default */.A)(className),form:form,list:list,ref:ref})}));});
 
 /***/ }),
 
@@ -135,14 +114,32 @@ var _excluded=["children","className","variant","isExpressive","elementType"];va
 
 /***/ }),
 
-/***/ 20011:
+/***/ 28637:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   I: () => (/* binding */ CheckboxGroupContext)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-var CheckboxGroupContext=/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  c: () => (/* binding */ LabelWrapper)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 
@@ -199,18 +196,34 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 
 /***/ }),
 
-/***/ 38739:
+/***/ 34704:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","--breakpoint-sm":"(min-width: 480px)","--breakpoint-md":"(min-width: 768px)","--breakpoint-lg":"(min-width: 1024px)","--breakpoint-xl":"(min-width: 1280px)","container":"container_uCKZ","removeMargins":"removeMargins_rQ9U","contained":"contained_R9lB","flex":"flex_LQ20","fluid":"fluid_Y1tE","col":"col_tmG6","col-1":"col-1_OVvW","col-2":"col-2_XfVI","col-3":"col-3_KxqE","col-quarter":"col-quarter_eUut","col-4":"col-4_Ovxr","col-third":"col-third_FUaF","col-5":"col-5_uIyd","col-6":"col-6_i8WR","col-half":"col-half_GzSn","col-7":"col-7_devX","col-8":"col-8_tlAZ","col-9":"col-9_Nbjm","col-10":"col-10_rwyP","col-11":"col-11_ShOw","col-12":"col-12_eQeJ","col-full":"col-full_K_XT","col-auto":"col-auto_nMhH","col-grow":"col-grow_TBON","col-xs-1":"col-xs-1_Bg_O","col-xs-2":"col-xs-2_UhmL","col-xs-3":"col-xs-3_mEvh","col-xs-quarter":"col-xs-quarter_mtoI","col-xs-4":"col-xs-4_Uv5i","col-xs-third":"col-xs-third_AHrM","col-xs-5":"col-xs-5_Gdnm","col-xs-6":"col-xs-6_z366","col-xs-half":"col-xs-half_vH6m","col-xs-7":"col-xs-7_HNwO","col-xs-8":"col-xs-8_Vwih","col-xs-9":"col-xs-9_vfTc","col-xs-10":"col-xs-10_wJWt","col-xs-11":"col-xs-11_KTEA","col-xs-12":"col-xs-12_TaE_","col-xs-full":"col-xs-full_enWi","col-xs-auto":"col-xs-auto_G2jj","col-xs-grow":"col-xs-grow_kY1W","col-sm-1":"col-sm-1_YvIs","col-sm-2":"col-sm-2_NSCq","col-sm-3":"col-sm-3_cJ0H","col-sm-quarter":"col-sm-quarter_WWBJ","col-sm-4":"col-sm-4_dtZx","col-sm-third":"col-sm-third_g3dG","col-sm-5":"col-sm-5_C87q","col-sm-6":"col-sm-6_SkMd","col-sm-half":"col-sm-half_QX4f","col-sm-7":"col-sm-7_wa6s","col-sm-8":"col-sm-8_zH5I","col-sm-9":"col-sm-9_ym4Z","col-sm-10":"col-sm-10_jE4j","col-sm-11":"col-sm-11_Va2g","col-sm-12":"col-sm-12_BgjD","col-sm-full":"col-sm-full_Nb6O","col-sm-auto":"col-sm-auto_Qj4m","col-sm-grow":"col-sm-grow_mAH5","col-md-1":"col-md-1_Zeqd","col-md-2":"col-md-2_DR6K","col-md-3":"col-md-3_OZK7","col-md-quarter":"col-md-quarter_AmxM","col-md-4":"col-md-4_NxEu","col-md-third":"col-md-third_J4Ja","col-md-5":"col-md-5_cBkY","col-md-6":"col-md-6_it5t","col-md-half":"col-md-half_aEv_","col-md-7":"col-md-7__sAT","col-md-8":"col-md-8_WfW7","col-md-9":"col-md-9_orzQ","col-md-10":"col-md-10_wh5t","col-md-11":"col-md-11_Wsgq","col-md-12":"col-md-12_gZQg","col-md-full":"col-md-full_Ow4Z","col-md-auto":"col-md-auto_e67j","col-md-grow":"col-md-grow_quHq","col-lg-1":"col-lg-1_e1au","col-lg-2":"col-lg-2_fUsj","col-lg-3":"col-lg-3_EhhM","col-lg-quarter":"col-lg-quarter_SI9I","col-lg-4":"col-lg-4_VuKz","col-lg-third":"col-lg-third_Lf2A","col-lg-5":"col-lg-5_TF5r","col-lg-6":"col-lg-6_E93v","col-lg-half":"col-lg-half_ZdoE","col-lg-7":"col-lg-7_L5CO","col-lg-8":"col-lg-8_ZBHN","col-lg-9":"col-lg-9_TbUu","col-lg-10":"col-lg-10_Tsqu","col-lg-11":"col-lg-11_Eg8x","col-lg-12":"col-lg-12_eNvi","col-lg-full":"col-lg-full_SaRE","col-lg-auto":"col-lg-auto_fNRO","col-lg-grow":"col-lg-grow_XTrt","col-xl-1":"col-xl-1_BRna","col-xl-2":"col-xl-2_eGSK","col-xl-3":"col-xl-3_RrW2","col-xl-quarter":"col-xl-quarter_V_Yw","col-xl-4":"col-xl-4_R4AZ","col-xl-third":"col-xl-third_W3hT","col-xl-5":"col-xl-5_k7Gx","col-xl-6":"col-xl-6_xZyb","col-xl-half":"col-xl-half_V9xE","col-xl-7":"col-xl-7_lJfg","col-xl-8":"col-xl-8_zErQ","col-xl-9":"col-xl-9_oYwQ","col-xl-10":"col-xl-10_cLTa","col-xl-11":"col-xl-11_xqWK","col-xl-12":"col-xl-12_Vrsf","col-xl-full":"col-xl-full_vVSm","col-xl-auto":"col-xl-auto_YBap","col-xl-grow":"col-xl-grow_YMBn","offset-1":"offset-1_ZQkJ","offset-2":"offset-2_Reek","offset-3":"offset-3_SDkl","offset-quarter":"offset-quarter_ho5e","offset-4":"offset-4_L0XB","offset-third":"offset-third_dE8e","offset-5":"offset-5_Mz95","offset-6":"offset-6_Zp68","offset-half":"offset-half_nGtc","offset-7":"offset-7_ZApX","offset-8":"offset-8_UZTZ","offset-9":"offset-9_FiKS","offset-10":"offset-10_hN9R","offset-11":"offset-11_cqgv","offset-auto":"offset-auto_ZBrI","offset-xs-1":"offset-xs-1__ZrT","offset-xs-2":"offset-xs-2_WySR","offset-xs-3":"offset-xs-3_u9Tb","offset-xs-quarter":"offset-xs-quarter_Pd1o","offset-xs-4":"offset-xs-4_Bibg","offset-xs-third":"offset-xs-third_CeeW","offset-xs-5":"offset-xs-5_OgED","offset-xs-6":"offset-xs-6_ihSu","offset-xs-half":"offset-xs-half_Vrdz","offset-xs-7":"offset-xs-7_TtZQ","offset-xs-8":"offset-xs-8_Ftc2","offset-xs-9":"offset-xs-9_HptZ","offset-xs-10":"offset-xs-10_umjb","offset-xs-11":"offset-xs-11_Suix","offset-xs-auto":"offset-xs-auto_fxe8","offset-sm-1":"offset-sm-1_knSM","offset-sm-2":"offset-sm-2_zWxo","offset-sm-3":"offset-sm-3_oqp6","offset-sm-quarter":"offset-sm-quarter_Nav1","offset-sm-4":"offset-sm-4_EvUX","offset-sm-third":"offset-sm-third_tGgh","offset-sm-5":"offset-sm-5_raNi","offset-sm-6":"offset-sm-6_KTA8","offset-sm-half":"offset-sm-half_ab81","offset-sm-7":"offset-sm-7_duQl","offset-sm-8":"offset-sm-8_uRxp","offset-sm-9":"offset-sm-9_AqYl","offset-sm-10":"offset-sm-10_Wt6J","offset-sm-11":"offset-sm-11_yAYq","offset-sm-auto":"offset-sm-auto_FAp6","offset-md-1":"offset-md-1_OpgB","offset-md-2":"offset-md-2_U24n","offset-md-3":"offset-md-3_YxnQ","offset-md-quarter":"offset-md-quarter_y53T","offset-md-4":"offset-md-4_ZaOC","offset-md-third":"offset-md-third_HZWP","offset-md-5":"offset-md-5_KVFL","offset-md-6":"offset-md-6_bZvL","offset-md-half":"offset-md-half_yilA","offset-md-7":"offset-md-7_fs04","offset-md-8":"offset-md-8_QmYF","offset-md-9":"offset-md-9_QoVc","offset-md-10":"offset-md-10_OrE0","offset-md-11":"offset-md-11_reKz","offset-md-auto":"offset-md-auto_ETdh","offset-lg-1":"offset-lg-1_zi3j","offset-lg-2":"offset-lg-2_YgjU","offset-lg-3":"offset-lg-3_CHdw","offset-lg-quarter":"offset-lg-quarter_Chor","offset-lg-4":"offset-lg-4_NOCF","offset-lg-third":"offset-lg-third_LTbL","offset-lg-5":"offset-lg-5_dGzM","offset-lg-6":"offset-lg-6_kXXi","offset-lg-half":"offset-lg-half_vFHN","offset-lg-7":"offset-lg-7_jIth","offset-lg-8":"offset-lg-8_T0Jx","offset-lg-9":"offset-lg-9_mYmL","offset-lg-10":"offset-lg-10_clJ6","offset-lg-11":"offset-lg-11_zFW2","offset-lg-auto":"offset-lg-auto_W3q4","offset-xl-1":"offset-xl-1_pRWH","offset-xl-2":"offset-xl-2_FX3q","offset-xl-3":"offset-xl-3_P8xx","offset-xl-quarter":"offset-xl-quarter_RLTy","offset-xl-4":"offset-xl-4_n7Vy","offset-xl-third":"offset-xl-third_w0fc","offset-xl-5":"offset-xl-5_vC_8","offset-xl-6":"offset-xl-6_BvQ2","offset-xl-half":"offset-xl-half_HQ16","offset-xl-7":"offset-xl-7_m1bv","offset-xl-8":"offset-xl-8_FJ1u","offset-xl-9":"offset-xl-9_oAbC","offset-xl-10":"offset-xl-10_wwaH","offset-xl-11":"offset-xl-11_HpDF","offset-xl-auto":"offset-xl-auto_Dv5P"});
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
 
 /***/ }),
 
-/***/ 41199:
+/***/ 36385:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -222,34 +235,57 @@ __webpack_require__.d(__webpack_exports__, {
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_checkbox_mdx_1c7_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_modal_mdx_902_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-checkbox-mdx-1c7.json
-const site_docs_components_checkbox_mdx_1c7_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/checkbox","title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","source":"@site/docs/components/checkbox.mdx","sourceDirName":"components","slug":"/components/checkbox","permalink":"/pr-preview/pr-672/components/checkbox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Checkbox","description":"Används för att låta användaren välja inget, ett eller flera alternativ.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-modal-mdx-902.json
+const site_docs_components_modal_mdx_902_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/modal","title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","source":"@site/docs/components/modal.mdx","sourceDirName":"components","slug":"/components/modal","permalink":"/pr-preview/pr-672/components/modal","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Modal","description":"Modal som lägger sig över allt annat innehåll.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
-var Checkbox = __webpack_require__(8807);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/CheckboxGroup.tsx + 3 modules
-var CheckboxGroup = __webpack_require__(75394);
-;// ./apps/docs/src/components/examples/checkbox/CheckboxExamples.tsx
-var ControlledExample=function ControlledExample(){var _React$useState=react.useState(false),isSelected=_React$useState[0],setIsSelected=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:isSelected,onChange:setIsSelected,children:"Jag godk\xE4nner villkoren"}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Du har",isSelected?'':' inte'," godk\xE4nt villkoren"]})]});};var ControlledGroupExample=function ControlledGroupExample(){var _React$useState2=react.useState(),value=_React$useState2[0],setValue=_React$useState2[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$,{label:"Favoritfrukt",value:value,onChange:setValue,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"melon",children:"Melon"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{value:"satsumas",children:"Satsumas"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Valda alternativ: ",value==null?void 0:value.join(', ')]})]});};
 // EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
 var PropsTable = __webpack_require__(68713);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/docs/components/checkbox.mdx
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Dialog.mjs + 1 modules
+var Dialog = __webpack_require__(86484);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Modal.mjs + 2 modules
+var dist_Modal = __webpack_require__(4477);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/modal/Dialog.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Dialog_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--background":"light-dark(#ffffff, #171717)","--text-primary":"light-dark(#171717, #f2f2f2)","--z-index-modal":"1000","--z-index-above":"10","modal":"modal_yuES","modal-zoom":"modal-zoom_PdC_","overlay":"overlay_eZeP","modal-fade":"modal-fade_Dc6w","modalHeader":"modalHeader_B1eE","modalBody":"modalBody_FPgg"});
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+// EXTERNAL MODULE: ./node_modules/@react-aria/focus/dist/FocusScope.mjs + 2 modules
+var FocusScope = __webpack_require__(13560);
+// EXTERNAL MODULE: ./packages/components/src/heading/Heading.tsx + 1 modules
+var Heading = __webpack_require__(93683);
+;// ./packages/components/src/modal/Dialog.tsx
+var _excluded=["children","title"];var Modal=function Modal(_ref){var children=_ref.children,title=_ref.title,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Dialog/* Dialog */.lG,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Modal/* ModalOverlay */.mH,Object.assign({},props,{className:Dialog_module.overlay,children:/*#__PURE__*/(0,jsx_runtime.jsx)(FocusScope/* FocusScope */.n1,{contain:true,autoFocus:true,restoreFocus:true,children:/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_Modal/* Modal */.aF,Object.assign({},props,{className:Dialog_module.modal,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:Dialog_module.modalHeader,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"tertiary",icon:x/* default */.A,iconPlacement:"right",children:"St\xE4ng"})}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Dialog_module.modalBody,tabIndex:-1,children:[title&&/*#__PURE__*/(0,jsx_runtime.jsx)(Heading/* Heading */.D,{level:2,children:title}),children]})]}))})}))}));};
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/button/ButtonGroup.tsx + 1 modules
+var ButtonGroup = __webpack_require__(49764);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
+var TextField = __webpack_require__(13332);
+// EXTERNAL MODULE: ./packages/components/src/radio/Radio.tsx + 1 modules
+var Radio = __webpack_require__(49936);
+;// ./apps/docs/src/components/examples/ModalExamples.tsx
+var ConfirmationExample=function ConfirmationExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"Ta bort Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Modal,{title:"Ta bort saker ur fruktkorgen",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{elementType:"p",children:"\xC4r du s\xE4ker att du vill plocka bort \"Kiwi\" fr\xE5n fruktkorgen?"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"danger",slot:"close",children:"Ja, ta bort"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{autoFocus:true,slot:"close",variant:"secondary",children:"Nej, ha kvar"})]})]})]})});};var FormExample=function FormExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:"card",style:{display:'block'},children:/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{children:"G\xF6r din egen fruktkorg"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Modal,{title:"G\xF6r din egen fruktkorg",children:/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{display:'flex',flexDirection:'column',gap:'1rem'},children:[/*#__PURE__*/(0,jsx_runtime.jsx)(TextField/* TextField */.A,{autoFocus:true,label:"Namnge din fruktkorg",description:"Skriv valfritt namn"}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{defaultValue:"ja",label:"Vill du ha fruktkorgen hemskickad till din hemadress?",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"ja",children:"Ja"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"nej",children:"Nej"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)(ButtonGroup/* ButtonGroup */.e,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",children:"Skicka"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{slot:"close",variant:"secondary",children:"Avbryt"})]})]})})]})});};
+;// ./apps/docs/docs/components/modal.mdx
 
 
 const frontMatter = {
-	title: 'Checkbox',
-	description: 'Används för att låta användaren välja inget, ett eller flera alternativ.',
+	title: 'Modal',
+	description: 'Modal som lägger sig över allt annat innehåll.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -264,54 +300,53 @@ const assets = {
 
 
 
-
 const toc = [{
+  "value": "Användning",
+  "id": "användning",
+  "level": 2
+}, {
+  "value": "Bekräftelsemodal",
+  "id": "bekräftelsemodal",
+  "level": 3
+}, {
   "value": "Varianter",
   "id": "varianter",
   "level": 2
 }, {
-  "value": "Ensam checkbox",
-  "id": "ensam-checkbox",
+  "value": "Uncontrolled",
+  "id": "uncontrolled",
   "level": 3
 }, {
-  "value": "Förvalt alternativ (okontrollerat)",
-  "id": "förvalt-alternativ-okontrollerat",
+  "value": "Controlled",
+  "id": "controlled",
   "level": 3
 }, {
-  "value": "Kontrollerat val",
-  "id": "kontrollerat-val",
-  "level": 3
-}, {
-  "value": "Varianter för flera checkboxar",
-  "id": "varianter-för-flera-checkboxar",
+  "value": "Avancerat innehåll",
+  "id": "avancerat-innehåll",
   "level": 2
-}, {
-  "value": "Välj alla",
-  "id": "välj-alla",
-  "level": 3
-}, {
-  "value": "Förvalda alternativ (okontrollerat)",
-  "id": "förvalda-alternativ-okontrollerat",
-  "level": 3
-}, {
-  "value": "Kontrollerat val",
-  "id": "kontrollerat-val-1",
-  "level": 3
 }, {
   "value": "Riktlinjer",
   "id": "riktlinjer",
   "level": 2
 }, {
+  "value": "Användning",
+  "id": "användning-1",
+  "level": 3
+}, {
+  "value": "Knapparnas placering och ordning",
+  "id": "knapparnas-placering-och-ordning",
+  "level": 3
+}, {
   "value": "API",
   "id": "api",
   "level": 2
 }, {
-  "value": "Checkbox",
-  "id": "checkbox",
+  "value": "DialogTrigger",
+  "id": "dialogtrigger",
   "level": 3
 }, {
-  "value": "CheckboxGroup",
-  "id": "checkboxgroup",
+  "value": "Modal",
+  "id": "modal",
   "level": 3
 }];
 function _createMdxContent(props) {
@@ -329,204 +364,135 @@ function _createMdxContent(props) {
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Checkbox",
-      friendlyName: "Kryssruta"
+      name: "Modal",
+      friendlyName: "Modal, Dialog, Dialogruta",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält för att låta användaren välja inget, ett eller flera av ett antal förvalda alternativ."
+      children: "Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar åtkomst till det underliggande\nlagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det krävs ett\naktivt svar från användaren."
+    }), "\n", (0,jsx_runtime.jsx)(FormExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "användning",
+      children: "Användning"
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { Checkbox } from '@midas-ds/components'\n"
+        children: "import { DialogTrigger, Modal } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Checkbox>Jag godkänner villkoren</Checkbox>\n"
+        children: "<DialogTrigger>\n  <Button>Öppna modal</Button>\n  <Modal title='Rubrik'>Innehåll i modal</Modal>\n</DialogTrigger>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-        children: "Jag godkänner villkoren"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "bekräftelsemodal",
+      children: "Bekräftelsemodal"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "För att undvika oönskade fel kan en modal användas för att bekräfta en handling som har konsekvenser för användaren."
+    }), "\n", (0,jsx_runtime.jsx)(ConfirmationExample, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "varianter",
       children: "Varianter"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "ensam-checkbox",
-      children: "Ensam checkbox"
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<Checkbox>Jag godkänner villkoren</Checkbox>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-        children: "Jag godkänner villkoren"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "förvalt-alternativ-okontrollerat",
-      children: "Förvalt alternativ (okontrollerat)"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "defaultSelected"
-      }), " för att en checkbox ska vara förvald."]
+      children: ["För att stänga modal via klick utanför modalens yta, använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isDismissable"
+      }), " på modalen."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<Checkbox defaultSelected />\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-        defaultSelected: true
+        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal\n    //highlight-start\n    isDismissable\n    //highlight-end\n    title='Modal Title'\n  >\n    /* Modal content */\n  </Modal>\n</DialogTrigger>\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "kontrollerat-val",
-      children: "Kontrollerat val"
+      id: "uncontrolled",
+      children: "Uncontrolled"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "isSelected"
-      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onChange"
-      }), " för att använda controlled mode på Checkbox."]
+      children: ["Alla varianter av ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "<Button>"
+      }), " samt alla övriga ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/Dialog.html#custom-trigger",
+        children: "pressable"
+      }), "\nelement kan användas för att öppna modalen. För att stänga modalen med en knapp innanför modalen, använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "slot={'close'}"
+      }), "."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import React from 'react'\n\nconst [isSelected, setIsSelected] = React.useState(false)\n\nreturn (\n  <Checkbox\n    isSelected={isSelected}\n    onChange={setIsSelected}\n  >\n    Jag godkänner villkoren\n  </Checkbox>\n)\n"
+        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title='Modal Title'>\n    //highlight-start\n    <Button slot='close'>Close</Button>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ControlledExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "varianter-för-flera-checkboxar",
-      children: "Varianter för flera checkboxar"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "controlled",
+      children: "Controlled"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
       children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " för att gruppera flera checkboxar som hör samman."]
+        children: "isOpen"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onOpenChange()"
+      }), " för att via state kontrollera om modalen är öppen eller stängd."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<CheckboxGroup\n  label='Godkänner du våra villkor?'\n  description='Läs texten först'\n>\n  <Checkbox value='1'>Jag har läst texten</Checkbox>\n  <Checkbox value='2'>Jag godkänner villkoren</Checkbox>\n</CheckboxGroup>\n"
+        children: "/* imports and rest of app */\nconst [open, setOpen] = React.useState<boolean>(false)\n\n/* trigger modal from anywhere */\n<Button onPress={() => setOpen(true))}>Open</Button>\n\n//highlight-start\n<DialogTrigger isOpen={open} onOpenChange={setOpen}>\n//highlight-end\n  <Modal\n    title=\"Modal Title\"\n  >\n    /* Modal content */\n  </Modal>\n</DialogTrigger>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$, {
-        label: "Godkänner du våra villkor?",
-        description: "Läs texten först",
-        children: [(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "1",
-          children: "Jag har läst texten"
-        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "2",
-          children: "Jag godkänner villkoren"
-        })]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "välj-alla",
-      children: "Välj alla"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Ibland kan det vara lämpligt att ge användaren möjlighet att snabbt kryssa i alla kryssrutor.\nDenna funktion finns inbyggt i ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "<CheckboxGroup>"
-      }), " via egenskapen ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "showSelectAll"
-      }), ".\nOm detta används på en sida med paginerat innehåll så skall endast de kryssrutor som finns på den aktuella sidan väljas."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "avancerat-innehåll",
+      children: "Avancerat innehåll"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas."
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<CheckboxGroup\n  label='Godkänner du våra villkor'\n  description='Läs texten först'\n  // highlight-start\n  showSelectAll\n  // highlight-end\n>\n  <Checkbox value='1'>Jag har läst texten</Checkbox>\n  <Checkbox value='2'>Jag godkänner villkoren</Checkbox>\n</CheckboxGroup>\n"
+        children: "<DialogTrigger>\n  <Button>Open</Button>\n  <Modal title=\"Modal Title\">\n    //highlight-start\n    <TextField label=\"Name\" autoFocus>\n    //highlight-end\n  </Modal>\n</DialogTrigger>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$, {
-        label: "Godkänner du våra villkor",
-        description: "Läs texten först",
-        showSelectAll: true,
-        children: [(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "1",
-          children: "Jag har läst texten"
-        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "2",
-          children: "Jag godkänner villkoren"
-        })]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "förvalda-alternativ-okontrollerat",
-      children: "Förvalda alternativ (okontrollerat)"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "defaultValue"
-      }), " för att en eller flera kryssrutor ska vara förvalda."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<CheckboxGroup\n  label='Favoritfrukt'\n  // highlight-start\n  defaultValue={['banan', 'melon']}\n  // highlight-end\n>\n  <Checkbox value='banan'>Banan</Checkbox>\n  <Checkbox value='melon'>Melon</Checkbox>\n  <Checkbox value='kiwi'>Kiwi</Checkbox>\n  <Checkbox value='satsumas'>Satsumas</Checkbox>\n</CheckboxGroup>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsxs)(CheckboxGroup/* CheckboxGroup */.$, {
-        label: "Favoritfrukt",
-        defaultValue: ['banan', 'melon'],
-        children: [(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "banan",
-          children: "Banan"
-        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "melon",
-          children: "Melon"
-        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "kiwi",
-          children: "Kiwi"
-        }), (0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S, {
-          value: "satsumas",
-          children: "Satsumas"
-        })]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "kontrollerat-val-1",
-      children: "Kontrollerat val"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "value"
-      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onChange"
-      }), " för att använda controlled mode på CheckboxGroup."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import React from 'react'\n\nconst [value, setValue] = React.useState<string[]>()\n\nreturn (\n  <CheckboxGroup\n    label='Favoritfrukt'\n    // highlight-start\n    value={value}\n    onChange={setValue}\n    // highlight-end\n  >\n    <Checkbox value='banan'>Banan</Checkbox>\n    <Checkbox value='melon'>Melon</Checkbox>\n    <Checkbox value='kiwi'>Kiwi</Checkbox>\n    <Checkbox value='satsumas'>Satsumas</Checkbox>\n  </CheckboxGroup>\n)\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ControlledGroupExample, {})
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "riktlinjer",
       children: "Riktlinjer"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "användning-1",
+      children: "Användning"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Använd modaler sparsamt och endast när det är nödvändigt då de skapar avbrott i användarens flöde."
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Använd modal för:"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
+      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Att låta användaren bekräfta att den vill utföra en handling som kan få stor påverkan och som inte kan ångras."
+      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
+        children: "Enklare formulär"
+      }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Undvik att använda modal för:"
     }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
       children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det är många alternativ så bör ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/select",
-          children: "Select"
-        }), " användas istället."]
+        children: ["Varningar. Använd istället ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/toast",
+          children: "Toast"
+        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
+          href: "/components/info-banner",
+          children: "InfoBanner"
+        })]
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Använd inte kryssruta om användaren väntar sig att valet ska få effekt direkt"
+        children: "Situationer där användaren behöver kunna ta del av den underliggande sidans innehåll för att kunna ta ett beslut."
       }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Fältetikett ska inledas med en stor bokstav och inte följas av punkt."
+        children: "Långa formulär"
       }), "\n"]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "knapparnas-placering-och-ordning",
+      children: "Knapparnas placering och ordning"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Knapparna ska placeras i modalens nedre vänster kant. Jakande, accepterande knappar, placeras längst till vänster i knappgruppen, se riktlinjer för ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/button",
+        children: "Knappar"
+      })]
     }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "checkbox",
-      children: "Checkbox"
+      id: "dialogtrigger",
+      children: "DialogTrigger"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "Checkbox"
+      name: "DialogTrigger"
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "checkboxgroup",
-      children: "CheckboxGroup"
+      id: "modal",
+      children: "Modal"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "CheckboxGroup",
-      defaultOpen: false
+      name: "Modal"
     })]
   });
 }
@@ -547,6 +513,58 @@ function MDXContent(props = {}) {
 
 /***/ }),
 
+/***/ 38739:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","--breakpoint-sm":"(min-width: 480px)","--breakpoint-md":"(min-width: 768px)","--breakpoint-lg":"(min-width: 1024px)","--breakpoint-xl":"(min-width: 1280px)","container":"container_uCKZ","removeMargins":"removeMargins_rQ9U","contained":"contained_R9lB","flex":"flex_LQ20","fluid":"fluid_Y1tE","col":"col_tmG6","col-1":"col-1_OVvW","col-2":"col-2_XfVI","col-3":"col-3_KxqE","col-quarter":"col-quarter_eUut","col-4":"col-4_Ovxr","col-third":"col-third_FUaF","col-5":"col-5_uIyd","col-6":"col-6_i8WR","col-half":"col-half_GzSn","col-7":"col-7_devX","col-8":"col-8_tlAZ","col-9":"col-9_Nbjm","col-10":"col-10_rwyP","col-11":"col-11_ShOw","col-12":"col-12_eQeJ","col-full":"col-full_K_XT","col-auto":"col-auto_nMhH","col-grow":"col-grow_TBON","col-xs-1":"col-xs-1_Bg_O","col-xs-2":"col-xs-2_UhmL","col-xs-3":"col-xs-3_mEvh","col-xs-quarter":"col-xs-quarter_mtoI","col-xs-4":"col-xs-4_Uv5i","col-xs-third":"col-xs-third_AHrM","col-xs-5":"col-xs-5_Gdnm","col-xs-6":"col-xs-6_z366","col-xs-half":"col-xs-half_vH6m","col-xs-7":"col-xs-7_HNwO","col-xs-8":"col-xs-8_Vwih","col-xs-9":"col-xs-9_vfTc","col-xs-10":"col-xs-10_wJWt","col-xs-11":"col-xs-11_KTEA","col-xs-12":"col-xs-12_TaE_","col-xs-full":"col-xs-full_enWi","col-xs-auto":"col-xs-auto_G2jj","col-xs-grow":"col-xs-grow_kY1W","col-sm-1":"col-sm-1_YvIs","col-sm-2":"col-sm-2_NSCq","col-sm-3":"col-sm-3_cJ0H","col-sm-quarter":"col-sm-quarter_WWBJ","col-sm-4":"col-sm-4_dtZx","col-sm-third":"col-sm-third_g3dG","col-sm-5":"col-sm-5_C87q","col-sm-6":"col-sm-6_SkMd","col-sm-half":"col-sm-half_QX4f","col-sm-7":"col-sm-7_wa6s","col-sm-8":"col-sm-8_zH5I","col-sm-9":"col-sm-9_ym4Z","col-sm-10":"col-sm-10_jE4j","col-sm-11":"col-sm-11_Va2g","col-sm-12":"col-sm-12_BgjD","col-sm-full":"col-sm-full_Nb6O","col-sm-auto":"col-sm-auto_Qj4m","col-sm-grow":"col-sm-grow_mAH5","col-md-1":"col-md-1_Zeqd","col-md-2":"col-md-2_DR6K","col-md-3":"col-md-3_OZK7","col-md-quarter":"col-md-quarter_AmxM","col-md-4":"col-md-4_NxEu","col-md-third":"col-md-third_J4Ja","col-md-5":"col-md-5_cBkY","col-md-6":"col-md-6_it5t","col-md-half":"col-md-half_aEv_","col-md-7":"col-md-7__sAT","col-md-8":"col-md-8_WfW7","col-md-9":"col-md-9_orzQ","col-md-10":"col-md-10_wh5t","col-md-11":"col-md-11_Wsgq","col-md-12":"col-md-12_gZQg","col-md-full":"col-md-full_Ow4Z","col-md-auto":"col-md-auto_e67j","col-md-grow":"col-md-grow_quHq","col-lg-1":"col-lg-1_e1au","col-lg-2":"col-lg-2_fUsj","col-lg-3":"col-lg-3_EhhM","col-lg-quarter":"col-lg-quarter_SI9I","col-lg-4":"col-lg-4_VuKz","col-lg-third":"col-lg-third_Lf2A","col-lg-5":"col-lg-5_TF5r","col-lg-6":"col-lg-6_E93v","col-lg-half":"col-lg-half_ZdoE","col-lg-7":"col-lg-7_L5CO","col-lg-8":"col-lg-8_ZBHN","col-lg-9":"col-lg-9_TbUu","col-lg-10":"col-lg-10_Tsqu","col-lg-11":"col-lg-11_Eg8x","col-lg-12":"col-lg-12_eNvi","col-lg-full":"col-lg-full_SaRE","col-lg-auto":"col-lg-auto_fNRO","col-lg-grow":"col-lg-grow_XTrt","col-xl-1":"col-xl-1_BRna","col-xl-2":"col-xl-2_eGSK","col-xl-3":"col-xl-3_RrW2","col-xl-quarter":"col-xl-quarter_V_Yw","col-xl-4":"col-xl-4_R4AZ","col-xl-third":"col-xl-third_W3hT","col-xl-5":"col-xl-5_k7Gx","col-xl-6":"col-xl-6_xZyb","col-xl-half":"col-xl-half_V9xE","col-xl-7":"col-xl-7_lJfg","col-xl-8":"col-xl-8_zErQ","col-xl-9":"col-xl-9_oYwQ","col-xl-10":"col-xl-10_cLTa","col-xl-11":"col-xl-11_xqWK","col-xl-12":"col-xl-12_Vrsf","col-xl-full":"col-xl-full_vVSm","col-xl-auto":"col-xl-auto_YBap","col-xl-grow":"col-xl-grow_YMBn","offset-1":"offset-1_ZQkJ","offset-2":"offset-2_Reek","offset-3":"offset-3_SDkl","offset-quarter":"offset-quarter_ho5e","offset-4":"offset-4_L0XB","offset-third":"offset-third_dE8e","offset-5":"offset-5_Mz95","offset-6":"offset-6_Zp68","offset-half":"offset-half_nGtc","offset-7":"offset-7_ZApX","offset-8":"offset-8_UZTZ","offset-9":"offset-9_FiKS","offset-10":"offset-10_hN9R","offset-11":"offset-11_cqgv","offset-auto":"offset-auto_ZBrI","offset-xs-1":"offset-xs-1__ZrT","offset-xs-2":"offset-xs-2_WySR","offset-xs-3":"offset-xs-3_u9Tb","offset-xs-quarter":"offset-xs-quarter_Pd1o","offset-xs-4":"offset-xs-4_Bibg","offset-xs-third":"offset-xs-third_CeeW","offset-xs-5":"offset-xs-5_OgED","offset-xs-6":"offset-xs-6_ihSu","offset-xs-half":"offset-xs-half_Vrdz","offset-xs-7":"offset-xs-7_TtZQ","offset-xs-8":"offset-xs-8_Ftc2","offset-xs-9":"offset-xs-9_HptZ","offset-xs-10":"offset-xs-10_umjb","offset-xs-11":"offset-xs-11_Suix","offset-xs-auto":"offset-xs-auto_fxe8","offset-sm-1":"offset-sm-1_knSM","offset-sm-2":"offset-sm-2_zWxo","offset-sm-3":"offset-sm-3_oqp6","offset-sm-quarter":"offset-sm-quarter_Nav1","offset-sm-4":"offset-sm-4_EvUX","offset-sm-third":"offset-sm-third_tGgh","offset-sm-5":"offset-sm-5_raNi","offset-sm-6":"offset-sm-6_KTA8","offset-sm-half":"offset-sm-half_ab81","offset-sm-7":"offset-sm-7_duQl","offset-sm-8":"offset-sm-8_uRxp","offset-sm-9":"offset-sm-9_AqYl","offset-sm-10":"offset-sm-10_Wt6J","offset-sm-11":"offset-sm-11_yAYq","offset-sm-auto":"offset-sm-auto_FAp6","offset-md-1":"offset-md-1_OpgB","offset-md-2":"offset-md-2_U24n","offset-md-3":"offset-md-3_YxnQ","offset-md-quarter":"offset-md-quarter_y53T","offset-md-4":"offset-md-4_ZaOC","offset-md-third":"offset-md-third_HZWP","offset-md-5":"offset-md-5_KVFL","offset-md-6":"offset-md-6_bZvL","offset-md-half":"offset-md-half_yilA","offset-md-7":"offset-md-7_fs04","offset-md-8":"offset-md-8_QmYF","offset-md-9":"offset-md-9_QoVc","offset-md-10":"offset-md-10_OrE0","offset-md-11":"offset-md-11_reKz","offset-md-auto":"offset-md-auto_ETdh","offset-lg-1":"offset-lg-1_zi3j","offset-lg-2":"offset-lg-2_YgjU","offset-lg-3":"offset-lg-3_CHdw","offset-lg-quarter":"offset-lg-quarter_Chor","offset-lg-4":"offset-lg-4_NOCF","offset-lg-third":"offset-lg-third_LTbL","offset-lg-5":"offset-lg-5_dGzM","offset-lg-6":"offset-lg-6_kXXi","offset-lg-half":"offset-lg-half_vFHN","offset-lg-7":"offset-lg-7_jIth","offset-lg-8":"offset-lg-8_T0Jx","offset-lg-9":"offset-lg-9_mYmL","offset-lg-10":"offset-lg-10_clJ6","offset-lg-11":"offset-lg-11_zFW2","offset-lg-auto":"offset-lg-auto_W3q4","offset-xl-1":"offset-xl-1_pRWH","offset-xl-2":"offset-xl-2_FX3q","offset-xl-3":"offset-xl-3_P8xx","offset-xl-quarter":"offset-xl-quarter_RLTy","offset-xl-4":"offset-xl-4_n7Vy","offset-xl-third":"offset-xl-third_w0fc","offset-xl-5":"offset-xl-5_vC_8","offset-xl-6":"offset-xl-6_BvQ2","offset-xl-half":"offset-xl-half_HQ16","offset-xl-7":"offset-xl-7_m1bv","offset-xl-8":"offset-xl-8_FJ1u","offset-xl-9":"offset-xl-9_oAbC","offset-xl-10":"offset-xl-10_wwaH","offset-xl-11":"offset-xl-11_HpDF","offset-xl-auto":"offset-xl-auto_Dv5P"});
+
+/***/ }),
+
+/***/ 39107:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ TextFieldBase)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/utils.mjs
+var utils = __webpack_require__(5933);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/TextField.mjs
+var TextField = __webpack_require__(32945);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.module.css
+var TextField_module = __webpack_require__(73413);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
+var Input = __webpack_require__(79950);
+;// ./packages/components/src/character-counter/CharacterCounter.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const CharacterCounter_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--line-height-20":"1.125rem","--font-size-20":"0.875rem","--text-warning":"light-dark(#e62323, #eb4e4e)","--text-primary":"light-dark(#171717, #f2f2f2)","characterCounter":"characterCounter_Rd9H"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/character-counter/CharacterCounter.tsx
+var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
+;// ./packages/components/src/textfield/TextFieldBase.tsx
+var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size,popover=_props.popover,children=_props.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
+
+/***/ }),
+
 /***/ 43249:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -555,17 +573,6 @@ function MDXContent(props = {}) {
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--normal-transition":"300ms","--text-primary":"light-dark(#171717, #f2f2f2)","--fast-transition":"250ms","--border-secondary":"light-dark(#737373, #8c8c8c)","--support-background-success":"light-dark(#d5f2d9, light-dark(#f2f2f2, #262626))","--support-border-success":"light-dark(#008d3c, #008d3c)","--support-background-warning":"light-dark(#ffdfdf, light-dark(#f2f2f2, #262626))","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-success":"light-dark(#008d3c, #008d3c)","--icon-warning":"light-dark(#e62323, #e62323)","--support-background-success-hover":"light-dark(#bae5c5, light-dark(#e6e6e6, #333333))","--support-background-warning-hover":"light-dark(#fcc8c8, light-dark(#e6e6e6, #333333))","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--layer-02":"light-dark(#ffffff, #383838)","--background":"light-dark(#ffffff, #171717)","root":"root_dwc1","contained":"contained_snuo","item":"item_EcMn","success":"success_djlE","warning":"warning_tBhi","uncontained":"uncontained_kQy1","content":"content_eG9O","triggerButton":"triggerButton_v7ly","trigger":"trigger_H4x6","triggerMainContent":"triggerMainContent_lUNS","triggerText":"triggerText_v8dS","chevronIcon":"chevronIcon_mkt7","statusIcon":"statusIcon_PzPO","panel":"panel_aCgP","hasBackground":"hasBackground_K0Q9","header":"header_KTZ_"});
-
-/***/ }),
-
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
 
 /***/ }),
 
@@ -621,6 +628,79 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
    */fieldSkeleton:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",skeleton01:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",skeleton02:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",iconPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",iconSecondary:"light-dark("+baseColors.gray140+", "+baseColors.gray70+")",iconTertiary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",iconInverse:"light-dark("+baseColors.white+", "+baseColors.gray200+")",iconOnColor:"light-dark("+baseColors.white+", "+baseColors.white+")",iconDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",iconSuccess:"light-dark("+baseColors.signalGreen100+", "+baseColors.signalGreen100+")",iconInfo:"light-dark("+baseColors.signalBlue100+", "+baseColors.signalBlue100+")",iconWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",iconImportant:"light-dark("+baseColors.signalYellow100+", "+baseColors.signalYellow100+")",linkEnabled:"light-dark("+baseColors.blue120+", "+baseColors.blue70+")",linkHover:"light-dark("+baseColors.blue150+", "+baseColors.blue50+")",linkPressed:"light-dark("+baseColors.gray200+", "+baseColors.blue40+")",linkVisited:"light-dark("+baseColors.purple110+", "+baseColors.purple80+")",supportBorderSuccess:"light-dark("+baseColors.signalGreen100+", "+baseColors.signalGreen100+")",supportBorderInfo:"light-dark("+baseColors.signalBlue100+", "+baseColors.signalBlue100+")",supportBorderImportant:"light-dark("+baseColors.signalYellow100+", "+baseColors.signalYellow100+")",supportBorderWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",supportBackgroundSuccess:"light-dark("+baseColors.signalGreen20+", "+baseColors.gray180+")",supportBackgroundSuccessHover:"light-dark("+baseColors.signalGreen30+", "+baseColors.gray170+")",supportBackgroundInfo:"light-dark("+baseColors.signalBlue10+", "+baseColors.gray180+")",supportBackgroundImportant:"light-dark("+baseColors.signalYellow10+", "+baseColors.gray180+")",supportBackgroundWarning:"light-dark("+baseColors.signalRed20+", "+baseColors.gray180+")",supportBackgroundWarningHover:"light-dark("+baseColors.signalRed30+", "+baseColors.gray170+")",textPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",textSecondary:"light-dark("+baseColors.gray140+", "+baseColors.gray70+")",textTertiary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",textOnColor:"light-dark("+baseColors.white+", "+baseColors.white+")",textInverse:"light-dark("+baseColors.gray10+", "+baseColors.gray200+")",textDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",textWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed80+")",textPlaceholder:"light-dark("+baseColors.gray70+", "+baseColors.gray140+")",buttonBackgroundPrimary:"light-dark("+baseColors.blue150+", "+baseColors.blue100+")",buttonBackgroundPrimaryHover:"light-dark("+baseColors.blue130+", "+baseColors.blue130+")",buttonBackgroundPrimaryActive:"light-dark("+baseColors.blue100+", "+baseColors.blue150+")",buttonBackgroundSecondary:"light-dark("+baseColors.white+", "+baseColors.gray200+")",buttonBackgroundSecondaryHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",buttonBackgroundSecondaryActive:"light-dark("+baseColors.gray30+", "+baseColors.gray180+")",buttonBackgroundTertiaryHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",buttonBackgroundTertiaryActive:"light-dark("+baseColors.gray30+", "+baseColors.gray180+")",buttonBackgroundDanger:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",buttonBackgroundDangerHover:"light-dark("+baseColors.signalRed120+", "+baseColors.signalRed120+")",buttonBackgroundDangerActive:"light-dark("+baseColors.signalRed150+", "+baseColors.signalRed150+")",buttonBackgroundDisabled:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",/**
    *  @deprecated since v10.2.0, please use the `skeleton01` instead.
    */buttonBackgroundSkeleton:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",buttonBorderSecondary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",logoPrimary:"light-dark("+baseColors.red100+", "+baseColors.white+")",menuItemBackgroundHover:"light-dark("+baseColors.gray20+", "+baseColors.gray190+")",menuItemBackgroundSelected:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")"};var zIndex={base:1,above:10,modal:1000,toast:1100,skipToContent:1200};
+
+/***/ }),
+
+/***/ 49764:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  e: () => (/* binding */ ButtonGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/components/src/button/ButtonGroup.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const ButtonGroup_module = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","buttonGroup":"buttonGroup_mVqm"});
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/button/ButtonGroup.tsx
+var _excluded=["children","className","aria-label"];/**
+ * Group several buttons together.
+ *
+ * @interface React.HTMLAttributes<HTMLDivElement>
+ *
+ * @see {@link https://designsystem.migrationsverket.se/components/button}
+ */var ButtonGroup=function ButtonGroup(_ref){var children=_ref.children,className=_ref.className,ariaLabel=_ref['aria-label'],rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)("div",Object.assign({role:"group","aria-label":ariaLabel,className:(0,clsx/* default */.A)(ButtonGroup_module.buttonGroup,className)},rest,{children:children}));};
+
+/***/ }),
+
+/***/ 49936:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  s: () => (/* binding */ Radio),
+  z: () => (/* binding */ RadioGroup)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/radio/Radio.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--font-size-30":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-secondary":"light-dark(#525252, #a6a6a6)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-xs":"(max-width: 479px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
+var dist_RadioGroup = __webpack_require__(96325);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
+var Group = __webpack_require__(63899);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/radio/Radio.tsx
+'use client';var _excluded=["label","description","errorMessage","children","className","errorPosition","popover"];/**
+ * RadioGroup is used to group several radio items together
+ */var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,popover=_ref.popover,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:(0,clsx/* default */.A)(Radio_module.radioGroup,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage})]}));};/**
+ * Radio item
+ * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
 
 /***/ }),
 
@@ -685,22 +765,6 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 63181:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
-
-/***/ }),
-
 /***/ 68713:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -746,6 +810,17 @@ var DisplayCompositeTypes=function DisplayCompositeTypes(_ref){var props=_ref.pr
 
 /***/ }),
 
+/***/ 73413:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--border-disabled":"light-dark(#bfbfbf, #525252)","--field-disabled":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--support-border-warning":"light-dark(#e62323, #e62323)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--z-index-base":"1","--z-index-above":"10","--size-130":"2.5rem","--size-150":"3rem","textField":"textField_IarX","bottomError":"bottomError_XU77","textArea":"textArea_M6yF","wrap":"wrap_ljmz","medium":"medium_jalb","input":"input_g6A6","passwordText":"passwordText_gBIs","passwordButton":"passwordButton_kacG"});
+
+/***/ }),
+
 /***/ 74351:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -773,52 +848,6 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
 
 /***/ }),
 
-/***/ 75394:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  $: () => (/* binding */ CheckboxGroup)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/@react-aria/checkbox/dist/useCheckboxGroup.mjs
-var useCheckboxGroup = __webpack_require__(91936);
-// EXTERNAL MODULE: ./node_modules/@react-stately/checkbox/dist/useCheckboxGroupState.mjs
-var useCheckboxGroupState = __webpack_require__(34650);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/utils/intl/useLocalizedStringFormatter.ts
-var useLocalizedStringFormatter = __webpack_require__(88413);
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.tsx + 3 modules
-var Checkbox = __webpack_require__(8807);
-;// ./packages/components/src/checkbox/useSelectAll.ts
-var useSelectAll=function useSelectAll(children,_ref){var selectedItems=_ref.value;var checkboxes=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child)&&child.type===Checkbox/* Checkbox */.S;});var numberOfCheckboxes=react.Children.count(checkboxes);var checkboxValues=react.Children.toArray(children).filter(function(child){return/*#__PURE__*/react.isValidElement(child);}).filter(function(child){return!!child&&child.type===Checkbox/* Checkbox */.S;}).map(function(child){return child.props.value;});var noneSelected=selectedItems.length===0;var allSelected=selectedItems.length===numberOfCheckboxes;var someSelected=!noneSelected&&!allSelected;return{allSelected:allSelected,someSelected:someSelected,checkboxValues:checkboxValues};};
-// EXTERNAL MODULE: ./packages/components/src/checkbox/context.ts
-var context = __webpack_require__(20011);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var field_error_FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/checkbox/CheckboxGroupFieldError.tsx
-var CheckboxGroupFieldError=function CheckboxGroupFieldError(_ref){var state=_ref.state,errorMessage=_ref.errorMessage;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldErrorContext */.C.Provider,{value:state.displayValidation,children:/*#__PURE__*/(0,jsx_runtime.jsx)(field_error_FieldError/* FieldError */.b,{children:errorMessage})});};
-;// ./packages/components/src/checkbox/intl/translations.json
-const translations_namespaceObject = /*#__PURE__*/JSON.parse('{"en-US":{"selectAll":"Select all"},"en-GB":{"selectAll":"Select all"},"es-ES":{"selectAll":"Seleccionar todos"},"es-MX":{"selectAll":"Seleccionar todos"},"fr-FR":{"selectAll":"Tout sélectionner"},"fr-CA":{"selectAll":"Tout sélectionner"},"de-DE":{"selectAll":"Alle auswählen"},"it-IT":{"selectAll":"Seleziona tutti"},"pt-PT":{"selectAll":"Selecionar todos"},"pt-BR":{"selectAll":"Selecionar todos"},"ru-RU":{"selectAll":"Выбрать все"},"zh-CN":{"selectAll":"全选"},"zh-TW":{"selectAll":"全選"},"ja-JP":{"selectAll":"すべて選択"},"ko-KR":{"selectAll":"전체 선택"},"ar-SA":{"selectAll":"تحديد الكل"},"hi-IN":{"selectAll":"सभी चुनें"},"tr-TR":{"selectAll":"Tümünü seç"},"nl-NL":{"selectAll":"Alles selecteren"},"sv-SE":{"selectAll":"Välj alla"},"fi-FI":{"selectAll":"Valitse kaikki"},"no-NO":{"selectAll":"Velg alle"},"da-DK":{"selectAll":"Vælg alle"},"pl-PL":{"selectAll":"Zaznacz wszystkie"},"cs-CZ":{"selectAll":"Vybrat vše"},"he-IL":{"selectAll":"בחר הכול"},"th-TH":{"selectAll":"เลือกทั้งหมด"},"vi-VN":{"selectAll":"Chọn tất cả"},"id-ID":{"selectAll":"Pilih semua"},"uk-UA":{"selectAll":"Вибрати все"}}');
-// EXTERNAL MODULE: ./packages/components/src/checkbox/Checkbox.module.css
-var Checkbox_module = __webpack_require__(16025);
-;// ./packages/components/src/checkbox/CheckboxGroup.tsx
-function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGroupState */.h)(props);var stringFormatter=(0,useLocalizedStringFormatter/* useLocalizedStringFormatter */.o)(translations_namespaceObject);var _useCheckboxGroup=(0,useCheckboxGroup/* useCheckboxGroup */.M)(props,state),groupProps=_useCheckboxGroup.groupProps,labelProps=_useCheckboxGroup.labelProps,descriptionProps=_useCheckboxGroup.descriptionProps;var _useSelectAll=useSelectAll(props.children,state),allSelected=_useSelectAll.allSelected,someSelected=_useSelectAll.someSelected,checkboxValues=_useSelectAll.checkboxValues;var handleChange=function handleChange(checked){state.setValue(checked?checkboxValues:[]);};return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",Object.assign({},groupProps,{className:Checkbox_module/* default */.A.checkboxGroup,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:props.popover,children:props.label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,Object.assign({},labelProps,{children:props.label}))}),props.description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,Object.assign({slot:"description"},descriptionProps,{children:props.description})),props.errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state})),props.showSelectAll&&/*#__PURE__*/(0,jsx_runtime.jsx)(Checkbox/* Checkbox */.S,{isSelected:allSelected,isIndeterminate:someSelected,onChange:handleChange,children:props.selectAllLabel||stringFormatter.format('selectAll')}),/*#__PURE__*/(0,jsx_runtime.jsx)(context/* CheckboxGroupContext */.I.Provider,{value:state,children:props.children}),props.errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(CheckboxGroupFieldError,Object.assign({},props,{state:state}))]}));}
-
-/***/ }),
-
 /***/ 78033:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -835,34 +864,6 @@ function CheckboxGroup(props){var state=(0,useCheckboxGroupState/* useCheckboxGr
 'use client';var _excluded=["variant","children","className"];var ACCORDION_TEST_ID='accordion';/**
  * Accordions are used primarily to reduce the direct amount of information on a page and to sort it clearly.
  */var Accordion=function Accordion(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'uncontained':_ref$variant,children=_ref.children,className=_ref.className,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DisclosureGroup */ .Tw,Object.assign({"data-testid":ACCORDION_TEST_ID,className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.root,variant==='contained'?_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.contained:_Accordion_module_css__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A.uncontained,className)},props,{children:children}));};
-
-/***/ }),
-
-/***/ 82684:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 

@@ -1,185 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2038],{
-
-/***/ 1916:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  assets: () => (/* binding */ assets),
-  contentTitle: () => (/* binding */ contentTitle),
-  "default": () => (/* binding */ MDXContent),
-  frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_design_patterns_forms_mdx_a8b_namespaceObject),
-  toc: () => (/* binding */ toc)
-});
-
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-forms-mdx-a8b.json
-const site_docs_design_patterns_forms_mdx_a8b_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/forms","title":"Formulär","description":"Generella riktlinjer","source":"@site/docs/design-patterns/forms.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/forms","permalink":"/pr-preview/pr-672/design-patterns/forms","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
-var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./packages/components/src/grid/Grid.tsx
-var Grid = __webpack_require__(74351);
-// EXTERNAL MODULE: ./packages/components/src/grid/GridItem.tsx
-var GridItem = __webpack_require__(93574);
-// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
-var TextField = __webpack_require__(13332);
-;// ./apps/docs/docs/design-patterns/forms.mdx
-
-
-const frontMatter = {
-	pagination_prev: null,
-	pagination_next: null
-};
-const contentTitle = 'Formulär';
-
-const assets = {
-
-};
-
-
-
-
-const toc = [{
-  "value": "Generella riktlinjer",
-  "id": "generella-riktlinjer",
-  "level": 2
-}, {
-  "value": "Håll nere antalet distraktioner",
-  "id": "håll-nere-antalet-distraktioner",
-  "level": 3
-}, {
-  "value": "Ställ bara frågor vi måste ha svar på",
-  "id": "ställ-bara-frågor-vi-måste-ha-svar-på",
-  "level": 3
-}, {
-  "value": "Struktur",
-  "id": "struktur",
-  "level": 3
-}, {
-  "value": "Obligatorisk vs valfri",
-  "id": "obligatorisk-vs-valfri",
-  "level": 2
-}];
-function _createMdxContent(props) {
-  const _components = {
-    code: "code",
-    h1: "h1",
-    h2: "h2",
-    h3: "h3",
-    header: "header",
-    li: "li",
-    p: "p",
-    ul: "ul",
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(_components.header, {
-      children: (0,jsx_runtime.jsx)(_components.h1, {
-        id: "formulär",
-        children: "Formulär"
-      })
-    }), "\n", "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "generella-riktlinjer",
-      children: "Generella riktlinjer"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Huvudsyftet med ett frågeformulär är att samla in den information vi behöver från användaren. Vi måste därför utforma formulären så att användarna har möjlighet att besvara frågorna på rätt sätt."
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "håll-nere-antalet-distraktioner",
-      children: "Håll nere antalet distraktioner"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Validera bara enligt våra valideringsprinciper"
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik distraktioner, t.ex. grafik eller information, som inte har med frågan att göra."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Markera inte frågor som är obligatoriska förutsatt att större delen av frågorna är obligatoriska (se Obligatorisk vs valfri nedan)."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "ställ-bara-frågor-vi-måste-ha-svar-på",
-      children: "Ställ bara frågor vi måste ha svar på"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Be bara om information vi behöver för att ta ett korrekt och rättvist beslut."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Ställ inte samma fråga flera gånger."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Ställ inte frågor vi redan har svar på eller som vi kan få svar på från andra källor."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Förklara varför vi ställer specifika frågor."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "struktur",
-      children: "Struktur"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Gruppera frågor som är relaterade till varandra, antingen på samma sida eller över flera sidor."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Placera inmatningsfält i en vertikal kolumn."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Använd en logisk struktur för vilken ordning frågorna ställs."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Använd logisk struktur hur information som användaren ska lämna skrivs in. Följ konventioner för exempelvis personnummer/datum/kreditkortsuppgifter."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik platshållare i inmatningsfält. Instruktioner för vad som ska skrivas in ska framgå av frågan som ställs, informationstext eller etiketten."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Beskriv format eller andra inmatningsinstruktioner om det behövs."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Välj längd på och typ av inmatningsfält baserat på informationen användaren förväntas skriva in."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Undvik funktionalitet som tömmer ett formulär eller en formulärsida."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "obligatorisk-vs-valfri",
-      children: "Obligatorisk vs valfri"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Huvudregeln är att bara fråga användaren om uppgifter som är nödvändiga för att ta ett beslut eller liknande.\nFöljer vi den regeln faller det sig naturligt att de flesta fält i ett formulär är obligatoriska. Det ger oss grundregeln: Vi markerar endast eventuella valfria fält med texten ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "”(valfritt)”"
-      }), "."]
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
-        children: [(0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
-          size: "6",
-          children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
-            label: "Fullständigt namn",
-            description: "För och efternamn",
-            isRequired: true,
-            errorMessage: "Detta är ett obligatoriskt fält"
-          })
-        }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
-          size: "6",
-          children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
-            label: "Favoritfrukter (Valfritt)",
-            description: "Kan lämnas tomt"
-          })
-        })]
-      })
-    })]
-  });
-}
-function MDXContent(props = {}) {
-  const {wrapper: MDXLayout} = {
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
-    ...props,
-    children: (0,jsx_runtime.jsx)(_createMdxContent, {
-      ...props
-    })
-  }) : _createMdxContent(props);
-}
-
-
-
-/***/ }),
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[2494],{
 
 /***/ 13332:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -327,6 +147,35 @@ const $d3e0e05bdfcf66bd$export$a7fed597f4b8afd8 = /*#__PURE__*/ (0, react__WEBPA
 
 //# sourceMappingURL=Form.module.js.map
 
+
+/***/ }),
+
+/***/ 28637:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  c: () => (/* binding */ LabelWrapper)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 
@@ -506,6 +355,33 @@ const $bcdf0525bf22703d$export$2c73285ae9390cec = /*#__PURE__*/ (0, _react_aria_
 
 /***/ }),
 
+/***/ 34704:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+
+/***/ }),
+
 /***/ 38739:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -549,10 +425,10 @@ var jsx_runtime = __webpack_require__(74848);
 var CharacterCounter=/*#__PURE__*/react.forwardRef(function(props,ref){var _value$toString;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,Input/* InputContext */.E);props=_useContextProps[0];var _props=props,maxLength=_props.maxLength,value=_props.value,isLonely=_props.isLonely;var _ref=(_value$toString=value==null?void 0:value.toString())!=null?_value$toString:'',length=_ref.length;var isMaxLengthDefined=maxLength!==undefined;return/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:CharacterCounter_module.characterCounter,"data-exceeded":isMaxLengthDefined&&length>maxLength||undefined,"data-lonely":isLonely||undefined,children:isMaxLengthDefined?length+" / "+maxLength:length});});
 // EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
 var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 ;// ./packages/components/src/textfield/TextFieldBase.tsx
 var TextFieldBase=/*#__PURE__*/react.forwardRef(function(props,ref){var _clsx;;var _useContextProps=(0,utils/* useContextProps */.JT)(props,ref,TextField/* TextFieldContext */.H);props=_useContextProps[0];var _props=props,label=_props.label,description=_props.description,errorMessage=_props.errorMessage,showCounter=_props.showCounter,_props$errorPosition=_props.errorPosition,errorPosition=_props$errorPosition===void 0?'top':_props$errorPosition,_props$size=_props.size,size=_props$size===void 0?'large':_props$size,popover=_props.popover,children=_props.children;return/*#__PURE__*/(0,jsx_runtime.jsxs)(TextField/* TextField */.A,Object.assign({},props,{className:(0,clsx/* clsx */.$)(TextField_module/* default */.A.textField,(_clsx={},_clsx[TextField_module/* default */.A.medium]=size==='medium',_clsx)),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),showCounter&&/*#__PURE__*/(0,jsx_runtime.jsx)(CharacterCounter,{isLonely:!description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:TextField_module/* default */.A.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",className:TextField_module/* default */.A.bottomError,children:errorMessage})]}));});
 
@@ -621,17 +497,6 @@ const $216918bed6669f72$export$f5c9f3c2c4054eec = /*#__PURE__*/ (0, react__WEBPA
 
 /***/ }),
 
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
-
-/***/ }),
-
 /***/ 54031:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -651,22 +516,6 @@ const $216918bed6669f72$export$f5c9f3c2c4054eec = /*#__PURE__*/ (0, react__WEBPA
  *
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */var Button=function Button(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'primary':_ref$variant,fullwidth=_ref.fullwidth,className=_ref.className,iconPlacement=_ref.iconPlacement,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,IconComponent=_ref.icon,iconSize=_ref.iconSize,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .Button */ .$,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.button,variant==='primary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.primary,variant==='secondary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.secondary,variant==='tertiary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.tertiary,variant==='danger'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.danger,variant==='icon'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconBtn,fullwidth&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fullwidth,size==='medium'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.medium,iconPlacement==='right'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconRight,className)},rest,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[IconComponent&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(IconComponent,{"aria-hidden":true,size:iconSize!=null?iconSize:20}),rest.children]})}));};
-
-/***/ }),
-
-/***/ 63181:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
 
 /***/ }),
 
@@ -784,34 +633,6 @@ const $3985021b0ad6602f$export$f5b8910cec6cf069 = /*#__PURE__*/ (0, _react_aria_
 
 /***/ }),
 
-/***/ 82684:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
-
-/***/ }),
-
 /***/ 86707:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -874,6 +695,161 @@ var _excluded=["children","col","size","offset"];/**
  */var GridItem=function GridItem(_ref){var children=_ref.children,col=_ref.col,size=_ref.size,offset=_ref.offset,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var colClass=col?"col-"+col:'';var offsetClass=offset?"offset-"+offset:'';var sizeClasses=getSizeClasses(size);var offsetClasses=getOffsetClasses(offset);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",Object.assign({},props,{className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.col,_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[colClass],_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[offsetClass],sizeClasses.map(function(cls){return _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[cls];}),offsetClasses.map(function(cls){return _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[cls];}),props.className),children:children}));};var getSizeClasses=function getSizeClasses(size){if(!size)return[];if(typeof size==='object'){return Object.entries(size).map(function(_ref2){var breakpoint=_ref2[0],value=_ref2[1];return breakpoint==='xs'?"col-"+value:"col-"+breakpoint+"-"+value;});}return["col-"+size];};var getOffsetClasses=function getOffsetClasses(offset){if(!offset)return[];if(typeof offset==='object'){return Object.entries(offset).map(function(_ref3){var breakpoint=_ref3[0],value=_ref3[1];return breakpoint==='xs'?"offset-"+value:"offset-"+breakpoint+"-"+value;});}return["offset-"+offset];};/**
  * @deprecated since v10.2.0 Use `GridItem` instead.
  */var FlexItem=GridItem;
+
+/***/ }),
+
+/***/ 94453:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  ErrorMessageList: () => (/* binding */ ErrorMessageList),
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_design_patterns_validation_mdx_f40_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-design-patterns-validation-mdx-f40.json
+const site_docs_design_patterns_validation_mdx_f40_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"design-patterns/validation","title":"Validering i formulär","description":"Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning.","source":"@site/docs/design-patterns/validation.mdx","sourceDirName":"design-patterns","slug":"/design-patterns/validation","permalink":"/pr-preview/pr-672/design-patterns/validation","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./packages/components/src/grid/Grid.tsx
+var Grid = __webpack_require__(74351);
+// EXTERNAL MODULE: ./packages/components/src/grid/GridItem.tsx
+var GridItem = __webpack_require__(93574);
+// EXTERNAL MODULE: ./packages/components/src/textfield/TextField.tsx + 3 modules
+var TextField = __webpack_require__(13332);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/core/lib/client/exports/useBaseUrl.js
+var useBaseUrl = __webpack_require__(86025);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/ThemedImage/index.js + 2 modules
+var ThemedImage = __webpack_require__(21122);
+;// ./apps/docs/docs/design-patterns/validation.mdx
+
+
+const frontMatter = {
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = 'Validering i formulär';
+
+const assets = {
+
+};
+
+
+
+
+
+
+function ErrorMessageList() {
+  const lightSrc = (0,useBaseUrl/* default */.Ay)('/img/error-message-list-light.svg');
+  const darkSrc = (0,useBaseUrl/* default */.Ay)('/img/error-message-list-dark.svg');
+  return (0,jsx_runtime.jsx)(ThemedImage/* default */.A, {
+    alt: "Felmeddelandelista",
+    sources: {
+      light: lightSrc,
+      dark: darkSrc
+    }
+  });
+}
+const toc = [{
+  "value": "Direktvalidering",
+  "id": "direktvalidering",
+  "level": 2
+}, {
+  "value": "Post submit-validering",
+  "id": "post-submit-validering",
+  "level": 2
+}];
+function _createMdxContent(props) {
+  const _components = {
+    a: "a",
+    code: "code",
+    h1: "h1",
+    h2: "h2",
+    header: "header",
+    p: "p",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(_components.header, {
+      children: (0,jsx_runtime.jsx)(_components.h1, {
+        id: "validering-i-formulär",
+        children: "Validering i formulär"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är att ge tydlig återkoppling vid fel och samtidigt underlätta för användaren att rätta till dessa. Alla inmatningskomponenter har ett felmeddelande som kan visas vid valideringsfel. Felmeddelandet kan visas antingen ovanför eller under fältet. Som standard visas felmeddelandet ovanför fältet och det är detta vi rekommenderar eftersom det blir en logisk läsordning."
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
+        children: [(0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+          size: 6,
+          children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+            label: "Ange förnamn",
+            errorMessage: 'Du måste ange ett förnamn',
+            isInvalid: "true",
+            errorPosition: "top"
+          })
+        }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+          size: 6,
+          children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+            label: "Ange förnamn",
+            errorMessage: 'Du måste ange ett förnamn',
+            isInvalid: "true",
+            errorPosition: "bottom"
+          })
+        })]
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "direktvalidering",
+      children: "Direktvalidering"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsregel eller kan validera mot en databas, ska valideras när användaren lämnar fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande."
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(TextField/* TextField */.A, {
+        type: "email",
+        label: "Ange din epostadress",
+        description: "Epostadressen måste innehålla @ och domän (t.ex. example@example.com)",
+        errorMessage: 'Du måste ha @ och domän med i din epostadress',
+        errorPosition: "top"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "post-submit-validering",
+      children: "Post submit-validering"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om det finns obligatoriska fält användaren inte fyllt i eller fält med valideringsfel efter att användaren skickat in formuläret, så ska dessa sammanfattas i en ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "Felmeddelandelista"
+      }), " som visas högst upp på sidan. Felmeddelandelistan är inte någon egen komponent. Den består av en ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "/components/info-banner",
+        children: "Infobanner"
+      }), " med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel."]
+    }), "\n", (0,jsx_runtime.jsx)(ErrorMessageList, {})]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
 
 /***/ }),
 

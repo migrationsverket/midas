@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[4595],{
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5320],{
 
 /***/ 13225:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -15,33 +15,6 @@
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44586);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyName=_ref.friendlyName,overrideHeadlessLink=_ref.overrideHeadlessLink,overrideHeadlessLinkTitle=_ref.overrideHeadlessLinkTitle;var _useDocusaurusContext=(0,_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(),customFields=_useDocusaurusContext.siteConfig.customFields;var componentPath="?path=/docs/components-"+name.toLowerCase()+"--docs";var storybookHost= false?0:customFields!=null&&customFields.currentChromaticBranchUrl?"https://"+(customFields==null?void 0:customFields.currentChromaticBranchUrl)+"--"+customFields.chromaticAppId+".chromatic.com":"https://main--"+(customFields==null?void 0:customFields.chromaticAppId)+".chromatic.com";var storybookLink=storybookHost+"/"+componentPath;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section",{className:"component-header",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_2__/* .Grid */ .x,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"friendlyName",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:storybookLink,variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A,iconPlacement:"left",children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A,iconPlacement:"left",children:overrideHeadlessLinkTitle?overrideHeadlessLinkTitle:'React Aria'})})]})});};
-
-/***/ }),
-
-/***/ 19060:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  b: () => (/* binding */ FieldError_FieldError)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FieldError.mjs
-var FieldError = __webpack_require__(44300);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-;// ./packages/components/src/field-error/FieldError.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const FieldError_module = ({"tokens":"\"../theme/tokens.css\"","--text-warning":"light-dark(#e62323, #eb4e4e)","--font-family":"\"Inter\", sans-serif","fieldError":"fieldError_K9VX"});
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/field-error/FieldError.tsx
-var FieldError_FieldError=/*#__PURE__*/react.forwardRef(function(props,ref){var children=props.children,isInvalid=props.isInvalid;var className=(0,clsx/* default */.A)(FieldError_module.fieldError,props.className);var context=react.useContext(FieldError/* FieldErrorContext */.C);if(!context&&isInvalid&&typeof children!=='function'){return/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{className:className,children:children});}if(!(context!=null&&context.isInvalid))return null;return/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,Object.assign({},props,{ref:ref,className:className}));});
 
 /***/ }),
 
@@ -69,6 +42,35 @@ var dist_Text = __webpack_require__(27279);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/text/Text.tsx
 var _excluded=["children","className","variant","isExpressive","elementType"];var DEFAULT_ELEMENT='span';var Text=function Text(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'body-02':_ref$variant,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'body-01':Text_module['body-01'],'body-02':Text_module['body-02']};var textProps=Object.assign({className:(0,clsx/* default */.A)(rest.slot==='description'?Text_module.description:classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},isExpressive&&{'data-expressive':true},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Text/* Text */.E,Object.assign({},textProps,{children:children}));};
+
+/***/ }),
+
+/***/ 28637:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  c: () => (/* binding */ LabelWrapper)
+});
+
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 
@@ -125,6 +127,33 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 
 /***/ }),
 
+/***/ 34704:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+
+/***/ }),
+
 /***/ 38739:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -144,17 +173,6 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--normal-transition":"300ms","--text-primary":"light-dark(#171717, #f2f2f2)","--fast-transition":"250ms","--border-secondary":"light-dark(#737373, #8c8c8c)","--support-background-success":"light-dark(#d5f2d9, light-dark(#f2f2f2, #262626))","--support-border-success":"light-dark(#008d3c, #008d3c)","--support-background-warning":"light-dark(#ffdfdf, light-dark(#f2f2f2, #262626))","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-success":"light-dark(#008d3c, #008d3c)","--icon-warning":"light-dark(#e62323, #e62323)","--support-background-success-hover":"light-dark(#bae5c5, light-dark(#e6e6e6, #333333))","--support-background-warning-hover":"light-dark(#fcc8c8, light-dark(#e6e6e6, #333333))","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--layer-02":"light-dark(#ffffff, #383838)","--background":"light-dark(#ffffff, #171717)","root":"root_dwc1","contained":"contained_snuo","item":"item_EcMn","success":"success_djlE","warning":"warning_tBhi","uncontained":"uncontained_kQy1","content":"content_eG9O","triggerButton":"triggerButton_v7ly","trigger":"trigger_H4x6","triggerMainContent":"triggerMainContent_lUNS","triggerText":"triggerText_v8dS","chevronIcon":"chevronIcon_mkt7","statusIcon":"statusIcon_PzPO","panel":"panel_aCgP","hasBackground":"hasBackground_K0Q9","header":"header_KTZ_"});
-
-/***/ }),
-
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
 
 /***/ }),
 
@@ -213,45 +231,72 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
-/***/ 49936:
+/***/ 48697:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ X)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const X = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("X", [
+  ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
+  ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
+]);
+
+
+//# sourceMappingURL=x.js.map
+
+
+/***/ }),
+
+/***/ 51729:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  s: () => (/* binding */ Radio),
-  z: () => (/* binding */ RadioGroup)
+  e: () => (/* binding */ FileUpload)
 });
 
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/regenerator.js
+var regenerator = __webpack_require__(22007);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(10467);
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
 var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DropZone.mjs + 76 modules
+var DropZone = __webpack_require__(95151);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/FileTrigger.mjs
+var FileTrigger = __webpack_require__(77064);
 // EXTERNAL MODULE: ./node_modules/react/index.js
 var react = __webpack_require__(96540);
-;// ./packages/components/src/radio/Radio.module.css
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/x.js
+var x = __webpack_require__(48697);
+;// ./packages/components/src/file-upload/FileUpload.module.css
 // extracted by mini-css-extract-plugin
-/* harmony default export */ const Radio_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-disabled":"light-dark(#bfbfbf, #525252)","--font-size-30":"1rem","--text-primary":"light-dark(#171717, #f2f2f2)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--fast-transition":"250ms","--border-disabled":"light-dark(#bfbfbf, #525252)","--icon-secondary":"light-dark(#525252, #a6a6a6)","--border-secondary":"light-dark(#737373, #8c8c8c)","--border-subtle":"light-dark(#bfbfbf, #383838)","--breakpoint-xs":"(max-width: 479px)","--field-hover-02":"light-dark(#e6e6e6, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-tertiary":"light-dark(#143c50, #f2f2f2)","radioGroup":"radioGroup_EgZH","wrap":"wrap_R8gp","radio":"radio_U9gG"});
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/RadioGroup.mjs + 4 modules
-var dist_RadioGroup = __webpack_require__(96325);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Group.mjs
-var Group = __webpack_require__(63899);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
+/* harmony default export */ const FileUpload_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--field-01":"light-dark(#f2f2f2, #262626)","--background":"light-dark(#ffffff, #171717)","--background-hover":"light-dark(#e6e6e6, #212121)","--border-subtle":"light-dark(#bfbfbf, #383838)","--text-disabled":"light-dark(#bfbfbf, #525252)","box":"box_kaz6","list":"list_tzm4","container":"container_tPtu","label":"label_Rz6y","text":"text_R2tR","dropzone":"dropzone_bGZ8","input":"input_XAxQ"});
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
 // EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
 var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/radio/Radio.tsx
-'use client';var _excluded=["label","description","errorMessage","children","className","errorPosition","popover"];/**
- * RadioGroup is used to group several radio items together
- */var RadioGroup=function RadioGroup(_ref){var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,popover=_ref.popover,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_RadioGroup/* RadioGroup */.z6,Object.assign({},props,{className:(0,clsx/* default */.A)(Radio_module.radioGroup,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(Group/* Group */.Y,{className:Radio_module.wrap,children:children}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage})]}));};/**
- * Radio item
- * */var Radio=function Radio(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_RadioGroup/* Radio */.sx,Object.assign({className:Radio_module.radio},props));};
+;// ./packages/components/src/file-upload/FileUpload.tsx
+'use client';var _excluded=["allowsMultiple","label","description","dropzone","popover"];var FileUpload=function FileUpload(_ref){var allowsMultiple=_ref.allowsMultiple,label=_ref.label,description=_ref.description,dropzone=_ref.dropzone,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var _React$useState=react.useState(null),files=_React$useState[0],setFiles=_React$useState[1];var handleUpload=function handleUpload(files){setFiles(files!==null?Array.from(files):[]);// TODO: actually handle files?
+};var handleDrop=/*#__PURE__*/function(){var _ref2=(0,asyncToGenerator/* default */.A)(/*#__PURE__*/(0,regenerator/* default */.A)().m(function _callee(e){var filePromises,resolvedFiles;return (0,regenerator/* default */.A)().w(function(_context){while(1)switch(_context.n){case 0:filePromises=e.items.filter(function(file){return file.kind==='file';}).map(function(file){return file.getFile();});_context.n=1;return Promise.all(filePromises);case 1:resolvedFiles=_context.v;setFiles(resolvedFiles);case 2:return _context.a(2);}},_callee);}));return function handleDrop(_x){return _ref2.apply(this,arguments);};}();if(dropzone)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DropZone/* DropZone */.w,{onDrop:handleDrop,className:FileUpload_module.dropzone,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",style:{display:'block'},children:"Dra och sl\xE4pp en fil inuti det streckade omr\xE5det"})}),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:FileUpload_module.container,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),/*#__PURE__*/(0,jsx_runtime.jsx)(FileTrigger/* FileTrigger */.F,Object.assign({allowsMultiple:allowsMultiple,onSelect:function onSelect(files){return handleUpload(files);}},rest,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"secondary","aria-labelledby":"fileUpload",className:FileUpload_module.input,children:allowsMultiple?'Välj filer':'Välj fil'})})),files&&/*#__PURE__*/(0,jsx_runtime.jsx)(FileList,{files:files,setFiles:setFiles})]});};var FileList=function FileList(_ref3){var files=_ref3.files,setFiles=_ref3.setFiles;var handleRemove=function handleRemove(index){setFiles(files==null?void 0:files.filter(function(f,i){return i!==index;}));};return/*#__PURE__*/(0,jsx_runtime.jsx)("ul",{className:FileUpload_module.list,children:files.map(function(file,index){return/*#__PURE__*/(0,jsx_runtime.jsxs)("li",{className:FileUpload_module.box,children:[/*#__PURE__*/(0,jsx_runtime.jsx)("span",{children:file.name}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",onPress:function onPress(){return handleRemove(index);},children:/*#__PURE__*/(0,jsx_runtime.jsx)(x/* default */.A,{size:20,"aria-hidden":true})})]},index);})});};
 
 /***/ }),
 
@@ -274,243 +319,6 @@ var jsx_runtime = __webpack_require__(74848);
  *
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */var Button=function Button(_ref){var _ref$variant=_ref.variant,variant=_ref$variant===void 0?'primary':_ref$variant,fullwidth=_ref.fullwidth,className=_ref.className,iconPlacement=_ref.iconPlacement,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,IconComponent=_ref.icon,iconSize=_ref.iconSize,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .Button */ .$,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.button,variant==='primary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.primary,variant==='secondary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.secondary,variant==='tertiary'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.tertiary,variant==='danger'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.danger,variant==='icon'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconBtn,fullwidth&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.fullwidth,size==='medium'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.medium,iconPlacement==='right'&&_Button_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.iconRight,className)},rest,{children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment,{children:[IconComponent&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(IconComponent,{"aria-hidden":true,size:iconSize!=null?iconSize:20}),rest.children]})}));};
-
-/***/ }),
-
-/***/ 54867:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  assets: () => (/* binding */ assets),
-  contentTitle: () => (/* binding */ contentTitle),
-  "default": () => (/* binding */ MDXContent),
-  frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_radio_mdx_7e6_namespaceObject),
-  toc: () => (/* binding */ toc)
-});
-
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-radio-mdx-7e6.json
-const site_docs_components_radio_mdx_7e6_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/radio","title":"Radio","description":"Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","source":"@site/docs/components/radio.mdx","sourceDirName":"components","slug":"/components/radio","permalink":"/pr-preview/pr-672/components/radio","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"Radio","description":"Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
-var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
-var PropsTable = __webpack_require__(68713);
-// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
-var getComponentMetaData = __webpack_require__(13225);
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/radio/Radio.tsx + 1 modules
-var Radio = __webpack_require__(49936);
-;// ./apps/docs/src/components/examples/radio/RadioExamples.tsx
-var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apelsin",children:"Apelsin"})]});};var ControlledExample=function ControlledExample(){var _useState=(0,react.useState)(null),selectedFruit=_useState[0],setSelectedFruit=_useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",value:selectedFruit,onChange:setSelectedFruit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apelsin",children:"Apelsin"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{style:{marginTop:'1rem'},children:["selectedFruit: ",selectedFruit]})]});};var HorizontalExample=function HorizontalExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Max 2 val vid horisontellt l\xE4ge",orientation:"horizontal",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"})]});};var DefaultValueExample=function DefaultValueExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"Vill du l\xE4gga till din favoritfrukt i fruktkorgen?",description:"Det blir gott!",defaultValue:"yes",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"yes",children:"Ja"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"no",children:"Nej"})]});};var NoneOfTheAboveExample=function NoneOfTheAboveExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(Radio/* RadioGroup */.z,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"apelsin",children:"Apelsin"}),/*#__PURE__*/(0,jsx_runtime.jsx)(Radio/* Radio */.s,{value:"none",children:"Inget av givna alternativ"})]});};
-;// ./apps/docs/docs/components/radio.mdx
-
-
-const frontMatter = {
-	title: 'Radio',
-	description: 'Radio är en typ av inmatningsfält som används för att välja ett alternativ från en uppsättning alternativ',
-	pagination_prev: null,
-	pagination_next: null
-};
-const contentTitle = undefined;
-
-const assets = {
-
-};
-
-
-
-
-
-
-const toc = [{
-  "value": "Kontrollerat val",
-  "id": "kontrollerat-val",
-  "level": 2
-}, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Mönster",
-  "id": "mönster",
-  "level": 3
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
-  "level": 3
-}, {
-  "value": "API",
-  "id": "api",
-  "level": 2
-}, {
-  "value": "Radio",
-  "id": "radio",
-  "level": 3
-}, {
-  "value": "RadioGroup",
-  "id": "radiogroup",
-  "level": 3
-}];
-function _createMdxContent(props) {
-  const _components = {
-    a: "a",
-    admonition: "admonition",
-    code: "code",
-    h2: "h2",
-    h3: "h3",
-    li: "li",
-    ol: "ol",
-    p: "p",
-    pre: "pre",
-    strong: "strong",
-    ul: "ul",
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Radio",
-      friendlyName: "Radioknappar",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/RadioGroup.html"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Inmatningsfält som används för att välja exakt ett alternativ."
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import { Radio, RadioGroup } from '@midas-ds/components'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "<RadioGroup\n  label='Välj din favoritfrukt'\n  description='Du kan bara välja en'\n>\n  <Radio value='apple'>Äpple</Radio>\n  <Radio value='banan'>Banan</Radio>\n  <Radio value='kiwi'>Kiwi</Radio>\n  <Radio value='apelsin'>Apelsin</Radio>\n</RadioGroup>\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(BasicExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "kontrollerat-val",
-      children: "Kontrollerat val"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "value"
-      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onChange"
-      }), " för att använda controlled value på RadioGroup.\nDen valda radioknappens värde skickas till callbacken, så kan du använda det för att uppdatera ditt state."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.admonition, {
-      type: "warning",
-      children: (0,jsx_runtime.jsxs)(_components.p, {
-        children: ["Notera att ett tomt val representeras av ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "null"
-        }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
-          children: "undefined"
-        }), " och inte en tom sträng."]
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import React from 'react'\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "// highlight-next-line\nconst [selectedFruit, setSelectedFruit] = useState<string | null>(null)\n\nreturn (\n  <RadioGroup\n    label='Välj din favoritfrukt'\n    description='Du kan bara välja en'\n    // highlight-start\n    value={selectedFruit}\n    onChange={setSelectedFruit}\n    // highlight-end\n  >\n    <Radio value='apple'>Äpple</Radio>\n    <Radio value='banan'>Banan</Radio>\n    <Radio value='kiwi'>Kiwi</Radio>\n    <Radio value='apelsin'>Apelsin</Radio>\n  </RadioGroup>\n)\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ControlledExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Fältetiketten ska inledas med stor bokstav och inte följas av punkt."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Lägg valen i bokstavsordning om ingen annan given ordning är mer lämplig, t.ex. det mest populära valet först."
-      }), "\n", (0,jsx_runtime.jsx)(_components.li, {
-        children: "Radioknapparna placeras som regel vertikalt för att underlätta avläsning. Om antalet alternativ för en given fråga är\nbegränsat till två och det är ont om vertikalt utrymme så kan en horisontell orientering användas."
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(HorizontalExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "mönster",
-      children: "Mönster"
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Det finns två mönster för Radioknappar:"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: [(0,jsx_runtime.jsx)(_components.strong, {
-          children: "Inget alternativ är valt från början"
-        }), ". Detta alternativ kräver att användaren tar ställning för att kunna gå vidare, vilket i de flesta fall är lämpligt. Välj detta mönster om det är svårt att förutse eller olämpligt att ge ett förval."]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(BasicExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Om användaren behöver ha möjlighet att avstå från att välja ett de givna alternativen är rekommendationen att skapa ett sista alternativ som du kallar \"Inget av givna alternativ\" eller liknande."
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(NoneOfTheAboveExample, {})
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ol, {
-      start: "2",
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: [(0,jsx_runtime.jsx)(_components.strong, {
-          children: "Ett av alternativen är valt från början"
-        }), ". Välj detta mönster om det finns ett val som är förväntat eller önskvärt och det inte ger stora konsekvenser för användaren att inte ta ställning."]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(DefaultValueExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd Radioknappar när användaren bara ska göra ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett"
-      }), " av flera val i en lista. Använd ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components/checkbox",
-        children: "Checkbox"
-      }), " om flera val ska kunna göras. Om det är fler alternativ än fem bör ", (0,jsx_runtime.jsx)(_components.a, {
-        href: "/components/select",
-        children: "Select"
-      }), " användas istället."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "api",
-      children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "radio",
-      children: "Radio"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "Radio"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "radiogroup",
-      children: "RadioGroup"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "RadioGroup"
-    })]
-  });
-}
-function MDXContent(props = {}) {
-  const {wrapper: MDXLayout} = {
-    ...(0,lib/* useMDXComponents */.R)(),
-    ...props.components
-  };
-  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
-    ...props,
-    children: (0,jsx_runtime.jsx)(_createMdxContent, {
-      ...props
-    })
-  }) : _createMdxContent(props);
-}
-
-
 
 /***/ }),
 
@@ -553,19 +361,173 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 63181:
+/***/ 59401:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_components_fileupload_mdx_cdb_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-fileupload-mdx-cdb.json
+const site_docs_components_fileupload_mdx_cdb_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/fileupload","title":"FileUpload","description":"Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.","source":"@site/docs/components/fileupload.mdx","sourceDirName":"components","slug":"/components/fileupload","permalink":"/pr-preview/pr-672/components/fileupload","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"FileUpload","description":"Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./packages/components/src/file-upload/FileUpload.tsx + 1 modules
+var FileUpload = __webpack_require__(51729);
+// EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
+var getComponentMetaData = __webpack_require__(13225);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./apps/docs/src/components/examples/file-upload/FileUploadExamples.tsx
+var ControlledExample=function ControlledExample(){var _React$useState=react.useState([]),files=_React$useState[0],setFiles=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(FileUpload/* FileUpload */.e,{allowsMultiple:true,label:"V\xE4lj filer att ladda upp",description:"Du kan v\xE4lja flera filer",onSelect:function onSelect(e){if(e){var _files=Array.from(e);var filenames=_files.map(function(file){return file.name;});setFiles(filenames);}}}),"Valda filer: ",files.join(', ')]});};
+// EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
+var PropsTable = __webpack_require__(68713);
+;// ./apps/docs/docs/components/fileupload.mdx
+
+
+const frontMatter = {
+	title: 'FileUpload',
+	description: 'Filuppladdning används när användaren behöver ladda upp en eller flera filer från det egen filsystemet.',
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = undefined;
+
+const assets = {
+
+};
+
+
+
+
+
+
+
+const toc = [{
+  "value": "Varianter",
+  "id": "varianter",
+  "level": 2
+}, {
+  "value": "Välj flera filer",
+  "id": "välj-flera-filer",
+  "level": 3
+}, {
+  "value": "Kontrollerat val av filer",
+  "id": "kontrollerat-val-av-filer",
+  "level": 3
+}, {
+  "value": "API",
+  "id": "api",
+  "level": 2
+}];
+function _createMdxContent(props) {
+  const _components = {
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    p: "p",
+    pre: "pre",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
+      name: "FileUpload",
+      friendlyName: "Filuppladdning, filväljare",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/FileTrigger.html"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Komponent som används när användaren behöver ladda upp filer från det egna filsystemet."
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { FileUpload } from '@midas-ds/components'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<FileUpload\n  label='Välj en fil att ladda upp'\n  description='Du kan välja en fil'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(FileUpload/* FileUpload */.e, {
+        label: "Välj en fil att ladda upp",
+        description: "Du kan välja en fil"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "varianter",
+      children: "Varianter"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "välj-flera-filer",
+      children: "Välj flera filer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["För att tillåta användaren att ladda upp flera filer på samma gång, använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "allowsMultiple"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<FileUpload\n  allowsMultiple\n  label='Välj filer att ladda upp'\n  description='Du kan välja flera filer'\n/>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(FileUpload/* FileUpload */.e, {
+        allowsMultiple: true,
+        label: "Välj filer att ladda upp",
+        description: "Du kan välja flera filer"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "kontrollerat-val-av-filer",
+      children: "Kontrollerat val av filer"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Om du vill kontrollera vilka filer användaren laddar upp kan du använda ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "useState"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import React from 'react'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "const [files, setFiles] = React.useState<string[]>([])\n\nreturn (\n  <FileUpload\n    allowsMultiple\n    label='Välj filer att ladda upp'\n    description='Du kan välja flera filer'\n    onSelect={e => {\n      if (e) {\n        const files = Array.from(e)\n        const filenames = files.map(file => file.name)\n        setFiles(filenames)\n      }\n    }}\n  />\n)\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)("div", {
+      className: "card",
+      children: (0,jsx_runtime.jsx)(ControlledExample, {})
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "api",
+      children: "API"
+    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
+      name: "FileUpload"
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
 
 /***/ }),
 
@@ -660,31 +622,79 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
 
 /***/ }),
 
-/***/ 82684:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 79950:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ $3985021b0ad6602f$export$37fb8590cf2c088c),
+/* harmony export */   p: () => (/* binding */ $3985021b0ad6602f$export$f5b8910cec6cf069)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5933);
+/* harmony import */ var _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75127);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16638);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16133);
+/* harmony import */ var react_aria__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32217);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
 
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+
+
+const $3985021b0ad6602f$export$37fb8590cf2c088c = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+let $3985021b0ad6602f$var$filterHoverProps = (props)=>{
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    let { onHoverStart: onHoverStart, onHoverChange: onHoverChange, onHoverEnd: onHoverEnd, ...otherProps } = props;
+    return otherProps;
+};
+const $3985021b0ad6602f$export$f5b8910cec6cf069 = /*#__PURE__*/ (0, _react_aria_collections__WEBPACK_IMPORTED_MODULE_1__/* .createHideableComponent */ .U7)(function Input(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useContextProps */ .JT)(props, ref, $3985021b0ad6602f$export$37fb8590cf2c088c);
+    let { hoverProps: hoverProps, isHovered: isHovered } = (0, react_aria__WEBPACK_IMPORTED_MODULE_3__/* .useHover */ .M)(props);
+    let { isFocused: isFocused, isFocusVisible: isFocusVisible, focusProps: focusProps } = (0, react_aria__WEBPACK_IMPORTED_MODULE_4__/* .useFocusRing */ .o)({
+        isTextInput: true,
+        autoFocus: props.autoFocus
+    });
+    let isInvalid = !!props['aria-invalid'] && props['aria-invalid'] !== 'false';
+    let renderProps = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_2__/* .useRenderProps */ .Sl)({
+        ...props,
+        values: {
+            isHovered: isHovered,
+            isFocused: isFocused,
+            isFocusVisible: isFocusVisible,
+            isDisabled: props.disabled || false,
+            isInvalid: isInvalid
+        },
+        defaultClassName: 'react-aria-Input'
+    });
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement("input", {
+        ...(0, react_aria__WEBPACK_IMPORTED_MODULE_5__/* .mergeProps */ .v)($3985021b0ad6602f$var$filterHoverProps(props), focusProps, hoverProps),
+        ...renderProps,
+        ref: ref,
+        "data-focused": isFocused || undefined,
+        "data-disabled": props.disabled || undefined,
+        "data-hovered": isHovered || undefined,
+        "data-focus-visible": isFocusVisible || undefined,
+        "data-invalid": isInvalid || undefined
+    });
 });
 
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+
+
+//# sourceMappingURL=Input.module.js.map
+
 
 /***/ }),
 
@@ -746,6 +756,34 @@ var dist_Heading = __webpack_require__(57936);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/heading/Heading.tsx
 var _excluded=["children","className","isExpressive","level","elementType"];var Heading=function Heading(_ref){var children=_ref.children,className=_ref.className,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$level=_ref.level,level=_ref$level===void 0?3:_ref$level,elementType=_ref.elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var semanticLevel=elementType&&parseInt(elementType.split('h')[1]);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Heading/* Heading */.D,Object.assign({level:semanticLevel||level,className:(0,clsx/* default */.A)([Heading_module.h1,Heading_module.h2,Heading_module.h3,Heading_module.h4,Heading_module.h5,Heading_module.h6][level-1],className)},isExpressive&&{'data-expressive':true},rest,{children:children}));};
+
+/***/ }),
+
+/***/ 97213:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (/* binding */ Info)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84722);
+/**
+ * @license lucide-react v0.453.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Info = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)("Info", [
+  ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
+  ["path", { d: "M12 16v-4", key: "1dtifu" }],
+  ["path", { d: "M12 8h.01", key: "e9boi3" }]
+]);
+
+
+//# sourceMappingURL=info.js.map
+
 
 /***/ })
 

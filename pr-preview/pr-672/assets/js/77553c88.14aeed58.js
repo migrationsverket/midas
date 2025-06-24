@@ -1,16 +1,5 @@
 "use strict";
-(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[5095],{
-
-/***/ 6974:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--border-primary":"light-dark(#171717, #f2f2f2)","--focus-inset":"inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--layer-selected-01":"light-dark(#d9d9d9, #383838)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--size-40":"0.5rem","--size-80":"1rem","--size-150":"3rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","listBox":"listBox_l3jg","listBoxPopover":"listBoxPopover_OG2Y","listBoxSectionHeading":"listBoxSectionHeading_R5mH","listBoxButton":"listBoxButton_LfGK","listBoxItem":"listBoxItem_eA9_"});
-
-/***/ }),
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[3697],{
 
 /***/ 13225:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -26,6 +15,33 @@
 /* harmony import */ var _docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44586);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(74848);
 var ComponentHeader=function ComponentHeader(_ref){var name=_ref.name,friendlyName=_ref.friendlyName,overrideHeadlessLink=_ref.overrideHeadlessLink,overrideHeadlessLinkTitle=_ref.overrideHeadlessLinkTitle;var _useDocusaurusContext=(0,_docusaurus_useDocusaurusContext__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .A)(),customFields=_useDocusaurusContext.siteConfig.customFields;var componentPath="?path=/docs/components-"+name.toLowerCase()+"--docs";var storybookHost= false?0:customFields!=null&&customFields.currentChromaticBranchUrl?"https://"+(customFields==null?void 0:customFields.currentChromaticBranchUrl)+"--"+customFields.chromaticAppId+".chromatic.com":"https://main--"+(customFields==null?void 0:customFields.chromaticAppId)+".chromatic.com";var storybookLink=storybookHost+"/"+componentPath;return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section",{className:"component-header",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_2__/* .Grid */ .x,{fluid:true,children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"friendlyName",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b",{children:friendlyName})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:storybookLink,variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A,iconPlacement:"left",children:"Storybook"})}),/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_3__/* .GridItem */ .E,{size:"auto",className:"headerLink",children:overrideHeadlessLink!==''&&/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_midas_ds_components__WEBPACK_IMPORTED_MODULE_4__/* .LinkButton */ .z,{href:overrideHeadlessLink?overrideHeadlessLink:"https://react-spectrum.adobe.com/react-aria/"+name+".html",target:"_blank",variant:"tertiary",icon:lucide_react__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .A,iconPlacement:"left",children:overrideHeadlessLinkTitle?overrideHeadlessLinkTitle:'React Aria'})})]})});};
+
+/***/ }),
+
+/***/ 18980:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  E: () => (/* binding */ DateSegment)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
+var DateField = __webpack_require__(68407);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+;// ./packages/components/src/date-field/DateSegment.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const DateSegment_module = ({"tokens":"\"../theme/tokens.css\"","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--text-primary":"light-dark(#171717, #f2f2f2)","dateSegment":"dateSegment_nh76"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/date-field/DateSegment.tsx
+var _excluded=["className"];var DateSegment=function DateSegment(_ref){var className=_ref.className,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateSegment */.Eu,Object.assign({className:(0,clsx/* default */.A)(DateSegment_module.dateSegment,className)},rest));};
 
 /***/ }),
 
@@ -83,52 +99,32 @@ var _excluded=["children","className","variant","isExpressive","elementType"];va
 
 /***/ }),
 
-/***/ 22247:
+/***/ 28637:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  q: () => (/* binding */ ListBox)
+  c: () => (/* binding */ LabelWrapper)
 });
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Virtualizer.mjs + 9 modules
-var Virtualizer = __webpack_require__(424);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ListBox.mjs + 3 modules
-var dist_ListBox = __webpack_require__(79255);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/callSuper.js + 2 modules
-var callSuper = __webpack_require__(31013);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js
-var inheritsLoose = __webpack_require__(77387);
-// EXTERNAL MODULE: ./node_modules/@react-stately/layout/dist/ListLayout.mjs + 2 modules
-var ListLayout = __webpack_require__(12939);
-;// ./packages/components/src/list-box/SectionedListLayout.ts
-var SectionedListLayout=/*#__PURE__*/function(_ListLayout){function SectionedListLayout(){return (0,callSuper/* default */.A)(this,SectionedListLayout,arguments);}(0,inheritsLoose/* default */.A)(SectionedListLayout,_ListLayout);var _proto=SectionedListLayout.prototype;/**
-   * When using the ListLayout our scroll container height is not calculated properly when the content is partially sectioned.
-   * ```ts
-   * const partiallySectionedContent = [
-   *  {
-   *    name: 'fruit section',
-   *    children: [{ id: 'kiwi', name: 'Kiwi' }]
-   *  },
-   *  // berries have no section, because it's optional
-   *  { id: 'lingonberries', name: 'Lingonberries' }
-   * ];
-   * ```
-   * If we load the layout info for each key in the collection the calculation is correct.
-   *
-   * This might not be optional for performance, FYI
-   */_proto.getContentSize=function getContentSize(){var _this$virtualizer,_this=this;var keys=this==null||(_this$virtualizer=this.virtualizer)==null?void 0:_this$virtualizer.collection.getKeys();Array.from(keys||[]).forEach(function(key){_this.getLayoutInfo(key);});return this.contentSize;};return SectionedListLayout;}(ListLayout/* ListLayout */.$);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.module.css
-var ListBox_module = __webpack_require__(6974);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+;// ./packages/components/src/label/LabelWrapper.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const LabelWrapper_module = ({"tokens":"\"../theme/tokens.css\"","--support-border-info":"light-dark(#0066cc, #0066cc)","labelPopover":"labelPopover_QNhJ","labelPopoverTrigger":"labelPopoverTrigger_iTpE"});
+// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
+var Popover = __webpack_require__(28777);
+// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
+var Button = __webpack_require__(54031);
+// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
+var info = __webpack_require__(97213);
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/list-box/ListBox.tsx
-var _excluded=["className","children"];var ListBox=function ListBox(_ref){var className=_ref.className,children=_ref.children,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsx)(Virtualizer/* Virtualizer */.Y,{layout:SectionedListLayout,layoutOptions:{headingHeight:44},children:/*#__PURE__*/(0,jsx_runtime.jsx)(dist_ListBox/* ListBox */.qF,Object.assign({className:(0,clsx/* default */.A)(ListBox_module/* default */.A.listBox,className)},rest,{children:children}))});};
+;// ./packages/components/src/label/InfoPopover.tsx
+/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:LabelWrapper_module.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
+;// ./packages/components/src/label/LabelWrapper.tsx
+var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:LabelWrapper_module.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
 
 /***/ }),
 
@@ -185,6 +181,33 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 
 /***/ }),
 
+/***/ 34704:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  J: () => (/* binding */ Label)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Label.mjs
+var dist_Label = __webpack_require__(21704);
+;// ./packages/components/src/label/Label.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Label_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/label/Label.tsx
+var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx/* default */.A)(Label_module.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Label/* Label */.J,Object.assign({},labelProps,{children:children}));};
+
+/***/ }),
+
 /***/ 38739:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -196,6 +219,17 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 
 /***/ }),
 
+/***/ 41390:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--field-hover-01":"light-dark(#e6e6e6, #333333)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--text-primary":"light-dark(#171717, #f2f2f2)","dateInput":"dateInput_Y5ix","divider":"divider_BL_i"});
+
+/***/ }),
+
 /***/ 43249:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -204,17 +238,6 @@ var _excluded=["children","className","offset"],_excluded2=["children"];function
 /* harmony export */ });
 // extracted by mini-css-extract-plugin
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--layer-01":"light-dark(#f2f2f2, #262626)","--layer-hover-01":"light-dark(#e6e6e6, #333333)","--normal-transition":"300ms","--text-primary":"light-dark(#171717, #f2f2f2)","--fast-transition":"250ms","--border-secondary":"light-dark(#737373, #8c8c8c)","--support-background-success":"light-dark(#d5f2d9, light-dark(#f2f2f2, #262626))","--support-border-success":"light-dark(#008d3c, #008d3c)","--support-background-warning":"light-dark(#ffdfdf, light-dark(#f2f2f2, #262626))","--support-border-warning":"light-dark(#e62323, #e62323)","--icon-success":"light-dark(#008d3c, #008d3c)","--icon-warning":"light-dark(#e62323, #e62323)","--support-background-success-hover":"light-dark(#bae5c5, light-dark(#e6e6e6, #333333))","--support-background-warning-hover":"light-dark(#fcc8c8, light-dark(#e6e6e6, #333333))","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--layer-02":"light-dark(#ffffff, #383838)","--background":"light-dark(#ffffff, #171717)","root":"root_dwc1","contained":"contained_snuo","item":"item_EcMn","success":"success_djlE","warning":"warning_tBhi","uncontained":"uncontained_kQy1","content":"content_eG9O","triggerButton":"triggerButton_v7ly","trigger":"trigger_H4x6","triggerMainContent":"triggerMainContent_lUNS","triggerText":"triggerText_v8dS","chevronIcon":"chevronIcon_mkt7","statusIcon":"statusIcon_PzPO","panel":"panel_aCgP","hasBackground":"hasBackground_K0Q9","header":"header_KTZ_"});
-
-/***/ }),
-
-/***/ 43949:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-30":"1rem","--line-height-30":"1.25rem","--text-disabled":"light-dark(#bfbfbf, #525252)","--support-border-info":"light-dark(#0066cc, #0066cc)","labelBase":"labelBase_BRgo","labelPopover":"labelPopover_JB2h","labelPopoverTrigger":"labelPopoverTrigger_RjF_"});
 
 /***/ }),
 
@@ -273,7 +296,46 @@ weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedi
 
 /***/ }),
 
-/***/ 47691:
+/***/ 48292:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  v: () => (/* binding */ DateField)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/DateField.mjs + 41 modules
+var dist_DateField = __webpack_require__(68407);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./packages/components/src/date-field/DateInput.tsx
+var DateInput = __webpack_require__(79980);
+// EXTERNAL MODULE: ./packages/components/src/date-field/DateSegment.tsx + 1 modules
+var DateSegment = __webpack_require__(18980);
+// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
+var FieldError = __webpack_require__(19060);
+// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx + 1 modules
+var Label = __webpack_require__(34704);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+;// ./packages/components/src/date-field/DateField.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const DateField_module = ({"tokens":"\"../theme/tokens.css\"","--font-family":"\"Inter\", sans-serif","--text-placeholder":"light-dark(#a6a6a6, #525252)","--support-border-warning":"light-dark(#e62323, #e62323)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--border-primary":"light-dark(#171717, #f2f2f2)","--field-01":"light-dark(#f2f2f2, #262626)","--text-primary":"light-dark(#171717, #f2f2f2)","--text-disabled":"light-dark(#bfbfbf, #525252)","--size-130":"2.5rem","--size-150":"3rem","dateField":"dateField_w_5V","inputField":"inputField_RpLn","medium":"medium_OzpD"});
+// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 2 modules
+var LabelWrapper = __webpack_require__(28637);
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/date-field/DateField.tsx
+var _excluded=["className","description","errorMessage","errorPosition","isDisabled","label","size","popover"];var DateField=function DateField(_ref){var _clsx;var className=_ref.className,description=_ref.description,errorMessage=_ref.errorMessage,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,isDisabled=_ref.isDisabled,label=_ref.label,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,popover=_ref.popover,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);return/*#__PURE__*/(0,jsx_runtime.jsxs)(dist_DateField/* DateField */.vM,Object.assign({},rest,{className:(0,clsx/* default */.A)(DateField_module.dateField,className),children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:(0,clsx/* default */.A)(DateField_module.inputField,(_clsx={},_clsx[DateField_module.medium]=size==='medium',_clsx)),"data-disabled":isDisabled||undefined,"data-testid":"date-field_input-field",children:/*#__PURE__*/(0,jsx_runtime.jsx)(DateInput/* DateInput */.J,{children:function children(segment){return/*#__PURE__*/(0,jsx_runtime.jsx)(DateSegment/* DateSegment */.E,{segment:segment});}})}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{children:errorMessage})]}));};
+
+/***/ }),
+
+/***/ 53606:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -281,71 +343,46 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  Example: () => (/* binding */ Example),
+  I18nExample: () => (/* binding */ I18nExample),
   assets: () => (/* binding */ assets),
   contentTitle: () => (/* binding */ contentTitle),
   "default": () => (/* binding */ MDXContent),
   frontMatter: () => (/* binding */ frontMatter),
-  metadata: () => (/* reexport */ site_docs_components_combobox_mdx_9b9_namespaceObject),
+  metadata: () => (/* reexport */ site_docs_components_datefield_mdx_775_namespaceObject),
   toc: () => (/* binding */ toc)
 });
 
-;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-combobox-mdx-9b9.json
-const site_docs_components_combobox_mdx_9b9_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/combobox","title":"ComboBox","description":"Sökbar version av Select","source":"@site/docs/components/combobox.mdx","sourceDirName":"components","slug":"/components/combobox","permalink":"/pr-preview/pr-672/components/combobox","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"ComboBox","description":"Sökbar version av Select","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-components-datefield-mdx-775.json
+const site_docs_components_datefield_mdx_775_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"components/datefield","title":"DateField","description":"Använd ett datumfält när användaren ska fylla i ett datum.","source":"@site/docs/components/datefield.mdx","sourceDirName":"components","slug":"/components/datefield","permalink":"/pr-preview/pr-672/components/datefield","draft":false,"unlisted":false,"tags":[],"version":"current","frontMatter":{"title":"DateField","description":"Använd ett datumfält när användaren ska fylla i ett datum.","pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
 // EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(74848);
 // EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
 var lib = __webpack_require__(28453);
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
-var objectWithoutPropertiesLoose = __webpack_require__(98587);
-;// ./packages/components/src/combobox/ComboBox.module.css
-// extracted by mini-css-extract-plugin
-/* harmony default export */ const ComboBox_module = ({"tokens":"\"../theme/tokens.css\"","--icon-disabled":"light-dark(#bfbfbf, #525252)","--text-disabled":"light-dark(#bfbfbf, #525252)","--field-01":"light-dark(#f2f2f2, #262626)","--field-hover-01":"light-dark(#e6e6e6, #333333)","--layer-01":"light-dark(#f2f2f2, #262626)","--border-primary":"light-dark(#171717, #f2f2f2)","--focus":"0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)","--field-disabled":"light-dark(#f2f2f2, #262626)","--border-disabled":"light-dark(#bfbfbf, #525252)","--text-placeholder":"light-dark(#a6a6a6, #525252)","--icon-primary":"light-dark(#171717, #f2f2f2)","--text-primary":"light-dark(#171717, #f2f2f2)","--layer-selected-hover-01":"light-dark(#cccccc, #474747)","--support-border-warning":"light-dark(#e62323, #e62323)","--font-family":"\"Inter\", sans-serif","--size-50":"0.625rem","--size-70":"0.875rem","--size-130":"2.5rem","--size-150":"3rem","combobox":"combobox_kSJb","inputField":"inputField_oWSg","medium":"medium_ptka","text":"text_ngKo","wrap":"wrap_JKDx","button":"button_yH32","icon":"icon_C34F"});
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/ComboBox.mjs + 37 modules
-var ComboBox = __webpack_require__(20050);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Input.mjs
-var Input = __webpack_require__(79950);
-// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Button.mjs
-var Button = __webpack_require__(65014);
-// EXTERNAL MODULE: ./node_modules/@react-aria/collections/dist/CollectionBuilder.mjs + 1 modules
-var CollectionBuilder = __webpack_require__(41177);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/chevron-down.js
-var chevron_down = __webpack_require__(75107);
-// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
-var clsx = __webpack_require__(34164);
-// EXTERNAL MODULE: ./packages/components/src/label/LabelWrapper.tsx + 1 modules
-var LabelWrapper = __webpack_require__(82684);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.tsx
-var Label = __webpack_require__(63181);
-// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
-var Text = __webpack_require__(19615);
-// EXTERNAL MODULE: ./packages/components/src/field-error/FieldError.tsx + 1 modules
-var FieldError = __webpack_require__(19060);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxPopover.tsx
-var ListBoxPopover = __webpack_require__(48001);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBox.tsx + 1 modules
-var ListBox = __webpack_require__(22247);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxItem.tsx
-var ListBoxItem = __webpack_require__(98437);
-// EXTERNAL MODULE: ./packages/components/src/list-box/ListBoxSection.tsx
-var ListBoxSection = __webpack_require__(73807);
-;// ./packages/components/src/combobox/ComboBox.tsx
-'use client';var _excluded=["label","description","errorMessage","children","items","className","errorPosition","size","popover"];function ComboBox_ComboBox(_ref){var _clsx,_clsx2;var label=_ref.label,description=_ref.description,errorMessage=_ref.errorMessage,children=_ref.children,items=_ref.items,className=_ref.className,_ref$errorPosition=_ref.errorPosition,errorPosition=_ref$errorPosition===void 0?'top':_ref$errorPosition,_ref$size=_ref.size,size=_ref$size===void 0?'large':_ref$size,popover=_ref.popover,props=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var inputRef=react.useRef(null);var handleMouseUp=function handleMouseUp(event){if(event.currentTarget.value){var _inputRef$current;(_inputRef$current=inputRef.current)==null||_inputRef$current.select();}};return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox/* ComboBox */.a3,Object.assign({className:(0,clsx/* default */.A)(ComboBox_module.combobox,className)},props,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(LabelWrapper/* LabelWrapper */.c,{popover:popover,children:label&&/*#__PURE__*/(0,jsx_runtime.jsx)(Label/* Label */.J,{children:label})}),description&&/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* Text */.E,{slot:"description",children:description}),errorPosition==='top'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:ComboBox_module.wrap,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Input/* Input */.p,{className:(0,clsx/* default */.A)(ComboBox_module.inputField,(_clsx={},_clsx[ComboBox_module.medium]=size==='medium',_clsx)),onMouseUp:handleMouseUp,ref:inputRef}),/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{className:(0,clsx/* default */.A)(ComboBox_module.button,(_clsx2={},_clsx2[ComboBox_module.medium]=size==='medium',_clsx2)),"aria-label":"Visa lista",children:/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:ComboBox_module.icon,"aria-hidden":"true",children:/*#__PURE__*/(0,jsx_runtime.jsx)(chevron_down/* default */.A,{size:20,"aria-hidden":true})})})]}),errorPosition==='bottom'&&/*#__PURE__*/(0,jsx_runtime.jsx)(FieldError/* FieldError */.b,{"data-testid":"fieldError",children:errorMessage}),/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxPopover/* ListBoxPopover */.f,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(ListBox/* ListBox */.q,{items:items,children:children})})]}));}function ComboBoxItem(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxItem/* ListBoxItem */.n,Object.assign({},props));}/**
- * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
- */function ComboBoxSelection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ListBoxSection/* ListBoxSection */.r,Object.assign({},props,{children:/*#__PURE__*/(0,jsx_runtime.jsx)(CollectionBuilder/* Collection */.pM,{items:props.children,children:function children(item){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{children:item.name},item.id);}})}));}function ComboBoxSection(props){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSelection,Object.assign({},props));}
-;// ./apps/docs/src/components/examples/combobox/ComboboxExamples.tsx
-var BasicExample=function BasicExample(){return/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Lime",children:"Lime"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"\xC4pple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Apelsin",children:"Apelsin"})]});};var ControlledExample=function ControlledExample(){var _React$useState=react.useState(null),selectedFruit=_React$useState[0],setSelectedFruit=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment,{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt",description:"Du kan bara v\xE4lja en",selectedKey:selectedFruit,onSelectionChange:setSelectedFruit,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Lime",children:"Lime"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"\xC4pple",children:"\xC4pple"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Banan",children:"Banan"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Kiwi",children:"Kiwi"}),/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxItem,{id:"Apelsin",children:"Apelsin"})]}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{style:{marginTop:'1rem'},children:["Vald frukt: ",selectedFruit]})]});};var SectionedExample=function SectionedExample(){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBox_ComboBox,{label:"V\xE4lj din favoritfrukt eller gr\xF6nsak",description:"Du kan bara v\xE4lja en",items:[{name:'Grönsaker',children:[{name:'Morot',id:2},{name:'Broccoli',id:3},{name:'Spenat',id:4},{name:'Potatis',id:5},{name:'Tomat',id:6}]},{name:'Frukter',children:[{name:'Äpple',id:11},{name:'Banan',id:12},{name:'Kiwi',id:13},{name:'Fläder',id:14},{name:'Nektarin',id:15}]}],children:function children(section){return/*#__PURE__*/(0,jsx_runtime.jsx)(ComboBoxSection,Object.assign({},section,{id:section.name}));}});};
+// EXTERNAL MODULE: ./node_modules/@react-aria/i18n/dist/context.mjs + 2 modules
+var context = __webpack_require__(39892);
 // EXTERNAL MODULE: ./apps/docs/src/components/PropsTable.tsx + 2 modules
 var PropsTable = __webpack_require__(68713);
+// EXTERNAL MODULE: ./packages/components/src/date-field/DateField.tsx + 1 modules
+var DateField = __webpack_require__(48292);
 // EXTERNAL MODULE: ./apps/docs/src/components/getComponentMetaData.tsx
 var getComponentMetaData = __webpack_require__(13225);
-;// ./apps/docs/docs/components/combobox.mdx
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/conversion.mjs
+var conversion = __webpack_require__(40277);
+// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/queries.mjs + 1 modules
+var queries = __webpack_require__(97819);
+;// ./apps/docs/src/components/examples/date-field/DateFieldExamples.tsx
+var DateFieldControlled=function DateFieldControlled(){var today=(0,conversion/* toCalendarDate */.gw)((0,queries/* now */.tB)((0,queries/* getLocalTimeZone */.Xj)()));var _React$useState=react.useState(today),date=_React$useState[0],setDate=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:"card",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(DateField/* DateField */.v,{value:date,onChange:function onChange(value){return value&&setDate(value);}}),/*#__PURE__*/(0,jsx_runtime.jsxs)("pre",{children:["Du har valt datumet: ",date==null?void 0:date.toString()]})]});};
+// EXTERNAL MODULE: ./node_modules/@internationalized/date/dist/CalendarDate.mjs
+var CalendarDate = __webpack_require__(99451);
+;// ./apps/docs/docs/components/datefield.mdx
 
 
 const frontMatter = {
-	title: 'ComboBox',
-	description: 'Sökbar version av Select',
+	title: 'DateField',
+	description: 'Använd ett datumfält när användaren ska fylla i ett datum.',
 	pagination_prev: null,
 	pagination_next: null
 };
@@ -360,34 +397,51 @@ const assets = {
 
 
 
+
+
+
+const Example = props => {
+  return (0,jsx_runtime.jsx)("div", {
+    className: "card",
+    children: (0,jsx_runtime.jsx)(DateField/* DateField */.v, {
+      label: "Etikett",
+      description: "Beskrivning",
+      ...props
+    })
+  });
+};
+const I18nExample = props => {
+  return (0,jsx_runtime.jsx)("div", {
+    className: "card",
+    children: (0,jsx_runtime.jsx)(context/* I18nProvider */.C, {
+      locale: "fr-Fr",
+      children: (0,jsx_runtime.jsx)(DateField/* DateField */.v, {
+        label: "Välj ett datum",
+        description: "vilket datum som helst"
+      })
+    })
+  });
+};
 const toc = [{
-  "value": "Kontrollerat val",
-  "id": "kontrollerat-val",
+  "value": "Användning",
+  "id": "användning",
   "level": 2
 }, {
-  "value": "Riktlinjer",
-  "id": "riktlinjer",
-  "level": 2
-}, {
-  "value": "Val av komponent",
-  "id": "val-av-komponent",
+  "value": "Lokalisering",
+  "id": "lokalisering",
   "level": 3
 }, {
-  "value": "Sektioner",
-  "id": "sektioner",
-  "level": 2
+  "value": "Förvalt värde (uncontrolled)",
+  "id": "förvalt-värde-uncontrolled",
+  "level": 3
+}, {
+  "value": "Controlled value",
+  "id": "controlled-value",
+  "level": 3
 }, {
   "value": "API",
   "id": "api",
   "level": 2
-}, {
-  "value": "ComboBox",
-  "id": "combobox",
-  "level": 3
-}, {
-  "value": "ComboBoxItem",
-  "id": "comboboxitem",
-  "level": 3
 }];
 function _createMdxContent(props) {
   const _components = {
@@ -395,101 +449,124 @@ function _createMdxContent(props) {
     code: "code",
     h2: "h2",
     h3: "h3",
-    li: "li",
     p: "p",
     pre: "pre",
-    strong: "strong",
-    ul: "ul",
     ...(0,lib/* useMDXComponents */.R)(),
     ...props.components
   };
   return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [(0,jsx_runtime.jsx)(getComponentMetaData/* ComponentHeader */.B, {
-      name: "Combobox",
-      friendlyName: "Flerval med sök, väljare med sök, dropdown med sök",
-      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/ComboBox.html"
+      name: "Datefield",
+      friendlyName: "Datumfält",
+      overrideHeadlessLink: "https://react-spectrum.adobe.com/react-aria/DateField.html"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["En ComboBox är en sökbar version av Select. Combobox används för att välja ", (0,jsx_runtime.jsx)(_components.strong, {
-        children: "ett"
-      }), " alternativ av fler än fyra (4) alternativ."]
+      children: ["Datumfält används när användaren ska fylla i ett datum eller som ett fält där datum är representerat. Datumfältet\nbygger på React Arias ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/DateField.html",
+        children: "DateField"
+      }), ".\nIn- och utdata till DateField liksom andra tidsrelaterade komponenter bygger på\n", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/internationalized/date/index.html",
+        children: "@internationalized/date"
+      }), " så ytterligare referens\ntill hur värden ska formateras hittas där."]
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ComboBox, ComboBoxItem } from '@midas-ds/components'\n"
+        children: "import { DateField } from '@midas-ds/components'\n"
       })
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "<ComboBox\n  label='Välj din favoritfrukt'\n  description='Du kan bara välja en'\n>\n  <ComboBoxItem id='Lime'>Lime</ComboBoxItem>\n  <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>\n  <ComboBoxItem id='Banan'>Banan</ComboBoxItem>\n  <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>\n  <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>\n</ComboBox>\n"
+        children: "<DateField\n  label='Etikett'\n  description='Beskrivning'\n/>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(BasicExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "kontrollerat-val",
-      children: "Kontrollerat val"
+    }), "\n", (0,jsx_runtime.jsx)(Example, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "användning",
+      children: "Användning"
     }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
-      children: ["Använd attributet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "id"
-      }), " och eventet ", (0,jsx_runtime.jsx)(_components.code, {
-        children: "onSelectionChange"
-      }), " för att använda controlled value på ComboBox.\nDen valda ComboBoxItems värde skickas till callbacken, så kan du använda det för att uppdatera ditt state."]
-    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
-      children: (0,jsx_runtime.jsx)(_components.code, {
-        className: "language-tsx",
-        children: "import React from 'react'\nimport { Key } from 'react-aria-components'\n\nconst [selectedFruit, setSelectedFruit] = React.useState<Key | null>(null)\n\nreturn (\n  <ComboBox\n    label='Välj din favoritfrukt eller grönsak'\n    description='Du kan bara välja en'\n    selectedKey={selectedFruit}\n    onSelectionChange={setSelectedFruit}\n  >\n    <ComboBoxItem id='Lime'>Lime</ComboBoxItem>\n    <ComboBoxItem id='Äpple'>Äpple</ComboBoxItem>\n    <ComboBoxItem id='Banan'>Banan</ComboBoxItem>\n    <ComboBoxItem id='Kiwi'>Kiwi</ComboBoxItem>\n    <ComboBoxItem id='Apelsin'>Apelsin</ComboBoxItem>\n  </ComboBox>\n)\n"
-      })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(ControlledExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "riktlinjer",
-      children: "Riktlinjer"
+      children: ["DateField fungerar som andra formulärskomponenter och kan integreras i vanliga HTML-forms via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "name"
+      }), " eller kan valideras\ni andra forms via ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "validate"
+      }), " eller ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "isInvalid"
+      }), ". Se ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "#api",
+        children: "props"
+      }), " för samtliga egenskaper."]
     }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "val-av-komponent",
-      children: "Val av komponent"
-    }), "\n", (0,jsx_runtime.jsxs)(_components.ul, {
-      children: ["\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det ska gå att välja flera eller inga alternativ är det ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/checkbox",
-          children: "Checkbox"
-        }), " eller ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/select",
-          children: "Select"
-        }), " som ska användas."]
-      }), "\n", (0,jsx_runtime.jsxs)(_components.li, {
-        children: ["Om det är färre alternativ än fyra (4) används med fördel ", (0,jsx_runtime.jsx)(_components.a, {
-          href: "/components/radio",
-          children: "Radio"
-        }), " istället."]
-      }), "\n"]
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
-      id: "sektioner",
-      children: "Sektioner"
+      id: "lokalisering",
+      children: "Lokalisering"
     }), "\n", (0,jsx_runtime.jsx)(_components.p, {
-      children: "Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:"
+      children: "Tänk på att formatet för inmatning (exempelvis YYYY/MM/DD) beror av användarens språkinställning så referera inte till\ndet i etikett eller hjälptext."
     }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
       children: (0,jsx_runtime.jsx)(_components.code, {
         className: "language-tsx",
-        children: "import { ComboBoxSection } from '@midas-ds/components'\n\nconst options = [\n  {\n    name: 'Grönsaker',\n    children: [\n      { name: 'Morot', id: 2 },\n      { name: 'Broccoli', id: 3 },\n      { name: 'Spenat', id: 4 },\n      { name: 'Potatis', id: 5 },\n      { name: 'Tomat', id: 6 },\n    ],\n  },\n  {\n    name: 'Frukter',\n    children: [\n      { name: 'Äpple', id: 11 },\n      { name: 'Banan', id: 12 },\n      { name: 'Kiwi', id: 13 },\n      { name: 'Fläder', id: 14 },\n      { name: 'Nektarin', id: 15 },\n    ],\n  },\n]\n\nreturn (\n  <ComboBox\n    label='Välj din favoritfrukt eller grönsak'\n    description='Du kan bara välja en'\n    items={options}\n  >\n    {section => (\n      <ComboBoxSection\n        {...section}\n        id={section.name}\n      />\n    )}\n  </ComboBox>\n)\n"
+        children: "<I18nProvider locale='fr-Fr'>\n  <DateField\n    label='Välj ett datum'\n    description='vilket datum som helst'\n  />\n</I18nProvider>\n"
       })
-    }), "\n", (0,jsx_runtime.jsx)("div", {
-      className: "card",
-      children: (0,jsx_runtime.jsx)(SectionedExample, {})
-    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+    }), "\n", (0,jsx_runtime.jsx)(I18nExample, {}), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["DateField stödjer också olika kalendrar, se\n", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/react-aria/DateField.html#international-calendars",
+        children: "React Aria"
+      }), "\noch ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/calendar#adding_a_calendar_in_the_locale_string",
+        children: "mdm web docs"
+      }), "\nför referens om hur du går till väga för att konvertera datum mellan olika kalendrar."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<I18nProvider locale='fr-Fr-u-ca-buddhist'>\n  <Example\n    label='Välj ett datum'\n    description='Calendrier bouddhiste français'\n  />\n</I18nProvider>\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(context/* I18nProvider */.C, {
+      locale: "fr-Fr-u-ca-buddhist",
+      children: (0,jsx_runtime.jsx)(Example, {
+        label: "Välj ett datum",
+        description: "Calendrier bouddhiste français"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "förvalt-värde-uncontrolled",
+      children: "Förvalt värde (uncontrolled)"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Använd ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "defaultValue"
+      }), " för att sätta ett förvalt värde (uncontrolled). ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "CalendarDate"
+      }), " är\nett datum utan tidskomponent."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { CalendarDate } from '@internationalized/date'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "<DateField defaultValue={new CalendarDate(2025, 12, 25)} />\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(Example, {
+      defaultValue: new CalendarDate/* CalendarDate */.ng(2025, 12, 25),
+      label: "Happy Kwanza",
+      description: ""
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "controlled-value",
+      children: "Controlled value"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Följer mönstret av andra input-fält, ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "onChange"
+      }), " och ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "value"
+      }), " ger tillgång till DateField-state.\nAnvänd funktioner ur ", (0,jsx_runtime.jsx)(_components.a, {
+        href: "https://react-spectrum.adobe.com/internationalized/date/index.html",
+        children: "@internationlized/date"
+      }), "\nför korrekt översättning mellan olika format."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { DateField } from '@midas-ds/components'\nimport { now, toCalendarDate, getLocalTimeZone } from '@internationalized/date'\n\nexport const DateFieldControlled = () => {\n  const today = toCalendarDate(now(getLocalTimeZone()))\n  const [date, setDate] = React.useState(today)\n  return (\n    <>\n      <DateField\n        value={date}\n        onChange={setDate}\n      />\n      <pre>Du har valt datumet: {date?.toString()}</pre>\n    </>\n  )\n}\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(DateFieldControlled, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
       id: "api",
       children: "API"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "combobox",
-      children: "ComboBox"
     }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "ComboBox"
-    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
-      id: "comboboxitem",
-      children: "ComboBoxItem"
-    }), "\n", (0,jsx_runtime.jsx)(PropsTable/* PropTable */.U, {
-      name: "ComboBoxItem",
-      defaultOpen: false
+      name: "DateField"
+    }), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {})
     })]
   });
 }
@@ -507,22 +584,6 @@ function MDXContent(props = {}) {
 }
 
 
-
-/***/ }),
-
-/***/ 48001:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   f: () => (/* binding */ ListBoxPopover)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(21416);
-/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6974);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["className","children"];var ListBoxPopover=function ListBoxPopover(_ref){var className=_ref.className,children=_ref.children,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .Popover */ .A,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(className,_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxPopover),offset:0},rest,{children:children}));};
 
 /***/ }),
 
@@ -587,22 +648,6 @@ var jsx_runtime = __webpack_require__(74848);
 
 /***/ }),
 
-/***/ 63181:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   J: () => (/* binding */ Label)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(21704);
-/* harmony import */ var _Label_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43949);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className","elementType"];var DEFAULT_ELEMENT='label';var Label=function Label(_ref){var children=_ref.children,className=_ref.className,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var labelProps=Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Label_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.labelBase,className),elementType:elementType||DEFAULT_ELEMENT},rest);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Label */ .J,Object.assign({},labelProps,{children:children}));};
-
-/***/ }),
-
 /***/ 68713:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -645,22 +690,6 @@ var jsdocLinkToMarkdown=function jsdocLinkToMarkdown(jsdocLink){if(!jsdocLink.in
 var jsx_runtime = __webpack_require__(74848);
 ;// ./apps/docs/src/components/PropsTable.tsx
 var DisplayCompositeTypes=function DisplayCompositeTypes(_ref){var props=_ref.props;switch(props.type.name){case'enum':{return/*#__PURE__*/(0,jsx_runtime.jsxs)(Dialog/* DialogTrigger */.zM,{children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Pressable/* Pressable */.o,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("span",{role:"button",style:{cursor:'pointer'},children:/*#__PURE__*/(0,jsx_runtime.jsx)(Lowlight/* default */.A,{value:props.type.raw,inline:true,language:"typescript",markers:[]})})}),/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* Popover */.A,{style:{'--background':tokens.semantic.background,'--border':tokens.semantic.borderPrimary},className:propstable_module.popover,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(OverlayArrow/* OverlayArrow */.k,{className:propstable_module.arrow,children:/*#__PURE__*/(0,jsx_runtime.jsx)("svg",{width:12,height:12,viewBox:"0 0 12 12",children:/*#__PURE__*/(0,jsx_runtime.jsx)("path",{d:"M0 0 L6 6 L12 0"})})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Dialog/* Dialog */.lG,{children:/*#__PURE__*/(0,jsx_runtime.jsx)("span",{className:"hljs-code",children:props.type.value.map(function(r,i){return/*#__PURE__*/(0,jsx_runtime.jsxs)("span",{children:[i===0?' ':' | ',/*#__PURE__*/(0,jsx_runtime.jsx)(Lowlight/* default */.A,{value:r.value.replace(/"/g,"'"),inline:true,language:"typescript",markers:[]})]},""+r.value+i);})})})]})]});}default:return/*#__PURE__*/(0,jsx_runtime.jsx)(Lowlight/* default */.A,{value:props.type.name,inline:true,language:"typescript",markers:[]});}};var PropTable=function PropTable(_ref2){var _ComponentsDocs$find;var name=_ref2.name,_ref2$defaultOpen=_ref2.defaultOpen,defaultOpen=_ref2$defaultOpen===void 0?true:_ref2$defaultOpen;var globalData=(0,useGlobalData/* default */.Ay)();var ComponentsDocs=globalData['docusaurus-plugin-react-docgen-typescript']["default"];var props=(_ComponentsDocs$find=ComponentsDocs.find(function(componentDoc){return componentDoc.displayName===name;}))==null?void 0:_ComponentsDocs$find.props;if(!props){return null;}var _Object$entries$reduc=Object.entries(props).reduce(function(acc,_ref3){var key=_ref3[0],value=_ref3[1];if(key.startsWith('on')){acc.events[key]=value;}else if(key.startsWith('aria-')){acc.accessibility[key]=value;}else{acc.rest[key]=value;}return acc;},{events:{},accessibility:{},rest:{}}),events=_Object$entries$reduc.events,accessibility=_Object$entries$reduc.accessibility,rest=_Object$entries$reduc.rest;var Grid=function Grid(_ref4){var propGroup=_ref4.propGroup,_ref4$showDefault=_ref4.showDefault,showDefault=_ref4$showDefault===void 0?true:_ref4$showDefault;return/*#__PURE__*/(0,jsx_runtime.jsx)("div",{className:propstable_module.propsGridTable,children:/*#__PURE__*/(0,jsx_runtime.jsxs)("table",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("thead",{children:/*#__PURE__*/(0,jsx_runtime.jsxs)("tr",{children:[/*#__PURE__*/(0,jsx_runtime.jsx)("th",{children:"Name"}),/*#__PURE__*/(0,jsx_runtime.jsx)("th",{children:"Type"}),/*#__PURE__*/(0,jsx_runtime.jsx)("th",{children:showDefault&&'Default'}),/*#__PURE__*/(0,jsx_runtime.jsx)("th",{children:"Description"})]})}),/*#__PURE__*/(0,jsx_runtime.jsx)("tbody",{children:Object.keys(propGroup).map(function(key){return/*#__PURE__*/(0,jsx_runtime.jsxs)("tr",{children:[/*#__PURE__*/(0,jsx_runtime.jsxs)("td",{"data-title":"Name",children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Lowlight/* default */.A,{value:key,inline:true,language:"typescript",markers:[]}),props[key].required&&' *']}),/*#__PURE__*/(0,jsx_runtime.jsx)("td",{"data-title":"Type",children:/*#__PURE__*/(0,jsx_runtime.jsx)(DisplayCompositeTypes,{props:props[key]})}),showDefault?/*#__PURE__*/(0,jsx_runtime.jsx)("td",{"data-title":"Default",children:props[key].defaultValue?/*#__PURE__*/(0,jsx_runtime.jsx)(Lowlight/* default */.A,{value:props[key].defaultValue.value,inline:true,language:"typescript",markers:[]}):'-'}):/*#__PURE__*/(0,jsx_runtime.jsx)("td",{}),/*#__PURE__*/(0,jsx_runtime.jsx)("td",{"data-title":"Description",children:/*#__PURE__*/(0,jsx_runtime.jsx)(lib/* Markdown */.oz,{children:jsdocLinkToMarkdown(props[key].description)})})]},key);})})]})});};return/*#__PURE__*/(0,jsx_runtime.jsxs)(Accordion/* Accordion */.n,{className:propstable_module.accordion,allowsMultipleExpanded:true,defaultExpandedKeys:defaultOpen?['props']:[],children:[Object.getOwnPropertyNames(rest).length!==0&&/*#__PURE__*/(0,jsx_runtime.jsx)(AccordionItem/* AccordionItem */.A,{id:"props",title:"Props",className:propstable_module.accordionItem,hasBackground:false,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Grid,{propGroup:rest})}),Object.getOwnPropertyNames(events).length!==0&&/*#__PURE__*/(0,jsx_runtime.jsx)(AccordionItem/* AccordionItem */.A,{id:"events",title:"Events",className:propstable_module.accordionItem,hasBackground:false,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Grid,{propGroup:events,showDefault:false})}),Object.getOwnPropertyNames(accessibility).length!==0&&/*#__PURE__*/(0,jsx_runtime.jsx)(AccordionItem/* AccordionItem */.A,{id:"accessibility",title:"Tillg\xE4nglighet",className:propstable_module.accordionItem,hasBackground:false,children:/*#__PURE__*/(0,jsx_runtime.jsx)(Grid,{propGroup:accessibility,showDefault:false})})]});};
-
-/***/ }),
-
-/***/ 73807:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   r: () => (/* binding */ ListBoxSection)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(79255);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(83181);
-/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6974);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","name"];var ListBoxSection=function ListBoxSection(_ref){var children=_ref.children,name=_ref.name,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .ListBoxSection */ .rd,Object.assign({},rest,{children:[/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_5__/* .Header */ .Y,{className:_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxSectionHeading,children:name}),children]}));};
 
 /***/ }),
 
@@ -710,31 +739,19 @@ var _excluded=["children","fluid","isContained","removeMargins"];/**
 
 /***/ }),
 
-/***/ 82684:
+/***/ 79980:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  c: () => (/* binding */ LabelWrapper)
-});
-
-// EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(96540);
-// EXTERNAL MODULE: ./packages/components/src/label/Label.module.css
-var Label_module = __webpack_require__(43949);
-// EXTERNAL MODULE: ./packages/components/src/popover/Popover.tsx + 1 modules
-var Popover = __webpack_require__(28777);
-// EXTERNAL MODULE: ./packages/components/src/button/Button.tsx
-var Button = __webpack_require__(54031);
-// EXTERNAL MODULE: ./node_modules/lucide-react/dist/esm/icons/info.js
-var info = __webpack_require__(97213);
-// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(74848);
-;// ./packages/components/src/label/InfoPopover.tsx
-/** Display an info-icon with popover next to the label to further explain what the user should enter in the field */var InfoPopover=function InfoPopover(_ref){var children=_ref.children,_ref$ariaLabel=_ref['aria-label'],ariaLabel=_ref$ariaLabel===void 0?'Mer information':_ref$ariaLabel;var _React$useState=react.useState(false),isOpen=_React$useState[0],setIsOpen=_React$useState[1];return/*#__PURE__*/(0,jsx_runtime.jsxs)(Popover/* PopoverTrigger */.W,{isOpen:isOpen,onOpenChange:setIsOpen,children:[/*#__PURE__*/(0,jsx_runtime.jsx)(Button/* Button */.$,{variant:"icon",size:"medium",className:Label_module/* default */.A.labelPopoverTrigger,"aria-label":ariaLabel,children:/*#__PURE__*/(0,jsx_runtime.jsx)(info/* default */.A,{size:20})}),/*#__PURE__*/(0,jsx_runtime.jsx)(Popover/* Popover */.A,{children:children})]});};
-;// ./packages/components/src/label/LabelWrapper.tsx
-var LabelWrapper=function LabelWrapper(_ref){var children=_ref.children,popover=_ref.popover;if(popover)return/*#__PURE__*/(0,jsx_runtime.jsxs)("div",{className:Label_module/* default */.A.labelPopover,children:[children,/*#__PURE__*/(0,jsx_runtime.jsx)(InfoPopover,Object.assign({},popover))]});return children;};
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   J: () => (/* binding */ DateInput)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(68407);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
+/* harmony import */ var _DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41390);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["className"];var DateInput=function DateInput(_ref){var className=_ref.className,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .DateInput */ .J3,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_DateInput_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.dateInput,className)},rest));};
 
 /***/ }),
 
@@ -796,22 +813,6 @@ var dist_Heading = __webpack_require__(57936);
 var jsx_runtime = __webpack_require__(74848);
 ;// ./packages/components/src/heading/Heading.tsx
 var _excluded=["children","className","isExpressive","level","elementType"];var Heading=function Heading(_ref){var children=_ref.children,className=_ref.className,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$level=_ref.level,level=_ref$level===void 0?3:_ref$level,elementType=_ref.elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var semanticLevel=elementType&&parseInt(elementType.split('h')[1]);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Heading/* Heading */.D,Object.assign({level:semanticLevel||level,className:(0,clsx/* default */.A)([Heading_module.h1,Heading_module.h2,Heading_module.h3,Heading_module.h4,Heading_module.h5,Heading_module.h6][level-1],className)},isExpressive&&{'data-expressive':true},rest,{children:children}));};
-
-/***/ }),
-
-/***/ 98437:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   n: () => (/* binding */ ListBoxItem)
-/* harmony export */ });
-/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(34164);
-/* harmony import */ var react_aria_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(79255);
-/* harmony import */ var _ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6974);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
-var _excluded=["children","className"];var ListBoxItem=function ListBoxItem(_ref){var children=_ref.children,className=_ref.className,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_aria_components__WEBPACK_IMPORTED_MODULE_4__/* .ListBoxItem */ .nh,Object.assign({className:(0,clsx__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .A)(_ListBox_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.listBoxItem,className)},rest,{children:children}));};
 
 /***/ })
 
