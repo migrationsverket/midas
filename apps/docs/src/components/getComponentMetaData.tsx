@@ -19,7 +19,7 @@ export const ComponentHeader = ({
   const storybookHost =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4400'
-      : baseUrl(`/storybook/?path=/docs/components-${name.toLowerCase()}--docs`)
+      : baseUrl('/storybook')
   const storybookLink = `${storybookHost}/${componentPath}`
 
   return (
