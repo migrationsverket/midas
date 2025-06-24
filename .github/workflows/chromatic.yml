@@ -12,6 +12,7 @@ on:
 
 jobs:
   chromatic:
+    if: contains(github.event.head_commit.message, '[run-chromatic]')
     name: Run Chromatic
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +30,6 @@ jobs:
         uses: chromaui/action@latest
         with:
           buildCommand: npx nx run components:build-storybook:ci
-          outputDir: dist/storybook/ui
+          outputDir: dist/docs/storybook
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          onlyStoryNames: '**/*/kitchenSink'
+          onlyChanged: true # enables turbosnap

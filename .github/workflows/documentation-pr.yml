@@ -21,7 +21,7 @@ concurrency: preview-${{ github.ref }}
 
 jobs:
   deploy-preview:
-    name: Build Docusaurus and deploy PR preview
+    name: Build Docusaurus and Storybook and deploy PR preview
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -39,6 +39,10 @@ jobs:
       - name: Lint, test and build website
         if: github.event.action != 'closed'
         run: npx nx run-many -t lint,test,build --projects=docs
+
+      - name: Build storybook
+        if: github.event.action != 'closed'
+        run: npx nx run components:build-storybook:ci
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1

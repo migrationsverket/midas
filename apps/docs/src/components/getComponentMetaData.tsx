@@ -1,6 +1,6 @@
 import { Grid, GridItem, LinkButton } from '@midas-ds/components'
 import { BookMarked, BookText } from 'lucide-react'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 
 export const ComponentHeader = ({
   name,
@@ -13,18 +13,13 @@ export const ComponentHeader = ({
   overrideHeadlessLink?: string
   overrideHeadlessLinkTitle?: string
 }) => {
-  const {
-    siteConfig: { customFields },
-  } = useDocusaurusContext()
+  const baseUrl = useBaseUrl
 
   const componentPath = `?path=/docs/components-${name.toLowerCase()}--docs`
   const storybookHost =
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4400'
-      : customFields?.currentChromaticBranchUrl
-        ? `https://${customFields?.currentChromaticBranchUrl}--${customFields.chromaticAppId}.chromatic.com`
-        : `https://main--${customFields?.chromaticAppId}.chromatic.com`
-
+      : baseUrl(`/storybook/?path=/docs/components-${name.toLowerCase()}--docs`)
   const storybookLink = `${storybookHost}/${componentPath}`
 
   return (

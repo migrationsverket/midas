@@ -51,7 +51,8 @@
       },
       "configurations": {
         "ci": {
-          "quiet": true
+          "quiet": true,
+          "outputDir": "dist/docs/storybook"
         }
       }
     },
