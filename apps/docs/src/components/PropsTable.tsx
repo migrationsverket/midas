@@ -1,18 +1,16 @@
 import useGlobalData from '@docusaurus/useGlobalData'
-import { Accordion, AccordionItem } from '@midas-ds/components'
-import { semantic } from '@midas-ds/components/theme'
+import {
+  Accordion,
+  AccordionItem,
+  DialogTrigger,
+  Popover,
+} from '@midas-ds/components'
 import { ComponentDoc, Props } from 'react-docgen-typescript'
 import styles from '../css/propstable.module.css'
 import ReactMarkdown from 'react-markdown'
 import Lowlight from 'react-lowlight'
 import 'react-lowlight/common'
-import {
-  Dialog,
-  DialogTrigger,
-  OverlayArrow,
-  Popover,
-  Pressable,
-} from 'react-aria-components'
+import { Pressable } from 'react-aria-components'
 import { jsdocLinkToMarkdown } from '../utils/jsdocLinkToMarkdown'
 
 export const DisplayCompositeTypes = ({ props }: Props) => {
@@ -33,43 +31,22 @@ export const DisplayCompositeTypes = ({ props }: Props) => {
               />
             </span>
           </Pressable>
-          <Popover
-            style={
-              {
-                '--background': semantic.background,
-                '--border': semantic.borderPrimary,
-              } as React.CSSProperties
-            }
-            className={styles.popover}
-          >
-            <OverlayArrow className={styles.arrow}>
-              <svg
-                width={12}
-                height={12}
-                viewBox='0 0 12 12'
-              >
-                <path d='M0 0 L6 6 L12 0' />
-              </svg>
-            </OverlayArrow>
-            <Dialog>
-              <span className='hljs-code'>
-                {props.type.value.map(
-                  (r: Record<'value', string>, i: number) => {
-                    return (
-                      <span key={`${r.value}${i}`}>
-                        {i === 0 ? ' ' : ' | '}
-                        <Lowlight
-                          value={r.value.replace(/"/g, "'")}
-                          inline
-                          language='typescript'
-                          markers={[]}
-                        />
-                      </span>
-                    )
-                  },
-                )}
-              </span>
-            </Dialog>
+          <Popover>
+            <span className='hljs-code'>
+              {props.type.value.map((r: Record<'value', string>, i: number) => {
+                return (
+                  <span key={`${r.value}${i}`}>
+                    {i === 0 ? ' ' : ' | '}
+                    <Lowlight
+                      value={r.value.replace(/"/g, "'")}
+                      inline
+                      language='typescript'
+                      markers={[]}
+                    />
+                  </span>
+                )
+              })}
+            </span>
           </Popover>
         </DialogTrigger>
       )

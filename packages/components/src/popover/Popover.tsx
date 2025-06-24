@@ -4,9 +4,7 @@ import * as React from 'react'
 import {
   PopoverProps,
   Popover as AriaPopover,
-  DialogTrigger as AriaPopoverTrigger,
   OverlayArrow,
-  DialogTriggerProps,
 } from 'react-aria-components'
 
 interface MidasPopoverProps extends Omit<PopoverProps, 'children'> {
@@ -37,8 +35,4 @@ export function Popover({
       {children}
     </AriaPopover>
   )
-}
-
-export function PopoverTrigger({ children, ...props }: DialogTriggerProps) {
-  return <AriaPopoverTrigger {...props}>{children}</AriaPopoverTrigger>
 }

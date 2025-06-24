@@ -23,12 +23,12 @@ import {
 Popover kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen. Tillskillnad från [Tooltip](../tooltip) så triggas Popover på klick istället för hover och är öppen tills användare klickar bort från den. Popover kan även fyllas med vad som helst tillskillnad från Popover som bara tar en kort hjälptext.
 
 ```tsx
-import { Popover, PopoverTrigger, Button } from '@midas-ds/components'
+import { Popover, DialogTrigger, Button } from '@midas-ds/components'
 import { Save } from 'lucide-react'
 ```
 
 ```tsx
-<PopoverTrigger>
+<DialogTrigger>
   <Button
     variant='icon'
     aria-label='Spara'
@@ -36,7 +36,7 @@ import { Save } from 'lucide-react'
     <Save />
   </Button>
   <Popover>Spara</Popover>
-</PopoverTrigger>
+</DialogTrigger>
 ```
 
 <PopoverExample />
@@ -52,7 +52,7 @@ dokumentation hänvisas till React Aria.
 Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text. Innehållet kan t.ex förtydligas med rubriknivåer, bekräftelseknappar eller andra interaktiva komponenter.
 
 ```tsx
-<PopoverTrigger>
+<DialogTrigger>
   <Button
     variant='icon'
     aria-label='Din dator'
@@ -63,13 +63,13 @@ Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text.
     <Heading>Hårddiskutrymme</Heading>
     <Text>Din dator har 150gb kvar i hemkatalogen.</Text>
   </Popover>
-</PopoverTrigger>
+</DialogTrigger>
 ```
 
 <PopoverTextExample />
 
 ```tsx
-<PopoverTrigger>
+<DialogTrigger>
   <Button
     variant='icon'
     aria-label='Tillgänglighetsinställningar'
@@ -87,7 +87,7 @@ Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text.
       <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
     </CheckboxGroup>
   </Popover>
-</PopoverTrigger>
+</DialogTrigger>
 ```
 
 <PopoverFormExample />
@@ -97,22 +97,22 @@ Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text.
 Placering av Popover i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
 
 ```tsx
-<PopoverTrigger>
+<DialogTrigger>
   <Button>
     <ArrowLeft />
   </Button>
   <Popover placement='left'>
     Popover visas till vänster om trigger-elementet
   </Popover>
-</PopoverTrigger>
-<PopoverTrigger>
+</DialogTrigger>
+<DialogTrigger>
   <Button>
     <ArrowUp />
   </Button>
   <Popover placement='top'>
     Popover visas på ovansidan av trigger-elementet
   </Popover>
-</PopoverTrigger>
+</DialogTrigger>
 ```
 
 <PopoverPlacement />
@@ -125,14 +125,14 @@ export const ControlledPopover = () => {
 
   return (
     <>
-      <PopoverTrigger
+      <DialogTrigger
         isOpen={isOpen}
         onOpenChange={setOpen}
         delay={500}
       >
         <Button>Klicka på mig</Button>
         <Popover>Meddelande</Popover>
-      </PopoverTrigger>
+      </DialogTrigger>
       <pre>Popover {isOpen ? 'visas' : 'visas inte'}</pre>
     </>
   )
@@ -145,7 +145,7 @@ export const ControlledPopover = () => {
 
 ### Valfritt element som Trigger
 
-PopoverTrigger fungerar direkt med alla **focusable** React Aria-komponenter (t.ex. Button, Link, etc.). Anpassade trigger-element,
+DialogTrigger fungerar direkt med alla **focusable** React Aria-komponenter (t.ex. Button, Link, etc.). Anpassade trigger-element,
 såsom tredjepartskomponenter och andra DOM-element, stöds också genom att de omsluts med `<Pressable>`-komponenten.
 
 ```tsx
@@ -153,12 +153,12 @@ import { Pressable } from 'react-aria-components'
 ```
 
 ```tsx
-<PopoverTrigger>
+<DialogTrigger>
   <Pressable>
     <span role='button'>Trigger</span>
   </Pressable>
   <Popover>Med hjälp av Pressable kan vilket element som helst bli en trigger!</Popover>
-</PopoverTrigger>
+</DialogTrigger>
 ```
 
 <div
@@ -204,10 +204,10 @@ import { TextField } from '@midas-ds/components'
 
 <PropTable name='Popover' />
 
-### PopoverTrigger
+### DialogTrigger
 
 <PropTable
-  name='PopoverTrigger'
+  name='DialogTrigger'
   defaultOpen={false}
 />
 ```

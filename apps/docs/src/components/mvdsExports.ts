@@ -24,9 +24,9 @@ import {
   Select,
   Tooltip,
   Popover,
-  PopoverTrigger,
   Dropdown,
   DropdownItem,
+  DialogTrigger,
   InfoBanner,
 } from '@midas-ds/components'
 
@@ -59,7 +59,7 @@ export {
   theme,
   Tooltip,
   Popover,
-  PopoverTrigger,
+  DialogTrigger,
   Dropdown,
   DropdownItem,
   InfoBanner,

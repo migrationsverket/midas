@@ -1,9 +1,10 @@
 import React from 'react'
-import { Popover, PopoverTrigger } from '../popover'
+import { Popover } from '../popover'
 import { Button } from '../button'
 import { Info } from 'lucide-react'
 import styles from './LabelWrapper.module.css'
 import { LabelWrapperContext } from './LabelWrapper'
+import { DialogTrigger } from '../modal'
 
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
 export interface InfoPopoverProps {
@@ -21,7 +22,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
   const ctx = React.useContext(LabelWrapperContext)
 
   return (
-    <PopoverTrigger
+    <DialogTrigger
       isOpen={isOpen}
       onOpenChange={setIsOpen}
     >
@@ -35,6 +36,6 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
         <Info size={20} />
       </Button>
       <Popover>{children}</Popover>
-    </PopoverTrigger>
+    </DialogTrigger>
   )
 }

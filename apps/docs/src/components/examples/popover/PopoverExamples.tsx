@@ -4,7 +4,7 @@ import {
   CheckboxGroup,
   Heading,
   Popover,
-  PopoverTrigger,
+  DialogTrigger,
   Text,
   TextField,
 } from '@midas-ds/components'
@@ -18,7 +18,7 @@ export const PopoverExample = () => {
       className='card'
       style={{ display: 'block' }}
     >
-      <PopoverTrigger>
+      <DialogTrigger>
         <Button
           variant='icon'
           aria-label='Spara'
@@ -26,7 +26,7 @@ export const PopoverExample = () => {
           <Save />
         </Button>
         <Popover>Spara</Popover>
-      </PopoverTrigger>
+      </DialogTrigger>
     </div>
   )
 }
@@ -37,7 +37,7 @@ export const PopoverTextExample = () => {
       className='card'
       style={{ display: 'block' }}
     >
-      <PopoverTrigger>
+      <DialogTrigger>
         <Button
           variant='icon'
           aria-label='Din dator'
@@ -48,7 +48,7 @@ export const PopoverTextExample = () => {
           <Heading>Hårddiskutrymme</Heading>
           <Text>Din dator har 150gb kvar i hemkatalogen.</Text>
         </Popover>
-      </PopoverTrigger>
+      </DialogTrigger>
     </div>
   )
 }
@@ -59,7 +59,7 @@ export const PopoverFormExample = () => {
       className='card'
       style={{ display: 'block' }}
     >
-      <PopoverTrigger>
+      <DialogTrigger>
         <Button
           variant='icon'
           aria-label='Tillgänglighetsinställningar'
@@ -77,7 +77,7 @@ export const PopoverFormExample = () => {
             <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
           </CheckboxGroup>
         </Popover>
-      </PopoverTrigger>
+      </DialogTrigger>
     </div>
   )
 }
@@ -93,22 +93,22 @@ export const PopoverPlacement = () => {
         gap: '1rem',
       }}
     >
-      <PopoverTrigger>
+      <DialogTrigger>
         <Button>
           <ArrowLeft />
         </Button>
         <Popover placement='left'>
           Popover visas till vänster om trigger-elementet
         </Popover>
-      </PopoverTrigger>
-      <PopoverTrigger>
+      </DialogTrigger>
+      <DialogTrigger>
         <Button>
           <ArrowUp />
         </Button>
         <Popover placement='top'>
           Popover visas på ovansidan av trigger-elementet
         </Popover>
-      </PopoverTrigger>
+      </DialogTrigger>
     </div>
   )
 }
@@ -117,7 +117,7 @@ export const ControlledPopover = () => {
   const [isOpen, setOpen] = React.useState(false)
   return (
     <>
-      <PopoverTrigger
+      <DialogTrigger
         isOpen={isOpen}
         onOpenChange={setOpen}
       >
@@ -126,7 +126,7 @@ export const ControlledPopover = () => {
           Enligt botanisk definition räknas bananer faktiskt som bär, medan
           jordgubbar inte gör det.
         </Popover>
-      </PopoverTrigger>
+      </DialogTrigger>
       <pre>Popover {isOpen ? 'visas' : 'visas inte'}</pre>
     </>
   )
@@ -134,14 +134,14 @@ export const ControlledPopover = () => {
 
 export const CustomTriggerPopover = () => {
   return (
-    <PopoverTrigger>
+    <DialogTrigger>
       <Pressable>
         <span role='button'>Trigger</span>
       </Pressable>
       <Popover>
         Med hjälp av Pressable kan vilket element som helst bli en trigger!
       </Popover>
-    </PopoverTrigger>
+    </DialogTrigger>
   )
 }
 
@@ -151,7 +151,9 @@ export const PopoverContentExample = () => {
       <TextField
         label='E-post'
         description='Ange din e-postadress för att få nyhetsbrev.'
-        popoverContent='Vi skickar ut nyhetsbrev med information om nya funktioner, uppdateringar och tips.'
+        popover={{
+          children: 'Vi kommer att skicka nyhetsbrev till den här adressen.',
+        }}
       />
     </div>
   )

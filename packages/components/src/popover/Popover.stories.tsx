@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Popover, PopoverTrigger } from './Popover'
+import { Popover } from './Popover'
 import { Button } from '../button'
 import { Save } from 'lucide-react'
 import { Text } from '../text'
 import { Heading } from '../heading'
+import { DialogTrigger } from '../modal'
 
 const meta: Meta<typeof Popover> = {
   component: Popover,
   subcomponents: {
-    PopoverTrigger: PopoverTrigger as React.ComponentType<unknown>,
+    DialogTrigger: DialogTrigger as React.ComponentType<unknown>,
   },
   title: 'Components/Popover',
   tags: ['autodocs'],
@@ -34,7 +35,7 @@ export const Primary: Story = {
     ),
   },
   render: args => (
-    <PopoverTrigger>
+    <DialogTrigger>
       <Button
         variant='icon'
         aria-label='Spara'
@@ -42,7 +43,7 @@ export const Primary: Story = {
         <Save />
       </Button>
       <Popover {...args} />
-    </PopoverTrigger>
+    </DialogTrigger>
   ),
 }
 
@@ -52,7 +53,7 @@ export const Placement: Story = {
     children: 'Spara',
   },
   render: args => (
-    <PopoverTrigger>
+    <DialogTrigger>
       <Button
         variant='icon'
         aria-label='Spara'
@@ -64,6 +65,6 @@ export const Placement: Story = {
         data-testid='popover-placement'
         {...args}
       />
-    </PopoverTrigger>
+    </DialogTrigger>
   ),
 }
