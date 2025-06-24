@@ -14,7 +14,7 @@ import {
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
-import { Label } from '../label'
+import { InfoPopoverProps, Label, LabelWrapper } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { Size } from '../common/types'
@@ -27,8 +27,6 @@ import {
   type ListBoxItemElement,
   type ListBoxSectionElement,
 } from '../list-box'
-import { InfoPopoverProps } from '../label/InfoPopover'
-import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {

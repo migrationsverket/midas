@@ -9,7 +9,7 @@ import { useMultiSelectState } from './useMultiSelectState'
 import { TagGroup, Tag } from '../tag'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
-import { Label } from '../label'
+import { InfoPopoverProps, Label, LabelWrapper } from '../label'
 import { Text } from '../text'
 import { Checkbox } from '../checkbox'
 import { ListBoxButton, ListBoxPopover } from '../list-box'
@@ -18,8 +18,6 @@ import { SelectTrigger } from './SelectTrigger'
 import { SelectFieldError } from './SelectFieldError'
 import styles from './Select.module.css'
 import type { SelectContainerProps, SelectProps } from './types'
-import { LabelWrapper } from '../label/LabelWrapper'
-import { InfoPopoverProps } from '../label/InfoPopover'
 
 interface MidasSelectProps extends SelectProps {
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */

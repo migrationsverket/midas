@@ -10,10 +10,8 @@ import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
 import { DropEvent } from 'react-aria'
-import { Label } from '../label'
+import { InfoPopoverProps, Label, LabelWrapper } from '../label'
 import { Text } from '../text'
-import { LabelWrapper } from '../label/LabelWrapper'
-import { InfoPopoverProps } from '../label/InfoPopover'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */

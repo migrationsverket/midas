@@ -12,9 +12,7 @@ import { FieldError } from '../field-error'
 import { CharacterCounter } from '../character-counter'
 import { clsx } from 'clsx'
 import { Size } from '../common/types'
-import { LabelWrapper } from '../label/LabelWrapper'
-import { InfoPopoverProps } from '../label/InfoPopover'
-import { Label } from '../label'
+import { InfoPopoverProps, Label, LabelWrapper } from '../label'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode

@@ -12,11 +12,9 @@ import {
   ValidationResult,
 } from 'react-aria-components'
 import clsx from 'clsx'
-import { Label } from '../label'
+import { InfoPopoverProps, Label, LabelWrapper } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
-import { LabelWrapper } from '../label/LabelWrapper'
-import { InfoPopoverProps } from '../label/InfoPopover'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
