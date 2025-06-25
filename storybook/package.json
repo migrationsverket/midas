@@ -1,0 +1,56 @@
+{
+  "name": "@midas-ds/components",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "keywords": [
+    "react",
+    "design system",
+    "migrationsverket"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Midas Components",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
+  "version": "10.2.0",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "type": "module",
+  "files": [
+    "./"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/components"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./theme": {
+      "types": "./theme/index.d.ts",
+      "import": "./theme/index.js",
+      "require": "./theme/index.cjs"
+    },
+    "./global.css": {
+      "import": "./assets/global.css"
+    }
+  },
+  "dependencies": {
+    "react-aria": "^3.38.1",
+    "react-aria-components": "^1.9.0",
+    "react-stately": "^3.36.1"
+  }
+}
