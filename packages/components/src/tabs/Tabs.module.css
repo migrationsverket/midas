@@ -54,48 +54,11 @@
 
 .panel {
   margin-top: 1rem;
-
-  &[data-focus-visible],
-  &:focus-visible {
-    outline: none;
-    box-shadow: --focus;
-  }
-}
-
-.listItem.lastTab {
-  padding: 0.5rem 1.25rem;
-  cursor: pointer;
   color: --text-primary;
-  border-bottom: --size-10 solid --border-subtle;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-
-  &[data-selected] {
-    font-weight: 500;
-    padding-bottom: calc(0.5rem - 3px);
-    border-bottom: --size-10 solid --border-tertiary;
-  }
-
-  &[data-hovered] {
-    border-color: --border-secondary;
-  }
 
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
     box-shadow: --focus;
-  }
-
-  @media --breakpoint-xs {
-    flex: 0 0 100%;
-
-    &[data-selected] {
-      padding-left: calc(1.125rem - 3px);
-      padding-right: 1rem;
-      border-bottom: 0;
-      box-shadow: none;
-    }
   }
 }
