@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   build:
-    name: Build Docusaurus
+    name: Build Docusaurus and Storybook
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,6 +30,8 @@ jobs:
         run: npm ci
       - name: Build website
         run: npx nx run docs:build --minify=false --outputPath=dist/docs
+      - name: Build storybook
+        run: npx nx run components:build-storybook:ci
 
       - uses: JamesIves/github-pages-deploy-action@v4
         with:

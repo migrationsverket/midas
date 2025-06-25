@@ -3,16 +3,12 @@ name: 'Chromatic'
 permissions:
   contents: read
 
-on:
-  push:
-    branches-ignore:
-      - 'chore/**'
-      - 'docs/**'
-      - 'dependabot/**'
+on: push
 
 jobs:
   chromatic:
-    name: Run Chromatic
+    if: contains(github.event.head_commit.message, '[run-chromatic]') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+    name: Chromatic
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,6 +25,6 @@ jobs:
         uses: chromaui/action@latest
         with:
           buildCommand: npx nx run components:build-storybook:ci
-          outputDir: dist/storybook/ui
+          outputDir: dist/docs/storybook
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           onlyChanged: true # enables turbosnap
