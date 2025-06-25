@@ -12,8 +12,8 @@ export const Tab: React.FC<AriaTabProps> = ({
 }) => {
   return (
     <AriaTab
-      className={clsx(styles.listItem, className)}
       {...props}
+      className={clsx(styles.listItem, className)}
     >
       {children}
     </AriaTab>

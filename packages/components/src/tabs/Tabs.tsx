@@ -12,14 +12,6 @@ import { windowSizes } from '../theme'
 
 export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
   /**
-   * An array of tab titles
-   */
-
-  /**
-   * Label for accessibility
-   */
-
-  /**
    * Amount of children must match the amount of tabs
    */
   children: React.ReactNode
