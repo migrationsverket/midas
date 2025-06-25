@@ -1,3 +1,23 @@
+## 10.3.0 (2025-06-25)
+
+### 🚀 Features
+
+- **popover:** new component popover ([#672](https://github.com/migrationsverket/midas/pull/672))
+
+### 🩹 Fixes
+
+- **combobox:** select the previous value on click ([b2440e9d2b](https://github.com/migrationsverket/midas/commit/b2440e9d2b))
+
+### 💅 Refactors
+
+- ♻️ checkbox ([#640](https://github.com/migrationsverket/midas/pull/640))
+
+### 🧪 Tests updated
+
+- **grid:** remove a11y test bypass ([ca09acfd1c](https://github.com/migrationsverket/midas/commit/ca09acfd1c))
+- opt-in for chromatic on PRs ([#675](https://github.com/migrationsverket/midas/pull/675))
+- remove storybook background transiton ([a7b633dca8](https://github.com/migrationsverket/midas/commit/a7b633dca8))
+
 ## 10.2.0 (2025-06-18)
 
 ### 🚀 Features
