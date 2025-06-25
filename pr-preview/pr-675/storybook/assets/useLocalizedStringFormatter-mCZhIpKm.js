@@ -1,1 +1,0 @@
-import{$ as r,a as n}from"./LocalizedStringFormatter-BB0Nk989.js";import{r as i}from"./index-ClcD9ViR.js";import{$ as f}from"./context-BSqJJvai.js";const c=new WeakMap;function d(e){let a=c.get(e);return a||(a=new n(e,"sv-SE"),c.set(e,a)),a}function p(e,a){return d(e)}function u(e,a){const{locale:t}=f(),o=p(e);return i.useMemo(()=>new r(t,o),[o,t])}export{u};
