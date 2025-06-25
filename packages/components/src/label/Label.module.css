@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --font-size-30, --line-height-30, --text-disabled from tokens;
+@value --text-primary, --font-family, --font-size-30, --line-height-30, --text-disabled, --support-border-info from tokens;
 
 .labelBase {
   color: --text-primary;

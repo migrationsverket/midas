@@ -1,0 +1,213 @@
+---
+title: Popover
+description: Popover kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen.
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import {
+  PopoverExample,
+  PopoverPlacement,
+  ControlledPopover,
+  CustomTriggerPopover,
+  PopoverTextExample,
+  PopoverFormExample,
+  PopoverContentExample,
+} from '@site/src/components/examples/popover/PopoverExamples'
+
+<ComponentHeader
+  name='Popover'
+  friendlyName='Hjälptext, hjälpinnehåll'
+/>
+
+Popover kan användas för att förklara en knapp eller annan interaktion när det inte går att få plats med informationen i knappen. Tillskillnad från [Tooltip](../tooltip) så triggas Popover på klick istället för hover och är öppen tills användare klickar bort från den. Popover kan även fyllas med vad som helst tillskillnad från Popover som bara tar en kort hjälptext.
+
+```tsx
+import { Popover, DialogTrigger, Button } from '@midas-ds/components'
+import { Save } from 'lucide-react'
+```
+
+```tsx
+<DialogTrigger>
+  <Button
+    variant='icon'
+    aria-label='Spara'
+  >
+    <Save />
+  </Button>
+  <Popover>Spara</Popover>
+</DialogTrigger>
+```
+
+<PopoverExample />
+
+## Funktioner
+
+Popover är byggd på [React Aria Popover](https://react-spectrum.adobe.com/react-aria/Popover.html) och med det
+följer inbyggd tillgänglighet som till exempel sammankoppling mellan trigger och popover. För mer detaljerad
+dokumentation hänvisas till React Aria.
+
+### Layout
+
+Till skillad från Tooltip så kan Popover innehålla mer än bara en kort text. Innehållet kan t.ex förtydligas med rubriknivåer, bekräftelseknappar eller andra interaktiva komponenter.
+
+```tsx
+<DialogTrigger>
+  <Button
+    variant='icon'
+    aria-label='Din dator'
+  >
+    <Laptop />
+  </Button>
+  <Popover>
+    <Heading>Hårddiskutrymme</Heading>
+    <Text>Din dator har 150gb kvar i hemkatalogen.</Text>
+  </Popover>
+</DialogTrigger>
+```
+
+<PopoverTextExample />
+
+```tsx
+<DialogTrigger>
+  <Button
+    variant='icon'
+    aria-label='Tillgänglighetsinställningar'
+  >
+    <UserCog />
+  </Button>
+  <Popover>
+    <CheckboxGroup
+      description='Justera inställningar för att förbättra din användarupplevelse.'
+      label='Tillgänglighetsinställningar'
+    >
+      <Checkbox value='compact'>Kompakt läge</Checkbox>
+      <Checkbox value='animations'>Animationer</Checkbox>
+      <Checkbox value='contrast'>Högkontrastläge</Checkbox>
+      <Checkbox value='dark-mode'>Mörkt läge</Checkbox>
+    </CheckboxGroup>
+  </Popover>
+</DialogTrigger>
+```
+
+<PopoverFormExample />
+
+### Placement
+
+Placering av Popover i förhållande till dess trigger-element kan justeras med `placement` (i mån av plats).
+
+```tsx
+<DialogTrigger>
+  <Button>
+    <ArrowLeft />
+  </Button>
+  <Popover placement='left'>
+    Popover visas till vänster om trigger-elementet
+  </Popover>
+</DialogTrigger>
+<DialogTrigger>
+  <Button>
+    <ArrowUp />
+  </Button>
+  <Popover placement='top'>
+    Popover visas på ovansidan av trigger-elementet
+  </Popover>
+</DialogTrigger>
+```
+
+<PopoverPlacement />
+
+### Controlled state
+
+```tsx
+export const ControlledPopover = () => {
+  const [isOpen, setOpen] = React.useState(false)
+
+  return (
+    <>
+      <DialogTrigger
+        isOpen={isOpen}
+        onOpenChange={setOpen}
+        delay={500}
+      >
+        <Button>Klicka på mig</Button>
+        <Popover>Meddelande</Popover>
+      </DialogTrigger>
+      <pre>Popover {isOpen ? 'visas' : 'visas inte'}</pre>
+    </>
+  )
+}
+```
+
+<div className='card'>
+  <ControlledPopover />
+</div>
+
+### Valfritt element som Trigger
+
+DialogTrigger fungerar direkt med alla **focusable** React Aria-komponenter (t.ex. Button, Link, etc.). Anpassade trigger-element,
+såsom tredjepartskomponenter och andra DOM-element, stöds också genom att de omsluts med `<Pressable>`-komponenten.
+
+```tsx
+import { Pressable } from 'react-aria-components'
+```
+
+```tsx
+<DialogTrigger>
+  <Pressable>
+    <span role='button'>Trigger</span>
+  </Pressable>
+  <Popover>Med hjälp av Pressable kan vilket element som helst bli en trigger!</Popover>
+</DialogTrigger>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <CustomTriggerPopover />
+</div>
+
+Observera att element under `<Pressable>` måste ha en ARIA-roll eller använda ett lämpligt semantiskt HTML-element
+så att skärmläsare kan läsa upp innehållet i verktygstipset. Detta gäller bara element som inte redan är _focusable_
+eller _pressable_. Se [React Aria Popover Custom trigger](https://react-spectrum.adobe.com/react-aria/Popover.html#custom-trigger)
+för referens.
+
+### Med inputfält
+
+Popover är inbyggt i samtliga inputfält i Midas. Det innebär att du kan använda Popover för att ge mer information om vad går att göra med label eller description. Använd propertyn `popoverContent` på inputfältet för att visa en Popover med mer information på ett enhetligt sätt.
+
+```tsx
+import { TextField } from '@midas-ds/components'
+```
+
+```tsx
+<TextField
+  label='E-post'
+  description='Ange din e-postadress för att få nyhetsbrev.'
+  popoverContent='Vi skickar ut nyhetsbrev med information om nya funktioner, uppdateringar och tips.'
+/>
+```
+
+<PopoverContentExample />
+
+## Riktlinjer
+
+- I första hand skall elementet vara tydligt nog så användaren förstår innebörden. Popover är till för en design där detta
+  inte är möjligt och vi måste gömma undan informationen.
+- Popover kan också användas för att berätta mer information än vad som framkommer visuellt på knappen.
+- Eftersom Popover kan husera vilka komponenter som helst kan det vara ett bra alternativ till Modal när det inte är mer komplext än t.ex en bekräftelseruta för fortsätt eller avbryt.
+
+## API
+
+### Popover
+
+<PropTable name='Popover' />
+
+### DialogTrigger
+
+<PropTable
+  name='DialogTrigger'
+  defaultOpen={false}
+/>
+```

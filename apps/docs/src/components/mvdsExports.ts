@@ -23,8 +23,10 @@ import {
   Card,
   Select,
   Tooltip,
+  Popover,
   Dropdown,
   DropdownItem,
+  DialogTrigger,
   InfoBanner,
 } from '@midas-ds/components'
 
@@ -56,6 +58,8 @@ export {
   TextArea,
   theme,
   Tooltip,
+  Popover,
+  DialogTrigger,
   Dropdown,
   DropdownItem,
   InfoBanner,

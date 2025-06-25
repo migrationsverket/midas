@@ -9,7 +9,7 @@ import { useMultiSelectState } from './useMultiSelectState'
 import { TagGroup, Tag } from '../tag'
 import useObserveElement from '../utils/useObserveElement'
 import { HiddenMultiSelect } from './HiddenMultiSelect'
-import { Label } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { Checkbox } from '../checkbox'
 import { ListBoxButton, ListBoxPopover } from '../list-box'
@@ -18,15 +18,22 @@ import { SelectTrigger } from './SelectTrigger'
 import { SelectFieldError } from './SelectFieldError'
 import styles from './Select.module.css'
 import type { SelectContainerProps, SelectProps } from './types'
+import { LabelWrapper } from '../label/LabelWrapper'
 
-const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
-  ({ isClearable = true, ...rest }, ref) => {
-    const props: SelectProps = {
+interface MidasSelectProps extends SelectProps {
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popover?: InfoPopoverProps
+}
+
+const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
+  ({ isClearable = true, popover, ...rest }, ref) => {
+    const props: MidasSelectProps = {
       selectionMode: 'single',
       errorPosition: 'top',
       disallowEmptySelection: !isClearable,
       isClearable,
       size: 'large',
+      popover,
       ...rest,
     }
 
@@ -54,14 +61,16 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, SelectProps>(
           state={state}
           triggerRef={triggerRef}
         />
-        {props.label && (
-          <Label
-            {...labelProps}
-            data-disabled={props.isDisabled || undefined}
-          >
-            {props.label}
-          </Label>
-        )}
+        <LabelWrapper popover={popover}>
+          {props.label && (
+            <Label
+              {...labelProps}
+              data-disabled={props.isDisabled || undefined}
+            >
+              {props.label}
+            </Label>
+          )}
+        </LabelWrapper>
         {props.description && (
           <Text slot='description'>{props.description}</Text>
         )}

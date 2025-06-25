@@ -14,7 +14,7 @@ import {
 } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
-import { Label } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { Size } from '../common/types'
@@ -27,6 +27,7 @@ import {
   type ListBoxItemElement,
   type ListBoxSectionElement,
 } from '../list-box'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -41,6 +42,7 @@ export interface ComboBoxProps<T extends ListBoxOption>
    *  @default 'large'
    * */
   size?: Size
+  popover: InfoPopoverProps
 }
 
 export function ComboBox<T extends ListBoxOption>({
@@ -52,6 +54,7 @@ export function ComboBox<T extends ListBoxOption>({
   className,
   errorPosition = 'top',
   size = 'large',
+  popover,
   ...props
 }: ComboBoxProps<T>) {
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -67,7 +70,9 @@ export function ComboBox<T extends ListBoxOption>({
       className={clsx(styles.combobox, className)}
       {...props}
     >
-      {label && <Label>{label}</Label>}
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>

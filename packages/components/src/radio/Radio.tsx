@@ -12,9 +12,10 @@ import {
   ValidationResult,
 } from 'react-aria-components'
 import clsx from 'clsx'
-import { Label } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
@@ -25,6 +26,8 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   /** String to display as error message or function to handle the result and produce the error message */
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popover?: InfoPopoverProps
 }
 
 /**
@@ -37,6 +40,7 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   children,
   className,
   errorPosition = 'top',
+  popover,
   ...props
 }) => {
   return (
@@ -44,7 +48,9 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
       {...props}
       className={clsx(styles.radioGroup, className)}
     >
-      {label && <Label>{label}</Label>}
+      <LabelWrapper popover={popover}>
+        {label && <Label>{label}</Label>}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>

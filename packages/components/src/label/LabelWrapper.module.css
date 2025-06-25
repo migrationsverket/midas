@@ -1,0 +1,17 @@
+@value tokens: "../theme/tokens.css";
+@value --support-border-info from tokens;
+
+.labelPopover {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.labelPopoverTrigger {
+  padding: 0 !important;
+  margin-bottom: 0.125rem;
+
+  svg {
+    stroke: --support-border-info;
+  }
+}

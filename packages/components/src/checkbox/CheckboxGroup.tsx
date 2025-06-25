@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { AriaCheckboxGroupProps, useCheckboxGroup } from 'react-aria'
 import { useCheckboxGroupState } from 'react-stately'
-import { Label } from '../label'
+import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { useSelectAll } from './useSelectAll'
@@ -10,12 +10,14 @@ import { CheckboxGroupContext } from './context'
 import { CheckboxGroupFieldError } from './CheckboxGroupFieldError'
 import messages from './intl/translations.json'
 import styles from './Checkbox.module.css'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface CheckboxGroupProps extends AriaCheckboxGroupProps {
   children: React.ReactNode
   showSelectAll?: boolean
   selectAllLabel?: string
   errorPosition?: 'top' | 'bottom'
+  popover?: InfoPopoverProps
 }
 
 export function CheckboxGroup(props: CheckboxGroupProps) {
@@ -42,7 +44,10 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
       {...groupProps}
       className={styles.checkboxGroup}
     >
-      <Label {...labelProps}>{props.label}</Label>
+      <LabelWrapper popover={props.popover}>
+        {props.label && <Label {...labelProps}>{props.label}</Label>}
+      </LabelWrapper>
+
       {props.description && (
         <Text
           slot='description'
