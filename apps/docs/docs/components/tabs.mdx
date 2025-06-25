@@ -5,7 +5,7 @@ description: Fördela information över flertalet tabbar.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Tabs as MidasTabs, Text } from '@midas-ds/components'
+import { Tabs as MidasTabs, Text, TabPanel, TabList, Tab } from '@midas-ds/components'
 import { ControlledExample } from '@site/src/components/examples/tabs/TabsExamples'
 
 <ComponentHeader
@@ -24,9 +24,14 @@ import { Tabs, Text } from '@midas-ds/components'
   label='Viktig information om frukter och bär'
   tabs={['Vitaminer', 'Frysta frukter och bär', 'Frysta importerade hallon']}
 >
-  <Text>...</Text>
-  <Text>...</Text>
-  <Text>...</Text>
+  <TabList>
+    <Tab>...</Tab>
+    <Tab>...</Tab>
+    <Tab>...</Tab>
+  </TabList>
+  <TabPanel>...</TabPanel>
+  <TabPanel>...</TabPanel>
+  <TabPanel>...</TabPanel>
 </Tabs>
 ```
 
@@ -35,19 +40,31 @@ import { Tabs, Text } from '@midas-ds/components'
     label='Viktig information om frukter och bär'
     tabs={['Vitaminer', 'Frysta frukter och bär', 'Frysta importerade hallon']}
   >
-    <Text>
-      Oavsett om du äter en frukt, lite bär, en näve grönsaker eller baljväxter, får du i dig många viktiga näringsämnen
-      som kroppen behöver för att må bra - fibrer, C-vitamin, folat/folsyra, vitamin K, kalium och antioxidanter, som
-      karotenoider. Eftersom olika sorters frukt och grönt innehåller olika näringsämnen är det bra att äta varierat.
-    </Text>
-    <Text>
-      För näringsvärdet spelar det mindre roll om man äter färska eller frysta frukter och grönsaker. Frysta produkter
-      håller längre och är ett smart sätt att minska matsvinnet.
-    </Text>
-    <Text>
-      Frysta importerade hallon kan vara förorenade med norovirus, som orsakar vinterkräksjukan. Det kan också finnas
-      norovirus och hepatit A-virus på andra frysta bär men det är mycket ovanligare.
-    </Text>
+    <TabList>
+      <Tab id='tab1'>Vitaminer</Tab>
+      <Tab id='tab2'>Frysta frukter och bär</Tab>
+      <Tab id='tab3'>Frysta importerade hallon</Tab>
+    </TabList>
+    <TabPanel id='tab1'>
+      <Text>
+        Oavsett om du äter en frukt, lite bär, en näve grönsaker eller baljväxter, får du i dig många viktiga
+        näringsämnen som kroppen behöver för att må bra - fibrer, C-vitamin, folat/folsyra, vitamin K, kalium och
+        antioxidanter, som karotenoider. Eftersom olika sorters frukt och grönt innehåller olika näringsämnen är det bra
+        att äta varierat.
+      </Text>
+    </TabPanel>
+    <TabPanel id='tab2'>
+      <Text>
+        För näringsvärdet spelar det mindre roll om man äter färska eller frysta frukter och grönsaker. Frysta produkter
+        håller längre och är ett smart sätt att minska matsvinnet.
+      </Text>
+    </TabPanel>
+    <TabPanel id='tab3'>
+      <Text>
+        Frysta importerade hallon kan vara förorenade med norovirus, som orsakar vinterkräksjukan. Det kan också finnas
+        norovirus och hepatit A-virus på andra frysta bär men det är mycket ovanligare.
+      </Text>
+    </TabPanel>
   </MidasTabs>
 </div>
 
@@ -128,8 +145,10 @@ return (
     onSelectionChange={setSelectedTab}
     // highlight-end
   >
-    <Text>Information om Bär</Text>
-    <Text>Information om Frukter</Text>
+    <TabList>
+      <Tab>Information om Bär</Tab>
+      <Tab>Information om Frukter</Tab>
+    </TabList>
   </Tabs>
 )
 ```
