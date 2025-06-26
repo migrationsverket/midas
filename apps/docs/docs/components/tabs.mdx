@@ -5,8 +5,7 @@ description: Fördela information över flertalet tabbar.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { Tabs as MidasTabs, Text, TabPanel, TabList, Tab } from '@midas-ds/components'
-import { ControlledExample } from '@site/src/components/examples/tabs/TabsExamples'
+import { ControlledExample, BasicExample } from '@site/src/components/examples/tabs/TabsExamples'
 
 <ComponentHeader
   name='Tabs'
@@ -16,116 +15,58 @@ import { ControlledExample } from '@site/src/components/examples/tabs/TabsExampl
 Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren.
 
 ```tsx
-import { Tabs, Text } from '@midas-ds/components'
+import { Tabs, TabList, Tab, TabPanel } from '@midas-ds/components'
 ```
 
 ```tsx
-<Tabs
-  label='Viktig information om frukter och bär'
-  tabs={['Vitaminer', 'Frysta frukter och bär', 'Frysta importerade hallon']}
->
-  <TabList>
-    <Tab>...</Tab>
-    <Tab>...</Tab>
-    <Tab>...</Tab>
+<Tabs>
+  <TabList aria-label='Viktig information om frukter och bär'>
+    <Tab id='vitaminer'>...</Tab>
+    <Tab id='frukter'>...</Tab>
+    <Tab id='hallon'>...</Tab>
   </TabList>
-  <TabPanel>...</TabPanel>
-  <TabPanel>...</TabPanel>
-  <TabPanel>...</TabPanel>
+  <TabPanel id='vitaminer'>...</TabPanel>
+  <TabPanel id='frukter'>...</TabPanel>
+  <TabPanel id='hallon'>...</TabPanel>
 </Tabs>
 ```
 
 <div className='card'>
-  <MidasTabs
-    label='Viktig information om frukter och bär'
-    tabs={['Vitaminer', 'Frysta frukter och bär', 'Frysta importerade hallon']}
-  >
-    <TabList>
-      <Tab id='tab1'>Vitaminer</Tab>
-      <Tab id='tab2'>Frysta frukter och bär</Tab>
-      <Tab id='tab3'>Frysta importerade hallon</Tab>
-    </TabList>
-    <TabPanel id='tab1'>
-      <Text>
-        Oavsett om du äter en frukt, lite bär, en näve grönsaker eller baljväxter, får du i dig många viktiga
-        näringsämnen som kroppen behöver för att må bra - fibrer, C-vitamin, folat/folsyra, vitamin K, kalium och
-        antioxidanter, som karotenoider. Eftersom olika sorters frukt och grönt innehåller olika näringsämnen är det bra
-        att äta varierat.
-      </Text>
-    </TabPanel>
-    <TabPanel id='tab2'>
-      <Text>
-        För näringsvärdet spelar det mindre roll om man äter färska eller frysta frukter och grönsaker. Frysta produkter
-        håller längre och är ett smart sätt att minska matsvinnet.
-      </Text>
-    </TabPanel>
-    <TabPanel id='tab3'>
-      <Text>
-        Frysta importerade hallon kan vara förorenade med norovirus, som orsakar vinterkräksjukan. Det kan också finnas
-        norovirus och hepatit A-virus på andra frysta bär men det är mycket ovanligare.
-      </Text>
-    </TabPanel>
-  </MidasTabs>
+  <BasicExample />
 </div>
 
 ## Beskrivning
 
-Midas `Tabs` är en komposition av React Arias `Tabs`, `TabList`, `Tab`, `TabPanel`. Se [dokumentationen för Tabs hos React Aria](https://react-spectrum.adobe.com/react-aria/Tabs.html) för en djupare förklaring.
+Midas `Tabs` är en wrapperkomponent som används tillsammans med `TabList`, `Tab` och `TabPanel`.
+Samtliga komponenter utgår från React Arias komponenter med samma namn, vänligen se [dokumentationen för Tabs hos React Aria](https://react-spectrum.adobe.com/react-aria/Tabs.html) för en djupare förklaring.
 
 ## Användning
 
-### Tabs och children
-
-Midas `Tabs` accepterar en lista av strängar (titlar) för attributet `tabs`, dessa förhåller sig i sin tur till ett antal barnnoder.
-Notera att längden på `tabs`-listan och antalet barnnoder måste stämma överens för att komponenten ska fungera.
-
-```tsx
-// 👍
-<Tabs tabs={['Bär', 'Frukter']}>
-  <Text>Information om Bär</Text>
-  <Text>Information om Frukter</Text>
-</Tabs>
-```
-
-```tsx
-// 👎 skickar ett fel till konsolen och returnerar null
-<Tabs tabs={['Bär', 'Frukter', 'Stenfrukter', 'Grönsaker']}>
-  <Text>Information om Bär</Text>
-  <Text>Information om Frukter</Text>
-</Tabs>
-```
-
 ### Förvalt alternativ (okontrollerad)
 
-Välj vilket alternativ som ska vara förvalt med attributet `defaultSelectedKey`, använd titeln på den flik som ska vara förvald.
+Välj vilket alternativ som ska vara förvalt med attributet `defaultSelectedKey`, använd id för den flik som ska vara förvald.
 
-```tsx
-<Tabs
-  tabs={['Bär', 'Frukter']}
-  // highlight-start
-  defaultSelectedKey='Frukter'
-  // highlight-end
->
-  <Text>Information om Bär</Text>
-  <Text>Information om Frukter</Text>
+```tsx {1}
+<Tabs defaultSelectedKey='frukter'>
+  <TabList aria-label='Viktig information om frukter och bär'>
+    <Tab id='vitaminer'>...</Tab>
+    <Tab id='frukter'>...</Tab>
+    <Tab id='hallon'>...</Tab>
+  </TabList>
+  <TabPanel id='vitaminer'>...</TabPanel>
+  <TabPanel id='frukter'>...</TabPanel>
+  <TabPanel id='hallon'>...</TabPanel>
 </Tabs>
 ```
 
 <div className='card'>
-  <MidasTabs
-    label='Frukt och grönt'
-    tabs={['Bär', 'Frukter']}
-    defaultSelectedKey='Frukter'
-  >
-    <Text>Information om Bär</Text>
-    <Text>Information om Frukter</Text>
-  </MidasTabs>
+  <BasicExample defaultSelectedKey='frukter' />
 </div>
 
 ### Kontrollerat val
 
 Valet av flik kan kontrolleras med hjälp av attributet `selectedKey` tillsammans med eventet `onSelectionChange`.
-Den valda flikens titel skickas tillbaka i callbacken när användaren byter flik, så kan du använda det för att uppdatera ditt state.
+Den valda flikens id skickas tillbaka i callbacken när användaren byter flik, så kan du använda det för att uppdatera ditt state.
 
 ```tsx
 import React from 'react'
@@ -133,22 +74,23 @@ import type { Key } from 'react-aria-components'
 ```
 
 ```tsx
-const tabs = ['Bär', 'Frukter']
-const [selectedTab, setSelectedTab] = React.useState<Key>(tabs[1])
+const [selectedTab, setSelectedTab] = React.useState<Key>('frukter')
 
 return (
   <Tabs
-    label='Frukt och grönt'
     // highlight-start
-    tabs={tabs}
     selectedKey={selectedTab}
     onSelectionChange={setSelectedTab}
     // highlight-end
   >
-    <TabList>
-      <Tab>Information om Bär</Tab>
-      <Tab>Information om Frukter</Tab>
+    <TabList aria-label='Viktig information om frukter och bär'>
+      <Tab id='vitaminer'>...</Tab>
+      <Tab id='frukter'>...</Tab>
+      <Tab id='hallon'>...</Tab>
     </TabList>
+    <TabPanel id='vitaminer'>...</TabPanel>
+    <TabPanel id='frukter'>...</TabPanel>
+    <TabPanel id='hallon'>...</TabPanel>
   </Tabs>
 )
 ```
