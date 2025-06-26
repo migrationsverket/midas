@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs, --border-secondary, --size-10 from tokens;
+@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs, --border-secondary, --size-10, --size-50, --size-80 from tokens;
 
 .container {
   font-family: --font-family;
@@ -12,7 +12,7 @@
 }
 
 .listItem {
-  padding: 0.5rem 1.25rem;
+  padding: --size-50 --size-80;
   cursor: pointer;
   color: --text-primary;
   border-bottom: --size-10 solid --border-subtle;
@@ -23,7 +23,7 @@
 
   &[data-selected] {
     font-weight: 500;
-    padding-bottom: 0.5rem;
+    padding-bottom: calc(8px + 2px);
     border-color: --border-tertiary;
 
     &[data-hovered] {
@@ -63,8 +63,8 @@
   }
 }
 
-.list:last-child {
-  padding: 0.5rem 1.25rem;
+.listItem:last-child {
+  padding: --size-50 --size-80;
   cursor: pointer;
   color: --text-primary;
   border-bottom: --size-10 solid --border-subtle;
@@ -75,8 +75,12 @@
 
   &[data-selected] {
     font-weight: 500;
-    padding-bottom: 0.5rem;
+    padding-bottom: calc(8px + 2px);
     border-bottom: --size-10 solid --border-tertiary;
+
+    &[data-hovered] {
+      border-color: --border-tertiary;
+    }
   }
 
   &[data-hovered] {
