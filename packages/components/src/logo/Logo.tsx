@@ -1,6 +1,8 @@
 import * as React from 'react'
 import clsx from 'clsx'
 import styles from './Logo.module.css'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface LogoProps
   extends React.DetailedHTMLProps<
@@ -35,6 +37,8 @@ export const Logo: React.FC<LogoProps> = ({
     size === 'small' && styles.small,
   )
 
+  const strings = useLocalizedStringFormatter(messages)
+
   const SVG = () => {
     if (size === 'x-small')
       return (
@@ -45,7 +49,7 @@ export const Logo: React.FC<LogoProps> = ({
           role='img'
           aria-hidden='false'
           focusable='false'
-          aria-label='Migrationsverkets logotyp'
+          aria-label={strings.format('logotype')}
         >
           <path d='M99.99,91.69c-1.84-1.11-4.05-4.55-4.05-9.46V9.15c0-4.79,1.96-7.25,3.81-8.85h-14.75l-33.91,65.47L12.41.3H0c1.6,1.59,3.93,3.07,3.93,8.23v75.55c0,3.56-2.21,6.51-3.81,7.61h16.34c-1.72-1.22-3.93-4.18-3.93-7.98V25.97l36.24,61.42,33.04-63.26v58.96c0,5.53-2.21,7.61-3.81,8.6h21.99Z' />
         </svg>
@@ -59,7 +63,7 @@ export const Logo: React.FC<LogoProps> = ({
         className={classNames}
         aria-hidden='false'
         focusable='false'
-        aria-label='Migrationsverkets logotyp'
+        aria-label={strings.format('logotype')}
       >
         <path d='M97.78,21.61c-7.48-9.73-20.06-16.03-34.32-16.03-13.07,0-24.86,5.27-32.46,13.65,6.56-5.83,15.64-9.44,25.66-9.44,11.37,0,21.52,4.56,28.18,11.83h12.94Z' />
         <path d='M90.45,12.58C70.67-1.51,41.26,2.77,27.49,21.61h-12.23C30.56-2.89,68.29-7.47,90.45,12.58h0Z' />

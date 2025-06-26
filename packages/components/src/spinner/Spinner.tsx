@@ -1,6 +1,9 @@
 import styles from './Spinner.module.css'
 import { LoaderCircle } from 'lucide-react'
 import clsx from 'clsx'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
+import { VisuallyHidden } from 'react-aria'
 
 export interface SpinnerProps {
   /** Displays a smaller spinner when set to true
@@ -17,6 +20,8 @@ export const Spinner: React.FC<SpinnerProps> = ({
   small,
   isOnColor = false,
 }) => {
+  const strings = useLocalizedStringFormatter(messages)
+
   return (
     <div
       className={styles.container}
@@ -28,7 +33,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
         strokeWidth={small ? 2 : 3}
         absoluteStrokeWidth
       />
-      <span className={styles.vsHidden}>Laddar, vänligen vänta.</span>
+      <VisuallyHidden>{strings.format('loadingPleaseWait')}</VisuallyHidden>
     </div>
   )
 }

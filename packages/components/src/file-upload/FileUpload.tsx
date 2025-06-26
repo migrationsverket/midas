@@ -13,6 +13,8 @@ import { DropEvent } from 'react-aria'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -36,6 +38,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   ...rest
 }) => {
   const [files, setFiles] = React.useState<FileState>(null)
+  const strings = useLocalizedStringFormatter(messages)
 
   const handleUpload = (files: FileList | null) => {
     setFiles(files !== null ? Array.from(files) : [])
@@ -62,7 +65,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
             slot='description'
             style={{ display: 'block' }}
           >
-            Dra och släpp en fil inuti det streckade området
+            {strings.format('dragAndDrop')}
           </Text>
         </DropZone>
         {files && (
@@ -81,16 +84,18 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       <AriaFileTrigger
+        {...rest}
         allowsMultiple={allowsMultiple}
         onSelect={files => handleUpload(files)}
-        {...rest}
       >
         <Button
           variant='secondary'
           aria-labelledby='fileUpload'
           className={styles.input}
         >
-          {allowsMultiple ? 'Välj filer' : 'Välj fil'}
+          {allowsMultiple
+            ? strings.format('chooseFiles')
+            : strings.format('chooseFile')}
         </Button>
       </AriaFileTrigger>
       {files && (

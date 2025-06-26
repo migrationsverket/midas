@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useLocale } from 'react-aria'
+import { Key, useLocale } from 'react-aria'
 import { I18nProvider } from 'react-aria'
 import { parseDate } from '@internationalized/date'
 import {
@@ -10,8 +10,9 @@ import {
   Column,
   Cell,
   DateField,
-  Button,
   TextField,
+  ToggleButton,
+  ToggleButtonGroup,
 } from '@midas-ds/components'
 
 export const LocaleExample = () => {
@@ -38,31 +39,25 @@ export const LocaleExample = () => {
 }
 
 export const I18nExample = () => {
-  const [locale, setLocale] = React.useState<string>('fr-Fr')
+  const [locale, setLocale] = React.useState<Set<Key>>(new Set(['fr-FR']))
+
   return (
     <>
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-        <Button
-          onPress={() => setLocale('fr-Fr')}
-          variant={locale === 'fr-Fr' ? 'primary' : 'secondary'}
-        >
-          Français
-        </Button>
-        <Button
-          onPress={() => setLocale('sv-Sv')}
-          variant={locale === 'sv-Sv' ? 'primary' : 'secondary'}
-        >
-          Svenska
-        </Button>
-        <Button
-          onPress={() => setLocale('en-En')}
-          variant={locale === 'en-En' ? 'primary' : 'secondary'}
-        >
-          English
-        </Button>
-      </div>
-      <div lang={locale}>
-        <I18nProvider locale={locale}>
+      <ToggleButtonGroup
+        style={{ marginBottom: '1rem' }}
+        selectionMode='single'
+        selectedKeys={locale}
+        onSelectionChange={selectedLocale => setLocale(selectedLocale)}
+      >
+        <ToggleButton id='fr-FR'>Français</ToggleButton>
+        <ToggleButton id='sv'>Svenska</ToggleButton>
+        <ToggleButton id='en'>English</ToggleButton>
+      </ToggleButtonGroup>
+      <div
+        lang={locale.keys().next().value?.toString()}
+        dir='ltr'
+      >
+        <I18nProvider locale={locale.keys().next().value?.toString()}>
           <CurrentDate />
         </I18nProvider>
       </div>
