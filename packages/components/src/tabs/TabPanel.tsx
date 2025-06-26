@@ -1,24 +1,17 @@
 'use client'
 
 import * as React from 'react'
-import {
-  TabPanel as AriaTabPanel,
-  TabPanelProps as AriaTabPanelProps,
-} from 'react-aria-components'
+import { TabPanel as AriaTabPanel, TabPanelProps } from 'react-aria-components'
 import clsx from 'clsx'
 import styles from './Tabs.module.css'
 
-export const TabPanel: React.FC<AriaTabPanelProps> = ({
-  className,
-  children,
-  ...props
-}) => {
+export const TabPanel: React.FC<TabPanelProps> = ({ className, ...props }) => {
   return (
     <AriaTabPanel
       className={clsx(styles.panel, className)}
       {...props}
-    >
-      {children}
-    </AriaTabPanel>
+    />
   )
 }
+
+export type { TabPanelProps }

@@ -16,3 +16,5 @@ export const TabList = <T extends object>({
     />
   )
 }
+
+export type { TabListProps }
