@@ -17,7 +17,7 @@ export const CheckboxInner = React.forwardRef<
       ref={ref}
       {...mergeProps(hoverProps, pressProps, props.labelProps)}
       slot={props.slot || undefined}
-      className={styles.checkbox}
+      className={clsx(styles.checkbox, props.className)}
       data-hovered={isHovered || undefined}
       data-selected={props.isSelected || undefined}
       data-indeterminate={props.isIndeterminate || undefined}

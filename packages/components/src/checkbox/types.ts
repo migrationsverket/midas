@@ -8,7 +8,10 @@ import type {
 import type { SlotProps } from 'react-aria-components'
 import { CheckboxGroupState } from 'react-stately'
 
-export type CheckboxProps = AriaCheckboxProps & SlotProps
+export type CheckboxProps = AriaCheckboxProps &
+  SlotProps & {
+    className?: string
+  }
 
 export interface CheckboxComponentProps extends CheckboxProps {
   focusRingAria: FocusRingAria

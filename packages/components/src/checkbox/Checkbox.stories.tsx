@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { expect, userEvent } from '@storybook/test'
 import { Checkbox } from './Checkbox'
+import styles from './Checkbox.module.css'
 
 type Story = StoryObj<typeof Checkbox>
 
@@ -77,6 +78,27 @@ export const Required: Story = {
         await userEvent.click(checkbox)
         await userEvent.click(checkbox)
         expect(checkbox).toBeInvalid()
+      },
+    )
+  },
+}
+
+export const CustomClassName: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    className: 'test-class',
+  },
+  play: async ({ canvasElement, step, args }) => {
+    await step(
+      'it should preserve its classnames when given new ones',
+      async () => {
+        await expect(canvasElement.querySelector('label')).toHaveClass(
+          styles.checkbox,
+          args.className as string,
+        )
       },
     )
   },
