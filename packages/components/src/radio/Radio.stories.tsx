@@ -75,18 +75,33 @@ export const Normal: Story = {
   args: {
     label: 'Frukt',
     description: 'Välj en frukt',
-    children: items,
+    children: fruits.map(fruit => (
+      <Radio
+        key={fruit}
+        value={fruit}
+        id={fruit.toLowerCase()}
+        className='test-radio-class'
+      >
+        {fruit}
+      </Radio>
+    )),
     className: 'test-class',
   },
   play: async ({ canvas, step, args }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
-        const radioGroup = canvas.getByLabelText(args.label as string)
-        expect(radioGroup).toHaveClass(
+        const radioGroup = canvas.getByRole('radiogroup')
+        const radios = canvas.getByRole('group').childNodes
+
+        await expect(radioGroup).toHaveClass(
           styles.radioGroup,
           args.className as string,
         )
+
+        radios.forEach(async radio => {
+          await expect(radio).toHaveClass(styles.radio, 'test-radio-class')
+        })
       },
     )
   },
