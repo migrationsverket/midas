@@ -4,11 +4,43 @@
         <title>Midas changelog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/</link>
         <description>Håll dig uppdaterad med allt som händer i varje release</description>
-        <lastBuildDate>Wed, 18 Jun 2025 20:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 25 Jun 2025 20:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
         <copyright>2025 Migrationsverket</copyright>
+        <item>
+            <title><![CDATA[10.3.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/</guid>
+            <pubDate>Wed, 25 Jun 2025 20:00:00 GMT</pubDate>
+            <description><![CDATA[🚀 Features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
+<ul>
+<li><strong>popover:</strong> new component popover (<a href="https://github.com/migrationsverket/midas/pull/672" target="_blank" rel="noopener noreferrer">#672</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li><strong>combobox:</strong> select the previous value on click (<a href="https://github.com/migrationsverket/midas/commit/b2440e9d2b" target="_blank" rel="noopener noreferrer">b2440e9d2b</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactors">💅 Refactors<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/#-refactors" class="hash-link" aria-label="Direktlänk till 💅 Refactors" title="Direktlänk till 💅 Refactors">​</a></h2>
+<ul>
+<li>♻️ checkbox (<a href="https://github.com/migrationsverket/midas/pull/640" target="_blank" rel="noopener noreferrer">#640</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h2>
+<ul>
+<li>add release notes for 10.2.0 (<a href="https://github.com/migrationsverket/midas/commit/c1b525fdf0" target="_blank" rel="noopener noreferrer">c1b525fdf0</a>)</li>
+<li>edit changelog autoformatting (<a href="https://github.com/migrationsverket/midas/commit/bfefac35fe" target="_blank" rel="noopener noreferrer">bfefac35fe</a>)</li>
+<li>typo on numbers in grid sizing table (<a href="https://github.com/migrationsverket/midas/pull/671" target="_blank" rel="noopener noreferrer">#671</a>)</li>
+<li><strong>select:</strong> add docs on controlled selection for single select (<a href="https://github.com/migrationsverket/midas/commit/9ea323915d" target="_blank" rel="noopener noreferrer">9ea323915d</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-tests-updated">🧪 Tests updated<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.3.0/#-tests-updated" class="hash-link" aria-label="Direktlänk till 🧪 Tests updated" title="Direktlänk till 🧪 Tests updated">​</a></h2>
+<ul>
+<li>remove storybook background transiton (<a href="https://github.com/migrationsverket/midas/commit/a7b633dca8" target="_blank" rel="noopener noreferrer">a7b633dca8</a>)</li>
+<li>opt-in for chromatic on PRs (<a href="https://github.com/migrationsverket/midas/pull/675" target="_blank" rel="noopener noreferrer">#675</a>)</li>
+<li><strong>grid:</strong> remove a11y test bypass (<a href="https://github.com/migrationsverket/midas/commit/ca09acfd1c" target="_blank" rel="noopener noreferrer">ca09acfd1c</a>)</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[10.2.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/10.2.0/</link>
@@ -731,36 +763,6 @@
 <li>add new UIkit (<a href="https://github.com/migrationsverket/midas/commit/a47947b63" target="_blank" rel="noopener noreferrer">a47947b63</a>)</li>
 <li>add instructions for bug reporting (<a href="https://github.com/migrationsverket/midas/commit/93205ee30" target="_blank" rel="noopener noreferrer">93205ee30</a>)</li>
 <li><strong>date-picker:</strong> add style unavailable and code example for Unavailable Date in docs (<a href="https://github.com/migrationsverket/midas/commit/469da9424" target="_blank" rel="noopener noreferrer">469da9424</a>)</li>
-</ul>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[3.0.0]]></title>
-            <link>https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/3.0.0/</link>
-            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/3.0.0/</guid>
-            <pubDate>Fri, 28 Feb 2025 20:00:00 GMT</pubDate>
-            <description><![CDATA[🚀 Features]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/3.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
-<ul>
-<li>⚠️ <strong>search-field:</strong> remove broken property (<a href="https://github.com/migrationsverket/midas/commit/1c04349ce" target="_blank" rel="noopener noreferrer">1c04349ce</a>)</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/3.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
-<ul>
-<li><strong>card:</strong> append props.className (<a href="https://github.com/migrationsverket/midas/pull/295" target="_blank" rel="noopener noreferrer">#295</a>)</li>
-<li><strong>search-field:</strong> move validation error message (<a href="https://github.com/migrationsverket/midas/commit/85c1b7990" target="_blank" rel="noopener noreferrer">85c1b7990</a>)</li>
-<li><strong>search-field:</strong> useSearchField to validate input and use internal key events (<a href="https://github.com/migrationsverket/midas/commit/fbe8cf54a" target="_blank" rel="noopener noreferrer">fbe8cf54a</a>)</li>
-<li><strong>search-field:</strong> handle custom error messages (<a href="https://github.com/migrationsverket/midas/commit/99649c163" target="_blank" rel="noopener noreferrer">99649c163</a>)</li>
-<li><strong>search-field:</strong> add disabled styling (<a href="https://github.com/migrationsverket/midas/commit/f508f2f6d" target="_blank" rel="noopener noreferrer">f508f2f6d</a>)</li>
-<li><strong>search-field:</strong> add validation error utility function (<a href="https://github.com/migrationsverket/midas/commit/1f4758e41" target="_blank" rel="noopener noreferrer">1f4758e41</a>)</li>
-<li><strong>search-field:</strong> add border bottom and pixel push some paddings (<a href="https://github.com/migrationsverket/midas/commit/e53d56bb7" target="_blank" rel="noopener noreferrer">e53d56bb7</a>)</li>
-<li><strong>search-field:</strong> validation text (<a href="https://github.com/migrationsverket/midas/pull/290" target="_blank" rel="noopener noreferrer">#290</a>)</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-changes">Documentation Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/3.0.0/#documentation-changes" class="hash-link" aria-label="Direktlänk till Documentation Changes" title="Direktlänk till Documentation Changes">​</a></h2>
-<ul>
-<li><strong>search-field:</strong> add stories (<a href="https://github.com/migrationsverket/midas/commit/8766d4d8e" target="_blank" rel="noopener noreferrer">8766d4d8e</a>)</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-678/changelog/3.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
-<ul>
-<li><strong>search-field:</strong> <code scope="[object Object]">isRequired</code> property of <code scope="[object Object]">SearchField</code> is no longer supported</li>
 </ul>]]></content:encoded>
         </item>
     </channel>
