@@ -2,12 +2,14 @@ declare const _default: {
   "en": {
     "chooseFile": "Choose File",
     "chooseFiles": "Choose Files",
-    "dragAndDrop": "Drag and drop files here or click to select"
+    "dragAndDrop": "Drag and drop files here or click to select",
+    "removeFile": "Remove File"
   },
   "sv": {
     "chooseFile": "Välj fil",
     "chooseFiles": "Välj filer",
-    "dragAndDrop": "Dra och släpp filer här eller klicka för att välja"
+    "dragAndDrop": "Dra och släpp filer här eller klicka för att välja",
+    "removeFile": "Ta bort fil"
   }
 }
 ;
