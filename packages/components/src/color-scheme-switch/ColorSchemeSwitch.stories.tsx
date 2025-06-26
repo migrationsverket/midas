@@ -6,14 +6,16 @@ const meta: Meta<typeof ColorSchemeSwitch> = {
   component: ColorSchemeSwitch,
   title: 'Components/ColorSchemeSwitch',
   tags: ['autodocs'],
-  args: {},
+  args: {
+    className: 'test-class',
+  },
 }
 
 export default meta
 type Story = StoryObj<typeof ColorSchemeSwitch>
 
 export const Example: Story = {
-  play: async ({ canvas, step }) => {
+  play: async ({ canvas, step, args }) => {
     await step(
       'It should be possible to tab to a button and select it',
       async () => {
@@ -21,12 +23,19 @@ export const Example: Story = {
         await userEvent.keyboard('[ArrowRight]')
         await userEvent.keyboard('[Space]')
         const lightModeButton = canvas.getByText('Ljust läge').parentElement
-        expect(lightModeButton).toHaveAttribute('aria-checked', 'true')
+        await expect(lightModeButton).toHaveAttribute('aria-checked', 'true')
       },
     )
+
     await step('color-scheme on body element should be light', async () => {
       const newColorScheme = document.body.style.colorScheme
-      expect(newColorScheme).toBe('light')
+      await expect(newColorScheme).toBe('light')
+    })
+
+    await step('it should accept a custom className', async () => {
+      await expect(canvas.getByRole('radiogroup')).toHaveClass(
+        args.className as string,
+      )
     })
   },
 }

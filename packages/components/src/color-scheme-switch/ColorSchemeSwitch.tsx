@@ -6,6 +6,7 @@ import { VisuallyHidden } from 'react-aria'
 import { Key } from 'react-aria-components'
 import { ToggleButton, ToggleButtonGroup } from '../toggle-button'
 import styles from './ColorSchemeSwitch.module.css'
+import clsx from 'clsx'
 
 export interface ColorSchemeSwitchProps {
   /** Choose what element that should be affected by the scheme switch.
@@ -17,11 +18,13 @@ export interface ColorSchemeSwitchProps {
    * @default new Set(['light dark'])
    */
   defaultValue?: Set<'light' | 'dark' | 'light dark'>
+  className?: string
 }
 
 export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
   selector = 'body',
   defaultValue = new Set(['light dark']),
+  className,
 }) => {
   // set hard to light or dark or "light dark" for system
   const [colorScheme, setColorScheme] = React.useState<Set<Key>>(defaultValue)
@@ -45,6 +48,7 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
       selectedKeys={colorScheme}
       onSelectionChange={setColorScheme}
       disallowEmptySelection
+      className={clsx(className)}
     >
       <ToggleButton
         id='light dark'
