@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { SearchField } from './SearchField'
 import { expect, fn, userEvent } from '@storybook/test'
 import { sizeModes } from '../../.storybook/modes'
+import styles from './SearchField.module.css'
 
 const meta: Meta<typeof SearchField> = {
   component: SearchField,
@@ -16,6 +17,7 @@ const meta: Meta<typeof SearchField> = {
   args: {
     buttonText: 'Sök',
     errorPosition: 'top',
+    className: 'test-class',
   },
   render: (args, { globals: { size } }) => {
     return (
@@ -37,9 +39,10 @@ export const Primary: Story = {
   },
   play: async ({
     canvas,
+    canvasElement,
     step,
     globals: { size },
-    args: { onChange, onSubmit, buttonText },
+    args: { onChange, onSubmit, buttonText, className },
   }) => {
     await step(
       'it should be possible to submit a search string using only the keyboard',
@@ -72,6 +75,13 @@ export const Primary: Story = {
       ).toHaveStyle({
         height: size === 'large' ? '48px' : '40px',
       })
+    })
+
+    await step('it should accept custom classNames', async () => {
+      await expect(canvasElement.querySelector('div')).toHaveClass(
+        styles.container,
+        className as string,
+      )
     })
   },
 }
