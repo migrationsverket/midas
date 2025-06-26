@@ -61,7 +61,8 @@ export const DefaultSelectedKey: Story = {
     chromatic: { disableSnapshot: true },
   },
   args: {
-    defaultSelectedKey: 'Ansök',
+    defaultSelectedKey: 'ansok',
+    tabs: undefined,
   },
   play: async ({ canvas, step }) => {
     await step('the tab "Ansök" should be opened', async () => {
