@@ -11,15 +11,17 @@ export interface SpinnerProps {
    * @default false
    */
   isOnColor?: boolean
+  className?: string
 }
 
 export const Spinner: React.FC<SpinnerProps> = ({
   small,
   isOnColor = false,
+  className,
 }) => {
   return (
     <div
-      className={styles.container}
+      className={clsx(styles.container, className)}
       role='status'
     >
       <LoaderCircle
