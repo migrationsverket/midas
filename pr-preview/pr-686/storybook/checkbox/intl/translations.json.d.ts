@@ -1,0 +1,35 @@
+declare const _default: {
+  "en-US": { "selectAll": "Select all" },
+  "en-GB": { "selectAll": "Select all" },
+  "es-ES": { "selectAll": "Seleccionar todos" },
+  "es-MX": { "selectAll": "Seleccionar todos" },
+  "fr-FR": { "selectAll": "Tout sélectionner" },
+  "fr-CA": { "selectAll": "Tout sélectionner" },
+  "de-DE": { "selectAll": "Alle auswählen" },
+  "it-IT": { "selectAll": "Seleziona tutti" },
+  "pt-PT": { "selectAll": "Selecionar todos" },
+  "pt-BR": { "selectAll": "Selecionar todos" },
+  "ru-RU": { "selectAll": "Выбрать все" },
+  "zh-CN": { "selectAll": "全选" },
+  "zh-TW": { "selectAll": "全選" },
+  "ja-JP": { "selectAll": "すべて選択" },
+  "ko-KR": { "selectAll": "전체 선택" },
+  "ar-SA": { "selectAll": "تحديد الكل" },
+  "hi-IN": { "selectAll": "सभी चुनें" },
+  "tr-TR": { "selectAll": "Tümünü seç" },
+  "nl-NL": { "selectAll": "Alles selecteren" },
+  "sv-SE": { "selectAll": "Välj alla" },
+  "fi-FI": { "selectAll": "Valitse kaikki" },
+  "no-NO": { "selectAll": "Velg alle" },
+  "da-DK": { "selectAll": "Vælg alle" },
+  "pl-PL": { "selectAll": "Zaznacz wszystkie" },
+  "cs-CZ": { "selectAll": "Vybrat vše" },
+  "he-IL": { "selectAll": "בחר הכול" },
+  "th-TH": { "selectAll": "เลือกทั้งหมด" },
+  "vi-VN": { "selectAll": "Chọn tất cả" },
+  "id-ID": { "selectAll": "Pilih semua" },
+  "uk-UA": { "selectAll": "Вибрати все" }
+}
+;
+
+export default _default;
