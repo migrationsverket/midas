@@ -96,6 +96,7 @@ const preview: Preview = {
     size: 'large',
     scheme: getPreferredColorScheme(),
     lang: 'sv',
+    background: 'Background',
   },
   decorators: [
     (Story, context) => {

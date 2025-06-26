@@ -9,7 +9,7 @@ import * as React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
-import { DropEvent } from 'react-aria'
+import { DropEvent, VisuallyHidden } from 'react-aria'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { LabelWrapper } from '../label/LabelWrapper'
@@ -90,7 +90,6 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
       >
         <Button
           variant='secondary'
-          aria-labelledby='fileUpload'
           className={styles.input}
         >
           {allowsMultiple
@@ -114,6 +113,8 @@ interface FileListProps {
 }
 
 const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
+  const strings = useLocalizedStringFormatter(messages)
+
   const handleRemove = (index: number) => {
     setFiles(files?.filter((f, i) => i !== index))
   }
@@ -135,6 +136,7 @@ const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
               size={20}
               aria-hidden
             />
+            <VisuallyHidden>{strings.format('removeFile')}</VisuallyHidden>
           </Button>
         </li>
       ))}

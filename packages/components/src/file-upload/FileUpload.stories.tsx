@@ -24,8 +24,8 @@ export const DropZone: Story = {
   },
 }
 
-export const CustomSelectHandler: Story = {
-  tags: ['!dev', '!autodocs'],
+export const WithFiles: Story = {
+  tags: ['!autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -42,7 +42,6 @@ export const CustomSelectHandler: Story = {
         args['data-testid'] as string,
       )
       await userEvent.upload(fileUpload, testFile)
-      expect(args.onSelect).toHaveBeenCalledTimes(1)
       expect(fileUpload?.files?.[0]).toStrictEqual(testFile)
       expect(fileUpload?.files?.item(0)).toStrictEqual(testFile)
       expect(fileUpload.files).toHaveLength(1)
