@@ -95,6 +95,7 @@ const preview: Preview = {
   initialGlobals: {
     size: 'large',
     scheme: getPreferredColorScheme(),
+    lang: 'sv',
   },
   decorators: [
     (Story, context) => {
