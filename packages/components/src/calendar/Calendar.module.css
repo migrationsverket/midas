@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --text-primary, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus, --text-warning, --support-border-warning from tokens;
+@value --font-family, --layer-01, --text-primary, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus, --text-warning, --support-border-warning, --calendar-date-background-selected, --calendar-date-background-in-range, --calendar-date-background-end-range, --calendar-date-background-start-range from tokens;
 
 .container {
   display: inline-flex;
@@ -122,25 +122,33 @@
     border-color: --field-hover-01;
   }
 
-  &[data-selection-start='true'] {
-    color: --text-on-color;
-    background-color: --button-background-primary;
-    border-color: --button-background-primary;
-  }
-
-  &[data-selection-end='true'] {
-    color: inherit;
-    background-color: --layer-01;
-    border-color: --button-background-primary;
-  }
-
   &[data-selected='true'] {
     color: --text-on-color;
-    background-color: --button-background-primary;
-    border-color: --button-background-primary;
+    background-color: --calendar-date-background-selected;
+    border-color: --calendar-date-background-selected;
 
     @media (forced-colors: active) {
       background-color: highlight;
+    }
+  }
+
+  &.range {
+    &[data-selected='true'] {
+      color: --text-primary;
+      background-color: --calendar-date-background-in-range;
+      border-color: --calendar-date-background-in-range;
+    }
+
+    &[data-selection-start='true'] {
+      color: --text-on-color;
+      background-color: --calendar-date-background-start-range;
+      border-color: --calendar-date-background-start-range;
+    }
+
+    &[data-selection-end='true'] {
+      color: --text-on-color;
+      background-color: --calendar-date-background-end-range;
+      border-color: --calendar-date-background-end-range;
     }
   }
 
