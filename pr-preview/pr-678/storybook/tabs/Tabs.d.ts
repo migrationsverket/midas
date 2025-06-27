@@ -13,5 +13,11 @@ export interface TabsProps extends AriaTabsProps {
      * @see {@link https://designsystem.migrationsverket.se/components/tabs/|Tabs}
      */
     label?: string;
+    /**
+     * The orientation of the tabs.
+     * Will adjust to screen size automatically if omitted
+     * @default undefined
+     */
+    orientation?: AriaTabsProps['orientation'];
 }
 export declare const Tabs: React.FC<TabsProps>;
