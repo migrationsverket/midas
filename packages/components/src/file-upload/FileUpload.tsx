@@ -41,6 +41,9 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   const strings = useLocalizedStringFormatter(messages)
 
   const handleUpload = (files: FileList | null) => {
+    if (rest.onSelect) {
+      rest.onSelect(files)
+    }
     setFiles(files !== null ? Array.from(files) : [])
     // TODO: actually handle files?
   }
