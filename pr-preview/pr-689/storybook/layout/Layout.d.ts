@@ -53,6 +53,7 @@ export interface MidasLayout {
      */
     clientSideHref?: (href: Href) => string;
     variant: 'internal' | 'external';
+    className?: string;
 }
 export declare const Layout: React.FC<MidasLayout> & {
     Provider: typeof LayoutProvider;

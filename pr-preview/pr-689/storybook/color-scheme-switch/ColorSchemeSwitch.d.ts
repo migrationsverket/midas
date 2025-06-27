@@ -9,5 +9,6 @@ export interface ColorSchemeSwitchProps {
      * @default new Set(['light dark'])
      */
     defaultValue?: Set<'light' | 'dark' | 'light dark'>;
+    className?: string;
 }
 export declare const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps>;

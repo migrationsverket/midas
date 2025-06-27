@@ -17,8 +17,5 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
  * RadioGroup is used to group several radio items together
  */
 export declare const RadioGroup: React.FC<MVDSRadioGroupProps>;
-/**
- * Radio item
- * */
-export declare const Radio: (props: RadioProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Radio: ({ className, ...rest }: RadioProps) => import("react/jsx-runtime").JSX.Element;
 export {};
