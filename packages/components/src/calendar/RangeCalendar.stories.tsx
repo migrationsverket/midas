@@ -14,6 +14,15 @@ export default {
 
 export const Primary: Story = {}
 
+export const SelectedDates: Story = {
+  args: {
+    defaultValue: {
+      start: mockedNow.subtract({ days: 2 }),
+      end: mockedNow.add({ days: 2 }),
+    },
+  },
+}
+
 export const Disabled: Story = {
   args: {
     isDisabled: true,
