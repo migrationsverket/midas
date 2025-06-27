@@ -81,7 +81,10 @@ export const DisabledTabs: Story = {
         ))}
       </TabList>
       {data.map(({ title, content }) => (
-        <TabPanel id={title}>
+        <TabPanel
+          id={title}
+          key={title}
+        >
           <div>{content}</div>
         </TabPanel>
       ))}
@@ -95,7 +98,7 @@ export const DefaultSelectedKey: Story = {
     chromatic: { disableSnapshot: true },
   },
   args: {
-    defaultSelectedKey: 'ansok',
+    defaultSelectedKey: 'Ansök',
     tabs: undefined,
   },
   play: async ({ canvas, step }) => {
@@ -118,11 +121,25 @@ export const SelectedKeyAndOnSelectionChange: Story = {
         selectedKey={selectedKey}
         onSelectionChange={setSelectedKey}
       >
-        <div></div>
-        <div></div>
-        <div>
-          <Button>Ansök</Button>
-        </div>
+        <TabList>
+          {data.map(({ title, isDisabled }) => (
+            <Tab
+              id={title}
+              isDisabled={isDisabled}
+              key={title}
+            >
+              {title}
+            </Tab>
+          ))}
+        </TabList>
+        {data.map(({ title, content }) => (
+          <TabPanel
+            id={title}
+            key={title}
+          >
+            <div>{content}</div>
+          </TabPanel>
+        ))}
       </Tabs>
     )
   },
@@ -139,7 +156,9 @@ export const MoreItemsThanChildren: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  args: {},
+  args: {
+    tabs: ['a', 'b'],
+  },
   render: args => (
     <>
       <Tabs {...args}>
