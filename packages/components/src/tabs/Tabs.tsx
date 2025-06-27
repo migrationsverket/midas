@@ -3,29 +3,33 @@
 import * as React from 'react'
 import {
   Tabs as AriaTabs,
-  Tab,
-  TabList,
-  TabPanel,
   type TabsProps as AriaTabsProps,
 } from 'react-aria-components'
 import clsx from 'clsx'
-import styles from './Tabs.module.css'
 import useObserveElement from '../utils/useObserveElement'
 import { windowSizes } from '../theme'
+import { Tab, TabList, TabPanel } from '.'
+import styles from './Tabs.module.css'
 
-export interface TabsProps extends Omit<AriaTabsProps, 'orientation'> {
+export interface TabsProps extends AriaTabsProps {
   /**
    * An array of tab titles
+   * @deprecated since v.10.3.0 please use the declarative API
+   * @see {@link https://designsystem.migrationsverket.se/components/tabs/|Tabs}
    */
-  tabs: string[]
+  tabs?: string[]
   /**
    * Label for accessibility
+   * @deprecated since v.10.3.0 please use the declarative API and use the `aria-label` prop on TabList instead
+   * @see {@link https://designsystem.migrationsverket.se/components/tabs/|Tabs}
    */
-  label: string
+  label?: string
   /**
-   * Amount of children must match the amount of tabs
+   * The orientation of the tabs.
+   * Will adjust to screen size automatically if omitted
+   * @default undefined
    */
-  children: React.ReactNode
+  orientation?: AriaTabsProps['orientation']
 }
 
 interface TabPanelChildProps {
@@ -46,7 +50,25 @@ export const Tabs: React.FC<TabsProps> = ({
   )
 
   const orientation: AriaTabsProps['orientation'] =
-    bodyWidth >= windowSizes.md ? 'horizontal' : 'vertical'
+    rest.orientation || bodyWidth >= windowSizes.sm ? 'horizontal' : 'vertical'
+
+  if (!tabs?.length) {
+    return (
+      <AriaTabs
+        {...rest}
+        orientation={orientation}
+        className={clsx(styles.container, className)}
+        children={children}
+      />
+    )
+  }
+
+  if (typeof children === 'function') {
+    console.error(
+      'Only the declarative API supports passing a function to children, replace the "tabs" prop according to the documentation: https://designsystem.migrationsverket.se/components/tabs/ ',
+    )
+    return null
+  }
 
   const childrenArray = React.Children.toArray(children)
 
@@ -72,19 +94,15 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <AriaTabs
+      {...rest}
       orientation={orientation}
       className={clsx(styles.container, className)}
-      {...rest}
     >
-      <TabList
-        aria-label={label}
-        className={styles.list}
-      >
+      <TabList aria-label={label}>
         {tabs.map(tab => (
           <Tab
             key={tab}
             id={tab}
-            className={styles.listItem}
           >
             {tab}
           </Tab>
@@ -94,7 +112,6 @@ export const Tabs: React.FC<TabsProps> = ({
         <TabPanel
           key={tab}
           id={tab}
-          className={styles.panel}
         >
           {tabContentMap[tab]}
         </TabPanel>

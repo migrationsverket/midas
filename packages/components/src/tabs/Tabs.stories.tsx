@@ -4,8 +4,36 @@ import { Button } from '../button'
 import { expect, userEvent } from '@storybook/test'
 import { Key } from 'react-aria-components'
 import React from 'react'
+import { TabList } from './TabList'
+import { Tab } from './Tab'
+import { TabPanel } from './TabPanel'
 
 type Story = StoryObj<typeof Tabs>
+
+const data: {
+  title: string
+  content: React.ReactNode
+  isDisabled?: boolean
+}[] = [
+  {
+    title: 'Processen',
+    content:
+      'Processen går till såhär Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur maxime dicta omnis aliquam quas doloremque cumque repellendus iure. Eveniet reprehenderit sapiente quidem culpa nam? Vel?',
+  },
+  {
+    title: 'Viktigt',
+    content:
+      'Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti consequatur nam culpa nesciunt cupiditate autem suscipit.',
+  },
+  {
+    title: 'Ansök',
+    content: (
+      <>
+        Ansök här: <Button>Ansök</Button>
+      </>
+    ),
+  },
+]
 
 export default {
   component: Tabs,
@@ -13,30 +41,56 @@ export default {
   tags: ['autodocs'],
   render: args => (
     <Tabs {...args}>
-      <div>
-        Processen går till såhär Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-        maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-        Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-      </div>
-      <div>
-        Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
-        nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
-        consequatur nam culpa nesciunt cupiditate autem suscipit.
-      </div>
-      <div>
-        Ansök här: <Button>Ansök</Button>
-      </div>
+      <TabList>
+        {data.map(({ title, isDisabled }) => (
+          <Tab
+            id={title}
+            isDisabled={isDisabled}
+            key={title}
+          >
+            {title}
+          </Tab>
+        ))}
+      </TabList>
+      {data.map(({ title, content }) => (
+        <TabPanel
+          id={title}
+          key={title}
+        >
+          <div>{content}</div>
+        </TabPanel>
+      ))}
     </Tabs>
   ),
-  args: {
-    label: 'Följ processen',
-    tabs: ['Processen', 'Viktigt att veta', 'Ansök'],
-  },
-} as Meta<typeof Tabs>
+} satisfies Meta<typeof Tabs>
 
 export const Primary: Story = {}
+
+export const DisabledTabs: Story = {
+  render: args => (
+    <Tabs {...args}>
+      <TabList>
+        {data.map(({ title, isDisabled }, i) => (
+          <Tab
+            id={title}
+            isDisabled={isDisabled || !!i}
+            key={title}
+          >
+            {title}
+          </Tab>
+        ))}
+      </TabList>
+      {data.map(({ title, content }) => (
+        <TabPanel
+          id={title}
+          key={title}
+        >
+          <div>{content}</div>
+        </TabPanel>
+      ))}
+    </Tabs>
+  ),
+}
 
 export const DefaultSelectedKey: Story = {
   tags: ['!dev', '!autodocs'],
@@ -45,6 +99,7 @@ export const DefaultSelectedKey: Story = {
   },
   args: {
     defaultSelectedKey: 'Ansök',
+    tabs: undefined,
   },
   play: async ({ canvas, step }) => {
     await step('the tab "Ansök" should be opened', async () => {
@@ -66,11 +121,25 @@ export const SelectedKeyAndOnSelectionChange: Story = {
         selectedKey={selectedKey}
         onSelectionChange={setSelectedKey}
       >
-        <div></div>
-        <div></div>
-        <div>
-          <Button>Ansök</Button>
-        </div>
+        <TabList>
+          {data.map(({ title, isDisabled }) => (
+            <Tab
+              id={title}
+              isDisabled={isDisabled}
+              key={title}
+            >
+              {title}
+            </Tab>
+          ))}
+        </TabList>
+        {data.map(({ title, content }) => (
+          <TabPanel
+            id={title}
+            key={title}
+          >
+            <div>{content}</div>
+          </TabPanel>
+        ))}
       </Tabs>
     )
   },
@@ -88,7 +157,7 @@ export const MoreItemsThanChildren: Story = {
     chromatic: { disableSnapshot: true },
   },
   args: {
-    tabs: ['1', '2'],
+    tabs: ['a', 'b'],
   },
   render: args => (
     <>

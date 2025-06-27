@@ -1,36 +1,25 @@
-import styles from './app.module.css'
-import { Skeleton, TextField } from '@midas-ds/components'
+import { Tab, TabList, Tabs, TabPanel, Text } from '@midas-ds/components'
 
-export function App() {
+export default function App() {
   return (
-    <div className={styles.container}>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'start',
-          gap: '2rem',
-          border: '1px solid salmon',
-        }}
-      >
-        <TextField
-          label='Medium'
-          description='size component'
-          size='medium'
-          defaultValue='this is medium'
-        />
-        <TextField
-          size='large'
-          label='Large'
-          defaultValue='this is large'
-          description='size component'
-        />
-      </div>
+    <>
+      <Tabs tabs={['Bananas', 'Apples']}>
+        <Text>Old information about Bananas</Text>
+        <Text>Old information about Apples</Text>
+      </Tabs>
 
-      <div style={{ backgroundColor: '#f2f2f2', padding: '1rem' }}>
-        <Skeleton isOnLayer01 />
-      </div>
-    </div>
+      <Tabs>
+        <TabList>
+          <Tab id='bananas'>Bananas</Tab>
+          <Tab id='apples'>Apples</Tab>
+        </TabList>
+        <TabPanel id='bananas'>
+          <Text>New declarative style information about Bananas</Text>
+        </TabPanel>
+        <TabPanel id='apples'>
+          <Text>New declarative style information about Apples</Text>
+        </TabPanel>
+      </Tabs>
+    </>
   )
 }
-
-export default App
