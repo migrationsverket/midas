@@ -4,6 +4,7 @@ import {
   FileTrigger as AriaFileTrigger,
   FileTriggerProps as AriaFileTriggerProps,
   DropZone,
+  TextField,
 } from 'react-aria-components'
 import * as React from 'react'
 import { X } from 'lucide-react'
@@ -13,6 +14,7 @@ import { DropEvent } from 'react-aria'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { LabelWrapper } from '../label/LabelWrapper'
+import clsx from 'clsx'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
   /** Label for the file upload button */
@@ -23,6 +25,7 @@ export interface FileTriggerProps extends AriaFileTriggerProps {
   dropzone?: boolean
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
+  className?: string
 }
 
 type FileState = File[] | null | undefined
@@ -33,6 +36,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   description,
   dropzone,
   popover,
+  className,
   ...rest
 }) => {
   const [files, setFiles] = React.useState<FileState>(null)
@@ -53,7 +57,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
 
   if (dropzone)
     return (
-      <div className={styles.container}>
+      <div className={clsx(styles.container, className)}>
         <DropZone
           onDrop={handleDrop}
           className={styles.dropzone}
@@ -75,7 +79,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
     )
 
   return (
-    <div className={styles.container}>
+    <TextField className={clsx(styles.container, className)}>
       <LabelWrapper popover={popover}>
         {label && <Label>{label}</Label>}
       </LabelWrapper>
@@ -99,7 +103,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
           setFiles={setFiles}
         />
       )}
-    </div>
+    </TextField>
   )
 }
 

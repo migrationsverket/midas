@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { FileUpload } from './FileUpload'
 import { expect, fn, userEvent } from '@storybook/test'
+import styles from './FileUpload.module.css'
 
 const meta: Meta<typeof FileUpload> = {
   component: FileUpload,
@@ -11,12 +12,22 @@ const meta: Meta<typeof FileUpload> = {
     label: 'Label',
     description: 'Description',
     allowsMultiple: true,
+    className: 'test-class',
   },
 }
 export default meta
 type Story = StoryObj<typeof FileUpload>
 
-export const Primary: Story = {}
+export const Primary: Story = {
+  play: async ({ canvasElement, step, args }) => {
+    await step('it should use accept a custom className', async () => {
+      await expect(canvasElement.querySelector('div')).toHaveClass(
+        styles.container,
+        args.className as string,
+      )
+    })
+  },
+}
 
 export const DropZone: Story = {
   args: {
