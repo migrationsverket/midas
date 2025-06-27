@@ -4,16 +4,19 @@ import { Link, RouterProvider } from 'react-aria-components'
 import clsx from 'clsx'
 import { useLayoutContext } from '../context/LayoutContext'
 import { Badge, BadgeContainer } from '../../badge'
+import { useLocalizedStringFormatter } from '../../utils/intl'
+import messages from '../intl/translations.json'
 
 export const Navbar: React.FC = () => {
   const { items, clientSideRouter, clientSideHref } = useLayoutContext()
+  const strings = useLocalizedStringFormatter(messages)
 
   const navBarGroup = items.at(0)?.items
 
   return (
     <nav
       className={styles.navbar}
-      aria-label='Bottenmeny'
+      aria-label={strings.format('bottomMenu')}
     >
       {navBarGroup && (
         <ul className={clsx(styles.navbarList)}>

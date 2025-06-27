@@ -6,7 +6,8 @@ import { VisuallyHidden } from 'react-aria'
 import { Key } from 'react-aria-components'
 import { ToggleButton, ToggleButtonGroup } from '../toggle-button'
 import styles from './ColorSchemeSwitch.module.css'
-import clsx from 'clsx'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface ColorSchemeSwitchProps {
   /** Choose what element that should be affected by the scheme switch.
@@ -42,34 +43,36 @@ export const ColorSchemeSwitch: React.FC<ColorSchemeSwitchProps> = ({
     }
   }, [colorScheme, selector])
 
+  const strings = useLocalizedStringFormatter(messages)
+
   return (
     <ToggleButtonGroup
       selectionMode='single'
       selectedKeys={colorScheme}
       onSelectionChange={setColorScheme}
       disallowEmptySelection
-      className={clsx(className)}
+      className={className}
     >
       <ToggleButton
         id='light dark'
         className={styles.button}
       >
         <Laptop />
-        <VisuallyHidden>Systeminställning</VisuallyHidden>
+        <VisuallyHidden>{strings.format('system')}</VisuallyHidden>
       </ToggleButton>
       <ToggleButton
         id='light'
         className={styles.button}
       >
         <Sun />
-        <VisuallyHidden>Ljust läge</VisuallyHidden>
+        <VisuallyHidden>{strings.format('lightMode')}</VisuallyHidden>
       </ToggleButton>
       <ToggleButton
         id='dark'
         className={styles.button}
       >
         <Moon />
-        <VisuallyHidden>Mörkt läge</VisuallyHidden>
+        <VisuallyHidden>{strings.format('darkMode')}</VisuallyHidden>
       </ToggleButton>
     </ToggleButtonGroup>
   )

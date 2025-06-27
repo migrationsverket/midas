@@ -1,8 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --background, --background-hover, --border-subtle, --text-disabled from tokens;
+@value --font-family, --field-01, --background, --background-hover, --border-subtle, --text-disabled, --text-primary from tokens;
 
 .box {
   background-color: --field-01;
+  color: --text-primary;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;

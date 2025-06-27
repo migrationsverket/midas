@@ -17,7 +17,9 @@ import {
   LocalizedStrings,
 } from '@internationalized/string'
 import { useMemo } from 'react'
-import { useLocale } from 'react-aria-components'
+import { useLocale, I18nProvider } from 'react-aria-components'
+
+const DEFAULT_LANGUAGE = 'sv'
 
 const cache = new WeakMap()
 function getCachedDictionary<K extends string, T extends LocalizedString>(
@@ -25,7 +27,7 @@ function getCachedDictionary<K extends string, T extends LocalizedString>(
 ): LocalizedStringDictionary<K, T> {
   let dictionary = cache.get(strings)
   if (!dictionary) {
-    dictionary = new LocalizedStringDictionary(strings, 'sv-SE')
+    dictionary = new LocalizedStringDictionary(strings, DEFAULT_LANGUAGE)
     cache.set(strings, dictionary)
   }
 
@@ -61,10 +63,23 @@ export function useLocalizedStringFormatter<
   strings: LocalizedStrings<K, T>,
   packageName?: string,
 ): LocalizedStringFormatter<K, T> {
+  if (
+    !strings ||
+    typeof strings !== 'object' ||
+    !(DEFAULT_LANGUAGE in strings)
+  ) {
+    throw new Error(
+      `useLocalizedStringFormatter: Default language "${DEFAULT_LANGUAGE}" must be defined in dictionary.`,
+    )
+  }
+
   const { locale } = useLocale()
   const dictionary = useLocalizedStringDictionary(strings, packageName)
+
   return useMemo(
     () => new LocalizedStringFormatter(locale, dictionary),
     [dictionary, locale],
   )
 }
+
+export { I18nProvider }

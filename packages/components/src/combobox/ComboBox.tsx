@@ -28,6 +28,8 @@ import {
   type ListBoxSectionElement,
 } from '../list-box'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -58,6 +60,7 @@ export function ComboBox<T extends ListBoxOption>({
   ...props
 }: ComboBoxProps<T>) {
   const inputRef = React.useRef<HTMLInputElement>(null)
+  const strings = useLocalizedStringFormatter(messages)
 
   const handleMouseUp: React.MouseEventHandler<HTMLInputElement> = event => {
     if (event.currentTarget.value) {
@@ -89,7 +92,7 @@ export function ComboBox<T extends ListBoxOption>({
           className={clsx(styles.button, {
             [styles.medium]: size === 'medium',
           })}
-          aria-label='Visa lista'
+          aria-label={strings.format('showList')}
         >
           <div
             className={styles.icon}

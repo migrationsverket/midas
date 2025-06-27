@@ -19,6 +19,8 @@ import { SelectFieldError } from './SelectFieldError'
 import styles from './Select.module.css'
 import type { SelectContainerProps, SelectProps } from './types'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 interface MidasSelectProps extends SelectProps {
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
@@ -40,6 +42,8 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
     const triggerRef = useObjectRef(ref)
 
     const state = useMultiSelectState(props)
+
+    const strings = useLocalizedStringFormatter(messages)
 
     const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
       props,
@@ -130,7 +134,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
                   excludeFromTabOrder
                 />
               </div>
-              <span>Select All</span>
+              <span>{strings.format('selectAll')}</span>
             </ListBoxButton>
           )}
           <SelectListBox
@@ -140,7 +144,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
         </ListBoxPopover>
         {props.showTags && !!state.selectedItems && (
           <TagGroup
-            aria-label='Selected Items'
+            aria-label={strings.format('selectedItems')}
             selectionBehavior='toggle'
             onRemove={keys =>
               state.selectionManager.toggleSelection(Array.from(keys)[0])

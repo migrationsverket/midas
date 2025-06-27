@@ -15,6 +15,7 @@ interface LayoutContextProps {
   clientSideRouter?: (path: string, routerOptions: undefined) => void
   clientSideHref?: (href: Href) => string
   variant: 'internal' | 'external'
+  id: string
 }
 
 const LayoutContext = React.createContext<LayoutContextProps | undefined>(
@@ -37,6 +38,7 @@ export const LayoutProvider: React.FC<
   isOpened,
   setIsOpened,
   variant,
+  id,
 }) => {
   return (
     <LayoutContext.Provider
@@ -53,6 +55,7 @@ export const LayoutProvider: React.FC<
         clientSideRouter,
         clientSideHref,
         variant,
+        id,
       }}
     >
       {children}

@@ -9,6 +9,8 @@ import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
 import * as React from 'react'
 import { SidebarLink } from './SidebarLink'
 import { useLayoutContext } from '../context/LayoutContext'
+import { useLocalizedStringFormatter } from '../../utils/intl'
+import messages from '../intl/translations.json'
 
 export const Sidebar: React.FC = () => {
   const {
@@ -20,7 +22,10 @@ export const Sidebar: React.FC = () => {
     setIsOpened,
     clientSideRouter,
     clientSideHref,
+    id,
   } = useLayoutContext()
+
+  const strings = useLocalizedStringFormatter(messages)
 
   const LinkTree = ({ group }: { group: SidebarLinkGroup }) => {
     return (
@@ -55,7 +60,7 @@ export const Sidebar: React.FC = () => {
 
   return (
     <aside
-      id='midasMainMenu'
+      id={id}
       className={clsx(
         styles.sidebar,
         isCollapsed && styles.sidebarCollapsed,
@@ -66,7 +71,11 @@ export const Sidebar: React.FC = () => {
         {!isCollapsed && <p className={styles.appName}>{app.name}</p>}
         <Button
           variant='icon'
-          aria-label={isCollapsed ? 'Maximera sidomenyn' : 'Minimera sidomenyn'}
+          aria-label={
+            isCollapsed
+              ? strings.format('maximizeMenu')
+              : strings.format('minimizeMenu')
+          }
           onPress={() => setIsCollapsed(!isCollapsed)}
           className={styles.collapseButton}
         >
@@ -79,7 +88,7 @@ export const Sidebar: React.FC = () => {
       </div>
       <nav
         className={styles.sidebarNav}
-        aria-label='Sidomeny'
+        aria-label={strings.format('sidebarMenu')}
       >
         <ul className={styles.list}>
           {items.map((group, i) => (

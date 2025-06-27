@@ -8,6 +8,8 @@ import { Menu, X } from 'lucide-react'
 import * as React from 'react'
 import { useLayoutContext } from '../context/LayoutContext'
 import clsx from 'clsx'
+import { useLocalizedStringFormatter } from '../../utils/intl'
+import messages from '../intl/translations.json'
 
 export interface MidasHeader {
   headerChildren?: React.ReactNode
@@ -23,7 +25,10 @@ export const Header: React.FC = () => {
     setIsCollapsed,
     headerChildren,
     variant,
+    id,
   } = useLayoutContext()
+
+  const strings = useLocalizedStringFormatter(messages)
 
   if (variant === 'external')
     return (
@@ -68,8 +73,12 @@ export const Header: React.FC = () => {
           <Button
             variant='icon'
             className={styles.toggleButton}
-            aria-label={isOpened ? 'Stäng meny' : 'Öppna meny'}
-            aria-controls='midasMainMenu'
+            aria-label={
+              isOpened
+                ? strings.format('closeMenu')
+                : strings.format('openMenu')
+            }
+            aria-controls={id}
             onPressStart={() => {
               setIsCollapsed(false)
               setIsOpened?.(true)
