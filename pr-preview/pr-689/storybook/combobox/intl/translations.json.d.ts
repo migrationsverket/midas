@@ -1,6 +1,6 @@
 declare const _default: {
   "en": {
-    "showList": "Show List"
+    "showList": "Show list"
   },
   "sv": {
     "showList": "Visa lista"

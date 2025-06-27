@@ -1,9 +1,9 @@
 declare const _default: {
   "en": {
-    "chooseFile": "Choose File",
-    "chooseFiles": "Choose Files",
+    "chooseFile": "Choose file",
+    "chooseFiles": "Choose files",
     "dragAndDrop": "Drag and drop files here or click to select",
-    "removeFile": "Remove File"
+    "removeFile": "Remove file"
   },
   "sv": {
     "chooseFile": "Välj fil",
