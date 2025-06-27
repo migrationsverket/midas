@@ -12,6 +12,7 @@ import { Href } from '@react-types/shared'
 import { LayoutProvider } from './context/LayoutContext'
 import { Backdrop } from './components/Backdrop'
 import { Navbar } from './components/Navbar'
+import clsx from 'clsx'
 
 export interface SidebarLinkGroup {
   title?: string
@@ -64,6 +65,7 @@ export interface MidasLayout {
    */
   clientSideHref?: (href: Href) => string
   variant: 'internal' | 'external'
+  className?: string
 }
 
 export const Layout: React.FC<MidasLayout> & {
@@ -83,6 +85,7 @@ export const Layout: React.FC<MidasLayout> & {
   clientSideRouter,
   clientSideHref,
   variant,
+  className,
 }) => {
   const [isCollapsed, setIsCollapsed] = React.useState<boolean>(false)
   const [isOpened, setIsOpened] = React.useState<boolean>(false)
@@ -101,7 +104,7 @@ export const Layout: React.FC<MidasLayout> & {
         setIsCollapsed={setIsCollapsed}
         variant={variant}
       >
-        <div className={styles.baseLayout}>
+        <div className={clsx(styles.baseLayout, className)}>
           <SkipLink />
           <Layout.Header />
           <div className={styles.mainContent}>
@@ -135,7 +138,7 @@ export const Layout: React.FC<MidasLayout> & {
       setIsOpened={setIsOpened}
       variant={variant}
     >
-      <div className={styles.baseLayout}>
+      <div className={clsx(styles.baseLayout, className)}>
         <SkipLink />
         <Layout.Header />
         <div className={styles.mainContent}>

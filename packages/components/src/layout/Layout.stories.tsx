@@ -15,12 +15,17 @@ import {
 import { semantic } from '../theme'
 import { LinkButton } from '../link-button'
 import { Button } from '../button'
+import { expect } from '@storybook/test'
+import styles from './Layout.module.css'
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
   tags: ['autodocs'],
   title: 'Components/Layout',
   parameters: { layout: 'fullscreen', rootElement: 'div' },
+  args: {
+    className: 'test-class',
+  },
 }
 
 export default meta
@@ -115,6 +120,15 @@ export const Primary: Story = {
     app: { name: 'Namn på applikationen' },
     title: 'Skapa ansökningar',
     children: <AppExample />,
+  },
+  play: async ({ canvasElement, step, args }) => {
+    await step('it should use accept a custom className', async () => {
+      // rootElement is set to 'div' in the default exported parameters
+      await expect(canvasElement.querySelector('div')?.firstChild).toHaveClass(
+        styles.baseLayout,
+        args.className as string,
+      )
+    })
   },
 }
 
