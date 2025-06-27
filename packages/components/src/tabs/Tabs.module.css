@@ -1,29 +1,30 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs, --border-secondary, --size-10, --size-50, --size-80 from tokens;
+@value --border-disabled, --border-secondary, --border-subtle, --border-tertiary, --breakpoint-xs, --focus, --font-family, --size-10, --size-50, --size-70, --size-80, --size-130, --text-disabled, --text-primary from tokens;
 
 .container {
   font-family: --font-family;
 }
 
 .list {
+  border-bottom: 1px solid --border-subtle;
   display: flex;
   flex-flow: row wrap;
-  border-bottom: 1px solid --border-subtle;
 }
 
 .listItem {
-  padding: --size-50 --size-80;
-  cursor: pointer;
-  color: --text-primary;
   border-bottom: --size-10 solid --border-subtle;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  box-sizing: border-box;
+  color: --text-primary;
+  height: --size-130;
+  padding: --size-50 --size-80;
+
+  &[data-disabled] {
+    border-color: --border-disabled;
+    color: --text-disabled;
+  }
 
   &[data-selected] {
     font-weight: 500;
-    padding-bottom: calc(8px + 2px);
     border-color: --border-tertiary;
 
     &[data-hovered] {
@@ -33,74 +34,31 @@
 
   &[data-hovered] {
     border-color: --border-secondary;
+    cursor: pointer;
   }
 
-  &[data-focus-visible],
-  &:focus-visible {
+  &[data-focus-visible] {
     outline: none;
     box-shadow: --focus;
   }
 
   @media --breakpoint-xs {
+    border-bottom: 0;
     flex: 0 0 100%;
 
     &[data-selected] {
-      padding-left: calc(1.125rem - 3px);
-      border-bottom: 0;
-      box-shadow: none;
+      border-left: --size-10 solid --border-tertiary;
+      padding-left: --size-70;
     }
   }
 }
 
 .panel {
-  margin-top: 1rem;
+  margin-top: --size-80;
   color: --text-primary;
 
-  &[data-focus-visible],
-  &:focus-visible {
+  &[data-focus-visible] {
     outline: none;
     box-shadow: --focus;
-  }
-}
-
-.listItem:last-child {
-  padding: --size-50 --size-80;
-  cursor: pointer;
-  color: --text-primary;
-  border-bottom: --size-10 solid --border-subtle;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-
-  &[data-selected] {
-    font-weight: 500;
-    padding-bottom: calc(8px + 2px);
-    border-bottom: --size-10 solid --border-tertiary;
-
-    &[data-hovered] {
-      border-color: --border-tertiary;
-    }
-  }
-
-  &[data-hovered] {
-    border-color: --border-secondary;
-  }
-
-  &[data-focus-visible],
-  &:focus-visible {
-    outline: none;
-    box-shadow: --focus;
-  }
-
-  @media --breakpoint-xs {
-    flex: 0 0 100%;
-
-    &[data-selected] {
-      padding-left: calc(1.125rem - 3px);
-      padding-right: 1rem;
-      border-bottom: 0;
-      box-shadow: none;
-    }
   }
 }
