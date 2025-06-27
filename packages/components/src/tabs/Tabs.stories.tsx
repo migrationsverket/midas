@@ -10,6 +10,31 @@ import { TabPanel } from './TabPanel'
 
 type Story = StoryObj<typeof Tabs>
 
+const data: {
+  title: string
+  content: React.ReactNode
+  isDisabled?: boolean
+}[] = [
+  {
+    title: 'Processen',
+    content:
+      'Processen går till såhär Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur maxime dicta omnis aliquam quas doloremque cumque repellendus iure. Eveniet reprehenderit sapiente quidem culpa nam? Vel?',
+  },
+  {
+    title: 'Viktigt',
+    content:
+      'Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti consequatur nam culpa nesciunt cupiditate autem suscipit.',
+  },
+  {
+    title: 'Ansök',
+    content: (
+      <>
+        Ansök här: <Button>Ansök</Button>
+      </>
+    ),
+  },
+]
+
 export default {
   component: Tabs,
   title: 'Components/Tabs',
@@ -17,43 +42,49 @@ export default {
   render: args => (
     <Tabs {...args}>
       <TabList>
-        <Tab id='processen'>Processen</Tab>
-        <Tab id='viktigt'>Viktigt att veta</Tab>
-        <Tab id='ansok'>Ansök</Tab>
+        {data.map(({ title, isDisabled }) => (
+          <Tab
+            id={title}
+            isDisabled={isDisabled}
+            key={title}
+          >
+            {title}
+          </Tab>
+        ))}
       </TabList>
-
-      <TabPanel id='processen'>
-        <div>
-          Processen går till såhär Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Asperiores expedita, excepturi, hic modi tenetur
-          maxime dicta omnis aliquam quas doloremque cumque repellendus iure.
-          Eveniet reprehenderit sapiente quidem culpa nam? Vel?
-        </div>
-      </TabPanel>
-
-      <TabPanel id='viktigt'>
-        <div>
-          Det är viktigt att veta att Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Ipsum veritatis quisquam amet, rem aperiam error
-          nostrum earum consequuntur quidem fugit. Blanditiis odit corrupti
-          consequatur nam culpa nesciunt cupiditate autem suscipit.
-        </div>
-      </TabPanel>
-
-      <TabPanel id='ansok'>
-        <div>
-          Ansök här: <Button>Ansök</Button>
-        </div>
-      </TabPanel>
+      {data.map(({ title, content }) => (
+        <TabPanel id={title}>
+          <div>{content}</div>
+        </TabPanel>
+      ))}
     </Tabs>
   ),
-  args: {
-    label: 'Följ processen',
-    tabs: ['Processen', 'Viktigt att veta', 'Ansök'],
-  },
-} as Meta<typeof Tabs>
+} satisfies Meta<typeof Tabs>
 
 export const Primary: Story = {}
+
+export const DisabledTabs: Story = {
+  render: args => (
+    <Tabs {...args}>
+      <TabList>
+        {data.map(({ title, isDisabled }, i) => (
+          <Tab
+            id={title}
+            isDisabled={isDisabled || !!i}
+            key={title}
+          >
+            {title}
+          </Tab>
+        ))}
+      </TabList>
+      {data.map(({ title, content }) => (
+        <TabPanel id={title}>
+          <div>{content}</div>
+        </TabPanel>
+      ))}
+    </Tabs>
+  ),
+}
 
 export const DefaultSelectedKey: Story = {
   tags: ['!dev', '!autodocs'],
