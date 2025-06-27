@@ -34,18 +34,21 @@ export interface MidasToast {
 
 interface ToastRegionProps<T> extends AriaToastRegionProps {
   state: ToastState<T>
+  className?: string
 }
 
 export interface ToastProps<T> extends AriaToastProps<T> {
   state: ToastState<T>
   toast: QueuedToast<T>
   children?: React.ReactNode
+  className?: string
 }
 
 interface ToastProviderProps extends AriaToastRegionProps {
   children?:
     | ((state: ToastState<MidasToast>) => React.ReactNode)
     | React.ReactNode
+  className?: string
 }
 
 const iconMap = {
@@ -115,6 +118,7 @@ export const ToastProvider = ({ children, ...props }: ToastProviderProps) => {
 
 export function ToastRegion<T extends MidasToast>({
   state,
+  className,
   ...props
 }: ToastRegionProps<T>) {
   const ref = React.useRef(null)
@@ -124,7 +128,7 @@ export function ToastRegion<T extends MidasToast>({
     <div
       {...regionProps}
       ref={ref}
-      className={styles.toastRegion}
+      className={clsx(styles.toastRegion, className)}
     >
       {state.visibleToasts.map(toast => (
         <Toast
@@ -139,6 +143,7 @@ export function ToastRegion<T extends MidasToast>({
 
 export function Toast<T extends MidasToast>({
   state,
+  className,
   ...props
 }: ToastProps<T>) {
   const ref = React.useRef<HTMLDivElement>(null)
@@ -153,7 +158,11 @@ export function Toast<T extends MidasToast>({
     <div
       {...toastProps}
       ref={ref}
-      className={clsx(styles.toast, styles[props.toast.content.type])}
+      className={clsx(
+        styles.toast,
+        styles[props.toast.content.type],
+        className,
+      )}
       style={{ viewTransitionName: props.toast.key }}
     >
       <div

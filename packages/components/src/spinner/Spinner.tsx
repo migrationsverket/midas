@@ -14,17 +14,19 @@ export interface SpinnerProps {
    * @default false
    */
   isOnColor?: boolean
+  className?: string
 }
 
 export const Spinner: React.FC<SpinnerProps> = ({
   small,
   isOnColor = false,
+  className,
 }) => {
   const strings = useLocalizedStringFormatter(messages)
 
   return (
     <div
-      className={styles.container}
+      className={clsx(styles.container, className)}
       role='status'
     >
       <LoaderCircle

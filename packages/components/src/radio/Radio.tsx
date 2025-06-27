@@ -63,12 +63,9 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
   )
 }
 
-/**
- * Radio item
- * */
-export const Radio = (props: RadioProps) => (
+export const Radio = ({ className, ...rest }: RadioProps) => (
   <AriaRadio
-    className={styles.radio}
-    {...props}
+    className={clsx(styles.radio, className)}
+    {...rest}
   />
 )

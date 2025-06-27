@@ -91,16 +91,16 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   }
 
   return (
-    <div>
+    <div
+      className={clsx(styles.container, props.className)}
+      data-disabled={inputProps.disabled}
+    >
       {errorPosition === 'top' && (
         <FieldError isInvalid={isInvalid}>
           {props.errorMessage ?? validationErrors.join(' ')}
         </FieldError>
       )}
-      <div
-        className={styles.container}
-        data-disabled={inputProps.disabled}
-      >
+      <div className={styles.inner}>
         <div
           className={clsx(styles.inputContainer, {
             [styles.medium]: size === 'medium',
@@ -130,7 +130,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           {value.length > 0 && (
             <Button
               variant='icon'
-              size='medium'
+              size={size}
               className={clsx(styles.clear, {
                 [styles.medium]: size === 'medium',
               })}
