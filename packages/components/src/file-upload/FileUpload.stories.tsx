@@ -53,6 +53,7 @@ export const WithFiles: Story = {
         args['data-testid'] as string,
       )
       await userEvent.upload(fileUpload, testFile)
+      expect(args.onSelect).toHaveBeenCalledTimes(1)
       expect(fileUpload?.files?.[0]).toStrictEqual(testFile)
       expect(fileUpload?.files?.item(0)).toStrictEqual(testFile)
       expect(fileUpload.files).toHaveLength(1)
