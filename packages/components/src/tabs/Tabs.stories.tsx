@@ -53,7 +53,10 @@ export default {
         ))}
       </TabList>
       {data.map(({ title, content }) => (
-        <TabPanel id={title}>
+        <TabPanel
+          id={title}
+          key={title}
+        >
           <div>{content}</div>
         </TabPanel>
       ))}
