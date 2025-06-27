@@ -24,6 +24,12 @@ export interface TabsProps extends AriaTabsProps {
    * @see {@link https://designsystem.migrationsverket.se/components/tabs/|Tabs}
    */
   label?: string
+  /**
+   * The orientation of the tabs.
+   * Will adjust to screen size automatically if omitted
+   * @default undefined
+   */
+  orientation?: AriaTabsProps['orientation']
 }
 
 interface TabPanelChildProps {
@@ -44,15 +50,15 @@ export const Tabs: React.FC<TabsProps> = ({
   )
 
   const orientation: AriaTabsProps['orientation'] =
-    rest.orientation || bodyWidth >= windowSizes.md ? 'horizontal' : 'vertical'
+    rest.orientation || bodyWidth >= windowSizes.sm ? 'horizontal' : 'vertical'
 
   if (!tabs?.length) {
     return (
       <AriaTabs
+        {...rest}
         orientation={orientation}
         className={clsx(styles.container, className)}
         children={children}
-        {...rest}
       />
     )
   }
@@ -88,9 +94,9 @@ export const Tabs: React.FC<TabsProps> = ({
 
   return (
     <AriaTabs
+      {...rest}
       orientation={orientation}
       className={clsx(styles.container, className)}
-      {...rest}
     >
       <TabList aria-label={label}>
         {tabs.map(tab => (
