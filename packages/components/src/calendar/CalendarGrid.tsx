@@ -10,10 +10,12 @@ import styles from './Calendar.module.css'
 
 export interface CalendarGridProps {
   weekdayStyle?: AriaCalendarGridProps['weekdayStyle']
+  isRange?: boolean
 }
 
 export const CalendarGrid: React.FC<CalendarGridProps> = ({
   weekdayStyle = 'short',
+  isRange = false,
 }) => (
   <AriaCalendarGrid weekdayStyle={weekdayStyle}>
     {date => (
@@ -22,6 +24,7 @@ export const CalendarGrid: React.FC<CalendarGridProps> = ({
         className={clsx(
           styles.day,
           isToday(date, getLocalTimeZone()) && styles.today,
+          isRange && styles.range,
         )}
       />
     )}
