@@ -35,8 +35,8 @@ export const DropZone: Story = {
   },
 }
 
-export const CustomSelectHandler: Story = {
-  tags: ['!dev', '!autodocs'],
+export const WithFiles: Story = {
+  tags: ['!autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

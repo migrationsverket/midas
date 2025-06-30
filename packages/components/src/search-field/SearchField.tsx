@@ -12,6 +12,8 @@ import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
 import { FieldError } from '../field-error'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface SearchFieldProps
   extends Omit<AriaSearchFieldProps, 'isRequired'> {
@@ -46,6 +48,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
   ...props
 }) => {
   const { value, setValue } = useSearchFieldState(props)
+  const strings = useLocalizedStringFormatter(messages)
 
   const ref = React.useRef<HTMLInputElement>(null)
 
@@ -148,7 +151,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           onPress={handleSubmit}
           type='button'
         >
-          {props.buttonText ? props.buttonText : 'Sök'}
+          {props.buttonText ? props.buttonText : strings.format('search')}
         </Button>
       </div>
       {errorPosition === 'bottom' && (

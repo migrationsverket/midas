@@ -89,6 +89,7 @@ export const Layout: React.FC<MidasLayout> & {
 }) => {
   const [isCollapsed, setIsCollapsed] = React.useState<boolean>(false)
   const [isOpened, setIsOpened] = React.useState<boolean>(false)
+  const id = React.useId()
 
   if (variant === 'external')
     return (
@@ -103,6 +104,7 @@ export const Layout: React.FC<MidasLayout> & {
         isCollapsed={isCollapsed}
         setIsCollapsed={setIsCollapsed}
         variant={variant}
+        id={id}
       >
         <div className={clsx(styles.baseLayout, className)}>
           <SkipLink />
@@ -137,6 +139,7 @@ export const Layout: React.FC<MidasLayout> & {
       isOpened={isOpened}
       setIsOpened={setIsOpened}
       variant={variant}
+      id={id}
     >
       <div className={clsx(styles.baseLayout, className)}>
         <SkipLink />

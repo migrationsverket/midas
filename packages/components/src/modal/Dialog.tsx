@@ -12,6 +12,8 @@ import { X } from 'lucide-react'
 import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { FocusScope } from '@react-aria/focus'
 import { Heading } from '../heading'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 interface DialogProps extends AriaDialogProps {
   /**
@@ -28,6 +30,8 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
   title,
   ...props
 }) => {
+  const strings = useLocalizedStringFormatter(messages)
+
   return (
     <AriaDialog {...props}>
       <ModalOverlay
@@ -50,7 +54,7 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
                 icon={X}
                 iconPlacement='right'
               >
-                Stäng
+                {strings.format('close')}
               </Button>
             </div>
             <div

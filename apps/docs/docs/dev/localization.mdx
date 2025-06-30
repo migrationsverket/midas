@@ -7,16 +7,20 @@ import { LocaleExample, I18nExample, ErrorMessageExample } from '@site/src/compo
 # Lokalisering
 
 React Aria har en rad inbyggda funktioner som underlättar skapandet av tillgängliga
-och internationella användargränssnitt. Midas komponenter, som bygger på React Aria
-uppdateras automatiskt när språkmiljön ändras. Detta innebär att din applikation kan anpassa
-sig dynamiskt till olika språk utan alltför mycket manuell handpåläggning. För mer ingående dokumentation,
-se [React Aria Internationalization](https://react-spectrum.adobe.com/react-aria/internationalization.html).
+och internationella användargränssnitt. Komponenterna i Midas, som bygger på React Aria,
+uppdateras automatiskt när språkmiljön ändras. Som standard används användarens språkinställning
+i webbläsaren för att välja språk och lokalisering i komponenterna. Om användarens inställning
+inte motsvarar något av de språk som stöds används svenska som standard. För närvarande
+stöder Midas officiellt svenska och engelska, medan React Aria har stöd för ytterligare språk.
+För mer detaljerad dokumentation, se [React Aria Internationalization](https://react-spectrum.adobe.com/react-aria/internationalization.html).
+
+Det finns flera sätt att kontrollera och anpassa lokaliseringen. Nedan följer en översikt över de viktigaste funktionerna.
 
 ## useLocale
 
-För att säkerställa att lokalisering fungerar bör `useLocale` användas i root av applikationen. På så sätt får
-du tillgång till browserns språkinställning. Normalt fungerar `locale` utan att hämta in den explicit men för till
-exempel SSR bör `useLocale` användas, se [React Aria](https://react-spectrum.adobe.com/react-aria/internationalization.html) för referens.
+För att läsa av aktuell språkinställning och riktning (LTR/RTL) i applikationen kan du använda`useLocale` från React Aria.
+Normalt fungerar `locale` utan att behöva importeras explicit, men vid till exempel SSR bör `useLocale` användas,
+se [React Aria](https://react-spectrum.adobe.com/react-aria/internationalization.html) för mer information.
 
 ```tsx
 import { useLocale } from 'react-aria-components'
@@ -25,12 +29,12 @@ export default function App() {
   const { locale, direction } = useLocale()
 
   return (
-    <div
+    <html
       lang={locale}
       dir={direction}
     >
       {/* your app here */}
-    </div>
+    </html>
   )
 }
 ```
@@ -39,9 +43,13 @@ export default function App() {
 
 ## I18nProvider
 
-Om det finns behov av att skriva över användarens inställningar går det att använda `I18nProvider` från React Aria.
-Via I18nProvider går det att styra beteendet för datum och tidsrelaterade komponenter men _inte_ ta kontroll över felmeddelanden
-eller annan information, det sätts via browsern.
+Om det finns behov av att åsidosätta användarens inställningar kan detta göras via `I18nProvider`.
+Med I18nProvider kan du styra beteendet för datum- och tidsrelaterade komponenter, men inte ta kontroll
+över felmeddelanden eller annan information, då detta styrs av webbläsaren.
+
+```tsx
+import { I18nProvider } from 'react-aria-components'
+```
 
 ```tsx
 <I18nProvider locale={locale}>
@@ -53,16 +61,7 @@ eller annan information, det sätts via browsern.
 <br />
 <ErrorMessageExample />
 
-## useMessageFormatter
+## useLocalizedStringFormatter
 
-För att översätta eller anpassa enskilda strängar finns [useLocalizedStringFormatter](https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/i18n/src/useLocalizedStringFormatter.ts).
-Motsvarande för siffror och valutor är [useNumberFormatter](https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html).
-
-## Midaskomponenter
-
-Officiellt har Midas inte fullt stöd för flera språk men i utgångsläget fungerar de flesta komponenter
-och respekterar användarens inställningar i browsern. Framtida uppdateringar eller nya komponenter
-bygger på React Arias ramverk så den allmänna rekommendationen är att använda metoder och hooks därifrån för
-att lösa eventuella lokaliseringsproblem. Buggrapport eller Feature requests kan skapas via
-
-[GitHub Issues](https://github.com/migrationsverket/midas/issues).
+För att översätta eller anpassa enskilda textsträngar kan du använda  [useLocalizedStringFormatter](https://github.com/adobe/react-spectrum/blob/main/packages/%40react-aria/i18n/src/useLocalizedStringFormatter.ts).
+För siffror och valutor finns motsvarande funktionalitet i [useNumberFormatter](https://react-spectrum.adobe.com/react-aria/useNumberFormatter.html).

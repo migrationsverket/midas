@@ -12,6 +12,7 @@ import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
 import { semantic } from '../src/theme'
+import { I18nProvider } from '../src/utils/intl'
 
 const preview: Preview = {
   async beforeEach() {
@@ -79,10 +80,23 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    lang: {
+      description: 'Language',
+      toolbar: {
+        icon: 'globe',
+        items: [
+          { value: undefined, title: 'System Default' },
+          { value: 'en', title: 'English (en)' },
+          { value: 'sv', title: 'Svenska (sv)' },
+        ],
+      },
+    },
   },
   initialGlobals: {
     size: 'large',
     scheme: getPreferredColorScheme(),
+    lang: 'sv',
+    background: 'Background',
   },
   decorators: [
     (Story, context) => {
@@ -103,7 +117,9 @@ const preview: Preview = {
             backgroundColor: context.globals.backgrounds?.value,
           }}
         >
-          <Story />
+          <I18nProvider locale={context.globals.lang}>
+            <Story />
+          </I18nProvider>
         </RootTag>
       )
     },

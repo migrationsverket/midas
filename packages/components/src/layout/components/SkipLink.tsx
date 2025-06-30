@@ -3,6 +3,8 @@
 import { Button } from '../../button'
 import styles from '../Layout.module.css'
 import * as React from 'react'
+import { useLocalizedStringFormatter } from '../../utils/intl'
+import messages from '../intl/translations.json'
 
 interface SkipLinkProps {
   id?: string
@@ -21,12 +23,14 @@ export const SkipLink: React.FC<SkipLinkProps> = ({
     }
   }
 
+  const strings = useLocalizedStringFormatter(messages)
+
   return (
     <Button
       onPress={handleSkipToContent}
       className={styles.skipToContent}
     >
-      Hoppa till huvudinnehåll
+      {strings.format('skipToContent')}
     </Button>
   )
 }

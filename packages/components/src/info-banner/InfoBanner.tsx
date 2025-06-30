@@ -3,6 +3,8 @@ import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
 import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
 import { Button } from '../button'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 export interface InfoBannerProps
   extends React.DetailedHTMLProps<
@@ -51,6 +53,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
 }) => {
   const Icon = iconMap[type]
   const [show, setShow] = React.useState<boolean>(true)
+  const strings = useLocalizedStringFormatter(messages)
 
   if (show)
     return (
@@ -74,7 +77,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
           <div className={styles.dismissable}>
             <Button
               variant='icon'
-              aria-label='Stäng'
+              aria-label={strings.format('close')}
               onPress={() => setShow(false)}
             >
               <X size={20} />

@@ -13,6 +13,7 @@ describe('given a default SearchField', () => {
   beforeEach(() => {
     render(
       <SearchField
+        buttonText={buttonText}
         placeholder={placeholder}
         onChange={onChange}
         onSubmit={onSubmit}
@@ -49,6 +50,7 @@ describe('given a SearchField with custom validation', () => {
   beforeEach(() =>
     render(
       <SearchField
+        buttonText={buttonText}
         placeholder={placeholder}
         validate={value => (value === 'secret' ? errorMessage : true)}
         onChange={onChange}
@@ -83,6 +85,7 @@ describe('given an invalid SearchField with custom errorMessage', () => {
   beforeEach(() =>
     render(
       <SearchField
+        buttonText={buttonText}
         placeholder={placeholder}
         errorMessage={errorMessage}
         isInvalid

@@ -10,10 +10,12 @@ import * as React from 'react'
 import { X } from 'lucide-react'
 import styles from './FileUpload.module.css'
 import { Button } from '../button'
-import { DropEvent } from 'react-aria'
+import { DropEvent, VisuallyHidden } from 'react-aria'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 import clsx from 'clsx'
 
 export interface FileTriggerProps extends AriaFileTriggerProps {
@@ -40,8 +42,12 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
   ...rest
 }) => {
   const [files, setFiles] = React.useState<FileState>(null)
+  const strings = useLocalizedStringFormatter(messages)
 
   const handleUpload = (files: FileList | null) => {
+    if (rest.onSelect) {
+      rest.onSelect(files)
+    }
     setFiles(files !== null ? Array.from(files) : [])
     // TODO: actually handle files?
   }
@@ -66,7 +72,7 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
             slot='description'
             style={{ display: 'block' }}
           >
-            Dra och släpp en fil inuti det streckade området
+            {strings.format('dragAndDrop')}
           </Text>
         </DropZone>
         {files && (
@@ -85,16 +91,17 @@ export const FileUpload: React.FC<FileTriggerProps> = ({
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       <AriaFileTrigger
+        {...rest}
         allowsMultiple={allowsMultiple}
         onSelect={files => handleUpload(files)}
-        {...rest}
       >
         <Button
           variant='secondary'
-          aria-labelledby='fileUpload'
           className={styles.input}
         >
-          {allowsMultiple ? 'Välj filer' : 'Välj fil'}
+          {allowsMultiple
+            ? strings.format('chooseFiles')
+            : strings.format('chooseFile')}
         </Button>
       </AriaFileTrigger>
       {files && (
@@ -113,6 +120,8 @@ interface FileListProps {
 }
 
 const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
+  const strings = useLocalizedStringFormatter(messages)
+
   const handleRemove = (index: number) => {
     setFiles(files?.filter((f, i) => i !== index))
   }
@@ -134,6 +143,7 @@ const FileList: React.FC<FileListProps> = ({ files, setFiles }) => {
               size={20}
               aria-hidden
             />
+            <VisuallyHidden>{strings.format('removeFile')}</VisuallyHidden>
           </Button>
         </li>
       ))}

@@ -5,6 +5,8 @@ import { Info } from 'lucide-react'
 import styles from './LabelWrapper.module.css'
 import { LabelWrapperContext } from './LabelWrapper'
 import { DialogTrigger } from '../modal'
+import { useLocalizedStringFormatter } from '../utils/intl'
+import messages from './intl/translations.json'
 
 /** Display an info-icon with popover next to the label to further explain what the user should enter in the field */
 export interface InfoPopoverProps {
@@ -16,10 +18,11 @@ export interface InfoPopoverProps {
 
 export const InfoPopover: React.FC<InfoPopoverProps> = ({
   children,
-  'aria-label': ariaLabel = 'Mer information',
+  'aria-label': ariaLabel,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
   const ctx = React.useContext(LabelWrapperContext)
+  const strings = useLocalizedStringFormatter(messages)
 
   return (
     <DialogTrigger
@@ -30,7 +33,7 @@ export const InfoPopover: React.FC<InfoPopoverProps> = ({
         variant='icon'
         size='medium'
         className={styles.labelPopoverTrigger}
-        aria-label={ariaLabel}
+        aria-label={ariaLabel || strings.format('moreInfo')}
         id={ctx?.popoverId}
       >
         <Info size={20} />

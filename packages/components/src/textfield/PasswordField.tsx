@@ -9,7 +9,7 @@ import { InputProps } from './Input'
 export const PasswordField: React.FC<InputProps> = ({ value }) => {
   const [showPassword, setShowPassword] = React.useState(false)
   const handlePress = () => setShowPassword(previousValue => !previousValue)
-  const stringFormatter = useLocalizedStringFormatter(messages)
+  const strings = useLocalizedStringFormatter(messages)
 
   return (
     <>
@@ -26,9 +26,7 @@ export const PasswordField: React.FC<InputProps> = ({ value }) => {
         onPress={handlePress}
         className={styles.passwordButton}
       >
-        {showPassword
-          ? stringFormatter.format('hide')
-          : stringFormatter.format('show')}
+        {showPassword ? strings.format('hide') : strings.format('show')}
       </Button>
     </>
   )
