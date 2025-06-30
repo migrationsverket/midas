@@ -1,50 +1,63 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --border-subtle, --border-tertiary, --focus, --breakpoint-xs from tokens;
+@value --border-disabled, --border-secondary, --border-subtle, --border-tertiary, --breakpoint-xs, --focus, --font-family, --size-10, --size-50, --size-70, --size-80, --size-130, --text-disabled, --text-primary from tokens;
 
 .container {
   font-family: --font-family;
 }
 
 .list {
+  border-bottom: 1px solid --border-subtle;
   display: flex;
   flex-flow: row wrap;
-  border-bottom: 1px solid --border-subtle;
 }
 
 .listItem {
-  padding: 0.5rem 1.25rem;
-  cursor: pointer;
+  border-bottom: --size-10 solid --border-subtle;
+  box-sizing: border-box;
   color: --text-primary;
+  height: --size-130;
+  padding: --size-50 --size-80;
+
+  &[data-disabled] {
+    border-color: --border-disabled;
+    color: --text-disabled;
+  }
 
   &[data-selected] {
     font-weight: 500;
-    padding-bottom: calc(0.5rem - 3px);
-    border-bottom: 3px solid --border-tertiary;
+    border-color: --border-tertiary;
+
+    &[data-hovered] {
+      border-color: --border-tertiary;
+    }
   }
 
-  &[data-focus-visible],
-  &:focus-visible {
+  &[data-hovered] {
+    border-color: --border-secondary;
+    cursor: pointer;
+  }
+
+  &[data-focus-visible] {
     outline: none;
     box-shadow: --focus;
   }
 
   @media --breakpoint-xs {
+    border-bottom: 0;
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: 3px solid --border-tertiary;
-      padding-left: calc(1.125rem - 3px);
-      border-bottom: 0;
-      box-shadow: none;
+      border-left: --size-10 solid --border-tertiary;
+      padding-left: --size-70;
     }
   }
 }
 
 .panel {
-  margin-top: 1rem;
+  margin-top: --size-80;
+  color: --text-primary;
 
-  &[data-focus-visible],
-  &:focus-visible {
+  &[data-focus-visible] {
     outline: none;
     box-shadow: --focus;
   }
