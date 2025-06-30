@@ -80,7 +80,7 @@ export const ErrorMessageExample = () => {
     <TextField
       label='Skriv e-post'
       type='email'
-      description='Validering/Felmeddelanden beror av inställningarna i browser'
+      description='Validering och felmeddelanden beror av inställningarna i webbläsaren'
     />
   )
 }
