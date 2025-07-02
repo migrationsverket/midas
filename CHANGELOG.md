@@ -1,3 +1,32 @@
+## 10.4.0 (2025-07-02)
+
+### 🚀 Features
+
+- **tabs:** refactor tabs to support declarative children structure ([#678](https://github.com/migrationsverket/midas/pull/678))
+
+### 🩹 Fixes
+
+- add translations for all text strings ([#689](https://github.com/migrationsverket/midas/pull/689))
+- **breadcrumbs:** 💄 accept custom className ([#683](https://github.com/migrationsverket/midas/pull/683))
+- **calendar:** in range states ([3b7bcd03da](https://github.com/migrationsverket/midas/commit/3b7bcd03da))
+- **calendar:** change text color token for dates in range ([1656d6d7a1](https://github.com/migrationsverket/midas/commit/1656d6d7a1))
+- **checkbox:** 💄 accept custom className ([#684](https://github.com/migrationsverket/midas/pull/684))
+- **checkbox:** add margin-bottom to checkboxgroup-items [run-chromatic] ([0637fd9a5d](https://github.com/migrationsverket/midas/commit/0637fd9a5d))
+- **color-scheme-switch:** 💄 accept custom className ([#685](https://github.com/migrationsverket/midas/pull/685))
+- **file-upload:** 💄 accept custom className ([#686](https://github.com/migrationsverket/midas/pull/686))
+- **layout:** 💄 accept custom className ([#687](https://github.com/migrationsverket/midas/pull/687))
+- **radio:** 💄 accept custom className ([#688](https://github.com/migrationsverket/midas/pull/688))
+- **search-field:** 💄 accept custom className ([#690](https://github.com/migrationsverket/midas/pull/690))
+- **spinner:** 💄 accept custom className ([#691](https://github.com/migrationsverket/midas/pull/691))
+- **theme:** new tokens for calendar date states ([0f819928d0](https://github.com/migrationsverket/midas/commit/0f819928d0))
+- **theme:** change dark mode color on calendarBackgroundInRange ([d745cb2adf](https://github.com/migrationsverket/midas/commit/d745cb2adf))
+- **toast:** 💄 accept custom className ([#692](https://github.com/migrationsverket/midas/pull/692))
+
+### 📖 Documentation changes
+
+- add release notes for v10.3.0 ([00264e3cec](https://github.com/migrationsverket/midas/commit/00264e3cec))
+- **popover:** edit typo ([#682](https://github.com/migrationsverket/midas/pull/682))
+
 ## 10.3.0 (2025-06-25)
 
 ### 🚀 Features
