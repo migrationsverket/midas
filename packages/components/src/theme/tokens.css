@@ -262,7 +262,7 @@
 @value --calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
 @value --calendar-date-background-selected: light-dark(--blue-150, --blue-80);
 @value --calendar-date-background-start-range: light-dark(--blue-150, --blue-80);
-@value --calendar-date-background-in-range: light-dark(--blue-20, --blue-100);
+@value --calendar-date-background-in-range: light-dark(--blue-20, --blue-150);
 @value --calendar-date-background-end-range: light-dark(--blue-150, --blue-80);
 
 /* Logo */

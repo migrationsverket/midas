@@ -257,7 +257,7 @@ export const semantic = {
   calendarDateBackgroundHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   calendarDateBackgroundSelected: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
   calendarDateBackgroundStartRange: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
-  calendarDateBackgroundInRange: `light-dark(${baseColors.blue20}, ${baseColors.blue100})`,
+  calendarDateBackgroundInRange: `light-dark(${baseColors.blue20}, ${baseColors.blue150})`,
   calendarDateBackgroundEndRange: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
 
   logoPrimary: `light-dark(${baseColors.red100}, ${baseColors.white})`,
