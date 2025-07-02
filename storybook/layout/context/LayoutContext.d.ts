@@ -14,6 +14,7 @@ interface LayoutContextProps {
     clientSideRouter?: (path: string, routerOptions: undefined) => void;
     clientSideHref?: (href: Href) => string;
     variant: 'internal' | 'external';
+    id: string;
 }
 export declare const LayoutProvider: React.FC<LayoutContextProps & {
     children: React.ReactNode;

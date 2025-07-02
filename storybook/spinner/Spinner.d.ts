@@ -7,5 +7,6 @@ export interface SpinnerProps {
      * @default false
      */
     isOnColor?: boolean;
+    className?: string;
 }
 export declare const Spinner: React.FC<SpinnerProps>;

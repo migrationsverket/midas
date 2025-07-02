@@ -10,5 +10,6 @@ export interface FileTriggerProps extends AriaFileTriggerProps {
     dropzone?: boolean;
     /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
     popover?: InfoPopoverProps;
+    className?: string;
 }
 export declare const FileUpload: React.FC<FileTriggerProps>;

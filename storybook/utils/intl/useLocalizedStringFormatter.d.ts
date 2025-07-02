@@ -1,4 +1,5 @@
 import { LocalizedString, LocalizedStringDictionary, LocalizedStringFormatter, LocalizedStrings } from '@internationalized/string';
+import { I18nProvider } from 'react-aria-components';
 /**
  * Returns a cached LocalizedStringDictionary for the given strings.
  */
@@ -9,3 +10,4 @@ export declare function useLocalizedStringDictionary<K extends string = string, 
  * @param strings - A mapping of languages to localized strings by key.
  */
 export declare function useLocalizedStringFormatter<K extends string = string, T extends LocalizedString = string>(strings: LocalizedStrings<K, T>, packageName?: string): LocalizedStringFormatter<K, T>;
+export { I18nProvider };
