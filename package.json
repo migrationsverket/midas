@@ -12,7 +12,7 @@
     "@docusaurus/babel": "^3.7.0",
     "@docusaurus/eslint-plugin": "^3.7.0",
     "@nx/eslint-plugin": "^20.5.0",
-    "@nx/remix": "20.5.0",
+    
     "@nx/storybook": "^20.5.0",
     "@nx/vite": "^20.5.0",
     "@types/react": "18.3.1",
@@ -70,13 +70,7 @@
     "@nx/react": "^20.5.0",
     "@nx/web": "^20.5.0",
     "@nx/workspace": "^20.5.0",
-    "@remix-run/css-bundle": "^2.15.2",
-    "@remix-run/dev": "2.15.2",
-    "@remix-run/eslint-config": "2.15.2",
-    "@remix-run/node": "2.15.2",
-    "@remix-run/react": "2.15.2",
-    "@remix-run/serve": "2.16.4",
-    "@remix-run/testing": "2.15.2",
+    
     "@storybook/addon-a11y": "^8.6.0",
     "@storybook/addon-docs": "^8.6.0",
     "@storybook/addon-essentials": "^8.6.0",
