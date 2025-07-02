@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --font-size-30, --breakpoint-xs, --button-background-primary, --button-border-secondary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-tertiary, --border-tertiary, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover, --icon-tertiary, --size-50, --size-70, --size-80 from tokens;
+@value --font-family, --font-size-30, --breakpoint-xs, --button-background-primary, --button-border-secondary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-tertiary, --border-tertiary, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover, --icon-tertiary, --size-50, --size-70, --size-100, --size-80 from tokens;
 
 .linkButton {
   --border-width: 1px;
@@ -8,7 +8,7 @@
   font-size: --font-size-30;
   font-weight: 500;
   padding: calc(--size-70 - var(--border-width))
-    calc(--size-80 - var(--border-width));
+    calc(--size-100 - var(--border-width));
   background-color: --button-background-primary;
   border: solid var(--border-width) transparent;
   color: --text-on-color;
