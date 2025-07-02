@@ -38,3 +38,19 @@
     min-height: 20vh;
   }
 }
+
+.lightImage {
+  display: block;
+}
+
+.darkImage {
+  display: none;
+}
+
+:global(html[data-theme='dark']) .lightImage {
+  display: none;
+}
+
+:global(html[data-theme='dark']) .darkImage {
+  display: block;
+}
