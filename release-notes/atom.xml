@@ -2,11 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/release-notes/</id>
     <title>Migrationsverkets designsystem Blog</title>
-    <updated>2025-06-25T00:00:00.000Z</updated>
+    <updated>2025-07-02T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/release-notes/"/>
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
     <icon>https://designsystem.migrationsverket.se/img/favicon.ico?v=3</icon>
+    <entry>
+        <title type="html"><![CDATA[Release 10.4.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/10.4.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/10.4.0/"/>
+        <updated>2025-07-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🚀 Nya funktioner]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/10.4.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner">​</a></h2>
+<p>Tabs exporterar nu samtliga Tab-komponenter från React Aria så att komponenten enklare kan anpassas
+och stämmer bättre med ursprungligt API,</p>
+<ul>
+<li><strong>tabs:</strong> refactor tabs to support declarative children structure (<a href="https://github.com/migrationsverket/midas/pull/678" target="_blank" rel="noopener noreferrer">#678</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/10.4.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar">​</a></h2>
+<p>Inga hårdkodade strängar för enbart svenska, komponenter går att anpassa efter olika språk. Samtliga komponenter
+accepterar nu <code scope="[object Object]">className</code> för att applicera egen css.</p>
+<ul>
+<li>add translations for all text strings (<a href="https://github.com/migrationsverket/midas/pull/689" target="_blank" rel="noopener noreferrer">#689</a>)</li>
+<li><strong>breadcrumbs:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/683" target="_blank" rel="noopener noreferrer">#683</a>)</li>
+<li><strong>calendar:</strong> in range states (<a href="https://github.com/migrationsverket/midas/commit/3b7bcd03da" target="_blank" rel="noopener noreferrer">3b7bcd03da</a>)</li>
+<li><strong>calendar:</strong> change text color token for dates in range (<a href="https://github.com/migrationsverket/midas/commit/1656d6d7a1" target="_blank" rel="noopener noreferrer">1656d6d7a1</a>)</li>
+<li><strong>checkbox:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/684" target="_blank" rel="noopener noreferrer">#684</a>)</li>
+<li><strong>checkbox:</strong> add margin-bottom to checkboxgroup-items [run-chromatic] (<a href="https://github.com/migrationsverket/midas/commit/0637fd9a5d" target="_blank" rel="noopener noreferrer">0637fd9a5d</a>)</li>
+<li><strong>color-scheme-switch:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/685" target="_blank" rel="noopener noreferrer">#685</a>)</li>
+<li><strong>file-upload:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/686" target="_blank" rel="noopener noreferrer">#686</a>)</li>
+<li><strong>layout:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/687" target="_blank" rel="noopener noreferrer">#687</a>)</li>
+<li><strong>radio:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/688" target="_blank" rel="noopener noreferrer">#688</a>)</li>
+<li><strong>search-field:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/690" target="_blank" rel="noopener noreferrer">#690</a>)</li>
+<li><strong>spinner:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/691" target="_blank" rel="noopener noreferrer">#691</a>)</li>
+<li><strong>theme:</strong> new tokens for calendar date states (<a href="https://github.com/migrationsverket/midas/commit/0f819928d0" target="_blank" rel="noopener noreferrer">0f819928d0</a>)</li>
+<li><strong>theme:</strong> change dark mode color on calendarBackgroundInRange (<a href="https://github.com/migrationsverket/midas/commit/d745cb2adf" target="_blank" rel="noopener noreferrer">d745cb2adf</a>)</li>
+<li><strong>toast:</strong> 💄 accept custom className (<a href="https://github.com/migrationsverket/midas/pull/692" target="_blank" rel="noopener noreferrer">#692</a>)</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.4.0/">changelog</a>.</p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.3.0]]></title>
         <id>https://designsystem.migrationsverket.se/release-notes/10.3.0/</id>
