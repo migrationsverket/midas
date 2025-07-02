@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --text-primary, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus, --text-warning, --support-border-warning, --calendar-date-background-selected, --calendar-date-background-in-range, --calendar-date-background-end-range, --calendar-date-background-start-range from tokens;
+@value --font-family, --layer-01, --text-primary, --text-inverse, --text-on-color, --text-disabled, --button-background-primary, --border-primary, --field-hover-01, --focus, --text-warning, --support-border-warning, --calendar-date-background-selected, --calendar-date-background-in-range, --calendar-date-background-end-range, --calendar-date-background-start-range from tokens;
 
 .container {
   display: inline-flex;
@@ -123,7 +123,7 @@
   }
 
   &[data-selected='true'] {
-    color: --text-on-color;
+    color: --text-inverse;
     background-color: --calendar-date-background-selected;
     border-color: --calendar-date-background-selected;
 
@@ -140,13 +140,13 @@
     }
 
     &[data-selection-start='true'] {
-      color: --text-on-color;
+      color: --text-inverse;
       background-color: --calendar-date-background-start-range;
       border-color: --calendar-date-background-start-range;
     }
 
     &[data-selection-end='true'] {
-      color: --text-on-color;
+      color: --text-inverse;
       background-color: --calendar-date-background-end-range;
       border-color: --calendar-date-background-end-range;
     }
