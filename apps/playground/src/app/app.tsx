@@ -1,25 +1,47 @@
-import { Tab, TabList, Tabs, TabPanel, Text } from '@midas-ds/components'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './HomePage';
+import FormPage from './FormPage';
+import TablePage from './TablePage';
+import SpectrumTablePage from './SpectrumTablePage';
+import { GlobalToastRegion } from '@midas-ds/components';
+import { Provider, defaultTheme } from '@adobe/react-spectrum';
 
-export default function App() {
+function NavBar() {
   return (
-    <>
-      <Tabs tabs={['Bananas', 'Apples']}>
-        <Text>Old information about Bananas</Text>
-        <Text>Old information about Apples</Text>
-      </Tabs>
-
-      <Tabs>
-        <TabList>
-          <Tab id='bananas'>Bananas</Tab>
-          <Tab id='apples'>Apples</Tab>
-        </TabList>
-        <TabPanel id='bananas'>
-          <Text>New declarative style information about Bananas</Text>
-        </TabPanel>
-        <TabPanel id='apples'>
-          <Text>New declarative style information about Apples</Text>
-        </TabPanel>
-      </Tabs>
-    </>
-  )
+    <nav style={{ padding: '10px 20px', borderBottom: '1px solid #ccc', marginBottom: '20px' }}>
+      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', gap: '15px' }}>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/form">Form Example</Link>
+        </li>
+        <li>
+          <Link to="/table">Table Example</Link>
+        </li>
+        <li>
+          <Link to="/spectrum-table">Spectrum Table Example</Link>
+        </li>
+      </ul>
+    </nav>
+  );
 }
+
+export function App() {
+  return (
+    <Router>
+      <Provider theme={defaultTheme}>
+        <GlobalToastRegion />
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/form" element={<FormPage />} />
+          <Route path="/table" element={<TablePage />} />
+          <Route path="/spectrum-table" element={<SpectrumTablePage />} />
+        </Routes>
+      </Provider>
+    </Router>
+  );
+}
+
+export default App;
