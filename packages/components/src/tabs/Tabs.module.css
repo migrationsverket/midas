@@ -6,7 +6,6 @@
 }
 
 .list {
-  border-bottom: 1px solid --border-subtle;
   display: flex;
   flex-flow: row wrap;
 }
