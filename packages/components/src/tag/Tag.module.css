@@ -83,6 +83,10 @@
 
 .tagText {
   line-height: 1.15;
+  padding: 7px --size-40;
+}
+
+.dismissable .tagText {
   padding: 7px --size-10 7px --size-40;
 }
 
