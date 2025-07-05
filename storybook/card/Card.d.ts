@@ -31,5 +31,5 @@ export declare const CardTitle: React.FC<HeadingProps>;
 export declare const CardActions: React.FC<React.HTMLAttributes<HTMLDivElement>>;
 export declare const CardActionArea: React.FC<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 export declare const CardImage: React.FC<MidasCardImage>;
-export declare const CardLink: <C extends React.ElementType = (props: import('react-aria-components').LinkProps & React.RefAttributes<HTMLAnchorElement>) => React.ReactElement | null>({ children, as, ...rest }: MidasCardLinkProps<C>) => import("react/jsx-runtime").JSX.Element;
+export declare const CardLink: <C extends React.ElementType = typeof Link>({ children, as, ...rest }: MidasCardLinkProps<C>) => import("react/jsx-runtime").JSX.Element;
 export {};

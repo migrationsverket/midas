@@ -37,5 +37,5 @@ export type LinkButtonProps<C extends React.ElementType> = MidasLinkProps<C> & O
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag
  * */
-export declare const LinkButton: <C extends React.ElementType = (props: import('react-aria-components').LinkProps & React.RefAttributes<HTMLAnchorElement>) => React.ReactElement | null>({ children, variant, fullwidth, icon: IconComponent, iconPlacement, className, as, size, ...rest }: LinkButtonProps<C>) => import("react/jsx-runtime").JSX.Element;
+export declare const LinkButton: <C extends React.ElementType = typeof AriaLink>({ children, variant, fullwidth, icon: IconComponent, iconPlacement, className, as, size, ...rest }: LinkButtonProps<C>) => import("react/jsx-runtime").JSX.Element;
 export { RouterProvider };
