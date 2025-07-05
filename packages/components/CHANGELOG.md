@@ -1,3 +1,16 @@
+## 10.4.1 (2025-07-05)
+
+### 🩹 Fixes
+
+- **tag:** 📏 padding changes ([8116a667ed](https://github.com/migrationsverket/midas/commit/8116a667ed))
+- **tabs:** remove list border ([9f1ac2a251](https://github.com/migrationsverket/midas/commit/9f1ac2a251))
+
+### 🔧 Maintenance
+
+- upgrade RAC to 1.10 + some other minor package upgrades ([71a7ab8093](https://github.com/migrationsverket/midas/commit/71a7ab8093))
+- cleanup repo from unused apps and dependencies ([4cf2fc61f8](https://github.com/migrationsverket/midas/commit/4cf2fc61f8))
+- remove unused test apps ([74c5f90604](https://github.com/migrationsverket/midas/commit/74c5f90604))
+
 ## 10.4.0 (2025-07-02)
 
 ### 🚀 Features
