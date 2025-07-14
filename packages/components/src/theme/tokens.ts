@@ -244,9 +244,9 @@ export const semantic = {
   buttonBackgroundSecondaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
   buttonBackgroundTertiaryHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
   buttonBackgroundTertiaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
-  buttonBackgroundDanger: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
-  buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed120})`,
-  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed150})`,
+  buttonBackgroundDanger: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
+  buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed100})`,
+  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed130})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   /**
    *  @deprecated since v10.2.0, please use the `skeleton01` instead.
