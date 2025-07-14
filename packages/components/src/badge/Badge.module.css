@@ -1,9 +1,9 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --signal-red-100, --text-on-color from tokens;
+@value --font-family, --text-on-color, --badge-background from tokens;
 
 .badge {
   font-family: --font-family;
-  background-color: --signal-red-100;
+  background-color: --badge-background;
   min-width: 0.5rem;
   min-height: 0.5rem;
   border-radius: 0.5rem;
