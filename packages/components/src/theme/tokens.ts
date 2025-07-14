@@ -254,6 +254,8 @@ export const semantic = {
   buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
 
+  badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
+
   calendarDateBackgroundHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   calendarDateBackgroundSelected: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
   calendarDateBackgroundStartRange: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
