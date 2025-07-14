@@ -258,6 +258,9 @@
 @value --button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
 @value --button-background-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
 
+/* Badge */
+@value --badge-background: light-dark(--signal-red-100, --signal-red-80);
+
 /* Calendar */
 @value --calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
 @value --calendar-date-background-selected: light-dark(--blue-150, --blue-80);
