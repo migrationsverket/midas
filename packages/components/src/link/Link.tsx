@@ -63,6 +63,7 @@ export const Link = <C extends React.ElementType = typeof AriaLink>({
         className,
       )}
       {...rest}
+      target={target}
     >
       <>
         {children}
