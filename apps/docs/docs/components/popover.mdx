@@ -175,7 +175,7 @@ för referens.
 
 ### Med inputfält
 
-Popover är inbyggt i samtliga inputfält i Midas. Det innebär att du kan använda Popover för att ge mer information om vad går att göra med label eller description. Använd propertyn `popoverContent` på inputfältet för att visa en Popover med mer information på ett enhetligt sätt.
+Popover är inbyggt i samtliga inputfält i Midas. Det innebär att du kan använda Popover för att ge mer information om vad går att göra med label eller description. Använd propertyn `popover` på inputfältet för att visa en Popover med mer information på ett enhetligt sätt.
 
 ```tsx
 import { TextField } from '@midas-ds/components'
@@ -185,7 +185,9 @@ import { TextField } from '@midas-ds/components'
 <TextField
   label='E-post'
   description='Ange din e-postadress för att få nyhetsbrev.'
-  popoverContent='Vi skickar ut nyhetsbrev med information om nya funktioner, uppdateringar och tips.'
+  popover={{
+    children: 'Vi kommer att skicka nyhetsbrev till den här adressen.',
+  }}
 />
 ```
 
