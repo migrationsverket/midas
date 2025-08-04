@@ -1,0 +1,1 @@
+const n="_button_g1njh_4",t="_secondary_g1njh_51",_="_tertiary_g1njh_74",o="_small_g1njh_93",i="_iconBtn_g1njh_98",c="_medium_g1njh_118",r="_danger_g1njh_123",s="_iconRight_g1njh_145",a="_fullwidth_g1njh_149",g="_primary_g1njh_159",h={button:n,secondary:t,tertiary:_,small:o,iconBtn:i,medium:c,danger:r,iconRight:s,fullwidth:a,primary:g};export{h as B};
