@@ -1,78 +1,16 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --background, --background-hover, --border-subtle, --text-disabled, --text-primary from tokens;
-
-.box {
-  background-color: --field-01;
-  color: --text-primary;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.875rem 1rem;
-  font-size: 1rem;
-
-  & > span {
-    word-wrap: break-all;
-    overflow-wrap: break-word;
-    text-wrap: balance;
-    hyphens: auto;
-    flex: 1 0 0%;
-  }
-}
-
-.box button {
-  border: none;
-  cursor: pointer;
-  flex: 0 0 auto;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  margin: 0;
-  margin-top: 8px;
-  padding: 0;
-  gap: 8px;
-}
-
-.container {
-  font-family: --font-family;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
-
-  &[data-disabled] {
-    color: --text-disabled;
-  }
-}
-
-.label {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.text {
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
+@value --font-family, --background, --background-hover, --border-subtle,--border-primary, --text-primary from tokens;
 
 .dropzone {
-  grid-area: Input;
+  font-family: --font-family;
+  color: --text-primary;
   border: 1px dashed --border-subtle;
-
-  /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='1' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
   padding: 1.5rem;
   text-align: center;
   background-color: --background;
 
-  &[data-hovered] {
-    background-color: --background-hover;
+  &[data-drop-target] {
+    background: --background-hover;
+    border: 1px solid --border-primary;
   }
-}
-
-.input {
-  grid-area: Input;
 }

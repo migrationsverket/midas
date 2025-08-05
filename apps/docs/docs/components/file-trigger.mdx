@@ -1,0 +1,129 @@
+---
+title: FileTrigger
+description: Åtkomst till filsystemet
+---
+
+import { Button } from '@midas-ds/components'
+import { FileTrigger } from 'react-aria-components'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { Example, DropZoneExample } from '@site/src/components/examples/file-upload/FileUploadExamples'
+import { PropTable } from '@site/src/components/PropsTable'
+
+<ComponentHeader
+  name='FileTrigger'
+  friendlyName='Filuppladdning, filväljare'
+  overrideHeadlessLink='https://react-spectrum.adobe.com/react-aria/FileTrigger.html'
+/>
+
+[FileTrigger](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) från React Aria gör det möjligt för en användare
+att komma åt filsystemet via valfri tryckbar React Aria-komponent, som till exempel [Button](/components/button).
+Se [API](#api) eller [officiell dokumentation](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) för hur den kan användas.
+FileTrigger är en komponent utan utseende och går att använda direkt från React Aria eller importeras från Midas. DropZone
+har en enkelt stylad yta men med samma beteende som React Aria.
+
+```tsx
+
+import { Button } from '@midas-ds/components'
+import { FileTrigger } from 'react-aria-components'
+import React from 'react'
+
+export const Example = () => {
+  let [file, setFile] = React.useState(null);
+
+  return (
+    <>
+      <FileTrigger
+        onSelect={(e) => {
+          let files = e ? Array.from(e) : [];
+          let filenames = files.map((file) => file.name);
+          setFile(filenames);
+        }}>
+        <Button>Välj fil</Button>
+      </FileTrigger>
+      {file && file}
+    </>
+  )
+}
+```
+<div className={'card'}>
+  <Example/>
+</div>
+
+## Varianter
+
+Se [API](#api) samt [React Aria](https://react-spectrum.adobe.com/react-aria/FileTrigger.html) för samtliga
+möjligheter.
+
+### Drag & drop
+
+Använd FileTrigger tillsammans med [DropZone](https://react-spectrum.adobe.com/react-aria/DropZone.html)
+för att tillåta val av filer via drag & drop.
+
+```tsx
+export const DropZoneExample = () => {
+  let [files, setFiles] = React.useState(null);
+  return (
+    <>
+      <DropZone
+        onDrop={(e) => {
+          let files = e.items.filter((file) =>
+            file.kind === 'file'
+          ) as FileDropItem[];
+          let filenames = files.map((file) => file.name);
+          setFiles(filenames.join(', '));
+        }}
+      >
+        <FileTrigger
+          allowsMultiple
+          onSelect={(e) => {
+            let files = Array.from(e);
+            let filenames = files.map((file) => file.name);
+            setFiles(filenames.join(', '));
+          }}
+        >
+          <Button>Select files</Button>
+        </FileTrigger>
+        <Text slot="label" style={{ display: 'block' }}>
+          {files || 'Drop files here'}
+        </Text>
+      </DropZone>
+    </>
+  )
+}
+```
+
+<DropZoneExample/>
+
+### Alternativ
+
+För att tillåta användaren att ladda upp flera filer på samma gång, använd attributet `allowsMultiple`, för att
+begränsa valbara filtyper, använd `acceptedFileTypes`.
+
+### Media Capture
+
+På mobila enheter kan användaren använda enhetens kamera för att välja media. `defaultCamera` väljer vilken kamera som
+används.
+
+```tsx
+<FileTrigger defaultCamera={'environment'}>
+  <Button>Öppna kameran</Button>
+</FileTrigger>
+```
+
+<div className='card'>
+  <FileTrigger defaultCamera={'environment'}>
+    <Button>Öppna kameran</Button>
+  </FileTrigger>
+</div>
+
+
+
+## API
+
+### FileTrigger
+<PropTable name='FileTrigger' />
+
+### DropZone
+<PropTable name='DropZone' />
+
+
