@@ -223,6 +223,7 @@ export declare const semantic: {
      */
     buttonBackgroundSkeleton: string;
     buttonBorderSecondary: string;
+    badgeBackground: string;
     calendarDateBackgroundHover: string;
     calendarDateBackgroundSelected: string;
     calendarDateBackgroundStartRange: string;
