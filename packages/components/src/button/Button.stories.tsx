@@ -13,20 +13,17 @@ const meta: Meta<typeof Button> = {
     children: 'Button',
   },
   argTypes: {
+    size: {
+      control: { type: 'radio' },
+      options: ['large', 'medium'],
+    },
     children: { type: 'string' },
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' },
     },
   },
-  render: (args, { globals: { size } }) => {
-    return (
-      <Button
-        {...args}
-        size={size}
-      />
-    )
-  },
+
   parameters: {
     chromatic: {
       modes: sizeModes,
@@ -97,6 +94,19 @@ export const PrimaryFullwidth = {
   args: {
     children: 'Button',
     fullwidth: true,
+  },
+}
+
+export const TertiarySmall: Story = {
+  args: {
+    variant: 'tertiary',
+    size: 'small',
+    children: 'Small Tertiary',
+  },
+  argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+    },
   },
 }
 
