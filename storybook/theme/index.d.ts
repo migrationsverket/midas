@@ -219,6 +219,7 @@ export declare const theme: {
         buttonBackgroundDisabled: string;
         buttonBackgroundSkeleton: string;
         buttonBorderSecondary: string;
+        badgeBackground: string;
         calendarDateBackgroundHover: string;
         calendarDateBackgroundSelected: string;
         calendarDateBackgroundStartRange: string;

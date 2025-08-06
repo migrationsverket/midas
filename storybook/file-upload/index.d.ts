@@ -1,1 +1,1 @@
-export { FileUpload } from './FileUpload';
+export { FileTrigger, DropZone } from './FileUpload';
