@@ -10,6 +10,7 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   args: {
     variant: 'primary',
+    size: 'large',
     children: 'Button',
   },
   argTypes: {
@@ -29,7 +30,7 @@ const meta: Meta<typeof Button> = {
       modes: sizeModes,
     },
   },
-  play: async ({ canvas, step, globals: { size } }) => {
+  play: async ({ canvas, step, args: { size } }) => {
     await step('it should have focus when clicked', async () => {
       const button = canvas.getByRole('button')
       await userEvent.click(button)
@@ -40,7 +41,7 @@ const meta: Meta<typeof Button> = {
     })
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+        height: size === 'large' ? '47.6px' : '39.6px',
       })
     })
   },
@@ -104,9 +105,36 @@ export const TertiarySmall: Story = {
     children: 'Small Tertiary',
   },
   argTypes: {
+    variant: {
+      options: ['tertiary'],
+      control: { type: 'radio' },
+    },
     size: {
       options: ['small', 'medium', 'large'],
     },
+  },
+  play: async ({ canvas, step, args: { size } }) => {
+    await step('it should have focus when clicked', async () => {
+      const button = canvas.getByRole('button')
+      await userEvent.click(button)
+      await expect(button).toBeEnabled()
+      button.focus()
+      await userEvent.keyboard('{Enter}')
+      await expect(button).toHaveFocus()
+    })
+    await step('it should change size according to size prop', async () => {
+      const expectedHeight =
+        size === 'large'
+          ? '47.6px'
+          : size === 'small'
+            ? '21.6px'
+            : size === 'medium'
+              ? '39.6px'
+              : undefined
+      await expect(canvas.getByRole('button')).toHaveStyle({
+        height: expectedHeight,
+      })
+    })
   },
 }
 
