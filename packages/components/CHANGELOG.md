@@ -1,3 +1,26 @@
+# 11.0.0 (2025-08-06)
+
+### 🚀 Features
+
+- ⚠️ **file-upload:** replace FileUpload with React Aria FileTrigger ([c539f84bcc](https://github.com/migrationsverket/midas/commit/c539f84bcc))
+- **theme:** add badgeBackground token ([c37972d7a6](https://github.com/migrationsverket/midas/commit/c37972d7a6))
+- **badge:** replace background token ([6f3cf9d4e8](https://github.com/migrationsverket/midas/commit/6f3cf9d4e8))
+- **theme:** add badge-background token ([887eead46f](https://github.com/migrationsverket/midas/commit/887eead46f))
+
+### 🩹 Fixes
+
+- **link:** fix issue with Link not opening in new window when target='\_blank' ([e172ec0e7c](https://github.com/migrationsverket/midas/commit/e172ec0e7c))
+- **theme:** change dark mode values for danger button ([46099f843e](https://github.com/migrationsverket/midas/commit/46099f843e))
+- **popover:** add overflow-wrap to prevent long string from overflowing ([35895e2d99](https://github.com/migrationsverket/midas/commit/35895e2d99))
+
+### 🔧 Maintenance
+
+- **deps:** bump the npm_and_yarn group across 1 directory with 4 updates ([e267f19a62](https://github.com/migrationsverket/midas/commit/e267f19a62))
+
+### ⚠️ Breaking Changes
+
+- **file-upload:** FileUpload is removed and replaced by FileTrigger. Aligns API exactly with React Aria
+
 ## 10.4.1 (2025-07-05)
 
 ### 🩹 Fixes
