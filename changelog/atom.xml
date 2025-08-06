@@ -2,12 +2,44 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/changelog/</id>
     <title>Midas changelog</title>
-    <updated>2025-07-05T20:00:00.000Z</updated>
+    <updated>2025-08-06T20:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/changelog/"/>
     <subtitle>Håll dig uppdaterad med allt som händer i varje release</subtitle>
     <icon>https://designsystem.migrationsverket.se/img/favicon.ico?v=3</icon>
     <rights>2025 Migrationsverket</rights>
+    <entry>
+        <title type="html"><![CDATA[11.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/changelog/11.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/changelog/11.0.0/"/>
+        <updated>2025-08-06T20:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🚀 Features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/changelog/11.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
+<ul>
+<li><strong>badge:</strong> replace background token (<a href="https://github.com/migrationsverket/midas/commit/6f3cf9d4e8" target="_blank" rel="noopener noreferrer">6f3cf9d4e8</a>)</li>
+<li>⚠️ <strong>file-upload:</strong> replace FileUpload with React Aria FileTrigger (<a href="https://github.com/migrationsverket/midas/commit/c539f84bcc" target="_blank" rel="noopener noreferrer">c539f84bcc</a>)</li>
+<li><strong>theme:</strong> add badge-background token (<a href="https://github.com/migrationsverket/midas/commit/887eead46f" target="_blank" rel="noopener noreferrer">887eead46f</a>)</li>
+<li><strong>theme:</strong> add badgeBackground token (<a href="https://github.com/migrationsverket/midas/commit/c37972d7a6" target="_blank" rel="noopener noreferrer">c37972d7a6</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/11.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li><strong>link:</strong> fix issue with Link not opening in new window when target='_blank' (<a href="https://github.com/migrationsverket/midas/commit/e172ec0e7c" target="_blank" rel="noopener noreferrer">e172ec0e7c</a>)</li>
+<li><strong>popover:</strong> add overflow-wrap to prevent long string from overflowing (<a href="https://github.com/migrationsverket/midas/commit/35895e2d99" target="_blank" rel="noopener noreferrer">35895e2d99</a>)</li>
+<li><strong>theme:</strong> change dark mode values for danger button (<a href="https://github.com/migrationsverket/midas/commit/46099f843e" target="_blank" rel="noopener noreferrer">46099f843e</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/changelog/11.0.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h2>
+<ul>
+<li>fix incorrect tsx in example (<a href="https://github.com/migrationsverket/midas/commit/7253aa2eb1" target="_blank" rel="noopener noreferrer">7253aa2eb1</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/changelog/11.0.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h2>
+<ul>
+<li><strong>deps:</strong> bump the npm_and_yarn group across 1 directory with 4 updates (<a href="https://github.com/migrationsverket/midas/commit/e267f19a62" target="_blank" rel="noopener noreferrer">e267f19a62</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/changelog/11.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
+<ul>
+<li><strong>file-upload:</strong> FileUpload is removed and replaced by FileTrigger. Aligns API exactly with React Aria</li>
+</ul>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[10.4.1]]></title>
         <id>https://designsystem.migrationsverket.se/changelog/10.4.1/</id>
@@ -728,48 +760,6 @@
 <li>run dark mode image switch on client</li>
 <li>run dark mode image switch on client</li>
 <li>display project changelog on docweb</li>
-</ul>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[5.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/changelog/5.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/changelog/5.0.0/"/>
-        <updated>2025-03-17T20:00:00.000Z</updated>
-        <summary type="html"><![CDATA[🚀 Features]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/changelog/5.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
-<ul>
-<li>⚠️ support for dark mode across all components</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/5.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
-<ul>
-<li><strong>button:</strong> deprecate small version</li>
-<li><strong>card:</strong> deprecate card background</li>
-<li><strong>date-picker:</strong> change selected date color to blue150</li>
-<li><strong>date-picker:</strong> resize button in invalid state, fixes #312</li>
-<li><strong>date-picker:</strong> change cursor to pointer</li>
-<li><strong>layout:</strong> design adjustments</li>
-<li><strong>search-field:</strong> use aria-label instead of hidden label</li>
-<li><strong>select:</strong> remove unsupported attribute</li>
-<li><strong>select:</strong> change direct element selector</li>
-<li><strong>table:</strong> deprecate narrow version</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-changes">Documentation Changes<a href="https://designsystem.migrationsverket.se/changelog/5.0.0/#documentation-changes" class="hash-link" aria-label="Direktlänk till Documentation Changes" title="Direktlänk till Documentation Changes">​</a></h2>
-<ul>
-<li>dark mode support for storybook and docusaurus</li>
-<li>add instructions for bug reporting</li>
-<li>dark mode page on docweb</li>
-<li>add security disclaimers</li>
-<li>update select docs</li>
-<li>fix new tokens</li>
-<li>fix local dark mode on portals in SB</li>
-<li>updated docs with tokens</li>
-<li>dark mode header image</li>
-<li><strong>docs:</strong> add new UIkit</li>
-<li><strong>localization:</strong> add dev instructions for localization</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/changelog/5.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
-<ul>
-<li>dark mode 🌇</li>
 </ul>]]></content>
     </entry>
 </feed>
