@@ -88,7 +88,7 @@ const config: Config = {
           copyright: `${new Date().getFullYear()} Migrationsverket`,
           language: defaultLocale,
         },
-        onInlineAuthors: 'warn',
+        onInlineAuthors: 'ignore',
       },
     ],
   ],
