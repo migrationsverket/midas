@@ -127,7 +127,7 @@ export const TertiarySmall: Story = {
         size === 'large'
           ? '47.6px'
           : size === 'small'
-            ? '21.6px'
+            ? '25.6px'
             : size === 'medium'
               ? '39.6px'
               : undefined
