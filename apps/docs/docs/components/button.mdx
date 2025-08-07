@@ -121,6 +121,33 @@ Du kan välja vilken sida av texten ikonen ska vara på med `iconPlacement`.
   </Button>
 </div>
 
+## ''Small'' storlek
+
+I dagsläget är storlek `small` endast tillgänglig för varianten `Tertiary`.
+
+```tsx
+<Button
+  // highlight-start
+  variant='tertiary'
+  size='small'
+  // highlight-end
+>
+  Tertiary
+</Button>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Button
+    variant='tertiary'
+    size='small'
+  >
+    {'Tertiary'}
+  </Button>
+</div>
+
 ## Grupp av knappar
 
 För att få korrekt layout på flertalet knappar kan komponenten `ButtonGroup` användas.

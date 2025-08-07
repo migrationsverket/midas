@@ -18,7 +18,11 @@ export interface PrimarySecondaryDangerProps extends BaseProps {
    * @default 'primary'
    * */
   variant?: 'primary' | 'secondary' | 'danger' | 'icon'
-  /** Component size (large: height 48px, medium: height 40px)
+  /**
+   * Component size (large: height 48px, medium: height 40px).
+   *
+   * Size small is just for tertiary variant
+   *
    *  @default 'large'
    **/
   size?: Size
@@ -26,7 +30,11 @@ export interface PrimarySecondaryDangerProps extends BaseProps {
 
 export interface TertiaryProps extends BaseProps {
   variant: 'tertiary'
-  /** Component size (large: height 48px, medium: height 40px)
+  /**
+   * Component size (large: height 48px, medium: height 40px).
+   *
+   * Size small is just for tertiary variant
+   *
    *  @default 'large'
    **/
   size?: Size | 'small'
