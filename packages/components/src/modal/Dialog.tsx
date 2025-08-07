@@ -15,7 +15,7 @@ import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
-interface DialogProps extends AriaDialogProps {
+export interface DialogProps extends AriaDialogProps {
   /**
    * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
    */

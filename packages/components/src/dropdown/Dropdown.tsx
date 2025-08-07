@@ -12,7 +12,7 @@ import { EllipsisVertical } from 'lucide-react'
 import styles from './Dropdown.module.css'
 import clsx from 'clsx'
 
-interface MidasMenuButtonProps<T>
+export interface MidasMenuButtonProps<T>
   extends MenuProps<T>,
     Omit<MenuTriggerProps, 'children'> {
   label?: string

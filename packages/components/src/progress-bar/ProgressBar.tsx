@@ -8,7 +8,7 @@ import styles from './ProgressBar.module.css'
 import { Label } from '../label'
 import clsx from 'clsx'
 
-interface ProgressBarProps extends AriaProgressBarProps {
+export interface ProgressBarProps extends AriaProgressBarProps {
   /**
    * A visual label
    * */

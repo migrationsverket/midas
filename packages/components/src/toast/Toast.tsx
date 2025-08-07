@@ -32,7 +32,7 @@ export interface MidasToast {
   children?: React.ReactNode
 }
 
-interface ToastRegionProps<T> extends AriaToastRegionProps {
+export interface ToastRegionProps<T> extends AriaToastRegionProps {
   state: ToastState<T>
   className?: string
 }
@@ -44,7 +44,7 @@ export interface ToastProps<T> extends AriaToastProps<T> {
   className?: string
 }
 
-interface ToastProviderProps extends AriaToastRegionProps {
+export interface ToastProviderProps extends AriaToastRegionProps {
   children?:
     | ((state: ToastState<MidasToast>) => React.ReactNode)
     | React.ReactNode

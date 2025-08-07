@@ -1,4 +1,7 @@
 export * from './TextFieldBase'
+export type { TextFieldBaseProps } from './TextFieldBase'
 export * from './TextField'
+export type { TextFieldProps } from './TextField'
 export * from './TextArea'
+export type { TextAreaProps } from './TextArea'
 export * from './Input'

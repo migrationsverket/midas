@@ -50,7 +50,7 @@ export interface MidasButtonProps {
     | string
 }
 
-type MidasButton = MidasButtonProps & ButtonProps
+export type MidasButton = MidasButtonProps & ButtonProps
 
 /**
  * Button to perform various actions.

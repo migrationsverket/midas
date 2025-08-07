@@ -7,7 +7,7 @@ import {
   OverlayArrow,
 } from 'react-aria-components'
 
-interface MidasPopoverProps extends Omit<PopoverProps, 'children'> {
+export interface MidasPopoverProps extends Omit<PopoverProps, 'children'> {
   children: React.ReactNode
 }
 
