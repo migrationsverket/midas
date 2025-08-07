@@ -9,7 +9,7 @@ import {
   TooltipTriggerComponentProps,
 } from 'react-aria-components'
 
-interface MidasTooltipProps extends Omit<TooltipProps, 'children'> {
+export interface MidasTooltipProps extends Omit<TooltipProps, 'children'> {
   children: React.ReactNode
 }
 

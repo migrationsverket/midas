@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 import { Size } from '../common/types'
 
-interface MidasLinkProps<C extends React.ElementType> {
+export interface LinkButtonComponentProps<C extends React.ElementType> {
   children: React.ReactNode
   /**
    * Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label
@@ -46,8 +46,8 @@ interface MidasLinkProps<C extends React.ElementType> {
   size?: Size
 }
 
-export type LinkButtonProps<C extends React.ElementType> = MidasLinkProps<C> &
-  Omit<React.ComponentProps<C>, keyof MidasLinkProps<C>>
+export type LinkButtonProps<C extends React.ElementType> = LinkButtonComponentProps<C> &
+  Omit<React.ComponentProps<C>, keyof LinkButtonComponentProps<C>>
 
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag

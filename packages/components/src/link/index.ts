@@ -1,1 +1,1 @@
-export { Link, RouterProvider, type LinkProps } from './Link'
+export { Link, RouterProvider, type LinkProps, type LinkComponentProps } from './Link'

@@ -7,7 +7,7 @@ import { DisclosureGroup, DisclosureGroupProps } from 'react-aria-components'
 
 export const ACCORDION_TEST_ID = 'accordion'
 
-interface MidasAccordion extends DisclosureGroupProps {
+export interface MidasAccordion extends DisclosureGroupProps {
   /** Display either the larger contained variant or a smaller uncontained variant */
   variant?: 'uncontained' | 'contained'
 }
