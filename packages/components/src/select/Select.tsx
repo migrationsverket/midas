@@ -111,11 +111,6 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
         )}
         <ListBoxPopover
           isOpen={state.isOpen}
-          onOpenChange={(isOpen: boolean) => {
-            if (!isOpen) {
-              state.close()
-            }
-          }}
           triggerRef={triggerRef}
           style={{ width: triggerWidth }}
         >
