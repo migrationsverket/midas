@@ -41,7 +41,7 @@ const meta: Meta<typeof Button> = {
     })
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: size === 'large' ? '47.6px' : '39.6px',
+        height: size === 'large' ? '48px' : '40px',
       })
     })
   },
@@ -125,11 +125,11 @@ export const TertiarySmall: Story = {
     await step('it should change size according to size prop', async () => {
       const expectedHeight =
         size === 'large'
-          ? '47.6px'
+          ? '48px'
           : size === 'small'
-            ? '25.6px'
+            ? '24px'
             : size === 'medium'
-              ? '39.6px'
+              ? '40px'
               : undefined
       await expect(canvas.getByRole('button')).toHaveStyle({
         height: expectedHeight,
