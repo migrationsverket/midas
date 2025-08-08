@@ -1,4 +1,4 @@
-import { Preview } from '@storybook/react'
+import { Decorator, Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
 import '../src/theme/global.css'
 import {
@@ -6,14 +6,36 @@ import {
   customLightTheme,
   getPreferredColorScheme,
 } from './custom-theme'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { globalModes } from './modes'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
 import { semantic } from '../src/theme'
 import { I18nProvider } from '../src/utils/intl'
+import { useGlobals } from '@storybook/preview-api'
 
+// 🔹 Decorator to sync globals <-> controls
+const SyncGlobalsWithArgs: Decorator = (Story, context) => {
+  const [globals, updateGlobals] = useGlobals()
+  const { args } = context
+
+  const syncKeys: (keyof typeof globals)[] = ['size'] // add other keys if needed
+
+  // Controls → Globals only
+  useEffect(
+    () => {
+      syncKeys.forEach(key => {
+        if (args[key] && args[key] !== globals[key]) {
+          updateGlobals({ [key]: args[key] })
+        }
+      })
+    },
+    syncKeys.map(key => args[key]),
+  )
+
+  return <Story {...context} />
+}
 const preview: Preview = {
   async beforeEach() {
     MockDate.set(mockedNow.toDate(getLocalTimeZone()))
@@ -99,6 +121,7 @@ const preview: Preview = {
     background: 'Background',
   },
   decorators: [
+    SyncGlobalsWithArgs,
     (Story, context) => {
       const RootTag: React.ElementType =
         context?.parameters?.rootElement || 'main'

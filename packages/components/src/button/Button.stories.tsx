@@ -10,7 +10,7 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   args: {
     variant: 'primary',
-    size: 'large',
+    size: undefined,
     children: 'Button',
   },
   argTypes: {
@@ -24,13 +24,20 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-
+  render: (args, { globals }) => {
+    return (
+      <Button
+        {...args}
+        size={globals.size || args.size}
+      />
+    )
+  },
   parameters: {
     chromatic: {
       modes: sizeModes,
     },
   },
-  play: async ({ canvas, step, args: { size } }) => {
+  play: async ({ canvas, step, globals: { size } }) => {
     await step('it should have focus when clicked', async () => {
       const button = canvas.getByRole('button')
       await userEvent.click(button)
@@ -39,6 +46,7 @@ const meta: Meta<typeof Button> = {
       await userEvent.keyboard('{Enter}')
       await expect(button).toHaveFocus()
     })
+
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
         height: size === 'large' ? '48px' : '40px',
