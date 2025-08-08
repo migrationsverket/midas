@@ -1,7 +1,7 @@
 import { RadioGroupProps, RadioProps, ValidationResult } from 'react-aria-components';
 import { InfoPopoverProps } from '../label';
 import * as React from 'react';
-interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
+export interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
     children?: React.ReactNode;
     /** Label for the RadioGroup */
     label?: string;
@@ -18,4 +18,3 @@ interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
  */
 export declare const RadioGroup: React.FC<MVDSRadioGroupProps>;
 export declare const Radio: ({ className, ...rest }: RadioProps) => import("react/jsx-runtime").JSX.Element;
-export {};

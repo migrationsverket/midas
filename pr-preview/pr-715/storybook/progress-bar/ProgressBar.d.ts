@@ -1,6 +1,6 @@
 import { LabelProps, ProgressBarProps as AriaProgressBarProps } from 'react-aria-components';
 import * as React from 'react';
-interface ProgressBarProps extends AriaProgressBarProps {
+export interface ProgressBarProps extends AriaProgressBarProps {
     /**
      * A visual label
      * */
@@ -15,4 +15,3 @@ interface ProgressBarProps extends AriaProgressBarProps {
     showValueLabel?: boolean;
 }
 export declare const ProgressBar: React.FC<ProgressBarProps>;
-export {};
