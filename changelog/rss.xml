@@ -4,11 +4,32 @@
         <title>Midas changelog</title>
         <link>https://designsystem.migrationsverket.se/changelog/</link>
         <description>Håll dig uppdaterad med allt som händer i varje release</description>
-        <lastBuildDate>Wed, 06 Aug 2025 20:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Aug 2025 20:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
         <copyright>2025 Migrationsverket</copyright>
+        <item>
+            <title><![CDATA[11.1.0]]></title>
+            <link>https://designsystem.migrationsverket.se/changelog/11.1.0/</link>
+            <guid>https://designsystem.migrationsverket.se/changelog/11.1.0/</guid>
+            <pubDate>Sun, 10 Aug 2025 20:00:00 GMT</pubDate>
+            <description><![CDATA[🚀 Features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/changelog/11.1.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
+<ul>
+<li><strong>components:</strong> ✨ Export custom component types and interfaces ✨ (<a href="https://github.com/migrationsverket/midas/commit/4a07892b73" target="_blank" rel="noopener noreferrer">4a07892b73</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/11.1.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li><strong>combobox:</strong> make popover prop optional (<a href="https://github.com/migrationsverket/midas/commit/cbfb176fb1" target="_blank" rel="noopener noreferrer">cbfb176fb1</a>)</li>
+<li><strong>popover:</strong> prevent long words from breaking up (<a href="https://github.com/migrationsverket/midas/commit/9e4758f156" target="_blank" rel="noopener noreferrer">9e4758f156</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/changelog/11.1.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h2>
+<ul>
+<li>release notes v11.0.0 (<a href="https://github.com/migrationsverket/midas/commit/aa2fe35dbd" target="_blank" rel="noopener noreferrer">aa2fe35dbd</a>)</li>
+<li>release notes v11.0.0 (<a href="https://github.com/migrationsverket/midas/pull/721" target="_blank" rel="noopener noreferrer">#721</a>)</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[11.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/changelog/11.0.0/</link>
@@ -732,35 +753,6 @@
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/changelog/6.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
 <ul>
 <li><strong>modal:</strong> Use the new DialogTrigger and Modal instead of ModalTrigger and Dialog. New API will apply.</li>
-</ul>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[5.0.1]]></title>
-            <link>https://designsystem.migrationsverket.se/changelog/5.0.1/</link>
-            <guid>https://designsystem.migrationsverket.se/changelog/5.0.1/</guid>
-            <pubDate>Thu, 20 Mar 2025 20:00:00 GMT</pubDate>
-            <description><![CDATA[🩹 Fixes]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/5.0.1/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
-<ul>
-<li><strong>checkbox:</strong> swap old tokens</li>
-<li><strong>checkbox:</strong> swap old focus token</li>
-<li><strong>link-button:</strong> fix colors on hover state</li>
-<li><strong>link-button:</strong> fix colors on hover state</li>
-<li><strong>radio:</strong> remove old tokens</li>
-<li><strong>toast:</strong> add temporary implementation of useToastState</li>
-<li><strong>toast:</strong> update react-aria deps</li>
-<li><strong>toast:</strong> remove explicit dep</li>
-<li><strong>toast:</strong> re-organize animations and breakpoints</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-changes">Documentation Changes<a href="https://designsystem.migrationsverket.se/changelog/5.0.1/#documentation-changes" class="hash-link" aria-label="Direktlänk till Documentation Changes" title="Direktlänk till Documentation Changes">​</a></h2>
-<ul>
-<li>add strict mode to docs</li>
-<li>add strict mode to docs</li>
-<li>add additional prism languages</li>
-<li>update release instructions and styleguide</li>
-<li>run dark mode image switch on client</li>
-<li>run dark mode image switch on client</li>
-<li>display project changelog on docweb</li>
 </ul>]]></content:encoded>
         </item>
     </channel>
