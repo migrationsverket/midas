@@ -1,3 +1,14 @@
+## 11.1.0 (2025-08-10)
+
+### 🚀 Features
+
+- **components:** ✨ Export custom component types and interfaces ✨ ([4a07892b73](https://github.com/migrationsverket/midas/commit/4a07892b73))
+
+### 🩹 Fixes
+
+- **popover:** prevent long words from breaking up ([9e4758f156](https://github.com/migrationsverket/midas/commit/9e4758f156))
+- **combobox:** make popover prop optional ([cbfb176fb1](https://github.com/migrationsverket/midas/commit/cbfb176fb1))
+
 # 11.0.0 (2025-08-06)
 
 ### 🚀 Features
