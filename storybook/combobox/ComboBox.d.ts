@@ -15,7 +15,7 @@ export interface ComboBoxProps<T extends ListBoxOption> extends Omit<AriaComboBo
      *  @default 'large'
      * */
     size?: Size;
-    popover: InfoPopoverProps;
+    popover?: InfoPopoverProps;
 }
 export declare function ComboBox<T extends ListBoxOption>({ label, description, errorMessage, children, items, className, errorPosition, size, popover, ...props }: ComboBoxProps<T>): import("react/jsx-runtime").JSX.Element;
 export declare function ComboBoxItem<T extends ListBoxItemElement>(props: ListBoxItemProps<T>): import("react/jsx-runtime").JSX.Element;

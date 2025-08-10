@@ -1,1 +1,1 @@
-export { Modal, DialogTrigger } from './Dialog';
+export { Modal, DialogTrigger, type DialogProps } from './Dialog';

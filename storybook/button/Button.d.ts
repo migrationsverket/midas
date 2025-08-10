@@ -35,7 +35,7 @@ export interface MidasButtonProps {
         defaultChildren: React.ReactNode | undefined;
     }) => React.ReactNode) | string;
 }
-type MidasButton = MidasButtonProps & ButtonProps;
+export type MidasButton = MidasButtonProps & ButtonProps;
 /**
  * Button to perform various actions.
  *
@@ -44,4 +44,3 @@ type MidasButton = MidasButtonProps & ButtonProps;
  * @see {@link https://designsystem.migrationsverket.se/components/button}
  */
 export declare const Button: React.FC<MidasButton>;
-export {};

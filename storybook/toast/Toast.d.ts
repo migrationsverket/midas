@@ -6,7 +6,7 @@ export interface MidasToast {
     type: 'success' | 'info' | 'warning' | 'important';
     children?: React.ReactNode;
 }
-interface ToastRegionProps<T> extends AriaToastRegionProps {
+export interface ToastRegionProps<T> extends AriaToastRegionProps {
     state: ToastState<T>;
     className?: string;
 }
@@ -16,7 +16,7 @@ export interface ToastProps<T> extends AriaToastProps<T> {
     children?: React.ReactNode;
     className?: string;
 }
-interface ToastProviderProps extends AriaToastRegionProps {
+export interface ToastProviderProps extends AriaToastRegionProps {
     children?: ((state: ToastState<MidasToast>) => React.ReactNode) | React.ReactNode;
     className?: string;
 }
@@ -30,4 +30,3 @@ export declare const GlobalToastRegion: (props: ToastProviderProps) => React.Rea
 export declare const ToastProvider: ({ children, ...props }: ToastProviderProps) => import("react/jsx-runtime").JSX.Element;
 export declare function ToastRegion<T extends MidasToast>({ state, className, ...props }: ToastRegionProps<T>): import("react/jsx-runtime").JSX.Element;
 export declare function Toast<T extends MidasToast>({ state, className, ...props }: ToastProps<T>): import("react/jsx-runtime").JSX.Element;
-export {};

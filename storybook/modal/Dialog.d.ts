@@ -2,7 +2,7 @@ import { AriaDialogProps } from 'react-aria';
 import { DialogTrigger } from 'react-aria-components';
 import { AriaModalOverlayProps } from '@react-aria/overlays';
 import * as React from 'react';
-interface DialogProps extends AriaDialogProps {
+export interface DialogProps extends AriaDialogProps {
     /**
      * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
      */

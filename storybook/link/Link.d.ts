@@ -1,6 +1,6 @@
 import { Link as AriaLink, RouterProvider } from 'react-aria-components';
 import { LucideIcon } from 'lucide-react';
-interface MidasLinkProps<C extends React.ElementType> {
+export interface LinkComponentProps<C extends React.ElementType> {
     children: React.ReactNode;
     /** Use standalone to use the component as a standalone link, for example under a block of text.*/
     standalone?: boolean;
@@ -14,6 +14,6 @@ interface MidasLinkProps<C extends React.ElementType> {
      */
     as?: C;
 }
-export type LinkProps<C extends React.ElementType> = MidasLinkProps<C> & Omit<React.ComponentProps<C>, keyof MidasLinkProps<C>>;
+export type LinkProps<C extends React.ElementType> = LinkComponentProps<C> & Omit<React.ComponentProps<C>, keyof LinkComponentProps<C>>;
 export declare const Link: <C extends React.ElementType = typeof AriaLink>({ children, standalone, target, stretched, download, icon: IconComponent, className, as, ...rest }: LinkProps<C>) => import("react/jsx-runtime").JSX.Element;
 export { RouterProvider };

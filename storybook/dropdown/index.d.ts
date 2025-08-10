@@ -1,1 +1,1 @@
-export { Dropdown, DropdownItem } from './Dropdown';
+export { Dropdown, DropdownItem, type MidasMenuButtonProps } from './Dropdown';
