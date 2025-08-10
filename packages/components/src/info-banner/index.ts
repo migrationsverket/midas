@@ -1,1 +1,1 @@
-export {InfoBanner} from './InfoBanner'
+export {InfoBanner, type InfoBannerProps} from './InfoBanner'

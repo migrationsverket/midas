@@ -17,7 +17,7 @@ import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { LabelWrapper } from '../label/LabelWrapper'
 
-interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
+export interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
   children?: React.ReactNode
   /** Label for the RadioGroup */
   label?: string

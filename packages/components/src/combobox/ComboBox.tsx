@@ -44,7 +44,7 @@ export interface ComboBoxProps<T extends ListBoxOption>
    *  @default 'large'
    * */
   size?: Size
-  popover: InfoPopoverProps
+  popover?: InfoPopoverProps
 }
 
 export function ComboBox<T extends ListBoxOption>({
