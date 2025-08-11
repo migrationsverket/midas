@@ -114,15 +114,10 @@
   flex: 0 0 auto;
   width: 100%;
   min-height: 100%;
-
-  @media --breakpoint-lg {
-    background-color: --layer-01;
-  }
 }
 
 .app {
   background-clip: content-box;
-  background-color: --layer-01;
 
   @media --breakpoint-lg {
     padding: 2rem;
