@@ -11,43 +11,23 @@ import clsx from 'clsx'
 import { LucideIcon } from 'lucide-react'
 import { Size } from '../common/types'
 
-export interface PrimarySecondaryDangerProps extends BaseProps {
+export interface MidasButtonProps {
   /**
    * Primary button is used as a positive action in a flow. Always use one primary button and never a seconday button on it's own. When using just an icon you must pass an aria-label
    *
    * @default 'primary'
    * */
-  variant?: 'primary' | 'secondary' | 'danger' | 'icon'
-  /**
-   * Component size (large: height 48px, medium: height 40px).
-   *
-   * Size small is just for tertiary variant
-   *
-   *  @default 'large'
-   **/
-  size?: Size
-}
-
-export interface TertiaryProps extends BaseProps {
-  variant: 'tertiary'
-  /**
-   * Component size (large: height 48px, medium: height 40px).
-   *
-   * Size small is just for tertiary variant
-   *
-   *  @default 'large'
-   **/
-  size?: Size | 'small'
-}
-
-export type BaseProps = Omit<ButtonProps, 'children'> & {
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
   /**
    * Adds width: 100%; for the button to span entire width of parent
    *
    * @default false
    */
   fullwidth?: boolean
-
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   **/
+  size?: Size | 'small'
   /** Add an icon from lucide-react
    *
    * @see {@link https://lucide.dev/icons/|Lucide}
@@ -70,7 +50,7 @@ export type BaseProps = Omit<ButtonProps, 'children'> & {
     | string
 }
 
-type MidasButton = PrimarySecondaryDangerProps | TertiaryProps
+export type MidasButton = MidasButtonProps & ButtonProps
 
 /**
  * Button to perform various actions.

@@ -10,25 +10,24 @@ const meta: Meta<typeof Button> = {
   tags: ['autodocs'],
   args: {
     variant: 'primary',
-    size: undefined,
     children: 'Button',
   },
   argTypes: {
-    size: {
-      control: { type: 'radio' },
-      options: ['large', 'medium'],
-    },
     children: { type: 'string' },
     isDisabled: {
       options: [true, false],
       control: { type: 'radio' },
     },
+    size: {
+      options: ['large', 'medium'],
+      control: { type: 'radio' },
+    },
   },
-  render: (args, { globals }) => {
+  render: (args, { globals: { size } }) => {
     return (
       <Button
         {...args}
-        size={globals.size || args.size}
+        size={size}
       />
     )
   },
@@ -46,7 +45,6 @@ const meta: Meta<typeof Button> = {
       await userEvent.keyboard('{Enter}')
       await expect(button).toHaveFocus()
     })
-
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
         height: size === 'large' ? '48px' : '40px',
@@ -118,8 +116,16 @@ export const TertiarySmall: Story = {
       control: { type: 'radio' },
     },
     size: {
-      options: ['small', 'medium', 'large'],
+      options: ['small'],
     },
+  },
+  render: (args, { args: { size } }) => {
+    return (
+      <Button
+        {...args}
+        size={size}
+      />
+    )
   },
   play: async ({ canvas, step, args: { size } }) => {
     await step('it should have focus when clicked', async () => {
@@ -131,14 +137,7 @@ export const TertiarySmall: Story = {
       await expect(button).toHaveFocus()
     })
     await step('it should change size according to size prop', async () => {
-      const expectedHeight =
-        size === 'large'
-          ? '48px'
-          : size === 'small'
-            ? '24px'
-            : size === 'medium'
-              ? '40px'
-              : undefined
+      const expectedHeight = size === 'small' ? '24px' : undefined
       await expect(canvas.getByRole('button')).toHaveStyle({
         height: expectedHeight,
       })
