@@ -42,12 +42,9 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
   popover,
   ...rest
 }) => {
-  const ref = React.useRef<HTMLDivElement>(null)
-
   return (
     <AriaDateRangePicker
       className={clsx(styles.datePicker, className)}
-      ref={ref}
       {...rest}
     >
       <LabelWrapper popover={popover}>
@@ -65,7 +62,7 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
         </DateInput>
       </DatePickerInputField>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerPopover ref={ref}>
+      <DatePickerPopover>
         <RangeCalendar />
       </DatePickerPopover>
     </AriaDateRangePicker>
