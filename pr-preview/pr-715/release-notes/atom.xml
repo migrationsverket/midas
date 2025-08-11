@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/pr-preview/pr-715/release-notes/</id>
     <title>Migrationsverkets designsystem Blog</title>
-    <updated>2025-08-06T08:35:32.000Z</updated>
+    <updated>2025-08-06T08:42:51.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/pr-preview/pr-715/release-notes/"/>
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[Release 11.0.0]]></title>
         <id>https://designsystem.migrationsverket.se/pr-preview/pr-715/release-notes/11.0.0/</id>
         <link href="https://designsystem.migrationsverket.se/pr-preview/pr-715/release-notes/11.0.0/"/>
-        <updated>2025-08-06T08:35:32.000Z</updated>
+        <updated>2025-08-06T08:42:51.000Z</updated>
         <summary type="html"><![CDATA[🚀 Features]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-715/release-notes/11.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
 <ul>
