@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --border-primary, --focus-inset, --font-family, --layer-01, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --size-40, --size-80, --size-150, --text-disabled, --text-primary from tokens;
+@value --border-primary, --blue-120, --focus-inset, --font-family, --layer-01, --layer-hover-01, --layer-selected-01, --layer-selected-hover-01, --size-40, --size-80, --size-150, --spacing-40, --text-disabled, --text-primary from tokens;
 
 /**
  * 1. Represents max ~5 options in the list.
@@ -31,8 +31,9 @@
 .listBoxSectionHeading {
   font-family: --font-family;
   display: block;
-  padding: --size-80 --size-80 --size-40;
+  padding: --size-80 --size-80 --size-40 --spacing-40;
   font-weight: 500;
+  color: --blue-120;
 }
 
 .listBoxButton {
