@@ -41,12 +41,9 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   popover,
   ...rest
 }) => {
-  const ref = React.useRef<HTMLDivElement>(null)
-
   return (
     <AriaDatePicker
       className={clsx(styles.datePicker, className)}
-      ref={ref}
       {...rest}
     >
       <LabelWrapper popover={popover}>
@@ -58,7 +55,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
       </DatePickerInputField>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <DatePickerPopover ref={ref}>
+      <DatePickerPopover>
         <Calendar />
       </DatePickerPopover>
     </AriaDatePicker>

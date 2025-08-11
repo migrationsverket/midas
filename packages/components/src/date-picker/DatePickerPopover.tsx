@@ -6,15 +6,10 @@ interface DatePickerPopoverProps {
   children?: React.ReactNode
 }
 
-export const DatePickerPopover = React.forwardRef<
-  HTMLDivElement,
-  DatePickerPopoverProps
->(({ children }, ref) => (
-  <Popover
-    UNSTABLE_portalContainer={
-      (typeof ref !== 'function' && ref?.current) || undefined
-    }
-  >
+export const DatePickerPopover: React.FC<DatePickerPopoverProps> = ({
+  children,
+}) => (
+  <Popover>
     <Dialog className={styles.dialog}>{children}</Dialog>
   </Popover>
-))
+)
