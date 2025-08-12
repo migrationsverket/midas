@@ -10,7 +10,6 @@ import { Button } from '../button'
 import styles from './Dialog.module.css'
 import { X } from 'lucide-react'
 import { AriaModalOverlayProps } from '@react-aria/overlays'
-import { FocusScope } from '@react-aria/focus'
 import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
@@ -42,29 +41,23 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
         className={styles.modal}
       >
         <AriaDialog {...props}>
-          <FocusScope
-            contain
-            autoFocus
-            restoreFocus
-          >
-            <div className={styles.modalHeader}>
-              <Button
-                slot='close'
-                variant='tertiary'
-                icon={X}
-                iconPlacement='right'
-              >
-                {strings.format('close')}
-              </Button>
-            </div>
-            <div
-              className={styles.modalBody}
-              tabIndex={-1}
+          <div className={styles.modalHeader}>
+            <Button
+              slot='close'
+              variant='tertiary'
+              icon={X}
+              iconPlacement='right'
             >
-              {title && <Heading level={2}>{title}</Heading>}
-              {children}
-            </div>
-          </FocusScope>
+              {strings.format('close')}
+            </Button>
+          </div>
+          <div
+            className={styles.modalBody}
+            tabIndex={-1}
+          >
+            {title && <Heading level={2}>{title}</Heading>}
+            {children}
+          </div>
         </AriaDialog>
       </AriaModal>
     </ModalOverlay>
