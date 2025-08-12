@@ -1,18 +1,18 @@
 ---
 title: Tabs
-description: Fördela information över flertalet tabbar.
+description: Organisera information med hjälp av flikar.
 ---
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { ControlledExample, BasicExample } from '@site/src/components/examples/tabs/TabsExamples'
+import { ControlledExample, BasicExample, ClosableTabsExample } from '@site/src/components/examples/tabs/TabsExamples'
 
 <ComponentHeader
   name='Tabs'
   friendlyName='Flikar'
 />
 
-Komponent för att segmentera information. Används för att minska informationsmängden som direkt presenteras för användaren.
+En komponent för att segmentera information och minska den mängd som direkt presenteras för användaren.
 
 ```tsx
 import { Tabs, TabList, Tab, TabPanel } from '@midas-ds/components'
@@ -42,7 +42,7 @@ Samtliga komponenter utgår från React Arias komponenter med samma namn, vänli
 
 ## Användning
 
-### Förvalt alternativ (okontrollerad)
+### Standardval (okontrollerad)
 
 Välj vilket alternativ som ska vara förvalt med attributet `defaultSelectedKey`, använd id för den flik som ska vara förvald.
 
@@ -63,10 +63,10 @@ Välj vilket alternativ som ska vara förvalt med attributet `defaultSelectedKey
   <BasicExample defaultSelectedKey='frukter' />
 </div>
 
-### Kontrollerat val
+### Kontrollerat läge
 
 Valet av flik kan kontrolleras med hjälp av attributet `selectedKey` tillsammans med eventet `onSelectionChange`.
-Den valda flikens id skickas tillbaka i callbacken när användaren byter flik, så kan du använda det för att uppdatera ditt state.
+Flikens ID skickas tillbaka i callbacken vid valändring, vilket kan användas för att uppdatera ditt state.
 
 ```tsx
 import React from 'react'
@@ -97,6 +97,66 @@ return (
 
 <div className='card'>
   <ControlledExample />
+</div>
+
+### Flikar med stängningsknapp
+
+Här är ett exempel på flikar där varje flik har en stängningsknapp. Detta är användbart för scenarion där flikar kan läggas till eller tas bort dynamiskt av användaren. För mer information om dynamiska flikar, se [React Aria dynamic tabs](https://react-spectrum.adobe.com/react-aria/Tabs.html#dynamic-items).
+
+```tsx
+import React, { useState } from 'react'
+import { X } from 'lucide-react'
+import {
+  Tab,
+  TabList,
+  Tabs,
+  TabPanel,
+  Text,
+  Button,
+} from '@midas-ds/components'
+
+export const ClosableTabsExample = () => {
+  const [openTabs, setOpenTabs] = useState([
+    { id: 'bananer', title: 'Bananer' },
+    { id: 'applen', title: 'Äpplen' },
+  ])
+
+  const handleCloseTab = (idToClose: string) => {
+    if (openTabs.length > 1)
+      setOpenTabs(prevTabs => prevTabs.filter(tab => tab.id !== idToClose))
+  }
+
+  return (
+    <Tabs>
+      <TabList>
+        {openTabs.map(tab => (
+          <Tab
+            key={tab.id}
+            id={tab.id}
+            style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}
+          >
+            {tab.title}
+            <Button variant='icon' onPress={() => handleCloseTab(tab.id)}>
+              <X size={16} />
+            </Button>
+          </Tab>
+        ))}
+      </TabList>
+      {openTabs.map(tab => (
+        <TabPanel
+          key={tab.id}
+          id={tab.id}
+        >
+          <Text>Information om {tab.title}</Text>
+        </TabPanel>
+      ))}
+    </Tabs>
+  )
+}
+```
+
+<div className='card'>
+  <ClosableTabsExample />
 </div>
 
 ## API

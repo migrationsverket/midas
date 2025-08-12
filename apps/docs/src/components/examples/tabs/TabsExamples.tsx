@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { type Key } from 'react-aria-components'
 import {
   Tab,
@@ -7,7 +7,9 @@ import {
   TabList,
   Tabs,
   Text,
+  Button,
 } from '@midas-ds/components'
+import { X } from 'lucide-react'
 
 export const BasicExample: React.FC<Partial<TabsProps>> = props => (
   <Tabs {...props}>
@@ -85,5 +87,44 @@ export const ControlledExample: React.FC<Partial<TabsProps>> = props => {
       </Tabs>
       <pre>Vald flik: {selectedTab}</pre>
     </>
+  )
+}
+
+export const ClosableTabsExample = () => {
+  const [openTabs, setOpenTabs] = useState([
+    { id: 'bananer', title: 'Bananer' },
+    { id: 'applen', title: 'Äpplen' },
+  ])
+
+  const handleCloseTab = (idToClose: string) => {
+    if (openTabs.length > 1)
+      setOpenTabs(prevTabs => prevTabs.filter(tab => tab.id !== idToClose))
+  }
+
+  return (
+    <Tabs>
+      <TabList>
+        {openTabs.map(tab => (
+          <Tab
+            key={tab.id}
+            id={tab.id}
+            style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}
+          >
+            {tab.title}
+            <Button variant='icon' onPress={() => handleCloseTab(tab.id)}>
+              <X size={16} />
+            </Button>
+          </Tab>
+        ))}
+      </TabList>
+      {openTabs.map(tab => (
+        <TabPanel
+          key={tab.id}
+          id={tab.id}
+        >
+          <Text>Information om {tab.title}</Text>
+        </TabPanel>
+      ))}
+    </Tabs>
   )
 }
