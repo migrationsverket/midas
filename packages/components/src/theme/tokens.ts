@@ -266,6 +266,7 @@ export const semantic = {
 
   menuItemBackgroundHover: `light-dark(${baseColors.gray20}, ${baseColors.gray190})`,
   menuItemBackgroundSelected: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
+  menuTextSectionHeader: `light-dark(${baseColors.blue120}, ${baseColors.blue80})`,
 }
 
 export const zIndex = {

@@ -278,6 +278,7 @@
 /* Menu */
 @value --menu-item-background-hover: light-dark(--gray-20, --gray-190);
 @value --menu-item-background-selected: light-dark(--gray-10, --gray-180);
+@value --menu-text-section-header: light-dark(--blue-120, --blue-80);
 
 /* Skeleton */
 @value --skeleton-01: light-dark(--gray-10, --gray-180);
