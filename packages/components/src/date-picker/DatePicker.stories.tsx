@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent, within } from '@storybook/test'
 import { sizeModes } from '../../.storybook/modes'
+import React from 'react'
+import { parseDate, CalendarDate } from '@internationalized/date'
+
+const testID = 'datePicker'
 
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
@@ -137,5 +141,48 @@ export const CustomValiation: Story = {
       await userEvent.tab()
       expect(canvas.getByText('Var god välj ett annat år')).toBeInTheDocument()
     })
+  },
+}
+
+export const ControlledState: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: (args, { globals: { size } }) => {
+    const [value, setValue] = React.useState<CalendarDate | null>(
+      parseDate('2026-05-29'),
+    )
+    return (
+      <DatePicker
+        data-testid={testID}
+        {...args}
+        size={size}
+        value={value}
+        onChange={newValue =>
+          setValue(newValue ? parseDate(newValue.toString()) : null)
+        }
+      />
+    )
+  },
+  play: async ({ canvas, step }) => {
+    await step(
+      'the calendar should not be contained by the datepicker div',
+      async () => {
+        // Select tomorrows date
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Enter]')
+        await userEvent.keyboard('[ArrowRight]')
+        await userEvent.keyboard('[Enter]')
+        await userEvent.keyboard('[Enter]')
+
+        await expect(
+          within(canvas.getByTestId(testID)).queryByRole('application'),
+        ).toBeNull()
+      },
+    )
   },
 }
