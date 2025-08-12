@@ -1,1 +1,0 @@
-const t="_button_lkria_4",i="_secondary_lkria_51",n="_tertiary_lkria_74",_="_small_lkria_93",r="_iconBtn_lkria_99",a="_medium_lkria_119",o="_danger_lkria_124",l="_iconRight_lkria_146",c="_fullwidth_lkria_150",s="_primary_lkria_164",e={button:t,secondary:i,tertiary:n,small:_,iconBtn:r,medium:a,danger:o,iconRight:l,fullwidth:c,primary:s};export{e as B};
