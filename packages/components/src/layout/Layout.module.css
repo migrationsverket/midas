@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-xs, --breakpoint-lg, --background, --border-subtle, --layer-01, --font-size-10, --text-primary, --text-on-color, --line-height-20, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content, --menu-item-background-hover, --menu-item-background-selected, --border-tertiary from tokens;
+@value --font-family, --breakpoint-xs, --breakpoint-lg, --background, --border-subtle, --font-size-10, --text-primary, --text-on-color, --line-height-20, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content, --menu-item-background-hover, --menu-item-background-selected, --border-tertiary from tokens;
 
 .baseLayout {
   --sideBarWidth: 230px;
