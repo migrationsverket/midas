@@ -33,19 +33,19 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
   const strings = useLocalizedStringFormatter(messages)
 
   return (
-    <AriaDialog {...props}>
-      <ModalOverlay
+    <ModalOverlay
+      {...props}
+      className={styles.overlay}
+    >
+      <AriaModal
         {...props}
-        className={styles.overlay}
+        className={styles.modal}
       >
-        <FocusScope
-          contain
-          autoFocus
-          restoreFocus
-        >
-          <AriaModal
-            {...props}
-            className={styles.modal}
+        <AriaDialog {...props}>
+          <FocusScope
+            contain
+            autoFocus
+            restoreFocus
           >
             <div className={styles.modalHeader}>
               <Button
@@ -64,9 +64,9 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
               {title && <Heading level={2}>{title}</Heading>}
               {children}
             </div>
-          </AriaModal>
-        </FocusScope>
-      </ModalOverlay>
-    </AriaDialog>
+          </FocusScope>
+        </AriaDialog>
+      </AriaModal>
+    </ModalOverlay>
   )
 }
