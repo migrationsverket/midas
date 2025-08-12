@@ -4,6 +4,10 @@ import { Button } from '../button'
 import { Select } from '../select'
 import { Text } from '../text'
 import { options } from '../utils/storybook'
+import { useState } from 'react'
+import type { Selection } from 'react-aria-components'
+import { Cell, Column, Row, Table, TableBody, TableHeader } from '../table'
+import { expect, userEvent, within } from '@storybook/test'
 
 type Story = StoryObj<typeof Modal>
 
@@ -169,4 +173,77 @@ export const Scrollable: Story = {
       </Modal>
     </DialogTrigger>
   ),
+}
+
+export const DS1282: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  render: () => {
+    const [selectedFruit, setSelectedFruit] = useState<Selection>(new Set())
+    const options = ['apple', 'banana'].map(fruit => ({
+      id: fruit,
+      name: fruit,
+    }))
+
+    return (
+      <>
+        <Table aria-label='tabell'>
+          <TableHeader>
+            <Column isRowHeader>Actions</Column>
+          </TableHeader>
+          <TableBody>
+            {[...selectedFruit].map(fruit => (
+              <Row key={fruit}>
+                <Cell>
+                  <DialogTrigger>
+                    <Button>View</Button>
+                    <Modal>{fruit}</Modal>
+                  </DialogTrigger>
+                </Cell>
+              </Row>
+            ))}
+          </TableBody>
+        </Table>
+        <DialogTrigger>
+          <Button>Add entry</Button>
+          <Modal>
+            <Select
+              label='test'
+              options={options}
+              onSelectionChange={setSelectedFruit}
+              autoFocus
+            />
+          </Modal>
+        </DialogTrigger>
+      </>
+    )
+  },
+  play: async ({ canvasElement, step }) => {
+    await step(
+      'it should be possible to use the select multiple times while rendering a table with modals',
+      async () => {
+        // Open modal
+        await userEvent.tab()
+        await userEvent.tab()
+        await userEvent.keyboard('[Space]')
+
+        // Get the value of the select
+        const body = canvasElement.ownerDocument.body
+        const hiddenSelect = within(body).getByLabelText('test-hidden')
+
+        // Select "apple"
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[Space]')
+        await expect(hiddenSelect).toHaveDisplayValue('apple')
+
+        // Select "banana"
+        await userEvent.keyboard('[Space]')
+        await userEvent.keyboard('[ArrowDown]')
+        await userEvent.keyboard('[Space]')
+        await expect(hiddenSelect).toHaveDisplayValue('banana')
+      },
+    )
+  },
 }
