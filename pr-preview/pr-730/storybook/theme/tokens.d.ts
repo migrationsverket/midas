@@ -232,6 +232,7 @@ export declare const semantic: {
     logoPrimary: string;
     menuItemBackgroundHover: string;
     menuItemBackgroundSelected: string;
+    menuTextSectionHeader: string;
 };
 export declare const zIndex: {
     base: number;
