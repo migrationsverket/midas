@@ -7,11 +7,14 @@
   font-size: --font-size-20;
   line-height: --line-height-20;
 
-  .tableHeader {
-    background-color: --layer-accent-01;
-    color: --text-primary;
+  > div {
+    pointer-events: auto !important;
+  }
 
+  .tableHeader {
     .column {
+      background-color: --layer-accent-01;
+      color: --text-primary;
       font-weight: 500;
       padding: --size-75 --size-80;
       text-align: left;
@@ -19,6 +22,10 @@
       &[data-focused],
       &[data-hovered] {
         outline: --size-10 solid --border-primary;
+      }
+
+      .selection {
+        height: 18px;
       }
     }
   }
@@ -41,6 +48,10 @@
       border-top: 1px --border-subtle solid;
       color: --text-primary;
       padding: calc(--size-75 - 1px) --size-80 --size-75;
+
+      .selection {
+        height: 18px;
+      }
     }
   }
 
@@ -50,10 +61,19 @@
 
     .column {
       padding: --size-20 --size-80;
+      height: 14px;
+
+      .selection {
+        height: 14px;
+      }
     }
 
     .cell {
       padding: calc(--size-20 - 1px) --size-80 --size-20;
+
+      .selection {
+        height: 16px;
+      }
     }
   }
 
@@ -69,7 +89,8 @@
 
   &.striped {
     .row {
-      &:nth-child(even) {
+      &:nth-child(even),
+      &[data-even='false'] {
         .cell {
           background-color: --layer-accent-01;
         }

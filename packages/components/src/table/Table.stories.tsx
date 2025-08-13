@@ -4,6 +4,7 @@ import { hexToRgb, lightDark } from '../utils/test'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
 import { sizeModes } from '../../.storybook/modes'
+import { TableLayout, Virtualizer } from '../virtualizer'
 
 type Story = StoryObj<typeof Table>
 
@@ -128,5 +129,45 @@ export const Striped: Story = {
         ),
       })
     })
+  },
+}
+
+export const Virtualized: Story = {
+  render: args => {
+    const rows = []
+
+    for (let i = 0; i < 5000; i++) {
+      rows.push({ id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}` })
+    }
+
+    return (
+      <Virtualizer
+        layout={TableLayout}
+        layoutOptions={{
+          rowHeight: args.narrow ? 24 : undefined,
+          headingHeight: args.narrow ? 24 : undefined,
+        }}
+      >
+        <Table
+          {...args}
+          style={{ height: 300, overflow: 'auto' }}
+        >
+          <TableHeader>
+            <Column isRowHeader>Foo</Column>
+            <Column>Bar</Column>
+            <Column>Baz</Column>
+          </TableHeader>
+          <TableBody items={rows}>
+            {item => (
+              <Row data-even={item.id % 2 === 0}>
+                <Cell>{item.foo}</Cell>
+                <Cell>{item.bar}</Cell>
+                <Cell>{item.baz}</Cell>
+              </Row>
+            )}
+          </TableBody>
+        </Table>
+      </Virtualizer>
+    )
   },
 }

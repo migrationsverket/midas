@@ -5,7 +5,12 @@ description: En enkel tabell för att visualisera data.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { BasicExample, FullExample, ControlledExample } from '@site/src/components/examples/table/TableExamples'
+import {
+  BasicExample,
+  FullExample,
+  ControlledExample,
+  VirtualizedExample,
+} from '@site/src/components/examples/table/TableExamples'
 
 <ComponentHeader
   name='Table'
@@ -184,6 +189,59 @@ Använd `striped` om du vill att raderna ska vara olika.
 ```
 
 <FullExample striped />
+
+### Virtuell tabell
+
+För stora tabeller med mycket data kan en `Virtualizer` hjälpa till att reducera mängden renderade DOM-element, begränsat till vad användaren ser för tillfället.
+
+:::note
+Notera att tabellen behöver ange ett värde för höjd och overflow.
+:::
+
+:::note
+För användning av randiga rader behöver `data-even`-attributet anges för jämna rader.
+:::
+
+```tsx
+import { Virtualizer, TableLayout, Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
+
+const VirtualizedExample = () => {
+  const rows = [...Array.from(Array(5000).keys())].map(i => ({
+    id: i,
+    foo: `Foo: ${i}`,
+    bar: `Bar: ${i}`,
+    baz: `Baz: ${i}`,
+  }))
+
+  return (
+    <Virtualizer layout={TableLayout}>
+      <Table
+        aria-label='Virtualized Table'
+        selectionMode='multiple'
+        striped
+        style={{ height: 300, overflow: 'auto' }}
+      >
+        <TableHeader>
+          <Column isRowHeader>Foo</Column>
+          <Column>Bar</Column>
+          <Column>Baz</Column>
+        </TableHeader>
+        <TableBody items={rows}>
+          {item => (
+            <Row data-even={item.id % 2 === 0}>
+              <Cell>{item.foo}</Cell>
+              <Cell>{item.bar}</Cell>
+              <Cell>{item.baz}</Cell>
+            </Row>
+          )}
+        </TableBody>
+      </Table>
+    </Virtualizer>
+  )
+}
+```
+
+<VirtualizedExample />
 
 ## API
 
