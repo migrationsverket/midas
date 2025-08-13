@@ -175,15 +175,15 @@ describe('given a default Button', () => {
 Vi använder [Chromatic](https://chromatic.com) för att köra snapshottester som jämför visuella ändringar i komponenter.
 Chromatic utgår från vår Storybook och tar snapshots på samtliga stories.
 
-### Trigga chromatic via commit
+### Trigga snapshottester
 
-Per default körs bara snapshottester på push till `dev` och `main`, vill du köra snapshottester i din feature branch PR behöver du baka in meddelandet `[run-chromatic]` i ditt commit meddelande (workflowet triggas även om meddelandet finns i bodyn):
-
-```bash
-git commit -m "feat(button): change padding [run-chromatic]"
-```
-
-Se till att köra snapshottester som ett sista steg om du jobbar med en feature eller fix.
+Snapshottester körs automatiskt vid push till följande brancher:
+* `main`
+* `dev`
+* brancher som startar med `feature`
+* brancher som startar med `feat`
+* brancher som startar med `fix`
+* brancher som startar med `bugfix`
 
 ### Hoppa över stories
 

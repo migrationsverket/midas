@@ -7,7 +7,7 @@ on: push
 
 jobs:
   chromatic:
-    if: contains(github.event.head_commit.message, '[run-chromatic]') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
+    if: startsWith(github.ref_name, 'feature') || startsWith(github.ref_name, 'feat') || startsWith(github.ref_name, 'fix') || startsWith(github.ref_name, 'bugfix') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
     name: Chromatic
     runs-on: ubuntu-latest
     steps:
