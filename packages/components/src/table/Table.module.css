@@ -19,9 +19,9 @@
       padding: --size-75 --size-80;
       text-align: left;
 
-      &[data-focused],
-      &[data-hovered] {
+      &[data-focus-visible] {
         outline: --size-10 solid --border-primary;
+        outline-offset: -4px;
       }
 
       .selection {
@@ -33,21 +33,30 @@
   .row {
     &[data-focused] {
       outline: --size-10 solid --border-primary;
+      outline-offset: -4px;
     }
+
+    height: 100%;
 
     &[data-href] {
       cursor: pointer;
     }
 
-    &[data-hovered] .cell {
+    &[data-hovered] {
       background-color: --layer-hover-01;
     }
 
+    background-color: --layer-01;
+
     .cell {
-      background-color: --layer-01;
       border-top: 1px --border-subtle solid;
       color: --text-primary;
       padding: calc(--size-75 - 1px) --size-80 --size-75;
+
+      &[data-focus-visible] {
+        outline-offset: -4px;
+        outline: --size-10 solid --border-primary;
+      }
 
       .selection {
         height: 18px;

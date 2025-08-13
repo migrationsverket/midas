@@ -120,7 +120,7 @@ export const VirtualizedExample: React.FC<TableProps> = args => {
         aria-label='Virtualized Table'
         selectionMode='multiple'
         striped
-        style={{ height: 300, overflow: 'auto' }}
+        style={{ height: 300, overflow: 'auto', scrollPaddingTop: 48 }}
         {...args}
       >
         <TableHeader>

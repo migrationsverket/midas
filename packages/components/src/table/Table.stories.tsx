@@ -144,13 +144,13 @@ export const Virtualized: Story = {
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
-          rowHeight: args.narrow ? 24 : undefined,
-          headingHeight: args.narrow ? 24 : undefined,
+          rowHeight: args.narrow ? 24 : 48,
+          headingHeight: args.narrow ? 24 : 48,
         }}
       >
         <Table
           {...args}
-          style={{ height: 300, overflow: 'auto' }}
+          style={{ height: 300, overflow: 'auto', scrollPaddingTop: 48 }}
         >
           <TableHeader>
             <Column isRowHeader>Foo</Column>
