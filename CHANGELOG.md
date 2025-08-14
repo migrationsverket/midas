@@ -1,3 +1,34 @@
+## 11.2.0 (2025-08-14)
+
+### 🚀 Features
+
+- **listbox:** set `font-size` to 14px and set darkmode colors [run-chromatic] ([0352aedaf4](https://github.com/migrationsverket/midas/commit/0352aedaf4))
+
+### 🩹 Fixes
+
+- **date-picker:** remove custom portal element ([51f82497ae](https://github.com/migrationsverket/midas/commit/51f82497ae))
+- **grid:** add export for GridProps type ([9ebd6168d5](https://github.com/migrationsverket/midas/commit/9ebd6168d5))
+- **modal:** re-arrange component to work with nested modals and tables ([#733](https://github.com/migrationsverket/midas/pull/733))
+
+### 📖 Documentation changes
+
+- add changelog source ([e8702a488d](https://github.com/migrationsverket/midas/commit/e8702a488d))
+- add authors map file and update all release notes ([fdfb2fa8e2](https://github.com/migrationsverket/midas/commit/fdfb2fa8e2))
+- **tabs:** add code example for closable tabs ([b32c1b9d88](https://github.com/migrationsverket/midas/commit/b32c1b9d88))
+
+### 🔧 Maintenance
+
+- remove whitespace ([d56b8680b9](https://github.com/migrationsverket/midas/commit/d56b8680b9))
+- **chromatic:** trigger chromatic on push on feature and fix branches ([39039efa1a](https://github.com/migrationsverket/midas/commit/39039efa1a))
+
+### 🧪 Tests updated
+
+- **date-picker:** add test for controlled state portal bug ([4d07dd8350](https://github.com/migrationsverket/midas/commit/4d07dd8350))
+
+### 🎨 Styles
+
+- **layout:** remove background color ([#732](https://github.com/migrationsverket/midas/pull/732))
+
 ## 11.1.0 (2025-08-10)
 
 ### 🚀 Features
