@@ -203,7 +203,8 @@ För användning av randiga rader behöver `data-even`-attributet anges för jä
 :::
 
 ```tsx
-import { Virtualizer, TableLayout, Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
+import { Virtualizer, TableLayout } from 'react-aria-components'
+import { Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
 
 const VirtualizedExample = () => {
   const rows = [...Array.from(Array(5000).keys())].map(i => ({

@@ -7,10 +7,9 @@ import {
   Table,
   TableBody,
   TableHeader,
-  TableLayout,
   TableProps,
-  Virtualizer,
 } from '@midas-ds/components'
+import { Virtualizer, TableLayout } from 'react-aria-components'
 
 const columns = [
   { name: 'Namn', id: 'name', isRowHeader: true },

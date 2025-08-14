@@ -4,7 +4,7 @@ import { hexToRgb, lightDark } from '../utils/test'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
 import { sizeModes } from '../../.storybook/modes'
-import { TableLayout, Virtualizer } from '../virtualizer'
+import { TableLayout, Virtualizer } from 'react-aria-components'
 
 type Story = StoryObj<typeof Table>
 
