@@ -228,6 +228,7 @@ export declare const theme: {
         logoPrimary: string;
         menuItemBackgroundHover: string;
         menuItemBackgroundSelected: string;
+        menuTextSectionHeader: string;
     };
     zIndex: {
         base: number;

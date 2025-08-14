@@ -40,7 +40,6 @@
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.4.0/">changelog</a>.</p>]]></content>
         <author>
             <name>Midas</name>
-            <uri>https://github.com/migrationsverket/midas</uri>
         </author>
         <category label="release-notes" term="release-notes"/>
         <category label="v11" term="v11"/>
@@ -80,6 +79,9 @@ accepterar nu <code scope="[object Object]">className</code> för att applicera 
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.4.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.3.0]]></title>
@@ -98,6 +100,9 @@ accepterar nu <code scope="[object Object]">className</code> för att applicera 
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.3.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.2.0]]></title>
@@ -141,6 +146,9 @@ accepterar nu <code scope="[object Object]">className</code> för att applicera 
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.2.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.1.1]]></title>
@@ -159,6 +167,9 @@ accepterar nu <code scope="[object Object]">className</code> för att applicera 
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.1.1/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.1.0]]></title>
@@ -181,6 +192,9 @@ att <code scope="[object Object]">id</code> är <code scope="[object Object]">Ke
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.1.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 10.0.0]]></title>
@@ -245,6 +259,9 @@ Default är numera <code scope="[object Object]">label-02</code> och för att up
 boolean, <code scope="[object Object]">isAnimated=true|false</code>.</p>
 <div class="language-diff codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-diff codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"> &lt;Skeleton variant='rectangular' animation='wave'/&gt;</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"> &lt;Skeleton variant='rectangle' isAnimated /&gt;</span><br></span></code></pre></div></div>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/10.0.0/">changelog</a></p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 9.0.0]]></title>
@@ -268,6 +285,9 @@ Importerar du dessa värden behöver du justera din kod enligt:</p>
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token imports punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token imports"> typography </span><span class="token imports punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">from</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/components/theme'</span><br></span></code></pre></div></div>
 <div class="language-diff codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-diff codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size01</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize10</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size02</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize20</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size03</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize30</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size04</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize40</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size05</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize50</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size06</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize60</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size07</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize70</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size08</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize80</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size09</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize90</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)"></span><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   typography.size10</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   typography.fontSize100</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="display:inline-block;color:rgb(9, 134, 88)"></span><br></span></code></pre></div></div>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/9.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 8.0.0]]></title>
@@ -286,6 +306,9 @@ Numera skickas valda nycklar med en <code scope="[object Object]">Selection</cod
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword" style="color:rgb(0, 0, 255)">const</span><span class="token plain"> </span><span class="token function-variable function" style="color:rgb(0, 0, 255)">handleSelectionChange</span><span class="token plain"> </span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token plain">keys</span><span class="token operator" style="color:rgb(0, 0, 0)">:</span><span class="token plain"> </span><span class="token maybe-class-name">Selection</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:rgb(0, 0, 0)">=&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">if</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token plain">keys </span><span class="token operator" style="color:rgb(0, 0, 0)">===</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'all'</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain">    </span><span class="token keyword" style="color:rgb(0, 0, 255)">return</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">setSelection</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token keyword" style="color:rgb(0, 0, 255)">new</span><span class="token plain"> </span><span class="token class-name" style="color:rgb(38, 127, 153)">Set</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token plain">options</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token method function property-access" style="color:rgb(0, 0, 255)">map</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain"> id </span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:rgb(0, 0, 0)">=&gt;</span><span class="token plain"> id</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain">  </span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain">  </span><span class="token keyword" style="color:rgb(0, 0, 255)">return</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">setSelection</span><span class="token punctuation" style="color:rgb(4, 81, 165)">(</span><span class="token plain">keys</span><span class="token punctuation" style="color:rgb(4, 81, 165)">)</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain"></span><span class="token punctuation" style="color:rgb(4, 81, 165)">}</span><br></span></code></pre></div></div>
 <p>För mer information, läs <a href="https://designsystem.migrationsverket.se/components/select/#kontrollerade-val">instruktioner för <code scope="[object Object]">Select</code> och kontrollerade val</a></p>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/8.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 7.0.0]]></title>
@@ -303,6 +326,9 @@ Läs mer om <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference
 <p>För anpassad validering med tillhörande felmeddelande, använd <code scope="[object Object]">validate</code>.
 Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket.se/components/textfield/#egen-validering">dokumentation för TextField</a></p>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/7.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 6.0.0]]></title>
@@ -316,6 +342,9 @@ Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket
 </ul>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/6.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 5.0.0]]></title>
@@ -326,6 +355,9 @@ Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket
         <content type="html"><![CDATA[<p>Vi introducerar stöd för dark mode på samtliga komponenter</p>
 <!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/5.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 4.0.0]]></title>
@@ -340,6 +372,9 @@ Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token tag punctuation" style="color:rgb(4, 81, 165)">&lt;</span><span class="token tag class-name" style="color:rgb(38, 127, 153)">Select</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag attr-name" style="color:rgb(255, 0, 0)">selectionMode</span><span class="token tag attr-value punctuation attr-equals" style="color:rgb(4, 81, 165)">=</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">'</span><span class="token tag attr-value" style="color:rgb(128, 0, 0)">multiple</span><span class="token tag attr-value punctuation" style="color:rgb(4, 81, 165)">'</span><span class="token tag" style="color:rgb(128, 0, 0)"> </span><span class="token tag punctuation" style="color:rgb(4, 81, 165)">/&gt;</span><br></span></code></pre></div></div>
 <p>Se mer information om <a href="https://designsystem.migrationsverket.se/components/select/">hur du använder Select</a></p>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/4.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 3.0.0]]></title>
@@ -354,6 +389,9 @@ Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket
 <div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token operator" style="color:rgb(0, 0, 0)">&lt;</span><span class="token maybe-class-name">SearchField</span><span class="token plain"> validate</span><span class="token operator" style="color:rgb(0, 0, 0)">=</span><span class="token punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token plain">v </span><span class="token arrow operator" style="color:rgb(0, 0, 0)">=&gt;</span><span class="token plain"> </span><span class="token operator" style="color:rgb(0, 0, 0)">!</span><span class="token operator" style="color:rgb(0, 0, 0)">!</span><span class="token plain">v</span><span class="token punctuation" style="color:rgb(4, 81, 165)">.</span><span class="token property-access">length</span><span class="token plain"> </span><span class="token operator" style="color:rgb(0, 0, 0)">||</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'Var god ange åtminstone ett tecken'</span><span class="token plain"> </span><span class="token operator" style="color:rgb(0, 0, 0)">/</span><span class="token operator" style="color:rgb(0, 0, 0)">&gt;</span><br></span></code></pre></div></div>
 <p>Se mer information om <a href="https://designsystem.migrationsverket.se/components/search-field/">hur du använder SearchField</a></p>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/3.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 2.0.0]]></title>
@@ -366,5 +404,8 @@ Läs mer om egenskapen under vår <a href="https://designsystem.migrationsverket
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="textfield-textarea">TextField, TextArea<a href="https://designsystem.migrationsverket.se/release-notes/2.0.0/#textfield-textarea" class="hash-link" aria-label="Direktlänk till TextField, TextArea" title="Direktlänk till TextField, TextArea">​</a></h3>
 <p><code scope="[object Object]">maxCharacters</code> byter namn till <code scope="[object Object]">maxLength</code> för enhetlighet</p>
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/2.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
     </entry>
 </feed>
