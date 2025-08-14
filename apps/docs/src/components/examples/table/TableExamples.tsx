@@ -9,7 +9,6 @@ import {
   TableHeader,
   TableProps,
 } from '@midas-ds/components'
-import { Virtualizer, TableLayout } from 'react-aria-components'
 
 const columns = [
   { name: 'Namn', id: 'name', isRowHeader: true },
@@ -96,47 +95,5 @@ export const ControlledExample: React.FC<TableProps> = props => {
       />
       Valda rader: {Array.from(selectedKeys).join(', ')}
     </>
-  )
-}
-
-export const VirtualizedExample: React.FC<TableProps> = args => {
-  const rows = [...Array.from(Array(5000).keys())].map(i => ({
-    id: i,
-    foo: `Foo: ${i}`,
-    bar: `Bar: ${i}`,
-    baz: `Baz: ${i}`,
-  }))
-
-  return (
-    <Virtualizer
-      layout={TableLayout}
-      layoutOptions={{
-        rowHeight: args.narrow ? 24 : 48,
-        headingHeight: args.narrow ? 24 : 48,
-      }}
-    >
-      <Table
-        aria-label='Virtualized Table'
-        selectionMode='multiple'
-        striped
-        style={{ height: 300, overflow: 'auto', scrollPaddingTop: 48 }}
-        {...args}
-      >
-        <TableHeader>
-          <Column isRowHeader>Foo</Column>
-          <Column>Bar</Column>
-          <Column>Baz</Column>
-        </TableHeader>
-        <TableBody items={rows}>
-          {item => (
-            <Row data-even={item.id % 2 === 0}>
-              <Cell>{item.foo}</Cell>
-              <Cell>{item.bar}</Cell>
-              <Cell>{item.baz}</Cell>
-            </Row>
-          )}
-        </TableBody>
-      </Table>
-    </Virtualizer>
   )
 }

@@ -5,12 +5,7 @@ description: En enkel tabell för att visualisera data.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import {
-  BasicExample,
-  FullExample,
-  ControlledExample,
-  VirtualizedExample,
-} from '@site/src/components/examples/table/TableExamples'
+import { BasicExample, FullExample, ControlledExample } from '@site/src/components/examples/table/TableExamples'
 
 <ComponentHeader
   name='Table'
@@ -192,7 +187,7 @@ Använd `striped` om du vill att raderna ska vara olika.
 
 ### Virtuell tabell
 
-För stora tabeller med mycket data kan en `Virtualizer` hjälpa till att reducera mängden renderade DOM-element, begränsat till vad användaren ser för tillfället.
+För stora tabeller med mycket data kan en [`Virtualizer`](https://react-spectrum.adobe.com/react-aria/Virtualizer.html) hjälpa till att reducera mängden renderade DOM-element, begränsat till vad användaren ser för tillfället.
 
 :::note
 Notera att tabellen behöver ange ett värde för höjd och overflow.
@@ -215,7 +210,13 @@ const VirtualizedExample = () => {
   }))
 
   return (
-    <Virtualizer layout={TableLayout}>
+    <Virtualizer
+      layout={TableLayout}
+      layoutOptions={{
+        rowHeight: 48,
+        headingHeight: 48,
+      }}
+    >
       <Table
         aria-label='Virtualized Table'
         selectionMode='multiple'
@@ -242,7 +243,7 @@ const VirtualizedExample = () => {
 }
 ```
 
-<VirtualizedExample />
+En demo av denna kod finns på vår Storybook.
 
 ## API
 
