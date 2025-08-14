@@ -14,8 +14,8 @@
 <link rel="alternate" type="application/rss+xml" href="/dev-docs/changelog/rss.xml" title="Midas changelog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/dev-docs/changelog/atom.xml" title="Midas changelog Atom Feed">
 <link rel="alternate" type="application/json" href="/dev-docs/changelog/feed.json" title="Midas changelog JSON Feed"><link rel="stylesheet" href="/dev-docs/assets/css/styles.6bf08f6e.css">
-<script src="/dev-docs/assets/js/runtime~main.2f7a7827.js" defer="defer"></script>
-<script src="/dev-docs/assets/js/main.188fb5b6.js" defer="defer"></script>
+<script src="/dev-docs/assets/js/runtime~main.2cd8f096.js" defer="defer"></script>
+<script src="/dev-docs/assets/js/main.b37ca453.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -113,6 +113,76 @@ properties upp från komponenten via <a href="https://github.com/styleguidist/re
 men om det har införts nya types eller interfaces kan de behöva specificeras enligt <a href="https://jsdoc.app/" target="_blank" rel="noopener noreferrer">JSDoc</a>.</p>
 <hr>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="arbetsflöde-versionshantering">Arbetsflöde versionshantering<a href="#arbetsflöde-versionshantering" class="hash-link" aria-label="Direktlänk till Arbetsflöde versionshantering" title="Direktlänk till Arbetsflöde versionshantering">​</a></h2>
-</div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentsidor"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#du-behöver" class="table-of-contents__link toc-highlight">Du behöver</a><ul><li><a href="#starta-storybook" class="table-of-contents__link toc-highlight">Starta Storybook</a></li><li><a href="#starta-playground-appen-react" class="table-of-contents__link toc-highlight">Starta Playground-appen (React)</a></li><li><a href="#komponentbibliotek" class="table-of-contents__link toc-highlight">Komponentbibliotek</a></li><li><a href="#tester" class="table-of-contents__link toc-highlight">Tester</a></li><li><a href="#dokumentationswebb" class="table-of-contents__link toc-highlight">Dokumentationswebb</a></li><li><a href="#bygg-komponentbibliotek" class="table-of-contents__link toc-highlight">Bygg komponentbibliotek</a></li></ul></li><li><a href="#instruktioner-för-git" class="table-of-contents__link toc-highlight">Instruktioner för Git</a><ul><li><a href="#branch" class="table-of-contents__link toc-highlight">Branch</a></li><li><a href="#commit" class="table-of-contents__link toc-highlight">Commit</a></li></ul></li><li><a href="#bygga-komponenter" class="table-of-contents__link toc-highlight">Bygga komponenter</a><ul><li><a href="#styleguide" class="table-of-contents__link toc-highlight">Styleguide</a></li><li><a href="#importera-headless-bibliotek" class="table-of-contents__link toc-highlight">Importera headless-bibliotek</a></li><li><a href="#skapa-stories" class="table-of-contents__link toc-highlight">Skapa stories</a></li><li><a href="#skriv-enhetstester" class="table-of-contents__link toc-highlight">Skriv enhetstester</a></li><li><a href="#dokumentation" class="table-of-contents__link toc-highlight">Dokumentation</a></li></ul></li><li><a href="#arbetsflöde-versionshantering" class="table-of-contents__link toc-highlight">Arbetsflöde versionshantering</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"></div></footer></div>
+<!-- -->
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="release">Release<a href="#release" class="hash-link" aria-label="Direktlänk till Release" title="Direktlänk till Release">​</a></h2>
+<div class="infoBanner_SGaB info_M4dU no-margin-children"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info icon_F71c" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><div class="content_DhUR"><div class="text_FCS8"><p>Endast Midas core-team har de nödvändiga rättigheterna för att göra nya releaser.</p></div></div></div>
+<p>Release av ny version triggas av push till <code scope="[object Object]">main</code> branch. Processen är följande:</p>
+<ol>
+<li>
+<p><strong>Säkerställ att <code scope="[object Object]">main</code> är uppdaterad med senaste från <code scope="[object Object]">dev</code></strong>:
+Innan du initierar en release, säkerställ att <code scope="[object Object]">main</code> branchen är fullständigt uppdaterad med de senaste ändringarna från <code scope="[object Object]">dev</code>.
+Detta görs genom att lokalt merga <code scope="[object Object]">dev</code> till <code scope="[object Object]">main</code>.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token function" style="color:rgb(0, 0, 255)">git</span><span class="token plain"> checkout main </span><span class="token operator" style="color:rgb(0, 0, 0)">&amp;&amp;</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">git</span><span class="token plain"> pull origin main</span><br></span><span class="token-line" style="color:#000000"><span class="token plain"></span><span class="token function" style="color:rgb(0, 0, 255)">git</span><span class="token plain"> merge origin dev </span><span class="token parameter variable" style="color:rgb(9, 134, 88)">--ff</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p><strong>Skapa en pull-request för verifiering</strong>:
+Gå till GitHub och skapa en pull-request från din branch till <code scope="[object Object]">main</code>. Detta steg är för att verifiera att alla byggen och kontroller passerar korrekt. Denna pull-request kommer att stängas automatiskt när du senare pushar direkt till <code scope="[object Object]">main</code>.</p>
+</li>
+<li>
+<p><strong>Verifiera release-versionen</strong>:
+Innan du skapar en pull-request, kör en &quot;dry run&quot; av releasen för att se vilken version som kommer att skapas.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token plain">nx release --dry-run</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p><strong>Lägg till release-anteckningar för breaking changes</strong>:
+Om du introducerar &quot;breaking changes&quot; eller större förändringar, skapa en ny release-anteckning och committa den. Release-anteckningarna finns i <code scope="[object Object]">/blog/release-notes</code>.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token function" style="color:rgb(0, 0, 255)">git</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">add</span><span class="token plain"> </span><span class="token builtin class-name" style="color:rgb(38, 127, 153)">.</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain"></span><span class="token function" style="color:rgb(0, 0, 255)">git</span><span class="token plain"> commit </span><span class="token parameter variable" style="color:rgb(9, 134, 88)">-m</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">&quot;docs(release): add release notes for version &lt;version&gt;&quot;</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p><strong>Pusha ändringarna till <code scope="[object Object]">main</code></strong>:
+När du har verifierat att allt ser korrekt ut, pusha ändringarna till <code scope="[object Object]">main</code> på remote. Detta kommer att starta den automatiserade release-processen.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token function" style="color:rgb(0, 0, 255)">git</span><span class="token plain"> push origin main</span><br></span></code></pre></div></div>
+</li>
+<li>
+<p><strong>Skapa GitHub Release och notifiera</strong>:
+Skapa en GitHub-release med standardinställningar. Meddela sedan teamet och supportkanalen att en ny version har publicerats.</p>
+</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="automatiserad-release-process">Automatiserad release-process<a href="#automatiserad-release-process" class="hash-link" aria-label="Direktlänk till Automatiserad release-process" title="Direktlänk till Automatiserad release-process">​</a></h3>
+<p>När en push sker till <code scope="[object Object]">main</code>, startar en GitHub Action som utför följande steg:</p>
+<ol>
+<li>
+<p><strong>Checkout och installation</strong>:
+Processen börjar med att checka ut <code scope="[object Object]">main</code>-branchen och installera alla nödvändiga paket.</p>
+</li>
+<li>
+<p><strong>Bygga komponenter</strong>:
+Komponentbiblioteket byggs för att säkerställa att allt är korrekt.</p>
+</li>
+<li>
+<p><strong><code scope="[object Object]">nx release</code></strong>:
+Kommandot <code scope="[object Object]">npx nx release --skip-publish</code> körs. Detta kommando gör följande:</p>
+<ul>
+<li>Analyserar alla commits sedan senaste releasen.</li>
+<li>Bestämmer nästa versionnummer baserat på <a href="https://semver.org/" target="_blank" rel="noopener noreferrer">semantic versioning</a>.</li>
+<li>Uppdaterar <code scope="[object Object]">package.json</code> med det nya versionnumret.</li>
+<li>Genererar en <code scope="[object Object]">CHANGELOG.md</code> baserat på conventional commits.</li>
+<li>Skapar en ny git-tagg med det nya versionnumret.</li>
+</ul>
+</li>
+<li>
+<p><strong>Push och pull-request</strong>:</p>
+<ul>
+<li>De nya ändringarna (inklusive <code scope="[object Object]">package.json</code> och <code scope="[object Object]">CHANGELOG.md</code>) pushas till <code scope="[object Object]">main</code>.</li>
+<li>Den nya taggen pushas till <code scope="[object Object]">main</code>.</li>
+<li>En pull-request skapas automatiskt för att merga tillbaka release-anteckningarna från <code scope="[object Object]">main</code> till <code scope="[object Object]">dev</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Synkronisera <code scope="[object Object]">dev</code></strong>:
+<code scope="[object Object]">dev</code>-branchen synkroniseras med <code scope="[object Object]">main</code> för att inkludera de senaste ändringarna.</p>
+</li>
+</ol>
+<p>Efter att processen är klar, kommer en ny version av komponentbiblioteket att vara publicerad på npm och en ny release kommer att finnas på GitHub.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Dokumentsidor"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#du-behöver" class="table-of-contents__link toc-highlight">Du behöver</a><ul><li><a href="#starta-storybook" class="table-of-contents__link toc-highlight">Starta Storybook</a></li><li><a href="#starta-playground-appen-react" class="table-of-contents__link toc-highlight">Starta Playground-appen (React)</a></li><li><a href="#komponentbibliotek" class="table-of-contents__link toc-highlight">Komponentbibliotek</a></li><li><a href="#tester" class="table-of-contents__link toc-highlight">Tester</a></li><li><a href="#dokumentationswebb" class="table-of-contents__link toc-highlight">Dokumentationswebb</a></li><li><a href="#bygg-komponentbibliotek" class="table-of-contents__link toc-highlight">Bygg komponentbibliotek</a></li></ul></li><li><a href="#instruktioner-för-git" class="table-of-contents__link toc-highlight">Instruktioner för Git</a><ul><li><a href="#branch" class="table-of-contents__link toc-highlight">Branch</a></li><li><a href="#commit" class="table-of-contents__link toc-highlight">Commit</a></li></ul></li><li><a href="#bygga-komponenter" class="table-of-contents__link toc-highlight">Bygga komponenter</a><ul><li><a href="#styleguide" class="table-of-contents__link toc-highlight">Styleguide</a></li><li><a href="#importera-headless-bibliotek" class="table-of-contents__link toc-highlight">Importera headless-bibliotek</a></li><li><a href="#skapa-stories" class="table-of-contents__link toc-highlight">Skapa stories</a></li><li><a href="#skriv-enhetstester" class="table-of-contents__link toc-highlight">Skriv enhetstester</a></li><li><a href="#dokumentation" class="table-of-contents__link toc-highlight">Dokumentation</a></li></ul></li><li><a href="#arbetsflöde-versionshantering" class="table-of-contents__link toc-highlight">Arbetsflöde versionshantering</a></li><li><a href="#release" class="table-of-contents__link toc-highlight">Release</a><ul><li><a href="#automatiserad-release-process" class="table-of-contents__link toc-highlight">Automatiserad release-process</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"></div></footer></div>
 </body>
 </html>
