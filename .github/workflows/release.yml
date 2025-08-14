@@ -38,6 +38,9 @@ jobs:
       - name: Build package components
         run: npx nx build components
 
+      - name: Build documentation
+        run: npx nx build docs
+
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
       - name: Run nx release
