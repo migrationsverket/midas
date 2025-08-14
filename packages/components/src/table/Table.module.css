@@ -100,14 +100,10 @@
     .row {
       &:nth-child(even),
       &[data-even='false'] {
-        .cell {
-          background-color: --layer-accent-01;
-        }
+        background-color: --layer-accent-01;
 
         &[data-hovered] {
-          .cell {
-            background-color: --layer-accent-hover-01;
-          }
+          background-color: --layer-accent-hover-01;
         }
       }
     }
