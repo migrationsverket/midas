@@ -190,3 +190,77 @@ men om det har införts nya types eller interfaces kan de behöva specificeras e
        commit
 
 ```
+## Release
+
+:::info
+Endast Midas core-team har de nödvändiga rättigheterna för att göra nya releaser.
+:::
+
+Release av ny version triggas av push till `main` branch. Processen är följande:
+
+1.  **Säkerställ att `main` är uppdaterad med senaste från `dev`**:
+    Innan du initierar en release, säkerställ att `main` branchen är fullständigt uppdaterad med de senaste ändringarna från `dev`.
+    Detta görs genom att lokalt merga `dev` till `main`.
+
+    ```bash
+    git checkout main && git pull origin main
+    git merge origin dev --ff
+    ```
+
+2.  **Skapa en pull-request för verifiering**:
+    Gå till GitHub och skapa en pull-request från din branch till `main`. Detta steg är för att verifiera att alla byggen och kontroller passerar korrekt. Denna pull-request kommer att stängas automatiskt när du senare pushar direkt till `main`.
+
+3.  **Verifiera release-versionen**:
+    Innan du skapar en pull-request, kör en "dry run" av releasen för att se vilken version som kommer att skapas.
+
+    ```bash
+    nx release --dry-run
+    ```
+
+4.  **Lägg till release-anteckningar för breaking changes**:
+    Om du introducerar "breaking changes" eller större förändringar, skapa en ny release-anteckning och committa den. Release-anteckningarna finns i `/blog/release-notes`.
+
+    ```bash
+    git add .
+    git commit -m "docs(release): add release notes for version <version>"
+    ```
+
+5.  **Pusha ändringarna till `main`**:
+    När du har verifierat att allt ser korrekt ut, pusha ändringarna till `main` på remote. Detta kommer att starta den automatiserade release-processen.
+
+    ```bash
+    git push origin main
+    ```
+
+6.  **Skapa GitHub Release och notifiera**:
+    Skapa en GitHub-release med standardinställningar. Meddela sedan teamet och supportkanalen att en ny version har publicerats.
+
+### Automatiserad release-process
+
+När en push sker till `main`, startar en GitHub Action som utför följande steg:
+
+1.  **Checkout och installation**:
+    Processen börjar med att checka ut `main`-branchen och installera alla nödvändiga paket.
+
+2.  **Bygga komponenter**:
+    Komponentbiblioteket byggs för att säkerställa att allt är korrekt.
+
+3.  **`nx release`**:
+    Kommandot `npx nx release --skip-publish` körs. Detta kommando gör följande:
+    -   Analyserar alla commits sedan senaste releasen.
+    -   Bestämmer nästa versionnummer baserat på [semantic versioning](https://semver.org/).
+    -   Uppdaterar `package.json` med det nya versionnumret.
+    -   Genererar en `CHANGELOG.md` baserat på conventional commits.
+    -   Skapar en ny git-tagg med det nya versionnumret.
+
+4.  **Push och pull-request**:
+    -   De nya ändringarna (inklusive `package.json` och `CHANGELOG.md`) pushas till `main`.
+    -   Den nya taggen pushas till `main`.
+    -   En pull-request skapas automatiskt för att merga tillbaka release-anteckningarna från `main` till `dev`.
+
+5.  **Synkronisera `dev`**:
+    `dev`-branchen synkroniseras med `main` för att inkludera de senaste ändringarna.
+
+Efter att processen är klar, kommer en ny version av komponentbiblioteket att vara publicerad på npm och en ny release kommer att finnas på GitHub.
+
+
