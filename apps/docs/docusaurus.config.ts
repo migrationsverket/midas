@@ -44,6 +44,7 @@ const getBaseUrl = (): string => {
 }
 
 const config: Config = {
+  noIndex: process.env.GITHUB_REF_NAME === 'dev' || !!process.env.PR_NUMBER,
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
