@@ -4,6 +4,7 @@ import { hexToRgb, lightDark } from '../utils/test'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
 import { sizeModes } from '../../.storybook/modes'
+import { TableLayout, Virtualizer } from 'react-aria-components'
 
 type Story = StoryObj<typeof Table>
 
@@ -118,7 +119,8 @@ export const Striped: Story = {
     })
 
     await step('The rows should change background color on hover', async () => {
-      const anOddRow = await canvas.findByText(rows[2].name)
+      const anOddRow = (await canvas.findByText(rows[2].name))
+        .parentNode as HTMLElement
       await userEvent.hover(anOddRow)
       await expect(anOddRow).toHaveStyle({
         backgroundColor: lightDark(
@@ -128,5 +130,45 @@ export const Striped: Story = {
         ),
       })
     })
+  },
+}
+
+export const Virtualized: Story = {
+  render: args => {
+    const rows = []
+
+    for (let i = 0; i < 5000; i++) {
+      rows.push({ id: i, foo: `Foo ${i}`, bar: `Bar ${i}`, baz: `Baz ${i}` })
+    }
+
+    return (
+      <Virtualizer
+        layout={TableLayout}
+        layoutOptions={{
+          rowHeight: args.narrow ? 24 : 48,
+          headingHeight: args.narrow ? 24 : 48,
+        }}
+      >
+        <Table
+          {...args}
+          style={{ height: 300, overflow: 'auto', scrollPaddingTop: 48 }}
+        >
+          <TableHeader>
+            <Column isRowHeader>Foo</Column>
+            <Column>Bar</Column>
+            <Column>Baz</Column>
+          </TableHeader>
+          <TableBody items={rows}>
+            {item => (
+              <Row data-even={item.id % 2 === 0}>
+                <Cell>{item.foo}</Cell>
+                <Cell>{item.bar}</Cell>
+                <Cell>{item.baz}</Cell>
+              </Row>
+            )}
+          </TableBody>
+        </Table>
+      </Virtualizer>
+    )
   },
 }

@@ -8,6 +8,7 @@ import type {
   ColumnProps,
   TableProps as AriaTableProps,
   CellProps,
+  TableBodyProps,
 } from 'react-aria-components'
 
 import {
@@ -19,7 +20,7 @@ import {
   Cell as AriaCell,
   Button,
   Table as AriaTable,
-  TableBody,
+  TableBody as AriaTableBody,
 } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
 import {
@@ -66,16 +67,22 @@ export const Table = ({
 export const TableHeader = <T extends object>({
   columns,
   children,
+  className,
 }: TableHeaderProps<T>) => {
   const { selectionBehavior, selectionMode, allowsDragging } = useTableOptions()
 
   return (
-    <AriaTableHeader className={styles.tableHeader}>
+    <AriaTableHeader className={clsx(className, styles.tableHeader)}>
       {/* Add extra columns for drag and drop and selection. */}
       {allowsDragging && <Column />}
       {selectionBehavior === 'toggle' && (
         <Column width={50}>
-          {selectionMode === 'multiple' && <Checkbox slot='selection' />}
+          {selectionMode === 'multiple' && (
+            <Checkbox
+              className={styles.selection}
+              slot='selection'
+            />
+          )}
         </Column>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -87,6 +94,7 @@ export const Row = <T extends object>({
   id,
   columns,
   children,
+  className,
   ...rest
 }: RowProps<T>) => {
   const { selectionBehavior, allowsDragging } = useTableOptions()
@@ -94,7 +102,7 @@ export const Row = <T extends object>({
   return (
     <AriaRow
       id={id}
-      className={clsx(styles.row)}
+      className={clsx(className, styles.row)}
       {...rest}
     >
       {allowsDragging && (
@@ -106,7 +114,10 @@ export const Row = <T extends object>({
       )}
       {selectionBehavior === 'toggle' && (
         <Cell>
-          <Checkbox slot='selection' />
+          <Checkbox
+            className={styles.selection}
+            slot='selection'
+          />
         </Cell>
       )}
       <Collection items={columns}>{children}</Collection>
@@ -114,10 +125,10 @@ export const Row = <T extends object>({
   )
 }
 
-export const Column = ({ children, ...rest }: ColumnProps) => {
+export const Column = ({ children, className, ...rest }: ColumnProps) => {
   return (
     <AriaColumn
-      className={styles.column}
+      className={clsx(className, styles.column)}
       {...rest}
     >
       {({ allowsSorting, sortDirection }) => (
@@ -141,13 +152,23 @@ export const Column = ({ children, ...rest }: ColumnProps) => {
   )
 }
 
-export const Cell = ({ ...rest }: CellProps) => {
+export const Cell = ({ className, ...rest }: CellProps) => {
   return (
     <AriaCell
-      className={styles.cell}
+      className={clsx(className, styles.cell)}
       {...rest}
     />
   )
 }
 
-export { TableBody }
+export const TableBody = <T extends object>({
+  className,
+  ...rest
+}: TableBodyProps<T>) => {
+  return (
+    <AriaTableBody
+      className={clsx(className, styles.tableBody)}
+      {...rest}
+    />
+  )
+}
