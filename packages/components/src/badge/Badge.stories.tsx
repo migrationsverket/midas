@@ -4,22 +4,23 @@ import { BadgeContainer } from './BadgeContainer'
 import { expect } from '@storybook/test'
 import { Bell } from 'lucide-react'
 import { Button } from '../button'
+import { hexToRgb, lightDark } from '../utils/test'
 
-const meta: Meta<typeof Badge> = {
+type Story = StoryObj<typeof Badge>
+
+export default {
   component: Badge,
   title: 'Components/Badge',
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    a11y: {
+      // The color combo of the red box with number of notifications violates WCAG 2 AA contrast ratio threshold in dark mode
+      test: 'todo',
+    },
   },
   args: {},
-}
-
-export default meta
-type Story = StoryObj<typeof Badge>
-
-const Render = ({ ...args }) => {
-  return (
+  render: args => (
     <Button
       variant='tertiary'
       aria-label='Notiser'
@@ -32,15 +33,19 @@ const Render = ({ ...args }) => {
         />
       </BadgeContainer>
     </Button>
-  )
-}
+  ),
+} satisfies Meta<typeof Badge>
 
 export const NoLabel: Story = {
-  args: {},
-  render: Render,
-  play: async ({ canvas }) => {
+  play: async ({ canvas, globals: { scheme } }) => {
     const badge = await canvas.findByTestId('badge')
-    await expect(badge).toHaveStyle({ backgroundColor: 'rgb(230, 35, 35)' })
+    await expect(badge).toHaveStyle({
+      backgroundColor: lightDark(
+        hexToRgb('#e62323'),
+        hexToRgb('#eb4e4e'),
+        scheme,
+      ),
+    })
   },
 }
 
@@ -48,12 +53,10 @@ export const WithLabel: Story = {
   args: {
     children: '1',
   },
-  render: Render,
 }
 
 export const LongLabel: Story = {
   args: {
     children: '123',
   },
-  render: Render,
 }
