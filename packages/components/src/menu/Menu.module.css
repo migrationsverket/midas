@@ -1,0 +1,38 @@
+@value tokens: "../theme/tokens.css";
+@value --focus-inset, --font-family, --layer-01, --layer-hover-01, --size-40, --size-60, --size-70, --size-120, --text-disabled, --text-primary from tokens;
+
+.menu {
+  /* TODO: Is there supposed to be a box shadow in dark mode aswell? */
+  box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%);
+  font-family: --font-family;
+}
+
+.menuItem {
+  align-items: center;
+  background-color: --layer-01;
+  color: --text-primary;
+  display: flex;
+  font-size: --size-70;
+  gap: --size-40;
+
+  /* TODO: This makes submenu chevrons look pretty good, but it makes the use of preceeding icons a little more complex */
+  justify-content: space-between;
+  padding: --size-60 --size-120;
+
+  &[data-disabled] {
+    color: --text-disabled;
+    cursor: not-allowed;
+  }
+
+  &[data-focus-visible] {
+    box-shadow: --focus-inset;
+    outline: none;
+  }
+
+  &[data-hovered],
+  &[data-open] {
+    background-color: --layer-hover-01;
+    cursor: pointer;
+    transition-delay: 60ms;
+  }
+}
