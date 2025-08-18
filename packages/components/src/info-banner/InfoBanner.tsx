@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
+import { FeedbackStatus } from '../common/types'
 import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
 import { Button } from '../button'
@@ -12,9 +13,9 @@ export interface InfoBannerProps
     HTMLDivElement
   > {
   /**
-   *  Specify what state the InfoBanner represents
+   * Determines the visual style and semantic meaning of the InfoBanner (e.g., success, info, warning, important).
    **/
-  type: 'success' | 'info' | 'important' | 'warning'
+  type: FeedbackStatus
   /** Specify the title */
   title?: string
   /** Specify the message. Element or string */

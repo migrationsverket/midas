@@ -58,3 +58,12 @@ export type OffsetSize =
   | 'half'
   | 'third'
   | 'quarter'
+
+/**
+ * Represents the different status types for feedback or alerts.
+ * - 'success': Indicates a successful operation or positive outcome.
+ * - 'info': Provides general information or neutral feedback.
+ * - 'important': Highlights critical information or a significant alert.
+ * - 'warning': Signals a potential issue, caution, or a non-critical error.
+ */
+export type FeedbackStatus = 'success' | 'info' | 'important' | 'warning';
