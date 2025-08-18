@@ -11,6 +11,8 @@ import { X } from 'lucide-react'
 import { Button } from '../button'
 import clsx from 'clsx'
 
+import { FeedbackStatus } from '../common/types'
+
 export interface TagGroupProp extends AriaTagGroupProps {
   children: React.ReactNode
 }
@@ -18,7 +20,7 @@ export interface TagGroupProp extends AriaTagGroupProps {
 export interface TagProps extends AriaTagProps {
   children: React.ReactNode
   dismissable?: boolean
-  type?: 'default' | 'success' | 'info' | 'important' | 'warning'
+  type?: FeedbackStatus
 }
 
 export const TagGroup: React.FC<TagGroupProp> = ({ children, ...rest }) => {
@@ -33,7 +35,7 @@ export const Tag: React.FC<TagProps> = ({
   children,
   dismissable,
   className,
-  type = 'default',
+  type,
   ...props
 }) => {
   return (

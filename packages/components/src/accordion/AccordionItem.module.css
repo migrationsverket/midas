@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --layer-hover-01, --normal-transition, --text-primary, --fast-transition,  --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --icon-success, --icon-warning, --support-background-success-hover, --support-background-warning-hover, --border-disabled, --text-disabled, --layer-02, --background, --support-background-info, --support-border-info, --icon-info, --support-background-info-hover, --support-background-important, --support-border-important, --icon-important, --support-background-important-hover, --heading-color from tokens;
+@value --font-family, --layer-01, --layer-hover-01, --normal-transition, --text-primary, --fast-transition,  --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --icon-success, --icon-warning, --support-background-success-hover, --support-background-warning-hover, --border-disabled, --text-disabled, --layer-02, --background, --support-background-info, --support-border-info, --icon-info, --support-background-info-hover, --support-background-important, --support-border-important, --icon-important, --support-background-important-hover from tokens;
 
 .item {
   --item-padding: 0;
@@ -56,20 +56,19 @@
 
 .item[data-disabled] {
   --border-color: --border-disabled;
-  --heading-color: --text-disabled;
   --icon-color: --text-disabled;
   --text-color: --text-disabled;
 
   .triggerButton {
     background: transparent;
   }
+
   .triggerText {
     color: --text-disabled;
   }
 }
 
 .trigger {
-  color: var(--heading-color);
   border: 0;
   cursor: pointer;
   margin: 0;
@@ -83,15 +82,9 @@
 .triggerText {
   margin: 0;
   padding: 0;
-  color: var(--heading-color);
-}
-
-.item[data-disabled] .triggerText {
-  color: var(--heading-color);
 }
 
 .triggerButton {
-  color: var(--heading-color);
   width: 100%;
   padding: var(--item-padding);
   align-items: flex-start;

@@ -75,11 +75,13 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
 
 ### Varianter med bakgrund
 
-AccordionItems kan ha en status för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla uppmärksamhet till att det t.ex finns fler åtgärder att utföra.
-`AcordionItem` har bakgrund på innehållet som standard. Man kan ta bort den genom att sätta `hasBackground={false}`.
+AccordionItems kan ha en `type` för att förtydliga för användaren att hen antingen är klar med det steget eller påkalla
+uppmärksamhet till att det t.ex finns fler åtgärder att utföra. Använd endast `type` tillsammans med `isContained`.
+`AcordionItem` har bakgrund på innehållet som standard.
+Man kan ta bort den genom att sätta `hasBackground={false}`.
 
 ```tsx {6,13,20,28}
-<Accordion variant='contained'>
+<Accordion isContained>
   {/* more items */}
   <AccordionItem
     id='mandarin'
