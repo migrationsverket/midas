@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --background, --text-primary, --z-index-modal, --z-index-above from tokens;
+@value --font-family, --size-50, --layer-01, --background, --text-primary, --z-index-modal, --z-index-above from tokens;
 
 .modal {
   font-family: --font-family;
@@ -47,10 +47,18 @@
 .modalHeader {
   background-color: --layer-01;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
   position: sticky;
   top: 0;
   z-index: --z-index-above;
+}
+
+.modalTitle {
+  flex-grow: 1;
+  margin: --size-50;
+  justify-self: center;
+  padding-left: 1rem;
 }
 
 .modalBody {
