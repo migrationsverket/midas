@@ -23,7 +23,7 @@ const meta: Meta<typeof Accordion> = {
 export default meta
 type Story = StoryObj<typeof Accordion>
 
-export const SingleSubtle: Story = {
+export const Default: Story = {
   args: {
     className: 'test',
     children: ITEMS.map(item => (
@@ -45,80 +45,40 @@ export const SingleSubtle: Story = {
       'It should preserve its classNames when being passed new ones',
       async () => {
         const accordion = canvas.getByTestId(ACCORDION_TEST_ID)
-        expect(accordion).toHaveClass(styles.root, 'test')
+        await expect(accordion).toHaveClass(styles.root, 'test')
       },
     )
   },
 }
 
-export const SingleBoxed: Story = {
+export const Contained: Story = {
   args: {
-    variant: 'contained',
-    children: ITEMS.map(item => (
-      <AccordionItem
-        id={item}
-        key={item}
-        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
-      >
-        Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Repellendus perspiciatis officia,
-        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
-        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Impedit dolorem tempora
-        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
-        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
-        illum consequuntur?
-      </AccordionItem>
-    )),
+    ...Default.args,
+    isContained: true,
   },
 }
 
-export const MultipleSubtle: Story = {
+
+export const AllowsMultipleExpanded: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
   args: {
-    ...SingleSubtle.args,
+    ...Default.args,
     allowsMultipleExpanded: true,
   },
 }
 
-export const MultipleSubtleDisabled: Story = {
+export const DefaultExpandedKeys: Story = {
   args: {
-    ...MultipleSubtle.args,
-    isDisabled: true,
-  },
-  play: async ({ canvas, step, globals: { scheme } }) => {
-    await step('it should have the disabled style', async () => {
-      await expect(canvas.getAllByRole('heading', { level: 2 })[0]).toHaveStyle(
-        {
-          color: lightDark(hexToRgb('#bfbfbf'), hexToRgb('#525252'), scheme),
-        },
-      )
-    })
-  },
-}
-
-export const MultipleBoxed: Story = {
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  args: {
-    ...SingleBoxed.args,
-    allowsMultipleExpanded: true,
-  },
-}
-
-export const DefaultOpen: Story = {
-  args: {
-    ...SingleBoxed.args,
+    ...Default.args,
     defaultExpandedKeys: ['Två'],
   },
 }
 
 export const CustomTriggerElements: Story = {
   args: {
-    ...SingleBoxed.args,
+    ...Contained.args,
     children: ITEMS.map((item, i) => (
       <AccordionItem
         id={item}
@@ -231,45 +191,9 @@ const ExpandableStuff = () => {
   )
 }
 
-export const AccordionWithStatus: Story = {
-  parameters: {
-    docs: {
-      source: {
-        code: `<Accordion variant="contained">
-  <AccordionItem
-    id="Ett"
-    title="En öppningsbar panel ett"
-    hasBackground={false}
-  >
-    Innehåll i öppningsbar panel Ett Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
-  </AccordionItem>
-  <AccordionItem
-    id="Två"
-    title="En öppningsbar panel två"
-    hasBackground={false}
-  >
-    Innehåll i öppningsbar panel Två Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
-  </AccordionItem>
-  <AccordionItem
-    id="Tre"
-    title="En öppningsbar panel tre"
-    type="success"
-    hasBackground={false}
-  >
-    Innehåll i öppningsbar panel Tre Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
-  </AccordionItem>
-  <AccordionItem
-    id="Fyra"
-    title="En öppningsbar panel fyra"
-    type="warning"
-    hasBackground={false}
-  >
-    Innehåll i öppningsbar panel Fyra Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis officia, voluptate ratione quam nemo quod aut maiores animi nostrum, in labore adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit dolorem tempora laboriosam asperiores eum dignissimos accusantium voluptate eligendi beatae vel quis rerum error dolore cum incidunt pariatur accusamus, illum consequuntur?
-  </AccordionItem>
-</Accordion>`,
-      },
-    },
-  },
+
+
+export const AccordionHasBackground: Story = {
   args: {
     variant: 'contained',
     children: ITEMS.map((item, i) => (
@@ -277,8 +201,7 @@ export const AccordionWithStatus: Story = {
         id={item}
         key={item}
         title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
-        type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
-        hasBackground={false}
+        status={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
       >
         Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
         consectetur adipisicing elit. Repellendus perspiciatis officia,
@@ -293,25 +216,4 @@ export const AccordionWithStatus: Story = {
   },
 }
 
-export const AccordionHasBackground: Story = {
-  args: {
-    variant: 'contained',
-    children: ITEMS.map((item, i) => (
-      <AccordionItem
-        id={item}
-        key={item}
-        title={'En öppningsbar panel ' + item.toLocaleLowerCase()}
-        type={i === 2 ? 'success' : i === 3 ? 'warning' : undefined}
-      >
-        Innehåll i öppningsbar panel {item} Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Repellendus perspiciatis officia,
-        voluptate ratione quam nemo quod aut maiores animi nostrum, in labore
-        adipisci ullam suscipit esse vel odit tenetur dicta. Lorem ipsum dolor,
-        sit amet consectetur adipisicing elit. Impedit dolorem tempora
-        laboriosam asperiores eum dignissimos accusantium voluptate eligendi
-        beatae vel quis rerum error dolore cum incidunt pariatur accusamus,
-        illum consequuntur?
-      </AccordionItem>
-    )),
-  },
-}
+

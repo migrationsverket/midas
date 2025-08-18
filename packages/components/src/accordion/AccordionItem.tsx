@@ -1,30 +1,38 @@
-'use client'
-
 import * as React from 'react'
+import { useContext, useEffect } from 'react'
 import {
   Disclosure,
   DisclosurePanel,
   DisclosureProps,
 } from 'react-aria-components'
 import { Button } from '../button'
-import { Check, ChevronDown, AlertTriangle } from 'lucide-react'
+import {
+  Check,
+  ChevronDown,
+  AlertTriangle,
+  Info,
+  AlertCircle,
+} from 'lucide-react'
 import clsx from 'clsx'
-import styles from './Accordion.module.css'
+import itemStyles from './AccordionItem.module.css'
 import { Heading, HeadingProps } from '../heading'
+import { FeedbackStatus } from '../common/types'
+import { AccordionContext } from './AccordionContext'
 
 interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
-  /** The text displayed in the collapsed state. If a ReactNode is proveded we're not adding a heading and you have to provide one yourself. */
+  /** The text displayed in the collapsed state. If a ReactNode is provided, a heading will not be automatically added, and you must provide one yourself. */
   title?: string | React.ReactNode
   children?: React.ReactNode
-  /** Adjust the titles heading level to your heading tag structure */
+  /** Adjust the heading level of the title to match your document's heading tag structure */
   headingLevel?: HeadingProps['elementType']
-  /** Display an accordion item in different status states */
-  type?: 'default' | 'success' | 'warning'
+  /** Display an accordion item with different status styles. */
+  status?: FeedbackStatus
   /**
    * Adds a background element to the content, set to false for a transparent look
    * @default true
    **/
   hasBackground?: boolean
+  isContained?: boolean
 }
 
 export const AccordionItem: React.FC<MidasAccordionItem> = ({
@@ -32,23 +40,35 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   children,
   className,
   headingLevel = 'h2',
-  type,
+  status,
   hasBackground = true,
+  isContained: isContainedFromProp,
   ...props
 }) => {
+  const context = useContext(AccordionContext)
+  const isContained = isContainedFromProp ?? context?.isContained ?? false
   const titleIsReactNode = typeof title === 'object'
+
+  useEffect(() => {
+    if (status && !isContained) {
+      console.warn(
+        `AccordionItem: When 'status' is set, it is recommended to also set 'isContained' to true for visual consistency.`,
+      );
+    }
+  }, [status, isContained]);
 
   const iconMap = {
     success: Check,
     warning: AlertTriangle,
-    default: null,
+    info: Info,
+    important: AlertCircle,
   }
 
-  const Icon = iconMap[type || 'default']
+  const Icon = status ? iconMap[status] : null
   const renderedIcon = Icon ? (
     <Icon
       size={20}
-      className={styles.statusIcon}
+      className={itemStyles.statusIcon}
     />
   ) : null
 
@@ -56,30 +76,30 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
     <Disclosure
       {...props}
       className={clsx(
-        styles.item,
-        type === 'success' && styles.success,
-        type === 'warning' && styles.warning,
+        itemStyles.item,
+        status && itemStyles[status],
+        isContained && itemStyles.contained,
         className,
       )}
     >
-      <div className={styles.trigger}>
+      <div className={itemStyles.trigger}>
         <Button
-          className={styles.triggerButton}
+          className={itemStyles.triggerButton}
           slot='trigger'
           variant='icon'
         >
           <ChevronDown
             size={20}
-            className={styles.chevronIcon}
+            className={itemStyles.chevronIcon}
           />
-          <div className={styles.triggerMainContent}>
+          <div className={itemStyles.triggerMainContent}>
             {titleIsReactNode ? (
               title
             ) : (
               <Heading
                 level={3}
                 elementType={headingLevel}
-                className={styles.triggerText}
+                className={itemStyles.triggerText}
               >
                 {title}
               </Heading>
@@ -88,11 +108,11 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
           {renderedIcon}
         </Button>
       </div>
-      <DisclosurePanel className={styles.panel}>
+      <DisclosurePanel className={itemStyles.panel}>
         <div
           className={clsx(
-            styles.content,
-            hasBackground && styles.hasBackground,
+            itemStyles.content,
+            hasBackground && itemStyles.hasBackground,
           )}
         >
           {children}
@@ -101,3 +121,4 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
     </Disclosure>
   )
 }
+
