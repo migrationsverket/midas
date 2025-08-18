@@ -16,7 +16,7 @@ type Story = StoryObj<typeof AccordionItem>
 
 export const Default: Story = {
   args: {
-    status: undefined,
+    type: undefined,
     isContained: false,
   },
 }
@@ -25,7 +25,7 @@ export const Contained: Story = {
   args: {
     title: 'An accordion item contained',
     children: 'Content of the accordion item.',
-    status: undefined,
+    type: undefined,
     isContained: true,
   }
 }
@@ -33,28 +33,28 @@ export const Contained: Story = {
 export const Success: Story = {
   args: {
     title: 'A true success story',
-    status: 'success',
+    type: 'success',
     isContained: true,
   },
 }
 
 export const Info: Story = {
   args: {
-    status: 'info',
+    type: 'info',
     isContained: true,
   },
 }
 
 export const Warning: Story = {
   args: {
-    status: 'warning',
+    type: 'warning',
     isContained: true,
   },
 }
 
 export const Important: Story = {
   args: {
-    status: 'important',
+    type: 'important',
     isContained: true,
   },
 }
@@ -62,14 +62,14 @@ export const Important: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
-    status: undefined,
+    type: undefined,
   },
 };
 
 export const StatusDisabled: Story = {
   args: {
     isDisabled: true,
-    status: 'success',
+    type: 'success',
     isContained: true,
   },
 };

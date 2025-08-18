@@ -1,3 +1,4 @@
+import { iconMap } from '../common/icon-map'
 import * as React from 'react'
 import { useContext, useEffect } from 'react'
 import {
@@ -6,13 +7,7 @@ import {
   DisclosureProps,
 } from 'react-aria-components'
 import { Button } from '../button'
-import {
-  Check,
-  ChevronDown,
-  AlertTriangle,
-  Info,
-  AlertCircle,
-} from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import clsx from 'clsx'
 import itemStyles from './AccordionItem.module.css'
 import { Heading, HeadingProps } from '../heading'
@@ -25,8 +20,8 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
   children?: React.ReactNode
   /** Adjust the heading level of the title to match your document's heading tag structure */
   headingLevel?: HeadingProps['elementType']
-  /** Display an accordion item with different status styles. */
-  status?: FeedbackStatus
+  /** Display an accordion item with different type styles. */
+  type?: FeedbackStatus
   /**
    * Adds a background element to the content, set to false for a transparent look
    * @default true
@@ -40,7 +35,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   children,
   className,
   headingLevel = 'h2',
-  status,
+  type,
   hasBackground = true,
   isContained: isContainedFromProp,
   ...props
@@ -50,21 +45,14 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   const titleIsReactNode = typeof title === 'object'
 
   useEffect(() => {
-    if (status && !isContained) {
+    if (type && !isContained) {
       console.warn(
-        `AccordionItem: When 'status' is set, it is recommended to also set 'isContained' to true for visual consistency.`,
+        `AccordionItem: When 'type' is set, it is recommended to also set 'isContained' to true for visual consistency.`,
       );
     }
-  }, [status, isContained]);
+  }, [type, isContained]);
 
-  const iconMap = {
-    success: Check,
-    warning: AlertTriangle,
-    info: Info,
-    important: AlertCircle,
-  }
-
-  const Icon = status ? iconMap[status] : null
+  const Icon = type ? iconMap[type] : null
   const renderedIcon = Icon ? (
     <Icon
       size={20}
@@ -77,7 +65,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
       {...props}
       className={clsx(
         itemStyles.item,
-        status && itemStyles[status],
+        type && itemStyles[type],
         isContained && itemStyles.contained,
         className,
       )}

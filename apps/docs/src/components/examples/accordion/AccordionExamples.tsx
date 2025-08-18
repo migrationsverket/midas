@@ -31,7 +31,7 @@ export const Example = (props: typeof AccordionItem & typeof Accordion) => {
 
 export const StatusExample = () => (
   <div className='card'>
-    <Accordion variant='contained'>
+    <Accordion isContained>
       <AccordionItem
         id='mandarin'
         title='Mandarin'
@@ -49,7 +49,7 @@ export const StatusExample = () => (
       <AccordionItem
         id='watermelon'
         title='Vattenmelon'
-        type='default'
+        type={undefined}
       >
         Stor frukt med rött, saftigt kött
       </AccordionItem>

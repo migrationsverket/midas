@@ -1,5 +1,6 @@
+import { iconMap } from '../common/icon-map'
 import * as React from 'react'
-import { CircleCheck, Info, AlertTriangle, AlertCircle, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { FeedbackStatus } from '../common/types'
 import styles from './InfoBanner.module.css'
 import clsx from 'clsx'
@@ -31,13 +32,6 @@ export interface InfoBannerProps
    *  Specify if the InfoBanner should have a dismiss button in the top right corner
    */
   isDismissable?: boolean
-}
-
-const iconMap = {
-  success: CircleCheck,
-  info: Info,
-  important: AlertCircle,
-  warning: AlertTriangle,
 }
 
 /**

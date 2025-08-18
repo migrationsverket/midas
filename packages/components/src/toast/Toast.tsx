@@ -17,18 +17,15 @@ import {
 import React, { useMemo } from 'react'
 import { createPortal, flushSync } from 'react-dom'
 import styles from './Toast.module.css'
-import {
-  CircleAlert,
-  CircleCheckIcon,
-  Info,
-  TriangleAlert,
-  X,
-} from 'lucide-react'
+import { X } from 'lucide-react'
 import clsx from 'clsx'
+
+import { iconMap } from '../common/icon-map'
+import { FeedbackStatus } from '../common/types.ts'
 
 export interface MidasToast {
   message: string
-  type: 'success' | 'info' | 'warning' | 'important'
+  type: FeedbackStatus
   children?: React.ReactNode
 }
 
@@ -49,13 +46,6 @@ export interface ToastProviderProps extends AriaToastRegionProps {
     | ((state: ToastState<MidasToast>) => React.ReactNode)
     | React.ReactNode
   className?: string
-}
-
-const iconMap = {
-  success: CircleCheckIcon,
-  info: Info,
-  important: CircleAlert,
-  warning: TriangleAlert,
 }
 
 const toastStateProps: ToastStateProps = {
