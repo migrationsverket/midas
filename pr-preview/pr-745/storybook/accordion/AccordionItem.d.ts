@@ -8,8 +8,8 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
     children?: React.ReactNode;
     /** Adjust the heading level of the title to match your document's heading tag structure */
     headingLevel?: HeadingProps['elementType'];
-    /** Display an accordion item with different status styles. */
-    status?: FeedbackStatus;
+    /** Display an accordion item with different type styles. */
+    type?: FeedbackStatus;
     /**
      * Adds a background element to the content, set to false for a transparent look
      * @default true
