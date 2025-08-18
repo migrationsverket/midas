@@ -23,12 +23,11 @@ const preview: Preview = {
   },
   parameters: {
     backgrounds: {
-      default: 'Background',
-      values: [
-        { name: 'Background', value: semantic.background },
-        { name: 'Layer 01', value: semantic.layer01 },
-        { name: 'Layer 02', value: semantic.layer02 },
-      ],
+      options: {
+        background: 'semantic.background',
+        'Layer 01': 'semantic.layer01',
+        'Layer 02': 'semantic.layer02',
+      },
     },
     controls: {
       matchers: {
@@ -54,7 +53,7 @@ const preview: Preview = {
     chromatic: {
       modes: globalModes,
     },
-    a11y: { test: 'error', element: '#storybook-root' },
+    a11y: { test: 'error', context: '#storybook-root' },
   },
   globalTypes: {
     scheme: {
@@ -96,7 +95,7 @@ const preview: Preview = {
     size: 'large',
     scheme: getPreferredColorScheme(),
     lang: 'sv',
-    background: 'Background',
+    backgrounds: { value: 'background' },
   },
   decorators: [
     (Story, context) => {
@@ -108,6 +107,7 @@ const preview: Preview = {
       if (story) {
         story.style.colorScheme = context.globals.scheme
         story.style.transition = 'none'
+        story.style.background = semantic.background
       }
 
       return (

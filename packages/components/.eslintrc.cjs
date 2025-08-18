@@ -1,29 +1,33 @@
-const { version } = require('./package.json');
+const { version } = require('./package.json')
 
 module.exports = {
-  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", "storybook-static"],
-  "plugins": ["midas"],
-  "overrides": [
+  extends: [
+    'plugin:@nx/react',
+    '../../.eslintrc.json',
+    'plugin:storybook/recommended',
+  ],
+  ignorePatterns: ['!**/*', 'storybook-static'],
+  plugins: ['midas'],
+  overrides: [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "midas/handle-deprecated-comments": [
+      files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
+      rules: {
+        'midas/handle-deprecated-comments': [
           1,
           {
-            version
-          }
+            version,
+          },
         ],
-        "jsx-a11y/no-autofocus": "off"
-      }
+        'jsx-a11y/no-autofocus': 'off',
+      },
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      files: ['*.ts', '*.tsx'],
+      rules: {},
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
-    }
-  ]
-};
+      files: ['*.js', '*.jsx'],
+      rules: {},
+    },
+  ],
+}

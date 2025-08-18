@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Skeleton } from './Skeleton'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import styles from './Skeleton.module.css'
 import { semantic } from '../theme'
 

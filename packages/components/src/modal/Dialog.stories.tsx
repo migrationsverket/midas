@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Modal, DialogTrigger } from './Dialog'
 import { Button } from '../button'
 import { Select } from '../select'
@@ -7,7 +7,7 @@ import { options } from '../utils/storybook'
 import { useState } from 'react'
 import type { Selection } from 'react-aria-components'
 import { Cell, Column, Row, Table, TableBody, TableHeader } from '../table'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent, within } from 'storybook/test'
 
 type Story = StoryObj<typeof Modal>
 

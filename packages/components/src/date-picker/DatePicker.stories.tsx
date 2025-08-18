@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DatePicker } from './DatePicker'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent, within } from 'storybook/test'
 import { sizeModes } from '../../.storybook/modes'
 import React from 'react'
 import { parseDate, CalendarDate } from '@internationalized/date'

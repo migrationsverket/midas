@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ProgressBar } from './ProgressBar'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 
 type Story = StoryObj<typeof ProgressBar>
 

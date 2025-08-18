@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Tooltip, TooltipTrigger } from './Tooltip'
 import { Button } from '../button'
 import { Save } from 'lucide-react'
-import { expect, within } from '@storybook/test'
+import { expect, within } from 'storybook/test'
 import styles from './Tooltip.module.css'
 import { I18nProvider } from 'react-aria-components'
 

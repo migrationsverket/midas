@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react-vite'
 import { InfoBanner } from './InfoBanner'
 
 const meta: Meta<typeof InfoBanner> = {

@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from 'storybook/test'
 import { TextField } from '../textfield'
 import { sizeModes } from '../../.storybook/modes'
 
@@ -163,7 +163,7 @@ export const Disabled: Story = {
   },
   parameters: {
     a11y: {
-      element: 'body',
+      context: 'body',
       config: {
         rules: [
           {
