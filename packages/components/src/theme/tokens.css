@@ -47,6 +47,7 @@
 @value --signal-green-30: #bae5c5;
 @value --signal-green-100: #008d3c;
 @value --signal-yellow-10: #fff8e1;
+@value --signal-yellow-20: #FFEBA8;
 @value --signal-yellow-100: #fdb813;
 @value --signal-red-10: #ffefef;
 @value --signal-red-20: #ffdfdf;
@@ -227,7 +228,9 @@
 @value --support-background-success: light-dark(--signal-green-20, --layer-01);
 @value --support-background-success-hover: light-dark(--signal-green-30, --layer-hover-01);
 @value --support-background-info: light-dark(--signal-blue-10, --layer-01);
+@value --support-background-info-hover: light-dark(--blue-20, --layer-hover-01);
 @value --support-background-important: light-dark(--signal-yellow-10, --layer-01);
+@value --support-background-important-hover: light-dark(--signal-yellow-20, --layer-hover-01);
 @value --support-background-warning: light-dark(--signal-red-20, --layer-01);
 @value --support-background-warning-hover: light-dark(--signal-red-30, --layer-hover-01);
 
