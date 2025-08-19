@@ -8,7 +8,7 @@ import {
   type MenuTriggerProps,
 } from 'react-aria-components'
 import { Button } from '../button'
-import { EllipsisVertical } from 'lucide-react'
+import { EllipsisVertical, LucideIcon } from 'lucide-react'
 import styles from './Dropdown.module.css'
 import clsx from 'clsx'
 
@@ -17,12 +17,18 @@ export interface MidasMenuButtonProps<T>
     Omit<MenuTriggerProps, 'children'> {
   label?: string
   title?: string
+  /**
+   * The icon to use for the menu button
+   * @default EllipsisVertical
+   */
+  icon?: LucideIcon
 }
 
 export function Dropdown<T extends object>({
   label,
   title,
   children,
+  icon: Icon = EllipsisVertical,
   ...props
 }: MidasMenuButtonProps<T>) {
   return (
@@ -32,7 +38,7 @@ export function Dropdown<T extends object>({
         variant='icon'
       >
         {title}
-        <EllipsisVertical
+        <Icon
           size={20}
           aria-hidden
         />

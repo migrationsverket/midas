@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Dropdown, DropdownItem } from './Dropdown'
 import { LinkButton } from '../link-button'
 import { userEvent, expect } from '@storybook/test'
+import { Ellipsis } from 'lucide-react'
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
@@ -37,5 +38,13 @@ export const WithoutTitle: Story = {
   args: {
     title: undefined,
     label: 'Meny',
+  },
+}
+
+export const CustomIcon: Story = {
+  args: {
+    title: undefined,
+    label: 'Meny',
+    icon: Ellipsis,
   },
 }
