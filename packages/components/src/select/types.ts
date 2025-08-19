@@ -21,9 +21,7 @@ import type { AriaButtonProps } from '@react-types/button'
 import type { AriaSelectProps } from '@react-types/select'
 import type { Size } from '../common/types'
 import type {
-  ListBoxItemElement,
   ListBoxOption,
-  ListBoxSectionElement,
 } from '../list-box/'
 
 /**
@@ -214,17 +212,4 @@ export type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
   options: ListBoxOption[]
 }
 
-/**
- * @deprecated since v10.1.0 please use `ListBoxOption` intead
- */
-export type Option = ListBoxOption
 
-/**
- * @deprecated since v10.1.0 please use `ListBoxItemElement` intead
- */
-export type OptionItem = ListBoxItemElement
-
-/**
- * @deprecated since v10.1.0 please use `ListBoxSectionElement` intead
- */
-export type OptionSection = ListBoxSectionElement

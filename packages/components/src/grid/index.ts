@@ -1,2 +1,2 @@
-export { Grid, Flex, type GridProps } from './Grid'
-export { GridItem, FlexItem, type GridItemProps } from './GridItem'
+export { Grid, type GridProps } from './Grid'
+export { GridItem, type GridItemProps } from './GridItem'

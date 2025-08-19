@@ -9,10 +9,7 @@ export interface GridItemProps
     HTMLDivElement
   > {
   children: React.ReactNode
-  /** Column size and behaviour
-   * @deprecated since v10.2.0 Use `size` prop instead.
-   */
-  col?: ColumnSize
+  
   /** Column size and behaviour across different breakpoints   */
   size?:
     | ColumnSize
@@ -44,12 +41,10 @@ export interface GridItemProps
 
 export const GridItem: React.FC<GridItemProps> = ({
   children,
-  col,
   size,
   offset,
   ...props
 }) => {
-  const colClass = col ? `col-${col}` : ''
   const offsetClass = offset ? `offset-${offset}` : ''
 
   const sizeClasses = getSizeClasses(size)
@@ -60,7 +55,6 @@ export const GridItem: React.FC<GridItemProps> = ({
       {...props}
       className={clsx(
         styles.col,
-        styles[colClass],
         styles[offsetClass],
         sizeClasses.map(cls => styles[cls]),
         offsetClasses.map(cls => styles[cls]),
@@ -92,8 +86,4 @@ const getOffsetClasses = (offset?: GridItemProps['offset']): string[] => {
   return [`offset-${offset}`]
 }
 
-/**
- * @deprecated since v10.2.0 Use `GridItem` instead.
- */
 
-export const FlexItem = GridItem

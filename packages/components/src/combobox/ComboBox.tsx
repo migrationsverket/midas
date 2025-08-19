@@ -121,10 +121,7 @@ export function ComboBoxItem<T extends ListBoxItemElement>(
   return <ListBoxItem {...props} />
 }
 
-/**
- * @deprecated since v.10.1.0 please use `ComboBoxSection` instead
- */
-export function ComboBoxSelection<T extends ListBoxSectionElement>(props: T) {
+export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
   return (
     <ListBoxSection {...props}>
       <Collection items={props.children}>
@@ -132,8 +129,4 @@ export function ComboBoxSelection<T extends ListBoxSectionElement>(props: T) {
       </Collection>
     </ListBoxSection>
   )
-}
-
-export function ComboBoxSection<T extends ListBoxSectionElement>(props: T) {
-  return <ComboBoxSelection {...props} />
 }

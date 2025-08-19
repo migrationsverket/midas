@@ -194,10 +194,7 @@ export const semantic = {
   fieldActive02: `light-dark(${baseColors.gray30}, ${baseColors.gray140})`,
 
   fieldDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  /**
-   *  @deprecated since v10.2.0, please use the `skeleton01` instead.
-   */
-  fieldSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
+  
   skeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   skeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
   iconPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
@@ -248,10 +245,7 @@ export const semantic = {
   buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed100})`,
   buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed130})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  /**
-   *  @deprecated since v10.2.0, please use the `skeleton01` instead.
-   */
-  buttonBackgroundSkeleton: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
+  
   buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
 
   badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,

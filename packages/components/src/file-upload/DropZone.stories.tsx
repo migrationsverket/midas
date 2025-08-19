@@ -6,7 +6,11 @@ import React from 'react'
 import { expect, fn, userEvent, within, fireEvent, waitFor } from '@storybook/test'
 import { DropEvent } from 'react-aria'
 
-const DropZoneTestContainer = (props: any) => {
+interface DropZoneTestContainerProps {
+  onSelect: (files: File[]) => void;
+}
+
+const DropZoneTestContainer = (props: DropZoneTestContainerProps) => {
   const [files, setFiles] = React.useState<File[]>([])
 
   const handleSelect = (selectedFileList: FileList | null) => {
