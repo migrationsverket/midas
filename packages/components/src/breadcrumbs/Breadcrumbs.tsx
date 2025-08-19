@@ -40,5 +40,4 @@ export const Breadcrumbs = <T extends BreadcrumbItem>({
   </AriaBreadcrumbs>
 )
 
-/** @deprecated since v10.3.0 please use `BreadcrumbsProps` instead */
-export type BreadcrumbProps<T extends BreadcrumbItem> = BreadcrumbsProps<T>
+

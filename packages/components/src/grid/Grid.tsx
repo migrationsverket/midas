@@ -8,10 +8,7 @@ export interface GridProps
     HTMLDivElement
   > {
   children: React.ReactNode
-  /** Removes outer margins for nested use. First Grid on a page should have outer margins.
-   * @deprecated since v10.2.0 Use `isContained` prop instead.
-   */
-  fluid?: boolean
+  
   /** A contained grid has a max-width and centered positioning on large screens. */
   isContained?: boolean
   /** Removes outer margins. */
@@ -31,7 +28,6 @@ export interface GridProps
 
 export const Grid: React.FC<GridProps> = ({
   children,
-  fluid = false,
   isContained = false,
   removeMargins = false,
   ...rest
@@ -41,7 +37,6 @@ export const Grid: React.FC<GridProps> = ({
       {...rest}
       className={clsx(
         styles.container,
-        fluid && styles.fluid,
         isContained && styles.contained,
         removeMargins && styles.removeMargins,
         rest.className,
@@ -52,8 +47,4 @@ export const Grid: React.FC<GridProps> = ({
   )
 }
 
-/**
- * @deprecated since v10.2.0 Use `Grid` instead.
- */
 
-export const Flex = Grid

@@ -23,11 +23,7 @@ export interface InfoBannerProps
   message?: string | React.ReactNode
   /** Additional elements displayed inside the banner */
   children?: React.ReactNode
-  /**
-   *  Specify if the InfoBanner should have a dismiss button in the top right corner
-   *  @deprecated since 10.0.1. Please use `isDismissable` instead
-   */
-  dismissable?: boolean
+  
   /**
    *  Specify if the InfoBanner should have a dismiss button in the top right corner
    */
@@ -42,7 +38,6 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   message,
   type,
   children,
-  dismissable = false,
   isDismissable = false,
   ...rest
 }) => {
@@ -68,7 +63,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
             {children}
           </div>
         </div>
-        {(dismissable || isDismissable) && (
+        {isDismissable && (
           <div className={styles.dismissable}>
             <Button
               variant='icon'

@@ -1,4 +1,6 @@
-{
+const { version } = require('./package.json');
+
+module.exports = {
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*", "storybook-static"],
   "plugins": ["midas"],
@@ -9,7 +11,7 @@
         "midas/handle-deprecated-comments": [
           1,
           {
-            "version": "10.3.0"
+            version
           }
         ],
         "jsx-a11y/no-autofocus": "off"
@@ -24,4 +26,4 @@
       "rules": {}
     }
   ]
-}
+};
