@@ -1,9 +1,10 @@
+import { FeedbackStatus } from '../common/types';
 import * as React from 'react';
 export interface InfoBannerProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     /**
-     *  Specify what state the InfoBanner represents
+     * Determines the visual style and semantic meaning of the InfoBanner (e.g., success, info, warning, important).
      **/
-    type: 'success' | 'info' | 'important' | 'warning';
+    type: FeedbackStatus;
     /** Specify the title */
     title?: string;
     /** Specify the message. Element or string */

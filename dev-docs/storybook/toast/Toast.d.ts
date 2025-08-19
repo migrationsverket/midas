@@ -1,9 +1,10 @@
 import { AriaToastProps, AriaToastRegionProps } from 'react-aria';
 import { QueuedToast, ToastQueue, ToastState, ToastStateProps } from 'react-stately';
 import { default as React } from '../../../../node_modules/react';
+import { FeedbackStatus } from '../common/types.ts';
 export interface MidasToast {
     message: string;
-    type: 'success' | 'info' | 'warning' | 'important';
+    type: FeedbackStatus;
     children?: React.ReactNode;
 }
 export interface ToastRegionProps<T> extends AriaToastRegionProps {
