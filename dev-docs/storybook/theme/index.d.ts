@@ -170,7 +170,6 @@ export declare const theme: {
         fieldHover02: string;
         fieldActive02: string;
         fieldDisabled: string;
-        fieldSkeleton: string;
         skeleton01: string;
         skeleton02: string;
         iconPrimary: string;
@@ -217,7 +216,6 @@ export declare const theme: {
         buttonBackgroundDangerHover: string;
         buttonBackgroundDangerActive: string;
         buttonBackgroundDisabled: string;
-        buttonBackgroundSkeleton: string;
         buttonBorderSecondary: string;
         badgeBackground: string;
         calendarDateBackgroundHover: string;

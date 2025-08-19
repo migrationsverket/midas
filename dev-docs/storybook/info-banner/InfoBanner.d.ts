@@ -13,11 +13,6 @@ export interface InfoBannerProps extends React.DetailedHTMLProps<React.HTMLAttri
     children?: React.ReactNode;
     /**
      *  Specify if the InfoBanner should have a dismiss button in the top right corner
-     *  @deprecated since 10.0.1. Please use `isDismissable` instead
-     */
-    dismissable?: boolean;
-    /**
-     *  Specify if the InfoBanner should have a dismiss button in the top right corner
      */
     isDismissable?: boolean;
 }

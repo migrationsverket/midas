@@ -8,5 +8,3 @@ export interface BreadcrumbsProps<T extends BreadcrumbItem> extends AriaBreadcru
     items: T[];
 }
 export declare const Breadcrumbs: <T extends BreadcrumbItem>({ items, className, ...rest }: BreadcrumbsProps<T>) => import("react/jsx-runtime").JSX.Element;
-/** @deprecated since v10.3.0 please use `BreadcrumbsProps` instead */
-export type BreadcrumbProps<T extends BreadcrumbItem> = BreadcrumbsProps<T>;

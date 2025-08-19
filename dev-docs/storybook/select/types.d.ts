@@ -8,7 +8,7 @@ import { AriaListBoxOptions } from 'react-aria';
 import { AriaButtonProps } from '@react-types/button';
 import { AriaSelectProps } from '@react-types/select';
 import { Size } from '../common/types';
-import { ListBoxItemElement, ListBoxOption, ListBoxSectionElement } from '../list-box/';
+import { ListBoxOption } from '../list-box/';
 /**
  * Props used for setting up the list state
  */
@@ -174,15 +174,3 @@ export type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
     /** Item objects in the collection. */
     options: ListBoxOption[];
 };
-/**
- * @deprecated since v10.1.0 please use `ListBoxOption` intead
- */
-export type Option = ListBoxOption;
-/**
- * @deprecated since v10.1.0 please use `ListBoxItemElement` intead
- */
-export type OptionItem = ListBoxItemElement;
-/**
- * @deprecated since v10.1.0 please use `ListBoxSectionElement` intead
- */
-export type OptionSection = ListBoxSectionElement;

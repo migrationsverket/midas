@@ -2,10 +2,6 @@ import { ColumnSize, OffsetSize } from '../common/types';
 import * as React from 'react';
 export interface GridItemProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children: React.ReactNode;
-    /** Column size and behaviour
-     * @deprecated since v10.2.0 Use `size` prop instead.
-     */
-    col?: ColumnSize;
     /** Column size and behaviour across different breakpoints   */
     size?: ColumnSize | {
         xs?: ColumnSize;
@@ -30,7 +26,3 @@ export interface GridItemProps extends React.DetailedHTMLProps<React.HTMLAttribu
  * @see {@link: https://migrationsverket.se/components/flex}
  */
 export declare const GridItem: React.FC<GridItemProps>;
-/**
- * @deprecated since v10.2.0 Use `GridItem` instead.
- */
-export declare const FlexItem: React.FC<GridItemProps>;
