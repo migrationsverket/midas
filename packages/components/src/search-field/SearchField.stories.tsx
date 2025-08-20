@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { SearchField } from './SearchField'
 import { expect, fn, userEvent } from '@storybook/test'
-import { sizeModes } from '../../.storybook/modes'
 import styles from './SearchField.module.css'
 
 const meta: Meta<typeof SearchField> = {
@@ -10,22 +9,14 @@ const meta: Meta<typeof SearchField> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
-    chromatic: {
-      modes: sizeModes,
-    },
   },
   args: {
     buttonText: 'Sök',
     errorPosition: 'top',
     className: 'test-class',
   },
-  render: (args, { globals: { size } }) => {
-    return (
-      <SearchField
-        {...args}
-        size={size}
-      />
-    )
+  render: args => {
+    return <SearchField {...args} />
   },
 }
 export default meta

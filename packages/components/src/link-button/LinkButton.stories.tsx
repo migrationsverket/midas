@@ -24,19 +24,14 @@ const meta: Meta<typeof LinkButton> = {
       defaultValue: 'left',
     },
   },
-  render: (args, { globals: { size } }) => {
-    return (
-      <LinkButton
-        {...args}
-        size={size}
-      />
-    )
+  render: args => {
+    return <LinkButton {...args} />
   },
-  play: async ({ canvas, step, globals: { size } }) => {
+  play: async ({ canvas, step, args }) => {
     await step('it should change size according to size prop', async () => {
       await expect(
         canvas.getByTestId('link-button').getBoundingClientRect().height,
-      ).toBe(size === 'large' ? 48 : 40)
+      ).toBe(args.size === 'large' ? 48 : 40)
     })
   },
 }

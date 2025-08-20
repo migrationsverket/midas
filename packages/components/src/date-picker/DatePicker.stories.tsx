@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DatePicker } from './DatePicker'
 import { expect, userEvent, within } from '@storybook/test'
-import { sizeModes } from '../../.storybook/modes'
 import React from 'react'
 import { parseDate, CalendarDate } from '@internationalized/date'
 
@@ -32,27 +31,19 @@ const meta: Meta<typeof DatePicker> = {
         rules: { 'color-contrast': { enabled: false } },
       },
     },
-    chromatic: {
-      modes: sizeModes,
-    },
   },
-  render: (args, { globals: { size } }) => {
-    return (
-      <DatePicker
-        {...args}
-        size={size}
-      />
-    )
+  render: args => {
+    return <DatePicker {...args} />
   },
 }
 export default meta
 type Story = StoryObj<typeof DatePicker>
 
 export const Primary: Story = {
-  play: async ({ step, canvas, globals: { size } }) => {
+  play: async ({ step, canvas, args }) => {
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('group')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+        height: args.size === 'large' ? '48px' : '40px',
       })
     })
   },
@@ -149,7 +140,7 @@ export const ControlledState: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  render: (args, { globals: { size } }) => {
+  render: args => {
     const [value, setValue] = React.useState<CalendarDate | null>(
       parseDate('2026-05-29'),
     )
@@ -157,7 +148,6 @@ export const ControlledState: Story = {
       <DatePicker
         data-testid={testID}
         {...args}
-        size={size}
         value={value}
         onChange={newValue =>
           setValue(newValue ? parseDate(newValue.toString()) : null)

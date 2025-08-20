@@ -3,7 +3,7 @@ import { expect, userEvent } from '@storybook/test'
 import { hexToRgb, lightDark } from '../utils/test'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
-import { sizeModes } from '../../.storybook/modes'
+
 import { TableLayout, Virtualizer } from 'react-aria-components'
 
 type Story = StoryObj<typeof Table>
@@ -54,17 +54,10 @@ export default {
       control: false,
     },
   },
-  parameters: {
-    chromatic: {
-      modes: sizeModes,
-    },
-  },
-  render: (args, { globals: { size } }) => {
+
+  render: args => {
     return (
-      <Table
-        {...args}
-        size={size}
-      >
+      <Table {...args}>
         <TableHeader columns={columns}>
           {column => (
             <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
