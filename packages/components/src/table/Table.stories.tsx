@@ -138,8 +138,8 @@ export const Virtualized: Story = {
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
-          rowHeight: args.narrow ? 24 : 48,
-          headingHeight: args.narrow ? 24 : 48,
+          rowHeight: 48,
+          headingHeight: 48,
         }}
       >
         <Table
