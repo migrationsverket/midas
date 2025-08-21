@@ -49,6 +49,7 @@ export default defineConfig({
       input: Object.fromEntries([
         ['index', index],
         ['global.css', resolve(src, 'theme/global.css')],
+        ['theme.css', resolve(src, 'theme/theme.css')],
         ...globSync(`${src}/*/index.ts`).map(file => [
           // 1. The name of the entry point
           // packages/components/src/calendar/Calendar.tsx becomes calendar/Calendar
