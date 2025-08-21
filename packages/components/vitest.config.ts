@@ -29,7 +29,7 @@ const baseProject: TestProjectConfiguration = {
     name: 'storybook',
     browser: {
       enabled: true,
-      headless: false,
+      headless: true,
       provider: 'playwright',
       instances: [
         {
