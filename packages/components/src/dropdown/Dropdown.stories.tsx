@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Dropdown, DropdownItem } from './Dropdown'
 import { LinkButton } from '../link-button'
-import { userEvent, expect } from '@storybook/test'
+import { userEvent, expect } from 'storybook/test'
 import { Ellipsis } from 'lucide-react'
 
 const meta: Meta<typeof Dropdown> = {

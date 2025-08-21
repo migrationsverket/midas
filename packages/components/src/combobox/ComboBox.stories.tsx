@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { ComboBox, ComboBoxItem, ComboBoxSection } from './ComboBox'
 import { generateMockOptions, optionsWithSections } from './utils'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent, within } from 'storybook/test'
 import styles from './ComboBox.module.css'
 import { sizeModes } from '../../.storybook/modes'
 import React from 'react'
@@ -126,7 +126,7 @@ export const Disabled: Story = {
   },
   parameters: {
     a11y: {
-      element: 'body',
+      context: 'body',
       config: {
         rules: [
           {

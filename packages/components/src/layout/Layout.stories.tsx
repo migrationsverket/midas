@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Layout, SidebarLinkGroup } from './Layout'
 import {
   Calendar,
@@ -15,7 +15,7 @@ import {
 import { semantic } from '../theme'
 import { LinkButton } from '../link-button'
 import { Button } from '../button'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import styles from './Layout.module.css'
 
 const meta: Meta<typeof Layout> = {

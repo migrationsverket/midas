@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RangeCalendar } from './RangeCalendar'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from 'storybook/test'
 import { mockedNow } from '../utils/storybook'
 import { RunOptions } from 'axe-core'
 
@@ -29,7 +29,7 @@ export const Disabled: Story = {
   },
   parameters: {
     a11y: {
-      element: 'body',
+      context: 'body',
       config: {
         rules: [
           {

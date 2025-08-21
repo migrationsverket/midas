@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { TextArea } from './TextArea'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from 'storybook/test'
 import styles from './TextField.module.css'
 
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
@@ -131,7 +131,7 @@ export const Disabled = {
   },
   parameters: {
     a11y: {
-      element: 'body',
+      context: 'body',
       config: {
         rules: [
           {

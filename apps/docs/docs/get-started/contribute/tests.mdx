@@ -17,8 +17,8 @@ Skriv ditt test här i första hand, det hjälper oss att säkerställa att vi h
 
 ### Kör webbläsartester
 
-Tester som använder Storybooks play-funktion kan köras via terminalen med hjälp av [Storybook test runner](https://storybook.js.org/docs/writing-tests/test-runner).
-Under huven används [Jest](https://jestjs.io/), [Playwright](https://playwright.dev/) och [Testing library](https://testing-library.com/).
+Tester som använder Storybooks play-funktion kan köras via terminalen med hjälp av [Storybook Vitest addon](https://storybook.js.org/docs/writing-tests/integrations/vitest-addon).
+Under huven används [Vitest](https://vitest.dev/), [Playwright](https://playwright.dev/) och [Testing library](https://testing-library.com/).
 
 Se till att ha din lokala Storybook igång innan du kör några tester:
 
@@ -178,12 +178,13 @@ Chromatic utgår från vår Storybook och tar snapshots på samtliga stories.
 ### Trigga snapshottester
 
 Snapshottester körs automatiskt vid push till följande brancher:
-* `main`
-* `dev`
-* brancher som startar med `feature`
-* brancher som startar med `feat`
-* brancher som startar med `fix`
-* brancher som startar med `bugfix`
+
+- `main`
+- `dev`
+- brancher som startar med `feature`
+- brancher som startar med `feat`
+- brancher som startar med `fix`
+- brancher som startar med `bugfix`
 
 ### Hoppa över stories
 

@@ -29,6 +29,7 @@
         }
       }
     },
+
     "storybook": {
       "executor": "@nx/storybook:storybook",
       "options": {
@@ -59,40 +60,17 @@
     "test-storybook": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "test-storybook -c packages/components/.storybook --url=http://localhost:4400"
+        "command": "vitest -c vitest.config.ts --project=storybook:light-mode --watch=false"
       },
       "configurations": {
         "watch": {
-          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
+          "command": "vitest -c vitest.config.ts --project=storybook:light-mode"
         },
-        "remote": {
-          "command": "test-storybook -c packages/components/.storybook --url=https://main--6810d578d5507438df0f0d22.chromatic.com"
+        "dark-mode": {
+          "command": "vitest -c vitest.config.dark.ts --project=storybook:dark-mode --watch=false"
         },
-        "all-browsers": {
-          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
-        },
-        "ci": {
-          "command": "test-storybook -c packages/components/.storybook --url=http://localhost:6006 --browsers=chromium"
-        }
-      }
-    },
-    "test-storybook:dark-mode": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=http://localhost:4400"
-      },
-      "configurations": {
-        "watch": {
-          "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
-        },
-        "remote": {
-          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=https://main--6810d578d5507438df0f0d22.chromatic.com"
-        },
-        "all-browsers": {
-          "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
-        },
-        "ci": {
-          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=http://localhost:6006 --browsers=chromium"
+        "dark-mode:watch": {
+          "command": "vitest -c vitest.config.dark.ts --project=storybook:dark-mode"
         }
       }
     },

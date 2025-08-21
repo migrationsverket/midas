@@ -1,7 +1,7 @@
 import { Checkbox } from './Checkbox'
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { CheckboxGroup } from './CheckboxGroup'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from 'storybook/test'
 
 type Story = StoryObj<typeof CheckboxGroup>
 

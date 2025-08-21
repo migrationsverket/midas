@@ -1,4 +1,4 @@
-import type { Meta } from '@storybook/react'
+import type { Meta } from '@storybook/react-vite'
 import { Card, CardContent, CardTitle } from '../card'
 import { Grid } from './Grid'
 import { GridItem } from './GridItem'

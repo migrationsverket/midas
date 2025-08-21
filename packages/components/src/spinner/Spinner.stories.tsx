@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Spinner } from './Spinner'
 import { Button } from '../button'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import styles from './Spinner.module.css'
 
 const meta: Meta<typeof Spinner> = {

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   Card,
   CardActionArea,
@@ -11,7 +11,7 @@ import {
 import { Text } from '../text'
 import { Button } from '../button'
 import { Pen, X } from 'lucide-react'
-import { expect, userEvent } from '@storybook/test'
+import { expect, userEvent } from 'storybook/test'
 
 const meta: Meta<typeof Card> = {
   component: Card,
