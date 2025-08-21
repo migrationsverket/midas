@@ -46,6 +46,9 @@
     },
     "./global.css": {
       "import": "./assets/global.css"
+    },
+    "./theme.css": {
+      "import": "./assets/theme.css"
     }
   },
   "dependencies": {
