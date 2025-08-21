@@ -5,8 +5,7 @@
   "scripts": {
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "commit": "git-cz",
-    "generate:css-tokens": "npx tsc -p packages/components/tsconfig.build.json && node scripts/generate-css-tokens.mjs"
+    "commit": "git-cz"
   },
   "private": false,
   "dependencies": {

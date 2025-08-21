@@ -1,4 +1,4 @@
-// scripts/generate-css-tokens.js
+// scripts/generate-css-tokens.mjs
 import {
   baseColors,
   typography,
@@ -129,8 +129,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const outputPath = path.resolve(__dirname, '../packages/components/src/theme/tokens.css');
+const cssOutputPath = path.resolve(__dirname, '../packages/components/src/theme/tokens.css');
 
-fs.writeFileSync(outputPath, cssOutput);
+fs.writeFileSync(cssOutputPath, cssOutput);
 
-console.log(`Generated CSS tokens to ${outputPath}`);
+console.log(`Generated CSS tokens to ${cssOutputPath}`);
