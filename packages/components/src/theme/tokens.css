@@ -1,288 +1,238 @@
-/* ---- Reference Values ---- */
+/* Generated from tokens.ts - Do not edit directly */
 
-/* Base Colors */
 @value --black: #000000;
 @value --white: #ffffff;
 @value --black-hover: #0d0d0d;
 @value --white-hover: #e6e6e6;
-@value --gray-10: #f2f2f2;
-@value --gray-20: #e6e6e6;
-@value --gray-30: #d9d9d9;
-@value --gray-40: #cccccc;
-@value --gray-50: #bfbfbf;
-@value --gray-60: #b3b3b3;
-@value --gray-70: #a6a6a6;
-@value --gray-80: #999999;
-@value --gray-90: #8c8c8c;
-@value --gray-100: #808080;
-@value --gray-110: #737373;
-@value --gray-120: #666666;
-@value --gray-130: #5d5d5d;
-@value --gray-140: #525252;
-@value --gray-150: #474747;
-@value --gray-160: #383838;
-@value --gray-170: #333333;
-@value --gray-180: #262626;
-@value --gray-190: #212121;
-@value --gray-200: #171717;
-@value --blue-10: #eaf2f6;
-@value --blue-20: #d5e5ed;
-@value --blue-40: #abcbdb;
-@value --blue-50: #94BCD1;
-@value --blue-60: #82b0c9;
-@value --blue-70:#6CA3C0;
-@value --blue-80: #5897b8;
-@value --blue-90: #4289ad;
-@value --blue-100: #2e7ca5;
-@value --blue-110: #2C7399;
-@value --blue-120:  #29698C;
-@value --blue-130: #25607f;
-@value --blue-150: #143c50;
-@value --purple-80: #b46ab4;
-@value --purple-110: #954b95;
-@value --red-100: #b90835;
-@value --signal-blue-10: #eaf2f6;
-@value --signal-blue-100: #0066cc;
-@value --signal-green-20: #d5f2d9;
-@value --signal-green-30: #bae5c5;
-@value --signal-green-100: #008d3c;
-@value --signal-yellow-10: #fff8e1;
-@value --signal-yellow-20: #FFEBA8;
-@value --signal-yellow-100: #fdb813;
-@value --signal-red-10: #ffefef;
-@value --signal-red-20: #ffdfdf;
-@value --signal-red-30: #fcc8c8;
-@value --signal-red-40: #f9b0b0;
-@value --signal-red-50: #f69999;
-@value --signal-red-60: #f38181;
-@value --signal-red-70: #ef6a6a;
-@value --signal-red-80: #eb4e4e;
-@value --signal-red-90: #e93b3b;
-@value --signal-red-100: #e62323;
-@value --signal-red-110: #d12020;
-@value --signal-red-120: #bc1d1d;
-@value --signal-red-130: #a71919;
-@value --signal-red-140: #921616;
-@value --signal-red-150: #7d1313;
-@value --signal-red-160: #691010;
-@value --signal-red-170: #540d0d;
-@value --signal-red-180: #3f0a0a;
-@value --signal-red-190: #2a0606;
-@value --signal-red-200: #150303;
-
-/* Typography */
+@value --gray10: #f2f2f2;
+@value --gray20: #e6e6e6;
+@value --gray30: #d9d9d9;
+@value --gray40: #cccccc;
+@value --gray50: #bfbfbf;
+@value --gray60: #b3b3b3;
+@value --gray70: #a6a6a6;
+@value --gray80: #999999;
+@value --gray90: #8c8c8c;
+@value --gray100: #808080;
+@value --gray110: #737373;
+@value --gray120: #666666;
+@value --gray130: #5d5d5d;
+@value --gray140: #525252;
+@value --gray150: #474747;
+@value --gray160: #383838;
+@value --gray170: #333333;
+@value --gray180: #262626;
+@value --gray190: #212121;
+@value --gray200: #171717;
+@value --blue10: #eaf2f6;
+@value --blue20: #d5e5ed;
+@value --blue40: #abcbdb;
+@value --blue50: #94BCD1;
+@value --blue60: #82b0c9;
+@value --blue70: #6CA3C0;
+@value --blue80: #5897b8;
+@value --blue90: #4289ad;
+@value --blue100: #2e7ca5;
+@value --blue110: #2C7399;
+@value --blue120: #29698C;
+@value --blue130: #25607f;
+@value --blue150: #143c50;
+@value --purple80: #b46ab4;
+@value --purple110: #954b95;
+@value --red100: #b90835;
+@value --signal-blue10: #eaf2f6;
+@value --signal-blue100: #0066cc;
+@value --signal-green20: #d5f2d9;
+@value --signal-green30: #bae5c5;
+@value --signal-green100: #008d3c;
+@value --signal-yellow10: #fff8e1;
+@value --signal-yellow20: #FFEBA8;
+@value --signal-yellow100: #fdb813;
+@value --signal-red10: #ffefef;
+@value --signal-red20: #ffdfdf;
+@value --signal-red30: #fcc8c8;
+@value --signal-red40: #f9b0b0;
+@value --signal-red50: #f69999;
+@value --signal-red60: #f38181;
+@value --signal-red70: #ef6a6a;
+@value --signal-red80: #eb4e4e;
+@value --signal-red90: #e93b3b;
+@value --signal-red100: #e62323;
+@value --signal-red110: #d12020;
+@value --signal-red120: #bc1d1d;
+@value --signal-red130: #a71919;
+@value --signal-red140: #921616;
+@value --signal-red150: #7d1313;
+@value --signal-red160: #691010;
+@value --signal-red170: #540d0d;
+@value --signal-red180: #3f0a0a;
+@value --signal-red190: #2a0606;
+@value --signal-red200: #150303;
 @value --font-family: "Inter", sans-serif;
-@value --line-height-10: 1rem;
-@value --line-height-20: 1.125rem;
-@value --line-height-30: 1.25rem;
-@value --line-height-40: 1.375rem;
-@value --line-height-50: 1.5rem;
-@value --line-height-60: 1.75rem;
-@value --line-height-70: 2rem;
-@value --line-height-80: 2.25rem;
-@value --line-height-90: 2.5rem;
-@value --line-height-100: 2.75rem;
-@value --font-size-10: 0.75rem;
-@value --font-size-20: 0.875rem;
-@value --font-size-30: 1rem;
-@value --font-size-40: 1.125rem;
-@value --font-size-50: 1.25rem;
-@value --font-size-60: 1.5rem;
-@value --font-size-70: 1.75rem;
-@value --font-size-80: 2rem;
-@value --font-size-90: 2.25rem;
-@value --font-size-100: 2.625rem;
-
-/* Spacing */
-@value --spacing-10: 0.125rem;
-@value --spacing-20: 0.25rem;
-@value --spacing-30: 0.5rem;
-@value --spacing-40: 0.75rem;
-@value --spacing-50: 1rem;
-@value --spacing-60: 1.5rem;
-@value --spacing-70: 2rem;
-@value --spacing-80: 2.5rem;
-@value --spacing-90: 3rem;
-@value --spacing-100: 4rem;
-@value --spacing-110: 5rem;
-@value --spacing-120: 6rem;
-
-/* z-index */
-@value --z-index-base: 1;
-@value --z-index-above: 10;
-@value --z-index-modal: 1000;
-@value --z-index-toast: 1100;
-@value --z-index-skip-to-content: 1200;
-
-/* Sizing */
-@value --size-00: 0; /* 0px */
-@value --size-05: 0.063rem; /* 1px */
-@value --size-10: 0.125rem; /* 2px */
-@value --size-15: 0.188rem; /* 3px */
-@value --size-20: 0.25rem; /* 4px */
-@value --size-30: 0.375rem; /* 6px */
-@value --size-40: 0.5rem; /* 8px */
-@value --size-50: 0.625rem; /* 10px */
-@value --size-60: 0.75rem; /* 12px */
-@value --size-70: 0.875rem; /* 14px */
-@value --size-75: 0.938rem; /* 15px */
-@value --size-80: 1rem; /* 16px */
-@value --size-90: 1.25rem; /* 20px */
-@value --size-100: 1.5rem; /* 24px */
-@value --size-110: 1.75rem; /* 28px */
-@value --size-120: 2rem; /* 32px */
-@value --size-130: 2.5rem; /* 40px */
-@value --size-140: 2.75rem; /* 44px */
-@value --size-150: 3rem; /* 48px */
-
-/* Transitions */
-@value --slow-transition: 500ms;
-@value --normal-transition: 300ms;
-@value --fast-transition: 250ms;
-
-/* Breakpoints */
-@value --breakpoint-xs: (max-width: 479px);
-@value --breakpoint-sm: (min-width: 480px);
-@value --breakpoint-md: (min-width: 768px);
-@value --breakpoint-lg: (min-width: 1024px);
-@value --breakpoint-xl: (min-width: 1280px);
+@value --line-height10: 1rem;
+@value --line-height20: 1.125rem;
+@value --line-height30: 1.25rem;
+@value --line-height40: 1.375rem;
+@value --line-height50: 1.5rem;
+@value --line-height60: 1.75rem;
+@value --line-height70: 2rem;
+@value --line-height80: 2.25rem;
+@value --line-height90: 2.5rem;
+@value --line-height100: 2.75rem;
+@value --font-size10: 0.75rem;
+@value --font-size20: 0.875rem;
+@value --font-size30: 1rem;
+@value --font-size40: 1.125rem;
+@value --font-size50: 1.25rem;
+@value --font-size60: 1.5rem;
+@value --font-size70: 1.75rem;
+@value --font-size80: 2rem;
+@value --font-size90: 2.25rem;
+@value --font-size100: 2.625rem;
+@value --weight-thin: 100;
+@value --weight-extra-light: 200;
+@value --weight-light: 300;
+@value --weight-regular: 400;
+@value --weight-medium: 500;
+@value --weight-semi-bold: 600;
+@value --weight-bold: 700;
+@value --weight-extra-bold: 800;
+@value --weight-black: 900;
+@value --10: 0.125rem;
+@value --20: 0.25rem;
+@value --30: 0.5rem;
+@value --40: 0.75rem;
+@value --50: 1rem;
+@value --60: 1.5rem;
+@value --70: 2rem;
+@value --80: 2.5rem;
+@value --90: 3rem;
+@value --100: 4rem;
+@value --110: 5rem;
+@value --120: 6rem;
+@value --focus: 0 0 0 2px light-dark(#ffffff, #000000), 0 0 0 4px light-dark(#000000, #ffffff);
+@value --focus-inset: inset 0 0 0 2px light-dark(#000000, #ffffff), inset 0 0 0 4px light-dark(#ffffff, #000000);
+@value --slow: 500ms;
+@value --normal: 300ms;
+@value --fast: 250ms;
+@value --xs: (max-width: 479px);
+@value --sm: (min-width: 480px);
+@value --md: (min-width: 768px);
+@value --lg: (min-width: 1024px);
+@value --xl: (min-width: 1280px);
 @value --forced-colors-mode: (forced-colors: active);
 @value --dark-mode: (prefers-color-scheme: dark);
 @value --prefers-reduced-motion: (prefers-reduced-motion: reduced);
-
-/* ---- Semantic values ---- */
-
-/* Background */
-@value --background: light-dark(--white, --gray-200);
-@value --background-hover: light-dark(--white-hover, --gray-190);
-@value --background-inverse: light-dark(--gray-200, --gray-10);
-
-/* Layer 01 */
-@value --layer-01: light-dark(--gray-10, --gray-180);
-@value --layer-hover-01: light-dark(--gray-20, --gray-170);
-@value --layer-selected-01: light-dark(--gray-30, --gray-160);
-@value --layer-selected-hover-01: light-dark(--gray-40, --gray-150);
-
-/* Layer 02 */
-@value --layer-02: light-dark(--white, --gray-160);
-@value --layer-hover-02: light-dark(--white-hover, --gray-150);
-@value --layer-selected-02: light-dark(--gray-30, --gray-140);
-@value --layer-selected-hover-02: light-dark(--gray-40, --gray-130);
-
-/* Layer Accent 01 */
-@value --layer-accent-01: light-dark(--gray-30, --gray-160);
-@value --layer-accent-hover-01: light-dark(--gray-40, --gray-150);
-@value --layer-accent-selected-01: light-dark(--gray-50, --gray-140);
-
-/* Layer Accent 02 */
-@value --layer-accent-02: light-dark(--gray-10, --gray-180);
-@value --layer-accent-hover-02: light-dark(--gray-20, --gray-170);
-@value --layer-accent-selected-02: light-dark(--gray-30, --gray-160);
-
-/* Brand */
-@value --brand-primary: light-dark(--red-100, --red-100);
-
-/* Border */
-@value --border-primary: light-dark(--gray-200, --gray-10);
-@value --border-secondary: light-dark(--gray-110, --gray-90);
-@value --border-subtle: light-dark(--gray-50, --gray-160);
-@value --border-tertiary: light-dark(--blue-150, --blue-100);
-@value --border-disabled: light-dark(--gray-50, --gray-140);
-
-/* Field 01 */
-@value --field-01: light-dark(--gray-10, --gray-180);
-@value --field-hover-01: light-dark(--gray-20, --gray-170);
-@value --field-active-01: light-dark(--gray-30, --gray-160);
-
-/* Field 02 */
-@value --field-02: light-dark(--white, --gray-160);
-@value --field-hover-02: light-dark(--white-hover, --gray-150);
-@value --field-active-02: light-dark(--gray-30, --gray-140);
-
-/* Field */
-@value --field-disabled: light-dark(--gray-10, --gray-180);
-
-/* Icon */
-@value --icon-primary: light-dark(--gray-200, --gray-10);
-@value --icon-secondary: light-dark(--gray-140, --gray-70);
-@value --icon-tertiary: light-dark(--blue-150, --gray-10);
-@value --icon-inverse: light-dark(--white, --gray-200);
-@value --icon-on-color: light-dark(--white, --white);
-@value --icon-disabled: light-dark(--gray-50, --gray-140);
-@value --icon-success: light-dark(--signal-green-100, --signal-green-100);
-@value --icon-info: light-dark(--signal-blue-100, --signal-blue-100);
-@value --icon-warning: light-dark(--signal-red-100, --signal-red-100);
-@value --icon-important: light-dark(--signal-yellow-100, --signal-yellow-100);
-
-/* Link */
-@value --link-enabled: light-dark(--blue-120, --blue-70);
-@value --link-hover: light-dark(--blue-150, --blue-50);
-@value --link-pressed: light-dark(--gray-200, --blue-40);
-@value --link-visited: light-dark(--purple-110, --purple-80);
-
-/* Support */
-@value --support-border-success: light-dark(--signal-green-100, --signal-green-100);
-@value --support-border-info: light-dark(--signal-blue-100, --signal-blue-100);
-@value --support-border-important: light-dark(--signal-yellow-100, --signal-yellow-100);
-@value --support-border-warning: light-dark(--signal-red-100, --signal-red-100);
-@value --support-background-success: light-dark(--signal-green-20, --layer-01);
-@value --support-background-success-hover: light-dark(--signal-green-30, --layer-hover-01);
-@value --support-background-info: light-dark(--signal-blue-10, --layer-01);
-@value --support-background-info-hover: light-dark(--blue-20, --layer-hover-01);
-@value --support-background-important: light-dark(--signal-yellow-10, --layer-01);
-@value --support-background-important-hover: light-dark(--signal-yellow-20, --layer-hover-01);
-@value --support-background-warning: light-dark(--signal-red-20, --layer-01);
-@value --support-background-warning-hover: light-dark(--signal-red-30, --layer-hover-01);
-
-/* Text */
-@value --text-primary: light-dark(--gray-200, --gray-10);
-@value --text-secondary: light-dark(--gray-140, --gray-70);
-@value --text-tertiary: light-dark(--blue-150, --gray-10);
-@value --text-on-color: light-dark(--white, --white);
-@value --text-inverse: light-dark(--gray-10, --gray-200);
-@value --text-disabled: light-dark(--gray-50, --gray-140);
-@value --text-warning: light-dark(--signal-red-100, --signal-red-80);
-@value --text-placeholder: light-dark(--gray-70, --gray-140);
-
-/* Button */
-@value --button-background-primary: light-dark(--blue-150, --blue-100);
-@value --button-background-primary-hover: light-dark(--blue-130, --blue-130);
-@value --button-background-primary-active: light-dark(--blue-100, --blue-150);
-@value --button-background-secondary: light-dark(--white, --gray-200);
-@value --button-background-secondary-hover: light-dark(--white-hover, --gray-190);
-@value --button-background-secondary-active: light-dark(--gray-30, --gray-180);
-@value --button-background-tertiary-hover: light-dark(--white-hover, --gray-190);
-@value --button-background-tertiary-active: light-dark(--gray-30, --gray-180);
-@value --button-background-danger: light-dark(--signal-red-100, --signal-red-80);
-@value --button-background-danger-hover: light-dark(--signal-red-120, --signal-red-100);
-@value --button-background-danger-active: light-dark(--signal-red-150, --signal-red-130);
-@value --button-background-disabled: light-dark(--gray-10, --gray-180);
-@value --button-border-secondary: light-dark(--border-tertiary, --gray-10);
+@value --background: light-dark(#ffffff, #171717);
+@value --background-hover: light-dark(#e6e6e6, #212121);
+@value --background-inverse: light-dark(#171717, #f2f2f2);
+@value --layer01: light-dark(#f2f2f2, #262626);
+@value --layer-hover01: light-dark(#e6e6e6, #333333);
+@value --layer-selected01: light-dark(#d9d9d9, #383838);
+@value --layer-selected-hover01: light-dark(#cccccc, #474747);
+@value --layer02: light-dark(#ffffff, #383838);
+@value --layer-hover02: light-dark(#e6e6e6, #474747);
+@value --layer-selected02: light-dark(#d9d9d9, #525252);
+@value --layer-selected-hover02: light-dark(#cccccc, #5d5d5d);
+@value --layer-accent01: light-dark(#d9d9d9, #383838);
+@value --layer-accent-hover01: light-dark(#cccccc, #474747);
+@value --layer-accent-selected01: light-dark(#bfbfbf, #525252);
+@value --layer-accent02: light-dark(#f2f2f2, #262626);
+@value --layer-accent-hover02: light-dark(#e6e6e6, #333333);
+@value --layer-accent-selected02: light-dark(#d9d9d9, #383838);
+@value --brand-primary: light-dark(#b90835, #b90835);
+@value --border-primary: light-dark(#171717, #f2f2f2);
+@value --border-secondary: light-dark(#737373, #8c8c8c);
+@value --border-subtle: light-dark(#bfbfbf, #383838);
+@value --border-tertiary: light-dark(#143c50, #2e7ca5);
+@value --border-disabled: light-dark(#bfbfbf, #525252);
+@value --field01: light-dark(#f2f2f2, #262626);
+@value --field-hover01: light-dark(#e6e6e6, #333333);
+@value --field-active01: light-dark(#d9d9d9, #383838);
+@value --field02: light-dark(#ffffff, #383838);
+@value --field-hover02: light-dark(#e6e6e6, #474747);
+@value --field-active02: light-dark(#d9d9d9, #525252);
+@value --field-disabled: light-dark(#f2f2f2, #262626);
+@value --skeleton01: light-dark(#f2f2f2, #262626);
+@value --skeleton02: light-dark(#d9d9d9, #383838);
+@value --icon-primary: light-dark(#171717, #f2f2f2);
+@value --icon-secondary: light-dark(#525252, #a6a6a6);
+@value --icon-tertiary: light-dark(#143c50, #f2f2f2);
+@value --icon-inverse: light-dark(#ffffff, #171717);
+@value --icon-on-color: light-dark(#ffffff, #ffffff);
+@value --icon-disabled: light-dark(#bfbfbf, #525252);
+@value --icon-success: light-dark(#008d3c, #008d3c);
+@value --icon-info: light-dark(#0066cc, #0066cc);
+@value --icon-warning: light-dark(#e62323, #e62323);
+@value --icon-important: light-dark(#fdb813, #fdb813);
+@value --link-enabled: light-dark(#29698C, #6CA3C0);
+@value --link-hover: light-dark(#143c50, #94BCD1);
+@value --link-pressed: light-dark(#171717, #abcbdb);
+@value --link-visited: light-dark(#954b95, #b46ab4);
+@value --support-border-success: light-dark(#008d3c, #008d3c);
+@value --support-border-info: light-dark(#0066cc, #0066cc);
+@value --support-border-important: light-dark(#fdb813, #fdb813);
+@value --support-border-warning: light-dark(#e62323, #e62323);
+@value --support-background-success: light-dark(#d5f2d9, #262626);
+@value --support-background-success-hover: light-dark(#bae5c5, #333333);
+@value --support-background-info: light-dark(#eaf2f6, #262626);
+@value --support-background-important: light-dark(#fff8e1, #262626);
+@value --support-background-warning: light-dark(#ffdfdf, #262626);
+@value --support-background-warning-hover: light-dark(#fcc8c8, #333333);
+@value --text-primary: light-dark(#171717, #f2f2f2);
+@value --text-secondary: light-dark(#525252, #a6a6a6);
+@value --text-tertiary: light-dark(#143c50, #f2f2f2);
+@value --text-on-color: light-dark(#ffffff, #ffffff);
+@value --text-inverse: light-dark(#f2f2f2, #171717);
+@value --text-disabled: light-dark(#bfbfbf, #525252);
+@value --text-warning: light-dark(#e62323, #eb4e4e);
+@value --text-placeholder: light-dark(#a6a6a6, #525252);
+@value --button-background-primary: light-dark(#143c50, #2e7ca5);
+@value --button-background-primary-hover: light-dark(#25607f, #25607f);
+@value --button-background-primary-active: light-dark(#2e7ca5, #143c50);
+@value --button-background-secondary: light-dark(#ffffff, #171717);
+@value --button-background-secondary-hover: light-dark(#e6e6e6, #212121);
+@value --button-background-secondary-active: light-dark(#d9d9d9, #262626);
+@value --button-background-tertiary-hover: light-dark(#e6e6e6, #212121);
+@value --button-background-tertiary-active: light-dark(#d9d9d9, #262626);
+@value --button-background-danger: light-dark(#e62323, #eb4e4e);
+@value --button-background-danger-hover: light-dark(#bc1d1d, #e62323);
+@value --button-background-danger-active: light-dark(#7d1313, #a71919);
+@value --button-background-disabled: light-dark(#f2f2f2, #262626);
+@value --button-border-secondary: light-dark(light-dark(#143c50, #2e7ca5), #f2f2f2);
 @value --button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
 @value --button-background-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
-
-/* Badge */
-@value --badge-background: light-dark(--signal-red-100, --signal-red-80);
-
-/* Calendar */
+@value --badge-background: light-dark(#e62323, #eb4e4e);
 @value --calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
-@value --calendar-date-background-selected: light-dark(--blue-150, --blue-80);
-@value --calendar-date-background-start-range: light-dark(--blue-150, --blue-80);
-@value --calendar-date-background-in-range: light-dark(--blue-20, --blue-150);
-@value --calendar-date-background-end-range: light-dark(--blue-150, --blue-80);
-
-/* Logo */
-@value --logo-primary: light-dark(--red-100, --white);
-
-/* States */
-@value --focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-@value --focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
-
-/* Menu */
-@value --menu-item-background-hover: light-dark(--gray-20, --gray-190);
-@value --menu-item-background-selected: light-dark(--gray-10, --gray-180);
-@value --menu-text-section-header: light-dark(--blue-120, --blue-80);
-
-/* Skeleton */
-@value --skeleton-01: light-dark(--gray-10, --gray-180);
-@value --skeleton-02: light-dark(--gray-30, --gray-160);
+@value --calendar-date-background-selected: light-dark(#143c50, #5897b8);
+@value --calendar-date-background-start-range: light-dark(#143c50, #5897b8);
+@value --calendar-date-background-in-range: light-dark(#d5e5ed, #143c50);
+@value --calendar-date-background-end-range: light-dark(#143c50, #5897b8);
+@value --logo-primary: light-dark(#b90835, #ffffff);
+@value --menu-item-background-hover: light-dark(#e6e6e6, #212121);
+@value --menu-item-background-selected: light-dark(#f2f2f2, #262626);
+@value --menu-text-section-header: light-dark(#29698C, #5897b8);
+@value --base: 1;
+@value --above: 10;
+@value --modal: 1000;
+@value --toast: 1100;
+@value --skip-to-content: 1200;
+@value --10: 0.125rem;
+@value --15: 0.188rem;
+@value --20: 0.25rem;
+@value --30: 0.375rem;
+@value --40: 0.5rem;
+@value --50: 0.625rem;
+@value --60: 0.75rem;
+@value --70: 0.875rem;
+@value --75: 0.938rem;
+@value --80: 1rem;
+@value --90: 1.25rem;
+@value --100: 1.5rem;
+@value --110: 1.75rem;
+@value --120: 2rem;
+@value --130: 2.5rem;
+@value --140: 2.75rem;
+@value --150: 3rem;
+@value --00: 0;
+@value --05: 0.063rem;
