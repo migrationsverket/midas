@@ -18,6 +18,7 @@ const meta: Meta<typeof ComboBox> = {
     description: 'Beskrivning',
     errorMessage: 'Fel!',
     errorPosition: 'top',
+    size: 'large',
   },
   argTypes: {
     placeholder: { control: 'text' },

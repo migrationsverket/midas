@@ -16,6 +16,7 @@ export default {
     label: 'Label',
     description: 'Description',
     errorPosition: 'top',
+    size: 'large',
   },
 
   render: args => {

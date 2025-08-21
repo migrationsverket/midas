@@ -25,6 +25,7 @@ const meta: Meta<typeof Select> = {
     showTags: false,
     errorPosition: 'top',
     onSelectionChange: onChange,
+    size: 'large',
   },
   render: args => {
     return <Select {...args} />

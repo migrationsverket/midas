@@ -14,6 +14,7 @@ const meta: Meta<typeof DatePicker> = {
     label: 'Välj datum',
     description: 'Beskrivning',
     errorPosition: 'top',
+    size: 'large',
   },
   parameters: {
     // UX team rules that placeholder contrast shouldn't be checked
