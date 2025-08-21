@@ -34,7 +34,6 @@ const baseProject: TestProjectConfiguration = {
       instances: [
         {
           browser: 'chromium',
-          context: { viewport: { width: 1200, height: 800 } },
         },
       ],
     },
