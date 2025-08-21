@@ -17,6 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright
-        run: npx playwright install
+        run: npx playwright install chromium --with-deps --only-shell
       - name: Test Storybook
         run: npx nx run components:test-storybook && npx nx run components:test-storybook:dark-mode
