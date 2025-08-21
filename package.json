@@ -2,11 +2,11 @@
   "name": "@midas-ds/source",
   "version": "0.0.0",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "generate:css-tokens": "npx tsc -p packages/components/tsconfig.build.json && node scripts/generate-css-tokens.mjs"
   },
   "private": false,
   "dependencies": {
