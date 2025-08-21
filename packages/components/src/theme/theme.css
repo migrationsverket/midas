@@ -69,7 +69,7 @@
   --color-signal-red-180: #3f0a0a;
   --color-signal-red-190: #2a0606;
   --color-signal-red-200: #150303;
-  --typography-font-family: 'Inter', sans-serif;
+  --typography-font-family: '"Inter", sans-serif';
   --typography-line-height-10: 1rem;
   --typography-line-height-20: 1.125rem;
   --typography-line-height-30: 1.25rem;
