@@ -50,6 +50,7 @@ export const baseColors = {
   signalGreen30: '#bae5c5',
   signalGreen100: '#008d3c',
   signalYellow10: '#fff8e1',
+  signalYellow20: '#FFEBA8',
   signalYellow100: '#fdb813',
   signalRed10: '#ffefef',
   signalRed20: '#ffdfdf',
@@ -76,16 +77,16 @@ export const baseColors = {
 export const typography = {
   fontFamily: '"Inter", sans-serif',
 
-  lineHeight10: 1, // 16px
-  lineHeight20: 1.125, // 18px (18/16)
-  lineHeight30: 1.25, // 20px (20/16)
-  lineHeight40: 1.375, // 22px (22/16)
-  lineHeight50: 1.5, // 24px (24/16)
-  lineHeight60: 1.75, // 28px (28/16)
-  lineHeight70: 2, // 32px (32/16)
-  lineHeight80: 2.25, // 36px (36/16)
-  lineHeight90: 2.5, // 40px (40/16)
-  lineHeight100: 2.75, // 44px (44/16)
+  lineHeight10: '1rem', // 16px
+  lineHeight20: '1.125rem', // 18px (18/16)
+  lineHeight30: '1.25rem', // 20px (20/16)
+  lineHeight40: '1.375rem', // 22px (22/16)
+  lineHeight50: '1.5rem', // 24px (24/16)
+  lineHeight60: '1.75rem', // 28px (28/16)
+  lineHeight70: '2rem', // 32px (32/16)
+  lineHeight80: '2.25rem', // 36px (36/16)
+  lineHeight90: '2.5rem', // 40px (40/16)
+  lineHeight100: '2.75rem', // 44px (44/16)
 
   fontSize10: '0.75rem', // 12px (12/16)
   fontSize20: '0.875rem', // 14px (14/16)
@@ -127,6 +128,7 @@ export const spacing = {
 export const states = {
   focus:
     '0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',
+  focusInset: 'inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)',
 }
 
 export const transitions = {
@@ -246,7 +248,9 @@ export const semantic = {
   buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed130})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   
-  buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
+  buttonBorderSecondary: `light-dark(light-dark(${baseColors.blue150}, ${baseColors.blue100}), ${baseColors.gray10})`,
+  buttonBackgroundIconHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
+  buttonBackgroundIconActive: `light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))`,
 
   badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
 
