@@ -21,12 +21,12 @@ export default defineProject({
     }),
   ],
   test: {
-    name: 'storybook:light-mode',
+    name: 'storybook:dark-mode',
     browser: {
       enabled: true,
       headless: true,
       provider: 'playwright',
-      instances: [{ browser: 'chromium', context: { colorScheme: 'light' } }],
+      instances: [{ browser: 'chromium', context: { colorScheme: 'dark' } }],
     },
     setupFiles: [path.join(dirname, '.storybook', 'vitest.setup.ts')],
   },

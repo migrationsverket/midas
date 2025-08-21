@@ -24,7 +24,7 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
-        viteConfigPath: 'vite.config.ts',
+        viteConfigPath: 'packages/components/vite.config.ts',
       },
     },
   },
@@ -34,7 +34,7 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      tsconfigPath: 'tsconfig.lib.json',
+      tsconfigPath: 'packages/components/tsconfig.lib.json',
       propFilter: prop => {
         if (prop.parent) {
           return !prop.parent.fileName.includes('@types/react')

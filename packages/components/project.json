@@ -31,48 +31,46 @@
     },
 
     "storybook": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "command": "npx storybook dev",
-        "cwd": "packages/components",
-        "port": 4400
+        "port": 4400,
+        "configDir": "packages/components/.storybook",
+        "noManagerCache": true
       },
       "configurations": {
         "ci": {
-          "args": ["--quiet"]
+          "quiet": true
         }
       }
     },
     "build-storybook": {
-      "executor": "nx:run-commands",
-      "outputs": ["{options.output-dir}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "cwd": "packages/components",
-        "command": "npx storybook build",
-        "output-dir": "../../dist/storybook/ui"
+        "outputDir": "dist/storybook/ui",
+        "configDir": "packages/components/.storybook"
       },
       "configurations": {
         "ci": {
-          "args": ["--quiet", "output-dir=../../dist/docs/storybook"]
+          "quiet": true,
+          "outputDir": "dist/docs/storybook"
         }
       }
     },
     "test-storybook": {
-      "executor": "@nx/vite:test",
+      "executor": "nx:run-commands",
       "options": {
-        "config": "packages/components/vitest.config.ts",
-        "project": "storybook"
+        "command": "vitest -c vitest.config.ts --project=storybook:light-mode --watch=false"
       },
       "configurations": {
         "watch": {
-          "watch": true
+          "command": "vitest -c vitest.config.ts --project=storybook:light-mode"
         },
         "dark-mode": {
-          "project": "storybook:dark-mode"
+          "command": "vitest -c vitest.config.dark.ts --project=storybook:dark-mode --watch=false"
         },
         "dark-mode:watch": {
-          "watch": true,
-          "project": "storybook:dark-mode"
+          "command": "vitest -c vitest.config.dark.ts --project=storybook:dark-mode"
         }
       }
     },
