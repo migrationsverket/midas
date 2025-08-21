@@ -11,6 +11,7 @@
   "dependencies": {
     "@docusaurus/babel": "^3.7.0",
     "@docusaurus/eslint-plugin": "^3.7.0",
+    "@nx-extend/docusaurus": "^4.0.0",
     "@nx/eslint-plugin": "21.4.0",
     "@nx/storybook": "21.4.0",
     "@nx/vite": "21.4.0",
@@ -58,7 +59,6 @@
     "@docusaurus/tsconfig": "^3.8.0",
     "@docusaurus/types": "^3.8.0",
     "@easyops-cn/docusaurus-search-local": "^0.51.1",
-    "@nx-extend/docusaurus": "^4.0.0",
     "@nx/cypress": "21.4.0",
     "@nx/devkit": "21.4.0",
     "@nx/eslint": "21.4.0",
