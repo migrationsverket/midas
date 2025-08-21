@@ -53,7 +53,7 @@ const preview: Preview = {
     chromatic: {
       modes: globalModes,
     },
-    a11y: { test: 'error', context: '#storybook-root' },
+    a11y: { test: 'error' },
   },
   globalTypes: {
     scheme: {
