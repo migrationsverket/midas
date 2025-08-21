@@ -69,7 +69,7 @@
   --color-signal-red-180: #3f0a0a;
   --color-signal-red-190: #2a0606;
   --color-signal-red-200: #150303;
-  --typography-font-family: "Inter", sans-serif;
+  --typography-font-family: 'Inter', sans-serif;
   --typography-line-height-10: 1rem;
   --typography-line-height-20: 1.125rem;
   --typography-line-height-30: 1.25rem;
@@ -111,8 +111,11 @@
   --spacing-100: 4rem;
   --spacing-110: 5rem;
   --spacing-120: 6rem;
-  --state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-  --state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
+  --state-focus:
+    0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
+  --state-focus-inset:
+    inset 0 0 0 2px light-dark(black, white),
+    inset 0 0 0 4px light-dark(white, black);
   --transition-slow: 500ms;
   --transition-normal: 300ms;
   --transition-fast: 250ms;
@@ -170,8 +173,8 @@
   --semantic-icon-info: light-dark(#0066cc, #0066cc);
   --semantic-icon-warning: light-dark(#e62323, #e62323);
   --semantic-icon-important: light-dark(#fdb813, #fdb813);
-  --semantic-link-enabled: light-dark(#29698C, #6CA3C0);
-  --semantic-link-hover: light-dark(#143c50, #94BCD1);
+  --semantic-link-enabled: light-dark(#29698c, #6ca3c0);
+  --semantic-link-hover: light-dark(#143c50, #94bcd1);
   --semantic-link-pressed: light-dark(#171717, #abcbdb);
   --semantic-link-visited: light-dark(#954b95, #b46ab4);
   --semantic-support-border-success: light-dark(#008d3c, #008d3c);
@@ -204,11 +207,23 @@
   --semantic-button-background-danger-hover: light-dark(#bc1d1d, #e62323);
   --semantic-button-background-danger-active: light-dark(#7d1313, #a71919);
   --semantic-button-background-disabled: light-dark(#f2f2f2, #262626);
-  --semantic-button-border-secondary: light-dark(light-dark(#143c50, #2e7ca5), #f2f2f2);
-  --semantic-button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
-  --semantic-button-background-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
+  --semantic-button-border-secondary: light-dark(
+    light-dark(#143c50, #2e7ca5),
+    #f2f2f2
+  );
+  --semantic-button-background-icon-hover: light-dark(
+    rgba(0 0 0 / 10%),
+    rgba(255 255 255 / 10%)
+  );
+  --semantic-button-background-icon-active: light-dark(
+    rgba(0 0 0 / 20%),
+    rgba(255 255 255 / 20%)
+  );
   --semantic-badge-background: light-dark(#e62323, #eb4e4e);
-  --semantic-calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
+  --semantic-calendar-date-background-hover: light-dark(
+    rgba(0 0 0 / 10%),
+    rgba(255 255 255 / 10%)
+  );
   --semantic-calendar-date-background-selected: light-dark(#143c50, #5897b8);
   --semantic-calendar-date-background-start-range: light-dark(#143c50, #5897b8);
   --semantic-calendar-date-background-in-range: light-dark(#d5e5ed, #143c50);
@@ -216,7 +231,7 @@
   --semantic-logo-primary: light-dark(#b90835, #ffffff);
   --semantic-menu-item-background-hover: light-dark(#e6e6e6, #212121);
   --semantic-menu-item-background-selected: light-dark(#f2f2f2, #262626);
-  --semantic-menu-text-section-header: light-dark(#29698C, #5897b8);
+  --semantic-menu-text-section-header: light-dark(#29698c, #5897b8);
   --z-index-base: 1;
   --z-index-above: 10;
   --z-index-modal: 1000;
