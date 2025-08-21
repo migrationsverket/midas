@@ -49,7 +49,11 @@ try {
                 processTokens(value, `${prefix}${kebabCase(key)}-`);
             } else {
                 // Directly add simple values
-                cssOutput += `  ${cssVarName}: ${value};\n`;
+                let processedValue = value;
+                if (typeof value === 'string' && value.startsWith('#')) {
+                    processedValue = value.toLowerCase();
+                }
+                cssOutput += `  ${cssVarName}: ${processedValue};\n`;
                 collectedCssVars.add(cssVarName); // Add to set
             }
         }
