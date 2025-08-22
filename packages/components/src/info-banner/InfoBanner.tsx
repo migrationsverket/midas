@@ -29,7 +29,11 @@ export interface InfoBannerProps
    */
   isDismissable?: boolean
   /**
-   * The initial visibility of the banner.
+   * The initial visibility of the banner when it is uncontrolled.
+   */
+  defaultOpen?: boolean
+  /**
+   * Controls the visibility of the banner when it is controlled.
    */
   isOpen?: boolean
   /**
@@ -47,17 +51,20 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   type,
   children,
   isDismissable = false,
-  isOpen: initialIsOpen = true,
+  defaultOpen,
+  isOpen: controlledIsOpen,
   onOpenChange,
   ...rest
 }) => {
   const Icon = iconMap[type]
-  const [isOpen, setIsOpen] = React.useState<boolean>(initialIsOpen)
+  const [isOpen, setIsOpen] = React.useState<boolean>(controlledIsOpen ?? defaultOpen ?? true)
   const strings = useLocalizedStringFormatter(messages)
 
   React.useEffect(() => {
-    setIsOpen(initialIsOpen)
-  }, [initialIsOpen])
+    if (controlledIsOpen !== undefined) {
+      setIsOpen(controlledIsOpen)
+    }
+  }, [controlledIsOpen])
 
   const handleDismiss = () => {
     setIsOpen(false)

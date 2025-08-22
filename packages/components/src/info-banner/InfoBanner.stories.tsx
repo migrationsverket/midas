@@ -55,17 +55,21 @@ export const Important = {
 
 export const Dismissable = {
   render: (args: JSX.IntrinsicAttributes & InfoBannerProps) => {
-    const [isOpen, setIsOpen] = React.useState(args.isOpen)
+    const [isOpen, setIsOpen] = React.useState(args.defaultOpen ?? true)
     React.useEffect(() => {
-      setIsOpen(args.isOpen)
+      if (args.isOpen !== undefined) {
+        setIsOpen(args.isOpen)
+      }
     }, [args.isOpen])
     return (
       <InfoBanner
         {...args}
         isOpen={isOpen}
-        onOpenChange={(isOpen) => {
-          setIsOpen(isOpen)
-          action('onOpenChange')(isOpen)
+        onOpenChange={(newOpen) => {
+          if (args.isOpen === undefined) {
+            setIsOpen(newOpen)
+          }
+          action('onOpenChange')(newOpen)
         }}
       />
     )
@@ -80,10 +84,13 @@ export const Dismissable = {
       '        information. You will hear from us when we have made a decision.',
     type: 'success',
     isDismissable: true,
-    isOpen: true, // Default to open
+    defaultOpen: true, // Default to open
   },
   argTypes: {
     isOpen: {
+      control: 'boolean',
+    },
+    defaultOpen: {
       control: 'boolean',
     },
   },
