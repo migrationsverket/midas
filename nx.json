@@ -6,31 +6,31 @@
         "test": {
           "semverBump": "none",
           "changelog": {
-            "title": "\uD83E\uDDEA Tests updated"
+            "title": "🧪 Tests updated"
           }
         },
         "docs": {
           "semverBump": "none",
           "changelog": {
-            "title": "\uD83D\uDCD6 Documentation changes"
+            "title": "📖 Documentation changes"
           }
         },
         "chore": {
           "changelog": {
-            "title": "\uD83D\uDD27 Maintenance"
+            "title": "🔧 Maintenance"
           }
         },
         "refactor": {},
         "perf": {
           "changelog": {
-            "title": "\uD83C\uDFC7 Performance improvements"
+            "title": "🏇 Performance improvements"
           }
         },
         "style": {
-          "title": "✏\uFE0F Code style changes"
+          "title": "✏️ Code style changes"
         },
         "revert": {
-          "title": "\uD83D\uDD19 Rollback changes"
+          "title": "🔙 Rollback changes"
         }
       }
     },
@@ -123,6 +123,11 @@
         "{workspaceRoot}/.stylelintrc(.(json|yml|yaml|js))?"
       ],
       "cache": true
+    },
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {

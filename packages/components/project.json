@@ -8,7 +8,7 @@
     "generate-theme-css": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node tools/generate-theme-css.js"
+        "command": "nx g @midas-ds/workspace-tools:generate-theme"
       }
     },
     "test": {
