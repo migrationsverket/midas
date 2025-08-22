@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "workspace-tools",
+  "version": "0.0.1",
+  "generators": {
+    "generate-theme": {
+      "factory": "./src/generators/generate-theme",
+      "schema": "./src/generators/schema.json",
+      "description": "Generate theme.css from tokens.ts"
+    }
+  }
+}

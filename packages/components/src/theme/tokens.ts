@@ -1,6 +1,6 @@
 export const baseColors = {
-  black: '#000000',
-  white: '#ffffff',
+  black: '#000',
+  white: '#fff',
 
   blackHover: '#0d0d0d',
   whiteHover: '#e6e6e6',
@@ -8,20 +8,20 @@ export const baseColors = {
   gray10: '#f2f2f2',
   gray20: '#e6e6e6',
   gray30: '#d9d9d9',
-  gray40: '#cccccc',
+  gray40: '#ccc',
   gray50: '#bfbfbf',
   gray60: '#b3b3b3',
   gray70: '#a6a6a6',
-  gray80: '#999999',
+  gray80: '#999',
   gray90: '#8c8c8c',
   gray100: '#808080',
   gray110: '#737373',
-  gray120: '#666666',
+  gray120: '#666',
   gray130: '#5d5d5d',
   gray140: '#525252',
   gray150: '#474747',
   gray160: '#383838',
-  gray170: '#333333',
+  gray170: '#333',
   gray180: '#262626',
   gray190: '#212121',
   gray200: '#171717',
@@ -45,7 +45,7 @@ export const baseColors = {
   red100: '#b90835',
 
   signalBlue10: '#eaf2f6',
-  signalBlue100: '#0066cc',
+  signalBlue100: '#06c',
   signalGreen20: '#d5f2d9',
   signalGreen30: '#bae5c5',
   signalGreen100: '#008d3c',
@@ -196,7 +196,7 @@ export const semantic = {
   fieldActive02: `light-dark(${baseColors.gray30}, ${baseColors.gray140})`,
 
   fieldDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  
+
   skeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   skeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
   iconPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
@@ -247,8 +247,8 @@ export const semantic = {
   buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed100})`,
   buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed130})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  
-  buttonBorderSecondary: `light-dark(light-dark(${baseColors.blue150}, ${baseColors.blue100}), ${baseColors.gray10})`,
+
+  buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
   buttonBackgroundIconHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   buttonBackgroundIconActive: `light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))`,
 

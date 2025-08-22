@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@midas-ds/*": ["packages/*/src/index.ts"]
+      "@midas-ds/*": ["packages/*/src/index.ts"],
+      "@midas-ds/workspace-tools": ["workspace-tools/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
