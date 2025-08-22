@@ -168,10 +168,6 @@ export declare const semantic: {
     fieldHover02: string;
     fieldActive02: string;
     fieldDisabled: string;
-    /**
-     *  @deprecated since v10.2.0, please use the `skeleton01` instead.
-     */
-    fieldSkeleton: string;
     skeleton01: string;
     skeleton02: string;
     iconPrimary: string;
@@ -218,10 +214,6 @@ export declare const semantic: {
     buttonBackgroundDangerHover: string;
     buttonBackgroundDangerActive: string;
     buttonBackgroundDisabled: string;
-    /**
-     *  @deprecated since v10.2.0, please use the `skeleton01` instead.
-     */
-    buttonBackgroundSkeleton: string;
     buttonBorderSecondary: string;
     badgeBackground: string;
     calendarDateBackgroundHover: string;
