@@ -1,5 +1,8 @@
 import type { Meta } from '@storybook/react'
-import { InfoBanner } from './InfoBanner'
+import { InfoBanner, InfoBannerProps } from './InfoBanner'
+import React from 'react'
+import { action } from '@storybook/addon-actions'
+import { JSX } from 'react/jsx-runtime'
 
 const meta: Meta<typeof InfoBanner> = {
   component: InfoBanner,
@@ -51,6 +54,22 @@ export const Important = {
 }
 
 export const Dismissable = {
+  render: (args: JSX.IntrinsicAttributes & InfoBannerProps) => {
+    const [isOpen, setIsOpen] = React.useState(args.isOpen)
+    React.useEffect(() => {
+      setIsOpen(args.isOpen)
+    }, [args.isOpen])
+    return (
+      <InfoBanner
+        {...args}
+        isOpen={isOpen}
+        onOpenChange={(isOpen) => {
+          setIsOpen(isOpen)
+          action('onOpenChange')(isOpen)
+        }}
+      />
+    )
+  },
   args: {
     title: 'Thank you!',
     message:
@@ -60,6 +79,12 @@ export const Dismissable = {
       '        You can close the e-service. We will contact you if we need more\n' +
       '        information. You will hear from us when we have made a decision.',
     type: 'success',
-    dismissable: true,
+    isDismissable: true,
+    isOpen: true, // Default to open
+  },
+  argTypes: {
+    isOpen: {
+      control: 'boolean',
+    },
   },
 }
