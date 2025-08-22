@@ -1,17 +1,18 @@
-import type { Meta } from '@storybook/react'
-import { InfoBanner, InfoBannerProps } from './InfoBanner'
+import type { Meta, StoryObj } from '@storybook/react'
+import { InfoBanner } from './InfoBanner'
 import React from 'react'
-import { action } from '@storybook/addon-actions'
-import { JSX } from 'react/jsx-runtime'
+import { expect, fn, userEvent } from '@storybook/test'
+import { Button } from '../button'
 
-const meta: Meta<typeof InfoBanner> = {
+type Story = StoryObj<typeof InfoBanner>
+
+export default {
   component: InfoBanner,
   title: 'Components/InfoBanner',
   tags: ['autodocs'],
-}
-export default meta
+} satisfies Meta<typeof InfoBanner>
 
-export const Success = {
+export const Success: Story = {
   args: {
     title: 'Thank you!',
     message:
@@ -24,7 +25,7 @@ export const Success = {
   },
 }
 
-export const Warning = {
+export const Warning: Story = {
   args: {
     title: 'Varning',
     message: `Warning message
@@ -36,7 +37,7 @@ export const Warning = {
   },
 }
 
-export const Info = {
+export const Info: Story = {
   args: {
     title: 'Information',
     message:
@@ -45,7 +46,7 @@ export const Info = {
   },
 }
 
-export const Important = {
+export const Important: Story = {
   args: {
     title: 'Viktig',
     message: 'Allt är viktigt',
@@ -53,27 +54,7 @@ export const Important = {
   },
 }
 
-export const Dismissable = {
-  render: (args: JSX.IntrinsicAttributes & InfoBannerProps) => {
-    const [isOpen, setIsOpen] = React.useState(args.defaultOpen ?? true)
-    React.useEffect(() => {
-      if (args.isOpen !== undefined) {
-        setIsOpen(args.isOpen)
-      }
-    }, [args.isOpen])
-    return (
-      <InfoBanner
-        {...args}
-        isOpen={isOpen}
-        onOpenChange={(newOpen) => {
-          if (args.isOpen === undefined) {
-            setIsOpen(newOpen)
-          }
-          action('onOpenChange')(newOpen)
-        }}
-      />
-    )
-  },
+export const Dismissable: Story = {
   args: {
     title: 'Thank you!',
     message:
@@ -84,14 +65,76 @@ export const Dismissable = {
       '        information. You will hear from us when we have made a decision.',
     type: 'success',
     isDismissable: true,
-    defaultOpen: true, // Default to open
   },
-  argTypes: {
-    isOpen: {
-      control: 'boolean',
-    },
-    defaultOpen: {
-      control: 'boolean',
-    },
+}
+
+export const DismissableTests: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    ...Dismissable.args,
+    onOpenChange: fn(),
+  },
+  play: async ({ canvas, step, args }) => {
+    await step('it should fire the onOpenChange event and close', async () => {
+      const closeButton = canvas.getByRole('button')
+      await userEvent.click(closeButton)
+      await expect(args.onOpenChange).toHaveBeenCalledOnce()
+      await expect(closeButton).not.toBeVisible()
+    })
+  },
+}
+
+export const Controlled: Story = {
+  args: {
+    ...Dismissable.args,
+    onOpenChange: fn(),
+  },
+  render: args => {
+    const [isOpen, setIsOpen] = React.useState(true)
+
+    return (
+      <>
+        <InfoBanner
+          {...args}
+          isOpen={isOpen}
+          onOpenChange={newOpen => {
+            setIsOpen(newOpen)
+            args.onOpenChange?.(newOpen)
+          }}
+        />
+        {!isOpen && (
+          <Button
+            autoFocus
+            onPress={() => setIsOpen(true)}
+          >
+            Open
+          </Button>
+        )}
+      </>
+    )
+  },
+}
+
+export const ControlledTests: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  ...Controlled,
+  play: async ({ canvas, step, args }) => {
+    await step(
+      'it should fire the onOpenChange on both open and close',
+      async () => {
+        const closeButton = canvas.getByRole('button')
+        await userEvent.click(closeButton)
+        await expect(args.onOpenChange).toHaveBeenCalledWith(false)
+        await userEvent.click(canvas.getByRole('button'))
+        await expect(args.onOpenChange).toHaveBeenCalledWith(true)
+        await expect(args.onOpenChange).toHaveBeenCalledTimes(2)
+      },
+    )
   },
 }

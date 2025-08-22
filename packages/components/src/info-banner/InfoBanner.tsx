@@ -23,7 +23,6 @@ export interface InfoBannerProps
   message?: string | React.ReactNode
   /** Additional elements to be displayed inside the banner. */
   children?: React.ReactNode
-
   /**
    * If true, a dismiss button will be displayed in the top right corner.
    */
@@ -51,25 +50,44 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   type,
   children,
   isDismissable = false,
-  defaultOpen,
+  defaultOpen = true,
   isOpen: controlledIsOpen,
   onOpenChange,
   ...rest
 }) => {
+  const isInitialRender = React.useRef(true)
+
+  const isControlled = typeof controlledIsOpen !== 'undefined'
+
+  const [isOpen, setIsOpen] = React.useState<boolean>(
+    isControlled ? controlledIsOpen : defaultOpen,
+  )
   const Icon = iconMap[type]
-  const [isOpen, setIsOpen] = React.useState<boolean>(controlledIsOpen ?? defaultOpen ?? true)
+
   const strings = useLocalizedStringFormatter(messages)
 
-  React.useEffect(() => {
-    if (controlledIsOpen !== undefined) {
-      setIsOpen(controlledIsOpen)
-    }
-  }, [controlledIsOpen])
-
-  const handleDismiss = () => {
-    setIsOpen(false)
+  const handleClose = () => {
     onOpenChange?.(false)
+    setIsOpen(false)
   }
+
+  React.useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false
+      return
+    }
+
+    setIsOpen(previousOpen => {
+      const isOpening =
+        (isControlled && controlledIsOpen) || (!isControlled && !previousOpen)
+
+      if (isOpening) {
+        onOpenChange?.(true)
+      }
+
+      return isOpening
+    })
+  }, [controlledIsOpen, isControlled, onOpenChange])
 
   if (isOpen)
     return (
@@ -94,7 +112,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
             <Button
               variant='icon'
               aria-label={strings.format('close')}
-              onPress={handleDismiss}
+              onPress={handleClose}
             >
               <X size={20} />
             </Button>
