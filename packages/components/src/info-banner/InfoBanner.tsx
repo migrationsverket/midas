@@ -68,7 +68,10 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
 
   const handleClose = () => {
     onOpenChange?.(false)
-    setIsOpen(false)
+
+    if (!isControlled) {
+      setIsOpen(false)
+    }
   }
 
   React.useEffect(() => {
