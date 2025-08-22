@@ -10,6 +10,7 @@ const meta: Meta<typeof Button> = {
   args: {
     variant: 'primary',
     children: 'Button',
+    size: 'large',
   },
   argTypes: {
     children: { type: 'string' },
@@ -18,8 +19,6 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-  render: args => <Button {...args} />,
-
   play: async ({ canvas, step, args }) => {
     await step('it should have focus when clicked', async () => {
       const button = canvas.getByRole('button')

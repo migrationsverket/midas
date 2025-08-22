@@ -23,12 +23,9 @@ const meta: Meta<typeof LinkButton> = {
       control: { type: 'radio' },
       defaultValue: 'left',
     },
-    args: {
-      size: 'large',
-    },
   },
-  render: args => {
-    return <LinkButton {...args} />
+  args: {
+    size: 'large',
   },
   play: async ({ canvas, step, args }) => {
     await step('it should change size according to size prop', async () => {
