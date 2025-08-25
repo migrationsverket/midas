@@ -1,15 +1,25 @@
+import {
+  Menu as AriaMenu,
+  type MenuProps as AriaMenuProps,
+} from 'react-aria-components'
 import clsx from 'clsx'
-import { Menu as AriaMenu, MenuProps } from 'react-aria-components'
+import type { Size } from '../common/types'
 import styles from './Menu.module.css'
 
-export type { MenuProps }
+export interface MenuProps<T> extends AriaMenuProps<T> {
+  /** Component size (large: height 40px, medium: height 32px)
+   *  @default 'large'
+   **/
+  size?: Size
+}
 
 export const Menu = <T extends object>({
   className,
+  size = 'large',
   ...rest
 }: MenuProps<T>) => (
   <AriaMenu
-    className={clsx(className, styles.menu)}
+    className={clsx(className, styles.menu, size === 'medium' && styles.medium)}
     {...rest}
   />
 )
