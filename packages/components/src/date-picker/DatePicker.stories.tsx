@@ -33,9 +33,6 @@ const meta: Meta<typeof DatePicker> = {
       },
     },
   },
-  render: args => {
-    return <DatePicker {...args} />
-  },
 }
 export default meta
 type Story = StoryObj<typeof DatePicker>

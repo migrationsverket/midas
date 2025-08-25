@@ -29,9 +29,6 @@ const meta: Meta<typeof DateRangePicker> = {
     errorMessage: 'Felmeddelande',
     errorPosition: 'top',
   },
-  render: args => {
-    return <DateRangePicker {...args} />
-  },
 }
 export default meta
 type Story = StoryObj<typeof DateRangePicker>

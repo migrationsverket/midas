@@ -15,9 +15,6 @@ const meta: Meta<typeof SearchField> = {
     errorPosition: 'top',
     className: 'test-class',
   },
-  render: args => {
-    return <SearchField {...args} />
-  },
 }
 export default meta
 type Story = StoryObj<typeof SearchField>

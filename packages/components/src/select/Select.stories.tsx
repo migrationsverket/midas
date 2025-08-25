@@ -27,9 +27,6 @@ const meta: Meta<typeof Select> = {
     onSelectionChange: onChange,
     size: 'large',
   },
-  render: args => {
-    return <Select {...args} />
-  },
 }
 export default meta
 type Story = StoryObj<typeof Select>

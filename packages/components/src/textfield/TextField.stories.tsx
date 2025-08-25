@@ -18,10 +18,6 @@ export default {
     errorPosition: 'top',
     size: 'large',
   },
-
-  render: args => {
-    return <TextField {...args} />
-  },
 } as Meta<typeof TextField>
 
 type Story = StoryObj<typeof TextField>

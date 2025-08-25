@@ -31,9 +31,6 @@ export default {
     label: 'Välj ett datum',
     description: 'Vilket som helst',
   },
-  render: args => {
-    return <DateField {...args} />
-  },
 } as Meta<typeof DateField>
 
 /** Don't put format in description, it changes with browser language settings! */
