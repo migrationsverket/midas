@@ -4,7 +4,7 @@ import { generateMockOptions, optionsWithSections } from './utils'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent, within } from '@storybook/test'
 import styles from './ComboBox.module.css'
-import { sizeModes } from '../../.storybook/modes'
+
 import React from 'react'
 import type { ListBoxSectionElement } from '../list-box'
 
@@ -18,20 +18,13 @@ const meta: Meta<typeof ComboBox> = {
     description: 'Beskrivning',
     errorMessage: 'Fel!',
     errorPosition: 'top',
+    size: 'large',
   },
   argTypes: {
     placeholder: { control: 'text' },
   },
-  parameters: {
-    chromatic: {
-      modes: sizeModes,
-    },
-  },
-  render: (args, { globals: { size } }) => (
-    <ComboBox
-      {...args}
-      size={size}
-    >
+  render: args => (
+    <ComboBox {...args}>
       <ComboBoxItem>Apple</ComboBoxItem>
       <ComboBoxItem>Lemon</ComboBoxItem>
     </ComboBox>
@@ -51,23 +44,22 @@ export const Default: Story = {
     description: 'Description',
     className: 'test',
   },
-  render: (args, { globals: { size } }) => (
+  render: args => (
     <ComboBox
       data-testid='test'
       items={options}
       {...args}
-      size={size}
     >
       {item => <ComboBoxItem>{item.name}</ComboBoxItem>}
     </ComboBox>
   ),
-  play: async ({ canvas, step, globals: { size } }) => {
+  play: async ({ canvas, step, args }) => {
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('combobox')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+        height: args.size === 'large' ? '48px' : '40px',
       })
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+        height: args.size === 'large' ? '48px' : '40px',
       })
     })
 
@@ -154,12 +146,9 @@ export const Required: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  render: (args, { globals: { size } }) => (
+  render: args => (
     <form>
-      <ComboBox
-        {...args}
-        size={size}
-      >
+      <ComboBox {...args}>
         <ComboBoxItem>Hej</ComboBoxItem>
       </ComboBox>
       <button type='submit'>Submit</button>
@@ -192,12 +181,9 @@ export const CustomErrorMessage: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  render: (args, { globals: { size } }) => (
+  render: args => (
     <form>
-      <ComboBox
-        {...args}
-        size={size}
-      >
+      <ComboBox {...args}>
         <ComboBoxItem>Hej</ComboBoxItem>
       </ComboBox>
       <button type='submit'>Submit</button>
@@ -232,11 +218,8 @@ export const DS1207: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
     className: 'test',
     items: optionsWithSections,
   },
-  render: (args, { globals: { size } }) => (
-    <ComboBox
-      {...args}
-      size={size}
-    >
+  render: args => (
+    <ComboBox {...args}>
       {section => (
         <ComboBoxSection
           {...section}
@@ -278,11 +261,8 @@ export const Sectioned: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
     className: 'test',
     items: optionsWithSections,
   },
-  render: (args, { globals: { size } }) => (
-    <ComboBox
-      {...args}
-      size={size}
-    >
+  render: args => (
+    <ComboBox {...args}>
       {section => (
         <ComboBoxSection
           {...section}
@@ -298,7 +278,7 @@ export const PerformanceTest: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  render: (args, { globals: { size } }) => {
+  render: args => {
     const [numberOfItems, setNumberOfItems] = React.useState(25)
 
     const items = [...Array(numberOfItems).keys()].map(n => ({
@@ -317,10 +297,7 @@ export const PerformanceTest: Story = {
             onChange={e => setNumberOfItems(parseInt(e.target.value))}
           />
         </label>
-        <ComboBox
-          {...args}
-          size={size}
-        >
+        <ComboBox {...args}>
           {items.map(({ name, id }) => (
             <ComboBoxItem key={id}>{name}</ComboBoxItem>
           ))}

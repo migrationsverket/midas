@@ -5,7 +5,6 @@ import { options, optionsWithSections } from './utils'
 import { expect, fn, spyOn, userEvent } from '@storybook/test'
 import { useState } from 'react'
 import { Selection } from 'react-aria-components'
-import { sizeModes } from '../../.storybook/modes'
 
 const onChange = fn()
 const onSubmit = fn()
@@ -26,26 +25,14 @@ const meta: Meta<typeof Select> = {
     showTags: false,
     errorPosition: 'top',
     onSelectionChange: onChange,
-  },
-  parameters: {
-    chromatic: {
-      modes: sizeModes,
-    },
-  },
-  render: (args, { globals: { size } }) => {
-    return (
-      <Select
-        {...args}
-        size={size}
-      />
-    )
+    size: 'large',
   },
 }
 export default meta
 type Story = StoryObj<typeof Select>
 
 export const Normal: Story = {
-  play: async ({ args, canvas, step, globals: { size } }) => {
+  play: async ({ args, canvas, step }) => {
     await step(
       'It should be possible to select an item using the keyboard',
       async () => {
@@ -62,7 +49,7 @@ export const Normal: Story = {
     )
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+        height: args.size === 'large' ? '48px' : '40px',
       })
     })
   },

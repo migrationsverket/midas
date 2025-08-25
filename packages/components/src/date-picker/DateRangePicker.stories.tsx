@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { DateRangePicker } from './DateRangePicker'
 import { expect } from '@storybook/test'
-import { sizeModes } from '../../.storybook/modes'
 
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,
@@ -23,23 +22,12 @@ const meta: Meta<typeof DateRangePicker> = {
         rules: { 'color-contrast': { enabled: false } },
       },
     },
-    chromatic: {
-      modes: sizeModes,
-    },
   },
   args: {
     label: 'Välj datum',
     description: 'Beskrivning',
     errorMessage: 'Felmeddelande',
     errorPosition: 'top',
-  },
-  render: (args, { globals: { size } }) => {
-    return (
-      <DateRangePicker
-        {...args}
-        size={size}
-      />
-    )
   },
 }
 export default meta

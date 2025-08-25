@@ -33,12 +33,3 @@ export const globalModes = {
   //     viewport: 'xLarge',
   //   },
 }
-
-export const sizeModes = {
-  Large: {
-    size: 'large',
-  },
-  Medium: {
-    size: 'medium',
-  },
-}

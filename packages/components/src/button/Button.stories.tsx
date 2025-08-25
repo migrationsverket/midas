@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import { Plus, X } from 'lucide-react'
 import { expect, userEvent } from '@storybook/test'
-import { sizeModes } from '../../.storybook/modes'
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -11,6 +10,7 @@ const meta: Meta<typeof Button> = {
   args: {
     variant: 'primary',
     children: 'Button',
+    size: 'large',
   },
   argTypes: {
     children: { type: 'string' },
@@ -19,20 +19,7 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-  render: (args, { globals: { size } }) => {
-    return (
-      <Button
-        {...args}
-        size={size}
-      />
-    )
-  },
-  parameters: {
-    chromatic: {
-      modes: sizeModes,
-    },
-  },
-  play: async ({ canvas, step, globals: { size } }) => {
+  play: async ({ canvas, step, args }) => {
     await step('it should have focus when clicked', async () => {
       const button = canvas.getByRole('button')
       await userEvent.click(button)
@@ -43,7 +30,7 @@ const meta: Meta<typeof Button> = {
     })
     await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+        height: args.size === 'large' ? '48px' : '40px',
       })
     })
   },
