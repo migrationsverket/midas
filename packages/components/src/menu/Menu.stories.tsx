@@ -3,15 +3,14 @@ import {
   Collection,
   Header,
   Keyboard,
-  MenuSection,
   MenuTrigger,
   Popover,
   SubmenuTrigger,
+  type Selection,
 } from 'react-aria-components'
 import { MenuIcon } from 'lucide-react'
 import { Button } from '../button'
-import { Menu, MenuItem } from '.'
-import type { Selection } from 'react-aria-components'
+import { Menu, MenuItem, MenuPopover, MenuSection, Separator } from '.'
 import React from 'react'
 import { Text } from '../text'
 
@@ -178,6 +177,24 @@ export const Sections: Story = {
   },
 }
 
+export const Separators: Story = {
+  args: {
+    children: (
+      <>
+        <MenuItem>New…</MenuItem>
+        <MenuItem>Open…</MenuItem>
+        <Separator />
+        <MenuItem>Save</MenuItem>
+        <MenuItem>Save as…</MenuItem>
+        <MenuItem>Rename…</MenuItem>
+        <Separator />
+        <MenuItem>Page setup…</MenuItem>
+        <MenuItem>Print…</MenuItem>
+      </>
+    ),
+  },
+}
+
 export const TextSlots: Story = {
   args: {
     children: (
@@ -215,33 +232,27 @@ export const DisabledItems: Story = {
 export const SubMenus: Story = {
   args: {
     items: [
-      { id: 'cut', name: 'Cut' },
-      { id: 'copy', name: 'Copy' },
-      { id: 'delete', name: 'Delete' },
+      { id: '0', name: 'Menu item' },
+      { id: '1', name: 'Menu item' },
+      { id: '2', name: 'Menu item' },
       {
-        id: 'share',
-        name: 'Share',
+        id: '3',
+        name: 'Sub menu',
         children: [
-          { id: 'sms', name: 'SMS' },
-          { id: 'x', name: 'X' },
-          {
-            id: 'email',
-            name: 'Email',
-            children: [
-              { id: 'work', name: 'Work' },
-              { id: 'personal', name: 'Personal' },
-            ],
-          },
+          { id: '31', name: 'Sub menu item' },
+          { id: '32', name: 'Sub menu item' },
+          { id: '33', name: 'Sub menu item' },
         ],
       },
+      { id: '4', name: 'Other menu item' },
     ],
     children: function renderSubmenu(item) {
       return item.children ? (
         <SubmenuTrigger>
           <MenuItem key={item.name}>{item.name}</MenuItem>
-          <Popover>
+          <MenuPopover>
             <Menu items={item.children}>{item => renderSubmenu(item)}</Menu>
-          </Popover>
+          </MenuPopover>
         </SubmenuTrigger>
       ) : (
         <MenuItem key={item.name}>{item.name}</MenuItem>

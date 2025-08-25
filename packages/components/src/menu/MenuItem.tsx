@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { MenuItem as AriaMenuItem, MenuItemProps } from 'react-aria-components'
-import { ChevronRight } from 'lucide-react'
+import { Check, ChevronRight } from 'lucide-react'
 import styles from './Menu.module.css'
 
 export type { MenuItemProps }
@@ -14,10 +14,23 @@ export const MenuItem = <T extends object>(props: MenuItemProps<T>) => (
     }
     className={clsx(styles.menuItem, props.className)}
   >
-    {({ hasSubmenu }) => (
+    {({ hasSubmenu, isSelected, selectionMode }) => (
       <>
+        {selectionMode === 'multiple' && !isSelected && (
+          <Check
+            size={16}
+            className={styles.checkMark}
+          />
+        )}
+        {isSelected && (
+          <Check
+            size={16}
+            className={styles.checkMark}
+            data-selected
+          />
+        )}
         {props.children}
-        {hasSubmenu && <ChevronRight size={14} />}
+        {hasSubmenu && <ChevronRight size={20} />}
       </>
     )}
   </AriaMenuItem>
