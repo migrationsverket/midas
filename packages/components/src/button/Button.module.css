@@ -1,18 +1,15 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --button-background-primary-hover, --button-background-primary, --icon-primary, --button-background-primary-active, --button-background-secondary, --font-size-30, --text-on-color, --button-border-secondary, --button-background-secondary-hover, --button-background-disabled, --white, --border-disabled, --button-background-secondary-active, --button-background-tertiary-hover, --button-background-tertiary-active, --text-tertiary, --button-background-danger, --button-background-danger-hover, --text-disabled, --button-background-disabled, --button-background-danger-active, --focus, --button-background-icon-hover, --button-background-icon-active, --size-50, --size-70, --size-80, --size-100, --size-130, --size-150, --line-height-30 from tokens;
-
 .button {
   --border-width: 1px;
 
-  font-family: --font-family;
-  font-size: --font-size-30;
+  font-family: var(--typography-font-family);
+  font-size: var(--typography-font-size-30);
   font-weight: 500;
-  padding: calc(--size-70 - var(--border-width))
-    calc(--size-100 - var(--border-width));
-  line-height: --line-height-30;
-  background-color: --button-background-primary;
+  padding: calc(var(--size-70) - var(--border-width))
+    calc(var(--size-100) - var(--border-width));
+  line-height: var(--typography-line-height-30);
+  background-color: var(--semantic-button-background-primary);
   border: solid var(--border-width) transparent;
-  color: --text-on-color;
+  color: var(--semantic-text-on-color);
   cursor: pointer;
   opacity: 1;
   outline: none;
@@ -24,7 +21,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -33,107 +30,107 @@
   }
 
   &[data-hovered] {
-    background-color: --button-background-primary-hover;
+    background-color: var(--semantic-button-background-primary-hover);
   }
 
   &[data-pressed] {
-    background-color: --button-background-primary-active;
+    background-color: var(--semantic-button-background-primary-active);
     outline: none;
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
-    background-color: --button-background-disabled;
+    background-color: var(--semantic-button-background-disabled);
   }
 }
 
 .secondary {
-  color: --text-tertiary;
-  background-color: --button-background-secondary;
-  border-color: --button-border-secondary;
+  color: var(--semantic-text-tertiary);
+  background-color: var(--semantic-button-background-secondary);
+  border-color: var(--semantic-button-border-secondary);
   opacity: 1;
 
   &[data-hovered] {
-    background-color: --button-background-secondary-hover;
+    background-color: var(--semantic-button-background-secondary-hover);
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
-    background-color: --button-background-disabled;
-    border-color: --border-disabled;
+    background-color: var(--semantic-button-background-disabled);
+    border-color: var(--semantic-border-disabled);
   }
 
   &[data-pressed] {
-    background-color: --button-background-secondary-active;
-    border-color: --text-tertiary;
+    background-color: var(--semantic-button-background-secondary-active);
+    border-color: var(--semantic-text-tertiary);
   }
 }
 
 .tertiary {
-  color: --text-tertiary;
+  color: var(--semantic-text-tertiary);
   background-color: transparent;
   opacity: 1;
 
   &[data-hovered] {
-    background-color: --button-background-tertiary-hover;
+    background-color: var(--semantic-button-background-tertiary-hover);
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
     background-color: white;
   }
 
   &[data-pressed] {
-    background-color: --button-background-tertiary-active;
+    background-color: var(--semantic-button-background-tertiary-active);
   }
 }
 
 .iconBtn {
   background-color: transparent;
-  padding: calc(--size-70 - var(--border-width));
-  color: --icon-primary;
+  padding: calc(var(--size-70) - var(--border-width));
+  color: var(--semantic-icon-primary);
   display: flex;
   align-items: center;
 
   &[data-hovered] {
-    background-color: --button-background-icon-hover;
+    background-color: var(--semantic-button-background-icon-hover);
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
   }
 
   &[data-pressed] {
-    background-color: --button-background-icon-active;
+    background-color: var(--semantic-button-background-icon-active);
   }
 
   &.medium {
-    padding: calc(--size-50 - var(--border-width));
+    padding: calc(var(--size-50) - var(--border-width));
   }
 }
 
 .danger {
-  color: --white;
-  background-color: --button-background-danger;
+  color: var(--color-white);
+  background-color: var(--semantic-button-background-danger);
   opacity: 1;
 
   &[data-hovered] {
-    color: --white;
-    background-color: --button-background-danger-hover;
+    color: var(--color-white);
+    background-color: var(--semantic-button-background-danger-hover);
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
-    background-color: --button-background-disabled;
+    background-color: var(--semantic-button-background-disabled);
   }
 
   &[data-pressed] {
-    background-color: --button-background-danger-active;
+    background-color: var(--semantic-button-background-danger-active);
     outline: none;
   }
 }
@@ -147,8 +144,8 @@
 }
 
 .medium {
-  padding: calc(--size-50 - var(--border-width))
-    calc(--size-80 - var(--border-width));
+  padding: calc(var(--size-50) - var(--border-width))
+    calc(var(--size-80) - var(--border-width));
 }
 
 @media (forced-colors: active) {
