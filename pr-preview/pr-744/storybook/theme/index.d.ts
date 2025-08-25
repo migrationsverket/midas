@@ -47,6 +47,7 @@ export declare const theme: {
         signalGreen30: string;
         signalGreen100: string;
         signalYellow10: string;
+        signalYellow20: string;
         signalYellow100: string;
         signalRed10: string;
         signalRed20: string;
@@ -71,16 +72,16 @@ export declare const theme: {
     };
     typography: {
         fontFamily: string;
-        lineHeight10: number;
-        lineHeight20: number;
-        lineHeight30: number;
-        lineHeight40: number;
-        lineHeight50: number;
-        lineHeight60: number;
-        lineHeight70: number;
-        lineHeight80: number;
-        lineHeight90: number;
-        lineHeight100: number;
+        lineHeight10: string;
+        lineHeight20: string;
+        lineHeight30: string;
+        lineHeight40: string;
+        lineHeight50: string;
+        lineHeight60: string;
+        lineHeight70: string;
+        lineHeight80: string;
+        lineHeight90: string;
+        lineHeight100: string;
         fontSize10: string;
         fontSize20: string;
         fontSize30: string;
@@ -117,6 +118,7 @@ export declare const theme: {
     };
     states: {
         focus: string;
+        focusInset: string;
     };
     transitions: {
         slow: string;
@@ -217,6 +219,8 @@ export declare const theme: {
         buttonBackgroundDangerActive: string;
         buttonBackgroundDisabled: string;
         buttonBorderSecondary: string;
+        buttonBackgroundIconHover: string;
+        buttonBackgroundIconActive: string;
         badgeBackground: string;
         calendarDateBackgroundHover: string;
         calendarDateBackgroundSelected: string;
@@ -234,5 +238,26 @@ export declare const theme: {
         modal: number;
         toast: number;
         skipToContent: number;
+    };
+    sizing: {
+        '00': string;
+        '05': string;
+        '10': string;
+        '15': string;
+        '20': string;
+        '30': string;
+        '40': string;
+        '50': string;
+        '60': string;
+        '70': string;
+        '75': string;
+        '80': string;
+        '90': string;
+        '100': string;
+        '110': string;
+        '120': string;
+        '130': string;
+        '140': string;
+        '150': string;
     };
 };

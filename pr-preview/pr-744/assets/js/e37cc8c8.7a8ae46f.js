@@ -1,0 +1,1442 @@
+"use strict";
+(self["webpackChunk_midas_ds_source"] = self["webpackChunk_midas_ds_source"] || []).push([[9065],{
+
+/***/ 5933:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CC: () => (/* binding */ $64fa3d84918910a7$export$fabf2dc03a41866e),
+/* harmony export */   JT: () => (/* binding */ $64fa3d84918910a7$export$29f1550f4b0d4415),
+/* harmony export */   Kq: () => (/* binding */ $64fa3d84918910a7$export$2881499e37b75b9a),
+/* harmony export */   P_: () => (/* binding */ $64fa3d84918910a7$export$c62b8e45d58ddad9),
+/* harmony export */   SK: () => (/* binding */ $64fa3d84918910a7$export$ef03459518577ad4),
+/* harmony export */   Sl: () => (/* binding */ $64fa3d84918910a7$export$4d86445c2cf5e3),
+/* harmony export */   _E: () => (/* binding */ $64fa3d84918910a7$export$9d4c57ee4c6ffdd8)
+/* harmony export */ });
+/* unused harmony export composeRenderProps */
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(83908);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17099);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(32217);
+/* harmony import */ var _react_aria_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(49953);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+const $64fa3d84918910a7$export$c62b8e45d58ddad9 = Symbol('default');
+function $64fa3d84918910a7$export$2881499e37b75b9a({ values: values, children: children }) {
+    for (let [Context, value] of values)// @ts-ignore
+    children = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(Context.Provider, {
+        value: value
+    }, children);
+    return children;
+}
+function $64fa3d84918910a7$export$4d86445c2cf5e3(props) {
+    let { className: className, style: style, children: children, defaultClassName: defaultClassName, defaultChildren: defaultChildren, defaultStyle: defaultStyle, values: values } = props;
+    return (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>{
+        let computedClassName;
+        let computedStyle;
+        let computedChildren;
+        if (typeof className === 'function') computedClassName = className({
+            ...values,
+            defaultClassName: defaultClassName
+        });
+        else computedClassName = className;
+        if (typeof style === 'function') computedStyle = style({
+            ...values,
+            defaultStyle: defaultStyle || {}
+        });
+        else computedStyle = style;
+        if (typeof children === 'function') computedChildren = children({
+            ...values,
+            defaultChildren: defaultChildren
+        });
+        else if (children == null) computedChildren = defaultChildren;
+        else computedChildren = children;
+        return {
+            className: computedClassName !== null && computedClassName !== void 0 ? computedClassName : defaultClassName,
+            style: computedStyle || defaultStyle ? {
+                ...defaultStyle,
+                ...computedStyle
+            } : undefined,
+            children: computedChildren !== null && computedChildren !== void 0 ? computedChildren : defaultChildren,
+            'data-rac': ''
+        };
+    }, [
+        className,
+        style,
+        children,
+        defaultClassName,
+        defaultChildren,
+        defaultStyle,
+        values
+    ]);
+}
+function $64fa3d84918910a7$export$c245e6201fed2f75(// https://stackoverflow.com/questions/60898079/typescript-type-t-or-function-t-usage
+value, wrap) {
+    return (renderProps)=>wrap(typeof value === 'function' ? value(renderProps) : value, renderProps);
+}
+function $64fa3d84918910a7$export$fabf2dc03a41866e(context, slot) {
+    let ctx = (0, react__WEBPACK_IMPORTED_MODULE_0__.useContext)(context);
+    if (slot === null) // An explicit `null` slot means don't use context.
+    return null;
+    if (ctx && typeof ctx === 'object' && 'slots' in ctx && ctx.slots) {
+        let slotKey = slot || $64fa3d84918910a7$export$c62b8e45d58ddad9;
+        if (!ctx.slots[slotKey]) {
+            let availableSlots = new Intl.ListFormat().format(Object.keys(ctx.slots).map((p)=>`"${p}"`));
+            let errorMessage = slot ? `Invalid slot "${slot}".` : 'A slot prop is required.';
+            throw new Error(`${errorMessage} Valid slot names are ${availableSlots}.`);
+        }
+        return ctx.slots[slotKey];
+    }
+    // @ts-ignore
+    return ctx;
+}
+function $64fa3d84918910a7$export$29f1550f4b0d4415(props, ref, context) {
+    let ctx = $64fa3d84918910a7$export$fabf2dc03a41866e(context, props.slot) || {};
+    // @ts-ignore - TS says "Type 'unique symbol' cannot be used as an index type." but not sure why.
+    let { ref: contextRef, ...contextProps } = ctx;
+    let mergedRef = (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_1__/* .useObjectRef */ .U)((0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>(0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_2__/* .mergeRefs */ .P)(ref, contextRef), [
+        ref,
+        contextRef
+    ]));
+    let mergedProps = (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_3__/* .mergeProps */ .v)(contextProps, props);
+    // mergeProps does not merge `style`. Adding this there might be a breaking change.
+    if ('style' in contextProps && contextProps.style && 'style' in props && props.style) {
+        if (typeof contextProps.style === 'function' || typeof props.style === 'function') // @ts-ignore
+        mergedProps.style = (renderProps)=>{
+            let contextStyle = typeof contextProps.style === 'function' ? contextProps.style(renderProps) : contextProps.style;
+            let defaultStyle = {
+                ...renderProps.defaultStyle,
+                ...contextStyle
+            };
+            let style = typeof props.style === 'function' ? props.style({
+                ...renderProps,
+                defaultStyle: defaultStyle
+            }) : props.style;
+            return {
+                ...defaultStyle,
+                ...style
+            };
+        };
+        else // @ts-ignore
+        mergedProps.style = {
+            ...contextProps.style,
+            ...props.style
+        };
+    }
+    return [
+        mergedProps,
+        mergedRef
+    ];
+}
+function $64fa3d84918910a7$export$9d4c57ee4c6ffdd8(initialState = true) {
+    // Initial state is typically based on the parent having an aria-label or aria-labelledby.
+    // If it does, this value should be false so that we don't update the state and cause a rerender when we go through the layoutEffect
+    let [hasSlot, setHasSlot] = (0, react__WEBPACK_IMPORTED_MODULE_0__.useState)(initialState);
+    let hasRun = (0, react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+    // A callback ref which will run when the slotted element mounts.
+    // This should happen before the useLayoutEffect below.
+    let ref = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((el)=>{
+        hasRun.current = true;
+        setHasSlot(!!el);
+    }, []);
+    // If the callback hasn't been called, then reset to false.
+    (0, _react_aria_utils__WEBPACK_IMPORTED_MODULE_4__/* .useLayoutEffect */ .N)(()=>{
+        if (!hasRun.current) setHasSlot(false);
+    }, []);
+    return [
+        ref,
+        hasSlot
+    ];
+}
+function $64fa3d84918910a7$export$ef03459518577ad4(props) {
+    const prefix = /^(data-.*)$/;
+    let filteredProps = {};
+    for(const prop in props)if (!prefix.test(prop)) filteredProps[prop] = props[prop];
+    return filteredProps;
+}
+
+
+
+//# sourceMappingURL=utils.module.js.map
+
+
+/***/ }),
+
+/***/ 17099:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   P: () => (/* binding */ $5dc95899b306f630$export$c9058316764c140e)
+/* harmony export */ });
+/*
+ * Copyright 2020 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ function $5dc95899b306f630$export$c9058316764c140e(...refs) {
+    if (refs.length === 1 && refs[0]) return refs[0];
+    return (value)=>{
+        let hasCleanup = false;
+        const cleanups = refs.map((ref)=>{
+            const cleanup = $5dc95899b306f630$var$setRef(ref, value);
+            hasCleanup || (hasCleanup = typeof cleanup == 'function');
+            return cleanup;
+        });
+        if (hasCleanup) return ()=>{
+            cleanups.forEach((cleanup, i)=>{
+                if (typeof cleanup === 'function') cleanup();
+                else $5dc95899b306f630$var$setRef(refs[i], null);
+            });
+        };
+    };
+}
+function $5dc95899b306f630$var$setRef(ref, value) {
+    if (typeof ref === 'function') return ref(value);
+    else if (ref != null) ref.current = value;
+}
+
+
+
+//# sourceMappingURL=mergeRefs.module.js.map
+
+
+/***/ }),
+
+/***/ 19615:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  E: () => (/* binding */ Text)
+});
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js
+var objectWithoutPropertiesLoose = __webpack_require__(98587);
+// EXTERNAL MODULE: ./node_modules/react/index.js
+var react = __webpack_require__(96540);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(34164);
+// EXTERNAL MODULE: ./node_modules/react-aria-components/dist/Text.mjs
+var dist_Text = __webpack_require__(27279);
+;// ./packages/components/src/text/Text.module.css
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const Text_module = ({"tokens":"\"../theme/tokens.css\"","--text-primary":"light-dark(#171717, #f2f2f2)","--font-family":"\"Inter\", sans-serif","--font-size-20":"0.875rem","--font-size-30":"1rem","--line-height-20":"1.125rem","--line-height-30":"1.25rem","--line-height-40":"1.375rem","--line-height-50":"1.5rem","--text-disabled":"light-dark(#bfbfbf, #525252)","body-01":"body-01_whJM","body-02":"body-02_Xi1v","description":"description_XYgX"});
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+;// ./packages/components/src/text/Text.tsx
+var _excluded=["children","className","variant","isExpressive","elementType"];var DEFAULT_ELEMENT='span';var Text=function Text(_ref){var children=_ref.children,className=_ref.className,_ref$variant=_ref.variant,variant=_ref$variant===void 0?'body-02':_ref$variant,_ref$isExpressive=_ref.isExpressive,isExpressive=_ref$isExpressive===void 0?false:_ref$isExpressive,_ref$elementType=_ref.elementType,elementType=_ref$elementType===void 0?DEFAULT_ELEMENT:_ref$elementType,rest=(0,objectWithoutPropertiesLoose/* default */.A)(_ref,_excluded);var classNames={'body-01':Text_module['body-01'],'body-02':Text_module['body-02']};var textProps=Object.assign({className:(0,clsx/* default */.A)(rest.slot==='description'?Text_module.description:classNames[variant],className),elementType:elementType||DEFAULT_ELEMENT},isExpressive&&{'data-expressive':true},rest);return/*#__PURE__*/(0,jsx_runtime.jsx)(dist_Text/* Text */.E,Object.assign({},textProps,{children:children}));};
+
+/***/ }),
+
+/***/ 27279:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ $514c0188e459b4c0$export$5f1af8db9871e1d6),
+/* harmony export */   h: () => (/* binding */ $514c0188e459b4c0$export$9afb8bc826b033ea)
+/* harmony export */ });
+/* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5933);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+
+/*
+ * Copyright 2022 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+
+const $514c0188e459b4c0$export$9afb8bc826b033ea = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+const $514c0188e459b4c0$export$5f1af8db9871e1d6 = /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(function Text(props, ref) {
+    [props, ref] = (0, _utils_mjs__WEBPACK_IMPORTED_MODULE_1__/* .useContextProps */ .JT)(props, ref, $514c0188e459b4c0$export$9afb8bc826b033ea);
+    let { elementType: ElementType = 'span', ...domProps } = props;
+    // @ts-ignore
+    return /*#__PURE__*/ (0, react__WEBPACK_IMPORTED_MODULE_0__).createElement(ElementType, {
+        className: "react-aria-Text",
+        ...domProps,
+        ref: ref
+    });
+});
+
+
+
+//# sourceMappingURL=Text.module.js.map
+
+
+/***/ }),
+
+/***/ 28453:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   R: () => (/* binding */ useMDXComponents),
+/* harmony export */   x: () => (/* binding */ MDXProvider)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/**
+ * @import {MDXComponents} from 'mdx/types.js'
+ * @import {Component, ReactElement, ReactNode} from 'react'
+ */
+
+/**
+ * @callback MergeComponents
+ *   Custom merge function.
+ * @param {Readonly<MDXComponents>} currentComponents
+ *   Current components from the context.
+ * @returns {MDXComponents}
+ *   Additional components.
+ *
+ * @typedef Props
+ *   Configuration for `MDXProvider`.
+ * @property {ReactNode | null | undefined} [children]
+ *   Children (optional).
+ * @property {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
+ *   Additional components to use or a function that creates them (optional).
+ * @property {boolean | null | undefined} [disableParentContext=false]
+ *   Turn off outer component context (default: `false`).
+ */
+
+
+
+/** @type {Readonly<MDXComponents>} */
+const emptyComponents = {}
+
+const MDXContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(emptyComponents)
+
+/**
+ * Get current components from the MDX Context.
+ *
+ * @param {Readonly<MDXComponents> | MergeComponents | null | undefined} [components]
+ *   Additional components to use or a function that creates them (optional).
+ * @returns {MDXComponents}
+ *   Current components.
+ */
+function useMDXComponents(components) {
+  const contextComponents = react__WEBPACK_IMPORTED_MODULE_0__.useContext(MDXContext)
+
+  // Memoize to avoid unnecessary top-level context changes
+  return react__WEBPACK_IMPORTED_MODULE_0__.useMemo(
+    function () {
+      // Custom merge via a function prop
+      if (typeof components === 'function') {
+        return components(contextComponents)
+      }
+
+      return {...contextComponents, ...components}
+    },
+    [contextComponents, components]
+  )
+}
+
+/**
+ * Provider for MDX context.
+ *
+ * @param {Readonly<Props>} properties
+ *   Properties.
+ * @returns {ReactElement}
+ *   Element.
+ * @satisfies {Component}
+ */
+function MDXProvider(properties) {
+  /** @type {Readonly<MDXComponents>} */
+  let allComponents
+
+  if (properties.disableParentContext) {
+    allComponents =
+      typeof properties.components === 'function'
+        ? properties.components(emptyComponents)
+        : properties.components || emptyComponents
+  } else {
+    allComponents = useMDXComponents(properties.components)
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(
+    MDXContext.Provider,
+    {value: allComponents},
+    properties.children
+  )
+}
+
+
+/***/ }),
+
+/***/ 38739:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   A: () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// extracted by mini-css-extract-plugin
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"tokens":"\"../theme/tokens.css\"","--breakpoint-xs":"(max-width: 479px)","--breakpoint-sm":"(min-width: 480px)","--breakpoint-md":"(min-width: 768px)","--breakpoint-lg":"(min-width: 1024px)","--breakpoint-xl":"(min-width: 1280px)","container":"container_uCKZ","removeMargins":"removeMargins_rQ9U","contained":"contained_R9lB","flex":"flex_LQ20","fluid":"fluid_Y1tE","col":"col_tmG6","col-1":"col-1_OVvW","col-2":"col-2_XfVI","col-3":"col-3_KxqE","col-quarter":"col-quarter_eUut","col-4":"col-4_Ovxr","col-third":"col-third_FUaF","col-5":"col-5_uIyd","col-6":"col-6_i8WR","col-half":"col-half_GzSn","col-7":"col-7_devX","col-8":"col-8_tlAZ","col-9":"col-9_Nbjm","col-10":"col-10_rwyP","col-11":"col-11_ShOw","col-12":"col-12_eQeJ","col-full":"col-full_K_XT","col-auto":"col-auto_nMhH","col-grow":"col-grow_TBON","col-xs-1":"col-xs-1_Bg_O","col-xs-2":"col-xs-2_UhmL","col-xs-3":"col-xs-3_mEvh","col-xs-quarter":"col-xs-quarter_mtoI","col-xs-4":"col-xs-4_Uv5i","col-xs-third":"col-xs-third_AHrM","col-xs-5":"col-xs-5_Gdnm","col-xs-6":"col-xs-6_z366","col-xs-half":"col-xs-half_vH6m","col-xs-7":"col-xs-7_HNwO","col-xs-8":"col-xs-8_Vwih","col-xs-9":"col-xs-9_vfTc","col-xs-10":"col-xs-10_wJWt","col-xs-11":"col-xs-11_KTEA","col-xs-12":"col-xs-12_TaE_","col-xs-full":"col-xs-full_enWi","col-xs-auto":"col-xs-auto_G2jj","col-xs-grow":"col-xs-grow_kY1W","col-sm-1":"col-sm-1_YvIs","col-sm-2":"col-sm-2_NSCq","col-sm-3":"col-sm-3_cJ0H","col-sm-quarter":"col-sm-quarter_WWBJ","col-sm-4":"col-sm-4_dtZx","col-sm-third":"col-sm-third_g3dG","col-sm-5":"col-sm-5_C87q","col-sm-6":"col-sm-6_SkMd","col-sm-half":"col-sm-half_QX4f","col-sm-7":"col-sm-7_wa6s","col-sm-8":"col-sm-8_zH5I","col-sm-9":"col-sm-9_ym4Z","col-sm-10":"col-sm-10_jE4j","col-sm-11":"col-sm-11_Va2g","col-sm-12":"col-sm-12_BgjD","col-sm-full":"col-sm-full_Nb6O","col-sm-auto":"col-sm-auto_Qj4m","col-sm-grow":"col-sm-grow_mAH5","col-md-1":"col-md-1_Zeqd","col-md-2":"col-md-2_DR6K","col-md-3":"col-md-3_OZK7","col-md-quarter":"col-md-quarter_AmxM","col-md-4":"col-md-4_NxEu","col-md-third":"col-md-third_J4Ja","col-md-5":"col-md-5_cBkY","col-md-6":"col-md-6_it5t","col-md-half":"col-md-half_aEv_","col-md-7":"col-md-7__sAT","col-md-8":"col-md-8_WfW7","col-md-9":"col-md-9_orzQ","col-md-10":"col-md-10_wh5t","col-md-11":"col-md-11_Wsgq","col-md-12":"col-md-12_gZQg","col-md-full":"col-md-full_Ow4Z","col-md-auto":"col-md-auto_e67j","col-md-grow":"col-md-grow_quHq","col-lg-1":"col-lg-1_e1au","col-lg-2":"col-lg-2_fUsj","col-lg-3":"col-lg-3_EhhM","col-lg-quarter":"col-lg-quarter_SI9I","col-lg-4":"col-lg-4_VuKz","col-lg-third":"col-lg-third_Lf2A","col-lg-5":"col-lg-5_TF5r","col-lg-6":"col-lg-6_E93v","col-lg-half":"col-lg-half_ZdoE","col-lg-7":"col-lg-7_L5CO","col-lg-8":"col-lg-8_ZBHN","col-lg-9":"col-lg-9_TbUu","col-lg-10":"col-lg-10_Tsqu","col-lg-11":"col-lg-11_Eg8x","col-lg-12":"col-lg-12_eNvi","col-lg-full":"col-lg-full_SaRE","col-lg-auto":"col-lg-auto_fNRO","col-lg-grow":"col-lg-grow_XTrt","col-xl-1":"col-xl-1_BRna","col-xl-2":"col-xl-2_eGSK","col-xl-3":"col-xl-3_RrW2","col-xl-quarter":"col-xl-quarter_V_Yw","col-xl-4":"col-xl-4_R4AZ","col-xl-third":"col-xl-third_W3hT","col-xl-5":"col-xl-5_k7Gx","col-xl-6":"col-xl-6_xZyb","col-xl-half":"col-xl-half_V9xE","col-xl-7":"col-xl-7_lJfg","col-xl-8":"col-xl-8_zErQ","col-xl-9":"col-xl-9_oYwQ","col-xl-10":"col-xl-10_cLTa","col-xl-11":"col-xl-11_xqWK","col-xl-12":"col-xl-12_Vrsf","col-xl-full":"col-xl-full_vVSm","col-xl-auto":"col-xl-auto_YBap","col-xl-grow":"col-xl-grow_YMBn","offset-1":"offset-1_ZQkJ","offset-2":"offset-2_Reek","offset-3":"offset-3_SDkl","offset-quarter":"offset-quarter_ho5e","offset-4":"offset-4_L0XB","offset-third":"offset-third_dE8e","offset-5":"offset-5_Mz95","offset-6":"offset-6_Zp68","offset-half":"offset-half_nGtc","offset-7":"offset-7_ZApX","offset-8":"offset-8_UZTZ","offset-9":"offset-9_FiKS","offset-10":"offset-10_hN9R","offset-11":"offset-11_cqgv","offset-auto":"offset-auto_ZBrI","offset-xs-1":"offset-xs-1__ZrT","offset-xs-2":"offset-xs-2_WySR","offset-xs-3":"offset-xs-3_u9Tb","offset-xs-quarter":"offset-xs-quarter_Pd1o","offset-xs-4":"offset-xs-4_Bibg","offset-xs-third":"offset-xs-third_CeeW","offset-xs-5":"offset-xs-5_OgED","offset-xs-6":"offset-xs-6_ihSu","offset-xs-half":"offset-xs-half_Vrdz","offset-xs-7":"offset-xs-7_TtZQ","offset-xs-8":"offset-xs-8_Ftc2","offset-xs-9":"offset-xs-9_HptZ","offset-xs-10":"offset-xs-10_umjb","offset-xs-11":"offset-xs-11_Suix","offset-xs-auto":"offset-xs-auto_fxe8","offset-sm-1":"offset-sm-1_knSM","offset-sm-2":"offset-sm-2_zWxo","offset-sm-3":"offset-sm-3_oqp6","offset-sm-quarter":"offset-sm-quarter_Nav1","offset-sm-4":"offset-sm-4_EvUX","offset-sm-third":"offset-sm-third_tGgh","offset-sm-5":"offset-sm-5_raNi","offset-sm-6":"offset-sm-6_KTA8","offset-sm-half":"offset-sm-half_ab81","offset-sm-7":"offset-sm-7_duQl","offset-sm-8":"offset-sm-8_uRxp","offset-sm-9":"offset-sm-9_AqYl","offset-sm-10":"offset-sm-10_Wt6J","offset-sm-11":"offset-sm-11_yAYq","offset-sm-auto":"offset-sm-auto_FAp6","offset-md-1":"offset-md-1_OpgB","offset-md-2":"offset-md-2_U24n","offset-md-3":"offset-md-3_YxnQ","offset-md-quarter":"offset-md-quarter_y53T","offset-md-4":"offset-md-4_ZaOC","offset-md-third":"offset-md-third_HZWP","offset-md-5":"offset-md-5_KVFL","offset-md-6":"offset-md-6_bZvL","offset-md-half":"offset-md-half_yilA","offset-md-7":"offset-md-7_fs04","offset-md-8":"offset-md-8_QmYF","offset-md-9":"offset-md-9_QoVc","offset-md-10":"offset-md-10_OrE0","offset-md-11":"offset-md-11_reKz","offset-md-auto":"offset-md-auto_ETdh","offset-lg-1":"offset-lg-1_zi3j","offset-lg-2":"offset-lg-2_YgjU","offset-lg-3":"offset-lg-3_CHdw","offset-lg-quarter":"offset-lg-quarter_Chor","offset-lg-4":"offset-lg-4_NOCF","offset-lg-third":"offset-lg-third_LTbL","offset-lg-5":"offset-lg-5_dGzM","offset-lg-6":"offset-lg-6_kXXi","offset-lg-half":"offset-lg-half_vFHN","offset-lg-7":"offset-lg-7_jIth","offset-lg-8":"offset-lg-8_T0Jx","offset-lg-9":"offset-lg-9_mYmL","offset-lg-10":"offset-lg-10_clJ6","offset-lg-11":"offset-lg-11_zFW2","offset-lg-auto":"offset-lg-auto_W3q4","offset-xl-1":"offset-xl-1_pRWH","offset-xl-2":"offset-xl-2_FX3q","offset-xl-3":"offset-xl-3_P8xx","offset-xl-quarter":"offset-xl-quarter_RLTy","offset-xl-4":"offset-xl-4_n7Vy","offset-xl-third":"offset-xl-third_w0fc","offset-xl-5":"offset-xl-5_vC_8","offset-xl-6":"offset-xl-6_BvQ2","offset-xl-half":"offset-xl-half_HQ16","offset-xl-7":"offset-xl-7_m1bv","offset-xl-8":"offset-xl-8_FJ1u","offset-xl-9":"offset-xl-9_oAbC","offset-xl-10":"offset-xl-10_wwaH","offset-xl-11":"offset-xl-11_HpDF","offset-xl-auto":"offset-xl-auto_Dv5P"});
+
+/***/ }),
+
+/***/ 46090:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   baseColors: () => (/* binding */ baseColors),
+/* harmony export */   breakpoints: () => (/* binding */ breakpoints),
+/* harmony export */   semantic: () => (/* binding */ semantic),
+/* harmony export */   sizing: () => (/* binding */ sizing),
+/* harmony export */   spacing: () => (/* binding */ spacing),
+/* harmony export */   states: () => (/* binding */ states),
+/* harmony export */   transitions: () => (/* binding */ transitions),
+/* harmony export */   typography: () => (/* binding */ typography),
+/* harmony export */   windowSizes: () => (/* binding */ windowSizes),
+/* harmony export */   zIndex: () => (/* binding */ zIndex)
+/* harmony export */ });
+var baseColors={black:'#000',white:'#fff',blackHover:'#0d0d0d',whiteHover:'#e6e6e6',gray10:'#f2f2f2',gray20:'#e6e6e6',gray30:'#d9d9d9',gray40:'#ccc',gray50:'#bfbfbf',gray60:'#b3b3b3',gray70:'#a6a6a6',gray80:'#999',gray90:'#8c8c8c',gray100:'#808080',gray110:'#737373',gray120:'#666',gray130:'#5d5d5d',gray140:'#525252',gray150:'#474747',gray160:'#383838',gray170:'#333',gray180:'#262626',gray190:'#212121',gray200:'#171717',blue10:'#eaf2f6',blue20:'#d5e5ed',blue40:'#abcbdb',blue50:'#94BCD1',blue60:'#82b0c9',blue70:'#6CA3C0',blue80:'#5897b8',blue90:'#4289ad',blue100:'#2e7ca5',blue110:'#2C7399',blue120:'#29698C',blue130:'#25607f',blue150:'#143c50',purple80:'#b46ab4',purple110:'#954b95',red100:'#b90835',signalBlue10:'#eaf2f6',signalBlue100:'#06c',signalGreen20:'#d5f2d9',signalGreen30:'#bae5c5',signalGreen100:'#008d3c',signalYellow10:'#fff8e1',signalYellow20:'#FFEBA8',signalYellow100:'#fdb813',signalRed10:'#ffefef',signalRed20:'#ffdfdf',signalRed30:'#fcc8c8',signalRed40:'#f9b0b0',signalRed50:'#f69999',signalRed60:'#f38181',signalRed70:'#ef6a6a',signalRed80:'#eb4e4e',signalRed90:'#e93b3b',signalRed100:'#e62323',signalRed110:'#d12020',signalRed120:'#bc1d1d',signalRed130:'#a71919',signalRed140:'#921616',signalRed150:'#7d1313',signalRed160:'#691010',signalRed170:'#540d0d',signalRed180:'#3f0a0a',signalRed190:'#2a0606',signalRed200:'#150303'};var typography={fontFamily:'"Inter", sans-serif',lineHeight10:'1rem',// 16px
+lineHeight20:'1.125rem',// 18px (18/16)
+lineHeight30:'1.25rem',// 20px (20/16)
+lineHeight40:'1.375rem',// 22px (22/16)
+lineHeight50:'1.5rem',// 24px (24/16)
+lineHeight60:'1.75rem',// 28px (28/16)
+lineHeight70:'2rem',// 32px (32/16)
+lineHeight80:'2.25rem',// 36px (36/16)
+lineHeight90:'2.5rem',// 40px (40/16)
+lineHeight100:'2.75rem',// 44px (44/16)
+fontSize10:'0.75rem',// 12px (12/16)
+fontSize20:'0.875rem',// 14px (14/16)
+fontSize30:'1rem',// 16px (16/16)
+fontSize40:'1.125rem',// 18px (18/16)
+fontSize50:'1.25rem',// 20px (20/16)
+fontSize60:'1.5rem',// 24px (24/16)
+fontSize70:'1.75rem',// 28px (28/16)
+fontSize80:'2rem',// 32px (32/16)
+fontSize90:'2.25rem',// 36px (36/16)
+fontSize100:'2.625rem',// 42px (40/16)
+weightThin:100,weightExtraLight:200,weightLight:300,weightRegular:400,weightMedium:500,weightSemiBold:600,weightBold:700,weightExtraBold:800,weightBlack:900};var spacing={'10':'0.125rem',// 2px
+'20':'0.25rem',// 4px
+'30':'0.5rem',// 8px
+'40':'0.75rem',// 12px
+'50':'1rem',// 16px
+'60':'1.5rem',// 24px
+'70':'2rem',// 32px
+'80':'2.5rem',// 40px
+'90':'3rem',// 48px
+'100':'4rem',// 64px
+'110':'5rem',// 80px
+'120':'6rem'// 96px
+};var states={focus:'0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',focusInset:'inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)'};var transitions={slow:'500ms',normal:'300ms',fast:'250ms'};var windowSizes={sm:480,md:768,lg:1024,xl:1280};var breakpoints={xs:"(max-width: "+(windowSizes.sm-1)+"px)",sm:"(min-width: "+windowSizes.sm+"px)",md:"(min-width: "+windowSizes.md+"px)",lg:"(min-width: "+windowSizes.lg+"px)",xl:"(min-width: "+windowSizes.xl+"px)",forcedColorsMode:'(forced-colors: active)',darkMode:'(prefers-color-scheme: dark)',prefersReducedMotion:'(prefers-reduced-motion: reduced)'};var semantic={background:"light-dark("+baseColors.white+", "+baseColors.gray200+")",backgroundHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",backgroundInverse:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",layer01:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",layerHover01:"light-dark("+baseColors.gray20+", "+baseColors.gray170+")",layerSelected01:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",layerSelectedHover01:"light-dark("+baseColors.gray40+", "+baseColors.gray150+")",layer02:"light-dark("+baseColors.white+", "+baseColors.gray160+")",layerHover02:"light-dark("+baseColors.whiteHover+", "+baseColors.gray150+")",layerSelected02:"light-dark("+baseColors.gray30+", "+baseColors.gray140+")",layerSelectedHover02:"light-dark("+baseColors.gray40+", "+baseColors.gray130+")",layerAccent01:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",layerAccentHover01:"light-dark("+baseColors.gray40+", "+baseColors.gray150+")",layerAccentSelected01:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",layerAccent02:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",layerAccentHover02:"light-dark("+baseColors.gray20+", "+baseColors.gray170+")",layerAccentSelected02:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",brandPrimary:"light-dark("+baseColors.red100+", "+baseColors.red100+")",borderPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",borderSecondary:"light-dark("+baseColors.gray110+", "+baseColors.gray90+")",borderSubtle:"light-dark("+baseColors.gray50+", "+baseColors.gray160+")",borderTertiary:"light-dark("+baseColors.blue150+", "+baseColors.blue100+")",borderDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",field01:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",fieldHover01:"light-dark("+baseColors.gray20+", "+baseColors.gray170+")",fieldActive01:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",field02:"light-dark("+baseColors.white+", "+baseColors.gray160+")",fieldHover02:"light-dark("+baseColors.whiteHover+", "+baseColors.gray150+")",fieldActive02:"light-dark("+baseColors.gray30+", "+baseColors.gray140+")",fieldDisabled:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",skeleton01:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",skeleton02:"light-dark("+baseColors.gray30+", "+baseColors.gray160+")",iconPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",iconSecondary:"light-dark("+baseColors.gray140+", "+baseColors.gray70+")",iconTertiary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",iconInverse:"light-dark("+baseColors.white+", "+baseColors.gray200+")",iconOnColor:"light-dark("+baseColors.white+", "+baseColors.white+")",iconDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",iconSuccess:"light-dark("+baseColors.signalGreen100+", "+baseColors.signalGreen100+")",iconInfo:"light-dark("+baseColors.signalBlue100+", "+baseColors.signalBlue100+")",iconWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",iconImportant:"light-dark("+baseColors.signalYellow100+", "+baseColors.signalYellow100+")",linkEnabled:"light-dark("+baseColors.blue120+", "+baseColors.blue70+")",linkHover:"light-dark("+baseColors.blue150+", "+baseColors.blue50+")",linkPressed:"light-dark("+baseColors.gray200+", "+baseColors.blue40+")",linkVisited:"light-dark("+baseColors.purple110+", "+baseColors.purple80+")",supportBorderSuccess:"light-dark("+baseColors.signalGreen100+", "+baseColors.signalGreen100+")",supportBorderInfo:"light-dark("+baseColors.signalBlue100+", "+baseColors.signalBlue100+")",supportBorderImportant:"light-dark("+baseColors.signalYellow100+", "+baseColors.signalYellow100+")",supportBorderWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed100+")",supportBackgroundSuccess:"light-dark("+baseColors.signalGreen20+", "+baseColors.gray180+")",supportBackgroundSuccessHover:"light-dark("+baseColors.signalGreen30+", "+baseColors.gray170+")",supportBackgroundInfo:"light-dark("+baseColors.signalBlue10+", "+baseColors.gray180+")",supportBackgroundImportant:"light-dark("+baseColors.signalYellow10+", "+baseColors.gray180+")",supportBackgroundWarning:"light-dark("+baseColors.signalRed20+", "+baseColors.gray180+")",supportBackgroundWarningHover:"light-dark("+baseColors.signalRed30+", "+baseColors.gray170+")",textPrimary:"light-dark("+baseColors.gray200+", "+baseColors.gray10+")",textSecondary:"light-dark("+baseColors.gray140+", "+baseColors.gray70+")",textTertiary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",textOnColor:"light-dark("+baseColors.white+", "+baseColors.white+")",textInverse:"light-dark("+baseColors.gray10+", "+baseColors.gray200+")",textDisabled:"light-dark("+baseColors.gray50+", "+baseColors.gray140+")",textWarning:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed80+")",textPlaceholder:"light-dark("+baseColors.gray70+", "+baseColors.gray140+")",buttonBackgroundPrimary:"light-dark("+baseColors.blue150+", "+baseColors.blue100+")",buttonBackgroundPrimaryHover:"light-dark("+baseColors.blue130+", "+baseColors.blue130+")",buttonBackgroundPrimaryActive:"light-dark("+baseColors.blue100+", "+baseColors.blue150+")",buttonBackgroundSecondary:"light-dark("+baseColors.white+", "+baseColors.gray200+")",buttonBackgroundSecondaryHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",buttonBackgroundSecondaryActive:"light-dark("+baseColors.gray30+", "+baseColors.gray180+")",buttonBackgroundTertiaryHover:"light-dark("+baseColors.whiteHover+", "+baseColors.gray190+")",buttonBackgroundTertiaryActive:"light-dark("+baseColors.gray30+", "+baseColors.gray180+")",buttonBackgroundDanger:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed80+")",buttonBackgroundDangerHover:"light-dark("+baseColors.signalRed120+", "+baseColors.signalRed100+")",buttonBackgroundDangerActive:"light-dark("+baseColors.signalRed150+", "+baseColors.signalRed130+")",buttonBackgroundDisabled:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",buttonBorderSecondary:"light-dark("+baseColors.blue150+", "+baseColors.gray10+")",buttonBackgroundIconHover:"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))",buttonBackgroundIconActive:"light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))",badgeBackground:"light-dark("+baseColors.signalRed100+", "+baseColors.signalRed80+")",calendarDateBackgroundHover:"light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))",calendarDateBackgroundSelected:"light-dark("+baseColors.blue150+", "+baseColors.blue80+")",calendarDateBackgroundStartRange:"light-dark("+baseColors.blue150+", "+baseColors.blue80+")",calendarDateBackgroundInRange:"light-dark("+baseColors.blue20+", "+baseColors.blue150+")",calendarDateBackgroundEndRange:"light-dark("+baseColors.blue150+", "+baseColors.blue80+")",logoPrimary:"light-dark("+baseColors.red100+", "+baseColors.white+")",menuItemBackgroundHover:"light-dark("+baseColors.gray20+", "+baseColors.gray190+")",menuItemBackgroundSelected:"light-dark("+baseColors.gray10+", "+baseColors.gray180+")",menuTextSectionHeader:"light-dark("+baseColors.blue120+", "+baseColors.blue80+")"};var zIndex={base:1,above:10,modal:1000,toast:1100,skipToContent:1200};var sizing={'00':'0',// 0px
+'05':'0.063rem',// 1px
+'10':'0.125rem',// 2px
+'15':'0.188rem',// 3px
+'20':'0.25rem',// 4px
+'30':'0.375rem',// 6px
+'40':'0.5rem',// 8px
+'50':'0.625rem',// 10px
+'60':'0.75rem',// 12px
+'70':'0.875rem',// 14px
+'75':'0.938rem',// 15px
+'80':'1rem',// 16px
+'90':'1.25rem',// 20px
+'100':'1.5rem',// 24px
+'110':'1.75rem',// 28px
+'120':'2rem',// 32px
+'130':'2.5rem',// 40px
+'140':'2.75rem',// 44px
+'150':'3rem'// 48px
+};
+
+/***/ }),
+
+/***/ 53768:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  ColorSpectrum: () => (/* binding */ ColorSpectrum),
+  Layers: () => (/* binding */ Layers),
+  SemanticTokens: () => (/* binding */ SemanticTokens),
+  Token: () => (/* binding */ Token),
+  TokenGroup: () => (/* binding */ TokenGroup),
+  TokenNaming: () => (/* binding */ TokenNaming),
+  assets: () => (/* binding */ assets),
+  contentTitle: () => (/* binding */ contentTitle),
+  "default": () => (/* binding */ MDXContent),
+  frontMatter: () => (/* binding */ frontMatter),
+  metadata: () => (/* reexport */ site_docs_basics_tokens_mdx_e37_namespaceObject),
+  toc: () => (/* binding */ toc)
+});
+
+;// ./apps/docs/.docusaurus/docusaurus-plugin-content-docs/default/site-docs-basics-tokens-mdx-e37.json
+const site_docs_basics_tokens_mdx_e37_namespaceObject = /*#__PURE__*/JSON.parse('{"id":"basics/tokens","title":"Färger","description":"Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.","source":"@site/docs/basics/tokens.mdx","sourceDirName":"basics","slug":"/basics/tokens","permalink":"/pr-preview/pr-744/basics/tokens","draft":false,"unlisted":false,"tags":[],"version":"current","sidebarPosition":2,"frontMatter":{"id":"tokens","title":"Färger","sidebar_label":"Färger","sidebar_position":2,"pagination_prev":null,"pagination_next":null},"sidebar":"sideBar"}');
+// EXTERNAL MODULE: ./node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(74848);
+// EXTERNAL MODULE: ./node_modules/@mdx-js/react/lib/index.js
+var lib = __webpack_require__(28453);
+// EXTERNAL MODULE: ./packages/components/src/grid/Grid.tsx
+var Grid = __webpack_require__(74351);
+// EXTERNAL MODULE: ./packages/components/src/grid/GridItem.tsx
+var GridItem = __webpack_require__(93574);
+// EXTERNAL MODULE: ./packages/components/src/text/Text.tsx + 1 modules
+var Text = __webpack_require__(19615);
+// EXTERNAL MODULE: ./packages/components/src/theme/tokens.ts
+var tokens = __webpack_require__(46090);
+// EXTERNAL MODULE: ./node_modules/@docusaurus/theme-classic/lib/theme/CodeBlock/index.js + 28 modules
+var CodeBlock = __webpack_require__(21028);
+;// ./apps/docs/docs/basics/tokens.mdx
+
+
+const frontMatter = {
+	id: 'tokens',
+	title: 'Färger',
+	sidebar_label: 'Färger',
+	sidebar_position: 2,
+	pagination_prev: null,
+	pagination_next: null
+};
+const contentTitle = undefined;
+
+const assets = {
+
+};
+
+
+
+
+
+
+const TokenGroup = ({children}) => {
+  return (0,jsx_runtime.jsx)(Grid/* Grid */.x, {
+    fluid: true,
+    className: "card-guidelines",
+    children: children
+  });
+};
+const Token = ({token, desc}) => {
+  const tokenValue = tokens.semantic[token];
+  if (tokenValue === undefined) {
+    console.warn(`Token ${token} not found in semantic tokens`);
+    return null;
+  }
+  return (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+    size: 12,
+    style: {
+      borderBottom: '1px solid var(--ifm-color-emphasis-200)',
+      paddingBottom: '1rem'
+    },
+    children: (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
+      fluid: true,
+      children: [(0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+        size: {
+          xs: 12,
+          sm: 12,
+          md: 3
+        },
+        children: (0,jsx_runtime.jsx)(CodeBlock/* default */.A, {
+          className: "margin-0",
+          children: token
+        })
+      }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+        size: {
+          xs: 12,
+          sm: 12,
+          md: 3
+        },
+        children: (0,jsx_runtime.jsx)("small", {
+          children: desc
+        })
+      }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+        size: {
+          xs: 12,
+          sm: 12,
+          md: 6
+        },
+        style: {
+          alignItems: 'flex-end'
+        },
+        children: (0,jsx_runtime.jsxs)("div", {
+          style: {
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '0.5rem'
+          },
+          children: [(0,jsx_runtime.jsxs)("div", {
+            style: {
+              display: 'flex',
+              flexDirection: 'column'
+            },
+            children: [(0,jsx_runtime.jsxs)("small", {
+              children: ["Ljust: #", tokenValue.match(/light-dark\(#(.*?),/)[1]]
+            }), (0,jsx_runtime.jsxs)("small", {
+              children: ["Mörkt: #", tokenValue.match(/light-dark\(.*?, #(.*?)\)/)[1]]
+            })]
+          }), (0,jsx_runtime.jsx)("div", {
+            style: {
+              colorScheme: 'light',
+              backgroundColor: tokenValue,
+              width: 60,
+              height: 60,
+              border: '1px solid var(--ifm-color-emphasis-100)'
+            }
+          }), (0,jsx_runtime.jsx)("div", {
+            style: {
+              colorScheme: 'dark',
+              backgroundColor: tokenValue,
+              width: 60,
+              height: 60,
+              border: '1px solid var(--ifm-color-emphasis-100)'
+            }
+          })]
+        })
+      })]
+    })
+  });
+};
+const ColorSpectrum = () => {
+  return (0,jsx_runtime.jsx)("div", {
+    style: {
+      display: 'flex',
+      flexFlow: 'row wrap',
+      marginBottom: '2rem'
+    },
+    children: Object.entries(tokens.baseColors).filter(([key]) => key.startsWith('gray') || key.startsWith('blue') || key.startsWith('signal')).reduce((acc, [key, value], index, array) => {
+      const prefix = key.split(/(?=[A-Z0-9])/)[0];
+      const lastPrefix = index > 0 ? array[index - 1][0].split(/(?=[A-Z0-9])/)[0] : null;
+      if (prefix !== lastPrefix) {
+        acc.push((0,jsx_runtime.jsx)("div", {
+          style: {
+            flexBasis: '100%'
+          }
+        }, `break-${index}`));
+      }
+      acc.push((0,jsx_runtime.jsx)("div", {
+        style: {
+          backgroundColor: value,
+          width: 60,
+          height: 60
+        }
+      }, key));
+      return acc;
+    }, [])
+  });
+};
+const SemanticTokens = () => {
+  return (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
+    className: "card-guidelines",
+    children: [(0,jsx_runtime.jsxs)(GridItem/* GridItem */.E, {
+      size: 12,
+      children: [(0,jsx_runtime.jsx)(Text/* Text */.E, {
+        children: "Bakgrund: semantic.layer01"
+      }), (0,jsx_runtime.jsx)(Text/* Text */.E, {
+        children: "Text: semantic.textPrimary"
+      })]
+    }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+      size: 6,
+      style: {
+        backgroundColor: tokens.semantic.layer01,
+        colorScheme: 'light',
+        padding: '1rem'
+      },
+      children: (0,jsx_runtime.jsx)(Text/* Text */.E, {
+        children: "Ljust läge"
+      })
+    }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+      size: 6,
+      style: {
+        backgroundColor: tokens.semantic.layer01,
+        colorScheme: 'dark',
+        padding: '1rem'
+      },
+      children: (0,jsx_runtime.jsx)(Text/* Text */.E, {
+        children: "Mörkt läge"
+      })
+    })]
+  });
+};
+const Layers = () => {
+  return (0,jsx_runtime.jsxs)(Grid/* Grid */.x, {
+    fluid: true,
+    className: "card-guidelines",
+    children: [(0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+      size: 6,
+      style: {
+        colorScheme: 'light',
+        border: '1px solid var(--ifm-color-emphasis-200)'
+      },
+      children: (0,jsx_runtime.jsxs)("div", {
+        style: {
+          backgroundColor: tokens.semantic.background,
+          padding: '1rem'
+        },
+        children: [(0,jsx_runtime.jsx)(Text/* Text */.E, {
+          children: "background"
+        }), (0,jsx_runtime.jsxs)("div", {
+          style: {
+            backgroundColor: tokens.semantic.layer01,
+            padding: '1rem',
+            margin: '1rem 0 0 0'
+          },
+          children: [(0,jsx_runtime.jsx)(Text/* Text */.E, {
+            children: "layer01"
+          }), (0,jsx_runtime.jsx)("div", {
+            style: {
+              backgroundColor: tokens.semantic.layer02,
+              padding: '1rem',
+              margin: '1rem 0 0 0'
+            },
+            children: (0,jsx_runtime.jsx)(Text/* Text */.E, {
+              children: "layer02"
+            })
+          })]
+        })]
+      })
+    }), (0,jsx_runtime.jsx)(GridItem/* GridItem */.E, {
+      size: 6,
+      style: {
+        colorScheme: 'dark'
+      },
+      children: (0,jsx_runtime.jsxs)("div", {
+        style: {
+          backgroundColor: tokens.semantic.background,
+          padding: '1rem'
+        },
+        children: [(0,jsx_runtime.jsx)(Text/* Text */.E, {
+          children: "background"
+        }), (0,jsx_runtime.jsxs)("div", {
+          style: {
+            backgroundColor: tokens.semantic.layer01,
+            padding: '1rem',
+            margin: '1rem 0 0 0'
+          },
+          children: [(0,jsx_runtime.jsx)(Text/* Text */.E, {
+            children: "layer01"
+          }), (0,jsx_runtime.jsx)("div", {
+            style: {
+              backgroundColor: tokens.semantic.layer02,
+              padding: '1rem',
+              margin: '1rem 0 0 0'
+            },
+            children: (0,jsx_runtime.jsx)(Text/* Text */.E, {
+              children: "layer02"
+            })
+          })]
+        })]
+      })
+    })]
+  });
+};
+const TokenNaming = () => {
+  return (0,jsx_runtime.jsx)("div", {
+    className: "card-guidelines",
+    children: (0,jsx_runtime.jsxs)("svg", {
+      width: "100%",
+      height: "100%",
+      viewBox: "0 0 700 400",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      children: [(0,jsx_runtime.jsx)("rect", {
+        width: "700",
+        height: "400"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M184.278 179V167.364H191.574V168.875H186.034V172.42H191.193V173.926H186.034V177.489H191.642V179H184.278ZM197.857 170.273V171.636H193.089V170.273H197.857ZM194.368 168.182H196.067V176.438C196.067 176.767 196.116 177.015 196.214 177.182C196.313 177.345 196.44 177.456 196.595 177.517C196.754 177.574 196.927 177.602 197.112 177.602C197.249 177.602 197.368 177.593 197.47 177.574C197.572 177.555 197.652 177.54 197.709 177.528L198.016 178.932C197.917 178.97 197.777 179.008 197.595 179.045C197.413 179.087 197.186 179.11 196.913 179.114C196.466 179.121 196.05 179.042 195.663 178.875C195.277 178.708 194.964 178.451 194.726 178.102C194.487 177.754 194.368 177.316 194.368 176.79V168.182ZM199.736 179V170.273H201.435V179H199.736ZM200.594 168.926C200.298 168.926 200.045 168.828 199.832 168.631C199.624 168.43 199.52 168.191 199.52 167.915C199.52 167.634 199.624 167.396 199.832 167.199C200.045 166.998 200.298 166.898 200.594 166.898C200.889 166.898 201.141 166.998 201.349 167.199C201.562 167.396 201.668 167.634 201.668 167.915C201.668 168.191 201.562 168.43 201.349 168.631C201.141 168.828 200.889 168.926 200.594 168.926ZM205.283 176.04L205.271 173.966H205.567L209.044 170.273H211.078L207.112 174.477H206.845L205.283 176.04ZM203.72 179V167.364H205.419V179H203.72ZM209.232 179L206.107 174.852L207.277 173.665L211.317 179H209.232ZM216.028 179.176C215.169 179.176 214.428 178.992 213.807 178.625C213.189 178.254 212.712 177.733 212.375 177.062C212.042 176.388 211.875 175.598 211.875 174.693C211.875 173.799 212.042 173.011 212.375 172.33C212.712 171.648 213.182 171.116 213.784 170.733C214.39 170.35 215.098 170.159 215.909 170.159C216.402 170.159 216.879 170.241 217.341 170.403C217.803 170.566 218.218 170.822 218.585 171.17C218.953 171.519 219.242 171.972 219.455 172.528C219.667 173.081 219.773 173.754 219.773 174.545V175.148H212.835V173.875H218.108C218.108 173.428 218.017 173.032 217.835 172.688C217.653 172.339 217.398 172.064 217.068 171.864C216.742 171.663 216.36 171.562 215.92 171.562C215.443 171.562 215.027 171.68 214.67 171.915C214.318 172.146 214.045 172.449 213.852 172.824C213.663 173.195 213.568 173.598 213.568 174.034V175.028C213.568 175.612 213.67 176.108 213.875 176.517C214.083 176.926 214.373 177.239 214.744 177.455C215.116 177.667 215.549 177.773 216.045 177.773C216.367 177.773 216.661 177.727 216.926 177.636C217.191 177.542 217.42 177.402 217.614 177.216C217.807 177.03 217.955 176.801 218.057 176.528L219.665 176.818C219.536 177.292 219.305 177.706 218.972 178.062C218.642 178.415 218.227 178.689 217.727 178.886C217.231 179.08 216.665 179.176 216.028 179.176ZM225.732 170.273V171.636H220.964V170.273H225.732ZM222.243 168.182H223.942V176.438C223.942 176.767 223.991 177.015 224.089 177.182C224.188 177.345 224.315 177.456 224.47 177.517C224.629 177.574 224.802 177.602 224.987 177.602C225.124 177.602 225.243 177.593 225.345 177.574C225.447 177.555 225.527 177.54 225.584 177.528L225.891 178.932C225.792 178.97 225.652 179.008 225.47 179.045C225.288 179.087 225.061 179.11 224.788 179.114C224.341 179.121 223.925 179.042 223.538 178.875C223.152 178.708 222.839 178.451 222.601 178.102C222.362 177.754 222.243 177.316 222.243 176.79V168.182ZM231.685 170.273V171.636H226.918V170.273H231.685ZM228.196 168.182H229.895V176.438C229.895 176.767 229.944 177.015 230.043 177.182C230.141 177.345 230.268 177.456 230.423 177.517C230.582 177.574 230.755 177.602 230.94 177.602C231.077 177.602 231.196 177.593 231.298 177.574C231.401 177.555 231.48 177.54 231.537 177.528L231.844 178.932C231.745 178.97 231.605 179.008 231.423 179.045C231.241 179.087 231.014 179.11 230.741 179.114C230.295 179.121 229.878 179.042 229.491 178.875C229.105 178.708 228.793 178.451 228.554 178.102C228.315 177.754 228.196 177.316 228.196 176.79V168.182Z",
+        fill: tokens.semantic.textPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M184.651 190.818L187.673 199.389H187.793L190.815 190.818H192.108L188.369 201H187.097L183.358 190.818H184.651ZM195.071 201.179C194.587 201.179 194.148 201.088 193.754 200.906C193.359 200.72 193.046 200.453 192.814 200.105C192.582 199.754 192.466 199.33 192.466 198.832C192.466 198.395 192.552 198.04 192.724 197.768C192.897 197.493 193.127 197.278 193.415 197.122C193.704 196.966 194.022 196.85 194.37 196.774C194.721 196.695 195.074 196.632 195.429 196.585C195.893 196.526 196.269 196.481 196.558 196.451C196.849 196.418 197.061 196.363 197.194 196.287C197.33 196.211 197.398 196.078 197.398 195.889V195.849C197.398 195.359 197.263 194.978 196.995 194.706C196.73 194.434 196.327 194.298 195.787 194.298C195.227 194.298 194.788 194.421 194.469 194.666C194.151 194.911 193.928 195.173 193.798 195.452L192.685 195.054C192.884 194.59 193.149 194.229 193.48 193.97C193.815 193.708 194.179 193.526 194.574 193.423C194.972 193.317 195.363 193.264 195.747 193.264C195.992 193.264 196.274 193.294 196.592 193.354C196.914 193.41 197.224 193.528 197.522 193.707C197.824 193.886 198.074 194.156 198.273 194.517C198.472 194.878 198.571 195.362 198.571 195.969V201H197.398V199.966H197.338C197.259 200.132 197.126 200.309 196.94 200.498C196.755 200.687 196.508 200.848 196.2 200.98C195.891 201.113 195.515 201.179 195.071 201.179ZM195.25 200.125C195.714 200.125 196.105 200.034 196.423 199.852C196.745 199.669 196.987 199.434 197.149 199.146C197.315 198.857 197.398 198.554 197.398 198.236V197.162C197.348 197.222 197.239 197.276 197.07 197.326C196.904 197.372 196.712 197.414 196.493 197.45C196.277 197.483 196.067 197.513 195.862 197.54C195.659 197.563 195.495 197.583 195.369 197.599C195.064 197.639 194.779 197.704 194.514 197.793C194.252 197.879 194.04 198.01 193.878 198.186C193.719 198.358 193.639 198.594 193.639 198.892C193.639 199.3 193.79 199.608 194.092 199.817C194.397 200.022 194.783 200.125 195.25 200.125ZM201.886 190.818V201H200.713V190.818H201.886ZM207.435 193.364V194.358H203.319V193.364H207.435ZM204.552 201V192.31C204.552 191.872 204.655 191.508 204.86 191.216C205.066 190.924 205.332 190.705 205.661 190.56C205.989 190.414 206.335 190.341 206.7 190.341C206.988 190.341 207.223 190.364 207.406 190.411C207.588 190.457 207.724 190.5 207.813 190.54L207.475 191.554C207.415 191.534 207.333 191.509 207.227 191.479C207.124 191.45 206.988 191.435 206.819 191.435C206.431 191.435 206.151 191.532 205.979 191.728C205.81 191.924 205.725 192.21 205.725 192.588V201H204.552ZM209.08 201V193.364H210.213V194.517H210.293C210.432 194.139 210.684 193.833 211.048 193.597C211.413 193.362 211.824 193.244 212.281 193.244C212.368 193.244 212.475 193.246 212.605 193.249C212.734 193.253 212.832 193.258 212.898 193.264V194.457C212.858 194.447 212.767 194.433 212.624 194.413C212.485 194.389 212.338 194.378 212.182 194.378C211.811 194.378 211.479 194.456 211.188 194.612C210.899 194.764 210.671 194.976 210.502 195.248C210.336 195.516 210.253 195.823 210.253 196.168V201H209.08ZM214.289 201V193.364H215.462V201H214.289ZM214.885 192.091C214.657 192.091 214.459 192.013 214.294 191.857C214.131 191.701 214.05 191.514 214.05 191.295C214.05 191.077 214.131 190.889 214.294 190.734C214.459 190.578 214.657 190.5 214.885 190.5C215.114 190.5 215.31 190.578 215.472 190.734C215.638 190.889 215.721 191.077 215.721 191.295C215.721 191.514 215.638 191.701 215.472 191.857C215.31 192.013 215.114 192.091 214.885 192.091ZM222.722 196.406V201H221.548V190.818H222.722V194.557H222.821C223 194.162 223.269 193.849 223.627 193.617C223.988 193.382 224.468 193.264 225.068 193.264C225.589 193.264 226.044 193.369 226.436 193.577C226.827 193.783 227.13 194.099 227.345 194.527C227.564 194.951 227.673 195.491 227.673 196.148V201H226.5V196.227C226.5 195.621 226.343 195.152 226.028 194.82C225.716 194.486 225.284 194.318 224.73 194.318C224.346 194.318 224.001 194.399 223.696 194.562C223.395 194.724 223.156 194.961 222.98 195.273C222.808 195.584 222.722 195.962 222.722 196.406ZM229.82 193.364H230.993V201.557C230.993 202.027 230.912 202.435 230.75 202.78C230.591 203.125 230.349 203.391 230.024 203.58C229.702 203.769 229.296 203.864 228.806 203.864C228.766 203.864 228.726 203.864 228.686 203.864C228.647 203.864 228.607 203.864 228.567 203.864V202.77C228.607 202.77 228.643 202.77 228.676 202.77C228.71 202.77 228.746 202.77 228.786 202.77C229.144 202.77 229.406 202.664 229.571 202.452C229.737 202.243 229.82 201.945 229.82 201.557V193.364ZM230.397 192.091C230.168 192.091 229.971 192.013 229.805 191.857C229.643 191.701 229.561 191.514 229.561 191.295C229.561 191.077 229.643 190.889 229.805 190.734C229.971 190.578 230.168 190.5 230.397 190.5C230.625 190.5 230.821 190.578 230.983 190.734C231.149 190.889 231.232 191.077 231.232 191.295C231.232 191.514 231.149 191.701 230.983 191.857C230.821 192.013 230.625 192.091 230.397 192.091ZM235.389 201.179C234.905 201.179 234.466 201.088 234.072 200.906C233.677 200.72 233.364 200.453 233.132 200.105C232.9 199.754 232.784 199.33 232.784 198.832C232.784 198.395 232.87 198.04 233.043 197.768C233.215 197.493 233.445 197.278 233.734 197.122C234.022 196.966 234.34 196.85 234.688 196.774C235.04 196.695 235.393 196.632 235.747 196.585C236.211 196.526 236.588 196.481 236.876 196.451C237.168 196.418 237.38 196.363 237.512 196.287C237.648 196.211 237.716 196.078 237.716 195.889V195.849C237.716 195.359 237.582 194.978 237.313 194.706C237.048 194.434 236.646 194.298 236.105 194.298C235.545 194.298 235.106 194.421 234.788 194.666C234.47 194.911 234.246 195.173 234.117 195.452L233.003 195.054C233.202 194.59 233.467 194.229 233.798 193.97C234.133 193.708 234.498 193.526 234.892 193.423C235.29 193.317 235.681 193.264 236.066 193.264C236.311 193.264 236.593 193.294 236.911 193.354C237.232 193.41 237.542 193.528 237.84 193.707C238.142 193.886 238.392 194.156 238.591 194.517C238.79 194.878 238.889 195.362 238.889 195.969V201H237.716V199.966H237.656C237.577 200.132 237.444 200.309 237.259 200.498C237.073 200.687 236.826 200.848 236.518 200.98C236.21 201.113 235.834 201.179 235.389 201.179ZM235.568 200.125C236.032 200.125 236.423 200.034 236.742 199.852C237.063 199.669 237.305 199.434 237.468 199.146C237.633 198.857 237.716 198.554 237.716 198.236V197.162C237.666 197.222 237.557 197.276 237.388 197.326C237.222 197.372 237.03 197.414 236.811 197.45C236.596 197.483 236.385 197.513 236.18 197.54C235.978 197.563 235.814 197.583 235.688 197.599C235.383 197.639 235.098 197.704 234.833 197.793C234.571 197.879 234.359 198.01 234.196 198.186C234.037 198.358 233.958 198.594 233.958 198.892C233.958 199.3 234.108 199.608 234.41 199.817C234.715 200.022 235.101 200.125 235.568 200.125ZM234.713 192.091C234.504 192.091 234.319 192.011 234.156 191.852C233.997 191.69 233.918 191.504 233.918 191.295C233.918 191.067 233.997 190.878 234.156 190.729C234.319 190.576 234.504 190.5 234.713 190.5C234.942 190.5 235.131 190.576 235.28 190.729C235.432 190.878 235.509 191.067 235.509 191.295C235.509 191.504 235.432 191.69 235.28 191.852C235.131 192.011 234.942 192.091 234.713 192.091ZM237.577 192.091C237.368 192.091 237.182 192.011 237.02 191.852C236.861 191.69 236.781 191.504 236.781 191.295C236.781 191.067 236.861 190.878 237.02 190.729C237.182 190.576 237.368 190.5 237.577 190.5C237.806 190.5 237.994 190.576 238.144 190.729C238.296 190.878 238.372 191.067 238.372 191.295C238.372 191.504 238.296 191.69 238.144 191.852C237.994 192.011 237.806 192.091 237.577 192.091ZM242.204 190.818V201H241.031V190.818H242.204ZM244.353 203.864V193.364H245.487V194.577H245.626C245.712 194.444 245.831 194.275 245.984 194.07C246.14 193.861 246.362 193.675 246.65 193.513C246.942 193.347 247.336 193.264 247.833 193.264C248.476 193.264 249.043 193.425 249.534 193.746C250.024 194.068 250.407 194.524 250.682 195.114C250.957 195.704 251.095 196.4 251.095 197.202C251.095 198.01 250.957 198.711 250.682 199.305C250.407 199.895 250.026 200.352 249.539 200.677C249.051 200.998 248.49 201.159 247.853 201.159C247.363 201.159 246.97 201.078 246.675 200.915C246.38 200.75 246.153 200.562 245.994 200.354C245.835 200.142 245.712 199.966 245.626 199.827H245.526V203.864H244.353ZM245.507 197.182C245.507 197.759 245.591 198.267 245.76 198.708C245.929 199.146 246.176 199.489 246.501 199.737C246.826 199.982 247.223 200.105 247.694 200.105C248.185 200.105 248.594 199.976 248.922 199.717C249.253 199.455 249.502 199.104 249.668 198.663C249.837 198.219 249.921 197.725 249.921 197.182C249.921 196.645 249.838 196.161 249.673 195.73C249.51 195.296 249.263 194.953 248.932 194.701C248.604 194.446 248.191 194.318 247.694 194.318C247.217 194.318 246.816 194.439 246.491 194.681C246.166 194.92 245.921 195.254 245.755 195.685C245.589 196.113 245.507 196.612 245.507 197.182ZM256.205 193.364V194.358H252.248V193.364H256.205ZM253.401 191.534H254.575V198.812C254.575 199.144 254.623 199.393 254.719 199.558C254.818 199.721 254.944 199.83 255.097 199.886C255.253 199.939 255.417 199.966 255.589 199.966C255.718 199.966 255.824 199.959 255.907 199.946C255.99 199.929 256.056 199.916 256.106 199.906L256.345 200.96C256.265 200.99 256.154 201.02 256.012 201.05C255.869 201.083 255.688 201.099 255.47 201.099C255.138 201.099 254.813 201.028 254.495 200.886C254.18 200.743 253.919 200.526 253.71 200.234C253.504 199.943 253.401 199.575 253.401 199.131V191.534ZM261.09 201.159C260.354 201.159 259.72 200.997 259.186 200.672C258.656 200.344 258.246 199.886 257.958 199.3C257.673 198.71 257.53 198.024 257.53 197.241C257.53 196.459 257.673 195.77 257.958 195.173C258.246 194.573 258.647 194.106 259.161 193.771C259.678 193.433 260.281 193.264 260.971 193.264C261.368 193.264 261.761 193.33 262.149 193.463C262.537 193.596 262.89 193.811 263.208 194.109C263.526 194.404 263.78 194.795 263.969 195.283C264.157 195.77 264.252 196.37 264.252 197.082V197.58H258.366V196.565H263.059C263.059 196.134 262.973 195.75 262.8 195.412C262.631 195.074 262.389 194.807 262.074 194.612C261.763 194.416 261.395 194.318 260.971 194.318C260.503 194.318 260.099 194.434 259.758 194.666C259.42 194.895 259.159 195.193 258.977 195.561C258.795 195.929 258.704 196.323 258.704 196.744V197.42C258.704 197.997 258.803 198.486 259.002 198.887C259.204 199.285 259.484 199.588 259.842 199.797C260.2 200.002 260.616 200.105 261.09 200.105C261.398 200.105 261.677 200.062 261.925 199.976C262.177 199.886 262.394 199.754 262.577 199.578C262.759 199.399 262.9 199.177 262.999 198.912L264.133 199.23C264.013 199.615 263.813 199.953 263.531 200.244C263.249 200.533 262.901 200.758 262.487 200.92C262.073 201.08 261.607 201.159 261.09 201.159ZM266.707 193.364L268.536 196.486L270.366 193.364H271.718L269.252 197.182L271.718 201H270.366L268.536 198.037L266.707 201H265.354L267.781 197.182L265.354 193.364H266.707ZM276.713 193.364V194.358H272.756V193.364H276.713ZM273.909 191.534H275.083V198.812C275.083 199.144 275.131 199.393 275.227 199.558C275.326 199.721 275.452 199.83 275.605 199.886C275.76 199.939 275.924 199.966 276.097 199.966C276.226 199.966 276.332 199.959 276.415 199.946C276.498 199.929 276.564 199.916 276.614 199.906L276.852 200.96C276.773 200.99 276.662 201.02 276.519 201.05C276.377 201.083 276.196 201.099 275.977 201.099C275.646 201.099 275.321 201.028 275.003 200.886C274.688 200.743 274.426 200.526 274.218 200.234C274.012 199.943 273.909 199.575 273.909 199.131V191.534Z",
+        fill: tokens.semantic.textPrimary
+      }), (0,jsx_runtime.jsx)("mask", {
+        id: "path-3-inside-1_1610_7456",
+        fill: tokens.semantic.field01,
+        children: (0,jsx_runtime.jsx)("path", {
+          d: "M183 213H511V261H183V213Z"
+        })
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M183 213H511V261H183V213Z",
+        fill: tokens.semantic.field01
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M511 260H183V262H511V260Z",
+        fill: tokens.semantic.borderPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M200.886 243H199.409L203.682 231.364H205.136L209.409 243H207.932L204.455 233.205H204.364L200.886 243ZM201.432 238.455H207.386V239.705H201.432V238.455ZM204.409 230.568C203.955 230.568 203.566 230.407 203.244 230.085C202.922 229.763 202.761 229.375 202.761 228.92C202.761 228.617 202.835 228.341 202.983 228.091C203.131 227.841 203.33 227.642 203.58 227.494C203.83 227.347 204.106 227.273 204.409 227.273C204.712 227.273 204.989 227.347 205.239 227.494C205.489 227.642 205.688 227.841 205.835 228.091C205.983 228.341 206.057 228.617 206.057 228.92C206.057 229.223 205.983 229.5 205.835 229.75C205.688 230 205.489 230.199 205.239 230.347C204.989 230.494 204.712 230.568 204.409 230.568ZM204.409 229.75C204.644 229.75 204.839 229.67 204.994 229.511C205.15 229.348 205.227 229.152 205.227 228.92C205.227 228.689 205.15 228.494 204.994 228.335C204.839 228.172 204.644 228.091 204.409 228.091C204.174 228.091 203.979 228.172 203.824 228.335C203.669 228.494 203.591 228.689 203.591 228.92C203.591 229.152 203.669 229.348 203.824 229.511C203.979 229.67 204.174 229.75 204.409 229.75ZM211.699 243H210.222L214.494 231.364H215.949L220.222 243H218.744L215.267 233.205H215.176L211.699 243ZM212.244 238.455H218.199V239.705H212.244V238.455ZM215.222 230.568C214.767 230.568 214.379 230.407 214.057 230.085C213.735 229.763 213.574 229.375 213.574 228.92C213.574 228.617 213.648 228.341 213.795 228.091C213.943 227.841 214.142 227.642 214.392 227.494C214.642 227.347 214.919 227.273 215.222 227.273C215.525 227.273 215.801 227.347 216.051 227.494C216.301 227.642 216.5 227.841 216.648 228.091C216.795 228.341 216.869 228.617 216.869 228.92C216.869 229.223 216.795 229.5 216.648 229.75C216.5 230 216.301 230.199 216.051 230.347C215.801 230.494 215.525 230.568 215.222 230.568ZM215.222 229.75C215.456 229.75 215.652 229.67 215.807 229.511C215.962 229.348 216.04 229.152 216.04 228.92C216.04 228.689 215.962 228.494 215.807 228.335C215.652 228.172 215.456 228.091 215.222 228.091C214.987 228.091 214.792 228.172 214.636 228.335C214.481 228.494 214.403 228.689 214.403 228.92C214.403 229.152 214.481 229.348 214.636 229.511C214.792 229.67 214.987 229.75 215.222 229.75ZM222.511 243H221.034L225.307 231.364H226.761L231.034 243H229.557L226.08 233.205H225.989L222.511 243ZM223.057 238.455H229.011V239.705H223.057V238.455ZM226.034 230.568C225.58 230.568 225.191 230.407 224.869 230.085C224.547 229.763 224.386 229.375 224.386 228.92C224.386 228.617 224.46 228.341 224.608 228.091C224.756 227.841 224.955 227.642 225.205 227.494C225.455 227.347 225.731 227.273 226.034 227.273C226.337 227.273 226.614 227.347 226.864 227.494C227.114 227.642 227.313 227.841 227.46 228.091C227.608 228.341 227.682 228.617 227.682 228.92C227.682 229.223 227.608 229.5 227.46 229.75C227.313 230 227.114 230.199 226.864 230.347C226.614 230.494 226.337 230.568 226.034 230.568ZM226.034 229.75C226.269 229.75 226.464 229.67 226.619 229.511C226.775 229.348 226.852 229.152 226.852 228.92C226.852 228.689 226.775 228.494 226.619 228.335C226.464 228.172 226.269 228.091 226.034 228.091C225.799 228.091 225.604 228.172 225.449 228.335C225.294 228.494 225.216 228.689 225.216 228.92C225.216 229.152 225.294 229.348 225.449 229.511C225.604 229.67 225.799 229.75 226.034 229.75ZM233.324 243H231.847L236.119 231.364H237.574L241.847 243H240.369L236.892 233.205H236.801L233.324 243ZM233.869 238.455H239.824V239.705H233.869V238.455ZM236.847 230.568C236.392 230.568 236.004 230.407 235.682 230.085C235.36 229.763 235.199 229.375 235.199 228.92C235.199 228.617 235.273 228.341 235.42 228.091C235.568 227.841 235.767 227.642 236.017 227.494C236.267 227.347 236.544 227.273 236.847 227.273C237.15 227.273 237.426 227.347 237.676 227.494C237.926 227.642 238.125 227.841 238.273 228.091C238.42 228.341 238.494 228.617 238.494 228.92C238.494 229.223 238.42 229.5 238.273 229.75C238.125 230 237.926 230.199 237.676 230.347C237.426 230.494 237.15 230.568 236.847 230.568ZM236.847 229.75C237.081 229.75 237.277 229.67 237.432 229.511C237.587 229.348 237.665 229.152 237.665 228.92C237.665 228.689 237.587 228.494 237.432 228.335C237.277 228.172 237.081 228.091 236.847 228.091C236.612 228.091 236.417 228.172 236.261 228.335C236.106 228.494 236.028 228.689 236.028 228.92C236.028 229.152 236.106 229.348 236.261 229.511C236.417 229.67 236.612 229.75 236.847 229.75ZM251.018 231.364H252.7L256.655 241.023H256.791L260.746 231.364H262.428V243H261.109V234.159H260.996L257.359 243H256.087L252.45 234.159H252.337V243H251.018V231.364ZM265.253 231.364H266.935L270.889 241.023H271.026L274.98 231.364H276.662V243H275.344V234.159H275.23L271.594 243H270.321L266.685 234.159H266.571V243H265.253V231.364ZM290.438 243H286.847V231.364H290.597C291.725 231.364 292.691 231.597 293.494 232.062C294.297 232.525 294.913 233.189 295.341 234.057C295.769 234.92 295.983 235.955 295.983 237.159C295.983 238.371 295.767 239.415 295.335 240.29C294.903 241.161 294.275 241.831 293.449 242.301C292.623 242.767 291.619 243 290.438 243ZM288.256 241.75H290.347C291.309 241.75 292.106 241.564 292.739 241.193C293.371 240.822 293.843 240.294 294.153 239.608C294.464 238.922 294.619 238.106 294.619 237.159C294.619 236.22 294.466 235.411 294.159 234.733C293.852 234.051 293.394 233.528 292.784 233.165C292.174 232.797 291.415 232.614 290.506 232.614H288.256V241.75ZM301.938 243H298.347V231.364H302.097C303.225 231.364 304.191 231.597 304.994 232.062C305.797 232.525 306.413 233.189 306.841 234.057C307.269 234.92 307.483 235.955 307.483 237.159C307.483 238.371 307.267 239.415 306.835 240.29C306.403 241.161 305.775 241.831 304.949 242.301C304.123 242.767 303.119 243 301.938 243ZM299.756 241.75H301.847C302.809 241.75 303.606 241.564 304.239 241.193C304.871 240.822 305.343 240.294 305.653 239.608C305.964 238.922 306.119 238.106 306.119 237.159C306.119 236.22 305.966 235.411 305.659 234.733C305.352 234.051 304.894 233.528 304.284 233.165C303.674 232.797 302.915 232.614 302.006 232.614H299.756V241.75Z",
+        fill: tokens.semantic.textPlaceholder
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M248.477 236.557V237.807H243.386V236.557H248.477ZM284.305 236.557V237.807H279.214V236.557H284.305Z",
+        fill: tokens.semantic.textPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M483.667 228.667V232",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M490.333 228.667V232",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M492.833 230.333H481.167C480.246 230.333 479.5 231.08 479.5 232V243.667C479.5 244.587 480.246 245.333 481.167 245.333H492.833C493.754 245.333 494.5 244.587 494.5 243.667V232C494.5 231.08 493.754 230.333 492.833 230.333Z",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M479.5 235.333H494.5",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M483.667 238.667H483.675",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M487 238.667H487.008",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M490.333 238.667H490.342",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M483.667 242H483.675",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M487 242H487.008",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M490.333 242H490.342",
+        stroke: tokens.semantic.iconPrimary,
+        strokeWidth: "1.66667",
+        strokeLinecap: "round",
+        strokeLinejoin: "round"
+      }), (0,jsx_runtime.jsx)("rect", {
+        width: "106",
+        height: "28",
+        transform: "translate(46 37)",
+        fill: tokens.semantic.buttonBackgroundPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M55.4091 57V45.3636H56.75V49.6591H56.8636C56.9621 49.5076 57.0985 49.3144 57.2727 49.0795C57.4508 48.8409 57.7045 48.6288 58.0341 48.4432C58.3674 48.2538 58.8182 48.1591 59.3864 48.1591C60.1212 48.1591 60.7689 48.3428 61.3295 48.7102C61.8902 49.0777 62.3277 49.5985 62.642 50.2727C62.9564 50.947 63.1136 51.7424 63.1136 52.6591C63.1136 53.5833 62.9564 54.3845 62.642 55.0625C62.3277 55.7367 61.892 56.2595 61.3352 56.6307C60.7784 56.9981 60.1364 57.1818 59.4091 57.1818C58.8485 57.1818 58.3996 57.089 58.0625 56.9034C57.7254 56.714 57.4659 56.5 57.2841 56.2614C57.1023 56.0189 56.9621 55.8182 56.8636 55.6591H56.7045V57H55.4091ZM56.7273 52.6364C56.7273 53.2955 56.8239 53.8769 57.017 54.3807C57.2102 54.8807 57.4924 55.2727 57.8636 55.5568C58.2348 55.8371 58.6894 55.9773 59.2273 55.9773C59.7879 55.9773 60.2557 55.8295 60.6307 55.5341C61.0095 55.2348 61.2936 54.8333 61.483 54.3295C61.6761 53.822 61.7727 53.2576 61.7727 52.6364C61.7727 52.0227 61.678 51.4697 61.4886 50.9773C61.303 50.4811 61.0208 50.089 60.642 49.8011C60.267 49.5095 59.7955 49.3636 59.2273 49.3636C58.6818 49.3636 58.2235 49.5019 57.8523 49.7784C57.4811 50.0511 57.2008 50.4337 57.0114 50.9261C56.822 51.4148 56.7273 51.9848 56.7273 52.6364ZM67.733 57.2045C67.1799 57.2045 66.678 57.1004 66.2273 56.892C65.7765 56.6799 65.4186 56.375 65.1534 55.9773C64.8883 55.5758 64.7557 55.0909 64.7557 54.5227C64.7557 54.0227 64.8542 53.6174 65.0511 53.3068C65.2481 52.9924 65.5114 52.7462 65.8409 52.5682C66.1705 52.3902 66.5341 52.2576 66.9318 52.1705C67.3333 52.0795 67.7367 52.0076 68.142 51.9545C68.6723 51.8864 69.1023 51.8352 69.4318 51.8011C69.7652 51.7633 70.0076 51.7008 70.1591 51.6136C70.3144 51.5265 70.392 51.375 70.392 51.1591V51.1136C70.392 50.553 70.2386 50.1174 69.9318 49.8068C69.6288 49.4962 69.1686 49.3409 68.5511 49.3409C67.911 49.3409 67.4091 49.4811 67.0455 49.7614C66.6818 50.0417 66.4261 50.3409 66.2784 50.6591L65.0057 50.2045C65.233 49.6742 65.536 49.2614 65.9148 48.9659C66.2973 48.6667 66.714 48.4583 67.1648 48.3409C67.6193 48.2197 68.0663 48.1591 68.5057 48.1591C68.786 48.1591 69.108 48.1932 69.4716 48.2614C69.839 48.3258 70.1932 48.4602 70.5341 48.6648C70.8788 48.8693 71.1648 49.178 71.392 49.5909C71.6193 50.0038 71.733 50.5568 71.733 51.25V57H70.392V55.8182H70.3239C70.233 56.0076 70.0814 56.2102 69.8693 56.4261C69.6572 56.642 69.375 56.8258 69.0227 56.9773C68.6705 57.1288 68.2405 57.2045 67.733 57.2045ZM67.9375 56C68.4678 56 68.9148 55.8958 69.2784 55.6875C69.6458 55.4792 69.9223 55.2102 70.108 54.8807C70.2973 54.5511 70.392 54.2045 70.392 53.8409V52.6136C70.3352 52.6818 70.2102 52.7443 70.017 52.8011C69.8277 52.8542 69.608 52.9015 69.358 52.9432C69.1117 52.9811 68.8712 53.0152 68.6364 53.0455C68.4053 53.072 68.2178 53.0947 68.0739 53.1136C67.7254 53.1591 67.3996 53.233 67.0966 53.3352C66.7973 53.4337 66.5549 53.5833 66.3693 53.7841C66.1875 53.9811 66.0966 54.25 66.0966 54.5909C66.0966 55.0568 66.2689 55.4091 66.6136 55.6477C66.9621 55.8826 67.4034 56 67.9375 56ZM77.7259 57.1818C76.9077 57.1818 76.2031 56.9886 75.6122 56.6023C75.0213 56.2159 74.5668 55.6837 74.2486 55.0057C73.9304 54.3277 73.7713 53.553 73.7713 52.6818C73.7713 51.7955 73.9342 51.0133 74.2599 50.3352C74.5895 49.6534 75.0478 49.1212 75.6349 48.7386C76.2259 48.3523 76.9152 48.1591 77.7031 48.1591C78.3168 48.1591 78.8698 48.2727 79.3622 48.5C79.8546 48.7273 80.258 49.0455 80.5724 49.4545C80.8868 49.8636 81.0819 50.3409 81.1577 50.8864H79.8168C79.7145 50.4886 79.4872 50.1364 79.1349 49.8295C78.7865 49.5189 78.3168 49.3636 77.7259 49.3636C77.2031 49.3636 76.7448 49.5 76.3509 49.7727C75.9607 50.0417 75.6558 50.4223 75.4361 50.9148C75.2202 51.4034 75.1122 51.9773 75.1122 52.6364C75.1122 53.3106 75.2183 53.8977 75.4304 54.3977C75.6463 54.8977 75.9493 55.286 76.3395 55.5625C76.7334 55.839 77.1955 55.9773 77.7259 55.9773C78.0743 55.9773 78.3906 55.9167 78.6747 55.7955C78.9588 55.6742 79.1993 55.5 79.3963 55.2727C79.5933 55.0455 79.7334 54.7727 79.8168 54.4545H81.1577C81.0819 54.9697 80.8944 55.4337 80.5952 55.8466C80.2997 56.2557 79.9077 56.5814 79.419 56.8239C78.9342 57.0625 78.3698 57.1818 77.7259 57.1818ZM84.3679 53.8182L84.3452 52.1591H84.6179L88.4361 48.2727H90.0952L86.027 52.3864H85.9134L84.3679 53.8182ZM83.1179 57V45.3636H84.4588V57H83.1179ZM88.6634 57L85.2543 52.6818L86.2088 51.75L90.3679 57H88.6634ZM94.9844 60.4545C94.3366 60.4545 93.7798 60.3712 93.3139 60.2045C92.848 60.0417 92.4598 59.8258 92.1491 59.5568C91.8423 59.2917 91.598 59.0076 91.4162 58.7045L92.4844 57.9545C92.6056 58.1136 92.759 58.2955 92.9446 58.5C93.1302 58.7083 93.384 58.8883 93.706 59.0398C94.0317 59.1951 94.4579 59.2727 94.9844 59.2727C95.6889 59.2727 96.2704 59.1023 96.7287 58.7614C97.187 58.4205 97.4162 57.8864 97.4162 57.1591V55.3864H97.3026C97.2041 55.5455 97.0639 55.7424 96.8821 55.9773C96.7041 56.2083 96.4465 56.4148 96.1094 56.5966C95.776 56.7746 95.3253 56.8636 94.7571 56.8636C94.0526 56.8636 93.42 56.697 92.8594 56.3636C92.3026 56.0303 91.8613 55.5455 91.5355 54.9091C91.2135 54.2727 91.0526 53.5 91.0526 52.5909C91.0526 51.697 91.2098 50.9186 91.5241 50.2557C91.8385 49.589 92.276 49.0739 92.8366 48.7102C93.3973 48.3428 94.045 48.1591 94.7798 48.1591C95.348 48.1591 95.7988 48.2538 96.1321 48.4432C96.4692 48.6288 96.7268 48.8409 96.9048 49.0795C97.0866 49.3144 97.2268 49.5076 97.3253 49.6591H97.4616V48.2727H98.7571V57.25C98.7571 58 98.5866 58.6098 98.2457 59.0795C97.9086 59.553 97.4541 59.8996 96.8821 60.1193C96.3139 60.3428 95.6813 60.4545 94.9844 60.4545ZM94.9389 55.6591C95.4768 55.6591 95.9313 55.536 96.3026 55.2898C96.6738 55.0436 96.956 54.6894 97.1491 54.2273C97.3423 53.7652 97.4389 53.2121 97.4389 52.5682C97.4389 51.9394 97.3442 51.3845 97.1548 50.9034C96.9654 50.4223 96.6851 50.0455 96.3139 49.7727C95.9427 49.5 95.4844 49.3636 94.9389 49.3636C94.3707 49.3636 93.8973 49.5076 93.5185 49.7955C93.1435 50.0833 92.8613 50.4697 92.6719 50.9545C92.4863 51.4394 92.3935 51.9773 92.3935 52.5682C92.3935 53.1742 92.4882 53.7102 92.6776 54.1761C92.8707 54.6383 93.1548 55.0019 93.5298 55.267C93.9086 55.5284 94.3783 55.6591 94.9389 55.6591ZM101.212 57V48.2727H102.507V49.5909H102.598C102.757 49.1591 103.045 48.8087 103.462 48.5398C103.878 48.2708 104.348 48.1364 104.871 48.1364C104.969 48.1364 105.092 48.1383 105.24 48.142C105.388 48.1458 105.5 48.1515 105.575 48.1591V49.5227C105.53 49.5114 105.426 49.4943 105.263 49.4716C105.104 49.4451 104.935 49.4318 104.757 49.4318C104.333 49.4318 103.954 49.5208 103.621 49.6989C103.291 49.8731 103.03 50.1155 102.837 50.4261C102.647 50.733 102.553 51.0833 102.553 51.4773V57H101.212ZM110.445 57.1818C109.657 57.1818 108.965 56.9943 108.371 56.6193C107.78 56.2443 107.318 55.7197 106.984 55.0455C106.655 54.3712 106.49 53.5833 106.49 52.6818C106.49 51.7727 106.655 50.9792 106.984 50.3011C107.318 49.6231 107.78 49.0966 108.371 48.7216C108.965 48.3466 109.657 48.1591 110.445 48.1591C111.232 48.1591 111.922 48.3466 112.513 48.7216C113.107 49.0966 113.57 49.6231 113.899 50.3011C114.232 50.9792 114.399 51.7727 114.399 52.6818C114.399 53.5833 114.232 54.3712 113.899 55.0455C113.57 55.7197 113.107 56.2443 112.513 56.6193C111.922 56.9943 111.232 57.1818 110.445 57.1818ZM110.445 55.9773C111.043 55.9773 111.536 55.8239 111.922 55.517C112.308 55.2102 112.594 54.8068 112.78 54.3068C112.965 53.8068 113.058 53.2652 113.058 52.6818C113.058 52.0985 112.965 51.5549 112.78 51.0511C112.594 50.5473 112.308 50.1402 111.922 49.8295C111.536 49.5189 111.043 49.3636 110.445 49.3636C109.846 49.3636 109.354 49.5189 108.967 49.8295C108.581 50.1402 108.295 50.5473 108.109 51.0511C107.924 51.5549 107.831 52.0985 107.831 52.6818C107.831 53.2652 107.924 53.8068 108.109 54.3068C108.295 54.8068 108.581 55.2102 108.967 55.517C109.354 55.8239 109.846 55.9773 110.445 55.9773ZM121.946 53.4318V48.2727H123.287V57H121.946V55.5227H121.855C121.651 55.9659 121.332 56.3428 120.901 56.6534C120.469 56.9602 119.923 57.1136 119.264 57.1136C118.719 57.1136 118.234 56.9943 117.81 56.7557C117.385 56.5133 117.052 56.1496 116.81 55.6648C116.567 55.1761 116.446 54.5606 116.446 53.8182V48.2727H117.787V53.7273C117.787 54.3636 117.965 54.8712 118.321 55.25C118.681 55.6288 119.139 55.8182 119.696 55.8182C120.029 55.8182 120.368 55.733 120.713 55.5625C121.062 55.392 121.353 55.1307 121.588 54.7784C121.827 54.4261 121.946 53.9773 121.946 53.4318ZM127.084 51.75V57H125.743V48.2727H127.038V49.6364H127.152C127.357 49.1932 127.667 48.8371 128.084 48.5682C128.5 48.2955 129.038 48.1591 129.697 48.1591C130.288 48.1591 130.805 48.2803 131.249 48.5227C131.692 48.7614 132.036 49.125 132.283 49.6136C132.529 50.0985 132.652 50.7121 132.652 51.4545V57H131.311V51.5455C131.311 50.8598 131.133 50.3258 130.777 49.9432C130.421 49.5568 129.932 49.3636 129.311 49.3636C128.883 49.3636 128.5 49.4564 128.163 49.642C127.83 49.8277 127.567 50.0985 127.374 50.4545C127.18 50.8106 127.084 51.2424 127.084 51.75ZM138.398 57.1818C137.67 57.1818 137.028 56.9981 136.472 56.6307C135.915 56.2595 135.479 55.7367 135.165 55.0625C134.85 54.3845 134.693 53.5833 134.693 52.6591C134.693 51.7424 134.85 50.947 135.165 50.2727C135.479 49.5985 135.917 49.0777 136.477 48.7102C137.038 48.3428 137.686 48.1591 138.42 48.1591C138.989 48.1591 139.438 48.2538 139.767 48.4432C140.1 48.6288 140.354 48.8409 140.528 49.0795C140.706 49.3144 140.845 49.5076 140.943 49.6591H141.057V45.3636H142.398V57H141.102V55.6591H140.943C140.845 55.8182 140.705 56.0189 140.523 56.2614C140.341 56.5 140.081 56.714 139.744 56.9034C139.407 57.089 138.958 57.1818 138.398 57.1818ZM138.58 55.9773C139.117 55.9773 139.572 55.8371 139.943 55.5568C140.314 55.2727 140.597 54.8807 140.79 54.3807C140.983 53.8769 141.08 53.2955 141.08 52.6364C141.08 51.9848 140.985 51.4148 140.795 50.9261C140.606 50.4337 140.326 50.0511 139.955 49.7784C139.583 49.5019 139.125 49.3636 138.58 49.3636C138.011 49.3636 137.538 49.5095 137.159 49.8011C136.784 50.089 136.502 50.4811 136.312 50.9773C136.127 51.4697 136.034 52.0227 136.034 52.6364C136.034 53.2576 136.129 53.822 136.318 54.3295C136.511 54.8333 136.795 55.2348 137.17 55.5341C137.549 55.8295 138.019 55.9773 138.58 55.9773Z",
+        fill: "white"
+      }), (0,jsx_runtime.jsx)("rect", {
+        width: "104",
+        height: "28",
+        transform: "translate(60 163)",
+        fill: tokens.semantic.buttonBackgroundPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M73.0227 174.273V175.409H68.5V174.273H73.0227ZM69.8182 172.182H71.1591V180.5C71.1591 180.879 71.214 181.163 71.3239 181.352C71.4375 181.538 71.5814 181.663 71.7557 181.727C71.9337 181.788 72.1212 181.818 72.3182 181.818C72.4659 181.818 72.5871 181.811 72.6818 181.795C72.7765 181.777 72.8523 181.761 72.9091 181.75L73.1818 182.955C73.0909 182.989 72.964 183.023 72.8011 183.057C72.6383 183.095 72.4318 183.114 72.1818 183.114C71.803 183.114 71.4318 183.032 71.0682 182.869C70.7083 182.706 70.4091 182.458 70.1705 182.125C69.9356 181.792 69.8182 181.371 69.8182 180.864V172.182ZM78.6051 183.182C77.7642 183.182 77.0388 182.996 76.429 182.625C75.8229 182.25 75.3551 181.727 75.0256 181.057C74.6998 180.383 74.5369 179.598 74.5369 178.705C74.5369 177.811 74.6998 177.023 75.0256 176.341C75.3551 175.655 75.8134 175.121 76.4006 174.739C76.9915 174.352 77.6809 174.159 78.4688 174.159C78.9233 174.159 79.3722 174.235 79.8153 174.386C80.2585 174.538 80.6619 174.784 81.0256 175.125C81.3892 175.462 81.679 175.909 81.8949 176.466C82.1108 177.023 82.2188 177.708 82.2188 178.523V179.091H75.4915V177.932H80.8551C80.8551 177.439 80.7566 177 80.5597 176.614C80.3665 176.227 80.09 175.922 79.7301 175.699C79.3741 175.475 78.9536 175.364 78.4688 175.364C77.9347 175.364 77.4725 175.496 77.0824 175.761C76.696 176.023 76.3987 176.364 76.1903 176.784C75.982 177.205 75.8778 177.655 75.8778 178.136V178.909C75.8778 179.568 75.9915 180.127 76.2188 180.585C76.4498 181.04 76.7699 181.386 77.179 181.625C77.5881 181.86 78.0634 181.977 78.6051 181.977C78.9574 181.977 79.2756 181.928 79.5597 181.83C79.8475 181.727 80.0956 181.576 80.304 181.375C80.5123 181.17 80.6733 180.917 80.7869 180.614L82.0824 180.977C81.946 181.417 81.7169 181.803 81.3949 182.136C81.0729 182.466 80.6752 182.723 80.2017 182.909C79.7282 183.091 79.196 183.182 78.6051 183.182ZM85.0241 174.273L87.1151 177.841L89.206 174.273H90.7514L87.9332 178.636L90.7514 183H89.206L87.1151 179.614L85.0241 183H83.4787L86.2514 178.636L83.4787 174.273H85.0241ZM96.4602 174.273V175.409H91.9375V174.273H96.4602ZM93.2557 172.182H94.5966V180.5C94.5966 180.879 94.6515 181.163 94.7614 181.352C94.875 181.538 95.0189 181.663 95.1932 181.727C95.3712 181.788 95.5587 181.818 95.7557 181.818C95.9034 181.818 96.0246 181.811 96.1193 181.795C96.214 181.777 96.2898 181.761 96.3466 181.75L96.6193 182.955C96.5284 182.989 96.4015 183.023 96.2386 183.057C96.0758 183.095 95.8693 183.114 95.6193 183.114C95.2405 183.114 94.8693 183.032 94.5057 182.869C94.1458 182.706 93.8466 182.458 93.608 182.125C93.3731 181.792 93.2557 181.371 93.2557 180.864V172.182ZM98.8466 183V171.364H102.778C103.691 171.364 104.438 171.528 105.017 171.858C105.6 172.184 106.032 172.625 106.312 173.182C106.593 173.739 106.733 174.36 106.733 175.045C106.733 175.731 106.593 176.354 106.312 176.915C106.036 177.475 105.608 177.922 105.028 178.256C104.449 178.585 103.706 178.75 102.801 178.75H99.983V177.5H102.756C103.381 177.5 103.883 177.392 104.261 177.176C104.64 176.96 104.915 176.669 105.085 176.301C105.259 175.93 105.347 175.511 105.347 175.045C105.347 174.58 105.259 174.163 105.085 173.795C104.915 173.428 104.638 173.14 104.256 172.932C103.873 172.72 103.366 172.614 102.733 172.614H100.256V183H98.8466ZM108.821 183V174.273H110.116V175.591H110.207C110.366 175.159 110.654 174.809 111.071 174.54C111.488 174.271 111.957 174.136 112.48 174.136C112.579 174.136 112.702 174.138 112.849 174.142C112.997 174.146 113.109 174.152 113.185 174.159V175.523C113.139 175.511 113.035 175.494 112.872 175.472C112.713 175.445 112.545 175.432 112.366 175.432C111.942 175.432 111.563 175.521 111.23 175.699C110.901 175.873 110.639 176.116 110.446 176.426C110.257 176.733 110.162 177.083 110.162 177.477V183H108.821ZM114.774 183V174.273H116.115V183H114.774ZM115.456 172.818C115.195 172.818 114.969 172.729 114.78 172.551C114.594 172.373 114.501 172.159 114.501 171.909C114.501 171.659 114.594 171.445 114.78 171.267C114.969 171.089 115.195 171 115.456 171C115.717 171 115.941 171.089 116.126 171.267C116.316 171.445 116.411 171.659 116.411 171.909C116.411 172.159 116.316 172.373 116.126 172.551C115.941 172.729 115.717 172.818 115.456 172.818ZM118.571 183V174.273H119.866V175.636H119.98C120.162 175.17 120.455 174.809 120.861 174.551C121.266 174.29 121.753 174.159 122.321 174.159C122.897 174.159 123.376 174.29 123.759 174.551C124.145 174.809 124.446 175.17 124.662 175.636H124.753C124.976 175.186 125.312 174.828 125.759 174.562C126.205 174.294 126.741 174.159 127.366 174.159C128.147 174.159 128.785 174.403 129.281 174.892C129.777 175.377 130.026 176.133 130.026 177.159V183H128.685V177.159C128.685 176.515 128.509 176.055 128.156 175.778C127.804 175.502 127.389 175.364 126.912 175.364C126.298 175.364 125.823 175.549 125.486 175.92C125.149 176.288 124.98 176.754 124.98 177.318V183H123.616V177.023C123.616 176.527 123.455 176.127 123.134 175.824C122.812 175.517 122.397 175.364 121.889 175.364C121.541 175.364 121.215 175.456 120.912 175.642C120.613 175.828 120.37 176.085 120.185 176.415C120.003 176.741 119.912 177.117 119.912 177.545V183H118.571ZM135.045 183.205C134.492 183.205 133.991 183.1 133.54 182.892C133.089 182.68 132.731 182.375 132.466 181.977C132.201 181.576 132.068 181.091 132.068 180.523C132.068 180.023 132.167 179.617 132.364 179.307C132.561 178.992 132.824 178.746 133.153 178.568C133.483 178.39 133.847 178.258 134.244 178.17C134.646 178.08 135.049 178.008 135.455 177.955C135.985 177.886 136.415 177.835 136.744 177.801C137.078 177.763 137.32 177.701 137.472 177.614C137.627 177.527 137.705 177.375 137.705 177.159V177.114C137.705 176.553 137.551 176.117 137.244 175.807C136.941 175.496 136.481 175.341 135.864 175.341C135.223 175.341 134.722 175.481 134.358 175.761C133.994 176.042 133.739 176.341 133.591 176.659L132.318 176.205C132.545 175.674 132.848 175.261 133.227 174.966C133.61 174.667 134.027 174.458 134.477 174.341C134.932 174.22 135.379 174.159 135.818 174.159C136.098 174.159 136.42 174.193 136.784 174.261C137.152 174.326 137.506 174.46 137.847 174.665C138.191 174.869 138.477 175.178 138.705 175.591C138.932 176.004 139.045 176.557 139.045 177.25V183H137.705V181.818H137.636C137.545 182.008 137.394 182.21 137.182 182.426C136.97 182.642 136.688 182.826 136.335 182.977C135.983 183.129 135.553 183.205 135.045 183.205ZM135.25 182C135.78 182 136.227 181.896 136.591 181.688C136.958 181.479 137.235 181.21 137.42 180.881C137.61 180.551 137.705 180.205 137.705 179.841V178.614C137.648 178.682 137.523 178.744 137.33 178.801C137.14 178.854 136.92 178.902 136.67 178.943C136.424 178.981 136.184 179.015 135.949 179.045C135.718 179.072 135.53 179.095 135.386 179.114C135.038 179.159 134.712 179.233 134.409 179.335C134.11 179.434 133.867 179.583 133.682 179.784C133.5 179.981 133.409 180.25 133.409 180.591C133.409 181.057 133.581 181.409 133.926 181.648C134.275 181.883 134.716 182 135.25 182ZM141.493 183V174.273H142.788V175.591H142.879C143.038 175.159 143.326 174.809 143.743 174.54C144.16 174.271 144.629 174.136 145.152 174.136C145.25 174.136 145.374 174.138 145.521 174.142C145.669 174.146 145.781 174.152 145.857 174.159V175.523C145.811 175.511 145.707 175.494 145.544 175.472C145.385 175.445 145.216 175.432 145.038 175.432C144.614 175.432 144.235 175.521 143.902 175.699C143.572 175.873 143.311 176.116 143.118 176.426C142.929 176.733 142.834 177.083 142.834 177.477V183H141.493ZM148.575 186.273C148.348 186.273 148.145 186.254 147.967 186.216C147.789 186.182 147.666 186.148 147.598 186.114L147.939 184.932C148.265 185.015 148.553 185.045 148.803 185.023C149.053 185 149.274 184.888 149.467 184.688C149.664 184.491 149.844 184.17 150.007 183.727L150.257 183.045L147.03 174.273H148.484L150.893 181.227H150.984L153.393 174.273H154.848L151.143 184.273C150.977 184.723 150.77 185.097 150.524 185.392C150.278 185.691 149.992 185.913 149.666 186.057C149.344 186.201 148.981 186.273 148.575 186.273Z",
+        fill: "white"
+      }), (0,jsx_runtime.jsx)("rect", {
+        width: "106",
+        height: "28",
+        transform: "translate(519 223)",
+        fill: tokens.semantic.buttonBackgroundPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M528.227 243V234.273H529.568V243H528.227ZM528.909 232.818C528.648 232.818 528.422 232.729 528.233 232.551C528.047 232.373 527.955 232.159 527.955 231.909C527.955 231.659 528.047 231.445 528.233 231.267C528.422 231.089 528.648 231 528.909 231C529.17 231 529.394 231.089 529.58 231.267C529.769 231.445 529.864 231.659 529.864 231.909C529.864 232.159 529.769 232.373 529.58 232.551C529.394 232.729 529.17 232.818 528.909 232.818ZM535.57 243.182C534.751 243.182 534.047 242.989 533.456 242.602C532.865 242.216 532.411 241.684 532.092 241.006C531.774 240.328 531.615 239.553 531.615 238.682C531.615 237.795 531.778 237.013 532.104 236.335C532.433 235.653 532.892 235.121 533.479 234.739C534.07 234.352 534.759 234.159 535.547 234.159C536.161 234.159 536.714 234.273 537.206 234.5C537.698 234.727 538.102 235.045 538.416 235.455C538.731 235.864 538.926 236.341 539.001 236.886H537.661C537.558 236.489 537.331 236.136 536.979 235.83C536.63 235.519 536.161 235.364 535.57 235.364C535.047 235.364 534.589 235.5 534.195 235.773C533.804 236.042 533.5 236.422 533.28 236.915C533.064 237.403 532.956 237.977 532.956 238.636C532.956 239.311 533.062 239.898 533.274 240.398C533.49 240.898 533.793 241.286 534.183 241.562C534.577 241.839 535.039 241.977 535.57 241.977C535.918 241.977 536.234 241.917 536.518 241.795C536.803 241.674 537.043 241.5 537.24 241.273C537.437 241.045 537.577 240.773 537.661 240.455H539.001C538.926 240.97 538.738 241.434 538.439 241.847C538.143 242.256 537.751 242.581 537.263 242.824C536.778 243.062 536.214 243.182 535.57 243.182ZM544.507 243.182C543.719 243.182 543.028 242.994 542.433 242.619C541.842 242.244 541.38 241.72 541.047 241.045C540.717 240.371 540.553 239.583 540.553 238.682C540.553 237.773 540.717 236.979 541.047 236.301C541.38 235.623 541.842 235.097 542.433 234.722C543.028 234.347 543.719 234.159 544.507 234.159C545.295 234.159 545.984 234.347 546.575 234.722C547.17 235.097 547.632 235.623 547.962 236.301C548.295 236.979 548.462 237.773 548.462 238.682C548.462 239.583 548.295 240.371 547.962 241.045C547.632 241.72 547.17 242.244 546.575 242.619C545.984 242.994 545.295 243.182 544.507 243.182ZM544.507 241.977C545.106 241.977 545.598 241.824 545.984 241.517C546.371 241.21 546.657 240.807 546.842 240.307C547.028 239.807 547.121 239.265 547.121 238.682C547.121 238.098 547.028 237.555 546.842 237.051C546.657 236.547 546.371 236.14 545.984 235.83C545.598 235.519 545.106 235.364 544.507 235.364C543.909 235.364 543.416 235.519 543.03 235.83C542.643 236.14 542.357 236.547 542.172 237.051C541.986 237.555 541.893 238.098 541.893 238.682C541.893 239.265 541.986 239.807 542.172 240.307C542.357 240.807 542.643 241.21 543.03 241.517C543.416 241.824 543.909 241.977 544.507 241.977ZM551.849 237.75V243H550.509V234.273H551.804V235.636H551.918C552.122 235.193 552.433 234.837 552.849 234.568C553.266 234.295 553.804 234.159 554.463 234.159C555.054 234.159 555.571 234.28 556.014 234.523C556.457 234.761 556.802 235.125 557.048 235.614C557.295 236.098 557.418 236.712 557.418 237.455V243H556.077V237.545C556.077 236.86 555.899 236.326 555.543 235.943C555.187 235.557 554.698 235.364 554.077 235.364C553.649 235.364 553.266 235.456 552.929 235.642C552.596 235.828 552.332 236.098 552.139 236.455C551.946 236.811 551.849 237.242 551.849 237.75ZM560.05 243V231.364H563.982C564.894 231.364 565.641 231.528 566.22 231.858C566.804 232.184 567.235 232.625 567.516 233.182C567.796 233.739 567.936 234.36 567.936 235.045C567.936 235.731 567.796 236.354 567.516 236.915C567.239 237.475 566.811 237.922 566.232 238.256C565.652 238.585 564.91 238.75 564.004 238.75H561.186V237.5H563.959C564.584 237.5 565.086 237.392 565.464 237.176C565.843 236.96 566.118 236.669 566.288 236.301C566.463 235.93 566.55 235.511 566.55 235.045C566.55 234.58 566.463 234.163 566.288 233.795C566.118 233.428 565.841 233.14 565.459 232.932C565.076 232.72 564.569 232.614 563.936 232.614H561.459V243H560.05ZM570.024 243V234.273H571.32V235.591H571.411C571.57 235.159 571.857 234.809 572.274 234.54C572.691 234.271 573.161 234.136 573.683 234.136C573.782 234.136 573.905 234.138 574.053 234.142C574.2 234.146 574.312 234.152 574.388 234.159V235.523C574.342 235.511 574.238 235.494 574.075 235.472C573.916 235.445 573.748 235.432 573.57 235.432C573.145 235.432 572.767 235.521 572.433 235.699C572.104 235.873 571.842 236.116 571.649 236.426C571.46 236.733 571.365 237.083 571.365 237.477V243H570.024ZM575.977 243V234.273H577.318V243H575.977ZM576.659 232.818C576.398 232.818 576.172 232.729 575.983 232.551C575.797 232.373 575.705 232.159 575.705 231.909C575.705 231.659 575.797 231.445 575.983 231.267C576.172 231.089 576.398 231 576.659 231C576.92 231 577.144 231.089 577.33 231.267C577.519 231.445 577.614 231.659 577.614 231.909C577.614 232.159 577.519 232.373 577.33 232.551C577.144 232.729 576.92 232.818 576.659 232.818ZM579.774 243V234.273H581.07V235.636H581.183C581.365 235.17 581.659 234.809 582.064 234.551C582.469 234.29 582.956 234.159 583.524 234.159C584.1 234.159 584.579 234.29 584.962 234.551C585.348 234.809 585.649 235.17 585.865 235.636H585.956C586.179 235.186 586.515 234.828 586.962 234.562C587.409 234.294 587.945 234.159 588.57 234.159C589.35 234.159 589.988 234.403 590.484 234.892C590.981 235.377 591.229 236.133 591.229 237.159V243H589.888V237.159C589.888 236.515 589.712 236.055 589.359 235.778C589.007 235.502 588.592 235.364 588.115 235.364C587.501 235.364 587.026 235.549 586.689 235.92C586.352 236.288 586.183 236.754 586.183 237.318V243H584.82V237.023C584.82 236.527 584.659 236.127 584.337 235.824C584.015 235.517 583.6 235.364 583.092 235.364C582.744 235.364 582.418 235.456 582.115 235.642C581.816 235.828 581.573 236.085 581.388 236.415C581.206 236.741 581.115 237.117 581.115 237.545V243H579.774ZM596.249 243.205C595.696 243.205 595.194 243.1 594.743 242.892C594.292 242.68 593.934 242.375 593.669 241.977C593.404 241.576 593.271 241.091 593.271 240.523C593.271 240.023 593.37 239.617 593.567 239.307C593.764 238.992 594.027 238.746 594.357 238.568C594.686 238.39 595.05 238.258 595.447 238.17C595.849 238.08 596.252 238.008 596.658 237.955C597.188 237.886 597.618 237.835 597.947 237.801C598.281 237.763 598.523 237.701 598.675 237.614C598.83 237.527 598.908 237.375 598.908 237.159V237.114C598.908 236.553 598.754 236.117 598.447 235.807C598.144 235.496 597.684 235.341 597.067 235.341C596.427 235.341 595.925 235.481 595.561 235.761C595.197 236.042 594.942 236.341 594.794 236.659L593.521 236.205C593.749 235.674 594.052 235.261 594.43 234.966C594.813 234.667 595.23 234.458 595.68 234.341C596.135 234.22 596.582 234.159 597.021 234.159C597.302 234.159 597.624 234.193 597.987 234.261C598.355 234.326 598.709 234.46 599.05 234.665C599.394 234.869 599.68 235.178 599.908 235.591C600.135 236.004 600.249 236.557 600.249 237.25V243H598.908V241.818H598.839C598.749 242.008 598.597 242.21 598.385 242.426C598.173 242.642 597.891 242.826 597.538 242.977C597.186 243.129 596.756 243.205 596.249 243.205ZM596.453 242C596.983 242 597.43 241.896 597.794 241.688C598.161 241.479 598.438 241.21 598.624 240.881C598.813 240.551 598.908 240.205 598.908 239.841V238.614C598.851 238.682 598.726 238.744 598.533 238.801C598.343 238.854 598.124 238.902 597.874 238.943C597.627 238.981 597.387 239.015 597.152 239.045C596.921 239.072 596.733 239.095 596.589 239.114C596.241 239.159 595.915 239.233 595.612 239.335C595.313 239.434 595.071 239.583 594.885 239.784C594.703 239.981 594.612 240.25 594.612 240.591C594.612 241.057 594.785 241.409 595.129 241.648C595.478 241.883 595.919 242 596.453 242ZM602.696 243V234.273H603.991V235.591H604.082C604.241 235.159 604.529 234.809 604.946 234.54C605.363 234.271 605.832 234.136 606.355 234.136C606.454 234.136 606.577 234.138 606.724 234.142C606.872 234.146 606.984 234.152 607.06 234.159V235.523C607.014 235.511 606.91 235.494 606.747 235.472C606.588 235.445 606.42 235.432 606.241 235.432C605.817 235.432 605.438 235.521 605.105 235.699C604.776 235.873 604.514 236.116 604.321 236.426C604.132 236.733 604.037 237.083 604.037 237.477V243H602.696ZM609.778 246.273C609.551 246.273 609.348 246.254 609.17 246.216C608.992 246.182 608.869 246.148 608.801 246.114L609.142 244.932C609.468 245.015 609.756 245.045 610.006 245.023C610.256 245 610.477 244.888 610.67 244.688C610.867 244.491 611.047 244.17 611.21 243.727L611.46 243.045L608.233 234.273H609.688L612.097 241.227H612.188L614.597 234.273H616.051L612.347 244.273C612.18 244.723 611.973 245.097 611.727 245.392C611.481 245.691 611.195 245.913 610.869 246.057C610.547 246.201 610.184 246.273 609.778 246.273Z",
+        fill: "white"
+      }), (0,jsx_runtime.jsx)("rect", {
+        width: "67",
+        height: "28",
+        transform: "translate(97 213)",
+        fill: tokens.semantic.buttonBackgroundPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M110.114 224.273V225.409H105.409V224.273H110.114ZM106.818 233V223.068C106.818 222.568 106.936 222.152 107.17 221.818C107.405 221.485 107.71 221.235 108.085 221.068C108.46 220.902 108.856 220.818 109.273 220.818C109.602 220.818 109.871 220.845 110.08 220.898C110.288 220.951 110.443 221 110.545 221.045L110.159 222.205C110.091 222.182 109.996 222.153 109.875 222.119C109.758 222.085 109.602 222.068 109.409 222.068C108.966 222.068 108.646 222.18 108.449 222.403C108.256 222.627 108.159 222.955 108.159 223.386V233H106.818ZM111.993 233V224.273H113.334V233H111.993ZM112.675 222.818C112.413 222.818 112.188 222.729 111.999 222.551C111.813 222.373 111.72 222.159 111.72 221.909C111.72 221.659 111.813 221.445 111.999 221.267C112.188 221.089 112.413 221 112.675 221C112.936 221 113.16 221.089 113.345 221.267C113.535 221.445 113.629 221.659 113.629 221.909C113.629 222.159 113.535 222.373 113.345 222.551C113.16 222.729 112.936 222.818 112.675 222.818ZM119.449 233.182C118.608 233.182 117.883 232.996 117.273 232.625C116.667 232.25 116.199 231.727 115.869 231.057C115.544 230.383 115.381 229.598 115.381 228.705C115.381 227.811 115.544 227.023 115.869 226.341C116.199 225.655 116.657 225.121 117.244 224.739C117.835 224.352 118.525 224.159 119.312 224.159C119.767 224.159 120.216 224.235 120.659 224.386C121.102 224.538 121.506 224.784 121.869 225.125C122.233 225.462 122.523 225.909 122.739 226.466C122.955 227.023 123.062 227.708 123.062 228.523V229.091H116.335V227.932H121.699C121.699 227.439 121.6 227 121.403 226.614C121.21 226.227 120.934 225.922 120.574 225.699C120.218 225.475 119.797 225.364 119.312 225.364C118.778 225.364 118.316 225.496 117.926 225.761C117.54 226.023 117.242 226.364 117.034 226.784C116.826 227.205 116.722 227.655 116.722 228.136V228.909C116.722 229.568 116.835 230.127 117.062 230.585C117.294 231.04 117.614 231.386 118.023 231.625C118.432 231.86 118.907 231.977 119.449 231.977C119.801 231.977 120.119 231.928 120.403 231.83C120.691 231.727 120.939 231.576 121.148 231.375C121.356 231.17 121.517 230.917 121.631 230.614L122.926 230.977C122.79 231.417 122.561 231.803 122.239 232.136C121.917 232.466 121.519 232.723 121.045 232.909C120.572 233.091 120.04 233.182 119.449 233.182ZM126.443 221.364V233H125.102V221.364H126.443ZM132.195 233.182C131.467 233.182 130.825 232.998 130.268 232.631C129.712 232.259 129.276 231.737 128.962 231.062C128.647 230.384 128.49 229.583 128.49 228.659C128.49 227.742 128.647 226.947 128.962 226.273C129.276 225.598 129.714 225.078 130.274 224.71C130.835 224.343 131.482 224.159 132.217 224.159C132.786 224.159 133.234 224.254 133.564 224.443C133.897 224.629 134.151 224.841 134.325 225.08C134.503 225.314 134.642 225.508 134.74 225.659H134.854V221.364H136.195V233H134.899V231.659H134.74C134.642 231.818 134.501 232.019 134.32 232.261C134.138 232.5 133.878 232.714 133.541 232.903C133.204 233.089 132.755 233.182 132.195 233.182ZM132.376 231.977C132.914 231.977 133.369 231.837 133.74 231.557C134.111 231.273 134.393 230.881 134.587 230.381C134.78 229.877 134.876 229.295 134.876 228.636C134.876 227.985 134.782 227.415 134.592 226.926C134.403 226.434 134.123 226.051 133.751 225.778C133.38 225.502 132.922 225.364 132.376 225.364C131.808 225.364 131.335 225.509 130.956 225.801C130.581 226.089 130.299 226.481 130.109 226.977C129.924 227.47 129.831 228.023 129.831 228.636C129.831 229.258 129.926 229.822 130.115 230.33C130.308 230.833 130.592 231.235 130.967 231.534C131.346 231.83 131.816 231.977 132.376 231.977ZM142.609 233.159C141.753 233.159 141.024 232.926 140.422 232.46C139.82 231.991 139.359 231.311 139.041 230.42C138.723 229.527 138.564 228.447 138.564 227.182C138.564 225.924 138.723 224.85 139.041 223.96C139.363 223.066 139.825 222.384 140.428 221.915C141.034 221.441 141.761 221.205 142.609 221.205C143.458 221.205 144.183 221.441 144.786 221.915C145.392 222.384 145.854 223.066 146.172 223.96C146.494 224.85 146.655 225.924 146.655 227.182C146.655 228.447 146.496 229.527 146.178 230.42C145.859 231.311 145.399 231.991 144.797 232.46C144.195 232.926 143.465 233.159 142.609 233.159ZM142.609 231.909C143.458 231.909 144.117 231.5 144.587 230.682C145.056 229.864 145.291 228.697 145.291 227.182C145.291 226.174 145.183 225.316 144.967 224.608C144.755 223.9 144.448 223.36 144.047 222.989C143.649 222.617 143.17 222.432 142.609 222.432C141.768 222.432 141.111 222.847 140.638 223.676C140.164 224.502 139.928 225.67 139.928 227.182C139.928 228.189 140.034 229.045 140.246 229.75C140.458 230.455 140.763 230.991 141.161 231.358C141.562 231.725 142.045 231.909 142.609 231.909ZM152.905 221.364V233H151.496V222.841H151.428L148.587 224.727V223.295L151.496 221.364H152.905Z",
+        fill: "white"
+      }), (0,jsx_runtime.jsx)("rect", {
+        width: "117",
+        height: "28",
+        transform: "translate(47 245)",
+        fill: tokens.semantic.buttonBackgroundPrimary
+      }), (0,jsx_runtime.jsx)("path", {
+        d: "M56.4091 265V253.364H57.75V257.659H57.8636C57.9621 257.508 58.0985 257.314 58.2727 257.08C58.4508 256.841 58.7045 256.629 59.0341 256.443C59.3674 256.254 59.8182 256.159 60.3864 256.159C61.1212 256.159 61.7689 256.343 62.3295 256.71C62.8902 257.078 63.3277 257.598 63.642 258.273C63.9564 258.947 64.1136 259.742 64.1136 260.659C64.1136 261.583 63.9564 262.384 63.642 263.062C63.3277 263.737 62.892 264.259 62.3352 264.631C61.7784 264.998 61.1364 265.182 60.4091 265.182C59.8485 265.182 59.3996 265.089 59.0625 264.903C58.7254 264.714 58.4659 264.5 58.2841 264.261C58.1023 264.019 57.9621 263.818 57.8636 263.659H57.7045V265H56.4091ZM57.7273 260.636C57.7273 261.295 57.8239 261.877 58.017 262.381C58.2102 262.881 58.4924 263.273 58.8636 263.557C59.2348 263.837 59.6894 263.977 60.2273 263.977C60.7879 263.977 61.2557 263.83 61.6307 263.534C62.0095 263.235 62.2936 262.833 62.483 262.33C62.6761 261.822 62.7727 261.258 62.7727 260.636C62.7727 260.023 62.678 259.47 62.4886 258.977C62.303 258.481 62.0208 258.089 61.642 257.801C61.267 257.509 60.7955 257.364 60.2273 257.364C59.6818 257.364 59.2235 257.502 58.8523 257.778C58.4811 258.051 58.2008 258.434 58.0114 258.926C57.822 259.415 57.7273 259.985 57.7273 260.636ZM69.7102 265.182C68.9223 265.182 68.2311 264.994 67.6364 264.619C67.0455 264.244 66.5833 263.72 66.25 263.045C65.9205 262.371 65.7557 261.583 65.7557 260.682C65.7557 259.773 65.9205 258.979 66.25 258.301C66.5833 257.623 67.0455 257.097 67.6364 256.722C68.2311 256.347 68.9223 256.159 69.7102 256.159C70.4981 256.159 71.1875 256.347 71.7784 256.722C72.3731 257.097 72.8352 257.623 73.1648 258.301C73.4981 258.979 73.6648 259.773 73.6648 260.682C73.6648 261.583 73.4981 262.371 73.1648 263.045C72.8352 263.72 72.3731 264.244 71.7784 264.619C71.1875 264.994 70.4981 265.182 69.7102 265.182ZM69.7102 263.977C70.3087 263.977 70.8011 263.824 71.1875 263.517C71.5739 263.21 71.8598 262.807 72.0455 262.307C72.2311 261.807 72.3239 261.265 72.3239 260.682C72.3239 260.098 72.2311 259.555 72.0455 259.051C71.8598 258.547 71.5739 258.14 71.1875 257.83C70.8011 257.519 70.3087 257.364 69.7102 257.364C69.1117 257.364 68.6193 257.519 68.233 257.83C67.8466 258.14 67.5606 258.547 67.375 259.051C67.1894 259.555 67.0966 260.098 67.0966 260.682C67.0966 261.265 67.1894 261.807 67.375 262.307C67.5606 262.807 67.8466 263.21 68.233 263.517C68.6193 263.824 69.1117 263.977 69.7102 263.977ZM75.7116 265V256.273H77.0071V257.591H77.098C77.2571 257.159 77.545 256.809 77.9616 256.54C78.3783 256.271 78.848 256.136 79.3707 256.136C79.4692 256.136 79.5923 256.138 79.7401 256.142C79.8878 256.146 79.9995 256.152 80.0753 256.159V257.523C80.0298 257.511 79.9257 257.494 79.7628 257.472C79.6037 257.445 79.4351 257.432 79.2571 257.432C78.8329 257.432 78.4541 257.521 78.1207 257.699C77.7912 257.873 77.5298 258.116 77.3366 258.426C77.1473 258.733 77.0526 259.083 77.0526 259.477V265H75.7116ZM84.6946 265.182C83.9673 265.182 83.3253 264.998 82.7685 264.631C82.2116 264.259 81.776 263.737 81.4616 263.062C81.1473 262.384 80.9901 261.583 80.9901 260.659C80.9901 259.742 81.1473 258.947 81.4616 258.273C81.776 257.598 82.2135 257.078 82.7741 256.71C83.3348 256.343 83.9825 256.159 84.7173 256.159C85.2855 256.159 85.7344 256.254 86.0639 256.443C86.3973 256.629 86.651 256.841 86.8253 257.08C87.0033 257.314 87.1416 257.508 87.2401 257.659H87.3537V253.364H88.6946V265H87.3991V263.659H87.2401C87.1416 263.818 87.0014 264.019 86.8196 264.261C86.6378 264.5 86.3783 264.714 86.0412 264.903C85.7041 265.089 85.2552 265.182 84.6946 265.182ZM84.8764 263.977C85.4143 263.977 85.8688 263.837 86.2401 263.557C86.6113 263.273 86.8935 262.881 87.0866 262.381C87.2798 261.877 87.3764 261.295 87.3764 260.636C87.3764 259.985 87.2817 259.415 87.0923 258.926C86.9029 258.434 86.6226 258.051 86.2514 257.778C85.8802 257.502 85.4219 257.364 84.8764 257.364C84.3082 257.364 83.8348 257.509 83.456 257.801C83.081 258.089 82.7988 258.481 82.6094 258.977C82.4238 259.47 82.331 260.023 82.331 260.636C82.331 261.258 82.4257 261.822 82.6151 262.33C82.8082 262.833 83.0923 263.235 83.4673 263.534C83.8461 263.83 84.3158 263.977 84.8764 263.977ZM94.9957 265.182C94.1548 265.182 93.4295 264.996 92.8196 264.625C92.2135 264.25 91.7457 263.727 91.4162 263.057C91.0904 262.383 90.9276 261.598 90.9276 260.705C90.9276 259.811 91.0904 259.023 91.4162 258.341C91.7457 257.655 92.2041 257.121 92.7912 256.739C93.3821 256.352 94.0715 256.159 94.8594 256.159C95.3139 256.159 95.7628 256.235 96.206 256.386C96.6491 256.538 97.0526 256.784 97.4162 257.125C97.7798 257.462 98.0696 257.909 98.2855 258.466C98.5014 259.023 98.6094 259.708 98.6094 260.523V261.091H91.8821V259.932H97.2457C97.2457 259.439 97.1473 259 96.9503 258.614C96.7571 258.227 96.4806 257.922 96.1207 257.699C95.7647 257.475 95.3442 257.364 94.8594 257.364C94.3253 257.364 93.8632 257.496 93.473 257.761C93.0866 258.023 92.7893 258.364 92.581 258.784C92.3726 259.205 92.2685 259.655 92.2685 260.136V260.909C92.2685 261.568 92.3821 262.127 92.6094 262.585C92.8404 263.04 93.1605 263.386 93.5696 263.625C93.9787 263.86 94.4541 263.977 94.9957 263.977C95.348 263.977 95.6662 263.928 95.9503 263.83C96.2382 263.727 96.4863 263.576 96.6946 263.375C96.9029 263.17 97.0639 262.917 97.1776 262.614L98.473 262.977C98.3366 263.417 98.1075 263.803 97.7855 264.136C97.4635 264.466 97.0658 264.723 96.5923 264.909C96.1188 265.091 95.5866 265.182 94.9957 265.182ZM100.649 265V256.273H101.945V257.591H102.036C102.195 257.159 102.482 256.809 102.899 256.54C103.316 256.271 103.786 256.136 104.308 256.136C104.407 256.136 104.53 256.138 104.678 256.142C104.825 256.146 104.937 256.152 105.013 256.159V257.523C104.967 257.511 104.863 257.494 104.7 257.472C104.541 257.445 104.373 257.432 104.195 257.432C103.77 257.432 103.392 257.521 103.058 257.699C102.729 257.873 102.467 258.116 102.274 258.426C102.085 258.733 101.99 259.083 101.99 259.477V265H100.649ZM113.148 256.273C113.08 255.697 112.803 255.25 112.318 254.932C111.833 254.614 111.239 254.455 110.534 254.455C110.019 254.455 109.568 254.538 109.182 254.705C108.799 254.871 108.5 255.1 108.284 255.392C108.072 255.684 107.966 256.015 107.966 256.386C107.966 256.697 108.04 256.964 108.188 257.188C108.339 257.407 108.532 257.591 108.767 257.739C109.002 257.883 109.248 258.002 109.506 258.097C109.763 258.187 110 258.261 110.216 258.318L111.398 258.636C111.701 258.716 112.038 258.826 112.409 258.966C112.784 259.106 113.142 259.297 113.483 259.54C113.828 259.778 114.112 260.085 114.335 260.46C114.559 260.835 114.67 261.295 114.67 261.841C114.67 262.47 114.506 263.038 114.176 263.545C113.85 264.053 113.373 264.456 112.744 264.756C112.119 265.055 111.36 265.205 110.466 265.205C109.633 265.205 108.911 265.07 108.301 264.801C107.695 264.532 107.218 264.157 106.869 263.676C106.525 263.195 106.33 262.636 106.284 262H107.739C107.777 262.439 107.924 262.803 108.182 263.091C108.443 263.375 108.773 263.587 109.17 263.727C109.572 263.864 110.004 263.932 110.466 263.932C111.004 263.932 111.487 263.845 111.915 263.67C112.343 263.492 112.682 263.246 112.932 262.932C113.182 262.614 113.307 262.242 113.307 261.818C113.307 261.432 113.199 261.117 112.983 260.875C112.767 260.633 112.483 260.436 112.131 260.284C111.778 260.133 111.398 260 110.989 259.886L109.557 259.477C108.648 259.216 107.928 258.843 107.398 258.358C106.867 257.873 106.602 257.239 106.602 256.455C106.602 255.803 106.778 255.235 107.131 254.75C107.487 254.261 107.964 253.883 108.562 253.614C109.165 253.341 109.837 253.205 110.58 253.205C111.33 253.205 111.996 253.339 112.58 253.608C113.163 253.873 113.625 254.237 113.966 254.699C114.311 255.161 114.492 255.686 114.511 256.273H113.148ZM120.601 256.273V257.409H116.078V256.273H120.601ZM117.396 254.182H118.737V262.5C118.737 262.879 118.792 263.163 118.902 263.352C119.016 263.538 119.16 263.663 119.334 263.727C119.512 263.788 119.699 263.818 119.896 263.818C120.044 263.818 120.165 263.811 120.26 263.795C120.355 263.777 120.43 263.761 120.487 263.75L120.76 264.955C120.669 264.989 120.542 265.023 120.379 265.057C120.216 265.095 120.01 265.114 119.76 265.114C119.381 265.114 119.01 265.032 118.646 264.869C118.286 264.706 117.987 264.458 117.749 264.125C117.514 263.792 117.396 263.371 117.396 262.864V254.182ZM122.618 265V256.273H123.913V257.591H124.004C124.163 257.159 124.451 256.809 124.868 256.54C125.285 256.271 125.754 256.136 126.277 256.136C126.375 256.136 126.499 256.138 126.646 256.142C126.794 256.146 126.906 256.152 126.982 256.159V257.523C126.936 257.511 126.832 257.494 126.669 257.472C126.51 257.445 126.341 257.432 126.163 257.432C125.739 257.432 125.36 257.521 125.027 257.699C124.697 257.873 124.436 258.116 124.243 258.426C124.054 258.733 123.959 259.083 123.959 259.477V265H122.618ZM131.851 265.182C131.063 265.182 130.372 264.994 129.777 264.619C129.186 264.244 128.724 263.72 128.391 263.045C128.061 262.371 127.896 261.583 127.896 260.682C127.896 259.773 128.061 258.979 128.391 258.301C128.724 257.623 129.186 257.097 129.777 256.722C130.372 256.347 131.063 256.159 131.851 256.159C132.639 256.159 133.328 256.347 133.919 256.722C134.514 257.097 134.976 257.623 135.305 258.301C135.639 258.979 135.805 259.773 135.805 260.682C135.805 261.583 135.639 262.371 135.305 263.045C134.976 263.72 134.514 264.244 133.919 264.619C133.328 264.994 132.639 265.182 131.851 265.182ZM131.851 263.977C132.449 263.977 132.942 263.824 133.328 263.517C133.714 263.21 134 262.807 134.186 262.307C134.372 261.807 134.464 261.265 134.464 260.682C134.464 260.098 134.372 259.555 134.186 259.051C134 258.547 133.714 258.14 133.328 257.83C132.942 257.519 132.449 257.364 131.851 257.364C131.252 257.364 130.76 257.519 130.374 257.83C129.987 258.14 129.701 258.547 129.516 259.051C129.33 259.555 129.237 260.098 129.237 260.682C129.237 261.265 129.33 261.807 129.516 262.307C129.701 262.807 129.987 263.21 130.374 263.517C130.76 263.824 131.252 263.977 131.851 263.977ZM139.193 259.75V265H137.852V256.273H139.148V257.636H139.261C139.466 257.193 139.777 256.837 140.193 256.568C140.61 256.295 141.148 256.159 141.807 256.159C142.398 256.159 142.915 256.28 143.358 256.523C143.801 256.761 144.146 257.125 144.392 257.614C144.638 258.098 144.761 258.712 144.761 259.455V265H143.42V259.545C143.42 258.86 143.242 258.326 142.886 257.943C142.53 257.557 142.042 257.364 141.42 257.364C140.992 257.364 140.61 257.456 140.273 257.642C139.939 257.828 139.676 258.098 139.483 258.455C139.29 258.811 139.193 259.242 139.193 259.75ZM150.734 268.455C150.087 268.455 149.53 268.371 149.064 268.205C148.598 268.042 148.21 267.826 147.899 267.557C147.592 267.292 147.348 267.008 147.166 266.705L148.234 265.955C148.356 266.114 148.509 266.295 148.695 266.5C148.88 266.708 149.134 266.888 149.456 267.04C149.782 267.195 150.208 267.273 150.734 267.273C151.439 267.273 152.02 267.102 152.479 266.761C152.937 266.42 153.166 265.886 153.166 265.159V263.386H153.053C152.954 263.545 152.814 263.742 152.632 263.977C152.454 264.208 152.196 264.415 151.859 264.597C151.526 264.775 151.075 264.864 150.507 264.864C149.803 264.864 149.17 264.697 148.609 264.364C148.053 264.03 147.611 263.545 147.286 262.909C146.964 262.273 146.803 261.5 146.803 260.591C146.803 259.697 146.96 258.919 147.274 258.256C147.589 257.589 148.026 257.074 148.587 256.71C149.147 256.343 149.795 256.159 150.53 256.159C151.098 256.159 151.549 256.254 151.882 256.443C152.219 256.629 152.477 256.841 152.655 257.08C152.837 257.314 152.977 257.508 153.075 257.659H153.212V256.273H154.507V265.25C154.507 266 154.337 266.61 153.996 267.08C153.659 267.553 153.204 267.9 152.632 268.119C152.064 268.343 151.431 268.455 150.734 268.455ZM150.689 263.659C151.227 263.659 151.681 263.536 152.053 263.29C152.424 263.044 152.706 262.689 152.899 262.227C153.092 261.765 153.189 261.212 153.189 260.568C153.189 259.939 153.094 259.384 152.905 258.903C152.715 258.422 152.435 258.045 152.064 257.773C151.693 257.5 151.234 257.364 150.689 257.364C150.121 257.364 149.647 257.508 149.268 257.795C148.893 258.083 148.611 258.47 148.422 258.955C148.236 259.439 148.143 259.977 148.143 260.568C148.143 261.174 148.238 261.71 148.428 262.176C148.621 262.638 148.905 263.002 149.28 263.267C149.659 263.528 150.128 263.659 150.689 263.659Z",
+        fill: "white"
+      })]
+    })
+  });
+};
+const toc = [{
+  "value": "Färgtokens",
+  "id": "färgtokens",
+  "level": 2
+}, {
+  "value": "Referenstokens",
+  "id": "referenstokens",
+  "level": 3
+}, {
+  "value": "Semantiska tokens",
+  "id": "semantiska-tokens",
+  "level": 3
+}, {
+  "value": "Lager",
+  "id": "lager",
+  "level": 2
+}, {
+  "value": "Lista över semantiska tokens",
+  "id": "lista-över-semantiska-tokens",
+  "level": 2
+}, {
+  "value": "Bakgrunder",
+  "id": "bakgrunder",
+  "level": 3
+}, {
+  "value": "Lager",
+  "id": "lager-1",
+  "level": 3
+}, {
+  "value": "Accentfärger",
+  "id": "accentfärger",
+  "level": 3
+}, {
+  "value": "Varumärke",
+  "id": "varumärke",
+  "level": 3
+}, {
+  "value": "Kantlinje",
+  "id": "kantlinje",
+  "level": 3
+}, {
+  "value": "Fält",
+  "id": "fält",
+  "level": 3
+}, {
+  "value": "Ikoner",
+  "id": "ikoner",
+  "level": 3
+}, {
+  "value": "Länkar",
+  "id": "länkar",
+  "level": 3
+}, {
+  "value": "Notifikationer",
+  "id": "notifikationer",
+  "level": 3
+}, {
+  "value": "Text",
+  "id": "text",
+  "level": 3
+}, {
+  "value": "Knappar",
+  "id": "knappar",
+  "level": 3
+}, {
+  "value": "Meny",
+  "id": "meny",
+  "level": 3
+}, {
+  "value": "Skeleton",
+  "id": "skeleton",
+  "level": 3
+}];
+function _createMdxContent(props) {
+  const _components = {
+    code: "code",
+    h2: "h2",
+    h3: "h3",
+    p: "p",
+    pre: "pre",
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [(0,jsx_runtime.jsx)(_components.p, {
+      children: "Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet."
+    }), "\n", (0,jsx_runtime.jsx)(ColorSpectrum, {}), "\n", (0,jsx_runtime.jsx)(_components.pre, {
+      children: (0,jsx_runtime.jsx)(_components.code, {
+        className: "language-tsx",
+        children: "import { semantic } from '@midas-ds/components/theme'\n"
+      })
+    }), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "färgtokens",
+      children: "Färgtokens"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "För att säkerställa konsekvent användning av färger använder vi designtokens, variabler som representerar färgernas syfte snarare än deras exakta värde. Våra färgtokens är uppdelade i två grupper: referenstokens och semantiska tokens."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "referenstokens",
+      children: "Referenstokens"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Referenstokens är direkt kopplade till färger och används för att bygga upp våra paletter. Referenstokens används endast som byggstenar och ska inte refereras till i koden. Där används istället semantiska tokens."
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "semantiska-tokens",
+      children: "Semantiska tokens"
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "Semantiska tokens är kopplade till referenstokens och är döpta för att beskriva var de bör användas. De flesta börjar med ett prefix som anger deras syfte, t.ex \"layer\", \"text\" eller \"border\". Varje semantisk token har två referenstokens kopplade till sig, en för ljust och en för mörk läge."
+    }), "\n", (0,jsx_runtime.jsx)(TokenNaming, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "lager",
+      children: "Lager"
+    }), "\n", (0,jsx_runtime.jsxs)(_components.p, {
+      children: ["Vissa av våra tokens är kopplade till ett specifikt lager, vilket indikeras av att de slutar med 01 eller 02. Tokens med samma nummer används alltid tillsammans när vi bygger komponenter. Numreringen används också för att avgöra vilka tokens som ska användas beroende på vilket lager en komponent ligger på. Tokens som slutar på 01 (t.ex. ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "field01"
+      }), ") används när en komponent ligger på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "background"
+      }), " och tokens som slutar på 02 används när komponenten ligger på ", (0,jsx_runtime.jsx)(_components.code, {
+        children: "layer01"
+      }), "."]
+    }), "\n", (0,jsx_runtime.jsx)(_components.p, {
+      children: "I ljust läge växlar färgerna mellan vitt och grått för varje lager medan varje nytt lager i mörkt läge får en ljusare grå nyans än det föregående, se exempel nedan."
+    }), "\n", (0,jsx_runtime.jsx)(Layers, {}), "\n", (0,jsx_runtime.jsx)(_components.h2, {
+      id: "lista-över-semantiska-tokens",
+      children: "Lista över semantiska tokens"
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "bakgrunder",
+      children: "Bakgrunder"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "background",
+        desc: "Standardbakgrund för våra applikationer"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "backgroundHover",
+        desc: "Hoverfärg för bakgrund"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "backgroundInverse",
+        desc: "Bakgrund eller element i med hög kontrast"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "lager-1",
+      children: "Lager"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "layer01",
+        desc: "Yta som används på background. Sekundär bakgrundsfärg"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerHover01",
+        desc: "Hover state för layer01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerSelected01",
+        desc: "Selected state för layer01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerSelectedHover01",
+        desc: "Hover state för layerSelected01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layer02",
+        desc: "Yta som ligger på layer01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerHover02",
+        desc: "Hover state för layer02"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerSelected02",
+        desc: "Selected state för layer02"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerSelectedHover02",
+        desc: "Hover state för layerSelected02"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "accentfärger",
+      children: "Accentfärger"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "layerAccent01",
+        desc: "Accentfärg som används tillsammans med layer01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerAccentHover01",
+        desc: "Hover state för layerAccent01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerAccentSelected01",
+        desc: "Selected state för layerAccent01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerAccent02",
+        desc: "Accentfärg som används tillsammans med layer02"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerAccentHover02",
+        desc: "Hover state för layerAccent02"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "layerAccentSelected02",
+        desc: "Selected state för layerAccent02"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "varumärke",
+      children: "Varumärke"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "brandPrimary",
+        desc: "Primära röda färgen"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "logoPrimary",
+        desc: "Färg på logotypen"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "kantlinje",
+      children: "Kantlinje"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "borderPrimary",
+        desc: "Kantlinje med hög kontrast, används med field01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "borderSecondary",
+        desc: "Kantlinje med medelög kontrast"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "borderSubtle",
+        desc: "Kantlinje med låg kontrast"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "borderTertiary",
+        desc: "Primärblå kantlinje"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "borderDisabled",
+        desc: "Kantlinje för disabled state"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "fält",
+      children: "Fält"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "field01",
+        desc: "Standardfärg för fält, som ligger på background"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "fieldHover01",
+        desc: "Hover state för field01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "fieldActive01",
+        desc: "Active state för field01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "field02",
+        desc: "Sekundfärfärg för fält, som ligger på layer01"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "fieldHover02",
+        desc: "Hover state för field02"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "fieldActive02",
+        desc: "Active state för field02"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "fieldDisabled",
+        desc: "Disabled state för fält"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "ikoner",
+      children: "Ikoner"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "iconPrimary",
+        desc: "Primär ikonfärg"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconSecondary",
+        desc: "Sekundär ikonfärg"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconInverse",
+        desc: "Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconOnColor",
+        desc: "Ikonfärg på färgade ytor som inte är lager"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconDisabled",
+        desc: "Ikoner som är disabled"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconSuccess",
+        desc: "Ikonfär för success state"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconInfo",
+        desc: "Ikonfärg för informationsikoner"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconImportant",
+        desc: "Ikonfärg för viktig information"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "iconWarning",
+        desc: "Ikonfärg för varningsikoner och invalid state"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "länkar",
+      children: "Länkar"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "linkEnabled",
+        desc: "Primärlänkfärg"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "linkHover",
+        desc: "Hover state för länkar"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "linkPressed",
+        desc: "Active/pressed state för länkar"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "linkVisited",
+        desc: "Färg för besökta länkar"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "notifikationer",
+      children: "Notifikationer"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "supportBorderSuccess",
+        desc: "Kantlinje för success-notifikationer"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBorderInfo",
+        desc: "Kantlinje för notifikationer med information"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBorderImportant",
+        desc: "Kantlinje för notifikationer med viktig information"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBorderWarning",
+        desc: "Kantlinje för notifikationer med varningar"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundSuccess",
+        desc: "Bakgrund för success-notifikationer"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundSuccessHover",
+        desc: "Hoverbakgrund för success-notifikationer"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundInfo",
+        desc: "Bakgrund för notifikationer med information"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundImportant",
+        desc: "Bakgrund för notifikationer med viktig information"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundWarning",
+        desc: "Bakgrund för notifikationer med varningar"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "supportBackgroundWarningHover",
+        desc: "Hoverbakgrund för notifikationer med varningar"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "text",
+      children: "Text"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "textPrimary",
+        desc: "Primär textfärg. Rubriker och brödtext."
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textSecondary",
+        desc: "Sekundär textfärg"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textTertiary",
+        desc: "Textfärg på tertiär knapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textOnColor",
+        desc: "Textfärg på färgade bakgrunder som inte är lager"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textInverse",
+        desc: "Inverterad textfärg"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textDisabled",
+        desc: "Textfärg för disabled state"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textWarning",
+        desc: "Textfärg för felmeddelanden"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "textPlaceholder",
+        desc: "Textfärg för platshållare"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "knappar",
+      children: "Knappar"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundPrimary",
+        desc: "Färg på primärknapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundPrimaryHover",
+        desc: "Hover state på primärknapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundPrimaryActive",
+        desc: "Active state för primärknapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundSecondary",
+        desc: "Färg på sekundärknapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundSecondaryHover",
+        desc: "Hover state på sekundärknapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundSecondaryActive",
+        desc: "Active state för sekundärknapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundTertiaryHover",
+        desc: "Hover state för tertiär knapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundTertiaryActive",
+        desc: "Active state för tertiär knapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundDanger",
+        desc: "Färg på danger knapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundDangerHover",
+        desc: "Hover state för danger knapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundDangerActive",
+        desc: "Active state för danger knapp"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBackgroundDisabled",
+        desc: "Disabled state för knappar"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "buttonBorderSecondary",
+        desc: "Kantfärg för sekundärknapp"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "meny",
+      children: "Meny"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "menuItemBackgroundHover",
+        desc: "Bakgrundsfärg för menu vid hover"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "menuItemBackgroundSelected",
+        desc: "Bakgrundsfärg för aktiv menu"
+      })]
+    }), "\n", (0,jsx_runtime.jsx)(_components.h3, {
+      id: "skeleton",
+      children: "Skeleton"
+    }), "\n", (0,jsx_runtime.jsxs)(TokenGroup, {
+      children: [(0,jsx_runtime.jsx)(Token, {
+        token: "skeleton01",
+        desc: "Standardfärg för skeleton"
+      }), (0,jsx_runtime.jsx)(Token, {
+        token: "skeleton02",
+        desc: "Färg som används när Skeleton ligger på bakgrundsfärgen `layer01` eller `light-dark(#f2f2f2,#262626)`"
+      })]
+    })]
+  });
+}
+function MDXContent(props = {}) {
+  const {wrapper: MDXLayout} = {
+    ...(0,lib/* useMDXComponents */.R)(),
+    ...props.components
+  };
+  return MDXLayout ? (0,jsx_runtime.jsx)(MDXLayout, {
+    ...props,
+    children: (0,jsx_runtime.jsx)(_createMdxContent, {
+      ...props
+    })
+  }) : _createMdxContent(props);
+}
+
+
+
+/***/ }),
+
+/***/ 74351:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   x: () => (/* binding */ Grid)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38739);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["children","isContained","removeMargins"];/**
+ * Grid based on display: flex;
+ * Calculates breakpoints and distributes columns according to MV specifications
+ *
+ * ### Children
+ * Use GridItem to manage each column.
+ * GridItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/grid}
+ */var Grid=function Grid(_ref){var children=_ref.children,_ref$isContained=_ref.isContained,isContained=_ref$isContained===void 0?false:_ref$isContained,_ref$removeMargins=_ref.removeMargins,removeMargins=_ref$removeMargins===void 0?false:_ref$removeMargins,rest=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",Object.assign({},rest,{className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.container,isContained&&_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.contained,removeMargins&&_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.removeMargins,rest.className),children:/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",{className:_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.flex,children:children})}));};
+
+/***/ }),
+
+/***/ 83908:
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   U: () => (/* binding */ $df56164dff5785e2$export$4338b53315abf666)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+
+
+/*
+ * Copyright 2021 Adobe. All rights reserved.
+ * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License. You may obtain a copy
+ * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under
+ * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+ * OF ANY KIND, either express or implied. See the License for the specific language
+ * governing permissions and limitations under the License.
+ */ 
+function $df56164dff5785e2$export$4338b53315abf666(ref) {
+    const objRef = (0, react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+    const cleanupRef = (0, react__WEBPACK_IMPORTED_MODULE_0__.useRef)(undefined);
+    const refEffect = (0, react__WEBPACK_IMPORTED_MODULE_0__.useCallback)((instance)=>{
+        if (typeof ref === 'function') {
+            const refCallback = ref;
+            const refCleanup = refCallback(instance);
+            return ()=>{
+                if (typeof refCleanup === 'function') refCleanup();
+                else refCallback(null);
+            };
+        } else if (ref) {
+            ref.current = instance;
+            return ()=>{
+                ref.current = null;
+            };
+        }
+    }, [
+        ref
+    ]);
+    return (0, react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(()=>({
+            get current () {
+                return objRef.current;
+            },
+            set current (value){
+                objRef.current = value;
+                if (cleanupRef.current) {
+                    cleanupRef.current();
+                    cleanupRef.current = undefined;
+                }
+                if (value != null) cleanupRef.current = refEffect(value);
+            }
+        }), [
+        refEffect
+    ]);
+}
+
+
+
+//# sourceMappingURL=useObjectRef.module.js.map
+
+
+/***/ }),
+
+/***/ 93574:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   E: () => (/* binding */ GridItem)
+/* harmony export */ });
+/* harmony import */ var _home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(98587);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(96540);
+/* harmony import */ var _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38739);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34164);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74848);
+var _excluded=["children","size","offset"];/**
+ * Columns based on display: flex;
+ * GridItem accepts values of 1 through 12 and auto.
+ *
+ * @see {@link: https://migrationsverket.se/components/flex}
+ */var GridItem=function GridItem(_ref){var children=_ref.children,size=_ref.size,offset=_ref.offset,props=(0,_home_runner_work_midas_midas_node_modules_babel_runtime_helpers_esm_objectWithoutPropertiesLoose_js__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .A)(_ref,_excluded);var offsetClass=offset?"offset-"+offset:'';var sizeClasses=getSizeClasses(size);var offsetClasses=getOffsetClasses(offset);return/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div",Object.assign({},props,{className:(0,clsx__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .A)(_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A.col,_Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[offsetClass],sizeClasses.map(function(cls){return _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[cls];}),offsetClasses.map(function(cls){return _Grid_module_css__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .A[cls];}),props.className),children:children}));};var getSizeClasses=function getSizeClasses(size){if(!size)return[];if(typeof size==='object'){return Object.entries(size).map(function(_ref2){var breakpoint=_ref2[0],value=_ref2[1];return breakpoint==='xs'?"col-"+value:"col-"+breakpoint+"-"+value;});}return["col-"+size];};var getOffsetClasses=function getOffsetClasses(offset){if(!offset)return[];if(typeof offset==='object'){return Object.entries(offset).map(function(_ref3){var breakpoint=_ref3[0],value=_ref3[1];return breakpoint==='xs'?"offset-"+value:"offset-"+breakpoint+"-"+value;});}return["offset-"+offset];};
+
+/***/ })
+
+}]);
