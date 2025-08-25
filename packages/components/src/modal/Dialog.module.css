@@ -56,8 +56,7 @@
 
 .modalTitle {
   flex-grow: 1;
-  margin: --size-50;
-  justify-self: center;
+  place-self: center;
   padding-left: 1rem;
 }
 
