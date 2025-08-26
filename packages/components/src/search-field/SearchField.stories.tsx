@@ -14,6 +14,7 @@ const meta: Meta<typeof SearchField> = {
     buttonText: 'Sök',
     errorPosition: 'top',
     className: 'test-class',
+    size: 'large',
   },
 }
 export default meta
@@ -29,8 +30,7 @@ export const Primary: Story = {
     canvas,
     canvasElement,
     step,
-    globals: { size },
-    args: { onChange, onSubmit, buttonText, className },
+    args: { onChange, onSubmit, buttonText, className, size },
   }) => {
     await step(
       'it should be possible to submit a search string using only the keyboard',
