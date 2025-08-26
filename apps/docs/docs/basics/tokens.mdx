@@ -13,8 +13,23 @@ Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak e
 
 <ColorSpectrum />
 
+Tokens är tillgängliga som typescriptvariabler via:
+
 ```tsx
 import { semantic } from '@midas-ds/components/theme'
+```
+
+Det går också att använda CSS `var(--variable-name)` genom att importera `theme.css`. Mer information om
+hur du använder Midas tokens i CSS hittar du under [Installera Midas](/get-started/install/).
+
+```tsx
+import '@midas-ds/components/theme.css'
+```
+
+```css
+.my-class {
+  color: var(--semantic-text-on-color); /* textOnColor */
+}
 ```
 
 ## Färgtokens
