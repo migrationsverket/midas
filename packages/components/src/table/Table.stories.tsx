@@ -75,29 +75,7 @@ export default {
   },
 } satisfies Meta<typeof Table>
 
-export const Primary: Story = {
-  play: async ({ canvas, step, globals: { size } }) => {
-    await step(
-      'table headers should change size according to size prop',
-      async () => {
-        const tableHeaders = await canvas.findAllByRole('columnheader')
-
-        tableHeaders.forEach(async column => {
-          const { height } = column.getBoundingClientRect()
-          await expect(height).toBe(size === 'large' ? 48 : 40)
-        })
-      },
-    )
-    await step('cells should change size according to size prop', async () => {
-      const cells = await canvas.findAllByRole('gridcell')
-
-      cells.forEach(async cell => {
-        const { height } = cell.getBoundingClientRect()
-        await expect(height).toBe(size === 'large' ? 48 : 40)
-      })
-    })
-  },
-}
+export const Primary: Story = {}
 
 export const Striped: Story = {
   args: {

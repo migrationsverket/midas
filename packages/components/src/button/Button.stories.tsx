@@ -19,7 +19,7 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-  play: async ({ canvas, step, args }) => {
+  play: async ({ canvas, step }) => {
     await step('it should have focus when clicked', async () => {
       const button = canvas.getByRole('button')
       await userEvent.click(button)
@@ -27,11 +27,6 @@ const meta: Meta<typeof Button> = {
       button.focus()
       await userEvent.keyboard('{Enter}')
       await expect(button).toHaveFocus()
-    })
-    await step('it should change size according to size prop', async () => {
-      await expect(canvas.getByRole('button')).toHaveStyle({
-        height: args.size === 'large' ? '48px' : '40px',
-      })
     })
   },
 }

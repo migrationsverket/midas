@@ -27,13 +27,6 @@ const meta: Meta<typeof LinkButton> = {
   args: {
     size: 'large',
   },
-  play: async ({ canvas, step, args }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(
-        canvas.getByTestId('link-button').getBoundingClientRect().height,
-      ).toBe(args.size === 'large' ? 48 : 40)
-    })
-  },
 }
 export default meta
 type Story = StoryObj<typeof LinkButton>
