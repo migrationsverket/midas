@@ -4,6 +4,8 @@ sidebar_label: Installera
 sidebar_position: 2
 ---
 
+import { ThemeExample } from '@site/src/components/examples/dev/InstallationExamples'
+
 Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn. Alla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket.
 
 ```bash npm2yarn
@@ -30,6 +32,44 @@ export default App
 ```
 
 För specifika instruktioner, se respektive komponent på våra [komponentsidor](/components/accordion) eller utforska komponenterna mer i vår Storybook.
+
+## Använda tokens/theme
+
+Importera `theme.css` i roten av din applikation:
+
+```tsx title="main.tsx"
+import '@midas-ds/components/theme.css'
+```
+
+Använd Midas tokens (läs mer om våra [tokens](/basics/tokens/)) som variabler i css:
+
+```css title="App.css"
+.kaffekopp {
+  border: 1px solid var(--semantic-border-primary);
+  background-color: var(--semantic-button-background-primary);
+  color: var(--semantic-text-on-color);
+  padding: 0.5rem;
+  width: fit-content;
+
+  &:hover {
+    background-color: var(--semantic-background-hover);
+  }
+}
+```
+
+```tsx title="App.tsx"
+import 'App.css'
+
+export default function App() {
+  return <div className={'kaffekopp'}>Colombiansk bönjuice</div>
+}
+
+export default App
+```
+
+<div className={'card'}>
+  <ThemeExample />
+</div>
 
 ## Installera Inter som typsnitt
 

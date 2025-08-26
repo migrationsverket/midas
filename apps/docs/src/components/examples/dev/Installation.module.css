@@ -1,0 +1,13 @@
+@import url('../../../../../../packages/components/src/theme/theme.css');
+
+.kaffekopp {
+  border: 1px solid var(--semantic-border-primary);
+  background-color: var(--semantic-button-background-primary);
+  color: var(--semantic-text-on-color);
+  padding: 0.5rem;
+  width: fit-content;
+
+  &:hover {
+    background-color: var(--semantic-button-background-primary-hover);
+  }
+}
