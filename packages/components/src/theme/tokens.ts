@@ -128,7 +128,8 @@ export const spacing = {
 export const states = {
   focus:
     '0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',
-  focusInset: 'inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)',
+  focusInset:
+    'inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)',
 }
 
 export const transitions = {
@@ -253,6 +254,7 @@ export const semantic = {
   buttonBackgroundIconActive: `light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))`,
 
   badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
+  badgeLabel: `light-dark(${baseColors.white}, ${baseColors.black})`,
 
   calendarDateBackgroundHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   calendarDateBackgroundSelected: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
