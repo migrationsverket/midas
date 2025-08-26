@@ -263,6 +263,7 @@
 
 /* Badge */
 @value --badge-background: light-dark(--signal-red-100, --signal-red-80);
+@value --badge-label: light-dark(--white, --black);
 
 /* Calendar */
 @value --calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));

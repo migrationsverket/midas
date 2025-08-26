@@ -1,5 +1,5 @@
 @value tokens: "../theme/tokens.css";
-@value --font-family, --text-on-color, --badge-background from tokens;
+@value --badge-background, --badge-label,  --font-family  from tokens;
 
 .badge {
   font-family: --font-family;
@@ -8,7 +8,7 @@
   min-height: 0.5rem;
   border-radius: 0.5rem;
   font-size: 0.625rem;
-  color: --text-on-color;
+  color: --badge-label;
 
   &.hasChildren {
     display: flex;

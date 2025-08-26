@@ -14,10 +14,6 @@ export default {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
-    a11y: {
-      // The color combo of the red box with number of notifications violates WCAG 2 AA contrast ratio threshold in dark mode
-      test: 'todo',
-    },
   },
   args: {},
   render: args => (
