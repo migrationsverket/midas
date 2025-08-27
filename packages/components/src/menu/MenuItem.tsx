@@ -14,20 +14,25 @@ export const MenuItem = <T extends object>(props: MenuItemProps<T>) => (
     }
     className={clsx(styles.menuItem, props.className)}
   >
-    {({ hasSubmenu, isSelected, selectionMode }) => (
-      <>
-        {selectionMode !== 'none' && (
-          <Check
-            size={16}
-            className={styles.checkMark}
-            data-selected={isSelected || undefined}
-          />
-        )}
-        <div className={styles.mainContent}>
-          <>{props.children}</>
-        </div>
-        {hasSubmenu && <ChevronRight size={20} />}
-      </>
-    )}
+    {renderProps => {
+      const { children } = props
+      const { selectionMode, isSelected, hasSubmenu } = renderProps
+
+      return (
+        <>
+          {selectionMode !== 'none' && (
+            <Check
+              size={16}
+              className={styles.checkMark}
+              data-selected={isSelected || undefined}
+            />
+          )}
+          <div className={styles.mainContent}>
+            {typeof children === 'function' ? children(renderProps) : children}
+          </div>
+          {hasSubmenu && <ChevronRight size={20} />}
+        </>
+      )
+    }}
   </AriaMenuItem>
 )
