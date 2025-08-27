@@ -4,10 +4,56 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-744/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Wed, 06 Aug 2025 08:42:51 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 27 Aug 2025 09:09:52 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 12.0.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-744/release-notes/12.0.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-744/release-notes/12.0.0/</guid>
+            <pubDate>Wed, 27 Aug 2025 09:09:52 GMT</pubDate>
+            <description><![CDATA[I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.]]></description>
+            <content:encoded><![CDATA[<p>I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
+Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
+våra komponenter. Läs vidare för att få veta mer om vad som är nytt i version 12.0.0.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner-och-förbättringar">🚀 Nya funktioner och förbättringar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-744/release-notes/12.0.0/#-nya-funktioner-och-f%C3%B6rb%C3%A4ttringar" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner och förbättringar" title="Direktlänk till 🚀 Nya funktioner och förbättringar">​</a></h2>
+<p>Vi har lagt till flera nya funktioner för att göra våra komponenter mer flexibla och kraftfulla. Du kan nu:</p>
+<ul>
+<li><strong>Använda fler statusar i <code scope="[object Object]">Accordion</code>:</strong> Vi har lagt till möjligheten att visa fler statusar i vår <code scope="[object Object]">Accordion</code>-komponent, vilket ger dig mer flexibilitet att kommunicera olika tillstånd till dina användare.</li>
+<li><strong>Anpassa ikoner i <code scope="[object Object]">Dropdown</code>:</strong> Du kan nu lägga till anpassade ikoner i vår <code scope="[object Object]">Dropdown</code>-komponent, vilket gör det enklare att skapa ett konsekvent och visuellt tilltalande gränssnitt.</li>
+<li><strong>Kontrollera tillståndet i <code scope="[object Object]">InfoBanner</code>:</strong> Vi har infört ett kontrollerat tillstånd för vår <code scope="[object Object]">InfoBanner</code>-komponent, vilket ger dig mer kontroll över när och hur den visas.</li>
+<li><strong>Virtualiserad tabell:</strong> Vi har lagt till ett recept för en virtualiserad tabell, vilket gör det möjligt att visa större datamängder utan att kompromissa med prestandan.</li>
+<li><strong>Exportera tokens som CS:</strong> Vi har implementerat export av våra tokens som CSS vilket gör det enklare att anpassa utseendet på dina komponenter och säkerställa att din CSS är giltig.</li>
+<li><strong>Titel i <code scope="[object Object]">Modal</code>:</strong> Vi har flyttat titeln i vår <code scope="[object Object]">Modal</code>-komponent till sidhuvudet och ändrat den till en <code scope="[object Object]">h2</code>-rubrik. Vi har också tagit bort marginalen och centrerat den vertikalt för att skapa en mer balanserad och visuellt tilltalande design.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-744/release-notes/12.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
+<p>Den här versionen innehåller några viktiga ändringar som kan kräva att du uppdaterar din kod. Vi har gjort dessa ändringar för att förbättra den övergripande kvaliteten och konsekvensen i vårt komponentbibliotek.</p>
+<ul>
+<li><strong>Borttagning av funktioner som varit deprecated:</strong> Vi har tagit bort ett antal funktioner, props och typer som tidigare har varit markerade som deprecated. Detta är en del av vårt kontinuerliga arbete med att hålla vårt API rent och konsekvent. De borttagna funktionerna är:<!-- -->
+<ul>
+<li><code scope="[object Object]">BreadcrumbProps</code> (använd <code scope="[object Object]">BreadcrumbsProps</code> istället)</li>
+<li><code scope="[object Object]">ComboBoxSelection</code> (använd <code scope="[object Object]">ComboBoxSection</code> istället)</li>
+<li><code scope="[object Object]">Item</code> och <code scope="[object Object]">Section</code> från <code scope="[object Object]">combobox/types.ts</code> (använd <code scope="[object Object]">ListBoxItemElement</code> och <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
+<li><code scope="[object Object]">Flex</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">Grid</code> istället)</li>
+<li><code scope="[object Object]">fluid</code> från <code scope="[object Object]">GridProps</code> (använd <code scope="[object Object]">isContained</code> istället)</li>
+<li><code scope="[object Object]">FlexItem</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">GridItem</code> istället)</li>
+<li><code scope="[object Object]">col</code> från <code scope="[object Object]">GridItemProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
+<li><code scope="[object Object]">dismissable</code> från <code scope="[object Object]">InfoBannerProps</code> (använd <code scope="[object Object]">isDismissable</code> istället)</li>
+<li><code scope="[object Object]">narrow</code> från <code scope="[object Object]">TableProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
+<li><code scope="[object Object]">tabs</code> och <code scope="[object Object]">label</code> från <code scope="[object Object]">TabsProps</code> (använd det deklarativa API<!-- -->:et<!-- --> med <code scope="[object Object]">TabList</code> och <code scope="[object Object]">TabPanel</code> istället)</li>
+<li><code scope="[object Object]">Option</code>, <code scope="[object Object]">OptionItem</code>, <code scope="[object Object]">OptionSection</code> från <code scope="[object Object]">select/types.ts</code> (använd <code scope="[object Object]">ListBoxOption</code>, <code scope="[object Object]">ListBoxItemElement</code>, <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
+<li><code scope="[object Object]">fieldSkeleton</code> och <code scope="[object Object]">buttonBackgroundSkeleton</code> från <code scope="[object Object]">theme/tokens.ts</code> (använd <code scope="[object Object]">skeleton01</code> istället)</li>
+</ul>
+</li>
+<li><strong>Ändrade ikoner för FeedbackStatus:</strong> Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder <code scope="[object Object]">type</code> (<code scope="[object Object]">'success'|'info'|'warning'|'important'</code>) kommer strängen <code scope="[object Object]">default</code> inte längre att vara tillgänglig.</li>
+</ul>
+<p>Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.</p>
+<p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/pr-preview/pr-744/changelog/12.0.0/">changelog</a>.</p>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v12</category>
+            <category>breaking-change</category>
+        </item>
         <item>
             <title><![CDATA[Release 11.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-744/release-notes/11.0.0/</link>
