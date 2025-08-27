@@ -4,7 +4,6 @@ import {
   Header,
   Keyboard,
   MenuTrigger,
-  Popover,
   SubmenuTrigger,
   type Selection,
 } from 'react-aria-components'
@@ -34,12 +33,13 @@ export default {
       <Button
         aria-label='Menu'
         variant='icon'
+        size={args.size}
       >
         <MenuIcon size={20} />
       </Button>
-      <Popover>
+      <MenuPopover>
         <Menu {...args} />
-      </Popover>
+      </MenuPopover>
     </MenuTrigger>
   ),
   args: {
@@ -71,10 +71,11 @@ export const ControlledSingleSelection: Story = {
           <Button
             aria-label='Menu'
             variant='icon'
+            size={args.size}
           >
             <MenuIcon size={20} />
           </Button>
-          <Popover>
+          <MenuPopover>
             <Menu
               {...args}
               selectedKeys={selected}
@@ -84,7 +85,7 @@ export const ControlledSingleSelection: Story = {
               <MenuItem id='center'>Center</MenuItem>
               <MenuItem id='right'>Right</MenuItem>
             </Menu>
-          </Popover>
+          </MenuPopover>
         </MenuTrigger>
         <Text>Current selection (controlled): {[...selected].join(', ')}</Text>
       </>
@@ -107,10 +108,11 @@ export const ControlledMultipleSelection: Story = {
           <Button
             aria-label='Menu'
             variant='icon'
+            size={args.size}
           >
             <MenuIcon size={20} />
           </Button>
-          <Popover>
+          <MenuPopover>
             <Menu
               {...args}
               selectedKeys={selected}
@@ -121,7 +123,7 @@ export const ControlledMultipleSelection: Story = {
               <MenuItem id='tools'>Tools</MenuItem>
               <MenuItem id='console'>Console</MenuItem>
             </Menu>
-          </Popover>
+          </MenuPopover>
         </MenuTrigger>
         <Text>
           Current selection (controlled):
@@ -143,6 +145,13 @@ export const Links: Story = {
         href: 'https://microsoft.com/',
         target: '_blank',
         name: 'Microsoft',
+      },
+      {
+        id: 4,
+        href: 'https://derp.com/',
+        target: '_blank',
+        name: 'Disabled link',
+        isDisabled: true,
       },
     ],
   },
@@ -213,6 +222,28 @@ export const TextSlots: Story = {
           <Text slot='label'>Paste</Text>
           <Text slot='description'>Paste the copied text</Text>
           <Keyboard>⌘V</Keyboard>
+        </MenuItem>
+      </>
+    ),
+  },
+}
+
+export const MultiSelectWithDescriptions: Story = {
+  args: {
+    selectionMode: 'multiple',
+    children: (
+      <>
+        <MenuItem textValue='Copy'>
+          <Text slot='label'>Copy</Text>
+          <Text slot='description'>Copy the selected text</Text>
+        </MenuItem>
+        <MenuItem textValue='Cut'>
+          <Text slot='label'>Cut</Text>
+          <Text slot='description'>Cut the selected text</Text>
+        </MenuItem>
+        <MenuItem textValue='Paste'>
+          <Text slot='label'>Paste</Text>
+          <Text slot='description'>Paste the copied text</Text>
         </MenuItem>
       </>
     ),

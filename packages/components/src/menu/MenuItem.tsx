@@ -16,20 +16,16 @@ export const MenuItem = <T extends object>(props: MenuItemProps<T>) => (
   >
     {({ hasSubmenu, isSelected, selectionMode }) => (
       <>
-        {selectionMode === 'multiple' && !isSelected && (
+        {selectionMode !== 'none' && (
           <Check
             size={16}
             className={styles.checkMark}
+            data-selected={isSelected || undefined}
           />
         )}
-        {isSelected && (
-          <Check
-            size={16}
-            className={styles.checkMark}
-            data-selected
-          />
-        )}
-        {props.children}
+        <div className={styles.mainContent}>
+          <>{props.children}</>
+        </div>
         {hasSubmenu && <ChevronRight size={20} />}
       </>
     )}

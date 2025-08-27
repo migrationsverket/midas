@@ -1,8 +1,7 @@
 @value tokens: "../theme/tokens.css";
-@value --border-secondary, --button-background-secondary-active, --focus, --focus-inset, --font-family, --font-size-10, --font-size-20, --font-size-30, --icon-disabled, --icon-primary, --layer-01, --layer-hover-01, --line-height-10, --line-height-20, --line-height-30, --menu-item-background-selected, --menu-text-section-header, --size-05, --size-10, --size-20, --size-30, --size-40, --size-50, --size-60, --size-80, --text-disabled, --text-primary, --text-secondary from tokens;
+@value --border-secondary, --button-background-secondary-active, --focus, --focus-inset, --font-family, --font-size-10, --font-size-20, --font-size-30, --icon-disabled, --icon-primary, --layer-01, --layer-hover-01, --line-height-10, --line-height-20, --line-height-30, --link-enabled, --link-hover, --link-pressed, --link-visited, --menu-item-background-selected, --menu-text-section-header, --size-05, --size-10, --size-20, --size-30, --size-40, --size-50, --size-60, --size-80, --text-disabled, --text-primary, --text-secondary from tokens;
 
 .menu {
-  /* TODO: Is there supposed to be a box shadow in dark mode aswell? */
   background-color: --layer-01;
   box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%);
   font-family: --font-family;
@@ -14,11 +13,11 @@
   .menuSection {
     header {
       background-color: --layer-01;
-      display: flex;
-      padding: --size-80 --size-80 --size-10 --size-60;
       color: --menu-text-section-header;
+      display: flex;
       font-size: --font-size-20;
       line-height: --line-height-20;
+      padding: --size-80 --size-80 --size-10 --size-60;
     }
   }
 
@@ -32,13 +31,10 @@
     align-items: center;
     background-color: --layer-01;
     color: --text-primary;
-    display: grid;
+    display: flex;
     font-size: --font-size-30;
     gap: 0;
-    grid-template-areas:
-      'label kbd'
-      'desc kbd';
-    justify-content: space-between;
+    justify-content: start;
     line-height: --line-height-30;
     padding: --size-50 --size-40 --size-50 --size-80;
 
@@ -72,13 +68,9 @@
       background-color: --button-background-secondary-active;
     }
 
-    &[data-selection-mode='multiple'] {
-      justify-content: start;
-    }
-
     [slot='description'] {
       font-size: --font-size-10;
-      grid-area: desc;
+      grid-area: description;
       line-height: --line-height-10;
       margin: 0;
     }
@@ -88,22 +80,27 @@
       font-family: --font-family;
       font-size: --font-size-20;
       grid-area: kbd;
-      line-height: --line-height-20;
       margin-left: --size-60;
-      text-align: end;
     }
-  }
 
-  &.medium .menuItem {
-    padding: --size-30 --size-40 --size-30 --size-80;
-  }
+    .mainContent {
+      align-items: center;
+      display: grid;
+      flex: 1;
+      grid-area: main;
+      grid-template-areas:
+        'label kbd'
+        'description kbd';
+      justify-content: space-between;
+    }
 
-  .checkMark {
-    color: --icon-disabled;
-    margin-right: --size-40;
+    .checkMark {
+      color: --icon-disabled;
+      margin-right: --size-40;
 
-    &[data-selected] {
-      color: --icon-primary;
+      &[data-selected] {
+        color: --icon-primary;
+      }
     }
   }
 
@@ -117,6 +114,30 @@
     justify-content: center;
     margin: 0 --size-20 --size-30;
     padding: --size-30 0 0;
+  }
+
+  &.medium .menuItem {
+    padding: --size-30 --size-40 --size-30 --size-80;
+
+    &:not([data-has-submenu]) {
+      padding-right: --size-80;
+    }
+  }
+
+  a.menuItem {
+    color: --link-enabled;
+
+    &[data-hovered] {
+      color: --link-hover;
+    }
+
+    &:visited {
+      color: --link-visited;
+    }
+
+    &[data-pressed]:not([data-disabled]) {
+      color: --link-pressed;
+    }
   }
 }
 
