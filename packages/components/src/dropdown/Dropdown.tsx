@@ -12,6 +12,12 @@ import { EllipsisVertical, LucideIcon } from 'lucide-react'
 import styles from './Dropdown.module.css'
 import clsx from 'clsx'
 
+/**
+ *
+ * @deprecated since v11.2.0
+ * Please use `MenuProps` instead
+ * @see {@link https://designsystem.migrationsverket.se/components/menu/|Menu}
+ */
 export interface MidasMenuButtonProps<T>
   extends MenuProps<T>,
     Omit<MenuTriggerProps, 'children'> {
@@ -24,6 +30,12 @@ export interface MidasMenuButtonProps<T>
   icon?: LucideIcon
 }
 
+/**
+ *
+ * @deprecated since v11.2.0
+ * Please use `Menu` instead
+ * @see {@link https://designsystem.migrationsverket.se/components/menu/|Menu}
+ */
 export function Dropdown<T extends object>({
   label,
   title,
@@ -55,6 +67,12 @@ export function Dropdown<T extends object>({
   )
 }
 
+/**
+ *
+ * @deprecated since v11.2.0
+ * Please use `Menu` and `MenuItem` instead
+ * @see {@link https://designsystem.migrationsverket.se/components/menu/|Menu}
+ */
 export function DropdownItem(props: MenuItemProps) {
   const textValue =
     props.textValue ||
