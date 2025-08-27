@@ -222,6 +222,7 @@ export declare const theme: {
         buttonBackgroundIconHover: string;
         buttonBackgroundIconActive: string;
         badgeBackground: string;
+        badgeLabel: string;
         calendarDateBackgroundHover: string;
         calendarDateBackgroundSelected: string;
         calendarDateBackgroundStartRange: string;
