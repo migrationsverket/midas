@@ -2,12 +2,73 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/dev-docs/changelog/</id>
     <title>Midas changelog</title>
-    <updated>2025-08-14T20:00:00.000Z</updated>
+    <updated>2025-08-27T20:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/dev-docs/changelog/"/>
     <subtitle>Håll dig uppdaterad med allt som händer i varje release</subtitle>
     <icon>https://designsystem.migrationsverket.se/dev-docs/img/favicon.ico?v=3</icon>
     <rights>2025 Migrationsverket</rights>
+    <entry>
+        <title type="html"><![CDATA[12.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/"/>
+        <updated>2025-08-27T20:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🚀 Features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
+<ul>
+<li>⚠️ Automate ESLint versioning and remove deprecated features (<a href="https://github.com/migrationsverket/midas/commit/577253d5bb" target="_blank" rel="noopener noreferrer">577253d5bb</a>)</li>
+<li><strong>accordion:</strong> add option to display more statuses (<a href="https://github.com/migrationsverket/midas/commit/3eb637fc17" target="_blank" rel="noopener noreferrer">3eb637fc17</a>)</li>
+<li>⚠️ <strong>components:</strong> change feedback status icons to consistent pattern (<a href="https://github.com/migrationsverket/midas/commit/8075adb685" target="_blank" rel="noopener noreferrer">8075adb685</a>)</li>
+<li><strong>dropdown:</strong> add custom icon support (<a href="https://github.com/migrationsverket/midas/commit/6d34b3061a" target="_blank" rel="noopener noreferrer">6d34b3061a</a>)</li>
+<li><strong>info-banner:</strong> add controlled state (<a href="https://github.com/migrationsverket/midas/pull/754" target="_blank" rel="noopener noreferrer">#754</a>)</li>
+<li><strong>modal:</strong> move modal title to the header (<a href="https://github.com/migrationsverket/midas/commit/4889b827d4" target="_blank" rel="noopener noreferrer">4889b827d4</a>)</li>
+<li><strong>modal:</strong> change title to <code scope="[object Object]">h2</code>, remove margin and center vertically (<a href="https://github.com/migrationsverket/midas/commit/400b06702a" target="_blank" rel="noopener noreferrer">400b06702a</a>)</li>
+<li><strong>table:</strong> add virtualizer recipe (<a href="https://github.com/migrationsverket/midas/pull/736" target="_blank" rel="noopener noreferrer">#736</a>)</li>
+<li><strong>theme:</strong> Implement dynamic theme generation and CSS validation (<a href="https://github.com/migrationsverket/midas/commit/f50ee50a5b" target="_blank" rel="noopener noreferrer">f50ee50a5b</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li><strong>badge:</strong> replace label color (<a href="https://github.com/migrationsverket/midas/commit/cfda450f4e" target="_blank" rel="noopener noreferrer">cfda450f4e</a>)</li>
+<li><strong>date-picker:</strong> remove explicit height for calendar button (<a href="https://github.com/migrationsverket/midas/commit/3fe21636ea" target="_blank" rel="noopener noreferrer">3fe21636ea</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactors">💅 Refactors<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-refactors" class="hash-link" aria-label="Direktlänk till 💅 Refactors" title="Direktlänk till 💅 Refactors">​</a></h2>
+<ul>
+<li>extract <code scope="[object Object]">FeedbackStatus</code> type (<a href="https://github.com/migrationsverket/midas/commit/8396c9e628" target="_blank" rel="noopener noreferrer">8396c9e628</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h2>
+<ul>
+<li><strong>release-procedure:</strong> add developer instructions for how to trigger a release of the component lib (<a href="https://github.com/migrationsverket/midas/commit/3720ab0b5d" target="_blank" rel="noopener noreferrer">3720ab0b5d</a>)</li>
+<li><strong>theme:</strong> add instructions on how to access css tokens (<a href="https://github.com/migrationsverket/midas/commit/1d4780f936" target="_blank" rel="noopener noreferrer">1d4780f936</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h2>
+<ul>
+<li>deploy docweb from dev branch (<a href="https://github.com/migrationsverket/midas/commit/80f58e46d2" target="_blank" rel="noopener noreferrer">80f58e46d2</a>)</li>
+<li>add noIndex meta data to pr previews and dev-env (<a href="https://github.com/migrationsverket/midas/commit/f38f33e507" target="_blank" rel="noopener noreferrer">f38f33e507</a>)</li>
+<li>remove storybook global size control (<a href="https://github.com/migrationsverket/midas/pull/749" target="_blank" rel="noopener noreferrer">#749</a>)</li>
+<li>release notes 12.0.0 (<a href="https://github.com/migrationsverket/midas/commit/06e82b3ff5" target="_blank" rel="noopener noreferrer">06e82b3ff5</a>)</li>
+<li><strong>theme:</strong> export css variables in theme.css from @midas-ds/components package (<a href="https://github.com/migrationsverket/midas/commit/f9eddbf186" target="_blank" rel="noopener noreferrer">f9eddbf186</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-tests-updated">🧪 Tests updated<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-tests-updated" class="hash-link" aria-label="Direktlänk till 🧪 Tests updated" title="Direktlänk till 🧪 Tests updated">​</a></h2>
+<ul>
+<li>emulate media in prepare test hook (<a href="https://github.com/migrationsverket/midas/commit/e4060227d4" target="_blank" rel="noopener noreferrer">e4060227d4</a>)</li>
+<li>remove size test from button linkButton and table (<a href="https://github.com/migrationsverket/midas/commit/48a26e096e" target="_blank" rel="noopener noreferrer">48a26e096e</a>)</li>
+<li><strong>badge:</strong> fix failing test in dark mode (<a href="https://github.com/migrationsverket/midas/commit/d91b690316" target="_blank" rel="noopener noreferrer">d91b690316</a>)</li>
+<li><strong>badge:</strong> bypass a11y tests (<a href="https://github.com/migrationsverket/midas/commit/626ceaf98c" target="_blank" rel="noopener noreferrer">626ceaf98c</a>)</li>
+<li><strong>button:</strong> move interaction tests to a separate story (<a href="https://github.com/migrationsverket/midas/commit/9dfd1459cd" target="_blank" rel="noopener noreferrer">9dfd1459cd</a>)</li>
+<li><strong>link-button:</strong> bypass a11y test (<a href="https://github.com/migrationsverket/midas/commit/ad33fbfd58" target="_blank" rel="noopener noreferrer">ad33fbfd58</a>)</li>
+<li><strong>link-button:</strong> remove a11y test bypass (<a href="https://github.com/migrationsverket/midas/commit/a059db212a" target="_blank" rel="noopener noreferrer">a059db212a</a>)</li>
+<li><strong>search-field:</strong> remove global size (<a href="https://github.com/migrationsverket/midas/pull/759" target="_blank" rel="noopener noreferrer">#759</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-revert">⏪ Revert<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#-revert" class="hash-link" aria-label="Direktlänk till ⏪ Revert" title="Direktlänk till ⏪ Revert">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Revert "fix(theme): change dark mode values for danger button" (<a href="https://github.com/migrationsverket/midas/commit/6cb506566e" target="_blank" rel="noopener noreferrer">6cb506566e</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
+<ul>
+<li>⚠️ Automate ESLint versioning and remove deprecated features (<a href="https://github.com/migrationsverket/midas/commit/577253d5bb" target="_blank" rel="noopener noreferrer">577253d5bb</a>)</li>
+<li><strong>components:</strong> when using <code scope="[object Object]">type</code> (<code scope="[object Object]">'success'|'info'|'warning'|'important'</code>) the string <code scope="[object Object]">default</code> is</li>
+</ul>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[11.2.0]]></title>
         <id>https://designsystem.migrationsverket.se/dev-docs/changelog/11.2.0/</id>
@@ -738,17 +799,6 @@
 <li><strong>link-button:</strong> add pseudo-classes in CSS link-button (<a href="https://github.com/migrationsverket/midas/pull/385" target="_blank" rel="noopener noreferrer">#385</a>)</li>
 <li><strong>textfield:</strong> fix token on input value (<a href="https://github.com/migrationsverket/midas/commit/e79f935e3" target="_blank" rel="noopener noreferrer">e79f935e3</a>)</li>
 <li><strong>textfield:</strong> fix token on input value (<a href="https://github.com/migrationsverket/midas/pull/388" target="_blank" rel="noopener noreferrer">#388</a>)</li>
-</ul>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[6.0.1]]></title>
-        <id>https://designsystem.migrationsverket.se/dev-docs/changelog/6.0.1/</id>
-        <link href="https://designsystem.migrationsverket.se/dev-docs/changelog/6.0.1/"/>
-        <updated>2025-03-24T20:00:00.000Z</updated>
-        <summary type="html"><![CDATA[🩹 Fixes]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/dev-docs/changelog/6.0.1/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
-<ul>
-<li><strong>select:</strong> 🐛 Selected values doesn't match selected IDs</li>
 </ul>]]></content>
     </entry>
 </feed>
