@@ -19,16 +19,6 @@ const meta: Meta<typeof Button> = {
       control: { type: 'radio' },
     },
   },
-  play: async ({ canvas, step }) => {
-    await step('it should have focus when clicked', async () => {
-      const button = canvas.getByRole('button')
-      await userEvent.click(button)
-      await expect(button).toBeEnabled()
-      button.focus()
-      await userEvent.keyboard('{Enter}')
-      await expect(button).toHaveFocus()
-    })
-  },
 }
 
 export default meta
@@ -99,5 +89,26 @@ export const Danger: Story = {
   args: {
     children: 'Button',
     variant: 'danger',
+  },
+}
+
+export const Tests: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    children: 'Button',
+    className: 'test-class',
+  },
+  play: async ({ canvas, step }) => {
+    await step('it should have focus when clicked', async () => {
+      const button = canvas.getByRole('button')
+      await userEvent.click(button)
+      await expect(button).toBeEnabled()
+      button.focus()
+      await userEvent.keyboard('{Enter}')
+      await expect(button).toHaveFocus()
+    })
   },
 }
