@@ -1,3 +1,52 @@
+# 12.0.0 (2025-08-27)
+
+### 🚀 Features
+
+- **info-banner:** add controlled state ([#754](https://github.com/migrationsverket/midas/pull/754))
+- **modal:** change title to `h2`, remove margin and center vertically ([400b06702a](https://github.com/migrationsverket/midas/commit/400b06702a))
+- **modal:** move modal title to the header ([4889b827d4](https://github.com/migrationsverket/midas/commit/4889b827d4))
+- **theme:** Implement dynamic theme generation and CSS validation ([f50ee50a5b](https://github.com/migrationsverket/midas/commit/f50ee50a5b))
+- ⚠️ Automate ESLint versioning and remove deprecated features ([577253d5bb](https://github.com/migrationsverket/midas/commit/577253d5bb))
+- **dropdown:** add custom icon support ([6d34b3061a](https://github.com/migrationsverket/midas/commit/6d34b3061a))
+- ⚠️ **components:** change feedback status icons to consistent pattern ([8075adb685](https://github.com/migrationsverket/midas/commit/8075adb685))
+- **accordion:** add option to display more statuses ([3eb637fc17](https://github.com/migrationsverket/midas/commit/3eb637fc17))
+- **table:** add virtualizer recipe ([#736](https://github.com/migrationsverket/midas/pull/736))
+
+### 🩹 Fixes
+
+- **badge:** replace label color ([cfda450f4e](https://github.com/migrationsverket/midas/commit/cfda450f4e))
+- **date-picker:** remove explicit height for calendar button ([3fe21636ea](https://github.com/migrationsverket/midas/commit/3fe21636ea))
+
+### 💅 Refactors
+
+- extract `FeedbackStatus` type ([8396c9e628](https://github.com/migrationsverket/midas/commit/8396c9e628))
+
+### 🔧 Maintenance
+
+- **theme:** export css variables in theme.css from @midas-ds/components package ([f9eddbf186](https://github.com/migrationsverket/midas/commit/f9eddbf186))
+- remove storybook global size control ([#749](https://github.com/migrationsverket/midas/pull/749))
+- deploy docweb from dev branch ([80f58e46d2](https://github.com/migrationsverket/midas/commit/80f58e46d2))
+
+### 🧪 Tests updated
+
+- **button:** move interaction tests to a separate story ([9dfd1459cd](https://github.com/migrationsverket/midas/commit/9dfd1459cd))
+- **link-button:** remove a11y test bypass ([a059db212a](https://github.com/migrationsverket/midas/commit/a059db212a))
+- **search-field:** remove global size ([#759](https://github.com/migrationsverket/midas/pull/759))
+- remove size test from button linkButton and table ([48a26e096e](https://github.com/migrationsverket/midas/commit/48a26e096e))
+- **badge:** bypass a11y tests ([626ceaf98c](https://github.com/migrationsverket/midas/commit/626ceaf98c))
+- **badge:** fix failing test in dark mode ([d91b690316](https://github.com/migrationsverket/midas/commit/d91b690316))
+- **link-button:** bypass a11y test ([ad33fbfd58](https://github.com/migrationsverket/midas/commit/ad33fbfd58))
+- emulate media in prepare test hook ([e4060227d4](https://github.com/migrationsverket/midas/commit/e4060227d4))
+
+### ⏪ Revert
+
+- **theme:** Revert "fix(theme): change dark mode values for danger button" ([6cb506566e](https://github.com/migrationsverket/midas/commit/6cb506566e))
+
+### ⚠️ Breaking Changes
+
+- ⚠️ Automate ESLint versioning and remove deprecated features ([577253d5bb](https://github.com/migrationsverket/midas/commit/577253d5bb))
+- **components:** when using `type` (`'success'|'info'|'warning'|'important'`) the string `default` is
+
 ## 11.2.0 (2025-08-14)
 
 ### 🚀 Features
