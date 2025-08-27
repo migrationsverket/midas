@@ -12,6 +12,7 @@ import { Button } from '../button'
 import { Menu, MenuItem, MenuPopover, MenuSection, Separator } from '.'
 import React from 'react'
 import { Text } from '../text'
+import { expect, fn, userEvent, within } from '@storybook/test'
 
 interface Item {
   id: string | number
@@ -289,5 +290,47 @@ export const SubMenus: Story = {
         <MenuItem key={item.name}>{item.name}</MenuItem>
       )
     },
+  },
+}
+
+export const Tests: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    items: [
+      { id: 0, name: 'test 0' },
+      { id: 1, name: 'test 1' },
+      { id: 'testID', name: 'test 2' },
+      { id: 3, name: 'test 3' },
+    ],
+    onAction: fn(),
+    className: 'derp',
+  },
+  play: async ({ canvasElement, step, args }) => {
+    await step('Open menu', async () => {
+      await userEvent.tab()
+      await userEvent.keyboard('[Space]')
+    })
+
+    await step('it should accept a custom className', async () => {
+      await expect(
+        within(canvasElement.ownerDocument.body).getByRole('menu'),
+      ).toHaveClass('derp')
+    })
+
+    await step('Select the third item', async () => {
+      await userEvent.keyboard('[ArrowDown]')
+      await userEvent.keyboard('[ArrowDown]')
+      await userEvent.keyboard('[Space]')
+    })
+
+    await step(
+      'it should call the onAction handler with the ID of the menu item',
+      async () => {
+        await expect(args.onAction).toHaveBeenCalledWith('testID')
+      },
+    )
   },
 }
