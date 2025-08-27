@@ -49,6 +49,7 @@ våra komponenter. Läs vidare för att få veta mer om vad som är nytt i versi
 <li><strong>Ändrade ikoner för FeedbackStatus:</strong> Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder <code scope="[object Object]">type</code> (<code scope="[object Object]">'success'|'info'|'warning'|'important'</code>) kommer strängen <code scope="[object Object]">default</code> inte längre att vara tillgänglig.</li>
 </ul>
 <p>Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.</p>
+<!-- -->
 <p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/dev-docs/changelog/12.0.0/">changelog</a>.</p>]]></content:encoded>
             <category>release-notes</category>
             <category>v12</category>
