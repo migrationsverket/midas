@@ -1,0 +1,44 @@
+---
+slug: 12.0.0
+title: Release 12.0.0
+authors: midas
+tags: [release-notes, v12, breaking-change]
+---
+
+I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
+Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
+våra komponenter. Läs vidare för att få veta mer om vad som är nytt i version 12.0.0.
+
+## 🚀 Nya funktioner och förbättringar
+
+Vi har lagt till flera nya funktioner för att göra våra komponenter mer flexibla och kraftfulla. Du kan nu:
+
+- **Använda fler statusar i `Accordion`:** Vi har lagt till möjligheten att visa fler statusar i vår `Accordion`-komponent, vilket ger dig mer flexibilitet att kommunicera olika tillstånd till dina användare.
+- **Anpassa ikoner i `Dropdown`:** Du kan nu lägga till anpassade ikoner i vår `Dropdown`-komponent, vilket gör det enklare att skapa ett konsekvent och visuellt tilltalande gränssnitt.
+- **Kontrollera tillståndet i `InfoBanner`:** Vi har infört ett kontrollerat tillstånd för vår `InfoBanner`-komponent, vilket ger dig mer kontroll över när och hur den visas.
+- **Virtualiserad tabell:** Vi har lagt till ett recept för en virtualiserad tabell, vilket gör det möjligt att visa större datamängder utan att kompromissa med prestandan.
+- **Exportera tokens som CS:** Vi har implementerat export av våra tokens som CSS vilket gör det enklare att anpassa utseendet på dina komponenter och säkerställa att din CSS är giltig.
+- **Titel i `Modal`:** Vi har flyttat titeln i vår `Modal`-komponent till sidhuvudet och ändrat den till en `h2`-rubrik. Vi har också tagit bort marginalen och centrerat den vertikalt för att skapa en mer balanserad och visuellt tilltalande design.
+
+## ⚠️ Breaking Changes
+
+Den här versionen innehåller några viktiga ändringar som kan kräva att du uppdaterar din kod. Vi har gjort dessa ändringar för att förbättra den övergripande kvaliteten och konsekvensen i vårt komponentbibliotek.
+
+- **Borttagning av funktioner som varit deprecated:** Vi har tagit bort ett antal funktioner, props och typer som tidigare har varit markerade som deprecated. Detta är en del av vårt kontinuerliga arbete med att hålla vårt API rent och konsekvent. De borttagna funktionerna är:
+    - `BreadcrumbProps` (använd `BreadcrumbsProps` istället)
+    - `ComboBoxSelection` (använd `ComboBoxSection` istället)
+    - `Item` och `Section` från `combobox/types.ts` (använd `ListBoxItemElement` och `ListBoxSectionElement` istället)
+    - `Flex` från `grid` (använd `Grid` istället)
+    - `fluid` från `GridProps` (använd `isContained` istället)
+    - `FlexItem` från `grid` (använd `GridItem` istället)
+    - `col` från `GridItemProps` (använd `size` istället)
+    - `dismissable` från `InfoBannerProps` (använd `isDismissable` istället)
+    - `narrow` från `TableProps` (använd `size` istället)
+    - `tabs` och `label` från `TabsProps` (använd det deklarativa API:et med `TabList` och `TabPanel` istället)
+    - `Option`, `OptionItem`, `OptionSection` från `select/types.ts` (använd `ListBoxOption`, `ListBoxItemElement`, `ListBoxSectionElement` istället)
+    - `fieldSkeleton` och `buttonBackgroundSkeleton` från `theme/tokens.ts` (använd `skeleton01` istället)
+- **Ändrade ikoner för FeedbackStatus:** Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder `type` (`'success'|'info'|'warning'|'important'`) kommer strängen `default` inte längre att vara tillgänglig.
+
+Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.
+
+Se alla förändringar i detalj på [changelog](/changelog/12.0.0).
