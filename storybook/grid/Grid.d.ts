@@ -1,10 +1,6 @@
 import * as React from 'react';
 export interface GridProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children: React.ReactNode;
-    /** Removes outer margins for nested use. First Grid on a page should have outer margins.
-     * @deprecated since v10.2.0 Use `isContained` prop instead.
-     */
-    fluid?: boolean;
     /** A contained grid has a max-width and centered positioning on large screens. */
     isContained?: boolean;
     /** Removes outer margins. */
@@ -21,7 +17,3 @@ export interface GridProps extends React.DetailedHTMLProps<React.HTMLAttributes<
  * @see {@link: https://migrationsverket.se/components/grid}
  */
 export declare const Grid: React.FC<GridProps>;
-/**
- * @deprecated since v10.2.0 Use `Grid` instead.
- */
-export declare const Flex: React.FC<GridProps>;

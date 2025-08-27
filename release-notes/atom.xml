@@ -2,11 +2,60 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/release-notes/</id>
     <title>Migrationsverkets designsystem Blog</title>
-    <updated>2025-08-06T08:42:51.000Z</updated>
+    <updated>2025-08-27T09:09:52.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/release-notes/"/>
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
     <icon>https://designsystem.migrationsverket.se/img/favicon.ico?v=3</icon>
+    <entry>
+        <title type="html"><![CDATA[Release 12.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/release-notes/12.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/release-notes/12.0.0/"/>
+        <updated>2025-08-27T09:09:52.000Z</updated>
+        <summary type="html"><![CDATA[I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.]]></summary>
+        <content type="html"><![CDATA[<p>I den här releasen har vi fokuserat på att förbättra den övergripande upplevelsen av vårt komponentbibliotek.
+Vi har infört nya funktioner, fixat buggar och gjort några viktiga ändringar som kommer att påverka hur du använder
+våra komponenter. Läs vidare för att få veta mer om vad som är nytt i version 12.0.0.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner-och-förbättringar">🚀 Nya funktioner och förbättringar<a href="https://designsystem.migrationsverket.se/release-notes/12.0.0/#-nya-funktioner-och-f%C3%B6rb%C3%A4ttringar" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner och förbättringar" title="Direktlänk till 🚀 Nya funktioner och förbättringar">​</a></h2>
+<p>Vi har lagt till flera nya funktioner för att göra våra komponenter mer flexibla och kraftfulla. Du kan nu:</p>
+<ul>
+<li><strong>Använda fler statusar i <code scope="[object Object]">Accordion</code>:</strong> Vi har lagt till möjligheten att visa fler statusar i vår <code scope="[object Object]">Accordion</code>-komponent, vilket ger dig mer flexibilitet att kommunicera olika tillstånd till dina användare.</li>
+<li><strong>Anpassa ikoner i <code scope="[object Object]">Dropdown</code>:</strong> Du kan nu lägga till anpassade ikoner i vår <code scope="[object Object]">Dropdown</code>-komponent, vilket gör det enklare att skapa ett konsekvent och visuellt tilltalande gränssnitt.</li>
+<li><strong>Kontrollera tillståndet i <code scope="[object Object]">InfoBanner</code>:</strong> Vi har infört ett kontrollerat tillstånd för vår <code scope="[object Object]">InfoBanner</code>-komponent, vilket ger dig mer kontroll över när och hur den visas.</li>
+<li><strong>Virtualiserad tabell:</strong> Vi har lagt till ett recept för en virtualiserad tabell, vilket gör det möjligt att visa större datamängder utan att kompromissa med prestandan.</li>
+<li><strong>Exportera tokens som CS:</strong> Vi har implementerat export av våra tokens som CSS vilket gör det enklare att anpassa utseendet på dina komponenter och säkerställa att din CSS är giltig.</li>
+<li><strong>Titel i <code scope="[object Object]">Modal</code>:</strong> Vi har flyttat titeln i vår <code scope="[object Object]">Modal</code>-komponent till sidhuvudet och ändrat den till en <code scope="[object Object]">h2</code>-rubrik. Vi har också tagit bort marginalen och centrerat den vertikalt för att skapa en mer balanserad och visuellt tilltalande design.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/12.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
+<p>Den här versionen innehåller några viktiga ändringar som kan kräva att du uppdaterar din kod. Vi har gjort dessa ändringar för att förbättra den övergripande kvaliteten och konsekvensen i vårt komponentbibliotek.</p>
+<ul>
+<li><strong>Borttagning av funktioner som varit deprecated:</strong> Vi har tagit bort ett antal funktioner, props och typer som tidigare har varit markerade som deprecated. Detta är en del av vårt kontinuerliga arbete med att hålla vårt API rent och konsekvent. De borttagna funktionerna är:<!-- -->
+<ul>
+<li><code scope="[object Object]">BreadcrumbProps</code> (använd <code scope="[object Object]">BreadcrumbsProps</code> istället)</li>
+<li><code scope="[object Object]">ComboBoxSelection</code> (använd <code scope="[object Object]">ComboBoxSection</code> istället)</li>
+<li><code scope="[object Object]">Item</code> och <code scope="[object Object]">Section</code> från <code scope="[object Object]">combobox/types.ts</code> (använd <code scope="[object Object]">ListBoxItemElement</code> och <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
+<li><code scope="[object Object]">Flex</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">Grid</code> istället)</li>
+<li><code scope="[object Object]">fluid</code> från <code scope="[object Object]">GridProps</code> (använd <code scope="[object Object]">isContained</code> istället)</li>
+<li><code scope="[object Object]">FlexItem</code> från <code scope="[object Object]">grid</code> (använd <code scope="[object Object]">GridItem</code> istället)</li>
+<li><code scope="[object Object]">col</code> från <code scope="[object Object]">GridItemProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
+<li><code scope="[object Object]">dismissable</code> från <code scope="[object Object]">InfoBannerProps</code> (använd <code scope="[object Object]">isDismissable</code> istället)</li>
+<li><code scope="[object Object]">narrow</code> från <code scope="[object Object]">TableProps</code> (använd <code scope="[object Object]">size</code> istället)</li>
+<li><code scope="[object Object]">tabs</code> och <code scope="[object Object]">label</code> från <code scope="[object Object]">TabsProps</code> (använd det deklarativa API<!-- -->:et<!-- --> med <code scope="[object Object]">TabList</code> och <code scope="[object Object]">TabPanel</code> istället)</li>
+<li><code scope="[object Object]">Option</code>, <code scope="[object Object]">OptionItem</code>, <code scope="[object Object]">OptionSection</code> från <code scope="[object Object]">select/types.ts</code> (använd <code scope="[object Object]">ListBoxOption</code>, <code scope="[object Object]">ListBoxItemElement</code>, <code scope="[object Object]">ListBoxSectionElement</code> istället)</li>
+<li><code scope="[object Object]">fieldSkeleton</code> och <code scope="[object Object]">buttonBackgroundSkeleton</code> från <code scope="[object Object]">theme/tokens.ts</code> (använd <code scope="[object Object]">skeleton01</code> istället)</li>
+</ul>
+</li>
+<li><strong>Ändrade ikoner för FeedbackStatus:</strong> Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder <code scope="[object Object]">type</code> (<code scope="[object Object]">'success'|'info'|'warning'|'important'</code>) kommer strängen <code scope="[object Object]">default</code> inte längre att vara tillgänglig.</li>
+</ul>
+<p>Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.</p>
+<p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/changelog/12.0.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
+        <category label="release-notes" term="release-notes"/>
+        <category label="v12" term="v12"/>
+        <category label="breaking-change" term="breaking-change"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Release 11.0.0]]></title>
         <id>https://designsystem.migrationsverket.se/release-notes/11.0.0/</id>
@@ -230,7 +279,7 @@ någon funktion eller komponent som numera inte fungerar som väntat.</p></div><
 <p>Button har inte längre stöd för <code scope="[object Object]">size='small'</code>. Däremot introduceras storleken <code scope="[object Object]">medium</code> och det går att välja
 mellan <code scope="[object Object]">'large'</code> och <code scope="[object Object]">'medium'</code>, där large är default.</p>
 <div class="language-diff codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-diff codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line theme-code-block-highlighted-line" style="color:#000000"><span class="token deleted-sign deleted prefix deleted" style="color:rgb(163, 21, 21)">-</span><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)">   &lt;Button size='small'&gt;&lt;/Button&gt; // this is no longer valid</span><br></span><span class="token-line" style="color:#000000"><span class="token deleted-sign deleted line" style="color:rgb(163, 21, 21)"></span><span class="token inserted-sign inserted prefix inserted" style="color:rgb(9, 134, 88)">+</span><span class="token inserted-sign inserted line" style="color:rgb(9, 134, 88)">   &lt;Button size='medium'&gt;&lt;/Button&gt;</span><br></span><span class="token-line" style="color:#000000"><span class="token inserted-sign inserted line" style="display:inline-block;color:rgb(9, 134, 88)"></span><br></span></code></pre></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="modal-dialogtrigger">Modal, DialogTrigger<a href="https://designsystem.migrationsverket.se/release-notes/10.0.0/#modal-dialogtrigger" class="hash-link" aria-label="Direktlänk till Modal, DialogTrigger" title="Direktlänk till Modal, DialogTrigger">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="modal-dialogtrigger">Modal, DialogTrigger<a href="https://designsystem.migrationsverket.se/release-notes/10.0.0/#modal-dialogtrigger" class="hash-link" aria-label="Direktlänk till Modal, DialogTrigger" title="Direktl�änk till Modal, DialogTrigger">​</a></h3>
 <p>Varianten med ModalTrigger och Dialog är nu utfasad och istället ska DialogTrigger och Modal användas. En aning
 förvirrande men principen är liknande och den uppdaterade versionen innehåller många förbättringar.
 Se dokumentationen för <a href="https://designsystem.migrationsverket.se/components/modal/">modal</a> för hur DialogTrigger används.</p>
@@ -295,7 +344,7 @@ Importerar du dessa värden behöver du justera din kod enligt:</p>
         <link href="https://designsystem.migrationsverket.se/release-notes/8.0.0/"/>
         <updated>2025-04-15T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[I version 8.3.0 introducerar vi breaking changes för Card som var tänkta för version 9. Vänligen läs release notes för version 9 för mer information.]]></summary>
-        <content type="html"><![CDATA[<div class="infoBanner_SGaB important_LJBl no-margin-children"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-alert icon_F71c" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="16"></line></svg><div class="content_DhUR"><div class="text_FCS8"><p>I version 8.3.0 introducerar vi breaking changes för <code scope="[object Object]">Card</code> som var tänkta för version 9. Vänligen läs release notes för <a href="https://designsystem.migrationsverket.se/release-notes/9.0.0/">version 9</a> för mer information.</p></div></div></div>
+        <content type="html"><![CDATA[<div class="infoBanner_SGaB important_LJBl no-margin-children"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flag icon_F71c" aria-hidden="true"><path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528"></path></svg><div class="content_DhUR"><div class="text_FCS8"><p>I version 8.3.0 introducerar vi breaking changes för <code scope="[object Object]">Card</code> som var tänkta för version 9. Vänligen läs release notes för <a href="https://designsystem.migrationsverket.se/release-notes/9.0.0/">version 9</a> för mer information.</p></div></div></div>
 <!-- -->
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="migrera-från-7xx-till-800">Migrera från 7.x.x till 8.0.0<a href="https://designsystem.migrationsverket.se/release-notes/8.0.0/#migrera-fr%C3%A5n-7xx-till-800" class="hash-link" aria-label="Direktlänk till Migrera från 7.x.x till 8.0.0" title="Direktlänk till Migrera från 7.x.x till 8.0.0">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="select">Select<a href="https://designsystem.migrationsverket.se/release-notes/8.0.0/#select" class="hash-link" aria-label="Direktlänk till Select" title="Direktlänk till Select">​</a></h3>
