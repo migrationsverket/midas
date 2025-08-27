@@ -9,7 +9,10 @@ export default mergeConfig(
       reporters: ['default'],
       projects: [
         await defineStorybookProject({
-          name: 'storybook',
+          name: 'storybook:dark-mode',
+          context: {
+            colorScheme: 'dark',
+          },
         }),
       ],
     },

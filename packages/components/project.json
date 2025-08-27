@@ -68,9 +68,11 @@
           "watch": true
         },
         "dark-mode": {
+          "config": "packages/components/vitest.config.dark.ts",
           "project": "storybook:dark-mode"
         },
         "dark-mode:watch": {
+          "config": "packages/components/vitest.config.dark.ts",
           "watch": true,
           "project": "storybook:dark-mode"
         }
