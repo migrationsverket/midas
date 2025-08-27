@@ -253,9 +253,9 @@
 @value --button-background-secondary-active: light-dark(--gray-30, --gray-180);
 @value --button-background-tertiary-hover: light-dark(--white-hover, --gray-190);
 @value --button-background-tertiary-active: light-dark(--gray-30, --gray-180);
-@value --button-background-danger: light-dark(--signal-red-100, --signal-red-80);
-@value --button-background-danger-hover: light-dark(--signal-red-120, --signal-red-100);
-@value --button-background-danger-active: light-dark(--signal-red-150, --signal-red-130);
+@value --button-background-danger: light-dark(--signal-red-100, --signal-red-100);
+@value --button-background-danger-hover: light-dark(--signal-red-120, --signal-red-120);
+@value --button-background-danger-active: light-dark(--signal-red-150, --signal-red-150);
 @value --button-background-disabled: light-dark(--gray-10, --gray-180);
 @value --button-border-secondary: light-dark(--border-tertiary, --gray-10);
 @value --button-background-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
@@ -263,6 +263,7 @@
 
 /* Badge */
 @value --badge-background: light-dark(--signal-red-100, --signal-red-80);
+@value --badge-label: light-dark(--white, --black);
 
 /* Calendar */
 @value --calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));

@@ -42,6 +42,16 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
       >
         <AriaDialog {...props}>
           <div className={styles.modalHeader}>
+            <div className={styles.modalTitle}>
+              {title && (
+                <Heading
+                  level={3}
+                  elementType='h2'
+                >
+                  {title}
+                </Heading>
+              )}
+            </div>
             <Button
               slot='close'
               variant='tertiary'
@@ -55,7 +65,6 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
             className={styles.modalBody}
             tabIndex={-1}
           >
-            {title && <Heading level={2}>{title}</Heading>}
             {children}
           </div>
         </AriaDialog>

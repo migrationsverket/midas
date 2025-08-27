@@ -5,6 +5,12 @@
     {
       "files": ["**/*.css"],
       "rules": {}
+    },
+    {
+      "files": ["src/theme/theme.css", "src/theme/tokens.css"],
+      "rules": {
+        "color-hex-length": null
+      }
     }
   ]
 }

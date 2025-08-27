@@ -3,7 +3,7 @@ import { expect, userEvent } from 'storybook/test'
 import { hexToRgb, lightDark } from '../utils/test'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
-import { sizeModes } from '../../.storybook/modes'
+
 import { TableLayout, Virtualizer } from 'react-aria-components'
 
 type Story = StoryObj<typeof Table>
@@ -54,17 +54,10 @@ export default {
       control: false,
     },
   },
-  parameters: {
-    chromatic: {
-      modes: sizeModes,
-    },
-  },
-  render: (args, { globals: { size } }) => {
+
+  render: args => {
     return (
-      <Table
-        {...args}
-        size={size}
-      >
+      <Table {...args}>
         <TableHeader columns={columns}>
           {column => (
             <Column isRowHeader={column.isRowHeader}>{column.name}</Column>
@@ -82,29 +75,7 @@ export default {
   },
 } satisfies Meta<typeof Table>
 
-export const Primary: Story = {
-  play: async ({ canvas, step, globals: { size } }) => {
-    await step(
-      'table headers should change size according to size prop',
-      async () => {
-        const tableHeaders = await canvas.findAllByRole('columnheader')
-
-        tableHeaders.forEach(async column => {
-          const { height } = column.getBoundingClientRect()
-          await expect(height).toBe(size === 'large' ? 48 : 40)
-        })
-      },
-    )
-    await step('cells should change size according to size prop', async () => {
-      const cells = await canvas.findAllByRole('gridcell')
-
-      cells.forEach(async cell => {
-        const { height } = cell.getBoundingClientRect()
-        await expect(height).toBe(size === 'large' ? 48 : 40)
-      })
-    })
-  },
-}
+export const Primary: Story = {}
 
 export const Striped: Story = {
   args: {
@@ -145,8 +116,8 @@ export const Virtualized: Story = {
       <Virtualizer
         layout={TableLayout}
         layoutOptions={{
-          rowHeight: args.narrow ? 24 : 48,
-          headingHeight: args.narrow ? 24 : 48,
+          rowHeight: 48,
+          headingHeight: 48,
         }}
       >
         <Table

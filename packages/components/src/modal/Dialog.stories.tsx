@@ -52,6 +52,21 @@ export const Default: Story = {
 
 export const NotDismissable: Story = {}
 
+export const EmptyTitle: Story = {
+  args: {
+    title: null,
+  },
+  render: args => (
+    <DialogTrigger>
+      <Button>Öppna</Button>
+      <Modal {...args}>
+        <Text>This is a simple modal with no title.</Text>
+        <Button slot='close'>Close</Button>
+      </Modal>
+    </DialogTrigger>
+  ),
+}
+
 export const Scrollable: Story = {
   render: args => (
     <DialogTrigger>
@@ -246,4 +261,20 @@ export const DS1282: Story = {
       },
     )
   },
+}
+
+export const LongTitle: Story = {
+  args: {
+    title:
+      'This is a very long title to test how the modal handles text wrapping and layout with a lot of text in the title bar',
+  },
+  render: args => (
+    <DialogTrigger>
+      <Button>Öppna</Button>
+      <Modal {...args}>
+        <Text>This modal has a very long title.</Text>
+        <Button slot='close'>Close</Button>
+      </Modal>
+    </DialogTrigger>
+  ),
 }

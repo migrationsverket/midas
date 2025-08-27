@@ -1,0 +1,18 @@
+{
+  "name": "@midas-ds/workspace-tools",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "dependencies": {
+    "@nx/devkit": "20.8.2",
+    "tslib": "^2.3.0",
+    "prettier": "^3.0.0"
+  },
+  "devDependencies": {
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  },
+  "generators": "./generators.json"
+}

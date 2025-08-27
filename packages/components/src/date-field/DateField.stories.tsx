@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateField } from './DateField'
 import { CalendarDate } from '@internationalized/date'
 import { expect } from 'storybook/test'
-import { sizeModes } from '../../.storybook/modes'
 
 type Story = StoryObj<typeof DateField>
 
@@ -26,22 +25,11 @@ export default {
         rules: { 'color-contrast': { enabled: false } },
       },
     },
-    chromatic: {
-      modes: sizeModes,
-    },
   },
   args: {
     errorPosition: 'top',
     label: 'Välj ett datum',
     description: 'Vilket som helst',
-  },
-  render: (args, { globals: { size } }) => {
-    return (
-      <DateField
-        {...args}
-        size={size}
-      />
-    )
   },
 } as Meta<typeof DateField>
 

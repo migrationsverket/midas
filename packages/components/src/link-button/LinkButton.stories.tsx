@@ -24,20 +24,8 @@ const meta: Meta<typeof LinkButton> = {
       defaultValue: 'left',
     },
   },
-  render: (args, { globals: { size } }) => {
-    return (
-      <LinkButton
-        {...args}
-        size={size}
-      />
-    )
-  },
-  play: async ({ canvas, step, globals: { size } }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(
-        canvas.getByTestId('link-button').getBoundingClientRect().height,
-      ).toBe(size === 'large' ? 48 : 40)
-    })
+  args: {
+    size: 'large',
   },
 }
 export default meta
@@ -101,11 +89,5 @@ export const Danger: Story = {
     'data-testid': 'link-button',
     children: 'Radera',
     variant: 'danger',
-  },
-  parameters: {
-    a11y: {
-      // This color combo violates WCAG 2 AA contrast ratio threshold in dark mode
-      test: 'todo',
-    },
   },
 }

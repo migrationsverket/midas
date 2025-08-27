@@ -1,6 +1,6 @@
 export const baseColors = {
-  black: '#000000',
-  white: '#ffffff',
+  black: '#000',
+  white: '#fff',
 
   blackHover: '#0d0d0d',
   whiteHover: '#e6e6e6',
@@ -8,20 +8,20 @@ export const baseColors = {
   gray10: '#f2f2f2',
   gray20: '#e6e6e6',
   gray30: '#d9d9d9',
-  gray40: '#cccccc',
+  gray40: '#ccc',
   gray50: '#bfbfbf',
   gray60: '#b3b3b3',
   gray70: '#a6a6a6',
-  gray80: '#999999',
+  gray80: '#999',
   gray90: '#8c8c8c',
   gray100: '#808080',
   gray110: '#737373',
-  gray120: '#666666',
+  gray120: '#666',
   gray130: '#5d5d5d',
   gray140: '#525252',
   gray150: '#474747',
   gray160: '#383838',
-  gray170: '#333333',
+  gray170: '#333',
   gray180: '#262626',
   gray190: '#212121',
   gray200: '#171717',
@@ -45,11 +45,12 @@ export const baseColors = {
   red100: '#b90835',
 
   signalBlue10: '#eaf2f6',
-  signalBlue100: '#0066cc',
+  signalBlue100: '#06c',
   signalGreen20: '#d5f2d9',
   signalGreen30: '#bae5c5',
   signalGreen100: '#008d3c',
   signalYellow10: '#fff8e1',
+  signalYellow20: '#FFEBA8',
   signalYellow100: '#fdb813',
   signalRed10: '#ffefef',
   signalRed20: '#ffdfdf',
@@ -76,16 +77,16 @@ export const baseColors = {
 export const typography = {
   fontFamily: '"Inter", sans-serif',
 
-  lineHeight10: 1, // 16px
-  lineHeight20: 1.125, // 18px (18/16)
-  lineHeight30: 1.25, // 20px (20/16)
-  lineHeight40: 1.375, // 22px (22/16)
-  lineHeight50: 1.5, // 24px (24/16)
-  lineHeight60: 1.75, // 28px (28/16)
-  lineHeight70: 2, // 32px (32/16)
-  lineHeight80: 2.25, // 36px (36/16)
-  lineHeight90: 2.5, // 40px (40/16)
-  lineHeight100: 2.75, // 44px (44/16)
+  lineHeight10: '1rem', // 16px
+  lineHeight20: '1.125rem', // 18px (18/16)
+  lineHeight30: '1.25rem', // 20px (20/16)
+  lineHeight40: '1.375rem', // 22px (22/16)
+  lineHeight50: '1.5rem', // 24px (24/16)
+  lineHeight60: '1.75rem', // 28px (28/16)
+  lineHeight70: '2rem', // 32px (32/16)
+  lineHeight80: '2.25rem', // 36px (36/16)
+  lineHeight90: '2.5rem', // 40px (40/16)
+  lineHeight100: '2.75rem', // 44px (44/16)
 
   fontSize10: '0.75rem', // 12px (12/16)
   fontSize20: '0.875rem', // 14px (14/16)
@@ -127,6 +128,8 @@ export const spacing = {
 export const states = {
   focus:
     '0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',
+  focusInset:
+    'inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)',
 }
 
 export const transitions = {
@@ -194,7 +197,7 @@ export const semantic = {
   fieldActive02: `light-dark(${baseColors.gray30}, ${baseColors.gray140})`,
 
   fieldDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  
+
   skeleton01: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
   skeleton02: `light-dark(${baseColors.gray30}, ${baseColors.gray160})`,
   iconPrimary: `light-dark(${baseColors.gray200}, ${baseColors.gray10})`,
@@ -241,14 +244,17 @@ export const semantic = {
   buttonBackgroundSecondaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
   buttonBackgroundTertiaryHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
   buttonBackgroundTertiaryActive: `light-dark(${baseColors.gray30}, ${baseColors.gray180})`,
-  buttonBackgroundDanger: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
-  buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed100})`,
-  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed130})`,
+  buttonBackgroundDanger: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
+  buttonBackgroundDangerHover: `light-dark(${baseColors.signalRed120}, ${baseColors.signalRed120})`,
+  buttonBackgroundDangerActive: `light-dark(${baseColors.signalRed150}, ${baseColors.signalRed150})`,
   buttonBackgroundDisabled: `light-dark(${baseColors.gray10}, ${baseColors.gray180})`,
-  
+
   buttonBorderSecondary: `light-dark(${baseColors.blue150}, ${baseColors.gray10})`,
+  buttonBackgroundIconHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
+  buttonBackgroundIconActive: `light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))`,
 
   badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
+  badgeLabel: `light-dark(${baseColors.white}, ${baseColors.black})`,
 
   calendarDateBackgroundHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   calendarDateBackgroundSelected: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
@@ -269,4 +275,26 @@ export const zIndex = {
   modal: 1000,
   toast: 1100,
   skipToContent: 1200,
+}
+
+export const sizing = {
+  '00': '0', // 0px
+  '05': '0.063rem', // 1px
+  '10': '0.125rem', // 2px
+  '15': '0.188rem', // 3px
+  '20': '0.25rem', // 4px
+  '30': '0.375rem', // 6px
+  '40': '0.5rem', // 8px
+  '50': '0.625rem', // 10px
+  '60': '0.75rem', // 12px
+  '70': '0.875rem', // 14px
+  '75': '0.938rem', // 15px
+  '80': '1rem', // 16px
+  '90': '1.25rem', // 20px
+  '100': '1.5rem', // 24px
+  '110': '1.75rem', // 28px
+  '120': '2rem', // 32px
+  '130': '2.5rem', // 40px
+  '140': '2.75rem', // 44px
+  '150': '3rem', // 48px
 }

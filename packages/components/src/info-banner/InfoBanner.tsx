@@ -17,17 +17,28 @@ export interface InfoBannerProps
    * Determines the visual style and semantic meaning of the InfoBanner (e.g., success, info, warning, important).
    **/
   type: FeedbackStatus
-  /** Specify the title */
+  /** The title of the banner. */
   title?: string
-  /** Specify the message. Element or string */
+  /** The message to be displayed in the banner. Can be a string or a React node. */
   message?: string | React.ReactNode
-  /** Additional elements displayed inside the banner */
+  /** Additional elements to be displayed inside the banner. */
   children?: React.ReactNode
-  
   /**
-   *  Specify if the InfoBanner should have a dismiss button in the top right corner
+   * If true, a dismiss button will be displayed in the top right corner.
    */
   isDismissable?: boolean
+  /**
+   * The initial visibility of the banner when it is uncontrolled.
+   */
+  defaultOpen?: boolean
+  /**
+   * Controls the visibility of the banner when it is controlled.
+   */
+  isOpen?: boolean
+  /**
+   * Callback fired when the visibility of the banner changes.
+   */
+  onOpenChange?: (isOpen: boolean) => void
 }
 
 /**
@@ -39,13 +50,49 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   type,
   children,
   isDismissable = false,
+  defaultOpen = true,
+  isOpen: controlledIsOpen,
+  onOpenChange,
   ...rest
 }) => {
+  const isInitialRender = React.useRef(true)
+
+  const isControlled = typeof controlledIsOpen !== 'undefined'
+
+  const [isOpen, setIsOpen] = React.useState<boolean>(
+    isControlled ? controlledIsOpen : defaultOpen,
+  )
   const Icon = iconMap[type]
-  const [show, setShow] = React.useState<boolean>(true)
+
   const strings = useLocalizedStringFormatter(messages)
 
-  if (show)
+  const handleClose = () => {
+    onOpenChange?.(false)
+
+    if (!isControlled) {
+      setIsOpen(false)
+    }
+  }
+
+  React.useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false
+      return
+    }
+
+    setIsOpen(previousOpen => {
+      const isOpening =
+        (isControlled && controlledIsOpen) || (!isControlled && !previousOpen)
+
+      if (isOpening) {
+        onOpenChange?.(true)
+      }
+
+      return isOpening
+    })
+  }, [controlledIsOpen, isControlled, onOpenChange])
+
+  if (isOpen)
     return (
       <div
         {...rest}
@@ -68,7 +115,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
             <Button
               variant='icon'
               aria-label={strings.format('close')}
-              onPress={() => setShow(false)}
+              onPress={handleClose}
             >
               <X size={20} />
             </Button>

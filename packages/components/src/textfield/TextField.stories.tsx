@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
 import { expect, userEvent } from 'storybook/test'
 import { TextField } from '../textfield'
-import { sizeModes } from '../../.storybook/modes'
 
 export default {
   title: 'Components/TextField',
@@ -17,19 +16,7 @@ export default {
     label: 'Label',
     description: 'Description',
     errorPosition: 'top',
-  },
-  parameters: {
-    chromatic: {
-      modes: sizeModes,
-    },
-  },
-  render: (args, { globals: { size } }) => {
-    return (
-      <TextField
-        {...args}
-        size={size}
-      />
-    )
+    size: 'large',
   },
 } as Meta<typeof TextField>
 
@@ -39,7 +26,7 @@ export const Primary: Story = {
   args: {
     className: 'test-class',
   },
-  play: async ({ canvas, step, args: { label }, globals: { size } }) => {
+  play: async ({ canvas, step, args }) => {
     await step(
       'it should preserve its classNames when being passed new ones',
       async () => {
@@ -47,8 +34,8 @@ export const Primary: Story = {
       },
     )
     await step('it should change size according to size prop', async () => {
-      await expect(canvas.getByLabelText(label as string)).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
+      await expect(canvas.getByLabelText(args.label as string)).toHaveStyle({
+        height: args.size === 'large' ? '48px' : '40px',
       })
     })
   },
@@ -230,7 +217,7 @@ export const DS1243: Story = {
   parameters: {
     chromatic: { disableSnapshot: true },
   },
-  render: (args, { globals: { size } }) => (
+  render: args => (
     <div
       style={{ height: 500 }}
       data-testid='wrapper'
@@ -240,7 +227,6 @@ export const DS1243: Story = {
         label={undefined}
         description={undefined}
         aria-label='test'
-        size={size}
       />
       <div style={{ height: 100 }}>Dummy content</div>
     </div>

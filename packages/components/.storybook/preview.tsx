@@ -67,18 +67,7 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
-    size: {
-      description: 'Global size for components',
-      toolbar: {
-        title: 'Size',
-        icon: 'expand',
-        items: [
-          { value: 'medium', title: 'Medium' },
-          { value: 'large', title: 'Large' },
-        ],
-        dynamicTitle: true,
-      },
-    },
+
     lang: {
       description: 'Language',
       toolbar: {

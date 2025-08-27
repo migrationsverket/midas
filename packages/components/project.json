@@ -5,6 +5,12 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "generate-theme-css": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx g @midas-ds/workspace-tools:generate-theme"
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -19,6 +25,7 @@
       "options": {
         "outputPath": "dist/packages/components"
       },
+      "dependsOn": ["generate-theme-css"],
       "configurations": {
         "production": {
           "optimization": true,
