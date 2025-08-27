@@ -14,7 +14,7 @@ import clsx from 'clsx'
 
 /**
  *
- * @deprecated since v11.2.0
+ * @deprecated since v12.1.0
  * Please use `MenuProps` instead
  * @see {@link https://designsystem.migrationsverket.se/components/menu/|Menu}
  */
@@ -32,7 +32,7 @@ export interface MidasMenuButtonProps<T>
 
 /**
  *
- * @deprecated since v11.2.0
+ * @deprecated since v12.1.0
  * Please use `Menu` instead
  * @see {@link https://designsystem.migrationsverket.se/components/menu/|Menu}
  */
@@ -69,7 +69,7 @@ export function Dropdown<T extends object>({
 
 /**
  *
- * @deprecated since v11.2.0
+ * @deprecated since v12.1.0
  * Please use `Menu` and `MenuItem` instead
  * @see {@link https://designsystem.migrationsverket.se/components/menu/|Menu}
  */

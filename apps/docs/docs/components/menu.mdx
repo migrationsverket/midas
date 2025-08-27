@@ -1,0 +1,91 @@
+---
+title: Menu
+description: En meny kan användas för att samla ihop funktioner som sällan används eller som kompletterar nuvarande funktion.
+---
+
+import { PropTable } from '@site/src/components/PropsTable'
+import { ComponentHeader } from '@site/src/components/getComponentMetaData'
+import { MenuTrigger } from 'react-aria-components'
+import { Button, Menu, MenuItem, MenuPopover } from '@midas-ds/components'
+import { MenuIcon } from 'lucide-react'
+
+export const Example = () => {
+  return (
+    <MenuTrigger>
+      <Button
+        aria-label='Menu'
+        variant='icon'
+      >
+        <MenuIcon size={20} />
+      </Button>
+      <MenuPopover>
+        <Menu>
+          <MenuItem id='open'>Open</MenuItem>
+          <MenuItem id='rename'>Rename...</MenuItem>
+          <MenuItem id='duplicate'> Duplicate</MenuItem>
+          <MenuItem id='share'>Share...</MenuItem>
+          <MenuItem id='delete'>Delete...</MenuItem>
+        </Menu>
+      </MenuPopover>
+    </MenuTrigger>
+  )
+}
+
+<ComponentHeader
+  name='Menu'
+  friendlyName='Meny, menylist, kontextmeny'
+/>
+
+En meny kan användas för att samla ihop funktioner som sällan används eller som kompletterar nuvarande funktion.
+
+```tsx
+import { MenuTrigger } from 'react-aria-components'
+import { Button, Menu, MenuItem, MenuPopover } from '@midas-ds/components'
+import { MenuIcon } from 'lucide-react'
+```
+
+```tsx
+<MenuTrigger>
+  <Button
+    aria-label='Menu'
+    variant='icon'
+  >
+    <MenuIcon size={20} />
+  </Button>
+  <MenuPopover>
+    <Menu>
+      <MenuItem>Open</MenuItem>
+      <MenuItem>Rename...</MenuItem>
+      <MenuItem>Duplicate</MenuItem>
+      <MenuItem>Share...</MenuItem>
+      <MenuItem>Delete...</MenuItem>
+    </Menu>
+  </MenuPopover>
+</MenuTrigger>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Example />
+</div>
+
+## Beskrivning
+
+Komponenten bygger på [React Aria Menu](https://react-spectrum.adobe.com/react-aria/Menu.html), kodexempel i React Arias dokumentation är applicerbara genom att importera rätt komponent från rätt paket.
+
+Midas exporterar följande komponenter och typer:
+
+- `Menu` & `MenuProps`
+- `MenuItem` & `MenuItemProps`
+- `MenuPopover` & `MenuPopoverProps`
+- `MenuSection` & `MenuSectionProps`
+- `Separator` & `SeparatorProps`
+
+`MenuTrigger` importeras från `react-aria-components`.
+
+## Riktlinjer
+
+- Använd endast till sekundära handlingar som inte är högt prioriterade.
+- Knappen ska helst ha en titel, annars bör en aria-label användas.

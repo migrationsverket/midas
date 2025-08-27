@@ -8,7 +8,7 @@ export interface GridProps
     HTMLDivElement
   > {
   children: React.ReactNode
-  
+
   /** A contained grid has a max-width and centered positioning on large screens. */
   isContained?: boolean
   /** Removes outer margins. */
@@ -46,5 +46,3 @@ export const Grid: React.FC<GridProps> = ({
     </div>
   )
 }
-
-
