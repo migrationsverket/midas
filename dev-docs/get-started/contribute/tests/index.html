@@ -14,8 +14,8 @@
 <link rel="alternate" type="application/rss+xml" href="/dev-docs/changelog/rss.xml" title="Midas changelog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/dev-docs/changelog/atom.xml" title="Midas changelog Atom Feed">
 <link rel="alternate" type="application/json" href="/dev-docs/changelog/feed.json" title="Midas changelog JSON Feed"><link rel="stylesheet" href="/dev-docs/assets/css/styles.961ae249.css">
-<script src="/dev-docs/assets/js/runtime~main.525f70b9.js" defer="defer"></script>
-<script src="/dev-docs/assets/js/main.e268e155.js" defer="defer"></script>
+<script src="/dev-docs/assets/js/runtime~main.3dddea2a.js" defer="defer"></script>
+<script src="/dev-docs/assets/js/main.0887a3ad.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -30,8 +30,8 @@ I de riktiga webbläsarna utförs automatiserade <em>tillgänglighetstester</em>
 får vi tillgång till ett flertal riktiga webbläsare som kan köra våra tester lokalt och i våra CI/CD pipelines.
 Skriv ditt test här i första hand, det hjälper oss att säkerställa att vi har stories för en komponents samtliga tillstånd.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="kör-webbläsartester">Kör webbläsartester<a href="#kör-webbläsartester" class="hash-link" aria-label="Direktlänk till Kör webbläsartester" title="Direktlänk till Kör webbläsartester">​</a></h3>
-<p>Tester som använder Storybooks play-funktion kan köras via terminalen med hjälp av <a href="https://storybook.js.org/docs/writing-tests/test-runner" target="_blank" rel="noopener noreferrer">Storybook test runner</a>.
-Under huven används <a href="https://jestjs.io/" target="_blank" rel="noopener noreferrer">Jest</a>, <a href="https://playwright.dev/" target="_blank" rel="noopener noreferrer">Playwright</a> och <a href="https://testing-library.com/" target="_blank" rel="noopener noreferrer">Testing library</a>.</p>
+<p>Tester som använder Storybooks play-funktion kan köras via terminalen med hjälp av <a href="https://storybook.js.org/docs/writing-tests/integrations/vitest-addon" target="_blank" rel="noopener noreferrer">Storybook Vitest addon</a>.
+Under huven används <a href="https://vitest.dev/" target="_blank" rel="noopener noreferrer">Vitest</a>, <a href="https://playwright.dev/" target="_blank" rel="noopener noreferrer">Playwright</a> och <a href="https://testing-library.com/" target="_blank" rel="noopener noreferrer">Testing library</a>.</p>
 <p>Se till att ha din lokala Storybook igång innan du kör några tester:</p>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token plain">nx run components:storybook</span><br></span></code></pre></div></div>
 <h4 class="anchor anchorWithStickyNavbar_LWe7" id="kör-tester-i-light-mode">Kör tester i light mode<a href="#kör-tester-i-light-mode" class="hash-link" aria-label="Direktlänk till Kör tester i light mode" title="Direktlänk till Kör tester i light mode">​</a></h4>
