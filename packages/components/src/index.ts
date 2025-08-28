@@ -1,3 +1,4 @@
+import './theme/theme.css'
 export * from './accordion'
 export * from './badge'
 export * from './breadcrumbs'

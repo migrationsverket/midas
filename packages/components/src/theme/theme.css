@@ -149,9 +149,9 @@
   --semantic-button-background-secondary-active: light-dark(#d9d9d9, #262626);
   --semantic-button-background-tertiary-hover: light-dark(#e6e6e6, #212121);
   --semantic-button-background-tertiary-active: light-dark(#d9d9d9, #262626);
-  --semantic-button-background-danger: light-dark(#e62323, #eb4e4e);
-  --semantic-button-background-danger-hover: light-dark(#bc1d1d, #e62323);
-  --semantic-button-background-danger-active: light-dark(#7d1313, #a71919);
+  --semantic-button-background-danger: light-dark(#e62323, #e62323);
+  --semantic-button-background-danger-hover: light-dark(#bc1d1d, #bc1d1d);
+  --semantic-button-background-danger-active: light-dark(#7d1313, #7d1313);
   --semantic-button-background-disabled: light-dark(#f2f2f2, #262626);
   --semantic-button-border-secondary: light-dark(#143c50, #f2f2f2);
   --semantic-button-background-icon-hover: light-dark(
@@ -163,6 +163,7 @@
     rgba(255 255 255 / 20%)
   );
   --semantic-badge-background: light-dark(#e62323, #eb4e4e);
+  --semantic-badge-label: light-dark(#fff, #000);
   --semantic-calendar-date-background-hover: light-dark(
     rgba(0 0 0 / 10%),
     rgba(255 255 255 / 10%)

@@ -1,16 +1,13 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --background, --background-hover, --border-subtle,--border-primary, --text-primary from tokens;
-
 .dropzone {
-  font-family: --font-family;
-  color: --text-primary;
-  border: 1px dashed --border-subtle;
+  font-family: var(--typography-font-family);
+  color: var(--semantic-text-primary);
+  border: 1px dashed var(--semantic-border-subtle);
   padding: 1.5rem;
   text-align: center;
-  background-color: --background;
+  background-color: var(--semantic-background);
 
   &[data-drop-target] {
-    background: --background-hover;
-    border: 1px solid --border-primary;
+    background: var(--semantic-background-hover);
+    border: 1px solid var(--semantic-border-primary);
   }
 }

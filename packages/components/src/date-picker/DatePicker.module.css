@@ -1,8 +1,5 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --icon-primary, --border-primary, --support-border-warning, --text-disabled, --icon-disabled, --text-placeholder, --border-disabled, --field-hover-01, --focus, --layer-01, --text-primary, --border-tertiary, --button-background-primary, --size-30, --size-130, --size-150 from tokens;
-
 .datePicker {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,22 +8,22 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  height: --size-150;
+  height: var(--size-150);
   align-items: center;
-  background-color: --field-01;
-  border-bottom: 1px solid --border-primary;
+  background-color: var(--semantic-field-01);
+  border-bottom: 1px solid var(--semantic-border-primary);
   padding-left: 1rem;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
 
   &.medium {
-    height: --size-130;
+    height: var(--size-130);
   }
 
   &[data-disabled] {
     cursor: not-allowed;
-    border-color: --border-disabled;
+    border-color: var(--semantic-border-disabled);
   }
 
   &:focus-visible,
@@ -35,16 +32,16 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
   }
 
   &[data-hovered]:not([data-disabled]) {
-    background-color: --field-hover-01;
+    background-color: var(--semantic-field-hover-01);
   }
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 3px --support-border-warning;
+    box-shadow: inset 0 0 0 3px var(--semantic-support-border-warning);
   }
 
   .calendarButton {
@@ -52,36 +49,36 @@
     margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
-    color: --icon-primary;
+    color: var(--semantic-icon-primary);
     background-color: transparent;
     cursor: pointer;
 
     &.medium {
       &[data-invalid] {
-        height: calc(--size-130 - --size-30);
+        height: calc(var(--size-130) - var(--size-30));
       }
     }
 
     &[data-invalid] {
       border: none;
-      height: calc(--size-150 - --size-30);
+      height: calc(var(--size-150) - var(--size-30));
       margin-right: 3px;
     }
 
     &[data-disabled] {
       cursor: not-allowed;
-      color: --icon-disabled;
-      border-color: --border-disabled;
+      color: var(--semantic-icon-disabled);
+      border-color: var(--semantic-border-disabled);
     }
 
     &[data-hovered]:not([data-disabled]) {
-      background-color: --field-hover-01;
+      background-color: var(--semantic-field-hover-01);
     }
 
     &:focus-visible,
     &[data-focus-visible] {
       outline: none;
-      box-shadow: --focus;
+      box-shadow: var(--state-focus);
 
       @media (forced-colors: active) {
         outline: 3px solid highlight;

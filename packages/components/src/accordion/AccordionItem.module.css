@@ -1,15 +1,12 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --layer-hover-01, --normal-transition, --text-primary, --fast-transition,  --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --icon-success, --icon-warning, --support-background-success-hover, --support-background-warning-hover, --border-disabled, --text-disabled, --layer-02, --background, --support-background-info, --support-border-info, --icon-info, --support-background-info-hover, --support-background-important, --support-border-important, --icon-important, --support-background-important-hover from tokens;
-
 .item {
   --item-padding: 0;
   --content-padding: 0.5rem 0.5rem 0.5rem 1.85rem;
   --border: none;
   --accordion-background: transparent;
   --accordion-background-hover: transparent;
-  --text-color: --text-primary;
+  --text-color: var(--semantic-text-primary);
 
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   color: var(--text-color);
   background-color: var(--accordion-background);
   border: var(--border);
@@ -20,51 +17,51 @@
   --gap: 0.25rem;
   --item-padding: 0.75rem;
   --content-padding: 1rem;
-  --border-color: --border-secondary;
+  --border-color: var(--semantic-border-secondary);
   --border: 1px solid;
-  --accordion-background: --layer-01;
-  --accordion-background-hover: --layer-hover-01;
+  --accordion-background: var(--semantic-layer-01);
+  --accordion-background-hover: var(--semantic-layer-hover-01);
 }
 
 .success {
-  --accordion-background: --support-background-success;
-  --accordion-background-hover: --support-background-success-hover;
-  --icon-color: --icon-success;
-  --border-color: --support-border-success;
+  --accordion-background: var(--semantic-support-background-success);
+  --accordion-background-hover: var(--semantic-support-background-success-hover);
+  --icon-color: var(--semantic-icon-success);
+  --border-color: var(--semantic-support-border-success);
 }
 
 .warning {
-  --accordion-background: --support-background-warning;
-  --accordion-background-hover: --support-background-warning-hover;
-  --icon-color: --icon-warning;
-  --border-color: --support-border-warning;
+  --accordion-background: var(--semantic-support-background-warning);
+  --accordion-background-hover: var(--semantic-support-background-warning-hover);
+  --icon-color: var(--semantic-icon-warning);
+  --border-color: var(--semantic-support-border-warning);
 }
 
 .info {
-  --accordion-background: --support-background-info;
-  --accordion-background-hover: --support-background-info-hover;
-  --icon-color: --icon-info;
-  --border-color: --support-border-info;
+  --accordion-background: var(--semantic-support-background-info);
+  --accordion-background-hover: var(--semantic-support-background-info-hover);
+  --icon-color: var(--semantic-icon-info);
+  --border-color: var(--semantic-support-border-info);
 }
 
 .important {
-  --accordion-background: --support-background-important;
-  --accordion-background-hover: --support-background-important-hover;
-  --icon-color: --icon-important;
-  --border-color: --support-border-important;
+  --accordion-background: var(--semantic-support-background-important);
+  --accordion-background-hover: var(--semantic-support-background-important-hover);
+  --icon-color: var(--semantic-icon-important);
+  --border-color: var(--semantic-support-border-important);
 }
 
 .item[data-disabled] {
-  --border-color: --border-disabled;
-  --icon-color: --text-disabled;
-  --text-color: --text-disabled;
+  --border-color: var(--semantic-border-disabled);
+  --icon-color: var(--semantic-text-disabled);
+  --text-color: var(--semantic-text-disabled);
 
   .triggerButton {
     background: transparent;
   }
 
   .triggerText {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
   }
 }
 
@@ -93,7 +90,7 @@
 
 .chevronIcon {
   transform: rotate(0deg);
-  transition: transform --normal-transition ease;
+  transition: transform var(--transition-normal) ease;
   padding: 0.125rem 0;
 }
 
@@ -104,7 +101,7 @@
 
 .triggerButton[aria-expanded='true'] .chevronIcon {
   transform: rotate(-180deg);
-  transition: transform --normal-transition ease;
+  transition: transform var(--transition-normal) ease;
 }
 
 .triggerButton[data-hovered] {
@@ -113,12 +110,12 @@
 
 .panel[aria-hidden='true'] {
   height: 0;
-  transition: --fast-transition cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
+  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
   overflow-y: clip;
 }
 
 .panel[aria-hidden='false'] {
-  transition: --fast-transition cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
+  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
   height: auto;
   height: calc-size(min-content, size);
 }
@@ -129,7 +126,7 @@
 }
 
 .hasBackground {
-  background-color: --background;
+  background-color: var(--semantic-background);
 }
 
 .header {

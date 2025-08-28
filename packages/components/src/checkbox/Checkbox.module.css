@@ -1,11 +1,8 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled, --border-primary, --border-disabled, --breakpoint-xs, --support-border-warning, --icon-on-color, --layer-hover-01, --button-background-primary, --button-background-primary-active, --button-background-primary-hover, --field-disabled, --focus, --line-height-30 from tokens;
-
 .checkboxInner {
   width: 1rem;
   height: 1rem;
   box-sizing: border-box;
-  border: 1px solid --border-primary;
+  border: 1px solid var(--semantic-border-primary);
   transition: all 200ms;
   align-items: center;
   justify-content: center;
@@ -20,7 +17,7 @@
     width: 1rem;
     height: 1rem;
     fill: none;
-    stroke: --icon-on-color;
+    stroke: var(--semantic-icon-on-color);
     stroke-width: 2px;
     stroke-dasharray: 22;
     stroke-dashoffset: 66;
@@ -29,59 +26,59 @@
 }
 
 .checkbox {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   font-weight: 400;
   gap: 0.5rem;
   align-items: center;
   display: flex;
   width: max-content;
   cursor: pointer;
-  color: --text-primary;
-  line-height: --line-height-30;
+  color: var(--semantic-text-primary);
+  line-height: var(--typography-line-height-30);
 
   &:not(:last-child) {
     margin-bottom: 0.5rem;
   }
 
   &[data-hovered] div {
-    border-color: --button-background-primary-hover;
+    border-color: var(--semantic-button-background-primary-hover);
   }
 
   &[data-pressed] div {
-    border-color: --button-background-primary-active;
+    border-color: var(--semantic-button-background-primary-active);
   }
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
     outline: none;
   }
 
   &[data-selected] div,
   &[data-indeterminate] div {
-    background: --button-background-primary;
-    border-color: --button-background-primary;
+    background: var(--semantic-button-background-primary);
+    border-color: var(--semantic-button-background-primary);
   }
 
   &[data-invalid] div {
-    border: 2px solid --support-border-warning;
+    border: 2px solid var(--semantic-support-border-warning);
   }
 
   &[data-disabled] div {
     pointer-events: none;
-    border: 1px solid --border-disabled;
+    border: 1px solid var(--semantic-border-disabled);
   }
 
   &[data-selected]:hover div,
   &[data-indeterminate]:hover div {
-    background: --button-background-primary-hover;
-    border-color: --button-background-primary-hover;
+    background: var(--semantic-button-background-primary-hover);
+    border-color: var(--semantic-button-background-primary-hover);
   }
 
   &[data-selected][data-pressed] div,
   &[data-indeterminate][data-pressed] div {
-    border-color: --button-background-primary-active;
-    background: --button-background-primary-active;
+    border-color: var(--semantic-button-background-primary-active);
+    background: var(--semantic-button-background-primary-active);
   }
 
   &[data-selected] svg,
@@ -91,64 +88,64 @@
 
   &[data-indeterminate] svg {
     stroke: none;
-    fill: --icon-on-color;
+    fill: var(--semantic-icon-on-color);
   }
 
   &[data-invalid]:hover div {
     opacity: 0.5;
-    border-color: --support-border-warning;
+    border-color: var(--semantic-support-border-warning);
   }
 
   &[data-invalid][data-pressed] div {
-    border-color: --support-border-warning;
+    border-color: var(--semantic-support-border-warning);
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
   }
 
   &[data-disabled][data-selected] div {
     pointer-events: none;
     border: none;
-    background: --field-disabled;
+    background: var(--semantic-field-disabled);
   }
 
   &[data-disabled][data-indeterminate] div {
     pointer-events: none;
     border: none;
-    background: --field-disabled;
+    background: var(--semantic-field-disabled);
   }
 }
 
 .checkboxGroup {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   display: flex;
   flex-direction: column;
   font-size: 1rem;
   min-width: 150px;
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
   }
 
   .checkbox {
-    @media --breakpoint-xs {
+    @media var(--breakpoint-xs) {
       padding: 0.875rem 1rem;
-      border: 1px solid --border-primary;
+      border: 1px solid var(--semantic-border-primary);
       width: auto;
 
       &[data-hovered] {
-        background-color: --layer-hover-01;
+        background-color: var(--semantic-layer-hover-01);
       }
 
       &[data-invalid] {
-        border: 2px solid --support-border-warning;
+        border: 2px solid var(--semantic-support-border-warning);
       }
 
       &[data-disabled] {
         pointer-events: none;
-        border-color: --border-disabled;
+        border-color: var(--semantic-border-disabled);
       }
     }
   }

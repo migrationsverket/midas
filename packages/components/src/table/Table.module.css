@@ -1,11 +1,8 @@
-@value tokens: "../theme/tokens.css";
-@value --border-primary, --border-subtle, --font-family, --font-size-10, --font-size-20, --layer-01, --layer-accent-01, --layer-accent-hover-01, --layer-hover-01, --line-height-10, --line-height-20, --size-10, --size-20, --size-60, --size-75, --size-80, --size-130, --size-150, --text-primary from tokens;
-
 .table {
   border-spacing: 0;
-  font-family: --font-family;
-  font-size: --font-size-20;
-  line-height: --line-height-20;
+  font-family: var(--typography-font-family);
+  font-size: var(--typography-font-size-20);
+  line-height: var(--typography-line-height-20);
 
   > div {
     pointer-events: auto !important;
@@ -13,14 +10,14 @@
 
   .tableHeader {
     .column {
-      background-color: --layer-accent-01;
-      color: --text-primary;
+      background-color: var(--semantic-layer-accent-01);
+      color: var(--semantic-text-primary);
       font-weight: 500;
-      padding: --size-75 --size-80;
+      padding: var(--size-75) var(--size-80);
       text-align: left;
 
       &[data-focus-visible] {
-        outline: --size-10 solid --border-primary;
+        outline: var(--size-10) solid var(--semantic-border-primary);
         outline-offset: -4px;
       }
 
@@ -32,7 +29,7 @@
 
   .row {
     &[data-focused] {
-      outline: --size-10 solid --border-primary;
+      outline: var(--size-10) solid var(--semantic-border-primary);
       outline-offset: -4px;
     }
 
@@ -43,19 +40,19 @@
     }
 
     &[data-hovered] {
-      background-color: --layer-hover-01;
+      background-color: var(--semantic-layer-hover-01);
     }
 
-    background-color: --layer-01;
+    background-color: var(--semantic-layer-01);
 
     .cell {
-      border-top: 1px --border-subtle solid;
-      color: --text-primary;
-      padding: calc(--size-75 - 1px) --size-80 --size-75;
+      border-top: 1px var(--semantic-border-subtle) solid;
+      color: var(--semantic-text-primary);
+      padding: calc(var(--size-75) - 1px) var(--size-80) var(--size-75);
 
       &[data-focus-visible] {
         outline-offset: -4px;
-        outline: --size-10 solid --border-primary;
+        outline: var(--size-10) solid var(--semantic-border-primary);
       }
 
       .selection {
@@ -65,11 +62,11 @@
   }
 
   &.narrow {
-    font-size: --font-size-10;
-    line-height: --line-height-10;
+    font-size: var(--typography-font-size-10);
+    line-height: var(--typography-line-height-10);
 
     .column {
-      padding: --size-20 --size-80;
+      padding: var(--size-20) var(--size-80);
       height: 14px;
 
       .selection {
@@ -78,7 +75,7 @@
     }
 
     .cell {
-      padding: calc(--size-20 - 1px) --size-80 --size-20;
+      padding: calc(var(--size-20) - 1px) var(--size-80) var(--size-20);
 
       .selection {
         height: 16px;
@@ -88,11 +85,11 @@
 
   &.medium:not(.narrow) {
     .column {
-      padding: calc(--size-60 - 1px) --size-80;
+      padding: calc(var(--size-60) - 1px) var(--size-80);
     }
 
     .cell {
-      padding: calc(--size-60 - 2px) --size-80 calc(--size-60 - 1px);
+      padding: calc(var(--size-60) - 2px) var(--size-80) calc(var(--size-60) - 1px);
     }
   }
 
@@ -100,10 +97,10 @@
     .row {
       &:nth-child(even),
       &[data-even='false'] {
-        background-color: --layer-accent-01;
+        background-color: var(--semantic-layer-accent-01);
 
         &[data-hovered] {
-          background-color: --layer-accent-hover-01;
+          background-color: var(--semantic-layer-accent-hover-01);
         }
       }
     }

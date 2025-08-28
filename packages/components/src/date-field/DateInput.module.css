@@ -1,13 +1,10 @@
-@value tokens: "../theme/tokens.css";
-@value --field-hover-01, --focus, --text-primary from tokens;
-
 .dateInput {
   display: flex;
 
   & div:focus-visible,
   & div[data-focus-visible] {
     outline: none;
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -16,11 +13,11 @@
   }
 
   & div[data-readonly='true'] {
-    color: --text-primary;
+    color: var(--semantic-text-primary);
     padding: 0 2px;
   }
 }
 
 .divider {
-  color: --text-primary;
+  color: var(--semantic-text-primary);
 }

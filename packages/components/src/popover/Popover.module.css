@@ -1,12 +1,9 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --layer-01, --text-primary, --font-size-20, --size-80 from tokens;
-
 .popover {
-  font-family: --font-family;
-  font-size: --font-size-20;
-  padding: --size-80;
-  color: --text-primary;
-  background-color: --layer-01;
+  font-family: var(--typography-font-family);
+  font-size: var(--typography-font-size-20);
+  padding: var(--size-80);
+  color: var(--semantic-text-primary);
+  background-color: var(--semantic-layer-01);
   outline: none;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 4px 5px rgba(0 0 0 / 20%);
@@ -17,7 +14,7 @@
 
   & .arrow svg {
     display: block;
-    fill: --layer-01;
+    fill: var(--semantic-layer-01);
   }
 
   &[data-entering],

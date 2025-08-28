@@ -1,12 +1,11 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --line-height-20, --font-size-20, --text-warning, --text-primary from tokens;
+
 
 .characterCounter {
-  font-size: --font-size-20;
-  line-height: --line-height-20;
+    font-size: var(--typography-font-size-20);
+  line-height: var(--typography-line-height-20);
   font-weight: 400;
-  font-family: --font-family;
-  color: --text-primary;
+  font-family: var(--typography-font-family);
+  color: var(--semantic-text-primary);
   text-align: right;
   grid-area: Count;
   align-self: flex-end;
@@ -17,6 +16,6 @@
   }
 
   &[data-exceeded] {
-    color: --text-warning;
+    color: var(--semantic-text-warning);
   }
 }

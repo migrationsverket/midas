@@ -1,24 +1,21 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --text-primary, --text-disabled from tokens;
-
 .root {
   --gap: 0.75rem;
-  --heading-color: --text-primary;
+  --heading-color: var(--semantic-text-primary);
 
   &.contained {
     --gap: 0.25rem;
   }
 
   &[data-disabled] {
-    --heading-color: --text-disabled;
+    --heading-color: var(--semantic-text-disabled);
 
     .triggerButton {
       background: transparent;
     }
   }
 
-  font-family: --font-family;
-  color: --text-primary;
+  font-family: var(--typography-font-family);
+  color: var(--semantic-text-primary);
   width: 100%;
   display: flex;
   flex-direction: column;

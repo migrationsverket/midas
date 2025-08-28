@@ -1,6 +1,3 @@
-@value tokens: "../theme/tokens.css";
-@value --border-tertiary from tokens;
-
 .group {
   display: inline-flex;
   flex-flow: row wrap;
@@ -12,6 +9,6 @@
 
 .toggleButton {
   &[data-selected] {
-    box-shadow: inset 0 -2px 0 0 --border-tertiary;
+    box-shadow: inset 0 -2px 0 0 var(--semantic-border-tertiary);
   }
 }

@@ -1,9 +1,6 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --link-enabled, --link-hover, --link-pressed, --link-visited, --text-disabled, --focus, --z-index-base from tokens;
-
 .link {
-  font-family: --font-family;
-  color: --link-enabled;
+  font-family: var(--typography-font-family);
+  color: var(--semantic-link-enabled);
   text-decoration: underline;
   display: inline-flex;
   cursor: pointer;
@@ -13,22 +10,22 @@
 
   &[data-hovered],
   &:hover {
-    color: --link-hover;
+    color: var(--semantic-link-hover);
   }
 
   &:visited {
-    color: --link-visited;
+    color: var(--semantic-link-visited);
   }
 
   &[data-disabled],
   &:disabled {
     cursor: not-allowed;
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
   }
 
   &[data-pressed]:not([data-disabled], :disabled),
   &:active:not([data-disabled], :disabled) {
-    color: --link-pressed;
+    color: var(--semantic-link-pressed);
   }
 
   &[data-focused],
@@ -38,7 +35,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -72,7 +69,7 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: --z-index-base;
+    z-index: var(--z-index-base);
     content: '';
   }
 }
