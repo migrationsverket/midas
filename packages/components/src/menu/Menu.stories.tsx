@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   Collection,
   Header,
@@ -12,7 +12,7 @@ import { Button } from '../button'
 import { Menu, MenuItem, MenuPopover, MenuSection, Separator } from '.'
 import React from 'react'
 import { Text } from '../text'
-import { expect, fn, userEvent, within } from '@storybook/test'
+import { expect, fn, userEvent, within } from 'storybook/test'
 
 interface Item {
   id: string | number
