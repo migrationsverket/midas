@@ -1,7 +1,5 @@
-
-
 .characterCounter {
-    font-size: var(--typography-font-size-20);
+  font-size: var(--typography-font-size-20);
   line-height: var(--typography-line-height-20);
   font-weight: 400;
   font-family: var(--typography-font-family);

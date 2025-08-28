@@ -25,14 +25,18 @@
 
 .success {
   --accordion-background: var(--semantic-support-background-success);
-  --accordion-background-hover: var(--semantic-support-background-success-hover);
+  --accordion-background-hover: var(
+    --semantic-support-background-success-hover
+  );
   --icon-color: var(--semantic-icon-success);
   --border-color: var(--semantic-support-border-success);
 }
 
 .warning {
   --accordion-background: var(--semantic-support-background-warning);
-  --accordion-background-hover: var(--semantic-support-background-warning-hover);
+  --accordion-background-hover: var(
+    --semantic-support-background-warning-hover
+  );
   --icon-color: var(--semantic-icon-warning);
   --border-color: var(--semantic-support-border-warning);
 }
@@ -46,7 +50,9 @@
 
 .important {
   --accordion-background: var(--semantic-support-background-important);
-  --accordion-background-hover: var(--semantic-support-background-important-hover);
+  --accordion-background-hover: var(
+    --semantic-support-background-important-hover
+  );
   --icon-color: var(--semantic-icon-important);
   --border-color: var(--semantic-support-border-important);
 }
@@ -110,12 +116,14 @@
 
 .panel[aria-hidden='true'] {
   height: 0;
-  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
+  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1)
+    allow-discrete;
   overflow-y: clip;
 }
 
 .panel[aria-hidden='false'] {
-  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
+  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1)
+    allow-discrete;
   height: auto;
   height: calc-size(min-content, size);
 }
