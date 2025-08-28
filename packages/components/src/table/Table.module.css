@@ -89,7 +89,8 @@
     }
 
     .cell {
-      padding: calc(var(--size-60) - 2px) var(--size-80) calc(var(--size-60) - 1px);
+      padding: calc(var(--size-60) - 2px) var(--size-80)
+        calc(var(--size-60) - 1px);
     }
   }
 

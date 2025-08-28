@@ -6,8 +6,7 @@
     "stylelint-prettier/recommended"
   ],
   "plugins": [
-    "stylelint-prettier",
-    "./tools/stylelint-plugin/check-values-import"
+    "stylelint-prettier"
   ],
   "rules": {
     "prettier/prettier": true,
@@ -36,7 +35,6 @@
         "ignoreShorthands": ["grid-template", "transition"]
       }
     ],
-    "no-descending-specificity": null,
-    "plugin/check-values-import": true
+    "no-descending-specificity": null
   }
 }
