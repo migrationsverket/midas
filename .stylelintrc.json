@@ -35,6 +35,7 @@
         "ignoreShorthands": ["grid-template", "transition"]
       }
     ],
-    "no-descending-specificity": null
+    "no-descending-specificity": null,
+    "media-query-no-invalid": null
   }
 }
