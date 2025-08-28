@@ -24,9 +24,9 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        background: 'semantic.background',
-        'Layer 01': 'semantic.layer01',
-        'Layer 02': 'semantic.layer02',
+        background: semantic.background,
+        'Layer 01': semantic.layer01,
+        'Layer 02': semantic.layer02,
       },
     },
     controls: {
@@ -103,7 +103,6 @@ const preview: Preview = {
         <RootTag
           style={{
             colorScheme: context.globals.scheme,
-            backgroundColor: context.globals.backgrounds?.value,
           }}
         >
           <I18nProvider locale={context.globals.lang}>
