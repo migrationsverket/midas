@@ -60,7 +60,8 @@
       },
       "configurations": {
         "ci": {
-          "args": ["--quiet", "output-dir=../../dist/docs/storybook"]
+          "output-dir": "../../dist/docs/storybook",
+          "args": ["--quiet"]
         }
       }
     },
