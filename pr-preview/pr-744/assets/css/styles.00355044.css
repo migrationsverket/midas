@@ -8544,6 +8544,8 @@ CSS variables, meant to be overridden by final theme
   word-wrap: break-word;
   width: 100%;
   color: light-dark(#171717, #f2f2f2);
+  resize: both;
+  overflow: auto;
 }
 
 @media (forced-colors: active) {
