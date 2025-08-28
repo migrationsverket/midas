@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { InfoBanner } from './InfoBanner'
 import React from 'react'
-import { expect, fn, userEvent } from '@storybook/test'
+import { expect, fn, userEvent } from 'storybook/test'
 import { Button } from '../button'
 
 type Story = StoryObj<typeof InfoBanner>

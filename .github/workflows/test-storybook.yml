@@ -17,11 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright
-        run: npx playwright install chromium --with-deps --only-shell
-      - name: Build Storybook
-        run: npx nx run components:build-storybook:ci
-      - name: Serve Storybook and run tests
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server dist/docs/storybook --port 6006 --silent" \
-            "npx wait-on tcp:127.0.0.1:6006 && npx nx run components:test-storybook:ci && npx nx run components:test-storybook:dark-mode:ci"
+        run: npx playwright install chromium --only-shell
+      - name: Test Storybook
+        run: npx nx run components:test-storybook && npx nx run components:test-storybook:dark-mode

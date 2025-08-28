@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { SearchField } from './SearchField'
-import { expect, fn, userEvent } from '@storybook/test'
+import { expect, fn, userEvent } from 'storybook/test'
 import styles from './SearchField.module.css'
 
 const meta: Meta<typeof SearchField> = {

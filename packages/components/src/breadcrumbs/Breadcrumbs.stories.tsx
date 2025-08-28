@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Breadcrumbs } from './Breadcrumbs'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import styles from './Breadcrumbs.module.css'
 
 type Story = StoryObj<typeof Breadcrumbs>

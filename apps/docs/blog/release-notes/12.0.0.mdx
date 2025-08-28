@@ -25,18 +25,18 @@ Vi har lagt till flera nya funktioner för att göra våra komponenter mer flexi
 Den här versionen innehåller några viktiga ändringar som kan kräva att du uppdaterar din kod. Vi har gjort dessa ändringar för att förbättra den övergripande kvaliteten och konsekvensen i vårt komponentbibliotek.
 
 - **Borttagning av funktioner som varit deprecated:** Vi har tagit bort ett antal funktioner, props och typer som tidigare har varit markerade som deprecated. Detta är en del av vårt kontinuerliga arbete med att hålla vårt API rent och konsekvent. De borttagna funktionerna är:
-    - `BreadcrumbProps` (använd `BreadcrumbsProps` istället)
-    - `ComboBoxSelection` (använd `ComboBoxSection` istället)
-    - `Item` och `Section` från `combobox/types.ts` (använd `ListBoxItemElement` och `ListBoxSectionElement` istället)
-    - `Flex` från `grid` (använd `Grid` istället)
-    - `fluid` från `GridProps` (använd `isContained` istället)
-    - `FlexItem` från `grid` (använd `GridItem` istället)
-    - `col` från `GridItemProps` (använd `size` istället)
-    - `dismissable` från `InfoBannerProps` (använd `isDismissable` istället)
-    - `narrow` från `TableProps` (använd `size` istället)
-    - `tabs` och `label` från `TabsProps` (använd det deklarativa API:et med `TabList` och `TabPanel` istället)
-    - `Option`, `OptionItem`, `OptionSection` från `select/types.ts` (använd `ListBoxOption`, `ListBoxItemElement`, `ListBoxSectionElement` istället)
-    - `fieldSkeleton` och `buttonBackgroundSkeleton` från `theme/tokens.ts` (använd `skeleton01` istället)
+  - `BreadcrumbProps` (använd `BreadcrumbsProps` istället)
+  - `ComboBoxSelection` (använd `ComboBoxSection` istället)
+  - `Item` och `Section` från `combobox/types.ts` (använd `ListBoxItemElement` och `ListBoxSectionElement` istället)
+  - `Flex` från `grid` (använd `Grid` istället)
+  - `fluid` från `GridProps` (använd `isContained` istället)
+  - `FlexItem` från `grid` (använd `GridItem` istället)
+  - `col` från `GridItemProps` (använd `size` istället)
+  - `dismissable` från `InfoBannerProps` (använd `isDismissable` istället)
+  - `narrow` från `TableProps` (använd `size` istället)
+  - `tabs` och `label` från `TabsProps` (använd det deklarativa API:et med `TabList` och `TabPanel` istället)
+  - `Option`, `OptionItem`, `OptionSection` från `select/types.ts` (använd `ListBoxOption`, `ListBoxItemElement`, `ListBoxSectionElement` istället)
+  - `fieldSkeleton` och `buttonBackgroundSkeleton` från `theme/tokens.ts` (använd `skeleton01` istället)
 - **Ändrade ikoner för FeedbackStatus:** Vi har ändrat ikonerna för FeedbackStatus i våra komponenter för att skapa ett mer konsekvent mönster. Om du använder `type` (`'success'|'info'|'warning'|'important'`) kommer strängen `default` inte längre att vara tillgänglig.
 
 Vi förstår att dessa ändringar kan orsaka visst besvär, men vi är övertygade om att de kommer att leda till en bättre och mer konsekvent upplevelse för alla som använder vårt komponentbibliotek.

@@ -25,9 +25,7 @@
       "options": {
         "outputPath": "dist/packages/components"
       },
-      "dependsOn": [
-        "generate-theme-css"
-      ],
+      "dependsOn": ["generate-theme-css"],
       "configurations": {
         "production": {
           "optimization": true,
@@ -38,70 +36,53 @@
         }
       }
     },
+
     "storybook": {
-      "executor": "@nx/storybook:storybook",
+      "executor": "nx:run-commands",
       "options": {
-        "port": 4400,
-        "configDir": "packages/components/.storybook",
-        "noManagerCache": true
+        "command": "npx storybook dev",
+        "cwd": "packages/components",
+        "port": 4400
       },
       "configurations": {
         "ci": {
-          "quiet": true
+          "args": ["--quiet"]
         }
       }
     },
     "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "nx:run-commands",
+      "outputs": ["{options.output-dir}"],
       "options": {
-        "outputDir": "dist/storybook/ui",
-        "configDir": "packages/components/.storybook"
+        "cwd": "packages/components",
+        "command": "npx storybook build",
+        "output-dir": "../../dist/storybook/ui"
       },
       "configurations": {
         "ci": {
-          "quiet": true,
-          "outputDir": "dist/docs/storybook"
+          "output-dir": "../../dist/docs/storybook",
+          "args": ["--quiet"]
         }
       }
     },
     "test-storybook": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/vite:test",
       "options": {
-        "command": "test-storybook -c packages/components/.storybook --url=http://localhost:4400"
+        "config": "packages/components/vitest.config.ts",
+        "project": "storybook"
       },
       "configurations": {
         "watch": {
-          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
+          "watch": true
         },
-        "remote": {
-          "command": "test-storybook -c packages/components/.storybook --url=https://main--6810d578d5507438df0f0d22.chromatic.com"
+        "dark-mode": {
+          "config": "packages/components/vitest.config.dark.ts",
+          "project": "storybook:dark-mode"
         },
-        "all-browsers": {
-          "command": "test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
-        },
-        "ci": {
-          "command": "test-storybook -c packages/components/.storybook --url=http://localhost:6006 --browsers=chromium"
-        }
-      }
-    },
-    "test-storybook:dark-mode": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=http://localhost:4400"
-      },
-      "configurations": {
-        "watch": {
-          "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400"
-        },
-        "remote": {
-          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=https://main--6810d578d5507438df0f0d22.chromatic.com"
-        },
-        "all-browsers": {
-          "command": "COLOR_SCHEME=dark test-storybook --watch -c packages/components/.storybook --url=http://localhost:4400 --browsers=firefox,chromium,webkit"
-        },
-        "ci": {
-          "command": "COLOR_SCHEME=dark test-storybook -c packages/components/.storybook --url=http://localhost:6006 --browsers=chromium"
+        "dark-mode:watch": {
+          "config": "packages/components/vitest.config.dark.ts",
+          "watch": true,
+          "project": "storybook:dark-mode"
         }
       }
     },

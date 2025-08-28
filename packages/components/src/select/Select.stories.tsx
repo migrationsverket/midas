@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Select } from './Select'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from './utils'
-import { expect, fn, spyOn, userEvent } from '@storybook/test'
+import { expect, fn, spyOn, userEvent } from 'storybook/test'
 import { useState } from 'react'
 import { Selection } from 'react-aria-components'
 
@@ -128,7 +128,7 @@ export const Disabled: Story = {
       },
     },
     a11y: {
-      element: 'body',
+      context: 'body',
       config: {
         rules: [
           {

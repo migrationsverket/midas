@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DropZone } from './FileUpload'
 
 const meta: Meta<typeof DropZone> = {
@@ -10,7 +10,6 @@ const meta: Meta<typeof DropZone> = {
 export default meta
 type Story = StoryObj<typeof DropZone>
 
-
 export const DropIt: Story = {
-  args: {children: 'Drop something here'},
+  args: { children: 'Drop something here' },
 }

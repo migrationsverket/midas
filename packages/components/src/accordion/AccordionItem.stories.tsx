@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { AccordionItem } from './'
 
 const meta: Meta<typeof AccordionItem> = {
@@ -7,7 +7,8 @@ const meta: Meta<typeof AccordionItem> = {
   tags: ['autodocs'],
   args: {
     title: 'An accordion item',
-    children: 'Content of the accordion item. Content of the accordion item. Content of the accordion item. Content of the accordion item.',
+    children:
+      'Content of the accordion item. Content of the accordion item. Content of the accordion item. Content of the accordion item.',
   },
 }
 
@@ -27,7 +28,7 @@ export const Contained: Story = {
     children: 'Content of the accordion item.',
     type: undefined,
     isContained: true,
-  }
+  },
 }
 
 export const Success: Story = {
@@ -64,7 +65,7 @@ export const Disabled: Story = {
     isDisabled: true,
     type: undefined,
   },
-};
+}
 
 export const StatusDisabled: Story = {
   args: {
@@ -72,4 +73,4 @@ export const StatusDisabled: Story = {
     type: 'success',
     isContained: true,
   },
-};
+}

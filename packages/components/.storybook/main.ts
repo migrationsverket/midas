@@ -1,4 +1,8 @@
+import { createRequire } from 'node:module'
+import { dirname, join } from 'node:path'
 import type { StorybookConfig } from '@storybook/react-vite'
+
+const require = createRequire(import.meta.url)
 
 const config: StorybookConfig = {
   stories: [
@@ -7,9 +11,9 @@ const config: StorybookConfig = {
   ],
 
   addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
+    getAbsolutePath('@storybook/addon-a11y'),
+    getAbsolutePath('@storybook/addon-docs'),
+    getAbsolutePath('@storybook/addon-vitest'),
   ],
 
   core: {
@@ -17,18 +21,20 @@ const config: StorybookConfig = {
   },
 
   framework: {
-    name: '@storybook/react-vite',
+    name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
-        viteConfigPath: 'packages/components/vite.config.ts',
+        viteConfigPath: 'vite.config.ts',
       },
     },
   },
+
   staticDirs: ['./static'],
+
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      tsconfigPath: 'packages/components/tsconfig.lib.json',
+      tsconfigPath: 'tsconfig.lib.json',
       propFilter: prop => {
         if (prop.parent) {
           return !prop.parent.fileName.includes('@types/react')
@@ -40,9 +46,6 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
     },
   },
-  docs: {
-    autodocs: true,
-  },
 }
 
 export default config
@@ -50,3 +53,7 @@ export default config
 // To customize your Vite configuration you can use the viteFinal field.
 // Check https://storybook.js.org/docs/react/builders/vite#configuration
 // and https://nx.dev/recipes/storybook/custom-builder-configs
+
+function getAbsolutePath(value: string): any {
+  return dirname(require.resolve(join(value, 'package.json')))
+}

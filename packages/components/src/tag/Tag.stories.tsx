@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react-vite'
 import { Tag, TagGroup } from './Tag'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import styles from './Tag.module.css'
 
 type Story = StoryObj<typeof Tag>

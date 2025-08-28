@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateField } from './DateField'
 import { CalendarDate } from '@internationalized/date'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 
 type Story = StoryObj<typeof DateField>
 

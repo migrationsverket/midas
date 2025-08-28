@@ -1,9 +1,16 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DropZone, FileTrigger } from './FileUpload'
 import { Button } from '../button'
 import { Text } from '../text'
 import React from 'react'
-import { expect, fn, userEvent, within, fireEvent, waitFor } from '@storybook/test'
+import {
+  expect,
+  fn,
+  userEvent,
+  within,
+  fireEvent,
+  waitFor,
+} from 'storybook/test'
 import { DropEvent } from 'react-aria'
 
 interface DropZoneTestContainerProps {
@@ -32,10 +39,17 @@ const DropZoneTestContainer = (props: DropZoneTestContainerProps) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <FileTrigger onSelect={handleSelect} data-testid="file-trigger">
+      <FileTrigger
+        onSelect={handleSelect}
+        data-testid='file-trigger'
+      >
         <Button>Select files</Button>
       </FileTrigger>
-      <DropZone {...props} onDrop={handleDrop} data-testid="drop-zone">
+      <DropZone
+        {...props}
+        onDrop={handleDrop}
+        data-testid='drop-zone'
+      >
         <Text>Drop files here</Text>
       </DropZone>
       {files.length > 0 && (

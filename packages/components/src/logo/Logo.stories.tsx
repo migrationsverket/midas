@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Logo } from './Logo'
-import { expect } from '@storybook/test'
+import { expect } from 'storybook/test'
 import styles from './Logo.module.css'
 
 const meta: Meta<typeof Logo> = {

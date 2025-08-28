@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Calendar } from './Calendar'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
-import { expect, userEvent, within } from '@storybook/test'
+import { expect, userEvent, within } from 'storybook/test'
 import { today, getLocalTimeZone, isWeekend } from '@internationalized/date'
 import { mockedNow } from '../utils/storybook'
 import { RunOptions } from 'axe-core'
@@ -82,7 +82,7 @@ export const Disabled: Story = {
   },
   parameters: {
     a11y: {
-      element: 'body',
+      context: 'body',
       config: {
         rules: [
           {
