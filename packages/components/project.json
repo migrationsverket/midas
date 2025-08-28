@@ -51,17 +51,16 @@
       }
     },
     "build-storybook": {
-      "executor": "nx:run-commands",
-      "outputs": ["{options.output-dir}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "cwd": "packages/components",
-        "command": "npx storybook build",
-        "output-dir": "../../dist/storybook/ui"
+        "outputDir": "dist/storybook/ui",
+        "configDir": "packages/components/.storybook"
       },
       "configurations": {
         "ci": {
-          "output-dir": "../../dist/docs/storybook",
-          "args": ["--quiet"]
+          "quiet": true,
+          "outputDir": "dist/docs/storybook"
         }
       }
     },

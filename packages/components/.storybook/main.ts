@@ -4,6 +4,10 @@ import type { StorybookConfig } from '@storybook/react-vite'
 
 const require = createRequire(import.meta.url)
 
+const basePath = process.cwd().endsWith('/packages/components')
+  ? process.cwd()
+  : join(process.cwd(), 'packages', 'components')
+
 const config: StorybookConfig = {
   stories: [
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
@@ -24,7 +28,7 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {
       builder: {
-        viteConfigPath: 'vite.config.ts',
+        viteConfigPath: join(basePath, 'vite.config.ts'),
       },
     },
   },
@@ -34,7 +38,7 @@ const config: StorybookConfig = {
   typescript: {
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
-      tsconfigPath: 'tsconfig.lib.json',
+      tsconfigPath: join(basePath, 'tsconfig.lib.json'),
       propFilter: prop => {
         if (prop.parent) {
           return !prop.parent.fileName.includes('@types/react')
