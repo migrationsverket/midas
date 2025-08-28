@@ -14,6 +14,9 @@ export default {
     description: 'Description',
     errorPosition: 'top',
   },
+  argTypes: {
+    size: { table: { disable: true } },
+  },
 } as Meta<typeof TextArea>
 
 type Story = StoryObj<typeof TextArea>

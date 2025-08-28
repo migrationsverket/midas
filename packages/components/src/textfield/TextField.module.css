@@ -44,6 +44,8 @@
   word-wrap: break-word;
   width: 100%;
   color: --text-primary;
+  resize: both;
+  overflow: auto;
 
   @media (forced-colors: active) {
     outline: 3px solid;
