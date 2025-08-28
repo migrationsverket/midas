@@ -1,9 +1,6 @@
-@value tokens: "../theme/tokens.css";
-@value --text-warning, --font-family from tokens;
-
 .fieldError {
-  font-family: --font-family;
-  color: --text-warning;
+  font-family: var(--typography-font-family);
+  color: var(--semantic-text-warning);
   font-size: 0.875rem;
   display: flex;
   align-items: center;
@@ -18,7 +15,7 @@
 
   &::before {
     content: '';
-    background-color: --text-warning;
+    background-color: var(--semantic-text-warning);
     display: block;
     width: 1rem;
     height: 1rem;

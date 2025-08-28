@@ -1,6 +1,3 @@
-@value tokens: "../theme/tokens.css";
-@value --support-border-info from tokens;
-
 .labelPopover {
   display: flex;
   align-items: center;
@@ -12,6 +9,6 @@
   margin-bottom: 0.125rem;
 
   svg {
-    stroke: --support-border-info;
+    stroke: var(--semantic-support-border-info);
   }
 }

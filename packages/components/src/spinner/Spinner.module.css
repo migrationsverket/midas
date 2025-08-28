@@ -1,12 +1,9 @@
-@value tokens: "../theme/tokens.css";
-@value --icon-primary, --icon-on-color from tokens;
-
 .container {
   display: inline-flex;
 }
 
 .spinner {
-  color: --icon-primary;
+  color: var(--semantic-icon-primary);
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
 
@@ -16,7 +13,7 @@
 }
 
 .dark {
-  color: --icon-on-color;
+  color: var(--semantic-icon-on-color);
 }
 
 @keyframes rotating {

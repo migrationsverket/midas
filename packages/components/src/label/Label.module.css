@@ -1,23 +1,20 @@
-@value tokens: "../theme/tokens.css";
-@value --text-primary, --font-family, --font-size-30, --line-height-30, --text-disabled, --support-border-info from tokens;
-
 .labelBase {
-  color: --text-primary;
-  font-family: --font-family;
+  color: var(--semantic-text-primary);
+  font-family: var(--typography-font-family);
   margin-bottom: 0.25rem;
-  font-size: --font-size-30;
-  line-height: --line-height-30;
+  font-size: var(--typography-font-size-30);
+  line-height: var(--typography-line-height-30);
   font-weight: 500;
 }
 
 .labelBase:has(~ [data-disabled]) {
-  color: --text-disabled;
+  color: var(--semantic-text-disabled);
 }
 
 [data-disabled] > .labelBase {
-  color: --text-disabled;
+  color: var(--semantic-text-disabled);
 }
 
 [data-disabled] {
-  color: --text-disabled;
+  color: var(--semantic-text-disabled);
 }

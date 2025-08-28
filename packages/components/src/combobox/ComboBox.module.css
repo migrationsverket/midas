@@ -1,13 +1,10 @@
-@value tokens: "../theme/tokens.css";
-@value --icon-disabled, --text-disabled, --field-01, --field-hover-01, --layer-01, --border-primary, --focus, --field-disabled, --border-disabled, --text-placeholder, --icon-primary, --text-primary, --layer-selected-hover-01, --support-border-warning, --font-family, --size-50, --size-70, --size-130, --size-150 from tokens;
-
 .combobox {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   display: flex;
   flex-direction: column;
 
   &[data-invalid] .inputField {
-    border: 0.125rem solid --support-border-warning;
+    border: 0.125rem solid var(--semantic-support-border-warning);
     box-shadow: none;
   }
 }
@@ -17,24 +14,24 @@
   width: -webkit-fill-available;
   padding-left: 1rem;
   border: none;
-  border-bottom: 1px solid --border-primary;
+  border-bottom: 1px solid var(--semantic-border-primary);
   border-radius: 0;
   font-size: 1rem;
-  color: --text-primary;
-  height: --size-150;
-  background-color: --field-01;
+  color: var(--semantic-text-primary);
+  height: var(--size-150);
+  background-color: var(--semantic-field-01);
 
   &.medium {
-    height: --size-130;
+    height: var(--size-130);
   }
 
   &[data-hovered],
   &:has(+ [data-hovered]) {
-    background-color: --field-hover-01;
+    background-color: var(--semantic-field-hover-01);
   }
 
   &::placeholder {
-    color: --text-placeholder;
+    color: var(--semantic-text-placeholder);
   }
 
   &:focus-visible,
@@ -43,7 +40,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -52,9 +49,9 @@
   }
 
   &[data-disabled] {
-    background: --field-disabled;
+    background: var(--semantic-field-disabled);
     box-shadow: none;
-    border-bottom: 0.063rem solid --border-disabled;
+    border-bottom: 0.063rem solid var(--semantic-border-disabled);
     cursor: not-allowed;
   }
 }
@@ -74,18 +71,18 @@
   display: flex;
   align-items: center;
   border: none;
-  padding: --size-70;
-  color: --icon-primary;
+  padding: var(--size-70);
+  color: var(--semantic-icon-primary);
   background-color: transparent;
   position: absolute;
   top: 0;
   right: 0;
-  height: --size-150;
+  height: var(--size-150);
   transition: transform 0.3s ease;
 
   &.medium {
-    height: --size-130;
-    padding: --size-50 --size-70;
+    height: var(--size-130);
+    padding: var(--size-50) var(--size-70);
   }
 
   &[aria-expanded='true'] {
@@ -94,7 +91,7 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    color: --icon-disabled;
+    color: var(--semantic-icon-disabled);
   }
 
   &[data-hovered] {

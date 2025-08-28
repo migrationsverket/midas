@@ -1,15 +1,12 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --text-disabled, --font-size-30, --text-primary, --border-primary, --focus, --fast-transition, --border-disabled, --icon-secondary, --border-secondary, --border-subtle, --breakpoint-xs, --field-hover-02, --support-border-warning, --icon-tertiary from tokens;
-
 .radioGroup {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   display: flex;
   flex-direction: column;
 
   &[data-disabled] {
     cursor: not-allowed;
     opacity: 1;
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
   }
 
   .wrap {
@@ -26,11 +23,11 @@
 }
 
 .radio {
-  font-size: --font-size-30;
+  font-size: var(--typography-font-size-30);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   cursor: pointer;
 
   &::before {
@@ -39,14 +36,14 @@
     width: 1rem;
     height: 1rem;
     box-sizing: border-box;
-    border: 0.0625rem solid --border-primary;
+    border: 0.0625rem solid var(--semantic-border-primary);
     border-radius: 1.286rem;
-    transition: all --fast-transition;
+    transition: all var(--transition-fast);
   }
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
     outline: none;
 
     @media (forced-colors: active) {
@@ -57,29 +54,29 @@
 
   &[data-hovered] {
     &::before {
-      border-color: --border-secondary;
+      border-color: var(--semantic-border-secondary);
     }
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
 
     &::before {
-      border-color: --border-disabled;
+      border-color: var(--semantic-border-disabled);
     }
   }
 
   &[data-pressed] {
     &::before {
-      border-color: --border-subtle;
+      border-color: var(--semantic-border-subtle);
     }
   }
 
   &[data-selected]::before {
     padding: 0.188rem;
     border-width: 0.1rem;
-    background: --icon-tertiary 50% 50% no-repeat content-box;
+    background: var(--semantic-icon-tertiary) 50% 50% no-repeat content-box;
   }
 
   /* Nesting this selector in the one above causes syntax errors during minification */
@@ -90,19 +87,19 @@
   }
 
   &[data-selected][data-pressed]::before {
-    border-color: --border-subtle;
-    background: --icon-tertiary 50% 50% no-repeat content-box;
+    border-color: var(--semantic-border-subtle);
+    background: var(--semantic-icon-tertiary) 50% 50% no-repeat content-box;
   }
 
   &[data-invalid] {
     &::before {
-      border: 0.125rem solid --support-border-warning;
+      border: 0.125rem solid var(--semantic-support-border-warning);
     }
   }
 
-  @media --breakpoint-xs {
+  @media var(--breakpoint-xs) {
     padding: 0.875rem 1rem;
-    border: 1px solid --border-primary;
+    border: 1px solid var(--semantic-border-primary);
     width: auto;
 
     &.radio {
@@ -111,16 +108,16 @@
     }
 
     &[data-hovered] {
-      background-color: --field-hover-02;
+      background-color: var(--semantic-field-hover-02);
     }
 
     &[data-invalid] {
-      border: 2px solid --support-border-warning;
+      border: 2px solid var(--semantic-support-border-warning);
     }
 
     &[data-disabled] {
       pointer-events: none;
-      border-color: --border-disabled;
+      border-color: var(--semantic-border-disabled);
     }
   }
 }

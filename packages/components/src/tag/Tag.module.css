@@ -1,33 +1,30 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --field-01, --text-disabled, --field-active-01, --field-hover-01, --icon-primary, --support-background-success, --support-background-info, --support-background-important, --support-background-warning, --button-background-icon-hover, --button-background-icon-active, --border-primary, --support-border-success, --support-border-info, --support-border-important, --support-border-warning, --text-primary, --border-disabled, --size-10, --size-20, --size-40 from tokens;
-
 .button {
-  color: --icon-primary;
+  color: var(--semantic-icon-primary);
   min-height: unset !important;
-  padding: --size-20 !important;
+  padding: var(--size-20) !important;
   border-radius: 1.5rem;
   border: unset;
 
   &[data-hovered] {
-    background-color: --button-background-icon-hover;
+    background-color: var(--semantic-button-background-icon-hover);
   }
 
   &[data-pressed] {
-    background-color: --button-background-icon-active;
+    background-color: var(--semantic-button-background-icon-active);
   }
 
   &.success[data-hovered],
   &.warning[data-hovered],
   &.info[data-hovered],
   &.important[data-hovered] {
-    background-color: --button-background-icon-hover;
+    background-color: var(--semantic-button-background-icon-hover);
   }
 
   &.success[data-pressed],
   &.warning[data-pressed],
   &.info[data-pressed],
   &.important[data-pressed] {
-    background-color: --button-background-icon-active;
+    background-color: var(--semantic-button-background-icon-active);
   }
 }
 
@@ -35,37 +32,37 @@
   display: inline-flex;
   align-items: center;
   border-radius: 1.25rem;
-  background-color: --field-01;
+  background-color: var(--semantic-field-01);
   font-size: 0.875rem;
-  font-family: --font-family;
-  border: 1px solid --border-primary;
-  color: --text-primary;
+  font-family: var(--typography-font-family);
+  border: 1px solid var(--semantic-border-primary);
+  color: var(--semantic-text-primary);
 
   &.success {
-    background-color: --support-background-success;
-    border: 1px solid --support-border-success;
+    background-color: var(--semantic-support-background-success);
+    border: 1px solid var(--semantic-support-border-success);
   }
 
   &.info {
-    background-color: --support-background-info;
-    border: 1px solid --support-border-info;
+    background-color: var(--semantic-support-background-info);
+    border: 1px solid var(--semantic-support-border-info);
   }
 
   &.important {
-    background-color: --support-background-important;
-    border: 1px solid --support-border-important;
+    background-color: var(--semantic-support-background-important);
+    border: 1px solid var(--semantic-support-border-important);
   }
 
   &.warning {
-    background-color: --support-background-warning;
-    border: 1px solid --support-border-warning;
+    background-color: var(--semantic-support-background-warning);
+    border: 1px solid var(--semantic-support-border-warning);
   }
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
-    border-color: --border-disabled;
-    background-color: --field-01;
+    border-color: var(--semantic-border-disabled);
+    background-color: var(--semantic-field-01);
   }
 
   &[data-focused],
@@ -83,11 +80,11 @@
 
 .tagText {
   line-height: 1.15;
-  padding: 7px --size-40;
+  padding: 7px var(--size-40);
 }
 
 .dismissable .tagText {
-  padding: 7px --size-10 7px --size-40;
+  padding: 7px var(--size-10) 7px var(--size-40);
 }
 
 .tagList {

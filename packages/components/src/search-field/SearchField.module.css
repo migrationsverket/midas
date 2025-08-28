@@ -1,9 +1,6 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --text-warning, --field-01, --border-primary, --focus, --support-border-warning, --icon-primary, --text-primary, --size-50, --size-70, --size-110, --size-130, --size-150 from tokens;
-
 .container {
-  font-family: --font-family;
-  color: --text-primary;
+  font-family: var(--typography-font-family);
+  color: var(--semantic-text-primary);
 
   &[data-disabled='true'] {
     cursor: not-allowed;
@@ -18,16 +15,16 @@
 .inputContainer {
   display: flex;
   position: relative;
-  height: --size-150;
+  height: var(--size-150);
   width: 100%;
 
   &.medium {
-    height: --size-130;
+    height: var(--size-130);
   }
 }
 
 .icon {
-  color: --icon-primary;
+  color: var(--semantic-icon-primary);
   position: absolute;
   margin-left: 0.875rem;
   left: 0;
@@ -47,30 +44,30 @@
   background-color: transparent;
 
   &.medium {
-    height: --size-130;
+    height: var(--size-130);
     padding: 0.625rem 0.875rem;
   }
 }
 
 .input {
   all: unset;
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   box-sizing: border-box;
   line-height: 1rem;
   appearance: none;
-  background-color: --field-01;
+  background-color: var(--semantic-field-01);
   width: 100%;
-  height: --size-150;
-  padding: --size-70 0 --size-70 --size-150;
-  border-bottom: 1px solid --border-primary;
+  height: var(--size-150);
+  padding: var(--size-70) 0 var(--size-70) var(--size-150);
+  border-bottom: 1px solid var(--semantic-border-primary);
 
   &.medium {
-    height: --size-130;
-    padding: --size-50 0 --size-50 --size-150;
+    height: var(--size-130);
+    padding: var(--size-50) 0 var(--size-50) var(--size-150);
   }
 
   &:focus-visible {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -79,7 +76,7 @@
   }
 
   &[aria-invalid='true'] {
-    border: 2px solid --support-border-warning;
+    border: 2px solid var(--semantic-support-border-warning);
   }
 
   &[data-disabled] {

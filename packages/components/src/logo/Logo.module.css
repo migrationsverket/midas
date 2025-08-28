@@ -1,6 +1,3 @@
-@value tokens: "../theme/tokens.css";
-@value --logo-primary, --background-inverse from tokens;
-
 .container {
   padding: 1rem;
   display: inline-flex;
@@ -16,11 +13,11 @@
 }
 
 .primary {
-  fill: --logo-primary;
+  fill: var(--semantic-logo-primary);
 }
 
 .dark {
-  fill: --background-inverse;
+  fill: var(--semantic-background-inverse);
 }
 
 .xSmall {

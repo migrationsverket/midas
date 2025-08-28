@@ -1,13 +1,10 @@
-@value tokens: "../theme/tokens.css";
-@value --breakpoint-xs from tokens;
-
 .buttonGroup {
   display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
 }
 
-@media --breakpoint-xs {
+@media var(--breakpoint-xs) {
   .buttonGroup > * {
     width: 100%;
   }

@@ -1,8 +1,5 @@
-@value tokens: "../theme/tokens.css";
-@value --border-disabled, --border-secondary, --border-subtle, --border-tertiary, --breakpoint-xs, --focus, --font-family, --size-10, --size-50, --size-70, --size-80, --size-130, --text-disabled, --text-primary from tokens;
-
 .container {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
 }
 
 .list {
@@ -11,53 +8,53 @@
 }
 
 .listItem {
-  border-bottom: --size-10 solid --border-subtle;
+  border-bottom: var(--size-10) solid var(--semantic-border-subtle);
   box-sizing: border-box;
-  color: --text-primary;
-  height: --size-130;
-  padding: --size-50 --size-80;
+  color: var(--semantic-text-primary);
+  height: var(--size-130);
+  padding: var(--size-50) var(--size-80);
 
   &[data-disabled] {
-    border-color: --border-disabled;
-    color: --text-disabled;
+    border-color: var(--semantic-border-disabled);
+    color: var(--semantic-text-disabled);
   }
 
   &[data-selected] {
     font-weight: 500;
-    border-color: --border-tertiary;
+    border-color: var(--semantic-border-tertiary);
 
     &[data-hovered] {
-      border-color: --border-tertiary;
+      border-color: var(--semantic-border-tertiary);
     }
   }
 
   &[data-hovered] {
-    border-color: --border-secondary;
+    border-color: var(--semantic-border-secondary);
     cursor: pointer;
   }
 
   &[data-focus-visible] {
     outline: none;
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
   }
 
-  @media --breakpoint-xs {
+  @media var(--breakpoint-xs) {
     border-bottom: 0;
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: --size-10 solid --border-tertiary;
-      padding-left: --size-70;
+      border-left: var(--size-10) solid var(--semantic-border-tertiary);
+      padding-left: var(--size-70);
     }
   }
 }
 
 .panel {
-  margin-top: --size-80;
-  color: --text-primary;
+  margin-top: var(--size-80);
+  color: var(--semantic-text-primary);
 
   &[data-focus-visible] {
     outline: none;
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
   }
 }

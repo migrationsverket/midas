@@ -1,15 +1,12 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --size-50, --layer-01, --background, --text-primary, --z-index-modal, --z-index-above from tokens;
-
 .modal {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   position: fixed;
   max-width: 75%;
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: --background;
-  color: --text-primary;
+  background-color: var(--semantic-background);
+  color: var(--semantic-text-primary);
   border: none;
   padding: 0;
   margin: auto;
@@ -27,7 +24,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: --z-index-modal;
+  z-index: var(--z-index-modal);
   width: 100vw;
   background: rgba(45 0 0 / 30%);
   display: flex;
@@ -45,13 +42,13 @@
 }
 
 .modalHeader {
-  background-color: --layer-01;
+  background-color: var(--semantic-layer-01);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: sticky;
   top: 0;
-  z-index: --z-index-above;
+  z-index: var(--z-index-above);
 }
 
 .modalTitle {
@@ -63,7 +60,7 @@
 .modalBody {
   position: relative;
   padding: 1rem 2rem 2rem;
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   display: flex;
   flex-direction: column;
   gap: 1rem;

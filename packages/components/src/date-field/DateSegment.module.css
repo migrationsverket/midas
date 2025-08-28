@@ -1,18 +1,15 @@
-@value tokens: "../theme/tokens.css";
-@value --focus, --text-disabled, --text-placeholder, --text-primary from tokens;
-
 .dateSegment {
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   padding: 0 0.125rem;
   text-transform: uppercase;
 
   &[data-disabled] {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
   }
 
   &:focus-visible,
   &[data-focus-visible] {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
     outline: none;
 
     @media (forced-colors: active) {
@@ -22,6 +19,6 @@
   }
 
   &[data-placeholder] {
-    color: --text-placeholder;
+    color: var(--semantic-text-placeholder);
   }
 }

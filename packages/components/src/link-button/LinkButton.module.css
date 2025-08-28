@@ -1,17 +1,14 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --font-size-30, --breakpoint-xs, --button-background-primary, --button-border-secondary, --text-on-color, --button-background-primary-hover, --button-background-primary-active, --focus, --button-background-disabled, --text-disabled, --text-tertiary, --border-tertiary, --button-background-secondary, --button-background-secondary-hover, --button-background-secondary-active, --border-disabled, --button-background-tertiary-hover, --button-background-tertiary-active, --button-background-danger, --button-background-danger-hover, --button-background-danger-active, --white, --icon-secondary, --button-background-icon-hover, --icon-tertiary, --size-50, --size-100, --size-70, --size-80 from tokens;
-
 .linkButton {
   --border-width: 1px;
 
-  font-family: --font-family;
-  font-size: --font-size-30;
+  font-family: var(--typography-font-family);
+  font-size: var(--typography-font-size-30);
   font-weight: 500;
-  padding: calc(--size-70 - var(--border-width))
-    calc(--size-100 - var(--border-width));
-  background-color: --button-background-primary;
+  padding: calc(var(--size-70) - var(--border-width))
+    calc(var(--size-100) - var(--border-width));
+  background-color: var(--semantic-button-background-primary);
   border: solid var(--border-width) transparent;
-  color: --text-on-color;
+  color: var(--semantic-text-on-color);
   cursor: pointer;
   outline: none;
   display: inline-flex;
@@ -24,19 +21,19 @@
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
     text-decoration: none;
-    background-color: --button-background-primary-hover;
-    color: --text-on-color;
+    background-color: var(--semantic-button-background-primary-hover);
+    color: var(--semantic-text-on-color);
   }
 
   &[data-pressed],
   &:active {
-    background-color: --button-background-primary-active;
+    background-color: var(--semantic-button-background-primary-active);
     outline: none;
   }
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -46,100 +43,100 @@
 
   &[data-disabled],
   &:disabled {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
     cursor: not-allowed;
-    background-color: --button-background-disabled;
+    background-color: var(--semantic-button-background-disabled);
   }
 }
 
 .secondary {
-  color: --text-tertiary;
-  background-color: --button-background-secondary;
-  border-color: --button-border-secondary;
+  color: var(--semantic-text-tertiary);
+  background-color: var(--semantic-button-background-secondary);
+  border-color: var(--semantic-button-border-secondary);
 
   .icon {
-    color: --icon-tertiary;
+    color: var(--semantic-icon-tertiary);
   }
 
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
-    color: --text-tertiary;
-    background-color: --button-background-secondary-hover;
+    color: var(--semantic-text-tertiary);
+    background-color: var(--semantic-button-background-secondary-hover);
   }
 
   &[data-disabled],
   &:disabled {
-    border-color: --border-disabled;
+    border-color: var(--semantic-border-disabled);
 
     .icon {
-      color: --text-disabled;
+      color: var(--semantic-text-disabled);
     }
   }
 
   &[data-pressed],
   &:active {
-    background-color: --button-background-secondary-active;
+    background-color: var(--semantic-button-background-secondary-active);
   }
 }
 
 .tertiary {
-  color: --text-tertiary;
+  color: var(--semantic-text-tertiary);
   background-color: transparent;
   opacity: 1;
 
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
-    color: --text-tertiary;
-    background-color: --button-background-tertiary-hover;
+    color: var(--semantic-text-tertiary);
+    background-color: var(--semantic-button-background-tertiary-hover);
   }
 
   &[data-pressed],
   &:active {
-    background-color: --button-background-tertiary-active;
+    background-color: var(--semantic-button-background-tertiary-active);
   }
 }
 
 .danger {
-  color: --white;
-  background-color: --button-background-danger;
+  color: var(--color-white);
+  background-color: var(--semantic-button-background-danger);
   opacity: 1;
 
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
-    background-color: --button-background-danger-hover;
+    background-color: var(--semantic-button-background-danger-hover);
   }
 
   &[data-pressed],
   &:active {
-    background-color: --button-background-danger-active;
+    background-color: var(--semantic-button-background-danger-active);
     outline: none;
   }
 }
 
 .iconBtn {
   background-color: transparent;
-  padding: calc(--size-70 - var(--border-width));
-  color: --text-tertiary;
+  padding: calc(var(--size-70) - var(--border-width));
+  color: var(--semantic-text-tertiary);
   display: flex;
   align-items: center;
 
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
-    background-color: --button-background-icon-hover;
+    background-color: var(--semantic-button-background-icon-hover);
   }
 
   &[data-disabled],
   &:disabled {
-    color: --text-disabled;
+    color: var(--semantic-text-disabled);
   }
 
   &[data-pressed],
   &:active {
-    background-color: --button-background-tertiary-active;
+    background-color: var(--semantic-button-background-tertiary-active);
   }
 
   &.medium {
-    padding: calc(--size-50 - var(--border-width));
+    padding: calc(var(--size-50) - var(--border-width));
   }
 }
 
@@ -152,11 +149,11 @@
 }
 
 .medium {
-  padding: calc(--size-50 - var(--border-width))
-    calc(--size-80 - var(--border-width));
+  padding: calc(var(--size-50) - var(--border-width))
+    calc(var(--size-80) - var(--border-width));
 }
 
-@media --breakpoint-xs {
+@media var(--breakpoint-xs) {
   .button {
     width: 100%;
   }

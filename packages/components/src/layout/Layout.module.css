@@ -1,11 +1,8 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --breakpoint-xs, --breakpoint-lg, --background, --border-subtle, --font-size-10, --text-primary, --text-on-color, --line-height-20, --button-background-primary, --button-background-tertiary-hover, --button-background-tertiary-active, --text-secondary, --icon-primary, --focus, --z-index-base, --z-index-above, --z-index-skip-to-content, --menu-item-background-hover, --menu-item-background-selected, --border-tertiary from tokens;
-
 .baseLayout {
   --sideBarWidth: 230px;
   --headerHeight: 69px;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     --headerHeight: 85px;
   }
 }
@@ -18,26 +15,26 @@
 .header {
   position: sticky;
   top: 0;
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid --border-subtle;
-  background-color: --background;
+  border-bottom: 1px solid var(--semantic-border-subtle);
+  background-color: var(--semantic-background);
 
   &.headerExternal {
     padding: 1rem;
 
-    @media --breakpoint-lg {
+    @media var(--breakpoint-lg) {
       padding: 1.25rem 1rem;
       z-index: 3;
     }
   }
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     padding: 1.25rem 1rem;
-    z-index: calc(--z-index-base + --z-index-above);
+    z-index: calc(var(--z-index-base) + var(--z-index-above));
   }
 }
 
@@ -51,7 +48,7 @@
     display: none;
   }
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     gap: 2rem;
 
     > svg {
@@ -64,7 +61,7 @@
   display: none;
   max-height: 40px;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: flex;
   }
 }
@@ -78,14 +75,14 @@
 .toggleButton {
   display: block;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: none !important;
   }
 }
 
 .sidebar {
-  font-family: --font-family;
-  background-color: --background;
+  font-family: var(--typography-font-family);
+  background-color: var(--semantic-background);
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
@@ -96,10 +93,10 @@
   height: 100vh;
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
-  z-index: calc(--z-index-base);
-  border-right: 1px solid --border-subtle;
+  z-index: calc(var(--z-index-base));
+  border-right: 1px solid var(--semantic-border-subtle);
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     position: sticky;
     top: var(--headerHeight);
     align-self: start;
@@ -110,7 +107,7 @@
 }
 
 .main {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   flex: 0 0 auto;
   width: 100%;
   min-height: 100%;
@@ -119,7 +116,7 @@
 .app {
   background-clip: content-box;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     padding: 2rem;
   }
 }
@@ -141,7 +138,7 @@
 }
 
 .appName {
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   font-size: 0.875rem;
   font-weight: 400;
   margin: 0;
@@ -151,7 +148,7 @@
   display: none !important;
   padding: calc(0.875rem - 1px) !important;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: flex !important;
   }
 }
@@ -167,14 +164,14 @@
 }
 
 .userName {
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   margin: 0;
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   display: none;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: block;
   }
 }
@@ -186,13 +183,13 @@
 }
 
 .userTitle {
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   margin: 0;
   font-size: 0.875rem;
   font-weight: 400;
   display: none;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: block;
   }
 }
@@ -203,7 +200,7 @@
   font-weight: 500;
   display: block;
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: none;
   }
 }
@@ -222,7 +219,7 @@
 }
 
 .listGroupTitle {
-  color: --text-secondary;
+  color: var(--semantic-text-secondary);
   font-size: 0.875rem;
   padding: 0.5rem;
   margin: 0;
@@ -243,29 +240,29 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 0.5rem;
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   flex: 1 0 0%;
   transition: 100ms;
   text-decoration: none;
 
   svg {
-    stroke: --icon-primary;
+    stroke: var(--semantic-icon-primary);
   }
 
   &[data-hovered],
   &:visited {
-    background-color: --menu-item-background-hover;
-    color: --text-primary;
+    background-color: var(--semantic-menu-item-background-hover);
+    color: var(--semantic-text-primary);
     cursor: pointer;
 
     svg {
-      stroke: --icon-primary;
+      stroke: var(--semantic-icon-primary);
       min-width: 1.25rem;
     }
   }
 
   &[data-pressed] {
-    background-color: --button-background-tertiary-active;
+    background-color: var(--semantic-button-background-tertiary-active);
   }
 
   &[data-focused] {
@@ -277,7 +274,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
     outline: none;
   }
 }
@@ -288,9 +285,9 @@
 }
 
 .active {
-  background-color: --menu-item-background-selected;
-  color: --text-primary;
-  border-left: 0.125rem solid --border-tertiary;
+  background-color: var(--semantic-menu-item-background-selected);
+  color: var(--semantic-text-primary);
+  border-left: 0.125rem solid var(--semantic-border-tertiary);
   font-weight: 600;
 }
 
@@ -333,7 +330,7 @@
   position: absolute;
   top: 0;
   right: 100%;
-  z-index: --z-index-skip-to-content;
+  z-index: var(--z-index-skip-to-content);
 
   &[data-focus-visible],
   &:focus-visible {
@@ -347,12 +344,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid --border-subtle;
-  background-color: --background;
+  border-top: 1px solid var(--semantic-border-subtle);
+  background-color: var(--semantic-background);
 }
 
 .navbarList {
@@ -372,7 +369,7 @@
     align-items: stretch;
   }
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     max-width: 600px;
   }
 }
@@ -385,18 +382,18 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0.5rem;
-  color: --text-primary;
+  color: var(--semantic-text-primary);
   text-decoration: none;
-  font-size: --font-size-10;
-  line-height: --line-height-20;
+  font-size: var(--typography-font-size-10);
+  line-height: var(--typography-line-height-20);
   text-align: center;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 
   &[data-hovered],
   &[data-active] {
-    background-color: --button-background-primary;
-    color: --text-on-color;
+    background-color: var(--semantic-button-background-primary);
+    color: var(--semantic-text-on-color);
     cursor: pointer;
   }
 
@@ -404,7 +401,7 @@
     flex: 0 0 auto;
   }
 
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     gap: 0.5rem;
     flex-direction: row;
     padding: 1rem 0.5rem;
@@ -412,7 +409,7 @@
 }
 
 .headerExternal {
-  @media --breakpoint-xs {
+  @media var(--breakpoint-xs) {
     border: none;
   }
 }
@@ -432,7 +429,7 @@
   }
 
   .logoExternal {
-    @media --breakpoint-lg {
+    @media var(--breakpoint-lg) {
       display: none;
     }
   }
@@ -440,14 +437,14 @@
   .logoExternalDesktop {
     display: none;
 
-    @media --breakpoint-lg {
+    @media var(--breakpoint-lg) {
       display: block;
     }
   }
 }
 
 .navbarWrapper {
-  @media --breakpoint-lg {
+  @media var(--breakpoint-lg) {
     display: none;
   }
 }

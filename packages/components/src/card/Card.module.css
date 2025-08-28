@@ -1,11 +1,8 @@
-@value tokens: "../theme/tokens.css";
-@value --font-family, --background, --border-primary, --layer-01, --layer-hover-01, --border-secondary, --support-background-success, --support-border-success, --support-background-warning, --support-border-warning, --button-background-icon-hover, --button-background-icon-active, --focus, --z-index-base, --icon-primary from tokens;
-
 .card {
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
   position: relative;
-  background-color: --layer-01;
-  border-bottom: 1px solid --border-secondary;
+  background-color: var(--semantic-layer-01);
+  border-bottom: 1px solid var(--semantic-border-secondary);
 
   &.horizontal {
     display: flex;
@@ -13,7 +10,7 @@
   }
 
   &:has(.cardLink:hover) {
-    background-color: --layer-hover-01;
+    background-color: var(--semantic-layer-hover-01);
   }
 }
 
@@ -55,11 +52,11 @@
   width: 100%;
 
   &[data-hovered] {
-    background-color: --button-background-icon-hover;
+    background-color: var(--semantic-button-background-icon-hover);
   }
 
   &[data-pressed] {
-    background-color: --button-background-icon-active;
+    background-color: var(--semantic-button-background-icon-active);
   }
 
   &:focus {
@@ -67,7 +64,7 @@
   }
 
   &[data-focused] {
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 2px solid highlight;
@@ -97,7 +94,7 @@
   &[data-focused],
   &:focus {
     outline: none;
-    box-shadow: --focus;
+    box-shadow: var(--state-focus);
 
     @media (forced-colors: active) {
       outline: 2px solid highlight;
@@ -107,11 +104,11 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: --z-index-base;
+    z-index: var(--z-index-base);
     content: '';
   }
 
   .cardLinkIcon {
-    color: --icon-primary;
+    color: var(--semantic-icon-primary);
   }
 }

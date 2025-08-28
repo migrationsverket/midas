@@ -1,6 +1,3 @@
-@value tokens: "../theme/tokens.css";
-@value --skeleton-01, --skeleton-02, --layer-01, --background-inverse from tokens;
-
 @keyframes wave {
   0% {
     transform: translateX(-100%);
@@ -12,7 +9,7 @@
 }
 
 .skeleton {
-  background: --skeleton-01;
+  background: var(--semantic-skeleton-01);
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -37,7 +34,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    --background-inverse,
+    var(--semantic-background-inverse),
     transparent
   );
   animation: wave 2s infinite ease-in-out;
@@ -51,5 +48,5 @@
 }
 
 .onLayer01 {
-  background-color: --skeleton-02;
+  background-color: var(--semantic-skeleton-02);
 }
