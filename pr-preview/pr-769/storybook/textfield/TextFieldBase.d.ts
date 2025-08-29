@@ -23,4 +23,4 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
     size?: Size;
     popover?: InfoPopoverProps;
 }
-export declare const TextFieldBase: React.FC<TextFieldBaseProps>;
+export declare const TextFieldBase: React.ForwardRefExoticComponent<TextFieldBaseProps & React.RefAttributes<HTMLDivElement>>;
