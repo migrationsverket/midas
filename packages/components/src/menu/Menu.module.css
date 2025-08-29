@@ -1,10 +1,7 @@
-@value tokens: "../theme/tokens.css";
-@value --border-secondary, --button-background-secondary-active, --focus, --focus-inset, --font-family, --font-size-10, --font-size-20, --font-size-30, --icon-disabled, --icon-primary, --layer-01, --layer-hover-01, --line-height-10, --line-height-20, --line-height-30, --link-enabled, --link-hover, --link-pressed, --link-visited, --menu-item-background-selected, --menu-text-section-header, --size-05, --size-10, --size-20, --size-30, --size-40, --size-50, --size-60, --size-80, --text-disabled, --text-primary, --text-secondary from tokens;
-
 .menu {
-  background-color: --layer-01;
+  background-color: var(--semantic-layer-01);
   box-shadow: 0 3px 5px 0 rgb(0 0 0 / 20%);
-  font-family: --font-family;
+  font-family: var(--typography-font-family);
 
   &:focus-visible {
     outline: none;
@@ -12,35 +9,35 @@
 
   .menuSection {
     header {
-      background-color: --layer-01;
-      color: --menu-text-section-header;
+      background-color: var(--semantic-layer-01);
+      color: var(--semantic-menu-text-section-header);
       display: flex;
-      font-size: --font-size-20;
-      line-height: --line-height-20;
-      padding: --size-80 --size-80 --size-10 --size-60;
+      font-size: var(--typography-font-size-20);
+      line-height: var(--typography-line-height-20);
+      padding: var(--size-80) var(--size-80) var(--size-10) var(--size-60);
     }
   }
 
   &.medium .menuSection {
     header {
-      padding: --size-80 --size-60 --size-10;
+      padding: var(--size-80) var(--size-60) var(--size-10);
     }
   }
 
   .menuItem {
     align-items: center;
-    background-color: --layer-01;
-    color: --text-primary;
+    background-color: var(--semantic-layer-01);
+    color: var(--semantic-text-primary);
     display: flex;
-    font-size: --font-size-30;
+    font-size: var(--typography-font-size-30);
     gap: 0;
     justify-content: start;
-    line-height: --line-height-30;
-    padding: --size-50 --size-40 --size-50 --size-80;
+    line-height: var(--typography-line-height-30);
+    padding: var(--size-50) var(--size-40) var(--size-50) var(--size-80);
 
     &[data-disabled] {
-      background-color: --menu-item-background-selected;
-      color: --text-disabled;
+      background-color: var(--semantic-menu-item-background-selected);
+      color: var(--semantic-text-disabled);
       cursor: not-allowed;
     }
 
@@ -49,38 +46,38 @@
     }
 
     &[data-focus-visible] {
-      background-color: --menu-item-background-selected;
-      box-shadow: --focus-inset;
+      background-color: var(--semantic-menu-item-background-selected);
+      box-shadow: var(--state-focus-inset);
       outline: none;
     }
 
     &:not([data-has-submenu]) {
-      padding-right: --size-80;
+      padding-right: var(--size-80);
     }
 
     &[data-hovered] {
-      background-color: --layer-hover-01;
+      background-color: var(--semantic-layer-hover-01);
       cursor: pointer;
       transition-delay: 60ms;
     }
 
     &[data-open] {
-      background-color: --button-background-secondary-active;
+      background-color: var(--semantic-button-background-secondary-active);
     }
 
     [slot='description'] {
-      font-size: --font-size-10;
+      font-size: var(--typography-font-size-10);
       grid-area: description;
-      line-height: --line-height-10;
+      line-height: var(--typography-line-height-10);
       margin: 0;
     }
 
     kbd {
-      color: --text-secondary;
-      font-family: --font-family;
-      font-size: --font-size-20;
+      color: var(--semantic-text-secondary);
+      font-family: var(--typography-font-family);
+      font-size: var(--typography-font-size-20);
       grid-area: kbd;
-      margin-left: --size-60;
+      margin-left: var(--size-60);
     }
 
     .mainContent {
@@ -95,11 +92,11 @@
     }
 
     .checkMark {
-      color: --icon-disabled;
-      margin-right: --size-40;
+      color: var(--semantic-icon-disabled);
+      margin-right: var(--size-40);
 
       &[data-selected] {
-        color: --icon-primary;
+        color: var(--semantic-icon-primary);
       }
     }
   }
@@ -107,36 +104,36 @@
   .separator {
     align-items: flex-start;
     align-self: stretch;
-    background-color: --layer-01;
-    border-bottom: --size-05 solid --border-secondary;
+    background-color: var(--semantic-layer-01);
+    border-bottom: var(--size-05) solid var(--semantic-border-secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0 --size-20 --size-30;
-    padding: --size-30 0 0;
+    margin: 0 var(--size-20) var(--size-30);
+    padding: var(--size-30) 0 0;
   }
 
   &.medium .menuItem {
-    padding: --size-30 --size-40 --size-30 --size-80;
+    padding: var(--size-30) var(--size-40) var(--size-30) var(--size-80);
 
     &:not([data-has-submenu]) {
-      padding-right: --size-80;
+      padding-right: var(--size-80);
     }
   }
 
   a.menuItem {
-    color: --link-enabled;
+    color: var(--semantic-link-enabled);
 
     &[data-hovered] {
-      color: --link-hover;
+      color: var(--semantic-link-hover);
     }
 
     &:visited {
-      color: --link-visited;
+      color: var(--semantic-link-visited);
     }
 
     &[data-pressed]:not([data-disabled]) {
-      color: --link-pressed;
+      color: var(--semantic-link-pressed);
     }
   }
 }
