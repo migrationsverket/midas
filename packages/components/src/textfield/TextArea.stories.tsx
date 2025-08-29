@@ -14,6 +14,7 @@ export default {
     description: 'Description',
     errorPosition: 'top',
   },
+
   argTypes: {
     size: { table: { disable: true } },
   },
@@ -35,6 +36,23 @@ export const Primary: Story = {
         )
       },
     )
+  },
+}
+
+export const IsNotResizable = {
+  args: {
+    isResizable: false,
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `<TextArea 
+                  label="Label" 
+                  description="Description" 
+                  isResizable={false} 
+                />`,
+      },
+    },
   },
 }
 

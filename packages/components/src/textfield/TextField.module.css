@@ -41,8 +41,6 @@
   word-wrap: break-word;
   width: 100%;
   color: var(--semantic-text-primary);
-  resize: both;
-  overflow: auto;
 
   @media (forced-colors: active) {
     outline: 3px solid;
@@ -73,6 +71,15 @@
     border: none;
     border-bottom: 1px solid var(--semantic-border-disabled);
   }
+}
+
+.resizable {
+  resize: both;
+  overflow: auto;
+}
+
+.noResize {
+  resize: none;
 }
 
 .wrap {

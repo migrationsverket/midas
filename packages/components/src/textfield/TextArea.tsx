@@ -15,13 +15,18 @@ export interface TextAreaProps
   form?: string
   rows?: number
   wrap?: string
+  isResizable?: boolean
 }
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ className, form, rows, wrap, ...rest }, ref) => (
+  ({ className, form, rows, wrap, isResizable = true, ...rest }, ref) => (
     <TextFieldBase {...rest}>
       <AriaTextArea
-        className={clsx(styles.textArea, className)}
+        className={clsx(
+          styles.textArea,
+          className,
+          isResizable ? styles.resizable : styles.noResize,
+        )}
         form={form}
         ref={ref}
         rows={rows}
