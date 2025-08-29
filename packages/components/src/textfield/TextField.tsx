@@ -12,13 +12,15 @@ export interface TextFieldProps extends Omit<TextFieldBaseProps, 'children'> {
 }
 
 export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ className, form, list, ...rest }, ref) => (
+  ({ className, form, list, type, ...rest }, ref) => (
     <TextFieldBase {...rest}>
       <Input
         className={clsx(className)}
         form={form}
         list={list}
         ref={ref}
+        type={type}
+        skipContext
       />
     </TextFieldBase>
   ),

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { TextArea } from './TextArea'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent } from 'storybook/test'
+import { expect, fn, userEvent } from 'storybook/test'
 import styles from './TextField.module.css'
 
 const stringOfLength = (length: number) => new Array(length + 1).join('x')
@@ -193,5 +193,33 @@ export const ShowCounterWithDefaultValue: Story = {
         ).toBeInTheDocument()
       },
     )
+  },
+}
+
+export const DS1326: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    onBlur: fn(),
+    onFocus: fn(),
+  },
+  play: async ({ args, step }) => {
+    await step('focus textarea', async () => {
+      await userEvent.tab()
+    })
+
+    await step('it should call onFocus once', async () => {
+      await expect(args.onFocus).toHaveBeenCalledOnce()
+    })
+
+    await step('blur textarea', async () => {
+      await userEvent.tab()
+    })
+
+    await step('it should call onBlur once', async () => {
+      await expect(args.onBlur).toHaveBeenCalledOnce()
+    })
   },
 }
