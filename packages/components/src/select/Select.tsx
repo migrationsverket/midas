@@ -132,6 +132,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
                   }
                   isReadOnly
                   excludeFromTabOrder
+                  aria-label={strings.format('selectAll')}
                 />
               </div>
               <span>{strings.format('selectAll')}</span>
