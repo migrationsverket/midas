@@ -30,6 +30,7 @@ import {
 import { LabelWrapper } from '../label/LabelWrapper'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { Spinner } from '../spinner'
 
 export interface ComboBoxProps<T extends ListBoxOption>
   extends Omit<AriaComboBoxProps<T>, 'children'> {
@@ -45,6 +46,7 @@ export interface ComboBoxProps<T extends ListBoxOption>
    * */
   size?: Size
   popover?: InfoPopoverProps
+  isLoading?: boolean
 }
 
 export function ComboBox<T extends ListBoxOption>({
@@ -57,6 +59,7 @@ export function ComboBox<T extends ListBoxOption>({
   errorPosition = 'top',
   size = 'large',
   popover,
+  isLoading,
   ...props
 }: ComboBoxProps<T>) {
   const inputRef = React.useRef<HTMLInputElement>(null)
@@ -72,6 +75,9 @@ export function ComboBox<T extends ListBoxOption>({
     <AriaComboBox
       className={clsx(styles.combobox, className)}
       {...props}
+      allowsEmptyCollection={
+        props.allowsEmptyCollection || typeof isLoading !== 'undefined'
+      }
     >
       <LabelWrapper popover={popover}>
         {label && <Label>{label}</Label>}
@@ -109,7 +115,14 @@ export function ComboBox<T extends ListBoxOption>({
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
       <ListBoxPopover>
-        <ListBox items={items}>{children}</ListBox>
+        {isLoading ? (
+          <div className={styles.loader}>
+            <Spinner small />
+            <span aria-hidden>{strings.format('loading')}</span>
+          </div>
+        ) : (
+          <ListBox items={items}>{children}</ListBox>
+        )}
       </ListBoxPopover>
     </AriaComboBox>
   )

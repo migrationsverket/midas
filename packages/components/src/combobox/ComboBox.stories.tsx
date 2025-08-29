@@ -306,3 +306,37 @@ export const PerformanceTest: Story = {
     )
   },
 }
+
+export const Async: Story = {
+  args: {
+    placeholder: 'Välj eller sök frukt',
+    label: 'Välj en frukt på internet',
+    description: 'Töm fältet för att ladda om',
+  },
+  render: args => {
+    const [items, setItems] = React.useState<ListBoxSectionElement[]>([])
+    const [isLoading, setIsLoading] = React.useState(false)
+
+    const handleInputChange = async (value: string) => {
+      if (!value) {
+        return setItems([])
+      }
+
+      setIsLoading(!items.length)
+      await new Promise(r => setTimeout(r, 2000))
+      setItems(optionsWithSections)
+      setIsLoading(false)
+    }
+
+    return (
+      <ComboBox
+        {...args}
+        items={items}
+        onInputChange={handleInputChange}
+        isLoading={isLoading}
+      >
+        {item => <ComboBoxItem>{item.name}</ComboBoxItem>}
+      </ComboBox>
+    )
+  },
+}

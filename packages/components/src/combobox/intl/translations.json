@@ -1,8 +1,10 @@
 {
   "en": {
-    "showList": "Show list"
+    "showList": "Show list",
+    "loading": "Loading..."
   },
   "sv": {
-    "showList": "Visa lista"
+    "showList": "Visa lista",
+    "loading": "Laddar..."
   }
 }
