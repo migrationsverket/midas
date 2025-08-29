@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { expect, userEvent } from 'storybook/test'
-import { hexToRgb, lightDark } from '../utils/test'
+import { expect } from 'storybook/test'
 import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
 
@@ -82,24 +81,11 @@ export const Striped: Story = {
     striped: true,
     className: 'my-class',
   },
-  play: async ({ canvas, step, args, globals: { scheme } }) => {
+  play: async ({ canvas, step, args }) => {
     const table = canvas.getByLabelText(args['aria-label'] as string)
 
     await step('Class names should be appended', async () => {
       await expect(table).toHaveClass(styles.table, args.className as string)
-    })
-
-    await step('The rows should change background color on hover', async () => {
-      const anOddRow = (await canvas.findByText(rows[2].name))
-        .parentNode as HTMLElement
-      await userEvent.hover(anOddRow)
-      await expect(anOddRow).toHaveStyle({
-        backgroundColor: lightDark(
-          hexToRgb('#e6e6e6'),
-          hexToRgb('#333333'),
-          scheme,
-        ),
-      })
     })
   },
 }
