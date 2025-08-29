@@ -5,29 +5,33 @@ import { Text } from '../text'
 import styles from './TextField.module.css'
 import { Button } from '../button'
 import { InputProps } from './Input'
+import { InputContext, useContextProps } from 'react-aria-components'
 
-export const PasswordField: React.FC<InputProps> = ({ value }) => {
-  const [showPassword, setShowPassword] = React.useState(false)
-  const handlePress = () => setShowPassword(previousValue => !previousValue)
-  const strings = useLocalizedStringFormatter(messages)
+export const PasswordField = React.forwardRef<HTMLInputElement, InputProps>(
+  (props, ref) => {
+    ;[props, ref] = useContextProps(props, ref, InputContext)
+    const [showPassword, setShowPassword] = React.useState(false)
+    const handlePress = () => setShowPassword(previousValue => !previousValue)
+    const strings = useLocalizedStringFormatter(messages)
 
-  return (
-    <>
-      {showPassword && (
-        <Text
-          slot='description'
-          className={styles.passwordText}
+    return (
+      <>
+        {showPassword && (
+          <Text
+            slot='description'
+            className={styles.passwordText}
+          >
+            {props.value}
+          </Text>
+        )}
+        <Button
+          variant='tertiary'
+          onPress={handlePress}
+          className={styles.passwordButton}
         >
-          {value}
-        </Text>
-      )}
-      <Button
-        variant='tertiary'
-        onPress={handlePress}
-        className={styles.passwordButton}
-      >
-        {showPassword ? strings.format('hide') : strings.format('show')}
-      </Button>
-    </>
-  )
-}
+          {showPassword ? strings.format('hide') : strings.format('show')}
+        </Button>
+      </>
+    )
+  },
+)

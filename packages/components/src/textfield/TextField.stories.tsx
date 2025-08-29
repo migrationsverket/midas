@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
-import { expect, userEvent } from 'storybook/test'
+import { expect, fn, userEvent } from 'storybook/test'
 import { TextField } from '../textfield'
 
 export default {
@@ -256,5 +256,33 @@ export const WithHelpPopover: Story = {
         'An assistive text that helps the user understand the field better.',
       'aria-label': 'Mer information',
     },
+  },
+}
+
+export const DS1326: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    onBlur: fn(),
+    onFocus: fn(),
+  },
+  play: async ({ args, step }) => {
+    await step('focus textfield', async () => {
+      await userEvent.tab()
+    })
+
+    await step('it should call onFocus once', async () => {
+      await expect(args.onFocus).toHaveBeenCalledOnce()
+    })
+
+    await step('blur textfield', async () => {
+      await userEvent.tab()
+    })
+
+    await step('it should call onBlur once', async () => {
+      await expect(args.onBlur).toHaveBeenCalledOnce()
+    })
   },
 }
