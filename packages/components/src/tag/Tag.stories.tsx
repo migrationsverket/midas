@@ -16,6 +16,7 @@ export default {
   tags: ['autodocs'],
   args: {
     children: 'Title',
+    textValue: 'Title',
     dismissable: true,
     className: 'test-class',
   },
