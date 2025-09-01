@@ -132,7 +132,8 @@ return (
 ## Asynkron laddning
 
 Om data finns på en server kan en laddningsindikator visas med en `ListBoxLoadMoreItem`-komponent.
-Använd `allowsEmptyCollection` hos `ComboBox` för att visa ett "inga-träffar"-meddelande om sökfrågan inte gav något resultat.
+
+Använd `allowsEmptyCollection` hos `ComboBox` och rendera bara `ListBoxLoadMoreItem` vid laddning för att visa ett "inga-träffar"-meddelande om sökfrågan inte gav något resultat.
 
 ```tsx
 import { useAsyncList } from 'react-stately'

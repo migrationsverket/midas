@@ -95,5 +95,6 @@
   align-items: center;
   display: flex;
   gap: var(--size-80);
+  line-height: var(--typography-line-height-30);
   padding: var(--size-80) var(--size-80) var(--size-60) var(--size-80);
 }
