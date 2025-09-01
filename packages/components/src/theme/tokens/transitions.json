@@ -1,0 +1,16 @@
+{
+  "transitions": {
+    "slow": {
+      "$type": "duration",
+      "$value": "500ms"
+    },
+    "normal": {
+      "$type": "duration",
+      "$value": "300ms"
+    },
+    "fast": {
+      "$type": "duration",
+      "$value": "250ms"
+    }
+  }
+}

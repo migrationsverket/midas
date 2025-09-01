@@ -1,0 +1,20 @@
+{
+  "windowSizes": {
+    "$type": "dimension",
+    "sm": { "$value": "480px" },
+    "md": { "$value": "768px" },
+    "lg": { "$value": "1024px" },
+    "xl": { "$value": "1280px" }
+  },
+  "breakpoints": {
+    "$type": "string",
+    "xs": { "$value": "(max-width: calc({windowSizes.sm} - 1px))" },
+    "sm": { "$value": "(min-width: {windowSizes.sm})" },
+    "md": { "$value": "(min-width: {windowSizes.md})" },
+    "lg": { "$value": "(min-width: {windowSizes.lg})" },
+    "xl": { "$value": "(min-width: {windowSizes.xl})" },
+    "forcedColorsMode": { "$value": "(forced-colors: active)" },
+    "darkMode": { "$value": "(prefers-color-scheme: dark)" },
+    "prefersReducedMotion": { "$value": "(prefers-reduced-motion: reduced)" }
+  }
+}

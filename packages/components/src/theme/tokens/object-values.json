@@ -1,0 +1,344 @@
+{
+  "background": {
+    "base": {
+      "$value": "light-dark({colors.white}, {colors.gray.200})"
+    },
+    "hover": {
+      "$value": "light-dark({colors.whiteHover}, {colors.gray.190})"
+    },
+    "inverse": {
+      "$value": "light-dark({colors.gray.200}, {colors.gray.10})"
+    }
+  },
+  "layer": {
+    "01": {
+      "base": {
+        "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+      },
+      "hover": {
+        "$value": "light-dark({colors.gray.20}, {colors.gray.170})"
+      },
+      "selected": {
+        "$value": "light-dark({colors.gray.30}, {colors.gray.160})"
+      },
+      "selectedHover": {
+        "$value": "light-dark({colors.gray.40}, {colors.gray.150})"
+      }
+    },
+    "02": {
+      "base": {
+        "$value": "light-dark({colors.white}, {colors.gray.160})"
+      },
+      "hover": {
+        "$value": "light-dark({colors.whiteHover}, {colors.gray.150})"
+      },
+      "selected": {
+        "$value": "light-dark({colors.gray.30}, {colors.gray.140})"
+      },
+      "selectedHover": {
+        "$value": "light-dark({colors.gray.40}, {colors.gray.130})"
+      }
+    }
+  },
+  "layerAccent": {
+    "01": {
+      "base": {
+        "$value": "light-dark({colors.gray.30}, {colors.gray.160})"
+      },
+      "hover": {
+        "$value": "light-dark({colors.gray.40}, {colors.gray.150})"
+      },
+      "selected": {
+        "$value": "light-dark({colors.gray.50}, {colors.gray.140})"
+      }
+    },
+    "02": {
+      "base": {
+        "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+      },
+      "hover": {
+        "$value": "light-dark({colors.gray.20}, {colors.gray.170})"
+      },
+      "selected": {
+        "$value": "light-dark({colors.gray.30}, {colors.gray.160})"
+      }
+    }
+  },
+  "brand": {
+    "primary": {
+      "$value": "light-dark({colors.red.100}, {colors.red.100})"
+    }
+  },
+  "border": {
+    "primary": {
+      "$value": "light-dark({colors.gray.200}, {colors.gray.10})"
+    },
+    "secondary": {
+      "$value": "light-dark({colors.gray.110}, {colors.gray.90})"
+    },
+    "subtle": {
+      "$value": "light-dark({colors.gray.50}, {colors.gray.160})"
+    },
+    "tertiary": {
+      "$value": "light-dark({colors.blue.150}, {colors.blue.100})"
+    },
+    "disabled": {
+      "$value": "light-dark({colors.gray.50}, {colors.gray.140})"
+    }
+  },
+  "field": {
+    "01": {
+      "base": {
+        "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+      },
+      "hover": {
+        "$value": "light-dark({colors.gray.20}, {colors.gray.170})"
+      },
+      "active": {
+        "$value": "light-dark({colors.gray.30}, {colors.gray.160})"
+      }
+    },
+    "02": {
+      "base": {
+        "$value": "light-dark({colors.white}, {colors.gray.160})"
+      },
+      "hover": {
+        "$value": "light-dark({colors.whiteHover}, {colors.gray.150})"
+      },
+      "active": {
+        "$value": "light-dark({colors.gray.30}, {colors.gray.140})"
+      }
+    },
+    "disabled": {
+      "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+    }
+  },
+  "skeleton": {
+    "01": {
+      "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+    },
+    "02": {
+      "$value": "light-dark({colors.gray.30}, {colors.gray.160})"
+    }
+  },
+  "icon": {
+    "primary": {
+      "$value": "light-dark({colors.gray.200}, {colors.gray.10})"
+    },
+    "secondary": {
+      "$value": "light-dark({colors.gray.140}, {colors.gray.70})"
+    },
+    "tertiary": {
+      "$value": "light-dark({colors.blue.150}, {colors.gray.10})"
+    },
+    "inverse": {
+      "$value": "light-dark({colors.white}, {colors.gray.200})"
+    },
+    "onColor": {
+      "$value": "light-dark({colors.white}, {colors.white})"
+    },
+    "disabled": {
+      "$value": "light-dark({colors.gray.50}, {colors.gray.140})"
+    },
+    "success": {
+      "$value": "light-dark({colors.signalGreen.100}, {colors.signalGreen.100})"
+    },
+    "info": {
+      "$value": "light-dark({colors.signalBlue.100}, {colors.signalBlue.100})"
+    },
+    "warning": {
+      "$value": "light-dark({colors.signalRed.100}, {colors.signalRed.100})"
+    },
+    "important": {
+      "$value": "light-dark({colors.signalYellow.100}, {colors.signalYellow.100})"
+    }
+  },
+  "link": {
+    "enabled": {
+      "$value": "light-dark({colors.blue.120}, {colors.blue.70})"
+    },
+    "hover": {
+      "$value": "light-dark({colors.blue.150}, {colors.blue.50})"
+    },
+    "pressed": {
+      "$value": "light-dark({colors.gray.200}, {colors.blue.40})"
+    },
+    "visited": {
+      "$value": "light-dark({colors.purple.110}, {colors.purple.80})"
+    }
+  },
+  "support": {
+    "border": {
+      "success": {
+        "$value": "light-dark({colors.signalGreen.100}, {colors.signalGreen.100})"
+      },
+      "info": {
+        "$value": "light-dark({colors.signalBlue.100}, {colors.signalBlue.100})"
+      },
+      "important": {
+        "$value": "light-dark({colors.signalYellow.100}, {colors.signalYellow.100})"
+      },
+      "warning": {
+        "$value": "light-dark({colors.signalRed.100}, {colors.signalRed.100})"
+      }
+    },
+    "background": {
+      "success": {
+        "$value": "light-dark({colors.signalGreen.20}, {colors.gray.180})"
+      },
+      "successHover": {
+        "$value": "light-dark({colors.signalGreen.30}, {colors.gray.170})"
+      },
+      "info": {
+        "$value": "light-dark({colors.signalBlue.10}, {colors.gray.180})"
+      },
+      "important": {
+        "$value": "light-dark({colors.signalYellow.10}, {colors.gray.180})"
+      },
+      "warning": {
+        "$value": "light-dark({colors.signalRed.20}, {colors.gray.180})"
+      },
+      "warningHover": {
+        "$value": "light-dark({colors.signalRed.30}, {colors.gray.170})"
+      }
+    }
+  },
+  "text": {
+    "primary": {
+      "$value": "light-dark({colors.gray.200}, {colors.gray.10})"
+    },
+    "secondary": {
+      "$value": "light-dark({colors.gray.140}, {colors.gray.70})"
+    },
+    "tertiary": {
+      "$value": "light-dark({colors.blue.150}, {colors.gray.10})"
+    },
+    "onColor": {
+      "$value": "light-dark({colors.white}, {colors.white})"
+    },
+    "inverse": {
+      "$value": "light-dark({colors.gray.10}, {colors.gray.200})"
+    },
+    "disabled": {
+      "$value": "light-dark({colors.gray.50}, {colors.gray.140})"
+    },
+    "warning": {
+      "$value": "light-dark({colors.signalRed.100}, {colors.signalRed.80})"
+    },
+    "placeholder": {
+      "$value": "light-dark({colors.gray.70}, {colors.gray.140})"
+    }
+  },
+  "button": {
+    "background": {
+      "primary": {
+        "base": {
+          "$value": "light-dark({colors.blue.150}, {colors.blue.100})"
+        },
+        "hover": {
+          "$value": "light-dark({colors.blue.130}, {colors.blue.130})"
+        },
+        "active": {
+          "$value": "light-dark({colors.blue.100}, {colors.blue.150})"
+        }
+      },
+      "secondary": {
+        "base": {
+          "$value": "light-dark({colors.white}, {colors.gray.200})"
+        },
+        "hover": {
+          "$value": "light-dark({colors.whiteHover}, {colors.gray.190})"
+        },
+        "active": {
+          "$value": "light-dark({colors.gray.30}, {colors.gray.180})"
+        }
+      },
+      "tertiary": {
+        "hover": {
+          "$value": "light-dark({colors.whiteHover}, {colors.gray.190})"
+        },
+        "active": {
+          "$value": "light-dark({colors.gray.30}, {colors.gray.180})"
+        }
+      },
+      "danger": {
+        "base": {
+          "$value": "light-dark({colors.signalRed.100}, {colors.signalRed.100})"
+        },
+        "hover": {
+          "$value": "light-dark({colors.signalRed.120}, {colors.signalRed.120})"
+        },
+        "active": {
+          "$value": "light-dark({colors.signalRed.150}, {colors.signalRed.150})"
+        }
+      },
+      "disabled": {
+        "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+      }
+    },
+    "border": {
+      "secondary": {
+        "$value": "light-dark({colors.blue.150}, {colors.gray.10})"
+      }
+    },
+    "icon": {
+      "hover": {
+        "$value": "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))"
+      },
+      "active": {
+        "$value": "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))"
+      }
+    }
+  },
+  "badge": {
+    "background": {
+      "$value": "light-dark({colors.signalRed.100}, {colors.signalRed.80})"
+    },
+    "label": {
+      "$value": "light-dark({colors.white}, {colors.black})"
+    }
+  },
+  "calendar": {
+    "date": {
+      "background": {
+        "hover": {
+          "$value": "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))"
+        },
+        "selected": {
+          "$value": "light-dark({colors.blue.150}, {colors.blue.80})"
+        },
+        "startRange": {
+          "$value": "light-dark({colors.blue.150}, {colors.blue.80})"
+        },
+        "inRange": {
+          "$value": "light-dark({colors.blue.20}, {colors.blue.150})"
+        },
+        "endRange": {
+          "$value": "light-dark({colors.blue.150}, {colors.blue.80})"
+        }
+      }
+    }
+  },
+  "logo": {
+    "primary": {
+      "$value": "light-dark({colors.red.100}, {colors.white})"
+    }
+  },
+  "menu": {
+    "item": {
+      "background": {
+        "hover": {
+          "$value": "light-dark({colors.gray.20}, {colors.gray.190})"
+        },
+        "selected": {
+          "$value": "light-dark({colors.gray.10}, {colors.gray.180})"
+        }
+      }
+    },
+    "text": {
+      "sectionHeader": {
+        "$value": "light-dark({colors.blue.120}, {colors.blue.80})"
+      }
+    }
+  }
+}
