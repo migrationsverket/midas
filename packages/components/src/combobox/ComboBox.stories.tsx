@@ -6,8 +6,13 @@ import { expect, userEvent, within } from 'storybook/test'
 import styles from './ComboBox.module.css'
 
 import React from 'react'
-import type { ListBoxOption, ListBoxSectionElement } from '../list-box'
+import {
+  ListBoxLoadMoreItem,
+  type ListBoxOption,
+  type ListBoxSectionElement,
+} from '../list-box'
 import { useAsyncList } from 'react-stately'
+import { Collection } from 'react-aria-components'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -308,45 +313,91 @@ export const PerformanceTest: Story = {
   },
 }
 
-export const Async: Story = {
+export const AsynchronousLoadingWithEmptyMessage: Story = {
   args: {
     label: 'Star Wars Character Lookup',
     placeholder: 'Välj eller sök karaktär',
     description: 'Anropar ett externt API',
+    allowsEmptyCollection: true,
   },
   render: args => {
-    const { filterText, setFilterText, isLoading, items } =
-      useAsyncList<ListBoxOption>({
-        async load({ signal, cursor, filterText }) {
-          if (cursor) {
-            cursor = cursor.replace(/^http:\/\//i, 'https://')
-          }
+    const list = useAsyncList<ListBoxOption>({
+      async load({ signal, cursor, filterText }) {
+        if (cursor) {
+          cursor = cursor.replace(/^http:\/\//i, 'https://')
+        }
 
-          const res = await fetch(
-            cursor || `https://swapi.py4e.com/api/people/?search=${filterText}`,
-            { signal },
-          )
+        const res = await fetch(
+          cursor || `https://swapi.py4e.com/api/people/?search=${filterText}`,
+          { signal },
+        )
 
-          const { results, next } = await res.json()
+        const { results, next } = await res.json()
 
-          return {
-            items: results,
-            cursor: next,
-          }
-        },
-      })
+        return {
+          items: results,
+          cursor: next,
+        }
+      },
+    })
 
     return (
       <ComboBox
         {...args}
-        inputValue={filterText}
-        onInputChange={setFilterText}
-        isLoading={isLoading}
-        items={items}
+        inputValue={list.filterText}
+        onInputChange={list.setFilterText}
       >
-        {item => (
-          <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
-        )}
+        <Collection items={list.items}>
+          {item => (
+            <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
+          )}
+        </Collection>
+        {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
+      </ComboBox>
+    )
+  },
+}
+
+export const InfiniteScroll: Story = {
+  args: {
+    ...AsynchronousLoadingWithEmptyMessage.args,
+  },
+  render: args => {
+    const list = useAsyncList<ListBoxOption>({
+      async load({ signal, cursor, filterText }) {
+        if (cursor) {
+          cursor = cursor.replace(/^http:\/\//i, 'https://')
+        }
+
+        const res = await fetch(
+          cursor || `https://swapi.py4e.com/api/people/?search=${filterText}`,
+          { signal },
+        )
+
+        const { results, next } = await res.json()
+
+        return {
+          items: results,
+          cursor: next,
+        }
+      },
+    })
+
+    return (
+      <ComboBox
+        {...args}
+        inputValue={list.filterText}
+        onInputChange={list.setFilterText}
+      >
+        <Collection items={list.items}>
+          {item => (
+            <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
+          )}
+        </Collection>
+        <ListBoxLoadMoreItem
+          isLoading={list.loadingState === 'loadingMore'}
+          onLoadMore={list.loadMore}
+        />
       </ComboBox>
     )
   },

@@ -105,9 +105,8 @@
   transition: transform 0.3s ease;
 }
 
-.loader {
-  align-items: center;
-  display: flex;
-  gap: var(--size-80);
+span.emptyState {
+  display: block;
+  line-height: var(--typography-line-height-30);
   padding: var(--size-80) var(--size-80) var(--size-60) var(--size-80);
 }

@@ -90,3 +90,10 @@
     outline: none;
   }
 }
+
+.listBoxLoadMoreItem {
+  align-items: center;
+  display: flex;
+  gap: var(--size-80);
+  padding: var(--size-80) var(--size-80) var(--size-60) var(--size-80);
+}
