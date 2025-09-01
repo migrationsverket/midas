@@ -16,8 +16,7 @@ export interface ComboBoxProps<T extends ListBoxOption> extends Omit<AriaComboBo
      * */
     size?: Size;
     popover?: InfoPopoverProps;
-    isLoading?: boolean;
 }
-export declare function ComboBox<T extends ListBoxOption>({ label, description, errorMessage, children, items, className, errorPosition, size, popover, isLoading, ...props }: ComboBoxProps<T>): import("react/jsx-runtime").JSX.Element;
+export declare function ComboBox<T extends ListBoxOption>({ label, description, errorMessage, children, items, className, errorPosition, size, popover, ...props }: ComboBoxProps<T>): import("react/jsx-runtime").JSX.Element;
 export declare function ComboBoxItem<T extends ListBoxItemElement>(props: ListBoxItemProps<T>): import("react/jsx-runtime").JSX.Element;
 export declare function ComboBoxSection<T extends ListBoxSectionElement>(props: T): import("react/jsx-runtime").JSX.Element;
