@@ -6,7 +6,8 @@ import { expect, userEvent, within } from 'storybook/test'
 import styles from './ComboBox.module.css'
 
 import React from 'react'
-import type { ListBoxSectionElement } from '../list-box'
+import type { ListBoxOption, ListBoxSectionElement } from '../list-box'
+import { useAsyncList } from 'react-stately'
 
 const meta: Meta<typeof ComboBox> = {
   component: ComboBox,
@@ -309,33 +310,43 @@ export const PerformanceTest: Story = {
 
 export const Async: Story = {
   args: {
-    placeholder: 'Välj eller sök frukt',
-    label: 'Välj en frukt på internet',
-    description: 'Töm fältet för att ladda om',
+    label: 'Star Wars Character Lookup',
+    placeholder: 'Välj eller sök karaktär',
+    description: 'Anropar ett externt API',
   },
   render: args => {
-    const [items, setItems] = React.useState<ListBoxSectionElement[]>([])
-    const [isLoading, setIsLoading] = React.useState(false)
+    const { filterText, setFilterText, isLoading, items } =
+      useAsyncList<ListBoxOption>({
+        async load({ signal, cursor, filterText }) {
+          if (cursor) {
+            cursor = cursor.replace(/^http:\/\//i, 'https://')
+          }
 
-    const handleInputChange = async (value: string) => {
-      if (!value) {
-        return setItems([])
-      }
+          const res = await fetch(
+            cursor || `https://swapi.py4e.com/api/people/?search=${filterText}`,
+            { signal },
+          )
 
-      setIsLoading(!items.length)
-      await new Promise(r => setTimeout(r, 2000))
-      setItems(optionsWithSections)
-      setIsLoading(false)
-    }
+          const { results, next } = await res.json()
+
+          return {
+            items: results,
+            cursor: next,
+          }
+        },
+      })
 
     return (
       <ComboBox
         {...args}
-        items={items}
-        onInputChange={handleInputChange}
+        inputValue={filterText}
+        onInputChange={setFilterText}
         isLoading={isLoading}
+        items={items}
       >
-        {item => <ComboBoxItem>{item.name}</ComboBoxItem>}
+        {item => (
+          <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
+        )}
       </ComboBox>
     )
   },

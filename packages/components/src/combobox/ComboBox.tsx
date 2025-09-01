@@ -115,14 +115,23 @@ export function ComboBox<T extends ListBoxOption>({
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
       <ListBoxPopover>
-        {isLoading ? (
-          <div className={styles.loader}>
-            <Spinner small />
-            <span aria-hidden>{strings.format('loading')}</span>
-          </div>
-        ) : (
-          <ListBox items={items}>{children}</ListBox>
-        )}
+        <ListBox
+          items={items}
+          renderEmptyState={() => (
+            <div className={styles.loader}>
+              {isLoading ? (
+                <>
+                  <Spinner small />
+                  <span aria-hidden>{strings.format('loading')}</span>
+                </>
+              ) : (
+                strings.format('noResultsFound')
+              )}
+            </div>
+          )}
+        >
+          {children}
+        </ListBox>
       </ListBoxPopover>
     </AriaComboBox>
   )
