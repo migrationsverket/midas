@@ -3,8 +3,6 @@ import {
   ComboBoxItem,
   ComboBoxSection,
   ListBoxLoadMoreItem,
-  ListBoxOption,
-  type ComboBoxProps,
 } from '@midas-ds/components'
 import React from 'react'
 import { Collection, Key } from 'react-aria-components'
@@ -84,8 +82,8 @@ export const SectionedExample = () => {
   )
 }
 
-export const AsyncExample = (props: Partial<ComboBoxProps<ListBoxOption>>) => {
-  const list = useAsyncList<ListBoxOption>({
+export const AsyncExample = () => {
+  const list = useAsyncList<{ name: string }>({
     async load({ signal, cursor, filterText }) {
       if (cursor) {
         cursor = cursor.replace(/^http:\/\//i, 'https://')
@@ -115,9 +113,7 @@ export const AsyncExample = (props: Partial<ComboBoxProps<ListBoxOption>>) => {
       allowsEmptyCollection
     >
       <Collection items={list.items}>
-        {item => (
-          <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>
-        )}
+        {item => <ComboBoxItem id={item.name}>{item.name}</ComboBoxItem>}
       </Collection>
       {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
     </ComboBox>

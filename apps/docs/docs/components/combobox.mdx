@@ -138,15 +138,9 @@ Använd `allowsEmptyCollection` hos `ComboBox` och rendera bara `ListBoxLoadMore
 ```tsx
 import { useAsyncList } from 'react-stately'
 import { Collection } from 'react-aria-components'
-import {
-  ComboBox,
-  ComboBoxItem,
-  ListBoxLoadMoreItem,
-  type ListBoxOption,
-  type ComboBoxProps,
-} from '@midas-ds/components'
+import { ComboBox, ComboBoxItem, ListBoxLoadMoreItem } from '@midas-ds/components'
 
-const list = useAsyncList<ListBoxOption>({
+const list = useAsyncList<{ name: string }>({
   async load({ signal, cursor, filterText }) {
     if (cursor) {
       cursor = cursor.replace(/^http:\/\//i, 'https://')
@@ -175,7 +169,9 @@ return (
   >
     // highlight-start
     <Collection items={list.items}>
-      {item => <ComboBoxItem id={item.name?.toString()}>{item.name}</ComboBoxItem>}
+      {item => {
+        return <ComboBoxItem id={item.name}>{item.name}</ComboBoxItem>
+      }}
     </Collection>
     {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
     // highlight-end
