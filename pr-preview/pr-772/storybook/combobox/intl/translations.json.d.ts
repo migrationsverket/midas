@@ -1,11 +1,13 @@
 declare const _default: {
   "en": {
     "showList": "Show list",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "noResultsFound": "No results found"
   },
   "sv": {
     "showList": "Visa lista",
-    "loading": "Laddar..."
+    "loading": "Laddar...",
+    "noResultsFound": "Inga resultat hittades"
   }
 }
 ;
