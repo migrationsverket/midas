@@ -6,7 +6,7 @@
     "prepare": "husky",
     "commitlint": "commitlint --edit",
     "commit": "git-cz",
-    "build:tokens": "style-dictionary build --config sd.config.js"
+    "build:tokens": "node sd.build.mjs"
   },
   "private": false,
   "dependencies": {
