@@ -11,13 +11,14 @@ import { CheckboxGroupState } from 'react-stately'
 export type CheckboxProps = AriaCheckboxProps &
   SlotProps & {
     className?: string
+    ref?: React.RefObject<HTMLLabelElement | null>
   }
 
 export interface CheckboxComponentProps extends CheckboxProps {
   focusRingAria: FocusRingAria
   pressResult: PressResult
   hoverResult: HoverResult
-  inputRef: React.RefObject<HTMLInputElement>
+  inputRef: React.RefObject<HTMLInputElement | null>
 }
 
 export interface CheckboxGroupItemProps extends CheckboxComponentProps {

@@ -6,10 +6,10 @@ import { CheckboxInnerProps } from './types'
 import styles from './Checkbox.module.css'
 import { variables } from '@midas-ds/theme'
 
-export const CheckboxInner = React.forwardRef<
-  HTMLLabelElement,
-  CheckboxInnerProps
->((props, ref) => {
+export const CheckboxInner: React.FC<CheckboxInnerProps> = ({
+  ref,
+  ...props
+}) => {
   const { hoverProps, isHovered } = props.hoverResult
   const { pressProps, isPressed } = props.pressResult
   const { isFocused, isFocusVisible, focusProps } = props.focusRingAria
@@ -53,4 +53,4 @@ export const CheckboxInner = React.forwardRef<
       {props.children}
     </label>
   )
-})
+}
