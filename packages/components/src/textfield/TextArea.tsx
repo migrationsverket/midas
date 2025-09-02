@@ -10,23 +10,29 @@ import clsx from 'clsx'
 import styles from './TextField.module.css'
 
 export interface TextAreaProps
-  extends Omit<TextFieldBaseProps, 'children' | 'type' | 'pattern'> {
+  extends Omit<TextFieldBaseProps, 'children' | 'type' | 'pattern' | 'ref'> {
   className?: AriaTextAreaProps['className']
   form?: string
+  ref?: React.RefObject<HTMLTextAreaElement | null>
   rows?: number
   wrap?: string
 }
 
-export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ className, form, rows, wrap, ...rest }, ref) => (
-    <TextFieldBase {...rest}>
-      <AriaTextArea
-        className={clsx(styles.textArea, className)}
-        form={form}
-        ref={ref}
-        rows={rows}
-        wrap={wrap}
-      />
-    </TextFieldBase>
-  ),
+export const TextArea: React.FC<TextAreaProps> = ({
+  className,
+  form,
+  rows,
+  wrap,
+  ref,
+  ...rest
+}) => (
+  <TextFieldBase {...rest}>
+    <AriaTextArea
+      className={clsx(styles.textArea, className)}
+      form={form}
+      ref={ref}
+      rows={rows}
+      wrap={wrap}
+    />
+  </TextFieldBase>
 )

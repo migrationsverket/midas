@@ -9,19 +9,25 @@ export interface TextFieldProps extends Omit<TextFieldBaseProps, 'children'> {
   className?: InputProps['className']
   form?: string
   list?: string
+  ref?: React.RefObject<HTMLInputElement | null>
 }
 
-export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ className, form, list, type, ...rest }, ref) => (
-    <TextFieldBase {...rest}>
-      <Input
-        className={clsx(className)}
-        form={form}
-        list={list}
-        ref={ref}
-        type={type}
-        skipContext
-      />
-    </TextFieldBase>
-  ),
+export const TextField: React.FC<TextFieldProps> = ({
+  className,
+  form,
+  list,
+  ref,
+  type,
+  ...rest
+}) => (
+  <TextFieldBase {...rest}>
+    <Input
+      className={clsx(className)}
+      form={form}
+      list={list}
+      ref={ref}
+      type={type}
+      skipContext
+    />
+  </TextFieldBase>
 )

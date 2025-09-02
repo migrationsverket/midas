@@ -35,12 +35,13 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    * */
   size?: Size
   popover?: InfoPopoverProps
+  ref?: React.RefObject<HTMLDivElement | null>
 }
 
-export const TextFieldBase = React.forwardRef<
-  HTMLDivElement,
-  TextFieldBaseProps
->((props, ref) => {
+export const TextFieldBase: React.FC<TextFieldBaseProps> = ({
+  ref,
+  ...props
+}) => {
   ;[props] = useContextProps(props, ref, TextFieldContext)
 
   const {
@@ -80,4 +81,4 @@ export const TextFieldBase = React.forwardRef<
       )}
     </AriaTextField>
   )
-})
+}

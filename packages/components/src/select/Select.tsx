@@ -25,175 +25,175 @@ import messages from './intl/translations.json'
 interface MidasSelectProps extends SelectProps {
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
+  ref?: React.RefObject<HTMLButtonElement | null>
 }
 
-const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
-  ({ isClearable = true, popover, ...rest }, ref) => {
-    const props: MidasSelectProps = {
-      selectionMode: 'single',
-      errorPosition: 'top',
-      disallowEmptySelection: !isClearable,
-      isClearable,
-      size: 'large',
-      popover,
-      ...rest,
-    }
+const SelectComponent: React.FC<MidasSelectProps> = ({
+  ref,
+  isClearable = true,
+  popover,
+  ...rest
+}) => {
+  const props = {
+    selectionMode: 'single',
+    errorPosition: 'top',
+    disallowEmptySelection: !isClearable,
+    isClearable,
+    size: 'large',
+    popover,
+    ...rest,
+  } satisfies MidasSelectProps
 
-    const triggerRef = useObjectRef(ref)
+  const triggerRef = useObjectRef(ref)
 
-    const state = useMultiSelectState(props)
+  const state = useMultiSelectState(props)
 
-    const strings = useLocalizedStringFormatter(messages)
+  const strings = useLocalizedStringFormatter(messages)
 
-    const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
-      props,
-      state,
-      triggerRef,
-    )
+  const { labelProps, triggerProps, valueProps, menuProps } = useMultiSelect(
+    props,
+    state,
+    triggerRef,
+  )
 
-    const { width: triggerWidth } = useObserveElement(triggerRef.current, {
-      includePadding: true,
-    })
+  const { width: triggerWidth } = useObserveElement(triggerRef.current, {
+    includePadding: true,
+  })
 
-    return (
-      <TextField
-        {...props}
-        className={clsx(styles.wrapper, props.className)}
-      >
-        <HiddenMultiSelect
-          {...props}
-          state={state}
-          triggerRef={triggerRef}
-        />
-        <LabelWrapper popover={popover}>
-          {props.label && (
-            <Label
-              {...labelProps}
-              data-disabled={props.isDisabled || undefined}
-            >
-              {props.label}
-            </Label>
-          )}
-        </LabelWrapper>
-        {props.description && (
-          <Text slot='description'>{props.description}</Text>
-        )}
-        {props.errorPosition === 'top' && (
-          <SelectFieldError
-            {...props}
-            state={state}
-          />
-        )}
-        <SelectTrigger
-          {...props}
-          {...triggerProps}
-          isInvalid={state.displayValidation.isInvalid}
-          triggerRef={triggerRef}
-          state={state}
-        >
-          {props.selectionMode === 'multiple' && state.selectedItems ? (
-            <span {...valueProps}>
-              <MultiSelectValueTag
-                {...props}
-                state={state}
-                parentWidth={triggerWidth}
-                onClear={() => state.selectionManager.clearSelection()}
-                triggerRef={triggerRef}
-              />
-            </span>
-          ) : null}
-        </SelectTrigger>
-        {props.errorPosition === 'bottom' && (
-          <SelectFieldError
-            {...props}
-            state={state}
-          />
-        )}
-        <ListBoxPopover
-          isOpen={state.isOpen}
-          onOpenChange={(isOpen: boolean) => {
-            if (!isOpen) {
-              state.close()
-            }
-          }}
-          triggerRef={triggerRef}
-          style={{ width: triggerWidth }}
-        >
-          {props.isSelectableAll && (
-            <ListBoxButton
-              onClick={() => state.selectionManager.toggleSelectAll()}
-            >
-              <div className={styles.checkboxContainer}>
-                <Checkbox
-                  isSelected={state.selectionManager.isSelectAll}
-                  isIndeterminate={
-                    !state.selectionManager.isSelectAll &&
-                    !state.selectionManager.isEmpty
-                  }
-                  isReadOnly
-                  excludeFromTabOrder
-                  aria-label={strings.format('selectAll')}
-                />
-              </div>
-              <span>{strings.format('selectAll')}</span>
-            </ListBoxButton>
-          )}
-          <SelectListBox
-            {...menuProps}
-            state={state}
-          />
-        </ListBoxPopover>
-        {props.showTags && !!state.selectedItems && (
-          <TagGroup
-            aria-label={strings.format('selectedItems')}
-            selectionBehavior='toggle'
-            onRemove={keys =>
-              state.selectionManager.toggleSelection(Array.from(keys)[0])
-            }
-            className={styles.tagGroup}
-          >
-            <TagList items={state.selectedItems}>
-              {item => (
-                <Tag
-                  key={item.key}
-                  textValue={item.textValue}
-                  id={item.key}
-                  dismissable
-                  isDisabled={props.isDisabled}
-                >
-                  {item.textValue}
-                </Tag>
-              )}
-            </TagList>
-          </TagGroup>
-        )}
-      </TextField>
-    )
-  },
-)
-
-export const Select = React.forwardRef<HTMLButtonElement, SelectContainerProps>(
-  ({ options, ...props }, ref) => (
-    <SelectComponent
+  return (
+    <TextField
       {...props}
-      items={options}
-      ref={ref}
+      className={clsx(styles.wrapper, props.className)}
     >
-      {section =>
-        section.children ? (
-          <Section
-            key={section.name}
-            items={section.children}
-            title={section.name}
+      <HiddenMultiSelect
+        {...props}
+        state={state}
+        triggerRef={triggerRef}
+      />
+      <LabelWrapper popover={popover}>
+        {props.label && (
+          <Label
+            {...labelProps}
+            data-disabled={props.isDisabled || undefined}
           >
-            {item => <Item textValue={item.textValue}>{item.name}</Item>}
-          </Section>
-        ) : (
-          <Item textValue={section.textValue}>{section.name}</Item>
-        )
-      }
-    </SelectComponent>
-  ),
+            {props.label}
+          </Label>
+        )}
+      </LabelWrapper>
+      {props.description && <Text slot='description'>{props.description}</Text>}
+      {props.errorPosition === 'top' && (
+        <SelectFieldError
+          {...props}
+          state={state}
+        />
+      )}
+      <SelectTrigger
+        {...props}
+        {...triggerProps}
+        isInvalid={state.displayValidation.isInvalid}
+        triggerRef={triggerRef}
+        state={state}
+      >
+        {props.selectionMode === 'multiple' && state.selectedItems ? (
+          <span {...valueProps}>
+            <MultiSelectValueTag
+              {...props}
+              state={state}
+              parentWidth={triggerWidth}
+              onClear={() => state.selectionManager.clearSelection()}
+              triggerRef={triggerRef}
+            />
+          </span>
+        ) : null}
+      </SelectTrigger>
+      {props.errorPosition === 'bottom' && (
+        <SelectFieldError
+          {...props}
+          state={state}
+        />
+      )}
+      <ListBoxPopover
+        isOpen={state.isOpen}
+        onOpenChange={(isOpen: boolean) => {
+          if (!isOpen) {
+            state.close()
+          }
+        }}
+        triggerRef={triggerRef}
+        style={{ width: triggerWidth }}
+      >
+        {props.isSelectableAll && (
+          <ListBoxButton
+            onClick={() => state.selectionManager.toggleSelectAll()}
+          >
+            <div className={styles.checkboxContainer}>
+              <Checkbox
+                isSelected={state.selectionManager.isSelectAll}
+                isIndeterminate={
+                  !state.selectionManager.isSelectAll &&
+                  !state.selectionManager.isEmpty
+                }
+                isReadOnly
+                excludeFromTabOrder
+                aria-label={strings.format('selectAll')}
+              />
+            </div>
+            <span>{strings.format('selectAll')}</span>
+          </ListBoxButton>
+        )}
+        <SelectListBox
+          {...menuProps}
+          state={state}
+        />
+      </ListBoxPopover>
+      {props.showTags && !!state.selectedItems && (
+        <TagGroup
+          aria-label={strings.format('selectedItems')}
+          selectionBehavior='toggle'
+          onRemove={keys =>
+            state.selectionManager.toggleSelection(Array.from(keys)[0])
+          }
+          className={styles.tagGroup}
+        >
+          <TagList items={state.selectedItems}>
+            {item => (
+              <Tag
+                key={item.key}
+                textValue={item.textValue}
+                id={item.key}
+                dismissable
+                isDisabled={props.isDisabled}
+              >
+                {item.textValue}
+              </Tag>
+            )}
+          </TagList>
+        </TagGroup>
+      )}
+    </TextField>
+  )
+}
+
+export const Select = ({ ref, options, ...props }: SelectContainerProps) => (
+  <SelectComponent
+    {...props}
+    items={options}
+    ref={ref}
+  >
+    {section =>
+      section.children ? (
+        <Section
+          key={section.name}
+          items={section.children}
+          title={section.name}
+        >
+          {item => <Item textValue={item.textValue}>{item.name}</Item>}
+        </Section>
+      ) : (
+        <Item textValue={section.textValue}>{section.name}</Item>
+      )
+    }
+  </SelectComponent>
 )
 
 Select.displayName = 'Select'

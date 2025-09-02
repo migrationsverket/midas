@@ -15,14 +15,12 @@ import type {
   Node,
   CollectionChildren,
 } from '@react-types/shared'
-import type { HTMLAttributes } from 'react'
+import type { HTMLAttributes, RefObject } from 'react'
 import type { AriaListBoxOptions } from 'react-aria'
 import type { AriaButtonProps } from '@react-types/button'
 import type { AriaSelectProps } from '@react-types/select'
 import type { Size } from '../common/types'
-import type {
-  ListBoxOption,
-} from '../list-box/'
+import type { ListBoxOption } from '../list-box/'
 
 /**
  * Props used for setting up the list state
@@ -210,6 +208,5 @@ export interface SelectProps extends MultiSelectStateProps<ListBoxOption> {
 export type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
   /** Item objects in the collection. */
   options: ListBoxOption[]
+  ref?: RefObject<HTMLButtonElement | null>
 }
-
-
