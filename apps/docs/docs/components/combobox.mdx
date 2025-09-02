@@ -7,6 +7,7 @@ import {
   BasicExample,
   ControlledExample,
   SectionedExample,
+  AsyncExample,
 } from '@site/src/components/examples/combobox/ComboboxExamples'
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
@@ -126,6 +127,62 @@ return (
 
 <div className='card'>
   <SectionedExample />
+</div>
+
+## Asynkron laddning
+
+Om data finns på en server kan en laddningsindikator visas med en `ListBoxLoadMoreItem`-komponent.
+
+Använd `allowsEmptyCollection` hos `ComboBox` och rendera bara `ListBoxLoadMoreItem` vid laddning för att visa ett "inga-träffar"-meddelande om sökfrågan inte gav något resultat.
+
+```tsx
+import { useAsyncList } from 'react-stately'
+import { Collection } from 'react-aria-components'
+import { ComboBox, ComboBoxItem, ListBoxLoadMoreItem } from '@midas-ds/components'
+
+const list = useAsyncList<{ name: string }>({
+  async load({ signal, cursor, filterText }) {
+    if (cursor) {
+      cursor = cursor.replace(/^http:\/\//i, 'https://')
+    }
+
+    const res = await fetch(cursor || `https://swapi.py4e.com/api/people/?search=${filterText}`, { signal })
+
+    const { results, next } = await res.json()
+
+    return {
+      items: results,
+      cursor: next,
+    }
+  },
+})
+
+return (
+  <ComboBox
+    label='Star Wars Character Lookup'
+    placeholder='Välj eller sök karaktär'
+    description='Anropar ett externt API'
+    inputValue={list.filterText}
+    onInputChange={list.setFilterText}
+    // highlight-next-line
+    allowsEmptyCollection
+  >
+    // highlight-start
+    <Collection items={list.items}>
+      {item => {
+        return <ComboBoxItem id={item.name}>{item.name}</ComboBoxItem>
+      }}
+    </Collection>
+    {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
+    // highlight-end
+  </ComboBox>
+)
+```
+
+Fler exempel med bland annat infinite scroll finns i [React Arias dokumentation för ComboBox](https://react-spectrum.adobe.com/react-aria/ComboBox.html#asynchronous-loading)
+
+<div className='card'>
+  <AsyncExample />
 </div>
 
 ## API

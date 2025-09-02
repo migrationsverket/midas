@@ -109,7 +109,16 @@ export function ComboBox<T extends ListBoxOption>({
         <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
       )}
       <ListBoxPopover>
-        <ListBox items={items}>{children}</ListBox>
+        <ListBox
+          items={items}
+          renderEmptyState={() => (
+            <Text className={styles.emptyState}>
+              {strings.format('noResultsFound')}
+            </Text>
+          )}
+        >
+          {children}
+        </ListBox>
       </ListBoxPopover>
     </AriaComboBox>
   )

@@ -52,8 +52,7 @@
     }
   },
   "dependencies": {
-    "react-aria": "^3.38.1",
-    "react-aria-components": "^1.9.0",
-    "react-stately": "^3.36.1"
+    "react-aria-components": "^1.12.1",
+    "react-stately": "^3.39.0"
   }
 }
