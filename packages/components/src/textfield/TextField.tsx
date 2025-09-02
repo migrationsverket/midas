@@ -6,21 +6,32 @@ import { Input, type InputProps } from './Input'
 import clsx from '../utils/clsx'
 import { Complement } from '../utils/types'
 
-export type TextFieldProps = TextFieldBaseProps &
-  Complement<TextFieldBaseProps, InputProps>
+export interface TextFieldProps
+  extends TextFieldBaseProps,
+    Complement<TextFieldBaseProps, InputProps> {
+  ref?: React.RefObject<HTMLInputElement | null>
+}
 
-export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ className, list, type, min, max, ...rest }, ref) => (
-    <TextFieldBase {...rest}>
-      <Input
-        className={clsx(className)}
-        list={list}
-        min={min}
-        max={max}
-        ref={ref}
-        type={type}
-        skipContext
-      />
-    </TextFieldBase>
-  ),
+export const TextField: React.FC<TextFieldProps> = ({
+  className,
+  form,
+  list,
+  min,
+  max,
+  ref,
+  type,
+  ...rest
+}) => (
+  <TextFieldBase {...rest}>
+    <Input
+      className={clsx(className)}
+      form={form}
+      list={list}
+      min={min}
+      max={max}
+      ref={ref}
+      type={type}
+      skipContext
+    />
+  </TextFieldBase>
 )

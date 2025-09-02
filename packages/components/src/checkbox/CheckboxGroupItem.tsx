@@ -3,10 +3,10 @@ import { useCheckboxGroupItem } from 'react-aria'
 import type { CheckboxGroupItemProps } from './types'
 import { CheckboxInner } from './CheckboxInner'
 
-export const CheckBoxGroupItem = React.forwardRef<
-  HTMLLabelElement,
-  CheckboxGroupItemProps
->((props, ref) => {
+export const CheckBoxGroupItem: React.FC<CheckboxGroupItemProps> = ({
+  ref,
+  ...props
+}) => {
   const checkboxGroupItem = useCheckboxGroupItem(
     {
       ...props,
@@ -23,4 +23,4 @@ export const CheckBoxGroupItem = React.forwardRef<
       ref={ref}
     />
   )
-})
+}

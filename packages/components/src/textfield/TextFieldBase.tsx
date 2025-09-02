@@ -1,7 +1,5 @@
 import * as React from 'react'
 import {
-  TextFieldContext,
-  useContextProps,
   TextField as AriaTextField,
   TextFieldProps,
   ValidationResult,
@@ -37,12 +35,7 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   popover?: InfoPopoverProps
 }
 
-export const TextFieldBase = React.forwardRef<
-  HTMLDivElement,
-  TextFieldBaseProps
->((props, ref) => {
-  ;[props] = useContextProps(props, ref, TextFieldContext)
-
+export const TextFieldBase: React.FC<TextFieldBaseProps> = props => {
   const {
     label,
     description,
@@ -80,4 +73,4 @@ export const TextFieldBase = React.forwardRef<
       )}
     </AriaTextField>
   )
-})
+}

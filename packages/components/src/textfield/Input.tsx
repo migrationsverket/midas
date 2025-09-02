@@ -13,27 +13,30 @@ export interface InputProps extends AriaInputProps {
    * @default false
    */
   skipContext?: boolean
+  ref?: React.RefObject<HTMLInputElement | null>
 }
 
-export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ skipContext = false, ...localProps }, localRef) => {
-    const [contextProps, contextRef] = useContextProps(
-      localProps,
-      localRef,
-      InputContext,
-    )
-    const ref = skipContext ? localRef : contextRef
-    const props = skipContext ? localProps : contextProps
+export const Input: React.FC<InputProps> = ({
+  ref: localRef,
+  skipContext = false,
+  ...localProps
+}) => {
+  const [contextProps, contextRef] = useContextProps(
+    localProps,
+    localRef,
+    InputContext,
+  )
+  const ref = skipContext ? localRef : contextRef
+  const props = skipContext ? localProps : contextProps
 
-    return (
-      <div className={styles.wrap}>
-        <AriaInput
-          {...props}
-          ref={ref}
-          className={clsx(styles.input, props.className)}
-        />
-        {props.type === 'password' && <PasswordField {...props} />}
-      </div>
-    )
-  },
-)
+  return (
+    <div className={styles.wrap}>
+      <AriaInput
+        {...props}
+        ref={ref}
+        className={clsx(styles.input, props.className)}
+      />
+      {props.type === 'password' && <PasswordField {...props} />}
+    </div>
+  )
+}
