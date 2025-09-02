@@ -1,6 +1,6 @@
 .container {
-  font-family: var(--typography-font-family);
-  color: var(--semantic-text-primary);
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
 
   &[data-disabled='true'] {
     cursor: not-allowed;
@@ -15,16 +15,16 @@
 .inputContainer {
   display: flex;
   position: relative;
-  height: var(--size-150);
+  height: var(--midas-size-150);
   width: 100%;
 
   &.medium {
-    height: var(--size-130);
+    height: var(--midas-size-130);
   }
 }
 
 .icon {
-  color: var(--semantic-icon-primary);
+  color: var(--midas-icon-primary);
   position: absolute;
   margin-left: 0.875rem;
   left: 0;
@@ -44,26 +44,26 @@
   background-color: transparent;
 
   &.medium {
-    height: var(--size-130);
+    height: var(--midas-size-130);
     padding: 0.625rem 0.875rem;
   }
 }
 
 .input {
   all: unset;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   box-sizing: border-box;
   line-height: 1rem;
   appearance: none;
-  background-color: var(--semantic-field-01);
+  background-color: var(--midas-field-01);
   width: 100%;
-  height: var(--size-150);
-  padding: var(--size-70) 0 var(--size-70) var(--size-150);
-  border-bottom: 1px solid var(--semantic-border-primary);
+  height: var(--midas-size-150);
+  padding: var(--midas-size-70) 0 var(--midas-size-70) var(--midas-size-150);
+  border-bottom: 1px solid var(--midas-border-primary);
 
   &.medium {
-    height: var(--size-130);
-    padding: var(--size-50) 0 var(--size-50) var(--size-150);
+    height: var(--midas-size-130);
+    padding: var(--midas-size-50) 0 var(--midas-size-50) var(--midas-size-150);
   }
 
   &:focus-visible {
@@ -76,7 +76,7 @@
   }
 
   &[aria-invalid='true'] {
-    border: 2px solid var(--semantic-support-border-warning);
+    border: 2px solid var(--midas-support-border-warning);
   }
 
   &[data-disabled] {

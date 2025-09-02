@@ -15,13 +15,13 @@
 .header {
   position: sticky;
   top: 0;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--semantic-border-subtle);
-  background-color: var(--semantic-background);
+  border-bottom: 1px solid var(--midas-border-subtle);
+  background-color: var(--midas-background);
 
   &.headerExternal {
     padding: 1rem;
@@ -34,7 +34,7 @@
 
   @media var(--breakpoint-lg) {
     padding: 1.25rem 1rem;
-    z-index: calc(var(--z-index-base) + var(--z-index-above));
+    z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
   }
 }
 
@@ -81,8 +81,8 @@
 }
 
 .sidebar {
-  font-family: var(--typography-font-family);
-  background-color: var(--semantic-background);
+  font-family: var(--midas-typography-font-family);
+  background-color: var(--midas-background);
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
@@ -93,8 +93,8 @@
   height: 100vh;
   width: var(--sideBarWidth);
   transform: translateX(calc(var(--sideBarWidth) * -1));
-  z-index: calc(var(--z-index-base));
-  border-right: 1px solid var(--semantic-border-subtle);
+  z-index: calc(var(--midas-z-index-base));
+  border-right: 1px solid var(--midas-border-subtle);
 
   @media var(--breakpoint-lg) {
     position: sticky;
@@ -107,7 +107,7 @@
 }
 
 .main {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   flex: 0 0 auto;
   width: 100%;
   min-height: 100%;
@@ -138,7 +138,7 @@
 }
 
 .appName {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   font-size: 0.875rem;
   font-weight: 400;
   margin: 0;
@@ -164,7 +164,7 @@
 }
 
 .userName {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   margin: 0;
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
@@ -183,7 +183,7 @@
 }
 
 .userTitle {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   margin: 0;
   font-size: 0.875rem;
   font-weight: 400;
@@ -219,7 +219,7 @@
 }
 
 .listGroupTitle {
-  color: var(--semantic-text-secondary);
+  color: var(--midas-text-secondary);
   font-size: 0.875rem;
   padding: 0.5rem;
   margin: 0;
@@ -240,29 +240,29 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 0.5rem;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   flex: 1 0 0%;
   transition: 100ms;
   text-decoration: none;
 
   svg {
-    stroke: var(--semantic-icon-primary);
+    stroke: var(--midas-icon-primary);
   }
 
   &[data-hovered],
   &:visited {
-    background-color: var(--semantic-menu-item-background-hover);
-    color: var(--semantic-text-primary);
+    background-color: var(--midas-menu-item-background-hover);
+    color: var(--midas-text-primary);
     cursor: pointer;
 
     svg {
-      stroke: var(--semantic-icon-primary);
+      stroke: var(--midas-icon-primary);
       min-width: 1.25rem;
     }
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-tertiary-active);
+    background-color: var(--midas-button-background-tertiary-active);
   }
 
   &[data-focused] {
@@ -285,9 +285,9 @@
 }
 
 .active {
-  background-color: var(--semantic-menu-item-background-selected);
-  color: var(--semantic-text-primary);
-  border-left: 0.125rem solid var(--semantic-border-tertiary);
+  background-color: var(--midas-menu-item-background-selected);
+  color: var(--midas-text-primary);
+  border-left: 0.125rem solid var(--midas-border-tertiary);
   font-weight: 600;
 }
 
@@ -330,7 +330,7 @@
   position: absolute;
   top: 0;
   right: 100%;
-  z-index: var(--z-index-skip-to-content);
+  z-index: var(--midas-z-index-skip-to-content);
 
   &[data-focus-visible],
   &:focus-visible {
@@ -344,12 +344,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid var(--semantic-border-subtle);
-  background-color: var(--semantic-background);
+  border-top: 1px solid var(--midas-border-subtle);
+  background-color: var(--midas-background);
 }
 
 .navbarList {
@@ -382,18 +382,18 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0.5rem;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   text-decoration: none;
-  font-size: var(--typography-font-size-10);
-  line-height: var(--typography-line-height-20);
+  font-size: var(--midas-typography-font-size-10);
+  line-height: var(--midas-typography-line-height-20);
   text-align: center;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 
   &[data-hovered],
   &[data-active] {
-    background-color: var(--semantic-button-background-primary);
-    color: var(--semantic-text-on-color);
+    background-color: var(--midas-button-background-primary);
+    color: var(--midas-text-on-color);
     cursor: pointer;
   }
 

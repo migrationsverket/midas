@@ -1,20 +1,20 @@
 .labelBase {
-  color: var(--semantic-text-primary);
-  font-family: var(--typography-font-family);
+  color: var(--midas-text-primary);
+  font-family: var(--midas-typography-font-family);
   margin-bottom: 0.25rem;
-  font-size: var(--typography-font-size-30);
-  line-height: var(--typography-line-height-30);
+  font-size: var(--midas-typography-font-size-30);
+  line-height: var(--midas-typography-line-height-30);
   font-weight: 500;
 }
 
 .labelBase:has(~ [data-disabled]) {
-  color: var(--semantic-text-disabled);
+  color: var(--midas-text-disabled);
 }
 
 [data-disabled] > .labelBase {
-  color: var(--semantic-text-disabled);
+  color: var(--midas-text-disabled);
 }
 
 [data-disabled] {
-  color: var(--semantic-text-disabled);
+  color: var(--midas-text-disabled);
 }

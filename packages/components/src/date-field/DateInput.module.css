@@ -13,11 +13,11 @@
   }
 
   & div[data-readonly='true'] {
-    color: var(--semantic-text-primary);
+    color: var(--midas-text-primary);
     padding: 0 2px;
   }
 }
 
 .divider {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
 }

@@ -1,9 +1,9 @@
 .characterCounter {
-  font-size: var(--typography-font-size-20);
-  line-height: var(--typography-line-height-20);
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
   font-weight: 400;
-  font-family: var(--typography-font-family);
-  color: var(--semantic-text-primary);
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
   text-align: right;
   grid-area: Count;
   align-self: flex-end;
@@ -14,6 +14,6 @@
   }
 
   &[data-exceeded] {
-    color: var(--semantic-text-warning);
+    color: var(--midas-text-warning);
   }
 }

@@ -1,6 +1,6 @@
 .fieldError {
-  font-family: var(--typography-font-family);
-  color: var(--semantic-text-warning);
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-warning);
   font-size: 0.875rem;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
 
   &::before {
     content: '';
-    background-color: var(--semantic-text-warning);
+    background-color: var(--midas-text-warning);
     display: block;
     width: 1rem;
     height: 1rem;

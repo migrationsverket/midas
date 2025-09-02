@@ -1,12 +1,12 @@
 .modal {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   position: fixed;
   max-width: 75%;
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: var(--semantic-background);
-  color: var(--semantic-text-primary);
+  background-color: var(--midas-background);
+  color: var(--midas-text-primary);
   border: none;
   padding: 0;
   margin: auto;
@@ -24,7 +24,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: var(--z-index-modal);
+  z-index: var(--midas-z-index-modal);
   width: 100vw;
   background: rgba(45 0 0 / 30%);
   display: flex;
@@ -42,13 +42,13 @@
 }
 
 .modalHeader {
-  background-color: var(--semantic-layer-01);
+  background-color: var(--midas-layer-01);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: sticky;
   top: 0;
-  z-index: var(--z-index-above);
+  z-index: var(--midas-z-index-above);
 }
 
 .modalTitle {
@@ -60,7 +60,7 @@
 .modalBody {
   position: relative;
   padding: 1rem 2rem 2rem;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: flex;
   flex-direction: column;
   gap: 1rem;

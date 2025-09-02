@@ -1,30 +1,30 @@
 .button {
-  color: var(--semantic-icon-primary);
+  color: var(--midas-icon-primary);
   min-height: unset !important;
-  padding: var(--size-20) !important;
+  padding: var(--midas-size-20) !important;
   border-radius: 1.5rem;
   border: unset;
 
   &[data-hovered] {
-    background-color: var(--semantic-button-background-icon-hover);
+    background-color: var(--midas-button-background-icon-hover);
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-icon-active);
+    background-color: var(--midas-button-background-icon-active);
   }
 
   &.success[data-hovered],
   &.warning[data-hovered],
   &.info[data-hovered],
   &.important[data-hovered] {
-    background-color: var(--semantic-button-background-icon-hover);
+    background-color: var(--midas-button-background-icon-hover);
   }
 
   &.success[data-pressed],
   &.warning[data-pressed],
   &.info[data-pressed],
   &.important[data-pressed] {
-    background-color: var(--semantic-button-background-icon-active);
+    background-color: var(--midas-button-background-icon-active);
   }
 }
 
@@ -32,37 +32,37 @@
   display: inline-flex;
   align-items: center;
   border-radius: 1.25rem;
-  background-color: var(--semantic-field-01);
+  background-color: var(--midas-field-01);
   font-size: 0.875rem;
-  font-family: var(--typography-font-family);
-  border: 1px solid var(--semantic-border-primary);
-  color: var(--semantic-text-primary);
+  font-family: var(--midas-typography-font-family);
+  border: 1px solid var(--midas-border-primary);
+  color: var(--midas-text-primary);
 
   &.success {
-    background-color: var(--semantic-support-background-success);
-    border: 1px solid var(--semantic-support-border-success);
+    background-color: var(--midas-support-background-success);
+    border: 1px solid var(--midas-support-border-success);
   }
 
   &.info {
-    background-color: var(--semantic-support-background-info);
-    border: 1px solid var(--semantic-support-border-info);
+    background-color: var(--midas-support-background-info);
+    border: 1px solid var(--midas-support-border-info);
   }
 
   &.important {
-    background-color: var(--semantic-support-background-important);
-    border: 1px solid var(--semantic-support-border-important);
+    background-color: var(--midas-support-background-important);
+    border: 1px solid var(--midas-support-border-important);
   }
 
   &.warning {
-    background-color: var(--semantic-support-background-warning);
-    border: 1px solid var(--semantic-support-border-warning);
+    background-color: var(--midas-support-background-warning);
+    border: 1px solid var(--midas-support-border-warning);
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
-    border-color: var(--semantic-border-disabled);
-    background-color: var(--semantic-field-01);
+    border-color: var(--midas-border-disabled);
+    background-color: var(--midas-field-01);
   }
 
   &[data-focused],
@@ -80,11 +80,11 @@
 
 .tagText {
   line-height: 1.15;
-  padding: 7px var(--size-40);
+  padding: 7px var(--midas-size-40);
 }
 
 .dismissable .tagText {
-  padding: 7px var(--size-10) 7px var(--size-40);
+  padding: 7px var(--midas-size-10) 7px var(--midas-size-40);
 }
 
 .tagList {

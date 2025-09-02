@@ -1,10 +1,10 @@
 .combobox {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: flex;
   flex-direction: column;
 
   &[data-invalid] .inputField {
-    border: 0.125rem solid var(--semantic-support-border-warning);
+    border: 0.125rem solid var(--midas-support-border-warning);
     box-shadow: none;
   }
 }
@@ -14,24 +14,24 @@
   width: -webkit-fill-available;
   padding-left: 1rem;
   border: none;
-  border-bottom: 1px solid var(--semantic-border-primary);
+  border-bottom: 1px solid var(--midas-border-primary);
   border-radius: 0;
   font-size: 1rem;
-  color: var(--semantic-text-primary);
-  height: var(--size-150);
-  background-color: var(--semantic-field-01);
+  color: var(--midas-text-primary);
+  height: var(--midas-size-150);
+  background-color: var(--midas-field-01-base);
 
   &.medium {
-    height: var(--size-130);
+    height: var(--midas-size-130);
   }
 
   &[data-hovered],
   &:has(+ [data-hovered]) {
-    background-color: var(--semantic-field-hover-01);
+    background-color: var(--midas-field-01-hover);
   }
 
   &::placeholder {
-    color: var(--semantic-text-placeholder);
+    color: var(--midas-text-placeholder);
   }
 
   &:focus-visible,
@@ -49,9 +49,9 @@
   }
 
   &[data-disabled] {
-    background: var(--semantic-field-disabled);
+    background: var(--midas-field-disabled);
     box-shadow: none;
-    border-bottom: 0.063rem solid var(--semantic-border-disabled);
+    border-bottom: 0.063rem solid var(--midas-border-disabled);
     cursor: not-allowed;
   }
 }
@@ -71,18 +71,18 @@
   display: flex;
   align-items: center;
   border: none;
-  padding: var(--size-70);
-  color: var(--semantic-icon-primary);
+  padding: var(--midas-size-70);
+  color: var(--midas-icon-primary);
   background-color: transparent;
   position: absolute;
   top: 0;
   right: 0;
-  height: var(--size-150);
+  height: var(--midas-size-150);
   transition: transform 0.3s ease;
 
   &.medium {
-    height: var(--size-130);
-    padding: var(--size-50) var(--size-70);
+    height: var(--midas-size-130);
+    padding: var(--midas-size-50) var(--midas-size-70);
   }
 
   &[aria-expanded='true'] {
@@ -91,7 +91,7 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    color: var(--semantic-icon-disabled);
+    color: var(--midas-icon-disabled);
   }
 
   &[data-hovered] {

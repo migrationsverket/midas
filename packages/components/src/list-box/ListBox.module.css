@@ -14,24 +14,24 @@
 }
 
 .listBoxPopover {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   width: var(--trigger-width);
-  background: var(--semantic-layer-01);
+  background: var(--midas-layer-01);
   overflow-y: auto;
   box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
 
   @media (forced-colors: active) {
-    border: 1px solid var(--semantic-border-primary);
+    border: 1px solid var(--midas-border-primary);
   }
 }
 
 .listBoxSectionHeading {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--size-80) var(--size-80) var(--size-40) var(--spacing-40);
+  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40) var(--midas-spacing-40);
   font-weight: 500;
   font-size: 14px;
-  color: var(--semantic-menu-text-section-header);
+  color: var(--midas-menu-text-section-header);
 }
 
 .listBoxButton {
@@ -47,31 +47,31 @@
 }
 
 .listBoxItem {
-  background-color: var(--semantic-layer-01);
-  color: var(--semantic-text-primary);
+  background-color: var(--midas-layer-01);
+  color: var(--midas-text-primary);
   display: flex;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   line-height: 1;
   margin-bottom: 0;
-  padding: var(--size-80);
+  padding: var(--midas-size-80);
   transition: background-color 60ms;
 
   &:hover:not([data-disabled]) {
-    background-color: var(--semantic-layer-hover-01);
+    background-color: var(--midas-layer-hover-01);
     cursor: pointer;
     transition-delay: 60ms;
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
   }
 
   &[data-selected] {
-    background-color: var(--semantic-layer-selected-01);
+    background-color: var(--midas-layer-selected-01);
 
     &:hover:not([data-disabled]) {
-      background-color: var(--semantic-layer-selected-hover-01);
+      background-color: var(--midas-layer-selected-hover-01);
       transition-delay: 60ms;
     }
   }

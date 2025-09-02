@@ -1,11 +1,54 @@
 {
   "typography": {
-    "family": {
-      "inter": {
+    "font": {
+      "family": {
         "$type": "fontFamily",
         "$value": "Inter, sans-serif"
+      },
+      "size": {
+        "10": {
+          "$type": "fontSize",
+          "$value": "0.75rem"
+        },
+        "20": {
+          "$type": "fontSize",
+          "$value": "0.875rem"
+        },
+        "30": {
+          "$type": "fontSize",
+          "$value": "1rem"
+        },
+        "40": {
+          "$type": "fontSize",
+          "$value": "1.125rem"
+        },
+        "50": {
+          "$type": "fontSize",
+          "$value": "1.25rem"
+        },
+        "60": {
+          "$type": "fontSize",
+          "$value": "1.5rem"
+        },
+        "70": {
+          "$type": "fontSize",
+          "$value": "1.75rem"
+        },
+        "80": {
+          "$type": "fontSize",
+          "$value": "2rem"
+        },
+        "90": {
+          "$type": "fontSize",
+          "$value": "2.25rem"
+        },
+        "100": {
+          "$type": "fontSize",
+          "$value": "2.625rem"
+        }
       }
     },
+
     "lineHeight": {
       "10": {
         "$type": "lineHeight",
@@ -46,48 +89,6 @@
       "100": {
         "$type": "lineHeight",
         "$value": "2.75rem"
-      }
-    },
-    "size": {
-      "10": {
-        "$type": "fontSize",
-        "$value": "0.75rem"
-      },
-      "20": {
-        "$type": "fontSize",
-        "$value": "0.875rem"
-      },
-      "30": {
-        "$type": "fontSize",
-        "$value": "1rem"
-      },
-      "40": {
-        "$type": "fontSize",
-        "$value": "1.125rem"
-      },
-      "50": {
-        "$type": "fontSize",
-        "$value": "1.25rem"
-      },
-      "60": {
-        "$type": "fontSize",
-        "$value": "1.5rem"
-      },
-      "70": {
-        "$type": "fontSize",
-        "$value": "1.75rem"
-      },
-      "80": {
-        "$type": "fontSize",
-        "$value": "2rem"
-      },
-      "90": {
-        "$type": "fontSize",
-        "$value": "2.25rem"
-      },
-      "100": {
-        "$type": "fontSize",
-        "$value": "2.625rem"
       }
     },
     "weight": {

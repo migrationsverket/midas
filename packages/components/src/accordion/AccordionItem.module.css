@@ -4,9 +4,9 @@
   --border: none;
   --accordion-background: transparent;
   --accordion-background-hover: transparent;
-  --text-color: var(--semantic-text-primary);
+  --text-color: var(--midas-text-primary);
 
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   color: var(--text-color);
   background-color: var(--accordion-background);
   border: var(--border);
@@ -17,57 +17,51 @@
   --gap: 0.25rem;
   --item-padding: 0.75rem;
   --content-padding: 1rem;
-  --border-color: var(--semantic-border-secondary);
+  --border-color: var(--midas-border-secondary);
   --border: 1px solid;
-  --accordion-background: var(--semantic-layer-01);
-  --accordion-background-hover: var(--semantic-layer-hover-01);
+  --accordion-background: var(--midas-layer-01-base);
+  --accordion-background-hover: var(--midas-layer-01-hover);
 }
 
 .success {
-  --accordion-background: var(--semantic-support-background-success);
-  --accordion-background-hover: var(
-    --semantic-support-background-success-hover
-  );
-  --icon-color: var(--semantic-icon-success);
-  --border-color: var(--semantic-support-border-success);
+  --accordion-background: var(--midas-support-background-success);
+  --accordion-background-hover: var(--midas-support-background-success-hover);
+  --icon-color: var(--midas-icon-success);
+  --border-color: var(--midas-support-border-success);
 }
 
 .warning {
-  --accordion-background: var(--semantic-support-background-warning);
-  --accordion-background-hover: var(
-    --semantic-support-background-warning-hover
-  );
-  --icon-color: var(--semantic-icon-warning);
-  --border-color: var(--semantic-support-border-warning);
+  --accordion-background: var(--midas-support-background-warning);
+  --accordion-background-hover: var(--midas-support-background-warning-hover);
+  --icon-color: var(--midas-icon-warning);
+  --border-color: var(--midas-support-border-warning);
 }
 
 .info {
-  --accordion-background: var(--semantic-support-background-info);
-  --accordion-background-hover: var(--semantic-support-background-info-hover);
-  --icon-color: var(--semantic-icon-info);
-  --border-color: var(--semantic-support-border-info);
+  --accordion-background: var(--midas-support-background-info);
+  --accordion-background-hover: var(--midas-support-background-info-hover);
+  --icon-color: var(--midas-icon-info);
+  --border-color: var(--midas-support-border-info);
 }
 
 .important {
-  --accordion-background: var(--semantic-support-background-important);
-  --accordion-background-hover: var(
-    --semantic-support-background-important-hover
-  );
-  --icon-color: var(--semantic-icon-important);
-  --border-color: var(--semantic-support-border-important);
+  --accordion-background: var(--midas-support-background-important);
+  --accordion-background-hover: var(--midas-support-background-important-hover);
+  --icon-color: var(--midas-icon-important);
+  --border-color: var(--midas-support-border-important);
 }
 
 .item[data-disabled] {
-  --border-color: var(--semantic-border-disabled);
-  --icon-color: var(--semantic-text-disabled);
-  --text-color: var(--semantic-text-disabled);
+  --border-color: var(--midas-border-disabled);
+  --icon-color: var(--midas-text-disabled);
+  --text-color: var(--midas-text-disabled);
 
   .triggerButton {
     background: transparent;
   }
 
   .triggerText {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 }
 
@@ -134,7 +128,7 @@
 }
 
 .hasBackground {
-  background-color: var(--semantic-background);
+  background-color: var(--midas-background);
 }
 
 .header {

@@ -1,38 +1,38 @@
 .body-01,
 .body-02 {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   font-weight: 400;
-  font-family: var(--typography-font-family);
-  font-size: var(--typography-font-size-30);
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-30);
 }
 
 .body-01 {
-  line-height: var(--typography-line-height-30);
+  line-height: var(--midas-typography-line-height-30);
 }
 
 .body-02 {
-  line-height: var(--typography-line-height-40);
+  line-height: var(--midas-typography-line-height-40);
 
   &[data-expressive] {
-    line-height: var(--typography-line-height-50);
+    line-height: var(--midas-typography-line-height-50);
   }
 }
 
 .description {
-  color: var(--semantic-text-primary);
-  font-size: var(--typography-font-size-20);
-  line-height: var(--typography-line-height-20);
+  color: var(--midas-text-primary);
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
   font-weight: 400;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   margin-bottom: 0.5rem;
 
   &:has(~ [data-disabled]) {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 }
 
 [data-disabled] {
   > .description {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 }

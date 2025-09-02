@@ -1,6 +1,6 @@
 .link {
-  font-family: var(--typography-font-family);
-  color: var(--semantic-link-enabled);
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-link-enabled);
   text-decoration: underline;
   display: inline-flex;
   cursor: pointer;
@@ -10,22 +10,22 @@
 
   &[data-hovered],
   &:hover {
-    color: var(--semantic-link-hover);
+    color: var(--midas-link-hover);
   }
 
   &:visited {
-    color: var(--semantic-link-visited);
+    color: var(--midas-link-visited);
   }
 
   &[data-disabled],
   &:disabled {
     cursor: not-allowed;
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 
   &[data-pressed]:not([data-disabled], :disabled),
   &:active:not([data-disabled], :disabled) {
-    color: var(--semantic-link-pressed);
+    color: var(--midas-link-pressed);
   }
 
   &[data-focused],
@@ -69,7 +69,7 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: var(--z-index-base);
+    z-index: var(--midas-z-index-base);
     content: '';
   }
 }

@@ -1,15 +1,15 @@
 .button {
   --border-width: 1px;
 
-  font-family: var(--typography-font-family);
-  font-size: var(--typography-font-size-30);
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-30);
   font-weight: 500;
-  padding: calc(var(--size-70) - var(--border-width))
-    calc(var(--size-100) - var(--border-width));
-  line-height: var(--typography-line-height-30);
-  background-color: var(--semantic-button-background-primary);
+  padding: calc(var(--midas-size-70) - var(--border-width))
+    calc(var(--midas-size-100) - var(--border-width));
+  line-height: var(--midas-typography-line-height-30);
+  background-color: var(--midas-button-background-primary);
   border: solid var(--border-width) transparent;
-  color: var(--semantic-text-on-color);
+  color: var(--midas-text-on-color);
   cursor: pointer;
   opacity: 1;
   outline: none;
@@ -30,107 +30,107 @@
   }
 
   &[data-hovered] {
-    background-color: var(--semantic-button-background-primary-hover);
+    background-color: var(--midas-button-background-primary-hover);
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-primary-active);
+    background-color: var(--midas-button-background-primary-active);
     outline: none;
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
-    background-color: var(--semantic-button-background-disabled);
+    background-color: var(--midas-button-background-disabled);
   }
 }
 
 .secondary {
-  color: var(--semantic-text-tertiary);
-  background-color: var(--semantic-button-background-secondary);
-  border-color: var(--semantic-button-border-secondary);
+  color: var(--midas-text-tertiary);
+  background-color: var(--midas-button-background-secondary);
+  border-color: var(--midas-button-border-secondary);
   opacity: 1;
 
   &[data-hovered] {
-    background-color: var(--semantic-button-background-secondary-hover);
+    background-color: var(--midas-button-background-secondary-hover);
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
-    background-color: var(--semantic-button-background-disabled);
-    border-color: var(--semantic-border-disabled);
+    background-color: var(--midas-button-background-disabled);
+    border-color: var(--midas-border-disabled);
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-secondary-active);
-    border-color: var(--semantic-text-tertiary);
+    background-color: var(--midas-button-background-secondary-active);
+    border-color: var(--midas-text-tertiary);
   }
 }
 
 .tertiary {
-  color: var(--semantic-text-tertiary);
+  color: var(--midas-text-tertiary);
   background-color: transparent;
   opacity: 1;
 
   &[data-hovered] {
-    background-color: var(--semantic-button-background-tertiary-hover);
+    background-color: var(--midas-button-background-tertiary-hover);
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
     background-color: white;
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-tertiary-active);
+    background-color: var(--midas-button-background-tertiary-active);
   }
 }
 
 .iconBtn {
   background-color: transparent;
-  padding: calc(var(--size-70) - var(--border-width));
-  color: var(--semantic-icon-primary);
+  padding: calc(var(--midas-size-70) - var(--border-width));
+  color: var(--midas-icon-primary);
   display: flex;
   align-items: center;
 
   &[data-hovered] {
-    background-color: var(--semantic-button-background-icon-hover);
+    background-color: var(--midas-button-background-icon-hover);
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-icon-active);
+    background-color: var(--midas-button-background-icon-active);
   }
 
   &.medium {
-    padding: calc(var(--size-50) - var(--border-width));
+    padding: calc(var(--midas-size-50) - var(--border-width));
   }
 }
 
 .danger {
-  color: var(--color-white);
-  background-color: var(--semantic-button-background-danger);
+  color: var(--midas-color-white);
+  background-color: var(--midas-button-background-danger);
   opacity: 1;
 
   &[data-hovered] {
     color: var(--color-white);
-    background-color: var(--semantic-button-background-danger-hover);
+    background-color: var(--midas-button-background-danger-hover);
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
-    background-color: var(--semantic-button-background-disabled);
+    background-color: var(--midas-button-background-disabled);
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-danger-active);
+    background-color: var(--midas-button-background-danger-active);
     outline: none;
   }
 }
@@ -144,8 +144,8 @@
 }
 
 .medium {
-  padding: calc(var(--size-50) - var(--border-width))
-    calc(var(--size-80) - var(--border-width));
+  padding: calc(var(--midas-size-50) - var(--border-width))
+    calc(var(--midas-size-80) - var(--border-width));
 }
 
 @media (forced-colors: active) {

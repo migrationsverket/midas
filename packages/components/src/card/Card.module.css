@@ -1,8 +1,8 @@
 .card {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   position: relative;
-  background-color: var(--semantic-layer-01);
-  border-bottom: 1px solid var(--semantic-border-secondary);
+  background-color: var(--midas-layer-01);
+  border-bottom: 1px solid var(--midas-border-secondary);
 
   &.horizontal {
     display: flex;
@@ -10,7 +10,7 @@
   }
 
   &:has(.cardLink:hover) {
-    background-color: var(--semantic-layer-hover-01);
+    background-color: var(--midas-layer-hover-01);
   }
 }
 
@@ -52,11 +52,11 @@
   width: 100%;
 
   &[data-hovered] {
-    background-color: var(--semantic-button-background-icon-hover);
+    background-color: var(--midas-button-background-icon-hover);
   }
 
   &[data-pressed] {
-    background-color: var(--semantic-button-background-icon-active);
+    background-color: var(--midas-button-background-icon-active);
   }
 
   &:focus {
@@ -104,11 +104,11 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: var(--z-index-base);
+    z-index: var(--midas-z-index-base);
     content: '';
   }
 
   .cardLinkIcon {
-    color: var(--semantic-icon-primary);
+    color: var(--midas-icon-primary);
   }
 }

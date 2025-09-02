@@ -17,7 +17,7 @@
   }
 
   .bar {
-    background: var(--semantic-layer-accent-01);
+    background: var(--midas-layer-accent-01);
     grid-area: bar;
     height: 0.25rem;
     overflow: hidden;
