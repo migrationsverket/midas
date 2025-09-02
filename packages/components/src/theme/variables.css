@@ -12,9 +12,9 @@
   --midas-breakpoints-md: '(min-width: 768px)';
   --midas-breakpoints-lg: '(min-width: 1024px)';
   --midas-breakpoints-xl: '(min-width: 1280px)';
-  --midas-breakpoints-forced-colors-mode: (forced-colors: active);
-  --midas-breakpoints-dark-mode: (prefers-color-scheme: dark);
-  --midas-breakpoints-prefers-reduced-motion: (prefers-reduced-motion: reduced);
+  --midas-breakpoints-forced-colors-mode: '(forced-colors: active)';
+  --midas-breakpoints-dark-mode: '(prefers-color-scheme: dark)';
+  --midas-breakpoints-prefers-reduced-motion: '(prefers-reduced-motion: reduced)';
   --midas-color-black: #000000;
   --midas-color-white: #ffffff;
   --midas-color-black-hover: #0d0d0d;

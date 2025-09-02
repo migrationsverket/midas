@@ -129,11 +129,13 @@ var _styleDictionary = {
     xl: {
       key: "{breakpoints.xl}",
       $value: "'(min-width: 1280px)'",
+      $comment: "This is the largest breakpoint",
       filePath: "packages/components/src/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
         $value: "'(min-width: {windowSizes.xl})'",
+        $comment: "This is the largest breakpoint",
         $type: "string",
         key: "{breakpoints.xl}",
       },
@@ -143,12 +145,12 @@ var _styleDictionary = {
     },
     forcedColorsMode: {
       key: "{breakpoints.forcedColorsMode}",
-      $value: "(forced-colors: active)",
+      $value: "'(forced-colors: active)'",
       filePath: "packages/components/src/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
-        $value: "(forced-colors: active)",
+        $value: "'(forced-colors: active)'",
         $type: "string",
         key: "{breakpoints.forcedColorsMode}",
       },
@@ -158,12 +160,12 @@ var _styleDictionary = {
     },
     darkMode: {
       key: "{breakpoints.darkMode}",
-      $value: "(prefers-color-scheme: dark)",
+      $value: "'(prefers-color-scheme: dark)'",
       filePath: "packages/components/src/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
-        $value: "(prefers-color-scheme: dark)",
+        $value: "'(prefers-color-scheme: dark)'",
         $type: "string",
         key: "{breakpoints.darkMode}",
       },
@@ -173,12 +175,12 @@ var _styleDictionary = {
     },
     prefersReducedMotion: {
       key: "{breakpoints.prefersReducedMotion}",
-      $value: "(prefers-reduced-motion: reduced)",
+      $value: "'(prefers-reduced-motion: reduced)'",
       filePath: "packages/components/src/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
-        $value: "(prefers-reduced-motion: reduced)",
+        $value: "'(prefers-reduced-motion: reduced)'",
         $type: "string",
         key: "{breakpoints.prefersReducedMotion}",
       },

@@ -8,13 +8,13 @@
   },
   "breakpoints": {
     "$type": "string",
-    "xs": { "$value": "'(max-width: calc({windowSizes.sm} - 1px))'" },
+    "xs": { "$value": "'(max-width: calc({windowSizes.sm} - 1px))'"},
     "sm": { "$value": "'(min-width: {windowSizes.sm})'" },
     "md": { "$value": "'(min-width: {windowSizes.md})'" },
     "lg": { "$value": "'(min-width: {windowSizes.lg})'" },
-    "xl": { "$value": "'(min-width: {windowSizes.xl})'" },
-    "forcedColorsMode": { "$value": "(forced-colors: active)" },
-    "darkMode": { "$value": "(prefers-color-scheme: dark)" },
-    "prefersReducedMotion": { "$value": "(prefers-reduced-motion: reduced)" }
+    "xl": { "$value": "'(min-width: {windowSizes.xl})'", "$comment": "This is the largest breakpoint" },
+    "forcedColorsMode": { "$value": "'(forced-colors: active)'" },
+    "darkMode": { "$value": "'(prefers-color-scheme: dark)'" },
+    "prefersReducedMotion": { "$value": "'(prefers-reduced-motion: reduced)'"}
   }
 }
