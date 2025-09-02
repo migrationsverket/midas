@@ -32,11 +32,15 @@ const Option = ({ item }: OptionProps) => (
   <ListBoxItem
     {...item.value}
     textValue={item.textValue}
+    aria-label={item.textValue}
   >
     {({ isDisabled, isSelected, selectionMode }) => (
       <>
         {selectionMode === 'multiple' ? (
-          <div className={styles.checkboxContainer}>
+          <div
+            className={styles.checkboxContainer}
+            aria-hidden
+          >
             <Checkbox
               isDisabled={isDisabled}
               isSelected={isSelected}
