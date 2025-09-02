@@ -59,7 +59,7 @@
     color: var(--midas-text-disabled);
     cursor: not-allowed;
     background-color: var(--midas-button-background-disabled);
-    border-color: var(--midas-border-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 
   &[data-pressed] {
@@ -96,7 +96,7 @@
   align-items: center;
 
   &[data-hovered] {
-    background-color: var(--midas-button-background-icon-hover);
+    background-color: var(--midas-button-icon-hover);
   }
 
   &[data-disabled] {
@@ -105,7 +105,7 @@
   }
 
   &[data-pressed] {
-    background-color: var(--midas-button-background-icon-active);
+    background-color: var(--midas-button-icon-active);
   }
 
   &.medium {

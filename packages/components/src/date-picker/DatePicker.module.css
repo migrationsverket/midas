@@ -11,7 +11,7 @@
   height: var(--midas-size-150);
   align-items: center;
   background-color: var(--midas-field-01-base);
-  border-bottom: 1px solid var(--midas-border-primary);
+  border-bottom: 1px solid var(--midas-border-color-primary);
   padding-left: 1rem;
   display: flex;
   justify-content: flex-start;
@@ -23,7 +23,7 @@
 
   &[data-disabled] {
     cursor: not-allowed;
-    border-color: var(--midas-border-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 
   &:focus-visible,
@@ -68,7 +68,7 @@
     &[data-disabled] {
       cursor: not-allowed;
       color: var(--midas-icon-disabled);
-      border-color: var(--midas-border-disabled);
+      border-color: var(--midas-border-color-disabled);
     }
 
     &[data-hovered]:not([data-disabled]) {

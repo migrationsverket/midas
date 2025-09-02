@@ -8,28 +8,28 @@
 }
 
 .listItem {
-  border-bottom: var(--midas-size-10) solid var(--midas-border-subtle);
+  border-bottom: var(--midas-size-10) solid var(--midas-border-color-subtle);
   box-sizing: border-box;
   color: var(--midas-text-primary);
   height: var(--midas-size-130);
   padding: var(--midas-size-50) var(--midas-size-80);
 
   &[data-disabled] {
-    border-color: var(--midas-border-disabled);
+    border-color: var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
   }
 
   &[data-selected] {
     font-weight: 500;
-    border-color: var(--midas-border-tertiary);
+    border-color: var(--midas-border-color-tertiary);
 
     &[data-hovered] {
-      border-color: var(--midas-border-tertiary);
+      border-color: var(--midas-border-color-tertiary);
     }
   }
 
   &[data-hovered] {
-    border-color: var(--midas-border-secondary);
+    border-color: var(--midas-border-color-secondary);
     cursor: pointer;
   }
 
@@ -43,7 +43,7 @@
     flex: 0 0 100%;
 
     &[data-selected] {
-      border-left: var(--midas-size-10) solid var(--midas-border-tertiary);
+      border-left: var(--midas-size-10) solid var(--midas-border-color-tertiary);
       padding-left: var(--midas-size-70);
     }
   }

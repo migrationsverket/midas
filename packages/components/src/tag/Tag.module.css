@@ -6,25 +6,25 @@
   border: unset;
 
   &[data-hovered] {
-    background-color: var(--midas-button-background-icon-hover);
+    background-color: var(--midas-button-icon-hover);
   }
 
   &[data-pressed] {
-    background-color: var(--midas-button-background-icon-active);
+    background-color: var(--midas-button-icon-active);
   }
 
   &.success[data-hovered],
   &.warning[data-hovered],
   &.info[data-hovered],
   &.important[data-hovered] {
-    background-color: var(--midas-button-background-icon-hover);
+    background-color: var(--midas-button-icon-hover);
   }
 
   &.success[data-pressed],
   &.warning[data-pressed],
   &.info[data-pressed],
   &.important[data-pressed] {
-    background-color: var(--midas-button-background-icon-active);
+    background-color: var(--midas-button-icon-active);
   }
 }
 
@@ -32,10 +32,10 @@
   display: inline-flex;
   align-items: center;
   border-radius: 1.25rem;
-  background-color: var(--midas-field-01);
+  background-color: var(--midas-field-01-base);
   font-size: 0.875rem;
   font-family: var(--midas-typography-font-family);
-  border: 1px solid var(--midas-border-primary);
+  border: 1px solid var(--midas-border-color-primary);
   color: var(--midas-text-primary);
 
   &.success {
@@ -61,8 +61,8 @@
   &[data-disabled] {
     color: var(--midas-text-disabled);
     cursor: not-allowed;
-    border-color: var(--midas-border-disabled);
-    background-color: var(--midas-field-01);
+    border-color: var(--midas-border-color-disabled);
+    background-color: var(--midas-field-01-base);
   }
 
   &[data-focused],

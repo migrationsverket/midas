@@ -2,7 +2,7 @@
   width: 1rem;
   height: 1rem;
   box-sizing: border-box;
-  border: 1px solid var(--midas-border-primary);
+  border: 1px solid var(--midas-border-color-primary);
   transition: all 200ms;
   align-items: center;
   justify-content: center;
@@ -66,7 +66,7 @@
 
   &[data-disabled] div {
     pointer-events: none;
-    border: 1px solid var(--midas-border-disabled);
+    border: 1px solid var(--midas-border-color-disabled);
   }
 
   &[data-selected]:hover div,
@@ -132,11 +132,11 @@
   .checkbox {
     @media var(--breakpoint-xs) {
       padding: 0.875rem 1rem;
-      border: 1px solid var(--midas-border-primary);
+      border: 1px solid var(--midas-border-color-primary);
       width: auto;
 
       &[data-hovered] {
-        background-color: var(--midas-layer-hover-01);
+        background-color: var(--midas-layer-01-hover);
       }
 
       &[data-invalid] {
@@ -145,7 +145,7 @@
 
       &[data-disabled] {
         pointer-events: none;
-        border-color: var(--midas-border-disabled);
+        border-color: var(--midas-border-color-disabled);
       }
     }
   }

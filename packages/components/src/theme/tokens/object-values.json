@@ -1,6 +1,8 @@
 {
   "background": {
-    "$value": "light-dark({color.white}, {color.gray.200})",
+    "@": {
+      "$value": "light-dark({color.white}, {color.gray.200})"
+    },
     "hover": {
       "$value": "light-dark({color.whiteHover}, {color.gray.190})"
     },
@@ -68,20 +70,26 @@
     }
   },
   "border": {
-    "primary": {
-      "$value": "light-dark({color.gray.200}, {color.gray.10})"
+    "color": {
+      "primary": {
+        "$value": "light-dark({color.gray.200}, {color.gray.10})"
+      },
+      "secondary": {
+        "$value": "light-dark({color.gray.110}, {color.gray.90})"
+      },
+      "subtle": {
+        "$value": "light-dark({color.gray.50}, {color.gray.160})"
+      },
+      "tertiary": {
+        "$value": "light-dark({color.blue.150}, {color.blue.100})"
+      },
+      "disabled": {
+        "$value": "light-dark({color.gray.50}, {color.gray.140})"
+      }
     },
-    "secondary": {
-      "$value": "light-dark({color.gray.110}, {color.gray.90})"
-    },
-    "subtle": {
-      "$value": "light-dark({color.gray.50}, {color.gray.160})"
-    },
-    "tertiary": {
-      "$value": "light-dark({color.blue.150}, {color.blue.100})"
-    },
-    "disabled": {
-      "$value": "light-dark({color.gray.50}, {color.gray.140})"
+    "width": {
+      "$type": "size",
+      "$value": "1px"
     }
   },
   "field": {

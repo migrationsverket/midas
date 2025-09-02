@@ -31,12 +31,12 @@
   font-family: var(--midas-typography-font-family);
   display: flex;
   grid-area: Input;
-  border-bottom: 1px solid var(--midas-border-primary);
+  border-bottom: 1px solid var(--midas-border-color-primary);
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   padding: 1rem 1rem 1.25rem;
-  background-color: var(--midas-field-01);
+  background-color: var(--midas-field-01-base);
   box-sizing: border-box;
   word-wrap: break-word;
   width: 100%;
@@ -50,7 +50,7 @@
   }
 
   &[data-hovered] {
-    background-color: var(--midas-field-hover-01);
+    background-color: var(--midas-field-01-hover);
   }
 
   &[data-focused],
@@ -71,7 +71,7 @@
     cursor: not-allowed;
     background-color: var(--midas-field-disabled);
     border: none;
-    border-bottom: 1px solid var(--midas-border-disabled);
+    border-bottom: 1px solid var(--midas-border-color-disabled);
   }
 }
 
@@ -91,21 +91,21 @@
   font-family: var(--midas-typography-font-family);
   grid-area: Input;
   color: var(--midas-text-primary);
-  border-bottom: 1px solid var(--midas-border-primary);
+  border-bottom: 1px solid var(--midas-border-color-primary);
   font-size: 1rem;
   padding: 0 1rem;
   line-height: 1;
-  background-color: var(--midas-field-01);
+  background-color: var(--midas-field-01-base);
   border-radius: 0;
   box-sizing: border-box;
   width: 100%;
   min-height: var(--midas-size-150);
 
   &[data-hovered] {
-    background-color: var(--midas-field-hover-01);
+    background-color: var(--midas-field-01-hover);
 
     & + .passwordText {
-      background-color: var(--midas-field-hover-01);
+      background-color: var(--midas-field-01-hover);
     }
   }
 
@@ -127,12 +127,12 @@
     cursor: not-allowed;
     background-color: var(--midas-field-disabled);
     border: none;
-    border-bottom: 1px solid var(--midas-border-disabled);
+    border-bottom: 1px solid var(--midas-border-color-disabled);
   }
 }
 
 .passwordText {
-  background-color: var(--midas-field-01);
+  background-color: var(--midas-field-01-base);
   position: absolute;
   display: flex;
   align-items: center;

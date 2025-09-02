@@ -42,7 +42,7 @@
 }
 
 .modalHeader {
-  background-color: var(--midas-layer-01);
+  background-color: var(--midas-layer-01-base);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;

@@ -17,9 +17,9 @@
 
 .trigger {
   align-items: center;
-  background-color: var(--midas-field-01);
+  background-color: var(--midas-field-01-base);
   border: none;
-  border-bottom: 1px solid var(--midas-border-primary);
+  border-bottom: 1px solid var(--midas-border-color-primary);
   border-radius: 0;
   color: var(--midas-text-primary);
   display: flex;
@@ -44,7 +44,7 @@
   }
 
   &:hover {
-    background-color: var(--midas-field-hover-01);
+    background-color: var(--midas-field-01-hover);
     cursor: pointer;
   }
 
@@ -52,7 +52,7 @@
     cursor: not-allowed;
     background: var(--midas-field-disabled);
     color: var(--midas-text-disabled);
-    border-color: var(--midas-border-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 
   &[data-invalid]:not(:focus-visible) {
@@ -122,7 +122,7 @@
     pointer-events: none;
     background-color: var(--midas-field-disabled);
     color: var(--midas-text-disabled);
-    border-color: var(--midas-border-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 }
 

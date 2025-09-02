@@ -40,7 +40,7 @@
     padding: 0.5rem 0;
   }
 
-  background-color: var(--midas-layer-01);
+  background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: inline-block;
   flex-direction: column;
@@ -54,7 +54,7 @@
 
   & div:focus-visible,
   & div[data-focus-visible] {
-    outline: 2px solid var(--midas-border-primary);
+    outline: 2px solid var(--midas-border-color-primary);
 
     @media (forced-colors: active) {
       outline: 3px solid activeText;
@@ -86,11 +86,11 @@
     border: none;
     color: var(--midas-text-primary);
     padding: 0.5rem;
-    background-color: var(--midas-layer-01);
+    background-color: var(--midas-layer-01-base);
     cursor: pointer;
 
     &:hover:not([data-disabled]) {
-      background-color: var(--midas-field-hover-01);
+      background-color: var(--midas-field-01-hover);
     }
 
     &:focus-visible,
@@ -111,12 +111,12 @@
 }
 
 .day {
-  border: solid 2px var(--midas-layer-01);
+  border: solid 2px var(--midas-layer-01-base);
   cursor: pointer;
 
   &[data-hovered]:not([data-unavailable], [data-disabled], [data-selected]) {
-    background-color: var(--midas-field-hover-01);
-    border-color: var(--midas-field-hover-01);
+    background-color: var(--midas-field-01-hover);
+    border-color: var(--midas-field-01-hover);
   }
 
   &[data-selected='true'] {

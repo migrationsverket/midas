@@ -16,19 +16,20 @@
 .listBoxPopover {
   font-family: var(--midas-typography-font-family);
   width: var(--trigger-width);
-  background: var(--midas-layer-01);
+  background: var(--midas-layer-01-base);
   overflow-y: auto;
   box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
 
   @media (forced-colors: active) {
-    border: 1px solid var(--midas-border-primary);
+    border: 1px solid var(--midas-border-color-primary);
   }
 }
 
 .listBoxSectionHeading {
   font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40) var(--midas-spacing-40);
+  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40)
+    var(--midas-spacing-40);
   font-weight: 500;
   font-size: 14px;
   color: var(--midas-menu-text-section-header);
@@ -47,7 +48,7 @@
 }
 
 .listBoxItem {
-  background-color: var(--midas-layer-01);
+  background-color: var(--midas-layer-01-base);
   color: var(--midas-text-primary);
   display: flex;
   font-family: var(--midas-typography-font-family);
@@ -57,7 +58,7 @@
   transition: background-color 60ms;
 
   &:hover:not([data-disabled]) {
-    background-color: var(--midas-layer-hover-01);
+    background-color: var(--midas-layer-01-hover);
     cursor: pointer;
     transition-delay: 60ms;
   }
@@ -68,10 +69,10 @@
   }
 
   &[data-selected] {
-    background-color: var(--midas-layer-selected-01);
+    background-color: var(--midas-layer-01-selected);
 
     &:hover:not([data-disabled]) {
-      background-color: var(--midas-layer-selected-hover-01);
+      background-color: var(--midas-layer-01-selected-hover);
       transition-delay: 60ms;
     }
   }

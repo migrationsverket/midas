@@ -9,6 +9,6 @@
 
 .toggleButton {
   &[data-selected] {
-    box-shadow: inset 0 -2px 0 0 var(--midas-border-tertiary);
+    box-shadow: inset 0 -2px 0 0 var(--midas-border-color-tertiary);
   }
 }

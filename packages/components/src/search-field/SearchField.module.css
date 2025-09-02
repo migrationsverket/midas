@@ -55,11 +55,11 @@
   box-sizing: border-box;
   line-height: 1rem;
   appearance: none;
-  background-color: var(--midas-field-01);
+  background-color: var(--midas-field-01-base);
   width: 100%;
   height: var(--midas-size-150);
   padding: var(--midas-size-70) 0 var(--midas-size-70) var(--midas-size-150);
-  border-bottom: 1px solid var(--midas-border-primary);
+  border-bottom: 1px solid var(--midas-border-color-primary);
 
   &.medium {
     height: var(--midas-size-130);

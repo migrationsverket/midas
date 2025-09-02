@@ -1,8 +1,8 @@
 .card {
   font-family: var(--midas-typography-font-family);
   position: relative;
-  background-color: var(--midas-layer-01);
-  border-bottom: 1px solid var(--midas-border-secondary);
+  background-color: var(--midas-layer-01-base);
+  border-bottom: 1px solid var(--midas-border-color-secondary);
 
   &.horizontal {
     display: flex;
@@ -10,7 +10,7 @@
   }
 
   &:has(.cardLink:hover) {
-    background-color: var(--midas-layer-hover-01);
+    background-color: var(--midas-layer-01-hover);
   }
 }
 
@@ -52,11 +52,11 @@
   width: 100%;
 
   &[data-hovered] {
-    background-color: var(--midas-button-background-icon-hover);
+    background-color: var(--midas-button-icon-hover);
   }
 
   &[data-pressed] {
-    background-color: var(--midas-button-background-icon-active);
+    background-color: var(--midas-button-icon-active);
   }
 
   &:focus {

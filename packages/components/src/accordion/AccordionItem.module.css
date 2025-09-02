@@ -17,7 +17,7 @@
   --gap: 0.25rem;
   --item-padding: 0.75rem;
   --content-padding: 1rem;
-  --border-color: var(--midas-border-secondary);
+  --border-color: var(--midas-border-color-secondary);
   --border: 1px solid;
   --accordion-background: var(--midas-layer-01-base);
   --accordion-background-hover: var(--midas-layer-01-hover);
@@ -52,7 +52,7 @@
 }
 
 .item[data-disabled] {
-  --border-color: var(--midas-border-disabled);
+  --border-color: var(--midas-border-color-disabled);
   --icon-color: var(--midas-text-disabled);
   --text-color: var(--midas-text-disabled);
 
