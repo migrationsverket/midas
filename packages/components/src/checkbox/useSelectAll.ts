@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { CheckboxGroupState } from 'react-stately'
 import { Checkbox } from './Checkbox'
+import { CheckboxProps } from './types'
 
 export const useSelectAll = (
   children: React.ReactNode,
@@ -15,7 +16,7 @@ export const useSelectAll = (
   const checkboxValues: string[] = React.Children.toArray(children)
     .filter(child => React.isValidElement(child))
     .filter(child => !!child && child.type === Checkbox)
-    .map(child => child.props.value)
+    .map(child => (child.props as CheckboxProps).value || '')
 
   const noneSelected = selectedItems.length === 0
 
