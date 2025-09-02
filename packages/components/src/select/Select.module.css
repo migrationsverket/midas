@@ -172,6 +172,10 @@
   padding-right: 0.5rem;
 }
 
+.selectAll {
+  pointer-events: none;
+}
+
 @media --midas-breakpoints-forced-colors-mode {
   [data-invalid] .trigger {
     border: 5px solid Highlight !important;
