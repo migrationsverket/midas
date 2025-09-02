@@ -35,7 +35,7 @@
 
   &[data-focus-visible] {
     outline: none;
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
   }
 
   @media var(--breakpoint-xs) {
@@ -55,6 +55,6 @@
 
   &[data-focus-visible] {
     outline: none;
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
   }
 }

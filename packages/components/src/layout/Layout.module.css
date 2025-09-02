@@ -165,8 +165,7 @@
 
 .userName {
   color: var(--midas-text-primary);
-  margin: 0;
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.25rem;
   font-size: 0.875rem;
   font-weight: 500;
   display: none;
@@ -213,9 +212,8 @@
 
 .list {
   list-style-type: none;
-  margin: 0;
   padding: 0;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 .listGroupTitle {

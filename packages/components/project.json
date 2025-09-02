@@ -5,10 +5,10 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "generate-theme-css": {
+    "generate-css-tokens": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "nx g @midas-ds/workspace-tools:generate-theme"
+        "command": "npm run build:tokens"
       }
     },
     "test": {
@@ -25,7 +25,7 @@
       "options": {
         "outputPath": "dist/packages/components"
       },
-      "dependsOn": ["generate-theme-css"],
+      "dependsOn": ["generate-css-tokens"],
       "configurations": {
         "production": {
           "optimization": true,

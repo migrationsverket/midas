@@ -9,7 +9,7 @@
 
   &:focus-visible,
   &[data-focus-visible] {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
 
     @media (forced-colors: active) {

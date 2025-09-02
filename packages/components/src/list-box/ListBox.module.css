@@ -28,8 +28,7 @@
 .listBoxSectionHeading {
   font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40)
-    var(--midas-spacing-40);
+  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40) var(--midas-spacing-40);
   font-weight: 500;
   font-size: 14px;
   color: var(--midas-menu-text-section-header);
@@ -42,7 +41,7 @@
   margin-bottom: 2px !important;
 
   &:focus-visible {
-    box-shadow: var(--state-focus-inset);
+    box-shadow: var(--midas-state-focus-inset);
     outline: none;
   }
 }
@@ -87,7 +86,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: var(--state-focus-inset);
+    box-shadow: var(--midas-state-focus-inset);
     outline: none;
   }
 }

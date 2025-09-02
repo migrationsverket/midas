@@ -1,5 +1,5 @@
 .link {
-  font-family: var(--midas-typography-font-family);
+  font-family: var(--typography-font-family);
   color: var(--midas-link-enabled);
   text-decoration: underline;
   display: inline-flex;
@@ -35,7 +35,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -69,7 +69,7 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: var(--midas-z-index-base);
+    z-index: var(--z-index-base);
     content: '';
   }
 }

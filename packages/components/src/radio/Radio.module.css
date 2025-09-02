@@ -43,7 +43,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
 
     @media (forced-colors: active) {
@@ -87,7 +87,7 @@
   }
 
   &[data-selected][data-pressed]::before {
-    border-color: var(--midas-border-color-subtle);
+    border-color: var(--midas-border-subtle);
     background: var(--midas-icon-tertiary) 50% 50% no-repeat content-box;
   }
 
@@ -99,7 +99,7 @@
 
   @media var(--breakpoint-xs) {
     padding: 0.875rem 1rem;
-    border: 1px solid var(--midas-border-color-primary);
+    border: 1px solid var(--midas-border-primary);
     width: auto;
 
     &.radio {
@@ -108,7 +108,7 @@
     }
 
     &[data-hovered] {
-      background-color: var(--midas-field-02-hover);
+      background-color: var(--midas-field-hover-02);
     }
 
     &[data-invalid] {
@@ -117,7 +117,7 @@
 
     &[data-disabled] {
       pointer-events: none;
-      border-color: var(--midas-border-color-disabled);
+      border-color: var(--midas-border-disabled);
     }
   }
 }

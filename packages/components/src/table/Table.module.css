@@ -43,13 +43,12 @@
       background-color: var(--midas-layer-01-hover);
     }
 
-    background-color: var(--midas-layer-01-base);
+    background-color: var(--midas-layer-01-hover);
 
     .cell {
       border-top: 1px var(--midas-border-color-subtle) solid;
       color: var(--midas-text-primary);
-      padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
-        var(--midas-size-75);
+      padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80) var(--midas-size-75);
 
       &[data-focus-visible] {
         outline-offset: -4px;
@@ -76,8 +75,7 @@
     }
 
     .cell {
-      padding: calc(var(--midas-size-20) - 1px) var(--midas-size-80)
-        var(--midas-size-20);
+      padding: calc(var(--midas-size-20) - 1px) var(--midas-size-80) var(--midas-size-20);
 
       .selection {
         height: 16px;
