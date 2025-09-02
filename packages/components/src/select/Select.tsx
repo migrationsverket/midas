@@ -121,9 +121,13 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
         >
           {props.isSelectableAll && (
             <ListBoxButton
+              aria-label={strings.format('selectAll')}
               onClick={() => state.selectionManager.toggleSelectAll()}
             >
-              <div className={styles.checkboxContainer}>
+              <div
+                className={styles.checkboxContainer}
+                aria-hidden
+              >
                 <Checkbox
                   isSelected={state.selectionManager.isSelectAll}
                   isIndeterminate={
