@@ -1,3 +1,4 @@
+/** @deprecated */
 export declare const baseColors: {
     black: string;
     white: string;
@@ -68,6 +69,7 @@ export declare const baseColors: {
     signalRed190: string;
     signalRed200: string;
 };
+/** @deprecated */
 export declare const typography: {
     fontFamily: string;
     lineHeight10: string;
@@ -100,6 +102,7 @@ export declare const typography: {
     weightExtraBold: number;
     weightBlack: number;
 };
+/** @deprecated */
 export declare const spacing: {
     '10': string;
     '20': string;
@@ -114,21 +117,25 @@ export declare const spacing: {
     '110': string;
     '120': string;
 };
+/** @deprecated */
 export declare const states: {
     focus: string;
     focusInset: string;
 };
+/** @deprecated */
 export declare const transitions: {
     slow: string;
     normal: string;
     fast: string;
 };
+/** @deprecated */
 export declare const windowSizes: {
     sm: number;
     md: number;
     lg: number;
     xl: number;
 };
+/** @deprecated */
 export declare const breakpoints: {
     xs: string;
     sm: string;
@@ -139,6 +146,7 @@ export declare const breakpoints: {
     darkMode: string;
     prefersReducedMotion: string;
 };
+/** @deprecated */
 export declare const semantic: {
     background: string;
     backgroundHover: string;
@@ -231,6 +239,7 @@ export declare const semantic: {
     menuItemBackgroundSelected: string;
     menuTextSectionHeader: string;
 };
+/** @deprecated */
 export declare const zIndex: {
     base: number;
     above: number;
@@ -238,6 +247,7 @@ export declare const zIndex: {
     toast: number;
     skipToContent: number;
 };
+/** @deprecated */
 export declare const sizing: {
     '00': string;
     '05': string;

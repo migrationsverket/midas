@@ -1,248 +1,329 @@
 /**
  * Do not edit directly, this file was auto-generated.
  */
-export const windowSizesSm: "480px";
-export const windowSizesMd: "768px";
-export const windowSizesLg: "1024px";
-export const windowSizesXl: "1280px";
-export const breakpointsXs: "'(max-width: calc(480px - 1px))'";
-export const breakpointsSm: "'(min-width: 480px)'";
-export const breakpointsMd: "'(min-width: 768px)'";
-export const breakpointsLg: "'(min-width: 1024px)'";
-export const breakpointsXl: "'(min-width: 1280px)'";
-export const breakpointsForcedColorsMode: "'(forced-colors: active)'";
-export const breakpointsDarkMode: "'(prefers-color-scheme: dark)'";
-export const breakpointsPrefersReducedMotion: "'(prefers-reduced-motion: reduced)'";
-export const colorBlack: "#000";
-export const colorWhite: "#fff";
-export const colorBlackHover: "#0d0d0d";
-export const colorWhiteHover: "#e6e6e6";
-export const colorGray10: "#f2f2f2";
-export const colorGray20: "#e6e6e6";
-export const colorGray30: "#d9d9d9";
-export const colorGray40: "#ccc";
-export const colorGray50: "#bfbfbf";
-export const colorGray60: "#b3b3b3";
-export const colorGray70: "#a6a6a6";
-export const colorGray80: "#999";
-export const colorGray90: "#8c8c8c";
-export const colorGray100: "#808080";
-export const colorGray110: "#737373";
-export const colorGray120: "#666";
-export const colorGray130: "#5d5d5d";
-export const colorGray140: "#525252";
-export const colorGray150: "#474747";
-export const colorGray160: "#383838";
-export const colorGray170: "#333";
-export const colorGray180: "#262626";
-export const colorGray190: "#212121";
-export const colorGray200: "#171717";
-export const colorBlue10: "#eaf2f6";
-export const colorBlue20: "#d5e5ed";
-export const colorBlue40: "#abcbdb";
-export const colorBlue50: "#94BCD1";
-export const colorBlue60: "#82b0c9";
-export const colorBlue70: "#6CA3C0";
-export const colorBlue80: "#5897b8";
-export const colorBlue90: "#4289ad";
-export const colorBlue100: "#2e7ca5";
-export const colorBlue110: "#2C7399";
-export const colorBlue120: "#29698C";
-export const colorBlue130: "#25607f";
-export const colorBlue150: "#143c50";
-export const colorPurple80: "#b46ab4";
-export const colorPurple110: "#954b95";
-export const colorRed100: "#b90835";
-export const colorSignalBlue10: "#eaf2f6";
-export const colorSignalBlue20: "#d5e5ed";
-export const colorSignalBlue100: "#06c";
-export const colorSignalGreen20: "#d5f2d9";
-export const colorSignalGreen30: "#bae5c5";
-export const colorSignalGreen100: "#008d3c";
-export const colorSignalYellow10: "#fff8e1";
-export const colorSignalYellow20: "#FFEBA8";
-export const colorSignalYellow100: "#fdb813";
-export const colorSignalRed10: "#ffefef";
-export const colorSignalRed20: "#ffdfdf";
-export const colorSignalRed30: "#fcc8c8";
-export const colorSignalRed40: "#f9b0b0";
-export const colorSignalRed50: "#f69999";
-export const colorSignalRed60: "#f38181";
-export const colorSignalRed70: "#ef6a6a";
-export const colorSignalRed80: "#eb4e4e";
-export const colorSignalRed90: "#e93b3b";
-export const colorSignalRed100: "#e62323";
-export const colorSignalRed110: "#d12020";
-export const colorSignalRed120: "#bc1d1d";
-export const colorSignalRed130: "#a71919";
-export const colorSignalRed140: "#921616";
-export const colorSignalRed150: "#7d1313";
-export const colorSignalRed160: "#691010";
-export const colorSignalRed170: "#540d0d";
-export const colorSignalRed180: "#3f0a0a";
-export const colorSignalRed190: "#2a0606";
-export const colorSignalRed200: "#150303";
-export const background: "light-dark(#fff, #171717)";
-export const backgroundHover: "light-dark(#e6e6e6, #212121)";
-export const backgroundInverse: "light-dark(#171717, #f2f2f2)";
-export const layer01Base: "light-dark(#f2f2f2, #262626)";
-export const layer01Hover: "light-dark(#e6e6e6, #333)";
-export const layer01Selected: "light-dark(#d9d9d9, #383838)";
-export const layer01SelectedHover: "light-dark(#ccc, #474747)";
-export const layer02Base: "light-dark(#fff, #383838)";
-export const layer02Hover: "light-dark(#e6e6e6, #474747)";
-export const layer02Selected: "light-dark(#d9d9d9, #525252)";
-export const layer02SelectedHover: "light-dark(#ccc, #5d5d5d)";
-export const layerAccent01Base: "light-dark(#d9d9d9, #383838)";
-export const layerAccent01Hover: "light-dark(#ccc, #474747)";
-export const layerAccent01Selected: "light-dark(#bfbfbf, #525252)";
-export const layerAccent02Base: "light-dark(#f2f2f2, #262626)";
-export const layerAccent02Hover: "light-dark(#e6e6e6, #333)";
-export const layerAccent02Selected: "light-dark(#d9d9d9, #383838)";
-export const brandPrimary: "light-dark(#b90835, #b90835)";
-export const borderColorPrimary: "light-dark(#171717, #f2f2f2)";
-export const borderColorSecondary: "light-dark(#737373, #8c8c8c)";
-export const borderColorSubtle: "light-dark(#bfbfbf, #383838)";
-export const borderColorTertiary: "light-dark(#143c50, #2e7ca5)";
-export const borderColorDisabled: "light-dark(#bfbfbf, #525252)";
-export const borderWidth: "1px";
-export const field01Base: "light-dark(#f2f2f2, #262626)";
-export const field01Hover: "light-dark(#e6e6e6, #333)";
-export const field01Active: "light-dark(#d9d9d9, #383838)";
-export const field02Base: "light-dark(#fff, #383838)";
-export const field02Hover: "light-dark(#e6e6e6, #474747)";
-export const field02Active: "light-dark(#d9d9d9, #525252)";
-export const fieldDisabled: "light-dark(#f2f2f2, #262626)";
-export const skeleton01: "light-dark(#f2f2f2, #262626)";
-export const skeleton02: "light-dark(#d9d9d9, #383838)";
-export const iconPrimary: "light-dark(#171717, #f2f2f2)";
-export const iconSecondary: "light-dark(#525252, #a6a6a6)";
-export const iconTertiary: "light-dark(#143c50, #f2f2f2)";
-export const iconInverse: "light-dark(#fff, #171717)";
-export const iconOnColor: "light-dark(#fff, #fff)";
-export const iconDisabled: "light-dark(#bfbfbf, #525252)";
-export const iconSuccess: "light-dark(#008d3c, #008d3c)";
-export const iconInfo: "light-dark(#06c, #06c)";
-export const iconWarning: "light-dark(#e62323, #e62323)";
-export const iconImportant: "light-dark(#fdb813, #fdb813)";
-export const linkEnabled: "light-dark(#29698C, #6CA3C0)";
-export const linkHover: "light-dark(#143c50, #94BCD1)";
-export const linkPressed: "light-dark(#171717, #abcbdb)";
-export const linkVisited: "light-dark(#954b95, #b46ab4)";
-export const supportBorderSuccess: "light-dark(#008d3c, #008d3c)";
-export const supportBorderInfo: "light-dark(#06c, #06c)";
-export const supportBorderImportant: "light-dark(#fdb813, #fdb813)";
-export const supportBorderWarning: "light-dark(#e62323, #e62323)";
-export const supportBackgroundSuccess: "light-dark(#d5f2d9, #262626)";
-export const supportBackgroundSuccessHover: "light-dark(#bae5c5, #333)";
-export const supportBackgroundInfo: "light-dark(#eaf2f6, #262626)";
-export const supportBackgroundInfoHover: "light-dark(#d5e5ed, light-dark(#e6e6e6, #333))";
-export const supportBackgroundImportant: "light-dark(#fff8e1, #262626)";
-export const supportBackgroundImportantHover: "light-dark(#FFEBA8, light-dark(#e6e6e6, #333))";
-export const supportBackgroundWarning: "light-dark(#ffdfdf, #262626)";
-export const supportBackgroundWarningHover: "light-dark(#fcc8c8, #333)";
-export const textPrimary: "light-dark(#171717, #f2f2f2)";
-export const textSecondary: "light-dark(#525252, #a6a6a6)";
-export const textTertiary: "light-dark(#143c50, #f2f2f2)";
-export const textOnColor: "light-dark(#fff, #fff)";
-export const textInverse: "light-dark(#f2f2f2, #171717)";
-export const textDisabled: "light-dark(#bfbfbf, #525252)";
-export const textWarning: "light-dark(#e62323, #eb4e4e)";
-export const textPlaceholder: "light-dark(#a6a6a6, #525252)";
-export const buttonBackgroundPrimary: "light-dark(#143c50, #2e7ca5)";
-export const buttonBackgroundPrimaryHover: "light-dark(#25607f, #25607f)";
-export const buttonBackgroundPrimaryActive: "light-dark(#2e7ca5, #143c50)";
-export const buttonBackgroundSecondary: "light-dark(#fff, #171717)";
-export const buttonBackgroundSecondaryHover: "light-dark(#e6e6e6, #212121)";
-export const buttonBackgroundSecondaryActive: "light-dark(#d9d9d9, #262626)";
-export const buttonBackgroundTertiaryHover: "light-dark(#e6e6e6, #212121)";
-export const buttonBackgroundTertiaryActive: "light-dark(#d9d9d9, #262626)";
-export const buttonBackgroundDanger: "light-dark(#e62323, #e62323)";
-export const buttonBackgroundDangerHover: "light-dark(#bc1d1d, #bc1d1d)";
-export const buttonBackgroundDangerActive: "light-dark(#7d1313, #7d1313)";
-export const buttonBackgroundDisabled: "light-dark(#f2f2f2, #262626)";
-export const buttonBorderSecondary: "light-dark(#143c50, #f2f2f2)";
-export const buttonIconHover: "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))";
-export const buttonIconActive: "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))";
-export const badgeBackground: "light-dark(#e62323, #eb4e4e)";
-export const badgeLabel: "light-dark(#fff, #000)";
-export const calendarDateBackgroundHover: "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))";
-export const calendarDateBackgroundSelected: "light-dark(#143c50, #5897b8)";
-export const calendarDateBackgroundStartRange: "light-dark(#143c50, #5897b8)";
-export const calendarDateBackgroundInRange: "light-dark(#d5e5ed, #143c50)";
-export const calendarDateBackgroundEndRange: "light-dark(#143c50, #5897b8)";
-export const logoPrimary: "light-dark(#b90835, #fff)";
-export const menuItemBackgroundHover: "light-dark(#e6e6e6, #212121)";
-export const menuItemBackgroundSelected: "light-dark(#f2f2f2, #262626)";
-export const menuTextSectionHeader: "light-dark(#29698C, #5897b8)";
-export const size10: "0.125rem";
-export const size15: "0.188rem";
-export const size20: "0.25rem";
-export const size30: "0.375rem";
-export const size40: "0.5rem";
-export const size50: "0.625rem";
-export const size60: "0.75rem";
-export const size70: "0.875rem";
-export const size75: "0.938rem";
-export const size80: "1rem";
-export const size90: "1.25rem";
-export const size100: "1.5rem";
-export const size110: "1.75rem";
-export const size120: "2rem";
-export const size130: "2.5rem";
-export const size140: "2.75rem";
-export const size150: "3rem";
-export const size00: 0;
-export const size05: "0.063rem";
-export const spacing10: "0.125rem";
-export const spacing20: "0.25rem";
-export const spacing30: "0.5rem";
-export const spacing40: "0.75rem";
-export const spacing50: "1rem";
-export const spacing60: "1.5rem";
-export const spacing70: "2rem";
-export const spacing80: "2.5rem";
-export const spacing90: "3rem";
-export const spacing100: "4rem";
-export const spacing110: "5rem";
-export const spacing120: "6rem";
-export const stateFocus: "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)";
-export const stateFocusInset: "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)";
-export const transitionsSlow: "500ms";
-export const transitionsNormal: "300ms";
-export const transitionsFast: "250ms";
-export const typographyFontFamily: "Inter, sans-serif";
-export const typographyFontSize10: "0.75rem";
-export const typographyFontSize20: "0.875rem";
-export const typographyFontSize30: "1rem";
-export const typographyFontSize40: "1.125rem";
-export const typographyFontSize50: "1.25rem";
-export const typographyFontSize60: "1.5rem";
-export const typographyFontSize70: "1.75rem";
-export const typographyFontSize80: "2rem";
-export const typographyFontSize90: "2.25rem";
-export const typographyFontSize100: "2.625rem";
-export const typographyLineHeight10: "1rem";
-export const typographyLineHeight20: "1.125rem";
-export const typographyLineHeight30: "1.25rem";
-export const typographyLineHeight40: "1.375rem";
-export const typographyLineHeight50: "1.5rem";
-export const typographyLineHeight60: "1.75rem";
-export const typographyLineHeight70: "2rem";
-export const typographyLineHeight80: "2.25rem";
-export const typographyLineHeight90: "2.5rem";
-export const typographyLineHeight100: "2.75rem";
-export const typographyWeightThin: 100;
-export const typographyWeightExtraLight: 200;
-export const typographyWeightLight: 300;
-export const typographyWeightRegular: 400;
-export const typographyWeightMedium: 500;
-export const typographyWeightSemiBold: 600;
-export const typographyWeightBold: 700;
-export const typographyWeightExtraBold: 800;
-export const typographyWeightBlack: 900;
-export const zIndexBase: 1;
-export const zIndexAbove: 10;
-export const zIndexModal: 1000;
-export const zIndexToast: 1100;
-export const zIndexSkipToContent: 1200;
+
+export const windowSizesSm: string;
+export const windowSizesMd: string;
+export const windowSizesLg: string;
+export const windowSizesXl: string;
+export const breakpointsXs: string;
+export const breakpointsSm: string;
+export const breakpointsMd: string;
+export const breakpointsLg: string;
+export const breakpointsXl: string;
+export const breakpointsForcedColorsMode: string;
+export const breakpointsDarkMode: string;
+export const breakpointsPrefersReducedMotion: string;
+/** Black */
+export const colorBlack: string;
+export const colorWhite: string;
+export const colorBlackHover: string;
+export const colorWhiteHover: string;
+export const colorGray10: string;
+export const colorGray20: string;
+export const colorGray30: string;
+export const colorGray40: string;
+export const colorGray50: string;
+export const colorGray60: string;
+export const colorGray70: string;
+export const colorGray80: string;
+export const colorGray90: string;
+export const colorGray100: string;
+export const colorGray110: string;
+export const colorGray120: string;
+export const colorGray130: string;
+export const colorGray140: string;
+export const colorGray150: string;
+export const colorGray160: string;
+export const colorGray170: string;
+export const colorGray180: string;
+export const colorGray190: string;
+export const colorGray200: string;
+export const colorBlue10: string;
+export const colorBlue20: string;
+export const colorBlue40: string;
+export const colorBlue50: string;
+export const colorBlue60: string;
+export const colorBlue70: string;
+export const colorBlue80: string;
+export const colorBlue90: string;
+export const colorBlue100: string;
+export const colorBlue110: string;
+export const colorBlue120: string;
+export const colorBlue130: string;
+export const colorBlue150: string;
+export const colorPurple80: string;
+export const colorPurple110: string;
+export const colorRed100: string;
+export const colorSignalBlue10: string;
+export const colorSignalBlue20: string;
+export const colorSignalBlue100: string;
+export const colorSignalGreen20: string;
+export const colorSignalGreen30: string;
+export const colorSignalGreen100: string;
+export const colorSignalYellow10: string;
+export const colorSignalYellow20: string;
+export const colorSignalYellow100: string;
+export const colorSignalRed10: string;
+export const colorSignalRed20: string;
+export const colorSignalRed30: string;
+export const colorSignalRed40: string;
+export const colorSignalRed50: string;
+export const colorSignalRed60: string;
+export const colorSignalRed70: string;
+export const colorSignalRed80: string;
+export const colorSignalRed90: string;
+export const colorSignalRed100: string;
+export const colorSignalRed110: string;
+export const colorSignalRed120: string;
+export const colorSignalRed130: string;
+export const colorSignalRed140: string;
+export const colorSignalRed150: string;
+export const colorSignalRed160: string;
+export const colorSignalRed170: string;
+export const colorSignalRed180: string;
+export const colorSignalRed190: string;
+export const colorSignalRed200: string;
+/** Standardbakgrund för våra applikationer */
+export const background: string;
+/** Hoverfärg för bakgrund */
+export const backgroundHover: string;
+/** Bakgrund eller element i med hög kontrast */
+export const backgroundInverse: string;
+/** Yta som används på background. Sekundär bakgrundsfärg */
+export const layer01Base: string;
+/** Hover state för layer01 */
+export const layer01Hover: string;
+/** Selected state för layer01 */
+export const layer01Selected: string;
+/** Hover state för layerSelected01 */
+export const layer01SelectedHover: string;
+/** Yta som ligger på layer01 */
+export const layer02Base: string;
+/** Hover state för layer02 */
+export const layer02Hover: string;
+/** Selected state för layer02 */
+export const layer02Selected: string;
+/** Hover state för layerSelected02 */
+export const layer02SelectedHover: string;
+/** Accentfärg som används tillsammans med layer01 */
+export const layerAccent01Base: string;
+/** Hover state för layerAccent01 */
+export const layerAccent01Hover: string;
+/** Selected state för layerAccent01 */
+export const layerAccent01Selected: string;
+/** Accentfärg som används tillsammans med layer02 */
+export const layerAccent02Base: string;
+/** Hover state för layerAccent02 */
+export const layerAccent02Hover: string;
+/** Selected state för layerAccent02 */
+export const layerAccent02Selected: string;
+/** Primära röda färgen */
+export const brandPrimary: string;
+/** Kantlinje med hög kontrast, används med field01 */
+export const borderColorPrimary: string;
+/** Kantlinje med medelög kontrast */
+export const borderColorSecondary: string;
+/** Kantlinje med låg kontrast */
+export const borderColorSubtle: string;
+/** Primärblå kantlinje */
+export const borderColorTertiary: string;
+/** Kantlinje för disabled state */
+export const borderColorDisabled: string;
+export const borderWidth: string;
+/** Standardfärg för fält, som ligger på background */
+export const field01Base: string;
+/** Hover state för field01 */
+export const field01Hover: string;
+/** Active state för field01 */
+export const field01Active: string;
+/** Sekundfärfärg för fält, som ligger på layer01 */
+export const field02Base: string;
+/** Hover state för field02 */
+export const field02Hover: string;
+/** Active state för field02 */
+export const field02Active: string;
+/** Disabled state för fält */
+export const fieldDisabled: string;
+/** Standardfärg för skeleton */
+export const skeleton01: string;
+/** Färg som används när Skeleton ligger på bakgrundsfärgen `layer01` eller `light-dark(#f2f2f2,#262626)` */
+export const skeleton02: string;
+/** Primär ikonfärg */
+export const iconPrimary: string;
+/** Sekundär ikonfärg */
+export const iconSecondary: string;
+export const iconTertiary: string;
+/** Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge */
+export const iconInverse: string;
+/** Ikonfärg på färgade ytor som inte är lager */
+export const iconOnColor: string;
+/** Ikoner som är disabled */
+export const iconDisabled: string;
+/** Ikonfär för success state */
+export const iconSuccess: string;
+/** Ikonfärg för informationsikoner */
+export const iconInfo: string;
+/** Ikonfärg för varningsikoner och invalid state */
+export const iconWarning: string;
+/** Ikonfärg för viktig information */
+export const iconImportant: string;
+/** Primärlänkfärg */
+export const linkEnabled: string;
+/** Hover state för länkar */
+export const linkHover: string;
+/** Active/pressed state för länkar */
+export const linkPressed: string;
+/** Färg för besökta länkar */
+export const linkVisited: string;
+/** Kantlinje för success-notifikationer */
+export const supportBorderSuccess: string;
+/** Kantlinje för notifikationer med information */
+export const supportBorderInfo: string;
+/** Kantlinje för notifikationer med viktig information */
+export const supportBorderImportant: string;
+/** Kantlinje för notifikationer med varningar */
+export const supportBorderWarning: string;
+/** Bakgrund för success-notifikationer */
+export const supportBackgroundSuccess: string;
+/** Hoverbakgrund för success-notifikationer */
+export const supportBackgroundSuccessHover: string;
+/** Bakgrund för notifikationer med information */
+export const supportBackgroundInfo: string;
+export const supportBackgroundInfoHover: string;
+/** Bakgrund för notifikationer med viktig information */
+export const supportBackgroundImportant: string;
+export const supportBackgroundImportantHover: string;
+/** Bakgrund för notifikationer med varningar */
+export const supportBackgroundWarning: string;
+/** Hoverbakgrund för notifikationer med varningar */
+export const supportBackgroundWarningHover: string;
+/** Primär textfärg. Rubriker och brödtext. */
+export const textPrimary: string;
+/** Sekundär textfärg */
+export const textSecondary: string;
+/** Textfärg på tertiär knapp */
+export const textTertiary: string;
+/** Textfärg på färgade bakgrunder som inte är lager */
+export const textOnColor: string;
+/** Inverterad textfärg */
+export const textInverse: string;
+/** Textfärg för disabled state */
+export const textDisabled: string;
+/** Textfärg för felmeddelanden */
+export const textWarning: string;
+/** Textfärg för platshållare */
+export const textPlaceholder: string;
+/** Färg på primärknapp */
+export const buttonBackgroundPrimary: string;
+/** Hover state på primärknapp */
+export const buttonBackgroundPrimaryHover: string;
+/** Active state för primärknapp */
+export const buttonBackgroundPrimaryActive: string;
+/** Färg på sekundärknapp */
+export const buttonBackgroundSecondary: string;
+/** Hover state på sekundärknapp */
+export const buttonBackgroundSecondaryHover: string;
+/** Active state för sekundärknapp */
+export const buttonBackgroundSecondaryActive: string;
+/** Hover state för tertiär knapp */
+export const buttonBackgroundTertiaryHover: string;
+/** Active state för tertiär knapp */
+export const buttonBackgroundTertiaryActive: string;
+/** Färg på danger knapp */
+export const buttonBackgroundDanger: string;
+/** Hover state för danger knapp */
+export const buttonBackgroundDangerHover: string;
+/** Active state för danger knapp */
+export const buttonBackgroundDangerActive: string;
+/** Disabled state för knappar */
+export const buttonBackgroundDisabled: string;
+/** Kantfärg för sekundärknapp */
+export const buttonBorderSecondary: string;
+export const buttonIconHover: string;
+export const buttonIconActive: string;
+export const badgeBackground: string;
+export const badgeLabel: string;
+export const calendarDateBackgroundHover: string;
+export const calendarDateBackgroundSelected: string;
+export const calendarDateBackgroundStartRange: string;
+export const calendarDateBackgroundInRange: string;
+export const calendarDateBackgroundEndRange: string;
+/** Färg på logotypen */
+export const logoPrimary: string;
+/** Bakgrundsfärg för menu vid hover */
+export const menuItemBackgroundHover: string;
+/** Bakgrundsfärg för aktiv menu */
+export const menuItemBackgroundSelected: string;
+export const menuTextSectionHeader: string;
+export const size10: string;
+export const size15: string;
+export const size20: string;
+export const size30: string;
+export const size40: string;
+export const size50: string;
+export const size60: string;
+export const size70: string;
+export const size75: string;
+export const size80: string;
+export const size90: string;
+export const size100: string;
+export const size110: string;
+export const size120: string;
+export const size130: string;
+export const size140: string;
+export const size150: string;
+export const size00: number;
+export const size05: string;
+export const spacing10: string;
+export const spacing20: string;
+export const spacing30: string;
+export const spacing40: string;
+export const spacing50: string;
+export const spacing60: string;
+export const spacing70: string;
+export const spacing80: string;
+export const spacing90: string;
+export const spacing100: string;
+export const spacing110: string;
+export const spacing120: string;
+export const stateFocus: string;
+export const stateFocusInset: string;
+export const transitionsSlow: string;
+export const transitionsNormal: string;
+export const transitionsFast: string;
+export const typographyFontFamily: string;
+export const typographyFontSize10: string;
+export const typographyFontSize20: string;
+export const typographyFontSize30: string;
+export const typographyFontSize40: string;
+export const typographyFontSize50: string;
+export const typographyFontSize60: string;
+export const typographyFontSize70: string;
+export const typographyFontSize80: string;
+export const typographyFontSize90: string;
+export const typographyFontSize100: string;
+export const typographyLineHeight10: string;
+export const typographyLineHeight20: string;
+export const typographyLineHeight30: string;
+export const typographyLineHeight40: string;
+export const typographyLineHeight50: string;
+export const typographyLineHeight60: string;
+export const typographyLineHeight70: string;
+export const typographyLineHeight80: string;
+export const typographyLineHeight90: string;
+export const typographyLineHeight100: string;
+export const typographyWeightThin: number;
+export const typographyWeightExtraLight: number;
+export const typographyWeightLight: number;
+export const typographyWeightRegular: number;
+export const typographyWeightMedium: number;
+export const typographyWeightSemiBold: number;
+export const typographyWeightBold: number;
+export const typographyWeightExtraBold: number;
+export const typographyWeightBlack: number;
+export const zIndexBase: number;
+export const zIndexAbove: number;
+export const zIndexModal: number;
+export const zIndexToast: number;
+export const zIndexSkipToContent: number;
