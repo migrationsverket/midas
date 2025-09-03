@@ -16,14 +16,17 @@ export const SidebarLink: React.FC<SidebarLinkProps> = ({
   active,
   hasBadge,
 }) => {
-  const { isCollapsed, setIsOpened } = useLayoutContext()
+  const { isCollapsed, setIsOpened, clientSideHref } = useLayoutContext()
+
+  const hrefWithBasePath = clientSideHref ? clientSideHref(href) : href
+
   const [isActive, setIsActive] = React.useState<boolean>(false)
 
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
-      setIsActive(active ?? window.location.pathname === href)
+      setIsActive(active ?? window.location.pathname === hrefWithBasePath)
     }
-  }, [active, href])
+  }, [active, hrefWithBasePath])
 
   if (isCollapsed)
     return (
