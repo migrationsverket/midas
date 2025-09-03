@@ -11,7 +11,7 @@ import { CheckboxGroupState } from 'react-stately'
 export type CheckboxProps = AriaCheckboxProps &
   SlotProps & {
     className?: string
-    ref?: React.RefObject<HTMLLabelElement | null>
+    ref?: React.Ref<HTMLLabelElement>
   }
 
 export interface CheckboxComponentProps extends CheckboxProps {

@@ -8,7 +8,7 @@ import { InputProps } from './Input'
 import { InputContext, useContextProps } from 'react-aria-components'
 
 export interface PasswordFieldProps extends InputProps {
-  ref?: React.RefObject<HTMLInputElement | null>
+  ref?: React.Ref<HTMLInputElement>
 }
 
 export const PasswordField: React.FC<PasswordFieldProps> = ({

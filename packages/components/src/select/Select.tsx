@@ -25,7 +25,7 @@ import messages from './intl/translations.json'
 interface MidasSelectProps extends SelectProps {
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
-  ref?: React.RefObject<HTMLButtonElement | null>
+  ref?: React.Ref<HTMLButtonElement>
 }
 
 const SelectComponent: React.FC<MidasSelectProps> = ({

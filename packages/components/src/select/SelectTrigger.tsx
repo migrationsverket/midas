@@ -10,7 +10,7 @@ interface SelectTriggerProps
   extends Omit<SelectProps, 'children'>,
     AriaButtonProps<'button'> {
   state: MultiSelectState<ListBoxOption>
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>
+  triggerRef: React.RefObject<HTMLButtonElement | null>
 }
 
 export const SelectTrigger: React.FC<SelectTriggerProps> = ({
