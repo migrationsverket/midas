@@ -4,7 +4,7 @@ import { SelectProps, MultiSelectState } from './types';
 import { ListBoxOption } from '../list-box';
 interface SelectTriggerProps extends Omit<SelectProps, 'children'>, AriaButtonProps<'button'> {
     state: MultiSelectState<ListBoxOption>;
-    triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
+    triggerRef: React.RefObject<HTMLButtonElement | null>;
 }
 export declare const SelectTrigger: React.FC<SelectTriggerProps>;
 export {};

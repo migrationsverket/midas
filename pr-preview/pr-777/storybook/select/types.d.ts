@@ -3,7 +3,7 @@ import { FormValidationState } from '@react-stately/form';
 import { OverlayTriggerProps } from '@react-types/overlays';
 import { ListState } from '@react-stately/list';
 import { AsyncLoadable, CollectionBase, FocusableProps, InputBase, LabelableProps, MultipleSelection, TextInputBase, Validation, Key, Node, CollectionChildren } from '@react-types/shared';
-import { HTMLAttributes, RefObject } from '../../../../node_modules/react';
+import { HTMLAttributes, Ref } from '../../../../node_modules/react';
 import { AriaListBoxOptions } from 'react-aria';
 import { AriaButtonProps } from '@react-types/button';
 import { AriaSelectProps } from '@react-types/select';
@@ -173,5 +173,5 @@ export interface SelectProps extends MultiSelectStateProps<ListBoxOption> {
 export type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
     /** Item objects in the collection. */
     options: ListBoxOption[];
-    ref?: RefObject<HTMLButtonElement | null>;
+    ref?: Ref<HTMLButtonElement>;
 };

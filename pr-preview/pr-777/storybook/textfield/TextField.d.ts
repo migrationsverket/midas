@@ -5,6 +5,6 @@ export interface TextFieldProps extends Omit<TextFieldBaseProps, 'children'> {
     className?: InputProps['className'];
     form?: string;
     list?: string;
-    ref?: React.RefObject<HTMLInputElement | null>;
+    ref?: React.Ref<HTMLInputElement>;
 }
 export declare const TextField: React.FC<TextFieldProps>;

@@ -4,7 +4,7 @@ import * as React from 'react';
 export interface TextAreaProps extends Omit<TextFieldBaseProps, 'children' | 'type' | 'pattern' | 'ref'> {
     className?: AriaTextAreaProps['className'];
     form?: string;
-    ref?: React.RefObject<HTMLTextAreaElement | null>;
+    ref?: React.Ref<HTMLTextAreaElement>;
     rows?: number;
     wrap?: string;
 }

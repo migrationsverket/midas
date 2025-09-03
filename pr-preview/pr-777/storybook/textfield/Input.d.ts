@@ -5,6 +5,6 @@ export interface InputProps extends AriaInputProps {
      * @default false
      */
     skipContext?: boolean;
-    ref?: React.RefObject<HTMLInputElement | null>;
+    ref?: React.Ref<HTMLInputElement>;
 }
 export declare const Input: React.FC<InputProps>;

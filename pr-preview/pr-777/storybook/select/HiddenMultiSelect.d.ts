@@ -1,5 +1,5 @@
-import { FocusableElement, RefObject } from '@react-types/shared';
-import { default as React, ReactNode } from '../../../../node_modules/react';
+import { FocusableElement } from '@react-types/shared';
+import { default as React, ReactNode, RefObject } from '../../../../node_modules/react';
 import { MultiSelectState } from './types';
 import { ListBoxOption } from '../list-box';
 export interface AriaHiddenMultiSelectProps {

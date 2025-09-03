@@ -5,7 +5,7 @@ interface MultiSelectValueTagProps extends SelectProps {
     state: MultiSelectState<ListBoxOption>;
     parentWidth: number;
     onClear: () => void;
-    triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
+    triggerRef: React.RefObject<HTMLButtonElement | null>;
 }
 export declare const MultiSelectValueTag: React.FC<MultiSelectValueTagProps>;
 export {};
