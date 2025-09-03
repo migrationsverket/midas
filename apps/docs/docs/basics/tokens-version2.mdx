@@ -8,12 +8,14 @@ sidebar_position: 8
 import { Grid, GridItem, Text } from '@midas-ds/components'
 import { baseColors, semantic, generatedTokens, tokens } from '@midas-ds/components/theme'
 import CodeBlock from '@theme/CodeBlock'
-import {Token, TokenList} from '@site/src/components/tokens/Tokens'
+import {Token, TokenList, Layers, ColorSpectrum, TokenNaming } from '@site/src/components/tokens'
 
 Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för
 våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår
 primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt,
 tillgängligt och konsekvent uttryck i hela designsystemet.
+
+<ColorSpectrum/>
 
 # TODO: REMOVE
 
@@ -52,6 +54,7 @@ Semantiska tokens är kopplade till referenstokens och är döpta för att beskr
 med ett prefix som anger deras syfte, t.ex "layer", "text" eller "border". Varje semantisk token har två referenstokens
 kopplade till sig, en för ljust och en för mörk läge.
 
+<TokenNaming/>
 
 ## Lager
 
@@ -62,6 +65,8 @@ används när en komponent ligger på `background` och tokens som slutar på 02 
 
 I ljust läge växlar färgerna mellan vitt och grått för varje lager medan varje nytt lager i mörkt läge får en ljusare
 grå nyans än det föregående, se exempel nedan.
+
+<Layers/>
 
 # TODO! ADD STUFF
 
