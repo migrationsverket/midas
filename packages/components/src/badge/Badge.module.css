@@ -5,7 +5,7 @@
   min-height: 0.5rem;
   border-radius: 0.5rem;
   font-size: 0.625rem;
-  color: var(--semantic-badge-label);
+  color: var(--semantic-text-on-color);
 
   &.hasChildren {
     display: flex;
