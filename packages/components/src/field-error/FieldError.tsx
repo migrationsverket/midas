@@ -10,7 +10,7 @@ import styles from './FieldError.module.css'
 
 export interface FieldErrorProps extends AriaFieldErrorProps {
   isInvalid?: boolean
-  ref?: React.RefObject<HTMLElement | null>
+  ref?: React.Ref<HTMLElement>
 }
 
 export const FieldError: React.FC<FieldErrorProps> = ({ ref, ...props }) => {

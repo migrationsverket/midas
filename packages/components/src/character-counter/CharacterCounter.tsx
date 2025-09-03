@@ -8,7 +8,7 @@ import styles from './CharacterCounter.module.css'
 
 export interface CharacterCounterProps extends InputProps {
   isLonely?: boolean
-  ref?: React.RefObject<HTMLInputElement | null>
+  ref?: React.Ref<HTMLInputElement>
 }
 
 export const CharacterCounter: React.FC<CharacterCounterProps> = ({
