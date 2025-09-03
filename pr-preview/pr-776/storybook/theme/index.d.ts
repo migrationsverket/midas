@@ -1,3 +1,5 @@
+export declare const tokenObject: any;
+export declare const flat: any;
 export * from './tokens';
 export declare const theme: {
     baseColors: {
