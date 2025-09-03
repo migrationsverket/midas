@@ -4,7 +4,7 @@ import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 export const config = {
   source: ['packages/components/src/theme/tokens/**/*.json'],
   platforms: {
-    object: {
+    es6: {
       options: {
         flat: false
       },
@@ -14,7 +14,21 @@ export const config = {
       files: [
         {
           destination: 'generated-tokens.js',
-          format: formats.javascriptModule,
+          format: formats.javascriptEs6,
+        },
+      ],
+    },
+    object: {
+      options: {
+        flat: false
+      },
+      transformGroups: transformGroups.js,
+      transforms: [transforms.nameCamel],
+      buildPath: 'packages/components/src/theme/',
+      files: [
+        {
+          destination: 'generated-object.js',
+          format: formats.javascriptEsm,
         },
       ],
     },
