@@ -6,7 +6,7 @@ sidebar_position: 8
 ---
 
 import { Grid, GridItem, Text } from '@midas-ds/components'
-import { baseColors, semantic, generatedTokens, tokenObject } from '@midas-ds/components/theme'
+import { baseColors, semantic, generatedTokens, tokens } from '@midas-ds/components/theme'
 import CodeBlock from '@theme/CodeBlock'
 import {Token, TokenList} from '@site/src/components/tokens/Tokens'
 
@@ -32,7 +32,7 @@ import '@midas-ds/components/theme.css'
 
 ```css
 .my-class {
-  color: var(--semantic-text-on-color); /* textOnColor */
+  color: var(--midas-text-on-color); /* textOnColor */
 }
 ```
 
@@ -67,4 +67,4 @@ grå nyans än det föregående, se exempel nedan.
 
 ## Lista över semantiska tokens
 
-<TokenList tokens={tokenObject}/>
+<TokenList tokens={tokens}/>

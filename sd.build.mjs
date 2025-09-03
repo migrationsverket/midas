@@ -16,6 +16,10 @@ export const config = {
           destination: 'generated-tokens.js',
           format: formats.javascriptEs6,
         },
+        {
+          destination: 'generated-tokens.d.ts',
+          format: "typescript/es6-declarations",
+        },
       ],
     },
     object: {
@@ -29,6 +33,10 @@ export const config = {
         {
           destination: 'generated-object.js',
           format: formats.javascriptEsm,
+        },
+        {
+          destination: 'generated-object.d.ts',
+          "format": "typescript/module-declarations",
         },
       ],
     },
