@@ -7,14 +7,7 @@ import { Button } from '../button'
 import { InputProps } from './Input'
 import { InputContext, useContextProps } from 'react-aria-components'
 
-export interface PasswordFieldProps extends InputProps {
-  ref?: React.RefObject<HTMLInputElement | null>
-}
-
-export const PasswordField: React.FC<PasswordFieldProps> = ({
-  ref,
-  ...props
-}) => {
+export const PasswordField: React.FC<InputProps> = ({ ref, ...props }) => {
   ;[props, ref] = useContextProps(props, ref, InputContext)
   const [showPassword, setShowPassword] = React.useState(false)
   const handlePress = () => setShowPassword(previousValue => !previousValue)

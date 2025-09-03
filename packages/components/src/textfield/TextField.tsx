@@ -9,7 +9,7 @@ import { Complement } from '../utils/types'
 export interface TextFieldProps
   extends TextFieldBaseProps,
     Complement<TextFieldBaseProps, InputProps> {
-  ref?: React.RefObject<HTMLInputElement | null>
+  ref?: React.Ref<HTMLInputElement>
 }
 
 export const TextField: React.FC<TextFieldProps> = ({

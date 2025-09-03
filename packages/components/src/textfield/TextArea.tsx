@@ -13,7 +13,7 @@ import { Complement } from '../utils/types'
 export interface TextAreaProps
   extends Omit<TextFieldBaseProps, 'type' | 'pattern'>,
     Complement<TextFieldBaseProps, AriaTextAreaProps> {
-  ref?: React.RefObject<HTMLTextAreaElement>
+  ref?: React.Ref<HTMLTextAreaElement>
 }
 
 export const TextArea: React.FC<TextAreaProps> = ({
