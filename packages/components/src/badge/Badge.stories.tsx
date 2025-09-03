@@ -38,7 +38,7 @@ export const NoLabel: Story = {
     await expect(badge).toHaveStyle({
       backgroundColor: lightDark(
         hexToRgb('#e62323'),
-        hexToRgb('#eb4e4e'),
+        hexToRgb('#e62323'),
         scheme,
       ),
     })

@@ -162,8 +162,7 @@
     rgba(0 0 0 / 20%),
     rgba(255 255 255 / 20%)
   );
-  --semantic-badge-background: light-dark(#e62323, #eb4e4e);
-  --semantic-badge-label: light-dark(#fff, #000);
+  --semantic-badge-background: light-dark(#e62323, #e62323);
   --semantic-calendar-date-background-hover: light-dark(
     rgba(0 0 0 / 10%),
     rgba(255 255 255 / 10%)
