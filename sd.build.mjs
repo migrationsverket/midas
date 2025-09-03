@@ -1,22 +1,29 @@
 import StyleDictionary from 'style-dictionary'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 
-const config = {
+export const config = {
   source: ['packages/components/src/theme/tokens/**/*.json'],
   platforms: {
-    jsObject: {
+    object: {
+      options: {
+        flat: false
+      },
       transformGroups: transformGroups.js,
+      transforms: [transforms.nameCamel],
       buildPath: 'packages/components/src/theme/',
       files: [
         {
-          destination: 'generated_tokens.js',
-          format: formats.javascriptObject,
+          destination: 'generated-tokens.js',
+          format: formats.javascriptModule,
         },
       ],
     },
     css: {
-      transforms: [transforms.colorHex],
+      transforms: [],
       transformGroup: transformGroups.css,
+      options: {
+        outputReferences: true,
+      },
       prefix: 'midas',
       buildPath: 'packages/components/src/theme/',
       files: [
