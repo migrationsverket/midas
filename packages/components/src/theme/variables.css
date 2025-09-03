@@ -238,8 +238,7 @@
   --midas-button-background-danger-active: light-dark(var(--midas-color-signal-red-150), var(--midas-color-signal-red-150)); /** Active state för danger knapp */
   --midas-button-background-disabled: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Disabled state för knappar */
   --midas-button-border-secondary: light-dark(var(--midas-color-blue-150), var(--midas-color-gray-10)); /** Kantfärg för sekundärknapp */
-  --midas-badge-background: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-80));
-  --midas-badge-label: light-dark(var(--midas-color-white), var(--midas-color-black));
+  --midas-badge-background: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100));
   --midas-calendar-date-background-selected: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
   --midas-calendar-date-background-start-range: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
   --midas-calendar-date-background-in-range: light-dark(var(--midas-color-blue-20), var(--midas-color-blue-150));

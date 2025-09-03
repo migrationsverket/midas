@@ -380,10 +380,7 @@
   },
   "badge": {
     "background": {
-      "$value": "light-dark({color.signalRed.100}, {color.signalRed.80})"
-    },
-    "label": {
-      "$value": "light-dark({color.white}, {color.black})"
+      "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})"
     }
   },
   "calendar": {
