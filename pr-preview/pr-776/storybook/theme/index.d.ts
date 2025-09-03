@@ -1,5 +1,3776 @@
-export declare const tokenObject: any;
-export declare const flat: any;
+import * as gen2 from './generated-tokens';
+export declare const tokenObject: {
+    windowSizes: {
+        sm: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        md: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        lg: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        xl: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    breakpoints: {
+        xs: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        sm: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        md: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        lg: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        xl: {
+            key: string;
+            $value: string;
+            $comment: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $comment: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        forcedColorsMode: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        darkMode: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        prefersReducedMotion: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    color: {
+        black: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $description: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        white: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        blackHover: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        whiteHover: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        gray: {
+            10: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            20: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            30: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            40: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            50: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            60: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            70: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            80: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            90: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            110: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            120: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            130: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            140: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            150: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            160: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            170: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            180: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            190: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            200: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        blue: {
+            10: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            20: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            40: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            50: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            60: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            70: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            80: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            90: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            110: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            120: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            130: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            150: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        purple: {
+            80: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            110: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        red: {
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        signalBlue: {
+            10: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            20: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        signalGreen: {
+            20: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            30: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        signalYellow: {
+            10: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            20: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        signalRed: {
+            10: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            20: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            30: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            40: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            50: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            60: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            70: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            80: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            90: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            110: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            120: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            130: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            140: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            150: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            160: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            170: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            180: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            190: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            200: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                $type: string;
+                original: {
+                    $value: string;
+                    $type: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    background: {
+        "@": {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        hover: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        inverse: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    layer: {
+        "01": {
+            base: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            hover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            selected: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            selectedHover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        "02": {
+            base: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            hover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            selected: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            selectedHover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    layerAccent: {
+        "01": {
+            base: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            hover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            selected: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        "02": {
+            base: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            hover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            selected: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    brand: {
+        primary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    border: {
+        color: {
+            primary: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            secondary: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            subtle: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            tertiary: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            disabled: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        width: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    field: {
+        "01": {
+            base: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            hover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            active: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        "02": {
+            base: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            hover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            active: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        disabled: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    skeleton: {
+        "01": {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        "02": {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    icon: {
+        primary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        secondary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        tertiary: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        inverse: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        onColor: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        disabled: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        success: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        info: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        warning: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        important: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    link: {
+        enabled: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        hover: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        pressed: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        visited: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    support: {
+        border: {
+            success: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            info: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            important: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            warning: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        background: {
+            success: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            successHover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            info: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            infoHover: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            important: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            importantHover: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            warning: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            warningHover: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    text: {
+        primary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        secondary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        tertiary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        onColor: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        inverse: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        disabled: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        warning: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        placeholder: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    button: {
+        background: {
+            primary: {
+                "@": {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                hover: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                active: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+            secondary: {
+                "@": {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                hover: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                active: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+            tertiary: {
+                hover: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                active: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+            danger: {
+                "@": {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                hover: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                active: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+            disabled: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        border: {
+            secondary: {
+                key: string;
+                $value: string;
+                $description: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    $description: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        icon: {
+            hover: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            active: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    badge: {
+        background: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        label: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    calendar: {
+        date: {
+            background: {
+                hover: {
+                    key: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                selected: {
+                    key: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                startRange: {
+                    key: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                inRange: {
+                    key: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                endRange: {
+                    key: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+        };
+    };
+    logo: {
+        primary: {
+            key: string;
+            $value: string;
+            $description: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $value: string;
+                $description: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    menu: {
+        item: {
+            background: {
+                hover: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                selected: {
+                    key: string;
+                    $value: string;
+                    $description: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $value: string;
+                        $description: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+        };
+        text: {
+            sectionHeader: {
+                key: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    size: {
+        10: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        15: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        20: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        30: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        40: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        50: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        60: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        70: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        75: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        80: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        90: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        100: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        110: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        120: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        130: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        140: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        150: {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        "00": {
+            key: string;
+            $value: number;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: number;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        "05": {
+            key: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: string;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    spacing: {
+        10: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        20: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        30: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        40: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        50: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        60: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        70: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        80: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        90: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        100: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        110: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        120: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    state: {
+        focus: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        focusInset: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    transitions: {
+        slow: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        normal: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        fast: {
+            key: string;
+            $type: string;
+            $value: string;
+            filePath: string;
+            isSource: boolean;
+            original: {
+                $type: string;
+                $value: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+    typography: {
+        font: {
+            family: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            size: {
+                10: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                20: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                30: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                40: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                50: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                60: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                70: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                80: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                90: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+                100: {
+                    key: string;
+                    $type: string;
+                    $value: string;
+                    filePath: string;
+                    isSource: boolean;
+                    original: {
+                        $type: string;
+                        $value: string;
+                        key: string;
+                    };
+                    name: string;
+                    attributes: {};
+                    path: string[];
+                };
+            };
+        };
+        lineHeight: {
+            10: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            20: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            30: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            40: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            50: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            60: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            70: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            80: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            90: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            100: {
+                key: string;
+                $type: string;
+                $value: string;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: string;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+        weight: {
+            thin: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            extraLight: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            light: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            regular: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            medium: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            semiBold: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            bold: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            extraBold: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+            black: {
+                key: string;
+                $type: string;
+                $value: number;
+                filePath: string;
+                isSource: boolean;
+                original: {
+                    $type: string;
+                    $value: number;
+                    key: string;
+                };
+                name: string;
+                attributes: {};
+                path: string[];
+            };
+        };
+    };
+    zIndex: {
+        base: {
+            key: string;
+            $value: number;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: number;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        above: {
+            key: string;
+            $value: number;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: number;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        modal: {
+            key: string;
+            $value: number;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: number;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        toast: {
+            key: string;
+            $value: number;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: number;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+        skipToContent: {
+            key: string;
+            $value: number;
+            filePath: string;
+            isSource: boolean;
+            $type: string;
+            original: {
+                $value: number;
+                $type: string;
+                key: string;
+            };
+            name: string;
+            attributes: {};
+            path: string[];
+        };
+    };
+};
+export declare const flat: typeof gen2;
 export * from './tokens';
 export declare const theme: {
     baseColors: {
