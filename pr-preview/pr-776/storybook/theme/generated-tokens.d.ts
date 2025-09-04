@@ -85,7 +85,7 @@ export const colorSignalRed180: string;
 export const colorSignalRed190: string;
 export const colorSignalRed200: string;
 /** Standardbakgrund för våra applikationer */
-export const background: string;
+export const backgroundBase: string;
 /** Hoverfärg för bakgrund */
 export const backgroundHover: string;
 /** Bakgrund eller element i med hög kontrast */
@@ -215,13 +215,13 @@ export const textWarning: string;
 /** Textfärg för platshållare */
 export const textPlaceholder: string;
 /** Färg på primärknapp */
-export const buttonBackgroundPrimary: string;
+export const buttonBackgroundPrimaryBase: string;
 /** Hover state på primärknapp */
 export const buttonBackgroundPrimaryHover: string;
 /** Active state för primärknapp */
 export const buttonBackgroundPrimaryActive: string;
 /** Färg på sekundärknapp */
-export const buttonBackgroundSecondary: string;
+export const buttonBackgroundSecondaryBase: string;
 /** Hover state på sekundärknapp */
 export const buttonBackgroundSecondaryHover: string;
 /** Active state för sekundärknapp */
@@ -231,7 +231,7 @@ export const buttonBackgroundTertiaryHover: string;
 /** Active state för tertiär knapp */
 export const buttonBackgroundTertiaryActive: string;
 /** Färg på danger knapp */
-export const buttonBackgroundDanger: string;
+export const buttonBackgroundDangerBase: string;
 /** Hover state för danger knapp */
 export const buttonBackgroundDangerHover: string;
 /** Active state för danger knapp */
