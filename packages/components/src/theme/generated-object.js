@@ -2516,11 +2516,11 @@ export default {
     icon: {
       hover: {
         key: "{button.icon.hover}",
-        $value: "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))",
+        $value: "light-dark(#0000001a, #ffffff1a)",
         filePath: "packages/components/src/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value: "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))",
+          $value: "light-dark(#0000001a, #ffffff1a)",
           key: "{button.icon.hover}",
         },
         name: "buttonIconHover",
@@ -2529,11 +2529,11 @@ export default {
       },
       active: {
         key: "{button.icon.active}",
-        $value: "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))",
+        $value: "light-dark(#00000033, #ffffff33)",
         filePath: "packages/components/src/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value: "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))",
+          $value: "light-dark(#00000033, #ffffff33)",
           key: "{button.icon.active}",
         },
         name: "buttonIconActive",
@@ -2562,11 +2562,11 @@ export default {
       background: {
         hover: {
           key: "{calendar.date.background.hover}",
-          $value: "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))",
+          $value: "light-dark(#0000001a, #ffffff1a)",
           filePath: "packages/components/src/theme/tokens/object-values.json",
           isSource: true,
           original: {
-            $value: "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))",
+            $value: "light-dark(#0000001a, #ffffff1a)",
             key: "{calendar.date.background.hover}",
           },
           name: "calendarDateBackgroundHover",

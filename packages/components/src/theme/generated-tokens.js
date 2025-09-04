@@ -164,13 +164,10 @@ export const buttonBackgroundDangerHover = "light-dark(#bc1d1d, #bc1d1d)"; // Ho
 export const buttonBackgroundDangerActive = "light-dark(#7d1313, #7d1313)"; // Active state för danger knapp
 export const buttonBackgroundDisabled = "light-dark(#f2f2f2, #262626)"; // Disabled state för knappar
 export const buttonBorderSecondary = "light-dark(#143c50, #f2f2f2)"; // Kantfärg för sekundärknapp
-export const buttonIconHover =
-  "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))";
-export const buttonIconActive =
-  "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))";
+export const buttonIconHover = "light-dark(#0000001a, #ffffff1a)";
+export const buttonIconActive = "light-dark(#00000033, #ffffff33)";
 export const badgeBackground = "light-dark(#e62323, #e62323)";
-export const calendarDateBackgroundHover =
-  "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))";
+export const calendarDateBackgroundHover = "light-dark(#0000001a, #ffffff1a)";
 export const calendarDateBackgroundSelected = "light-dark(#143c50, #5897b8)";
 export const calendarDateBackgroundStartRange = "light-dark(#143c50, #5897b8)";
 export const calendarDateBackgroundInRange = "light-dark(#d5e5ed, #143c50)";

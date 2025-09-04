@@ -80,9 +80,9 @@
   --midas-color-signal-red-190: #2a0606;
   --midas-color-signal-red-200: #150303;
   --midas-border-width: 1px;
-  --midas-button-icon-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
-  --midas-button-icon-active: light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%));
-  --midas-calendar-date-background-hover: light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%));
+  --midas-button-icon-hover: light-dark(#0000001a, #ffffff1a);
+  --midas-button-icon-active: light-dark(#00000033, #ffffff33);
+  --midas-calendar-date-background-hover: light-dark(#0000001a, #ffffff1a);
   --midas-size-10: 0.125rem;
   --midas-size-15: 0.188rem;
   --midas-size-20: 0.25rem;

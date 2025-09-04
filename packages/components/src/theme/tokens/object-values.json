@@ -373,10 +373,10 @@
     },
     "icon": {
       "hover": {
-        "$value": "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))"
+        "$value": "light-dark(#0000001a, #ffffff1a)"
       },
       "active": {
-        "$value": "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))"
+        "$value": "light-dark(#00000033, #ffffff33)"
       }
     }
   },
@@ -389,7 +389,7 @@
     "date": {
       "background": {
         "hover": {
-          "$value": "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))"
+          "$value": "light-dark(#0000001a, #ffffff1a)"
         },
         "selected": {
           "$value": "light-dark({color.blue.150}, {color.blue.80})"
