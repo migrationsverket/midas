@@ -6,7 +6,7 @@ sidebar_position: 8
 ---
 
 import { Grid, GridItem, Text } from '@midas-ds/components'
-import { baseColors, semantic, generatedTokens, tokens } from '@midas-ds/components/theme'
+import { baseColors, semantic, generatedTokens, tokens, variables } from '@midas-ds/components/theme'
 import CodeBlock from '@theme/CodeBlock'
 import {Token, TokenList, Layers, ColorSpectrum, TokenNaming } from '@site/src/components/tokens'
 
@@ -22,7 +22,7 @@ tillgängligt och konsekvent uttryck i hela designsystemet.
 Tokens är tillgängliga som typescriptvariabler via:
 
 ```tsx
-import { semantic } from '@midas-ds/components/theme'
+import { tokens } from '@midas-ds/components/theme'
 ```
 
 Det går också att använda CSS `var(--variable-name)` genom att importera `theme.css`. Mer information om
@@ -37,6 +37,8 @@ import '@midas-ds/components/theme.css'
   color: var(--midas-text-on-color); /* textOnColor */
 }
 ```
+
+<div style={{backgroundColor: variables.backgroundInverse, color: variables.textOnColor}}>HELLO HELLO</div>
 
 ## Färgtokens
 
@@ -72,4 +74,54 @@ grå nyans än det föregående, se exempel nedan.
 
 ## Lista över semantiska tokens
 
-<TokenList tokens={tokens}/>
+### Bakgrunder
+
+<TokenList tokens={tokens.background} />
+
+### Lager
+
+<TokenList tokens={tokens.layer} />
+
+### Accentfärger
+
+**TODO: ADD ACCENT COLORS**
+
+### Varumärke
+
+<TokenList tokens={tokens.brand} />
+
+### Kantlinje
+
+<TokenList tokens={tokens.border} />
+
+### Fält
+
+<TokenList tokens={tokens.field} />
+
+### Ikoner
+
+<TokenList tokens={tokens.icon} />
+
+### Länkar
+
+<TokenList tokens={tokens.link} />
+
+### Notifikationer
+
+<TokenList tokens={tokens.support} />
+
+### Text
+
+<TokenList tokens={tokens.text} />
+
+### Knappar
+
+<TokenList tokens={tokens.button} />
+
+### Meny
+
+<TokenList tokens={tokens.menu} />
+
+### Skeleton
+
+<TokenList tokens={tokens.skeleton} />
