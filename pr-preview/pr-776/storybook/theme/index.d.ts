@@ -2,6 +2,7 @@ import { default as tokens } from './generated-object';
 import * as gen2 from './generated-tokens';
 export { tokens };
 export declare const flat: typeof gen2;
+export declare const variables: typeof gen2;
 export * from './tokens';
 export declare const theme: {
     windowSizesSm: string;
@@ -470,7 +471,6 @@ export declare const theme: {
         buttonBackgroundIconHover: string;
         buttonBackgroundIconActive: string;
         badgeBackground: string;
-        badgeLabel: string;
         calendarDateBackgroundHover: string;
         calendarDateBackgroundSelected: string;
         calendarDateBackgroundStartRange: string;

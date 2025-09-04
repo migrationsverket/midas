@@ -228,7 +228,6 @@ export declare const semantic: {
     buttonBackgroundIconHover: string;
     buttonBackgroundIconActive: string;
     badgeBackground: string;
-    badgeLabel: string;
     calendarDateBackgroundHover: string;
     calendarDateBackgroundSelected: string;
     calendarDateBackgroundStartRange: string;
