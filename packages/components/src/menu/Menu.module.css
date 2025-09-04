@@ -123,22 +123,6 @@
       padding-right: var(--size-80);
     }
   }
-
-  a.menuItem {
-    color: var(--semantic-link-enabled);
-
-    &[data-hovered] {
-      color: var(--semantic-link-hover);
-    }
-
-    &:visited {
-      color: var(--semantic-link-visited);
-    }
-
-    &[data-pressed]:not([data-disabled]) {
-      color: var(--semantic-link-pressed);
-    }
-  }
 }
 
 .menuPopover {

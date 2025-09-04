@@ -1,11 +1,16 @@
 import clsx from 'clsx'
-import { MenuItem as AriaMenuItem, MenuItemProps } from 'react-aria-components'
+import {
+  MenuItem as AriaMenuItem,
+  MenuItemProps as AriaMenuItemProps,
+} from 'react-aria-components'
+import type { LinkDOMProps } from '@react-types/shared'
 import { Check, ChevronRight } from 'lucide-react'
+import type { MenuItemObject } from '.'
 import styles from './Menu.module.css'
 
-export type { MenuItemProps }
+export type MenuItemProps<T> = Omit<AriaMenuItemProps<T>, keyof LinkDOMProps>
 
-export const MenuItem = <T extends object>(props: MenuItemProps<T>) => (
+export const MenuItem = <T extends MenuItemObject>(props: MenuItemProps<T>) => (
   <AriaMenuItem
     {...props}
     textValue={

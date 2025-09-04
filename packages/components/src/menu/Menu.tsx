@@ -5,6 +5,12 @@ import {
 import clsx from 'clsx'
 import type { Size } from '../common/types'
 import styles from './Menu.module.css'
+import { ExcludeKeysFrom } from '../utils/types'
+
+export type MenuItemObject = ExcludeKeysFrom<
+  { [prop: string]: unknown },
+  'href'
+>
 
 export interface MenuProps<T> extends AriaMenuProps<T> {
   /** Component size (large: height 40px, medium: height 32px)
@@ -13,7 +19,7 @@ export interface MenuProps<T> extends AriaMenuProps<T> {
   size?: Size
 }
 
-export const Menu = <T extends object>({
+export const Menu = <T extends MenuItemObject>({
   className,
   size = 'large',
   ...rest

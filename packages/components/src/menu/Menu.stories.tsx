@@ -135,29 +135,6 @@ export const ControlledMultipleSelection: Story = {
   },
 }
 
-export const Links: Story = {
-  args: {
-    items: [
-      { id: 0, href: 'https://adobe.com/', target: '_blank', name: 'Adobe' },
-      { id: 1, href: 'https://apple.com/', target: '_blank', name: 'Apple' },
-      { id: 2, href: 'https://google.com/', target: '_blank', name: 'Google' },
-      {
-        id: 3,
-        href: 'https://microsoft.com/',
-        target: '_blank',
-        name: 'Microsoft',
-      },
-      {
-        id: 4,
-        href: 'https://derp.com/',
-        target: '_blank',
-        name: 'Disabled link',
-        isDisabled: true,
-      },
-    ],
-  },
-}
-
 export const Sections: Story = {
   args: {
     items: [
