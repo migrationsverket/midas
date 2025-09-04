@@ -25,7 +25,7 @@ Det går också att använda CSS `var(--variable-name)` genom att importera `the
 hur du använder Midas tokens i CSS hittar du under [Installera Midas](/get-started/install/).
 
 ```tsx
-import '@midas-ds/components/theme.css'
+import '@midas-ds/components/variables.css'
 ```
 
 ```css
@@ -64,8 +64,6 @@ grå nyans än det föregående, se exempel nedan.
 
 <Layers/>
 
-# TODO! ADD STUFF
-
 ## Lista över semantiska tokens
 
 ### Bakgrunder
@@ -78,7 +76,7 @@ grå nyans än det föregående, se exempel nedan.
 
 ### Accentfärger
 
-**TODO: ADD ACCENT COLORS**
+<TokenList tokens={tokens.layerAccent}/>
 
 ### Varumärke
 

@@ -35,10 +35,10 @@ För specifika instruktioner, se respektive komponent på våra [komponentsidor]
 
 ## Använda tokens/theme
 
-Importera `theme.css` i roten av din applikation:
+Importera `variables.css` i roten av din applikation:
 
 ```tsx title="main.tsx"
-import '@midas-ds/components/theme.css'
+import '@midas-ds/components/variables.css'
 ```
 
 Använd Midas tokens (läs mer om våra [tokens](/basics/tokens/)) som variabler i css:
@@ -46,7 +46,7 @@ Använd Midas tokens (läs mer om våra [tokens](/basics/tokens/)) som variabler
 ```css title="App.css"
 .kaffekopp {
   border: 1px solid var(--midas-border-color-primary);
-  background-color: var(--midas-button-background-primary);
+  background-color: var(--midas-button-background-primary-base);
   color: var(--midas-text-on-color);
   padding: var(--midas-spacing-30);
   width: fit-content;
