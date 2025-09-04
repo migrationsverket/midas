@@ -1,6 +1,12 @@
-import { ComboBox, ComboBoxItem, ComboBoxSection } from '@midas-ds/components'
+import {
+  ComboBox,
+  ComboBoxItem,
+  ComboBoxSection,
+  ListBoxLoadMoreItem,
+} from '@midas-ds/components'
 import React from 'react'
-import { Key } from 'react-aria-components'
+import { Collection, Key } from 'react-aria-components'
+import { useAsyncList } from 'react-stately'
 
 export const BasicExample: React.FC = () => (
   <ComboBox
@@ -72,6 +78,44 @@ export const SectionedExample = () => {
           id={section.name}
         />
       )}
+    </ComboBox>
+  )
+}
+
+export const AsyncExample = () => {
+  const list = useAsyncList<{ name: string }>({
+    async load({ signal, cursor, filterText }) {
+      if (cursor) {
+        cursor = cursor.replace(/^http:\/\//i, 'https://')
+      }
+
+      const res = await fetch(
+        cursor || `https://swapi.py4e.com/api/people/?search=${filterText}`,
+        { signal },
+      )
+
+      const { results, next } = await res.json()
+
+      return {
+        items: results,
+        cursor: next,
+      }
+    },
+  })
+
+  return (
+    <ComboBox
+      label='Star Wars Character Lookup'
+      placeholder='Välj eller sök karaktär'
+      description='Anropar ett externt API'
+      inputValue={list.filterText}
+      onInputChange={list.setFilterText}
+      allowsEmptyCollection
+    >
+      <Collection items={list.items}>
+        {item => <ComboBoxItem id={item.name}>{item.name}</ComboBoxItem>}
+      </Collection>
+      {list.isLoading && <ListBoxLoadMoreItem isLoading={list.isLoading} />}
     </ComboBox>
   )
 }

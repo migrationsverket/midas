@@ -261,8 +261,7 @@ export const semantic = {
   buttonBackgroundIconHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   buttonBackgroundIconActive: `light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))`,
 
-  badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed80})`,
-  badgeLabel: `light-dark(${baseColors.white}, ${baseColors.black})`,
+  badgeBackground: `light-dark(${baseColors.signalRed100}, ${baseColors.signalRed100})`,
 
   calendarDateBackgroundHover: `light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))`,
   calendarDateBackgroundSelected: `light-dark(${baseColors.blue150}, ${baseColors.blue80})`,
