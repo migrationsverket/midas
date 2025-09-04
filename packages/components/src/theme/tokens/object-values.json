@@ -251,14 +251,16 @@
         "$description": "Bakgrund f\u00f6r notifikationer med information"
       },
       "infoHover": {
-        "$value": "light-dark({color.signalBlue.20}, {layer.01.hover})"
+        "$value": "light-dark({color.signalBlue.20}, {color.gray.170})",
+        "$description": "Hoverbakgrund f\u00f6r notifikationer med information"
       },
       "important": {
         "$value": "light-dark({color.signalYellow.10}, {color.gray.180})",
         "$description": "Bakgrund f\u00f6r notifikationer med viktig information"
       },
       "importantHover": {
-        "$value": "light-dark({color.signalYellow.20}, {layer.01.hover})"
+        "$value": "light-dark({color.signalYellow.20}, {color.gray.170})",
+        "$description": "Hoverbakgrund f\u00f6r notifikationer med viktig information"
       },
       "warning": {
         "$value": "light-dark({color.signalRed.20}, {color.gray.180})",

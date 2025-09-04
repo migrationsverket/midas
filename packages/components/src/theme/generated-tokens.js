@@ -138,11 +138,9 @@ export const supportBorderWarning = "light-dark(#e62323, #e62323)"; // Kantlinje
 export const supportBackgroundSuccess = "light-dark(#d5f2d9, #262626)"; // Bakgrund för success-notifikationer
 export const supportBackgroundSuccessHover = "light-dark(#bae5c5, #333)"; // Hoverbakgrund för success-notifikationer
 export const supportBackgroundInfo = "light-dark(#eaf2f6, #262626)"; // Bakgrund för notifikationer med information
-export const supportBackgroundInfoHover =
-  "light-dark(#d5e5ed, light-dark(#e6e6e6, #333))";
+export const supportBackgroundInfoHover = "light-dark(#d5e5ed, #333)"; // Hoverbakgrund för notifikationer med information
 export const supportBackgroundImportant = "light-dark(#fff8e1, #262626)"; // Bakgrund för notifikationer med viktig information
-export const supportBackgroundImportantHover =
-  "light-dark(#FFEBA8, light-dark(#e6e6e6, #333))";
+export const supportBackgroundImportantHover = "light-dark(#FFEBA8, #333)"; // Hoverbakgrund för notifikationer med viktig information
 export const supportBackgroundWarning = "light-dark(#ffdfdf, #262626)"; // Bakgrund för notifikationer med varningar
 export const supportBackgroundWarningHover = "light-dark(#fcc8c8, #333)"; // Hoverbakgrund för notifikationer med varningar
 export const textPrimary = "light-dark(#171717, #f2f2f2)"; // Primär textfärg. Rubriker och brödtext.

@@ -2097,11 +2097,13 @@ export default {
       },
       infoHover: {
         key: "{support.background.infoHover}",
-        $value: "light-dark(#d5e5ed, light-dark(#e6e6e6, #333))",
+        $value: "light-dark(#d5e5ed, #333)",
+        $description: "Hoverbakgrund för notifikationer med information",
         filePath: "packages/components/src/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value: "light-dark({color.signalBlue.20}, {layer.01.hover})",
+          $value: "light-dark({color.signalBlue.20}, {color.gray.170})",
+          $description: "Hoverbakgrund för notifikationer med information",
           key: "{support.background.infoHover}",
         },
         name: "supportBackgroundInfoHover",
@@ -2125,11 +2127,14 @@ export default {
       },
       importantHover: {
         key: "{support.background.importantHover}",
-        $value: "light-dark(#FFEBA8, light-dark(#e6e6e6, #333))",
+        $value: "light-dark(#FFEBA8, #333)",
+        $description: "Hoverbakgrund för notifikationer med viktig information",
         filePath: "packages/components/src/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value: "light-dark({color.signalYellow.20}, {layer.01.hover})",
+          $value: "light-dark({color.signalYellow.20}, {color.gray.170})",
+          $description:
+            "Hoverbakgrund för notifikationer med viktig information",
           key: "{support.background.importantHover}",
         },
         name: "supportBackgroundImportantHover",

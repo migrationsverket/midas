@@ -190,9 +190,11 @@ export const supportBackgroundSuccess: string;
 export const supportBackgroundSuccessHover: string;
 /** Bakgrund för notifikationer med information */
 export const supportBackgroundInfo: string;
+/** Hoverbakgrund för notifikationer med information */
 export const supportBackgroundInfoHover: string;
 /** Bakgrund för notifikationer med viktig information */
 export const supportBackgroundImportant: string;
+/** Hoverbakgrund för notifikationer med viktig information */
 export const supportBackgroundImportantHover: string;
 /** Bakgrund för notifikationer med varningar */
 export const supportBackgroundWarning: string;

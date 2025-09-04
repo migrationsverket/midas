@@ -212,9 +212,9 @@
   --midas-support-background-success: light-dark(var(--midas-color-signal-green-20), var(--midas-color-gray-180)); /** Bakgrund för success-notifikationer */
   --midas-support-background-success-hover: light-dark(var(--midas-color-signal-green-30), var(--midas-color-gray-170)); /** Hoverbakgrund för success-notifikationer */
   --midas-support-background-info: light-dark(var(--midas-color-signal-blue-10), var(--midas-color-gray-180)); /** Bakgrund för notifikationer med information */
-  --midas-support-background-info-hover: light-dark(var(--midas-color-signal-blue-20), var(--midas-layer-01-hover));
+  --midas-support-background-info-hover: light-dark(var(--midas-color-signal-blue-20), var(--midas-color-gray-170)); /** Hoverbakgrund för notifikationer med information */
   --midas-support-background-important: light-dark(var(--midas-color-signal-yellow-10), var(--midas-color-gray-180)); /** Bakgrund för notifikationer med viktig information */
-  --midas-support-background-important-hover: light-dark(var(--midas-color-signal-yellow-20), var(--midas-layer-01-hover));
+  --midas-support-background-important-hover: light-dark(var(--midas-color-signal-yellow-20), var(--midas-color-gray-170)); /** Hoverbakgrund för notifikationer med viktig information */
   --midas-support-background-warning: light-dark(var(--midas-color-signal-red-20), var(--midas-color-gray-180)); /** Bakgrund för notifikationer med varningar */
   --midas-support-background-warning-hover: light-dark(var(--midas-color-signal-red-30), var(--midas-color-gray-170)); /** Hoverbakgrund för notifikationer med varningar */
   --midas-text-primary: light-dark(var(--midas-color-gray-200), var(--midas-color-gray-10)); /** Primär textfärg. Rubriker och brödtext. */
