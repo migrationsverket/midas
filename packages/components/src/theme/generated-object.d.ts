@@ -32,10 +32,14 @@ declare const tokens: {
     prefersReducedMotion: DesignToken;
   };
   color: {
-    black: DesignToken;
-    white: DesignToken;
-    blackHover: DesignToken;
-    whiteHover: DesignToken;
+    black: {
+      base: DesignToken;
+      hover: DesignToken;
+    };
+    white: {
+      base: DesignToken;
+      hover: DesignToken;
+    };
     gray: {
       "10": DesignToken;
       "20": DesignToken;

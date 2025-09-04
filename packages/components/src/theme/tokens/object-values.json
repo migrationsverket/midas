@@ -1,11 +1,11 @@
 {
   "background": {
     "base": {
-      "$value": "light-dark({color.white}, {color.gray.200})",
+      "$value": "light-dark({color.white.base}, {color.gray.200})",
       "$description": "Standardbakgrund f\u00f6r v\u00e5ra applikationer"
     },
     "hover": {
-      "$value": "light-dark({color.whiteHover}, {color.gray.190})",
+      "$value": "light-dark({color.white.hover}, {color.gray.190})",
       "$description": "Hoverf\u00e4rg f\u00f6r bakgrund"
     },
     "inverse": {
@@ -34,11 +34,11 @@
     },
     "02": {
       "base": {
-        "$value": "light-dark({color.white}, {color.gray.160})",
+        "$value": "light-dark({color.white.base}, {color.gray.160})",
         "$description": "Yta som ligger p\u00e5 layer01"
       },
       "hover": {
-        "$value": "light-dark({color.whiteHover}, {color.gray.150})",
+        "$value": "light-dark({color.white.hover}, {color.gray.150})",
         "$description": "Hover state f\u00f6r layer02"
       },
       "selected": {
@@ -95,7 +95,7 @@
       },
       "secondary": {
         "$value": "light-dark({color.gray.110}, {color.gray.90})",
-        "$description": "Kantlinje med medel\u00f6g kontrast"
+        "$description": "Kantlinje med medelh\u00f6g kontrast"
       },
       "subtle": {
         "$value": "light-dark({color.gray.50}, {color.gray.160})",
@@ -132,11 +132,11 @@
     },
     "02": {
       "base": {
-        "$value": "light-dark({color.white}, {color.gray.160})",
+        "$value": "light-dark({color.white.base}, {color.gray.160})",
         "$description": "Sekundf\u00e4rf\u00e4rg f\u00f6r f\u00e4lt, som ligger p\u00e5 layer01"
       },
       "hover": {
-        "$value": "light-dark({color.whiteHover}, {color.gray.150})",
+        "$value": "light-dark({color.white.hover}, {color.gray.150})",
         "$description": "Hover state f\u00f6r field02"
       },
       "active": {
@@ -172,11 +172,11 @@
       "$value": "light-dark({color.blue.150}, {color.gray.10})"
     },
     "inverse": {
-      "$value": "light-dark({color.white}, {color.gray.200})",
+      "$value": "light-dark({color.white.base}, {color.gray.200})",
       "$description": "Inverterad ikonf\u00e4rg. Ljus ikon i ljust l\u00e4ge och m\u00f6rk ikon i m\u00f6rkt l\u00e4ge"
     },
     "onColor": {
-      "$value": "light-dark({color.white}, {color.white})",
+      "$value": "light-dark({color.white.base}, {color.white.base})",
       "$description": "Ikonf\u00e4rg p\u00e5 f\u00e4rgade ytor som inte \u00e4r lager"
     },
     "disabled": {
@@ -286,7 +286,7 @@
       "$description": "Textf\u00e4rg p\u00e5 terti\u00e4r knapp"
     },
     "onColor": {
-      "$value": "light-dark({color.white}, {color.white})",
+      "$value": "light-dark({color.white.base}, {color.white.base})",
       "$description": "Textf\u00e4rg p\u00e5 f\u00e4rgade bakgrunder som inte \u00e4r lager"
     },
     "inverse": {
@@ -324,11 +324,11 @@
       },
       "secondary": {
         "base": {
-          "$value": "light-dark({color.white}, {color.gray.200})",
+          "$value": "light-dark({color.white.base}, {color.gray.200})",
           "$description": "F\u00e4rg p\u00e5 sekund\u00e4rknapp"
         },
         "hover": {
-          "$value": "light-dark({color.whiteHover}, {color.gray.190})",
+          "$value": "light-dark({color.white.hover}, {color.gray.190})",
           "$description": "Hover state p\u00e5 sekund\u00e4rknapp"
         },
         "active": {
@@ -338,7 +338,7 @@
       },
       "tertiary": {
         "hover": {
-          "$value": "light-dark({color.whiteHover}, {color.gray.190})",
+          "$value": "light-dark({color.white.hover}, {color.gray.190})",
           "$description": "Hover state f\u00f6r terti\u00e4r knapp"
         },
         "active": {
@@ -408,7 +408,7 @@
   },
   "logo": {
     "primary": {
-      "$value": "light-dark({color.red.100}, {color.white})",
+      "$value": "light-dark({color.red.100}, {color.white.base})",
       "$description": "F\u00e4rg p\u00e5 logotypen"
     }
   },

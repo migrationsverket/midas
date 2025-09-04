@@ -2,17 +2,24 @@
   "color": {
     "$type": "color",
     "black": {
-      "$value": "#000",
-      "$description": "Black"
+      "base": {
+        "$value": "#000",
+        "$description": "Black"
+      },
+      "hover": {
+        "$value": "#0d0d0d",
+        "$description": "Black hover"
+      }
     },
     "white": {
-      "$value": "#fff"
-    },
-    "blackHover": {
-      "$value": "#0d0d0d"
-    },
-    "whiteHover": {
-      "$value": "#e6e6e6"
+      "base": {
+        "$value": "#fff",
+        "$description": "White"
+      },
+      "hover": {
+        "$value": "#e6e6e6",
+        "$description": "White hover"
+      },
     },
     "gray": {
       "10": {
