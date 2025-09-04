@@ -119,7 +119,7 @@ declare const tokens: {
     };
   };
   background: {
-    "@": DesignToken;
+    base: DesignToken;
     hover: DesignToken;
     inverse: DesignToken;
   };
@@ -228,12 +228,12 @@ declare const tokens: {
   button: {
     background: {
       primary: {
-        "@": DesignToken;
+        base: DesignToken;
         hover: DesignToken;
         active: DesignToken;
       };
       secondary: {
-        "@": DesignToken;
+        base: DesignToken;
         hover: DesignToken;
         active: DesignToken;
       };
@@ -242,7 +242,7 @@ declare const tokens: {
         active: DesignToken;
       };
       danger: {
-        "@": DesignToken;
+        base: DesignToken;
         hover: DesignToken;
         active: DesignToken;
       };

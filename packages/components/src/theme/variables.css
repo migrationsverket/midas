@@ -159,7 +159,7 @@
   --midas-breakpoints-md: '(min-width: var(--midas-window-sizes-md))';
   --midas-breakpoints-lg: '(min-width: var(--midas-window-sizes-lg))';
   --midas-breakpoints-xl: '(min-width: var(--midas-window-sizes-xl))';
-  --midas-background: light-dark(var(--midas-color-white), var(--midas-color-gray-200)); /** Standardbakgrund för våra applikationer */
+  --midas-background-base: light-dark(var(--midas-color-white), var(--midas-color-gray-200)); /** Standardbakgrund för våra applikationer */
   --midas-background-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hoverfärg för bakgrund */
   --midas-background-inverse: light-dark(var(--midas-color-gray-200), var(--midas-color-gray-10)); /** Bakgrund eller element i med hög kontrast */
   --midas-layer-01-base: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Yta som används på background. Sekundär bakgrundsfärg */
@@ -225,15 +225,15 @@
   --midas-text-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Textfärg för disabled state */
   --midas-text-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-80)); /** Textfärg för felmeddelanden */
   --midas-text-placeholder: light-dark(var(--midas-color-gray-70), var(--midas-color-gray-140)); /** Textfärg för platshållare */
-  --midas-button-background-primary: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Färg på primärknapp */
+  --midas-button-background-primary-base: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Färg på primärknapp */
   --midas-button-background-primary-hover: light-dark(var(--midas-color-blue-130), var(--midas-color-blue-130)); /** Hover state på primärknapp */
   --midas-button-background-primary-active: light-dark(var(--midas-color-blue-100), var(--midas-color-blue-150)); /** Active state för primärknapp */
-  --midas-button-background-secondary: light-dark(var(--midas-color-white), var(--midas-color-gray-200)); /** Färg på sekundärknapp */
+  --midas-button-background-secondary-base: light-dark(var(--midas-color-white), var(--midas-color-gray-200)); /** Färg på sekundärknapp */
   --midas-button-background-secondary-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hover state på sekundärknapp */
   --midas-button-background-secondary-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-180)); /** Active state för sekundärknapp */
   --midas-button-background-tertiary-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hover state för tertiär knapp */
   --midas-button-background-tertiary-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-180)); /** Active state för tertiär knapp */
-  --midas-button-background-danger: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Färg på danger knapp */
+  --midas-button-background-danger-base: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Färg på danger knapp */
   --midas-button-background-danger-hover: light-dark(var(--midas-color-signal-red-120), var(--midas-color-signal-red-120)); /** Hover state för danger knapp */
   --midas-button-background-danger-active: light-dark(var(--midas-color-signal-red-150), var(--midas-color-signal-red-150)); /** Active state för danger knapp */
   --midas-button-background-disabled: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Disabled state för knappar */

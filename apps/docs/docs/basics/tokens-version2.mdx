@@ -5,10 +5,8 @@ sidebar_label: Tokens
 sidebar_position: 8
 ---
 
-import { Grid, GridItem, Text } from '@midas-ds/components'
-import { baseColors, semantic, generatedTokens, tokens, variables } from '@midas-ds/components/theme'
-import CodeBlock from '@theme/CodeBlock'
-import {Token, TokenList, Layers, ColorSpectrum, TokenNaming } from '@site/src/components/tokens'
+import {  tokens, variables } from '@midas-ds/components/theme'
+import { TokenList, Layers, ColorSpectrum, TokenNaming } from '@site/src/components/tokens'
 
 Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för
 våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår
@@ -17,12 +15,10 @@ tillgängligt och konsekvent uttryck i hela designsystemet.
 
 <ColorSpectrum/>
 
-# TODO: REMOVE
-
 Tokens är tillgängliga som typescriptvariabler via:
 
 ```tsx
-import { tokens } from '@midas-ds/components/theme'
+import { variables } from '@midas-ds/components/theme'
 ```
 
 Det går också att använda CSS `var(--variable-name)` genom att importera `theme.css`. Mer information om
@@ -37,8 +33,6 @@ import '@midas-ds/components/theme.css'
   color: var(--midas-text-on-color); /* textOnColor */
 }
 ```
-
-<div style={{backgroundColor: variables.backgroundInverse, color: variables.textOnColor}}>HELLO HELLO</div>
 
 ## Färgtokens
 

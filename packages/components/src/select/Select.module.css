@@ -100,7 +100,7 @@
 
 .selectValueTag {
   font-family: var(--midas-typography-font-family);
-  background-color: var(--midas-button-background-primary);
+  background-color: var(--midas-button-background-primary-base);
   color: var(--midas-text-on-color);
   border-radius: 1.25rem;
   font-size: 0.875rem;
@@ -137,7 +137,7 @@
   margin: 0 0 0 0.5rem;
   display: flex;
   border-radius: 100%;
-  background-color: var(--midas-button-background-primary);
+  background-color: var(--midas-button-background-primary-base);
   color: var(--midas-text-on-color);
   border: none;
 

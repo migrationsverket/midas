@@ -128,7 +128,7 @@
 }
 
 .hasBackground {
-  background-color: var(--midas-background);
+  background-color: var(--midas-background-base);
 }
 
 .header {

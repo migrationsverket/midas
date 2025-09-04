@@ -1245,8 +1245,8 @@ export default {
     },
   },
   background: {
-    "@": {
-      key: "{background.@}",
+    base: {
+      key: "{background.base}",
       $value: "light-dark(#fff, #171717)",
       $description: "Standardbakgrund för våra applikationer",
       filePath: "packages/components/src/theme/tokens/object-values.json",
@@ -1254,11 +1254,11 @@ export default {
       original: {
         $value: "light-dark({color.white}, {color.gray.200})",
         $description: "Standardbakgrund för våra applikationer",
-        key: "{background.@}",
+        key: "{background.base}",
       },
-      name: "background",
+      name: "backgroundBase",
       attributes: {},
-      path: ["background", "@"],
+      path: ["background", "base"],
     },
     hover: {
       key: "{background.hover}",
@@ -2293,8 +2293,8 @@ export default {
   button: {
     background: {
       primary: {
-        "@": {
-          key: "{button.background.primary.@}",
+        base: {
+          key: "{button.background.primary.base}",
           $value: "light-dark(#143c50, #2e7ca5)",
           $description: "Färg på primärknapp",
           filePath: "packages/components/src/theme/tokens/object-values.json",
@@ -2302,11 +2302,11 @@ export default {
           original: {
             $value: "light-dark({color.blue.150}, {color.blue.100})",
             $description: "Färg på primärknapp",
-            key: "{button.background.primary.@}",
+            key: "{button.background.primary.base}",
           },
-          name: "buttonBackgroundPrimary",
+          name: "buttonBackgroundPrimaryBase",
           attributes: {},
-          path: ["button", "background", "primary", "@"],
+          path: ["button", "background", "primary", "base"],
         },
         hover: {
           key: "{button.background.primary.hover}",
@@ -2340,8 +2340,8 @@ export default {
         },
       },
       secondary: {
-        "@": {
-          key: "{button.background.secondary.@}",
+        base: {
+          key: "{button.background.secondary.base}",
           $value: "light-dark(#fff, #171717)",
           $description: "Färg på sekundärknapp",
           filePath: "packages/components/src/theme/tokens/object-values.json",
@@ -2349,11 +2349,11 @@ export default {
           original: {
             $value: "light-dark({color.white}, {color.gray.200})",
             $description: "Färg på sekundärknapp",
-            key: "{button.background.secondary.@}",
+            key: "{button.background.secondary.base}",
           },
-          name: "buttonBackgroundSecondary",
+          name: "buttonBackgroundSecondaryBase",
           attributes: {},
-          path: ["button", "background", "secondary", "@"],
+          path: ["button", "background", "secondary", "base"],
         },
         hover: {
           key: "{button.background.secondary.hover}",
@@ -2419,8 +2419,8 @@ export default {
         },
       },
       danger: {
-        "@": {
-          key: "{button.background.danger.@}",
+        base: {
+          key: "{button.background.danger.base}",
           $value: "light-dark(#e62323, #e62323)",
           $description: "Färg på danger knapp",
           filePath: "packages/components/src/theme/tokens/object-values.json",
@@ -2428,11 +2428,11 @@ export default {
           original: {
             $value: "light-dark({color.signalRed.100}, {color.signalRed.100})",
             $description: "Färg på danger knapp",
-            key: "{button.background.danger.@}",
+            key: "{button.background.danger.base}",
           },
-          name: "buttonBackgroundDanger",
+          name: "buttonBackgroundDangerBase",
           attributes: {},
-          path: ["button", "background", "danger", "@"],
+          path: ["button", "background", "danger", "base"],
         },
         hover: {
           key: "{button.background.danger.hover}",
