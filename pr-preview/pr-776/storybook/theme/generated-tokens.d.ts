@@ -243,7 +243,6 @@ export const buttonBorderSecondary: string;
 export const buttonIconHover: string;
 export const buttonIconActive: string;
 export const badgeBackground: string;
-export const badgeLabel: string;
 export const calendarDateBackgroundHover: string;
 export const calendarDateBackgroundSelected: string;
 export const calendarDateBackgroundStartRange: string;

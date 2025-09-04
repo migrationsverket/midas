@@ -168,7 +168,6 @@ export declare const theme: {
     buttonIconHover: string;
     buttonIconActive: string;
     badgeBackground: string;
-    badgeLabel: string;
     calendarDateBackgroundHover: string;
     calendarDateBackgroundSelected: string;
     calendarDateBackgroundStartRange: string;
