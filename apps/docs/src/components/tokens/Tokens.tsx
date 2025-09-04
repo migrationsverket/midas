@@ -17,13 +17,13 @@ export const Token = ({token}: {token: DesignToken}) => {
         <div style={{display: 'flex', gap: '1rem'}}>
           <div>
             <div>Light:</div>
-            <div style={{width: '3rem', height: '3rem', backgroundColor: lightValue, border: '1px solid #ccc'}}></div>
             <div>{lightValue}</div>
+            <div style={{width: '3rem', height: '3rem', backgroundColor: lightValue, border: '1px solid #ccc'}}></div>
           </div>
           <div>
             <div>Dark:</div>
-            <div style={{width: '3rem', height: '3rem', backgroundColor: darkValue, border: '1px solid #ccc'}}></div>
             <div>{darkValue}</div>
+            <div style={{width: '3rem', height: '3rem', backgroundColor: darkValue, border: '1px solid #ccc'}}></div>
           </div>
         </div>
       )
@@ -32,8 +32,8 @@ export const Token = ({token}: {token: DesignToken}) => {
     if (isColor) {
       return (
         <div style={{display: 'flex', alignItems: 'center', gap: '1rem'}}>
-          <div style={{width: '3rem', height: '3rem', backgroundColor: token.$value, border: '1px solid #ccc'}}></div>
           <div>{token.$value}</div>
+          <div style={{width: '3rem', height: '3rem', backgroundColor: token.$value, border: '1px solid #ccc'}}></div>
         </div>
       )
     }
@@ -72,12 +72,12 @@ export const Token = ({token}: {token: DesignToken}) => {
   }
 
   return (
-    <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', width: '300px', border: '1px solid #eee', padding: '1rem'}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', border: '1px solid #eee', padding: '1rem', width: '100%', justifyContent: 'space-between'}}>
       <div>
         <div style={{fontWeight: 'bold'}}>{token.name}</div>
-        {renderValue()}
-        {token.$description && <div>Description: {token.$description}</div>}
+        {token.$description && <div>{token.$description}</div>}
       </div>
+      {renderValue()}
     </div>
   )
 }
@@ -92,7 +92,7 @@ const renderTokens = (tokens) => {
       return (
         <div key={key} style={{width: '100%'}}>
           <h4>{key}</h4>
-          <div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+          <div style={{display: 'flex', flexDirection: 'column'}}>
             {renderTokens(value)}
           </div>
         </div>
@@ -107,7 +107,7 @@ export const TokenList = ({tokens, filter}) => {
   const filteredTokens = filter ? {[filter]: tokens[filter]} : tokens;
 
   return (
-    <div style={{display: 'flex', flexWrap: 'wrap', gap: '1rem'}}>
+    <div style={{display: 'flex', flexDirection: 'column'}}>
       {renderTokens(filteredTokens)}
     </div>
   )

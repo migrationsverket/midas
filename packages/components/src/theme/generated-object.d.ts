@@ -258,7 +258,6 @@ declare const tokens: {
   };
   badge: {
     background: DesignToken;
-    label: DesignToken;
   };
   calendar: {
     date: {

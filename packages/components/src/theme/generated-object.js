@@ -2530,29 +2530,16 @@ export default {
   badge: {
     background: {
       key: "{badge.background}",
-      $value: "light-dark(#e62323, #eb4e4e)",
+      $value: "light-dark(#e62323, #e62323)",
       filePath: "packages/components/src/theme/tokens/object-values.json",
       isSource: true,
       original: {
-        $value: "light-dark({color.signalRed.100}, {color.signalRed.80})",
+        $value: "light-dark({color.signalRed.100}, {color.signalRed.100})",
         key: "{badge.background}",
       },
       name: "badgeBackground",
       attributes: {},
       path: ["badge", "background"],
-    },
-    label: {
-      key: "{badge.label}",
-      $value: "light-dark(#fff, #000)",
-      filePath: "packages/components/src/theme/tokens/object-values.json",
-      isSource: true,
-      original: {
-        $value: "light-dark({color.white}, {color.black})",
-        key: "{badge.label}",
-      },
-      name: "badgeLabel",
-      attributes: {},
-      path: ["badge", "label"],
     },
   },
   calendar: {

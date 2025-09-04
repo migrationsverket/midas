@@ -170,8 +170,7 @@ export const buttonIconHover =
   "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))";
 export const buttonIconActive =
   "light-dark(rgba(0 0 0 / 20%), rgba(255 255 255 / 20%))";
-export const badgeBackground = "light-dark(#e62323, #eb4e4e)";
-export const badgeLabel = "light-dark(#fff, #000)";
+export const badgeBackground = "light-dark(#e62323, #e62323)";
 export const calendarDateBackgroundHover =
   "light-dark(rgba(0 0 0 / 10%), rgba(255 255 255 / 10%))";
 export const calendarDateBackgroundSelected = "light-dark(#143c50, #5897b8)";
