@@ -15,9 +15,12 @@ export const breakpointsForcedColorsMode: string;
 export const breakpointsDarkMode: string;
 export const breakpointsPrefersReducedMotion: string;
 /** Black */
-export const colorBlack: string;
-export const colorWhite: string;
+export const colorBlackBase: string;
+/** Black hover */
 export const colorBlackHover: string;
+/** White */
+export const colorWhiteBase: string;
+/** White hover */
 export const colorWhiteHover: string;
 export const colorGray10: string;
 export const colorGray20: string;
@@ -122,7 +125,7 @@ export const layerAccent02Selected: string;
 export const brandPrimary: string;
 /** Kantlinje med hög kontrast, används med field01 */
 export const borderColorPrimary: string;
-/** Kantlinje med medelög kontrast */
+/** Kantlinje med medelhög kontrast */
 export const borderColorSecondary: string;
 /** Kantlinje med låg kontrast */
 export const borderColorSubtle: string;
