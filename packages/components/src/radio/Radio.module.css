@@ -38,7 +38,7 @@
     box-sizing: border-box;
     border: 0.0625rem solid var(--midas-border-color-primary);
     border-radius: 1.286rem;
-    transition: all var(--transition-fast);
+    transition: all var(--midas-transitions-duration-fast);
   }
 
   &[data-focus-visible],

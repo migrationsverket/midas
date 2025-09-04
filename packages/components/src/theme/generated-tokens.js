@@ -216,9 +216,9 @@ export const stateFocus =
   "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)";
 export const stateFocusInset =
   "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)";
-export const transitionsSlow = "500ms";
-export const transitionsNormal = "300ms";
-export const transitionsFast = "250ms";
+export const transitionsDurationSlow = "500ms";
+export const transitionsDurationNormal = "300ms";
+export const transitionsDurationFast = "250ms";
 export const typographyFontFamily = "Inter, sans-serif";
 export const typographyFontSize10 = "0.75rem";
 export const typographyFontSize20 = "0.875rem";

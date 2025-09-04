@@ -5,7 +5,7 @@
   min-width: 300px;
   max-height: 90vh;
   overflow-y: auto;
-  background-color: var(--midas-background);
+  background-color: var(--midas-background-base);
   color: var(--midas-text-primary);
   border: none;
   padding: 0;

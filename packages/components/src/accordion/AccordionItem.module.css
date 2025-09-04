@@ -101,7 +101,7 @@
 
 .triggerButton[aria-expanded='true'] .chevronIcon {
   transform: rotate(-180deg);
-  transition: transform var(--transition-normal) ease;
+  transition: transform var(--midas-transitions-duration-normal) ease;
 }
 
 .triggerButton[data-hovered] {
@@ -110,14 +110,14 @@
 
 .panel[aria-hidden='true'] {
   height: 0;
-  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1)
-    allow-discrete;
+  transition: var(--midas-transitions-duration-fast)
+    cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
   overflow-y: clip;
 }
 
 .panel[aria-hidden='false'] {
-  transition: var(--transition-fast) cubic-bezier(0.16, 1, 0.3, 1)
-    allow-discrete;
+  transition: var(--midas-transitions-duration-fast)
+    cubic-bezier(0.16, 1, 0.3, 1) allow-discrete;
   height: auto;
   height: calc-size(min-content, size);
 }

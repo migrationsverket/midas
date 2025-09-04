@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--midas-border-color-subtle);
-  background-color: var(--midas-background);
+  background-color: var(--midas-background-base);
 
   &.headerExternal {
     padding: 1rem;
@@ -82,7 +82,7 @@
 
 .sidebar {
   font-family: var(--midas-typography-font-family);
-  background-color: var(--midas-background);
+  background-color: var(--midas-background-base);
   display: flex;
   flex-flow: column;
   flex: 0 0 var(--sideBarWidth);
@@ -347,7 +347,7 @@
   align-items: center;
   justify-content: center;
   border-top: 1px solid var(--midas-border-color-subtle);
-  background-color: var(--midas-background);
+  background-color: var(--midas-background-base);
 }
 
 .navbarList {
@@ -390,7 +390,7 @@
 
   &[data-hovered],
   &[data-active] {
-    background-color: var(--midas-button-background-primary);
+    background-color: var(--midas-button-background-primary-base);
     color: var(--midas-text-on-color);
     cursor: pointer;
   }

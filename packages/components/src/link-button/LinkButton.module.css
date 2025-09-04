@@ -6,7 +6,7 @@
   font-weight: 500;
   padding: calc(var(--midas-size-70) - var(--midas-border-width))
     calc(var(--midas-size-100) - var(--midas-border-width));
-  background-color: var(--midas-button-background-primary);
+  background-color: var(--midas-button-background-primary-base);
   border: solid var(--midas-border-width) transparent;
   color: var(--midas-text-on-color);
   cursor: pointer;
@@ -51,7 +51,7 @@
 
 .secondary {
   color: var(--midas-text-tertiary);
-  background-color: var(--midas-button-background-secondary);
+  background-color: var(--midas-button-background-secondary-base);
   border-color: var(--midas-button-border-secondary);
 
   .icon {
@@ -98,7 +98,7 @@
 
 .danger {
   color: var(--color-white);
-  background-color: var(--midas-button-background-danger);
+  background-color: var(--midas-button-background-danger-base);
   opacity: 1;
 
   &[data-hovered]:not(:disabled, [data-disabled]),

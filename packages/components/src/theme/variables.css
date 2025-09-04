@@ -116,9 +116,9 @@
   --midas-spacing-120: 6rem;
   --midas-state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
   --midas-state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
-  --midas-transitions-slow: 500ms;
-  --midas-transitions-normal: 300ms;
-  --midas-transitions-fast: 250ms;
+  --midas-transitions-duration-slow: 0.50s;
+  --midas-transitions-duration-normal: 0.30s;
+  --midas-transitions-duration-fast: 0.25s;
   --midas-typography-font-family: Inter, sans-serif;
   --midas-typography-font-size-10: 0.75rem;
   --midas-typography-font-size-20: 0.875rem;

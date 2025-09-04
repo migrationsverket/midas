@@ -324,9 +324,11 @@ declare const tokens: {
     focusInset: DesignToken;
   };
   transitions: {
-    slow: DesignToken;
-    normal: DesignToken;
-    fast: DesignToken;
+    duration: {
+      slow: DesignToken;
+      normal: DesignToken;
+      fast: DesignToken;
+    };
   };
   typography: {
     font: {

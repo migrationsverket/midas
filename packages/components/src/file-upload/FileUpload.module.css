@@ -4,7 +4,7 @@
   border: 1px dashed var(--midas-border-color-subtle);
   padding: 1.5rem;
   text-align: center;
-  background-color: var(--midas-background);
+  background-color: var(--midas-background-base);
 
   &[data-drop-target] {
     background: var(--midas-background-hover);

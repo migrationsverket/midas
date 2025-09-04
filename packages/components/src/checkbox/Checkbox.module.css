@@ -56,8 +56,8 @@
 
   &[data-selected] div,
   &[data-indeterminate] div {
-    background: var(--midas-button-background-primary);
-    border-color: var(--midas-button-background-primary);
+    background: var(--midas-button-background-primary-base);
+    border-color: var(--midas-button-background-primary-base);
   }
 
   &[data-invalid] div {
