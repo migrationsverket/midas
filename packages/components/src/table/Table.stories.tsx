@@ -4,6 +4,7 @@ import { Table, TableHeader, Column, TableBody, Row, Cell } from './Table'
 import styles from './Table.module.css'
 
 import { TableLayout, Virtualizer } from 'react-aria-components'
+import { Link } from '../link'
 
 type Story = StoryObj<typeof Table>
 
@@ -128,4 +129,37 @@ export const Virtualized: Story = {
       </Virtualizer>
     )
   },
+}
+
+export const StripedWithLink: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+    a11y: {
+      // Link color has insufficient contrast to striped background
+      test: 'todo',
+    },
+  },
+  args: {
+    striped: true,
+  },
+  render: args => (
+    <Table {...args}>
+      <TableHeader>
+        <Column>Derp</Column>
+      </TableHeader>
+      <TableBody>
+        <Row>
+          <Cell>
+            <Link href='#'>Link</Link>
+          </Cell>
+        </Row>
+        <Row>
+          <Cell>
+            <Link href='#'>Link</Link>
+          </Cell>
+        </Row>
+      </TableBody>
+    </Table>
+  ),
 }
