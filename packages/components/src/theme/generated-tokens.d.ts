@@ -246,6 +246,7 @@ export const buttonBackgroundDisabled: string;
 /** Kantfärg för sekundärknapp */
 export const buttonBorderSecondary: string;
 export const buttonIconHover: string;
+/** Active state för ikoner */
 export const buttonIconActive: string;
 export const badgeBackground: string;
 export const calendarDateBackgroundHover: string;
