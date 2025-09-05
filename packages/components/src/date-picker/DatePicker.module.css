@@ -1,5 +1,5 @@
 .datePicker {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -8,22 +8,22 @@
 .inputField {
   box-sizing: border-box;
   width: 100%;
-  height: var(--size-150);
+  height: var(--midas-size-150);
   align-items: center;
-  background-color: var(--semantic-field-01);
-  border-bottom: 1px solid var(--semantic-border-primary);
+  background-color: var(--midas-field-01-base);
+  border-bottom: 1px solid var(--midas-border-color-primary);
   padding-left: 1rem;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
 
   &.medium {
-    height: var(--size-130);
+    height: var(--midas-size-130);
   }
 
   &[data-disabled] {
     cursor: not-allowed;
-    border-color: var(--semantic-border-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 
   &:focus-visible,
@@ -36,12 +36,12 @@
   }
 
   &[data-hovered]:not([data-disabled]) {
-    background-color: var(--semantic-field-hover-01);
+    background-color: var(--midas-field-01-hover);
   }
 
   &[data-invalid] {
     border: none;
-    box-shadow: inset 0 0 0 3px var(--semantic-support-border-warning);
+    box-shadow: inset 0 0 0 3px var(--midas-support-border-warning);
   }
 
   .calendarButton {
@@ -49,30 +49,30 @@
     margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem;
-    color: var(--semantic-icon-primary);
+    color: var(--midas-icon-primary);
     background-color: transparent;
     cursor: pointer;
 
     &.medium {
       &[data-invalid] {
-        height: calc(var(--size-130) - var(--size-30));
+        height: calc(var(--midas-size-130) - var(--midas-size-30));
       }
     }
 
     &[data-invalid] {
       border: none;
-      height: calc(var(--size-150) - var(--size-30));
+      height: calc(var(--midas-size-150) - var(--midas-size-30));
       margin-right: 3px;
     }
 
     &[data-disabled] {
       cursor: not-allowed;
-      color: var(--semantic-icon-disabled);
-      border-color: var(--semantic-border-disabled);
+      color: var(--midas-icon-disabled);
+      border-color: var(--midas-border-color-disabled);
     }
 
     &[data-hovered]:not([data-disabled]) {
-      background-color: var(--semantic-field-hover-01);
+      background-color: var(--midas-field-01-hover);
     }
 
     &:focus-visible,

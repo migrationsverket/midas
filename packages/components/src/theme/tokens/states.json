@@ -1,0 +1,12 @@
+{
+  "state": {
+    "focus": {
+      "$type": "string",
+      "$value": "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)"
+    },
+    "focusInset": {
+      "$type": "string",
+      "$value": "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)"
+    }
+  }
+}

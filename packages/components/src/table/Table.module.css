@@ -1,8 +1,8 @@
 .table {
   border-spacing: 0;
-  font-family: var(--typography-font-family);
-  font-size: var(--typography-font-size-20);
-  line-height: var(--typography-line-height-20);
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
 
   > div {
     pointer-events: auto !important;
@@ -10,14 +10,14 @@
 
   .tableHeader {
     .column {
-      background-color: var(--semantic-layer-accent-01);
-      color: var(--semantic-text-primary);
+      background-color: var(--midas-layer-accent-01-base);
+      color: var(--midas-text-primary);
       font-weight: 500;
-      padding: var(--size-75) var(--size-80);
+      padding: var(--midas-size-75) var(--midas-size-80);
       text-align: left;
 
       &[data-focus-visible] {
-        outline: var(--size-10) solid var(--semantic-border-primary);
+        outline: var(--midas-size-10) solid var(--midas-border-color-primary);
         outline-offset: -4px;
       }
 
@@ -29,7 +29,7 @@
 
   .row {
     &[data-focused] {
-      outline: var(--size-10) solid var(--semantic-border-primary);
+      outline: var(--midas-size-10) solid var(--midas-border-color-primary);
       outline-offset: -4px;
     }
 
@@ -40,19 +40,20 @@
     }
 
     &[data-hovered] {
-      background-color: var(--semantic-layer-hover-01);
+      background-color: var(--midas-layer-01-hover);
     }
 
-    background-color: var(--semantic-layer-01);
+    background-color: var(--midas-layer-01-hover);
 
     .cell {
-      border-top: 1px var(--semantic-border-subtle) solid;
-      color: var(--semantic-text-primary);
-      padding: calc(var(--size-75) - 1px) var(--size-80) var(--size-75);
+      border-top: 1px var(--midas-border-color-subtle) solid;
+      color: var(--midas-text-primary);
+      padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
+        var(--midas-size-75);
 
       &[data-focus-visible] {
         outline-offset: -4px;
-        outline: var(--size-10) solid var(--semantic-border-primary);
+        outline: var(--midas-size-10) solid var(--midas-border-color-primary);
       }
 
       .selection {
@@ -62,11 +63,11 @@
   }
 
   &.narrow {
-    font-size: var(--typography-font-size-10);
-    line-height: var(--typography-line-height-10);
+    font-size: var(--midas-typography-font-size-10);
+    line-height: var(--midas-typography-line-height-10);
 
     .column {
-      padding: var(--size-20) var(--size-80);
+      padding: var(--midas-size-20) var(--midas-size-80);
       height: 14px;
 
       .selection {
@@ -75,7 +76,8 @@
     }
 
     .cell {
-      padding: calc(var(--size-20) - 1px) var(--size-80) var(--size-20);
+      padding: calc(var(--midas-size-20) - 1px) var(--midas-size-80)
+        var(--midas-size-20);
 
       .selection {
         height: 16px;
@@ -85,12 +87,12 @@
 
   &.medium:not(.narrow) {
     .column {
-      padding: calc(var(--size-60) - 1px) var(--size-80);
+      padding: calc(var(--midas-size-60) - 1px) var(--midas-size-80);
     }
 
     .cell {
-      padding: calc(var(--size-60) - 2px) var(--size-80)
-        calc(var(--size-60) - 1px);
+      padding: calc(var(--midas-size-60) - 2px) var(--midas-size-80)
+        calc(var(--midas-size-60) - 1px);
     }
   }
 
@@ -98,10 +100,10 @@
     .row {
       &:nth-child(even),
       &[data-even='false'] {
-        background-color: var(--semantic-layer-accent-01);
+        background-color: var(--midas-layer-accent-01-base);
 
         &[data-hovered] {
-          background-color: var(--semantic-layer-accent-hover-01);
+          background-color: var(--midas-layer-accent-01-hover);
         }
       }
     }

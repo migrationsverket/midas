@@ -1,7 +1,7 @@
 import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
 import '../src/theme/global.css'
-import '../src/theme/theme.css'
+import '../src/theme/variables.css'
 import {
   customDarkTheme,
   customLightTheme,

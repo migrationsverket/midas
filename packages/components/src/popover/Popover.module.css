@@ -1,9 +1,9 @@
 .popover {
-  font-family: var(--typography-font-family);
-  font-size: var(--typography-font-size-20);
-  padding: var(--size-80);
-  color: var(--semantic-text-primary);
-  background-color: var(--semantic-layer-01);
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-20);
+  padding: var(--midas-size-80);
+  color: var(--midas-text-primary);
+  background-color: var(--midas-layer-01-base);
   outline: none;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 4px 5px rgba(0 0 0 / 20%);
@@ -14,7 +14,7 @@
 
   & .arrow svg {
     display: block;
-    fill: var(--semantic-layer-01);
+    fill: var(--midas-layer-01-base);
   }
 
   &[data-entering],

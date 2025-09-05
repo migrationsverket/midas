@@ -40,21 +40,21 @@
     padding: 0.5rem 0;
   }
 
-  background-color: var(--semantic-layer-01);
-  font-family: var(--typography-font-family);
+  background-color: var(--midas-layer-01-base);
+  font-family: var(--midas-typography-font-family);
   display: inline-block;
   flex-direction: column;
   align-items: center;
   margin: auto;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
 
   & [data-unavailable] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 
   & div:focus-visible,
   & div[data-focus-visible] {
-    outline: 2px solid var(--semantic-border-primary);
+    outline: 2px solid var(--midas-border-color-primary);
 
     @media (forced-colors: active) {
       outline: 3px solid activeText;
@@ -65,11 +65,11 @@
   &[data-disabled='true'],
   &[data-disabled='true'] button {
     cursor: not-allowed;
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 
   &[data-invalid] {
-    border: 2px solid var(--semantic-support-border-warning);
+    border: 2px solid var(--midas-support-border-warning);
   }
 
   @media (forced-colors: active) {
@@ -84,13 +84,13 @@
 
   & button {
     border: none;
-    color: var(--semantic-text-primary);
+    color: var(--midas-text-primary);
     padding: 0.5rem;
-    background-color: var(--semantic-layer-01);
+    background-color: var(--midas-layer-01-base);
     cursor: pointer;
 
     &:hover:not([data-disabled]) {
-      background-color: var(--semantic-field-hover-01);
+      background-color: var(--midas-field-01-hover);
     }
 
     &:focus-visible,
@@ -106,23 +106,23 @@
   }
 
   [data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 }
 
 .day {
-  border: solid 2px var(--semantic-layer-01);
+  border: solid 2px var(--midas-layer-01-base);
   cursor: pointer;
 
   &[data-hovered]:not([data-unavailable], [data-disabled], [data-selected]) {
-    background-color: var(--semantic-field-hover-01);
-    border-color: var(--semantic-field-hover-01);
+    background-color: var(--midas-field-01-hover);
+    border-color: var(--midas-field-01-hover);
   }
 
   &[data-selected='true'] {
-    color: var(--semantic-text-inverse);
-    background-color: var(--semantic-calendar-date-background-selected);
-    border-color: var(--semantic-calendar-date-background-selected);
+    color: var(--midas-text-inverse);
+    background-color: var(--midas-calendar-date-background-selected);
+    border-color: var(--midas-calendar-date-background-selected);
 
     @media (forced-colors: active) {
       background-color: highlight;
@@ -131,27 +131,27 @@
 
   &.range {
     &[data-selected='true'] {
-      color: var(--semantic-text-primary);
-      background-color: var(--semantic-calendar-date-background-in-range);
-      border-color: var(--semantic-calendar-date-background-in-range);
+      color: var(--midas-text-primary);
+      background-color: var(--midas-calendar-date-background-in-range);
+      border-color: var(--midas-calendar-date-background-in-range);
     }
 
     &[data-selection-start='true'] {
-      color: var(--semantic-text-inverse);
-      background-color: var(--semantic-calendar-date-background-start-range);
-      border-color: var(--semantic-calendar-date-background-start-range);
+      color: var(--midas-text-inverse);
+      background-color: var(--midas-calendar-date-background-start-range);
+      border-color: var(--midas-calendar-date-background-start-range);
     }
 
     &[data-selection-end='true'] {
-      color: var(--semantic-text-inverse);
-      background-color: var(--semantic-calendar-date-background-end-range);
-      border-color: var(--semantic-calendar-date-background-end-range);
+      color: var(--midas-text-inverse);
+      background-color: var(--midas-calendar-date-background-end-range);
+      border-color: var(--midas-calendar-date-background-end-range);
     }
   }
 
   &[data-disabled],
   &[data-unavailable] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
   }
 

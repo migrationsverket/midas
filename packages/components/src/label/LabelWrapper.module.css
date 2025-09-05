@@ -9,6 +9,6 @@
   margin-bottom: 0.125rem;
 
   svg {
-    stroke: var(--semantic-support-border-info);
+    stroke: var(--midas-support-border-info);
   }
 }

@@ -5,32 +5,32 @@
 }
 
 .wrapper {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   display: flex;
   flex-direction: column;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 }
 
 .trigger {
   align-items: center;
-  background-color: var(--semantic-field-01);
+  background-color: var(--midas-field-01-base);
   border: none;
-  border-bottom: 1px solid var(--semantic-border-primary);
+  border-bottom: 1px solid var(--midas-border-color-primary);
   border-radius: 0;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   display: flex;
-  font-size: var(--typography-font-size-30);
+  font-size: var(--midas-typography-font-size-30);
   justify-content: flex-end;
-  min-height: var(--size-150);
-  padding-left: var(--size-70);
-  padding-right: var(--size-70);
+  min-height: var(--midas-size-150);
+  padding-left: var(--midas-size-70);
+  padding-right: var(--midas-size-70);
 
   &.medium {
-    min-height: var(--size-130);
+    min-height: var(--midas-size-130);
   }
 
   &:focus-visible {
@@ -44,20 +44,20 @@
   }
 
   &:hover {
-    background-color: var(--semantic-field-hover-01);
+    background-color: var(--midas-field-01-hover);
     cursor: pointer;
   }
 
   &[data-disabled] {
     cursor: not-allowed;
-    background: var(--semantic-field-disabled);
-    color: var(--semantic-text-disabled);
-    border-color: var(--semantic-border-disabled);
+    background: var(--midas-field-disabled);
+    color: var(--midas-text-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 
   &[data-invalid]:not(:focus-visible) {
     border: none;
-    box-shadow: inset 0 0 0 2px var(--semantic-support-border-warning);
+    box-shadow: inset 0 0 0 2px var(--midas-support-border-warning);
 
     @media (forced-colors: active) {
       border: 5px solid Highlight !important;
@@ -72,7 +72,7 @@
 }
 
 .tagGroup {
-  margin-top: var(--size-40);
+  margin-top: var(--midas-size-40);
 }
 
 .icon {
@@ -99,9 +99,9 @@
 }
 
 .selectValueTag {
-  font-family: var(--typography-font-family);
-  background-color: var(--semantic-button-background-primary);
-  color: var(--semantic-text-on-color);
+  font-family: var(--midas-typography-font-family);
+  background-color: var(--midas-button-background-primary-base);
+  color: var(--midas-text-on-color);
   border-radius: 1.25rem;
   font-size: 0.875rem;
   min-height: 1.75rem;
@@ -120,9 +120,9 @@
 
   &[data-disabled] {
     pointer-events: none;
-    background-color: var(--semantic-field-disabled);
-    color: var(--semantic-text-disabled);
-    border-color: var(--semantic-border-disabled);
+    background-color: var(--midas-field-disabled);
+    color: var(--midas-text-disabled);
+    border-color: var(--midas-border-color-disabled);
   }
 }
 
@@ -137,19 +137,19 @@
   margin: 0 0 0 0.5rem;
   display: flex;
   border-radius: 100%;
-  background-color: var(--semantic-button-background-primary);
-  color: var(--semantic-text-on-color);
+  background-color: var(--midas-button-background-primary-base);
+  color: var(--midas-text-on-color);
   border: none;
 
   &:hover {
     cursor: pointer;
-    background-color: var(--semantic-button-background-primary-hover);
+    background-color: var(--midas-button-background-primary-hover);
   }
 
   &:disabled {
     pointer-events: none;
-    color: var(--semantic-text-disabled);
-    background-color: var(--semantic-button-background-disabled);
+    color: var(--midas-text-disabled);
+    background-color: var(--midas-button-background-disabled);
   }
 
   &:focus-visible {

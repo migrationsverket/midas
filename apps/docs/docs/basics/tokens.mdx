@@ -9,7 +9,19 @@ import { Grid, GridItem, Text } from '@midas-ds/components'
 import { baseColors, semantic } from '@midas-ds/components/theme'
 import CodeBlock from '@theme/CodeBlock'
 
-Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt och konsekvent uttryck i hela designsystemet.
+:::danger
+**Deprecated**
+
+Vi har bytt system för att hantera tokens till [style-dictionary](https://styledictionary.com/) och passat på att
+uppdatera en del variabelnamn, både CSS-variabler och typescriptvariabler. Vi fortsätter att supporta `semantics` och
+`theme` ytterligare någon version men var förberedda på att detta kommer att bli borttaget i en framtida version.
+Nytt system för tokens finns dokumenterat i [tokens](/basics/tokens-v2/).
+:::
+
+Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för våra
+gränssnitt. Gråskalan används främst för bakgrunder, ramar och typografi, medan den blå skalan fungerar som vår primära
+accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt, tillgängligt
+och konsekvent uttryck i hela designsystemet.
 
 <ColorSpectrum />
 

@@ -1,6 +1,6 @@
 {
   "extends": ["../../.stylelintrc.json"],
-  "ignoreFiles": ["!**/*"],
+  "ignoreFiles": ["!**/*", "**/*/variables.css"],
   "overrides": [
     {
       "files": ["**/*.css"],

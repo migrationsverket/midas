@@ -1,12 +1,12 @@
 .radioGroup {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: flex;
   flex-direction: column;
 
   &[data-disabled] {
     cursor: not-allowed;
     opacity: 1;
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 
   .wrap {
@@ -23,11 +23,11 @@
 }
 
 .radio {
-  font-size: var(--typography-font-size-30);
+  font-size: var(--midas-typography-font-size-30);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   cursor: pointer;
 
   &::before {
@@ -36,14 +36,14 @@
     width: 1rem;
     height: 1rem;
     box-sizing: border-box;
-    border: 0.0625rem solid var(--semantic-border-primary);
+    border: 0.0625rem solid var(--midas-border-color-primary);
     border-radius: 1.286rem;
-    transition: all var(--transition-fast);
+    transition: all var(--midas-transitions-duration-fast);
   }
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
 
     @media (forced-colors: active) {
@@ -54,29 +54,29 @@
 
   &[data-hovered] {
     &::before {
-      border-color: var(--semantic-border-secondary);
+      border-color: var(--midas-border-color-secondary);
     }
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
 
     &::before {
-      border-color: var(--semantic-border-disabled);
+      border-color: var(--midas-border-color-disabled);
     }
   }
 
   &[data-pressed] {
     &::before {
-      border-color: var(--semantic-border-subtle);
+      border-color: var(--midas-border-color-subtle);
     }
   }
 
   &[data-selected]::before {
     padding: 0.188rem;
     border-width: 0.1rem;
-    background: var(--semantic-icon-tertiary) 50% 50% no-repeat content-box;
+    background: var(--midas-icon-tertiary) 50% 50% no-repeat content-box;
   }
 
   /* Nesting this selector in the one above causes syntax errors during minification */
@@ -87,19 +87,19 @@
   }
 
   &[data-selected][data-pressed]::before {
-    border-color: var(--semantic-border-subtle);
-    background: var(--semantic-icon-tertiary) 50% 50% no-repeat content-box;
+    border-color: var(--midas-border-color-subtle);
+    background: var(--midas-icon-tertiary) 50% 50% no-repeat content-box;
   }
 
   &[data-invalid] {
     &::before {
-      border: 0.125rem solid var(--semantic-support-border-warning);
+      border: 0.125rem solid var(--midas-support-border-warning);
     }
   }
 
   @media var(--breakpoint-xs) {
     padding: 0.875rem 1rem;
-    border: 1px solid var(--semantic-border-primary);
+    border: 1px solid var(--midas-border-color-primary);
     width: auto;
 
     &.radio {
@@ -108,16 +108,16 @@
     }
 
     &[data-hovered] {
-      background-color: var(--semantic-field-hover-02);
+      background-color: var(--midas-field-02-hover);
     }
 
     &[data-invalid] {
-      border: 2px solid var(--semantic-support-border-warning);
+      border: 2px solid var(--midas-support-border-warning);
     }
 
     &[data-disabled] {
       pointer-events: none;
-      border-color: var(--semantic-border-disabled);
+      border-color: var(--midas-border-color-disabled);
     }
   }
 }

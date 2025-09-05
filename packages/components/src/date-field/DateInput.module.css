@@ -4,7 +4,7 @@
   & div:focus-visible,
   & div[data-focus-visible] {
     outline: none;
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -13,11 +13,11 @@
   }
 
   & div[data-readonly='true'] {
-    color: var(--semantic-text-primary);
+    color: var(--midas-text-primary);
     padding: 0 2px;
   }
 }
 
 .divider {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
 }

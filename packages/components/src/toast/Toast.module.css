@@ -56,7 +56,7 @@
   gap: 8px;
   border: none;
   width: calc(100% - 2rem);
-  z-index: var(--z-index-toast);
+  z-index: var(--midas-z-index-toast);
 
   &:focus-visible {
     outline: none;
@@ -72,12 +72,12 @@
 }
 
 .toast {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   padding-left: calc(1rem - 3px);
   border-left: 3px solid transparent;
   width: calc(100% - 1rem);
@@ -90,32 +90,32 @@
   }
 
   &.success {
-    --bg: var(--semantic-support-background-success);
-    --border: var(--semantic-support-border-success);
+    --bg: var(--midas-support-background-success);
+    --border: var(--midas-support-border-success);
 
     background: var(--bg);
     border-left-color: var(--border);
   }
 
   &.info {
-    --bg: var(--semantic-support-background-info);
-    --border: var(--semantic-support-border-info);
+    --bg: var(--midas-support-background-info);
+    --border: var(--midas-support-border-info);
 
     background: var(--bg);
     border-left-color: var(--border);
   }
 
   &.important {
-    --border: var(--semantic-support-border-important);
-    --bg: var(--semantic-support-background-important);
+    --border: var(--midas-support-border-important);
+    --bg: var(--midas-support-background-important);
 
     background: var(--bg);
     border-left-color: var(--border);
   }
 
   &.warning {
-    --border: var(--semantic-support-border-warning);
-    --bg: var(--semantic-support-background-warning);
+    --border: var(--midas-support-border-warning);
+    --bg: var(--midas-support-background-warning);
 
     background: var(--bg);
     border-left-color: var(--border);

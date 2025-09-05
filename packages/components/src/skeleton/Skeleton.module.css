@@ -9,7 +9,7 @@
 }
 
 .skeleton {
-  background: var(--semantic-skeleton-01);
+  background: var(--midas-skeleton-01);
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -34,7 +34,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    var(--semantic-background-inverse),
+    var(--midas-background-inverse),
     transparent
   );
   animation: wave 2s infinite ease-in-out;
@@ -48,5 +48,5 @@
 }
 
 .onLayer01 {
-  background-color: var(--semantic-skeleton-02);
+  background-color: var(--midas-skeleton-02);
 }

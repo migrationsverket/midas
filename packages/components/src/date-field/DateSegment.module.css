@@ -1,15 +1,15 @@
 .dateSegment {
-  color: var(--semantic-text-primary);
+  color: var(--midas-text-primary);
   padding: 0 0.125rem;
   text-transform: uppercase;
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
   }
 
   &:focus-visible,
   &[data-focus-visible] {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
 
     @media (forced-colors: active) {
@@ -19,6 +19,6 @@
   }
 
   &[data-placeholder] {
-    color: var(--semantic-text-placeholder);
+    color: var(--midas-text-placeholder);
   }
 }

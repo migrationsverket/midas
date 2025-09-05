@@ -3,7 +3,7 @@
 }
 
 .spinner {
-  color: var(--semantic-icon-primary);
+  color: var(--midas-icon-primary);
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
 
@@ -13,7 +13,7 @@
 }
 
 .dark {
-  color: var(--semantic-icon-on-color);
+  color: var(--midas-icon-on-color);
 }
 
 @keyframes rotating {

@@ -1,9 +1,9 @@
 .tooltip {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
-  color: var(--semantic-text-inverse);
-  background-color: var(--semantic-background-inverse);
+  color: var(--midas-text-inverse);
+  background-color: var(--midas-background-inverse);
   max-width: 150px;
   outline: none;
   transform: translate3d(0, 0, 0);
@@ -13,7 +13,7 @@
 
   & .arrow svg {
     display: block;
-    fill: var(--semantic-background-inverse);
+    fill: var(--midas-background-inverse);
   }
 
   &[data-entering],

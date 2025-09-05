@@ -13,11 +13,11 @@
 }
 
 .primary {
-  fill: var(--semantic-logo-primary);
+  fill: var(--midas-logo-primary);
 }
 
 .dark {
-  fill: var(--semantic-background-inverse);
+  fill: var(--midas-background-inverse);
 }
 
 .xSmall {

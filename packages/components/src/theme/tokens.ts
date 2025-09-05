@@ -1,3 +1,6 @@
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const baseColors = {
   black: '#000',
   white: '#fff',
@@ -74,6 +77,9 @@ export const baseColors = {
   signalRed200: '#150303',
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const typography = {
   fontFamily: '"Inter", sans-serif',
 
@@ -110,6 +116,9 @@ export const typography = {
   weightBlack: 900,
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const spacing = {
   '10': '0.125rem', // 2px
   '20': '0.25rem', // 4px
@@ -125,6 +134,9 @@ export const spacing = {
   '120': '6rem', // 96px
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const states = {
   focus:
     '0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)',
@@ -132,12 +144,18 @@ export const states = {
     'inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)',
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const transitions = {
   slow: '500ms',
   normal: '300ms',
   fast: '250ms',
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const windowSizes = {
   sm: 480,
   md: 768,
@@ -145,6 +163,9 @@ export const windowSizes = {
   xl: 1280,
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const breakpoints = {
   xs: `(max-width: ${windowSizes.sm - 1}px)`,
   sm: `(min-width: ${windowSizes.sm}px)`,
@@ -156,6 +177,9 @@ export const breakpoints = {
   prefersReducedMotion: '(prefers-reduced-motion: reduced)',
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const semantic = {
   background: `light-dark(${baseColors.white}, ${baseColors.gray200})`,
   backgroundHover: `light-dark(${baseColors.whiteHover}, ${baseColors.gray190})`,
@@ -268,6 +292,9 @@ export const semantic = {
   menuTextSectionHeader: `light-dark(${baseColors.blue120}, ${baseColors.blue80})`,
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const zIndex = {
   base: 1,
   above: 10,
@@ -276,6 +303,9 @@ export const zIndex = {
   skipToContent: 1200,
 }
 
+/** @deprecated
+ * since v12.1.0 please import { variables } from '@midas-ds/components/theme'
+ **/
 export const sizing = {
   '00': '0', // 0px
   '05': '0.063rem', // 1px

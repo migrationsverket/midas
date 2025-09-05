@@ -1,11 +1,11 @@
 .badge {
-  font-family: var(--typography-font-family);
-  background-color: var(--semantic-badge-background);
+  font-family: var(--midas-typography-font-family);
+  background-color: var(--midas-badge-background);
   min-width: 0.5rem;
   min-height: 0.5rem;
   border-radius: 0.5rem;
   font-size: 0.625rem;
-  color: var(--semantic-text-on-color);
+  color: var(--midas-text-on-color);
 
   &.hasChildren {
     display: flex;

@@ -1,6 +1,6 @@
 .infoBanner {
-  font-family: var(--typography-font-family);
-  color: var(--semantic-text-primary);
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
   display: flex;
   font-size: 1rem;
   flex-direction: row;
@@ -9,23 +9,23 @@
   line-height: 1.3;
 
   &.success {
-    --border: var(--semantic-support-border-success);
-    --bg: var(--semantic-support-background-success);
+    --border: var(--midas-support-border-success);
+    --bg: var(--midas-support-background-success);
   }
 
   &.info {
-    --border: var(--semantic-support-border-info);
-    --bg: var(--semantic-support-background-info);
+    --border: var(--midas-support-border-info);
+    --bg: var(--midas-support-background-info);
   }
 
   &.important {
-    --border: var(--semantic-support-border-important);
-    --bg: var(--semantic-support-background-important);
+    --border: var(--midas-support-border-important);
+    --bg: var(--midas-support-background-important);
   }
 
   &.warning {
-    --border: var(--semantic-support-border-warning);
-    --bg: var(--semantic-support-background-warning);
+    --border: var(--midas-support-border-warning);
+    --bg: var(--midas-support-background-warning);
   }
 
   border-left: 3px solid var(--border);
@@ -44,7 +44,7 @@
 }
 
 .text {
-  line-height: var(--typography-line-height-40);
+  line-height: var(--midas-typography-line-height-40);
   white-space: pre-line;
   margin: 0;
 }

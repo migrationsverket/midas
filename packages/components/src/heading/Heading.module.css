@@ -4,21 +4,21 @@
 .h4,
 .h5,
 .h6 {
-  font-family: var(--typography-font-family);
-  color: var(--semantic-text-primary);
+  font-family: var(--midas-typography-font-family);
+  color: var(--midas-text-primary);
   font-weight: 400;
-  font-size: var(--typography-font-size-30);
-  line-height: var(--typography-line-height-50);
+  font-size: var(--midas-typography-font-size-30);
+  line-height: var(--midas-typography-line-height-50);
   margin-block: 0;
 }
 
 .h1 {
   /* 1.625 finns ej, hamnar mellan 06 och 07 */
   font-size: 1.625rem;
-  line-height: var(--typography-line-height-70);
+  line-height: var(--midas-typography-line-height-70);
 
   &[data-expressive] {
-    font-size: var(--typography-font-size-90);
+    font-size: var(--midas-typography-font-size-90);
 
     /* 3 finns ej, större än 10 */
     line-height: 3rem;
@@ -26,8 +26,8 @@
 }
 
 .h2 {
-  font-size: var(--typography-font-size-50);
-  line-height: var(--typography-line-height-60);
+  font-size: var(--midas-typography-font-size-50);
+  line-height: var(--midas-typography-line-height-60);
 
   &[data-expressive] {
     font-weight: 500;
@@ -40,19 +40,19 @@
 
 .h3 {
   font-weight: 600;
-  font-size: var(--typography-font-size-30);
-  line-height: var(--typography-line-height-50);
+  font-size: var(--midas-typography-font-size-30);
+  line-height: var(--midas-typography-line-height-50);
 
   &[data-expressive] {
-    font-size: var(--typography-font-size-50);
-    line-height: var(--typography-line-height-60);
+    font-size: var(--midas-typography-font-size-50);
+    line-height: var(--midas-typography-line-height-60);
   }
 }
 
 .h4 {
   &[data-expressive] {
     font-weight: 600;
-    font-size: var(--typography-font-size-40);
+    font-size: var(--midas-typography-font-size-40);
 
     /* 1.625 finns ej, mellan 6 och 7 */
     line-height: 1.625rem;
@@ -62,7 +62,7 @@
 .h5 {
   &[data-expressive] {
     font-weight: 600;
-    font-size: var(--typography-font-size-30);
-    line-height: var(--typography-line-height-50);
+    font-size: var(--midas-typography-font-size-30);
+    line-height: var(--midas-typography-line-height-50);
   }
 }
