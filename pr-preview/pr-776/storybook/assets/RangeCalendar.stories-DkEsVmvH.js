@@ -1,0 +1,70 @@
+import{R as A}from"./RangeCalendar-Bla0wXKm.js";import{m as e}from"./iframe-ChCQmNBF.js";import"./CalendarHeader-DtnyWSQu.js";import"./Button-tfBeC3AL.js";import"./utils-ByU4BYui.js";import"./clsx-B-dksMZM.js";import"./Hidden-CthOeGBp.js";import"./useFocusRing-H_pQgntn.js";import"./index-BPms665e.js";import"./index-DtCR5Fkz.js";import"./useLabels-D_zZDSz7.js";import"./useButton-DWSISmjd.js";import"./RSPContexts-BVacLies.js";import"./Text-rHbNf24l.js";import"./useDateFormatter-DzuCnbmI.js";import"./useControlledState-C93X6kj-.js";import"./useLocalizedStringFormatter-Cx8YpxIu.js";import"./LocalizedStringFormatter-BB0Nk989.js";import"./useUpdateEffect-Zb5QYo2M.js";import"./useEvent-BpoqnHr9.js";import"./getScrollParent-CvodOSaS.js";import"./scrollIntoView-Dsrcj58z.js";import"./useDescription-DN7g7ZVI.js";import"./VisuallyHidden-ShSB9PNa.js";import"./Button-DNKTHKFx.js";import"./Button.module-DgYkWG2o.js";import"./createLucideIcon-5zSNQhkM.js";import"./Heading-CcNDf9yd.js";import"./Text-Co7JZnN_.js";import"./preload-helper-Dp1pzeXC.js";const{expect:d,userEvent:t}=__STORYBOOK_MODULE_TEST__,et={component:A,title:"Components/Calendar/RangeCalendar",tags:["autodocs"]},a={},r={args:{defaultValue:{start:e.subtract({days:2}),end:e.add({days:2})}}},o={args:{isDisabled:!0},parameters:{a11y:{context:"body",config:{rules:[{id:"color-contrast",enabled:!1}]},options:{rules:{"color-contrast":{enabled:!1}}}}}},s={tags:["!dev","!autodocs"],parameters:{chromatic:{disableSnapshot:!0}},play:async({canvas:n,step:v})=>{await v("it should be possible to select today and two days ahead with the keyboard",async()=>{const h=e.day.toString(),R=e.add({days:1}).day.toString(),k=e.add({days:2}).day.toString();await t.tab(),await t.tab(),await t.tab(),await t.keyboard("[Space]"),await t.keyboard("[ArrowRight]"),await d(n.getByRole("gridcell",{name:h})).toHaveAttribute("aria-selected","true"),await d(n.getByRole("gridcell",{name:R})).toHaveAttribute("aria-selected","true"),await d(n.getByRole("gridcell",{name:k})).toHaveAttribute("aria-selected","true")})}};var i,c,m;a.parameters={...a.parameters,docs:{...(i=a.parameters)==null?void 0:i.docs,source:{originalSource:"{}",...(m=(c=a.parameters)==null?void 0:c.docs)==null?void 0:m.source}}};var l,p,u;r.parameters={...r.parameters,docs:{...(l=r.parameters)==null?void 0:l.docs,source:{originalSource:`{
+  args: {
+    defaultValue: {
+      start: mockedNow.subtract({
+        days: 2
+      }),
+      end: mockedNow.add({
+        days: 2
+      })
+    }
+  }
+}`,...(u=(p=r.parameters)==null?void 0:p.docs)==null?void 0:u.source}}};var y,b,g;o.parameters={...o.parameters,docs:{...(y=o.parameters)==null?void 0:y.docs,source:{originalSource:`{
+  args: {
+    isDisabled: true
+  },
+  parameters: {
+    a11y: {
+      context: 'body',
+      config: {
+        rules: [{
+          // Dont check for color contrast on disabled elements
+          id: 'color-contrast',
+          enabled: false
+        }]
+      },
+      options: {
+        rules: {
+          'color-contrast': {
+            enabled: false
+          }
+        }
+      } satisfies RunOptions
+    }
+  }
+}`,...(g=(b=o.parameters)==null?void 0:b.docs)==null?void 0:g.source}}};var w,S,f;s.parameters={...s.parameters,docs:{...(w=s.parameters)==null?void 0:w.docs,source:{originalSource:`{
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: {
+      disableSnapshot: true
+    }
+  },
+  play: async ({
+    canvas,
+    step
+  }) => {
+    await step('it should be possible to select today and two days ahead with the keyboard', async () => {
+      const todaysDate = mockedNow.day.toString();
+      const tomorrow = mockedNow.add({
+        days: 1
+      }).day.toString();
+      const dayAfterTomorrow = mockedNow.add({
+        days: 2
+      }).day.toString();
+      await userEvent.tab();
+      await userEvent.tab();
+      await userEvent.tab();
+      await userEvent.keyboard('[Space]');
+      await userEvent.keyboard('[ArrowRight]');
+      await expect(canvas.getByRole('gridcell', {
+        name: todaysDate
+      })).toHaveAttribute('aria-selected', 'true');
+      await expect(canvas.getByRole('gridcell', {
+        name: tomorrow
+      })).toHaveAttribute('aria-selected', 'true');
+      await expect(canvas.getByRole('gridcell', {
+        name: dayAfterTomorrow
+      })).toHaveAttribute('aria-selected', 'true');
+    });
+  }
+}`,...(f=(S=s.parameters)==null?void 0:S.docs)==null?void 0:f.source}}};const at=["Primary","SelectedDates","Disabled","KeyboardTest"];export{o as Disabled,s as KeyboardTest,a as Primary,r as SelectedDates,at as __namedExportsOrder,et as default};
