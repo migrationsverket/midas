@@ -49,6 +49,9 @@
     },
     "./theme.css": {
       "import": "./assets/theme.css"
+    },
+    "./variables.css": {
+      "import": "./assets/variables.css"
     }
   },
   "dependencies": {
