@@ -2,15 +2,15 @@ import StyleDictionary from 'style-dictionary'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 
 export const config = {
-  source: ['packages/components/src/theme/tokens/**/*.json'],
+  source: ['src/theme/tokens/**/*.json'],
   platforms: {
     es6: {
       options: {
-        flat: false
+        flat: false,
       },
       transformGroups: transformGroups.js,
       transforms: [transforms.nameCamel],
-      buildPath: 'packages/components/src/theme/',
+      buildPath: 'src/theme/',
       files: [
         {
           destination: 'generated-tokens.js',
@@ -18,17 +18,17 @@ export const config = {
         },
         {
           destination: 'generated-tokens.d.ts',
-          format: "typescript/es6-declarations",
+          format: 'typescript/es6-declarations',
         },
       ],
     },
     object: {
       options: {
-        flat: false
+        flat: false,
       },
       transformGroups: transformGroups.js,
       transforms: [transforms.nameCamel],
-      buildPath: 'packages/components/src/theme/',
+      buildPath: 'src/theme/',
       files: [
         {
           destination: 'generated-object.js',
@@ -36,7 +36,7 @@ export const config = {
         },
         {
           destination: 'generated-object.d.ts',
-          "format": "typescript/module-declarations",
+          format: 'typescript/module-declarations',
         },
       ],
     },
@@ -47,7 +47,7 @@ export const config = {
         outputReferences: true,
       },
       prefix: 'midas',
-      buildPath: 'packages/components/src/theme/',
+      buildPath: 'src/theme/',
       files: [
         {
           destination: 'variables.css',

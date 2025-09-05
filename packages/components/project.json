@@ -8,7 +8,8 @@
     "generate-css-tokens": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm run build:tokens"
+        "command": "node sd.build.mjs",
+        "cwd": "packages/components"
       }
     },
     "test": {
