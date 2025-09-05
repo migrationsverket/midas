@@ -376,7 +376,8 @@
         "$value": "light-dark(#0000001a, #ffffff1a)"
       },
       "active": {
-        "$value": "light-dark(#00000033, #ffffff33)"
+        "$value": "light-dark(#00000033, #ffffff33)",
+        "$description": "Active state f\u00f6r ikoner"
       }
     }
   },
