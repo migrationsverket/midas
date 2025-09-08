@@ -4,7 +4,7 @@
   gap: 0.5rem;
 }
 
-@media var(--breakpoint-xs) {
+@media (width <= 479px) {
   .buttonGroup > * {
     width: 100%;
   }

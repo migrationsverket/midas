@@ -153,7 +153,7 @@
     calc(var(--midas-size-80) - var(--midas-border-width));
 }
 
-@media var(--breakpoint-xs) {
+@media (width <= 479px) {
   .button {
     width: 100%;
   }

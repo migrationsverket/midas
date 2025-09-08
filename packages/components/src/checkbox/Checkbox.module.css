@@ -130,7 +130,7 @@
   }
 
   .checkbox {
-    @media var(--breakpoint-xs) {
+    @media (width <= 479px) {
       padding: 0.875rem 1rem;
       border: 1px solid var(--midas-border-color-primary);
       width: auto;
