@@ -40,7 +40,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
     @media (forced-colors: active) {
       outline: 3px solid highlight;
@@ -107,6 +107,7 @@
 
 span.emptyState {
   display: block;
-  line-height: var(--typography-line-height-30);
-  padding: var(--size-80) var(--size-80) var(--size-60) var(--size-80);
+  line-height: var(--midas-typography-line-height-30);
+  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-60)
+    var(--midas-size-80);
 }

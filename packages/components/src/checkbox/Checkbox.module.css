@@ -50,7 +50,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
   }
 

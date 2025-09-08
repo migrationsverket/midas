@@ -1,5 +1,5 @@
 .link {
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   color: var(--midas-link-enabled);
   text-decoration: underline;
   display: inline-flex;
@@ -69,7 +69,7 @@
   &::after {
     position: absolute;
     inset: 0;
-    z-index: var(--z-index-base);
+    z-index: var(--midas-z-index-base);
     content: '';
   }
 }

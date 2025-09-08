@@ -64,7 +64,7 @@
   }
 
   &[data-focused] {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
     @media (forced-colors: active) {
       outline: 2px solid highlight;
@@ -94,7 +94,7 @@
   &[data-focused],
   &:focus {
     outline: none;
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
     @media (forced-colors: active) {
       outline: 2px solid highlight;

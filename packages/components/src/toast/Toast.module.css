@@ -86,7 +86,7 @@
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
   }
 
   &.success {

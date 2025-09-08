@@ -2530,10 +2530,12 @@ export default {
       active: {
         key: '{button.icon.active}',
         $value: 'light-dark(#00000033, #ffffff33)',
+        $description: 'Active state för ikoner',
         filePath: 'src/theme/tokens/object-values.json',
         isSource: true,
         original: {
           $value: 'light-dark(#00000033, #ffffff33)',
+          $description: 'Active state för ikoner',
           key: '{button.icon.active}',
         },
         name: 'buttonIconActive',

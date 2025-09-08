@@ -119,7 +119,7 @@
   opacity: 1;
 
   &[data-hovered] {
-    color: var(--color-white);
+    color: var(--midas-color-white);
     background-color: var(--midas-button-background-danger-hover);
   }
 
