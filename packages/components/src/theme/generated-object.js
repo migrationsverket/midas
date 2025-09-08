@@ -68,12 +68,12 @@ export default {
   breakpoints: {
     xs: {
       key: '{breakpoints.xs}',
-      $value: "'(max-width: calc(480px - 1px))'",
+      $value: '(max-width: calc(480px - 1px))',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(max-width: calc({windowSizes.sm} - 1px))'",
+        $value: '(max-width: calc({windowSizes.sm} - 1px))',
         $type: 'string',
         key: '{breakpoints.xs}',
       },
@@ -83,12 +83,12 @@ export default {
     },
     sm: {
       key: '{breakpoints.sm}',
-      $value: "'(min-width: 480px)'",
+      $value: '(min-width: 480px)',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(min-width: {windowSizes.sm})'",
+        $value: '(min-width: {windowSizes.sm})',
         $type: 'string',
         key: '{breakpoints.sm}',
       },
@@ -98,12 +98,12 @@ export default {
     },
     md: {
       key: '{breakpoints.md}',
-      $value: "'(min-width: 768px)'",
+      $value: '(min-width: 768px)',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(min-width: {windowSizes.md})'",
+        $value: '(min-width: {windowSizes.md})',
         $type: 'string',
         key: '{breakpoints.md}',
       },
@@ -113,12 +113,12 @@ export default {
     },
     lg: {
       key: '{breakpoints.lg}',
-      $value: "'(min-width: 1024px)'",
+      $value: '(min-width: 1024px)',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(min-width: {windowSizes.lg})'",
+        $value: '(min-width: {windowSizes.lg})',
         $type: 'string',
         key: '{breakpoints.lg}',
       },
@@ -128,13 +128,13 @@ export default {
     },
     xl: {
       key: '{breakpoints.xl}',
-      $value: "'(min-width: 1280px)'",
+      $value: '(min-width: 1280px)',
       $comment: 'This is the largest breakpoint',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(min-width: {windowSizes.xl})'",
+        $value: '(min-width: {windowSizes.xl})',
         $comment: 'This is the largest breakpoint',
         $type: 'string',
         key: '{breakpoints.xl}',
@@ -145,12 +145,12 @@ export default {
     },
     forcedColorsMode: {
       key: '{breakpoints.forcedColorsMode}',
-      $value: "'(forced-colors: active)'",
+      $value: '(forced-colors: active)',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(forced-colors: active)'",
+        $value: '(forced-colors: active)',
         $type: 'string',
         key: '{breakpoints.forcedColorsMode}',
       },
@@ -160,12 +160,12 @@ export default {
     },
     darkMode: {
       key: '{breakpoints.darkMode}',
-      $value: "'(prefers-color-scheme: dark)'",
+      $value: '(prefers-color-scheme: dark)',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(prefers-color-scheme: dark)'",
+        $value: '(prefers-color-scheme: dark)',
         $type: 'string',
         key: '{breakpoints.darkMode}',
       },
@@ -175,12 +175,12 @@ export default {
     },
     prefersReducedMotion: {
       key: '{breakpoints.prefersReducedMotion}',
-      $value: "'(prefers-reduced-motion: reduced)'",
+      $value: '(prefers-reduced-motion: reduced)',
       filePath: 'src/theme/tokens/breakpoints.json',
       isSource: true,
       $type: 'string',
       original: {
-        $value: "'(prefers-reduced-motion: reduced)'",
+        $value: '(prefers-reduced-motion: reduced)',
         $type: 'string',
         key: '{breakpoints.prefersReducedMotion}',
       },

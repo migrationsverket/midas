@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 .dateSegment {
   color: var(--midas-text-primary);
   padding: 0 0.125rem;
@@ -12,7 +15,7 @@
     box-shadow: var(--midas-state-focus);
     outline: none;
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 1px solid;
       outline-offset: 2px;
     }

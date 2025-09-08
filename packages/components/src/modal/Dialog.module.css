@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 .modal {
   font-family: var(--midas-typography-font-family);
   position: fixed;
@@ -15,7 +18,7 @@
     animation: modal-zoom 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  @media (forced-colors: active) {
+  @media --midas-breakpoints-forced-colors-mode {
     outline: 2px solid;
   }
 }

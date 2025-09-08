@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-prefers-reduced-motion from breakpoints;
+
 @keyframes wave {
   0% {
     transform: translateX(-100%);
@@ -40,7 +43,7 @@
   animation: wave 2s infinite ease-in-out;
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media --midas-breakpoints-prefers-reduced-motion {
   .skeleton.wave::after {
     display: none;
     animation: none;
