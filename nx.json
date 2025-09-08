@@ -50,14 +50,14 @@
       },
       "automaticFromRef": true
     },
-    "projectsRelationship": "fixed",
+    "projectsRelationship": "independent",
     "projects": ["packages/components", "!packages/.storybook", "theme"],
     "releaseTagPattern": "v{version}",
     "git": {
       "commitMessage": "chore(release): release version {version} [skip-ci]"
     },
     "version": {
-      "preVersionCommand": "npx nx run-many -t build",
+      "preVersionCommand": "npx nx run-many -t -p=[components, theme] build",
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "fallbackCurrentVersionResolver": "disk",
