@@ -5,8 +5,10 @@
   "types": "./index.d.ts",
   "exports": {
     ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
+      "import": "./index.js"
+    },
+    "./variables.css": {
+      "import": "./assets/variables.css"
     }
   }
 }
