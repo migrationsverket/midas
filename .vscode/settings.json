@@ -10,6 +10,5 @@
   "css.lint.unknownAtRules": "ignore",
   "cssModules.camelCase": true,
   "stylelint.configFile": ".stylelintrc.json",
-  "stylelint.validate": ["css", "postcss"],
-  "eslint.validate": ["json"]
+  "stylelint.validate": ["css", "postcss"]
 }

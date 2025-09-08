@@ -24,7 +24,7 @@ export const ComponentHeader = ({
 
   return (
     <section className='component-header'>
-      <Grid fluid={true}>
+      <Grid>
         <GridItem
           size='auto'
           className='friendlyName'

@@ -12,7 +12,6 @@ const meta: Meta<typeof Grid> = {
   tags: ['autodocs'],
   parameters: { layout: 'fullscreen' },
   argTypes: {
-    fluid: { control: { type: 'boolean' } },
     isContained: { control: { type: 'boolean' } },
     removeMargins: { control: { type: 'boolean' } },
   },
