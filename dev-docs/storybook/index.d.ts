@@ -39,3 +39,4 @@ export * from './toast';
 export * from './toggle-button';
 export * from './tooltip';
 export * from './list-box';
+export * from './menu';
