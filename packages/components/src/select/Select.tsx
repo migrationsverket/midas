@@ -12,7 +12,7 @@ import { HiddenMultiSelect } from './HiddenMultiSelect'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { Checkbox } from '../checkbox'
-import { ListBoxButton, ListBoxPopover } from '../list-box'
+import { ListBoxPopover } from '../list-box'
 import { MultiSelectValueTag } from './MultiSelectValueTag'
 import { SelectTrigger } from './SelectTrigger'
 import { SelectFieldError } from './SelectFieldError'
@@ -120,28 +120,17 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
           style={{ width: triggerWidth }}
         >
           {props.isSelectableAll && (
-            <ListBoxButton
-              aria-label={strings.format('selectAll')}
-              onClick={() => state.selectionManager.toggleSelectAll()}
+            <Checkbox
+              isSelected={state.selectionManager.isSelectAll}
+              isIndeterminate={
+                !state.selectionManager.isSelectAll &&
+                !state.selectionManager.isEmpty
+              }
+              className={styles.selectAll}
+              onChange={() => state.selectionManager.toggleSelectAll()}
             >
-              <div
-                className={styles.checkboxContainer}
-                aria-hidden
-              >
-                <Checkbox
-                  isSelected={state.selectionManager.isSelectAll}
-                  isIndeterminate={
-                    !state.selectionManager.isSelectAll &&
-                    !state.selectionManager.isEmpty
-                  }
-                  isReadOnly
-                  excludeFromTabOrder
-                  aria-label={strings.format('selectAll')}
-                  className={styles.selectAll}
-                />
-              </div>
-              <span>{strings.format('selectAll')}</span>
-            </ListBoxButton>
+              {strings.format('selectAll')}
+            </Checkbox>
           )}
           <SelectListBox
             {...menuProps}
