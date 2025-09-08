@@ -16,7 +16,7 @@ import { ListBoxOption } from '../list-box'
 export function useMultiSelect<T extends ListBoxOption>(
   props: MultiSelectProps<T>,
   state: MultiSelectState<T>,
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
 ): MultiSelectDOMProps<T> {
   const { disallowEmptySelection, isDisabled } = props
 
