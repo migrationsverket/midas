@@ -1,6 +1,7 @@
 .item {
   --item-padding: 0;
-  --content-padding: var(--size-20) var(--size-40) var(--size-40) 1.85rem;
+  --content-padding: var(--midas-size-20) var(--midas-size-40)
+    var(--midas-size-40) 1.85rem;
   --border: none;
   --accordion-background: transparent;
   --accordion-background-hover: transparent;
@@ -16,7 +17,8 @@
 .contained {
   --gap: 0.25rem;
   --item-padding: 0.75rem;
-  --content-padding: var(--size-60) var(--size-80) var(--size-80) var(--size-80);
+  --content-padding: var(--midas-size-60) var(--midas-size-80)
+    var(--midas-size-80) var(--midas-size-80);
   --border-color: var(--midas-border-color-secondary);
   --border: 1px solid;
   --accordion-background: var(--midas-layer-01-base);
@@ -124,7 +126,7 @@
 
 .content {
   height: auto;
-  margin-top: var(--size-20);
+  margin-top: var(--midas-size-20);
   padding: var(--content-padding);
 }
 
