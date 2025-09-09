@@ -18,20 +18,26 @@ env:
 
 jobs:
   release:
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v4
-      - with:
+        uses: actions/checkout@v4
+        with:
           fetch-depth: 0
+          ref: main
+
       - name: Setup Node
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           registry-url: "https://registry.npmjs.org"
           cache: npm
+
       - name: Install dependencies
-      - run: npm ci
+        run: npm ci
 
       - name: Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
