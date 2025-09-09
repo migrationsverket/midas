@@ -177,7 +177,7 @@
   background-color: var(--midas-layer-01-base);
   color: var(--midas-text-primary);
   display: flex;
-  font-family: var(--typography-font-family);
+  font-family: var(--midas-typography-font-family);
   line-height: 1;
   margin-bottom: 2px !important;
   padding: var(--midas-size-80);
