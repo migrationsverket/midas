@@ -1,0 +1,53 @@
+name: Manual Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Select which project to release"
+        required: true
+        type: choice
+        default: "all"
+        options:
+          - all
+          - components
+          - theme
+env:
+  GITHUB_TOKEN: ${{ secrets.PAT }}
+  GH_TOKEN: ${{ secrets.PAT }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      - uses: actions/checkout@v4
+      - with:
+          fetch-depth: 0
+      - name: Setup Node
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+      - name: Install dependencies
+      - run: npm ci
+
+      - name: Sets the base and head SHAs for the nx affected commands in CI
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Build affected projects
+        run: npx nx affected -t build --exclude=playground
+
+      - name: Run Nx Release
+        run: |
+          if [ "${{ github.event.inputs.project }}" = "all" ]; then
+            echo "Releasing all changed projects..."
+            npx nx release --yes
+          else
+            echo "Releasing project ${{ github.event.inputs.project }}..."
+            npx nx release --projects=${{ github.event.inputs.project }} --yes
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
