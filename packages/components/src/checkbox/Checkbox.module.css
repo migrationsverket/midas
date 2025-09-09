@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode, --midas-breakpoints-xs from breakpoints;
+
 .checkboxInner {
   width: 1rem;
   height: 1rem;
@@ -8,7 +11,7 @@
   justify-content: center;
   display: flex;
 
-  @media (forced-colors: active) {
+  @media --midas-breakpoints-forced-colors-mode {
     outline: 3px solid highlight;
     outline-offset: -2px;
   }
@@ -50,7 +53,7 @@
 
   &[data-focus-visible],
   &:focus-visible {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
   }
 
@@ -130,7 +133,7 @@
   }
 
   .checkbox {
-    @media var(--breakpoint-xs) {
+    @media --midas-breakpoints-xs {
       padding: 0.875rem 1rem;
       border: 1px solid var(--midas-border-color-primary);
       width: auto;

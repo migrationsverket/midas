@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode, --midas-breakpoints-xs from breakpoints;
+
 .radioGroup {
   font-family: var(--midas-typography-font-family);
   display: flex;
@@ -46,7 +49,7 @@
     box-shadow: var(--midas-state-focus);
     outline: none;
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 3px solid highlight;
       outline-offset: 2px;
     }
@@ -80,7 +83,7 @@
   }
 
   /* Nesting this selector in the one above causes syntax errors during minification */
-  @media (forced-colors: active) {
+  @media --midas-breakpoints-forced-colors-mode {
     &[data-selected]::before {
       background: ButtonText;
     }
@@ -97,7 +100,7 @@
     }
   }
 
-  @media var(--breakpoint-xs) {
+  @media --midas-breakpoints-xs {
     padding: 0.875rem 1rem;
     border: 1px solid var(--midas-border-color-primary);
     width: auto;

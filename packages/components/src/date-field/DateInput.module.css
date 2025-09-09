@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 .dateInput {
   display: flex;
 
@@ -6,7 +9,7 @@
     outline: none;
     box-shadow: var(--midas-state-focus);
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 3px solid highlight;
       outline-offset: 0;
     }

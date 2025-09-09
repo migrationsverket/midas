@@ -1,10 +1,13 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-xs from breakpoints;
+
 .buttonGroup {
   display: flex;
   flex-flow: row wrap;
   gap: 0.5rem;
 }
 
-@media var(--breakpoint-xs) {
+@media --midas-breakpoints-xs {
   .buttonGroup > * {
     width: 100%;
   }

@@ -7,9 +7,6 @@
   --midas-window-sizes-md: 768px;
   --midas-window-sizes-lg: 1024px;
   --midas-window-sizes-xl: 1280px;
-  --midas-breakpoints-forced-colors-mode: '(forced-colors: active)';
-  --midas-breakpoints-dark-mode: '(prefers-color-scheme: dark)';
-  --midas-breakpoints-prefers-reduced-motion: '(prefers-reduced-motion: reduced)';
   --midas-color-black-base: #000000; /** Black */
   --midas-color-black-hover: #0d0d0d; /** Black hover */
   --midas-color-white-base: #ffffff; /** White */
@@ -81,7 +78,10 @@
   --midas-color-signal-red-200: #150303;
   --midas-border-width: 1px;
   --midas-button-icon-hover: light-dark(#0000001a, #ffffff1a);
-  --midas-button-icon-active: light-dark(#00000033, #ffffff33);
+  --midas-button-icon-active: light-dark(
+    #00000033,
+    #ffffff33
+  ); /** Active state för ikoner */
   --midas-calendar-date-background-hover: light-dark(#0000001a, #ffffff1a);
   --midas-size-10: 0.125rem;
   --midas-size-15: 0.188rem;
@@ -114,10 +114,13 @@
   --midas-spacing-100: 4rem;
   --midas-spacing-110: 5rem;
   --midas-spacing-120: 6rem;
-  --midas-state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-  --midas-state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
-  --midas-transitions-duration-slow: 0.50s;
-  --midas-transitions-duration-normal: 0.30s;
+  --midas-state-focus:
+    0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
+  --midas-state-focus-inset:
+    inset 0 0 0 2px light-dark(black, white),
+    inset 0 0 0 4px light-dark(white, black);
+  --midas-transitions-duration-slow: 0.5s;
+  --midas-transitions-duration-normal: 0.3s;
   --midas-transitions-duration-fast: 0.25s;
   --midas-typography-font-family: Inter, sans-serif;
   --midas-typography-font-size-10: 0.75rem;
@@ -154,97 +157,356 @@
   --midas-z-index-modal: 1000;
   --midas-z-index-toast: 1100;
   --midas-z-index-skip-to-content: 1200;
-  --midas-breakpoints-xs: '(max-width: calc(var(--midas-window-sizes-sm) - 1px))';
-  --midas-breakpoints-sm: '(min-width: var(--midas-window-sizes-sm))';
-  --midas-breakpoints-md: '(min-width: var(--midas-window-sizes-md))';
-  --midas-breakpoints-lg: '(min-width: var(--midas-window-sizes-lg))';
-  --midas-breakpoints-xl: '(min-width: var(--midas-window-sizes-xl))';
-  --midas-background-base: light-dark(var(--midas-color-white-base), var(--midas-color-gray-200)); /** Standardbakgrund för våra applikationer */
-  --midas-background-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hoverfärg för bakgrund */
-  --midas-background-inverse: light-dark(var(--midas-color-gray-200), var(--midas-color-gray-10)); /** Bakgrund eller element i med hög kontrast */
-  --midas-layer-01-base: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Yta som används på background. Sekundär bakgrundsfärg */
-  --midas-layer-01-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-170)); /** Hover state för layer01 */
-  --midas-layer-01-selected: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Selected state för layer01 */
-  --midas-layer-01-selected-hover: light-dark(var(--midas-color-gray-40), var(--midas-color-gray-150)); /** Hover state för layerSelected01 */
-  --midas-layer-02-base: light-dark(var(--midas-color-white-base), var(--midas-color-gray-160)); /** Yta som ligger på layer01 */
-  --midas-layer-02-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-150)); /** Hover state för layer02 */
-  --midas-layer-02-selected: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-140)); /** Selected state för layer02 */
-  --midas-layer-02-selected-hover: light-dark(var(--midas-color-gray-40), var(--midas-color-gray-130)); /** Hover state för layerSelected02 */
-  --midas-layer-accent-01-base: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Accentfärg som används tillsammans med layer01 */
-  --midas-layer-accent-01-hover: light-dark(var(--midas-color-gray-40), var(--midas-color-gray-150)); /** Hover state för layerAccent01 */
-  --midas-layer-accent-01-selected: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Selected state för layerAccent01 */
-  --midas-layer-accent-02-base: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Accentfärg som används tillsammans med layer02 */
-  --midas-layer-accent-02-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-170)); /** Hover state för layerAccent02 */
-  --midas-layer-accent-02-selected: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Selected state för layerAccent02 */
-  --midas-brand-primary: light-dark(var(--midas-color-red-100), var(--midas-color-red-100)); /** Primära röda färgen */
-  --midas-border-color-primary: light-dark(var(--midas-color-gray-200), var(--midas-color-gray-10)); /** Kantlinje med hög kontrast, används med field01 */
-  --midas-border-color-secondary: light-dark(var(--midas-color-gray-110), var(--midas-color-gray-90)); /** Kantlinje med medelhög kontrast */
-  --midas-border-color-subtle: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-160)); /** Kantlinje med låg kontrast */
-  --midas-border-color-tertiary: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Primärblå kantlinje */
-  --midas-border-color-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Kantlinje för disabled state */
-  --midas-field-01-base: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Standardfärg för fält, som ligger på background */
-  --midas-field-01-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-170)); /** Hover state för field01 */
-  --midas-field-01-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Active state för field01 */
-  --midas-field-02-base: light-dark(var(--midas-color-white-base), var(--midas-color-gray-160)); /** Sekundfärfärg för fält, som ligger på layer01 */
-  --midas-field-02-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-150)); /** Hover state för field02 */
-  --midas-field-02-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-140)); /** Active state för field02 */
-  --midas-field-disabled: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Disabled state för fält */
-  --midas-skeleton-01: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Standardfärg för skeleton */
-  --midas-skeleton-02: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Färg som används när Skeleton ligger på bakgrundsfärgen `layer01` eller `light-dark(#f2f2f2,#262626)` */
-  --midas-icon-primary: light-dark(var(--midas-color-gray-200), var(--midas-color-gray-10)); /** Primär ikonfärg */
-  --midas-icon-secondary: light-dark(var(--midas-color-gray-140), var(--midas-color-gray-70)); /** Sekundär ikonfärg */
-  --midas-icon-tertiary: light-dark(var(--midas-color-blue-150), var(--midas-color-gray-10));
-  --midas-icon-inverse: light-dark(var(--midas-color-white-base), var(--midas-color-gray-200)); /** Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge */
-  --midas-icon-on-color: light-dark(var(--midas-color-white-base), var(--midas-color-white-base)); /** Ikonfärg på färgade ytor som inte är lager */
-  --midas-icon-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Ikoner som är disabled */
-  --midas-icon-success: light-dark(var(--midas-color-signal-green-100), var(--midas-color-signal-green-100)); /** Ikonfär för success state */
-  --midas-icon-info: light-dark(var(--midas-color-signal-blue-100), var(--midas-color-signal-blue-100)); /** Ikonfärg för informationsikoner */
-  --midas-icon-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Ikonfärg för varningsikoner och invalid state */
-  --midas-icon-important: light-dark(var(--midas-color-signal-yellow-100), var(--midas-color-signal-yellow-100)); /** Ikonfärg för viktig information */
-  --midas-link-enabled: light-dark(var(--midas-color-blue-120), var(--midas-color-blue-70)); /** Primärlänkfärg */
-  --midas-link-hover: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-50)); /** Hover state för länkar */
-  --midas-link-pressed: light-dark(var(--midas-color-gray-200), var(--midas-color-blue-40)); /** Active/pressed state för länkar */
-  --midas-link-visited: light-dark(var(--midas-color-purple-110), var(--midas-color-purple-80)); /** Färg för besökta länkar */
-  --midas-support-border-success: light-dark(var(--midas-color-signal-green-100), var(--midas-color-signal-green-100)); /** Kantlinje för success-notifikationer */
-  --midas-support-border-info: light-dark(var(--midas-color-signal-blue-100), var(--midas-color-signal-blue-100)); /** Kantlinje för notifikationer med information */
-  --midas-support-border-important: light-dark(var(--midas-color-signal-yellow-100), var(--midas-color-signal-yellow-100)); /** Kantlinje för notifikationer med viktig information */
-  --midas-support-border-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Kantlinje för notifikationer med varningar */
-  --midas-support-background-success: light-dark(var(--midas-color-signal-green-20), var(--midas-color-gray-180)); /** Bakgrund för success-notifikationer */
-  --midas-support-background-success-hover: light-dark(var(--midas-color-signal-green-30), var(--midas-color-gray-170)); /** Hoverbakgrund för success-notifikationer */
-  --midas-support-background-info: light-dark(var(--midas-color-signal-blue-10), var(--midas-color-gray-180)); /** Bakgrund för notifikationer med information */
-  --midas-support-background-info-hover: light-dark(var(--midas-color-signal-blue-20), var(--midas-color-gray-170)); /** Hoverbakgrund för notifikationer med information */
-  --midas-support-background-important: light-dark(var(--midas-color-signal-yellow-10), var(--midas-color-gray-180)); /** Bakgrund för notifikationer med viktig information */
-  --midas-support-background-important-hover: light-dark(var(--midas-color-signal-yellow-20), var(--midas-color-gray-170)); /** Hoverbakgrund för notifikationer med viktig information */
-  --midas-support-background-warning: light-dark(var(--midas-color-signal-red-20), var(--midas-color-gray-180)); /** Bakgrund för notifikationer med varningar */
-  --midas-support-background-warning-hover: light-dark(var(--midas-color-signal-red-30), var(--midas-color-gray-170)); /** Hoverbakgrund för notifikationer med varningar */
-  --midas-text-primary: light-dark(var(--midas-color-gray-200), var(--midas-color-gray-10)); /** Primär textfärg. Rubriker och brödtext. */
-  --midas-text-secondary: light-dark(var(--midas-color-gray-140), var(--midas-color-gray-70)); /** Sekundär textfärg */
-  --midas-text-tertiary: light-dark(var(--midas-color-blue-150), var(--midas-color-gray-10)); /** Textfärg på tertiär knapp */
-  --midas-text-on-color: light-dark(var(--midas-color-white-base), var(--midas-color-white-base)); /** Textfärg på färgade bakgrunder som inte är lager */
-  --midas-text-inverse: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-200)); /** Inverterad textfärg */
-  --midas-text-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Textfärg för disabled state */
-  --midas-text-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-80)); /** Textfärg för felmeddelanden */
-  --midas-text-placeholder: light-dark(var(--midas-color-gray-70), var(--midas-color-gray-140)); /** Textfärg för platshållare */
-  --midas-button-background-primary-base: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Färg på primärknapp */
-  --midas-button-background-primary-hover: light-dark(var(--midas-color-blue-130), var(--midas-color-blue-130)); /** Hover state på primärknapp */
-  --midas-button-background-primary-active: light-dark(var(--midas-color-blue-100), var(--midas-color-blue-150)); /** Active state för primärknapp */
-  --midas-button-background-secondary-base: light-dark(var(--midas-color-white-base), var(--midas-color-gray-200)); /** Färg på sekundärknapp */
-  --midas-button-background-secondary-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hover state på sekundärknapp */
-  --midas-button-background-secondary-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-180)); /** Active state för sekundärknapp */
-  --midas-button-background-tertiary-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hover state för tertiär knapp */
-  --midas-button-background-tertiary-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-180)); /** Active state för tertiär knapp */
-  --midas-button-background-danger-base: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Färg på danger knapp */
-  --midas-button-background-danger-hover: light-dark(var(--midas-color-signal-red-120), var(--midas-color-signal-red-120)); /** Hover state för danger knapp */
-  --midas-button-background-danger-active: light-dark(var(--midas-color-signal-red-150), var(--midas-color-signal-red-150)); /** Active state för danger knapp */
-  --midas-button-background-disabled: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Disabled state för knappar */
-  --midas-button-border-secondary: light-dark(var(--midas-color-blue-150), var(--midas-color-gray-10)); /** Kantfärg för sekundärknapp */
-  --midas-badge-background: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100));
-  --midas-calendar-date-background-selected: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
-  --midas-calendar-date-background-start-range: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
-  --midas-calendar-date-background-in-range: light-dark(var(--midas-color-blue-20), var(--midas-color-blue-150));
-  --midas-calendar-date-background-end-range: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
-  --midas-logo-primary: light-dark(var(--midas-color-red-100), var(--midas-color-white-base)); /** Färg på logotypen */
-  --midas-menu-item-background-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-190)); /** Bakgrundsfärg för menu vid hover */
-  --midas-menu-item-background-selected: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Bakgrundsfärg för aktiv menu */
-  --midas-menu-text-section-header: light-dark(var(--midas-color-blue-120), var(--midas-color-blue-80));
+  --midas-background-base: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-gray-200)
+  ); /** Standardbakgrund för våra applikationer */
+  --midas-background-hover: light-dark(
+    var(--midas-color-white-hover),
+    var(--midas-color-gray-190)
+  ); /** Hoverfärg för bakgrund */
+  --midas-background-inverse: light-dark(
+    var(--midas-color-gray-200),
+    var(--midas-color-gray-10)
+  ); /** Bakgrund eller element i med hög kontrast */
+  --midas-layer-01-base: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Yta som används på background. Sekundär bakgrundsfärg */
+  --midas-layer-01-hover: light-dark(
+    var(--midas-color-gray-20),
+    var(--midas-color-gray-170)
+  ); /** Hover state för layer01 */
+  --midas-layer-01-selected: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-160)
+  ); /** Selected state för layer01 */
+  --midas-layer-01-selected-hover: light-dark(
+    var(--midas-color-gray-40),
+    var(--midas-color-gray-150)
+  ); /** Hover state för layerSelected01 */
+  --midas-layer-02-base: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-gray-160)
+  ); /** Yta som ligger på layer01 */
+  --midas-layer-02-hover: light-dark(
+    var(--midas-color-white-hover),
+    var(--midas-color-gray-150)
+  ); /** Hover state för layer02 */
+  --midas-layer-02-selected: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-140)
+  ); /** Selected state för layer02 */
+  --midas-layer-02-selected-hover: light-dark(
+    var(--midas-color-gray-40),
+    var(--midas-color-gray-130)
+  ); /** Hover state för layerSelected02 */
+  --midas-layer-accent-01-base: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-160)
+  ); /** Accentfärg som används tillsammans med layer01 */
+  --midas-layer-accent-01-hover: light-dark(
+    var(--midas-color-gray-40),
+    var(--midas-color-gray-150)
+  ); /** Hover state för layerAccent01 */
+  --midas-layer-accent-01-selected: light-dark(
+    var(--midas-color-gray-50),
+    var(--midas-color-gray-140)
+  ); /** Selected state för layerAccent01 */
+  --midas-layer-accent-02-base: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Accentfärg som används tillsammans med layer02 */
+  --midas-layer-accent-02-hover: light-dark(
+    var(--midas-color-gray-20),
+    var(--midas-color-gray-170)
+  ); /** Hover state för layerAccent02 */
+  --midas-layer-accent-02-selected: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-160)
+  ); /** Selected state för layerAccent02 */
+  --midas-brand-primary: light-dark(
+    var(--midas-color-red-100),
+    var(--midas-color-red-100)
+  ); /** Primära röda färgen */
+  --midas-border-color-primary: light-dark(
+    var(--midas-color-gray-200),
+    var(--midas-color-gray-10)
+  ); /** Kantlinje med hög kontrast, används med field01 */
+  --midas-border-color-secondary: light-dark(
+    var(--midas-color-gray-110),
+    var(--midas-color-gray-90)
+  ); /** Kantlinje med medelhög kontrast */
+  --midas-border-color-subtle: light-dark(
+    var(--midas-color-gray-50),
+    var(--midas-color-gray-160)
+  ); /** Kantlinje med låg kontrast */
+  --midas-border-color-tertiary: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-blue-100)
+  ); /** Primärblå kantlinje */
+  --midas-border-color-disabled: light-dark(
+    var(--midas-color-gray-50),
+    var(--midas-color-gray-140)
+  ); /** Kantlinje för disabled state */
+  --midas-field-01-base: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Standardfärg för fält, som ligger på background */
+  --midas-field-01-hover: light-dark(
+    var(--midas-color-gray-20),
+    var(--midas-color-gray-170)
+  ); /** Hover state för field01 */
+  --midas-field-01-active: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-160)
+  ); /** Active state för field01 */
+  --midas-field-02-base: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-gray-160)
+  ); /** Sekundfärfärg för fält, som ligger på layer01 */
+  --midas-field-02-hover: light-dark(
+    var(--midas-color-white-hover),
+    var(--midas-color-gray-150)
+  ); /** Hover state för field02 */
+  --midas-field-02-active: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-140)
+  ); /** Active state för field02 */
+  --midas-field-disabled: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Disabled state för fält */
+  --midas-skeleton-01: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Standardfärg för skeleton */
+  --midas-skeleton-02: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-160)
+  ); /** Färg som används när Skeleton ligger på bakgrundsfärgen `layer01` eller `light-dark(#f2f2f2,#262626)` */
+  --midas-icon-primary: light-dark(
+    var(--midas-color-gray-200),
+    var(--midas-color-gray-10)
+  ); /** Primär ikonfärg */
+  --midas-icon-secondary: light-dark(
+    var(--midas-color-gray-140),
+    var(--midas-color-gray-70)
+  ); /** Sekundär ikonfärg */
+  --midas-icon-tertiary: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-gray-10)
+  );
+  --midas-icon-inverse: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-gray-200)
+  ); /** Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge */
+  --midas-icon-on-color: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-white-base)
+  ); /** Ikonfärg på färgade ytor som inte är lager */
+  --midas-icon-disabled: light-dark(
+    var(--midas-color-gray-50),
+    var(--midas-color-gray-140)
+  ); /** Ikoner som är disabled */
+  --midas-icon-success: light-dark(
+    var(--midas-color-signal-green-100),
+    var(--midas-color-signal-green-100)
+  ); /** Ikonfär för success state */
+  --midas-icon-info: light-dark(
+    var(--midas-color-signal-blue-100),
+    var(--midas-color-signal-blue-100)
+  ); /** Ikonfärg för informationsikoner */
+  --midas-icon-warning: light-dark(
+    var(--midas-color-signal-red-100),
+    var(--midas-color-signal-red-100)
+  ); /** Ikonfärg för varningsikoner och invalid state */
+  --midas-icon-important: light-dark(
+    var(--midas-color-signal-yellow-100),
+    var(--midas-color-signal-yellow-100)
+  ); /** Ikonfärg för viktig information */
+  --midas-link-enabled: light-dark(
+    var(--midas-color-blue-120),
+    var(--midas-color-blue-70)
+  ); /** Primärlänkfärg */
+  --midas-link-hover: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-blue-50)
+  ); /** Hover state för länkar */
+  --midas-link-pressed: light-dark(
+    var(--midas-color-gray-200),
+    var(--midas-color-blue-40)
+  ); /** Active/pressed state för länkar */
+  --midas-link-visited: light-dark(
+    var(--midas-color-purple-110),
+    var(--midas-color-purple-80)
+  ); /** Färg för besökta länkar */
+  --midas-support-border-success: light-dark(
+    var(--midas-color-signal-green-100),
+    var(--midas-color-signal-green-100)
+  ); /** Kantlinje för success-notifikationer */
+  --midas-support-border-info: light-dark(
+    var(--midas-color-signal-blue-100),
+    var(--midas-color-signal-blue-100)
+  ); /** Kantlinje för notifikationer med information */
+  --midas-support-border-important: light-dark(
+    var(--midas-color-signal-yellow-100),
+    var(--midas-color-signal-yellow-100)
+  ); /** Kantlinje för notifikationer med viktig information */
+  --midas-support-border-warning: light-dark(
+    var(--midas-color-signal-red-100),
+    var(--midas-color-signal-red-100)
+  ); /** Kantlinje för notifikationer med varningar */
+  --midas-support-background-success: light-dark(
+    var(--midas-color-signal-green-20),
+    var(--midas-color-gray-180)
+  ); /** Bakgrund för success-notifikationer */
+  --midas-support-background-success-hover: light-dark(
+    var(--midas-color-signal-green-30),
+    var(--midas-color-gray-170)
+  ); /** Hoverbakgrund för success-notifikationer */
+  --midas-support-background-info: light-dark(
+    var(--midas-color-signal-blue-10),
+    var(--midas-color-gray-180)
+  ); /** Bakgrund för notifikationer med information */
+  --midas-support-background-info-hover: light-dark(
+    var(--midas-color-signal-blue-20),
+    var(--midas-color-gray-170)
+  ); /** Hoverbakgrund för notifikationer med information */
+  --midas-support-background-important: light-dark(
+    var(--midas-color-signal-yellow-10),
+    var(--midas-color-gray-180)
+  ); /** Bakgrund för notifikationer med viktig information */
+  --midas-support-background-important-hover: light-dark(
+    var(--midas-color-signal-yellow-20),
+    var(--midas-color-gray-170)
+  ); /** Hoverbakgrund för notifikationer med viktig information */
+  --midas-support-background-warning: light-dark(
+    var(--midas-color-signal-red-20),
+    var(--midas-color-gray-180)
+  ); /** Bakgrund för notifikationer med varningar */
+  --midas-support-background-warning-hover: light-dark(
+    var(--midas-color-signal-red-30),
+    var(--midas-color-gray-170)
+  ); /** Hoverbakgrund för notifikationer med varningar */
+  --midas-text-primary: light-dark(
+    var(--midas-color-gray-200),
+    var(--midas-color-gray-10)
+  ); /** Primär textfärg. Rubriker och brödtext. */
+  --midas-text-secondary: light-dark(
+    var(--midas-color-gray-140),
+    var(--midas-color-gray-70)
+  ); /** Sekundär textfärg */
+  --midas-text-tertiary: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-gray-10)
+  ); /** Textfärg på tertiär knapp */
+  --midas-text-on-color: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-white-base)
+  ); /** Textfärg på färgade bakgrunder som inte är lager */
+  --midas-text-inverse: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-200)
+  ); /** Inverterad textfärg */
+  --midas-text-disabled: light-dark(
+    var(--midas-color-gray-50),
+    var(--midas-color-gray-140)
+  ); /** Textfärg för disabled state */
+  --midas-text-warning: light-dark(
+    var(--midas-color-signal-red-100),
+    var(--midas-color-signal-red-80)
+  ); /** Textfärg för felmeddelanden */
+  --midas-text-placeholder: light-dark(
+    var(--midas-color-gray-70),
+    var(--midas-color-gray-140)
+  ); /** Textfärg för platshållare */
+  --midas-button-background-primary-base: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-blue-100)
+  ); /** Färg på primärknapp */
+  --midas-button-background-primary-hover: light-dark(
+    var(--midas-color-blue-130),
+    var(--midas-color-blue-130)
+  ); /** Hover state på primärknapp */
+  --midas-button-background-primary-active: light-dark(
+    var(--midas-color-blue-100),
+    var(--midas-color-blue-150)
+  ); /** Active state för primärknapp */
+  --midas-button-background-secondary-base: light-dark(
+    var(--midas-color-white-base),
+    var(--midas-color-gray-200)
+  ); /** Färg på sekundärknapp */
+  --midas-button-background-secondary-hover: light-dark(
+    var(--midas-color-white-hover),
+    var(--midas-color-gray-190)
+  ); /** Hover state på sekundärknapp */
+  --midas-button-background-secondary-active: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-180)
+  ); /** Active state för sekundärknapp */
+  --midas-button-background-tertiary-hover: light-dark(
+    var(--midas-color-white-hover),
+    var(--midas-color-gray-190)
+  ); /** Hover state för tertiär knapp */
+  --midas-button-background-tertiary-active: light-dark(
+    var(--midas-color-gray-30),
+    var(--midas-color-gray-180)
+  ); /** Active state för tertiär knapp */
+  --midas-button-background-danger-base: light-dark(
+    var(--midas-color-signal-red-100),
+    var(--midas-color-signal-red-100)
+  ); /** Färg på danger knapp */
+  --midas-button-background-danger-hover: light-dark(
+    var(--midas-color-signal-red-120),
+    var(--midas-color-signal-red-120)
+  ); /** Hover state för danger knapp */
+  --midas-button-background-danger-active: light-dark(
+    var(--midas-color-signal-red-150),
+    var(--midas-color-signal-red-150)
+  ); /** Active state för danger knapp */
+  --midas-button-background-disabled: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Disabled state för knappar */
+  --midas-button-border-secondary: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-gray-10)
+  ); /** Kantfärg för sekundärknapp */
+  --midas-badge-background: light-dark(
+    var(--midas-color-signal-red-100),
+    var(--midas-color-signal-red-100)
+  );
+  --midas-calendar-date-background-selected: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-blue-80)
+  );
+  --midas-calendar-date-background-start-range: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-blue-80)
+  );
+  --midas-calendar-date-background-in-range: light-dark(
+    var(--midas-color-blue-20),
+    var(--midas-color-blue-150)
+  );
+  --midas-calendar-date-background-end-range: light-dark(
+    var(--midas-color-blue-150),
+    var(--midas-color-blue-80)
+  );
+  --midas-logo-primary: light-dark(
+    var(--midas-color-red-100),
+    var(--midas-color-white-base)
+  ); /** Färg på logotypen */
+  --midas-menu-item-background-hover: light-dark(
+    var(--midas-color-gray-20),
+    var(--midas-color-gray-190)
+  ); /** Bakgrundsfärg för menu vid hover */
+  --midas-menu-item-background-selected: light-dark(
+    var(--midas-color-gray-10),
+    var(--midas-color-gray-180)
+  ); /** Bakgrundsfärg för aktiv menu */
+  --midas-menu-text-section-header: light-dark(
+    var(--midas-color-blue-120),
+    var(--midas-color-blue-80)
+  );
 }

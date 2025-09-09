@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 .container {
   display: inline-flex;
   flex-direction: column;
@@ -56,7 +59,7 @@
   & div[data-focus-visible] {
     outline: 2px solid var(--midas-border-color-primary);
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 3px solid activeText;
       outline-offset: 2px;
     }
@@ -72,7 +75,7 @@
     border: 2px solid var(--midas-support-border-warning);
   }
 
-  @media (forced-colors: active) {
+  @media --midas-breakpoints-forced-colors-mode {
     border: 2px solid;
   }
 }
@@ -96,9 +99,9 @@
     &:focus-visible,
     &[data-focus-visible] {
       outline: none;
-      box-shadow: var(--state-focus);
+      box-shadow: var(--midas-state-focus);
 
-      @media (forced-colors: active) {
+      @media --midas-breakpoints-forced-colors-mode {
         outline: 3px solid;
         outline-offset: 2px;
       }
@@ -124,7 +127,7 @@
     background-color: var(--midas-calendar-date-background-selected);
     border-color: var(--midas-calendar-date-background-selected);
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       background-color: highlight;
     }
   }
