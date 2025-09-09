@@ -174,8 +174,8 @@
 
 .selectAll {
   width: calc(100% - var(--midas-size-80) * 2);
-  background-color: var(--semantic-layer-01);
-  color: var(--semantic-text-primary);
+  background-color: var(--midas-layer-01-base);
+  color: var(--midas-text-primary);
   display: flex;
   font-family: var(--typography-font-family);
   line-height: 1;
@@ -184,21 +184,21 @@
   transition: background-color 60ms;
 
   &:hover:not([data-disabled]) {
-    background-color: var(--semantic-layer-hover-01);
+    background-color: var(--midas-layer-01-hover);
     cursor: pointer;
     transition-delay: 60ms;
   }
 
   &[data-disabled] {
-    color: var(--semantic-text-disabled);
+    color: var(--midas-text-disabled);
     cursor: not-allowed;
   }
 
   &[data-selected] {
-    background-color: var(--semantic-layer-selected-01);
+    background-color: var(--midas-layer-01-selected-hover);
 
     &:hover:not([data-disabled]) {
-      background-color: var(--semantic-layer-selected-hover-01);
+      background-color: var(--midas-layer-01-selected-hover);
       transition-delay: 60ms;
     }
   }
@@ -213,12 +213,12 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: var(--state-focus-inset);
+    box-shadow: var(--midas-state-focus-inset);
     outline: none;
   }
 
   &[data-hovered] div {
-    border-color: var(--semantic-border-primary);
+    border-color: var(--midas-border-color-primary);
   }
 }
 
