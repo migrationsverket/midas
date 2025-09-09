@@ -36,12 +36,7 @@
     },
     "changelog": {
       "commitReferences": true,
-      "workspaceChangelog": {
-        "renderOptions": {
-          "authors": false,
-          "versionTitleDate": true
-        }
-      },
+      "workspaceChangelog": false,
       "projectChangelogs": {
         "renderOptions": {
           "authors": false,
@@ -52,9 +47,9 @@
     },
     "projectsRelationship": "independent",
     "projects": ["packages/components", "!packages/.storybook", "theme"],
-    "releaseTagPattern": "v{version}",
+    "releaseTagPattern": "{projectName}@v{version}",
     "git": {
-      "commitMessage": "chore(release): release version {version} [skip-ci]"
+      "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"
     },
     "version": {
       "preVersionCommand": "npx nx run-many -t -p=[components, theme] build",
