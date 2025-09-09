@@ -100,7 +100,7 @@
 }
 
 .danger {
-  color: var(--midas-color-white);
+  color: var(--midas-color-white-base);
   background-color: var(--midas-button-background-danger-base);
   opacity: 1;
 

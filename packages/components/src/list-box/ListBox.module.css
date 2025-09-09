@@ -18,6 +18,9 @@
 
 .listBoxPopover {
   font-family: var(--midas-typography-font-family);
+
+  /* RAC passes this variable via the style prop, making it available during runtime only */
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
   width: var(--trigger-width);
   background: var(--midas-layer-01-base);
   overflow-y: auto;
