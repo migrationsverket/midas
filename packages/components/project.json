@@ -12,13 +12,6 @@
         "cwd": "packages/components"
       }
     },
-    "generate-css-variables": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "node sd.build.mjs",
-        "cwd": "packages/theme"
-      }
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
