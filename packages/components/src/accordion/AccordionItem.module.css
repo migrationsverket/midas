@@ -92,7 +92,7 @@
 
 .chevronIcon {
   transform: rotate(0deg);
-  transition: transform var(--transition-normal) ease;
+  transition: transform var(--midas-transitions-duration-normal) ease;
   padding: 0.125rem 0;
 }
 
