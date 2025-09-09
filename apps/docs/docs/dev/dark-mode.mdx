@@ -68,17 +68,17 @@ Komponenten accepterar tre värden. `light`, 'dark', och `light dark` dvs enbart
 
 ## Tokens
 
-Du kan fortfarande använda tokens för att importera färger på egen hand. Observera dock att färgerna i `baseColors` är fasta värden och är inte dynamiska för ljust/mörkt läge. För att få en färg som anpassar sig behöver du importera en semantisk token.
+Du kan fortfarande använda tokens för att importera färger på egen hand. Observera dock att vissa tokens har fasta värden och inte är dynamiska för ljust/mörkt läge. För att få en färg som anpassar sig behöver du importera en semantisk token.
 
 ```tsx
-import { semantic, baseColors } from '@midas-ds/components/theme'
+import { variables } from '@midas-ds/components/theme'
 ```
 
 ```tsx {1,2,5}
-<div style={{ backgroundColor: semantic.background }}>
-  <p style={{ color: semantic.textPrimary }}>
+<div style={{ backgroundColor: variables.backgroundBase }}>
+  <p style={{ color: variables.textPrimary }}>
     En text som är mörk i ljust läge men ljus i mörkt läge på en bakgrund som gör tvärt om!
   </p>
-  <p style={{ color: baseColors.black }}>En text som alltid är svart</p>
+  <p style={{ color: variables.colorBlackBase }}>En text som alltid är svart</p>
 </div>
 ```
