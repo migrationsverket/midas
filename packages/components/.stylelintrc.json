@@ -4,7 +4,14 @@
   "overrides": [
     {
       "files": ["**/*.css"],
-      "rules": {}
+      "rules": {
+        "csstools/value-no-unknown-custom-properties": [
+          true,
+          {
+            "importFrom": ["packages/components/src/theme/variables.css"]
+          }
+        ]
+      }
     },
     {
       "files": ["src/theme/theme.css", "src/theme/tokens.css"],

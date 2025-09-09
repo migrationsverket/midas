@@ -6,7 +6,8 @@
     "stylelint-prettier/recommended"
   ],
   "plugins": [
-    "stylelint-prettier"
+    "stylelint-prettier",
+    "stylelint-value-no-unknown-custom-properties"
   ],
   "rules": {
     "prettier/prettier": true,
