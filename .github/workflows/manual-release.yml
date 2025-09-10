@@ -54,6 +54,8 @@ jobs:
 
       - name: Run Nx Release
         run: |
+          git config --global user.email "bot@midas.dev"
+          git config --global user.name "midas.bot"
           if [ "${{ github.event.inputs.project }}" = "all" ]; then
             echo "Releasing all changed projects..."
             npx nx release --yes
