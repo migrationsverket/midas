@@ -3,11 +3,17 @@ name: 'Chromatic'
 permissions:
   contents: read
 
-on: push
+on:
+  push:
+    branches:
+      - main
+      - feat/*
+      - feature/*
+      - fix/*
+      - bugfix/*
 
 jobs:
   chromatic:
-    if: startsWith(github.ref_name, 'feature') || startsWith(github.ref_name, 'feat') || startsWith(github.ref_name, 'fix') || startsWith(github.ref_name, 'bugfix') || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
     name: Chromatic
     runs-on: ubuntu-latest
     steps:
@@ -15,12 +21,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: npm
+
       - name: Install dependencies
         run: npm ci
+
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:

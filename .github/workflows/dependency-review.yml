@@ -10,7 +10,8 @@
 name: Code - Dependency Review
 on:
   pull_request:
-    branches: ['dev', 'main', 'release/**']
+    branches:
+      - main
 
 # If using a dependency submission action in this workflow this permission will need to be set to:
 #
@@ -29,6 +30,7 @@ jobs:
     steps:
       - name: 'Checkout repository'
         uses: actions/checkout@v4
+
       - name: 'Dependency Review'
         uses: actions/dependency-review-action@v4
         # Commonly enabled options, see https://github.com/actions/dependency-review-action#configuration-options for all available options.

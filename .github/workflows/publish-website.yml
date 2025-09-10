@@ -1,32 +1,30 @@
-name: DocWeb - Deploy to GitHub Pages
+name: Publish website
 
 on:
-  push:
-    branches:
-      - main
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
-
-permissions:
-  contents: write
-  pull-requests: read
-  pages: write # to deploy to Pages
-  id-token: write # to verify the deployment originates from an appropriate source
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Manual Release]
+    types: [completed]
 
 jobs:
-  build:
-    name: Build Docusaurus and Storybook
+  publish:
+    permissions:
+      contents: read
+      id-token: write
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
           cache: npm
 
       - name: Install dependencies
@@ -38,11 +36,12 @@ jobs:
       - name: Build storybook
         run: npx nx run components:build-storybook:ci
 
-      - name: Deploy test environment
+      - name: Deploy website and storybook
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist/docs
-          # TODO: Rename?
-          target-folder: dev-docs
           branch: gh-pages
+          clean-exclude: |
+            pr-preview
+            dev-docs
           force: false
