@@ -1,5 +1,10 @@
 name: Publish website
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 on:
   workflow_dispatch:
   workflow_run:
@@ -8,9 +13,6 @@ on:
 
 jobs:
   publish:
-    permissions:
-      contents: read
-      id-token: write
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
