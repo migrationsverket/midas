@@ -1,9 +1,11 @@
 declare const _default: {
   "en": {
-    "showList": "Show list"
+    "showList": "Show list",
+    "noResultsFound": "No results found"
   },
   "sv": {
-    "showList": "Visa lista"
+    "showList": "Visa lista",
+    "noResultsFound": "Inga träffar"
   }
 }
 ;

@@ -1,4 +1,9 @@
-import { InputProps } from 'react-aria-components';
+import { InputProps as AriaInputProps } from 'react-aria-components';
 import * as React from 'react';
-export type { InputProps };
+export interface InputProps extends AriaInputProps {
+    /** If the component should use local props and ref instead of a parent context
+     * @default false
+     */
+    skipContext?: boolean;
+}
 export declare const Input: React.ForwardRefExoticComponent<InputProps & React.RefAttributes<HTMLInputElement>>;
