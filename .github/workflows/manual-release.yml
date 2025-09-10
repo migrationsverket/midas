@@ -1,7 +1,7 @@
 name: Manual Release
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: read
   pages: write
   id-token: write
