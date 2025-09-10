@@ -1,22 +1,32 @@
-name: 'Storybook - Build and test'
+name: 'Storybook - Test'
 
 on:
   pull_request:
-    branches: ['dev', 'main', 'release/**']
+    branches:
+      - main
 
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: npm
+
       - name: Install dependencies
         run: npm ci
+
       - name: Install Playwright
         run: npx playwright install chromium --only-shell
-      - name: Test Storybook
-        run: npx nx run components:test-storybook && npx nx run components:test-storybook:dark-mode
+
+      - name: Test light mode
+        run: npx nx run components:test-storybook
+
+      - name: Test dark mode
+        run: npx nx run components:test-storybook:dark-mode

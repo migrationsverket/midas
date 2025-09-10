@@ -66,3 +66,19 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_CONFIG_PROVENANCE: true
+
+      - name: Build website
+        run: npx nx run docs:build --minify=false --outputPath=dist/docs
+
+      - name: Build storybook
+        run: npx nx run components:build-storybook:ci
+
+      - name: Deploy website and storybook
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/docs
+          branch: gh-pages
+          clean-exclude: |
+            pr-preview
+            dev-docs
+          force: false
