@@ -2,11 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/</id>
     <title>Migrationsverkets designsystem Blog</title>
-    <updated>2025-08-27T09:09:52.000Z</updated>
+    <updated>2025-09-10T07:14:03.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/"/>
     <subtitle>Migrationsverkets designsystem Blog</subtitle>
     <icon>https://designsystem.migrationsverket.se/pr-preview/pr-783/img/favicon.ico?v=3</icon>
+    <entry>
+        <title type="html"><![CDATA[Release 12.1.0]]></title>
+        <id>https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/</id>
+        <link href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/"/>
+        <updated>2025-09-10T07:14:03.000Z</updated>
+        <summary type="html"><![CDATA[En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.]]></summary>
+        <content type="html"><![CDATA[<p>En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.</p>
+<p>Vårt fokus har den senaste tiden legat kring våra designtokens och dess struktur, vi kommer att behöva stöka lite till innan vi är helt nöjda.
+Vi ber om ursäkt för röran men vi hoppas kunna leverera ett mer förutsägbart, konsekvent och anpassningsbart komponentbibliotek.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tokens">Tokens<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/#tokens" class="hash-link" aria-label="Direktlänk till Tokens" title="Direktlänk till Tokens">​</a></h3>
+<p>Under huven hanterar Midas designtokens med ett nytt verktyg vilket har medfört vissa ändringar i namngivningen av våra variabler.
+Vi påbörjar en utfasning av variablen <code scope="[object Object]">semantic</code> och <code scope="[object Object]">theme.css</code> och hänvisar er istället att använda variablen <code scope="[object Object]">variables</code> och <code scope="[object Object]">variables.css</code>.</p>
+<p>Läs mer under <a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/basics/tokens-v2/">artikeln för Tokens</a>, och notera att <a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/basics/tokens/">artikeln för Färger</a> är utdaterad.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="combobox">ComboBox<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/#combobox" class="hash-link" aria-label="Direktlänk till ComboBox" title="Direktlänk till ComboBox">​</a></h3>
+<p>ComboBox stödjer numer asynkron laddning, se <a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/components/combobox/#asynkron-laddning">dokumentationen för ComboBox</a> för detaljer hur du implementerar detta.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="menu">Menu<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/#menu" class="hash-link" aria-label="Direktlänk till Menu" title="Direktlänk till Menu">​</a></h3>
+<p><a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/components/menu/">Menu</a> är en ny komponent med ett deklarativt API för kompletterande menyer/kontextmenyer. Vi påbörjar en utfasning av <a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/components/dropdown/">Dropdown</a> som ersätts av Menu.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.1.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar">​</a></h2>
+<p>Vi arbetar kontinuerligt med buggfixar, här är några nämnvärda fixar:</p>
+<ul>
+<li><code scope="[object Object]">Accordion</code> har fått extra marginal för att tydligare visa sin fokusram vid tangentbordsinteraktion (<a href="https://github.com/migrationsverket/midas/pull/780" target="_blank" rel="noopener noreferrer">#780</a>)</li>
+<li><code scope="[object Object]">Badge</code> har fått en ny bakgrundsfärg i mörkt läge för att klara krav på färgkontraster (<a href="https://github.com/migrationsverket/midas/commit/f40f2dad67" target="_blank" rel="noopener noreferrer">f40f2dad67</a>)</li>
+<li><code scope="[object Object]">Layout</code> visar aktivt menyval för appar som använder en annan basepath än <code scope="[object Object]">/</code> (<a href="https://github.com/migrationsverket/midas/commit/4dec0a45ef" target="_blank" rel="noopener noreferrer">4dec0a45ef</a>)</li>
+<li><code scope="[object Object]">ListBox</code> och relaterade komponenter/typer ingår igen i komponentbiblioteket (<a href="https://github.com/migrationsverket/midas/commit/1f06b98610" target="_blank" rel="noopener noreferrer">1f06b98610</a>)</li>
+<li><code scope="[object Object]">TextArea</code>s storlek är nu justerbar (<a href="https://github.com/migrationsverket/midas/commit/6d04e25308" target="_blank" rel="noopener noreferrer">6d04e25308</a>)</li>
+<li><code scope="[object Object]">TextField</code> kallar inte längre på events så som <code scope="[object Object]">onBlur</code> fler gånger än nödvändigt (<a href="https://github.com/migrationsverket/midas/pull/769" target="_blank" rel="noopener noreferrer">#769</a>)</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/">changelog</a>.</p>]]></content>
+        <author>
+            <name>Midas</name>
+        </author>
+        <category label="release-notes" term="release-notes"/>
+        <category label="v12" term="v12"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Release 12.0.0]]></title>
         <id>https://designsystem.migrationsverket.se/pr-preview/pr-783/release-notes/12.0.0/</id>

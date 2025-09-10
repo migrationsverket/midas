@@ -4,11 +4,87 @@
         <title>Midas changelog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/</link>
         <description>Håll dig uppdaterad med allt som händer i varje release</description>
-        <lastBuildDate>Wed, 27 Aug 2025 20:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 10 Sep 2025 20:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
         <copyright>2025 Migrationsverket</copyright>
+        <item>
+            <title><![CDATA[12.1.0]]></title>
+            <link>https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/</link>
+            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/</guid>
+            <pubDate>Wed, 10 Sep 2025 20:00:00 GMT</pubDate>
+            <description><![CDATA[🚀 Features]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
+<ul>
+<li><strong>combobox:</strong> add loading indicator (<a href="https://github.com/migrationsverket/midas/pull/772" target="_blank" rel="noopener noreferrer">#772</a>, <a href="https://github.com/migrationsverket/midas/issues/712" target="_blank" rel="noopener noreferrer">#712</a>)</li>
+<li><strong>menu:</strong> new Menu component (<a href="https://github.com/migrationsverket/midas/pull/744" target="_blank" rel="noopener noreferrer">#744</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li>broken tokens (<a href="https://github.com/migrationsverket/midas/pull/782" target="_blank" rel="noopener noreferrer">#782</a>)</li>
+<li>repair broken tokens (<a href="https://github.com/migrationsverket/midas/commit/e905bbf788" target="_blank" rel="noopener noreferrer">e905bbf788</a>)</li>
+<li><strong>accordion:</strong> add margin for focus indicator (<a href="https://github.com/migrationsverket/midas/pull/780" target="_blank" rel="noopener noreferrer">#780</a>)</li>
+<li><strong>badge:</strong> change background color in dark mode (<a href="https://github.com/migrationsverket/midas/commit/f40f2dad67" target="_blank" rel="noopener noreferrer">f40f2dad67</a>)</li>
+<li><strong>components:</strong> export missing listbox types from component lib (<a href="https://github.com/migrationsverket/midas/commit/1f06b98610" target="_blank" rel="noopener noreferrer">1f06b98610</a>)</li>
+<li><strong>layout:</strong> add basepath to active link comparison (<a href="https://github.com/migrationsverket/midas/commit/4dec0a45ef" target="_blank" rel="noopener noreferrer">4dec0a45ef</a>)</li>
+<li><strong>select:</strong> add aria label to checkbox (<a href="https://github.com/migrationsverket/midas/commit/e6cb387a7f" target="_blank" rel="noopener noreferrer">e6cb387a7f</a>)</li>
+<li><strong>select:</strong> minor screen reader announcement bugs (<a href="https://github.com/migrationsverket/midas/pull/775" target="_blank" rel="noopener noreferrer">#775</a>)</li>
+<li><strong>textfield:</strong> make textarea resizable and remove size from controls storybook (<a href="https://github.com/migrationsverket/midas/commit/6d04e25308" target="_blank" rel="noopener noreferrer">6d04e25308</a>)</li>
+<li><strong>textfield:</strong> remove duplicate props spreading (<a href="https://github.com/migrationsverket/midas/pull/769" target="_blank" rel="noopener noreferrer">#769</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactors">💅 Refactors<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/#-refactors" class="hash-link" aria-label="Direktlänk till 💅 Refactors" title="Direktlänk till 💅 Refactors">​</a></h2>
+<ul>
+<li>Migrate CSS custom properties from tokens.css to theme.css (<a href="https://github.com/migrationsverket/midas/commit/8a21fe5783" target="_blank" rel="noopener noreferrer">8a21fe5783</a>)</li>
+<li>rename variables in *.module.css (<a href="https://github.com/migrationsverket/midas/commit/42329bde56" target="_blank" rel="noopener noreferrer">42329bde56</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h2>
+<ul>
+<li>add first draft for documentation of new token system (<a href="https://github.com/migrationsverket/midas/commit/e35deb00f1" target="_blank" rel="noopener noreferrer">e35deb00f1</a>)</li>
+<li>add visual color representation of tokens (<a href="https://github.com/migrationsverket/midas/commit/bd641ff5c2" target="_blank" rel="noopener noreferrer">bd641ff5c2</a>)</li>
+<li>update tokens page with headers and remove tokens from list that are only refs (<a href="https://github.com/migrationsverket/midas/commit/ded9bfa8c7" target="_blank" rel="noopener noreferrer">ded9bfa8c7</a>)</li>
+<li>edit outdated section on tokens (<a href="https://github.com/migrationsverket/midas/commit/683bc726b5" target="_blank" rel="noopener noreferrer">683bc726b5</a>)</li>
+<li>add release notes for v12.1.0 (<a href="https://github.com/migrationsverket/midas/commit/5f7da52c43" target="_blank" rel="noopener noreferrer">5f7da52c43</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h2>
+<ul>
+<li>fix truncate warning + cleanup mvdsExports (<a href="https://github.com/migrationsverket/midas/commit/361c010699" target="_blank" rel="noopener noreferrer">361c010699</a>)</li>
+<li>update dependencies (<a href="https://github.com/migrationsverket/midas/pull/751" target="_blank" rel="noopener noreferrer">#751</a>)</li>
+<li>create separate storybook configs for serve and build (<a href="https://github.com/migrationsverket/midas/commit/642e155d8a" target="_blank" rel="noopener noreferrer">642e155d8a</a>)</li>
+<li>remove check-values-import.js since it is no longer applicable (<a href="https://github.com/migrationsverket/midas/commit/f4c3ee95a4" target="_blank" rel="noopener noreferrer">f4c3ee95a4</a>)</li>
+<li>relax stylelint config to allow media query syntax (<a href="https://github.com/migrationsverket/midas/commit/5b6955e604" target="_blank" rel="noopener noreferrer">5b6955e604</a>)</li>
+<li>add basic config and json input for style dictionary (<a href="https://github.com/migrationsverket/midas/commit/6af3212a6a" target="_blank" rel="noopener noreferrer">6af3212a6a</a>)</li>
+<li>update sd build script (<a href="https://github.com/migrationsverket/midas/commit/0b9eb9955e" target="_blank" rel="noopener noreferrer">0b9eb9955e</a>)</li>
+<li>rename custom css properties (<a href="https://github.com/migrationsverket/midas/commit/aa3eddcef9" target="_blank" rel="noopener noreferrer">aa3eddcef9</a>)</li>
+<li>remove theme.css generator (<a href="https://github.com/migrationsverket/midas/commit/75adb9e1d5" target="_blank" rel="noopener noreferrer">75adb9e1d5</a>)</li>
+<li>clean and update style dictionary script (<a href="https://github.com/migrationsverket/midas/commit/4a9423ddb6" target="_blank" rel="noopener noreferrer">4a9423ddb6</a>)</li>
+<li>start working on docs (<a href="https://github.com/migrationsverket/midas/commit/551e825e38" target="_blank" rel="noopener noreferrer">551e825e38</a>)</li>
+<li>ignore variables.css in stylelint (<a href="https://github.com/migrationsverket/midas/commit/859dbfbd75" target="_blank" rel="noopener noreferrer">859dbfbd75</a>)</li>
+<li>temporarily allow js to get a successful build (<a href="https://github.com/migrationsverket/midas/commit/2615fe4c40" target="_blank" rel="noopener noreferrer">2615fe4c40</a>)</li>
+<li>add types to generated tokens (<a href="https://github.com/migrationsverket/midas/commit/ba3749bd68" target="_blank" rel="noopener noreferrer">ba3749bd68</a>)</li>
+<li>update new badge colors (<a href="https://github.com/migrationsverket/midas/commit/f287e78fab" target="_blank" rel="noopener noreferrer">f287e78fab</a>)</li>
+<li>correct badge style fixes (<a href="https://github.com/migrationsverket/midas/commit/dc8555d733" target="_blank" rel="noopener noreferrer">dc8555d733</a>)</li>
+<li>replace <code scope="[object Object]">@</code> with <code scope="[object Object]">base</code>, additional cleanup (<a href="https://github.com/migrationsverket/midas/commit/2c6bf1e35a" target="_blank" rel="noopener noreferrer">2c6bf1e35a</a>)</li>
+<li>fix additional <code scope="[object Object]">base</code> variables (<a href="https://github.com/migrationsverket/midas/commit/f698b08f8f" target="_blank" rel="noopener noreferrer">f698b08f8f</a>)</li>
+<li>deprecate tokens.ts and add a warning text to relevant docs (<a href="https://github.com/migrationsverket/midas/commit/3025708cc3" target="_blank" rel="noopener noreferrer">3025708cc3</a>)</li>
+<li>fix incorrect color generation for nested light-dark (<a href="https://github.com/migrationsverket/midas/commit/83b80912f9" target="_blank" rel="noopener noreferrer">83b80912f9</a>)</li>
+<li>add comments to deprecations in tokens.ts (<a href="https://github.com/migrationsverket/midas/commit/1adf6a5ffa" target="_blank" rel="noopener noreferrer">1adf6a5ffa</a>)</li>
+<li>set proper object relationship <code scope="[object Object]">white: {base: {$value: ...</code> (<a href="https://github.com/migrationsverket/midas/commit/a60bd1643e" target="_blank" rel="noopener noreferrer">a60bd1643e</a>)</li>
+<li>replace rgba() with hex color (<a href="https://github.com/migrationsverket/midas/commit/c03b3a7737" target="_blank" rel="noopener noreferrer">c03b3a7737</a>)</li>
+<li>move sd config into components package (<a href="https://github.com/migrationsverket/midas/commit/4e61ffb05b" target="_blank" rel="noopener noreferrer">4e61ffb05b</a>)</li>
+<li>add dummy comment (<a href="https://github.com/migrationsverket/midas/commit/0c12e51cec" target="_blank" rel="noopener noreferrer">0c12e51cec</a>)</li>
+<li>merge style-dictionary into dev (<a href="https://github.com/migrationsverket/midas/commit/c03cc83565" target="_blank" rel="noopener noreferrer">c03cc83565</a>)</li>
+<li>add css variable linting (<a href="https://github.com/migrationsverket/midas/commit/c39e488881" target="_blank" rel="noopener noreferrer">c39e488881</a>)</li>
+<li><strong>deps:</strong> bump the npm_and_yarn group across 1 directory with 4 updates (<a href="https://github.com/migrationsverket/midas/commit/67b2b595a1" target="_blank" rel="noopener noreferrer">67b2b595a1</a>)</li>
+<li><strong>deps:</strong> bump vite in the npm_and_yarn group across 1 directory (<a href="https://github.com/migrationsverket/midas/commit/7758e60274" target="_blank" rel="noopener noreferrer">7758e60274</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-tests-updated">🧪 Tests updated<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.1.0/#-tests-updated" class="hash-link" aria-label="Direktlänk till 🧪 Tests updated" title="Direktlänk till 🧪 Tests updated">​</a></h2>
+<ul>
+<li><strong>table:</strong> remove flaky test (<a href="https://github.com/migrationsverket/midas/commit/9b309c1ade" target="_blank" rel="noopener noreferrer">9b309c1ade</a>)</li>
+<li><strong>table:</strong> add a11y test with links in a striped table (<a href="https://github.com/migrationsverket/midas/commit/f3cd83cee2" target="_blank" rel="noopener noreferrer">f3cd83cee2</a>)</li>
+<li><strong>tag:</strong> add textValue to mute console.warn (<a href="https://github.com/migrationsverket/midas/commit/d5d68e4363" target="_blank" rel="noopener noreferrer">d5d68e4363</a>)</li>
+</ul>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[12.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/12.0.0/</link>
@@ -783,23 +859,6 @@
 <li><strong>docs:</strong> change wording on dark mode guide page</li>
 <li><strong>docs:</strong> add clarification on when to use which loader</li>
 <li><strong>docs:</strong> add new UI-kit</li>
-</ul>]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[6.1.0]]></title>
-            <link>https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/6.1.0/</link>
-            <guid>https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/6.1.0/</guid>
-            <pubDate>Fri, 28 Mar 2025 20:00:00 GMT</pubDate>
-            <description><![CDATA[🚀 Features]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/6.1.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
-<ul>
-<li><strong>text:</strong> add description slot (<a href="https://github.com/migrationsverket/midas/commit/73d308a13" target="_blank" rel="noopener noreferrer">73d308a13</a>)</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-783/changelog/6.1.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
-<ul>
-<li><strong>link-button:</strong> add pseudo-classes in CSS link-button (<a href="https://github.com/migrationsverket/midas/pull/385" target="_blank" rel="noopener noreferrer">#385</a>)</li>
-<li><strong>textfield:</strong> fix token on input value (<a href="https://github.com/migrationsverket/midas/commit/e79f935e3" target="_blank" rel="noopener noreferrer">e79f935e3</a>)</li>
-<li><strong>textfield:</strong> fix token on input value (<a href="https://github.com/migrationsverket/midas/pull/388" target="_blank" rel="noopener noreferrer">#388</a>)</li>
 </ul>]]></content:encoded>
         </item>
     </channel>
