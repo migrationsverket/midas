@@ -83,5 +83,5 @@ jobs:
           branch: gh-pages
           clean-exclude: |
             pr-preview
-            dev-docs
+            unreleased
           force: false

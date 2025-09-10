@@ -32,8 +32,8 @@ fs.readdirSync(packagesDir).forEach(dir => {
 })
 
 const getBaseUrl = (): string => {
-  if (process.env.GITHUB_REF_NAME === 'dev') {
-    return `/dev-docs/`
+  if (process.env.UNRELEASED) {
+    return `/unreleased/`
   }
 
   if (process.env.PR_NUMBER) {
@@ -44,7 +44,7 @@ const getBaseUrl = (): string => {
 }
 
 const config: Config = {
-  noIndex: process.env.GITHUB_REF_NAME === 'dev' || !!process.env.PR_NUMBER,
+  noIndex: !!process.env.UNRELEASED || !!process.env.PR_NUMBER,
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
