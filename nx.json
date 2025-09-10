@@ -36,12 +36,7 @@
     },
     "changelog": {
       "commitReferences": true,
-      "workspaceChangelog": {
-        "renderOptions": {
-          "authors": false,
-          "versionTitleDate": true
-        }
-      },
+      "workspaceChangelog": false,
       "projectChangelogs": {
         "renderOptions": {
           "authors": false,
@@ -50,13 +45,14 @@
       },
       "automaticFromRef": true
     },
-    "projectsRelationship": "fixed",
-    "projects": ["packages/components", "!packages/.storybook"],
-    "releaseTagPattern": "v{version}",
+    "projectsRelationship": "independent",
+    "projects": ["packages/components", "!packages/.storybook", "theme"],
+    "releaseTagPattern": "{projectName}@v{version}",
     "git": {
-      "commitMessage": "chore(release): release version {version} [skip-ci]"
+      "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"
     },
     "version": {
+      "preVersionCommand": "npx nx run-many -t -p=[components, theme] build",
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "fallbackCurrentVersionResolver": "disk",
@@ -198,6 +194,17 @@
         "buildStorybookTargetName": "build-storybook",
         "testStorybookTargetName": "test-storybook",
         "staticStorybookTargetName": "static-storybook"
+      }
+    },
+    {
+      "plugin": "@nx/react/router-plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "startTargetName": "start",
+        "watchDepsTargetName": "watch-deps",
+        "buildDepsTargetName": "build-deps",
+        "typecheckTargetName": "typecheck"
       }
     }
   ]
