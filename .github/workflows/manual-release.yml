@@ -1,5 +1,11 @@
 name: Manual Release
 
+permissions:
+  contents: read
+  pull-requests: read
+  pages: write
+  id-token: write
+
 on:
   workflow_dispatch:
     inputs:
@@ -18,9 +24,6 @@ env:
 
 jobs:
   release:
-    permissions:
-      contents: read
-      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
