@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 .button {
   --border-width: 1px;
 
@@ -23,7 +26,7 @@
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 3px solid highlight;
       outline-offset: 2px;
     }
@@ -114,12 +117,12 @@
 }
 
 .danger {
-  color: var(--midas-color-white);
+  color: var(--midas-color-white-base);
   background-color: var(--midas-button-background-danger-base);
   opacity: 1;
 
   &[data-hovered] {
-    color: var(--color-white);
+    color: var(--midas-color-white-base);
     background-color: var(--midas-button-background-danger-hover);
   }
 
@@ -148,7 +151,7 @@
     calc(var(--midas-size-80) - var(--border-width));
 }
 
-@media (forced-colors: active) {
+@media --midas-breakpoints-forced-colors-mode {
   .primary {
     border-width: 2px;
   }

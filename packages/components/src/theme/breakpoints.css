@@ -1,0 +1,8 @@
+@value --midas-breakpoints-xs: (max-width: calc(480px - 1px));
+@value --midas-breakpoints-sm: (min-width: 480px);
+@value --midas-breakpoints-md: (min-width: 768px);
+@value --midas-breakpoints-lg: (min-width: 1024px);
+@value --midas-breakpoints-xl: (min-width: 1280px);
+@value --midas-breakpoints-forced-colors-mode: (forced-colors: active);
+@value --midas-breakpoints-dark-mode: (prefers-color-scheme: dark);
+@value --midas-breakpoints-prefers-reduced-motion: (prefers-reduced-motion: reduced);

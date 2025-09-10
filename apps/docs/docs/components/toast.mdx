@@ -39,7 +39,7 @@ Komponent för att visa ett kort, tillfälligt meddelanden om åtgärder, fel el
 Toast har fyra olika varianter som matchar InfoBanner: `success`, `info`, `important` och `warning`.
 
 <div className='card'>
-  <Grid fluid={true}>
+  <Grid>
     <GridItem size={3}>
       <Button
         onPress={() => toastQueue.add({ type: 'success', message: 'Allt funkar som det ska!' }, { timeout: 5000 })}

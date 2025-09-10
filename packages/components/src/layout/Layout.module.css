@@ -1,8 +1,11 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-xs, --midas-breakpoints-lg from breakpoints;
+
 .baseLayout {
   --sideBarWidth: 230px;
   --headerHeight: 69px;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     --headerHeight: 85px;
   }
 }
@@ -26,13 +29,13 @@
   &.headerExternal {
     padding: 1rem;
 
-    @media var(--breakpoint-lg) {
+    @media --midas-breakpoints-lg {
       padding: 1.25rem 1rem;
       z-index: 3;
     }
   }
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     padding: 1.25rem 1rem;
     z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
   }
@@ -48,7 +51,7 @@
     display: none;
   }
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     gap: 2rem;
 
     > svg {
@@ -61,7 +64,7 @@
   display: none;
   max-height: 40px;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: flex;
   }
 }
@@ -75,7 +78,7 @@
 .toggleButton {
   display: block;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: none !important;
   }
 }
@@ -96,7 +99,7 @@
   z-index: calc(var(--midas-z-index-base));
   border-right: 1px solid var(--midas-border-color-subtle);
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     position: sticky;
     top: var(--headerHeight);
     align-self: start;
@@ -116,7 +119,7 @@
 .app {
   background-clip: content-box;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     padding: 2rem;
   }
 }
@@ -148,7 +151,7 @@
   display: none !important;
   padding: calc(0.875rem - 1px) !important;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: flex !important;
   }
 }
@@ -170,7 +173,7 @@
   font-weight: 500;
   display: none;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: block;
   }
 }
@@ -188,7 +191,7 @@
   font-weight: 400;
   display: none;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: block;
   }
 }
@@ -199,7 +202,7 @@
   font-weight: 500;
   display: block;
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: none;
   }
 }
@@ -272,7 +275,7 @@
   }
 
   &[data-focus-visible] {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
     outline: none;
   }
 }
@@ -367,7 +370,7 @@
     align-items: stretch;
   }
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     max-width: 600px;
   }
 }
@@ -399,7 +402,7 @@
     flex: 0 0 auto;
   }
 
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     gap: 0.5rem;
     flex-direction: row;
     padding: 1rem 0.5rem;
@@ -407,7 +410,7 @@
 }
 
 .headerExternal {
-  @media var(--breakpoint-xs) {
+  @media --midas-breakpoints-xs {
     border: none;
   }
 }
@@ -427,7 +430,7 @@
   }
 
   .logoExternal {
-    @media var(--breakpoint-lg) {
+    @media --midas-breakpoints-lg {
       display: none;
     }
   }
@@ -435,14 +438,14 @@
   .logoExternalDesktop {
     display: none;
 
-    @media var(--breakpoint-lg) {
+    @media --midas-breakpoints-lg {
       display: block;
     }
   }
 }
 
 .navbarWrapper {
-  @media var(--breakpoint-lg) {
+  @media --midas-breakpoints-lg {
     display: none;
   }
 }

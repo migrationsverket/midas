@@ -1,0 +1,43 @@
+---
+slug: 12.1.0
+title: Release 12.1.0
+authors: midas
+tags: [release-notes, v12]
+---
+
+En tid har gått sedan vår senaste release och vi är glada att få dela med oss av lite nya funktioner och buggfixar.
+
+Vårt fokus har den senaste tiden legat kring våra designtokens och dess struktur, vi kommer att behöva stöka lite till innan vi är helt nöjda.
+Vi ber om ursäkt för röran men vi hoppas kunna leverera ett mer förutsägbart, konsekvent och anpassningsbart komponentbibliotek.
+
+## 🚀 Nya funktioner
+
+### Tokens
+
+Under huven hanterar Midas designtokens med ett nytt verktyg vilket har medfört vissa ändringar i namngivningen av våra variabler.
+Vi påbörjar en utfasning av variablen `semantic` och `theme.css` och hänvisar er istället att använda variablen `variables` och `variables.css`.
+
+Läs mer under [artikeln för Tokens](/basics/tokens-v2/), och notera att [artikeln för Färger](/basics/tokens/) är utdaterad.
+
+### ComboBox
+
+ComboBox stödjer numer asynkron laddning, se [dokumentationen för ComboBox](/components/combobox/#asynkron-laddning) för detaljer hur du implementerar detta.
+
+### Menu
+
+[Menu](/components/menu) är en ny komponent med ett deklarativt API för kompletterande menyer/kontextmenyer. Vi påbörjar en utfasning av [Dropdown](/components/dropdown) som ersätts av Menu.
+
+## 🩹 Fixar
+
+Vi arbetar kontinuerligt med buggfixar, här är några nämnvärda fixar:
+
+- `Accordion` har fått extra marginal för att tydligare visa sin fokusram vid tangentbordsinteraktion ([#780](https://github.com/migrationsverket/midas/pull/780))
+- `Badge` har fått en ny bakgrundsfärg i mörkt läge för att klara krav på färgkontraster ([f40f2dad67](https://github.com/migrationsverket/midas/commit/f40f2dad67))
+- `Layout` visar aktivt menyval för appar som använder en annan basepath än `/` ([4dec0a45ef](https://github.com/migrationsverket/midas/commit/4dec0a45ef))
+- `ListBox` och relaterade komponenter/typer ingår igen i komponentbiblioteket ([1f06b98610](https://github.com/migrationsverket/midas/commit/1f06b98610))
+- `TextArea`s storlek är nu justerbar ([6d04e25308](https://github.com/migrationsverket/midas/commit/6d04e25308))
+- `TextField` kallar inte längre på events så som `onBlur` fler gånger än nödvändigt ([#769](https://github.com/migrationsverket/midas/pull/769))
+
+{/* truncate */}
+
+Se alla förändringar i detalj på [changelog](/changelog/12.1.0).

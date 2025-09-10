@@ -451,13 +451,11 @@ I ljust läge växlar färgerna mellan vitt och grått för varje lager medan va
 
 export const TokenGroup = ({ children }) => {
   return (
-    <Grid
-      fluid
-      className='card-guidelines'
-    >
+    <Grid className='card-guidelines'>
       {children}
     </Grid>
-  )
+
+)
 }
 
 export const Token = ({token, desc}) => {
@@ -470,7 +468,7 @@ export const Token = ({token, desc}) => {
 
     return (
         <GridItem size={12} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)', paddingBottom: '1rem' }}>
-            <Grid fluid>
+            <Grid>
                 <GridItem size={{xs: 12, sm: 12, md: 3}}>
                     <CodeBlock className="margin-0">{token}</CodeBlock>
                 </GridItem>
@@ -545,10 +543,7 @@ export const SemanticTokens = () => {
 
 export const Layers = () => {
   return (
-    <Grid
-      fluid
-      className='card-guidelines'
-    >
+    <Grid className='card-guidelines'>
       <GridItem
         size={6}
         style={{ colorScheme: 'light', border: '1px solid var(--ifm-color-emphasis-200)' }}

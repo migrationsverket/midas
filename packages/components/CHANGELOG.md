@@ -1,3 +1,68 @@
+## 12.1.0 (2025-09-10)
+
+### 🚀 Features
+
+- **menu:** new Menu component ([#744](https://github.com/migrationsverket/midas/pull/744))
+- **combobox:** add loading indicator ([#772](https://github.com/migrationsverket/midas/pull/772), [#712](https://github.com/migrationsverket/midas/issues/712))
+
+### 🩹 Fixes
+
+- repair broken tokens ([e905bbf788](https://github.com/migrationsverket/midas/commit/e905bbf788))
+- **select:** minor screen reader announcement bugs ([#775](https://github.com/migrationsverket/midas/pull/775))
+- **accordion:** add margin for focus indicator ([#780](https://github.com/migrationsverket/midas/pull/780))
+- broken tokens ([#782](https://github.com/migrationsverket/midas/pull/782))
+- **layout:** add basepath to active link comparison ([4dec0a45ef](https://github.com/migrationsverket/midas/commit/4dec0a45ef))
+- **badge:** change background color in dark mode ([f40f2dad67](https://github.com/migrationsverket/midas/commit/f40f2dad67))
+- **select:** add aria label to checkbox ([e6cb387a7f](https://github.com/migrationsverket/midas/commit/e6cb387a7f))
+- **components:** export missing listbox types from component lib ([1f06b98610](https://github.com/migrationsverket/midas/commit/1f06b98610))
+- **textfield:** remove duplicate props spreading ([#769](https://github.com/migrationsverket/midas/pull/769))
+- **textfield:** make textarea resizable and remove size from controls storybook ([6d04e25308](https://github.com/migrationsverket/midas/commit/6d04e25308))
+
+### 💅 Refactors
+
+- rename variables in \*.module.css ([42329bde56](https://github.com/migrationsverket/midas/commit/42329bde56))
+- Migrate CSS custom properties from tokens.css to theme.css ([8a21fe5783](https://github.com/migrationsverket/midas/commit/8a21fe5783))
+
+### 📖 Documentation changes
+
+- update tokens page with headers and remove tokens from list that are only refs ([ded9bfa8c7](https://github.com/migrationsverket/midas/commit/ded9bfa8c7))
+
+### 🔧 Maintenance
+
+- **deps:** bump vite in the npm_and_yarn group across 1 directory ([7758e60274](https://github.com/migrationsverket/midas/commit/7758e60274))
+- add css variable linting ([c39e488881](https://github.com/migrationsverket/midas/commit/c39e488881))
+- add dummy comment ([0c12e51cec](https://github.com/migrationsverket/midas/commit/0c12e51cec))
+- move sd config into components package ([4e61ffb05b](https://github.com/migrationsverket/midas/commit/4e61ffb05b))
+- replace rgba() with hex color ([c03b3a7737](https://github.com/migrationsverket/midas/commit/c03b3a7737))
+- set proper object relationship `white: {base: {$value: ...` ([a60bd1643e](https://github.com/migrationsverket/midas/commit/a60bd1643e))
+- add comments to deprecations in tokens.ts ([1adf6a5ffa](https://github.com/migrationsverket/midas/commit/1adf6a5ffa))
+- fix incorrect color generation for nested light-dark ([83b80912f9](https://github.com/migrationsverket/midas/commit/83b80912f9))
+- deprecate tokens.ts and add a warning text to relevant docs ([3025708cc3](https://github.com/migrationsverket/midas/commit/3025708cc3))
+- fix additional `base` variables ([f698b08f8f](https://github.com/migrationsverket/midas/commit/f698b08f8f))
+- replace `@` with `base`, additional cleanup ([2c6bf1e35a](https://github.com/migrationsverket/midas/commit/2c6bf1e35a))
+- correct badge style fixes ([dc8555d733](https://github.com/migrationsverket/midas/commit/dc8555d733))
+- update new badge colors ([f287e78fab](https://github.com/migrationsverket/midas/commit/f287e78fab))
+- add types to generated tokens ([ba3749bd68](https://github.com/migrationsverket/midas/commit/ba3749bd68))
+- temporarily allow js to get a successful build ([2615fe4c40](https://github.com/migrationsverket/midas/commit/2615fe4c40))
+- ignore variables.css in stylelint ([859dbfbd75](https://github.com/migrationsverket/midas/commit/859dbfbd75))
+- start working on docs ([551e825e38](https://github.com/migrationsverket/midas/commit/551e825e38))
+- clean and update style dictionary script ([4a9423ddb6](https://github.com/migrationsverket/midas/commit/4a9423ddb6))
+- remove theme.css generator ([75adb9e1d5](https://github.com/migrationsverket/midas/commit/75adb9e1d5))
+- rename custom css properties ([aa3eddcef9](https://github.com/migrationsverket/midas/commit/aa3eddcef9))
+- update sd build script ([0b9eb9955e](https://github.com/migrationsverket/midas/commit/0b9eb9955e))
+- add basic config and json input for style dictionary ([6af3212a6a](https://github.com/migrationsverket/midas/commit/6af3212a6a))
+- **deps:** bump the npm_and_yarn group across 1 directory with 4 updates ([67b2b595a1](https://github.com/migrationsverket/midas/commit/67b2b595a1))
+- relax stylelint config to allow media query syntax ([5b6955e604](https://github.com/migrationsverket/midas/commit/5b6955e604))
+- remove check-values-import.js since it is no longer applicable ([f4c3ee95a4](https://github.com/migrationsverket/midas/commit/f4c3ee95a4))
+- create separate storybook configs for serve and build ([642e155d8a](https://github.com/migrationsverket/midas/commit/642e155d8a))
+- update dependencies ([#751](https://github.com/migrationsverket/midas/pull/751))
+
+### 🧪 Tests updated
+
+- **table:** add a11y test with links in a striped table ([f3cd83cee2](https://github.com/migrationsverket/midas/commit/f3cd83cee2))
+- **table:** remove flaky test ([9b309c1ade](https://github.com/migrationsverket/midas/commit/9b309c1ade))
+- **tag:** add textValue to mute console.warn ([d5d68e4363](https://github.com/migrationsverket/midas/commit/d5d68e4363))
+
 # 12.0.0 (2025-08-27)
 
 ### 🚀 Features

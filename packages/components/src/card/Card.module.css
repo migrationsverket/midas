@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 .card {
   font-family: var(--midas-typography-font-family);
   position: relative;
@@ -64,9 +67,9 @@
   }
 
   &[data-focused] {
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 2px solid highlight;
     }
   }
@@ -94,9 +97,9 @@
   &[data-focused],
   &:focus {
     outline: none;
-    box-shadow: var(--state-focus);
+    box-shadow: var(--midas-state-focus);
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       outline: 2px solid highlight;
     }
   }

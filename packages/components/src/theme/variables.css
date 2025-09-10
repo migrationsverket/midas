@@ -7,9 +7,6 @@
   --midas-window-sizes-md: 768px;
   --midas-window-sizes-lg: 1024px;
   --midas-window-sizes-xl: 1280px;
-  --midas-breakpoints-forced-colors-mode: '(forced-colors: active)';
-  --midas-breakpoints-dark-mode: '(prefers-color-scheme: dark)';
-  --midas-breakpoints-prefers-reduced-motion: '(prefers-reduced-motion: reduced)';
   --midas-color-black-base: #000000; /** Black */
   --midas-color-black-hover: #0d0d0d; /** Black hover */
   --midas-color-white-base: #ffffff; /** White */
@@ -160,11 +157,6 @@
   --midas-z-index-modal: 1000;
   --midas-z-index-toast: 1100;
   --midas-z-index-skip-to-content: 1200;
-  --midas-breakpoints-xs: '(max-width: calc(var(--midas-window-sizes-sm) - 1px))';
-  --midas-breakpoints-sm: '(min-width: var(--midas-window-sizes-sm))';
-  --midas-breakpoints-md: '(min-width: var(--midas-window-sizes-md))';
-  --midas-breakpoints-lg: '(min-width: var(--midas-window-sizes-lg))';
-  --midas-breakpoints-xl: '(min-width: var(--midas-window-sizes-xl))';
   --midas-background-base: light-dark(
     var(--midas-color-white-base),
     var(--midas-color-gray-200)

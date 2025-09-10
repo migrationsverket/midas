@@ -1,3 +1,6 @@
+@value breakpoints: "../theme/breakpoints.css";
+@value --midas-breakpoints-forced-colors-mode from breakpoints;
+
 /**
  * 1. Represents max ~5 options in the list.
  */
@@ -15,12 +18,15 @@
 
 .listBoxPopover {
   font-family: var(--midas-typography-font-family);
+
+  /* RAC passes this variable via the style prop, making it available during runtime only */
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
   width: var(--trigger-width);
   background: var(--midas-layer-01-base);
   overflow-y: auto;
   box-shadow: 0 3px 5px 0 rgba(0 0 0 / 20%);
 
-  @media (forced-colors: active) {
+  @media --midas-breakpoints-forced-colors-mode {
     border: 1px solid var(--midas-border-color-primary);
   }
 }
@@ -81,7 +87,7 @@
     outline: none;
     box-shadow: none;
 
-    @media (forced-colors: active) {
+    @media --midas-breakpoints-forced-colors-mode {
       border: 1px ButtonBorder solid;
     }
   }
@@ -95,7 +101,8 @@
 .listBoxLoadMoreItem {
   align-items: center;
   display: flex;
-  gap: var(--size-80);
-  line-height: var(--typography-line-height-30);
-  padding: var(--size-80) var(--size-80) var(--size-60) var(--size-80);
+  gap: var(--midas-size-80);
+  line-height: var(--midas-typography-line-height-30);
+  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-60)
+    var(--midas-size-80);
 }
