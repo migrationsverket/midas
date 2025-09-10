@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       project:
-        description: "Select which project to release"
+        description: 'Select which project to release'
         required: true
         type: choice
-        default: "all"
+        default: 'all'
         options:
           - all
           - components
@@ -33,7 +33,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
-          registry-url: "https://registry.npmjs.org"
+          registry-url: 'https://registry.npmjs.org'
           cache: npm
 
       - name: Install dependencies
@@ -43,7 +43,14 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Build affected projects
-        run: npx nx affected -t build --exclude=playground
+        run: |
+          if [ "${{ github.event.inputs.project }}" = "all" ]; then
+            echo "Building all projects..."
+            npx nx run-many --targets=build --projects=components,theme
+          else
+            echo "Building project ${{ github.event.inputs.project }}..."
+            npx nx run-many --targets=build --projects=${{ github.event.inputs.project }}
+          fi
 
       - name: Run Nx Release
         run: |
