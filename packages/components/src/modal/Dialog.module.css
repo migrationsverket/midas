@@ -16,7 +16,7 @@
     animation: none;
   }
 
-  @media (forced-colors-active) {
+  @media (forced-colors: active) {
     outline: 2px solid;
   }
 }

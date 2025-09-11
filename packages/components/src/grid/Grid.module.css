@@ -44,13 +44,13 @@
   );
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .container {
     --padding: 2rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .container {
     --gutter: 1.5rem;
   }
@@ -152,7 +152,7 @@
   flex: 1 0 0px;
 }
 
-@media (max-width: 479px) {
+@media (width <= 479px) {
   .col-xs-1 {
     width: calc(
       (1 * 100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
@@ -239,7 +239,7 @@
   }
 }
 
-@media (min-width: 480px) {
+@media (width >= 480px) {
   .col-sm-1 {
     width: calc(
       (1 * 100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
@@ -326,7 +326,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .col-md-1 {
     width: calc(
       (100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
@@ -412,7 +412,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .col-lg-1 {
     width: calc(
       (100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
@@ -498,7 +498,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .col-xl-1 {
     width: calc(
       (100% / var(--columns)) - (11 * var(--gutter) / var(--columns))
@@ -655,7 +655,7 @@
   margin-left: auto;
 }
 
-@media (max-width: 479px) {
+@media (width <= 479px) {
   .offset-xs-1 {
     margin-left: calc(
       (100% / var(--columns)) + (var(--gutter) / var(--columns))
@@ -730,7 +730,7 @@
   }
 }
 
-@media (min-width: 480px) {
+@media (width >= 480px) {
   .offset-sm-1 {
     margin-left: calc(
       (100% / var(--columns)) + (var(--gutter) / var(--columns))
@@ -805,7 +805,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .offset-md-1 {
     margin-left: calc(
       (100% / var(--columns)) + (var(--gutter) / var(--columns))
@@ -880,7 +880,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .offset-lg-1 {
     margin-left: calc(
       (100% / var(--columns)) + (var(--gutter) / var(--columns))
@@ -955,7 +955,7 @@
   }
 }
 
-@media (min-width: 1280px) {
+@media (width >= 1280px) {
   .offset-xl-1 {
     margin-left: calc(
       (100% / var(--columns)) + (var(--gutter) / var(--columns))

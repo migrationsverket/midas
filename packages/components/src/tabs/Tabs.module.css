@@ -38,7 +38,7 @@
     box-shadow: var(--midas-state-focus);
   }
 
-  @media (max-width: 479px) {
+  @media (width <= 479px) {
     border-bottom: 0;
     flex: 0 0 100%;
 

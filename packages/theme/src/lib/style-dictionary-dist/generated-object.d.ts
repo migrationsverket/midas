@@ -27,9 +27,6 @@ declare const tokens: {
     md: DesignToken;
     lg: DesignToken;
     xl: DesignToken;
-    forcedColorsMode: DesignToken;
-    darkMode: DesignToken;
-    prefersReducedMotion: DesignToken;
   };
   color: {
     black: {
