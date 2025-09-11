@@ -62,7 +62,7 @@
     outline: none;
   }
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     width: unset;
     left: unset;
     transform: unset;
@@ -126,7 +126,7 @@
     flex: 0 0 auto;
   }
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     width: 18rem;
   }
 }
@@ -152,7 +152,7 @@
   animation-fill-mode: both;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   ::view-transition-new(*):only-child {
     animation-name: slideInEnd;
   }
@@ -166,7 +166,7 @@
   animation-fill-mode: both;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   ::view-transition-old(*):only-child {
     animation-name: slideOutEnd;
   }

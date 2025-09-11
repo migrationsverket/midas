@@ -11,9 +11,6 @@ export const breakpointsSm: string;
 export const breakpointsMd: string;
 export const breakpointsLg: string;
 export const breakpointsXl: string;
-export const breakpointsForcedColorsMode: string;
-export const breakpointsDarkMode: string;
-export const breakpointsPrefersReducedMotion: string;
 /** Black */
 export const colorBlackBase: string;
 /** Black hover */
