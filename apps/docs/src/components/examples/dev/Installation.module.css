@@ -1,4 +1,4 @@
-@import url('../../../../../../packages/components/src/theme/variables.css');
+@import url('../../../../../../packages/theme/src/lib/style-dictionary-dist/variables.css');
 
 .kaffekopp {
   border: 1px solid var(--midas-border-color-primary);

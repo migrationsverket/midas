@@ -7,12 +7,12 @@ import {
 } from 'react-aria-components'
 import clsx from 'clsx'
 import useObserveElement from '../utils/useObserveElement'
-import { windowSizesSm } from '@midas-ds/theme'
+import { variables } from '@midas-ds/theme'
 
 import styles from './Tabs.module.css'
 
 export interface TabsProps extends AriaTabsProps {
-  
+
   /**
    * The orientation of the tabs.
    * Will adjust to screen size automatically if omitted
@@ -34,7 +34,7 @@ export const Tabs: React.FC<TabsProps> = ({
   )
 
   const orientation: AriaTabsProps['orientation'] =
-    rest.orientation || bodyWidth >= parseInt(windowSizesSm) ? 'horizontal' : 'vertical'
+    rest.orientation || bodyWidth >= parseInt(variables.windowSizesSm) ? 'horizontal' : 'vertical'
 
   return (
     <AriaTabs

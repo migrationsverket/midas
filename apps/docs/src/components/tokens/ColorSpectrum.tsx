@@ -1,4 +1,4 @@
-import {tokens} from '@midas-ds/components/theme'
+import {tokens} from '@midas-ds/theme'
 export const ColorSpectrum = () => {
   const filteredColors = Object.entries(tokens.color).filter(
     ([colorName]) => !["black", "white", "blackHover", "whiteHover", "purple", "red"].includes(colorName)

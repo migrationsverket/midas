@@ -19,8 +19,8 @@
     "paths": {
       "@site/*": ["./*"],
       "@midas-ds/components": ["../../../../packages/components/src/index.ts"],
-      "@midas-ds/components/theme": [
-        "../../../../packages/components/src/theme/index.ts"
+      "@midas-ds/theme": [
+        "../../../../packages/theme/index.ts"
       ]
     }
   },

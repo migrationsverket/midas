@@ -26,7 +26,7 @@ export const config = {
     },
     object: {
       options: {
-        flat: true,
+        flat: false,
       },
       transformGroups: transformGroups.js,
       transforms: [transforms.nameCamel],
@@ -34,11 +34,11 @@ export const config = {
       files: [
         {
           destination: 'generated-object.js',
-          format: formats.javascriptEs6,
+          format: formats.javascriptEsm,
         },
         {
           destination: 'generated-object.d.ts',
-          format: 'typescript/es6-declarations',
+          format: formats.typescriptModuleDeclarations,
         },
       ],
     },
