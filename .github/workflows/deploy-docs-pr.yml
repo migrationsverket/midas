@@ -1,4 +1,4 @@
-name: DocWeb - Deploy PR preview
+name: 'Deploy Docs (PR)'
 
 on:
   pull_request:

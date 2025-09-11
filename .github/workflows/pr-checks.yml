@@ -1,4 +1,4 @@
-name: Code - Lint, test and build packages
+name: 'PR Checks'
 
 env:
   HUSKY: 0
