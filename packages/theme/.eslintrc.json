@@ -1,7 +1,12 @@
 {
-  "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
+  "extends": ["../../.eslintrc.json"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2022
+  },
   "ignorePatterns": [
     "!**/*",
+    "**/*.d.ts",
     "**/vite.config.*.timestamp*",
     "**/vitest.config.*.timestamp*"
   ],
