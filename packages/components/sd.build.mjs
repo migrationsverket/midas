@@ -52,25 +52,11 @@ export const config = {
         {
           destination: 'variables.css',
           format: formats.cssVariables,
-          filter: f => f.attributes.category !== 'breakpoints',
-        },
-        {
-          destination: `breakpoints.css`,
-          format: 'custom/format/breakpoints',
-          filter: f => f.attributes.category === 'breakpoints',
-        },
+        }
       ],
     },
   },
 }
-
-StyleDictionary.registerFormat({
-  name: 'custom/format/breakpoints',
-  format: ({ allTokens }) =>
-    allTokens
-      .map(({ name, $value }) => `@value --${name}: ${$value};`)
-      .join('\n') + `\n`,
-})
 
 const sd = new StyleDictionary(config, { verbosity: 'verbose' })
 await sd.buildAllPlatforms()

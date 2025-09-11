@@ -1,6 +1,3 @@
-@value breakpoints: "../theme/breakpoints.css";
-@value --midas-breakpoints-forced-colors-mode, --midas-breakpoints-xs from breakpoints;
-
 .linkButton {
   --border-width: 1px;
 
@@ -38,7 +35,7 @@
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
 
-    @media --midas-breakpoints-forced-colors-mode {
+    @media (forced-colors: active) {
       outline: 3px solid highlight;
       outline-offset: 2px;
     }
@@ -156,7 +153,7 @@
     calc(var(--midas-size-80) - var(--midas-border-width));
 }
 
-@media --midas-breakpoints-xs {
+@media (max-width: 479px) {
   .button {
     width: 100%;
   }

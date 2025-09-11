@@ -1,6 +1,3 @@
-@value breakpoints: "../theme/breakpoints.css";
-@value --midas-breakpoints-xs from breakpoints;
-
 .container {
   font-family: var(--midas-typography-font-family);
 }
@@ -41,7 +38,7 @@
     box-shadow: var(--midas-state-focus);
   }
 
-  @media --midas-breakpoints-xs {
+  @media (max-width: 479px) {
     border-bottom: 0;
     flex: 0 0 100%;
 

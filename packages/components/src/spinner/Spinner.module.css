@@ -1,6 +1,3 @@
-@value breakpoints: "../theme/breakpoints.css";
-@value --midas-breakpoints-prefers-reduced-motion from breakpoints;
-
 .container {
   display: inline-flex;
 }
@@ -10,7 +7,7 @@
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
 
-  @media --midas-breakpoints-prefers-reduced-motion {
+  @media (prefers-reduced-motion) {
     animation-duration: 2s;
   }
 }
