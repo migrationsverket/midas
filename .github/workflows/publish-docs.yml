@@ -1,4 +1,4 @@
-name: Publish website
+name: 'Publish Docs'
 
 permissions:
   contents: write
