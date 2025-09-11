@@ -1,6 +1,3 @@
-@value breakpoints: "../theme/breakpoints.css";
-@value --midas-breakpoints-forced-colors-mode from breakpoints;
-
 .combobox {
   font-family: var(--midas-typography-font-family);
   display: flex;
@@ -45,7 +42,7 @@
   &[data-focus-visible] {
     box-shadow: var(--midas-state-focus);
 
-    @media --midas-breakpoints-forced-colors-mode {
+    @media (forced-colors: active) {
       outline: 3px solid highlight;
       outline-offset: 2px;
     }

@@ -1,6 +1,3 @@
-@value breakpoints: "../theme/breakpoints.css";
-@value --midas-breakpoints-forced-colors-mode from breakpoints;
-
 .button {
   --border-width: 1px;
 

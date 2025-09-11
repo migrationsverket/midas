@@ -1,11 +1,8 @@
-@value breakpoints: "../theme/breakpoints.css";
-@value --midas-breakpoints-xs, --midas-breakpoints-lg from breakpoints;
-
 .baseLayout {
   --sideBarWidth: 230px;
   --headerHeight: 69px;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     --headerHeight: 85px;
   }
 }
@@ -29,13 +26,13 @@
   &.headerExternal {
     padding: 1rem;
 
-    @media --midas-breakpoints-lg {
+    @media (min-width: 1024px) {
       padding: 1.25rem 1rem;
       z-index: 3;
     }
   }
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     padding: 1.25rem 1rem;
     z-index: calc(var(--midas-z-index-base) + var(--midas-z-index-above));
   }
@@ -51,7 +48,7 @@
     display: none;
   }
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     gap: 2rem;
 
     > svg {
@@ -64,7 +61,7 @@
   display: none;
   max-height: 40px;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: flex;
   }
 }
@@ -78,7 +75,7 @@
 .toggleButton {
   display: block;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: none !important;
   }
 }
@@ -99,7 +96,7 @@
   z-index: calc(var(--midas-z-index-base));
   border-right: 1px solid var(--midas-border-color-subtle);
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     position: sticky;
     top: var(--headerHeight);
     align-self: start;
@@ -119,7 +116,7 @@
 .app {
   background-clip: content-box;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     padding: 2rem;
   }
 }
@@ -151,7 +148,7 @@
   display: none !important;
   padding: calc(0.875rem - 1px) !important;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: flex !important;
   }
 }
@@ -173,7 +170,7 @@
   font-weight: 500;
   display: none;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: block;
   }
 }
@@ -191,7 +188,7 @@
   font-weight: 400;
   display: none;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: block;
   }
 }
@@ -202,7 +199,7 @@
   font-weight: 500;
   display: block;
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: none;
   }
 }
@@ -370,7 +367,7 @@
     align-items: stretch;
   }
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     max-width: 600px;
   }
 }
@@ -402,7 +399,7 @@
     flex: 0 0 auto;
   }
 
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     gap: 0.5rem;
     flex-direction: row;
     padding: 1rem 0.5rem;
@@ -410,7 +407,7 @@
 }
 
 .headerExternal {
-  @media --midas-breakpoints-xs {
+  @media (max-width: 479px) {
     border: none;
   }
 }
@@ -430,7 +427,7 @@
   }
 
   .logoExternal {
-    @media --midas-breakpoints-lg {
+    @media (min-width: 1024px) {
       display: none;
     }
   }
@@ -438,14 +435,14 @@
   .logoExternalDesktop {
     display: none;
 
-    @media --midas-breakpoints-lg {
+    @media (min-width: 1024px) {
       display: block;
     }
   }
 }
 
 .navbarWrapper {
-  @media --midas-breakpoints-lg {
+  @media (min-width: 1024px) {
     display: none;
   }
 }

@@ -16,9 +16,6 @@
     "xl": {
       "$value": "(min-width: {windowSizes.xl})",
       "$comment": "This is the largest breakpoint"
-    },
-    "forcedColorsMode": { "$value": "(forced-colors: active)" },
-    "darkMode": { "$value": "(prefers-color-scheme: dark)" },
-    "prefersReducedMotion": { "$value": "(prefers-reduced-motion: reduced)" }
+    }
   }
 }
