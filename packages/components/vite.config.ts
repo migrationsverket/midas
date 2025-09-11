@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
-import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import { join, resolve, relative, extname } from 'node:path'
 import { globSync } from 'glob'
 import { fileURLToPath } from 'node:url'
@@ -24,7 +23,7 @@ export default defineConfig({
       include: ['src'],
       exclude: ['**/*.stories.{ts,tsx}'],
     }),
-    
+
   ],
   // Uncomment this if you are using workers.
   // worker: {
@@ -49,7 +48,7 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime', '@midas-ds/theme'],
       input: Object.fromEntries([
         ['index', index],
-        
+
         ...globSync(`${src}/*/index.ts`).map(file => [
           // 1. The name of the entry point
           // packages/components/src/calendar/Calendar.tsx becomes calendar/Calendar
