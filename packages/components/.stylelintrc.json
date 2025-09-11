@@ -8,15 +8,9 @@
         "csstools/value-no-unknown-custom-properties": [
           true,
           {
-            "importFrom": ["packages/components/src/theme/variables.css"]
+            "importFrom": ["packages/theme/src/lib/style-dictionary-dist/variables.css"]
           }
         ]
-      }
-    },
-    {
-      "files": ["src/theme/theme.css", "src/theme/tokens.css"],
-      "rules": {
-        "color-hex-length": null
       }
     }
   ]
