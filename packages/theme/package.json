@@ -15,14 +15,6 @@
   "homepage": "https://designsystem.migrationsverket.se/",
   "license": "CC0-1.0",
   "version": "1.0.2",
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.js"
-    },
-    "./variables.css": {
-      "import": "./assets/variables.css"
-    }
-  }
+  "main": "./index.mjs",
+  "types": "./index.d.ts"
 }
