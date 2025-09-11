@@ -8,7 +8,7 @@ export const config = {
   platforms: {
     es6: {
       options: {
-        flat: false,
+        flat: true,
       },
       transformGroups: transformGroups.js,
       transforms: [transforms.nameCamel],
@@ -26,7 +26,7 @@ export const config = {
     },
     object: {
       options: {
-        flat: false,
+        flat: true,
       },
       transformGroups: transformGroups.js,
       transforms: [transforms.nameCamel],
@@ -34,11 +34,11 @@ export const config = {
       files: [
         {
           destination: 'generated-object.js',
-          format: formats.javascriptEsm,
+          format: formats.javascriptEs6,
         },
         {
           destination: 'generated-object.d.ts',
-          format: 'typescript/module-declarations',
+          format: 'typescript/es6-declarations',
         },
       ],
     },

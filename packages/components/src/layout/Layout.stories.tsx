@@ -12,7 +12,7 @@ import {
   Languages,
   Bell,
 } from 'lucide-react'
-import { semantic } from '../theme'
+import { layer02Base, borderColorSubtle, textPrimary } from '@midas-ds/theme'
 import { LinkButton } from '../link-button'
 import { Button } from '../button'
 import { expect } from 'storybook/test'
@@ -99,13 +99,13 @@ const AppExample = () => {
   return (
     <div
       style={{
-        background: semantic.layer02,
+        background: layer02Base,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         height: '80vh',
-        border: `dotted 2px ${semantic.borderSubtle}`,
-        color: semantic.textPrimary,
+        border: `dotted 2px ${borderColorSubtle}`,
+        color: textPrimary,
       }}
     >
       Din applikation

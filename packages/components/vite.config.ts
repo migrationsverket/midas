@@ -24,7 +24,7 @@ export default defineConfig({
       include: ['src'],
       exclude: ['**/*.stories.{ts,tsx}'],
     }),
-    libInjectCss(),
+    
   ],
   // Uncomment this if you are using workers.
   // worker: {
@@ -36,6 +36,7 @@ export default defineConfig({
     outDir: '../../dist/packages/components',
     emptyOutDir: true,
     reportCompressedSize: true,
+    cssCodeSplit: true,
     commonjsOptions: {
       transformMixedEsModules: true,
     },
@@ -45,12 +46,10 @@ export default defineConfig({
     },
     rollupOptions: {
       // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@midas-ds/theme'],
       input: Object.fromEntries([
         ['index', index],
-        ['global.css', resolve(src, 'theme/global.css')],
-        ['theme.css', resolve(src, 'theme/theme.css')],
-        ['variables.css', resolve(src, 'theme/variables.css')],
+        
         ...globSync(`${src}/*/index.ts`).map(file => [
           // 1. The name of the entry point
           // packages/components/src/calendar/Calendar.tsx becomes calendar/Calendar

@@ -39,11 +39,6 @@
       "import": "./index.js",
       "require": "./index.cjs"
     },
-    "./theme": {
-      "types": "./theme/index.d.ts",
-      "import": "./theme/index.js",
-      "require": "./theme/index.cjs"
-    },
     "./global.css": {
       "import": "./assets/global.css"
     },
@@ -55,6 +50,7 @@
     }
   },
   "dependencies": {
+    "@midas-ds/theme": "1.0.2",
     "react-aria-components": "^1.12.1",
     "react-stately": "^3.39.0"
   }

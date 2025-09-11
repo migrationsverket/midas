@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Skeleton } from './Skeleton'
 import { expect } from 'storybook/test'
 import styles from './Skeleton.module.css'
-import { semantic } from '../theme'
+import { layer01Base } from '@midas-ds/theme'
 
 type Story = StoryObj<typeof Skeleton>
 
@@ -89,7 +89,7 @@ export const IsOnLayer01: Story = {
     isOnLayer01: true,
   },
   render: args => (
-    <div style={{ backgroundColor: semantic.layer01, padding: '1rem' }}>
+    <div style={{ backgroundColor: layer01Base, padding: '1rem' }}>
       <Skeleton
         {...args}
         data-testid='skeleton'

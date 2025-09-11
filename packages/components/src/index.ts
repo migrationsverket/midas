@@ -1,4 +1,4 @@
-import './theme/variables.css'
+import { variables } from '@midas-ds/theme'
 export * from './accordion'
 export * from './badge'
 export * from './breadcrumbs'
