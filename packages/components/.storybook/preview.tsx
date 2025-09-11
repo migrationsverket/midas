@@ -1,6 +1,7 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
-import '../../theme/src/lib/global.css' // TODO: fix this import
+import '../../theme/src/lib/global.css'
 import '../../theme/src/lib/style-dictionary-dist/variables.css'
 import {
   customDarkTheme,

@@ -23,6 +23,9 @@
     },
     "./variables.css": {
       "import": "./assets/variables.css"
+    },
+    "./global.css": {
+      "import": "./assets/global.css"
     }
   }
 }

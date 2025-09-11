@@ -56,6 +56,10 @@ export default defineConfig(() => ({
           'variables.css',
           resolve(src, 'lib/style-dictionary-dist/variables.css'),
         ],
+        [
+          'global.css',
+          resolve(src, 'lib/global.css'),
+        ],
       ]),
       output: [
         {
