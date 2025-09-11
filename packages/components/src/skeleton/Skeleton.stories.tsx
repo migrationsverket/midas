@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Skeleton } from './Skeleton'
 import { expect } from 'storybook/test'
 import styles from './Skeleton.module.css'
-import { layer01Base } from '@midas-ds/theme'
+import { variables } from '@midas-ds/theme'
+const { layer01Base } = variables
+
 
 type Story = StoryObj<typeof Skeleton>
 

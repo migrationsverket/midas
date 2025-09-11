@@ -1,7 +1,7 @@
 import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
-import '../src/theme/global.css'
-import '../src/theme/variables.css'
+import '../../theme/src/lib/global.css' // TODO: fix this import
+import '../../theme/src/lib/style-dictionary-dist/variables.css'
 import {
   customDarkTheme,
   customLightTheme,
@@ -12,7 +12,7 @@ import { globalModes } from './modes'
 import MockDate from 'mockdate'
 import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
-import { semantic } from '../src/theme'
+import { variables } from '@midas-ds/theme'
 import { I18nProvider } from '../src/utils/intl'
 
 const preview: Preview = {
@@ -25,9 +25,9 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        background: semantic.background,
-        'Layer 01': semantic.layer01,
-        'Layer 02': semantic.layer02,
+        background: variables.backgroundBase,
+        'Layer 01': variables.layer01Base,
+        'Layer 02': variables.layer02Base,
       },
     },
     controls: {
@@ -97,7 +97,7 @@ const preview: Preview = {
       if (story) {
         story.style.colorScheme = context.globals.scheme
         story.style.transition = 'none'
-        story.style.background = semantic.background
+        story.style.background = variables.backgroundBase
       }
 
       return (

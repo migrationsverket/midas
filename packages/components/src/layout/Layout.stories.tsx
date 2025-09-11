@@ -12,11 +12,12 @@ import {
   Languages,
   Bell,
 } from 'lucide-react'
-import { layer02Base, borderColorSubtle, textPrimary } from '@midas-ds/theme'
+import { variables } from '@midas-ds/theme'
 import { LinkButton } from '../link-button'
 import { Button } from '../button'
 import { expect } from 'storybook/test'
 import styles from './Layout.module.css'
+const { layer02Base, borderColorSubtle, textPrimary } = variables
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
