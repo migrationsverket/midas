@@ -1,3 +1,4 @@
-import tokens from './style-dictionary-dist/object'
-import * as variables from './style-dictionary-dist/tokens'
-export { tokens, variables }
+import tokenDictionary from './style-dictionary-dist/token-dictionary'
+import * as variables from './style-dictionary-dist/variables'
+
+export { tokenDictionary, variables }
