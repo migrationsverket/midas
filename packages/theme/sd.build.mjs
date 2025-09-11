@@ -15,11 +15,11 @@ export const config = {
       buildPath: buildPath,
       files: [
         {
-          destination: 'generated-tokens.js',
+          destination: 'tokens.js',
           format: formats.javascriptEs6,
         },
         {
-          destination: 'generated-tokens.d.ts',
+          destination: 'tokens.d.ts',
           format: 'typescript/es6-declarations',
         },
       ],
@@ -33,11 +33,11 @@ export const config = {
       buildPath: buildPath,
       files: [
         {
-          destination: 'generated-object.js',
+          destination: 'object.js',
           format: formats.javascriptEsm,
         },
         {
-          destination: 'generated-object.d.ts',
+          destination: 'object.d.ts',
           format: 'typescript/module-declarations',
         },
       ],
