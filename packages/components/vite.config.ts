@@ -6,6 +6,7 @@ import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 import { join, resolve, relative, extname } from 'node:path'
 import { globSync } from 'glob'
 import { fileURLToPath } from 'node:url'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 const src = resolve(__dirname, 'src')
 const index = resolve(src, 'index.ts')
@@ -23,7 +24,7 @@ export default defineConfig({
       include: ['src'],
       exclude: ['**/*.stories.{ts,tsx}'],
     }),
-
+    libInjectCss(),
   ],
   // Uncomment this if you are using workers.
   // worker: {
