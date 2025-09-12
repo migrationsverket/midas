@@ -1,4 +1,4 @@
-import {variables as semantic} from '@midas-ds/components/theme'
+import {variables as semantic} from '@midas-ds/theme'
 
 export const TokenNaming = () => {
   return (

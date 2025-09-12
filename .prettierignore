@@ -6,3 +6,6 @@ scripts
 *.hbs
 
 /.nx/workspace-data
+
+# auto generated files
+packages/theme/**/style-dictionary-dist/*

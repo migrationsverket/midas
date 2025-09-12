@@ -6,7 +6,7 @@ description: Komponent som skapar en länk
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Link, Text } from '@midas-ds/components'
-import { semantic } from '@midas-ds/components/theme'
+import { variables as semantic } from '@midas-ds/theme'
 
 <ComponentHeader
   name='Link'
@@ -93,7 +93,7 @@ Använd `stretched` för att låta hela föräldraelementet vara klickbart till 
   <div
     style={{
       position: 'relative',
-      background: semantic.layer01,
+      background: semantic.layer01Base,
       padding: '1rem',
     }}
   >

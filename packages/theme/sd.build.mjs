@@ -8,7 +8,7 @@ export const config = {
   platforms: {
     es6: {
       options: {
-        flat: false,
+        flat: true,
       },
       transformGroups: transformGroups.js,
       transforms: [transforms.nameCamel],
@@ -38,7 +38,7 @@ export const config = {
         },
         {
           destination: 'token-dictionary.d.ts',
-          format: 'typescript/module-declarations',
+          format: formats.typescriptModuleDeclarations,
         },
       ],
     },

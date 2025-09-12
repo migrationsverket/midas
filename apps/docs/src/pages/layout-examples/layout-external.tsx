@@ -1,5 +1,5 @@
 import { Layout, LinkButton } from '@midas-ds/components'
-import { semantic } from '@midas-ds/components/theme'
+import { variables } from '@midas-ds/theme'
 import {
   Calendar,
   House,
@@ -92,13 +92,13 @@ export default function LayoutExample() {
     >
       <div
         style={{
-          background: semantic.layer02,
+          background: variables.layer02Base,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           height: '100vh',
-          border: `dotted 2px ${semantic.borderSubtle}`,
-          color: semantic.textPrimary,
+          border: `dotted 2px ${variables.borderColorSubtle}`,
+          color: variables.textPrimary,
         }}
       >
         Din applikation

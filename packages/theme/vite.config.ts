@@ -22,6 +22,7 @@ export default {
     lib: {
       entry: [
         'src/lib/index.ts',
+        'src/lib/global.css',
         'src/lib/style-dictionary-dist/variables.css',
       ],
       // Change this to the formats you want to support.

@@ -1,4 +1,3 @@
-import './theme/variables.css'
 export * from './accordion'
 export * from './badge'
 export * from './breadcrumbs'

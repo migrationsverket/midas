@@ -10,4 +10,7 @@ export default {
   setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
   testEnvironment: 'jsdom',
   modulePathIgnorePatterns: ['<rootDir>/src/utils'],
+  moduleNameMapper: {
+    '^@midas-ds/theme$': '<rootDir>/../theme/src',
+  },
 }
