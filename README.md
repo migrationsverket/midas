@@ -1,4 +1,4 @@
-![Component build](https://github.com/migrationsverket/midas/actions/workflows/components-ci.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/documentation-ci.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/test-storybook.yml/badge.svg) [![Chromatic](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml)
+![Component build](https://github.com/migrationsverket/midas/actions/workflows/pr-checks.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/deploy-docs-main.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/storybook-tests.yml/badge.svg) ![Chromatic](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml/badge.svg)
 
 # Midas
 
