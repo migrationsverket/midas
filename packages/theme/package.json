@@ -16,5 +16,17 @@
   "license": "CC0-1.0",
   "version": "1.0.2",
   "main": "./index.mjs",
-  "types": "./index.d.ts"
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs"
+    },
+    "./variables.css": {
+      "import": "./variables.css"
+    },
+    "./global.css": {
+      "import": "./global.css"
+    }
+  }
 }
