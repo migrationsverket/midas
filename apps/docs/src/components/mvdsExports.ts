@@ -27,7 +27,7 @@ import {
   InfoBanner,
 } from '@midas-ds/components'
 
-import { tokens } from '@midas-ds/theme'
+import { tokenDictionary } from '@midas-ds/theme'
 
 export {
   Button,
@@ -50,7 +50,7 @@ export {
   Select,
   Tabs,
   TextArea,
-  tokens,
+  tokenDictionary,
   Tooltip,
   Popover,
   DialogTrigger,

@@ -1,5 +1,5 @@
-import { tokens } from '@midas-ds/theme'
-const { windowSizes } = tokens
+import { tokenDictionary } from '@midas-ds/theme'
+const { windowSizes } = tokenDictionary
 
 export const customViewports = {
   smallest: { name: 'Smallest', styles: { width: '320px', height: '568px' } },

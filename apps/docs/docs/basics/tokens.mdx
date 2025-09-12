@@ -5,7 +5,7 @@ sidebar_label: Tokens
 sidebar_position: 8
 ---
 
-import {  tokens, variables } from '@midas-ds/theme'
+import { tokenDictionary } from '@midas-ds/theme'
 import { TokenList, Layers, ColorSpectrum, TokenNaming } from '@site/src/components/tokens'
 
 Här kan du läsa om hur vi använder färger i Midas. Vi använder i huvudsak en gråskala och en blå skala som grund för
@@ -13,7 +13,7 @@ våra gränssnitt. Gråskalan används främst för bakgrunder, ramar och typogr
 primära accentfärg för interaktiva element. Genom att bygga gränssnitt med dessa två paletter skapar vi ett tydligt,
 tillgängligt och konsekvent uttryck i hela designsystemet.
 
-<ColorSpectrum/>
+<ColorSpectrum />
 
 Tokens är tillgängliga som typescriptvariabler via:
 
@@ -50,7 +50,7 @@ Semantiska tokens är kopplade till referenstokens och är döpta för att beskr
 med ett prefix som anger deras syfte, t.ex "layer", "text" eller "border". Varje semantisk token har två referenstokens
 kopplade till sig, en för ljust och en för mörk läge.
 
-<TokenNaming/>
+<TokenNaming />
 
 ## Lager
 
@@ -62,58 +62,58 @@ används när en komponent ligger på `background` och tokens som slutar på 02 
 I ljust läge växlar färgerna mellan vitt och grått för varje lager medan varje nytt lager i mörkt läge får en ljusare
 grå nyans än det föregående, se exempel nedan.
 
-<Layers/>
+<Layers />
 
 ## Lista över semantiska tokens
 
 ### Bakgrunder
 
-<TokenList tokens={tokens.background} />
+<TokenList tokens={tokenDictionary.background} />
 
 ### Lager
 
-<TokenList tokens={tokens.layer} />
+<TokenList tokens={tokenDictionary.layer} />
 
 ### Accentfärger
 
-<TokenList tokens={tokens.layerAccent}/>
+<TokenList tokens={tokenDictionary.layerAccent} />
 
 ### Varumärke
 
-<TokenList tokens={tokens.brand} />
+<TokenList tokens={tokenDictionary.brand} />
 
 ### Kantlinje
 
-<TokenList tokens={tokens.border} />
+<TokenList tokens={tokenDictionary.border} />
 
 ### Fält
 
-<TokenList tokens={tokens.field} />
+<TokenList tokens={tokenDictionary.field} />
 
 ### Ikoner
 
-<TokenList tokens={tokens.icon} />
+<TokenList tokens={tokenDictionary.icon} />
 
 ### Länkar
 
-<TokenList tokens={tokens.link} />
+<TokenList tokens={tokenDictionary.link} />
 
 ### Notifikationer
 
-<TokenList tokens={tokens.support} />
+<TokenList tokens={tokenDictionary.support} />
 
 ### Text
 
-<TokenList tokens={tokens.text} />
+<TokenList tokens={tokenDictionary.text} />
 
 ### Knappar
 
-<TokenList tokens={tokens.button} />
+<TokenList tokens={tokenDictionary.button} />
 
 ### Meny
 
-<TokenList tokens={tokens.menu} />
+<TokenList tokens={tokenDictionary.menu} />
 
 ### Skeleton
 
-<TokenList tokens={tokens.skeleton} />
+<TokenList tokens={tokenDictionary.skeleton} />
