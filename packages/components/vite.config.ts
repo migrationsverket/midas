@@ -10,6 +10,7 @@ import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 const src = resolve(__dirname, 'src')
 const index = resolve(src, 'index.ts')
+const defaultCss = resolve(src, 'default.css')
 
 export default defineConfig({
   root: __dirname,
@@ -26,12 +27,7 @@ export default defineConfig({
     }),
     libInjectCss(),
   ],
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
-  // Configuration for building your library.
-  // See: https://vitejs.dev/guide/build.html#library-mode
+
   build: {
     outDir: '../../dist/packages/components',
     emptyOutDir: true,
@@ -41,21 +37,17 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     lib: {
-      entry: index,
+      entry: [index, resolve(__dirname, '../../packages/theme/src/lib/global.css')],
       name: 'components',
     },
     rollupOptions: {
-      // External packages that should not be bundled into your library.
-      external: ['react', 'react-dom', 'react/jsx-runtime', '@midas-ds/theme'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       input: Object.fromEntries([
+        ['default', defaultCss],
         ['index', index],
 
         ...globSync(`${src}/*/index.ts`).map(file => [
-          // 1. The name of the entry point
-          // packages/components/src/calendar/Calendar.tsx becomes calendar/Calendar
           relative(src, file.slice(0, file.length - extname(file).length)),
-          // 2. The absolute path to the entry file
-          // packages/components/src/calendar/Calendar.tsx becomes /home/adalovelace/projects/midas/packages/components/src/calendar/Calendar.tsx
           fileURLToPath(new URL(relative(__dirname, file), import.meta.url)),
         ]),
       ]),
@@ -65,7 +57,6 @@ export default defineConfig({
           entryFileNames: '[name].js',
           format: 'es',
         },
-        // TODO: Maybe remove the commonJS support entirely, I guess no one uses require("@midas-ds/components")
         {
           assetFileNames: 'assets/[name][extname]',
           entryFileNames: '[name].cjs',

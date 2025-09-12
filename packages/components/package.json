@@ -39,14 +39,8 @@
       "import": "./index.js",
       "require": "./index.cjs"
     },
-    "./global.css": {
-      "import": "./assets/global.css"
-    },
-    "./theme.css": {
-      "import": "./assets/theme.css"
-    },
-    "./variables.css": {
-      "import": "./assets/variables.css"
+    "./default.css": {
+      "import": "./assets/default.css"
     }
   },
   "dependencies": {
