@@ -12,6 +12,8 @@ const version: string = require(
   `${packagesDir}/components/package.json`,
 ).version
 
+const isUnreleased = !!process.env.UNRELEASED
+
 fs.readdirSync(packagesDir).forEach(dir => {
   if (dir.startsWith('.')) {
     return
@@ -32,7 +34,7 @@ fs.readdirSync(packagesDir).forEach(dir => {
 })
 
 const getBaseUrl = (): string => {
-  if (process.env.UNRELEASED) {
+  if (isUnreleased) {
     return `/unreleased/`
   }
 
@@ -44,7 +46,7 @@ const getBaseUrl = (): string => {
 }
 
 const config: Config = {
-  noIndex: !!process.env.UNRELEASED || !!process.env.PR_NUMBER,
+  noIndex: isUnreleased || !!process.env.PR_NUMBER,
   title: 'Migrationsverkets designsystem',
   tagline: 'Midas',
   url: 'https://designsystem.migrationsverket.se',
@@ -178,7 +180,9 @@ const config: Config = {
         {
           type: 'html',
           position: 'right',
-          value: `<code>Version ${version}</code>`,
+          value: isUnreleased
+            ? `<code class="unreleased"}">Version ${version} (unreleased)</code>`
+            : `<code>Version ${version}</code>`,
         },
         {
           href: 'https://github.com/migrationsverket/midas',

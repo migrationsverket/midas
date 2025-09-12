@@ -13,7 +13,9 @@ addons.setConfig({
     showRoots: true,
     renderLabel: item => {
       if (item.name === 'Components') {
-        return `Components – v.${version}`
+        return `Components - v.${version} ${
+          window.location.pathname.includes('unreleased') ? '(unreleased)' : ''
+        }`
       }
 
       return item.name
