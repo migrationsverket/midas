@@ -42,16 +42,6 @@ jobs:
       - name: Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
 
-      - name: Build affected projects
-        run: |
-          if [ "${{ github.event.inputs.project }}" = "all" ]; then
-            echo "Building all projects..."
-            npx nx run-many --targets=build --projects=components,theme
-          else
-            echo "Building project ${{ github.event.inputs.project }}..."
-            npx nx run-many --targets=build --projects=${{ github.event.inputs.project }}
-          fi
-
       - name: Run Nx Release
         run: |
           git config --global user.email "bot@midas.dev"
