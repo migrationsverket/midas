@@ -16,21 +16,42 @@
           }
         },
         "chore": {
+          "semverBump": "none",
           "changelog": {
             "title": "🔧 Maintenance"
           }
         },
-        "refactor": {},
+        "refactor": {
+          "changelog": {
+            "title": "\uD83C\uDFED Refactoring"
+          }
+        },
         "perf": {
           "changelog": {
             "title": "🏇 Performance improvements"
           }
         },
         "style": {
+          "semverBump": "none",
           "title": "✏️ Code style changes"
         },
         "revert": {
-          "title": "🔙 Rollback changes"
+          "changelog": {
+            "title": "🔙 Rollback changes"
+          }
+        },
+        "ops": {
+          "semverBump": "none",
+          "changelog": {
+            "title": "\uD83C\uDF6C DevOps changes"
+          }
+        },
+        "types": {
+          "__INVALID__": {
+            "changelog": {
+              "title": "Uncategorized changes"
+            }
+          }
         }
       }
     },
