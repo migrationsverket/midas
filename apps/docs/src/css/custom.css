@@ -461,6 +461,11 @@ table {
 
 code {
   border: 0.1rem solid var(--docusaurus-highlighted-code-line-bg);
+
+  &.unreleased {
+    background-color: #b90835;
+    color: white;
+  }
 }
 
 .margin-0 {
