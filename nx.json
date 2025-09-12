@@ -38,6 +38,7 @@
       "commitReferences": true,
       "workspaceChangelog": false,
       "projectChangelogs": {
+        "createRelease": "github",
         "renderOptions": {
           "authors": false,
           "versionTitleDate": true
@@ -55,7 +56,6 @@
       "preVersionCommand": "npx nx run-many -t -p=[components, theme] build",
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
-      "fallbackCurrentVersionResolver": "disk",
       "updateDependents": "auto",
       "preserveLocalDependencyProtocols": false
     }
