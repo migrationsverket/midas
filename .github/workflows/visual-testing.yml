@@ -1,4 +1,4 @@
-name: 'Chromatic'
+name: 'Visual Testing (Chromatic)'
 
 permissions:
   contents: read

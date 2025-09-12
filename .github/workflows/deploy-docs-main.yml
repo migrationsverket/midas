@@ -1,4 +1,4 @@
-name: DocWeb - Deploy to GitHub Pages
+name: 'Deploy Docs (Main)'
 
 on:
   push:
