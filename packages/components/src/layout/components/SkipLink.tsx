@@ -11,7 +11,7 @@ interface SkipLinkProps {
 }
 
 export const SkipLink: React.FC<SkipLinkProps> = ({
-  id = '#main:first-of-type',
+  id = 'main:first-of-type',
 }) => {
   const handleSkipToContent = () => {
     const container = document.querySelector<HTMLElement>(id)
