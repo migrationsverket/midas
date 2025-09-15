@@ -1,5 +1,19 @@
 {
   "name": "@midas-ds/table-styles",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/table-styles"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Midas table styles",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
   "version": "0.0.1",
   "type": "module",
   "main": "./index.js",
