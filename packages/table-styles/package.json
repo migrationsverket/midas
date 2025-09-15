@@ -1,0 +1,13 @@
+{
+  "name": "@midas-ds/table-styles",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "dependencies": {},
+  "exports": {
+    "./tanstack-table.css": {
+      "import": "./tanstack-table.css"
+    }
+  }
+}
