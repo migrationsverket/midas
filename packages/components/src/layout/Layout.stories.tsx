@@ -15,7 +15,7 @@ import {
 import { variables } from '@midas-ds/theme'
 import { LinkButton } from '../link-button'
 import { Button } from '../button'
-import { expect } from 'storybook/test'
+import { expect, userEvent } from 'storybook/test'
 import styles from './Layout.module.css'
 const { layer02Base, borderColorSubtle, textPrimary } = variables
 
@@ -169,6 +169,7 @@ export const External: Story = {
 export const OnlyHeader: Story = {
   render: () => (
     <Layout.Provider
+      id='test'
       items={items}
       title='Skapa ansökningar'
       user={{ name: 'Test Testsson', title: 'Testare' }}
@@ -193,6 +194,7 @@ export const OnlyHeader: Story = {
 export const Navbar: Story = {
   render: () => (
     <Layout.Provider
+      id='test'
       items={items}
       title='Skapa ansökningar'
       user={{ name: 'Test Testsson', title: 'Testare' }}
@@ -212,4 +214,19 @@ export const Navbar: Story = {
       <Layout.Navbar />
     </Layout.Provider>
   ),
+}
+
+export const DS1375: Story = {
+  ...Primary,
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  play: async ({ canvas, step }) => {
+    await step('it should be possible to skip to content', async () => {
+      await userEvent.tab()
+      await userEvent.keyboard('[Enter]')
+      await expect(canvas.getByRole('main')).toHaveFocus()
+    })
+  },
 }

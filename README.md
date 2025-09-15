@@ -1,4 +1,7 @@
-![Component build](https://github.com/migrationsverket/midas/actions/workflows/pr-checks.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/deploy-docs-main.yml/badge.svg) ![Docs](https://github.com/migrationsverket/midas/actions/workflows/storybook-tests.yml/badge.svg) ![Chromatic](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml/badge.svg)
+[![Chromatic](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml)
+[![Release](https://github.com/migrationsverket/midas/actions/workflows/manual-release.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/manual-release.yml)
+[![Docs](https://github.com/migrationsverket/midas/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/publish-docs.yml)
+[![PR Checks](https://github.com/migrationsverket/midas/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/pr-checks.yml)
 
 # Midas
 
