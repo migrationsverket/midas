@@ -78,18 +78,6 @@
         }
       }
     },
-    "generate-dependencies": {
-      "dependsOn": [
-        {
-          "target": "build"
-        }
-      ],
-      "executor": "@midas-ds/dependencies:dependencies",
-      "options": {
-        "outputDir": "dist/packages/components",
-        "filter": "@storybook"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
