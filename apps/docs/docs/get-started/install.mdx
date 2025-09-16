@@ -4,79 +4,26 @@ sidebar_label: Installera
 sidebar_position: 2
 ---
 
-import { ThemeExample } from '@site/src/components/examples/dev/InstallationExamples'
-
-Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn. Alla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket.
+Midas kan installeras och användas i ett React-projekt med en pakethanterare som till exempel npm eller yarn.
+Alla komponenter är inkluderade i ett paket för att underlätta installation och uppdatering av komponentbiblioteket.
 
 ```bash npm2yarn
 npm install @midas-ds/components
 ```
 
-## Importera och använd komponent
+## Snabbstart
 
-Generellt, importera och använd direkt:
-
-```tsx {1,6}
-import { Button } from '@midas-ds/components'
-
-export default function App({ children }) {
-  return (
-    <main>
-      <Button variant='primary'>Klicka här</Button>
-      {children}
-    </main>
-  )
-}
-
-export default App
-```
-
-För specifika instruktioner, se respektive komponent på våra [komponentsidor](/components/accordion) eller utforska komponenterna mer i vår Storybook.
-
-## Använda tokens/theme
-
-Importera `variables.css` i roten av din applikation:
+För en snabb och enkel start, importera `default.css`. Denna fil innehåller allt du behöver: typsnitt och CSS-variabler för att stilasätta komponenterna. Importera filen i roten av din applikation:
 
 ```tsx title="main.tsx"
-import '@midas-ds/components/variables.css'
+import '@midas-ds/components/default.css'
 ```
 
-Använd Midas tokens (läs mer om våra [tokens](/basics/tokens/)) som variabler i css:
+### Importera och använd en komponent
 
-```css title="App.css"
-.kaffekopp {
-  border: 1px solid var(--midas-border-color-primary);
-  background-color: var(--midas-button-background-primary-base);
-  color: var(--midas-text-on-color);
-  padding: var(--midas-spacing-30);
-  width: fit-content;
+Efter installationen kan du importera och använda komponenter direkt:
 
-  &:hover {
-    background-color: var(--midas-button-background-primary-hover);
-  }
-}
-```
-
-```tsx title="App.tsx"
-import 'App.css'
-
-export default function App() {
-  return <div className={'kaffekopp'}>Colombiansk bönjuice</div>
-}
-
-export default App
-```
-
-<div className={'card'}>
-  <ThemeExample />
-</div>
-
-## Installera Inter som typsnitt
-
-Detta är ett rekommenderat sätt att installera vårt typsnitt Inter.
-
-```tsx {1} title="App.tsx (rootfilen i din app)"
-import '@midas-ds/components/global.css'
+```tsx {1,6} title="App.tsx"
 import { Button } from '@midas-ds/components'
 
 export default function App({ children }) {
@@ -91,15 +38,55 @@ export default function App({ children }) {
 export default App
 ```
 
-Det går självklart att använda andra metoder så länge vikterna 400, 500 och 600 inkluderas samt att det importerade typsnittet heter just "Inter" för att komponenterna ska ta användning av det.
+För specifika instruktioner, se respektive komponent på våra [komponentsidor](/components/accordion) eller
+utforska komponenterna mer i vår [Storybook](https://designsystem.migrationsverket.se/storybook/).
 
-Mer info finns på [GitHub](https://github.com/migrationsverket/midas) samt under [guider](/dev/common-issues)
+## Avancerad installation
 
-## Dependencies
+För mer granulär kontroll kan du installera och importera typsnitt och variabler separat. Detta är användbart om du vill
+undvika att blanda CSS-filer eller ha mer kontroll över hur typsnitt laddas.
 
-Midas bygger på flertalet beroenden som kan vara bra att känna till. Förutom att vara ett komponentbibliotek baserat på React, så innehåller Midas även verktyg och bibliotek som underlättar utveckling och säkerställer tillgänglighet.
+### 1. Installera temapaketet
 
-- [React Aria](https://react-spectrum.adobe.com/react-aria/) - Alla komponenter med några få undantag baseras på React Arias bibliotek för att säkerställa tillgänglighet och användarvänlighet. Använder du en komponent från Midas kan det även vara värt att läsa React Arias motsvarande dokumentation. Dessa finns länkade på komponentsidan.
+För att använda Midas variabler och typsnitt separat från komponenterna, installera `@midas-ds/theme`:
+
+```bash npm2yarn
+npm install @midas-ds/theme
+```
+
+### 2. Importera variabler och typsnitt
+
+Importera de delar du behöver i roten av din applikation:
+
+```tsx title="main.tsx"
+// Importera enbart CSS-variabler
+import '@midas-ds/theme/variables.css'
+
+// Importera enbart typsnittet Inter
+import '@midas-ds/theme/global.css'
+```
+:::info
+Du kan självklart använda andra metoder för att ladda typsnittet, så länge vikterna 400, 500 och 600 av "Inter" inkluderas.
+:::
+
+### 3. Använd tokens i CSS
+
+Du kan nu använda Midas design tokens som CSS-variabler. Läs mer om våra [tokens](/basics/tokens/) för att se alla tillgängliga alternativ.
+
+```css title="index.css"
+.myClass {
+    background-color: var(--midas-background-base);
+}
+```
+
+## Headless-bibliotek och andra beroenden
+
+Midas bygger på flertalet beroenden som kan vara bra att känna till. Förutom att vara ett komponentbibliotek baserat på React,
+så innehåller Midas även verktyg och bibliotek som underlättar utveckling och säkerställer tillgänglighet.
+
+- [React Aria](https://react-spectrum.adobe.com/react-aria/) - Alla komponenter med några få undantag baseras på React Arias bibliotek för att säkerställa tillgänglighet
+och användarvänlighet. Använder du en komponent från Midas kan det även vara värt att läsa React Arias motsvarande dokumentation.
+Dessa finns länkade på komponentsidan.
 - [Lucide Icons](https://lucide.dev/) - Midas använder Lucide Icons för att tillhandahålla ikoner i komponenter.
 
 ## Rapportera buggar eller förslag till nya features

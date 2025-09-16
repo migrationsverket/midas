@@ -3,6 +3,8 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+@import url('../../../../packages/theme/src/lib/global.css');
+@import url('../../../../packages/theme/src/lib/style-dictionary-dist/variables.css');
 
 @font-face {
   /* stylelint-disable-next-line font-family-name-quotes */
@@ -83,12 +85,11 @@
   --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
   --ifm-card-background-color: #000;
-  --ifm-code-background: var(--ifm-background-color);
 }
 
 .theme-code-block {
   box-shadow: none !important;
-  border: 1px solid var(--ifm-color-emphasis-200);
+  /*border: 1px solid var(--ifm-color-emphasis-200);*/
   max-height: 600px;
   overflow-y: auto;
 }
