@@ -20,10 +20,6 @@ fs.readdirSync(packagesDir).forEach(dir => {
   const packagePath = path.resolve(packagesDir, dir)
 
   if (fs.statSync(packagePath).isDirectory()) {
-    packageAliases[`@midas-ds/${dir}/theme`] = path.resolve(
-      packagePath,
-      'src/theme/index.ts',
-    )
     packageAliases[`@midas-ds/${dir}`] = path.resolve(
       packagePath,
       'src/index.ts',
