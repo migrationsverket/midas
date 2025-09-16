@@ -90,11 +90,29 @@ declare const tokens: {
       "20": DesignToken;
       "30": DesignToken;
       "100": DesignToken;
+      "150": DesignToken;
     };
     signalYellow: {
       "10": DesignToken;
       "20": DesignToken;
+      "30": DesignToken;
+      "40": DesignToken;
+      "50": DesignToken;
+      "60": DesignToken;
+      "70": DesignToken;
+      "80": DesignToken;
+      "90": DesignToken;
       "100": DesignToken;
+      "110": DesignToken;
+      "120": DesignToken;
+      "130": DesignToken;
+      "140": DesignToken;
+      "150": DesignToken;
+      "160": DesignToken;
+      "170": DesignToken;
+      "180": DesignToken;
+      "190": DesignToken;
+      "200": DesignToken;
     };
     signalRed: {
       "10": DesignToken;
