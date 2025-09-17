@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@midas-ds/components": ["packages/components/src/index.ts"],
+      "@midas-ds/style-dictionary": ["tools/style-dictionary/src/index.ts"],
       "@midas-ds/table-styles": ["packages/table-styles/src/index.ts"],
       "@midas-ds/theme": ["packages/theme/src/index.ts"],
       "@midas-ds/workspace-tools": ["workspace-tools/src/index.ts"]

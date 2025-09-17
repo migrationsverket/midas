@@ -7,7 +7,7 @@ export default {
     sm: {
       key: "{windowSizes.sm}",
       $value: "480px",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -22,7 +22,7 @@ export default {
     md: {
       key: "{windowSizes.md}",
       $value: "768px",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -37,7 +37,7 @@ export default {
     lg: {
       key: "{windowSizes.lg}",
       $value: "1024px",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -52,7 +52,7 @@ export default {
     xl: {
       key: "{windowSizes.xl}",
       $value: "1280px",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -69,7 +69,7 @@ export default {
     xs: {
       key: "{breakpoints.xs}",
       $value: "(max-width: calc(480px - 1px))",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
@@ -84,7 +84,7 @@ export default {
     sm: {
       key: "{breakpoints.sm}",
       $value: "(min-width: 480px)",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
@@ -99,7 +99,7 @@ export default {
     md: {
       key: "{breakpoints.md}",
       $value: "(min-width: 768px)",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
@@ -114,7 +114,7 @@ export default {
     lg: {
       key: "{breakpoints.lg}",
       $value: "(min-width: 1024px)",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
@@ -130,7 +130,7 @@ export default {
       key: "{breakpoints.xl}",
       $value: "(min-width: 1280px)",
       $comment: "This is the largest breakpoint",
-      filePath: "tokens/breakpoints.json",
+      filePath: "packages/theme/tokens/breakpoints.json",
       isSource: true,
       $type: "string",
       original: {
@@ -150,7 +150,7 @@ export default {
         key: "{color.black.base}",
         $value: "#000",
         $description: "Black",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -167,7 +167,7 @@ export default {
         key: "{color.black.hover}",
         $value: "#0d0d0d",
         $description: "Black hover",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -186,7 +186,7 @@ export default {
         key: "{color.white.base}",
         $value: "#fff",
         $description: "White",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -203,7 +203,7 @@ export default {
         key: "{color.white.hover}",
         $value: "#e6e6e6",
         $description: "White hover",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -221,7 +221,7 @@ export default {
       10: {
         key: "{color.gray.10}",
         $value: "#f2f2f2",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -236,7 +236,7 @@ export default {
       20: {
         key: "{color.gray.20}",
         $value: "#e6e6e6",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -251,7 +251,7 @@ export default {
       30: {
         key: "{color.gray.30}",
         $value: "#d9d9d9",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -266,7 +266,7 @@ export default {
       40: {
         key: "{color.gray.40}",
         $value: "#ccc",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -281,7 +281,7 @@ export default {
       50: {
         key: "{color.gray.50}",
         $value: "#bfbfbf",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -296,7 +296,7 @@ export default {
       60: {
         key: "{color.gray.60}",
         $value: "#b3b3b3",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -311,7 +311,7 @@ export default {
       70: {
         key: "{color.gray.70}",
         $value: "#a6a6a6",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -326,7 +326,7 @@ export default {
       80: {
         key: "{color.gray.80}",
         $value: "#999",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -341,7 +341,7 @@ export default {
       90: {
         key: "{color.gray.90}",
         $value: "#8c8c8c",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -356,7 +356,7 @@ export default {
       100: {
         key: "{color.gray.100}",
         $value: "#808080",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -371,7 +371,7 @@ export default {
       110: {
         key: "{color.gray.110}",
         $value: "#737373",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -386,7 +386,7 @@ export default {
       120: {
         key: "{color.gray.120}",
         $value: "#666",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -401,7 +401,7 @@ export default {
       130: {
         key: "{color.gray.130}",
         $value: "#5d5d5d",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -416,7 +416,7 @@ export default {
       140: {
         key: "{color.gray.140}",
         $value: "#525252",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -431,7 +431,7 @@ export default {
       150: {
         key: "{color.gray.150}",
         $value: "#474747",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -446,7 +446,7 @@ export default {
       160: {
         key: "{color.gray.160}",
         $value: "#383838",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -461,7 +461,7 @@ export default {
       170: {
         key: "{color.gray.170}",
         $value: "#333",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -476,7 +476,7 @@ export default {
       180: {
         key: "{color.gray.180}",
         $value: "#262626",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -491,7 +491,7 @@ export default {
       190: {
         key: "{color.gray.190}",
         $value: "#212121",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -506,7 +506,7 @@ export default {
       200: {
         key: "{color.gray.200}",
         $value: "#171717",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -523,7 +523,7 @@ export default {
       10: {
         key: "{color.blue.10}",
         $value: "#eaf2f6",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -538,7 +538,7 @@ export default {
       20: {
         key: "{color.blue.20}",
         $value: "#d5e5ed",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -553,7 +553,7 @@ export default {
       40: {
         key: "{color.blue.40}",
         $value: "#abcbdb",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -568,7 +568,7 @@ export default {
       50: {
         key: "{color.blue.50}",
         $value: "#94BCD1",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -583,7 +583,7 @@ export default {
       60: {
         key: "{color.blue.60}",
         $value: "#82b0c9",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -598,7 +598,7 @@ export default {
       70: {
         key: "{color.blue.70}",
         $value: "#6CA3C0",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -613,7 +613,7 @@ export default {
       80: {
         key: "{color.blue.80}",
         $value: "#5897b8",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -628,7 +628,7 @@ export default {
       90: {
         key: "{color.blue.90}",
         $value: "#4289ad",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -643,7 +643,7 @@ export default {
       100: {
         key: "{color.blue.100}",
         $value: "#2e7ca5",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -658,7 +658,7 @@ export default {
       110: {
         key: "{color.blue.110}",
         $value: "#2C7399",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -673,7 +673,7 @@ export default {
       120: {
         key: "{color.blue.120}",
         $value: "#29698C",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -688,7 +688,7 @@ export default {
       130: {
         key: "{color.blue.130}",
         $value: "#25607f",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -703,7 +703,7 @@ export default {
       150: {
         key: "{color.blue.150}",
         $value: "#143c50",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -720,7 +720,7 @@ export default {
       80: {
         key: "{color.purple.80}",
         $value: "#b46ab4",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -735,7 +735,7 @@ export default {
       110: {
         key: "{color.purple.110}",
         $value: "#954b95",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -752,7 +752,7 @@ export default {
       100: {
         key: "{color.red.100}",
         $value: "#b90835",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -769,7 +769,7 @@ export default {
       10: {
         key: "{color.signalBlue.10}",
         $value: "#eaf2f6",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -784,7 +784,7 @@ export default {
       20: {
         key: "{color.signalBlue.20}",
         $value: "#d5e5ed",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -799,7 +799,7 @@ export default {
       100: {
         key: "{color.signalBlue.100}",
         $value: "#06c",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -816,7 +816,7 @@ export default {
       20: {
         key: "{color.signalGreen.20}",
         $value: "#d5f2d9",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -831,7 +831,7 @@ export default {
       30: {
         key: "{color.signalGreen.30}",
         $value: "#bae5c5",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -846,7 +846,7 @@ export default {
       100: {
         key: "{color.signalGreen.100}",
         $value: "#008d3c",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -861,7 +861,7 @@ export default {
       150: {
         key: "{color.signalGreen.150}",
         $value: "#194B33",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -878,7 +878,7 @@ export default {
       10: {
         key: "{color.signalYellow.10}",
         $value: "#fff8e2",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -893,7 +893,7 @@ export default {
       20: {
         key: "{color.signalYellow.20}",
         $value: "#fff1cd",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -908,7 +908,7 @@ export default {
       30: {
         key: "{color.signalYellow.30}",
         $value: "#ffeab8",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -923,7 +923,7 @@ export default {
       40: {
         key: "{color.signalYellow.40}",
         $value: "#ffe3a3",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -938,7 +938,7 @@ export default {
       50: {
         key: "{color.signalYellow.50}",
         $value: "#ffdc8b",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -953,7 +953,7 @@ export default {
       60: {
         key: "{color.signalYellow.60}",
         $value: "#ffd47b",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -968,7 +968,7 @@ export default {
       70: {
         key: "{color.signalYellow.70}",
         $value: "#fdcd5d",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -983,7 +983,7 @@ export default {
       80: {
         key: "{color.signalYellow.80}",
         $value: "#fbc640",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -998,7 +998,7 @@ export default {
       90: {
         key: "{color.signalYellow.90}",
         $value: "#fabf1b",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1013,7 +1013,7 @@ export default {
       100: {
         key: "{color.signalYellow.100}",
         $value: "#fab900",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1028,7 +1028,7 @@ export default {
       110: {
         key: "{color.signalYellow.110}",
         $value: "#daa105",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1043,7 +1043,7 @@ export default {
       120: {
         key: "{color.signalYellow.120}",
         $value: "#bd8c1e",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1058,7 +1058,7 @@ export default {
       130: {
         key: "{color.signalYellow.130}",
         $value: "#a17927",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1073,7 +1073,7 @@ export default {
       140: {
         key: "{color.signalYellow.140}",
         $value: "#88672a",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1088,7 +1088,7 @@ export default {
       150: {
         key: "{color.signalYellow.150}",
         $value: "#70562b",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1103,7 +1103,7 @@ export default {
       160: {
         key: "{color.signalYellow.160}",
         $value: "#5a4629",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1118,7 +1118,7 @@ export default {
       170: {
         key: "{color.signalYellow.170}",
         $value: "#453826",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1133,7 +1133,7 @@ export default {
       180: {
         key: "{color.signalYellow.180}",
         $value: "#322a20",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1148,7 +1148,7 @@ export default {
       190: {
         key: "{color.signalYellow.190}",
         $value: "#201c18",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1163,7 +1163,7 @@ export default {
       200: {
         key: "{color.signalYellow.200}",
         $value: "#0f0e0e",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1180,7 +1180,7 @@ export default {
       10: {
         key: "{color.signalRed.10}",
         $value: "#ffefef",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1195,7 +1195,7 @@ export default {
       20: {
         key: "{color.signalRed.20}",
         $value: "#ffdfdf",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1210,7 +1210,7 @@ export default {
       30: {
         key: "{color.signalRed.30}",
         $value: "#fcc8c8",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1225,7 +1225,7 @@ export default {
       40: {
         key: "{color.signalRed.40}",
         $value: "#f9b0b0",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1240,7 +1240,7 @@ export default {
       50: {
         key: "{color.signalRed.50}",
         $value: "#f69999",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1255,7 +1255,7 @@ export default {
       60: {
         key: "{color.signalRed.60}",
         $value: "#f38181",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1270,7 +1270,7 @@ export default {
       70: {
         key: "{color.signalRed.70}",
         $value: "#ef6a6a",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1285,7 +1285,7 @@ export default {
       80: {
         key: "{color.signalRed.80}",
         $value: "#EC5252",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1300,7 +1300,7 @@ export default {
       90: {
         key: "{color.signalRed.90}",
         $value: "#e93b3b",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1315,7 +1315,7 @@ export default {
       100: {
         key: "{color.signalRed.100}",
         $value: "#e62323",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1330,7 +1330,7 @@ export default {
       110: {
         key: "{color.signalRed.110}",
         $value: "#d12020",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1345,7 +1345,7 @@ export default {
       120: {
         key: "{color.signalRed.120}",
         $value: "#bc1d1d",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1360,7 +1360,7 @@ export default {
       130: {
         key: "{color.signalRed.130}",
         $value: "#a71919",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1375,7 +1375,7 @@ export default {
       140: {
         key: "{color.signalRed.140}",
         $value: "#921616",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1390,7 +1390,7 @@ export default {
       150: {
         key: "{color.signalRed.150}",
         $value: "#7d1313",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1405,7 +1405,7 @@ export default {
       160: {
         key: "{color.signalRed.160}",
         $value: "#691010",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1420,7 +1420,7 @@ export default {
       170: {
         key: "{color.signalRed.170}",
         $value: "#540d0d",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1435,7 +1435,7 @@ export default {
       180: {
         key: "{color.signalRed.180}",
         $value: "#3f0a0a",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1450,7 +1450,7 @@ export default {
       190: {
         key: "{color.signalRed.190}",
         $value: "#2a0606",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1465,7 +1465,7 @@ export default {
       200: {
         key: "{color.signalRed.200}",
         $value: "#150303",
-        filePath: "tokens/colors.json",
+        filePath: "packages/theme/tokens/colors.json",
         isSource: true,
         $type: "color",
         original: {
@@ -1484,7 +1484,7 @@ export default {
       key: "{background.base}",
       $value: "light-dark(#fff, #171717)",
       $description: "Standardbakgrund för våra applikationer",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.white.base}, {color.gray.200})",
@@ -1499,7 +1499,7 @@ export default {
       key: "{background.hover}",
       $value: "light-dark(#e6e6e6, #212121)",
       $description: "Hoverfärg för bakgrund",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.white.hover}, {color.gray.190})",
@@ -1514,7 +1514,7 @@ export default {
       key: "{background.inverse}",
       $value: "light-dark(#171717, #f2f2f2)",
       $description: "Bakgrund eller element i med hög kontrast",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.200}, {color.gray.10})",
@@ -1532,7 +1532,7 @@ export default {
         key: "{layer.01.base}",
         $value: "light-dark(#f2f2f2, #262626)",
         $description: "Yta som används på background. Sekundär bakgrundsfärg",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -1547,7 +1547,7 @@ export default {
         key: "{layer.01.hover}",
         $value: "light-dark(#e6e6e6, #333)",
         $description: "Hover state för layer01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.20}, {color.gray.170})",
@@ -1562,7 +1562,7 @@ export default {
         key: "{layer.01.selected}",
         $value: "light-dark(#d9d9d9, #383838)",
         $description: "Selected state för layer01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.30}, {color.gray.160})",
@@ -1577,7 +1577,7 @@ export default {
         key: "{layer.01.selectedHover}",
         $value: "light-dark(#ccc, #474747)",
         $description: "Hover state för layerSelected01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.40}, {color.gray.150})",
@@ -1594,7 +1594,7 @@ export default {
         key: "{layer.02.base}",
         $value: "light-dark(#fff, #383838)",
         $description: "Yta som ligger på layer01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.white.base}, {color.gray.160})",
@@ -1609,7 +1609,7 @@ export default {
         key: "{layer.02.hover}",
         $value: "light-dark(#e6e6e6, #474747)",
         $description: "Hover state för layer02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.white.hover}, {color.gray.150})",
@@ -1624,7 +1624,7 @@ export default {
         key: "{layer.02.selected}",
         $value: "light-dark(#d9d9d9, #525252)",
         $description: "Selected state för layer02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.30}, {color.gray.140})",
@@ -1639,7 +1639,7 @@ export default {
         key: "{layer.02.selectedHover}",
         $value: "light-dark(#ccc, #5d5d5d)",
         $description: "Hover state för layerSelected02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.40}, {color.gray.130})",
@@ -1658,7 +1658,7 @@ export default {
         key: "{layerAccent.01.base}",
         $value: "light-dark(#d9d9d9, #383838)",
         $description: "Accentfärg som används tillsammans med layer01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.30}, {color.gray.160})",
@@ -1673,7 +1673,7 @@ export default {
         key: "{layerAccent.01.hover}",
         $value: "light-dark(#ccc, #474747)",
         $description: "Hover state för layerAccent01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.40}, {color.gray.150})",
@@ -1688,7 +1688,7 @@ export default {
         key: "{layerAccent.01.selected}",
         $value: "light-dark(#bfbfbf, #525252)",
         $description: "Selected state för layerAccent01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.50}, {color.gray.140})",
@@ -1705,7 +1705,7 @@ export default {
         key: "{layerAccent.02.base}",
         $value: "light-dark(#f2f2f2, #262626)",
         $description: "Accentfärg som används tillsammans med layer02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -1720,7 +1720,7 @@ export default {
         key: "{layerAccent.02.hover}",
         $value: "light-dark(#e6e6e6, #333)",
         $description: "Hover state för layerAccent02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.20}, {color.gray.170})",
@@ -1735,7 +1735,7 @@ export default {
         key: "{layerAccent.02.selected}",
         $value: "light-dark(#d9d9d9, #383838)",
         $description: "Selected state för layerAccent02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.30}, {color.gray.160})",
@@ -1753,7 +1753,7 @@ export default {
       key: "{brand.primary}",
       $value: "light-dark(#b90835, #b90835)",
       $description: "Primära röda färgen",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.red.100}, {color.red.100})",
@@ -1771,7 +1771,7 @@ export default {
         key: "{border.color.primary}",
         $value: "light-dark(#171717, #f2f2f2)",
         $description: "Kantlinje med hög kontrast, används med field01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.200}, {color.gray.10})",
@@ -1786,7 +1786,7 @@ export default {
         key: "{border.color.secondary}",
         $value: "light-dark(#737373, #8c8c8c)",
         $description: "Kantlinje med medelhög kontrast",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.110}, {color.gray.90})",
@@ -1801,7 +1801,7 @@ export default {
         key: "{border.color.subtle}",
         $value: "light-dark(#bfbfbf, #383838)",
         $description: "Kantlinje med låg kontrast",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.50}, {color.gray.160})",
@@ -1816,7 +1816,7 @@ export default {
         key: "{border.color.tertiary}",
         $value: "light-dark(#143c50, #2e7ca5)",
         $description: "Primärblå kantlinje",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.blue.150}, {color.blue.100})",
@@ -1831,7 +1831,7 @@ export default {
         key: "{border.color.disabled}",
         $value: "light-dark(#bfbfbf, #525252)",
         $description: "Kantlinje för disabled state",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.50}, {color.gray.140})",
@@ -1847,7 +1847,7 @@ export default {
       key: "{border.width}",
       $type: "size",
       $value: "1px",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $type: "size",
@@ -1865,7 +1865,7 @@ export default {
         key: "{field.01.base}",
         $value: "light-dark(#f2f2f2, #262626)",
         $description: "Standardfärg för fält, som ligger på background",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -1880,7 +1880,7 @@ export default {
         key: "{field.01.hover}",
         $value: "light-dark(#e6e6e6, #333)",
         $description: "Hover state för field01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.20}, {color.gray.170})",
@@ -1895,7 +1895,7 @@ export default {
         key: "{field.01.active}",
         $value: "light-dark(#d9d9d9, #383838)",
         $description: "Active state för field01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.30}, {color.gray.160})",
@@ -1912,7 +1912,7 @@ export default {
         key: "{field.02.base}",
         $value: "light-dark(#fff, #383838)",
         $description: "Sekundfärfärg för fält, som ligger på layer01",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.white.base}, {color.gray.160})",
@@ -1927,7 +1927,7 @@ export default {
         key: "{field.02.hover}",
         $value: "light-dark(#e6e6e6, #474747)",
         $description: "Hover state för field02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.white.hover}, {color.gray.150})",
@@ -1942,7 +1942,7 @@ export default {
         key: "{field.02.active}",
         $value: "light-dark(#d9d9d9, #525252)",
         $description: "Active state för field02",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.30}, {color.gray.140})",
@@ -1958,7 +1958,7 @@ export default {
       key: "{field.disabled}",
       $value: "light-dark(#f2f2f2, #262626)",
       $description: "Disabled state för fält",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -1975,7 +1975,7 @@ export default {
       key: "{skeleton.01}",
       $value: "light-dark(#f2f2f2, #262626)",
       $description: "Standardfärg för skeleton",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -1991,7 +1991,7 @@ export default {
       $value: "light-dark(#d9d9d9, #383838)",
       $description:
         "Färg som används när Skeleton ligger på bakgrundsfärgen `layer01` eller `light-dark(#f2f2f2,#262626)`",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.30}, {color.gray.160})",
@@ -2009,7 +2009,7 @@ export default {
       key: "{icon.primary}",
       $value: "light-dark(#171717, #f2f2f2)",
       $description: "Primär ikonfärg",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.200}, {color.gray.10})",
@@ -2024,7 +2024,7 @@ export default {
       key: "{icon.secondary}",
       $value: "light-dark(#525252, #a6a6a6)",
       $description: "Sekundär ikonfärg",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.140}, {color.gray.70})",
@@ -2038,7 +2038,7 @@ export default {
     tertiary: {
       key: "{icon.tertiary}",
       $value: "light-dark(#143c50, #f2f2f2)",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.blue.150}, {color.gray.10})",
@@ -2053,7 +2053,7 @@ export default {
       $value: "light-dark(#fff, #171717)",
       $description:
         "Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.white.base}, {color.gray.200})",
@@ -2069,7 +2069,7 @@ export default {
       key: "{icon.onColor}",
       $value: "light-dark(#fff, #fff)",
       $description: "Ikonfärg på färgade ytor som inte är lager",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.white.base}, {color.white.base})",
@@ -2084,7 +2084,7 @@ export default {
       key: "{icon.disabled}",
       $value: "light-dark(#bfbfbf, #525252)",
       $description: "Ikoner som är disabled",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.50}, {color.gray.140})",
@@ -2099,7 +2099,7 @@ export default {
       key: "{icon.success}",
       $value: "light-dark(#008d3c, #008d3c)",
       $description: "Ikonfär för success state",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
@@ -2114,7 +2114,7 @@ export default {
       key: "{icon.info}",
       $value: "light-dark(#06c, #06c)",
       $description: "Ikonfärg för informationsikoner",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.signalBlue.100}, {color.signalBlue.100})",
@@ -2129,7 +2129,7 @@ export default {
       key: "{icon.warning}",
       $value: "light-dark(#e62323, #e62323)",
       $description: "Ikonfärg för varningsikoner och invalid state",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.signalRed.100}, {color.signalRed.100})",
@@ -2144,7 +2144,7 @@ export default {
       key: "{icon.important}",
       $value: "light-dark(#fab900, #fab900)",
       $description: "Ikonfärg för viktig information",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value:
@@ -2162,7 +2162,7 @@ export default {
       key: "{link.enabled}",
       $value: "light-dark(#29698C, #6CA3C0)",
       $description: "Primärlänkfärg",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.blue.120}, {color.blue.70})",
@@ -2177,7 +2177,7 @@ export default {
       key: "{link.hover}",
       $value: "light-dark(#143c50, #94BCD1)",
       $description: "Hover state för länkar",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.blue.150}, {color.blue.50})",
@@ -2192,7 +2192,7 @@ export default {
       key: "{link.pressed}",
       $value: "light-dark(#171717, #abcbdb)",
       $description: "Active/pressed state för länkar",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.200}, {color.blue.40})",
@@ -2207,7 +2207,7 @@ export default {
       key: "{link.visited}",
       $value: "light-dark(#954b95, #b46ab4)",
       $description: "Färg för besökta länkar",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.purple.110}, {color.purple.80})",
@@ -2225,7 +2225,7 @@ export default {
         key: "{support.border.success}",
         $value: "light-dark(#008d3c, #008d3c)",
         $description: "Kantlinje för success-notifikationer",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value:
@@ -2241,7 +2241,7 @@ export default {
         key: "{support.border.info}",
         $value: "light-dark(#06c, #06c)",
         $description: "Kantlinje för notifikationer med information",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalBlue.100}, {color.signalBlue.100})",
@@ -2256,7 +2256,7 @@ export default {
         key: "{support.border.important}",
         $value: "light-dark(#fab900, #fab900)",
         $description: "Kantlinje för notifikationer med viktig information",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value:
@@ -2272,7 +2272,7 @@ export default {
         key: "{support.border.warning}",
         $value: "light-dark(#e62323, #e62323)",
         $description: "Kantlinje för notifikationer med varningar",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalRed.100}, {color.signalRed.100})",
@@ -2289,7 +2289,7 @@ export default {
         key: "{support.background.success}",
         $value: "light-dark(#d5f2d9, #262626)",
         $description: "Bakgrund för success-notifikationer",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalGreen.20}, {color.gray.180})",
@@ -2304,7 +2304,7 @@ export default {
         key: "{support.background.successHover}",
         $value: "light-dark(#bae5c5, #333)",
         $description: "Hoverbakgrund för success-notifikationer",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalGreen.30}, {color.gray.170})",
@@ -2319,7 +2319,7 @@ export default {
         key: "{support.background.info}",
         $value: "light-dark(#eaf2f6, #262626)",
         $description: "Bakgrund för notifikationer med information",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalBlue.10}, {color.gray.180})",
@@ -2334,7 +2334,7 @@ export default {
         key: "{support.background.infoHover}",
         $value: "light-dark(#d5e5ed, #333)",
         $description: "Hoverbakgrund för notifikationer med information",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalBlue.20}, {color.gray.170})",
@@ -2349,7 +2349,7 @@ export default {
         key: "{support.background.important}",
         $value: "light-dark(#fff8e2, #262626)",
         $description: "Bakgrund för notifikationer med viktig information",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalYellow.10}, {color.gray.180})",
@@ -2364,7 +2364,7 @@ export default {
         key: "{support.background.importantHover}",
         $value: "light-dark(#fff1cd, #333)",
         $description: "Hoverbakgrund för notifikationer med viktig information",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalYellow.20}, {color.gray.170})",
@@ -2380,7 +2380,7 @@ export default {
         key: "{support.background.warning}",
         $value: "light-dark(#ffdfdf, #262626)",
         $description: "Bakgrund för notifikationer med varningar",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalRed.20}, {color.gray.180})",
@@ -2395,7 +2395,7 @@ export default {
         key: "{support.background.warningHover}",
         $value: "light-dark(#fcc8c8, #333)",
         $description: "Hoverbakgrund för notifikationer med varningar",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.signalRed.30}, {color.gray.170})",
@@ -2413,7 +2413,7 @@ export default {
       key: "{text.primary}",
       $value: "light-dark(#171717, #f2f2f2)",
       $description: "Primär textfärg. Rubriker och brödtext.",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.200}, {color.gray.10})",
@@ -2428,7 +2428,7 @@ export default {
       key: "{text.secondary}",
       $value: "light-dark(#525252, #a6a6a6)",
       $description: "Sekundär textfärg",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.140}, {color.gray.70})",
@@ -2443,7 +2443,7 @@ export default {
       key: "{text.tertiary}",
       $value: "light-dark(#143c50, #f2f2f2)",
       $description: "Textfärg på tertiär knapp",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.blue.150}, {color.gray.10})",
@@ -2458,7 +2458,7 @@ export default {
       key: "{text.onColor}",
       $value: "light-dark(#fff, #fff)",
       $description: "Textfärg på färgade bakgrunder som inte är lager",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.white.base}, {color.white.base})",
@@ -2473,7 +2473,7 @@ export default {
       key: "{text.inverse}",
       $value: "light-dark(#f2f2f2, #171717)",
       $description: "Inverterad textfärg",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.10}, {color.gray.200})",
@@ -2488,7 +2488,7 @@ export default {
       key: "{text.disabled}",
       $value: "light-dark(#bfbfbf, #525252)",
       $description: "Textfärg för disabled state",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.50}, {color.gray.140})",
@@ -2503,7 +2503,7 @@ export default {
       key: "{text.warning}",
       $value: "light-dark(#e62323, #EC5252)",
       $description: "Textfärg för felmeddelanden",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.signalRed.100}, {color.signalRed.80})",
@@ -2518,7 +2518,7 @@ export default {
       key: "{text.placeholder}",
       $value: "light-dark(#a6a6a6, #525252)",
       $description: "Textfärg för platshållare",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.gray.70}, {color.gray.140})",
@@ -2537,7 +2537,7 @@ export default {
           key: "{button.background.primary.base}",
           $value: "light-dark(#143c50, #2e7ca5)",
           $description: "Färg på primärknapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.150}, {color.blue.100})",
@@ -2552,7 +2552,7 @@ export default {
           key: "{button.background.primary.hover}",
           $value: "light-dark(#25607f, #25607f)",
           $description: "Hover state på primärknapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.130}, {color.blue.130})",
@@ -2567,7 +2567,7 @@ export default {
           key: "{button.background.primary.active}",
           $value: "light-dark(#2e7ca5, #143c50)",
           $description: "Active state för primärknapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.100}, {color.blue.150})",
@@ -2584,7 +2584,7 @@ export default {
           key: "{button.background.secondary.base}",
           $value: "light-dark(#fff, #171717)",
           $description: "Färg på sekundärknapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.white.base}, {color.gray.200})",
@@ -2599,7 +2599,7 @@ export default {
           key: "{button.background.secondary.hover}",
           $value: "light-dark(#e6e6e6, #212121)",
           $description: "Hover state på sekundärknapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.white.hover}, {color.gray.190})",
@@ -2614,7 +2614,7 @@ export default {
           key: "{button.background.secondary.active}",
           $value: "light-dark(#d9d9d9, #262626)",
           $description: "Active state för sekundärknapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.gray.30}, {color.gray.180})",
@@ -2631,7 +2631,7 @@ export default {
           key: "{button.background.tertiary.hover}",
           $value: "light-dark(#e6e6e6, #212121)",
           $description: "Hover state för tertiär knapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.white.hover}, {color.gray.190})",
@@ -2646,7 +2646,7 @@ export default {
           key: "{button.background.tertiary.active}",
           $value: "light-dark(#d9d9d9, #262626)",
           $description: "Active state för tertiär knapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.gray.30}, {color.gray.180})",
@@ -2663,7 +2663,7 @@ export default {
           key: "{button.background.danger.base}",
           $value: "light-dark(#e62323, #e62323)",
           $description: "Färg på danger knapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.signalRed.100}, {color.signalRed.100})",
@@ -2678,7 +2678,7 @@ export default {
           key: "{button.background.danger.hover}",
           $value: "light-dark(#bc1d1d, #bc1d1d)",
           $description: "Hover state för danger knapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.signalRed.120}, {color.signalRed.120})",
@@ -2693,7 +2693,7 @@ export default {
           key: "{button.background.danger.active}",
           $value: "light-dark(#7d1313, #7d1313)",
           $description: "Active state för danger knapp",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.signalRed.150}, {color.signalRed.150})",
@@ -2709,7 +2709,7 @@ export default {
         key: "{button.background.disabled}",
         $value: "light-dark(#f2f2f2, #262626)",
         $description: "Disabled state för knappar",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -2726,7 +2726,7 @@ export default {
         key: "{button.border.secondary}",
         $value: "light-dark(#143c50, #f2f2f2)",
         $description: "Kantfärg för sekundärknapp",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.blue.150}, {color.gray.10})",
@@ -2742,7 +2742,7 @@ export default {
       hover: {
         key: "{button.icon.hover}",
         $value: "light-dark(#0000001a, #ffffff1a)",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark(#0000001a, #ffffff1a)",
@@ -2756,7 +2756,7 @@ export default {
         key: "{button.icon.active}",
         $value: "light-dark(#00000033, #ffffff33)",
         $description: "Active state för ikoner",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark(#00000033, #ffffff33)",
@@ -2773,7 +2773,7 @@ export default {
     background: {
       key: "{badge.background}",
       $value: "light-dark(#e62323, #e62323)",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.signalRed.100}, {color.signalRed.100})",
@@ -2790,7 +2790,7 @@ export default {
         hover: {
           key: "{calendar.date.background.hover}",
           $value: "light-dark(#0000001a, #ffffff1a)",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark(#0000001a, #ffffff1a)",
@@ -2803,7 +2803,7 @@ export default {
         selected: {
           key: "{calendar.date.background.selected}",
           $value: "light-dark(#143c50, #5897b8)",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.150}, {color.blue.80})",
@@ -2816,7 +2816,7 @@ export default {
         startRange: {
           key: "{calendar.date.background.startRange}",
           $value: "light-dark(#143c50, #5897b8)",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.150}, {color.blue.80})",
@@ -2829,7 +2829,7 @@ export default {
         inRange: {
           key: "{calendar.date.background.inRange}",
           $value: "light-dark(#d5e5ed, #143c50)",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.20}, {color.blue.150})",
@@ -2842,7 +2842,7 @@ export default {
         endRange: {
           key: "{calendar.date.background.endRange}",
           $value: "light-dark(#143c50, #5897b8)",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.blue.150}, {color.blue.80})",
@@ -2860,7 +2860,7 @@ export default {
       key: "{logo.primary}",
       $value: "light-dark(#b90835, #fff)",
       $description: "Färg på logotypen",
-      filePath: "tokens/object-values.json",
+      filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
         $value: "light-dark({color.red.100}, {color.white.base})",
@@ -2879,7 +2879,7 @@ export default {
           key: "{menu.item.background.hover}",
           $value: "light-dark(#e6e6e6, #212121)",
           $description: "Bakgrundsfärg för menu vid hover",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.gray.20}, {color.gray.190})",
@@ -2894,7 +2894,7 @@ export default {
           key: "{menu.item.background.selected}",
           $value: "light-dark(#f2f2f2, #262626)",
           $description: "Bakgrundsfärg för aktiv menu",
-          filePath: "tokens/object-values.json",
+          filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
             $value: "light-dark({color.gray.10}, {color.gray.180})",
@@ -2911,7 +2911,7 @@ export default {
       sectionHeader: {
         key: "{menu.text.sectionHeader}",
         $value: "light-dark(#29698C, #5897b8)",
-        filePath: "tokens/object-values.json",
+        filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $value: "light-dark({color.blue.120}, {color.blue.80})",
@@ -2927,7 +2927,7 @@ export default {
     10: {
       key: "{size.10}",
       $value: "0.125rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -2942,7 +2942,7 @@ export default {
     15: {
       key: "{size.15}",
       $value: "0.188rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -2957,7 +2957,7 @@ export default {
     20: {
       key: "{size.20}",
       $value: "0.25rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -2972,7 +2972,7 @@ export default {
     30: {
       key: "{size.30}",
       $value: "0.375rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -2987,7 +2987,7 @@ export default {
     40: {
       key: "{size.40}",
       $value: "0.5rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3002,7 +3002,7 @@ export default {
     50: {
       key: "{size.50}",
       $value: "0.625rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3017,7 +3017,7 @@ export default {
     60: {
       key: "{size.60}",
       $value: "0.75rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3032,7 +3032,7 @@ export default {
     70: {
       key: "{size.70}",
       $value: "0.875rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3047,7 +3047,7 @@ export default {
     75: {
       key: "{size.75}",
       $value: "0.938rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3062,7 +3062,7 @@ export default {
     80: {
       key: "{size.80}",
       $value: "1rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3077,7 +3077,7 @@ export default {
     90: {
       key: "{size.90}",
       $value: "1.25rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3092,7 +3092,7 @@ export default {
     100: {
       key: "{size.100}",
       $value: "1.5rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3107,7 +3107,7 @@ export default {
     110: {
       key: "{size.110}",
       $value: "1.75rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3122,7 +3122,7 @@ export default {
     120: {
       key: "{size.120}",
       $value: "2rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3137,7 +3137,7 @@ export default {
     130: {
       key: "{size.130}",
       $value: "2.5rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3152,7 +3152,7 @@ export default {
     140: {
       key: "{size.140}",
       $value: "2.75rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3167,7 +3167,7 @@ export default {
     150: {
       key: "{size.150}",
       $value: "3rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3182,7 +3182,7 @@ export default {
     "00": {
       key: "{size.00}",
       $value: 0,
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3197,7 +3197,7 @@ export default {
     "05": {
       key: "{size.05}",
       $value: "0.063rem",
-      filePath: "tokens/sizing.json",
+      filePath: "packages/theme/tokens/sizing.json",
       isSource: true,
       $type: "dimension",
       original: {
@@ -3215,7 +3215,7 @@ export default {
       key: "{spacing.10}",
       $type: "dimension",
       $value: "0.125rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3230,7 +3230,7 @@ export default {
       key: "{spacing.20}",
       $type: "dimension",
       $value: "0.25rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3245,7 +3245,7 @@ export default {
       key: "{spacing.30}",
       $type: "dimension",
       $value: "0.5rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3260,7 +3260,7 @@ export default {
       key: "{spacing.40}",
       $type: "dimension",
       $value: "0.75rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3275,7 +3275,7 @@ export default {
       key: "{spacing.50}",
       $type: "dimension",
       $value: "1rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3290,7 +3290,7 @@ export default {
       key: "{spacing.60}",
       $type: "dimension",
       $value: "1.5rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3305,7 +3305,7 @@ export default {
       key: "{spacing.70}",
       $type: "dimension",
       $value: "2rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3320,7 +3320,7 @@ export default {
       key: "{spacing.80}",
       $type: "dimension",
       $value: "2.5rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3335,7 +3335,7 @@ export default {
       key: "{spacing.90}",
       $type: "dimension",
       $value: "3rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3350,7 +3350,7 @@ export default {
       key: "{spacing.100}",
       $type: "dimension",
       $value: "4rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3365,7 +3365,7 @@ export default {
       key: "{spacing.110}",
       $type: "dimension",
       $value: "5rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3380,7 +3380,7 @@ export default {
       key: "{spacing.120}",
       $type: "dimension",
       $value: "6rem",
-      filePath: "tokens/spacing.json",
+      filePath: "packages/theme/tokens/spacing.json",
       isSource: true,
       original: {
         $type: "dimension",
@@ -3398,7 +3398,7 @@ export default {
       $type: "string",
       $value:
         "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)",
-      filePath: "tokens/states.json",
+      filePath: "packages/theme/tokens/states.json",
       isSource: true,
       original: {
         $type: "string",
@@ -3415,7 +3415,7 @@ export default {
       $type: "string",
       $value:
         "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
-      filePath: "tokens/states.json",
+      filePath: "packages/theme/tokens/states.json",
       isSource: true,
       original: {
         $type: "string",
@@ -3434,7 +3434,7 @@ export default {
         key: "{transitions.duration.slow}",
         $type: "time",
         $value: "500ms",
-        filePath: "tokens/transitions.json",
+        filePath: "packages/theme/tokens/transitions.json",
         isSource: true,
         original: {
           $type: "time",
@@ -3449,7 +3449,7 @@ export default {
         key: "{transitions.duration.normal}",
         $type: "time",
         $value: "300ms",
-        filePath: "tokens/transitions.json",
+        filePath: "packages/theme/tokens/transitions.json",
         isSource: true,
         original: {
           $type: "time",
@@ -3464,7 +3464,7 @@ export default {
         key: "{transitions.duration.fast}",
         $type: "time",
         $value: "250ms",
-        filePath: "tokens/transitions.json",
+        filePath: "packages/theme/tokens/transitions.json",
         isSource: true,
         original: {
           $type: "time",
@@ -3483,7 +3483,7 @@ export default {
         key: "{typography.font.family}",
         $type: "fontFamily",
         $value: "Inter, sans-serif",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontFamily",
@@ -3499,7 +3499,7 @@ export default {
           key: "{typography.font.size.10}",
           $type: "fontSize",
           $value: "0.75rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3514,7 +3514,7 @@ export default {
           key: "{typography.font.size.20}",
           $type: "fontSize",
           $value: "0.875rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3529,7 +3529,7 @@ export default {
           key: "{typography.font.size.30}",
           $type: "fontSize",
           $value: "1rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3544,7 +3544,7 @@ export default {
           key: "{typography.font.size.40}",
           $type: "fontSize",
           $value: "1.125rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3559,7 +3559,7 @@ export default {
           key: "{typography.font.size.50}",
           $type: "fontSize",
           $value: "1.25rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3574,7 +3574,7 @@ export default {
           key: "{typography.font.size.60}",
           $type: "fontSize",
           $value: "1.5rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3589,7 +3589,7 @@ export default {
           key: "{typography.font.size.70}",
           $type: "fontSize",
           $value: "1.75rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3604,7 +3604,7 @@ export default {
           key: "{typography.font.size.80}",
           $type: "fontSize",
           $value: "2rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3619,7 +3619,7 @@ export default {
           key: "{typography.font.size.90}",
           $type: "fontSize",
           $value: "2.25rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3634,7 +3634,7 @@ export default {
           key: "{typography.font.size.100}",
           $type: "fontSize",
           $value: "2.625rem",
-          filePath: "tokens/typography.json",
+          filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
@@ -3652,7 +3652,7 @@ export default {
         key: "{typography.lineHeight.10}",
         $type: "lineHeight",
         $value: "1rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3667,7 +3667,7 @@ export default {
         key: "{typography.lineHeight.20}",
         $type: "lineHeight",
         $value: "1.125rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3682,7 +3682,7 @@ export default {
         key: "{typography.lineHeight.30}",
         $type: "lineHeight",
         $value: "1.25rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3697,7 +3697,7 @@ export default {
         key: "{typography.lineHeight.40}",
         $type: "lineHeight",
         $value: "1.375rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3712,7 +3712,7 @@ export default {
         key: "{typography.lineHeight.50}",
         $type: "lineHeight",
         $value: "1.5rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3727,7 +3727,7 @@ export default {
         key: "{typography.lineHeight.60}",
         $type: "lineHeight",
         $value: "1.75rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3742,7 +3742,7 @@ export default {
         key: "{typography.lineHeight.70}",
         $type: "lineHeight",
         $value: "2rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3757,7 +3757,7 @@ export default {
         key: "{typography.lineHeight.80}",
         $type: "lineHeight",
         $value: "2.25rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3772,7 +3772,7 @@ export default {
         key: "{typography.lineHeight.90}",
         $type: "lineHeight",
         $value: "2.5rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3787,7 +3787,7 @@ export default {
         key: "{typography.lineHeight.100}",
         $type: "lineHeight",
         $value: "2.75rem",
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
@@ -3804,7 +3804,7 @@ export default {
         key: "{typography.weight.thin}",
         $type: "fontWeight",
         $value: 100,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3819,7 +3819,7 @@ export default {
         key: "{typography.weight.extraLight}",
         $type: "fontWeight",
         $value: 200,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3834,7 +3834,7 @@ export default {
         key: "{typography.weight.light}",
         $type: "fontWeight",
         $value: 300,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3849,7 +3849,7 @@ export default {
         key: "{typography.weight.regular}",
         $type: "fontWeight",
         $value: 400,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3864,7 +3864,7 @@ export default {
         key: "{typography.weight.medium}",
         $type: "fontWeight",
         $value: 500,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3879,7 +3879,7 @@ export default {
         key: "{typography.weight.semiBold}",
         $type: "fontWeight",
         $value: 600,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3894,7 +3894,7 @@ export default {
         key: "{typography.weight.bold}",
         $type: "fontWeight",
         $value: 700,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3909,7 +3909,7 @@ export default {
         key: "{typography.weight.extraBold}",
         $type: "fontWeight",
         $value: 800,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3924,7 +3924,7 @@ export default {
         key: "{typography.weight.black}",
         $type: "fontWeight",
         $value: 900,
-        filePath: "tokens/typography.json",
+        filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "fontWeight",
@@ -3941,7 +3941,7 @@ export default {
     base: {
       key: "{zIndex.base}",
       $value: 1,
-      filePath: "tokens/z-index.json",
+      filePath: "packages/theme/tokens/z-index.json",
       isSource: true,
       $type: "number",
       original: {
@@ -3956,7 +3956,7 @@ export default {
     above: {
       key: "{zIndex.above}",
       $value: 10,
-      filePath: "tokens/z-index.json",
+      filePath: "packages/theme/tokens/z-index.json",
       isSource: true,
       $type: "number",
       original: {
@@ -3971,7 +3971,7 @@ export default {
     modal: {
       key: "{zIndex.modal}",
       $value: 1000,
-      filePath: "tokens/z-index.json",
+      filePath: "packages/theme/tokens/z-index.json",
       isSource: true,
       $type: "number",
       original: {
@@ -3986,7 +3986,7 @@ export default {
     toast: {
       key: "{zIndex.toast}",
       $value: 1100,
-      filePath: "tokens/z-index.json",
+      filePath: "packages/theme/tokens/z-index.json",
       isSource: true,
       $type: "number",
       original: {
@@ -4001,7 +4001,7 @@ export default {
     skipToContent: {
       key: "{zIndex.skipToContent}",
       $value: 1200,
-      filePath: "tokens/z-index.json",
+      filePath: "packages/theme/tokens/z-index.json",
       isSource: true,
       $type: "number",
       original: {

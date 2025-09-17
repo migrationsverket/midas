@@ -1,7 +1,6 @@
 import StyleDictionary from 'style-dictionary'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 
-const buildPath = 'src/lib/style-dictionary-dist/'
 
 export const config = {
   source: ['tokens/**/*.json'],
