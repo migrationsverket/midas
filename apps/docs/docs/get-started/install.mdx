@@ -43,18 +43,10 @@ utforska komponenterna mer i vår [Storybook](https://designsystem.migrationsver
 
 ## Avancerad installation
 
-För mer granulär kontroll kan du installera och importera typsnitt och variabler separat. Detta är användbart om du vill
+För mer granulär kontroll kan du importera typsnitt och variabler separat från vårt temapaket. Detta är användbart om du vill
 undvika att blanda CSS-filer eller ha mer kontroll över hur typsnitt laddas.
 
-### 1. Installera temapaketet
-
-För att använda Midas variabler och typsnitt separat från komponenterna, installera `@midas-ds/theme`:
-
-```bash npm2yarn
-npm install @midas-ds/theme
-```
-
-### 2. Importera variabler och typsnitt
+### 1. Importera variabler och typsnitt
 
 Importera de delar du behöver i roten av din applikation:
 
@@ -65,17 +57,18 @@ import '@midas-ds/theme/variables.css'
 // Importera enbart typsnittet Inter
 import '@midas-ds/theme/global.css'
 ```
+
 :::info
 Du kan självklart använda andra metoder för att ladda typsnittet, så länge vikterna 400, 500 och 600 av "Inter" inkluderas.
 :::
 
-### 3. Använd tokens i CSS
+### 2. Använd tokens i CSS
 
 Du kan nu använda Midas design tokens som CSS-variabler. Läs mer om våra [tokens](/basics/tokens/) för att se alla tillgängliga alternativ.
 
 ```css title="index.css"
 .myClass {
-    background-color: var(--midas-background-base);
+  background-color: var(--midas-background-base);
 }
 ```
 
@@ -85,8 +78,8 @@ Midas bygger på flertalet beroenden som kan vara bra att känna till. Förutom 
 så innehåller Midas även verktyg och bibliotek som underlättar utveckling och säkerställer tillgänglighet.
 
 - [React Aria](https://react-spectrum.adobe.com/react-aria/) - Alla komponenter med några få undantag baseras på React Arias bibliotek för att säkerställa tillgänglighet
-och användarvänlighet. Använder du en komponent från Midas kan det även vara värt att läsa React Arias motsvarande dokumentation.
-Dessa finns länkade på komponentsidan.
+  och användarvänlighet. Använder du en komponent från Midas kan det även vara värt att läsa React Arias motsvarande dokumentation.
+  Dessa finns länkade på komponentsidan.
 - [Lucide Icons](https://lucide.dev/) - Midas använder Lucide Icons för att tillhandahålla ikoner i komponenter.
 
 ## Rapportera buggar eller förslag till nya features
