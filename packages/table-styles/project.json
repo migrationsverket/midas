@@ -1,5 +1,6 @@
 {
   "name": "table-styles",
+  "implicitDependencies": ["theme"],
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/table-styles/src",
   "projectType": "library",

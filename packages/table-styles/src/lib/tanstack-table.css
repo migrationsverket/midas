@@ -20,7 +20,8 @@
 .table td {
   border-top: 1px var(--midas-border-color-subtle) solid;
   color: var(--midas-text-primary);
-  padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80) var(--midas-size-75);
+  padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
+    var(--midas-size-75);
 }
 
 .table .row:hover {
