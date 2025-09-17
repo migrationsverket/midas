@@ -181,7 +181,7 @@ const config: Config = {
           type: 'html',
           position: 'right',
           value: isUnreleased
-            ? `<code class="unreleased"}">Version ${version} (unreleased)</code>`
+            ? `<code class="unreleased">Version ${version} (unreleased)</code>`
             : `<code>Version ${version}</code>`,
         },
         {
