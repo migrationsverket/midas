@@ -1,7 +1,8 @@
 /* eslint-disable @nx/enforce-module-boundaries */
 import { Preview } from '@storybook/react'
 import { customViewports } from './custom-viewports'
-import '../../theme/src/lib/global.css'
+import 'packages/theme/src/lib/fonts.css'
+import 'packages/theme/src/lib/color-scheme.css'
 import '../../theme/src/lib/style-dictionary-dist/variables.css'
 import {
   customDarkTheme,

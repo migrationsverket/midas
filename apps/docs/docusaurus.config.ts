@@ -197,7 +197,8 @@ const config: Config = {
     },
     mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [
-      { name: 'theme-color', content: '#ffffff' },
+      { name: 'color-scheme', content: 'light dark' },
+      { name: 'theme-color', content: 'white' },
       {
         name: 'theme-color',
         content: '#242526',

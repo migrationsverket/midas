@@ -13,7 +13,8 @@ npm install @midas-ds/components
 
 ## Snabbstart
 
-För en snabb och enkel start, importera `default.css`. Denna fil innehåller allt du behöver: typsnitt och CSS-variabler för att stilasätta komponenterna. Importera filen i roten av din applikation:
+För en snabb och enkel start, importera `default.css`. Denna fil innehåller allt du behöver: typsnitt och CSS-variabler
+för att ge komponenterna rätt utseende. Importera filen i roten av din applikation:
 
 ```tsx title="main.tsx"
 import '@midas-ds/components/default.css'
@@ -55,11 +56,15 @@ Importera de delar du behöver i roten av din applikation:
 import '@midas-ds/theme/variables.css'
 
 // Importera enbart typsnittet Inter
-import '@midas-ds/theme/global.css'
+import '@midas-ds/theme/fonts.css'
+
+// Importera color-scheme (eller ange själv color-scheme: light dark i css)
+import '@midas-ds/theme/color-scheme.css'
 ```
 
+
 :::info
-Du kan självklart använda andra metoder för att ladda typsnittet, så länge vikterna 400, 500 och 600 av "Inter" inkluderas.
+Du kan använda andra metoder för att ladda typsnittet, så länge vikterna 400, 500 och 600 av "Inter" inkluderas.
 :::
 
 ### 2. Använd tokens i CSS
