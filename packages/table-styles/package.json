@@ -19,5 +19,8 @@
     "./tanstack-table.css": {
       "import": "./tanstack-table.css"
     }
+  },
+  "dependencies": {
+    "@midas-ds/theme": "1.0.2"
   }
 }
