@@ -8,25 +8,23 @@ Att komma igång och bidra med kod till Midas är enkelt!
 
 ## Du behöver
 
-- En normalt fungerande WSL eller motsvarande setup med Node version >22.
+- En normalt fungerande WSL2 eller motsvarande setup med Node version >22.
 - [Nx](https://nx.dev) installerat globalt `npm install --global nx@latest`
 
 ```bash
 npm install
 ```
 
+### Nx
+
+Midas är ett monorepo som hanteras med [Nx](https://nx.dev). Det innebär att vi har flera olika projekt i samma repo, till exempel komponentbiblioteket, dokumentationswebben och andra verktyg. Varje projekt har sitt eget scope och kan hanteras individuellt. Du kan köra `nx graph` för att se en visuell representation av hur projekten är relaterade till varandra. Eftersom vissa projekt är beroende av andra, kan en ändring i ett projekt innebära att ett annat projekt också behöver en ny version. Till exempel, om `theme` uppdateras, så kommer `components` som är beroende av `theme` också att få en ny version.
+
 ### Starta Storybook
+
+Storybook är ett verktyg för att bygga och visa upp UI-komponenter i en isolerad miljö. Det gör det enklare att utveckla, testa och dokumentera komponenter.
 
 ```bash
 nx run components:storybook
-```
-
-### Starta Playground-appen (React)
-
-Kan användas för att testa komponenter i ett sammanhang utanför Storybook.
-
-```bash
-nx serve playground
 ```
 
 ### Komponentbibliotek
@@ -62,21 +60,57 @@ nx build <namn>
 och allt som byggs hamnar i `/dist`. Om du vill testa utanför monorepot går det att zippa med `npm pack` och installera i
 separat app med `npm install [sökväg]`.
 
-## Instruktioner för Git
+## Arbetsflöde versionshantering
+
+Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-branchar som sedan mergas in i `main`. Vi använder inte `develop` eller andra liknande branchar för att hålla det enkelt och för att passa ett arbetssätt med kontinuerlig integration och leverans (CI/CD).
+
+Ett exempel på hur det kan se ut i praktiken:
+```mermaid
+---
+config:
+  logLevel: 'debug'
+  theme: 'neutral'
+  gitGraph:
+    showBranches: true
+---
+gitGraph
+  commit tag: "theme@4.1.4"
+  commit id: "8db8ba0b0a"
+  branch feature/new-button
+  commit id: "81eb8978a9"
+  commit id: "6aef7a733f"
+  checkout main
+  branch bugfix/button-color
+  commit id: "6560249c6d"
+  checkout feature/new-button
+  commit id: "446b0bb972"
+  checkout main
+  merge bugfix/button-color
+  checkout feature/new-button
+  commit id: "b682194518"
+  checkout main
+  merge feature/new-button
+  commit tag: "components@14.1.0"
+  commit id: "a27c4f41d9"
+  commit id: "5dec5b5dd3"
+```
 
 ### Branch
 
-Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/`, till exempel `feature/button`.
+Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/`, till exempel `feature/button`. Scope är valfritt men om det används ska det referera till ett av projekten i monorepot, till exempel `components`, `docs` eller `theme`.
 
 ### Commit
 
 Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
-imperativ form, definiera type `feat|docs|fix|refactor|test|ci` och scope `(button|etc...)` och lägg till referenser
-till andra issues vid behov. Tänk på att även en merge (med squash) skapar en commit så lägg en extra tanke på
-vilken information som kommer med och inte kommer med.
+**imperativ form**, definiera type `feat|docs|fix|refactor|test|ops...` och i scope `components|docs|theme|...`
+definierar du vilket Nx-projekt du avser uppdatera. Type avgör om om versionen ska bli en `patch` eller `minor`
+eller `major` (breaking change).
 
-> Våra commits är hela projektets historik och är indata till
-> changelogs och release notes så lägg gärna en extra minut på att vara tydlig.
+:::info
+Våra commits är hela projektets historik, avgör vilken version nästa release blir, samt är indata till
+changelogs och release notes så lägg gärna en extra minut på att vara tydlig. Om du är osäker på vilken
+commit du ska göra, titta på [conventional commits cheatsheet](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13).
+:::
 
 #### Varför conventional commits?
 
@@ -88,12 +122,12 @@ vilken information som kommer med och inte kommer med.
 
 #### Commit message på en rad
 
-`docs(lang): add Swedish language`
+`docs: update button variant docs`
 
 #### Commit message med header och body
 
 ```
-fix: prevent red color on button hover
+fix(theme): prevent red color on button hover
 
 Introduce new css variable to automatically
 select style based on input type
@@ -107,7 +141,8 @@ och försök jobba enligt det flödet.
 :::info
 Innan du skapar en PR, gå igenom så att du har commits som representerar vad du har gjort.
 Jobbar du ensam i en feature branch och har skapat många commits? Använd `git rebase -i`,
-då kan du välja vilka commits som ska vara med och vilka som kan slås samman.
+då kan du välja vilka commits som ska vara med och vilka som kan kombineras. Du kan också passa på att
+ändra commit messages.
 :::
 
 Instruktioner för hur du använder `git rebase` finns [här](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase).
@@ -120,20 +155,11 @@ Generellt, använd övriga komponenter som referens när nya läggs till. React 
 och struktur, både via deras ostylade komponentbibliotek och via sin designsystemsimplementation
 [React Spectrum](https://github.com/adobe/react-spectrum/tree/main/packages/%40react-spectrum).
 
-- Målet är små funktioner, små komponenter, clean code. Det uppmuntras att hela tiden göra inkrementella förbättringar
+- Målet är små funktioner, små komponenter, clean code.
+- Det uppmuntras att hela tiden göra inkrementella förbättringar i kringliggande kod
+- Komponenter ska vara testbara och dokumenterade
+- Komponenter ska stödja designsystemet på ett generiskt sätt och i möjlig mån vara stateless
 - Formatera enligt [Prettier](https://prettier.io/) standard
-- Importera och använd tokens i `[component].module.css` enligt
-
-```css title="Button.module.css"
-// highlight-start
-@value tokens: "../theme/tokens.css";
-@value --button-background-primary from tokens;
-// highlight-end
-
-.button {
-    background-color: --button-background-primary;
-}
-```
 
 ### Importera headless-bibliotek
 
@@ -162,105 +188,14 @@ men om det har införts nya types eller interfaces kan de behöva specificeras e
 
 ---
 
-## Arbetsflöde versionshantering
-
-```mermaid
-    gitGraph
-       commit tag: "8.7.4"
-       commit
-       branch dev
-       commit
-       commit
-       commit
-       branch feature
-       commit
-       commit
-       checkout dev
-       merge feature
-       checkout main
-       merge dev tag: "8.8.0" type: HIGHLIGHT
-       checkout dev
-       merge main
-       branch bugfix
-       commit
-       checkout dev
-       merge bugfix
-       checkout main
-       merge dev id: "trigger release" type: HIGHLIGHT tag: "8.8.1"
-       commit
-
-```
 ## Release
+
+Release görs med hjälp av Nx Release som räknar fram rätt version via commit messages. Releasen triggas manuellt
+via GitHub Actions. Själva flödet är en uppdatering av changlog och package.json med ny version och en ny tagg enligt
+`nx-project@version`. Publicering till npm och GitHub Releases sker automatiskt.
 
 :::info
 Endast Midas core-team har de nödvändiga rättigheterna för att göra nya releaser.
 :::
-
-Release av ny version triggas av push till `main` branch. Processen är följande:
-
-1.  **Säkerställ att `main` är uppdaterad med senaste från `dev`**:
-    Innan du initierar en release, säkerställ att `main` branchen är fullständigt uppdaterad med de senaste ändringarna från `dev`.
-    Detta görs genom att lokalt merga `dev` till `main`.
-
-    ```bash
-    git checkout main && git pull origin main
-    git merge origin dev --ff
-    ```
-
-2.  **Skapa en pull-request för verifiering**:
-    Gå till GitHub och skapa en pull-request från din branch till `main`. Detta steg är för att verifiera att alla byggen och kontroller passerar korrekt. Denna pull-request kommer att stängas automatiskt när du senare pushar direkt till `main`.
-
-3.  **Verifiera release-versionen**:
-    Innan du skapar en pull-request, kör en "dry run" av releasen för att se vilken version som kommer att skapas.
-
-    ```bash
-    nx release --dry-run
-    ```
-
-4.  **Lägg till release-anteckningar för breaking changes**:
-    Om du introducerar "breaking changes" eller större förändringar, skapa en ny release-anteckning och committa den. Release-anteckningarna finns i `/blog/release-notes`.
-
-    ```bash
-    git add .
-    git commit -m "docs(release): add release notes for version <version>"
-    ```
-
-5.  **Pusha ändringarna till `main`**:
-    När du har verifierat att allt ser korrekt ut, pusha ändringarna till `main` på remote. Detta kommer att starta den automatiserade release-processen.
-
-    ```bash
-    git push origin main
-    ```
-
-6.  **Skapa GitHub Release och notifiera**:
-    Skapa en GitHub-release med standardinställningar. Meddela sedan teamet och supportkanalen att en ny version har publicerats.
-
-### Automatiserad release-process
-
-När en push sker till `main`, startar en GitHub Action som utför följande steg:
-
-1.  **Checkout och installation**:
-    Processen börjar med att checka ut `main`-branchen och installera alla nödvändiga paket.
-
-2.  **Bygga komponenter**:
-    Komponentbiblioteket byggs för att säkerställa att allt är korrekt.
-
-3.  **`nx release`**:
-    Kommandot `npx nx release --skip-publish` körs. Detta kommando gör följande:
-    -   Analyserar alla commits sedan senaste releasen.
-    -   Bestämmer nästa versionnummer baserat på [semantic versioning](https://semver.org/).
-    -   Uppdaterar `package.json` med det nya versionnumret.
-    -   Genererar en `CHANGELOG.md` baserat på conventional commits.
-    -   Skapar en ny git-tagg med det nya versionnumret.
-
-4.  **Push och pull-request**:
-    -   De nya ändringarna (inklusive `package.json` och `CHANGELOG.md`) pushas till `main`.
-    -   Den nya taggen pushas till `main`.
-    -   En pull-request skapas automatiskt för att merga tillbaka release-anteckningarna från `main` till `dev`.
-
-5.  **Synkronisera `dev`**:
-    `dev`-branchen synkroniseras med `main` för att inkludera de senaste ändringarna.
-
-Efter att processen är klar, kommer en ny version av komponentbiblioteket att vara publicerad på npm och en ny release kommer att finnas på GitHub.
 
 
