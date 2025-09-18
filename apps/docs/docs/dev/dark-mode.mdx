@@ -1,16 +1,18 @@
 ---
 title: Mörkt läge
-description: Hantera mörkt i designsystemet
+description: Hantera mörkt läge i designsystemet
 ---
 
 import { ColorSchemeSwitch } from '@midas-ds/components'
 
 # Dark Mode / Mörkt läge
 
-Från och med version `5.0.0` finns våra komponenter både ljust och mörkt tema. Det innebär att designsystemets komponenter kan anpassa sig till användarens inställningar för mörkt läge i operativsystemet eller webbläsaren. Detta sker automatiskt om du använder vår globala stylesheet `global.css`.
+Midas komponenter går att använda i både ljust och mörkt tema. Det innebär att designsystemets komponenter
+kan anpassa sig till användarens inställningar för mörkt läge i operativsystemet eller webbläsaren. Detta sker
+automatiskt om du använder vår globala stylesheet `default.css`.
 
 ```tsx {1} title="App.tsx (rootfilen i din app)"
-import '@midas-ds/components/global.css'
+import '@midas-ds/components/default.css'
 
 export default function App({ children }) {
   return <main>{children}</main>
@@ -19,12 +21,14 @@ export default function App({ children }) {
 export default App
 ```
 
-## Kontrollera val av tema
+## Styr val av tema
 
-Om projektet har uppdaterat `@midas-ds/components` och använder vår globala stylesheet så följer komponenterna automatiskt användarens inställningar. Om du manuellt vill styra temat, t.ex. om ert projekt inte är redo att stödja mörkt läge, kan du stänga av mörkt läge genom att ändra färgschemat i CSS på vilken nivå som passar projektet.
+Om projektet har uppdaterat `@midas-ds/components` och använder vår globala stylesheet så följer komponenterna
+automatiskt användarens inställningar. Om du manuellt vill styra temat, t.ex. om ert projekt inte är redo att stödja
+mörkt läge, kan du stänga av mörkt läge genom att ändra färgschemat i CSS på vilken nivå som passar projektet.
 
 ```css {2}
-body {
+:root {
   color-scheme: light;
 }
 ```
@@ -32,10 +36,15 @@ body {
 Använder du inte vår globala stylesheet kan du aktivera mörkt läge genom att definiera bägge färgscheman.
 
 ```css {2}
-body {
+:root {
   color-scheme: light dark;
 }
 ```
+:::warning
+Inkludera meta-taggen `<meta name="color-scheme">` i dokumentets `<head>` före all CSS för att meddela webbläsaren
+vilket färgschema som sidan stödjer. Detta förhindrar att applikationen blinkar till i vitt innan rätt färgschema
+har applicerats.
+:::
 
 ### ColorSchemeSwitch
 
@@ -54,13 +63,17 @@ import { ColorSchemeSwitch } from '@midas-ds/components'
   <div id='dark-mode-target' />
 </div>
 
-ColorSchemeSwitch justerar `color-scheme` värdet på body-elementet. Du kan justera vilken selector som skall användas om color-scheme i din applikation är definerad på en annan DOM-nod. Detta kan du göra genom att skcika in en egen selector i `selector`.
+ColorSchemeSwitch justerar `color-scheme` värdet på body-elementet. Du kan justera vilken selector som ska användas
+om color-scheme i din applikation är definierad på en annan DOM-nod. Detta kan du göra genom att skicka in en egen
+selector i `selector`.
 
 ```tsx
 <ColorSchemeSwitch selector='main' />
 ```
 
-Komponenten accepterar tre värden. `light`, 'dark', och `light dark` dvs enbart ljust läge, enbart mörkt läge eller följ systemets inställningar. Default är `light dark`. Om din app vill att ett specifikt tema är standardvalet kan du skicka in defaultvärdet direkt i `defaultValue`.
+Komponenten accepterar tre värden. `light`, `dark`, och `light dark` dvs enbart ljust läge, enbart mörkt läge eller
+att följa systemets inställningar. Default är `light dark`. Om du vill att ett specifikt tema är förvalt
+kan du skicka in standardvärdet direkt i `defaultValue`.
 
 ```tsx
 <ColorSchemeSwitch defaultValue='dark' />
@@ -68,16 +81,19 @@ Komponenten accepterar tre värden. `light`, 'dark', och `light dark` dvs enbart
 
 ## Tokens
 
-Du kan fortfarande använda tokens för att importera färger på egen hand. Observera dock att vissa tokens har fasta värden och inte är dynamiska för ljust/mörkt läge. För att få en färg som anpassar sig behöver du importera en semantisk token.
+Du kan fortfarande använda tokens för att importera färger på egen hand. Observera dock att vissa tokens har
+fasta värden och inte är dynamiska för ljust/mörkt läge. För att få en färg som anpassar sig behöver du importera
+en semantisk token.
 
 ```tsx
-import { variables } from '@midas-ds/components/theme'
+import { variables } from '@midas-ds/theme'
 ```
 
 ```tsx {1,2,5}
 <div style={{ backgroundColor: variables.backgroundBase }}>
   <p style={{ color: variables.textPrimary }}>
-    En text som är mörk i ljust läge men ljus i mörkt läge på en bakgrund som gör tvärt om!
+    En text som är mörk i ljust läge men ljus i mörkt läge
+    på en bakgrund som gör tvärt om!
   </p>
   <p style={{ color: variables.colorBlackBase }}>En text som alltid är svart</p>
 </div>

@@ -4,6 +4,8 @@
  * work well for content-centric websites.
  */
 
+@import url('../../../../packages/components/src/default.css');
+
 @font-face {
   /* stylelint-disable-next-line font-family-name-quotes */
   font-family: 'Inter';
@@ -61,6 +63,8 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark']:root {
+  color-scheme: dark;
+
   --ifm-color-primary: #4289ad;
   --ifm-color-primary-dark: #25607f;
   --ifm-color-primary-darker: #143c50;
@@ -83,12 +87,12 @@
   --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
   --ifm-card-background-color: #000;
-  --ifm-code-background: var(--ifm-background-color);
 }
 
 .theme-code-block {
   box-shadow: none !important;
-  border: 1px solid var(--ifm-color-emphasis-200);
+
+  /* border: 1px solid var(--ifm-color-emphasis-200); */
   max-height: 600px;
   overflow-y: auto;
 }

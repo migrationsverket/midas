@@ -23,7 +23,7 @@
         },
         "refactor": {
           "changelog": {
-            "title": "\uD83C\uDFED Refactoring"
+            "title": "🏭 Refactoring"
           }
         },
         "perf": {
@@ -43,7 +43,7 @@
         "ops": {
           "semverBump": "none",
           "changelog": {
-            "title": "\uD83C\uDF6C DevOps changes"
+            "title": "🍬 DevOps changes"
           }
         },
         "types": {
@@ -68,7 +68,12 @@
       "automaticFromRef": true
     },
     "projectsRelationship": "independent",
-    "projects": ["packages/components", "!packages/.storybook", "theme"],
+    "projects": [
+      "packages/components",
+      "!packages/.storybook",
+      "theme",
+      "table-styles"
+    ],
     "releaseTagPattern": "{projectName}@v{version}",
     "git": {
       "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"

@@ -22,10 +22,6 @@ fs.readdirSync(packagesDir).forEach(dir => {
   const packagePath = path.resolve(packagesDir, dir)
 
   if (fs.statSync(packagePath).isDirectory()) {
-    packageAliases[`@midas-ds/${dir}/theme`] = path.resolve(
-      packagePath,
-      'src/theme/index.ts',
-    )
     packageAliases[`@midas-ds/${dir}`] = path.resolve(
       packagePath,
       'src/index.ts',
@@ -205,7 +201,8 @@ const config: Config = {
     },
     mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [
-      { name: 'theme-color', content: '#ffffff' },
+      { name: 'color-scheme', content: 'light dark' },
+      { name: 'theme-color', content: 'white' },
       {
         name: 'theme-color',
         content: '#242526',

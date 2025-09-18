@@ -5,13 +5,6 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "generate-css-tokens": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "node sd.build.mjs",
-        "cwd": "packages/components"
-      }
-    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -26,7 +19,6 @@
       "options": {
         "outputPath": "dist/packages/components"
       },
-      "dependsOn": ["generate-css-tokens"],
       "configurations": {
         "production": {
           "optimization": true,
@@ -84,18 +76,6 @@
           "watch": true,
           "project": "storybook:dark-mode"
         }
-      }
-    },
-    "generate-dependencies": {
-      "dependsOn": [
-        {
-          "target": "build"
-        }
-      ],
-      "executor": "@midas-ds/dependencies:dependencies",
-      "options": {
-        "outputDir": "dist/packages/components",
-        "filter": "@storybook"
       }
     },
     "lint": {

@@ -6,10 +6,10 @@
   "tags": ["theme"],
   "targets": {
     "style-dictionary-generate": {
-      "executor": "nx:run-commands",
+      "executor": "@midas-ds/style-dictionary:build-tokens",
       "options": {
-        "command": "node sd.build.mjs",
-        "cwd": "packages/theme"
+        "source": ["{workspaceRoot}/{projectRoot}/tokens/**/*.json"],
+        "buildPath": "{workspaceRoot}/{projectRoot}/src/lib/style-dictionary-dist/"
       }
     },
     "build": {

@@ -6,7 +6,7 @@ description: Laddningsindikator för komponenter
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Skeleton } from '@midas-ds/components'
-import { semantic } from '@midas-ds/components/theme'
+import { variables } from '@midas-ds/theme'
 
 <ComponentHeader
   name='Skeleton'
@@ -97,7 +97,7 @@ Om Skeletonkomponenten ligger på bakgrundsfärgen `layer01` eller `light-dark(#
 
 <div
   className='card'
-  style={{ backgroundColor: semantic.layer01, padding: '1rem' }}
+  style={{ backgroundColor: variables.layer01Base, padding: '1rem' }}
 >
   <Skeleton
     height='48px'

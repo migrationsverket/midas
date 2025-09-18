@@ -1,0 +1,46 @@
+@import url('../../../theme/src/lib/style-dictionary-dist/variables.css');
+
+.table {
+  border-spacing: 0;
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
+  width: 100%;
+}
+
+.table th {
+  background-color: var(--midas-layer-accent-01-base);
+  color: var(--midas-text-primary);
+  font-weight: 500;
+  padding: var(--midas-size-75) var(--midas-size-80);
+  text-align: left;
+  position: relative;
+}
+
+.table td {
+  border-top: 1px var(--midas-border-color-subtle) solid;
+  color: var(--midas-text-primary);
+  padding: calc(var(--midas-size-75) - 1px) var(--midas-size-80)
+    var(--midas-size-75);
+}
+
+.table .row:hover {
+  background-color: var(--midas-layer-01-hover);
+}
+
+.table .row:nth-child(even) {
+  background-color: var(--midas-layer-accent-01-base);
+}
+
+.table .row:nth-child(even):hover {
+  background-color: var(--midas-layer-accent-01-hover);
+}
+
+.inputContainer {
+  max-width: 150px;
+}
+
+.headerCell {
+  display: flex;
+  align-items: center;
+}
