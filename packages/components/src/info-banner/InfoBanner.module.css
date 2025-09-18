@@ -50,7 +50,7 @@
 }
 
 .icon {
-  color: var(--border);
+  color: var(--midas-icon-primary);
   min-width: 20px;
 }
 

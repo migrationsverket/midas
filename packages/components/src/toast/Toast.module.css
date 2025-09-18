@@ -122,7 +122,7 @@
   }
 
   & .icon {
-    color: var(--border);
+    color: var(--midas-icon-primary);
     flex: 0 0 auto;
   }
 

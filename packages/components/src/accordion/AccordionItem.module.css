@@ -6,6 +6,7 @@
   --accordion-background: transparent;
   --accordion-background-hover: transparent;
   --text-color: var(--midas-text-primary);
+  --icon-color: var(--midas-icon-primary);
 
   font-family: var(--midas-typography-font-family);
   color: var(--text-color);
@@ -28,28 +29,24 @@
 .success {
   --accordion-background: var(--midas-support-background-success);
   --accordion-background-hover: var(--midas-support-background-success-hover);
-  --icon-color: var(--midas-icon-success);
   --border-color: var(--midas-support-border-success);
 }
 
 .warning {
   --accordion-background: var(--midas-support-background-warning);
   --accordion-background-hover: var(--midas-support-background-warning-hover);
-  --icon-color: var(--midas-icon-warning);
   --border-color: var(--midas-support-border-warning);
 }
 
 .info {
   --accordion-background: var(--midas-support-background-info);
   --accordion-background-hover: var(--midas-support-background-info-hover);
-  --icon-color: var(--midas-icon-info);
   --border-color: var(--midas-support-border-info);
 }
 
 .important {
   --accordion-background: var(--midas-support-background-important);
   --accordion-background-hover: var(--midas-support-background-important-hover);
-  --icon-color: var(--midas-icon-important);
   --border-color: var(--midas-support-border-important);
 }
 
