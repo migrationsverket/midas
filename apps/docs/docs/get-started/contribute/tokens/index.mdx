@@ -1,0 +1,51 @@
+---
+sidebar_label: 'Theme/Tokens'
+---
+
+# Design Tokens
+
+Design tokens är de minsta beståndsdelarna i designsystemet och utgör grunden för all styling. De representerar
+designbeslut som färger, typsnitt, avstånd och andra visuella egenskaper.
+
+## Style Dictionary
+
+Vi använder [Style Dictionary](https://styledictionary.com/) för att transformera våra design tokens till olika format
+som kan användas i våra applikationer. Style Dictionary är ett verktyg som tar en uppsättning design tokens i ett
+standardiserat format och genererar plattformsspecifika filer, till exempel CSS-variabler, JavaScript-objekt eller iOS/Android-resurser.
+
+## DTCG-standard
+
+Våra design tokens följer [Design Tokens Community Group (DTCG)](https://design-tokens.github.io/community-group/format/) standarden. Detta innebär att våra tokens
+är strukturerade på ett sätt som är kompatibelt med andra verktyg och plattformar som också följer denna standard.
+Det gör det enklare att dela och återanvända våra designbeslut över olika projekt och teknologier.
+
+```json title="tokens.json"
+{
+  "color": {
+    "$type": "color",
+    "black": {
+      "base": {
+        "$value": "#000",
+        "$description": "Black"
+      },
+      "hover": {
+        "$value": "#0d0d0d",
+        "$description": "Black hover"
+      }
+    }
+  }
+}
+```
+
+## Generering av variabler
+
+För att generera CSS-variabler från våra design tokens använder vi ett skript som heter `sd.build.mjs`. Detta skript körs med kommandot `nx run theme:build` och gör följande:
+
+1.  **Läser in tokens:** Skriptet läser in alla token-filer från `/packages/theme/tokens` och slår ihop dem till ett enda stort objekt.
+2.  **Transformerar tokens:** Style Dictionary transformerar sedan detta objekt enligt de konfigurationer som finns i `sd.build.mjs`. Detta inkluderar att omvandla färger till rätt format, lägga till prefix och andra anpassningar.
+3.  **Genererar filer:** Slutligen genererar Style Dictionary CSS-filer med alla våra design tokens som CSS-variabler. Dessa filer sparas i `/dist/packages/theme` och kan sedan importeras och användas i våra komponenter och applikationer.
+
+
+De genererade filerna publiceras som ett eget npm-paket med namnet `@midas-ds/theme`.
+
+En komplett lista över alla tillgängliga tokens finns på sidan [token reference](dev-tokens.mdx).
