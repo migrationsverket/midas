@@ -7,14 +7,12 @@ permissions:
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: [Publish to NPM]
-    types: [completed]
+  workflow_call:
 
 jobs:
-  publish:
+  publish-docs:
+    name: Publish docs
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
