@@ -65,6 +65,7 @@ separat app med `npm install [sökväg]`.
 Vi använder en enkel branchstrategi med en `main`-branch som alltid ska vara i ett deploybart skick. Utveckling sker i feature- eller bugfix-branchar som sedan mergas in i `main`. Vi använder inte `develop` eller andra liknande branchar för att hålla det enkelt och för att passa ett arbetssätt med kontinuerlig integration och leverans (CI/CD).
 
 Ett exempel på hur det kan se ut i praktiken:
+
 ```mermaid
 ---
 config:
@@ -190,12 +191,28 @@ men om det har införts nya types eller interfaces kan de behöva specificeras e
 
 ## Release
 
-Release görs med hjälp av Nx Release som räknar fram rätt version via commit messages. Releasen triggas manuellt
-via GitHub Actions. Själva flödet är en uppdatering av changlog och package.json med ny version och en ny tagg enligt
-`nx-project@version`. Publicering till npm och GitHub Releases sker automatiskt.
+Release görs med hjälp av Nx Release som räknar fram rätt version via commit messages.
+
+Använd följande kommando:
+
+```bash
+nx release --skip-publish
+```
+
+eller välj vilka projekt du vill:
+
+```bash
+nx release -p components theme --skip-publish
+```
+
+Själva flödet är en uppdatering av changlog och package.json med ny version och en ny tagg enligt `nx-project@version`.
+
+När du kört kommandot har du möjlighet att skriva release notes, commita desssa och pusha allt till remote för att trigga publicering till npm.
+
+```bash
+git push --follow-tags
+```
 
 :::info
 Endast Midas core-team har de nödvändiga rättigheterna för att göra nya releaser.
 :::
-
-

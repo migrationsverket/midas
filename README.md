@@ -1,5 +1,5 @@
 [![Chromatic](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/chromatic.yml)
-[![Release](https://github.com/migrationsverket/midas/actions/workflows/manual-release.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/manual-release.yml)
+[![Publish](https://github.com/migrationsverket/midas/actions/workflows/publish.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/publish.yml)
 [![Docs](https://github.com/migrationsverket/midas/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/publish-docs.yml)
 [![PR Checks](https://github.com/migrationsverket/midas/actions/workflows/pr-checks.yml/badge.svg)](https://github.com/migrationsverket/midas/actions/workflows/pr-checks.yml)
 
