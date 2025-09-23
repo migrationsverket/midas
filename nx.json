@@ -79,7 +79,7 @@
       "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"
     },
     "version": {
-      "preVersionCommand": "npx nx run-many -t -p=[components, theme] build",
+      "preVersionCommand": "npx nx affected -t build",
       "specifierSource": "conventional-commits",
       "currentVersionResolver": "git-tag",
       "updateDependents": "auto",
