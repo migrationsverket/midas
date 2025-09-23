@@ -1,0 +1,67 @@
+---
+slug: 13.0.0
+title: Release 13.0.0
+authors: midas
+tags: [release-notes, v13]
+---
+
+Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
+göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.
+
+## 💥 Breaking Changes
+
+CSS/Styles är nu tillgängliga från `import '@midas-ds/components/default.css'` eller via `@midas-ds/theme`-paketet. Läs mer
+på [instruktioner för att komma igång](/get-started/install/).
+
+## ⬆️ Migrationsguide
+
+För att uppgradera från version 12 till 13 behöver du uppdatera hur du importerar CSS-filerna.
+
+Tidigare importerades CSS direkt från komponentpaketet. Nu måste du istället importera en global stilmall.
+
+**Gör så här:**
+
+1.  Ta bort alla CSS-importer från `@midas-ds/components` som du har i din applikation.
+2.  Lägg till en ny import i din huvudsakliga `App` komponent eller motsvarande:
+
+```javascript
+import '@midas-ds/components/default.css'
+```
+Denna import innehåller allt du behöver för att komma igång.
+Om du istället vill importera olika delar av Midas stilar kan du använda `@midas-ds/theme`:
+
+```bash
+npm install @midas-ds/theme
+```
+```javascript
+import '@midas-ds/theme/fonts.css'
+import '@midas-ds/theme/variables.css'
+import '@midas-ds/theme/color-scheme.css'
+```
+
+## 🚀 Nya funktioner
+
+- **components:** Ikonfärgen för feedback-status har ändrats till `--midas-icon-primary`.
+- **theme:** Signal-färgerna har uppdaterats.
+
+## 🩹 Fixar
+
+- **textfield:** Inbyggda (native) attribut har lagts till för textfield och textarea.
+- **table:** Korrekt bakgrundsfärg används nu för rader i tabellen.
+- **layout:** Hash har tagits bort från main role querySelector.
+
+## 🏭 Refactoring
+
+- Temat har helt separerats från komponentprojektet och ligger nu i ett eget paket.
+- Style dictionary build-skriptet har refaktorerats till en nx executor.
+
+## 🐣 Support för Tanstack Table
+
+Vi introducerar ett nytt paket `@midas-ds/table-styles` för att hjälpa till med styling för utvecklare som använder
+[Tanstack Table](https://tanstack.com/table/latest). Läs mer på [instruktioner för Tanstack Table](/dev/tanstack-table/).
+Det är en css-fil i tidig version som vi hoppas kunna bygga mer på som ett stöd för de utvecklare som vill komma åt mer
+avancerade tabellfunktioner än vad som ingår i Midas-table.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på [changelog](/changelog/13.0.0).

@@ -57,7 +57,7 @@
     },
     "changelog": {
       "commitReferences": true,
-      "workspaceChangelog": false,
+      "workspaceChangelog": true,
       "projectChangelogs": {
         "createRelease": "github",
         "renderOptions": {
