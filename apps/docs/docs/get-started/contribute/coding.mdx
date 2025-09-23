@@ -206,12 +206,9 @@ nx release -p components theme --skip-publish
 ```
 
 Själva flödet är en uppdatering av changlog och package.json med ny version och en ny tagg enligt `nx-project@version`.
+Nx pushar sedan alla ändringar och taggar och berörda workflows triggas.
 
-När du kört kommandot har du möjlighet att skriva release notes, commita desssa och pusha allt till remote för att trigga publicering till npm.
-
-```bash
-git push --follow-tags
-```
+Behöver du skriva release notes får du commita desssa i efterhand och ompublicera dokumentationswebben, kör `publish-docs`-workflowet från github.
 
 :::info
 Endast Midas core-team har de nödvändiga rättigheterna för att göra nya releaser.
