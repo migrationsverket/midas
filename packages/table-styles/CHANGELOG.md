@@ -1,3 +1,9 @@
+## 0.0.4 (2025-09-23)
+
+### 🩹 Fixes
+
+- **table-styles:** remove release entries for table-styles project.json
+
 ## 0.0.3 (2025-09-23)
 
 ### 🩹 Fixes
