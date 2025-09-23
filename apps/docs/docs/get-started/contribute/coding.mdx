@@ -103,9 +103,9 @@ Branch namnges enligt `[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/
 ### Commit
 
 Commits görs enligt [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). Använd engelska,
-**imperativ form**, definiera type `feat|docs|fix|refactor|test|ops...` och i scope `components|docs|theme|...`
-definierar du vilket Nx-projekt du avser uppdatera. Type avgör om om versionen ska bli en `patch` eller `minor`
-eller `major` (breaking change).
+**imperativ form**, definiera type `feat|docs|fix|refactor|test|chore|ops...` för att avgöra vilken versionsändring du vill göra och scope `(theme|button|etc...)` som rubrik för changelog.
+
+Se `.commitlintrc.js` för tillåtna types och scopes.
 
 :::info
 Våra commits är hela projektets historik, avgör vilken version nästa release blir, samt är indata till
