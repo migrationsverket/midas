@@ -13,9 +13,9 @@
 
 <link rel="alternate" type="application/rss+xml" href="/unreleased/changelog/rss.xml" title="Midas changelog RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/unreleased/changelog/atom.xml" title="Midas changelog Atom Feed">
-<link rel="alternate" type="application/json" href="/unreleased/changelog/feed.json" title="Midas changelog JSON Feed"><link rel="stylesheet" href="/unreleased/assets/css/styles.03b85564.css">
-<script src="/unreleased/assets/js/runtime~main.ac6d4b27.js" defer="defer"></script>
-<script src="/unreleased/assets/js/main.0c7c0ca7.js" defer="defer"></script>
+<link rel="alternate" type="application/json" href="/unreleased/changelog/feed.json" title="Midas changelog JSON Feed"><link rel="stylesheet" href="/unreleased/assets/css/styles.d24906c2.css">
+<script src="/unreleased/assets/js/runtime~main.881ec3c3.js" defer="defer"></script>
+<script src="/unreleased/assets/js/main.33efef24.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -60,9 +60,8 @@ separat app med <code scope="[object Object]">npm install [sökväg]</code>.</p>
 <p>Branch namnges enligt <code scope="[object Object]">[feature|bugfix|hotfix|docs|refactor|chore|test]/[scope]/</code>, till exempel <code scope="[object Object]">feature/button</code>. Scope är valfritt men om det används ska det referera till ett av projekten i monorepot, till exempel <code scope="[object Object]">components</code>, <code scope="[object Object]">docs</code> eller <code scope="[object Object]">theme</code>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="commit">Commit<a href="#commit" class="hash-link" aria-label="Direktlänk till Commit" title="Direktlänk till Commit">​</a></h3>
 <p>Commits görs enligt <a href="https://www.conventionalcommits.org/en/v1.0.0/#summary" target="_blank" rel="noopener noreferrer">conventional commits</a>. Använd engelska,
-<strong>imperativ form</strong>, definiera type <code scope="[object Object]">feat|docs|fix|refactor|test|ops...</code> och i scope <code scope="[object Object]">components|docs|theme|...</code>
-definierar du vilket Nx-projekt du avser uppdatera. Type avgör om om versionen ska bli en <code scope="[object Object]">patch</code> eller <code scope="[object Object]">minor</code>
-eller <code scope="[object Object]">major</code> (breaking change).</p>
+<strong>imperativ form</strong>, definiera type <code scope="[object Object]">feat|docs|fix|refactor|test|chore|ops...</code> för att avgöra vilken versionsändring du vill göra och scope <code scope="[object Object]">(theme|button|etc...)</code> som rubrik för changelog.</p>
+<p>Se <code scope="[object Object]">.commitlintrc.js</code> för tillåtna types och scopes.</p>
 <div class="infoBanner_SGaB info_M4dU no-margin-children"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info icon_F71c" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg><div class="content_DhUR"><div class="text_FCS8"><p>Våra commits är hela projektets historik, avgör vilken version nästa release blir, samt är indata till
 changelogs och release notes så lägg gärna en extra minut på att vara tydlig. Om du är osäker på vilken
 commit du ska göra, titta på <a href="https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13" target="_blank" rel="noopener noreferrer">conventional commits cheatsheet</a>.</p></div></div></div>
