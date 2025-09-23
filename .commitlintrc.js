@@ -58,6 +58,7 @@ async function getConfig() {
           'revert',
           'style',
           'test',
+          'ops',
         ],
       ],
     },
