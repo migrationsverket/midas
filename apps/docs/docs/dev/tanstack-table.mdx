@@ -1,0 +1,52 @@
+---
+title: Tanstack Table
+description: Implementation av Tanstack Table
+---
+
+import {PaginationExample} from '@site/src/components/examples'
+
+# Tanstack Table
+
+När du behöver mer avancerade funktioner för tabeller rekommenderar vi att du använder Tanstack Table. Det är ett
+kraftfullt "headless"-verktyg, vilket innebär att det inte renderar någon markup eller stilar åt dig. Detta ger dig
+full kontroll över tabellens utseende, och vi har tillhandahållit stilar för att säkerställa att den matchar Midas utseende och känsla.
+
+## När du ska använda Tanstack Table
+
+Använd Tanstack Table när du behöver funktioner som:
+
+- Paginering
+- Sortering
+- Filtrering
+- Radmarkering
+- Kolumnordning
+- Och mycket mer!
+
+För enklare tabeller som inte kräver denna funktionalitet kan du använda den grundläggande Midas-tabellkomponenten.
+
+## Komma igång
+
+För att använda Tanstack Table med Midas-stilar måste du först installera de nödvändiga beroendena:
+
+```bash
+npm install @tanstack/react-table
+```
+
+Importera sedan Midas-stilarna för tabellen:
+
+```css
+@import '@midas-ds/table-styles/tanstack-table.css';
+```
+
+## Användbara länkar
+
+Här är några resurser som hjälper dig att komma igång med TanStack Table:
+
+- [**TanStack Table v8 Docs**](https://tanstack.com/table/v8/docs/introduction): Den officiella dokumentationen är den bästa platsen att lära sig om alla funktioner och hur man använder dem.
+- [**Exempel**](https://tanstack.com/table/v8/docs/framework/react/examples/basic): En stor samling exempel som visar hur man implementerar olika funktioner.
+
+## Exempel
+
+Här är ett exempel på en paginerad tabell byggd med Tanstack Table och stylad med Midas:
+
+<PaginationExample/>
