@@ -59,6 +59,7 @@
       "commitReferences": true,
       "workspaceChangelog": false,
       "projectChangelogs": {
+        "createRelease": "github",
         "renderOptions": {
           "authors": false,
           "versionTitleDate": true
@@ -75,8 +76,7 @@
     ],
     "releaseTagPattern": "{projectName}@v{version}",
     "git": {
-      "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]",
-      "push": false
+      "commitMessage": "chore(release): release {projectName} package, version {version} [skip-ci]"
     },
     "version": {
       "preVersionCommand": "npx nx run-many -t -p=[components, theme] build",
