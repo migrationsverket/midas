@@ -4,10 +4,60 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/unreleased/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Wed, 10 Sep 2025 07:14:03 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Sep 2025 13:36:37 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 13.0.0]]></title>
+            <link>https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/</link>
+            <guid>https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/</guid>
+            <pubDate>Tue, 23 Sep 2025 13:36:37 GMT</pubDate>
+            <description><![CDATA[Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
+göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes">​</a></h2>
+<p>CSS/Styles är nu tillgängliga från <code scope="[object Object]">import '@midas-ds/components/default.css'</code> eller via <code scope="[object Object]">@midas-ds/theme</code>-paketet. Läs mer
+på <a href="https://designsystem.migrationsverket.se/unreleased/get-started/install/">instruktioner för att komma igång</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-migrationsguide">⬆️ Migrationsguide<a href="https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/#%EF%B8%8F-migrationsguide" class="hash-link" aria-label="Direktlänk till ⬆️ Migrationsguide" title="Direktlänk till ⬆️ Migrationsguide">​</a></h2>
+<p>För att uppgradera från version 12 till 13 behöver du uppdatera hur du importerar CSS-filerna.</p>
+<p>Tidigare importerades CSS direkt från komponentpaketet. Nu måste du istället importera en global stilmall.</p>
+<p><strong>Gör så här:</strong></p>
+<ol>
+<li>Ta bort alla CSS-importer från <code scope="[object Object]">@midas-ds/components</code> som du har i din applikation.</li>
+<li>Lägg till en ny import i din huvudsakliga <code scope="[object Object]">App</code> komponent eller motsvarande:</li>
+</ol>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword module" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/components/default.css'</span><br></span></code></pre></div></div>
+<p>Denna import innehåller allt du behöver för att komma igång.
+Om du istället vill importera olika delar av Midas stilar kan du använda <code scope="[object Object]">@midas-ds/theme</code>:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token function" style="color:rgb(0, 0, 255)">npm</span><span class="token plain"> </span><span class="token function" style="color:rgb(0, 0, 255)">install</span><span class="token plain"> @midas-ds/theme</span><br></span></code></pre></div></div>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword module" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/theme/fonts.css'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain"></span><span class="token keyword module" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/theme/variables.css'</span><span class="token plain"></span><br></span><span class="token-line" style="color:#000000"><span class="token plain"></span><span class="token keyword module" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/theme/color-scheme.css'</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner">​</a></h2>
+<ul>
+<li><strong>components:</strong> Ikonfärgen för feedback-status har ändrats till <code scope="[object Object]">--midas-icon-primary</code>.</li>
+<li><strong>theme:</strong> Signal-färgerna har uppdaterats.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar">​</a></h2>
+<ul>
+<li><strong>textfield:</strong> Inbyggda (native) attribut har lagts till för textfield och textarea.</li>
+<li><strong>table:</strong> Korrekt bakgrundsfärg används nu för rader i tabellen.</li>
+<li><strong>layout:</strong> Hash har tagits bort från main role querySelector.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring">​</a></h2>
+<ul>
+<li>Temat har helt separerats från komponentprojektet och ligger nu i ett eget paket.</li>
+<li>Style dictionary build-skriptet har refaktorerats till en nx executor.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-support-för-tanstack-table">🐣 Support för Tanstack Table<a href="https://designsystem.migrationsverket.se/unreleased/release-notes/13.0.0/#-support-f%C3%B6r-tanstack-table" class="hash-link" aria-label="Direktlänk till 🐣 Support för Tanstack Table" title="Direktlänk till 🐣 Support för Tanstack Table">​</a></h2>
+<p>Vi introducerar ett nytt paket <code scope="[object Object]">@midas-ds/table-styles</code> för att hjälpa till med styling för utvecklare som använder
+<a href="https://tanstack.com/table/latest" target="_blank" rel="noopener noreferrer">Tanstack Table</a>. Läs mer på <a href="https://designsystem.migrationsverket.se/unreleased/dev/tanstack-table/">instruktioner för Tanstack Table</a>.
+Det är en css-fil i tidig version som vi hoppas kunna bygga mer på som ett stöd för de utvecklare som vill komma åt mer
+avancerade tabellfunktioner än vad som ingår i Midas-table.</p>
+<!-- -->
+<p>Se alla förändringar i detalj på <a href="https://designsystem.migrationsverket.se/unreleased/changelog/13.0.0/">changelog</a>.</p>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v13</category>
+        </item>
         <item>
             <title><![CDATA[Release 12.1.0]]></title>
             <link>https://designsystem.migrationsverket.se/unreleased/release-notes/12.1.0/</link>
