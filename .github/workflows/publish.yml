@@ -10,6 +10,10 @@ on:
     tags:
       - '*@v*.*.*'
 
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NPM_CONFIG_PROVENANCE: true
+
 jobs:
   publish-to-npm:
     uses: migrationsverket/midas/.github/workflows/publish-to-npm.yml@main
