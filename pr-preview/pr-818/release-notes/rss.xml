@@ -4,7 +4,7 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/pr-preview/pr-818/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Tue, 23 Sep 2025 13:02:19 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Sep 2025 13:10:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
@@ -12,13 +12,28 @@
             <title><![CDATA[Release 13.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/pr-preview/pr-818/release-notes/13.0.0/</link>
             <guid>https://designsystem.migrationsverket.se/pr-preview/pr-818/release-notes/13.0.0/</guid>
-            <pubDate>Tue, 23 Sep 2025 13:02:19 GMT</pubDate>
+            <pubDate>Tue, 23 Sep 2025 13:10:53 GMT</pubDate>
             <description><![CDATA[Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att]]></description>
             <content:encoded><![CDATA[<p>Den här releasen innehåller en del större förändringar under huven. Vi har separerat vårt tema/css från komponenterna för att
 göra det mer flexibelt och för att kunna erbjuda fler anpassningsmöjligheter i framtiden.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/pr-preview/pr-818/release-notes/13.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes">​</a></h2>
 <p>CSS/Styles är nu tillgängliga från <code scope="[object Object]">import '@midas-ds/components/default.css'</code> eller via <code scope="[object Object]">@midas-ds/theme</code>-paketet. Läs mer
 på <a href="https://designsystem.migrationsverket.se/pr-preview/pr-818/get-started/install/">instruktioner för att komma igång</a>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-migrationsguide">⬆️ Migrationsguide<a href="https://designsystem.migrationsverket.se/pr-preview/pr-818/release-notes/13.0.0/#%EF%B8%8F-migrationsguide" class="hash-link" aria-label="Direktlänk till ⬆️ Migrationsguide" title="Direktlänk till ⬆️ Migrationsguide">​</a></h2>
+<p>För att uppgradera från version 12 till 13 behöver du uppdatera hur du importerar CSS-filerna.</p>
+<p>Tidigare importerades CSS direkt från komponentpaketet. Nu måste du istället importera en global stilmall.</p>
+<p><strong>Gör så här:</strong></p>
+<ol>
+<li>
+<p>Ta bort alla CSS-importer från <code scope="[object Object]">@midas-ds/components</code> som du har i din applikation.</p>
+</li>
+<li>
+<p>Lägg till en ny import i din huvudsakliga <code scope="[object Object]">App</code> komponent eller motsvarande:</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword module" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/theme/midas.css'</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><br></span></code></pre></div></div>
+<p>eller om du använder dig av <code scope="[object Object]">default.css</code>:</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword module" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/components/default.css'</span><span class="token punctuation" style="color:rgb(4, 81, 165)">;</span><br></span></code></pre></div></div>
+</li>
+</ol>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/pr-preview/pr-818/release-notes/13.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner">​</a></h2>
 <ul>
 <li><strong>components:</strong> Ikonfärgen för feedback-status har ändrats till <code scope="[object Object]">--midas-icon-primary</code>.</li>
