@@ -1,0 +1,15 @@
+declare const _default: {
+  "en": {
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "system": "System Setting"
+  },
+  "sv": {
+    "darkMode": "Mörkt läge",
+    "lightMode": "Ljust läge",
+    "system": "Systeminställning"
+  }
+}
+;
+
+export default _default;
