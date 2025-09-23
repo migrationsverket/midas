@@ -11,6 +11,10 @@ När du behöver mer avancerade funktioner för tabeller rekommenderar vi att du
 kraftfullt "headless"-verktyg, vilket innebär att det inte renderar någon markup eller stilar åt dig. Detta ger dig
 full kontroll över tabellens utseende, och vi har tillhandahållit stilar för att säkerställa att den matchar Midas utseende och känsla.
 
+:::info
+Stilarna för Tanstack Table är just nu i en tidig version och är ett arbete som pågår. Tanstack Table är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/midas-ds/midas) och tar gärna emot förslag på stilar som saknas när du implementerar Tanstack Table.
+:::
+
 ## När du ska använda Tanstack Table
 
 Använd Tanstack Table när du behöver funktioner som:
@@ -38,6 +42,14 @@ Importera sedan Midas-stilarna för tabellen:
 @import '@midas-ds/table-styles/tanstack-table.css';
 ```
 
+Använd class `table`:
+
+```tsx
+<table className={'table'}>
+...
+</table>
+```
+
 ## Användbara länkar
 
 Här är några resurser som hjälper dig att komma igång med TanStack Table:
@@ -47,6 +59,266 @@ Här är några resurser som hjälper dig att komma igång med TanStack Table:
 
 ## Exempel
 
-Här är ett exempel på en paginerad tabell byggd med Tanstack Table och stylad med Midas:
+Här är ett exempel på en paginerad tabell byggd med Tanstack Table och stylad med Midas
+(exempel taget officiella dokumentationen):
 
 <PaginationExample/>
+
+```tsx title="Table.tsx"
+import React from 'react'
+import '@midas-ds/table-styles/tanstack-table.css'
+
+import {
+  type ColumnDef,
+  flexRender,
+  getCoreRowModel,
+  getPaginationRowModel,
+  useReactTable,
+} from '@tanstack/react-table'
+import { makeData } from './makeData'
+import { Button, TextField, Select } from '@midas-ds/components'
+import {
+  ChevronLeft,
+  ChevronsLeft,
+  ChevronRight,
+  ChevronsRight,
+} from 'lucide-react'
+
+type Person = {
+  firstName: string
+  lastName: string
+  age: number
+  visits: number
+  status: string
+  progress: number
+}
+
+const defaultColumns: ColumnDef<Person>[] = [
+  {
+    accessorKey: 'firstName',
+    header: () => 'First Name',
+    cell: info => info.getValue(),
+    footer: props => props.column.id,
+  },
+  {
+    accessorFn: row => row.lastName,
+    id: 'lastName',
+    cell: info => info.getValue(),
+    header: () => <span>Last Name</span>,
+    footer: props => props.column.id,
+  },
+  {
+    accessorKey: 'age',
+    header: () => 'Age',
+    footer: props => props.column.id,
+  },
+  {
+    accessorKey: 'visits',
+    header: () => <span>Visits</span>,
+    footer: props => props.column.id,
+  },
+  {
+    accessorKey: 'status',
+    header: 'Status',
+    footer: props => props.column.id,
+  },
+  {
+    accessorKey: 'progress',
+    header: 'Profile Progress',
+    footer: props => props.column.id,
+  },
+]
+
+export const PaginationExample = () => {
+  const [data] = React.useState(() => makeData(1000))
+  const [columns] = React.useState<typeof defaultColumns>(() => [
+    ...defaultColumns,
+  ])
+
+  // Create the table and pass your options
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+  })
+
+  // Manage your own state
+  const [state, setState] = React.useState(table.initialState)
+
+  // Override the state managers for the table to your own
+  table.setOptions(prev => ({
+    ...prev,
+    state,
+    onStateChange: setState,
+    // These are just table options, so if things
+    // need to change based on your state, you can
+    // derive them here
+  }))
+
+  return (
+    <div>
+      <table className={'table'}>
+        <thead>
+          {table.getHeaderGroups().map(headerGroup => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map(header => (
+                <th
+                  key={header.id}
+                  colSpan={header.colSpan}
+                >
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        <tbody>
+          {table.getRowModel().rows.map(row => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map(cell => (
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          {table.getFooterGroups().map(footerGroup => (
+            <tr key={footerGroup.id}>
+              {footerGroup.headers.map(header => (
+                <th
+                  key={header.id}
+                  colSpan={header.colSpan}
+                >
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.footer,
+                        header.getContext(),
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </tfoot>
+      </table>
+      <div />
+      <div style={{ display: 'flex', gap: '0.5rem', margin: '1rem 0' }}>
+          <Button
+            onPress={() => table.setPageIndex(0)}
+            isDisabled={!table.getCanPreviousPage()}
+          >
+            <ChevronsLeft />
+          </Button>
+          <Button
+            onPress={() => table.previousPage()}
+            isDisabled={!table.getCanPreviousPage()}
+          >
+            <ChevronLeft />
+          </Button>
+          <Button
+            onPress={() => table.nextPage()}
+            isDisabled={!table.getCanNextPage()}
+          >
+            <ChevronRight />
+          </Button>
+          <Button
+            onPress={() => table.setPageIndex(table.getPageCount() - 1)}
+            isDisabled={!table.getCanNextPage()}
+          >
+            <ChevronsRight />
+          </Button>
+      </div>
+      <div style={{ display: 'flex', gap: '0.5rem', margin: '1rem 0' }}>
+          <TextField
+            value={`${table.getState().pagination.pageIndex + 1} of ${table.getPageCount()}`}
+            isReadOnly
+            label={'Page'}
+          />
+          <TextField
+            label={'Go to page'}
+            type='number'
+            min={1}
+            max={table.getPageCount()}
+            value={(table.getState().pagination.pageIndex + 1).toString()}
+            onChange={e => {
+              const page = e ? Number(e) - 1 : 0
+              table.setPageIndex(page)
+            }}
+          />
+        <Select
+          style={{minWidth: '200px'}}
+          label='Rows per page'
+          selectedKeys={[table.getState().pagination.pageSize]}
+          onSelectionChange={keys =>
+            table.setPageSize(Number(Array.from(keys)[0]))
+          }
+          options={[10, 20, 30, 40, 50].map(pageSize => ({
+            id: pageSize,
+            name: `Show ${pageSize}`,
+          }))}
+        ></Select>
+      </div>
+    </div>
+  )
+}
+
+```
+```ts title=makeData.ts
+import { faker } from '@faker-js/faker'
+
+export type Person = {
+  firstName: string
+  lastName: string
+  age: number
+  visits: number
+  progress: number
+  status: 'relationship' | 'complicated' | 'single'
+  subRows?: Person[]
+}
+
+const range = (len: number) => {
+  const arr: number[] = []
+  for (let i = 0; i < len; i++) {
+    arr.push(i)
+  }
+  return arr
+}
+
+const newPerson = (): Person => {
+  return {
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    age: faker.number.int(40),
+    visits: faker.number.int(1000),
+    progress: faker.number.int(100),
+    status: faker.helpers.shuffle<Person['status']>([
+      'relationship',
+      'complicated',
+      'single',
+    ])[0]!,
+  }
+}
+
+export function makeData(...lens: number[]) {
+  const makeDataLevel = (depth = 0): Person[] => {
+    const len = lens[depth]!
+    return range(len).map((d): Person => {
+      return {
+        ...newPerson(),
+        subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
+      }
+    })
+  }
+
+  return makeDataLevel()
+}
+
+```

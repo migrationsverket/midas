@@ -15,6 +15,10 @@ import { BasicExample, FullExample, ControlledExample } from '@site/src/componen
 Komponent för att visualisera data. Kan kombineras med andra komponenter, till exempel [Select](/components/select),
 för att filtrera eller [SearchField](/components/search-field) för att söka osv.
 
+:::info
+Denna komponent är utformad för att visa data på ett enkelt och okomplicerat sätt. Om dina behov är mer komplexa och kräver avancerade funktioner som paginering, sortering, filtrering eller omfattande anpassning, rekommenderar vi att du överväger [Tanstack Table](https://tanstack.com/table/v8). För att få en Midas-liknande stil och känsla, se vår [guide för Midas-tema för Tanstack Table](/dev/tanstack-table).
+:::
+
 ```tsx
 import { Table, TableHeader, Column, TableBody, Row, Cell } from '@midas-ds/components'
 ```
