@@ -1,3 +1,9 @@
+## 0.0.3 (2025-09-23)
+
+### 🩹 Fixes
+
+- **table-styles:** update vite config with readme and tspaths
+
 ## 0.0.2 (2025-09-23)
 
 ### 🔧 Maintenance
