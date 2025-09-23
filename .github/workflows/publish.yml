@@ -12,7 +12,7 @@ on:
 
 jobs:
   publish-to-npm:
-    uses: migrationsverket/midas/.github/workflows/publish-to-npm.yml@v1
+    uses: migrationsverket/midas/.github/workflows/publish-to-npm.yml
   publish-docs:
     if: ${{ contains(github.ref_name, 'components@') }}
-    uses: migrationsverket/midas/.github/workflows/publish-docs.yml@v1
+    uses: migrationsverket/midas/.github/workflows/publish-docs.yml
