@@ -2,12 +2,81 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://designsystem.migrationsverket.se/changelog/</id>
     <title>Midas changelog</title>
-    <updated>2025-09-10T20:00:00.000Z</updated>
+    <updated>2025-09-23T20:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://designsystem.migrationsverket.se/changelog/"/>
     <subtitle>Håll dig uppdaterad med allt som händer i varje release</subtitle>
     <icon>https://designsystem.migrationsverket.se/img/favicon.ico?v=3</icon>
     <rights>2025 Migrationsverket</rights>
+    <entry>
+        <title type="html"><![CDATA[13.0.0]]></title>
+        <id>https://designsystem.migrationsverket.se/changelog/13.0.0/</id>
+        <link href="https://designsystem.migrationsverket.se/changelog/13.0.0/"/>
+        <updated>2025-09-23T20:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🚀 Features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
+<ul>
+<li><strong>components:</strong> change feedback-status icon color to --midas-icon-primary (<a href="https://github.com/migrationsverket/midas/commit/a92b43b16b" target="_blank" rel="noopener noreferrer">a92b43b16b</a>)</li>
+<li>⚠️ <strong>components-theme:</strong> add new default css export (<a href="https://github.com/migrationsverket/midas/commit/60df9c5b0c" target="_blank" rel="noopener noreferrer">60df9c5b0c</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li><strong>textfield:</strong> add native attributes to textfield and textarea (<a href="https://github.com/migrationsverket/midas/commit/b66f66e0c2" target="_blank" rel="noopener noreferrer">b66f66e0c2</a>)</li>
+<li><strong>table:</strong> use correct background color for row (<a href="https://github.com/migrationsverket/midas/commit/11ba3df094" target="_blank" rel="noopener noreferrer">11ba3df094</a>)</li>
+<li><strong>layout:</strong> remove hash from main role querySelector (<a href="https://github.com/migrationsverket/midas/commit/1de02a1daf" target="_blank" rel="noopener noreferrer">1de02a1daf</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring">​</a></h2>
+<ul>
+<li>remove theme from components project completely, rely on theme package (<a href="https://github.com/migrationsverket/midas/commit/5616f8ecc2" target="_blank" rel="noopener noreferrer">5616f8ecc2</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-documentation-changes">📖 Documentation changes<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#-documentation-changes" class="hash-link" aria-label="Direktlänk till 📖 Documentation changes" title="Direktlänk till 📖 Documentation changes">​</a></h2>
+<ul>
+<li>add an unreleased indicator in the header (<a href="https://github.com/migrationsverket/midas/commit/a531105b18" target="_blank" rel="noopener noreferrer">a531105b18</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h2>
+<ul>
+<li>split global.css into fonts.css and color-scheme.css (<a href="https://github.com/migrationsverket/midas/commit/4597020286" target="_blank" rel="noopener noreferrer">4597020286</a>)</li>
+<li><strong>components:</strong> remove reference to missing plugin (<a href="https://github.com/migrationsverket/midas/commit/8afb0b77d7" target="_blank" rel="noopener noreferrer">8afb0b77d7</a>)</li>
+<li><strong>theme:</strong> rename imported variables (<a href="https://github.com/migrationsverket/midas/commit/1f33edb0a8" target="_blank" rel="noopener noreferrer">1f33edb0a8</a>)</li>
+<li><strong>theme:</strong> revert removal of css (<a href="https://github.com/migrationsverket/midas/commit/32fd9c10f6" target="_blank" rel="noopener noreferrer">32fd9c10f6</a>)</li>
+<li>fix jest module name mapper for theme project (<a href="https://github.com/migrationsverket/midas/commit/67ab292b9b" target="_blank" rel="noopener noreferrer">67ab292b9b</a>)</li>
+<li>temporary fix on named module imports in preview.tsx (<a href="https://github.com/migrationsverket/midas/commit/4ef7584195" target="_blank" rel="noopener noreferrer">4ef7584195</a>)</li>
+<li>fix component unused variables (<a href="https://github.com/migrationsverket/midas/commit/86456c1412" target="_blank" rel="noopener noreferrer">86456c1412</a>)</li>
+<li>fix stylelint references (<a href="https://github.com/migrationsverket/midas/commit/0772ed273e" target="_blank" rel="noopener noreferrer">0772ed273e</a>)</li>
+<li><strong>storybook:</strong> refactor theme imports to point to theme package (<a href="https://github.com/migrationsverket/midas/commit/3410f92902" target="_blank" rel="noopener noreferrer">3410f92902</a>)</li>
+<li>buildable docs version (<a href="https://github.com/migrationsverket/midas/commit/b25c77fdf3" target="_blank" rel="noopener noreferrer">b25c77fdf3</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-breaking-changes">⚠️ Breaking Changes<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#%EF%B8%8F-breaking-changes" class="hash-link" aria-label="Direktlänk till ⚠️ Breaking Changes" title="Direktlänk till ⚠️ Breaking Changes">​</a></h2>
+<ul>
+<li><strong>components-theme:</strong> Default styles are now accessible from <code scope="[object Object]">import '@midas-ds/components/default.css'</code> or via the <code scope="[object Object]">@midas-ds/theme</code> package.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-updated-dependencies">🧱 Updated Dependencies<a href="https://designsystem.migrationsverket.se/changelog/13.0.0/#-updated-dependencies" class="hash-link" aria-label="Direktlänk till 🧱 Updated Dependencies" title="Direktlänk till 🧱 Updated Dependencies">​</a></h2>
+<ul>
+<li>Updated theme to 3.0.0</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[12.1.1]]></title>
+        <id>https://designsystem.migrationsverket.se/changelog/12.1.1/</id>
+        <link href="https://designsystem.migrationsverket.se/changelog/12.1.1/"/>
+        <updated>2025-09-12T20:00:00.000Z</updated>
+        <summary type="html"><![CDATA[🩹 Fixes]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/12.1.1/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
+<ul>
+<li><strong>modal:</strong> remove modal enter animation (<a href="https://github.com/migrationsverket/midas/commit/929648ac35" target="_blank" rel="noopener noreferrer">929648ac35</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactors">💅 Refactors<a href="https://designsystem.migrationsverket.se/changelog/12.1.1/#-refactors" class="hash-link" aria-label="Direktlänk till 💅 Refactors" title="Direktlänk till 💅 Refactors">​</a></h2>
+<ul>
+<li><strong>components:</strong> replace <code scope="[object Object]">@values</code> import with hard-coded values for all components (<a href="https://github.com/migrationsverket/midas/commit/417bab504b" target="_blank" rel="noopener noreferrer">417bab504b</a>)</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-maintenance">🔧 Maintenance<a href="https://designsystem.migrationsverket.se/changelog/12.1.1/#-maintenance" class="hash-link" aria-label="Direktlänk till 🔧 Maintenance" title="Direktlänk till 🔧 Maintenance">​</a></h2>
+<ul>
+<li><strong>components:</strong> stylelint fixing and remove unused css (<a href="https://github.com/migrationsverket/midas/commit/b697a7d237" target="_blank" rel="noopener noreferrer">b697a7d237</a>)</li>
+<li><strong>theme:</strong> sync tokens with components lib (<a href="https://github.com/migrationsverket/midas/commit/30c3df9190" target="_blank" rel="noopener noreferrer">30c3df9190</a>)</li>
+<li><strong>components:</strong> remove irrelevant token script from project.json [nx] (<a href="https://github.com/migrationsverket/midas/commit/f640ca601c" target="_blank" rel="noopener noreferrer">f640ca601c</a>)</li>
+<li>setup theme package to export correct variables and tokens (<a href="https://github.com/migrationsverket/midas/commit/f71900e8e9" target="_blank" rel="noopener noreferrer">f71900e8e9</a>)</li>
+</ul>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[12.1.0]]></title>
         <id>https://designsystem.migrationsverket.se/changelog/12.1.0/</id>
@@ -318,7 +387,7 @@
 <li>typo on numbers in grid sizing table (<a href="https://github.com/migrationsverket/midas/pull/671" target="_blank" rel="noopener noreferrer">#671</a>)</li>
 <li><strong>select:</strong> add docs on controlled selection for single select (<a href="https://github.com/migrationsverket/midas/commit/9ea323915d" target="_blank" rel="noopener noreferrer">9ea323915d</a>)</li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-tests-updated">🧪 Tests updated<a href="https://designsystem.migrationsverket.se/changelog/10.3.0/#-tests-updated" class="hash-link" aria-label="Direktlänk till 🧪 Tests updated" title="Direktlänk till 🧪 Tests updated">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-tests-updated">🧪 Tests updated<a href="https://designsystem.migrationsverket.se/changelog/10.3.0/#-tests-updated" class="hash-link" aria-label="Direktlänk till ��🧪 Tests updated" title="Direktlänk till 🧪 Tests updated">​</a></h2>
 <ul>
 <li>remove storybook background transiton (<a href="https://github.com/migrationsverket/midas/commit/a7b633dca8" target="_blank" rel="noopener noreferrer">a7b633dca8</a>)</li>
 <li>opt-in for chromatic on PRs (<a href="https://github.com/migrationsverket/midas/pull/675" target="_blank" rel="noopener noreferrer">#675</a>)</li>
@@ -808,56 +877,6 @@
 <ul>
 <li><strong>link:</strong> fix broken url address (<a href="https://github.com/migrationsverket/midas/pull/403" target="_blank" rel="noopener noreferrer">#403</a>)</li>
 <li><strong>modal:</strong> 📝 add examples with form elements (<a href="https://github.com/migrationsverket/midas/pull/399" target="_blank" rel="noopener noreferrer">#399</a>)</li>
-</ul>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[7.0.0]]></title>
-        <id>https://designsystem.migrationsverket.se/changelog/7.0.0/</id>
-        <link href="https://designsystem.migrationsverket.se/changelog/7.0.0/"/>
-        <updated>2025-04-02T20:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Documentation Changes]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-changes">Documentation Changes<a href="https://designsystem.migrationsverket.se/changelog/7.0.0/#documentation-changes" class="hash-link" aria-label="Direktlänk till Documentation Changes" title="Direktlänk till Documentation Changes">​</a></h2>
-<ul>
-<li>remove april fools (<a href="https://github.com/migrationsverket/midas/commit/4bcdaa31c" target="_blank" rel="noopener noreferrer">4bcdaa31c</a>)</li>
-<li>remove april fools (<a href="https://github.com/migrationsverket/midas/pull/381" target="_blank" rel="noopener noreferrer">#381</a>)</li>
-<li>♿️💄ensure that markdown links use midas styling (<a href="https://github.com/migrationsverket/midas/commit/b79ce1b36" target="_blank" rel="noopener noreferrer">b79ce1b36</a>)</li>
-</ul>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[6.2.0]]></title>
-        <id>https://designsystem.migrationsverket.se/changelog/6.2.0/</id>
-        <link href="https://designsystem.migrationsverket.se/changelog/6.2.0/"/>
-        <updated>2025-04-01T20:00:00.000Z</updated>
-        <summary type="html"><![CDATA[🚀 Features]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-features">🚀 Features<a href="https://designsystem.migrationsverket.se/changelog/6.2.0/#-features" class="hash-link" aria-label="Direktlänk till 🚀 Features" title="Direktlänk till 🚀 Features">​</a></h2>
-<ul>
-<li><strong>badge:</strong> 🆕 new component - badge to indicate user of unread items</li>
-<li><strong>badge:</strong> 🆕 new component - badge to indicate user of unread items</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixes">🩹 Fixes<a href="https://designsystem.migrationsverket.se/changelog/6.2.0/#-fixes" class="hash-link" aria-label="Direktlänk till 🩹 Fixes" title="Direktlänk till 🩹 Fixes">​</a></h2>
-<ul>
-<li><strong>date-picker:</strong> add disabled style to divider</li>
-<li><strong>link-button:</strong> fix secondary border and icon color in dark mode</li>
-<li><strong>link-button:</strong> fix secondary border and icon color in dark mode</li>
-<li><strong>tabs:</strong> fix dark mode on tabs and example on docweb</li>
-<li><strong>tabs:</strong> fix dark mode on tabs and example on docweb</li>
-<li><strong>theme:</strong> change the token value to icon secondary</li>
-<li><strong>theme:</strong> update some tokens to new naming convention</li>
-<li><strong>theme:</strong> update more tokens in tokens.ts</li>
-<li><strong>theme:</strong> update icon-secondary with new value for dark mode</li>
-<li><strong>theme:</strong> update some tokens to new naming convention</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="documentation-changes">Documentation Changes<a href="https://designsystem.migrationsverket.se/changelog/6.2.0/#documentation-changes" class="hash-link" aria-label="Direktlänk till Documentation Changes" title="Direktlänk till Documentation Changes">​</a></h2>
-<ul>
-<li>april fools</li>
-<li>a bit longer april fools joke</li>
-<li>fixes on badge page</li>
-<li>april fools</li>
-<li>add clarification on when to use which loader</li>
-<li><strong>docs:</strong> add new UI-kit</li>
-<li><strong>docs:</strong> change wording on dark mode guide page</li>
-<li><strong>docs:</strong> add clarification on when to use which loader</li>
-<li><strong>docs:</strong> add new UI-kit</li>
 </ul>]]></content>
     </entry>
 </feed>
