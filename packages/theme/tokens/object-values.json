@@ -428,7 +428,7 @@
     },
     "text": {
       "sectionHeader": {
-        "$value": "light-dark({color.blue.120}, {color.blue.80})"
+        "$value": "light-dark({color.gray.140}, {color.gray.70})"
       }
     }
   }

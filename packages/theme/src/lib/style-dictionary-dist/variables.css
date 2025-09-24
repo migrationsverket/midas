@@ -261,5 +261,5 @@
   --midas-logo-primary: light-dark(var(--midas-color-red-100), var(--midas-color-white-base)); /** Färg på logotypen */
   --midas-menu-item-background-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-190)); /** Bakgrundsfärg för menu vid hover */
   --midas-menu-item-background-selected: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Bakgrundsfärg för aktiv menu */
-  --midas-menu-text-section-header: light-dark(var(--midas-color-blue-120), var(--midas-color-blue-80));
+  --midas-menu-text-section-header: light-dark(var(--midas-color-gray-140), var(--midas-color-gray-70));
 }
