@@ -5,7 +5,6 @@ import path from 'path'
 import fs from 'fs'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
-const defaultLocale = 'sv'
 const packageAliases = {}
 // eslint-disable-next-line
 const version: string = require(
@@ -76,30 +75,6 @@ const config: Config = {
       },
     ],
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
-    [
-      './src/plugins/changelog/index.ts',
-      {
-        blogTitle: 'Midas changelog',
-        blogDescription:
-          'Håll dig uppdaterad med allt som händer i varje release',
-        blogSidebarCount: 'ALL',
-        blogSidebarTitle: 'Changelog',
-        routeBasePath: '/changelog',
-        showReadingTime: false,
-        postsPerPage: 20,
-        archiveBasePath: null,
-        authorsMapPath: 'authors.json',
-        feedOptions: {
-          type: 'all',
-          title: 'Midas changelog',
-          description:
-            'Håll dig uppdaterad med allt som händer i varje release',
-          copyright: `${new Date().getFullYear()} Migrationsverket`,
-          language: defaultLocale,
-        },
-        onInlineAuthors: 'ignore',
-      },
-    ],
   ],
   markdown: {
     mermaid: true,
