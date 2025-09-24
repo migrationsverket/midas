@@ -92,7 +92,7 @@ export const PaginationExample = () => {
 
   return (
     <div>
-      <table className={'table'}>
+      <table className='table'>
         <thead>
           {table.getHeaderGroups().map(headerGroup => (
             <tr key={headerGroup.id}>
@@ -145,50 +145,50 @@ export const PaginationExample = () => {
       </table>
       <div />
       <div style={{ display: 'flex', gap: '0.5rem', margin: '1rem 0' }}>
-          <Button
-            onPress={() => table.setPageIndex(0)}
-            isDisabled={!table.getCanPreviousPage()}
-          >
-            <ChevronsLeft />
-          </Button>
-          <Button
-            onPress={() => table.previousPage()}
-            isDisabled={!table.getCanPreviousPage()}
-          >
-            <ChevronLeft />
-          </Button>
-          <Button
-            onPress={() => table.nextPage()}
-            isDisabled={!table.getCanNextPage()}
-          >
-            <ChevronRight />
-          </Button>
-          <Button
-            onPress={() => table.setPageIndex(table.getPageCount() - 1)}
-            isDisabled={!table.getCanNextPage()}
-          >
-            <ChevronsRight />
-          </Button>
+        <Button
+          onPress={() => table.setPageIndex(0)}
+          isDisabled={!table.getCanPreviousPage()}
+        >
+          <ChevronsLeft />
+        </Button>
+        <Button
+          onPress={() => table.previousPage()}
+          isDisabled={!table.getCanPreviousPage()}
+        >
+          <ChevronLeft />
+        </Button>
+        <Button
+          onPress={() => table.nextPage()}
+          isDisabled={!table.getCanNextPage()}
+        >
+          <ChevronRight />
+        </Button>
+        <Button
+          onPress={() => table.setPageIndex(table.getPageCount() - 1)}
+          isDisabled={!table.getCanNextPage()}
+        >
+          <ChevronsRight />
+        </Button>
       </div>
       <div style={{ display: 'flex', gap: '0.5rem', margin: '1rem 0' }}>
-          <TextField
-            value={`${table.getState().pagination.pageIndex + 1} of ${table.getPageCount()}`}
-            isReadOnly
-            label={'Page'}
-          />
-          <TextField
-            label={'Go to page'}
-            type='number'
-            min={1}
-            max={table.getPageCount()}
-            value={(table.getState().pagination.pageIndex + 1).toString()}
-            onChange={e => {
-              const page = e ? Number(e) - 1 : 0
-              table.setPageIndex(page)
-            }}
-          />
+        <TextField
+          value={`${table.getState().pagination.pageIndex + 1} of ${table.getPageCount()}`}
+          isReadOnly
+          label='Page'
+        />
+        <TextField
+          label='Go to page'
+          type='number'
+          min={1}
+          max={table.getPageCount()}
+          value={(table.getState().pagination.pageIndex + 1).toString()}
+          onChange={e => {
+            const page = e ? Number(e) - 1 : 0
+            table.setPageIndex(page)
+          }}
+        />
         <Select
-          style={{minWidth: '200px'}}
+          style={{ minWidth: '200px' }}
           label='Rows per page'
           selectedKeys={[table.getState().pagination.pageSize]}
           onSelectionChange={keys =>
@@ -198,7 +198,7 @@ export const PaginationExample = () => {
             id: pageSize,
             name: `Show ${pageSize}`,
           }))}
-        ></Select>
+        />
       </div>
     </div>
   )
