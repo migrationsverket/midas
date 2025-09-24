@@ -72,7 +72,8 @@
       "packages/components",
       "!packages/.storybook",
       "theme",
-      "table-styles"
+      "table-styles",
+      "datepicker-styles"
     ],
     "releaseTagPattern": "{projectName}@v{version}",
     "git": {
