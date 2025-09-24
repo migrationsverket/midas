@@ -2910,11 +2910,11 @@ export default {
     text: {
       sectionHeader: {
         key: "{menu.text.sectionHeader}",
-        $value: "light-dark(#29698C, #5897b8)",
+        $value: "light-dark(#525252, #a6a6a6)",
         filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value: "light-dark({color.blue.120}, {color.blue.80})",
+          $value: "light-dark({color.gray.140}, {color.gray.70})",
           key: "{menu.text.sectionHeader}",
         },
         name: "menuTextSectionHeader",
