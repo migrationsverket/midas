@@ -1,0 +1,28 @@
+{
+  "name": "@midas-ds/datepicker-styles",
+  "author": {
+    "name": "Migrationsverket"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migrationsverket/midas.git",
+    "directory": "packages/datepicker-styles"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Midas datepicker styles",
+  "homepage": "https://designsystem.migrationsverket.se/",
+  "license": "CC0-1.0",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    "./react-datepicker.css": {
+      "import": "./react-datepicker.css"
+    }
+  },
+  "dependencies": {
+    "@midas-ds/theme": "1.0.2"
+  }
+}
