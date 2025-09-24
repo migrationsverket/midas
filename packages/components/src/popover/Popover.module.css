@@ -9,6 +9,9 @@
   box-shadow: 0 4px 5px rgba(0 0 0 / 20%);
   display: inline-block;
   max-width: min(90vw, 320px);
+  white-space: normal;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
   transition:
     transform 200ms,
     opacity 200ms;
