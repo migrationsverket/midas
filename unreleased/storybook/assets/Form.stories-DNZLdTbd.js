@@ -1,0 +1,89 @@
+import{j as n}from"./iframe-sbb8jMFH.js";import{$ as j}from"./Form-W6gBuyX4.js";import{G}from"./Grid-OCh9V4EI.js";import{G as e}from"./GridItem-Bc52GpBP.js";import{T as r}from"./TextField-sCC1eLxb.js";import{S as I}from"./Select-VqAKPmx1.js";import{B as a}from"./Button-CR-IlvML.js";import{R as g,a as b}from"./Radio-DBLXJvCO.js";import{C as h}from"./CheckboxGroup-DRnc6H5H.js";import{C as k}from"./Checkbox-C9inB7Gl.js";import"./preload-helper-Dp1pzeXC.js";import"./utils-xZxVhtdW.js";import"./clsx-B-dksMZM.js";import"./useFormValidation-B68GUf4y.js";import"./useFocusRing-QGhwBIBS.js";import"./index-DuADEEvN.js";import"./index-8ZAESGt3.js";import"./TextFieldBase-C5IaCxZG.js";import"./TextField-jUAUqu4u.js";import"./FieldError-UKVv56eB.js";import"./Text-dl0ALke-.js";import"./Text-Tek5AoYj.js";import"./ListKeyboardDelegate-fL69V1ax.js";import"./SelectionManager-Cw93WIzU.js";import"./useEvent-DiJd7ElP.js";import"./scrollIntoView-Dsrcj58z.js";import"./FocusScope-DjVTIU-N.js";import"./useDescription-DUPVrWDI.js";import"./useControlledState-BviHn_NG.js";import"./Group-ChUs1eSG.js";import"./Input-DBxV3S1a.js";import"./Hidden-Dz97npP4.js";import"./Button-r54LQ77v.js";import"./useLabels-Bkrk2iaY.js";import"./useButton-CMU79mAg.js";import"./useTextField-Cs0GqLuE.js";import"./useField-BpVz3neb.js";import"./TextField.module-DjUItNl5.js";import"./Label-D0V7Obs0.js";import"./Dialog-Coim-3iv.js";import"./RSPContexts-_REID50G.js";import"./OverlayArrow-I5YTweqH.js";import"./useResizeObserver-DpTJ0Q3d.js";import"./Collection-CGumNRux.js";import"./index-BZ3hkTBn.js";import"./Separator-HHyfXe15.js";import"./PressResponder-CHuT4Fnf.js";import"./useLocalizedStringFormatter-Cf5v2z35.js";import"./LocalizedStringFormatter-BB0Nk989.js";import"./getScrollParent-CvodOSaS.js";import"./VisuallyHidden-Bv1ER299.js";import"./Dialog-Bsl3pPu9.js";import"./useLocalizedStringFormatter-2n1u_SoM.js";import"./x-DEiIQh9f.js";import"./createLucideIcon-Cn4Kv8Gp.js";import"./Heading-vwezl3Yj.js";import"./info-Cuf3C-BQ.js";import"./Tag-sqWlrP1g.js";import"./ListBox-B6WQa4OT.js";import"./DragAndDrop-DztNBtFF.js";import"./inertValue-CgIez1Or.js";import"./useListState-BRKKxMBu.js";import"./useHighlightSelectionDescription-BBSUyzGD.js";import"./useUpdateEffect-CL5tKg6t.js";import"./useHasTabbableChild-zA5-29RN.js";import"./check-CTLMEzQh.js";import"./ListBoxSection-C8gywK1g.js";import"./Virtualizer-BuarNAR6.js";import"./useObserveElement-RB6MdHBq.js";import"./chevron-down-DjtW3U0m.js";import"./Button.module-DRhvPh0f.js";import"./useToggleState-Bxg-mYSU.js";const $n={component:j,title:"Examples/Form",tags:["autodocs"],argTypes:{}},m={args:{},render:()=>{const t=["Banan","Apple","Mango"];return n.jsxs(G,{children:[n.jsx(e,{size:12,children:n.jsx(r,{label:"Ange ditt fullständiga namn",description:"Glöm inte dina eventuella mellannamn!"})}),n.jsx(e,{size:12,children:n.jsx(r,{label:"Personnummmer",description:"Anges på formen ÅÅMMDD-XXXX"})}),n.jsx(e,{size:12,children:n.jsx(I,{label:"Vilken är din favoritfrukt",placeholder:"Välj en frukt",selectionMode:"single",options:t.map(o=>({id:o,name:o}))})}),n.jsx(e,{children:n.jsx(a,{children:"Skicka"})})]})}},s={args:{},render:()=>{const t=["A","B","C"],o=["Anledning A","Anledning B","Anledning C"];return n.jsx("div",{children:n.jsxs(G,{children:[n.jsx(e,{size:{xs:12,sm:6},children:n.jsx(g,{label:"Anledning",description:"Ange anledning till att du söker i databasen",children:o.map(i=>n.jsx(b,{value:i,children:i},i))})}),n.jsx(e,{size:{xs:12,sm:6},children:n.jsx(h,{label:"Databas",description:"Välj databas att söka i",children:t.map(i=>n.jsx(k,{value:i,children:i},i))})}),n.jsx(e,{size:{xs:12,sm:6},children:n.jsx(r,{label:"Namn",description:""})}),n.jsx(e,{size:{xs:12,sm:6},children:n.jsx(r,{label:"Personnummer"})}),n.jsx(e,{size:{xs:12,sm:6},children:n.jsx(I,{label:"Kön",description:"Kan lämnas tomt",placeholder:"Välj kön",selectionMode:"single",options:t.map(i=>({name:i,id:i}))})}),n.jsx(e,{size:{xs:12,sm:6},children:n.jsx(r,{label:"Ärendekod"})}),n.jsx(e,{size:"auto",children:n.jsx(a,{children:"Sök"})}),n.jsx(e,{size:"auto",children:n.jsx(a,{variant:"secondary",children:"Rensa"})})]})})}};var d,l,p;m.parameters={...m.parameters,docs:{...(d=m.parameters)==null?void 0:d.docs,source:{originalSource:`{
+  args: {},
+  render: () => {
+    const ITEMS = ['Banan', 'Apple', 'Mango'];
+    return <Grid>
+        <GridItem size={12}>
+          <TextField label='Ange ditt fullständiga namn' description='Glöm inte dina eventuella mellannamn!' />
+        </GridItem>
+        <GridItem size={12}>
+          <TextField label='Personnummmer' description='Anges på formen ÅÅMMDD-XXXX' />
+        </GridItem>
+        <GridItem size={12}>
+          <Select label='Vilken är din favoritfrukt' placeholder='Välj en frukt' selectionMode='single' options={ITEMS.map(i => ({
+          id: i,
+          name: i
+        }))} />
+        </GridItem>
+
+        <GridItem>
+          <Button>Skicka</Button>
+        </GridItem>
+      </Grid>;
+  }
+}`,...(p=(l=m.parameters)==null?void 0:l.docs)==null?void 0:p.source}}};var c,x,u;s.parameters={...s.parameters,docs:{...(c=s.parameters)==null?void 0:c.docs,source:{originalSource:`{
+  args: {},
+  render: () => {
+    const ITEMS = ['A', 'B', 'C'];
+    const RADIOITEMS = ['Anledning A', 'Anledning B', 'Anledning C'];
+    return <div>
+        <Grid>
+          <GridItem size={{
+          xs: 12,
+          sm: 6
+        }}>
+            <RadioGroup label='Anledning' description='Ange anledning till att du söker i databasen'>
+              {RADIOITEMS.map((item: string) => <Radio value={item} key={item}>
+                  {item}
+                </Radio>)}
+            </RadioGroup>
+          </GridItem>
+          <GridItem size={{
+          xs: 12,
+          sm: 6
+        }}>
+            <CheckboxGroup label='Databas' description='Välj databas att söka i'>
+              {ITEMS.map((item: string) => <Checkbox value={item} key={item}>
+                  {item}
+                </Checkbox>)}
+            </CheckboxGroup>
+          </GridItem>
+          <GridItem size={{
+          xs: 12,
+          sm: 6
+        }}>
+            <TextField label='Namn' description='' />
+          </GridItem>
+          <GridItem size={{
+          xs: 12,
+          sm: 6
+        }}>
+            <TextField label='Personnummer' />
+          </GridItem>
+
+          <GridItem size={{
+          xs: 12,
+          sm: 6
+        }}>
+            <Select label='Kön' description='Kan lämnas tomt' placeholder='Välj kön' selectionMode='single' options={ITEMS.map(i => ({
+            name: i,
+            id: i
+          }))} />
+          </GridItem>
+          <GridItem size={{
+          xs: 12,
+          sm: 6
+        }}>
+            <TextField label='Ärendekod' />
+          </GridItem>
+
+          <GridItem size='auto'>
+            <Button>Sök</Button>
+          </GridItem>
+          <GridItem size='auto'>
+            <Button variant='secondary'>Rensa</Button>
+          </GridItem>
+        </Grid>
+      </div>;
+  }
+}`,...(u=(x=s.parameters)==null?void 0:x.docs)==null?void 0:u.source}}};const wn=["SimpleForm","TwoColumnForm"];export{m as SimpleForm,s as TwoColumnForm,wn as __namedExportsOrder,$n as default};
