@@ -1,6 +1,7 @@
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import dts from 'vite-plugin-dts'
 import type { UserConfig } from 'vite'
+import { nxCopyAssetsPlugin } from '@nx/vite/plugins/nx-copy-assets.plugin'
 
 export default {
   root: __dirname,
@@ -12,6 +13,7 @@ export default {
       tsconfigPath: 'tsconfig.lib.json',
       pathsToAliases: false,
     }),
+    nxCopyAssetsPlugin(['*.md']),
   ],
   // Configuration for building your library.
   // See: https://vitejs.dev/guide/build.html#library-mode
