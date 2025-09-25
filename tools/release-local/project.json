@@ -1,0 +1,8 @@
+{
+  "name": "release-local",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "tools/release-local/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}
