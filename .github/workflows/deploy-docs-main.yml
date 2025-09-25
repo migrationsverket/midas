@@ -39,7 +39,7 @@ jobs:
         run: npx nx run docs:build --minify=false --outputPath=dist/docs
 
       - name: Build storybook
-        run: npx nx run components:build-storybook:ci
+        run: npx nx run storybook:build:ci
 
       - name: Deploy test environment
         uses: JamesIves/github-pages-deploy-action@v4

@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@midas-ds/components": ["packages/components/src/index.ts"],
+      "@midas-ds/components/*": ["packages/components/src/*"],
       "@midas-ds/datepicker-styles": [
         "packages/datepicker-styles/src/index.ts"
       ],

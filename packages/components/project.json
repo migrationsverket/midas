@@ -29,55 +29,6 @@
         }
       }
     },
-
-    "storybook": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "npx storybook dev",
-        "cwd": "packages/components",
-        "port": 4400
-      },
-      "configurations": {
-        "ci": {
-          "args": ["--quiet"]
-        }
-      }
-    },
-    "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
-      "options": {
-        "outputDir": "dist/storybook/ui",
-        "configDir": "packages/components/.storybook"
-      },
-      "configurations": {
-        "ci": {
-          "quiet": true,
-          "outputDir": "dist/docs/storybook"
-        }
-      }
-    },
-    "test-storybook": {
-      "executor": "@nx/vite:test",
-      "options": {
-        "config": "packages/components/vitest.config.ts",
-        "project": "storybook"
-      },
-      "configurations": {
-        "watch": {
-          "watch": true
-        },
-        "dark-mode": {
-          "config": "packages/components/vitest.config.dark.ts",
-          "project": "storybook:dark-mode"
-        },
-        "dark-mode:watch": {
-          "config": "packages/components/vitest.config.dark.ts",
-          "watch": true,
-          "project": "storybook:dark-mode"
-        }
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],

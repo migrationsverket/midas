@@ -23,7 +23,7 @@ Under huven används [Vitest](https://vitest.dev/), [Playwright](https://playwri
 Se till att ha din lokala Storybook igång innan du kör några tester:
 
 ```bash
-nx run components:storybook
+nx serve storybook
 ```
 
 #### Kör tester i light mode
@@ -31,7 +31,7 @@ nx run components:storybook
 Per default använder webbläsaren ljust läge för komponenterna.
 
 ```bash
-nx run components:test-storybook
+nx test storybook
 ```
 
 #### Kör tester i dark mode
@@ -39,7 +39,7 @@ nx run components:test-storybook
 Vi behöver testa att våra komponenter uppfyller tillgänglighetskrav i mörkt läge, vi testar detta med följande kommando:
 
 ```bash
-nx run components:test-storybook:dark-mode
+nx run storybook:test:dark-mode
 ```
 
 #### Kör tester kontinuerligt
@@ -47,7 +47,7 @@ nx run components:test-storybook:dark-mode
 Oavsett val av färgtema kan du låta ett testkommando vänta på att du sparar ändringar i en fil, för att sedan köra berörda tester igen:
 
 ```bash
-nx run components:test-storybook --watch
+nx run storybook:test:watch
 ```
 
 ### Skriva webbläsartester

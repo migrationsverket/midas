@@ -45,7 +45,7 @@ jobs:
 
       - name: Build storybook
         if: github.event.action != 'closed'
-        run: npx nx run components:build-storybook:ci
+        run: npx nx run storybook:build:ci
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1

@@ -23,7 +23,6 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: join(__dirname, 'tsconfig.lib.json'),
       include: ['src'],
-      exclude: ['**/*.stories.{ts,tsx}'],
     }),
     libInjectCss(),
   ],
@@ -37,7 +36,10 @@ export default defineConfig({
       transformMixedEsModules: true,
     },
     lib: {
-      entry: [index, resolve(__dirname, '../../packages/theme/src/lib/global.css')],
+      entry: [
+        index,
+        resolve(__dirname, '../../packages/theme/src/lib/global.css'),
+      ],
       name: 'components',
     },
     rollupOptions: {
