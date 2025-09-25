@@ -1,11 +1,15 @@
 import {
   Menu as AriaMenu,
+  MenuTrigger,
+  type MenuTriggerProps,
   type MenuProps as AriaMenuProps,
 } from 'react-aria-components'
 import clsx from 'clsx'
 import type { Size } from '../common/types'
 import styles from './Menu.module.css'
 import { ExcludeKeysFrom } from '../utils/types'
+
+export { MenuTrigger, type MenuTriggerProps }
 
 export type MenuItemObject = ExcludeKeysFrom<
   { [prop: string]: unknown },
