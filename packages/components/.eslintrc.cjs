@@ -1,12 +1,8 @@
 const { version } = require('./package.json')
 
 module.exports = {
-  extends: [
-    'plugin:@nx/react',
-    '../../.eslintrc.json',
-    'plugin:storybook/recommended',
-  ],
-  ignorePatterns: ['!**/*', 'storybook-static'],
+  extends: ['plugin:@nx/react', '../../.eslintrc.json'],
+  ignorePatterns: ['!**/*'],
   plugins: ['midas'],
   overrides: [
     {

@@ -1,0 +1,59 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/storybook/src",
+  "projectType": "application",
+  "tags": ["apps"],
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx storybook dev",
+        "cwd": "apps/storybook",
+        "port": 4400
+      }
+    },
+    "build": {
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/ui",
+        "configDir": "apps/storybook/.storybook"
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true,
+          "outputDir": "dist/docs/storybook"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/storybook/vitest.config.ts",
+        "project": "storybook"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
+        },
+        "dark-mode": {
+          "config": "apps/storybook/vitest.config.dark.ts",
+          "project": "storybook:dark-mode"
+        },
+        "dark-mode:watch": {
+          "config": "apps/storybook/vitest.config.dark.ts",
+          "watch": true,
+          "project": "storybook:dark-mode"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/storybook/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}

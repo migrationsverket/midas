@@ -1,0 +1,15 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { DropZone } from '@midas-ds/components'
+
+const meta: Meta<typeof DropZone> = {
+  component: DropZone,
+  title: 'Components/DropZone',
+  tags: ['autodocs'],
+  args: {},
+}
+export default meta
+type Story = StoryObj<typeof DropZone>
+
+export const DropIt: Story = {
+  args: { children: 'Drop something here' },
+}
