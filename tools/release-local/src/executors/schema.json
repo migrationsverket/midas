@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Release Local Executor",
+  "type": "object",
+  "properties": {
+    "registry": {
+      "type": "string",
+      "description": "Registry URL for Verdaccio",
+      "default": "http://localhost:4873/"
+    },
+    "skipGit": {
+      "type": "boolean",
+      "default": true
+    },
+    "skipPublish": {
+      "type": "boolean",
+      "default": true
+    },
+    "runTests": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
+

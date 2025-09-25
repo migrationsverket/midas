@@ -22,7 +22,7 @@ packages:
 log:
   type: stdout
   format: pretty
-  level: warn
+  level: info
 
 publish:
   allow_offline: true # set offline to true to allow publish offline
