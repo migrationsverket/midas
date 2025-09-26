@@ -15,12 +15,6 @@ on:
           - table-styles
           - datepicker-styles
   workflow_call:
-    inputs:
-      projects:
-        description: 'Select which projects to publish'
-        required: true
-        type: string
-        default: 'all'
     secrets:
       NPM_TOKEN:
         required: true
