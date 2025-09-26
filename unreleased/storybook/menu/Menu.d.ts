@@ -1,6 +1,7 @@
-import { MenuProps as AriaMenuProps } from 'react-aria-components';
+import { MenuTrigger, MenuTriggerProps, MenuProps as AriaMenuProps } from 'react-aria-components';
 import { Size } from '../common/types';
 import { ExcludeKeysFrom } from '../utils/types';
+export { MenuTrigger, type MenuTriggerProps };
 export type MenuItemObject = ExcludeKeysFrom<{
     [prop: string]: unknown;
 }, 'href'>;
