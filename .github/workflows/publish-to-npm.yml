@@ -2,10 +2,32 @@ name: Publish to NPM
 
 on:
   workflow_dispatch:
+    inputs:
+      projects:
+        description: 'Select which projects to publish'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - components
+          - theme
+          - table-styles
+          - datepicker-styles
   workflow_call:
+    inputs:
+      projects:
+        description: 'Select which projects to publish'
+        required: true
+        type: string
+        default: 'all'
     secrets:
       NPM_TOKEN:
         required: true
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  NPM_CONFIG_PROVENANCE: true
 
 jobs:
   publish-to-npm:
@@ -36,9 +58,12 @@ jobs:
         run: npx nx report
         shell: bash
 
-      - name: Publish packages
+      - name: Publish all
+        if: ${{ inputs.projects == 'all' }}
         run: npx nx release publish
         shell: bash
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+
+      - name: Publish one
+        if: ${{ ! inputs.projects == 'all' }}
+        run: npx nx release publish -p ${{ inputs.projects }}
+        shell: bash
