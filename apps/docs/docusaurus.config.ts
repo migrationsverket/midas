@@ -47,7 +47,6 @@ const config: Config = {
   url: 'https://designsystem.migrationsverket.se',
   baseUrl: getBaseUrl(),
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico?v=3',
   organizationName: 'migrationsverket', // Usually your GitHub org/user name.
   projectName: 'midas', // Usually your repo name.
@@ -77,6 +76,9 @@ const config: Config = {
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
   ],
   markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
     mermaid: true,
     parseFrontMatter: async params => {
       const result = await params.defaultParseFrontMatter(params)
