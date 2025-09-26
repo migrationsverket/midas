@@ -1,3 +1,14 @@
+## 3.0.1 (2025-09-26)
+
+### 🩹 Fixes
+
+- **list-box:** change list-box section heading color ([361cacaf63](https://github.com/migrationsverket/midas/commit/361cacaf63))
+- **theme:** add README and CHANGELOG to build ([da935487e7](https://github.com/migrationsverket/midas/commit/da935487e7))
+
+### 🧪 Tests updated
+
+- **integration:** setup verdaccio ([2ad7589f12](https://github.com/migrationsverket/midas/commit/2ad7589f12))
+
 # 3.0.0 (2025-09-23)
 
 ### 🚀 Features

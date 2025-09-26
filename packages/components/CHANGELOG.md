@@ -1,3 +1,19 @@
+## 13.0.1 (2025-09-26)
+
+### 🩹 Fixes
+
+- **menu:** add MenuTrigger export ([8107c24780](https://github.com/migrationsverket/midas/commit/8107c24780))
+- **popover:** correct sizing for popover ([866f053f92](https://github.com/migrationsverket/midas/commit/866f053f92))
+- **popover:** prevent line breaks too early ([08f365de66](https://github.com/migrationsverket/midas/commit/08f365de66))
+
+### 🧪 Tests updated
+
+- **integration:** setup verdaccio ([2ad7589f12](https://github.com/migrationsverket/midas/commit/2ad7589f12))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.0.1
+
 # 13.0.0 (2025-09-23)
 
 ### 🚀 Features
