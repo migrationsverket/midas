@@ -12,6 +12,7 @@
     "@docusaurus/babel": "^3.9.0",
     "@docusaurus/eslint-plugin": "^3.9.0",
     "@faker-js/faker": "^10.0.0",
+    "@mermaid-js/layout-elk": "^0.1.9",
     "@nx-extend/docusaurus": "^4.0.1",
     "@nx/eslint-plugin": "21.4.0",
     "@nx/storybook": "21.4.0",
