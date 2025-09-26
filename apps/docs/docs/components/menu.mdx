@@ -3,10 +3,8 @@ title: Menu
 description: En meny kan användas för att samla ihop funktioner som sällan används eller som kompletterar nuvarande funktion.
 ---
 
-import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { MenuTrigger } from 'react-aria-components'
-import { Button, Menu, MenuItem, MenuPopover } from '@midas-ds/components'
+import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
 
 export const Example = () => {
@@ -39,8 +37,7 @@ export const Example = () => {
 En meny kan användas för att samla ihop funktioner som sällan används eller som kompletterar nuvarande funktion.
 
 ```tsx
-import { MenuTrigger } from 'react-aria-components'
-import { Button, Menu, MenuItem, MenuPopover } from '@midas-ds/components'
+import { Button, Menu, MenuItem, MenuPopover, MenuTrigger } from '@midas-ds/components'
 import { MenuIcon } from 'lucide-react'
 ```
 
@@ -73,7 +70,7 @@ import { MenuIcon } from 'lucide-react'
 
 ## Beskrivning
 
-Komponenten bygger på [React Aria Menu](https://react-spectrum.adobe.com/react-aria/Menu.html), kodexempel i React Arias dokumentation är applicerbara genom att importera rätt komponent från rätt paket.
+Komponenten bygger på [React Aria Menu](https://react-spectrum.adobe.com/react-aria/Menu.html), kodexempel i React Arias dokumentation är applicerbara genom att importera komponeterna från `@midas-ds/components`.
 
 Midas exporterar följande komponenter och typer:
 
@@ -82,8 +79,7 @@ Midas exporterar följande komponenter och typer:
 - `MenuPopover` & `MenuPopoverProps`
 - `MenuSection` & `MenuSectionProps`
 - `Separator` & `SeparatorProps`
-
-`MenuTrigger` importeras från `react-aria-components`.
+- `MenuTrigger` & `MenuTriggerProps`
 
 ### Länkar
 

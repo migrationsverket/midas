@@ -4,7 +4,6 @@
   "targets": {
     "local-registry": {
       "executor": "@nx/js:verdaccio",
-      "continuous": true,
       "options": {
         "port": 4873,
         "config": ".verdaccio/config.yml",
@@ -12,14 +11,24 @@
         "clear": false
       }
     },
-    "release:local": {
+    "local-registry-clear": {
+      "executor": "@nx/js:verdaccio",
       "continuous": true,
-      "dependsOn": ["local-registry"],
+      "options": {
+        "port": 4873,
+        "config": ".verdaccio/config.yml",
+        "storage": "tmp/local-registry/storage",
+        "clear": true
+      }
+    },
+    "release:local": {
+      "continuous": false,
+      "dependsOn": ["local-registry-clear"],
       "executor": "@midas-ds/release-local:release-local",
       "options": {
         "registry": "http://localhost:4873/",
-        "runTests": true
-      },
+        "runTests": false
+      }
     }
   }
 }

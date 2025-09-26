@@ -1,3 +1,13 @@
+## 0.0.5 (2025-09-26)
+
+### 🧪 Tests updated
+
+- **integration:** setup verdaccio ([2ad7589f12](https://github.com/migrationsverket/midas/commit/2ad7589f12))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.0.1
+
 ## 0.0.4 (2025-09-23)
 
 ### 🩹 Fixes
