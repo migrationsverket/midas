@@ -62,8 +62,7 @@ Använd `userEvent` från `@storybook/test` när du simulerar din användare.
 
 #### Tillgänglighetstester
 
-Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent,
-dessa testas även av Storybook test runner i samtliga play tester, se `packages/components/.storybook/test-runner.ts`.
+Med [@storybook/addon-a11y](https://storybook.js.org/docs/writing-tests/accessibility-testing) utförs tillgänglighetstester med [axe](https://www.deque.com/axe/) på varje komponent, dessa testas även i våra workfows med kommandot `nx test storybook`.
 
 Automatiserade tillgänglighetstester fångar upp en stor del av brister gentemot [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/)-standarden men kan självklart kompletteras.
 
