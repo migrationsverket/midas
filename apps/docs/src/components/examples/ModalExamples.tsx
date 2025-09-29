@@ -8,6 +8,7 @@ import {
   Text,
   TextField,
 } from '@midas-ds/components'
+import './custom.css'
 
 export const ConfirmationExample = () => (
   <div
@@ -71,6 +72,23 @@ export const FormExample = () => (
             </Button>
           </ButtonGroup>
         </div>
+      </Modal>
+    </DialogTrigger>
+  </div>
+)
+
+export const CustomCSSExample = () => (
+  <div className='card'>
+    <DialogTrigger>
+      <Button>Open</Button>
+      <Modal
+        title='Modal Title'
+        className='myModal'
+      >
+        <TextField
+          label='Name'
+          autoFocus
+        />
       </Modal>
     </DialogTrigger>
   </div>

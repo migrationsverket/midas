@@ -24,11 +24,18 @@ export interface DialogProps extends AriaDialogProps {
   children: React.ReactNode
 }
 
+export type ModalProps = AriaModalOverlayProps &
+  DialogProps &
+  Pick<ModalOverlayProps, 'className'>
+
 export { DialogTrigger }
 
-export const Modal: React.FC<
-  AriaModalOverlayProps & DialogProps & Pick<ModalOverlayProps, 'className'>
-> = ({ children, title, className, ...props }) => {
+export const Modal: React.FC<ModalProps> = ({
+  children,
+  title,
+  className,
+  ...props
+}) => {
   const strings = useLocalizedStringFormatter(messages)
 
   return (
