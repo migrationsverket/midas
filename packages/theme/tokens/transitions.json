@@ -13,6 +13,18 @@
         "$type": "time",
         "$value": "250ms"
       }
+    },
+    "timing": {
+      "easeOut": { "$value": "cubic-bezier(0, 0, 0.58, 1)" },
+      "easeIn": { "$value": "cubic-bezier(0.42, 0, 1, 1)" }
+    },
+    "panel": {
+      "collapse": {
+        "$value": "all {transitions.duration.normal} {transitions.timing.easeOut} allow-discrete"
+      },
+      "expand": {
+        "$value": "all {transitions.duration.normal} {transitions.timing.easeIn} allow-discrete"
+      }
     }
   }
 }

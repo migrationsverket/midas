@@ -3476,6 +3476,64 @@ export default {
         path: ["transitions", "duration", "fast"],
       },
     },
+    timing: {
+      easeOut: {
+        key: "{transitions.timing.easeOut}",
+        $value: "cubic-bezier(0, 0, 0.58, 1)",
+        filePath: "packages/theme/tokens/transitions.json",
+        isSource: true,
+        original: {
+          $value: "cubic-bezier(0, 0, 0.58, 1)",
+          key: "{transitions.timing.easeOut}",
+        },
+        name: "transitionsTimingEaseOut",
+        attributes: {},
+        path: ["transitions", "timing", "easeOut"],
+      },
+      easeIn: {
+        key: "{transitions.timing.easeIn}",
+        $value: "cubic-bezier(0.42, 0, 1, 1)",
+        filePath: "packages/theme/tokens/transitions.json",
+        isSource: true,
+        original: {
+          $value: "cubic-bezier(0.42, 0, 1, 1)",
+          key: "{transitions.timing.easeIn}",
+        },
+        name: "transitionsTimingEaseIn",
+        attributes: {},
+        path: ["transitions", "timing", "easeIn"],
+      },
+    },
+    panel: {
+      collapse: {
+        key: "{transitions.panel.collapse}",
+        $value: "all 300ms cubic-bezier(0, 0, 0.58, 1) allow-discrete",
+        filePath: "packages/theme/tokens/transitions.json",
+        isSource: true,
+        original: {
+          $value:
+            "all {transitions.duration.normal} {transitions.timing.easeOut} allow-discrete",
+          key: "{transitions.panel.collapse}",
+        },
+        name: "transitionsPanelCollapse",
+        attributes: {},
+        path: ["transitions", "panel", "collapse"],
+      },
+      expand: {
+        key: "{transitions.panel.expand}",
+        $value: "all 300ms cubic-bezier(0.42, 0, 1, 1) allow-discrete",
+        filePath: "packages/theme/tokens/transitions.json",
+        isSource: true,
+        original: {
+          $value:
+            "all {transitions.duration.normal} {transitions.timing.easeIn} allow-discrete",
+          key: "{transitions.panel.expand}",
+        },
+        name: "transitionsPanelExpand",
+        attributes: {},
+        path: ["transitions", "panel", "expand"],
+      },
+    },
   },
   typography: {
     font: {
