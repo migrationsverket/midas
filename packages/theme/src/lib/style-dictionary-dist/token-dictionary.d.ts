@@ -348,6 +348,14 @@ declare const tokens: {
       normal: DesignToken;
       fast: DesignToken;
     };
+    timing: {
+      easeOut: DesignToken;
+      easeIn: DesignToken;
+    };
+    panel: {
+      collapse: DesignToken;
+      expand: DesignToken;
+    };
   };
   typography: {
     font: {

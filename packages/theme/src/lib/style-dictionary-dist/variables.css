@@ -134,6 +134,8 @@
   --midas-transitions-duration-slow: 0.50s;
   --midas-transitions-duration-normal: 0.30s;
   --midas-transitions-duration-fast: 0.25s;
+  --midas-transitions-timing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --midas-transitions-timing-ease-in: cubic-bezier(0.42, 0, 1, 1);
   --midas-typography-font-family: Inter, sans-serif;
   --midas-typography-font-size-10: 0.75rem;
   --midas-typography-font-size-20: 0.875rem;
@@ -262,4 +264,6 @@
   --midas-menu-item-background-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-190)); /** Bakgrundsfärg för menu vid hover */
   --midas-menu-item-background-selected: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Bakgrundsfärg för aktiv menu */
   --midas-menu-text-section-header: light-dark(var(--midas-color-gray-140), var(--midas-color-gray-70));
+  --midas-transitions-panel-collapse: all var(--midas-transitions-duration-normal) var(--midas-transitions-timing-ease-out) allow-discrete;
+  --midas-transitions-panel-expand: all var(--midas-transitions-duration-normal) var(--midas-transitions-timing-ease-in) allow-discrete;
 }

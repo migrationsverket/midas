@@ -228,6 +228,12 @@ export const stateFocusInset =
 export const transitionsDurationSlow = "500ms";
 export const transitionsDurationNormal = "300ms";
 export const transitionsDurationFast = "250ms";
+export const transitionsTimingEaseOut = "cubic-bezier(0, 0, 0.58, 1)";
+export const transitionsTimingEaseIn = "cubic-bezier(0.42, 0, 1, 1)";
+export const transitionsPanelCollapse =
+  "all 300ms cubic-bezier(0, 0, 0.58, 1) allow-discrete";
+export const transitionsPanelExpand =
+  "all 300ms cubic-bezier(0.42, 0, 1, 1) allow-discrete";
 export const typographyFontFamily = "Inter, sans-serif";
 export const typographyFontSize10 = "0.75rem";
 export const typographyFontSize20 = "0.875rem";
