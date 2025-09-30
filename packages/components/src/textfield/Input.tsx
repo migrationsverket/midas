@@ -3,7 +3,7 @@ import {
   InputProps as AriaInputProps,
 } from 'react-aria-components'
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
 import { useContextProps, InputContext } from 'react-aria-components'
 import { PasswordField } from './PasswordField'
