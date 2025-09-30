@@ -1,5 +1,6 @@
 import { Grid, GridItem, LinkButton } from '@midas-ds/components'
-import { BookMarked, BookText } from 'lucide-react'
+import { BookText } from 'lucide-react'
+import { StorybookIcon, EmptyIcon } from '@site/src/components/icons'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
 export const ComponentHeader = ({
@@ -14,7 +15,6 @@ export const ComponentHeader = ({
   overrideHeadlessLinkTitle?: string
 }) => {
   const baseUrl = useBaseUrl
-
   const componentPath = `?path=/docs/components-${name.toLowerCase()}--docs`
   const storybookHost =
     process.env.NODE_ENV === 'development'
@@ -38,9 +38,12 @@ export const ComponentHeader = ({
           <LinkButton
             href={storybookLink}
             variant='tertiary'
-            icon={BookMarked}
-            iconPlacement='left'
+            icon={EmptyIcon as any}
           >
+            <StorybookIcon
+              size={24}
+              color={'#FF4785'}
+            />
             Storybook
           </LinkButton>
         </GridItem>

@@ -161,6 +161,12 @@ const config: Config = {
             : `<code>Version ${version}</code>`,
         },
         {
+          href: 'https://designsystem.migrationsverket.se/storybook/',
+          className: 'navbar--storybook-link',
+          'aria-label': 'Storybook',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/migrationsverket/midas',
           className: 'navbar--github-link',
           'aria-label': 'GitHub Repository',
