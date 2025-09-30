@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
+        with:
+          filter: tree:0
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v5
@@ -28,5 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
       - name: Lint, test and build packages
-        run: npx nx run-many --targets=lint,stylelint,test,build --projects=components,theme
+        run: npx nx affected -t lint stylelint test build
