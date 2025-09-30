@@ -4,6 +4,7 @@ import {
   Modal as AriaModal,
   ModalOverlay,
   Dialog as AriaDialog,
+  ModalOverlayProps,
 } from 'react-aria-components'
 import * as React from 'react'
 import { Button } from '../button'
@@ -13,6 +14,7 @@ import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import clsx from 'clsx'
 
 export interface DialogProps extends AriaDialogProps {
   /**
@@ -22,11 +24,16 @@ export interface DialogProps extends AriaDialogProps {
   children: React.ReactNode
 }
 
+export type ModalProps = AriaModalOverlayProps &
+  DialogProps &
+  Pick<ModalOverlayProps, 'className'>
+
 export { DialogTrigger }
 
-export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
+export const Modal: React.FC<ModalProps> = ({
   children,
   title,
+  className,
   ...props
 }) => {
   const strings = useLocalizedStringFormatter(messages)
@@ -34,7 +41,7 @@ export const Modal: React.FC<AriaModalOverlayProps & DialogProps> = ({
   return (
     <ModalOverlay
       {...props}
-      className={styles.overlay}
+      className={clsx(styles.overlay, className)}
     >
       <AriaModal
         {...props}

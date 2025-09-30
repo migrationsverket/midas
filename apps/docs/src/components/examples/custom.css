@@ -1,0 +1,6 @@
+.myModal {
+  & > div {
+    width: 95%;
+    max-width: none;
+  }
+}

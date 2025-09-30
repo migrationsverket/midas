@@ -5,7 +5,7 @@ description: Modal som lägger sig över allt annat innehåll.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { FormExample, ConfirmationExample } from '@site/src/components/examples/ModalExamples'
+import { FormExample, ConfirmationExample, CustomCSSExample } from '@site/src/components/examples/ModalExamples'
 
 <ComponentHeader
   name='Modal'
@@ -107,6 +107,30 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
   </Modal>
 </DialogTrigger>
 ```
+
+## Styling
+
+Ange egen stil med hjälp av `className`, notera att din klass hamnar på overlay-komponenten.
+
+```css
+.myModal {
+  & > div {
+    width: 95%;
+    max-width: none;
+  }
+}
+```
+
+```tsx {3}
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal title="Modal Title" className="myModal">
+    <TextField label="Name" autoFocus>
+  </Modal>
+</DialogTrigger>
+```
+
+<CustomCSSExample />
 
 ## Riktlinjer
 
