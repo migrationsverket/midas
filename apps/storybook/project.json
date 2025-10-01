@@ -23,7 +23,8 @@
       "configurations": {
         "ci": {
           "quiet": true,
-          "outputDir": "dist/docs/storybook"
+          "outputDir": "dist/docs/storybook",
+          "webpackStatsJson": "dist/docs/storybook"
         }
       }
     },
