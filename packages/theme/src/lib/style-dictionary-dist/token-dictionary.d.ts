@@ -28,16 +28,47 @@ declare const tokens: {
     lg: DesignToken;
     xl: DesignToken;
   };
+  button: {
+    background: {
+      primary: {
+        base: DesignToken;
+        hover: DesignToken;
+        active: DesignToken;
+      };
+      secondary: {
+        base: DesignToken;
+        hover: DesignToken;
+        active: DesignToken;
+      };
+      tertiary: {
+        hover: DesignToken;
+        active: DesignToken;
+      };
+      danger: {
+        base: DesignToken;
+        hover: DesignToken;
+        active: DesignToken;
+      };
+      disabled: DesignToken;
+    };
+    border: {
+      secondary: DesignToken;
+    };
+    icon: {
+      hover: DesignToken;
+      active: DesignToken;
+    };
+  };
   color: {
     black: {
       base: DesignToken;
       hover: DesignToken;
-      alpha5: DesignToken;
+      opacity5: DesignToken;
     };
     white: {
       base: DesignToken;
       hover: DesignToken;
-      alpha13: DesignToken;
+      opacity13: DesignToken;
     };
     gray: {
       "10": DesignToken;
@@ -245,37 +276,6 @@ declare const tokens: {
     disabled: DesignToken;
     warning: DesignToken;
     placeholder: DesignToken;
-  };
-  button: {
-    background: {
-      primary: {
-        base: DesignToken;
-        hover: DesignToken;
-        active: DesignToken;
-      };
-      secondary: {
-        base: DesignToken;
-        hover: DesignToken;
-        active: DesignToken;
-      };
-      tertiary: {
-        hover: DesignToken;
-        active: DesignToken;
-      };
-      danger: {
-        base: DesignToken;
-        hover: DesignToken;
-        active: DesignToken;
-      };
-      disabled: DesignToken;
-    };
-    border: {
-      secondary: DesignToken;
-    };
-    icon: {
-      hover: DesignToken;
-      active: DesignToken;
-    };
   };
   badge: {
     background: DesignToken;
