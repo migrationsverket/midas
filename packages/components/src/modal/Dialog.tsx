@@ -10,12 +10,14 @@ import * as React from 'react'
 import { Button } from '../button'
 import styles from './Dialog.module.css'
 import { X } from 'lucide-react'
-import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import clsx from 'clsx'
 
+/**
+ * @deprecated since v13.0.1 please use ModalProps instead
+ */
 export interface DialogProps extends AriaDialogProps {
   /**
    * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
@@ -24,9 +26,15 @@ export interface DialogProps extends AriaDialogProps {
   children: React.ReactNode
 }
 
-export type ModalProps = AriaModalOverlayProps &
-  DialogProps &
-  Pick<ModalOverlayProps, 'className'>
+export interface ModalProps
+  extends ModalOverlayProps,
+    React.RefAttributes<HTMLDivElement> {
+  /**
+   * An optional title for the dialog. If omitted, please provide an aria-label for accessibility.
+   */
+  title?: React.ReactNode
+  children: React.ReactNode
+}
 
 export { DialogTrigger }
 
@@ -43,17 +51,15 @@ export const Modal: React.FC<ModalProps> = ({
       {...props}
       className={clsx(styles.overlay, className)}
     >
-      <AriaModal
-        {...props}
-        className={styles.modal}
-      >
-        <AriaDialog {...props}>
+      <AriaModal className={styles.modal}>
+        <AriaDialog>
           <div className={styles.modalHeader}>
             <div className={styles.modalTitle}>
               {title && (
                 <Heading
                   level={3}
                   elementType='h2'
+                  slot='title'
                 >
                   {title}
                 </Heading>

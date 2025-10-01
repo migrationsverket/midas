@@ -79,18 +79,21 @@ Använd `isOpen` och `onOpenChange()` för att via state kontrollera om modalen 
 /* imports and rest of app */
 const [open, setOpen] = React.useState<boolean>(false)
 
-/* trigger modal from anywhere */
-<Button onPress={() => setOpen(true))}>Open</Button>
-
-//highlight-start
-<DialogTrigger isOpen={open} onOpenChange={setOpen}>
-//highlight-end
-  <Modal
-    title="Modal Title"
-  >
-    /* Modal content */
-  </Modal>
-</DialogTrigger>
+return (
+  <>
+    {/* trigger modal from anywhere */}
+    <Button onPress={() => setOpen(true)}>Open</Button>
+    // highlight-start
+    <Modal
+      title='Modal Title'
+      isOpen={open}
+      onOpenChange={setOpen}
+    >
+      // highlight-end
+      {/* Modal content */}
+    </Modal>
+  </>
+)
 ```
 
 ## Avancerat innehåll
