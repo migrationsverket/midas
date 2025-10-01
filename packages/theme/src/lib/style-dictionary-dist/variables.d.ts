@@ -11,18 +11,47 @@ export const breakpointsSm: string;
 export const breakpointsMd: string;
 export const breakpointsLg: string;
 export const breakpointsXl: string;
+/** Färg på primärknapp */
+export const buttonBackgroundPrimaryBase: string;
+/** Hover state på primärknapp */
+export const buttonBackgroundPrimaryHover: string;
+/** Active state för primärknapp */
+export const buttonBackgroundPrimaryActive: string;
+/** Färg på sekundärknapp */
+export const buttonBackgroundSecondaryBase: string;
+/** Hover state på sekundärknapp */
+export const buttonBackgroundSecondaryHover: string;
+/** Active state för sekundärknapp */
+export const buttonBackgroundSecondaryActive: string;
+/** Hover state för tertiär knapp */
+export const buttonBackgroundTertiaryHover: string;
+/** Active state för tertiär knapp */
+export const buttonBackgroundTertiaryActive: string;
+/** Färg på danger knapp */
+export const buttonBackgroundDangerBase: string;
+/** Hover state för danger knapp */
+export const buttonBackgroundDangerHover: string;
+/** Active state för danger knapp */
+export const buttonBackgroundDangerActive: string;
+/** Disabled state för knappar */
+export const buttonBackgroundDisabled: string;
+/** Kantfärg för sekundärknapp */
+export const buttonBorderSecondary: string;
+export const buttonIconHover: string;
+/** Active state för ikoner */
+export const buttonIconActive: string;
 /** Black */
 export const colorBlackBase: string;
 /** Black hover */
 export const colorBlackHover: string;
-/** Black with 5% alpha */
-export const colorBlackAlpha5: string;
+/** Black with 5% opacity */
+export const colorBlackOpacity5: string;
 /** White */
 export const colorWhiteBase: string;
 /** White hover */
 export const colorWhiteHover: string;
-/** White with 13% alpha */
-export const colorWhiteAlpha13: string;
+/** White with 13% opacity */
+export const colorWhiteOpacity13: string;
 export const colorGray10: string;
 export const colorGray20: string;
 export const colorGray30: string;
@@ -238,35 +267,6 @@ export const textDisabled: string;
 export const textWarning: string;
 /** Textfärg för platshållare */
 export const textPlaceholder: string;
-/** Färg på primärknapp */
-export const buttonBackgroundPrimaryBase: string;
-/** Hover state på primärknapp */
-export const buttonBackgroundPrimaryHover: string;
-/** Active state för primärknapp */
-export const buttonBackgroundPrimaryActive: string;
-/** Färg på sekundärknapp */
-export const buttonBackgroundSecondaryBase: string;
-/** Hover state på sekundärknapp */
-export const buttonBackgroundSecondaryHover: string;
-/** Active state för sekundärknapp */
-export const buttonBackgroundSecondaryActive: string;
-/** Hover state för tertiär knapp */
-export const buttonBackgroundTertiaryHover: string;
-/** Active state för tertiär knapp */
-export const buttonBackgroundTertiaryActive: string;
-/** Färg på danger knapp */
-export const buttonBackgroundDangerBase: string;
-/** Hover state för danger knapp */
-export const buttonBackgroundDangerHover: string;
-/** Active state för danger knapp */
-export const buttonBackgroundDangerActive: string;
-/** Disabled state för knappar */
-export const buttonBackgroundDisabled: string;
-/** Kantfärg för sekundärknapp */
-export const buttonBorderSecondary: string;
-export const buttonIconHover: string;
-/** Active state för ikoner */
-export const buttonIconActive: string;
 export const badgeBackground: string;
 export const calendarDateBackgroundHover: string;
 export const calendarDateBackgroundSelected: string;
