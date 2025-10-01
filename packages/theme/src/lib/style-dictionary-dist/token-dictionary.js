@@ -180,6 +180,23 @@ export default {
         attributes: {},
         path: ["color", "black", "hover"],
       },
+      alpha5: {
+        key: "{color.black.alpha5}",
+        $value: "#0000000d",
+        $description: "Black with 5% alpha",
+        filePath: "packages/theme/tokens/colors.json",
+        isSource: true,
+        $type: "color",
+        original: {
+          $value: "#0000000d",
+          $description: "Black with 5% alpha",
+          $type: "color",
+          key: "{color.black.alpha5}",
+        },
+        name: "colorBlackAlpha5",
+        attributes: {},
+        path: ["color", "black", "alpha5"],
+      },
     },
     white: {
       base: {
@@ -215,6 +232,23 @@ export default {
         name: "colorWhiteHover",
         attributes: {},
         path: ["color", "white", "hover"],
+      },
+      alpha13: {
+        key: "{color.white.alpha13}",
+        $value: "#ffffff21",
+        $description: "White with 13% alpha",
+        filePath: "packages/theme/tokens/colors.json",
+        isSource: true,
+        $type: "color",
+        original: {
+          $value: "#ffffff21",
+          $description: "White with 13% alpha",
+          $type: "color",
+          key: "{color.white.alpha13}",
+        },
+        name: "colorWhiteAlpha13",
+        attributes: {},
+        path: ["color", "white", "alpha13"],
       },
     },
     gray: {
@@ -2629,12 +2663,12 @@ export default {
       tertiary: {
         hover: {
           key: "{button.background.tertiary.hover}",
-          $value: "light-dark(#e6e6e6, #212121)",
+          $value: "light-dark(#0000000d, #ffffff21)",
           $description: "Hover state för tertiär knapp",
           filePath: "packages/theme/tokens/object-values.json",
           isSource: true,
           original: {
-            $value: "light-dark({color.white.hover}, {color.gray.190})",
+            $value: "light-dark({color.black.alpha5}, {color.white.alpha13})",
             $description: "Hover state för tertiär knapp",
             key: "{button.background.tertiary.hover}",
           },
@@ -2741,11 +2775,11 @@ export default {
     icon: {
       hover: {
         key: "{button.icon.hover}",
-        $value: "light-dark(#0000001a, #ffffff1a)",
+        $value: "light-dark(#0000000d, #ffffff21)",
         filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value: "light-dark(#0000001a, #ffffff1a)",
+          $value: "light-dark({color.black.alpha5}, {color.white.alpha13})",
           key: "{button.icon.hover}",
         },
         name: "buttonIconHover",

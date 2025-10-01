@@ -15,10 +15,14 @@ export const breakpointsXl: string;
 export const colorBlackBase: string;
 /** Black hover */
 export const colorBlackHover: string;
+/** Black with 5% alpha */
+export const colorBlackAlpha5: string;
 /** White */
 export const colorWhiteBase: string;
 /** White hover */
 export const colorWhiteHover: string;
+/** White with 13% alpha */
+export const colorWhiteAlpha13: string;
 export const colorGray10: string;
 export const colorGray20: string;
 export const colorGray30: string;

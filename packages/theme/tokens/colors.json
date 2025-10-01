@@ -9,6 +9,10 @@
       "hover": {
         "$value": "#0d0d0d",
         "$description": "Black hover"
+      },
+      "alpha5": {
+        "$value": "#0000000d",
+        "$description": "Black with 5% alpha"
       }
     },
     "white": {
@@ -19,6 +23,10 @@
       "hover": {
         "$value": "#e6e6e6",
         "$description": "White hover"
+      },
+      "alpha13": {
+        "$value": "#ffffff21",
+        "$description": "White with 13% alpha"
       }
     },
     "gray": {

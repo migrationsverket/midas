@@ -338,7 +338,7 @@
       },
       "tertiary": {
         "hover": {
-          "$value": "light-dark({color.white.hover}, {color.gray.190})",
+          "$value": "light-dark({color.black.alpha5}, {color.white.alpha13})",
           "$description": "Hover state f\u00f6r terti\u00e4r knapp"
         },
         "active": {
@@ -373,7 +373,7 @@
     },
     "icon": {
       "hover": {
-        "$value": "light-dark(#0000001a, #ffffff1a)"
+        "$value": "light-dark({color.black.alpha5}, {color.white.alpha13})"
       },
       "active": {
         "$value": "light-dark(#00000033, #ffffff33)",
