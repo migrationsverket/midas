@@ -32,10 +32,12 @@ declare const tokens: {
     black: {
       base: DesignToken;
       hover: DesignToken;
+      alpha5: DesignToken;
     };
     white: {
       base: DesignToken;
       hover: DesignToken;
+      alpha13: DesignToken;
     };
     gray: {
       "10": DesignToken;

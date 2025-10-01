@@ -9,8 +9,10 @@
   --midas-window-sizes-xl: 1280px;
   --midas-color-black-base: #000000; /** Black */
   --midas-color-black-hover: #0d0d0d; /** Black hover */
+  --midas-color-black-alpha5: rgba(0, 0, 0, 0.05); /** Black with 5% alpha */
   --midas-color-white-base: #ffffff; /** White */
   --midas-color-white-hover: #e6e6e6; /** White hover */
+  --midas-color-white-alpha13: rgba(255, 255, 255, 0.13); /** White with 13% alpha */
   --midas-color-gray-10: #f2f2f2;
   --midas-color-gray-20: #e6e6e6;
   --midas-color-gray-30: #d9d9d9;
@@ -95,7 +97,6 @@
   --midas-color-signal-red-190: #2a0606;
   --midas-color-signal-red-200: #150303;
   --midas-border-width: 1px;
-  --midas-button-icon-hover: light-dark(#0000001a, #ffffff1a);
   --midas-button-icon-active: light-dark(#00000033, #ffffff33); /** Active state för ikoner */
   --midas-calendar-date-background-hover: light-dark(#0000001a, #ffffff1a);
   --midas-size-10: 0.125rem;
@@ -248,13 +249,14 @@
   --midas-button-background-secondary-base: light-dark(var(--midas-color-white-base), var(--midas-color-gray-200)); /** Färg på sekundärknapp */
   --midas-button-background-secondary-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hover state på sekundärknapp */
   --midas-button-background-secondary-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-180)); /** Active state för sekundärknapp */
-  --midas-button-background-tertiary-hover: light-dark(var(--midas-color-white-hover), var(--midas-color-gray-190)); /** Hover state för tertiär knapp */
+  --midas-button-background-tertiary-hover: light-dark(var(--midas-color-black-alpha5), var(--midas-color-white-alpha13)); /** Hover state för tertiär knapp */
   --midas-button-background-tertiary-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-180)); /** Active state för tertiär knapp */
   --midas-button-background-danger-base: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Färg på danger knapp */
   --midas-button-background-danger-hover: light-dark(var(--midas-color-signal-red-120), var(--midas-color-signal-red-120)); /** Hover state för danger knapp */
   --midas-button-background-danger-active: light-dark(var(--midas-color-signal-red-150), var(--midas-color-signal-red-150)); /** Active state för danger knapp */
   --midas-button-background-disabled: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Disabled state för knappar */
   --midas-button-border-secondary: light-dark(var(--midas-color-blue-150), var(--midas-color-gray-10)); /** Kantfärg för sekundärknapp */
+  --midas-button-icon-hover: light-dark(var(--midas-color-black-alpha5), var(--midas-color-white-alpha13));
   --midas-badge-background: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100));
   --midas-calendar-date-background-selected: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
   --midas-calendar-date-background-start-range: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
