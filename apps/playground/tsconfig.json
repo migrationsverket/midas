@@ -4,7 +4,6 @@
     "allowJs": false,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "noImplicitAny": true,
     "strict": true,

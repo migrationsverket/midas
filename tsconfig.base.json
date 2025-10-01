@@ -17,14 +17,14 @@
     "paths": {
       "@midas-ds/components": ["packages/components/src/index.ts"],
       "@midas-ds/components/*": ["packages/components/src/*"],
-      "@midas-ds/datepicker-styles": [
-        "packages/datepicker-styles/src/index.ts"
-      ],
+      "@midas-ds/datepicker-styles/*": ["packages/datepicker-styles/src/*"],
       "@midas-ds/release-local": ["tools/release-local/src/index.ts"],
       "@midas-ds/style-dictionary": ["tools/style-dictionary/src/index.ts"],
       "@midas-ds/table-styles/*": ["packages/table-styles/src/*"],
       "@midas-ds/theme": ["packages/theme/src/index.ts"],
-      "@midas-ds/workspace-tools": ["workspace-tools/src/index.ts"]
+      "@midas-ds/theme/*": ["packages/theme/src/*"],
+      "@midas-ds/workspace-tools": ["workspace-tools/src/index.ts"],
+      "@site/*": ["apps/docs/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

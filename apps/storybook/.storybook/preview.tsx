@@ -12,9 +12,9 @@ import { getLocalTimeZone } from '@internationalized/date'
 import { mockedNow } from '../src/utils/storybook'
 import { variables } from '@midas-ds/theme'
 import { I18nProvider } from 'react-aria'
-import '../../../packages/theme/src/lib/fonts.css'
-import '../../../packages/theme/src/lib/color-scheme.css'
-import '../../../packages/theme/src/lib/style-dictionary-dist/variables.css'
+import '@midas-ds/theme/lib/fonts.css'
+import '@midas-ds/theme/lib/color-scheme.css'
+import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
 
 const preview: Preview = {
   async beforeEach() {

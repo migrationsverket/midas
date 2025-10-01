@@ -1,6 +1,7 @@
 {
-  "extends": ["@docusaurus/tsconfig"],
+  "extends": ["@docusaurus/tsconfig", "../../tsconfig.base.json"],
   "compilerOptions": {
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
@@ -14,13 +15,7 @@
       "node",
       "@docusaurus/module-type-aliases",
       "@docusaurus/theme-classic"
-    ],
-    "baseUrl": "./apps/docs",
-    "paths": {
-      "@site/*": ["./*"],
-      "@midas-ds/components": ["../../../../packages/components/src/index.ts"],
-      "@midas-ds/theme": ["../../../../packages/theme/src/index.ts"]
-    }
+    ]
   },
   "include": ["**/*"],
   "exclude": ["**/*.test.*", "**/*.spec.*"]

@@ -1,6 +1,5 @@
 import React from 'react'
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import '../../../../../../packages/table-styles/src/lib/tanstack-table.css'
+import '@midas-ds/table-styles/lib/tanstack-table.css'
 
 import {
   type ColumnDef,

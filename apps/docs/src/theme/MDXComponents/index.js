@@ -9,7 +9,7 @@ import MDXUl from '@theme/MDXComponents/Ul'
 import MDXImg from '@theme/MDXComponents/Img'
 import Admonition from '@theme/Admonition'
 import Mermaid from '@theme/Mermaid'
-import * as Components from '@site/src/components/mvdsExports'
+import * as Components from '../../components/mvdsExports'
 
 const MDXComponents = {
   Head,
