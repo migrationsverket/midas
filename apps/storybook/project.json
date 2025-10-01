@@ -37,15 +37,18 @@
       "configurations": {
         "watch": {
           "watch": true
-        },
-        "dark-mode": {
-          "config": "apps/storybook/vitest.config.dark.ts",
-          "project": "storybook:dark-mode"
-        },
-        "dark-mode:watch": {
-          "config": "apps/storybook/vitest.config.dark.ts",
-          "watch": true,
-          "project": "storybook:dark-mode"
+        }
+      }
+    },
+    "test:dark-mode": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/storybook/vitest.config.dark.ts",
+        "project": "storybook:dark-mode"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
         }
       }
     },
