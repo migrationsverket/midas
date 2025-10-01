@@ -9,7 +9,7 @@ import {
 } from 'react-aria-components'
 import { X } from 'lucide-react'
 import { Button } from '../button'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 import { FeedbackStatus } from '../common/types'
 

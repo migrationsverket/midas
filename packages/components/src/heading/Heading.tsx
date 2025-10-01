@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import {
   Heading as AriaHeading,
   type HeadingProps as AriaHeadingProps,

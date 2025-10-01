@@ -4,7 +4,7 @@ import {
   FieldError as AriaFieldError,
   type FieldErrorProps as AriaFieldErrorProps,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { Text } from '../text'
 import styles from './FieldError.module.css'
 

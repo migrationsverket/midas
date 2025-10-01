@@ -1,6 +1,6 @@
 'use client'
 
-import clsx from 'clsx'
+import clsx from '../../utils/clsx'
 import { Link } from 'react-aria-components'
 import { Tooltip, TooltipTrigger } from '../../tooltip'
 import styles from '../Layout.module.css'

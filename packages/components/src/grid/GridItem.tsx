@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styles from './Grid.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { ColumnSize, OffsetSize } from '../common/types'
 
 export interface GridItemProps
@@ -9,7 +9,7 @@ export interface GridItemProps
     HTMLDivElement
   > {
   children: React.ReactNode
-  
+
   /** Column size and behaviour across different breakpoints   */
   size?:
     | ColumnSize
@@ -85,5 +85,3 @@ const getOffsetClasses = (offset?: GridItemProps['offset']): string[] => {
   }
   return [`offset-${offset}`]
 }
-
-

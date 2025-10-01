@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Tab as AriaTab, TabProps } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './Tabs.module.css'
 
 export const Tab: React.FC<TabProps> = ({ className, ...props }) => {

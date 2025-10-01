@@ -12,7 +12,7 @@ import { Href } from '@react-types/shared'
 import { LayoutProvider } from './context/LayoutContext'
 import { Backdrop } from './components/Backdrop'
 import { Navbar } from './components/Navbar'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 export interface SidebarLinkGroup {
   title?: string

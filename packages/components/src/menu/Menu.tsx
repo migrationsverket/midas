@@ -4,7 +4,7 @@ import {
   type MenuTriggerProps,
   type MenuProps as AriaMenuProps,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import type { Size } from '../common/types'
 import styles from './Menu.module.css'
 import { ExcludeKeysFrom } from '../utils/types'

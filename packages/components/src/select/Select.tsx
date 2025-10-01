@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { useObjectRef } from '@react-aria/utils'
 import { Item, Section } from '@react-stately/collections'
 import { TagList, TextField } from 'react-aria-components'

@@ -4,7 +4,7 @@ import {
 } from 'react-aria-components'
 import * as React from 'react'
 import styles from './ToggleButton.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 export const ToggleButtonGroup: React.FC<
   ToggleButtonGroupProps & React.RefAttributes<HTMLDivElement>

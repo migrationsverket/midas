@@ -1,6 +1,6 @@
 import styles from './Spinner.module.css'
 import { LoaderCircle } from 'lucide-react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 import { VisuallyHidden } from 'react-aria'

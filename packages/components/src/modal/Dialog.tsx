@@ -14,7 +14,7 @@ import { AriaModalOverlayProps } from '@react-aria/overlays'
 import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 export interface DialogProps extends AriaDialogProps {
   /**

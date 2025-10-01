@@ -1,6 +1,6 @@
 import React from 'react'
 import { AriaButtonProps, useButton } from 'react-aria'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { ChevronDown } from 'lucide-react'
 import type { SelectProps, MultiSelectState } from './types'
 import type { ListBoxOption } from '../list-box'

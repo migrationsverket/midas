@@ -3,7 +3,7 @@ import {
   type BreadcrumbsProps as AriaBreadcrumbsProps,
   Breadcrumb,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { Link } from '../link'
 import styles from './Breadcrumbs.module.css'
 
@@ -39,5 +39,3 @@ export const Breadcrumbs = <T extends BreadcrumbItem>({
     ))}
   </AriaBreadcrumbs>
 )
-
-
