@@ -54,3 +54,17 @@ export const LongLabel: Story = {
     children: '123',
   },
 }
+
+export const CustomClassName: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    className: 'derp',
+  },
+  play: async ({ canvas, args: { className } }) => {
+    const badge = await canvas.findByTestId('badge')
+    await expect(badge).toHaveClass(className as string)
+  },
+}

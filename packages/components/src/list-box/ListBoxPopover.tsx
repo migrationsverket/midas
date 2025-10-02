@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { Popover, type PopoverProps } from 'react-aria-components'
 import styles from './ListBox.module.css'
 

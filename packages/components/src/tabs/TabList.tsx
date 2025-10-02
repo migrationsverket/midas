@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { TabList as AriaTabList, TabListProps } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './Tabs.module.css'
 
 export const TabList = <T extends object>({

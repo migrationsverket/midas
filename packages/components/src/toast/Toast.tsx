@@ -18,7 +18,7 @@ import React, { useMemo } from 'react'
 import { createPortal, flushSync } from 'react-dom'
 import styles from './Toast.module.css'
 import { X } from 'lucide-react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 import { iconMap } from '../common/icon-map'
 import { FeedbackStatus } from '../common/types.ts'

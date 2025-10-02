@@ -1,6 +1,6 @@
 'use client'
 
-import clsx from 'clsx'
+import clsx from '../../utils/clsx'
 import { SidebarLinkGroup } from '../Layout'
 import styles from '../Layout.module.css'
 import { RouterProvider } from 'react-aria-components'

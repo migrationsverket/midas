@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { Label as AriaLabel, type LabelProps } from 'react-aria-components'
 import styles from './Label.module.css'
 import { LabelWrapperContext } from './LabelWrapper'

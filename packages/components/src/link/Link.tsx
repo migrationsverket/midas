@@ -2,7 +2,7 @@
 
 import styles from './Link.module.css'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import {
   ArrowDownToLine,
   ArrowRight,

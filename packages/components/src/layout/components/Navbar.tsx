@@ -1,7 +1,7 @@
 import { SidebarLinkProps } from '../Layout'
 import styles from '../Layout.module.css'
 import { Link, RouterProvider } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../../utils/clsx'
 import { useLayoutContext } from '../context/LayoutContext'
 import { Badge, BadgeContainer } from '../../badge'
 import { useLocalizedStringFormatter } from '../../utils/intl'

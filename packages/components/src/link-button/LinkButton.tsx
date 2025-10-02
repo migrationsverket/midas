@@ -3,7 +3,7 @@
 import React from 'react'
 import { Link as AriaLink, RouterProvider } from 'react-aria-components'
 import styles from './LinkButton.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import {
   ArrowLeft,
   ArrowRight,
@@ -46,8 +46,9 @@ export interface LinkButtonComponentProps<C extends React.ElementType> {
   size?: Size
 }
 
-export type LinkButtonProps<C extends React.ElementType> = LinkButtonComponentProps<C> &
-  Omit<React.ComponentProps<C>, keyof LinkButtonComponentProps<C>>
+export type LinkButtonProps<C extends React.ElementType> =
+  LinkButtonComponentProps<C> &
+    Omit<React.ComponentProps<C>, keyof LinkButtonComponentProps<C>>
 
 /**
  * A link to be used when a user expects a button but web technologies force us to use a a-tag

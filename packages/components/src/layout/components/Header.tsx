@@ -7,7 +7,7 @@ import { Button } from '../../button'
 import { Menu, X } from 'lucide-react'
 import * as React from 'react'
 import { useLayoutContext } from '../context/LayoutContext'
-import clsx from 'clsx'
+import clsx from '../../utils/clsx'
 import { useLocalizedStringFormatter } from '../../utils/intl'
 import messages from '../intl/translations.json'
 

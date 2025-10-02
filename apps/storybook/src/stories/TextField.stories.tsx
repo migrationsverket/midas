@@ -113,7 +113,10 @@ export const CustomValidation: Story = {
   },
   render: args => (
     <form>
-      <TextField {...args} />
+      <TextField
+        {...args}
+        className={({ isInvalid }) => (isInvalid ? 'invalid' : 'valid')}
+      />
       <button type='submit'>Submit</button>
     </form>
   ),
@@ -121,11 +124,13 @@ export const CustomValidation: Story = {
     await step(
       'it should give a validation error if the user entered an unpermitted text',
       async () => {
+        await expect(canvas.getByRole('textbox')).toHaveClass('valid')
         await userEvent.tab()
         await userEvent.keyboard('abc')
         await userEvent.tab()
         await userEvent.keyboard('[Enter]')
         expect(canvas.getByText('Only numbers are allowed')).toBeInTheDocument()
+        await expect(canvas.getByRole('textbox')).toHaveClass('invalid')
       },
     )
   },

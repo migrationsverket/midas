@@ -11,7 +11,7 @@ import {
   Group,
   ValidationResult,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import { FieldError } from '../field-error'

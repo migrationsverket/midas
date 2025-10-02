@@ -6,7 +6,7 @@ import {
   TextArea as AriaTextArea,
   type TextAreaProps as AriaTextAreaProps,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
 
 export type TextAreaProps = Omit<TextFieldBaseProps, 'type' | 'pattern'> &

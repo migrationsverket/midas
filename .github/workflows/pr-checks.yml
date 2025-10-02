@@ -31,11 +31,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright
-        run: npx playwright install chromium --only-shell
-
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
+
+      - name: Get affected projects
+        id: get_affected_projects
+        shell: bash
+        run: |
+          result=$(npx nx show projects --affected | grep storybook)
+          echo "affected_projects=$result" >> "$GITHUB_OUTPUT"
+
+      - name: Install Playwright
+        if: contains(steps.get_affected_projects.outputs.affected_projects, 'storybook')
+        run: npx playwright install chromium --only-shell
 
       - name: Lint, test and build packages
         run: npx nx affected -t lint stylelint test test:dark-mode build

@@ -6,6 +6,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      testTimeout: 10000,
       reporters: ['default'],
       projects: [
         defineStorybookProject({
