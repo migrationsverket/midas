@@ -3919,12 +3919,12 @@ export default {
       100: {
         key: "{typography.lineHeight.100}",
         $type: "lineHeight",
-        $value: "2.75rem",
+        $value: "3rem",
         filePath: "packages/theme/tokens/typography.json",
         isSource: true,
         original: {
           $type: "lineHeight",
-          $value: "2.75rem",
+          $value: "3rem",
           key: "{typography.lineHeight.100}",
         },
         name: "typographyLineHeight100",
