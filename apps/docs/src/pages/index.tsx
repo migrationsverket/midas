@@ -5,6 +5,7 @@ import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
+/* eslint-disable @nx/enforce-module-boundaries */
 import { StorybookIcon, EmptyIcon } from '@site/src/components/icons'
 
 export default function Startpage() {

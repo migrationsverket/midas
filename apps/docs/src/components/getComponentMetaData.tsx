@@ -1,5 +1,6 @@
 import { Grid, GridItem, LinkButton } from '@midas-ds/components'
 import { BookText } from 'lucide-react'
+/* eslint-disable @nx/enforce-module-boundaries */
 import { StorybookIcon, EmptyIcon } from '@site/src/components/icons'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 
