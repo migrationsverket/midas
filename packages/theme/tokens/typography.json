@@ -88,7 +88,7 @@
       },
       "100": {
         "$type": "lineHeight",
-        "$value": "2.75rem"
+        "$value": "3rem"
       }
     },
     "weight": {
