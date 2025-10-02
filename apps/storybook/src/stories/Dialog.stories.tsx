@@ -60,6 +60,37 @@ export const Default: Story = {
 
 export const NotDismissable: Story = {}
 
+
+/**
+ * For special cases when modal should not be closable without taking further action
+ */
+export const HiddenCloseButton: Story = {
+  decorators: [
+    (Story) => (
+      <div>
+        <h2>Läs riktlinjer för användning! </h2>
+        <Story/>
+      </div>)
+  ],
+  parameters: {
+
+  },
+  args: {
+    hideCloseButton: true,
+    isKeyboardDismissDisabled: true,
+    title: 'Close button hidden'
+  },
+  render: args => (
+    <DialogTrigger>
+      <Button>Öppna</Button>
+      <Modal {...args}>
+        <Text>This modal cannot be closed from the header</Text>
+        <Button slot='close'>Agree</Button>
+      </Modal>
+    </DialogTrigger>
+  ),
+}
+
 export const EmptyTitle: Story = {
   args: {
     title: null,

@@ -34,6 +34,10 @@ export interface ModalProps
    */
   title?: React.ReactNode
   children: React.ReactNode
+  /**
+   * Hide close button in modal header. Use with caution!
+   */
+  hideCloseButton?: boolean
 }
 
 export { DialogTrigger }
@@ -41,6 +45,7 @@ export { DialogTrigger }
 export const Modal: React.FC<ModalProps> = ({
   children,
   title,
+  hideCloseButton = false,
   className,
   ...props
 }) => {
@@ -65,14 +70,16 @@ export const Modal: React.FC<ModalProps> = ({
                 </Heading>
               )}
             </div>
-            <Button
-              slot='close'
-              variant='tertiary'
-              icon={X}
-              iconPlacement='right'
-            >
-              {strings.format('close')}
-            </Button>
+            {!hideCloseButton && (
+              <Button
+                slot='close'
+                variant='tertiary'
+                icon={X}
+                iconPlacement='right'
+              >
+                {strings.format('close')}
+              </Button>
+            )}
           </div>
           <div
             className={styles.modalBody}
