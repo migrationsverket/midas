@@ -13,7 +13,13 @@
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "jsx-a11y/no-autofocus": "off"
+        "jsx-a11y/no-autofocus": "off",
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "allowCircularSelfDependency": true
+          }
+        ]
       }
     }
   ]
