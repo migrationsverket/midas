@@ -38,3 +38,4 @@ jobs:
           outputDir: dist/docs/storybook
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           onlyChanged: true # enables turbosnap
+          autoAcceptChanges: 'main'
