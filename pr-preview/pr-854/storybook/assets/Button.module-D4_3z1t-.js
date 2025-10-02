@@ -1,0 +1,1 @@
+const t="_button_jc5lp_1",n="_secondary_jc5lp_48",c="_tertiary_jc5lp_71",_="_iconBtn_jc5lp_91",o="_medium_jc5lp_111",i="_danger_jc5lp_116",r="_iconRight_jc5lp_138",l="_fullwidth_jc5lp_142",s="_primary_jc5lp_152",e={button:t,secondary:n,tertiary:c,iconBtn:_,medium:o,danger:i,iconRight:r,fullwidth:l,primary:s};export{e as B};
