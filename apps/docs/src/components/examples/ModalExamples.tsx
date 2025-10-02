@@ -93,3 +93,18 @@ export const CustomCSSExample = () => (
     </DialogTrigger>
   </div>
 )
+
+export const HideCloseButtonExample = () => {
+  return (
+    <div className='card'>
+      <DialogTrigger>
+        <Button>Open</Button>
+        <Modal title="Modal Title" hideCloseButton isKeyboardDismissDisabled>
+          Modal content
+          <Button slot={'close'}>Action</Button>
+        </Modal>
+      </DialogTrigger>
+    </div>
+
+  )
+}

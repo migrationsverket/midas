@@ -5,7 +5,7 @@ description: Modal som lägger sig över allt annat innehåll.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { FormExample, ConfirmationExample, CustomCSSExample } from '@site/src/components/examples/ModalExamples'
+import { FormExample, ConfirmationExample, CustomCSSExample, HideCloseButtonExample } from '@site/src/components/examples/ModalExamples'
 
 <ComponentHeader
   name='Modal'
@@ -110,6 +110,22 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
   </Modal>
 </DialogTrigger>
 ```
+
+### Inaktivera stängningsknapp i header
+
+Vid specialfall där användaren inte ska tillåtas lämna modalen kan stängningsknapp i headern
+inaktiveras.
+
+```tsx
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal title="Modal Title" hideCloseButton isKeyboardDismissDisabled>
+      Modal content
+    <Button slot={'close'}>Action</Button>
+  </Modal>
+</DialogTrigger>
+```
+<HideCloseButtonExample/>
 
 ## Styling
 
