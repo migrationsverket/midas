@@ -32,7 +32,7 @@
         },
         "70": {
           "$type": "fontSize",
-          "$value": "1.75rem"
+          "$value": "1.625rem"
         },
         "80": {
           "$type": "fontSize",
