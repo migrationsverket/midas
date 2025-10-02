@@ -47,6 +47,26 @@
     "120": {
       "$type": "dimension",
       "$value": "6rem"
+    },
+    "xsmall": {
+      "$type": "dimension",
+      "$value": "{size.20}"
+    },
+    "small": {
+      "$type": "dimension",
+      "$value": "{size.40}"
+    },
+    "medium": {
+      "$type": "dimension",
+      "$value": "{size.80}"
+    },
+    "large": {
+      "$type": "dimension",
+      "$value": "{size.100}"
+    },
+    "xlarge": {
+      "$type": "dimension",
+      "$value": "{size.120}"
     }
   }
 }

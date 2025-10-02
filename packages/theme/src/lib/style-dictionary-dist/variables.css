@@ -266,6 +266,11 @@
   --midas-menu-item-background-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-190)); /** Bakgrundsfärg för menu vid hover */
   --midas-menu-item-background-selected: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Bakgrundsfärg för aktiv menu */
   --midas-menu-text-section-header: light-dark(var(--midas-color-gray-140), var(--midas-color-gray-70));
+  --midas-spacing-xsmall: var(--midas-size-20);
+  --midas-spacing-small: var(--midas-size-40);
+  --midas-spacing-medium: var(--midas-size-80);
+  --midas-spacing-large: var(--midas-size-100);
+  --midas-spacing-xlarge: var(--midas-size-120);
   --midas-transitions-panel-collapse: all var(--midas-transitions-duration-normal) var(--midas-transitions-timing-ease-out) allow-discrete;
   --midas-transitions-panel-expand: all var(--midas-transitions-duration-normal) var(--midas-transitions-timing-ease-in) allow-discrete;
 }
