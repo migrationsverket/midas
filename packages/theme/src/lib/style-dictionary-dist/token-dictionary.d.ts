@@ -337,6 +337,11 @@ declare const tokens: {
     "100": DesignToken;
     "110": DesignToken;
     "120": DesignToken;
+    xsmall: DesignToken;
+    small: DesignToken;
+    medium: DesignToken;
+    large: DesignToken;
+    xlarge: DesignToken;
   };
   state: {
     focus: DesignToken;

@@ -221,6 +221,11 @@ export const spacing90 = "3rem";
 export const spacing100 = "4rem";
 export const spacing110 = "5rem";
 export const spacing120 = "6rem";
+export const spacingXsmall = "0.25rem";
+export const spacingSmall = "0.5rem";
+export const spacingMedium = "1rem";
+export const spacingLarge = "1.5rem";
+export const spacingXlarge = "2rem";
 export const stateFocus =
   "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)";
 export const stateFocusInset =
