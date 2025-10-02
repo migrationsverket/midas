@@ -2,7 +2,7 @@
 title: Heading
 ---
 
-import { Heading } from '@midas-ds/components'
+import { Heading, Text } from '@midas-ds/components'
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 
@@ -12,7 +12,7 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Heading.html'
 />
 
-Rubrik med fördefinierad stil
+Rubrik med fördefinierad stil.
 
 ```tsx
 import { Heading } from '@midas-ds/components'
@@ -30,7 +30,7 @@ import { Heading } from '@midas-ds/components'
 
 ### Nivå
 
-Använd egenskapen `level` för att justera rubrikens nivå
+Använd egenskapen `level` för att justera rubrikens nivå.
 
 ```tsx
 <Heading level={3}>Jag är en vanlig h3-rubrik</Heading>
@@ -40,11 +40,40 @@ Använd egenskapen `level` för att justera rubrikens nivå
   <Heading level={3}>Jag är en vanlig h3-rubrik</Heading>
 </div>
 
+### Inbyggda marginaler
+
+Använd egenskapen `enableMargins` för att aktivera inbyggda marginaler ovan och under rubriken.
+
+```tsx {4}
+<Text elementType='p'>En inledande paragraf</Text>
+<Heading
+  level={2}
+  enableMargins
+>
+  Jag är en vanlig h2-rubrik med inbyggda marginaler
+</Heading>
+<Text elementType='p'>Rubrikens marginaler fick denna paragraf att flytta på sig lite</Text>
+```
+
+<div
+  className='card'
+  style={{ display: 'block' }}
+>
+  <Text elementType='p'>En inledande paragraf</Text>
+  <Heading
+    level={2}
+    enableMargins
+  >
+    {'Jag är en vanlig h2-rubrik med inbyggda marginaler'}
+  </Heading>
+  <Text elementType='p'>Rubrikens marginaler fick denna paragraf att flytta på sig lite</Text>
+</div>
+
 ### Extern
 
 Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
 
-```tsx
+```tsx {3}
 <Heading
   level={2}
   isExpressive
@@ -66,7 +95,7 @@ Använd egenskapen `isExpressive` för ett externt och luftigare utseende.
 
 Egenskapen `elementType` kan användas för att ändra rubrikens semantiska nivå utan att påverka utseendet.
 
-```tsx
+```tsx {3}
 <Heading
   level={1}
   elementType='h3'

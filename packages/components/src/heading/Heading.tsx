@@ -12,7 +12,13 @@ export interface HeadingProps extends AriaHeadingProps {
    */
   elementType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   /**
+   * Enable top and bottom margins
+   * @default false
+   */
+  enableMargins?: boolean
+  /**
    * Use the external/expressive look
+   * @default false
    */
   isExpressive?: boolean
 }
@@ -20,6 +26,7 @@ export interface HeadingProps extends AriaHeadingProps {
 export const Heading: React.FC<HeadingProps> = ({
   children,
   className,
+  enableMargins = false,
   isExpressive = false,
   level = 3,
   elementType,
@@ -36,6 +43,7 @@ export const Heading: React.FC<HeadingProps> = ({
         className,
       )}
       {...(isExpressive && { 'data-expressive': true })}
+      {...(enableMargins && { 'data-margin': true })}
       {...rest}
     >
       {children}
