@@ -8,7 +8,7 @@ import {
 } from 'react-aria-components'
 import { Button } from '../button'
 import { ChevronDown } from 'lucide-react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import itemStyles from './AccordionItem.module.css'
 import { Heading, HeadingProps } from '../heading'
 import { FeedbackStatus } from '../common/types'
@@ -48,9 +48,9 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
     if (type && !isContained) {
       console.warn(
         `AccordionItem: When 'type' is set, it is recommended to also set 'isContained' to true for visual consistency.`,
-      );
+      )
     }
-  }, [type, isContained]);
+  }, [type, isContained])
 
   const Icon = type ? iconMap[type] : null
   const renderedIcon = Icon ? (
@@ -109,4 +109,3 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
     </Disclosure>
   )
 }
-

@@ -4,7 +4,7 @@ import {
   CalendarGrid as AriaCalendarGrid,
   CalendarGridProps as AriaCalendarGridProps,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { getLocalTimeZone, isToday } from '@internationalized/date'
 import styles from './Calendar.module.css'
 

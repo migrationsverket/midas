@@ -10,7 +10,7 @@ import {
 import { Button } from '../button'
 import { EllipsisVertical, LucideIcon } from 'lucide-react'
 import styles from './Dropdown.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 /**
  *

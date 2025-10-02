@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styles from './Skeleton.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 export interface SkeletonProps
   extends React.DetailedHTMLProps<

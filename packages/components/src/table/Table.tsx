@@ -28,11 +28,10 @@ import {
   ArrowUpWideNarrow,
   GripVertical,
 } from 'lucide-react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { Size } from '../common/types'
 
 export interface TableProps extends AriaTableProps {
-  
   /** Row height (large: 48px, medium: 40px)
    *  @default 'large'
    * */

@@ -1,5 +1,5 @@
 import styles from './Badge.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 export const BadgeContainer: React.FC<
   React.HTMLAttributes<HTMLSpanElement>

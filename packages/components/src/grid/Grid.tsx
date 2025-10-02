@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styles from './Grid.module.css'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 export interface GridProps
   extends React.DetailedHTMLProps<

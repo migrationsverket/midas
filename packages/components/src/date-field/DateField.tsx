@@ -5,7 +5,7 @@ import {
   type DateValue,
   type ValidationResult,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { DateInput, DateSegment } from '../date-field'
 import { FieldError } from '../field-error'
 import { InfoPopoverProps, Label } from '../label'

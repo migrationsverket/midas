@@ -7,7 +7,7 @@ import {
   ButtonProps,
   ButtonRenderProps,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import { LucideIcon } from 'lucide-react'
 import { Size } from '../common/types'
 
@@ -87,7 +87,12 @@ export const Button: React.FC<MidasButton> = ({
       {...rest}
     >
       <>
-        {IconComponent && <IconComponent aria-hidden size={iconSize ?? 20} />}
+        {IconComponent && (
+          <IconComponent
+            aria-hidden
+            size={iconSize ?? 20}
+          />
+        )}
         {rest.children}
       </>
     </AriaButton>

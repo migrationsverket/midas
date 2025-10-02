@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './Card.module.css'
 import * as React from 'react'
 import { Heading, HeadingProps } from '../heading'

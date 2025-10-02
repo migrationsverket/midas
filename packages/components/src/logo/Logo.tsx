@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './Logo.module.css'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'

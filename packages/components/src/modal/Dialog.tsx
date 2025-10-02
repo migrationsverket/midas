@@ -13,7 +13,7 @@ import { X } from 'lucide-react'
 import { Heading } from '../heading'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 
 /**
  * @deprecated since v13.0.1 please use ModalProps instead

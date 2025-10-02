@@ -1,5 +1,5 @@
 import * as React from 'react'
-import clsx from 'clsx'
+import clsx from '../../utils/clsx'
 import { useLayoutContext } from '../context/LayoutContext'
 import styles from '../Layout.module.css'
 

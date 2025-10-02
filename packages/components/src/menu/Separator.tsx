@@ -2,7 +2,7 @@ import {
   Separator as AriaSeparator,
   type SeparatorProps,
 } from 'react-aria-components'
-import clsx from 'clsx'
+import clsx from '../utils/clsx'
 import styles from './Menu.module.css'
 
 export type { SeparatorProps }
