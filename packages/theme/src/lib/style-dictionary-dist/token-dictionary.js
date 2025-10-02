@@ -3756,12 +3756,12 @@ export default {
         70: {
           key: "{typography.font.size.70}",
           $type: "fontSize",
-          $value: "1.75rem",
+          $value: "1.625rem",
           filePath: "packages/theme/tokens/typography.json",
           isSource: true,
           original: {
             $type: "fontSize",
-            $value: "1.75rem",
+            $value: "1.625rem",
             key: "{typography.font.size.70}",
           },
           name: "typographyFontSize70",
