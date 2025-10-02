@@ -2,7 +2,7 @@ import * as React from 'react'
 import {
   LabelProps,
   ProgressBar as AriaProgressBar,
-  ProgressBarProps as AriaProgressBarProps
+  ProgressBarProps as AriaProgressBarProps,
 } from 'react-aria-components'
 import styles from './ProgressBar.module.css'
 import { Label } from '../label'
@@ -50,7 +50,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
               elementType='span'
               {...labelProps}
               // Override the label id to prevent duplicates
-              id=''
+              id={label ? '' : labelProps?.id}
               className={clsx(labelProps?.className, styles.value)}
             >
               {valueLabel}
