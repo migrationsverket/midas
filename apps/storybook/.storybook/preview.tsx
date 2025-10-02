@@ -26,9 +26,9 @@ const preview: Preview = {
   parameters: {
     backgrounds: {
       options: {
-        background: variables.backgroundBase,
-        'Layer 01': variables.layer01Base,
-        'Layer 02': variables.layer02Base,
+        background: { name: 'Background', value: variables.backgroundBase },
+        layer01: { name: 'Layer 01', value: variables.layer01Base },
+        layer02: { name: 'Layer 02', value: variables.layer02Base },
       },
     },
     controls: {
