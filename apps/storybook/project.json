@@ -6,12 +6,11 @@
   "tags": ["apps"],
   "targets": {
     "serve": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "command": "npx storybook dev",
-        "cwd": "apps/storybook",
+        "configDir": "apps/storybook/.storybook",
         "port": 4400
-      }
+      },
     },
     "build": {
       "executor": "@nx/storybook:build",
