@@ -304,9 +304,13 @@
     "placeholder": {
       "$value": "light-dark({color.gray.70}, {color.gray.140})",
       "$description": "Textf\u00e4rg f\u00f6r platsh\u00e5llare"
+    },
+    "success": {
+      "$value": "light-dark({color.signalGreen.110}, {color.signalGreen.80})",
+      "$description": "Textf\u00e4rg f\u00f6r valideringsbekr\u00e4ftelser"
     }
   },
-  
+
   "badge": {
     "background": {
       "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})"
