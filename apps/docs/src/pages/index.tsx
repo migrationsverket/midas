@@ -5,8 +5,17 @@ import styles from '../css/index.module.css'
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import CodeBlock from '@theme/CodeBlock'
+/* eslint-disable @nx/enforce-module-boundaries */
+import { StorybookIcon, EmptyIcon } from '@site/src/components/icons'
 
 export default function Startpage() {
+
+  const baseUrl = useBaseUrl
+  const storybookUrl =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:4400'
+      : baseUrl('/storybook')
+
   return (
     <Layout
       title='Migrationsverkets designsystem'
@@ -44,6 +53,17 @@ export default function Startpage() {
                   to='/components/accordion'
                 >
                   Komponenter
+                </LinkButton>
+                <LinkButton
+                  variant='tertiary'
+                  href={storybookUrl}
+                  icon={EmptyIcon as any}
+                >
+                  <StorybookIcon
+                    size={24}
+                    color={'#FF4785'}
+                  />
+                  Storybook
                 </LinkButton>
               </ButtonGroup>
               <CodeBlock className={styles.code}>
