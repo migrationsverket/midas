@@ -184,7 +184,7 @@
       "$description": "Ikoner som \u00e4r disabled"
     },
     "success": {
-      "$value": "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
+      "$value": "light-dark({color.signalGreen.110}, {color.signalGreen.80})",
       "$description": "Ikonf\u00e4r f\u00f6r success state"
     },
     "info": {
