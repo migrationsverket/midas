@@ -93,7 +93,9 @@ export const colorSignalBlue20: string;
 export const colorSignalBlue100: string;
 export const colorSignalGreen20: string;
 export const colorSignalGreen30: string;
+export const colorSignalGreen80: string;
 export const colorSignalGreen100: string;
+export const colorSignalGreen110: string;
 export const colorSignalGreen150: string;
 export const colorSignalYellow10: string;
 export const colorSignalYellow20: string;
@@ -267,6 +269,8 @@ export const textDisabled: string;
 export const textWarning: string;
 /** Textfärg för platshållare */
 export const textPlaceholder: string;
+/** Textfärg för valideringsbekräftelser */
+export const textSuccess: string;
 export const badgeBackground: string;
 export const calendarDateBackgroundHover: string;
 export const calendarDateBackgroundSelected: string;
