@@ -11,7 +11,7 @@ import { clsx } from 'clsx'
 import { DatePickerInputField } from './DatePickerInputField'
 import { DatePickerPopover } from './DatePickerPopover'
 import { DateInput, DateInputDivider, DateSegment } from '../date-field'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { InfoPopoverProps, Label } from '../label'
 import { RangeCalendar } from '../calendar'
 import { Text } from '../text'
@@ -51,7 +51,9 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
         {label && <Label>{label}</Label>}
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+      {errorPosition === 'top' && (
+        <ValidationText>{errorMessage}</ValidationText>
+      )}
       <DatePickerInputField {...rest}>
         <DateInput slot='start'>
           {segment => <DateSegment segment={segment} />}
@@ -61,7 +63,9 @@ export const DateRangePicker: React.FC<DateRangePickerProps> = ({
           {segment => <DateSegment segment={segment} />}
         </DateInput>
       </DatePickerInputField>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+      {errorPosition === 'bottom' && (
+        <ValidationText>{errorMessage}</ValidationText>
+      )}
       <DatePickerPopover>
         <RangeCalendar />
       </DatePickerPopover>

@@ -7,7 +7,7 @@ import {
 import { clsx } from 'clsx'
 import { CalendarGrid } from './CalendarGrid'
 import { CalendarHeader } from './CalendarHeader'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import styles from './Calendar.module.css'
 
 export interface CalendarProps extends AriaCalendarProps<DateValue> {
@@ -27,7 +27,9 @@ export const Calendar: React.FC<CalendarProps> = ({
       <CalendarHeader {...rest} />
       <CalendarGrid {...rest} />
     </AriaCalendar>
-
-    <FieldError isInvalid={rest.isInvalid}>{errorMessage}</FieldError>
+    <ValidationText
+      isInvalid={rest.isInvalid}
+      message={errorMessage}
+    />
   </div>
 )

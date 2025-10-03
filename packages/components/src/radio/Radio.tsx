@@ -14,7 +14,7 @@ import {
 import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface MVDSRadioGroupProps extends Omit<RadioGroupProps, 'children'> {
@@ -53,11 +53,15 @@ export const RadioGroup: React.FC<MVDSRadioGroupProps> = ({
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        <ValidationText data-testid='validationText'>
+          {errorMessage}
+        </ValidationText>
       )}
       <Group className={styles.wrap}>{children}</Group>
       {errorPosition === 'bottom' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        <ValidationText data-testid='validationText'>
+          {errorMessage}
+        </ValidationText>
       )}
     </AriaRadioGroup>
   )

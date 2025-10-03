@@ -16,7 +16,7 @@ import { ChevronDown } from 'lucide-react'
 import clsx from '../utils/clsx'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { Size } from '../common/types'
 import {
   ListBox,
@@ -78,7 +78,9 @@ export function ComboBox<T extends ListBoxOption>({
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        <ValidationText data-testid='validationText'>
+          {errorMessage}
+        </ValidationText>
       )}
       <div className={styles.wrap}>
         <Input
@@ -106,7 +108,9 @@ export function ComboBox<T extends ListBoxOption>({
         </Button>
       </div>
       {errorPosition === 'bottom' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        <ValidationText data-testid='validationText'>
+          {errorMessage}
+        </ValidationText>
       )}
       <ListBoxPopover>
         <ListBox

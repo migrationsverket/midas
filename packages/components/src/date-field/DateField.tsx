@@ -7,7 +7,7 @@ import {
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import { DateInput, DateSegment } from '../date-field'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import styles from './DateField.module.css'
@@ -46,7 +46,7 @@ export const DateField: React.FC<DateFieldProps> = ({
       {label && <Label>{label}</Label>}
     </LabelWrapper>
     {description && <Text slot='description'>{description}</Text>}
-    {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+    {errorPosition === 'top' && <ValidationText>{errorMessage}</ValidationText>}
     <div
       className={clsx(styles.inputField, {
         [styles.medium]: size === 'medium',
@@ -56,6 +56,8 @@ export const DateField: React.FC<DateFieldProps> = ({
     >
       <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
     </div>
-    {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+    {errorPosition === 'bottom' && (
+      <ValidationText>{errorMessage}</ValidationText>
+    )}
   </AriaDateField>
 )

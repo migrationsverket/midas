@@ -7,7 +7,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import { useSelectAll } from './useSelectAll'
 import { Checkbox } from './Checkbox'
 import { CheckboxGroupContext } from './context'
-import { CheckboxGroupFieldError } from './CheckboxGroupFieldError'
+import { CheckboxGroupValidationText } from './CheckboxGroupValidationText'
 import messages from './intl/translations.json'
 import styles from './Checkbox.module.css'
 import { LabelWrapper } from '../label/LabelWrapper'
@@ -57,7 +57,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
         </Text>
       )}
       {props.errorPosition === 'top' && (
-        <CheckboxGroupFieldError
+        <CheckboxGroupValidationText
           {...props}
           state={state}
         />
@@ -75,7 +75,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
         {props.children}
       </CheckboxGroupContext.Provider>
       {props.errorPosition === 'bottom' && (
-        <CheckboxGroupFieldError
+        <CheckboxGroupValidationText
           {...props}
           state={state}
         />

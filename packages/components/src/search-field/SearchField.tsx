@@ -11,7 +11,7 @@ import { useSearchFieldState } from 'react-stately'
 import { useSearchField } from 'react-aria'
 import type { ValidationError } from '@react-types/shared'
 import { Size } from '../common/types'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
 
@@ -96,9 +96,10 @@ export const SearchField: React.FC<SearchFieldProps> = ({
       data-disabled={inputProps.disabled}
     >
       {errorPosition === 'top' && (
-        <FieldError isInvalid={isInvalid}>
-          {props.errorMessage ?? validationErrors.join(' ')}
-        </FieldError>
+        <ValidationText
+          isInvalid={isInvalid}
+          message={props.errorMessage ?? validationErrors.join(' ')}
+        />
       )}
       <div className={styles.inner}>
         <div
@@ -155,9 +156,10 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         </Button>
       </div>
       {errorPosition === 'bottom' && (
-        <FieldError isInvalid={isInvalid}>
-          {props.errorMessage ?? validationErrors.join(' ')}
-        </FieldError>
+        <ValidationText
+          isInvalid={isInvalid}
+          message={props.errorMessage ?? validationErrors.join(' ')}
+        />
       )}
     </div>
   )
