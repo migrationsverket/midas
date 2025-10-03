@@ -221,7 +221,7 @@
   "support": {
     "border": {
       "success": {
-        "$value": "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
+        "$value": "light-dark({color.signalGreen.110}, {color.signalGreen.80})",
         "$description": "Kantlinje f\u00f6r success-notifikationer"
       },
       "info": {

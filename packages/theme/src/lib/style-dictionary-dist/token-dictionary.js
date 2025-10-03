@@ -1117,6 +1117,21 @@ export default {
         attributes: {},
         path: ["color", "signalGreen", "30"],
       },
+      80: {
+        key: "{color.signalGreen.80}",
+        $value: "#35a663",
+        filePath: "packages/theme/tokens/colors.json",
+        isSource: true,
+        $type: "color",
+        original: {
+          $value: "#35a663",
+          $type: "color",
+          key: "{color.signalGreen.80}",
+        },
+        name: "colorSignalGreen80",
+        attributes: {},
+        path: ["color", "signalGreen", "80"],
+      },
       100: {
         key: "{color.signalGreen.100}",
         $value: "#008d3c",
@@ -1131,6 +1146,21 @@ export default {
         name: "colorSignalGreen100",
         attributes: {},
         path: ["color", "signalGreen", "100"],
+      },
+      110: {
+        key: "{color.signalGreen.110}",
+        $value: "#0e803c",
+        filePath: "packages/theme/tokens/colors.json",
+        isSource: true,
+        $type: "color",
+        original: {
+          $value: "#0e803c",
+          $type: "color",
+          key: "{color.signalGreen.110}",
+        },
+        name: "colorSignalGreen110",
+        attributes: {},
+        path: ["color", "signalGreen", "110"],
       },
       150: {
         key: "{color.signalGreen.150}",
@@ -2371,12 +2401,12 @@ export default {
     },
     success: {
       key: "{icon.success}",
-      $value: "light-dark(#008d3c, #008d3c)",
+      $value: "light-dark(#0e803c, #35a663)",
       $description: "Ikonfär för success state",
       filePath: "packages/theme/tokens/object-values.json",
       isSource: true,
       original: {
-        $value: "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
+        $value: "light-dark({color.signalGreen.110}, {color.signalGreen.80})",
         $description: "Ikonfär för success state",
         key: "{icon.success}",
       },
@@ -2497,13 +2527,12 @@ export default {
     border: {
       success: {
         key: "{support.border.success}",
-        $value: "light-dark(#008d3c, #008d3c)",
+        $value: "light-dark(#0e803c, #35a663)",
         $description: "Kantlinje för success-notifikationer",
         filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
-          $value:
-            "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
+          $value: "light-dark({color.signalGreen.110}, {color.signalGreen.80})",
           $description: "Kantlinje för success-notifikationer",
           key: "{support.border.success}",
         },
@@ -2802,6 +2831,21 @@ export default {
       name: "textPlaceholder",
       attributes: {},
       path: ["text", "placeholder"],
+    },
+    success: {
+      key: "{text.success}",
+      $value: "light-dark(#0e803c, #35a663)",
+      $description: "Textfärg för valideringsbekräftelser",
+      filePath: "packages/theme/tokens/object-values.json",
+      isSource: true,
+      original: {
+        $value: "light-dark({color.signalGreen.110}, {color.signalGreen.80})",
+        $description: "Textfärg för valideringsbekräftelser",
+        key: "{text.success}",
+      },
+      name: "textSuccess",
+      attributes: {},
+      path: ["text", "success"],
     },
   },
   badge: {
