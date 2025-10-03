@@ -55,7 +55,9 @@
   --midas-color-signal-blue-100: #0066cc;
   --midas-color-signal-green-20: #d5f2d9;
   --midas-color-signal-green-30: #bae5c5;
+  --midas-color-signal-green-80: #35a663;
   --midas-color-signal-green-100: #008d3c;
+  --midas-color-signal-green-110: #0e803c;
   --midas-color-signal-green-150: #194b33;
   --midas-color-signal-yellow-10: #fff8e2;
   --midas-color-signal-yellow-20: #fff1cd;
@@ -229,7 +231,7 @@
   --midas-icon-inverse: light-dark(var(--midas-color-white-base), var(--midas-color-gray-200)); /** Inverterad ikonfärg. Ljus ikon i ljust läge och mörk ikon i mörkt läge */
   --midas-icon-on-color: light-dark(var(--midas-color-white-base), var(--midas-color-white-base)); /** Ikonfärg på färgade ytor som inte är lager */
   --midas-icon-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Ikoner som är disabled */
-  --midas-icon-success: light-dark(var(--midas-color-signal-green-100), var(--midas-color-signal-green-100)); /** Ikonfär för success state */
+  --midas-icon-success: light-dark(var(--midas-color-signal-green-110), var(--midas-color-signal-green-80)); /** Ikonfär för success state */
   --midas-icon-info: light-dark(var(--midas-color-signal-blue-100), var(--midas-color-signal-blue-100)); /** Ikonfärg för informationsikoner */
   --midas-icon-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Ikonfärg för varningsikoner och invalid state */
   --midas-icon-important: light-dark(var(--midas-color-signal-yellow-100), var(--midas-color-signal-yellow-100)); /** Ikonfärg för viktig information */
@@ -237,7 +239,7 @@
   --midas-link-hover: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-50)); /** Hover state för länkar */
   --midas-link-pressed: light-dark(var(--midas-color-gray-200), var(--midas-color-blue-40)); /** Active/pressed state för länkar */
   --midas-link-visited: light-dark(var(--midas-color-purple-110), var(--midas-color-purple-80)); /** Färg för besökta länkar */
-  --midas-support-border-success: light-dark(var(--midas-color-signal-green-100), var(--midas-color-signal-green-100)); /** Kantlinje för success-notifikationer */
+  --midas-support-border-success: light-dark(var(--midas-color-signal-green-110), var(--midas-color-signal-green-80)); /** Kantlinje för success-notifikationer */
   --midas-support-border-info: light-dark(var(--midas-color-signal-blue-100), var(--midas-color-signal-blue-100)); /** Kantlinje för notifikationer med information */
   --midas-support-border-important: light-dark(var(--midas-color-signal-yellow-100), var(--midas-color-signal-yellow-100)); /** Kantlinje för notifikationer med viktig information */
   --midas-support-border-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Kantlinje för notifikationer med varningar */
@@ -257,6 +259,7 @@
   --midas-text-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Textfärg för disabled state */
   --midas-text-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-80)); /** Textfärg för felmeddelanden */
   --midas-text-placeholder: light-dark(var(--midas-color-gray-70), var(--midas-color-gray-140)); /** Textfärg för platshållare */
+  --midas-text-success: light-dark(var(--midas-color-signal-green-110), var(--midas-color-signal-green-80)); /** Textfärg för valideringsbekräftelser */
   --midas-badge-background: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100));
   --midas-calendar-date-background-selected: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
   --midas-calendar-date-background-start-range: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));

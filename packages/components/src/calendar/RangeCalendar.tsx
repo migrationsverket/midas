@@ -7,7 +7,7 @@ import {
 import { clsx } from 'clsx'
 import { CalendarGrid } from './CalendarGrid'
 import { CalendarHeader } from './CalendarHeader'
-import { Text } from '../text'
+import { ValidationText } from '../validation-text'
 import styles from './Calendar.module.css'
 
 export interface RangeCalendarProps extends AriaRangeCalendarProps<DateValue> {
@@ -28,6 +28,9 @@ export const RangeCalendar: React.FC<RangeCalendarProps> = ({
       {...rest}
       isRange
     />
-    {errorMessage && <Text slot='errorMessage'>{errorMessage}</Text>}
+    <ValidationText
+      isInvalid={rest.isInvalid}
+      message={errorMessage}
+    />
   </AriaRangeCalendar>
 )

@@ -172,7 +172,7 @@ export const Required: Story = {
         expect(comboBox).toBeInvalid()
 
         // Error message depends on the browser language
-        expect(canvas.getByTestId('fieldError')).toBeInTheDocument()
+        expect(canvas.getByTestId('validationText')).toBeInTheDocument()
       },
     )
   },

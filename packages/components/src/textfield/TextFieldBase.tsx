@@ -8,7 +8,7 @@ import {
 } from 'react-aria-components'
 import styles from './TextField.module.css'
 import { Text } from '../text/Text'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { CharacterCounter } from '../character-counter'
 import { clsx } from 'clsx'
 import { Size } from '../common/types'
@@ -34,6 +34,10 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    *  @default 'large'
    * */
   size?: Size
+  /**
+   * Show a success message
+   */
+  validationSuccessful?: boolean
   popover?: InfoPopoverProps
 }
 
@@ -52,6 +56,7 @@ export const TextFieldBase = React.forwardRef<
     size = 'large',
     popover,
     children,
+    validationSuccessful,
   } = props
 
   return (
@@ -67,16 +72,22 @@ export const TextFieldBase = React.forwardRef<
       {description && <Text slot='description'>{description}</Text>}
       {showCounter && <CharacterCounter isLonely={!description} />}
       {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        <ValidationText
+          validationSuccessful={validationSuccessful}
+          data-testid='validationText'
+        >
+          {errorMessage}
+        </ValidationText>
       )}
       {children}
       {errorPosition === 'bottom' && (
-        <FieldError
-          data-testid='fieldError'
+        <ValidationText
+          validationSuccessful={validationSuccessful}
+          data-testid='validationText'
           className={styles.bottomError}
         >
           {errorMessage}
-        </FieldError>
+        </ValidationText>
       )}
     </AriaTextField>
   )

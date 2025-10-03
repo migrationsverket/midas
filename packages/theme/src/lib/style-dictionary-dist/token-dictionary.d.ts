@@ -122,7 +122,9 @@ declare const tokens: {
     signalGreen: {
       "20": DesignToken;
       "30": DesignToken;
+      "80": DesignToken;
       "100": DesignToken;
+      "110": DesignToken;
       "150": DesignToken;
     };
     signalYellow: {
@@ -276,6 +278,7 @@ declare const tokens: {
     disabled: DesignToken;
     warning: DesignToken;
     placeholder: DesignToken;
+    success: DesignToken;
   };
   badge: {
     background: DesignToken;

@@ -12,7 +12,7 @@ import { DatePickerInputField } from './DatePickerInputField'
 import { DatePickerPopover } from './DatePickerPopover'
 import { Calendar } from '../calendar'
 import { DateInput, DateSegment } from '../date-field'
-import { FieldError } from '../field-error'
+import { ValidationText } from '../validation-text'
 import { InfoPopoverProps, Label } from '../label'
 import { Text } from '../text'
 import styles from './DatePicker.module.css'
@@ -50,11 +50,15 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         {label && <Label>{label}</Label>}
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+      {errorPosition === 'top' && (
+        <ValidationText>{errorMessage}</ValidationText>
+      )}
       <DatePickerInputField {...rest}>
         <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
       </DatePickerInputField>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+      {errorPosition === 'bottom' && (
+        <ValidationText>{errorMessage}</ValidationText>
+      )}
       <DatePickerPopover>
         <Calendar />
       </DatePickerPopover>

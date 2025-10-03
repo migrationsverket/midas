@@ -15,7 +15,7 @@ import { Checkbox } from '../checkbox'
 import { ListBoxPopover } from '../list-box'
 import { MultiSelectValueTag } from './MultiSelectValueTag'
 import { SelectTrigger } from './SelectTrigger'
-import { SelectFieldError } from './SelectFieldError'
+import { SelectValidationText } from './SelectValidationText'
 import styles from './Select.module.css'
 import type { SelectContainerProps, SelectProps } from './types'
 import { LabelWrapper } from '../label/LabelWrapper'
@@ -79,7 +79,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
           <Text slot='description'>{props.description}</Text>
         )}
         {props.errorPosition === 'top' && (
-          <SelectFieldError
+          <SelectValidationText
             {...props}
             state={state}
           />
@@ -104,7 +104,7 @@ const SelectComponent = React.forwardRef<HTMLButtonElement, MidasSelectProps>(
           ) : null}
         </SelectTrigger>
         {props.errorPosition === 'bottom' && (
-          <SelectFieldError
+          <SelectValidationText
             {...props}
             state={state}
           />
