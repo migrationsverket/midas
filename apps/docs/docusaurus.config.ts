@@ -158,7 +158,10 @@ const config: Config = {
             : `<code>Version ${version}</code>`,
         },
         {
-          href: 'https://designsystem.migrationsverket.se/storybook/',
+          href:
+            process.env.NODE_ENV !== 'production'
+              ? 'http://localhost:4400'
+              : `https://designsystem.migrationsverket.se${getBaseUrl()}storybook`,
           className: 'navbar--storybook-link',
           'aria-label': 'Storybook',
           position: 'right',
