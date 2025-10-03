@@ -158,7 +158,7 @@ const config: Config = {
             : `<code>Version ${version}</code>`,
         },
         {
-          href: 'https://designsystem.migrationsverket.se/storybook/',
+          href: process.env.PRODUCTION ? `${getBaseUrl()}storybook` : 'https://designsystem.migrationsverket.se/storybook',
           className: 'navbar--storybook-link',
           'aria-label': 'Storybook',
           position: 'right',
