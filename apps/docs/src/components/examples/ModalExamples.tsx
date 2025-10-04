@@ -98,13 +98,17 @@ export const HideCloseButtonExample = () => {
   return (
     <div className='card'>
       <DialogTrigger>
-        <Button>Open</Button>
-        <Modal title="Modal Title" hideCloseButton isKeyboardDismissDisabled>
-          Modal content
-          <Button slot={'close'}>Action</Button>
+        <Button>Bekräfta att du läst villkoren</Button>
+        <Modal
+          title='Villkor'
+          hideCloseButton
+          isKeyboardDismissDisabled
+        >
+          Du måste bekräfta att du läst och accepterat villkoren innan du kan gå
+          vidare
+          <Button slot="close">Bekräfta</Button>
         </Modal>
       </DialogTrigger>
     </div>
-
   )
 }
