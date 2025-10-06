@@ -103,7 +103,7 @@ export const IsOnLayer01: Story = {
   },
 }
 export const DS1191: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

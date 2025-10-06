@@ -44,7 +44,7 @@ export const SelectAllInteraction: Story = {
     showSelectAll: true,
     selectAllLabel: 'SELECT ALL',
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -99,7 +99,7 @@ export const InvalidInteraction: Story = {
     validationBehavior: 'aria',
     errorMessage: 'Du måste välja en av frukterna',
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

@@ -129,7 +129,7 @@ export const Invalid: Story = {
 }
 
 export const Required: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -162,7 +162,7 @@ export const Required: Story = {
 }
 
 export const CustomValidation: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

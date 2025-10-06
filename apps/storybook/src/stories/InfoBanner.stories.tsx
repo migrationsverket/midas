@@ -68,7 +68,7 @@ export const Dismissable: Story = {
 }
 
 export const DismissableTests: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -118,7 +118,7 @@ export const Controlled: Story = {
 }
 
 export const ControlledTests: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

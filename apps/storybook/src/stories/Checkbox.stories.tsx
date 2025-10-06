@@ -53,7 +53,7 @@ export const Required: Story = {
   args: {
     isRequired: true,
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -84,7 +84,7 @@ export const Required: Story = {
 }
 
 export const CustomClassName: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

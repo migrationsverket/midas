@@ -87,7 +87,7 @@ export const Invalid: Story = {
 }
 
 export const DS1253: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -149,7 +149,7 @@ export const Required: Story = {
     'aria-label': 'test',
     isRequired: true,
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -184,7 +184,7 @@ export const CustomErrorMessage: Story = {
     isRequired: true,
     errorMessage: 'Custom error message',
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -214,7 +214,7 @@ export const CustomErrorMessage: Story = {
 }
 
 export const DS1207: StoryObj<typeof ComboBox<ListBoxSectionElement>> = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

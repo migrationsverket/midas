@@ -73,7 +73,7 @@ export const Required: Story = {
     isRequired: true,
     errorMessage: 'Var god ange ett datum',
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -105,7 +105,7 @@ export const CustomValiation: Story = {
     validate: ({ year }) =>
       year === new Date().getFullYear() ? 'Var god välj ett annat år' : true,
   },
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -134,7 +134,7 @@ export const CustomValiation: Story = {
 }
 
 export const ControlledState: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

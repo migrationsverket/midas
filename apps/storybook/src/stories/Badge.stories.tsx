@@ -57,7 +57,7 @@ export const LongLabel: Story = {
 }
 
 export const CustomClassName: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
