@@ -28,7 +28,10 @@ export default {
             snapshotRootDir: '__vis__/dark/local',
           },
           {
-            snapshotRootDir: '__vis__/forced-colors/local',
+            snapshotRootDir: '__vis__/forced-colors:light/local',
+          },
+          {
+            snapshotRootDir: '__vis__/forced-colors:dark/local',
           },
         ],
       },
