@@ -30,13 +30,7 @@ export const Primary: Story = {
     canvas,
     canvasElement,
     step,
-    args: {
-      onChange,
-      onSubmit,
-      buttonText,
-      className,
-      // size
-    },
+    args: { onChange, onSubmit, buttonText, className },
   }) => {
     await step(
       'it should be possible to submit a search string using only the keyboard',
@@ -59,19 +53,6 @@ export const Primary: Story = {
         expect(onSubmit).toHaveBeenCalledWith('hello')
       },
     )
-
-    // TODO: this test fails in forced colors mode
-
-    // await step('it should change size according to size prop', async () => {
-    //   await expect(canvas.getByRole('searchbox')).toHaveStyle({
-    //     height: size === 'large' ? '48px' : '40px',
-    //   })
-    //   await expect(
-    //     canvas.getByRole('button', { name: buttonText }),
-    //   ).toHaveStyle({
-    //     height: size === 'large' ? '48px' : '40px',
-    //   })
-    // })
 
     await step('it should accept custom classNames', async () => {
       await expect(canvasElement.querySelector('div')).toHaveClass(
