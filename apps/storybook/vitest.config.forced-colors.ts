@@ -10,8 +10,11 @@ export default mergeConfig(
       reporters: ['default'],
       projects: [
         defineStorybookProject({
-          name: 'storybook',
-          snapshotSubpath: 'light',
+          name: 'storybook:forced-colors',
+          snapshotSubpath: 'forced-colors',
+          context: {
+            forcedColors: 'active',
+          },
         }),
       ],
     },

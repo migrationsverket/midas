@@ -52,6 +52,18 @@
         }
       }
     },
+    "test:forced-colors": {
+      "executor": "@nx/vite:test",
+      "options": {
+        "config": "apps/storybook/vitest.config.forced-colors.ts",
+        "project": "storybook:forced-colors"
+      },
+      "configurations": {
+        "watch": {
+          "watch": true
+        }
+      }
+    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],

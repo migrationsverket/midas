@@ -114,7 +114,7 @@ const preview: Preview = {
       )
     },
   ],
-  tags: ['autodocs'],
+  tags: ['autodocs', 'snapshot'],
 }
 
 export default preview

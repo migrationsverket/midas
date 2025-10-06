@@ -184,3 +184,10 @@ vitest.config.*.timestamp*
 test-dom.html
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+# snapshot images
+__vis__/light
+__vis__/dark
+__vis__/forced-colors
+__diffs__
+__results__
