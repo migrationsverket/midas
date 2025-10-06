@@ -74,6 +74,12 @@ export const Invalid: Story = {
   },
 }
 
+export const IsValid: Story = {
+  args: {
+    isValid: true,
+  },
+}
+
 export const Required: Story = {
   tags: ['!dev', '!autodocs'],
   parameters: {

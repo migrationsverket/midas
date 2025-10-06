@@ -9,7 +9,10 @@ import {
 import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
 
-export type TextAreaProps = Omit<TextFieldBaseProps, 'type' | 'pattern'> &
+export type TextAreaProps = Omit<
+  TextFieldBaseProps,
+  'type' | 'pattern' | 'isValid' | 'validationMessage'
+> &
   AriaTextAreaProps
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(

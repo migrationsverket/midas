@@ -1,28 +1,25 @@
 .fieldError {
-  font-family: var(--midas-typography-font-family);
-  color: var(--midas-text-warning);
-  font-size: 0.875rem;
-  display: flex;
   align-items: center;
-  column-gap: 0.5rem;
-  margin: 0.5rem 0 0;
-  line-height: 1.28;
+  color: var(--midas-text-warning);
+  column-gap: var(--midas-spacing-small);
+  display: flex;
+  font-family: var(--midas-typography-font-family);
+  font-size: var(--midas-typography-font-size-20);
   grid-area: Error;
+  line-height: var(--midas-typography-line-height-20);
+  margin: var(--midas-spacing-small) 0 0;
 
   &:has(+ *) {
-    margin: 0 0 0.5rem;
+    margin: 0 0 var(--midas-spacing-small);
   }
 
   &::before {
-    content: '';
     background-color: var(--midas-text-warning);
-    display: block;
-    width: 1rem;
-    height: 1rem;
-    mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtdHJpYW5nbGUtYWxlcnQiPjxwYXRoIGQ9Im0yMS43MyAxOC04LTE0YTIgMiAwIDAgMC0zLjQ4IDBsLTggMTRBMiAyIDAgMCAwIDQgMjFoMTZhMiAyIDAgMCAwIDEuNzMtMyIvPjxwYXRoIGQ9Ik0xMiA5djQiLz48cGF0aCBkPSJNMTIgMTdoLjAxIi8+PC9zdmc+');
-    mask-size: 1rem 1rem;
-    flex: 0 0 auto;
-    align-self: flex-start;
-    margin: 2px;
+    color: var(--midas-text-warning);
+    content: '';
+    height: var(--midas-size-80);
+    mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtdHJpYW5nbGUtYWxlcnQiPjxwYXRoIGQ9Im0yMS43MyAxOC04LTE0YTIgMiAwIDAgMC0zLjQ4IDBsLTggMTRBMiAyIDAgMCAwIDQgMjFoMTZhMiAyIDAgMCAwIDEuNzMtMyIvPjxwYXRoIGQ9Ik0xMiA5djQiLz48cGF0aCBkPSJNMTIgMTdoLjAxIi8+PC9zdmc+');
+    mask-size: var(--midas-size-80) var(--midas-size-80);
+    width: var(--midas-size-80);
   }
 }
