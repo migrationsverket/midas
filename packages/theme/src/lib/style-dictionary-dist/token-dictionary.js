@@ -3505,15 +3505,47 @@ export default {
   state: {
     focus: {
       key: "{state.focus}",
-      $type: "string",
-      $value:
-        "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)",
+      $type: "shadow",
+      $value: [
+        {
+          color: "light-dark(white, black)",
+          offsetX: "0",
+          offsetY: "0",
+          blur: "0",
+          spread: "2px",
+        },
+        {
+          color: "light-dark(black, white)",
+          offsetX: "0",
+          offsetY: "0",
+          blur: "0",
+          spread: "4px",
+        },
+      ],
+      $description:
+        "Focus style used when the component is focused (box-shadow).",
       filePath: "packages/theme/tokens/states.json",
       isSource: true,
       original: {
-        $type: "string",
-        $value:
-          "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)",
+        $type: "shadow",
+        $value: [
+          {
+            color: "light-dark(white, black)",
+            offsetX: "0",
+            offsetY: "0",
+            blur: "0",
+            spread: "2px",
+          },
+          {
+            color: "light-dark(black, white)",
+            offsetX: "0",
+            offsetY: "0",
+            blur: "0",
+            spread: "4px",
+          },
+        ],
+        $description:
+          "Focus style used when the component is focused (box-shadow).",
         key: "{state.focus}",
       },
       name: "stateFocus",
@@ -3522,16 +3554,48 @@ export default {
     },
     focusInset: {
       key: "{state.focusInset}",
-      $type: "string",
-      $value:
-        "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
+      $type: "shadow",
+      $value: [
+        {
+          inset: true,
+          color: "light-dark(black, white)",
+          offsetX: "0",
+          offsetY: "0",
+          blur: "0",
+          spread: "2px",
+        },
+        {
+          inset: true,
+          color: "light-dark(white, black)",
+          offsetX: "0",
+          offsetY: "0",
+          blur: "0",
+          spread: "4px",
+        },
+      ],
       $description: "Inset variant of the focus ring (box-shadow inset).",
       filePath: "packages/theme/tokens/states.json",
       isSource: true,
       original: {
-        $type: "string",
-        $value:
-          "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
+        $type: "shadow",
+        $value: [
+          {
+            inset: true,
+            color: "light-dark(black, white)",
+            offsetX: "0",
+            offsetY: "0",
+            blur: "0",
+            spread: "2px",
+          },
+          {
+            inset: true,
+            color: "light-dark(white, black)",
+            offsetX: "0",
+            offsetY: "0",
+            blur: "0",
+            spread: "4px",
+          },
+        ],
         $description: "Inset variant of the focus ring (box-shadow inset).",
         key: "{state.focusInset}",
       },
