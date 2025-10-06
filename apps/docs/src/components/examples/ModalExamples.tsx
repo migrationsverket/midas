@@ -108,8 +108,7 @@ export const HideCloseButtonExample = () => {
           hideCloseButton
           isKeyboardDismissDisabled
         >
-          Du måste bekräfta att du läst och accepterat villkoren innan du kan gå
-          vidare
+          Du måste bekräfta att du läst villkoren innan du kan gå vidare
           <Button slot='close'>Bekräfta</Button>
         </Modal>
       </DialogTrigger>
