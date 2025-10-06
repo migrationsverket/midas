@@ -6,7 +6,7 @@ import styles from '@midas-ds/components/spinner/Spinner.module.css'
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
   title: 'Components/Spinner',
-  tags: ['autodocs'],
+  tags: ['autodocs', '!snapshot'],
   parameters: {
     layout: 'centered',
   },

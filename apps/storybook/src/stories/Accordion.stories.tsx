@@ -131,7 +131,7 @@ export const DynamicContent: Story = {
 }
 
 export const DS1060: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

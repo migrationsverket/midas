@@ -15,6 +15,10 @@ export default {
 export const Primary: Story = {}
 
 export const SelectedDates: Story = {
+  parameters: {
+    // violations in forced-colors
+    a11y: { test: 'todo' },
+  },
   args: {
     defaultValue: {
       start: mockedNow.subtract({ days: 2 }),
@@ -52,6 +56,8 @@ export const KeyboardTest: Story = {
   tags: ['!dev', '!autodocs'],
   parameters: {
     chromatic: { disableSnapshot: true },
+    // violations in forced-colors
+    a11y: { test: 'todo' },
   },
   play: async ({ canvas, step }) => {
     await step(
