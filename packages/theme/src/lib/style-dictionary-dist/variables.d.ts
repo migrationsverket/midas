@@ -317,7 +317,12 @@ export const spacingMedium: string;
 export const spacingLarge: string;
 export const spacingXlarge: string;
 export const stateFocus: string;
+/** Inset variant of the focus ring (box-shadow inset). */
 export const stateFocusInset: string;
+/** Outline style for focus ring when Windows High Contrast (forced-colors) mode is active. */
+export const stateFocusContrastModeOutline: string;
+/** Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.. */
+export const stateFocusContrastModeOffset: string;
 export const transitionsDurationSlow: string;
 export const transitionsDurationNormal: string;
 export const transitionsDurationFast: string;

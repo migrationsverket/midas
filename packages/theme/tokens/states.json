@@ -2,11 +2,25 @@
   "state": {
     "focus": {
       "$type": "string",
-      "$value": "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)"
+      "$value": "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)",
+      "$description": "Focus style used when the component is focused (box-shadow)."
     },
     "focusInset": {
       "$type": "string",
-      "$value": "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)"
+      "$value": "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
+      "$description": "Inset variant of the focus ring (box-shadow inset)."
+    },
+    "focusContrastMode": {
+      "$type": "dimension",
+      "$description": "Focus style used when Windows High Contrast (forced-colors) mode is active.",
+      "outline": {
+        "$value": "2px",
+        "$description": "Outline style for focus ring when Windows High Contrast (forced-colors) mode is active."
+      },
+      "offset": {
+        "$value": "2px",
+        "$description": "Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.."
+      }
     }
   }
 }

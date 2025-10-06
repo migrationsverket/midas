@@ -3525,17 +3525,59 @@ export default {
       $type: "string",
       $value:
         "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
+      $description: "Inset variant of the focus ring (box-shadow inset).",
       filePath: "packages/theme/tokens/states.json",
       isSource: true,
       original: {
         $type: "string",
         $value:
           "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
+        $description: "Inset variant of the focus ring (box-shadow inset).",
         key: "{state.focusInset}",
       },
       name: "stateFocusInset",
       attributes: {},
       path: ["state", "focusInset"],
+    },
+    focusContrastMode: {
+      outline: {
+        key: "{state.focusContrastMode.outline}",
+        $value: "2px",
+        $description:
+          "Outline style for focus ring when Windows High Contrast (forced-colors) mode is active.",
+        filePath: "packages/theme/tokens/states.json",
+        isSource: true,
+        $type: "dimension",
+        original: {
+          $value: "2px",
+          $description:
+            "Outline style for focus ring when Windows High Contrast (forced-colors) mode is active.",
+          $type: "dimension",
+          key: "{state.focusContrastMode.outline}",
+        },
+        name: "stateFocusContrastModeOutline",
+        attributes: {},
+        path: ["state", "focusContrastMode", "outline"],
+      },
+      offset: {
+        key: "{state.focusContrastMode.offset}",
+        $value: "2px",
+        $description:
+          "Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active..",
+        filePath: "packages/theme/tokens/states.json",
+        isSource: true,
+        $type: "dimension",
+        original: {
+          $value: "2px",
+          $description:
+            "Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active..",
+          $type: "dimension",
+          key: "{state.focusContrastMode.offset}",
+        },
+        name: "stateFocusContrastModeOffset",
+        attributes: {},
+        path: ["state", "focusContrastMode", "offset"],
+      },
     },
   },
   transitions: {

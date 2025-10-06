@@ -52,8 +52,8 @@
   @media (forced-colors: active) {
     &[data-focus-visible],
     &:focus-visible {
-      outline: 2px solid;
-      outline-offset: 3px;
+      outline: var(--midas-state-focus-contrast-mode-outline);
+      outline-offset: var(--midas-state-focus-contrast-mode-offset);
     }
   }
 
