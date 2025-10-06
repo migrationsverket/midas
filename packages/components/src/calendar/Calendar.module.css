@@ -125,7 +125,7 @@
     border-color: var(--midas-calendar-date-background-selected);
 
     @media (forced-colors: active) {
-      background-color: highlight;
+      background-color: SelectedItem;
     }
   }
 
@@ -134,24 +134,41 @@
       color: var(--midas-text-primary);
       background-color: var(--midas-calendar-date-background-in-range);
       border-color: var(--midas-calendar-date-background-in-range);
+
+      @media (forced-colors: active) {
+        background-color: Mark;
+      }
     }
 
     &[data-selection-start='true'] {
       color: var(--midas-text-inverse);
       background-color: var(--midas-calendar-date-background-start-range);
       border-color: var(--midas-calendar-date-background-start-range);
+
+      @media (forced-colors: active) {
+        background-color: SelectedItem;
+      }
     }
 
     &[data-selection-end='true'] {
       color: var(--midas-text-inverse);
       background-color: var(--midas-calendar-date-background-end-range);
       border-color: var(--midas-calendar-date-background-end-range);
+
+      @media (forced-colors: active) {
+        background-color: SelectedItem;
+      }
     }
   }
 
   &[data-disabled],
   &[data-unavailable] {
     color: var(--midas-text-disabled);
+
+    @media (forced-colors: active) {
+      color: GrayText;
+    }
+
     cursor: not-allowed;
   }
 
