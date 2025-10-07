@@ -92,3 +92,63 @@ export const InlineSpinnerExample = () => {
     </div>
   )
 }
+
+export const SkeletonExample = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate data fetch delay
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleReload = () => {
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+  }
+
+  return (
+    <div className='card'>
+      <Grid>
+        {isLoading ? (
+          <>
+            <GridItem size={3}>
+              <Skeleton
+                width='100%'
+                height='16px'
+                isAnimated
+              />
+            </GridItem>
+            <GridItem size={12}>
+              <Skeleton
+                width='100%'
+                height='48px'
+                isAnimated
+              />
+            </GridItem>
+            <GridItem size={3}>
+              <Skeleton
+                width='100%'
+                height='48px'
+                isAnimated
+              />
+            </GridItem>
+          </>
+        ) : (
+          <>
+            <GridItem size={12}>
+              <TextField label='Ange ditt namn' />
+            </GridItem>
+            <GridItem size={3}>
+              <Button onPress={handleReload}>Ladda om</Button>
+            </GridItem>
+          </>
+        )}
+      </Grid>
+    </div>
+  )
+}
