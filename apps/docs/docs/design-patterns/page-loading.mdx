@@ -1,32 +1,53 @@
 # Laddningsindikatorer
 
 import { Skeleton, Spinner } from '@midas-ds/components'
+import {
+  ButtonLoadingExample,
+  InlineSpinnerExample,
+  SkeletonExample,
+} from '@site/src/components/examples/loading/LoadingExamples'
 
-Laddningsindikatorer är visuella platshållare för komponenter eller information som visas medan de laddas.
-Vi använder oss av två olika laddningsindikator: [Skeleton](/components/skeleton) och [Spinner](/components/spinner).
-
-Vi använder i regel Skeleton som laddningsindikator. Undantagen är 1) när sidan laddar utan att någon ändras eller 2) när du inte vet hur gränssnittet kommer att se ut efter att det har laddat klart
+Laddningsindikatorer är visuella platshållare för komponenter eller information som visas medan de laddar. Detta mönster beskriver hur och när vi använder olika laddningsindikatorer.
 
 ## Skeleton
 
-Skeleton är vår primära laddningsindikator. Den är en minimal representation av de komponenter som kommer finnas i gränssnittet, vilket ger användaren en bra förståelse för hur det färdiga gränssnittet kommer vara strukturerat.
+[Skeleton](/components/skeleton) används när vi vet hur layouten eller komponenten kommer att se ut när det har laddat klart. Det ger användaren en bra bild av hur gränssnittet kommer se ut när det har laddat klart och är den rekommenderade laddningsindikatorn när en komponent, en del av gränssnittet eller hela gränssnittet laddas första gången.
 
-```tsx
-<Skeleton height='48px' />
-```
+<SkeletonExample />
 
-<div className='card'>
-  <Skeleton height='48px' />
-</div>
+### Riktlinjer
 
-## Spinner
+- Anpassa storleken/ formen på [Skeleton](/components/skeleton) för att efterlikna de komponenter som kommer finnas i gränssnittet
 
-Spinner används primärt när gränssnittet inte ändras, till exempel när en fil laddas upp i bakgrunden. Om det väntas ta mer än 10 sekunder att ladda bör det finnas ett meddelande till användaren om det.
+Undvik när:
 
-```tsx
-<Spinner />
-```
+- Vi inte vet hur innehållet ser ut. Använd fullskärmsspinner istället.
+- Laddningstiden är kort
 
-<div className='card'>
-  <Spinner />
-</div>
+## Spinner i Button
+
+Används när användaren via knappen triggar en process som kräver att systemet laddaar en kortare tid, tex när ett formulär skickas in.
+
+<ButtonLoadingExample />
+
+### Riktlinjer
+
+- Visa [Spinner](/components/spinner) i knappen, till vänster om etiketten.
+- Ändra texten i knappen till presensformen av verbet (skicka -> skickar)
+- Låt knappen vara `enabled` men blockera interaktion
+- Notifiera användaren när systemet laddat klart, tex med en toast
+
+## Inline loading
+
+Används när det är ett fält som laddar, tex vid kontroll mot databas. Optimalt ska detta inte ta så lång tid att användaren behöver vänta men i de fall där anropen tar lång tid kan en spinner läggas bredvid fältet som laddar. I nedan exempel syns en spinner så fort du lämnar fältet.
+
+<InlineSpinnerExample />
+
+### Riktlinjer
+
+- Visa en [Spinner](/components/spinner) bredvid fältet under tiden som det laddar
+
+Undvik när:
+
+- Kontrollen/valideringen sker post submit. Använd istället en fullskärmsspinner
+- Laddningstiden är kort
