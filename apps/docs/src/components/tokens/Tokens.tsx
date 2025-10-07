@@ -6,8 +6,10 @@ export const Token = ({token}: {token: DesignToken}) => {
   const isTypography = ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight'].includes(token.$type);
   const isDimension = token.$type === 'dimension';
   const isWindowSize = token.path.includes('windowSizes');
+  const isTransition = token.$type === 'transition';
 
   const renderValue = () => {
+    if (isTransition) {return <div>Value: {JSON.stringify(token.$value)}</div>}
     if (isLightDark) {
       const values = token.$value.replace('light-dark(', '').replace(')', '').split(', ');
       const lightValue = values[0];
