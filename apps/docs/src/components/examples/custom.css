@@ -4,3 +4,17 @@
     max-width: none;
   }
 }
+
+.field-and-spinner {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.spinner-box {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
