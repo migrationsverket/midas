@@ -91,7 +91,7 @@
 
 .chevronIcon {
   transform: rotate(0deg);
-  transition: transform var(--midas-transitions-duration-normal) ease;
+  transition: transform var(--midas-transition-duration-normal) ease;
   padding: 0.125rem 0;
 }
 
@@ -102,7 +102,7 @@
 
 .triggerButton[aria-expanded='true'] .chevronIcon {
   transform: rotate(-180deg);
-  transition: transform var(--midas-transitions-duration-normal) ease;
+  transition: transform var(--midas-transition-duration-normal) ease;
 }
 
 .triggerButton[data-hovered] {
@@ -111,12 +111,12 @@
 
 .panel[aria-hidden='true'] {
   height: 0;
-  transition: var(--midas-transitions-panel-collapse);
+  transition: var(--midas-transition-panel-collapse) allow-discrete;
   overflow-y: clip;
 }
 
 .panel[aria-hidden='false'] {
-  transition: var(--midas-transitions-panel-expand);
+  transition: var(--midas-transition-panel-expand) allow-discrete;
   height: auto;
   height: calc-size(min-content, size);
 }
