@@ -37,6 +37,10 @@
 
   &[data-hovered] div {
     border-color: var(--midas-button-background-primary-hover);
+
+    @media (forced-colors: active) {
+      border-color: SelectedItem;
+    }
   }
 
   &[data-pressed] div {
@@ -47,12 +51,9 @@
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
     outline: none;
-  }
 
-  @media (forced-colors: active) {
-    &[data-focus-visible],
-    &:focus-visible {
-      outline: var(--midas-state-focus-contrast-mode-outline);
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid;
       outline-offset: var(--midas-state-focus-contrast-mode-offset);
     }
   }
@@ -61,6 +62,11 @@
   &[data-indeterminate] div {
     background: var(--midas-button-background-primary-base);
     border-color: var(--midas-button-background-primary-base);
+
+    @media (forced-colors: active) {
+      background: SelectedItem;
+      border-color: SelectedItem;
+    }
   }
 
   &[data-invalid] div {
@@ -70,12 +76,21 @@
   &[data-disabled] div {
     pointer-events: none;
     border: 1px solid var(--midas-border-color-disabled);
+
+    @media (forced-colors: active) {
+      border-color: GrayText;
+    }
   }
 
   &[data-selected]:hover div,
   &[data-indeterminate]:hover div {
     background: var(--midas-button-background-primary-hover);
     border-color: var(--midas-button-background-primary-hover);
+
+    @media (forced-colors: active) {
+      background: SelectedItem;
+      border-color: SelectedItem;
+    }
   }
 
   &[data-selected][data-pressed] div,
@@ -106,18 +121,21 @@
   &[data-disabled] {
     color: var(--midas-text-disabled);
     cursor: not-allowed;
+
+    @media (forced-colors: active) {
+      color: GrayText;
+    }
   }
 
+  &[data-disabled][data-indeterminate] div,
   &[data-disabled][data-selected] div {
     pointer-events: none;
     border: none;
     background: var(--midas-field-disabled);
-  }
 
-  &[data-disabled][data-indeterminate] div {
-    pointer-events: none;
-    border: none;
-    background: var(--midas-field-disabled);
+    @media (forced-colors: active) {
+      background: GrayText;
+    }
   }
 }
 
