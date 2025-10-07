@@ -147,3 +147,55 @@ export const SkeletonExample = () => {
     </div>
   )
 }
+
+export const FullScreenLoadingExample = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [showForm, setShowForm] = useState(false)
+
+  const handleSubmit = () => {
+    setIsLoading(true)
+
+    // Simulate async request
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2500)
+  }
+
+  const loadForm = () => {
+    setIsLoading(true)
+    setShowForm(true)
+    // Simulate async request
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2500)
+  }
+
+  return (
+    <div className='card'>
+      {!showForm && <Button onPress={loadForm}>Ladda formulär</Button>}
+      {/* Form*/}
+      {showForm && !isLoading && (
+        <Grid>
+          <GridItem size={12}>
+            <TextField label='Förnamn' />
+          </GridItem>
+          <GridItem size={12}>
+            <TextField label='Efternamn' />
+          </GridItem>
+          <GridItem size={12}>
+            <Button onPress={handleSubmit}>Ladda om</Button>
+          </GridItem>
+        </Grid>
+      )}
+
+      {/* Full screen loading overlay */}
+      {isLoading && (
+        <div className='overlay'>
+          <div className='overlay-content'>
+            <Spinner isOnColor />
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
