@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   TextField,
   Button,
@@ -7,9 +7,11 @@ import {
   Spinner,
   Grid,
   GridItem,
+  Skeleton,
 } from '@midas-ds/components'
+import '../custom.css'
 
-export const ButtonLoading = () => {
+export const ButtonLoadingExample = () => {
   const [isSubmitting, setSubmitting] = useState(false)
 
   async function handleSubmit() {
@@ -49,6 +51,41 @@ export const ButtonLoading = () => {
             ) : (
               'Skicka'
             )}
+          </Button>
+        </GridItem>
+      </Grid>
+    </div>
+  )
+}
+
+export const InlineSpinnerExample = () => {
+  const [isChecking, setIsChecking] = useState(false)
+
+  async function handleBlur() {
+    setIsChecking(true)
+
+    // Simulate an async database check
+    await new Promise(resolve => setTimeout(resolve, 2500))
+
+    setIsChecking(false)
+  }
+
+  return (
+    <div className='card'>
+      <Grid>
+        <GridItem size={12}>
+          <div className='field-and-spinner'>
+            <TextField
+              label='Ange ditt kortnummer'
+              description='Ditt kortnummer kontrolleras mot databasen. Det kan ta en liten stund'
+              onBlur={handleBlur}
+            />
+            <div className='spinner-box'>{isChecking && <Spinner small />}</div>
+          </div>
+        </GridItem>
+        <GridItem size='auto'>
+          <Button isDisabled={isChecking}>
+            {isChecking ? 'Kontrollerar...' : 'Skicka'}
           </Button>
         </GridItem>
       </Grid>
