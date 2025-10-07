@@ -100,7 +100,7 @@ export const SkeletonExample = () => {
     // Simulate data fetch delay
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 2500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -114,40 +114,35 @@ export const SkeletonExample = () => {
   return (
     <div className='card'>
       <Grid>
-        {isLoading ? (
-          <>
-            <GridItem size={3}>
+        <GridItem size={12}>
+          {isLoading ? (
+            <div className='skeleton-container'>
               <Skeleton
-                width='100%'
+                width='20%'
                 height='16px'
                 isAnimated
               />
-            </GridItem>
-            <GridItem size={12}>
               <Skeleton
                 width='100%'
                 height='48px'
                 isAnimated
               />
-            </GridItem>
-            <GridItem size={3}>
-              <Skeleton
-                width='100%'
-                height='48px'
-                isAnimated
-              />
-            </GridItem>
-          </>
-        ) : (
-          <>
-            <GridItem size={12}>
-              <TextField label='Ange ditt namn' />
-            </GridItem>
-            <GridItem size={3}>
-              <Button onPress={handleReload}>Ladda om</Button>
-            </GridItem>
-          </>
-        )}
+            </div>
+          ) : (
+            <TextField label='Ange ditt namn' />
+          )}
+        </GridItem>
+        <GridItem size={3}>
+          {isLoading ? (
+            <Skeleton
+              width='100%'
+              height='48px'
+              isAnimated
+            />
+          ) : (
+            <Button onPress={handleReload}>Ladda om</Button>
+          )}
+        </GridItem>
       </Grid>
     </div>
   )
