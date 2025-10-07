@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
 import { expect, fn, userEvent } from 'storybook/test'
 import { TextField } from '@midas-ds/components'
+import React from 'react'
 
 export default {
   title: 'Components/TextField',
@@ -77,9 +78,36 @@ export const Invalid: Story = {
 export const SuccessMessage: Story = {
   args: {
     successMessage: {
-      isVisible: true,
+      isVisible: false,
       message: 'Validering lyckades!',
     },
+  },
+  render: args => {
+    const [value, setValue] = React.useState('')
+    const [hasErrored, setHasErrored] = React.useState(false)
+
+    return (
+      <TextField
+        {...args}
+        pattern='IFK Norrköping'
+        successMessage={{
+          message: args.successMessage?.message as string,
+          isVisible: hasErrored,
+        }}
+        onBlur={e => setHasErrored(e.target.ariaInvalid === 'true')}
+        onInvalidCapture={e => console.log(e)}
+        value={value}
+        onChange={setValue}
+      />
+    )
+  },
+  play: async () => {
+    await userEvent.tab()
+    await userEvent.keyboard('IFK Göteborg', { delay: 200 })
+    await userEvent.tab()
+    await userEvent.tab({ shift: true })
+    await userEvent.keyboard('IFK Norrköping', { delay: 200 })
+    await userEvent.tab()
   },
 }
 
