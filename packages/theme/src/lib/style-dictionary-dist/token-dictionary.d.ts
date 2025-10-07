@@ -349,7 +349,7 @@ declare const tokens: {
     focus: DesignToken;
     focusInset: DesignToken;
   };
-  transitions: {
+  transition: {
     duration: {
       slow: DesignToken;
       normal: DesignToken;

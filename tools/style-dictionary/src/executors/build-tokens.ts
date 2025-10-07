@@ -2,7 +2,10 @@ import { PromiseExecutor } from '@nx/devkit'
 import { BuildTokensExecutorSchema } from './schema'
 import { formats, transformGroups, transforms } from 'style-dictionary/enums'
 import { Config } from 'style-dictionary/types'
+import { dimensionToUnit } from './transforms/dimensionToUnit'
 import StyleDictionary from 'style-dictionary'
+
+StyleDictionary.registerTransform(dimensionToUnit)
 
 const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
   config,
@@ -10,6 +13,7 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
 ) => {
   const buildPath = context.target.options.buildPath
   const defaultConfig: Config = {
+    usesDtcg: true,
     source: ['tokens/**/*.json'],
     platforms: {
       es6: {
@@ -17,7 +21,7 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
           flat: true,
         },
         transformGroups: transformGroups.js,
-        transforms: [transforms.nameCamel],
+        transforms: [transforms.nameCamel, 'dimensionToUnit'],
         buildPath: buildPath,
         files: [
           {
@@ -35,7 +39,7 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
           flat: false,
         },
         transformGroups: transformGroups.js,
-        transforms: [transforms.nameCamel],
+        transforms: [transforms.nameCamel, 'dimensionToUnit'],
         buildPath: buildPath,
         files: [
           {
@@ -50,6 +54,7 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
       },
       css: {
         transformGroup: transformGroups.css,
+        transforms: ['dimensionToUnit'],
         options: {
           outputReferences: true,
         },
@@ -68,7 +73,7 @@ const runExecutor: PromiseExecutor<BuildTokensExecutorSchema> = async (
     ...defaultConfig,
     ...config,
   }
-  const sd = await new StyleDictionary(buildConfig, { verbosity: 'verbose' })
+  const sd = new StyleDictionary(buildConfig, { verbosity: 'verbose' })
   const res = await sd.buildAllPlatforms()
 
   return {

@@ -1,5 +1,6 @@
 {
   "background": {
+    "$type": "string",
     "base": {
       "$value": "light-dark({color.white.base}, {color.gray.200})",
       "$description": "Standardbakgrund f\u00f6r v\u00e5ra applikationer"
@@ -14,6 +15,7 @@
     }
   },
   "layer": {
+    "$type": "string",
     "01": {
       "base": {
         "$value": "light-dark({color.gray.10}, {color.gray.180})",
@@ -52,6 +54,7 @@
     }
   },
   "layerAccent": {
+    "$type": "string",
     "01": {
       "base": {
         "$value": "light-dark({color.gray.30}, {color.gray.160})",
@@ -82,6 +85,7 @@
     }
   },
   "brand": {
+    "$type": "string",
     "primary": {
       "$value": "light-dark({color.red.100}, {color.red.100})",
       "$description": "Prim\u00e4ra r\u00f6da f\u00e4rgen"
@@ -89,6 +93,7 @@
   },
   "border": {
     "color": {
+      "$type": "string",
       "primary": {
         "$value": "light-dark({color.gray.200}, {color.gray.10})",
         "$description": "Kantlinje med h\u00f6g kontrast, anv\u00e4nds med field01"
@@ -111,11 +116,15 @@
       }
     },
     "width": {
-      "$type": "size",
-      "$value": "1px"
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      },
+      "$type": "dimension"
     }
   },
   "field": {
+    "$type": "string",
     "01": {
       "base": {
         "$value": "light-dark({color.gray.10}, {color.gray.180})",
@@ -150,6 +159,7 @@
     }
   },
   "skeleton": {
+    "$type": "string",
     "01": {
       "$value": "light-dark({color.gray.10}, {color.gray.180})",
       "$description": "Standardf\u00e4rg f\u00f6r skeleton"
@@ -160,6 +170,7 @@
     }
   },
   "icon": {
+    "$type": "string",
     "primary": {
       "$value": "light-dark({color.gray.200}, {color.gray.10})",
       "$description": "Prim\u00e4r ikonf\u00e4rg"
@@ -201,6 +212,7 @@
     }
   },
   "link": {
+    "$type": "string",
     "enabled": {
       "$value": "light-dark({color.blue.120}, {color.blue.70})",
       "$description": "Prim\u00e4rl\u00e4nkf\u00e4rg"
@@ -219,6 +231,7 @@
     }
   },
   "support": {
+    "$type": "string",
     "border": {
       "success": {
         "$value": "light-dark({color.signalGreen.100}, {color.signalGreen.100})",
@@ -273,6 +286,7 @@
     }
   },
   "text": {
+    "$type": "string",
     "primary": {
       "$value": "light-dark({color.gray.200}, {color.gray.10})",
       "$description": "Prim\u00e4r textf\u00e4rg. Rubriker och br\u00f6dtext."
@@ -306,13 +320,14 @@
       "$description": "Textf\u00e4rg f\u00f6r platsh\u00e5llare"
     }
   },
-  
   "badge": {
+    "$type": "string",
     "background": {
       "$value": "light-dark({color.signalRed.100}, {color.signalRed.100})"
     }
   },
   "calendar": {
+    "$type": "string",
     "date": {
       "background": {
         "hover": {
@@ -334,12 +349,14 @@
     }
   },
   "logo": {
+    "$type": "string",
     "primary": {
       "$value": "light-dark({color.red.100}, {color.white.base})",
       "$description": "F\u00e4rg p\u00e5 logotypen"
     }
   },
   "menu": {
+    "$type": "string",
     "item": {
       "background": {
         "hover": {
