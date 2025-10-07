@@ -14,7 +14,7 @@ import { clsx } from 'clsx'
 import { Size } from '../common/types'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
-import { SuccessMessage } from './SuccessMessage'
+import { SuccessMessage, type SuccessMessageProps } from './SuccessMessage'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
@@ -37,16 +37,9 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   size?: Size
   popover?: InfoPopoverProps
   /**
-   * Add a default success message at the position of the error message
-   * if validation passed. Use `validationMessage` to edit the message.
-   *
-   * @default false
+   * Add a success message at the position of the error message.
    */
-  isValid?: boolean
-  /**
-   * A custom validation message shown when `isValid` is set to `true`.
-   */
-  validationMessage?: string
+  successMessage?: SuccessMessageProps
 }
 
 export const TextFieldBase = React.forwardRef<
@@ -64,8 +57,7 @@ export const TextFieldBase = React.forwardRef<
     size = 'large',
     popover,
     children,
-    isValid,
-    validationMessage,
+    successMessage,
   } = props
 
   return (
@@ -83,7 +75,12 @@ export const TextFieldBase = React.forwardRef<
       {errorPosition === 'top' && (
         <>
           <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
-          {isValid && <SuccessMessage>{validationMessage}</SuccessMessage>}
+          {successMessage && (
+            <SuccessMessage
+              isVisible={successMessage.isVisible}
+              message={successMessage.message}
+            />
+          )}
         </>
       )}
       {children}
@@ -95,7 +92,12 @@ export const TextFieldBase = React.forwardRef<
           >
             {errorMessage}
           </FieldError>
-          {isValid && <SuccessMessage>{validationMessage}</SuccessMessage>}
+          {successMessage && (
+            <SuccessMessage
+              isVisible={successMessage.isVisible}
+              message={successMessage.message}
+            />
+          )}
         </>
       )}
     </AriaTextField>

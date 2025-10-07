@@ -1,12 +1,10 @@
 {
   "en": {
     "hide": "Hide",
-    "show": "Show",
-    "validationSuccessful": "Validation successful!"
+    "show": "Show"
   },
   "sv": {
     "hide": "Dölj",
-    "show": "Visa",
-    "validationSuccessful": "Validering lyckades!"
+    "show": "Visa"
   }
 }

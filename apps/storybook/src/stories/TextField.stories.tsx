@@ -74,9 +74,12 @@ export const Invalid: Story = {
   },
 }
 
-export const IsValid: Story = {
+export const SuccessMessage: Story = {
   args: {
-    isValid: true,
+    successMessage: {
+      isVisible: true,
+      message: 'Validering lyckades!',
+    },
   },
 }
 

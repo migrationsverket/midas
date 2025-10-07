@@ -11,7 +11,7 @@ import styles from './TextField.module.css'
 
 export type TextAreaProps = Omit<
   TextFieldBaseProps,
-  'type' | 'pattern' | 'isValid' | 'validationMessage'
+  'type' | 'pattern' | 'successMessage'
 > &
   AriaTextAreaProps
 

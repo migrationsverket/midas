@@ -1,20 +1,26 @@
 import React from 'react'
 import { FieldErrorContext } from 'react-aria-components'
 import clsx from '../utils/clsx'
-import { useLocalizedStringFormatter } from '../utils/intl'
-import messages from './intl/translations.json'
 import styles from './TextField.module.css'
 
-type SuccessMessageProps = {
-  children: React.ReactNode
+export type SuccessMessageProps = {
+  /**
+   * Whether to display the message, will show if the field is not in an invalid state
+   */
+  isVisible: boolean
+  /**
+   * The success message
+   */
+  message: string
 }
 
-export const SuccessMessage: React.FC<SuccessMessageProps> = ({ children }) => {
+export const SuccessMessage: React.FC<SuccessMessageProps> = ({
+  isVisible,
+  message,
+}) => {
   const fieldErrorContext = React.useContext(FieldErrorContext)
 
-  const stringFormatter = useLocalizedStringFormatter(messages)
-
-  if (fieldErrorContext?.isInvalid) {
+  if (fieldErrorContext?.isInvalid || !isVisible) {
     return null
   }
 
@@ -23,7 +29,7 @@ export const SuccessMessage: React.FC<SuccessMessageProps> = ({ children }) => {
       className={clsx(styles.successMessage)}
       slot='errorMessage'
     >
-      {children || stringFormatter.format('validationSuccessful')}
+      {message}
     </span>
   )
 }
