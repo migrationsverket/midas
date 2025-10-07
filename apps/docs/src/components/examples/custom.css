@@ -18,3 +18,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.skeleton-container {
+  gap: 8px;
+}
