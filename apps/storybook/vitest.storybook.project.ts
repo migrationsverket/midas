@@ -32,7 +32,8 @@ export const defineStorybookProject = async ({
         storybookUrl: 'http://localhost:4400',
       }),
       storybookVis({
-        snapshotRootDir: `__vis__/${snapshotSubpath}`,
+        snapshotRootDir: ({ ci }) =>
+          `__vis__/${snapshotSubpath}${ci ? '/local' : '/local'}`,
       }),
     ],
     test: {
