@@ -14,10 +14,9 @@ export type SuccessMessageProps = {
   message: string
 }
 
-export const SuccessMessage: React.FC<SuccessMessageProps> = ({
-  isVisible,
-  message,
-}) => {
+export const SuccessMessage: React.FC<
+  SuccessMessageProps & { className?: string }
+> = ({ className, isVisible, message }) => {
   const fieldErrorContext = React.useContext(FieldErrorContext)
 
   if (fieldErrorContext?.isInvalid || !isVisible) {
@@ -26,7 +25,7 @@ export const SuccessMessage: React.FC<SuccessMessageProps> = ({
 
   return (
     <span
-      className={clsx(styles.successMessage)}
+      className={clsx(styles.successMessage, className)}
       slot='errorMessage'
     >
       {message}

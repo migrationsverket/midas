@@ -94,6 +94,7 @@ export const TextFieldBase = React.forwardRef<
           </FieldError>
           {successMessage && (
             <SuccessMessage
+              className={styles.bottomError}
               isVisible={successMessage.isVisible}
               message={successMessage.message}
             />
