@@ -5,9 +5,24 @@ import {
   ButtonLoadingExample,
   InlineSpinnerExample,
   SkeletonExample,
+  FullScreenLoadingExample,
 } from '@site/src/components/examples/loading/LoadingExamples'
 
 Laddningsindikatorer är visuella platshållare för komponenter eller information som visas medan de laddar. Detta mönster beskriver hur och när vi använder olika laddningsindikatorer.
+
+:::info
+Vi visar inga laddningsindikatorer om det laddar mindre än 1 sekund eftersom det upplevs som att gränssnittet flimrar
+:::
+
+## Snabbreferens
+
+Laddar sidan för första gången: Skeleton eller Helskärmsspinner beroende på om du vet hur det kommer se ut eller inte
+
+Laddar data i tex en tabell: Skeleton
+
+Laddar det en kort stund efter ett knapptryck: Spinner i button.
+
+Laddar det för att ett fält behöver göra en kontroll mot en databas: Inline spinner
 
 ## Skeleton
 
@@ -22,7 +37,21 @@ Laddningsindikatorer är visuella platshållare för komponenter eller informati
 Undvik när:
 
 - Vi inte vet hur innehållet ser ut. Använd fullskärmsspinner istället.
-- Laddningstiden är kort
+
+## Helskärmsspinner
+
+Används när hela sidan eller appen är otillgänglig tills det har laddat klart.
+
+<FullScreenLoadingExample />
+
+### Riktlinjer
+
+- Visa en Spinner centrerat på skärmen och tona ner bakgrunden.
+
+Undvik när:
+
+- Vi vet hur gränssnittet kommer att se ut. Använd skeleton istället
+- Endast en del av sidan laddas. Använd en spinner eller Skeleton på en komponenten/delen istället
 
 ## Spinner i Button
 
@@ -35,7 +64,7 @@ Används när användaren via knappen triggar en process som kräver att systeme
 - Visa [Spinner](/components/spinner) i knappen, till vänster om etiketten.
 - Ändra texten i knappen till presensformen av verbet (skicka -> skickar)
 - Låt knappen vara `enabled` men blockera interaktion
-- Notifiera användaren när systemet laddat klart, tex med en toast
+- Meddela användaren när systemet laddat klart, tex med en toast
 
 ## Inline loading
 
@@ -50,4 +79,3 @@ Används när det är ett fält som laddar, tex vid kontroll mot databas. Optima
 Undvik när:
 
 - Kontrollen/valideringen sker post submit. Använd istället en fullskärmsspinner
-- Laddningstiden är kort
