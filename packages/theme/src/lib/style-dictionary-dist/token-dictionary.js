@@ -2143,15 +2143,27 @@ export default {
       },
       subtle: {
         key: "{border.color.subtle}",
-        $value: "light-dark(#bfbfbf, #383838)",
+        $type: "color",
+        $value: "#bfbfbf",
         $description: "Kantlinje med låg kontrast",
+        $extensions: {
+          mode: {
+            light: "#bfbfbf",
+            dark: "#383838",
+          },
+        },
         filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
-        $type: "string",
         original: {
-          $value: "light-dark({color.gray.50}, {color.gray.160})",
+          $type: "color",
+          $value: "{color.gray.50}",
           $description: "Kantlinje med låg kontrast",
-          $type: "string",
+          $extensions: {
+            mode: {
+              light: "{color.gray.50}",
+              dark: "{color.gray.160}",
+            },
+          },
           key: "{border.color.subtle}",
         },
         name: "borderColorSubtle",
