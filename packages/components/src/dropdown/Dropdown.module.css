@@ -6,6 +6,11 @@
   &[data-focus-visible] {
     outline: none;
     box-shadow: var(--midas-state-focus);
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight !important;
+      outline-offset: calc(var(--midas-state-focus-contrast-mode-outline) * -1);
+    }
   }
 }
 
@@ -15,5 +20,10 @@
   &[data-focus-visible] {
     outline: none;
     box-shadow: var(--midas-state-focus);
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight !important;
+      outline-offset: calc(var(--midas-state-focus-contrast-mode-outline) * -1);
+    }
   }
 }
