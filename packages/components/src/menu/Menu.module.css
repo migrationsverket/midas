@@ -56,6 +56,15 @@
       outline: none;
     }
 
+    &[data-focused] {
+      @media (forced-colors: active) {
+        outline: var(--midas-state-focus-contrast-mode-outline) solid;
+        outline-offset: calc(
+          var(--midas-state-focus-contrast-mode-outline) * -1
+        );
+      }
+    }
+
     &:not([data-has-submenu]) {
       padding-right: var(--midas-size-80);
     }
