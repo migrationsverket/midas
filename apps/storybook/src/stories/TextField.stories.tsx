@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RunOptions } from 'axe-core'
 import { expect, fn, userEvent } from 'storybook/test'
 import { TextField } from '@midas-ds/components'
+import React from 'react'
 
 export default {
   title: 'Components/TextField',
@@ -71,6 +72,44 @@ export const Invalid: Story = {
     await step('it should be invalid', async () => {
       expect(canvas.getByLabelText(args.label as string)).toBeInvalid()
     })
+  },
+}
+
+export const SuccessMessage: Story = {
+  args: {
+    successMessage: {
+      isVisible: false,
+      message: 'Validering lyckades!',
+    },
+  },
+  render: args => {
+    const [value, setValue] = React.useState('')
+    const [hasErrored, setHasErrored] = React.useState(false)
+
+    return (
+      <TextField
+        {...args}
+        successMessage={{
+          message: args.successMessage?.message as string,
+          isVisible: hasErrored,
+        }}
+        onBlur={e => setHasErrored(e.target.value !== 'IFK')}
+        value={value}
+        isInvalid={hasErrored && value !== 'IFK'}
+        errorMessage='Du måste välja IFK'
+        onChange={setValue}
+      />
+    )
+  },
+  play: async ({ canvas, args }) => {
+    await userEvent.tab()
+    await userEvent.keyboard('DIF', { delay: 200 })
+    await userEvent.tab()
+    await userEvent.tab({ shift: true })
+    await userEvent.keyboard('IFK', { delay: 200 })
+    await expect(
+      canvas.getByText(args.successMessage?.message as string),
+    ).toBeVisible()
   },
 }
 

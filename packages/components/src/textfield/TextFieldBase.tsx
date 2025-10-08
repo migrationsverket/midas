@@ -14,6 +14,7 @@ import { clsx } from 'clsx'
 import { Size } from '../common/types'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { SuccessMessage, type SuccessMessageProps } from './SuccessMessage'
 
 export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
   children?: React.ReactNode
@@ -35,6 +36,10 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    * */
   size?: Size
   popover?: InfoPopoverProps
+  /**
+   * Add a success message at the position of the error message.
+   */
+  successMessage?: SuccessMessageProps
 }
 
 export const TextFieldBase = React.forwardRef<
@@ -52,6 +57,7 @@ export const TextFieldBase = React.forwardRef<
     size = 'large',
     popover,
     children,
+    successMessage,
   } = props
 
   return (
@@ -67,16 +73,33 @@ export const TextFieldBase = React.forwardRef<
       {description && <Text slot='description'>{description}</Text>}
       {showCounter && <CharacterCounter isLonely={!description} />}
       {errorPosition === 'top' && (
-        <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+        <>
+          <FieldError data-testid='fieldError'>{errorMessage}</FieldError>
+          {successMessage && (
+            <SuccessMessage
+              isVisible={successMessage.isVisible}
+              message={successMessage.message}
+            />
+          )}
+        </>
       )}
       {children}
       {errorPosition === 'bottom' && (
-        <FieldError
-          data-testid='fieldError'
-          className={styles.bottomError}
-        >
-          {errorMessage}
-        </FieldError>
+        <>
+          <FieldError
+            data-testid='fieldError'
+            className={styles.bottomError}
+          >
+            {errorMessage}
+          </FieldError>
+          {successMessage && (
+            <SuccessMessage
+              className={styles.bottomError}
+              isVisible={successMessage.isVisible}
+              message={successMessage.message}
+            />
+          )}
+        </>
       )}
     </AriaTextField>
   )
