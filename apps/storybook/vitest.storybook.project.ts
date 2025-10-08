@@ -17,6 +17,8 @@ const currentDirectory =
     ? __dirname
     : dirname(fileURLToPath(import.meta.url))
 
+const isCI = !!process.env.GITHUB_ACTIONS
+
 export const defineStorybookProject = async ({
   name,
   context,
@@ -31,13 +33,13 @@ export const defineStorybookProject = async ({
         configDir: join(currentDirectory, '.storybook'),
         storybookUrl: 'http://localhost:4400',
       }),
-      ...(!process.env.GITHUB_ACTIONS
-        ? [
+      ...(isCI
+        ? []
+        : [
             storybookVis({
               snapshotRootDir: `__vis__/${snapshotSubpath}`,
             }),
-          ]
-        : []),
+          ]),
     ],
     test: {
       name,
@@ -52,6 +54,8 @@ export const defineStorybookProject = async ({
           },
         ],
       },
-      setupFiles: [join('.storybook', 'vitest.setup.ts')],
+      setupFiles: [
+        join('.storybook', isCI ? 'vitest.setup.ci.ts' : 'vitest.setup.ts'),
+      ],
     },
   }) satisfies TestProjectConfiguration
