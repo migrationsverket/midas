@@ -89,25 +89,27 @@ export const SuccessMessage: Story = {
     return (
       <TextField
         {...args}
-        pattern='IFK Norrköping'
         successMessage={{
           message: args.successMessage?.message as string,
           isVisible: hasErrored,
         }}
-        onBlur={e => setHasErrored(e.target.ariaInvalid === 'true')}
-        onInvalidCapture={e => console.log(e)}
+        onBlur={e => setHasErrored(e.target.value !== 'IFK')}
         value={value}
+        isInvalid={hasErrored && value !== 'IFK'}
+        errorMessage='Du måste välja IFK'
         onChange={setValue}
       />
     )
   },
-  play: async () => {
+  play: async ({ canvas, args }) => {
     await userEvent.tab()
-    await userEvent.keyboard('IFK Göteborg', { delay: 200 })
+    await userEvent.keyboard('DIF', { delay: 200 })
     await userEvent.tab()
     await userEvent.tab({ shift: true })
-    await userEvent.keyboard('IFK Norrköping', { delay: 200 })
-    await userEvent.tab()
+    await userEvent.keyboard('IFK', { delay: 200 })
+    await expect(
+      canvas.getByText(args.successMessage?.message as string),
+    ).toBeVisible()
   },
 }
 
