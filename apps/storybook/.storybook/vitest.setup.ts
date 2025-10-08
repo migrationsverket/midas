@@ -9,7 +9,7 @@ import { vis, visAnnotations } from 'storybook-addon-vis/vitest-setup'
 setProjectAnnotations([
   a11yAddonAnnotations,
   projectAnnotations,
-  visAnnotations,
+  ...(!process.env.GITHUB_ACTIONS ? [visAnnotations] : []),
 ])
 
 beforeAll(() => {
@@ -21,4 +21,6 @@ afterAll(() => {
   vi.unstubAllGlobals()
 })
 
-vis.setup()
+if (!process.env.GITHUB_ACTIONS) {
+  vis.setup()
+}

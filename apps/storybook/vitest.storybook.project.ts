@@ -31,10 +31,13 @@ export const defineStorybookProject = async ({
         configDir: join(currentDirectory, '.storybook'),
         storybookUrl: 'http://localhost:4400',
       }),
-      storybookVis({
-        snapshotRootDir: ({ ci }) =>
-          `__vis__/${snapshotSubpath}${ci ? '/local' : '/local'}`,
-      }),
+      ...(!process.env.GITHUB_ACTIONS
+        ? [
+            storybookVis({
+              snapshotRootDir: `__vis__/${snapshotSubpath}`,
+            }),
+          ]
+        : []),
     ],
     test: {
       name,
