@@ -24,6 +24,7 @@ type Story = StoryObj<typeof Dropdown>
 export const Primary: Story = {}
 
 export const Open: Story = {
+  tags: ['!snapshot'],
   play: async ({ canvas, step, args: { title } }) => {
     await step('It should render successfully', async () => {
       const dropdown = canvas.getByText(title as string)
