@@ -19,12 +19,6 @@
         "port": 3000
       }
     },
-    "generate-component-page": {
-      "executor": "nx:run-commands",
-      "options": {
-        "command": "npx plop --plopfile tools/plopfile.js"
-      }
-    },
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],

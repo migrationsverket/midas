@@ -10,6 +10,7 @@ export const breakpointsXs: string;
 export const breakpointsSm: string;
 export const breakpointsMd: string;
 export const breakpointsLg: string;
+/** This is the largest breakpoint */
 export const breakpointsXl: string;
 /** Färg på primärknapp */
 export const buttonBackgroundPrimaryBase: string;
@@ -297,7 +298,7 @@ export const size120: string;
 export const size130: string;
 export const size140: string;
 export const size150: string;
-export const size00: number;
+export const size00: string;
 export const size05: string;
 export const spacing10: string;
 export const spacing20: string;
@@ -317,33 +318,28 @@ export const spacingMedium: string;
 export const spacingLarge: string;
 export const spacingXlarge: string;
 /** Focus style used when the component is focused (box-shadow). */
-export const stateFocus: {
-  color: string;
-  offsetX: string;
-  offsetY: string;
-  blur: string;
-  spread: string;
-}[];
+export const stateFocus: string;
 /** Inset variant of the focus ring (box-shadow inset). */
-export const stateFocusInset: {
-  inset: boolean;
-  color: string;
-  offsetX: string;
-  offsetY: string;
-  blur: string;
-  spread: string;
-}[];
+export const stateFocusInset: string;
 /** Outline style for focus ring when Windows High Contrast (forced-colors) mode is active. */
 export const stateFocusContrastModeOutline: string;
 /** Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.. */
 export const stateFocusContrastModeOffset: string;
-export const transitionsDurationSlow: string;
-export const transitionsDurationNormal: string;
-export const transitionsDurationFast: string;
-export const transitionsTimingEaseOut: string;
-export const transitionsTimingEaseIn: string;
-export const transitionsPanelCollapse: string;
-export const transitionsPanelExpand: string;
+export const transitionDurationSlow: string;
+export const transitionDurationNormal: string;
+export const transitionDurationFast: string;
+export const transitionTimingEaseOut: number[];
+export const transitionTimingEaseIn: number[];
+export const transitionPanelCollapse: {
+  delay: number;
+  duration: string;
+  timingFunction: number[];
+};
+export const transitionPanelExpand: {
+  delay: number;
+  duration: string;
+  timingFunction: number[];
+};
 export const typographyFontFamily: string;
 export const typographyFontSize10: string;
 export const typographyFontSize20: string;

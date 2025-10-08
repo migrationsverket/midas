@@ -5,20 +5,23 @@ description: Modal som lägger sig över allt annat innehåll.
 
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
-import { FormExample, ConfirmationExample, CustomCSSExample, HideCloseButtonExample } from '@site/src/components/examples/ModalExamples'
+import {
+  FormExample,
+  ConfirmationExample,
+  CustomCSSExample,
+  HideCloseButtonExample,
+} from '@site/src/components/examples/ModalExamples'
 
 <ComponentHeader
   name='Modal'
   friendlyName='Modal, Dialog, Dialogruta'
   overrideHeadlessLink='https://react-spectrum.adobe.com/react-spectrum/Dialog.html#dialog'
 />
-Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar åtkomst till det underliggande
-lagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det krävs ett
-aktivt svar från användaren.
+Komponent som dyker upp som ett lager ovanpå tjänsten/webbplatsen. Modalen hindrar som standard åtkomst till det
+underliggande lagret, så användaren måste interagera med modalen innan den kan gå vidare. Modaler används främst när det
+krävs ett aktivt svar från användaren.
 
 <FormExample />
-
-## Användning
 
 ```tsx
 import { DialogTrigger, Modal } from '@midas-ds/components'
@@ -31,29 +34,40 @@ import { DialogTrigger, Modal } from '@midas-ds/components'
 </DialogTrigger>
 ```
 
+## Varianter
+
 ### Bekräftelsemodal
 
-För att undvika oönskade fel kan en modal användas för att bekräfta en handling som har konsekvenser för användaren.
+För att undvika oönskade fel kan en modal användas för att låta användaren bekräfta ett val som kan ha negativa konsekvenser. Använd `autoFocus` på knappen som inte är destruktiv/negativ.
 
 <ConfirmationExample />
 
-## Varianter
+### Utan stängknapp
 
-För att stänga modal via klick utanför modalens yta, använd `isDismissable` på modalen.
+Vid specialfall, till exempel när vi vill säkerställa att användaren läst regler eller godkänner villkor, kan stängknappen i headern
+döljas.
+
+:::warning
+Modaler som inte går att stänga på annat sätt än att acceptera/godkänna kan upplevas väldigt frustrerande för användarna och bör bara användas om det är nödvändigt. Komplettera alltid med en förklaring till varför det inte går att backa/avbryta.
+:::
 
 ```tsx
 <DialogTrigger>
-  <Button>Open</Button>
+  <Button>Bekräfta att du läst villkoren</Button>
   <Modal
-    //highlight-start
-    isDismissable
-    //highlight-end
-    title='Modal Title'
+    title='Villkor'
+    hideCloseButton
+    isKeyboardDismissDisabled
   >
-    /* Modal content */
+    Du måste bekräfta att du läst villkoren innan du kan gå vidare
+    <Button slot={'close'}>Bekräfta</Button>
   </Modal>
 </DialogTrigger>
 ```
+
+<HideCloseButtonExample />
+
+## Användning
 
 ### Uncontrolled
 
@@ -96,7 +110,25 @@ return (
 )
 ```
 
-## Avancerat innehåll
+### Dismissable
+
+För att stänga modal via klick utanför modalens yta, använd `isDismissable` på modalen.
+
+```tsx
+<DialogTrigger>
+  <Button>Open</Button>
+  <Modal
+    //highlight-start
+    isDismissable
+    //highlight-end
+    title='Modal Title'
+  >
+    /* Modal content */
+  </Modal>
+</DialogTrigger>
+```
+
+### autoFocus
 
 Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd då autoFocus på första element för att användarens fokus ska flyttas dit när modalen öppnas.
 
@@ -110,22 +142,6 @@ Modaler kan även innehålla mer avancerat innehåll som ett formulär. Använd 
   </Modal>
 </DialogTrigger>
 ```
-
-### Inaktivera stängningsknapp i header
-
-Vid specialfall där användaren inte ska tillåtas lämna modalen kan stängningsknapp i headern
-inaktiveras.
-
-```tsx
-<DialogTrigger>
-  <Button>Open</Button>
-  <Modal title="Modal Title" hideCloseButton isKeyboardDismissDisabled>
-      Modal content
-    <Button slot={'close'}>Action</Button>
-  </Modal>
-</DialogTrigger>
-```
-<HideCloseButtonExample/>
 
 ## Styling
 

@@ -2,61 +2,119 @@
   "size": {
     "$type": "dimension",
     "00": {
-      "$value": 0
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "rem"
+      }
     },
     "05": {
-      "$value": "0.063rem"
+      "$value": {
+        "value": 0.063,
+        "unit": "rem"
+      }
     },
     "10": {
-      "$value": "0.125rem"
+      "$value": {
+        "value": 0.125,
+        "unit": "rem"
+      }
     },
     "15": {
-      "$value": "0.188rem"
+      "$value": {
+        "value": 0.188,
+        "unit": "rem"
+      }
     },
     "20": {
-      "$value": "0.25rem"
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
     },
     "30": {
-      "$value": "0.375rem"
+      "$value": {
+        "value": 0.375,
+        "unit": "rem"
+      }
     },
     "40": {
-      "$value": "0.5rem"
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
     },
     "50": {
-      "$value": "0.625rem"
+      "$value": {
+        "value": 0.625,
+        "unit": "rem"
+      }
     },
     "60": {
-      "$value": "0.75rem"
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
     },
     "70": {
-      "$value": "0.875rem"
+      "$value": {
+        "value": 0.875,
+        "unit": "rem"
+      }
     },
     "75": {
-      "$value": "0.938rem"
+      "$value": {
+        "value": 0.938,
+        "unit": "rem"
+      }
     },
     "80": {
-      "$value": "1rem"
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      }
     },
     "90": {
-      "$value": "1.25rem"
+      "$value": {
+        "value": 1.25,
+        "unit": "rem"
+      }
     },
     "100": {
-      "$value": "1.5rem"
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
     },
     "110": {
-      "$value": "1.75rem"
+      "$value": {
+        "value": 1.75,
+        "unit": "rem"
+      }
     },
     "120": {
-      "$value": "2rem"
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      }
     },
     "130": {
-      "$value": "2.5rem"
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      }
     },
     "140": {
-      "$value": "2.75rem"
+      "$value": {
+        "value": 2.75,
+        "unit": "rem"
+      }
     },
     "150": {
-      "$value": "3rem"
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      }
     }
   }
 }

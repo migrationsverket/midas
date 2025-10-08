@@ -36,6 +36,17 @@
       "options": {
         "jestConfig": "packages/theme/jest.config.ts"
       }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx tz check packages/theme/tokens/*.json",
+            "forwardAllArgs": false
+          }
+        ]
+      }
     }
   }
 }

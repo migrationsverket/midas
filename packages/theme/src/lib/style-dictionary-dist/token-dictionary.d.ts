@@ -353,7 +353,7 @@ declare const tokens: {
       offset: DesignToken;
     };
   };
-  transitions: {
+  transition: {
     duration: {
       slow: DesignToken;
       normal: DesignToken;

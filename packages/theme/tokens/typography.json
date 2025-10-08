@@ -6,126 +6,159 @@
         "$value": "Inter, sans-serif"
       },
       "size": {
+        "$type": "dimension",
         "10": {
-          "$type": "fontSize",
-          "$value": "0.75rem"
+          "$value": {
+            "value": 0.75,
+            "unit": "rem"
+          }
         },
         "20": {
-          "$type": "fontSize",
-          "$value": "0.875rem"
+          "$value": {
+            "value": 0.875,
+            "unit": "rem"
+          }
         },
         "30": {
-          "$type": "fontSize",
-          "$value": "1rem"
+          "$value": {
+            "value": 1,
+            "unit": "rem"
+          }
         },
         "40": {
-          "$type": "fontSize",
-          "$value": "1.125rem"
+          "$value": {
+            "value": 1.125,
+            "unit": "rem"
+          }
         },
         "50": {
-          "$type": "fontSize",
-          "$value": "1.25rem"
+          "$value": {
+            "value": 1.25,
+            "unit": "rem"
+          }
         },
         "60": {
-          "$type": "fontSize",
-          "$value": "1.5rem"
+          "$value": {
+            "value": 1.5,
+            "unit": "rem"
+          }
         },
         "70": {
-          "$type": "fontSize",
-          "$value": "1.625rem"
+          "$value": {
+            "value": 1.625,
+            "unit": "rem"
+          }
         },
         "80": {
-          "$type": "fontSize",
-          "$value": "2rem"
+          "$value": {
+            "value": 2,
+            "unit": "rem"
+          }
         },
         "90": {
-          "$type": "fontSize",
-          "$value": "2.25rem"
+          "$value": {
+            "value": 2.25,
+            "unit": "rem"
+          }
         },
         "100": {
-          "$type": "fontSize",
-          "$value": "2.625rem"
+          "$value": {
+            "value": 2.625,
+            "unit": "rem"
+          }
         }
       }
     },
-
     "lineHeight": {
+      "$type": "dimension",
       "10": {
-        "$type": "lineHeight",
-        "$value": "1rem"
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        }
       },
       "20": {
-        "$type": "lineHeight",
-        "$value": "1.125rem"
+        "$value": {
+          "value": 1.125,
+          "unit": "rem"
+        }
       },
       "30": {
-        "$type": "lineHeight",
-        "$value": "1.25rem"
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
       },
       "40": {
-        "$type": "lineHeight",
-        "$value": "1.375rem"
+        "$value": {
+          "value": 1.375,
+          "unit": "rem"
+        }
       },
       "50": {
-        "$type": "lineHeight",
-        "$value": "1.5rem"
+        "$value": {
+          "value": 1.5,
+          "unit": "rem"
+        }
       },
       "60": {
-        "$type": "lineHeight",
-        "$value": "1.75rem"
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
       },
       "70": {
-        "$type": "lineHeight",
-        "$value": "2rem"
+        "$value": {
+          "value": 2,
+          "unit": "rem"
+        }
       },
       "80": {
-        "$type": "lineHeight",
-        "$value": "2.25rem"
+        "$value": {
+          "value": 2.25,
+          "unit": "rem"
+        }
       },
       "90": {
-        "$type": "lineHeight",
-        "$value": "2.5rem"
+        "$value": {
+          "value": 2.5,
+          "unit": "rem"
+        }
       },
       "100": {
-        "$type": "lineHeight",
-        "$value": "3rem"
+        "$value": {
+          "value": 3,
+          "unit": "rem"
+        }
       }
     },
     "weight": {
+      "$type": "fontWeight",
       "thin": {
-        "$type": "fontWeight",
         "$value": 100
       },
       "extraLight": {
-        "$type": "fontWeight",
         "$value": 200
       },
       "light": {
-        "$type": "fontWeight",
         "$value": 300
       },
       "regular": {
-        "$type": "fontWeight",
         "$value": 400
       },
       "medium": {
-        "$type": "fontWeight",
         "$value": 500
       },
       "semiBold": {
-        "$type": "fontWeight",
         "$value": 600
       },
       "bold": {
-        "$type": "fontWeight",
         "$value": 700
       },
       "extraBold": {
-        "$type": "fontWeight",
         "$value": 800
       },
       "black": {
-        "$type": "fontWeight",
         "$value": 900
       }
     }

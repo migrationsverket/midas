@@ -9,6 +9,7 @@ import {
   TextField,
 } from '@midas-ds/components'
 import './custom.css'
+import { Trash2 } from 'lucide-react'
 
 export const ConfirmationExample = () => (
   <div
@@ -16,11 +17,14 @@ export const ConfirmationExample = () => (
     style={{ display: 'block' }}
   >
     <DialogTrigger>
-      <Button>Ta bort Kiwi</Button>
-      <Modal title='Ta bort saker ur fruktkorgen'>
-        <Text elementType='p'>
-          Är du säker att du vill plocka bort "Kiwi" från fruktkorgen?
-        </Text>
+      <Button
+        icon={Trash2}
+        variant='tertiary'
+      >
+        Ta bort fruktkorgen
+      </Button>
+      <Modal title='Ta bort fruktkorg'>
+        <Text elementType='p'>Är du säker att du ta bort din fruktkorg?</Text>
         <ButtonGroup>
           <Button
             variant='danger'
@@ -98,13 +102,16 @@ export const HideCloseButtonExample = () => {
   return (
     <div className='card'>
       <DialogTrigger>
-        <Button>Open</Button>
-        <Modal title="Modal Title" hideCloseButton isKeyboardDismissDisabled>
-          Modal content
-          <Button slot={'close'}>Action</Button>
+        <Button>Bekräfta att du läst villkoren</Button>
+        <Modal
+          title='Villkor'
+          hideCloseButton
+          isKeyboardDismissDisabled
+        >
+          Du måste bekräfta att du läst villkoren innan du kan gå vidare
+          <Button slot='close'>Bekräfta</Button>
         </Modal>
       </DialogTrigger>
     </div>
-
   )
 }

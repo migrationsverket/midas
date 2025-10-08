@@ -1,45 +1,13 @@
 {
   "state": {
     "focus": {
-      "$type": "shadow",
-      "$value": [
-        {
-          "color": "light-dark(white, black)",
-          "offsetX": "0",
-          "offsetY": "0",
-          "blur": "0",
-          "spread": "2px"
-        },
-        {
-          "color": "light-dark(black, white)",
-          "offsetX": "0",
-          "offsetY": "0",
-          "blur": "0",
-          "spread": "4px"
-        }
-      ],
+      "$type": "string",
+      "$value": "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)",
       "$description": "Focus style used when the component is focused (box-shadow)."
     },
     "focusInset": {
-      "$type": "shadow",
-      "$value": [
-        {
-          "inset": true,
-          "color": "light-dark(black, white)",
-          "offsetX": "0",
-          "offsetY": "0",
-          "blur": "0",
-          "spread": "2px"
-        },
-        {
-          "inset": true,
-          "color": "light-dark(white, black)",
-          "offsetX": "0",
-          "offsetY": "0",
-          "blur": "0",
-          "spread": "4px"
-        }
-      ],
+      "$type": "string",
+      "$value": "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)",
       "$description": "Inset variant of the focus ring (box-shadow inset)."
     },
     "focusContrastMode": {

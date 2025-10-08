@@ -1,6 +1,7 @@
 {
   "button": {
     "background": {
+      "$type": "string",
       "primary": {
         "base": {
           "$value": "light-dark({color.blue.150}, {color.blue.100})",
@@ -59,12 +60,14 @@
       }
     },
     "border": {
+      "$type": "string",
       "secondary": {
         "$value": "light-dark({color.blue.150}, {color.gray.10})",
         "$description": "Kantf\u00e4rg f\u00f6r sekund\u00e4rknapp"
       }
     },
     "icon": {
+      "$type": "string",
       "hover": {
         "$value": "light-dark({color.black.opacity5}, {color.white.opacity13})"
       },
