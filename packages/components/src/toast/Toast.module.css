@@ -129,6 +129,10 @@
   & .icon {
     color: var(--midas-icon-primary);
     flex: 0 0 auto;
+
+    @media (forced-colors: active) {
+      stroke: mark;
+    }
   }
 
   @media (width >= 768px) {
