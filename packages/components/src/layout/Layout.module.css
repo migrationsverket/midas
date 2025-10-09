@@ -245,6 +245,10 @@
 
   svg {
     stroke: var(--midas-icon-primary);
+
+    @media (forced-colors: active) {
+      stroke: currentColor;
+    }
   }
 
   &[data-hovered],
@@ -256,6 +260,15 @@
     svg {
       stroke: var(--midas-icon-primary);
       min-width: 1.25rem;
+
+      @media (forced-colors: active) {
+        stroke: currentColor;
+      }
+    }
+
+    @media (forced-colors: active) {
+      background-color: inherit;
+      text-decoration: underline;
     }
   }
 
@@ -274,6 +287,11 @@
   &[data-focus-visible] {
     box-shadow: var(--midas-state-focus);
     outline: none;
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid;
+      outline-offset: var(--midas-state-focus-contrast-mode-offset);
+    }
   }
 }
 
@@ -287,6 +305,19 @@
   color: var(--midas-text-primary);
   border-left: 0.125rem solid var(--midas-border-color-tertiary);
   font-weight: 600;
+
+  @media (forced-colors: active) {
+    background-color: inherit;
+    border-color: selecteditem;
+    color: selecteditem;
+    transition: none;
+  }
+
+  &[data-hovered] {
+    @media (forced-colors: active) {
+      color: selecteditem;
+    }
+  }
 }
 
 .linkText {
@@ -393,6 +424,17 @@
     background-color: var(--midas-button-background-primary-base);
     color: var(--midas-text-on-color);
     cursor: pointer;
+
+    @media (forced-colors: active) {
+      color: selecteditem;
+    }
+  }
+
+  &[data-focus-visible] {
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid;
+      outline-offset: var(--midas-state-focus-contrast-mode-offset);
+    }
   }
 
   & svg {
