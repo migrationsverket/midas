@@ -100,6 +100,10 @@
   background-color: transparent;
   opacity: 1;
 
+  @media (forced-colors: active) {
+    background-color: canvas;
+  }
+
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
     color: var(--midas-text-tertiary);
@@ -107,6 +111,7 @@
 
     @media (forced-colors: active) {
       color: highlight;
+      background-color: canvas;
     }
   }
 
