@@ -31,7 +31,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
     >
       <LoaderCircle
         className={clsx(styles.spinner, isOnColor && styles.dark)}
-        size={small ? 16 : 32}
+        size={small ? 20 : 32}
         strokeWidth={small ? 2 : 3}
         absoluteStrokeWidth
       />
