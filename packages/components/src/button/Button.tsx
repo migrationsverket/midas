@@ -10,6 +10,7 @@ import {
 import clsx from '../utils/clsx'
 import { LucideIcon } from 'lucide-react'
 import { Size } from '../common/types'
+import { Spinner } from '../spinner/Spinner';
 
 export interface MidasButtonProps {
   /**
@@ -18,12 +19,16 @@ export interface MidasButtonProps {
    * @default 'primary'
    * */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
+  /** Shows a spinner and disables input */
+  isLoading?: boolean
   /**
    * Adds width: 100%; for the button to span entire width of parent
    *
    * @default false
    */
+
   fullwidth?: boolean
+
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'
    **/
@@ -68,6 +73,7 @@ export const Button: React.FC<MidasButton> = ({
   size = 'large',
   icon: IconComponent,
   iconSize,
+  isLoading,
   ...rest
 }) => {
   return (
@@ -79,20 +85,24 @@ export const Button: React.FC<MidasButton> = ({
         variant === 'tertiary' && styles.tertiary,
         variant === 'danger' && styles.danger,
         variant === 'icon' && styles.iconBtn,
+        isLoading && styles.loading,
         fullwidth && styles.fullwidth,
         size === 'medium' && styles.medium,
         iconPlacement === 'right' && styles.iconRight,
         className,
       )}
+      aria-disabled={isLoading}
+      onPress={isLoading ? undefined : rest.onPress}
       {...rest}
     >
       <>
-        {IconComponent && (
+        {IconComponent && !isLoading && (
           <IconComponent
             aria-hidden
             size={iconSize ?? 20}
           />
         )}
+        {isLoading && <Spinner small />}
         {rest.children}
       </>
     </AriaButton>

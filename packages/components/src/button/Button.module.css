@@ -153,3 +153,7 @@
     border-width: 2px;
   }
 }
+
+.loading {
+  cursor: wait;
+}
