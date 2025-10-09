@@ -6,6 +6,7 @@ description: Upplys användaren om att systemet/tjänsten laddar
 import { PropTable } from '@site/src/components/PropsTable'
 import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { Spinner, Button } from '@midas-ds/components'
+import { variables } from '@midas-ds/theme'
 
 <ComponentHeader
   name='Spinner'
@@ -13,66 +14,68 @@ import { Spinner, Button } from '@midas-ds/components'
   overrideHeadlessLink=''
 />
 
-Komponent som används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden.
+Komponent som används för att upplysa användaren om att systemet/tjänsten laddar eller jobbar på något i bakgrunden. Läs mer om hur spinner används i [Mönster för laddningsindikatorer](/design-patterns/page-loading)
 
 ```tsx
 import { Spinner } from '@midas-ds/components'
 ```
 
-```tsx
-<Spinner />
-```
-
 <div className='card'>
-  <Spinner />
+  <Spinner variant='primary' />
 </div>
 
 ## Varianter
 
-### Fristående spinner
+### Storlek
+
+Standardstorleken är helskärmsspinner. Använd varianten `small` när spinner ligger bredvid andra komponenter.
 
 ```tsx
-<Spinner />
+<Spinner
+  small
+  variant='primary'
+/>
 ```
 
 <div className='card'>
-  <Spinner />
+  <Spinner
+    small
+    variant='primary'
+  />
 </div>
 
-### Kombinerad med andra komponenter
+### Färg
 
-Använd varianten `small` för att kombinera med andra komponenter t.ex. `Button`, notera hur attributet `isOnColor` används för den primära knappen.
+Spinner får automatiskt färg av föräldraelementet via `currentColor` för att kunna användas i andra komponenter. Men när den används fristående använder vi `variant`
 
 ```tsx
-<Button>
-  <Spinner
-    // highlight-start
-    small
-    isOnColor
-    // highlight-end
-  />
-  Laddar
-</Button>
+<Spinner variant='primary' />
+```
+
+<div className='card'>
+  <Spinner variant='primary' />
+</div>
+
+### On Color
+
+```tsx
+<Spinner variant='onColor' />
 ```
 
 <div
   className='card'
-  style={{ display: 'block' }}
+  style={{ backgroundColor: variables.colorGray200 }}
 >
-  <Button>
-    <Spinner
-      small
-      isOnColor
-    />
-    {'Laddar'}
-  </Button>
+  <Spinner variant='onColor' />
 </div>
+
+### Knapp med spinner
+
+För att visa en spinner i Button används property `isLoading` på [Button](/components/button)
 
 ## Riktlinjer
 
 Om det väntas ta mer än 10 sekunder att ladda sidan bör det förutom en spinner finnas ett meddelande till användaren om det.
-
-För val av laddningsindikator se [Mönster för laddningsindikatorer](/design-patterns/page-loading)
 
 ## API
 
