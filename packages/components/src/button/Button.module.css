@@ -153,3 +153,29 @@
     border-width: 2px;
   }
 }
+
+.primary.loading {
+  background-color: var(--midas-button-background-primary-base);
+  border: solid var(--border-width) transparent;
+  color: var(--midas-text-on-color);
+  opacity: 1;
+}
+
+.secondary.loading {
+  color: var(--midas-text-tertiary);
+  background-color: var(--midas-button-background-secondary-base);
+  border-color: var(--midas-button-border-secondary);
+  opacity: 1;
+}
+
+.tertiary.loading {
+  color: var(--midas-text-tertiary);
+  background-color: transparent;
+  opacity: 1;
+}
+
+.danger.loading {
+  color: var(--midas-text-on-color);
+  background-color: var(--midas-button-background-danger-base);
+  opacity: 1;
+}
