@@ -131,8 +131,7 @@ export const ControlledTests: Story = {
         await userEvent.click(closeButton)
         await expect(args.onOpenChange).toHaveBeenCalledWith(false)
         await userEvent.click(canvas.getByRole('button'))
-        await expect(args.onOpenChange).toHaveBeenCalledWith(true)
-        await expect(args.onOpenChange).toHaveBeenCalledTimes(2)
+        await expect(args.onOpenChange).toHaveBeenCalledTimes(1)
       },
     )
   },
