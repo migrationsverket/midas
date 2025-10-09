@@ -16,6 +16,10 @@
   border-bottom: 1px solid var(--midas-border-color-primary);
   padding: 0 1rem;
 
+  @media (forced-colors: active) {
+    border: 1px solid var(--midas-border-color-primary);
+  }
+
   &.medium {
     min-height: var(--midas-size-130);
   }
@@ -24,6 +28,10 @@
     border: none;
     color: var(--midas-text-disabled);
     cursor: not-allowed;
+
+    @media (forced-colors: active) {
+      border: 1px solid var(--midas-border-color-primary);
+    }
   }
 
   &:hover:not([data-disabled]) {
@@ -33,5 +41,9 @@
   &:has([data-invalid]) {
     border: none;
     box-shadow: inset 0 0 0 3px var(--midas-support-border-warning);
+
+    @media (forced-colors: active) {
+      border: 1px solid var(--midas-border-color-primary);
+    }
   }
 }
