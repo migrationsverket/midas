@@ -3,13 +3,21 @@
 }
 
 .spinner {
-  color: var(--midas-icon-primary);
+  color: currentColor;
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
 
   @media (prefers-reduced-motion) {
     animation-duration: 2s;
   }
+}
+
+.primary {
+  color: var(--midas-icon-tertiary);
+}
+
+.onColor {
+  color: var(--midas-icon-on-color);
 }
 
 .dark {
