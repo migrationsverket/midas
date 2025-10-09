@@ -30,6 +30,11 @@
 
   border-left: 3px solid var(--border);
   background-color: var(--bg);
+
+  @media (forced-colors: active) {
+    border: 1px solid;
+    border-left: 3px solid var(--border);
+  }
 }
 
 .content {
