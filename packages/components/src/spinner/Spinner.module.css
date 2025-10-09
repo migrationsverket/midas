@@ -10,10 +10,18 @@
   @media (prefers-reduced-motion) {
     animation-duration: 2s;
   }
+
+  @media (forced-colors: active) {
+    color: CanvasText;
+  }
 }
 
 .dark {
   color: var(--midas-icon-on-color);
+
+  @media (forced-colors: active) {
+    color: CanvasText;
+  }
 }
 
 @keyframes rotating {
