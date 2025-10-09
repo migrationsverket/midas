@@ -38,7 +38,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
           variant === 'primary' && styles.primary,
           variant === 'onColor' && styles.onColor,
         )}
-        size={small ? 20 : 128}
+        size={small ? 20 : 96}
         strokeWidth={small ? 2 : 8}
         absoluteStrokeWidth
       />
