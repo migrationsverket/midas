@@ -13,7 +13,7 @@
     color: var(--midas-link-hover);
 
     @media (forced-colors: active) {
-      text-decoration: none;
+      color: highlight;
     }
   }
 
