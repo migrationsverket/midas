@@ -15,6 +15,17 @@
         "$description": "Black with 5% opacity"
       }
     },
+    "subtle": {
+      "$type": "color",
+      "$value": "#bfbfbf",
+      "$description": "Subtle gray",
+      "$extensions": {
+        "mode": {
+          "light": "#bfbfbf",
+          "dark": "#383838"
+        }
+      }
+    },
     "white": {
       "base": {
         "$value": "#fff",

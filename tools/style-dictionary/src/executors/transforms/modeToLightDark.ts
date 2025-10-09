@@ -1,18 +1,17 @@
 import { TransformedToken } from 'style-dictionary'
 import { Transform } from 'style-dictionary/types'
-import { getHasAttribute, getHasAttributeValue, getHasModes } from '../filters'
+import { usesReferences } from 'style-dictionary/utils';
+import { hasLightAndDarkModes } from '../filters'
 
 export const modeToLightDark: Transform = {
   name: `modeToLightDark`,
   type: `value`,
   transitive: true,
-  filter: getHasModes(),
+  filter: hasLightAndDarkModes(),
   transform: (token: TransformedToken) => {
-    console.log(token)
-    // return token.$value
-    console.log(
-      `light-dark(${token.$extensions.mode.light}, ${token.$extensions.mode.dark})`,
-    )
-    return `light-dark(var(${token.$extensions.mode.light}), var(${token.$extensions.mode.dark}))`
+    const light = token.$extensions.mode.light
+    const dark = token.$extensions.mode.dark
+    console.log(`[modeToLightDark] Transforming token ${token.name}`)
+    return `light-dark(${light}, ${dark})`
   },
 }

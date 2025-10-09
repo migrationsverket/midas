@@ -65,6 +65,7 @@ declare const tokens: {
       hover: DesignToken;
       opacity5: DesignToken;
     };
+    subtle: DesignToken;
     white: {
       base: DesignToken;
       hover: DesignToken;

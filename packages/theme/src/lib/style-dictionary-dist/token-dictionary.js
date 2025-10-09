@@ -468,6 +468,35 @@ export default {
         path: ["color", "black", "opacity5"],
       },
     },
+    subtle: {
+      key: "{color.subtle}",
+      $type: "color",
+      $value: "#bfbfbf",
+      $description: "Subtle gray",
+      $extensions: {
+        mode: {
+          light: "#bfbfbf",
+          dark: "#383838",
+        },
+      },
+      filePath: "packages/theme/tokens/colors.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#bfbfbf",
+        $description: "Subtle gray",
+        $extensions: {
+          mode: {
+            light: "#bfbfbf",
+            dark: "#383838",
+          },
+        },
+        key: "{color.subtle}",
+      },
+      name: "colorSubtle",
+      attributes: {},
+      path: ["color", "subtle"],
+    },
     white: {
       base: {
         key: "{color.white.base}",
@@ -2146,24 +2175,12 @@ export default {
         $type: "color",
         $value: "#bfbfbf",
         $description: "Kantlinje med låg kontrast",
-        $extensions: {
-          mode: {
-            light: "#bfbfbf",
-            dark: "#383838",
-          },
-        },
         filePath: "packages/theme/tokens/object-values.json",
         isSource: true,
         original: {
           $type: "color",
-          $value: "{color.gray.50}",
+          $value: "{color.subtle}",
           $description: "Kantlinje med låg kontrast",
-          $extensions: {
-            mode: {
-              light: "{color.gray.50}",
-              dark: "{color.gray.160}",
-            },
-          },
           key: "{border.color.subtle}",
         },
         name: "borderColorSubtle",

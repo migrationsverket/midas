@@ -47,6 +47,8 @@ export const colorBlackBase: string;
 export const colorBlackHover: string;
 /** Black with 5% opacity */
 export const colorBlackOpacity5: string;
+/** Subtle gray */
+export const colorSubtle: string;
 /** White */
 export const colorWhiteBase: string;
 /** White hover */

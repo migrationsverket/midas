@@ -29,6 +29,7 @@ export const buttonIconActive = "light-dark(#00000033, #ffffff33)"; // Active st
 export const colorBlackBase = "#000"; // Black
 export const colorBlackHover = "#0d0d0d"; // Black hover
 export const colorBlackOpacity5 = "#0000000d"; // Black with 5% opacity
+export const colorSubtle = "#bfbfbf"; // Subtle gray
 export const colorWhiteBase = "#fff"; // White
 export const colorWhiteHover = "#e6e6e6"; // White hover
 export const colorWhiteOpacity13 = "#ffffff21"; // White with 13% opacity
