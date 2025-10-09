@@ -20,10 +20,6 @@
   color: var(--midas-icon-on-color);
 }
 
-.dark {
-  color: var(--midas-icon-on-color);
-}
-
 @keyframes rotating {
   from {
     transform: rotate(0deg);
