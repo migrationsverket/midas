@@ -19,7 +19,7 @@ export interface MidasButtonProps {
    * @default 'primary'
    * */
   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger' | 'icon'
-  /** Shows a spinner and makes the button disabled */
+  /** Shows a spinner and makes the button disabled but visually active */
   isLoading?: boolean
   /**
    * Adds width: 100%; for the button to span entire width of parent
