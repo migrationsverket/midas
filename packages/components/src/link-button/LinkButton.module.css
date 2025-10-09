@@ -56,6 +56,10 @@
 
   .icon {
     color: var(--midas-icon-tertiary);
+
+    @media (forced-colors: active) {
+      color: LinkText;
+    }
   }
 
   &[data-hovered]:not(:disabled, [data-disabled]),
