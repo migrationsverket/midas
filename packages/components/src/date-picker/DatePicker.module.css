@@ -17,6 +17,10 @@
   justify-content: flex-start;
   gap: 1rem;
 
+  @media (forced-colors: active) {
+    border: 1px solid var(--midas-border-color-primary);
+  }
+
   &.medium {
     height: var(--midas-size-130);
   }
@@ -42,6 +46,10 @@
   &[data-invalid] {
     border: none;
     box-shadow: inset 0 0 0 3px var(--midas-support-border-warning);
+
+    @media (forced-colors: active) {
+      border: 1px solid var(--midas-border-color-primary);
+    }
   }
 
   .calendarButton {
