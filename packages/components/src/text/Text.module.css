@@ -28,11 +28,19 @@
 
   &:has(~ [data-disabled]) {
     color: var(--midas-text-disabled);
+
+    @media (forced-colors: active) {
+      color: GrayText;
+    }
   }
 }
 
 [data-disabled] {
   > .description {
     color: var(--midas-text-disabled);
+
+    @media (forced-colors: active) {
+      color: GrayText;
+    }
   }
 }
