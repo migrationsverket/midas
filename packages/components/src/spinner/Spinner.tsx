@@ -31,8 +31,8 @@ export const Spinner: React.FC<SpinnerProps> = ({
     >
       <LoaderCircle
         className={clsx(styles.spinner, isOnColor && styles.dark)}
-        size={small ? 20 : 32}
-        strokeWidth={small ? 2 : 3}
+        size={small ? 20 : 128}
+        strokeWidth={small ? 2 : 8}
         absoluteStrokeWidth
       />
       <VisuallyHidden>{strings.format('loadingPleaseWait')}</VisuallyHidden>
