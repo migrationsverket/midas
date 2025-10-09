@@ -12,14 +12,17 @@ export interface SpinnerProps {
   small?: boolean
   /** For use on coloured background
    * @default false
+   * @deprecated since 13.0.1. Use variant instead
    */
   isOnColor?: boolean
+  /** Variant for standalone use. Replaces isOnColor. */
+  variant?: 'primary' | 'onColor'
   className?: string
 }
 
 export const Spinner: React.FC<SpinnerProps> = ({
   small,
-  isOnColor = false,
+  variant,
   className,
 }) => {
   const strings = useLocalizedStringFormatter(messages)
@@ -30,7 +33,11 @@ export const Spinner: React.FC<SpinnerProps> = ({
       role='status'
     >
       <LoaderCircle
-        className={clsx(styles.spinner, isOnColor && styles.dark)}
+        className={clsx(
+          styles.spinner,
+          variant === 'primary' && styles.primary,
+          variant === 'onColor' && styles.onColor,
+        )}
         size={small ? 20 : 128}
         strokeWidth={small ? 2 : 8}
         absoluteStrokeWidth
