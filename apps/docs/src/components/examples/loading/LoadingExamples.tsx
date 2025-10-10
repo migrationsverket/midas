@@ -12,15 +12,15 @@ import {
 import '../custom.css'
 
 export const ButtonLoadingExample = () => {
-  const [isSubmitting, setSubmitting] = useState(false)
+  const [isPending, setPending] = useState(false)
 
-  async function handleSubmit() {
-    setSubmitting(true)
+  async function handlePress() {
+    setPending(true)
 
     // Simulate a slow API call
     await new Promise(resolve => setTimeout(resolve, 2000))
 
-    setSubmitting(false)
+    setPending(false)
 
     // Show success toast
     toastQueue.add(
@@ -39,8 +39,11 @@ export const ButtonLoadingExample = () => {
           />
         </GridItem>
         <GridItem size={{ xs: 12, sm: 12, md: 2, lg: 2 }}>
-          <Button onPress={handleSubmit}>
-            {isSubmitting ? (
+          <Button
+            isPending={isPending}
+            onPress={handlePress}
+          >
+            {isPending ? (
               <>
                 <Spinner
                   small
