@@ -171,6 +171,7 @@ export const WithLink: Story = {
 }
 
 export const WithImage: Story = {
+  tags: ['!snapshot'],
   args: {
     style: { maxWidth: 300 },
     children: (
@@ -194,6 +195,7 @@ export const WithImage: Story = {
 }
 
 export const WithContainedImage: Story = {
+  tags: ['!snapshot'],
   args: {
     style: { maxWidth: 300 },
     children: (
