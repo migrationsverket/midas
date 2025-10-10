@@ -12,7 +12,7 @@ export interface SpinnerProps {
   small?: boolean
   /** For use on coloured background
    * @default false
-   * @deprecated since 13.0.1. Use variant instead
+   * @deprecated since 14.0.0. Use variant instead
    */
   isOnColor?: boolean
   /** Variant for standalone use. Replaces isOnColor. */
