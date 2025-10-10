@@ -33,10 +33,7 @@ Laddar det för att ett fält behöver göra en kontroll mot en databas: Inline 
 ### Riktlinjer
 
 - Anpassa storleken/ formen på [Skeleton](/components/skeleton) för att efterlikna de komponenter som kommer finnas i gränssnittet
-
-Undvik när:
-
-- Vi inte vet hur innehållet ser ut. Använd fullskärmsspinner istället.
+- Vi använder inte Skeleton om vi inte vet hur innehållet ska se ut när det laddat klart. Då använder vi helskärmsspinner.
 
 ## Helskärmsspinner
 
@@ -46,12 +43,9 @@ Används när hela sidan eller appen är otillgänglig tills det har laddat klar
 
 ### Riktlinjer
 
-- Visa en Spinner centrerat på skärmen och tona ner bakgrunden.
-
-Undvik när:
-
-- Vi vet hur gränssnittet kommer att se ut. Använd skeleton istället
-- Endast en del av sidan laddas. Använd en spinner eller Skeleton på en komponenten/delen istället
+- Visa [Spinner](/components/spinner) centrerat på skärmen och tona ner bakgrunden.
+- Vi använder inte helskärmsspinner om vi vet hur gränssnittet kommer att se ut när det laddat klart. Då använder vi Skeleton.
+- Använd inte helskärmsspinner om endast en del av sidan laddas. Använd Spinner eller Skeleton på komponenten/delen istället
 
 ## Spinner i Button
 
@@ -61,12 +55,12 @@ Används när användaren via knappen triggar en process som kräver att systeme
 
 ### Riktlinjer
 
-- Visa [Spinner](/components/spinner) i knappen, till vänster om etiketten.
-- Ändra texten i knappen till presensformen av verbet (skicka -> skickar)
-- Låt knappen vara `enabled` men blockera interaktion
+- Använd prop `isPending`. Du kan [läsa mer om det och se ett exempel hos React Aria](https://react-spectrum.adobe.com/react-aria/Button.html#pending)
+- Visa small [Spinner](/components/spinner) i knappen, till vänster om etiketten.
+- Ändra texten i knappen till presensformen av verbet (skicka -> skickar) under tiden som det laddar
 - Meddela användaren när systemet laddat klart, tex med en toast
 
-## Inline loading
+## Spinner bredvid ett fält
 
 Används när det är ett fält som laddar, tex vid kontroll mot databas. Optimalt ska detta inte ta så lång tid att användaren behöver vänta men i de fall där anropen tar lång tid kan en spinner läggas bredvid fältet som laddar. I nedan exempel syns en spinner så fort du lämnar fältet.
 
@@ -75,7 +69,4 @@ Används när det är ett fält som laddar, tex vid kontroll mot databas. Optima
 ### Riktlinjer
 
 - Visa en [Spinner](/components/spinner) bredvid fältet under tiden som det laddar
-
-Undvik när:
-
-- Kontrollen/valideringen sker post submit. Använd istället en fullskärmsspinner
+- Använd inte inline spinner när kontrollen/valideringen sker vid submit. Då använder vi helskärmsspinner.
