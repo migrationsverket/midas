@@ -4,10 +4,69 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Tue, 23 Sep 2025 13:36:37 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Oct 2025 09:18:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 14.0.0]]></title>
+            <link>https://designsystem.migrationsverket.se/release-notes/14.0.0/</link>
+            <guid>https://designsystem.migrationsverket.se/release-notes/14.0.0/</guid>
+            <pubDate>Fri, 10 Oct 2025 09:18:09 GMT</pubDate>
+            <description><![CDATA[Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
+<p>Vi introducerar ett nytt paket, <a href="https://www.npmjs.com/package/@midas-ds/datepicker-styles" target="_blank" rel="noopener noreferrer"><code scope="[object Object]">@midas-ds/datepicker-styles</code></a>, för att hjälpa till med styling av <a href="https://www.npmjs.com/package/react-datepicker" target="_blank" rel="noopener noreferrer"><code scope="[object Object]">react-datepicker</code></a>. Detta är ett renodlat CSS-paket och är i ett tidigt beta-stadie. Vi uppmuntrar er att testa det och ge oss feedback.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
+<p>Vi har gjort en större genomgång av hur våra komponenter presenteras i Windows högkontrastläge (CSS <code scope="[object Object]">forced-colors</code>). Detta innebär att komponenterna nu ska ha ett betydligt bättre utseende och vara mer användbara för personer som använder detta läge.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Vår token för <code scope="[object Object]">transition</code> har bytt namn från <code scope="[object Object]">transitions</code> till <code scope="[object Object]">transition</code> för att vara mer konsekvent.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Vi har uppdaterat vårt tema för att följa den nya <a href="https://tr.designtokens.org/format/" target="_blank" rel="noopener noreferrer">Design Token Community Group (DTCG)</a> standarden, vilket gör det enklare att återanvända våra design tokens.</li>
+<li><strong>button:</strong> Knappar har fått ett utökat <code scope="[object Object]">:not</code>-condition för att bättre hantera <code scope="[object Object]">pressed state</code>.</li>
+<li><strong>button:</strong> Vi har förhindrat att bakgrunden på en knapp ändras när den är nedtryckt och har <code scope="[object Object]">aria-expanded</code>, vilket ger en mer konsekvent användarupplevelse.</li>
+<li><strong>heading:</strong> Nu kan du använda en flagga för att styra om en rubrik ska ha inbyggda marginaler eller inte.</li>
+<li><strong>theme:</strong> Vi har lagt till nya variabler för <code scope="[object Object]">spacing</code> för att ge mer flexibilitet i layouten.</li>
+<li><strong>modal:</strong> Det är nu möjligt att dölja stängningsknappen i en modal.</li>
+<li><strong>modal:</strong> Du kan nu skicka med en egen <code scope="[object Object]">className</code> till en modal för att anpassa stilen.</li>
+<li><strong>datepicker-styles:</strong> Vi har skapat ett nytt paket, <code scope="[object Object]">@midas-ds/datepicker-styles</code>, för att enkelt kunna styla <code scope="[object Object]">react-datepicker</code>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>core:</strong> Vi har förbättrat hur våra komponenter ser ut i <code scope="[object Object]">forced-colors-mode</code> för bättre tillgänglighet.</li>
+<li><strong>info-banner:</strong> Vi har åtgärdat en bugg som gjorde att <code scope="[object Object]">useEffect</code> kördes två gånger i strict mode.</li>
+<li><strong>theme:</strong> Vi har justerat storleken på <code scope="[object Object]">line-height-100</code> och <code scope="[object Object]">font-size-70</code> för att vara mer konsekventa.</li>
+<li><strong>storybook:</strong> Vi har fixat ett stavfel i en bakgrundsväljare i Storybook.</li>
+<li><strong>core:</strong> Vi har lagt till en <code scope="[object Object]">clsx</code>-wrapper för att bättre hantera klassnamn från React Aria.</li>
+<li><strong>modal:</strong> En modal kan nu hantera <code scope="[object Object]">open</code>-state som en kontrollerad komponent.</li>
+<li><strong>progress-bar:</strong> Skärmläsare kan nu läsa av <code scope="[object Object]">valueLabels</code> för en progress-bar.</li>
+<li><strong>accordion-item:</strong> Vi har löst en bugg som påverkade tangentbordsfokus, animeringar och hover-effekter i <code scope="[object Object]">accordion-item</code>.</li>
+<li><strong>accordion:</strong> Vi har ökat specificiteten i CSS för knappar i ett <code scope="[object Object]">accordion</code> för att undvika stilkonflikter.</li>
+<li><strong>menu:</strong> Vi har exporterat <code scope="[object Object]">MenuTrigger</code> så att den kan användas direkt.</li>
+<li><strong>list-box:</strong> Rubriken i en <code scope="[object Object]">list-box</code>-sektion har nu rätt färg.</li>
+<li><strong>popover:</strong> Vi har justerat storleken på popovers för att de ska se bättre ut.</li>
+<li><strong>theme:</strong> <code scope="[object Object]">README</code>- och <code scope="[object Object]">CHANGELOG</code>-filerna inkluderas nu korrekt i vårt tema-paket.</li>
+<li><strong>popover:</strong> Vi har förhindrat att texten i en popover bryts för tidigt.</li>
+<li><strong>table-styles:</strong> Vi har tagit bort onödiga release-inställningar för <code scope="[object Object]">table-styles</code>.</li>
+<li><strong>table-styles:</strong> Vi har uppdaterat Vite-konfigurationen för <code scope="[object Object]">table-styles</code> för att inkludera <code scope="[object Object]">readme</code> och <code scope="[object Object]">tspaths</code>.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-refactoring">🏭 Refactoring<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-refactoring" class="hash-link" aria-label="Direktlänk till 🏭 Refactoring" title="Direktlänk till 🏭 Refactoring" translate="no">​</a></h2>
+<ul>
+<li><strong>theme:</strong> Vi har brutit ut knapp-specifika design tokens från <code scope="[object Object]">object-values.json</code> till en egen fil för bättre struktur.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v14.0.0" target="_blank" rel="noopener noreferrer">components@v14.0.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.1.0" target="_blank" rel="noopener noreferrer">theme@v3.1.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.1.2" target="_blank" rel="noopener noreferrer">datepicker-styles@v0.1.2</a></li>
+</ul>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v14</category>
+        </item>
         <item>
             <title><![CDATA[Release 13.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/release-notes/13.0.0/</link>
