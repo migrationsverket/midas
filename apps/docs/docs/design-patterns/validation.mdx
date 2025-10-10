@@ -28,7 +28,15 @@ Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är 
   </Grid>
 </div>
 
-## Direktvalidering
+## När och hur ska vi validera?
+
+För att undvika att användaren blir överväldigad av felmeddelanden krävs att vi har en balans mellan att ge snabb återkoppling och låta användaren jobba ostört. Vissa fält ska ge omedelbar feedback när användaren lämnar dem, medan andra bara ska valideras vid efter att formuläret skickats.
+
+### Validering efter att användaren skickat in formuläret
+
+Fält som är obligatoriska men inte kan valideras mot ett specifikt format, tex obligatoriska fritextfält, valideras efter att användaren skickat in formuläret.
+
+### Validering när användaren lämnar fältet
 
 Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsregel eller kan validera mot en databas, ska valideras när användaren lämnar fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
 
@@ -42,9 +50,9 @@ Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsreg
   />
 </div>
 
-## Post submit-validering
+## Felmeddelandelista
 
-Om det finns obligatoriska fält användaren inte fyllt i eller fält med valideringsfel efter att användaren skickat in formuläret, så ska dessa sammanfattas i en `Felmeddelandelista` som visas högst upp på sidan. Felmeddelandelistan är inte någon egen komponent. Den består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till. Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
+I externa tjänster, tex e-ansökningar, som primärt är formulär som användaren ska fylla i, använder vi `Felmeddelandelista` för att visa felen som kvarstår efter att formuläret skickats in. Felmeddelandelistan är inte någon egen komponent utan består av en [Infobanner](/components/info-banner) med ankarlänkar till de komponenter som behöver rättas till.
 
 <ErrorMessageList />
 
@@ -62,3 +70,8 @@ return (
   }}
 />
 ); }
+
+### Riktlinjer
+
+- Visa Felmeddelandelistan ovanför formuläret
+- Länkarnas text ska vara felmeddelandet från komponeterna med valideringsfel.
