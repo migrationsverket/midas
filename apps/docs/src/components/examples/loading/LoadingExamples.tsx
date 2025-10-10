@@ -88,7 +88,7 @@ export const InlineSpinnerExample = () => {
         </GridItem>
         <GridItem size='auto'>
           <Button isDisabled={isChecking}>
-            {isChecking ? 'Kontrollerar...' : 'Skicka'}
+            {isChecking ? 'Skicka' : 'Skicka'}
           </Button>
         </GridItem>
       </Grid>
