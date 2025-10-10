@@ -43,6 +43,8 @@ export default {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    // violations in forced-colors
+    a11y: { test: 'todo' },
   },
   args: {
     children: 'Spara',

@@ -28,7 +28,7 @@ export default {
 export const Primary: Story = {}
 
 export const KeyboardTest: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -52,7 +52,7 @@ export const KeyboardTest: Story = {
 }
 
 export const DS1141: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

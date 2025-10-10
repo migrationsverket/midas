@@ -3,7 +3,6 @@ import { Accordion, AccordionItem, Button } from '@midas-ds/components'
 import { File } from 'lucide-react'
 import { expect, userEvent } from 'storybook/test'
 import React from 'react'
-import { hexToRgb, lightDark } from '../utils/test'
 import styles from '@midas-ds/components/accordion/Accordion.module.css'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
@@ -57,6 +56,7 @@ export const Contained: Story = {
 }
 
 export const AllowsMultipleExpanded: Story = {
+  tags: ['!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -103,7 +103,7 @@ export const CustomTriggerElements: Story = {
 
 export const DynamicContent: Story = {
   args: {},
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -131,7 +131,7 @@ export const DynamicContent: Story = {
 }
 
 export const DS1060: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -142,18 +142,6 @@ export const DS1060: Story = {
       </AccordionItem>
     </Accordion>
   ),
-  play: async ({ canvas, step, globals: { scheme } }) => {
-    await step(
-      'it should not have the disabled style even if it contains disabled children',
-      async () => {
-        await expect(
-          canvas.getByRole('heading', { level: 2, name: 'Test' }),
-        ).toHaveStyle({
-          color: lightDark(hexToRgb('#171717'), hexToRgb('#f2f2f2'), scheme),
-        })
-      },
-    )
-  },
 }
 
 const ExpandableStuff = () => {

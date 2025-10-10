@@ -93,7 +93,7 @@ export const Danger: Story = {
 }
 
 export const Tests: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

@@ -60,25 +60,23 @@ export const Default: Story = {
 
 export const NotDismissable: Story = {}
 
-
 /**
  * For special cases when modal should not be closable without taking further action
  */
 export const HiddenCloseButton: Story = {
   decorators: [
-    (Story) => (
+    Story => (
       <div>
         <h2>Läs riktlinjer för användning! </h2>
-        <Story/>
-      </div>)
+        <Story />
+      </div>
+    ),
   ],
-  parameters: {
-
-  },
+  parameters: {},
   args: {
     hideCloseButton: true,
     isKeyboardDismissDisabled: true,
-    title: 'Close button hidden'
+    title: 'Close button hidden',
   },
   render: args => (
     <DialogTrigger>
@@ -230,7 +228,7 @@ export const Scrollable: Story = {
 }
 
 export const DS1282: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
