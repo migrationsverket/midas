@@ -1,3 +1,36 @@
+# 14.0.0 (2025-10-10)
+
+### 🚀 Features
+
+- ⚠️ **theme:** change plural to singular for transition tokens ([e54e1b9631](https://github.com/migrationsverket/midas/commit/e54e1b9631))
+- **button:** expand :not condition for pressed state background ([47c6784cbf](https://github.com/migrationsverket/midas/commit/47c6784cbf))
+- **button:** disable background change when button pressed && aria-expanded ([1a9b930509](https://github.com/migrationsverket/midas/commit/1a9b930509))
+- **heading:** add a new flag for using built in margin ([3df0389120](https://github.com/migrationsverket/midas/commit/3df0389120))
+- **modal:** add option to hide close button in header ([5e7b2c59d6](https://github.com/migrationsverket/midas/commit/5e7b2c59d6))
+- **modal:** add support for custom className ([#842](https://github.com/migrationsverket/midas/pull/842))
+
+### 🩹 Fixes
+
+- style fixes for forced colors mode ([caca6865c0](https://github.com/migrationsverket/midas/commit/caca6865c0))
+- **info-banner:** prevent double useEffect run in strict mode ([#873](https://github.com/migrationsverket/midas/pull/873))
+- add clsx wrapper for react aria classname ([e07a2e84c6](https://github.com/migrationsverket/midas/commit/e07a2e84c6))
+- **modal:** accept controlled open state props ([7cd6ff0175](https://github.com/migrationsverket/midas/commit/7cd6ff0175))
+- **progress-bar:** expose single valueLabels for screen readers ([#852](https://github.com/migrationsverket/midas/pull/852))
+- **accordion-item:** fix keyboard-focus/animation/hover bug in accordion-item ([a3663f64bb](https://github.com/migrationsverket/midas/commit/a3663f64bb))
+- **accordion:** increase specificity for button css ([e2e9c75914](https://github.com/migrationsverket/midas/commit/e2e9c75914))
+
+### 🔧 Maintenance
+
+- break out storybook ([1746df3356](https://github.com/migrationsverket/midas/commit/1746df3356))
+
+### ⚠️ Breaking Changes
+
+- **theme:** transition tokens are now named without plural `s` and uses DTCG object style instead of arbitrary string
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.1.0
+
 ## 13.0.1 (2025-09-26)
 
 ### 🩹 Fixes
