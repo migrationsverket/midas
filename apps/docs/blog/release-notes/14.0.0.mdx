@@ -1,0 +1,62 @@
+---
+slug: 14.0.0
+title: Release 14.0.0
+authors: midas
+tags: [release-notes, v14]
+---
+
+Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.
+
+## 💅 Nytt CSS-paket för react-datepicker
+
+Vi introducerar ett nytt paket, [`@midas-ds/datepicker-styles`](https://www.npmjs.com/package/@midas-ds/datepicker-styles), för att hjälpa till med styling av [`react-datepicker`](https://www.npmjs.com/package/react-datepicker). Detta är ett renodlat CSS-paket och är i ett tidigt beta-stadie. Vi uppmuntrar er att testa det och ge oss feedback.
+
+## ♿️ Tillgänglighet
+
+Vi har gjort en större genomgång av hur våra komponenter presenteras i Windows högkontrastläge (CSS `forced-colors`). Detta innebär att komponenterna nu ska ha ett betydligt bättre utseende och vara mer användbara för personer som använder detta läge.
+
+## 💥 Breaking Changes
+
+- **theme:** Vår token för `transition` har bytt namn från `transitions` till `transition` för att vara mer konsekvent.
+
+## 🚀 Nya funktioner
+
+- **theme:** Vi har uppdaterat vårt tema för att följa den nya [Design Token Community Group (DTCG)](https://tr.designtokens.org/format/) standarden, vilket gör det enklare att återanvända våra design tokens.
+- **button:** Knappar har fått ett utökat `:not`-condition för att bättre hantera `pressed state`.
+- **button:** Vi har förhindrat att bakgrunden på en knapp ändras när den är nedtryckt och har `aria-expanded`, vilket ger en mer konsekvent användarupplevelse.
+- **heading:** Nu kan du använda en flagga för att styra om en rubrik ska ha inbyggda marginaler eller inte.
+- **theme:** Vi har lagt till nya variabler för `spacing` för att ge mer flexibilitet i layouten.
+- **modal:** Det är nu möjligt att dölja stängningsknappen i en modal.
+- **modal:** Du kan nu skicka med en egen `className` till en modal för att anpassa stilen.
+- **datepicker-styles:** Vi har skapat ett nytt paket, `@midas-ds/datepicker-styles`, för att enkelt kunna styla `react-datepicker`.
+
+## 🩹 Fixar
+
+- **core:** Vi har förbättrat hur våra komponenter ser ut i `forced-colors-mode` för bättre tillgänglighet.
+- **info-banner:** Vi har åtgärdat en bugg som gjorde att `useEffect` kördes två gånger i strict mode.
+- **theme:** Vi har justerat storleken på `line-height-100` och `font-size-70` för att vara mer konsekventa.
+- **storybook:** Vi har fixat ett stavfel i en bakgrundsväljare i Storybook.
+- **core:** Vi har lagt till en `clsx`-wrapper för att bättre hantera klassnamn från React Aria.
+- **modal:** En modal kan nu hantera `open`-state som en kontrollerad komponent.
+- **progress-bar:** Skärmläsare kan nu läsa av `valueLabels` för en progress-bar.
+- **accordion-item:** Vi har löst en bugg som påverkade tangentbordsfokus, animeringar och hover-effekter i `accordion-item`.
+- **accordion:** Vi har ökat specificiteten i CSS för knappar i ett `accordion` för att undvika stilkonflikter.
+- **menu:** Vi har exporterat `MenuTrigger` så att den kan användas direkt.
+- **list-box:** Rubriken i en `list-box`-sektion har nu rätt färg.
+- **popover:** Vi har justerat storleken på popovers för att de ska se bättre ut.
+- **theme:** `README`- och `CHANGELOG`-filerna inkluderas nu korrekt i vårt tema-paket.
+- **popover:** Vi har förhindrat att texten i en popover bryts för tidigt.
+- **table-styles:** Vi har tagit bort onödiga release-inställningar för `table-styles`.
+- **table-styles:** Vi har uppdaterat Vite-konfigurationen för `table-styles` för att inkludera `readme` och `tspaths`.
+
+## 🏭 Refactoring
+
+- **theme:** Vi har brutit ut knapp-specifika design tokens från `object-values.json` till en egen fil för bättre struktur.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v14.0.0](https://github.com/migrationsverket/midas/releases/tag/components@v14.0.0)
+- [theme@v3.1.0](https://github.com/migrationsverket/midas/releases/tag/theme@v3.1.0)
+- [datepicker-styles@v0.1.2](https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.1.2)
