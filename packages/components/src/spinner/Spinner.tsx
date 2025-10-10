@@ -23,6 +23,7 @@ export interface SpinnerProps {
 export const Spinner: React.FC<SpinnerProps> = ({
   small,
   variant,
+  isOnColor,
   className,
 }) => {
   const strings = useLocalizedStringFormatter(messages)
@@ -36,7 +37,7 @@ export const Spinner: React.FC<SpinnerProps> = ({
         className={clsx(
           styles.spinner,
           variant === 'primary' && styles.primary,
-          variant === 'onColor' && styles.onColor,
+          (variant === 'onColor' || (!variant && isOnColor)) && styles.onColor,
         )}
         size={small ? 20 : 96}
         strokeWidth={small ? 2 : 8}
