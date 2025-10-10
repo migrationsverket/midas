@@ -1,1 +1,0 @@
-const t="_button_6jytd_1",n="_secondary_6jytd_48",_="_tertiary_6jytd_71",o="_iconBtn_6jytd_91",d="_medium_6jytd_111",i="_danger_6jytd_116",c="_iconRight_6jytd_138",y="_fullwidth_6jytd_142",r="_primary_6jytd_152",a="_loading_6jytd_157",s={button:t,secondary:n,tertiary:_,iconBtn:o,medium:d,danger:i,iconRight:c,fullwidth:y,primary:r,loading:a};export{s as B};
