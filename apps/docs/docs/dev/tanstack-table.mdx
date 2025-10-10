@@ -3,7 +3,7 @@ title: Tanstack Table
 description: Implementation av Tanstack Table
 ---
 
-import {PaginationExample} from '@site/src/components/examples'
+import { PaginationExample } from '@site/src/components/examples'
 
 # Tanstack Table
 
@@ -12,7 +12,7 @@ kraftfullt "headless"-verktyg, vilket innebär att det inte renderar någon mark
 full kontroll över tabellens utseende, och vi har tillhandahållit stilar för att säkerställa att den matchar Midas utseende och känsla.
 
 :::info
-Stilarna för Tanstack Table är just nu i en tidig version och är ett arbete som pågår. Tanstack Table är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/midas-ds/midas) och tar gärna emot förslag på stilar som saknas när du implementerar Tanstack Table.
+Stilarna för Tanstack Table är just nu i en tidig version och är ett arbete som pågår. Tanstack Table är inte en del av kärnbiblioteket i Midas, vilket innebär att supporten är begränsad. Vi är öppna för kodbidrag till vårt [repo](https://github.com/migrationsverket/midas) och tar gärna emot förslag på stilar som saknas när du implementerar Tanstack Table.
 :::
 
 ## När du ska använda Tanstack Table
@@ -45,9 +45,7 @@ Importera sedan Midas-stilarna för tabellen:
 Använd class `table`:
 
 ```tsx
-<table className={'table'}>
-...
-</table>
+<table className={'table'}>...</table>
 ```
 
 ## Användbara länkar
@@ -62,7 +60,7 @@ Här är några resurser som hjälper dig att komma igång med TanStack Table:
 Här är ett exempel på en paginerad tabell byggd med Tanstack Table och stylad med Midas
 (exempel taget officiella dokumentationen):
 
-<PaginationExample/>
+<PaginationExample />
 
 ```tsx title="Table.tsx"
 import React from 'react'
@@ -77,12 +75,7 @@ import {
 } from '@tanstack/react-table'
 import { makeData } from './makeData'
 import { Button, TextField, Select } from '@midas-ds/components'
-import {
-  ChevronLeft,
-  ChevronsLeft,
-  ChevronRight,
-  ChevronsRight,
-} from 'lucide-react'
+import { ChevronLeft, ChevronsLeft, ChevronRight, ChevronsRight } from 'lucide-react'
 
 type Person = {
   firstName: string
@@ -131,9 +124,7 @@ const defaultColumns: ColumnDef<Person>[] = [
 
 export const PaginationExample = () => {
   const [data] = React.useState(() => makeData(1000))
-  const [columns] = React.useState<typeof defaultColumns>(() => [
-    ...defaultColumns,
-  ])
+  const [columns] = React.useState<typeof defaultColumns>(() => [...defaultColumns])
 
   // Create the table and pass your options
   const table = useReactTable({
@@ -167,12 +158,7 @@ export const PaginationExample = () => {
                   key={header.id}
                   colSpan={header.colSpan}
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                 </th>
               ))}
             </tr>
@@ -182,9 +168,7 @@ export const PaginationExample = () => {
           {table.getRowModel().rows.map(row => (
             <tr key={row.id}>
               {row.getVisibleCells().map(cell => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
+                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
               ))}
             </tr>
           ))}
@@ -197,12 +181,7 @@ export const PaginationExample = () => {
                   key={header.id}
                   colSpan={header.colSpan}
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.footer,
-                        header.getContext(),
-                      )}
+                  {header.isPlaceholder ? null : flexRender(header.column.columnDef.footer, header.getContext())}
                 </th>
               ))}
             </tr>
@@ -211,55 +190,53 @@ export const PaginationExample = () => {
       </table>
       <div />
       <div style={{ display: 'flex', gap: '0.5rem', margin: '1rem 0' }}>
-          <Button
-            onPress={() => table.setPageIndex(0)}
-            isDisabled={!table.getCanPreviousPage()}
-          >
-            <ChevronsLeft />
-          </Button>
-          <Button
-            onPress={() => table.previousPage()}
-            isDisabled={!table.getCanPreviousPage()}
-          >
-            <ChevronLeft />
-          </Button>
-          <Button
-            onPress={() => table.nextPage()}
-            isDisabled={!table.getCanNextPage()}
-          >
-            <ChevronRight />
-          </Button>
-          <Button
-            onPress={() => table.setPageIndex(table.getPageCount() - 1)}
-            isDisabled={!table.getCanNextPage()}
-          >
-            <ChevronsRight />
-          </Button>
+        <Button
+          onPress={() => table.setPageIndex(0)}
+          isDisabled={!table.getCanPreviousPage()}
+        >
+          <ChevronsLeft />
+        </Button>
+        <Button
+          onPress={() => table.previousPage()}
+          isDisabled={!table.getCanPreviousPage()}
+        >
+          <ChevronLeft />
+        </Button>
+        <Button
+          onPress={() => table.nextPage()}
+          isDisabled={!table.getCanNextPage()}
+        >
+          <ChevronRight />
+        </Button>
+        <Button
+          onPress={() => table.setPageIndex(table.getPageCount() - 1)}
+          isDisabled={!table.getCanNextPage()}
+        >
+          <ChevronsRight />
+        </Button>
       </div>
       <div style={{ display: 'flex', gap: '0.5rem', margin: '1rem 0' }}>
-          <TextField
-            value={`${table.getState().pagination.pageIndex + 1} of ${table.getPageCount()}`}
-            isReadOnly
-            label={'Page'}
-          />
-          <TextField
-            label={'Go to page'}
-            type='number'
-            min={1}
-            max={table.getPageCount()}
-            value={(table.getState().pagination.pageIndex + 1).toString()}
-            onChange={e => {
-              const page = e ? Number(e) - 1 : 0
-              table.setPageIndex(page)
-            }}
-          />
+        <TextField
+          value={`${table.getState().pagination.pageIndex + 1} of ${table.getPageCount()}`}
+          isReadOnly
+          label={'Page'}
+        />
+        <TextField
+          label={'Go to page'}
+          type='number'
+          min={1}
+          max={table.getPageCount()}
+          value={(table.getState().pagination.pageIndex + 1).toString()}
+          onChange={e => {
+            const page = e ? Number(e) - 1 : 0
+            table.setPageIndex(page)
+          }}
+        />
         <Select
-          style={{minWidth: '200px'}}
+          style={{ minWidth: '200px' }}
           label='Rows per page'
           selectedKeys={[table.getState().pagination.pageSize]}
-          onSelectionChange={keys =>
-            table.setPageSize(Number(Array.from(keys)[0]))
-          }
+          onSelectionChange={keys => table.setPageSize(Number(Array.from(keys)[0]))}
           options={[10, 20, 30, 40, 50].map(pageSize => ({
             id: pageSize,
             name: `Show ${pageSize}`,
@@ -269,8 +246,8 @@ export const PaginationExample = () => {
     </div>
   )
 }
-
 ```
+
 ```ts title=makeData.ts
 import { faker } from '@faker-js/faker'
 
@@ -299,11 +276,7 @@ const newPerson = (): Person => {
     age: faker.number.int(40),
     visits: faker.number.int(1000),
     progress: faker.number.int(100),
-    status: faker.helpers.shuffle<Person['status']>([
-      'relationship',
-      'complicated',
-      'single',
-    ])[0]!,
+    status: faker.helpers.shuffle<Person['status']>(['relationship', 'complicated', 'single'])[0]!,
   }
 }
 
@@ -320,5 +293,4 @@ export function makeData(...lens: number[]) {
 
   return makeDataLevel()
 }
-
 ```
