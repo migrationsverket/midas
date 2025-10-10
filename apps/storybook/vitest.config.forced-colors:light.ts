@@ -11,7 +11,7 @@ export default mergeConfig(
       projects: [
         defineStorybookProject({
           name: 'storybook:forced-colors:light',
-          snapshotSubpath: 'forced-colors:light',
+          snapshotSubpath: 'forced-colors-light',
           context: {
             forcedColors: 'active',
           },
