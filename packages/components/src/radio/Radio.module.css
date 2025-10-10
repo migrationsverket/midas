@@ -39,6 +39,10 @@
     border: 0.0625rem solid var(--midas-border-color-primary);
     border-radius: 1.286rem;
     transition: all var(--midas-transition-duration-fast);
+
+    @media (forced-colors: active) {
+      transition: none;
+    }
   }
 
   &[data-focus-visible],
@@ -62,8 +66,16 @@
     color: var(--midas-text-disabled);
     cursor: not-allowed;
 
+    @media (forced-colors: active) {
+      color: GrayText;
+    }
+
     &::before {
       border-color: var(--midas-border-color-disabled);
+
+      @media (forced-colors: active) {
+        border-color: GrayText;
+      }
     }
   }
 
@@ -82,7 +94,7 @@
   /* Nesting this selector in the one above causes syntax errors during minification */
   @media (forced-colors: active) {
     &[data-selected]::before {
-      background: ButtonText;
+      background: highlight 50% 50% no-repeat content-box;
     }
   }
 

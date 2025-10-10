@@ -30,6 +30,10 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+
+  @media (forced-colors: active) {
+    stroke: canvastext;
+  }
 }
 
 .clear {
@@ -61,6 +65,10 @@
   padding: var(--midas-size-70) 0 var(--midas-size-70) var(--midas-size-150);
   border-bottom: 1px solid var(--midas-border-color-primary);
 
+  @media (forced-colors: active) {
+    border: 1px solid;
+  }
+
   &.medium {
     height: var(--midas-size-130);
     padding: var(--midas-size-50) 0 var(--midas-size-50) var(--midas-size-150);
@@ -81,6 +89,10 @@
 
   &[data-disabled] {
     pointer-events: none;
+
+    @media (forced-colors: active) {
+      border: 1px solid;
+    }
   }
 
   &::-webkit-search-decoration,

@@ -229,9 +229,11 @@ export const spacingMedium = "1rem";
 export const spacingLarge = "1.5rem";
 export const spacingXlarge = "2rem";
 export const stateFocus =
-  "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)";
+  "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)"; // Focus style used when the component is focused (box-shadow).
 export const stateFocusInset =
-  "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)";
+  "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)"; // Inset variant of the focus ring (box-shadow inset).
+export const stateFocusContrastModeOutline = "2px"; // Outline style for focus ring when Windows High Contrast (forced-colors) mode is active.
+export const stateFocusContrastModeOffset = "2px"; // Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active..
 export const transitionDurationSlow = "500ms";
 export const transitionDurationNormal = "300ms";
 export const transitionDurationFast = "250ms";

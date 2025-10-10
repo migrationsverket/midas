@@ -130,8 +130,10 @@
   --midas-spacing-100: 4rem;
   --midas-spacing-110: 5rem;
   --midas-spacing-120: 6rem;
-  --midas-state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-  --midas-state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
+  --midas-state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white); /** Focus style used when the component is focused (box-shadow). */
+  --midas-state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black); /** Inset variant of the focus ring (box-shadow inset). */
+  --midas-state-focus-contrast-mode-outline: 2px; /** Outline style for focus ring when Windows High Contrast (forced-colors) mode is active. */
+  --midas-state-focus-contrast-mode-offset: 2px; /** Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.. */
   --midas-transition-duration-slow: 500ms;
   --midas-transition-duration-normal: 300ms;
   --midas-transition-duration-fast: 250ms;

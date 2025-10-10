@@ -83,6 +83,11 @@
   width: calc(100% - 1rem);
   font-size: 0.875rem;
 
+  @media (forced-colors: active) {
+    border: 1px solid;
+    border-left: 3px solid;
+  }
+
   &[data-focus-visible],
   &:focus-visible {
     outline: none;
@@ -124,6 +129,10 @@
   & .icon {
     color: var(--midas-icon-primary);
     flex: 0 0 auto;
+
+    @media (forced-colors: active) {
+      stroke: mark;
+    }
   }
 
   @media (width >= 768px) {

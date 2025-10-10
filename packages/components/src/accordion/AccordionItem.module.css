@@ -98,6 +98,10 @@
 .statusIcon {
   color: var(--icon-color);
   padding: 0.125rem 0;
+
+  @media (forced-colors: active) {
+    color: currentColor;
+  }
 }
 
 .triggerButton[aria-expanded='true'] .chevronIcon {

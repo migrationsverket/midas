@@ -205,7 +205,8 @@
     box-shadow: none;
 
     @media (forced-colors: active) {
-      border: 1px ButtonBorder solid;
+      outline: var(--midas-state-focus-contrast-mode-outline) solid highlight !important;
+      outline-offset: calc(var(--midas-state-focus-contrast-mode-outline) * -1);
     }
   }
 

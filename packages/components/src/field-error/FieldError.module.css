@@ -24,5 +24,9 @@
     flex: 0 0 auto;
     align-self: flex-start;
     margin: 2px;
+
+    @media (forced-colors: active) {
+      filter: invert(1);
+    }
   }
 }

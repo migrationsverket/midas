@@ -8,9 +8,13 @@
   font-weight: 400;
   align-items: center;
 
-  &[data-hovered],
-  &:hover {
+  &[data-hovered]:not([data-disabled], :disabled),
+  &:hover:not([data-disabled], :disabled) {
     color: var(--midas-link-hover);
+
+    @media (forced-colors: active) {
+      color: highlight;
+    }
   }
 
   &:visited {

@@ -14,10 +14,18 @@
 
 .primary {
   fill: var(--midas-logo-primary);
+
+  @media (forced-colors: active) {
+    fill: CanvasText;
+  }
 }
 
 .dark {
   fill: var(--midas-background-inverse);
+
+  @media (forced-colors: active) {
+    fill: CanvasText;
+  }
 }
 
 .xSmall {
