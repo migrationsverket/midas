@@ -9,7 +9,6 @@ import CodeBlock from '@theme/CodeBlock'
 import { StorybookIcon, EmptyIcon } from '@site/src/components/icons'
 
 export default function Startpage() {
-
   const baseUrl = useBaseUrl
   const storybookUrl =
     process.env.NODE_ENV === 'development'
@@ -61,7 +60,7 @@ export default function Startpage() {
                 >
                   <StorybookIcon
                     size={24}
-                    color={'#FF4785'}
+                    color='#FF4785'
                   />
                   Storybook
                 </LinkButton>
@@ -86,8 +85,16 @@ function HeaderImage() {
 
   return (
     <>
-      <img className={`${styles.image} ${styles.lightImage}`} src={imgSrc} alt="" />
-      <img className={`${styles.image} ${styles.darkImage}`} src={imgSrcDark} alt="" />
+      <img
+        className={`${styles.image} ${styles.lightImage}`}
+        src={imgSrc}
+        alt=''
+      />
+      <img
+        className={`${styles.image} ${styles.darkImage}`}
+        src={imgSrcDark}
+        alt=''
+      />
     </>
   )
 }

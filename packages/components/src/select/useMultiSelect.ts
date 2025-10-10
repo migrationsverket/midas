@@ -10,11 +10,15 @@ import type {
   MultiSelectDOMProps,
   MultiSelectProps,
   MultiSelectState,
+  SelectionMode,
 } from './types'
 import { ListBoxOption } from '../list-box'
 
-export function useMultiSelect<T extends ListBoxOption>(
-  props: MultiSelectProps<T>,
+export function useMultiSelect<
+  T extends ListBoxOption,
+  M extends SelectionMode,
+>(
+  props: MultiSelectProps<T, M>,
   state: MultiSelectState<T>,
   ref: RefObject<HTMLElement>,
 ): MultiSelectDOMProps<T> {

@@ -43,7 +43,7 @@ export const ComponentHeader = ({
           >
             <StorybookIcon
               size={24}
-              color={'#FF4785'}
+              color='#FF4785'
             />
             Storybook
           </LinkButton>
