@@ -1,1 +1,0 @@
-const t="_button_zwcr7_1",n="_secondary_zwcr7_48",c="_tertiary_zwcr7_71",_="_iconBtn_zwcr7_91",r="_medium_zwcr7_111",o="_danger_zwcr7_116",i="_iconRight_zwcr7_138",a="_fullwidth_zwcr7_142",s="_primary_zwcr7_152",d="_loading_zwcr7_157",e={button:t,secondary:n,tertiary:c,iconBtn:_,medium:r,danger:o,iconRight:i,fullwidth:a,primary:s,loading:d};export{e as B};
