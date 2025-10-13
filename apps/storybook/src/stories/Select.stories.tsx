@@ -98,29 +98,6 @@ export const DefaultSelectedKeys: Story = {
   },
 }
 
-// TODO: Consider if we want to support the 'all' option
-// export const AllKeysSelected: Story = {
-//   args: {
-//     selectionMode: 'multiple',
-//     description: 'All options are selected',
-//     defaultValue: 'all',
-//   },
-//   play: async ({ args, canvas, step }) => {
-//     await step(
-//       'It should display and reflect the pre-selected values',
-//       async () => {
-//         const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-//         const visibleValue = canvas.getByText(/valda/, {
-//           selector: 'span',
-//         })
-
-//         expect(hiddenSelect).toHaveDisplayValue(options.map(({ name }) => name))
-//         expect(visibleValue).toBeVisible()
-//       },
-//     )
-//   },
-// }
-
 export const Disabled: Story = {
   parameters: {
     docs: {
