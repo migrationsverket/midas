@@ -177,7 +177,7 @@ const SelectComponent = <
   )
 }
 
-export const Wrapper = <
+export const SelectContainer = <
   T extends ListBoxOption,
   M extends SelectionMode = 'single',
 >(
@@ -205,11 +205,11 @@ export const Wrapper = <
   </SelectComponent>
 )
 
-export const Select = React.forwardRef(Wrapper) as <
+export const Select = React.forwardRef(SelectContainer) as <
   T extends ListBoxOption,
   M extends SelectionMode = 'single',
 >(
-  p: SelectContainerProps<T, M> & {
-    ref?: React.RefObject<HTMLButtonElement | null>
+  props: SelectContainerProps<T, M> & {
+    ref?: React.Ref<HTMLButtonElement>
   },
 ) => React.ReactElement
