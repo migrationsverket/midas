@@ -10,25 +10,16 @@ export interface SelectProps<
   T extends ListBoxOption,
   M extends SelectionMode = 'single',
 > extends AriaSelectOptions<T, M> {
-  /**
-   * Whether the element should receive focus on render.
-   */
-  autoFocus?: boolean
   children: CollectionChildren<T>
   /**
    * Sets the CSS [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) for the element.
    */
   className?: string
-  excludeFromTabOrder?: boolean
   /**
    * Whether the field can be emptied.
    *  @default true
    */
   isClearable?: boolean
-  /**
-   * Whether the field is disabled.
-   */
-  isDisabled?: boolean
   /**
    * Whether to show a button to select all items.
    */
@@ -50,17 +41,9 @@ export interface SelectProps<
    */
   showTags?: boolean
   /**
-   * The selection is valid or not
-   */
-  isInvalid?: boolean
-  /**
    * Error message to be displayed in case of invalid state
    */
   errorMessage?: string
-  /**
-   * Whether the field is required.
-   */
-  isRequired?: boolean
   /**
    * The position of the error message
    * @default "top"
