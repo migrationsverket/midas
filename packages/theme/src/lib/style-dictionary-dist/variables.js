@@ -240,12 +240,12 @@ export const transitionDurationFast = "250ms";
 export const transitionTimingEaseOut = [0, 0, 0.58, 1];
 export const transitionTimingEaseIn = [0.42, 0, 1, 1];
 export const transitionPanelCollapse = {
-  delay: 0,
+  delay: "0ms",
   duration: "300ms",
   timingFunction: [0, 0, 0.58, 1],
 };
 export const transitionPanelExpand = {
-  delay: 0,
+  delay: "0ms",
   duration: "300ms",
   timingFunction: [0.42, 0, 1, 1],
 };
