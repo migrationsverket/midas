@@ -273,6 +273,6 @@
   --midas-spacing-medium: var(--midas-size-80);
   --midas-spacing-large: var(--midas-size-100);
   --midas-spacing-xlarge: var(--midas-size-120);
-  --midas-transition-panel-collapse: var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-out) 0;
-  --midas-transition-panel-expand: var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-in) 0;
+  --midas-transition-panel-collapse: var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-out) 0ms;
+  --midas-transition-panel-expand: var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-in) 0ms;
 }

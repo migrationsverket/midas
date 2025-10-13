@@ -27,7 +27,7 @@
     "panel": {
       "collapse": {
         "$value": {
-          "delay": 0,
+          "delay": "0ms",
           "duration": "{transition.duration.normal}",
           "timingFunction": "{transition.timing.easeOut}"
         },
@@ -35,7 +35,7 @@
       },
       "expand": {
         "$value": {
-          "delay": 0,
+          "delay": "0ms",
           "duration": "{transition.duration.normal}",
           "timingFunction": "{transition.timing.easeIn}"
         },

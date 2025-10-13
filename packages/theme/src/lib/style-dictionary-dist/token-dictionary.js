@@ -3946,7 +3946,7 @@ export default {
       collapse: {
         key: "{transition.panel.collapse}",
         $value: {
-          delay: 0,
+          delay: "0ms",
           duration: "300ms",
           timingFunction: [0, 0, 0.58, 1],
         },
@@ -3955,7 +3955,7 @@ export default {
         isSource: true,
         original: {
           $value: {
-            delay: 0,
+            delay: "0ms",
             duration: "{transition.duration.normal}",
             timingFunction: "{transition.timing.easeOut}",
           },
@@ -3969,7 +3969,7 @@ export default {
       expand: {
         key: "{transition.panel.expand}",
         $value: {
-          delay: 0,
+          delay: "0ms",
           duration: "300ms",
           timingFunction: [0.42, 0, 1, 1],
         },
@@ -3978,7 +3978,7 @@ export default {
         isSource: true,
         original: {
           $value: {
-            delay: 0,
+            delay: "0ms",
             duration: "{transition.duration.normal}",
             timingFunction: "{transition.timing.easeIn}",
           },
