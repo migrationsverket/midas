@@ -1,17 +1,23 @@
-import * as React from 'react'
 import { FieldErrorContext } from 'react-aria-components'
+import { type SelectState } from 'react-stately'
 import { FieldError } from '../field-error'
 import { ListBoxOption } from '../list-box'
-import type { MultiSelectState, SelectProps } from './types'
+import type { SelectProps, SelectionMode } from './types'
 
-interface SelectFieldErrorProps extends SelectProps {
-  state: MultiSelectState<ListBoxOption>
+interface SelectFieldErrorProps<
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+> extends SelectProps<T, M> {
+  state: SelectState<T, M>
 }
 
-export const SelectFieldError: React.FC<SelectFieldErrorProps> = ({
+export const SelectFieldError = <
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+>({
   state,
   errorMessage,
-}) => (
+}: SelectFieldErrorProps<T, M>) => (
   <FieldErrorContext.Provider value={{ ...state.displayValidation }}>
     <FieldError>{errorMessage}</FieldError>
   </FieldErrorContext.Provider>

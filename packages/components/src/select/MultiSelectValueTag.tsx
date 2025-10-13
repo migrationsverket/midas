@@ -1,26 +1,33 @@
 import * as React from 'react'
 import { X } from 'lucide-react'
-import type { MultiSelectState, SelectProps } from './types'
+import type { SelectionMode, SelectProps } from './types'
 import styles from './Select.module.css'
 import { ListBoxOption } from '../list-box'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
+import { SelectState } from 'react-stately'
 
-interface MultiSelectValueTagProps extends SelectProps {
-  state: MultiSelectState<ListBoxOption>
+interface MultiSelectValueTagProps<
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+> extends SelectProps<T, M> {
+  state: SelectState<T, M>
   parentWidth: number
   onClear: () => void
   triggerRef: React.MutableRefObject<HTMLButtonElement | null>
 }
 
-export const MultiSelectValueTag: React.FC<MultiSelectValueTagProps> = ({
+export const MultiSelectValueTag = <
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+>({
   state: { selectedItems: items },
   isDisabled,
   parentWidth,
   onClear,
   triggerRef,
   isClearable,
-}) => {
+}: MultiSelectValueTagProps<T, M>) => {
   const strings = useLocalizedStringFormatter(messages)
 
   return (
@@ -32,9 +39,9 @@ export const MultiSelectValueTag: React.FC<MultiSelectValueTagProps> = ({
         className={styles.truncate}
         style={{ maxWidth: parentWidth - 92 }}
       >
-        {items?.length && items.length > 1
+        {items.length && items.length > 1
           ? `${items.length} ${strings.format('chosen')}`
-          : items?.[0].textValue}
+          : items?.[0]?.textValue}
       </span>
       {isClearable && (
         <button

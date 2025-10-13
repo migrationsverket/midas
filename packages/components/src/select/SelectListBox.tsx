@@ -1,6 +1,5 @@
-import * as React from 'react'
 import { Check } from 'lucide-react'
-import { Collection } from 'react-aria-components'
+import { Collection, SelectState } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
 import {
   ListBox,
@@ -12,16 +11,22 @@ import {
 } from '../list-box'
 import type { AriaListBoxOptions } from '@react-aria/listbox'
 import type { Node } from '@react-types/shared'
-import type { MultiSelectState } from './types'
+import type { SelectionMode } from './types'
 import styles from './Select.module.css'
 
-interface ListBoxProps<T extends ListBoxOption> extends AriaListBoxOptions<T> {
-  state: MultiSelectState<T>
+interface ListBoxProps<
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+> extends AriaListBoxOptions<T> {
+  state: SelectState<T, M>
 }
 
-interface SectionProps {
+interface SectionProps<
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+> {
   section: Node<ListBoxSectionElement>
-  state: MultiSelectState<ListBoxOption>
+  state: SelectState<T, M>
 }
 
 interface OptionProps {
@@ -62,7 +67,10 @@ const Option = ({ item }: OptionProps) => (
   </ListBoxItem>
 )
 
-const Section = ({ section, state }: SectionProps) => (
+const Section = <T extends ListBoxOption, M extends SelectionMode = 'single'>({
+  section,
+  state,
+}: SectionProps<T, M>) => (
   <ListBoxSection {...(section.value as ListBoxSectionElement)}>
     {state.collection.getChildren ? (
       <Collection items={state.collection.getChildren(section.key)}>
@@ -72,15 +80,20 @@ const Section = ({ section, state }: SectionProps) => (
   </ListBoxSection>
 )
 
-export const SelectListBox = <T extends ListBoxOption>({
+export const SelectListBox = <
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+>({
   state,
   ...rest
-}: ListBoxProps<T>) => (
+}: ListBoxProps<T, M>) => (
   <ListBox
     {...rest}
     {...state}
     escapeKeyBehavior='none'
-    onSelectionChange={state.setSelectedKeys}
+    selectionMode={state.selectionManager.selectionMode}
+    onSelectionChange={keys => state.selectionManager.setSelectedKeys(keys)}
+    selectedKeys={state.selectionManager.selectedKeys}
     items={state.collection}
   >
     {item =>

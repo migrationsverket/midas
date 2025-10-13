@@ -21,7 +21,7 @@ describe('A single Select', () => {
         label={label}
         selectionMode='single'
         options={options}
-        onSelectionChange={onchange}
+        onChange={onchange}
       />,
     )
   })
@@ -43,9 +43,7 @@ describe('A single Select', () => {
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
     await user.keyboard('[Esc]')
-    expect(onchange).toHaveBeenCalledWith(
-      expect.objectContaining(new Set(['kiwi'])),
-    )
+    expect(onchange).toHaveBeenCalledWith('kiwi')
   })
 })
 
@@ -77,6 +75,7 @@ describe('given a required single Select', () => {
         isRequired
         options={options}
         selectionMode='single'
+        validationBehavior='native'
       />,
     )
   })
@@ -108,7 +107,7 @@ describe('A multi Select', () => {
         label={label}
         selectionMode='multiple'
         options={options}
-        onSelectionChange={onchange}
+        onChange={onchange}
       />,
     )
   })
@@ -127,16 +126,12 @@ describe('A multi Select', () => {
     expect(selectButton).toHaveFocus()
     await user.keyboard('[Enter]')
     await user.keyboard('[Enter]')
-    expect(onchange).toHaveBeenCalledWith(
-      expect.objectContaining(new Set(['äpple'])),
-    )
+    expect(onchange).toHaveBeenCalledWith(['äpple'])
     expect(screen.getByDisplayValue('Äpple')).toBeInTheDocument()
     expect(screen.queryByDisplayValue('Banan')).not.toBeInTheDocument()
     await user.keyboard('[ArrowDown]')
     await user.keyboard('[Enter]')
-    expect(onchange).toHaveBeenCalledWith(
-      expect.objectContaining(new Set(['äpple', 'banan'])),
-    )
+    expect(onchange).toHaveBeenCalledWith(['äpple', 'banan'])
     expect(screen.getByDisplayValue('Äpple')).toBeInTheDocument()
     expect(screen.getByDisplayValue('Banan')).toBeInTheDocument()
   })
@@ -150,6 +145,7 @@ describe('given a required multi Select', () => {
         isRequired
         options={options}
         selectionMode='multiple'
+        validationBehavior='native'
       />,
     )
   })
@@ -165,6 +161,7 @@ describe('given a required multi Select', () => {
     await user.keyboard('[Space]')
     await user.keyboard('[Space]')
     await user.keyboard('[Escape]')
+    await user.tab()
     await user.tab()
     await user.tab()
     await user.keyboard('[Enter]')

@@ -2,18 +2,25 @@ import React from 'react'
 import { AriaButtonProps, useButton } from 'react-aria'
 import clsx from '../utils/clsx'
 import { ChevronDown } from 'lucide-react'
-import type { SelectProps, MultiSelectState } from './types'
+import type { SelectProps, SelectionMode } from './types'
 import type { ListBoxOption } from '../list-box'
 import styles from './Select.module.css'
+import { SelectState } from 'react-stately'
 
-interface SelectTriggerProps
-  extends Omit<SelectProps, 'children'>,
+interface SelectTriggerProps<
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+> extends Omit<SelectProps<T, M>, 'children' | 'value'>,
     AriaButtonProps<'button'> {
-  state: MultiSelectState<ListBoxOption>
+  state: SelectState<T, M>
   triggerRef: React.MutableRefObject<HTMLButtonElement | null>
+  children: React.ReactNode
 }
 
-export const SelectTrigger: React.FC<SelectTriggerProps> = ({
+export const SelectTrigger = <
+  T extends ListBoxOption,
+  M extends SelectionMode = 'single',
+>({
   autoFocus,
   excludeFromTabOrder,
   isDisabled,
@@ -26,7 +33,7 @@ export const SelectTrigger: React.FC<SelectTriggerProps> = ({
   children,
   triggerRef,
   ...rest
-}) => {
+}: SelectTriggerProps<T, M>) => {
   const { buttonProps } = useButton(
     { autoFocus, excludeFromTabOrder, isDisabled, ...rest },
     triggerRef,
@@ -51,11 +58,13 @@ export const SelectTrigger: React.FC<SelectTriggerProps> = ({
         ref={triggerRef}
         type='button'
       >
-        {isMultiSelect && !selectedItems ? <span>{placeholder}</span> : null}
+        {isMultiSelect && !selectedItems.length ? (
+          <span>{placeholder}</span>
+        ) : null}
 
         {!isMultiSelect ? (
           <span>
-            {selectedItems ? selectedItems[0].textValue : placeholder}
+            {selectedItems.length ? selectedItems[0].textValue : placeholder}
           </span>
         ) : null}
 

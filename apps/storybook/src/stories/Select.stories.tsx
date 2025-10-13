@@ -4,7 +4,7 @@ import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '../utils/storybook'
 import { expect, fn, spyOn, userEvent } from 'storybook/test'
 import { useState } from 'react'
-import { Selection } from 'react-aria-components'
+import { Key } from 'react-aria-components'
 
 const onChange = fn()
 const onSubmit = fn()
@@ -58,7 +58,7 @@ export const Normal: Story = {
 export const DefaultSelectedKey: Story = {
   args: {
     description: 'Kiwi is pre-selected',
-    defaultSelectedKeys: new Set(['kiwi']),
+    defaultValue: 'kiwi',
   },
   play: async ({ args, canvas, step }) => {
     await step(
@@ -79,7 +79,7 @@ export const DefaultSelectedKey: Story = {
 export const DefaultSelectedKeys: Story = {
   args: {
     description: 'Kiwi and banana are pre-selected',
-    defaultSelectedKeys: new Set(['kiwi', 'banana']),
+    defaultValue: ['kiwi', 'banana'],
     selectionMode: 'multiple',
   },
   play: async ({ args, canvas, step }) => {
@@ -98,27 +98,28 @@ export const DefaultSelectedKeys: Story = {
   },
 }
 
-export const AllKeysSelected: Story = {
-  args: {
-    selectionMode: 'multiple',
-    description: 'All options are selected',
-    defaultSelectedKeys: 'all',
-  },
-  play: async ({ args, canvas, step }) => {
-    await step(
-      'It should display and reflect the pre-selected values',
-      async () => {
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-        const visibleValue = canvas.getByText(/valda/, {
-          selector: 'span',
-        })
+// TODO: Consider if we want to support the 'all' option
+// export const AllKeysSelected: Story = {
+//   args: {
+//     selectionMode: 'multiple',
+//     description: 'All options are selected',
+//     defaultValue: 'all',
+//   },
+//   play: async ({ args, canvas, step }) => {
+//     await step(
+//       'It should display and reflect the pre-selected values',
+//       async () => {
+//         const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
+//         const visibleValue = canvas.getByText(/valda/, {
+//           selector: 'span',
+//         })
 
-        expect(hiddenSelect).toHaveDisplayValue(options.map(({ name }) => name))
-        expect(visibleValue).toBeVisible()
-      },
-    )
-  },
-}
+//         expect(hiddenSelect).toHaveDisplayValue(options.map(({ name }) => name))
+//         expect(visibleValue).toBeVisible()
+//       },
+//     )
+//   },
+// }
 
 export const Disabled: Story = {
   parameters: {
@@ -168,7 +169,7 @@ export const WithTags: Story = {
   args: {
     selectionMode: 'multiple',
     showTags: true,
-    defaultSelectedKeys: new Set(['apple', 'kiwi']),
+    defaultValue: ['apple', 'kiwi'],
   },
   play: async ({ args, canvas, step }) => {
     await step(
@@ -233,13 +234,13 @@ export const DS872: Story = {
     placeholder: 'Välj ärende',
   },
   render: args => {
-    const [selectedKey, setSelectedKey] = useState<Selection>(new Set())
+    const [selectedKey, setSelectedKey] = useState<Key | Key[] | null>(null)
 
     return (
       <Select
         {...args}
-        selectedKeys={selectedKey}
-        onSelectionChange={setSelectedKey}
+        value={selectedKey}
+        onChange={setSelectedKey}
         options={[
           { id: '12', name: 'tolv' },
           { id: '1', name: 'ett' },
@@ -292,6 +293,7 @@ export const RequiredSingleSelect: Story = {
   args: {
     selectionMode: 'single',
     isRequired: true,
+    validationBehavior: 'native',
   },
   render: args => (
     <form
