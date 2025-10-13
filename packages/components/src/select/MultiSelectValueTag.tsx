@@ -39,9 +39,9 @@ export const MultiSelectValueTag = <
         className={styles.truncate}
         style={{ maxWidth: parentWidth - 92 }}
       >
-        {items.length && items.length > 1
+        {items?.length && items.length > 1
           ? `${items.length} ${strings.format('chosen')}`
-          : items?.[0]?.textValue}
+          : items?.[0].textValue}
       </span>
       {isClearable && (
         <button
