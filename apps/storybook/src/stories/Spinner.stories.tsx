@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Button, Spinner } from '@midas-ds/components'
 import { expect } from 'storybook/test'
 import styles from '@midas-ds/components/spinner/Spinner.module.css'
+import { tokenDictionary } from '@midas-ds/theme'
 
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
@@ -12,7 +13,7 @@ const meta: Meta<typeof Spinner> = {
   },
   args: {
     small: false,
-    isOnColor: false,
+    // isOnColor: false,
     className: 'test-class',
   },
 }
@@ -35,9 +36,23 @@ export const Small: Story = {
 }
 
 export const InButton: Story = {
-  args: { small: true, isOnColor: true },
+  args: { small: true },
   render: args => (
     <Button>
+      <Spinner {...args} />
+      Laddar
+    </Button>
+  ),
+}
+
+export const customColor: Story = {
+  args: { color: tokenDictionary.brand.primary.$value },
+}
+
+export const InButtonAnotherColor: Story = {
+  args: { small: true},
+  render: args => (
+    <Button variant={'icon'}>
       <Spinner {...args} />
       Laddar
     </Button>
