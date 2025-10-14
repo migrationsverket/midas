@@ -32,13 +32,21 @@ Validering ska hjälpa våra användare att fylla i formulär rätt. Syftet är 
 
 För att undvika att användaren blir överväldigad av felmeddelanden krävs att vi har en balans mellan att ge snabb återkoppling och låta användaren jobba ostört. Vissa fält ska ge omedelbar feedback när användaren lämnar dem, medan andra bara ska valideras vid efter att formuläret skickats.
 
-### Validering efter att användaren skickat in formuläret
+### Fält som är obligatoriska men inte kan valideras mot format
 
-Fält som är obligatoriska men inte kan valideras mot ett specifikt format, tex obligatoriska fritextfält, valideras efter att användaren skickat in formuläret.
+Fält som användaren måste fylla i men inte har ett bestämt format eller regel valideras efter att användaren försökt skicka in formuläret.
 
-### Validering när användaren lämnar fältet
+Exempel: Namn, fritextfält
 
-Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsregel eller kan validera mot en databas, ska valideras när användaren lämnar fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
+Motivering: Det finns inget "fel" förrän fältet är tomt vid inskick. Att validera dessa fält när användaren lämnar dem här riskerar att ge onödig stress och distraktion.
+
+### Fält med validerbart format eller regel
+
+Fält där vi har ett bestämt format eller regel valideras när användaren lämnat fältet. När användaren har rättat felet så återgår fältet till ursprungsläget och har inte längre något felmeddelande.
+
+Exempel: e-postadress, telefonnummer, organisationsnummer/personnummer och postnummer
+
+Motivering: Eftersom vi direkt kan avgöra om värdet är ogiltigt kan vi snabbt ge feedback, vilket sparar tid för användaren och förhindrar fel längre fram.
 
 <div className='card'>
   <TextField
@@ -49,6 +57,12 @@ Fält där vi direkt kan identifiera ett fel, tex där vi har en formateringsreg
     errorPosition='top'
   />
 </div>
+
+### Fält som kräver kontroll mot databas eller extern källa
+
+Fält som kontrolleras mot databas eller extern källa valideras efter användaren lämnat fältet. [Visa en spinner om systemet behöver ladda.](./page-loading.mdx)
+
+Exempel: Kontollera om kortnummer är giltigt
 
 ## Felmeddelandelista
 
