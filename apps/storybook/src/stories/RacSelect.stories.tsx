@@ -13,7 +13,7 @@ const meta: Meta<typeof RacSelect> = {
   component: RacSelect,
   title: 'Components/RacSelect',
   tags: ['autodocs'],
-  args: {
+/*  args: {
     description: 'Description',
     // isClearable: true,
     isDisabled: false,
@@ -26,13 +26,17 @@ const meta: Meta<typeof RacSelect> = {
     // errorPosition: 'top',
     onSelectionChange: onChange,
     // size: 'large',
-  },
+  },*/
 }
 export default meta
 type Story = StoryObj<typeof RacSelect>
 
 
 export const StaticItems: Story = {
+  args: {
+    label: 'label',
+    description: 'static'
+  },
   render: args => (
     <RacSelect>
       <RacItem>Hello</RacItem>
