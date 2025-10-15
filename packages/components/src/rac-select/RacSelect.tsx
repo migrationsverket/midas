@@ -14,6 +14,7 @@ import {
   // ListBoxItem,
   // Popover
 } from 'react-aria-components'
+import { FocusScope } from '@react-aria/focus'
 import {
   FieldError,
   Label,
@@ -71,60 +72,61 @@ export function RacSelect<
   const triggerRef = useRef<HTMLButtonElement | null>(null)
 
   return (
-    <Select
-      {...props}
-      className={styles.select}
-    >
-      <LabelWrapper popover={popover}>
-        {label && (
-          <Label data-disabled={props.isDisabled || undefined}>{label}</Label>
-        )}
-      </LabelWrapper>
-      {description && <Text slot='description'>{description}</Text>}
-      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
-      <div
-        className={styles.triggerContainer}
-        data-disabled={props.isDisabled || undefined}
+    <FocusScope>
+      <Select
+        {...props}
+        className={styles.select}
       >
-        <Button
-          className={styles.trigger}
-          ref={triggerRef}
-        >
-          <span aria-hidden='true'>
-            <ChevronDown size={16} />
-          </span>
-        </Button>
-        <SelectValue
-          className={styles.selectValue}
+        <LabelWrapper popover={popover}>
+          {label && (
+            <Label data-disabled={props.isDisabled || undefined}>{label}</Label>
+          )}
+        </LabelWrapper>
+        {description && <Text slot='description'>{description}</Text>}
+        {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
+        <div
+          className={styles.triggerContainer}
           data-disabled={props.isDisabled || undefined}
         >
-          {renderProps =>
-            renderProps.isPlaceholder || selectionMode === 'single' ? (
-              renderProps.defaultChildren
-            ) : (
-              <SelectValueTag
-                {...props}
-                {...renderProps}
-                triggerRef={triggerRef}
-              />
-            )
-          }
-        </SelectValue>
-      </div>
-      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <Popover
-        className={styles.popover}
-        offset={0}
-      >
-        <SelectListBox
-          disallowEmptySelection={!props.isClearable}
-          items={items}
+          <Button
+            className={styles.trigger}
+            ref={triggerRef}
+          >
+            <span aria-hidden='true'>
+              <ChevronDown size={16} />
+            </span>
+          </Button>
+          <SelectValue
+            className={`${styles.selectValue} ${styles.truncate}`}
+            data-disabled={props.isDisabled || undefined}
+          >
+            {renderProps =>
+              renderProps.isPlaceholder || selectionMode === 'single' ? (
+                renderProps.defaultChildren
+              ) : (
+                <SelectValueTag
+                  {...props}
+                  {...renderProps}
+                />
+              )
+            }
+          </SelectValue>
+        </div>
+        {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
+        <Popover
+          className={styles.popover}
+          offset={0}
         >
-          {children}
-        </SelectListBox>
-      </Popover>
-      <SelectTags {...props} />
-    </Select>
+          <SelectListBox
+            disallowEmptySelection={!props.isClearable}
+            items={items}
+          >
+            {children}
+          </SelectListBox>
+        </Popover>
+        <SelectTags {...props} />
+      </Select>
+    </FocusScope>
   )
 }
 
