@@ -27,6 +27,7 @@ import styles from './RacSelect.module.css'
 import { useRef } from 'react'
 import { SelectValueTag } from './SelectValueTag'
 import { LabelWrapper } from '../label/LabelWrapper'
+import { SelectTags } from './SelectTags'
 
 export interface RacSelectProps<
   T extends object,
@@ -45,6 +46,10 @@ export interface RacSelectProps<
    * @default "top"
    */
   errorPosition?: 'top' | 'bottom'
+  /**
+   * Show selected items as tags below select
+   */
+  showTags?: boolean
 }
 
 export function RacSelect<
@@ -108,6 +113,7 @@ export function RacSelect<
       <Popover className={styles.popover}>
         <ListBox items={items}>{children}</ListBox>
       </Popover>
+      <SelectTags {...props} />
     </Select>
   )
 }

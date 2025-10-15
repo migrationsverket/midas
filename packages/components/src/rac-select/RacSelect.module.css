@@ -178,3 +178,7 @@
     }
   }
 }
+
+.tagGroup {
+  margin-top: var(--midas-size-40);
+}
