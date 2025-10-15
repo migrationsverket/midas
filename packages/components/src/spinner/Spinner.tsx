@@ -11,8 +11,8 @@ export interface SpinnerProps {
    */
   small?: boolean
   /**
-   * @deprecated since v14, define color based on context
-   * For use on coloured background
+   * @deprecated since v14, define color based on context. Use `color` prop instead.
+   *
    * @default false
    */
   isOnColor?: boolean
