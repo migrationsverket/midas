@@ -40,6 +40,11 @@ export interface RacSelectProps<
   isClearable?: boolean
   /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
   popover?: InfoPopoverProps
+  /**
+   * The position of the error message
+   * @default "top"
+   */
+  errorPosition?: 'top' | 'bottom'
 }
 
 export function RacSelect<
@@ -54,7 +59,7 @@ export function RacSelect<
   popover,
   ...props
 }: RacSelectProps<T, M>) {
-  const { selectionMode = 'single' } = props
+  const { selectionMode = 'single', errorPosition = 'top' } = props
 
   const triggerRef = useRef<HTMLButtonElement | null>(null)
 
@@ -69,6 +74,7 @@ export function RacSelect<
         )}
       </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
+      {errorPosition === 'top' && <FieldError>{errorMessage}</FieldError>}
       <div
         className={styles.triggerContainer}
         data-disabled={props.isDisabled || undefined}
@@ -98,7 +104,7 @@ export function RacSelect<
           }
         </SelectValue>
       </div>
-      <FieldError>{errorMessage}</FieldError>
+      {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
       <Popover className={styles.popover}>
         <ListBox items={items}>{children}</ListBox>
       </Popover>
