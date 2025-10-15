@@ -14,11 +14,19 @@ import {
   // ListBoxItem,
   // Popover
 } from 'react-aria-components'
-import { FieldError, Label, Text, ListBoxItem, Popover } from '../'
+import {
+  FieldError,
+  Label,
+  Text,
+  ListBoxItem,
+  Popover,
+  InfoPopoverProps,
+} from '../'
 import { ChevronDown } from 'lucide-react'
 import styles from './RacSelect.module.css'
 import { useRef } from 'react'
 import { SelectValueTag } from './SelectValueTag'
+import { LabelWrapper } from '../label/LabelWrapper'
 
 export interface RacSelectProps<
   T extends object,
@@ -30,6 +38,8 @@ export interface RacSelectProps<
   items?: Iterable<T>
   children: React.ReactNode | ((item: T) => React.ReactNode)
   isClearable?: boolean
+  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
+  popover?: InfoPopoverProps
 }
 
 export function RacSelect<
@@ -41,6 +51,7 @@ export function RacSelect<
   errorMessage,
   children,
   items,
+  popover,
   ...props
 }: RacSelectProps<T, M>) {
   const { selectionMode = 'single' } = props
@@ -52,7 +63,11 @@ export function RacSelect<
       {...props}
       className={styles.select}
     >
-      <Label>{label}</Label>
+      <LabelWrapper popover={popover}>
+        {label && (
+          <Label data-disabled={props.isDisabled || undefined}>{label}</Label>
+        )}
+      </LabelWrapper>
       {description && <Text slot='description'>{description}</Text>}
       <div
         className={styles.triggerContainer}
