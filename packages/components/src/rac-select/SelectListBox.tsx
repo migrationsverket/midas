@@ -29,7 +29,6 @@ export const SelectListBox = <
     <ListBox
       {...props}
       escapeKeyBehavior='none'
-      selectionMode={state?.selectionManager.selectionMode}
       onSelectionChange={handleSelectionChange}
     />
   )
