@@ -13,7 +13,7 @@ export default function App() {
             console.log('change', x)
           }}
         >
-          <RacItem>Hello</RacItem>
+          <RacItem>Very long string that goes on for a long time Very long string that goes on for a long timeVery long string that goes on for a long time </RacItem>
           <RacItem>Goodbye</RacItem>
         </RacSelect>
         <RacSelect
@@ -30,7 +30,7 @@ export default function App() {
           <RacItem>Banan</RacItem>
           <RacItem>Glass</RacItem>
           <RacItem>Äpple</RacItem>
-          <RacItem>Gemini</RacItem>
+          <RacItem>Gemini GEMINI GEMINI GEMINI GEMINI Gemini GEMINI GEMINI GEMINI GEMINI GEMINI GEMINI GEMINI GEMINI Gemini GEMINI GEMINI GEMINI GEMINI</RacItem>
           <RacItem>Gråsugga</RacItem>
           <RacItem>Valhaj</RacItem>
           <RacItem>Kladdkaka</RacItem>
@@ -45,6 +45,23 @@ export default function App() {
             console.log('change', x)
           }}
         >
+          <RacItem>Hello</RacItem>
+          <RacItem>Goodbye</RacItem>
+        </RacSelect>
+        <RacSelect
+          showTags
+          selectionMode={'multiple'}
+          errorMessage={'Error message'}
+          label={'Show me the tags'}
+          description={'Description'}
+          onChange={x => {
+            console.log('change', x)
+          }}
+        >
+          <RacItem>Hello</RacItem>
+          <RacItem>Goodbye</RacItem>
+          <RacItem>Hello</RacItem>
+          <RacItem>Goodbye</RacItem>
           <RacItem>Hello</RacItem>
           <RacItem>Goodbye</RacItem>
         </RacSelect>
