@@ -1,19 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RacSelect, RacItem } from '@midas-ds/components'
-import { RunOptions } from 'axe-core'
-import { options, optionsWithSections } from '../utils/storybook'
-import { expect, fn, spyOn, userEvent } from 'storybook/test'
-import { useState } from 'react'
-import { Selection } from 'react-aria-components'
+// import { RunOptions } from 'axe-core'
+import {
+  options,
+  // optionsWithSections
+} from '../utils/storybook'
+import {
+  expect,
+  // fn,
+  // spyOn,
+  userEvent,
+} from 'storybook/test'
+// import { useState } from 'react'
+// import { Selection } from 'react-aria-components'
 
-const onChange = fn()
-const onSubmit = fn()
+// const onChange = fn()
+// const onSubmit = fn()
 
 const meta: Meta<typeof RacSelect> = {
   component: RacSelect,
   title: 'Components/RacSelect',
   tags: ['autodocs'],
-/*  args: {
+  /*  args: {
     description: 'Description',
     // isClearable: true,
     isDisabled: false,
@@ -31,18 +39,17 @@ const meta: Meta<typeof RacSelect> = {
 export default meta
 type Story = StoryObj<typeof RacSelect>
 
-
 export const StaticItems: Story = {
   args: {
     label: 'label',
-    description: 'static'
+    description: 'static',
   },
   render: args => (
-    <RacSelect>
+    <RacSelect {...args}>
       <RacItem>Hello</RacItem>
       <RacItem>Goodbye</RacItem>
     </RacSelect>
-  )
+  ),
 }
 
 export const Normal: Story = {
@@ -61,7 +68,7 @@ export const Normal: Story = {
         await expect(visibleValue).toBeVisible()
       },
     )
-/*    await step('it should change size according to size prop', async () => {
+    /*    await step('it should change size according to size prop', async () => {
       await expect(canvas.getByRole('button')).toHaveStyle({
         height: args.size === 'large' ? '48px' : '40px',
       })
