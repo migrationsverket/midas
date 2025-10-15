@@ -1,11 +1,15 @@
-import { SelectValueRenderProps } from 'react-aria-components'
+import {
+  SelectValueRenderProps,
+  SelectStateContext,
+  Button,
+} from 'react-aria-components'
+import { useFocusManager } from 'react-aria'
 import { X } from 'lucide-react'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { type RacSelectProps } from './RacSelect'
 import messages from './intl/translations.json'
 import styles from './RacSelect.module.css'
 import React from 'react'
-import useObserveElement from '../utils/useObserveElement'
 
 interface SelectValueTagProps<
   T extends object,
@@ -24,14 +28,9 @@ export const SelectValueTag = <
   isDisabled,
   selectedItems,
   selectedText,
-  triggerRef,
-  state,
 }: SelectValueTagProps<T, M>) => {
-  const strings = useLocalizedStringFormatter(messages)
 
-  const { width: triggerWidth } = useObserveElement(triggerRef.current, {
-    includePadding: true,
-  })
+  const strings = useLocalizedStringFormatter(messages)
 
   const formatString = () => {
     if (selectedItems.length === 1) {
@@ -48,26 +47,34 @@ export const SelectValueTag = <
     >
       <span
         className={styles.truncate}
-        style={{ maxWidth: triggerWidth - 92 }}
       >
         {formatString()}
       </span>
       {isClearable && (
-        <button
-          aria-label={strings.format('clearAll')}
-          className={styles.clearButton}
-          disabled={isDisabled}
-          onClick={() => {
-            state.selectionManager.clearSelection()
-            triggerRef?.current?.focus()
-          }}
-        >
-          <X
-            width={20}
-            height={20}
-          />
-        </button>
+        <SelectClearButton />
       )}
     </div>
+  )
+}
+
+function SelectClearButton() {
+  let state = React.useContext(SelectStateContext)
+  const strings = useLocalizedStringFormatter(messages)
+  let focusManager = useFocusManager()
+  return (
+    <Button
+      slot={null}
+      aria-label={strings.format('clearAll')}
+      className={styles.clearButton}
+      onPress={() => {
+        focusManager?.focusFirst()
+        state?.setValue(null)
+      }}
+    >
+      <X
+        width={20}
+        height={20}
+      />
+    </Button>
   )
 }
