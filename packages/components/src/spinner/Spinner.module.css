@@ -3,7 +3,6 @@
 }
 
 .spinner {
-  color: var(--midas-icon-primary);
   animation: rotating 1s linear infinite;
   stroke-linecap: square;
 
@@ -16,6 +15,11 @@
   }
 }
 
+.large {
+  color: var(--midas-icon-tertiary);
+}
+
+/* @deprecated ,class will not be used when isOnColor is removed */
 .dark {
   color: var(--midas-icon-on-color);
 
