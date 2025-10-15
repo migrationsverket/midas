@@ -57,7 +57,7 @@
   font-family: var(--midas-typography-font-family);
   line-height: 1;
   margin-bottom: 0;
-  padding: var(--midas-size-80);
+  padding: var(--midas-size-70) var(--midas-size-80);
   transition: background-color 60ms;
 
   &:hover:not([data-disabled]) {
