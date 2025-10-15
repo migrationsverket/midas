@@ -10,7 +10,7 @@ import {
   // Label,
   SelectValue,
   Button,
-  ListBox,
+  // ListBox,
   // ListBoxItem,
   // Popover
 } from 'react-aria-components'
@@ -28,6 +28,8 @@ import { useRef } from 'react'
 import { SelectValueTag } from './SelectValueTag'
 import { LabelWrapper } from '../label/LabelWrapper'
 import { SelectTags } from './SelectTags'
+import { SelectListBox } from './SelectListBox'
+import clsx from '../utils/clsx'
 
 export interface RacSelectProps<
   T extends object,
@@ -110,19 +112,27 @@ export function RacSelect<
         </SelectValue>
       </div>
       {errorPosition === 'bottom' && <FieldError>{errorMessage}</FieldError>}
-      <Popover className={styles.popover}>
-        <ListBox items={items}>{children}</ListBox>
+      <Popover
+        className={styles.popover}
+        offset={0}
+      >
+        <SelectListBox
+          disallowEmptySelection={!props.isClearable}
+          items={items}
+        >
+          {children}
+        </SelectListBox>
       </Popover>
       <SelectTags {...props} />
     </Select>
   )
 }
 
-export function RacItem(props: ListBoxItemProps) {
+export function RacItem({ className, ...rest }: ListBoxItemProps) {
   return (
     <ListBoxItem
-      {...props}
-      className={styles.listBoxItem}
+      className={clsx(className, styles.listBoxItem)}
+      {...rest}
       /*className={({ isFocused, isSelected }) =>
         `item${isFocused ? 'focused' : ''} ${isSelected ? 'selected' : ''}`
       }*/
