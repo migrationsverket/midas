@@ -142,6 +142,9 @@
 }
 
 .popover {
+  font-size: var(--midas-typography-font-size-30);
+  padding: 0;
+
   &[data-trigger='Select'] {
     border: 2px dashed red;
 
@@ -166,14 +169,22 @@
 
   .listBoxItem {
     border: 2px dashed blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     &[data-selected] {
       &::after {
-        content: '✓';
-        alt: ' ';
-        position: relative;
-        top: 4px;
-        left: 4px;
+        content: '';
+        background-color: var(--midas-text-primary);
+        width: var(--midas-size-80);
+        height: var(--midas-size-80);
+        mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
+        mask-size: var(--midas-size-80) var(--midas-size-80);
+
+        @media (forced-colors: active) {
+          filter: invert(1);
+        }
       }
     }
   }
