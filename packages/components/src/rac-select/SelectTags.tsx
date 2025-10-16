@@ -4,7 +4,7 @@ import { Tag, TagGroup } from '../tag'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { RacSelectProps } from './RacSelect'
 import messages from './intl/translations.json'
-import { SelectionMode } from '../select'
+import { SelectionMode } from '../rac-select'
 import styles from './RacSelect.module.css'
 
 type SelectTagsProps<

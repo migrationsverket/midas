@@ -9,7 +9,7 @@ import { useLocalizedStringFormatter } from '../utils/intl'
 import { type RacSelectProps } from './RacSelect'
 import messages from './intl/translations.json'
 import React from 'react'
-import { SelectionMode } from '../select'
+import { SelectionMode } from '../rac-select'
 import styles from './RacSelect.module.css'
 
 type SelectValueTagProps<

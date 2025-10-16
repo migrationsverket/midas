@@ -7,7 +7,7 @@ import {
 } from 'react-aria-components'
 import { ListBox } from '../list-box'
 import { RacSelectProps } from './RacSelect'
-import { SelectionMode } from '../select'
+import { SelectionMode } from '../rac-select'
 
 type SelectListBoxProps<
   T extends object,
