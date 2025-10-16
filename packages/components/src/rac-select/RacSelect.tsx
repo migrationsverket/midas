@@ -31,6 +31,7 @@ import { LabelWrapper } from '../label/LabelWrapper'
 import { SelectTags } from './SelectTags'
 import { SelectListBox } from './SelectListBox'
 import clsx from '../utils/clsx'
+import { SelectAll } from './SelectAll'
 
 export interface RacSelectProps<
   T extends object,
@@ -53,6 +54,10 @@ export interface RacSelectProps<
    * Show selected items as tags below select
    */
   showTags?: boolean
+  /**
+   * Whether to show a button to select all items.
+   */
+  isSelectableAll?: boolean
 }
 
 export function RacSelect<
@@ -117,6 +122,7 @@ export function RacSelect<
           className={styles.popover}
           offset={0}
         >
+          {props.isSelectableAll && <SelectAll />}
           <SelectListBox
             disallowEmptySelection={!props.isClearable}
             items={items}

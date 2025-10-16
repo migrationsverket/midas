@@ -29,7 +29,6 @@ export const SelectValueTag = <
   selectedItems,
   selectedText,
 }: SelectValueTagProps<T, M>) => {
-
   const strings = useLocalizedStringFormatter(messages)
 
   const formatString = () => {
@@ -45,31 +44,30 @@ export const SelectValueTag = <
       className={styles.selectValueTag}
       data-disabled={isDisabled || undefined}
     >
-      <span
-        className={styles.truncate}
-      >
-        {formatString()}
-      </span>
-      {isClearable && (
-        <SelectClearButton />
-      )}
+      <span className={styles.truncate}>{formatString()}</span>
+      {isClearable && <SelectClearButton />}
     </div>
   )
 }
 
 function SelectClearButton() {
-  let state = React.useContext(SelectStateContext)
+  const state = React.useContext(SelectStateContext)
+
   const strings = useLocalizedStringFormatter(messages)
-  let focusManager = useFocusManager()
+
+  const focusManager = useFocusManager()
+
+  const handlePress = () => {
+    focusManager?.focusFirst()
+    state?.setValue(null)
+  }
+
   return (
     <Button
-      slot={null}
       aria-label={strings.format('clearAll')}
       className={styles.clearButton}
-      onPress={() => {
-        focusManager?.focusFirst()
-        state?.setValue(null)
-      }}
+      onPress={handlePress}
+      slot={null}
     >
       <X
         width={20}
