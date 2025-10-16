@@ -16,7 +16,6 @@ interface SelectValueTagProps<
   M extends 'single' | 'multiple' = 'single',
 > extends SelectValueRenderProps<T>,
     Pick<RacSelectProps<T, M>, 'isDisabled' | 'isClearable'> {
-  triggerRef: React.RefObject<HTMLButtonElement>
   defaultChildren: React.ReactNode | undefined
 }
 
