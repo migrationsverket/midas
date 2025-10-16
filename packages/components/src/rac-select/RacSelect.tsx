@@ -1,31 +1,13 @@
-import {
-  Collection,
-  ListBoxItemProps,
-  SelectProps,
-  ValidationResult,
-} from 'react-aria-components'
-import {
-  // FieldError,
-  // Text,
-  Select,
-  // Label,
-  SelectValue,
-  Button,
-  // ListBox,
-  // ListBoxItem,
-  // Popover
-} from 'react-aria-components'
+import { SelectProps, ValidationResult } from 'react-aria-components'
+import { Select, SelectValue, Button } from 'react-aria-components'
 import { FocusScope } from '@react-aria/focus'
 import {
   FieldError,
   Label,
   Text,
-  ListBoxItem,
   Popover,
   InfoPopoverProps,
   type Size,
-  ListBoxSection,
-  ListBoxSectionElement,
 } from '../'
 import { ChevronDown } from 'lucide-react'
 import styles from './RacSelect.module.css'
@@ -150,24 +132,5 @@ export function RacSelect<
         <SelectTags {...props} />
       </Select>
     </FocusScope>
-  )
-}
-
-export function RacItem({ className, ...rest }: ListBoxItemProps) {
-  return (
-    <ListBoxItem
-      className={clsx(className, styles.listBoxItem)}
-      {...rest}
-    />
-  )
-}
-
-export function RacSection<T extends ListBoxSectionElement>(props: T) {
-  return (
-    <ListBoxSection {...props}>
-      <Collection items={props.children}>
-        {item => <RacItem key={item.id}>{item.name}</RacItem>}
-      </Collection>
-    </ListBoxSection>
   )
 }

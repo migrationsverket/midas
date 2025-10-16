@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
   RacSelect,
-  RacItem,
+  ListBoxItem,
   ListBoxSection,
-  RacSection,
-  ListBoxSectionElement,
+  ListBoxHeader,
 } from '@midas-ds/components'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '../utils/storybook'
 import { expect, fn, spyOn, userEvent, within } from 'storybook/test'
 import { useState } from 'react'
-import { type Key } from 'react-aria-components'
+import { Collection, type Key } from 'react-aria-components'
 
 const onChange = fn()
 const onSubmit = fn()
@@ -21,13 +20,14 @@ type Story<
 > = StoryObj<typeof RacSelect<T, M>>
 
 type Item = (typeof options)[0]
+type Section = (typeof optionsWithSections)[0]
 
 export default {
   component: RacSelect,
   title: 'Components/RacSelect',
   tags: ['autodocs'],
   args: {
-    children: item => <RacItem {...item}>{item.name}</RacItem>,
+    children: item => <ListBoxItem {...item}>{item.name}</ListBoxItem>,
     description: 'Description',
     isClearable: true,
     isDisabled: false,
@@ -49,8 +49,8 @@ export const StaticItems: Story = {
     description: 'static',
     children: (
       <>
-        <RacItem>Hello</RacItem>
-        <RacItem>Goodbye</RacItem>
+        <ListBoxItem>Hello</ListBoxItem>
+        <ListBoxItem>Goodbye</ListBoxItem>
       </>
     ),
   },
@@ -275,28 +275,32 @@ export const StaticSections: Story = {
   args: {
     children: (
       <>
-        <ListBoxSection name='Fruit'>
-          <RacItem id='Apple'>Apple</RacItem>
-          <RacItem id='Banana'>Banana</RacItem>
+        <ListBoxSection>
+          <ListBoxHeader>Fruit</ListBoxHeader>
+          <ListBoxItem id='Apple'>Apple</ListBoxItem>
+          <ListBoxItem id='Banana'>Banana</ListBoxItem>
         </ListBoxSection>
-        <ListBoxSection name='Vegetables'>
-          <RacItem id='Cabbage'>Cabbage</RacItem>
-          <RacItem id='Broccoli'>Broccoli</RacItem>
+        <ListBoxSection>
+          <ListBoxHeader>Vegetables</ListBoxHeader>
+          <ListBoxItem id='Cabbage'>Cabbage</ListBoxItem>
+          <ListBoxItem id='Broccoli'>Broccoli</ListBoxItem>
         </ListBoxSection>
       </>
     ),
   },
 }
 
-export const DynamicSections: Story<ListBoxSectionElement> = {
+export const DynamicSections: Story<Section> = {
   args: {
     ...Normal.args,
     items: optionsWithSections,
     children: section => (
-      <RacSection
-        {...section}
-        id={section.name}
-      />
+      <ListBoxSection id={section.name}>
+        <ListBoxHeader>{section.name}</ListBoxHeader>
+        <Collection items={section.children}>
+          {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+        </Collection>
+      </ListBoxSection>
     ),
   },
   play: async ({ step }) => {
