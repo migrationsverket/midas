@@ -22,6 +22,7 @@ import {
   ListBoxItem,
   Popover,
   InfoPopoverProps,
+  type Size,
 } from '../'
 import { ChevronDown } from 'lucide-react'
 import styles from './RacSelect.module.css'
@@ -58,6 +59,10 @@ export interface RacSelectProps<
    * Whether to show a button to select all items.
    */
   isSelectableAll?: boolean
+  /** Component size (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   */
+  size?: Size
 }
 
 export function RacSelect<
@@ -72,7 +77,11 @@ export function RacSelect<
   popover,
   ...props
 }: RacSelectProps<T, M>) {
-  const { selectionMode = 'single', errorPosition = 'top' } = props
+  const {
+    selectionMode = 'single',
+    errorPosition = 'top',
+    size = 'large',
+  } = props
 
   const triggerRef = useRef<HTMLButtonElement | null>(null)
 
@@ -94,7 +103,12 @@ export function RacSelect<
           data-disabled={props.isDisabled || undefined}
         >
           <Button
-            className={styles.trigger}
+            className={clsx(
+              {
+                [styles.medium]: size === 'medium',
+              },
+              styles.trigger,
+            )}
             ref={triggerRef}
           >
             <span aria-hidden='true'>
