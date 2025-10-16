@@ -4,6 +4,7 @@ import {
   ListBoxItem,
   ListBoxSection,
   ListBoxHeader,
+  SelectionMode,
 } from '@midas-ds/components'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '../utils/storybook'
@@ -16,7 +17,7 @@ const onSubmit = fn()
 
 type Story<
   T extends object = Item,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 > = StoryObj<typeof RacSelect<T, M>>
 
 type Item = (typeof options)[0]

@@ -8,20 +8,19 @@ import { X } from 'lucide-react'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { type RacSelectProps } from './RacSelect'
 import messages from './intl/translations.json'
-import styles from './RacSelect.module.css'
 import React from 'react'
+import { SelectionMode } from '../select'
+import styles from './RacSelect.module.css'
 
-interface SelectValueTagProps<
+type SelectValueTagProps<
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
-> extends SelectValueRenderProps<T>,
-    Pick<RacSelectProps<T, M>, 'isDisabled' | 'isClearable'> {
-  defaultChildren: React.ReactNode | undefined
-}
+  M extends SelectionMode = 'single',
+> = SelectValueRenderProps<T> &
+  Pick<RacSelectProps<T, M>, 'isDisabled' | 'isClearable'>
 
 export const SelectValueTag = <
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 >({
   isClearable = true,
   isDisabled,
@@ -49,7 +48,7 @@ export const SelectValueTag = <
   )
 }
 
-function SelectClearButton() {
+const SelectClearButton = () => {
   const state = React.useContext(SelectStateContext)
 
   const strings = useLocalizedStringFormatter(messages)

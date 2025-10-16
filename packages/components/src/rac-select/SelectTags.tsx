@@ -4,16 +4,17 @@ import { Tag, TagGroup } from '../tag'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import { RacSelectProps } from './RacSelect'
 import messages from './intl/translations.json'
+import { SelectionMode } from '../select'
 import styles from './RacSelect.module.css'
 
 type SelectTagsProps<
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 > = Pick<RacSelectProps<T, M>, 'showTags' | 'isDisabled'>
 
 export const SelectTags = <
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 >({
   showTags,
   isDisabled,

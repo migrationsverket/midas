@@ -1,49 +1,55 @@
-import { SelectProps, ValidationResult } from 'react-aria-components'
-import { Select, SelectValue, Button } from 'react-aria-components'
-import { FocusScope } from '@react-aria/focus'
+import * as React from 'react'
 import {
-  FieldError,
-  Label,
-  Text,
-  Popover,
-  InfoPopoverProps,
-  type Size,
-} from '../'
+  SelectProps,
+  ValidationResult,
+  Select,
+  SelectValue,
+  Button,
+} from 'react-aria-components'
+import { FocusScope } from '@react-aria/focus'
 import { ChevronDown } from 'lucide-react'
-import styles from './RacSelect.module.css'
-import { useRef } from 'react'
-import { SelectValueTag } from './SelectValueTag'
+import { Label, type InfoPopoverProps } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
-import { SelectTags } from './SelectTags'
-import { SelectListBox } from './SelectListBox'
 import clsx from '../utils/clsx'
+import { Size } from '../common/types'
+import { Text } from '../text'
+import { FieldError } from '../field-error'
+import { Popover } from '../popover'
 import { SelectAll } from './SelectAll'
+import { SelectValueTag } from './SelectValueTag'
+import { SelectListBox } from './SelectListBox'
+import { SelectTags } from './SelectTags'
+import styles from './RacSelect.module.css'
+
+export type SelectionMode = 'single' | 'multiple'
 
 export interface RacSelectProps<
   T extends object,
-  M extends 'single' | 'multiple',
+  M extends SelectionMode = 'single',
 > extends Omit<SelectProps<T, M>, 'children'> {
-  label?: string
+  children: React.ReactNode | ((item: T) => React.ReactNode)
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
-  items?: Iterable<T>
-  children: React.ReactNode | ((item: T) => React.ReactNode)
-  isClearable?: boolean
-  /** An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button. */
-  popover?: InfoPopoverProps
   /**
    * The position of the error message
    * @default "top"
    */
   errorPosition?: 'top' | 'bottom'
-  /**
-   * Show selected items as tags below select
-   */
-  showTags?: boolean
+  isClearable?: boolean
   /**
    * Whether to show a button to select all items.
    */
   isSelectableAll?: boolean
+  items?: Iterable<T>
+  label?: string
+  /**
+   * An assistive text that helps the user understand the field better. Will be hidden in a popover with an info icon button.
+   */
+  popover?: InfoPopoverProps
+  /**
+   * Show selected items as tags below select
+   */
+  showTags?: boolean
   /** Component size (large: height 48px, medium: height 40px)
    *  @default 'large'
    */
@@ -52,29 +58,23 @@ export interface RacSelectProps<
 
 export function RacSelect<
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 >({
-  label,
+  children,
   description,
   errorMessage,
-  children,
+  errorPosition = 'top',
   items,
+  label,
   popover,
+  size = 'large',
   ...props
 }: RacSelectProps<T, M>) {
-  const {
-    selectionMode = 'single',
-    errorPosition = 'top',
-    size = 'large',
-  } = props
-
-  const triggerRef = useRef<HTMLButtonElement | null>(null)
-
   return (
     <FocusScope>
       <Select
         {...props}
-        className={styles.select}
+        className={clsx(props.className, styles.select)}
       >
         <LabelWrapper popover={popover}>
           {label && (
@@ -94,7 +94,6 @@ export function RacSelect<
               },
               styles.trigger,
             )}
-            ref={triggerRef}
           >
             <span aria-hidden='true'>
               <ChevronDown size={16} />
@@ -105,7 +104,8 @@ export function RacSelect<
             data-disabled={props.isDisabled || undefined}
           >
             {renderProps =>
-              renderProps.isPlaceholder || selectionMode === 'single' ? (
+              renderProps.isPlaceholder ||
+              props.selectionMode !== 'multiple' ? (
                 renderProps.defaultChildren
               ) : (
                 <SelectValueTag

@@ -7,15 +7,16 @@ import {
 } from 'react-aria-components'
 import { ListBox } from '../list-box'
 import { RacSelectProps } from './RacSelect'
+import { SelectionMode } from '../select'
 
 type SelectListBoxProps<
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 > = Pick<RacSelectProps<T, M>, 'children' | 'items'> & AriaListBoxOptions<T>
 
 export const SelectListBox = <
   T extends object,
-  M extends 'single' | 'multiple' = 'single',
+  M extends SelectionMode = 'single',
 >(
   props: SelectListBoxProps<T, M>,
 ) => {
