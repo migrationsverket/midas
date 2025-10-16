@@ -1,4 +1,5 @@
 import {
+  Collection,
   ListBoxItemProps,
   SelectProps,
   ValidationResult,
@@ -23,6 +24,8 @@ import {
   Popover,
   InfoPopoverProps,
   type Size,
+  ListBoxSection,
+  ListBoxSectionElement,
 } from '../'
 import { ChevronDown } from 'lucide-react'
 import styles from './RacSelect.module.css'
@@ -155,9 +158,16 @@ export function RacItem({ className, ...rest }: ListBoxItemProps) {
     <ListBoxItem
       className={clsx(className, styles.listBoxItem)}
       {...rest}
-      /*className={({ isFocused, isSelected }) =>
-        `item${isFocused ? 'focused' : ''} ${isSelected ? 'selected' : ''}`
-      }*/
     />
+  )
+}
+
+export function RacSection<T extends ListBoxSectionElement>(props: T) {
+  return (
+    <ListBoxSection {...props}>
+      <Collection items={props.children}>
+        {item => <RacItem key={item.id}>{item.name}</RacItem>}
+      </Collection>
+    </ListBoxSection>
   )
 }
