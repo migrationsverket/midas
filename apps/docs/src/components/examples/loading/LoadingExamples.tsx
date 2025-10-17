@@ -10,6 +10,7 @@ import {
   Skeleton,
 } from '@midas-ds/components'
 import '../custom.css'
+import { variables } from '@midas-ds/theme'
 
 export const ButtonLoadingExample = () => {
   const [isPending, setPending] = useState(false)
@@ -192,7 +193,7 @@ export const FullScreenLoadingExample = () => {
       {isLoading && (
         <div className='overlay'>
           <div className='overlay-content'>
-            <Spinner />
+            <Spinner color={variables.iconOnColor} />
           </div>
         </div>
       )}
