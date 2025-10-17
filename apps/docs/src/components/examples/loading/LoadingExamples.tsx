@@ -45,10 +45,7 @@ export const ButtonLoadingExample = () => {
           >
             {isPending ? (
               <>
-                <Spinner
-                  small
-                  isOnColor
-                />
+                <Spinner small />
                 Skickar...
               </>
             ) : (
@@ -195,7 +192,7 @@ export const FullScreenLoadingExample = () => {
       {isLoading && (
         <div className='overlay'>
           <div className='overlay-content'>
-            <Spinner isOnColor />
+            <Spinner />
           </div>
         </div>
       )}
