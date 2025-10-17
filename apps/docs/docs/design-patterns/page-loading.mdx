@@ -18,45 +18,37 @@ Vi visar inga laddningsindikatorer om det laddar mindre än 1 sekund eftersom de
 
 [Skeleton](/components/skeleton) används när vi vet hur layouten eller komponenten kommer att se ut när det har laddat klart. Det ger användaren en bra bild av hur gränssnittet kommer se ut när det har laddat klart och är den rekommenderade laddningsindikatorn när en komponent, en del av gränssnittet eller hela gränssnittet laddas första gången.
 
-<SkeletonExample />
-
-### Riktlinjer
-
 - Anpassa storleken/ formen på [Skeleton](/components/skeleton) för att efterlikna de komponenter som kommer finnas i gränssnittet
 - Vi använder inte Skeleton om vi inte vet hur innehållet ska se ut när det laddat klart. Då använder vi helskärmsspinner.
+
+<SkeletonExample />
 
 ## Helskärmsspinner
 
 Används när hela sidan eller appen är otillgänglig tills det har laddat klart.
 
-<FullScreenLoadingExample />
-
-### Riktlinjer
-
 - Visa [Spinner](/components/spinner) centrerat på skärmen och tona ner bakgrunden.
 - Vi använder inte helskärmsspinner om vi vet hur gränssnittet kommer att se ut när det laddat klart. Då använder vi Skeleton.
 - Använd inte helskärmsspinner om endast en del av sidan laddas. Använd Spinner eller Skeleton på komponenten/delen istället
 
+<FullScreenLoadingExample />
+
 ## Spinner i Button
 
 Används när användaren via knappen triggar en process som kräver att systemet laddar en kortare tid, tex när ett formulär skickas in.
-
-<ButtonLoadingExample />
-
-### Riktlinjer
 
 - Använd prop `isPending`. Du kan [läsa mer om det och se ett exempel hos React Aria](https://react-spectrum.adobe.com/react-aria/Button.html#pending)
 - Visa small [Spinner](/components/spinner) i knappen, till vänster om etiketten.
 - Ändra texten i knappen till presensformen av verbet (skicka -> skickar) under tiden som det laddar
 - Meddela användaren när systemet laddat klart, tex med en toast
 
+<ButtonLoadingExample />
+
 ## Spinner bredvid ett fält
 
 Används när det är ett fält som laddar, tex vid kontroll mot databas. Optimalt ska detta inte ta så lång tid att användaren behöver vänta men i de fall där anropen tar lång tid kan en spinner läggas bredvid fältet som laddar. I nedan exempel syns en spinner så fort du lämnar fältet.
 
-<InlineSpinnerExample />
-
-### Riktlinjer
-
 - Visa en [Spinner](/components/spinner) bredvid fältet under tiden som det laddar
 - Använd inte inline spinner när kontrollen/valideringen sker vid submit. Då använder vi helskärmsspinner.
+
+<InlineSpinnerExample />
