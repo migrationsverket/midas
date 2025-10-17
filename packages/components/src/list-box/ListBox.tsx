@@ -16,7 +16,7 @@ export const ListBox = <T extends object | Node<object>>({
   <Virtualizer
     layout={SectionedListLayout}
     layoutOptions={{
-      headingHeight: 44,
+      headingHeight: 38,
     }}
   >
     <AriaListBox

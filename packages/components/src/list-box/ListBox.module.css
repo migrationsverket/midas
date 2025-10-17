@@ -29,12 +29,14 @@
 }
 
 .listBoxSectionHeading {
+  background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-40)
+  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-20)
     var(--midas-spacing-40);
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--midas-typography-font-size-20);
+  line-height: var(--midas-typography-line-height-20);
   color: var(--midas-menu-text-section-header);
 }
 
@@ -51,11 +53,12 @@
 }
 
 .listBoxItem {
+  align-items: center;
   background-color: var(--midas-layer-01-base);
   color: var(--midas-text-primary);
   display: flex;
   font-family: var(--midas-typography-font-family);
-  line-height: 1;
+  line-height: var(--midas-typography-line-height-30);
   margin-bottom: 0;
   padding: var(--midas-size-70) var(--midas-size-80);
   transition: background-color 60ms;
@@ -146,7 +149,7 @@
         &[data-hovered] {
           &::before {
             background-color: var(--midas-button-background-primary-hover);
-            border-color: white;
+            border-color: var(--midas-button-background-primary-hover);
 
             @media (forced-colors: active) {
               background-color: SelectedItem;
