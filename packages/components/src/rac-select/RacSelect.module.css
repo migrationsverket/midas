@@ -1,7 +1,6 @@
 .select {
   display: flex;
   flex-direction: column;
-  border: 2px dashed rebeccapurple;
 }
 
 .triggerContainer {
@@ -69,11 +68,19 @@
 .selectValue {
   pointer-events: none;
   font-family: var(--midas-typography-font-family);
-  left: var(--midas-spacing-30);
+  line-height: var(--midas-typography-line-height-30);
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   max-width: calc(100% - var(--midas-spacing-90));
+
+  .placeholder {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: var(--midas-spacing-50);
+    position: relative;
+  }
 
   &[data-disabled] {
     color: var(--midas-text-disabled);
@@ -82,7 +89,6 @@
 }
 
 .selectValueTag {
-  pointer-events: all;
   align-items: center;
   background-color: var(--midas-button-background-primary-base);
   border-radius: 1.25rem;
@@ -90,8 +96,11 @@
   display: flex;
   font-size: 0.875rem;
   justify-content: center;
+  left: var(--midas-spacing-30);
   min-height: 1.75rem;
   padding: 0 0.5rem;
+  pointer-events: all;
+  position: relative;
 
   &:has(.clearButton) {
     padding-right: 0;
@@ -147,8 +156,6 @@
   padding: 0;
 
   &[data-trigger='Select'] {
-    border: 2px dashed red;
-
     /* RAC passes this variable via the style prop, making it available during runtime only */
     /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
     min-width: var(--trigger-width);
@@ -217,7 +224,7 @@
     }
 
     &[data-hovered] div {
-      border-color: var(--midas-border-color-primary);
+      border-color: var(--midas-button-background-primary-hover);
     }
   }
 }

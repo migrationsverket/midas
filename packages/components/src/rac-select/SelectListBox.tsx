@@ -30,6 +30,7 @@ export const SelectListBox = <
     <ListBox
       {...props}
       escapeKeyBehavior='none'
+      // TODO: interfere with onAction if disallowEmptySelection is true?
       onSelectionChange={handleSelectionChange}
     />
   )

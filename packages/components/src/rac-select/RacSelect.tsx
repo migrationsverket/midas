@@ -4,21 +4,20 @@ import {
   ValidationResult,
   Select,
   SelectValue,
-  Button,
+  Popover,
 } from 'react-aria-components'
 import { FocusScope } from '@react-aria/focus'
-import { ChevronDown } from 'lucide-react'
 import { Label, type InfoPopoverProps } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 import clsx from '../utils/clsx'
 import { Size } from '../common/types'
 import { Text } from '../text'
 import { FieldError } from '../field-error'
-import { Popover } from '../popover'
 import { SelectAll } from './SelectAll'
 import { SelectValueTag } from './SelectValueTag'
 import { SelectListBox } from './SelectListBox'
 import { SelectTags } from './SelectTags'
+import { SelectTrigger } from './SelectTrigger'
 import styles from './RacSelect.module.css'
 
 export type SelectionMode = 'single' | 'multiple'
@@ -87,26 +86,19 @@ export function RacSelect<
           className={styles.triggerContainer}
           data-disabled={props.isDisabled || undefined}
         >
-          <Button
-            className={clsx(
-              {
-                [styles.medium]: size === 'medium',
-              },
-              styles.trigger,
-            )}
-          >
-            <span aria-hidden='true'>
-              <ChevronDown size={16} />
-            </span>
-          </Button>
+          <SelectTrigger size={size} />
           <SelectValue
-            className={`${styles.selectValue} ${styles.truncate}`}
+            className={styles.selectValue}
             data-disabled={props.isDisabled || undefined}
           >
             {renderProps =>
               renderProps.isPlaceholder ||
               props.selectionMode !== 'multiple' ? (
-                renderProps.defaultChildren
+                <div className={clsx(styles.placeholder)}>
+                  <span className={clsx(styles.truncate)}>
+                    {renderProps.defaultChildren}
+                  </span>
+                </div>
               ) : (
                 <SelectValueTag
                   {...props}
