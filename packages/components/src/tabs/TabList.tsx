@@ -11,7 +11,7 @@ export const TabList = <T extends object>({
 }: TabListProps<T>) => {
   return (
     <AriaTabList
-      className={clsx(styles.list, className)}
+      className={clsx(styles.tabList, className)}
       {...props}
     />
   )
