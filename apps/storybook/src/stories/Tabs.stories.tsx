@@ -35,6 +35,9 @@ export default {
   component: Tabs,
   title: 'Components/Tabs',
   tags: ['autodocs'],
+  args: {
+    orientation: 'horizontal',
+  },
   render: args => (
     <Tabs {...args}>
       <TabList>
@@ -61,6 +64,12 @@ export default {
 } satisfies Meta<typeof Tabs>
 
 export const Primary: Story = {}
+
+export const Vertical: Story = {
+  args: {
+    orientation: 'vertical',
+  },
+}
 
 export const DisabledTabs: Story = {
   render: args => (
