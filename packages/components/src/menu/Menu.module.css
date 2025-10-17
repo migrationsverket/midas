@@ -10,6 +10,10 @@
     outline: none;
   }
 
+  @media (forced-colors: active) {
+    border: 1px solid;
+  }
+
   .menuSection {
     header {
       background-color: var(--midas-layer-01-base);
@@ -44,6 +48,10 @@
       background-color: var(--midas-menu-item-background-selected);
       color: var(--midas-text-disabled);
       cursor: not-allowed;
+
+      @media (forced-colors: active) {
+        color: GrayText;
+      }
     }
 
     &:focus-visible {
@@ -54,6 +62,15 @@
       background-color: var(--midas-menu-item-background-selected);
       box-shadow: var(--midas-state-focus-inset);
       outline: none;
+    }
+
+    &[data-focused] {
+      @media (forced-colors: active) {
+        outline: var(--midas-state-focus-contrast-mode-outline) solid;
+        outline-offset: calc(
+          var(--midas-state-focus-contrast-mode-outline) * -1
+        );
+      }
     }
 
     &:not([data-has-submenu]) {

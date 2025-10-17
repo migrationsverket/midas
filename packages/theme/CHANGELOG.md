@@ -1,3 +1,26 @@
+## 3.1.0 (2025-10-10)
+
+### 🚀 Features
+
+- **theme:** update tokens to DTCG compliant standard, add transform to Style Dictionary ([28fc1cd5d4](https://github.com/migrationsverket/midas/commit/28fc1cd5d4))
+- **theme:** add new spacing variables ([fc283182b6](https://github.com/migrationsverket/midas/commit/fc283182b6))
+- **theme:** update values for button tertiary|icon : hover ([8de36f8270](https://github.com/migrationsverket/midas/commit/8de36f8270))
+
+### 🩹 Fixes
+
+- style fixes for forced colors mode ([caca6865c0](https://github.com/migrationsverket/midas/commit/caca6865c0))
+- **theme:** update size for line-height-100 ([6cb4616889](https://github.com/migrationsverket/midas/commit/6cb4616889))
+- **theme:** update size for font-size-70 ([b3635de50c](https://github.com/migrationsverket/midas/commit/b3635de50c))
+- **accordion-item:** fix keyboard-focus/animation/hover bug in accordion-item ([a3663f64bb](https://github.com/migrationsverket/midas/commit/a3663f64bb))
+
+### 🏭 Refactoring
+
+- **theme:** break out buttons from object-values.json ([485b33b195](https://github.com/migrationsverket/midas/commit/485b33b195))
+
+### 🧪 Tests updated
+
+- **theme:** include lint/test of tokens for DTCG compliance ([abeffcd3d2](https://github.com/migrationsverket/midas/commit/abeffcd3d2))
+
 ## 3.0.1 (2025-09-26)
 
 ### 🩹 Fixes

@@ -116,7 +116,7 @@
   --midas-size-130: 2.5rem;
   --midas-size-140: 2.75rem;
   --midas-size-150: 3rem;
-  --midas-size-00: 0;
+  --midas-size-00: 0rem;
   --midas-size-05: 0.063rem;
   --midas-spacing-10: 0.125rem;
   --midas-spacing-20: 0.25rem;
@@ -130,13 +130,15 @@
   --midas-spacing-100: 4rem;
   --midas-spacing-110: 5rem;
   --midas-spacing-120: 6rem;
-  --midas-state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white);
-  --midas-state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black);
-  --midas-transitions-duration-slow: 0.50s;
-  --midas-transitions-duration-normal: 0.30s;
-  --midas-transitions-duration-fast: 0.25s;
-  --midas-transitions-timing-ease-out: cubic-bezier(0, 0, 0.58, 1);
-  --midas-transitions-timing-ease-in: cubic-bezier(0.42, 0, 1, 1);
+  --midas-state-focus: 0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white); /** Focus style used when the component is focused (box-shadow). */
+  --midas-state-focus-inset: inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black); /** Inset variant of the focus ring (box-shadow inset). */
+  --midas-state-focus-contrast-mode-outline: 2px; /** Outline style for focus ring when Windows High Contrast (forced-colors) mode is active. */
+  --midas-state-focus-contrast-mode-offset: 2px; /** Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active.. */
+  --midas-transition-duration-slow: 500ms;
+  --midas-transition-duration-normal: 300ms;
+  --midas-transition-duration-fast: 250ms;
+  --midas-transition-timing-ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --midas-transition-timing-ease-in: cubic-bezier(0.42, 0, 1, 1);
   --midas-typography-font-family: Inter, sans-serif;
   --midas-typography-font-size-10: 0.75rem;
   --midas-typography-font-size-20: 0.875rem;
@@ -176,7 +178,7 @@
   --midas-breakpoints-sm: (min-width: var(--midas-window-sizes-sm));
   --midas-breakpoints-md: (min-width: var(--midas-window-sizes-md));
   --midas-breakpoints-lg: (min-width: var(--midas-window-sizes-lg));
-  --midas-breakpoints-xl: (min-width: var(--midas-window-sizes-xl));
+  --midas-breakpoints-xl: (min-width: var(--midas-window-sizes-xl)); /** This is the largest breakpoint */
   --midas-button-background-primary-base: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Färg på primärknapp */
   --midas-button-background-primary-hover: light-dark(var(--midas-color-blue-130), var(--midas-color-blue-130)); /** Hover state på primärknapp */
   --midas-button-background-primary-active: light-dark(var(--midas-color-blue-100), var(--midas-color-blue-150)); /** Active state för primärknapp */
@@ -271,6 +273,6 @@
   --midas-spacing-medium: var(--midas-size-80);
   --midas-spacing-large: var(--midas-size-100);
   --midas-spacing-xlarge: var(--midas-size-120);
-  --midas-transitions-panel-collapse: all var(--midas-transitions-duration-normal) var(--midas-transitions-timing-ease-out) allow-discrete;
-  --midas-transitions-panel-expand: all var(--midas-transitions-duration-normal) var(--midas-transitions-timing-ease-in) allow-discrete;
+  --midas-transition-panel-collapse: var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-out) 0ms;
+  --midas-transition-panel-expand: var(--midas-transition-duration-normal) var(--midas-transition-timing-ease-in) 0ms;
 }

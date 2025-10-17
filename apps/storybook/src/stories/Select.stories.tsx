@@ -221,7 +221,7 @@ export const NotClearable: Story = {
 }
 
 export const DS872: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -285,7 +285,7 @@ export const Sectioned: Story = {
 }
 
 export const RequiredSingleSelect: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -318,7 +318,7 @@ export const RequiredSingleSelect: Story = {
 }
 
 export const RequiredMultiSelect: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -330,7 +330,7 @@ export const RequiredMultiSelect: Story = {
 }
 
 export const MultiSelectTests: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

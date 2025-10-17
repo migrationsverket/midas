@@ -15,8 +15,7 @@
     "lg": { "$value": "(min-width: {windowSizes.lg})" },
     "xl": {
       "$value": "(min-width: {windowSizes.xl})",
-      "$comment": "This is the largest breakpoint"
+      "$description": "This is the largest breakpoint"
     }
   }
 }
-

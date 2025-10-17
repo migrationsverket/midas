@@ -221,7 +221,7 @@ export const Navbar: Story = {
 
 export const DS1375: Story = {
   ...Primary,
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

@@ -138,7 +138,7 @@ export const Virtualized: Story = {
 }
 
 export const StripedWithLink: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
     a11y: {

@@ -20,9 +20,7 @@ import type { AriaListBoxOptions } from 'react-aria'
 import type { AriaButtonProps } from '@react-types/button'
 import type { AriaSelectProps } from '@react-types/select'
 import type { Size } from '../common/types'
-import type {
-  ListBoxOption,
-} from '../list-box/'
+import type { ListBoxOption } from '../list-box/'
 
 /**
  * Props used for setting up the list state
@@ -93,8 +91,10 @@ export interface MultiSelectState<T extends ListBoxOption>
 /**
  * Props for setting up the select component parts
  */
-export interface MultiSelectProps<T extends ListBoxOption>
-  extends Omit<AriaSelectProps<T>, 'onSelectionChange'> {
+export interface MultiSelectProps<
+  T extends ListBoxOption,
+  M extends SelectionMode,
+> extends Omit<AriaSelectProps<T, M>, 'onSelectionChange'> {
   /**
    * Wheter to allow an empty selection or not
    */
@@ -211,5 +211,3 @@ export type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
   /** Item objects in the collection. */
   options: ListBoxOption[]
 }
-
-

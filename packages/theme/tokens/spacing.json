@@ -1,71 +1,91 @@
 {
   "spacing": {
+    "$type": "dimension",
     "10": {
-      "$type": "dimension",
-      "$value": "0.125rem"
+      "$value": {
+        "value": 0.125,
+        "unit": "rem"
+      }
     },
     "20": {
-      "$type": "dimension",
-      "$value": "0.25rem"
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
     },
     "30": {
-      "$type": "dimension",
-      "$value": "0.5rem"
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
     },
     "40": {
-      "$type": "dimension",
-      "$value": "0.75rem"
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
     },
     "50": {
-      "$type": "dimension",
-      "$value": "1rem"
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      }
     },
     "60": {
-      "$type": "dimension",
-      "$value": "1.5rem"
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
     },
     "70": {
-      "$type": "dimension",
-      "$value": "2rem"
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      }
     },
     "80": {
-      "$type": "dimension",
-      "$value": "2.5rem"
+      "$value": {
+        "value": 2.5,
+        "unit": "rem"
+      }
     },
     "90": {
-      "$type": "dimension",
-      "$value": "3rem"
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      }
     },
     "100": {
-      "$type": "dimension",
-      "$value": "4rem"
+      "$value": {
+        "value": 4,
+        "unit": "rem"
+      }
     },
     "110": {
-      "$type": "dimension",
-      "$value": "5rem"
+      "$value": {
+        "value": 5,
+        "unit": "rem"
+      }
     },
     "120": {
-      "$type": "dimension",
-      "$value": "6rem"
+      "$value": {
+        "value": 6,
+        "unit": "rem"
+      }
     },
     "xsmall": {
-      "$type": "dimension",
       "$value": "{size.20}"
     },
     "small": {
-      "$type": "dimension",
       "$value": "{size.40}"
     },
     "medium": {
-      "$type": "dimension",
       "$value": "{size.80}"
     },
     "large": {
-      "$type": "dimension",
       "$value": "{size.100}"
     },
     "xlarge": {
-      "$type": "dimension",
       "$value": "{size.120}"
     }
   }

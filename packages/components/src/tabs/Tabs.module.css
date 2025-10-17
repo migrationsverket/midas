@@ -23,8 +23,16 @@
     font-weight: 500;
     border-color: var(--midas-border-color-tertiary);
 
+    @media (forced-colors: active) {
+      border-color: highlight;
+    }
+
     &[data-hovered] {
       border-color: var(--midas-border-color-tertiary);
+
+      @media (forced-colors: active) {
+        border-color: highlight;
+      }
     }
   }
 
@@ -36,6 +44,11 @@
   &[data-focus-visible] {
     outline: none;
     box-shadow: var(--midas-state-focus);
+
+    @media (forced-colors: active) {
+      outline: var(--midas-state-focus-contrast-mode-outline) solid;
+      outline-offset: var(--midas-state-focus-contrast-mode-offset);
+    }
   }
 
   @media (width <= 479px) {

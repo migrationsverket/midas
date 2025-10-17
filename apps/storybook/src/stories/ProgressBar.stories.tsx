@@ -56,6 +56,7 @@ export const WithoutLabels: Story = {
 }
 
 export const IsIndeterminate: Story = {
+  tags: ['!snapshot'],
   args: {
     isIndeterminate: true,
     label: 'Waiting...',

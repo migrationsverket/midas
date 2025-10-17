@@ -10,7 +10,7 @@ export const breakpointsXs = "(max-width: calc(480px - 1px))";
 export const breakpointsSm = "(min-width: 480px)";
 export const breakpointsMd = "(min-width: 768px)";
 export const breakpointsLg = "(min-width: 1024px)";
-export const breakpointsXl = "(min-width: 1280px)";
+export const breakpointsXl = "(min-width: 1280px)"; // This is the largest breakpoint
 export const buttonBackgroundPrimaryBase = "light-dark(#143c50, #2e7ca5)"; // Färg på primärknapp
 export const buttonBackgroundPrimaryHover = "light-dark(#25607f, #25607f)"; // Hover state på primärknapp
 export const buttonBackgroundPrimaryActive = "light-dark(#2e7ca5, #143c50)"; // Active state för primärknapp
@@ -209,7 +209,7 @@ export const size120 = "2rem";
 export const size130 = "2.5rem";
 export const size140 = "2.75rem";
 export const size150 = "3rem";
-export const size00 = 0;
+export const size00 = "0rem";
 export const size05 = "0.063rem";
 export const spacing10 = "0.125rem";
 export const spacing20 = "0.25rem";
@@ -229,18 +229,26 @@ export const spacingMedium = "1rem";
 export const spacingLarge = "1.5rem";
 export const spacingXlarge = "2rem";
 export const stateFocus =
-  "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)";
+  "0 0 0 2px light-dark(white, black), 0 0 0 4px light-dark(black, white)"; // Focus style used when the component is focused (box-shadow).
 export const stateFocusInset =
-  "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)";
-export const transitionsDurationSlow = "500ms";
-export const transitionsDurationNormal = "300ms";
-export const transitionsDurationFast = "250ms";
-export const transitionsTimingEaseOut = "cubic-bezier(0, 0, 0.58, 1)";
-export const transitionsTimingEaseIn = "cubic-bezier(0.42, 0, 1, 1)";
-export const transitionsPanelCollapse =
-  "all 300ms cubic-bezier(0, 0, 0.58, 1) allow-discrete";
-export const transitionsPanelExpand =
-  "all 300ms cubic-bezier(0.42, 0, 1, 1) allow-discrete";
+  "inset 0 0 0 2px light-dark(black, white), inset 0 0 0 4px light-dark(white, black)"; // Inset variant of the focus ring (box-shadow inset).
+export const stateFocusContrastModeOutline = "2px"; // Outline style for focus ring when Windows High Contrast (forced-colors) mode is active.
+export const stateFocusContrastModeOffset = "2px"; // Outline offset for focus ring when Windows High Contrast (forced-colors) mode is active..
+export const transitionDurationSlow = "500ms";
+export const transitionDurationNormal = "300ms";
+export const transitionDurationFast = "250ms";
+export const transitionTimingEaseOut = [0, 0, 0.58, 1];
+export const transitionTimingEaseIn = [0.42, 0, 1, 1];
+export const transitionPanelCollapse = {
+  delay: "0ms",
+  duration: "300ms",
+  timingFunction: [0, 0, 0.58, 1],
+};
+export const transitionPanelExpand = {
+  delay: "0ms",
+  duration: "300ms",
+  timingFunction: [0.42, 0, 1, 1],
+};
 export const typographyFontFamily = "Inter, sans-serif";
 export const typographyFontSize10 = "0.75rem";
 export const typographyFontSize20 = "0.875rem";

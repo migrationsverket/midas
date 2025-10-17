@@ -55,13 +55,10 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
   onOpenChange,
   ...rest
 }) => {
-  const isInitialRender = React.useRef(true)
-
   const isControlled = typeof controlledIsOpen !== 'undefined'
 
-  const [isOpen, setIsOpen] = React.useState<boolean>(
-    isControlled ? controlledIsOpen : defaultOpen,
-  )
+  const [isOpen, setIsOpen] = React.useState<boolean>(defaultOpen)
+
   const Icon = iconMap[type]
 
   const strings = useLocalizedStringFormatter(messages)
@@ -74,25 +71,7 @@ export const InfoBanner: React.FC<InfoBannerProps> = ({
     }
   }
 
-  React.useEffect(() => {
-    if (isInitialRender.current) {
-      isInitialRender.current = false
-      return
-    }
-
-    setIsOpen(previousOpen => {
-      const isOpening =
-        (isControlled && controlledIsOpen) || (!isControlled && !previousOpen)
-
-      if (isOpening) {
-        onOpenChange?.(true)
-      }
-
-      return isOpening
-    })
-  }, [controlledIsOpen, isControlled, onOpenChange])
-
-  if (isOpen)
+  if ((isControlled && controlledIsOpen) || (!isControlled && isOpen))
     return (
       <div
         {...rest}

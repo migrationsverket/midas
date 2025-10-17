@@ -15,6 +15,7 @@ import { I18nProvider } from 'react-aria'
 import '@midas-ds/theme/lib/fonts.css'
 import '@midas-ds/theme/lib/color-scheme.css'
 import '@midas-ds/theme/lib/style-dictionary-dist/variables.css'
+import './custom.css'
 
 const preview: Preview = {
   async beforeEach() {
@@ -114,7 +115,7 @@ const preview: Preview = {
       )
     },
   ],
-  tags: ['autodocs'],
+  tags: ['autodocs', 'snapshot'],
 }
 
 export default preview

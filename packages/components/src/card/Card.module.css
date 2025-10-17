@@ -4,6 +4,10 @@
   background-color: var(--midas-layer-01-base);
   border-bottom: 1px solid var(--midas-border-color-secondary);
 
+  @media (forced-colors: active) {
+    border: 1px solid;
+  }
+
   &.horizontal {
     display: flex;
     flex-flow: row wrap;

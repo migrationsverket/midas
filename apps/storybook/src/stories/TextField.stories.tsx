@@ -75,7 +75,7 @@ export const Invalid: Story = {
 }
 
 export const Required: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -102,7 +102,7 @@ export const Required: Story = {
 }
 
 export const CustomValidation: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -197,7 +197,7 @@ export const MaxLengthAndShowCounter: Story = {
 }
 
 export const ShowCounterWithDefaultValue: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -218,7 +218,7 @@ export const ShowCounterWithDefaultValue: Story = {
 }
 
 export const DS1243: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -265,7 +265,7 @@ export const WithHelpPopover: Story = {
 }
 
 export const DS1326: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },

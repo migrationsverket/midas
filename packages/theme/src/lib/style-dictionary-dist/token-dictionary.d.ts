@@ -348,8 +348,12 @@ declare const tokens: {
   state: {
     focus: DesignToken;
     focusInset: DesignToken;
+    focusContrastMode: {
+      outline: DesignToken;
+      offset: DesignToken;
+    };
   };
-  transitions: {
+  transition: {
     duration: {
       slow: DesignToken;
       normal: DesignToken;

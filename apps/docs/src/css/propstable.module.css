@@ -19,7 +19,7 @@
   table {
     grid-template-columns: 2fr 2fr 1fr 3fr;
 
-    @media (width < 996px) {
+    @media (width < 1200px) {
       grid-template-columns: subgrid;
     }
   }
@@ -30,19 +30,19 @@
         var(--ifm-table-border-color);
     }
 
-    @media (width < 996px) {
+    @media (width < 1200px) {
       display: none;
     }
   }
 
   tbody {
-    @media (width > 996px) {
+    @media (width > 1200px) {
       tr:first-of-type {
         border-top: none;
       }
     }
 
-    @media (width < 996px) {
+    @media (width < 1200px) {
       td:not(:last-of-type) {
         display: flex;
       }

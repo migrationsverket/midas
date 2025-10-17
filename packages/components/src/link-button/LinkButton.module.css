@@ -23,6 +23,10 @@
     text-decoration: none;
     background-color: var(--midas-button-background-primary-hover);
     color: var(--midas-text-on-color);
+
+    @media (forced-colors: active) {
+      color: highlight;
+    }
   }
 
   &[data-pressed],
@@ -56,12 +60,24 @@
 
   .icon {
     color: var(--midas-icon-tertiary);
+
+    @media (forced-colors: active) {
+      color: LinkText;
+    }
   }
 
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
     color: var(--midas-text-tertiary);
     background-color: var(--midas-button-background-secondary-hover);
+
+    @media (forced-colors: active) {
+      color: highlight;
+
+      .icon {
+        color: highlight;
+      }
+    }
   }
 
   &[data-disabled],
@@ -84,10 +100,19 @@
   background-color: transparent;
   opacity: 1;
 
+  @media (forced-colors: active) {
+    background-color: canvas;
+  }
+
   &[data-hovered]:not(:disabled, [data-disabled]),
   &:hover:not(:disabled, [data-disabled]) {
     color: var(--midas-text-tertiary);
     background-color: var(--midas-button-background-tertiary-hover);
+
+    @media (forced-colors: active) {
+      color: highlight;
+      background-color: canvas;
+    }
   }
 
   &[data-pressed],

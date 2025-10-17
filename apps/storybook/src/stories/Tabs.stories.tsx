@@ -89,13 +89,12 @@ export const DisabledTabs: Story = {
 }
 
 export const DefaultSelectedKey: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
   args: {
     defaultSelectedKey: 'Ansök',
-    tabs: undefined,
   },
   play: async ({ canvas, step }) => {
     await step('the tab "Ansök" should be opened', async () => {
@@ -105,7 +104,7 @@ export const DefaultSelectedKey: Story = {
 }
 
 export const SelectedKeyAndOnSelectionChange: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
   },
@@ -148,12 +147,9 @@ export const SelectedKeyAndOnSelectionChange: Story = {
 }
 
 export const MoreItemsThanChildren: Story = {
-  tags: ['!dev', '!autodocs'],
+  tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
-  },
-  args: {
-    tabs: ['a', 'b'],
   },
   render: args => (
     <>

@@ -11,9 +11,17 @@
     transform 200ms,
     opacity 200ms;
 
+  @media (forced-colors: active) {
+    border: 1px solid;
+  }
+
   & .arrow svg {
     display: block;
     fill: var(--midas-background-inverse);
+
+    @media (forced-colors: active) {
+      fill: currentColor;
+    }
   }
 
   &[data-entering],
