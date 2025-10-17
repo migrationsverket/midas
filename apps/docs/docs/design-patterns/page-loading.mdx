@@ -1,6 +1,5 @@
 # Laddningsindikatorer
 
-import { Skeleton, Spinner } from '@midas-ds/components'
 import {
   ButtonLoadingExample,
   InlineSpinnerExample,
@@ -37,8 +36,8 @@ Används när hela sidan eller appen är otillgänglig tills det har laddat klar
 
 Används när användaren via knappen triggar en process som kräver att systemet laddar en kortare tid, tex när ett formulär skickas in.
 
-- Använd prop `isPending`. Du kan [läsa mer om det och se ett exempel hos React Aria](https://react-spectrum.adobe.com/react-aria/Button.html#pending)
-- Visa small [Spinner](/components/spinner) i knappen, till vänster om etiketten.
+- Använd prop `isPending` på [Button](/components/button). Du kan [läsa mer om det och se ett exempel hos React Aria](https://react-spectrum.adobe.com/react-aria/Button.html#pending)
+- Visa `small` [Spinner](/components/spinner) i knappen, till vänster om etiketten.
 - Ändra texten i knappen till presensformen av verbet (skicka -> skickar) under tiden som det laddar
 - Meddela användaren när systemet laddat klart, tex med en toast
 
@@ -46,9 +45,9 @@ Används när användaren via knappen triggar en process som kräver att systeme
 
 ## Spinner bredvid ett fält
 
-Används när det är ett fält som laddar, tex vid kontroll mot databas. Optimalt ska detta inte ta så lång tid att användaren behöver vänta men i de fall där anropen tar lång tid kan en spinner läggas bredvid fältet som laddar. I nedan exempel syns en spinner så fort du lämnar fältet.
+Används när det är ett fält som laddar, tex vid kontroll mot databas direkt när användaren lämnar fältet. Optimalt ska detta inte ta så lång tid att användaren behöver vänta, men i de fall där anropen tar lång tid kan en spinner läggas bredvid fältet som laddar. I nedan exempel syns en spinner så fort du lämnar fältet.
 
-- Visa en [Spinner](/components/spinner) bredvid fältet under tiden som det laddar
-- Använd inte inline spinner när kontrollen/valideringen sker vid submit. Då använder vi helskärmsspinner.
+- Visa en `small` [Spinner](/components/spinner) bredvid fältet under tiden som det laddar
+- Använd inte spinner bredvid fält när kontrollen/valideringen sker vid submit. Då använder vi helskärmsspinner.
 
 <InlineSpinnerExample />
