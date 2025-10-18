@@ -10,9 +10,9 @@ import type {
   MultiSelectDOMProps,
   MultiSelectProps,
   MultiSelectState,
-  SelectionMode,
 } from './types'
 import { ListBoxOption } from '../list-box'
+import { SelectionMode } from '../rac-select'
 
 export function useMultiSelect<
   T extends ListBoxOption,
