@@ -8,7 +8,7 @@ import styles from './Tabs.module.css'
 export const TabPanel: React.FC<TabPanelProps> = ({ className, ...props }) => {
   return (
     <AriaTabPanel
-      className={clsx(styles.panel, className)}
+      className={clsx(styles.tabPanel, className)}
       {...props}
     />
   )
