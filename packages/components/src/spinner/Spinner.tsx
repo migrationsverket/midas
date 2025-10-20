@@ -10,16 +10,21 @@ export interface SpinnerProps {
    * @default false
    */
   small?: boolean
-  /** For use on coloured background
+  /**
+   * @deprecated since v14, define color based on context. Use `color` prop instead.
+   *
    * @default false
    */
   isOnColor?: boolean
+  /** User defined color */
+  color?: string
   className?: string
 }
 
 export const Spinner: React.FC<SpinnerProps> = ({
   small,
   isOnColor = false,
+  color,
   className,
 }) => {
   const strings = useLocalizedStringFormatter(messages)
@@ -30,10 +35,15 @@ export const Spinner: React.FC<SpinnerProps> = ({
       role='status'
     >
       <LoaderCircle
-        className={clsx(styles.spinner, isOnColor && styles.dark)}
-        size={small ? 16 : 32}
-        strokeWidth={small ? 2 : 3}
+        className={clsx(
+          styles.spinner,
+          !small && styles.large,
+          isOnColor && styles.dark,
+        )}
+        size={small ? 20 : 96}
+        strokeWidth={small ? 2 : 8}
         absoluteStrokeWidth
+        color={color}
       />
       <VisuallyHidden>{strings.format('loadingPleaseWait')}</VisuallyHidden>
     </div>
