@@ -41,12 +41,22 @@ export const SelectValueTag = <
       data-disabled={isDisabled || undefined}
     >
       <span className={styles.truncate}>{formatString()}</span>
-      <SelectClearButton />
+      <SelectClearButton isDisabled={isDisabled} />
     </div>
   )
 }
 
-const SelectClearButton = () => {
+type SelectClearButtonProps<
+  T extends object,
+  M extends SelectionMode = 'single',
+> = Pick<RacSelectProps<T, M>, 'isDisabled'>
+
+const SelectClearButton = <
+  T extends object,
+  M extends SelectionMode = 'single',
+>({
+  isDisabled,
+}: SelectClearButtonProps<T, M>) => {
   const state = React.useContext(SelectStateContext)
 
   const strings = useLocalizedStringFormatter(messages)
@@ -64,6 +74,7 @@ const SelectClearButton = () => {
       className={styles.clearButton}
       onPress={handlePress}
       slot={null}
+      isDisabled={isDisabled}
     >
       <X
         width={20}

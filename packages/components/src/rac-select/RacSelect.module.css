@@ -108,7 +108,7 @@
 
   &[data-disabled] {
     background-color: var(--midas-field-disabled);
-    border-color: var(--midas-border-color-disabled);
+    border: 1px solid var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
     pointer-events: none;
   }
@@ -126,15 +126,15 @@
   border-radius: 100%;
   color: var(--midas-text-on-color);
   display: flex;
-  margin: 0 0 0 0.5rem;
-  padding: 0.375rem;
+  margin-left: var(--midas-size-10);
+  padding: var(--midas-size-30);
 
   &:hover {
     background-color: var(--midas-button-background-primary-hover);
     cursor: pointer;
   }
 
-  &:disabled {
+  &[data-disabled] {
     background-color: var(--midas-button-background-disabled);
     color: var(--midas-text-disabled);
     pointer-events: none;
