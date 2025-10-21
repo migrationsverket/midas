@@ -96,6 +96,7 @@
 }
 
 .react-datepicker__current-month {
+  margin-top: 1rem;
   font-weight: bold;
   color: var(--midas-text-primary);
   font-size: 1rem;
@@ -125,7 +126,7 @@
   display: flex;
   overflow: hidden;
   border: 2px solid transparent !important;
-  color: var(--midas-text-primary);
+  color: var(--midas-icon-primary);
   padding: 0.5rem;
   background-color: var(--midas-layer-01-base);
   width: 2.5rem;
@@ -133,22 +134,51 @@
   position: absolute;
   text-indent: -999em;
   cursor: pointer;
+  transition:
+    opacity 0.1s ease,
+    background-color 0.1s ease;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .react-datepicker__navigation--previous {
   left: 0.5rem;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tbGVmdC1pY29uIGx1Y2lkZS1jaGV2cm9uLWxlZnQiPjxwYXRoIGQ9Im0xNSAxOC02LTYgNi02Ii8+PC9zdmc+');
+}
+
+.react-datepicker__navigation--previous::before {
+  content: '';
+  inset: 0;
+  display: block;
+  position: absolute;
+  mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tbGVmdC1pY29uIGx1Y2lkZS1jaGV2cm9uLWxlZnQiPjxwYXRoIGQ9Im0xNSAxOC02LTYgNi02Ii8+PC9zdmc+');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 1.5rem;
+  background-color: currentColor;
 }
 
 .react-datepicker__navigation--next {
   right: 0.5rem;
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tcmlnaHQtaWNvbiBsdWNpZGUtY2hldnJvbi1yaWdodCI+PHBhdGggZD0ibTkgMTggNi02LTYtNiIvPjwvc3ZnPg==');
+  position: absolute;
+}
+
+.react-datepicker__navigation--next::before {
+  content: '';
+  inset: 0;
+  display: block;
+  position: absolute;
+  mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 1.5rem;
+  background-color: currentColor;
 }
 
 .react-datepicker__navigation:hover:not([data-disabled]) {
   background-color: var(--midas-field-01-hover);
+  transition:
+    opacity 0.1s ease,
+    background-color 0.1s ease;
 }
 
 .react-datepicker__navigation:focus-visible {
