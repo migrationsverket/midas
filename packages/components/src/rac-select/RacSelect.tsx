@@ -15,7 +15,7 @@ import { Text } from '../text'
 import { FieldError } from '../field-error'
 import { SelectAll } from './SelectAll'
 import { SelectValueTag } from './SelectValueTag'
-import { SelectListBox } from './SelectListBox'
+import { ListBox } from '../list-box'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
 import styles from './RacSelect.module.css'
@@ -34,7 +34,6 @@ export interface RacSelectProps<
    * @default "top"
    */
   errorPosition?: 'top' | 'bottom'
-  isClearable?: boolean
   /**
    * Whether to show a button to select all items.
    */
@@ -114,12 +113,12 @@ export function RacSelect<
           offset={0}
         >
           {props.isSelectableAll && <SelectAll />}
-          <SelectListBox
-            disallowEmptySelection={!props.isClearable}
+          <ListBox
+            escapeKeyBehavior='none'
             items={items}
           >
             {children}
-          </SelectListBox>
+          </ListBox>
         </Popover>
         <SelectTags {...props} />
       </Select>

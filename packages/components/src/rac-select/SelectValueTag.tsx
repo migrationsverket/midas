@@ -15,14 +15,12 @@ import styles from './RacSelect.module.css'
 type SelectValueTagProps<
   T extends object,
   M extends SelectionMode = 'single',
-> = SelectValueRenderProps<T> &
-  Pick<RacSelectProps<T, M>, 'isDisabled' | 'isClearable'>
+> = SelectValueRenderProps<T> & Pick<RacSelectProps<T, M>, 'isDisabled'>
 
 export const SelectValueTag = <
   T extends object,
   M extends SelectionMode = 'single',
 >({
-  isClearable = true,
   isDisabled,
   selectedItems,
   selectedText,
@@ -43,7 +41,7 @@ export const SelectValueTag = <
       data-disabled={isDisabled || undefined}
     >
       <span className={styles.truncate}>{formatString()}</span>
-      {isClearable && <SelectClearButton />}
+      <SelectClearButton />
     </div>
   )
 }

@@ -30,7 +30,6 @@ export default {
   args: {
     children: item => <ListBoxItem {...item}>{item.name}</ListBoxItem>,
     description: 'Description',
-    isClearable: true,
     isDisabled: false,
     isSelectableAll: false,
     label: 'Label',
@@ -218,14 +217,6 @@ export const SelectAllEnabled: Story<Item, 'multiple'> = {
   },
 }
 
-/** As default all options are clearable. `isClearable={false}` Experimental feature  */
-export const NotClearable: Story<Item, 'multiple'> = {
-  args: {
-    selectionMode: 'multiple',
-    isClearable: false,
-  },
-}
-
 export const DS872: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
@@ -234,7 +225,6 @@ export const DS872: Story = {
   args: {
     ...Normal.args,
     selectionMode: 'single',
-    isClearable: false,
     label: 'Ärende',
     placeholder: 'Välj ärende',
   },
