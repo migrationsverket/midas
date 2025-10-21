@@ -4,7 +4,6 @@ import {
   ValidationResult,
   Select,
   SelectValue,
-  Popover,
 } from 'react-aria-components'
 import { FocusScope } from '@react-aria/focus'
 import { Label, type InfoPopoverProps } from '../label'
@@ -16,6 +15,7 @@ import { FieldError } from '../field-error'
 import { SelectAll } from './SelectAll'
 import { SelectValueTag } from './SelectValueTag'
 import { ListBox } from '../list-box'
+import { Popover } from '../popover'
 import { SelectTags } from './SelectTags'
 import { SelectTrigger } from './SelectTrigger'
 import styles from './RacSelect.module.css'
@@ -111,6 +111,7 @@ export function RacSelect<
         <Popover
           className={styles.popover}
           offset={0}
+          hideArrow
         >
           {props.isSelectableAll && <SelectAll />}
           <ListBox
