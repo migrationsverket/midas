@@ -33,6 +33,13 @@ export const Disabled: Story = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    isSelected: true,
+  },
+}
+
 export const Invalid: Story = {
   args: {
     isInvalid: true,
