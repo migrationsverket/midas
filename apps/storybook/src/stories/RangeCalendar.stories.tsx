@@ -3,6 +3,7 @@ import { RangeCalendar } from '@midas-ds/components'
 import { expect, userEvent } from 'storybook/test'
 import { mockedNow } from '../utils/storybook'
 import { RunOptions } from 'axe-core'
+import { CalendarDate } from '@internationalized/date'
 
 type Story = StoryObj<typeof RangeCalendar>
 
@@ -48,6 +49,16 @@ export const Disabled: Story = {
           'color-contrast': { enabled: false },
         },
       } satisfies RunOptions,
+    },
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    value: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(1995, 5, 31),
     },
   },
 }

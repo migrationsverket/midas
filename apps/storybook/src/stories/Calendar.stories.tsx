@@ -3,7 +3,12 @@ import { Calendar } from '@midas-ds/components'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
 import { expect, userEvent, within } from 'storybook/test'
-import { today, getLocalTimeZone, isWeekend } from '@internationalized/date'
+import {
+  today,
+  getLocalTimeZone,
+  isWeekend,
+  CalendarDate,
+} from '@internationalized/date'
 import { mockedNow } from '../utils/storybook'
 import { RunOptions } from 'axe-core'
 
@@ -101,6 +106,13 @@ export const Disabled: Story = {
         },
       } satisfies RunOptions,
     },
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    value: new CalendarDate(1995, 5, 29),
   },
 }
 
