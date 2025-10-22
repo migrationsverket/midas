@@ -34,16 +34,19 @@ export const KeyboardTest: Story = {
   },
   play: async ({ canvas, step }) => {
     await step(
-      'it should be possible to select tomorrow with the keyboard',
+      'it should be possible to select a date with the keyboard',
       async () => {
         await userEvent.tab()
         await userEvent.tab()
         await userEvent.tab()
-        await userEvent.keyboard('[ArrowRight]')
+        await userEvent.keyboard('[ArrowLeft]')
+        await userEvent.keyboard('[ArrowLeft]')
         await userEvent.keyboard('[Space]')
         await expect(
           canvas.getByRole('gridcell', {
-            name: today(getLocalTimeZone()).add({ days: 1 }).day.toString(),
+            name: today(getLocalTimeZone())
+              .subtract({ days: 2 })
+              .day.toString(),
           }),
         ).toHaveAttribute('aria-selected', 'true')
       },
@@ -65,7 +68,7 @@ export const DS1141: Story = {
       async () => {
         const yesterdayButton = within(
           canvas.getByRole('gridcell', {
-            name: `${mockedNow.day - 1}`,
+            name: `${mockedNow.day - 2}`,
           }),
         ).getByRole('button')
 
