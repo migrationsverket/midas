@@ -375,11 +375,12 @@ export const MultiSelectTests: Story<Item, 'multiple'> = {
         await userEvent.keyboard('[ArrowDown]')
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Escape]')
-        const visibleValue = canvas.getByText(`2 valda`, {
-          selector: 'span',
-        })
 
-        await expect(visibleValue).toBeVisible()
+        await expect(
+          canvas.getByText('Apple', {
+            selector: 'span',
+          }),
+        ).toBeVisible()
       },
     )
   },
