@@ -216,6 +216,7 @@
   --midas-border-color-subtle: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-160)); /** Kantlinje med låg kontrast */
   --midas-border-color-tertiary: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Primärblå kantlinje */
   --midas-border-color-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Kantlinje för disabled state */
+  --midas-border-color-read-only: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-160)); /** Kantlinje för read-only state */
   --midas-field-01-base: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Standardfärg för fält, som ligger på background */
   --midas-field-01-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-170)); /** Hover state för field01 */
   --midas-field-01-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Active state för field01 */
@@ -235,6 +236,7 @@
   --midas-icon-info: light-dark(var(--midas-color-signal-blue-100), var(--midas-color-signal-blue-100)); /** Ikonfärg för informationsikoner */
   --midas-icon-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100)); /** Ikonfärg för varningsikoner och invalid state */
   --midas-icon-important: light-dark(var(--midas-color-signal-yellow-100), var(--midas-color-signal-yellow-100)); /** Ikonfärg för viktig information */
+  --midas-icon-read-only: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-160)); /** Ikonfärg för read-only state */
   --midas-link-enabled: light-dark(var(--midas-color-blue-120), var(--midas-color-blue-70)); /** Primärlänkfärg */
   --midas-link-hover: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-50)); /** Hover state för länkar */
   --midas-link-pressed: light-dark(var(--midas-color-gray-200), var(--midas-color-blue-40)); /** Active/pressed state för länkar */
@@ -259,6 +261,7 @@
   --midas-text-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Textfärg för disabled state */
   --midas-text-warning: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-80)); /** Textfärg för felmeddelanden */
   --midas-text-placeholder: light-dark(var(--midas-color-gray-70), var(--midas-color-gray-140)); /** Textfärg för platshållare */
+  --midas-text-read-only: light-dark(var(--midas-color-gray-110), var(--midas-color-gray-80)); /** Textfärg för read-only state */
   --midas-badge-background: light-dark(var(--midas-color-signal-red-100), var(--midas-color-signal-red-100));
   --midas-calendar-date-background-selected: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
   --midas-calendar-date-background-start-range: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-80));
