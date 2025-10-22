@@ -120,7 +120,7 @@ export const SkeletonExample = () => {
             <div className='skeleton-container'>
               <Skeleton
                 width='20%'
-                height='16px'
+                height='20px'
                 isAnimated
               />
               <Skeleton
