@@ -167,6 +167,10 @@
   mask-position: center;
   mask-size: 1.5rem;
   background-color: currentColor;
+
+  @media (forced-colors: active) {
+    filter: invert(1);
+  }
 }
 
 .react-datepicker__navigation--next {
@@ -184,6 +188,10 @@
   mask-position: center;
   mask-size: 1.5rem;
   background-color: currentColor;
+
+  @media (forced-colors: active) {
+    filter: invert(1);
+  }
 }
 
 .react-datepicker__navigation:hover:not([data-disabled]) {
@@ -266,6 +274,16 @@
     color: var(--midas-text-inverse);
     border-color: var(--midas-calendar-date-background-selected);
   }
+
+  @media (forced-colors: active) {
+    background-color: SelectedItem;
+    border-color: SelectedItem;
+
+    &:hover {
+      background-color: SelectedItem;
+      border-color: SelectedItem;
+    }
+  }
 }
 
 .react-datepicker__day--in-selecting-range,
@@ -279,6 +297,10 @@
   background-color: var(--midas-calendar-date-background-in-range);
   color: var(--midas-text-primary);
   border-color: var(--midas-calendar-date-background-in-range);
+
+  @media (forced-colors: active) {
+    background-color: Mark;
+  }
 }
 
 .react-datepicker__day--outside-month {
@@ -298,6 +320,10 @@
   background: var(--midas-calendar-date-background-end-range);
   border-color: var(--midas-calendar-date-background-end-range);
   color: var(--midas-text-inverse);
+
+  @media (forced-colors: active) {
+    background-color: SelectedItem;
+  }
 }
 
 .react-datepicker__day--disabled,

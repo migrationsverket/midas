@@ -69,7 +69,6 @@ export default function App() {
         showPopperArrow={false}
         dateFormat='MM-yyyy'
         placeholderText='Select a date'
-        show
       />
       <h2>Variants..</h2>
       <RangeMonthPicker />
