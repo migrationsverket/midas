@@ -23,8 +23,6 @@ Använd Midas inbyggda datumkomponenter som standard. React Datepicker är ett a
 - Tidsväljare
 - Och andra specialfunktioner som inte stöds av Midas standardkomponenter.
 
-
-
 ## Komma igång
 
 För att använda React Datepicker med Midas-stilar måste du först installera de nödvändiga beroendena:
@@ -39,14 +37,13 @@ Importera sedan Midas-stilarna för datumväljaren:
 @import '@midas-ds/datepicker-styles/react-datepicker.css';
 ```
 
-
 ### Språkstöd (Locale Support)
 
 React Datepicker använder `date-fns` för hantering av språk och lokala inställningar. För att lägga till språkstöd, installera önskat språkpaket från `date-fns` och registrera det med `react-datepicker`.
 
 ```tsx
-import { registerLocale, setDefaultLocale } from  "react-datepicker";
-import { sv } from 'date-fns/locale/sv';
+import { registerLocale, setDefaultLocale } from 'react-datepicker'
+import { sv } from 'date-fns/locale/sv'
 registerLocale('sv', sv)
 setDefaultLocale('sv')
 ```
@@ -65,7 +62,6 @@ Här är ett exempel på en datumväljare byggd med React Datepicker och stylad 
 <DefaultReactDatepickerExample />
 
 ```tsx title="DatePickerExample.tsx"
-
 import { CalendarDays } from 'lucide-react'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
@@ -78,6 +74,7 @@ export const DefaultReactDatepickerExample = () => {
       showIcon
       selected={selectedDate}
       onChange={(date: Date | null) => setSelectedDate(date)}
+      formatWeekDay={date => date[0].toUpperCase()} // Capitalize first letter of the weekday
       preventOpenOnFocus
       toggleCalendarOnIconClick
       icon={<CalendarDays height={20} />}
@@ -94,21 +91,21 @@ export const DefaultReactDatepickerExample = () => {
 Här är ett exempel på en månadsväljare byggd med React Datepicker och stylad med Midas:
 
 ```tsx title="MonthPickerExample.tsx"
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
-  return (
-    <DatePicker
-      showPopperArrow={false}
-      selected={selectedDate}
-      showIcon
-      preventOpenOnFocus
-      toggleCalendarOnIconClick
-      icon={<CalendarDays height={20} />}
-      showMonthYearPicker
-      onChange={(date: Date | null) => setSelectedDate(date)}
-      dateFormat='MM-yyyy'
-      placeholderText='Select a date'
-    />
-  )
+const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+return (
+  <DatePicker
+    showPopperArrow={false}
+    selected={selectedDate}
+    showIcon
+    preventOpenOnFocus
+    toggleCalendarOnIconClick
+    icon={<CalendarDays height={20} />}
+    showMonthYearPicker
+    onChange={(date: Date | null) => setSelectedDate(date)}
+    dateFormat='MM-yyyy'
+    placeholderText='Select a date'
+  />
+)
 ```
 
-<MonthSelectExample/>
+<MonthSelectExample />
