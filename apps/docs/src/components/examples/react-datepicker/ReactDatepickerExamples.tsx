@@ -3,9 +3,10 @@ import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 import { registerLocale, setDefaultLocale } from 'react-datepicker'
 import { sv } from 'date-fns/locale/sv'
+import '@midas-ds/datepicker-styles/lib/react-datepicker.css'
+
 registerLocale('sv', sv)
 setDefaultLocale('sv')
-import '@midas-ds/datepicker-styles/lib/react-datepicker.css'
 
 export const DefaultReactDatepickerExample = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
