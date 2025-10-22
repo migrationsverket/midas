@@ -104,6 +104,13 @@ export const Disabled: Story = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    value: 'User input',
+  },
+}
+
 export const ShowCounter: Story = {
   args: {
     value: 'I love apples',
