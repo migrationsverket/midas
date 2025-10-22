@@ -39,7 +39,7 @@
     box-shadow: var(--midas-state-focus);
   }
 
-  &[data-hovered]:not([data-disabled]) {
+  &[data-hovered]:not([data-disabled], .readOnly) {
     background-color: var(--midas-field-01-hover);
   }
 
@@ -50,6 +50,11 @@
     @media (forced-colors: active) {
       border: 1px solid var(--midas-border-color-primary);
     }
+  }
+
+  &.readOnly {
+    background-color: transparent;
+    border-color: var(--midas-border-color-read-only);
   }
 
   .calendarButton {
@@ -77,6 +82,10 @@
       cursor: not-allowed;
       color: var(--midas-icon-disabled);
       border-color: var(--midas-border-color-disabled);
+
+      .readOnly & {
+        color: var(--midas-icon-read-only);
+      }
     }
 
     &[data-hovered]:not([data-disabled]) {

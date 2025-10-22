@@ -50,6 +50,13 @@ export const Disabled: Story = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    defaultValue: new CalendarDate(1995, 5, 29),
+  },
+}
+
 export const Invalid: Story = {
   args: {
     isInvalid: true,
