@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateRangePicker } from '@midas-ds/components'
 import { expect } from 'storybook/test'
+import { CalendarDate } from '@internationalized/date'
 
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,
@@ -46,6 +47,16 @@ export const Primary: Story = {
 export const Disabled: Story = {
   args: {
     isDisabled: true,
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    defaultValue: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(2025, 5, 29),
+    },
   },
 }
 
