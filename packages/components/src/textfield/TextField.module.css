@@ -73,6 +73,11 @@
     border-bottom: 1px solid var(--midas-border-color-disabled);
     color: var(--midas-text-disabled);
   }
+
+  &[data-readonly] {
+    background-color: transparent;
+    border-color: var(--midas-border-color-read-only);
+  }
 }
 
 .wrap {
@@ -139,6 +144,11 @@
     @media (forced-colors: active) {
       border: 1px solid;
     }
+  }
+
+  &[data-readonly] {
+    background-color: transparent;
+    border-color: var(--midas-border-color-read-only);
   }
 }
 

@@ -14,6 +14,7 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     <TextFieldBase {...rest}>
       <Input
         className={clsx(className)}
+        data-readonly={rest.isReadOnly || undefined}
         list={list}
         ref={ref}
         type={type}

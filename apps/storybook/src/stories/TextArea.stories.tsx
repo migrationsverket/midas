@@ -97,6 +97,15 @@ export const Disabled = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    showCounter: true,
+    value: 'User input',
+    maxLength: 100,
+  },
+}
+
 export const ShowCounter: Story = {
   args: {
     value: 'I love apples',

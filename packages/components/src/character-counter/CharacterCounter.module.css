@@ -17,3 +17,9 @@
     color: var(--midas-text-warning);
   }
 }
+
+[data-readonly] {
+  > .characterCounter {
+    color: var(--midas-text-read-only);
+  }
+}
