@@ -29,7 +29,10 @@ export const CheckboxInner = React.forwardRef<
       data-focus-visible={isFocusVisible || undefined}
       data-required={props.isRequired || undefined}
     >
-      <div className={clsx(styles.checkboxInner)}>
+      <div
+        className={clsx(styles.checkboxInner)}
+        data-readonly={props.isReadOnly || undefined}
+      >
         <svg
           width={16}
           height={16}

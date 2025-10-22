@@ -18,6 +18,10 @@
     stroke-dashoffset: 66;
     transition: all 200ms;
   }
+
+  &[data-readonly] {
+    border-color: var(--midas-border-color-read-only);
+  }
 }
 
 .checkbox {
@@ -137,6 +141,18 @@
       background: GrayText;
     }
   }
+
+  &[data-readonly],
+  &[data-readonly][data-indeterminate] div,
+  &[data-readonly][data-selected] div {
+    pointer-events: none;
+    background-color: transparent;
+    border-color: var(--midas-border-color-read-only);
+
+    & svg {
+      stroke: currentColor;
+    }
+  }
 }
 
 .checkboxGroup {
@@ -167,6 +183,10 @@
       &[data-disabled] {
         pointer-events: none;
         border-color: var(--midas-border-color-disabled);
+      }
+
+      &[data-readonly] {
+        border-color: var(--midas-border-color-read-only);
       }
     }
   }
