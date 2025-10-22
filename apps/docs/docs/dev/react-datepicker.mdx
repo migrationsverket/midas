@@ -3,7 +3,7 @@ title: React Datepicker
 description: Använda React Datepicker med Midas-stilar
 ---
 
-import { DefaultReactDatepickerExample } from '@site/src/components/examples'
+import { DefaultReactDatepickerExample, MonthSelectExample } from '@site/src/components/examples'
 
 # React Datepicker
 
@@ -30,13 +30,25 @@ Använd Midas inbyggda datumkomponenter som standard. React Datepicker är ett a
 För att använda React Datepicker med Midas-stilar måste du först installera de nödvändiga beroendena:
 
 ```bash
-npm install react-datepicker @midas-ds/datepicker-styles
+npm install react-datepicker @midas-ds/datepicker-styles date-fns
 ```
 
 Importera sedan Midas-stilarna för datumväljaren:
 
 ```css
 @import '@midas-ds/datepicker-styles/react-datepicker.css';
+```
+
+
+### Språkstöd (Locale Support)
+
+React Datepicker använder `date-fns` för hantering av språk och lokala inställningar. För att lägga till språkstöd, installera önskat språkpaket från `date-fns` och registrera det med `react-datepicker`.
+
+```tsx
+import { registerLocale, setDefaultLocale } from  "react-datepicker";
+import { sv } from 'date-fns/locale/sv';
+registerLocale('sv', sv)
+setDefaultLocale('sv')
 ```
 
 ## Användbara länkar
@@ -76,3 +88,27 @@ export const DefaultReactDatepickerExample = () => {
   )
 }
 ```
+
+### Månadsväljare
+
+Här är ett exempel på en månadsväljare byggd med React Datepicker och stylad med Midas:
+
+```tsx title="MonthPickerExample.tsx"
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  return (
+    <DatePicker
+      showPopperArrow={false}
+      selected={selectedDate}
+      showIcon
+      preventOpenOnFocus
+      toggleCalendarOnIconClick
+      icon={<CalendarDays height={20} />}
+      showMonthYearPicker
+      onChange={(date: Date | null) => setSelectedDate(date)}
+      dateFormat='MM-yyyy'
+      placeholderText='Select a date'
+    />
+  )
+```
+
+<MonthSelectExample/>
