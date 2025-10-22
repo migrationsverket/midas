@@ -49,6 +49,10 @@
   min-height: var(--midas-size-150);
   outline: none;
   padding: 0 2.5rem 0 1rem;
+
+  &:hover {
+    background-color: var(--midas-layer-01-hover);
+  }
 }
 
 .react-datepicker__input-container input:focus {
@@ -68,6 +72,10 @@
   position: absolute;
   right: 10px;
   cursor: pointer;
+
+  &:hover + input {
+    background-color: var(--midas-layer-01-hover);
+  }
 }
 
 .react-datepicker-popper {
