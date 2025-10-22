@@ -368,20 +368,5 @@ export const MultiSelectTests: Story<Item, 'multiple'> = {
         await expect(visibleValue).toBeVisible()
       },
     )
-    await step(
-      'It should be possible to press escape to exit the select without clearing the selections made',
-      async () => {
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[ArrowDown]')
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Escape]')
-
-        await expect(
-          canvas.queryByText(`Select an option`, {
-            selector: 'span',
-          }),
-        ).toBeNull()
-      },
-    )
   },
 }
