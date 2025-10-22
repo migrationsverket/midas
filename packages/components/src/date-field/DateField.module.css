@@ -34,7 +34,12 @@
     }
   }
 
-  &:hover:not([data-disabled]) {
+  &[data-readonly] {
+    background-color: transparent;
+    border-color: var(--midas-border-color-read-only);
+  }
+
+  &:hover:not([data-disabled], [data-readonly]) {
     background-color: var(--midas-field-01-hover);
   }
 
