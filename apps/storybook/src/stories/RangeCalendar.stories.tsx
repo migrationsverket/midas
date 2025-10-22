@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { RangeCalendar } from '@midas-ds/components'
 import { mockedNow } from '../utils/storybook'
 import { RunOptions } from 'axe-core'
+import { CalendarDate } from '@internationalized/date'
 
 type Story = StoryObj<typeof RangeCalendar>
 
@@ -9,7 +10,7 @@ export default {
   component: RangeCalendar,
   title: 'Components/Calendar/RangeCalendar',
   tags: ['autodocs'],
-} as Meta<typeof RangeCalendar>
+} satisfies Meta<typeof RangeCalendar>
 
 export const Primary: Story = {}
 
@@ -43,6 +44,16 @@ export const Disabled: Story = {
           'color-contrast': { enabled: false },
         },
       } satisfies RunOptions,
+    },
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    value: {
+      start: new CalendarDate(1995, 5, 29),
+      end: new CalendarDate(1995, 5, 31),
     },
   },
 }

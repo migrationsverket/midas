@@ -22,6 +22,7 @@ export const Calendar: React.FC<CalendarProps> = ({
   <div className={styles.container}>
     <AriaCalendar
       className={clsx(styles.calendar, className)}
+      data-readonly={rest.isReadOnly || undefined}
       {...rest}
     >
       <CalendarHeader {...rest} />
