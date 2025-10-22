@@ -73,13 +73,16 @@ export const KeyboardTest: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[ArrowRight]')
         await expect(
-          canvas.getByRole('gridcell', { name: todaysDate }),
+          canvas.getByRole('gridcell', { name: todaysDate, selected: true }),
         ).toHaveAttribute('aria-selected', 'true')
         await expect(
-          canvas.getByRole('gridcell', { name: tomorrow }),
+          canvas.getByRole('gridcell', { name: tomorrow, selected: true }),
         ).toHaveAttribute('aria-selected', 'true')
         await expect(
-          canvas.getByRole('gridcell', { name: dayAfterTomorrow }),
+          canvas.getByRole('gridcell', {
+            name: dayAfterTomorrow,
+            selected: true,
+          }),
         ).toHaveAttribute('aria-selected', 'true')
       },
     )
