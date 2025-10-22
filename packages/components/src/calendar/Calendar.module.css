@@ -75,6 +75,10 @@
   @media (forced-colors: active) {
     border: 2px solid;
   }
+
+  &[data-readonly] {
+    background-color: transparent;
+  }
 }
 
 .header {
@@ -103,6 +107,10 @@
         outline-offset: 2px;
       }
     }
+
+    &[data-readonly] {
+      background-color: transparent;
+    }
   }
 
   [data-disabled] {
@@ -129,6 +137,17 @@
     }
   }
 
+  &[data-readonly] {
+    pointer-events: none;
+    border-color: transparent;
+
+    &[data-selected] {
+      background-color: transparent;
+      border-color: var(--midas-border-color-primary);
+      color: var(--midas-text-primary);
+    }
+  }
+
   &.range {
     &[data-selected='true'] {
       color: var(--midas-text-primary);
@@ -140,7 +159,7 @@
       }
     }
 
-    &[data-selection-start='true'] {
+    &[data-selection-start]:not([data-outside-month]) {
       color: var(--midas-text-inverse);
       background-color: var(--midas-calendar-date-background-start-range);
       border-color: var(--midas-calendar-date-background-start-range);
@@ -150,13 +169,30 @@
       }
     }
 
-    &[data-selection-end='true'] {
+    &[data-selection-end]:not([data-outside-month]) {
       color: var(--midas-text-inverse);
       background-color: var(--midas-calendar-date-background-end-range);
       border-color: var(--midas-calendar-date-background-end-range);
 
       @media (forced-colors: active) {
         background-color: SelectedItem;
+      }
+    }
+
+    &[data-readonly] {
+      pointer-events: none;
+
+      &[data-selected] {
+        background-color: transparent;
+        border-color: var(--midas-border-color-read-only);
+        color: var(--midas-text-primary);
+      }
+
+      &[data-selection-start]:not([data-outside-month]),
+      &[data-selection-end]:not([data-outside-month]) {
+        background-color: transparent;
+        border-color: var(--midas-border-color-primary);
+        color: var(--midas-text-primary);
       }
     }
   }

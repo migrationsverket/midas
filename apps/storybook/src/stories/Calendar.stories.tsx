@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Calendar } from '@midas-ds/components'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
-import { isWeekend } from '@internationalized/date'
+import { CalendarDate, isWeekend } from '@internationalized/date'
 import { RunOptions } from 'axe-core'
 
 type Story = StoryObj<typeof Calendar>
@@ -21,7 +21,7 @@ export default {
   },
   title: 'Components/Calendar',
   tags: ['autodocs'],
-} as Meta<typeof Calendar>
+} satisfies Meta<typeof Calendar>
 
 export const Primary: Story = {}
 
@@ -47,6 +47,13 @@ export const Disabled: Story = {
         },
       } satisfies RunOptions,
     },
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    value: new CalendarDate(1995, 5, 29),
   },
 }
 
