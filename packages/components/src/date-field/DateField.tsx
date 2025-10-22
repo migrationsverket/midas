@@ -32,7 +32,6 @@ export const DateField: React.FC<DateFieldProps> = ({
   description,
   errorMessage,
   errorPosition = 'top',
-  isDisabled,
   label,
   size = 'large',
   popover,
@@ -51,7 +50,8 @@ export const DateField: React.FC<DateFieldProps> = ({
       className={clsx(styles.inputField, {
         [styles.medium]: size === 'medium',
       })}
-      data-disabled={isDisabled || undefined}
+      data-disabled={rest.isDisabled || undefined}
+      data-readonly={rest.isReadOnly || undefined}
       data-testid='date-field_input-field'
     >
       <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
