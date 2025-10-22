@@ -45,6 +45,15 @@
     }
   }
 
+  &[data-readonly] {
+    cursor: default;
+    border-color: var(--midas-border-color-read-only);
+
+    &::before {
+      border-color: var(--midas-border-color-read-only);
+    }
+  }
+
   &[data-focus-visible],
   &:focus-visible {
     box-shadow: var(--midas-state-focus);
@@ -88,7 +97,7 @@
   &[data-selected]::before {
     padding: 0.188rem;
     border-width: 0.1rem;
-    background: var(--midas-icon-tertiary) 50% 50% no-repeat content-box;
+    background: var(--midas-icon-secondary) 50% 50% no-repeat content-box;
   }
 
   /* Nesting this selector in the one above causes syntax errors during minification */
@@ -100,7 +109,7 @@
 
   &[data-selected][data-pressed]::before {
     border-color: var(--midas-border-color-subtle);
-    background: var(--midas-icon-tertiary) 50% 50% no-repeat content-box;
+    background: var(--midas-icon-secondary) 50% 50% no-repeat content-box;
   }
 
   &[data-invalid] {
