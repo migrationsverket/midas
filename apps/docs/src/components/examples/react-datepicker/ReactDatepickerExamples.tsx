@@ -16,7 +16,6 @@ export const DefaultReactDatepickerExample = () => {
       selected={selectedDate}
       onChange={(date: Date | null) => setSelectedDate(date)}
       formatWeekDay={date => date[0].toUpperCase()}
-      preventOpenOnFocus
       toggleCalendarOnIconClick
       icon={<CalendarDays height={20} />}
       showPopperArrow={false}
@@ -33,7 +32,6 @@ export const MonthSelectExample = () => {
       showPopperArrow={false}
       selected={selectedDate}
       showIcon
-      preventOpenOnFocus
       toggleCalendarOnIconClick
       icon={<CalendarDays height={20} />}
       showMonthYearPicker
