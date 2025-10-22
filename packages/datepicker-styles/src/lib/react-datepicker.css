@@ -277,7 +277,10 @@
   border-color: var(--midas-calendar-date-background-in-range);
 }
 
-.react-datepicker__day--outside-month,
+.react-datepicker__day--outside-month {
+  visibility: hidden;
+}
+
 .react-datepicker__month-text--outside-month,
 .react-datepicker__quarter-text--outside-month,
 .react-datepicker__year-text--outside-month {
