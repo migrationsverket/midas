@@ -50,6 +50,10 @@
   outline: none;
   padding: 0 2.5rem 0 1rem;
 
+  &.medium {
+    min-height: var(--midas-size-130);
+  }
+
   &:hover {
     background-color: var(--midas-layer-01-hover);
   }
