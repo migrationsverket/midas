@@ -35,11 +35,21 @@ export const Small: Story = {
 }
 
 export const InButton: Story = {
-  args: { small: true, isOnColor: true },
+  args: { small: true },
   render: args => (
-    <Button>
-      <Spinner {...args} />
-      Laddar
-    </Button>
+    <div style={{ display: 'flex', gap: '1rem' }}>
+      <Button>
+        <Spinner {...args} />
+        Laddar
+      </Button>
+      <Button variant="secondary">
+        <Spinner {...args} />
+        Laddar
+      </Button>
+    </div>
   ),
+}
+
+export const UserSelectColor: Story = {
+  args: { color: 'rebeccapurple' },
 }

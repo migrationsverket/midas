@@ -331,12 +331,12 @@ export const transitionDurationFast: string;
 export const transitionTimingEaseOut: number[];
 export const transitionTimingEaseIn: number[];
 export const transitionPanelCollapse: {
-  delay: number;
+  delay: string;
   duration: string;
   timingFunction: number[];
 };
 export const transitionPanelExpand: {
-  delay: number;
+  delay: string;
   duration: string;
   timingFunction: number[];
 };

@@ -52,23 +52,11 @@
         }
       }
     },
-    "test:forced-colors:light": {
+    "test:forced-colors": {
       "executor": "@nx/vite:test",
       "options": {
-        "config": "apps/storybook/vitest.config.forced-colors-light.ts",
-        "project": "storybook:forced-colors:light"
-      },
-      "configurations": {
-        "watch": {
-          "watch": true
-        }
-      }
-    },
-    "test:forced-colors:dark": {
-      "executor": "@nx/vite:test",
-      "options": {
-        "config": "apps/storybook/vitest.config.forced-colors-dark.ts",
-        "project": "storybook:forced-colors:dark"
+        "config": "apps/storybook/vitest.config.forced-colors.ts",
+        "project": "storybook:forced-colors"
       },
       "configurations": {
         "watch": {

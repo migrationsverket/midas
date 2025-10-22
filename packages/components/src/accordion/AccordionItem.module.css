@@ -113,16 +113,12 @@
   background-color: var(--accordion-background-hover);
 }
 
-.panel[aria-hidden='true'] {
-  height: 0;
-  transition: var(--midas-transition-panel-collapse) allow-discrete;
-  overflow-y: clip;
-}
-
-.panel[aria-hidden='false'] {
-  transition: var(--midas-transition-panel-expand) allow-discrete;
-  height: auto;
-  height: calc-size(min-content, size);
+.panel {
+  /* RAC passes this variable via the style prop, making it available during runtime only */
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  height: var(--disclosure-panel-height);
+  transition: height var(--midas-transition-panel-collapse);
+  overflow: clip;
 }
 
 .content {
