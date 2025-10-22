@@ -26,21 +26,17 @@
   font-family: var(--midas-typography-font-family);
   margin-bottom: 0.5rem;
 
-  &:has(~ [data-disabled]) {
+  & > [data-disabled],
+  [data-disabled] & {
     color: var(--midas-text-disabled);
 
     @media (forced-colors: active) {
       color: GrayText;
     }
   }
-}
 
-[data-disabled] {
-  > .description {
-    color: var(--midas-text-disabled);
-
-    @media (forced-colors: active) {
-      color: GrayText;
-    }
+  & > [data-readonly],
+  [data-readonly] & {
+    color: var(--midas-text-read-only);
   }
 }
