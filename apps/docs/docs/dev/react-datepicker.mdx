@@ -75,7 +75,6 @@ export const DefaultReactDatepickerExample = () => {
       selected={selectedDate}
       onChange={(date: Date | null) => setSelectedDate(date)}
       formatWeekDay={date => date[0].toUpperCase()} // Capitalize first letter of the weekday
-      preventOpenOnFocus
       toggleCalendarOnIconClick
       icon={<CalendarDays height={20} />}
       showPopperArrow={false}
@@ -97,7 +96,6 @@ return (
     showPopperArrow={false}
     selected={selectedDate}
     showIcon
-    preventOpenOnFocus
     toggleCalendarOnIconClick
     icon={<CalendarDays height={20} />}
     showMonthYearPicker
