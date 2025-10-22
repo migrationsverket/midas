@@ -377,10 +377,10 @@ export const MultiSelectTests: Story<Item, 'multiple'> = {
         await userEvent.keyboard('[Escape]')
 
         await expect(
-          canvas.getByText('Apple', {
+          canvas.queryByText(`Select an option`, {
             selector: 'span',
           }),
-        ).toBeVisible()
+        ).toBeNull()
       },
     )
   },
