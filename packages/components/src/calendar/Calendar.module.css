@@ -178,6 +178,6 @@
   }
 
   &[data-outside-month='true'] {
-    display: none;
+    color: var(--midas-text-disabled);
   }
 }
