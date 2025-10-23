@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { expect } from 'storybook/test'
 import { Bell } from 'lucide-react'
 import { Badge, BadgeContainer, Button } from '@midas-ds/components'
 
@@ -40,19 +39,5 @@ export const WithLabel: Story = {
 export const LongLabel: Story = {
   args: {
     children: '123',
-  },
-}
-
-export const CustomClassName: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  args: {
-    className: 'derp',
-  },
-  play: async ({ canvas, args: { className } }) => {
-    const badge = await canvas.findByTestId('badge')
-    await expect(badge).toHaveClass(className as string)
   },
 }

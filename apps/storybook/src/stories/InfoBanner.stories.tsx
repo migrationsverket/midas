@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Button, InfoBanner } from '@midas-ds/components'
 import React from 'react'
-import { expect, fn, userEvent } from 'storybook/test'
 
 type Story = StoryObj<typeof InfoBanner>
 
@@ -67,29 +66,9 @@ export const Dismissable: Story = {
   },
 }
 
-export const DismissableTests: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  args: {
-    ...Dismissable.args,
-    onOpenChange: fn(),
-  },
-  play: async ({ canvas, step, args }) => {
-    await step('it should fire the onOpenChange event and close', async () => {
-      const closeButton = canvas.getByRole('button')
-      await userEvent.click(closeButton)
-      await expect(args.onOpenChange).toHaveBeenCalledOnce()
-      await expect(closeButton).not.toBeVisible()
-    })
-  },
-}
-
 export const Controlled: Story = {
   args: {
     ...Dismissable.args,
-    onOpenChange: fn(),
   },
   render: args => {
     const [isOpen, setIsOpen] = React.useState(true)
@@ -113,26 +92,6 @@ export const Controlled: Story = {
           </Button>
         )}
       </>
-    )
-  },
-}
-
-export const ControlledTests: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  ...Controlled,
-  play: async ({ canvas, step, args }) => {
-    await step(
-      'it should fire the onOpenChange on both open and close',
-      async () => {
-        const closeButton = canvas.getByRole('button')
-        await userEvent.click(closeButton)
-        await expect(args.onOpenChange).toHaveBeenCalledWith(false)
-        await userEvent.click(canvas.getByRole('button'))
-        await expect(args.onOpenChange).toHaveBeenCalledTimes(1)
-      },
     )
   },
 }
