@@ -17,6 +17,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
     <TextFieldBase {...rest}>
       <AriaTextArea
         className={clsx(styles.textArea, className)}
+        data-readonly={rest.isReadOnly || undefined}
         cols={cols}
         ref={ref}
         rows={rows}

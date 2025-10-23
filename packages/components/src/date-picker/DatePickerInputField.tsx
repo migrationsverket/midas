@@ -3,24 +3,27 @@ import { Button, Group } from 'react-aria-components'
 import { CalendarDays } from 'lucide-react'
 import { clsx } from 'clsx'
 import styles from './DatePicker.module.css'
-import { Size } from '../common/types'
+import { DatePickerProps } from './DatePicker'
 
-interface DatePickerInputFieldProps {
+interface DatePickerInputFieldProps
+  extends Pick<
+    DatePickerProps,
+    'isDisabled' | 'isInvalid' | 'isReadOnly' | 'size'
+  > {
   children?: React.ReactNode
-  isDisabled?: boolean
-  isInvalid?: boolean
-  size?: Size
 }
 
 export const DatePickerInputField: React.FC<DatePickerInputFieldProps> = ({
   children,
   isDisabled,
   isInvalid,
+  isReadOnly,
   size = 'large',
 }) => (
   <Group
     className={clsx(styles.inputField, {
       [styles.medium]: size === 'medium',
+      [styles.readOnly]: isReadOnly,
     })}
   >
     {children}

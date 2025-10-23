@@ -43,6 +43,8 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
     <div
       {...groupProps}
       className={styles.checkboxGroup}
+      data-readonly={props.isReadOnly || undefined}
+      data-disabled={props.isDisabled || undefined}
     >
       <LabelWrapper popover={props.popover}>
         {props.label && <Label {...labelProps}>{props.label}</Label>}
@@ -66,6 +68,7 @@ export function CheckboxGroup(props: CheckboxGroupProps) {
         <Checkbox
           isSelected={allSelected}
           isIndeterminate={someSelected}
+          isReadOnly={props.isReadOnly}
           onChange={handleChange}
         >
           {props.selectAllLabel || stringFormatter.format('selectAll')}

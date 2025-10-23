@@ -114,6 +114,14 @@ export const Disabled: Story = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    children: items,
+    isReadOnly: true,
+    value: 'Kiwi',
+  },
+}
+
 export const OneItemDisabled: Story = {
   args: {
     children: radioItemsOneDisabled,

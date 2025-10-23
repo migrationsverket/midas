@@ -90,6 +90,14 @@ export const Disabled: Story = {
   },
 }
 
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    showSelectAll: true,
+    value: ['Mango'],
+  },
+}
+
 export const InvalidInteraction: Story = {
   args: {
     isRequired: true,

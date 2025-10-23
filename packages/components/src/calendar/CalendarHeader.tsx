@@ -5,11 +5,17 @@ import { Heading } from '../heading'
 import styles from './Calendar.module.css'
 import { CalendarProps } from './Calendar'
 
-export const CalendarHeader: React.FC<CalendarProps> = ({ isDisabled }) => (
+type CalendarHeaderProps = Pick<CalendarProps, 'isDisabled' | 'isReadOnly'>
+
+export const CalendarHeader: React.FC<CalendarHeaderProps> = ({
+  isDisabled,
+  isReadOnly,
+}) => (
   <header className={styles.header}>
     <Button
       slot='previous'
       size='medium'
+      data-readonly={isReadOnly || undefined}
     >
       <ChevronLeft />
     </Button>
@@ -21,6 +27,7 @@ export const CalendarHeader: React.FC<CalendarProps> = ({ isDisabled }) => (
     <Button
       slot='next'
       size='medium'
+      data-readonly={isReadOnly || undefined}
     >
       <ChevronRight />
     </Button>

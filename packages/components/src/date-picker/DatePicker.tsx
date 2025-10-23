@@ -19,7 +19,7 @@ import styles from './DatePicker.module.css'
 import { Size } from '../common/types'
 import { LabelWrapper } from '../label/LabelWrapper'
 
-interface DatePickerProps extends AriaDatePickerProps<DateValue> {
+export interface DatePickerProps extends AriaDatePickerProps<DateValue> {
   description?: string
   errorMessage?: string | ((validation: ValidationResult) => string)
   errorPosition?: 'top' | 'bottom'

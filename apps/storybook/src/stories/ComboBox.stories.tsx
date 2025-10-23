@@ -32,8 +32,8 @@ const meta: Meta<typeof ComboBox> = {
   },
   render: args => (
     <ComboBox {...args}>
-      <ComboBoxItem>Apple</ComboBoxItem>
-      <ComboBoxItem>Lemon</ComboBoxItem>
+      <ComboBoxItem id='apple'>Apple</ComboBoxItem>
+      <ComboBoxItem id='lemon'>Lemon</ComboBoxItem>
     </ComboBox>
   ),
 }
@@ -141,6 +141,13 @@ export const Disabled: Story = {
         },
       } satisfies RunOptions,
     },
+  },
+}
+
+export const ReadOnly: Story = {
+  args: {
+    isReadOnly: true,
+    defaultSelectedKey: 'lemon',
   },
 }
 
