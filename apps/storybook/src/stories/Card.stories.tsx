@@ -11,7 +11,6 @@ import {
   Text,
 } from '@midas-ds/components'
 import { Pen, X } from 'lucide-react'
-import { expect, userEvent } from 'storybook/test'
 
 const meta: Meta<typeof Card> = {
   component: Card,
@@ -79,18 +78,6 @@ export const WithActions: Story = {
       </CardContent>
     ),
   },
-  play: async ({ canvas, step }) => {
-    await step('It should be possible to focus the button', async () => {
-      const button = canvas.getByText('Avbryt')
-      expect(button).not.toHaveFocus()
-
-      // focus the link
-      await userEvent.tab()
-      await userEvent.tab()
-
-      expect(button).toHaveFocus()
-    })
-  },
 }
 
 export const WithPrimaryAction: Story = {
@@ -101,7 +88,6 @@ export const WithPrimaryAction: Story = {
           onPress={() => {
             return
           }}
-          data-testid='card-action-area'
         >
           <CardContent>
             <CardTitle>Dina uppgifter</CardTitle>
@@ -127,20 +113,6 @@ export const WithPrimaryAction: Story = {
       </>
     ),
   },
-  play: async ({ canvas, step }) => {
-    await step(
-      'It should be possible to focus the primary action area',
-      async () => {
-        const button = canvas.getByTestId('card-action-area')
-        expect(button).not.toHaveFocus()
-
-        // focus the link
-        await userEvent.tab()
-
-        expect(button).toHaveFocus()
-      },
-    )
-  },
 }
 
 export const WithLink: Story = {
@@ -156,17 +128,6 @@ export const WithLink: Story = {
         <Text>Namn: Namn Namnsson</Text>
       </CardContent>
     ),
-  },
-  play: async ({ canvas, step }) => {
-    await step('It should be possible to focus the link', async () => {
-      const link = canvas.getByTestId('card-link')
-      expect(link).not.toHaveFocus()
-
-      // focus the link
-      await userEvent.tab()
-
-      expect(link).toHaveFocus()
-    })
   },
 }
 

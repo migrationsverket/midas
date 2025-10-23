@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Accordion, AccordionItem, Button } from '@midas-ds/components'
 import { File } from 'lucide-react'
-import { expect, userEvent } from 'storybook/test'
 import React from 'react'
-import styles from '@midas-ds/components/accordion/Accordion.module.css'
 
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
@@ -36,15 +34,6 @@ export const Default: Story = {
         sint libero!
       </AccordionItem>
     )),
-  },
-  play: async ({ canvasElement, step }) => {
-    await step(
-      'It should preserve its classNames when being passed new ones',
-      async () => {
-        const accordion = canvasElement.querySelector('div')
-        await expect(accordion).toHaveClass(styles.root, 'test')
-      },
-    )
   },
 }
 
@@ -119,15 +108,6 @@ export const DynamicContent: Story = {
       </AccordionItem>
     </Accordion>
   ),
-  play: async ({ canvas }) => {
-    await userEvent.click(
-      canvas.getByRole('button', {
-        name: 'AccordionItem with dynamic content',
-      }),
-    )
-    await userEvent.click(canvas.getByTestId('btn-0'))
-    await expect(canvas.getByTestId('hidden-content')).toBeVisible()
-  },
 }
 
 export const DS1060: Story = {

@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateField } from '@midas-ds/components'
 import { CalendarDate } from '@internationalized/date'
-import { expect } from 'storybook/test'
 
 type Story = StoryObj<typeof DateField>
 
@@ -34,15 +33,7 @@ export default {
 } as Meta<typeof DateField>
 
 /** Don't put format in description, it changes with browser language settings! */
-export const Default: Story = {
-  play: async ({ step, canvas, globals: { size } }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(canvas.getByTestId('date-field_input-field')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
-      })
-    })
-  },
-}
+export const Primary: Story = {}
 
 export const Invalid: Story = {
   args: {

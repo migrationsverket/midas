@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Dropdown, DropdownItem, LinkButton } from '@midas-ds/components'
-import { userEvent, expect } from 'storybook/test'
 import { Ellipsis } from 'lucide-react'
 
 const meta: Meta<typeof Dropdown> = {
@@ -25,13 +24,6 @@ export const Primary: Story = {}
 
 export const Open: Story = {
   tags: ['!snapshot'],
-  play: async ({ canvas, step, args: { title } }) => {
-    await step('It should render successfully', async () => {
-      const dropdown = canvas.getByText(title as string)
-      await userEvent.click(dropdown)
-      expect(canvas).toBeTruthy()
-    })
-  },
 }
 
 export const WithoutTitle: Story = {

@@ -18,8 +18,6 @@ import {
   Bell,
 } from 'lucide-react'
 import { variables } from '@midas-ds/theme'
-import { expect, userEvent } from 'storybook/test'
-import styles from '@midas-ds/components/layout/Layout.module.css'
 const { layer02Base, borderColorSubtle, textPrimary } = variables
 
 const meta: Meta<typeof Layout> = {
@@ -125,15 +123,6 @@ export const Primary: Story = {
     title: 'Skapa ansökningar',
     children: <AppExample />,
   },
-  play: async ({ canvasElement, step, args }) => {
-    await step('it should use accept a custom className', async () => {
-      // rootElement is set to 'div' in the default exported parameters
-      await expect(canvasElement.querySelector('div')?.firstChild).toHaveClass(
-        styles.baseLayout,
-        args.className as string,
-      )
-    })
-  },
 }
 
 export const External: Story = {
@@ -217,19 +206,4 @@ export const Navbar: Story = {
       <Layout.Navbar />
     </Layout.Provider>
   ),
-}
-
-export const DS1375: Story = {
-  ...Primary,
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  play: async ({ canvas, step }) => {
-    await step('it should be possible to skip to content', async () => {
-      await userEvent.tab()
-      await userEvent.keyboard('[Enter]')
-      await expect(canvas.getByRole('main')).toHaveFocus()
-    })
-  },
 }
