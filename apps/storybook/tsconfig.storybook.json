@@ -6,6 +6,7 @@
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx"
   ],
+  "exclude": ["src/**/*.test.tsx", "src/**/*.spec.tsx"],
   "files": [
     "../../node_modules/@nx/react/typings/styled-jsx.d.ts",
     "../../node_modules/@nx/react/typings/cssmodule.d.ts",

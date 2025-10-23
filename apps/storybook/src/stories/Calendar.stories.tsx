@@ -2,9 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Calendar } from '@midas-ds/components'
 import { DateValue } from 'react-aria-components'
 import { useState } from 'react'
-import { expect, userEvent, within } from 'storybook/test'
-import { today, getLocalTimeZone, isWeekend } from '@internationalized/date'
-import { mockedNow } from '../utils/storybook'
+import { isWeekend } from '@internationalized/date'
 import { RunOptions } from 'axe-core'
 
 type Story = StoryObj<typeof Calendar>
@@ -26,58 +24,6 @@ export default {
 } as Meta<typeof Calendar>
 
 export const Primary: Story = {}
-
-export const KeyboardTest: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should be possible to select a date with the keyboard',
-      async () => {
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[ArrowLeft]')
-        await userEvent.keyboard('[ArrowLeft]')
-        await userEvent.keyboard('[Space]')
-        await expect(
-          canvas.getByRole('gridcell', {
-            name: today(getLocalTimeZone())
-              .subtract({ days: 2 })
-              .day.toString(),
-          }),
-        ).toHaveAttribute('aria-selected', 'true')
-      },
-    )
-  },
-}
-
-export const DS1141: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  args: {
-    minValue: mockedNow,
-  },
-  play: async ({ canvas, step }) => {
-    await step(
-      'it should show a "not-allowed" cursor when hovering disabled dates',
-      async () => {
-        const yesterdayButton = within(
-          canvas.getByRole('gridcell', {
-            name: `${mockedNow.day - 2}`,
-          }),
-        ).getByRole('button')
-
-        await userEvent.hover(yesterdayButton)
-        await expect(yesterdayButton).toHaveStyle({ cursor: 'not-allowed' })
-      },
-    )
-  },
-}
 
 export const Disabled: Story = {
   args: {

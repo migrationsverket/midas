@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { options } from '../utils/storybook'
 import { useState } from 'react'
 import { type Key } from 'react-aria-components'
-import { expect, userEvent, within } from 'storybook/test'
 import {
   ListBoxItem,
   DialogTrigger,
@@ -280,39 +279,6 @@ export const DS1282: Story = {
           </Modal>
         </DialogTrigger>
       </>
-    )
-  },
-  play: async ({ canvasElement, step }) => {
-    await step(
-      'it should be possible to use the select multiple times while rendering a table with modals',
-      async () => {
-        // Open modal
-        await userEvent.tab()
-        await userEvent.tab()
-        await userEvent.keyboard('[Space]')
-
-        // Get the value of the select
-        const body = canvasElement.ownerDocument.body
-        const hiddenSelectContainer = within(body).getByTestId(
-          'hidden-select-container',
-        )
-
-        // Select "apple"
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Space]')
-
-        await expect(
-          within(hiddenSelectContainer).getByDisplayValue('apple'),
-        ).toBeVisible()
-
-        // Select "banana"
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[ArrowDown]')
-        await userEvent.keyboard('[Space]')
-        await expect(
-          within(hiddenSelectContainer).getByDisplayValue('banana'),
-        ).toBeVisible()
-      },
     )
   },
 }

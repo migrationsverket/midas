@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DateRangePicker } from '@midas-ds/components'
-import { expect } from 'storybook/test'
 
 const meta: Meta<typeof DateRangePicker> = {
   component: DateRangePicker,
@@ -33,15 +32,7 @@ const meta: Meta<typeof DateRangePicker> = {
 export default meta
 type Story = StoryObj<typeof DateRangePicker>
 
-export const Primary: Story = {
-  play: async ({ step, canvas, globals: { size } }) => {
-    await step('it should change size according to size prop', async () => {
-      await expect(canvas.getByRole('group')).toHaveStyle({
-        height: size === 'large' ? '48px' : '40px',
-      })
-    })
-  },
-}
+export const Primary: Story = {}
 
 export const Disabled: Story = {
   args: {

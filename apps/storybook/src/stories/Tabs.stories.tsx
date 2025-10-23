@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { expect, userEvent } from 'storybook/test'
 import { Key } from 'react-aria-components'
 import React from 'react'
 import { Button, Tab, TabList, TabPanel, Tabs } from '@midas-ds/components'
@@ -105,14 +104,9 @@ export const DefaultSelectedKey: Story = {
   args: {
     defaultSelectedKey: 'Ansök',
   },
-  play: async ({ canvas, step }) => {
-    await step('the tab "Ansök" should be opened', async () => {
-      await expect(canvas.getByRole('button')).toBeVisible()
-    })
-  },
 }
 
-export const SelectedKeyAndOnSelectionChange: Story = {
+export const Controlled: Story = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
@@ -147,12 +141,6 @@ export const SelectedKeyAndOnSelectionChange: Story = {
       </Tabs>
     )
   },
-  play: async ({ canvas, step }) => {
-    await step('the tab "Ansök" should be opened', async () => {
-      await userEvent.click(await canvas.findByRole('tab', { name: 'Ansök' }))
-      await expect(canvas.getByRole('button')).toBeVisible()
-    })
-  },
 }
 
 export const MoreItemsThanChildren: Story = {
@@ -168,12 +156,4 @@ export const MoreItemsThanChildren: Story = {
       derp
     </>
   ),
-  play: async ({ canvas, step }) => {
-    await step(
-      'the page should still render even if the tabs component is misconfigured',
-      async () => {
-        await expect(canvas.getByText('derp')).toBeInTheDocument()
-      },
-    )
-  },
 }

@@ -6,8 +6,6 @@ import {
   TooltipTrigger,
 } from '@midas-ds/components'
 import { Save } from 'lucide-react'
-import { expect, within } from 'storybook/test'
-import styles from '@midas-ds/components/tooltip/Tooltip.module.css'
 import { I18nProvider } from 'react-aria-components'
 
 type Story = StoryObj<typeof Tooltip>
@@ -59,48 +57,12 @@ export const Open: Story = {
     className: 'test-class',
     isOpen: true,
   },
-  play: async ({ step, args: { className }, canvasElement }) => {
-    // Tooltip is outside of #storybook-root element
-    const body = canvasElement.ownerDocument.body
-    const tooltip = within(body).getByRole('tooltip')
-
-    await step(
-      'it should preserve its classNames when being passed new ones',
-      async () => {
-        expect(tooltip).toHaveClass(styles.tooltip, className as string)
-      },
-    )
-  },
 }
 
 export const Placement: Story = {
   args: {
     placement: 'top',
     isOpen: true,
-  },
-  play: async ({ step, canvasElement }) => {
-    const body = canvasElement.ownerDocument.body
-    const tooltip = within(body).getByRole('tooltip')
-
-    await step('should be placed at the top', async () => {
-      expect(tooltip).toHaveAttribute('data-placement', 'top')
-    })
-  },
-}
-
-export const PlacementStart: Story = {
-  args: {
-    placement: 'start',
-    isOpen: true,
-  },
-  tags: ['!dev', '!autodocs'],
-  play: async ({ step, canvasElement }) => {
-    const body = canvasElement.ownerDocument.body
-    const tooltip = within(body).getByRole('tooltip')
-
-    await step('should be placed at the start (left)', async () => {
-      expect(tooltip).toHaveAttribute('data-placement', 'left')
-    })
   },
 }
 
@@ -115,12 +77,4 @@ export const PlacementStartRTL: Story = {
       <Render {...args} />
     </I18nProvider>
   ),
-  play: async ({ step, canvasElement }) => {
-    const body = canvasElement.ownerDocument.body
-    const tooltip = within(body).getByRole('tooltip')
-
-    await step('should be placed at the start for RTL (right)', async () => {
-      expect(tooltip).toHaveAttribute('data-placement', 'right')
-    })
-  },
 }
