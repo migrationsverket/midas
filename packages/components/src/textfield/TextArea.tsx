@@ -8,9 +8,10 @@ import {
 } from 'react-aria-components'
 import clsx from '../utils/clsx'
 import styles from './TextField.module.css'
+import { Complement } from '../utils/types'
 
 export type TextAreaProps = Omit<TextFieldBaseProps, 'type' | 'pattern'> &
-  AriaTextAreaProps
+  Complement<TextFieldBaseProps, AriaTextAreaProps>
 
 export const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ({ className, cols, rows, wrap, ...rest }, ref) => (
