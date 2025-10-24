@@ -33,6 +33,7 @@ const Option = ({ item }: OptionProps) => (
     {...item.value}
     textValue={item.textValue}
     aria-label={item.textValue}
+    hideSelectionIndicator
   >
     {({ isDisabled, isSelected, selectionMode }) => (
       <>
