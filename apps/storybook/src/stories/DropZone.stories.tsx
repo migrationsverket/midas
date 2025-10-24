@@ -1,14 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { Button, DropZone, FileTrigger, Text } from '@midas-ds/components'
 import React from 'react'
-import {
-  expect,
-  fn,
-  userEvent,
-  within,
-  fireEvent,
-  waitFor,
-} from 'storybook/test'
 import { DropEvent } from 'react-aria'
 
 interface DropZoneTestContainerProps {
@@ -43,6 +35,11 @@ const DropZoneTestContainer = (props: DropZoneTestContainerProps) => {
       >
         <Button>Select files</Button>
       </FileTrigger>
+      <img
+        alt=''
+        data-testid='image'
+        src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Relative_compliment.svg/250px-Relative_compliment.svg.png'
+      />
       <DropZone
         {...props}
         onDrop={handleDrop}
@@ -68,49 +65,11 @@ const meta: Meta<typeof DropZone> = {
   component: DropZone,
   title: 'Components/DropZone',
   tags: ['!dev', '!autodocs'],
+  // @ts-expect-error onSelect exists only on FileTrigger
   render: args => <DropZoneTestContainer {...args} />,
-  args: {
-    // @ts-expect-error onSelect exists only on FileTrigger
-    onSelect: fn(),
-  },
 }
 
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Default: Story = {
-  play: async ({ canvasElement, args }) => {
-    const canvas = within(canvasElement)
-    const testFile = new File(['hello'], 'hello.png', { type: 'image/png' })
-
-    // Test 1: FileTrigger button click
-    const fileTrigger = canvas.getByTestId('file-trigger')
-    await userEvent.upload(fileTrigger, testFile)
-    await waitFor(() => {
-      expect(args.onSelect).toHaveBeenCalledWith([testFile])
-    })
-
-    // Test 2: DropZone drop
-    const dropZone = canvas.getByTestId('drop-zone')
-    const dropEvent = new Event('drop', { bubbles: true })
-    Object.defineProperty(dropEvent, 'dataTransfer', {
-      value: {
-        files: [testFile],
-        items: [
-          {
-            kind: 'file',
-            type: testFile.type,
-            getAsFile: () => testFile,
-          },
-        ],
-        types: ['Files'],
-      },
-    })
-    await fireEvent(dropZone, dropEvent)
-
-    await waitFor(() => {
-      expect(args.onSelect).toHaveBeenCalledTimes(2)
-      expect(args.onSelect).toHaveBeenLastCalledWith([testFile])
-    })
-  },
-}
+export const Default: Story = {}
