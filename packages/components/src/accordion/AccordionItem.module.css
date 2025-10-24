@@ -17,13 +17,19 @@
 
 .contained {
   --gap: 0.25rem;
-  --item-padding: 0.75rem;
+  --item-padding: calc(var(--midas-size-60) - var(--midas-border-width) * 2)
+    var(--midas-size-60);
   --content-padding: var(--midas-size-60) var(--midas-size-80)
     var(--midas-size-80) var(--midas-size-80);
   --border-color: var(--midas-border-color-secondary);
   --border: 1px solid;
   --accordion-background: var(--midas-layer-01-base);
   --accordion-background-hover: var(--midas-layer-01-hover);
+
+  &.medium {
+    --item-padding: calc(var(--midas-size-40) - var(--midas-border-width) * 2)
+      var(--midas-size-60);
+  }
 }
 
 .success {
