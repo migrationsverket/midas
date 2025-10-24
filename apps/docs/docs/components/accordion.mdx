@@ -60,7 +60,7 @@ Accordion har flertalet varianter och egenskaper.
 En tydligare variant av layouten när det finns en tydlig gräns mellan varje sektion.
 
 ```tsx
-<Accordion variant='contained'>
+<Accordion isContained>
   {/* more items */}
   <AccordionItem
     id='mandarin'
@@ -71,7 +71,31 @@ En tydligare variant av layouten när det finns en tydlig gräns mellan varje se
 </Accordion>
 ```
 
-<Example variant='contained' />
+<Example isContained />
+
+### Size
+
+I kombination med `isContained` kan storleken justeras med `size` där `'large'` är default.
+
+```tsx
+<Accordion
+  isContained
+  size='medium'
+>
+  {/* more items */}
+  <AccordionItem
+    id='mandarin'
+    title='Mandarin'
+  >
+    Liten orange citrusfrukt
+  </AccordionItem>
+</Accordion>
+```
+
+<Example
+  isContained
+  size='medium'
+/>
 
 ### Varianter med bakgrund
 
