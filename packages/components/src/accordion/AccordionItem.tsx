@@ -11,7 +11,7 @@ import { ChevronDown } from 'lucide-react'
 import clsx from '../utils/clsx'
 import itemStyles from './AccordionItem.module.css'
 import { Heading, HeadingProps } from '../heading'
-import { FeedbackStatus } from '../common/types'
+import { FeedbackStatus, Size } from '../common/types'
 import { AccordionContext } from './AccordionContext'
 
 interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
@@ -28,6 +28,10 @@ interface MidasAccordionItem extends Omit<DisclosureProps, 'children'> {
    **/
   hasBackground?: boolean
   isContained?: boolean
+  /** Component size when used with `isContained`  (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   **/
+  size?: Size
 }
 
 export const AccordionItem: React.FC<MidasAccordionItem> = ({
@@ -37,6 +41,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
   headingLevel = 'h2',
   type,
   hasBackground = true,
+  size = 'large',
   isContained: isContainedFromProp,
   ...props
 }) => {
@@ -66,6 +71,7 @@ export const AccordionItem: React.FC<MidasAccordionItem> = ({
       className={clsx(
         itemStyles.item,
         type && itemStyles[type],
+        (size === 'medium' || context?.size === 'medium') && itemStyles.medium,
         isContained && itemStyles.contained,
         className,
       )}

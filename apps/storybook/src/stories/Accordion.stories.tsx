@@ -5,20 +5,21 @@ import { expect, userEvent } from 'storybook/test'
 import React from 'react'
 import styles from '@midas-ds/components/accordion/Accordion.module.css'
 
+type Story = StoryObj<typeof Accordion>
+
 const ITEMS = ['Ett', 'Två', 'Tre', 'Fyra']
 
-const meta: Meta<typeof Accordion> = {
+export default {
   component: Accordion,
   subcomponents: {
     AccordionItem: AccordionItem as React.ComponentType<unknown>,
   },
   title: 'Components/Accordion',
   tags: ['autodocs'],
-  args: {},
-}
-
-export default meta
-type Story = StoryObj<typeof Accordion>
+  args: {
+    size: 'large',
+  },
+} satisfies Meta<typeof Accordion>
 
 export const Default: Story = {
   args: {
