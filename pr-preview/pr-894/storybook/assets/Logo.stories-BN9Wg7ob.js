@@ -1,5 +1,0 @@
-import{L as n}from"./Logo-BCyFHSY-.js";import"./iframe-r0gqF4SQ.js";import"./preload-helper-Dp1pzeXC.js";import"./clsx-Ciqy0D92.js";import"./clsx-B-dksMZM.js";import"./useLocalizedStringFormatter-CDwLjk7_.js";import"./LocalizedStringFormatter-BB0Nk989.js";const f={component:n,title:"Components/Logo",tags:["autodocs"],argTypes:{size:{control:{type:"radio"},options:["x-small","small","medium","large"]},primary:{control:{type:"boolean"}},padding:{control:{type:"boolean"}}}},o={},r={args:{primary:!1}};var e,a,s;o.parameters={...o.parameters,docs:{...(e=o.parameters)==null?void 0:e.docs,source:{originalSource:"{}",...(s=(a=o.parameters)==null?void 0:a.docs)==null?void 0:s.source}}};var t,m,p;r.parameters={...r.parameters,docs:{...(t=r.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  args: {
-    primary: false
-  }
-}`,...(p=(m=r.parameters)==null?void 0:m.docs)==null?void 0:p.source}}};const x=["Primary","Monochrome"];export{r as Monochrome,o as Primary,x as __namedExportsOrder,f as default};
