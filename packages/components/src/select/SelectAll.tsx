@@ -3,7 +3,7 @@ import { SelectStateContext } from 'react-aria-components'
 import { Checkbox } from '../checkbox'
 import { useLocalizedStringFormatter } from '../utils/intl'
 import messages from './intl/translations.json'
-import styles from './RacSelect.module.css'
+import styles from './Select.module.css'
 
 export const SelectAll = () => {
   const state = React.useContext(SelectStateContext)

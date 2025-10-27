@@ -1,11 +1,11 @@
-import { ListBoxItem, RacSelect, Button } from '@midas-ds/components'
+import { ListBoxItem, Select, Button } from '@midas-ds/components'
 import { Form } from 'react-aria-components'
 import '@midas-ds/components/default.css'
 
 export default function App() {
   return (
     <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column' }}>
-      <RacSelect
+      <Select
         label='Label'
         description='Description'
         onChange={x => {
@@ -18,8 +18,8 @@ export default function App() {
           time{' '}
         </ListBoxItem>
         <ListBoxItem>Goodbye</ListBoxItem>
-      </RacSelect>
-      <RacSelect
+      </Select>
+      <Select
         isInvalid
         selectionMode='multiple'
         errorMessage='Error message'
@@ -41,8 +41,8 @@ export default function App() {
         <ListBoxItem>Valhaj</ListBoxItem>
         <ListBoxItem>Kladdkaka</ListBoxItem>
         <ListBoxItem>Dry Martini</ListBoxItem>
-      </RacSelect>
-      <RacSelect
+      </Select>
+      <Select
         isDisabled
         errorMessage='Error message'
         label='Label'
@@ -53,8 +53,8 @@ export default function App() {
       >
         <ListBoxItem>Hello</ListBoxItem>
         <ListBoxItem>Goodbye</ListBoxItem>
-      </RacSelect>
-      <RacSelect
+      </Select>
+      <Select
         showTags
         selectionMode='multiple'
         errorMessage='Error message'
@@ -70,16 +70,16 @@ export default function App() {
         <ListBoxItem>Goodbye</ListBoxItem>
         <ListBoxItem>Hello</ListBoxItem>
         <ListBoxItem>Goodbye</ListBoxItem>
-      </RacSelect>
+      </Select>
       <Form>
-        <RacSelect
+        <Select
           isRequired
           label='Required*'
           description='Description'
         >
           <ListBoxItem>Hello</ListBoxItem>
           <ListBoxItem>Goodbye</ListBoxItem>
-        </RacSelect>
+        </Select>
         <Button type='submit'>submit</Button>
       </Form>
     </div>

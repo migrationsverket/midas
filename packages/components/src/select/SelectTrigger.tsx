@@ -1,72 +1,33 @@
-import React from 'react'
-import { AriaButtonProps, useButton } from 'react-aria'
-import clsx from '../utils/clsx'
+import clsx from 'clsx'
+import { useContext } from 'react'
+import { Button, SelectStateContext } from 'react-aria-components'
 import { ChevronDown } from 'lucide-react'
-import type { SelectProps, MultiSelectState } from './types'
-import type { ListBoxOption } from '../list-box'
 import styles from './Select.module.css'
+import { Size } from '../common/types'
 
-interface SelectTriggerProps
-  extends Omit<SelectProps, 'children'>,
-    AriaButtonProps<'button'> {
-  state: MultiSelectState<ListBoxOption>
-  triggerRef: React.MutableRefObject<HTMLButtonElement | null>
+interface SelectTriggerProps {
+  size: Size
 }
 
-export const SelectTrigger: React.FC<SelectTriggerProps> = ({
-  autoFocus,
-  excludeFromTabOrder,
-  isDisabled,
-  size = 'large',
-  isOpen,
-  isInvalid,
-  selectionMode,
-  state: { selectedItems },
-  placeholder,
-  children,
-  triggerRef,
-  ...rest
-}) => {
-  const { buttonProps } = useButton(
-    { autoFocus, excludeFromTabOrder, isDisabled, ...rest },
-    triggerRef,
-  )
-
-  const isMultiSelect = selectionMode === 'multiple'
+export const SelectTrigger = ({ size }: SelectTriggerProps) => {
+  const state = useContext(SelectStateContext)
 
   return (
-    <div
-      className={styles.triggerContainer}
-      data-disabled={isDisabled || undefined}
-    >
-      <button
-        {...buttonProps}
-        autoFocus={autoFocus}
-        className={clsx(styles.trigger, {
+    <Button
+      className={clsx(
+        {
           [styles.medium]: size === 'medium',
-        })}
-        data-disabled={isDisabled || undefined}
-        data-invalid={isInvalid || undefined}
-        data-open={isOpen || undefined}
-        ref={triggerRef}
-        type='button'
+        },
+        styles.trigger,
+      )}
+      data-invalid={!!state?.displayValidation.isInvalid || undefined}
+    >
+      <span
+        aria-hidden='true'
+        style={{ display: 'flex' }}
       >
-        {isMultiSelect && !selectedItems ? <span>{placeholder}</span> : null}
-
-        {!isMultiSelect ? (
-          <span>
-            {selectedItems ? selectedItems[0].textValue : placeholder}
-          </span>
-        ) : null}
-
-        <div
-          className={styles.icon}
-          aria-hidden='true'
-        >
-          <ChevronDown size={20} />
-        </div>
-      </button>
-      {children}
-    </div>
+        <ChevronDown size={20} />
+      </span>
+    </Button>
   )
 }

@@ -21,7 +21,7 @@ import type { AriaButtonProps } from '@react-types/button'
 import type { AriaSelectProps } from '@react-types/select'
 import type { Size } from '../common/types'
 import type { ListBoxOption } from '../list-box/'
-import type { SelectionMode } from '../rac-select'
+import type { SelectionMode } from '../select'
 
 /**
  * Props used for setting up the list state

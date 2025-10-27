@@ -1,2 +1,1 @@
-export * from './Select'
-export type { SelectContainerProps as SelectProps } from './types'
+export { type SelectionMode, Select, type MidasSelectProps } from './Select'

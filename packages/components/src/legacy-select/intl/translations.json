@@ -3,12 +3,12 @@
     "clearAll": "Clear all",
     "selectAll": "Select all",
     "selectedItems": "Selected items",
-    "selected": "selected"
+    "chosen": "chosen"
   },
   "sv": {
     "clearAll": "Rensa alla",
     "selectAll": "Välj alla",
     "selectedItems": "Valda objekt",
-    "selected": "valda"
+    "chosen": "valda"
   }
 }

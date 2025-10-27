@@ -6,16 +6,16 @@ import {
 import { useFocusManager } from 'react-aria'
 import { X } from 'lucide-react'
 import { useLocalizedStringFormatter } from '../utils/intl'
-import { type RacSelectProps } from './RacSelect'
+import { type MidasSelectProps } from './'
 import messages from './intl/translations.json'
 import React from 'react'
-import { SelectionMode } from '../rac-select'
-import styles from './RacSelect.module.css'
+import { SelectionMode } from './'
+import styles from './Select.module.css'
 
 type SelectValueTagProps<
   T extends object,
   M extends SelectionMode = 'single',
-> = SelectValueRenderProps<T> & Pick<RacSelectProps<T, M>, 'isDisabled'>
+> = SelectValueRenderProps<T> & Pick<MidasSelectProps<T, M>, 'isDisabled'>
 
 export const SelectValueTag = <
   T extends object,
@@ -49,7 +49,7 @@ export const SelectValueTag = <
 type SelectClearButtonProps<
   T extends object,
   M extends SelectionMode = 'single',
-> = Pick<RacSelectProps<T, M>, 'isDisabled'>
+> = Pick<MidasSelectProps<T, M>, 'isDisabled'>
 
 const SelectClearButton = <
   T extends object,

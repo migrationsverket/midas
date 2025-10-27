@@ -2,15 +2,15 @@ import { useContext } from 'react'
 import { type Key, SelectStateContext, TagList } from 'react-aria-components'
 import { Tag, TagGroup } from '../tag'
 import { useLocalizedStringFormatter } from '../utils/intl'
-import { RacSelectProps } from './RacSelect'
+import { MidasSelectProps } from './'
 import messages from './intl/translations.json'
-import { SelectionMode } from '../rac-select'
-import styles from './RacSelect.module.css'
+import { SelectionMode } from './'
+import styles from './Select.module.css'
 
 type SelectTagsProps<
   T extends object,
   M extends SelectionMode = 'single',
-> = Pick<RacSelectProps<T, M>, 'showTags' | 'isDisabled'>
+> = Pick<MidasSelectProps<T, M>, 'showTags' | 'isDisabled'>
 
 export const SelectTags = <
   T extends object,

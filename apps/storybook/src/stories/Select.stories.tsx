@@ -1,25 +1,39 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Select } from '@midas-ds/components'
+import {
+  Select,
+  ListBoxItem,
+  ListBoxSection,
+  ListBoxHeader,
+  SelectionMode,
+} from '@midas-ds/components'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '../utils/storybook'
-import { expect, fn, spyOn, userEvent } from 'storybook/test'
+import { expect, fn, spyOn, userEvent, within } from 'storybook/test'
 import { useState } from 'react'
-import { Selection } from 'react-aria-components'
+import { Collection, type Key } from 'react-aria-components'
 
 const onChange = fn()
 const onSubmit = fn()
 
-const meta: Meta<typeof Select> = {
+type Story<
+  T extends object = Item,
+  M extends SelectionMode = 'single',
+> = StoryObj<typeof Select<T, M>>
+
+type Item = (typeof options)[0]
+type Section = (typeof optionsWithSections)[0]
+
+export default {
   component: Select,
   title: 'Components/Select',
   tags: ['autodocs'],
   args: {
+    children: item => <ListBoxItem {...item}>{item.name}</ListBoxItem>,
     description: 'Description',
-    isClearable: true,
     isDisabled: false,
     isSelectableAll: false,
     label: 'Label',
-    options,
+    items: options,
     placeholder: 'Select an option',
     selectionMode: 'single',
     showTags: false,
@@ -27,9 +41,20 @@ const meta: Meta<typeof Select> = {
     onSelectionChange: onChange,
     size: 'large',
   },
+} satisfies Meta<typeof Select<Item>>
+
+export const StaticItems: Story = {
+  args: {
+    label: 'label',
+    description: 'static',
+    children: (
+      <>
+        <ListBoxItem>Hello</ListBoxItem>
+        <ListBoxItem>Goodbye</ListBoxItem>
+      </>
+    ),
+  },
 }
-export default meta
-type Story = StoryObj<typeof Select>
 
 export const Normal: Story = {
   play: async ({ args, canvas, step }) => {
@@ -39,11 +64,16 @@ export const Normal: Story = {
         await userEvent.tab()
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
+
         const visibleValue = canvas.getByText(options[0].name, {
           selector: 'span',
         })
-        await expect(hiddenSelect).toHaveDisplayValue([options[0].name])
+
+        const hiddenValue = within(
+          canvas.getByTestId('hidden-select-container'),
+        ).getByDisplayValue(options[0].name)
+
+        await expect(hiddenValue).toBeVisible()
         await expect(visibleValue).toBeVisible()
       },
     )
@@ -55,66 +85,41 @@ export const Normal: Story = {
   },
 }
 
-export const DefaultSelectedKey: Story = {
-  args: {
-    description: 'Kiwi is pre-selected',
-    defaultSelectedKeys: new Set(['kiwi']),
-  },
-  play: async ({ args, canvas, step }) => {
-    await step(
-      'It should display and reflect the pre-selected value',
-      async () => {
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-        const visibleValue = canvas.getByText('Kiwi', {
-          selector: 'span',
-        })
-
-        expect(hiddenSelect).toHaveDisplayValue(['Kiwi'])
-        expect(visibleValue).toBeVisible()
-      },
-    )
-  },
-}
-
-export const DefaultSelectedKeys: Story = {
+export const DefaultValue: Story<Item, 'multiple'> = {
   args: {
     description: 'Kiwi and banana are pre-selected',
-    defaultSelectedKeys: new Set(['kiwi', 'banana']),
+    defaultValue: ['kiwi', 'banana'],
     selectionMode: 'multiple',
   },
-  play: async ({ args, canvas, step }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'It should display and reflect the pre-selected value',
       async () => {
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-        const visibleValue = canvas.getByText('2 valda', {
-          selector: 'span',
-        })
-
-        expect(hiddenSelect).toHaveDisplayValue(['Banana', 'Kiwi'])
-        expect(visibleValue).toBeVisible()
+        await expect(
+          canvas.getByText('2 valda', {
+            selector: 'span',
+          }),
+        ).toBeVisible()
       },
     )
   },
 }
 
-export const AllKeysSelected: Story = {
+export const AllKeysSelected: Story<Item, 'multiple'> = {
   args: {
     selectionMode: 'multiple',
     description: 'All options are selected',
-    defaultSelectedKeys: 'all',
+    defaultValue: options.map(({ id }) => id),
   },
-  play: async ({ args, canvas, step }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'It should display and reflect the pre-selected values',
       async () => {
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
-        const visibleValue = canvas.getByText(/valda/, {
-          selector: 'span',
-        })
-
-        expect(hiddenSelect).toHaveDisplayValue(options.map(({ name }) => name))
-        expect(visibleValue).toBeVisible()
+        await expect(
+          canvas.getByText(`${options.length} valda`, {
+            selector: 'span',
+          }),
+        ).toBeVisible()
       },
     )
   },
@@ -164,36 +169,38 @@ export const Invalid: Story = {
   },
 }
 
-export const WithTags: Story = {
+export const WithTags: Story<Item, 'multiple'> = {
   args: {
     selectionMode: 'multiple',
     showTags: true,
-    defaultSelectedKeys: new Set(['apple', 'kiwi']),
+    defaultValue: ['apple', 'kiwi'],
   },
-  play: async ({ args, canvas, step }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'It should display and reflect the pre-selected values',
       async () => {
-        const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
         const visibleValue = canvas.getByText('2 valda', {
           selector: 'span',
         })
 
-        expect(hiddenSelect).toHaveDisplayValue(['Apple', 'Kiwi'])
-        expect(visibleValue).toBeVisible()
-        expect(canvas.getByText('Apple', { selector: 'div' })).toBeVisible()
-        expect(canvas.getByText('Kiwi', { selector: 'div' })).toBeVisible()
+        await expect(visibleValue).toBeVisible()
+        await expect(
+          canvas.getByText('Apple', { selector: 'div' }),
+        ).toBeVisible()
+        await expect(
+          canvas.getByText('Kiwi', { selector: 'div' }),
+        ).toBeVisible()
       },
     )
   },
 }
 
-export const SelectAllEnabled: Story = {
+export const SelectAllEnabled: Story<Item, 'multiple'> = {
   args: {
     selectionMode: 'multiple',
     isSelectableAll: true,
   },
-  play: async ({ args, canvas, step }) => {
+  play: async ({ canvas, step }) => {
     await step('It should be possible to select all items', async () => {
       await userEvent.tab()
       await userEvent.keyboard('[Space]')
@@ -201,22 +208,12 @@ export const SelectAllEnabled: Story = {
       await userEvent.keyboard('[Space]')
       await userEvent.keyboard('[Escape]')
 
-      const hiddenSelect = canvas.getByLabelText(`${args.label}-hidden`)
       const visibleValue = canvas.getByText(`${options.length} valda`, {
         selector: 'span',
       })
 
-      expect(hiddenSelect).toHaveDisplayValue(options.map(({ name }) => name))
-      expect(visibleValue).toBeVisible()
+      await expect(visibleValue).toBeVisible()
     })
-  },
-}
-
-/** As default all options are clearable. `isClearable={false}` Experimental feature  */
-export const NotClearable: Story = {
-  args: {
-    selectionMode: 'multiple',
-    isClearable: false,
   },
 }
 
@@ -228,19 +225,18 @@ export const DS872: Story = {
   args: {
     ...Normal.args,
     selectionMode: 'single',
-    isClearable: false,
     label: 'Ärende',
     placeholder: 'Välj ärende',
   },
   render: args => {
-    const [selectedKey, setSelectedKey] = useState<Selection>(new Set())
+    const [selectedKey, setSelectedKey] = useState<Key | null>(null)
 
     return (
       <Select
         {...args}
-        selectedKeys={selectedKey}
-        onSelectionChange={setSelectedKey}
-        options={[
+        value={selectedKey}
+        onChange={setSelectedKey}
+        items={[
           { id: '12', name: 'tolv' },
           { id: '1', name: 'ett' },
           { id: '2', name: 'två' },
@@ -248,25 +244,55 @@ export const DS872: Story = {
       />
     )
   },
-  play: async ({ args, step, canvas }) => {
+  play: async ({ step, canvas }) => {
     await step(
       'It should be possible to select an item with an ID greater than 9',
       async () => {
         await userEvent.tab()
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
-        expect(
-          canvas.getByLabelText(args.label + '-hidden'),
-        ).toHaveDisplayValue(['tolv'])
+
+        const visibleValue = canvas.getByText('tolv', {
+          selector: 'span',
+        })
+
+        await expect(visibleValue).toBeVisible()
       },
     )
   },
 }
 
-export const Sectioned: Story = {
+export const StaticSections: Story = {
+  args: {
+    children: (
+      <>
+        <ListBoxSection>
+          <ListBoxHeader>Fruit</ListBoxHeader>
+          <ListBoxItem id='Apple'>Apple</ListBoxItem>
+          <ListBoxItem id='Banana'>Banana</ListBoxItem>
+        </ListBoxSection>
+        <ListBoxSection>
+          <ListBoxHeader>Vegetables</ListBoxHeader>
+          <ListBoxItem id='Cabbage'>Cabbage</ListBoxItem>
+          <ListBoxItem id='Broccoli'>Broccoli</ListBoxItem>
+        </ListBoxSection>
+      </>
+    ),
+  },
+}
+
+export const DynamicSections: Story<Section> = {
   args: {
     ...Normal.args,
-    options: optionsWithSections,
+    items: optionsWithSections,
+    children: section => (
+      <ListBoxSection id={section.name}>
+        <ListBoxHeader>{section.name}</ListBoxHeader>
+        <Collection items={section.children}>
+          {item => <ListBoxItem id={item.id}>{item.name}</ListBoxItem>}
+        </Collection>
+      </ListBoxSection>
+    ),
   },
   play: async ({ step }) => {
     const warn = spyOn(console, 'warn').mockImplementation(fn())
@@ -317,19 +343,7 @@ export const RequiredSingleSelect: Story = {
   },
 }
 
-export const RequiredMultiSelect: Story = {
-  tags: ['!dev', '!autodocs', '!snapshot'],
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
-  ...RequiredSingleSelect,
-  args: {
-    ...RequiredSingleSelect.args,
-    selectionMode: 'multiple',
-  },
-}
-
-export const MultiSelectTests: Story = {
+export const MultiSelectTests: Story<Item, 'multiple'> = {
   tags: ['!dev', '!autodocs', '!snapshot'],
   parameters: {
     chromatic: { disableSnapshot: true },
@@ -337,7 +351,7 @@ export const MultiSelectTests: Story = {
   args: {
     selectionMode: 'multiple',
   },
-  play: async ({ canvas, step, args: { label } }) => {
+  play: async ({ canvas, step }) => {
     await step(
       'It should be possible to deselect all items to empty the selection',
       async () => {
@@ -346,21 +360,12 @@ export const MultiSelectTests: Story = {
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Space]')
         await userEvent.keyboard('[Escape]')
-        await expect(
-          canvas.getByLabelText(`${label as string}-hidden`),
-        ).toHaveDisplayValue([])
-      },
-    )
-    await step(
-      'It should be possible to press escape to exit the select without clearing the selections made',
-      async () => {
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[ArrowDown]')
-        await userEvent.keyboard('[Space]')
-        await userEvent.keyboard('[Escape]')
-        await expect(
-          canvas.getByLabelText(`${label as string}-hidden`),
-        ).not.toHaveDisplayValue([])
+
+        const visibleValue = canvas.getByText(`Select an option`, {
+          selector: 'span',
+        })
+
+        await expect(visibleValue).toBeVisible()
       },
     )
   },

@@ -12,7 +12,7 @@ import type {
   MultiSelectState,
 } from './types'
 import { ListBoxOption } from '../list-box'
-import { SelectionMode } from '../rac-select'
+import { SelectionMode } from '../select'
 
 export function useMultiSelect<
   T extends ListBoxOption,
