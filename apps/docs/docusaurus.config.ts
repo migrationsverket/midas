@@ -66,7 +66,10 @@ const config: Config = {
           // prop table gets a bit crowded if we allow everything
           propFilter: prop => {
             if (prop.parent) {
-              return !prop.parent.fileName.includes('@types/react')
+              return !(
+                prop.parent.fileName.includes('@types/react') ||
+                prop.parent.fileName.includes('dom.d.ts')
+              )
             }
             return true
           },
