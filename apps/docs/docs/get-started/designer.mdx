@@ -15,14 +15,18 @@ import { ThemedImage } from '@site/src/components/ThemedImage'
 Vi får inte lagra några personuppgifter, tex namn eller personnummer i våra skisser. Vi använder därför alltid fiktiv data om vi behöver visa personuppgifter
 :::
 
+### Bryta loss komponenter
+
+Om en komponent inte beter sig som du vill eller inte på något annat sätt inte passar kan det vara lockande att bryta loss den och sen ändra den på egen hand. Men det gör att komponenten tappar den sin koppling till Main component och då får den inga uppdateringar i framtiden. Dessutom får designsystemsteamet får inte veta hur du vill använda komponenten.
+Kontakta hellre designsystemteamet och beskriv hur du vill att det ska funka. Då kan vi diskutera om detta är något som vi ska implementera eller om det finns ett redan etablerat sätt att lösa problemet.
+
 ### Skapa egna komponenter
 
-Försök att undvika att skapa egna komponenter för att lösa designproblem. Börja istället med att fundera på om det går
-att lösa genom att kombinera ihop befintliga komponenter.
+Försök att undvika att skapa egna komponenter för att lösa designproblem. Börja istället med att försöka lösa problemet genom att kombinera ihop befintliga komponenter.
 
 I de fall där designproblemet kräver en unik lösning som inte går att skapa med befintliga komponenter, följ dessa riktlinjer:
 
-- Basera så mycket som möligt av utseendet på en befintlig komponent, om det går.
+- Basera så mycket som möligt av utseendet på en befintlig komponent
 - Våra komponenter har raka kanter och inga rundade hörn.
 - Använd befintliga semantiska tokens så långt det går
 - Den blå färgen används huvudsakligen för interaktiva element, inte som dekoration.
