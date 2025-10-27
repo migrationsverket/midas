@@ -29,33 +29,33 @@ import { Select, ListBoxItem } from '@midas-ds/components'
   <BasicExample />
 </div>
 
-## Riktlinjer
-
-Om det är färre alternativ än fem bör [Radio](./radio.mdx) användas istället.
-
 ## Beskrivning
 
-Midas Select är en variant av React Aria `Select` med möjlighet till flerval.
+Midas Select är en implementation av [React Aria Components Select](https://react-spectrum.adobe.com/react-aria/Select.html).
 
-## Enkelval
+:::warning
+Från och med v15.0.0 har Select uppdaterats för att överensstämma bättre med React Arias API. Det innebär vissa breaking changes. Under en övergångsperiod går det att använda den gamla versionen av komponenten, som nu heter `LegacySelect` och kan importeras enligt nedan.
+<br/>
 
-Standardvärdet för `selectionMode` är `single`, om du inte anger `selectionMode` kan användaren bara välja ett värde.
+```tsx
+import {LegacySelect} from '@midas-ds/components'
+```
+:::
 
-### Kontrollerat val
+## Flerval / Enkelval
 
-Användarens val kan kontrolleras med hjälp av attributet `selectedKeys` tillsammans med eventet `onSelectionChange`.
-Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt val, så kan du använda det för att uppdatera ditt state.
+Växla mellan flerval och enkelval med `selectionMode='single|multiple'`. Standardvärdet för `selectionMode` är `single`.
 
-För att komponenten också stödjer flerval benämns `selectedKeys` i plural och värdet för `id` kommer tillbaka som en `Selection`.
-Eftersom att vi vet att alternativet "all" inte kommer ges så kan vi skicka `setSelectedFruit` direkt till `onSelectionChange` till skillnad från exemplet för [flerval](#kontrollerade-val).
-
-<div className='card'>
-  <ControlledExample />
-</div>
-
-## Flerval
-
-Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
+```tsx
+<Select
+  label='Favoritfrukt'
+  selectionMode='multiple'
+>
+  <ListBoxItem>Banan</ListBoxItem>
+  <ListBoxItem>Apelsin</ListBoxItem>
+  <ListBoxItem>Mango</ListBoxItem>
+</Select>
+```
 
 <div className='card'>
   <BasicExample selectionMode='multiple' />
@@ -72,7 +72,7 @@ Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-
   />
 </div>
 
-#### Visa etiketter
+### Visa etiketter
 
 Egenskapen `showTags` kan användas för att visa valen som etiketter under rullgardinen.
 
@@ -83,28 +83,24 @@ Egenskapen `showTags` kan användas för att visa valen som etiketter under rull
   />
 </div>
 
-### Förvalda alternativ (okontrollerat)
-
-Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde till komponenten. TODO
-
-### Kontrollerade val
-
-Se [kontrollerat val vid enkelval](#kontrollerat-val) för en beskrivning av typerna för `selectedKeys` och `onSelectionChange`.
-
-:::note
-Notera den manuella hantering som görs om användaren klickar på "Välj alla"
-:::
-
-<div className='card'>
-  <ControlledExample
-    selectionMode='multiple'
-    isSelectableAll
-  />
-</div>
-
 ## Sektioner
 
-Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:
+Vid många val kan alternativen struktureras i sektioner.
+
+```tsx
+<Select label={'Sectioned select'}>
+  <ListBoxSection>
+    <ListBoxHeader>Fruit</ListBoxHeader>
+    <ListBoxItem id='Apple'>Apple</ListBoxItem>
+    <ListBoxItem id='Banana'>Banana</ListBoxItem>
+  </ListBoxSection>
+  <ListBoxSection>
+    <ListBoxHeader>Vegetables</ListBoxHeader>
+    <ListBoxItem id='Cabbage'>Cabbage</ListBoxItem>
+    <ListBoxItem id='Broccoli'>Broccoli</ListBoxItem>
+  </ListBoxSection>
+</Select>
+```
 
 <div className='card'>
   <SectionedExample />
