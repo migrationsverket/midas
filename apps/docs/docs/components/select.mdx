@@ -14,23 +14,15 @@ import { BasicExample, ControlledExample, SectionedExample } from '@site/src/com
 Inmatningsfält som används för att välja ett eller flera fördefinierade alternativ.
 
 ```tsx
-import { Select } from '@midas-ds/components'
+import { Select, ListBoxItem } from '@midas-ds/components'
 ```
 
 ```tsx
-<Select
-  label='Favoritfrukt'
-  description='Välj vilken du vill'
-  placeholder='Välj en frukt'
-  selectionMode='single'
-  options={[
-    { id: 'apelsin', name: 'Apelsin' },
-    { id: 'banan', name: 'Banan' },
-    { id: 'citron', name: 'Citron' },
-    { id: 'dadel', name: 'Dadel' },
-    { id: 'fikon', name: 'Fikon' },
-  ]}
-/>
+<Select label='Favoritfrukt'>
+  <ListBoxItem>Banan</ListBoxItem>
+  <ListBoxItem>Apelsin</ListBoxItem>
+  <ListBoxItem>Mango</ListBoxItem>
+</Select>
 ```
 
 <div className='card'>
@@ -57,34 +49,6 @@ Värdet för `id` skickas tillbaka i callbacken när användaren justerar sitt v
 För att komponenten också stödjer flerval benämns `selectedKeys` i plural och värdet för `id` kommer tillbaka som en `Selection`.
 Eftersom att vi vet att alternativet "all" inte kommer ges så kan vi skicka `setSelectedFruit` direkt till `onSelectionChange` till skillnad från exemplet för [flerval](#kontrollerade-val).
 
-```tsx
-import React from 'react'
-import { Selection } from 'react-aria-components'
-
-const options = [
-  { id: 'apelsin', name: 'Apelsin' },
-  { id: 'banan', name: 'Banan' },
-  { id: 'citron', name: 'Citron' },
-  { id: 'dadel', name: 'Dadel' },
-  { id: 'fikon', name: 'Fikon' },
-]
-
-const [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())
-
-return (
-  <Select
-    label='Favoritfrukt'
-    description='Välj vilken du vill'
-    placeholder='Välj en frukt'
-    options={options}
-    // highlight-start
-    selectedKeys={selectedFruit}
-    onSelectionChange={setSelectedFruit}
-    // highlight-end
-  />
-)
-```
-
 <div className='card'>
   <ControlledExample />
 </div>
@@ -93,24 +57,6 @@ return (
 
 Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
 
-```tsx
-<Select
-  label='Favoritfrukt'
-  description='Välj vilken du vill'
-  placeholder='Välj en frukt'
-  // highlight-start
-  selectionMode='multiple'
-  // highlight-end
-  options={[
-    { id: 'apelsin', name: 'Apelsin' },
-    { id: 'banan', name: 'Banan' },
-    { id: 'citron', name: 'Citron' },
-    { id: 'dadel', name: 'Dadel' },
-    { id: 'fikon', name: 'Fikon' },
-  ]}
-/>
-```
-
 <div className='card'>
   <BasicExample selectionMode='multiple' />
 </div>
@@ -118,25 +64,6 @@ Använd egenskapen `selectionMode="multiple"` för att slå på flervalsläget.
 ### Välj alla
 
 Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-knapp.
-
-```tsx
-<Select
-  label='Favoritfrukt'
-  description='Välj vilken du vill'
-  placeholder='Välj en frukt'
-  // highlight-start
-  selectionMode='multiple'
-  isSelectableAll
-  // highlight-end
-  options={[
-    { id: 'apelsin', name: 'Apelsin' },
-    { id: 'banan', name: 'Banan' },
-    { id: 'citron', name: 'Citron' },
-    { id: 'dadel', name: 'Dadel' },
-    { id: 'fikon', name: 'Fikon' },
-  ]}
-/>
-```
 
 <div className='card'>
   <BasicExample
@@ -149,25 +76,6 @@ Egenskapen `isSelectableAll` kan användas för att lägga till en "Välj alla"-
 
 Egenskapen `showTags` kan användas för att visa valen som etiketter under rullgardinen.
 
-```tsx
-<Select
-  label='Favoritfrukt'
-  description='Välj vilken du vill'
-  placeholder='Välj en frukt'
-  // highlight-start
-  selectionMode='multiple'
-  showTags
-  // highlight-end
-  options={[
-    { id: 'apelsin', name: 'Apelsin' },
-    { id: 'banan', name: 'Banan' },
-    { id: 'citron', name: 'Citron' },
-    { id: 'dadel', name: 'Dadel' },
-    { id: 'fikon', name: 'Fikon' },
-  ]}
-/>
-```
-
 <div className='card'>
   <BasicExample
     selectionMode='multiple'
@@ -177,33 +85,7 @@ Egenskapen `showTags` kan användas för att visa valen som etiketter under rull
 
 ### Förvalda alternativ (okontrollerat)
 
-Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde till komponenten.
-
-```tsx
-<Select
-  label='Favoritfrukt'
-  description='Välj vilken du vill'
-  placeholder='Välj en frukt'
-  // highlight-start
-  selectionMode='multiple'
-  defaultSelectedKeys={new Set(['banan', 'dadel'])}
-  // highlight-end
-  options={[
-    { id: 'apelsin', name: 'Apelsin' },
-    { id: 'banan', name: 'Banan' },
-    { id: 'citron', name: 'Citron' },
-    { id: 'dadel', name: 'Dadel' },
-    { id: 'fikon', name: 'Fikon' },
-  ]}
-/>
-```
-
-<div className='card'>
-  <BasicExample
-    selectionMode='multiple'
-    defaultSelectedKeys={new Set(['banan', 'dadel'])}
-  />
-</div>
+Använd egenskapen `defaultSelectedKeys` för att sätta ett initialt värde till komponenten. TODO
 
 ### Kontrollerade val
 
@@ -212,43 +94,6 @@ Se [kontrollerat val vid enkelval](#kontrollerat-val) för en beskrivning av typ
 :::note
 Notera den manuella hantering som görs om användaren klickar på "Välj alla"
 :::
-
-```tsx
-import React from 'react'
-import { Selection } from 'react-aria-components'
-
-const options = [
-  { id: 'apelsin', name: 'Apelsin' },
-  { id: 'banan', name: 'Banan' },
-  { id: 'citron', name: 'Citron' },
-  { id: 'dadel', name: 'Dadel' },
-  { id: 'fikon', name: 'Fikon' },
-]
-
-const [selectedFruit, setSelectedFruit] = React.useState<Selection>(new Set())
-
-const handleSelectionChange = (keys: Selection) => {
-  if (keys === 'all') {
-    return setSelectedFruit(new Set(options.map(({ id }) => id)))
-  }
-  return setSelectedFruit(keys)
-}
-
-return (
-  <Select
-    label='Favoritfrukt'
-    description='Välj vilken du vill'
-    placeholder='Välj en frukt'
-    // highlight-start
-    selectionMode='multiple'
-    selectedKeys={selectedFruit}
-    onSelectionChange={handleSelectionChange}
-    isSelectableAll
-    // highlight-end
-    options={options}
-  />
-)
-```
 
 <div className='card'>
   <ControlledExample
@@ -260,36 +105,6 @@ return (
 ## Sektioner
 
 Vid många val kan alternativen struktureras i sektioner genom att dela in dem enligt följande:
-
-```tsx
-const options = [
-  {
-    name: 'Frukter',
-    children: [
-      { id: 'kiwi', name: 'Kiwi' },
-      { id: 'banana', name: 'Banan' },
-      { id: 'apple', name: 'Äpple' },
-    ],
-  },
-  {
-    name: 'Grönsaker',
-    children: [
-      { id: 'carrot', name: 'Morot' },
-      { id: 'broccoli', name: 'Broccoli' },
-    ],
-  },
-]
-
-return (
-  <Select
-    label='Favoritfrukt eller grönsak'
-    description='Välj vilken du vill'
-    placeholder='Välj en frukt eller grönsak'
-    selectionMode='multiple'
-    options={options}
-  />
-)
-```
 
 <div className='card'>
   <SectionedExample />
