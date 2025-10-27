@@ -1,3 +1,29 @@
+## 14.1.0 (2025-10-27)
+
+### 🚀 Features
+
+- **spinner:** color defaults to icon-tertiary, deprecate `isOnColor` ([68108dfea0](https://github.com/migrationsverket/midas/commit/68108dfea0))
+- **accordion:** add panel animation support for non-chrome browsers ([1a00da2ddc](https://github.com/migrationsverket/midas/commit/1a00da2ddc))
+
+### 🩹 Fixes
+
+- **textfield:** omit duplicate prop definitions ([d19e6e3ad0](https://github.com/migrationsverket/midas/commit/d19e6e3ad0))
+- **calendar:** set correct styles for days outside month ([61b9958ad6](https://github.com/migrationsverket/midas/commit/61b9958ad6))
+- **tabs:** fix displaying horizontal/vertical tabs ([55507b2ed2](https://github.com/migrationsverket/midas/commit/55507b2ed2))
+
+### 📖 Documentation changes
+
+- **spinner:** update spinner docs with new props ([6ffbcabf1e](https://github.com/migrationsverket/midas/commit/6ffbcabf1e))
+
+### 🔧 Maintenance
+
+- **select:** utilize RAC multi select types ([06f9720a99](https://github.com/migrationsverket/midas/commit/06f9720a99))
+- **deps:** update react-aria-components and react-stately ([a0d8b0bd63](https://github.com/migrationsverket/midas/commit/a0d8b0bd63))
+
+### 🧱 Updated Dependencies
+
+- Updated theme to 3.1.1
+
 # 14.0.0 (2025-10-10)
 
 ### 🚀 Features
