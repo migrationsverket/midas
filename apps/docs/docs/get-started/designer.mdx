@@ -9,15 +9,14 @@ import { ThemedImage } from '@site/src/components/ThemedImage'
 
 ## UI-kit
 
-[Vårt UI-kit till Figma](https://www.figma.com/design/Zc41jDwx13L2bVECCQlsfN/MIDAS-UI-Kit?m=auto&node-id=0-1&t=ZgUPPphkbF15QIWU-1) innehåller komponenter och mönster som vi använder för att designa våra produkter och tjänster. Komponenterna i våra UI-kit är en spegling av hur komponenterna ser ut i komponentbiblioteket och vi använder så ofta som möjligt samma namn på variants som props i komponenterna.
-
+[Vårt UI-kit till Figma](https://www.figma.com/design/Zc41jDwx13L2bVECCQlsfN/MIDAS-UI-Kit?m=auto&node-id=0-1&t=ZgUPPphkbF15QIWU-1) innehåller komponenter och mönster som vi använder för att designa våra produkter och tjänster. Komponenterna i vårt UI-kit är en spegling av hur komponenterna ser ut i komponentbiblioteket. Vi använder så ofta som möjligt samma namn på variants som props i komponenterna.
 :::warning[Personuppgifter i skisser och prototyper]
 Vi får inte lagra några personuppgifter, tex namn eller personnummer i våra skisser. Vi använder därför alltid fiktiv data om vi behöver visa personuppgifter
 :::
 
 ### Bryta loss komponenter
 
-Om en komponent inte beter sig som du vill eller inte på något annat sätt inte passar kan det vara lockande att bryta loss den och sen ändra den på egen hand. Men det gör att komponenten tappar den sin koppling till Main component och då får den inga uppdateringar i framtiden. Dessutom får designsystemsteamet får inte veta hur du vill använda komponenten.
+Om en komponent inte beter sig som du vill eller på något annat sätt inte passar kan det vara lockande att bryta loss den och sen ändra den på egen hand. Men det gör att komponenten tappar den sin koppling till Main component och då får den inga uppdateringar i framtiden. Dessutom får designsystemsteamet inte veta hur du vill använda komponenten.
 Kontakta hellre designsystemteamet och beskriv hur du vill att det ska funka. Då kan vi diskutera om detta är något som vi ska implementera eller om det finns ett redan etablerat sätt att lösa problemet.
 
 ### Skapa egna komponenter
@@ -26,15 +25,15 @@ Försök att undvika att skapa egna komponenter för att lösa designproblem. B�
 
 I de fall där designproblemet kräver en unik lösning som inte går att skapa med befintliga komponenter, följ dessa riktlinjer:
 
-- Basera så mycket som möligt av utseendet på en befintlig komponent
+- Basera så mycket som möligt av utseendet på en befintlig komponent.
 - Våra komponenter har raka kanter och inga rundade hörn.
-- Använd befintliga semantiska tokens så långt det går
+- Använd befintliga semantiska tokens så långt det går.
 - Den blå färgen används huvudsakligen för interaktiva element, inte som dekoration.
 
 ## Storybook
 
-Om du vill testa hur komponenterna beter sig i olika situationer kan du göra det på Storybook. Storybook är en interaktiv miljö för våra UI-komponenter. Här kan du se alla komponenter i vårt bibliotek, testa dem i
-olika varianter och se hur de beter sig. Det finns en länk till Storybook i headern på varje komponentsida.
+Om du vill testa hur komponenterna beter sig i olika situationer kan du göra det i Storybook. Storybook är en interaktiv miljö för våra UI-komponenter. Här kan du se alla komponenter i vårt bibliotek, testa dem i
+olika varianter och se hur de beter sig. Det finns en länk till Storybook i sidhuvudet på varje komponentsida.
 
 <LinkButton
   variant='tertiary'
