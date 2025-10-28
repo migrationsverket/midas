@@ -9,7 +9,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { makeData } from './makeData'
-import { Button, TextField, Select } from '@midas-ds/components'
+import { Button, TextField, Select, ListBoxItem } from '@midas-ds/components'
 import {
   ChevronLeft,
   ChevronsLeft,
@@ -189,15 +189,18 @@ export const PaginationExample = () => {
         <Select
           style={{ minWidth: '200px' }}
           label='Rows per page'
-          selectedKeys={[table.getState().pagination.pageSize]}
-          onSelectionChange={keys =>
-            table.setPageSize(Number(Array.from(keys)[0]))
+          value={table.getState().pagination.pageSize.toString()}
+          onChange={key =>
+            key !== null &&
+            table.setPageSize(typeof key === 'string' ? parseInt(key) : key)
           }
-          options={[10, 20, 30, 40, 50].map(pageSize => ({
-            id: pageSize,
+          items={[10, 20, 30, 40, 50].map(pageSize => ({
+            id: pageSize.toString(),
             name: `Show ${pageSize}`,
           }))}
-        />
+        >
+          {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+        </Select>
       </div>
     </div>
   )
