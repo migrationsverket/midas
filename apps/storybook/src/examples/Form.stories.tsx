@@ -10,6 +10,7 @@ import {
   RadioGroup,
   Select,
   Button,
+  ListBoxItem,
 } from '@midas-ds/components'
 
 const meta: Meta<typeof AriaForm> = {
@@ -45,8 +46,10 @@ export const SimpleForm: Story = {
             label='Vilken är din favoritfrukt'
             placeholder='Välj en frukt'
             selectionMode='single'
-            options={ITEMS.map(i => ({ id: i, name: i }))}
-          />
+            items={ITEMS.map(i => ({ id: i, name: i }))}
+          >
+            {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+          </Select>
         </GridItem>
 
         <GridItem>
@@ -112,8 +115,10 @@ export const TwoColumnForm: Story = {
               description='Kan lämnas tomt'
               placeholder='Välj kön'
               selectionMode='single'
-              options={ITEMS.map(i => ({ name: i, id: i }))}
-            />
+              items={ITEMS.map(i => ({ name: i, id: i }))}
+            >
+              {item => <ListBoxItem {...item}>{item.name}</ListBoxItem>}
+            </Select>
           </GridItem>
           <GridItem size={{ xs: 12, sm: 6 }}>
             <TextField label='Ärendekod' />

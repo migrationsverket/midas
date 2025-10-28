@@ -1,6 +1,6 @@
 import { render, RenderResult, screen } from '@testing-library/react'
 import { axe } from 'jest-axe'
-import { Select } from './'
+import { LegacySelect as Select } from './'
 import user from '../../tests/utils/user'
 import { renderWithForm } from '../../tests/utils/browser'
 import { options } from './utils'
