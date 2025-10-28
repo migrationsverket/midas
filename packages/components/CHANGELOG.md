@@ -1,3 +1,26 @@
+# 15.0.0 (2025-10-28)
+
+### 🚀 Features
+
+- ⚠️  **select:** replace custom select with new RAC based select
+- **select:** use midas popover
+- **select:** update type imports
+- **select:** add sections
+- **select:** boilerplate for RAC select implementation
+
+### 🩹 Fixes
+
+- **select:** adjust selectAll styling
+- **list-box:** adjust section header styling
+- **list-box:** loosen type definitions
+- **list-box:** adjust vertical padding
+- **tag:** add visible keyboard focus for all tags
+- **field-error:** remove margin from aria hidden siblings
+
+### ⚠️  Breaking Changes
+
+- ⚠️  **select:** replace custom select with new RAC based select
+
 ## 14.1.0 (2025-10-27)
 
 ### 🚀 Features
