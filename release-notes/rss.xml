@@ -4,10 +4,87 @@
         <title>Migrationsverkets designsystem Blog</title>
         <link>https://designsystem.migrationsverket.se/release-notes/</link>
         <description>Migrationsverkets designsystem Blog</description>
-        <lastBuildDate>Fri, 10 Oct 2025 09:18:09 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Oct 2025 11:08:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>sv</language>
+        <item>
+            <title><![CDATA[Release 15.0.0]]></title>
+            <link>https://designsystem.migrationsverket.se/release-notes/15.0.0/</link>
+            <guid>https://designsystem.migrationsverket.se/release-notes/15.0.0/</guid>
+            <pubDate>Tue, 28 Oct 2025 11:08:38 GMT</pubDate>
+            <description><![CDATA[Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.]]></description>
+            <content:encoded><![CDATA[<p>Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-ny-select-komponent">🚀 Ny select-komponent<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-ny-select-komponent" class="hash-link" aria-label="Direktlänk till 🚀 Ny select-komponent" title="Direktlänk till 🚀 Ny select-komponent" translate="no">​</a></h2>
+<p>Vi har ersatt vår gamla select-komponent med en helt ny, baserad på <a href="https://react-spectrum.adobe.com/react-aria/components.html" target="_blank" rel="noopener noreferrer">React Aria Components (RAC)</a>. Detta ger oss en mer robust och tillgänglig komponent, med bättre prestanda och fler funktioner. Den nya komponenten har stöd för sektioner, sökning, och multi-select med taggar.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
+<ul>
+<li><strong>select:</strong> Vår select-komponent är helt omskriven och baserad på React Aria Components. Detta innebär ett helt nytt API. Se dokumentationen för mer information om hur du använder den nya komponenten.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-migrering">🔄 Migrering<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-migrering" class="hash-link" aria-label="Direktlänk till 🔄 Migrering" title="Direktlänk till 🔄 Migrering" translate="no">​</a></h2>
+<p>Om du använder vår <code scope="[object Object]">Select</code>-komponent i ditt projekt, finns det två vägar att gå vid uppgradering till v15.0.0:</p>
+<ol>
+<li>
+<p><strong>Uppdatera till den nya komponenten (rekommenderas):</strong>
+Vi rekommenderar att du uppdaterar din implementation för att använda den nya, React Aria Components-baserade <code scope="[object Object]">Select</code>-komponenten. Detta ger dig tillgång till den senaste funktionaliteten, bättre prestanda och förbättrad tillgänglighet. Se dokumentationen för mer information om hur du använder den nya komponenten.</p>
+</li>
+<li>
+<p><strong>Använd den gamla komponenten:</strong>
+Om du inte har möjlighet att uppdatera din implementation just nu, kan du fortsätta använda den gamla komponenten genom att byta importen från <code scope="[object Object]">Select</code> till <code scope="[object Object]">LegacySelect</code>. Din befintliga kod kommer då att fungera som tidigare.</p>
+<div class="language-tsx codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#000000;--prism-background-color:#ffffff"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-tsx codeBlock_bY9V thin-scrollbar" style="color:#000000;background-color:#ffffff"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#000000"><span class="token keyword" style="color:rgb(0, 0, 255)">import</span><span class="token plain"> </span><span class="token imports punctuation" style="color:rgb(4, 81, 165)">{</span><span class="token imports"> </span><span class="token imports maybe-class-name">LegacySelect</span><span class="token imports"> </span><span class="token imports punctuation" style="color:rgb(4, 81, 165)">}</span><span class="token plain"> </span><span class="token keyword" style="color:rgb(0, 0, 255)">from</span><span class="token plain"> </span><span class="token string" style="color:rgb(163, 21, 21)">'@midas-ds/components'</span><br></span></code></pre></div></div>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-select-komponenten">✨ Select-komponenten<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-select-komponenten" class="hash-link" aria-label="Direktlänk till ✨ Select-komponenten" title="Direktlänk till ✨ Select-komponenten" translate="no">​</a></h2>
+<p>Den nya select-komponenten, baserad på React Aria Components, har nu stöd för samma funktioner som den tidigare versionen. Detta inkluderar:</p>
+<ul>
+<li>Stöd för sektioner med rubriker.</li>
+<li>Förbättrad styling för multi-select med taggar.</li>
+<li>Möjlighet att visa valda värden som taggar.</li>
+<li>Bättre hantering av fokus och tangentbordsnavigering.</li>
+<li>Stöd för att visa en popover med mer information om ett val.</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nya-funktioner">🚀 Nya funktioner<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-nya-funktioner" class="hash-link" aria-label="Direktlänk till 🚀 Nya funktioner" title="Direktlänk till 🚀 Nya funktioner" translate="no">​</a></h2>
+<ul>
+<li><strong>spinner:</strong> Färgen på en spinner är nu som standard <code scope="[object Object]">icon-tertiary</code>. Property <code scope="[object Object]">isOnColor</code> är deprecated.</li>
+<li><strong>accordion:</strong> Förbättrat stöd för animationer i samtliga webbläsare.</li>
+<li><strong>datepicker-styles:</strong> Förbättrad styling av pilar för att byta månad.</li>
+<li><strong>date-picker:</strong> En rad förbättringar av vår datepicker:<!-- -->
+<ul>
+<li>Stöd för "forced colors" i Windows.</li>
+<li>Medium-storlek.</li>
+<li>Dagar utanför aktuell månad är nu dolda.</li>
+<li>Hover-effekter.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-fixar">🩹 Fixar<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-fixar" class="hash-link" aria-label="Direktlänk till 🩹 Fixar" title="Direktlänk till 🩹 Fixar" translate="no">​</a></h2>
+<ul>
+<li><strong>tabs:</strong> Visningen av horisontella och vertikala tabbar är korrigerad.</li>
+<li><strong>list-box:</strong> Justeringar av styling för sektionsrubriker.</li>
+<li><strong>tag:</strong> Synligt tangentbordsfokus för alla taggar.</li>
+<li><strong>field-error:</strong> Marginaler för ARIA-dolda syskon är borttagna.</li>
+<li><strong>theme:</strong> Enheter har lagts till för panel-övergångar, vilket löser en bugg med trasiga animationer.</li>
+<li><strong>calendar:</strong> Korrekt styling för dagar utanför aktuell månad.</li>
+<li><strong>textfield:</strong> Dubletter av prop-definitioner har tagits bort.</li>
+<li><strong>select:</strong> Justering av styling för "select all".</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="-dokumentation">📖 Dokumentation<a href="https://designsystem.migrationsverket.se/release-notes/15.0.0/#-dokumentation" class="hash-link" aria-label="Direktlänk till 📖 Dokumentation" title="Direktlänk till 📖 Dokumentation" translate="no">​</a></h2>
+<ul>
+<li><strong>select:</strong> Dokumentationen för select-komponenten är helt omskriven för att matcha den nya komponenten.</li>
+<li><strong>spinner:</strong> Dokumentationen för spinner är uppdaterad med nya props.</li>
+<li><strong>date-picker:</strong> En rad förbättringar av dokumentationen för datepicker.</li>
+<li><strong>generellt:</strong> En rad mindre justeringar och förbättringar av dokumentationen.</li>
+</ul>
+<!-- -->
+<p>Se alla förändringar i detalj på changelog:</p>
+<ul>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/components@v15.0.0" target="_blank" rel="noopener noreferrer">components@v15.0.0</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/theme@v3.1.1" target="_blank" rel="noopener noreferrer">theme@v3.1.1</a></li>
+<li><a href="https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.2.0" target="_blank" rel="noopener noreferrer">datepicker-styles@v0.2.0</a></li>
+</ul>]]></content:encoded>
+            <category>release-notes</category>
+            <category>v15</category>
+        </item>
         <item>
             <title><![CDATA[Release 14.0.0]]></title>
             <link>https://designsystem.migrationsverket.se/release-notes/14.0.0/</link>
@@ -17,7 +94,7 @@
             <content:encoded><![CDATA[<p>Den här releasen innehåller mestadels mindre justeringar och buggfixar. Vi har även passat på att introducera ett nytt paket för styling av datumväljare.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-nytt-css-paket-för-react-datepicker">💅 Nytt CSS-paket för react-datepicker<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-nytt-css-paket-f%C3%B6r-react-datepicker" class="hash-link" aria-label="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" title="Direktlänk till 💅 Nytt CSS-paket för react-datepicker" translate="no">​</a></h2>
 <p>Vi introducerar ett nytt paket, <a href="https://www.npmjs.com/package/@midas-ds/datepicker-styles" target="_blank" rel="noopener noreferrer"><code scope="[object Object]">@midas-ds/datepicker-styles</code></a>, för att hjälpa till med styling av <a href="https://www.npmjs.com/package/react-datepicker" target="_blank" rel="noopener noreferrer"><code scope="[object Object]">react-datepicker</code></a>. Detta är ett renodlat CSS-paket och är i ett tidigt beta-stadie. Vi uppmuntrar er att testa det och ge oss feedback.</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="️-tillgänglighet">♿️ Tillgänglighet<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#%EF%B8%8F-tillg%C3%A4nglighet" class="hash-link" aria-label="Direktlänk till ��♿️ Tillgänglighet" title="Direktlänk till ♿️ Tillgänglighet" translate="no">​</a></h2>
 <p>Vi har gjort en större genomgång av hur våra komponenter presenteras i Windows högkontrastläge (CSS <code scope="[object Object]">forced-colors</code>). Detta innebär att komponenterna nu ska ha ett betydligt bättre utseende och vara mer användbara för personer som använder detta läge.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="-breaking-changes">💥 Breaking Changes<a href="https://designsystem.migrationsverket.se/release-notes/14.0.0/#-breaking-changes" class="hash-link" aria-label="Direktlänk till 💥 Breaking Changes" title="Direktlänk till 💥 Breaking Changes" translate="no">​</a></h2>
 <ul>
