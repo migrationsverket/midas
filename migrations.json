@@ -51,6 +51,30 @@
       "subject": "chore: remove old migrations"
     },
     "targetVersion": "latest",
-    "confirmedPackageUpdates": true
+    "confirmedPackageUpdates": true,
+    "runningMigrations": [
+      "22-0-0-consolidate-release-tag-config"
+    ],
+    "completedMigrations": {
+      "22-0-0-release-version-config-changes": {
+        "type": "successful",
+        "name": "22-0-0-release-version-config-changes",
+        "changedFiles": [],
+        "ref": "2f2a9804db24a79bb9754da52401121cfae9fb00",
+        "nextSteps": []
+      },
+      "22-0-0-consolidate-release-tag-config": {
+        "type": "successful",
+        "name": "22-0-0-consolidate-release-tag-config",
+        "changedFiles": [
+          {
+            "path": "nx.json",
+            "type": "UPDATE"
+          }
+        ],
+        "ref": "b1750a1e862afaeea3971be2ef7d34760659c918",
+        "nextSteps": []
+      }
+    }
   }
 }
