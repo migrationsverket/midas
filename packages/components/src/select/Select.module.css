@@ -179,7 +179,8 @@
   }
 
   .selectAll {
-    width: calc(100% - var(--midas-size-80) * 2);
+    width: 100%;
+    box-sizing: border-box;
     background-color: var(--midas-layer-01-base);
     color: var(--midas-text-primary);
     display: flex;
