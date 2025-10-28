@@ -4,16 +4,16 @@ import { AccessLevelExample, EditFormExample } from '@site/src/components/exampl
 
 Normalfallet i ett gränssnitt är att alla kontroller, till exempel textfält eller kryssrutor, går att interagera med. Om det uppstår ett läge där en specifik kontroll och dess information inte är relevant är huvudregeln att inte visa kontrollen för användaren.
 
-Men, i de fall där informationen i kontrollen är relevant men användaren inte ska kunna interagera med kontrollen bör den sättas i `read only`-läget. I detta läge har fältet inte längre någon bakgrund för att indikera att kontrollen inte går att interagera med. Men informationen i fältet har bra kontrast och det är möjligt att kopiera informationen.
+Men, i de fall där informationen i kontrollen är relevant men användaren inte ska kunna interagera med kontrollen använder vi read-only. I detta läge har kontrollen ett annorlunda utseende för att indikera att den inte går att interagera med.
 
 ## Exempel
 
-Typexemplet på när det är lämpligt att använda read-only är när en användare har begränsad behörighet. Den kan inte ändra vissa fält men behöver kunna se informationen i fälten. Vi bör alltid komplettera med information till användaren om varför vissa fält är read-only.
+Typexemplet på när det är lämpligt att använda read-only är när en användare har begränsad behörighet. Den kan inte ändra vissa kontroller men behöver kunna se informationen i fälten. Vi bör alltid komplettera med information till användaren om varför vissa av kontrollerna är read-only.
 
 <AccessLevelExample />
 
 ## När använder vi inte Read-only
 
-Vi använder inte read-only som ett alternativ till `disabled` eller vice versa. Disabled och read-only har två helt olika syften.
+Vi använder inte read-only som ett alternativ till Disabled eller vice versa. Disabled och read-only har två helt olika syften.
 
 Vi använder inte read-only för att presentera information. När vi ska presentera information eller data så är huvudregeln att vi visar det som text.
