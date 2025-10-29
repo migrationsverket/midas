@@ -406,3 +406,35 @@ export const TruncationAndTooltip = {
     ),
   },
 }
+
+export const TruncationAndTooltipWithDelay = {
+  args: {
+    children: (
+      <>
+        <ListBoxItem textValue={longText}>
+          <TooltipTrigger delay={1500}>
+            <Focusable>
+              <div
+                role='button'
+                style={{
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {longText}
+              </div>
+            </Focusable>
+            <Tooltip
+              style={{ maxWidth: 'none' }}
+              placement='bottom'
+            >
+              {longText}
+            </Tooltip>
+          </TooltipTrigger>
+        </ListBoxItem>
+        <ListBoxItem>Hello</ListBoxItem>
+      </>
+    ),
+  },
+}
