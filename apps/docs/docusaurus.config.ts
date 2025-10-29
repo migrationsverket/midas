@@ -1,8 +1,9 @@
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
-import { themes as prismThemes } from 'prism-react-renderer'
 import path from 'path'
 import fs from 'fs'
+import prismLight from './src/theme/prismLight'
+import prismDark from './src/theme/prismDark'
 
 const packagesDir = path.resolve(__dirname, '../../packages')
 const packageAliases = {}
@@ -188,7 +189,8 @@ const config: Config = {
     },
     prism: {
       additionalLanguages: ['bash', 'git', 'css', 'diff'],
-      theme: prismThemes.oceanicNext,
+      theme: prismLight,
+      darkTheme: prismDark,
     },
     mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [

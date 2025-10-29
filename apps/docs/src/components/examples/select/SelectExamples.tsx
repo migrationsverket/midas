@@ -8,8 +8,11 @@ import {
   ListBoxHeader,
 } from '@midas-ds/components'
 
-export const BasicExample = (props) => (
-  <Select label='Favoritfrukt' {...props}>
+export const BasicExample = props => (
+  <Select
+    label='Favoritfrukt'
+    {...props}
+  >
     <ListBoxItem>Banan</ListBoxItem>
     <ListBoxItem>Apelsin</ListBoxItem>
     <ListBoxItem>Mango</ListBoxItem>
@@ -41,16 +44,14 @@ export const ControlledExample = () => {
           {item => <ListBoxItem id={item.name}>{item.name}</ListBoxItem>}
         </Collection>
       </Select>
-      <pre>
-        {`Selected fruit: ${selectedFruit }`}
-      </pre>
+      <pre>{`Selected fruit: ${selectedFruit}`}</pre>
     </>
   )
 }
 
 export const SectionedExample = () => {
   return (
-    <Select label={'Sectioned select'}>
+    <Select label='Sectioned select'>
       <ListBoxSection>
         <ListBoxHeader>Fruit</ListBoxHeader>
         <ListBoxItem id='Apple'>Apple</ListBoxItem>
