@@ -5,12 +5,14 @@ import {
   ListBoxSection,
   ListBoxHeader,
   SelectionMode,
+  TooltipTrigger,
+  Tooltip,
 } from '@midas-ds/components'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '../utils/storybook'
 import { expect, fn, spyOn, userEvent, within } from 'storybook/test'
 import { useState } from 'react'
-import { Collection, type Key } from 'react-aria-components'
+import { Collection, Focusable, type Key } from 'react-aria-components'
 
 const onChange = fn()
 const onSubmit = fn()
@@ -368,5 +370,39 @@ export const MultiSelectTests: Story<Item, 'multiple'> = {
         await expect(visibleValue).toBeVisible()
       },
     )
+  },
+}
+
+const longText = 'Flaggstångsknoppsmålarbyxor'
+
+export const TruncationAndTooltip = {
+  args: {
+    children: (
+      <>
+        <ListBoxItem textValue={longText}>
+          <TooltipTrigger>
+            <Focusable>
+              <div
+                role='button'
+                style={{
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {longText}
+              </div>
+            </Focusable>
+            <Tooltip
+              style={{ maxWidth: 'none' }}
+              placement='bottom'
+            >
+              {longText}
+            </Tooltip>
+          </TooltipTrigger>
+        </ListBoxItem>
+        <ListBoxItem>Hello</ListBoxItem>
+      </>
+    ),
   },
 }
