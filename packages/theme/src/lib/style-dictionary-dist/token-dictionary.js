@@ -2192,23 +2192,6 @@ export default {
         attributes: {},
         path: ["border", "color", "disabled"],
       },
-      readOnly: {
-        key: "{border.color.readOnly}",
-        $value: "light-dark(#bfbfbf, #383838)",
-        $description: "Kantlinje för read-only state",
-        filePath: "packages/theme/tokens/object-values.json",
-        isSource: true,
-        $type: "string",
-        original: {
-          $value: "light-dark({color.gray.50}, {color.gray.160})",
-          $description: "Kantlinje för read-only state",
-          $type: "string",
-          key: "{border.color.readOnly}",
-        },
-        name: "borderColorReadOnly",
-        attributes: {},
-        path: ["border", "color", "readOnly"],
-      },
     },
     width: {
       key: "{border.width}",

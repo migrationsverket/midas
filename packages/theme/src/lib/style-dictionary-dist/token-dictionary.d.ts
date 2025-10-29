@@ -211,7 +211,6 @@ declare const tokens: {
       subtle: DesignToken;
       tertiary: DesignToken;
       disabled: DesignToken;
-      readOnly: DesignToken;
     };
     width: DesignToken;
   };

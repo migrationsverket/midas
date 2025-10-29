@@ -113,10 +113,6 @@
       "disabled": {
         "$value": "light-dark({color.gray.50}, {color.gray.140})",
         "$description": "Kantlinje f\u00f6r disabled state"
-      },
-      "readOnly": {
-        "$value": "light-dark({color.gray.50}, {color.gray.160})",
-        "$description": "Kantlinje f\u00f6r read-only state"
       }
     },
     "width": {
