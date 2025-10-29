@@ -188,8 +188,7 @@ const config: Config = {
     },
     prism: {
       additionalLanguages: ['bash', 'git', 'css', 'diff'],
-      theme: prismThemes.vsLight,
-      darkTheme: prismThemes.vsDark,
+      theme: prismThemes.oceanicNext,
     },
     mermaid: { options: { flowchart: { curve: 'linear' } } },
     metadata: [

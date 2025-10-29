@@ -80,7 +80,6 @@
 }
 
 .prism-code {
-  background-color: var(--ifm-code-background) !important;
   border-radius: 0;
 }
 
