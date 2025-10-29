@@ -1,0 +1,78 @@
+---
+slug: 15.0.0
+title: Release 15.0.0
+authors: midas
+tags: [release-notes, v15]
+---
+
+Den här releasen innehåller en helt ny select-komponent, baserad på React Aria Components. Vi har även passat på att göra en hel del mindre justeringar och buggfixar. Vi har släppt ett par mindre versioner sedan senaste major-versionen, men dessa release notes reflekterar allt som har hänt sedan dess.
+
+## 🚀 Ny select-komponent
+
+Vi har ersatt vår gamla select-komponent med en helt ny, baserad på [React Aria Components (RAC)](https://react-spectrum.adobe.com/react-aria/components.html). Detta ger oss en mer robust och tillgänglig komponent, med bättre prestanda och fler funktioner. Den nya komponenten har stöd för sektioner, sökning, och multi-select med taggar.
+
+## 💥 Breaking Changes
+
+- **select:** Vår select-komponent är helt omskriven och baserad på React Aria Components. Detta innebär ett helt nytt API. Se dokumentationen för mer information om hur du använder den nya komponenten.
+
+## 🔄 Migrering
+
+Om du använder vår `Select`-komponent i ditt projekt, finns det två vägar att gå vid uppgradering till v15.0.0:
+
+1.  **Uppdatera till den nya komponenten (rekommenderas):**
+    Vi rekommenderar att du uppdaterar din implementation för att använda den nya, React Aria Components-baserade `Select`-komponenten. Detta ger dig tillgång till den senaste funktionaliteten, bättre prestanda och förbättrad tillgänglighet. Se dokumentationen för mer information om hur du använder den nya komponenten.
+
+2.  **Använd den gamla komponenten:**
+    Om du inte har möjlighet att uppdatera din implementation just nu, kan du fortsätta använda den gamla komponenten genom att byta importen från `Select` till `LegacySelect`. Din befintliga kod kommer då att fungera som tidigare.
+
+    ```tsx
+    import { LegacySelect } from '@midas-ds/components'
+    ```
+
+
+## ✨ Select-komponenten
+
+Den nya select-komponenten, baserad på React Aria Components, har nu stöd för samma funktioner som den tidigare versionen. Detta inkluderar:
+
+- Stöd för sektioner med rubriker.
+- Förbättrad styling för multi-select med taggar.
+- Möjlighet att visa valda värden som taggar.
+- Bättre hantering av fokus och tangentbordsnavigering.
+- Stöd för att visa en popover med mer information om ett val.
+
+## 🚀 Nya funktioner
+
+- **spinner:** Färgen på en spinner är nu som standard `icon-tertiary`. Property `isOnColor` är deprecated.
+- **accordion:** Förbättrat stöd för animationer i samtliga webbläsare.
+- **datepicker-styles:** Förbättrad styling av pilar för att byta månad.
+- **date-picker:** En rad förbättringar av vår datepicker:
+    - Stöd för "forced colors" i Windows.
+    - Medium-storlek.
+    - Dagar utanför aktuell månad är nu dolda.
+    - Hover-effekter.
+
+## 🩹 Fixar
+
+- **tabs:** Visningen av horisontella och vertikala tabbar är korrigerad.
+- **list-box:** Justeringar av styling för sektionsrubriker.
+- **tag:** Synligt tangentbordsfokus för alla taggar.
+- **field-error:** Marginaler för ARIA-dolda syskon är borttagna.
+- **theme:** Enheter har lagts till för panel-övergångar, vilket löser en bugg med trasiga animationer.
+- **calendar:** Korrekt styling för dagar utanför aktuell månad.
+- **textfield:** Dubletter av prop-definitioner har tagits bort.
+- **select:** Justering av styling för "select all".
+
+## 📖 Dokumentation
+
+- **select:** Dokumentationen för select-komponenten är helt omskriven för att matcha den nya komponenten.
+- **spinner:** Dokumentationen för spinner är uppdaterad med nya props.
+- **date-picker:** En rad förbättringar av dokumentationen för datepicker.
+- **generellt:** En rad mindre justeringar och förbättringar av dokumentationen.
+
+{/* truncate */}
+
+Se alla förändringar i detalj på changelog:
+
+- [components@v15.0.0](https://github.com/migrationsverket/midas/releases/tag/components@v15.0.0)
+- [theme@v3.1.1](https://github.com/migrationsverket/midas/releases/tag/theme@v3.1.1)
+- [datepicker-styles@v0.2.0](https://github.com/migrationsverket/midas/releases/tag/datepicker-styles@v0.2.0)

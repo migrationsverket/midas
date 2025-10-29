@@ -1,3 +1,9 @@
+## 3.1.1 (2025-10-27)
+
+### 🩹 Fixes
+
+- **theme:** add unit to panel transisitions fixing bug with broken animations ([ffcd857c52](https://github.com/migrationsverket/midas/commit/ffcd857c52))
+
 ## 3.1.0 (2025-10-10)
 
 ### 🚀 Features

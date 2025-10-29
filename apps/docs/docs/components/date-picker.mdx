@@ -8,13 +8,10 @@ import { ComponentHeader } from '@site/src/components/getComponentMetaData'
 import { DatePickerExample, UnavailableDateExample } from '@site/src/components/examples/date-picker/DatePickerExamples'
 import { DatePicker, DateRangePicker } from '@midas-ds/components'
 
-export const Example = props => {
+export const Example = () => {
   return (
     <div className='card'>
-      <DatePicker
-        label='Välj ett datum'
-        aria-label='Välj datum'
-      />
+      <DatePicker label='Välj ett datum' />
     </div>
   )
 }

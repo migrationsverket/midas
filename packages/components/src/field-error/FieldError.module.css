@@ -9,7 +9,7 @@
   line-height: 1.28;
   grid-area: Error;
 
-  &:has(+ *) {
+  &:has(+ *:not([aria-hidden='true'])) {
     margin: 0 0 0.5rem;
   }
 

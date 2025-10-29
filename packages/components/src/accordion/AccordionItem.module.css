@@ -1,7 +1,7 @@
 .item {
   --item-padding: 0;
-  --content-padding: var(--midas-size-20) var(--midas-size-40)
-    var(--midas-size-40) 1.85rem;
+  --content-padding: var(--midas-spacing-20) var(--midas-spacing-50)
+    var(--midas-spacing-50) 1.85rem;
   --border: none;
   --accordion-background: transparent;
   --accordion-background-hover: transparent;
@@ -16,14 +16,18 @@
 }
 
 .contained {
-  --gap: 0.25rem;
-  --item-padding: 0.75rem;
-  --content-padding: var(--midas-size-60) var(--midas-size-80)
-    var(--midas-size-80) var(--midas-size-80);
+  --gap: var(--midas-spacing-20);
+  --item-padding: calc(var(--midas-spacing-40) - 2px) var(--midas-spacing-40);
+  --content-padding: var(--midas-spacing-40) var(--midas-spacing-50)
+    var(--midas-spacing-50) var(--midas-spacing-50);
   --border-color: var(--midas-border-color-secondary);
   --border: 1px solid;
   --accordion-background: var(--midas-layer-01-base);
   --accordion-background-hover: var(--midas-layer-01-hover);
+
+  &.medium {
+    --item-padding: calc(var(--midas-spacing-30) - 2px) var(--midas-spacing-40);
+  }
 }
 
 .success {
@@ -92,12 +96,12 @@
 .chevronIcon {
   transform: rotate(0deg);
   transition: transform var(--midas-transition-duration-normal) ease;
-  padding: 0.125rem 0;
+  padding: var(--midas-spacing-10) 0;
 }
 
 .statusIcon {
   color: var(--icon-color);
-  padding: 0.125rem 0;
+  padding: var(--midas-spacing-10) 0;
 
   @media (forced-colors: active) {
     color: currentColor;
