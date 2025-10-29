@@ -192,3 +192,10 @@ __vis__/forced-colors-light
 __vis__/forced-colors-dark
 __diffs__
 __results__
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
