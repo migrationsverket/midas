@@ -182,8 +182,6 @@ export const borderColorSubtle: string;
 export const borderColorTertiary: string;
 /** Kantlinje för disabled state */
 export const borderColorDisabled: string;
-/** Kantlinje för read-only state */
-export const borderColorReadOnly: string;
 export const borderWidth: string;
 /** Standardfärg för fält, som ligger på background */
 export const field01Base: string;

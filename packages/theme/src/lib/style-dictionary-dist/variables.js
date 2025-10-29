@@ -138,7 +138,6 @@ export const borderColorSecondary = "light-dark(#737373, #8c8c8c)"; // Kantlinje
 export const borderColorSubtle = "light-dark(#bfbfbf, #383838)"; // Kantlinje med låg kontrast
 export const borderColorTertiary = "light-dark(#143c50, #2e7ca5)"; // Primärblå kantlinje
 export const borderColorDisabled = "light-dark(#bfbfbf, #525252)"; // Kantlinje för disabled state
-export const borderColorReadOnly = "light-dark(#bfbfbf, #383838)"; // Kantlinje för read-only state
 export const borderWidth = "1px";
 export const field01Base = "light-dark(#f2f2f2, #262626)"; // Standardfärg för fält, som ligger på background
 export const field01Hover = "light-dark(#e6e6e6, #333)"; // Hover state för field01

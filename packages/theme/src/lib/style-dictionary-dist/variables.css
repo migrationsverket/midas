@@ -216,7 +216,6 @@
   --midas-border-color-subtle: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-160)); /** Kantlinje med låg kontrast */
   --midas-border-color-tertiary: light-dark(var(--midas-color-blue-150), var(--midas-color-blue-100)); /** Primärblå kantlinje */
   --midas-border-color-disabled: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-140)); /** Kantlinje för disabled state */
-  --midas-border-color-read-only: light-dark(var(--midas-color-gray-50), var(--midas-color-gray-160)); /** Kantlinje för read-only state */
   --midas-field-01-base: light-dark(var(--midas-color-gray-10), var(--midas-color-gray-180)); /** Standardfärg för fält, som ligger på background */
   --midas-field-01-hover: light-dark(var(--midas-color-gray-20), var(--midas-color-gray-170)); /** Hover state för field01 */
   --midas-field-01-active: light-dark(var(--midas-color-gray-30), var(--midas-color-gray-160)); /** Active state för field01 */

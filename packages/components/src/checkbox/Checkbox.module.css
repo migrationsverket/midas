@@ -10,7 +10,7 @@
     border-color 50ms;
 
   &[data-readonly] {
-    --border-color: var(--midas-border-color-read-only);
+    --border-color: var(--midas-border-color-subtle);
   }
 }
 
@@ -37,7 +37,7 @@
   --checkbox-active-color: var(--midas-button-background-primary-active);
   --checkbox-disabled-border: var(--midas-border-color-disabled);
   --checkbox-disabled-background: var(--midas-field-disabled);
-  --checkbox-readonly-border: var(--midas-border-color-read-only);
+  --checkbox-readonly-border: var(--midas-border-color-subtle);
   --checkbox-warning-border: var(--midas-support-border-warning);
 
   font-family: var(--midas-typography-font-family);

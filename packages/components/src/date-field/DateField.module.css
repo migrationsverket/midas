@@ -6,7 +6,7 @@
 
   &[data-readonly] .inputField {
     background-color: transparent;
-    border-bottom-color: var(--midas-border-color-read-only);
+    border-bottom-color: var(--midas-border-color-subtle);
   }
 
   &[data-disabled] .inputField {
