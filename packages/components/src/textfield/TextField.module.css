@@ -29,7 +29,7 @@
     .textArea,
     .input {
       background-color: transparent;
-      border-color: var(--midas-border-color-read-only);
+      border-color: var(--midas-border-color-subtle);
     }
   }
 }
