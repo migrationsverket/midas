@@ -50,8 +50,6 @@ export const DateField: React.FC<DateFieldProps> = ({
       className={clsx(styles.inputField, {
         [styles.medium]: size === 'medium',
       })}
-      data-disabled={rest.isDisabled || undefined}
-      data-readonly={rest.isReadOnly || undefined}
       data-testid='date-field_input-field'
     >
       <DateInput>{segment => <DateSegment segment={segment} />}</DateInput>
