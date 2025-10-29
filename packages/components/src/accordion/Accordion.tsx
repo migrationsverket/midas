@@ -5,6 +5,7 @@ import * as React from 'react'
 import clsx from '../utils/clsx'
 import { DisclosureGroup, DisclosureGroupProps } from 'react-aria-components'
 import { AccordionContext } from './AccordionContext'
+import { Size } from '../common/types'
 
 export interface MidasAccordion extends DisclosureGroupProps {
   /**
@@ -15,6 +16,10 @@ export interface MidasAccordion extends DisclosureGroupProps {
   children?: React.ReactNode
   isDisabled?: boolean
   isContained?: boolean
+  /** Component size when used with `isContained` (large: height 48px, medium: height 40px)
+   *  @default 'large'
+   **/
+  size?: Size
 }
 
 /**
@@ -26,11 +31,12 @@ export const Accordion: React.FC<MidasAccordion> = ({
   children,
   className,
   isContained: isContainedFromProp,
+  size = 'large',
   ...props
 }) => {
   const isContained = isContainedFromProp || variant === 'contained'
   return (
-    <AccordionContext.Provider value={{ isContained }}>
+    <AccordionContext.Provider value={{ isContained, size }}>
       <DisclosureGroup
         className={clsx(
           styles.root,
