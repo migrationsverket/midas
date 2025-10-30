@@ -21,7 +21,6 @@
   --ifm-color-primary-light: #0070e0;
   --ifm-color-primary-lighter: #0075eb;
   --ifm-color-primary-lightest: #0a85ff;
-  --ifm-menu-color-active: var(--ifm-navbar-link-active-color);
   --ifm-code-font-size: 85%;
   --ifm-font-family-monospace: 'Fira Code', monospace;
   --ifm-code-border-radius: 2px;
@@ -41,20 +40,21 @@
   --ifm-link-color: #2e7ca5;
   --ifm-link-hover-color: #143c50;
   --ifm-code-background: #fafafa;
+  --ifm-navbar-search-input-placeholder-color: #62686f;
+  --ifm-hover-overlay: var(--midas-layer-01-base);
+  --ifm-menu-color-active: var(--midas-link-enabled);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark']:root {
   color-scheme: dark;
 
-  --ifm-color-primary: #4289ad;
   --ifm-color-primary-dark: #25607f;
   --ifm-color-primary-darker: #143c50;
   --ifm-color-primary-darkest: #143c50;
   --ifm-color-primary-light: #0070e0;
   --ifm-color-primary-lighter: #0075eb;
   --ifm-color-primary-lightest: #eaf2f6;
-  --ifm-menu-color-active: var(--ifm-navbar-link-active-color);
   --docusaurus-highlighted-code-line-bg: rgba(148 148 148 / 10%);
   --ifm-font-size-base: 1rem;
   --ifm-hr-height: 0.1em;
@@ -66,9 +66,13 @@
   --search-local-modal-background: white;
   --search-local-muted-color: #808080;
   --search-local-highlight-color: #25607f;
-  --ifm-link-color: #4289ad;
   --ifm-link-hover-color: #5897b8;
   --ifm-card-background-color: #000;
+  --ifm-navbar-background-color: var(--midas-layer-01-base);
+  --ifm-navbar-link-hover-color: var(--midas-link-enabled);
+  --ifm-navbar-search-input-placeholder-color: #bec3c9;
+  --ifm-color-primary: var(--midas-link-enabled);
+  --ifm-link-color: var(--midas-link-enabled);
 }
 
 .theme-code-block {
@@ -199,7 +203,8 @@ article ul {
   margin-top: unset;
 }
 
-p a {
+p a,
+article li a {
   text-decoration: underline;
 }
 

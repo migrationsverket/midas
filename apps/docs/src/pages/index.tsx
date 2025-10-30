@@ -23,7 +23,7 @@ export default function Startpage() {
                 produkter. Det innehåller designkomponenter, kod och riktlinjer
                 som underlättar utveckling och design.'
     >
-      <div className='container container--fullscreen'>
+      <main className='container container--fullscreen'>
         <div className='row row--no-gutters'>
           <div className='col col--6 textColumn'>
             <div className={styles.text}>
@@ -74,7 +74,7 @@ export default function Startpage() {
             <HeaderImage />
           </div>
         </div>
-      </div>
+      </main>
     </Layout>
   )
 }
