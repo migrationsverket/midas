@@ -1,8 +1,14 @@
+## 15.1.0 (2025-10-30)
+
+### 🚀 Features
+
+- **accordion:** add size prop ([#896](https://github.com/migrationsverket/midas/pull/896))
+
 # 15.0.0 (2025-10-28)
 
 ### 🚀 Features
 
-- ⚠️  **select:** replace custom select with new RAC based select
+- ⚠️ **select:** replace custom select with new RAC based select
 - **select:** use midas popover
 - **select:** update type imports
 - **select:** add sections
@@ -17,9 +23,9 @@
 - **tag:** add visible keyboard focus for all tags
 - **field-error:** remove margin from aria hidden siblings
 
-### ⚠️  Breaking Changes
+### ⚠️ Breaking Changes
 
-- ⚠️  **select:** replace custom select with new RAC based select
+- ⚠️ **select:** replace custom select with new RAC based select
 
 ## 14.1.0 (2025-10-27)
 
