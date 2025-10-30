@@ -62,7 +62,6 @@
   margin-bottom: 0;
   padding: var(--midas-size-70) var(--midas-spacing-50);
   transition: background-color 60ms;
-  word-break: break-all;
   gap: var(--midas-spacing-50);
 
   &:hover:not([data-disabled]) {
