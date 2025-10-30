@@ -42,12 +42,12 @@ jobs:
         uses: nrwl/nx-set-shas@v4
 
       - name: Build affected libs
-        run: npx nx affected -t build,test
+        run: npx nx affected -t build
 
         # We need to set github email and name as nx release will
         # create new tag with version and create new github release
       - name: Run nx release
         run: |
           git config --global user.email "midas@superuser.dev"
-          git config --global user.name "Midas Bot"
+          git config --global user.name "Automate Damon"
           npx nx release --skip-publish
