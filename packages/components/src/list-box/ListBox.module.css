@@ -32,8 +32,8 @@
   background-color: var(--midas-layer-01-base);
   font-family: var(--midas-typography-font-family);
   display: block;
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-20)
-    var(--midas-spacing-40);
+  padding: var(--midas-spacing-50) var(--midas-spacing-50)
+    var(--midas-spacing-20) var(--midas-spacing-40);
   font-weight: 500;
   font-size: var(--midas-typography-font-size-20);
   line-height: var(--midas-typography-line-height-20);
@@ -60,8 +60,9 @@
   font-family: var(--midas-typography-font-family);
   line-height: var(--midas-typography-line-height-30);
   margin-bottom: 0;
-  padding: var(--midas-size-70) var(--midas-size-80);
+  padding: var(--midas-size-70) var(--midas-spacing-50);
   transition: background-color 60ms;
+  gap: var(--midas-spacing-50);
 
   &:hover:not([data-disabled]) {
     background-color: var(--midas-layer-01-hover);
@@ -110,6 +111,7 @@
           height: var(--midas-size-80);
           mask: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZWNrLWljb24gbHVjaWRlLWNoZWNrIj48cGF0aCBkPSJNMjAgNiA5IDE3bC01LTUiLz48L3N2Zz4=');
           mask-size: var(--midas-size-80) var(--midas-size-80);
+          flex-shrink: 0;
 
           @media (forced-colors: active) {
             filter: invert(1);
@@ -165,8 +167,8 @@
 .listBoxLoadMoreItem {
   align-items: center;
   display: flex;
-  gap: var(--midas-size-80);
+  gap: var(--midas-spacing-50);
   line-height: var(--midas-typography-line-height-30);
-  padding: var(--midas-size-80) var(--midas-size-80) var(--midas-size-60)
-    var(--midas-size-80);
+  padding: var(--midas-spacing-50) var(--midas-spacing-50)
+    var(--midas-spacing-40) var(--midas-spacing-50);
 }
