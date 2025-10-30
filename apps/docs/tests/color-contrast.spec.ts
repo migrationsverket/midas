@@ -2,11 +2,22 @@ import { test, expect } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 
 const pages = [
+  '/',
+  'release-notes',
+  'get-started/about',
   'get-started/install',
   'get-started/contribute/coding',
   'get-started/contribute/tests',
   'get-started/contribute/tokens',
+  'get-started/contribute/tokens/dev-tokens',
+  'basics/principles',
   'basics/tokens',
+  'basics/accessibility',
+  'basics/language',
+  'design-patterns/buttons-and-links',
+  'design-patterns/forms',
+  'design-patterns/page-loading',
+  'design-patterns/validation',
   'dev/client-side-routing',
   'dev/common-issues',
   'dev/dark-mode',
@@ -55,13 +66,13 @@ const pages = [
 // light mode
 pages.forEach(async path => {
   test(
-    path + ' has no a11y volations for code examples in light mode',
+    path + ' has no a11y violations for color contrast in light mode',
     async ({ page }) => {
       await page.goto('http://localhost:3000/' + path)
-      await page.locator('.theme-code-block').first().waitFor()
+      // await page.locator('.theme-code-block').first().waitFor()
 
       const accessibilityScanResults = await new AxeBuilder({ page })
-        .include('.theme-code-block')
+        // .include('.theme-code-block')
         .withRules('color-contrast')
         .analyze()
 
@@ -72,14 +83,12 @@ pages.forEach(async path => {
 
 pages.forEach(async path => {
   test(
-    path + ' has no a11y volations for code examples in dark mode',
+    path + ' has no a11y violations color contrast in dark mode',
     async ({ page }) => {
       await page.emulateMedia({ colorScheme: 'dark' })
       await page.goto('http://localhost:3000/' + path)
-      await page.locator('.theme-code-block').first().waitFor()
 
       const accessibilityScanResults = await new AxeBuilder({ page })
-        .include('.theme-code-block')
         .withRules('color-contrast')
         .analyze()
 
