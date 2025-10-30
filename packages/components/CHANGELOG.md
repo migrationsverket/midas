@@ -1,3 +1,9 @@
+## 15.1.1 (2025-10-30)
+
+### 🩹 Fixes
+
+- **list-box:** adjust selected styling for listBoxItem ([#901](https://github.com/migrationsverket/midas/pull/901))
+
 ## 15.1.0 (2025-10-30)
 
 ### 🚀 Features
