@@ -21,15 +21,9 @@ export default {
       name: getAbsolutePath('storybook-addon-vis'),
       options: {
         visProjects: [
-          {
-            snapshotRootDir: '__vis__/light/local',
-          },
-          {
-            snapshotRootDir: '__vis__/dark/local',
-          },
-          {
-            snapshotRootDir: '__vis__/forced-colors/local',
-          },
+          { snapshotRootDir: join(basePath, '__vis__/light/local') },
+          { snapshotRootDir: join(basePath, '__vis__/dark/local') },
+          { snapshotRootDir: join(basePath, '__vis__/forced-colors/local') },
         ],
       },
     },
