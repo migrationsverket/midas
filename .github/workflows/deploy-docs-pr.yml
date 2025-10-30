@@ -35,19 +35,33 @@ jobs:
           node-version-file: '.nvmrc'
           cache: npm
 
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
+      - name: Check if docs is affected
+        id: docs
+        shell: bash
+        run: |
+          if npx nx show projects --affected | grep -q docs; then
+            echo "affected=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "affected=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install dependencies
-        if: github.event.action != 'closed'
+        if: github.event.action != 'closed' && steps.docs.outputs.affected == 'true'
         run: npm ci
 
       - name: Lint, test and build website
-        if: github.event.action != 'closed'
+        if: github.event.action != 'closed' && steps.docs.outputs.affected == 'true'
         run: npx nx run-many -t lint,test,build --projects=docs
 
       - name: Build storybook
-        if: github.event.action != 'closed'
+        if: github.event.action != 'closed' && steps.docs.outputs.affected == 'true'
         run: npx nx run storybook:build:ci
 
       - name: Deploy preview
+        if: steps.docs.outputs.affected == 'true'
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./dist/docs
