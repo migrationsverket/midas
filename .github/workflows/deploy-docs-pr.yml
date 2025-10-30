@@ -42,7 +42,7 @@ jobs:
         id: docs
         shell: bash
         run: |
-          if npx nx show projects --affected | grep -q docs; then
+          if npx nx show projects --affected | grep docs; then
             echo "affected=true" >> "$GITHUB_OUTPUT"
           else
             echo "affected=false" >> "$GITHUB_OUTPUT"

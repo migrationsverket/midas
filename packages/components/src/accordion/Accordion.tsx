@@ -35,6 +35,7 @@ export const Accordion: React.FC<MidasAccordion> = ({
   ...props
 }) => {
   const isContained = isContainedFromProp || variant === 'contained'
+
   return (
     <AccordionContext.Provider value={{ isContained, size }}>
       <DisclosureGroup
