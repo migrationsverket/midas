@@ -1,11 +1,9 @@
 name: Publish to NPM
 
 on:
-  workflow_dispatch:
-  workflow_call:
-    secrets:
-      NPM_TOKEN:
-        required: true
+  push:
+    tags:
+      - '*@v*.*.*'
 
 jobs:
   publish-to-npm:
