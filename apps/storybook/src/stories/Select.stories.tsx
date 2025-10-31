@@ -7,6 +7,7 @@ import {
   SelectionMode,
   TooltipTrigger,
   Tooltip,
+  TruncatedText,
 } from '@midas-ds/components'
 import { RunOptions } from 'axe-core'
 import { options, optionsWithSections } from '../utils/storybook'
@@ -380,26 +381,7 @@ export const TruncationAndTooltip = {
     children: (
       <>
         <ListBoxItem textValue={longText}>
-          <TooltipTrigger>
-            <Focusable>
-              <div
-                role='button'
-                style={{
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {longText}
-              </div>
-            </Focusable>
-            <Tooltip
-              style={{ maxWidth: 'none' }}
-              placement='bottom'
-            >
-              {longText}
-            </Tooltip>
-          </TooltipTrigger>
+          <TruncatedText>{longText}</TruncatedText>
         </ListBoxItem>
         <ListBoxItem>Hello</ListBoxItem>
       </>
