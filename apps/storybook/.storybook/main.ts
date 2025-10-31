@@ -17,16 +17,6 @@ export default {
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-vitest'),
-    {
-      name: getAbsolutePath('storybook-addon-vis'),
-      options: {
-        visProjects: [
-          { snapshotRootDir: join(basePath, '__vis__/light/local') },
-          { snapshotRootDir: join(basePath, '__vis__/dark/local') },
-          { snapshotRootDir: join(basePath, '__vis__/forced-colors/local') },
-        ],
-      },
-    },
   ],
   core: {
     disableTelemetry: true,
