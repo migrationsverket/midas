@@ -15,7 +15,7 @@ import { Size } from '../common/types'
 import { InfoPopoverProps, Label } from '../label'
 import { LabelWrapper } from '../label/LabelWrapper'
 
-export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
+export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className' | 'value' | 'defaultValue' | 'onChange'> {
   children?: React.ReactNode
   /** Specify label displayed above the TextField*/
   label?: string
@@ -35,6 +35,12 @@ export interface TextFieldBaseProps extends Omit<TextFieldProps, 'className'> {
    * */
   size?: Size
   popover?: InfoPopoverProps
+  /** The current value (controlled). */
+  value?: string
+  /** The default value (uncontrolled). */
+  defaultValue?: string
+  /** Handler that is called when the value changes. */
+  onChange?: (value: string) => void
 }
 
 export const TextFieldBase = React.forwardRef<
