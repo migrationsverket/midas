@@ -58,26 +58,13 @@ const config: Config = {
   i18n: { defaultLocale: 'sv', locales: ['sv'] },
   plugins: [
     [
-      'docusaurus-plugin-react-docgen-typescript',
-      /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
+      require.resolve('./docgen-fix-plugin.js'),
       {
-        global: true,
-        src: Object.values(packageAliases),
+        src: `${packagesDir}/components/src/**/[A-Z]*.tsx`,
         parserOptions: {
-          // prop table gets a bit crowded if we allow everything
-          propFilter: prop => {
-            if (prop.parent) {
-              return !(
-                prop.parent.fileName.includes('@types/react') ||
-                prop.parent.fileName.includes('dom.d.ts')
-              )
-            }
-            return true
-          },
-          savePropValueAsString: true,
           shouldExtractValuesFromUnion: true,
           shouldExtractLiteralValuesFromEnum: false,
-        },
+        }
       },
     ],
     ['docusaurus-plugin-module-alias', { alias: packageAliases }],
