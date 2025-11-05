@@ -53,6 +53,7 @@
   }
 
   &[data-disabled] {
+    color: var(--midas-text-disabled);
     background: var(--midas-field-disabled);
     box-shadow: none;
     border-bottom: 0.063rem solid var(--midas-border-color-disabled);
