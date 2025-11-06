@@ -36,7 +36,10 @@ export default {
       tsconfigPath: join(basePath, 'tsconfig.storybook.json'),
       propFilter: prop => {
         if (prop.parent) {
-          return !prop.parent.fileName.includes('@types/react')
+          return !(
+            prop.parent.fileName.includes('@types/react') ||
+            prop.parent.fileName.includes('dom.d.ts')
+          )
         }
         return true
       },
