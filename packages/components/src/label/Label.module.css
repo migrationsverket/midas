@@ -22,11 +22,3 @@
     color: GrayText;
   }
 }
-
-[data-disabled] {
-  color: var(--midas-text-disabled);
-
-  @media (forced-colors: active) {
-    color: GrayText;
-  }
-}
