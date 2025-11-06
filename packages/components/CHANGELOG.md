@@ -1,3 +1,11 @@
+## 15.1.2 (2025-11-06)
+
+### 🩹 Fixes
+
+- **label:** remove unused global css ([4dccf5ce7f](https://github.com/migrationsverket/midas/commit/4dccf5ce7f))
+- **textfield:** adjust text color in disabled mode ([2790ec6752](https://github.com/migrationsverket/midas/commit/2790ec6752))
+- **combobox:** adjust text color in disabled mode ([88027e5b4a](https://github.com/migrationsverket/midas/commit/88027e5b4a))
+
 ## 15.1.1 (2025-10-30)
 
 ### 🩹 Fixes
