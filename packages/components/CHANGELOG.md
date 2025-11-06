@@ -1,3 +1,9 @@
+## 15.1.3 (2025-11-06)
+
+### 🩹 Fixes
+
+- **list-box:** add breaks for long words ([ee353f7654](https://github.com/migrationsverket/midas/commit/ee353f7654))
+
 ## 15.1.2 (2025-11-06)
 
 ### 🩹 Fixes
