@@ -54,10 +54,7 @@ export interface MidasSelectProps<
   size?: Size
 }
 
-export function Select<
-  T extends object,
-  M extends SelectionMode = 'single',
->({
+export function Select<T extends object, M extends SelectionMode = 'single'>({
   children,
   description,
   errorMessage,
@@ -95,7 +92,7 @@ export function Select<
               props.selectionMode !== 'multiple' ? (
                 <div className={clsx(styles.placeholder)}>
                   <span className={clsx(styles.truncate)}>
-                    {renderProps.defaultChildren}
+                    {renderProps.selectedText || renderProps.defaultChildren}
                   </span>
                 </div>
               ) : (

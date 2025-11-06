@@ -211,3 +211,40 @@ export const RequiredSingleSelect: Story = {
     </form>
   ),
 }
+
+export const LongWords: Story = {
+  tags: ['!dev', '!autodocs'],
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
+  args: {
+    label: 'Long words',
+    description: 'just for test',
+    children: (
+      <>
+        <ListBoxItem>JavaScript&shy;Select&shy;Component</ListBoxItem>
+        <ListBoxItem>
+          En lång mening utan några långa ord, bara mellanslag
+        </ListBoxItem>
+        <ListBoxItem>
+          En lång mening med ett jättelångt ord:
+          pneumonoultramicroscopicsilicovolcanoconiosis
+        </ListBoxItem>
+        <ListBoxItem>
+          In an extraordinary demonstration of interdisciplinary collaboration,
+          the hypermetropolitan university's neurophysiological research
+          consortium unveiled a revolutionary apparatus designed to facilitate
+          intercommunicational synchronization between artificially intelligent
+          entities and biologically conscious organisms. The device, operating
+          through electroencephalographic transmodulation and algorithmic
+          contextualization, promises unprecedented advancements in cognitive
+          enhancement, neuroplastic rehabilitation, and computational
+          linguistics. Such an innovation, while theoretically transformative,
+          also precipitates multifaceted bioethical deliberations concerning
+          technopsychological autonomy and the potential dehumanization of
+          consciousness through overmechanization.
+        </ListBoxItem>
+      </>
+    ),
+  },
+}

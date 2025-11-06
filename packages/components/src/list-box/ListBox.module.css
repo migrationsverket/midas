@@ -55,6 +55,7 @@
 .listBoxItem {
   align-items: center;
   background-color: var(--midas-layer-01-base);
+  box-sizing: border-box;
   color: var(--midas-text-primary);
   display: flex;
   font-family: var(--midas-typography-font-family);
@@ -63,6 +64,12 @@
   padding: var(--midas-size-70) var(--midas-spacing-50);
   transition: background-color 60ms;
   gap: var(--midas-spacing-50);
+
+  .textContent {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    width: 100%;
+  }
 
   &:hover:not([data-disabled]) {
     background-color: var(--midas-layer-01-hover);
@@ -104,6 +111,10 @@
 
     &[data-selection-mode='single'] {
       &[data-selected] {
+        .textContent {
+          max-width: calc(100% - 3rem);
+        }
+
         &::after {
           content: '';
           background-color: var(--midas-text-primary);
