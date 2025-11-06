@@ -18,13 +18,21 @@ export const ListBoxItem = <T extends object>({
   children,
   className,
   hideSelectionIndicator,
+  textValue,
   ...rest
 }: ListBoxItemProps<T>) => (
   <AriaListBoxItem
     className={clsx(styles.listBoxItem, className)}
     data-show-selection={!hideSelectionIndicator || undefined}
+    textValue={
+      textValue || (typeof children === 'string' ? children : undefined)
+    }
     {...rest}
   >
-    {children}
+    {renderProps => (
+      <div className={styles.textContent}>
+        {typeof children === 'function' ? children(renderProps) : children}
+      </div>
+    )}
   </AriaListBoxItem>
 )
