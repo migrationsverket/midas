@@ -3,9 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite'
 import { DatePicker } from '@midas-ds/components'
 import { parseDate, CalendarDate } from '@internationalized/date'
 
-// eslint-disable-next-line
-export const testId = 'datePicker'
-
 const meta: Meta<typeof DatePicker> = {
   component: DatePicker,
   title: 'Components/DatePicker',
@@ -106,7 +103,6 @@ export const ControlledState: Story = {
     )
     return (
       <DatePicker
-        data-testid={testId}
         {...args}
         value={value}
         onChange={newValue =>
