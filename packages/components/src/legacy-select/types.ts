@@ -206,6 +206,9 @@ export interface SelectProps extends MultiSelectStateProps<ListBoxOption> {
   size?: Size
 }
 
+/**
+ * @deprecated since v15.2.0 please use `Select` and `SelectProps` instead
+ */
 export type SelectContainerProps = Omit<SelectProps, 'children' | 'items'> & {
   /** Item objects in the collection. */
   options: ListBoxOption[]
