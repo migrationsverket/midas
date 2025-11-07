@@ -16,9 +16,18 @@ export interface SkeletonProps
    */
   height?: React.CSSProperties['height']
   /**
-   * Circular or rectangular Skeleton component. When using circle, only `width` is allowed to control size.
+   * Circular, rectangular, or form field Skeleton component.
+   * - When using `circle`, only `width` is allowed to control size.
+   * - When using `form`, displays label, description, and input field skeletons. The `size` prop controls the input field height.
    */
-  variant?: 'circle' | 'rectangle'
+  variant?: 'circle' | 'rectangle' | 'form'
+  /**
+   * Size of the form input field skeleton. Only applies when `variant='form'`.
+   * - `medium`: 40px height
+   * - `large`: 48px height
+   * @default 'large'
+   */
+  size?: 'medium' | 'large'
   /**
    * Displays the skeleton component with a wave animation
    * @default true
@@ -35,6 +44,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   variant = 'rectangle',
   width,
   height,
+  size = 'large',
   isAnimated = true,
   className,
   style,
@@ -44,6 +54,46 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   if (variant === 'circle' && height !== undefined) {
     console.warn(
       'Height is not allowed when using circle, control size with width',
+    )
+  }
+
+  if (variant === 'form') {
+    return (
+      <div
+        className={clsx(
+          styles.form,
+          styles[size],
+          isOnLayer01 && styles.onLayer01,
+          className,
+        )}
+        style={{ width, ...style }}
+        {...rest}
+      >
+        <div
+          className={clsx(
+            styles.skeleton,
+            styles.formLabel,
+            isAnimated && styles.wave,
+            isOnLayer01 && styles.onLayer01,
+          )}
+        />
+        <div
+          className={clsx(
+            styles.skeleton,
+            styles.formDescription,
+            isAnimated && styles.wave,
+            isOnLayer01 && styles.onLayer01,
+          )}
+        />
+        <div
+          className={clsx(
+            styles.skeleton,
+            styles.formInput,
+            isAnimated && styles.wave,
+            isOnLayer01 && styles.onLayer01,
+          )}
+        />
+      </div>
     )
   }
 

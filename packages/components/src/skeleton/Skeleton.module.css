@@ -54,3 +54,35 @@
 .onLayer01 {
   background-color: var(--midas-skeleton-02);
 }
+
+/* Form variant */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formLabel {
+  height: 1.25rem; /* ~20px - typical label height */
+  width: 40%;
+  margin-bottom: 0.25rem; /* matches TextField label spacing */
+  border-radius: 0.25rem;
+}
+
+.formDescription {
+  height: 1rem; /* ~16px - smaller than label */
+  width: 60%;
+  margin-bottom: 0.5rem; /* matches TextField description spacing */
+  border-radius: 0.25rem;
+}
+
+.formInput {
+  height: var(--midas-size-150); /* 48px - large by default */
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+/* Medium size variant */
+.form.medium .formInput {
+  height: var(--midas-size-130); /* 40px */
+}
