@@ -55,7 +55,6 @@
   background-color: var(--midas-skeleton-02);
 }
 
-/* Form variant */
 .form {
   display: flex;
   flex-direction: column;
@@ -63,26 +62,22 @@
 }
 
 .formLabel {
-  height: 1.25rem; /* ~20px - typical label height */
+  height: var(--midas-size-90); /* ~20px - typical label height */
   width: 40%;
-  margin-bottom: 0.25rem; /* matches TextField label spacing */
-  border-radius: 0.25rem;
+  margin-bottom: var(--midas-spacing-20);
 }
 
 .formDescription {
-  height: 1rem; /* ~16px - smaller than label */
+  height: 1.125rem;
   width: 60%;
-  margin-bottom: 0.5rem; /* matches TextField description spacing */
-  border-radius: 0.25rem;
+  margin-bottom: var(--midas-spacing-30);
 }
 
 .formInput {
   height: var(--midas-size-150); /* 48px - large by default */
   width: 100%;
-  border-radius: 0.25rem;
 }
 
-/* Medium size variant */
 .form.medium .formInput {
   height: var(--midas-size-130); /* 40px */
 }
