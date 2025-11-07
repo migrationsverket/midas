@@ -1,6 +1,6 @@
-import type { ListBoxItemElement, ListBoxSectionElement } from '../list-box'
-
-export function generateMockOptions(count: number): ListBoxItemElement[] {
+export function generateMockOptions(
+  count: number,
+): { id: number; name: string }[] {
   const fruits = [
     'Äpple',
     'Banan',
@@ -42,7 +42,11 @@ export function generateMockOptions(count: number): ListBoxItemElement[] {
   })
 }
 
-export const optionsWithSections: ListBoxSectionElement[] = [
+export const optionsWithSections: {
+  name: string
+  id: number
+  children: { name: string; id: number }[]
+}[] = [
   {
     name: 'Grönsaker',
     id: 123,
